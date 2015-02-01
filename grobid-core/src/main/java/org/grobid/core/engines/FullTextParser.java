@@ -17,6 +17,7 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.counters.CitationParserCounters;
@@ -73,7 +74,9 @@ public class FullTextParser extends AbstractParser {
 	 * @param startPage give the starting page to consider in case of segmentation of the 
 	 * PDF, -1 for the first page (default) 
 	 * @param endPage give the end page to consider in case of segmentation of the 
-	 * PDF, -1 for the last page (default) 			
+	 * PDF, -1 for the last page (default) 
+	 * @param generateIDs if true, generate random attribute id on the textual elements of 
+	 * the resulting TEI 
      * @return the document object with built TEI
      */
     public Document processing(String input, 
@@ -82,7 +85,8 @@ public class FullTextParser extends AbstractParser {
 							int mode,
 							String assetPath,
 							int startPage,
-							int endPage) throws Exception {
+							int endPage,
+							boolean generateIDs) throws Exception {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -159,7 +163,8 @@ public class FullTextParser extends AbstractParser {
 				rese, rese2, // labeled data for body and annex  
 				tokenizationsBody, tokenizationsBody2, // tokenization for body and annex 
 				resHeader, resCitations, // header and bibliographical citations
-				null, false, mode);
+				null, false, mode,
+				generateIDs);
             return doc;
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
@@ -853,14 +858,17 @@ public class FullTextParser extends AbstractParser {
 
                 //output = writeField(buffer, s1, lastTag0, s2, "<header>", "<front>", addSpace, 3);
                 //if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<other>", "<note type=\"other\">", addSpace, 3);
+                    output = writeField(buffer, s1, lastTag0, s2, "<other>", 
+						"<note type=\"other\">", addSpace, 3, false);
                 //}
                 // for paragraph we must distinguish starting and closing tags
                 if (!output) {
                     if (closeParagraph) {
-                        output = writeFieldBeginEnd(buffer, s1, "", s2, "<paragraph>", "<p>", addSpace, 3);
+                        output = writeFieldBeginEnd(buffer, s1, "", s2, "<paragraph>", 
+							"<p>", addSpace, 3, false);
                     } else {
-                        output = writeFieldBeginEnd(buffer, s1, lastTag, s2, "<paragraph>", "<p>", addSpace, 3);
+                        output = writeFieldBeginEnd(buffer, s1, lastTag, s2, "<paragraph>", 
+							"<p>", addSpace, 3, false);
                     }
                 }
                 /*if (!output) {
@@ -885,53 +893,57 @@ public class FullTextParser extends AbstractParser {
                 }*/
                 if (!output) {
                     output = writeField(buffer, s1, lastTag0, s2, "<citation_marker>", "<ref type=\"biblio\">",
-                            addSpace, 3);
+                            addSpace, 3, false);
                 }
                 if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<section>", "<head>", addSpace, 3);
+                    output = writeField(buffer, s1, lastTag0, s2, "<section>", 
+						"<head>", addSpace, 3, false);
                 }
                 if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<subsection>", "<head>", addSpace, 3);
+                    output = writeField(buffer, s1, lastTag0, s2, "<subsection>", 
+						"<head>", addSpace, 3, false);
                 }
                 if (!output) {
                     if (openFigure) {
-                        output = writeField(buffer, s1, lastTag0, s2, "<trash>", "<trash>", addSpace, 4);
+                        output = writeField(buffer, s1, lastTag0, s2, "<trash>", "<trash>", addSpace, 4, false);
                     } else {
                         //output = writeField(buffer, s1, lastTag0, s2, "<trash>", "<figure>\n\t\t\t\t<trash>",
                         output = writeField(buffer, s1, lastTag0, s2, "<trash>", "<trash>",
-                                addSpace, 3);
+                                addSpace, 3, false);
                         if (output) {
                             openFigure = true;
                         }
                     }
                 }
                 if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<equation>", "<formula>", addSpace, 3);
+                    output = writeField(buffer, s1, lastTag0, s2, "<equation>", 
+						"<formula>", addSpace, 3, false);
                 }
                 if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<figure_marker>", "<ref type=\"figure\">",
-                            addSpace, 3);
+                    output = writeField(buffer, s1, lastTag0, s2, "<figure_marker>", 
+						"<ref type=\"figure\">", addSpace, 3, false);
                 }
                 if (!output) {
                     if (openFigure) {
                         if (tableBlock && (!lastTag0.equals("<table>")) && (currentTag0.equals("<table>"))) {
                             buffer.append("\n\t\t\t</figure>\n\n");
                             output = writeField(buffer, s1, lastTag0, s2, "<figure>\n\t\t\t\t<table>", "<figure>",
-                                    addSpace, 3);
+                                    addSpace, 3, false);
                             if (output) {
                                 tableBlock = true;
                                 descFigure = false;
                                 headFigure = false;
                             }
                         } else {
-                            output = writeField(buffer, s1, lastTag0, s2, "<table>", "<table>", addSpace, 4);
+                            output = writeField(buffer, s1, lastTag0, s2, "<table>", 
+								"<table>", addSpace, 4, false);
                             if (output) {
                                 tableBlock = true;
                             }
                         }
                     } else {
-                        output = writeField(buffer, s1, lastTag0, s2, "<table>", "<figure>\n\t\t\t\t<table>",
-                                addSpace, 3);
+                        output = writeField(buffer, s1, lastTag0, s2, "<table>", 
+							"<figure>\n\t\t\t\t<table>", addSpace, 3, false);
                         if (output) {
                             openFigure = true;
                             tableBlock = true;
@@ -943,21 +955,22 @@ public class FullTextParser extends AbstractParser {
                         if (descFigure && (!lastTag0.equals("<label>")) && (currentTag0.equals("<label>"))) {
                             buffer.append("\n\t\t\t</figure>\n\n");
                             output = writeField(buffer, s1, lastTag0, s2, "<label>", "<figure>\n\t\t\t\t<figDesc>",
-                                    addSpace, 3);
+                                    addSpace, 3, false);
                             if (output) {
                                 descFigure = true;
                                 tableBlock = false;
                                 headFigure = false;
                             }
                         } else {
-                            output = writeField(buffer, s1, lastTag0, s2, "<label>", "<figDesc>", addSpace, 4);
+                            output = writeField(buffer, s1, lastTag0, s2, "<label>", 
+								"<figDesc>", addSpace, 4, false);
                             if (output) {
                                 descFigure = true;
                             }
                         }
                     } else {
-                        output = writeField(buffer, s1, lastTag0, s2, "<label>", "<figure>\n\t\t\t\t<figDesc>",
-                                addSpace, 3);
+                        output = writeField(buffer, s1, lastTag0, s2, "<label>", 
+							"<figure>\n\t\t\t\t<figDesc>", addSpace, 3, false);
                         if (output) {
                             openFigure = true;
                             descFigure = true;
@@ -969,22 +982,23 @@ public class FullTextParser extends AbstractParser {
                         if (headFigure && (!lastTag0.equals("<figure_head>")) &&
                                 (currentTag0.equals("<figure_head>"))) {
                             buffer.append("\n\t\t\t</figure>\n\n");
-                            output = writeField(buffer, s1, lastTag0, s2, "<figure_head>", "<figure>\n\t\t\t\t<head>",
-                                    addSpace, 3);
+                            output = writeField(buffer, s1, lastTag0, s2, "<figure_head>", 
+								"<figure>\n\t\t\t\t<head>", addSpace, 3, false);
                             if (output) {
                                 descFigure = false;
                                 tableBlock = false;
                                 headFigure = true;
                             }
                         } else {
-                            output = writeField(buffer, s1, lastTag0, s2, "<figure_head>", "<head>", addSpace, 4);
+                            output = writeField(buffer, s1, lastTag0, s2, "<figure_head>", 
+								"<head>", addSpace, 4, false);
                             if (output) {
                                 headFigure = true;
                             }
                         }
                     } else {
                         output = writeField(buffer, s1, lastTag0, s2, "<figure_head>", "<figure>\n\t\t\t\t<head>",
-                                addSpace, 3);
+                                addSpace, 3, false);
                         if (output) {
                             openFigure = true;
                             headFigure = true;
@@ -993,7 +1007,8 @@ public class FullTextParser extends AbstractParser {
                 }
                 // for item we must distinguish starting and closing tags
                 if (!output) {
-                    output = writeFieldBeginEnd(buffer, s1, lastTag, s2, "<item>", "<item>", addSpace, 3);
+                    output = writeFieldBeginEnd(buffer, s1, lastTag, s2, "<item>", 
+						"<item>", addSpace, 3, false);
                 }
 
                 lastTag = s1;
@@ -1038,13 +1053,19 @@ public class FullTextParser extends AbstractParser {
                                String field,
                                String outField,
                                boolean addSpace,
-                               int nbIndent) {
+                               int nbIndent,
+					 	  	   boolean generateIDs) {
         boolean result = false;
 		if (s1 == null) {
 			return result;
 		}
         if ((s1.equals(field)) || (s1.equals("I-" + field))) {
             result = true;
+			String divID = null;
+			if (generateIDs) {
+				divID = KeyGen.getKey().substring(0,7);
+				outField = outField.replace(">" , " id=\""+ divID + "\">");
+			}
             if (s1.equals(lastTag0) || s1.equals("I-" + lastTag0)) {
                 if (addSpace)
                     buffer.append(" ").append(s2);
@@ -1119,7 +1140,8 @@ public class FullTextParser extends AbstractParser {
                                        String field,
                                        String outField,
                                        boolean addSpace,
-                                       int nbIndent) {
+                                       int nbIndent, 
+									   boolean generateIDs) {
         boolean result = false;
 		if (s1 == null) {
 			return false;
@@ -1128,6 +1150,11 @@ public class FullTextParser extends AbstractParser {
             result = true;
 			if (lastTag0 == null) {
 				lastTag0 = "";
+			}
+			String divID = null;
+			if (generateIDs) {
+				divID = KeyGen.getKey().substring(0,7);
+				outField = outField.replace(">" , " id=\""+ divID + "\">");
 			}
             if (lastTag0.equals("I-" + field)) {
                 if (addSpace)
@@ -1256,29 +1283,34 @@ public class FullTextParser extends AbstractParser {
 					   List<BibDataSet> resCitations,
                        BiblioItem catalogue,
                        boolean withStyleSheet,
-					   int mode) {
+					   int mode,
+					   boolean generateIDs) {
         if (doc.getBlocks() == null) {
             return;
         }
         TEIFormater teiFormater = new TEIFormater(doc);
         StringBuffer tei;
         try {
-            tei = teiFormater.toTEIHeader(resHeader, withStyleSheet, null);
+            tei = teiFormater.toTEIHeader(resHeader, withStyleSheet, null, generateIDs);
 			
 			//System.out.println(rese);
 			if (mode == 0) {
-				tei = teiFormater.toTEIBodyLight(tei, reseBody, resHeader, resCitations, tokenizationsBody, doc);
+				tei = teiFormater.toTEIBodyLight(tei, reseBody, resHeader, resCitations, 
+					tokenizationsBody, doc, generateIDs);
 			}
 			else if (mode == 1) {
-           		tei = teiFormater.toTEIBodyML(tei, reseBody, resHeader, resCitations, tokenizationsBody, doc);
+           		tei = teiFormater.toTEIBodyML(tei, reseBody, resHeader, resCitations, 
+					tokenizationsBody, doc);
 			}
 
 			tei.append("\t\t<back>\n");
 			if (mode == 0) {
-				tei = teiFormater.toTEIAnnexLight(tei, reseAnnex, resHeader, resCitations, tokenizationsAnnex, doc);
+				tei = teiFormater.toTEIAnnexLight(tei, reseAnnex, resHeader, resCitations, 
+					tokenizationsAnnex, doc, generateIDs);
 			}
 			else if (mode == 1) {
-				tei = teiFormater.toTEIAnnexML(tei, reseAnnex, resHeader, resCitations, tokenizationsAnnex, doc);
+				tei = teiFormater.toTEIAnnexML(tei, reseAnnex, resHeader, resCitations, 
+					tokenizationsAnnex, doc);
 			}
 			tei = teiFormater.toTEIReferences(tei, resCitations);
             tei.append("\t\t</back>\n");
