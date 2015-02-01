@@ -150,7 +150,7 @@ public class Segmentation extends AbstractParser {
 			if ( (content != null) && (content.trim().length() > 0) ) {
 	            String labelledResult = label(content);
 				/*try {
-	            	FileUtils.writeStringToFile(new File("/tmp/x2.txt"), labelledResult);
+	            	FileUtils.writeStringToFile(new File("/tmp/x1.txt"), labelledResult);
 					FileUtils.writeStringToFile(new File("/tmp/x2.txt"), tokenizations.toString());
 				}
 				catch(Exception e) {

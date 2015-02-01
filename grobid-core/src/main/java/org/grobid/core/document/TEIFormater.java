@@ -832,7 +832,7 @@ public class TEIFormater {
 		if ( (result == null) || (tokenizations == null) ) {
 			return buffer;
 		}
-		buffer.append("\t\t<div type=\"annex\"/>\n");
+		buffer.append("\t\t<div type=\"annex\">\n");
 		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, tokenizations, doc);
       	buffer.append("\t\t</div>\n");
 		
