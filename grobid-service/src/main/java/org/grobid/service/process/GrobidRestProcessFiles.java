@@ -158,7 +158,9 @@ public class GrobidRestProcessFiles {
      */
     public static Response processStatelessFulltextDocument(final InputStream inputStream,
                                                             final boolean consolidate,
-                                                            final boolean htmlFormat) {
+                                                            final boolean htmlFormat,
+															final int startPage,
+															final int endPage) {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -178,11 +180,13 @@ public class GrobidRestProcessFiles {
                     engine = GrobidFactory.getInstance().getEngine();
                 }
                 if (isparallelExec && (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP)) {
-                    retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), consolidate, false);
+                    retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), 
+						consolidate, false, null, startPage, endPage);
                     GrobidPoolingFactory.returnEngine(engine);
                 } else {
                     synchronized (engine) {
-                        retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), consolidate, false);
+                        retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), 
+							consolidate, false, null, startPage, endPage);
                     }
                 }
 
@@ -192,7 +196,8 @@ public class GrobidRestProcessFiles {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
                     if (htmlFormat) {
-                        response = Response.status(Status.OK).entity(formatAsHTML(retVal)).type(MediaType.APPLICATION_XML).build();
+                        response = Response.status(Status.OK).entity(formatAsHTML(retVal)).
+							type(MediaType.APPLICATION_XML).build();
                     } else {
                         response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
                     }

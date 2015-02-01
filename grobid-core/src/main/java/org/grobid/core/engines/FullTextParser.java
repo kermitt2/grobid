@@ -68,14 +68,21 @@ public class FullTextParser extends AbstractParser {
      * @param consolidateHeader if consolidate header
      * @param consolidateCitations if consolidate citations
 	 * @param mode, 0 for light re-structuring (more robust), 1 for full re-structuring
-	 * @param assets, if true the document assets (embedded images) are saved with the TEI
+     * @param assetPath if not null, the PDF assets (embedded images) will be extracted 
+	 * and saved under the indicated repository path
+	 * @param startPage give the starting page to consider in case of segmentation of the 
+	 * PDF, -1 for the first page (default) 
+	 * @param endPage give the end page to consider in case of segmentation of the 
+	 * PDF, -1 for the last page (default) 			
      * @return the document object with built TEI
      */
     public Document processing(String input, 
 							boolean consolidateHeader, 
 							boolean consolidateCitations,
 							int mode,
-							boolean assets) throws Exception {
+							String assetPath,
+							int startPage,
+							int endPage) throws Exception {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -93,7 +100,7 @@ public class FullTextParser extends AbstractParser {
         }
         try {
             // general segmentation
-            Document doc = parsers.getSegmentationParser().processing(input, assets); 
+            Document doc = parsers.getSegmentationParser().processing(input, assetPath, startPage, endPage); 
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
 			Pair<String,List<String>> featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String rese = null;
@@ -133,8 +140,26 @@ public class FullTextParser extends AbstractParser {
                 }
             }
 
+			// possible annexes (view as a piece of full text similar to the body)
+			documentBodyParts = doc.getDocumentPart(SegmentationLabel.ANNEX);
+			featSeg = getBodyTextFeatured(doc, documentBodyParts);
+			String rese2 = null;
+			List<String> tokenizationsBody2 = null;
+			if (featSeg != null) {
+				// if featSeg is null, it usually means that no body segment is found in the 
+				// document segmentation
+				String bodytext = featSeg.getA();
+				tokenizationsBody2 = featSeg.getB();
+	            rese2 = label(bodytext);
+				//System.out.println(rese);
+			}
+
             // final combination
-            toTEI(doc, rese, tokenizationsBody, resHeader, resCitations, null, false, mode);
+            toTEI(doc, // document
+				rese, rese2, // labeled data for body and annex  
+				tokenizationsBody, tokenizationsBody2, // tokenization for body and annex 
+				resHeader, resCitations, // header and bibliographical citations
+				null, false, mode);
             return doc;
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
@@ -1015,6 +1040,9 @@ public class FullTextParser extends AbstractParser {
                                boolean addSpace,
                                int nbIndent) {
         boolean result = false;
+		if (s1 == null) {
+			return result;
+		}
         if ((s1.equals(field)) || (s1.equals("I-" + field))) {
             result = true;
             if (s1.equals(lastTag0) || s1.equals("I-" + lastTag0)) {
@@ -1093,6 +1121,9 @@ public class FullTextParser extends AbstractParser {
                                        boolean addSpace,
                                        int nbIndent) {
         boolean result = false;
+		if (s1 == null) {
+			return false;
+		}
         if ((s1.equals(field)) || (s1.equals("I-" + field))) {
             result = true;
 			if (lastTag0 == null) {
@@ -1217,8 +1248,10 @@ public class FullTextParser extends AbstractParser {
      * and body sections.
      */
     private void toTEI(Document doc,
-                       String rese,
+                       String reseBody,
+					   String reseAnnex,
                        List<String> tokenizationsBody,
+					   List<String> tokenizationsAnnex,
                        BiblioItem resHeader,
 					   List<BibDataSet> resCitations,
                        BiblioItem catalogue,
@@ -1234,14 +1267,22 @@ public class FullTextParser extends AbstractParser {
 			
 			//System.out.println(rese);
 			if (mode == 0) {
-				tei = teiFormater.toTEIBodyLight(tei, rese, resHeader, resCitations, tokenizationsBody, doc);
+				tei = teiFormater.toTEIBodyLight(tei, reseBody, resHeader, resCitations, tokenizationsBody, doc);
 			}
 			else if (mode == 1) {
-           		tei = teiFormater.toTEIBodyML(tei, rese, resHeader, resCitations, tokenizationsBody, doc);
+           		tei = teiFormater.toTEIBodyML(tei, reseBody, resHeader, resCitations, tokenizationsBody, doc);
 			}
-            tei = teiFormater.toTEIReferences(tei, resCitations);
 
+			tei.append("\t\t<back>\n");
+			if (mode == 0) {
+				tei = teiFormater.toTEIAnnexLight(tei, reseAnnex, resHeader, resCitations, tokenizationsAnnex, doc);
+			}
+			else if (mode == 1) {
+				tei = teiFormater.toTEIAnnexML(tei, reseAnnex, resHeader, resCitations, tokenizationsAnnex, doc);
+			}
+			tei = teiFormater.toTEIReferences(tei, resCitations);
             tei.append("\t\t</back>\n");
+			
             tei.append("\t</text>\n");
             tei.append("</TEI>\n");
         } catch (Exception e) {
