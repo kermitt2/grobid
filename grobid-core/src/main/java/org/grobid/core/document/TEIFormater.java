@@ -82,7 +82,7 @@ public class TEIFormater {
 			if (generateIDs) {
 				divID = KeyGen.getKey().substring(0,7);
 			}
-			tei.append(" id=\"" + divID + "\"");
+			tei.append(" id=\"_" + divID + "\"");
 		}
 		tei.append(">");
 		
@@ -254,7 +254,7 @@ public class TEIFormater {
 				if (generateIDs) {
 					divID = KeyGen.getKey().substring(0,7);
 				}
-				tei.append(" id=\"" + divID + "\"");
+				tei.append(" id=\"_" + divID + "\"");
 			}
 			
             // here check the language ?
@@ -284,7 +284,7 @@ public class TEIFormater {
 						if (generateIDs) {
 							divID = KeyGen.getKey().substring(0,7);
 						}
-						tei.append(" id=\"" + divID + "\"");
+						tei.append(" id=\"_" + divID + "\"");
 					}
                     tei.append(" xml:lang=\"en\">").append(TextUtilities.HTMLEncode(english_title)).append("</title>\n");
                 }
@@ -318,7 +318,7 @@ public class TEIFormater {
 					if (generateIDs) {
 						divID = KeyGen.getKey().substring(0,7);
 					}
-					tei.append(" id=\"" + divID + "\"");
+					tei.append(" id=\"_" + divID + "\"");
 				}	
                 tei.append(">" + TextUtilities.HTMLEncode(biblio.getJournal()) + "</title>\n");
             } else if (biblio.getBookTitle() != null) {
@@ -328,7 +328,7 @@ public class TEIFormater {
 					if (generateIDs) {
 						divID = KeyGen.getKey().substring(0,7);
 					}
-					tei.append(" id=\"" + divID + "\"");
+					tei.append(" id=\"_" + divID + "\"");
 				}	
 				tei.append(">" + TextUtilities.HTMLEncode(biblio.getBookTitle()) + "</title>\n");
             }
@@ -589,7 +589,7 @@ public class TEIFormater {
 				if (generateIDs) {
 					divID = KeyGen.getKey().substring(0,7);
 				}
-				tei.append(" id=\"" + divID + "\"");
+				tei.append(" id=\"_" + divID + "\"");
 			}
 			tei.append(">" + TextUtilities.HTMLEncode(english_title) + "</note>\n");
         }
@@ -601,7 +601,7 @@ public class TEIFormater {
 				if (generateIDs) {
 					divID = KeyGen.getKey().substring(0,7);
 				}
-				tei.append(" id=\"" + divID + "\"");
+				tei.append(" id=\"_" + divID + "\"");
 			}
 			tei.append(">" + TextUtilities.HTMLEncode(biblio.getNote()) + "</note>\n");
         }
@@ -646,7 +646,7 @@ public class TEIFormater {
 						if (generateIDs) {
 							divID = KeyGen.getKey().substring(0,7);
 						}
-						tei.append(" id=\"" + divID + "\"");
+						tei.append(" id=\"_" + divID + "\"");
 					}
 					tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
 	                tei.append("\t\t\t\t\t\t</item>\n");
@@ -685,7 +685,7 @@ public class TEIFormater {
 					if (generateIDs) {
 						divID = KeyGen.getKey().substring(0,7);
 					}
-					tei.append(" id=\"" + divID + "\"");
+					tei.append(" id=\"_" + divID + "\"");
 				}
 				tei.append(">");
 			}
@@ -714,7 +714,7 @@ public class TEIFormater {
 						if (generateIDs) {
 							divID = KeyGen.getKey().substring(0,7);
 						}
-						tei.append(" id=\"" + divID + "\"");
+						tei.append(" id=\"_" + divID + "\"");
 					}
 					tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
                     tei.append("\t\t\t\t\t\t</item>\n");
@@ -737,7 +737,7 @@ public class TEIFormater {
 							if (generateIDs) {
 								divID = KeyGen.getKey().substring(0,7);
 							}
-							tei.append(" id=\"" + divID + "\"");
+							tei.append(" id=\"_" + divID + "\"");
 						}	
 						tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
                         tei.append("\t\t\t\t\t\t</item>\n");
@@ -876,7 +876,7 @@ public class TEIFormater {
 					if (generateIDs) {
 						divID = KeyGen.getKey().substring(0,7);
 					}
-					tei.append(" id=\"" + divID + "\"");
+					tei.append(" id=\"_" + divID + "\"");
 				}
 				tei.append(">").append(TextUtilities.HTMLEncode(abstractHeader)).append("</head>\n");
 				
@@ -886,7 +886,7 @@ public class TEIFormater {
 					if (generateIDs) {
 						divID = KeyGen.getKey().substring(0,7);
 					}
-					tei.append(" id=\"" + divID + "\"");
+					tei.append(" id=\"_" + divID + "\"");
 				}	
 				tei.append(">").append(TextUtilities.HTMLEncode(abstractText)).append("</p>\n");
         
@@ -1497,12 +1497,12 @@ public class TEIFormater {
                         numb = numb.substring(0, numb.length() - 1);
                     //numb = numb.replace(".","");
 					if (generateIDs) 
-						text = "<head n=\"" + numb + "\" xml:id=\"" + divID + "\">" + text;
+						text = "<head n=\"" + numb + "\" xml:id=\"_" + divID + "\">" + text;
 					else
 						text = "<head n=\"" + numb + "\">" + text;
                 } else {
 					if (generateIDs) 
-						text = "<head xml:id=\"" + divID + "\">" + text;
+						text = "<head xml:id=\"_" + divID + "\">" + text;
 					else 
 						text = "<head>" + text;
                 }
@@ -1514,13 +1514,13 @@ public class TEIFormater {
             if (lastTag0.equals("<other>")) {
 				buffer.append("<note");
 				if (generateIDs) 
-					buffer.append(" xml:id=\"" + divID + "\"");
+					buffer.append(" xml:id=\"_" + divID + "\"");
 				buffer.append(">" + text+ "</note>\n\n");
 				
             } else if (lastTag0.equals("<paragraph>")) {
 				buffer.append("<p");
 				if (generateIDs) 
-					buffer.append(" xml:id=\"" + divID + "\"");
+					buffer.append(" xml:id=\"_" + divID + "\"");
 				buffer.append(">" + text + "</p>\n\n");
                 res = true;
 				// return true only when the paragraph is closed
@@ -1540,19 +1540,19 @@ public class TEIFormater {
             } else if (lastTag0.equals("<label>")) {
 				buffer.append("<figDesc");
 				if (generateIDs) 
-					buffer.append(" xml:id=\"" + divID + "\"");
+					buffer.append(" xml:id=\"_" + divID + "\"");
                 buffer.append(">" + text + "</figDesc>\n");
 
             } else if (lastTag0.equals("<figure_head>")) {
 				buffer.append("<head");
 				if (generateIDs) 
-					buffer.append(" xml:id=\"" + divID + "\"");
+					buffer.append(" xml:id=\"_" + divID + "\"");
                 buffer.append(">" + text + "</head>\n\n");
 
             } else if (lastTag0.equals("<item>")) {
 				buffer.append("<item");
 				if (generateIDs) 
-					buffer.append(" xml:id=\"" + divID + "\"");
+					buffer.append(" xml:id=\"_" + divID + "\"");
                 buffer.append(">" + text + "</item>\n\n");
 
             } else if (lastTag0.equals("<trash>")) {
