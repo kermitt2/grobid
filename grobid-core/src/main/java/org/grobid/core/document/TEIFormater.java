@@ -78,10 +78,7 @@ public class TEIFormater {
 		
 		tei.append("\n\t\t<fileDesc>\n\t\t\t<titleStmt>\n\t\t\t\t<title level=\"a\" type=\"main\"");
 		if (generateIDs) {
-			String divID = null;
-			if (generateIDs) {
-				divID = KeyGen.getKey().substring(0,7);
-			}
+			String divID = KeyGen.getKey().substring(0,7);
 			tei.append(" id=\"_" + divID + "\"");
 		}
 		tei.append(">");
@@ -250,10 +247,7 @@ public class TEIFormater {
             tei.append(" level=\"a\" type=\"main\"");
 			
 			if (generateIDs) {
-				String divID = null;
-				if (generateIDs) {
-					divID = KeyGen.getKey().substring(0,7);
-				}
+				String divID = KeyGen.getKey().substring(0,7);
 				tei.append(" id=\"_" + divID + "\"");
 			}
 			
@@ -280,10 +274,7 @@ public class TEIFormater {
                     //else 
                     tei.append(" level=\"a\"");
 					if (generateIDs) {
-						String divID = null;
-						if (generateIDs) {
-							divID = KeyGen.getKey().substring(0,7);
-						}
+						String divID = KeyGen.getKey().substring(0,7);
 						tei.append(" id=\"_" + divID + "\"");
 					}
                     tei.append(" xml:lang=\"en\">").append(TextUtilities.HTMLEncode(english_title)).append("</title>\n");
@@ -314,20 +305,14 @@ public class TEIFormater {
             if (biblio.getJournal() != null) {
                 tei.append("\t\t\t\t\t\t<title level=\"j\" type=\"main\"");
 				if (generateIDs) {
-					String divID = null;
-					if (generateIDs) {
-						divID = KeyGen.getKey().substring(0,7);
-					}
+					String divID = KeyGen.getKey().substring(0,7);
 					tei.append(" id=\"_" + divID + "\"");
 				}	
                 tei.append(">" + TextUtilities.HTMLEncode(biblio.getJournal()) + "</title>\n");
             } else if (biblio.getBookTitle() != null) {
                 tei.append("\t\t\t\t\t\t<title level=\"m\"");
 				if (generateIDs) {
-					String divID = null;
-					if (generateIDs) {
-						divID = KeyGen.getKey().substring(0,7);
-					}
+					String divID = KeyGen.getKey().substring(0,7);
 					tei.append(" id=\"_" + divID + "\"");
 				}	
 				tei.append(">" + TextUtilities.HTMLEncode(biblio.getBookTitle()) + "</title>\n");
@@ -585,10 +570,7 @@ public class TEIFormater {
         if ((english_title != null) & (!hasEnglishTitle)) {
             tei.append("\t\t\t\t\t<note type=\"title\"");
 			if (generateIDs) {
-				String divID = null;
-				if (generateIDs) {
-					divID = KeyGen.getKey().substring(0,7);
-				}
+				String divID = KeyGen.getKey().substring(0,7);
 				tei.append(" id=\"_" + divID + "\"");
 			}
 			tei.append(">" + TextUtilities.HTMLEncode(english_title) + "</note>\n");
@@ -597,10 +579,7 @@ public class TEIFormater {
         if (biblio.getNote() != null) {
             tei.append("\t\t\t\t\t<note");
 			if (generateIDs) {
-				String divID = null;
-				if (generateIDs) {
-					divID = KeyGen.getKey().substring(0,7);
-				}
+				String divID = KeyGen.getKey().substring(0,7);
 				tei.append(" id=\"_" + divID + "\"");
 			}
 			tei.append(">" + TextUtilities.HTMLEncode(biblio.getNote()) + "</note>\n");
@@ -642,10 +621,7 @@ public class TEIFormater {
 					}
 	                tei.append("\t\t\t\t\t\t\t<term");
 					if (generateIDs) {
-						String divID = null;
-						if (generateIDs) {
-							divID = KeyGen.getKey().substring(0,7);
-						}
+						String divID = KeyGen.getKey().substring(0,7);
 						tei.append(" id=\"_" + divID + "\"");
 					}
 					tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
@@ -681,10 +657,7 @@ public class TEIFormater {
             } else {
                 tei.append("\t\t\t\t<keywords type=\"author\"");
 				if (generateIDs) {
-					String divID = null;
-					if (generateIDs) {
-						divID = KeyGen.getKey().substring(0,7);
-					}
+					String divID = KeyGen.getKey().substring(0,7);
 					tei.append(" id=\"_" + divID + "\"");
 				}
 				tei.append(">");
@@ -710,10 +683,7 @@ public class TEIFormater {
 			        }
                     tei.append("\t\t\t\t\t\t\t<term");
 					if (generateIDs) {
-						String divID = null;
-						if (generateIDs) {
-							divID = KeyGen.getKey().substring(0,7);
-						}
+						String divID = KeyGen.getKey().substring(0,7);
 						tei.append(" id=\"_" + divID + "\"");
 					}
 					tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
@@ -733,10 +703,7 @@ public class TEIFormater {
 				        }
                         tei.append("\t\t\t\t\t\t\t<term");
 						if (generateIDs) {
-							String divID = null;
-							if (generateIDs) {
-								divID = KeyGen.getKey().substring(0,7);
-							}
+							String divID = KeyGen.getKey().substring(0,7);
 							tei.append(" id=\"_" + divID + "\"");
 						}	
 						tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
@@ -872,20 +839,14 @@ public class TEIFormater {
 	                abstractHeader = "Abstract";
 	            tei.append("\t\t\t\t<head");
 				if (generateIDs) {
-					String divID = null;
-					if (generateIDs) {
-						divID = KeyGen.getKey().substring(0,7);
-					}
+					String divID = KeyGen.getKey().substring(0,7);
 					tei.append(" id=\"_" + divID + "\"");
 				}
 				tei.append(">").append(TextUtilities.HTMLEncode(abstractHeader)).append("</head>\n");
 				
 	            tei.append("<p");
 				if (generateIDs) {
-					String divID = null;
-					if (generateIDs) {
-						divID = KeyGen.getKey().substring(0,7);
-					}
+					String divID = KeyGen.getKey().substring(0,7);
 					tei.append(" id=\"_" + divID + "\"");
 				}	
 				tei.append(">").append(TextUtilities.HTMLEncode(abstractText)).append("</p>\n");
@@ -3158,7 +3119,9 @@ public class TEIFormater {
     }
 
 
-    public StringBuffer toTEIReferences(StringBuffer tei, List<BibDataSet> bds) throws Exception {
+    public StringBuffer toTEIReferences(StringBuffer tei, 
+										List<BibDataSet> bds, 
+										boolean generateIDs) throws Exception {
  		tei.append("\t\t\t<div type=\"references\">\n\n");
         tei.append("\t\t<listBibl>\n");
 
@@ -3167,7 +3130,7 @@ public class TEIFormater {
       	  for (BibDataSet bib : bds) {
 	            BiblioItem bit = bib.getResBib();
 	            if (bit != null) {
-	                tei.append("\n" + bit.toTEI(p));
+	                tei.append("\n" + bit.toTEI(p, generateIDs));
 	            } else {
 	                tei.append("\n");
 	            }
