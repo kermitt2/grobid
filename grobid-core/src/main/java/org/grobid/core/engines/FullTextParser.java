@@ -1064,7 +1064,7 @@ public class FullTextParser extends AbstractParser {
 			String divID = null;
 			if (generateIDs) {
 				divID = KeyGen.getKey().substring(0,7);
-				outField = outField.replace(">" , " id=\""+ divID + "\">");
+				outField = outField.replace(">" , " id=\"_"+ divID + "\">");
 			}
             if (s1.equals(lastTag0) || s1.equals("I-" + lastTag0)) {
                 if (addSpace)
@@ -1154,7 +1154,7 @@ public class FullTextParser extends AbstractParser {
 			String divID = null;
 			if (generateIDs) {
 				divID = KeyGen.getKey().substring(0,7);
-				outField = outField.replace(">" , " id=\""+ divID + "\">");
+				outField = outField.replace(">" , " id=\"_"+ divID + "\">");
 			}
             if (lastTag0.equals("I-" + field)) {
                 if (addSpace)
