@@ -541,7 +541,7 @@ public class Engine implements Closeable {
     public String fullTextToTEI(String inputFile, 
 								boolean consolidateHeader, 
 								boolean consolidateCitations) throws Exception {
-		return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, null, -1, -1);							
+		return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, null, -1, -1, false);
 	}
 
     /**
@@ -562,7 +562,7 @@ public class Engine implements Closeable {
 								boolean consolidateHeader, 
 								boolean consolidateCitations,
 								String assetPath) throws Exception {
-		return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, assetPath, -1, -1);
+		return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, assetPath, -1, -1, false);
 	}
 
     /**
@@ -581,6 +581,8 @@ public class Engine implements Closeable {
    	 * PDF, -1 for the first page (default) 
    	 * @param endPage give the end page to consider in case of segmentation of the 
    	 * PDF, -1 for the last page (default)
+	 * @param generateIDs if true, generate random attribute id on the textual elements of 
+	 * the resulting TEI 	
 	 * @return the resulting structured document as a TEI string.
      */
     public String fullTextToTEI(String inputFile, 
@@ -588,7 +590,8 @@ public class Engine implements Closeable {
 								boolean consolidateCitations,
 								String assetPath,
 								int startPage,
-								int endPage) throws Exception {
+								int endPage,
+								boolean generateIDs) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
 
         // replace by the commented version for the new full ML text parser
@@ -596,7 +599,7 @@ public class Engine implements Closeable {
         LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
         long time = System.currentTimeMillis();
         resultDoc = fullTextParser.processing(inputFile, consolidateHeader, 
-				consolidateCitations, 0, assetPath, startPage, endPage);
+				consolidateCitations, 0, assetPath, startPage, endPage, generateIDs);
         LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: " + (System.currentTimeMillis() - time) + "ms");
         return resultDoc.getTei();
     }
