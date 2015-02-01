@@ -195,12 +195,15 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processFulltextDocument_post(@FormDataParam(INPUT) InputStream inputStream,
-	 	@FormDataParam("consolidate") String consolidate) {
+	 	@FormDataParam("consolidate") String consolidate, 
+		@DefaultValue("-1") @FormDataParam("start") int startPage,
+		@DefaultValue("-1") @FormDataParam("end") int endPage) {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
 		}
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, consol, false);
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
+			consol, false, startPage, endPage);
 	}
 
 	/**
@@ -211,12 +214,15 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processStatelessFulltextDocument(@FormDataParam(INPUT) InputStream inputStream,
-	 	@FormDataParam("consolidate") String consolidate) {
+	 	@FormDataParam("consolidate") String consolidate, 
+		@DefaultValue("-1") @FormDataParam("start") int startPage,
+		@DefaultValue("-1") @FormDataParam("end") int endPage) {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
 		}
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, consol, false);
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
+			consol, false, startPage, endPage);
 	}
 
 	/**
@@ -227,12 +233,15 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processFulltextDocument_postHTML(@FormDataParam(INPUT) InputStream inputStream,
-	 	@FormDataParam("consolidate") String consolidate) {
+	 	@FormDataParam("consolidate") String consolidate, 
+		@DefaultValue("-1") @FormDataParam("start") int startPage,
+		@DefaultValue("-1") @FormDataParam("end") int endPage) {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
 		}
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, consol, true);
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
+			consol, true, startPage, endPage);
 	}
 
 	/**
@@ -243,12 +252,15 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processStatelessFulltextDocumentHTML(@FormDataParam(INPUT) InputStream inputStream,
-	 	@FormDataParam("consolidate") String consolidate) {
+	 	@FormDataParam("consolidate") String consolidate, 
+		@DefaultValue("-1") @FormDataParam("start") int startPage,
+		@DefaultValue("-1") @FormDataParam("end") int endPage) {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
 		}
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, consol, true);
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
+			consol, true, startPage, endPage);
 	}
 
 	/**
