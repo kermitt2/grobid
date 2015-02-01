@@ -1312,7 +1312,7 @@ public class FullTextParser extends AbstractParser {
 				tei = teiFormater.toTEIAnnexML(tei, reseAnnex, resHeader, resCitations, 
 					tokenizationsAnnex, doc);
 			}
-			tei = teiFormater.toTEIReferences(tei, resCitations);
+			tei = teiFormater.toTEIReferences(tei, resCitations, generateIDs);
             tei.append("\t\t</back>\n");
 			
             tei.append("\t</text>\n");
