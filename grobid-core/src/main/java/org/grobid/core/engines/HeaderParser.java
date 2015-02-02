@@ -267,7 +267,7 @@ public class HeaderParser extends AbstractParser {
 			}
 			
 			TEIFormater teiFormater = new TEIFormater(doc);
-			StringBuffer tei = teiFormater.toTEIHeader(resHeader, false, null);
+			StringBuffer tei = teiFormater.toTEIHeader(resHeader, false, null, false);
             tei.append("\t</text>\n");
             tei.append("</TEI>\n");
 			//LOGGER.debug(tei.toString());
@@ -461,7 +461,7 @@ public class HeaderParser extends AbstractParser {
 				}
 
 				TEIFormater teiFormater = new TEIFormater(doc);
-				StringBuffer tei = teiFormater.toTEIHeader(resHeader, false, null);
+				StringBuffer tei = teiFormater.toTEIHeader(resHeader, false, null, false);
 	            tei.append("\t</text>\n");
 	            tei.append("</TEI>\n");
 				//LOGGER.debug(tei);

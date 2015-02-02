@@ -74,6 +74,7 @@ public class GrobidRestProcessFiles {
                 if (isparallelExec) {
                     retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
                     //retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
+					GrobidPoolingFactory.returnEngine(engine);
                 } else {
                     synchronized (engine) {
                         retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
@@ -152,7 +153,15 @@ public class GrobidRestProcessFiles {
      * Uploads the origin document which shall be extracted into TEI.
      *
      * @param inputStream the data of origin document
+     * @param consolidate the consolidation option allows GROBID to exploit Crossref
+     *                             web services for improving header information		
      * @param htmlFormat  if the result has to be formatted to be displayed as html.
+   	 * @param startPage give the starting page to consider in case of segmentation of the 
+   	 * PDF, -1 for the first page (default) 
+   	 * @param endPage give the end page to consider in case of segmentation of the 
+   	 * PDF, -1 for the last page (default)
+	 * @param generateIDs if true, generate random attribute id on the textual elements of 
+	 * the resulting TEI 		
      * @return a response object mainly contain the TEI representation of the
      *         full text
      */
@@ -160,7 +169,8 @@ public class GrobidRestProcessFiles {
                                                             final boolean consolidate,
                                                             final boolean htmlFormat,
 															final int startPage,
-															final int endPage) {
+															final int endPage, 
+															final boolean generateIDs) {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -174,19 +184,15 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
                 // starts conversion process
-                if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
-                    engine = GrobidRestUtils.getEngine(isparallelExec);
-                } else {
-                    engine = GrobidFactory.getInstance().getEngine();
-                }
-                if (isparallelExec && (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP)) {
+				engine = GrobidRestUtils.getEngine(isparallelExec);
+                if (isparallelExec) {
                     retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), 
-						consolidate, false, null, startPage, endPage);
+						consolidate, false, null, startPage, endPage, generateIDs);
                     GrobidPoolingFactory.returnEngine(engine);
                 } else {
                     synchronized (engine) {
                         retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), 
-							consolidate, false, null, startPage, endPage);
+							consolidate, false, null, startPage, endPage, generateIDs);
                     }
                 }
 
@@ -385,14 +391,9 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
                 // starts conversion process
-                if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
-                    engine = GrobidRestUtils.getEngine(isparallelExec);
-                } else {
-                    engine = GrobidFactory.getInstance().getEngine();
-                }
+				engine = GrobidRestUtils.getEngine(isparallelExec);
                 List<BibDataSet> results = null;
-                if (isparallelExec && (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP)) {
-                    //retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), consolidate, false);
+                if (isparallelExec) {
                     results = engine.processReferences(originFile.getAbsolutePath(), consolidate);
                     GrobidPoolingFactory.returnEngine(engine);
                 } else {
