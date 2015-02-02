@@ -56,7 +56,7 @@ public class Document {
      */
     private static final int KILLED_DUE_2_TIMEOUT = 143;
     public static final int DEFAULT_TIMEOUT = 50000;
-    public static final int PDF2XML_MEM_LIMIT_BYTES = GrobidProperties.getPdf2XMLMemoryLimitMb() * 1024 * 1024;
+    public static final int PDF2XML_MEM_LIMIT_KBYTES = GrobidProperties.getPdf2XMLMemoryLimitMb() * 1024 ;
 
     private String path = null; // path where the pdf file is stored
 
@@ -275,7 +275,7 @@ public class Document {
             if (GrobidProperties.isContextExecutionServer()) {
                 tmpPathXML = processPdf2Xml(pdfPath, tmpPathXML, cmd);
             } else {
-                cmd = Arrays.asList("bash", "-c", "ulimit -Sv " + PDF2XML_MEM_LIMIT_BYTES + " && " + pdftoxml0 + " " + pdfPath + " " + tmpPathXML);
+                cmd = Arrays.asList("bash", "-c", "ulimit -Sv " + PDF2XML_MEM_LIMIT_KBYTES + " && " + pdftoxml0 + " " + pdfPath + " " + tmpPathXML);
 
                 tmpPathXML = processPdf2XmlThreadMode(tout, pdfPath, tmpPathXML, cmd);
             }
@@ -297,7 +297,7 @@ public class Document {
      */
     protected String processPdf2XmlThreadMode(boolean tout, String pdfPath,
                                               String tmpPathXML, List<String> cmd) {
-        LOGGER.debug("Executing: " + cmd.toString());
+        LOGGER.info("Executing: " + cmd.toString());
         ProcessRunner worker = new ProcessRunner(cmd, "pdf2xml[" + pdfPath + "]", true);
 
         worker.start();
