@@ -3,6 +3,8 @@ package org.grobid.core.jni;
 import com.google.common.base.Throwables;
 import fr.limsi.wapiti.SWIGTYPE_p_mdl_t;
 import fr.limsi.wapiti.Wapiti;
+import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.exceptions.GrobidExceptionStatus;
 
 import java.io.File;
 
@@ -17,7 +19,11 @@ public class WapitiWrapper {
             return "";
         }
 
-        return Wapiti.labelFromModel(model, data);
+        String result = Wapiti.labelFromModel(model, data);
+        if (result == null) {
+            throw new GrobidException("Wapiti tagging failed (null data returned)", GrobidExceptionStatus.TAGGING_ERROR);
+        }
+        return result;
     }
 
     public static SWIGTYPE_p_mdl_t getModel(File model) {
