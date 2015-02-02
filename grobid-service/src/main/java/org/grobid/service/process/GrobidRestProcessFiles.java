@@ -74,6 +74,7 @@ public class GrobidRestProcessFiles {
                 if (isparallelExec) {
                     retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
                     //retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
+					GrobidPoolingFactory.returnEngine(engine);
                 } else {
                     synchronized (engine) {
                         retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
@@ -183,12 +184,8 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
                 // starts conversion process
-                if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
-                    engine = GrobidRestUtils.getEngine(isparallelExec);
-                } else {
-                    engine = GrobidFactory.getInstance().getEngine();
-                }
-                if (isparallelExec && (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP)) {
+				engine = GrobidRestUtils.getEngine(isparallelExec);
+                if (isparallelExec) {
                     retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), 
 						consolidate, false, null, startPage, endPage, generateIDs);
                     GrobidPoolingFactory.returnEngine(engine);
@@ -394,14 +391,9 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
                 // starts conversion process
-                if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
-                    engine = GrobidRestUtils.getEngine(isparallelExec);
-                } else {
-                    engine = GrobidFactory.getInstance().getEngine();
-                }
+				engine = GrobidRestUtils.getEngine(isparallelExec);
                 List<BibDataSet> results = null;
-                if (isparallelExec && (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP)) {
-                    //retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), consolidate, false);
+                if (isparallelExec) {
                     results = engine.processReferences(originFile.getAbsolutePath(), consolidate);
                     GrobidPoolingFactory.returnEngine(engine);
                 } else {
