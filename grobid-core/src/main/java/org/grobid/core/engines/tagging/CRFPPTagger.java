@@ -6,6 +6,7 @@ import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.ModelMap;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -88,7 +89,7 @@ public class CRFPPTagger implements GenericTagger {
         tagger.clear();
         feedTagger(tagger, st);
         if (!tagger.parse()) {
-            throw new GrobidException("CRF++ parsing failed.");
+            throw new GrobidException("CRF++ tagging failed!", GrobidExceptionStatus.TAGGING_ERROR);
         }
 
         if (!tagger.what().isEmpty()) {

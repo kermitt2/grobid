@@ -36,6 +36,7 @@ public class WapitiModel {
         if (!modelFile.exists() || modelFile.isDirectory()) {
             throw new GrobidException("Model file does not exists or a directory: " + modelFile.getAbsolutePath());
         }
+        LOGGER.info("Loading model: " + modelFile + " (size: " + modelFile.length() + ")");
         model = WapitiWrapper.getModel(modelFile);
     }
 

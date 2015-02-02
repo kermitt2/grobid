@@ -6,6 +6,7 @@ package org.grobid.core.exceptions;
  */
 public enum GrobidExceptionStatus {
     BAD_INPUT_DATA,
+    TAGGING_ERROR,
     PARSING_ERROR,
     TIMEOUT,
     GENERAL

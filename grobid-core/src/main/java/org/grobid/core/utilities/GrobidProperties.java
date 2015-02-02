@@ -631,6 +631,10 @@ public class GrobidProperties {
 		return getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_USERNAME);
 	}
 
+    public static Integer getPdf2XMLMemoryLimitMb() {
+        return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDF2XML_MEMORY_LIMIT, "2048"), 10);
+    }
+
 	/**
 	 * Sets the username for a connection to mysql, given in the grobid-property
 	 * file.
