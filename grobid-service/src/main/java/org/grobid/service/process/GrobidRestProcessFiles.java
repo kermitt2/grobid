@@ -217,7 +217,7 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
-            if (isparallelExec && engine != null && (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP)) {
+            if (isparallelExec && (engine != null)) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
@@ -436,7 +436,7 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
-            if (isparallelExec && engine != null && (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP)) {
+            if (isparallelExec && engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
