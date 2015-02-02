@@ -1001,12 +1001,16 @@ public class TEIFormater {
 			// we avoid citation_marker and figure_marker tags because they introduce too much mess, 
 			// they will be injected later
 			String currentOriginalTag = s1;
-			if (currentTag0.equals("<citation_marker>") || currentTag0.equals("<figure_marker>")) {
+			if (currentTag0.equals("<citation_marker>") || 
+				currentTag0.equals("<figure_marker>") || 
+				currentTag0.equals("<item>")) {
 				currentTag0 = lastTag0;
 				s1 = lastTag;
 			}
 			if ((s1 != null) && s1.equals("I-<paragraph>") && 
-				(lastOriginalTag.endsWith("<citation_marker>") || lastOriginalTag.endsWith("<figure_marker>")) ) {
+				(lastOriginalTag.endsWith("<citation_marker>") || 
+				 lastOriginalTag.endsWith("<figure_marker>") || 
+				 lastOriginalTag.endsWith("<item>")) ) {
 				currentTag0 = "<paragraph>";
 				s1 = "<paragraph>";
 			}
