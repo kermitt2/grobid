@@ -75,6 +75,7 @@ public class GrobidRestProcessFiles {
                     retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
                     //retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
 					GrobidPoolingFactory.returnEngine(engine);
+					engine = null;
                 } else {
                     synchronized (engine) {
                         retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
@@ -189,6 +190,7 @@ public class GrobidRestProcessFiles {
                     retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), 
 						consolidate, false, null, startPage, endPage, generateIDs);
                     GrobidPoolingFactory.returnEngine(engine);
+					engine = null;
                 } else {
                     synchronized (engine) {
                         retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), 
@@ -276,6 +278,7 @@ public class GrobidRestProcessFiles {
                     retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(),
                             articles, patents, consolidate);
                     GrobidPoolingFactory.returnEngine(engine);
+					engine = null;
                 } else {
                     synchronized (engine) {
                         retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(),
@@ -336,6 +339,7 @@ public class GrobidRestProcessFiles {
                     retVal = engine.processAllCitationsInXMLPatent(originFile.getAbsolutePath(),
                             articles, patents, consolidate);
                     GrobidPoolingFactory.returnEngine(engine);
+					engine = null;
                 } else {
                     synchronized (engine) {
                         retVal = engine.processAllCitationsInXMLPatent(originFile.getAbsolutePath(),
@@ -396,6 +400,7 @@ public class GrobidRestProcessFiles {
                 if (isparallelExec) {
                     results = engine.processReferences(originFile.getAbsolutePath(), consolidate);
                     GrobidPoolingFactory.returnEngine(engine);
+					engine = null;
                 } else {
                     synchronized (engine) {
                         results = engine.processReferences(originFile.getAbsolutePath(), consolidate);
