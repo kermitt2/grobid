@@ -6,6 +6,7 @@ import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.features.FeaturesVectorReferenceSegmenter;
 import org.grobid.core.utilities.Pair;
+import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.TextUtilities;
 
 import org.slf4j.Logger;
@@ -65,8 +66,16 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         }
         blocks.add("\n");
         String featureVector = FeaturesVectorReferenceSegmenter.addFeaturesReferenceSegmenter(blocks);
-        String res = label(featureVector);
-
+		String res = null;
+		try {
+        	res = label(featureVector);
+		} 
+		catch(Exception e) {
+			throw new GrobidException("CRF labeling in ReferenceSegmenter fails.", e);
+		}
+		if (res == null) {
+			return null;
+		}
         List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
 
         return getExtractionResult(tokenizations, labeled);
