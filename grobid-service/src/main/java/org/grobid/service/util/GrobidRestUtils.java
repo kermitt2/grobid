@@ -111,6 +111,24 @@ public class GrobidRestUtils {
 	}
 
 	/**
+	 * Delete temporary directory.
+	 * 
+	 * @param path
+	 *            the path to the directory to delete.
+	 */
+	public static void removeTempDirectory(final String path) {
+		try {
+			LOGGER.debug("Removing " + path);
+			File theDirectory = new File(path);
+			if (theDirectory.exists()) {
+				theDirectory.delete();
+			}
+		} catch (Exception exp) {
+			LOGGER.error("Error while deleting the temporary directory: " + exp);
+		}
+	}
+
+	/**
 	 * @return a new engine from GrobidFactory if the execution is parallel,
 	 *         else return the instance of engine.
 	 */

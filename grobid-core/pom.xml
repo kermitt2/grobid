@@ -34,6 +34,11 @@
 			<url>http://download.java.net/maven/2/</url>
 			<layout>default</layout>
 		</repository>
+		<repository>
+		    <id>com.springsource.repository.bundles.external</id>
+		    <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+		    <url>http://repository.springsource.com/maven/bundles/external</url>
+		</repository>
         <!--<repository>-->
             <!--<id>maven.amplafi.com</id>-->
             <!--<name>Amplafi repository</name>-->
@@ -155,6 +160,14 @@
 		    <groupId>com.google.guava</groupId>
 		    <artifactId>guava</artifactId>
 		    <version>16.0.1</version>
+		</dependency>
+
+        <dependency>
+			<!-- this is an ImageIO plugin for PPM format support -->
+			<!-- see https://github.com/eug/imageio-pnm -->
+			<groupId>eugfc</groupId>
+			<artifactId>imageio-pnm</artifactId>
+			<version>1.0</version>
 		</dependency>
 
 	</dependencies>

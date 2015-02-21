@@ -236,6 +236,55 @@ public class GrobidRestService implements GrobidPathes {
 	}
 
 	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextAssetDocument(InputStream, String)
+	 */
+	@Path(PATH_FULL_TEXT_ASSET)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces("application/zip")
+	@POST
+	public Response processFulltextAssetDocument_post(@FormDataParam(INPUT) InputStream inputStream,
+	 	@FormDataParam("consolidate") String consolidate, 
+		@DefaultValue("-1") @FormDataParam("start") int startPage,
+		@DefaultValue("-1") @FormDataParam("end") int endPage,
+		@FormDataParam("generateIDs") String generateIDs) {
+		boolean consol = false;
+		boolean generate = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		if ( (generateIDs != null) && (generateIDs.equals("1")) ) {
+			generate = true;
+		}
+		return GrobidRestProcessFiles.processStatelessFulltextAssetDocument(inputStream, 
+			consol, startPage, endPage, generate);
+	}
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextAssetDocument(InputStream, String)
+	 */
+	@Path(PATH_FULL_TEXT_ASSET)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces("application/zip")
+	@PUT
+	public Response processStatelessFulltextAssetDocument(@FormDataParam(INPUT) InputStream inputStream,
+	 	@FormDataParam("consolidate") String consolidate, 
+		@DefaultValue("-1") @FormDataParam("start") int startPage,
+		@DefaultValue("-1") @FormDataParam("end") int endPage,
+		@FormDataParam("generateIDs") String generateIDs) {
+		boolean consol = false;
+		boolean generate = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		if ( (generateIDs != null) && (generateIDs.equals("1")) ) {
+			generate = true;
+		}
+		return GrobidRestProcessFiles.processStatelessFulltextAssetDocument(inputStream, 
+			consol, startPage, endPage, generate);
+	}
+
+
+	/**
 	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream, String)
 	 */
 	@Path(PATH_FULL_TEXT_HTML)
