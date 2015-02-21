@@ -1,14 +1,13 @@
 package org.grobid.service.process;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
+import java.nio.charset.Charset;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeoutException;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
@@ -26,6 +25,7 @@ import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.GrobidServiceProperties;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -226,6 +226,127 @@ public class GrobidRestProcessFiles {
         LOGGER.debug(methodLogOut());
         return response;
     }
+
+    /**
+     * Uploads the origin document which shall be extracted into TEI + assets in a ZIP 
+	 * archive.
+     *
+     * @param inputStream the data of origin document
+     * @param consolidate the consolidation option allows GROBID to exploit Crossref
+     *                             web services for improving header information		
+     * @param htmlFormat  if the result has to be formatted to be displayed as html.
+   	 * @param startPage give the starting page to consider in case of segmentation of the 
+   	 * PDF, -1 for the first page (default) 
+   	 * @param endPage give the end page to consider in case of segmentation of the 
+   	 * PDF, -1 for the last page (default)
+	 * @param generateIDs if true, generate random attribute id on the textual elements of 
+	 * the resulting TEI 		
+     * @return a response object mainly contain the TEI representation of the
+     *         full text
+     */
+    public static Response processStatelessFulltextAssetDocument(final InputStream inputStream,
+                                                            final boolean consolidate,
+															final int startPage,
+															final int endPage, 
+															final boolean generateIDs) {
+        LOGGER.debug(methodLogIn());
+        Response response = null;
+        String retVal = null;
+        boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+        File originFile = null;
+        Engine engine = null;
+		String assetPath = null;
+        try {
+            originFile = GrobidRestUtils.writeInputFile(inputStream);
+
+            if (originFile == null) {
+                response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+            } else {
+				// set the path for the asset files
+				assetPath = GrobidProperties.getTempPath().getPath() + "/" + KeyGen.getKey();
+				
+                // starts conversion process
+				engine = GrobidRestUtils.getEngine(isparallelExec);
+                if (isparallelExec) {
+                    retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), 
+						consolidate, false, assetPath, startPage, endPage, generateIDs);
+                    GrobidPoolingFactory.returnEngine(engine);
+					engine = null;
+                } else {
+                    synchronized (engine) {
+                        retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), 
+							consolidate, false, assetPath, startPage, endPage, generateIDs);
+                    }
+                }
+
+                GrobidRestUtils.removeTempFile(originFile);				
+
+                if (!GrobidRestUtils.isResultOK(retVal)) {
+                    response = Response.status(Status.NO_CONTENT).build();
+                } else {
+                   
+                    response = Response.status(Status.OK).type("application/zip").build();
+					
+					ByteArrayOutputStream ouputStream = new ByteArrayOutputStream();
+					ZipOutputStream out = new ZipOutputStream(ouputStream);
+					out.putNextEntry(new ZipEntry("tei.xml"));
+					out.write(retVal.getBytes(Charset.forName("UTF-8")));
+					// put now the assets, i.e. all the files under the asset path
+					File assetPathDir = new File(assetPath);
+					if (assetPathDir.exists()) {
+				        File[] files = assetPathDir.listFiles();
+				        if (files != null) {
+							byte[] buffer = new byte[1024];
+				            for (final File currFile : files) {
+			                    if (currFile.getName().toLowerCase().endsWith(".jpg") 
+									|| currFile.getName().toLowerCase().endsWith(".png") ) {
+									try {
+										ZipEntry ze= new ZipEntry(currFile.getName());
+										out.putNextEntry(ze);
+										FileInputStream in = new FileInputStream(currFile);
+										int len;
+										while ((len = in.read(buffer)) > 0) {
+											out.write(buffer, 0, len);
+										}
+										in.close();
+										out.closeEntry();
+									} catch (IOException e) {
+									    e.printStackTrace();
+									}
+								}
+							}
+						}
+					}
+					out.finish();
+
+					response = Response
+					            .ok()
+					            .type("application/zip")
+					            .entity(ouputStream.toByteArray())
+								.header("Content-Disposition", "attachment; filename=\"result.zip\"")
+					            .build();
+					out.close();
+                }
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+        } finally {
+            GrobidRestUtils.removeTempFile(originFile);
+			if (assetPath != null) {
+				GrobidRestUtils.removeTempDirectory(assetPath);
+			}
+            if (isparallelExec && (engine != null)) {
+                GrobidPoolingFactory.returnEngine(engine);
+            }
+        }
+        LOGGER.debug(methodLogOut());
+        return response;
+    }
+
 
     /**
      * Process a patent document encoded in TEI for extracting and parsing citations in the description body.

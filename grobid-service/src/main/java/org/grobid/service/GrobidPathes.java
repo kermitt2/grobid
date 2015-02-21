@@ -63,6 +63,11 @@ public interface GrobidPathes {
 	public static final String PATH_FULL_TEXT= "processFulltextDocument";
 	
 	/**
+	 * path extension for processing full text of documents together with image extraction.
+	 */
+	public static final String PATH_FULL_TEXT_ASSET= "processFulltextAssetDocument";
+	
+	/**
 	 * path extension for processing full text of documents.
 	 */
 	public static final String PATH_FULL_TEXT_HTML= "processFulltextDocumentHTML";

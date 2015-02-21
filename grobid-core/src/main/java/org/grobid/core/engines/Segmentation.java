@@ -26,6 +26,13 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 
+// for image conversion we're using an ImageIO plugin for PPM format support 
+// see https://github.com/eug/imageio-pnm 
+// the jar for this plugin is located in the local repository
+import eugfc.imageio.plugins.PNMRegistry;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+
 /**
  * Realise a high level segmentation of a document into cover page, document header, page footer,
  * page header, document body, bibliographical section, each bibliographical references in
@@ -180,16 +187,72 @@ public class Segmentation extends AbstractParser {
 				// we copy them to the assetPath directory
 				if (assetPath != null) {
 					// copy the files under the directory pathXML+"_data"
-					//...
+					// we copy the asset files into the path specified by assetPath
+			        File assetFile = new File(assetPath);
+			        if (!assetFile.exists()) {
+						// we create it
+						if (assetFile.mkdir()) {
+							LOGGER.debug("Directory created: " + assetFile.getPath());
+						} 
+						else {
+							LOGGER.error("Failed to create directory: " + assetFile.getPath());
+						}
+			        }
+					PNMRegistry.registerAllServicesProviders();
+				
+					// filter all .jpg and .png files
+					File directoryPath = new File(pathXML+"_data");
+					if (directoryPath.exists()) {						
+				        File[] files = directoryPath.listFiles();
+				        if (files != null) {
+				            for (final File currFile : files) {
+			                    if ( currFile.getName().toLowerCase().endsWith(".png") ) {
+									try {
+									    FileUtils.copyFileToDirectory(currFile, assetFile);
+									} catch (IOException e) {
+									    e.printStackTrace();
+									}
+								}
+								else if (currFile.getName().toLowerCase().endsWith(".jpg")  
+								 	|| currFile.getName().toLowerCase().endsWith(".ppm")
+								//	|| currFile.getName().toLowerCase().endsWith(".pbm") 
+								) {
+									try {
+										final BufferedImage bi = ImageIO.read(currFile);
+										String outputfilePath = null;
+     								    if (currFile.getName().toLowerCase().endsWith(".jpg")) {
+											outputfilePath = assetFile.getPath() + "/" + 
+												currFile.getName().toLowerCase().replace(".jpg",".png");
+										}
+										/*else if (currFile.getName().toLowerCase().endsWith(".pbm")) {
+											outputfilePath = assetFile.getPath() + "/" +
+												 currFile.getName().toLowerCase().replace(".pbm",".png");
+										}*/
+										else {
+											outputfilePath = assetFile.getPath() + "/" +
+												 currFile.getName().toLowerCase().replace(".ppm",".png");
+										}	
+										ImageIO.write(bi, "png", new File(outputfilePath));
+									} catch (IOException e) {
+									    e.printStackTrace();
+									}
+								}
+							}
+						}
+					}
 				}
 			}
             return doc;
         } finally {
             // keep it clean when leaving...
-			if (assetPath == null)
+			if (assetPath == null) {
+				// remove the pdf2xml tmp file
 				doc.cleanLxmlFile(pathXML, false);
-			else 
-				doc.cleanLxmlFile(pathXML, true);
+			}
+			else {
+				// remove the pdf2xml tmp files, including the sub-directories 
+				doc.cleanLxmlFile(pathXML, true);				
+			}
         }
     }
 	

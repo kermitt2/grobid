@@ -40,6 +40,10 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/processFulltextAssetDocument</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
         <url-pattern>/processFulltextDocumentHTML</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
