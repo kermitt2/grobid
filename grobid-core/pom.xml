@@ -168,6 +168,8 @@
 			<groupId>eugfc</groupId>
 			<artifactId>imageio-pnm</artifactId>
 			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/imageio-pnm-1.0.jar</systemPath>
 		</dependency>
 
 	</dependencies>
