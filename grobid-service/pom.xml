@@ -25,6 +25,10 @@
 					<groupId>directory-naming</groupId>
 					<artifactId>naming-java</artifactId>
 				</exclusion>
+				<exclusion>
+					<groupId>eugfc</groupId>
+					<artifactId>imageio-pnm</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
