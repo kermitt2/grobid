@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="s_1"/>
+		<fileDesc xml:id="_GIT-CC-92-28"/>
 	</teiHeader>
 	<text xml:lang="en">
 		<front>Protocols for Collecting Responses in Multi-hop Radio Networks<lb/> Chungki Lee James E. Burns Mostafa H. Ammar<lb/> GIT{CC{92/28<lb/> June 1992<lb/> Abstract<lb/> The problem of collecting responses in multi-hop radio networks is consid-ered. A given node, called the source, is to collect a speciied number of responses from nodes in a radio network. The problem arises in several applications of distributed systems. A deterministic and a randomized pro-tocol for the problem are presented. The two protocols are analyzed and their performance is compared. Conclusions are drawn about the suitability of our protocols in various network environments.<lb/> College of Computing Georgia Institute of Technology Atlanta, Georgia 30332{0280<lb/> THIS PAGE INTENTIONALLY LEFT BLANK.<lb/></front>
