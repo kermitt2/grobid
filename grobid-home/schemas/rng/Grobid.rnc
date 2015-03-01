@@ -1,0 +1,3350 @@
+default namespace = "http://www.w3.org/1998/Math/MathML"
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace ns1 = "http://www.tei-c.org/ns/1.0"
+namespace rng = "http://relaxng.org/ns/structure/1.0"
+namespace sch = "http://purl.oclc.org/dsdl/schematron"
+namespace xlink = "http://www.w3.org/1999/xlink"
+
+# Schema generated from ODD source 2015-03-01T05:27:29Z. .
+# TEI Edition: Version 2.7.0. Last updated on
+#	16th September 2014, revision 13036
+# TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
+#
+
+#
+div {
+  div {
+    math_XLINK.xmlns.attrib = empty
+    MATHML.xmlns.extra.attrib = math_XLINK.xmlns.attrib
+    MATHML.xmlns.attrib = empty, MATHML.xmlns.extra.attrib
+  }
+  MATHML.NamespaceDecl.attrib = MATHML.xmlns.attrib
+  MATHML.Common.attrib =
+    MATHML.NamespaceDecl.attrib,
+    attribute xlink:href { text }?,
+    attribute xlink:type { text }?,
+    attribute class { text }?,
+    attribute style { text }?,
+    attribute id { xsd:ID }?,
+    attribute xref { xsd:IDREF }?,
+    attribute other { text }?
+  mathml.att-fontsize = attribute fontsize { text }?
+  mathml.att-fontweight = attribute fontweight { "normal" | "bold" }?
+  mathml.att-fontstyle = attribute fontstyle { "normal" | "italic" }?
+  mathml.att-fontfamily = attribute fontfamily { text }?
+  mathml.att-color = attribute color { text }?
+  mathml.att-mathvariant = attribute mathvariant { text }?
+  mathml.att-mathsize = attribute mathsize { text }?
+  mathml.att-mathcolor = attribute mathcolor { text }?
+  mathml.att-mathbackground = attribute mathbackground { text }?
+  mathml.att-fontinfo =
+    mathml.att-fontsize,
+    mathml.att-fontweight,
+    mathml.att-fontstyle,
+    mathml.att-fontfamily,
+    mathml.att-color,
+    mathml.att-mathvariant,
+    mathml.att-mathsize,
+    mathml.att-mathcolor,
+    mathml.att-mathbackground
+  mathml.att-form = attribute form { "prefix" | "infix" | "postfix" }?
+  mathml.att-fence = attribute fence { "true" | "false" }?
+  mathml.att-separator = attribute separator { "true" | "false" }?
+  mathml.att-lspace = attribute lspace { text }?
+  mathml.att-rspace = attribute rspace { text }?
+  mathml.att-stretchy = attribute stretchy { "true" | "false" }?
+  mathml.att-symmetric = attribute symmetric { "true" | "false" }?
+  mathml.att-maxsize = attribute maxsize { text }?
+  mathml.att-minsize = attribute minsize { text }?
+  mathml.att-largeop = attribute largeop { "true" | "false" }?
+  mathml.att-movablelimits =
+    attribute movablelimits { "true" | "false" }?
+  mathml.att-accent = attribute accent { "true" | "false" }?
+  mathml.att-opinfo =
+    mathml.att-form,
+    mathml.att-fence,
+    mathml.att-separator,
+    mathml.att-lspace,
+    mathml.att-rspace,
+    mathml.att-stretchy,
+    mathml.att-symmetric,
+    mathml.att-maxsize,
+    mathml.att-minsize,
+    mathml.att-largeop,
+    mathml.att-movablelimits,
+    mathml.att-accent
+  mathml.att-width = attribute width { text }?
+  mathml.att-height = attribute height { text }?
+  mathml.att-depth = attribute depth { text }?
+  mathml.att-linebreak = attribute linebreak { text }?
+  mathml.att-sizeinfo =
+    mathml.att-width, mathml.att-height, mathml.att-depth
+  mathml.att-lquote = attribute lquote { text }?
+  mathml.att-rquote = attribute rquote { text }?
+  mathml.att-linethickness = attribute linethickness { text }?
+  mathml.att-scriptlevel = attribute scriptlevel { text }?
+  mathml.att-displaystyle = attribute displaystyle { "true" | "false" }?
+  mathml.att-scriptsizemultiplier =
+    attribute scriptsizemultiplier { text }?
+  mathml.att-scriptminsize = attribute scriptminsize { text }?
+  mathml.att-background = attribute background { text }?
+  mathml.att-veryverythinmathspace =
+    attribute veryverythinmathspace { text }?
+  mathml.att-verythinmathspace = attribute verythinmathspace { text }?
+  mathml.att-thinmathspace = attribute thinmathspace { text }?
+  mathml.att-mediummathspace = attribute mediummathspace { text }?
+  mathml.att-thickmathspace = attribute thickmathspace { text }?
+  mathml.att-verythickmathspace = attribute verythickmathspace { text }?
+  mathml.att-veryverythickmathspace =
+    attribute veryverythickmathspace { text }?
+  mathml.att-open = attribute open { text }?
+  mathml.att-close = attribute close { text }?
+  mathml.att-separators = attribute separators { text }?
+  mathml.att-subscriptshift = attribute subscriptshift { text }?
+  mathml.att-superscriptshift = attribute superscriptshift { text }?
+  mathml.att-accentunder = attribute accentunder { "true" | "false" }?
+  mathml.att-align = attribute align { text }?
+  mathml.att-numalign = attribute numalign { text }?
+  mathml.att-denomalign = attribute denomalign { text }?
+  mathml.att-rowalign = attribute rowalign { text }?
+  mathml.att-columnalign = attribute columnalign { text }?
+  mathml.att-columnwidth = attribute columnwidth { text }?
+  mathml.att-groupalign = attribute groupalign { text }?
+  mathml.att-alignmentscope = attribute alignmentscope { text }?
+  mathml.att-rowspacing = attribute rowspacing { text }?
+  mathml.att-columnspacing = attribute columnspacing { text }?
+  mathml.att-rowlines = attribute rowlines { text }?
+  mathml.att-columnlines = attribute columnlines { text }?
+  mathml.att-frame = attribute frame { "none" | "solid" | "dashed" }?
+  mathml.att-side =
+    attribute side {
+      "left" | "right" | "leftoverlap" | "rightoverlap"
+    }?
+  mathml.att-framespacing = attribute framespacing { text }?
+  mathml.att-equalrows = attribute equalrows { text }?
+  mathml.att-equalcolumns = attribute equalcolumns { text }?
+  mathml.att-tableinfo =
+    mathml.att-align,
+    mathml.att-rowalign,
+    mathml.att-columnalign,
+    mathml.att-columnwidth,
+    mathml.att-groupalign,
+    mathml.att-alignmentscope,
+    mathml.att-side,
+    mathml.att-rowspacing,
+    mathml.att-columnspacing,
+    mathml.att-rowlines,
+    mathml.att-columnlines,
+    mathml.att-width,
+    mathml.att-frame,
+    mathml.att-framespacing,
+    mathml.att-equalrows,
+    mathml.att-equalcolumns,
+    mathml.att-displaystyle
+  mathml.att-rowspan = attribute rowspan { text }?
+  mathml.att-columnspan = attribute columnspan { text }?
+  mathml.att-edge = attribute edge { "left" | "right" }?
+  mathml.att-actiontype = attribute actiontype { text }?
+  mathml.att-selection = attribute selection { text }?
+  mathml.att-name = attribute name { text }?
+  mathml.att-alt = attribute alt { text }?
+  mathml.att-index = attribute index { text }?
+  mathml.att-bevelled = attribute bevelled { text }?
+  mathml.ptoken =
+    mathml.mi | mathml.mn | mathml.mo | mathml.mtext | mathml.ms
+  mathml.attlist-mi &= MATHML.Common.attrib, mathml.att-fontinfo
+  mathml.attlist-mn &= MATHML.Common.attrib, mathml.att-fontinfo
+  mathml.attlist-mo &=
+    MATHML.Common.attrib, mathml.att-fontinfo, mathml.att-opinfo
+  mathml.attlist-mtext &= MATHML.Common.attrib, mathml.att-fontinfo
+  mathml.attlist-ms &=
+    MATHML.Common.attrib,
+    mathml.att-fontinfo,
+    mathml.att-lquote,
+    mathml.att-rquote
+  mathml.petoken = mathml.mspace
+  mathml.mspace = element mspace { mathml.attlist-mspace, empty }
+  mathml.any |= mathml.mspace
+  mathml.attlist-mspace &=
+    mathml.att-sizeinfo, mathml.att-linebreak, MATHML.Common.attrib
+  mathml.pgenschema =
+    mathml.mrow
+    | mathml.mfrac
+    | mathml.msqrt
+    | mathml.mroot
+    | mathml.menclose
+    | mathml.mstyle
+    | mathml.merror
+    | mathml.mpadded
+    | mathml.mphantom
+    | mathml.mfenced
+  mathml.attlist-mrow &= MATHML.Common.attrib
+  mathml.attlist-mfrac &=
+    MATHML.Common.attrib,
+    mathml.att-bevelled,
+    mathml.att-numalign,
+    mathml.att-denomalign,
+    mathml.att-linethickness
+  mathml.attlist-msqrt &= MATHML.Common.attrib
+  mathml.attlist-menclose &=
+    MATHML.Common.attrib,
+    [ a:defaultValue = "longdiv" ] attribute notation { text }?
+  mathml.attlist-mroot &= MATHML.Common.attrib
+  mathml.attlist-mstyle &=
+    MATHML.Common.attrib,
+    mathml.att-fontinfo,
+    mathml.att-opinfo,
+    mathml.att-lquote,
+    mathml.att-rquote,
+    mathml.att-linethickness,
+    mathml.att-scriptlevel,
+    mathml.att-scriptsizemultiplier,
+    mathml.att-scriptminsize,
+    mathml.att-background,
+    mathml.att-veryverythinmathspace,
+    mathml.att-verythinmathspace,
+    mathml.att-thinmathspace,
+    mathml.att-mediummathspace,
+    mathml.att-thickmathspace,
+    mathml.att-verythickmathspace,
+    mathml.att-veryverythickmathspace,
+    mathml.att-open,
+    mathml.att-close,
+    mathml.att-separators,
+    mathml.att-subscriptshift,
+    mathml.att-superscriptshift,
+    mathml.att-accentunder,
+    mathml.att-tableinfo,
+    mathml.att-rowspan,
+    mathml.att-columnspan,
+    mathml.att-edge,
+    mathml.att-actiontype,
+    mathml.att-selection
+  mathml.attlist-merror &= MATHML.Common.attrib
+  mathml.attlist-mpadded &=
+    MATHML.Common.attrib, mathml.att-sizeinfo, mathml.att-lspace
+  mathml.attlist-mphantom &= MATHML.Common.attrib
+  mathml.attlist-mfenced &=
+    MATHML.Common.attrib,
+    mathml.att-open,
+    mathml.att-close,
+    mathml.att-separators
+  mathml.pscrschema =
+    mathml.msub
+    | mathml.msup
+    | mathml.msubsup
+    | mathml.munder
+    | mathml.mover
+    | mathml.munderover
+    | mathml.mmultiscripts
+  mathml.attlist-msub &= MATHML.Common.attrib, mathml.att-subscriptshift
+  mathml.attlist-msup &=
+    MATHML.Common.attrib, mathml.att-superscriptshift
+  mathml.attlist-msubsup &=
+    MATHML.Common.attrib,
+    mathml.att-subscriptshift,
+    mathml.att-superscriptshift
+  mathml.attlist-munder &= MATHML.Common.attrib, mathml.att-accentunder
+  mathml.attlist-mover &= MATHML.Common.attrib, mathml.att-accent
+  mathml.attlist-munderover &=
+    MATHML.Common.attrib, mathml.att-accent, mathml.att-accentunder
+  mathml.attlist-mmultiscripts &=
+    MATHML.Common.attrib,
+    mathml.att-subscriptshift,
+    mathml.att-superscriptshift
+  mathml.pscreschema = mathml.mprescripts | mathml.none
+  mathml.mprescripts =
+    element mprescripts { mathml.attlist-mprescripts, empty }
+  mathml.any |= mathml.mprescripts
+  mathml.attlist-mprescripts &= MATHML.xmlns.attrib
+  mathml.none = element none { mathml.attlist-none, empty }
+  mathml.any |= mathml.none
+  mathml.attlist-none &= MATHML.xmlns.attrib
+  mathml.ptabschema =
+    mathml.mtable | mathml.mtr | mathml.mlabeledtr | mathml.mtd
+  mathml.attlist-mtable &= MATHML.Common.attrib, mathml.att-tableinfo
+  mathml.attlist-mtr &=
+    MATHML.Common.attrib,
+    mathml.att-rowalign,
+    mathml.att-columnalign,
+    mathml.att-groupalign
+  mathml.attlist-mlabeledtr &=
+    MATHML.Common.attrib,
+    mathml.att-rowalign,
+    mathml.att-columnalign,
+    mathml.att-groupalign
+  mathml.attlist-mtd &=
+    MATHML.Common.attrib,
+    mathml.att-rowalign,
+    mathml.att-columnalign,
+    mathml.att-groupalign,
+    mathml.att-rowspan,
+    mathml.att-columnspan
+  mathml.plschema =
+    mathml.pgenschema | mathml.pscrschema | mathml.ptabschema
+  mathml.peschema = mathml.maligngroup | mathml.malignmark
+  mathml.malignmark =
+    element malignmark { mathml.attlist-malignmark, empty }
+  mathml.any |= mathml.malignmark
+  mathml.attlist-malignmark &= mathml.att-edge
+  mathml.maligngroup =
+    element maligngroup { mathml.attlist-maligngroup, empty }
+  mathml.any |= mathml.maligngroup
+  mathml.attlist-maligngroup &=
+    MATHML.Common.attrib, mathml.att-groupalign
+  mathml.mglyph = element mglyph { mathml.attlist-mglyph, empty }
+  mathml.any |= mathml.mglyph
+  mathml.attlist-mglyph &=
+    mathml.att-alt, mathml.att-fontfamily, mathml.att-index
+  mathml.pactions = mathml.maction
+  mathml.attlist-maction &=
+    MATHML.Common.attrib, mathml.att-actiontype, mathml.att-selection
+  mathml.PresInCont =
+    mathml.ptoken
+    | mathml.petoken
+    | mathml.plschema
+    | mathml.peschema
+    | mathml.pactions
+  mathml.Presentation =
+    mathml.ptoken
+    | mathml.petoken
+    | mathml.pscreschema
+    | mathml.plschema
+    | mathml.peschema
+    | mathml.pactions
+  mathml.att-base = [ a:defaultValue = "10" ] attribute base { text }?
+  mathml.att-closure =
+    [ a:defaultValue = "closed" ] attribute closure { text }?
+  mathml.att-definition =
+    [ a:defaultValue = "" ] attribute definitionURL { text }?
+  mathml.att-encoding =
+    [ a:defaultValue = "" ] attribute encoding { text }?
+  mathml.att-nargs = [ a:defaultValue = "1" ] attribute nargs { text }?
+  mathml.att-occurrence =
+    [ a:defaultValue = "function-model" ] attribute occurrence { text }?
+  mathml.att-order =
+    [ a:defaultValue = "numeric" ] attribute order { text }?
+  mathml.att-scope =
+    [ a:defaultValue = "local" ] attribute scope { text }?
+  mathml.att-type = attribute type { text }?
+  mathml.ctoken = mathml.csymbol | mathml.ci | mathml.cn
+  mathml.attlist-ci &=
+    MATHML.Common.attrib,
+    mathml.att-type,
+    mathml.att-definition,
+    mathml.att-encoding
+  mathml.attlist-csymbol &=
+    MATHML.Common.attrib,
+    mathml.att-encoding,
+    mathml.att-type,
+    mathml.att-definition
+  mathml.attlist-cn &=
+    MATHML.Common.attrib,
+    mathml.att-type,
+    mathml.att-base,
+    mathml.att-definition,
+    mathml.att-encoding
+  mathml.cspecial = mathml.apply | mathml.reln | mathml.lambda
+  mathml.attlist-apply &= MATHML.Common.attrib
+  mathml.attlist-reln &= MATHML.Common.attrib
+  mathml.attlist-lambda &= MATHML.Common.attrib
+  mathml.cother = mathml.condition | mathml.declare | mathml.sep
+  mathml.attlist-condition &= MATHML.Common.attrib
+  mathml.attlist-declare &=
+    MATHML.Common.attrib,
+    mathml.att-type,
+    mathml.att-scope,
+    mathml.att-nargs,
+    mathml.att-occurrence,
+    mathml.att-definition,
+    mathml.att-encoding
+  mathml.sep = element sep { mathml.attlist-sep, empty }
+  mathml.any |= mathml.sep
+  mathml.attlist-sep &= MATHML.xmlns.attrib
+  mathml.csemantics =
+    mathml.semantics | mathml.annotation | mathml.annotation-xml
+  mathml.attlist-semantics &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.attlist-annotation &= MATHML.Common.attrib, mathml.att-encoding
+  mathml.attlist-annotation-xml &=
+    MATHML.Common.attrib, mathml.att-encoding
+  mathml.cconstructor =
+    mathml.interval
+    | mathml.list
+    | mathml.matrix
+    | mathml.matrixrow
+    | mathml.set
+    | mathml.vector
+    | mathml.piecewise
+  mathml.attlist-interval &= MATHML.Common.attrib, mathml.att-closure
+  mathml.attlist-set &= MATHML.Common.attrib, mathml.att-type
+  mathml.attlist-list &= MATHML.Common.attrib, mathml.att-order
+  mathml.attlist-vector &= MATHML.Common.attrib
+  mathml.attlist-matrix &= MATHML.Common.attrib
+  mathml.attlist-matrixrow &= MATHML.Common.attrib
+  mathml.attlist-piecewise &= MATHML.Common.attrib
+  mathml.attlist-piece &= MATHML.Common.attrib
+  mathml.attlist-otherwise &= MATHML.Common.attrib
+  mathml.c0ary =
+    mathml.integers
+    | mathml.reals
+    | mathml.rationals
+    | mathml.naturalnumbers
+    | mathml.complexes
+    | mathml.primes
+    | mathml.exponentiale
+    | mathml.imaginaryi
+    | mathml.notanumber
+    | mathml.true
+    | mathml.false
+    | mathml.emptyset
+    | mathml.pi
+    | mathml.eulergamma
+    | mathml.infinity
+  mathml.integers = element integers { mathml.attlist-integers, empty }
+  mathml.any |= mathml.integers
+  mathml.attlist-integers &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.reals = element reals { mathml.attlist-reals, empty }
+  mathml.any |= mathml.reals
+  mathml.attlist-reals &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.rationals =
+    element rationals { mathml.attlist-rationals, empty }
+  mathml.any |= mathml.rationals
+  mathml.attlist-rationals &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.naturalnumbers =
+    element naturalnumbers { mathml.attlist-naturalnumbers, empty }
+  mathml.any |= mathml.naturalnumbers
+  mathml.attlist-naturalnumbers &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.complexes =
+    element complexes { mathml.attlist-complexes, empty }
+  mathml.any |= mathml.complexes
+  mathml.attlist-complexes &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.primes = element primes { mathml.attlist-primes, empty }
+  mathml.any |= mathml.primes
+  mathml.attlist-primes &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.exponentiale =
+    element exponentiale { mathml.attlist-exponentiale, empty }
+  mathml.any |= mathml.exponentiale
+  mathml.attlist-exponentiale &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.imaginaryi =
+    element imaginaryi { mathml.attlist-imaginaryi, empty }
+  mathml.any |= mathml.imaginaryi
+  mathml.attlist-imaginaryi &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.notanumber =
+    element notanumber { mathml.attlist-notanumber, empty }
+  mathml.any |= mathml.notanumber
+  mathml.attlist-notanumber &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.true = element true { mathml.attlist-true, empty }
+  mathml.any |= mathml.true
+  mathml.attlist-true &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.false = element false { mathml.attlist-false, empty }
+  mathml.any |= mathml.false
+  mathml.attlist-false &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.emptyset = element emptyset { mathml.attlist-emptyset, empty }
+  mathml.any |= mathml.emptyset
+  mathml.attlist-emptyset &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.pi = element pi { mathml.attlist-pi, empty }
+  mathml.any |= mathml.pi
+  mathml.attlist-pi &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.eulergamma =
+    element eulergamma { mathml.attlist-eulergamma, empty }
+  mathml.any |= mathml.eulergamma
+  mathml.attlist-eulergamma &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.infinity = element infinity { mathml.attlist-infinity, empty }
+  mathml.any |= mathml.infinity
+  mathml.attlist-infinity &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.cfuncop1ary =
+    mathml.inverse
+    | mathml.ident
+    | mathml.domain
+    | mathml.codomain
+    | mathml.image
+  mathml.inverse = element inverse { mathml.attlist-inverse, empty }
+  mathml.any |= mathml.inverse
+  mathml.attlist-inverse &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.domain = element domain { mathml.attlist-domain, empty }
+  mathml.any |= mathml.domain
+  mathml.attlist-domain &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.codomain = element codomain { mathml.attlist-codomain, empty }
+  mathml.any |= mathml.codomain
+  mathml.attlist-codomain &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.image = element image { mathml.attlist-image, empty }
+  mathml.any |= mathml.image
+  mathml.attlist-image &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.cfuncopnary = mathml.fn | mathml.compose
+  mathml.attlist-fn &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.ident = element ident { mathml.attlist-ident, empty }
+  mathml.any |= mathml.ident
+  mathml.attlist-ident &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.compose = element compose { mathml.attlist-compose, empty }
+  mathml.any |= mathml.compose
+  mathml.attlist-compose &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.carithop1ary =
+    mathml.abs
+    | mathml.conjugate
+    | mathml.exp
+    | mathml.factorial
+    | mathml.arg
+    | mathml.real
+    | mathml.imaginary
+    | mathml.floor
+    | mathml.ceiling
+  mathml.exp = element exp { mathml.attlist-exp, empty }
+  mathml.any |= mathml.exp
+  mathml.attlist-exp &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.abs = element abs { mathml.attlist-abs, empty }
+  mathml.any |= mathml.abs
+  mathml.attlist-abs &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.arg = element arg { mathml.attlist-arg, empty }
+  mathml.any |= mathml.arg
+  mathml.attlist-arg &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.real = element real { mathml.attlist-real, empty }
+  mathml.any |= mathml.real
+  mathml.attlist-real &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.imaginary =
+    element imaginary { mathml.attlist-imaginary, empty }
+  mathml.any |= mathml.imaginary
+  mathml.attlist-imaginary &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.conjugate =
+    element conjugate { mathml.attlist-conjugate, empty }
+  mathml.any |= mathml.conjugate
+  mathml.attlist-conjugate &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.factorial =
+    element factorial { mathml.attlist-factorial, empty }
+  mathml.any |= mathml.factorial
+  mathml.attlist-factorial &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.floor = element floor { mathml.attlist-floor, empty }
+  mathml.any |= mathml.floor
+  mathml.attlist-floor &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.ceiling = element ceiling { mathml.attlist-ceiling, empty }
+  mathml.any |= mathml.ceiling
+  mathml.attlist-ceiling &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.carithop1or2ary = mathml.minus
+  mathml.minus = element minus { mathml.attlist-minus, empty }
+  mathml.any |= mathml.minus
+  mathml.attlist-minus &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.carithop2ary =
+    mathml.quotient | mathml.divide | mathml.power | mathml.rem
+  mathml.quotient = element quotient { mathml.attlist-quotient, empty }
+  mathml.any |= mathml.quotient
+  mathml.attlist-quotient &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.divide = element divide { mathml.attlist-divide, empty }
+  mathml.any |= mathml.divide
+  mathml.attlist-divide &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.power = element power { mathml.attlist-power, empty }
+  mathml.any |= mathml.power
+  mathml.attlist-power &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.rem = element rem { mathml.attlist-rem, empty }
+  mathml.any |= mathml.rem
+  mathml.attlist-rem &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.carithopnary =
+    mathml.plus
+    | mathml.times
+    | mathml.max
+    | mathml.min
+    | mathml.gcd
+    | mathml.lcm
+  mathml.plus = element plus { mathml.attlist-plus, empty }
+  mathml.any |= mathml.plus
+  mathml.attlist-plus &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.max = element max { mathml.attlist-max, empty }
+  mathml.any |= mathml.max
+  mathml.attlist-max &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.min = element min { mathml.attlist-min, empty }
+  mathml.any |= mathml.min
+  mathml.attlist-min &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.times = element times { mathml.attlist-times, empty }
+  mathml.any |= mathml.times
+  mathml.attlist-times &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.gcd = element gcd { mathml.attlist-gcd, empty }
+  mathml.any |= mathml.gcd
+  mathml.attlist-gcd &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.lcm = element lcm { mathml.attlist-lcm, empty }
+  mathml.any |= mathml.lcm
+  mathml.attlist-lcm &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.carithoproot = mathml.root
+  mathml.root = element root { mathml.attlist-root, empty }
+  mathml.any |= mathml.root
+  mathml.attlist-root &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.clogicopquant = mathml.exists | mathml.forall
+  mathml.exists = element exists { mathml.attlist-exists, empty }
+  mathml.any |= mathml.exists
+  mathml.attlist-exists &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.forall = element forall { mathml.attlist-forall, empty }
+  mathml.any |= mathml.forall
+  mathml.attlist-forall &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.clogicopnary = mathml.and | mathml.or | mathml.xor
+  mathml.and = element and { mathml.attlist-and, empty }
+  mathml.any |= mathml.and
+  mathml.attlist-and &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.or = element or { mathml.attlist-or, empty }
+  mathml.any |= mathml.or
+  mathml.attlist-or &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.xor = element xor { mathml.attlist-xor, empty }
+  mathml.any |= mathml.xor
+  mathml.attlist-xor &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.clogicop1ary = mathml.not
+  mathml.not = element not { mathml.attlist-not, empty }
+  mathml.any |= mathml.not
+  mathml.attlist-not &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.clogicop2ary = mathml.implies
+  mathml.implies = element implies { mathml.attlist-implies, empty }
+  mathml.any |= mathml.implies
+  mathml.attlist-implies &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.ccalcop =
+    mathml.log
+    | mathml.int
+    | mathml.diff
+    | mathml.partialdiff
+    | mathml.divergence
+    | mathml.grad
+    | mathml.curl
+    | mathml.laplacian
+  mathml.divergence =
+    element divergence { mathml.attlist-divergence, empty }
+  mathml.any |= mathml.divergence
+  mathml.attlist-divergence &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.grad = element grad { mathml.attlist-grad, empty }
+  mathml.any |= mathml.grad
+  mathml.attlist-grad &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.curl = element curl { mathml.attlist-curl, empty }
+  mathml.any |= mathml.curl
+  mathml.attlist-curl &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.laplacian =
+    element laplacian { mathml.attlist-laplacian, empty }
+  mathml.any |= mathml.laplacian
+  mathml.attlist-laplacian &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.log = element log { mathml.attlist-log, empty }
+  mathml.any |= mathml.log
+  mathml.attlist-log &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.int = element int { mathml.attlist-int, empty }
+  mathml.any |= mathml.int
+  mathml.attlist-int &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.diff = element diff { mathml.attlist-diff, empty }
+  mathml.any |= mathml.diff
+  mathml.attlist-diff &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.partialdiff =
+    element partialdiff { mathml.attlist-partialdiff, empty }
+  mathml.any |= mathml.partialdiff
+  mathml.attlist-partialdiff &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.ccalcop1ary = mathml.ln
+  mathml.ln = element ln { mathml.attlist-ln, empty }
+  mathml.any |= mathml.ln
+  mathml.attlist-ln &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.csetop1ary = mathml.card
+  mathml.card = element card { mathml.attlist-card, empty }
+  mathml.any |= mathml.card
+  mathml.attlist-card &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.csetop2ary = mathml.setdiff
+  mathml.setdiff = element setdiff { mathml.attlist-setdiff, empty }
+  mathml.any |= mathml.setdiff
+  mathml.attlist-setdiff &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.csetopnary =
+    mathml.union | mathml.intersect | mathml.cartesianproduct
+  mathml.union = element union { mathml.attlist-union, empty }
+  mathml.any |= mathml.union
+  mathml.attlist-union &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.intersect =
+    element intersect { mathml.attlist-intersect, empty }
+  mathml.any |= mathml.intersect
+  mathml.attlist-intersect &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.cartesianproduct =
+    element cartesianproduct { mathml.attlist-cartesianproduct, empty }
+  mathml.any |= mathml.cartesianproduct
+  mathml.attlist-cartesianproduct &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.cseqop = mathml.sum | mathml.product | mathml.limit
+  mathml.sum = element sum { mathml.attlist-sum, empty }
+  mathml.any |= mathml.sum
+  mathml.attlist-sum &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.product = element product { mathml.attlist-product, empty }
+  mathml.any |= mathml.product
+  mathml.attlist-product &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.limit = element limit { mathml.attlist-limit, empty }
+  mathml.any |= mathml.limit
+  mathml.attlist-limit &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.ctrigop =
+    mathml.sin
+    | mathml.cos
+    | mathml.tan
+    | mathml.sec
+    | mathml.csc
+    | mathml.cot
+    | mathml.sinh
+    | mathml.cosh
+    | mathml.tanh
+    | mathml.sech
+    | mathml.csch
+    | mathml.coth
+    | mathml.arcsin
+    | mathml.arccos
+    | mathml.arctan
+    | mathml.arccosh
+    | mathml.arccot
+    | mathml.arccoth
+    | mathml.arccsc
+    | mathml.arccsch
+    | mathml.arcsec
+    | mathml.arcsech
+    | mathml.arcsinh
+    | mathml.arctanh
+  mathml.sin = element sin { mathml.attlist-sin, empty }
+  mathml.any |= mathml.sin
+  mathml.attlist-sin &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.cos = element cos { mathml.attlist-cos, empty }
+  mathml.any |= mathml.cos
+  mathml.attlist-cos &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.tan = element tan { mathml.attlist-tan, empty }
+  mathml.any |= mathml.tan
+  mathml.attlist-tan &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.sec = element sec { mathml.attlist-sec, empty }
+  mathml.any |= mathml.sec
+  mathml.attlist-sec &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.csc = element csc { mathml.attlist-csc, empty }
+  mathml.any |= mathml.csc
+  mathml.attlist-csc &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.cot = element cot { mathml.attlist-cot, empty }
+  mathml.any |= mathml.cot
+  mathml.attlist-cot &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.sinh = element sinh { mathml.attlist-sinh, empty }
+  mathml.any |= mathml.sinh
+  mathml.attlist-sinh &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.cosh = element cosh { mathml.attlist-cosh, empty }
+  mathml.any |= mathml.cosh
+  mathml.attlist-cosh &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.tanh = element tanh { mathml.attlist-tanh, empty }
+  mathml.any |= mathml.tanh
+  mathml.attlist-tanh &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.sech = element sech { mathml.attlist-sech, empty }
+  mathml.any |= mathml.sech
+  mathml.attlist-sech &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.csch = element csch { mathml.attlist-csch, empty }
+  mathml.any |= mathml.csch
+  mathml.attlist-csch &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.coth = element coth { mathml.attlist-coth, empty }
+  mathml.any |= mathml.coth
+  mathml.attlist-coth &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.arcsin = element arcsin { mathml.attlist-arcsin, empty }
+  mathml.any |= mathml.arcsin
+  mathml.attlist-arcsin &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.arccos = element arccos { mathml.attlist-arccos, empty }
+  mathml.any |= mathml.arccos
+  mathml.attlist-arccos &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.arctan = element arctan { mathml.attlist-arctan, empty }
+  mathml.any |= mathml.arctan
+  mathml.attlist-arctan &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.arccosh = element arccosh { mathml.attlist-arccosh, empty }
+  mathml.any |= mathml.arccosh
+  mathml.attlist-arccosh &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.arccot = element arccot { mathml.attlist-arccot, empty }
+  mathml.any |= mathml.arccot
+  mathml.attlist-arccot &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.arccoth = element arccoth { mathml.attlist-arccoth, empty }
+  mathml.any |= mathml.arccoth
+  mathml.attlist-arccoth &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.arccsc = element arccsc { mathml.attlist-arccsc, empty }
+  mathml.any |= mathml.arccsc
+  mathml.attlist-arccsc &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.arccsch = element arccsch { mathml.attlist-arccsch, empty }
+  mathml.any |= mathml.arccsch
+  mathml.attlist-arccsch &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.arcsec = element arcsec { mathml.attlist-arcsec, empty }
+  mathml.any |= mathml.arcsec
+  mathml.attlist-arcsec &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.arcsech = element arcsech { mathml.attlist-arcsech, empty }
+  mathml.any |= mathml.arcsech
+  mathml.attlist-arcsech &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.arcsinh = element arcsinh { mathml.attlist-arcsinh, empty }
+  mathml.any |= mathml.arcsinh
+  mathml.attlist-arcsinh &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.arctanh = element arctanh { mathml.attlist-arctanh, empty }
+  mathml.any |= mathml.arctanh
+  mathml.attlist-arctanh &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.cstatopnary =
+    mathml.mean
+    | mathml.sdev
+    | mathml.variance
+    | mathml.median
+    | mathml.mode
+  mathml.mean = element mean { mathml.attlist-mean, empty }
+  mathml.any |= mathml.mean
+  mathml.attlist-mean &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.sdev = element sdev { mathml.attlist-sdev, empty }
+  mathml.any |= mathml.sdev
+  mathml.attlist-sdev &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.variance = element variance { mathml.attlist-variance, empty }
+  mathml.any |= mathml.variance
+  mathml.attlist-variance &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.median = element median { mathml.attlist-median, empty }
+  mathml.any |= mathml.median
+  mathml.attlist-median &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.mode = element mode { mathml.attlist-mode, empty }
+  mathml.any |= mathml.mode
+  mathml.attlist-mode &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.cstatopmoment = mathml.moment
+  mathml.moment = element moment { mathml.attlist-moment, empty }
+  mathml.any |= mathml.moment
+  mathml.attlist-moment &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.clalgop1ary = mathml.determinant | mathml.transpose
+  mathml.determinant =
+    element determinant { mathml.attlist-determinant, empty }
+  mathml.any |= mathml.determinant
+  mathml.attlist-determinant &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.transpose =
+    element transpose { mathml.attlist-transpose, empty }
+  mathml.any |= mathml.transpose
+  mathml.attlist-transpose &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.clalgop2ary =
+    mathml.vectorproduct | mathml.scalarproduct | mathml.outerproduct
+  mathml.vectorproduct =
+    element vectorproduct { mathml.attlist-vectorproduct, empty }
+  mathml.any |= mathml.vectorproduct
+  mathml.attlist-vectorproduct &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.scalarproduct =
+    element scalarproduct { mathml.attlist-scalarproduct, empty }
+  mathml.any |= mathml.scalarproduct
+  mathml.attlist-scalarproduct &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.outerproduct =
+    element outerproduct { mathml.attlist-outerproduct, empty }
+  mathml.any |= mathml.outerproduct
+  mathml.attlist-outerproduct &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.clalgopnary = mathml.selector
+  mathml.selector = element selector { mathml.attlist-selector, empty }
+  mathml.any |= mathml.selector
+  mathml.attlist-selector &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.cgenrel2ary = mathml.neq | mathml.factorof
+  mathml.neq = element neq { mathml.attlist-neq, empty }
+  mathml.any |= mathml.neq
+  mathml.attlist-neq &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.factorof = element factorof { mathml.attlist-factorof, empty }
+  mathml.any |= mathml.factorof
+  mathml.attlist-factorof &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.cgenrelnary =
+    mathml.eq
+    | mathml.leq
+    | mathml.lt
+    | mathml.geq
+    | mathml.gt
+    | mathml.equivalent
+    | mathml.approx
+  mathml.eq = element eq { mathml.attlist-eq, empty }
+  mathml.any |= mathml.eq
+  mathml.attlist-eq &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.equivalent =
+    element equivalent { mathml.attlist-equivalent, empty }
+  mathml.any |= mathml.equivalent
+  mathml.attlist-equivalent &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.approx = element approx { mathml.attlist-approx, empty }
+  mathml.any |= mathml.approx
+  mathml.attlist-approx &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.gt = element gt { mathml.attlist-gt, empty }
+  mathml.any |= mathml.gt
+  mathml.attlist-gt &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.lt = element lt { mathml.attlist-lt, empty }
+  mathml.any |= mathml.lt
+  mathml.attlist-lt &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.geq = element geq { mathml.attlist-geq, empty }
+  mathml.any |= mathml.geq
+  mathml.attlist-geq &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.leq = element leq { mathml.attlist-leq, empty }
+  mathml.any |= mathml.leq
+  mathml.attlist-leq &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.csetrel2ary =
+    mathml.in | mathml.notin | mathml.notsubset | mathml.notprsubset
+  mathml.in = element in { mathml.attlist-in, empty }
+  mathml.any |= mathml.in
+  mathml.attlist-in &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.notin = element notin { mathml.attlist-notin, empty }
+  mathml.any |= mathml.notin
+  mathml.attlist-notin &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.notsubset =
+    element notsubset { mathml.attlist-notsubset, empty }
+  mathml.any |= mathml.notsubset
+  mathml.attlist-notsubset &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.notprsubset =
+    element notprsubset { mathml.attlist-notprsubset, empty }
+  mathml.any |= mathml.notprsubset
+  mathml.attlist-notprsubset &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.csetrelnary = mathml.subset | mathml.prsubset
+  mathml.subset = element subset { mathml.attlist-subset, empty }
+  mathml.any |= mathml.subset
+  mathml.attlist-subset &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.prsubset = element prsubset { mathml.attlist-prsubset, empty }
+  mathml.any |= mathml.prsubset
+  mathml.attlist-prsubset &=
+    MATHML.Common.attrib, mathml.att-definition, mathml.att-encoding
+  mathml.cseqrel2ary = mathml.tendsto
+  mathml.tendsto = element tendsto { mathml.attlist-tendsto, empty }
+  mathml.any |= mathml.tendsto
+  mathml.attlist-tendsto &=
+    MATHML.Common.attrib,
+    mathml.att-definition,
+    mathml.att-encoding,
+    mathml.att-type
+  mathml.cquantifier =
+    mathml.lowlimit
+    | mathml.uplimit
+    | mathml.bvar
+    | mathml.degree
+    | mathml.logbase
+    | mathml.momentabout
+    | mathml.domainofapplication
+  mathml.attlist-lowlimit &= MATHML.Common.attrib
+  mathml.attlist-uplimit &= MATHML.Common.attrib
+  mathml.attlist-bvar &= MATHML.Common.attrib
+  mathml.attlist-degree &= MATHML.Common.attrib
+  mathml.attlist-logbase &= MATHML.Common.attrib
+  mathml.attlist-momentabout &= MATHML.Common.attrib
+  mathml.attlist-domainofapplication &= MATHML.Common.attrib
+  mathml.cop1ary =
+    mathml.cfuncop1ary
+    | mathml.carithop1ary
+    | mathml.clogicop1ary
+    | mathml.ccalcop1ary
+    | mathml.ctrigop
+    | mathml.clalgop1ary
+    | mathml.csetop1ary
+  mathml.cop2ary =
+    mathml.carithop2ary
+    | mathml.clogicop2ary
+    | mathml.clalgop2ary
+    | mathml.csetop2ary
+  mathml.copnary =
+    mathml.cfuncopnary
+    | mathml.carithopnary
+    | mathml.clogicopnary
+    | mathml.csetopnary
+    | mathml.cstatopnary
+    | mathml.clalgopnary
+  mathml.copmisc =
+    mathml.carithoproot
+    | mathml.carithop1or2ary
+    | mathml.ccalcop
+    | mathml.cseqop
+    | mathml.cstatopmoment
+    | mathml.clogicopquant
+  mathml.crel2ary =
+    mathml.cgenrel2ary | mathml.csetrel2ary | mathml.cseqrel2ary
+  mathml.crelnary = mathml.cgenrelnary | mathml.csetrelnary
+  mathml.Content =
+    mathml.ctoken
+    | mathml.cspecial
+    | mathml.cother
+    | mathml.csemantics
+    | mathml.c0ary
+    | mathml.cconstructor
+    | mathml.cquantifier
+    | mathml.cop1ary
+    | mathml.cop2ary
+    | mathml.copnary
+    | mathml.copmisc
+    | mathml.crel2ary
+    | mathml.crelnary
+  mathml.ContInPres =
+    mathml.ci
+    | mathml.csymbol
+    | mathml.cn
+    | mathml.c0ary
+    | mathml.apply
+    | mathml.fn
+    | mathml.lambda
+    | mathml.reln
+    | mathml.cconstructor
+    | mathml.semantics
+    | mathml.declare
+  mathml.ContentExpression = (mathml.Content | mathml.PresInCont)*
+  mathml.PresExpression = (mathml.Presentation | mathml.ContInPres)*
+  mathml.MathExpression = (mathml.PresInCont | mathml.ContInPres)*
+  mathml.MathMLCharacters = text | mathml.mglyph
+  mathml.ci =
+    element ci {
+      mathml.attlist-ci, (mathml.MathMLCharacters | mathml.PresInCont)*
+    }
+  mathml.any |= mathml.ci
+  mathml.csymbol =
+    element csymbol {
+      mathml.attlist-csymbol,
+      (mathml.MathMLCharacters | mathml.PresInCont)*
+    }
+  mathml.any |= mathml.csymbol
+  mathml.cn =
+    element cn {
+      mathml.attlist-cn,
+      (mathml.MathMLCharacters | mathml.sep | mathml.PresInCont)*
+    }
+  mathml.any |= mathml.cn
+  mathml.apply =
+    element apply { mathml.attlist-apply, mathml.ContentExpression }
+  mathml.any |= mathml.apply
+  mathml.reln =
+    element reln { mathml.attlist-reln, mathml.ContentExpression }
+  mathml.any |= mathml.reln
+  mathml.lambda =
+    element lambda { mathml.attlist-lambda, mathml.ContentExpression }
+  mathml.any |= mathml.lambda
+  mathml.condition =
+    element condition {
+      mathml.attlist-condition, mathml.ContentExpression
+    }
+  mathml.any |= mathml.condition
+  mathml.declare =
+    element declare { mathml.attlist-declare, mathml.ContentExpression }
+  mathml.any |= mathml.declare
+  mathml.semantics =
+    element semantics {
+      mathml.attlist-semantics, mathml.ContentExpression
+    }
+  mathml.any |= mathml.semantics
+  mathml.Annotation.content = text
+  mathml.annotation =
+    element annotation {
+      mathml.attlist-annotation, mathml.Annotation.content
+    }
+  mathml.any |= mathml.annotation
+  mathml.annotation-xml =
+    element annotation-xml { mathml.attlist-annotation-xml, mathml.any }
+  mathml.any |= mathml.annotation-xml
+  mathml.interval =
+    element interval {
+      mathml.attlist-interval, mathml.ContentExpression
+    }
+  mathml.any |= mathml.interval
+  mathml.set =
+    element set { mathml.attlist-set, mathml.ContentExpression }
+  mathml.any |= mathml.set
+  mathml.list =
+    element list { mathml.attlist-list, mathml.ContentExpression }
+  mathml.any |= mathml.list
+  mathml.vector =
+    element vector { mathml.attlist-vector, mathml.ContentExpression }
+  mathml.any |= mathml.vector
+  mathml.matrix =
+    element matrix { mathml.attlist-matrix, mathml.ContentExpression }
+  mathml.any |= mathml.matrix
+  mathml.matrixrow =
+    element matrixrow {
+      mathml.attlist-matrixrow, mathml.ContentExpression
+    }
+  mathml.any |= mathml.matrixrow
+  mathml.piecewise =
+    element piecewise {
+      mathml.attlist-piecewise, mathml.piece*, mathml.otherwise?
+    }
+  mathml.any |= mathml.piecewise
+  mathml.piece =
+    element piece { mathml.attlist-piece, mathml.ContentExpression }
+  mathml.any |= mathml.piece
+  mathml.otherwise =
+    element otherwise {
+      mathml.attlist-otherwise, mathml.ContentExpression
+    }
+  mathml.any |= mathml.otherwise
+  mathml.fn = element fn { mathml.attlist-fn, mathml.ContentExpression }
+  mathml.any |= mathml.fn
+  mathml.lowlimit =
+    element lowlimit {
+      mathml.attlist-lowlimit, mathml.ContentExpression
+    }
+  mathml.any |= mathml.lowlimit
+  mathml.uplimit =
+    element uplimit { mathml.attlist-uplimit, mathml.ContentExpression }
+  mathml.any |= mathml.uplimit
+  mathml.bvar =
+    element bvar { mathml.attlist-bvar, mathml.ContentExpression }
+  mathml.any |= mathml.bvar
+  mathml.degree =
+    element degree { mathml.attlist-degree, mathml.ContentExpression }
+  mathml.any |= mathml.degree
+  mathml.logbase =
+    element logbase { mathml.attlist-logbase, mathml.ContentExpression }
+  mathml.any |= mathml.logbase
+  mathml.momentabout =
+    element momentabout {
+      mathml.attlist-momentabout, mathml.ContentExpression
+    }
+  mathml.any |= mathml.momentabout
+  mathml.domainofapplication =
+    element domainofapplication {
+      mathml.attlist-domainofapplication, mathml.ContentExpression
+    }
+  mathml.any |= mathml.domainofapplication
+  mathml.mstyle =
+    element mstyle { mathml.attlist-mstyle, mathml.PresExpression }
+  mathml.any |= mathml.mstyle
+  mathml.merror =
+    element merror { mathml.attlist-merror, mathml.PresExpression }
+  mathml.any |= mathml.merror
+  mathml.mphantom =
+    element mphantom { mathml.attlist-mphantom, mathml.PresExpression }
+  mathml.any |= mathml.mphantom
+  mathml.mrow =
+    element mrow { mathml.attlist-mrow, mathml.PresExpression }
+  mathml.any |= mathml.mrow
+  mathml.mfrac =
+    element mfrac { mathml.attlist-mfrac, mathml.PresExpression }
+  mathml.any |= mathml.mfrac
+  mathml.msqrt =
+    element msqrt { mathml.attlist-msqrt, mathml.PresExpression }
+  mathml.any |= mathml.msqrt
+  mathml.menclose =
+    element menclose { mathml.attlist-menclose, mathml.PresExpression }
+  mathml.any |= mathml.menclose
+  mathml.mroot =
+    element mroot { mathml.attlist-mroot, mathml.PresExpression }
+  mathml.any |= mathml.mroot
+  mathml.msub =
+    element msub { mathml.attlist-msub, mathml.PresExpression }
+  mathml.any |= mathml.msub
+  mathml.msup =
+    element msup { mathml.attlist-msup, mathml.PresExpression }
+  mathml.any |= mathml.msup
+  mathml.msubsup =
+    element msubsup { mathml.attlist-msubsup, mathml.PresExpression }
+  mathml.any |= mathml.msubsup
+  mathml.mmultiscripts =
+    element mmultiscripts {
+      mathml.attlist-mmultiscripts, mathml.PresExpression
+    }
+  mathml.any |= mathml.mmultiscripts
+  mathml.munder =
+    element munder { mathml.attlist-munder, mathml.PresExpression }
+  mathml.any |= mathml.munder
+  mathml.mover =
+    element mover { mathml.attlist-mover, mathml.PresExpression }
+  mathml.any |= mathml.mover
+  mathml.munderover =
+    element munderover {
+      mathml.attlist-munderover, mathml.PresExpression
+    }
+  mathml.any |= mathml.munderover
+  mathml.mtable =
+    element mtable { mathml.attlist-mtable, mathml.PresExpression }
+  mathml.any |= mathml.mtable
+  mathml.mtr = element mtr { mathml.attlist-mtr, mathml.PresExpression }
+  mathml.any |= mathml.mtr
+  mathml.mlabeledtr =
+    element mlabeledtr {
+      mathml.attlist-mlabeledtr, mathml.PresExpression
+    }
+  mathml.any |= mathml.mlabeledtr
+  mathml.mtd = element mtd { mathml.attlist-mtd, mathml.PresExpression }
+  mathml.any |= mathml.mtd
+  mathml.maction =
+    element maction { mathml.attlist-maction, mathml.PresExpression }
+  mathml.any |= mathml.maction
+  mathml.mfenced =
+    element mfenced { mathml.attlist-mfenced, mathml.PresExpression }
+  mathml.any |= mathml.mfenced
+  mathml.mpadded =
+    element mpadded { mathml.attlist-mpadded, mathml.PresExpression }
+  mathml.any |= mathml.mpadded
+  mathml.mi =
+    element mi {
+      mathml.attlist-mi, (mathml.MathMLCharacters | mathml.malignmark)*
+    }
+  mathml.any |= mathml.mi
+  mathml.mn =
+    element mn {
+      mathml.attlist-mn, (mathml.MathMLCharacters | mathml.malignmark)*
+    }
+  mathml.any |= mathml.mn
+  mathml.mo =
+    element mo {
+      mathml.attlist-mo, (mathml.MathMLCharacters | mathml.malignmark)*
+    }
+  mathml.any |= mathml.mo
+  mathml.mtext =
+    element mtext {
+      mathml.attlist-mtext,
+      (mathml.MathMLCharacters | mathml.malignmark)*
+    }
+  mathml.any |= mathml.mtext
+  mathml.ms =
+    element ms {
+      mathml.attlist-ms, (mathml.MathMLCharacters | mathml.malignmark)*
+    }
+  mathml.any |= mathml.ms
+  mathml.att-macros = attribute macros { text }?
+  mathml.att-mode = attribute mode { text }?
+  mathml.att-display = attribute display { text }?
+  mathml.att-topinfo =
+    MATHML.Common.attrib,
+    mathml.att-macros,
+    mathml.att-mode,
+    mathml.att-display
+  mathml.att-baseline = attribute baseline { text }?
+  mathml.att-overflow =
+    [ a:defaultValue = "scroll" ]
+    attribute overflow { "scroll" | "elide" | "truncate" | "scale" }?
+  mathml.att-altimg = attribute altimg { text }?
+  mathml.att-alttext = attribute alttext { text }?
+  mathml.att-browif =
+    mathml.att-type,
+    mathml.att-name,
+    mathml.att-height,
+    mathml.att-width,
+    mathml.att-baseline,
+    mathml.att-overflow,
+    mathml.att-altimg,
+    mathml.att-alttext
+  mathml.math =
+    element math { mathml.attlist-math, mathml.MathExpression }
+  mathml.any |= mathml.math
+  mathml.attlist-math &= mathml.att-topinfo, mathml.att-browif
+  mathml.any |= text
+}
+tei_macro.paraContent =
+  (text
+   | tei_model.gLike
+   | tei_model.phrase
+   | tei_model.inter
+   | tei_model.global)*
+tei_macro.limitedContent =
+  (text | tei_model.limitedPhrase | tei_model.inter)*
+tei_macro.phraseSeq =
+  (text | tei_model.gLike | tei_model.phrase | tei_model.global)*
+tei_macro.phraseSeq.limited =
+  (text | tei_model.limitedPhrase | tei_model.global)*
+tei_macro.specialPara =
+  (text
+   | tei_model.gLike
+   | tei_model.phrase
+   | tei_model.inter
+   | tei_model.divPart
+   | tei_model.global)*
+tei_data.certainty = "high" | "medium" | "low" | "unknown"
+tei_data.probability =
+  xsd:double { minInclusive = "0" maxInclusive = "1" }
+tei_data.numeric =
+  xsd:double
+  | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
+  | xsd:decimal
+tei_data.count = xsd:nonNegativeInteger
+tei_data.temporal.w3c =
+  xsd:date
+  | xsd:gYear
+  | xsd:gMonth
+  | xsd:gDay
+  | xsd:gYearMonth
+  | xsd:gMonthDay
+  | xsd:time
+  | xsd:dateTime
+tei_data.truthValue = xsd:boolean
+tei_data.xTruthValue = xsd:boolean | "unknown" | "inapplicable"
+tei_data.language = xsd:language | ""
+tei_data.outputMeasurement =
+  xsd:token {
+    pattern =
+      "[\-+]?\d+(\.\d+)?(%|cm|mm|in|pt|pc|px|em|ex|gd|rem|vw|vh|vm)"
+  }
+tei_data.pointer = xsd:anyURI
+tei_data.version = xsd:token { pattern = "[\d]+(\.[\d]+){0,2}" }
+tei_data.word = xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+tei_data.text = xsd:string
+tei_data.name = xsd:Name
+tei_data.enumerated = tei_data.name
+tei_data.temporal.iso =
+  xsd:date
+  | xsd:gYear
+  | xsd:gMonth
+  | xsd:gDay
+  | xsd:gYearMonth
+  | xsd:gMonthDay
+  | xsd:time
+  | xsd:dateTime
+  | xsd:token { pattern = "[0-9.,DHMPRSTWYZ/:+\-]+" }
+tei_att.canonical.attributes =
+  tei_att.canonical.attribute.key, tei_att.canonical.attribute.ref
+tei_att.canonical.attribute.key =
+  
+  ## provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind.
+  attribute key { tei_data.text }?
+tei_att.canonical.attribute.ref =
+  
+  ## (reference) provides an explicit means of locating a full definition for the entity being named by means of one or more URIs.
+  attribute ref {
+    list { tei_data.pointer+ }
+  }?
+tei_att.ranging.attributes =
+  tei_att.ranging.attribute.atLeast,
+  tei_att.ranging.attribute.atMost,
+  tei_att.ranging.attribute.min,
+  tei_att.ranging.attribute.max,
+  tei_att.ranging.attribute.confidence
+tei_att.ranging.attribute.atLeast =
+  
+  ## gives a minimum estimated value for the approximate measurement.
+  attribute atLeast { tei_data.numeric }?
+tei_att.ranging.attribute.atMost =
+  
+  ## gives a maximum estimated value for the approximate measurement.
+  attribute atMost { tei_data.numeric }?
+tei_att.ranging.attribute.min =
+  
+  ## where the measurement summarizes more than one observation or a range, supplies the minimum value observed.
+  attribute min { tei_data.numeric }?
+tei_att.ranging.attribute.max =
+  
+  ## where the measurement summarizes more than one observation or a range, supplies the maximum value observed.
+  attribute max { tei_data.numeric }?
+tei_att.ranging.attribute.confidence =
+  
+  ## specifies the degree of statistical confidence (between zero and one) that a value falls within the range specified by min and max, or the proportion of observed values that fall within that range.
+  attribute confidence { tei_data.probability }?
+tei_att.dimensions.attributes =
+  tei_att.ranging.attributes,
+  tei_att.dimensions.attribute.unit,
+  tei_att.dimensions.attribute.quantity,
+  tei_att.dimensions.attribute.extent,
+  tei_att.dimensions.attribute.precision,
+  tei_att.dimensions.attribute.scope
+tei_att.dimensions.attribute.unit =
+  
+  ## names the unit used for the measurement
+  ## Suggested values include: 1] cm(centimetres) ; 2] mm(millimetres) ; 3] in(inches) ; 4] lines; 5] chars(characters) 
+  attribute unit {
+    
+    ## (centimetres) 
+    "cm"
+    | 
+      ## (millimetres) 
+      "mm"
+    | 
+      ## (inches) 
+      "in"
+    | 
+      ## lines of text
+      "lines"
+    | 
+      ## (characters) characters of text
+      "chars"
+    | xsd:Name
+  }?
+tei_att.dimensions.attribute.quantity =
+  
+  ## specifies the length in the units specified
+  attribute quantity { tei_data.numeric }?
+tei_att.dimensions.attribute.extent =
+  
+  ## indicates the size of the object concerned using a project-specific vocabulary combining quantity and units in a single string of words.
+  attribute extent { tei_data.text }?
+tei_att.dimensions.attribute.precision =
+  
+  ## characterizes the precision of the values specified by the other attributes.
+  attribute precision { tei_data.certainty }?
+tei_att.dimensions.attribute.scope =
+  
+  ## where the measurement summarizes more than one observation, specifies the applicability of this measurement.
+  ## Sample values include: 1] all; 2] most; 3] range
+  attribute scope { tei_data.enumerated }?
+tei_att.cReferencing.attributes = tei_att.cReferencing.attribute.cRef
+tei_att.cReferencing.attribute.cRef =
+  
+  ## (canonical reference) specifies the destination of the pointer by supplying a canonical reference expressed using the scheme defined in a refsDecl element in the TEI header
+  attribute cRef { tei_data.text }?
+tei_att.datable.w3c.attributes =
+  tei_att.datable.w3c.attribute.when,
+  tei_att.datable.w3c.attribute.notBefore,
+  tei_att.datable.w3c.attribute.notAfter,
+  tei_att.datable.w3c.attribute.from,
+  tei_att.datable.w3c.attribute.to
+tei_att.datable.w3c.attribute.when =
+  
+  ## supplies the value of the date or time in a standard form, e.g. yyyy-mm-dd.
+  attribute when { tei_data.temporal.w3c }?
+tei_att.datable.w3c.attribute.notBefore =
+  
+  ## specifies the earliest possible date for the event in standard form, e.g. yyyy-mm-dd.
+  attribute notBefore { tei_data.temporal.w3c }?
+tei_att.datable.w3c.attribute.notAfter =
+  
+  ## specifies the latest possible date for the event in standard form, e.g. yyyy-mm-dd.
+  attribute notAfter { tei_data.temporal.w3c }?
+tei_att.datable.w3c.attribute.from =
+  
+  ## indicates the starting point of the period in standard form, e.g. yyyy-mm-dd.
+  attribute from { tei_data.temporal.w3c }?
+tei_att.datable.w3c.attribute.to =
+  
+  ## indicates the ending point of the period in standard form, e.g. yyyy-mm-dd.
+  attribute to { tei_data.temporal.w3c }?
+tei_att.datable.attributes =
+  tei_att.datable.w3c.attributes,
+  tei_att.datable.iso.attributes,
+  tei_att.datable.custom.attributes,
+  tei_att.datable.attribute.calendar,
+  tei_att.datable.attribute.period
+tei_att.datable.attribute.calendar =
+  
+  ## indicates the system or calendar to which the date represented by the content of this element belongs.
+  attribute calendar { tei_data.pointer }?
+sch:pattern [
+  id = "Grobid-att.datable-calendar-calendar-constraint-1"
+  "\x{a}" ~
+  "      "
+  sch:rule [
+    context = "tei:*[@calendar]"
+    "\x{a}" ~
+    "            "
+    sch:assert [
+      test = "string-length(.) gt 0"
+      "\x{a}" ~
+      "@calendar indicates the system or calendar to which the date represented by the content of this element\x{a}" ~
+      "belongs, but this "
+      sch:name [ ]
+      " element has no textual content."
+    ]
+    "\x{a}" ~
+    "          "
+  ]
+  "\x{a}" ~
+  "   "
+]
+tei_att.datable.attribute.period =
+  
+  ## supplies a pointer to some location defining a named period of time within which the datable item is understood to have occurred.
+  attribute period { tei_data.pointer }?
+tei_att.declarable.attributes = tei_att.declarable.attribute.default
+tei_att.declarable.attribute.default =
+  
+  ## indicates whether or not this element is selected by default when its parent is selected.
+  [ a:defaultValue = "false" ]
+  attribute default {
+    
+    ## This element is selected if its parent is selected
+    "true"
+    | 
+      ## This element can only be selected explicitly, unless it is the only one of its kind, in which case it is selected if its parent is selected.
+      "false"
+  }?
+tei_att.declaring.attributes = tei_att.declaring.attribute.decls
+tei_att.declaring.attribute.decls =
+  
+  ## identifies one or more declarable elements within the header, which are understood to apply to the element bearing this attribute and its content.
+  attribute decls {
+    list { tei_data.pointer+ }
+  }?
+tei_att.fragmentable.attributes = tei_att.fragmentable.attribute.part
+tei_att.fragmentable.attribute.part =
+  
+  ## specifies whether or not its parent element is fragmented in some way, typically by some other overlapping structure: for example a speech which is divided between two or more verse stanzas, a paragraph which is split across a page division, a verse line which is divided between two speakers.
+  [ a:defaultValue = "N" ]
+  attribute part {
+    
+    ## (yes) the element is fragmented in some (unspecified) respect
+    "Y"
+    | 
+      ## (no) either the element is not fragmented, or no claim is made as to its completeness.
+      "N"
+    | 
+      ## (initial) this is the initial part of a fragmented element
+      "I"
+    | 
+      ## (medial) this is a medial part of a fragmented element
+      "M"
+    | 
+      ## (final) this is the final part of a fragmented element
+      "F"
+  }?
+tei_att.divLike.attributes =
+  tei_att.fragmentable.attributes,
+  tei_att.divLike.attribute.org,
+  tei_att.divLike.attribute.sample
+tei_att.divLike.attribute.org =
+  
+  ## (organization) specifies how the content of the division is organized.
+  [ a:defaultValue = "uniform" ]
+  attribute org {
+    
+    ## no claim is made about the sequence in which the immediate contents of this division are to be processed, or their inter-relationships.
+    "composite"
+    | 
+      ## the immediate contents of this element are regarded as forming a logical unit, to be processed in sequence.
+      "uniform"
+  }?
+tei_att.divLike.attribute.sample =
+  
+  ## indicates whether this division is a sample of the original source and if so, from which part.
+  [ a:defaultValue = "complete" ]
+  attribute sample {
+    
+    ## division lacks material present at end in source.
+    "initial"
+    | 
+      ## division lacks material at start and end.
+      "medial"
+    | 
+      ## division lacks material at start.
+      "final"
+    | 
+      ## position of sampled material within original unknown.
+      "unknown"
+    | 
+      ## division is not a sample.
+      "complete"
+  }?
+tei_att.docStatus.attributes = tei_att.docStatus.attribute.status
+tei_att.docStatus.attribute.status =
+  
+  ## describes the status of a document either currently or, when associated with a dated element, at the time indicated.
+  ## Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] draft; 6] embargoed; 7] expired; 8] frozen; 9] galley; 10] proposed; 11] published; 12] recommendation; 13] submitted; 14] unfinished; 15] withdrawn
+  [ a:defaultValue = "draft" ] attribute status { tei_data.enumerated }?
+tei_att.responsibility.attributes =
+  tei_att.source.attributes,
+  tei_att.responsibility.attribute.cert,
+  tei_att.responsibility.attribute.resp
+tei_att.responsibility.attribute.cert =
+  
+  ## (certainty) signifies the degree of certainty associated with the intervention or interpretation.
+  attribute cert { tei_data.certainty }?
+tei_att.responsibility.attribute.resp =
+  
+  ## (responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.
+  attribute resp {
+    list { tei_data.pointer+ }
+  }?
+tei_att.editLike.attributes =
+  tei_att.dimensions.attributes,
+  tei_att.responsibility.attributes,
+  tei_att.editLike.attribute.evidence,
+  tei_att.editLike.attribute.instant
+tei_att.editLike.attribute.evidence =
+  
+  ## indicates the nature of the evidence supporting the reliability or accuracy of the intervention or interpretation.
+  ## Suggested values include: 1] internal; 2] external; 3] conjecture
+  attribute evidence {
+    list {
+      (
+       ## there is internal evidence to support the intervention.
+       "internal"
+       | 
+         ## there is external evidence to support the intervention.
+         "external"
+       | 
+         ## the intervention or interpretation has been made by the editor, cataloguer, or scholar on the basis of their expertise.
+         "conjecture"
+       | xsd:Name)+
+    }
+  }?
+tei_att.editLike.attribute.instant =
+  
+  ## indicates whether this is an instant revision or not.
+  [ a:defaultValue = "false" ]
+  attribute instant { tei_data.xTruthValue }?
+tei_att.global.attributes =
+  tei_att.global.linking.attributes,
+  tei_att.global.attribute.xmlid,
+  tei_att.global.attribute.n,
+  tei_att.global.attribute.xmllang,
+  tei_att.global.attribute.rend,
+  tei_att.global.attribute.style,
+  tei_att.global.attribute.rendition,
+  tei_att.global.attribute.xmlbase,
+  tei_att.global.attribute.xmlspace
+tei_att.global.attribute.xmlid =
+  
+  ## (identifier) provides a unique identifier for the element bearing the attribute.
+  attribute xml:id { xsd:ID }?
+tei_att.global.attribute.n =
+  
+  ## (number) gives a number (or other label) for an element, which is not necessarily unique within the document.
+  attribute n { tei_data.text }?
+tei_att.global.attribute.xmllang =
+  
+  ## (language) indicates the language of the element content using a tag generated according to BCP 47.
+  attribute xml:lang { tei_data.language }?
+tei_att.global.attribute.rend =
+  
+  ## (rendition) indicates how the element in question was rendered or presented in the source text.
+  attribute rend {
+    list { tei_data.word+ }
+  }?
+tei_att.global.attribute.style =
+  
+  ## contains an expression in some formal style definition language which defines the rendering or presentation used for this element in the source text
+  attribute style { tei_data.text }?
+tei_att.global.attribute.rendition =
+  
+  ## points to a description of the rendering or presentation used for this element in the source text.
+  attribute rendition {
+    list { tei_data.pointer+ }
+  }?
+tei_att.global.attribute.xmlbase =
+  
+  ## provides a base URI reference with which applications can resolve relative URI references into absolute URI references.
+  attribute xml:base { tei_data.pointer }?
+tei_att.global.attribute.xmlspace =
+  
+  ## signals an intention about how white space should be managed by applications.
+  attribute xml:space {
+    
+    ## signals that the application's default white-space processing modes are acceptable
+    "default"
+    | 
+      ## indicates the intent that applications preserve all white space
+      "preserve"
+  }?
+tei_att.internetMedia.attributes =
+  tei_att.internetMedia.attribute.mimeType
+tei_att.internetMedia.attribute.mimeType =
+  
+  ## (MIME media type) specifies the applicable multimedia internet mail extension (MIME) media type
+  attribute mimeType {
+    list { tei_data.word+ }
+  }?
+tei_att.media.attributes =
+  tei_att.internetMedia.attributes,
+  tei_att.media.attribute.width,
+  tei_att.media.attribute.height,
+  tei_att.media.attribute.scale
+tei_att.media.attribute.width =
+  
+  ## Where the media are displayed, indicates the display width
+  attribute width { tei_data.outputMeasurement }?
+tei_att.media.attribute.height =
+  
+  ## Where the media are displayed, indicates the display height
+  attribute height { tei_data.outputMeasurement }?
+tei_att.media.attribute.scale =
+  
+  ## Where the media are displayed, indicates a scale factor to be applied when generating the desired display size
+  attribute scale { tei_data.numeric }?
+tei_att.resourced.attributes = tei_att.resourced.attribute.url
+tei_att.resourced.attribute.url =
+  
+  ## (uniform resource locator) specifies the URL from which the media concerned may be obtained.
+  attribute url { tei_data.pointer }
+tei_att.naming.attributes =
+  tei_att.canonical.attributes,
+  tei_att.naming.attribute.role,
+  tei_att.naming.attribute.nymRef
+tei_att.naming.attribute.role =
+  
+  ## may be used to specify further information about the entity referenced by this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place.
+  attribute role {
+    list { tei_data.enumerated+ }
+  }?
+tei_att.naming.attribute.nymRef =
+  
+  ## (reference to the canonical name) provides a means of locating the canonical form (nym) of the names associated with the object named by the element bearing it.
+  attribute nymRef {
+    list { tei_data.pointer+ }
+  }?
+tei_att.placement.attributes = tei_att.placement.attribute.place
+tei_att.placement.attribute.place =
+  
+  ## specifies where this item is placed
+  ## Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6] overleaf; 7] above; 8] end; 9] inline; 10] inspace
+  attribute place {
+    list {
+      (
+       ## below the line
+       "below"
+       | 
+         ## at the foot of the page
+         "bottom"
+       | 
+         ## in the margin (left, right, or both)
+         "margin"
+       | 
+         ## at the top of the page
+         "top"
+       | 
+         ## on the opposite, i.e. facing, page
+         "opposite"
+       | 
+         ## on the other side of the leaf
+         "overleaf"
+       | 
+         ## above the line
+         "above"
+       | 
+         ## at the end of e.g. chapter or volume.
+         "end"
+       | 
+         ## within the body of the text.
+         "inline"
+       | 
+         ## in a predefined space, for example left by an earlier scribe.
+         "inspace"
+       | xsd:Name)+
+    }
+  }?
+tei_att.typed.attributes =
+  tei_att.typed.attribute.type, tei_att.typed.attribute.subtype
+tei_att.typed.attribute.type =
+  
+  ## characterizes the element in some sense, using any convenient classification scheme or typology.
+  attribute type { tei_data.enumerated }?
+tei_att.typed.attribute.subtype =
+  
+  ## provides a sub-categorization of the element, if needed
+  attribute subtype { tei_data.enumerated }?
+sch:pattern [
+  id = "Grobid-att.typed-subtypeTyped-constraint-2"
+  "\x{a}" ~
+  "      "
+  sch:rule [
+    context = "*[@subtype]"
+    "\x{a}" ~
+    "        "
+    sch:assert [
+      test = "@type"
+      "The "
+      sch:name [ ]
+      " element should not be categorized in detail with @subtype\x{a}" ~
+      " unless also categorized in general with @type"
+    ]
+    "\x{a}" ~
+    "      "
+  ]
+  "\x{a}" ~
+  "   "
+]
+tei_att.pointing.attributes =
+  tei_att.pointing.attribute.targetLang,
+  tei_att.pointing.attribute.target,
+  tei_att.pointing.attribute.evaluate
+tei_att.pointing.attribute.targetLang =
+  
+  ## specifies the language of the content to be found at the destination referenced by target, using a language tag generated according to BCP 47.
+  attribute targetLang { tei_data.language }?
+sch:pattern [
+  id = "Grobid-att.pointing-targetLang-targetLang-constraint-3"
+  "\x{a}" ~
+  "      "
+  sch:rule [
+    context = "tei:*[not(self::tei:schemaSpec)][@targetLang]"
+    "\x{a}" ~
+    "            "
+    sch:assert [
+      test = "count(@target)"
+      "@targetLang can only be used if @target is specified."
+    ]
+    "\x{a}" ~
+    "          "
+  ]
+  "\x{a}" ~
+  "   "
+]
+tei_att.pointing.attribute.target =
+  
+  ## specifies the destination of the reference by supplying one or more URI References
+  attribute target {
+    list { tei_data.pointer+ }
+  }?
+tei_att.pointing.attribute.evaluate =
+  
+  ## specifies the intended meaning when the target of a pointer is itself a pointer.
+  attribute evaluate {
+    
+    ## if the element pointed to is itself a pointer, then the target of that pointer will be taken, and so on, until an element is found which is not a pointer.
+    "all"
+    | 
+      ## if the element pointed to is itself a pointer, then its target (whether a pointer or not) is taken as the target of this pointer.
+      "one"
+    | 
+      ## no further evaluation of targets is carried out beyond that needed to find the element specified in the pointer's target.
+      "none"
+  }?
+tei_att.sortable.attributes = tei_att.sortable.attribute.sortKey
+tei_att.sortable.attribute.sortKey =
+  
+  ## supplies the sort key for this element in an index, list or group which contains it.
+  attribute sortKey { tei_data.word }?
+tei_att.tableDecoration.attributes =
+  tei_att.tableDecoration.attribute.role,
+  tei_att.tableDecoration.attribute.rows,
+  tei_att.tableDecoration.attribute.cols
+tei_att.tableDecoration.attribute.role =
+  
+  ## indicates the kind of information held in this cell or in each cell of this row.
+  ## Suggested values include: 1] label; 2] data
+  [ a:defaultValue = "data" ]
+  attribute role {
+    
+    ## labelling or descriptive information only.
+    "label"
+    | 
+      ## data values.
+      "data"
+    | xsd:Name
+  }?
+tei_att.tableDecoration.attribute.rows =
+  
+  ## indicates the number of rows occupied by this cell or row.
+  [ a:defaultValue = "1" ] attribute rows { tei_data.count }?
+tei_att.tableDecoration.attribute.cols =
+  
+  ## (columns) indicates the number of columns occupied by this cell or row.
+  [ a:defaultValue = "1" ] attribute cols { tei_data.count }?
+tei_att.citing.attributes =
+  tei_att.citing.attribute.unit,
+  tei_att.citing.attribute.from,
+  tei_att.citing.attribute.to
+tei_att.citing.attribute.unit =
+  
+  ## identifies the unit of information conveyed by the element, e.g. columns, pages, volume.
+  ## Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] part; 7] column
+  attribute unit {
+    
+    ## the element contains a volume number.
+    "volume"
+    | 
+      ## the element contains an issue number, or volume and issue numbers.
+      "issue"
+    | 
+      ## the element contains a page number or page range.
+      "page"
+    | 
+      ## the element contains a line number or line range.
+      "line"
+    | 
+      ## the element contains a chapter indication (number and/or title)
+      "chapter"
+    | 
+      ## the element identifies a part of a book or collection.
+      "part"
+    | 
+      ## the element identifies a column.
+      "column"
+    | xsd:Name
+  }?
+tei_att.citing.attribute.from =
+  
+  ## specifies the starting point of the range of units indicated by the unit attribute.
+  attribute from { tei_data.word }?
+tei_att.citing.attribute.to =
+  
+  ## specifies the end-point of the range of units indicated by the unit attribute.
+  attribute to { tei_data.word }?
+tei_model.nameLike.agent = tei_name | tei_orgName | tei_persName
+tei_model.nameLike.agent_alternation =
+  tei_name | tei_orgName | tei_persName
+tei_model.nameLike.agent_sequence = tei_name, tei_orgName, tei_persName
+tei_model.nameLike.agent_sequenceOptional =
+  tei_name?, tei_orgName?, tei_persName?
+tei_model.nameLike.agent_sequenceOptionalRepeatable =
+  tei_name*, tei_orgName*, tei_persName*
+tei_model.nameLike.agent_sequenceRepeatable =
+  tei_name+, tei_orgName+, tei_persName+
+tei_model.segLike = notAllowed
+tei_model.hiLike = tei_hi
+tei_model.hiLike_alternation = tei_hi
+tei_model.hiLike_sequence = tei_hi
+tei_model.hiLike_sequenceOptional = tei_hi?
+tei_model.hiLike_sequenceOptionalRepeatable = tei_hi*
+tei_model.hiLike_sequenceRepeatable = tei_hi+
+tei_model.emphLike = tei_term | tei_title
+tei_model.emphLike_alternation = tei_term | tei_title
+tei_model.emphLike_sequence = tei_term, tei_title
+tei_model.emphLike_sequenceOptional = tei_term?, tei_title?
+tei_model.emphLike_sequenceOptionalRepeatable = tei_term*, tei_title*
+tei_model.emphLike_sequenceRepeatable = tei_term+, tei_title+
+tei_model.highlighted = tei_model.hiLike | tei_model.emphLike
+tei_model.dateLike = tei_date
+tei_model.dateLike_alternation = tei_date
+tei_model.dateLike_sequence = tei_date
+tei_model.dateLike_sequenceOptional = tei_date?
+tei_model.dateLike_sequenceOptionalRepeatable = tei_date*
+tei_model.dateLike_sequenceRepeatable = tei_date+
+tei_model.measureLike = notAllowed
+tei_model.measureLike_alternation = notAllowed
+tei_model.measureLike_sequence = empty
+tei_model.measureLike_sequenceOptional = empty
+tei_model.measureLike_sequenceOptionalRepeatable = empty
+tei_model.measureLike_sequenceRepeatable = notAllowed
+tei_model.egLike = notAllowed
+tei_model.egLike_alternation = notAllowed
+tei_model.egLike_sequence = empty
+tei_model.egLike_sequenceOptional = empty
+tei_model.egLike_sequenceOptionalRepeatable = empty
+tei_model.egLike_sequenceRepeatable = notAllowed
+tei_model.graphicLike = tei_graphic | tei_formula
+tei_model.offsetLike = notAllowed
+tei_model.offsetLike_alternation = notAllowed
+tei_model.offsetLike_sequence = empty
+tei_model.offsetLike_sequenceOptional = empty
+tei_model.offsetLike_sequenceOptionalRepeatable = empty
+tei_model.offsetLike_sequenceRepeatable = notAllowed
+tei_model.pPart.msdesc = notAllowed
+tei_model.pPart.editorial = notAllowed
+tei_model.pPart.editorial_alternation = notAllowed
+tei_model.pPart.editorial_sequence = empty
+tei_model.pPart.editorial_sequenceOptional = empty
+tei_model.pPart.editorial_sequenceOptionalRepeatable = empty
+tei_model.pPart.editorial_sequenceRepeatable = notAllowed
+tei_model.pPart.transcriptional = notAllowed
+tei_model.pPart.transcriptional_alternation = notAllowed
+tei_model.pPart.transcriptional_sequence = empty
+tei_model.pPart.transcriptional_sequenceOptional = empty
+tei_model.pPart.transcriptional_sequenceOptionalRepeatable = empty
+tei_model.pPart.transcriptional_sequenceRepeatable = notAllowed
+tei_model.pPart.edit =
+  tei_model.pPart.editorial | tei_model.pPart.transcriptional
+tei_model.ptrLike = tei_ptr | tei_ref
+tei_model.lPart = notAllowed
+tei_model.global.meta = tei_link
+tei_model.milestoneLike = tei_anchor
+tei_model.gLike = notAllowed
+tei_model.oddDecl = notAllowed
+tei_model.oddDecl_alternation = notAllowed
+tei_model.oddDecl_sequence = empty
+tei_model.oddDecl_sequenceOptional = empty
+tei_model.oddDecl_sequenceOptionalRepeatable = empty
+tei_model.oddDecl_sequenceRepeatable = notAllowed
+tei_model.phrase.xml = notAllowed
+tei_model.specDescLike = notAllowed
+tei_model.biblLike = tei_bibl | tei_biblStruct | tei_listBibl
+tei_model.biblLike_alternation =
+  tei_bibl | tei_biblStruct | tei_listBibl
+tei_model.biblLike_sequence = tei_bibl, tei_biblStruct, tei_listBibl
+tei_model.biblLike_sequenceOptional =
+  tei_bibl?, tei_biblStruct?, tei_listBibl?
+tei_model.biblLike_sequenceOptionalRepeatable =
+  tei_bibl*, tei_biblStruct*, tei_listBibl*
+tei_model.biblLike_sequenceRepeatable =
+  tei_bibl+, tei_biblStruct+, tei_listBibl+
+tei_model.headLike = tei_head
+tei_model.headLike_alternation = tei_head
+tei_model.headLike_sequence = tei_head
+tei_model.headLike_sequenceOptional = tei_head?
+tei_model.headLike_sequenceOptionalRepeatable = tei_head*
+tei_model.headLike_sequenceRepeatable = tei_head+
+tei_model.labelLike = tei_label
+tei_model.labelLike_alternation = tei_label
+tei_model.labelLike_sequence = tei_label
+tei_model.labelLike_sequenceOptional = tei_label?
+tei_model.labelLike_sequenceOptionalRepeatable = tei_label*
+tei_model.labelLike_sequenceRepeatable = tei_label+
+tei_model.listLike = tei_list | tei_table
+tei_model.listLike_alternation = tei_list | tei_table
+tei_model.listLike_sequence = tei_list, tei_table
+tei_model.listLike_sequenceOptional = tei_list?, tei_table?
+tei_model.listLike_sequenceOptionalRepeatable = tei_list*, tei_table*
+tei_model.listLike_sequenceRepeatable = tei_list+, tei_table+
+tei_model.noteLike = tei_note
+tei_model.lLike = notAllowed
+tei_model.lLike_alternation = notAllowed
+tei_model.lLike_sequence = empty
+tei_model.lLike_sequenceOptional = empty
+tei_model.lLike_sequenceOptionalRepeatable = empty
+tei_model.lLike_sequenceRepeatable = notAllowed
+tei_model.pLike = tei_p
+tei_model.pLike_alternation = tei_p
+tei_model.pLike_sequence = tei_p
+tei_model.pLike_sequenceOptional = tei_p?
+tei_model.pLike_sequenceOptionalRepeatable = tei_p*
+tei_model.pLike_sequenceRepeatable = tei_p+
+tei_model.stageLike = notAllowed
+tei_model.stageLike_alternation = notAllowed
+tei_model.stageLike_sequence = empty
+tei_model.stageLike_sequenceOptional = empty
+tei_model.stageLike_sequenceOptionalRepeatable = empty
+tei_model.stageLike_sequenceRepeatable = notAllowed
+tei_model.global.edit = notAllowed
+tei_model.divPart = tei_model.lLike | tei_model.pLike
+tei_model.personLike = tei_org
+tei_model.placeNamePart = tei_country | tei_region | tei_settlement
+tei_model.placeNamePart_alternation =
+  tei_country | tei_region | tei_settlement
+tei_model.placeNamePart_sequence =
+  tei_country, tei_region, tei_settlement
+tei_model.placeNamePart_sequenceOptional =
+  tei_country?, tei_region?, tei_settlement?
+tei_model.placeNamePart_sequenceOptionalRepeatable =
+  tei_country*, tei_region*, tei_settlement*
+tei_model.placeNamePart_sequenceRepeatable =
+  tei_country+, tei_region+, tei_settlement+
+tei_model.placeStateLike = tei_model.placeNamePart
+tei_model.placeStateLike_alternation =
+  tei_model.placeNamePart_alternation
+tei_model.placeStateLike_sequence = tei_model.placeNamePart_sequence
+tei_model.placeStateLike_sequenceOptional =
+  tei_model.placeNamePart_sequenceOptional?
+tei_model.placeStateLike_sequenceOptionalRepeatable =
+  tei_model.placeNamePart_sequenceOptionalRepeatable*
+tei_model.placeStateLike_sequenceRepeatable =
+  tei_model.placeNamePart_sequenceRepeatable+
+tei_model.orgPart = notAllowed
+tei_model.publicationStmtPart.agency = tei_publisher
+tei_model.publicationStmtPart.detail =
+  tei_address | tei_date | tei_pubPlace | tei_idno | tei_availability
+tei_model.availabilityPart = notAllowed
+tei_model.descLike = notAllowed
+tei_model.quoteLike = notAllowed
+tei_model.quoteLike_alternation = notAllowed
+tei_model.quoteLike_sequence = empty
+tei_model.quoteLike_sequenceOptional = empty
+tei_model.quoteLike_sequenceOptionalRepeatable = empty
+tei_model.quoteLike_sequenceRepeatable = notAllowed
+tei_model.qLike = tei_model.quoteLike
+tei_model.qLike_alternation = tei_model.quoteLike_alternation
+tei_model.qLike_sequence = tei_model.quoteLike_sequence
+tei_model.qLike_sequenceOptional = tei_model.quoteLike_sequenceOptional?
+tei_model.qLike_sequenceOptionalRepeatable =
+  tei_model.quoteLike_sequenceOptionalRepeatable*
+tei_model.qLike_sequenceRepeatable =
+  tei_model.quoteLike_sequenceRepeatable+
+tei_model.respLike = tei_author | tei_editor | tei_meeting
+tei_model.divWrapper = tei_meeting
+tei_model.divTopPart = tei_model.headLike
+tei_model.divTop = tei_model.divWrapper | tei_model.divTopPart
+tei_model.frontPart.drama = notAllowed
+tei_model.pLike.front = tei_head
+tei_model.divBottomPart = notAllowed
+tei_model.divBottom = tei_model.divWrapper | tei_model.divBottomPart
+tei_model.imprintPart = tei_publisher | tei_biblScope | tei_pubPlace
+tei_model.addressLike = tei_email | tei_address | tei_affiliation
+tei_model.addressLike_alternation =
+  tei_email | tei_address | tei_affiliation
+tei_model.addressLike_sequence = tei_email, tei_address, tei_affiliation
+tei_model.addressLike_sequenceOptional =
+  tei_email?, tei_address?, tei_affiliation?
+tei_model.addressLike_sequenceOptionalRepeatable =
+  tei_email*, tei_address*, tei_affiliation*
+tei_model.addressLike_sequenceRepeatable =
+  tei_email+, tei_address+, tei_affiliation+
+tei_model.nameLike =
+  tei_model.nameLike.agent
+  | tei_model.offsetLike
+  | tei_model.placeStateLike
+  | tei_idno
+  | tei_model.persNamePart
+tei_model.nameLike_alternation =
+  tei_model.nameLike.agent_alternation
+  | tei_model.offsetLike_alternation
+  | tei_model.placeStateLike_alternation
+  | tei_idno
+  | tei_model.persNamePart_alternation
+tei_model.nameLike_sequence =
+  tei_model.nameLike.agent_sequence,
+  tei_model.offsetLike_sequence,
+  tei_model.placeStateLike_sequence,
+  tei_idno,
+  tei_model.persNamePart_sequence
+tei_model.nameLike_sequenceOptional =
+  tei_model.nameLike.agent_sequenceOptional?,
+  tei_model.offsetLike_sequenceOptional?,
+  tei_model.placeStateLike_sequenceOptional?,
+  tei_idno?,
+  tei_model.persNamePart_sequenceOptional?
+tei_model.nameLike_sequenceOptionalRepeatable =
+  tei_model.nameLike.agent_sequenceOptionalRepeatable*,
+  tei_model.offsetLike_sequenceOptionalRepeatable*,
+  tei_model.placeStateLike_sequenceOptionalRepeatable*,
+  tei_idno*,
+  tei_model.persNamePart_sequenceOptionalRepeatable*
+tei_model.nameLike_sequenceRepeatable =
+  tei_model.nameLike.agent_sequenceRepeatable+,
+  tei_model.offsetLike_sequenceRepeatable+,
+  tei_model.placeStateLike_sequenceRepeatable+,
+  tei_idno+,
+  tei_model.persNamePart_sequenceRepeatable+
+tei_model.global =
+  tei_model.global.meta
+  | tei_model.milestoneLike
+  | tei_model.noteLike
+  | tei_model.global.edit
+  | tei_figure
+tei_model.biblPart =
+  tei_model.respLike
+  | tei_model.imprintPart
+  | tei_series
+  | tei_bibl
+  | tei_edition
+  | tei_availability
+tei_model.frontPart = tei_model.frontPart.drama
+tei_model.addrPart =
+  tei_model.nameLike
+  | tei_addrLine
+  | tei_street
+  | tei_postCode
+  | tei_postBox
+tei_model.pPart.data =
+  tei_model.dateLike
+  | tei_model.measureLike
+  | tei_model.addressLike
+  | tei_model.nameLike
+tei_model.inter =
+  tei_model.egLike
+  | tei_model.oddDecl
+  | tei_model.biblLike
+  | tei_model.labelLike
+  | tei_model.listLike
+  | tei_model.stageLike
+  | tei_model.qLike
+tei_model.common = tei_model.divPart | tei_model.inter
+tei_model.phrase =
+  tei_model.segLike
+  | tei_model.highlighted
+  | tei_model.graphicLike
+  | tei_model.pPart.msdesc
+  | tei_model.pPart.edit
+  | tei_model.ptrLike
+  | tei_model.lPart
+  | tei_model.phrase.xml
+  | tei_model.specDescLike
+  | tei_model.pPart.data
+tei_model.limitedPhrase =
+  tei_model.hiLike
+  | tei_model.emphLike
+  | tei_model.pPart.msdesc
+  | tei_model.pPart.editorial
+  | tei_model.ptrLike
+  | tei_model.phrase.xml
+  | tei_model.pPart.data
+tei_model.divLike = tei_div
+tei_model.divGenLike = notAllowed
+tei_model.div1Like = notAllowed
+tei_model.teiHeaderPart = tei_profileDesc
+tei_model.sourceDescPart = notAllowed
+tei_model.profileDescPart = tei_abstract | tei_textClass
+tei_att.source.attributes = tei_att.source.attribute.source
+tei_att.source.attribute.source =
+  
+  ## provides a pointer to the bibliographical source from which a quotation or citation is drawn.
+  attribute source {
+    list { tei_data.pointer+ }
+  }?
+tei_model.resourceLike = notAllowed
+tei_att.personal.attributes =
+  tei_att.naming.attributes,
+  tei_att.personal.attribute.full,
+  tei_att.personal.attribute.sort
+tei_att.personal.attribute.full =
+  
+  ## indicates whether the name component is given in full, as an abbreviation or simply as an initial.
+  [ a:defaultValue = "yes" ]
+  attribute full {
+    
+    ## the name component is spelled out in full.
+    "yes"
+    | 
+      ## (abbreviated) the name component is given in an abbreviated form.
+      "abb"
+    | 
+      ## (initial letter) the name component is indicated only by one initial.
+      "init"
+  }?
+tei_att.personal.attribute.sort =
+  
+  ## specifies the sort order of the name component in relation to others within the name.
+  attribute sort { tei_data.count }?
+tei_model.placeLike = notAllowed
+tei_p =
+  
+  ## (paragraph) marks paragraphs in prose. [3.1.  7.2.5. ]
+  element ns1:p {
+    tei_macro.paraContent,
+    tei_att.global.attributes,
+    tei_att.declaring.attributes,
+    tei_att.fragmentable.attributes,
+    empty
+  }
+tei_hi =
+  
+  ## (highlighted) marks a word or phrase as graphically distinct from the surrounding text, for reasons concerning which no claim is made. [3.3.2.2.  3.3.2. ]
+  element ns1:hi {
+    tei_macro.paraContent, tei_att.global.attributes, empty
+  }
+tei_term =
+  
+  ## contains a single-word, multi-word, or symbolic designation which is regarded as a technical term. [3.3.4. ]
+  element ns1:term {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.declaring.attributes,
+    tei_att.pointing.attributes,
+    tei_att.typed.attributes,
+    tei_att.canonical.attributes,
+    tei_att.sortable.attributes,
+    tei_att.cReferencing.attributes,
+    empty
+  }
+tei_name =
+  
+  ## (name, proper noun) contains a proper noun or noun phrase. [3.5.1. ]
+  element ns1:name {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.personal.attributes,
+    tei_att.datable.attributes,
+    tei_att.editLike.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_email =
+  
+  ## (electronic mail address) contains an email address identifying a location to which email messages can be delivered. [3.5.2. ]
+  element ns1:email {
+    tei_macro.phraseSeq, tei_att.global.attributes, empty
+  }
+tei_address =
+  
+  ## contains a postal address, for example of a publisher, an organization, or an individual. [3.5.2.  2.2.4.  3.11.2.4. ]
+  element ns1:address {
+    (tei_model.global*, (tei_model.addrPart, tei_model.global*)+),
+    tei_att.global.attributes,
+    empty
+  }
+tei_addrLine =
+  
+  ## (address line) contains one line of a postal address. [3.5.2.  2.2.4.  3.11.2.4. ]
+  element ns1:addrLine {
+    tei_macro.phraseSeq, tei_att.global.attributes, empty
+  }
+tei_street =
+  
+  ## contains a full street address including any name or number identifying a building as well as the name of the street or route on which it is located. [3.5.2. ]
+  element ns1:street {
+    tei_macro.phraseSeq, tei_att.global.attributes, empty
+  }
+tei_postCode =
+  
+  ## (postal code) contains a numerical or alphanumeric code used as part of a postal address to simplify sorting or delivery of mail. [3.5.2. ]
+  element ns1:postCode { text, tei_att.global.attributes, empty }
+tei_postBox =
+  
+  ## (postal box or post office box) contains a number or other identifier for some postal delivery point other than a street address. [3.5.2. ]
+  element ns1:postBox { text, tei_att.global.attributes, empty }
+tei_date =
+  
+  ## contains a date in any format. [3.5.4.  2.2.4.  2.5.  3.11.2.4.  15.2.3.  13.3.6. ]
+  element ns1:date {
+    (text | tei_model.gLike | tei_model.phrase | tei_model.global)*,
+    tei_att.global.attributes,
+    tei_att.datable.attributes,
+    tei_att.editLike.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_ptr =
+  
+  ## (pointer) defines a pointer to another location. [3.6.  16.1. ]
+  element ns1:ptr {
+    empty
+    >> sch:pattern [
+         id = "Grobid-ptr-ptrAtts-constraint-1"
+         "\x{a}" ~
+         "            "
+         sch:rule [
+           context = "tei:ptr"
+           "\x{a}" ~
+           "               "
+           sch:report [
+             test = "@target and @cRef"
+             "Only one of the\x{a}" ~
+             "attributes @target and @cRef may be supplied on "
+             sch:name [ ]
+             "."
+           ]
+           "\x{a}" ~
+           "            "
+         ]
+         "\x{a}" ~
+         "         "
+       ],
+    tei_att.global.attributes,
+    tei_att.pointing.attributes,
+    tei_att.internetMedia.attributes,
+    tei_att.typed.attributes,
+    tei_att.declaring.attributes,
+    tei_att.cReferencing.attributes,
+    empty
+  }
+tei_ref =
+  
+  ## (reference) defines a reference to another location, possibly modified by additional text or comment. [3.6.  16.1. ]
+  element ns1:ref {
+    tei_macro.paraContent
+    >> sch:pattern [
+         id = "Grobid-ref-refAtts-constraint-2"
+         "\x{a}" ~
+         "            "
+         sch:rule [
+           context = "tei:ref"
+           "\x{a}" ~
+           "               "
+           sch:report [
+             test = "@target and @cRef"
+             "Only one of the\x{a}" ~
+             "	attributes @target' and @cRef' may be supplied on "
+             sch:name [ ]
+             "\x{a}" ~
+             "               "
+           ]
+           "\x{a}" ~
+           "            "
+         ]
+         "\x{a}" ~
+         "         "
+       ],
+    tei_att.global.attributes,
+    tei_att.pointing.attributes,
+    tei_att.internetMedia.attributes,
+    tei_att.typed.attributes,
+    tei_att.declaring.attributes,
+    tei_att.cReferencing.attributes,
+    empty
+  }
+tei_list =
+  
+  ## contains any sequence of items organized as a list. [3.7. ]
+  element ns1:list {
+    ((tei_model.divTop | tei_model.global)*,
+     ((tei_item, tei_model.global*)+
+      | (tei_label, tei_model.global*, tei_item, tei_model.global*)+),
+     (tei_model.divBottom, tei_model.global*)*),
+    tei_att.global.attributes,
+    tei_att.sortable.attributes,
+    tei_att.typed.attribute.subtype,
+    
+    ## describes the nature of the items in the list.
+    ## Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllogism
+    attribute type {
+      
+      ## each list item glosses some term or concept, which is given by a label element preceding the list item.
+      "gloss"
+      | 
+        ## each list item is an entry in an index such as the alphabetical topical index at the back of a print volume.
+        "index"
+      | 
+        ## each list item is a step in a sequence of instructions, as in a recipe.
+        "instructions"
+      | 
+        ## each list item is one of a sequence of petitions, supplications or invocations, typically in a religious ritual.
+        "litany"
+      | 
+        ## each list item is part of an argument consisting of two or more propositions and a final conclusion derived from them.
+        "syllogism"
+      | xsd:Name
+    }?,
+    empty
+  }
+tei_item =
+  
+  ## contains one component of a list. [3.7.  2.5. ]
+  element ns1:item {
+    tei_macro.specialPara,
+    tei_att.global.attributes,
+    tei_att.sortable.attributes,
+    empty
+  }
+tei_label =
+  
+  ## contains any label or heading used to identify part of a text, typically but not exclusively in a list or glossary. [3.7. ]
+  element ns1:label {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.typed.attributes,
+    tei_att.placement.attributes,
+    empty
+  }
+tei_head =
+  
+  ## (heading) contains any type of heading, for example the title of a section, or the heading of a list, glossary, manuscript description, etc. [4.2.1. ]
+  element ns1:head {
+    (text
+     | tei_model.gLike
+     | tei_model.phrase
+     | tei_model.inter
+     | tei_model.lLike
+     | tei_model.global)*,
+    tei_att.global.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_note =
+  
+  ## contains a note or annotation. [3.8.1.  2.2.6.  3.11.2.8.  9.3.5.4. ]
+  element ns1:note {
+    tei_macro.specialPara,
+    tei_att.global.attributes,
+    tei_att.placement.attributes,
+    tei_att.pointing.attributes,
+    tei_att.responsibility.attributes,
+    tei_att.typed.attributes,
+    
+    ## indicates whether the copy text shows the exact place of reference for the note.
+    [ a:defaultValue = "true" ]
+    attribute anchored { tei_data.truthValue }?,
+    
+    ## points to the end of the span to which the note is attached, if the note is not embedded in the text at that point.
+    attribute targetEnd {
+      list { tei_data.pointer+ }
+    }?,
+    empty
+  }
+tei_graphic =
+  
+  ## indicates the location of an inline graphic, illustration, or figure. [3.9. ]
+  element ns1:graphic {
+    tei_model.descLike*,
+    tei_att.global.attributes,
+    tei_att.media.attributes,
+    tei_att.resourced.attributes,
+    tei_att.declaring.attributes,
+    empty
+  }
+tei_analytic =
+  
+  ## (analytic level) contains bibliographic elements describing an item (e.g. an article or poem) published within a monograph or journal and not as an independent publication. [3.11.2.1. ]
+  element ns1:analytic {
+    (tei_author
+     | tei_editor
+     | tei_title
+     | tei_model.ptrLike
+     | tei_date
+     | tei_idno
+     | tei_availability)*,
+    tei_att.global.attributes,
+    empty
+  }
+tei_monogr =
+  
+  ## (monographic level) contains bibliographic elements describing an item (e.g. a book or journal) published as an independent item (i.e. as a separate physical object). [3.11.2.1. ]
+  element ns1:monogr {
+    ((((tei_author | tei_editor | tei_meeting),
+       (tei_author | tei_editor | tei_meeting)*,
+       tei_title+,
+       (tei_model.ptrLike | tei_idno | tei_editor)*)
+      | ((tei_title | tei_model.ptrLike | tei_idno)+,
+         (tei_author | tei_editor | tei_meeting)*)
+      | tei_idno)?,
+     tei_availability*,
+     tei_model.noteLike*,
+     (tei_edition, (tei_idno | tei_model.ptrLike | tei_editor)*)*,
+     tei_imprint,
+     (tei_imprint | tei_biblScope)*),
+    tei_att.global.attributes,
+    empty
+  }
+tei_series =
+  
+  ## (series information) contains information about the series in which a book or other bibliographic item has appeared. [3.11.2.1. ]
+  element ns1:series {
+    (text
+     | tei_model.gLike
+     | tei_title
+     | tei_model.ptrLike
+     | tei_editor
+     | tei_biblScope
+     | tei_idno
+     | tei_model.global
+     | tei_availability)*,
+    tei_att.global.attributes,
+    empty
+  }
+tei_author =
+  
+  ## in a bibliographic reference, contains the name(s) of an author, personal or corporate, of a work; for example in the same form as that provided by a recognized bibliographic name authority. [3.11.2.2.  2.2.1. ]
+  element ns1:author {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.naming.attributes,
+    empty
+  }
+tei_editor =
+  
+  ## contains a secondary statement of responsibility for a bibliographic item, for example the name of an individual, institution or organization, (or of several such) acting as editor, compiler, translator, etc. [3.11.2.2. ]
+  element ns1:editor {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.naming.attributes,
+    empty
+  }
+tei_title =
+  
+  ## contains a title for any kind of work. [3.11.2.2.  2.2.1.  2.2.5. ]
+  element ns1:title {
+    tei_macro.paraContent,
+    tei_att.global.attributes,
+    tei_att.canonical.attributes,
+    tei_att.typed.attribute.subtype,
+    
+    ## classifies the title according to some convenient typology.
+    ## Sample values include: 1] main; 2] sub(subordinate) ; 3] alt(alternate) ; 4] short; 5] desc(descriptive) 
+    attribute type { tei_data.enumerated }?,
+    
+    ## indicates the bibliographic level for a title, that is, whether it identifies an article, book, journal, series, or unpublished material.
+    attribute level {
+      
+      ## (analytic) the title applies to an analytic item, such as an article, poem, or other work published as part of a larger item.
+      "a"
+      | 
+        ## (monographic) the title applies to a monograph such as a book or other item considered to be a distinct publication, including single volumes of multi-volume works
+        "m"
+      | 
+        ## (journal) the title applies to any serial or periodical publication such as a journal, magazine, or newspaper
+        "j"
+      | 
+        ## (series) the title applies to a series of otherwise distinct publications such as a collection
+        "s"
+      | 
+        ## (unpublished) the title applies to any unpublished material (including theses and dissertations unless published by a commercial press)
+        "u"
+    }?,
+    empty
+  }
+tei_meeting =
+  
+  ## contains the formalized descriptive title for a meeting or conference, for use in a bibliographic description for an item derived from such a meeting, or as a heading or preamble to publications emanating from it. [3.11.2.2. ]
+  element ns1:meeting {
+    tei_macro.limitedContent,
+    tei_att.global.attributes,
+    tei_att.canonical.attributes,
+    empty
+  }
+tei_imprint =
+  
+  ## groups information relating to the publication or distribution of a bibliographic item. [3.11.2.4. ]
+  element ns1:imprint {
+    ((tei_classCode)*,
+     ((tei_model.imprintPart | tei_model.dateLike),
+      tei_model.global*)+),
+    tei_att.global.attributes,
+    empty
+  }
+tei_publisher =
+  
+  ## provides the name of the organization responsible for the publication or distribution of a bibliographic item. [3.11.2.4.  2.2.4. ]
+  element ns1:publisher {
+    tei_macro.phraseSeq, tei_att.global.attributes, empty
+  }
+tei_biblScope =
+  
+  ## (scope of bibliographic reference) defines the scope of a bibliographic reference, for example as a list of page numbers, or a named subdivision of a larger work. [3.11.2.5. ]
+  element ns1:biblScope {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.citing.attributes,
+    
+    ## identifies the type of information conveyed by the element, e.g. columns, pages, volume.
+    ## Suggested values include: 1] vol(volume) ; 2] issue; 3] pp(pages) ; 4] ll(lines) ; 5] chap(chapter) ; 6] part
+    attribute type {
+      
+      ## (volume) the element contains a volume number.
+      "vol"
+      | 
+        ## the element contains an issue number, or volume and issue numbers.
+        "issue"
+      | 
+        ## (pages) the element contains a page number or page range.
+        "pp"
+      | 
+        ## (lines) the element contains a line number or line range.
+        "ll"
+      | 
+        ## (chapter) the element contains a chapter indication (number and/or title)
+        "chap"
+      | 
+        ## the element identifies a part of a book or collection.
+        "part"
+      | xsd:Name
+    }?,
+    empty
+  }
+tei_pubPlace =
+  
+  ## (publication place) contains the name of the place where a bibliographic item was published. [3.11.2.4. ]
+  element ns1:pubPlace {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.naming.attributes,
+    empty
+  }
+tei_bibl =
+  
+  ## (bibliographic citation) contains a loosely-structured bibliographic citation of which the sub-components may or may not be explicitly tagged. [3.11.1.  2.2.7.  15.3.2. ]
+  element ns1:bibl {
+    (text
+     | tei_model.gLike
+     | tei_model.highlighted
+     | tei_model.pPart.data
+     | tei_model.pPart.edit
+     | tei_model.segLike
+     | tei_model.ptrLike
+     | tei_model.biblPart
+     | tei_model.global)*,
+    tei_att.global.attributes,
+    tei_att.declarable.attributes,
+    tei_att.typed.attributes,
+    tei_att.sortable.attributes,
+    tei_att.docStatus.attributes,
+    empty
+  }
+tei_biblStruct =
+  
+  ## (structured bibliographic citation) contains a structured bibliographic citation, in which only bibliographic sub-elements appear and in a specified order. [3.11.1.  2.2.7.  15.3.2. ]
+  element ns1:biblStruct {
+    (tei_analytic*,
+     (tei_monogr, tei_series*)+,
+     (tei_model.noteLike | tei_idno | tei_model.ptrLike)*),
+    tei_att.global.attributes,
+    tei_att.declarable.attributes,
+    tei_att.typed.attributes,
+    tei_att.sortable.attributes,
+    tei_att.docStatus.attributes,
+    empty
+  }
+tei_listBibl =
+  
+  ## (citation list) contains a list of bibliographic citations of any kind. [3.11.1.  2.2.7.  15.3.2. ]
+  element ns1:listBibl {
+    (tei_model.headLike*,
+     (tei_model.biblLike | tei_model.milestoneLike)+,
+     empty*),
+    tei_att.global.attributes,
+    tei_att.sortable.attributes,
+    tei_att.declarable.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_teiHeader =
+  
+  ## (TEI header) supplies the descriptive and declarative information making up an electronic title page for every TEI-conformant document. [2.1.1.  15.1. ]
+  element ns1:teiHeader {
+    (tei_fileDesc, tei_model.teiHeaderPart*),
+    tei_att.global.attributes,
+    
+    ## specifies the kind of document to which the header is attached, for example whether it is a corpus or individual text.
+    ## Sample values include: 1] text; 2] corpus
+    [ a:defaultValue = "text" ] attribute type { tei_data.enumerated }?,
+    empty
+  }
+tei_fileDesc =
+  
+  ## (file description) contains a full bibliographic description of an electronic file. [2.2.  2.1.1. ]
+  element ns1:fileDesc {
+    ((tei_titleStmt,
+      tei_editionStmt?,
+      tei_publicationStmt,
+      tei_seriesStmt?,
+      tei_notesStmt?),
+     tei_sourceDesc+),
+    tei_att.global.attributes,
+    empty
+  }
+tei_titleStmt =
+  
+  ## (title statement) groups information about the title of a work and those responsible for its content. [2.2.1.  2.2. ]
+  element ns1:titleStmt {
+    (tei_title+, tei_model.respLike*), tei_att.global.attributes, empty
+  }
+tei_editionStmt =
+  
+  ## (edition statement) groups information relating to one edition of a text. [2.2.2.  2.2. ]
+  element ns1:editionStmt {
+    (tei_model.pLike+ | (tei_edition, tei_model.respLike*)),
+    tei_att.global.attributes,
+    empty
+  }
+tei_edition =
+  
+  ## describes the particularities of one edition of a text. [2.2.2. ]
+  element ns1:edition {
+    tei_macro.phraseSeq, tei_att.global.attributes, empty
+  }
+tei_publicationStmt =
+  
+  ## (publication statement) groups information concerning the publication or distribution of an electronic or other text. [2.2.4.  2.2. ]
+  element ns1:publicationStmt {
+    ((tei_model.publicationStmtPart.agency,
+      tei_model.publicationStmtPart.detail*)+
+     | tei_model.pLike+),
+    tei_att.global.attributes,
+    empty
+  }
+tei_idno =
+  
+  ## (identifier) supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way. [2.2.4.  2.2.5.  3.11.2.4. ]
+  element ns1:idno {
+    (text | tei_model.gLike | tei_idno)*,
+    tei_att.global.attributes,
+    tei_att.sortable.attributes,
+    
+    ## categorizes the identifier, for example as an ISBN, Social Security number, etc.
+    attribute type { tei_data.enumerated }?,
+    empty
+  }
+tei_availability =
+  
+  ## supplies information about the availability of a text, for example any restrictions on its use or distribution, its copyright status, any licence applying to it, etc. [2.2.4. ]
+  element ns1:availability {
+    (tei_model.availabilityPart | tei_model.pLike)+,
+    tei_att.global.attributes,
+    tei_att.declarable.attributes,
+    
+    ## supplies a code identifying the current availability of the text.
+    [ a:defaultValue = "unknown" ]
+    attribute status {
+      
+      ## the text is freely available.
+      "free"
+      | 
+        ## the status of the text is unknown.
+        "unknown"
+      | 
+        ## the text is not freely available.
+        "restricted"
+    }?,
+    empty
+  }
+tei_seriesStmt =
+  
+  ## (series statement) groups information about the series, if any, to which a publication belongs. [2.2.5.  2.2. ]
+  element ns1:seriesStmt {
+    (tei_model.pLike+
+     | (tei_title+, (tei_editor)*, (tei_idno | tei_biblScope)*)),
+    tei_att.global.attributes,
+    empty
+  }
+tei_notesStmt =
+  
+  ## (notes statement) collects together any notes providing information about a text additional to that recorded in other parts of the bibliographic description. [2.2.6.  2.2. ]
+  element ns1:notesStmt {
+    (tei_model.noteLike)+, tei_att.global.attributes, empty
+  }
+tei_sourceDesc =
+  
+  ## (source description) describes the source from which an electronic text was derived or generated, typically a bibliographic description in the case of a digitized text, or a phrase such as "born digital" for a text which has no previous existence. [2.2.7. ]
+  element ns1:sourceDesc {
+    (tei_model.pLike+
+     | (tei_model.biblLike
+        | tei_model.sourceDescPart
+        | tei_model.listLike)+),
+    tei_att.global.attributes,
+    tei_att.declarable.attributes,
+    empty
+  }
+tei_profileDesc =
+  
+  ## (text-profile description) provides a detailed description of non-bibliographic aspects of a text, specifically the languages and sublanguages used, the situation in which it was produced, the participants and their setting. [2.4.  2.1.1. ]
+  element ns1:profileDesc {
+    tei_model.profileDescPart*, tei_att.global.attributes, empty
+  }
+tei_abstract =
+  
+  ## contains a summary or formal abstract prefixed to an existing source document by the encoder. [2.4.4. ]
+  element ns1:abstract {
+    (tei_model.pLike | tei_model.listLike)+,
+    tei_att.global.attributes,
+    tei_att.responsibility.attributes,
+    empty
+  }
+tei_textClass =
+  
+  ## (text classification) groups information which describes the nature or topic of a text in terms of a standard classification scheme, thesaurus, etc. [2.4.3. ]
+  element ns1:textClass {
+    (tei_classCode | tei_keywords)*,
+    tei_att.global.attributes,
+    tei_att.declarable.attributes,
+    empty
+  }
+tei_keywords =
+  
+  ## contains a list of keywords or phrases identifying the topic or nature of a text. [2.4.3. ]
+  element ns1:keywords {
+    (tei_term+ | tei_list),
+    tei_att.global.attributes,
+    
+    ## identifies the controlled vocabulary within which the set of keywords concerned is defined identifies the classification scheme within which the set of categories concerned is defined, for example by a taxonomy element, or by some other resource.
+    attribute scheme { tei_data.pointer }?,
+    empty
+  }
+tei_classCode =
+  
+  ## (classification code) contains the classification code used for this text in some standard classification system. [2.4.3. ]
+  element ns1:classCode {
+    tei_macro.phraseSeq.limited,
+    tei_att.global.attributes,
+    
+    ## identifies the classification system in use, as defined by for example by a taxonomy element, or some other resource..
+    attribute scheme { tei_data.pointer },
+    empty
+  }
+tei_TEI =
+  
+  ## (TEI document) contains a single TEI-conformant document, comprising a TEI header and a text, either in isolation or as part of a teiCorpus element. [4.  15.1. ]
+  element ns1:TEI {
+    (tei_teiHeader,
+     ((tei_model.resourceLike+, tei_text?) | tei_text))
+    >> sch:ns [ prefix = "tei" uri = "http://www.tei-c.org/ns/1.0" ]
+    >> sch:ns [ prefix = "xs" uri = "http://www.w3.org/2001/XMLSchema" ]
+    >> sch:ns [
+         prefix = "rng"
+         uri = "http://relaxng.org/ns/structure/1.0"
+       ],
+    tei_att.global.attributes,
+    
+    ## specifies the major version number of the TEI Guidelines against which this document is valid.
+    attribute version { tei_data.version }?,
+    empty
+  }
+tei_text =
+  
+  ## contains a single text of any kind, whether unitary or composite, for example a poem or drama, a collection of essays, a novel, a dictionary, or a corpus sample. [4.  15.1. ]
+  element ns1:text {
+    (tei_model.global*,
+     (tei_front, tei_model.global*)?,
+     (tei_body),
+     tei_model.global*,
+     (tei_back, tei_model.global*)?),
+    tei_att.global.attributes,
+    tei_att.declaring.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_body =
+  
+  ## (text body) contains the whole body of a single unitary text, excluding any front or back matter. [4. ]
+  element ns1:body {
+    (tei_model.global*,
+     (tei_model.divTop, (tei_model.global | tei_model.divTop)*)?,
+     (tei_model.divGenLike,
+      (tei_model.global | tei_model.divGenLike)*)?,
+     ((tei_model.divLike, (tei_model.global | tei_model.divGenLike)*)+
+      | (tei_model.div1Like,
+         (tei_model.global | tei_model.divGenLike)*)+
+      | ((tei_model.common, tei_model.global*)+,
+         ((tei_model.divLike,
+           (tei_model.global | tei_model.divGenLike)*)+
+          | (tei_model.div1Like,
+             (tei_model.global | tei_model.divGenLike)*)+)?)),
+     (tei_model.divBottom, tei_model.global*)*),
+    tei_att.global.attributes,
+    tei_att.declaring.attributes,
+    empty
+  }
+tei_div =
+  
+  ## (text division) contains a subdivision of the front, body, or back of a text. [4.1. ]
+  element ns1:div {
+    ((tei_model.divTop | tei_model.global)*,
+     ((((tei_model.divLike | tei_model.divGenLike), tei_model.global*)+
+       | ((tei_model.common, tei_model.global*)+,
+          ((tei_model.divLike | tei_model.divGenLike),
+           tei_model.global*)*)),
+      (tei_model.divBottom, tei_model.global*)*)?),
+    tei_att.global.attributes,
+    tei_att.divLike.attributes,
+    tei_att.typed.attributes,
+    tei_att.declaring.attributes,
+    empty
+  }
+tei_front =
+  
+  ## (front matter) contains any prefatory matter (headers, title page, prefaces, dedications, etc.) found at the start of a document, before the main body. [4.6.  4. ]
+  element ns1:front {
+    ((tei_model.frontPart
+      | tei_model.pLike
+      | tei_model.pLike.front
+      | tei_model.global)*,
+     (((tei_model.div1Like,
+        (tei_model.div1Like | tei_model.frontPart | tei_model.global)*)
+       | (tei_model.divLike,
+          (tei_model.divLike
+           | tei_model.frontPart
+           | tei_model.global)*)),
+      (tei_model.divBottom,
+       (tei_model.divBottom | tei_model.global)*)?)?),
+    tei_att.global.attributes,
+    tei_att.declaring.attributes,
+    empty
+  }
+tei_back =
+  
+  ## (back matter) contains any appendixes, etc. following the main part of a text. [4.7.  4. ]
+  element ns1:back {
+    ((tei_model.frontPart
+      | tei_model.pLike.front
+      | tei_model.pLike
+      | tei_model.listLike
+      | tei_model.global)*,
+     ((tei_model.div1Like,
+       (tei_model.frontPart | tei_model.div1Like | tei_model.global)*)
+      | (tei_model.divLike,
+         (tei_model.frontPart
+          | tei_model.divLike
+          | tei_model.global)*))?,
+     (tei_model.divBottomPart,
+      (tei_model.divBottomPart | tei_model.global)*)?),
+    tei_att.global.attributes,
+    tei_att.declaring.attributes,
+    empty
+  }
+tei_att.datable.custom.attributes =
+  tei_att.datable.custom.attribute.when-custom,
+  tei_att.datable.custom.attribute.notBefore-custom,
+  tei_att.datable.custom.attribute.notAfter-custom,
+  tei_att.datable.custom.attribute.from-custom,
+  tei_att.datable.custom.attribute.to-custom,
+  tei_att.datable.custom.attribute.datingPoint,
+  tei_att.datable.custom.attribute.datingMethod
+tei_att.datable.custom.attribute.when-custom =
+  
+  ## supplies the value of a date or time in some standard form.
+  attribute when-custom {
+    list { tei_data.word+ }
+  }?
+tei_att.datable.custom.attribute.notBefore-custom =
+  
+  ## specifies the earliest possible date for the event in some custom standard form.
+  attribute notBefore-custom {
+    list { tei_data.word+ }
+  }?
+tei_att.datable.custom.attribute.notAfter-custom =
+  
+  ## specifies the latest possible date for the event in some custom standard form.
+  attribute notAfter-custom {
+    list { tei_data.word+ }
+  }?
+tei_att.datable.custom.attribute.from-custom =
+  
+  ## indicates the starting point of the period in some standard form.
+  attribute from-custom {
+    list { tei_data.word+ }
+  }?
+tei_att.datable.custom.attribute.to-custom =
+  
+  ## indicates the ending point of the period in some standard form.
+  attribute to-custom {
+    list { tei_data.word+ }
+  }?
+tei_att.datable.custom.attribute.datingPoint =
+  
+  ## supplies a pointer to some location defining a named point in time with reference to which the datable item is understood to have occurred
+  attribute datingPoint { tei_data.pointer }?
+tei_att.datable.custom.attribute.datingMethod =
+  
+  ## supplies a pointer to a calendar element or other means of interpreting the values of the custom dating attributes.
+  attribute datingMethod { tei_data.pointer }?
+tei_model.persNamePart = tei_surname | tei_forename | tei_roleName
+tei_model.persNamePart_alternation =
+  tei_surname | tei_forename | tei_roleName
+tei_model.persNamePart_sequence =
+  tei_surname, tei_forename, tei_roleName
+tei_model.persNamePart_sequenceOptional =
+  tei_surname?, tei_forename?, tei_roleName?
+tei_model.persNamePart_sequenceOptionalRepeatable =
+  tei_surname*, tei_forename*, tei_roleName*
+tei_model.persNamePart_sequenceRepeatable =
+  tei_surname+, tei_forename+, tei_roleName+
+tei_att.datable.iso.attributes =
+  tei_att.datable.iso.attribute.when-iso,
+  tei_att.datable.iso.attribute.notBefore-iso,
+  tei_att.datable.iso.attribute.notAfter-iso,
+  tei_att.datable.iso.attribute.from-iso,
+  tei_att.datable.iso.attribute.to-iso
+tei_att.datable.iso.attribute.when-iso =
+  
+  ## supplies the value of a date or time in a standard form.
+  attribute when-iso { tei_data.temporal.iso }?
+tei_att.datable.iso.attribute.notBefore-iso =
+  
+  ## specifies the earliest possible date for the event in standard form, e.g. yyyy-mm-dd.
+  attribute notBefore-iso { tei_data.temporal.iso }?
+tei_att.datable.iso.attribute.notAfter-iso =
+  
+  ## specifies the latest possible date for the event in standard form, e.g. yyyy-mm-dd.
+  attribute notAfter-iso { tei_data.temporal.iso }?
+tei_att.datable.iso.attribute.from-iso =
+  
+  ## indicates the starting point of the period in standard form.
+  attribute from-iso { tei_data.temporal.iso }?
+tei_att.datable.iso.attribute.to-iso =
+  
+  ## indicates the ending point of the period in standard form.
+  attribute to-iso { tei_data.temporal.iso }?
+tei_orgName =
+  
+  ## (organization name) contains an organizational name. [13.2.2. ]
+  element ns1:orgName {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.datable.attributes,
+    tei_att.editLike.attributes,
+    tei_att.personal.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_persName =
+  
+  ## (personal name) contains a proper noun or proper-noun phrase referring to a person, possibly including one or more of the person's forenames, surnames, honorifics, added names, etc. [13.2.1. ]
+  element ns1:persName {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.datable.attributes,
+    tei_att.editLike.attributes,
+    tei_att.personal.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_surname =
+  
+  ## contains a family (inherited) name, as opposed to a given, baptismal, or nick name. [13.2.1. ]
+  element ns1:surname {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.personal.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_forename =
+  
+  ## contains a forename, given or baptismal name. [13.2.1. ]
+  element ns1:forename {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.personal.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_roleName =
+  
+  ## contains a name component which indicates that the referent has a particular role or position in society, such as an official title or rank. [13.2.1. ]
+  element ns1:roleName {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.personal.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_country =
+  
+  ## contains the name of a geo-political unit, such as a nation, country, colony, or commonwealth, larger than or administratively superior to a region and smaller than a bloc. [13.2.3. ]
+  element ns1:country {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.naming.attributes,
+    tei_att.typed.attributes,
+    tei_att.datable.attributes,
+    empty
+  }
+tei_region =
+  
+  ## contains the name of an administrative unit such as a state, province, or county, larger than a settlement, but smaller than a country. [13.2.3. ]
+  element ns1:region {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.naming.attributes,
+    tei_att.typed.attributes,
+    tei_att.datable.attributes,
+    empty
+  }
+tei_settlement =
+  
+  ## contains the name of a settlement such as a city, town, or village identified as a single geo-political or administrative unit. [13.2.3. ]
+  element ns1:settlement {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.naming.attributes,
+    tei_att.typed.attributes,
+    tei_att.datable.attributes,
+    empty
+  }
+tei_affiliation =
+  
+  ## contains an informal description of a person's present or past affiliation with some organization, for example an employer or sponsor. [15.2.2. ]
+  element ns1:affiliation {
+    tei_macro.phraseSeq,
+    tei_att.global.attributes,
+    tei_att.editLike.attributes,
+    tei_att.datable.attributes,
+    tei_att.naming.attributes,
+    empty
+  }
+tei_org =
+  
+  ## (organization) provides information about an identifiable organization such as a business, a tribe, or any other grouping of people. [13.2.2. ]
+  element ns1:org {
+    (tei_model.headLike*,
+     (tei_model.pLike*
+      | (tei_model.labelLike
+         | tei_model.nameLike
+         | tei_model.placeLike
+         | tei_model.orgPart)*),
+     (tei_model.noteLike | tei_model.biblLike | tei_link)*,
+     tei_model.personLike*),
+    tei_att.global.attributes,
+    tei_att.typed.attributes,
+    tei_att.editLike.attributes,
+    tei_att.sortable.attributes,
+    
+    ## specifies a primary role or classification for the organization.
+    attribute role {
+      list { tei_data.word+ }
+    }?,
+    empty
+  }
+tei_att.global.linking.attributes =
+  tei_att.global.linking.attribute.corresp,
+  tei_att.global.linking.attribute.synch,
+  tei_att.global.linking.attribute.sameAs,
+  tei_att.global.linking.attribute.copyOf,
+  tei_att.global.linking.attribute.next,
+  tei_att.global.linking.attribute.prev,
+  tei_att.global.linking.attribute.exclude,
+  tei_att.global.linking.attribute.select
+tei_att.global.linking.attribute.corresp =
+  
+  ## (corresponds) points to elements that correspond to the current element in some way.
+  attribute corresp {
+    list { tei_data.pointer+ }
+  }?
+tei_att.global.linking.attribute.synch =
+  
+  ## (synchronous) points to elements that are synchronous with the current element.
+  attribute synch {
+    list { tei_data.pointer+ }
+  }?
+tei_att.global.linking.attribute.sameAs =
+  
+  ## points to an element that is the same as the current element.
+  attribute sameAs { tei_data.pointer }?
+tei_att.global.linking.attribute.copyOf =
+  
+  ## points to an element of which the current element is a copy.
+  attribute copyOf { tei_data.pointer }?
+tei_att.global.linking.attribute.next =
+  
+  ## points to the next element of a virtual aggregate of which the current element is part.
+  attribute next { tei_data.pointer }?
+tei_att.global.linking.attribute.prev =
+  
+  ## (previous) points to the previous element of a virtual aggregate of which the current element is part.
+  attribute prev { tei_data.pointer }?
+tei_att.global.linking.attribute.exclude =
+  
+  ## points to elements that are in exclusive alternation with the current element.
+  attribute exclude {
+    list { tei_data.pointer+ }
+  }?
+tei_att.global.linking.attribute.select =
+  
+  ## selects one or more alternants; if one alternant is selected, the ambiguity or uncertainty is marked as resolved. If more than one alternant is selected, the degree of ambiguity or uncertainty is marked as reduced by the number of alternants not selected.
+  attribute select {
+    list { tei_data.pointer+ }
+  }?
+tei_link =
+  
+  ## defines an association or hypertextual link among elements or passages, of some type not more precisely specifiable by other elements. [16.1. ]
+  element ns1:link {
+    empty
+    >> sch:pattern [
+         id = "Grobid-link-linkTargets3-constraint-4"
+         "\x{a}" ~
+         "            "
+         sch:rule [
+           context = "tei:link"
+           "\x{a}" ~
+           "               "
+           sch:assert [
+             test = "contains(normalize-space(@target),' ')"
+             "You must supply at least two values for @target or  on "
+             sch:name [ ]
+             "\x{a}" ~
+             "               "
+           ]
+           "\x{a}" ~
+           "            "
+         ]
+         "\x{a}" ~
+         "         "
+       ],
+    tei_att.global.attributes,
+    tei_att.pointing.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_anchor =
+  
+  ## (anchor point) attaches an identifier to a point within a text, whether or not it corresponds with a textual element. [8.4.2.  16.4. ]
+  element ns1:anchor {
+    empty, tei_att.global.attributes, tei_att.typed.attributes, empty
+  }
+tei_table =
+  
+  ## contains text displayed in tabular form, in rows and columns. [14.1.1. ]
+  element ns1:table {
+    ((tei_model.headLike | tei_model.global)*,
+     ((tei_row, tei_model.global*)+
+      | (tei_model.graphicLike, tei_model.global*)+),
+     (tei_model.divBottom, tei_model.global*)*),
+    tei_att.global.attributes,
+    
+    ## indicates the number of rows in the table.
+    attribute rows { tei_data.count }?,
+    
+    ## (columns) indicates the number of columns in each row of the table.
+    attribute cols { tei_data.count }?,
+    empty
+  }
+tei_row =
+  
+  ## contains one row of a table. [14.1.1. ]
+  element ns1:row {
+    tei_cell+,
+    tei_att.global.attributes,
+    tei_att.tableDecoration.attributes,
+    empty
+  }
+tei_cell =
+  
+  ## contains one cell of a table. [14.1.1. ]
+  element ns1:cell {
+    tei_macro.specialPara,
+    tei_att.global.attributes,
+    tei_att.tableDecoration.attributes,
+    empty
+  }
+tei_formula =
+  
+  ## contains a mathematical or other formula. [14.2. ]
+  element ns1:formula {
+    (text | tei_model.graphicLike | tei_model.hiLike | mathml.math)*,
+    tei_att.global.attributes,
+    
+    ## names the notation used for the content of the element.
+    attribute notation { tei_data.enumerated }?,
+    empty
+  }
+tei_figure =
+  
+  ## groups elements representing or containing graphic information such as an illustration, formula, or figure. [14.4. ]
+  element ns1:figure {
+    (tei_model.headLike
+     | tei_model.common
+     | tei_figDesc
+     | tei_model.graphicLike
+     | tei_model.global
+     | tei_model.divBottom)*,
+    tei_att.global.attributes,
+    tei_att.placement.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_figDesc =
+  
+  ## (description of figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it. [14.4. ]
+  element ns1:figDesc {
+    tei_macro.limitedContent, tei_att.global.attributes, empty
+  }
+start = tei_TEI

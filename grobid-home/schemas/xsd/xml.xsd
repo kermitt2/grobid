@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.w3.org/XML/1998/namespace" xmlns:mathml="http://www.w3.org/1998/Math/MathML" xmlns:ns1="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <xs:import namespace="http://www.tei-c.org/ns/1.0" schemaLocation="ns1.xsd"/>
+  <xs:import namespace="http://www.w3.org/1998/Math/MathML" schemaLocation="Grobid.xsd"/>
+  <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd"/>
+  <xs:attribute name="id" type="xs:ID">
+    <xs:annotation>
+      <xs:documentation>(identifier) provides a unique identifier for the element bearing the attribute.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="lang" type="mathml:tei_data.language">
+    <xs:annotation>
+      <xs:documentation>(language) indicates the language of the element content using a tag generated according to BCP 47.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="base" type="mathml:tei_data.pointer">
+    <xs:annotation>
+      <xs:documentation>provides a base URI reference with which applications can resolve relative URI references into absolute URI references.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="space">
+    <xs:annotation>
+      <xs:documentation>signals an intention about how white space should be managed by applications.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="default">
+          <xs:annotation>
+            <xs:documentation>signals that the application's default white-space processing modes are acceptable</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="preserve">
+          <xs:annotation>
+            <xs:documentation>indicates the intent that applications preserve all white space</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+</xs:schema>
