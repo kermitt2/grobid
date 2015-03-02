@@ -5,7 +5,7 @@ namespace rng = "http://relaxng.org/ns/structure/1.0"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2015-03-01T05:27:29Z. .
+# Schema generated from ODD source 2015-03-02T02:48:37Z. .
 # TEI Edition: Version 2.7.0. Last updated on
 #	16th September 2014, revision 13036
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -2046,12 +2046,12 @@ tei_model.lLike_sequence = empty
 tei_model.lLike_sequenceOptional = empty
 tei_model.lLike_sequenceOptionalRepeatable = empty
 tei_model.lLike_sequenceRepeatable = notAllowed
-tei_model.pLike = tei_p
-tei_model.pLike_alternation = tei_p
-tei_model.pLike_sequence = tei_p
-tei_model.pLike_sequenceOptional = tei_p?
-tei_model.pLike_sequenceOptionalRepeatable = tei_p*
-tei_model.pLike_sequenceRepeatable = tei_p+
+tei_model.pLike = tei_p | tei_trash
+tei_model.pLike_alternation = tei_p | tei_trash
+tei_model.pLike_sequence = tei_p, tei_trash
+tei_model.pLike_sequenceOptional = tei_p?, tei_trash?
+tei_model.pLike_sequenceOptionalRepeatable = tei_p*, tei_trash*
+tei_model.pLike_sequenceRepeatable = tei_p+, tei_trash+
 tei_model.stageLike = notAllowed
 tei_model.stageLike_alternation = notAllowed
 tei_model.stageLike_sequence = empty
@@ -2086,7 +2086,7 @@ tei_model.orgPart = notAllowed
 tei_model.publicationStmtPart.agency = tei_publisher
 tei_model.publicationStmtPart.detail =
   tei_address | tei_date | tei_pubPlace | tei_idno | tei_availability
-tei_model.availabilityPart = notAllowed
+tei_model.availabilityPart = tei_licence
 tei_model.descLike = notAllowed
 tei_model.quoteLike = notAllowed
 tei_model.quoteLike_alternation = notAllowed
@@ -2616,9 +2616,7 @@ tei_imprint =
   
   ## groups information relating to the publication or distribution of a bibliographic item. [3.11.2.4. ]
   element ns1:imprint {
-    ((tei_classCode)*,
-     ((tei_model.imprintPart | tei_model.dateLike),
-      tei_model.global*)+),
+    (tei_biblScope | tei_date | tei_pubPlace | tei_publisher)*,
     tei_att.global.attributes,
     empty
   }
@@ -2805,6 +2803,16 @@ tei_availability =
         ## the text is not freely available.
         "restricted"
     }?,
+    empty
+  }
+tei_licence =
+  
+  ## contains information about a licence or other legal agreement applicable to the text. [2.2.4. ]
+  element ns1:licence {
+    tei_macro.specialPara,
+    tei_att.global.attributes,
+    tei_att.pointing.attributes,
+    tei_att.datable.attributes,
     empty
   }
 tei_seriesStmt =
@@ -3346,5 +3354,15 @@ tei_figDesc =
   ## (description of figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it. [14.4. ]
   element ns1:figDesc {
     tei_macro.limitedContent, tei_att.global.attributes, empty
+  }
+tei_trash =
+  
+  ## (Trash) contains noise information to be ignored
+  element ns1:trash {
+    text,
+    tei_att.editLike.attributes,
+    tei_att.datable.attributes,
+    tei_att.naming.attributes,
+    empty
   }
 start = tei_TEI

@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2015-03-01T05:28:07Z. .
+DTD generated from ODD source 2015-03-02T02:47:17Z. .
 TEI Edition: Version 2.7.0. Last updated on
 	16th September 2014, revision 13036
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -540,11 +540,11 @@ to %data.word;  #IMPLIED'>
 <!ENTITY % model.lLike_sequenceOptional ""> 
 <!ENTITY % model.lLike_sequenceOptionalRepeatable ""> 
 <!ENTITY % model.lLike_sequenceRepeatable ""> 
-<!ENTITY % model.pLike "p"> 
-<!ENTITY % model.pLike_sequence "p"> 
-<!ENTITY % model.pLike_sequenceOptional "p?"> 
-<!ENTITY % model.pLike_sequenceOptionalRepeatable "p*"> 
-<!ENTITY % model.pLike_sequenceRepeatable "p+"> 
+<!ENTITY % model.pLike "p |trash"> 
+<!ENTITY % model.pLike_sequence "p, trash"> 
+<!ENTITY % model.pLike_sequenceOptional "p?, trash?"> 
+<!ENTITY % model.pLike_sequenceOptionalRepeatable "p*, trash*"> 
+<!ENTITY % model.pLike_sequenceRepeatable "p+, trash+"> 
 <!ENTITY % model.stageLike ""> 
 <!ENTITY % model.stageLike_sequence ""> 
 <!ENTITY % model.stageLike_sequenceOptional ""> 
@@ -590,11 +590,11 @@ to %data.word;  #IMPLIED'>
 <!ENTITY % model.publicationStmtPart.detail_sequenceOptional "address?, date?, pubPlace?, idno?, availability?"> 
 <!ENTITY % model.publicationStmtPart.detail_sequenceOptionalRepeatable "address*, date*, pubPlace*, idno*, availability*"> 
 <!ENTITY % model.publicationStmtPart.detail_sequenceRepeatable "address+, date+, pubPlace+, idno+, availability+"> 
-<!ENTITY % model.availabilityPart ""> 
-<!ENTITY % model.availabilityPart_sequence ""> 
-<!ENTITY % model.availabilityPart_sequenceOptional ""> 
-<!ENTITY % model.availabilityPart_sequenceOptionalRepeatable ""> 
-<!ENTITY % model.availabilityPart_sequenceRepeatable ""> 
+<!ENTITY % model.availabilityPart "licence"> 
+<!ENTITY % model.availabilityPart_sequence "licence"> 
+<!ENTITY % model.availabilityPart_sequenceOptional "licence?"> 
+<!ENTITY % model.availabilityPart_sequenceOptionalRepeatable "licence*"> 
+<!ENTITY % model.availabilityPart_sequenceRepeatable "licence+"> 
 <!ENTITY % model.descLike ""> 
 <!ENTITY % model.descLike_sequence ""> 
 <!ENTITY % model.descLike_sequenceOptional ""> 
@@ -914,7 +914,7 @@ version %data.version;  #IMPLIED >
  %tei_att.global.attributes;
  %tei_att.naming.attributes; >
 <!--doc:supplies information about the availability of a text, for example any restrictions on its use or distribution, its copyright status, any licence applying to it, etc. [2.2.4. ] -->
-<!ELEMENT availability (_DUMMY_model.availabilityPart|%model.pLike;)+>
+<!ELEMENT availability (%model.availabilityPart;|%model.pLike;)+>
 <!ATTLIST availability xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST availability
  %tei_att.global.attributes;
@@ -1077,7 +1077,7 @@ notation %data.enumerated;  #IMPLIED >
  %tei_att.sortable.attributes;
 type %data.enumerated;  #IMPLIED >
 <!--doc:groups information relating to the publication or distribution of a bibliographic item. [3.11.2.4. ] -->
-<!ELEMENT imprint (classCode*,(((%model.imprintPart;)|(%model.dateLike;)),(%model.global;)*)+)>
+<!ELEMENT imprint (biblScope|date|pubPlace|publisher)*>
 <!ATTLIST imprint xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST imprint
  %tei_att.global.attributes; >
@@ -1100,6 +1100,13 @@ scheme %data.pointer;  #IMPLIED >
  %tei_att.global.attributes;
  %tei_att.typed.attributes;
  %tei_att.placement.attributes; >
+<!--doc:contains information about a licence or other legal agreement applicable to the text. [2.2.4. ] -->
+<!ELEMENT licence %macro.specialPara;>
+<!ATTLIST licence xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST licence
+ %tei_att.global.attributes;
+ %tei_att.pointing.attributes;
+ %tei_att.datable.attributes; >
 <!--doc:defines an association or hypertextual link among elements or passages, of some type not more precisely specifiable by other elements. [16.1. ] -->
 <!ELEMENT link EMPTY>
 <!ATTLIST link xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1352,6 +1359,13 @@ level (a|m|j|s|u) #IMPLIED >
 <!ATTLIST titleStmt xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST titleStmt
  %tei_att.global.attributes; >
+<!--doc:(Trash) contains noise information to be ignored -->
+<!ELEMENT trash  (#PCDATA)>
+<!ATTLIST trash xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST trash
+ %tei_att.editLike.attributes;
+ %tei_att.datable.attributes;
+ %tei_att.naming.attributes; >
 <!--doc:indicates a point in time either relative to other elements in the same timeline tag, or absolutely. [16.5.2. ] -->
 <!ELEMENT when EMPTY>
 <!ATTLIST when xmlns CDATA "http://www.tei-c.org/ns/1.0">

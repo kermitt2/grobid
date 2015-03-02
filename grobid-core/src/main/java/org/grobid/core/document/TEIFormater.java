@@ -9,6 +9,7 @@ import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.engines.FullTextParser;
 import org.grobid.core.utilities.KeyGen;
@@ -61,6 +62,7 @@ public class TEIFormater {
 
     public StringBuffer toTEIHeader(BiblioItem biblio,
                                     boolean withStyleSheet,
+									//boolean schemaDeclaration,
                                     String defaultPublicationStatement,
 									boolean generateIDs) {
         StringBuffer tei = new StringBuffer();
@@ -68,8 +70,24 @@ public class TEIFormater {
         if (withStyleSheet) {
             tei.append("<?xml-stylesheet type=\"text/xsl\" href=\"../jsp/xmlverbatimwrapper.xsl\"?> \n");
         }
-        tei.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
-                "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+		//if (schemaDeclaration) {
+		
+	//		tei.append("<!DOCTYPE TEI SYSTEM \"" + GrobidProperties.get_GROBID_HOME_PATH() 
+	//			+ "/schemas/dtd/Grobid.dtd" + "\">\n");
+			
+		/*tei.append("<TEI xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"" + 
+		"\n xsi:noNamespaceSchemaLocation=\"" + 
+			GrobidProperties.get_GROBID_HOME_PATH() + "/schemas/xsd/Grobid.xsd\""	+
+		"\n xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
+		"\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+		*/	
+		//}
+		//else {
+        //tei.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
+        //        "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+		tei.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\">\n");
+		//}
+		
         if (doc.getLanguage() != null) {
             tei.append("\t<teiHeader xml:lang=\"" + doc.getLanguage() + "\">");
         } else {
@@ -102,7 +120,7 @@ public class TEIFormater {
 				tei.append("\t\t\t\t<publisher>" + TextUtilities.HTMLEncode(biblio.getPublisher()) + 
 					"</publisher>\n");
 				
-                tei.append("\t\t\t\t<availability>");
+                tei.append("\t\t\t\t<availability status=\"unknown\">");
                 tei.append("<p>Copyright ");
                 //if (biblio.getPublicationDate() != null)
                 tei.append(TextUtilities.HTMLEncode(biblio.getPublisher()) + "</p>\n");
@@ -110,10 +128,12 @@ public class TEIFormater {
             }
 	        else {
 	            // a dummy publicationStmt is still necessary according to TEI
+				tei.append("\t\t\t\t<publisher/>\n");
 	            if (defaultPublicationStatement == null) {
-	                tei.append("unknown");
+					tei.append("\t\t\t\t<availability status=\"unknown\"><licence/></availability>");
 	            } else {
-	                tei.append(defaultPublicationStatement);
+	                tei.append("\t\t\t\t<availability status=\"unknown\"><p>" + 
+						defaultPublicationStatement + "</p></availability>");
 	            }
 				tei.append("\n");
 	        }
@@ -125,28 +145,32 @@ public class TEIFormater {
                 int day = date.getDay();
 
                 String when = "";
-				if (year <= 9) 
-					when += "000" + year;
-				else if (year <= 99) 
-					when += "00" + year;
-				else if (year <= 999)
-					when += "0" + year;
+				if (year != -1) {
+					if (year <= 9) 
+						when += "000" + year;
+					else if (year <= 99) 
+						when += "00" + year;
+					else if (year <= 999)
+						when += "0" + year;
+					else
+						when += year;
+	                if (month != -1) {
+						if (month <= 9) 
+							when += "-0" + month;
+						else 
+	 					   	when += "-" + month;
+	                    if (day != -1) {
+							if (day <= 9)
+								when += "-0" + day;
+							else
+								when += "-" + day;
+	                    }
+	                }
+					tei.append("\t\t\t\t<date type=\"published\" when=\"");
+                	tei.append(when + "\">");
+				}
 				else
-					when += year;
-                if (month != -1) {
-					if (month <= 9) 
-						when += "-0" + month;
-					else 
- 					   	when += "-" + month;
-                    if (day != -1) {
-						if (day <= 9)
-							when += "-0" + day;
-						else
-							when += "-" + day;
-                    }
-                }
-                tei.append("\t\t\t\t<date type=\"published\" when=\"");
-                tei.append(when + "\">");
+					tei.append("\t\t\t\t<date>");
 				if (biblio.getPublicationDate() != null) {
 					tei.append(biblio.getPublicationDate());
 				}
@@ -154,7 +178,7 @@ public class TEIFormater {
 					tei.append(when);
 				}
 				tei.append("</date>\n");
-            } else if (biblio.getYear() != null) {
+            } else if ( (biblio.getYear() != null) && (biblio.getYear().length() >0) ) {
 				String when = "";
 				if (biblio.getYear().length() == 1)
 					when += "000" + biblio.getYear();
@@ -165,12 +189,12 @@ public class TEIFormater {
 				else if (biblio.getYear().length() == 4)
 					when += biblio.getYear();
 				
-                if (biblio.getMonth() != null) {
+                if ( (biblio.getMonth() != null) && (biblio.getMonth().length() > 0) ) {
 					if (biblio.getMonth().length() == 1)
 						when += "-0" + biblio.getMonth();
 					else
 						when += "-" + biblio.getMonth();
-                    if (biblio.getDay() != null) {
+                    if ( (biblio.getDay() != null) && (biblio.getDay().length() > 0) ) {
 						if (biblio.getDay().length() == 1)
 							when += "-0" + biblio.getDay();
 						else
@@ -226,7 +250,12 @@ public class TEIFormater {
             }
 			tei.append("\t\t\t</publicationStmt>\n");
 		}
-		
+		else {
+			tei.append("\t\t\t<publicationStmt>\n");
+			tei.append("\t\t\t\t<publisher/>\n");
+			tei.append("\t\t\t\t<availability status=\"unknown\"><licence/></availability>\n");
+			tei.append("\t\t\t</publicationStmt>\n");
+		}
         tei.append("\t\t\t<sourceDesc>\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n");
 
         // authors + affiliation
@@ -447,35 +476,44 @@ public class TEIFormater {
                     int day = date.getDay();
 
 	                String when = "";
-					if (year <= 9) 
-						when += "000" + year;
-					else if (year <= 99) 
-						when += "00" + year;
-					else if (year <= 999)
-						when += "0" + year;
-					else
-						when += year;
-	                if (month != -1) {
-						if (month <= 9) 
-							when += "-0" + month;
-						else 
-	 					   	when += "-" + month;
-	                    if (day != -1) {
-							if (day <= 9)
-								when += "-0" + day;
-							else
-								when += "-" + day;
-	                    }
-	                }
-					if (biblio.getPublicationDate() != null) {
-                    	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
-                    	tei.append(when + "\">");
-						tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
-                                + "</date>\n");
+					if (year != -1) {
+						if (year <= 9) 
+							when += "000" + year;
+						else if (year <= 99) 
+							when += "00" + year;
+						else if (year <= 999)
+							when += "0" + year;
+						else
+							when += year;
+		                if (month != -1) {
+							if (month <= 9) 
+								when += "-0" + month;
+							else 
+		 					   	when += "-" + month;
+		                    if (day != -1) {
+								if (day <= 9)
+									when += "-0" + day;
+								else
+									when += "-" + day;
+		                    }
+		                }
+						if (biblio.getPublicationDate() != null) {
+	                    	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
+	                    	tei.append(when + "\">");
+							tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
+	                                + "</date>\n");
+						}
+						else {
+	                    	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
+	                    	tei.append(when + "\" />\n");
+						}
 					}
 					else {
-                    	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
-                    	tei.append(when + "\" />\n");
+						if (biblio.getPublicationDate() != null) {
+							tei.append("\t\t\t\t\t\t\t<date type=\"published\">"); 
+							tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
+		                                + "</date>\n");	
+						}	
 					}
                 } else if (biblio.getYear() != null) {
 					String when = "";
@@ -547,6 +585,13 @@ public class TEIFormater {
             }
 			tei.append("\t\t\t\t\t</monogr>\n");
         }
+		else {
+			tei.append("\t\t\t\t\t<monogr>\n");
+			tei.append("\t\t\t\t\t\t<imprint>\n");
+			tei.append("\t\t\t\t\t\t\t<date/>\n");
+			tei.append("\t\t\t\t\t\t</imprint>\n");
+			tei.append("\t\t\t\t\t</monogr>\n");
+		} 
 
         if (biblio.getDOI() != null) {
             String theDOI = biblio.getDOI();
@@ -602,14 +647,15 @@ public class TEIFormater {
 				profileDescWritten = true;
 				tei.append("\t\t<profileDesc>\n");
 	            tei.append("\t\t\t<textClass>\n");
-				tei.append("\t\t\t\t<keywords type=\"author\">");
-				tei.append("\n\t\t\t\t\t<list>\n");
+				//tei.append("\t\t\t\t<keywords type=\"author\">");
+				tei.append("\t\t\t\t<keywords>");
+				//tei.append("\n\t\t\t\t\t<list>\n");
 			
 				List<String> keywords = biblio.getKeywords();
 			
 				int pos = 0;
 				for(String keyw : keywords) {
-					tei.append("\t\t\t\t\t\t<item>\n");
+					//tei.append("\t\t\t\t\t\t<item>\n");
 					String res = keyw.trim();
 					if (res.startsWith(":")) {
 			            res = res.substring(1);
@@ -619,17 +665,17 @@ public class TEIFormater {
 				            res = res.substring(0, res.length()-1);
 				        }
 					}
-	                tei.append("\t\t\t\t\t\t\t<term");
+	                tei.append("\t\t\t\t\t<term");
 					if (generateIDs) {
 						String divID = KeyGen.getKey().substring(0,7);
 						tei.append(" id=\"_" + divID + "\"");
 					}
 					tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
-	                tei.append("\t\t\t\t\t\t</item>\n");
+	                //tei.append("\t\t\t\t\t\t</item>\n");
 					pos++;
 				}
 			
-				tei.append("\t\t\t\t\t</list>\n");
+				//tei.append("\t\t\t\t\t</list>\n");
 	            tei.append("\t\t\t\t</keywords>\n");
 			
 				//tei.append("\t\t\t</textClass>\n");
@@ -644,18 +690,18 @@ public class TEIFormater {
 			
 			// Note: to be cleaned...
             if (keywords.startsWith("Categories and Subject Descriptors")) {
-                tei.append("\t\t\t\t<keywords type=\"subject-headers\">");
+                tei.append("\t\t\t\t<keywords scheme=\"subject-headers\">");
             } else if (keywords.startsWith("PACS Numbers:")) {
-                tei.append("\t\t\t\t<keywords type=\"pacs\">");
+                tei.append("\t\t\t\t<keywords scheme=\"pacs\">");
                 keywords = keywords.replace("PACS Numbers:", "").trim();
             } else if (keywords.startsWith("PACS numbers:")) {
-                tei.append("\t\t\t\t<keywords type=\"pacs\">");
+                tei.append("\t\t\t\t<keywords scheme=\"pacs\">");
                 keywords = keywords.replace("PACS numbers:", "").trim();
             } else if (keywords.startsWith("PACS")) {
-                tei.append("\t\t\t\t<keywords type=\"pacs\">");
+                tei.append("\t\t\t\t<keywords scheme=\"pacs\">");
                 keywords = keywords.replace("PACS", "").trim();
             } else {
-                tei.append("\t\t\t\t<keywords type=\"author\"");
+                tei.append("\t\t\t\t<keywords");
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
 					tei.append(" id=\"_" + divID + "\"");
@@ -674,22 +720,22 @@ public class TEIFormater {
 			
             StringTokenizer st1 = new StringTokenizer(keywords, ";");
             if (st1.countTokens() > 2) {
-                tei.append("\n\t\t\t\t\t<list>\n");
+                //tei.append("\n\t\t\t\t\t<list>\n");
                 while (st1.hasMoreTokens()) {
-                    tei.append("\t\t\t\t\t\t<item>\n");
+                    //tei.append("\t\t\t\t\t\t<item>\n");
 					String res = st1.nextToken().trim();
 					if (res.startsWith(":")) {
 			            res = res.substring(1);
 			        }
-                    tei.append("\t\t\t\t\t\t\t<term");
+                    tei.append("\t\t\t\t\t<term");
 					if (generateIDs) {
 						String divID = KeyGen.getKey().substring(0,7);
 						tei.append(" id=\"_" + divID + "\"");
 					}
 					tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
-                    tei.append("\t\t\t\t\t\t</item>\n");
+                    //tei.append("\t\t\t\t\t\t</item>\n");
                 }
-                tei.append("\t\t\t\t\t</list>\n");
+                //tei.append("\t\t\t\t\t</list>\n");
                 tei.append("\t\t\t\t</keywords>\n");
             } else {
                 st1 = new StringTokenizer(keywords, ",");
@@ -725,16 +771,16 @@ public class TEIFormater {
             	tei.append("\t\t\t<textClass>\n");
 			}
 			List<String> categories = biblio.getCategories();
-			tei.append("\t\t\t\t<keywords type=\"category\">");
-			tei.append("\n\t\t\t\t\t<list>\n");
+			tei.append("\t\t\t\t<keywords>");
+			//tei.append("\n\t\t\t\t\t<list>\n");
             for (String category : categories) {
-                tei.append("\t\t\t\t\t\t<item>\n");
-                tei.append("\t\t\t\t\t\t\t<term>" +
+                //tei.append("\t\t\t\t\t\t<item>\n");
+                tei.append("\t\t\t\t\t<term>" +
                         TextUtilities.HTMLEncode(category.trim()) +
                         "</term>\n");
-                tei.append("\t\t\t\t\t\t</item>\n");
+                //tei.append("\t\t\t\t\t\t</item>\n");
             }
-            tei.append("\t\t\t\t\t</list>\n");
+            //tei.append("\t\t\t\t\t</list>\n");
             tei.append("\t\t\t\t</keywords>\n");
         }
 

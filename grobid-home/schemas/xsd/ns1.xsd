@@ -538,16 +538,12 @@ Sample values include: 1] main; 2] sub(subordinate) ; 3] alt(alternate) ; 4] sho
       <xs:documentation>groups information relating to the publication or distribution of a bibliographic item. [3.11.2.4. ]</xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:classCode"/>
-        <xs:sequence maxOccurs="unbounded">
-          <xs:choice>
-            <xs:group ref="mathml:tei_model.imprintPart"/>
-            <xs:group ref="mathml:tei_model.dateLike"/>
-          </xs:choice>
-          <xs:group minOccurs="0" maxOccurs="unbounded" ref="mathml:tei_model.global"/>
-        </xs:sequence>
-      </xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:biblScope"/>
+        <xs:element ref="ns1:date"/>
+        <xs:element ref="ns1:pubPlace"/>
+        <xs:element ref="ns1:publisher"/>
+      </xs:choice>
       <xs:attributeGroup ref="mathml:tei_att.global.attributes"/>
     </xs:complexType>
   </xs:element>
@@ -826,7 +822,10 @@ Sample values include: 1] text; 2] corpus</xs:documentation>
       <xs:documentation>supplies information about the availability of a text, for example any restrictions on its use or distribution, its copyright status, any licence applying to it, etc. [2.2.4. ]</xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <xs:group maxOccurs="unbounded" ref="mathml:tei_model.pLike"/>
+      <xs:choice maxOccurs="unbounded">
+        <xs:group ref="mathml:tei_model.availabilityPart"/>
+        <xs:group ref="mathml:tei_model.pLike"/>
+      </xs:choice>
       <xs:attributeGroup ref="mathml:tei_att.global.attributes"/>
       <xs:attributeGroup ref="mathml:tei_att.declarable.attributes"/>
       <xs:attribute name="status" default="unknown">
@@ -853,6 +852,20 @@ Sample values include: 1] text; 2] corpus</xs:documentation>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="licence">
+    <xs:annotation>
+      <xs:documentation>contains information about a licence or other legal agreement applicable to the text. [2.2.4. ]</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="mathml:tei_macro.specialPara">
+          <xs:attributeGroup ref="mathml:tei_att.global.attributes"/>
+          <xs:attributeGroup ref="mathml:tei_att.pointing.attributes"/>
+          <xs:attributeGroup ref="mathml:tei_att.datable.attributes"/>
+        </xs:extension>
+      </xs:complexContent>
     </xs:complexType>
   </xs:element>
   <xs:element name="seriesStmt">
@@ -1444,6 +1457,16 @@ Sample values include: 1] text; 2] corpus</xs:documentation>
           <xs:attributeGroup ref="mathml:tei_att.global.attributes"/>
         </xs:extension>
       </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="trash">
+    <xs:annotation>
+      <xs:documentation>(Trash) contains noise information to be ignored</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="mathml:tei_att.editLike.attributes"/>
+      <xs:attributeGroup ref="mathml:tei_att.datable.attributes"/>
+      <xs:attributeGroup ref="mathml:tei_att.naming.attributes"/>
     </xs:complexType>
   </xs:element>
 </xs:schema>
