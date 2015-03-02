@@ -54,6 +54,39 @@
                 <elementSpec ident="scriptNote" mode="delete" module="header"/>
                 <!-- sanity checker still fails tho, as it cannot find element mathml.math -->
 				
+				<!-- allowing empty imprint -->
+		        <elementSpec ident="imprint" mode="change" module="core">
+		          <content>
+		            <rng:zeroOrMore>
+		              <rng:choice>
+		                <rng:ref name="model.Incl"/>
+		                <rng:ref name="biblScope"/>
+		                <rng:ref name="date"/>
+		                <rng:ref name="distributor"/>
+		                <rng:ref name="pubPlace"/>
+		                <rng:ref name="publisher"/>
+		                <rng:ref name="time"/>
+		              </rng:choice>
+		            </rng:zeroOrMore>
+		          </content>
+		        </elementSpec>
+				
+				<elementSpec ident="trash" mode="add">
+
+				    <gloss>Trash</gloss>
+				    <desc>contains noise information to be ignored</desc>
+				    <classes>
+				      <memberOf key="model.pLike"/>
+				      <memberOf key="att.editLike"/>
+				      <memberOf key="att.datable"/>
+				      <memberOf key="att.naming"/>
+				    </classes>
+
+				    <content>
+				      <rng:text/>
+				    </content>
+				  </elementSpec>
+				
 				<!-- removing elements not used in Grobid results -->
 				<elementSpec ident="ab" mode="delete" module="linking"/>
 				<elementSpec ident="abbr" mode="delete" module="core"/>
@@ -145,7 +178,6 @@
 				<elementSpec ident="language" mode="delete" module="header"/>
 				<elementSpec ident="lb" mode="delete" module="core"/>
 				<elementSpec ident="lg" mode="delete" module="core"/>
-				<elementSpec ident="licence" mode="delete" module="header"/>
 				<elementSpec ident="linkGrp" mode="delete" module="linking"/>
 				<elementSpec ident="listChange" mode="delete" module="header"/>
 				<elementSpec ident="listEvent" mode="delete" module="namesdates"/>
