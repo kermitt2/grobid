@@ -11,6 +11,8 @@ import org.grobid.core.engines.Engine;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.exceptions.GrobidServiceException;
+// RL: ajout pour respecter le tmpPath des propriétés
+import org.grobid.core.utilities.GrobidProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +22,9 @@ import org.slf4j.LoggerFactory;
  * 
  */
 public class GrobidRestUtils {
-
+	
+	// RL: ajout pour tmpPath
+	static File tempDir = GrobidProperties.getTempPath();
 	/**
 	 * The class Logger.
 	 */
@@ -87,7 +91,8 @@ public class GrobidRestUtils {
 	 */
 	public static File newTempFile(String fileName, String extension) {
 		try {
-			return File.createTempFile(fileName, extension);
+			// modif RL: ajout d'un 3e argument: File tempDir
+			return File.createTempFile(fileName, extension, tempDir);
 		} catch (IOException e) {
 			throw new GrobidServiceException(
 					"Could not create temprorary file, '" + fileName + "."
@@ -107,24 +112,6 @@ public class GrobidRestUtils {
 			file.delete();
 		} catch (Exception exp) {
 			LOGGER.error("Error while deleting the temporary file: " + exp);
-		}
-	}
-
-	/**
-	 * Delete temporary directory.
-	 * 
-	 * @param path
-	 *            the path to the directory to delete.
-	 */
-	public static void removeTempDirectory(final String path) {
-		try {
-			LOGGER.debug("Removing " + path);
-			File theDirectory = new File(path);
-			if (theDirectory.exists()) {
-				theDirectory.delete();
-			}
-		} catch (Exception exp) {
-			LOGGER.error("Error while deleting the temporary directory: " + exp);
 		}
 	}
 
