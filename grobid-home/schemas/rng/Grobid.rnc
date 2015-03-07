@@ -5,7 +5,7 @@ namespace rng = "http://relaxng.org/ns/structure/1.0"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2015-03-02T02:48:37Z. .
+# Schema generated from ODD source 2015-03-06T03:27:45Z. .
 # TEI Edition: Version 2.7.0. Last updated on
 #	16th September 2014, revision 13036
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -2521,18 +2521,17 @@ tei_monogr =
   
   ## (monographic level) contains bibliographic elements describing an item (e.g. a book or journal) published as an independent item (i.e. as a separate physical object). [3.11.2.1. ]
   element ns1:monogr {
-    ((((tei_author | tei_editor | tei_meeting),
-       (tei_author | tei_editor | tei_meeting)*,
-       tei_title+,
-       (tei_model.ptrLike | tei_idno | tei_editor)*)
-      | ((tei_title | tei_model.ptrLike | tei_idno)+,
-         (tei_author | tei_editor | tei_meeting)*)
-      | tei_idno)?,
-     tei_availability*,
-     tei_model.noteLike*,
-     (tei_edition, (tei_idno | tei_model.ptrLike | tei_editor)*)*,
-     tei_imprint,
-     (tei_imprint | tei_biblScope)*),
+    (tei_imprint
+     | tei_author
+     | tei_editor
+     | tei_meeting
+     | tei_title
+     | tei_model.ptrLike
+     | tei_idno
+     | tei_availability
+     | tei_model.noteLike
+     | tei_edition
+     | tei_biblScope)*,
     tei_att.global.attributes,
     empty
   }
@@ -2706,9 +2705,7 @@ tei_listBibl =
   
   ## (citation list) contains a list of bibliographic citations of any kind. [3.11.1.  2.2.7.  15.3.2. ]
   element ns1:listBibl {
-    (tei_model.headLike*,
-     (tei_model.biblLike | tei_model.milestoneLike)+,
-     empty*),
+    tei_model.biblLike*,
     tei_att.global.attributes,
     tei_att.sortable.attributes,
     tei_att.declarable.attributes,
@@ -2852,7 +2849,7 @@ tei_abstract =
   
   ## contains a summary or formal abstract prefixed to an existing source document by the encoder. [2.4.4. ]
   element ns1:abstract {
-    (tei_model.pLike | tei_model.listLike)+,
+    (text | tei_model.pLike | tei_model.listLike)*,
     tei_att.global.attributes,
     tei_att.responsibility.attributes,
     empty
@@ -2870,7 +2867,8 @@ tei_keywords =
   
   ## contains a list of keywords or phrases identifying the topic or nature of a text. [2.4.3. ]
   element ns1:keywords {
-    (tei_term+ | tei_list),
+    (text | tei_term)*,
+    tei_list?,
     tei_att.global.attributes,
     
     ## identifies the controlled vocabulary within which the set of keywords concerned is defined identifies the classification scheme within which the set of categories concerned is defined, for example by a taxonomy element, or by some other resource.
@@ -3292,10 +3290,7 @@ tei_table =
   
   ## contains text displayed in tabular form, in rows and columns. [14.1.1. ]
   element ns1:table {
-    ((tei_model.headLike | tei_model.global)*,
-     ((tei_row, tei_model.global*)+
-      | (tei_model.graphicLike, tei_model.global*)+),
-     (tei_model.divBottom, tei_model.global*)*),
+    text?,
     tei_att.global.attributes,
     
     ## indicates the number of rows in the table.
@@ -3303,15 +3298,6 @@ tei_table =
     
     ## (columns) indicates the number of columns in each row of the table.
     attribute cols { tei_data.count }?,
-    empty
-  }
-tei_row =
-  
-  ## contains one row of a table. [14.1.1. ]
-  element ns1:row {
-    tei_cell+,
-    tei_att.global.attributes,
-    tei_att.tableDecoration.attributes,
     empty
   }
 tei_cell =
@@ -3357,9 +3343,9 @@ tei_figDesc =
   }
 tei_trash =
   
-  ## (Trash) contains noise information to be ignored
+  ## (Trash) contains noise information to be ignored, typically from vectoriel images
   element ns1:trash {
-    text,
+    (text | tei_ref)*,
     tei_att.editLike.attributes,
     tei_att.datable.attributes,
     tei_att.naming.attributes,
