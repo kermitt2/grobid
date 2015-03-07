@@ -1664,10 +1664,10 @@ public class BiblioItem {
             }
 
             // title
+            for (int i = 0; i < indent + 2; i++) {
+                tei.append("\t");
+            }
             if (title != null) {
-                for (int i = 0; i < indent + 2; i++) {
-                    tei.append("\t");
-                }
                 tei.append("<title");
                 if ((bookTitle == null) && (journal == null)) {
                     tei.append(" level=\"m\" type=\"main\"");
@@ -1685,7 +1685,9 @@ public class BiblioItem {
 						.append("\">").append(TextUtilities.HTMLEncode(title)).append("</title>\n");
                 }
             }
-
+			else {
+                tei.append("<title/>\n");
+			}
             boolean hasEnglishTitle = false;
             if (english_title != null) {
                 // here do check the language !
@@ -1786,7 +1788,7 @@ public class BiblioItem {
                                     tei.append("<country>" + country + "</country>");
                                 }
                                 if ((location != null) && (town == null) && (country == null)) {
-                                    tei.append(TextUtilities.HTMLEncode(location));
+                                    tei.append("<addrLine>" + TextUtilities.HTMLEncode(location) + "</addrLine>");
                                 }
                                 tei.append("</address>");
                                 meetLoc = true;
@@ -1799,6 +1801,9 @@ public class BiblioItem {
                 }
 
                 if (((location != null) || (town != null) || (country != null)) && (!meetLoc)) {
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
                     tei.append("<meeting>");
                     tei.append("<address>");
                     if (town != null) {
@@ -1808,18 +1813,21 @@ public class BiblioItem {
                         tei.append("<country>" + country + "</country>");
                     }
                     if ((location != null) && (town == null) && (country == null)) {
-                        tei.append(TextUtilities.HTMLEncode(location));
+                        tei.append("<addrLine>" + TextUtilities.HTMLEncode(location) + "</addrLine>");
                     }
                     tei.append("</address>");
-                    tei.append("</meeting>");
+                    tei.append("</meeting>\n");
                 }
 
-                if ((publication_date != null) || (pageRange != null) || (publisher != null)) {
-                    for (int i = 0; i < indent + 2; i++) {
-                        tei.append("\t");
-                    }
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                if ((publication_date != null) || (pageRange != null) || (publisher != null)) {   
                     tei.append("<imprint>\n");
                 }
+				else 
+					tei.append("<imprint/>\n");
+				
                 if (publisher != null) {
                     for (int i = 0; i < indent + 3; i++) {
                         tei.append("\t");
@@ -1834,33 +1842,35 @@ public class BiblioItem {
                         int year = normalized_publication_date.getYear();
                         int month = normalized_publication_date.getMonth();
                         int day = normalized_publication_date.getDay();
-
-		                String when = "";
-						if (year <= 9) 
-							when += "000" + year;
-						else if (year <= 99) 
-							when += "00" + year;
-						else if (year <= 999)
-							when += "0" + year;
-						else
-							when += year;
-		                if (month != -1) {
-							if (month <= 9) 
-								when += "-0" + month;
-							else 
-		 					   	when += "-" + month;
-		                    if (day != -1) {
-								if (day <= 9)
-									when += "-0" + day;
-								else
-									when += "-" + day;
-		                    }
-		                }
-                        for (int i = 0; i < indent + 3; i++) {
-                            tei.append("\t");
-                        }
-                        tei.append("<date type=\"published\" when=\"");
-                        tei.append(when + "\" />\n");
+						
+						if (year != -1) {
+			                String when = "";
+							if (year <= 9) 
+								when += "000" + year;
+							else if (year <= 99) 
+								when += "00" + year;
+							else if (year <= 999)
+								when += "0" + year;
+							else
+								when += year;
+			                if (month != -1) {
+								if (month <= 9) 
+									when += "-0" + month;
+								else 
+			 					   	when += "-" + month;
+			                    if (day != -1) {
+									if (day <= 9)
+										when += "-0" + day;
+									else
+										when += "-" + day;
+			                    }
+			                }
+	                        for (int i = 0; i < indent + 3; i++) {
+	                            tei.append("\t");
+	                        }
+	                        tei.append("<date type=\"published\" when=\"");
+	                        tei.append(when + "\" />\n");
+						}
                     } else if (this.getYear() != null) {
 						String when = "";
 						if (this.getYear().length() == 1)
@@ -1918,9 +1928,9 @@ public class BiblioItem {
                     }
                 }
                 if ((publication_date != null) || (pageRange != null) || (publisher != null)) {
-                    for (int i = 0; i < indent + 2; i++) {
-                        tei.append("\t");
-                    }
+	                for (int i = 0; i < indent + 2; i++) {
+	                    tei.append("\t");
+	                }
                     tei.append("</imprint>\n");
                 }
             } else if (journal != null) {
@@ -1983,13 +1993,12 @@ public class BiblioItem {
                     }
                 }
 
-
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
                 if ((volumeBlock != null) | (issue != null) || (pageRange != null) || (publication_date != null)
                         || (publisher != null)) {
-                    for (int i = 0; i < indent + 2; i++) {
-                        tei.append("\t");
-                    }
-                    tei.append("<imprint>\n");
+					tei.append("<imprint>\n");
                     if (publisher != null) {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
@@ -2033,33 +2042,35 @@ public class BiblioItem {
                             int year = normalized_publication_date.getYear();
                             int month = normalized_publication_date.getMonth();
                             int day = normalized_publication_date.getDay();
-
-			                String when = "";
-							if (year <= 9) 
-								when += "000" + year;
-							else if (year <= 99) 
-								when += "00" + year;
-							else if (year <= 999)
-								when += "0" + year;
-							else
-								when += year;
-			                if (month != -1) {
-								if (month <= 9) 
-									when += "-0" + month;
-								else 
-			 					   	when += "-" + month;
-			                    if (day != -1) {
-									if (day <= 9)
-										when += "-0" + day;
-									else
-										when += "-" + day;
-			                    }
-			                }
-                            for (int i = 0; i < indent + 3; i++) {
-                                tei.append("\t");
-                            }
-                            tei.append("<date type=\"published\" when=\"");
-                            tei.append(when + "\" />\n");
+							
+							if (year != -1) {
+				                String when = "";
+								if (year <= 9) 
+									when += "000" + year;
+								else if (year <= 99) 
+									when += "00" + year;
+								else if (year <= 999)
+									when += "0" + year;
+								else
+									when += year;
+				                if (month != -1) {
+									if (month <= 9) 
+										when += "-0" + month;
+									else 
+				 					   	when += "-" + month;
+				                    if (day != -1) {
+										if (day <= 9)
+											when += "-0" + day;
+										else
+											when += "-" + day;
+				                    }
+				                }
+	                            for (int i = 0; i < indent + 3; i++) {
+	                                tei.append("\t");
+	                            }
+	                            tei.append("<date type=\"published\" when=\"");
+	                            tei.append(when + "\" />\n");
+							}
                         } else if (this.getYear() != null) {
 							String when = "";
 							if (this.getYear().length() == 1)
@@ -2112,6 +2123,9 @@ public class BiblioItem {
                     }
                     tei.append("</imprint>\n");
                 }
+				else {
+					tei.append("<imprint/>\n");
+				}
             } else {
                 // not a journal and not something in a book...
                 if (editors != null) {
@@ -2139,12 +2153,15 @@ public class BiblioItem {
                     }
                 }
 
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
                 if ((publication_date != null) || (pageRange != null) || (location != null) || (publisher != null)) {
-                    for (int i = 0; i < indent + 2; i++) {
-                        tei.append("\t");
-                    }
                     tei.append("<imprint>\n");
                 }
+				else {
+					tei.append("<imprint/>\n");
+				}
                 // date
                 if (normalized_publication_date != null) {
                     if ((normalized_publication_date.getDay() != -1) |
@@ -2154,32 +2171,34 @@ public class BiblioItem {
                         int month = normalized_publication_date.getMonth();
                         int day = normalized_publication_date.getDay();
 
-		                String when = "";
-						if (year <= 9) 
-							when += "000" + year;
-						else if (year <= 99) 
-							when += "00" + year;
-						else if (year <= 999)
-							when += "0" + year;
-						else
-							when += year;
-		                if (month != -1) {
-							if (month <= 9) 
-								when += "-0" + month;
-							else 
-		 					   	when += "-" + month;
-		                    if (day != -1) {
-								if (day <= 9)
-									when += "-0" + day;
-								else
-									when += "-" + day;
-		                    }
-		                }
-                        for (int i = 0; i < indent + 3; i++) {
-                            tei.append("\t");
-                        }
-                        tei.append("<date type=\"published\" when=\"");
-                        tei.append(when + "\" />\n");
+						if (year != -1) {
+			                String when = "";
+							if (year <= 9) 
+								when += "000" + year;
+							else if (year <= 99) 
+								when += "00" + year;
+							else if (year <= 999)
+								when += "0" + year;
+							else
+								when += year;
+			                if (month != -1) {
+								if (month <= 9) 
+									when += "-0" + month;
+								else 
+			 					   	when += "-" + month;
+			                    if (day != -1) {
+									if (day <= 9)
+										when += "-0" + day;
+									else
+										when += "-" + day;
+			                    }
+			                }
+	                        for (int i = 0; i < indent + 3; i++) {
+	                            tei.append("\t");
+	                        }
+	                        tei.append("<date type=\"published\" when=\"");
+	                        tei.append(when + "\" />\n");
+						}
                     } else if (this.getYear() != null) {
 						String when = "";
 						if (this.getYear().length() == 1)
@@ -2482,6 +2501,9 @@ public class BiblioItem {
                     tei += " level=\"a\"";
                 tei += ">" + TextUtilities.HTMLEncode(title) + "</title>\n";
             }
+			else {
+				tei += "\t\t<title/>\n";
+			}
 
             // authors
             if (authors != null) {
@@ -3266,14 +3288,15 @@ public class BiblioItem {
                                 }
                             }
 
-                            if ((aff.getAddressString() != null) |
-                                    (aff.getAddrLine() != null) |
-                                    (aff.getPostBox() != null) |
-                                    (aff.getPostCode() != null) |
-                                    (aff.getSettlement() != null) |
-                                    (aff.getRegion() != null) |
+                            if ((aff.getAddressString() != null) ||
+                                    (aff.getAddrLine() != null) ||
+                                    (aff.getPostBox() != null) ||
+                                    (aff.getPostCode() != null) ||
+                                    (aff.getSettlement() != null) ||
+                                    (aff.getRegion() != null) ||
                                     (aff.getCountry() != null)) {
                                 TextUtilities.appendN(tei, '\t', nbTag + 2);
+								
                                 tei.append("<address>\n");
                                 if (aff.getAddressString() != null) {
                                     TextUtilities.appendN(tei, '\t', nbTag + 3);
@@ -3336,18 +3359,21 @@ public class BiblioItem {
         if (affs != null) {
             for (Affiliation aff : affs) {
                 if (aff.getFailAffiliation()) {
+					// dummy <author> for TEI conformance
                     TextUtilities.appendN(tei, '\t', nbTag);
+                    tei.append("<author>\n");
+                    TextUtilities.appendN(tei, '\t', nbTag+1);
                     tei.append("<affiliation>\n");
 
                     if (aff.getDepartments() != null) {
                         if (aff.getDepartments().size() == 1) {
-                            TextUtilities.appendN(tei, '\t', nbTag + 1);
+                            TextUtilities.appendN(tei, '\t', nbTag + 2);
                             tei.append("<orgName type=\"department\">" +
                                     TextUtilities.HTMLEncode(aff.getDepartments().get(0)) + "</orgName>\n");
                         } else {
                             int q = 1;
                             for (String depa : aff.getDepartments()) {
-                                TextUtilities.appendN(tei, '\t', nbTag + 1);
+                                TextUtilities.appendN(tei, '\t', nbTag + 2);
                                 tei.append("<orgName type=\"department\" key=\"dep" + q + "\">" +
                                         TextUtilities.HTMLEncode(depa) + "</orgName>\n");
                                 q++;
@@ -3357,13 +3383,13 @@ public class BiblioItem {
 
                     if (aff.getLaboratories() != null) {
                         if (aff.getLaboratories().size() == 1) {
-                            TextUtilities.appendN(tei, '\t', nbTag + 1);
+                            TextUtilities.appendN(tei, '\t', nbTag + 2);
                             tei.append("<orgName type=\"laboratory\">" +
                                     TextUtilities.HTMLEncode(aff.getLaboratories().get(0)) + "</orgName>\n");
                         } else {
                             int q = 1;
                             for (String labo : aff.getLaboratories()) {
-                                TextUtilities.appendN(tei, '\t', nbTag + 1);
+                                TextUtilities.appendN(tei, '\t', nbTag + 2);
                                 tei.append("<orgName type=\"laboratory\" key=\"lab" + q + "\">" +
                                         TextUtilities.HTMLEncode(labo) + "</orgName>\n");
                                 q++;
@@ -3373,13 +3399,13 @@ public class BiblioItem {
 
                     if (aff.getInstitutions() != null) {
                         if (aff.getInstitutions().size() == 1) {
-                            TextUtilities.appendN(tei, '\t', nbTag + 1);
+                            TextUtilities.appendN(tei, '\t', nbTag + 2);
                             tei.append("<orgName type=\"institution\">" +
                                     TextUtilities.HTMLEncode(aff.getInstitutions().get(0)) + "</orgName>\n");
                         } else {
                             int q = 1;
                             for (String inst : aff.getInstitutions()) {
-                                TextUtilities.appendN(tei, '\t', nbTag + 1);
+                                TextUtilities.appendN(tei, '\t', nbTag + 2);
                                 tei.append("<orgName type=\"institution\" key=\"instit" + q + "\">" +
                                         TextUtilities.HTMLEncode(inst) + "</orgName>\n");
                                 q++;
@@ -3387,52 +3413,64 @@ public class BiblioItem {
                         }
                     }
 
-                    TextUtilities.appendN(tei, '\t', nbTag + 1);
-                    tei.append("<address>\n");
-                    if (aff.getAddressString() != null) {
-                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-                        tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddressString()) +
-                                "</addrLine>\n");
-                    }
-                    if (aff.getAddrLine() != null) {
-                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-                        tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddrLine()) +
-                                "</addrLine>\n");
-                    }
-                    if (aff.getPostBox() != null) {
-                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-                        tei.append("<postBox>" + TextUtilities.HTMLEncode(aff.getPostBox()) +
-                                "</postBox>\n");
-                    }
-                    if (aff.getPostCode() != null) {
-                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-                        tei.append("<postCode>" + TextUtilities.HTMLEncode(aff.getPostCode()) +
-                                "</postCode>\n");
-                    }
-                    if (aff.getSettlement() != null) {
-                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-                        tei.append("<settlement>" + TextUtilities.HTMLEncode(aff.getSettlement()) +
-                                "</settlement>\n");
-                    }
-                    if (aff.getRegion() != null) {
-                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-                        tei.append("<region>" + TextUtilities.HTMLEncode(aff.getRegion()) +
-                                "</region>\n");
-                    }
-                    if (aff.getCountry() != null) {
-                        String code = lexicon.getcountryCode(aff.getCountry());
-                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-                        tei.append("<country");
-                        if (code != null)
-                            tei.append(" key=\"" + code + "\"");
-                        tei.append(">" + TextUtilities.HTMLEncode(aff.getCountry()) + "</country>\n");
-                    }
+                    if ((aff.getAddressString() != null) ||
+                            (aff.getAddrLine() != null) ||
+                            (aff.getPostBox() != null) ||
+                            (aff.getPostCode() != null) ||
+                            (aff.getSettlement() != null) ||
+                            (aff.getRegion() != null) ||
+                            (aff.getCountry() != null)) {
 
-                    TextUtilities.appendN(tei, '\t', nbTag + 1);
-                    tei.append("</address>\n");
+	                    TextUtilities.appendN(tei, '\t', nbTag + 2);
+	                    tei.append("<address>\n");
+	                    if (aff.getAddressString() != null) {
+	                        TextUtilities.appendN(tei, '\t', nbTag + 3);
+	                        tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddressString()) +
+	                                "</addrLine>\n");
+	                    }
+	                    if (aff.getAddrLine() != null) {
+	                        TextUtilities.appendN(tei, '\t', nbTag + 3);
+	                        tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddrLine()) +
+	                                "</addrLine>\n");
+	                    }
+	                    if (aff.getPostBox() != null) {
+	                        TextUtilities.appendN(tei, '\t', nbTag + 3);
+	                        tei.append("<postBox>" + TextUtilities.HTMLEncode(aff.getPostBox()) +
+	                                "</postBox>\n");
+	                    }
+	                    if (aff.getPostCode() != null) {
+	                        TextUtilities.appendN(tei, '\t', nbTag + 3);
+	                        tei.append("<postCode>" + TextUtilities.HTMLEncode(aff.getPostCode()) +
+	                                "</postCode>\n");
+	                    }
+	                    if (aff.getSettlement() != null) {
+	                        TextUtilities.appendN(tei, '\t', nbTag + 3);
+	                        tei.append("<settlement>" + TextUtilities.HTMLEncode(aff.getSettlement()) +
+	                                "</settlement>\n");
+	                    }
+	                    if (aff.getRegion() != null) {
+	                        TextUtilities.appendN(tei, '\t', nbTag + 3);
+	                        tei.append("<region>" + TextUtilities.HTMLEncode(aff.getRegion()) +
+	                                "</region>\n");
+	                    }
+	                    if (aff.getCountry() != null) {
+	                        String code = lexicon.getcountryCode(aff.getCountry());
+	                        TextUtilities.appendN(tei, '\t', nbTag + 3);
+	                        tei.append("<country");
+	                        if (code != null)
+	                            tei.append(" key=\"" + code + "\"");
+	                        tei.append(">" + TextUtilities.HTMLEncode(aff.getCountry()) + "</country>\n");
+	                    }
 
-                    TextUtilities.appendN(tei, '\t', nbTag);
+	                    TextUtilities.appendN(tei, '\t', nbTag + 2);
+	                    tei.append("</address>\n");
+					}
+
+                    TextUtilities.appendN(tei, '\t', nbTag+1);
                     tei.append("</affiliation>\n");
+					
+                    TextUtilities.appendN(tei, '\t', nbTag);
+                    tei.append("</author>\n");
                 }
             }
         } else if (affiliation != null) {
@@ -3441,8 +3479,10 @@ public class BiblioItem {
             while (st2.hasMoreTokens()) {
                 String aff = st2.nextToken();
                 TextUtilities.appendN(tei, '\t', nbTag);
+                tei.append("<author>\n");
+                TextUtilities.appendN(tei, '\t', nbTag+1);
                 tei.append("<affiliation>\n");
-                TextUtilities.appendN(tei, '\t', nbTag + 1);
+                TextUtilities.appendN(tei, '\t', nbTag+2);
                 tei.append("<orgName>" + TextUtilities.HTMLEncode(aff) + "</orgName>\n");
                 if (nbAddresses == nbAffiliations) {
                     int addressRank = 0;
@@ -3451,7 +3491,7 @@ public class BiblioItem {
                         while (st3.hasMoreTokens()) {
                             String add = st3.nextToken();
                             if (addressRank == affiliationRank) {
-                                TextUtilities.appendN(tei, '\t', nbTag + 1);
+                                TextUtilities.appendN(tei, '\t', nbTag + 2);
                                 tei.append("<address><addrLine>" + TextUtilities.HTMLEncode(add)
                                         + "</addrLine></address>\n");
                                 break;
@@ -3460,8 +3500,11 @@ public class BiblioItem {
                         }
                     }
                 }
-                TextUtilities.appendN(tei, '\t', nbTag);
+                TextUtilities.appendN(tei, '\t', nbTag+1);
                 tei.append("</affiliation>\n");
+
+                TextUtilities.appendN(tei, '\t', nbTag);
+                tei.append("</author>\n");
 
                 affiliationRank++;
             }

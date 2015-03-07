@@ -157,6 +157,10 @@ public class FullTextParser extends AbstractParser {
 	            rese2 = label(bodytext);
 				//System.out.println(rese);
 			}
+			
+			boolean generateImageReferences = false;
+			if (assetPath != null) 
+				generateImageReferences = true;
 
             // final combination
             toTEI(doc, // document
@@ -164,7 +168,7 @@ public class FullTextParser extends AbstractParser {
 				tokenizationsBody, tokenizationsBody2, // tokenization for body and annex 
 				resHeader, resCitations, // header and bibliographical citations
 				null, false, mode,
-				generateIDs);
+				generateIDs, generateImageReferences);
             return doc;
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
@@ -1284,7 +1288,8 @@ public class FullTextParser extends AbstractParser {
                        BiblioItem catalogue,
                        boolean withStyleSheet,
 					   int mode,
-					   boolean generateIDs) {
+					   boolean generateIDs,
+					   boolean generateImageReferences) {
         if (doc.getBlocks() == null) {
             return;
         }
@@ -1296,7 +1301,7 @@ public class FullTextParser extends AbstractParser {
 			//System.out.println(rese);
 			if (mode == 0) {
 				tei = teiFormater.toTEIBodyLight(tei, reseBody, resHeader, resCitations, 
-					tokenizationsBody, doc, generateIDs);
+					tokenizationsBody, doc, generateIDs, generateImageReferences);
 			}
 			else if (mode == 1) {
            		tei = teiFormater.toTEIBodyML(tei, reseBody, resHeader, resCitations, 
@@ -1306,7 +1311,7 @@ public class FullTextParser extends AbstractParser {
 			tei.append("\t\t<back>\n");
 			if (mode == 0) {
 				tei = teiFormater.toTEIAnnexLight(tei, reseAnnex, resHeader, resCitations, 
-					tokenizationsAnnex, doc, generateIDs);
+					tokenizationsAnnex, doc, generateIDs, generateImageReferences);
 			}
 			else if (mode == 1) {
 				tei = teiFormater.toTEIAnnexML(tei, reseAnnex, resHeader, resCitations, 
