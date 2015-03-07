@@ -370,56 +370,19 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
       <xs:documentation>(monographic level) contains bibliographic elements describing an item (e.g. a book or journal) published as an independent item (i.e. as a separate physical object). [3.11.2.1. ]</xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <xs:sequence>
-        <xs:choice minOccurs="0">
-          <xs:sequence>
-            <xs:choice>
-              <xs:element ref="ns1:author"/>
-              <xs:element ref="ns1:editor"/>
-              <xs:element ref="ns1:meeting"/>
-            </xs:choice>
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
-              <xs:element ref="ns1:author"/>
-              <xs:element ref="ns1:editor"/>
-              <xs:element ref="ns1:meeting"/>
-            </xs:choice>
-            <xs:element maxOccurs="unbounded" ref="ns1:title"/>
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
-              <xs:group ref="mathml:tei_model.ptrLike"/>
-              <xs:element ref="ns1:idno"/>
-              <xs:element ref="ns1:editor"/>
-            </xs:choice>
-          </xs:sequence>
-          <xs:sequence>
-            <xs:choice maxOccurs="unbounded">
-              <xs:element ref="ns1:title"/>
-              <xs:group ref="mathml:tei_model.ptrLike"/>
-              <xs:element ref="ns1:idno"/>
-            </xs:choice>
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
-              <xs:element ref="ns1:author"/>
-              <xs:element ref="ns1:editor"/>
-              <xs:element ref="ns1:meeting"/>
-            </xs:choice>
-          </xs:sequence>
-          <xs:element ref="ns1:idno"/>
-        </xs:choice>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:availability"/>
-        <xs:group minOccurs="0" maxOccurs="unbounded" ref="mathml:tei_model.noteLike"/>
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:element ref="ns1:edition"/>
-          <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element ref="ns1:idno"/>
-            <xs:group ref="mathml:tei_model.ptrLike"/>
-            <xs:element ref="ns1:editor"/>
-          </xs:choice>
-        </xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:imprint"/>
-        <xs:choice minOccurs="0" maxOccurs="unbounded">
-          <xs:element ref="ns1:imprint"/>
-          <xs:element ref="ns1:biblScope"/>
-        </xs:choice>
-      </xs:sequence>
+        <xs:element ref="ns1:author"/>
+        <xs:element ref="ns1:editor"/>
+        <xs:element ref="ns1:meeting"/>
+        <xs:element ref="ns1:title"/>
+        <xs:group ref="mathml:tei_model.ptrLike"/>
+        <xs:element ref="ns1:idno"/>
+        <xs:element ref="ns1:availability"/>
+        <xs:group ref="mathml:tei_model.noteLike"/>
+        <xs:element ref="ns1:edition"/>
+        <xs:element ref="ns1:biblScope"/>
+      </xs:choice>
       <xs:attributeGroup ref="mathml:tei_att.global.attributes"/>
     </xs:complexType>
   </xs:element>
@@ -697,13 +660,7 @@ Suggested values include: 1] vol(volume) ; 2] issue; 3] pp(pages) ; 4] ll(lines)
       <xs:documentation>(citation list) contains a list of bibliographic citations of any kind. [3.11.1.  2.2.7.  15.3.2. ]</xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <xs:sequence>
-        <xs:group minOccurs="0" maxOccurs="unbounded" ref="mathml:tei_model.headLike"/>
-        <xs:choice maxOccurs="unbounded">
-          <xs:group ref="mathml:tei_model.biblLike"/>
-          <xs:group ref="mathml:tei_model.milestoneLike"/>
-        </xs:choice>
-      </xs:sequence>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="mathml:tei_model.biblLike"/>
       <xs:attributeGroup ref="mathml:tei_att.global.attributes"/>
       <xs:attributeGroup ref="mathml:tei_att.sortable.attributes"/>
       <xs:attributeGroup ref="mathml:tei_att.declarable.attributes"/>
@@ -925,8 +882,8 @@ Sample values include: 1] text; 2] corpus</xs:documentation>
     <xs:annotation>
       <xs:documentation>contains a summary or formal abstract prefixed to an existing source document by the encoder. [2.4.4. ]</xs:documentation>
     </xs:annotation>
-    <xs:complexType>
-      <xs:choice maxOccurs="unbounded">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:group ref="mathml:tei_model.pLike"/>
         <xs:group ref="mathml:tei_model.listLike"/>
       </xs:choice>
@@ -951,11 +908,11 @@ Sample values include: 1] text; 2] corpus</xs:documentation>
     <xs:annotation>
       <xs:documentation>contains a list of keywords or phrases identifying the topic or nature of a text. [2.4.3. ]</xs:documentation>
     </xs:annotation>
-    <xs:complexType>
-      <xs:choice>
-        <xs:element maxOccurs="unbounded" ref="ns1:term"/>
-        <xs:element ref="ns1:list"/>
-      </xs:choice>
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:term"/>
+        <xs:element minOccurs="0" ref="ns1:list"/>
+      </xs:sequence>
       <xs:attributeGroup ref="mathml:tei_att.global.attributes"/>
       <xs:attribute name="scheme" type="mathml:tei_data.pointer">
         <xs:annotation>
@@ -1352,27 +1309,7 @@ Sample values include: 1] text; 2] corpus</xs:documentation>
     <xs:annotation>
       <xs:documentation>contains text displayed in tabular form, in rows and columns. [14.1.1. ]</xs:documentation>
     </xs:annotation>
-    <xs:complexType>
-      <xs:sequence>
-        <xs:choice minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="mathml:tei_model.headLike"/>
-          <xs:group ref="mathml:tei_model.global"/>
-        </xs:choice>
-        <xs:choice>
-          <xs:sequence maxOccurs="unbounded">
-            <xs:element ref="ns1:row"/>
-            <xs:group minOccurs="0" maxOccurs="unbounded" ref="mathml:tei_model.global"/>
-          </xs:sequence>
-          <xs:sequence maxOccurs="unbounded">
-            <xs:group ref="mathml:tei_model.graphicLike"/>
-            <xs:group minOccurs="0" maxOccurs="unbounded" ref="mathml:tei_model.global"/>
-          </xs:sequence>
-        </xs:choice>
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="mathml:tei_model.divBottom"/>
-          <xs:group minOccurs="0" maxOccurs="unbounded" ref="mathml:tei_model.global"/>
-        </xs:sequence>
-      </xs:sequence>
+    <xs:complexType mixed="true">
       <xs:attributeGroup ref="mathml:tei_att.global.attributes"/>
       <xs:attribute name="rows" type="mathml:tei_data.count">
         <xs:annotation>
@@ -1384,18 +1321,6 @@ Sample values include: 1] text; 2] corpus</xs:documentation>
           <xs:documentation>(columns) indicates the number of columns in each row of the table.</xs:documentation>
         </xs:annotation>
       </xs:attribute>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="row">
-    <xs:annotation>
-      <xs:documentation>contains one row of a table. [14.1.1. ]</xs:documentation>
-    </xs:annotation>
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:cell"/>
-      </xs:sequence>
-      <xs:attributeGroup ref="mathml:tei_att.global.attributes"/>
-      <xs:attributeGroup ref="mathml:tei_att.tableDecoration.attributes"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="cell">
@@ -1461,9 +1386,12 @@ Sample values include: 1] text; 2] corpus</xs:documentation>
   </xs:element>
   <xs:element name="trash">
     <xs:annotation>
-      <xs:documentation>(Trash) contains noise information to be ignored</xs:documentation>
+      <xs:documentation>(Trash) contains noise information to be ignored, typically from vectoriel images</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:ref"/>
+      </xs:sequence>
       <xs:attributeGroup ref="mathml:tei_att.editLike.attributes"/>
       <xs:attributeGroup ref="mathml:tei_att.datable.attributes"/>
       <xs:attributeGroup ref="mathml:tei_att.naming.attributes"/>

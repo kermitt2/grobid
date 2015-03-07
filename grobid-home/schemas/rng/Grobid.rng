@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-03-02T02:48:48Z. .
+Schema generated from ODD source 2015-03-06T03:27:49Z. .
 TEI Edition: Version 2.7.0. Last updated on
 	16th September 2014, revision 13036
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -5997,78 +5997,21 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
    <define name="tei_monogr">
       <element name="monogr">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(monographic level) contains bibliographic elements describing an item (e.g. a book or journal) published as an independent item (i.e. as a separate physical object). [3.11.2.1. ]</a:documentation>
-         <group>
-            <optional>
-               <choice>
-                  <group>
-                     <choice>
-                        <ref name="tei_author"/>
-                        <ref name="tei_editor"/>
-                        <ref name="tei_meeting"/>
-                     </choice>
-                     <zeroOrMore>
-                        <choice>
-                           <ref name="tei_author"/>
-                           <ref name="tei_editor"/>
-                           <ref name="tei_meeting"/>
-                        </choice>
-                     </zeroOrMore>
-                     <oneOrMore>
-                        <ref name="tei_title"/>
-                     </oneOrMore>
-                     <zeroOrMore>
-                        <choice>
-                           <ref name="tei_model.ptrLike"/>
-                           <ref name="tei_idno"/>
-                           <ref name="tei_editor"/>
-                        </choice>
-                     </zeroOrMore>
-                  </group>
-                  <group>
-                     <oneOrMore>
-                        <choice>
-                           <ref name="tei_title"/>
-                           <ref name="tei_model.ptrLike"/>
-                           <ref name="tei_idno"/>
-                        </choice>
-                     </oneOrMore>
-                     <zeroOrMore>
-                        <choice>
-                           <ref name="tei_author"/>
-                           <ref name="tei_editor"/>
-                           <ref name="tei_meeting"/>
-                        </choice>
-                     </zeroOrMore>
-                  </group>
-                  <group>
-                     <ref name="tei_idno"/>
-                  </group>
-               </choice>
-            </optional>
-            <zeroOrMore>
+         <zeroOrMore>
+            <choice>
+               <ref name="tei_imprint"/>
+               <ref name="tei_author"/>
+               <ref name="tei_editor"/>
+               <ref name="tei_meeting"/>
+               <ref name="tei_title"/>
+               <ref name="tei_model.ptrLike"/>
+               <ref name="tei_idno"/>
                <ref name="tei_availability"/>
-            </zeroOrMore>
-            <zeroOrMore>
                <ref name="tei_model.noteLike"/>
-            </zeroOrMore>
-            <zeroOrMore>
                <ref name="tei_edition"/>
-               <zeroOrMore>
-                  <choice>
-                     <ref name="tei_idno"/>
-                     <ref name="tei_model.ptrLike"/>
-                     <ref name="tei_editor"/>
-                  </choice>
-               </zeroOrMore>
-            </zeroOrMore>
-            <ref name="tei_imprint"/>
-            <zeroOrMore>
-               <choice>
-                  <ref name="tei_imprint"/>
-                  <ref name="tei_biblScope"/>
-               </choice>
-            </zeroOrMore>
-         </group>
+               <ref name="tei_biblScope"/>
+            </choice>
+         </zeroOrMore>
          <ref name="tei_att.global.attributes"/>
          <empty/>
       </element>
@@ -6272,20 +6215,9 @@ Suggested values include: 1] vol(volume) ; 2] issue; 3] pp(pages) ; 4] ll(lines)
    <define name="tei_listBibl">
       <element name="listBibl">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(citation list) contains a list of bibliographic citations of any kind. [3.11.1.  2.2.7.  15.3.2. ]</a:documentation>
-         <group>
-            <zeroOrMore>
-               <ref name="tei_model.headLike"/>
-            </zeroOrMore>
-            <oneOrMore>
-               <choice>
-                  <ref name="tei_model.biblLike"/>
-                  <ref name="tei_model.milestoneLike"/>
-               </choice>
-            </oneOrMore>
-            <zeroOrMore>
-               <empty/>
-            </zeroOrMore>
-         </group>
+         <zeroOrMore>
+            <ref name="tei_model.biblLike"/>
+         </zeroOrMore>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.sortable.attributes"/>
          <ref name="tei_att.declarable.attributes"/>
@@ -6538,12 +6470,13 @@ Sample values include: 1] text; 2] corpus</a:documentation>
    <define name="tei_abstract">
       <element name="abstract">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a summary or formal abstract prefixed to an existing source document by the encoder. [2.4.4. ]</a:documentation>
-         <oneOrMore>
+         <zeroOrMore>
             <choice>
+               <text/>
                <ref name="tei_model.pLike"/>
                <ref name="tei_model.listLike"/>
             </choice>
-         </oneOrMore>
+         </zeroOrMore>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.responsibility.attributes"/>
          <empty/>
@@ -6566,12 +6499,15 @@ Sample values include: 1] text; 2] corpus</a:documentation>
    <define name="tei_keywords">
       <element name="keywords">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a list of keywords or phrases identifying the topic or nature of a text. [2.4.3. ]</a:documentation>
-         <choice>
-            <oneOrMore>
+         <zeroOrMore>
+            <choice>
+               <text/>
                <ref name="tei_term"/>
-            </oneOrMore>
+            </choice>
+         </zeroOrMore>
+         <optional>
             <ref name="tei_list"/>
-         </choice>
+         </optional>
          <ref name="tei_att.global.attributes"/>
          <optional>
             <attribute name="scheme">
@@ -7414,38 +7350,9 @@ Sample values include: 1] text; 2] corpus</a:documentation>
    <define name="tei_table">
       <element name="table">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains text displayed in tabular form, in rows and columns. [14.1.1. ]</a:documentation>
-         <group>
-            <zeroOrMore>
-               <choice>
-                  <ref name="tei_model.headLike"/>
-                  <ref name="tei_model.global"/>
-               </choice>
-            </zeroOrMore>
-            <choice>
-               <oneOrMore>
-                  <ref name="tei_row"/>
-                  <zeroOrMore>
-                     <ref name="tei_model.global"/>
-                  </zeroOrMore>
-               </oneOrMore>
-               <oneOrMore>
-                  <group>
-                     <ref name="tei_model.graphicLike"/>
-                  </group>
-                  <zeroOrMore>
-                     <ref name="tei_model.global"/>
-                  </zeroOrMore>
-               </oneOrMore>
-            </choice>
-            <zeroOrMore>
-               <group>
-                  <ref name="tei_model.divBottom"/>
-               </group>
-               <zeroOrMore>
-                  <ref name="tei_model.global"/>
-               </zeroOrMore>
-            </zeroOrMore>
-         </group>
+         <optional>
+            <text/>
+         </optional>
          <ref name="tei_att.global.attributes"/>
          <optional>
             <attribute name="rows">
@@ -7459,17 +7366,6 @@ Sample values include: 1] text; 2] corpus</a:documentation>
                <ref name="tei_data.count"/>
             </attribute>
          </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="tei_row">
-      <element name="row">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains one row of a table. [14.1.1. ]</a:documentation>
-         <oneOrMore>
-            <ref name="tei_cell"/>
-         </oneOrMore>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.tableDecoration.attributes"/>
          <empty/>
       </element>
    </define>
@@ -7532,8 +7428,13 @@ Sample values include: 1] text; 2] corpus</a:documentation>
    </define>
    <define name="tei_trash">
       <element name="trash">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Trash) contains noise information to be ignored</a:documentation>
-         <text/>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Trash) contains noise information to be ignored, typically from vectoriel images</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="tei_ref"/>
+            </choice>
+         </zeroOrMore>
          <ref name="tei_att.editLike.attributes"/>
          <ref name="tei_att.datable.attributes"/>
          <ref name="tei_att.naming.attributes"/>
