@@ -96,8 +96,8 @@ public class TEIFormater {
 				//GrobidProperties.get_GROBID_HOME_PATH() + "/schemas/xsd/Grobid.xsd\""	+
 				"xsi:schemaLocation=\"http://www.tei-c.org/ns/1.0 " + 
 				GrobidProperties.get_GROBID_HOME_PATH() + "/schemas/xsd/Grobid.xsd\""	+	
-				"\n xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
-				"\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+				"\n xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n");
+//				"\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
 		}
 		else if (schemaDeclaration == SchemaDeclaration.RNG) {
 			// standard RelaxNG
@@ -112,15 +112,11 @@ public class TEIFormater {
 				"\" type=\"application/relax-ng-compact-syntax\"?>\n");
 		}
 		// by default there is no schema association
-        
-		if (schemaDeclaration == SchemaDeclaration.DTD) {
-			// DTD are not namespace aware...
+
+		if  (schemaDeclaration != SchemaDeclaration.XSD) {	
 			tei.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\">\n");
 		}
-		else if  (schemaDeclaration != SchemaDeclaration.XSD) {
-			tei.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
-		    	"\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
-		}
+
         if (doc.getLanguage() != null) {
             tei.append("\t<teiHeader xml:lang=\"" + doc.getLanguage() + "\">");
         } else {
