@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.w3.org/XML/1998/namespace" xmlns:mathml="http://www.w3.org/1998/Math/MathML" xmlns:ns1="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <xs:import namespace="http://www.tei-c.org/ns/1.0" schemaLocation="ns1.xsd"/>
-  <xs:import namespace="http://www.w3.org/1998/Math/MathML" schemaLocation="Grobid.xsd"/>
-  <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.w3.org/XML/1998/namespace" xmlns:ns1="http://www.tei-c.org/ns/1.0">
+  <xs:import namespace="http://www.tei-c.org/ns/1.0" schemaLocation="Grobid.xsd"/>
   <xs:attribute name="id" type="xs:ID">
     <xs:annotation>
       <xs:documentation>(identifier) provides a unique identifier for the element bearing the attribute.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
-  <xs:attribute name="lang" type="mathml:tei_data.language">
+  <xs:attribute name="lang" type="ns1:tei_data.language">
     <xs:annotation>
       <xs:documentation>(language) indicates the language of the element content using a tag generated according to BCP 47.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
-  <xs:attribute name="base" type="mathml:tei_data.pointer">
+  <xs:attribute name="base" type="ns1:tei_data.pointer">
     <xs:annotation>
       <xs:documentation>provides a base URI reference with which applications can resolve relative URI references into absolute URI references.</xs:documentation>
     </xs:annotation>

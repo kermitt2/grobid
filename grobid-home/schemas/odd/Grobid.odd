@@ -26,8 +26,8 @@
         <body>
             <p>Schema for structured documents resulting from the automatic extraction and restructuring realized by Grobid.</p>
             <schemaSpec ident="Grobid" docLang="en" prefix="tei_" xml:lang="en">
-                <moduleRef
-                    url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/mathml2-main.rng"/>
+                <!--moduleRef
+                    url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/mathml2-main.rng"/-->
                 <moduleRef key="core" except=""/>
                 <moduleRef key="tei" except=""/>
                 <moduleRef key="header" except=""/>
@@ -42,7 +42,7 @@
                                 <rng:text/>
                                 <rng:ref name="model.graphicLike"/>
                                 <rng:ref name="model.hiLike"/>
-                                <rng:ref name="mathml.math"/>
+                                <!--rng:ref name="mathml.math"/-->
                             </rng:choice>
                         </rng:zeroOrMore>
                     </content>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.w3.org/1999/xlink" xmlns:mathml="http://www.w3.org/1998/Math/MathML" xmlns:ns1="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <xs:import namespace="http://www.tei-c.org/ns/1.0" schemaLocation="ns1.xsd"/>
-  <xs:import namespace="http://www.w3.org/1998/Math/MathML" schemaLocation="Grobid.xsd"/>
-  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
-  <xs:attribute name="href"/>
-  <xs:attribute name="type"/>
-</xs:schema>
