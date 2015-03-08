@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="no-such-thing"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	xmlns:xjc= "http://java.sun.com/xml/ns/jaxb/xjc" jaxb:extensionBindingPrefixes="xjc">
+  <xs:annotation><xs:appinfo>
+    <jaxb:globalBindings>
+    	<xjc:simple />
+    </jaxb:globalBindings>
+  </xs:appinfo></xs:annotation>
+</xs:schema>

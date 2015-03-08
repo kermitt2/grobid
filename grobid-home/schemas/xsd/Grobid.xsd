@@ -2766,13 +2766,15 @@ Sample values include: 1] text; 2] corpus</xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:sequence>
-        <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:tei_model.global"/>
+        <!--xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:tei_model.global"/-->
         <xs:sequence minOccurs="0">
           <xs:element ref="ns1:front"/>
           <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:tei_model.global"/>
         </xs:sequence>
-        <xs:element ref="ns1:body"/>
-        <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:tei_model.global"/>
+		<xs:sequence minOccurs="0">
+ 		   	<xs:element ref="ns1:body"/>
+        	<xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:tei_model.global"/>
+		</xs:sequence>	
         <xs:sequence minOccurs="0">
           <xs:element ref="ns1:back"/>
           <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:tei_model.global"/>
@@ -2843,10 +2845,10 @@ Sample values include: 1] text; 2] corpus</xs:documentation>
                 <xs:group ref="ns1:tei_model.common"/>
                 <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:tei_model.global"/>
               </xs:sequence>
-              <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <!--xs:sequence minOccurs="0" maxOccurs="unbounded">
                 <xs:group ref="ns1:tei_model.divLike"/>
                 <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:tei_model.global"/>
-              </xs:sequence>
+              </xs:sequence-->
             </xs:sequence>
           </xs:choice>
           <xs:sequence minOccurs="0" maxOccurs="unbounded">
