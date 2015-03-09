@@ -1,21 +1,24 @@
 package org.grobid.core.engines;
 
+import eugfc.imageio.plugins.PNMRegistry;
 import org.apache.commons.io.FileUtils;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.document.BasicStructureBuilder;
 import org.grobid.core.document.Document;
+import org.grobid.core.document.DocumentSource;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorSegmentation;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -26,12 +29,9 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 
-// for image conversion we're using an ImageIO plugin for PPM format support 
-// see https://github.com/eug/imageio-pnm 
+// for image conversion we're using an ImageIO plugin for PPM format support
+// see https://github.com/eug/imageio-pnm
 // the jar for this plugin is located in the local repository
-import eugfc.imageio.plugins.PNMRegistry;
-import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
 
 /**
  * Realise a high level segmentation of a document into cover page, document header, page footer,
@@ -58,57 +58,55 @@ public class Segmentation extends AbstractParser {
 
     private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
-	// default bins for relative position
+    // default bins for relative position
     private static final int NBBINS = 12;
-	
-	// projection scale for line length
-	private static final int LINESCALE = 10; 
-		
-    private File tmpPath = null;
+
+    // projection scale for line length
+    private static final int LINESCALE = 10;
+
 
     /**
      * TODO some documentation...
      */
     public Segmentation() {
         super(GrobidModels.SEGMENTATION);
-        tmpPath = GrobidProperties.getTempPath();
     }
 
     /**
-     *  Segment a PDF document into high level zones: cover page, document header, 
-     *	page footer, page header, body, page numbers, biblio section and annexes.
+     * Segment a PDF document into high level zones: cover page, document header,
+     * page footer, page header, body, page numbers, biblio section and annexes.
      *
      * @param input filename of pdf file
      * @return Document object with segmentation informations
      */
-	public Document processing(String input) {
-		return processing(input, null);
-	}
-	
+    public Document processing(String input) {
+        return processing(input, null);
+    }
+
     /**
-     *  Segment a PDF document into high level zones: cover page, document header, 
-     *	page footer, page header, body, page numbers, biblio section and annexes.
+     * Segment a PDF document into high level zones: cover page, document header,
+     * page footer, page header, body, page numbers, biblio section and annexes.
      *
-     * @param input filename of pdf file
-     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and 
-     * saved under the indicated repository path
+     * @param input     filename of pdf file
+     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and
+     *                  saved under the indicated repository path
      * @return Document object with segmentation informations
      */
     public Document processing(String input, String assetPath) {
-		return processing(input, assetPath, -1, -1);
-	}
+        return processing(input, assetPath, -1, -1);
+    }
 
     /**
-     *  Segment a PDF document into high level zones: cover page, document header, 
-     *	page footer, page header, body, page numbers, biblio section and annexes.
+     * Segment a PDF document into high level zones: cover page, document header,
+     * page footer, page header, body, page numbers, biblio section and annexes.
      *
-     * @param input filename of pdf file
-     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and 
-     * saved under the indicated repository path
-	 * @param startPage give the starting page to consider in case of segmentation of the 
-	 * PDF, -1 for the first page (default) 
-	 * @param endPage give the end page to consider in case of segmentation of the 
-	 * PDF, -1 for the last page (default) 	
+     * @param input     filename of pdf file
+     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and
+     *                  saved under the indicated repository path
+     * @param startPage give the starting page to consider in case of segmentation of the
+     *                  PDF, -1 for the first page (default)
+     * @param endPage   give the end page to consider in case of segmentation of the
+     *                  PDF, -1 for the last page (default)
      * @return Document object with segmentation informations
      */
     public Document processing(String input, String assetPath, int startPage, int endPage) {
@@ -118,147 +116,106 @@ public class Segmentation extends AbstractParser {
         File inputFile = new File(input);
         if (!inputFile.exists()) {
             throw new GrobidResourceException("Cannot process pdf file, because input file '" +
-                    inputFile.getAbsolutePath() + "' does not exists.");
+                    inputFile.getAbsolutePath() + "' does not exist.");
         }
-        if (tmpPath == null) {
-            throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
-        }
-        if (!tmpPath.exists()) {
-            throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
-                    tmpPath.getAbsolutePath() + "' does not exists.");
-        }
-        Document doc = new Document(input, tmpPath.getAbsolutePath());
-        String pathXML = null;
+
+        DocumentSource documentSource = null;
         try {
-            //int startPage = -1;
-            //int endPage = -1;
-			boolean assets = false;
-			if (assetPath!= null)
-				assets = true;
-            pathXML = doc.pdf2xml(true, false, startPage, endPage, input, tmpPath.getAbsolutePath(), assets);
-            //with timeout,
-            //no force pdf reloading
-            // input is the pdf absolute path, tmpPath is the temp. directory for the temp. lxml file,
-            // path is the resource path
-            // and we extract images in the PDF file according to the assets parameters
-            if (pathXML == null) {
-                throw new GrobidResourceException("PDF parsing fails, " +
-                        "because path of where to store xml file is null.");
+            boolean assets = false;
+            if (assetPath != null) {
+                assets = true;
             }
-            doc.setPathXML(pathXML);
+
+            documentSource = DocumentSource.fromPdf(new File(input), startPage, endPage, assets);
+            Document doc = new Document(documentSource);
+
             List<String> tokenizations = doc.addTokenizedDocument();
 
             if (doc.getBlocks() == null) {
                 throw new GrobidException("PDF parsing resulted in empty content");
             }
 
-			String content = //getAllTextFeatured(doc, headerMode);
-				getAllLinesFeatured(doc);
-			if ( (content != null) && (content.trim().length() > 0) ) {
-	            String labelledResult = label(content);
-				/*try {
-	            	FileUtils.writeStringToFile(new File("/tmp/x1.txt"), labelledResult);
-					FileUtils.writeStringToFile(new File("/tmp/x2.txt"), tokenizations.toString());
-				}
-				catch(Exception e) {
-					e.printStackTrace();
-				}*/
-	            // set the different sections of the Document object
-	            doc = BasicStructureBuilder.generalResultSegmentation(doc, labelledResult, tokenizations);
+            String content = //getAllTextFeatured(doc, headerMode);
+                    getAllLinesFeatured(doc);
+            if ((content != null) && (content.trim().length() > 0)) {
+                String labelledResult = label(content);
+                // set the different sections of the Document object
+                doc = BasicStructureBuilder.generalResultSegmentation(doc, labelledResult, tokenizations);
 
-				//System.out.println(doc.getBlockHeaders());
-	            //System.out.println("------------------");
-				//System.out.println(doc.getDocumentPieceText(doc.getDocumentPart(SegmentationLabel.HEADER)));
-				//System.out.println("------------------");
 
-				//System.out.println(doc.getDocumentPieceText(doc.getDocumentPart(SegmentationLabel.BODY)));
-				//System.out.println("------------------");
+                // if assets is true, the images are still there under directory pathXML+"_data"
+                // we copy them to the assetPath directory
+                if (assetPath != null) {
+                    // copy the files under the directory pathXML+"_data"
+                    // we copy the asset files into the path specified by assetPath
+                    File assetFile = new File(assetPath);
+                    if (!assetFile.exists()) {
+                        // we create it
+                        if (assetFile.mkdir()) {
+                            LOGGER.debug("Directory created: " + assetFile.getPath());
+                        } else {
+                            LOGGER.error("Failed to create directory: " + assetFile.getPath());
+                        }
+                    }
+                    PNMRegistry.registerAllServicesProviders();
 
-	            //System.out.println(doc.getBlockReferences());
-	            //System.out.println("------------------");
-	            //System.out.println(doc.getDocumentPieceText(doc.getDocumentPart(SegmentationLabel.REFERENCES)));
-				//System.out.println("------------------");
-	            //LOGGER.debug(labelledResult);
-				
-	            //System.out.println(doc.getDocumentPieceText(doc.getDocumentPart(SegmentationLabel.FOOTNOTE)));
-				//System.out.println("------------------");
-				
-				// if assets is true, the images are still there under directory pathXML+"_data"
-				// we copy them to the assetPath directory
-				if (assetPath != null) {
-					// copy the files under the directory pathXML+"_data"
-					// we copy the asset files into the path specified by assetPath
-			        File assetFile = new File(assetPath);
-			        if (!assetFile.exists()) {
-						// we create it
-						if (assetFile.mkdir()) {
-							LOGGER.debug("Directory created: " + assetFile.getPath());
-						} 
-						else {
-							LOGGER.error("Failed to create directory: " + assetFile.getPath());
-						}
-			        }
-					PNMRegistry.registerAllServicesProviders();
-				
-					// filter all .jpg and .png files
-					File directoryPath = new File(pathXML+"_data");
-					if (directoryPath.exists()) {						
-				        File[] files = directoryPath.listFiles();
-				        if (files != null) {
-				            for (final File currFile : files) {
-			                    if ( currFile.getName().toLowerCase().endsWith(".png") ) {
-									try {
-									    FileUtils.copyFileToDirectory(currFile, assetFile);
-									} catch (IOException e) {
-									    e.printStackTrace();
-									}
-								}
-								else if (currFile.getName().toLowerCase().endsWith(".jpg")  
-								 	|| currFile.getName().toLowerCase().endsWith(".ppm")
-								//	|| currFile.getName().toLowerCase().endsWith(".pbm") 
-								) {
-									try {
-										final BufferedImage bi = ImageIO.read(currFile);
-										String outputfilePath = null;
-     								    if (currFile.getName().toLowerCase().endsWith(".jpg")) {
-											outputfilePath = assetFile.getPath() + "/" + 
-												currFile.getName().toLowerCase().replace(".jpg",".png");
-										}
+                    // filter all .jpg and .png files
+                    File directoryPath = new File(documentSource.getXmlFile().getAbsolutePath() + "_data");
+                    if (directoryPath.exists()) {
+                        File[] files = directoryPath.listFiles();
+                        if (files != null) {
+                            for (final File currFile : files) {
+                                if (currFile.getName().toLowerCase().endsWith(".png")) {
+                                    try {
+                                        FileUtils.copyFileToDirectory(currFile, assetFile);
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                } else if (currFile.getName().toLowerCase().endsWith(".jpg")
+                                        || currFile.getName().toLowerCase().endsWith(".ppm")
+                                    //	|| currFile.getName().toLowerCase().endsWith(".pbm")
+                                        ) {
+                                    try {
+                                        final BufferedImage bi = ImageIO.read(currFile);
+                                        String outputfilePath = null;
+                                        if (currFile.getName().toLowerCase().endsWith(".jpg")) {
+                                            outputfilePath = assetFile.getPath() + "/" +
+                                                    currFile.getName().toLowerCase().replace(".jpg", ".png");
+                                        }
 										/*else if (currFile.getName().toLowerCase().endsWith(".pbm")) {
 											outputfilePath = assetFile.getPath() + "/" +
 												 currFile.getName().toLowerCase().replace(".pbm",".png");
 										}*/
-										else {
-											outputfilePath = assetFile.getPath() + "/" +
-												 currFile.getName().toLowerCase().replace(".ppm",".png");
-										}	
-										ImageIO.write(bi, "png", new File(outputfilePath));
-									} catch (IOException e) {
-									    e.printStackTrace();
-									}
-								}
-							}
-						}
-					}
-				}
-			}
+                                        else {
+                                            outputfilePath = assetFile.getPath() + "/" +
+                                                    currFile.getName().toLowerCase().replace(".ppm", ".png");
+                                        }
+                                        ImageIO.write(bi, "png", new File(outputfilePath));
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             return doc;
         } finally {
             // keep it clean when leaving...
-			if (assetPath == null) {
-				// remove the pdf2xml tmp file
-				doc.cleanLxmlFile(pathXML, false);
-			}
-			else {
-				// remove the pdf2xml tmp files, including the sub-directories 
-				doc.cleanLxmlFile(pathXML, true);				
-			}
+            if (assetPath == null) {
+                // remove the pdf2xml tmp file
+                DocumentSource.close(documentSource, false);
+            } else {
+                // remove the pdf2xml tmp files, including the sub-directories
+                DocumentSource.close(documentSource, true);
+            }
         }
     }
-	
-	/**
+
+    /**
      *  Addition of the features at token level for the complete document
-	 */	
+     */
 	/*public String getAllTextFeatured(Document doc, boolean headerMode) {
 		FeatureFactory featureFactory = FeatureFactory.getInstance();
         StringBuilder fulltext = new StringBuilder();
@@ -648,27 +605,27 @@ public class Segmentation extends AbstractParser {
 
         return fulltext.toString();
 	}*/
-	
-	/**
-	 * Addition of the features at line level for the complete document.  
-	 *	
-	 * This is an alternative to the token level, where the unit for labeling is the line - so allowing faster 
-	 * processing and involving less features. 
-	 * Lexical features becomes line prefix and suffix, the feature text unit is the first 10 characters of the 
-	 * line without space.
-	 * The dictionnary flags are at line level (i.e. the line contains a name mention, a place mention, a year, etc.)
-	 * Regarding layout features: font, size and style are the one associated to the first token of the line. 
-	 */
-	public static String getAllLinesFeatured(Document doc) {
-		FeatureFactory featureFactory = FeatureFactory.getInstance();
+
+    /**
+     * Addition of the features at line level for the complete document.
+     * <p/>
+     * This is an alternative to the token level, where the unit for labeling is the line - so allowing faster
+     * processing and involving less features.
+     * Lexical features becomes line prefix and suffix, the feature text unit is the first 10 characters of the
+     * line without space.
+     * The dictionnary flags are at line level (i.e. the line contains a name mention, a place mention, a year, etc.)
+     * Regarding layout features: font, size and style are the one associated to the first token of the line.
+     */
+    public static String getAllLinesFeatured(Document doc) {
+        FeatureFactory featureFactory = FeatureFactory.getInstance();
         StringBuilder fulltext = new StringBuilder();
         String currentFont = null;
         int currentFontSize = -1;
 
-		List<Block> blocks = doc.getBlocks();
-		if ( (blocks == null) || blocks.size() == 0) {
-			return null;
-		}
+        List<Block> blocks = doc.getBlocks();
+        if ((blocks == null) || blocks.size() == 0) {
+            return null;
+        }
 
         // vector for features
         FeaturesVectorSegmentation features;
@@ -682,23 +639,23 @@ public class Segmentation extends AbstractParser {
         int documentLength = 0;
         int pageLength = 0; // length of the current page
 
-		List<String> tokenizationsBody = new ArrayList<String>();
-		List<String> tokenizations = doc.getTokenizations();
+        List<String> tokenizationsBody = new ArrayList<String>();
+        List<String> tokenizations = doc.getTokenizations();
 
         // we calculate current document length and intialize the body tokenization structure
-		for(Block block : blocks) {
-			List<LayoutToken> tokens = block.getTokens();
-			if (tokens == null) 
-				continue;
-			documentLength += tokens.size();
-		}
+        for (Block block : blocks) {
+            List<LayoutToken> tokens = block.getTokens();
+            if (tokens == null)
+                continue;
+            documentLength += tokens.size();
+        }
 
-		//int blockPos = dp1.getBlockPtr();
-		for(int blockIndex = 0; blockIndex < blocks.size(); blockIndex++) {
-           	Block block = blocks.get(blockIndex);				
+        //int blockPos = dp1.getBlockPtr();
+        for (int blockIndex = 0; blockIndex < blocks.size(); blockIndex++) {
+            Block block = blocks.get(blockIndex);
 
-          	// we estimate the length of the page where the current block is
-			// and initialise the punctuation profiles per line
+            // we estimate the length of the page where the current block is
+            // and initialise the punctuation profiles per line
             if (start || endPage) {
                 boolean stop = false;
                 pageLength = 0;
@@ -745,66 +702,65 @@ public class Segmentation extends AbstractParser {
                 }
             }
 
-			String[] lines = localText.split("[\\n\\r]");
-			List<LayoutToken> tokens = block.getTokens();			
-			for(int li=0; li < lines.length; li++) {	
-				String line = lines[li];
-				boolean firstPageBlock = false;
-				boolean lastPageBlock = false;
-			
-				if (newPage)
-					firstPageBlock = true;
-				if (endPage)
-					lastPageBlock = true;
-	            
-	            if ( (tokens == null) || (tokens.size() == 0) ) {
-	                continue;
-	            }
-				// for the layout information of the block, we take simply the first layout token
-				LayoutToken token = tokens.get(0);
-				
+            String[] lines = localText.split("[\\n\\r]");
+            List<LayoutToken> tokens = block.getTokens();
+            for (int li = 0; li < lines.length; li++) {
+                String line = lines[li];
+                boolean firstPageBlock = false;
+                boolean lastPageBlock = false;
+
+                if (newPage)
+                    firstPageBlock = true;
+                if (endPage)
+                    lastPageBlock = true;
+
+                if ((tokens == null) || (tokens.size() == 0)) {
+                    continue;
+                }
+                // for the layout information of the block, we take simply the first layout token
+                LayoutToken token = tokens.get(0);
+
                 features = new FeaturesVectorSegmentation();
                 features.token = token;
-				features.line = line;
+                features.line = line;
 
-				StringTokenizer st2 = new StringTokenizer(line, " \t");
-				String text = null;
-				String text2 = null;
-				if (st2.hasMoreTokens())
-					text = st2.nextToken();		
-				if (st2.hasMoreTokens())
-					text2 = st2.nextToken();
-                if ( (text == null) || 
-					(text.trim().length() == 0) || 
-					(text.trim().equals("\n")) || 
-					(text.trim().equals("\r")) || 
-					(text.trim().equals("\n\r")) || 
-					(Segmentation.filterLine(line)) ) {
+                StringTokenizer st2 = new StringTokenizer(line, " \t");
+                String text = null;
+                String text2 = null;
+                if (st2.hasMoreTokens())
+                    text = st2.nextToken();
+                if (st2.hasMoreTokens())
+                    text2 = st2.nextToken();
+                if ((text == null) ||
+                        (text.trim().length() == 0) ||
+                        (text.trim().equals("\n")) ||
+                        (text.trim().equals("\r")) ||
+                        (text.trim().equals("\n\r")) ||
+                        (Segmentation.filterLine(line))) {
                     continue;
                 }
 
-				text = text.trim();
+                text = text.trim();
 
                 features.string = text;
-				features.secondString = text2;
-				
-				features.firstPageBlock = firstPageBlock;
-				features.lastPageBlock = lastPageBlock;
-				features.lineLength = line.length() / LINESCALE;
-				features.punctuationProfile = TextUtilities.punctuationProfile(line);
-				
+                features.secondString = text2;
+
+                features.firstPageBlock = firstPageBlock;
+                features.lastPageBlock = lastPageBlock;
+                features.lineLength = line.length() / LINESCALE;
+                features.punctuationProfile = TextUtilities.punctuationProfile(line);
+
                 features.lineStatus = null;
-				features.punctType = null;
-				
-                if ( (li == 0) || 
-					((previousFeatures != null) && previousFeatures.blockStatus.equals("BLOCKEND")) ) {
+                features.punctType = null;
+
+                if ((li == 0) ||
+                        ((previousFeatures != null) && previousFeatures.blockStatus.equals("BLOCKEND"))) {
                     features.blockStatus = "BLOCKSTART";
-                } else if (li == lines.length-1) {
+                } else if (li == lines.length - 1) {
                     features.blockStatus = "BLOCKEND";
                     endblock = true;
-                }
-				else if (features.blockStatus == null) {
-                 	features.blockStatus = "BLOCKIN";
+                } else if (features.blockStatus == null) {
+                    features.blockStatus = "BLOCKIN";
                 }
 
                 if (newPage) {
@@ -921,19 +877,19 @@ public class Segmentation extends AbstractParser {
                     fulltext.append(vector);
                 }
                 previousFeatures = features;
-           	}
-			// update page-level and document-level positions
-			if (tokens != null) {
-				mm += tokens.size();
-				nn += tokens.size();
-			}
+            }
+            // update page-level and document-level positions
+            if (tokens != null) {
+                mm += tokens.size();
+                nn += tokens.size();
+            }
         }
         if (previousFeatures != null)
             fulltext.append(previousFeatures.printVector());
 
         return fulltext.toString();
-	}
-	
+    }
+
 
     /**
      * Process the content of the specified pdf and format the result as training data.
@@ -947,33 +903,14 @@ public class Segmentation extends AbstractParser {
                                            String pathFullText,
                                            String pathTEI,
                                            int id) {
-        if (tmpPath == null)
-            throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
-        if (!tmpPath.exists()) {
-            throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
-                    tmpPath.getAbsolutePath() + "' does not exists.");
-        }
-        Document doc = new Document(inputFile, tmpPath.getAbsolutePath());
-        String pathXML = null;
+        DocumentSource documentSource = null;
         try {
-            int startPage = -1;
-            int endPage = -1;
             File file = new File(inputFile);
-            if (!file.exists()) {
-                throw new GrobidResourceException("Cannot train for fulltext, becuase file '" +
-                        file.getAbsolutePath() + "' does not exists.");
-            }
+
+            documentSource = DocumentSource.fromPdfWithImages(file, -1, -1);
+            Document doc = new Document(documentSource);
+
             String PDFFileName = file.getName();
-            pathXML = doc.pdf2xml(true, false, startPage, endPage, inputFile, tmpPath.getAbsolutePath(), true);
-            //with timeout,
-            //no force pdf reloading
-            // pathPDF is the pdf file, tmpPath is the tmp directory for the lxml file,
-            // path is the resource path
-            // and we don't extract images in the pdf file
-            if (pathXML == null) {
-                throw new Exception("PDF parsing fails");
-            }
-            doc.setPathXML(pathXML);
             doc.addTokenizedDocument();
 
             if (doc.getBlocks() == null) {
@@ -981,7 +918,7 @@ public class Segmentation extends AbstractParser {
             }
 
             String fulltext = //getAllTextFeatured(doc, false);
-				getAllLinesFeatured(doc);
+                    getAllLinesFeatured(doc);
             List<String> tokenizations = doc.getTokenizationsFulltext();
 
             // we write the full text untagged
@@ -989,27 +926,27 @@ public class Segmentation extends AbstractParser {
             Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
             writer.write(fulltext + "\n");
             writer.close();
-			
-			if ( (fulltext != null) && (fulltext.length() > 0) ) {
-	            String rese = label(fulltext);
-	            StringBuffer bufferFulltext = trainingExtraction(rese, tokenizations, doc);
 
-	            // write the TEI file to reflect the extact layout of the text as extracted from the pdf
-	            writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-	                    "/" + PDFFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), "UTF-8");
-	            writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
-	                    "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
+            if ((fulltext != null) && (fulltext.length() > 0)) {
+                String rese = label(fulltext);
+                StringBuffer bufferFulltext = trainingExtraction(rese, tokenizations, doc);
 
-	            writer.write(bufferFulltext.toString());
-	            writer.write("\n\t</text>\n</tei>\n");
-	            writer.close();
-			}
+                // write the TEI file to reflect the extact layout of the text as extracted from the pdf
+                writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+                        "/" + PDFFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), "UTF-8");
+                writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+                        "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
+
+                writer.write(bufferFulltext.toString());
+                writer.write("\n\t</text>\n</tei>\n");
+                writer.close();
+            }
 
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid training" +
                     " data generation for segmentation model.", e);
         } finally {
-            doc.cleanLxmlFile(pathXML, true);
+            DocumentSource.close(documentSource, true);
         }
     }
 
@@ -1022,18 +959,18 @@ public class Segmentation extends AbstractParser {
      */
     private StringBuffer trainingExtraction(String result,
                                             List<String> tokenizations,
-											Document doc) {
+                                            Document doc) {
         // this is the main buffer for the whole full text
-        StringBuffer buffer = new StringBuffer();		
+        StringBuffer buffer = new StringBuffer();
         try {
-			List<Block> blocks = doc.getBlocks();
-			int currentBlockIndex = 0;
-			int indexLine = 0;
-			
+            List<Block> blocks = doc.getBlocks();
+            int currentBlockIndex = 0;
+            int indexLine = 0;
+
             StringTokenizer st = new StringTokenizer(result, "\n");
             String s1 = null; // current label/tag
             String s2 = null; // current lexical token
-			String s3 = null; // current second lexical token
+            String s3 = null; // current second lexical token
             String lastTag = null;
 
             // current token position
@@ -1043,8 +980,8 @@ public class Segmentation extends AbstractParser {
             while (st.hasMoreTokens()) {
                 boolean addSpace = false;
                 String tok = st.nextToken().trim();
-				String line = null; // current line
-				
+                String line = null; // current line
+
                 if (tok.length() == 0) {
                     continue;
                 }
@@ -1067,49 +1004,48 @@ public class Segmentation extends AbstractParser {
                     }
                     i++;
                 }
-				
-				// as we process the document segmentation line by line, we don't use the usual 
-				// tokenization to rebuild the text flow, but we get each line again from the 
-				// text stored in the document blocks (similarly as when generating the features) 
-				line = null;
-				while( (line == null) && (currentBlockIndex < blocks.size()) ) {
-					Block block = blocks.get(currentBlockIndex);
-		            List<LayoutToken> tokens = block.getTokens();
-		            if (tokens == null) {
-						currentBlockIndex++;
-						indexLine = 0;
-		                continue;
-		            }
-					String localText = block.getText();
-					if ( (localText == null) || (localText.trim().length() == 0) ) {
-						currentBlockIndex++;
-						indexLine = 0;
-						continue;
-					}
-					//String[] lines = localText.split("\n");
-					String[] lines = localText.split("[\\n\\r]");
-					if ( (lines.length == 0) || (indexLine >= lines.length)) {
-						currentBlockIndex++;
-						indexLine = 0;
-						continue;
-					}
-					else {
-						line = lines[indexLine];
-						indexLine++;
-						if (line.trim().length() == 0) {
-							line = null;
-							continue;
-						}
-					
-						if (Segmentation.filterLine(line)) {
-							line = null;
-							continue;
-						}
-					}
-				}					
-				
-				line = TextUtilities.HTMLEncode(line);
-								
+
+                // as we process the document segmentation line by line, we don't use the usual
+                // tokenization to rebuild the text flow, but we get each line again from the
+                // text stored in the document blocks (similarly as when generating the features)
+                line = null;
+                while ((line == null) && (currentBlockIndex < blocks.size())) {
+                    Block block = blocks.get(currentBlockIndex);
+                    List<LayoutToken> tokens = block.getTokens();
+                    if (tokens == null) {
+                        currentBlockIndex++;
+                        indexLine = 0;
+                        continue;
+                    }
+                    String localText = block.getText();
+                    if ((localText == null) || (localText.trim().length() == 0)) {
+                        currentBlockIndex++;
+                        indexLine = 0;
+                        continue;
+                    }
+                    //String[] lines = localText.split("\n");
+                    String[] lines = localText.split("[\\n\\r]");
+                    if ((lines.length == 0) || (indexLine >= lines.length)) {
+                        currentBlockIndex++;
+                        indexLine = 0;
+                        continue;
+                    } else {
+                        line = lines[indexLine];
+                        indexLine++;
+                        if (line.trim().length() == 0) {
+                            line = null;
+                            continue;
+                        }
+
+                        if (Segmentation.filterLine(line)) {
+                            line = null;
+                            continue;
+                        }
+                    }
+                }
+
+                line = TextUtilities.HTMLEncode(line);
+
                 if (newLine && !start) {
                     buffer.append("<lb/>");
                 }
@@ -1214,7 +1150,7 @@ public class Segmentation extends AbstractParser {
      * @return
      */
     private boolean writeField(StringBuffer buffer,
-							   String line,
+                               String line,
                                String s1,
                                String lastTag0,
                                String s2,
@@ -1226,10 +1162,10 @@ public class Segmentation extends AbstractParser {
         // filter the output path
         if ((s1.equals(field)) || (s1.equals("I-" + field))) {
             result = true;
-           	line= line.replace("@BULLET", "\u2022");
+            line = line.replace("@BULLET", "\u2022");
             // if previous and current tag are the same, we output the token
             if (s1.equals(lastTag0) || s1.equals("I-" + lastTag0)) {
-   				buffer.append(line);
+                buffer.append(line);
             }
             /*else if (lastTag0 == null) {
                    for(int i=0; i<nbIndent; i++) {
@@ -1383,8 +1319,8 @@ public class Segmentation extends AbstractParser {
         super.close();
         // ...
     }
-	
-	public static boolean filterLine(String line) {
+
+    public static boolean filterLine(String line) {
         boolean filter = false;
         if (line.contains("@IMAGE")) {
             filter = true;
@@ -1395,7 +1331,7 @@ public class Segmentation extends AbstractParser {
         } else if (line.contains(".jpg")) {
             filter = true;
         }
-		return filter;
-	}
-	
+        return filter;
+    }
+
 }

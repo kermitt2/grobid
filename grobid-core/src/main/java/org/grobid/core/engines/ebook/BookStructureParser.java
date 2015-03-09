@@ -2,21 +2,22 @@ package org.grobid.core.engines.ebook;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.document.Document;
+import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.AbstractParser;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.layout.Block;
-import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
+import org.grobid.core.layout.Block;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.TextUtilities;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 
@@ -29,13 +30,13 @@ import java.util.regex.Matcher;
 public class BookStructureParser extends AbstractParser {
     private File tmpPath = null;
 
-	// default bins for relative position
+    // default bins for relative position
     private static final int NBBINS = 12;
 
     public BookStructureParser() {
         super(GrobidModels.EBOOK);
         GrobidProperties.getInstance();
-		tmpPath = GrobidProperties.getTempPath();
+        tmpPath = GrobidProperties.getTempPath();
     }
 
     /**
@@ -45,22 +46,12 @@ public class BookStructureParser extends AbstractParser {
                                             String pathFullText,
                                             String pathTEI,
                                             int id) throws Exception {
-        Document doc = new Document(inputFile, tmpPath.getAbsolutePath());
-        String pathXML = null;
+        File file = new File(inputFile);
+        DocumentSource source = null;
         try {
-            int startPage = -1;
-            int endPage = -1;
-            File file = new File(inputFile);
+            source = DocumentSource.fromPdf(file);
+            Document doc = new Document(DocumentSource.fromPdf(file));
             String PDFFileName = file.getName();
-            pathXML = doc.pdf2xml(false, false, startPage, endPage, inputFile, tmpPath.getAbsolutePath(), false); //without timeout,
-            //no force pdf reloading
-            // inputFile is the pdf file, tmpPath is the tmp directory for the lxml file,
-            // path is the resource path
-            // we do not extract the images in the pdf file
-            if (pathXML == null) {
-                throw new Exception("PDF parsing fails");
-            }
-            doc.setPathXML(pathXML);
             doc.addTokenizedDocument();
 
             if (doc.getBlocks() == null) {
@@ -77,7 +68,6 @@ public class BookStructureParser extends AbstractParser {
             writer.close();
 
             // clear internal context
-//            StringTokenizer st = new StringTokenizer(fulltext, "\n");
             String rese = label(fulltext);
 
             StringBuffer bufferFulltext = trainingExtraction(rese, tokenizations);
@@ -94,20 +84,22 @@ public class BookStructureParser extends AbstractParser {
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
-            doc.cleanLxmlFile(pathXML, false);
+            if (source != null) {
+                source.close(false);
+            }
         }
     }
 
-	public String getFulltextFeatured(Document doc) {
-		FeatureFactory featureFactory = FeatureFactory.getInstance();
+    public String getFulltextFeatured(Document doc) {
+        FeatureFactory featureFactory = FeatureFactory.getInstance();
         StringBuilder fulltext = new StringBuilder();
         String currentFont = null;
         int currentFontSize = -1;
 
-		List<Block> blocks = doc.getBlocks();
-		if ( (blocks == null) || blocks.size() == 0) {
-			return null;
-		}
+        List<Block> blocks = doc.getBlocks();
+        if ((blocks == null) || blocks.size() == 0) {
+            return null;
+        }
 
         // vector for features
         FeaturesVectorFulltext features;
@@ -121,22 +113,22 @@ public class BookStructureParser extends AbstractParser {
         int documentLength = 0;
         int pageLength = 0; // length of the current page
 
-		List<String> tokenizationsBody = new ArrayList<String>();
-		List<String> tokenizations = doc.getTokenizations();
+        List<String> tokenizationsBody = new ArrayList<String>();
+        List<String> tokenizations = doc.getTokenizations();
 
         // we calculate current document length and intialize the body tokenization structure
-		for(Block block : blocks) {
-			List<LayoutToken> tokens = block.getTokens();
-			if (tokens == null) 
-				continue;
-			documentLength += tokens.size();
-		}
+        for (Block block : blocks) {
+            List<LayoutToken> tokens = block.getTokens();
+            if (tokens == null)
+                continue;
+            documentLength += tokens.size();
+        }
 
-		//int blockPos = dp1.getBlockPtr();
-		for(int blockIndex = 0; blockIndex < blocks.size(); blockIndex++) {
-           	Block block = blocks.get(blockIndex);				
+        //int blockPos = dp1.getBlockPtr();
+        for (int blockIndex = 0; blockIndex < blocks.size(); blockIndex++) {
+            Block block = blocks.get(blockIndex);
 
-          	 	// we estimate the length of the page where the current block is
+            // we estimate the length of the page where the current block is
             if (start || endPage) {
                 boolean stop = false;
                 pageLength = 0;
@@ -192,7 +184,7 @@ public class BookStructureParser extends AbstractParser {
                 continue;
             }
 
-			int n = 0;// token position in current block
+            int n = 0;// token position in current block
             while (n < tokens.size()) {
                 LayoutToken token = tokens.get(n);
                 features = new FeaturesVectorFulltext();
@@ -447,13 +439,13 @@ public class BookStructureParser extends AbstractParser {
                 mm++;
                 nn++;
                 previousFeatures = features;
-           	}
+            }
         }
         if (previousFeatures != null)
             fulltext.append(previousFeatures.printVector());
 
         return fulltext.toString();
-	}
+    }
 
     /**
      * Extract results from a labelled header in the training format without any string modification.

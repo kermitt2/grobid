@@ -6,6 +6,7 @@ import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.BiblioSet;
 import org.grobid.core.data.PatentItem;
+import org.grobid.core.document.DocumentSource;
 import org.grobid.core.document.OPSService;
 import org.grobid.core.document.PatentDocument;
 import org.grobid.core.engines.CitationParser;
@@ -66,7 +67,7 @@ public class ReferenceExtractor implements Closeable {
     private Consolidation consolidator = null;
 
     private String tmpPath = null;
-    private String pathXML = null;
+//    private String pathXML = null;
 
     public boolean debug = false;
 
@@ -208,19 +209,10 @@ public class ReferenceExtractor implements Closeable {
                                            boolean consolidate,
                                            List<PatentItem> patents,
                                            List<BibDataSet> articles) {
+        DocumentSource documentSource = null;
         try {
-            PatentDocument doc = new PatentDocument();
-            int startPage = -1;
-            int endPage = -1;
-            tmpPath = GrobidProperties.getTempPath().getAbsolutePath();
-            pathXML = doc.pdf2xml(true, false, startPage, endPage, inputFile, tmpPath, false); //with timeout,
-            // no force pdf reloading
-            // inputFile is the pdf file, tmpPath is the tmp directory for the lxml file,
-            // and we do not extract images in the PDF file
-            if (pathXML == null) {
-                throw new GrobidException("PDF parsing fails");
-            }
-            doc.setPathXML(pathXML);
+            documentSource = DocumentSource.fromPdf(new File(inputFile));
+            PatentDocument doc = new PatentDocument(documentSource);
 
             if (doc.getBlocks() == null) {
                 throw new GrobidException("PDF parsing resulted in empty content");
@@ -237,6 +229,8 @@ public class ReferenceExtractor implements Closeable {
             }
         } catch (Exception e) {
             LOGGER.error("Error in extractAllReferencesPDFFile", e);
+        } finally {
+            DocumentSource.close(documentSource, false);
         }
         return null;
     }
