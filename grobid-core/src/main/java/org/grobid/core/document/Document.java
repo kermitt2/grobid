@@ -4,25 +4,19 @@ import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.SortedSetMultimap;
-import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
-import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.Cluster;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.process.ProcessRunner;
 import org.grobid.core.sax.PDF2XMLSaxParser;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.utilities.Utilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,12 +26,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
-import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -54,11 +46,8 @@ public class Document {
     /**
      * Exit code got when pdf2xml took too much time and has been killed by pdf2xml_server.
      */
-    private static final int KILLED_DUE_2_TIMEOUT = 143;
-    public static final int DEFAULT_TIMEOUT = 50000;
-    public static final int PDF2XML_MEM_LIMIT_KBYTES = GrobidProperties.getPdf2XMLMemoryLimitMb() * 1024 ;
 
-    private String path = null; // path where the pdf file is stored
+//    private String path = null; // path where the pdf file is stored
 
     private String pathXML = null; // XML representation of the current PDF file
 
@@ -101,14 +90,15 @@ public class Document {
 
     private String tei;
 
-    public Document() {
+    public Document(DocumentSource documentSource) {
         top = new DocumentNode("top", "0");
+        setPathXML(documentSource.getXmlFile());
     }
 
-    public Document(String pdfPath, String repositPath) {
-        path = pdfPath;
-        top = new DocumentNode("top", "0");
-    }
+//    public Document(String pdfPath, String repositPath) {
+////        path = pdfPath;
+//        top = new DocumentNode("top", "0");
+//    }
 
     public void setLanguage(String l) {
         lang = l;
@@ -136,12 +126,12 @@ public class Document {
         blocks.add(b);
     }
 
-    public void setPdf(String pdfPath) {
-        path = pdfPath;
-    }
+//    public void setPdf(String pdfPath) {
+//        path = pdfPath;
+//    }
 
-    public void setPathXML(String pathXML) {
-        this.pathXML = pathXML;
+    private void setPathXML(File pathXML) {
+        this.pathXML = pathXML.getAbsolutePath();
     }
 
     public List<String> getTokenizations() {
@@ -205,9 +195,9 @@ public class Document {
         return tokenizationsReferences;
     }
 
-    public String getPDFPath() {
-        return path;
-    }
+//    public String getPDFPath() {
+//        return path;
+//    }
 
 	/*
      * private static String pdftoxml = GrobidProperties.getPdf2XMLPath()
@@ -217,192 +207,13 @@ public class Document {
 	 * .getAbsolutePath() + "/pdftoxml -blocks -noImageInline -fullFontName ";
 	 */
 
-    private static final long timeout = 20000; // timeout 20 second for
+
     // producing the low level xml
     // representation of a pdf
     // WARNING: it might be too
     // short for ebook !
 
-    protected String getPdf2xml(boolean full) {
-        String pdf2xml = GrobidProperties.getPdf2XMLPath().getAbsolutePath();
 
-        pdf2xml += GrobidProperties.isContextExecutionServer() ? "/pdftoxml_server" : "/pdftoxml";
-
-        if (full) {
-            pdf2xml += " -blocks -noImageInline -fullFontName ";
-        } else {
-            pdf2xml += " -blocks -noImage -noImageInline -fullFontName ";
-        }
-        return pdf2xml;
-    }
-
-    /**
-     * Create an XML representation from a pdf file. If tout is true (default),
-     * a timeout is used. If force is true, the xml file is always regenerated,
-     * even if already present (default is false, it can save up to 50% overall
-     * runtime). If full is true, the extraction covers also images within the
-     * pdf, which is relevant for fulltext extraction.
-     */
-    public String pdf2xml(boolean tout, boolean force, int startPage,
-                          int endPage, String pdfPath, String tmpPath, boolean full) {
-        LOGGER.debug("start pdf2xml");
-        long time = System.currentTimeMillis();
-        String pdftoxml0;
-
-        pdftoxml0 = getPdf2xml(full);
-
-        if (startPage > 0)
-            pdftoxml0 += " -f " + startPage + " ";
-        if (endPage > 0)
-            pdftoxml0 += " -l " + endPage + " ";
-
-        // if the XML representation already exists, no need to redo the
-        // conversion,
-        // except if the force parameter is set to true
-        String tmpPathXML = tmpPath + "/" + KeyGen.getKey() + ".lxml";
-        File f = new File(tmpPathXML);
-
-        if ((!f.exists()) || force) {
-            List<String> cmd = new ArrayList<String>();
-            String[] tokens = pdftoxml0.split(" ");
-            for (String token : tokens) {
-                if (token.trim().length() > 0) {
-                    cmd.add(token);
-                }
-            }
-            cmd.add(pdfPath);
-            cmd.add(tmpPathXML);
-            if (GrobidProperties.isContextExecutionServer()) {
-                tmpPathXML = processPdf2Xml(pdfPath, tmpPathXML, cmd);
-            } else {
-                cmd = Arrays.asList("bash", "-c", "ulimit -Sv " + PDF2XML_MEM_LIMIT_KBYTES + " && " + pdftoxml0 + " " + pdfPath + " " + tmpPathXML);
-
-                tmpPathXML = processPdf2XmlThreadMode(tout, pdfPath, tmpPathXML, cmd);
-            }
-
-        }
-        LOGGER.debug("pdf2xml process finished. Time to process:" + (System.currentTimeMillis() - time) + "ms");
-        return tmpPathXML;
-    }
-
-    /**
-     * Process the conversion of pdf to xml format using thread calling native
-     * executable.
-     *
-     * @param tout       timeout
-     * @param pdfPath    path to pdf
-     * @param tmpPathXML temporary path to save the converted file
-     * @param cmd        arguments to call the executable pdf2xml
-     * @return the path the the converted file.
-     */
-    protected String processPdf2XmlThreadMode(boolean tout, String pdfPath,
-                                              String tmpPathXML, List<String> cmd) {
-        LOGGER.info("Executing: " + cmd.toString());
-        ProcessRunner worker = new ProcessRunner(cmd, "pdf2xml[" + pdfPath + "]", true);
-
-        worker.start();
-
-        try {
-            if (tout) {
-                worker.join(timeout);
-            } else {
-                worker.join(DEFAULT_TIMEOUT); // max 50 second even without predefined
-                // timeout
-            }
-            if (worker.getExitStatus() == null) {
-                tmpPathXML = null;
-                throw new GrobidException("PDF to XML conversion timed out", GrobidExceptionStatus.TIMEOUT);
-            }
-
-            if (worker.getExitStatus() != 0) {
-                String errorStreamContents = worker.getErrorStreamContents();
-                throw new GrobidException("PDF to XML conversion failed " + (StringUtils.isEmpty(errorStreamContents) ? "" : ("due to: " + errorStreamContents)),
-                        GrobidExceptionStatus.TIMEOUT);
-            }
-        } catch (InterruptedException ex) {
-            tmpPathXML = null;
-            worker.interrupt();
-            Thread.currentThread().interrupt();
-        } finally {
-            worker.interrupt();
-        }
-        return tmpPathXML;
-    }
-
-    /**
-     * Process the conversion of pdf to xml format calling native executable. No
-     * thread used for the execution.
-     *
-     * @param pdfPath    path to pdf
-     * @param tmpPathXML temporary path to save the converted file
-     * @param cmd        arguments to call the executable pdf2xml
-     * @return the path the the converted file.
-     * @throws TimeoutException
-     */
-    protected String processPdf2Xml(String pdfPath, String tmpPathXML, List<String> cmd) {
-        LOGGER.debug("Executing: " + cmd.toString());
-        Integer exitCode = org.grobid.core.process.ProcessPdf2Xml.process(cmd);
-
-        if (exitCode == null) {
-            throw new GrobidException("An error occurred while converting pdf " + pdfPath, GrobidExceptionStatus.BAD_INPUT_DATA);
-        } else if (exitCode == KILLED_DUE_2_TIMEOUT) {
-            throw new GrobidException("PDF to XML conversion timed out", GrobidExceptionStatus.TIMEOUT);
-        } else if (exitCode != 0) {
-            throw new GrobidException("PDF to XML conversion failed with error code: " + exitCode, GrobidExceptionStatus.BAD_INPUT_DATA);
-        }
-
-        return tmpPathXML;
-    }
-
-    public boolean cleanLxmlFile(String thePathXML, boolean cleanImages) {
-        boolean success = false;
-
-        try {
-            if (thePathXML != null) {
-                File fff = new File(thePathXML);
-                if (fff.exists()) {
-                    success = fff.delete();
-                    if (!success) {
-                        throw new GrobidResourceException("Deletion of temporary .lxml file failed for file '" + fff.getAbsolutePath() + "'");
-                    }
-                }
-            }
-        } catch (Exception e) {
-            if (e instanceof GrobidResourceException) {
-                throw (GrobidResourceException) e;
-            } else {
-                throw new GrobidResourceException("An exception occured while deleting .lxml file '" + thePathXML + "'.", e);
-            }
-        }
-
-        // if cleanImages is true, we also remove the corresponding image
-        // resources subdirectory
-        if (cleanImages) {
-            try {
-                if (thePathXML != null) {
-                    File fff = new File(thePathXML + "_data");
-                    if (fff.exists()) {
-                        if (fff.isDirectory()) {
-                            success = Utilities.deleteDir(fff);
-
-                            if (!success) {
-                                throw new GrobidResourceException(
-                                        "Deletion of temporary image files failed for file '" + fff.getAbsolutePath() + "'");
-                            }
-                        }
-                    }
-                }
-            } catch (Exception e) {
-                if (e instanceof GrobidResourceException) {
-                    throw (GrobidResourceException) e;
-                } else {
-                    throw new GrobidResourceException("An exception occured while deleting .lxml file '" + thePathXML + "'.", e);
-                }
-            }
-        }
-
-        return success;
-    }
 
     /**
      * Parser PDF2XML output representation and get the tokenized form of the document.

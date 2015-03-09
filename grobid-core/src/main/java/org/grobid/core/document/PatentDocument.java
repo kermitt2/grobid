@@ -24,7 +24,8 @@ public class PatentDocument extends Document {
             Pattern.compile("(patent)(\\s)+(famil(v|y))(\\s)+(members)?",
                     Pattern.CASE_INSENSITIVE | Pattern.MULTILINE);
 
-    public PatentDocument() {
+    public PatentDocument(DocumentSource documentSource) {
+        super(documentSource);
     }
 
     public int getBeginBlockPAReport() {

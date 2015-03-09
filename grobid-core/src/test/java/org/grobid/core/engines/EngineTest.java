@@ -30,7 +30,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
-@Ignore
+//@Ignore
 public class EngineTest {
 
     @BeforeClass
@@ -641,9 +641,9 @@ public class EngineTest {
     public void testPDF() throws Exception {
         Engine engine = GrobidFactory.getInstance().getEngine();
         BiblioItem resHeader = new BiblioItem();
-        engine.getParsers().getHeaderParser().processing("/tmp/1.pdf", false, resHeader);
+        engine.getParsers().getHeaderParser().processing("//Work/temp/1.pdf", false, resHeader);
         System.out.println(resHeader);
-        System.out.println(engine.fullTextToTEI("/tmp/2.pdf", false, false));
+        System.out.println(engine.fullTextToTEI("//Work/temp/1.pdf", false, false));
 
     }
 
@@ -677,7 +677,7 @@ public class EngineTest {
 //        String input = "/Work/workspace/pdf-analysis/pdf-analysis-service/scripts/grobid/pdfs/grobid-input-1072141691733992581.pdf";
 //        String input = "/Work/workspace/pdf-analysis/pdf-analysis-service/scripts/grobid/pdfs/grobid-input-2086711400313078388.pdf";
 //        String input = "/Work/workspace/pdf-analysis/pdf-analysis-service/scripts/grobid/AS_190528951947270_1422437050969.pdf";
-        String input = "/Work/workspace/pdf-analysis/pdf-analysis-service/scripts/grobid/AS_150694841556994_1412939858223.pdf";
+        String input = "/Work/temp/1.pdf";
         Document doc = engine.getParsers().getSegmentationParser().processing(input);
         System.out.println("Extracting citations");
         List<BibDataSet> cits = engine.getParsers().getCitationParser().processingReferenceSection(doc, engine.getParsers().getReferenceSegmenterParser(), false);
