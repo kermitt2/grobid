@@ -8,7 +8,7 @@ Main author and contact: Patrice Lopez (<patrice.lopez@inria.fr>)
 
 GROBID means GeneRation Of BIbliographic Data. However, we usually simply use the name Grobid. 
 
-Grobid is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured TEI-encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work has been continously as side project since the beginning and is expected to continue until at least 2020 :)
+Grobid is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured TEI-encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on Grobid has been continous as side project since the beginning and is expected to continue until at least 2020 :)
 
 The following functionalities are available:
 
@@ -34,7 +34,7 @@ The key aspects of Grobid are the following ones:
 + Rich bibliographical processing: fine grained parsing of author names, dates, affiliations, addresses, etc. but also for instance quite reliable automatic attachment of affiliations and emails to authors. 
 + "Automatic Generation" of pre-formatted training data based on new pdf documents, for supporting semi-automatic training data generation. 
 
-The default Grobid extraction and parsing algorithms uses the [Wapiti CRF library](http://wapiti.limsi.fr), but it is also possible to use the [CRF++ library](http://crfpp.googlecode.com/svn/trunk/doc/index.html). Wapiti appears two time faster for decoding than CRF++ for the Grobid models. The sizes of the Wapiti models are five to ten times smaller in memory than CRF++ ones. Training time is also significantly reduced based on the Wapiti l-bfgs training algorithm with a similar accuracy. These two C++ libraries are transparently integrated as JNI with dynamic call based on the current OS. 
+The default Grobid extraction and parsing algorithms uses the [Wapiti CRF library](http://wapiti.limsi.fr), but it is also possible to use the [CRF++ library](http://crfpp.googlecode.com/svn/trunk/doc/index.html). These two C++ libraries are transparently integrated as JNI with dynamic call based on the current OS. 
 
 Grobid should run properly "out of the box" on MacOS X, Linux (32 & 64), following the guidelines bellow. Grobid does currently not run on Windows environments because the required and up-to-date CRF native binaries are not yet compiled for this platform (contributors to work on Windows support are very welcome!).
 
@@ -45,7 +45,7 @@ See the Grobid Wiki quick start pages:
 + [Grobid service quick start](https://github.com/kermitt2/grobid/wiki/Grobid-service-quick-start)
 + [Grobid batch quick start](https://github.com/kermitt2/grobid/wiki/Grobid-batch-quick-start)
 
-	Grobid build relies on maven, and should be standard with respect to Open Source developments. You normally only need to build the project with maven to have it running. 
+Grobid build relies on maven, and should be standard with respect to Open Source developments. You normally only need to build the project with maven to have it running. 
 
 
 ## Usage
@@ -82,8 +82,6 @@ Many thanks to:
 * Taku Kudo for CRF++
 * Hervé Déjean and his colleagues from Xerox Research Centre Europe, for xml2pdf
 * and the other contributors (Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, ...)
-
-Thank you to Inria, ResearchGate and the EPO for their help and time invested to improve Grobid. 
 
 ## References
 
