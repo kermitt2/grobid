@@ -26,8 +26,8 @@
         <body>
             <p>Schema for structured documents resulting from the automatic extraction and restructuring realized by Grobid.</p>
             <schemaSpec ident="Grobid" docLang="en" prefix="tei_" xml:lang="en">
-                <moduleRef
-                    url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/mathml2-main.rng"/>
+                <!--moduleRef
+                    url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/mathml2-main.rng"/-->
                 <moduleRef key="core" except=""/>
                 <moduleRef key="tei" except=""/>
                 <moduleRef key="header" except=""/>
@@ -42,7 +42,7 @@
                                 <rng:text/>
                                 <rng:ref name="model.graphicLike"/>
                                 <rng:ref name="model.hiLike"/>
-                                <rng:ref name="mathml.math"/>
+                                <!--rng:ref name="mathml.math"/-->
                             </rng:choice>
                         </rng:zeroOrMore>
                     </content>
@@ -54,7 +54,33 @@
                 <elementSpec ident="scriptNote" mode="delete" module="header"/>
                 <!-- sanity checker still fails tho, as it cannot find element mathml.math -->
 				
-				<!-- allowing empty imprint -->
+				<elementSpec ident="monogr" mode="change" module="core">
+  		          <content>
+  		            <rng:zeroOrMore>
+						<rng:choice>
+							<rng:ref name="imprint"/>
+							<rng:ref name="author"/>
+							<rng:ref name="editor"/>
+							<rng:ref name="meeting"/>
+							<rng:ref name="respStmt"/>
+							<rng:ref name="title"/>
+							<rng:ref name="model.ptrLike"/>
+							<rng:ref name="idno"/>						
+							<rng:ref name="textLang"/>
+							<rng:ref name="authority"/>
+							<rng:ref name="availability"/>
+							<rng:ref name="model.noteLike"/>
+							<rng:ref name="edition"/>
+							<rng:ref name="sponsor"/>
+							<rng:ref name="funder"/>
+							<rng:ref name="extent"/>
+							<rng:ref name="biblScope"/>
+						</rng:choice>	
+					</rng:zeroOrMore>
+  		          </content>
+  		        </elementSpec>
+				
+				<!-- allow empty imprint -->
 		        <elementSpec ident="imprint" mode="change" module="core">
 		          <content>
 		            <rng:zeroOrMore>
@@ -71,10 +97,38 @@
 		          </content>
 		        </elementSpec>
 				
-				<elementSpec ident="trash" mode="add">
+				<!-- allow empty abstract -->
+		        <elementSpec ident="abstract" mode="change" module="header">
+                    <content>
+                        <rng:zeroOrMore>
+                            <rng:choice>
+                                <rng:text/>
+                                <rng:ref name="model.pLike"/>
+                                <rng:ref name="model.listLike"/>
+                            </rng:choice>
+                        </rng:zeroOrMore>
+                    </content>
+		        </elementSpec>
 
+				<!-- accept text under keywords, in case Grobid cannot segment a keyword field -->
+		        <elementSpec ident="keywords" mode="change" module="header">
+                    <content>
+                        <rng:zeroOrMore>
+                            <rng:choice>
+                                <rng:text/>
+                                <rng:ref name="term"/>
+                            </rng:choice>
+                        </rng:zeroOrMore>
+                        <rng:optional>
+							<rng:ref name="list"/>
+						</rng:optional>
+                    </content>
+		        </elementSpec>
+
+				<!-- introduce the trash custom element-->
+				<elementSpec ident="trash" mode="add">
 				    <gloss>Trash</gloss>
-				    <desc>contains noise information to be ignored</desc>
+				    <desc>contains noise information to be ignored, typically from vectoriel images</desc>
 				    <classes>
 				      <memberOf key="model.pLike"/>
 				      <memberOf key="att.editLike"/>
@@ -83,9 +137,36 @@
 				    </classes>
 
 				    <content>
-				      <rng:text/>
+						<rng:zeroOrMore>
+							<rng:choice>
+								<rng:text/>
+					  		  	<rng:ref name="ref"/>
+	  		              </rng:choice>
+	  		            </rng:zeroOrMore>	
 				    </content>
-				  </elementSpec>
+				</elementSpec>
+				
+				<!-- allow empty listBibl -->
+		        <elementSpec ident="listBibl" mode="change" module="core">
+		          <content>
+		            <rng:zeroOrMore>
+		              <rng:choice>
+		                <rng:ref name="model.biblLike"/>
+		              </rng:choice>
+		            </rng:zeroOrMore>
+		          </content>
+		        </elementSpec>
+				
+				<!-- allow text in table, because Grobid does not include yet a model for 
+					 structuring table -->
+		        <elementSpec ident="table" mode="change" module="figures">
+		          <content>
+		            <rng:optional>
+		                <rng:text/>
+		            </rng:optional>
+		          </content>
+		        </elementSpec>
+				
 				
 				<!-- removing elements not used in Grobid results -->
 				<elementSpec ident="ab" mode="delete" module="linking"/>

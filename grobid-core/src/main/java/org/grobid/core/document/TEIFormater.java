@@ -28,6 +28,12 @@ import java.util.regex.Pattern;
  */
 public class TEIFormater {
     private Document doc = null;
+	
+	// possible association to Grobid customised TEI schemas: DTD, XML schema, RelaxNG or compact RelaxNG  
+	// DEFAULT means no schema association in the generated XML documents 
+	public enum SchemaDeclaration {
+	    DEFAULT, DTD, XSD, RNG, RNC
+	}
 
     private StringBuffer currentParagraph = null;
     private StringBuffer currentSection = null;
@@ -59,10 +65,18 @@ public class TEIFormater {
     public TEIFormater(Document document) {
         doc = document;
     }
+	
+    public StringBuffer toTEIHeader(BiblioItem biblio,
+                                    boolean withStyleSheet,
+                                    String defaultPublicationStatement,
+									boolean generateIDs) {
+		return toTEIHeader(biblio, withStyleSheet, SchemaDeclaration.RNG, 
+			defaultPublicationStatement, generateIDs);
+	}
 
     public StringBuffer toTEIHeader(BiblioItem biblio,
                                     boolean withStyleSheet,
-									//boolean schemaDeclaration,
+									SchemaDeclaration schemaDeclaration,
                                     String defaultPublicationStatement,
 									boolean generateIDs) {
         StringBuffer tei = new StringBuffer();
@@ -70,24 +84,39 @@ public class TEIFormater {
         if (withStyleSheet) {
             tei.append("<?xml-stylesheet type=\"text/xsl\" href=\"../jsp/xmlverbatimwrapper.xsl\"?> \n");
         }
-		//if (schemaDeclaration) {
-		
-	//		tei.append("<!DOCTYPE TEI SYSTEM \"" + GrobidProperties.get_GROBID_HOME_PATH() 
-	//			+ "/schemas/dtd/Grobid.dtd" + "\">\n");
-			
-		/*tei.append("<TEI xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"" + 
-		"\n xsi:noNamespaceSchemaLocation=\"" + 
-			GrobidProperties.get_GROBID_HOME_PATH() + "/schemas/xsd/Grobid.xsd\""	+
-		"\n xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
-		"\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
-		*/	
-		//}
-		//else {
-        //tei.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
-        //        "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
-		tei.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\">\n");
-		//}
-		
+		if (schemaDeclaration == SchemaDeclaration.DTD) {
+			tei.append("<!DOCTYPE TEI SYSTEM \"" + GrobidProperties.get_GROBID_HOME_PATH() 
+				+ "/schemas/dtd/Grobid.dtd" + "\">\n");
+		}
+		else if (schemaDeclaration == SchemaDeclaration.XSD) {
+			// XML schema
+			tei.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" \n"+
+				"xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" \n" + 
+				//"\n xsi:noNamespaceSchemaLocation=\"" + 
+				//GrobidProperties.get_GROBID_HOME_PATH() + "/schemas/xsd/Grobid.xsd\""	+
+				"xsi:schemaLocation=\"http://www.tei-c.org/ns/1.0 " + 
+				GrobidProperties.get_GROBID_HOME_PATH() + "/schemas/xsd/Grobid.xsd\""	+	
+				"\n xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n");
+//				"\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+		}
+		else if (schemaDeclaration == SchemaDeclaration.RNG) {
+			// standard RelaxNG
+			tei.append("<?xml-model href=\"file://" + 
+				GrobidProperties.get_GROBID_HOME_PATH() + "/schemas/rng/Grobid.rng" +
+				"\" schematypens=\"http://relaxng.org/ns/structure/1.0\"?>\n");
+		}
+		else if (schemaDeclaration == SchemaDeclaration.RNC) {
+			// compact RelaxNG
+			tei.append("<?xml-model href=\"file://" + 
+				GrobidProperties.get_GROBID_HOME_PATH() + "/schemas/rng/Grobid.rnc" +
+				"\" type=\"application/relax-ng-compact-syntax\"?>\n");
+		}
+		// by default there is no schema association
+
+		if  (schemaDeclaration != SchemaDeclaration.XSD) {	
+			tei.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\">\n");
+		}
+
         if (doc.getLanguage() != null) {
             tei.append("\t<teiHeader xml:lang=\"" + doc.getLanguage() + "\">");
         } else {
@@ -306,7 +335,8 @@ public class TEIFormater {
 						String divID = KeyGen.getKey().substring(0,7);
 						tei.append(" id=\"_" + divID + "\"");
 					}
-                    tei.append(" xml:lang=\"en\">").append(TextUtilities.HTMLEncode(english_title)).append("</title>\n");
+                    tei.append(" xml:lang=\"en\">")
+						.append(TextUtilities.HTMLEncode(english_title)).append("</title>\n");
                 }
             }
             // if it's not something in English, we will write it anyway as note without type at the end
@@ -390,7 +420,7 @@ public class TEIFormater {
                             }
                             if ((biblio.getLocation() != null) && (biblio.getTown() == null) &&
                                     (biblio.getCountry() == null)) {
-                                tei.append(TextUtilities.HTMLEncode(biblio.getLocation()));
+                                tei.append("<addrLine>"+TextUtilities.HTMLEncode(biblio.getLocation())+"</addrLine>");
                             }
                             tei.append("</address>\n");
                             meetLoc = true;
@@ -414,7 +444,7 @@ public class TEIFormater {
                 }
                 if ((biblio.getLocation() != null) && (biblio.getTown() == null)
                         && (biblio.getCountry() == null)) {
-                    tei.append(TextUtilities.HTMLEncode(biblio.getLocation()));
+                    tei.append("<addrLine>"+TextUtilities.HTMLEncode(biblio.getLocation())+"</addrLine>");
                 }
                 tei.append("</address>\n");
                 tei.append("\t\t\t\t\t\t</meeting>\n");
@@ -639,76 +669,63 @@ public class TEIFormater {
         tei.append("\t\t\t</sourceDesc>\n");
         tei.append("\t\t</fileDesc>\n");
 
-		boolean profileDescWritten = false;
+		boolean textClassWritten = false;
+
+		tei.append("\t\t<profileDesc>\n");
 
         // keywords here !!
-		if (biblio.getKeywords() != null) {
-			if (biblio.getKeywords().size() > 0) {
-				profileDescWritten = true;
-				tei.append("\t\t<profileDesc>\n");
-	            tei.append("\t\t\t<textClass>\n");
-				//tei.append("\t\t\t\t<keywords type=\"author\">");
-				tei.append("\t\t\t\t<keywords>");
-				//tei.append("\n\t\t\t\t\t<list>\n");
+		if ( (biblio.getKeywords() != null) && (biblio.getKeywords().size() > 0) ) {
+			textClassWritten = true;
+	        tei.append("\t\t\t<textClass>\n");
+			tei.append("\t\t\t\t<keywords>");
 			
-				List<String> keywords = biblio.getKeywords();
-			
-				int pos = 0;
-				for(String keyw : keywords) {
-					//tei.append("\t\t\t\t\t\t<item>\n");
-					String res = keyw.trim();
-					if (res.startsWith(":")) {
-			            res = res.substring(1);
-			        }
-					if (pos == (keywords.size()-1)) {
-						if (res.endsWith(".")) {
-				            res = res.substring(0, res.length()-1);
-				        }
-					}
-	                tei.append("\t\t\t\t\t<term");
-					if (generateIDs) {
-						String divID = KeyGen.getKey().substring(0,7);
-						tei.append(" id=\"_" + divID + "\"");
-					}
-					tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
-	                //tei.append("\t\t\t\t\t\t</item>\n");
-					pos++;
+			List<String> keywords = biblio.getKeywords();
+			int pos = 0;
+			for(String keyw : keywords) {
+				String res = keyw.trim();
+				if (res.startsWith(":")) {
+					res = res.substring(1);
+			    }
+				if (pos == (keywords.size()-1)) {
+					if (res.endsWith(".")) {
+						res = res.substring(0, res.length()-1);
+				    }
 				}
-			
-				//tei.append("\t\t\t\t\t</list>\n");
-	            tei.append("\t\t\t\t</keywords>\n");
-			
-				//tei.append("\t\t\t</textClass>\n");
-	            //tei.append("\t\t</profileDesc>\n");
-			}
-		}
-		else if (biblio.getKeyword() != null) {
-          	String keywords = biblio.getKeyword();
-			profileDescWritten = true;
-			tei.append("\t\t<profileDesc>\n");
-            tei.append("\t\t\t<textClass>\n");
-			
-			// Note: to be cleaned...
-            if (keywords.startsWith("Categories and Subject Descriptors")) {
-                tei.append("\t\t\t\t<keywords scheme=\"subject-headers\">");
-            } else if (keywords.startsWith("PACS Numbers:")) {
-                tei.append("\t\t\t\t<keywords scheme=\"pacs\">");
-                keywords = keywords.replace("PACS Numbers:", "").trim();
-            } else if (keywords.startsWith("PACS numbers:")) {
-                tei.append("\t\t\t\t<keywords scheme=\"pacs\">");
-                keywords = keywords.replace("PACS numbers:", "").trim();
-            } else if (keywords.startsWith("PACS")) {
-                tei.append("\t\t\t\t<keywords scheme=\"pacs\">");
-                keywords = keywords.replace("PACS", "").trim();
-            } else {
-                tei.append("\t\t\t\t<keywords");
+	            tei.append("\t\t\t\t\t<term");
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
 					tei.append(" id=\"_" + divID + "\"");
 				}
-				tei.append(">");
+				tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
+				pos++;
 			}
+            tei.append("\t\t\t\t</keywords>\n");
+		}
+		else if (biblio.getKeyword() != null) {
+          	String keywords = biblio.getKeyword();
+			textClassWritten = true;
+            tei.append("\t\t\t<textClass>\n");
 			
+			// Note: to be cleaned...
+            if (keywords.startsWith("Categories and Subject Descriptors")) {
+                tei.append("\t\t\t\t<keywords scheme=\"subject-headers\"");
+            } else if (keywords.startsWith("PACS Numbers:")) {
+                tei.append("\t\t\t\t<keywords scheme=\"pacs\"");
+                keywords = keywords.replace("PACS Numbers:", "").trim();
+            } else if (keywords.startsWith("PACS numbers:")) {
+                tei.append("\t\t\t\t<keywords scheme=\"pacs\"");
+                keywords = keywords.replace("PACS numbers:", "").trim();
+            } else if (keywords.startsWith("PACS")) {
+                tei.append("\t\t\t\t<keywords scheme=\"pacs\"");
+                keywords = keywords.replace("PACS", "").trim();
+            } else {
+                tei.append("\t\t\t\t<keywords");
+			}
+			if (generateIDs) {
+				String divID = KeyGen.getKey().substring(0,7);
+				tei.append(" id=\"_" + divID + "\"");
+			}
+			tei.append(">");
             int start = keywords.indexOf("Keywords");
             if (start != -1) {
                 //String keywords1 = keywords.substring(0, start-1);
@@ -720,9 +737,8 @@ public class TEIFormater {
 			
             StringTokenizer st1 = new StringTokenizer(keywords, ";");
             if (st1.countTokens() > 2) {
-                //tei.append("\n\t\t\t\t\t<list>\n");
+				tei.append("\n");
                 while (st1.hasMoreTokens()) {
-                    //tei.append("\t\t\t\t\t\t<item>\n");
 					String res = st1.nextToken().trim();
 					if (res.startsWith(":")) {
 			            res = res.substring(1);
@@ -733,29 +749,24 @@ public class TEIFormater {
 						tei.append(" id=\"_" + divID + "\"");
 					}
 					tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
-                    //tei.append("\t\t\t\t\t\t</item>\n");
                 }
-                //tei.append("\t\t\t\t\t</list>\n");
                 tei.append("\t\t\t\t</keywords>\n");
             } else {
                 st1 = new StringTokenizer(keywords, ",");
                 if (st1.countTokens() > 2) {
-                    tei.append("\n\t\t\t\t\t<list>\n");
+					tei.append("\n");
                     while (st1.hasMoreTokens()) {
-                        tei.append("\t\t\t\t\t\t<item>\n");
 						String res = st1.nextToken().trim();
 						if (res.startsWith(":")) {
 				            res = res.substring(1);
 				        }
-                        tei.append("\t\t\t\t\t\t\t<term");
+                        tei.append("\t\t\t\t\t<term");
 						if (generateIDs) {
 							String divID = KeyGen.getKey().substring(0,7);
 							tei.append(" id=\"_" + divID + "\"");
 						}	
 						tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
-                        tei.append("\t\t\t\t\t\t</item>\n");
                     }
-                    tei.append("\t\t\t\t\t</list>\n");
                     tei.append("\t\t\t\t</keywords>\n");
                 } 
 				else {
@@ -765,29 +776,68 @@ public class TEIFormater {
 		}
 		
         if (biblio.getCategories() != null) {
-			if (!profileDescWritten) {
-				profileDescWritten = true;
-            	tei.append("\t\t<profileDesc>\n");
+			if (!textClassWritten) {
+				textClassWritten = true;
             	tei.append("\t\t\t<textClass>\n");
 			}
 			List<String> categories = biblio.getCategories();
 			tei.append("\t\t\t\t<keywords>");
-			//tei.append("\n\t\t\t\t\t<list>\n");
             for (String category : categories) {
-                //tei.append("\t\t\t\t\t\t<item>\n");
-                tei.append("\t\t\t\t\t<term>" +
-                        TextUtilities.HTMLEncode(category.trim()) +
-                        "</term>\n");
-                //tei.append("\t\t\t\t\t\t</item>\n");
+                tei.append("\t\t\t\t\t<term");
+				if (generateIDs) {
+					String divID = KeyGen.getKey().substring(0,7);
+					tei.append(" id=\"_" + divID + "\"");
+				}	
+                tei.append(">" + TextUtilities.HTMLEncode(category.trim()) + "</term>\n");
             }
-            //tei.append("\t\t\t\t\t</list>\n");
             tei.append("\t\t\t\t</keywords>\n");
         }
 
-		if (profileDescWritten) {
+		if (textClassWritten)
 			tei.append("\t\t\t</textClass>\n");
-            tei.append("\t\t</profileDesc>\n");
+		
+        String abstractText = biblio.getAbstract();
+
+		Language resLang = null;
+		if (abstractText != null) {
+        	LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
+        	resLang = languageUtilities.runLanguageId(abstractText);
 		}
+        if (resLang != null) {
+            String resL = resLang.getLangId();
+            if (!resL.equals(doc.getLanguage())) {
+                tei.append("\t\t\t<abstract xml:lang=\"").append(resL).append("\">\n");
+            } else {
+                tei.append("\t\t\t<abstract>\n");
+            }
+        } else if ( (abstractText == null) || (abstractText.length() == 0) ) {
+			tei.append("\t\t\t<abstract/>\n");
+		} else {
+            tei.append("\t\t\t<abstract>\n");
+        }
+
+		if (abstractText != null) {
+        	/*String abstractHeader = biblio.getAbstractHeader();
+            if (abstractHeader == null)
+                abstractHeader = "Abstract";
+            tei.append("\t\t\t\t<head");
+			if (generateIDs) {
+				String divID = KeyGen.getKey().substring(0,7);
+				tei.append(" id=\"_" + divID + "\"");
+			}
+			tei.append(">").append(TextUtilities.HTMLEncode(abstractHeader)).append("</head>\n");*/
+			
+            tei.append("\t\t\t\t<p");
+			if (generateIDs) {
+				String divID = KeyGen.getKey().substring(0,7);
+				tei.append(" id=\"_" + divID + "\"");
+			}	
+			tei.append(">").append(TextUtilities.HTMLEncode(abstractText)).append("</p>\n");
+
+			tei.append("\t\t\t</abstract>\n");
+		}
+
+        tei.append("\t\t</profileDesc>\n");
 
         if ((biblio.getA_Year() != null) |
                 (biblio.getS_Year() != null) |
@@ -835,7 +885,8 @@ public class TEIFormater {
             tei.append("\t\t\t\t<date type=\"submission\" when=\"");
             tei.append(when).append("\" />\n");
         } else if (biblio.getSubmissionDate() != null) {
-            tei.append("\t\t\t<date type=\"submission\">").append(TextUtilities.HTMLEncode(biblio.getSubmissionDate())).append("</date>\n");
+            tei.append("\t\t\t<date type=\"submission\">")
+				.append(TextUtilities.HTMLEncode(biblio.getSubmissionDate())).append("</date>\n");
 
             /*tei.append("\t\t\t<change when=\"");
 			tei.append(TextUtilities.HTMLEncode(biblio.getSubmissionDate()));
@@ -857,7 +908,7 @@ public class TEIFormater {
             tei.append("\t<text>\n");
         }
 		
-        if (biblio.getAbstract() != null) {
+        /*if (biblio.getAbstract() != null) {
             tei.append("\t\t<front>\n");
             String abstractText = biblio.getAbstract();
 
@@ -901,7 +952,7 @@ public class TEIFormater {
 			}
 			
             tei.append("\t\t</front>\n");
-        }
+        }*/
 
         return tei;
     }
@@ -920,13 +971,15 @@ public class TEIFormater {
                                 	List<BibDataSet> bds,
                                 	List<String> tokenizations,
                                 	Document doc,
-									boolean generateIDs) throws Exception {
+									boolean generateIDs,
+									boolean generateImageReferences) throws Exception {
 		if ( (result == null) || (tokenizations == null) ) {
 			buffer.append("\t\t<body/>\n");
 			return buffer;
 		}
 		buffer.append("\t\t<body>\n");
-		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, tokenizations, doc, generateIDs);
+		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, 
+			tokenizations, doc, generateIDs, generateImageReferences);
       	buffer.append("\t\t</body>\n");
 		
         return buffer;
@@ -938,12 +991,14 @@ public class TEIFormater {
                                 	List<BibDataSet> bds,
                                 	List<String> tokenizations,
                                 	Document doc,
-									boolean generateIDs) throws Exception {
+									boolean generateIDs,
+									boolean generateImageReferences) throws Exception {
 		if ( (result == null) || (tokenizations == null) ) {
 			return buffer;
 		}
 		buffer.append("\t\t<div type=\"annex\">\n");
-		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, tokenizations, doc, generateIDs);
+		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, 
+			tokenizations, doc, generateIDs, generateImageReferences);
       	buffer.append("\t\t</div>\n");
 		
         return buffer;
@@ -955,7 +1010,8 @@ public class TEIFormater {
                                 	List<BibDataSet> bds,
                                 	List<String> tokenizations,
                                 	Document doc,
-									boolean generateIDs) throws Exception {
+									boolean generateIDs,
+									boolean generateImageReferences) throws Exception {
         StringTokenizer st = new StringTokenizer(result, "\n");
         String s1 = null;
         String s2 = null;
@@ -969,7 +1025,59 @@ public class TEIFormater {
         boolean headFigure = false;
         boolean descFigure = false;
         boolean tableBlock = false;
-
+		boolean divOpen = false;
+		
+		// keep track of the starting position of the current figure
+		int startPosFigure = -1;
+		
+		// this List will identify in particular the figure objects
+		//List<NonTextObject> ntos = new ArrayList<NonTextObject>();
+		List<NonTextObject> graphicObjects = new ArrayList<NonTextObject>();
+		
+        // graphic object identification based on blocks
+		if (generateImageReferences) {
+	        int n = 0;
+			List<Block> blocks = doc.getBlocks();
+	        for (Block bl : blocks) {
+	            if (bl.getText() != null) {
+					//System.out.println(bl.getText());
+	                int innd = bl.getText().indexOf("@IMAGE");
+	                if (innd != -1) {
+	                    //System.out.println("graphic found at " + n + " and stored at " + graphics.size());
+	                    NonTextObject nto = new NonTextObject();
+	                    //graphics.add(new Integer(n));
+	                    nto.setBlockNumber(n);
+	                    String imag = bl.getText().substring(innd + 7, bl.getText().length());
+						int ind2 = imag.lastIndexOf("/");
+						imag = imag.substring(ind2+1, imag.length());
+	                    if (imag.indexOf(".vec") != -1) {
+	                        nto.setType(NonTextObject.GraphicVectoriel);
+	                    } else {
+	                        nto.setType(NonTextObject.GraphicBitmap);
+							imag = imag.replace(".ppm", ".png").replace(".jpg", ".png");
+	                    }
+						if ( (nto.getType() == NonTextObject.GraphicBitmap) 
+								&& (nto.getFile() != null) 
+								&& (nto.getFile().indexOf(".png") != -1) ) {
+		                    nto.setFile(imag);
+		                    //graphicsPosition.add(new Integer(bl.getStartToken()));
+		                    nto.setStartPosition(bl.getStartToken());
+		                    nto.setX1(bl.getX());
+		                    nto.setY1(bl.getY());
+		                    nto.setX2(bl.getX() + bl.getWidth());
+		                    nto.setY2(bl.getY() + bl.getHeight());
+		                    nto.setPage(bl.getPage());
+		                    graphicObjects.add(nto);
+						}
+	                }
+	            }
+	            n++;
+	        }
+			/* for(NonTextObject nto : graphicObjects) {
+				System.out.println(nto.toString());
+			}*/
+		}
+		
         while (st.hasMoreTokens()) {
             boolean addSpace = false;
             String tok = st.nextToken().trim();
@@ -1073,7 +1181,15 @@ public class TEIFormater {
                     !currentTag0.equals("<figure_head>") &&
                     !currentTag0.equals("<label>")) {
                 if (openFigure) {
-                    buffer.append("\n\t\t\t</figure>\n\n");
+					if (generateImageReferences) {
+						// we output the graphic object before closing the figure
+						List<NonTextObject> images = getGraphicObject(graphicObjects, startPosFigure, p);
+						for(NonTextObject image : images) {
+							buffer.append("\t\t\t\t\t<graphic url=\"" + image.getFile() + "\" />\n");
+						}
+					}
+                    buffer.append("\n\t\t\t\t</figure>\n\n");
+					startPosFigure = -1;
                 }
                 openFigure = false;
                 headFigure = false;
@@ -1088,12 +1204,12 @@ public class TEIFormater {
             if (!output) {
                 if (closeParagraph) {
                     output = FullTextParser.writeFieldBeginEnd(buffer, s1, "", s2, 
-						"<paragraph>", "<p>", addSpace, 3, generateIDs);
+						"<paragraph>", "<p>", addSpace, 4, generateIDs);
 				} 
 				else 
 				{
                     output = FullTextParser.writeFieldBeginEnd(buffer, s1, lastTag, s2, 
-						"<paragraph>", "<p>", addSpace, 3, generateIDs);
+						"<paragraph>", "<p>", addSpace, 4, generateIDs);
                 }
             }
             if (!output) {
@@ -1101,39 +1217,72 @@ public class TEIFormater {
 					"<ref type=\"biblio\">", addSpace, 3, generateIDs);
             }
             if (!output) {
-                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<section>", 
-					"<head>", addSpace, 3, generateIDs);
+				if (divOpen) {
+ 				   output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<section>", 
+						"</div>\n\t\t\t<div>\n\t\t\t\t<head>", addSpace, 3, generateIDs);
+				   //if (!s1.equals(lastTag0))
+				   //divOpen = false;
+			  	}
+			    else {
+  				   output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<section>", 
+ 						"<div>\n\t\t\t\t<head>", addSpace, 3, generateIDs);
+			    }   
+				if (output) {					
+					if (!s1.equals(lastTag0)) {
+						divOpen = true;
+					}
+				}
             }
             if (!output) {
-                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<subsection>", 
-					"<head>", addSpace, 3, generateIDs);
+				if (divOpen) {
+  				   output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<subsection>", 
+ 						"</div>\n\t\t\t<div>\n\t\t\t\t<head>", addSpace, 3, generateIDs);
+ 				   //divOpen = false;
+				}
+				else {
+ 				   output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<subsection>", 
+						"<div>\n\t\t\t\t<head>", addSpace, 3, generateIDs);
+			    }
+				if (output) {
+					if (!s1.equals(lastTag0)) {
+						divOpen = true;
+					}
+				}
             }
             if (!output) {
                 if (openFigure) {
                     output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<trash>", 
-						"<trash>", addSpace, 4, generateIDs);
+						"<trash>", addSpace, 5, generateIDs);
                 } else {
                     output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<trash>", 
-						"<figure>\n\t\t\t\t<trash>", addSpace, 3, generateIDs);
+						"<figure>\n\t\t\t\t\t<trash>", addSpace, 4, generateIDs);
                     if (output) {
                         openFigure = true;
+						startPosFigure = p;
                     }
                 }
             }
             if (!output) {
                 output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<equation>", 
-					"<formula>", addSpace, 3, generateIDs);
+					"<formula>", addSpace, 4, generateIDs);
             }
             if (!output) {
                 output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_marker>", 
-					"<ref type=\"figure\">", addSpace, 3, generateIDs);
+					"<ref type=\"figure\">", addSpace, 4, generateIDs);
             }
             if (!output) {
                 if (openFigure) {
                     if (tableBlock && (!lastTag0.equals("<table>")) && (currentTag0.equals("<table>"))) {
-                        buffer.append("\n\t\t\t</figure>\n\n");
+						if (generateImageReferences) {
+							// we output the graphic object before closing the figure
+							List<NonTextObject> images = getGraphicObject(graphicObjects, startPosFigure, p);
+							for(NonTextObject image : images) {
+								buffer.append("\t\t\t\t\t<graphic url=\"" + image.getFile() + "\" />\n");
+							}
+						}
+                        buffer.append("\n\t\t\t\t</figure>\n\n");
                         output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<table>", 
-							"<figure>\n\t\t\t\t<table>", addSpace, 3, generateIDs);
+							"<figure>\n\t\t\t\t\t<table>", addSpace, 4, generateIDs);
                         if (output) {
                             tableBlock = true;
                             descFigure = false;
@@ -1148,7 +1297,7 @@ public class TEIFormater {
                     }
                 } else {
                     output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<table>", 
-						"<figure>\n\t\t\t\t<table>", addSpace, 3, generateIDs);
+						"<figure>\n\t\t\t\t\t<table>", addSpace, 4, generateIDs);
                     if (output) {
                         openFigure = true;
                         tableBlock = true;
@@ -1158,27 +1307,37 @@ public class TEIFormater {
             if (!output) {
                 if (openFigure) {
                     if (descFigure && (!lastTag0.equals("<label>")) && (currentTag0.equals("<label>"))) {
-                        buffer.append("\n\t\t\t</figure>\n\n");
+						if (generateImageReferences) {
+							// we output the graphic object before closing the figure
+							List<NonTextObject> images = getGraphicObject(graphicObjects, startPosFigure, p);
+							for(NonTextObject image : images) {
+								buffer.append("\t\t\t\t\t<graphic url=\"" + image.getFile() + "\" />\n");
+							}
+						}
+                        buffer.append("\n\t\t\t\t</figure>\n\n");
+						startPosFigure = -1;
                         output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>",
-							 "<figure>\n\t\t\t\t<figDesc>", addSpace, 3, generateIDs);
+							 "<figure>\n\t\t\t\t\t<figDesc>", addSpace, 4, generateIDs);
                         if (output) {
                             descFigure = true;
                             tableBlock = false;
                             headFigure = false;
+							startPosFigure = p;
                         }
                     } else {
                         output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>", 
-							"<figDesc>", addSpace, 4, generateIDs);
+							"<figDesc>", addSpace, 5, generateIDs);
                         if (output) {
                             descFigure = true;
                         }
                     }
                 } else {
                     output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>",
-						 "<figure>\n\t\t\t\t<figDesc>", addSpace, 3, generateIDs);
+						 "<figure>\n\t\t\t\t\t<figDesc>", addSpace, 4, generateIDs);
                     if (output) {
                         openFigure = true;
                         descFigure = true;
+						startPosFigure = p;
                     }
                 }
             }
@@ -1186,27 +1345,37 @@ public class TEIFormater {
                 if (openFigure) {
                     if (headFigure && (!lastTag0.equals("<figure_head>")) &&
                             (currentTag0.equals("<figure_head>"))) {
-                        buffer.append("\n\t\t\t</figure>\n\n");
+						if (generateImageReferences) {		
+							// we output the graphic object before closing the figure
+							List<NonTextObject> images = getGraphicObject(graphicObjects, startPosFigure, p);
+							for(NonTextObject image : images) {
+								buffer.append("\t\t\t\t\t<graphic url=\"" + image.getFile() + "\" />\n");
+							}
+						}
+                        buffer.append("\n\t\t\t\t</figure>\n\n");
+						startPosFigure = -1;
                         output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_head>", 
-							"<figure>\n\t\t\t\t<head>", addSpace, 3, generateIDs);
+							"<figure>\n\t\t\t\t\t<head>", addSpace, 4, generateIDs);
                         if (output) {
                             descFigure = false;
                             tableBlock = false;
                             headFigure = true;
+							startPosFigure = p;
                         }
                     } else {
                         output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_head>", 
-							"<head>", addSpace, 4, generateIDs);
+							"<head>", addSpace, 5, generateIDs);
                         if (output) {
                             headFigure = true;
                         }
                     }
                 } else {
                     output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_head>", 
-						"<figure>\n\t\t\t\t<head>", addSpace, 3, generateIDs);
+						"<figure>\n\t\t\t\t\t<head>", addSpace, 4, generateIDs);
                     if (output) {
                         openFigure = true;
                         headFigure = true;
+						startPosFigure = p;
                     }
                 }
             }
@@ -1224,7 +1393,15 @@ public class TEIFormater {
                     testClosingTag(buffer, "", currentTag0, s1, bds, generateIDs);
                 }
                 if (openFigure) {
-                    buffer.append("\n\t\t\t</figure>\n\n");
+					if (generateImageReferences) {
+						// we output the graphic object before closing the figure
+						List<NonTextObject> images = getGraphicObject(graphicObjects, startPosFigure, p);
+						for(NonTextObject image : images) {
+							buffer.append("\t\t\t\t\t<graphic url=\"" + image.getFile() + "\" />\n");
+						}
+					}
+                    buffer.append("\n\t\t\t\t</figure>\n\n");
+					startPosFigure = -1;
                 }
             }
             if (start) {
@@ -1233,7 +1410,7 @@ public class TEIFormater {
         }
 		
 		// we apply some overall cleaning and simplification
-		String str1 = "</ref></p>\n\n\t\t\t<p>";
+		String str1 = "</ref></p>\n\n\t\t\t\t<p>";
 		String str2 = "</ref> ";
 		int startPos = 0;
 		while(startPos != -1) {
@@ -1243,6 +1420,11 @@ public class TEIFormater {
 				buffer.replace(startPos, endPos, str2);
 				startPos = endPos;
 			}
+		}
+		
+		if (divOpen) {
+			buffer.append("\t\t\t</div>\n");
+			divOpen = false;
 		}
 
         /*int i = 0; 
@@ -1442,6 +1624,21 @@ public class TEIFormater {
 		return buffer;								
 	}
 	
+	/**
+	 * Return the graphic objects in a given interval position in the document.
+	 */
+	private List<NonTextObject> getGraphicObject(List<NonTextObject> graphicObjects, int startPos, int endPos) {
+		List<NonTextObject> result = new ArrayList<NonTextObject>();
+		for(NonTextObject nto : graphicObjects) {
+			if ( (nto.getStartPosition() >= startPos) && (nto.getStartPosition() <= endPos) ) {
+				result.add(nto);
+			}
+			if (nto.getStartPosition() > endPos) {
+				break;
+			}
+		}
+		return result;
+	}
 	
     /**
      * TODO some documentation
@@ -1532,7 +1729,7 @@ public class TEIFormater {
 				buffer.append("<p");
 				if (generateIDs) 
 					buffer.append(" xml:id=\"_" + divID + "\"");
-				buffer.append(">" + text + "</p>\n\n");
+				buffer.append(">" + TextUtilities.trimEncodedCharaters(text) + "</p>\n\n");
                 res = true;
 				// return true only when the paragraph is closed
 
@@ -1543,7 +1740,7 @@ public class TEIFormater {
                 buffer.append(text + "</head>\n\n");
 
             } else if (lastTag0.equals("<equation>")) {
-                buffer.append("<formula>" + text + "</formula>\n\n");
+                buffer.append("<p><formula>" + text + "</formula></p>\n\n");
 
             } else if (lastTag0.equals("<table>")) {
                 buffer.append("<table>" + text + "</table>\n");
@@ -2013,7 +2210,7 @@ public class TEIFormater {
                         nto.setType(NonTextObject.GraphicBitmap);
                     }
                     //images.add(imag);
-                    nto.addFile(imag);
+                    nto.setFile(imag);
                     //graphicsPosition.add(new Integer(bl.getStartToken()));
                     nto.setStartPosition(bl.getStartToken());
                     nto.setX1(bl.getX());
@@ -2038,10 +2235,8 @@ public class TEIFormater {
         int nbBitmaps = 0;
         for (NonTextObject nto : graphicObjects) {
             if (nto.getType() == NonTextObject.GraphicBitmap) {
-                if (nto.getFiles() != null) {
-                    if (nto.getFiles().size() > 0) {
-                        nbBitmaps++;
-                    }
+                if (nto.getFile() != null) {
+                    nbBitmaps++;
                 }
             }
         }
@@ -2059,7 +2254,7 @@ public class TEIFormater {
 
                 // figure should not contains already a non vectorial graphic -> to be reviewed!
                 if (nbFigures >= nbBitmaps) {
-                    if (nto2.getFiles() != null && nto2.getFiles().size() > 0) {
+                    if (nto2.getFile() != null) {
                         continue;
                     }
                 }
@@ -2075,8 +2270,9 @@ public class TEIFormater {
                 }
             }
             if (bestNto2 != null) {
-                for (String filee : nto1.getFiles()) {
-                    bestNto2.addFile(filee);
+                //for (String filee : nto1.getFiles()) 
+				{
+                    bestNto2.setFile(nto1.getFile());
                 }
             }
         }
@@ -2682,10 +2878,9 @@ public class TEIFormater {
                             headFigure = false;
 
                             if (currentFigure != null) {
-                                if (currentFigure.getFiles() != null) {
-                                    for (String fil : currentFigure.getFiles()) {
-                                        tei.append("\t\t\t\t<graphic url=\"" + fil.trim() + "\"/>\n");
-                                    }
+                                if (currentFigure.getFile() != null) {
+                                    String fil = currentFigure.getFile();
+                                    tei.append("\t\t\t\t<graphic url=\"" + fil.trim() + "\"/>\n");
                                 }
                             }
                             tei.append("\n\t\t\t\t<figDesc>");
@@ -2767,10 +2962,9 @@ public class TEIFormater {
                         headFigure = true;
 
                         if (currentFigure != null) {
-                            if (currentFigure.getFiles() != null) {
-                                for (String fil : currentFigure.getFiles()) {
-                                    tei.append("\t\t\t\t<graphic url=\"" + fil.trim() + "\"/>\n");
-                                }
+                            if (currentFigure.getFile() != null) {
+                                String fil = currentFigure.getFile();
+                                tei.append("\t\t\t\t<graphic url=\"" + fil.trim() + "\"/>\n");
                             }
                         }
                         tei.append("\n\t\t\t\t<head>");
@@ -3168,27 +3362,30 @@ public class TEIFormater {
         return res;
     }
 
-
     public StringBuffer toTEIReferences(StringBuffer tei, 
 										List<BibDataSet> bds, 
 										boolean generateIDs) throws Exception {
  		tei.append("\t\t\t<div type=\"references\">\n\n");
-        tei.append("\t\t<listBibl>\n");
+		
+		if ( (bds == null) || (bds.size() == 0) )
+			tei.append("\t\t\t\t<listBibl/>\n");
+		else {
+	        tei.append("\t\t\t\t<listBibl>\n");
 
-        int p = 0;
-		if ( (bds != null) && (bds.size() > 0)) {
-      	  for (BibDataSet bib : bds) {
-	            BiblioItem bit = bib.getResBib();
-	            if (bit != null) {
-	                tei.append("\n" + bit.toTEI(p, generateIDs));
-	            } else {
-	                tei.append("\n");
-	            }
-	            p++;
-	        }
+	        int p = 0;
+			if ( (bds != null) && (bds.size() > 0)) {
+	      	  for (BibDataSet bib : bds) {
+		            BiblioItem bit = bib.getResBib();
+		            if (bit != null) {
+		                tei.append("\n" + bit.toTEI(p, generateIDs));
+		            } else {
+		                tei.append("\n");
+		            }
+		            p++;
+		        }
+			}
+			tei.append("\n\t\t\t\t</listBibl>\n");
 		}
-
-        tei.append("\n\t\t</listBibl>\n");
         tei.append("\t\t\t</div>\n");
 
         return tei;
