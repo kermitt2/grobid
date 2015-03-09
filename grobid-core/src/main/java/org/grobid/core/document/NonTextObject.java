@@ -11,7 +11,7 @@ public class NonTextObject {
 
     private String header = null;
     private String description = null;
-    private ArrayList<String> files = null;
+    private String filePath = null;
 
     public static final int Unknown = -1; // unknown object type
     public static final int Figure = 0; // figure type
@@ -39,8 +39,8 @@ public class NonTextObject {
         return this.description;
     }
 
-    public ArrayList<String> getFiles() {
-        return this.files;
+    public String getFile() {
+        return this.filePath;
     }
 
     public int getType() {
@@ -55,15 +55,8 @@ public class NonTextObject {
         this.description = description;
     }
 
-    public void setFiles(ArrayList<String> files) {
-        this.files = files;
-    }
-
-    public void addFile(String file) {
-        if (this.files == null) {
-            files = new ArrayList<String>();
-        }
-        this.files.add(file);
+    public void setFile(String file) {
+        this.filePath = file;
     }
 
     public void setType(int type) {
@@ -173,12 +166,10 @@ public class NonTextObject {
         } else {
             res.append("\t");
         }
-        if (files != null) {
-            for (String file : files) {
-                res.append(file + "\t");
-            }
+        if (filePath != null) {
+ 			res.append(filePath + "\t");
         } else {
-            res.append("\t");
+           	res.append("\t");
         }
         res.append(header + "\t");
 

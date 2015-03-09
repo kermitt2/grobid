@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2015-03-02T02:47:17Z. .
+DTD generated from ODD source 2015-03-07T05:07:23Z. .
 TEI Edition: Version 2.7.0. Last updated on
 	16th September 2014, revision 13036
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -873,7 +873,7 @@ version %data.version;  #IMPLIED >
  xmlns:xsi CDATA #FIXED 'http://www.w3.org/2001/XMLSchema-instance'
  >
 <!--doc:contains a summary or formal abstract prefixed to an existing source document by the encoder. [2.4.4. ] -->
-<!ELEMENT abstract (%model.pLike;|%model.listLike;)+>
+<!ELEMENT abstract (#PCDATA|%model.pLike;|%model.listLike;)*>
 <!ATTLIST abstract xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST abstract
  %tei_att.global.attributes;
@@ -1088,7 +1088,7 @@ type %data.enumerated;  #IMPLIED >
  %tei_att.global.attributes;
  %tei_att.sortable.attributes; >
 <!--doc:contains a list of keywords or phrases identifying the topic or nature of a text. [2.4.3. ] -->
-<!ELEMENT keywords (term+|list)>
+<!ELEMENT keywords ((#PCDATA|term)*,(list)?)>
 <!ATTLIST keywords xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST keywords
  %tei_att.global.attributes;
@@ -1123,7 +1123,7 @@ scheme %data.pointer;  #IMPLIED >
  %tei_att.typed.attribute.subtype;
 type %data.enumerated;  #IMPLIED >
 <!--doc:(citation list) contains a list of bibliographic citations of any kind. [3.11.1.  2.2.7.  15.3.2. ] -->
-<!ELEMENT listBibl ((%model.headLike;)*,(%model.biblLike;|%model.milestoneLike;)+)>
+<!ELEMENT listBibl (%model.biblLike;)*>
 <!ATTLIST listBibl xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST listBibl
  %tei_att.global.attributes;
@@ -1137,7 +1137,7 @@ type %data.enumerated;  #IMPLIED >
  %tei_att.global.attributes;
  %tei_att.canonical.attributes; >
 <!--doc:(monographic level) contains bibliographic elements describing an item (e.g. a book or journal) published as an independent item (i.e. as a separate physical object). [3.11.2.1. ] -->
-<!ELEMENT monogr ((((author|editor|meeting),(author|editor|meeting)*,title+,(%model.ptrLike;|idno|editor)*)|((title|%model.ptrLike;|idno)+,(author|editor|meeting)*)|idno)?,availability*,(%model.noteLike;)*,(edition,(idno|%model.ptrLike;|editor)*)*,imprint,(imprint|biblScope)*)>
+<!ELEMENT monogr (imprint|author|editor|meeting|title|%model.ptrLike;|idno|availability|%model.noteLike;|edition|biblScope)*>
 <!ATTLIST monogr xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST monogr
  %tei_att.global.attributes; >
@@ -1309,7 +1309,7 @@ role CDATA  #IMPLIED >
  %tei_att.personal.attributes;
  %tei_att.typed.attributes; >
 <!--doc:contains text displayed in tabular form, in rows and columns. [14.1.1. ] -->
-<!ELEMENT table ((%model.headLike;|%model.global;)*,((row,(%model.global;)*)+|((%model.graphicLike;),(%model.global;)*)+),((%model.divBottom;),(%model.global;)*)*)>
+<!ELEMENT table (#PCDATA)?>
 <!ATTLIST table xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST table
  %tei_att.global.attributes;
@@ -1359,8 +1359,8 @@ level (a|m|j|s|u) #IMPLIED >
 <!ATTLIST titleStmt xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST titleStmt
  %tei_att.global.attributes; >
-<!--doc:(Trash) contains noise information to be ignored -->
-<!ELEMENT trash  (#PCDATA)>
+<!--doc:(Trash) contains noise information to be ignored, typically from vectoriel images -->
+<!ELEMENT trash (#PCDATA|ref)*>
 <!ATTLIST trash xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST trash
  %tei_att.editLike.attributes;

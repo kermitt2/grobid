@@ -1185,4 +1185,14 @@ public class TextUtilities {
 		return nbTokens;
 	}
 	
+	/**
+	 * Ensure that special XML characters are correctly encoded.  
+	 */
+    public static String trimEncodedCharaters(String string) {
+        return string.replaceAll("&amp\\s+;", "&amp;").
+                replaceAll("&quot\\s+;|&amp;quot\\s*;", "&quot;").
+                replaceAll("&lt\\s+;|&amp;lt\\s*;", "&lt;").
+                replaceAll("&gt\\s+;|&amp;gt\\s*;", "&gt;").
+                replaceAll("&apos\\s+;|&amp;apos\\s*;", "&apos;");
+    }
 }

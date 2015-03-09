@@ -11,6 +11,7 @@ import org.grobid.core.engines.Engine;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.exceptions.GrobidServiceException;
+import org.grobid.core.utilities.GrobidProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -87,11 +88,11 @@ public class GrobidRestUtils {
 	 */
 	public static File newTempFile(String fileName, String extension) {
 		try {
-			return File.createTempFile(fileName, extension);
+			return File.createTempFile(fileName, extension, GrobidProperties.getTempPath());
 		} catch (IOException e) {
 			throw new GrobidServiceException(
-					"Could not create temprorary file, '" + fileName + "."
-							+ extension + "'.");
+					"Could not create temprorary file, '" + fileName + "." +
+					extension + "' under path '" + GrobidProperties.getTempPath() + "'.");
 		}
 	}
 
