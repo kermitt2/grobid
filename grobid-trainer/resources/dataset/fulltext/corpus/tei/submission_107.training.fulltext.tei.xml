@@ -4,7 +4,6 @@
 		<fileDesc xml:id="11"/>
 	</teiHeader>
 	<text xml:lang="en">
-			<front>BISTABILITIES IN 1D POLARITONIC CONDENSATES<lb/> E.B. Magnusson 1,* , I.G. Savenko 1,2 , and I.A. Shelykh 1,2,3<lb/> 1 Science Institute, University of Iceland, Dunhagi-3, 107 Reykjavik, Iceland<lb/> 2 Academic University -Nanotechnology Research and Education Centre, 8/3 Khlopina, 195220, St.Petersburg, Russia<lb/> 3 International Institute of Physics, Av. Odilon Gomes de Lima, 1722, Capim Macio, CEP: 59078-400, Natal-RN, Brazil<lb/></front>
 
 			<p>Exciton-polaritons are very promising bosonic quasiparticles for displaying collective phenomena at high temperatures.<lb/> Currently the most widely used approach to model a system of interacting Bose particles is based on solution of the<lb/> Gross-Pitaevskii equation <ref type="biblio">[1]</ref>. However, this approach has several drawbacks. First, it assumes complete coherence in<lb/> the system and processes of polariton-phonon scattering can hardly be accounted for properly. Second, the intermediate<lb/> regime (when Bose-Einstein condensate is not have been formed yet) can not be investigated.<lb/></p> 
 			
@@ -35,9 +34,6 @@
 			<bibl> <label>[2]</label> K.V. Kavokin et al., Phys. Rev. Lett., 92 (2004), pp. 017401<lb/></bibl>
 
 			<bibl> <label>[3]</label> I.G. Savenko, E.B. Magnusson and I.A. Shelykh, arXiv:1101.3711v1 [cond-mat.mes-hall] (2010)</bibl>
-
-			<note place="footnote">* corresponding author : einarbmag@gmail.com</note>
-
 
 	</text>
 </tei>

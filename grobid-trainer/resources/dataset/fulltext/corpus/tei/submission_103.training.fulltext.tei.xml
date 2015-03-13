@@ -4,7 +4,6 @@
 		<fileDesc xml:id="7"/>
 	</teiHeader>
 	<text xml:lang="en">
-			<front>RAPID CALCULATION METHOD OF BIEXCITON AND<lb/> SCATTERING TWO-EXCITON STATES<lb/> H. Ajiki<lb/> Photon Pioneers Center, Osaka University, 2-1 Yamadaoka, Suita, Osaka 565-0871, Japan<lb/></front> 
 			
 			<p>Biexciton (bound two-exciton state) and scattering two-exciton states play an essential role in optical<lb/> nonlinearity of semiconducting material. In general, it is difficult to calculate these two-exciton states because of<lb/> a four-body problem consisting of two electrons and two holes. However, two-exciton states consisting of<lb/> Frenkel excitons can be described by a simple tight-binding model with a nearest-neighbor approximation. The<lb/> model Hamiltonian has been extensively studied. Analytical expression of a biexciton for one-dimensional (1D)<lb/> chain <ref type="biblio">[1]</ref> and the third-order nonlinear susceptibility of finite 1D chain <ref type="biblio">[2]</ref> have been obtained from this model<lb/> Hamiltonian. The former is limited to the biexciton, and the latter calculates the susceptibility without obtaining<lb/> wave functions of two-exciton states. For studying nonlinear optical processes in a microcavity, however, the<lb/> wave functions are necessary in order to calculate transition rates from an exciton to two-exciton state via a<lb/> cavity photon <ref type="biblio">[3,4]</ref>.<lb/></p>
 

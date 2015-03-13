@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="-1"/>
+		<fileDesc xml:id="_31.v87"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<page>391<lb/></page>
@@ -46,10 +46,16 @@
 
 			<note place="headnote">CAN. J. CHEM. VOL. 65, 1987<lb/></note>
 
-			<body>dont la formation a déjà été reportée dans la photolyse du 4ME à plus longues longueurs d&apos;onde (16). Sans entrer dans le détail du mécanisme impliqué dans l&apos;isomérisation, celle-ci peut bien entendu être le résultat de l&apos;état électronique fondamental vibrationnellement chaud, mais aussi faire intervenir des états électroniques excités Rydberg (12). En l&apos;absence de preuves suffisantes, il y a lieu seulement de ne pas écarter la possibilité de la stabilisation de la molécule fondamentale vibrationnelle-ment très chaude.<lb/> Remerciements<lb/> Nous voulons remercier très vivement la Division des Affaires Scientifiques de l&apos;OTAN (#85/0484) pour l&apos;aide généreuse qu&apos;elle a apportée à ce projet.<lb/></body>
-
+			<body>dont la formation a déjà été reportée dans la photolyse du 4ME à plus longues longueurs d&apos;onde (16). Sans entrer dans le détail du mécanisme impliqué dans l&apos;isomérisation, celle-ci peut bien entendu être le résultat de l&apos;état électronique fondamental vibrationnellement chaud, mais aussi faire intervenir des états électroniques excités Rydberg (12). En l&apos;absence de preuves suffisantes, il y a lieu seulement de ne pas écarter la possibilité de la stabilisation de la molécule fondamentale vibrationnelle-ment très chaude.<lb/> 
+			
+		</body>
+			
+		<back>
+				
+			<div type="acknowledgement">Remerciements<lb/> Nous voulons remercier très vivement la Division des Affaires Scientifiques de l&apos;OTAN (#85/0484) pour l&apos;aide généreuse qu&apos;elle a apportée à ce projet.<lb/></div>
+		
 			<listBibl>1. H. DESLAURIERS et G. J. COLLIN. Can. J. Chem. 63, 3168 (1985). 2. G. J. COLLIN, H. DESLAURIERS et J. DESCHÊNES. Can. J. Chem. 57, 870 (1979).<lb/> 3. G. J. COLLIN et H. DESLAURIERS. Int. J. Chem. Kinet. 12, 17 (1980).<lb/> 4. T. GIERCZAK, J. GAWLOWSKI et J. NIEDZIELSKI. J. Photochem. 33, 145 (1986). 5. K. W. EGGER, D. M. GOLDEN et S. W. BENSON. J. Am. Chem. Soc. 86, 5420 (1964); A. B. TRENWITH. Trans. Faraday Soc. 66, 2805 (1970).<lb/> 6. W. TSANG. Int. J. Chem. Kinet. 5, 929 (1973).<lb/> 7. G. J. COLLIN et C. M. GAUCHER. Can. J. Chem. 52, 34 (1974).<lb/> 8. G. J. COLLIN etH. DESLAURIERS. Nouv. J. Chim. 5,447 (1981). 9. H. DESLAURIERS et G. J. COLLIN. J. Chim. Phys. 82, 1033 (1985).<lb/> 10. W. FORST. Dans Theory of unimolecular reactions. Academic<lb/> Press, New York. 1973. pp. 235-245.<lb/> 11. J. A. BARLTROP et J. D. COYLE. Dans Principles of photo-<lb/>chemistry. J. Wiley and Sons, New York. 1975. pp. 148-155.<lb/> 12. M. D. SHETLAR. Mol. Photochem. 6, 143 (1974); 6, 166 (1974); 6, 191 (1974).<lb/> 13. G. J. COLLIN. Rev. Chem. Intermed. 4, 377 (1979).<lb/> 14. D. HOUDE, H. DESLAURIERS et G. J. COLLIN. Can. J. Chem. 61, 962 (1983).<lb/> 15. J. GAWLOWSKI etG. J. COLLIN. J. Photochem. 23, 241 (1983). 16. G. J. COLLIN etH. DESLAURIERS. Can. J. Chem. 61,1510 (1983).</listBibl>
 
-
+		</back>
 	</text>
 </tei>

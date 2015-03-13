@@ -4,7 +4,6 @@
 		<fileDesc xml:id="280"/>
 	</teiHeader>
 	<text xml:lang="en">
-			<front>DYNAMICS OF EXCITON RECOMBINATION IN ENSEMBLE OF<lb/> InAlAs/AlAs QUANTUM DOTS<lb/> T.S. Shamirzaev 1,* , J. Debus 2 , D.S. Abramkin 1 , D. Dunker 2 , D. R. Yakovlev 2,3 , D.V. Dmitriev 1 ,<lb/> A.K. Gutakovskii 1 , L.S. Braginsky 1 , K. S. Zhuravlev 1 , and M. Bayer 2<lb/> 1 A. V. Rzhanov Institute of Semiconductor Physics SB RAS, Pr. Lavrentieva, 13, 630090 Novosibirsk, Russia<lb/> 2 Experimentelle Physik 2, Technische Universitaet Dortmund, 44227 Dortmund, Germany<lb/> 3 A. F. Ioffe Physical-Technical Institute, Russian Academy of Sciences, 194021 St. Petersburg, Russia<lb/></front>
 
 			<p>Recently we have demonstrated that nonexponential long-time decay of exciton recombination appears<lb/> in ensembles of indirect band gap InAlAs/AlAs QDs with a type I band gap alignment as a result of summing a<lb/> lot of single-exponential curves <ref type="biblio">[1]</ref>. It takes place when the excitons with different recombination rates<lb/> (described by distribution function of exciton lifetimes G(τ R )), localized in the QDs of different size, shape and<lb/> composition emit at the same wavelength. Here we study the excitons recombination dynamics in such QDs.<lb/> Typical dynamics of exciton recombination is shown in figure. Taken into account that a nonexponential decay<lb/> curve is described by the following law:<lb/></p>
 
