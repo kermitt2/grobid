@@ -4,7 +4,7 @@ namespace rng = "http://relaxng.org/ns/structure/1.0"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2015-03-07T05:07:11Z. .
+# Schema generated from ODD source 2015-03-13T22:22:33Z. .
 # TEI Edition: Version 2.7.0. Last updated on
 #	16th September 2014, revision 13036
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -1590,8 +1590,9 @@ tei_TEI =
   
   ## (TEI document) contains a single TEI-conformant document, comprising a TEI header and a text, either in isolation or as part of a teiCorpus element. [4.  15.1. ]
   element TEI {
-    (tei_teiHeader,
-     ((tei_model.resourceLike+, tei_text?) | tei_text))
+    tei_teiHeader,
+    tei_model.resourceLike?,
+    (tei_text?)
     >> sch:ns [ prefix = "tei" uri = "http://www.tei-c.org/ns/1.0" ]
     >> sch:ns [ prefix = "xs" uri = "http://www.w3.org/2001/XMLSchema" ]
     >> sch:ns [
