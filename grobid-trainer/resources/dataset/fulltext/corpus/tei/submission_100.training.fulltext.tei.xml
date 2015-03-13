@@ -4,7 +4,6 @@
 		<fileDesc xml:id="4"/>
 	</teiHeader>
 	<text xml:lang="en">
-			<front>SELF-ASSEMBLED QUANTUM DOT-BASED QUANTUM MEMORY<lb/> Q. Wang 1,* and Y-S. Zhang 2<lb/> 1<lb/> Department of Photonics Engineering, DTU, DK-2800 Kgs. Lyngby, Denmark<lb/> 2 Department of Physics, Key Laboratory of Quantum Information, USTC, 230026, Hefei, China<lb/></front>
 
 			<p>We give a proposal on how to use self-assembled single quantum dot devices to process entanglement<lb/> storage, and then analyze the possibility of realizing it with current technology. We also evaluate the storage<lb/> fidelity with imperfect experimental conditions and demonstrate that a quite high storage fidelity can still be<lb/> obtained.<lb/></p>
 

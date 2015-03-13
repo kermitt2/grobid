@@ -62,9 +62,12 @@
 			
 			<note place="footnote">8 The results are slightly different from the ones reported <lb/>in the original papers due to the fact that we truncated to 100 <lb/>words, while they truncated to 665 bytes. <lb/></note> 
 			
-			System <lb/>R-1 <lb/>R-2 R-4 <lb/>PROB <lb/>35.14 8.17 1.06 <lb/>LLR <lb/>34.60 7.56 0.83 <lb/>MRW <lb/>35.78 8.15 0.99 <lb/>REGBASIC 37.56 9.28 1.49 <lb/>KL <lb/>37.97 8.53 1.26 <lb/>PEER-65 <lb/>37.62 8.96 1.51 <lb/>SUBMOD <lb/>39.18 9.35 1.39 <lb/>DPP <lb/>39.79 9.62 1.57 <lb/> REGSUM 38.57 9.75 1.60 <lb/> Table 6: System performance comparison (%) <lb/> 9 Conclusion <lb/> We presented a series of experiments which <lb/>show that keyword identification can be improved <lb/>in a supervised framework which incorporates <lb/>a rich set of indicators of importance. We <lb/>also show that the better estimation of word <lb/>importance leads to better extractive summaries. <lb/>Our analysis of features related to global <lb/>importance, sentiment and topical categories <lb/>reveals rather unexpected results and confirms that <lb/>word importance estimation is a worthy research <lb/>direction. Success in the task is likely to improve <lb/>sophisticated summarization approaches too, as <lb/>well as sentence compression systems which use <lb/>only crude frequency related measures to decide <lb/>which words should be deleted from a sentence. 9 <lb/></body>
+			System <lb/>R-1 <lb/>R-2 R-4 <lb/>PROB <lb/>35.14 8.17 1.06 <lb/>LLR <lb/>34.60 7.56 0.83 <lb/>MRW <lb/>35.78 8.15 0.99 <lb/>REGBASIC 37.56 9.28 1.49 <lb/>KL <lb/>37.97 8.53 1.26 <lb/>PEER-65 <lb/>37.62 8.96 1.51 <lb/>SUBMOD <lb/>39.18 9.35 1.39 <lb/>DPP <lb/>39.79 9.62 1.57 <lb/> REGSUM 38.57 9.75 1.60 <lb/> Table 6: System performance comparison (%) <lb/> 9 Conclusion <lb/> We presented a series of experiments which <lb/>show that keyword identification can be improved <lb/>in a supervised framework which incorporates <lb/>a rich set of indicators of importance. We <lb/>also show that the better estimation of word <lb/>importance leads to better extractive summaries. <lb/>Our analysis of features related to global <lb/>importance, sentiment and topical categories <lb/>reveals rather unexpected results and confirms that <lb/>word importance estimation is a worthy research <lb/>direction. Success in the task is likely to improve <lb/>sophisticated summarization approaches too, as <lb/>well as sentence compression systems which use <lb/>only crude frequency related measures to decide <lb/>which words should be deleted from a sentence. 9 <lb/>
+		</body>
 
-			<note place="footnote"> 9 The work is partially funded by NSF CAREER award <lb/> IIS 0953445. <lb/></note>
+		<back>
+			
+			<div type="acknowledgement">9 The work is partially funded by NSF CAREER award <lb/> IIS 0953445. <lb/></div>
 
 			<page> 719 <lb/></page>
 
@@ -76,6 +79,6 @@
 
 			<page> 721 </page>
 
-
+		</back>
 	</text>
 </tei>

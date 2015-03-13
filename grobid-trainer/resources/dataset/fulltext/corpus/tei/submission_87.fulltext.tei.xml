@@ -4,7 +4,6 @@
 		<fileDesc xml:id="281"/>
 	</teiHeader>
 	<text xml:lang="en">
-			<front>SINGLE PHOTON SOURCES &amp; MULTIMODE ENTANGLEMENT IN<lb/> SEMICONDUCTOR MICROCAVITIES<lb/> T. C. H. Liew * and V. Savona<lb/> Institute of Theoretical Physics, Ecole Polytechnique Fédérale de Lausanne EPFL, CH-1015 Lausanne,<lb/> Switzerland<lb/> </front>
 
 			<p>Given their strong nonlinearity, direct coupling to external light fields and highly compact nature,<lb/> semiconductor microcavities represent a promising candidate for quantum information processing. Quantum<lb/> squeezing <ref type="biblio">[1]</ref> and quantum complementarity <ref type="biblio">[2]</ref> have been experimentally reported, while entanglement has<lb/> been predicted theoretically <ref type="biblio">[3]</ref>. We study two further quantum applications of polaritons: single photon source<lb/> generation and multimode entanglement.<lb/></p>
 
