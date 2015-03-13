@@ -14,6 +14,8 @@ public enum SegmentationLabel {
      bibliographical section <references>,
      page number <page>,
      annexes <annex>,
+	 acknowledgement <acknowledgement>,
+	 toc <toc> -> not yet used because not yet training data for this
      */
     COVER("<cover>"),
     HEADER("<header>"),
@@ -22,7 +24,9 @@ public enum SegmentationLabel {
     BODY("<body>"),
     PAGE_NUMBER("<page>"),
     ANNEX("<annex>"),
-    REFERENCES("<references>");
+    REFERENCES("<references>"),
+	ACKNOWLEDGEMENT("<acknowledgement>"),
+	TOC("toc");
 
     private String label;
     SegmentationLabel(String label) {

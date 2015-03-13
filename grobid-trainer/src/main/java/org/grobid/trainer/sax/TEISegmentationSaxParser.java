@@ -21,7 +21,7 @@ import java.util.StringTokenizer;
 public class TEISegmentationSaxParser extends DefaultHandler {
 
   	/* TEI -> label mapping (9 labels for this model) 
- 		cover page (<cover>): titlePage (under front), 
+ 		cover page (<cover>): titlePage (optionally under front), 
 		document header (<header>): front, 
 		page footer (<footnote>): note type footnote, 
 		page header (<headnote>): note type headnote, 
@@ -29,7 +29,8 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 		bibliographical section (<references>): listbibl, 
 		page number (<page>): page,
 		? each bibliographical references in the biblio section (<ref>): bibl 
-		annexes (<annex>): div type="annex" (under back)
+		annexes (<annex>): div type="annex" (optionally under back)
+		acknowledgement (<acknowledgement>): div type="acknowledgement" (optionally under back)
  	*/
 
     private StringBuffer accumulator = null; // current accumulated text
@@ -81,7 +82,6 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 		else if (qName.equals("note") || 
 				 qName.equals("page") || 
 				 qName.equals("pages") || 
-//				 qName.equals("pageTitle") ||
 				 qName.equals("titlePage") ) {
 			currentTag = upperTag;
 		}
@@ -183,6 +183,11 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                         if (name.equals("type")) {
                             if (value.equals("annex")) {
 								currentTag = "<annex>";
+								upperTag = currentTag;
+								upperQname = "div";
+                            }
+                            else if (value.equals("acknowledgement")) {
+								currentTag = "<acknowledgement>";
 								upperTag = currentTag;
 								upperQname = "div";
                             }

@@ -1310,6 +1310,24 @@ public class FullTextParser extends AbstractParser {
 
 			tei.append("\t\t<back>\n");
 			if (mode == 0) {
+				// acknowledgement is in the back
+				SortedSet<DocumentPiece> documentAcknowledgementParts = 
+					doc.getDocumentPart(SegmentationLabel.ACKNOWLEDGEMENT);
+				Pair<String,List<String>> featSeg = 
+					getBodyTextFeatured(doc, documentAcknowledgementParts);
+				List<String> tokenizationsAcknowledgement = null;
+				if (featSeg != null) {
+					// if featSeg is null, it usually means that no body segment is found in the 
+					// document segmentation
+					String acknowledgementText = featSeg.getA();
+					tokenizationsAcknowledgement = featSeg.getB();
+					String reseAcknowledgement = null;
+					if ( (acknowledgementText != null) && (acknowledgementText.length() >0) )
+						reseAcknowledgement = label(acknowledgementText);
+					tei = teiFormater.toTEIAcknowledgementLight(tei, reseAcknowledgement, 
+						tokenizationsAcknowledgement, resCitations, generateIDs);
+				}
+				
 				tei = teiFormater.toTEIAnnexLight(tei, reseAnnex, resHeader, resCitations, 
 					tokenizationsAnnex, doc, generateIDs, generateImageReferences);
 			}
