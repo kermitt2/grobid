@@ -167,6 +167,18 @@
 		          </content>
 		        </elementSpec>
 				
+				<!-- allow <text> under <TEI> to be optional -->
+		        <elementSpec ident="TEI" mode="change" module="textstructure">
+		          <content>
+					<rng:ref name="teiHeader"/>
+		            <rng:optional>
+		                <rng:ref name="model.resourceLike"/>
+		            </rng:optional>
+		            <rng:optional>
+		                <rng:ref name="text"/>
+		            </rng:optional>
+		          </content>
+		        </elementSpec>
 				
 				<!-- removing elements not used in Grobid results -->
 				<elementSpec ident="ab" mode="delete" module="linking"/>

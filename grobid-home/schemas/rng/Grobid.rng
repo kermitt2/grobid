@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-03-07T05:07:18Z. .
+Schema generated from ODD source 2015-03-13T22:22:38Z. .
 TEI Edition: Version 2.7.0. Last updated on
 	16th September 2014, revision 13036
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -2847,20 +2847,13 @@ Sample values include: 1] text; 2] corpus</a:documentation>
    <define name="tei_TEI">
       <element name="TEI">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI document) contains a single TEI-conformant document, comprising a TEI header and a text, either in isolation or as part of a teiCorpus element. [4.  15.1. ]</a:documentation>
-         <group>
-            <ref name="tei_teiHeader"/>
-            <choice>
-               <group>
-                  <oneOrMore>
-                     <ref name="tei_model.resourceLike"/>
-                  </oneOrMore>
-                  <optional>
-                     <ref name="tei_text"/>
-                  </optional>
-               </group>
-               <ref name="tei_text"/>
-            </choice>
-         </group>
+         <ref name="tei_teiHeader"/>
+         <optional>
+            <ref name="tei_model.resourceLike"/>
+         </optional>
+         <optional>
+            <ref name="tei_text"/>
+         </optional>
          <ns xmlns="http://purl.oclc.org/dsdl/schematron"
              prefix="tei"
              uri="http://www.tei-c.org/ns/1.0"/>
