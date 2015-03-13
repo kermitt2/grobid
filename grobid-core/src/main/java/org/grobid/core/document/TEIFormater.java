@@ -13,6 +13,7 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.engines.FullTextParser;
 import org.grobid.core.utilities.KeyGen;
+import org.grobid.core.utilities.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -831,7 +832,7 @@ public class TEIFormater {
 			if (generateIDs) {
 				String divID = KeyGen.getKey().substring(0,7);
 				tei.append(" id=\"_" + divID + "\"");
-			}	
+			}
 			tei.append(">").append(TextUtilities.HTMLEncode(abstractText)).append("</p>\n");
 
 			tei.append("\t\t\t</abstract>\n");
@@ -980,10 +981,105 @@ public class TEIFormater {
 		buffer.append("\t\t<body>\n");
 		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, 
 			tokenizations, doc, generateIDs, generateImageReferences);
+		
+		// footnotes are still in the body
+		buffer = toTEIFootNoteLight(buffer, doc, generateIDs);
+
       	buffer.append("\t\t</body>\n");
 		
         return buffer;
     }
+	
+	public StringBuffer toTEIFootNoteLight(StringBuffer tei, 
+										Document doc, 
+										boolean generateIDs) throws Exception {		
+		// write the footnotes
+		SortedSet<DocumentPiece> documentFootnoteParts = doc.getDocumentPart(SegmentationLabel.FOOTNOTE);
+		String footnotes = doc.getDocumentPartText(SegmentationLabel.FOOTNOTE);
+		if (documentFootnoteParts != null) {
+			List<String> allNotes = new ArrayList<String>();
+			for(DocumentPiece docPiece : documentFootnoteParts) {
+				String footText = doc.getDocumentPieceText(docPiece);
+				footText = TextUtilities.dehyphenize(footText);
+				footText = footText.replace("\n", " ");
+				footText = footText.replace("  ", " ").trim();
+				if (footText.length() < 6)
+					continue;
+				if (allNotes.contains(footText)) {
+					// basically we have here the "recurrent" headnote/footnote for each page,
+					// no need to add them several times (in the future we could even use them 
+					// differently combined with the header)
+					continue;
+				}
+				// pattern is <note n="1" place="foot" xml:id="no1">
+				tei.append("\n\t\t\t<note place=\"foot\"");
+				Matcher ma = startNum.matcher(footText);
+				int currentNumber = -1;
+                if (ma.find()) {
+                    String groupStr = ma.group(1);
+					footText = ma.group(2);
+                    try {
+                        currentNumber = Integer.parseInt(groupStr);
+                    } catch (NumberFormatException e) {
+                        currentNumber = -1;
+                    }
+                }
+				if (currentNumber != -1) {
+					tei.append(" n=\"" + currentNumber + "\"");
+				}
+				if (generateIDs) {
+					String divID = KeyGen.getKey().substring(0,7);
+					tei.append(" id=\"_" + divID + "\"");
+				}
+				tei.append(">");
+				tei.append(TextUtilities.HTMLEncode(footText));
+				allNotes.add(footText);
+				tei.append("</note>\n");
+			}
+		}
+				
+		return tei;
+	}
+	
+	public StringBuffer toTEIAcknowledgementLight(StringBuffer buffer, 
+												String reseAcknowledgement, 
+												List<String> tokenizationsAcknowledgement,
+												List<BibDataSet> bds,
+												boolean generateIDs) throws Exception {
+		if ( (reseAcknowledgement == null) || (tokenizationsAcknowledgement == null) ) {
+			return buffer;
+		}
+		
+		buffer.append("\n\t\t\t<div type=\"acknowledgement\">\n");
+		StringBuffer buffer2 = new StringBuffer();
+		
+		buffer2 = toTEITextPieceLight(buffer2, reseAcknowledgement,  null,  bds, 
+			tokenizationsAcknowledgement, doc, generateIDs, false);
+		String acknowResult = buffer2.toString();
+		String[] acknowResultLines = acknowResult.split("\n");
+		boolean extraDiv = false;
+		if ( (acknowResultLines != null) && (acknowResultLines.length != 0) ) {
+			for(int i=0; i<acknowResultLines.length; i++) {
+				if (acknowResultLines[i].trim().length() == 0)
+					continue;
+				if ( (i==0) && acknowResultLines[i].trim().startsWith("<div>") ) {
+					extraDiv = true;
+					// we skip the first div (there is already a <div> just opened)
+				}
+				else if ( (i==acknowResultLines.length-1) && extraDiv) {
+					extraDiv = false;
+					// we skip the last div
+				}
+				else {
+					buffer.append(acknowResultLines[i] + "\n");
+				}
+			}
+		}
+		buffer.append("\t\t\t</div>\n\n");
+
+		return buffer;
+	}
+	
 	
 	public StringBuffer toTEIAnnexLight(StringBuffer buffer,
                        			 	String result,

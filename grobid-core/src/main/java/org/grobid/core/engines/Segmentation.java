@@ -43,7 +43,7 @@ import java.util.regex.Matcher;
 public class Segmentation extends AbstractParser {
 
 	/*
-        8 labels for this model:
+        10 labels for this model:
 	 		cover page <cover>, 
 			document header <header>, 
 			page footer <footnote>, 
@@ -51,7 +51,9 @@ public class Segmentation extends AbstractParser {
 			document body <body>, 
 			bibliographical section <references>, 
 			page number <page>,
-			annexes <annex>
+			annexes <annex>,
+		    acknowledgement <acknowledgement>,
+		    toc <toc> -> not yet used because not yet training data for this
 	*/
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Segmentation.class);
@@ -1104,6 +1106,9 @@ public class Segmentation extends AbstractParser {
                 if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<annex>", "<div type=\"annex\">", addSpace, 3);
                 }
+                if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<acknowledgement>", "<div type=\"acknowledgement\">", addSpace, 3);
+                }
                 /*if (!output) {
                     if (closeParagraph) {
                         output = writeField(buffer, s1, "", s2, "<reference_marker>", "<label>", addSpace, 3);
@@ -1305,6 +1310,8 @@ public class Segmentation extends AbstractParser {
             } else if (lastTag0.equals("<cover>")) {
                 buffer.append("</titlePage>\n\n");
             } else if (lastTag0.equals("<annex>")) {
+                buffer.append("</div>\n\n");
+            } else if (lastTag0.equals("<acknowledgement>")) {
                 buffer.append("</div>\n\n");
             } else {
                 res = false;
