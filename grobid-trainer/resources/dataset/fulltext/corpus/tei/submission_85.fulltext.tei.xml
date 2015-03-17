@@ -4,42 +4,19 @@
 		<fileDesc xml:id="279"/>
 	</teiHeader>
 	<text xml:lang="en">
+		
 		<figure>
-			
 			<trash>PL<lb/> Intensity<lb/> (arb.<lb/> units)<lb/> 6 4<lb/> 2 0<lb/> Time (ns)<lb/> 3.7 K<lb/> 50 K<lb/> 120 K<lb/> InAs QDs<lb/> Det. 1.40 eV<lb/> (=0.2 eV)<lb/> Ex. 1.55 eV<lb/></trash>
-			
 			<head>Figure 1:</head>
-
 			<figDesc>Temperature dependence of the PL<lb/> decay profile in the stacked QDs.<lb/></figDesc>
-
 		</figure>
 
-			<p>Stacked quantum dots (QDs) have immense potential for many technological applications, such as the<lb/> next generation optoelectronic devices. Recently, we have reported advantages of the multi-stacked QDs<lb/> fabricated using the strain-compensation technique <ref type="biblio">[1-3]</ref> to design the optical properties through the excitonic<lb/> characteristics and to fabricate the high-quality and high-density QD ensemble <ref type="biblio">[4-6]</ref>. For the application of the<lb/> stacked QD ensemble to the optical devices, the clarification and manipulation of the intraband relaxation<lb/> processes of electrons and holes are required. The stacked QD ensemble consists of the QD layers and the<lb/> spacer layers which compensate the strain caused by the lattice mismatch. Therefore, the clarification of the<lb/> relation between dynamics of the excitons in the QDs and the carriers in the spacer layers will play a key role to<lb/> improve the device performance. In the present work, we focus on the correlation between carriers generated in<lb/> the spacer layers and the QDs.<lb/> We used a sample of InAs self-assembled QDs with 30<lb/> layers were grown on an InP(311)B substrate by molecular<lb/> beam epitaxy using a strain compensation technique. The sample<lb/> has In 0.5 Ga 0.1 Al 0.4 As spacer layers with the thickness of 20 nm. The<lb/> QD density in each layer is 3.4 x 10 10 /cm 2 . According to our<lb/> previous report <ref type="biblio">[5]</ref>, the QDs are interconnected along the growth<lb/> direction. The spacer layer compensates for the stress caused by the<lb/> lattice mismatch between the QD layer and the buffer layer. The PL<lb/> decay profiles were measured with streak camera system with a<lb/> time resolution of 40 ps. The excitation source was a mode-locked<lb/> Ti:sapphire pulse laser delivering about 100-fs pulses with a<lb/> repetition rate of 80 MHz. The excitation photon energy was 1.55<lb/> eV, which is higher than the bandgap energy of the InGaAlAs<lb/> spacer layer. <ref type="figure">Figure 1</ref> indicates the temperature dependence of the<lb/> PL decay profile in the energy region of the spacer layer. The PL<lb/> decay time increases with an increase in the temperature. In <ref type="figure">Fig. 2</ref>,<lb/> the PL decay time plots as a function of the temperature. This<lb/> increase is similar to the increase in the PL decay time of QDs<lb/> observed in this sample <ref type="biblio">[6]</ref>. The carriers generated in the spacer<lb/> layers have the two relaxation process; one is the direct PL<lb/> relaxation and another one is transfer to the QDs. Therefore, this<lb/> increase in the PL decay time results from the suppression of the<lb/> carrier transfer from the spacer layers to the QDs.<lb/></p>
-
-			<head>References<lb/></head>
-
-			<bibl> <label>[1]</label> K. Akahane et al., J. Cryst. Growth 245 (2002), pp. 31-36.<lb/></bibl>
-
-			<bibl> <label>[2]</label> K. Akahane, N. Yamamoto, and M. Tsuchiya, Appl. Phys. Lett.,<lb/> 93 (2008), 041121.<lb/></bibl>
-
-			<bibl> <label>[3]</label> K. Akahane, N. Yamamoto, T. Kawanishi, Phys. Stat. Sol. A,<lb/> 208 (2011), pp. 425-428.<lb/></bibl>
-
-			<bibl> <label>[5]</label> O. Kojima et al., J. Appl. Phys. 103 (2008), 113504.<lb/></bibl>
-
-			<bibl> <label>[6]</label> O. Kojima et al., J. Appl. Phys. 107 (2010), 073506.<lb/></bibl>
-
-			<bibl> <label>[7]</label> O. Kojima et al., Phys. Stat. Sol. C 8 (2011), 46-49.<lb/></bibl>
-
-			<note place="footnote">*<lb/> corresponding author : kojima@phoenix.kobe-u.ac.jp<lb/></note>
+		<p>Stacked quantum dots (QDs) have immense potential for many technological applications, such as the<lb/> next generation optoelectronic devices. Recently, we have reported advantages of the multi-stacked QDs<lb/> fabricated using the strain-compensation technique <ref type="biblio">[1-3]</ref> to design the optical properties through the excitonic<lb/> characteristics and to fabricate the high-quality and high-density QD ensemble <ref type="biblio">[4-6]</ref>. For the application of the<lb/> stacked QD ensemble to the optical devices, the clarification and manipulation of the intraband relaxation<lb/> processes of electrons and holes are required. The stacked QD ensemble consists of the QD layers and the<lb/> spacer layers which compensate the strain caused by the lattice mismatch. Therefore, the clarification of the<lb/> relation between dynamics of the excitons in the QDs and the carriers in the spacer layers will play a key role to<lb/> improve the device performance. In the present work, we focus on the correlation between carriers generated in<lb/> the spacer layers and the QDs.<lb/> We used a sample of InAs self-assembled QDs with 30<lb/> layers were grown on an InP(311)B substrate by molecular<lb/> beam epitaxy using a strain compensation technique. The sample<lb/> has In 0.5 Ga 0.1 Al 0.4 As spacer layers with the thickness of 20 nm. The<lb/> QD density in each layer is 3.4 x 10 10 /cm 2 . According to our<lb/> previous report <ref type="biblio">[5]</ref>, the QDs are interconnected along the growth<lb/> direction. The spacer layer compensates for the stress caused by the<lb/> lattice mismatch between the QD layer and the buffer layer. The PL<lb/> decay profiles were measured with streak camera system with a<lb/> time resolution of 40 ps. The excitation source was a mode-locked<lb/> Ti:sapphire pulse laser delivering about 100-fs pulses with a<lb/> repetition rate of 80 MHz. The excitation photon energy was 1.55<lb/> eV, which is higher than the bandgap energy of the InGaAlAs<lb/> spacer layer. <ref type="figure">Figure 1</ref> indicates the temperature dependence of the<lb/> PL decay profile in the energy region of the spacer layer. The PL<lb/> decay time increases with an increase in the temperature. In <ref type="figure">Fig. 2</ref>,<lb/> the PL decay time plots as a function of the temperature. This<lb/> increase is similar to the increase in the PL decay time of QDs<lb/> observed in this sample <ref type="biblio">[6]</ref>. The carriers generated in the spacer<lb/> layers have the two relaxation process; one is the direct PL<lb/> relaxation and another one is transfer to the QDs. Therefore, this<lb/> increase in the PL decay time results from the suppression of the<lb/> carrier transfer from the spacer layers to the QDs.<lb/></p>
 
 			<figure>
-				
-				<trash>1.5<lb/> 1.0<lb/> 0.5<lb/> Decay<lb/> Time<lb/> (ns)<lb/> 120 80<lb/> 40 0<lb/> Temperature (K)<lb/></trash>
-				
+				<trash>1.5<lb/> 1.0<lb/> 0.5<lb/> Decay<lb/> Time<lb/> (ns)<lb/> 120 80<lb/> 40 0<lb/> Temperature (K)<lb/></trash>				
 				<head>Figure 2:</head>
-
 				<figDesc>Temperature dependence of the<lb/> PL decay time.</figDesc>
-
 			</figure>
 
 

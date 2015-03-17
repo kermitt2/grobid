@@ -13,27 +13,13 @@
 
 			<figure>
 				<head>Figure 1:</head>
-
 				<figDesc>Occupancy of the THz mode versus pump<lb/> intensity in equilibrium state for different temperatures:<lb/> 1 K (red/solid), 10 K (green/dashed) and 20 K (blue/dash-<lb/>dotted). Illustration of the bistability and hysteresis. If T<lb/> being increased threshold current also increases.<lb/></figDesc>
-
 			</figure>
 
 			<figure>
 				<head>Figure 2:</head>
-
 				<figDesc>System response on a short single impuls<lb/> (FWHM= 20 ps) for different values of the background<lb/> pump: 4600 ps −1 (red), 5750 ps −1 (green) and 6500 ps −1<lb/> (blue). Switching occurs only when the background pump<lb/> corresponds to the bistable region (compare with <ref type="figure">Fig. 1</ref>).<lb/></figDesc>
 			</figure>
-
-			<head>References<lb/></head>
-
-			<bibl> <label>[1]</label> K. V. Kavokin et al, Appl. Phys. Lett. 2010, 97, pp. 201111<lb/></bibl>
-
-			<bibl> <label>[2]</label> I. G. Savenko, E. B. Magnusson and I. A. Shelykh, arXiv:1101.3711, 2010.<lb/></bibl>
-
-			<bibl> <label>[3]</label> I. G. Savenko, I. A. Shelykh and M. A. Kaliteevski arXiv:1103.1336, 2011.</bibl>
-
-			<note place="footnote">* corresponding author : savenko.j@mail.ru</note>
-
 
 	</text>
 </tei>

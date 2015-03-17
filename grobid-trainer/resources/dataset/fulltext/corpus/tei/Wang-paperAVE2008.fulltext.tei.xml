@@ -5,13 +5,13 @@
 	</teiHeader>
 	<text xml:lang="en">
 
-			<head>1 Introduction and Related Work<lb/></head>
+			<head level="1">1 Introduction and Related Work<lb/></head>
 
 			<p>Answer Validation is an important step for Question Answering (QA) systems, which aims to validate the<lb/> answers extracted from natural language texts, and select the most proper answers for the final output.<lb/></p>
 
 			<p>Using Recognizing Textual Entailment (RTE-1 – <ref type="biblio">Dagan et al., 2006</ref>; RTE-2 – <ref type="biblio">Bar-Haim et al., 2006</ref>) to do<lb/> answer validation has shown a great success (<ref type="biblio">Peñas et al., 2007</ref>). We also developed our own RTE system and<lb/> participated in AVE2007. The RTE system proposed a new sentence representation extracted from the<lb/> dependency structure, and utilized the Subsequence Kernel method (<ref type="biblio">Bunescu and Mooney, 2006</ref>) to perform<lb/> machine learning. We have achieved fairly high results on both the RTE-2 data set (<ref type="biblio">Wang and Neumann, 2007a</ref>)<lb/> and the RTE-3 data set (<ref type="biblio">Wang and Neumann, 2007b</ref>), especially on Information Extraction (IE) and QA pairs.<lb/> However, on the AVE data sets, we still found much space for the improvement. Therefore, based on the<lb/> system we developed last year, our motivation this year is to see whether using extra information, e.g. named-<lb/>entity (NE) recognition, question analysis, etc., can make further improvement on the final results.<lb/> This report will start with a brief introduction of our RTE system and then followed by the whole AVE<lb/> system. The results of our two submission runs will be shown in section 4, and in the end, we will summarize<lb/> our work.<lb/></p>
 
-			<head>2 The RTE System<lb/></head>
+			<head level="1">2 The RTE System<lb/></head>
 
 			<p>The RTE system (<ref type="biblio">Wang and Neumann, 2007a</ref>; <ref type="biblio">Wang and Neumann, 2007b</ref>) is developed for RTE-3 Challenge<lb/> (<ref type="biblio">Giampiccolo et al., 2007</ref>). The system contains a main approach with two backup strategies. The main approach<lb/> extracts parts of the dependency structures to form a new representation, named Tree Skeleton, as the feature<lb/> space and then applies Subsequence Kernels to represent TSs and perform Machine Learning. The backup<lb/> strategies will deal with the T-H pairs which cannot be solved by the main approach. One backup strategy is<lb/> called Triple Matcher, as it calculates the overlapping ratio on top of the dependency structures in a triple<lb/> representation; the other is simply a Bag-of-Words (BoW) method, which calculates the overlapping ratio of<lb/> words in T and H.<lb/></p>
 
@@ -27,14 +27,14 @@
 
 			<note place="footnote">1 The Root Node of T is not necessary to be a verb, instead, it could be a noun, a preposition, or even a dependency relation.<lb/></note>
 
-			<head>3<lb/> The AVE System<lb/></head>
+			<head level="1">3<lb/> The AVE System<lb/></head>
 
 			<figure>
 				<head>Fig. 1.</head> 
 				<figDesc>Our AVE system uses the RTE system (Tera – Textual Entailment Recognition for Application) as a core component.<lb/> The preprocessing module mainly adapts questions, their corresponding answers, and supporting documents into Text (T)-<lb/>Hypothesis (H) pairs, assisted by some manually designed patterns. The post-processing module (i.e. the Answer Validation<lb/> in the picture) will validate each answer and select a most proper one based on the output of the RTE system. The new<lb/> modules added are the NE Recognition and Question Analysis. Thus, we will have extra information like NEs in the answers,<lb/> Expected Answer Types (EATs), etc.<lb/></figDesc>
 			</figure>
 
-			<head>3.1 Preprocessing and Post-processing<lb/></head>
+			<head level="2">3.1 Preprocessing and Post-processing<lb/></head>
 
 			<p>Since the input of the AVE task is a list of questions, their corresponding answers and the documents containing<lb/> these answers, we need to adapt them into T-H pairs for the RTE system. For instance, the question is,<lb/> How many &quot;Superside&quot; world championships did Steve Webster win between 1987 and 2004?<lb/> (id=87) 2<lb/></p>
 
@@ -54,19 +54,21 @@
 
 			<p>to decide the answer based on the two similarity scores. Therefore, every T-H pair has a triple similarity score<lb/> and a BoW similarity score, and for some of the T-H pairs, we directly know whether the entailment holds. The<lb/> post-processing is straightforward, the &quot;YES&quot; entailment cases will be validated answers and the &quot;NO&quot;<lb/> entailment cases will be rejected answers. In addition, the selected answers (i.e. the best answers) will naturally<lb/> be the pairs covered by our main approach or (if not,) with the highest similarity scores.<lb/></p>
 
-			<head>3.2 Additional Components<lb/></head>
+			<head level="2">3.2 Additional Components<lb/></head>
 
 			<p>The RTE system is used as a core component of the AVE system. Based on the error analysis of last year&apos;s<lb/> results, this year we use additional components to filter out noisy candidates. Therefore, two extra components<lb/> are added to the architecture, the NE recognizer and the question analyzer. For NE recognition, we use<lb/> StanfordNER (<ref type="biblio">Finkel et al., 2005</ref>) for English and SPPC (<ref type="biblio">Neumann and Piskorski, 2002</ref>) for German; and for<lb/> question analysis, we use the SMES system (<ref type="biblio">Neumann and Piskorski, 2002</ref>). The detailed workflow is as follows,<lb/></p>
 
-			<item>1. Annotate NEs in H, store them in an NE list; if the answer is an NE, store the NE type as A&apos;_Type;<lb/></item>
+			<list>
+				<item>1. Annotate NEs in H, store them in an NE list; if the answer is an NE, store the NE type as A&apos;_Type;<lb/></item>
 
-			<item>2. Analyze the question and obtain expected answer type, store it as A_Type;<lb/></item>
+				<item>2. Analyze the question and obtain expected answer type, store it as A_Type;<lb/></item>
 
-			<item>3. Synthesize all the information, i.e. NE list, A_Type, A&apos;_Type, BoW similarity, Triple similarity, etc.<lb/> As for the example mentioned above (id=87), the additional information will be,<lb/> NE list: Steve Webster (person), 1987 (date), 2004 (date);<lb/> A_Type: Number<lb/> A&apos;_Type: Number<lb/></item>
+				<item>3. Synthesize all the information, i.e. NE list, A_Type, A&apos;_Type, BoW similarity, Triple similarity, etc.<lb/> As for the example mentioned above (id=87), the additional information will be,<lb/> NE list: Steve Webster (person), 1987 (date), 2004 (date);<lb/> A_Type: Number<lb/> A&apos;_Type: Number<lb/></item>
+			</list>	
 
 			<p>Then, heuristic rules are straightforward to be applied, e.g. checking the consistence between<lb/> A_Type and A&apos;_Type, checking whether all (or how many of) the NEs also appear in the documents,<lb/> etc. All these results together with the outputs of the RTE system will be synthesized to make the final<lb/> decision.<lb/></p>
 
-			<head>4 Results<lb/></head>
+			<head level="1">4 Results<lb/></head>
 
 			<p>We have submitted two runs for this year&apos;s AVE tasks, one for English and one for German. In the following, we<lb/> will first show the table of the results and then present an error analysis.<lb/></p>
 
@@ -86,7 +88,7 @@
 
 			<p>The key problem here is that the year &quot;1994&quot; in the document might not be the year when the event happened,<lb/> but the year of the report. This asks us to further synthesize the information we have, i.e. NE annotation and<lb/> dependency parsing, to make better use of them.<lb/></p>
 
-			<head>5 Conclusion and Future Work<lb/></head>
+			<head level="1">5 Conclusion and Future Work<lb/></head>
 
 			<p>To sum up, in this paper, we described our participation of AVE 2008. Based on the experience of last year&apos;s<lb/> participation, apart from the RTE core system, we add two extra components, NE recognizer and question<lb/> analyzer, to further improve the results. The strategy is quite successful according to the comparison of system<lb/> performances.<lb/></p>
 
