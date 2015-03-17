@@ -13,27 +13,14 @@
 
 			<figure>
 				<head>Figure 1:</head>
-
 				<figDesc>Threshold characteristic: illustration of the<lb/> bistability and hysteresis. We pump at k p = 1.25 · 10 6 m −1 .<lb/> Blue: T = 0.1 K, red: T = 1 K, black: T = 5K.<lb/></figDesc>
-
 			</figure>
 
 			<figure>
 				<trash>−5 −2.5<lb/> 0 2.5<lb/> 5 0<lb/> 100<lb/> 200<lb/> 300<lb/> 400<lb/> 500<lb/> 600<lb/> Concentration (µm<lb/> −1<lb/> )<lb/> Coordinate (µm)<lb/> −5 −2.5<lb/> 0 2.5<lb/> 5 0<lb/> 200<lb/> 400<lb/> 600<lb/></trash>
-
 				<head>Figure 2:</head>
-
 				<figDesc>Polaritonic droplet transport in 1D channel for<lb/> different temperatures. Backscattering is suppressed at<lb/> some temperature due to scattering on phonons.<lb/></figDesc>
-				
 			</figure>
-
-			<head>References<lb/></head>
-
-			<bibl> <label>[1]</label> I.A. Shelykh et al., Phys. Rev. Lett. 97 (2006), pp. 066402<lb/></bibl>
-
-			<bibl> <label>[2]</label> K.V. Kavokin et al., Phys. Rev. Lett., 92 (2004), pp. 017401<lb/></bibl>
-
-			<bibl> <label>[3]</label> I.G. Savenko, E.B. Magnusson and I.A. Shelykh, arXiv:1101.3711v1 [cond-mat.mes-hall] (2010)</bibl>
 
 	</text>
 </tei>
