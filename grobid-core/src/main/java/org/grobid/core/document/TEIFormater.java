@@ -127,7 +127,7 @@ public class TEIFormater {
 		tei.append("\n\t\t<fileDesc>\n\t\t\t<titleStmt>\n\t\t\t\t<title level=\"a\" type=\"main\"");
 		if (generateIDs) {
 			String divID = KeyGen.getKey().substring(0,7);
-			tei.append(" id=\"_" + divID + "\"");
+			tei.append(" xml:id=\"_" + divID + "\"");
 		}
 		tei.append(">");
 		
@@ -307,7 +307,7 @@ public class TEIFormater {
 			
 			if (generateIDs) {
 				String divID = KeyGen.getKey().substring(0,7);
-				tei.append(" id=\"_" + divID + "\"");
+				tei.append(" xml:id=\"_" + divID + "\"");
 			}
 			
             // here check the language ?
@@ -334,7 +334,7 @@ public class TEIFormater {
                     tei.append(" level=\"a\"");
 					if (generateIDs) {
 						String divID = KeyGen.getKey().substring(0,7);
-						tei.append(" id=\"_" + divID + "\"");
+						tei.append(" xml:id=\"_" + divID + "\"");
 					}
                     tei.append(" xml:lang=\"en\">")
 						.append(TextUtilities.HTMLEncode(english_title)).append("</title>\n");
@@ -366,14 +366,14 @@ public class TEIFormater {
                 tei.append("\t\t\t\t\t\t<title level=\"j\" type=\"main\"");
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
-					tei.append(" id=\"_" + divID + "\"");
+					tei.append(" xml:id=\"_" + divID + "\"");
 				}	
                 tei.append(">" + TextUtilities.HTMLEncode(biblio.getJournal()) + "</title>\n");
             } else if (biblio.getBookTitle() != null) {
                 tei.append("\t\t\t\t\t\t<title level=\"m\"");
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
-					tei.append(" id=\"_" + divID + "\"");
+					tei.append(" xml:id=\"_" + divID + "\"");
 				}	
 				tei.append(">" + TextUtilities.HTMLEncode(biblio.getBookTitle()) + "</title>\n");
             }
@@ -647,7 +647,7 @@ public class TEIFormater {
             tei.append("\t\t\t\t\t<note type=\"title\"");
 			if (generateIDs) {
 				String divID = KeyGen.getKey().substring(0,7);
-				tei.append(" id=\"_" + divID + "\"");
+				tei.append(" xml:id=\"_" + divID + "\"");
 			}
 			tei.append(">" + TextUtilities.HTMLEncode(english_title) + "</note>\n");
         }
@@ -656,7 +656,7 @@ public class TEIFormater {
             tei.append("\t\t\t\t\t<note");
 			if (generateIDs) {
 				String divID = KeyGen.getKey().substring(0,7);
-				tei.append(" id=\"_" + divID + "\"");
+				tei.append(" xml:id=\"_" + divID + "\"");
 			}
 			tei.append(">" + TextUtilities.HTMLEncode(biblio.getNote()) + "</note>\n");
         }
@@ -695,7 +695,7 @@ public class TEIFormater {
 	            tei.append("\t\t\t\t\t<term");
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
-					tei.append(" id=\"_" + divID + "\"");
+					tei.append(" xml:id=\"_" + divID + "\"");
 				}
 				tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
 				pos++;
@@ -724,7 +724,7 @@ public class TEIFormater {
 			}
 			if (generateIDs) {
 				String divID = KeyGen.getKey().substring(0,7);
-				tei.append(" id=\"_" + divID + "\"");
+				tei.append(" xml:id=\"_" + divID + "\"");
 			}
 			tei.append(">");
             int start = keywords.indexOf("Keywords");
@@ -747,7 +747,7 @@ public class TEIFormater {
                     tei.append("\t\t\t\t\t<term");
 					if (generateIDs) {
 						String divID = KeyGen.getKey().substring(0,7);
-						tei.append(" id=\"_" + divID + "\"");
+						tei.append(" xml:id=\"_" + divID + "\"");
 					}
 					tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
                 }
@@ -764,7 +764,7 @@ public class TEIFormater {
                         tei.append("\t\t\t\t\t<term");
 						if (generateIDs) {
 							String divID = KeyGen.getKey().substring(0,7);
-							tei.append(" id=\"_" + divID + "\"");
+							tei.append(" xml:id=\"_" + divID + "\"");
 						}	
 						tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
                     }
@@ -787,7 +787,7 @@ public class TEIFormater {
                 tei.append("\t\t\t\t\t<term");
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
-					tei.append(" id=\"_" + divID + "\"");
+					tei.append(" xml:id=\"_" + divID + "\"");
 				}	
                 tei.append(">" + TextUtilities.HTMLEncode(category.trim()) + "</term>\n");
             }
@@ -824,14 +824,14 @@ public class TEIFormater {
             tei.append("\t\t\t\t<head");
 			if (generateIDs) {
 				String divID = KeyGen.getKey().substring(0,7);
-				tei.append(" id=\"_" + divID + "\"");
+				tei.append(" xml:id=\"_" + divID + "\"");
 			}
 			tei.append(">").append(TextUtilities.HTMLEncode(abstractHeader)).append("</head>\n");*/
 			
             tei.append("\t\t\t\t<p");
 			if (generateIDs) {
 				String divID = KeyGen.getKey().substring(0,7);
-				tei.append(" id=\"_" + divID + "\"");
+				tei.append(" xml:id=\"_" + divID + "\"");
 			}
 			tei.append(">").append(TextUtilities.HTMLEncode(abstractText)).append("</p>\n");
 
@@ -938,14 +938,14 @@ public class TEIFormater {
 	            tei.append("\t\t\t\t<head");
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
-					tei.append(" id=\"_" + divID + "\"");
+					tei.append(" xml:id=\"_" + divID + "\"");
 				}
 				tei.append(">").append(TextUtilities.HTMLEncode(abstractHeader)).append("</head>\n");
 				
 	            tei.append("<p");
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
-					tei.append(" id=\"_" + divID + "\"");
+					tei.append(" xml:id=\"_" + divID + "\"");
 				}	
 				tei.append(">").append(TextUtilities.HTMLEncode(abstractText)).append("</p>\n");
         
@@ -1029,7 +1029,7 @@ public class TEIFormater {
 				}
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
-					tei.append(" id=\"_" + divID + "\"");
+					tei.append(" xml:id=\"_" + divID + "\"");
 				}
 				tei.append(">");
 				tei.append(TextUtilities.HTMLEncode(footText));
@@ -1253,13 +1253,15 @@ public class TEIFormater {
 			String currentOriginalTag = s1;
 			if (currentTag0.equals("<citation_marker>") || 
 				currentTag0.equals("<figure_marker>") || 
+				currentTag0.equals("<table_marker>") || 
 				currentTag0.equals("<item>")) {
 				currentTag0 = lastTag0;
 				s1 = lastTag;
 			}
 			if ((s1 != null) && s1.equals("I-<paragraph>") && 
 				(lastOriginalTag.endsWith("<citation_marker>") || 
-				 lastOriginalTag.endsWith("<figure_marker>") || 
+				 lastOriginalTag.endsWith("<figure_marker>") ||
+				 lastOriginalTag.endsWith("<table_marker>") ||  
 				 lastOriginalTag.endsWith("<item>")) ) {
 				currentTag0 = "<paragraph>";
 				s1 = "<paragraph>";
@@ -1275,7 +1277,7 @@ public class TEIFormater {
 					!currentTag0.equals("<table>") &&
                     !currentTag0.equals("<trash>") &&
                     !currentTag0.equals("<figure_head>") &&
-                    !currentTag0.equals("<label>")) {
+                    !currentTag0.equals("<figDesc>")) {
                 if (openFigure) {
 					if (generateImageReferences) {
 						// we output the graphic object before closing the figure
@@ -1367,6 +1369,10 @@ public class TEIFormater {
 					"<ref type=\"figure\">", addSpace, 4, generateIDs);
             }
             if (!output) {
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<table_marker>", 
+					"<ref type=\"table\">", addSpace, 4, generateIDs);
+            }
+            if (!output) {
                 if (openFigure) {
                     if (tableBlock && (!lastTag0.equals("<table>")) && (currentTag0.equals("<table>"))) {
 						if (generateImageReferences) {
@@ -1402,7 +1408,7 @@ public class TEIFormater {
             }
             if (!output) {
                 if (openFigure) {
-                    if (descFigure && (!lastTag0.equals("<label>")) && (currentTag0.equals("<label>"))) {
+                    if (descFigure && (!lastTag0.equals("<figDesc>")) && (currentTag0.equals("<figDesc>"))) {
 						if (generateImageReferences) {
 							// we output the graphic object before closing the figure
 							List<NonTextObject> images = getGraphicObject(graphicObjects, startPosFigure, p);
@@ -1412,7 +1418,7 @@ public class TEIFormater {
 						}
                         buffer.append("\n\t\t\t\t</figure>\n\n");
 						startPosFigure = -1;
-                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>",
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figDesc>",
 							 "<figure>\n\t\t\t\t\t<figDesc>", addSpace, 4, generateIDs);
                         if (output) {
                             descFigure = true;
@@ -1421,14 +1427,14 @@ public class TEIFormater {
 							startPosFigure = p;
                         }
                     } else {
-                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>", 
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figDesc>", 
 							"<figDesc>", addSpace, 5, generateIDs);
                         if (output) {
                             descFigure = true;
                         }
                     }
                 } else {
-                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>",
+                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figDesc>",
 						 "<figure>\n\t\t\t\t\t<figDesc>", addSpace, 4, generateIDs);
                     if (output) {
                         openFigure = true;
@@ -1841,7 +1847,7 @@ public class TEIFormater {
             } else if (lastTag0.equals("<table>")) {
                 buffer.append("<table>" + text + "</table>\n");
 
-            } else if (lastTag0.equals("<label>")) {
+            } else if (lastTag0.equals("<figDesc>")) {
 				buffer.append("<figDesc");
 				if (generateIDs) 
 					buffer.append(" xml:id=\"_" + divID + "\"");
@@ -2499,7 +2505,7 @@ public class TEIFormater {
             boolean res = testClosingTag(tei, currentTag0, lastTag0, s1, bds, ntos);
 
             if (!currentTag0.equals("<figure_head>") &&
-                    !currentTag0.equals("<label>") &&
+                    !currentTag0.equals("<figDesc>") &&
                     !currentTag0.equals("<table>") &&
                     !currentTag0.equals("<trash>")) {
 
@@ -2922,8 +2928,8 @@ public class TEIFormater {
                     }
                 }
             } 
-			else if (currentTag0.equals("<label>")) {
-                if (descFigure && (!lastTag0.equals("<label>"))) {
+			else if (currentTag0.equals("<figDesc>")) {
+                if (descFigure && (!lastTag0.equals("<figDesc>"))) {
                     if (elements.size() > 0) {
                         String lastElement = elements.get(elements.size() - 1);
                         if (lastElement.equals("table")) {
@@ -2943,7 +2949,7 @@ public class TEIFormater {
                     tableBlock = false;
                     headFigure = false;
                 }
-                if (s1.equals("I-<label>")) {
+                if (s1.equals("I-<figDesc>")) {
                     if (elements.size() > 0) {
                         String lastElement = elements.get(elements.size() - 1);
                         if (lastElement.equals("figDesc") || lastElement.equals("figure")) {
@@ -3425,7 +3431,7 @@ public class TEIFormater {
                 }
                 currentFigureMarker = new StringBuffer();
             } 
-			else if ((lastTag0 != null) && lastTag0.equals("<label>")) {
+			else if ((lastTag0 != null) && lastTag0.equals("<figDesc>")) {
                 if (!currentTag0.equals("<citation_marker>") && !currentTag0.equals("<figure_marker>")) {
                     if (elements.size() > 0) {
                         String lastElement = elements.get(elements.size() - 1);

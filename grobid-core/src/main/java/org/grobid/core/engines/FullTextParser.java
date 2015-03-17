@@ -850,7 +850,7 @@ public class FullTextParser extends AbstractParser {
                 if (!currentTag0.equals("<table>") &&
                         !currentTag0.equals("<trash>") &&
                         !currentTag0.equals("<figure_head>") &&
-                        !currentTag0.equals("<label>")) {
+                        !currentTag0.equals("<figDesc>")) {
                     if (openFigure) {
                         buffer.append("\n\t\t\t</figure>\n\n");
                     }
@@ -876,20 +876,6 @@ public class FullTextParser extends AbstractParser {
                     }
                 }
                 /*if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<page_header>", "<note place=\"headnote\">",
-                            addSpace, 3);
-                }
-                if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<page_footnote>", "<note place=\"footnote\">",
-                            addSpace, 3);
-                }
-                if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<page>", "<page>", addSpace, 3);
-                }
-                if (!output) {
-                    output = writeFieldBeginEnd(buffer, s1, lastTag0, s2, "<reference>", "<bibl>", addSpace, 3);
-                }*/
-                /*if (!output) {
                     if (closeParagraph) {
                         output = writeField(buffer, s1, "", s2, "<reference_marker>", "<label>", addSpace, 3);
                     } else
@@ -900,13 +886,17 @@ public class FullTextParser extends AbstractParser {
                             addSpace, 3, false);
                 }
                 if (!output) {
+                    output = writeField(buffer, s1, lastTag0, s2, "<table_marker>", "<ref type=\"table\">",
+                            addSpace, 3, false);
+                }
+                if (!output) {
                     output = writeField(buffer, s1, lastTag0, s2, "<section>", 
 						"<head>", addSpace, 3, false);
                 }
-                if (!output) {
+                /*if (!output) {
                     output = writeField(buffer, s1, lastTag0, s2, "<subsection>", 
 						"<head>", addSpace, 3, false);
-                }
+                }*/
                 if (!output) {
                     if (openFigure) {
                         output = writeField(buffer, s1, lastTag0, s2, "<trash>", "<trash>", addSpace, 4, false);
@@ -927,6 +917,10 @@ public class FullTextParser extends AbstractParser {
                     output = writeField(buffer, s1, lastTag0, s2, "<figure_marker>", 
 						"<ref type=\"figure\">", addSpace, 3, false);
                 }
+                /*if (!output) {
+                    output = writeField(buffer, s1, lastTag0, s2, "<label>", 
+						"<label>", addSpace, 4, false);
+                }*/
                 if (!output) {
                     if (openFigure) {
                         if (tableBlock && (!lastTag0.equals("<table>")) && (currentTag0.equals("<table>"))) {
@@ -956,9 +950,9 @@ public class FullTextParser extends AbstractParser {
                 }
                 if (!output) {
                     if (openFigure) {
-                        if (descFigure && (!lastTag0.equals("<label>")) && (currentTag0.equals("<label>"))) {
+                        if (descFigure && (!lastTag0.equals("<figDesc>")) && (currentTag0.equals("<figDesc>"))) {
                             buffer.append("\n\t\t\t</figure>\n\n");
-                            output = writeField(buffer, s1, lastTag0, s2, "<label>", "<figure>\n\t\t\t\t<figDesc>",
+                            output = writeField(buffer, s1, lastTag0, s2, "<figDesc>", "<figure>\n\t\t\t\t<figDesc>",
                                     addSpace, 3, false);
                             if (output) {
                                 descFigure = true;
@@ -966,14 +960,14 @@ public class FullTextParser extends AbstractParser {
                                 headFigure = false;
                             }
                         } else {
-                            output = writeField(buffer, s1, lastTag0, s2, "<label>", 
+                            output = writeField(buffer, s1, lastTag0, s2, "<figDesc>", 
 								"<figDesc>", addSpace, 4, false);
                             if (output) {
                                 descFigure = true;
                             }
                         }
                     } else {
-                        output = writeField(buffer, s1, lastTag0, s2, "<label>", 
+                        output = writeField(buffer, s1, lastTag0, s2, "<figDesc>", 
 							"<figure>\n\t\t\t\t<figDesc>", addSpace, 3, false);
                         if (output) {
                             openFigure = true;
@@ -1068,7 +1062,8 @@ public class FullTextParser extends AbstractParser {
 			String divID = null;
 			if (generateIDs) {
 				divID = KeyGen.getKey().substring(0,7);
-				outField = outField.replace(">" , " id=\"_"+ divID + "\">");
+				if (outField.charAt(outField.length()-2) == '>')
+					outField = outField.substring(0, outField.length()-2) + " xml:id=\"_"+ divID + "\">";
 			}
             if (s1.equals(lastTag0) || s1.equals("I-" + lastTag0)) {
                 if (addSpace)
@@ -1092,7 +1087,17 @@ public class FullTextParser extends AbstractParser {
                     buffer.append(" ").append(outField).append(s2);
                 else
                     buffer.append(outField).append(s2);
-            } else if (field.equals("<reference_marker>")) {
+            } else if (field.equals("<table_marker>")) {
+                if (addSpace)
+                    buffer.append(" ").append(outField).append(s2);
+                else
+                    buffer.append(outField).append(s2);
+            } /*else if (field.equals("<label>")) {
+                if (addSpace)
+                    buffer.append(" ").append(outField).append(s2);
+                else
+                    buffer.append(outField).append(s2);
+            }*/ else if (field.equals("<reference_marker>")) {
                 if (!lastTag0.equals("<reference>") && !lastTag0.equals("<reference_marker>")) {
                     for (int i = 0; i < nbIndent; i++) {
                         buffer.append("\t");
@@ -1158,7 +1163,8 @@ public class FullTextParser extends AbstractParser {
 			String divID = null;
 			if (generateIDs) {
 				divID = KeyGen.getKey().substring(0,7);
-				outField = outField.replace(">" , " id=\"_"+ divID + "\">");
+				if (outField.charAt(outField.length()-2) == '>')
+					outField = outField.substring(0, outField.length()-2) + " xml:id=\"_"+ divID + "\">";
 			}
             if (lastTag0.equals("I-" + field)) {
                 if (addSpace)
@@ -1212,19 +1218,6 @@ public class FullTextParser extends AbstractParser {
             if (lastTag0.equals("<other>")) {
                 buffer.append("</note>\n\n");
 
-                /*case "<header>":
-                    buffer.append("</front>\n\n");
-                    break;
-                case "<page_header>":
-                    buffer.append("</note>\n\n");
-                    break;
-                case "<page_footnote>":
-                    buffer.append("</note>\n\n");
-                    break;
-                case "<reference>":
-                    buffer.append("</bibl>\n\n");
-                    res = true;
-                    break;*/
             } else if (lastTag0.equals("<paragraph>")) {
                 buffer.append("</p>\n\n");
                 res = true;
@@ -1241,7 +1234,7 @@ public class FullTextParser extends AbstractParser {
             } else if (lastTag0.equals("<table>")) {
                 buffer.append("</table>\n");
 
-            } else if (lastTag0.equals("<label>")) {
+            } else if (lastTag0.equals("<figDesc>")) {
                 buffer.append("</figDesc>\n");
 
             } else if (lastTag0.equals("<figure_head>")) {
@@ -1250,7 +1243,11 @@ public class FullTextParser extends AbstractParser {
             } else if (lastTag0.equals("<item>")) {
                 buffer.append("</item>\n\n");
 
-            } else if (lastTag0.equals("<trash>")) {
+            } /*else if (lastTag0.equals("<label>")) {
+                buffer.append("</label>\n\n");
+
+            } */
+			else if (lastTag0.equals("<trash>")) {
                 buffer.append("</trash>\n\n");
 
                 /*case "<reference_marker>":

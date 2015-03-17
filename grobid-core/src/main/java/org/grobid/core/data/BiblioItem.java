@@ -1675,7 +1675,7 @@ public class BiblioItem {
                     tei.append(" level=\"a\" type=\"main\"");
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
-					tei.append(" id=\"_" + divID + "\"");
+					tei.append(" xml:id=\"_" + divID + "\"");
 				}
                 // here check the language ?
                 if (english_title == null) {
@@ -1708,7 +1708,7 @@ public class BiblioItem {
                         }
 						if (generateIDs) {
 							String divID = KeyGen.getKey().substring(0,7);
-							tei.append(" id=\"_" + divID + "\"");
+							tei.append(" xml:id=\"_" + divID + "\"");
 						}
                         tei.append(" xml:lang=\"en\">")
 							.append(TextUtilities.HTMLEncode(english_title)).append("</title>\n");
@@ -1737,7 +1737,7 @@ public class BiblioItem {
                 tei.append("<title level=\"m\"");
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
-					tei.append(" id=\"_" + divID + "\"");
+					tei.append(" xml:id=\"_" + divID + "\"");
 				}
 				tei.append(">" + TextUtilities.HTMLEncode(bookTitle) + "</title>\n");
 
@@ -1940,7 +1940,7 @@ public class BiblioItem {
                 tei.append("<title level=\"j\"");
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
-					tei.append(" id=\"_" + divID + "\"");
+					tei.append(" xml:id=\"_" + divID + "\"");
 				}	
 				tei.append(">" + TextUtilities.HTMLEncode(journal) + "</title>\n");
 
