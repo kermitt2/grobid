@@ -55,7 +55,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
-        if ((!qName.equals("lb")) & (!qName.equals("pb") & (!qName.equals("figure")))) {
+		if ((!qName.equals("lb")) && (!qName.equals("pb") && (!qName.equals("figure")))) {
             writeData(qName, true);
 			if (!currentTags.empty()) {
 				currentTag = currentTags.peek();
@@ -139,6 +139,10 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                                 currentTags.push("<figure_marker>");
 								currentTag = "<figure_marker>";
                             }
+							else if (value.equals("table")) {
+								currentTags.push("<table_marker>");
+								currentTag = "<table_marker>";
+							}
                         }
                     }
                 }
@@ -158,8 +162,8 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                 }
             } 
 			else if (qName.equals("figDesc")) {
-                currentTags.push("<label>");
-				currentTag = "<label>";
+                currentTags.push("<figDesc>");
+				currentTag = "<figDesc>";
             }
             else if (qName.equals("table")) {
                 currentTags.push("<table>");
@@ -169,10 +173,18 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                 currentTags.push("<item>");
 				currentTag = "<item>";
             } 
+			/*else if (qName.equals("label")) {
+                currentTags.push("<label>");
+				currentTag = "<label>";
+            } */
 			else if (qName.equals("trash")) {
                 currentTags.push("<trash>");
 				currentTag = "<trash>";
             }
+			else {
+                currentTags.push("<other>");
+				currentTag = "<other>";
+			}
         }
     }
 
@@ -183,7 +195,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                 (qName.equals("p")) || (qName.equals("paragraph")) ||
                 (qName.equals("div")) || (qName.equals("figDesc")) ||
                 (qName.equals("table")) || (qName.equals("trash")) ||
-                (qName.equals("formula")) || (qName.equals("item"))
+                (qName.equals("formula")) || (qName.equals("item")) //|| (qName.equals("label"))
                 ) {
 			if (currentTag == null) {
 				return;
