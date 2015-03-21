@@ -360,6 +360,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			LayoutToken token = new LayoutToken();
 			token.setText("\n");
 			block.addToken(token);
+			nbTokens++;
 			accumulator.setLength(0);
 			tokenizations.add("\n");
 		} else if (qName.equals("METADATA")) {
@@ -373,7 +374,8 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 			if (tok0.length() > 0) {
 				StringTokenizer st = new StringTokenizer(tok0,
-						TextUtilities.fullPunctuations, true);
+						//TextUtilities.fullPunctuations, true);
+						TextUtilities.delimiters, true);
 				boolean diaresis = false;
 				boolean accent = false;
 				//boolean keepLast = false;
@@ -660,6 +662,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			block0.setText("@PAGE\n");
 			block0.setNbTokens(0);
 			block0.setPage(currentPage);
+			block0.setY(currentY);
 			doc.addBlock(block0);
 			block = new Block();
 			block.setPage(currentPage);
@@ -714,7 +717,12 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			blabla.append("\n");
 			tokenizations.add("\n");
 			block.setText(blabla.toString());
-			block.setNbTokens(nbTokens);
+			
+			/*LayoutToken token = new LayoutToken();
+			token.setText("\n");
+			block.addToken(token);
+			nbTokens++;
+			block.setNbTokens(nbTokens);*/
 
 			block.setWidth(currentX - block.getX() + currentWidth);
 			block.setHeight(currentY - block.getY() + currentHeight);

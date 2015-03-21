@@ -1195,4 +1195,19 @@ public class TextUtilities {
                 replaceAll("&gt\\s+;|&amp;gt\\s*;", "&gt;").
                 replaceAll("&apos\\s+;|&amp;apos\\s*;", "&apos;");
     }
+	
+	
+    public static boolean filterLine(String line) {
+        boolean filter = false;
+        if (line.contains("@IMAGE")) {
+            filter = true;
+        } else if (line.contains(".pbm")) {
+            filter = true;
+        } else if (line.contains(".vec")) {
+            filter = true;
+        } else if (line.contains(".jpg")) {
+            filter = true;
+        }
+        return filter;
+    }
 }

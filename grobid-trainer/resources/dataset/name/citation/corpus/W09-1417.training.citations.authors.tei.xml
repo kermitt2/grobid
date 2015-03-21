@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+
+						<author><surname>Emms</surname> <forename>M</forename>.</author>
+
+						<author><surname>Fu</surname> <forename>W</forename>. et al.</author>
+
+						<author><surname>Kim</surname> <forename>JD</forename> et al.</author>
+
+						<author><surname>Sagae</surname> <forename>K</forename>, <surname>Tsujii</surname> <forename>J</forename></author>
+
+						<author><surname>Tsuruoka</surname> <forename>Y</forename>. et al.</author>
+
+						<author><forename>Yang</forename> <forename>H</forename>. et al.</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

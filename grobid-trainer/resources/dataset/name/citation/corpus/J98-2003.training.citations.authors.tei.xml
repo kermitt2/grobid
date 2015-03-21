@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author><surname>Aho</surname>, <forename>Alfred</forename> <middlename>V</middlename></author>
+
+						<author><surname>Bar-Hillel</surname>, <forename>Yehoshua</forename> and <forename>Eliyahu</forename> <surname>Shamir</surname></author>
+
+						<author><surname>Ba&quot;l~inescu</surname>, <forename>Tudor</forename> and <forename>Marian</forename> <surname>Gheorghe</surname></author>
+
+						<author><surname>Chomsky</surname>, <forename>Noam</forename>.</author>
+
+						<author><surname>Culy</surname>, <forename>Christopher</forename>.</author>
+
+						<author><surname>Dassow</surname>, <forename>Jtirgen</forename> and <forename>Gheorghe</forename> <surname>P~un</surname></author>
+
+						<author><surname>Ehrenfeucht</surname>, <forename>Andrzej</forename>, <forename>Gheorghe</forename> <surname>P~iun</surname>, and <forename>Grzegorz</forename> <surname>Rozenberg</surname></author>
+
+						<author><surname>Floyd</surname>, <forename>R</forename>. <middlename>W</middlename>.</author>
+
+						<author><surname>Gazdar</surname>, <forename>Gerald</forename> and <forename>Geoffrey</forename> <middlename>K</middlename>. <surname>Pullum</surname></author>
+
+						<author><surname>Grinberg</surname>, <forename>Dennis</forename>, <forename>John</forename> <surname>Lafferty</surname>, and <forename>Daniel</forename> <surname>Sleator</surname></author>
+
+						<author><surname>Harrison</surname>, <forename>Michael</forename>.</author>
+
+						<author><surname>Hockett</surname>, <forename>Charles</forename>.</author>
+
+						<author><surname>Ilie</surname>, <forename>Lucian</forename></author>
+
+						<author><surname>Joshi</surname>, <forename>Aravind</forename> <middlename>K</middlename>.</author>
+
+						<author><surname>Joshi</surname>, <forename>Aravind</forename> <middlename>K</middlename></author>
+
+						<author><surname>Joshi</surname>, <forename>Aravind</forename> <middlename>K</middlename>., <forename>Leon</forename> <middlename>S</middlename>. <surname>Levy</surname>, and <forename>M</forename>. <surname>Takahashi</surname></author>
+
+						<author><surname>Manaster Ramer</surname>, <forename>Alexis</forename>.</author>
+
+						<author><surname>Marcus</surname>, <forename>Solomon</forename>.</author>
+
+						<author><surname>Marffn-Vide</surname>, <forename>Carlos</forename>.</author>
+
+						<author><surname>Martfn-Vide</surname>, <forename>Carlos</forename>, <forename>Alexandru</forename> <surname>Mateescu</surname></author>
+
+						<author><surname>Marffn-Vide</surname>, <forename>Carlos</forename> and <forename>Gheorghe</forename> <surname>P~un</surname></author>
+
+						<author><surname>Miquel-Verg4s</surname>, <forename>Joan</forename>.</author>
+
+						<author><surname>Partee</surname>, <forename>Barbara</forename> <middlename>H</middlename>., <forename>Alice</forename> <surname>ter Meulen</surname>, and <forename>Robert</forename> <middlename>E</middlename>. <surname>Wall</surname></author>
+
+						<author><surname>P~un</surname>, <forename>Gheorghe</forename>.</author>
+
+						<author><surname>P~un</surname>, <forename>Gheorghe</forename> and <forename>Xuan</forename> <middlename>My</middlename> <surname>Nguyen</surname></author>
+
+						<author><surname>P~un</surname>, <forename>Gheorghe</forename>, <forename>Grzegorz</forename> <surname>Rozenberg</surname>, and <forename>Arto</forename> <surname>Salomaa</surname></author>
+
+						<author><surname>Pullum</surname>, <forename>Geoffrey</forename> <middlename>K</middlename></author>
+
+						<author><surname>Pullum</surname>, <forename>Geoffrey</forename> <middlename>K</middlename>. and <forename>Gerald</forename> <surname>Gazdar</surname></author>
+
+						<author><surname>Radzinski</surname>, <forename>Daniel</forename>.</author>
+
+						<author><surname>Rosenkrantz</surname>, <forename>Daniel</forename> <middlename>J</middlename></author>
+
+						<author><surname>Rounds</surname>, <forename>William</forename> <middlename>C</middlename>., <forename>Alexis</forename> <surname>Manaster Ramer</surname>, and <forename>Joyce</forename> <surname>Friedman</surname></author>
+
+						<author><surname>Rozenberg</surname>, <forename>Grzegorz</forename> and <forename>Arto</forename> <surname>Salomaa</surname></author>
+
+						<author><surname>Rozenberg</surname>, <forename>Grzegorz</forename> and <forename>Arto</forename> <surname>Salomaa</surname></author>
+
+						<author><surname>Salomaa</surname>, <forename>Arto</forename>.</author>
+
+						<author><surname>Savitch</surname>, <forename>Walter</forename> <middlename>J</middlename></author>
+
+						<author><surname>Savitch</surname>, <forename>Walter</forename> <middlename>J</middlename>., <forename>Emmon</forename> <surname>Bach</surname></author>
+
+						<author><surname>Shieber</surname>, <forename>Stuart</forename> <middlename>M</middlename></author>
+
+						<author><surname>Sleator</surname>, <forename>Daniel</forename> and <forename>D</forename>. <surname>Temperley</surname></author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

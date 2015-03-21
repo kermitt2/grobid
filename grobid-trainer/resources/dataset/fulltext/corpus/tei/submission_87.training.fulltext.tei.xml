@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_87"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<p>Given their strong nonlinearity, direct coupling to external light fields and highly compact nature,<lb/> semiconductor microcavities represent a promising candidate for quantum information processing. Quantum<lb/> squeezing <ref type="biblio">[1]</ref> and quantum complementarity <ref type="biblio">[2]</ref> have been experimentally reported, while entanglement has<lb/> been predicted theoretically <ref type="biblio">[3]</ref>. We study two further quantum applications of polaritons: single photon source<lb/> generation and multimode entanglement.<lb/></p>
+
+			<p>Although simply reducing the intensity of a laser source can be used to create single photons, high<lb/> quality sources of single photons require nonlinearity to overcome Poisson statistics. In semiconductor<lb/> microcavities, the polariton blockade effect has been predicted to give single photons if the nonlinearity between<lb/> two polaritons is strong <ref type="biblio">[4]</ref>. Unfortunately, existing polariton systems demonstrate a weaker nonlinearity than<lb/> that required for this effect. Whilst advances in growth technology could increase the nonlineariy available, we<lb/> have found that in a two coupled mode system a significant single photon statistics can still be found despite the<lb/> use of moderate polariton-polariton interaction strengths <ref type="biblio">[5]</ref>. This effect is due to a quantum interference <ref type="biblio">[6]</ref>.<lb/> Polaritons also hold great potential for the realization of highly entangled states. We consider schemes<lb/> for the entanglement of multiple polariton states, which represent the necessary cluster states for one-way<lb/> quantum computational schemes <ref type="biblio">[7]</ref>.<lb/></p>
+
+			<figure>
+				<head>Figure 1:</head>
+				<figDesc>When the value of a multimode Bell type inequality drops below 1, the state of the system<lb/> is entangled. As a function of pump intensity, this is shown with full density matrix calculations (spots) and<lb/> Heisenberg equations (curve).The different curves show the effect of increasing pure dephasing from polariton-<lb/>phonon scattering.<lb/></figDesc>
+			</figure>
+
+	</text>
+</tei>

@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="7"/>
+		<fileDesc xml:id="_submission_103"/>
 	</teiHeader>
 	<text xml:lang="en">
 			
@@ -12,16 +12,6 @@
 			<p>The two-exciton energies are determined from two kinds of functions U(E) and W(E), each of which<lb/> has singular points. <ref type="figure">Figure 1</ref> shows U(E) and two-exciton energies for 41x41x41 sites of 3D lattice by applying<lb/> CuCl parameters. A horizontal dotted line represents 1/δ, where δ denotes two-exciton interaction between<lb/> nearest-neighbor sites. The two-exciton energies are obtained as the crossing points between the horizontal<lb/> dotted line and the function U(E) indicated by solid curves. The two-exciton energies can be definitely obtained<lb/> by using a bisection method because all singular points of U(E) can be obtained. Inset shows U(E) around the<lb/> biexciton energy. The two-exciton energies obtained from a function W(E) are marked by closed inverted<lb/> triangles. These two-exciton energies agree with those calculated from diagonalization indicated by open circles.<lb/> <ref type="figure">Figure 2</ref> shows wave function in wave-vector space of a biexciton state for CuCl parameters.<lb/> Small lattice size 21x21x21 is chosen because of clearness to see. The size of spheres denotes the amplitude of<lb/> the wave function.<lb/></p> 
 			
 			<p>The present method is useful for analysis of experimental data because the parameter δ of the two-<lb/>exciton interaction can be immediately determined from an observed binding energy of biexciton.<lb/></p>
-
-			<head>References<lb/></head>
-
-			<bibl> <label>[1]</label> G. Vektaris, J. Chem. Phys., 101 (1994), pp. 3031-3040.<lb/></bibl>
-
-			<bibl> <label>[2]</label> H. Ishihara and T. Amakata, Int. J. Mod. Phys. B, 15 (2001), pp. 3809-3812.<lb/></bibl>
-
-			<bibl> <label>[3]</label> H. Oka and H. Ishihara, Phys. Rev. Lett., 100 (2008), pp. 170505-1-4.<lb/></bibl>
-
-			<bibl> <label>[4]</label> H. Oka, K. Taniguchi, H. Ajiki, and H. Ishihara, Phys. Rev. B, 78 (2008), pp. 245420-1-5.<lb/></bibl>
 
 			<figure>
 				<head>Figure 1:</head>

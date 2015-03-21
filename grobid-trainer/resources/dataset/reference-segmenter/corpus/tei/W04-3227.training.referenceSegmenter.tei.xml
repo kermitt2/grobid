@@ -1,0 +1,31 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_D_-1"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+References 
+<bibl>A. Stolcke. 2002. SRILM --An Extensible Language Modeling Toolkit. In 2002 Proc. Intl. Conf. on Spoken Language Processing, Denver.</bibl>
+<bibl>Peter F. Brown, Stephen A. Della Pietra, Vincent J.Della Pietra, and Robert L. Mercer. 1993. The Mathematics of Statistical Machine Translation: Parameter Estimation, Computational Linguistics, vol. 19, no. 2, pp. 263–311.</bibl>
+<bibl>Michael Collins. 2000. Discriminative Reranking for Natural Language Parsing. Proc. 17th International Conf. on Machine Learning. pp. 175-182.</bibl>
+<bibl>William A. Gale and Kenneth W. Church. 1991. A Program for Aligning Sentences in Bilingual Cor- pora. In Computational Linguistics, vol.19 pp. 75- 102.</bibl>
+<bibl>Paul B. Kantor, Ellen Voorhees. 1996. Report on the TREC-5 Confusion Track. The Fifth Text Retrieval Conference.</bibl>
+<bibl>Philipp Koehn, Franz Josef Och, and Daniel Marcu. 2003. Statistical Phrase-Based Translation. Pro- ceedings of HLT-NAACL. Edmonton, Canada.</bibl> 
+<bibl>Daniel Marcu and William Wong. 2002. A Phrase- Based, Joint Probability Model for Statistical Ma- chine Translation. Proceedings of EMNLP-2002, Philadelphia, PA.</bibl>
+<bibl>Franz Josef Och and Hermann Ney. 2000. Improved Statistical Alignment Models. Proceedings of ACL- 00, pp. 440-447, Hongkong, China.</bibl> 
+<bibl>Thomas Roelleke. 2003. A Frequency-based and a Poisson-based Definition of the Probability of Be- ing Informative. Proceedings of the 26th annual in- ternational ACM SIGIR. pp. 227-234.</bibl>
+<bibl>S.E. Robertson, and S. Walker. 1997. On relevance weights with little relevance information. In 1997 Proceedings of ACM SIGIR. pp. 16-24.</bibl>
+<bibl>Dekai Wu. 1997. Stochastic inversion transduction grammars and bilingual parsing of parallel corpora, Computational Linguistics 23(3): pp.377-404.</bibl> 
+<bibl>K. Yamada and K. Knight. 2001. A Syntax-Based Statistical Translation Model. Proceedings of the 39th Annual Meeting of the Association for Compu- tational Linguistics. pp. 523-529. Toulouse, France.</bibl> 
+<bibl>Richard Zens, Franz Josef Och and Hermann Ney. 2002. Phrase-Based Statistical Machine Transla- tion. Proceedings of the 25th Annual German Con- ference on AI: Advances in Artificial Intelligence. pp. 18-22.</bibl>
+<bibl>Stephan Vogel, Hermann Ney, Christian Tillmann. 1996. HMM-based word alignment in statistical translation. In: COLING '96: The 16th Int. Conf. on Computational Linguistics, Copenhagen, Denmark (1996) pp. 836-841.</bibl>
+<bibl>Stephan Vogel, Ying Zhang, Fei Huang, Alicia Trib- ble, Ashish Venogupal, Bing Zhao, Alex Waibel. 2003. The CMU Statistical Translation System, Proceedings of MT-Summit IX. New Orleans, LA.</bibl> 
+<bibl>Stephan Vogel. 2003. SMT decoder dissected: word reordering, In 2003 Proceedings of Natural Lan- guage Processing and Knowledge Engineering, (NLP-KE'03) Beijing, China.</bibl>
+<bibl>Stephan Vogel. 2004. Augmenting Manual Dictionar- ies for Statistical Machine Translation Systems, In 2003 Proceedings of LREC, Lisbon, Portugal. pp. 1593-1596.</bibl>
+<bibl>Ying Zhang, Stephan Vogel, Alex Waibel. 2004. In- terpreting BLEU/NIST Scores : How much Im- provement Do We Need to Have a Better System? In 2004 Proceedings of LREC, Lisbon, Portugal. pp. 2051-2054.</bibl>
+<bibl>Ying Zhang, Stephan Vogel, Alex Waibel. 2003. "In- tegrated Phrase Segmentation and Alignment Algo- rithm for Statistical Machine Translation," in the Proceedings of NLP-KE'03, Beijing, China.</bibl>
+<bibl>Bing Zhao, Stephan Vogel. 2002. Adaptative Parallel Sentences Mining from web bilingual news collec- tion. In 2002 IEEE International Conference on Data Mining, Maebashi City, Japan.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

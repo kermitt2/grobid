@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+
+						<author><forename>Steven</forename> <surname>Bird</surname>, <forename>Robert</forename> <surname>Dale</surname>, <forename>Bonnie</forename> <middlename>J</middlename>. <surname>Dorr</surname>, <forename>Bryan</forename> <surname>Gib-son</surname>, <forename>Mark</forename> <middlename>T</middlename>. <surname>Joseph</surname>, <forename>Min-Yen</forename> <surname>Kan</surname></author>
+
+						<author><forename>Robert</forename> <middlename>D</middlename>. <surname>Cameron</surname></author>
+
+						<author><forename>Eli</forename> <surname>Cortez</surname>, <forename>Altigran</forename> <middlename>S</middlename>. <surname>da Silva</surname>, <forename>Marcos</forename> <middlename>André</middlename> <surname>Gonç</surname>, <forename>Filipe</forename> <surname>Mesquita</surname>, and <forename>Edleno</forename> <middlename>S</middlename>. <surname>de Moura</surname></author>
+
+						<author><forename>I-Ane</forename> <surname>Huang</surname>, <forename>Jan-Ming</forename> <surname>Ho</surname>, <forename>Hung-Yu</forename> <surname>Kao</surname>, and <forename>Wen-Chang</forename> <surname>Lin</surname></author>
+
+						<author><forename>John</forename> <middlename>D</middlename>. <surname>Lafferty</surname>, <forename>Andrew</forename> <surname>McCallum</surname>, and <forename>Fernando</forename> <middlename>C</middlename>. <middlename>N</middlename>. <surname>Pereira</surname></author>
+
+						<author><forename>Yong Kiat</forename> <surname>Ng</surname></author>
+
+						<author><forename>Brett</forename> <surname>Powley</surname> and <forename>Robert</forename> <surname>Dale</surname></author>
+
+						<author><forename>Ariel</forename> <surname>Schwartz</surname>, <forename>Anna</forename> <surname>Divoli</surname>, and <forename>Marti</forename> <surname>Hearst</surname></author>
+
+						<author> <forename>Kristie</forename> <surname>Seymore</surname>, <forename>Andrew</forename> <surname>McCallum</surname>, and <forename>Roni</forename> <surname>Rosenfeld</surname></author>
+
+						<author><forename>Simone</forename> <surname>Teufel</surname>, <forename>Advaith</forename> <surname>Siddharthan</surname>, and <forename>Dan</forename> <surname>Tidhar</surname></author>
+
+						<author><forename>Jien-Chen</forename> <surname>Wu</surname>, <forename>Yu-Chia</forename> <surname>Chang</surname>, <forename>Hsien-Chin</forename> <surname>Liou</surname>, and <forename>Ja-son</forename> <middlename>S</middlename>. <surname>Chang</surname></author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

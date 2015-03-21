@@ -1,6 +1,8 @@
 <?xml version="1.0" ?>
 <tei>
-	<teiHeader/>
+	<teiHeader>
+		<fileDesc xml:id="_Y05-1024"/>
+	</teiHeader>	
 	<text xml:lang="en">
 			<head level="1">1. Introduction<lb/></head> 
 			
@@ -34,12 +36,12 @@
 
 			<figure>
 				<trash>Telephone<lb/> Service<lb/> Module<lb/> Web<lb/> Service<lb/> Module<lb/> LVCSR<lb/> Module<lb/> Text<lb/> Retrieval<lb/> Module<lb/> User&apos;s<lb/> Manual<lb/> Index<lb/> Telephone<lb/> Network<lb/> The Internet<lb/> The Internet<lb/></trash>
-				<head><label>Figure 1</label>:</head>
+				<head>Figure 1:</head>
 				<figDesc>The configuration of the prototype system.<lb/></figDesc>
 			</figure>
 
 			<figure>
-				<head><label>Figure 2</label>:</head>
+				<head>Figure 2:</head>
 				<figDesc>The screen of the<lb/> cellular phone displaying the<lb/> search result.<lb/></figDesc>
 			</figure>
 
@@ -62,17 +64,17 @@
 			</list>
 
 			<figure>
-				<head>><label>Figure 3</label>:</head>
+				<head>Figure 3:</head>
 				<figDesc>The main page<lb/> of our system.<lb/></figDesc>
 			</figure>
 
 			<figure>
-				<head>><label>Figure 4</label>:</head>
+				<head>Figure 4:</head>
 				<figDesc>The result page<lb/> displaying the title list of<lb/> top ten results for the<lb/> query.<lb/></figDesc>
 			</figure>
 
 			<figure>
-				<head>><label>Figure 5</label>:</head>
+				<head>Figure 5:</head>
 				<figDesc>The body of<lb/> the passage displayed<lb/> when the user selects the<lb/> title in <ref type="figure">Figure 4</ref>.<lb/></figDesc>
 			</figure>
 			
@@ -121,7 +123,7 @@
 			<p>This technique assumes the occurrence of synonymous expressions for a word as the occurrence of<lb/> the word itself in calculating the weight. The system converges various synonymous expressions<lb/> into the standard expression by using predefined synonym dictionary. The system accepts a set of<lb/> words with dependency relations as a synonymous expression in order to converge complex<lb/> synonymous expressions.<lb/> <ref type="table">Table 1</ref> shows an example of a synonym dictionary. An arrow sign denotes a dependency relation<lb/> between words.<lb/></p>
 
 			<figure>
-				<head><label>Table 1</label>:</head>
+				<head>Table 1:</head>
 				<figDesc>An example of a synonym dictionary<lb/></figDesc> 
 				<trash>Standard Expression<lb/> Synonymous Expressions<lb/> saito<lb/> webu<lb/> hômupêji<lb/> (site)<lb/> (web)<lb/> (homepage)<lb/> chakushin&apos;on<lb/> chakushinmerodî<lb/> yobidashion<lb/> (ringtone)<lb/> (ring melody)<lb/> (phone beep)<lb/> ridaiaru<lb/> môichido  kakeru<lb/> (redial)<lb/> (again  call)<lb/></trash>
 			</figure>
@@ -161,20 +163,20 @@
 			<p><ref type="table">Table 3</ref> summarizes the result. The result shows each of the three techniques has contributed to<lb/> the improvement of the retrieval success rate. Especially, converging synonyms enhances the<lb/> performance as derived from the difference between methods WP+AUX and ALL.<lb/></p>
 
 			<figure>
-				<head><label>Table 2</label>:</head>
+				<head>Table 2:</head>
 				<figDesc>Examples of queries used for evaluation.<lb/></figDesc>
 			</figure>
 
 			<p>Shashin-o mêru-de okuritai<lb/> (I want to send a picture via email)<lb/> Aikon-o desukutoppu-ni tôroku shitai<lb/> (I want to register a new icon on the desktop)<lb/> Jushin-shita mêru-o minagara henshin mêru-o sakusei-suru hôhô<lb/> (How to write a reply mail while looking at the incoming mail)<lb/></p> 
 			
 			<figure>
-				<head><label>Table 3</label>:</head> 
+				<head>Table 3:</head> 
 				<figDesc>The retrieval success rate for the transcriptions of queries.<lb/></figDesc>
 				<trash>Retrieval Success Rate for Transcriptions<lb/> Number of<lb/> Result<lb/> Passages<lb/> BL<lb/> WP<lb/> WP+AUX<lb/> ALL<lb/> 1<lb/> 40.0%<lb/> 42.7%<lb/> 44.5%<lb/> 49.1%<lb/> 5<lb/> 65.5%<lb/> 69.1%<lb/> 70.0%<lb/> 77.3%<lb/> 10<lb/> 73.6%<lb/> 73.6%<lb/> 74.5%<lb/> 87.3%<lb/></trash>
 			</figure>
 
 			<figure>
-				<head><label>Table 4</label>:</head>  
+				<head>Table 4:</head>  
 				<figDesc>The retrieval success rate for the utterances of queries.<lb/></figDesc>
 				<trash>Number of<lb/> Result Passages<lb/> Retrieval Success Rate<lb/> for Utterances<lb/> 1<lb/> 44.3%<lb/> 5<lb/> 72.5%<lb/> 10<lb/> 81.4%<lb/></trash>
 			</figure>	

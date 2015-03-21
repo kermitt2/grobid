@@ -309,11 +309,20 @@ public class FeatureFactory {
     }
 
     /**
-     * Give the relative position discretized into nbBins
+     * Give the relative position base on charcater or token numbers discretized into nbBins
      */
     public int relativeLocation(int pos, int total, int nbBins) {
         float rel = (float) pos / total;
         float rel2 = (rel * nbBins) + 1;
+        return ((int) rel2);
+    }
+	
+    /**
+     * Give the relative position based on layout coordinates discretized into nbBins
+     */
+    public int relativeLocation(double pos, double total, int nbBins) {
+        double rel = pos / total;
+        double rel2 = (rel * nbBins) + 1;
         return ((int) rel2);
     }
 }

@@ -658,12 +658,12 @@ public class EngineTest {
     }
 
 
-    @Test
+    /*@Test
     public void stress() throws Exception {
         for (int i = 0; i < 1000000; i++) {
             testReferenceSegmenter();
         }
-    }
+    }*/
 
     @Test
     public void extractCitationsFromPDF() throws Exception {
@@ -700,7 +700,7 @@ public class EngineTest {
 
 
 
-    @Test
+/*    @Test
     public void testAuthorExtraction() throws Exception {
         Engine engine = GrobidFactory.getInstance().getEngine();
         String a = "Amelia Kenner Brininger, MPH, CPH , Emergency Medical Services, County of San Diego, San Diego, CA\n" +
@@ -757,9 +757,9 @@ public class EngineTest {
 ////        }
 //        System.out.println(res);
 
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void testReferenceSegmenter() throws Exception {
         String block = "Adelman, J. S., Marquis, S. J., & Sabatos-DeVito, M. G. (2010). Letters in words are read simultaneously, not in left-to-right sequence. Psychological Science, 21, 1799–1801. Arditi, A., Knoblauch, K., & Grunwald, I. (1990). Reading with ﬁxed and variable character pitch. Journal of the Optical Society of America, 7, 2011–2015. Bernard, J. -B., & Chung, S. T. L. (2011). The dependence of crowding on ﬂanker complex- ity and target–ﬂanker similarity. Journal of Vision, 11(8), 1–16 (1). Chanceaux, M., & Grainger, J. (2012). Serial position effects in the identiﬁcation of letters, digits, symbols, and shapes in peripheral vision. Acta Psychologica, 141, 149–158. Chanceaux, M., Mathôt, S., & Grainger, J. (2013). Flank to the left, ﬂank to the right: Testing the modiﬁed receptive ﬁeld hypothesis of letter-speciﬁc crowding. Journal of Cognitive Psychology, 25, 774–780. Chung, S. T. L. (2002). The effect of letter spacing on reading speed in central and periph- eral vision. Investigative Ophthalmology & Visual Science, 43, 1270–1276. Grainger, J. (2008). Cracking the orthographic code: An introduction. Language and Cognitive Processes, 23, 1–35. Grainger, J., Tydgat, I., & Isselé, J. (2010). Crowding affects letters and symbols differ- ently. Journal of Experimental Psychology: Human Perception and Performance, 36, 673–688. Grainger, J., & Van Heuven, W. (2003). Modeling letter position coding in printed word perception. In P. Bonin (Ed.), The mental lexicon (pp. 1–24). New York: Nova Science Publishers. Johnson, R. L., & Eisler, M. E. (2012). The importance of the ﬁrst and last letter in words during sentence reading. Acta Psychologica, 141, 336–351.\n" +
                 "\n" +
@@ -841,7 +841,7 @@ public class EngineTest {
 //        System.out.println("--------------");
 //        System.out.println(p.createTrainingData(block));
 //        System.out.println("--------------");
-    }
+    }*/
 
     @Test
     public void testReferenceString() {

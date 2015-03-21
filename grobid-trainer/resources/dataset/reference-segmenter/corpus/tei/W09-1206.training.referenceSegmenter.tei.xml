@@ -1,0 +1,22 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_D_-1"/>
+    </teiHeader>
+    <text xml:lang="en">
+References 		
+        <listBibl><bibl>Aljoscha Burchardt, Katrin Erk, Anette Frank, Andrea Kowalski, Sebastian Padó, and Manfred Pinkal. 2006. The SALSA corpus: a German corpus resource for lexical semantics. In Proceedings of the 5th Interna- tional Conference on Language Resources and Evalu- ation (LREC-2006), Genoa, Italy.</bibl>
+<bibl>Rong-En Fan, Kai-Wei Chang, Cho-Jui Hsieh, Xiang-Rui Wang, and Chih-Jen Lin. 2008. LIBLINEAR: A li- brary for large linear classification. Journal of Ma- chine Learning Research, 9:1871–1874.</bibl>
+<bibl>Daniel Gildea and Daniel Jurafsky. 2002. Automatic la- beling of semantic roles. Computational Linguistics, 28(3):245–288.</bibl>
+<bibl>Jan Hajič, Jarmila Panevová, Eva Hajičová, Petr Sgall, Petr Pajas, Jaň Stěpá, Jiří Havelka, Marie Mikulová, and Zdeně Zabokrtsk´ . Prague De- pendency Treebank 2.0.</bibl>
+<bibl>Jan Hajič, Massimiliano Ciaramita, Richard Johans- son, Daisuke Kawahara, Maria Ant onia Martí, Lluí M` arquez, Adam Meyers, Joakim Nivre, Sebastian Padó, Jaň Stěpá, Pavel Straňá, Mihai Surdeanu, Nianwen Xue, and Yi Zhang. 2009. The CoNLL- 2009 shared task: Syntactic and semantic depen- dencies in multiple languages. In Proceedings of the 13th Conference on Computational Natural Lan- guage Learning (CoNLL-2009), June 4-5, Boulder, Colorado, USA.</bibl> 
+<bibl>Richard Johansson and Pierre Nugues. 2008. Dependency-based syntactic–semantic analysis with PropBank and NomBank. In Proceedings of the Shared Task Session of CoNLL-2008.</bibl>
+<bibl>Richard Johansson. 2008. Dependency-based Semantic Analysis of Natural-language Text. Ph.D. thesis, Lund University, December 5.</bibl>
+<bibl>Daisuke Kawahara, Sadao Kurohashi, and Kô Hasida. 2002. Construction of a Japanese relevance-tagged corpus. In Proceedings of the 3rd International Conference on Language Resources and Evaluation (LREC-2002), pages 2008–2013, Las Palmas, Canary Islands.</bibl>
+<bibl>Martha Palmer and Nianwen Xue. 2009. Adding seman- tic roles to the Chinese Treebank. Natural Language Engineering, 15(1):143–172.</bibl>
+<bibl>Mihai Surdeanu, Richard Johansson, Adam Meyers, Lluí M` arquez, and Joakim Nivre. 2008. The CoNLL- 2008 shared task on joint parsing of syntactic and se- mantic dependencies. In Proceedings of the 12th Con- ference on Computational Natural Language Learning (CoNLL-2008).</bibl> 
+<bibl>Mariona Taulé, Maria Ant onia Martí, and Marta Re- casens. 2008. AnCora: Multilevel Annotated Corpora for Catalan and Spanish. In Proceedings of the 6th International Conference on Language Resources and Evaluation (LREC-2008), Marrakesh, Morroco.</bibl> 
+<bibl>Kristina Toutanova, Aria Haghighi, and Christopher D. Manning. 2005. Joint learning improves semantic role labeling. In Proceedings of ACL-2005.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

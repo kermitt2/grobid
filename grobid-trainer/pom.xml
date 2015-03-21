@@ -19,6 +19,12 @@
 			<artifactId>grobid-core</artifactId>
 			<version>0.3.3-SNAPSHOT</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>com.rockymadden.stringmetric</groupId>
+		    <artifactId>stringmetric-core_2.10</artifactId>
+		    <version>0.27.3</version>
+		</dependency>
 	</dependencies>
 
 	<build>

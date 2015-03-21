@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+
+						<author><surname>Armbruster</surname>, <forename>C</forename>.</author>
+
+						<author><surname>Armbruster</surname>, <forename>C</forename>.</author>
+
+						<author><surname>Armbruster</surname>, <forename>C</forename>.</author>
+
+						<author><surname>Armbruster</surname>, <forename>C</forename>.</author>
+
+						<author><surname>Armbruster</surname>, <forename>C</forename>.</author>
+
+						<author><surname>Basefsky</surname>, <forename>S</forename>.</author>
+
+						<author><surname>Bergstrom</surname>, <forename>T</forename>.<middlename>C</middlename>., <surname>Lavaty</surname>, <forename>R</forename>.</author>
+
+						<author><surname>Brody</surname> <forename>T</forename>., <surname>Gedye</surname> <forename>R</forename>., <surname>MacIntyre</surname> <forename>R</forename>., <surname>Needham</surname> <forename>P</forename>., <surname>Pentz</surname> <forename>E</forename>., <surname>Rumsey</surname> <forename>S</forename>. , <surname>Shepherd</surname> <forename>P</forename>.</author>
+
+						<author><surname>Holmes</surname> <forename>M</forename>., <surname>Romary</surname> <forename>L</forename>.</author>
+
+						<author><surname>Khayari</surname> <forename>M</forename>., <surname>Schneider</surname> <forename>S</forename>., <surname>Kramer</surname> <forename>I</forename>., <surname>Romary</surname> <forename>L</forename>.</author>
+
+						<author><surname>Vogel</surname>, <forename>B</forename>., <surname>Cordes</surname>, <forename>S</forename>.</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

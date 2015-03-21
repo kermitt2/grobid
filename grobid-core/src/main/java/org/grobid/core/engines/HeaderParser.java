@@ -510,7 +510,8 @@ public class HeaderParser extends AbstractParser {
                         n++;
                         continue;
                     }
-                    text = text.trim();
+                    //text = text.trim();
+					text = text.replace(" ", "");
                     if (text.length() == 0) {
                         n++;
                         continue;

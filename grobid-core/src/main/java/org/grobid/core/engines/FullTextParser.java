@@ -309,7 +309,7 @@ public class FullTextParser extends AbstractParser {
 	                    nn++;
 	                    continue;
 	                }
-	                text = text.trim();
+	                text = text.replace(" ", "");
 	                if (text.length() == 0) {
 	                    n++;
 	                    mm++;
@@ -595,6 +595,11 @@ public class FullTextParser extends AbstractParser {
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);	
 			if (documentBodyParts != null) {			
 				Pair<String,List<String>> featSeg = getBodyTextFeatured(doc, documentBodyParts);
+				if (featSeg == null) {
+					// no textual body part found, nothing to generate
+					return doc;
+				}
+				
 				String bodytext = featSeg.getA();
 				List<String> tokenizationsBody = featSeg.getB();
 				
@@ -648,7 +653,8 @@ public class FullTextParser extends AbstractParser {
 	            }
 	//			List<String> tokenizations = doc.getTokenizationsReferences();
 				ReferenceSegmenter referenceSegmenter = parsers.getReferenceSegmenterParser();
-	            List<LabeledReferenceResult> references = referenceSegmenter.extract(referencesStr);
+	            //List<LabeledReferenceResult> references = referenceSegmenter.extract(referencesStr);
+				List<LabeledReferenceResult> references = referenceSegmenter.extract(doc);
 
 	            if (references == null) {
 	                cntManager.i(CitationParserCounters.NULL_SEGMENTED_REFERENCES_LIST);

@@ -30,7 +30,8 @@ public class LayoutToken {
     }
 
     public void setText(String f) {
-        text = f.replaceAll("\n", "");
+        //text = f.replaceAll("\n", "");
+		text = f;
     }
 
     public void setRotation(boolean b) {
