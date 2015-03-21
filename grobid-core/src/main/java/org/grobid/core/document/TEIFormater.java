@@ -1251,7 +1251,8 @@ public class TEIFormater {
 			// we avoid citation_marker and figure_marker tags because they introduce too much mess, 
 			// they will be injected later
 			String currentOriginalTag = s1;
-			if (currentTag0.equals("<citation_marker>") || 
+			if (
+				currentTag0.equals("<citation_marker>") || 
 				currentTag0.equals("<figure_marker>") || 
 				currentTag0.equals("<table_marker>") || 
 				currentTag0.equals("<item>")) {
@@ -1274,7 +1275,6 @@ public class TEIFormater {
             boolean output;
 
             if ((currentTag0 != null) && 
-					!currentTag0.equals("<table>") &&
                     !currentTag0.equals("<trash>") &&
                     !currentTag0.equals("<figure_head>") &&
                     !currentTag0.equals("<figDesc>")) {
@@ -1312,7 +1312,15 @@ public class TEIFormater {
             }
             if (!output) {
                 output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<citation_marker>", 
-					"<ref type=\"biblio\">", addSpace, 3, generateIDs);
+					"<ref type=\"biblio\">", addSpace, 4, generateIDs);
+            }
+            if (!output) {
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_marker>", 
+					"<ref type=\"figure\">", addSpace, 4, generateIDs);
+            }
+            if (!output) {
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<table_marker>", 
+					"<ref type=\"table\">", addSpace, 4, generateIDs);
             }
             if (!output) {
 				if (divOpen) {
@@ -1331,7 +1339,7 @@ public class TEIFormater {
 					}
 				}
             }
-            if (!output) {
+            /*if (!output) {
 				if (divOpen) {
   				   output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<subsection>", 
  						"</div>\n\t\t\t<div>\n\t\t\t\t<head>", addSpace, 3, generateIDs);
@@ -1346,7 +1354,7 @@ public class TEIFormater {
 						divOpen = true;
 					}
 				}
-            }
+            }*/
             if (!output) {
                 if (openFigure) {
                     output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<trash>", 
@@ -1364,15 +1372,7 @@ public class TEIFormater {
                 output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<equation>", 
 					"<formula>", addSpace, 4, generateIDs);
             }
-            if (!output) {
-                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_marker>", 
-					"<ref type=\"figure\">", addSpace, 4, generateIDs);
-            }
-            if (!output) {
-                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<table_marker>", 
-					"<ref type=\"table\">", addSpace, 4, generateIDs);
-            }
-            if (!output) {
+            /*if (!output) {
                 if (openFigure) {
                     if (tableBlock && (!lastTag0.equals("<table>")) && (currentTag0.equals("<table>"))) {
 						if (generateImageReferences) {
@@ -1405,7 +1405,7 @@ public class TEIFormater {
                         tableBlock = true;
                     }
                 }
-            }
+            }*/
             if (!output) {
                 if (openFigure) {
                     if (descFigure && (!lastTag0.equals("<figDesc>")) && (currentTag0.equals("<figDesc>"))) {
@@ -1749,17 +1749,17 @@ public class TEIFormater {
      * @param currentTag0
      * @param lastTag0
      * @param currentTag
+	 * @param bds
+	 * @param generateIDs	
      * @return
      */
-    public boolean testClosingTag(StringBuffer buffer,
+    private boolean testClosingTag(StringBuffer buffer,
                                    String currentTag0,
                                    String lastTag0,
                                    String currentTag, 
 								   List<BibDataSet> bds,
 								   boolean generateIDs) {
         boolean res = false;
-        // reference_marker and citation_marker are two exceptions because they can be embedded
-
         if (!currentTag0.equals(lastTag0) || currentTag.equals("I-<paragraph>") || currentTag.equals("I-<item>")) {
 			// we get the enclosed text
 			int ind = buffer.lastIndexOf(">");
@@ -1774,10 +1774,28 @@ public class TEIFormater {
 				// this should actually never happen
 				text = buffer.toString().trim();
 			}
+			
+	        // reference_marker, table_marker and citation_marker are exceptions because they can be embedded
+			/*if (lastTag0.equals("<citation_marker>")) {
+				// we will inject here the right biblio ref.
+				text = markReferencesTEI(text, bds).trim();
+	            //buffer.append("<ref type=\"biblio\">" + text + "</ref>");
+				buffer.append(text);
+				return false;
+	        } else if (lastTag0.equals("<figure_marker>")) {
+				// we will inject here the right figure ref.
+	            buffer.append("<ref type=\"figure\">" + text + "</ref>");
+				return false;
+	        } else if (lastTag0.equals("<table_marker>")) {
+				// we will inject here the right table ref.
+	            buffer.append("<ref type=\"table\">" + text + "</ref>");
+				return false;
+	        }*/
+			
 			text = TextUtilities.dehyphenize(text);
 			text = text.replace("\n", " ");
 			text = text.replace("  ", " ");
-			text = markReferencesTEI(text, bds).trim();
+			text = TextUtilities.trimEncodedCharaters(text).trim();
 			String divID = null;
 			if (generateIDs) {
 				divID = KeyGen.getKey().substring(0,7);
@@ -1831,7 +1849,7 @@ public class TEIFormater {
 				buffer.append("<p");
 				if (generateIDs) 
 					buffer.append(" xml:id=\"_" + divID + "\"");
-				buffer.append(">" + TextUtilities.trimEncodedCharaters(text) + "</p>\n\n");
+				buffer.append(">" + text + "</p>\n\n");
                 res = true;
 				// return true only when the paragraph is closed
 
@@ -1867,14 +1885,7 @@ public class TEIFormater {
 
             } else if (lastTag0.equals("<trash>")) {
                 buffer.append("<trash>" + text + "</trash>\n\n");
-
-            } /*else if (lastTag0.equals("<citation_marker>")) {
-                buffer.append("</ref>");
-				
-            } else if (lastTag0.equals("<figure_marker>")) {
-                buffer.append("</ref>");
-
-            } */
+            } 
 			else {
                 res = false;
 

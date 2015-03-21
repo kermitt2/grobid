@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+
+						<author><surname>Abney</surname>, <forename>Steven</forename></author>
+
+						<author><surname>Bourigault</surname>, <forename>Didier</forename></author>
+
+						<author><surname>Church</surname>, <forename>Kenneth</forename></author>
+
+						<author><surname>Francis</surname>, <forename>N</forename>. and <surname>Kucera</surname>, <forename>H</forename>.</author>
+
+						<author><surname>Garside</surname>, <forename>Roger</forename> and <surname>Leech</surname>, <forename>Geoffrey</forename></author>
+
+						<author><surname>Hindle</surname>, <forename>Donald</forename></author>
+
+						<author><surname>Hindle</surname>, <forename>Donald</forename> and <surname>Rooth</surname>, <forename>Mats</forename></author>
+
+						<author><surname>Hirst</surname>, <forename>G</forename>.</author>
+
+						<author><surname>Johansson</surname>, <forename>Stig</forename></author>
+
+						<author><surname>Kamp</surname>, <forename>H</forename>.</author>
+
+						<author><surname>Salton</surname>, <forename>G</forename>.</author>
+
+						<author><surname>Sampson</surname>, <forename>Geoffrey</forename></author>
+
+						<author><surname>Sampson</surname>, <forename>Geoffrey</forename></author>
+
+						<author><surname>Sells</surname>, <forename>Peter</forename></author>
+
+						<author><surname>Voutilalnen</surname>, <forename>Atro</forename></author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

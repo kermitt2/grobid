@@ -2,6 +2,7 @@ package org.grobid.core.features;
 
 import java.util.List;
 import java.util.regex.Matcher;
+import org.grobid.core.layout.LayoutToken;
 
 /**
  * Class for features used for header parsing.
@@ -10,8 +11,8 @@ import java.util.regex.Matcher;
  */
 public class FeaturesVectorReferenceSegmenter {
     // default bins for relative position, set experimentally
-    static private int nbBins = 12;
-
+	public LayoutToken token = null; // not a feature, reference value
+	
     public String string = null; // lexical feature
     public String label = null; // label if known
     public String blockStatus = null; // one of BLOCKSTART, BLOCKIN, BLOCKEND
@@ -36,10 +37,12 @@ public class FeaturesVectorReferenceSegmenter {
     public boolean email = false;
     public boolean http = false;
     //public boolean acronym = false;
-    public String punctType = null; // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT (default)
+    public String punctType = null; // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT
     public boolean containPunct = false;
     public int relativePosition = -1;
-
+	public int lineLength = 0;
+	public String punctuationProfile = null; // the punctuations of the current line of the token
+	
     // true if the token is part of a predefinied name (single or multi-token)
     public String printVector() {
         if (string == null) return null;
@@ -149,11 +152,11 @@ public class FeaturesVectorReferenceSegmenter {
         else
             res.append(" 0");
 
-        if (email)
+        /*if (email)
             res.append(" 1");
         else
             res.append(" 0");
-
+		*/
         if (http)
             res.append(" 1");
         else
@@ -162,9 +165,25 @@ public class FeaturesVectorReferenceSegmenter {
         // punctuation information (1)
         res.append(" ").append(punctType); // in case the token is a punctuation (NO otherwise)
 
-        // relative position in the sequence (1)
+        // relative length on the line as compared to the max line length on a predefined scale (1)
         res.append(" ").append(relativePosition);
 
+		// relative position in the line on a predefined scale (1)
+		res.append(" " + lineLength);
+
+        // block information (1)
+		//if (blockStatus != null)
+		res.append(" " + blockStatus);
+
+		// punctuation profile
+		if ( (punctuationProfile == null) || (punctuationProfile.length() == 0) )
+			res.append(" no");
+		else {
+			int theLength = punctuationProfile.length();
+			if (theLength > 10) 
+				theLength = 10;
+			res.append(" " + theLength);
+		}
         // label - for training data (1)
         if (label != null)
             res.append(" ").append(label).append("\n");
@@ -178,7 +197,7 @@ public class FeaturesVectorReferenceSegmenter {
     /**
      * Add feature for citation parsing.
      */
-    static public String addFeaturesReferenceSegmenter(List<String> lines) {
+/*    static public String addFeaturesReferenceSegmenter(List<String> lines) {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
         String line;
         StringBuilder citation = new StringBuilder();
@@ -186,6 +205,7 @@ public class FeaturesVectorReferenceSegmenter {
 //        String currentFont = null;
 //        int currentFontSize = -1;
         int n = 0; // overall token number - we have one token per line
+
 
         int sentenceNb = 0;
         int currentJournalPositions = 0;
@@ -203,6 +223,7 @@ public class FeaturesVectorReferenceSegmenter {
         FeaturesVectorReferenceSegmenter features = null;
         int mm = 0; // token position in the sentence
         int sentenceLenth = 0; // length of the current sentence
+		
         while (n < lines.size()) {
             boolean outputLineStatus = false;
             isJournalToken = false;
@@ -285,7 +306,7 @@ public class FeaturesVectorReferenceSegmenter {
             features = new FeaturesVectorReferenceSegmenter();
             features.string = text;
             features.relativePosition = featureFactory.relativeLocation(mm, sentenceLenth, nbBins);
-
+				
             if (newline) {
                 features.lineStatus = "LINESTART";
                 outputLineStatus = true;
@@ -334,11 +355,6 @@ public class FeaturesVectorReferenceSegmenter {
                         } else if (newLine.trim().length() == 0) {
                             endline = true;
                         } else {
-                            /*int indd = newLine.indexOf(" ");
-                                   if (indd != -1) {
-                                       String nextText = newLine.substring(0,indd);
-                                       String nextTag = newLine.substring(indd+1,newLine.length());
-                                   }*/
                             endloop = true;
                         }
                     }
@@ -410,11 +426,6 @@ public class FeaturesVectorReferenceSegmenter {
                 features.http = true;
             }
 
-            /*Matcher m5 = featureFactory.ACRONYM.matcher(text);
-               if (m5.find()) {
-                   features.acronym = true;
-               }*/
-
             if (features.capitalisation == null)
                 features.capitalisation = "NOCAPS";
 
@@ -435,5 +446,5 @@ public class FeaturesVectorReferenceSegmenter {
 
         return citation.toString();
     }
-
+	*/
 }

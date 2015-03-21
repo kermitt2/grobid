@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author><forename>Yaser</forename> <surname>Al-Onaizan</surname>, <forename>Niyu</forename> <surname>Ge</surname>, <forename>Young-Suk</forename> <surname>Lee</surname>, <forename>Kishore</forename> <surname>Pa-pineni</surname>, <forename>Fei</forename> <surname>Xia</surname>, and <forename>Christoph</forename> <surname>Tillmann</surname></author>
+
+						<author><forename>J</forename>. <surname>Lafferty</surname>, <forename>A</forename>. <surname>McCallum</surname>, and <forename>F</forename>. <surname>Pereira</surname></author>
+
+						<author><forename>Franz-Josef</forename> <surname>Och</surname>, <forename>Christoph</forename> <surname>Tillmann</surname>, and <forename>Hermann</forename> <surname>Ney</surname></author>
+
+						<author><forename>Franz-Josef</forename> <surname>Och</surname>, <forename>Kishore</forename> <surname>Papineni</surname>, <forename>Salim</forename> <surname>Roukos</surname>, <forename>Todd</forename> <surname>Ward</surname>, and <forename>Wei-Jing</forename> <surname>Zhu</surname>, <forename>Charles</forename> <surname>Schafer</surname> and <forename>David</forename> <surname>Yarowsky</surname></author>
+
+						<author><forename>Tong</forename> <surname>Zhang</surname></author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

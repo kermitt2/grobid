@@ -37,6 +37,7 @@ public class FeaturesVectorSegmentation {
     public String punctType = null; // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT (default)
     public int relativeDocumentPosition = -1;
     public int relativePagePosition = -1;
+	public int relativePagePositionChar = -1;
 	public String punctuationProfile = null; // the punctuations of the current line of the token
 	public boolean firstPageBlock = false; 
 	public boolean lastPageBlock = false;
@@ -191,23 +192,34 @@ public class FeaturesVectorSegmentation {
         else
             res.append(" 0");
 
-        // punctuation information (2)
+        // punctuation information (1)
 		if (punctType != null)
 			res.append(" " + punctType); // in case the token is a punctuation (NO otherwise)
 
         // relative document position (1)
         res.append(" " + relativeDocumentPosition);
 
-        // relative page position (1)
-        res.append(" " + relativePagePosition);
+        // relative page position coordinate (1)
+        //res.append(" " + relativePagePosition);
+		
+        // relative page position characters (1)
+        res.append(" " + relativePagePositionChar);
 		
 		// punctuation profile
-		if ( (punctuationProfile == null) || (punctuationProfile.length() == 0) )
+		if ( (punctuationProfile == null) || (punctuationProfile.length() == 0) ) {
+			// string profile
 			res.append(" no");
-		else
+			// number of punctuation symbols in the line
+			res.append(" 0");
+		}
+		else {
+			// string profile
 			res.append(" " + punctuationProfile);
+			// number of punctuation symbols in the line
+			res.append(" "+punctuationProfile.length());
+		}
 
-		// current line length on a predefined scale
+		// current line length on a predefined scale and relative to the longest line of the current block
 		res.append(" " + lineLength);
 
         // label - for training data (1)

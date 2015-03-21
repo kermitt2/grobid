@@ -130,8 +130,16 @@ public class SegmentationTrainer extends AbstractTrainer{
 
                 List<String> labeled = parser2.getLabeledResult();
                 //totalExamples += parser2.n;
-                // we can now add the features
+                
+				// we can now add the features
                 // we open the featured file
+				File theRawFile = new File(sourceRawPathLabel + "/" + name.replace(".tei.xml", ""));
+				if (!theRawFile.exists()) {
+	                System.out.println("Raw file " + theRawFile +
+	                        " does not exist. Please have a look!");
+					continue;
+				}
+				
                 int q = 0;
                 BufferedReader bis = new BufferedReader(
                         new InputStreamReader(new FileInputStream(

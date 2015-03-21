@@ -308,11 +308,22 @@ public class Engine implements Closeable {
             Document doc = parsers.getSegmentationParser().processing(input);
 			String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
             if (!referencesStr.isEmpty()) {
-				String tei = parsers.getReferenceSegmenterParser().createTrainingData2(referencesStr, id);
+				//String tei = parsers.getReferenceSegmenterParser().createTrainingData2(referencesStr, id);
+				org.grobid.core.utilities.Pair<String,String> result = 
+					parsers.getReferenceSegmenterParser().createTrainingData(doc, id);
+				String tei = result.getA();
+				String raw = result.getB();	
 				if (tei != null) {
-                    String outPath = pathTEI + "/" + inputFile.getName().replace(".pdf", ".referenceSegmenter.training.tei.xml");
+                    String outPath = pathTEI + "/" + 
+						inputFile.getName().replace(".pdf", ".training.referenceSegmenter.tei.xml");
                     Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
                     writer.write(tei + "\n");
+                    writer.close();
+					
+					// generate also the raw vector file with the features
+					outPath = pathTEI + "/" + inputFile.getName().replace(".pdf", ".training.referenceSegmenter");
+                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
+                    writer.write(raw + "\n");
                     writer.close();
                 }
 			}
@@ -690,7 +701,6 @@ public class Engine implements Closeable {
                         createTrainingReferenceSegmentation(pdfFile.getPath(), resultPath, ind + n);
                     }
                 } catch (final Exception exp) {
-					exp.printStackTrace();
                     LOGGER.error("An error occured while processing the following pdf: " + pdfFile.getPath() + ": " + exp);
                 }
 				if (ind != -1)

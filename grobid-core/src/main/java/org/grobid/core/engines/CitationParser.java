@@ -155,7 +155,7 @@ public class CitationParser extends AbstractParser {
 
         cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
 
-        List<LabeledReferenceResult> references = referenceSegmenter.extract(referencesStr);
+        List<LabeledReferenceResult> references = referenceSegmenter.extract(doc);
 
         if (references == null) {
             cntManager.i(CitationParserCounters.NULL_SEGMENTED_REFERENCES_LIST);

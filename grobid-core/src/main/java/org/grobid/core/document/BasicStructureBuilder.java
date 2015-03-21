@@ -761,7 +761,7 @@ public class BasicStructureBuilder {
 				else {
 					line = lines[indexLine];
 					indexLine++;
-					if ( (line.trim().length() == 0) || (Segmentation.filterLine(line)) ) {
+					if ( (line.trim().length() == 0) || (TextUtilities.filterLine(line)) ) {
 						line = null;
 						continue;
 					}

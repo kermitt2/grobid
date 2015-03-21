@@ -652,34 +652,58 @@ public class Segmentation extends AbstractParser {
             documentLength += tokens.size();
         }
 
-        //int blockPos = dp1.getBlockPtr();
+		double pageHeight = 0.0;
         for (int blockIndex = 0; blockIndex < blocks.size(); blockIndex++) {
             Block block = blocks.get(blockIndex);
 
             // we estimate the length of the page where the current block is
-            // and initialise the punctuation profiles per line
+            // and initialise the punctuation profiles per line	
             if (start || endPage) {
                 boolean stop = false;
                 pageLength = 0;
+				double pageMaxY = 0.0;
+				double pageMinY = 1000000.0;
                 for (int z = blockIndex; (z < blocks.size()) && !stop; z++) {
                     String localText2 = blocks.get(z).getText();
                     if (localText2 != null) {
                         if (localText2.contains("@PAGE")) {
                             if (pageLength > 0) {
                                 if (blocks.get(z).getTokens() != null) {
-                                    pageLength += blocks.get(z).getTokens()
-                                            .size();
+                                    pageLength += blocks.get(z).getTokens().size();
+									if ((blocks.get(z).getY() != 0.0) && (blocks.get(z).getY() < pageMinY))
+										pageMinY = blocks.get(z).getY();
+									if ((blocks.get(z).getY() != 0.0) && (blocks.get(z).getY() > pageMaxY))
+										pageMaxY = blocks.get(z).getY();
                                 }
                                 stop = true;
                                 break;
                             }
+							else {
+                                if (blocks.get(z).getTokens() != null) {
+									if ((blocks.get(z).getY() != 0.0) && (blocks.get(z).getY() < pageMinY))
+										pageMinY = blocks.get(z).getY();
+									if ((blocks.get(z).getY() != 0.0) && (blocks.get(z).getY() > pageMaxY))
+										pageMaxY = blocks.get(z).getY();
+                                }
+							}
                         } else {
                             if (blocks.get(z).getTokens() != null) {
                                 pageLength += blocks.get(z).getTokens().size();
+								LayoutToken firstToken = blocks.get(z).getTokens().get(0);
+								LayoutToken lastToken = blocks.get(z).getTokens()
+									.get(blocks.get(z).getTokens().size() -1);
+								if ((firstToken.getY() != 0.0) && (firstToken.getY() < pageMinY))
+									pageMinY = firstToken.getY();
+								if ((firstToken.getY() != 0.0) && (firstToken.getY() > pageMaxY))
+									pageMaxY = firstToken.getY();
+								if ((lastToken.getY() != 0.0) && (lastToken.getY() > pageMaxY))
+									pageMaxY = lastToken.getY();
                             }
                         }
                     }
                 }
+				pageHeight = pageMaxY - pageMinY;
+				//System.out.println(pageMaxY + " " + pageMinY);
                 // System.out.println("pageLength: " + pageLength);
             }
             if (start) {
@@ -705,6 +729,12 @@ public class Segmentation extends AbstractParser {
             }
 
             String[] lines = localText.split("[\\n\\r]");
+			// set the max length of the lines in the block, in number of characters
+			int maxLineLength = 0;
+			for(int p=0; p<lines.length; p++) {
+				if (lines[p].length() > maxLineLength) 
+					maxLineLength = lines[p].length();
+			}
             List<LayoutToken> tokens = block.getTokens();
             for (int li = 0; li < lines.length; li++) {
                 String line = lines[li];
@@ -720,7 +750,11 @@ public class Segmentation extends AbstractParser {
                     continue;
                 }
                 // for the layout information of the block, we take simply the first layout token
-                LayoutToken token = tokens.get(0);
+				LayoutToken token = null;
+				if (tokens.size() > 0)
+					token = tokens.get(0);
+
+				double coordinateLineY = token.getY();
 
                 features = new FeaturesVectorSegmentation();
                 features.token = token;
@@ -738,7 +772,7 @@ public class Segmentation extends AbstractParser {
                         (text.trim().equals("\n")) ||
                         (text.trim().equals("\r")) ||
                         (text.trim().equals("\n\r")) ||
-                        (Segmentation.filterLine(line))) {
+                        (TextUtilities.filterLine(line))) {
                     continue;
                 }
 
@@ -749,7 +783,10 @@ public class Segmentation extends AbstractParser {
 
                 features.firstPageBlock = firstPageBlock;
                 features.lastPageBlock = lastPageBlock;
-                features.lineLength = line.length() / LINESCALE;
+                //features.lineLength = line.length() / LINESCALE;
+                features.lineLength = featureFactory
+                        .relativeLocation(line.length(), maxLineLength, LINESCALE);
+				
                 features.punctuationProfile = TextUtilities.punctuationProfile(line);
 
                 features.lineStatus = null;
@@ -870,10 +907,16 @@ public class Segmentation extends AbstractParser {
 
                 features.relativeDocumentPosition = featureFactory
                         .relativeLocation(nn, documentLength, NBBINS);
-                features.relativePagePosition = featureFactory
+                features.relativePagePositionChar = featureFactory
                         .relativeLocation(mm, pageLength, NBBINS);
+				
+				int pagePos = featureFactory
+                        .relativeLocation(coordinateLineY, pageHeight, NBBINS);
+				if (pagePos > NBBINS)
+					pagePos = NBBINS;
+                features.relativePagePosition = pagePos;
+//System.out.println(coordinateLineY + "\t" + pageHeight);
 
-                // fulltext.append(features.printVector());
                 if (previousFeatures != null) {
                     String vector = previousFeatures.printVector();
                     fulltext.append(vector);
@@ -945,6 +988,7 @@ public class Segmentation extends AbstractParser {
             }
 
         } catch (Exception e) {
+			e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid training" +
                     " data generation for segmentation model.", e);
         } finally {
@@ -1039,7 +1083,7 @@ public class Segmentation extends AbstractParser {
                             continue;
                         }
 
-                        if (Segmentation.filterLine(line)) {
+                        if (TextUtilities.filterLine(line)) {
                             line = null;
                             continue;
                         }
@@ -1325,20 +1369,6 @@ public class Segmentation extends AbstractParser {
     public void close() throws IOException {
         super.close();
         // ...
-    }
-
-    public static boolean filterLine(String line) {
-        boolean filter = false;
-        if (line.contains("@IMAGE")) {
-            filter = true;
-        } else if (line.contains(".pbm")) {
-            filter = true;
-        } else if (line.contains(".vec")) {
-            filter = true;
-        } else if (line.contains(".jpg")) {
-            filter = true;
-        }
-        return filter;
     }
 
 }

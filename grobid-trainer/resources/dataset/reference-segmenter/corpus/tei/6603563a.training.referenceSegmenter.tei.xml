@@ -1,0 +1,95 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_6603563a"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+		
+        <bibl>Aguirre AJ, Brennan C, Bailey G, Sinha R, Feng B, Leo C, Zhang Y,<lb/> Zhang J, Gans JD, Bardeesy N, Cauwels C, Cordon-Cardo C, Redston MS,<lb/> DePinho RA, Chin L (2004) High-resolution characterization of the<lb/> pancreatic adenocarcinoma genome. Proc Natl Acad Sci USA 101:<lb/> 9067 – 9072<lb/> </bibl>
+		
+		<bibl>Albertson DG, Ylstra B, Segraves R, Collins C, Dairkee SH, Kowbel D, Kuo<lb/> WL, Gray JW, Pinkel D (2000) Quantitative mapping of amplicon<lb/> structure by array CGH identifies CYP24 as a candidate oncogene. Nat<lb/> Genet 25: 144 – 146<lb/> </bibl>
+		
+		<bibl>Bashyam MD, Bair R, Kim YH, Wang P, Hernandez-Boussard T, Karikari<lb/> CA, Tibshirani R, Maitra A, Pollack JR (2005) Array-based comparative<lb/>  genomic hybridization identifies localized DNA amplifications and<lb/> homozygous deletions in pancreatic cancer. Neoplasia 7: 556 – 562<lb/> </bibl>
+		
+        <bibl>Buchholz M, Braun M, Heidenblut A, Kestler HA, Kloppel G, Schmiegel W,<lb/> Hahn SA, Luttges J, Gress TM (2005) Transcriptome analysis of<lb/> microdissected pancreatic intraepithelial neoplastic lesions. Oncogene<lb/> 24: 6626 – 6636<lb/> </bibl>
+		
+		<bibl>Crnogorac-Jurcevic T, Missiaglia E, Blaveri E, Gangeswaran R, Jones M,<lb/> Terris B, Costello E, Neoptolemos JP, Lemoine NR (2003) Molecular<lb/>  alterations in pancreatic carcinoma: expression profiling shows that<lb/> dysregulated expression of S100 genes is highly prevalent. J Pathol 201:<lb/> 63 – 74<lb/></bibl>
+		 
+        <bibl>Fiegler H, Carr P, Douglas EJ, Burford DC, Hunt S, Scott CE, Smith J, Vetrie<lb/> D, Gorman P, Tomlinson IP, Carter NP (2003) DNA microarrays for<lb/> comparative genomic hybridization based on DOP-PCR amplification of<lb/> BAC and PAC clones. Genes Chromosomes Cancer 36: 361 – 374<lb/> </bibl>
+		
+		<bibl>Fletcher GC, Patel S, Tyson K, Adam PJ, Schenker M, Loader JA, Daviet L,<lb/> Legrain P, Parekh R, Harris AL, Terrett JA (2003) hAG-2 and hAG-3,<lb/> human homologues of genes involved in differentiation, are associated<lb/> with oestrogen receptor-positive breast tumours and interact with<lb/> metastasis gene C4.4a and dystroglycan. Br J Cancer 88: 579 – 585<lb/> </bibl>
+		
+        <bibl>Fukushige S, Furukawa T, Satoh K, Sunamura M, Kobari M, Koizumi M,<lb/> Horii A (1998) Loss of chromosome 18q is an early event in pancreatic<lb/> ductal tumorigenesis. Cancer Res 58: 4222 – 4226<lb/> </bibl>
+		
+		<bibl>Fukushige S, Waldman FM, Kimura M, Abe T, Furukawa T, Sunamura M,<lb/> Kobari M, Horii A (1997) Frequent gain of copy number on the long arm<lb/> of chromosome 20 in human pancreatic adenocarcinoma. Genes<lb/> Chromosomes Cancer 19: 161 – 169<lb/></bibl> 
+		
+		<bibl>Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S, Ellis B,<lb/> Gautier L, Ge Y, Gentry J, Hornik K, Hothorn T, Huber W, Iacus S,<lb/> Irizarry R, Leisch F, Li C, Maechler M, Rossini AJ, Sawitzki G, Smith C,<lb/> Smyth G, Tierney L, Yang JY, Zhang J (2004) Bioconductor: open<lb/> software development for computational biology and bioinformatics.<lb/> </bibl>
+
+        <bibl>Genome Biol 5: R80<lb/> Gorunova L, Hoglund M, Andren-Sandberg A, Dawiskiba S, Jin Y,<lb/> Mitelman F, Johansson B (1998) Cytogenetic analysis of pancreatic<lb/> carcinomas: intratumor heterogeneity and nonrandom pattern of<lb/> chromosome aberrations. Genes Chromosomes Cancer 23: 81 – 99<lb/> </bibl>
+		
+		<bibl>Griffin CA, Hruban RH, Morsberger LA, Ellingham T, Long PP, Jaffee EM,<lb/> Hauda KM, Bohlander SK, Yeo CJ (1995) Consistent chromosome<lb/> abnormalities in adenocarcinoma of the pancreas. Cancer Res 55:<lb/> 2394 – 2399<lb/> </bibl>
+		
+		<bibl>Gysin S, Rickert P, Kastury K, McMahon M (2005) Analysis of genomic<lb/> DNA alterations and mRNA expression patterns in a panel of human<lb/> pancreatic cancer cell lines. Genes Chromosomes Cancer 44: 37 – 51<lb/> </bibl>
+		
+		<bibl>Hahn SA, Schutte M, Hoque AT, Moskaluk CA, da Costa LT, Rozenblum E,<lb/> Weinstein CL, Fischer A, Yeo CJ, Hruban RH, Kern SE (1996) DPC4, a<lb/> candidate tumor suppressor gene at human chromosome 18q21.1.<lb/> Science 271: 350 – 353<lb/></bibl> 
+
+        <bibl>Hahn SA, Seymour AB, Hoque AT, Schutte M, da Costa LT, Redston MS,<lb/> Caldas C, Weinstein CL, Fischer A, Yeo CJ, Hruban RH, Kern SE (1995)<lb/> Allelotype of pancreatic adenocarcinoma using xenograft enrichment.<lb/>  Cancer Res 55: 4670 – 4675<lb/></bibl>  
+		
+        <bibl>Harada T, Okita K, Shiraishi K, Kusano N, Furuya T, Oga A, Kawauchi S,<lb/> Kondoh S, Sasaki K (2002a) Detection of genetic alterations in pancreatic<lb/> cancers by comparative genomic hybridization coupled with tissue<lb/> microdissection and degenerate oligonucleotide primed polymerase<lb/> chain reaction. Oncology 62: 251 – 258<lb/> </bibl>
+		
+		<bibl>Harada T, Okita K, Shiraishi K, Kusano N, Kondoh S, Sasaki K (2002b)<lb/> Interglandular cytogenetic heterogeneity detected by comparative<lb/> genomic hybridization in pancreatic cancer. Cancer Res 62:<lb/> 835 – 839<lb/> </bibl>
+		
+		<bibl>Heidenblad M, Schoenmakers EF, Jonson T, Gorunova L, Veltman JA, van<lb/> Kessel AG, Hoglund M (2004) Genome-wide array-based comparative<lb/> genomic hybridization reveals multiple amplification targets and novel<lb/> homozygous deletions in pancreatic carcinoma cell lines. Cancer Res 64:<lb/> 3052 – 3059<lb/></bibl> 
+		
+		<bibl>Hoglund M, Gorunova L, Jonson T, Dawiskiba S, Andren-Sandberg A,<lb/> Stenman G, Johansson B (1998) Cytogenetic and FISH analyses of<lb/> pancreatic carcinoma reveal breaks in 18q11 with consistent loss of<lb/> 18q12-qter and frequent gain of 18p. Br J Cancer 77: 1893 – 1899<lb/></bibl>
+		
+		<bibl>Holzmann K, Kohlhammer H, Schwaenen C, Wessendorf S, Kestler HA,<lb/> Schwoerer A, Rau B, Radlwimmer B, Dohner H, Lichter P, Gress T, Bentz<lb/> M (2004) Genomic DNA-chip hybridization reveals a higher incidence of<lb/> genomic amplifications in pancreatic cancer than conventional com-<lb/>parative genomic hybridization and leads to the identification of novel<lb/> candidate genes. Cancer Res 64: 4428 – 4433<lb/></bibl> 
+		
+		<bibl>Hurst CD, Fiegler H, Carr P, Williams S, Carter NP, Knowles MA (2004)<lb/> High-resolution analysis of genomic copy number alterations in bladder<lb/> cancer by microarray-based comparative genomic hybridization. Onco-<lb/> gene 23: 2250 – 2263<lb/> </bibl>
+		
+		<bibl>Iacobuzio-Donahue CA, Ashfaq R, Maitra A, Adsay NV, Shen-Ong GL,<lb/> Berg K, Hollingsworth MA, Cameron JL, Yeo CJ, Kern SE, Goggins M,<lb/> Hruban RH (2003a) Highly expressed genes in pancreatic ductal<lb/> adenocarcinomas: a comprehensive characterization and comparison<lb/> of the transcription profiles obtained from three major technologies.<lb/>  Cancer Res 63: 8614 – 8622<lb/></bibl> 
+		
+		<bibl>Iacobuzio-Donahue CA, Maitra A, Olsen M, Lowe AW, van Heek NT, Rosty<lb/> C, Walter K, Sato N, Parker A, Ashfaq R, Jaffee E, Ryu B, Jones J,<lb/> Eshleman JR, Yeo CJ, Cameron JL, Kern SE, Hruban RH, Brown PO,<lb/> Goggins M (2003b) Exploration of global gene expression patterns in<lb/> pancreatic adenocarcinoma using cDNA microarrays. Am J Pathol 162:<lb/> 1151 – 1162<lb/></bibl> 
+		
+		<bibl>Iacobuzio-Donahue CA, van der Heijden MS, Baumgartner MR, Troup WJ,<lb/> Romm JM, Doheny K, Pugh E, Yeo CJ, Goggins MG, Hruban RH, Kern SE<lb/> (2004) Large-scale allelotype of pancreaticobiliary carcinoma provides<lb/> quantitative estimates of genome-wide allelic loss. Cancer Res 64:<lb/> 871 – 875<lb/> </bibl>
+		
+		<bibl>Jain AN, Tokuyasu TA, Snijders AM, Segraves R, Albertson DG, Pinkel D<lb/> (2002) Fully automatic quantification of microarray image data. Genome<lb/> Res 12: 325 – 332<lb/> </bibl>
+		
+		<bibl>Jemal A, Murray T, Ward E, Samuels A, Tiwari RC, Ghafoor A, Feuer EJ,<lb/> Thun MJ (2005) Cancer statistics, 2005. CA Cancer J Clin 55: 10 – 30<lb/> </bibl>
+		
+		<bibl>Karhu R, Mahlamaki E, Kallioniemi A (2006) Pancreatic adenocarcinoma –<lb/> genetic portrait from chromosomes to microarrays. Genes Chromosomes<lb/> Cancer 45: 721 – 730<lb/> </bibl>
+
+        <bibl>Lemoine NR, Jain S, Hughes CM, Staddon SL, Maillet B, Hall PA, Kloppel G<lb/> (1992) Ki-ras oncogene activation in preinvasive pancreatic cancer.<lb/> Gastroenterology 102: 230 – 236<lb/></bibl> 
+		
+		<bibl>Lu YJ, Birdsall S, Summersgill B, Smedley D, Osin P, Fisher C, Shipley J<lb/> (1999) Dual colour fluorescence in situ hybridization to paraffin-<lb/>embedded samples to deduce the presence of the der(X)t(X;18)<lb/> (p11.2;q11.2) and involvement of either the SSX1 or SSX2 gene: a<lb/> diagnostic and prognostic aid for synovial sarcoma. J Pathol 187:<lb/> 490 – 496<lb/></bibl> 
+		
+		<bibl>Mahlamaki EH, Hoglund M, Gorunova L, Karhu R, Dawiskiba S, Andren-<lb/>Sandberg A, Kallioniemi OP, Johansson B (1997) Comparative genomic<lb/> hybridization reveals frequent gains of 20q, 8q, 11q, 12p, and 17q, and<lb/> losses of 18q, 9p, and 15q in pancreatic cancer. Genes Chromosomes<lb/> Cancer 20: 383 – 391<lb/></bibl>
+		 
+        <bibl>Mahlamaki EH, Kauraniemi P, Monni O, Wolf M, Hautaniemi S,<lb/> Kallioniemi A (2004) High-resolution genomic and expression profiling<lb/> reveals 105 putative amplification target genes in pancreatic cancer.<lb/> Neoplasia 6: 432 – 439<lb/> </bibl>
+		
+		<bibl>Missiaglia E, Blaveri E, Terris B, Wang YH, Costello E, Neoptolemos JP,<lb/> Crnogorac-Jurcevic T, Lemoine NR (2004) Analysis of gene expression in<lb/> cancer cell lines identifies candidate markers for pancreatic tumorigen-<lb/>esis and metastasis. Int J Cancer 112: 100 – 112<lb/> </bibl>
+		
+        <bibl>Murr MM, Sarr MG, Oishi AJ, van Heerden JA (1994) Pancreatic cancer. CA<lb/> Cancer J Clin 44: 304 – 318<lb/> </bibl>
+		
+		<bibl>Nowak NJ, Gaile D, Conroy JM, McQuaid D, Cowell J, Carter R, Goggins<lb/> MG, Hruban RH, Maitra A (2005) Genome-wide aberrations in<lb/> pancreatic adenocarcinoma. Cancer Genet Cytogenet 161: 36 – 50<lb/> </bibl>
+		
+		<bibl>Olshen AB, Venkatraman ES, Lucito R, Wigler M (2004) Circular binary<lb/> segmentation for the analysis of array-based DNA copy number data.<lb/> Biostatistics 5: 557 – 572<lb/> </bibl>
+		
+		<bibl>Pinkel D, Segraves R, Sudar D, Clark S, Poole I, Kowbel D, Collins C, Kuo<lb/> WL, Chen C, Zhai Y, Dairkee SH, Ljung BM, Gray JW, Albertson DG<lb/> (1998) High resolution analysis of DNA copy number variation using<lb/> comparative genomic hybridization to microarrays. Nat Genet 20:<lb/> 207 – 211<lb/> </bibl>
+		
+		<bibl>Pollack JR, Perou CM, Alizadeh AA, Eisen MB, Pergamenschikov A,<lb/> Williams CF, Jeffrey SS, Botstein D, Brown PO (1999) Genome-wide<lb/> analysis of DNA copy-number changes using cDNA microarrays. Nat<lb/> Genet 23: 41 – 46<lb/> </bibl>
+
+		<bibl>Ried T, Heselmeyer-Haddad K, Blegen H, Schrock E, Auer G (1999)<lb/> Genomic changes defining the genesis, progression, and malignancy<lb/> potential in solid human tumors: a phenotype/genotype correlation.<lb/> Genes Chromosomes Cancer 25: 195 – 204<lb/></bibl> 
+		
+        <bibl>Takahashi T, Yamashita H, Nagano Y, Nakamura T, Ohmori H, Avraham<lb/> H, Avraham S, Yasuda M, Matsumoto M (2003) Identification and<lb/> characterization of a novel Pyk2/related adhesion focal tyrosine kinase-<lb/>associated protein that inhibits alpha-synuclein phosphorylation. J Biol<lb/> Chem 278: 42225 – 42233<lb/> </bibl>
+
+		<bibl>The R Development Core Team (2006) R: a language and environment for<lb/> statistical computing. Vienna, Austria: The R Foundation for Statistical<lb/> Computing ISBN 3-900051-07-0 http://www.r-project.org<lb/></bibl> 
+		
+        <bibl>Ueki T, Toyota M, Sohn T, Yeo CJ, Issa JP, Hruban RH, Goggins M (2000)<lb/> Hypermethylation of multiple genes in pancreatic adenocarcinoma.<lb/> Cancer Res 60: 1835 – 1839<lb/> </bibl>
+		
+        </listBibl>
+    </text>
+</tei>
+

@@ -147,7 +147,7 @@ public class TEIReferenceSegmenterSaxParser extends DefaultHandler {
     }
 
     public void startElement(String namespaceURI, String localName, String qName, Attributes atts) throws SAXException {
-        if (!qName.equals("lb") & !qName.equals("pb")) {
+        if (!qName.equals("lb") && !qName.equals("pb")) {
             String text = getText();
             if (text.length() > 0) {
                 currentTag = "<other>";

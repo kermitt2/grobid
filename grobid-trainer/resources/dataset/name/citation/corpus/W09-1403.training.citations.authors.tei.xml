@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+
+						<author><forename>Antti</forename> <surname>Airola</surname>, <forename>Sampo</forename> <surname>Pyysalo</surname>, <forename>Jari</forename> <surname>Bjö</surname>, <forename>Tapio</forename> <surname>Pahikkala</surname>, <forename>Filip</forename> <surname>Ginter</surname>, and <forename>Tapio</forename> <surname>Salakoski</surname></author>
+
+						<author><forename>Christian</forename> <surname>Blaschke</surname>, <forename>Miguel</forename> <middlename>A</middlename>. <surname>Andrade</surname>, <forename>Christos</forename> <surname>Ouzou-nis</surname>, and <forename>Alfonso</forename> <surname>Valencia</surname></author>
+
+						<author><forename>Ekaterina</forename> <surname>Buyko</surname>, <forename>Joachim</forename> <surname>Wermter</surname>, <forename>Michael</forename> <surname>Poprat</surname>, and <forename>Udo</forename> <surname>Hahn</surname></author>
+
+						<author><forename>Jö</forename> <surname>Hakenberg</surname>, <forename>Ulf</forename> <surname>Leser</surname>, <forename>Conrad</forename> <surname>Plake</surname>, <forename>Harald</forename> <surname>Kirsch</surname>, and <forename>Dietrich</forename> <surname>Rebholz-Schuhmann</surname></author>
+
+						<author><forename>Minlie</forename> <surname>Huang</surname>, <forename>Xiaoyan</forename> <surname>Zhu</surname>, <forename>Donald</forename> <middlename>G</middlename>. <surname>Payan</surname>, <surname>Kun-bin</surname> <surname>Qu</surname>, and <forename>Ming</forename> <surname>Li</surname></author>
+
+						<author><forename>Sophia</forename> <surname>Katrenko</surname> and <forename>Pieter</forename> <middlename>W</middlename>. <surname>Adriaans</surname></author>
+
+						<author><forename>Jin-Dong</forename> <surname>Kim</surname>, <forename>Tomoko</forename> <surname>Ohta</surname>, and <forename>Jun&apos;ichi</forename> <surname>Tsujii</surname></author>
+
+						<author><forename>Seon-Ho</forename> <surname>Kim</surname>, <forename>Juntae</forename> <surname>Yoon</surname>, and <forename>Jihoon</forename> <surname>Yang</surname></author>
+
+						<author><forename>Rune</forename> <surname>Saetre</surname>, <forename>Kenji</forename> <surname>Sagae</surname>, and <forename>Jun&apos;ichi</forename> <surname>Tsujii</surname></author>
+
+						<author>14. <forename>Kenji</forename> <surname>Sagae</surname> and <forename>Jun&apos;ichi</forename> <surname>Tsujii</surname></author>
+
+						<author><forename>Jasmiň</forename> <surname>Sari´</surname>, <forename>Lars</forename>  <middlename>J</middlename>. <surname>Jensen</surname>, <forename>Rossitza</forename> <surname>Ouzounova</surname>, <forename>Isabel</forename> <surname>Rojas</surname>, and <forename>Peer</forename> <surname>Bork</surname></author>
+
+						<author><forename>Joachim</forename> <surname>Wermter</surname>, <forename>Katrin</forename> <surname>Tomanek</surname>, and <forename>Udo</forename> <surname>Hahn</surname></author>
+
+						<author><forename>Akane</forename> <surname>Yakushiji</surname>, <forename>Yuka</forename> <surname>Tateisi</surname>, <forename>Yusuke</forename> <surname>Miyao</surname>, and <forename>Jun&apos;ichi</forename> <surname>Tsujii</surname></author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

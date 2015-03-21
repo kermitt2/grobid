@@ -1,0 +1,20 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_D_-1"/>
+    </teiHeader>
+    <text xml:lang="en">
+		5 REFERENCES
+        <listBibl>
+<bibl> <label>[1]</label> Mathieu L. and Ballu A, 2003, GeoSpelling: a common language for Specification and Verification to express Method Uncertainty, Proc. of 8th CIRP Seminar on Computer Aided Tolerancing, North Carolina, USA.</bibl> 
+<bibl> <label>[2]</label> ANSI/AGMA 2009-B01, 2005, Bevel Gear Classification, Tolerances, and Measuring Methods.</bibl>
+<bibl> <label>[3]</label> Salomons O., Van Houten F., Kals H., 1998, Current Status of CAT Systems, Geometric Design Tolerancing: Theories, Standards and Applications, pp. 438-452, ISBN O-412-83000-0.</bibl>
+<bibl> <label>[4]</label> Goch G., 2003, Gear Metrology, Annals of CIRP, 52/2:659-695.</bibl>
+<bibl> <label>[5]</label> ISO/TS 17450-1, 2005, Geometric Product Specification (GPS) – General concepts – Part 1: Model for geometrical specification and verification.</bibl>
+<bibl> <label>[6]</label> Bruyere J., Dantan J.Y., Bigot R., Martin P., 2006, Statistical tolerance analysis of bevel gear by Tooth Contact Analysis and Monte Carlo simulation, in press, Mechanism and Machine Theory.</bibl>
+<bibl> <label>[7]</label> Pasupathy T., Zhao X., Wilhelm R., 2006, Flexible tools for specifying design variation, Int. J. Adv. Manufacturing Technology, 28:659-664.</bibl>
+<bibl> <label>[8]</label> Ballu A., Mathieu L., Dantan J.Y., 2001, Global view of geometrical specifications, Proc. of 7th CIRP Seminar on Computer Aided Tolerancing, Cachan, France.</bibl>
+<bibl> <label>[9]</label> Litvin F.L., 2004, Gear Geometry and Applied Theory, PTR Prentice Hall, Englewood Cliffs, NJ.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -401,7 +401,8 @@ public class Document {
                     n++;
                     continue;
                 }
-                text = text.trim();
+                //text = text.trim();
+				text = text.replace(" ","");
                 if (text.length() == 0) {
                     n++;
                     continue;
@@ -628,7 +629,7 @@ public class Document {
     // default bins for relative position
     private static final int nbBins = 12;
 
-    // heuristics to get the header section... should be replaced be a global
+    // heuristics to get the header section... should be should be a global
     // CRF structure recognition
     // model
     public String getHeader() {

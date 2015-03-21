@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author><surname>Mayr</surname> <forename>E</forename></author>
+
+						<author><surname>Dobzhansky</surname> <forename>T</forename></author>
+
+						<author><surname>Coyne</surname> <forename>JA</forename>, <surname>Orr</surname> <forename>HA</forename></author>
+
+						<author><surname>Jackson</surname> <forename>CL</forename>, <surname>Hartwell</surname> <forename>LH</forename></author>
+						
+						<author><surname>Naumov</surname> <forename>GI</forename>, <surname>James</surname> <forename>SA</forename>, <surname>Naumova</surname> <forename>ES</forename>, <surname>Louis</surname> <forename>EJ</forename>, <surname>Roberts</surname> <forename>IN</forename></author>
+
+						<author><surname>Chambers</surname> <forename>SR</forename>, <surname>Hunter</surname> <forename>N</forename>, <surname>Louis</surname> <forename>EJ</forename>, <surname>Borts</surname> <forename>RH</forename></author>
+
+						<author><surname>Delneri</surname> <forename>D</forename>, <surname>Colson</surname> <forename>I</forename>, <surname>Grammenoudi</surname> <forename>S</forename>, <surname>Roberts</surname> <forename>IN</forename>, <surname>Louis</surname> <forename>EJ</forename>, <surname>Oliver</surname> <forename>SG</forename></author>
+
+						<author><surname>Hunter</surname> <forename>N</forename>, <surname>Chambers</surname> <forename>SR</forename>, <surname>Louis</surname> <forename>EJ</forename>, <surname>Borts</surname> <forename>RH</forename></author>
+
+						<author><surname>Naumov</surname> <forename>GI</forename>, <surname>Naumova</surname> <forename>ES</forename>, <surname>Sniegowski</surname> <forename>PD</forename></author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

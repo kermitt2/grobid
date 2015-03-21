@@ -11,13 +11,9 @@ import org.slf4j.LoggerFactory;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FilenameFilter;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import java.io.*;
 import java.util.List;
+import java.util.StringTokenizer;
 
 /**
  * User: zholudev
@@ -47,16 +43,22 @@ public class ReferenceSegmenterTrainer extends AbstractTrainer {
                 LOGGER.info("output path for evaluation data: " + evaluationOutputPath);
             }
 
+			File teiCorpusDir = new File(corpusDir.getAbsolutePath() + "/tei/");
+			if (!teiCorpusDir.exists()) {
+                throw new IllegalStateException("Folder " + corpusDir.getAbsolutePath() +
+                        " does not exist. Please have a look!");
+			}
+			
             // we convert the tei files into the usual CRF label format
             // we process all tei files in the output directory
-            final File[] refFiles = corpusDir.listFiles(new FilenameFilter() {
+            final File[] refFiles = teiCorpusDir.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
                     return (name.endsWith(".xml") || name.endsWith(".tei"));
                 }
             });
 
             if (refFiles == null) {
-                throw new IllegalStateException("Folder " + corpusDir.getAbsolutePath() +
+                throw new IllegalStateException("Folder " + teiCorpusDir.getAbsolutePath() +
                         " does not seem to contain training data. Please check");
             }
 
@@ -88,10 +90,9 @@ public class ReferenceSegmenterTrainer extends AbstractTrainer {
             int n = 0;
             for (; n < refFiles.length; n++) {
                 final File teifile = refFiles[n];
-//                String name = teifile.getName();
-                //System.out.println(name);
-
                 final TEIReferenceSegmenterSaxParser saxParser = new TEIReferenceSegmenterSaxParser();
+
+				String name = teifile.getName();
 
                 // get a new instance of parser
                 final SAXParser p = spf.newSAXParser();
@@ -101,24 +102,80 @@ public class ReferenceSegmenterTrainer extends AbstractTrainer {
                 totalExamples += saxParser.getTotalReferences();
 
                 // we can now add the features
-                String featureVector = FeaturesVectorReferenceSegmenter.addFeaturesReferenceSegmenter(labeled);
+                // we open the featured file
+				File rawCorpusDir = new File(corpusDir.getAbsolutePath() + "/raw/");
+				if (!rawCorpusDir.exists()) {
+	                throw new IllegalStateException("Folder " + rawCorpusDir.getAbsolutePath() +
+	                        " does not exist. Please have a look!");
+				}
+				
+				File theRawFile = new File(rawCorpusDir.getAbsolutePath() + "/" + name.replace(".tei.xml", ""));
+				if (!theRawFile.exists()) {
+	                System.out.println("Raw file " + theRawFile +
+	                        " does not exist. Please have a look!");
+					continue;
+				}
+				
+                int q = 0;
+                BufferedReader bis = new BufferedReader(
+                        new InputStreamReader(new FileInputStream(
+                                rawCorpusDir.getAbsolutePath() + "/" + name.replace(".tei.xml", "")), "UTF8"));
+
+                StringBuilder referenceText = new StringBuilder();
+
+                String line;
+                while ((line = bis.readLine()) != null) {
+                    int ii = line.indexOf(' ');
+                    String token = null;
+                    if (ii != -1)
+                        token = line.substring(0, ii);
+//                    boolean found = false;
+                    // we get the label in the labelled data file for the same token
+                    for (int pp = q; pp < labeled.size(); pp++) {
+                        String localLine = labeled.get(pp);
+                        StringTokenizer st = new StringTokenizer(localLine, " ");
+                        if (st.hasMoreTokens()) {
+                            String localToken = st.nextToken();
+
+                            if (localToken.equals(token)) {
+                                String tag = st.nextToken();
+                                referenceText.append(line).append(" ").append(tag).append("\n");
+//                                lastTag = tag;
+//                                found = true;
+                                q = pp + 1;
+                                pp = q + 10;
+                            }
+                        }
+                        if (pp - q > 5) {
+                            break;
+                        }
+                    }
+                }
+                bis.close();
+
+                // format with features for sequence tagging...
+                //writer2.write(referenceText.toString() + "\n");
+
+                // we can now add the features
+                //String featureVector = FeaturesVectorReferenceSegmenter.addFeaturesReferenceSegmenter(labeled);
 
                 // format with features for sequence tagging...
                 // given the split ratio we write either in the training file or the evaluation file
                 //affAdd = affAdd.replace("\n \n", "\n \n");
 
-                String[] chunks = featureVector.split("\n\n");
+                //String[] chunks = featureVector.split("\n\n");
 
-                for (String chunk : chunks) {
+                //for (String chunk : chunks) 
+				{
                     if ((trainingWriter == null) && (evaluationWriter != null))
-                        evaluationWriter.write(chunk + "\n \n");
+                        evaluationWriter.write(referenceText.toString() + "\n \n");
                     if ((trainingWriter != null) && (evaluationWriter == null))
-                        trainingWriter.write(chunk + "\n \n");
+                        trainingWriter.write(referenceText.toString() + "\n \n");
                     else {
                         if (Math.random() <= splitRatio && trainingWriter != null) {
-                            trainingWriter.write(chunk + "\n \n");
+                            trainingWriter.write(referenceText.toString() + "\n \n");
                         } else if (evaluationWriter != null) {
-                            evaluationWriter.write(chunk + "\n \n");
+                            evaluationWriter.write(referenceText.toString() + "\n \n");
                         }
                     }
                 }
