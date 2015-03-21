@@ -316,6 +316,27 @@
 				</plugins>
 			</build>
 		</profile>
+		<profile>
+		  <!-- mvn compile exec:exec -PPubMedCentralEval -->	
+		  <id>PubMedCentralEval</id>
+		  <activation><property><name>PubMedCentralEval</name></property></activation>
+		  <build>
+			<plugins><plugin>
+		    <groupId>org.codehaus.mojo</groupId>
+		    <artifactId>exec-maven-plugin</artifactId>
+		    <configuration>
+		      <executable>java</executable>
+		      <arguments>
+				<argument>-Xms512m</argument>
+            	<argument>-Xmx2048m</argument>
+		        <argument>-classpath</argument><classpath />
+		        <argument>org.grobid.trainer.evaluation.PubMedCentralEvaluation</argument>
+				<argument>/Users/lopez/Downloads/PMC_sample_1943</argument>
+		      </arguments>
+		    </configuration>
+		  </plugin></plugins>
+		</build>
+		</profile>
 	</profiles>
 
 </project>

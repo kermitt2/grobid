@@ -11,6 +11,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
+
 /**
  * Evaluation against PubMedCentral native XML documents.
  *
@@ -28,13 +30,13 @@ public class PubMedCentralEvaluation {
 			System.out.println("Path to PubMedCentral is invalid");
 		}
 		
-		String pGrobidHome = GrobidProperties.getGrobidHomePath().getAbsolutePath();
-		String pGrobidProperties = GrobidProperties.getGrobidPropertiesPath().getAbsolutePath();
+		String pGrobidHome = "../grobid-home";
+		String pGrobidProperties = "../grobid-home/config/grobid.properties";
 
 		try {
 			MockContext.setInitialContext(pGrobidHome, pGrobidProperties);		
 			GrobidProperties.getInstance();
-			//System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
+			System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
 
 			engine = GrobidFactory.getInstance().createEngine();
 		}
@@ -86,18 +88,13 @@ public class PubMedCentralEvaluation {
 				// run Grobid full text and write the TEI result in the directory
 				try {
 					String tei = engine.fullTextToTEI(pdfFile.getPath(), false, false);
+					// write the result in the same directory
+					File resultTEI = new File(dir.getPath()+"/"+pdfFile.getName().replace(".pdf", ".tei.xml"));
+					FileUtils.writeStringToFile(resultTEI, tei, "UTF-8");
 				} 
 				catch (Exception e) {
 					e.printStackTrace();
 				} 
-				finally {
-					try {
-						MockContext.destroyInitialContext();
-					} 
-					catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
 			}
 		}
 		
