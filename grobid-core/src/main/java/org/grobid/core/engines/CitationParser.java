@@ -165,7 +165,7 @@ public class CitationParser extends AbstractParser {
         }
 
         for (LabeledReferenceResult ref : references) {
-            BiblioItem bib = processing(ref.getReferenceText(), consolidate);
+            BiblioItem bib = processing(TextUtilities.dehyphenize(ref.getReferenceText()), consolidate);
             BibDataSet bds = new BibDataSet();
             bds.setRefSymbol(ref.getLabel());
             bds.setResBib(bib);

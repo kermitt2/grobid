@@ -11,7 +11,8 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 /**
- * SAX parser for the TEI format for fulltext data. Normally all training data should be in this unique format.
+ * SAX parser for the TEI format for fulltext data encoded for training. Normally all training data should 
+ * be in this unique format for the fulltext model.
  * The segmentation of tokens must be identical as the one from pdf2xml files so that
  * training and online input tokens are aligned.
  *

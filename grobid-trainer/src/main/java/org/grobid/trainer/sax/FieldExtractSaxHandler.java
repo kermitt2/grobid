@@ -7,24 +7,31 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.ArrayList;
 
 /**
- * Utility SAX parser which extracts all the text content under a given tag name.
+ * Utility SAX parser which extracts all the text content under a given TEI tag name or
+ * under a specified xml path.
  *
  * @author Patrice Lopez
  */
-public class TEIFieldExtractSaxParser extends DefaultHandler {
+public class FieldExtractSaxHandler extends DefaultHandler {
 
     private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
 
     private String field = null;
+	
+	private String xmlPath = null;
 
     private ArrayList<String> values = null; // store the content values for each tag occurrence
 
-    public TEIFieldExtractSaxParser() {
+    public FieldExtractSaxHandler() {
         values = new ArrayList<String>();
     }
 
     public void setField(String f) {
         field = f;
+    }
+
+    public void setXmlPath(String path) {
+        xmlPath = path;
     }
 
     public void characters(char[] buffer, int start, int length) {

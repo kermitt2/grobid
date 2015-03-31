@@ -331,7 +331,7 @@
             	<argument>-Xmx2048m</argument>
 		        <argument>-classpath</argument><classpath />
 		        <argument>org.grobid.trainer.evaluation.PubMedCentralEvaluation</argument>
-				<argument>/Users/lopez/Downloads/PMC_sample_1943</argument>
+				<argument>/Users/lopez/biblio/PMC_sample_1943</argument>
 		      </arguments>
 		    </configuration>
 		  </plugin></plugins>

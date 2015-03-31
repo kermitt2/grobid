@@ -114,7 +114,9 @@ public class FullTextParser extends AbstractParser {
 				// document segmentation
 				String bodytext = featSeg.getA();
 				tokenizationsBody = featSeg.getB();
-	            rese = label(bodytext);
+				if ( (bodytext != null) && (bodytext.trim().length() > 0) ) { 
+					rese = label(bodytext);
+				}
 				//System.out.println(rese);
 			}
 

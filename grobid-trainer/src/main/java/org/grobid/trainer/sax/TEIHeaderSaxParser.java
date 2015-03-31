@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 /**
- * SAX parser for the TEI format header data. Normally all training data should be in this unique format which
- * replaces the ugly CORA format. Segmentation of tokens must be identical as the one from pdf2xml files so that
- * training and online input tokens are aligned.
+ * SAX parser for the TEI format header data encoded for training. Normally all training data for the header model 
+ * should be in this unique format (which replaces for instance the CORA format). Segmentation of tokens must be 
+ * identical as the one from pdf2xml files so that training and online input tokens are aligned.
  *
  * @author Patrice Lopez
  */
