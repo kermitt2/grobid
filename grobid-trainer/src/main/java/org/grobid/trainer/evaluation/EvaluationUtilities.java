@@ -275,8 +275,11 @@ public class EvaluationUtilities {
 
 			// word
 			report.append("\n===== Token-level results =====\n\n");
+			report.append(computeMetrics(labels, counterObserved, counterExpected, 
+				counterFalsePositive, counterFalseNegative));
 
-			int cumulated_tp = 0;
+
+			/*int cumulated_tp = 0;
 			int cumulated_fp = 0;
 			int cumulated_tn = 0;
 			int cumulated_fn = 0;
@@ -421,7 +424,7 @@ public class EvaluationUtilities {
 
 			report.append("\t(macro average)");
 			report.append("\n");
-
+			*/
 			// field: a field is simply a sequence of word...
 			// we do a second pass...
 			boolean allGood = true;
@@ -604,7 +607,10 @@ public class EvaluationUtilities {
 			} 
 
 			report.append("\n===== Field-level results =====\n");
-			report.append("\nlabel\t\taccuracy\tprecision\trecall\t\tf1\n\n");
+			report.append(computeMetrics(labels2, counterObserved2, counterExpected2, 
+				counterFalsePositive2, counterFalseNegative2));
+			
+			/*report.append("\nlabel\t\taccuracy\tprecision\trecall\t\tf1\n\n");
 
 			cumulated_tp = 0;
 			cumulated_fp = 0;
@@ -744,7 +750,8 @@ public class EvaluationUtilities {
 
 			report.append("\t(macro average)");
 			report.append("\n");
-
+			*/
+			
 			// instance: separated by a new line in the result file
 			theResult = theResult.replace("\n\n", "\n \n");
 			stt = new StringTokenizer(theResult, "\n");
@@ -796,12 +803,165 @@ public class EvaluationUtilities {
 			report.append("\n===== Instance-level results =====\n\n");
 			report.append("Total expected instances: \t\t").append(totalInstance).append("\n");
 			report.append("Correct instances: \t\t").append(correctInstance).append("\n");
-			accuracy = (double) correctInstance / (totalInstance);
+			double accuracy = (double) correctInstance / (totalInstance);
 			report.append("Instance-level recall:\t").append(TextUtilities.formatTwoDecimals(accuracy * 100)).append("\n\n");
 
 		} catch (Exception e) {
 			throw new GrobidException("An exception occurred while evaluating Grobid.", e);
 		}
+
+		return report.toString();
+	}
+	
+	public static String computeMetrics(List<String> labels,
+								List<Integer> counterObserved, 
+								List<Integer> counterExpected,
+								List<Integer> counterFalsePositive,
+								List<Integer> counterFalseNegative) {
+		StringBuilder report = new StringBuilder();							
+		report.append("\nlabel\t\taccuracy\tprecision\trecall\t\tf1\n\n");
+
+		int cumulated_tp = 0;
+		int cumulated_fp = 0;
+		int cumulated_tn = 0;
+		int cumulated_fn = 0;
+		double cumulated_f0 = 0.0;
+		double cumulated_accuracy = 0.0;
+		double cumulated_precision = 0.0;
+		double cumulated_recall = 0.0;
+		int totalValidFields = 0;
+
+		int totalFields = 0;
+		int i = 0;
+		while (i < labels.size()) {
+			totalFields += counterExpected.get(i);
+			i++;
+		}
+
+		i = 0;
+		while (i < labels.size()) {
+			totalFields += counterFalsePositive.get(i);
+			i++;
+		}
+
+		double accuracy = 0.0;
+		double precision = 0.0;
+		double recall = 0.0;
+		double f0 = 0.0;
+		i = 0;
+		while (i < labels.size()) {
+			String label = labels.get(i);
+			if (label.equals("<other>")) {
+				i++;
+				continue;
+			}
+
+			report.append(label);
+
+			if (label.length() < 12) {
+				report.append("\t");
+			}
+			int tp = counterObserved.get(i); // true positives
+			int fp = counterFalsePositive.get(i); // false positives
+			int fn = counterFalseNegative.get(i); // false negative
+			int tn = totalFields - tp - (fp + fn); // true negatives
+			int all = counterExpected.get(i); // all expected
+
+			if (all != 0) {
+				totalValidFields++;
+			}
+
+			accuracy = (double) (tp + tn) / (tp + fp + tn + fn);
+			report.append("\t").append(TextUtilities.formatTwoDecimals(accuracy * 100));
+
+			// report.append("\t"+ "-");
+
+			precision = 0.0;
+			if ((tp + fp) == 0) {
+				precision = 0.0;
+			} else {
+				precision = (double) (tp) / (tp + fp);
+			}
+			report.append("\t\t").append(TextUtilities.formatTwoDecimals(precision * 100));
+
+			recall = 0.0;
+			if ((tp == 0) || (all == 0)) {
+				recall = 0.0;
+			} else {
+				recall = (double) (tp) / all;
+			}
+			report.append("\t\t").append(TextUtilities.formatTwoDecimals(recall * 100));
+
+			f0 = 0.0;
+			if (precision + recall == 0) {
+				f0 = 0.0;
+			} else {
+				f0 = (2 * precision * recall) / (precision + recall);
+			}
+			report.append("\t\t").append(TextUtilities.formatTwoDecimals(f0 * 100));
+
+			report.append("\n");
+
+			cumulated_tp += tp;
+			cumulated_fp += fp;
+			cumulated_tn += tn;
+			cumulated_fn += fn;
+			if (all != 0) {
+				// cumulated_all += all;
+				cumulated_f0 += f0;
+				cumulated_accuracy += accuracy;
+				cumulated_precision += precision;
+				cumulated_recall += recall;
+			}
+			i++;
+		}
+
+		report.append("\n");
+		report.append("all fields\t");
+
+		// micro average over measures
+		accuracy = (double) (cumulated_tp + cumulated_tn) / (cumulated_tp + cumulated_fp + cumulated_tn + cumulated_fn);
+		if (accuracy > 1)
+			accuracy = 1.0;
+		report.append("\t").append(TextUtilities.formatTwoDecimals(accuracy * 100));
+
+		precision = (double) cumulated_tp / (cumulated_tp + cumulated_fp);
+		if (precision > 1)
+			precision = 1.0;
+		report.append("\t\t").append(TextUtilities.formatTwoDecimals(precision * 100));
+
+		recall = (double) cumulated_tp / (cumulated_tp + cumulated_fn);
+		if (recall > 1)
+			recall = 1.0;
+		report.append("\t\t").append(TextUtilities.formatTwoDecimals(recall * 100));
+
+		f0 = (2 * precision * recall) / (precision + recall);
+		report.append("\t\t").append(TextUtilities.formatTwoDecimals(f0 * 100));
+		report.append("\t(micro average)");
+		report.append("\n");
+
+		// macro average over measures
+		report.append("\t\t");
+		accuracy = cumulated_accuracy / (totalValidFields);
+		if (accuracy > 1)
+			accuracy = 1.0;
+		report.append("\t").append(TextUtilities.formatTwoDecimals(accuracy * 100));
+
+		precision = cumulated_precision / totalValidFields;
+		if (precision > 1)
+			precision = 1.0;
+		report.append("\t\t").append(TextUtilities.formatTwoDecimals(precision * 100));
+
+		recall = cumulated_recall / totalValidFields;
+		if (recall > 1)
+			recall = 1.0;
+		report.append("\t\t").append(TextUtilities.formatTwoDecimals(recall * 100));
+
+		f0 = cumulated_f0 / totalValidFields;
+		report.append("\t\t").append(TextUtilities.formatTwoDecimals(f0 * 100));
+
+		report.append("\t(macro average)");
+		report.append("\n");
 
 		return report.toString();
 	}

@@ -139,6 +139,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         int tokPtr = 0;
 		int featureLineIndex = 0;
         boolean addSpace = false;
+		boolean addLine = false;
         for (Pair<String, String> l : labeled) {
             String tok = l.a;
             String label = l.b;
@@ -153,8 +154,13 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 					theFeatures = theFeatures.substring(0, ind);
 			}
             while(tokPtr < tokenizations.size()) {
-				while (tokenizations.get(tokPtr).equals(" ")) {
-                	addSpace = true;
+				while (tokenizations.get(tokPtr).equals(" ") || 
+					   tokenizations.get(tokPtr).equals("\n") ||
+					   tokenizations.get(tokPtr).equals("\r") ) {
+					if (tokenizations.get(tokPtr).equals(" "))
+                		addSpace = true;
+					else 
+						addLine = true;
                 	tokPtr++;
 				}
 				break;
@@ -212,10 +218,11 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 						features.setLength(0);
                     }
                 }
-                if (addSpace) {
+                if (addSpace || addLine) {
                     referenceLabel.append(' ');
                     addSpace = false;
                 }
+                
                 referenceLabel.append(tok);
 				features.append(theFeatures);
 				features.append("\n");
@@ -235,6 +242,11 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                     reference.append(' ');
                     addSpace = false;
                 }
+                if (addLine) {
+                    reference.append('\n');
+                    addLine = false;
+                }
+				
                 reference.append(tok);
 				features.append(theFeatures);
 				features.append("\n");
@@ -654,6 +666,10 @@ System.out.println("");
 				if (text.equals(" ") || text.equals("\t")) {
                     nn++;
                     continue;
+				}
+				
+				if (text.trim().length() == 0) {
+					continue;
 				}
 				
 				LayoutToken token = null;

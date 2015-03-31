@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 /**
- * SAX parser for reference strings encoded in the TEI format data.
+ * SAX parser for reference strings encoded in the TEI format data for training purposes.
  * Segmentation of tokens must be identical as the one from pdf2xml files to that
  * training and online input tokens are identical.
  *

@@ -11,10 +11,11 @@ import java.util.ArrayList;
 
 /**
  * SAX parser for the NLM XML format - the PubMed XML full text format.
+ * This class covers only the header of the NLM file. 
  *
  * @author Patrice Lopez
  */
-public class NLMSaxParser extends DefaultHandler {
+public class NLMHeaderSaxHandler extends DefaultHandler {
 
     private BiblioItem biblio = null;
     private ArrayList<Person> authors = null;
@@ -24,13 +25,6 @@ public class NLMSaxParser extends DefaultHandler {
     private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
     private String media = null; // print or electronic, for ISSN 
     private String current_id = null;
-
-    public NLMSaxParser() {
-    }
-
-    public NLMSaxParser(BiblioItem b) {
-        biblio = b;
-    }
 
     public boolean journalMetadataBlock = false;
     public boolean journalIssueBlock = false;
@@ -50,6 +44,17 @@ public class NLMSaxParser extends DefaultHandler {
     public boolean authorBlock = false;
     public boolean editorBlock = false;
     public boolean firstAuthor = false;
+
+    public NLMHeaderSaxHandler() {
+    }
+
+    public NLMHeaderSaxHandler(BiblioItem b) {
+        biblio = b;
+    }
+	
+	public BiblioItem getBiblio() {
+		return biblio;
+	}
 
     public void characters(char[] ch, int start, int length) {
         accumulator.append(ch, start, length);
@@ -213,6 +218,10 @@ public class NLMSaxParser extends DefaultHandler {
 
         if (qName.equals("article")) {
             int length = atts.getLength();
+			
+			if (biblio == null) {
+				biblio = new BiblioItem();
+			}
 
             // Process each attribute
             for (int i = 0; i < length; i++) {
