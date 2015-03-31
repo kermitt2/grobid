@@ -101,4 +101,10 @@ public class BibDataSet {
 			return "";
 	}
     
+	public String toTEI(int p) {
+		if (resBib != null)
+			return resBib.toTEI(p);
+		else 
+			return "";
+	}
 }

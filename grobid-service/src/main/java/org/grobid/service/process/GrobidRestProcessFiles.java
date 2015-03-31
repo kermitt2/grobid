@@ -535,13 +535,13 @@ public class GrobidRestProcessFiles {
                 result.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
                         "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
                         "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
-                //result.append("\t<teiHeader/>\n\t<text/>\n\t<front/>\n\t<body/>\n\t<back>\n\t\t<listBibl>\n");
 				result.append("\t<teiHeader/>\n\t<text>\n\t\t<front/>\n\t\t<body/>\n\t\t<back>\n\t\t\t<listBibl>\n");
-                for (BibDataSet res : results) {
-                    result.append(res.toTEI());
+                int p = 0;
+				for (BibDataSet res : results) {
+                    result.append(res.toTEI(p));
                     result.append("\n");
+					p++;
                 }
-                //result.append("\t\t</listBibl>\n\t</back>\n</TEI>\n");
 				result.append("\t\t\t</listBibl>\n\t\t</back>\n\t</text>\n</TEI>\n");
 				
                 retVal = result.toString();
