@@ -17,5 +17,5 @@ public class FieldSpecification {
 	public List<String> cerminePath = new ArrayList<String>();
 	
 	public boolean isTextual = false;
-	public boolean hasMultipleValue = false;
+//	public boolean hasMultipleValue = false;
 }

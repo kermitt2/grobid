@@ -112,7 +112,7 @@ public class PubMedCentralEvaluation {
 		FieldSpecification authorField = new FieldSpecification();
 		authorField.fieldName = "authors";
 		authorField.isTextual = true;
-		authorField.hasMultipleValue = true;
+		//authorField.hasMultipleValue = true;
 		/*authorField.grobidPath.
 			add("//sourceDesc/biblStruct/analytic/author/persName/forename[@type=\"first\"]");
 		authorField.grobidPath.
@@ -127,28 +127,47 @@ public class PubMedCentralEvaluation {
 		headerFields.add(authorField);
 		headerLabels.add("authors");
 
+		// authors
+		FieldSpecification firstAuthorField = new FieldSpecification();
+		firstAuthorField.fieldName = "first_author";
+		firstAuthorField.isTextual = true;
+		/*firstAuthorField.grobidPath
+			.add("//sourceDesc/biblStruct/analytic/author/persName/forename[@type=\"first\"]");
+		firstAuthorField.grobidPath
+			.add("//sourceDesc/biblStruct/analytic/author/persName/forename[@type=\"middle\"]");*/
+		firstAuthorField.grobidPath
+			.add("//sourceDesc/biblStruct/analytic/author[1]/persName/surname/text()");
+		//firstAuthorField.nlmPath
+		//	.add("/article/front/article-meta/contrib-group/contrib[@contrib-type=\"author\"]/name/given-names");
+		firstAuthorField.nlmPath
+			.add("/article/front/article-meta/contrib-group/contrib[@contrib-type=\"author\"][1]/name/surname/text()");	
+		firstAuthorField.pdfxPath
+			.add("/pdfx/article/front/contrib-group/contrib[@contrib-type=\"author\"][1]/name/text()");
+		headerFields.add(firstAuthorField);
+		headerLabels.add("first_author");
+
 		// affiliation
 		FieldSpecification affiliationField = new FieldSpecification();
 		affiliationField.fieldName = "affiliations";
 		affiliationField.isTextual = true;
-		affiliationField.hasMultipleValue = true;
+		//affiliationField.hasMultipleValue = true;
 		affiliationField.grobidPath.
 			add("//sourceDesc/biblStruct/analytic/author/affiliation/orgName/text()");
 		affiliationField.nlmPath.
 			add("/article/front/article-meta/contrib-group/aff/text()");
 		affiliationField.pdfxPath.add("/pdfx/article/front/contrib-group");
-		headerFields.add(affiliationField);
-		headerLabels.add("affiliations");
+		//headerFields.add(affiliationField);
+		//headerLabels.add("affiliations");
 		
 		// date
 		FieldSpecification dateField = new FieldSpecification();
 		dateField.fieldName = "date";
 		dateField.grobidPath.
-			add("//publicationStmt/date/@when");
+			add("//publicationStmt/date[1]/@when");
 		dateField.nlmPath.
-			add("/article/front/article-meta/pub-date[@pub-type=\"pmc-release\"]//text()");
-		headerFields.add(dateField);
-		headerLabels.add("date");
+			add("/article/front/article-meta/pub-date[@pub-type=\"pmc-release\"][1]//text()");
+		//headerFields.add(dateField);
+		//headerLabels.add("date");
 
 		// abstract
 		FieldSpecification abstractField = new FieldSpecification();
@@ -180,7 +199,7 @@ public class PubMedCentralEvaluation {
 		baseCitation.grobidPath.
 			add("//back/div/listBibl/biblStruct");
 		baseCitation.nlmPath.
-			add("//ref-list/ref");
+			add("//ref-list/ref"); // note: sometimes we just have the raw citation bellow this!
 		baseCitation.pdfxPath.
 			add("//ref-list/ref"); // note: there is nothing beyond that in pdfx xml results!
 		citationsFields.add(baseCitation);
@@ -201,13 +220,23 @@ public class PubMedCentralEvaluation {
 		FieldSpecification authorField2 = new FieldSpecification();
 		authorField2.fieldName = "authors";
 		authorField2.isTextual = true;
-		authorField2.hasMultipleValue = true;
 		authorField2.grobidPath.
 			add("analytic/author/persName/surname/text()");
 		authorField2.nlmPath.
-			add("*/person-group/name/surname/text()");
+			add("*//name/surname/text()");
 		citationsFields.add(authorField2);
 		citationsLabels.add("author");
+		
+		// authors
+		FieldSpecification firstAuthorField2 = new FieldSpecification();
+		firstAuthorField2.fieldName = "first_author";
+		firstAuthorField2.isTextual = true;
+		firstAuthorField2.grobidPath.
+			add("analytic/author[1]/persName/surname/text()");
+		firstAuthorField2.nlmPath.
+			add("*//name[1]/surname/text()");
+		citationsFields.add(firstAuthorField2);
+		citationsLabels.add("first_author");
 		
 		// date
 		FieldSpecification dateField2 = new FieldSpecification();
@@ -219,7 +248,7 @@ public class PubMedCentralEvaluation {
 		citationsFields.add(dateField2);
 		citationsLabels.add("date");
 		
-		// date
+		// monograph title
 		FieldSpecification inTitleField2 = new FieldSpecification();
 		inTitleField2.fieldName = "inTitle";
 		inTitleField2.grobidPath.
@@ -302,7 +331,7 @@ public class PubMedCentralEvaluation {
 		report.append(evaluationRun(this.GROBID, this.HEADER));
 		
 		report.append("\n======= Citation metadata ======= \n");
-		//report.append(evaluationRun(this.GROBID, this.CITATION));
+		report.append(evaluationRun(this.GROBID, this.CITATION));
 		
 		report.append("\n======= Fulltext structures ======= \n");
 		//report.append(evaluationRun(this.GROBID, this.FULLTEXT));
@@ -414,7 +443,10 @@ public class PubMedCentralEvaluation {
 		
 		int totalExpectedInstances = 0;
 		int totalObservedInstances = 0;
-		int totalCorrectInstances = 0;
+		int totalCorrectInstancesStrict = 0;
+		int totalCorrectInstancesSoft = 0;
+		int totalCorrectInstancesLevenshtein = 0;
+		int totalCorrectInstancesRatcliffObershelp = 0;
 		
 		if (sectionType == this.HEADER) {
 			fields = headerFields;
@@ -549,7 +581,7 @@ public class PubMedCentralEvaluation {
 					mappings.put("tei", "http://www.tei-c.org/ns/1.0");
 				  	xp.setNamespaceContext(new NamespaceContextMap(mappings));
 					
-					if (sectionType == this.CITATION) {						
+					if (sectionType == this.CITATION) {
 						// we start by identifying each expected citation
 						// the first FieldSpecification object for the citation is the base path for
 						// each citation structure in the corresponding XML
@@ -559,17 +591,23 @@ public class PubMedCentralEvaluation {
 							evaluate(nlm.getDocumentElement(), XPathConstants.NODESET);
 						int nbCitationsNLM = nodeList.getLength();
 						totalExpectedInstances += nbCitationsNLM;
-						System.out.println("found " + nbCitationsNLM + " citations in reference NLM file.");
+//System.out.println("found " + nbCitationsNLM + " citations in reference NLM file.");
 						List<Map<String,List<String>>> nlmCitations = 
 							new ArrayList<Map<String,List<String>>>();
 						// "signature" of the citations for this file
 						List<String> nlmCitationSignatures = new ArrayList<String>();
 						for (int i = 0; i < nodeList.getLength(); i++) {
+							// sometimes we just have the raw citation bellow this, so we have to further
+							// test if we have something structured 							
 							Map<String,List<String>> fieldsValues = new HashMap<String,List<String>>();
 							Node node = nodeList.item(i);
 							int p = 0;
 							for(FieldSpecification field : fields) {
 								String fieldName = field.fieldName;
+								if (fieldName.equals("base")) {
+									//p++;
+									continue;
+								}
 								for(String subpath : field.nlmPath) {
 									NodeList nodeList2 = (NodeList) xp.compile(subpath).
 										evaluate(node, XPathConstants.NODESET);
@@ -597,10 +635,8 @@ public class PubMedCentralEvaluation {
 										counterExpectedRatcliffObershelp.set(p, count+1);
 									}
 								}
-								
 								p++;
 							}
-							nlmCitations.add(fieldsValues);
 							
 							// signature for this citation
 							String nlmTitle = "";
@@ -635,20 +671,28 @@ public class PubMedCentralEvaluation {
 							nlmAuthor = basicNormalization(nlmAuthor);
 							String nlmAuthorSoft = removeFullPunct(nlmAuthor);
 							
-							String signature = nlmAuthor;
+							String signature = nlmAuthorSoft;
 							if (nlmTitleSoft.length()>0)
 								signature += nlmTitleSoft;
 							else
 								signature += nlmInTitleSoft;
-							nlmCitationSignatures.add(signature);
+							
+							signature = signature.replaceAll("[^\\x00-\\x7F]", "");
+							
+							if (signature.trim().length() > 0) {
+								nlmCitationSignatures.add(signature);
+								nlmCitations.add(fieldsValues);
+							}
 						}
-						
+//for(String sign : nlmCitationSignatures)
+//	System.out.println("nlm:\t" + sign);						
 						// get the Grobid citations
 						path = base.grobidPath.get(0);
 						nodeList = (NodeList) xp.compile(path).
 							evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
 						int nbCitationsGrobid = nodeList.getLength();
-						System.out.println("found " + nbCitationsGrobid + " citations in Grobid TEI file.");
+//System.out.println("found " + nbCitationsGrobid + " citations in Grobid TEI file.");
+						totalObservedInstances += nbCitationsGrobid;
 						List<Map<String,List<String>>> grobidCitations = 
 							new ArrayList<Map<String,List<String>>>();
 						for (int i = 0; i < nodeList.getLength(); i++) {
@@ -657,6 +701,10 @@ public class PubMedCentralEvaluation {
 							int p = 0;
 							for(FieldSpecification field : fields) {
 								String fieldName = field.fieldName;
+								if (fieldName.equals("base")) {
+									//p++;
+									continue;
+								}
 								for(String subpath : field.grobidPath) {
 									NodeList nodeList2 = (NodeList) xp.compile(subpath).
 										evaluate(node, XPathConstants.NODESET);
@@ -712,31 +760,43 @@ public class PubMedCentralEvaluation {
 								grobidSignature += grobidTitleSoft;
 							else
 								grobidSignature += grobidInTitleSoft;
-
+							
+							grobidSignature = grobidSignature.replaceAll("[^\\x00-\\x7F]", "");
+							
+//System.out.println("grobid:\t" + grobidSignature);
 							// try to match an expected citation with the signature
 							if (nlmCitationSignatures.contains(grobidSignature)) {
+//System.out.println("match!\t" + grobidSignature);								
 								// we have a citation-level match and we can evaluate the fields
 								int indexNLM = nlmCitationSignatures.indexOf(grobidSignature);
 								if (indexNLM == -1)
 									continue;
+								boolean allGoodStrict = true;
+								boolean allGoodSoft = true;
+								boolean allGoodLevenshtein = true;
+								boolean allGoodRatcliffObershelp = true;
 								Map<String,List<String>> nlmCitation = nlmCitations.get(indexNLM);
+								nlmCitationSignatures.remove(indexNLM);
+								nlmCitations.remove(indexNLM);
 								int p = 0;
 								for(FieldSpecification field : fields) {
 									String label = field.fieldName;
 									if (label.equals("base")) {
-										p++;
+										//p++;
 										continue;
 									}
 									
 									List<String> grobidResults = grobidCitation.get(label);
-									if (grobidResults == null) {
-										p++;
-										continue;
-									}
+									//if (grobidResults == null) {
+									//	p++;
+									//	continue;
+									//}
 									
 									String grobidResult = "";
-									for(String res : grobidResults) {
-										grobidResult += " " + res;
+									if (grobidResults != null) {
+										for(String res : grobidResults) {
+											grobidResult += " " + res;
+										}
 									}
 									grobidResult = basicNormalization(grobidResult);
 									
@@ -755,13 +815,15 @@ public class PubMedCentralEvaluation {
 										counterObservedStrict.set(p, count+1);
 									}
 									else {
-										if (grobidResult.length() > 0) {
+										if ( (grobidResult.length() > 0) ) {
 											Integer count = counterFalsePositiveStrict.get(p);
 											counterFalsePositiveStrict.set(p, count+1);
+											allGoodStrict = false;
 										}
 										else if (nlmResult.length()>0) {
 											Integer count = counterFalseNegativeStrict.get(p);
 											counterFalseNegativeStrict.set(p, count+1);
+											allGoodStrict = false;
 										}
 									}
 									
@@ -772,18 +834,20 @@ public class PubMedCentralEvaluation {
 										nlmResultSoft = removeFullPunct(nlmResult);
 										grobidResultSoft = removeFullPunct(grobidResult);
 									}
-									if (nlmResultSoft.trim().equals(grobidResultSoft.trim())) {
+									if (nlmResultSoft.equals(grobidResultSoft)) {
 										Integer count = counterObservedSoft.get(p);
 										counterObservedSoft.set(p, count+1);
 									}
 									else {
-										if (grobidResultSoft.trim().length() > 0) {
+										if (grobidResultSoft.length() > 0) {
 											Integer count = counterFalsePositiveSoft.get(p);
 											counterFalsePositiveSoft.set(p, count+1);
+											allGoodSoft = false;
 										}
-										else {
+										else if (nlmResultSoft.length() > 0) {
 											Integer count = counterFalseNegativeSoft.get(p);
 											counterFalseNegativeSoft.set(p, count+1);
+											allGoodSoft = false;
 										}
 									}
 									
@@ -807,10 +871,12 @@ public class PubMedCentralEvaluation {
 										if (grobidResultSoft.length() > 0) {
 											Integer count = counterFalsePositiveLevenshtein.get(p);
 											counterFalsePositiveLevenshtein.set(p, count+1);
+											allGoodLevenshtein = false;
 										}
-										else {
+										else if (nlmResultSoft.length() > 0) {
 											Integer count = counterFalseNegativeLevenshtein.get(p);
 											counterFalseNegativeLevenshtein.set(p, count+1);
+											allGoodLevenshtein = false;
 										}
 									}
 						
@@ -834,25 +900,70 @@ public class PubMedCentralEvaluation {
 										if (grobidResultSoft.length() > 0) {
 											Integer count = counterFalsePositiveRatcliffObershelp.get(p);
 											counterFalsePositiveRatcliffObershelp.set(p, count+1);
+											allGoodRatcliffObershelp = false;
 										}
-										else {
+										else if (nlmResultSoft.length() > 0) {
 											Integer count = counterFalseNegativeRatcliffObershelp.get(p);
 											counterFalseNegativeRatcliffObershelp.set(p, count+1);
+											allGoodRatcliffObershelp = false;
 										}
 									}
 									
 									p++;
 								}
+								if (allGoodStrict) {
+									totalCorrectInstancesStrict++;
+								}
+								if (allGoodStrict) {
+									totalCorrectInstancesSoft++;
+								}
+								if (allGoodLevenshtein) {
+									totalCorrectInstancesLevenshtein++;
+								}
+								if (allGoodRatcliffObershelp) {
+									totalCorrectInstancesRatcliffObershelp++;
+								}
 							}
 							else {
-								// false positive
-								
+								// we have a Grobid extracted citation, but no matching with 
+								// expected ones -> false positive for all the present fields
+								int p = 0;
+								for(FieldSpecification field : fields) {
+									String label = field.fieldName;
+									if (label.equals("base")) {
+										//p++;
+										continue;
+									}
+									
+									List<String> grobidResults = grobidCitation.get(label);
+									if (grobidResults == null) {
+										p++;
+										continue;
+									}
+									
+									Integer count = counterFalsePositiveStrict.get(p);
+									counterFalsePositiveStrict.set(p, count+1);
+									
+									count = counterFalsePositiveSoft.get(p);
+									counterFalsePositiveSoft.set(p, count+1);
+									
+									count = counterFalsePositiveLevenshtein.get(p);
+									counterFalsePositiveLevenshtein.set(p, count+1);
+									
+									count = counterFalsePositiveRatcliffObershelp.get(p);
+									counterFalsePositiveRatcliffObershelp.set(p, count+1);
+									p++;
+								}
 							}
 						}
-					}	
+					}
 					else {
 						// for non-citation structures, i.e. HEADER and FULTEXT
 						int p = 0;
+						boolean allGoodStrict = true;
+						boolean allGoodSoft = true;
+						boolean allGoodLevenshtein = true;
+						boolean allGoodRatcliffObershelp = true;
 						for(FieldSpecification field : fields) {
 							String fieldName = field.fieldName;
 						
@@ -866,13 +977,14 @@ public class PubMedCentralEvaluation {
 								    grobidResults.add(nodeList.item(i).getNodeValue());
 								}
 							}						
-							if (!field.hasMultipleValue) {
+							//if (!field.hasMultipleValue) 
+							{
 								String grobidResult = "";
 								for(String res : grobidResults)
 									grobidResult += " " + res;
 								// basic normalisation
 								grobidResult = basicNormalization(grobidResult);
-								System.out.println("Grobid: " + fieldName + ":\t" + grobidResult);
+								//System.out.println("Grobid: " + fieldName + ":\t" + grobidResult);
 								grobidResults = new ArrayList<String>();
 								grobidResults.add(grobidResult);
 								nbGrobidResults = 1;
@@ -889,13 +1001,14 @@ public class PubMedCentralEvaluation {
 									nlmResults.add(nodeList.item(i).getNodeValue());
 								}
 							}
-							if (!field.hasMultipleValue) {
+							//if (!field.hasMultipleValue) 
+							{
 								String nlmResult = "";
 								for(String res : nlmResults)
 									nlmResult += " " + res;
 								// basic normalisation
 								nlmResult = basicNormalization(nlmResult);								
-								System.out.println("nlm:  " + fieldName + ":\t" + nlmResult);
+								//System.out.println("nlm:  " + fieldName + ":\t" + nlmResult);
 								nlmResults = new ArrayList<String>();
 								nlmResults.add(nlmResult);
 								nbNlmResults = 1;
@@ -907,7 +1020,7 @@ public class PubMedCentralEvaluation {
 								if (g < grobidResults.size())
 									grobidResult = grobidResults.get(g);
 								// nb expected results
-								if (nlmResult.trim().length() > 0) {
+								if (nlmResult.length() > 0) {
 									Integer count = counterExpectedStrict.get(p);
 									counterExpectedStrict.set(p, count+1);
 
@@ -922,18 +1035,20 @@ public class PubMedCentralEvaluation {
 								}
 							
 								// strict
-								if (nlmResult.trim().equals(grobidResult.trim())) {
+								if ((nlmResult.length() > 0) && nlmResult.equals(grobidResult)) {
 									Integer count = counterObservedStrict.get(p);
 									counterObservedStrict.set(p, count+1);
 								}
 								else {
-									if (grobidResult.trim().length() > 0) {
+									if (grobidResult.length() > 0) {
 										Integer count = counterFalsePositiveStrict.get(p);
 										counterFalsePositiveStrict.set(p, count+1);
+										allGoodStrict = false;
 									}
-									else {
+									else if (nlmResult.length() > 0) {
 										Integer count = counterFalseNegativeStrict.get(p);
 										counterFalseNegativeStrict.set(p, count+1);
+										allGoodStrict = false;
 									}
 								}
 						
@@ -944,24 +1059,26 @@ public class PubMedCentralEvaluation {
 									nlmResultSoft = removeFullPunct(nlmResult);
 									grobidResultSoft = removeFullPunct(grobidResult);
 								}
-								if (nlmResultSoft.trim().equals(grobidResultSoft.trim())) {
+								if ((nlmResult.length() > 0) && nlmResultSoft.equals(grobidResultSoft)) {
 									Integer count = counterObservedSoft.get(p);
 									counterObservedSoft.set(p, count+1);
 								}
 								else {
-									if (grobidResultSoft.trim().length() > 0) {
+									if (grobidResultSoft.length() > 0) {
 										Integer count = counterFalsePositiveSoft.get(p);
 										counterFalsePositiveSoft.set(p, count+1);
+										allGoodSoft = false;
 									}
-									else {
+									else if (nlmResultSoft.length() > 0){
 										Integer count = counterFalseNegativeSoft.get(p);
 										counterFalseNegativeSoft.set(p, count+1);
+										allGoodSoft = false;
 									}
 								}
 						
 								// Levenshtein
 								double pct = 0.0;
-								if (nlmResult.trim().equals(grobidResult.trim()))
+								if (nlmResult.equals(grobidResult))
 									pct = 1.0;
 								if (field.isTextual) {
 									int distance = TextUtilities.getLevenshteinDistance(nlmResult, grobidResult);
@@ -971,18 +1088,20 @@ public class PubMedCentralEvaluation {
 									int bigger = Math.max(nlmResult.length(), grobidResult.length());
 									pct = (double)(bigger - distance) / bigger;
 								}
-								if (pct >= minLevenshteinDistance) {
+								if ((nlmResult.length() > 0) && (pct >= minLevenshteinDistance)) {
 									Integer count = counterObservedLevenshtein.get(p);
 									counterObservedLevenshtein.set(p, count+1);
 								}
 								else {
-									if (grobidResultSoft.trim().length() > 0) {
+									if (grobidResultSoft.length() > 0) {
 										Integer count = counterFalsePositiveLevenshtein.get(p);
 										counterFalsePositiveLevenshtein.set(p, count+1);
+										allGoodLevenshtein = false;
 									}
-									else {
+									else if (nlmResultSoft.length() > 0){
 										Integer count = counterFalseNegativeLevenshtein.get(p);
 										counterFalseNegativeLevenshtein.set(p, count+1);
+										allGoodLevenshtein = false;
 									}
 								}
 						
@@ -998,23 +1117,38 @@ public class PubMedCentralEvaluation {
 											 similarity = (Double)similarityObject.get();
 									}
 								}
-								if (similarity >= minRatcliffObershelpSimilarity) {
+								if ((nlmResult.length() > 0) && (similarity >= minRatcliffObershelpSimilarity)) {
 									Integer count = counterObservedRatcliffObershelp.get(p);
 									counterObservedRatcliffObershelp.set(p, count+1);
 								}
 								else {
-									if (grobidResultSoft.trim().length() > 0) {
+									if (grobidResultSoft.length() > 0) {
 										Integer count = counterFalsePositiveRatcliffObershelp.get(p);
 										counterFalsePositiveRatcliffObershelp.set(p, count+1);
+										allGoodRatcliffObershelp = false;
 									}
-									else {
+									else if (nlmResultSoft.length() > 0){
 										Integer count = counterFalseNegativeRatcliffObershelp.get(p);
 										counterFalseNegativeRatcliffObershelp.set(p, count+1);
+										allGoodRatcliffObershelp = false;
 									}
 								}
 								g++;
 							}
 							p++;
+						}
+						totalExpectedInstances++;
+						if (allGoodStrict) {
+							totalCorrectInstancesStrict++;
+						}
+						if (allGoodStrict) {
+							totalCorrectInstancesSoft++;
+						}
+						if (allGoodLevenshtein) {
+							totalCorrectInstancesLevenshtein++;
+						}
+						if (allGoodRatcliffObershelp) {
+							totalCorrectInstancesRatcliffObershelp++;
 						}
 					}
 				}
@@ -1029,7 +1163,7 @@ public class PubMedCentralEvaluation {
 				e.printStackTrace();
 			}
 			nbFile++;
-			System.out.println("\n");
+			//System.out.println("\n");
 		}
 		
 		report.append("\n======= Strict Matching ======= (exact matches)\n");
@@ -1055,6 +1189,94 @@ public class PubMedCentralEvaluation {
 		report.append(EvaluationUtilities.computeMetrics(labels, counterObservedRatcliffObershelp, 
 			counterExpectedRatcliffObershelp, counterFalsePositiveRatcliffObershelp, 
 			counterFalseNegativeRatcliffObershelp));
+
+		if (sectionType == this.CITATION) {
+			report.append("\n===== Instance-level results =====\n\n");
+			report.append("Total expected instances: \t\t").append(totalExpectedInstances).append("\n");
+			report.append("Total extracted instances: \t\t").append(totalObservedInstances).append("\n");
+			report.append("Total correct instances: \t\t").append(totalCorrectInstancesStrict)
+				.append(" (strict) \n");
+			report.append("Total correct instances: \t\t").append(totalCorrectInstancesSoft)
+				.append(" (soft) \n");
+			report.append("Total correct instances: \t\t").append(totalCorrectInstancesLevenshtein)
+				.append(" (Levenshtein) \n");
+			report.append("Total correct instances: \t\t").append(totalCorrectInstancesRatcliffObershelp)
+				.append(" (RatcliffObershelp) \n");
+			
+			double precisionStrict = (double) totalCorrectInstancesStrict / (totalObservedInstances);
+			double precisionSoft = (double) totalCorrectInstancesSoft / (totalObservedInstances);
+			double precisionLevenshtein = (double) totalCorrectInstancesLevenshtein / (totalObservedInstances);
+			double precisionRatcliffObershelp = (double) totalCorrectInstancesRatcliffObershelp / 
+				(totalObservedInstances);
+			report.append("\nInstance-level precision:\t")
+				.append(TextUtilities.formatTwoDecimals(precisionStrict * 100)).append(" (strict) \n");
+			report.append("Instance-level precision:\t")
+				.append(TextUtilities.formatTwoDecimals(precisionSoft * 100)).append(" (soft) \n");
+			report.append("Instance-level precision:\t")
+				.append(TextUtilities.formatTwoDecimals(precisionLevenshtein * 100))
+				.append(" (Levenshtein) \n");
+			report.append("Instance-level precision:\t")
+				.append(TextUtilities.formatTwoDecimals(precisionRatcliffObershelp * 100))
+				.append(" (RatcliffObershelp) \n");
+			
+			double recallStrict = (double) totalCorrectInstancesStrict / (totalExpectedInstances);
+			double recallSoft = (double) totalCorrectInstancesSoft / (totalExpectedInstances);
+			double recallLevenshtein = (double) totalCorrectInstancesLevenshtein / (totalExpectedInstances);
+			double recallRatcliffObershelp = (double) totalCorrectInstancesRatcliffObershelp / 
+				(totalExpectedInstances);
+			report.append("\nInstance-level recall:\t")
+				.append(TextUtilities.formatTwoDecimals(recallStrict * 100)).append("\t(strict) \n");
+			report.append("Instance-level recall:\t")
+				.append(TextUtilities.formatTwoDecimals(recallSoft * 100)).append("\t(soft) \n");
+			report.append("Instance-level recall:\t")
+				.append(TextUtilities.formatTwoDecimals(recallLevenshtein * 100))
+				.append("\t(Levenshtein) \n");
+			report.append("Instance-level recall:\t")
+				.append(TextUtilities.formatTwoDecimals(recallRatcliffObershelp* 100))
+				.append("\t(RatcliffObershelp) \n");
+			
+			double f0Strict = (2 * precisionStrict * recallStrict) / (precisionStrict + recallStrict);
+			double f0Soft = (2 * precisionSoft * recallSoft) / (precisionSoft + recallSoft);
+			double f0Levenshtein = (2 * precisionLevenshtein * recallLevenshtein) / 
+				(precisionLevenshtein + recallLevenshtein);
+			double f0RatcliffObershelp = (2 * precisionRatcliffObershelp * recallRatcliffObershelp) / 
+				(precisionRatcliffObershelp + recallRatcliffObershelp);
+			report.append("\nInstance-level f-score:\t")
+				.append(TextUtilities.formatTwoDecimals(f0Strict * 100)).append(" (strict) \n");
+			report.append("Instance-level f-score:\t")
+				.append(TextUtilities.formatTwoDecimals(f0Soft * 100)).append(" (soft) \n");
+			report.append("Instance-level f-score:\t")
+				.append(TextUtilities.formatTwoDecimals(f0Levenshtein * 100)).append(" (Levenshtein) \n");
+			report.append("Instance-level f-score:\t")
+				.append(TextUtilities.formatTwoDecimals(f0RatcliffObershelp * 100)).append(" (RatcliffObershelp) \n");
+		}
+		else if (sectionType == this.HEADER) {
+			report.append("\n===== Instance-level results =====\n\n");
+			report.append("Total expected instances: \t").append(totalExpectedInstances).append("\n");
+			report.append("Total correct instances: \t").append(totalCorrectInstancesStrict)
+				.append(" (strict) \n");
+			report.append("Total correct instances: \t").append(totalCorrectInstancesSoft)
+				.append(" (soft) \n");
+			report.append("Total correct instances: \t").append(totalCorrectInstancesLevenshtein)
+				.append(" (Levenshtein) \n");
+			report.append("Total correct instances: \t").append(totalCorrectInstancesRatcliffObershelp)
+				.append(" (ObservedRatcliffObershelp) \n");
+			double accuracyStrict = (double) totalCorrectInstancesStrict / (totalExpectedInstances);
+			double accuracySoft = (double) totalCorrectInstancesSoft / (totalExpectedInstances);
+			double accuracyLevenshtein = (double) totalCorrectInstancesLevenshtein / (totalExpectedInstances);
+			double accuracyRatcliffObershelp = (double) totalCorrectInstancesRatcliffObershelp / 
+				(totalExpectedInstances);
+			report.append("\nInstance-level recall:\t")
+				.append(TextUtilities.formatTwoDecimals(accuracyStrict * 100)).append("\t(strict) \n");
+			report.append("Instance-level recall:\t")
+				.append(TextUtilities.formatTwoDecimals(accuracySoft * 100)).append("\t(soft) \n");
+			report.append("Instance-level recall:\t")
+				.append(TextUtilities.formatTwoDecimals(accuracyLevenshtein * 100))
+				.append("\t(Levenshtein) \n");
+			report.append("Instance-level recall:\t")
+				.append(TextUtilities.formatTwoDecimals(accuracyRatcliffObershelp * 100))
+				.append("\t(RatcliffObershelp) \n");
+		}
 
 		return report.toString();
 	}
