@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+
+						<author><surname>Foster</surname> <forename>T</forename>, <surname>Miller</surname> <forename>JD</forename>, <surname>Boye</surname> <forename>ME</forename>, <surname>Russell</surname> <forename>MW</forename></author>
+
+						<author><surname>Jyrkkiö</surname> <forename>S</forename>, <surname>Jantunen</surname> <forename>E</forename>, <surname>Keskinen</surname> <forename>L</forename> et al.</author>
+
+						<author><surname>Rohatiner</surname> <forename>AZ</forename>, <surname>Gregory</surname> <forename>WM</forename>, <surname>Peterson</surname> <forename>B</forename> et al.</author>
+
+						<author><surname>Steward</surname> <forename>WP</forename>, <surname>Crowther</surname> <forename>D</forename>, <surname>McWilliam</surname> <forename>LJ</forename> et al.</author>
+
+						<author><surname>van Oers</surname> <forename>MH</forename>, <surname>Klasa</surname> <forename>R</forename>, <surname>Marcus</surname> <forename>RE</forename> et al.</author>
+
+						<author><surname>Cartron</surname> <forename>G</forename>, <surname>Watier</surname> <forename>H</forename>, <surname>Golay</surname> <forename>J</forename>, <surname>Solal-Celigny</surname> <forename>P</forename></author>
+
+						<author><surname>Reff</surname> <forename>ME</forename>, <surname>Carner</surname> <forename>K</forename>, <surname>Chambers</surname> <forename>KS</forename> et al.</author>
+
+						<author><surname>Salles</surname> <forename>G</forename>, <surname>Mounier</surname> <forename>R</forename>, <surname>de Guibert</surname> <forename>S</forename> et al.</author>
+
+						<author><surname>Herold</surname> <forename>M</forename>, <surname>Haas</surname> <forename>A</forename>, <surname>Scrock</surname> <forename>S</forename> et al.</author>
+
+						<author><surname>Marcus</surname> <forename>R</forename>, <surname>Imrie</surname> <forename>K</forename>, <surname>Belch</surname> <forename>A</forename> et al.</author>
+
+						<author><surname>van Oers</surname> <forename>MH</forename>, <surname>Van Glabbeke</surname> <forename>M</forename>, <surname>Baila</surname> <forename>L</forename> et al.</author>
+
+						<author><surname>van Oers</surname> <forename>MJH</forename>, <surname>Van Glabbeke</surname> <forename>M</forename>, <surname>Giurgea</surname> <forename>L</forename> et al.</author>
+
+						<author><surname>Pettengell</surname> <forename>R</forename>, <surname>Donatti</surname> <forename>C</forename>, <surname>Hoskin</surname> <forename>P</forename> et al.</author>
+
+						<author><surname>Hujanen</surname> <forename>T</forename>, <surname>Kapiainen</surname> <forename>S</forename>, <surname>Tuominen</surname> <forename>U</forename>, <surname>Pekurinen</surname> <forename>M</forename></author>
+
+						<author><surname>Saarni</surname> <forename>SI</forename>, <surname>Hä rkä nen</surname> <forename>T</forename>, <surname>Sintonen</surname> <forename>H</forename> et al.</author>
+
+						<author><surname>Briggs</surname> <forename>AH</forename>, <surname>Sculpher</surname> <forename>MJ</forename>, <surname>Claxton</surname> <forename>K</forename></author>
+
+						<author><surname>Stinnett</surname> <forename>A</forename>, <surname>Mullahy</surname> <forename>J</forename></author>
+
+						<author><surname>Barton</surname> <forename>GR</forename>, <surname>Briggs</surname> <forename>AH</forename>, <surname>Fenwick</surname> <forename>EAL</forename></author>
+
+						<author><surname>Fenwick</surname> <forename>E</forename>, <surname>Claxton</surname> <forename>K</forename>, <surname>Sculpher</surname> <forename>M</forename></author>
+
+						<author><surname>Hallinen</surname> <forename>TA</forename>, <surname>Soini</surname> <forename>EJ</forename>, <surname>Eklund</surname> <forename>K</forename>, <surname>Puolakka</surname> <forename>K</forename></author>
+
+						<author><surname>Soini</surname> <forename>EJ</forename>, <surname>Garcí San André s</surname> <forename>B</forename>, <surname>Joensuu</surname> <forename>T</forename></author>
+
+						<author><surname>Purmonen</surname> <forename>T</forename>, <surname>Martikainen</surname> <forename>JA</forename>, <surname>Soini</surname> <forename>EJ</forename> et al.</author>
+
+						<author><surname>Martikainen</surname> <forename>JA</forename>, <surname>Kivioja</surname> <forename>A</forename>, <surname>Hallinen</surname> <forename>T</forename>, <surname>Vihinen</surname> <forename>P</forename></author>
+
+						<author><surname>Suaré s</surname> <forename>E</forename>, <surname>Smith</surname> <forename>JS</forename>, <surname>Bosch</surname> <forename>FX</forename> et al.</author>
+
+						<author><surname>Kellokumpu-Lehtinen</surname> <forename>P</forename>, <surname>Bergh</surname> <forename>J</forename>, <surname>Salminen</surname> <forename>E</forename> et al.</author>
+
+						<author><surname>Torvinen</surname> <forename>S</forename>, <surname>Nieminen</surname> <forename>P</forename>, <surname>Lehtinen</surname> <forename>M</forename> et al.</author>
+
+						<author><surname>Drummond</surname> <forename>M</forename>, <surname>Sculpher</surname> <forename>M</forename></author>
+
+						<author><surname>Groot</surname> <forename>MT</forename>, <surname>Lugtenburg</surname> <forename>PJ</forename>, <surname>Hornberger</surname> <forename>J</forename> et al.</author>
+
+						<author><surname>Deconinck</surname> <forename>E</forename>, <surname>Hiadi-Fargier</surname> <forename>H</forename>, <surname>Pen</surname> <forename>CL</forename>, <surname>Brice</surname> <forename>P</forename></author>
+
+						<author><surname>Kasteng</surname> <forename>F</forename>, <surname>Erlanson</surname> <forename>M</forename>, <surname>Hagberg</surname> <forename>H</forename> et al.</author>
+
+						<author><surname>Ray</surname> <forename>JA</forename>, <surname>Carr</surname> <forename>E</forename>, <surname>Lewis</surname> <forename>G</forename>, <surname>Marcus</surname> <forename>R</forename></author>
+
+						<author><surname>Witzens-Harig</surname> <forename>M</forename>, <surname>Reiz</surname> <forename>M</forename>, <surname>Heiss</surname> <forename>C</forename> et al.</author>
+
+						<author><surname>Vidal</surname> <forename>L</forename>, <surname>Gafter-Gvili</surname> <forename>L</forename>, <surname>Leipovici</surname> <forename>L</forename> et al.</author>
+
+						<author><surname>Dreyling</surname> <forename>M</forename>. </author>
+
+						<author><surname>Teperi</surname> <forename>J</forename>, <surname>Porter</surname> <forename>ME</forename>, <surname>Vuorenkoski</surname> <forename>L</forename>, <surname>Baron</surname> <forename>JF</forename></author>
+
+						<author><surname>Hä kkinen</surname> <forename>U</forename></author>
+
+						<author><surname>Hermanson</surname> <forename>T</forename>, <surname>Aro</surname> <forename>S</forename>, <surname>Bennett</surname> <forename>CL</forename></author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

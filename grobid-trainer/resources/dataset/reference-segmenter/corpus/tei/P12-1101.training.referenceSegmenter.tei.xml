@@ -1,0 +1,44 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_D_-1"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+<bibl>Thorsten Brants, Ashok C. Popat, Peng Xu, Franz J. Och, Jeffrey Dean, and Google Inc. 2007. Large lan-<lb/> guage models in machine translation. In Proceedings <lb/> of the Conference on Empirical Methods in Natural <lb/> Language Processing.<lb/> </bibl>
+<bibl>Eugene Charniak and Mark Johnson. 2005. Coarse-to-<lb/> fine n-best parsing and maxent discriminative rerank-<lb/> ing. In Proceedings of the Association for Computa-<lb/> tional Linguistics. <lb/></bibl>
+<bibl>Eugene Charniak. 2000. A maximum-entropy-inspired <lb/> parser. In Proceedings of the North American chapter <lb/> of the Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Eugene Charniak. 2001. Immediate-head parsing for <lb/> language models. In Proceedings of the Association <lb/> for Computational Linguistics.<lb/> </bibl>
+<bibl>Ciprian Chelba. 1997. A structured language model. In <lb/> Proceedings of the Association for Computational Lin-<lb/> guistics.<lb/> </bibl>
+<bibl>Stanley F. Chen and Joshua Goodman. 1998. An empir-<lb/> ical study of smoothing techniques for language mod-<lb/> eling. In Proceedings of the Association for Computa-<lb/> tional Linguistics.<lb/> </bibl>
+<bibl>Colin Cherry and Chris Quirk. 2008. Discriminative, <lb/> syntactic language modeling through latent SVMs. In <lb/> Proceedings of The Association for Machine Transla-<lb/> tion in the Americas.<lb/> </bibl>
+<bibl>David Chiang. 2005. A hierarchical phrase-based model <lb/> for statistical machine translation. In The Annual Con-<lb/> ference of the Association for Computational Linguis-<lb/> tics.<lb/> </bibl>
+<bibl>Michael Collins. 1997. Three generative, lexicalised <lb/> models for statistical parsing. In Proceedings of As-<lb/> sociation for Computational Linguistics.<lb/> </bibl>
+<bibl>Michael Collins. 1999. Head-Driven Statistical Models <lb/> for Natural Language Parsing. Ph.D. thesis, Univer-<lb/> sity of Pennsylvania. <lb/></bibl>
+<bibl>Jennifer Foster, Joachim Wagner, and Josef van Genabith. 2008. Adapting a wsj-trained parser to grammatically <lb/> noisy text. In Proceedings of the Association for Com-<lb/> putational Linguistics: Short Paper Track.<lb/></bibl>
+<bibl>Michel Galley, Jonathan Graehl, Kevin Knight, Daniel <lb/> Marcu, Steve DeNeefe, Wei Wang, and Ignacio <lb/> Thayer. 2006. Scalable inference and training of <lb/> context-rich syntactic translation models. In The An-<lb/> nual Conference of the Association for Computational <lb/> Linguistics (ACL).<lb/></bibl>
+<bibl>David Graff. 2003. English gigaword, version 3. In Lin-<lb/> guistic Data Consortium, Philadelphia, Catalog Num-<lb/> ber LDC2003T05.<lb/></bibl>
+<bibl>Keith Hall. 2004. Best-first Word-lattice Parsing: Tech-<lb/> niques for Integrated Syntactic Language Modeling. Ph.D. thesis, Brown University.<lb/></bibl>
+<bibl>Kenneth Heafield. 2011. Kenlm: Faster and smaller <lb/> language model queries. In Proceedings of the Sixth <lb/> Workshop on Statistical Machine Translation.<lb/></bibl>
+<bibl>Hieu Hoang, Alexandra Birch, Chris Callison-burch, <lb/> Richard Zens, Rwth Aachen, Alexandra Constantin, <lb/> Marcello Federico, Nicola Bertoldi, Chris Dyer, <lb/> Brooke Cowan, Wade Shen, Christine Moran, and On-<lb/> dej Bojar. 2007. Moses: Open source toolkit for sta-<lb/> tistical machine translation. In Proceedings of the As-<lb/> sociation for Computational Linguistics: Demonstra-<lb/> tion Session,.<lb/></bibl>
+<bibl>Mark Johnson. 1998. PCFG models of linguistic tree <lb/> representations. Computational Linguistics, 24.</bibl>
+<bibl>Dan Klein and Chris Manning. 2003. Accurate unlexi-<lb/> calized parsing. In Proceedings of the North American <lb/> Chapter of the Association for Computational Linguis-<lb/> tics (NAACL).<lb/> </bibl>
+<bibl>Reinhard Kneser and Hermann Ney. 1995. Improved <lb/> backing-off for m-gram language modeling. In IEEE <lb/> International Conference on Acoustics, Speech and <lb/> Signal Processing.<lb/> </bibl>
+<bibl>Philipp Koehn. 2004. Pharaoh: A beam search decoder <lb/> for phrase-based statistical machine translation mod-<lb/> els. In Proceedings of The Association for Machine <lb/> Translation in the Americas.<lb/> </bibl>
+<bibl>Zhifei Li, Chris Callison-Burch, Chris Dyer, Juri Gan-<lb/> itkevitch, Sanjeev Khudanpur, Lane Schwartz, Wren <lb/> N. G. Thornton, Jonathan Weese, and Omar F. Zaidan. <lb/> 2009. Joshua: an open source toolkit for parsing-<lb/> based machine translation. In Proceedings of the <lb/> Fourth Workshop on Statistical Machine Translation.<lb/> </bibl>
+<bibl>M. Marcus, B. Santorini, and M. Marcinkiewicz. 1993. <lb/> Building a large annotated corpus of English: The <lb/> Penn Treebank. In Computational Linguistics.<lb/> </bibl>
+<bibl>Franz J. Och, Daniel Gildea, Sanjeev Khudanpur, Anoop <lb/> Sarkar, Kenji Yamada, Alex Fraser, Shankar Kumar, <lb/> Libin Shen, David Smith, Katherine Eng, Viren Jain, <lb/> Zhen Jin, and Dragomir Radev. 2004. A Smorgas-<lb/> bord of Features for Statistical Machine Translation. <lb/> In Proceedings of the North American Association for <lb/> Computational Linguistic.<lb/></bibl>
+<bibl>Daisuke Okanohara and Jun'ichi Tsujii. 2007. A <lb/> discriminative language model with pseudo-negative <lb/> samples. In Proceedings of the Association for Com-<lb/> putational Linguistics.<lb/></bibl>
+<bibl>Adam Pauls and Dan Klein. 2011. Faster and smaller <lb/> n-gram language models. In Proceedings of the Asso-<lb/> ciation for Computational Linguistics.<lb/></bibl>
+<bibl>Slav Petrov, Leon Barrett, Romain Thibaux, and Dan <lb/> Klein. 2006. Learning accurate, compact, and inter-<lb/> pretable tree annotation. In Proceedings of COLING-<lb/> ACL 2006. <lb/></bibl> 
+<bibl>Matt Post and Daniel Gildea. 2009. Language model-<lb/> ing with tree substitution grammars. In Proceedings <lb/> of the Conference on Neural Information Processing <lb/> Systems.<lb/></bibl>
+<bibl>Matt Post. 2011. Judging grammaticality with tree sub-<lb/> stitution grammar. In Proceedings of the Association <lb/> for Computational Linguistics: Short Paper Track. <lb/></bibl> 
+<bibl>Chris Quirk, Arul Menezes, and Colin Cherry. 2005. De-<lb/> pendency treelet translation: Syntactically informed <lb/> phrasal smt. In Proceedings of the Association of <lb/> Computational Linguistics.<lb/></bibl>
+<bibl>Brian Roark. 2004. Probabilistic top-down parsing and <lb/> language modeling. Computational Linguistics. <lb/></bibl> 
+<bibl>Ming Tan, Wenli Zhou, Lei Zheng, and Shaojun Wang. <lb/> 2011. A large scale distributed syntactic, semantic <lb/> and lexical language model for machine translation. <lb/> In Proceedings of the Association for Computational <lb/> Linguistics.<lb/></bibl>
+<bibl>Ashish Vaswani, Haitao Mi, Liang Huang, and David <lb/> Chiang. 2011. Rule markov models for fast tree-to-<lb/> string translation. In Proceedings of the Association <lb/> for Computations Linguistics.<lb/></bibl>
+<bibl>Peng Xu, Ciprian Chelba, and Fred Jelinek. 2002. A <lb/> study on richer syntactic dependencies for structured <lb/> language modeling. In Proceedings of the Association <lb/> for Computational Linguistics. Association for Com-<lb/> putational Linguistics.<lb/></bibl>
+<bibl>Ying Zhang. 2009. Structured language models for sta-<lb/> tistical machine translation. Ph.D. thesis, Johns Hop-<lb/> kins University.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -282,9 +282,9 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 
         for (LabeledReferenceResult p : res) {
             if (p.getLabel() != null) {
-                sb.append(String.format("<bibl> <label>%s</label> %s</bibl>", p.getLabel(), p.getReferenceText()));
+                sb.append(String.format("<bibl> <label>%s</label> %s</bibl>", p.getLabel(), p.getReferenceText().replace("\n","<lb/> ")));
             } else {
-                sb.append(String.format("<bibl>%s</bibl>", p.getReferenceText()));
+                sb.append(String.format("<bibl>%s</bibl>", p.getReferenceText().replace("\n","<lb/> ")));
             }
             sb.append("\n");
 			
