@@ -804,7 +804,8 @@ public class EvaluationUtilities {
 			report.append("Total expected instances: \t\t").append(totalInstance).append("\n");
 			report.append("Correct instances: \t\t").append(correctInstance).append("\n");
 			double accuracy = (double) correctInstance / (totalInstance);
-			report.append("Instance-level recall:\t").append(TextUtilities.formatTwoDecimals(accuracy * 100)).append("\n\n");
+			report.append("Instance-level recall:\t").
+				append(TextUtilities.formatTwoDecimals(accuracy * 100)).append("\n\n");
 
 		} catch (Exception e) {
 			throw new GrobidException("An exception occurred while evaluating Grobid.", e);
@@ -829,6 +830,7 @@ public class EvaluationUtilities {
 		double cumulated_accuracy = 0.0;
 		double cumulated_precision = 0.0;
 		double cumulated_recall = 0.0;
+		int cumulated_all = 0;
 		int totalValidFields = 0;
 
 		int totalFields = 0;
@@ -850,8 +852,8 @@ public class EvaluationUtilities {
 		double f0 = 0.0;
 		i = 0;
 		while (i < labels.size()) {
-			String label = labels.get(i);
-			if (label.equals("<other>")) {
+			String label = labels.get(i).trim();
+			if (label.equals("<other>") || label.equals("base") ) {
 				i++;
 				continue;
 			}
@@ -907,7 +909,7 @@ public class EvaluationUtilities {
 			cumulated_tn += tn;
 			cumulated_fn += fn;
 			if (all != 0) {
-				// cumulated_all += all;
+				cumulated_all += all;
 				cumulated_f0 += f0;
 				cumulated_accuracy += accuracy;
 				cumulated_precision += precision;
@@ -930,10 +932,11 @@ public class EvaluationUtilities {
 			precision = 1.0;
 		report.append("\t\t").append(TextUtilities.formatTwoDecimals(precision * 100));
 
-		recall = (double) cumulated_tp / (cumulated_tp + cumulated_fn);
+		//recall = ((double) cumulated_tp) / (cumulated_tp + cumulated_fn);
+		recall = ((double) cumulated_tp) / (cumulated_all);
 		if (recall > 1)
 			recall = 1.0;
-		report.append("\t\t").append(TextUtilities.formatTwoDecimals(recall * 100));
+		report.append("\t\t").append(TextUtilities.formatTwoDecimals(recall * 100)).append(" ");
 
 		f0 = (2 * precision * recall) / (precision + recall);
 		report.append("\t\t").append(TextUtilities.formatTwoDecimals(f0 * 100));
