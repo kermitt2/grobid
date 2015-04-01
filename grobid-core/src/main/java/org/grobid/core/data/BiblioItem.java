@@ -3663,5 +3663,24 @@ public class BiblioItem {
 
     }
 
+	/**
+     *  Check is the biblio item can be considered as a minimally valid bibliographical reference. 
+	 *  A certain minimal number of core metadata have to be instanciated. Otherwise, the biblio
+	 *  item can be considered as "garbage" extracted incorrectly.  
+	 */
+	public boolean rejectAsReference() {
+		boolean titleSet = true;
+		if ( (title == null) && (bookTitle == null) && (journal == null) && 
+				(ISSN == null) && (ISBN13 == null)  && (ISBN10 == null))
+			titleSet = false;
+		boolean authorSet = true;
+		if (fullAuthors == null) 
+			authorSet = false;
+		// normally properties authors and authorList are null in the current Grobid version
+		if (!titleSet && !authorSet && (url == null) && (DOI == null))
+			return true;
+		else 
+			return false;
+	}
 
 }

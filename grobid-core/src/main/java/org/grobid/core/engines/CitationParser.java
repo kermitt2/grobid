@@ -166,11 +166,13 @@ public class CitationParser extends AbstractParser {
 
         for (LabeledReferenceResult ref : references) {
             BiblioItem bib = processing(TextUtilities.dehyphenize(ref.getReferenceText()), consolidate);
-            BibDataSet bds = new BibDataSet();
-            bds.setRefSymbol(ref.getLabel());
-            bds.setResBib(bib);
-            bds.setRawBib(ref.getReferenceText());
-            results.add(bds);
+			if (!bib.rejectAsReference()) {
+	            BibDataSet bds = new BibDataSet();
+	            bds.setRefSymbol(ref.getLabel());
+	            bds.setResBib(bib);
+	            bds.setRawBib(ref.getReferenceText());
+	            results.add(bds);
+			}
         }
         return results;
     }
