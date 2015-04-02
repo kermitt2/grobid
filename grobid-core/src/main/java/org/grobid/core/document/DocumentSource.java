@@ -132,7 +132,7 @@ public class DocumentSource {
      */
     private File processPdf2XmlThreadMode(boolean tout, File pdfPath,
                                           File tmpPathXML, List<String> cmd) {
-        LOGGER.info("Executing: " + cmd.toString());
+        LOGGER.debug("Executing: " + cmd.toString());
         ProcessRunner worker = new ProcessRunner(cmd, "pdf2xml[" + pdfPath + "]", true);
 
         worker.start();
