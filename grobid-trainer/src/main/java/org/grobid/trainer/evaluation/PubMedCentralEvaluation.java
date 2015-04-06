@@ -191,6 +191,16 @@ public class PubMedCentralEvaluation {
 		headerFields.add(keywordsField);
 		headerLabels.add("keywords");
 		
+		// DOI
+		FieldSpecification doiField = new FieldSpecification();
+		doiField.fieldName = "doi";
+		doiField.grobidPath.
+			add("//sourceDesc/biblStruct/idno[@type=\"DOI\"]/text()");
+		doiField.nlmPath.
+			add("/article/front/article-meta/article-id[@pub-id-type=\"doi\"]/text()");
+		//headerFields.add(doiField);
+		//headerLabels.add("doi");
+		
 		// citations
 		
 		// the first field gives the base path for each citation structure
@@ -225,7 +235,7 @@ public class PubMedCentralEvaluation {
 		authorField2.nlmPath.
 			add("*//name/surname/text()");
 		citationsFields.add(authorField2);
-		citationsLabels.add("author");
+		citationsLabels.add("authors");
 		
 		// authors
 		FieldSpecification firstAuthorField2 = new FieldSpecification();
@@ -251,6 +261,7 @@ public class PubMedCentralEvaluation {
 		// monograph title
 		FieldSpecification inTitleField2 = new FieldSpecification();
 		inTitleField2.fieldName = "inTitle";
+		inTitleField2.isTextual = true;
 		inTitleField2.grobidPath.
 			add("monogr/title/text()");
 		inTitleField2.nlmPath.
@@ -258,7 +269,58 @@ public class PubMedCentralEvaluation {
 		citationsFields.add(inTitleField2);
 		citationsLabels.add("inTitle");
 		
+		// volume
+		FieldSpecification volumeField = new FieldSpecification();
+		volumeField.fieldName = "volume";
+		volumeField.grobidPath.
+			add("monogr/imprint/biblScope[@unit=\"volume\"]/text()");
+		volumeField.nlmPath.
+			add("*/volume/text()");
+		citationsFields.add(volumeField);
+		citationsLabels.add("volume");
+		
+		// issue
+		FieldSpecification issueField = new FieldSpecification();
+		issueField.fieldName = "issue";
+		issueField.grobidPath.
+			add("monogr/imprint/biblScope[@unit=\"issue\"]/text()");
+		issueField.nlmPath.
+			add("*/issue/text()");
+		citationsFields.add(issueField);
+		citationsLabels.add("issue");
+		
+		// first page
+		FieldSpecification pageField = new FieldSpecification();
+		pageField.fieldName = "page";
+		pageField.grobidPath.
+			add("monogr/imprint/biblScope[@unit=\"page\"]/@from");
+		pageField.nlmPath.
+			add("*/fpage/text()");
+		citationsFields.add(pageField);
+		citationsLabels.add("page");
+		
+		// publisher
+		FieldSpecification publisherField = new FieldSpecification();
+		publisherField.fieldName = "publisher";
+		publisherField.isTextual = true;
+		publisherField.grobidPath.
+			add("monogr/imprint/publisher/text()");
+		publisherField.nlmPath.
+			add("*/publisher-name/text()");
+		//citationsFields.add(publisherField);
+		//citationsLabels.add("publisher");
+		
 		// full text structures
+		FieldSpecification sectionTitleField = new FieldSpecification();
+		sectionTitleField.fieldName = "section_title";
+		sectionTitleField.isTextual = true;
+		sectionTitleField.grobidPath.
+			add("//text/body/div/head/text()");
+		sectionTitleField.nlmPath.
+			add("*/sec/title/text()");
+		fulltextFields.add(sectionTitleField);
+		fulltextLabels.add("section_title");
+		
 		//labels.add("section_title");
 		//labels.add("paragraph");
 		//labels.add("citation_marker");
@@ -320,7 +382,7 @@ public class PubMedCentralEvaluation {
 				} 
 				catch (Exception e) {
 					e.printStackTrace();
-				} 
+				}
 				n++;
 			}
 		}
@@ -475,6 +537,12 @@ public class PubMedCentralEvaluation {
 			counterExpectedRatcliffObershelp, counterObservedRatcliffObershelp, 
 			counterFalsePositiveRatcliffObershelp, counterFalseNegativeRatcliffObershelp);
 		
+		// statics about citation matching
+		int match1 = 0;
+		int match2 = 0;
+		int match3 = 0;
+		int match4 = 0;
+		
         File input = new File(pubMedCentralPath);
         // we process all tei files in the output directory
         File[] refFiles = input.listFiles(new FilenameFilter() {
@@ -594,10 +662,22 @@ public class PubMedCentralEvaluation {
 //System.out.println("found " + nbCitationsNLM + " citations in reference NLM file.");
 						List<Map<String,List<String>>> nlmCitations = 
 							new ArrayList<Map<String,List<String>>>();
+
 						// "signature" of the citations for this file
-						List<String> nlmCitationSignatures = new ArrayList<String>();
+						// level 1 signature: titre + date 
+						List<String> nlmCitationSignaturesLevel1 = new ArrayList<String>();
+						
+						// level 2 signature: all authors names + date
+						List<String> nlmCitationSignaturesLevel2 = new ArrayList<String>();
+						
+						// level 3 signature: journal + volume + page
+						List<String> nlmCitationSignaturesLevel3 = new ArrayList<String>();
+						
+						// level 4 signature:  "fuzzy titre" + date + at least one of auteurs or first page
+						List<String> nlmCitationSignaturesLevel4 = new ArrayList<String>();
+						
 						for (int i = 0; i < nodeList.getLength(); i++) {
-							// sometimes we just have the raw citation bellow this, so we have to further
+							// sometimes we just have the raw citation bellow this, so we will have to further
 							// test if we have something structured 							
 							Map<String,List<String>> fieldsValues = new HashMap<String,List<String>>();
 							Node node = nodeList.item(i);
@@ -640,7 +720,6 @@ public class PubMedCentralEvaluation {
 							
 							// signature for this citation
 							String nlmTitle = "";
-							String nlmInTitle = "";
 							List<String> nlmResults = fieldsValues.get("title");
 							if (nlmResults != null) {
 								for(String res : nlmResults) {
@@ -649,43 +728,114 @@ public class PubMedCentralEvaluation {
 							}
 							nlmTitle = basicNormalization(nlmTitle);
 							String nlmTitleSoft = removeFullPunct(nlmTitle);
-							String nlmInTitleSoft = "";
 							
-							if (nlmTitleSoft.length() == 0) {
-								// title is void, we look at the inTitle information
-								List<String> inTitleResults = fieldsValues.get("inTitle");
-								if (inTitleResults != null) {
-									for(String res : inTitleResults) {
-										nlmInTitle += " " + res;
-									}
+							// source title / inTitle information
+							String nlmInTitle = "";
+							List<String> inTitleResults = fieldsValues.get("inTitle");
+							if (inTitleResults != null) {
+								for(String res : inTitleResults) {
+									nlmInTitle += " " + res;
 								}
-								nlmInTitle = basicNormalization(nlmInTitle);
-								nlmInTitleSoft = removeFullPunct(nlmInTitle);
 							}
+							nlmInTitle = basicNormalization(nlmInTitle);
+							String nlmInTitleSoft = removeFullPunct(nlmInTitle);
 							
-							List<String> authorResults = fieldsValues.get("authors");
 							// first author last name only
+							List<String> authorResults = fieldsValues.get("first_author");
 							String nlmAuthor = "";
 							if ((authorResults != null) && (authorResults.size() > 0))
 								nlmAuthor = authorResults.get(0);
 							nlmAuthor = basicNormalization(nlmAuthor);
 							String nlmAuthorSoft = removeFullPunct(nlmAuthor);
 							
-							String signature = nlmAuthorSoft;
-							if (nlmTitleSoft.length()>0)
-								signature += nlmTitleSoft;
-							else
-								signature += nlmInTitleSoft;
+							// all authors last names
+							String nlmAuthors = "";
+							List<String> authorsResults = fieldsValues.get("authors");
+							if ((authorsResults != null) && (authorsResults.size() > 0)) {
+								for(String aut : authorsResults)
+									nlmAuthors += aut;
+							}
+							nlmAuthors = basicNormalization(nlmAuthors);
+							String nlmAuthorsSoft = removeFullPunct(nlmAuthors);
 							
-							signature = signature.replaceAll("[^\\x00-\\x7F]", "");
+							// date of publication
+							List<String> dateResults = fieldsValues.get("date");
+							String nlmDate = "";
+							if ((dateResults != null) && (dateResults.size() > 0))
+								nlmDate = dateResults.get(0);
+							nlmDate = basicNormalization(nlmDate);
 							
-							if (signature.trim().length() > 0) {
-								nlmCitationSignatures.add(signature);
+							// volume
+							List<String> volumeResults = fieldsValues.get("volume");
+							String nlmVolume = "";
+							if ((volumeResults != null) && (volumeResults.size() > 0))
+								nlmVolume = volumeResults.get(0);
+							nlmVolume = basicNormalization(nlmVolume);
+							
+							// first page
+							List<String> pageResults = fieldsValues.get("page");
+							String nlmPage = "";
+							if ((pageResults != null) && (pageResults.size() > 0))
+								nlmPage = pageResults.get(0);
+							nlmPage = basicNormalization(nlmPage);
+							
+/*
+ * We introduce 4 sequential alignment rules to match an extracted citation with an expected citation.
+ * If the first rule is not working, we test the second one, and so on until the last one.
+ * If all rules fail, the extracted citation is considered as false positive for its non-empty fields.
+ * - first rule: matching of the "soft" title (title ignoring case, punctuation ans space mismatches) and year
+ * - second rule: matching all of "soft" authors and year
+ * - third rule: matching of "soft" inTitle (title of Journal or Conference), volume and first page
+ * - forth rule: matching of first author last name and title, or inTitle if title is empty  
+ */	
+							
+							String signature1 = null;								
+							if ( (nlmTitleSoft.length()>0) && (nlmDate.length()>0) ) {
+								signature1 = nlmTitleSoft + nlmDate;
+								//signature1 = signature1.replaceAll("[^\\x00-\\x7F]", "");
+							}
+							
+							String signature2 = null;	
+							if ( (nlmAuthorsSoft.length()>0) && (nlmDate.length()>0) ) {
+								signature2 = nlmAuthorsSoft + nlmDate;
+								//signature2 = signature2.replaceAll("[^\\x00-\\x7F]", "");
+							}
+							
+							String signature3 = null;	
+							if ( (nlmInTitleSoft.length()>0) && (nlmVolume.length()>0) && (nlmPage.length()>0)) {
+								signature3 = nlmInTitleSoft + nlmVolume + nlmPage;
+								//signature3 = signature3.replaceAll("[^\\x00-\\x7F]", "");
+							}
+							
+							String signature4 = null;
+							if ( ((nlmInTitleSoft.length()>0) || (nlmTitleSoft.length()>0))
+									&& (nlmAuthorSoft.length()>0) ) {
+								if (nlmTitleSoft.length()>0)
+									signature4 = nlmAuthorSoft + nlmTitleSoft;
+								else
+									signature4 = nlmAuthorSoft + nlmInTitleSoft;
+								//signature4 = signature4.replaceAll("[^\\x00-\\x7F]", "");
+							}		
+							
+							//signature = signature.replaceAll("[^\\x00-\\x7F]", "");
+							
+							//if (signature.trim().length() > 0) 
+							{
+								nlmCitationSignaturesLevel1.add(signature1);
+								nlmCitationSignaturesLevel2.add(signature2);
+								nlmCitationSignaturesLevel3.add(signature3);
+								nlmCitationSignaturesLevel4.add(signature4);
 								nlmCitations.add(fieldsValues);
 							}
 						}
-//for(String sign : nlmCitationSignatures)
-//	System.out.println("nlm:\t" + sign);						
+/*for(String sign : nlmCitationSignaturesLevel1)
+	System.out.println("nlm 1:\t" + sign);
+for(String sign : nlmCitationSignaturesLevel2)
+	System.out.println("nlm 2:\t" + sign);
+for(String sign : nlmCitationSignaturesLevel3)
+	System.out.println("nlm 3:\t" + sign);
+for(String sign : nlmCitationSignaturesLevel4)
+	System.out.println("nlm 4:\t" + sign);*/
 						// get the Grobid citations
 						path = base.grobidPath.get(0);
 						nodeList = (NodeList) xp.compile(path).
@@ -724,7 +874,7 @@ public class PubMedCentralEvaluation {
 						
 						for(Map<String,List<String>> grobidCitation: grobidCitations) {
 							String grobidTitle = "";
-							String grobidInTitle = "";
+							
 							List<String> titleResults = grobidCitation.get("title");
 							if (titleResults != null) {
 								for(String res : titleResults) {
@@ -733,232 +883,324 @@ public class PubMedCentralEvaluation {
 							}
 							grobidTitle = basicNormalization(grobidTitle);
 							String grobidTitleSoft = removeFullPunct(grobidTitle);
-							String grobidInTitleSoft = "";
-							
-							if (grobidTitleSoft.length() == 0) {
-								// title is void, we look at the inTitle information
-								List<String> inTitleResults = grobidCitation.get("inTitle");
-								if (inTitleResults != null) {
-									for(String res : inTitleResults) {
-										grobidInTitle += " " + res;
-									}
+						
+							List<String> inTitleResults = grobidCitation.get("inTitle");
+							String grobidInTitle = "";
+							if (inTitleResults != null) {
+								for(String res : inTitleResults) {
+									grobidInTitle += " " + res;
 								}
-								grobidInTitle = basicNormalization(grobidInTitle);
-								grobidInTitleSoft = removeFullPunct(grobidInTitle);
 							}
+							grobidInTitle = basicNormalization(grobidInTitle);
+							String grobidInTitleSoft = removeFullPunct(grobidInTitle);
 							
-							List<String> authorResults = grobidCitation.get("authors");
 							// first author last name only
+							List<String> authorResults = grobidCitation.get("first_author");
 							String grobidAuthor = "";
 							if ((authorResults != null) && (authorResults.size() > 0))
 								grobidAuthor = authorResults.get(0);
 							grobidAuthor = basicNormalization(grobidAuthor);
 							String grobidAuthorSoft = removeFullPunct(grobidAuthor);
 							
-							String grobidSignature = grobidAuthorSoft;
-							if (grobidTitleSoft.length() > 0)
-								grobidSignature += grobidTitleSoft;
-							else
-								grobidSignature += grobidInTitleSoft;
-							
-							grobidSignature = grobidSignature.replaceAll("[^\\x00-\\x7F]", "");
-							
-//System.out.println("grobid:\t" + grobidSignature);
-							// try to match an expected citation with the signature
-							if (nlmCitationSignatures.contains(grobidSignature)) {
-//System.out.println("match!\t" + grobidSignature);								
-								// we have a citation-level match and we can evaluate the fields
-								int indexNLM = nlmCitationSignatures.indexOf(grobidSignature);
-								if (indexNLM == -1)
-									continue;
-								boolean allGoodStrict = true;
-								boolean allGoodSoft = true;
-								boolean allGoodLevenshtein = true;
-								boolean allGoodRatcliffObershelp = true;
-								Map<String,List<String>> nlmCitation = nlmCitations.get(indexNLM);
-								nlmCitationSignatures.remove(indexNLM);
-								nlmCitations.remove(indexNLM);
-								int p = 0;
-								for(FieldSpecification field : fields) {
-									String label = field.fieldName;
-									if (label.equals("base")) {
-										//p++;
-										continue;
-									}
-									
-									List<String> grobidResults = grobidCitation.get(label);
-									//if (grobidResults == null) {
-									//	p++;
-									//	continue;
-									//}
-									
-									String grobidResult = "";
-									if (grobidResults != null) {
-										for(String res : grobidResults) {
-											grobidResult += " " + res;
-										}
-									}
-									grobidResult = basicNormalization(grobidResult);
-									
-									List<String> nlmResults = nlmCitation.get(label);
-									String nlmResult = "";
-									if (nlmResults != null) {
-										for(String res : nlmResults) {
-											nlmResult += " " + res;
-										}
-									}
-									nlmResult = basicNormalization(nlmResult);									
-
-									// strict
-									if ((nlmResult.length()>0) && (nlmResult.equals(grobidResult))) {
-										Integer count = counterObservedStrict.get(p);
-										counterObservedStrict.set(p, count+1);
-									}
-									else {
-										if ( (grobidResult.length() > 0) ) {
-											Integer count = counterFalsePositiveStrict.get(p);
-											counterFalsePositiveStrict.set(p, count+1);
-											allGoodStrict = false;
-										}
-										else if (nlmResult.length()>0) {
-											Integer count = counterFalseNegativeStrict.get(p);
-											counterFalseNegativeStrict.set(p, count+1);
-											allGoodStrict = false;
-										}
-									}
-									
-									// soft
-									String nlmResultSoft = nlmResult;
-									String grobidResultSoft = grobidResult;
-									if (field.isTextual) {
-										nlmResultSoft = removeFullPunct(nlmResult);
-										grobidResultSoft = removeFullPunct(grobidResult);
-									}
-									if (nlmResultSoft.equals(grobidResultSoft)) {
-										Integer count = counterObservedSoft.get(p);
-										counterObservedSoft.set(p, count+1);
-									}
-									else {
-										if (grobidResultSoft.length() > 0) {
-											Integer count = counterFalsePositiveSoft.get(p);
-											counterFalsePositiveSoft.set(p, count+1);
-											allGoodSoft = false;
-										}
-										else if (nlmResultSoft.length() > 0) {
-											Integer count = counterFalseNegativeSoft.get(p);
-											counterFalseNegativeSoft.set(p, count+1);
-											allGoodSoft = false;
-										}
-									}
-									
-									// Levenshtein
-									double pct = 0.0;
-									if (nlmResult.equals(grobidResult))
-										pct = 1.0;
-									if (field.isTextual) {
-										int distance = TextUtilities.getLevenshteinDistance(nlmResult, grobidResult);
-										// Levenshtein distance is an integer value, not a percentage... however
-										// articles usually introduced it as a percentage... so we report it
-										// following the straightforward formula:
-										int bigger = Math.max(nlmResult.length(), grobidResult.length());
-										pct = (double)(bigger - distance) / bigger;
-									}
-									if (pct >= minLevenshteinDistance) {
-										Integer count = counterObservedLevenshtein.get(p);
-										counterObservedLevenshtein.set(p, count+1);
-									}
-									else {
-										if (grobidResultSoft.length() > 0) {
-											Integer count = counterFalsePositiveLevenshtein.get(p);
-											counterFalsePositiveLevenshtein.set(p, count+1);
-											allGoodLevenshtein = false;
-										}
-										else if (nlmResultSoft.length() > 0) {
-											Integer count = counterFalseNegativeLevenshtein.get(p);
-											counterFalseNegativeLevenshtein.set(p, count+1);
-											allGoodLevenshtein = false;
-										}
-									}
-						
-									// RatcliffObershelp
-									Double similarity = 0.0;
-									if (nlmResult.equals(grobidResult))
-										similarity = 1.0;
-									if (field.isTextual) {
-										if ( (nlmResult.length() > 0) && (grobidResult.length() > 0) ) {
-											Option<Object> similarityObject = 
-												RatcliffObershelpMetric.compare(nlmResult, grobidResult);
-											if ( (similarityObject != null) && (similarityObject.get() != null) )
-												 similarity = (Double)similarityObject.get();
-										}
-									}
-									if (similarity >= minRatcliffObershelpSimilarity) {
-										Integer count = counterObservedRatcliffObershelp.get(p);
-										counterObservedRatcliffObershelp.set(p, count+1);
-									}
-									else {
-										if (grobidResultSoft.length() > 0) {
-											Integer count = counterFalsePositiveRatcliffObershelp.get(p);
-											counterFalsePositiveRatcliffObershelp.set(p, count+1);
-											allGoodRatcliffObershelp = false;
-										}
-										else if (nlmResultSoft.length() > 0) {
-											Integer count = counterFalseNegativeRatcliffObershelp.get(p);
-											counterFalseNegativeRatcliffObershelp.set(p, count+1);
-											allGoodRatcliffObershelp = false;
-										}
-									}
-									
-									p++;
-								}
-								if (allGoodStrict) {
-									totalCorrectInstancesStrict++;
-								}
-								if (allGoodStrict) {
-									totalCorrectInstancesSoft++;
-								}
-								if (allGoodLevenshtein) {
-									totalCorrectInstancesLevenshtein++;
-								}
-								if (allGoodRatcliffObershelp) {
-									totalCorrectInstancesRatcliffObershelp++;
-								}
+							// all authors last names
+							String grobidAuthors = "";
+							List<String> authorsResults = grobidCitation.get("authors");
+							if ((authorsResults != null) && (authorsResults.size() > 0)) {
+								for(String aut : authorsResults)
+									grobidAuthors += aut;
 							}
-							else {
-								// we have a Grobid extracted citation, but no matching with 
-								// expected ones -> false positive for all the present fields
-								int p = 0;
-								for(FieldSpecification field : fields) {
-									String label = field.fieldName;
-									if (label.equals("base")) {
-										//p++;
-										continue;
-									}
+							grobidAuthors = basicNormalization(grobidAuthors);
+							String grobidAuthorsSoft = removeFullPunct(grobidAuthors);
+							
+							// date of publication
+							List<String> dateResults = grobidCitation.get("date");
+							String grobidDate = "";
+							if ((dateResults != null) && (dateResults.size() > 0))
+								grobidDate = dateResults.get(0);
+							grobidDate = basicNormalization(grobidDate);
+							
+							// volume
+							List<String> volumeResults = grobidCitation.get("volume");
+							String grobidVolume = "";
+							if ((volumeResults != null) && (volumeResults.size() > 0))
+								grobidVolume = volumeResults.get(0);
+							grobidVolume = basicNormalization(grobidVolume);
+							
+							// first page
+							List<String> pageResults = grobidCitation.get("page");
+							String grobidPage = "";
+							if ((pageResults != null) && (pageResults.size() > 0))
+								grobidPage = pageResults.get(0);
+							grobidPage = basicNormalization(grobidPage);
+							
+							String grobidSignature1 = null;								
+							if ( (grobidTitleSoft.length()>0) && (grobidDate.length()>0) ) {
+								grobidSignature1 = grobidTitleSoft + grobidDate;
+								//grobidSignature1 = grobidSignature1.replaceAll("[^\\x00-\\x7F]", "");
+							}
+							
+							String grobidSignature2 = null;	
+							if ( (grobidAuthorsSoft.length()>0) && (grobidDate.length()>0) ) {
+								grobidSignature2 = grobidAuthorsSoft + grobidDate;
+								//grobidSignature2 = grobidSignature2.replaceAll("[^\\x00-\\x7F]", "");
+							}
+							
+							String grobidSignature3 = null;	
+							if ( (grobidInTitleSoft.length()>0) && (grobidVolume.length()>0) 
+									&& (grobidPage.length()>0)) {
+								grobidSignature3 = grobidInTitleSoft + grobidVolume + grobidPage;
+								//grobidSignature3 = grobidSignature3.replaceAll("[^\\x00-\\x7F]", "");
+							}
+							
+							String grobidSignature4 = null;	
+							if ( ((grobidInTitleSoft.length()>0) || (grobidTitleSoft.length()>0))
+									&& (grobidAuthorSoft.length()>0) ) {
+								if (grobidTitleSoft.length()>0)
+									grobidSignature4 = grobidAuthorSoft + grobidTitleSoft;
+								else
+									grobidSignature4 = grobidAuthorSoft + grobidInTitleSoft;
+								//grobidSignature4 = grobidSignature4.replaceAll("[^\\x00-\\x7F]", "");
+							}
+
+/*System.out.println("grobid 1:\t" + grobidSignature1);
+System.out.println("grobid 2:\t" + grobidSignature2);
+System.out.println("grobid 3:\t" + grobidSignature3);
+System.out.println("grobid 4:\t" + grobidSignature4);*/
+							int indexNLM = -1;
+							// try to match an expected citation with the signature
+							if ( ((grobidSignature1 != null) && (grobidSignature1.length() > 0)) || 
+								 ((grobidSignature2 != null) && (grobidSignature2.length() > 0)) || 
+							     ((grobidSignature3 != null) && (grobidSignature3.length() > 0)) || 
+							     ((grobidSignature4 != null) && (grobidSignature4.length() > 0)))
+							{		
+								if ((grobidSignature1 != null) && 
+									 nlmCitationSignaturesLevel1.contains(grobidSignature1)) {
+//System.out.println("match 1 !\t" + grobidSignature1);								
+									// we have a citation-level match and we can evaluate the fields
+									indexNLM = nlmCitationSignaturesLevel1.indexOf(grobidSignature1);
+									match1++;
+								}
+								else if ((grobidSignature2 != null) && 
+									nlmCitationSignaturesLevel2.contains(grobidSignature2)) {
+//System.out.println("match 2 !\t" + grobidSignature2);								
+									// we have a citation-level match and we can evaluate the fields
+									indexNLM = nlmCitationSignaturesLevel2.indexOf(grobidSignature2);
+									match2++;
+								}
+								else if ((grobidSignature3 != null) && 
+									nlmCitationSignaturesLevel3.contains(grobidSignature3)) {
+//System.out.println("match 3 !\t" + grobidSignature3);								
+									// we have a citation-level match and we can evaluate the fields
+									indexNLM = nlmCitationSignaturesLevel3.indexOf(grobidSignature3);
+									match3++;
+								}	
+								else if ((grobidSignature4 != null) && 
+									nlmCitationSignaturesLevel4.contains(grobidSignature4)) {
+//System.out.println("match 4 !\t" + grobidSignature4);								
+									// we have a citation-level match and we can evaluate the fields
+									indexNLM = nlmCitationSignaturesLevel4.indexOf(grobidSignature4);
+									match4++;
+								}
+							
+								if (indexNLM != -1) {
+									// we have aligned an extracted citation with an expected ones
+									boolean allGoodStrict = true;
+									boolean allGoodSoft = true;
+									boolean allGoodLevenshtein = true;
+									boolean allGoodRatcliffObershelp = true;
+									Map<String,List<String>> nlmCitation = nlmCitations.get(indexNLM);
+									nlmCitationSignaturesLevel1.remove(indexNLM);
+									nlmCitationSignaturesLevel2.remove(indexNLM);
+									nlmCitationSignaturesLevel3.remove(indexNLM);
+									nlmCitationSignaturesLevel4.remove(indexNLM);
+									nlmCitations.remove(indexNLM);
+									int p = 0;
+									for(FieldSpecification field : fields) {
+										String label = field.fieldName;
+										if (label.equals("base")) {
+											//p++;
+											continue;
+										}
 									
-									List<String> grobidResults = grobidCitation.get(label);
-									if (grobidResults == null) {
+										List<String> grobidResults = grobidCitation.get(label);
+										//if (grobidResults == null) {
+										//	p++;
+										//	continue;
+										//}
+
+										String grobidResult = "";
+										if (grobidResults != null) {
+											for(String res : grobidResults) {
+												grobidResult += " " + res;
+											}
+										}
+										grobidResult = basicNormalization(grobidResult);
+										
+										List<String> nlmResults = nlmCitation.get(label);
+										String nlmResult = "";
+										if (nlmResults != null) {
+											for(String res : nlmResults) {
+												nlmResult += " " + res;
+											}
+										}
+										nlmResult = basicNormalization(nlmResult);									
+//System.out.println(label + ": strict grobid\t-> " + grobidResult);
+//System.out.println(label + ": strict nlm\t-> " + nlmResult);
+										// strict
+										if ((nlmResult.length()>0) && (nlmResult.equals(grobidResult))) {
+											Integer count = counterObservedStrict.get(p);
+											counterObservedStrict.set(p, count+1);
+										}
+										else {
+											if ( (grobidResult.length() > 0) ) {
+												Integer count = counterFalsePositiveStrict.get(p);
+												counterFalsePositiveStrict.set(p, count+1);
+												allGoodStrict = false;
+											}
+											else if (nlmResult.length()>0) {
+												Integer count = counterFalseNegativeStrict.get(p);
+												counterFalseNegativeStrict.set(p, count+1);
+												allGoodStrict = false;
+											}
+										}
+								
+										// soft
+										String nlmResultSoft = nlmResult;
+										String grobidResultSoft = grobidResult;
+										if (field.isTextual) {
+											nlmResultSoft = removeFullPunct(nlmResult);
+											grobidResultSoft = removeFullPunct(grobidResult);
+										}
+										if ((nlmResultSoft.length() > 0) && 
+											(nlmResultSoft.equals(grobidResultSoft)) ) {
+											Integer count = counterObservedSoft.get(p);
+											counterObservedSoft.set(p, count+1);
+										}
+										else {
+											if (grobidResultSoft.length() > 0) {
+												Integer count = counterFalsePositiveSoft.get(p);
+												counterFalsePositiveSoft.set(p, count+1);
+												allGoodSoft = false;
+											}
+											else if (nlmResultSoft.length() > 0) {
+												Integer count = counterFalseNegativeSoft.get(p);
+												counterFalseNegativeSoft.set(p, count+1);
+												allGoodSoft = false;
+											}
+										}
+//System.out.println(label + ": soft grobid\t-> " + grobidResultSoft);
+//System.out.println(label + ": soft nlm\t-> " + nlmResultSoft);										
+										// Levenshtein
+										double pct = 0.0;
+										if ((nlmResultSoft.length() > 0) && nlmResult.equals(grobidResult))
+											pct = 1.0;
+										if (field.isTextual) {
+											int distance = 
+												TextUtilities.getLevenshteinDistance(nlmResult, grobidResult);
+											// Levenshtein distance is an integer value, not a percentage... however
+											// articles usually introduced it as a percentage... so we report it
+											// following the straightforward formula:
+											int bigger = Math.max(nlmResult.length(), grobidResult.length());
+											pct = (double)(bigger - distance) / bigger;
+										}
+										if ((nlmResultSoft.length() > 0) && (pct >= minLevenshteinDistance)) {
+											Integer count = counterObservedLevenshtein.get(p);
+											counterObservedLevenshtein.set(p, count+1);
+										}
+										else {
+											if (grobidResultSoft.length() > 0) {
+												Integer count = counterFalsePositiveLevenshtein.get(p);
+												counterFalsePositiveLevenshtein.set(p, count+1);
+												allGoodLevenshtein = false;
+											}
+											else if (nlmResultSoft.length() > 0) {
+												Integer count = counterFalseNegativeLevenshtein.get(p);
+												counterFalseNegativeLevenshtein.set(p, count+1);
+												allGoodLevenshtein = false;
+											}
+										}
+						
+										// RatcliffObershelp
+										Double similarity = 0.0;
+										if ((nlmResultSoft.length() > 0) && nlmResult.equals(grobidResult))
+											similarity = 1.0;
+										if (field.isTextual) {
+											if ( (nlmResult.length() > 0) && (grobidResult.length() > 0) ) {
+												Option<Object> similarityObject = 
+													RatcliffObershelpMetric.compare(nlmResult, grobidResult);
+												if ( (similarityObject != null) && (similarityObject.get() != null) )
+													 similarity = (Double)similarityObject.get();
+											}
+										}
+										if ((nlmResultSoft.length() > 0) && 
+											(similarity >= minRatcliffObershelpSimilarity)) {
+											Integer count = counterObservedRatcliffObershelp.get(p);
+											counterObservedRatcliffObershelp.set(p, count+1);
+										}
+										else {
+											if (grobidResultSoft.length() > 0) {
+												Integer count = counterFalsePositiveRatcliffObershelp.get(p);
+												counterFalsePositiveRatcliffObershelp.set(p, count+1);
+												allGoodRatcliffObershelp = false;
+											}
+											else if (nlmResultSoft.length() > 0) {
+												Integer count = counterFalseNegativeRatcliffObershelp.get(p);
+												counterFalseNegativeRatcliffObershelp.set(p, count+1);
+												allGoodRatcliffObershelp = false;
+											}
+										}
+									
 										p++;
-										continue;
 									}
+									if (allGoodStrict) {
+										totalCorrectInstancesStrict++;
+									}
+									if (allGoodSoft) {
+										totalCorrectInstancesSoft++;
+									}
+									if (allGoodLevenshtein) {
+										totalCorrectInstancesLevenshtein++;
+									}
+									if (allGoodRatcliffObershelp) {
+										totalCorrectInstancesRatcliffObershelp++;
+									}
+								}
+								else {
+									// we have a Grobid extracted citation, but no matching with 
+									// expected ones -> false positive for all the present fields
+									int p = 0;
+									for(FieldSpecification field : fields) {
+										String label = field.fieldName;
+										if (label.equals("base")) {
+											//p++;
+											continue;
+										}
 									
-									Integer count = counterFalsePositiveStrict.get(p);
-									counterFalsePositiveStrict.set(p, count+1);
+										List<String> grobidResults = grobidCitation.get(label);
+										if ( (grobidResults == null) || (grobidResults.size() == 0) ) {
+											p++;
+											continue;
+										}
 									
-									count = counterFalsePositiveSoft.get(p);
-									counterFalsePositiveSoft.set(p, count+1);
+										Integer count = counterFalsePositiveStrict.get(p);
+										counterFalsePositiveStrict.set(p, count+1);
 									
-									count = counterFalsePositiveLevenshtein.get(p);
-									counterFalsePositiveLevenshtein.set(p, count+1);
+										count = counterFalsePositiveSoft.get(p);
+										counterFalsePositiveSoft.set(p, count+1);
 									
-									count = counterFalsePositiveRatcliffObershelp.get(p);
-									counterFalsePositiveRatcliffObershelp.set(p, count+1);
-									p++;
+										count = counterFalsePositiveLevenshtein.get(p);
+										counterFalsePositiveLevenshtein.set(p, count+1);
+									
+										count = counterFalsePositiveRatcliffObershelp.get(p);
+										counterFalsePositiveRatcliffObershelp.set(p, count+1);
+										p++;
+									}
 								}
 							}
 						}
 					}
-					else {
-						// for non-citation structures, i.e. HEADER and FULTEXT
+					else if (sectionType == this.HEADER) {
+						// HEADER structures 
 						int p = 0;
 						boolean allGoodStrict = true;
 						boolean allGoodSoft = true;
@@ -1141,7 +1383,7 @@ public class PubMedCentralEvaluation {
 						if (allGoodStrict) {
 							totalCorrectInstancesStrict++;
 						}
-						if (allGoodStrict) {
+						if (allGoodSoft) {
 							totalCorrectInstancesSoft++;
 						}
 						if (allGoodLevenshtein) {
@@ -1150,6 +1392,11 @@ public class PubMedCentralEvaluation {
 						if (allGoodRatcliffObershelp) {
 							totalCorrectInstancesRatcliffObershelp++;
 						}
+					}
+					else if (sectionType == this.FULLTEXT) {
+						// full text structures 
+						
+						
 					}
 				}
 				else if (runType == this.PDFX) {
@@ -1249,6 +1496,12 @@ public class PubMedCentralEvaluation {
 				.append(TextUtilities.formatTwoDecimals(f0Levenshtein * 100)).append(" (Levenshtein) \n");
 			report.append("Instance-level f-score:\t")
 				.append(TextUtilities.formatTwoDecimals(f0RatcliffObershelp * 100)).append(" (RatcliffObershelp) \n");
+			
+			report.append("\nMatching 1 :\t").append(match1 + "\n");
+			report.append("\nMatching 2 :\t").append(match2 + "\n");
+			report.append("\nMatching 3 :\t").append(match3 + "\n");
+			report.append("\nMatching 4 :\t").append(match4 + "\n");
+			report.append("\nTotal matches :\t").append((match1 + match2 + match3 + match4) + "\n");
 		}
 		else if (sectionType == this.HEADER) {
 			report.append("\n===== Instance-level results =====\n\n");
