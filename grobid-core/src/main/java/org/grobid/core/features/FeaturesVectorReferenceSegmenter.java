@@ -16,7 +16,7 @@ public class FeaturesVectorReferenceSegmenter {
     public String string = null; // lexical feature
     public String label = null; // label if known
     public String blockStatus = null; // one of BLOCKSTART, BLOCKIN, BLOCKEND
-    public String lineStatus = null; // one of LINESTART, LINEIN, LINEEND
+    public String lineStatus = null; // one of LINESTART, LINEINDENT, LINEIN, LINEEND
     public String fontStatus = null; // one of NEWFONT, SAMEFONT
     public String fontSize = null; // one of HIGHERFONT, SAMEFONTSIZE, LOWERFONT
     public boolean bold = false;
@@ -42,7 +42,7 @@ public class FeaturesVectorReferenceSegmenter {
     public int relativePosition = -1;
 	public int lineLength = 0;
 	public String punctuationProfile = null; // the punctuations of the current line of the token
-	
+
     // true if the token is part of a predefinied name (single or multi-token)
     public String printVector() {
         if (string == null) return null;
