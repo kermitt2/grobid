@@ -464,6 +464,10 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 									blabla.append(tok.substring(1, tok.length()));
 									previousTok.setText(previousTok.getText()
 										+ tok.substring(1, tok.length()));
+									if (tokenizations.size()>0) {
+										tokenizations.remove(tokenizations.size()-1);
+									}
+									tokenizations.add(previousTok.getText());
 								}
 
 								diaresis = (modifierClass == ModifierClass.DIAERESIS
