@@ -378,12 +378,10 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 						TextUtilities.delimiters, true);
 				boolean diaresis = false;
 				boolean accent = false;
-				//boolean keepLast = false;
 				while (st.hasMoreTokens()) {
 
 					diaresis = false;
 					accent = false;
-					//keepLast = false;
 
 					String tok = st.nextToken();
 					if (tok.length() > 0) {
@@ -432,13 +430,13 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 								String updatedChar = modifyCharacter(baseChar,
 										modifierChar);
 
-								if (updatedChar == null) {
-									// in this case, the diaresis/accent might be before the charcater 
-									// to be modified (it happens in a few pdfs)
-									//System.out.println("Removing: " + tokenizations.get(tokenizations.size() - 1));
-									//tokenizations.remove(tokenizations.size() - 1);
-								}
-								else {
+								//System.out.println("\t"+"baseChar: " + baseChar + ", modifierChar: " 
+								//	+ modifierChar +", updatedChar is " + updatedChar);
+
+								if (updatedChar != null) {
+									//System.out.println("\n");									
+									//}
+									//else {
 									tokenizations.remove(tokenizations.size() - 1);
 									if (tokenizations.size() > 0) {
 										tokenizations
@@ -458,32 +456,48 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 									previousTok.setText(previousTok.getText()
 											+ updatedChar);
 									tokenizations.add(previousTok.getText());
+									//System.out.println("add token layout: " + previousTok.getText());
+									//System.out.println("add tokenizations: " + previousTok.getText());
 								}
-								{ 
+								{
 									// PL 
 									blabla.append(tok.substring(1, tok.length()));
-									previousTok.setText(previousTok.getText()
-										+ tok.substring(1, tok.length()));
+									if (updatedChar != null) {
+										previousTok.setText(previousTok.getText()
+											+ tok.substring(1, tok.length()));
+									}
+									else {
+										// in this case, the diaresis/accent might be before the charcater 
+										// to be modified and not after as incorrectly considered first 
+										// see issue #47
+										previousTok.setText(previousTok.getText() + tok);
+									}
+									
+									//System.out.println("add token layout: " + previousTok.getText());
 									if (tokenizations.size()>0) {
+										//System.out.println("last tokenizations was: " + 
+										//	tokenizations.get(tokenizations.size()-1));
 										tokenizations.remove(tokenizations.size()-1);
 									}
 									tokenizations.add(previousTok.getText());
+									//System.out.println("replaced by tokenizations: " + previousTok.getText());
 								}
 
 								diaresis = (modifierClass == ModifierClass.DIAERESIS
 										|| modifierClass == ModifierClass.NORDIC_RING
 										|| modifierClass == ModifierClass.CZECH_CARON
-										|| modifierClass == ModifierClass.TILDE || modifierClass == ModifierClass.CEDILLA);
+										|| modifierClass == ModifierClass.TILDE 
+										|| modifierClass == ModifierClass.CEDILLA);
 
 								accent = (modifierClass == ModifierClass.ACUTE_ACCENT
-										|| modifierClass == ModifierClass.CIRCUMFLEX || modifierClass == ModifierClass.GRAVE_ACCENT);
+										|| modifierClass == ModifierClass.CIRCUMFLEX 
+										|| modifierClass == ModifierClass.GRAVE_ACCENT);
 
 								if (rightClass != ModifierClass.NOT_A_MODIFIER) {
 									tok = ""; // resetting current token as it
 												// is a single-item
 								}
 							}
-
 						}
 
 						if (tok != null) {
@@ -502,94 +516,13 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 							tok = "";
 							//keepLast = true;
 						}
-
-						/*
-						 * StringTokenizer st0 = new StringTokenizer(tok0,
-						 * TextUtilities.fullPunctuations, true);
-						 * while(st0.hasMoreTokens()) { String tok =
-						 * st0.nextToken(); tokenizations.add(tok); }
-						 * tokenizations.add(" ");
-						 */
-
-						/*
-						 * boolean punct1 = false; boolean punct2 = false;
-						 * boolean punct3 = false; String content = null; int i
-						 * = 0; for(; i<TextUtilities.punctuations.length();
-						 * i++) { if (tok.length() > 0) { if
-						 * (tok.charAt(tok.length()-1) ==
-						 * TextUtilities.punctuations.charAt(i)) { punct1 =
-						 * true; content = tok.substring(0, tok.length()-1); if
-						 * (tok.length() > 1) { int j = 0; for(;
-						 * j<TextUtilities.punctuations.length(); j++) { if
-						 * (tok.charAt(tok.length()-2) ==
-						 * TextUtilities.punctuations.charAt(j)) { punct3 =
-						 * true; content = tok.substring(0, tok.length()-2); } }
-						 * } break; } } } if (tok.length() > 0) { if (
-						 * (tok.startsWith("(")) && (tok.length() > 1) ) { if
-						 * ((punct3) && (tok.length() > 2)) content =
-						 * tok.substring(1, tok.length()-2); else if (punct1)
-						 * content = tok.substring(1, tok.length()-1); else
-						 * content = tok.substring(1, tok.length()); punct2 =
-						 * true; token.setText("("); } else if (
-						 * (tok.startsWith("[")) && (tok.length() > 1) ) { if
-						 * ((punct3) && (tok.length() > 2)) content =
-						 * tok.substring(1, tok.length()-2); else if (punct1)
-						 * content = tok.substring(1, tok.length()-1); else
-						 * content = tok.substring(1, tok.length()); punct2 =
-						 * true; token.setText("["); } else if (
-						 * (tok.startsWith("\"")) && (tok.length() > 1) ) { if
-						 * ((punct3) && (tok.length() > 2)) content =
-						 * tok.substring(1, tok.length()-2); else if (punct1)
-						 * content = tok.substring(1, tok.length()-1); else
-						 * content = tok.substring(1, tok.length()); punct2 =
-						 * true; token.setText("\""); } }
-						 */
-						if (currentRotation)
+						
+						if (currentRotation) {
+							// if the text is rotated, it appears that the font size is multiplied
+							// by 2? we should have a look at pdf2xml for this
 							currentFontSize = currentFontSize / 2;
+						}
 
-						/*
-						 * if (punct2) { if (currentFont != null)
-						 * token.setFont(currentFont.toLowerCase()); else
-						 * token.setFont("default");
-						 * token.setItalic(currentItalic);
-						 * token.setBold(currentBold);
-						 * token.setRotation(currentRotation);
-						 * token.setColorFont(colorFont); token.setX(currentX);
-						 * token.setY(currentY); token.setWidth(currentWidth);
-						 * token.setHeight(currentHeight);
-						 * token.setFontSize(currentFontSize);
-						 * block.addToken(token);
-						 * 
-						 * token = new LayoutToken(); token.setText(content); }
-						 * if (punct1) { token.setText(content); if (currentFont
-						 * != null) token.setFont(currentFont.toLowerCase());
-						 * else token.setFont("default");
-						 * token.setItalic(currentItalic);
-						 * token.setBold(currentBold);
-						 * token.setRotation(currentRotation);
-						 * token.setColorFont(colorFont); token.setX(currentX);
-						 * token.setY(currentY); token.setWidth(currentWidth);
-						 * token.setHeight(currentHeight);
-						 * token.setFontSize(currentFontSize);
-						 * block.addToken(token);
-						 * 
-						 * if (punct3) { token = new LayoutToken();
-						 * token.setText(""+tok.charAt(tok.length()-2)); if
-						 * (currentFont != null)
-						 * token.setFont(currentFont.toLowerCase()); else
-						 * token.setFont("default");
-						 * token.setItalic(currentItalic);
-						 * token.setBold(currentBold);
-						 * token.setRotation(currentRotation);
-						 * token.setColorFont(colorFont); token.setX(currentX);
-						 * token.setY(currentY); token.setWidth(currentWidth);
-						 * token.setHeight(currentHeight);
-						 * token.setFontSize(currentFontSize);
-						 * block.addToken(token); }
-						 * 
-						 * token = new LayoutToken();
-						 * token.setText(""+tok.charAt(tok.length()-1)); }
-						 */
 						if (currentFont != null)
 							token.setFont(currentFont.toLowerCase());
 						else
