@@ -676,18 +676,21 @@ System.out.println("");
 
                 LayoutToken token = null;
                 if (tokens != null) {
-                    while (tokenIndex < tokens.size()) {
-                        token = tokens.get(tokenIndex);
-                        if (text.equals(token.getText()))
+                    int i = tokenIndex;
+                    while (i < tokens.size()) {
+                        token = tokens.get(i);
+                        if (text.equals(token.getText())) {
+                            tokenIndex = i;
                             break;
-                        tokenIndex++;
+                        }
+                        i++;
                     }
                 }
 
                 if (previousNewline) {
                     newline = true;
                     previousNewline = false;
-					if (token != null) {
+					if (token != null && previousFeatures != null) {
 						double previousLineStartX = lineStartX;
                         lineStartX = token.getX();
                         double characterWidth = token.width / token.getText().length();
