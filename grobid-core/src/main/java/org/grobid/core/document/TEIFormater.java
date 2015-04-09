@@ -817,7 +817,7 @@ public class TEIFormater {
             tei.append("\t\t\t<abstract>\n");
         }
 
-		if (abstractText != null) {
+		if ( (abstractText != null) && (abstractText.length() != 0) ) {
         	/*String abstractHeader = biblio.getAbstractHeader();
             if (abstractHeader == null)
                 abstractHeader = "Abstract";
