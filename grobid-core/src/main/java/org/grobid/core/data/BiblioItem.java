@@ -1686,7 +1686,7 @@ public class BiblioItem {
                 }
             }
 			else {
-                tei.append("<title/>\n");
+                tei.append("<title></title>\n");
 			}
             boolean hasEnglishTitle = false;
             if (english_title != null) {
@@ -1826,7 +1826,7 @@ public class BiblioItem {
                     tei.append("<imprint>\n");
                 }
 				else 
-					tei.append("<imprint/>\n");
+					tei.append("<imprint></imprint>\n");
 				
                 if (publisher != null) {
                     for (int i = 0; i < indent + 3; i++) {
@@ -2124,7 +2124,7 @@ public class BiblioItem {
                     tei.append("</imprint>\n");
                 }
 				else {
-					tei.append("<imprint/>\n");
+					tei.append("<imprint></imprint>\n");
 				}
             } else {
                 // not a journal and not something in a book...
@@ -2160,7 +2160,7 @@ public class BiblioItem {
                     tei.append("<imprint>\n");
                 }
 				else {
-					tei.append("<imprint/>\n");
+					tei.append("<imprint></imprint>\n");
 				}
                 // date
                 if (normalized_publication_date != null) {
@@ -2502,7 +2502,7 @@ public class BiblioItem {
                 tei += ">" + TextUtilities.HTMLEncode(title) + "</title>\n";
             }
 			else {
-				tei += "\t\t<title/>\n";
+				tei += "\t\t<title></title>\n";
 			}
 
             // authors
