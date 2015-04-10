@@ -317,7 +317,7 @@
 			</build>
 		</profile>
 		<profile>
-		  <!-- mvn compile exec:exec -PPubMedCentralEval -->	
+		  <!-- mvn compile exec:exec -PPubMedCentralEval -Dpmc=/Users/lopez/biblio/PMC_sample_1943 -Drun=1 -->	
 		  <id>PubMedCentralEval</id>
 		  <activation><property><name>PubMedCentralEval</name></property></activation>
 		  <build>
@@ -331,12 +331,18 @@
             	<argument>-Xmx2048m</argument>
 		        <argument>-classpath</argument><classpath />
 		        <argument>org.grobid.trainer.evaluation.PubMedCentralEvaluation</argument>
-				<argument>/Users/lopez/biblio/PMC_sample_1943</argument>
+				<argument>${pmc}</argument>
+				<argument>${run}</argument>
 		      </arguments>
 		    </configuration>
 		  </plugin></plugins>
 		</build>
 		</profile>
 	</profiles>
+
+	<properties>
+	    <pmc>.</pmc>
+		<run>0</run>
+	</properties>
 
 </project>
