@@ -19,7 +19,7 @@ public class TestReferencesParser extends EngineTest {
         return GrobidConstants.TEST_RESOURCES_PATH;
     }
     
-    //@Test
+    @Test
     public void testReferences() throws Exception {
         String testPath = getTestResourcePath();
 

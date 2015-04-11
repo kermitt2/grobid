@@ -1,3 +1,4 @@
+References references R Re Ref Refe s es ces nces LINESTART INITCAP NODIGIT 0 0 1 0 0 0 0 0 NOPUNCT 9 3 BLOCKSTART no
 Aljoscha aljoscha A Al Alj Aljo a ha cha scha LINESTART INITCAP NODIGIT 0 0 0 0 0 0 0 0 NOPUNCT 2 7 BLOCKSTART 3
 Burchardt burchardt B Bu Bur Burc t dt rdt ardt LINEIN INITCAP NODIGIT 0 0 0 0 0 0 0 0 NOPUNCT 4 7 BLOCKIN 3
 , , , , , , , , , , LINEIN ALLCAP NODIGIT 1 0 0 0 0 0 0 0 COMMA 4 7 BLOCKIN 3

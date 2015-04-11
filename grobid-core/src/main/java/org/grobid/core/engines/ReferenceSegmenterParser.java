@@ -144,10 +144,9 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
             String tok = l.a;
             String label = l.b;
 			String theFeatures = null;
-			if (featureLines != null) {
+			if ((featureLines != null) && (featureLines.length > 0)) {
 				theFeatures = featureLines[featureLineIndex];
 				featureLineIndex++;
-
 				// we need to remove the final label at the end of the feature line
 				int ind = theFeatures.lastIndexOf(" ");
 				if (ind != -1)
