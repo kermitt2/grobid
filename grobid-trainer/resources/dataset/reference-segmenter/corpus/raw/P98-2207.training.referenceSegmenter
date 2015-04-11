@@ -1,3 +1,4 @@
+References references R Re Ref Refe s es ces nces LINESTART INITCAP NODIGIT 0 0 1 0 0 0 0 0 NOPUNCT 9 3 BLOCKSTART no
 Baimo baimo B Ba Bai Baim o mo imo aimo LINESTART INITCAP NODIGIT 0 0 0 0 0 0 0 0 NOPUNCT 2 10 BLOCKIN 3
 Bakis bakis B Ba Bak Baki s is kis akis LINEIN INITCAP NODIGIT 0 0 0 0 0 0 0 0 NOPUNCT 3 10 BLOCKIN 3
 , , , , , , , , , , LINEIN ALLCAP NODIGIT 1 0 0 0 0 0 0 0 COMMA 3 10 BLOCKIN 3
