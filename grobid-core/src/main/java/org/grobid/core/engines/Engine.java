@@ -686,6 +686,10 @@ public class Engine implements Closeable {
             System.out.println(refFiles.length + " files to be processed.");
 
             int n = 0;
+			if (ind == -1) {
+				// for undefined identifier (value at -1), we initialize it to 0
+				n = 1;
+			}
             // for (; n < refFiles.length; n++) {
             for (final File pdfFile : refFiles) {
                 try {

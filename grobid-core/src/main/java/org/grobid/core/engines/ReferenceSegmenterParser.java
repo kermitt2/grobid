@@ -79,51 +79,6 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 			return getExtractionResult(tokenizationsReferences, labeled, featureVector);
 		else
 			return getExtractionResult(tokenizationsReferences, labeled, null);
-
-        /*List<String> blocks = new ArrayList<String>();
-
-        //String input = referenceBlock.replace("\n", " @newline ");
-        String input = referenceBlock;
-		if ( (input == null) || (input.trim().length()== 0) )
-			return null;
-		input = input.replace("\t", " ");
-		StringTokenizer st = new StringTokenizer(input, TextUtilities.delimiters, true);
-		
-        if (st.countTokens() == 0) {
-            return null;
-        }
-
-        List<String> tokenizations = new ArrayList<String>();
-        while (st.hasMoreTokens()) {
-            final String tok = st.nextToken();
-            
-            if (tok.equals("\n")) {
-				blocks.add("@newline");
-				//tokenizations.add(" ");
-			}
-			else if (!tok.equals(" ")) {
-                blocks.add(tok + " <reference-block>");
-				tokenizations.add(tok);
-            }
-			else {
-				tokenizations.add(" ");
-			}
-        }
-        blocks.add("\n");
-        String featureVector = FeaturesVectorReferenceSegmenter.addFeaturesReferenceSegmenter(blocks);*/
-		/*String res = null;
-		try {
-        	res = label(featureVector);
-		} 
-		catch(Exception e) {
-			throw new GrobidException("CRF labeling in ReferenceSegmenter fails.", e);
-		}
-		if (res == null) {
-			return null;
-		}
-        List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
-
-        return getExtractionResult(tokenizations, labeled);*/
     }
 
     private List<LabeledReferenceResult> getExtractionResult(List<String> tokenizations, List<Pair<String, String>> labeled, String featureVectors) {
@@ -144,10 +99,9 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
             String tok = l.a;
             String label = l.b;
 			String theFeatures = null;
-			if (featureLines != null) {
+			if ((featureLines != null) && (featureLines.length > 0)) {
 				theFeatures = featureLines[featureLineIndex];
 				featureLineIndex++;
-
 				// we need to remove the final label at the end of the feature line
 				int ind = theFeatures.lastIndexOf(" ");
 				if (ind != -1)
@@ -251,6 +205,10 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 				features.append(theFeatures);
 				features.append("\n");
             }
+			else if (plainLabel.equals("<other>")) {
+				features.append(theFeatures);
+				features.append("\n");
+			}
             tokPtr++;
         }
 
@@ -268,7 +226,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
     }
 
 
-	public org.grobid.core.utilities.Pair<String,String> createTrainingData(Document doc, int id) {
+	/*public org.grobid.core.utilities.Pair<String,String> createTrainingData2(Document doc, int id) {
         List<LabeledReferenceResult> res = extract(doc, true);
         StringBuilder sb = new StringBuilder();
 		StringBuilder sbRaw = new StringBuilder();
@@ -297,45 +255,35 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                 "</tei>\n");
 
         return new Pair(sb.toString(), sbRaw.toString());
-    }
+    }*/
 
-	/*public String createTrainingData2(String input, int id) {
-		List<String> tokenizations = new ArrayList<String>();
-		input = input.replace("\t", " ");
-		StringTokenizer st = new StringTokenizer(input, TextUtilities.delimiters, true);
-
-		if (id == -1) {
-			id = 0;
+	public org.grobid.core.utilities.Pair<String,String> createTrainingData(Document doc, int id) {
+		SortedSet<DocumentPiece> referencesParts = doc.getDocumentPart(SegmentationLabel.REFERENCES);
+		Pair<String,List<String>> featSeg = getReferencesSectionFeatured(doc, referencesParts);
+		String res = null;
+		List<String> tokenizations = null;
+		if (featSeg == null) {
+			return null;
 		}
-		
-        if (st.countTokens() == 0)
-            return null;
-		List<String> blocks = new ArrayList<String>();
-        while (st.hasMoreTokens()) {
-            final String tok = st.nextToken();
-            
-            if (tok.equals("\n")) {
-				blocks.add("@newline");
-				tokenizations.add("\n");
-			}
-			else if (!tok.equals(" ")) {
-                blocks.add(tok + " <reference-block>");
-				tokenizations.add(tok);
-            }
-			else {
-				tokenizations.add(" ");
-			}
-        }
-		blocks.add("\n");
-		
-		String featureVector = FeaturesVectorReferenceSegmenter.addFeaturesReferenceSegmenter(blocks);
-        String res = label(featureVector);
-		List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
+		// if featSeg is null, it usually means that no reference segment is found in the
+		// document segmentation
+		String featureVector = featSeg.getA();
+		tokenizations = featSeg.getB();
+		try {
+			res = label(featureVector);
+		}
+		catch(Exception e) {
+			throw new GrobidException("CRF labeling in ReferenceSegmenter fails.", e);
+		}
+		if (res == null) {
+			return null;
+		}
+        List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);		
         StringBuilder sb = new StringBuilder();
 
         sb.append("<tei>\n" +
                 "    <teiHeader>\n" +
-                "        <fileDesc xml:id=\""+ id + "\"/>\n" +
+                "        <fileDesc xml:id=\"_"+ id + "\"/>\n" +
                 "    </teiHeader>\n" +
                 "    <text xml:lang=\"en\">\n" +
 				"        <listBibl>\n"); 
@@ -354,7 +302,8 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                 if (tokenizations.get(tokPtr2).equals(" ")) {
 					addSpace = true;
 				}
-				else if (tokenizations.get(tokPtr2).equals("\n")) {
+				else if (tokenizations.get(tokPtr2).equals("\n") ||
+					     tokenizations.get(tokPtr).equals("\r") ) {
 					addEOL = true;	
 				}
                 else {
@@ -363,16 +312,46 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
             }
 			tokPtr = tokPtr2;
 
-            if (tokPtr == tokenizations.size()) {
-                throw new IllegalStateException("Implementation error: Reached the end of tokenizations, but current token is " + tok);
+            if (tokPtr >= tokenizations.size()) {
+				LOGGER.error("Implementation error: Reached the end of tokenizations, but current token is " + tok);
+				// we add a space to avoid concatenated text
+				addSpace = true;
             }
+            else {
+				String tokenizationToken = tokenizations.get(tokPtr);
 
-			String tokenizationToken = tokenizations.get(tokPtr);
-
-            if (!tokenizationToken.equals(tok)) {
-                throw new IllegalStateException("Implementation error: " + tokenizationToken + " != " + tok);
-            }
-	
+				if ((tokPtr != tokenizations.size()) && !tokenizationToken.equals(tok)) {
+					// and we add a space by default to avoid concatenated text
+					addSpace = true;
+					if (!tok.startsWith(tokenizationToken)) {
+						// this is a very exceptional case due to a sequence of accent/diacresis, in this case we skip
+						// a shift in the tokenizations list and continue on the basis of the labeled token
+						// we check one ahead
+						tokPtr++;
+						tokenizationToken = tokenizations.get(tokPtr);
+						if (!tok.equals(tokenizationToken)) {
+							// we try another position forward (second hope!)
+							tokPtr++;
+							tokenizationToken = tokenizations.get(tokPtr);
+							if (!tok.equals(tokenizationToken)) {
+								// we try another position forward (last hope!)
+								tokPtr++;
+								tokenizationToken = tokenizations.get(tokPtr);
+								if (!tok.equals(tokenizationToken)) {
+									// we return to the initial position
+									tokPtr = tokPtr-3;
+									tokenizationToken = tokenizations.get(tokPtr);
+									LOGGER.error("Implementation error, tokens out of sync: " +
+										tokenizationToken + " != " + tok + ", at position " + tokPtr);
+								}
+							}
+						}
+					}
+					// note: if the above condition is true, this is an exceptional case due to a
+					// sequence of accent/diacresis and we can go on as a full string match
+	            }
+			}	
+			
 			String plainLabel = GenericTaggerUtils.getPlainLabel(label);
 			
 			boolean tagClosed = (lastTag != null) && testClosingTag(sb, label, lastTag, addSpace, addEOL);
@@ -431,9 +410,10 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         sb.append("\n        </listBibl>\n" +
                 "    </text>\n" +
                 "</tei>\n");
-        return sb.toString();
+		
+		return new Pair(sb.toString(), featureVector);
     }
-	*/
+
 
 	private boolean testClosingTag(StringBuilder buffer,
                                    String currentTag,
@@ -451,11 +431,11 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                     buffer.append(" ");
                 buffer.append("\n");
             } else if (lastTag.equals("<label>")) {
+				buffer.append("</label>");
 				if (addEOL)
                     buffer.append("<lb/>");
 				if (addSpace)
                     buffer.append(" ");
-                buffer.append("</label>");
             } else if (lastTag.equals("<reference>")) {
 				if (addEOL)
                     buffer.append("<lb/>");
