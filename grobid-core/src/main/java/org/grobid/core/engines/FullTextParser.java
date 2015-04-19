@@ -1105,7 +1105,7 @@ public class FullTextParser extends AbstractParser {
                     buffer.append(" ").append(outField).append(s2);
                 else
                     buffer.append(outField).append(s2);
-            }*/ else if (field.equals("<reference_marker>")) {
+            } else if (field.equals("<reference_marker>")) {
                 if (!lastTag0.equals("<reference>") && !lastTag0.equals("<reference_marker>")) {
                     for (int i = 0; i < nbIndent; i++) {
                         buffer.append("\t");
@@ -1116,7 +1116,7 @@ public class FullTextParser extends AbstractParser {
                     buffer.append(" ").append(outField).append(s2);
                 else
                     buffer.append(outField).append(s2);
-            } else if (lastTag0 == null) {
+            }*/ else if (lastTag0 == null) {
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
