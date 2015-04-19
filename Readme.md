@@ -1,3 +1,5 @@
+[![Build Status](https://ci.inria.fr/grobid/job/Grobid/badge/icon)](https://ci.inria.fr/grobid/job/Grobid/)
+
 ## License
 
 Grobid is distributed under [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0). 
