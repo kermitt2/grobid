@@ -243,15 +243,55 @@ public class FieldSpecification {
 		//citationsLabels.add("publisher");
 
 		// full text structures
+		FieldSpecification sectionReferenceField = new FieldSpecification();
+		sectionReferenceField.fieldName = "references";
+		sectionReferenceField.isTextual = true;
+		sectionReferenceField.grobidPath.
+			add("//back/div/listBibl/biblStruct//text()");
+		sectionReferenceField.nlmPath.
+			add("//ref-list/ref//text()");
+		fulltextFields.add(sectionReferenceField);
+		fulltextLabels.add("references");
+
 		FieldSpecification sectionTitleField = new FieldSpecification();
 		sectionTitleField.fieldName = "section_title";
 		sectionTitleField.isTextual = true;
 		sectionTitleField.grobidPath.
 			add("//text/body/div/head/text()");
 		sectionTitleField.nlmPath.
-			add("*/sec/title/text()");
+			add("//sec/title/text()");
 		fulltextFields.add(sectionTitleField);
 		fulltextLabels.add("section_title");
+
+		FieldSpecification referenceCitationField = new FieldSpecification();
+		referenceCitationField.fieldName = "reference_citation";
+		referenceCitationField.isTextual = true;
+		referenceCitationField.grobidPath.
+			add("//ref[@type=\"bibr\"]/text()");
+		referenceCitationField.nlmPath.
+			add("//xref[@ref-type=\"bibr\"]/text()");
+		fulltextFields.add(referenceCitationField);
+		fulltextLabels.add("reference_citation");
+
+		FieldSpecification referenceFigureField = new FieldSpecification();
+		referenceFigureField.fieldName = "reference_figure";
+		referenceFigureField.isTextual = true;
+		referenceFigureField.grobidPath.
+			add("//ref[@type=\"figure\"]/text()");
+		referenceFigureField.nlmPath.
+			add("//xref[@ref-type=\"fig\"]/text()");
+		fulltextFields.add(referenceFigureField);
+		fulltextLabels.add("reference_figure");
+
+		FieldSpecification referenceTableField = new FieldSpecification();
+		referenceTableField.fieldName = "reference_table";
+		referenceTableField.isTextual = true;
+		referenceTableField.grobidPath.
+			add("//ref[@type=\"table\"]/text()");
+		referenceTableField.nlmPath.
+			add("//xref[@ref-type=\"table\"]/text()");
+		fulltextFields.add(referenceTableField);
+		fulltextLabels.add("reference_table");
 
 		//labels.add("section_title");
 		//labels.add("paragraph");

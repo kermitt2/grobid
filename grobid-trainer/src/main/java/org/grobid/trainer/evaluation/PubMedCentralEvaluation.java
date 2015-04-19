@@ -47,6 +47,8 @@ public class PubMedCentralEvaluation {
 	public static final int CITATION = 1;
 	public static final int FULLTEXT = 2;
 	
+	public double fileRatio = 1.0;
+	
 	public static final double minLevenshteinDistance = 0.8;
 	public static final double minRatcliffObershelpSimilarity = 0.95;
 	
@@ -329,11 +331,13 @@ public class PubMedCentralEvaluation {
 		
         // get a factory for SAX parsers
         SAXParserFactory spf = SAXParserFactory.newInstance();
-		
+		Random rand = new Random();
 		int nbFile = 0;
         for (File dir : refFiles) {
-			if (nbFile > 100) {
-				//break;
+			// file ratio filtering
+			double random = rand.nextDouble();
+			if (random > fileRatio) {
+				continue;
 			}
 			
 			// get the NLM file in the directory
@@ -1163,7 +1167,188 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 					}
 					else if (sectionType == this.FULLTEXT) {
 						// full text structures 
+						int p = 0;
+						boolean allGoodStrict = true;
+						boolean allGoodSoft = true;
+						boolean allGoodLevenshtein = true;
+						boolean allGoodRatcliffObershelp = true;
+						for(FieldSpecification field : fields) {
+							String fieldName = field.fieldName;
 						
+							List<String> grobidResults = new ArrayList<String>();
+							int nbGrobidResults = 0;
+							for(String path : field.grobidPath) {
+								NodeList nodeList = (NodeList) xp.compile(path).
+									evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
+								nbGrobidResults = nodeList.getLength();
+								for (int i = 0; i < nodeList.getLength(); i++) {
+								    grobidResults.add(nodeList.item(i).getNodeValue());
+								}
+							}						
+
+							/*boolean first = true;
+							for(String res : grobidResults) {
+								if (!first)
+									System.out.print(", ");
+								else 
+									first = false;
+								System.out.print(res);
+							}
+							System.out.println("");*/
+							
+							List<String> nlmResults = new ArrayList<String>();
+							int nbNlmResults = 0;
+							for(String path : field.nlmPath) {
+								NodeList nodeList = (NodeList) xp.compile(path).
+									evaluate(nlm.getDocumentElement(), XPathConstants.NODESET);
+								//System.out.println(path + ": " + nodeList.getLength() + " nodes");
+								nbNlmResults = nodeList.getLength();
+								for (int i = 0; i < nodeList.getLength(); i++) {
+									nlmResults.add(nodeList.item(i).getNodeValue());
+								}
+							}
+							
+							/*first = true;
+							for(String res : nlmResults) {
+								if (!first)
+									System.out.print(", ");
+								else 
+									first = false;
+								System.out.print(res);
+							}
+							System.out.println("");*/
+							
+							// we compare the two result sets
+							
+							// prepare first the grobidResult set for soft match
+							List<String> grobidSoftResults = new ArrayList<String>();
+							for(String res : grobidResults)
+								grobidSoftResults.add(removeFullPunct(res));
+							
+							int g = 0; 
+							int grobidResultsSize = grobidResults.size();
+							int nbMatchStrict = 0; // number of matched grobid results, strict set
+							int nbMatchSoft = 0; 
+							int nbMatchLevenshtein = 0;
+							for (String nlmResult : nlmResults) {
+								// nb expected results
+								if (nlmResult.length() > 0) {
+									Integer count = counterExpectedStrict.get(p);
+									counterExpectedStrict.set(p, count+1);
+
+									count = counterExpectedSoft.get(p);
+									counterExpectedSoft.set(p, count+1);
+
+									count = counterExpectedLevenshtein.get(p);
+									counterExpectedLevenshtein.set(p, count+1);
+
+									count = counterExpectedRatcliffObershelp.get(p);
+									counterExpectedRatcliffObershelp.set(p, count+1);
+								}
+								
+								double pct = 0.0;
+								// strict
+								if ((nlmResult.length() > 0) && grobidResults.contains(nlmResult)) {
+									Integer count = counterObservedStrict.get(p);
+									counterObservedStrict.set(p, count+1);
+									nbMatchStrict++;
+									pct = 1.0;
+									grobidResults.remove(nlmResult);
+								}
+								else {
+									if (nlmResult.length() > 0) {
+										Integer count = counterFalseNegativeStrict.get(p);
+										counterFalseNegativeStrict.set(p, count+1);
+										allGoodStrict = false;
+									}
+								}
+						
+								// soft
+								String nlmResultSoft = nlmResult;
+								if (field.isTextual) {
+									nlmResultSoft = removeFullPunct(nlmResult);
+								}
+								if ((nlmResult.length() > 0) && grobidSoftResults.contains(nlmResultSoft)) {
+									Integer count = counterObservedSoft.get(p);
+									counterObservedSoft.set(p, count+1);
+									nbMatchSoft++;
+									grobidSoftResults.remove(nlmResultSoft);
+								}
+								else {
+									if (nlmResultSoft.length() > 0){
+										Integer count = counterFalseNegativeSoft.get(p);
+										counterFalseNegativeSoft.set(p, count+1);
+										allGoodSoft = false;
+									}
+								}
+						
+								// Levenshtein
+								/*if (field.isTextual) {
+									// find the closest Grobid result
+									int distance = TextUtilities.getLevenshteinDistance(nlmResult, grobidResult);
+									// Levenshtein distance is an integer value, not a percentage... however
+									// articles usually introduced it as a percentage... so we report it
+									// following the straightforward formula:
+									int bigger = Math.max(nlmResult.length(), grobidResult.length());
+									pct = (double)(bigger - distance) / bigger;
+								}
+								if ((nlmResult.length() > 0) && (pct >= minLevenshteinDistance)) {
+									Integer count = counterObservedLevenshtein.get(p);
+									counterObservedLevenshtein.set(p, count+1);
+									nbMatchLevenshtein++;
+								}
+								else {
+									if (nlmResult.length() > 0){
+										Integer count = counterFalseNegativeLevenshtein.get(p);
+										counterFalseNegativeLevenshtein.set(p, count+1);
+										allGoodLevenshtein = false;
+									}
+								}*/
+						
+								// RatcliffObershelp
+								/*Double similarity = 0.0;
+								if (nlmResult.trim().equals(grobidResult.trim()))
+									similarity = 1.0;
+								if (field.isTextual) {
+									if ( (nlmResult.length() > 0) && (grobidResult.length() > 0) ) {
+										Option<Object> similarityObject = 
+											RatcliffObershelpMetric.compare(nlmResult, grobidResult);
+										if ( (similarityObject != null) && (similarityObject.get() != null) )
+											 similarity = (Double)similarityObject.get();
+									}
+								}
+								if ((nlmResult.length() > 0) && (similarity >= minRatcliffObershelpSimilarity)) {
+									Integer count = counterObservedRatcliffObershelp.get(p);
+									counterObservedRatcliffObershelp.set(p, count+1);
+								}
+								else {
+									if (grobidResultSoft.length() > 0) {
+										Integer count = counterFalsePositiveRatcliffObershelp.get(p);
+										counterFalsePositiveRatcliffObershelp.set(p, count+1);
+										allGoodRatcliffObershelp = false;
+									}
+									else if (nlmResultSoft.length() > 0){
+										Integer count = counterFalseNegativeRatcliffObershelp.get(p);
+										counterFalseNegativeRatcliffObershelp.set(p, count+1);
+										allGoodRatcliffObershelp = false;
+									}
+								}*/
+								g++;
+							}
+							
+							if (nbMatchStrict < grobidResultsSize) {
+								Integer count = counterFalsePositiveStrict.get(p);
+								counterFalsePositiveStrict.set(p, count+(grobidResultsSize-nbMatchStrict));
+								allGoodStrict = false;
+							}
+							
+							if (nbMatchSoft < grobidResultsSize) {
+								Integer count = counterFalsePositiveSoft.get(p);
+								counterFalsePositiveSoft.set(p, count+(grobidResultsSize-nbMatchSoft));
+								allGoodSoft = false;
+							}
+							p++;
+						}
 						
 					}
 				}
@@ -1180,6 +1365,9 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 			nbFile++;
 			//System.out.println("\n");
 		}
+		
+		report.append("\nEvaluation on " + nbFile + " random PDF files out of " + 
+			(refFiles.length-2) + " PDF (ratio " + fileRatio + ").\n");
 		
 		report.append("\n======= Strict Matching ======= (exact matches)\n");
 		report.append("\n===== Field-level results =====\n");
@@ -1349,7 +1537,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
      * @param args Command line arguments.
      */
     public static void main(String[] args) {
-		if ( (args.length >2) || (args.length == 0) ) {
+		if ( (args.length >3) || (args.length == 0) ) {
 			System.err.println("usage: command [path to the PubMedCentral dataset] [0|1]");
 		}
 		boolean runGrobidVal = true;
@@ -1369,6 +1557,20 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 			System.err.println("Invalid value for last argument (run): [0|1]");
 		}
 		
+		// optional file ratio for applying the evaluation
+		double fileRatio = 1.0;
+		if (args.length > 1) {
+			String fileRatioString = args[2];
+			if ((fileRatioString != null) && (fileRatioString.length() > 0)) {
+				try {
+					fileRatio = Double.parseDouble(fileRatioString);
+				}
+				catch(Exception e) {
+					System.err.println("Invalid argument fileRatio, must be a double, e.g. 0.1");
+				}
+			}
+		}
+		
 		try {
 			File pmcPath = new File(pubMedCentralPath);
 			if (!pmcPath.exists()) {
@@ -1386,6 +1588,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 
         try {
             PubMedCentralEvaluation eval = new PubMedCentralEvaluation(pubMedCentralPath);
+			eval.fileRatio = fileRatio;
 			String report = eval.evaluationGrobid(runGrobidVal);
 			System.out.println(report);
 			eval.close();
