@@ -1,0 +1,16 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>N. S. Razavian, S Vogel, &quot;The Web as a Platform<lb/> to Build Machine Translation Resources&quot;,<lb/> IWIC2009<lb/> M. Marge, S. Banerjee and A. Rudnicky, &quot;Using<lb/> the Amazon Mechanical Turk for Transcription<lb/> of Spoken Language&quot;, IEEE-ICASSP, 2010<lb/> </bibl>
+<bibl>Voxforge, www.voxforge.org<lb/> A. Gruenstein, I. McGraw, and A. Sutherland, &quot;A<lb/> self-transcribing speech corpus: collecting con-<lb/>tinuous speech with an online educational<lb/> game,&quot; Submitted to the Speech and Language<lb/> Technology in Education (SLaTE) Workshop,<lb/> 2009.<lb/> </bibl>
+<bibl>T. Schultz, et. al, &quot;SPICE: Web-based Tools for<lb/> Rapid Language Adaptation in Speech<lb/> Processing Systems&quot;, In the Proceedings of<lb/> INTERSPEECH, Antwerp, Belgium, 2007.<lb/> </bibl>
+<bibl>J. Pontin, &quot; Artificial Intelligence, With Help From<lb/> the Humans &quot; , The New York Times, 25 March<lb/> 2007</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,29 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Anja Belz. 2002. Learning grammars for different<lb/> parsing tasks by partition search. In Proceedings of<lb/> the 19th international conference on Computational<lb/> Linguistics, pages 1–7.<lb/> </bibl>
+<bibl>Eugene Charniak. 1996. Tree-bank grammars. In<lb/> Proceedings of the Thirteenth National Conference<lb/> on Artificial Intelligence, pages 1031–1036. AAAI<lb/> Press/MIT Press.<lb/> </bibl>
+<bibl>Eugene Charniak. 2000. A maximum-entropy-<lb/>inspired parser. In Proceedings of NAACL, pages<lb/> 132–139.<lb/> </bibl>
+<bibl>Michael J. Collins. 1996. A new statistical parser<lb/> based on bigram lexical dependencies. In The Pro-<lb/>ceedings of the 34th Annual Meeting of the Associa-<lb/>tion for Computational Linguistics, pages 184–191.<lb/> </bibl>
+<bibl>Michael Collins. 1997. Three generative, lexicalised<lb/> models for statistical parsing. In The Proceedings<lb/> of the 35th Annual Meeting of the Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Michael Collins. 1999. Head-driven Statistical Mod-<lb/>els for Natural Language Parsing. Ph.D. thesis, The<lb/> University of Pennsylvania.<lb/> </bibl>
+<bibl>Trevor Hastie, Robert Tibshirani, and Jerome Fried-<lb/>man. 2003. The Elements of Statistical Learning.<lb/> Springer, New York.<lb/> </bibl>
+<bibl>James Henderson. 2003. Inducing history representa-<lb/>tions for broad coverage statistical parsing. In Pro-<lb/>ceedings of HLT-NAACL 2003, pages 25–31.<lb/> </bibl>
+<bibl>Mark Johnson. 1998. PCFG models of linguis-<lb/>tic tree representations. Computational Linguistics,<lb/> 24(4):613–632.<lb/> </bibl>
+<bibl>Tadao Kasami. 1965. An efficient recognition and syn-<lb/>tax algorithm for context-free languages. Technical<lb/> Report AF-CRL-65-758, Air Force Cambridge Re-<lb/>search Laboratory.<lb/> </bibl>
+<bibl>Dan Klein and Christopher Manning. 2003. Accu-<lb/>rate unlexicalized parsing. In Proceedings of the<lb/> 41st Annual Meeting of the Association for Compu-<lb/>tational Linguistics.<lb/> </bibl>
+<bibl>David M. Magerman. 1995. Statistical decision-tree<lb/> models for parsing. In The Proceedings of the 33rd<lb/> Annual Meeting of the Association for Computa-<lb/>tional Linguistics, pages 276–283.<lb/> </bibl>
+<bibl>Michell P. Marcus, Beatrice Santorini, and Mary Ann<lb/> Marcinkiewicz. 1993. Building a large annotated<lb/> corpus of English: The Penn Treebank. Computa-<lb/>tional Linguistics, 19(2):313–330.<lb/> </bibl>
+<bibl>Sven Martin, Jörg Liermann, and Hermann Ney. 1995.<lb/> Algorithms for bigram and trigram word cluster-<lb/>ing. In Proceedings of the European Conference<lb/> on Speech, Communication and Technology, pages<lb/> 1253–1256.<lb/> </bibl>
+<bibl>Takuya Matsuzaki, Yusuke Miyao, and Jun&apos;ichi Tsujii.<lb/> 2005. Probabilistic CFG with latent annotations. In<lb/> Proceedings of the 2005 Meeting of the Association<lb/> for Computational Linguistics.<lb/> </bibl>
+<bibl>Mehryar Mohri and Brian Roark. 2006. Effective self-<lb/>training for parsing. In Proceedings of HLT-NAACL<lb/> 2006.<lb/> </bibl>
+<bibl>Peng Xu and Fred Jelinek. 2004. Random forests<lb/> in language modeling. In Proceedings of EMNLP<lb/> 2004.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

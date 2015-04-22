@@ -1,0 +1,29 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        ~_1 It. ~a. 1 e,4(amam~-~ir~t t,~aarm4r~.l, &quot;(&quot; ~ G.N.P.I<lb/> ,re_ I !~r.&lt;_ 1 e &lt; (~.~ m ~&quot; eJc *n t ,l~u,-rmse, .1,&quot; (&quot;, G_i&apos;,/_P.<lb/> &apos;:**<lb/> ~&quot;e. 1 !r..c c~. 1 *,&apos;.(tea suree eat, pu¢&apos;pOSe, ,~, &quot;( &quot;, G.V_P.<lb/> p&quot; e_ I le.~. I e x (.~ sur ~4n ,. purpose, .I. @BULLET ( @BULLET, G./~I..P.<lb/> G. N. V(a.ea sur ~0r.41 ~ t ,~1 |. ¢cmdtaC t, 1)<lb/> G. N.~&apos;( mea sur ~ll~.en t ,nl 1 ,COrrtlpO~, 1)<lb/> i G. N. V(m, vsur~n~er.t, ~t * I ~,*~blv, | )<lb/> <label>G.</label>N.V(m.vsstm&apos;t4.~r.t,n~ I, :.w.Hve, 1 )<lb/> G.N.V(mesc.urcm~nt,~l~ :, pot ~Qrm~ 1)<lb/> G_N.VOu~:rar~er.t, nl : ~ r~-ov iml ~ | }<lb/> ~.N_~&apos;(maa~u~&apos;#mqnt,nl I ,relate, 1)<lb/> G,N.~.&apos;(me~sure~r.ent ,nl 1 ~r esp©nle.~., 1)<lb/> <label>G.</label>N..~( rlclt CEll t It, n t |. &quot;sUit] SUr Ile~ert, ,2)<lb/> ] G_N_.~( ~unphot rca, i t er ~ n ~ I ,mval;ur ore!mr1 t ~ 2 )<lb/> G_N_V(mvvsucwr.entm,I 1 ~ ub~,;~ in.2)<lb/> G. N. V{ meac, ur e~r.er, t, n ~. ~., ShO..,, ~ )<lb/> .~: G_N.H(&amp;Cr.~e?.fc3ounCier&apos;,nl t~measur&apos;onmn~;3)<lb/> 
+        <label>G.</label>H.H(pntltnna, n| 1 ~aea~&apos;~.ent, 3)<lb/> :~&apos; G. N,.&apos;((me t eosa t. rd I ,measur~ent, 3)<lb/> ~::i} U_N.H(Sa ,e I I I re.n| I, ~easur linen, ,4)<lb/> @BULLET ~[&apos;] G. N.P, ff(!nv~ vat ~l~.~t L, frurl, V~ t~ I I | iv, 4 )<lb/> @BULLET ]..,-t G. ,d.V{a~:a=ur¢~r.L, &quot;~ @BULLET |, &quot;.~ke. ~ )<lb/> ..)<lb/> ..)<lb/> .-)<lb/> ...%<lb/> G_N,~&apos;/f. llqutc,ntl,mets~..u&apos;~ent)<lb/> 2 -CgC<lb/> G.~/_t/(~,r~il,aelsu~&apos;o~er.t) t -tax<lb/> G.H_tl(~.aa~ssur~a;mt~H | ,r.ee3. ~) ; -C~C<lb/> G.t/.tJ(mvWlurC,.~eot,rdl~itartd;rd)<lb/> t o C/;C<lb/> G.f/.N(mu,nl I ,mea~ar,i:~lr.t) 1 -CRC<lb/> G_~/_ff(nel~.bo~&apos;_~EE el l.mn~Su~&apos;,wa.nt) ! * CRC<lb/> G.rl_Nfseccl~l,nil.~easurtr.ent)<lb/> ! -CRC<lb/> G..q.tl(sir.gle,nii,~eas~r~er~,)<lb/> ; -CRC<lb/> References<lb/> 
+<bibl>[Basili el. al . 1991] R. Basili, M.T. Pazienza,<lb/> P.Velardi, Using word association for syntactic<lb/> disambiguation, in &quot;Trends in Artificial Intelligence&quot;,<lb/> Ardizzone. Gaglio, Sorbello Eds.. in Lecture Notes in<lb/> AI. Springer Vedag, 1991.<lb/> </bibl>
+<bibl>[Basili et al, 1992a] Basili, R., Pazienza, M.T..<lb/> Velardi. P., Computational Lexicons: the Neat<lb/> Examples and the Odd Exemplars, Proc. of Third Int.<lb/> Con£ on Applied Natural Language Processing, Trento,<lb/> Italy, 1-3 April, 1992.<lb/> </bibl>
+<bibl>[Basili et al, 1992 b] Besili, R., M.T. Pazienza, P.<lb/> Velardl, A shallow syntactic analyzer to extract word<lb/> associations from corpora, Literary and Linguistic<lb/> Computing, 1992, vol. 7, n. 2, 114-124.<lb/> </bibl>
+<bibl>[Basili et al. 1993 a] Basili, R., Pazienza, M.T.,<lb/> Velsrdi, Hierarch/cal clust~ing of verbs, ACL-SIGLEX<lb/> Workshop on I.~xical Acquisition, Columbus Ohio,<lb/> June, 1993.<lb/> </bibl>
+<bibl>[Basili at al, 1993b] Baalli, R., M.T. Pazienza, P.<lb/> Velardi, What can be learned from raw texts ?,<lb/> forthcoming on Journal of Machine Translation.<lb/> </bibl>
+<bibl>[Besili et al, 1993c] Besili, R., M.T. Pazienza, P.<lb/> Velardi,<lb/> Acquisition of selectional patterns,<lb/> fo~ming on Journal of Machine Translation.<lb/> </bibl>
+<bibl>[Basili et al, 1993d] Besili, R., M.T. Pazienza, P.<lb/> Velardi, Semi-automatic extraction of linguisitc<lb/> information for syntactic disambiguation, Applied<lb/> Artificial Intelligence, vol. 4, 1993.<lb/> </bibl>
+<bibl>[Boggus et al. 1992] L. Boggess, R. Agarwal, R.<lb/> Davis, Disambiguation of Prepositional Phrases in<lb/> Automatically Labeled Technical Texts, Proc. of AAAI<lb/> 1991<lb/> </bibl>
+<bibl>[Church and ME&apos;reef, 1993] K. Church and L. Mercer,<lb/> Introduction to the sepuial issue on Computational<lb/> Linguistics using large corpora, Computational<lb/> Linguistics, vol. 19. n.1, 1993<lb/> </bibl>
+<bibl>[Dunning, t993] T. Dunning, Accurate methods for<lb/> statistical surprise and coincidence, Computational<lb/> Linguistics, voL 19. n.l, 1993<lb/> </bibl>
+<bibl>[Grishman, 1992] R. Grishman, Acquisition of<lb/> selectional patterns, Proc. of COLING-92, Nantes,<lb/> 1992<lb/> </bibl>
+<bibl>[Yarowsky 1992] D. Yarowsky, Word-sense<lb/> disambiguation using statistical models of Roger&apos;s<lb/> categories trained on large corpora, INoc. of COLING-<lb/>92, Nantes, 1992<lb/> </bibl>
+<bibl>[Pustejovsky and Boguraev, 1993] J. Pustejovsky and<lb/> B. Boguraev, Lexical Knowledge representation and<lb/> natural language processing, Artificial Intelligence,<lb/> voi.63, n. 1-2, pp. 193-224, October 1993<lb/> </bibl>
+<bibl>[Pustejovski et al, 1993] J. Pustejovsky, S. Bergler,<lb/> and P. Anick, Lexical semantic techniques for corpus<lb/> analysis, Computational Linguistics, vol. 19, n.2.<lb/> 1993<lb/> </bibl>
+<bibl>[Rosch, 1978 ] E. Rosch, Principle of categorization,<lb/> in Cognition and Categorization, Erlbaum 1978.<lb/> </bibl>
+<bibl>[Resnik and Hearst. 1993] P. Reanik and M. Hearst,<lb/> Structural ambiguity and conceptual relations, ACL<lb/> workshop on very large corpora, Ohio State<lb/> University, June 22, 1993<lb/> </bibl>
+<bibl>[Utsuro et al, 1993] T. Utsuro, Y. Matsumoto. M.<lb/> Nagao, Verbal case frame acquisition from bilingual<lb/> corpora, proc. of UCAI-93</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,31 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Ballesteros, Lisa and W. Bruce Croft. 1997. Phrasal<lb/> translation and query expansion techniques for<lb/> cross-language information retrieval. In Proceed-<lb/>ings of the 20th ACM SIGIR, pages 84–91, Philadel-<lb/>phia, Pennsylvania, USA.<lb/> </bibl>
+<bibl>Chen, Stanley F. 1993. Aligning sentences in bilingual<lb/> corpora using lexical information. In Proceedings<lb/> of the 31st Annual Conference of the Association for<lb/> Computational Linguistics, pages 9–16, Columbus,<lb/> Ohio, USA.<lb/> </bibl>
+<bibl>Chiao, Yun-Chuang and Pierre Zweigenbaum. 2002.<lb/> Looking for candidate translational equivalents in<lb/> specialized, comparable corpora. In Proceedings<lb/> of the 19th International Conference on Computa-<lb/>tional Linguistics, pages 1–7, Taipei, Taiwan.<lb/> </bibl>
+<bibl>Déjean, Hervé, Eric Gaussier, and Fatia Sadat. 2002.<lb/> An approach based on multilingual thesauri and<lb/> model combination for bilingual lexicon extraction.<lb/> In Proceedings of the 19th International Conference<lb/> on Computational Linguistics, pages 1–7, Taipei,<lb/> Taiwan.<lb/> </bibl>
+<bibl>Fung, Pascale and Kathleen McKeown. 1997. Finding<lb/> terminology translations from non-parallel corpora.<lb/> In Proceedings of the 5th Annual Workshop on Very<lb/> Large Corpora, pages 192–202, Hong Kong.<lb/> </bibl>
+<bibl>Fung, Pascale and Lo Yuen Yee. 1998. An IR ap-<lb/>proach for translating new words from nonparallel,<lb/> comparable texts. In Proceedings of the 17th inter-<lb/>national conference on Computational linguistics,<lb/> pages 414–420, Montreal, Quebec, Canada.<lb/> </bibl>
+<bibl>Gaussier, E., J.-M. Renders, I. Matveeva, C. Goutte,<lb/> and H. Déjean. 2004. A geometric view on bilin-<lb/>gual lexicon extraction from comparable corpora.<lb/> In Proceedings of the 42nd Annual Meeting of the<lb/> Association for Computational Linguistics, pages<lb/> 526–533, Barcelona, Spain.<lb/> </bibl>
+<bibl>Kay, Martin and Martin Röscheisen. 1993. Text-<lb/>translation alignment. Computational Linguistics,<lb/> 19(1):121–142.<lb/> </bibl>
+<bibl>Koehn, Philipp. 2005. Europarl: A parallel corpus<lb/> for statistical machine translation. In Proceedings<lb/> of MT Summit 2005.<lb/> </bibl>
+<bibl>Melamed, I. Dan. 1997a. A portable algorithm<lb/> for mapping bitext correspondence. In Proceed-<lb/>ings of the 35th Annual Meeting of the Association<lb/> for Computational Linguistics and the 8th Confer-<lb/>ence of the European Chapter of the Association for<lb/> Computational Linguistics, pages 305–312, Madrid,<lb/> Spain.<lb/> </bibl>
+<bibl>Melamed, I. Dan. 1997b. A word-to-word model<lb/> of translational equivalence. In Proceedings of the<lb/> 35th Annual Meeting of the Association for Compu-<lb/>tational Linguistics and the 8th Conference of the<lb/> European Chapter of the Association for Computa-<lb/>tional Linguistics, pages 490–497, Madrid, Spain.<lb/> </bibl>
+<bibl>Morin, Emmanuel, Béatrice Daille, Koichi Takeuchi,<lb/> and Kyo Kageura. 2007. Bilingual terminology<lb/> mining -using brain, not brawn comparable cor-<lb/>pora. In Proceedings of the 45th Annual Meeting<lb/> of the Association for Computational Linguistics,<lb/> pages 664–671, Prague, Czech Republic.<lb/> </bibl>
+<bibl>Munteanu, Dragos Stefan and Daniel Marcu. 2006.<lb/> Extracting parallel sub-sentential fragments from<lb/> non-parallel corpora. In Proceedings of the 21st In-<lb/>ternational Conference on Computational Linguis-<lb/>tics and the 44th annual meeting of the Association<lb/> for Computational Linguistics, pages 81–88, Syd-<lb/>ney, Australia.<lb/> </bibl>
+<bibl>Munteanu, Dragos Stefan, Alexander Fraser, and<lb/> Daniel Marcu. 2004. Improved machine translation<lb/> performance via parallel sentence extraction from<lb/> comparable corpora. In Proceedings of the HLT-<lb/>NAACL 2004, pages 265–272, Boston, MA., USA.<lb/> </bibl>
+<bibl>Och, Franz Josef and Hermann Ney. 2003. A sys-<lb/>tematic comparison of various statistical alignment<lb/> models. Computational Linguistics, 29(1):19–51.<lb/> </bibl>
+<bibl>Pekar, Viktor, Ruslan Mitkov, Dimitar Blagoev, and<lb/> Andrea Mulloni. 2006. Finding translations for<lb/> low-frequency words in comparable corpora. Ma-<lb/>chine Translation, 20(4):247–266.<lb/> </bibl>
+<bibl>Rapp, Reinhard. 1999. Automatic identification of<lb/> word translations from unrelated English and Ger-<lb/>man corpora. In Proceedings of the 37th Annual<lb/> Meeting of the Association for Computational Lin-<lb/>guistics, pages 519–526, College Park, Maryland,<lb/> USA.<lb/> </bibl>
+<bibl>Robitaille, Xavier, Yasuhiro Sasaki, Masatsugu<lb/> Tonoike, Satoshi Sato, and Takehito Utsuro. 2006.<lb/> Compiling French-Japanese terminologies from the<lb/> web. In Proceedings of the 11st Conference of the<lb/> European Chapter of the Association for Computa-<lb/>tional Linguistics, pages 225–232, Trento, Italy.<lb/> </bibl>
+<bibl>Yu, Kun and Junichi Tsujii. 2009. Extracting bilin-<lb/>gual dictionary from comparable corpora with de-<lb/>pendency heterogeneity. In Proceedings of HLT-<lb/>NAACL 2009, pages 121–124, Boulder, Colorado,<lb/> USA.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

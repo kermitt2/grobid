@@ -1,0 +1,32 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Athanasios Alexandrakis and Symeon Bozapalidis.<lb/> 1987. Weighted grammars and Kleene&apos;s theorem.<lb/> Information Processing Letters, 24(1):1–4.<lb/> </bibl>
+<bibl>Brenda S. Baker. 1979. Composition of top-down and<lb/> bottom-up tree transductions. Information and Con-<lb/>trol, 41(2):186–213.<lb/> </bibl>
+<bibl>ZoltánZoltán´ZoltánÉsik and Werner Kuich. 2003. Formal tree se-<lb/>ries. Journal of Automata, Languages and Combi-<lb/>natorics, 8(2):219–285.<lb/> </bibl>
+<bibl>Zoltán Fülöp and Heiko Vogler. 2009. Weighted tree<lb/> automata and tree transducers. In Manfred Droste,<lb/> Werner Kuich, and Heiko Vogler, editors, Handbook<lb/> of Weighted Automata, chapter 9, pages 313–404.<lb/> Springer-Verlag.<lb/> </bibl>
+<bibl>Zoltán Fülöp, Andreas Maletti, and Heiko Vogler.<lb/> 2010.<lb/> Backward and forward application of<lb/> weighted extended tree transducers. Unpublished<lb/> manuscript.<lb/> </bibl>
+<bibl>Ferenc Gécseg and Magnus Steinby. 1984. Tree Au-<lb/>tomata. Akadémiai Kiadó, Budapest.<lb/> </bibl>
+<bibl>Liang Huang and David Chiang. 2005. Better k-best<lb/> parsing. In Harry Bunt, Robert Malouf, and Alon<lb/> Lavie, editors, Proceedings of the Ninth Interna-<lb/>tional Workshop on Parsing Technologies (IWPT),<lb/> pages 53–64, Vancouver, October. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Werner Kuich. 1998. Formal power series over trees.<lb/> In Symeon Bozapalidis, editor, Proceedings of the<lb/> 3rd International Conference on Developments in<lb/> Language Theory (DLT), pages 61–101, Thessa-<lb/>loniki, Greece. Aristotle University of Thessaloniki.<lb/> </bibl>
+<bibl>Werner Kuich. 1999. Tree transducers and formal tree<lb/> series. Acta Cybernetica, 14:135–149.<lb/> </bibl>
+<bibl>Andreas Maletti, Jonathan Graehl, Mark Hopkins, and<lb/> Kevin Knight. 2009. The power of extended top-<lb/>down tree transducers. SIAM Journal on Comput-<lb/>ing, 39(2):410–430.<lb/> </bibl>
+<bibl>Andreas Maletti. 2006. Compositions of tree se-<lb/>ries transformations. Theoretical Computer Science,<lb/> 366:248–271.<lb/> </bibl>
+<bibl>Andreas Maletti. 2008. Compositions of extended top-<lb/>down tree transducers. Information and Computa-<lb/>tion, 206(9–10):1187–1196.<lb/> </bibl>
+<bibl>Andreas Maletti. 2009. Personal Communication.<lb/> </bibl>
+<bibl>Mehryar Mohri, Fernando C. N. Pereira, and Michael<lb/> Riley. 2000. The design principles of a weighted<lb/> finite-state transducer library. Theoretical Computer<lb/> Science, 231:17–32.<lb/> </bibl>
+<bibl>Mehryar Mohri. 1997. Finite-state transducers in lan-<lb/>guage and speech processing. Computational Lin-<lb/>guistics, 23(2):269–312.<lb/> </bibl>
+<bibl>Mehryar Mohri. 2009. Weighted automata algo-<lb/>rithms. In Manfred Droste, Werner Kuich, and<lb/> Heiko Vogler, editors, Handbook of Weighted Au-<lb/>tomata, chapter 6, pages 213–254. Springer-Verlag.<lb/> </bibl>
+<bibl>Adam Pauls and Dan Klein. 2009. K-best A* parsing.<lb/> In Keh-Yih Su, Jian Su, Janyce Wiebe, and Haizhou<lb/> Li, editors, Proceedings of the Joint Conference of<lb/> the 47th Annual Meeting of the ACL and the 4th In-<lb/>ternational Joint Conference on Natural Language<lb/> Processing of the AFNLP, pages 958–966, Suntec,<lb/> Singapore, August. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Fernando Pereira and Michael Riley. 1997. Speech<lb/> recognition by composition of weighted finite au-<lb/>tomata. In Emmanuel Roche and Yves Schabes, ed-<lb/>itors, Finite-State Language Processing, chapter 15,<lb/> pages 431–453. MIT Press, Cambridge, MA.<lb/> </bibl>
+<bibl>William A. Woods. 1980. Cascaded ATN gram-<lb/>mars. American Journal of Computational Linguis-<lb/>tics, 6(1):1–12.<lb/> </bibl>
+<bibl>Kenji Yamada and Kevin Knight. 2001. A syntax-<lb/>based statistical translation model. In Proceedings<lb/> of 39th Annual Meeting of the Association for Com-<lb/>putational Linguistics, pages 523–530, Toulouse,<lb/> France, July. Association for Computational Lin-<lb/>guistics.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,25 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Artiles, J., Gonzalo, J., &amp; Sekine, S. (2007). The<lb/> SemEval-2007 WePS Evaluation: Establishing a<lb/> benchmark for the Web People Search Task. In Pro-<lb/>ceedings of Semeval 2007, Association for Computa-<lb/>tional Linguistics.<lb/> </bibl>
+<bibl>Calinski and Harabasz (1974). A Dendrite Method for<lb/> Cluster Analysis Communications in Statistics, 3(1),<lb/> 1974, 1-27.<lb/> </bibl>
+<bibl>Erkan, G. (2006). Language model-based document<lb/> clustering using random walks. Proceedings of the<lb/> main conference on Human Language Technology<lb/> Conference of the North American Chapter of the As-<lb/>sociation of Computational Linguistics (pp. 479–486).<lb/> Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Fleischman, M. B., &amp; Hovy, E. (2004). Multi-document<lb/> person name resolution. Proceedings of the ACL 2004.<lb/> Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Guha, R. V., &amp; Garg, A. (2003). Disambiguating People<lb/> in Search. TAP: Building the Semantic Web.. ACM<lb/> Press.<lb/> </bibl>
+<bibl>Luh Yen, Francois Fouss, C. D., Francq, P., &amp; Saerens,<lb/> M. (2007). Graph nodes clustering based on the<lb/> commute-time kernel. To appear in the proceedings of<lb/> the 11th Pacific-Asia Conference on Knowledge Dis-<lb/>covery and Data Mining (PAKDD 2007). Lecture<lb/> Notes in Computer Science (LNCS).<lb/> </bibl>
+<bibl>Minkov, E., Cohen, W. W., &amp; Ng, A. Y. (2006). Con-<lb/>textual search and name disambiguation in email us-<lb/>ing graphs. SIGIR &apos;06: Proceedings of the 29th<lb/> annual international ACM SIGIR conference on Re-<lb/>search and development in information retrieval (pp.<lb/> 27–34). ACM Press.<lb/> </bibl>
+<bibl>Nie, Z., Zhang, Y., Wen, J. R., &amp; Ma, W. Y. (2005).<lb/> </bibl>
+<bibl>Object-level ranking: Bringing order to web objects.<lb/> Proceedings of WWW&apos;05.<lb/> </bibl>
+<bibl>Page, L., Brin, S., Motwani, R., &amp; Winograd, T. (1998).<lb/> </bibl>
+<bibl>The pagerank citation ranking: Bringing order to<lb/> the web (Technical Report). Stanford Digital Library<lb/> Technologies Project.<lb/> </bibl>
+<bibl>Saerens, M., Fouss, F., Yen, L., &amp; Dupont, P. (2004). The<lb/> principal components analysis of a graph, and its re-<lb/>lationships to spectral clustering. Proceedings of the<lb/> 15th European Conference on Machine Learning.<lb/> </bibl>
+<bibl>László Lovász (1993). Random Walks on Graphs: A Sur-<lb/>vey. Combinatorics, Paul Erdos is Eighty (Volume 2),<lb/> Keszthely (Hungary), 1993, p 1-46..</bibl>
+        </listBibl>
+    </text>
+</tei>
+

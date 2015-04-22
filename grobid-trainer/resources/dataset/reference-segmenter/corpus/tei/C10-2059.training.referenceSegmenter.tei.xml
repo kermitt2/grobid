@@ -1,0 +1,43 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Bod, Rens. 2006. An all-subtrees approach to unsu-<lb/>pervised parsing. In Proceedings of the COLING-<lb/>ACL.<lb/> </bibl>
+<bibl>Carreras, Xavier, Michael Collins, and Terry Koo.<lb/> 2008. Tag, dynamic programming, and the percep-<lb/>tron for efficient, feature-rich parsing. In Proceed-<lb/>ings of the CoNLL.<lb/> </bibl>
+<bibl>Charniak, Eugene and Mark Johnson. 2005. Coarse-<lb/>to-fine-grained n-best parsing and discriminative<lb/> reranking. In Proceedings of the ACL.<lb/> </bibl>
+<bibl>Charniak, Eugene. 2000. A maximum-entropy-<lb/>inspired parser. In Proceedings of the NAACL.<lb/> </bibl>
+<bibl>Collins, Michael. 1999. Head-driven statistical mod-<lb/>els for natural language parsing. In Ph.D. Thesis.<lb/> </bibl>
+<bibl>Collins, Michael. 2000. Discriminative reranking for<lb/> natural language parsing. In Proceedings of the<lb/> ICML, pages 175–182.<lb/> </bibl>
+<bibl>Collins, Michael. 2002. Discriminative training meth-<lb/>ods for hidden markov models: Theory and exper-<lb/>iments with perceptron algorithms. In Proceedings<lb/> of the EMNLP, pages 1–8, Philadelphia, USA.<lb/> </bibl>
+<bibl>Ganchev, Kuzman, Jennifer Gillenwater, and Ben<lb/> Taskar. 2009. Dependency grammar induction via<lb/> bitext projection constraints. In Proceedings of the<lb/> 47th ACL.<lb/> </bibl>
+<bibl>Huang, Liang and David Chiang. 2005. Better k-best<lb/> parsing. In Proceedings of the IWPT, pages 53–64.<lb/> </bibl>
+<bibl>Huang, Liang, Kevin Knight, and Aravind Joshi. 2006.<lb/> Statistical syntax-directed translation with extended<lb/> domain of locality. In Proceedings of the AMTA.<lb/> </bibl>
+<bibl>Huang, Liang. 2008. Forest reranking: Discriminative<lb/> parsing with non-local features. In Proceedings of<lb/> the ACL.<lb/> </bibl>
+<bibl>Hwa, Rebecca, Philip Resnik, Amy Weinberg, and<lb/> Okan Kolak. 2002. Evaluating translational corre-<lb/>spondence using annotation projection. In Proceed-<lb/>ings of the ACL.<lb/> </bibl>
+<bibl>Hwa, Rebecca, Philip Resnik, Amy Weinberg, Clara<lb/> Cabezas, and Okan Kolak. 2005. Bootstrap-<lb/>ping parsers via syntactic projection across paral-<lb/>lel texts. In Natural Language Engineering, vol-<lb/>ume 11, pages 311–325.<lb/> </bibl>
+<bibl>Klein, Dan and Christopher D. Manning. 2002. A<lb/> generative constituent-context model for improved<lb/> grammar induction. In Proceedings of the ACL.<lb/> </bibl>
+<bibl>Klein, Dan and Christopher D. Manning. 2004. Cor-<lb/>pusbased induction of syntactic structure: Models<lb/> of dependency and constituency. In Proceedings of<lb/> the ACL.<lb/> </bibl>
+<bibl>Liu, Yang, Qun Liu, and Shouxun Lin. 2006. Tree-<lb/>to-string alignment template for statistical machine<lb/> translation. In Proceedings of the ACL.<lb/> </bibl>
+<bibl>Liu, Yang, Tian Xia, Xinyan Xiao, and Qun Liu. 2009.<lb/> Weighted alignment matrices for statistical machine<lb/> translation. In Proceedings of the EMNLP.<lb/> </bibl>
+<bibl>McClosky, David, Eugene Charniak, and Mark John-<lb/>son. 2006. Reranking and self-training for parser<lb/> adaptation. In Proceedings of the ACL.<lb/> </bibl>
+<bibl>McDonald, Ryan, Fernando Pereira, Kiril Ribarov, and<lb/> Jan Haji˘ c. 2005. Non-projective dependency pars-<lb/>ing using spanning tree algorithms. In Proceedings<lb/> of HLT-EMNLP.<lb/> </bibl>
+<bibl>Och, Franz J. and Hermann Ney. 2000. Improved<lb/> statistical alignment models. In Proceedings of the<lb/> ACL.<lb/> </bibl>
+<bibl>Och, Franz Joseph. 2003. Minimum error rate train-<lb/>ing in statistical machine translation. In Proceed-<lb/>ings of the 41th Annual Meeting of the Association<lb/> for Computational Linguistics, pages 160–167.<lb/> </bibl>
+<bibl>Papineni, Kishore, Salim Roukos, Todd Ward, and<lb/> Weijing Zhu. 2002. Bleu: a method for automatic<lb/> evaluation of machine translation. In Proceedings<lb/> of the ACL.<lb/> </bibl>
+<bibl>Petrov, Slav, Leon Barrett, Romain Thibaux, and Dan<lb/> Klein. 2006. Learning accurate, compact, and in-<lb/>terpretable tree annotation. In Proceedings of the<lb/> ACL.<lb/> </bibl>
+<bibl>Sarkar, Anoop. 2001. Applying co-training methods<lb/> to statistical parsing. In Proceedings of NAACL.<lb/> </bibl>
+<bibl>Seginer, Yoav. 2007. Fast unsupervised incremental<lb/> parsing. In Proceedings of the ACL.<lb/> </bibl>
+<bibl>Smith, David and Jason Eisner. 2009. Parser adap-<lb/>tation and projection with quasi-synchronous gram-<lb/>mar features. In Proceedings of EMNLP.<lb/> </bibl>
+<bibl>Steedman, Mark, Miles Osborne, Anoop Sarkar,<lb/> Stephen Clark, Rebecca Hwa, Julia Hockenmaier,<lb/> Paul Ruhlen, Steven Baker, and Jeremiah Crim.<lb/> 2003. Bootstrapping statistical parsers from small<lb/> datasets. In Proceedings of the EACL.<lb/> </bibl>
+<bibl>Stolcke and Andreas. 2002. Srilm -an extensible lan-<lb/>guage modeling toolkit. In Proceedings of the Inter-<lb/>national Conference on Spoken Language Process-<lb/>ing, pages 311–318.<lb/> </bibl>
+<bibl>Xiong, Deyi, Shuanglong Li, Qun Liu, and Shouxun<lb/> Lin. 2005. Parsing the penn chinese treebank with<lb/> semantic knowledge. In Proceedings of IJCNLP<lb/> 2005, pages 70–81.<lb/> </bibl>
+<bibl>Yamada, H and Y Matsumoto. 2003. Statistical de-<lb/>pendency analysis using support vector machines.<lb/> In Proceedings of IWPT.<lb/> </bibl>
+<bibl>Zhang, Yue and Stephen Clark. 2008. A tale of<lb/> two parsers: investigating and combining graph-<lb/>based and transition-based dependency parsing us-<lb/>ing beam-search. In Proceedings of EMNLP.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

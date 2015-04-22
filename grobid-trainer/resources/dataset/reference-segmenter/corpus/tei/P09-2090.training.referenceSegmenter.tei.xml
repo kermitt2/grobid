@@ -1,0 +1,21 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Javier Artiles and Satoshi Sekine and Julio Gonzalo<lb/> 2008. Web People Search—Results of the first eval-<lb/>uation and the plan for the second. WWW 2008.<lb/> </bibl>
+<bibl>A. Bagga and B. Baldwin. 1998. Entity-based cross-<lb/>document coreferencing using the vector space<lb/> model. COLING-ACL 1998.<lb/> </bibl>
+<bibl>Y. Chen and J. Martin. 2007. Towards robust unsuper-<lb/>vised personal name disambiguation. EMNLP.<lb/> </bibl>
+<bibl>D. Chiang. 2007. Hierarchical phrase-based transla-<lb/>tion. Computational Linguistics, 33(2).<lb/> </bibl>
+<bibl>J. Dean and S. Ghemawat. 2004. MapReduce: Simpli-<lb/>fied Data Processing on Large Clusters. OSDI.<lb/> </bibl>
+<bibl>T. Elsayed and J. Lin and D. W. Oard. 2008. Pair-<lb/>wise Document Similarity in Large Collections with<lb/> MapReduce. ACL/HLT.<lb/> </bibl>
+<bibl>Z. Li and S. Khudanpur. 2008. A Scalable Decoder for<lb/> Parsing-based Machine Translation with Equivalent<lb/> Language Model State Maintenance. ACL SSST.<lb/> </bibl>
+<bibl>L. Lloyd and Andrew Mehler and Steven Skiena. 2006.<lb/> Identifying Co-referential Names Across Large Cor-<lb/>pora. Combinatorial Pattern Matching.<lb/> </bibl>
+<bibl>NIST. 2008. Automatic Content Extraction 2008 Eval-<lb/>uation Plan (ACE08).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

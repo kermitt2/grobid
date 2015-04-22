@@ -1,0 +1,52 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Steven J. Benson and Jorge J. More. 2001. A limited<lb/> memory variable metric method in subspaces and<lb/> bound constrained optimization problems. Techni-<lb/>cal report, Argonne National Laboratory.<lb/> </bibl>
+<bibl>Adam L. Berger, Vincent J.D. Pietra, and Stephen A.D.<lb/> Pietra. 1996. A maximum entropy approach to nat-<lb/>ural language processing. Computational linguis-<lb/>tics, 22(1):71.<lb/> </bibl>
+<bibl>Don Blaheta and Eugene Charniak. 2000. Assigning<lb/> function tags to parsed text. In Proceedings of the<lb/> 1st North American chapter of the Association for<lb/> Computational Linguistics conference, pages 234 –<lb/> 240, Seattle, Washington. Morgan Kaufmann Pub-<lb/>lishers Inc.<lb/> </bibl>
+<bibl>Thorsten Brants, Wojciech Skut, and Brigitte Krenn.<lb/> 1997. Tagging grammatical functions. In Proceed-<lb/>ings of EMNLP, volume 97, pages 64–74.<lb/> </bibl>
+<bibl>Sabine Brants, Stefanie Dipper, Silvia Hansen, Wolf-<lb/>gang Lezius, and George Smith. 2002. The TIGER<lb/> treebank. In Proceedings of the Workshop on Tree-<lb/>banks and Linguistic Theories, page 2441.<lb/> </bibl>
+<bibl>Joan Bresnan. 2001. Lexical-Functional Syntax.<lb/> Blackwell Publishers.<lb/> </bibl>
+<bibl>Miriam Butt, Helge Dyvik, Tracy Halloway King, Hi-<lb/>roshi Masuichi, and Christian Rohrer. 2002. The<lb/> parallel grammar project. In COLING-02 on Gram-<lb/>mar engineering and evaluation-Volume 15, volume<lb/> pages, page 7. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>Aoife Cahill, Martin Forst, Mairead McCarthy, Ruth<lb/> ODonovan, Christian Rohrer, Josef van Genabith,<lb/> and Andy Way. 2003. Treebank-based multilingual<lb/> unification-grammar development. In Proceedings<lb/> of the Workshop on Ideas and Strategies for Multi-<lb/>lingual Grammar Development at the 15th ESSLLI,<lb/> page 1724.<lb/> </bibl>
+<bibl>Aoife Cahill, Michael Burke, Ruth O&apos;Donovan, Josef<lb/> van Genabith, and Andy Way. 2004. Long-<lb/>distance dependency resolution in automatically ac-<lb/>quired wide-coverage PCFG-based LFG approxima-<lb/>tions. Proceedings of the 42nd Annual Meeting<lb/> on Association for Computational Linguistics -ACL<lb/> &apos;04, pages 319–es.<lb/> </bibl>
+<bibl>Aoife Cahill, Michael Burke, Ruth O&apos;Donovan, Stefan<lb/> Riezler, Josef van Genabith, and Andy Way. 2008.<lb/> Wide-Coverage Deep Statistical Parsing Using Au-<lb/>tomatic Dependency Structure Annotation. Compu-<lb/>tational Linguistics, 34(1):81–124, März.<lb/> </bibl>
+<bibl>Aoife Cahill. 2004. Parsing with Automatically Ac-<lb/>quired, Wide-Coverage, Robust, Probabilistic LFG<lb/> Approximations. Ph.D. thesis, Dublin City Univer-<lb/>sity.<lb/> </bibl>
+<bibl>Grzegorz Chrupała and Josef Van Genabith. 2006.<lb/> Using machine-learning to assign function labels<lb/> to parser output for Spanish. In Proceedings of<lb/> the COLING/ACL main conference poster session,<lb/> page 136143, Sydney. Association for Computa-<lb/>tional Linguistics.<lb/> </bibl>
+<bibl>Stephen Clark and Judith Hockenmaier. 2002. Evalu-<lb/>ating a wide-coverage CCG parser. In Proceedings<lb/> of the LREC 2002, pages 60–66.<lb/> </bibl>
+<bibl>James Clarke and Mirella Lapata. 2008. Global in-<lb/>ference for sentence compression an integer linear<lb/> programming approach. Journal of Artificial Intelli-<lb/>gence Research, 31:399–429.<lb/> </bibl>
+<bibl>Richard Crouch, Ronald M. Kaplan, Tracy Halloway<lb/> King, and Stefan Riezler. 2002. A comparison of<lb/> evaluation metrics for a broad-coverage stochastic<lb/> parser. In Proceedings of LREC 2002 Workshop,<lb/> pages 67–74, Las Palmas, Canary Islands, Spain.<lb/> </bibl>
+<bibl>Peter Eisenberg. 2006. Grundriss der deutschen<lb/> Grammatik: Das Wort. J.B. Metzler, Stuttgart, 3<lb/> edition.<lb/> </bibl>
+<bibl>Martin Forst, Núria Bertomeu, Berthold Crysmann,<lb/> Frederik Fouvry, Silvia Hansen-Shirra, and Valia<lb/> Kordoni. 2004. Towards a dependency-based gold<lb/> standard for German parsers The TiGer Dependency<lb/> Bank. In Proceedings of the COLING Workshop<lb/> on Linguistically Interpreted Corpora (LINC &apos;04),<lb/> Geneva, Switzerland.<lb/> </bibl>
+<bibl>Martin Forst. 2007. Filling Statistics with Linguistics<lb/> Property Design for the Disambiguation of German<lb/> LFG Parses. In Proceedings of ACL 2007. Associa-<lb/>tion for Computational Linguistics.<lb/> </bibl>
+<bibl>Jun&apos;Ichi Kazama and Jun&apos;Ichi Tsujii. 2005. Maxi-<lb/>mum entropy models with inequality constraints: A<lb/> case study on text categorization. Machine Learn-<lb/>ing, 60(1):159194.<lb/> </bibl>
+<bibl>Dan Klein and Christopher D. Manning. 2003. Accu-<lb/>rate unlexicalized parsing. In Proceedings of ACL<lb/> 2003, pages 423–430, Morristown, NJ, USA. Asso-<lb/>ciation for Computational Linguistics.<lb/> </bibl>
+<bibl>Manfred Klenner. 2005. Extracting Predicate Struc-<lb/>tures from Parse Trees. In Proceedings of the<lb/> RANLP 2005.<lb/> </bibl>
+<bibl>Manfred Klenner. 2007. Shallow dependency label-<lb/>ing. In Proceedings of the ACL 2007 Demo and<lb/> Poster Sessions, page 201204, Prague. Association<lb/> for Computational Linguistics.<lb/> </bibl>
+<bibl>Terry Koo and Michael Collins. 2005. Hidden-<lb/>variable models for discriminative reranking. In<lb/> Proceedings of the conference on Human Language<lb/> Technology and Empirical Methods in Natural Lan-<lb/>guage Processing -HLT &apos;05, pages 507–514, Mor-<lb/>ristown, NJ, USA. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Sandra Kübler. 2005. How Do Treebank Annotation<lb/> Schemes Influence Parsing Results? Or How Not to<lb/> Compare Apples And Oranges. In Proceedings of<lb/> RANLP 2005, Borovets, Bulgaria.<lb/> </bibl>
+<bibl>David M. Magerman. 1995. Statistical decision-tree<lb/> models for parsing. In Proceedings of the 33rd an-<lb/>nual meeting on Association for Computational Lin-<lb/>guistics, page 276283, Morristown, NJ, USA. Asso-<lb/>ciation for Computational Linguistics Morristown,<lb/> NJ, USA.<lb/> </bibl>
+<bibl>André F. T. Martins, Noah A. Smith, and Eric P. Xing.<lb/> 2009. Concise integer linear programming formu-<lb/>lations for dependency parsing. In Proceedings of<lb/> ACL 2009.<lb/> </bibl>
+<bibl>Ryan McDonald and Fernando Pereira. 2006. Online<lb/> learning of approximate dependency parsing algo-<lb/>rithms. In Proceedings of EACL, volume 6.<lb/> </bibl>
+<bibl>Yusuke Miyao, Takashi Ninomiya, and Jun&apos;ichi Tsujii.<lb/> 2003. Probabilistic modeling of argument structures<lb/> including non-local dependencies. In Proceedings<lb/> of the Conference on Recent Advances in Natural<lb/> Language Processing RANLP 2003, volume 2.<lb/> </bibl>
+<bibl>Joakim Nivre, Johan Hall, Jens Nilsson, Atanas<lb/> Chanev, Gülsen Eryigit, Sandra Kübler, Svetoslav<lb/> Marinov, and Erwin Marsi. 2007. MaltParser:<lb/> A language-independent system for data-driven de-<lb/>pendency parsing. Natural Language Engineering,<lb/> 13(2):95–135, Januar.<lb/> </bibl>
+<bibl>Slav Petrov, Leon Barrett, Romain Thibaux, and Dan<lb/> Klein. 2006. Learning accurate, compact, and<lb/> interpretable tree annotation. In Proceedings of<lb/> the 21st International Conference on Computational<lb/> Linguistics and the 44th annual meeting of the ACL<lb/> -ACL &apos;06, pages 433–440, Morristown, NJ, USA.<lb/> Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Vasin Punyakanok, Wen-Tau Yih, Dan Roth, and Dav<lb/> Zimak. 2004. Semantic role labeling via integer<lb/> linear programming inference. In Proceedings of<lb/> the 20th international conference on Computational<lb/> Linguistics -COLING &apos;04, Morristown, NJ, USA.<lb/> Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Vasin Punyakanok, Dan Roth, and Wen-tau Yih. 2008.<lb/> The Importance of Syntactic Parsing and Inference<lb/> in Semantic Role Labeling. Computational Linguis-<lb/>tics, 34(2):257–287, Juni.<lb/> </bibl>
+<bibl>Adwait Ratnaparkhi. 1998. Maximum Entropy Models<lb/> for Natural Language Ambiguity Resolution. Ph.D.<lb/> thesis, University of Pennsylvania.<lb/> </bibl>
+<bibl>Ines Rehbein and Josef van Genabith. 2009. Auto-<lb/>matic Acquisition of LFG Resources for German-<lb/>As Good as it gets. In Miriam Butt and Tracy Hol-<lb/>loway King, editors, Proceedings of LFG Confer-<lb/>ence 2009. CSLI Publications.<lb/> </bibl>
+<bibl>Ines Rehbein. 2009. Treebank-based grammar acqui-<lb/>sition for German. Ph.D. thesis, Dublin City Uni-<lb/>versity.<lb/> </bibl>
+<bibl>Dan Roth and Wen-Tau Yih. 2004. A linear program-<lb/>ming formulation for global inference in natural lan-<lb/>guage tasks. In Proceedings of CoNNL 2004.<lb/> </bibl>
+<bibl>Anne Schiller, Simone Teufel, and Christine Stöckert.<lb/> 1999.<lb/> Guidelines für das Tagging deutscher<lb/> Textcorpora mit STTS (Kleines und großes Tagset).<lb/> Technical Report August, Universität Stuttgart.<lb/> </bibl>
+<bibl>Anne Schiller. 1994. Dmor -user&apos;s guide. Technical<lb/> report, University of Stuttgart.<lb/> </bibl>
+<bibl>Helmut Schmid. 1994. Probabilistic Part-of-Speech<lb/> Tagging Using Decision Trees. In Proceedings of<lb/> International Conference on New Methods in Lan-<lb/>guage Processing, volume 12. Manchester, UK.<lb/> </bibl>
+<bibl>Reut Tsarfaty and Khalil Sima&apos;an. 2008. Relational-<lb/>realizational parsing. In Proceedings of the 22nd In-<lb/>ternational Conference on Computational Linguis-<lb/>tics -COLING &apos;08, pages 889–896, Morristown, NJ,<lb/> USA. Association for Computational Linguistics.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

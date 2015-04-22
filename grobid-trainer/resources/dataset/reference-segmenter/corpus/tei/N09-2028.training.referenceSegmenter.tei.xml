@@ -1,0 +1,19 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>J. Clarke and M. Lapata. 2008. Global inference for<lb/> sentence compression: An integer linear programming<lb/> approach. Journal of Artificial Intelligence Research,<lb/> 31:399–429.<lb/> </bibl>
+<bibl>P. Heeman and J. Allen. 1999. Speech repairs, in-<lb/>tonational phrases and discourse markers: Modeling<lb/> speakers&apos; utterances in spoken dialogue. Computa-<lb/>tional Linguistics, 25:527–571.<lb/> </bibl>
+<bibl>J. Lafferty, A. McCallum, and F. Pereira. 2001. Con-<lb/>ditional random fields: Probabilistic models for seg-<lb/>menting and labeling sequence data. In Proc. of ICML.<lb/> </bibl>
+<bibl>Y. Liu, E. Shriberg, A. Stolcke, D. Hillard, M. Osten-<lb/>dorf, and M. Harper. 2006. Enriching speech recogni-<lb/>tion with automatic detection of sentence boundaries<lb/> and disfluencies. IEEE Trans. Audio, Speech and Lan-<lb/>guage Processing, 14(5):1526–1540.<lb/> </bibl>
+<bibl>A. Ratnaparkhi. 1998. Maximum Entropy Models for<lb/> natural language ambiguity resolution. Ph.D. thesis,<lb/> University of Pennsylvania.<lb/> </bibl>
+<bibl>D. Roth and W. Yih. 2004. A linear programming formu-<lb/>lation for global inference in natural language tasks. In<lb/> Proc. of CoNNL.<lb/> </bibl>
+<bibl>A. Stolcke and E. Shriberg. 1996. Statistical language<lb/> modeling for speech disfluencies. In Proc. of ICASSP.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

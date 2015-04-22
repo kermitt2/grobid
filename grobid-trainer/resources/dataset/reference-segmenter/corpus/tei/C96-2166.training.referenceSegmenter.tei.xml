@@ -1,0 +1,23 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Brandow, R., Mitze, K., Ibm, L.F. 1995. Auto-<lb/>mat;it Condensation of Electronic Publications<lb/> by Se, ntence Selection. In: Information P,,vccss-<lb/>ing 84 Management, ,71(,5). pp.675 685<lb/> </bibl>
+<bibl>Edmundson, H.P. 1969. New Methods in Au-<lb/>tomatic Extracting. In: Journal of the ACM,<lb/> 16(2). pp.264 285<lb/> </bibl>
+<bibl>Hearst, M.A., Plaunt, C. 1993. Subt;opie Sl;ruc-<lb/>luring for Pull-Length Docmn(mt Access. In:<lb/> Proceedings of the 16th ACM-SIGII~ Confl;r-<lb/>trice, t)p.59 68<lb/> </bibl>
+<bibl>Hobbs, ,I.R., At)I)elt, D.E., Bear, ,1.S., Israel, l).J.,<lb/> Tyson, W.M. 1992. FASTUS: A System for<lb/> Extra(:ting Int&apos;ormation h&apos;oln Natural Language<lb/> Text. SRI International, Technical Note 519,<lb/> Menlo Park, CA<lb/> Jaeobs, P.S., Rau, L.F. 1990. SCISOR: Extract-<lb/>ing Informal;ion Dora On-line News. ht: Com-<lb/>munications of the ACM, .73 (11). pp.88 97<lb/> </bibl>
+<bibl>Kupiec, J., Pedersen, J., (]hen, F. :1995. A Train-<lb/>al)le, Docmne.nt Summarizer. In: l&apos;r&apos;oce¢&apos;.dings of<lb/> the. 18th ACM-SIGIR Confe~w~,cc.. t)p.68 73<lb/> </bibl>
+<bibl>Mauhlin, M.L. 11989. Information l/.etrieval l)y<lb/> Texl; Skimming. CMU-CS-89-193, Carnegie<lb/> Mclhm University, Pittsbllrgh, PA<lb/> Miike, S., It;oh, E., Ono, K., Sumita, K. 1994.<lb/> A Full-Text Retrieval System with a Dynamic<lb/> Abstract; Generation Funct;ion. In: Proceedings<lb/> of the 17th ACM-SIGIR Um~fl:~v.&apos;nce. t)t).152<lb/> 161<lb/> </bibl>
+<bibl>Morris, A.H., Kasper, G., Adams, D.<lb/> 1992.<lb/> </bibl>
+<bibl>The Effects and Limitations of Automated T(&apos;~xt;<lb/> Condensing on Reading Comi)rehension Per-<lb/>formaime. In: Information Systems l},esea&apos;rch,<lb/> 3(1). 1)t).17 35<lb/> </bibl>
+<bibl>Paice, C.I).<lb/> 1990.<lb/> Constructing l,il;era-<lb/>lure Abstracts t)y Comlmter: [[&gt;(:hniques and<lb/> Prost)ecl;s. In: Information Processing 84 Man-<lb/>ageme.nt , 26(1). t)1).7171 186<lb/> </bibl>
+<bibl>Salt(m, G., Allan, J., Buekley, C. ]993. Ap-<lb/>proa(-hes to Passage Ret, rieval in Full ~l~,xt In-<lb/>formation Systems. TR 93-1334 (1993), Cornell<lb/> University, [thaca, NY<lb/> Sparck Jones, K., En(lres-Niggemeyer, i3. :1995.<lb/> Automal;i(: Summarizing. In: Information P~v-<lb/>cessing I&quot;i Management, 31(5). pp.625 630<lb/> </bibl>
+<bibl>Zeehner, K. 1995. Automatic Text Abstracting<lb/> by Selecting Relewmt Passages. M.Se, i)isser-<lb/>ration, Centre for Uognitive Science, University<lb/> of Edinburgh, UK</bibl>
+        </listBibl>
+    </text>
+</tei>
+

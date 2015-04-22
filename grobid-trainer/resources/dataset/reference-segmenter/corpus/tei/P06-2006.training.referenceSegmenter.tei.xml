@@ -1,0 +1,34 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        6 
+        <bibl>References<lb/> </bibl>
+<bibl>Bikel, D.. 2004. Intricacies of Collins&apos; parsing model, Com-<lb/>putational Linguistics, 30(4):479–512.<lb/> </bibl>
+<bibl>Briscoe, E.J.. 2006. An introduction to tag sequence gram-<lb/>mars and the RASP system parser, University of Cam-<lb/>bridge, Computer Laboratory Technical Report 662.<lb/> </bibl>
+<bibl>Briscoe, E.J. and J. Carroll. 2002. Robust accurate statistical<lb/> annotation of general text. In Proceedings of the 3rd Int.<lb/> </bibl>
+<bibl>Conf. on Language Resources and Evaluation (LREC),<lb/> Las Palmas, Gran Canaria. 1499–1504.<lb/> </bibl>
+<bibl>Carroll, J. and E.J. Briscoe. 2002. High precision extraction<lb/> of grammatical relations. In Proceedings of the 19th Int.<lb/> Conf. on Computational Linguistics (COLING), Taipei,<lb/> Taiwan. 134–140.<lb/> </bibl>
+<bibl>Carroll, J., E. Briscoe and A. Sanfilippo. 1998. Parser evalu-<lb/>ation: a survey and a new proposal. In Proceedings of the<lb/> 1st International Conference on Language Resources and<lb/> Evaluation, Granada, Spain. 447–454.<lb/> </bibl>
+<bibl>Clark, S. and J. Curran. 2004. The importance of supertag-<lb/>ging for wide-coverage CCG parsing. In Proceedings of<lb/> the 20th International Conference on Computational Lin-<lb/>guistics (COLING-04), Geneva, Switzerland. 282–288.<lb/> </bibl>
+<bibl>Collins, M.. 1999. Head-driven Statistical Models for Nat-<lb/>ural Language Parsing. PhD Dissertation, Computer and<lb/> Information Science, University of Pennsylvania.<lb/> </bibl>
+<bibl>Gildea, D.. 2001. Corpus variation and parser performance.<lb/> In Proceedings of the Empirical Methods in Natural Lan-<lb/>guage Processing (EMNLP&apos;01), Pittsburgh, PA.<lb/> </bibl>
+<bibl>Inui, K., V. Sornlertlamvanich, H. Tanaka and T. Tokunaga.<lb/> 1997. A new formalization of probabilistic GLR parsing.<lb/> In Proceedings of the 5th International Workshop on Pars-<lb/>ing Technologies (IWPT&apos;97), Boston, MA. 123–134.<lb/> </bibl>
+<bibl>Kaplan, R., S. Riezler, T. H. King, J. Maxwell III, A. Vasser-<lb/>man and R. Crouch. 2004. Speed and accuracy in shal-<lb/>low and deep stochastic parsing. In Proceedings of the<lb/> HLT Conference and the 4th Annual Meeting of the North<lb/> American Chapter of the ACL (HLT-NAACL&apos;04), Boston,<lb/> MA.<lb/> </bibl>
+<bibl>Kiefer, B., H-U. Krieger, J. Carroll and R. Malouf. 1999.<lb/> A bag of useful techniques for efficient and robust pars-<lb/>ing. In Proceedings of the 37th Annual Meeting of the<lb/> Association for Computational Linguistics, University of<lb/> Maryland. 473–480.<lb/> </bibl>
+<bibl>King, T. H., R. Crouch, S. Riezler, M. Dalrymple and R. Ka-<lb/>plan. 2003. The PARC700 Dependency Bank. In Pro-<lb/>ceedings of the 4th International Workshop on Linguisti-<lb/>cally Interpreted Corpora (LINC-03), Budapest, Hungary.<lb/> </bibl>
+<bibl>Klein, D. and C. Manning. 2003. Accurate unlexicalized<lb/> parsing. In Proceedings of the 41st Annual Meeting of<lb/> the Association for Computational Linguistics, Sapporo,<lb/> Japan. 423–430.<lb/> </bibl>
+<bibl>Lin, D.. 1998. Dependency-based evaluation of MINIPAR.<lb/> In Proceedings of the Workshop at LREC&apos;98 on The Eval-<lb/>uation of Parsing Systems, Granada, Spain.<lb/> </bibl>
+<bibl>Manning, C. and H. Schütze. 1999. Foundations of Statistical<lb/> Natural Language Processing. MIT Press, Cambridge,<lb/> MA.<lb/> </bibl>
+<bibl>Miyao, Y. and J. Tsujii. 2005. Probabilistic disambiguation<lb/> models for wide-coverage HPSG parsing. In Proceedings<lb/> of the 43rd Annual Meeting of the Association for Compu-<lb/>tational Linguistics, Ann Arbor, MI. 83–90.<lb/> </bibl>
+<bibl>Nunberg, G.. 1990. The Linguistics of Punctuation. CSLI<lb/> Lecture Notes 18, Stanford, CA.<lb/> </bibl>
+<bibl>Sampson, G.. 1995. English for the Computer. Oxford Uni-<lb/>versity Press, Oxford, UK.<lb/> </bibl>
+<bibl>Watson, R.. 2006. Part-of-speech tagging models for parsing.<lb/> In Proceedings of the 9th Conference of Computational<lb/> Linguistics in the UK (CLUK&apos;06), Open University, Mil-<lb/>ton Keynes.<lb/> </bibl>
+<bibl>Watson, R., J. Carroll and E.J. Briscoe. 2005. Efficient ex-<lb/>traction of grammatical relations. In Proceedings of the<lb/> 9th Int. Workshop on Parsing Technologies (IWPT&apos;05),<lb/> Vancouver, Ca..</bibl>
+        </listBibl>
+    </text>
+</tei>
+

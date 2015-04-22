@@ -1,0 +1,38 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Galen Andrew. 2006. A hybrid Markov/semi-Markov<lb/> conditional random field for sequence segmentation.<lb/> In Proceedings of EMNLP &apos;06.<lb/> </bibl>
+<bibl>Steven Bethard, Hong Yu, Ashley Thornton, Vasileios<lb/> Hatzivassiloglou, and Dan Jurafsky. 2005. Extracting<lb/> opinion propositions and opinion holders using syn-<lb/>tactic and lexical cues. In Shanahan, James G., Yan<lb/> Qu, and Janyce Wiebe, editors, Computing Attitude<lb/> and Affect in Text: Theory and Applications.<lb/> </bibl>
+<bibl>Eric Breck, Yejin Choi, and Claire Cardie. 2007. Identi-<lb/>fying expressions of opinion in context. IJCAI&apos;07.<lb/> </bibl>
+<bibl>Yejin Choi, Claire Cardie, Ellen Riloff, and Siddharth<lb/> Patwardhan. 2005. Identifying sources of opinions<lb/> with conditional random fields and extraction patterns.<lb/> In Proceedings of HLT &apos;05.<lb/> </bibl>
+<bibl>Yejin Choi, Eric Breck, and Claire Cardie. 2006. Joint<lb/> extraction of entities and relations for opinion recog-<lb/>nition. In Proceedings of EMNLP &apos;06.<lb/> </bibl>
+<bibl>Yejin Choi and Claire Cardie. 2010. Hierarchical se-<lb/>quential learning for extracting opinions and their at-<lb/>tributes. In Proceedings of ACL 2010, Short Papers.<lb/> </bibl>
+<bibl>Richard Johansson and Alessandro Moschitti. 2010. Syn-<lb/>tactic and semantic structure for opinion expression<lb/> detection. In Proceedings of CoNLL &apos;10.<lb/> </bibl>
+<bibl>Niklas Jakob and Iryna Gurevych. Extracting opinion tar-<lb/>gets in a single-and cross-domain setting with condi-<lb/>tional random fields. In Proceedings of EMNLP&apos; 10.<lb/> </bibl>
+<bibl>Mahesh Joshi and Penstein-Ros&apos;e Carolyn. 2009. Gen-<lb/>eralizing dependency features for opinion mining.<lb/> In Proceedings of ACL/IJCNLP 2009, Short Papers<lb/> Track.<lb/> </bibl>
+<bibl>Dan Klein and Christopher D. Manning. 2003. Accurate<lb/> unlexicalized parsing. In Proceedings of ACL &apos;03.<lb/> </bibl>
+<bibl>Soo-Min Kim and Eduard Hovy. 2006. Extracting opin-<lb/>ions, opinion holders, and topics expressed in online<lb/> news media text. In Proceedings of the ACL Workshop<lb/> on Sentiment and Subjectivity in Text.<lb/> </bibl>
+<bibl>Nozomi Kobayashi, Kentaro Inui, and Yuji Matsumoto.<lb/> 2007. Extracting aspect-evaluation and aspect-of rela-<lb/>tions in opinion mining. In Proceedings of EMNLP-<lb/>CoNLL-2007.<lb/> </bibl>
+<bibl>John D. Lafferty, Andrew McCallum, and Fernando C.<lb/> N. Pereira. 2001. Conditional Random Fields: Proba-<lb/>bilistic Models for Segmenting and Labeling Sequence<lb/> Data. In Proceedings of ICML &apos;01.<lb/> </bibl>
+<bibl>Dong C. Liu and Jorge Nocedal. 1989. On the limited<lb/> memory BFGS method for large scale optimization.<lb/> Mathematical Programming B 45(3): 503-528.<lb/> </bibl>
+<bibl>M Arthur Munson, Claire Cardie, and Rich Caruana. Op-<lb/>timizing to arbitrary NLP metrics using ensemble se-<lb/>lection. In HLT-EMNLP05, 2005.<lb/> </bibl>
+<bibl>Daisuke Okanohara, Yusuke Miyao, Yoshimasa Tsu-<lb/>ruoka, and Jun&apos;ichi Tsujii. Improving the scalability<lb/> of semi-Markov conditional random fields for named<lb/> entity recognition. In Proceedings of ACL&apos;06.<lb/> </bibl>
+<bibl>Randolph Quirk, Sidney Greenbaum, Geoffrey Leech,<lb/> and Jan Svartvik. A comprehensive grammar of the<lb/> English language. New York: Longman, 1985.<lb/> </bibl>
+<bibl>Richard Johansson and Alessandro Moschitti. Extract-<lb/>ing Opinion Expressions and Their Polarities -Explo-<lb/>ration of Pipelines and Joint Models. In Proceedings<lb/> of ACL &apos;11, Short Paper.<lb/> </bibl>
+<bibl>Ellen Riloff and Janyce M Wiebe. Learning extraction<lb/> patterns for subjective expressions. In Proceedings of<lb/> EMNLP 2003.<lb/> </bibl>
+<bibl>Sunita Sarawagi and William W. Cohen. 2004. Semi-<lb/>Markov Conditional Random Fields for Information<lb/> Extraction. In Proceedings of NIPS 2004.<lb/> </bibl>
+<bibl>Charles Sutton and Andrew McCallum. An Introduc-<lb/>tion to Conditional Random Fields. Foundations and<lb/> Trends in Machine Learning (FnT ML), 2010.<lb/> </bibl>
+<bibl>Janyce Wiebe, Theresa Wilson , and Claire Cardie. 2005.<lb/> Annotating expressions of opinions and emotions in<lb/> language. Language Resources and Evaluation, vol-<lb/>ume 39, issue 2-3, pp. 165-210.<lb/> </bibl>
+<bibl>Theresa Wilson, Janyce Wiebe, and Paul Hoffmann.<lb/> 2005. Recognizing contextual polarity in phrase-level<lb/> sentiment analysis. In Proceedings of HLT &apos;05.<lb/> </bibl>
+<bibl>Theresa Wilson, Paul Hoffmann, Swapna Somasun-<lb/>daran, Jason Kessler, Janyce Wiebe, Yejin Choi, Claire<lb/> Cardie, Ellen Riloff, and Siddharth Patwardhan. Opin-<lb/>ionFinder: A system for subjectivity analysis. EMNLP<lb/> 2005. Demo abstract.<lb/> </bibl>
+<bibl>Yuanbin Wu, Qi Zhang, Xuanjing Huang, and Lide Wu.<lb/> Phrase dependency parsing for opinion mining. In Pro-<lb/>ceedings of EMNLP 2009.<lb/> </bibl>
+<bibl>Ioannis Tsochantaridis, Thomas Hofmann, Thorsten<lb/> Joachims, and Yasemi Altun. Support Vector Learn-<lb/>ing for Interdependent and Structured Output Spaces.<lb/> In Proceedings of ICML 2004.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,53 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>R. Baud, A.-M. Rassinoux, and J.-R. Scherrer.<lb/> 1992a. Natural language processing and medi-<lb/>cal records. In K.C. Lun, editor, Proc. of MED-<lb/>INFO 92, pages 1362 -1367. North-Holland.<lb/> </bibl>
+<bibl>R. Baud, A.-M. Rassinoux, and J.-R. Scherrer.<lb/> 1992b. Natural language processing and Semanti-<lb/>cal Representation of Medical Texts. Methods of<lb/> Information in Medicine, (31): 117-125.<lb/> </bibl>
+<bibl>F. Borst, M. Lyman, N.T. Nh~n, L. Tick, N. Sager,<lb/> and J.-R. Scherrer. 1991. Textinfo: A Tool for<lb/> Automatic Determination of Patient Clinical Pro-<lb/>files Using Text Analysis. In P. Clayton, editor,<lb/> Proc. of SCAMC 91, pages 63 -67. McGraw-Hill.<lb/> New York.<lb/> </bibl>
+<bibl>J. Bouaud, B. Sdroussi. and P. Zweigenbaum. 1996.<lb/> An experiment towards a document centered hy-<lb/>pertextual computerised patient record. In Proc.<lb/> of MIE 96, pages 453 -457, Amsterdam. IOS<lb/> Press.<lb/> </bibl>
+<bibl>E. Bowman. 1996. Coding and classification sys-<lb/>tems. In M. Abdelhak, S. Grostick, M-A. Hanken,<lb/> and E. Jacobs (eds.), editors, Health Information:<lb/> Management of a Strategic Resource, pages 214 -<lb/>235. W.B. Saunders Company, Philadelphia.<lb/> </bibl>
+<bibl>C. Chute, editor . 1997. Preprints of the IMIA<lb/> WG6 Conference on Natural Language and Med-<lb/>ical Concept Representation. Jacksonville.<lb/> Commission of Professional and Hospital Activi-<lb/>ties. 1978. The International Classification of<lb/> Diseases, Ninth Revision, Clinical Modifications<lb/> (1CD-9-CM}. Ann Arbor, Michigan.<lb/> </bibl>
+<bibl>L. Dehaspe. 1993. Report on the building of the<lb/> sc menelas lexical database. Technical Report 93-<lb/>002, K.U. Leuven.<lb/> </bibl>
+<bibl>J. Duisterhout. 1996. Coding and Classifications.<lb/> In J. van Bemmel, editor, Handbook of Medical<lb/> Informatics, pages 83 -94. Bohn, Stafleu, Van<lb/> Loghum, Houten/Diegem, preliminary version.<lb/> </bibl>
+<bibl>C. Friedman and S. Johnson. 1992. Medical text<lb/> processing: Past achievements, future directions.<lb/> </bibl>
+<bibl>In M.J. Ball and M.F. Collen, editors, Aspects of<lb/> the Computer-based Patient Record, pages 212 -<lb/>228. Springer -Verlag, Berlin.<lb/> </bibl>
+<bibl>C. Friedman and G Hripcsak. 1997. Evaluating Nat-<lb/>ural Language Processors in the Clinical Domain.<lb/> In (Chute, 1997), pages 41 -52.<lb/> </bibl>
+<bibl>R. Grishman and R. Kittredge, editors. 1986. An-<lb/>alyzing Language in Restricted Domains: Sublan-<lb/>guage Description and Processing. Lawrence Erl-<lb/>baum Associates, Hillsdale, New Jersey.<lb/> </bibl>
+<bibl>B. Habert, E. Naulleau, and A Nazarenko. 1996.<lb/> Symbolic word classification for medium-size cor-<lb/>pora. In Proc. of COLING 96, pages 490 -495.<lb/> </bibl>
+<bibl>Z. Harris. 1962. String Analysis of Sentence Struc-<lb/>tures. Mouton, The Hague.<lb/> </bibl>
+<bibl>W. Hersh. 1996. Information Retrieval, A Health<lb/> Care Perspective. Springer Verlag, New York.<lb/> </bibl>
+<bibl>L. Hirschman and J. Dowding. 1990. Restriction<lb/> grammar: a logic grammar. In P. Saint-Dizier and<lb/> S. Szpakowiez, editors, Logic and Logic Grammars<lb/> for Language Processing, pages 141 -167. Ellis<lb/> Horwood.<lb/> </bibl>
+<bibl>L. Hirschman and H. Thompson. 1995. Overview<lb/> of evaluation in speech and natural language pro-<lb/>cessing. In J. and Mariani, editor, State of the Art<lb/> in Natural Language Processing, pages 475 -518.<lb/> </bibl>
+<bibl>L. Hirschman, R. Grishman, and N. Sager. 1975.<lb/> Grammatically-based automatic word class forma-<lb/>tion. Information Processing and Management,<lb/> pages 39 -57.<lb/> </bibl>
+<bibl>L. Hirschman, G. Story, E. Marsh, M. Lyman,<lb/> and N. Sager. 1981. An experiment in auto-<lb/>mated health care evaluation from narrative medi-<lb/>cal records. Computers and Biomedical Research,<lb/> (14):447 -463.<lb/> </bibl>
+<bibl>L. Hirschman. 1986. Discovering sublanguage struc-<lb/>tures. In (Grishman and Kittredge, 1986), pages<lb/> 211 -234.<lb/> </bibl>
+<bibl>G. Hripcsak, C. Friedman, P. Alderson, W. Du-<lb/>Mouchel, S. Johnson, and P. Clayton. 1995. Un-<lb/>locking Clinical Data from Narrative Reports: A<lb/> Study of Natural Language Processing. Annals of<lb/> Internal Medicine, vol. 122 (9): 681 -688.<lb/> </bibl>
+<bibl>C. Lovis, P.-A. Michel, R. Baud, and J.-R. Scher-<lb/>rer. 1995. Use of a conceptual semi-automatic<lb/> ICD-9 encoding system in an hospital environ-<lb/>ment. In Artificial Intelligence in Medicine, Proc.<lb/> of AIME 95, pages 331 -339. Springer-Verlag.<lb/> </bibl>
+<bibl>M. Lyman, N. Sager, C. Friedman and E. Chi.<lb/> 1985. Computer-structured Narrative in Ambu-<lb/>latory Care: Its Use in Longitudinal Review of<lb/> Clinical Data. In Proc. of SCAMC 85, pages 82 -<lb/>86.<lb/> </bibl>
+<bibl>M. Lyman, N. Sager, L. Tick, N.T. Nhhn, Y. Su,<lb/> F. Borst, and J.-R. Scherrer. 1991. The applica-<lb/>tion of natural-language processing to healthcare<lb/> quality assessment. Medical Decision Making, (11<lb/> Suppl): $65 -$68.<lb/> </bibl>
+<bibl>A. McCray, J.-R. Scherrer, C. Safran, and<lb/> C. Chute (eds.). 1995. Special Issue on Concepts,<lb/> Knowledge, and Language in Healthcare Informa-<lb/>tion Systems. Methods of Information in Medicine<lb/> (34) 1/2.<lb/> </bibl>
+<bibl>N.T. Nhhn, N. Sager, M. Lyman, L. Tick, F. Borst,<lb/> and Y. Su. 1989. A medical language proces-<lb/>sor for two indo-european languages. In Proc. of<lb/> SCAMC 89, pages 554 -558.<lb/> </bibl>
+<bibl>N. Oliver. 1992. A sublanguage based medical lan-<lb/>guage processing system for German. Ph.D. the-<lb/>sis, Dept. of Computer Science. New York Univer-<lb/>sity.<lb/> </bibl>
+<bibl>N. Sager, C. Friedman, and M. Lyman. 1981. Natu-<lb/>ral Language Information Processing: a computer<lb/> grammar of English and its applications. Addison<lb/> Wesley, Reading, Massachussets.<lb/> </bibl>
+<bibl>N. Sager, C. Friedman, and M. Lyman. 1987. Medi-<lb/>cal Language Processing: Computer Management<lb/> of Narrative Data. Addison Wesley, Reading,<lb/> Massachussets.<lb/> </bibl>
+<bibl>N. Sager, M. Lyman, N. Nhhn, and L. Tick. 1995a.<lb/> Medical language processing: Applications to pa-<lb/>tient data representation and automatic encoding.<lb/> Methods of Information in Medicine, (34):140 -<lb/>146.<lb/> </bibl>
+<bibl>N. Sager, N. Nhkn, M. Lyman, and L. Tick. 1996.<lb/> Medical Language Processing with SGML display.<lb/> </bibl>
+<bibl>In Proc. of the 1996 AMIA Annual Fall Sympo-<lb/>sium, pages 547 -551 .<lb/> </bibl>
+<bibl>J.R. Scherrer, R. Cot~, and S. Mandil (eds.). 1989.<lb/> Computerized Natural Medical Language Process-<lb/>ing for Knowledge Representation. North Holland.<lb/> </bibl>
+<bibl>P. Spyns and G. Adriaens. 1992. Applying and<lb/> Improving the Restriction Grammar Approach for<lb/> Dutch Patient Discharge Summaries. In Proe. of<lb/> COLING 92, pages 1164 -1168.<lb/> </bibl>
+<bibl>P. Spyns. 1994. A robust category guesser for Dutch<lb/> medical language. In Proc. of ANLP 94, pages 150<lb/> -155. ACL.<lb/> </bibl>
+<bibl>P. Spyns. 1995. A contextual disambiguator for<lb/> Dutch medical language. In Proc. of the BeNeLux<lb/> Workshop on Logic Programming BENELOG 95,<lb/> pages 20 -24, Gent.<lb/> </bibl>
+<bibl>P. Spyns. 19963. Medical language processing and<lb/> reusability of resources: a case study applied to<lb/> Dutch. In Proc. of MIE 96, pages 1147 -1152,<lb/> Amsterdam. IOS Press.<lb/> </bibl>
+<bibl>P. Spyns. 1996b. Natural language processing in<lb/> medicine: An overview. Methods of Information<lb/> in Medicine, (35):285-302 .<lb/> </bibl>
+<bibl>P. Spyns. 1996c. Natural Language Processing in<lb/> the bio-medical area: Design and Implementation<lb/> of an Analyser for Dutch. Ph.D. thesis: Dept. of<lb/> Computer Science, K.U. Leuven.<lb/> </bibl>
+<bibl>F. Wingert, D. Rothwell, and R. Cbt~. 1989. Au-<lb/>tomated indexing into SNOMED and ICD. In<lb/> (Scherrer et al., 1989): pages 1 -5.38.<lb/> </bibl>
+<bibl>P. Zweigenbaum, J. Bouaud, B. Baehimont,<lb/> J. Charlet, B. S6roussi, J.F. Boisvieux. 1997.<lb/> From Text to Knowledge: a Unifying Document-<lb/>Oriented View of Analyzed Medical Language. In<lb/> (Chute. 1997). pages 21 -30 .</bibl>
+        </listBibl>
+    </text>
+</tei>
+

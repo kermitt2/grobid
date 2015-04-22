@@ -1,0 +1,25 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Eric Brill and Wu Jun. 1998. Classifier combination for<lb/> improved lexical disambiguation. In Proceedings of<lb/> the 36 th Annual Meeting of the Association for Com-<lb/>putational Linguistics, Montreal. CA.<lb/> </bibl>
+<bibl>Richard Duda and Peter Hart. 1973. Pattern Classifica-<lb/>tion and Scene Analysis. Wiley, New York, NY.<lb/> </bibl>
+<bibl>Jianfeng Gao and Joshua Goodman, Li Mingjing, Lee<lb/> Kai-Fu. 2002. Toward a unified approach to statisti-<lb/>cal language modeling for Chinese. ACM Transac-<lb/>tions on Asian Language Information Processing, 1<lb/> (1):3-33.<lb/> </bibl>
+<bibl>Changning Huang. 1997. Segmentation problem in Chi-<lb/>nese Processing. (In Chinese) Applied Linguistics.<lb/> 1:72-78.<lb/> </bibl>
+<bibl>Rong Li, Shaohui Liu, Shiwei Ye and Zhongzhi Shi.<lb/> 2001. A Method of Crossing Ambiguities in Chinese<lb/> word Segmentation Based on SVM and k-NN. (In<lb/> Chinese) Journal of Chinese Information Processing,<lb/> 15(6): 13-18.<lb/> </bibl>
+<bibl>Ting Liu, Kaizhu Wang and Xinghai Jiang. 1997. The<lb/> Maximum Probability Segmentation Algorithm of<lb/> Ambiguous Character Strings. (In Chinese) Lan-<lb/>guage Engineering. Tsinghua University Press.<lb/> pp.182-187.<lb/> </bibl>
+<bibl>Ted Pedersen. 2000. A Simple Approach to Building<lb/> Ensembles of Naive Bayesian Classifiers for Word<lb/> Sense Disambiguation. In Proceedings of the First<lb/> Annual Meeting of the North American Chapter of<lb/> the Association for Computational Linguistics. Seat-<lb/>tle, WA. pp. 63-69<lb/> </bibl>
+<bibl>Maosong Sun, Changning Huang and Benjamin K. Tsou.<lb/> 1997. Using Character Bigram for Ambiguity Reso-<lb/>lution In Chinese Words Segmentation. (In Chinese)<lb/> Computer Research and Development, 34(5): 332-<lb/>339<lb/> </bibl>
+<bibl>Maosong Sun and Zhengping Zuo. 1998. Overlapping<lb/> ambiguity in Chinese Text. (In Chinese) Quantita-<lb/>tive and Computational Studies on the Chinese<lb/> Language, HK, pp. 323-338<lb/> </bibl>
+<bibl>Maosong Sun, Zhengping Zuo and Changning Huang.<lb/> 1999. Algorithm for solving 3-character crossing<lb/> ambiguities in Chinese word segmentation. (In Chi-<lb/>nese) Journal of Tsinghua University Science and<lb/> Technology, 39(5).<lb/> </bibl>
+<bibl>Bing Swen and Shiwen Yu. 1999. A Graded Approach<lb/> for the Efficient Resolution of Chinese Word Seg-<lb/>mentation Ambiguities. In Proceedings of 5 th Natural<lb/> Language Processing Pacific Rim Symposium. pp.<lb/> 19-24<lb/> </bibl>
+<bibl>Junsheng Zhang, Zhida Chen and Shunde Chen. 1991.<lb/> Constraint Satisfaction and Probabilistic Chinese<lb/> Segmentation. (In Chinese) In Proceedings of<lb/> ROCLING IV (R.O.C. Computational Linguistics<lb/> Conference). pp. 147-165<lb/> </bibl>
+<bibl>Jiaheng Zheng and Kaiying Liu. 1997. The Research of<lb/> Ambiguity Word – Segmentation Technique for the<lb/> Chinese Text. (In Chinese) Language Engineering,<lb/> Tsinghua University Press, pp. 201-206</bibl>
+        </listBibl>
+    </text>
+</tei>
+

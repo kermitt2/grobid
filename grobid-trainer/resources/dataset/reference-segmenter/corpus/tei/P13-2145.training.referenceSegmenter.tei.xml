@@ -1,0 +1,40 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Javier Artiles, Qi Li, Taylor Cassidy, Suzanne<lb/> Tamang, and Heng Ji. 2011. CUNY BLENDER<lb/> TACKBP2011 Temporal Slot Filling System De-<lb/>scription. In Proceedings of Text Analysis Confer-<lb/>ence (TAC).<lb/> </bibl>
+<bibl>Nathanael Chambers, Shan Wang, and Dan Juraf-<lb/>sky. 2007. Classifying temporal relations between<lb/> events. In Proceedings of the 45th Annual Meeting<lb/> of the Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Nathanael Chambers. 2012. Labeling documents with<lb/> timestamps: Learning from their time expressions.<lb/> Proceedings of the 50th Annual Meeting of the As-<lb/>sociation for Computational Linguistics.<lb/> </bibl>
+<bibl>Angel X. Chang and Christopher D. Manning. 2012.<lb/> SUTIME: A library for recognizing and normaliz-<lb/>ing time expressions. In 8th International Confer-<lb/>ence on Language Resources and Evaluation(LREC<lb/> 2012).<lb/> </bibl>
+<bibl>De Choudhury, M., Counts, S., and Horvitz, E. 2013.<lb/> Major Life Changes and Behavioral Markers in So-<lb/>cial Media: Case of Childbirth. In Proc. CSCW<lb/> 2013.<lb/> </bibl>
+<bibl>Guillermo Garrido, Anselmo Penas, Bernardo Ca-<lb/>baleiro, and Alvaro Rodrigo. 2012. Temporally An-<lb/>chored Relation Extraction. In Proceedings of the<lb/> 50th annual meeting of the as-sociation for compu-<lb/>tational linguistics.<lb/> </bibl>
+<bibl>Heng Ji, Ralph Grishman, and Hoa Trang Dang. 2011.<lb/> Overview of the TAC 2011 Knowledge Base Popu-<lb/>lation track. In Proceedings of Text Analysis Con-<lb/>ference (TAC).<lb/> </bibl>
+<bibl>Hyuckchul Jung, James Allen, Nate Blaylock, Will de<lb/> Beaumont, Lucian Galescu, and Mary Swift. 2011.<lb/> Building timelines from narrative clinical records:<lb/> initial results based-on deep natural language under-<lb/>standing. In Proceedings of BioNLP 2011.<lb/> </bibl>
+<bibl>Oleksandr Kolomiyets, Steven Bethard and Marie-<lb/>Francine Moens. 2011. Model-Portability Experi-<lb/>ments for Textual Temporal Analysis. In Proceed-<lb/>ings of the 49th Annual Meeting of the Association<lb/> for Computational Linguistics.<lb/> </bibl>
+<bibl>Oleksandr Kolomiyets, Steven Bethard, and Marie-<lb/>Francine Moens. 2012. Extracting narrative time-<lb/>lines as temporal dependency structures. In Pro-<lb/>ceedings of the 50th annual meeting of the Associ-<lb/>ation for Computational Linguistics.<lb/> </bibl>
+<bibl>Xiao Ling and Daniel S Weld. 2010 Temporal infor-<lb/>mation extraction. Proceedings of the Twenty Fifth<lb/> National Conference on Artificial Intelligence.<lb/> </bibl>
+<bibl>David McClosky and Christopher D. Manning. 2012.<lb/> Learning Constraints for Consistent Timeline Ex-<lb/>traction. Proceedings of the 2012 Joint Confer-<lb/>ence on Empirical Methods in Natural Language<lb/> Processing and Computational Natural Language<lb/> Learning (EMNLP2012).<lb/> </bibl>
+<bibl>Mike Mintz, Steven Bills, Rion Snow, and Dan Ju-<lb/>rafsky. 2009. Distant supervision for relation ex-<lb/>traction without labeled data. In Proceedings of the<lb/> 47th annual meeting of the Association for Compu-<lb/>tational Linguistics.<lb/> </bibl>
+<bibl>Heekyong Park and Jinwook Choi 2012. V-model: a<lb/> new innovative model to chronologically visualize<lb/> narrative clinical texts. In Proceedings of the 2012<lb/> ACM annual conference on Human Factors in Com-<lb/>puting Systems. ACM.<lb/> </bibl>
+<bibl>Catherine Plaisant, Brett Milash, Anne Rose, Seth Wid-<lb/>off, and Ben Shneiderman. 1996. LifeLines: vi-<lb/>sualizing personal histories. In Proceedings of the<lb/> SIGCHI conference on Human factors in computing<lb/> systems.<lb/> </bibl>
+<bibl>James Pustejovsky, Jos M. Castao, Robert Ingria, Roser<lb/> Sauri, Robert J. Gaizauskas, Andrea Setzer, Graham<lb/> Katz, and Dragomir R. Radev. 2003. TimeML: Ro-<lb/>bust specification of event and temporal expressions<lb/> in text. TimeML: Robust specification of event and<lb/> temporal expressions in text. In New Directions in<lb/> Question Answering&apos;03.<lb/> </bibl>
+<bibl>James Pustejovsky, Patrick Hanks, Roser Sauri, An-<lb/>drew See, Robert Gaizauskas, Andrea Setzer,<lb/> Dragomir Radev. 2003. The Timebank corpus. In<lb/> Corpus Linguistics.<lb/> </bibl>
+<bibl>Preethi Raghavan, Eric Fosler-Lussier, and Albert M.<lb/> Lai. 2012. Learning to Temporally Order Medical<lb/> Events in Clinical Text. In Proceedings of the 50th<lb/> annual meeting of the Association for computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Jannik Strotgen and Michael Gertz. 2010. Heidel-<lb/>Time:High Quality Rule-Based Extraction and Nor-<lb/>malizationof Temporal Expressions. In SemEval<lb/> &apos;10.<lb/> </bibl>
+<bibl>Jannik Strotgen and Michael Gertz. 2012. Temporal<lb/> Tagging on Different Domains: Challenges, Strate-<lb/>gies, and Gold Standards. In LREC2012.<lb/> </bibl>
+<bibl>Partha Pratim Talukdar, Derry Wijaya, and Tom<lb/> Mitchell. 2012. Coupled temporal scoping of re-<lb/>lational facts. In Proceedings of the fifth ACM inter-<lb/>national conference on Web search and data mining.<lb/> ACM.<lb/> </bibl>
+<bibl>Naushad UzZaman and James F. Allen. 2010. TRIPS<lb/> and TRIOS system for TempEval-2: Extracting tem-<lb/>poral information from text. In Proceedings of the<lb/> 5th International Workshop on Semantic Evaluation.<lb/> </bibl>
+<bibl>Yafang Wang, Bing Yang, Lizhen Qu, Marc Spaniol,<lb/> and GerhardWeikum. 2011. Harvesting facts from<lb/> textual web sources by constrained label propaga-<lb/>tion. In Proceedings of the 20th ACM International<lb/> Conference on Information and Knowledge Man-<lb/>agement.<lb/> </bibl>
+<bibl>Miaomiao Wen, Hyeju Jang, and Carolyn Rosé. 2013.<lb/> Coding Manual for Illness Event Date Extraction.<lb/> </bibl>
+<bibl>Carnegie Mellon University, School of Computer<lb/> Science, Language Technology Institute.<lb/> </bibl>
+<bibl>K.-Y. Wen, F. McTavish, G. Kreps, M. Wise, and D.<lb/> Gustafson. 2012. From diagnosis to death: A<lb/> case study of coping with breast cancer as seen<lb/> through online discussion group messages. Jour-<lb/>nal of Computer-Mediated Communication, 16:331-<lb/>361.<lb/> </bibl>
+<bibl>Katsumasa Yoshikawa, Sebastian Riedel, Masayuki<lb/> Asahara, and Yuji Matsumoto. 2009. Jointly identi-<lb/>fying temporal relations with markov logic. In Pro-<lb/>ceedings of the Joint Conference of the 47th Annual<lb/> Meeting of the ACL and the 4th International Joint<lb/> Conference on Natural Language Processing of the<lb/> AFNLP.<lb/> </bibl>
+<bibl>Li Zhou and George Hripcsak. 2007. Temporal rea-<lb/>soning with medical data–a review with emphasis<lb/> on medical natural language processing. Journal of<lb/> biomedical informatics 40.2 (2007): 183.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

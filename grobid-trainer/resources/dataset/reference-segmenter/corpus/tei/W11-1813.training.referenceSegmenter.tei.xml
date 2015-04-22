@@ -1,0 +1,30 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Jenny Finkel, Shipra Dingare, Christopher D Manning,<lb/> Malvina Nissim, Beatrice Alex, and Claire Grover. 2005.<lb/> Exploring the Boundaries: Gene and Protein Identifica-<lb/>tion in Biomedical Text. BMC Bioinformatics. 6:S5.<lb/> </bibl>
+<bibl>Jin-Dong Kim, Sampo Pyysalo, Tomoko Ohta, Robert<lb/> Bossy, and Jun&apos;ichi Tsujii. 2011. Overview of<lb/> BioNLP Shared Task 2011. Proceedings of the<lb/> BioNLP 2011 Workshop Companion Volume for<lb/> Shared Task, Portland, Oregon, June. ACL 2011.<lb/> </bibl>
+<bibl>Taku Kudoh. 2007. CRF++. http://crfpp.sourceforge.net/.<lb/> </bibl>
+<bibl>Ryan McDonald and Fernando Pereira. 2005. Identifying<lb/> Gene and Protein Mentions in Text Using Condi-<lb/>tional Random Fields. BMC Bioinformatics. 6:S6.<lb/> </bibl>
+<bibl>Yusuke Miyao and Jun&apos;ichi Tsujii. 2008. Feature Forest<lb/> Models for Probabilistic HPSG Parsing. Computational<lb/> Linguistics, 34(1):35–80.<lb/> </bibl>
+<bibl>Ngan L. T. Nguyen and Jin-Dong Kim. 2008. Exploring<lb/> Domain Differences for the Design of Pronoun<lb/> Resolution Systems for Biomedical Text. Proceedings<lb/> of COLING 2008:625-632<lb/> </bibl>
+<bibl>Ngan L. T. Nguyen, Jin-Dong Kim, and Jun&apos;ichi Tsujii.<lb/> 2008. Challenges in Pronoun Resolution System for<lb/> Biomedical Text. Proceedings of LREC 2008.<lb/> </bibl>
+<bibl>Ngan L. T. Nguyen, Jin-Dong Kim, and Jun&apos;ichi Tsujii.<lb/> 2011. Overview of the Protein Coreference task in<lb/> BioNLP Shared Task 2011. Proceedings of the<lb/> BioNLP 2011 Workshop Companion Volume for<lb/> Shared Task, Portland, Oregon, June. ACL 2011.<lb/> </bibl>
+<bibl>Massimo Poesio and Mijail A. Kabadjov. 2004. A<lb/> general-purpose, off-the-shelf anaphora resolution<lb/> module: implementation and preliminary evaluation.<lb/> Proceedings of LREC 2004.<lb/> </bibl>
+<bibl>Long Qiu, Min-Yen Kan, and Tat-Seng Chua. 2004. A<lb/> Public Reference Implementation of the Rap Anaphora<lb/> Resolution Algorithm. Proceedings of LREC 2004.<lb/> </bibl>
+<bibl>Veselin Stoyanov, Claire Cardie, Nathan Gilbert, Ellen<lb/> Riloff, David Buttler, and David Hysom. 2010a.<lb/> Reconcile: A Coreference Resolution Platform. Tech<lb/> Report. Cornell University.<lb/> </bibl>
+<bibl>Veselin Stoyanov, Claire Cardie, Nathan Gilbert, Ellen<lb/> Riloff, David Buttler, and David Hysom. 2010b.<lb/> Coreference Resolution with Reconcile. Proceedings<lb/> of ACL 2010.<lb/> </bibl>
+<bibl>Veselin Stoyanov, Nathan Gilbert, Claire Cardie, and<lb/> Ellen Riloff. 2009. Conundrums in Noun Phrase<lb/> Coreference Resolution: Making Sense of the State-<lb/>of-the-Art. Proceedings of ACL-IJCNLP 2009.<lb/> </bibl>
+<bibl>Yoshimasa Tsuruoka and Jun&apos;ichi Tsujii. 2005.<lb/> Bidirectional Inference with the Easiest-First Strategy<lb/> for Tagging Sequence Data. Proceedings of HLT/EMNLP<lb/> 2005:467-474.<lb/> </bibl>
+<bibl>Yannick Versley, Simone P. Ponzetto, Massimo Poesio,<lb/> Vladimir Eidelman, Alan Jern, Jason Smith, Xiaofeng<lb/> Yang, and Alessandro Moschitti. 2008. BART: A<lb/> modular toolkit for coreference resolution. Proceedings<lb/> of LREC 2008.<lb/> </bibl>
+<bibl>Xiaofeng Yang, Jian Su, Guodong Zhou, and Chew Lim<lb/> Tan. 2004a. A NP-Cluster Based Approach to<lb/> Coreference Resolution. Proceedings of COLING<lb/> 2004:226-232.<lb/> </bibl>
+<bibl>XiaoFeng Yang, GuoDong Zhou, Jian Su, and Chew<lb/> Lim Tan. 2004b. Improving Noun Phrase<lb/> Coreference Resolution by Matching Strings.<lb/> Proceedings of IJCNLP 2004:226-333.<lb/> </bibl>
+<bibl>GuoDong Zhou, Dan Shen, Jie Zhang, Jian Su, and<lb/> SoonHeng Tan. 2005. Recognition of Protein/Gene<lb/> Names from Text Using an Ensemble of Classifiers.<lb/> BMC Bioinformatics. 6:S7.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

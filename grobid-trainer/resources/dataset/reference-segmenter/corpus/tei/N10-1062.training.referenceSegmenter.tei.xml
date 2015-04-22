@@ -1,0 +1,31 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Nicola Bertoldi and Marcello Federico. 2009. Do-<lb/>main adaptation for statistical machine translation with<lb/> monolingual resources. In WMT09: Proceedings of<lb/> the Fourth Workshop on Statistical Machine Transla-<lb/>tion, pages 182–189, Morristown, NJ, USA. Associa-<lb/>tion for Computational Linguistics.<lb/> </bibl>
+<bibl>Thorsten Brants, Ashok C. Popat, Peng Xu, Franz J. Och,<lb/> and Jeffrey Dean. 2007. Large language models in<lb/> machine translation. In Proceedings of the 2007 Joint<lb/> Conference on Empirical Methods in Natural Lan-<lb/>guage Processing and Computational Natural Lan-<lb/>guage Learning (EMNLP-CoNLL), pages 858–867.<lb/> </bibl>
+<bibl>Peter F. Brown, Vincent J. Della Pietra, Stephen A. Della<lb/> Pietra, and Robert L. Mercer. 1993. The mathemat-<lb/>ics of statistical machine translation: parameter esti-<lb/>mation. Computational Linguistics, 19(2):263–311.<lb/> </bibl>
+<bibl>Chris Callison-Burch, Colin Bannard, and Josh<lb/> Schroeder. 2005. Scaling phrase-based statisti-<lb/>cal machine translation to larger corpora and longer<lb/> phrases. In Proceedings of the 43rd Annual Meeting<lb/> of the Association for Computational Linguistics<lb/> (ACL&apos;05), pages 255–262, Ann Arbor, Michigan,<lb/> June. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Olivier Cappe and Eric Moulines. 2009. Online EM al-<lb/>gorithm for latent data models. Journal Of The Royal<lb/> Statistical Society Series B, 71:593.<lb/> </bibl>
+<bibl>David Chiang. 2007. Hierarchical phrase-based transla-<lb/>tion. Computational Linguistics, 33(2):201–228.<lb/> </bibl>
+<bibl>A. P. Dempster, N. M. Laird, and D. B. Rubin. 1977.<lb/> Maximum likelihood from incomplete data via the EM<lb/> algorithm. Journal of the Royal Statistical Society. Se-<lb/>ries B (Methodological), 39:1–38.<lb/> </bibl>
+<bibl>Philipp Koehn and Josh Schroeder. 2007. Experiments<lb/> in domain adaptation for statistical machine transla-<lb/>tion. In Proceedings of the Second Workshop on Sta-<lb/>tistical Machine Translation, pages 224–227, Prague,<lb/> Czech Republic, June. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Abby Levenberg and Miles Osborne. 2009. Stream-<lb/>based randomised language models for SMT. In Pro-<lb/>ceedings of the Conference on Empirical Methods in<lb/> Natural Language Processing (EMNLP).<lb/> </bibl>
+<bibl>Zhifei Li, Chris Callison-Burch, Chris Dyer, Juri Gan-<lb/>itkevitch, Sanjeev Khudanpur, Lane Schwartz, Wren<lb/> N. G. Thornton, Jonathan Weese, and Omar F. Zaidan.<lb/> 2009. Joshua: an open source toolkit for parsing-<lb/>based machine translation. In WMT09: Proceedings<lb/> of the Fourth Workshop on Statistical Machine Trans-<lb/>lation, pages 135–139, Morristown, NJ, USA. Associ-<lb/>ation for Computational Linguistics.<lb/> </bibl>
+<bibl>Percy Liang and Dan Klein. 2009. Online EM for unsu-<lb/>pervised models. In North American Association for<lb/> Computational Linguistics (NAACL).<lb/> </bibl>
+<bibl>Adam Lopez. 2008. Tera-scale translation models via<lb/> pattern matching. In Proceedings of the 22nd Interna-<lb/>tional Conference on Computational Linguistics (Col-<lb/>ing 2008), pages 505–512, Manchester, UK, August.<lb/> Coling 2008 Organizing Committee.<lb/> </bibl>
+<bibl>Udi Manber and Gene Myers. 1990. Suffix arrays:<lb/> A new method for on-line string searches. In The<lb/> First Annual ACM-SIAM Symposium on Dicrete Algo-<lb/>rithms, pages 319–327.<lb/> </bibl>
+<bibl>Franz Josef Och and Hermann Ney. 2003. A system-<lb/>atic comparison of various statistical alignment mod-<lb/>els. Computational Linguistics, 29(1):19–51, March.<lb/> </bibl>
+<bibl>Franz Josef Och. 2003. Minimum error rate training<lb/> in statistical machine translation. In ACL &apos;03: Pro-<lb/>ceedings of the 41st Annual Meeting on Association<lb/> for Computational Linguistics, pages 160–167, Mor-<lb/>ristown, NJ, USA. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>Kishore Papineni, Salim Roukos, Todd Ward, and Wei-<lb/>Jing Zhu. 2001. Bleu: a method for automatic evalua-<lb/>tion of machine translation. In ACL &apos;02: Proceedings<lb/> of the 40th Annual Meeting on Association for Compu-<lb/>tational Linguistics, pages 311–318, Morristown, NJ,<lb/> USA. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Ronald Rosenfeld. 1995. Optimizing lexical and n-gram<lb/> coverage via judicious use of linguistic data. In In<lb/> Proc. European Conf. on Speech Technology, pages<lb/> 1763–1766.<lb/> </bibl>
+<bibl>Mikaël Salson, Thierry Lecroq, Martine Léonard, and<lb/> Laurent Mouchard. 2009. Dynamic extended suffix<lb/> arrays. Journal of Discrete Algorithms, March.<lb/> </bibl>
+<bibl>Stephan Vogel, Hermann Ney, and Christoph Tillmann.<lb/> 1996. HMM-based word alignment in statistical trans-<lb/>lation. In Proceedings of the 16th conference on Com-<lb/>putational linguistics, pages 836–841, Morristown,<lb/> NJ, USA. Association for Computational Linguistics.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

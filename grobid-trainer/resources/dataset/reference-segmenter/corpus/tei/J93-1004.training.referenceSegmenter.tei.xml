@@ -1,0 +1,23 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        1. Let d(xl,yl, 0~ 0) be the cost of substituting Xl with yl,<lb/> 2. d(xl, 0; 0, 0) be the cost of deleting Xl,<lb/> 3. d(O, yl; 0, 0) be the cost of insertion of Yl,<lb/> 4. d(Xl,yl; x2, 0) be the cost of contracting Xl and x2 to yl,<lb/> References<lb/> 
+<bibl>Abramowitz, M., and Stegun, I. (1964).<lb/> Handbook of Mathematical Functions. US<lb/> Government Printing Office.<lb/> </bibl>
+<bibl>Brown, P.; Cocke, J.; Della Pietra, S.; Della<lb/> Pietra, V.; Jelinek, F.; Mercer, R.; and<lb/> Roossin, P. (1988a). &quot;A statistical<lb/> approach to French/English translation.&quot;<lb/> In Proceedings, RIA088 Conference.<lb/> Cambridge, MA.<lb/> </bibl>
+<bibl>Brown, P.; Cocke, J.; Della Pietra, S.; Della<lb/> Pietra, V.; Jelinek, F.; Mercer, R.; and<lb/> Roossin, P. (1988b). &quot;A statistical<lb/> approach to language translation.&quot; In<lb/> Proceedings, 13th International Conference on<lb/> Computational Linguistics (COLING-88).<lb/> Budapest, Hungary.<lb/> </bibl>
+<bibl>Brown, P.; Cocke, J.; Della Pietra, S.; Della<lb/> Pietra, V.; Jelinek, F.; Lafferty, J.; Mercer,<lb/> R.; and Roossin, P. (1990). &quot;A statistical<lb/> approach to machine translation.&quot;<lb/> Computational Linguistics, 16, 79-85.<lb/> </bibl>
+<bibl>Brown, P.; Lai, J.; and Mercer, R. (1991).<lb/> &quot;Aligning sentences in parallel corpora.&quot;<lb/> In Proceedings, 47th Annual Meeting of the<lb/> Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Catizone, R.; Russell, G.; and Warwick, S.<lb/> (in press). &quot;Deriving translation data from<lb/> bilingual texts.&quot; In Lexical Acquisition:<lb/> Using on-line Resources to Build a Lexicon,<lb/> edited by Zernik. Lawrence Erlbaum.<lb/> Church, K. (1988). &quot;A stochastic parts<lb/> program and noun phrase parser for<lb/> unrestricted text.&quot; In Proceedings, Second<lb/> Conference on Applied Natural Language<lb/> Processing. Austin, TX.<lb/> </bibl>
+<bibl>Hosmer, D., and Lemeshow, S. (1989).<lb/> Applied Logistic Regression. Wiley.<lb/> </bibl>
+<bibl>Klavans, J., and Tzoukermann, E. (1990).<lb/> &quot;The BICORD system.&quot; In Proceedings,<lb/> 15th International Conference on<lb/> Computational Linguistics (COLING-90),<lb/> 174-179.<lb/> </bibl>
+<bibl>Kay, M., and R6scheisen, M. (1988).<lb/> &quot;Text-translation alignment.&quot; Xerox Palo<lb/> Alto Research Center.<lb/> </bibl>
+<bibl>Kruskal, J., and Liberman, M. (1983). &quot;The<lb/> symmetric time-warping problem: From<lb/> continuous to discrete.&quot; In Time Warps,<lb/> String Edits, and Macro Molecules: The<lb/> Theory and Practice of Sequence Comparison,<lb/> edited by D. Sankoff and J. Kruskal.<lb/> Addison-Wesley.<lb/> </bibl>
+<bibl>Liberman, M., and Church, K. (in press).<lb/> &quot;Text analysis and word pronunciation in<lb/> text-to-speech synthesis.&quot; In Advances in<lb/> Speech Signal Processing, edited by S. Furui<lb/> and M. Sondhi.<lb/> </bibl>
+<bibl>Sankoff, D., and Kruskal, J. (1983). Time<lb/> Warps, String Edits, and Macromolecules: The<lb/> Theory and Practice of Sequence Comparison.<lb/> Addison-Wesley.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

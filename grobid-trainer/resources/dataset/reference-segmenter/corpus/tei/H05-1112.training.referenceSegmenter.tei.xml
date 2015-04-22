@@ -1,0 +1,29 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl>Scattering algorithm and the decision trees (C5.0,<lb/> http://www.rulequest.com/see5-info.html),<lb/> the<lb/> naive Bayes model (jBNC, Bayesian Network<lb/> Classifier Toolbox, http://jbnc.sourceforge.net),<lb/> and Support Vector Machine (libSVM, Chih-<lb/>Chung Chang and Chih-Jen Lin. 2004. LIB-<lb/>SVM: a Library for Support Vector Machines,<lb/> http://www.csie.ntu.edu.tw/ cjlin/papers/libsvm.pdf).<lb/> </bibl>
+<bibl>The reason for the superior performance of Se-<lb/>mantic Scattering is because the classification<lb/> of genitives is feature poor relying only on the<lb/> semantics of the noun components, and the other<lb/> References<lb/> Barker, Chris. 1995. Possessive Descriptions. CSLI<lb/> Publications, Standford, CA.<lb/> </bibl>
+<bibl>Berland, Matthew and Eugene Charniak. 1999. Finding<lb/> parts in very large. In Proceeding of ACL 1999.<lb/> </bibl>
+<bibl>Fellbaum, Christiane. 1998. WordNet -An Electronic<lb/> Lexical Databases. Cambridge MA: MIT Press.<lb/> </bibl>
+<bibl>Girju, Roxana, Adriana Badulescu, and Dan Moldovan.<lb/> 2003. Learning semantic constraints for the automatic<lb/> discovery of part-whole relations. In Proceedings of<lb/> the HLT-NAACL 2003.<lb/> </bibl>
+<bibl>Gildea, Daniel and Daniel Jurafsky. 2002. Automatic<lb/> Labeling of Semantic Roles. Computational Linguis-<lb/>tics, 28(3):277-295.<lb/> </bibl>
+<bibl>Hearst, Marti. 1998. Automated Discovery of Word-<lb/>Net relations. In An Electronic Lexical Database and<lb/> Some of its Applications. MIT Press, Cambridge MA.<lb/> </bibl>
+<bibl>Lapata, Maria. 2000. Automatic Interpretation of Nomi-<lb/>nalizations. In Proceedings of AAAI 2000, 716-721.<lb/> </bibl>
+<bibl>Li, Hang and Naoki Abe. 1998. Generalizing case<lb/> frames using a thesaurus and the mdl principle. Com-<lb/>putational Linguistics, 24(2):217–224.<lb/> </bibl>
+<bibl>McCarthy, Diana. 1997. Word sense disambiguation for<lb/> acquisition of selectional preferences. In Proceedings<lb/> of the ACL/EACL 97.<lb/> </bibl>
+<bibl>Moldovan, Dan, Adriana Badulescu, Marta Tatu, Daniel<lb/> Antohe, and Roxana Girju. 2004. Models for the Se-<lb/>mantic Classification of Noun Phrases. In Proceed-<lb/>ings of the HLT-NAACL 2004, Computational Lexical<lb/> Semantics Workshop.<lb/> </bibl>
+<bibl>Nikiforidou, Kiki. 1991. The meanings of the genitive:<lb/> A case study in the semantic structure and semantic<lb/> change. Cognitive Linguistics, 2:149–205.<lb/> </bibl>
+<bibl>Novischi, Adrian, Dan Moldovan, Paul Parker, Adriana<lb/> Badulescu, and Bob Hauser. 2004. LCC&apos;s WSD sys-<lb/>tems for Senseval 3. In Proceedings of Senseval 3.<lb/> </bibl>
+<bibl>Rissanen, Jorma. 1978. Modeling by shortest data de-<lb/>scription. Automatic, 14.<lb/> </bibl>
+<bibl>Rosario, Barbara and Marti Hearst. 2001. Classify-<lb/>ing the Semantic Relations in Noun Compounds via<lb/> a Domain-Specific Lexical Hierarchy. In Proceeding<lb/> of EMNLP 2001.<lb/> </bibl>
+<bibl>Siegel, S. and N.J. Castellan. 1988. Non Paramet-<lb/>ric Statistics for the behavioral sciences. New York:<lb/> McGraw-Hill.<lb/> </bibl>
+<bibl>Stefanowitsch, Anatol. 2001. Constructional semantics<lb/> as a limit to grammatical alternation: Two genitives<lb/> of English. Determinants of Grammatical Variation in<lb/> English.<lb/> </bibl>
+<bibl>Taylor, John. 1996. Possessives in English. An ex-<lb/>ploration in cognitive grammar. Oxford, Clarendon<lb/> Press.<lb/> </bibl>
+<bibl>Vikner, Carl and Per Anker Jensen. 1999. A semantic<lb/> analysis of the English genitive: interaction of lexical<lb/> and formal semantics.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

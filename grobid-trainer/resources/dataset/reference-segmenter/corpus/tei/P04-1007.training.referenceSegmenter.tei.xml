@@ -1,0 +1,37 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Cyril Allauzen, Mehryar Mohri, and Brian Roark. 2003. Generalized<lb/> algorithms for constructing language models. In Proceedings of the<lb/> 41st Annual Meeting of the Association for Computational Linguis-<lb/>tics, pages 40–47.<lb/> </bibl>
+<bibl>Satish Balay, William D. Gropp, Lois Curfman McInnes, and Barry F.<lb/> Smith. 2002. Petsc users manual. Technical Report ANL-95/11-<lb/>Revision 2.1.2, Argonne National Laboratory.<lb/> </bibl>
+<bibl>Satanjeev Banerjee, Jack Mostow, Joseph Beck, and Wilson Tam.<lb/> 2003. Improving language models by learning from speech recog-<lb/>nition errors in a reading tutor that listens. In Proceedings of the<lb/> Second International Conference on Applied Artificial Intelligence,<lb/> Fort Panhala, Kolhapur, India.<lb/> </bibl>
+<bibl>Steven J. Benson and Jorge J. Moré. 2002. A limited memory vari-<lb/>able metric method for bound constrained minimization. Preprint<lb/> ANL/ACSP909-0901, Argonne National Laboratory.<lb/> </bibl>
+<bibl>Steven J. Benson, Lois Curfman McInnes, Jorge J. Moré, and Jason<lb/> Sarich. 2002. Tao users manual. Technical Report ANL/MCS-TM-<lb/>242-Revision 1.4, Argonne National Laboratory.<lb/> </bibl>
+<bibl>Zheng Chen, Kai-Fu Lee, and Ming Jing Li. 2000. Discriminative<lb/> training on language model. In Proceedings of the Sixth Interna-<lb/>tional Conference on Spoken Language Processing (ICSLP), Bei-<lb/>jing, China.<lb/> </bibl>
+<bibl>Michael Collins. 2002. Discriminative training methods for hidden<lb/> markov models: Theory and experiments with perceptron algo-<lb/>rithms. In Proceedings of the Conference on Empirical Methods<lb/> in Natural Language Processing (EMNLP), pages 1–8.<lb/> </bibl>
+<bibl>Michael Collins. 2004. Parameter estimation for statistical parsing<lb/> models: Theory and practice of distribution-free methods. In Harry<lb/> Bunt, John Carroll, and Giorgio Satta, editors, New Developments<lb/> in Parsing Technology. Kluwer.<lb/> </bibl>
+<bibl>Yoav Freund and Robert Schapire. 1999. Large margin classification<lb/> using the perceptron algorithm. Machine Learning, 3(37):277–296.<lb/> </bibl>
+<bibl>Frederick Jelinek. 1995. Acoustic sensitive language modeling. Tech-<lb/>nical report, Center for Language and Speech Processing, Johns<lb/> Hopkins University, Baltimore, MD.<lb/> </bibl>
+<bibl>Mark Johnson, Stuart Geman, Steven Canon, Zhiyi Chi, and Stefan<lb/> Riezler. 1999. Estimators for stochastic &quot; unification-based &quot; gram-<lb/>mars. In Proceedings of the 37th Annual Meeting of the Association<lb/> for Computational Linguistics, pages 535–541.<lb/> </bibl>
+<bibl>Sanjeev Khudanpur and Jun Wu. 2000. Maximum entropy techniques<lb/> for exploiting syntactic, semantic and collocational dependencies in<lb/> language modeling. Computer Speech and Language, 14(4):355–<lb/> 372.<lb/> </bibl>
+<bibl>Hong-Kwang Jeff Kuo, Eric Fosler-Lussier, Hui Jiang, and Chin-<lb/>Hui Lee. 2002. Discriminative training of language models for<lb/> speech recognition. In Proceedings of the International Conference<lb/> on Acoustics, Speech, and Signal Processing (ICASSP), Orlando,<lb/> Florida.<lb/> </bibl>
+<bibl>John Lafferty, Andrew McCallum, and Fernando Pereira. 2001. Con-<lb/>ditional random fields: Probabilistic models for segmenting and<lb/> labeling sequence data. In Proc. ICML, pages 282–289, Williams<lb/> College, Williamstown, MA, USA.<lb/> </bibl>
+<bibl>Robert Malouf. 2002. A comparison of algorithms for maximum en-<lb/>tropy parameter estimation. In Proc. CoNLL, pages 49–55.<lb/> </bibl>
+<bibl>Andrew McCallum and Wei Li. 2003. Early results for named entity<lb/> recognition with conditional random fields, feature induction and<lb/> web-enhanced lexicons. In Proc. CoNLL.<lb/> </bibl>
+<bibl>Mehryar Mohri, Fernando C. N. Pereira, and Michael Riley. 2002.<lb/> Weighted finite-state transducers in speech recognition. Computer<lb/> Speech and Language, 16(1):69–88.<lb/> </bibl>
+<bibl>NIST. 2000. Speech recognition scoring toolkit (sctk) version 1.2c.<lb/> Available at http://www.nist.gov/speech/tools.<lb/> </bibl>
+<bibl>David Pinto, Andrew McCallum, Xing Wei, and W. Bruce Croft. 2003.<lb/> Table extraction using conditional random fields. In Proc. ACM SI-<lb/>GIR.<lb/> </bibl>
+<bibl>Adwait Ratnaparkhi, Salim Roukos, and R. Todd Ward. 1994. A max-<lb/>imum entropy model for parsing. In Proceedings of the Interna-<lb/>tional Conference on Spoken Language Processing (ICSLP), pages<lb/> 803–806.<lb/> </bibl>
+<bibl>Brian Roark, Murat Saraclar, and Michael Collins. 2004. Corrective<lb/> language modeling for large vocabulary ASR with the perceptron al-<lb/>gorithm. In Proceedings of the International Conference on Acous-<lb/>tics, Speech, and Signal Processing (ICASSP), pages 749–752.<lb/> </bibl>
+<bibl>Fei Sha and Fernando Pereira. 2003. Shallow parsing with conditional<lb/> random fields. In Proc. HLT-NAACL, Edmonton, Canada.<lb/> </bibl>
+<bibl>A. Stolcke and M. Weintraub. 1998. Discriminitive language model-<lb/>ing. In Proceedings of the 9th Hub-5 Conversational Speech Recog-<lb/>nition Workshop.<lb/> </bibl>
+<bibl>A. Stolcke, H. Bratt, J. Butzberger, H. Franco, V. R. Rao Gadde,<lb/> M. Plauche, C. Richey, E. Shriberg, K. Sonmez, F. Weng, and<lb/> J. Zheng. 2000. The SRI March 2000 Hub-5 conversational speech<lb/> transcription system. In Proceedings of the NIST Speech Transcrip-<lb/>tion Workshop.<lb/> </bibl>
+<bibl>Hanna Wallach. 2002. Efficient training of conditional random fields.<lb/> Master&apos;s thesis, University of Edinburgh.<lb/> P.C. Woodland and D. Povey. 2000. Large scale discriminative training<lb/> for speech recognition. In Proc. ISCA ITRW ASR2000, pages 7–16.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

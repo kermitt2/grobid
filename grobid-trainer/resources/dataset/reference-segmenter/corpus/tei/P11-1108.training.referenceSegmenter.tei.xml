@@ -1,0 +1,47 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>S. Abney. 1991. Parsing by chunks. In R. Berwick,<lb/> S. Abney, and C. Tenny, editors, Principle-based Pars-<lb/>ing. Kluwer.<lb/> </bibl>
+<bibl>P. W. Adriaans, M. Trautwein, and M. Vervoort. 2000.<lb/> Towards high speed grammar induction on large text<lb/> corpora. In SOFSEM.<lb/> </bibl>
+<bibl>T. Berg-Kirkpatrick, A. Bouchard-Côté, J. DeNero, and<lb/> D. Klein. 2010. Painless unsupervised learning with<lb/> features. In HLT-NAACL.<lb/> </bibl>
+<bibl>R. Bod. 2006. Unsupervised parsing with U-DOP. In<lb/> CoNLL.<lb/> </bibl>
+<bibl>T. Brants. 1999. Cascaded markov models. In EACL.<lb/> </bibl>
+<bibl>E. Charniak. 1993. Statistical Language Learning. MIT.<lb/> </bibl>
+<bibl>S. B. Cohen and N. A. Smith. 2009. Shared logistic<lb/> normal distributions for soft parameter tying in unsu-<lb/>pervised grammar induction. In HLT-NAACL.<lb/> </bibl>
+<bibl>B. Cramer. 2007. Limitations of current grammar induc-<lb/>tion algorithms. In ACL-SRW.<lb/> </bibl>
+<bibl>X. Duan, J. Zhao, and B. Xu. 2007. Probabilistic mod-<lb/>els for action-based Chinese dependency parsing. In<lb/> ECML/PKDD.<lb/> </bibl>
+<bibl>J. Gao and H. Suzuki. 2003. Unsupervised learning of<lb/> dependency structure for language modeling. In ACL.<lb/> </bibl>
+<bibl>J. Gao, J.Y. Nie, G. Wu, and G. Cao. 2004. Dependence<lb/> language model for information retrieval. In SIGIR.<lb/> </bibl>
+<bibl>T. L. Griffiths, M. Steyvers, D. M. Blei, and J. M. Tenen-<lb/>baum. 2005. Integrating topics and syntax. In NIPS.<lb/> </bibl>
+<bibl>C. Hänig. 2010. Improvements in unsupervised co-<lb/>occurence based parsing. In CoNLL.<lb/> </bibl>
+<bibl>W. P. Headden III, M. Johnson, and D. McClosky.<lb/> 2009. Improving unsupervised dependency parsing<lb/> with richer contexts and smoothing. In HLT-NAACL.<lb/> </bibl>
+<bibl>K. Hollingshead, S. Fisher, and B. Roark. 2005. Com-<lb/>paring and combining finite-state and context-free<lb/> parsers. In HLT-EMNLP.<lb/> </bibl>
+<bibl>D. Klein and C. D. Manning. 2002. A generative<lb/> constituent-context model for improved grammar in-<lb/>duction. In ACL.<lb/> </bibl>
+<bibl>D. Klein and C. D. Manning. 2004. Corpus-based induc-<lb/>tion of syntactic structure: Models of dependency and<lb/> constituency. In ACL.<lb/> </bibl>
+<bibl>B. Krenn, T. Brants, W. Skut, and Hans Uszkoreit. 1998.<lb/> A linguistically interpreted corpus of German newspa-<lb/>per text. In Proceedings of the ESSLLI Workshop on<lb/> Recent Advances in Corpus Annotation.<lb/> </bibl>
+<bibl>K. Lari and S. J. Young. 1990. The estimation of stochas-<lb/>tic context-free grammars using the inside-outside al-<lb/>gorithm. Computer Speech &amp; Language, 4:35 – 56.<lb/> </bibl>
+<bibl>M.P. Marcus, B. Santorini, and M.A. Marcinkiewicz.<lb/> 1993. Building a large annotated corpus of English:<lb/> The Penn Treebank. Compuational Linguistics, pages<lb/> 313–330.<lb/> </bibl>
+<bibl>M.P. Marcus, B. Santorini, M.A. Marcinkiewicz, and<lb/> A. Taylor, 1999. Treebank-3. LDC.<lb/> </bibl>
+<bibl>T. Moon, J. Baldridge, and K. Erk. 2010. Crouching<lb/> Dirichlet, hidden Markov model: Unsupervised POS<lb/> tagging with context local tag generation. In EMNLP.<lb/> </bibl>
+<bibl>M. Palmer, F. D. Chiou, N. Xue, and T. K. Lee, 2005.<lb/> Chinese Treebank 5.0. LDC.<lb/> </bibl>
+<bibl>F. Pereira and Y. Schabes. 1992. Inside-outside reesti-<lb/>mation from paritally bracketed corpora. In ACL.<lb/> </bibl>
+<bibl>E. Ponvert, J. Baldridge, and K. Erk. 2010. Simple unsu-<lb/>pervised prediction of low-level constituents. In ICSC.<lb/> L.R. Rabiner. 1989. A tutorial on hidden Markov models<lb/> and selected applications in speech recognition. Pro-<lb/>ceedings of the IEEE.<lb/> </bibl>
+<bibl>L. A. Ramshaw and M. P. Marcus. 1995. Text chunking<lb/> using transformation-based learning. In Proc. of Third<lb/> Workshop on Very Large Corpora.<lb/> </bibl>
+<bibl>R. Reichart and A. Rappoport. 2010. Improved fully<lb/> unsupervised parsing with Zoomed Learning. In<lb/> EMNLP.<lb/> </bibl>
+<bibl>W. Schuler, S. AbdelRahman, T. Miller, and L. Schwartz.<lb/> 2010.<lb/> Broad-coverage parsing using human-like<lb/> memory constraints. Compuational Linguistics, 3(1).<lb/> </bibl>
+<bibl>Y. Seginer. 2007. Fast unsupervised incremental parsing.<lb/> In ACL.<lb/> </bibl>
+<bibl>N. A. Smith and J. Eisner. 2004. Annealing techniques<lb/> for unsupervised statistical language learning. In ACL.<lb/> </bibl>
+<bibl>N. A. Smith and M. Johnson. 2007. Weighted and prob-<lb/>abilistic CFGs. Computational Lingusitics.<lb/> </bibl>
+<bibl>Z. Solan, D. Horn, E. Ruppin, and S. Edelman. 2005.<lb/> Unsupervised learning of natural languages. PNAS,<lb/> 102.<lb/> </bibl>
+<bibl>V. I. Spitkovsky, H. Alshawi, and D. Jurafsky. 2010.<lb/> From baby steps to leapfrog: How &quot; less is more &quot; in<lb/> unsupervised dependency parsing. In NAACL-HLT.<lb/> </bibl>
+<bibl>E. F. Tjong, K. Sang, and S. Buchholz. 2000. Introduc-<lb/>tion to the CoNLL-2000 Shared Task: Chunking. In<lb/> CoNLL-LLL.<lb/> </bibl>
+<bibl>M. van Zaanen. 2000. ABL: Alignment-based learning.<lb/> In COLING.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,23 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Edmonds, Philip: Semantic Representation of Near-<lb/>Synonyms for Automatic Lexical Choice. PhD Thesis,<lb/> University of Toronto (1999)<lb/> Edmonds, Philip and Hirst, Graeme. &quot; Near-synonymy<lb/> and lexical choice. &quot; Computational Linguistics,<lb/> 28(2), June 2002, 105--144.<lb/> </bibl>
+<bibl>Finnish-English General Dictionary. Uusi suomi-<lb/>englanti suursanakirja (1984). Raija Hurme, Riitta-<lb/>Leena Malin, Olli Syväoja. WSOY. Helsinki.<lb/> </bibl>
+<bibl>Inkpen, Diana Zaiu and Hirst, Graeme. &quot; Acquiring col-<lb/>locations for lexical choice between near-synonyms. &quot;<lb/> In SIGLEX Workshop on Unsupervised Lexical Ac-<lb/>quisition, 40th meeting of the Association for<lb/> Computational Linguistics, Philadelphia, June 2002.<lb/> </bibl>
+<bibl>Inkpen, Diana Zaiu and Hirst, Graeme. &quot; Building a<lb/> lexical knowledge-base of near-synonym differ-<lb/>ences. &quot; In Proceedings of the Workshop on WordNet<lb/> and Other Lexical Resources, Second meeting of the<lb/> North American Chapter of the Association for Com-<lb/>putational Linguistics, Pittsburgh, June 2001.<lb/> </bibl>
+<bibl>Percy, Walker: The Message in the Bottle, Farrar,<lb/> Strauss and Giroux, New York, 1976<lb/> </bibl>
+<bibl>Raukko, Jarno 1999: &quot; An &apos;intersubjective&apos; Method for<lb/> cognitive-semantic Research on Polysemy: The case<lb/> of GET &quot; . – In Masako K. Hiraga, Chris Sinha, and<lb/> Sherman Wilcox (ed.), Cultural, Psychological and<lb/> Typological Issues in Cognitive Linguistics. Selected<lb/> papers of the bi-annual ICLA meeting in Albuquer-<lb/>que, July 1995 pp. 87–105. John Benjamins. Amster-<lb/>dam/Philadelphia. [Current Issues in Linguistic<lb/> Theory, 152.]<lb/> </bibl>
+<bibl>Vanhatalo, Ulla 2002a: &quot; Population Tests in Lexicogra-<lb/>phy &quot; . In Geoffrey Stewart Morrison &amp; Les Zsoldos<lb/> (ed.), Proceedings of the Northwest Linguistics Con-<lb/>ference 2002. pp. 83-94. Available online at<lb/> http://edocs.lib.sfu.ca/projects/NWLC2002/<lb/> NWLC2002_Proceedings_Vanhatalo.pdf<lb/> </bibl>
+<bibl>Vanhatalo, Ulla 2002b: &quot; Naiset motkottaa aiheesta ja<lb/> nalkuttaa syyttä &quot; : Kyselytestit verbien semanttisten<lb/> sisältöjen arvioinnissa. [Using Questionnaires to As-<lb/>sess Semantic Content of Verbs]. In Virittäjä 106: 3.<lb/> pp. 330-353.<lb/> </bibl>
+<bibl>Vanhatalo, Ulla 2003: &quot; Finnish Electronic Dictionaries:<lb/> Present and Future Challenges in Incorporating Se-<lb/>mantic and Pragmatic Information &quot; . In Journal of<lb/> Finnish Studies. Forthcoming.<lb/> </bibl>
+<bibl>Wierzbicka, Anna 1996: Semantics: Primes and Uni-<lb/>versals. Oxford University Press.<lb/> </bibl>
+<bibl>Wierzbicka, Anna 1999: Emotions Across Languages<lb/> and Cultures: Diversity and Universals. Cambridge<lb/> University Press.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

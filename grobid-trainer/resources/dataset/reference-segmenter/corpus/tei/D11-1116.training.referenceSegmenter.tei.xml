@@ -1,0 +1,60 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Collin Baker, and Michael Ellsworth and Katrin Erk.<lb/> 2007. SemEval&apos;07 task 19: Frame Semantic Structure<lb/> Extraction. In Proc. of the 4th International Workshop<lb/> on Semantic Evaluations<lb/> </bibl>
+<bibl>Collin Baker, Charles J. Fillmore and John B. Lowe.<lb/> 1998. The Berkeley FrameNet Project. In Proc. of the<lb/> 17th international conference on Computational lin-<lb/>guistics<lb/> </bibl>
+<bibl>Adam L. Berger, Vincent J. Della Pietra, and Stephen A.<lb/> 
+Della Pietra. 1996. A maximum entropy approach to<lb/> natural language processing. In Computational Lin-<lb/>guistics 22(1):39–71<lb/> </bibl>
+<bibl>Peter F. Brown, Peter V. deSouza, Robert L. Mercer, Vin-<lb/>cent J. Della Pietra, and Jenifer C. Lai. 1992. Class-<lb/>Based n-gram Models of Natural Language. Compu-<lb/>tational Linguistics 18(4):467–479.<lb/> </bibl>
+<bibl>Sabine Buchholz and Erwin Marsi. 2006. CoNLL-X<lb/> shared task on multilingual dependency parsing. In<lb/> Proc. of CoNLL 2006.<lb/> </bibl>
+<bibl>Xavier Carreras. 2007. Experiments with a Higher-<lb/>Order Projective Dependency Parser. In Proc. of the<lb/> CoNLL Shared Task Session of EMNLP-CoNLL 2007.<lb/> </bibl>
+<bibl>Daniel Cer, Marie-Catherine de Marneffe, Daniel Juraf-<lb/>sky, and Christopher D. Manning. 2010. Parsing to<lb/> Stanford Dependencies: Trade-offs between speed and<lb/> accuracy. In Proc. of LREC 2010.<lb/> </bibl>
+<bibl>Eugene Charniak. 2000. A Maximum-Entropy-Inspired<lb/> Parser. In Proc. of NAACL 2000.<lb/> </bibl>
+<bibl>Eugene Charniak and Mark Johnson. 2005. Coarse-to-<lb/>find-grained n-best parsing and discriminative rerank-<lb/>ing. In Proc. of ACL 2005.<lb/> </bibl>
+<bibl>Michael A. Covington. 2001. A Fundamental Algorithm<lb/> for Dependency Parsing. In Proc. of the 39th Annual<lb/> ACM Southeast Conference.<lb/> </bibl>
+<bibl>Dipanjan Das, Nathan Schneider, Desai Chen, and Noah<lb/> A. Smith. 2010. Probabilistic Frame-Semantic Pars-<lb/>ing. In Proc. of HLT-NAACL 2010.<lb/> </bibl>
+<bibl>Marie-Catherine de Marneffe and Christopher D. Man-<lb/>ning. 2008. The Stanford typed dependencies repre-<lb/>sentation. In COLING Workshop on Cross-framework<lb/> and Cross-domain Parser Evaluation.<lb/> </bibl>
+<bibl>Jason Eisner. 1996. Three New Probabilistic Models<lb/> for Dependency Parsing: An Exploration. In Proc. of<lb/> COLING 1996.<lb/> </bibl>
+<bibl>Christiane Fellbaum. 1998. WordNet: An Electronic<lb/> Lexical Database. MIT Press.<lb/> </bibl>
+<bibl>Daniel Gildea and Daniel Jurafsky. 2002. Automatic la-<lb/>beling of semantic roles. Computational Linguistics.<lb/> 28(3):245–288.<lb/> </bibl>
+<bibl>Jesús Giménez and Lluís Márquez 2004. SVMTool: A<lb/> General POS Tagger Generator Based on Support Vec-<lb/>tor Machines. In Proc. of LREC 2004.<lb/> </bibl>
+<bibl>Yoav Goldberg and Michael Elhadad. 2010. An Ef-<lb/>ficient Algorithm for Easy-First Non-Directional De-<lb/>pendency Parsing. In Human Language Technologies:<lb/> The 2010 Annual Conference of the North American<lb/> Chapter of the ACL.<lb/> </bibl>
+<bibl>Yoav Goldberg and Michael Elhadad. 2009. The<lb/> CoNLL-2009 Shared Task: Syntactic and Semantic<lb/> Dependencies in Multiple Languages. In Proc. of<lb/> the Thirteenth Conference on Computational Natural<lb/> Language Learning: Shared Task.<lb/> </bibl>
+<bibl>Dirk Hovy, Stephen Tratz, and Eduard Hovy. 2010.<lb/> What&apos;s in a Preposition?—Dimensions of Sense Dis-<lb/>ambiguation for an Interesting Word Class. In Proc. of<lb/> COLING 2010.<lb/> </bibl>
+<bibl>Liang Huang and Kenji Sagae. 2010. Dynamic Program-<lb/>ming for Linear-Time Shift-Reduce Parsing. In Proc.<lb/> of ACL 2010.<lb/> </bibl>
+<bibl>Richard Johansson and Pierre Nugues. 2007. Extended<lb/> constituent-to-dependency conversion for english. In<lb/> Proc. of NODALIDA.<lb/> </bibl>
+<bibl>Terry Koo, Xavier Carreras, and Michael Collins. 2008.<lb/> Simple Semi-supervised Dependency Parsing. In<lb/> Proc. of ACL 2008.<lb/> </bibl>
+<bibl>Terry Koo and Michael Collins. 2010. Efficient Third-<lb/>order Dependency Parsers. In Proc. of ACL 2010.<lb/> </bibl>
+<bibl>Ken Litkowski and Orin Hargraves. 2007. SemEval-<lb/>2007 Task 06: Word-Sense Disambiguation of Prepo-<lb/>sitions. In Proc. of the 4th International Workshop on<lb/> Semantic Evaluations.<lb/> </bibl>
+<bibl>Christopher D. Manning. 2011. Part-of-Speech Tagging<lb/> from 97% to 100%: Is It Time for Some Linguistics?<lb/> In Proc. of the 12th International Conference on Intel-<lb/>ligent Text Processing and Computational Linguistics<lb/> (CICLing 2011).<lb/> </bibl>
+<bibl>Mitchell P. Marcus, Mary Ann Marcinkiewicz, and Beat-<lb/>rice Santorini. 1993. Building a large annotated cor-<lb/>pus of English: the Penn TreeBank. Computational<lb/> Linguistics, 19(2):313–330.<lb/> </bibl>
+<bibl>Ryan McDonald, Fernando Pereira, Kiril Ribarov, and<lb/> Jan Hajič. 2005. Non-Projective Dependency Parsing<lb/> Using Spanning Tree Algorithms. In Proc. of HLT-<lb/>EMNLP 2005.<lb/> </bibl>
+<bibl>Ryan McDonald and Fernando Pereira. 2006. Online<lb/> Learning of Approximate Dependency Parsing Algo-<lb/>rithms. In Proc. of EACL 2006.<lb/> </bibl>
+<bibl>Adam Meyers, Ruth Reeves, Catherine Macleod, Rachel<lb/> Szekely, Veronika Zielinska, Brian Young and Ralph<lb/> Grishman. 2004. The NomBank Project: An Interim<lb/> Report. In Proc. of the NAACL/HLT Workshop on<lb/> Frontiers in Corpus Annotation.<lb/> </bibl>
+<bibl>Joakim Nivre. 2009. Non-Projective Dependency Pars-<lb/>ing in Expected Linear Time. In Proc. of the 47th An-<lb/>nual Meeting of the ACL and the 4th IJCNLP of the<lb/> AFNLP.<lb/> </bibl>
+<bibl>Joakim Nivre. 2003. An Efficient Algorithm for Projec-<lb/>tive Dependency Parsing. In Proc. of the 8th Interna-<lb/>tional Workshop on Parsing Technologies (IWPT).<lb/> </bibl>
+<bibl>Joakim Nivre, Marco Kuhlmann, and Johan Hall. 2009.<lb/> An Improved Oracle for Dependency Parsing with On-<lb/>line Reordering. In Proc. of the 11th International<lb/> Conference on Parsing Technologies (IWPT).<lb/> </bibl>
+<bibl>Joakim Nivre, Johan Hall, Sandra Kübler, Ryan McDon-<lb/>ald, Jens Nilsson, Sebastian Riedel, and Deniz Yuret.<lb/> 2007. The CoNLL 2007 shared task on dependency<lb/> parsing. In Proc. of EMNLP-CoNLL 2007.<lb/> </bibl>
+<bibl>Joakim Nivre, Johan Hall, and Jens Nilsson. 2006. Malt-<lb/>Parser: A Data-Driven Parser-Generator for Depen-<lb/>dency Parsing. In Proc. of LREC 2006.<lb/> </bibl>
+<bibl>Joakim Nivre and Jens Nilsson. 2005. Pseudo-projective<lb/> dependency parsing. In Proc. of ACL-2005.<lb/> </bibl>
+<bibl>Martha Palmer, Daniel Gildea, and Paul Kingsbury.<lb/> 2005. The Proposition Bank: An Annotated Cor-<lb/>pus of Semantic Roles. In Computational Linguistics.<lb/> 31(1):71–106.<lb/> </bibl>
+<bibl>Slav Petrov and Dan Klein. 2007. Improved Inference<lb/> for Unlexicalized Parsing. In Proc. of HLT-NAACL<lb/> 2007.<lb/> </bibl>
+<bibl>Slav Petrov, Leon Barrett, Romain Thibaux, and Dan<lb/> Klein. 2006. Learning accurate, compact, and in-<lb/>terpretable tree annotation. In Proc. of COLING-ACL<lb/> 2006.<lb/> </bibl>
+<bibl>Brian Roark and Kristy Hollingshead. 2009. Linear<lb/> complexity context-free parsing pipelines via chart<lb/> constraints. In Proc. of HLT-NAACL.<lb/> </bibl>
+<bibl>Evan Sandhaus. 2008. The New York Times Annotated<lb/> Corpus. Linguistic Data Consortium, Philadelphia.<lb/> </bibl>
+<bibl>Mihai Surdeanu, Richard Johansson, Adam Meyers,<lb/> Lluís Màrquez, and Joakim Nivre. 2008. The CoNLL-<lb/>2008 shared task on joint parsing of syntactic and se-<lb/>mantic dependencies. In Proc. of the Twelfth Confer-<lb/>ence on Computational Natural Language Learning.<lb/> </bibl>
+<bibl>Jun Suzuki, Hideki Isozaki, Xavier Carrerras, and<lb/> Michael Collins. 2009. An Empirical Study of Semi-<lb/>supervised Structured Conditional Models for Depen-<lb/>dency Parsing. In Proc. of EMNLP.<lb/> </bibl>
+<bibl>Pasi Tapanainen and Timo Järvinen. 1997. A non-<lb/>projective dependency parser. In Proc. of the fifth con-<lb/>ference on applied natural language processing.<lb/> </bibl>
+<bibl>Stephen Tratz and Dirk Hovy. 2009. Disambiguation of<lb/> Preposition Sense using Linguistically Motivated Fea-<lb/>tures. In Proc. of Human Language Technologies: The<lb/> 2009 Annual Conference of the North American Chap-<lb/>ter of the Association for Computational Linguistics,<lb/> Companion Volume: Student Research Workshop and<lb/> Doctoral Consortium.<lb/> </bibl>
+<bibl>Stephen Tratz and Eduard Hovy. 2010. A Taxonomy,<lb/> Dataset, and Classifier for Automatic Noun Com-<lb/>pound Interpretation. In Proc. of ACL 2010.<lb/> </bibl>
+<bibl>David Vadas and James R. Curran. 2007. Adding Noun<lb/> Phrase Structure to the Penn Treebank. In Proc. of<lb/> ACL 2007.<lb/> </bibl>
+<bibl>Hiroyasu Yamada and Yuji Matsumoto. 2003. Statis-<lb/>tical Dependency Analysis With Support Vector Ma-<lb/>chines. In Proc. of 8th International Workshop on<lb/> Parsing Technologies (IWPT).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

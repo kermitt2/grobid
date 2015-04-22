@@ -1,0 +1,22 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Chauché, Jacques. 1984. Un outil multidimensionnel<lb/> de l&apos;analyse du discours. In Coling&apos;84, pages 11–15.<lb/> </bibl>
+<bibl>Chomsky, Noam. 1970. Remarks on nominalization.<lb/> In R. Jacobs and P. Rosenbaum (eds.) Reading in En-<lb/>glish Transformational Grammar, pages 184–221,<lb/> Waltham: Ginn.<lb/> </bibl>
+<bibl>Dorr, Bonnie, David Zajic, and Richard Schwartz.<lb/> 2003. Hedge trimmer: A parse-and-trim approach<lb/> to headline generation. In In R. Radev &amp; S. Teufel<lb/> (Eds.), Proceedings of the HLT-NAACL 2003 Work-<lb/>shop on Text Summarization. Omnipress, pages 1–8.<lb/> </bibl>
+<bibl>Gagnon, Michel and Lyne Da Sylva. 2005. Text<lb/> summarization by sentence extraction and syntac-<lb/>tic pruning. In Computational Linguistics in the<lb/> North East (CliNE&apos;05), Université du Québec en<lb/> Outaouais, Gatineau, 26 August.<lb/> </bibl>
+<bibl>Hovy, Eduard H., Chin-Yew Lin, and Liang Zhou.<lb/> 2005. A be-based multi-document summarizer with<lb/> sentence compression. In the Multilingual Summa-<lb/>rization Evaluation Workshop at the ACL 2005 con-<lb/>ference.<lb/> </bibl>
+<bibl>Knight, Kevin and Daniel Marcu. 2002. Summariza-<lb/>tion beyond sentence extraction: a probabilistic ap-<lb/>proach to sentence compression. Artificial Intelli-<lb/>gence archive, 139(1):91–107, July.<lb/> </bibl>
+<bibl>Lin, Chin-Yew and Eduard H. Hovy. 2002. Auto-<lb/>mated multi-document summarization in neats. In<lb/> the DARPA Human Language Technology Confer-<lb/>ence, pages 50–53.<lb/> </bibl>
+<bibl>McKeown, K., D. Evans, A. Nenkova, R. Barzi-<lb/>lay, V. Hatzivassiloglou, B. Schiffman, S. Blair-<lb/>Goldensohn, J. Klavans, and S. Sigelman. 2002.<lb/> The columbia multi-document summarizer for duc<lb/> 2002.<lb/> </bibl>
+<bibl>Yousfi-Monod, Mehdi and Violaine Prince. 2005. Au-<lb/>tomatic summarization based on sentence morpho-<lb/>syntactic structure: narrative sentences compres-<lb/>sion. In the 2nd International Workshop on Natu-<lb/>ral Language Understanding and Cognitive Science<lb/> (NLUCS 2005), pages 161–167, Miami/USA, May.<lb/> </bibl>
+<bibl>Yousfi-Monod, Mehdi. 2007. Compression automa-<lb/>tique ou semi-automatique de textes parpar´parélagage des<lb/> constituants effaçables : une approche interactive et<lb/> indépendante des corpus. Ph.D. thesis, University of<lb/> Montpellier II, Montpellier, November.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,25 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Razvan Bunescu and Raymond Mooney. 2005. A short-<lb/>est path dependency kernel for relation extraction. In<lb/> Proceedings of Human Language Technology Confer-<lb/>ence and Conference on Empirical Methods in Nat-<lb/>ural Language Processing, pages 724–731, Vancou-<lb/>ver, British Columbia, Canada, October. Association<lb/> for Computational Linguistics.<lb/> </bibl>
+<bibl>Amitava Das and Sivaji Bandyopadhyay. 2011. Dr sen-<lb/>timent knows everything! In Proceedings of the ACL-<lb/>HLT 2011 System Demonstrations, pages 50–55, Port-<lb/>land, Oregon, June. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>David Elson, Nicholas Dames, and Kathleen McKeown.<lb/> 2010. Extracting social networks from literary fiction.<lb/> In Proceedings of the 48th Annual Meeting of the Asso-<lb/>ciation for Computational Linguistics, pages 138–147,<lb/> Uppsala, Sweden, July.<lb/> </bibl>
+<bibl>Andrea Esuli and Fabrizio Sebastiani. 2006. Sentiword-<lb/>net: A publicly available lexical resource for opinion<lb/> mining. In In Proceedings of the 5th Conference on<lb/> Language Resources and Evaluation (LREC06, pages<lb/> 417–422.<lb/> </bibl>
+<bibl>Vasileios Hatzivassiloglou and Kathleen R. McKeown.<lb/> 1997. Predicting the semantic orientation of adjec-<lb/>tives. In EACL&apos;97, pages 174–181.<lb/> </bibl>
+<bibl>Niklas Jakob and Iryna Gurevych. 2010. Using anaphora<lb/> resolution to improve opinion target identification in<lb/> movie reviews. In Proceedings of the ACL 2010 Con-<lb/>ference Short Papers, pages 263–268, Uppsala, Swe-<lb/>den, July. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Aditya Joshi, Balamurali AR, Pushpak Bhattacharyya,<lb/> and Rajat Mohanty. 2011. C-feel-it: A sentiment ana-<lb/>lyzer for micro-blogs. In Proceedings of the ACL-HLT<lb/> 2011 System Demonstrations, pages 127–132, Port-<lb/>land, Oregon, June. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Cheng-Te Li, Chien-Yuan Wang, Chien-Lin Tseng, and<lb/> Shou-De Lin. 2011. Memetube: A sentiment-based<lb/> audiovisual system for analyzing and displaying mi-<lb/>croblog messages. In Proceedings of the ACL-HLT<lb/> 2011 System Demonstrations, pages 32–37, Portland,<lb/> Oregon, June. Association for Computational Linguis-<lb/>tics.<lb/> </bibl>
+<bibl>Chen Lin, Jiang-Ming Yang, Rui Cai, Xin-Jing Wang,<lb/> and Wei Wang. 2009. Simultaneously modeling se-<lb/>mantics and structure of threaded discussions: a sparse<lb/> coding approach and its applications. In SIGIR &apos;09,<lb/> pages 131–138.<lb/> </bibl>
+<bibl>Andrew McCallum, Xuerui Wang, and Andrés Corrada-<lb/>Emmanuel. 2007. Topic and role discovery in so-<lb/>cial networks with experiments on enron and academic<lb/> email. J. Artif. Int. Res., 30:249–272, October.<lb/> </bibl>
+<bibl>Dou Shen, Qiang Yang, Jian-Tao Sun, and Zheng Chen.<lb/> 2006. Thread detection in dynamic text message<lb/> streams. In SIGIR &apos;06, pages 35–42.<lb/> </bibl>
+<bibl>Peter Turney and Michael Littman. 2003. Measuring<lb/> praise and criticism: Inference of semantic orientation<lb/> from association. ACM Transactions on Information<lb/> Systems, 21:315–346.<lb/> </bibl>
+<bibl>Theresa Wilson, Paul Hoffmann, Swapna Somasun-<lb/>daran, Jason Kessler, Janyce Wiebe, Yejin Choi, Claire<lb/> Cardie, Ellen Riloff, and Siddharth Patwardhan. 2005.<lb/> Opinionfinder: a system for subjectivity analysis. In<lb/> HLT/EMNLP -Demo.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

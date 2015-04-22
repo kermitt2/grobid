@@ -1,0 +1,27 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Church, Kenneth W.; Gale, William (1991). A com-<lb/>parison of the enhanced Good-Turing and deleted<lb/> estimation methods for estimating probabilities of<lb/> English bigrams. Computer Speech and Language,<lb/> 5(1), 19–54.<lb/> </bibl>
+<bibl>Church, Kenneth W., Hanks, Patrick (1990). Word<lb/> association norms, mutual information, and lexico-<lb/>graphy. Computational Linguistics, 16(1), 22–29.<lb/> </bibl>
+<bibl>Denoyer, Ludovic; Gallinari, Pattrick (2006). The<lb/> Wikipedia XML Corpus. SIGIR Forum, 40(1), 64–<lb/> 69.<lb/> </bibl>
+<bibl>Dunning, Ted (1993). Accurate methods for the sta-<lb/>tistics of surprise and coincidence. Computational<lb/> Linguistics, 19(1), 61–74.<lb/> </bibl>
+<bibl>Galton, Francis. (1879). Psychometric experiments.<lb/> Brain, 1, 149–162.<lb/> </bibl>
+<bibl>James, William (1890). The Principles of Psychology.<lb/> New York: Dover Publications.<lb/> </bibl>
+<bibl>Kiss, George R.; Armstrong, Christine; Milroy,<lb/> Robert; Piper, James (1973). An associative the-<lb/>saurus of English and its computer analysis. In: A.<lb/> Aitken, R. Beiley, N. Hamilton-Smith (eds.): The<lb/> Computer and Literary Studies. Edinburgh Univer-<lb/>sity Press.<lb/> </bibl>
+<bibl>Lezius, Wolfgan; Rapp, Reinhard; Wettler, Mafred<lb/> (1998). A freely available morphological analyzer,<lb/> disambiguator, and context sensitive lemmatizer<lb/> for German. Proceedings of COLING ACL 1998,<lb/> Montreal, 743–747.<lb/> </bibl>
+<bibl>Rapp, Reinhard (1996). Die Berechnung von Assozia-<lb/>tionen: ein korpuslinguistischer Ansatz. Hilde-<lb/>sheim: Olms.<lb/> </bibl>
+<bibl>Rapp, Reinhard (1998). Das Kontiguitätsprinzip und<lb/> die Simulation des Assoziierens auf mehrere Sti-<lb/>muluswörter. In: B. Schröder, W. Lenders, W.<lb/> Hess, T. Portele: Computer, Linguistik und Phone-<lb/>tik zwischen Sprache und Sprechen. Frankfurt am<lb/> Main: Peter Lang, 261–272.<lb/> </bibl>
+<bibl>Rapp, Reinhard (1999). Automatic identification of<lb/> word translations from unrelated English and Ger-<lb/>man corpora. In: Proceedings of the 37th Annual<lb/> Meeting of the ACL, College Park, MD, 519–526.<lb/> </bibl>
+<bibl>Rapp, Reinhard (2004). Word Sense Induction as Sta-<lb/>tistical Pattern Recognition. In: Ernst Buch-<lb/>berger (ed.): Tagungsband der 7. Konferenz zur<lb/> Verarbeitung natürlicher Sprache (KONVENS),<lb/> Universität Wien, 161–168.<lb/> </bibl>
+<bibl>Strube, Gerhard (1984). Assoziation. Berlin: Springer.<lb/> </bibl>
+<bibl>Wettler, Manfred (1980). Sprache, Gedächtnis, Ver-<lb/>stehen. Berlin: de Gruyter.<lb/> </bibl>
+<bibl>Wettler, Manfred; Rapp, Reinhard; Sedlmeier, Peter<lb/> (2005). Free word associations correspond to con-<lb/>tiguities between words in texts. Journal of Quanti-<lb/>tative Linguistics, 12(2), 111–122.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

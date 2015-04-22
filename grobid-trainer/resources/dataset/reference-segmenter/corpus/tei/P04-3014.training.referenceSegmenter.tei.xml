@@ -1,0 +1,23 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>P. F. Brown, S. A. Della Pietra, V. J. Della Pietra,<lb/> and R. L. Mercer. 1993. The mathematics of sta-<lb/>tistical machine translation: Parameter estima-<lb/>tion. Computational Linguistics, 19(2):263–311.<lb/> </bibl>
+<bibl>M. Collins. 1999. Head-Driven Statistical Models for<lb/> Natural Language Parsing. Ph.D. thesis, Univer-<lb/>sity of Pennsylvania.<lb/> </bibl>
+<bibl>B. J. Dorr, L. Pearl, R. Hwa, and N. Habash. 2002.<lb/> DUSTer: A method for unraveling cross-language<lb/> divergences for statistical word-level alignment.<lb/> In Proceedings of AMTA-02, pages 31–43.<lb/> </bibl>
+<bibl>A. Lopez, M. Nosal, R. Hwa, and P. Resnik. 2002.<lb/> Word-level alignment for multilingual resource ac-<lb/>quisition. In Proceedings of the LREC-02 Work-<lb/>shop on Linguistic Knowledge Acquisition and<lb/> Representation.<lb/> </bibl>
+<bibl>I. D. Melamed. 1998. Empirical methods for MT<lb/> lexicon development. Lecture Notes in Computer<lb/> Science, 1529:18–9999.<lb/> </bibl>
+<bibl>R. Mihalcea and T. Pedersen. 2003. An evalua-<lb/>tion exercise for word alignment. In Rada Mi-<lb/>halcea and Ted Pedersen, editors, Proceedings of<lb/> the HLT-NAACL 2003 Workshop on Building and<lb/> Using Parallel Texts, pages 1–10.<lb/> </bibl>
+<bibl>F. J. Och and H. Ney. 2000. A comparison of align-<lb/>ment models for statistical machine translation.<lb/> In Proceedings of COLING-00, pages 1086–1090.<lb/> </bibl>
+<bibl>D. I. Tufi¸Tufi¸s. 2002. A cheap and fast way to build<lb/> useful translation lexicons. In Proceedings of<lb/> COLING-02, pages 1030–1036.<lb/> </bibl>
+<bibl>D. Wu. 1995. Stochastic inversion transduction<lb/> grammars, with application to segmentation,<lb/> bracketing, and alignment of parallel corpora. In<lb/> Proceedings of IJCAI-95, pages 1328–1335.<lb/> </bibl>
+<bibl>K. Yamada and K. Knight. 2001. A syntax-based<lb/> statistical translation model. In Proceedings of<lb/> ACL-01, pages 523–530.<lb/> </bibl>
+<bibl>D. Yarowsky, G. Ngai, and R. Wicentowski. 2001.<lb/> Inducing multilingual text analysis tools via ro-<lb/>bust projection across aligned corpora. In Pro-<lb/>ceedings of HLT-01, pages 161–168.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

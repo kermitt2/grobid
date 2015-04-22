@@ -1,0 +1,25 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>R. Black, J. Reddington, E. Reiter, N. Tintarev, and<lb/> A. Waller. 2010. Using nlg and sensors to support<lb/> personal narrative for children with complex commu-<lb/>nication needs. In Proceedings of the NAACL HLT<lb/> 2010 Workshop on Speech and Language Processing<lb/> for Assistive Technologies, pages 1–9. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>E. Goldberg, N. Driedger, and R.I. Kittredge. 1994. Us-<lb/>ing natural-language processing to produce weather<lb/> forecasts. IEEE Expert, 9(2):45–53.<lb/> </bibl>
+<bibl>S.D. Gosling, V.S.Y. Kwan, and O.P. John. 2003. A<lb/> dog&apos;s got personality: a cross-species comparative<lb/> approach to personality judgments in dogs and hu-<lb/>mans. Journal of Personality and Social Psychology,<lb/> 85(6):1161.<lb/> </bibl>
+<bibl>O.P. John, E.M. Donahue, and R.L. Kentle. 1991. The<lb/> big five inventoryversions 4a and 54. Berkeley: Uni-<lb/>versity of California, Berkeley, Institute of Personality<lb/> and Social Research.<lb/> </bibl>
+<bibl>O.P. John, L.P. Naumann, and C.J. Soto. 2008. Paradigm<lb/> shift to the integrative big five trait taxonomy. Hand-<lb/>book of personality: Theory and research, pages 114–<lb/> 158.<lb/> </bibl>
+<bibl>S. Mahamood, E. Reiter, and C. Mellish. 2008. Neona-<lb/>tal intensive care information for parents an affec-<lb/>tive approach. In Computer-Based Medical Systems,<lb/> 2008. CBMS&apos;08. 21st IEEE International Symposium<lb/> on, pages 461–463. IEEE.<lb/> </bibl>
+<bibl>M. Molina, A. Stent, and E. Parodi. 2011. Generating<lb/> automated news to explain the meaning of sensor data.<lb/> Advances in Intelligent Data Analysis X, pages 282–<lb/> 293.<lb/> </bibl>
+<bibl>M. O&apos;Donnell, C. Mellish, J. Oberlander, and A. Knott.<lb/> 2001. Ilex: an architecture for a dynamic hypertext<lb/> generation system. Natural Language Engineering,<lb/> 7(3):225–250.<lb/> </bibl>
+<bibl>F. Portet, E. Reiter, A. Gatt, J. Hunter, S. Sripada,<lb/> Y. Freer, and C. Sykes. 2009. Automatic generation of<lb/> textual summaries from neonatal intensive care data.<lb/> Artificial Intelligence, 173(7-8):789–816.<lb/> </bibl>
+<bibl>J. Reddington, E. Reiter, N. Tintarev, R. Black, and<lb/> A. Waller. 2011. &quot; Hands Busy, Eyes Busy &quot; : Generat-<lb/>ing Stories from Sensor Data for Automotive applica-<lb/>tions. In Proceedings of IUI Workshop on Multimodal<lb/> Interfaces for Automotive Applications.<lb/> </bibl>
+<bibl>S. Srivastava, O.P. John, S.D. Gosling, and J. Potter.<lb/> 2003. Development of personality in early and middle<lb/> adulthood: Set like plaster or persistent change?. Jour-<lb/>nal of Personality and Social Psychology, 84(5):1041.<lb/> </bibl>
+<bibl>M. Theune, E. Klabbers, J.R. de Pijper, E. Krahmer, and<lb/> J. Odijk. 2001. From data to speech: a general ap-<lb/>proach. Natural Language Engineering, 7(01):47–86.<lb/> </bibl>
+<bibl>K. Van Deemter and J. Odijk. 1997. Context modeling<lb/> and the generation of spoken discourse. Speech Com-<lb/>munication, 21(1-2):101–121.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

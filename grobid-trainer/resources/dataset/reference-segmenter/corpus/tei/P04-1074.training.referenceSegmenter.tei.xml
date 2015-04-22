@@ -1,0 +1,30 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Allen J., 1981. An Interval-based Represent Action<lb/> of Temporal Knowledge. In Proceedings of 7th In-<lb/>ternational Joint Conference on Artificial Intelli-<lb/>gence, pages 221-226. Los Altos, CA.<lb/> </bibl>
+<bibl>Blum, A. and Mitchell T., 1998. Combining Labeled<lb/> and Unlabeled Data with Co-Training. In Proceed-<lb/>ings of the Eleventh Annual Conference on Com-<lb/>putational Learning Theory, Madison, Wisconsin,<lb/> pages 92-100<lb/> </bibl>
+<bibl>Bruce B., 1972. A Model for Temporal References<lb/> and its Application in Question-Answering Pro-<lb/>gram. Artificial Intelligence, 3(1):1-25.<lb/> </bibl>
+<bibl>Collins M. and Singer Y, 1999. Unsupervised Mod-<lb/>els for Named Entity Classification. In Proceed-<lb/>ings of the Joint SIGDAT Conference on<lb/> Empirical Methods in Natural Language Process-<lb/>ing and Very Large Corpora, pages 189-196. Uni-<lb/>versity of Maryland.<lb/> </bibl>
+<bibl>Dorr B. and Gaasterland T., 2002. Constraints on the<lb/> Generation of Tense, Aspect, and Connecting<lb/> Words from Temporal Expressions. (submitted to<lb/> JAIR)<lb/> Hitzeman J., Moens M. and Grover C., 1995. Algo-<lb/>rithms for Analyzing the Temporal Structure of<lb/> Discourse. In Proceedings of the 7th European<lb/> Meeting of the Association for Computational<lb/> Linguistics, pages 253-260. Dublin, Ireland.<lb/> </bibl>
+<bibl>Lascarides A., Asher N. and Oberlander J., 1992.<lb/> Inferring Discourse Relations in Context. In<lb/> Proceedings of the 30th Meeting of the<lb/> Association for Computational Linguistics, pages<lb/> 1-8, Newark, Del.<lb/> </bibl>
+<bibl>Li W.J. and Wong K.F., 2002. A Word-based Ap-<lb/>proach for Modeling and Discovering Temporal<lb/> Relations Embedded in Chinese Sentences, ACM<lb/> Transaction on Asian Language Processing,<lb/> 1(3):173-206.<lb/> </bibl>
+<bibl>Ma J. and Knight B., 1994. A General Temporal<lb/> Theory. The Computer Journal, 37(2):114-123.<lb/> </bibl>
+<bibl>Màntaras L., 1991. A Distance-based Attribute Se-<lb/>lection Measure for Decision Tree Induction. Ma-<lb/>chine Learning, 6(1): 81–92.<lb/> </bibl>
+<bibl>Màrquez L., Padró L. and Rodríguez H., 2000. A<lb/> Machine Learning Approach to POS Tagging.<lb/> Machine Learning, 39(1):59-91. Kluwer Aca-<lb/>demic Publishers.<lb/> </bibl>
+<bibl>Partee, B., 1984. Nominal and Temporal Anaphora.<lb/> Linguistics and Philosophy, 7(3):287-324.<lb/> </bibl>
+<bibl>Quinlan J., 1993. C4.5 Programs for Machine<lb/> Learning. Morgan Kauman Press.<lb/> </bibl>
+<bibl>Reichenbach H., 1947. Elements of Symbolic Logic.<lb/> Berkeley CA, University of California Press.<lb/> </bibl>
+<bibl>Siegel E. and McKeown K., 2000. Learning Meth-<lb/>ods to Combine Linguistic Indicators: Improving<lb/> Aspectual Classification and Revealing Linguistic<lb/> Insights. Computational Linguistics, 26(4): 595-<lb/>627.<lb/> </bibl>
+<bibl>Wiebe, J.M., O&apos;Hara, T.P., Ohrstrom-Sandgren, T.<lb/> and McKeever, K.J, 1998. An Empirical Approach<lb/> to Temporal Reference Resolution. Journal of Ar-<lb/>tificial Intelligence Research, 9:247-293.<lb/> </bibl>
+<bibl>Wong F., Li W., Yuan C., etc., 2002. Temporal Rep-<lb/>resentation and Classification in Chinese. Interna-<lb/>tional Journal of Computer Processing of Oriental<lb/> Languages, 15(2):211-230.<lb/> </bibl>
+<bibl>Yarowsky D., 1994. Decision Lists for Lexical Am-<lb/>biguity Resolution: Application to the Accent Res-<lb/>toration in Spanish and French. In Proceeding of<lb/> the 32rd Annual Meeting of ACL, San Francisco,<lb/> CA.<lb/> </bibl>
+<bibl>Zhou X., Dillon T., 1991. A Statistical-heuristic Fea-<lb/>ture Selection Criterion for Decision Tree Induc-<lb/>tion. IEEE Transaction on Pattern Analysis and<lb/> Machine Intelligence, 13(8): 834-841.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

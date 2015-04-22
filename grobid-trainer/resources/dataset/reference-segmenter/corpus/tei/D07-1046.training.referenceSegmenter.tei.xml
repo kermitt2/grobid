@@ -1,0 +1,26 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Meni Adler and Michael Elhadad. 2006. An unsuper-<lb/>vised morpheme-based hmm for hebrew morpholog-<lb/>ical disambiguation. In Proceedings of the 21st In-<lb/>ternational Conference on Computational Linguistics<lb/> and 44th Annual Meeting of the Association for Com-<lb/>putational Linguistics, pages 665–672, Sydney, Aus-<lb/>tralia, July. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Roy Bar-Haim, Khalil Sima&apos;an, and Yoad Winter. 2005.<lb/> Choosing an optimal architecture for segmentation and<lb/> POS-tagging of Modern Hebrew. In Proceedings of<lb/> the ACL Workshop on Computational Approaches to<lb/> Semitic Languages, pages 39–46, Ann Arbor, Michi-<lb/>gan, June. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Yaacov Choueka and Serge Lusignan. 1985. Disam-<lb/>biguation by short context. Computers and the Hu-<lb/>manities, 19:147–157.<lb/> </bibl>
+<bibl>Ezra Daya, Dan Roth, and Shuly Wintner. 2004. Learn-<lb/>ing Hebrew roots: Machine learning with linguistic<lb/> constraints. In Proceedings of EMNLP&apos;04, pages 357–<lb/> 364, Barcelona, Spain, July.<lb/> </bibl>
+<bibl>Michael Elhadad, Yael Netzer, David Gabay, and Meni<lb/> Adler. 2005. Hebrew morphological tagging guide-<lb/>lines. Technical report, Department of Computer Sci-<lb/>ence, Ben Gurion University.<lb/> </bibl>
+<bibl>Radu Florian. 2002. Named entity recognition as a<lb/> house of cards: Classifier stacking. In Proceedings<lb/> of CoNLL-2002, pages 175–178. Taiwan.<lb/> </bibl>
+<bibl>Nizar Habash and Owen Rambow. 2005. Arabic tok-<lb/>enization, part-of-speech tagging and morphological<lb/> disambiguation in one fell swoop. In Proceedings of<lb/> the 43rd Annual Meeting of the Association for Com-<lb/>putational Linguistics (ACL&apos;05), pages 573–580, Ann<lb/> Arbor, Michigan, June. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Gennadiy Lemberski. 2003. Named entity recognition<lb/> in Hebrew. Master&apos;s thesis, Department of Computer<lb/> Science, Ben Gurion University, Beer Sheva, Israel,<lb/> March. In Hebrew.<lb/> </bibl>
+<bibl>Moshe Levinger, Uzzi Ornan, and Alon Itai. 1995.<lb/> Learning morpho-lexical probabilities from an un-<lb/>tagged corpus with an application to Hebrew. Com-<lb/>putational Linguistics, 21(3):383–404, September.<lb/> </bibl>
+<bibl>Vasin Punyakanok and Dan Roth. 2001. The use of clas-<lb/>sifiers in sequential inference. In NIPS-13; The 2000<lb/> Conference on Advances in Neural Information Pro-<lb/>cessing Systems 13, pages 995–1001. MIT Press.<lb/> </bibl>
+<bibl>Dan Roth. 1998. Learning to resolve natural language<lb/> ambiguities: A unified approach. In Proceedings of<lb/> AAAI-98 and IAAI-98, pages 806–813, Madison, Wis-<lb/>consin.<lb/> </bibl>
+<bibl>Erel Segal. 1997. Morphological analyzer for unvocal-<lb/>ized Hebrew words. Unpublished work.<lb/> </bibl>
+<bibl>Erel Segal. 1999. Hebrew morphological analyzer for<lb/> Hebrew undotted texts. Master&apos;s thesis, Technion, Is-<lb/>rael Institute of Technology, Haifa, October. In He-<lb/>brew.<lb/> </bibl>
+<bibl>Shlomo Yona and Shuly Wintner. 2007. A finite-state<lb/> morphological grammar of Hebrew. Natural Lan-<lb/>guage Engineering. To appear.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

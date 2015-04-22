@@ -1,0 +1,38 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>M. van den Berg, R. Bod &amp; R. Scha, 1994. &quot;A<lb/> Corpus-Based Approach to Semantic Interpretation&quot;,<lb/> Proceedings Ninth Amsterdam Colloquium,<lb/> Amsterdam.<lb/> </bibl>
+<bibl>E. Black, R. Garside and G. Leech, 1993.<lb/> </bibl>
+<bibl>Statistically-Driven Computer Grammars o/English:<lb/> The IBM/Lancaster Approach, Rodopi: Amsterdam-<lb/>Atlanta.<lb/> </bibl>
+<bibl>R. Bod, 1992. &quot;A Computational Model of<lb/> Language Performance: Data Oriented Parsing&quot;,<lb/> Proceedings COLING&apos;92, Nantes.<lb/> </bibl>
+<bibl>R. Bod, 1993a. &quot;Using an Annotated Corpus as a<lb/> </bibl>
+<bibl>Stochastic Grammar&quot;, Proceedings European Chapter<lb/> fo the ACL&apos;93, Utrecht.<lb/> </bibl>
+<bibl>R. Bod, 1993b. &quot;Monte Carlo Parsing&quot;,<lb/> Proceedings Third International Workshop on Parsing<lb/> Technologies, Tilburg/Durbuy.<lb/> </bibl>
+<bibl>R. Bod, 1993c. &quot;Data Oriented Parsing as a General<lb/> Framework for Stochastic Language Processing&quot;, in:<lb/> K.Sikkel &amp; A. Nijholt (eds.), Parsing Natural<lb/> Language, TWLT6, Twente University.<lb/> </bibl>
+<bibl>R. Bod, 1995. Enriching Linguistics with<lb/> Statistics: Performance Models of Natural Language.<lb/> </bibl>
+<bibl>PhD-thesis, University of Amsterdam (forthcoming).<lb/> </bibl>
+<bibl>T. Briscoe and J. Carroll, 1993. &quot;Generalized<lb/> Probabilistic LR Parsing of Natural Language<lb/> (Corpora) with Unification-Based Grammars&quot;,<lb/> Computational Linguistics 19(1), 25-59.<lb/> </bibl>
+<bibl>T. Fujisaki, F. Jelinek, J. Cocke, E. Black and T.<lb/> Nishino, 1989. &quot;A Probabilistic Method for Sentence<lb/> Disambiguation&quot;, Proceedings 1st Int. Workshop on<lb/> Parsing Technologies, Pittsburgh.<lb/> </bibl>
+<bibl>J.M. Hammersley and D.C. Handscomb, 1964.<lb/> </bibl>
+<bibl>Monte Carlo Methods, Chapman and Hall, London.<lb/> </bibl>
+<bibl>C.T. Hemphill, J.J. Godfrey and G.R. Doddington,<lb/> 1990. &quot;The ATIS spoken language systems pilot<lb/> corpus&quot;. Proceedings DARPA Speech and Natural<lb/> Language Workshop, Hidden Valley, Morgan<lb/> Kaufmann.<lb/> </bibl>
+<bibl>F. Jelinek, J.D. Lafferty and R.L. Mercer, 1990.<lb/> Basic Methods of Probabilistic Context Free<lb/> Grammars, Technical Report IBM RC 16374<lb/> </bibl>
+<bibl>(#72684), Yorktown Heights.<lb/> </bibl>
+<bibl>M. Kay, 1980. Algorithmic Schemata and Data<lb/> Structures in Syntactic Processing. Report CSL-80-<lb/>12, Xerox PARC, Palo Alto, Ca.<lb/> </bibl>
+<bibl>D. Magerman and C. Weir, 1992. &quot;Efficiency,<lb/> Robustness and Accuracy in Picky Chart Parsing&quot;,<lb/> Proceedings A CL&apos;92, Newark, Delaware.<lb/> </bibl>
+<bibl>M. Marcus, B. Santorini and M. Marcinkiewicz,<lb/> 1993. &quot;Building a Large Annotated Corpus of<lb/> English: the Penn Treebank&quot;, Computational<lb/> Linguistics 19(2).<lb/> </bibl>
+<bibl>D. Rumelhart and J. McClelland, 1986. Parallel<lb/> Distributed Processing, The MIT Press, Cambridge,<lb/> Mass.<lb/> </bibl>
+<bibl>R. Scha, 1990. &quot;Language Theory and Language<lb/> Technology; Competence and Performance&quot; (in<lb/> Dutch), in Q.A.M. de Kort &amp; G.L.J. Leerdam (eds.),<lb/> Computertoepassingen in de Neerlandistiek, Almere:<lb/> Landelijke Vereniging van Neerlandici (LVVN-<lb/>jaarboek).<lb/> </bibl>
+<bibl>Y. Schabes, 1992. &quot;Stochastic Lexicalized Tree-<lb/>Adjoining Grammars&quot;, Proceedings COLING&apos;92,<lb/> Nantes.<lb/> </bibl>
+<bibl>Y. Schabes and R, Waters, 1993. &quot;Stochastic<lb/> Lexicalized Context Free Grammars&quot;, Proceedings<lb/> Third International Workshop on Parsing<lb/> Technologies, Tilburg/Durbuy.<lb/> </bibl>
+<bibl>K. Sima&apos;an, R. Bod, S. Krauwer and R. Scha,<lb/> 1994. &quot;Efficient Disambiguation by means of<lb/> Stochastic Tree Substitution Grammars&quot;, Proceedings<lb/> International Conference on New Methods in<lb/> Language Processing, UMIST, Manchester.<lb/> </bibl>
+<bibl>A. Viterbi, 1967. &quot;Error bounds for convolutional<lb/> codes and an asymptotically optimum decoding<lb/> algorithm&quot;, IEEE Trans. Information Theory, IT-13,<lb/> 260-269.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

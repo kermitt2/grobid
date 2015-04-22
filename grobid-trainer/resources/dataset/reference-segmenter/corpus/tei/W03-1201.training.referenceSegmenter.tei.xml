@@ -1,0 +1,30 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Abe, Naoki, and Hang Li. 1996. Learning word association<lb/> norms using tree cut pair models. In Proceedings of the 13th<lb/> International Conference on Machine Learning.<lb/> </bibl>
+<bibl>C. Buckley. 1985. Implementation of the smart information<lb/> retrieval system. Technical report, Technical Report TR85-<lb/>686, Department of Computer Science, Cornell University.<lb/> </bibl>
+<bibl>C. L. A. Clarke, Gordon V. Cormack, and Thomas R. Lynam.<lb/> 2001. Exploiting redundancy in question answering. In<lb/> Proceedings of the 24th annual international ACM SIGIR<lb/> conference on Research and development in information re-<lb/>trieval, pages 358–365. ACM Press.<lb/> </bibl>
+<bibl>C. Fellbaum, 1998. WordNet: An Electronic Lexical Database,<lb/> chapter Using WordNet for Text Retrieval, pages 285–303.<lb/> </bibl>
+<bibl>The MIT Press: Cambridge, MA.<lb/> </bibl>
+<bibl>Christiane Fellbaum. 1998b. WordNet: An Electronic Lexical<lb/> Database. The MIT Press.<lb/> </bibl>
+<bibl>Sanda Harabagiu, Dan Moldovan, Marius Pasca, Rada Mihal-<lb/>cea, Mihai Surdeanu, Razvan Bunescu, Roxana Girju, Vasile<lb/> Rus, and Paul Morarescu. 2000. Falcon: Boosting knowl-<lb/>edge for answer engines. In Proceedings of the ninth text<lb/> retrieval conference (TREC-9), November.<lb/> </bibl>
+<bibl>David Heckerman. 1995. A Tutorial on Learning Bayesian<lb/> Networks. Technical Report MSR-TR-95-06, March.<lb/> </bibl>
+<bibl>Boris Katz. 1997. From sentence processing to information<lb/> access on the world wide web. AAAI Spring Symposium on<lb/> Natural Language Processing for the World Wide Web, Stan-<lb/>ford University, Stanford CA.<lb/> </bibl>
+<bibl>Cody C. T. Kwok, Oren Etzioni, and Daniel S. Weld. 2001.<lb/> Scaling question answering to the web. In Proceedings of<lb/> the Tenth International World Wide Web Conference, pages<lb/> 150–161.<lb/> </bibl>
+<bibl>David D. Lewis and Karen Sparck Jones. 1996. Natural lan-<lb/>guage processing for information retrieval. Communications<lb/> of the ACM, 39(1):92–101.<lb/> </bibl>
+<bibl>J. Pearl. 1988. Probabilistic Reasoning in Intelligent Systems:<lb/> Networks of Plausible Inference. Morgan Kaufmann Pub-<lb/>lishers, Inc.<lb/> </bibl>
+<bibl>Adwait Ratnaparkhi. 1996. A maximum entropy part-of-<lb/>speech tagger. In Proceedings of the Empirical Methods in<lb/> Natural Language Processing Conference, May 17-18, 1996.<lb/> University of Pennsylvania.<lb/> </bibl>
+<bibl>Mark Sanderson. 1994. Word sense disambiguation and in-<lb/>formation retrieval. In Proceedings of SIGIR-94, 17th ACM<lb/> International Conference on Research and Development in<lb/> Information Retrieval, pages 49–57, Dublin, IE.<lb/> </bibl>
+<bibl>Ellen Vorhees. 2000. Overview of TREC-9 question answering<lb/> track. Text REtreival Conference 9.<lb/> </bibl>
+<bibl>Wiebe, Janyce, O&apos;Hara, Tom, Rebecca Bruce. 1998. Con-<lb/>structing Bayesian networks from WordNet for word sense<lb/> disambiguation: representation and processing issues. In<lb/> Proc. COLING-ACL &apos;98 Workshop on the Usage of Word-<lb/>Net in Natural Language Processing Systems.<lb/> </bibl>
+<bibl>.P. Dempster, N.M. Laird and D.B. Rubin. 1977. Maximum<lb/> Likelihood from Incomplete Data via The EM Algorithm. In<lb/> Journal of Royal Statistical Society, Vol. 39, pp. 1-38, 1977.<lb/> </bibl>
+<bibl>Ganesh Ramakrishnan and Pushpak Bhattacharyya. 2003. Text<lb/> Representation with WordNet Synsets: A Soft Sense Disam-<lb/>biguation Approach. To appear in Proceedings of the</bibl>
+        </listBibl>
+    </text>
+</tei>
+

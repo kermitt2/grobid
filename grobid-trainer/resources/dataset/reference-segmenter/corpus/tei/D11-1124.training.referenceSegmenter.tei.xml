@@ -1,0 +1,34 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>James Allan, Rahul Gupta, and Vikas Khandelwal. 2001.<lb/> Temporal summaries of new topics. In Proceedings of<lb/> the 24th annual international SIGIR&apos;01, pages 10–18.<lb/> </bibl>
+<bibl>D.M. Blei, A.Y. Ng, and M.I. Jordan. 2003. Latent<lb/> dirichlet allocation. The Journal of Machine Learning<lb/> Research, 3:993–1022.<lb/> </bibl>
+<bibl>G. Erkan and D.R. Radev. 2004. Lexpagerank: Prestige<lb/> in multi-document text summarization. In Proceed-<lb/>ings of EMNLP&apos;04, volume 4.<lb/> </bibl>
+<bibl>Jade Goldstein, Mark Kantrowitz, Vibhu Mittal, and<lb/> Jaime Carbonell. 1999. Summarizing text documents:<lb/> sentence selection and evaluation metrics. In Proceed-<lb/>ings of SIGIR&apos;99, pages 121–128.<lb/> </bibl>
+<bibl>Yihong Gong and Xin Liu. 2001. Generic text sum-<lb/>marization using relevance measure and latent seman-<lb/>tic analysis. In Proceedings of the 24th international<lb/> ACM SIGIR conference, SIGIR &apos;01, pages 19–25.<lb/> </bibl>
+<bibl>Q. Guo and E. Agichtein. 2010. Ready to buy or just<lb/> browsing?: detecting web searcher goals from inter-<lb/>action data. In Proceeding of the 33rd international<lb/> ACM SIGIR conference, SIGIR&apos;10, pages 130–137.<lb/> </bibl>
+<bibl>Giridhar Kumaran and James Allan. 2004. Text clas-<lb/>sification and named entities for new event detection.<lb/> In Proceedings of the 27th annual international ACM<lb/> SIGIR&apos;04, pages 297–304.<lb/> </bibl>
+<bibl>Anton Leuski, Chin-Yew Lin, and Eduard Hovy. 2003.<lb/> ineats: interactive multi-document summarization. In<lb/> Proceedings of ACL&apos;03, pages 125–128.<lb/> </bibl>
+<bibl>Liangda Li, Ke Zhou, Gui-Rong Xue, Hongyuan Zha,<lb/> and Yong Yu. 2009. Enhancing diversity, cover-<lb/>age and balance for summarization through structure<lb/> learning. In Proceedings of WWW&apos;09, pages 71–80.<lb/> </bibl>
+<bibl>Chin-Yew Lin and Eduard Hovy. 2002. From single<lb/> to multi-document summarization: a prototype system<lb/> and its evaluation. In Proceedings of ACL&apos;02, pages<lb/> 457–464.<lb/> </bibl>
+<bibl>Chin-Yew Lin and Eduard Hovy. 2003. Automatic evalu-<lb/>ation of summaries using n-gram co-occurrence statis-<lb/>tics. In Proceedings of NAACL&apos;03, pages 71–78.<lb/> </bibl>
+<bibl>Annie Louis and Ani Nenkova. 2009. Automatically<lb/> evaluating content selection in summarization without<lb/> human models. In EMNLP&apos;09, pages 306–314.<lb/> </bibl>
+<bibl>R. Mihalcea and P. Tarau. 2005. A language indepen-<lb/>dent algorithm for single and multiple document sum-<lb/>marization. In Proceedings of IJCNLP, volume 5.<lb/> </bibl>
+<bibl>D.R. Radev, H. Jing, and M. Sty. 2004. Centroid-based<lb/> summarization of multiple documents. Information<lb/> Processing and Management, 40(6):919–938.<lb/> </bibl>
+<bibl>Jian-Tao Sun, Dou Shen, Hua-Jun Zeng, Qiang Yang,<lb/> Yuchang Lu, and Zheng Chen. 2005. Web-page sum-<lb/>marization using clickthrough data. In Proceedings of<lb/> SIGIR&apos;05, pages 194–201.<lb/> </bibl>
+<bibl>Stephen Wan and Cécile Paris. 2008. In-browser sum-<lb/>marisation: generating elaborative summaries biased<lb/> towards the reading context. In ACL-HLT&apos;08, pages<lb/> 129–132.<lb/> </bibl>
+<bibl>Xiaojun Wan and Jianwu Yang. 2008. Multi-document<lb/> summarization using cluster-based link analysis. In<lb/> Proceedings of SIGIR&apos;08, pages 299–306.<lb/> </bibl>
+<bibl>X. Wan, J. Yang, and J. Xiao. 2007a. Manifold-ranking<lb/> based topic-focused multi-document summarization.<lb/> In Proceedings of IJCAI, volume 7, pages 2903–2908.<lb/> </bibl>
+<bibl>X. Wan, J. Yang, and J. Xiao. 2007b. Single document<lb/> summarization with document expansion. In Proceed-<lb/>ings of the 22nd AAAI&apos;07, pages 931–936.<lb/> </bibl>
+<bibl>Rui Yan, Yu Li, Yan Zhang, and Xiaoming Li. 2010.<lb/> Event recognition from news webpages through latent<lb/> ingredients extraction. In AIRS&apos;10, pages 490–501.<lb/> </bibl>
+<bibl>Rui Yan, Xiaojun Wan, Jahna Otterbacher, Liang Kong,<lb/> Xiaoming Li, and Yan Zhang. 2011. Evolution-<lb/>ary timeline summarization: a balanced optimization<lb/> framework via iterative substitution. In Proceedings<lb/> of the 34th annual international ACM SIGIR&apos;11.<lb/> </bibl>
+<bibl>Xin Zhao, Jing Jiang, Jing He, Yang Song, Palakorn<lb/> Achanauparp, Ee-Peng Lim, and Xiaoming Li. 2011.<lb/> Topical Keyphrase Extraction from Twitter. In Pro-<lb/>ceedings of ACL-HLT&apos;11.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

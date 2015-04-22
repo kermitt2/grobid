@@ -1,0 +1,26 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>T. L. Booth and R. A. Thompson. 1973. Applying prob-<lb/>ability measures to abstract languages. IEEE Trans-<lb/>actions on Computers, C-22(5):442-450, May.<lb/> </bibl>
+<bibl>J. Carroll and D. Weir. 1997. Encoding frequency in-<lb/>formation in lexicalized grammars. In Proc. 5th Int&apos;l<lb/> Workshop on Parsing Technologies IWPT-97, Cam-<lb/>bridge, Mass.<lb/> </bibl>
+<bibl>R. Chaudhari, S. Pham, and O. N. Garcia. 1983. Solu-<lb/>tion of an open problem on probabilistic grammars.<lb/> IEEE Transactions on Computers, C-32(8):748-750,<lb/> August.<lb/> </bibl>
+<bibl>T. E. Harris. 1963. The Theory of Branching Processes.<lb/> Springer-Verlag, Berlin.<lb/> </bibl>
+<bibl>R. A. Horn and C. R. Johnson. 1985. Matrix Analysis.<lb/> Cambridge University Press, Cambridge.<lb/> </bibl>
+<bibl>A. K. Joshi and Y. Schabes. 1992. Tree-adjoining gram-<lb/>mar and lexicalized grammars. In M. Nivat and<lb/> A. Podelski, editors, Tree automata and languages,<lb/> pages 409-431. Elsevier Science.<lb/> </bibl>
+<bibl>A. K. Joshi. 1988. An introduction to tree adjoining<lb/> grammars. In A. Manaster-Ramer, editor, Mathemat-<lb/>ics of Language. John Benjamins, Amsterdam.<lb/> </bibl>
+<bibl>O. Rainbow and A. Joshi. 1995. A formal look at de-<lb/>pendency grammars and phrase-structure grammars,<lb/> with special consideration of word-order phenomena.<lb/> </bibl>
+<bibl>In Leo Wanner, editor, Current Issues in Meaning-<lb/>Text Theory. Pinter, London.<lb/> </bibl>
+<bibl>J.-A. S£nchez and J.-M. Bened[. 1997. Consistency of<lb/> stochastic context-free grammars from probabilistic<lb/> estimation based on growth transformations. IEEE<lb/> Transactions on Pattern Analysis and Machine Intel-<lb/>ligence, 19(9):1052-1055, September.<lb/> </bibl>
+<bibl>Y. Schabes. 1992. Stochastic lexicalized tree-adjoining<lb/> grammars. In Proc. of COLING &apos;92, volume 2, pages<lb/> 426-432, Nantes, France.<lb/> </bibl>
+<bibl>S. Soule. 1974. Entropies of probabilistic grammars. Inf.<lb/> Control, 25:55-74.<lb/> </bibl>
+<bibl>K. Vijay-Shanker. 1987. A Study of Tree Adjoining<lb/> Grammars. Ph.D. thesis, Department of Computer<lb/> and Information Science, University of Pennsylvania.<lb/> </bibl>
+<bibl>C. S. Wetherell. 1980. Probabilistic languages: A re-<lb/>view and some open questions. Computing Surveys,<lb/> 12(4):361-379.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

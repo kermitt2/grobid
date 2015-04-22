@@ -1,0 +1,28 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Konstantin Anisimovich, Konstantin Druzhkin, Fil-<lb/>ipp Minlos, M. Petrova, Vladimir Selegey, and<lb/> K. Zuev. 2012. Syntactic and Semantic parser<lb/> based on ABBYY Compreno linguistic technolo-<lb/>gies. In Proceedings of the International Confer-<lb/>ence &quot; Dialogue-2012 &quot; , 2:91–103.<lb/> </bibl>
+<bibl>Eugene Charniak. 1997. Statistical parsing with a<lb/> context-free grammar and word statistics. In Pro-<lb/>ceedings of the Fourteenth National Conference on<lb/> Artificial Intelligence.<lb/> </bibl>
+<bibl>Tatiana Erekhinskaya, Anna Titova, and Vladimir<lb/> Okatiev. 2011. Syntax parsing for texts with mis-<lb/>spellings in DictaScope Syntax. In Proceedings<lb/> of the International Conference &quot; Dialogue-2011 &quot; ,<lb/> pages 186–195.<lb/> </bibl>
+<bibl>Alexey Gladkij. 1985. Syntactic structures of natural<lb/> language in automated systems for human-machine<lb/> interaction. Science, Moscow, USSR.<lb/> </bibl>
+<bibl>Daniel Jurafsky and James H. Martin. 2009. Speech<lb/> and Language Processing: An Introduction to Nat-<lb/>ural Language Processing, Speech Recognition, and<lb/> Computational Linguistics. 2-nd edition. Prentice-<lb/>Hall.<lb/> </bibl>
+<bibl>Tadao Kasami.<lb/> 1965.<lb/> An efficient recognition<lb/> and syntax-analysis algorithm for context-free lan-<lb/>guages. Scientific report AFCRL-65-758. Air Force<lb/> Cambridge Research Lab, Bedford, MA.<lb/> </bibl>
+<bibl>Sadao Kurohashi and Makoto Nagao. 1994. Japanese<lb/> dependency/case structure analyzer.<lb/> </bibl>
+<bibl>Martin Lange and Hans Leiß. 2009. To CNF or not to<lb/> CNF? An Efficient Yet Presentable Version of the<lb/> CYK Algorithm. Informatica Didactica.<lb/> </bibl>
+<bibl>Christopher D. Manning and Hinrich Schütze. 1999.<lb/> Foundations of Statistical Natural Language Pro-<lb/>cessing.<lb/> The MIT Press, Cambridge, Mas-<lb/>sachusetts.<lb/> </bibl>
+<bibl>Ryan McDonald, Fernando Pereira, Kiril Ribarov, and<lb/> Jan Hajic. 2005. Non-projective dependency pars-<lb/>ing using spanning tree algorithms. In Proc. of the<lb/> Joint Conf. on Human Language Technology and<lb/> Empirical Methods in Natural Language Processing<lb/> (HLT/EMNLP).<lb/> </bibl>
+<bibl>Vladimir Okatiev, Tatiana Erekhinskaya, and Tatiana<lb/> Ratanova.<lb/> 2010.<lb/> Secret punctuation marks.<lb/> In Proceedings of the International Conference<lb/> &quot; Dialogue-2010 &quot; , pages 356–362.<lb/> </bibl>
+<bibl>Sergey Sharov and Joakim Nivre. 2011. The proper<lb/> place of men and machines in language technology.<lb/> processing Russian without any linguistic knowl-<lb/>edge. In Proceedings of the International Confer-<lb/>ence &quot; Dialogue-2011 &quot; , pages 591–604.<lb/> </bibl>
+<bibl>Jacov Testelets. 2001. Introduction to general syntax.<lb/> RSUH, Moscow, Russia.<lb/> </bibl>
+<bibl>Svetlana Toldova, Elena Sokolova, Irina Astaf&apos;eva,<lb/> Anastasia Gareyshina, A. Koroleva, Dmitry<lb/> Privoznov, E. Sidorova, L. Tupikina, and Olga<lb/> Lyashevskaya. 2012. NLP evaluation 2011–2012:<lb/> Russian syntactic parsers.<lb/> In Proceedings of<lb/> the International Conference &quot; Dialogue-2012 &quot; ,<lb/> 2:77–90.<lb/> </bibl>
+<bibl>Leslie Valiant. 1975. General context-free recognition<lb/> in less than cubic time. Journal of Computer and<lb/> System Sciences, 2(10):308–314.<lb/> </bibl>
+<bibl>Zhiguo Wang and Chengqing Zong. 2010. Phrase<lb/> structure parsing with dependency structure. Inter-<lb/>national Conference on Computational Linguistics.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

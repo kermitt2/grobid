@@ -1,0 +1,45 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>G. Abuhakema, R. Faraj, A. Feldman, and E. Fitzpatrick.<lb/> 2008. Annotating an Arabic Learner Corpus for Er-<lb/>ror. Proceedings of the Sixth International Language<lb/> Resources and Evaluation (LREC&apos;08).<lb/> </bibl>
+<bibl>G Al-Gaphari and M Al-Yadoumi. 2010. A method<lb/> to convert Sana&apos;ani accent to Modern Standard Ara-<lb/>bic. International Journal of Information Science and<lb/> Management, pages 39–49.<lb/> </bibl>
+<bibl>Mohamed I. Alkanhal, Mohammed A. Al-Badrashiny,<lb/> Mansour M. Alghamdi, and Abdulaziz O. Al-<lb/>Qabbany.<lb/> 2012.<lb/> Automatic Stochastic Arabic<lb/> Spelling Correction With Emphasis on Space Inser-<lb/>tions and Deletions. IEEE Transactions on Audio,<lb/> Speech &amp; Language Processing, 20:2111–2122.<lb/> </bibl>
+<bibl>Chiraz Ben Othmane Zribi and Mohammed Ben Ahmed.<lb/> 2003. Efficient Automatic Correction of Misspelled<lb/> Arabic Words Based on Contextual Information. In<lb/> Proceedings of the Knowledge-Based Intelligent Infor-<lb/>mation and Engineering Systems Conference, Oxford,<lb/> UK.<lb/> </bibl>
+<bibl>Pradeep Dasigi and Mona Diab. 2011. CODACT: To-<lb/>wardsIdentifying Orthographic Variants in Dialectal<lb/> Arabic. In Proceedings of the 5th International Joint<lb/> Conference on Natural Language Processing, pages<lb/> 318–326, Chaing Mai, Thailand.<lb/> </bibl>
+<bibl>Qin Gao and Stephan Vogel. 2008. Parallel implemen-<lb/>tations of word alignment tool. In Software Engi-<lb/>neering, Testing, and Quality Assurance for Natural<lb/> Language Processing, SETQA-NLP &apos;08, pages 49–57,<lb/> Stroudsburg, PA, USA. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Nizar Habash and Owen Rambow. 2005. Arabic Tok-<lb/>enization, Part-of-Speech Tagging and Morphological<lb/> Disambiguation in One Fell Swoop. In Proceedings of<lb/> the 43rd Annual Meeting of the Association for Com-<lb/>putational Linguistics (ACL&apos;05), pages 573–580, Ann<lb/> Arbor, Michigan.<lb/> </bibl>
+<bibl>Nizar Habash and Ryan Roth. 2011. Using deep mor-<lb/>phology to improve automatic error detection in ara-<lb/>bic handwriting recognition. In Proceedings of the<lb/> 49th Annual Meeting of the Association for Compu-<lb/>tational Linguistics: Human Language Technologies,<lb/> pages 875–884, Portland, Oregon, USA, June. Associ-<lb/>ation for Computational Linguistics.<lb/> </bibl>
+<bibl>Nizar Habash, Abdelhadi Soudi, and Tim Buckwalter.<lb/> 2007. On Arabic Transliteration. In A. van den Bosch<lb/> and A. Soudi, editors, Arabic Computational Mor-<lb/>phology: Knowledge-based and Empirical Methods.<lb/> Springer.<lb/> </bibl>
+<bibl>Nizar Habash, Owen Rambow, and Ryan Roth. 2010.<lb/> MADA+TOKAN Manual. Technical Report CCLS-<lb/>10-01, Center for Computational Learning Systems<lb/> (CCLS), Columbia University.<lb/> </bibl>
+<bibl>Nizar Habash, Mona Diab, and Owen Rabmow. 2012.<lb/> Conventional Orthography for Dialectal Arabic. In<lb/> Proceedings of the Language Resources and Evalua-<lb/>tion Conference (LREC), Istanbul.<lb/> </bibl>
+<bibl>Nizar Habash, Ryan Roth, Owen Rambow, Ramy Eskan-<lb/>der, and Nadi Tomeh. 2013. Morphological Analysis<lb/> and Disambiguation for Dialectal Arabic. In Proceed-<lb/>ings of the 2013 Conference of the North American<lb/> Chapter of the Association for Computational Linguis-<lb/>tics: Human Language Technologies (NAACL-HLT),<lb/> Atlanta, GA.<lb/> </bibl>
+<bibl>Nizar Habash. 2010. Introduction to Arabic Natural<lb/> Language Processing. Morgan &amp; Claypool Publish-<lb/>ers.<lb/> </bibl>
+<bibl>Bassam Haddad and Mustafa Yaseen. 2007. Detection<lb/> and Correction of Non-Words in Arabic: A Hybrid<lb/> Approach. International Journal of Computer Pro-<lb/>cessing Of Languages (IJCPOL).<lb/> </bibl>
+<bibl>Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard<lb/> Pfahringer, Peter Reutemann, and Ian H. Witten.<lb/> 2009. The weka data mining software: an update.<lb/> SIGKDD Explor. Newsl., 11(1):10–18.<lb/> </bibl>
+<bibl>Ahmed Hassan, Sara Noeman, and Hany Hassan. 2008.<lb/> Language Independent Text Correction using Finite<lb/> State Automata. In Proceedings of the International<lb/> Joint Conference on Natural Language Processing<lb/> (IJCNLP 2008).<lb/> </bibl>
+<bibl>Clive Holes. 2004. Modern Arabic: Structures, Func-<lb/>tions, and Varieties. Georgetown Classics in Ara-<lb/>bic Language and Linguistics. Georgetown University<lb/> Press.<lb/> </bibl>
+<bibl>Philipp Koehn, Hieu Hoang, Alexandra Birch, Christo-<lb/>pher Callison-Burch, Marcello Federico, Nicola<lb/> Bertoldi, Brooke Cowan, Wade Shen, Christine<lb/> Moran, Richard Zens, Christopher Dyer, Ondrej Bo-<lb/>jar, Alexandra Constantin, and Evan Herbst. 2007.<lb/> Moses: open source toolkit for statistical machine<lb/> translation. In Proceedings of the 45th Annual Meet-<lb/>ing of the Association for Computational Linguistics<lb/> Companion Volume Proceedings of the Demo and<lb/> Poster Sessions, pages 177–180, Prague, Czech Re-<lb/>public.<lb/> </bibl>
+<bibl>Okan Kolak and Philip Resnik. 2002. OCR error cor-<lb/>rection using a noisy channel model. In Proceedings<lb/> of the second international conference on Human Lan-<lb/>guage Technology Research.<lb/> </bibl>
+<bibl>Karen Kukich. 1992. Techniques for Automatically<lb/> Correcting Words in Text. ACM Computing Surveys,<lb/> 24(4).<lb/> </bibl>
+<bibl>Mohamed Maamouri, Ann Bies, Seth Kulick, Dalila<lb/> Tabessi, and Sondos Krouna. 2012. Egyptian Arabic<lb/> Treebank Pilot.<lb/> </bibl>
+<bibl>Walid Magdy and Kareem Darwish. 2006. Arabic OCR<lb/> Error Correction Using Character Segment Correction,<lb/> Language Modeling, and Shallow Morphology. In<lb/> Proceedings of 2006 Conference on Empirical Meth-<lb/>ods in Natural Language Processing (EMNLP 2006),<lb/> pages 408–414, Sydney, Austrailia.<lb/> </bibl>
+<bibl>Franz Josef Och. 2003. Minimum Error Rate Training<lb/> for Statistical Machine Translation. In Proceedings<lb/> of the 41st Annual Conference of the Association for<lb/> Computational Linguistics, pages 160–167, Sapporo,<lb/> Japan.<lb/> </bibl>
+<bibl>Kemal Oflazer. 1996. Error-tolerant finite-state recog-<lb/>nition with applications to morphological analysis<lb/> and spelling correction. Computational Linguistics,<lb/> 22:73–90.<lb/> </bibl>
+<bibl>Kishore Papineni, Salim Roukos, Todd Ward, and Wei-<lb/>Jing Zhu. 2002. BLEU: a Method for Automatic Eval-<lb/>uation of Machine Translation. In Proceedings of the<lb/> 40th Annual Meeting of the Association for Computa-<lb/>tional Linguistics, pages 311–318, Philadelphia, PA.<lb/> </bibl>
+<bibl>Wael Salloum and Nizar Habash. 2011. Dialectal<lb/> to Standard Arabic Paraphrasing to Improve Arabic-<lb/>English Statistical Machine Translation. In Proceed-<lb/>ings of the First Workshop on Algorithms and Re-<lb/>sources for Modelling of Dialects and Language Va-<lb/>rieties, pages 10–21, Edinburgh, Scotland.<lb/> </bibl>
+<bibl>Hassan Sawaf. 2010. Arabic dialect handling in hybrid<lb/> machine translation. In Proceedings of the Confer-<lb/>ence of the Association for Machine Translation in the<lb/> Americas (AMTA), Denver, Colorado.<lb/> </bibl>
+<bibl>Khaled Shaalan, Amin Allam, and Abdallah Gomah.<lb/> 2003. Towards Automatic Spell Checking for Ara-<lb/>bic. In Conference on Language Engineering, ELSE,<lb/> Cairo, Egypt.<lb/> </bibl>
+<bibl>K. Shaalan, Abo Bakr, and I. H. Ziedan. 2007. Transfer-<lb/>ring Egyptian Colloquial into Modern Standard Ara-<lb/>bic. In International Conference on Recent Advances<lb/> in Natural Language Processing (RANLP), Borovets,<lb/> Bulgaria.<lb/> </bibl>
+<bibl>K. Shaalan, R. Aref, and A. Fahmy. 2010. An approach<lb/> for analyzing and correcting spelling errors for non-<lb/>native Arabic learners. Proceedings of Informatics<lb/> and Systems (INFOS).<lb/> </bibl>
+<bibl>Andreas Stolcke. 2002. SRILM -an Extensible Lan-<lb/>guage Modeling Toolkit. In Proceedings of the Inter-<lb/>national Conference on Spoken Language Processing<lb/> (ICSLP), volume 2, pages 901–904, Denver, CO.<lb/> </bibl>
+<bibl>Jun Wang, Zucker, and Jean-Daniel. 2000. Solving<lb/> multiple-instance problem: A lazy learning approach.<lb/> In Pat Langley, editor, 17th International Conference<lb/> on Machine Learning, pages 1119–1125.<lb/> </bibl>
+<bibl>Janet C. E. Watson. 2002. The Phonology and Morphol-<lb/>ogy of Arabic. Oxford University Press.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

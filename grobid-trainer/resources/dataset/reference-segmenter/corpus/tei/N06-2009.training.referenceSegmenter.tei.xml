@@ -1,0 +1,25 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Regina Barzilay and Kathleen R. McKeown. 2001. Extracting paraphrases from a<lb/> parallel corpus. In Proceedings of the 39th Annual Meeting of the Association<lb/> for Computational Linguistics (ACL-EACL 2001), Toulouse, France, July.<lb/> </bibl>
+<bibl>Jennifer Chu-Carroll, Pablo A. Duboue, John M. Prager, and Krzysztof Czuba.<lb/> 2006. IBM&apos;s piquant II in TREC 2005. In E. M. Voorhees and Lori P. Buck-<lb/>land, editors, Proceedings of the Fourthteen Text REtrieval Conference Pro-<lb/>ceedings (TREC 2005), Gaithersburg, MD, USA.<lb/> </bibl>
+<bibl>William Cohen. 1996. Learning trees and rules with set-valued features. In<lb/> Proceedings of the 14th joint American Association for Artificial Intelligence<lb/> and IAAI Conference (AAAI/IAAI-96), pages 709–716. American Association<lb/> for Artificial Intelligence.<lb/> </bibl>
+<bibl>Mona Diab. 2000. An unsupervised method for word sense tagging using parallel<lb/> corpora: A preliminary investigation. In Special Interest Group in Lexical<lb/> Semantics (SIGLEX) Workshop, Association for Computational Linguistics,<lb/> Hong Kong, China, October.<lb/> </bibl>
+<bibl>Florence Duclaye, Francois Yvon, and Olivier Collin. 2003. Learning para-<lb/>phrases to improve a question-answering system. In EACL 2003, 11th Con-<lb/>ference of the European Chapter of the Association for Computational Lin-<lb/>guistics, Workshop in NLP for QA, Budapest, Hungary, April.<lb/> </bibl>
+<bibl>S. Dumais, M. Banko, E. Brill, J. Lin, and A. Ng. 2002. Web question answering:<lb/> is more always better? In Proc. SIGIR &apos;02, pages 291–298, New York, NY,<lb/> USA. ACM Press.<lb/> </bibl>
+<bibl>A. Echihabi, U.Hermjakob, E. Hovy, D. Marcu, E. Melz, and D. Ravichandran.<lb/> 2004. Multiple-engine question answering in textmap. In Proc. TREC 2003.<lb/> </bibl>
+<bibl>S. Harabagiu, D. Moldovan, C. Clark, M. Bowden, A. Hickl, and P. Wang. 2006.<lb/> Employing two question answering systems. In Proc. TREC 2005.<lb/> </bibl>
+<bibl>Anna Hedstrom. 2005. Question categorization for a question answering system<lb/> using a vector space model. Master&apos;s thesis, Department of Linguistics and<lb/> Philology (Language Technology Programme) Uppsala University, Uppsala,<lb/> Sweden.<lb/> </bibl>
+<bibl>Fabio Rinaldi, James Dowdall, Kaarel Kaljurand, Michael Hess, and Diego Mollá.<lb/> 2003. Exploiting paraphrases in a question answering system. In Proceedings<lb/> of the Second International Workshop on Paraphrasing, pages 25–32, July.<lb/> </bibl>
+<bibl>R. Sun, J. Jiang, Y.F. Tan, H. Cui, T.-S. Chua, and M.-Y. Kan. 2006. Using<lb/> syntactic and semantic relation analysis in question answering. In Proc. TREC<lb/> 2005.<lb/> </bibl>
+<bibl>Noriko Tomuro. 2003. Interrogative reformulation patterns and acquisition of<lb/> question paraphrases. In Proceedings of the Second International Workshop<lb/> on Paraphrasing, pages 33–40, July.<lb/> </bibl>
+<bibl>Ian H. Witten and Eibe Frank. 2000. Data Mining: Practical Machine Learning<lb/> Tools and Techniques with Java Implementations. Morgan Kaufmann Pub-<lb/>lishers.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

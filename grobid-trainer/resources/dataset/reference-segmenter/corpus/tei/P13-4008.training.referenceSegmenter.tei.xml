@@ -1,0 +1,23 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>A. Bonafonte, P. Agüero, J. Adell, J. Pérez, and<lb/> A. Moreno. 2006. Ogmios: The upc text-to-speech<lb/> synthesis system for spoken translation. In TC-<lb/>STAR Workshop on Speech-to-Speech Translation,<lb/> pages 199–204.<lb/> </bibl>
+<bibl>A. Corbí-Bellot, M. Forcada, S. Ortiz-Rojas, J. Pérez-<lb/>Ortiz, G. Ramírez-Sánchez, F. Sánchez-Martínez,<lb/> I. Alegria, A. Mayor, and K. Sarasola. 2005.<lb/> An open-source shallow-transfer machine transla-<lb/>tion engine for the romance languages of Spain. In<lb/> Proceedings of the 10th Conference of the EAMT,<lb/> pages 79–86.<lb/> </bibl>
+<bibl>H. Cunningham, D. Maynard, K. Bontcheva, and<lb/> V. Tablan. 2002. GATE: an architecture for devel-<lb/>opment of robust HLT applications.<lb/> </bibl>
+<bibl>D. Ferrucci and A. Lally. 2004. Building an ex-<lb/>ample application with the unstructured information<lb/> management architecture. IBM Systems Journal,<lb/> 43(3):455–475.<lb/> </bibl>
+<bibl>R. Grishman, B. Caid, J. Callan, J. Conley, H. Corbin,<lb/> J. Cowie, K. DiBella, P. Jacobs, M. Mettler, B. Og-<lb/>den, et al. 1997. TIPSTER text phase ii architecture<lb/> design version 2.1 p 19 june 1996.<lb/> </bibl>
+<bibl>U. Hahn, E. Buyko, R. Landefeld, M. Mühlhausen,<lb/> M. Poprat, K. Tomanek, and J. Wermter. 2008. An<lb/> overview of JCoRe, the JULIE lab UIMA compo-<lb/>nent repository. In LREC&apos;08 Workshop &apos;Towards<lb/> Enhanced Interoperability for Large HLT Systems:<lb/> UIMA for NLP&apos;, pages 1–7, Marrakech, Morocco,<lb/> May.<lb/> </bibl>
+<bibl>Y. Kano, M. Miwa, K. Cohen, L. Hunter, S. Ananiadou,<lb/> and J. Tsujii. 2011. U-compare: A modular nlp<lb/> workflow construction and evaluation system. IBM<lb/> Journal of Research and Development, 55(3):11.<lb/> </bibl>
+<bibl>M. Ogrodniczuk and D. Karagiozov. 2011. Atlas -the<lb/> multilingual language processing platform. Proce-<lb/>samiento de Lenguaje Natural, 47(0):241–248.<lb/> </bibl>
+<bibl>R. Rak, A. Rowley, W. Black, and S. Ananiadou.<lb/> 2012. Argo: an integrative, interactive, text mining-<lb/>based workbench supporting curation. Database:<lb/> The Journal of Biological Databases and Curation,<lb/> 2012.<lb/> </bibl>
+<bibl>G. Savova, J. Masanz, P. Ogren, J. Zheng, S. Sohn,<lb/> K. Kipper-Schuler, and C. Chute. 2010. Mayo clin-<lb/>ical text analysis and knowledge extraction system<lb/> (ctakes): architecture, component evaluation and ap-<lb/>plications. Journal of the American Medical Infor-<lb/>matics Association, 17(5):507–513.<lb/> </bibl>
+<bibl>U. Schäfer. 2006. Middleware for creating and com-<lb/>bining multi-dimensional nlp markup. In Proceed-<lb/>ings of the 5th Workshop on NLP and XML: Multi-<lb/>Dimensional Markup in Natural Language Process-<lb/>ing, pages 81–84. ACL.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

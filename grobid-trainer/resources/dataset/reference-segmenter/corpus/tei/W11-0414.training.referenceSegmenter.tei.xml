@@ -1,0 +1,18 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Eleni Miltsakaki, Rashmi Prasad, Aravind Joshi and<lb/> Bonnie Webber. 2004. The Penn Discourse Tree-<lb/>bank. Proceedings of LREC-2004.<lb/> </bibl>
+<bibl>Rashmi Prasad, Samar Husain, Dipti Mishra Sharma<lb/> and Aravind Joshi. 2008. Towards an Annotated<lb/> Corpus of Discourse Relations in Hindi. Proceedings<lb/> of IJCNLP-2008.<lb/> </bibl>
+<bibl>Rashmi Prasad, Eleni Miltsakaki, Nikhil Dinesh, Alan<lb/> Lee, Aravind Joshi, Livio Robaldo and Bonnie Web-<lb/>ber. 2007. The Penn Discourse Tree Bank 2.0 Anno-<lb/>tation Manual. December 17, 2007.<lb/> </bibl>
+<bibl>Bonnie Webber and Aravind Joshi. 1998. Anchoring a<lb/> lexicalized tree-adjoining grammar for discourse. In<lb/> Manfred Stede, Leo Wanner, and Eduard Hovy, edi-<lb/>tors, Discourse Relations and Discourse Markers:<lb/> Proceedings of the Conference, pages 86-92. Associ-<lb/>ation of Computational Linguistics.<lb/> </bibl>
+<bibl>Nianwen Xue. 2005. Annotating Discourse Connectives<lb/> in the Chinese Treebank. Proceedings of the ACL<lb/> Workshop on Frontiers in Corpus Annotation II: Pie<lb/> in the Sky.<lb/> </bibl>
+<bibl>Deniz Zeyrek and Bonnie Webber. 2008. A Discourse<lb/> Resource for Turkish: Annotating Discourse Connec-<lb/>tives in the METU Corpus. Proceedings of IJCNLP-<lb/>2008.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

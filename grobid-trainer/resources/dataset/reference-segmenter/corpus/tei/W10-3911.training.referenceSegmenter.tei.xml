@@ -1,0 +1,29 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Aramaki, Eiji, Yasuhide Miura, Masatsugu Tonoike,<lb/> Tomoko Ohkuma, Hiroshi Masuichi, and<lb/> Kazuhiko Ohe. 2009. TEXT2TABLE: Medical<lb/> Text Summarization System Based on Named<lb/> Entity Recognition and Modality Identification.<lb/> In Proceedings of the BioNLP 2009 Workshop,<lb/> pages 185-192.<lb/> </bibl>
+<bibl>Beamer, Brandon, Suma Bhat, Brant Chee, Andrew<lb/> Fister, Alla Rozovskaya, and Roxana Girju.<lb/> 2007. UIUC: A Knowledge-rich Approach to<lb/> Identifying Semantic Relations between Nomi-<lb/>nals. In Proceedings of Fourth International<lb/> Workshop on Semantic Evaluations, pages 386-<lb/>389.<lb/> </bibl>
+<bibl>Friedman, Carol, Philip O. Alderson, John H. M.<lb/> Austin, James J. Cimino, and Stephen B. John-<lb/>son. 1994. A General Natural-language Text<lb/> Processor for Clinical Radiology. Journal of the<lb/> American Medical Informatics Association, 1(2),<lb/> pages 161-174.<lb/> </bibl>
+<bibl>Gildea, Daniel. 2001. Corpus Variation and Parser<lb/> Performance. In Proceedings of the 2001 Con-<lb/>ference on Empirical Methods in Natural Lan-<lb/>guage Processing, pages 1-9.<lb/> </bibl>
+<bibl>Girju, Roxana, Preslav Nakov, Vivi Nastase, Stan<lb/> Szpakowicz, Peter Turney, and Deniz Yuret.<lb/> 2007. SemEval-2007 task 04: Classification of<lb/> Semantic Relations between Nominals. In Pro-<lb/>ceedings of Fourth International Workshop on<lb/> Semantic Evaluations, pages 13-18.<lb/> </bibl>
+<bibl>Giuliano, Claudio, Alberto Lavelli, Daniele Pighin,<lb/> and Lorenza Romano. 2007. FBK-IRST: Kernel<lb/> Methods for Semantic Relation Extraction. In<lb/> Proceedings of the 4th International Workshop<lb/> on Semantic Evaluations, pages 141-144.<lb/> </bibl>
+<bibl>Hendrickx , Iris, Roser Morante, Caroline Sporleder,<lb/> and Antal van den Bosch. 2007. ILK: Machine<lb/> learning of semantic relations with shallow fea-<lb/>tures and almost no data. In Proceedings of the<lb/> 4th International Workshop on Semantic Evalua-<lb/>tions, 187-190.<lb/> </bibl>
+<bibl>Kim, Jin-Dong, Tomoko Ohta, Sampo Pyysalo,<lb/> Yoshinobu Kano, and Jun&apos;ichi Tsujii. 2009.<lb/> Overview of BioNLP&apos;09 Shared Task on Event<lb/> Extraction. In Proceedings of the BioNLP 2009<lb/> Workshop Companion Volume for Shared Task,<lb/> pages 1-9.<lb/> </bibl>
+<bibl>Krallinger, Martin, Florian Leitner, Carlos<lb/> Rodriguez-Penagos, and Alfonso Valencia. 2008.<lb/> Overview of the protein-protein interaction an-<lb/>notation extraction task of BioCreative II. Ge-<lb/>nome Biology 2008, 9(Suppl 2):S4.<lb/> </bibl>
+<bibl>Kurohashi, Sadao and Makoto Nagao. 1994. KN<lb/> Parser : Japanese Dependency/Case Structure<lb/> Analyzer. In Proceedings of The International<lb/> Workshop on Sharable Natural Language Re-<lb/>sources, pages 22-28. Software available at<lb/> http://www-lab25.kuee.kyoto-u.ac.jp/nl-<lb/>resource/knp-e.html.<lb/> </bibl>
+<bibl>Light, Marc, Xin Ying Qiu, and Padmini Srinivasan.<lb/> 2004. The Language of Bioscience: Facts, Spec-<lb/>ulations, and Statements in Between. In Pro-<lb/>ceedings of HLT/NAACL 2004 Workshop: Bi-<lb/>oLINK 2004, Linking Biological Literature, On-<lb/>tologies and Databases, pages 17-24.<lb/> </bibl>
+<bibl>Miyao, Yusuke, Rune Saetre, Kenji Sagae, Takuya<lb/> Matsuzaki, and Jun&apos;ichi Tsujii. 2008. Task-<lb/>oriented Evaluation of Syntactic Parsers and<lb/> Their Representations. In Proceedings of the<lb/> 46th Annual Meeting of the Association for<lb/> Computational Linguistics: Human Language<lb/> Technologies, pages 46-54.<lb/> </bibl>
+<bibl>Pantel, Patrick and Marco Pennacchiotti. 2006. Es-<lb/>presso: Leveraging Generic Patterns for Auto-<lb/>matically Harvesting Semantic Relations. In<lb/> Proceedings of the 21st International Confer-<lb/>ence on Computational Linguistics and 44th An-<lb/>nual Meeting of the Association for Computa-<lb/>tional Linguistics, pages 113-120.<lb/> </bibl>
+<bibl>Riedel, Sebastian, Hong-Woo Chun, Toshihisa<lb/> Takagi, and Jun&apos;ichi Tsujii. 2009. A Markov<lb/> Logic Approach to Bio-Molecular Event Extrac-<lb/>tion. In Proceedings of the BioNLP 2009 Work-<lb/>shop Companion Volume for Shared Task, pages<lb/> 41-49.<lb/> </bibl>
+<bibl>Saeger, Stijn De, Kentaro Torisawa, and Jun&apos;ichi<lb/> Kazama. 2008. Looking for Trouble. In Proceed-<lb/>ings of the 22nd International Conference on<lb/> Computational Linguistics, pages 185-192.<lb/> </bibl>
+<bibl>Vapnik, Vladimir N.. 1995. The Nature of Statisti-<lb/>cal Learning Theory. Springer-Verlag New York,<lb/> Inc..<lb/> </bibl>
+<bibl>Vincze, Veronika, György Szarvas, Richárd Farkas,<lb/> György Móra, and János Csirik. 2008. The Bio-<lb/>Scope corpus: biomedical texts annotated for un-<lb/>certainty, negation and their scopes. BMC Bioin-<lb/>formatics 2008, 9(Suppl 11):S9.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

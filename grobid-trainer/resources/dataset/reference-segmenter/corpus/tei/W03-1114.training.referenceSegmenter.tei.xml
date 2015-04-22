@@ -1,0 +1,24 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>M. D. Dunlop, Development and evaluation of cluste-<lb/>ing techniques for finding people, Proceedings of the<lb/> Third International Conference Basel, Volume 34,<lb/> 2000<lb/> </bibl>
+<bibl>V. Estivill-Castro and J. Yang, Non-crisp Clustering by<lb/> Fast, Convergent, and Robust Algorithms, Principles<lb/> of Data Mining and Knowledge Discovery, Volume<lb/> 2168, 2001, pp. 103-114<lb/> </bibl>
+<bibl>U. Grothkopf, H. Andernach, S. Stevens-Rayburn, and<lb/> M. Gomez, Comparison of Two &quot; Document Similarity<lb/> Search Engines &quot; , Library and Information Services in<lb/> Astronomy III, ASP Conference Series, Volume 153,<lb/> 1998, pp. 85-92<lb/> </bibl>
+        <bibl><label>E.</label> L. Johnson and H. Kargupta, Collective, Hierarchi-<lb/>cal Clustering from Distributed, Heterogeneous Data,<lb/> Large-Scale Parallel Data Mining, Lecture Notes in<lb/> Artificial Intelligence, Volume 1759, 2000, pp. 221-<lb/>244<lb/> </bibl>
+<bibl>Lam, W., Meng, H., Wong, K.L. and Yen, J., Using<lb/> Contextual Analysis for News Event Detection,<lb/> International Journal of Intelligent Systems, 16(4),<lb/> 2001, pp.525-546<lb/> </bibl>
+<bibl>J. H. Lee, H. Y. Cho and H. R. Park, N-gram-based<lb/> indexing for Korean text retrieval, Information Proc-<lb/>essing and Management, Volume 35 Number 4, 1999,<lb/> pp. 427-441<lb/> </bibl>
+<bibl>A. Tombros, R. Villa, C. J. Van Rijsbergen, The effec-<lb/>tiveness of query-specific hierarchic clustering in in-<lb/>formation retrieval, Information processing &amp;<lb/> management, Volume 38, 2002 , pp. 559-582<lb/> </bibl>
+<bibl>M. Volk and S. Clematide: Learn-Filter-Apply-Forget.<lb/> </bibl>
+<bibl>Mixed Approaches to Named Entity Recognition. Pro-<lb/>ceedings of 6th International Workshop on Applica-<lb/>tions of Natural Language for Information Systems.<lb/> </bibl>
+<bibl>GI-Edition. Lecture Notes in Informatics. vol. 3. Ma-<lb/>drid: 2001.<lb/> </bibl>
+<bibl>K.L. Wong, W. Lam, J. Yen, Interactive Chinese News<lb/> Event Detection and Tracking, Proceedings of The<lb/> Second Asian Digital Library Conference, 1999,<lb/> pp.30-43.<lb/> </bibl>
+<bibl>Y. Yang, T. Pierce, J. Carbonell, A Study on Retrospec-<lb/>tive and On-Line Event Detection, Proceedings of<lb/> SIGIR-98, 21st ACM International Conference on Re-<lb/>search and Development in Information Retrieval,<lb/> 1998, pp.28-36.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

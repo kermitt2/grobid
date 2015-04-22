@@ -1,0 +1,26 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Vitaly I. Batov and Yury A. Sorokin. 1975. Text at-<lb/>tribution based on objective characteristics. Seriya<lb/> yazyka i literatury, 34, 1.<lb/> </bibl>
+<bibl>Julia Birke and Anoop Sarkar. 2006. A Clustering Ap-<lb/>proach for the Nearly Unsupervised Recognition of<lb/> Nonliteral Language. Proceedings of EACL-06<lb/> </bibl>
+<bibl>Max Black. 1954. Metaphor. Proceedings of the Aris-<lb/>totelian Society, 55, pp. 273-294.<lb/> </bibl>
+<bibl>Martin Ester, Hans-Peter Kriegel, Jörg Sander and<lb/> Xiaowei Xu. 1996. A density-based algorithm for<lb/> discovering clusters in large spatial databases with<lb/> noise. Proceedings of the Second International Con-<lb/>ference on Knowledge Discovery and Data Mining<lb/> (KDD-96), AAAI Press, pp. 226231<lb/> </bibl>
+<bibl>Michael Halliday and Ruqaiya Hasan. 1976. Cohesion<lb/> in English. Longman, London<lb/> Graham Katz and Eugenie Giesbrecht. 2006. Au-<lb/>tomatic identification of non-compositional multi-<lb/>word expressions using latent semantic analysis.<lb/> Proceedings of the ACL/COLING-06 Workshop on<lb/> Multiword Expressions: Identifying and Exploiting<lb/> Underlying Properties<lb/> </bibl>
+<bibl>Linlin Li and Caroline Sporleder. August 2009. Clas-<lb/>sifier combination for contextual idiom detection<lb/> without labeled data. Proceedings of the 2009 Con-<lb/>ference on Empirical Methods in Natural Language<lb/> Processing, pp. 315-323.<lb/> </bibl>
+<bibl>Rada Mihalcea, Courtney Corley and Carlo Strappa-<lb/>rava. 2006. Corpus-based and Knowledge-based<lb/> Measures of Text Semantic Similarity. Proceedings<lb/> of AAAI-06<lb/> </bibl>
+<bibl>Rada Mihalcea. 2007. Using Wikipedia for Auto-<lb/>matic Word Sense Disambiguation. Proceedings of<lb/> the North American Chapter of the Association for<lb/> Computational Linguistics (NAACL 2007)<lb/> </bibl>
+<bibl>George A. Miller and Walter G. Charles. 1991. Con-<lb/>textual correlates of semantic similarity. Language<lb/> and Cognitive Processes, 6(1):128.<lb/> </bibl>
+<bibl>Malvina Nissim and Katja Markert. 2003. Syn-<lb/>tactic features and word similarity for supervised<lb/> metonymy resolution. Proceedings of the 41st An-<lb/>nual Meeting of the Association for Computational<lb/> Linguistics (ACL-03) (Sapporo, Japan, 2003). 56-<lb/>63.<lb/> </bibl>
+<bibl>Hinrich Schütze. 1998. Automatic word sense dis-<lb/>crimination. Computational Linguistics, 24(1), pp.<lb/> 97-123<lb/> </bibl>
+<bibl>Caroline Sporleder and Linlin Li. April 2009. Unsu-<lb/>pervised recognition of literal and non-literal use of<lb/> idiomatic expressions. Proceedings of EACL-09<lb/> </bibl>
+<bibl>Efstathios Stamatatos. 2009. A survey of modern au-<lb/>thorship attribution methods. Journal of the Ameri-<lb/>can Society for information Science and Technology,<lb/> 60(3): 538-556.<lb/> </bibl>
+<bibl>Denis Turdakov and Pavel Velikhov. 2008. Semantic<lb/> Relatedness Metric for Wikipedia Concepts Based<lb/> on Link Analysis and its Application to Word Sense<lb/> Disambiguation SYRCoDIS 2008</bibl>
+        </listBibl>
+    </text>
+</tei>
+

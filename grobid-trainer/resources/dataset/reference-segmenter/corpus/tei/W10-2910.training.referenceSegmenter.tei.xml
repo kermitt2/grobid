@@ -1,0 +1,60 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Collin F. Baker, Charles J. Fillmore, and John B. Lowe.<lb/> 1998. The Berkeley FrameNet Project. In Proceed-<lb/>ings of COLING/ACL-1998.<lb/> </bibl>
+<bibl>Roberto Basili, Marco Cammisa, and Alessandro Mos-<lb/>chitti. 2005. Effective use of WordNet seman-<lb/>tics via kernel-based learning. In Proceedings of<lb/> CoNLL-2005, pages 1–8, Ann Arbor, Michigan.<lb/> </bibl>
+<bibl>Roberto Basili, Marco Cammisa, and Alessandro Mos-<lb/>chitti. 2006. A semantic kernel to classify texts with<lb/> very few training examples. In in Informatica, an in-<lb/>ternational journal of Computing and Informatics.<lb/> </bibl>
+<bibl>Steven Bethard, Hong Yu, Ashley Thornton, Vasileios<lb/> Hatzivassiloglou, and Dan Jurafsky. 2005. Extract-<lb/>ing opinion propositions and opinion holders using<lb/> syntactic and lexical cues. In James G. Shanahan,<lb/> Yan Qu, and Janyce Wiebe, editors, Computing Atti-<lb/>tude and Affect in Text: Theory and Applications.<lb/> </bibl>
+<bibl>Stephan Bloehdorn and Alessandro Moschitti. 2007a.<lb/> Combined syntactic and semantic kernels for text<lb/> classification. In Proceedings of ECIR 2007, Rome,<lb/> Italy.<lb/> </bibl>
+<bibl>Stephan Bloehdorn and Alessandro Moschitti. 2007b.<lb/> Structure and semantics for expressive text kernels.<lb/> In In Proceedings of CIKM &apos;07.<lb/> </bibl>
+<bibl>Stephan Bloehdorn, Roberto Basili, Marco Cammisa,<lb/> and Alessandro Moschitti. 2006. Semantic kernels<lb/> for text classification based on topological measures<lb/> of feature similarity. In Proceedings of ICDM 06,<lb/> Hong Kong, 2006.<lb/> </bibl>
+<bibl>Eric Breck, Yejin Choi, and Claire Cardie. 2007. Iden-<lb/>tifying expressions of opinion in context. In Pro-<lb/>ceedings of IJCAI-2007, Hyderabad, India.<lb/> </bibl>
+<bibl>Yejin Choi, Eric Breck, and Claire Cardie. 2006. Joint<lb/> extraction of entities and relations for opinion recog-<lb/>nition. In Proceedings of EMNLP 2006.<lb/> </bibl>
+<bibl>Michael Collins and Nigel Duffy. 2002. New rank-<lb/>ing algorithms for parsing and tagging: Kernels over<lb/> discrete structures, and the voted perceptron. In Pro-<lb/>ceedings of ACL&apos;02.<lb/> </bibl>
+<bibl>Michael Collins. 2002. Discriminative training meth-<lb/>ods for hidden Markov models: Theory and ex-<lb/>periments with perceptron algorithms. In Proceed-<lb/>ings of the 2002 Conference on Empirical Methods<lb/> in Natural Language Processing (EMNLP 2002),<lb/> pages 1–8.<lb/> </bibl>
+<bibl>Koby Crammer, Ofer Dekel, Joseph Keshet, Shai<lb/> Shalev-Schwartz, and Yoram Singer. 2006. Online<lb/> passive-aggressive algorithms. Journal of Machine<lb/> Learning Research, 2006(7):551–585.<lb/> </bibl>
+<bibl>William Croft. 2005. Radical and typological argu-<lb/>ments for radical construction grammar. In J.-O.<lb/> ¨<lb/> Ostman and M. Fried, editors, Construction Gram-<lb/>mars: Cognitive grounding and theoretical exten-<lb/>sions.<lb/> </bibl>
+<bibl>Marco Dinarelli, Alessandro Moschitti, and Giuseppe<lb/> Riccardi. 2009. Re-ranking models based-on small<lb/> training data for spoken language understanding.<lb/> In Proceedings of the 2009 Conference on Empiri-<lb/>cal Methods in Natural Language Processing, pages<lb/> 1076–1085, Singapore, August.<lb/> </bibl>
+<bibl>Rong-En Fan, Kai-Wei Chang, Cho-Jui Hsieh, Xiang-<lb/>Rui Wang, and Chih-Jen Lin. 2008. LIBLINEAR:<lb/> A library for large linear classification. Journal of<lb/> Machine Learning Research, 9:1871–1874.<lb/> </bibl>
+<bibl>Yoav Freund and Robert E. Schapire. 1999. Large<lb/> margin classification using the perceptron algorithm.<lb/> Machine Learning, 37(3):277–296.<lb/> </bibl>
+<bibl>Ana-Maria Giuglea and Alessandro Moschitti. 2004.<lb/> Knowledge Discovering using FrameNet, VerbNet<lb/> and PropBank. In In Proceedings of the Workshop<lb/> on Ontology and Knowledge Discovering at ECML<lb/> 2004, Pisa, Italy.<lb/> </bibl>
+<bibl>Ana-Maria Giuglea and Alessandro Moschitti. 2006.<lb/> Semantic role labeling via FrameNet, VerbNet and<lb/> PropBank. In Proceedings of the 21st International<lb/> Conference on Computational Linguistics and 44th<lb/> Annual Meeting of the Association for Computa-<lb/>tional Linguistics, pages 929–936, Sydney, Aus-<lb/>tralia, July.<lb/> </bibl>
+<bibl>Liang Huang. 2008. Forest reranking: Discriminative<lb/> parsing with non-local features. In Proceedings of<lb/> ACL-08: HLT, pages 586–594, Columbus, United<lb/> States.<lb/> </bibl>
+<bibl>Thorsten Joachims. 1999. Making large-scale SVM<lb/> learning practical. Advances in Kernel Methods –<lb/> Support Vector Learning, 13.<lb/> </bibl>
+<bibl>Richard Johansson and Pierre Nugues.<lb/> 2008a.<lb/> </bibl>
+<bibl>Dependency-based syntactic–semantic analysis with<lb/> PropBank and NomBank. In CoNLL 2008: Pro-<lb/>ceedings of the Twelfth Conference on Natural<lb/> Language Learning, pages 183–187, Manchester,<lb/> United Kingdom.<lb/> </bibl>
+<bibl>Richard Johansson and Pierre Nugues. 2008b. The<lb/> effect of syntactic representation on semantic role<lb/> labeling. In Proceedings of the 22nd International<lb/> Conference on Computational Linguistics (Coling<lb/> 2008), pages 393–400, Manchester, UK.<lb/> </bibl>
+<bibl>Mahesh Joshi and Carolyn Penstein-Rosé. 2009. Gen-<lb/>eralizing dependency features for opinion mining.<lb/> In Proceedings of ACL/IJCNLP 2009, Short Papers<lb/> Track.<lb/> </bibl>
+<bibl>Jussi Karlgren, Gunnar Eriksson, Magnus Sahlgren,<lb/> and Oscar Täckström.<lb/> 2010.<lb/> Between bags<lb/> and trees – constructional patterns in text used for<lb/> attitude identification. In Proceedings of ECIR<lb/> 2010, 32nd European Conference on Information<lb/> Retrieval, Milton Keynes, United Kingdom.<lb/> </bibl>
+<bibl>Soo-Min Kim and Eduard Hovy. 2006. Extract-<lb/>ing opinions, opinion holders, and topics expressed<lb/> in online news media text. In Proceedings of<lb/> ACL/COLING Workshop on Sentiment and Subjec-<lb/>tivity in Text.<lb/> </bibl>
+<bibl>Nozomi Kobayashi, Kentaro Inui, and Yuji Matsumoto.<lb/> 2007. Extracting aspect-evaluation and aspect-of re-<lb/>lations in opinion mining. In Proceedings of Con-<lb/>ference on Empirical Methods in Natural Language<lb/> Processing (EMNLP-CoNLL-2007).<lb/> </bibl>
+<bibl>Igor A. Mel&apos;ˇ cuk. 1988. Dependency Syntax: Theory<lb/> and Practice. State University Press of New York,<lb/> Albany.<lb/> </bibl>
+<bibl>Adam Meyers, Ruth Reeves, Catherine Macleod,<lb/> Rachel Szekely, Veronika Zielinska, Brian Young,<lb/> and Ralph Grishman. 2004. The NomBank project:<lb/> An interim report. In HLT-NAACL 2004 Work-<lb/>shop: Frontiers in Corpus Annotation, pages 24–31,<lb/> Boston, United States.<lb/> </bibl>
+<bibl>Alessandro Moschitti and Roberto Basili. 2004. Com-<lb/>plex linguistic features for text classification: A<lb/> comprehensive study. In Proceedings of ECIR.<lb/> </bibl>
+<bibl>Alessandro Moschitti. 2006. Making tree kernels prac-<lb/>tical for natural language learning. In Proccedings<lb/> of EACL&apos;06.<lb/> </bibl>
+<bibl>Alessandro Moschitti. 2008. Kernel methods, syntax<lb/> and semantics for relational text categorization. In<lb/> Proceeding of CIKM &apos;08, NY, USA.<lb/> </bibl>
+<bibl>Truc-Vien T. Nguyen, Alessandro Moschitti, and<lb/> Giuseppe Riccardi. 2009. Convolution kernels on<lb/> constituent, dependency and sequential structures<lb/> for relation extraction. In Proceedings of EMNLP.<lb/> </bibl>
+<bibl>Martha Palmer, Dan Gildea, and Paul Kingsbury. 2005.<lb/> The proposition bank: An annotated corpus of se-<lb/>mantic roles. Computational Linguistics, 31(1):71–<lb/> 105.<lb/> </bibl>
+<bibl>Bo Pang, Lillian Lee, and Shivakumar Vaithyanathan.<lb/> 2002. Thumbs up? Sentiment classification us-<lb/>ing machine learning techniques. In Proceedings of<lb/> EMNLP.<lb/> </bibl>
+<bibl>Josef Ruppenhofer, Swapna Somasundaran, and Janyce<lb/> Wiebe. 2008. Finding the sources and targets of<lb/> subjective expressions. In Proceedings of LREC.<lb/> </bibl>
+<bibl>Libin Shen and Aravind Joshi. 2003. An SVM based<lb/> voting algorithm with application to parse reranking.<lb/> In Proceedings of the CoNLL.<lb/> </bibl>
+<bibl>Swapna Somasundaran, Galileo Namata, Janyce<lb/> Wiebe, and Lise Getoor. 2009. Supervised and<lb/> unsupervised methods in employing discourse rela-<lb/>tions for improving opinion polarity classification.<lb/> In Proceedings of EMNLP 2009: conference on Em-<lb/>pirical Methods in Natural Language Processing.<lb/> </bibl>
+<bibl>Jun Suzuki, Tsutomu Hirao, Yutaka Sasaki, and Eisaku<lb/> Maeda. 2003. Hierarchical directed acyclic graph<lb/> kernel: Methods for structured natural language<lb/> data. In Proceedings of the 41th Annual Meeting of<lb/> Association for Computational Linguistics (ACL).<lb/> </bibl>
+<bibl>Erik F. Tjong Kim Sang and Jorn Veenstra. 1999. Rep-<lb/>resenting text chunks. In Proceedings of EACL99,<lb/> pages 173–179, Bergen, Norway.<lb/> </bibl>
+<bibl>Iannis Tsochantaridis, Thorsten Joachims, Thomas<lb/> Hofmann, and Yasemin Altun. 2005. Large margin<lb/> methods for structured and interdependent output<lb/> variables. Journal of Machine Learning Research,<lb/> 6(Sep):1453–1484.<lb/> </bibl>
+<bibl>Janyce Wiebe, Rebecca Bruce, and Thomas O&apos;Hara.<lb/> 1999. Development and use of a gold standard data<lb/> set for subjectivity classifications. In Proceedings<lb/> of the 37th Annual Meeting of the Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Janyce Wiebe, Theresa Wilson, and Claire Cardie.<lb/> 2005. Annotating expressions of opinions and emo-<lb/>tions in language. Language Resources and Evalu-<lb/>ation, 39(2-3):165–210.<lb/> </bibl>
+<bibl>Michael Wiegand and Dietrich Klakow. 2010. Con-<lb/>volution kernels for opinion holder extraction. In<lb/> Proceedings of HLT-NAACL 2010. To appear.<lb/> </bibl>
+<bibl>Theresa Wilson, Janyce Wiebe, and Paul Hoff-<lb/>mann. 2005. Recognizing contextual polarity in<lb/> phrase-level sentiment analysis. In Proceedings of<lb/> HLT/EMNLP 2005.<lb/> </bibl>
+<bibl>Yuanbin Wu, Qi Zhang, Xuanjing Huang, and Lide Wu.<lb/> 2009. Phrase dependency parsing for opinion min-<lb/>ing. In Proceedings of EMNLP.<lb/> </bibl>
+<bibl>Hong Yu and Vasileios Hatzivassiloglou. 2003. To-<lb/>wards answering opinion questions: Separating facts<lb/> from opinions and identifying the polarity of opin-<lb/>ion sentences. In Proceedings of the Conference on<lb/> Empirical Methods in Natural Language Processing<lb/> (EMNLP-2003), pages 129–136, Sapporo, Japan.<lb/> </bibl>
+<bibl>Min Zhang, Jie Zhang, and Jian Su. 2006. Exploring<lb/> Syntactic Features for Relation Extraction using a<lb/> Convolution tree kernel. In Proceedings of NAACL.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

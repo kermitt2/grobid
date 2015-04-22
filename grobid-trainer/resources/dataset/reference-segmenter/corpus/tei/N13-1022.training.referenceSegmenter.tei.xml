@@ -1,0 +1,29 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Regina Barzilay and Lillian Lee. 2003. Learning to<lb/> paraphrase: An unsupervised approach using multiple-<lb/>sequence alignment. In Proceedings HLT-NAACL<lb/> 2003, pages 16–23, Edmonton, Canada.<lb/> </bibl>
+<bibl>Jerome R. Bellegarda. 2004. Statistical language model<lb/> adaptation: review and perspectives. Speech Commu-<lb/>nication, 42:93–108.<lb/> </bibl>
+<bibl>Dan Bohus and Eric Horvitz. 2011. Multiparty turn tak-<lb/>ing in situated dialog: Study, lessons, and directions.<lb/> In Proceedings ACL SIGDIAL, pages 98–109, Port-<lb/>land, OR.<lb/> </bibl>
+<bibl>Peter F. Brown, Vincent J. Della Pietra, Peter V. deSouza,<lb/> Jenifer C. Lai, and Robert L. Mercer. 1992. Class-<lb/>based n-gram models of natural language. Computa-<lb/>tional Linguistics, 18(4):467–479.<lb/> </bibl>
+<bibl>Christopher Cieri, David Miller, and Kevin Walker.<lb/> 2004. The Fisher corpus: a resource for the next gen-<lb/>erations of speech-to-text. In Proceedings 4th Interna-<lb/>tional Conference on Language Resources and Evalu-<lb/>ation, pages 69–71, Lisbon.<lb/> </bibl>
+<bibl>John Dowding, Richard Alena, William J. Clancey,<lb/> Maarten Sierhuis, and Jeffrey Graham. 2006. Are<lb/> you talking to me? dialogue systems supporting mixed<lb/> teams of humans and robots. In Proccedings AAAI<lb/> Fall Symposium: Aurally Informed Performance: Inte-<lb/>grating Machine Listening and Auditory Presentation<lb/> in Robotic Systems, Washington, DC.<lb/> </bibl>
+<bibl>Dilek Hakkani-Tür, Gokhan Tur, and Larry Heck. 2011a.<lb/> Research challenges and opportunities in mobile appli-<lb/>cations [dsp education]. IEEE Signal Processing Mag-<lb/>azine, 28(4):108 –110.<lb/> </bibl>
+<bibl>Dilek Z. Hakkani-Tür, Gökhan Tür, Larry P. Heck, and<lb/> Elizabeth Shriberg. 2011b. Bootstrapping domain de-<lb/>tection using query click logs for new domains. In<lb/> Proceedings Interspeech, pages 709–712.<lb/> </bibl>
+<bibl>Jian Huang, Jianfeng Gao, Jiangbo Miao, Xiaolong Li,<lb/> Kuansang Wang, and Fritz Behr. 2010. Exploring web<lb/> scale language models for search query processing. In<lb/> Proceedings 19th International Conference on World<lb/> Wide Web, pages 451–460, Raleigh, NC.<lb/> </bibl>
+<bibl>Adam Janin, Don Baron, Jane Edwards, Dan Ellis,<lb/> David Gelbart, Nelson Morgan, Barbara Peskin, Thilo<lb/> Pfau, Elizabeth Shriberg, Andreas Stolcke, and Chuck<lb/> Wooters. 2003. The ICSI meeting corpus. In Pro-<lb/>ceedings IEEE ICASSP, volume 1, pages 364–367,<lb/> Hong Kong.<lb/> </bibl>
+<bibl>Michael Katzenmaier, Rainer Stiefelhagen, and Tanja<lb/> Schultz. 2004. Identifying the addressee in human-<lb/>human-robot interactions based on head pose and<lb/> speech. In Proceedings 6th International Conference<lb/> on Multimodal Interfaces, ICMI, pages 144–151, New<lb/> York, NY, USA. ACM.<lb/> </bibl>
+<bibl>Mitchell P. Marcus, Beatrice Santorini, Mary Ann<lb/> Marcinkiewicz, and Ann Taylor. 1999. Treebank-3.<lb/> Linguistic Data Consortium, catalog item LDC99T42.<lb/> </bibl>
+<bibl>Rieks op den Akker and David Traum. 2009. A com-<lb/>parison of addressee detection methods for multiparty<lb/> conversations. In Proceedings of Diaholmia, pages<lb/> 99–106.<lb/> </bibl>
+<bibl>Tim Paek, Eric Horvitz, and Eric Ringger. 2000. Con-<lb/>tinuous listening for unconstrained spoken dialog. In<lb/> Proceedings ICSLP, volume 1, pages 138–141, Bei-<lb/>jing.<lb/> </bibl>
+<bibl>Daniel Reich, Felix Putze, Dominic Heger, Joris Ijssel-<lb/>muiden, Rainer Stiefelhagen, and Tanja Schultz. 2011.<lb/> A real-time speech command detector for a smart con-<lb/>trol room. In Proceedings Interspeech, pages 2641–<lb/> 2644, Florence.<lb/> </bibl>
+<bibl>Elizabeth Shriberg, Andreas Stolcke, Dilek Hakkani-Tür,<lb/> and Larry Heck. 2012. Learning when to listen:<lb/> Detecting system-addressed speech in human-human-<lb/>computer dialog. In Proceedings Interspeech, Port-<lb/>land, OR.<lb/> </bibl>
+<bibl>Ian H. Witten and Timothy C. Bell. 1991. The zero-<lb/>frequency problem: Estimating the probabilities of<lb/> novel events in adaptive text compression. IEEE<lb/> Transactions on Information Theory, 37(4):1085–<lb/> 1094.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,24 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Steven Abney, Robert E. Schapire, and Yoram<lb/> Singer. 1999. Boosting Applied to Tag-<lb/>ging and PP Attachment. In Proceedings of<lb/> the Joint SIGDAT Conference on Empirical<lb/> Methods in Natural Language Processing and<lb/> Very Large Corpora, pages 38–45.<lb/> </bibl>
+<bibl>Erin L. Allwein, Robert E. Schapire, and Yoram<lb/> Singer. 2000. Reducing Multiclass to Binary:<lb/> A Unifying Approach for Margin Classifiers.<lb/> In Proceedings of 17th International Confer-<lb/>ence on Machine Learning, pages 9–16.<lb/> </bibl>
+<bibl>Eric Brill. 1995. Transformation-Based Error-<lb/>Driven Learning and Natural Language Pro-<lb/>cessing: A Case Study in Part-of-Speech Tag-<lb/>ging. Computational Linguistics, 21(4):543–<lb/> 565.<lb/> </bibl>
+<bibl>Eleazar Eskin. 2000. Detecting Errors within<lb/> a Corpus using Anomaly Detection. In Pro-<lb/>ceedings of the 6th Applied Natural Language<lb/> Processing Conference and the 1st Meeting of<lb/> the North American Chapter of the Associa-<lb/>tion of Computational Linguistics, pages 148–<lb/> 153.<lb/> </bibl>
+<bibl>Qing Ma, Bao-Liang Lu, Masaki Murata, Michi-<lb/>nori Ichikawa, and Hitoshi Isahara. 2001.<lb/> On-Line Error Detection of Annotated Cor-<lb/>pus Using Modular Neural Networks. In Pro-<lb/>ceedings of International Conference on Arti-<lb/>ficial Neural Networks (ICANN 2001), pages<lb/> 1185–1192.<lb/> </bibl>
+<bibl>Yuji Matsumoto and Tatsuo Yamashita. 2000.<lb/> Using Machine Learning Methods to Improve<lb/> Quality of Tagged Corpora and Learning<lb/> Models. In Proceedings of the Second Interna-<lb/>tional Conference on Language Resource and<lb/> Evaluation, pages 11–16.<lb/> </bibl>
+<bibl>Masaki Murata, Masao Utiyama, Kiyotaka<lb/> Uchimoto, Qing Ma, and Hitoshi Isahara.<lb/> 2000. Corpus Error Detection and Correc-<lb/>tion Using the Decision-List and Example-<lb/>Based Methods. In Information Processing<lb/> Society of Japan SIG Notes, Natural Lan-<lb/>guage No.136, pages 49–56. (in Japanese).<lb/> </bibl>
+<bibl>Tetsuji Nakagawa, Taku Kudo, and Yuji Mat-<lb/>sumoto. 2002. Revision Learning and its<lb/> Application to Part-of-Speech Tagging. In<lb/> Proceedings of the 40th Annual Meeting of<lb/> the Association for Computational Linguis-<lb/>tics. (to appear).<lb/> </bibl>
+<bibl>Lluís Padró and Lluís M` arquez. 1998. On the<lb/> Evaluation and Comparison of Taggers: the<lb/> Effect of Noise in Testing Corpora. In Pro-<lb/>ceedings of the joint 17th International Con-<lb/>ference on Computational Linguistics and<lb/> 36th Annual Meeting of the Association for<lb/> Computational Linguistics, pages 997–1002.<lb/> </bibl>
+<bibl>Adwait Ratnaparkhi. 1996. A Maximum En-<lb/>tropy Model for Part-of-Speech Tagging. In<lb/> Proceedings of the Conference on Empiri-<lb/>cal Methods in Natural Language Processing,<lb/> pages 133–142.<lb/> </bibl>
+<bibl>Hans van Halteren, Jakub Zavrel, and Wal-<lb/>ter Daelemans. 2001. Improving Accuracy<lb/> in Wordclass Tagging through Combination<lb/> of Machine Learning Systems. Computational<lb/> Linguistics, 27(2):199–230.<lb/> </bibl>
+<bibl>Vladimir Vapnik. 1998. Statistical Learning<lb/> Theory. Springer.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

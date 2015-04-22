@@ -1,0 +1,31 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>A. Abeillé, L. Clément, and F. Toussenel. 2003. Building<lb/> a treebank for French. In A. Abeillé, editor, Treebanks.<lb/> Kluwer, Dordrecht.<lb/> </bibl>
+<bibl>C. Andrieu, N. de Freitas, A. Doucet, and M. I. Jordan.<lb/> 2003. An introduction to MCMC for machine learn-<lb/>ing. Machine Learning, 50:5–43.<lb/> </bibl>
+<bibl>T. Berg-Kirkpatrick, A. Bouchard-Cote, J. DeNero, and<lb/> D. Klein. 2010. Unsupervised learning with features.<lb/> In Proceedings of NAACL.<lb/> </bibl>
+<bibl>S. B. Cohen and N. A. Smith. 2010. Covariance in unsu-<lb/>pervised learning of probabilistic grammars. Journal<lb/> of Machine Learning Research, 11:3017–3051.<lb/> </bibl>
+<bibl>S. B. Cohen, D. Das, and N. A. Smith. 2011. Unsuper-<lb/>vised structure prediction with non-parallel multilin-<lb/>gual guidance. In Proceedings of EMNLP.<lb/> </bibl>
+<bibl>R. K. Congram, C. N. Potts, and S. L. van de Velde.<lb/> 2002. An iterated Dynasearch algorithm for the<lb/> single-machine total weighted tardiness scheduling<lb/> problem. Informs Journal On Computing, 14(1):52–<lb/> 67.<lb/> </bibl>
+<bibl>D. Das and S. Petrov. 2011. Unsupervised part-of-<lb/>speech tagging with bilingual graph-based projections.<lb/> In Procedings of ACL.<lb/> </bibl>
+<bibl>T. Erjavec. 2004. MULTEXT-East version 3: Multilin-<lb/>gual morphosyntactic specifications, lexicons and cor-<lb/>pora. In Proceedings of LREC.<lb/> </bibl>
+<bibl>S. Goldwater and T. Griffiths. 2007. A fully Bayesian<lb/> approach to unsupervised part-of-speech tagging. In<lb/> Proc. of ACL.<lb/> </bibl>
+<bibl>A. Haghighi and D. Klein. 2006. Prototype-driven learn-<lb/>ing for sequence models. In Proceedings of HLT-<lb/>NAACL.<lb/> </bibl>
+<bibl>G. E. Hinton. 2000. Training products of experts by<lb/> minimizing contrastive divergence. Technical Report<lb/> GCNU TR 2000-004, University College London.<lb/> </bibl>
+<bibl>P. Koehn. 2005. Europarl: A parallel corpus for statisti-<lb/>cal machine translation. In MT Summit 2005.<lb/> </bibl>
+<bibl>J. D. Lafferty, A. McCallum, and F. C. N. Pereira. 2001.<lb/> Conditional random fields: Probabilistic models for<lb/> segmenting and labeling sequence data. In Proceed-<lb/>ings of ICML.<lb/> </bibl>
+<bibl>M. P. Marcus, B. Santorini, and M. A. Marcinkiewicz.<lb/> 1993. Building a large annotated corpus of En-<lb/>glish: The Penn treebank. Computational Linguistics,<lb/> 19:313–330.<lb/> </bibl>
+<bibl>F. Och and H. Ney. 2003. A systematic comparison of<lb/> various statistical alignment models. Computational<lb/> Linguistics, 29(1):19–51.<lb/> </bibl>
+<bibl>C. N. Potts and S. L. van de Velde. 1995. Dynasearch–<lb/> iterative local improvement by dynamic programming.<lb/> Part I: The traveling salesman problem. Technical re-<lb/>port.<lb/> </bibl>
+<bibl>N. A. Smith and J. Eisner. 2005. Contrastive estimation:<lb/> training log-linear models on unlabeled data. In Proc.<lb/> of ACL.<lb/> </bibl>
+<bibl>N. A. Smith. 2006. Novel Estimation Methods for Unsu-<lb/>pervised Discovery of Latent Structure in Natural Lan-<lb/>guage Text. Ph.D. thesis, Johns Hopkins University.<lb/> </bibl>
+<bibl>B. Snyder, T. Naseem, J. Eisenstein, and R. Barzilay.<lb/> 2008. Unsupervised multilingual learning for POS<lb/> tagging. In Proceedings of EMNLP.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

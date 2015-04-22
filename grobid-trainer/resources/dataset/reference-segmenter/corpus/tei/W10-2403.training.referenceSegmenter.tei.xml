@@ -1,0 +1,25 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Baum, L., Petrie, T., Soules, G. and Weiss, N. 1970. A<lb/> Maximization Technique Occurring in the Statis-<lb/>tical Analysis of Probabilistic Functions of Markov<lb/> Chains. In The Annals of Mathematical Statistics,<lb/> 41 (1): 164-171.<lb/> </bibl>
+<bibl>Bergsma, S. and Kondrak, G. 2007. Alignment Based<lb/> Discriminative String Similarity. In Proceedings of<lb/> the 45 th Annual Meeting of the ACL, 2007.<lb/> </bibl>
+<bibl>Darwish, K. 2010. Transliteration Mining with Pho-<lb/>netic Conflation and Iterative Training. Proceed-<lb/>ings of the 2010 Named Entities Workshop: Shared<lb/> Task on Transliteration Mining, 2010.<lb/> </bibl>
+<bibl>Jiampojamarn, S., Dwyer, K., Bergsma, S., Bhargava,<lb/> A., Dou, Q., Kim, M. Y. and Kondrak, G. 2010.<lb/> </bibl>
+<bibl>Transliteration generation and mining with limited<lb/> training resources. Proceedings of the 2010<lb/> </bibl>
+<bibl>Named Entities Workshop: Shared Task on Trans-<lb/>literation Mining, 2010.<lb/> </bibl>
+<bibl>Shawe-Taylor, J and Cristianini, N. 2004. Kernel Me-<lb/>thods for Pattern Analysis. Cambridge University<lb/> Press.<lb/> </bibl>
+<bibl>Klementiev, A. and Roth, D. 2006. Weakly supervised<lb/> named entity transliteration and discovery from<lb/> multilingual comparable corpora. Proceedings of<lb/> the 44 th Annual Meeting of the ACL, 2006.<lb/> </bibl>
+<bibl>Knight, K. and Graehl, J. 1998. Machine Translitera-<lb/>tion. Computational Linguistics.<lb/> </bibl>
+<bibl>Kumaran, A., Khapra, M. and Li, Haizhou. 2010.<lb/> Whitepaper on NEWS 2010 Shared Task on Trans-<lb/>literation Mining. Proceedings of the 2010 Named<lb/> Entities Workshop: Shared Task on Transliteration<lb/> Mining, 2010.<lb/> </bibl>
+<bibl>Nabende, P. 2010. Mining Transliterations from Wi-<lb/>kipedia using Pair HMMs. Proceedings of the 2010<lb/> Named Entities Workshop: Shared Task on Trans-<lb/>literation Mining, 2010.<lb/> </bibl>
+<bibl>Noeman, S. and Madkour, A. 2010. Language inde-<lb/>pendent Transliteration mining system using Finite<lb/> State Automata framework. Proceedings of the<lb/> 2010 Named Entities Workshop: Shared Task on<lb/> Transliteration Mining, 2010.<lb/> </bibl>
+<bibl>Udupa, R., Saravanan, K., Kumaran, A. and Jagarla-<lb/>mudi, J. 2009. MINT: A Method for Effective and<lb/> Scalable Mining of Named Entity Transliterations<lb/> from Large Comparable Corpora. Proceedings of<lb/> the 12th Conference of the European Chapter of<lb/> Association for Computational Linguistics, 2009.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

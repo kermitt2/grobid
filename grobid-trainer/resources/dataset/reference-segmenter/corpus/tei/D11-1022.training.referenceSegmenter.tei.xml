@@ -1,0 +1,72 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>M. Auli and A. Lopez. 2011. A Comparison of Loopy<lb/> Belief Propagation and Dual Decomposition for Inte-<lb/>grated CCG Supertagging and Parsing. In Proc. of<lb/> ACL.<lb/> </bibl>
+<bibl>Y. Bar-Hillel, M. Perles, and E. Shamir. 1964. On for-<lb/>mal properties of simple phrase structure grammars.<lb/> Language and Information: Selected Essays on their<lb/> Theory and Application, pages 116–150.<lb/> </bibl>
+<bibl>Taylor Berg-Kirkpatrick, Dan Gillick, and Dan Klein.<lb/> 2011. Jointly learning to extract and compress. In<lb/> Proc. of ACL.<lb/> </bibl>
+<bibl>D. Bertsekas, W. Hager, and O. Mangasarian. 1999.<lb/> Nonlinear programming. Athena Scientific.<lb/> </bibl>
+<bibl>D.P. Bertsekas, A. Nedic, and A.E. Ozdaglar. 2003. Con-<lb/>vex analysis and optimization. Athena Scientific.<lb/> </bibl>
+<bibl>S. Boyd, N. Parikh, E. Chu, B. Peleato, and J. Eckstein.<lb/> 2011. Distributed Optimization and Statistical Learn-<lb/>ing via the Alternating Direction Method of Multipli-<lb/>ers. Now Publishers (to appear).<lb/> </bibl>
+<bibl>J.P. Boyle and R.L. Dykstra. 1986. A method for find-<lb/>ing projections onto the intersections of convex sets in<lb/> Hilbert spaces. In Advances in order restricted statis-<lb/>tical inference, pages 28–47. Springer Verlag.<lb/> </bibl>
+<bibl>S. Buchholz and E. Marsi. 2006. CoNLL-X shared task<lb/> on multilingual dependency parsing. In CoNLL.<lb/> </bibl>
+<bibl>X. Carreras, M. Collins, and T. Koo. 2008. TAG, Dy-<lb/>namic Programming, and the Perceptron for Efficient,<lb/> Feature-rich Parsing. In CONLL.<lb/> </bibl>
+<bibl>X. Carreras. 2007. Experiments with a higher-order pro-<lb/>jective dependency parser. In CoNLL.<lb/> </bibl>
+<bibl>E. Charniak and M. Johnson. 2005. Coarse-to-fine n-<lb/>best parsing and MaxEnt discriminative reranking. In<lb/> Proc. ACL, pages 173–180. Association for Computa-<lb/>tional Linguistics Morristown, NJ, USA.<lb/> </bibl>
+<bibl>D. Chiang. 2007. Hierarchical phrase-based translation.<lb/> computational linguistics, 33(2):201–228.<lb/> </bibl>
+<bibl>J. Clarke and M. Lapata. 2008. Global Inference for Sen-<lb/>tence Compression An Integer Linear Programming<lb/> Approach. JAIR, 31:399–429.<lb/> </bibl>
+<bibl>K. Crammer, O. Dekel, J. Keshet, S. Shalev-Shwartz, and<lb/> Y. Singer. 2006. Online Passive-Aggressive Algo-<lb/>rithms. JMLR, 7:551–585.<lb/> </bibl>
+        <bibl><label>J.</label> Duchi, S. Shalev-Shwartz, Y. Singer, and T. Chandra.<lb/> 2008. Efficient projections onto the L1-ball for learn-<lb/>ing in high dimensions. In ICML.<lb/> </bibl>
+<bibl>J. Eckstein and D. Bertsekas. 1992. On the Douglas-<lb/>Rachford splitting method and the proximal point al-<lb/>gorithm for maximal monotone operators. Mathemat-<lb/>ical Programming, 55(1):293–318.<lb/> </bibl>
+<bibl>J. R. Finkel, A. Kleeman, and C. D. Manning. 2008. Effi-<lb/>cient, feature-based, conditional random field parsing.<lb/> Proceedings of ACL-08: HLT, pages 959–967.<lb/> </bibl>
+<bibl>D. Gabay and B. Mercier. 1976. A dual algorithm for<lb/> the solution of nonlinear variational problems via finite<lb/> element approximation. Computers and Mathematics<lb/> with Applications, 2(1):17–40.<lb/> </bibl>
+<bibl>J. Giménez and L. Marquez. 2004. Svmtool: A gen-<lb/>eral pos tagger generator based on support vector ma-<lb/>chines. In Proc. of LREC.<lb/> </bibl>
+<bibl>R. Glowinski and P. Le Tallec. 1989. Augmented La-<lb/>grangian and operator-splitting methods in nonlinear<lb/> mechanics. Society for Industrial Mathematics.<lb/> </bibl>
+<bibl>R. Glowinski and A. Marroco.<lb/> 1975.<lb/> Sur<lb/> l&apos;approximation, parpar´paréléments finis d&apos;ordre un, et la<lb/> résolution, par penalisation-dualité, d&apos;une classe de probì emes de Dirichlet non linéaires. Rev. Franc. Au-<lb/>tomat. Inform. Rech. Operat., 9:41–76.<lb/> </bibl>
+<bibl>M. Hestenes. 1969. Multiplier and gradient methods.<lb/> Jour. Optim. Theory and Applic., 4:302–320.<lb/> </bibl>
+<bibl>L. Huang and K. Sagae. 2010. Dynamic programming<lb/> for linear-time incremental parsing. In Proc. of ACL,<lb/> pages 1077–1086.<lb/> </bibl>
+<bibl>R. Johansson and P. Nugues. 2008. Dependency-based<lb/> Semantic Role Labeling of PropBank. In EMNLP.<lb/> </bibl>
+<bibl>V. Jojic, S. Gould, and D. Koller. 2010. Accelerated dual<lb/> decomposition for MAP inference. In ICML.<lb/> </bibl>
+<bibl>N. Komodakis, N. Paragios, and G. Tziritas. 2007.<lb/> </bibl>
+<bibl>MRF optimization via dual decomposition: Message-<lb/>passing revisited. In ICCV.<lb/> </bibl>
+<bibl>T. Koo and M. Collins. 2010. Efficient third-order de-<lb/>pendency parsers. In Proc. of ACL, pages 1–11.<lb/> </bibl>
+<bibl>T. Koo, A. M. Rush, M. Collins, T. Jaakkola, and D. Son-<lb/>tag. 2010. Dual decomposition for parsing with non-<lb/>projective head automata. In EMNLP.<lb/> </bibl>
+<bibl>A. Kulesza and F. Pereira. 2007. Structured Learning<lb/> with Approximate Inference. NIPS.<lb/> </bibl>
+<bibl>P. Liang, M.I. Jordan, and D. Klein. 2011. Learning<lb/> dependency-based compositional semantics. In Proc.<lb/> Association for Computational Linguistics (ACL).<lb/> </bibl>
+<bibl>A. F. T. Martins and N. A. Smith. 2009. Summarization<lb/> with a joint model for sentence extraction and com-<lb/>pression. In NAACL-HLT Workshop on Integer Linear<lb/> Programming for NLP.<lb/> </bibl>
+<bibl>A. F. T. Martins, D. Das, N. A. Smith, and E. P. Xing.<lb/> 2008. Stacking dependency parsers. In EMNLP.<lb/> </bibl>
+<bibl>A. F. T. Martins, N. A. Smith, and E. P. Xing. 2009a.<lb/> 
+Concise integer linear programming formulations for<lb/> dependency parsing. In ACL-IJCNLP.<lb/> </bibl>
+<bibl>A. F. T. Martins, N. A. Smith, and E. P. Xing. 2009b.<lb/> 
+Polyhedral outer approximations with application to<lb/> natural language parsing. In ICML.<lb/> </bibl>
+<bibl>A. F. T. Martins, N. A. Smith, E. P. Xing, M. A. T.<lb/> 
+Figueiredo, and P. M. Q. Aguiar. 2010. Turbo parsers:<lb/> Dependency parsing by approximate variational infer-<lb/>ence. In EMNLP.<lb/> 248<lb/> </bibl>
+        <bibl>A. F. T. Martins, M. A. T. Figueiredo, P. M. Q. Aguiar,<lb/> N. A. Smith, and E. P. Xing. 2011. An Augmented<lb/> Lagrangian Approach to Constrained MAP Inference.<lb/> In ICML.<lb/> </bibl>
+<bibl>R. McDonald, K. </bibl>
+<bibl>A. F. T. Martins, M. A. T. Figueiredo, P. M. Q. Aguiar,<lb/> N. A. Smith, and E. P. Xing. 2011. An Augmented<lb/> Lagrangian Approach to Constrained MAP Inference.<lb/> In ICML.<lb/> </bibl>
+<bibl>R. McDonald, K. Lerman, and F. Pereira. 2006. Multi-<lb/>lingual dependency analysis with a two-stage discrim-<lb/>inative parser. In CoNLL.<lb/> </bibl>
+        <bibl>O. Meshi and A. Globerson. 2011. An Alternating Direc-<lb/>tion Method for Dual MAP LP Relaxation. In ECML<lb/> PKDD.<lb/> </bibl>
+<bibl>J. Nivre and R. McDonald. 2008. Integrating graph-<lb/>based and transition-based dependency parsers. In<lb/> ACL-HLT.<lb/> </bibl>
+<bibl>J. Nivre, J. Hall, J. Nilsson, G. EryiˇEryiˇgit, and S. Marinov.<lb/> 2006. Labeled pseudo-projective dependency parsing<lb/> with support vector machines. In Procs. of CoNLL.<lb/> </bibl>
+<bibl>S. Petrov and D. Klein. 2008. Sparse multi-scale gram-<lb/>mars for discriminative latent variable parsing. In<lb/> Proc. of EMNLP.<lb/> </bibl>
+<bibl>M. Powell. 1969. A method for nonlinear constraints in<lb/> minimization problems. In R. Fletcher, editor, Opti-<lb/>mization, pages 283–298. Academic Press.<lb/> </bibl>
+<bibl>M. Richardson and P. Domingos. 2006. Markov logic<lb/> networks. Machine Learning, 62(1):107–136.<lb/> </bibl>
+<bibl>S. Riedel and J. Clarke. 2006. Incremental integer linear<lb/> programming for non-projective dependency parsing.<lb/> In EMNLP.<lb/> </bibl>
+        <bibl>A. M. Rush and M. Collins. 2011. Exact decoding of<lb/> syntactic translation models through lagrangian relax-<lb/>ation. In ACL.<lb/> </bibl>
+<bibl>A. Rush, D. Sontag, M. Collins, and T. Jaakkola. 2010.<lb/> On dual decomposition and linear programming relax-<lb/>ations for natural language processing. In EMNLP.<lb/> </bibl>
+<bibl>N. Shor.<lb/> 1985.<lb/> Minimization methods for non-<lb/>differentiable functions. Springer.<lb/> </bibl>
+<bibl>D. Smith and J. Eisner. 2008. Dependency parsing by<lb/> belief propagation. In EMNLP.<lb/> </bibl>
+<bibl>D. Sontag, T. Meltzer, A. Globerson, Y. Weiss, and<lb/> T Jaakkola. 2008. Tightening LP relaxations for MAP<lb/> using message-passing. In UAI.<lb/> </bibl>
+<bibl>M. Surdeanu, R. Johansson, A. Meyers, L. M` arquez, and<lb/> J. Nivre. 2008. The CoNLL-2008 shared task on<lb/> joint parsing of syntactic and semantic dependencies.<lb/> CoNLL.<lb/> </bibl>
+<bibl>B. Taskar, C. Guestrin, and D. Koller. 2003. Max-margin<lb/> Markov networks. In NIPS.<lb/> </bibl>
+<bibl>R.W. Tromble and J. Eisner. 2006. A fast finite-state<lb/> relaxation method for enforcing global constraints on<lb/> sequence decoding. In Proc. of NAACL, pages 423–<lb/> 430.<lb/> </bibl>
+<bibl>M. Wainwright and M. Jordan. 2008. Graphical Models,<lb/> Exponential Families, and Variational Inference. Now<lb/> Publishers.<lb/> </bibl>
+<bibl>H. Yamada and Y. Matsumoto. 2003. Statistical de-<lb/>pendency analysis with support vector machines. In<lb/> IWPT.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,26 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Alexandre Patry and Philippe Langlais, 2011. Identify-<lb/>ing Parallel Documents from a Large Bilingual Col-<lb/>lection of Texts: Application to Parallel Article<lb/> Extraction in Wikipedia. Proceedings of the 4 th<lb/> Workshop on Building and Using Comparable Cor-<lb/>pora, pages 87-95, Portland, OR.<lb/> </bibl>
+<bibl>Bing Zhao and Stephan Vogel. 2002. Adaptive Parallel<lb/> Sentences Mining from Web Bilingual News Collec-<lb/>tion. Proceedings of IEEE International Conference<lb/> on Data Mining, pages 745-750. Maebashi City, Ja-<lb/>pan.<lb/> </bibl>
+<bibl>Deepak Ravichandran, Patrick Pantel, and Eduard<lb/> Hovy. 2005. Randomized Algorithms and NLP: Us-<lb/>ing Locality Sensitive Hash Function for High Speed<lb/> Noun Clustering. Proceedings of the 43rd Annual<lb/> Meeting on Association for Computational Linguis-<lb/>tics, pages 622–629, Morristown, NJ.<lb/> </bibl>
+<bibl>Dragos Stefan Munteanu and Daniel Marcu. 2005. Im-<lb/>proving Machine Translation Performance by Ex-<lb/>ploiting Non-Parallel Corpora. Computational<lb/> Linguistics, 31(4): 477-504.<lb/> </bibl>
+<bibl>Jacob Uszkoreit, Jay Ponte, Ashok Popat and Moshe<lb/> Dubiner, 2010. Large Scale Parallel Document Min-<lb/>ing for Machine Translation. Proceedings of the 23rd<lb/> International Conference on Computational Linguis-<lb/>tics (Coling 2010), pp. 1101-1109. Beijing, China.<lb/> </bibl>
+<bibl>Jason R. Smith, Chris Quirk, and Kristina Toutanova,<lb/> 2010. Extracting Parallel Sentences from Compara-<lb/>ble Corpora using Document Level Alignment, Pro-<lb/>ceedings of Human Language Technologies: The<lb/> 2010 Annual Conference of the North American<lb/> Chapter of the ACL (HLT NAACL&apos;10), Los Ange-<lb/>les, California.<lb/> </bibl>
+<bibl>Jessica Enright and Grzegorz Kondrak 2007. A Fast<lb/> Method for Parallel Document Identification, Pro-<lb/>ceedings of Human Language Technologies: The<lb/> Conference of the North American Chapter of the<lb/> Association for Computational Linguistics (HLT-<lb/>NAACL&apos;07) companion volume, pages 29-32, Roch-<lb/>ester, NY.<lb/> </bibl>
+<bibl>Matthew Snover, Bonnie Dorr, and Richard Schwartz.<lb/> 2008. Language and Translation Model Adaptation<lb/> using Comparable Corpora. Proceedings of Confer-<lb/>ence on Empirical Methods in Natural Language<lb/> Processing (EMNLP&apos;08), pages 856–865, Honolulu,<lb/> HI.<lb/> </bibl>
+<bibl>Moses S. Charikar. 2002. Similarity estimation tech-<lb/>niques from rounding algorithms. In Proceedings of<lb/> the thiry-fourth annual ACM symposium on Theory<lb/> of computing (STOC&apos;02), pages 380–388, New<lb/> York, NY.<lb/> </bibl>
+<bibl>Pascale Fung and Percy Cheung. 2004. Mining Very-<lb/>Non-Parallel Corpora: Parallel Sentence and Lexicon<lb/> Extraction via Bootstrapping and EM. In Proceedings<lb/> of Conference on Empirical Methods in Natural Lan-<lb/>guage Processing (EMNLP&apos;04), Barcelona, Spain.<lb/> </bibl>
+<bibl>Philip Resnik and Noah Smith. 2003. The Web as a<lb/> Parallel Corpus. Computational Linguistics, 29(3):<lb/> 349-380.<lb/> </bibl>
+<bibl>Philipp Koehn, 2005. Europarl: A Parallel Corpus for<lb/> Statistical Machine Translation. MT Summit 2005.<lb/> Phuket, Thailand.<lb/> </bibl>
+<bibl>Piotr Indyk and Rajeev Motwani. 1998. Approximate<lb/> nearest neighbors: towards removing the curse of di-<lb/>mensionality. In Proceedings of the thirtieth annual<lb/> ACM symposium on Theory of computing (STOC<lb/> &apos;98), pages 604–613, New York, NY.<lb/> </bibl>
+<bibl>William B. Cavnar and John M. Trenkle. 1994. N-<lb/>Gram-Based Text Categorization. Proceedings of the<lb/> Third Annual Symposium on Document Analysis<lb/> and Information Retrieval, pages 161-175, Las Ve-<lb/>gas, NV.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

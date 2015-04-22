@@ -1,0 +1,42 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Masayuki Asahara. 2013. Comparison of syntactic de-<lb/>pendency annotation schemata . In Proceedings of<lb/> the 3rd Japanese Corpus Linguistics Workshop, In<lb/> Japanese.<lb/> </bibl>
+<bibl>Daisuke Bekki. 2010. Formal theory of Japanese syntax.<lb/> Kuroshio Shuppan, In Japanese.<lb/> </bibl>
+<bibl>Daniel M. Bikel. 2004. A distributional analysis of a<lb/> lexicalized statistical parsing model. In Proceedings<lb/> of Empirical Methods in Natural Language Processing<lb/> (EMNLP 2004), Vol.4, pp. 182–189.<lb/> </bibl>
+<bibl>Francis Bond, Sanae Fujita and Takaaki Tanaka. 2008.<lb/> The Hinoki syntactic and semantic treebank of<lb/> Japanese. In Journal of Language Resources and<lb/> Evaluation, Vol.42, No. 2, pp. 243–251<lb/> </bibl>
+<bibl>Alastair Butler, Zhu Hong, Tomoko Hotta, Ruriko<lb/> Otomo, Kei Yoshimoto and Zhen Zhou. 2012. Keyaki<lb/> Treebank: phrase structure with functional informa-<lb/>tion for Japanese. In Proceedings of Text Annotation<lb/> Workshop.<lb/> </bibl>
+<bibl>Eugene Charniak. 2000. A maximum-entropy-inspired<lb/> parser. In Proceedings of the 1st North American<lb/> chapter of the Association for Computational Linguis-<lb/>tics conference, (NAACL 2000), pp. 132–139.<lb/> </bibl>
+<bibl>DongHyun Choi, Jungyeul Park and Key-Sun Choi.<lb/> 2012. Korean treebank transformation for parser train-<lb/>ing. In Proceedings of the 50th Annual Meeting of<lb/> the Association for Computational Linguistics (ACL<lb/> 2012), pp. 78-88.<lb/> </bibl>
+<bibl>Ann Copestake, Dan Flickinger, Carl Pollard and Ivan A.<lb/> Sag. 2005. Minimal recursion semantics: an introduc-<lb/>tion. Research on Language and Computation, Vol. 3,<lb/> No. 4, pp. 281-332.<lb/> </bibl>
+<bibl>Ryan Gabbard, Mitchell Marcus and Seth Kulick. 2006.<lb/> Fully parsing the Penn Treebank. In Proceedings of<lb/> the Human Language Technology Conference of the<lb/> North American Chapter of the Association of Compu-<lb/>tational Linguistics (HLT-NAACL 2006), pp. 184–191.<lb/> </bibl>
+<bibl>Takao Gunji. 1987 Japanese phrase structure grammar:<lb/> a unification-based approach. D.Reidel.<lb/> </bibl>
+<bibl>Yuta Hayashibe, Mamoru Komachi and Yujzi Mat-<lb/>sumoto. 2011. Japanese predicate argument struc-<lb/>ture analysis exploiting argument position and type. In<lb/> Proceedings of the 5th International Joint Conference<lb/> on Natural Language Processing (IJCNLP 2011), pp.<lb/> 201-209.<lb/> </bibl>
+<bibl>Ryu Iida, Mamoru Komachi Kentaro Inui and Yuji Mat-<lb/>sumoto. 2007. Annotating a Japanese text corpus with<lb/> predicate-argument and coreference relations. In Pro-<lb/>ceedings of Linguistic Annotation Workshop, pp. 132–<lb/> 139.<lb/> </bibl>
+<bibl>Ryu Iida, Massimo Poesio. 2011. A cross-lingual ILP<lb/> solution to zero anaphora resolution. In Proceedings<lb/> of the 49th Annual Meeting of the Association for<lb/> Computational Linguistics: Human Language Tech-<lb/>nologies (ACL-HLT 2011), pp. 804-813.<lb/> </bibl>
+<bibl>Satoru Ikehara, Masahiro Miyazaki, Satoshi Shirai, Akio<lb/> Yokoo, Kentaro Ogura, Yoshifumi Ooyama and Yoshi-<lb/>hiko Hayashi. 1998. Nihongo Goitaikei. Iwanami<lb/> Shoten, In Japanese.<lb/> </bibl>
+<bibl>Ronald M. Kaplan and Joan Bresnan. 1982. Lexical-<lb/>Functional Grammar: a formal system for grammat-<lb/>ical representation. In the Mental Representation of<lb/> Grammatical Relations (Joan Bresnan ed.), pp. 173–<lb/> 281. The MIT Press.<lb/> </bibl>
+<bibl>Daisuke Kawahara and Sadao Kurohashi. 2006. A<lb/> fully-lexicalized probabilistic model for Japanese syn-<lb/>tactic and case structure analysis. In Proceedings of<lb/> the Human Language Technology Conference of the<lb/> North American Chapter of the Association of Compu-<lb/>tational Linguistics (HLT-NAACL 2006), pp. 176–183.<lb/> </bibl>
+<bibl>Dan Klein and Christopher D. Manning. 2003. Fast exact<lb/> inference with a factored model for natural language<lb/> processing. Advances in Neural Information Process-<lb/>ing Systems, 15:3–10.<lb/> </bibl>
+<bibl>Taku Kudo and Yuji Matsumoto. 2002. Japanese de-<lb/>pendency analysis using cascaded chunking. In Pro-<lb/>ceedings of the 6th Conference on Natural Language<lb/> Learning (CoNLL-2002), Volume 20, pp. 1–7.<lb/> </bibl>
+<bibl>Sadao Kurohashi and Makoto Nagao. 2003. Building a<lb/> Japanese parsed corpus – while improving the parsing<lb/> system. In Abeille (ed.), Treebanks: Building and us-<lb/>ing parsed corpora, Chap. 14, pp. 249–260. Kluwer<lb/> Academic Publishers.<lb/> </bibl>
+<bibl>Mitchell P. Marcus, Beatrice Santorini, Mary Ann<lb/> Marcinkiewicz. 1993. Building a large annotated cor-<lb/>pus of English: the Penn Treebank. In Journal of Com-<lb/>putational Linguistics. Vol.19, No.2, pp. 313–330.<lb/> </bibl>
+<bibl>Hiroshi Masuichi, Tomoko Okuma, Hiroki Yoshimura<lb/> and Yasunari Harada. 2003 Japanese parser on the ba-<lb/>sis of the Lexical-Functional Grammar formalism and<lb/> its evaluation. In Proceedings of the 17th Pacific Asia<lb/> Conference on Language, Information and Computa-<lb/>tion (PACLIC 17), pp. 298-309.<lb/> </bibl>
+<bibl>Masaaki Nagata and Tsuyoshi Morimoto,.<lb/> 1993.<lb/> </bibl>
+<bibl>A unification-based Japanese parser for speech-to-<lb/>speech translation. In IEICE Transaction on Informa-<lb/>tion and Systems. Vol.E76-D, No.1, pp. 51–61.<lb/> </bibl>
+<bibl>Tomoya Noro, Taiichi Hashimoto, Takenobu Tokunaga<lb/> and Hotsumi Tanaka. 2005. Building a large-scale<lb/> Japanese syntactically annotated corpus for deriving a<lb/> CFG. in Proceedings of Symposium on Large-Scale<lb/> Knowledge Resources (LKR2005), pp..159 – 162.<lb/> </bibl>
+<bibl>Matha Palmer, Daniel Gildea and Paul Kingsbury. 2005.<lb/> The Proposition Bank: n annotated corpus of semantic<lb/> roles. Computational Linguistics, Vol.31 No. 1, pp.<lb/> 71–106.<lb/> </bibl>
+<bibl>Slav Petrov, Leon Barrett, Romain Thibaux and Dan<lb/> Klein.. 2006. Learning accurate, compact, and in-<lb/>terpretable tree annotation. In Proceedings of the 21st<lb/> International Conference on Computational Linguis-<lb/>tics and the 44th Annual Meeting of the Association<lb/> for Computational Linguistics (COLING-ACL 2006),<lb/> pp. 433-440.<lb/> </bibl>
+<bibl>Ivan A. Sag, Thomas Wasow and Emily M. Bender,.<lb/> 2003. Syntactic theory: a formal introduction. 2nd<lb/> Edition, CSLI Publications.<lb/> </bibl>
+<bibl>Beatrice Santorini. 2010. Annotation manual for the<lb/> Penn Historical Corpora and the PCEEC (Release 2).<lb/> Department of Linguistics, University of Pennsylva-<lb/>nia.<lb/> </bibl>
+<bibl>Melanie Siegel and Emily M. Bender. 2002. Efficient<lb/> deep processing of Japanese. In Proceedings of the<lb/> 3rd Workshop on Asian Language Resources and In-<lb/>ternational Standardization at the 19th International<lb/> Conference on Computational Linguistics, Vol. 12, pp.<lb/> 1–8.<lb/> </bibl>
+<bibl>Sumire Uematsu, Takuya Matsuzaki, Hiroaki Hanaoka,<lb/> Yusuke Miyao and Hideki Mima. 2013. Integrat-<lb/>ing multiple dependency corpora for inducing wide-<lb/>coverage Japanese CCG resources. In Proceedings of<lb/> the 51st Annual Meeting of the Association for Com-<lb/>putational Linguistics (ACL 2013), pp. 1042–1051.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

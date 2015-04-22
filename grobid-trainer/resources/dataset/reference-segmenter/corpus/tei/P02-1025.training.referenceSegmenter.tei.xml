@@ -1,0 +1,23 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>A. L. Berger, S. A. Della Pietra, and V. J. Della<lb/> Pietra. 1996. A maximum entropy approach to nat-<lb/>ural language processing. Computational Linguistics,<lb/> 22(1):39–72, March.<lb/> </bibl>
+<bibl>Eugene Charniak. 2000. A maximum-entropy-inspired<lb/> parser. In Proceedings of the 1st Meeting of NAACL,<lb/> pages 132–139, Seattle, WA.<lb/> </bibl>
+<bibl>Eugene Charniak. 2001. Immediate-head parsing for<lb/> language models. In Proceedings of the 39th Annual<lb/> Meeting and 10th Conference of the European Chapter<lb/> of ACL, pages 116–123, Toulouse, France, July.<lb/> </bibl>
+<bibl>Ciprian Chelba and Frederick Jelinek. 2000. Structured<lb/> language modeling. Computer Speech and Language,<lb/> 14(4):283–332, October.<lb/> </bibl>
+<bibl>Ciprian Chelba and Peng Xu. 2001. Richer syntactic<lb/> dependencies for structured language modeling. In<lb/> Proceedings of the Automatic Speech Recognition and<lb/> Understanding Workshop, Madonna di Campiglio,<lb/> Trento-Italy, December.<lb/> </bibl>
+<bibl>Michael Collins. 1999. Head-Driven Statistical Models<lb/> for Natural Language Parsing. Ph.D. thesis, Univer-<lb/>sity of Pennsylvania.<lb/> </bibl>
+<bibl>A. P. Dempster, N. M. Laird, and D. B. Rubin. 1977.<lb/> Maximum likelihood from incomplete data via the EM<lb/> algorithm. In Journal of the Royal Statistical Society,<lb/> volume 39 of B, pages 1–38.<lb/> </bibl>
+<bibl>Mark Johnson. 1998. Pcfg models of linguistic tree<lb/> presentations. Computational Linguistics, 24(4):617–<lb/> 636.<lb/> </bibl>
+<bibl>Adwait Ratnaparkhi. 1997. A linear observed time sta-<lb/>tistical parser based on maximum entropy models. In<lb/> Second Conference on Empirical Methods in Natural<lb/> Language Processing, pages 1–10, Providence, RI.<lb/> </bibl>
+<bibl>Brian Roark. 2001. Robust Probabilistic Predictive Syn-<lb/>tactic Processing: Motivations, Models and Applica-<lb/>tions. Ph.D. thesis, Brown University, Providence, RI.<lb/> </bibl>
+<bibl>Jun Wu and Sanjeev Khudanpur. 1999. Combining non-<lb/>local, syntactic and n-gram dependencies in language<lb/> modeling. In Proceedings of Eurospeech&apos;99, pages<lb/> 2179–2182.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

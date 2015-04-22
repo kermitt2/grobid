@@ -1,0 +1,41 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>James Allan and Giridhar Kumaran. 2003. Stemming<lb/> in the Language Modeling Framework. In Proceed-<lb/>ings of SIGIR, pages 455–456.<lb/> </bibl>
+<bibl>Harald R. Baayen, Richard Piepenbrock, and Leon Gu-<lb/>likers. 1996. The CELEX Lexical Database. Re-<lb/>lease 2. LDC96L14. Linguistic Data Consortium,<lb/> University of Pennsylvania, Philadelphia, Pennsyl-<lb/>vania.<lb/> </bibl>
+<bibl>Marco Baroni and Alessandro Lenci. 2010. Dis-<lb/>tributional Memory: A General Framework for<lb/> Corpus-based Semantics. Computational Linguis-<lb/>tics, 36(4):673–721.<lb/> </bibl>
+<bibl>Shane Bergsma, Dekang Lin, and Randy Goebel. 2008.<lb/> Discriminative Learning of Selectional Preference<lb/> from Unlabeled Text. In Proceedings of EMNLP,<lb/> pages 59–68, Honolulu, Hawaii.<lb/> </bibl>
+<bibl>Bernd Bohnet. 2010. Top Accuracy and Fast Depen-<lb/>dency Parsing is not a Contradiction. In Proceed-<lb/>ings of the 23rd International Conference on Com-<lb/>putational Linguistics, pages 89–97, Beijing, China.<lb/> </bibl>
+<bibl>Stanley F. Chen and Joshua Goodman. 1999. An<lb/> Empirical Study of Smoothing Techniques for Lan-<lb/>guage Modeling. Computer Speech and Language,<lb/> 13(4):359–394.<lb/> </bibl>
+<bibl>Ido Dagan, Lillian Lee, and Fernando C. N. Pereira.<lb/> 1999. Similarity-Based Models of Word Cooccur-<lb/>rence Probabilities. Machine Learning, 34(1–3):43–<lb/> 69.<lb/> </bibl>
+<bibl>Bradley Efron and Robert J. Tibshirani. 1993. An<lb/> Introduction to the Bootstrap. Chapman and Hall,<lb/> New York.<lb/> </bibl>
+<bibl>Katrin Erk, Sebastian Padó, and Ulrike Padó. 2010.<lb/> A Flexible, Corpus-driven Model of Regular and In-<lb/>verse Selectional Preferences. Computational Lin-<lb/>guistics, 36(4):723–763.<lb/> </bibl>
+<bibl>Katrin Erk. 2012. Vector Space Models of Word Mean-<lb/>ing and Phrase Meaning: A Survey. Language and<lb/> Linguistics Compass, 6(10):635–653.<lb/> </bibl>
+<bibl>Gertrud Faaß, Ulrich Heid, and Helmut Schmid. 2010.<lb/> Design and Application of a Gold Standard for Mor-<lb/>phological Analysis: SMOR in Validation. In Pro-<lb/>ceedings of LREC-2010, pages 803–810.<lb/> </bibl>
+<bibl>Jenny Rose Finkel, Trond Grenager, and Christopher<lb/> Manning. 2005. Incorporating Non-local Informa-<lb/>tion into Information Extraction Systems by Gibbs<lb/> Sampling. In Proceedings of the 43rd Annual Meet-<lb/>ing of the ACL, pages 363–370.<lb/> </bibl>
+<bibl>Ronald Aylmer Fisher. 1925. Statistical methods for<lb/> research workers. Oliver and Boyd, Edinburgh.<lb/> </bibl>
+<bibl>Arne Fitschen. 2004. Ein computerlinguistisches<lb/> Lexikon als komplexes System. Ph.D. thesis, IMS,<lb/> Universität Stuttgart.<lb/> </bibl>
+<bibl>Julio Gonzalo, Felisa Verdejo, Irina Chugur, and<lb/> Juan M. Cigarrán. 1998. Indexing with WordNet<lb/> Synsets Can Improve Text Retrieval. In Proceed-<lb/>ings of the COLING/ACL Workshop on Usage of<lb/> WordNet in Natural Language Processing Systems,<lb/> Montréal, Canada.<lb/> </bibl>
+<bibl>Rochelle Lieber. 2009. Morphology and Lexical Se-<lb/>mantics. Cambridge University Press.<lb/> </bibl>
+<bibl>Saif Mohammad, Iryna Gurevych, Graeme Hirst, and<lb/> Torsten Zesch. 2007. Cross-Lingual Distributional<lb/> Profiles of Concepts for Measuring Semantic Dis-<lb/>tance. In Proceedings of the 2007 Joint Conference<lb/> on EMNLP and CoNLL, pages 571–580, Prague,<lb/> Czech Republic.<lb/> </bibl>
+<bibl>Roberto Navigli and Paola Velardi. 2003. An Analysis<lb/> of Ontology-based Query Expansion Strategies. In<lb/> Workshop on Adaptive Text Extraction and Mining,<lb/> Dubrovnik, Croatia.<lb/> </bibl>
+<bibl>Sebastian Padó and Jason Utt. 2012. A Distributional<lb/> Memory for German. In Proceedings of KONVENS<lb/> 2012 workshop on lexical-semantic resources and<lb/> applications, pages 462–470, Vienna, Austria.<lb/> </bibl>
+<bibl>Patrick Pantel and Dekang Lin. 2002. Discovering<lb/> Word Senses from Text. In In Proceedings of ACM<lb/> SIGKDD Conference on Knowledge Discovery and<lb/> Data Mining, pages 613–619.<lb/> </bibl>
+<bibl>Philip Resnik. 1996. Selectional Constraints: An<lb/> Information-theoretic Model and its Computational<lb/> Realization. Cognition, 61(1-2):127–159.<lb/> </bibl>
+<bibl>Herbert Rubenstein and John B. Goodenough. 1965.<lb/> Contextual Correlates of Synonymy. Communica-<lb/>tions of the ACM, 8(10):627–633.<lb/> </bibl>
+<bibl>Peter D. Turney and Patrick Pantel. 2010. From Fre-<lb/>quency to Meaning: Vector Space Models of Se-<lb/>mantics. Journal of Artificial Intelligence Research,<lb/> 37(1):141–188.<lb/> </bibl>
+<bibl>Ellen M. Voorhees. 1994. Query Expansion Using<lb/> Lexical-semantic Relations. In Proceedings of SI-<lb/>GIR, pages 61–69.<lb/> </bibl>
+<bibl>DeWitt Wallace and Lila Acheson Wallace. 2005.<lb/> Reader&apos;s Digest, das Beste für Deutschland. Verlag<lb/> Das Beste, Stuttgart.<lb/> </bibl>
+<bibl>Qin Iris Wang, Dale Schuurmans, and Dekang Lin.<lb/> 2005. Strictly Lexical Dependency Parsing. In Pro-<lb/>ceedings of IWPT, pages 152–159.<lb/> </bibl>
+<bibl>Britta Zeller, Jaň<lb/> Snajder, and Sebastian Padó. 2013.<lb/> </bibl>
+<bibl>DErivBase: Inducing and Evaluating a Derivational<lb/> Morphology Resource for German. In Proceedings<lb/> of ACL, Sofia, Bulgaria.<lb/> </bibl>
+<bibl>Torsten Zesch, Iryna Gurevych, and Max Mühlhäuser.<lb/> 2007. Comparing Wikipedia and German Word-<lb/>net by Evaluating Semantic Relatedness on Multi-<lb/>ple Datasets. In Proceedings of NAACL/HLT, pages<lb/> 205–208, Rochester, NY.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

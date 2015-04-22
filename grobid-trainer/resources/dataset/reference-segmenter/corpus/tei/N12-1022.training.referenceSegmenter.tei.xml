@@ -1,0 +1,32 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Artstein, Ron and Massimo Poesio. 2008. Inter-Coder<lb/> Agreement for Computational Linguistics. Computa-<lb/>tional Linguistics, 34(4):555–596.<lb/> </bibl>
+<bibl>Beeferman, Doug, Adam Berger, and John Lafferty.<lb/> 1999. Statistical Models for Text Segmentation. Ma-<lb/>chine Learning, 34:177–210, February.<lb/> </bibl>
+<bibl>Burger, Susanne, Victoria MacLaren, and Hua Yu. 2002.<lb/> The ISL meeting corpus: the impact of meeting type<lb/> on speech style. In INTERSPEECH&apos;02.<lb/> </bibl>
+<bibl>Cohen, Jacob. 1960. A coefficient of agreement for<lb/> nominal scales . Educational and Psychological Mea-<lb/>surement, 20:37–46.<lb/> </bibl>
+<bibl>Eisenstein, Jacob and Regina Barzilay. 2008. Bayesian<lb/> unsupervised topic segmentation. In Proceedings of<lb/> the 2008 Conference on Empirical Methods in Natu-<lb/>ral Language Processing, pages 334–343, Honolulu,<lb/> Hawaii, October.<lb/> </bibl>
+<bibl>Fournier, Chris and Diana Inkpen. 2012. Segmentation<lb/> similarity and agreement. In Proceedings of NAACL-<lb/>HLT 2012 (this volume), Montréal, Canada, June.<lb/> </bibl>
+<bibl>Galley, Michel, Kathleen McKeown, Eric Fosler-Lussier,<lb/> and Hongyan Jing. 2003. Discourse segmentation<lb/> of multi-party conversation. In Proceedings of the<lb/> 41st Annual Meeting on Association for Computa-<lb/>tional Linguistics -Volume 1, ACL &apos;03, pages 562–<lb/> 569, Stroudsburg, PA, USA. Association for Compu-<lb/>tational Linguistics.<lb/> </bibl>
+<bibl>Gruenstein, Alexander, John Niekrasz, and Matthew<lb/> Purver. 2005. Meeting Structure Annotation: Data<lb/> and Tools. In In Proceedings of the SIGdial Workshop<lb/> on Discourse and Dialogue, pages 117–127.<lb/> </bibl>
+<bibl>Janin, Adam, Don Baron, Jane Edwards, D. Ellis,<lb/> David Gelbart, Nelson Morgan, Barbara Peskin, Thilo<lb/> Pfau, Elizabeth Shriberg, A.ndreas Stolcke, and Chuck<lb/> Wooters. 2003. The ICSI Meeting Corpus. In<lb/> Proceedings of the IEEE International Conference on<lb/> Acoustics, Speech, and Signal Processing (ICASSP-<lb/>03), volume 1, pages 364–367, April.<lb/> </bibl>
+<bibl>Kazantseva, Anna and Stan Szpakowicz. 2011. Lin-<lb/>ear Text Segmentation Using Affinity Propagation.<lb/> In Proceedings of the 2011 Conference on Empirical<lb/> Methods in Natural Language Processing, pages 284–<lb/> 293, Edinburgh, Scotland, UK., July. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Krippendorff, Klaus. 2004. Content Analysis. An Intro-<lb/>duction to Its Methodology. Sage Publications.<lb/> </bibl>
+<bibl>Landis, J. Richards and Garry G. Koch. 1977. The Mea-<lb/>surement of Observer Agreement for Categorical Data.<lb/> Biometrics, 33(1):159–174.<lb/> </bibl>
+<bibl>Malioutov, Igor and Regina Barzilay. 2006. Minimum<lb/> Cut Model for Spoken Lecture Segmentation. In Pro-<lb/>ceedings of the 21st International Conference on Com-<lb/>putational Linguistics and 44th Annual Meeting of the<lb/> Association for Computational Linguistics, pages 25–<lb/> 32, Sydney, Australia, July.<lb/> </bibl>
+<bibl>Misra, Hemant, François Yvon, Olivier Cappé, and Joe-<lb/>mon M. Jose. 2011. Text segmentation: A topic mod-<lb/>eling perspective. Information Processing and Man-<lb/>agement, 47(4):528–544.<lb/> </bibl>
+<bibl>Passonneau, Rebecca J. and Diane J. Litman. 1997. Dis-<lb/>course segmentation by human and automated means.<lb/> Computational Linguistics, 23(1):103–139, March.<lb/> </bibl>
+<bibl>Pevzner, Lev and Marti A. Hearst. 2002. A Critique and<lb/> Improvement of an Evaluation Metric for Text Seg-<lb/>mentation. Computational Linguistics, 28(1):19–36.<lb/> </bibl>
+<bibl>Scaiano, Martin and Diana Inkpen. 2012. Getting<lb/> more from segmentation evaluation. In Proceedings<lb/> of NAACL-HLT 2012 (this volume), Montréal, Canada,<lb/> June.<lb/> </bibl>
+<bibl>Scott, William. 1955. Reliability of content analysis:<lb/> The case of nominal scale coding. Public Opinion<lb/> Quaterly, 19(3):321–325.<lb/> </bibl>
+<bibl>Shrout, Patrick E. and Joseph L. Fleiss. 1979. Intraclass<lb/> correlations: uses in assessing rater reliability. Psy-<lb/>chological Bulletin, 86(2):420–428.<lb/> </bibl>
+<bibl>Siegel, Sidney and John. N. Jr. Castellan. 1988. Non-<lb/>parametric statistics for the behavioral sciences. Mc-<lb/>Graw Hill, Boston, MA.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

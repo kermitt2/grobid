@@ -1,0 +1,39 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Débora Taís Batista Abreu.<lb/> 2011.<lb/> A semântica<lb/> de construçconstruç˜construções com verbos-suporte e o paradigma<lb/> Framenet. Master&apos;s thesis, São Leopoldo, RS, Brazil.<lb/> </bibl>
+        <bibl><label>1997.</label> Complex Predicates. CSLI Publications, Stanford,<lb/> CA, USA.<lb/> </bibl>
+<bibl>Maria Francisca Athayde. 2001. ConstruçConstruç˜Construções com<lb/> verbo-suporte (funktionsverbgefüge) do português e<lb/> do alemão. Number 1 in Cadernos do CIEG Centro<lb/> Interuniversitário de Estudos Germanísticos. Universi-<lb/>dade de Coimbra, Coimbra, Portugal.<lb/> </bibl>
+<bibl>Sue Atkins, Charles Fillmore, and Christopher R. John-<lb/>son. 2003. Lexicographic relevance: Selecting infor-<lb/>mation from corpus evidence. International Journal<lb/> of Lexicography, 16(3):251–280.<lb/> </bibl>
+<bibl>Sue Atkins, 2010. The DANTE Database: Its Contribu-<lb/>tion to English Lexical Research, and in Particular to<lb/> Complementing the FrameNet Data. Menha Publish-<lb/>ers, Kampala, Uganda.<lb/> </bibl>
+<bibl>Anabela Barreiro and Luís Miguel Cabral. 2009. ReE-<lb/>screve: a translator-friendly multi-purpose paraphras-<lb/>ing software tool. In Proceedings of the Workshop Be-<lb/>yond Translation Memories: New Tools for Transla-<lb/>tors, The Twelfth Machine Translation Summit, pages<lb/> 1–8, Ottawa, Canada, Aug.<lb/> </bibl>
+<bibl>Eckhard Bick. 2000. The parsing system Palavras.<lb/> Aarhus University Press.<lb/> </bibl>
+<bibl>Miriam Butt. 2003. The light verb jungle. In Proceed-<lb/>ings of the Workshop on Multi-Verb Constructions,<lb/> pages 243–246, Trondheim, Norway.<lb/> </bibl>
+<bibl>Cássia Rita Conejo. 2008. O verbo-suporte fazer na<lb/> língua portuguesa: um exercício de análise de base<lb/> funcionalista. Master&apos;s thesis, Maringá, PR, Brazil.<lb/> </bibl>
+<bibl>Laurence Danlos and Pollet Samvelian. 1992. Transla-<lb/>tion of the predicative element of a sentence: category<lb/> switching, aspect and diathesis. In Proceedings of the<lb/> Fourth International Conference on Theoretical and<lb/> Methodological Issues in Machine Translation (TMI),<lb/> pages 21–34, Montréal, Canada.<lb/> </bibl>
+<bibl>Mark Dras. 1995. Automatic identification of support<lb/> verbs: A step towards a definition of semantic weight.<lb/> In Proceedings of the Eighth Australian Joint Confer-<lb/>ence on Artificial Intelligence, pages 451–458, Can-<lb/>berra, Australia. World Scientific Press.<lb/> </bibl>
+<bibl>Inês Duarte, Anabela Gonçalves, Matilde Miguel,<lb/> Amália Mendes, Iris Hendrickx, Fátima Oliveira,<lb/> Luís Filipe Cunha, Fátima Silva, and PurificaçPurificaç˜Purificação Sil-<lb/>vano. 2010. Light verbs features in European Por-<lb/>tuguese. In Proceedings of the Interdisciplinary Work-<lb/>shop on Verbs: The Identification and Representation<lb/> of Verb Features (Verb 2010), Pisa, Italy, Nov.<lb/> </bibl>
+<bibl>Iris Hendrickx, Amália Mendes, Sílvia Pereira, Anabela<lb/> Gonçalves, and Inês Duarte. 2010. Complex predi-<lb/>cates annotation in a corpus of Portuguese. In Pro-<lb/>ceedings of the ACL 2010 Fourth Linguistic Annota-<lb/>tion Workshop, pages 100–108, Uppsala, Sweden.<lb/> </bibl>
+<bibl>Jena D. Hwang, Archna Bhatia, Claire Bonial, Aous<lb/> Mansouri, Ashwini Vaidya, Yuping Zhou, Nianwen<lb/> Xue, and Martha Palmer. 2010. Propbank annota-<lb/>tion of multilingual light verb constructions. In Pro-<lb/>ceedings of the ACL 2010 Fourth Linguistic Annota-<lb/>tion Workshop, pages 82–90, Uppsala, Sweden.<lb/> </bibl>
+<bibl>Otto Jespersen. 1965. A Modern English Grammar on<lb/> Historical Principles. George Allen and Unwin Ltd.,<lb/> London, UK.<lb/> </bibl>
+<bibl>Stefan Langer. 2004. A linguistic test battery for sup-<lb/>port verb constructions. Special issue of Linguisticae<lb/> Investigationes, 27(2):171–184.<lb/> </bibl>
+<bibl>Stefan Langer, 2005. Semantik im Lexikon, chapter<lb/> A formal specification of support verb constructions,<lb/> pages 179–202. Gunter Naar Verlag, Tübingen, Ger-<lb/>many.<lb/> </bibl>
+<bibl>Christiane Marchello-Nizia. 1996. A diachronic survey<lb/> of support verbs: the case of old French. Langages,<lb/> 30(121):91–98.<lb/> </bibl>
+<bibl>Maria Helena Moura Neves, 1996. Gramática do por-<lb/>tuguês falado VI: Desenvolvimentos, chapter Estudo<lb/> das construçconstruç˜construções com verbos-suporte em português,<lb/> pages 201–231. Unicamp FAPESP, Campinas, SP,<lb/> Brazil.<lb/> </bibl>
+<bibl>Ryan North. 2005. Computational measures of the ac-<lb/>ceptability of light verb constructions. Master&apos;s thesis,<lb/> Toronto, Canada.<lb/> </bibl>
+<bibl>Carlos Ramisch, Aline Villavicencio, and Christian<lb/> Boitet. 2010. Multiword expressions in the wild? the<lb/> mwetoolkit comes in handy. In Proc. of the 23rd COL-<lb/>ING (COLING 2010) — Demonstrations, pages 57–<lb/> 60, Beijing, China, Aug. The Coling 2010 Organizing<lb/> Committee.<lb/> </bibl>
+<bibl>Elisabete Ranchhod, 1999. Lindley Cintra. Home-<lb/>nagem ao Homem, ao Mestre e ao Cidadão, chap-<lb/>ter ConstruçConstruç˜Construções com Nomes Predicativos na Crónica<lb/> Geral de Espanha de 1344, pages 667–682. Cosmos,<lb/> Lisbon, Portugal.<lb/> </bibl>
+<bibl>Graça Rio-Torto. 2006. O Léxico: semântica e<lb/> gramática das unidades lexicais. In Estudos sobre<lb/> léxico e gramática, pages 11–34, Coimbra, Portugal.<lb/> CIEG/FLUL.<lb/> </bibl>
+<bibl>Morris Salkoff. 1990. Automatic translation of sup-<lb/>port verb constructions. In Proc. of the 13th COLING<lb/> (COLING 1990), pages 243–246, Helsinki, Finland,<lb/> Aug. ACL.<lb/> </bibl>
+<bibl>Hilda Monetto Flores Silva. 2009. Verbos-suporte ou<lb/> expressões cristalizadas? Soletras, 9(17):175–182.<lb/> </bibl>
+<bibl>Suzanne Stevenson, Afsaneh Fazly, and Ryan North.<lb/> 2004. Statistical measures of the semi-productivity of<lb/> light verb constructions. In , Proc. of the ACL Work-<lb/>shop on MWEs: Integrating Processing (MWE 2004),<lb/> pages 1–8, Barcelona, Spain, Jul. ACL.<lb/> </bibl>
+<bibl>Simone Teufel and Gregory Grefenstette. 1995. Corpus-<lb/>based method for automatic identification of support<lb/> verbs for nominalizations. In Proc. of the 7th Conf.<lb/> of the EACL (EACL 1995), pages 98–103, Dublin, Ire-<lb/>land, Mar.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

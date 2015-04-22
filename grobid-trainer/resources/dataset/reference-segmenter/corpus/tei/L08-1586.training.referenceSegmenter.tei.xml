@@ -1,0 +1,18 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>6.</label> References<lb/> Feldweg, H. and Breidt, E. (1996). &quot; COMPASS An Intel-<lb/>ligent Dictionary System for Reading Text in a Foreign<lb/> Language &quot; . In Kiefer, F. and G. Kiss, editors, Papers<lb/> in Computational Lexicography, COMPLEX &apos;96, Bu-<lb/>dapest, pages 53-62.<lb/> </bibl>
+<bibl>Kolev, D. (2005). &quot; Computer assistant for translators &quot; , a<lb/> Bachelor Thesis (In Bulgarian). Plovdiv University<lb/> 2005.<lb/> </bibl>
+<bibl>Lesk, M. (1986). &quot; Automatic sense disambiguation using<lb/> machine readable dictionaries: How to tell a pine cone<lb/> from an ice cream cone. &quot; In Proc. of the 1986 SIGDOC<lb/> Conference, pages 24–6, Ontario, Canada.<lb/> </bibl>
+<bibl>Miller, G.A. (1995). &quot; WordNet: a lexical database for<lb/> English &quot; , Communication of the ACM, Volume 38, Is-<lb/>sue 11 (November 1995)<lb/> Mitkov, R.(2003), The Oxford Handbook of Computa-<lb/>tional Linguistics. Oxford: Oxford University Press.<lb/> </bibl>
+<bibl>Oflazer, K., Stamou S., Christodoulakis D. (2001) –<lb/> &quot; BALKANET: A Multilingual Semantic Network for<lb/> the Balkan Languages &quot; – the Elsnet Newsletter of the<lb/> European Network in Human Language Technologie,<lb/> 2001.<lb/> </bibl>
+<bibl>Prószéky, G. (2002), &quot; Comprehension Assistance Meets<lb/> Machine Translation &quot; . In: Toma3 Erjavec; Jerneja<lb/> Gros (eds) Language Technologies, 1–5. Institut Jo3ef<lb/> Stefan, Ljubljana, Slovenia.<lb/> </bibl>
+<bibl>Vossen, P. (1998), &quot; EuroWordNet: a multilingual data-<lb/>base with lexical semantic networks &quot; . Kluwer Aca-<lb/>demic Publishers Norwell, MA, USA, 1998.<lb/> 7.<lb/> </bibl>
+Acknowledgments<lb/> We would like to express our gratitude to Constantin<lb/> Orasan, Irina Temnikova and Kiril Kolev for their<lb/> suggestions and taking part in the evaluation experi-<lb/>ments.
+        </listBibl>
+    </text>
+</tei>
+

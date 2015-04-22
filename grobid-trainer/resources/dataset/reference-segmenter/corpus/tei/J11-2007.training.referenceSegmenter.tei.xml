@@ -1,0 +1,19 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Church, Kenneth W. and Patrick Hanks.<lb/> 1989. Word association norms, mutual<lb/> information, and lexicography.<lb/> In Proceedings of the 27th Annual Meeting<lb/> of the Association for Computational<lb/> Linguistics, pages 76–83, Vancouver.<lb/> </bibl>
+<bibl>Hanks, Patrick. Forthcoming. Lexical Analysis:<lb/> Norms and Exploitations. MIT Press.<lb/> </bibl>
+<bibl>Johnson, Samuel. 1755. Preface to a<lb/> Dictionary of the English Language.<lb/> </bibl>
+<bibl>Kilgarriff, Adam. 2007. Googleology is<lb/> bad science. Computational Linguistics,<lb/> 33(1):147–151.<lb/> </bibl>
+<bibl>Kilgarriff, Adam and David Tugwell.<lb/> 2002. Sketching words. In MarieHéì ene<lb/> Corréard, editor, Lexicography and<lb/> Natural Language Processing: A Festschrift<lb/> in Honour of B. T. S. Atkins. Euralex,<lb/> pages 125–137.<lb/> </bibl>
+<bibl>Pustejovsky, James. 2006. Type theory and<lb/> lexical decomposition. Journal of Cognitive<lb/> Science, 7(1):39–76.<lb/> </bibl>
+<bibl>Wilks, Yorick. 1977. Knowledge structure<lb/> and language boundaries. In Proceedings<lb/> of the 5th International Joint Conference<lb/> on Artificial Intelligence, volume 1,<lb/> pages 151–157, San Francisco, CA.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

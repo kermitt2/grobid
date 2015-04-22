@@ -1,0 +1,28 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>H. Alshawi. 1996. Head Automata and Bilingual<lb/> Tiling: Translation with Minimal Representa-<lb/>tions. Proceedings of the 3~th Annual Meeting<lb/> of the Association for Computational Linguistics,<lb/> pages 167-176.<lb/> </bibl>
+<bibl>E. Black et al. 1991. A Procedure for Quantita-<lb/>tively Comparing the Syntactic Coverage of En-<lb/>glish Grammars. Proceedings of the February 1991<lb/> DARPA Speech and Natural Language Workshop.<lb/> 1°Thanks to one of the anonymous reviewers for sug-<lb/>gesting these experiments.<lb/> </bibl>
+<bibl>T. L. Booth and R. A. Thompson. 1973. Applying<lb/> Probability Measures to Abstract Languages. IEEE<lb/> Transactions on Computers, C-22(5), pages 442-<lb/>450.<lb/> </bibl>
+<bibl>E. Charniak. 1995. Parsing with Context-Free Gram-<lb/>mars and Word Statistics. Technical Report CS-<lb/>95-28, Dept. of Computer Science, Brown Univer-<lb/>sity.<lb/> </bibl>
+<bibl>N. Chomsky. 1957. Syntactic Structures, Mouton,<lb/> The Hague.<lb/> </bibl>
+<bibl>M. J. Collins. 1996. A New Statistical Parser Based<lb/> on Bigram Lexical Dependencies. Proceedings o/<lb/> the 34th Annual Meeting o/ the Association for<lb/> Computational Linguistics, pages 184-191.<lb/> </bibl>
+<bibl>J. Eisner. 1996. Three New Probabilistic Models for<lb/> Dependency Parsing: An Exploration. Proceed-<lb/>ings o/ COLING-96, pages 340-345.<lb/> </bibl>
+<bibl>G. Gazdar, E.H. Klein, G.K. Pullum, I.A. Sag. 1985.<lb/> Generalized Phrase Structure Grammar. Harvard<lb/> University Press.<lb/> </bibl>
+<bibl>F. Jelinek, J. Lafferty, D. Magerman, R. Mercer, A.<lb/> </bibl>
+<bibl>Ratnaparkhi, S. Roukos. 1994. Decision Tree Pars-<lb/>ing using a Hidden Derivation Model. Proceedings<lb/> o/ the 1994 Human Language Technology Work-<lb/>shop, pages 272-277.<lb/> </bibl>
+<bibl>D. Magermaa. 1995. Statistical Decision-Tree Mod-<lb/>els for Parsing. Proceedings o/ the 33rd Annual<lb/> Meeting o] the Association for Computational<lb/> Linguistics, pages 276-283.<lb/> </bibl>
+<bibl>M. Marcus, B. Santorini and M. Marcinkiewicz.<lb/> 1993. Building a Large Annotated Corpus of En-<lb/>glish: the Penn Treebank. Computational Linguis-<lb/>tics, 19(2):313-330.<lb/> </bibl>
+<bibl>M. Marcus, G. Kim, M. A. Marcinkiewicz, R.<lb/> MacIntyre, A. Bies, M. Ferguson, K. Katz, B.<lb/> Schasberger. 1994. The Penn Treebank: Annotat-<lb/>ing Predicate Argument Structure. Proceedings of<lb/> the 1994 Human Language Technology Workshop,<lb/> pages 110~115.<lb/> </bibl>
+<bibl>S. Miller, D. Staliard and R. Schwartz. 1996. A<lb/> Fully Statistical Approach to Natural Language<lb/> Interfaces. Proceedings o/ the 34th Annual Meeting<lb/> of the Association for Computational Linguistics,<lb/> pages 55-61.<lb/> </bibl>
+<bibl>A. Ratnaparkhi. 1996. A Maximum Entropy Model<lb/> for Part-Of-Speech Tagging. Conference on Em-<lb/>pirical Methods in Natural Language Processing.<lb/> </bibl>
+<bibl>A. Stolcke. 1996. Linguistic Dependency Modeling.<lb/> Proceedings of ICSLP 96, Fourth International<lb/> Conference on Spoken Language Processing.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

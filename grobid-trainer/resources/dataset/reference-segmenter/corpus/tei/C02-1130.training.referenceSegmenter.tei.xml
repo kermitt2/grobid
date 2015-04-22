@@ -1,0 +1,31 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>8.</label> References<lb/> </bibl>
+<bibl>Bechet, F., Nasr, A., Genet, F. 2000. Tagging unknown proper<lb/> names using decision trees. Proc. of ACL, Hong Kong.<lb/> </bibl>
+<bibl>Bikel, D., Schwartz, R., Weischedel, R. 1999. An algorithm<lb/> that learns what&apos;s in a name. Machine Learning: Special<lb/> Issue on NL Learning, 34, 1-3.<lb/> </bibl>
+<bibl>Brill E. 1994. Some advances in rule based part of speech<lb/> tagging. Proc. of AAAI, Los Angeles.<lb/> </bibl>
+<bibl>Collins, M. and Singer, Y. 1999. Unsupervised models for<lb/> named entity classification. Proc. of the Joint SIGDAT<lb/> Conference on Empirical Methods in Natural Language<lb/> Processing and Very Large Corpora.<lb/> </bibl>
+<bibl>Dunning, T., 1993. Accurate methods for statistics of surprise<lb/> and coincidence. Computational Linguistics, 19:61--74.<lb/> </bibl>
+<bibl>Fellbaum, C. (ed.), 1998. An electronic lexical database.<lb/> Cambridge, MA: MIT Press.<lb/> </bibl>
+<bibl>Fleischman, M. 2001. Automated Subcategorization of Named<lb/> Entities. Proc. of the ACL Student Workshop.<lb/> </bibl>
+<bibl>Hastie, T., Tibshirani, R., and J. Friedman. 2001. The<lb/> Elements of Statistical Learning. Springer.<lb/> </bibl>
+<bibl>Jurafsky, D. and Martin, J.. 2000. Speech and Language<lb/> Processing. Upper Saddle River, NJ: Prentice Hall.<lb/> </bibl>
+<bibl>Kohavi,, R., Sommerfield, D., and Dougherty, J, 1996.<lb/> Data mining using MLC++ : A machine learning library<lb/> in C ++. Tools with Artificial Intelligence, pp. 234-245.<lb/> </bibl>
+<bibl>Lin, C.-Y. and E.H. Hovy, 2000. The Automated<lb/> Acquisition<lb/> of<lb/> Topic<lb/> Signatures<lb/> for<lb/> Text<lb/> Summarization. Proc. of the COLING Conference.<lb/> Strasbourg, France.<lb/> </bibl>
+<bibl>MacDonald D.D., 1993. Internal and external evidence in the<lb/> identification and semantic categorization of proper names.<lb/> In B.Boguraev and J. Pustejovsky, eds., Corpus Processing<lb/> for Lexical Acquisition, pp. 61-76, Cambridge: MIT Press.<lb/> </bibl>
+<bibl>Muslea, I., Minton, S., Knoblock, C. Selective sampling<lb/> with redundant views. Proc. of the 15th National<lb/> Conference on Artificial Intelligence, AAAI-2000.<lb/> </bibl>
+<bibl>Porter, M. F. 1980. An algorithm for suffix stripping.<lb/> Program, 14 (no. 3), 130-137.<lb/> </bibl>
+<bibl>Quinlin, J.R., 1993. C4.5: Programs for Machine Learning.<lb/> San Mateo, CA: Morgan Kaufmann Publishers.<lb/> </bibl>
+<bibl>Resnik, P. 1993. Selection and Information. PhD thesis,<lb/> University of Pennsylvania.<lb/> </bibl>
+<bibl>Wacholder, N., Ravin, Y., Choi, M. 1997. Disambiguation of<lb/> Proper Names in Text. Proc. of the Fifth Conference on<lb/> Applied Natural Language Processing, Washington, D.C.<lb/> </bibl>
+<bibl>Witten, I. &amp; Frank, E. 1999. Data Mining: Practical<lb/> Machine Learning Tools and Techniques with JAVA<lb/> implementations. Morgan Kaufmann, October.<lb/> </bibl>
+<bibl>Yarowsky D. 2000. Hierarchical Decision List for Word<lb/> Sense Disambiguation. Computers and the Humanities.<lb/> 34: 179-186.<lb/> </bibl>
+<bibl>Yang, Y., Pedersen, J.O., 1997. A Comparative Study on<lb/> Feature Selection in Text Categorization, Proc. of the<lb/> 14th International Conference on Machine Learning<lb/> ICML97, pp. 412-420</bibl>
+        </listBibl>
+    </text>
+</tei>
+

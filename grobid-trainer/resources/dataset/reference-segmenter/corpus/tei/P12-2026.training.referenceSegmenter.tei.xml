@@ -1,0 +1,27 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>G. W. Bian, H. H. Chen. Cross-language information<lb/> access to multilingual collections on the internet.<lb/> 2000. Journal of American Society for Information<lb/> Science &amp; Technology (JASIST), Special Issue on<lb/> Digital Libraries, 51(3), pp.281-296, 2000.<lb/> </bibl>
+<bibl>Y. Cao and H. Li. Base Noun Phrase Translation Using<lb/> Web Data and the EM Algorithm. 2002. In<lb/> Proceedings of the 19th International Conference on<lb/> Computational Linguistics (COLING&apos;02), pp.127-<lb/>133, 2002.<lb/> </bibl>
+<bibl>P. J. Cheng, J. W. Teng, R. C. Chen, J. H. Wang, W. H.<lb/> Lu, and L. F. Chien. Translating unknown queries<lb/> with web corpora for cross-language information<lb/> retrieval. In Proceedings of the 27th ACM<lb/> International Conference on Research and<lb/> Development in Information Retrieval, pp.146-153,<lb/> 2004.<lb/> </bibl>
+<bibl>F. Huang, S. Vogel, and A. Waibel. Automatic<lb/> extraction of named entity translingual equivalence<lb/> based on multi-feature cost minimization. In<lb/> Proceeding of the 41st ACL, Workshop on<lb/> Multilingual and Mixed-Language Named Entity<lb/> Recognition, Sapporo, 2003.<lb/> </bibl>
+<bibl>K. Knight, J. Graehl. Machine Transliteration. 1998.<lb/> Computational Linguistics 24(4), pp.599-612, 1998.<lb/> </bibl>
+<bibl>P. Koehn, K. Knight. 2003. Feature-Rich Statistical<lb/> Translation of Noun Phrases. In Proceedings of the<lb/> 41st Annual Meeting on Association for<lb/> Computational Linguistics, pp. 311-318, 2003.<lb/> </bibl>
+<bibl>J. Kupiec. 1993. An Algorithm for Finding Noun Phrase<lb/> Correspondences in Bilingual Corpora. In<lb/> Proceedings of the 31st Annual Meeting of the<lb/> Association for Computational Linguistics, pp. 17-<lb/>22, 1993.<lb/> </bibl>
+<bibl>KL Kwok, P Deng, N Dinstl, HL Sun, W Xu, P Peng,<lb/> and Doyon, J. 2005. CHINET: a Chinese name finder<lb/> system for document triage. In Proceedings of 2005<lb/> </bibl>
+<bibl>D. Lin, S. Zhao, B.V. Durme, and M. Paşca. 2008.<lb/> Mining Parenthetical Translation from the Web by<lb/> Word Alignment, In Proceedings of ACL 2008, pp.<lb/> 994-1002, 2008.<lb/> </bibl>
+<bibl>Y. Li, G. Grefenstette. 2005. Translating Chinese<lb/> Romanized name into Chinese idiographic characters<lb/> via corpus and web validation. In Proceedings of<lb/> CORIA 2005, pp. 323-338, 2005.<lb/> </bibl>
+<bibl>M. Nagata, T. Saito, and K. Suzuki. Using the Web as a<lb/> bilingual dictionary. 2001. In Proceedings of 39th.<lb/> ACL Workshop on Data-Driven Methods in Machine<lb/> Translation, pp. 95-102, 2001.<lb/> </bibl>
+<bibl>Y. Qu, and G. Grefenstette. 2004. Finding Ideographic<lb/> Representations of Japanese Names Written in Latin<lb/> Script via Language Identification and Corpus<lb/> Validation. In Proceedings of the 42nd Annual<lb/> Meeting of the Association for Computational<lb/> Linguistics, pp.183-190, 2004.<lb/> </bibl>
+<bibl>CK Quah. 2006. Translation and Technology, Palgrave<lb/> Textbooks in Translation and Interpretation, Palgrave<lb/> MacMillan.<lb/> </bibl>
+<bibl>R Sproat and C Shih. Statistical Method for Finding<lb/> Word Boundaries in Chinese Text, Computer<lb/> Processing of Chinese and Oriental languages. 1990.<lb/> </bibl>
+<bibl>J. C. Wu, T. Lin and J. S. Chang. Learning Source-<lb/>Target Surface Patterns for Web-based Terminology<lb/> Translation. In Proceeding of the ACL 2005 on<lb/> Interactive poster and demonstration sessions<lb/> (ACLdemo &apos;05). 2005.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

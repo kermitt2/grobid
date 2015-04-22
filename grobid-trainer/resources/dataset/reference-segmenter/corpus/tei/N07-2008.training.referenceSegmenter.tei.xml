@@ -1,0 +1,21 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Jiang Chen and Jian-Yun Nie. 2000. Parallel web text<lb/> mining for cross-language IR. In In Proc. of RIAO,<lb/> pages 62–77.<lb/> </bibl>
+<bibl>Mona Diab and Philip Resnik. 2002. An unsupervised<lb/> method for word sense tagging using parallel corpora.<lb/> In Proc. of ACL, pages 255–262.<lb/> </bibl>
+<bibl>Mona Diab. 2004. Relieving the data acquisition bottle-<lb/>neck for word sense disambiguation. In Proc. of ACL,<lb/> pages 303–310.<lb/> </bibl>
+<bibl>Ulrich Germann. 2001. Aligned Hansards of the<lb/> 36th Parliament of Canada, Release 2001-1a. Avail-<lb/>able at http://www.isi.edu/natural-language/download/<lb/> hansard/.<lb/> </bibl>
+<bibl>Philipp Koehn, Franz Josef Och, and Daniel Marcu.<lb/> 2003. Statistical phrase-based translation. In Proc.<lb/> of HLT-NAACL, pages 48–54.<lb/> </bibl>
+<bibl>Philipp Koehn. 2002. Europarl: A multilingual cor-<lb/>pus for evaluation of machine translation. Available<lb/> at http://people.csail.mit.edu/koehn/.<lb/> </bibl>
+<bibl>Craig J. A. McEwan, Iadh Ounis, and Ian Ruthven. 2002.<lb/> Building bilingual dictionaries from parallel web doc-<lb/>uments. In Proc. of ECIR, pages 303–323.<lb/> </bibl>
+<bibl>Alexandre Patry and Philippe Langlais. 2005. Auto-<lb/>matic identification of parallel documents with light or<lb/> without linguistic resources. In Proc. of Canadian AI,<lb/> pages 354–365.<lb/> </bibl>
+<bibl>Philip Resnik and Noah A. Smith. 2003. The web as a<lb/> parallel corpus. Comput. Linguist., 29(3):349–380.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

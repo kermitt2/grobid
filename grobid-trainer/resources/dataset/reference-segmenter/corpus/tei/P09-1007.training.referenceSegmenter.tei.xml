@@ -1,0 +1,39 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Peter F. Brown, John Cocke, Stephen A. Della Pietra,<lb/> Vincent J. Della Pietra, Fredrick Jelinek, John D.<lb/> Lafferty, Robert L. Mercer, and Paul S. Roossin.<lb/> 1990. A statistical approach to machine translation.<lb/> Computational Linguistics, 16(2):79–85.<lb/> </bibl>
+<bibl>David Burkett and Dan Klein. 2008. Two lan-<lb/>guages are better than one (for syntactic parsing). In<lb/> EMNLP-2008, pages 877–886, Honolulu, Hawaii,<lb/> USA.<lb/> </bibl>
+<bibl>Wenliang Chen, Daisuke Kawahara, Kiyotaka Uchi-<lb/>moto, Yujie Zhang, and Hitoshi Isahara. 2008. De-<lb/>pendency parsing with short dependency relations<lb/> in unlabeled data. In Proceedings of IJCNLP-2008,<lb/> Hyderabad, India, January 8-10.<lb/> </bibl>
+<bibl>Xiangyu Duan, Jun Zhao, and Bo Xu. 2007. Proba-<lb/>bilistic parsing action models for multi-lingual de-<lb/>pendency parsing. In Proceedings of the CoNLL<lb/> Shared Task Session of EMNLP-CoNLL 2007, pages<lb/> 940–946, Prague, Czech, June 28-30.<lb/> </bibl>
+<bibl>Johan Hall,<lb/> Jens Nilsson,<lb/> Joakim Nivre,<lb/> Gülsen EryiˇEryiˇgit, Beáta Megyesi, Mattias Nils-<lb/>son, and Markus Saers. 2007. Single malt or<lb/> blended? a study in multilingual parser optimiza-<lb/>tion. In Proceedings of the CoNLL Shared Task<lb/> Session of EMNLP-CoNLL 2007, pages 933–939,<lb/> Prague, Czech, June.<lb/> </bibl>
+<bibl>Terry Koo, Xavier Carreras, and Michael Collins.<lb/> 2008. Simple semi-supervised dependency parsing.<lb/> In Proceedings of ACL-08: HLT, pages 595–603,<lb/> Columbus, Ohio, USA, June.<lb/> </bibl>
+<bibl>David McClosky, Eugene Charniak, and Mark John-<lb/>son. 2006. Reranking and self-training for parser<lb/> adaptation. In Proceedings of ACL-COLING 2006,<lb/> pages 337–344, Sydney, Australia, July.<lb/> </bibl>
+<bibl>Ryan McDonald and Joakim Nivre. 2007. Charac-<lb/>terizing the errors of data-driven dependency pars-<lb/>ing models. In Proceedings of the 2007 Joint Con-<lb/>ference on Empirical Methods in Natural Language<lb/> Processing and Computational Natural Language<lb/> Learning (EMNLP-CoNLL 2007), pages 122–131,<lb/> Prague, Czech, June 28-30.<lb/> </bibl>
+<bibl>Ryan McDonald and Fernando Pereira. 2006. Online<lb/> learning of approximate dependency parsing algo-<lb/>rithms. In Proceedings of EACL-2006, pages 81–88,<lb/> Trento, Italy, April.<lb/> </bibl>
+<bibl>Ryan McDonald, Koby Crammer, and Fernando<lb/> Pereira. 2005. Online large-margin training of de-<lb/>pendency parsers. In Proceedings of ACL-2005,<lb/> pages 91–98, Ann Arbor, Michigan, USA, June 25-<lb/>30.<lb/> </bibl>
+<bibl>Paola Merlo, Suzanne Stevenson, Vivian Tsang, and<lb/> Gianluca Allaria. 2002. A multilingual paradigm<lb/> for automatic verb classification. In ACL-2002,<lb/> pages 207–214, Philadelphia, Pennsylvania, USA.<lb/> </bibl>
+<bibl>Joakim Nivre, Johan Hall, Sandra Kübler, Ryan Mc-<lb/>Donald, Jens Nilsson, Sebastian Riedel, and Deniz<lb/> Yuret. 2007. The conll 2007 shared task on de-<lb/>pendency parsing. In Proceedings of the CoNLL<lb/> Shared Task Session of EMNLP-CoNLL 2007, page<lb/> 915932, Prague, Czech, June.<lb/> </bibl>
+<bibl>Joakim Nivre. 2003. An efficient algorithm for projec-<lb/>tive dependency parsing. In Proceedings of IWPT-<lb/>2003), pages 149–160, Nancy, France, April 23-25.<lb/> </bibl>
+<bibl>Franz Josef Och and Hermann Ney. 2002. Discrimina-<lb/>tive training and maximum entropy models for sta-<lb/>tistical machine translation. In Proceedings of ACL-<lb/>2002, pages 295–302, Philadelphia, USA, July.<lb/> </bibl>
+<bibl>Roi Reichart and Ari Rappoport. 2007. Self-training<lb/> for enhancement and domain adaptation of statistical<lb/> parsers trained on small datasets. In Proceedings of<lb/> ACL-2007, pages 616–623, Prague, Czech Republic,<lb/> June.<lb/> </bibl>
+<bibl>Kenji Sagae and Junichi Tsujii. 2007. Dependency<lb/> parsing and domain adaptation with lr models and<lb/> parser ensembles. In Proceedings of the CoNLL<lb/> Shared Task Session of EMNLP-CoNLL 2007, page<lb/> 10441050, Prague, Czech, June 28-30.<lb/> </bibl>
+<bibl>Noah A. Smith and Jason Eisner. 2006. Annealing<lb/> structural bias in multilingual weighted grammar in-<lb/>duction. In Proceedings of ACL-COLING 2006,<lb/> page 569576, Sydney, Australia, July.<lb/> </bibl>
+<bibl>Mark Steedman, Miles Osborne, Anoop Sarkar,<lb/> Stephen Clark, Rebecca Hwa, Julia Hockenmaier,<lb/> Paul Ruhlen, Steven Baker, and Jeremiah Crim.<lb/> 2003. Bootstrapping statistical parsers from small<lb/> datasets. In Proceedings of EACL-2003, page<lb/> 331338, Budapest, Hungary, April.<lb/> </bibl>
+<bibl>Qin Iris Wang and Dale Schuurmans. 2008. Semi-<lb/>supervised convex training for dependency parsing.<lb/> In Proceedings of ACL-08: HLT, pages 532–540,<lb/> Columbus, Ohio, USA, June.<lb/> </bibl>
+<bibl>Qin Iris Wang, Dale Schuurmans, and Dekang Lin.<lb/> 2005. Strictly lexical dependency parsing. In Pro-<lb/>ceedings of IWPT-2005, pages 152–159, Vancouver,<lb/> BC, Canada, October.<lb/> </bibl>
+<bibl>Qin Iris Wang, Dekang Lin, and Dale Schuurmans.<lb/> 2007. Simple training of dependency parsers via<lb/> structured boosting. In Proceedings of IJCAI 2007,<lb/> pages 1756–1762, Hyderabad, India, January.<lb/> </bibl>
+<bibl>Hiroyasu Yamada and Yuji Matsumoto. 2003. Sta-<lb/>tistical dependency analysis with support vector<lb/> machines. In Proceedings of IWPT-2003), page<lb/> 195206, Nancy, France, April.<lb/> </bibl>
+<bibl>Kun Yu, Daisuke Kawahara, and Sadao Kurohashi.<lb/> 2008. Chinese dependency parsing with large<lb/> scale automatically constructed case structures. In<lb/> Proceedings of COLING-2008, pages 1049–1056,<lb/> Manchester, UK, August.<lb/> </bibl>
+<bibl>Daniel Zeman and Philip Resnik. 2008. Cross-<lb/>language parser adaptation between related lan-<lb/>guages. In Proceedings of IJCNLP 2008 Workshop<lb/> on NLP for Less Privileged Languages, pages 35–<lb/> 42, Hyderabad, India, January.<lb/> </bibl>
+<bibl>Hai Zhao and Chunyu Kit. 2008. Parsing syntactic and<lb/> semantic dependencies with two single-stage max-<lb/>imum entropy models. In Proceeding of CoNLL-<lb/>2008, pages 203–207, Manchester, UK.<lb/> </bibl>
+<bibl>Hai Zhao, Wenliang Chen, Chunyu Kit, and Guodong<lb/> Zhou. 2009. Multilingual dependency learning:<lb/> A huge feature engineering method to semantic de-<lb/>pendency parsing. In Proceedings of CoNLL-2009,<lb/> Boulder, Colorado, USA.<lb/> </bibl>
+<bibl>Hai Zhao. 2009. Character-level dependencies in<lb/> chinese: Usefulness and learning. In EACL-2009,<lb/> pages 879–887, Athens, Greece.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

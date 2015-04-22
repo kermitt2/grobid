@@ -1,0 +1,44 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Aditya Bhargava and Grzegorz Kondrak. 2011. How<lb/> do you pronounce your name? Improving G2P with<lb/> transliterations. In 49th ACL/HLT, pages 399–408,<lb/> Portland, USA.<lb/> </bibl>
+<bibl>Chih-Chung Chang and Chih-Jen Lin. 2011. LIB-<lb/>SVM: A Library for Support Vector Machines.<lb/> ACM Trans. Intell. Syst. Technol., 2(3):1–27, May.<lb/> </bibl>
+<bibl>William Fernando Correa, Henri Prade, and Gilles<lb/> Richard. 2012. When intelligence is just a matter<lb/> of copying. In 20th ECAI, pages 276–281, Mont-<lb/>pellier, France.<lb/> </bibl>
+<bibl>Corinna Cortes and Vladimir Vapnik. 1995. Support-<lb/>Vector Networks. Mach. Learn., 20(3):273–297.<lb/> </bibl>
+<bibl>Sandipan Dandapat, Sara Morrissey, Sudip Ku-<lb/>mar Naskar, and Harold Somers. 2010. Mitigat-<lb/>ing Problems in Analogy-based EBMT with SMT<lb/> and vice versa: a Case Study with Named En-<lb/>tity Transliteration. In 24th Pacific Asia Confer-<lb/>ence on Language Information and Computation<lb/> (PACLIC&apos;10), pages 365–372, Sendai, Japan.<lb/> </bibl>
+´<lb/> 
+<bibl>Etienne Denoual. 2007. Analogical translation of<lb/> unknown words in a statistical machine translation<lb/> framework. In MT Summit XI, pages 135–141,<lb/> Copenhagen, Denmark.<lb/> </bibl>
+<bibl>Nguyen Tuan Duc, Danushka Bollegala, and Mitsuru<lb/> Ishizuka. 2011. Cross-Language Latent Relational<lb/> Search: Mapping Knowledge across Languages. In<lb/> 25th AAAI, pages 1237 – 1242, San Francisco, USA.<lb/> </bibl>
+<bibl>Andrew Finch and Eiichiro Sumita. 2010. Translit-<lb/>eration Using a Phrase-based Statistical Machine<lb/> Translation System to Re-score the Output of a Joint<lb/> Multigram Model. In 2nd Named Entities Workshop<lb/> (NEWS&apos;10), pages 48–52, Uppsala, Sweden.<lb/> </bibl>
+<bibl>Y. Freund and R. E. Schapire. 1999. Large Mar-<lb/>gin Classification Using the Perceptron Algorithm.<lb/> Mach. Learn., 37(3):277–296.<lb/> </bibl>
+<bibl>Sittichai Jiampojamarn, Grzegorz Kondrak, and Tarek<lb/> Sherif. 2007. Applying Many-to-Many Alignments<lb/> and Hidden Markov Models to Letter-to-Phoneme<lb/> Conversion. In NAACL/HLT&apos;07, pages 372–379.<lb/> </bibl>
+<bibl>Kevin Knight and Jonathan Graehl. 1998. Machine<lb/> Transliteration. Comput. Linguist., 24(4):599–612.<lb/> </bibl>
+<bibl>Philipp Koehn, Franz Josef Och, and Daniel Marcu.<lb/> 2003. Statistical Phrase-Based Translation. In<lb/> NAACL/HLT&apos;03, pages 48–54, Edmonton, Canada.<lb/> </bibl>
+<bibl>Philipp Koehn, Hieu Hoang, Alexandra Birch, Chris<lb/> Callison-Burch, Marcello Federico, Nicola Bertoldi,<lb/> Brooke Cowan, Wade Shen, Christine Moran,<lb/> Richard Zens, Chris Dyer, Ondřej Bojar, Alexandra<lb/> Constantin, and Evan Herbst. 2007. Moses: Open<lb/> Source Toolkit for Statistical Machine Translation.<lb/> In 45th ACL, pages 177–180. Interactive Poster and<lb/> Demonstration Sessions.<lb/> </bibl>
+<bibl>Philippe Langlais and Alexandre Patry. 2007. Trans-<lb/>lating Unknown Words by Analogical Learning. In<lb/> EMNLP/CoNLL&apos;07, pages 877–886, Prague, Czech<lb/> Republic.<lb/> </bibl>
+<bibl>Philippe Langlais and François Yvon. 2008. Scaling<lb/> up Analogical Learning. In 22nd COLING, pages<lb/> 51–54, Manchester, United Kingdom. Poster.<lb/> </bibl>
+<bibl>Philippe Langlais, François Yvon, and Pierre Zweigen-<lb/>baum. 2009. Improvements in Analogical Learn-<lb/>ing: Application to Translating multi-Terms of the<lb/> Medical Domain. In 12th EACL, pages 487–495,<lb/> Athens, Greece.<lb/> </bibl>
+<bibl>Yves Lepage andand´andÉtienne Denoual. 2005. Purest ever<lb/> example-based machine translation: Detailed pre-<lb/>sentation and assesment. Mach. Translat, 19:25–<lb/> 252.<lb/> </bibl>
+<bibl>Yves Lepage, Adrien Lardilleux, and Julien Gosme.<lb/> 2009. The GREYC Translation Memory for the<lb/> IWSLT 2009 Evaluation Campaign: one step be-<lb/>yond translation memory. In 6th IWSLT, pages 45–<lb/> 49, Tokyo, Japan.<lb/> </bibl>
+<bibl>Yves Lepage. 1998. Solving Analogies on Words: an<lb/> Algorithm. In COLING/ACL, pages 728–733, Mon-<lb/>treal, Canada.<lb/> </bibl>
+<bibl>Haizhou Li, Min Zhang, and Jian Su. 2004. A Joint<lb/> Source-Channel Model for Machine Transliteration.<lb/> In 42nd ACL, pages 159–166, Barcelona, Spain.<lb/> </bibl>
+<bibl>Haizhou Li, A. Kumaran, Vladimir Pervouchine, and<lb/> Min Zhang. 2009. Report of NEWS 2009 Machine<lb/> Transliteration Shared Task. In 1st Named Entities<lb/> Workshop (NEWS&apos;09): Shared Task on Translitera-<lb/>tion, pages 1–18, Singapore.<lb/> </bibl>
+<bibl>Laurent Miclet, Sabri Bayroudh, and Arnaud Delhay.<lb/> 2008. Analogical Dissimilarity: Definitions, Algo-<lb/>rithms and two experiments in Machine Learning.<lb/> Journal of Artificial Intelligence Research, pages<lb/> 793–824.<lb/> </bibl>
+<bibl>Fabienne Moreau, Vincent Claveau, and Pascale<lb/> Sébillot. 2007. Automatic Morphological Query<lb/> Expansion Using Analogy-based Machine Learn-<lb/>ing. In 29th European Conference on IR research<lb/> (ECIR&apos;07), pages 222–233, Rome, Italy.<lb/> </bibl>
+<bibl>Jong-hoon Oh, Kiyotaka Uchimoto, and Kentaro Tori-<lb/>sawa. 2009. Machine Transliteration using Target-<lb/>Language Grapheme and Phoneme: Multi-engine<lb/> Transliteration Approach. In 1st Named Entities<lb/> Workshop (NEWS&apos;09): Shared Task on Transliter-<lb/>ation, pages 36–39, Singapore.<lb/> </bibl>
+<bibl>Hassan Sajjad, Alexander Fraser, and Helmut Schmid.<lb/> 2012. A Statistical Model for Unsupervised and<lb/> Semi-supervised Transliteration Mining. In 50th<lb/> ACL, pages 469–477, Jeju Island, Korea.<lb/> </bibl>
+<bibl>Harold Somers, Sandipan Sandapat, and Sudip Kumar<lb/> Naskar. 2009. A Review of EBMT Using Pro-<lb/>portional Analogies. In 3rd Workshop on Example-<lb/>based Machine Translation, pages 53–60, Dublin,<lb/> Ireland.<lb/> </bibl>
+<bibl>Nicolas Stroppa and François Yvon. 2005. An Ana-<lb/>logical Learner for Morphological Analysis. In 9th<lb/> CoNLL, pages 120–127, Ann Arbor, USA.<lb/> </bibl>
+<bibl>P.D. Turney and M.L. Littman. 2005. Corpus-based<lb/> Learning of Analogies and Semantic Relations. In<lb/> Machine Learning, volume 60, pages 251–278.<lb/> </bibl>
+<bibl>Antal van den Bosch and Walter Daelemans. 1993.<lb/> Data-Oriented Methods for Grapheme-to-Phoneme<lb/> Conversion. In 6th EACL, pages 45–53, Utrecht,<lb/> Netherlands.<lb/> </bibl>
+<bibl>François Yvon, Nicolas Stroppa, Arnaud Delhay, and<lb/> Laurent Miclet. 2004. Solving Analogies on Words.<lb/> Technical Report D005, ´<lb/> Ecole Nationale Supérieure<lb/> des Télécommuncations, Paris, France.<lb/> </bibl>
+<bibl>François Yvon. 1997. Paradigmatic Cascades: a Lin-<lb/>guistically Sound Model of Pronunciation by Anal-<lb/>ogy. In 35th ACL, pages 429–435, Madrid, Spain.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

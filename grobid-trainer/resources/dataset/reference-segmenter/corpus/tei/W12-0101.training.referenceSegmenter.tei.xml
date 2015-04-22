@@ -1,0 +1,26 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Allemang, D. &amp; Hendler, J. (2008), Semantic Web<lb/> for the Working Ontologist: Effective Modeling in<lb/> RDFS and OWL, Morgan Kaufmann.<lb/> URL:<lb/> http://www.amazon.com/Se<lb/> mantic-Web-Working-Ontologist-<lb/>Effective/dp/0123735564<lb/> </bibl>
+<bibl>Berners-Lee, T. (1999), Weaving the Web : The Origi-<lb/>nal Design and Ultimate Destiny of the World Wide<lb/> Web by its Inventor, HarperOne.<lb/> URL:<lb/> http://www.amazon.com/We<lb/> aving-Web-Original-Ultimate-<lb/>Inventor/dp/0062515861<lb/> </bibl>
+<bibl>Berners-Lee, T. &amp; Hendler, J. (2001), &apos;Scientific Amer-<lb/>ican: The Semantic Web&apos;, Scientific American,<lb/> USA. .<lb/> URL:<lb/> http://scholar.google.com<lb/> /scholar?hl=en\&amp;btnG=Search\&amp;<lb/> q=intitle:Scientific+American:<lb/> +The+Semantic+Web\#3<lb/> </bibl>
+<bibl>Boothroyd, D. (2011), &apos;Statistical machine translation<lb/> to enable universal communication?&apos;.<lb/> URL: http://www.newelectronics.co.<lb/> uk/electronics-technology/statist<lb/> ical-machine-translation-to-enab<lb/> le-universal-communication/33008/<lb/> </bibl>
+<bibl>Elita, N. &amp; Birladeanu, A. (2005), &apos;A first step in inte-<lb/>grating an EBMT into the Semantic Web&apos;.<lb/> URL: www.mt-archive.info/MTS-2005-<lb/>Elita.pdf<lb/> </bibl>
+<bibl>Graves, A. &amp; Gutierrez, C. (2005), &apos;Data representa-<lb/>tions for WordNet : A case for RDF&apos;.<lb/> URL: http://www.dcc.uchile.cl/ ˜ cgu<lb/> tierr/papers/wordnet-rdf.pdf<lb/> </bibl>
+<bibl>Guha, R. (2004), &apos;RDF Vocabulary Description Lang-<lb/>uage 1.0: RDF Schema&apos;.<lb/> URL:<lb/> http://moodletest.ncnu.ed<lb/> u.tw/file.php/9506/references-<lb/>2009/RDF\_schema\_1.pdf<lb/> </bibl>
+<bibl>Hutchins, J. (2009), &apos;Multiple Uses of Machine Transla-<lb/>tion and Computerised Translation Tools&apos;, Machine<lb/> Translation pp. 13–20.<lb/> </bibl>
+<bibl>URL: http://www.hutchinsweb.me.uk/<lb/> Besancon-2009.pdf<lb/> </bibl>
+<bibl>Klyne, G. &amp; Carroll, J. (2004), &apos;Resource description<lb/> framework (RDF): Concepts and abstract syntax&apos;,<lb/> Changes 10(February), 1–20.<lb/> URL:<lb/> http://www.mendeley.com/res<lb/> earch/w3c-gibt-recommendation-fr-<lb/>resource-description-framework-<lb/>rdf-frei/<lb/> Knight, K. (1999), A statistical MT tutorial workbook,<lb/> in &apos;Prepared for the 1999 JHU Summer Workshop&apos;.<lb/> URL: http://www.snlp.de/prescher/t<lb/> eaching/2007/StatisticalNLP/bib/<lb/> 1999jhu.knight.pdf<lb/> Knight, K. &amp; Koehn, P. (2004), &apos;What&apos;s New in Statis-<lb/>tical Machine Translation&apos;, Tutorial, HLT/NAACL<lb/> pp. 1–89.<lb/> </bibl>
+<bibl>URL: http://www.auai.org/uai2003/<lb/> Knight-UAI-03.pdf<lb/> Koehn, P., Osborne, M., Haddow, B., Auli, M., Buck,<lb/> C., Dugast, L., Guillou, L., Hasler, E., Matthews,<lb/> D., Williams, P., Wilson, O. &amp; Saint-Amand, H.<lb/> (2012), &apos;Statistical Machine Translation at the Uni-<lb/>versity of Edinburgh&apos;.<lb/> </bibl>
+<bibl>Kunze, C. &amp; Lüngen, H. (2007), &apos;Repräsentation und<lb/> Verknüpfung allgemeinsprachlicher und terminolo-<lb/>gischer Wortnetze in OWL&apos;, Zeitschrift für Sprach-<lb/>wissenschaft .<lb/> </bibl>
+<bibl>Mark van Assem, V. U. A., Aldo Gangemi, ISTC-CNR,<lb/> R. &amp; Guus Schreiber, V. U. A. (2006), &apos;RDF/OWL<lb/> Representation of WordNet&apos;.<lb/> URL: http://www.w3.org/TR/wordnet-<lb/>rdf/<lb/> </bibl>
+<bibl>Miles, A. (2008), &apos;SKOS simple knowledge organiza-<lb/>tion system reference&apos;, W3C Recommendation .<lb/> URL:<lb/> http://www.mendeley.com/r<lb/> esearch/skos-simple-knowledge-<lb/>organization-system-reference/</bibl>
+        </listBibl>
+    </text>
+</tei>
+

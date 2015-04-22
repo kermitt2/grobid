@@ -1,0 +1,29 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Eneko Agirre and Oier Lopez de Lacalle. 2003. Clus-<lb/>tering wordnet word senses. In Recent Advances in<lb/> Natural Language Processing, Borovets, Bulgaria.<lb/> </bibl>
+<bibl>Edward Briscoe and John Carroll. 2002. Robust ac-<lb/>curate statistical annotation of general text. In Pro-<lb/>ceedings of the Third International Conference on<lb/> Language Resources and Evaluation (LREC), pages<lb/> 1499–1504, Las Palmas, Canary Islands, Spain.<lb/> </bibl>
+<bibl>Paul Buitelaar and Bogdan Sacaleanu. 2001. Ranking<lb/> and selecting synsets by domain relevance. In Pro-<lb/>ceedings of WordNet and Other Lexical Resources:<lb/> Applications, Extensions and Customizations, NAACL<lb/> 2001 Workshop, Pittsburgh, PA.<lb/> </bibl>
+<bibl>Véronique Hoste, Anne Kool, and Walter Daelemans.<lb/> 2001. Classifier optimization and combination in<lb/> the English all words task. In Proceedings of the<lb/> SENSEVAL-2 workshop, pages 84–86.<lb/> </bibl>
+<bibl>Jay Jiang and David Conrath. 1997. Semantic similarity<lb/> based on corpus statistics and lexical taxonomy. In In-<lb/>ternational Conference on Research in Computational<lb/> Linguistics, Taiwan.<lb/> </bibl>
+<bibl>Adam Kilgarriff and Joseph Rosenzweig. 2000. English<lb/> SENSEVAL: Report and results. In Proceedings of<lb/> LREC-2000, Athens, Greece.<lb/> </bibl>
+<bibl>Mirella Lapata and Chris Brew. 2004. Verb class dis-<lb/>ambiguation using informative priors. Computational<lb/> Linguistics, 30(1):45–75.<lb/> </bibl>
+<bibl>Dekang Lin. 1998. Automatic retrieval and clustering of<lb/> similar words. In Proceedings of COLING-ACL 98,<lb/> Montreal, Canada.<lb/> </bibl>
+<bibl>Bernardo Magnini and GabrielaCavaglì a. 2000. Inte-<lb/>grating subject field codes into WordNet. In Proceed-<lb/>ings of LREC-2000, Athens, Greece.<lb/> </bibl>
+<bibl>Bernardo Magnini, Carlo Strapparava, Giovanni Pezzuli,<lb/> and Alfio Gliozzo. 2001. Using domain information<lb/> for word sense disambiguation. In Proceedings of the<lb/> SENSEVAL-2 workshop, pages 111–114.<lb/> </bibl>
+<bibl>Diana McCarthy, Rob Koeling, Julie Weeds, and John<lb/> Carroll. 2004a. Finding predominant senses in un-<lb/>tagged text. In Proceedings of the 42nd Annual Meet-<lb/>ing of the Association for Computational Linguistics,<lb/> Barcelona, Spain.<lb/> </bibl>
+<bibl>Diana McCarthy, Rob Koeling, Julie Weeds, and John<lb/> Carrolł. 2004b. Using automatically acquired pre-<lb/>dominant senses for word sense disambiguation. In<lb/> Proceedings of the ACL SENSEVAL-3 workshop.<lb/> </bibl>
+<bibl>Martha Palmer, Christiane Fellbaum, Scott Cotton, Lau-<lb/>ren Delfs, and Hoa Trang Dang. 2001. English tasks:<lb/> All-words and verb lexical sample. In Proceedings of<lb/> the SENSEVAL-2 workshop, pages 21–24.<lb/> </bibl>
+<bibl>Patrick Pantel and Dekang Lin. 2002. Discovering word<lb/> senses from text. In Proceedings of ACM SIGKDD<lb/> Conference on Knowledge Discovery and Data Min-<lb/>ing, pages 613–619, Edmonton, Canada.<lb/> </bibl>
+<bibl>Siddharth<lb/> Patwardhan<lb/> and<lb/> Ted<lb/> Pedersen.<lb/> 2003.<lb/> The cpan wordnet::similarity pack-<lb/>age.<lb/> http://search.cpan.org/author/SID/WordNet-<lb/>Similarity-0.03/.<lb/> </bibl>
+<bibl>Tony G. Rose, Mary Stevenson, and Miles Whitehead.<lb/> 2002. The Reuters Corpus volume 1 -from yes-<lb/>terday&apos;s news to tomorrow&apos;s language resources. In<lb/> Proc. of Third International Conference on Language<lb/> Resources and Evaluation, Las Palmas de Gran Ca-<lb/>naria.<lb/> </bibl>
+<bibl>Yorick Wilks and Mark Stevenson. 1998. The grammar<lb/> of sense: using part-of speech tags as a first step in se-<lb/>mantic disambiguation. Natural Language Engineer-<lb/>ing, 4(2):135–143.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

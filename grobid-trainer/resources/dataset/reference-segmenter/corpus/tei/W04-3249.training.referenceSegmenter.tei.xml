@@ -1,0 +1,24 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>BNC-Consortium. 2000. British national corpus,<lb/> http://www.hcu.ox.ac.uk/BNC/.<lb/> </bibl>
+<bibl>J. P. Comaroni, J. Beall, W. E. Matthews, and G. R.<lb/> New, editors. 1989. Dewey Decimal Classifica-<lb/>tion and Relative Index. Forest Press, Albany,<lb/> New York, 20 th edition.<lb/> </bibl>
+<bibl>G. Escudero, L. M` arquez, and G. Rigau. 2001.<lb/> Using lazy boosting for word sense disambigua-<lb/>tion. In Proc. of SENSEVAL-2 Second Inter-<lb/>national Workshop on Evaluating Word Sense<lb/> Disambiguation System, pages 71–74, Toulose,<lb/> France, July.<lb/> </bibl>
+<bibl>C. Fellbaum. 1998. WordNet. An Electronic Lexical<lb/> Database. The MIT Press.<lb/> </bibl>
+<bibl>Y. Ko and J. Seo. 2000. Automatic text categoriza-<lb/>tion by unsupervised learning. In Proceedings of<lb/> COLING-00, the 18 th International Conference<lb/> on Computational Linguistics, Saarbrücken, Ger-<lb/>many.<lb/> </bibl>
+<bibl>B. Magnini and G.Cavaglì a. 2000. Integrating sub-<lb/>ject field codes into WordNet. In Proceedings<lb/> of LREC-2000, Second International Conference<lb/> on Language Resources and Evaluation, Athens,<lb/> Greece, June.<lb/> </bibl>
+<bibl>B. Magnini, C. Strapparava, G. Pezzulo, and<lb/> A. Gliozzo. 2002. The role of domain informa-<lb/>tion in word sense disambiguation. Natural Lan-<lb/>guage Engineering, 8(4):359–373.<lb/> </bibl>
+<bibl>M. Palmer, C. Fellbaum, S. Cotton, L. Delfs, and<lb/> H.T. Dang. 2001. English tasks: All-words<lb/> and verb lexical sample. In Proceedings of<lb/> SENSEVAL-2, Second International Workshop on<lb/> Evaluating Word Sense Disambiguation Systems,<lb/> Toulouse, France, July.<lb/> </bibl>
+<bibl>J. Preiss and D. Yarowsky, editors. 2002. Pro-<lb/>ceedings of SENSEVAL-2: Second International<lb/> Workshop on Evaluating Word Sense Disam-<lb/>biguation Systems, Toulouse, France.<lb/> </bibl>
+<bibl>R. Redner and H. Walker. 1984. Mixture densi-<lb/>ties, maximum likelihood and the EM algorithm.<lb/> SIAM Review, 26(2):195–239, April.<lb/> </bibl>
+<bibl>F. Sebastiani. 2002. Machine learning in auto-<lb/>mated text categorization. ACM Computing Sur-<lb/>veys, 34(1):1–47.<lb/> </bibl>
+<bibl>Senseval-2. 2001. http://www.senseval.org.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

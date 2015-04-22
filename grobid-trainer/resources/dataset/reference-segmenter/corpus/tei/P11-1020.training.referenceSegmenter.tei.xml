@@ -1,0 +1,43 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Vamshi Ambati and Stephan Vogel. 2010. Can crowds<lb/> build parallel corpora for machine translation systems?<lb/> In Proceedings of the NAACL HLT 2010 Workshop on<lb/> Creating Speech and Language Data with Amazon&apos;s<lb/> Mechanical Turk.<lb/> </bibl>
+<bibl>Colin Bannard and Chris Callison-Burch. 2005. Para-<lb/>phrasing with bilingual parallel corpora. In Proceed-<lb/>ings of the 43rd Annual Meeting of the Association for<lb/> Computational Linguistics (ACL-05).<lb/> </bibl>
+<bibl>Regina Barzilay and Lillian Lee. 2003. Learning to<lb/> paraphrase: An unsupervised approach using multiple-<lb/>sequence alignment. In Proceedings of Human Lan-<lb/>guage Technology Conference / North American Asso-<lb/>ciation for Computational Linguistics Annual Meeting<lb/> (HLT-NAACL-2003).<lb/> </bibl>
+<bibl>Regina Barzilay and Kathleen McKeown. 2001. Extract-<lb/>ing paraphrases from a parallel corpus. In Proceed-<lb/>ings of the 39th Annual Meeting of the Association for<lb/> Computational Linguistics (ACL-2001).<lb/> </bibl>
+<bibl>Michael Bloodgood and Chris Callison-Burch. 2010a.<lb/> Bucking the trend: Large-scale cost-focused active<lb/> learning for statistical machine translation. In Pro-<lb/>ceedings of the 48th Annual Meeting of the Association<lb/> for Computational Linguistics (ACL-2010).<lb/> </bibl>
+<bibl>Michael Bloodgood and Chris Callison-Burch. 2010b.<lb/> Using Mechanical Turk to build machine translation<lb/> evaluation sets. In Proceedings of the NAACL HLT<lb/> 2010 Workshop on Creating Speech and Language<lb/> Data with Amazon&apos;s Mechanical Turk.<lb/> </bibl>
+<bibl>Olivia Buzek, Philip Resnik, and Benjamin B. Beder-<lb/>son. 2010. Error driven paraphrase annotation us-<lb/>ing Mechanical Turk. In Proceedings of the NAACL<lb/> HLT 2010 Workshop on Creating Speech and Lan-<lb/>guage Data with Amazon&apos;s Mechanical Turk.<lb/> </bibl>
+<bibl>Chris Callison-Burch, Philipp Koehn, and Miles Os-<lb/>borne. 2006. Improved statistical machine trans-<lb/>lation using paraphrases. In Proceedings of Human<lb/> Language Technology Conference / North American<lb/> Chapter of the Association for Computational Linguis-<lb/>tics Annual Meeting (HLT-NAACL-06).<lb/> </bibl>
+<bibl>Chris Callison-Burch, Trevor Cohn, and Mirella Lap-<lb/>ata. 2008. Parametric: An automatic evaluation met-<lb/>ric for paraphrasing. In Proceedings of the 22nd In-<lb/>ternational Conference on Computational Linguistics<lb/> (COLING-2008).<lb/> </bibl>
+<bibl>Chris Callison-Burch. 2008. Syntactic constraints on<lb/> paraphrases extracted from parallel corpora. In Pro-<lb/>ceedings of the 2008 Conference on Empirical Meth-<lb/>ods in Natural Language Processing (EMNLP-2008).<lb/> </bibl>
+<bibl>Chris Callison-Burch. 2009. Fast, cheap, and creative:<lb/> Evaluating translation quality using Amazon&apos;s Me-<lb/>chanical Turk. In Proceedings of the 2009 Conference<lb/> on Empirical Methods in Natural Language Process-<lb/>ing (EMNLP-2009).<lb/> </bibl>
+<bibl>Wallace L. Chafe. 1997. The Pear Stories: Cognitive,<lb/> Cultural and Linguistic Aspects of Narrative Produc-<lb/>tion. Ablex, Norwood, NJ.<lb/> </bibl>
+<bibl>Trevor Cohn, Chris Callison-Burch, and Mirella Lapata.<lb/> 2008. Constructing corpora for the development and<lb/> evaluation of paraphrase systems. Computational Lin-<lb/>guistics, 34:597–614, December.<lb/> </bibl>
+<bibl>Michael Denkowski and Alon Lavie. 2010. Explor-<lb/>ing normalization techniques for human judgments of<lb/> machine translation adequacy collected using Amazon<lb/> Mechanical Turk. In Proceedings of the NAACL HLT<lb/> 2010 Workshop on Creating Speech and Language<lb/> Data with Amazon&apos;s Mechanical Turk.<lb/> </bibl>
+<bibl>Michael Denkowski, Hassan Al-Haj, and Alon Lavie.<lb/> 2010.<lb/> Turker-assisted paraphrasing for English-<lb/>Arabic machine translation. In Proceedings of the<lb/> NAACL HLT 2010 Workshop on Creating Speech and<lb/> Language Data with Amazon&apos;s Mechanical Turk.<lb/> </bibl>
+<bibl>Bill Dolan, Chris Quirk, and Chris Brockett. 2004.<lb/> Unsupervised construction of large paraphrase cor-<lb/>pora: Exploiting massively parallel news sources. In<lb/> Proceedings of the 20th International Conference on<lb/> Computational Linguistics (COLING-2004).<lb/> </bibl>
+<bibl>Li Fei-Fei, Asha Iyer, Christof Koch, and Pietro Perona.<lb/> 2007. What do we perceive in a glance of a real-world<lb/> scene? Journal of Vision, 7(1):1–29.<lb/> </bibl>
+<bibl>Ali Ibrahim, Boris Katz, and Jimmy Lin. 2003. Extract-<lb/>ing structural paraphrases from aligned monolingual<lb/> corpora. In Proceedings of the 41st Annual Meeting of<lb/> the Association for Computational Linguistics (ACL-<lb/>03).<lb/> </bibl>
+<bibl>Ann Irvine and Alexandre Klementiev. 2010. Using Me-<lb/>chanical Turk to annotate lexicons for less commonly<lb/> used languages. In Proceedings of the NAACL HLT<lb/> 2010 Workshop on Creating Speech and Language<lb/> Data with Amazon&apos;s Mechanical Turk.<lb/> </bibl>
+<bibl>Philipp Koehn, Hieu Hoang, Alexandra Birch, Chris<lb/> Callison-Burch, Marcello Federico, Nicola Bertoldi,<lb/> Brooke Cowan, Wade Shen, Christine Moran, Richard<lb/> Zens, Chris Dyer, Ondrej Bojar, Alexandra Con-<lb/>stantin, and Evan Herbst. 2007. Moses: Open source<lb/> toolkit for statistical machine translation. In Proceed-<lb/>ings of the 45th Annual Meeting of the Association for<lb/> Computational Linguistics (ACL-07).<lb/> </bibl>
+<bibl>Stanley Kok and Chris Brockett. 2010. Hitting the right<lb/> paraphrases in good time. In Proceedings of Human<lb/> Language Technologies: The Conference of the North<lb/> American Chapter of the Association for Computa-<lb/>tional Linguistics (NAACL-HLT-2010).<lb/> </bibl>
+<bibl>Dekang Lin and Patrick Pantel. 2001. DIRT-discovery<lb/> of inference rules from text. In Proceedings of the<lb/> Seventh ACM SIGKDD International Conference on<lb/> Knowledge Discovery and Data Mining (KDD-2001).<lb/> </bibl>
+<bibl>Chang Liu, Daniel Dahlmeier, and Hwee Tou Ng. 2010.<lb/> PEM: A paraphrase evaluation metric exploiting par-<lb/>allel texts. In Proceedings of the 2010 Conference on<lb/> Empirical Methods in Natural Language Processing<lb/> (EMNLP-2010).<lb/> </bibl>
+<bibl>Xiaojuan Ma and Perry R. Cook. 2009. How well do vi-<lb/>sual verbs work in daily communication for young and<lb/> old adults. In Proceedings of ACM CHI 2009 Confer-<lb/>ence on Human Factors in Computing Systems.<lb/> </bibl>
+<bibl>Bo Pang, Kevin Knight, and Daniel Marcu. 2003.<lb/> Syntax-based alignment of multiple translations: Ex-<lb/>tracting paraphrases and generating new sentences. In<lb/> Proceedings of Human Language Technology Confer-<lb/>ence / North American Association for Computational<lb/> Linguistics Annual Meeting (HLT-NAACL-2003).<lb/> </bibl>
+<bibl>Kishore Papineni, Salim Roukos, Todd Ward, and Wei-<lb/>Jing Zhu. 2002. BLEU: a method for automatic<lb/> evaluation of machine translation. In Proceedings of<lb/> the 40th Annual Meeting of the Association for Com-<lb/>putational Linguistics (ACL-2002), pages 311–318,<lb/> Philadelphia, PA, July.<lb/> </bibl>
+<bibl>Chris Quirk, Chris Brockett, and William Dolan. 2004.<lb/> Monolingual machine translation for paraphrase gen-<lb/>eration. In Proceedings of the 2004 Conference on<lb/> Empirical Methods in Natural Language Processing<lb/> (EMNLP-2004).<lb/> </bibl>
+<bibl>Cyrus Rashtchian, Peter Young, Micah Hodosh, and Ju-<lb/>lia Hockenmaier. 2010. Collecting image annotations<lb/> using Amazon&apos;s Mechanical Turk. In Proceedings of<lb/> the NAACL HLT 2010 Workshop on Creating Speech<lb/> and Language Data with Amazon&apos;s Mechanical Turk.<lb/> </bibl>
+<bibl>Yusuke Shinyama, Satoshi Sekine, Kiyoshi Sudo, and<lb/> Ralph Grishman. 2002. Automatic paraphrase acqui-<lb/>sition from news articles. In Proceedings of Human<lb/> Language Technology Conference.<lb/> </bibl>
+<bibl>Luis von Ahn and Laura Dabbish. 2004. Labeling im-<lb/>ages with a computer game. In Proceedings of ACM<lb/> CHI 2004 Conference on Human Factors in Comput-<lb/>ing Systems.<lb/> </bibl>
+<bibl>Omar F. Zaidan and Chris Callison-Burch. 2009. Feasi-<lb/>bility of human-in-the-loop minimum error rate train-<lb/>ing. In Proceedings of the 2009 Conference on<lb/> Empirical Methods in Natural Language Processing<lb/> (EMNLP-2009).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

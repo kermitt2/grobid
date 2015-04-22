@@ -1,0 +1,26 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>D. Appelt, J. Hobbs, J. Bear, D. Israel, and<lb/> M. Tyson. 1993. Fastus: A finite-state pro-<lb/>cessor for information extraction. In 13th<lb/> Intl. Conf. On Artificial Intelligence (IJCAI).<lb/> </bibl>
+<bibl>E. Brill and P. Resnik. 1994. A rule-based<lb/> approach to prepositional phrase attachment<lb/> disambiguation. In 15th International Conf.<lb/> on Computational Linguistics (COLING).<lb/> </bibl>
+<bibl>E. BriU. 1993. A Corpus-based Approach to<lb/> Language Learning. Ph.D. thesis, U. Penn-<lb/>sylvania.<lb/> </bibl>
+<bibl>M. Collins and J. Brooks. 1995. Preposi-<lb/>tional phrase attachment through a backed-<lb/>off model. In Pwc. of the 3rd Workshop on<lb/> Very Large Corpora, Cambridge, MA, USA.<lb/> </bibl>
+<bibl>M. Collins. 1997. Three generative, lexicalized<lb/> models for statistical parsing. In A CL97.<lb/> </bibl>
+<bibl>Defense Advanced Research Projects Agency.<lb/> 1995. Proc. 6th Message Understanding Con-<lb/>ference (MUC-6), November.<lb/> </bibl>
+<bibl>D. Hindle and M. Rooth. 1993. Structural am-<lb/>biguity and lexical relations. Computational<lb/> Linguistics, 19(1):103-120.<lb/> </bibl>
+<bibl>C. Manning and B. Carpenter. 1997. Prob-<lb/>abilistic parsing using left corner language<lb/> models. In Proc. of the 5th Intl. Workshop<lb/> on Parsing Technologies.<lb/> </bibl>
+<bibl>M. Marcus, B. Santorini, and M. Marcinkiewicz.<lb/> 1993. Building a large annotated corpus of<lb/> english: the penn treebank. Computational<lb/> Linguistics, 19(2).<lb/> </bibl>
+<bibl>P. Merlo, M. Crocker, and C. Berthouzoz. 1997.<lb/> Attaching multiple prepositional phrases:<lb/> Generalized backed-off estimation. In Proc.<lb/> of the 2nd Conf. on Empirical Methods in<lb/> Natural Language Processing. ACL.<lb/> </bibl>
+<bibl>G. Miller. 1990. Wordnet: an on-line lexical<lb/> database. Intl. J. of Lexicography, 3(4).<lb/> </bibl>
+<bibl>L. Ramshaw and M. Marcus. 1995. Text chunk-<lb/>ing using transformation-based learning. In<lb/> Proc. 3rd Workshop on Very Large Corpora.<lb/> </bibl>
+<bibl>A. Ratnaparkhi, J. Reynar, and S. Roukos.<lb/> 1994. A maximum entropy model for prepo-<lb/>sitional phrase attachment. In Proc. of the<lb/> Human Language Technology Workshop. Ad-<lb/>vanced Research Projects Agency, March.<lb/> </bibl>
+<bibl>S. Wolff, C. Macleod, and A. Meyers, 1995.<lb/> Comlex Word Classes. C.S. Dept., New York<lb/> U., Feb. prepared for the Linguistic Data<lb/> Consortium, U. Pennsylvania.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

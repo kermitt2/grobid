@@ -1,0 +1,56 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Aone, C., M.E. Okurowski, J. Gorlinsky, B.<lb/> Larsen. 1998. A Scalable Summarization<lb/> System using Robust NLP. In I. Mani and M.<lb/> Maybury (eds), Advances in Automated Text<lb/> Summarization. MIT Press.<lb/> </bibl>
+<bibl>Bagga, A. and B. Baldwin. 1998. Entity-Based<lb/> Cross-Document Cross-Referencing using the<lb/> Vector Space Model. In Proceedings of<lb/> COLING/ACL, 79-86. Montreal, Canada.<lb/> </bibl>
+<bibl>Baldwin,<lb/> B.<lb/> 1998.<lb/> Reworking<lb/> of<lb/> TIPSTER/SUMMAC Dry Run Evaluation<lb/> Results. University of Pennsylvania Report.<lb/> </bibl>
+<bibl>Baxendale, P.B. 1958. Machine-Made Index for<lb/> Technical Literature--An Experiment. IBM<lb/> Journal (October) 354-361.<lb/> </bibl>
+<bibl>Brill, E. 1992. A Corpus-Based Approach to<lb/> Language Learning. Ph.D. dissertation,<lb/> University of Pennsylvania.<lb/> </bibl>
+<bibl>Edmundson, H.P. 1968. New Methods in<lb/> Automatic Extraction. Journal of the ACM<lb/> 16(2), 264-285.<lb/> </bibl>
+<bibl>Elhadad, M. 1992. Using Argumentation to<lb/> Control Lexical Choice: A Functional<lb/> Unification-Based Approach.<lb/> Ph.D.<lb/> dissertation, Columbia University.<lb/> </bibl>
+<bibl>Endres-Niggemeyer, B.<lb/> 1997.<lb/> SimSum:<lb/> Simulation of Summatizing. In Proceedings<lb/> of the Workshop on Intelligent Scalable<lb/> Summarization at the ACL/EACL Conference,<lb/> 89-96. Madrid, Spain.<lb/> </bibl>
+<bibl>Firmin Hand, T. and B. Sundheim. 1998.<lb/> TIPSTER-SUMMAC<lb/> S u m m a r i z a t i o n<lb/> Evaluation. Proceedings of the TIPSTER Text<lb/> Phase 111 Workshop. Washington.<lb/> </bibl>
+<bibl>Hovy, E.H. and U Wanner. 1996. Managing<lb/> Sentence Planning Requirements.<lb/> In<lb/> Proceedings of the Workshop on Gaps and<lb/> Bridges in NL Planning and Generation,<lb/> 53-58.<lb/> ECAI Conference. Budapest,<lb/> Hungary.<lb/> </bibl>
+<bibl>Hovy, E.H. 1998. Combining and Standardizing<lb/> Large-Scale, Practical Ontologies for Machine<lb/> Translation and Other Uses. In Proceedings<lb/> of the First International Conference on<lb/> Language Resources and Evaluation (LREC),<lb/> 535-542. Granada, Spain.<lb/> </bibl>
+<bibl>Hovy, E.H. and M. Junk. In prep.<lb/> </bibl>
+<bibl>Hovy, E.H. and C-Y. Lin. 1998. Automating<lb/> Text Summarization in SUMMARIST. In I.<lb/> Mani and M. Maybury (eds), Advances in<lb/> Automated Text Summarization. MIT Press.<lb/> </bibl>
+<bibl>Hovy, E.H. The Evaluation of Summaries. In<lb/> prep.<lb/> </bibl>
+<bibl>Knight, K. and S.K. Luk. 1994. Building a<lb/> Large-Scale Knowledge Base for Machine<lb/> Translation. Proceedings of the Conference of<lb/> the American Association of Artificial<lb/> Intelligence (AAAI-94), 773-778. Seattle,<lb/> WA.<lb/> </bibl>
+<bibl>Kupiec, J., J. Pedersen, and F. Chen. 1995. A<lb/> Trainable Document Summarizer. In<lb/> Proceedings of the Eighteenth Annual<lb/> International ACM Conference on Research<lb/> and Development in Information Retrieval<lb/> (SIGIR), 68-73. Seattle, WA.<lb/> </bibl>
+<bibl>Langkilde, I. and K. Knight. 1998. Generation<lb/> that Exploits Corpus Knowledge.<lb/> In<lb/> Proceedings of the COLING/A CL Conference,<lb/> 704-709. Montreal, Canada.<lb/> </bibl>
+<bibl>Lavoie, B. and O. Rambow. 1997. A Fast and<lb/> Portable Realizer for Text Generation<lb/> Systems. In Proceedings of the Applied<lb/> Natural Language Processing Conference<lb/> (ANLP-97), 265-270. Washington, DC.<lb/> </bibl>
+<bibl>Lin, C-Y. 1995. Topic Identification by Concept<lb/> Generalization. In Proceedings of the Thirty-<lb/>third Conference of the Association of<lb/> Computational Linguistics (ACL-95),<lb/> 308-310. Boston, MA.<lb/> </bibl>
+<bibl>Lin, C-Y.<lb/> 1997. Robust Automated Topic<lb/> Identification. Ph.D. dissertation, University<lb/> of Southern California.<lb/> </bibl>
+<bibl>Lin, C-Y. and E.H. Hovy. 1997. Identifying<lb/> Topics by Position. In Proceedings of the<lb/> Applied Natural Language Processing<lb/> Conference<lb/> (ANLP-97),<lb/> 283-290.<lb/> Washington, DC.<lb/> </bibl>
+<bibl>Lin, C-Y. and E.H. Hovy. 1998. Automatic Text<lb/> Categorization: A Concept-Based Approach.<lb/> In prep.<lb/> </bibl>
+<bibl>Lin, C-Y. Training a Selection Function for<lb/> Extraction in SUMMARIST. In prep.<lb/> </bibl>
+<bibl>Liu, H. and E.H. Hovy. Automated Learning of<lb/> Cue Phrases for Text Summarization. In prep.<lb/> </bibl>
+<bibl>Luhn, H.P. 1959. The Automatic Creation of<lb/> Literature Abstracts. IBM Journal of Research<lb/> and Development, 159-165.<lb/> </bibl>
+<bibl>Mann, W.C. and S.A. Thompson. 1988.<lb/> Rhetorical Structure Theory: Toward a<lb/> Functional Theory of Text Organization. Text<lb/> 8(3) (243-281).<lb/> </bibl>
+<bibl>Marcu, D. 1997. The Rhetorical Parsing,<lb/> Summarization, and Generation of Natural<lb/> Language Texts.<lb/> Ph.D. dissertation,<lb/> University of Toronto.<lb/> </bibl>
+<bibl>Marcu, D. 1998. The Automatic Construction of<lb/> Large-scale Corpora for Summarization<lb/> Research. Forthcoming.<lb/> </bibl>
+<bibl>Marcu, D. 1998a. Improving Summarization<lb/> through Rhetorical Parsing Tuning.<lb/> Proceedings of the COLING-ACL Workshop<lb/> on Very Large Corpora. Montreal, Canada.<lb/> </bibl>
+<bibl>Marcu, D. 1998b. Automated Creation of<lb/> Extracts from Texts and Abstracts. In prep.<lb/> </bibl>
+<bibl>McKeown, K.R. and D.R. Radev. 1995.<lb/> Generating Summaries of Multiple News<lb/> Articles. In Proceedings of the Eighteenth<lb/> Annual International ACM Conference on<lb/> Research and Development in Information<lb/> Retrieval (SIGIR), 74-82. Seattle, WA.<lb/> </bibl>
+<bibl>Miller, G., R. Beckwith, C. Fellbaum, D. Gross,<lb/> and K. Miller. 1990. Five papers on WordNet.<lb/> CSL Report 43, Cognitive Science<lb/> Laboratory, Princeton University.<lb/> </bibl>
+<bibl>Mitra, M., A. Singhal, and C. Buckley. 1997.<lb/> Automatic Text Summarization by Paragraph<lb/> Extraction. In Proceedings of the Workshop<lb/> on Intelligent Scalable Summarization at the<lb/> ACL/EACL Conference, 39-46. Madrid,<lb/> Spain.<lb/> </bibl>
+<bibl>Nirenburg, S., V. Lesser, and E. Nyberg. 1989.<lb/> Controlling a Language Generation Planner.<lb/> In Proceedings of IJCAI, 1524-1530. Detroit,<lb/> MI.<lb/> </bibl>
+<bibl>The Penman Primer, User Guide, and Reference<lb/> Manual. 1988. Unpublished documentation,<lb/> Information Sciences Institute, University of<lb/> Southern California.<lb/> </bibl>
+<bibl>Quinlan, J.R. 1986. Induction of Decision Trees.<lb/> Machine Learning 81-106.<lb/> </bibl>
+<bibl>Rambow, O. and T. Korelsky. 1992. Applied<lb/> Text Generation. In Proceedings of the<lb/> Applied Natural Language Processing<lb/> Conference (ANLP). Trento, Italy<lb/> Salton, G. 1988. Automatic Text Processing.<lb/> Reading, MA: Addison-Wesley.<lb/> </bibl>
+<bibl>Shannon, C. 1951. Prediction and Entropy of<lb/> Printed English. Bell System Technical<lb/> Journal, January 1951.<lb/> </bibl>
+<bibl>Sp/irck Jones, K. 1998. Introduction to Text<lb/> Summarisation. In I. Mani and M. Maybury<lb/> (eds), Advances in Automated Text<lb/> Summarization. MIT Press.<lb/> </bibl>
+<bibl>Strzalkowski, T. et al., 1998. ? In I. Mani and<lb/> M. Maybury (eds), Advances in Automated<lb/> Text Summarization. MIT Press.<lb/> </bibl>
+<bibl>Tait, J.I. and K. Sparck Jones. 1982. Automatic<lb/> Summarising of English Texts. Ph.D.<lb/> dissertation, Cambridge University.<lb/> </bibl>
+<bibl>Teufel, S. and M. Moens. 1998. Sentence<lb/> Extraction as a Classification Task. In I. Mani<lb/> and M. Maybury (eds), Advances in<lb/> Automated Text Summarization. MIT Press.<lb/> </bibl>
+<bibl>TREC. Harman, D. (ed). 1995. Proceedings of<lb/> the TREC Conference.<lb/> </bibl>
+<bibl>Van Dijk, T.A. and W. Kintsch. 1983. Strategies<lb/> of Discourse Comprehension. New York:<lb/> Academic Press.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

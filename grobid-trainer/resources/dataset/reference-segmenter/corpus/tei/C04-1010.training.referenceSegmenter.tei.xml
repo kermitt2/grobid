@@ -1,0 +1,53 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>D. W. Aha, D. Kibler, and M. Albert. 1991.<lb/> Instance-based learning algorithms. Machine<lb/> Learning, 6:37–66.<lb/> </bibl>
+<bibl>D. Aha, editor. 1997. Lazy Learning. Kluwer.<lb/> </bibl>
+<bibl>A. Bies, M. Ferguson, K. Katz, and R. MacIn-<lb/>tyre. 1995. Bracketing guidelines for Treebank II<lb/> style, Penn Treebank project. University of Penn-<lb/>sylvania, Philadelphia.<lb/> </bibl>
+<bibl>E. Black, F. Jelinek, J. Lafferty, D. Magerman,<lb/> R. Mercer, and S. Roukos. 1992. Towards<lb/> history-based grammars: Using richer models for<lb/> probabilistic parsing. In Proceedings of the 5th<lb/> DARPA Speech and Natural Language Workshop.<lb/> </bibl>
+<bibl>D. Blaheta and E. Charniak. 2000. Assigning<lb/> function tags to parsed text. In Proceedings of<lb/> NAACL, pages 234–240.<lb/> </bibl>
+<bibl>S. Buchholz. 2002. Memory-Based Grammatical<lb/> Relation Finding. Ph.D. thesis, University of<lb/> Tilburg.<lb/> </bibl>
+<bibl>J. Carroll, E. Briscoe, and A. Sanfilippo. 1998.<lb/> Parser evaluation: A survey and a new pro-<lb/>posal. In Proceedings of LREC, pages 447–454,<lb/> Granada, Spain.<lb/> </bibl>
+<bibl>E. Charniak. 2000. A maximum-entropy-inspired<lb/> parser. In Proceedings of NAACL.<lb/> </bibl>
+<bibl>M. Collins, J. Hajič, E. Brill, L. Ramshaw, and<lb/> C. Tillmann. 1999. A Statistical Parser of Czech.<lb/> In Proceedings of ACL, pages 505–512, Univer-<lb/>sity of Maryland, College Park, USA.<lb/> </bibl>
+DA RA CM<lb/> ≤ 10<lb/> 93.7 96.6 83.6<lb/> 
+        11–20 88.8 86.4 39.5<lb/> 
+        21–30 87.4 83.4 20.8<lb/> 
+        31–40 86.8 78.1<lb/> 9.9<lb/> 
+≥ 41<lb/> 84.6 74.9<lb/> 1.8<lb/> 
+Table 3: Accuracy in relation to sentence length (number of words)<lb/> 
+<bibl>M. Collins. 1996. A new statistical parser based on<lb/> bigram lexical dependencies. In Proceedings of<lb/> ACL, pages 184–191, Santa Cruz, CA.<lb/> </bibl>
+<bibl>M. Collins. 1997. Three generative, lexicalised<lb/> models for statistical parsing. In Proceedings of<lb/> ACL, pages 16–23, Madrid, Spain.<lb/> </bibl>
+<bibl>M. Collins. 1999. Head-Driven Statistical Models<lb/> for Natural Language Parsing. Ph.D. thesis, Uni-<lb/>versity of Pennsylvania.<lb/> </bibl>
+<bibl>S. Cost and S. Salzberg. 1993. A weighted near-<lb/>est neighbor algorithm for learning with symbolic<lb/> features. Machine Learning, 10:57–78.<lb/> </bibl>
+<bibl>W. Daelemans, A. van den Bosch, and J. Zavrel.<lb/> 2002. Forgetting exceptions is harmful in lan-<lb/>guage learning. Machine Learning, 34:11–43.<lb/> </bibl>
+<bibl>W. Daelemans, J. Zavrel, K. van der Sloot, and<lb/> A. van den Bosch. 2003. Timbl: Tilburg mem-<lb/>ory based learner, version 5.0, reference guide.<lb/> Technical Report ILK 03-10, Tilburg University,<lb/> ILK.<lb/> </bibl>
+<bibl>W. Daelemans. 1999. Memory-based language<lb/> processing. Introduction to the special issue.<lb/> Journal of Experimental and Theoretical Artifi-<lb/>cial Intelligence, 11:287–292.<lb/> </bibl>
+<bibl>S. A. Dudani. 1976. The distance-weighted k-<lb/>nearest neighbor rule. IEEE Transactions on Sys-<lb/>tems, Man, and Cybernetics, SMC-6:325–327.<lb/> </bibl>
+<bibl>J. Einarsson. 1976. Talbankens skriftspråkskonkor-<lb/>dans. Lund University.<lb/> </bibl>
+<bibl>J. M. Eisner. 1996. Three new probabilistic models<lb/> for dependency parsing: An exploration. In Pro-<lb/>ceedings of COLING, Copenhagen, Denmark.<lb/> </bibl>
+<bibl>E. Fix and J. Hodges. 1952. Discriminatory anal-<lb/>ysis: Nonparametric discrimination: Consistency<lb/> properties. Technical Report 11, USAF School of<lb/> Aviation Medicine, Randolph Field, Texas.<lb/> </bibl>
+<bibl>J. Hajic. 1998. Building a syntactically annotated<lb/> corpus: The prague dependency treebank. In Is-<lb/>sues of Valency and Meaning, pages 106–132.<lb/> Karolinum.<lb/> </bibl>
+<bibl>M. T. Kromann. 2003. The Danish dependency<lb/> treebank and the DTAG treebank tool. In Pro-<lb/>ceedings of the Second Workshop on Treebanks<lb/> and Linguistic Theories, pages 217–220, Växjö,<lb/> Sweden.<lb/> </bibl>
+<bibl>T. Kudo and Y. Matsumoto. 2000. Japanese depen-<lb/>dency structure analysis based on support vec-<lb/>tor machines. In Proceedings of EMNLP/VLC,<lb/> Hongkong.<lb/> </bibl>
+<bibl>D. Lin. 1998. Dependency-based evaluation of<lb/> MINIPAR. In Proceedings of LREC.<lb/> </bibl>
+<bibl>D. M. Magerman. 1995. Statistical decision-tree<lb/> models for parsing. In Proceedings of ACL,<lb/> pages 276–283, Boston, MA.<lb/> </bibl>
+<bibl>M. P. Marcus, B. Santorini, and M. A.<lb/> Marcinkiewicz. 1993. Building a large an-<lb/>notated corpus of English: The Penn Treebank.<lb/> Computational Linguistics, 19:313–330.<lb/> </bibl>
+<bibl>J. Nivre, J. Hall, and J. Nilsson. 2004. Memory-<lb/>based dependency parsing. In Proceedings of<lb/> CoNLL, pages 49–56.<lb/> </bibl>
+<bibl>J. Nivre. 2003. An efficient algorithm for projective<lb/> dependency parsing. In Proceedings of IWPT,<lb/> pages 149–160, Nancy, France.<lb/> </bibl>
+<bibl>K. Oflazer. 2003. Dependency parsing with an ex-<lb/>tended finite-state approach. Computational Lin-<lb/>guistics, 29:515–544.<lb/> </bibl>
+<bibl>R. Skousen. 1989. Analogical Modeling of Lan-<lb/>guage. Kluwer.<lb/> </bibl>
+<bibl>R. Skousen. 1992. Analogy and Structure. Kluwer.<lb/> </bibl>
+<bibl>C. Stanfill and D. Waltz. 1986. Toward memory-<lb/>based reasoning. Communications of the ACM,<lb/> 29:1213–1228.<lb/> </bibl>
+<bibl>V. N. Vapnik. 1995. The Nature of Statistical<lb/> Learning Theory. Springer-Verlag.<lb/> </bibl>
+<bibl>J. Veenstra and W. Daelemans. 2000. A memory-<lb/>based alternative for connectionist shift-reduce<lb/> parsing. Technical Report ILK-0012, University<lb/> of Tilburg.<lb/> </bibl>
+<bibl>H. Yamada and Y. Matsumoto. 2003. Statistical de-<lb/>pendency analysis with support vector machines.<lb/> In Proceedings of IWPT, pages 195–206, Nancy,<lb/> France.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

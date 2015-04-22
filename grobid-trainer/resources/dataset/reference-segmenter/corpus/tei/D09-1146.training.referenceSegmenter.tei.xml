@@ -1,0 +1,34 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>D. Blei, A. Ng, and M. Jordan. 2003. Latent dirichlet<lb/> allocation. Journal of Machine Learning Research,<lb/> 3.<lb/> </bibl>
+<bibl>A. P. Dempster, N. M. Laird, and D. B. Rubin. 1977.<lb/> Maximum likelihood from incomplete data via the<lb/> em algorithm. Journal of the Royal Statistical Soci-<lb/>ety. Series B (Methodological), 39(1):1–38.<lb/> </bibl>
+<bibl>W.R. Gilks, S. Richardson, and D.J. Spiegelhalter.<lb/> 1995. Markov Chain Monte Carlo in Practice. CRC<lb/> Press.<lb/> </bibl>
+<bibl>M. Girolami and A. Kabán. 2003. On an equivalence<lb/> between plsi and lda. In SIGIR &apos;03: Proceedings<lb/> of the 26th annual international ACM SIGIR confer-<lb/>ence on Research and development in informaion re-<lb/>trieval, pages 433–434, New York, NY, USA. ACM.<lb/> </bibl>
+<bibl>T. Griffiths and M. Steyvers. 2004. Finding scientific<lb/> topics. In Proceedings of the National Academy of<lb/> Sciences of the United States of America.<lb/> </bibl>
+<bibl>Tl Griffiths, M. Steyvers, and Jb Tenenbaum. 2007.<lb/> Topics in semantic representation. Psychological<lb/> Review, 114(2):211–244.<lb/> </bibl>
+<bibl>D. Hall, D. Jurafsky, and C. Manning. 2008. Study-<lb/>ing the history of ideas using topic models. In Pro-<lb/>ceedings of the Conference on Empirical Methods<lb/> in Natural Language Processing (EMNLP), pages<lb/> 363–371.<lb/> </bibl>
+<bibl>G. Heinrich. 2008. Parameter estimation for text anal-<lb/>ysis. Technical report, University of Leipzig.<lb/> </bibl>
+<bibl>T. Hofmann. 1999. Probabilistic latent semantic in-<lb/>dexing. In SIGIR &apos;99: Proceedings of the 22nd an-<lb/>nual international ACM SIGIR conference on Re-<lb/>search and development in information retrieval,<lb/> pages 50–57, New York, NY, USA. ACM.<lb/> </bibl>
+<bibl>W. Li and A. McCallum. 2006. Pachinko allocation:<lb/> Dag-structured mixture models of topic correlations.<lb/> In International Conference on Machine Learning.<lb/> </bibl>
+<bibl>A. McCallum, X. Wang, and A. Corrada-Emmanuel.<lb/> 2007a. Topic and role discovery in social networks<lb/> with experiments on enron and academic email.<lb/> Journal of Artificial Intelligence Research (JAIR),<lb/> 30:249–272.<lb/> </bibl>
+<bibl>A. McCallum, X. Wang, and N. Mohanty. 2007b. Joint<lb/> group and topic discovery from relations and text.<lb/> In Statistical Network Analysis: Models, Issues and<lb/> New Directions -Lecture Notes in Computer Science<lb/> 4503, pages 28–44.<lb/> </bibl>
+<bibl>D. Mimno, W. Li, and A. McCallum. 2007. Mixtures<lb/> of hierarchical topics with pachinko allocation. In<lb/> International Conference on Machine Learning.<lb/> </bibl>
+<bibl>T. Minka. 2003. Estimating a dirichlet distribution.<lb/> </bibl>
+<bibl>T. Mitchell. 1997. Machine Learning. McGraw-Hill,<lb/> Boston.<lb/> </bibl>
+<bibl>J. Pasternack and D. Roth. 2009. Extracting article text<lb/> from the web with maximum subsequence segmen-<lb/>tation. In The International World Wide Web Con-<lb/>ference, April.<lb/> </bibl>
+<bibl>M. Paul and R. Girju. 2009. Topic modeling of re-<lb/>search fields: An interdisciplinary perspective. In<lb/> Proceedings of the the International Conference on<lb/> Recent Advances in Natural Language Processing<lb/> (RANLP) (to appear).<lb/> </bibl>
+<bibl>X. Phan, L. Nguyen, and S. Horiguchi. 2008. Learning<lb/> to classify short and sparse text &amp; web with hidden<lb/> topics from large-scale data collections. In WWW<lb/> &apos;08: Proceeding of the 17th international conference<lb/> on World Wide Web, pages 91–100, New York, NY,<lb/> USA. ACM.<lb/> </bibl>
+<bibl>X. Wang, A. McCallum, and X. Wei. 2007. Top-<lb/>ical n-grams: Phrase and topic discovery, with an<lb/> application to information retrieval. In ICDM &apos;07:<lb/> Proceedings of the 2007 Seventh IEEE International<lb/> Conference on Data Mining, pages 697–702. IEEE<lb/> Computer Society.<lb/> </bibl>
+<bibl>C. Wang, B. Thiesson, C. Meek, and D. Blei. 2009.<lb/> Markov topic models. In The Twelfth International<lb/> Conference on Artificial Intelligence and Statistics<lb/> (AISTATS), pages 583–590.<lb/> </bibl>
+<bibl>T. Yano, W. Cohen, and N. Smith. 2009. Predicting<lb/> response to political blog posts with topic models.<lb/> In The 7th Conference of the North American Chap-<lb/>ter of the Association for Computational Linguistics<lb/> (NAACL).<lb/> </bibl>
+<bibl>C. Zhai, A. Velivelli, and B. Yu. 2004. A cross-<lb/>collection mixture model for comparative text min-<lb/>ing. In Proceedings of KDD 04, pages 743–748.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

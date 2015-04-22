@@ -1,0 +1,35 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>M. Banko and R. Moore. 2004. Part-of-speech tagging in con-<lb/>text. In Proc. of COLING 2004.<lb/> </bibl>
+<bibl>A. Bies.<lb/> 2003.<lb/> Guide to collapsing Arabic tagset.<lb/> http://www.ircs.upenn.edu/arabic/Jan03release/arabic-<lb/>POStags-collapse-to-PennPOStags.txt.<lb/> </bibl>
+<bibl>J. Bilmes and G. Zweig. 2002. The Graphical Models Toolkit:<lb/> an open-source software system for speech and time series<lb/> processing. In Proc. of ICASSP.<lb/> </bibl>
+<bibl>J. Bilmes. 2000. Dynamic Bayesian multi-networks. In The<lb/> 16th Conf. on Uncertainty in Artificial Intelligence.<lb/> </bibl>
+<bibl>T. Brants. 2000. TnT -a statistical part-of-speech tagger. In<lb/> Proc. of 6th Applied Natural Language Processing Conf.<lb/> </bibl>
+<bibl>E. Brill. 1995. Unsupervised learning of disambiguation rules<lb/> for part of speech tagging. In The 3rd Workshop on Very<lb/> Large Corpora.<lb/> </bibl>
+<bibl>P.F. Brown et al. 1992. Class-based n-gram models of natural<lb/> language. Computational Linguistics, 18(4):467–479.<lb/> </bibl>
+<bibl>I. Bulyko, M. Ostendorf, and A. Stolcke. 2003. Getting more<lb/> mileage from web text for conversational speech language<lb/> modeling using class-dependent mixtures. In Proc. of HLT.<lb/> </bibl>
+<bibl>D. Cutting et al. 1992. A practical part-of-speech tagger. In<lb/> Proc. 3rd Conf. on Applied Natural Language Processing.<lb/> </bibl>
+<bibl>Walter Daelemans, Jakub Zavrel, Peter Berck, and Steven<lb/> Gillis. 1996. MBT: A memory-based part of speech tagger-<lb/>generator. In 4th Workshop on Very Large Corpora.<lb/> </bibl>
+<bibl>A. De Roeck and W. Al-Fares. 2000. A morphologically sen-<lb/>sitive clustering algorithm for identifying arabic roots. In<lb/> Proceedings of the 38th Annual Meeting of the ACL.<lb/> </bibl>
+<bibl>M. Diab, K. Hacioglu, and D. Jurafsky. 2004. Automatic tag-<lb/>ging of Arabic text: from raw text to base phrase chunks. In<lb/> Proceedings of HLT/NAACL.<lb/> </bibl>
+<bibl>J. Hana, A. Feldman, and C. Brew. 2004. A resource-light<lb/> approach to Russian morphology: Tagging Russian using<lb/> Czech resources. In Proc. of EMNLP 2004, July.<lb/> </bibl>
+<bibl>P. Heeman. 1998. POS vs. classes in language modeling. In<lb/> Proc. of 6th Workshop on Very Large Corpora.<lb/> </bibl>
+<bibl>S. Khoja. 2001. APT: Arabic part-of-speech tagger. In Proc.<lb/> of the NAACL Student Workshop.<lb/> </bibl>
+<bibl>W. Kim and S. Khudanpur. 2004. Lexical triggers and latent se-<lb/>mantic analysis for cross-lingual language model adaptation.<lb/> </bibl>
+<bibl>ACM Trans. on Asian Language Info. Processing, 3:94–112.<lb/> </bibl>
+<bibl>R. Koeling. 2000. Chunking with maximum entropy models.<lb/> In Proceedings of CoNLL.<lb/> </bibl>
+<bibl>M. Osborne. 2000. Shallow parsing as part-of-speech tagging.<lb/> In Proc. of CoNLL.<lb/> </bibl>
+<bibl>A. Rathnaparki. 1996. A maximum-entropy part-of-speech<lb/> tagger. In Proc. of EMNLP.<lb/> </bibl>
+<bibl>K. Toutanova, D. Klein, C. Manning, and Y. Singer. 2003.<lb/> Feature-rich part-of-speech tagging with a cyclic depen-<lb/>dency network. In Proceedings of HLT-NAACL.<lb/> </bibl>
+<bibl>D. Vergyri, K. Kirchhoff, K. Duh, and A. Stolcke. 2004.<lb/> Morphology-based language modeling for Arabic speech<lb/> recognition. In Proc. of ICSLP.<lb/> </bibl>
+<bibl>D. Yarowsky, G. Ngai, and R. Wicentowski. 2001. Inducing<lb/> multilingual pos taggers and np bracketers via robust projec-<lb/>tion across aligned corpora. In Proc. of HLT.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

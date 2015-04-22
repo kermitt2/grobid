@@ -1,0 +1,34 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>ACE. 2004. The NIST ACE evaluation website.<lb/> http://www.nist.gov/speech/tests/ace/<lb/> </bibl>
+<bibl>Eugene Agichtein and Luis Gravano. 2000. Snow-<lb/>ball: Extracting Relations from Large Plain-Text<lb/> Collections. Proceedings of the 5th ACM Confer-<lb/>ence on Digital Libraries (DL 2000).<lb/> </bibl>
+<bibl>Sergy Brin. 1998. Extracting Patterns and Relations<lb/> from the World Wide Web. Proceedings of the 1998<lb/> International Workshop on the Web and Data-<lb/>bases &quot;<lb/> </bibl>
+<bibl>Stijn van Dongen. 2000. A Cluster Algorithm for<lb/> Graphs. Technical Report INS-R0010, National<lb/> Research Institute for Mathematics and Computer<lb/> Science in the Netherlands.<lb/> </bibl>
+<bibl>Stijn van Dongen. 2000. Graph Clustering by Flow<lb/> Simulation. PhD thesis, University of Utrecht<lb/> Oren Etzioni, Michael Cafarella, Doug Downey, Ana-<lb/>Maria Popescu, Tal Shaked, Stephen Soderland,<lb/> Daniel S. Weld, and Alexander Yates. 2004. Web-<lb/>scale information extraction in KnowItAll (prelimi-<lb/>nary results). In Proceedings of the 13th World<lb/> Wide Web Conference, pages 100-109.<lb/> </bibl>
+<bibl>Oren Etzioni, Michael Cafarella, Doug Downey, Ana-<lb/>Maria Popescu, Tal Shaked, Stephen Soderland,<lb/> Daniel S. Weld, and Alexander Yates. 2005. Unsu-<lb/>pervised Named-Entity Extraction from the Web:<lb/> An Experimental Study. Artificial Intelligence,<lb/> 2005.<lb/> </bibl>
+<bibl>Radu Florian, Hany Hassan, Hongyan Jing, Nanda<lb/> Kambhatla, Xiaqiang Luo, Nicolas Nicolov, and<lb/> Salim Roukos. 2004. A Statistical Model for multi-<lb/>lingual entity detection and tracking. Proceedings<lb/> of the Human Language Technologies Conference<lb/> (HLT-NAACL 2004).<lb/> </bibl>
+<bibl>Dayne Freitag, and Nicholas Kushmerick. 2000.<lb/> Boosted wrapper induction. The 14th European<lb/> Conference on Artificial Intelligence Workshop on<lb/> Machine Learning for Information Extraction<lb/> Rayid Ghani and Rosie Jones. 2002. A Comparison of<lb/> Efficacy and Assumptions of Bootstrapping Algo-<lb/>rithms for Training Information Extraction Sys-<lb/>tems. Workshop on Linguistic Knowledge Acquisi-<lb/>tion and Representation: Bootstrapping Annotated<lb/> Data at the Linguistic Resources and Evaluation<lb/> Conference (LREC 2002).<lb/> </bibl>
+<bibl>Takaaki Hasegawa, Satoshi Sekine, Ralph Grishman.<lb/> 2004. Discovering Relations among Named Enti-<lb/>ties from Large Corpora. Proceedings of The 42 nd<lb/> Annual Meeting of the Association for Computa-<lb/>tional Linguistics (ACL 2004).<lb/> </bibl>
+<bibl>Taher Haveliwala. 2002. Topic-sensitive PageRank.<lb/> Proceedings of the 11th International World Wide<lb/> Web Conference<lb/> </bibl>
+<bibl>Thorsten Joachims. 2003. Transductive Learning via<lb/> Spectral Graph Partitioning. Proceedings of the In-<lb/>ternational Conference on Machine Learning<lb/> (ICML 2003).<lb/> </bibl>
+<bibl>Nanda Kambhatla. 2004. Combining Lexical, Syntac-<lb/>tic, and Semantic Features with Maximum Entropy<lb/> Models for Information Extraction. Proceedings of<lb/> The 42 nd Annual Meeting of the Association for<lb/> Computational Linguistics (ACL 2004).<lb/> </bibl>
+<bibl>John Kleinberg. 1998. Authoritative Sources in a Hy-<lb/>perlinked Environment. Proceedings of the 9th<lb/> ACM-SIAM Symposium on Discrete Algorithms.<lb/> </bibl>
+<bibl>N. Kushmerick, D.S. Weld, R.B. Doorenbos. 1997.<lb/> Wrapper Induction for Information Extraction.<lb/> Proceedings of the International Joint Conference<lb/> on Artificial Intelligence.<lb/> </bibl>
+<bibl>Winston Lin, Roman Yangarber, Ralph Grishman.<lb/> 2003. Bootstrapped Learning of Semantic Classes<lb/> from Positive and Negative Examples. Proceedings<lb/> of the 20 th International Conference on Machine<lb/> Learning (ICML 2003) Workshop on The Contin-<lb/>uum from Labeled to Unlabeled Data in Machine<lb/> Learning and Data Mining.<lb/> </bibl>
+<bibl>Ion<lb/> Muslea,<lb/> Steven<lb/> Minton,<lb/> and<lb/> Craig<lb/> Knoblock.1999. A hierarchical approach to wrap-<lb/>per induction. Proceedings of the Third Interna-<lb/>tional Conference on Autonomous Agents.<lb/> </bibl>
+<bibl>Ted Pedersen, Siddharth Patwardhan, and Jason<lb/> Michelizzi. 2004, WordNet::Similarity -Measuring<lb/> the Relatedness of Concepts. Proceedings of Fifth<lb/> Annual Meeting of the North American Chapter of<lb/> the Association for Computational Linguistics<lb/> (NAACL 2004)<lb/> </bibl>
+<bibl>Ellen Riloff and Rosie Jones. 2003. Learning diction-<lb/>aries for information extraction by multilevel boot-<lb/>strapping. Proceedings of the Sixteenth national<lb/> Conference on Artificial Intelligence (AAAI 1999).<lb/> </bibl>
+<bibl>Michael Thelen and Ellen Riloff. 2002. A Bootstrap-<lb/>ping Method for Learning Semantic Lexicons using<lb/> Extraction Pattern Contexts. Proceedings of the<lb/> 2002 Conference on Empirical Methods in Natural<lb/> Language Processing (EMNLP 2002).<lb/> </bibl>
+<bibl>Scott White, and Padhraic Smyth. 2003. Algorithms<lb/> for Discoveing Relative Importance in Graphs.<lb/> Proceedings of Ninth ACM SIGKDD International<lb/> Conference on Knowledge Discovery and Data<lb/> Mining.<lb/> </bibl>
+<bibl>Zhibiao Wu, and Martha Palmer. 1994. Verb seman-<lb/>tics and lexical selection. Proceedings of the 32 nd<lb/> Annual Meeting of the Association for Computa-<lb/>tional Linguistics (ACL 1994).<lb/> </bibl>
+<bibl>Xiaojin Zhu, Zoubin Ghahramani, and John Lafferty.<lb/> 2003. Semi-supervised Learning using Gaussian<lb/> Fields and Harmonic Functions. Proceedings of<lb/> the 20th International Conference on Machine<lb/> Learning (ICML 2003).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

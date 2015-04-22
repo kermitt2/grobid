@@ -1,0 +1,43 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Yaser Al-Onaizan and Papineni. Kishore. 2006. Distor-<lb/>tion models for statistical machine translation. In Pro-<lb/>ceedings of ACL-COLING, pages 529–536.<lb/> </bibl>
+<bibl>David Chiang. 2005. A hierarchical phrase-based model<lb/> for statistical machine translation. In Proceedings of<lb/> the 43rd Annual Meeting of the Association for Com-<lb/>putational Linguistics (ACL&apos;05), pages 263–270, Ann<lb/> Arbor, Michigan, June. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>David Chiang. 2007. Hierarchical phrase-based transla-<lb/>tion. In Computational Linguistics.<lb/> </bibl>
+<bibl>Michael Collins, Philipp Koehn, and Ivona Kucerova.<lb/> 2005. Clause restructuring for statistical machine<lb/> translation. In Proceedings of ACL.<lb/> </bibl>
+<bibl>Jay Earley. 1970. An efficient context-free parsing al-<lb/>gorithm. In Communications of the ACM., volume 13,<lb/> pages 94–102.<lb/> </bibl>
+<bibl>Heidi J. Fox. 2002. Phrasal cohesion and statistical<lb/> machine translation. In Proc. of the Conference on<lb/> Empirical Methods in Natural Language Processing,<lb/> pages 304–311, Philadelphia, PA, July 6-7.<lb/> </bibl>
+<bibl>Jonathan Graehl and Kevin Knight. 2004. Training tree<lb/> transducers. In Proc. NAACL-HLT.<lb/> </bibl>
+<bibl>Abraham Ittycheriah and Salim Roukos. 2005. A maxi-<lb/>mum entropy word aligner for arabic-english machine<lb/> translation. In HLT/EMNLP.<lb/> </bibl>
+<bibl>Shankar Kumar and William Byrne. 2005. Local phrase<lb/> reordering models for statistical machine translation.<lb/> In HLT/EMNLP 2005, Vancouver, B.C., Canada.<lb/> </bibl>
+<bibl>Yang Liu, Qun Liu, and Shouxun Lin. 2006. Tree-to-<lb/>string alignment template for statistical machine trans-<lb/>lation. In ACL-Coling.<lb/> </bibl>
+<bibl>Yang Liu, Yun Huang, Qun Liu, and Shouxun Lin. 2007.<lb/> Forest-to-string statistical translation rules. In 45th<lb/> Annual Meeting of the Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Xiaoqiang Luo. 2003. A maximum entropy chinese<lb/> character-based parser. In Proc. of ACL.<lb/> </bibl>
+<bibl>Yuval Marton and Philip Resnik. 2008. Soft syntactic<lb/> constraints for hierarchical phrased-based translation.<lb/> In ACL.<lb/> </bibl>
+<bibl>Sonja Niessen and Hermann Ney. 2004. Statistical<lb/> machine translation with scarce resources using mor-<lb/>phosyntactic information. In Computational Linguis-<lb/>tics.<lb/> </bibl>
+<bibl>Franz J. Och and Hermann Ney. 2004. The alignment<lb/> template approach to statistical machine translation.<lb/> In Computational Linguistics, volume 30, pages 417–<lb/> 449.<lb/> </bibl>
+<bibl>Franz J. Och. 2003. Minimum error rate training for<lb/> statistical machine translation. In Proc. of the 41st<lb/> Annual Meeting of the Association for Computational<lb/> Linguistics, Japan, Sapporo, July.<lb/> </bibl>
+<bibl>Kishore Papineni, Salim Roukos, Todd Ward, and Wei-<lb/>Jing Zhu. 2002. Bleu: a method for automatic evalu-<lb/>ation of machine translation. In Proc. of the 40th An-<lb/>nual Conf. of the Association for Computational Lin-<lb/>guistics (ACL 02), pages 311–318, Philadelphia, PA,<lb/> July.<lb/> </bibl>
+<bibl>Libin Shen, Jinxi Xu, and Ralph Weischedel. 2008. A<lb/> new string-to-dependency machine translation algo-<lb/>rithm with a target dependency language model. In<lb/> Proceedings of ACL.<lb/> </bibl>
+<bibl>Matthew Snover, Bonnie Dorr, Richard Schwartz, Lin-<lb/>nea Micciulla, and John Makhoul. 2006. A study of<lb/> translation edit rate with targeted human annotation.<lb/> In AMTA.<lb/> </bibl>
+<bibl>Christoph Tillmann and Tong Zhang. 2005. A localized<lb/> prediction model for statistical machine translation. In<lb/> Proceedings of the 43rd Annual Meeting of the Asso-<lb/>ciation for Computational Linguistics (ACL&apos;05), pages<lb/> 557–564, Ann Arbor, Michigan, June. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Christoph Tillmann. 2003. A projection extension algo-<lb/>rithm for statistical machine translation. In Proc. of<lb/> the Conference on Empirical Methods in Natural Lan-<lb/>guage Processing.<lb/> </bibl>
+<bibl>Christoph Tillmann. 2008. A rule-driven dynamic pro-<lb/>gramming decoder for statistical mt. In HLT Second<lb/> Workshop on Syntax and Structure in Statistical Trans-<lb/>lation.<lb/> </bibl>
+<bibl>Chao Wang, Michael Collins, and Phillip Koehn. 2007.<lb/> Chinese syntactic reordering for statistical machine<lb/> translation. In proceedings of EMNLP.<lb/> </bibl>
+<bibl>Dekai Wu. 1997. Stochastic inversion transduction<lb/> grammars and bilingual parsing of parallel corpora. In<lb/> Computational Linguistics, volume 23(3), pages 377–<lb/> 403.<lb/> </bibl>
+<bibl>Fei Xia and Michael McCord. 2004. Improving a sta-<lb/>tistical mt system with automatically learned rewrite<lb/> patterns. In the 20th International Conference on<lb/> Computational Linguistics (COLING 2004), Geneva,<lb/> Switzerland, Aug 22-29.<lb/> </bibl>
+<bibl>Deyi Xiong, Qun Liu, and Shouxun Lin. 2006. Maxi-<lb/>mum entropy based phrase reordering model for sta-<lb/>tistical machine translation. In ACL-Coling.<lb/> </bibl>
+<bibl>Nianwen Xue, Fei Xia, Fu-Dong Chiou, and Martha<lb/> Palmer. 2005. The penn chinese treebank: Phrase<lb/> structure annotation of a large corpus. In Natural Lan-<lb/>guage Engineering, volume 11, pages 207–238.<lb/> </bibl>
+<bibl>K. Yamada and Kevin. Knight. 2001. Syntax-based Sta-<lb/>tistical Translation Model. In Proceedings of the Con-<lb/>ference of the Association for Computational Linguis-<lb/>tics (ACL-2001).<lb/> </bibl>
+<bibl>Richard Zens, E. Matusov, and Hermmann Ney. 2004.<lb/> Improved word alignment using a symmetric lexicon<lb/> model. In Proceedings of the 20th International Con-<lb/>ference on Computational Linguistics (CoLing 2004),<lb/> pages 36–42, Geneva, Switzerland, Auguest.<lb/> </bibl>
+<bibl>Hao Zhang, Liang Huang, Daniel Gildea, and Kevin<lb/> Knight. 2006. Synchronous binarization for machine<lb/> translation. In Proceedings of the HLT-NAACL.<lb/> </bibl>
+<bibl>Andreas Zollmann and Ashish Venugopal. 2006. Syn-<lb/>tax augmented machine translation via chart parsing.<lb/> In Proc. of NAACL 2006 -Workshop on statistical ma-<lb/>chine translation.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

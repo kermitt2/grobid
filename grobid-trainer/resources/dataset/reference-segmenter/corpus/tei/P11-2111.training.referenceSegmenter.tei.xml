@@ -1,0 +1,22 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>E. Black, S. Abney, D. Flickinger, C. Gdaniec, R. Gr-<lb/>ishman, P. Harrison, D. Hindle, R. Ingria, F. Jelinek,<lb/> J. Klavans, M. Liberman, M. Marcus, S. Roukos,<lb/> B. Santorini, and T. Strzalkowski. 1991. A proce-<lb/>dure for quantitively comparing the syntactic coverage<lb/> of English grammars. In Proceedings of the DARPA<lb/> Speech and Natural Language Workshop, pages 306–<lb/> 311.<lb/> </bibl>
+<bibl>Yuqing Guo, Haifeng Wang, and Josef Van Genabith.<lb/> 2010. A Linguistically Inspired Statistical Model for<lb/> Chinese Punctuation Generation. ACM Transactions<lb/> on Asian Language Processing, 9(2).<lb/> </bibl>
+<bibl>Meixun Jin, Mi-Young Kim, Dong-Il Kim, and Jong-<lb/>Hyeok Lee. 2004. Segmentation of Chinese Long<lb/> Sentences Using Commas. In Proceedings of the<lb/> SIGHANN Workshop on Chinese Language Process-<lb/>ing.<lb/> </bibl>
+<bibl>Xing Li, Chengqing Zong, and Rile Hu. 2005. A Hier-<lb/>archical Parsing Approach with Punctuation Process-<lb/>ing for Long Sentence Sentences. In Proceedings of<lb/> the Second International Joint Conference on Natural<lb/> Language Processing: Companion Volume including<lb/> Posters/Demos and Tutorial Abstracts.<lb/> </bibl>
+<bibl>We Lu and Hwee Tou Ng. 2010. Better Punctuation<lb/> Prediction with Dynamic Conditional Random Fields.<lb/> In Proceedings of the 2010 Conference on Empirical<lb/> Methods in Natural Language Processing, MIT, Mas-<lb/>sachusetts.<lb/> </bibl>
+<bibl>M. Marcus, B. Santorini, and M. A. Marcinkiewicz.<lb/> 1993. Building a Large Annotated Corpus of English:<lb/> the Penn Treebank. Computational Linguistics.<lb/> </bibl>
+<bibl>Andrew Kachites McCallum.<lb/> 2002.<lb/> Mal-<lb/>let: A machine learning for language toolkit.<lb/> http://mallet.cs.umass.edu.<lb/> </bibl>
+<bibl>Slav Petrov and Dan Klein. 2007. Improved Inferencing<lb/> for Unlexicalized Parsing. In Proc of HLT-NAACL.<lb/> </bibl>
+<bibl>Jeffrey C. Reynar and Adwait Ratnaparkhi. 1997. A<lb/> Maximum Entropy Approach to Identifying Sentence<lb/> Boundaries. In Proceedings of the Fifth Conference on<lb/> Applied Natural Language Processing (ANLP), Wash-<lb/>ington, D.C.<lb/> </bibl>
+<bibl>Nianwen Xue, Fei Xia, Fu dong Chiou, and Martha<lb/> Palmer. 2005. The Penn Chinese TreeBank: Phrase<lb/> Structure Annotation of a Large Corpus. Natural Lan-<lb/>guage Engineering, 11(2):207–238.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

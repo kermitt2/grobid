@@ -1,0 +1,31 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>AECMA Simplified English: A Guide for the Preparation of Aircraft Maintenance Documentation in the International<lb/> Aerospace Maintenance Language, (1995) AECMA, Brussels.<lb/> </bibl>
+<bibl>Coch, J. (1996). Evaluating and comparing three text production techniques. Proceedings of the Sixteenth Interna-<lb/>tional Conference on Computational Linguistics (COLING-96), pp 249-254.<lb/> </bibl>
+<bibl>Caldwell, D. and Korelsky, T. (1994). Bilingual generation of job descriptions from quasi-conceptual forms. Proceed-<lb/>ings fo the Fourth Conference on Applied Natural Language Processing, pp I-6.<lb/> </bibl>
+<bibl>Carcagno, D. and Iordanskaja, L. (1989). Content Determination in Gossip. Extended Abstracts of the Second Euro-<lb/>pean Natural Language Generation Workshop, Edinburgh, pp 15-22.<lb/> </bibl>
+<bibl>CLIM Common Lisp Interface Manager: User Guide (1994). Franz Inc.<lb/> </bibl>
+<bibl>Dale, R. and Reiter, E. (1997). Building Applied Natural Language Generation Systems. Tutorial presented at the<lb/> 1997 Applied Natural Language Processing Conference, Washington, DC.<lb/> </bibl>
+<bibl>Fascian0, M. and Lapalme, G. (1996). PostGraphe: a system for the generatio n of statistical graphics and text.<lb/> Proceedings of the Eighth International Workshop on Natural Language Generation, Herstmonceux, Sussex, June<lb/> 1996, pp 51--60<lb/> </bibl>
+<bibl>Goldberg, E., Driedger, N. and Kittredge, R. (1994). Using Natural-language Processing to Produce Weather Forcasts.<lb/> IEEE Expert, 9 (2), pp 45-53.<lb/> </bibl>
+<bibl>Iordanskaja, L., Kim, M., Kittredge, R., Lavoie, B. and Polguere, A. (1992) Generation of Extended Bilingual Statis-<lb/>tical Reports. Proceedings of COLING-92, Nantes, August 1992, pp 1019-1023<lb/> </bibl>
+<bibl>Kukich, K. (1983). Design and Implementation of a Knowledge-Based Report Generator. Proceedings of the 21st<lb/> Annual Meeting of the Association for Computational Linguistics, Cambridge, Massachusetts, pp 145-150.<lb/> </bibl>
+<bibl>Lavoie, B., Rambow, O. and Reiter, E. (1996) The ModelExplainer. Demonstration presented at the Eighth Interna-<lb/>tional Workshop on Natural Language Generation, Herstmonceux, Sussex, June 1996.<lb/> </bibl>
+<bibl>McKeown, K., Kukich, K., and Shaw J. (1994). Practical Issues in Automatic Documentation Generation. Proceedings<lb/> of the Applied Natural Language Processing Conference, Stuttgart, Germany, pp 7-14.<lb/> </bibl>
+<bibl>McDonald, D. (1993). Issues in the Choice of a Source for Natural Language Generation. Computational Linguistics,<lb/> 19 (1), pp 191-197.<lb/> </bibl>
+<bibl>Mittal, V., Moore, J.D, Carenini, G., and Roth, S. (in press) Describing Complex Charts in Natural Language: A<lb/> Caption Generation System Computational Linguistics. Special Issue on Natural Language Generation.<lb/> </bibl>
+<bibl>Paris, C., Vander Linden, K., Fischer, M., Hartley, A., Pemberton, L., Power, R., and Scott, D. (1995). A Support<lb/> Tool for Writing Multilingual Instructions. Proceedings of the Fourteenth International Joint Conference in Artificial<lb/> Intelligence (IJCAI-95), pp 1398-1404.<lb/> </bibl>
+<bibl>Power, R., Cavallotto, N., and Pemberton, L. (1995) The GIST Specification Tool, LRE Project 062-09, Deliverable<lb/> PR-3b. Available at http://ecate.itc.it: 1024/projects/gist/gist-bibliography.html<lb/> Reiter, E. and Dale, R. (1997). Building Applied Natutal Language Generation Systems. Natural Language Engineer-<lb/>ing, 3 (1): 57-87<lb/> </bibl>
+<bibl>Reiter, E. and Dale, R. (forthcoming). Building Applied Natural Language Generation Systems. Cambridge University<lb/> Press.<lb/> </bibl>
+<bibl>Roth, S.F., Kolojejchick, J., Mattis, J. and Goldstein, J. (1994) Interactive graphic design using automatic presentation<lb/> knowledge. Proceedings of CHl&apos;94: Human factors in Computing Systems, Boston.<lb/> </bibl>
+<bibl>Sheremetyeva, S., Nirenburg; S. and Nirenburg, I. (1996) Generating Patent Claims from Interactive Input. Proceed-<lb/>ings of the Eighth International Workshop on Natural Language Generation, Herstmonceux, Sussex, June 1996, pp<lb/> 61-70.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

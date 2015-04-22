@@ -1,0 +1,29 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Agichtein E. and Gravano L.. 2000. Snowball: Ex-<lb/>tracting Relations from large Plain-Text Collections,<lb/> In Proc. of the 5 th ACM International Conference on<lb/> Digital Libraries (ACMDL&apos;00).<lb/> </bibl>
+<bibl>Brin Sergey. 1998. Extracting patterns and relations<lb/> from world wide web. In Proc. of WebDB Workshop at<lb/> 6th International Conference on Extending Database<lb/> Technology (WebDB&apos;98). pages 172-183.<lb/> </bibl>
+<bibl>Charniak E.. 1999. A Maximum-entropy-inspired parser.<lb/> Technical Report CS-99-12.. Computer Science De-<lb/>partment, Brown University.<lb/> </bibl>
+<bibl>Culotta A. and Soresen J. 2004. Dependency tree kernels<lb/> for relation extraction, In proceedings of 42th Annual<lb/> Meeting of the Association for Computational Linguis-<lb/>tics. 21-26 July 2004. Barcelona, Spain.<lb/> </bibl>
+<bibl>Defense Advanced Research Projects Agency. 1995.<lb/> Proceedings of the Sixth Message Understanding Con-<lb/>ference (MUC-6) Morgan Kaufmann Publishers, Inc.<lb/> </bibl>
+<bibl>Hasegawa Takaaki, Sekine Satoshi and Grishman Ralph.<lb/> 2004. Discovering Relations among Named Enti-<lb/>ties from Large Corpora, Proceeding of Conference<lb/> ACL2004. Barcelona, Spain.<lb/> </bibl>
+<bibl>Kambhatla N. 2004. Combining lexical, syntactic and<lb/> semantic features with Maximum Entropy Models for<lb/> extracting relations, In proceedings of 42th Annual<lb/> Meeting of the Association for Computational Linguis-<lb/>tics. 21-26 July 2004. Barcelona, Spain.<lb/> </bibl>
+<bibl>Kannan R., Vempala S., and Vetta A.. 2000. On cluster-<lb/>ing: Good,bad and spectral. In Proceedings of the 41st<lb/> Foundations of Computer Science. pages 367-380.<lb/> </bibl>
+<bibl>Miller S.,Fox H.,Ramshaw L. and Weischedel R. 2000.<lb/> A novel use of statistical parsing to extract information<lb/> from text. In proceedings of 6th Applied Natural Lan-<lb/>guage Processing Conference. 29 April-4 may 2000,<lb/> Seattle USA.<lb/> </bibl>
+<bibl>Ng Andrew.Y, Jordan M., and Weiss Y.. 2001. On spec-<lb/>tral clustering: Analysis and an algorithm. In Pro-<lb/>ceedings of Advances in Neural Information Process-<lb/>ing Systems. pages 849-856.<lb/> </bibl>
+<bibl>Sanguinetti G., Laidler J. and Lawrence N.. 2005. Au-<lb/>tomatic determination of the number of clusters us-<lb/>ing spectral algorithms.In: IEEE Machine Learning<lb/> for Signal Processing. 28-30 Sept 2005, Mystic, Con-<lb/>necticut, USA.<lb/> </bibl>
+<bibl>Shi J. and Malik.J. 2000. Normalized cuts and image<lb/> segmentation. IEEE Transactions on Pattern Analysis<lb/> and Machine Intelligence. 22(8):888-905.<lb/> </bibl>
+<bibl>Weiss Yair. 1999. Segmentation using eigenvectors: A<lb/> unifying view. ICCV(2). pp.975-982.<lb/> </bibl>
+<bibl>Zelenko D., Aone C. and Richardella A.. 2002. Ker-<lb/>nel Methods for Relation Extraction, Proceedings of<lb/> the Conference on Empirical Methods in Natural Lan-<lb/>guage Processing (EMNLP). Philadelphia.<lb/> </bibl>
+<bibl>Zha H.,Ding C.,Gu.M,He X.,and Simon H.. 2001. Spec-<lb/>tral Relaxation for k-means clustering. In Neural In-<lb/>formation Processing Systems (NIPS2001). pages<lb/> 1057-1064, 2001.<lb/> </bibl>
+<bibl>Zhang Zhu. 2004. Weakly-supervised relation classifi-<lb/>cation for Information Extraction, In proceedings of<lb/> ACM 13th conference on Information and Knowledge<lb/> Management (CIKM&apos;2004). 8-13 Nov 2004. Wash-<lb/>ington D.C.,USA.<lb/> </bibl>
+<bibl>Zhou GuoDong, Su Jian, Zhang Jie and Zhang min.<lb/> 2005. Exploring Various Knowledge in Relation Ex-<lb/>traction, In proceedings of 43th Annual Meeting of the<lb/> Association for Computational Linguistics. USA.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

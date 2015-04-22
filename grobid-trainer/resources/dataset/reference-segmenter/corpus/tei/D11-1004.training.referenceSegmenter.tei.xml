@@ -1,0 +1,51 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>C. Bradford Barber, David P. Dobkin, and Hannu Huhdan-<lb/>paa. 1996. The QuickHull algorithm for convex hulls.<lb/> ACM Trans. Math. Softw., 22:469–483.<lb/> </bibl>
+<bibl>C. Buchta, J. Muller, and R. F. Tichy. 1985. Stochastical<lb/> approximation of convex bodies. Math. Ann., 271:225–<lb/> 235.<lb/> </bibl>
+<bibl>A. Bykat. 1978. Convex hull of a finite set of points in<lb/> two dimensions. Inf. Process. Lett., 7(6):296–298.<lb/> </bibl>
+<bibl>Daniel Cer, Dan Jurafsky, and Christopher D. Manning.<lb/> 2008. Regularization and search for minimum error<lb/> rate training. In Proceedings of the Third Workshop on<lb/> Statistical Machine Translation, pages 26–34.<lb/> </bibl>
+<bibl>Samidh Chatterjee and Nicola Cancedda. 2010. Min-<lb/>imum error rate training by sampling the translation<lb/> lattice. In Proceedings of the 2010 Conference on Em-<lb/>pirical Methods in Natural Language Processing, pages<lb/> 606–615. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>David Chiang, Yuval Marton, and Philip Resnik. 2008.<lb/> Online large-margin training of syntactic and structural<lb/> translation features. In EMNLP.<lb/> </bibl>
+<bibl>David Chiang. 2007. Hierarchical phrase-based transla-<lb/>tion. Computational Linguistics, 33(2):201–228.<lb/> </bibl>
+<bibl>W. Chou, C. H. Lee, and B. H. Juang. 1993. Minimum<lb/> error rate training based on N-best string models. In<lb/> Proc. IEEE Int&apos;l Conf. Acoustics, Speech, and Signal<lb/> Processing (ICASSP &apos;93), pages 652–655, Vol. 2.<lb/> </bibl>
+<bibl>Kevin Duh and Katrin Kirchhoff. 2008. Beyond log-<lb/>linear models: boosted minimum error rate training for<lb/> programming N-best re-ranking. In Proceedings of the<lb/> 46th Annual Meeting of the Association for Computa-<lb/>tional Linguistics on Human Language Technologies:<lb/> Short Papers, pages 37–40, Stroudsburg, PA, USA.<lb/> </bibl>
+<bibl>William F. Eddy. 1977. A new convex hull algorithm for<lb/> planar sets. ACM Trans. Math. Softw., 3:398–403.<lb/> </bibl>
+<bibl>Liang Huang and David Chiang. 2005. Better k-best pars-<lb/>ing. In Proceedings of the Ninth International Work-<lb/>shop on Parsing Technology, pages 53–64, Stroudsburg,<lb/> PA, USA.<lb/> Biing-Hwang Juang, Wu Hou, and Chin-Hui Lee. 1997.<lb/> Minimum classification error rate methods for speech<lb/> recognition. Speech and Audio Processing, IEEE Trans-<lb/>actions on, 5(3):257–265.<lb/> </bibl>
+<bibl>N. Karmarkar. 1984. A new polynomial-time algorithm<lb/> for linear programming. Combinatorica, 4:373–395.<lb/> </bibl>
+<bibl>Victor Klee. 1966. Convex polytopes and linear program-<lb/>ming. In Proceedings of the IBM Scientific Computing<lb/> Symposium on Combinatorial Problems.<lb/> </bibl>
+<bibl>Philipp Koehn, Hieu Hoang, Alexandra Birch Mayne,<lb/> Christopher Callison-Burch, Marcello Federico, Nicola<lb/> Bertoldi, Brooke Cowan, Wade Shen, Christine Moran,<lb/> Richard Zens, Chris Dyer, Ondrej Bojar, Alexandra<lb/> Constantin, and Evan Herbst. 2007. Moses: Open<lb/> source toolkit for statistical machine translation. In<lb/> Proc. of ACL, Demonstration Session.<lb/> </bibl>
+<bibl>Shankar Kumar, Wolfgang Macherey, Chris Dyer, and<lb/> Franz Och. 2009. Efficient minimum error rate train-<lb/>ing and minimum Bayes-risk decoding for translation<lb/> hypergraphs and lattices. In Proceedings of the Joint<lb/> Conference of the 47th Annual Meeting of the ACL<lb/> and the 4th International Joint Conference on Natural<lb/> Language Processing of the AFNLP: Volume 1, pages<lb/> 163–171.<lb/> </bibl>
+<bibl>Gregor Leusch, Evgeny Matusov, and Hermann Ney.<lb/> 2008. Complexity of finding the BLEU-optimal hy-<lb/>pothesis in a confusion network. In Proceedings of the<lb/> Conference on Empirical Methods in Natural Language<lb/> Processing, pages 839–847, Stroudsburg, PA, USA.<lb/> </bibl>
+<bibl>Zhifei Li, Chris Callison-Burch, Chris Dyer, Juri Ganitke-<lb/>vitch, Sanjeev Khudanpur, Lane Schwartz, Wren N. G.<lb/> Thornton, Jonathan Weese, and Omar F. Zaidan. 2009.<lb/> Joshua: an open source toolkit for parsing-based MT.<lb/> In Proc. of WMT.<lb/> </bibl>
+<bibl>P. Liang, A. Bouchard-Côté, D. Klein, and B. Taskar.<lb/> 2006. An end-to-end discriminative approach to ma-<lb/>chine translation. In International Conference on Com-<lb/>putational Linguistics and Association for Computa-<lb/>tional Linguistics (COLING/ACL).<lb/> </bibl>
+<bibl>Chin-Yew Lin and Franz Josef Och. 2004. ORANGE:<lb/> a method for evaluating automatic evaluation metrics<lb/> for machine translation. In Proceedings of the 20th<lb/> international conference on Computational Linguistics,<lb/> Stroudsburg, PA, USA.<lb/> </bibl>
+<bibl>Jonas Lööf, Ralf Schlüter, and Hermann Ney. 2010. Dis-<lb/>criminative adaptation for log-linear acoustic models.<lb/> In INTERSPEECH, pages 1648–1651.<lb/> </bibl>
+<bibl>Wolfgang Macherey, Franz Och, Ignacio Thayer, and<lb/> Jakob Uszkoreit. 2008. Lattice-based minimum error<lb/> rate training for statistical machine translation. In Pro-<lb/>ceedings of the 2008 Conference on Empirical Methods<lb/> in Natural Language Processing, pages 725–734.<lb/> </bibl>
+<bibl>David McAllester, Tamir Hazan, and Joseph Keshet. 2010.<lb/> Direct loss minimization for structured prediction. In<lb/> Advances in Neural Information Processing Systems<lb/> 23, pages 1594–1602.<lb/> </bibl>
+<bibl>Ryan McDonald, Koby Crammer, and Fernando Pereira.<lb/> 2005. Online large-margin training of dependency<lb/> parsers. In Proceedings of the 43rd Annual Meeting<lb/> on Association for Computational Linguistics, pages<lb/> 91–98.<lb/> </bibl>
+<bibl>Ryan McDonald. 2006. Discriminative sentence compres-<lb/>sion with soft syntactic constraints. In Proceedings of<lb/> EACL, pages 297–304.<lb/> </bibl>
+<bibl>Robert C. Moore and Chris Quirk. 2008. Random restarts<lb/> in minimum error rate training for statistical machine<lb/> translation. In Proceedings of the 22nd International<lb/> Conference on Computational Linguistics -Volume 1,<lb/> pages 585–592.<lb/> </bibl>
+<bibl>J. A. Nelder and R. Mead. 1965. A simplex method for<lb/> function minimization. Computer Journal, 7:308–313.<lb/> </bibl>
+<bibl>Franz Josef Och and Hermann Ney. 2002. Discriminative<lb/> training and maximum entropy models for statistical<lb/> machine translation. In Proc. of the 40th Annual Meet-<lb/>ing of the Association for Computational Linguistics,<lb/> pages 295–302.<lb/> </bibl>
+<bibl>Franz Josef Och. 2003. Minimum error rate training for<lb/> statistical machine translation. In Proc. of ACL.<lb/> </bibl>
+<bibl>Kishore Papineni, Salim Roukos, Todd Ward, and Wei-<lb/>Jing Zhu. 2001. BLEU: a method for automatic evalu-<lb/>ation of machine translation. In Proc. of ACL.<lb/> </bibl>
+<bibl>M.J.D. Powell. 1964. An efficient method for finding<lb/> the minimum of a function of several variables without<lb/> calculating derivatives. Comput. J., 7(2):155–162.<lb/> </bibl>
+<bibl>William H. Press, Saul A. Teukolsky, William T. Vetter-<lb/>ling, and Brian P. Flannery. 2007. Numerical Recipes:<lb/> The Art of Scientific Computing. Cambridge University<lb/> Press, 3rd edition.<lb/> </bibl>
+<bibl>Chris Quirk, Arul Menezes, and Colin Cherry. 2005.<lb/> Dependency treelet translation: syntactically informed<lb/> phrasal SMT. In Proc. of ACL, pages 271–279.<lb/> </bibl>
+<bibl>David A. Smith and Jason Eisner. 2006. Minimum risk<lb/> annealing for training log-linear models. In Proceed-<lb/>ings of the COLING/ACL on Main conference poster<lb/> sessions, pages 787–794, Stroudsburg, PA, USA.<lb/> </bibl>
+<bibl>Matthew Snover, Bonnie Dorr, Richard Schwartz, Lin-<lb/>nea Micciulla, and John Makhoul. 2006. A study of<lb/> translation edit rate with targeted human annotation. In<lb/> Proc. of AMTA, pages 223–231.<lb/> </bibl>
+<bibl>Andreas Stolcke, Yochai Knig, and Mitchel Weintraub.<lb/> 1997. Explicit word error minimization in N-best list<lb/> rescoring. In In Proc. Eurospeech, pages 163–166.<lb/> </bibl>
+<bibl>Taro Watanabe, Jun Suzuki, Hajime Tsukada, and Hideki<lb/> Isozaki. 2007. Online large-margin training for statisti-<lb/>cal machine translation. In EMNLP-CoNLL.<lb/> </bibl>
+<bibl>Omar F. Zaidan and Chris Callison-Burch. 2009. Feasibil-<lb/>ity of human-in-the-loop minimum error rate training.<lb/> In Proceedings of the 2009 Conference on Empirical<lb/> Methods in Natural Language Processing: Volume 1 -<lb/>Volume 1, pages 52–61.<lb/> </bibl>
+<bibl>Richard Zens, Sasa Hasan, and Hermann Ney. 2007.<lb/> A systematic comparison of training criteria for sta-<lb/>tistical machine translation. In Proceedings of the<lb/> 2007 Joint Conference on Empirical Methods in Natu-<lb/>ral Language Processing and Computational Natural<lb/> Language Learning (EMNLP-CoNLL), pages 524–532,<lb/> Prague, Czech Republic.<lb/> </bibl>
+<bibl>Bing Zhao and Shengyuan Chen. 2009. A simplex Armijo<lb/> downhill algorithm for optimizing statistical machine<lb/> translation decoding parameters. In Proceedings of<lb/> Human Language Technologies: The 2009 Annual Con-<lb/>ference of the North American Chapter of the Associ-<lb/>ation for Computational Linguistics, Companion Vol-<lb/>ume: Short Papers, pages 21–24.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

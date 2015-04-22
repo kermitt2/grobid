@@ -1,0 +1,35 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>A. Abad and J. P. Neto. 2008. International Confer-<lb/>ence on Computational Processing of Portuguese Lan-<lb/>guage, Portugal. Automatic classification and tran-<lb/>scription of telephone speech in radio broadcast data.<lb/> A. L. R. Adlam, K. Patterson, T. T. Rogers, P. J. Nestor,<lb/> C. H. Salmond, J. Acosta-Cabronero and J. R. Hodges.<lb/> 2006. Brain. Semantic dementia and Primary<lb/> Progressive Aphasia: two side of the same coin?,<lb/> 129:3066–3080.<lb/> </bibl>
+<bibl>M. L. Albert, R. Sparks and N. A. Helm. 1994. Neu-<lb/>rology. Report of the Therapeutics and Technology<lb/> Assessment Subcommittee of the American Academy<lb/> of Neurology. Assesment: melodic intonation therapy,<lb/> 44:566–568.<lb/> </bibl>
+<bibl>M. L. Albert. 1998. Arch Neurol-Chicago Treatment of<lb/> aphasia, 55:1417–1419.<lb/> </bibl>
+<bibl>C. C. Aydin and G. Tirkes. 2010. Education Engineer-<lb/>ing. Open source learning management systems in e-<lb/>learning and Moodle, 54:593–600.<lb/> </bibl>
+<bibl>A. Basso. 1992. Aphasiology. Prognostic factors in<lb/> aphasia, 6(4):337–348.<lb/> </bibl>
+<bibl>S. K. Bhogal, R. Teasell and M. Speechley. 2003.<lb/> Stroke. Intensity of aphasia therapy, impact on recov-<lb/>ery, 34:987–993.<lb/> </bibl>
+<bibl>H. Bourlard and N. Morgan. 1993. IEEE Transactions<lb/> on Neural Networks. Continuous speech recognition<lb/> by connectionist statistical methods, 4(6):893–909.<lb/> </bibl>
+<bibl>H. Bourlard and N. Morgan. 1994. Springer. Connec-<lb/>tionist speech recognition: a hybrid approach.<lb/> </bibl>
+<bibl>D. Caseiro, I. Trancoso, C. Viana and M. Barros.<lb/> 2003. International Congress of Phonetic Sciences,<lb/> Barcelona, Spain. A Comparative Description of GtoP<lb/> Modules for Portuguese and Mirandese Using Finite<lb/> State Transducers.<lb/> </bibl>
+<bibl>E. Castillo-Guerra and D. F. Lovey. 2003. 25th Annual<lb/> Conference IEEE Engineering in Medicine and Biol-<lb/>ogy Society. A Modern Approach to Dysarthria Clas-<lb/>sification.<lb/> </bibl>
+<bibl>H. Goodglass. 1993. Understanding aphasia: technical<lb/> report. Academy Press, University of Califórnia. San<lb/> Diego.<lb/> </bibl>
+<bibl>M. S. Hawley, P. D. Green, P. Enderby, S. P. Cunningham<lb/> and R. K. Moore. 2005. Interspeech. Speech technol-<lb/>ogy for e-inclusion of people with physical disabilities<lb/> and disordered speech, 445–448.<lb/> </bibl>
+<bibl>A. Maier, T. Haderlein, U. Eysholdt, F. Rosanowski,<lb/> A. Batliner, M. Schuster and E. Nöth. 2009. Speech<lb/> Communication. PEAKS -A System for the Automatic<lb/> Evaluation of Voice and Speech Disorders, 51(5):425–<lb/> 437.<lb/> </bibl>
+<bibl>H. Meinedo and J. P. Neto. 2000. International Con-<lb/>ference on Spoken Language Processing, Beijing,<lb/> China. Combination Of Acoustic Models In Contin-<lb/>uous Speech Recognition Hybrid Systems, 2:931–934.<lb/> </bibl>
+<bibl>H. Meinedo, A. Abad, T. Pellegrini, I. Trancoso and<lb/> J. P. Neto. 2010. Fala 2010, Vigo, Spain. The L2F<lb/> Broadcast News Speech Recognition System.<lb/> </bibl>
+<bibl>M. Mohri, F. Pereira and M. Riley. 2002. Computer<lb/> Speech and Language. Weighted Finite-State Trans-<lb/>ducers in Speech Recognition, 16:69–88.<lb/> </bibl>
+        <bibl><label>P.</label> M. Pedersen, H. S. Jørgensen, H. Nakayama,<lb/> H. O. Raaschou and T. S. Olsen. 1995. Ann Neu-<lb/>rol Aphasia in acute stroke: incidence, determinants,<lb/> and recovery, 38(4):659–666.<lb/> </bibl>
+<bibl>J. Pinto, A. Lovitt and H. Hermansky. 2007. Inter-<lb/>speech. Exploiting Phoneme Similarities in Hybrid<lb/> HMM-ANN Keyword Spotting, 1817–1820.<lb/> </bibl>
+<bibl>A. Pompili. 2011. Thesis, Department of Computer Sci-<lb/>ence, University of Rome. Virtual therapist for apha-<lb/>sia treatment.<lb/> </bibl>
+<bibl>M. T. Sarno. 1981. Recovery and rehabilitation in apha-<lb/>sia, 485–530. Acquired Aphasia, Academic Press,<lb/> New York.<lb/> </bibl>
+<bibl>C. E. Wilshire and H. B. Coslett. 2000. Disorders of<lb/> word retrieval in aphasia theories and potential appli-<lb/>cations, 82–107. Aphasia and Language: Theory to<lb/> practice, The Guilford Press, New York.<lb/> </bibl>
+<bibl>S. M. Witt. 1999. Use of speech recognition in Computer<lb/> assisted Language Learning. PhD thesis, Department<lb/> of Engineering, University of Cambridge.<lb/> </bibl>
+<bibl>S. -C. Yin, R. Rose, O. Saz and E. Lleida. 2009. IEEE In-<lb/>ternational Conference on Acoustics, Speech and Sig-<lb/>nal Processing. A study of pronunciation verification<lb/> in a speech therapy application, 4609–4612.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

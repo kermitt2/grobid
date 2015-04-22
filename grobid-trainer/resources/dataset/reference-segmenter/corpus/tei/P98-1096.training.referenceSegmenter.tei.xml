@@ -1,0 +1,21 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>S. Bennacef, H. Bonneau-Maynard, J. L. Gauvin,<lb/> L. Lamel, and W. Minker. 1994. A spoken lan-<lb/>guage system for information retrieval. In Pro-<lb/>ceedings of ICLSP&apos;9g.<lb/> </bibl>
+<bibl>Donna K. Byron and Peter A. Heeman. 1997. Dis-<lb/>course marker use in task-oriented spoken dialog.<lb/> In Proceedings of Eurospeech&apos;97, Rhodes, Greece,<lb/> pages 2223-2226.<lb/> </bibl>
+<bibl>Jaime G. Carbonell and Philip J. Hayes. 1987. Ro-<lb/>bust parsing using multiple construction-specific<lb/> strategies. In Leonard Bolc, editor, Natural Lan-<lb/>guage Parsing Systems, pages 1-32. Springer-<lb/>Verlag.<lb/> </bibl>
+<bibl>Peter Ingels. 1996. Connected text recognition us-<lb/>ing layered HMMs and token passing. In K. Oflaz-<lb/>er and H. Somers, editors, Proceedings of the<lb/> Second Conference on New Methods in Language<lb/> Processing, pages 121-132, Sept.<lb/> </bibl>
+<bibl>Arne JSnsson. 1993. A method for development of<lb/> dialogue managers for natural language interfaces.<lb/> In Proceedings of the Eleventh National Confer-<lb/>ence of Artificial Intelligence, Washington DC,<lb/> pages 190-195.<lb/> </bibl>
+<bibl>Arne JSnsson. 1997. A model for habitable and<lb/> efficient dialogue management for natural lan-<lb/>guage interaction. Natural Language Engineering,<lb/> 3(2/3):103-122.<lb/> </bibl>
+<bibl>K£re SjSlander and Joakim Gustafson. 1997. An in-<lb/>tegrated system for teaching spoken dialogue sys-<lb/>tems technology. In Proceedings of Eurospeech &apos;97,<lb/> Rhodes, Greece, pages 1927-1930.<lb/> </bibl>
+<bibl>Lena StrSmb/ick. 1994. Achieving flexibility in uni-<lb/>fication formalisms. In Proceedings of 15th Int.<lb/> Conf. on Computational Linguistics (Coling&apos;94),<lb/> volume II, pages 842-846, August. Kyoto, Japan.<lb/> </bibl>
+<bibl>Lena StrSmb~ick. 1997. EFLUF -an implementa-<lb/>tion of a flexible unification formalism. In Proc<lb/> of ENVGRAM -Computational Environments<lb/> for Practical Grammar Development, Processing<lb/> and Integration with other NLP modules., July.<lb/> Madrid, Spain.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

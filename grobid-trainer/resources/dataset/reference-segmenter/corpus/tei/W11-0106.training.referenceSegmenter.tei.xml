@@ -1,0 +1,30 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Bethard, S. and J. H. Martin (2008). Learning Semantic Links from a Corpus of Parallel Temporal and<lb/> Causal Relations. In Proceedings of ACL-08: HLT, Short Papers, Columbus, OH.<lb/> </bibl>
+<bibl>Carreras, X. and L. M` arquez (2005). Introduction to the CoNLL-2005 shared task: semantic role label-<lb/>ing. In Proc. of the 9th Conf. on Computational Natural Language Learning, Morristown, NJ.<lb/> </bibl>
+<bibl>Chaffin, R. and D. J. Herrmann (1987). Relation Element Theory: A New Account of the Representation<lb/> and Processing of Semantic Relations. In D. S. Gorfein and R. R. Hoffman (Eds.), Memory and<lb/> Learning. The Ebbinghaus Centennial Conference.<lb/> </bibl>
+<bibl>Chang, D. S. and K. S. Choi (2006). Incremental cue phrase learning and bootstrapping method for<lb/> causality extraction using cue phrase and word pair probabilities. Information Processing &amp; Manage-<lb/>ment 42(3), 662–678.<lb/> </bibl>
+<bibl>Cohen, P. R. and C. L. Losielle (1988). Beyond ISA: Structures for Plausible Inference in Semantic<lb/> Networks. In Proceedings of the Seventh National conference on Artificial Intelligence, St. Paul, MN.<lb/> </bibl>
+<bibl>Girju, R., A. Badulescu, and D. Moldovan (2006). Automatic Discovery of Part-Whole Relations. Com-<lb/>putational Linguistics 32(1), 83–135.<lb/> </bibl>
+<bibl>Girju, R., P. Nakov, V. Nastase, S. Szpakowicz, P. Turney, and D. Yuret (2007). SemEval-2007 Task 04:<lb/> Classification of Semantic Relations between Nominals. In Proceedings of the Fourth International<lb/> Workshop on Semantic Evaluations, Prague, Czech Republic.<lb/> </bibl>
+<bibl>Harabagiu, S. and D. Moldovan (1998). Knowledge Processing on an Extended WordNet. In C. Fellbaum<lb/> (Ed.), WordNet: An Electronic Lexical Database and Some of its Applications, Chapter 17, pp. 684–<lb/> 714. The MIT Press.<lb/> </bibl>
+<bibl>Helbig, H. (2005). Knowledge Representation and the Semantics of Natural Language (1st ed.). Springer.<lb/> </bibl>
+<bibl>Hendrickx, I., S. N. Kim, Z. Kozareva, P. Nakov, Diarmuid, S. Padó, M. Pennacchiotti, L. Romano,<lb/> and S. Szpakowicz (2009). SemEval-2010 Task 8: Multi-Way Classification of Semantic Relations<lb/> Between Pairs of Nominals. In Proceedings of the Workshop on Semantic Evaluations, Boulder, CO.<lb/> </bibl>
+<bibl>Huhns, M. N. and L. M. Stephens (1989). Plausible Inferencing Using Extended Composition. In<lb/> IJCAI&apos;89: Proceedings of the 11th international joint conference on AI, San Francisco, CA.<lb/> </bibl>
+<bibl>M` arquez, L., X. Carreras, K. C. Litkowski, and S. Stevenson (2008, June). Semantic Role Labeling: An<lb/> Introduction to the Special Issue. Computational Linguistics 34(2), 145–159.<lb/> </bibl>
+<bibl>Moldovan, D., A. Badulescu, M. Tatu, D. Antohe, and R. Girju (2004). Models for the Semantic Classi-<lb/>fication of Noun Phrases. In HLT-NAACL 2004: Workshop on Computational Lexical Semantics.<lb/> </bibl>
+<bibl>Nulty, P. (2007). Semantic Classification of Noun Phrases Using Web Counts and Learning Algorithms.<lb/> In Proceedings of the ACL 2007 Student Research Workshop, Prague, Czech Republic.<lb/> </bibl>
+<bibl>Palmer, M., D. Gildea, and P. Kingsbury (2005). The Proposition Bank: An Annotated Corpus of<lb/> Semantic Roles. Computational Linguistics 31(1), 71–106.<lb/> </bibl>
+<bibl>Srikumar, V., R. Reichart, M. Sammons, A. Rappoport, and D. Roth (2008). Extraction of Entailed<lb/> Semantic Relations Through Syntax-Based Comma Resolution. In Proceedings of ACL-08: HLT,<lb/> Columbus, OH.<lb/> </bibl>
+<bibl>Szpakowicz, B., K. Barker, and S. Szpakowicz (1995). Interactive semantic analysis of Clause-Level<lb/> Relationships. In Proc. of the 2nd Conference of the Pacific Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Winston, M. E., R. Chaffin, and D. Herrmann (1987). A Taxonomy of Part-Whole Relations. Cognitive<lb/> Science 11(4), 417–444.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

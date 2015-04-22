@@ -1,0 +1,31 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Giuseppe Attardi. 2006. Experiments with a mul-<lb/>tilanguage non-projective dependency parser. In<lb/> Tenth Conference on Computational Natural Lan-<lb/>guage Learning (CoNLL), pages 166–170, New<lb/> York, USA.<lb/> </bibl>
+<bibl>Sabine Buchholz and Erwin Marsi. 2006. CoNLL-<lb/>X shared task on multilingual dependency pars-<lb/>ing. In Tenth Conference on Computational Natural<lb/> Language Learning (CoNLL), pages 149–164, New<lb/> York, USA.<lb/> </bibl>
+<bibl>Eugene Charniak. 1996. Tree-bank grammars. In 13th<lb/> National Conference on Artificial Intelligence, pages<lb/> 1031–1036, Portland, Oregon, USA.<lb/> </bibl>
+<bibl>Jason Eisner. 1996. Three new probabilistic models<lb/> for dependency parsing: An exploration. In 16th In-<lb/>ternational Conference on Computational Linguist-<lb/>ics (COLING), pages 340–345, Copenhagen, Den-<lb/>mark.<lb/> </bibl>
+<bibl>Carlos Gómez-Rodríguez, David J. Weir, and John<lb/> Carroll. 2009. Parsing mildly non-projective de-<lb/>pendency structures. In Twelfth Conference of the<lb/> European Chapter of the Association for Computa-<lb/>tional Linguistics (EACL), Athens, Greece.<lb/> </bibl>
+<bibl>Jan Hajič, Barbora Vidova Hladka, Jarmila Panevová,<lb/> Eva Hajičová, Petr Sgall, and Petr Pajas. 2001.<lb/> Prague Dependency Treebank 1.0. Linguistic Data<lb/> Consortium, 2001T10.<lb/> </bibl>
+<bibl>Keith Hall and Václav Novák. 2005. Corrective mod-<lb/>elling for non-projective dependency grammar. In<lb/> Ninth International Workshop on Parsing Technolo-<lb/>gies (IWPT), pages 42–52, Vancouver, Canada.<lb/> </bibl>
+<bibl>Jiří Havelka. 2007. Beyond projectivity: Multilin-<lb/>gual evaluation of constraints and measures on non-<lb/>projective structures. In 45th Annual Meeting of the<lb/> Association for Computational Linguistics (ACL),<lb/> pages 608–615, Prague, Czech Republic.<lb/> </bibl>
+<bibl>Marco Kuhlmann and Mathias Möhl. 2007. Mildly<lb/> context-sensitive dependency languages. In 45th An-<lb/>nual Meeting of the Association for Computational<lb/> Linguistics (ACL), pages 160–167, Prague, Czech<lb/> Republic.<lb/> </bibl>
+<bibl>Marco Kuhlmann and Joakim Nivre. 2006. Mildly<lb/> non-projective dependency structures. In 21st In-<lb/>ternational Conference on Computational Linguist-<lb/>ics and 44th Annual Meeting of the Association for<lb/> Computational Linguistics (COLING-ACL), Main<lb/> Conference Poster Sessions, pages 507–514, Sydney,<lb/> Australia.<lb/> </bibl>
+<bibl>Ryan McDonald and Fernando Pereira. 2006. On-<lb/>line learning of approximate dependency parsing al-<lb/>gorithms. In Eleventh Conference of the European<lb/> Chapter of the Association for Computational Lin-<lb/>guistics (EACL), pages 81–88, Trento, Italy.<lb/> </bibl>
+<bibl>Ryan McDonald and Giorgio Satta. 2007. On the com-<lb/>plexity of non-projective data-driven dependency<lb/> parsing. In Tenth International Conference on Pars-<lb/>ing Technologies (IWPT), pages 121–132, Prague,<lb/> Czech Republic.<lb/> </bibl>
+<bibl>Ryan McDonald, Fernando Pereira, Kiril Ribarov, and<lb/> Jan Hajič. 2005. Non-projective dependency pars-<lb/>ing using spanning tree algorithms. In Human Lan-<lb/>guage Technology Conference (HLT) and Confer-<lb/>ence on Empirical Methods in Natural Language<lb/> Processing (EMNLP), pages 523–530, Vancouver,<lb/> Canada.<lb/> </bibl>
+<bibl>Joakim Nivre and Jens Nilsson. 2005. Pseudo-<lb/>projective dependency parsing. In 43rd Annual<lb/> Meeting of the Association for Computational Lin-<lb/>guistics (ACL), pages 99–106, Ann Arbor, USA.<lb/> </bibl>
+<bibl>Joakim Nivre. 2003. An efficient algorithm for pro-<lb/>jective dependency parsing. In Eighth International<lb/> Workshop on Parsing Technologies (IWPT), pages<lb/> 149–160, Nancy, France.<lb/> </bibl>
+<bibl>Joakim Nivre. 2007. Incremental non-projective<lb/> dependency parsing. In Human Language Tech-<lb/>nologies: The Conference of the North American<lb/> Chapter of the Association for Computational Lin-<lb/>guistics (HLT-NAACL), pages 396–403, Rochester,<lb/> NY, USA.<lb/> </bibl>
+<bibl>Owen Rambow and Giorgio Satta. 1999. Independent<lb/> parallelism in finite copying parallel rewriting sys-<lb/>tems. Theoretical Computer Science, 223(1–2):87–<lb/> 120.<lb/> </bibl>
+<bibl>Hiroyuki Seki, Takashi Matsumura, Mamoru Fujii,<lb/> and Tadao Kasami. 1991. On Multiple Context-<lb/>Free Grammars. Theoretical Computer Science,<lb/> 88(2):191–229.<lb/> </bibl>
+<bibl>K. Vijay-Shanker, David J. Weir, and Aravind K. Joshi.<lb/> 1987. Characterizing structural descriptions pro-<lb/>duced by various grammatical formalisms. In 25th<lb/> Annual Meeting of the Association for Computa-<lb/>tional Linguistics (ACL), pages 104–111, Stanford,<lb/> CA, USA.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,21 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Bangalore, S., G.Bordel, and G. Riccardi (2001). Com-<lb/>puting Consensus Translation from Multiple Machine<lb/> Translation Systems. In Proceedings of IEEE Auto-<lb/>matic Speech Recognition and Understanding Work-<lb/>shop (ASRU-2001), Italy.<lb/> </bibl>
+<bibl>Fiscus, J. G.(1997). A Post-processing System to Yield<lb/> Reduced Error Word Rates: Recognizer Output Vot-<lb/>ing Error Reduction (ROVER). In IEEE Workshop<lb/> on Automatic Speech Recognition and Understanding<lb/> (ASRU-1997).<lb/> </bibl>
+<bibl>Frederking, R. and S. Nirenburg. Three Heads are Better<lb/> than One. In Proceedings of the Fourth Conference<lb/> on Applied Natural Language Processing (ANLP-<lb/>94), Stuttgart, Germany, 1994.<lb/> </bibl>
+<bibl>Hogan, C. and R.E.Frederking (1998). An Evaluation of<lb/> the Multi-engine MT Architecture. In Proceedings of<lb/> the Third Conference of the Association for Machine<lb/> Translation in the Americas, pp. 113-123. Springer-<lb/>Verlag, Berlin .<lb/> </bibl>
+<bibl>Lavie, A., K. Probst, E. Peterson, S. Vogel, L.Levin, A.<lb/> </bibl>
+<bibl>Font-Llitjos and J. Carbonell (2004). A Trainable<lb/> Transfer-based Machine Translation Approach for<lb/> Languages with Limited Resources. In Proceedings<lb/> of Workshop of the European Association for Ma-<lb/>chine Translation (EAMT-2004), Valletta, Malta.<lb/> </bibl>
+<bibl>Lavie, A., K. Sagae and S. Jayaraman (2004). The Sig-<lb/>nificance of Recall in Automatic Metrics for MT<lb/> Evaluation. In Proceedings of the 6th Conference of<lb/> the Association for Machine Translation in the<lb/> Americas (AMTA-2004), Washington, DC.<lb/> </bibl>
+<bibl>Papineni, K., S. Roukos, T. Ward and W-J Zhu (2002).<lb/> BLEU: a Method for Automatic Evaluation of Ma-<lb/>chine Translation. In Proceedings of 40th Annual<lb/> Meeting of the Association for Computational Lin-<lb/>guistics (ACL-2002), Philadelphia, PA.<lb/> </bibl>
+<bibl>Tidhar, Dan and U. Küssner (2000). Learning to Select<lb/> a Good Translation. In Proceedings of the 17 th con-<lb/>ference on Computational linguistics (COLING<lb/> 2000), Saarbrücken, Germany.</bibl>
+        </listBibl>
+    </text>
+</tei>
+
