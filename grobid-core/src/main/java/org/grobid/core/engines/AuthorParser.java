@@ -35,7 +35,11 @@ public class AuthorParser implements Closeable {
     }
 
     /**
-     * Processing of authors in header
+     * Processing of authors in header or citation
+	 *
+	 * @param inputs - list of sequence of author names to be processed.
+	 * @param head - if true use the model for header's name, otherwise the model for names in citation
+	 * @return List of Person entites as POJO.
      */
     public List<Person> processing(List<String> inputs,
                                    boolean head) {
@@ -380,8 +384,12 @@ public class AuthorParser implements Closeable {
     }
 
     /**
-     * Extract results from a lsi of name strings in the training format without any string modification.
-     */
+     * Extract results from a list of name strings in the training format without any string modification.
+	 *
+	 * @param inputs - list of sequence of author names to be processed.
+	 * @param head - if true use the model for header's name, otherwise the model for names in citation
+	 * @return the pseudo-TEI training data
+	 */
     public StringBuffer trainingExtraction(List<String> inputs,
                                            boolean head) {
         StringBuffer buffer = new StringBuffer();

@@ -136,17 +136,6 @@ public class Document {
         return tokenizations;
     }
 
-//    private List<LayoutToken> getLayoutTokens(DocumentPiece dp) {
-//        List<LayoutToken> toks
-//        if (dp.a.getBlockPtr() == dp.b.getBlockPtr()) {
-//            getBlocks().get(dp.a.getBlockPtr()).getTokens().subList(dp.a.getTokenPtr(), dp.b.getTokenPtr() + 1);
-//        } else {
-//
-//        }
-//        getBlocks().get(dp.a.getBlockPtr()).getTokens().subList(dp.get)
-//    }
-
-
     public List<String> getTokenizationsHeader() {
         List<String> tokenizationsHeader = new ArrayList<String>();
         for (Integer blocknum : blockDocumentHeaders) {
@@ -181,37 +170,8 @@ public class Document {
             tokenizationsReferences.addAll(tokenizations.subList(dp.a.getTokenDocPos(), dp.b.getTokenDocPos()));
         }
 
-//        for (Integer blocknum : blockReferences) {
-//            Block blo = blocks.get(blocknum);
-//            int tokens = blo.getStartToken();
-//            int tokene = blo.getEndToken();
-//            for (int i = tokens; i < tokene; i++) {
-//                tokenizationsReferences.add(tokenizations.get(i));
-//            }
-//        }
-
         return tokenizationsReferences;
     }
-
-//    public String getPDFPath() {
-//        return path;
-//    }
-
-	/*
-     * private static String pdftoxml = GrobidProperties.getPdf2XMLPath()
-	 * .getAbsolutePath() +
-	 * "/pdftoxml -blocks -noImage -noImageInline -fullFontName "; private
-	 * static String pdftoxml2 = GrobidProperties.getPdf2XMLPath()
-	 * .getAbsolutePath() + "/pdftoxml -blocks -noImageInline -fullFontName ";
-	 */
-
-
-    // producing the low level xml
-    // representation of a pdf
-    // WARNING: it might be too
-    // short for ebook !
-
-
 
     /**
      * Parser PDF2XML output representation and get the tokenized form of the document.
@@ -256,6 +216,9 @@ public class Document {
     /**
      * Try to reconnect blocks cut because of layout constraints (new col., new
      * page, inserted figure, etc.)
+	 *
+	 * -> not used anymore
+	 *
      */
     public void reconnectBlocks() throws Exception {
         int i = 0;
@@ -362,6 +325,11 @@ public class Document {
         }
     }
 
+	/**
+	 * Add features in the header section
+	 *
+	 * -> should be moved to the header parser class!
+	 */
     public String getHeaderFeatured(boolean getHeader,
                                     boolean withRotation) {
         if (getHeader) {
@@ -627,9 +595,10 @@ public class Document {
     // default bins for relative position
     private static final int nbBins = 12;
 
-    // heuristics to get the header section... should be should be a global
-    // CRF structure recognition
-    // model
+ 	/**
+     * heuristics to get the header section... 
+	 * -> it is now covered by the CRF segmentation model
+	 */ 
     public String getHeader() {
         //if (firstPass)
         BasicStructureBuilder.firstPass(this);
@@ -733,6 +702,8 @@ public class Document {
     /**
      * We return the first page as header estimation... better than nothing when
      * nothing is not acceptable.
+	 *
+	 * -> now covered by the CRF segmentation model  
      */
     public String getHeaderLastHope() {
         String res;
@@ -772,6 +743,8 @@ public class Document {
     /**
      * We try to match the introduction section in a safe way, and consider if
      * minimum requirements are met the blocks before this position as header.
+	 *
+	 * -> now covered by the CRF segmentation model  
      */
     public String getHeaderByIntroduction() {
         String res;
@@ -804,8 +777,11 @@ public class Document {
     }
 
     /**
-     * Return the body of the document. getHeader() and getReferences() must
+     * Return the text content of the body of the document. getHeader() and getReferences() must
      * have been called before.
+	 *
+	 * -> this should be removed at some point... it is only used now as default solution to determine
+	 * the language of an article with the language identifier
      */
     public String getBody() {
         StringBuilder accumulated = new StringBuilder();
@@ -912,7 +888,7 @@ public class Document {
     /**
      * Return all blocks.
      */
-    public String getAllBlocks() {
+    /*public String getAllBlocks() {
         StringBuilder accumulated = new StringBuilder();
         int i = 0;
         for (Block block : blocks) {
@@ -920,7 +896,7 @@ public class Document {
             i++;
         }
         return accumulated.toString();
-    }
+    }*/
 
     /**
      * Return all blocks without markers.
@@ -946,7 +922,7 @@ public class Document {
     /**
      * Return all textual content except metadata.
      */
-    public String getAllBody(Engine engine, BiblioItem biblio,
+    /*public String getAllBody(Engine engine, BiblioItem biblio,
                              List<BibDataSet> bds, boolean withBookTitle) {
         StringBuilder accumulated = new StringBuilder();
         int i = 0;
@@ -1033,13 +1009,13 @@ public class Document {
         }
 
         return accumulated.toString();
-    }
+    }*/
 
     /**
      * Get the introduction, i.e. first section after header until next section
      * title
      */
-    public String getIntroduction(Engine engine) throws Exception {
+    /*public String getIntroduction(Engine engine) throws Exception {
         StringBuilder introduction = new StringBuilder();
 
         int i = 0;
@@ -1085,13 +1061,13 @@ public class Document {
         }
 
         return introduction.toString();
-    }
+    }*/
 
     /**
      * Get the conclusion, i.e. section before the references or the
      * acknowlegement
      */
-    public String getConclusion(Engine engine) throws Exception {
+    /*public String getConclusion(Engine engine) throws Exception {
         String conclusion = "";
         int add = 0;
         for (int i = beginReferences - 1; i > 0; i--) {
@@ -1140,12 +1116,12 @@ public class Document {
         }
 
         return conclusion;
-    }
+    }*/
 
     /**
      * Get all section titles
      */
-    public String getSectionTitles() throws Exception {
+    /*public String getSectionTitles() throws Exception {
         StringBuilder titles = new StringBuilder();
 
         int i = 0;
@@ -1180,83 +1156,13 @@ public class Document {
         }
 
         return titles.toString();
-    }
+    }*/
 
-    public String getReferences() {
+    /*public String getReferences() {
         throw new IllegalStateException("Please use segmentation model for getting references");
+    }*/
 
-//        blockReferences = new TreeSet<>();
-//        StringBuilder accumulated = new StringBuilder();
-//        // we start from the end of the document
-//        int i = blocks.size() - 1;
-//        beginReferences = -1;
-//        String prefix = null;
-//        int bad = 0;
-//        while ((i > 0) && (bad < 20) && (i > beginBody + 2)) {
-//            Block block = blocks.get(i);
-//            String localText = block.getText();
-//            if (localText != null)
-//                localText = localText.trim();
-//            else {
-//                i--;
-//                continue;
-//            }
-//
-//            if (localText.equals("@PAGE")) {
-//                localText = "\n";
-//
-//                // if the next block is just a number, that's a page number that
-//                // needs to be throw out too
-//                if (i > 1) {
-//                    Block nextBlock = blocks.get(i - 1);
-//                    String nextLocalText = nextBlock.getText();
-//                    if (featureFactory == null) {
-//                        featureFactory = FeatureFactory.getInstance();
-//                    }
-//                    if (featureFactory.test_number(nextLocalText)) {
-//                        i = i - 1;
-//                        continue;
-//                    }
-//                }
-//            }
-//
-//            if (prefix == null) {
-//                if (localText.length() > 0) {
-//                    if ((localText.charAt(0) == '[')
-//                            || (localText.charAt(0) == '(')) {
-//                        prefix = "" + localText.charAt(0);
-//                    }
-//
-//                }
-//            }
-//
-//            if (block.getNbTokens() < 5) {
-//                Matcher m = BasicStructureBuilder.references.matcher(localText);
-//                if (m.find()) {
-//                    // we clearly found the beginning of the references
-//                    beginReferences = i;
-//                    return accumulated.toString();
-//                }
-//            }
-//
-//            if (prefix == null) {
-//                accumulated.insert(0, localText + "\n");
-//                blockReferences.add(0, i);
-//            } else if (localText.length() == 0) {
-//                bad++;
-//            } else if (localText.charAt(0) == prefix.charAt(0)) {
-//                accumulated.insert(0, localText + "\n");
-//                bad = 0;
-//                blockReferences.add(0, i);
-//            } else {
-//                bad++;
-//            }
-//            i--;
-//        }
-//        beginReferences = i;
-//        return accumulated.toString();
-    }
-
+	// the magic DOI regular expression...
     static public final Pattern DOIPattern = Pattern
             .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
 
@@ -1295,7 +1201,7 @@ public class Document {
         this.tei = tei;
     }
 
-    public List<Integer> getBlockHeaders() {
+    /*public List<Integer> getBlockHeaders() {
         return blockHeaders;
     }
 
@@ -1309,13 +1215,13 @@ public class Document {
 
     public List<Integer> getAcknowledgementBlocks() {
         return acknowledgementBlocks;
-    }
+    }*/
 
     public List<Integer> getBlockDocumentHeaders() {
         return blockDocumentHeaders;
     }
 
-    public SortedSet<DocumentPiece> getBlockReferences() {
+    /*public SortedSet<DocumentPiece> getBlockReferences() {
         return blockReferences;
     }
 
@@ -1334,8 +1240,9 @@ public class Document {
     public List<Integer> getBlockHeadFigures() {
         return blockHeadFigures;
     }
-
-    public DocumentNode getTop() {
+	*/
+    
+	public DocumentNode getTop() {
         return top;
     }
 
