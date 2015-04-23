@@ -1197,16 +1197,16 @@ public class Engine implements Closeable {
     /**
      * Return all textual content except metadata. Useful for term extraction
      */
-    public String getAllBody(Document doc, List<BibDataSet> resBib, boolean withBookTitle) throws Exception {
+    /*public String getAllBody(Document doc, List<BibDataSet> resBib, boolean withBookTitle) throws Exception {
         return doc.getAllBody(this, doc.getResHeader(), resBib, withBookTitle);
-    }
+    }*/
 
     /**
      * Return all textual content without requiring a segmentation. Ignore the
      * toIgnore1 th blocks (default is 0) and the blocks after toIgnore2 th
      * (included, default is -1)
      */
-    public String getAllBlocksClean(Document doc, int toIgnore1, int toIgnore2) throws Exception {
+    /*public String getAllBlocksClean(Document doc, int toIgnore1, int toIgnore2) throws Exception {
         return doc.getAllBlocksClean(toIgnore1, toIgnore2);
     }
 
@@ -1216,7 +1216,7 @@ public class Engine implements Closeable {
 
     public String getAllBlocksClean(Document doc) throws Exception {
         return doc.getAllBlocksClean(0, -1);
-    }
+    }*/
 
     /**
      * Print the abstract content. Useful for term extraction.
@@ -1246,7 +1246,7 @@ public class Engine implements Closeable {
     /**
      * Return all the reference book titles. Maybe useful for term extraction.
      */
-    public String printRefBookTitles(List<BibDataSet> resBib) throws Exception {
+    /*public String printRefBookTitles(List<BibDataSet> resBib) throws Exception {
         StringBuilder accumulated = new StringBuilder();
         for (BibDataSet bib : resBib) {
             BiblioItem bit = bib.getResBib();
@@ -1261,31 +1261,7 @@ public class Engine implements Closeable {
         }
 
         return accumulated.toString();
-    }
-
-    /**
-     * Return the introduction.
-     *
-     * @return introduction
-     */
-    public String getIntroduction(Document doc) throws Exception {
-        return doc.getIntroduction(this);
-    }
-
-    /**
-     * @return conclusion.
-     */
-    public String getConclusion(Document doc) throws Exception {
-        return doc.getConclusion(this);
-    }
-
-    /**
-     * Return all the section titles.
-     */
-    public String getSectionTitles(Document doc) throws Exception {
-        return doc.getSectionTitles();
-    }
-
+    }*/
 
     @Override
     public synchronized void close() throws IOException {

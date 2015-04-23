@@ -35,6 +35,8 @@ import java.util.regex.Pattern;
 public class BasicStructureBuilder {
 	private static final Logger LOGGER = LoggerFactory.getLogger(BasicStructureBuilder.class);
 
+	// note: these regular expressions will disappear as a new CRF model is now covering 
+	// the overall document segmentation
     static public Pattern introduction =
             Pattern.compile("^\\b*(Introduction?|Einleitung|INTRODUCTION|Acknowledge?ments?|Acknowledge?ment?|Background?|Content?|Contents?|Motivations?|1\\.\\sPROBLEMS?|1\\.(\\n)?\\sIntroduction?|1\\.\\sINTRODUCTION|I\\.(\\s)+Introduction|1\\.\\sProblems?|I\\.\\sEinleitung?|1\\.\\sEinleitung?|1\\sEinleitung?|1\\sIntroduction?)",
                     Pattern.CASE_INSENSITIVE);
@@ -70,7 +72,9 @@ public class BasicStructureBuilder {
     /**
      * Filter out line numbering possibly present in the document. This can be frequent for
      * document in a review/submission format and degrades strongly the machine learning
-     * extraction results.
+     * extraction results. 
+	 *
+	 * -> Not used !
      *
      * @param doc a document
      * @return if found numbering
@@ -188,6 +192,8 @@ public class BasicStructureBuilder {
      * First pass to detect basic structures: remove page header/footer, identify section numbering,
      * identify Figure and table blocks.
      *
+	 * -> to be removed at some point!
+	 * 
      * @param doc a document
      */
     static public void firstPass(Document doc) {
@@ -633,6 +639,8 @@ public class BasicStructureBuilder {
     /**
      * Cluster the blocks following the font, style and size aspects
      *
+	 * -> not used at this stage, but could be an interesting feature in the full text model in the future 
+	 *
      * @param b   integer
      * @param doc a document
      */
