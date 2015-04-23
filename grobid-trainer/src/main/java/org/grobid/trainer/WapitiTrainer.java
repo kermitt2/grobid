@@ -3,7 +3,8 @@ package org.grobid.trainer;
 import org.grobid.core.jni.WapitiModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.trainer.SegmentationTrainer;
-	
+import java.math.BigDecimal;
+
 import java.io.File;
 
 /**
@@ -25,8 +26,9 @@ public class WapitiTrainer implements GenericTrainer {
 			window = SegmentationTrainer.window;
 		}
         WapitiModel.train(template, trainingData, outputModel, "--nthread " + numThreads +
-//       		" --algo sgd-l1"
-			" -e " + epsilon +
+//       		" --algo sgd-l1" +
+//			" -e " + epsilon +
+			" -e " + BigDecimal.valueOf(epsilon).toPlainString() +
 			" -w " + window +
 			""
         );
