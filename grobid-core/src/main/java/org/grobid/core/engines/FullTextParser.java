@@ -1344,12 +1344,14 @@ public class FullTextParser extends AbstractParser {
 					tokenizationsAnnex, doc);
 			}
 			tei = teiFormater.toTEIReferences(tei, resCitations, generateIDs);
+            doc.calculateTeiIdToBibDataSets();
+
             tei.append("\t\t</back>\n");
 			
             tei.append("\t</text>\n");
             tei.append("</TEI>\n");
         } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception occurred while running Grobid.", e);
         }
 //System.out.println(tei.toString());		
         doc.setTei(tei.toString());
