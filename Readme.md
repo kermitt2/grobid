@@ -79,7 +79,7 @@ The main author is Patrice Lopez (INRIA).
 Many thanks to:
 
 * Laurent Romary (INRIA), as project promoter and TEI pope. 
-* Florian Zipser (Humboldt University & INRIA) who developed the first REST API.
+* Florian Zipser (Humboldt University & INRIA) who developed the first version of the REST API in 2011.
 * the contributors from ResearchGate: Vyacheslav Zholudev, Michael Häusler and Kyryl Bilokurov.
 * Damien Ridereau (Infotel).
 * Thomas Lavergne, Olivier Cappé and François Yvon for Wapiti.
@@ -91,6 +91,6 @@ Many thanks to:
 
 Please simply refer to the github project:
 
-Grobid (2008-2015) <https://github.com/grobid/grobid>
+Grobid (2008-2015) <https://github.com/kermitt2/grobid>
 
 See the [References page](https://github.com/kermitt2/grobid/wiki/References) for more related resources. 
