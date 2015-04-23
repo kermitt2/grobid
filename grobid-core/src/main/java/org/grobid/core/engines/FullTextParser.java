@@ -133,6 +133,9 @@ public class FullTextParser extends AbstractParser {
             List<BibDataSet> resCitations = parsers.getCitationParser().
 				processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), consolidateCitations);
 
+
+            doc.setBibDataSets(resCitations);
+
             if (resCitations != null) {
                 for (BibDataSet bds : resCitations) {
                     String marker = bds.getRefSymbol();
@@ -148,7 +151,7 @@ public class FullTextParser extends AbstractParser {
 
 			// possible annexes (view as a piece of full text similar to the body)
 			documentBodyParts = doc.getDocumentPart(SegmentationLabel.ANNEX);
-			featSeg = getBodyTextFeatured(doc, documentBodyParts);
+            featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String rese2 = null;
 			List<String> tokenizationsBody2 = null;
 			if (featSeg != null) {
