@@ -27,6 +27,7 @@ public class BiblioItem {
     LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
     private AuthorEmailAssigner authorEmailAssigner = new ClassicAuthorEmailAssigner();
     private EmailSanitizer emailSanitizer = new EmailSanitizer();
+    private String teiId;
 
     @Override
     public String toString() {
@@ -1634,21 +1635,30 @@ public class BiblioItem {
             if (language != null) {
                 if (n == -1) {
                     if (pubnum != null) {
-                        tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + pubnum + "\">\n");
+                        teiId = pubnum;
+                        tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + teiId + "\">\n");
                     } else
                         tei.append(" xml:lang=\"" + language + ">\n");
                 } else {
-                    tei.append(" xml:lang=\"" + language + "\" xml:id=\"b" + n + "\">\n");
+                    teiId = "b" + n;
+                    tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + teiId + "\">\n");
                 }
                 // TBD: the language should be normalized following xml lang attributes !
             } else {
                 if (n == -1) {
                     if (pubnum != null) {
-                        tei.append(" xml:id=\"" + pubnum + "\">\n");
+                        teiId = pubnum;
+                        tei.append(" xml:id=\"" + teiId + "\">\n");
                     } else
                         tei.append(">\n");
-                } else
-                    tei.append(" xml:id=\"b" + n + "\">\n");
+                } else {
+                    teiId = "b" + n;
+                    tei.append(" xml:id=\"" + teiId + "\">\n");
+                }
+            }
+
+            if (teiId != null) {
+
             }
 
             if ((bookTitle == null) && (journal == null)) {
@@ -3683,4 +3693,7 @@ public class BiblioItem {
 			return false;
 	}
 
+    public String getTeiId() {
+        return teiId;
+    }
 }

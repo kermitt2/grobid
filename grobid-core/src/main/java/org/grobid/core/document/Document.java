@@ -25,11 +25,7 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -82,6 +78,8 @@ public class Document {
     private List<String> tokenizations = null;
 
     // list of bibliographical references with context
+
+    private Map<String, BibDataSet> teiIdToBibDataSets = null;
     private List<BibDataSet> bibDataSets = null;
 
     private DocumentNode top = null;
@@ -1405,6 +1403,20 @@ public class Document {
         this.bibDataSets = bibDataSets;
     }
 
+    // when calling this method, the tei ids already should be in BibDataSets.BiblioItem
+    public void calculateTeiIdToBibDataSets() {
+        if (bibDataSets == null) {
+            return;
+        }
+
+        teiIdToBibDataSets = new HashMap<String, BibDataSet>(bibDataSets.size());
+        for (BibDataSet bds : bibDataSets) {
+            if (bds.getResBib() != null && bds.getResBib().getTeiId() != null) {
+                teiIdToBibDataSets.put(bds.getResBib().getTeiId(), bds);
+            }
+        }
+    }
+
     public SortedSetMultimap<String, DocumentPiece> getLabeledBlocks() {
         return labeledBlocks;
     }
@@ -1449,5 +1461,9 @@ public class Document {
         } else {
             return getDocumentPieceText(getDocumentPart(segmentationLabel));
         }
+    }
+
+    public BibDataSet getBibDataSetByTeiId(String teiId) {
+        return teiIdToBibDataSets.get(teiId);
     }
 }
