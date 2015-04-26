@@ -24,7 +24,7 @@ public class GrobidAnalyzer {
 	
 	private static volatile GrobidAnalyzer instance;
 	
-	private ReTokenizer jpAnalyzer = null;
+	private ReTokenizer jaAnalyzer = null;
 	private ReTokenizer krAnalyzer = null;
 	private ReTokenizer zhAnalyzer = null;
 	
@@ -69,11 +69,11 @@ public class GrobidAnalyzer {
 			// default Indo-European languages
 			result = GrobidDefaultAnalyzer.tokenize(text);
 		}
-		else if (lang.getLangId().equals("jp")) {
+		else if (lang.getLangId().equals("ja")) {
 			// Japanese analyser
-			if (jpAnalyzer == null)
-				jpAnalyzer = ReTokenizerFactory.create("jp_g");
-			result = jpAnalyzer.tokensAsList(text);
+			if (jaAnalyzer == null)
+				jaAnalyzer = ReTokenizerFactory.create("ja_g");
+			result = jaAnalyzer.tokensAsList(text);
 		}
 		else if (lang.getLangId().equals("zh")) {
 			// Chinese analyser
@@ -124,7 +124,7 @@ public class GrobidAnalyzer {
 			// default Indo-European languages
 			result = GrobidDefaultAnalyzer.retokenize(textTokenized);
 		}
-		else if (lang.getLangId().equals("jp")) {
+		else if (lang.getLangId().equals("ja")) {
 			// Japanese analyser
 		}
 		else if (lang.getLangId().equals("zh")) {
