@@ -33,23 +33,28 @@ public class AffiliationAddressParser extends AbstractParser {
             input = input.trim();
 
             input = TextUtilities.dehyphenize(input);
-            StringTokenizer st = new StringTokenizer(input, " \n\t" + TextUtilities.fullPunctuations, true);
-
-            List<String> tokenizations = new ArrayList<String>();
-            while (st.hasMoreTokens()) {
-                String tok = st.nextToken();
+            //StringTokenizer st = new StringTokenizer(input, " \n\t" + TextUtilities.fullPunctuations, true);
+            //List<String> tokenizations = new ArrayList<String>();
+			// TBD: pass the language object to the tokenizer 
+			List<String> tokenizations = analyzer.tokenize(input);
+            //while (st.hasMoreTokens()) {
+            //    String tok = st.nextToken();
+			int p = 0;
+			for(String tok : tokenizations) {
                 if (tok.length() == 0) continue;
                 if (tok.equals("\n")) {
-                    tokenizations.add(" ");
-                } else {
+                    //tokenizations.add(" ");
+					tokenizations.set(p, " ");
+                } /*else {
                     tokenizations.add(tok);
-                }
+                }*/
                 if (!tok.equals(" ")) {
                     if (tok.equals("\n")) {
                         affiliationBlocks.add("@newline");
                     } else
                         affiliationBlocks.add(tok + " <affiliation>");
                 }
+				p++;
             }
 
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();

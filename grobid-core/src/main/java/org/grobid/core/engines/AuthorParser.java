@@ -7,6 +7,7 @@ import org.grobid.core.engines.tagging.TaggerFactory;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorName;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,13 +20,12 @@ import java.util.StringTokenizer;
 /**
  * @author Patrice Lopez
  */
-public class AuthorParser implements Closeable {
+public class AuthorParser {
 	private static Logger LOGGER = LoggerFactory.getLogger(AuthorParser.class);
-//    private final Model namesHeaderModel;
-//    private final Model namesCitationModel;
     private final GenericTagger namesHeaderParser;
     private final GenericTagger namesCitationParser;
-
+	protected GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance();
+	
     public AuthorParser() {
 
 //        namesHeaderModel = ModelMap.getModel(GrobidModels.NAMES_HEADER);
@@ -63,12 +63,16 @@ public class AuthorParser implements Closeable {
                     continue;
                 //System.out.println(input);
 
-                StringTokenizer st = new StringTokenizer(input, TextUtilities.fullPunctuations, true);
+                //StringTokenizer st = new StringTokenizer(input, TextUtilities.fullPunctuations, true);
+				// TBD: add the language object in the tokenizer call
+				List<String> tokenizations = analyzer.tokenize(input);
 
-                if (st.countTokens() == 0)
+                //if (st.countTokens() == 0)
+				if (tokenizations.size() == 0)
                     return null;
-                while (st.hasMoreTokens()) {
-                    String tok = st.nextToken();
+                //while (st.hasMoreTokens()) {
+                //    String tok = st.nextToken();
+				for(String tok : tokenizations) {
                     if (!tok.equals(" ")) {
                         authorBlocks.add(tok + " <author>");
                     }
@@ -400,24 +404,26 @@ public class AuthorParser implements Closeable {
             if (inputs.size() == 0) {
                 return null;
             }
-            List<String> tokenizations = new ArrayList<String>();
+           	List<String> tokenizations = null;
             List<String> authorBlocks = new ArrayList<String>();
             for (String input : inputs) {
                 if (input == null)
                     continue;
                 //System.out.println("Input: "+input);
-                StringTokenizer st = new StringTokenizer(input, " \t\n" + TextUtilities.fullPunctuations, true);
-
-                if (st.countTokens() == 0)
+                //StringTokenizer st = new StringTokenizer(input, " \t\n" + TextUtilities.fullPunctuations, true);
+				tokenizations = analyzer.tokenize(input);
+                //if (st.countTokens() == 0)
+				if (tokenizations.size() == 0)
                     return null;
-                while (st.hasMoreTokens()) {
-                    String tok = st.nextToken();
+                //while (st.hasMoreTokens()) {
+                //    String tok = st.nextToken();
+				for(String tok : tokenizations) {
                     if (tok.equals("\n")) {
                         authorBlocks.add("@newline");
                     } else if (!tok.equals(" ")) {
                         authorBlocks.add(tok + " <author>");
                     }
-                    tokenizations.add(tok);
+                    //tokenizations.add(tok);
                 }
                 authorBlocks.add("\n");
             }
@@ -722,14 +728,7 @@ public class AuthorParser implements Closeable {
     public List<Person> processingHeader(List<String> inputs) {
         return processing(inputs, true);
     }
-
-    @Override
+	
     public void close() throws IOException {
-//    	taggerHeader.clear();
-//        taggerCitation.clear();
-//        taggerHeader.delete();
-//        taggerCitation.delete();
-//        taggerHeader = null;
-//        taggerCitation = null;
     }
 }

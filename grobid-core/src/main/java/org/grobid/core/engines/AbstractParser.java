@@ -5,6 +5,7 @@ import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.engines.tagging.TaggerFactory;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.counters.impl.CntManagerFactory;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,6 +15,7 @@ import java.io.IOException;
 public abstract class AbstractParser implements GenericTagger, Closeable {
     private static final Logger LOGGER = LoggerFactory.getLogger(AbstractParser.class);
     private GenericTagger genericTagger;
+	protected GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance();
 
     protected CntManager cntManager = CntManagerFactory.getNoOpCntManager();
 
