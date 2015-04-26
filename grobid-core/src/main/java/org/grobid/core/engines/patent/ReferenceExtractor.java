@@ -24,7 +24,9 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.lang.Language;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.EntityResolver;
@@ -86,6 +88,7 @@ public class ReferenceExtractor implements Closeable {
     private EngineParsers parsers;
 	
 	private GrobidAnalyzer analyzer = null; 
+    private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
     public void setDocumentPath(String dirName) {
         path = dirName;
@@ -263,29 +266,22 @@ public class ReferenceExtractor implements Closeable {
             }
             // parser for non patent references
 
-            
-            //ArrayList<String> tokenizations = new ArrayList<String>();
-
             // tokenisation for the parser (with punctuation as tokens)
             ArrayList<String> patentBlocks = new ArrayList<String>();
 
             //text = TextUtilities.dehyphenize(text); // to be reviewed!
-            text = text.replace("\n", " ");
-            text = text.replace("\t", " ");
+            text = text.replace("\n", " ").replace("\t", " ");
             //text = text.replace("  ", " ");
-            //StringTokenizer st = new StringTokenizer(text, delimiters, true);
-			// for keeping track of the original string (including spaces)
-			// TBD : pass a language object to the tokeniza method call
-			List<String> tokenizations = analyzer.tokenize(text);
+			
+			// identify the language of the patent document, we use only the first 500 characters
+			// which is enough normally for a very safe language prediction
+			// the text here is the patent description, so strictly monolingual
+            Language lang = languageUtilities.runLanguageId(text, 500);
+			List<String> tokenizations = analyzer.tokenize(lang, text);
             int offset = 0;
-            //if (st.countTokens() == 0) {
 			if (tokenizations.size() == 0) {	
                 return null;
             }
-            /*while (st.hasMoreTokens()) {
-                String tok = st.nextToken();
-                tokenizations.add(tok);
-            }*/
 
             List<OffsetPosition> journalPositions = null;
             List<OffsetPosition> abbrevJournalPositions = null;

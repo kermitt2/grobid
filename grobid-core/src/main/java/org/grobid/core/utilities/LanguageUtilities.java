@@ -86,4 +86,31 @@ public class LanguageUtilities {
         }
     }
 
+	/**
+	 * Less basic run for language identification, where a maxumum length of text is used to 
+	 * identify the language. The goal is to avoid wasting resources using a too long piece of 
+	 * text, when normally only a small chunk is enough for a safe language prediction.  
+	 * Return a Language object consisting of the language code and a confidence score.
+	 * 
+	 * @param text
+	 *            text to classify
+	 * @param maxLength 
+	 *   		  maximum length of text to be used to identify the language, expressed in characters 	
+	 * @return language Language object consisting of the language code and a confidence score
+	 */
+	public Language runLanguageId(String text, int maxLength) {
+		if (!useLanguageId) {
+			return null;
+		}
+        try {
+			int max = text.length();
+			if (maxLength < max)
+				max = maxLength; 
+            return ldf.getInstance().detect(text.substring(0, max));
+        } catch (Exception e) {
+            LOGGER.warn("Cannot detect language because of: " + e.getClass().getName() + ": " + e.getMessage());
+            return null;
+        }
+    }
+
 }
