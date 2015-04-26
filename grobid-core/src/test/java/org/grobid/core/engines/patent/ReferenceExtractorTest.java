@@ -166,4 +166,42 @@ public class ReferenceExtractorTest {
 								.getAbsolutePath(), false, false, patents,
 						articles);
 	}
+	
+	@Test
+	public void jaProcessing() {
+		String text_jp = "すなわち、相対的な頻度で、エポキシドをベースとする液体接着剤及び接着結合剤が、" + 
+			"例えばＷＯ９８／２１２８７Ａ１。これらの主な使用分野は、硬質装置のみならず適度に柔軟な装置における縁部の結合である。" +
+			"硬化は、熱により又はＵＶ照射により行われる。";
+		System.out.println(text_jp);
+		ReferenceExtractor extractor = new ReferenceExtractor();
+		List<PatentItem> patents = new ArrayList<PatentItem>();
+		extractor.extractAllReferencesString(text_jp, false, false, patents, null);
+		LOGGER.info("PatentItem: " + patents.toString());
+		assertEquals("21287", patents.get(0).getNumber());
+	}
+	
+	@Test
+	public void krProcessing() {
+		String text_kr = "미국의 애플사의 미국 출원 2012/0127110.";
+		System.out.println(text_kr);
+		ReferenceExtractor extractor = new ReferenceExtractor();
+		List<PatentItem> patents = new ArrayList<PatentItem>();
+		extractor.extractAllReferencesString(text_kr, false, false, patents, null);
+		LOGGER.info("PatentItem: " + patents.toString());
+		assertEquals("2012127110", patents.get(0).getNumber());
+	}
+	
+	@Test
+	public void zhProcessing() {
+		String text_zh = "在本申请的申请人于2008年8月26日提交的申请号为CN2008/001534的PCT国际申请中，" + 
+			"揭示了一种等截面三角形定向棱镜圆形反光板及由其制成的圆板灯。该圆板灯包括：等截面三角形微棱镜圆形导光板；" + 
+			"围绕导光板的散热框，该散热框与导光板之间形成间隙而构成环形灯槽；以及嵌装于环形灯槽内的环形灯组件，" + 
+			"该环形灯组件由多个发光二极管(LED)贴片、电阻和线路板构成。该申请的全部内容，通过引用结合于此。";
+		System.out.println(text_zh);
+		ReferenceExtractor extractor = new ReferenceExtractor();
+		List<PatentItem> patents = new ArrayList<PatentItem>();
+		extractor.extractAllReferencesString(text_zh, false, false, patents, null);
+		LOGGER.info("PatentItem: " + patents.toString());
+		assertEquals("2008001534", patents.get(0).getNumber());
+	}
 }
