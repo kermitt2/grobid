@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		                    http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.wipo.analysers</groupId>
+	<artifactId>wipo-analysers</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.1</version>
+	
+	<name>wipo-analysers</name>
+	<description>WIPO custom analyzers derived from Lucene analyzers.</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+	
+	<contributors>
+	</contributors>	
+	
+	<repositories>
+		<repository>
+			<id>3rd-party-local-repo</id>
+			<name>This is a local repository included in the grobid project, to access 3rd party libs.</name>
+			<url>file:///${basedir}/lib/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://download.java.net/maven/2/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+	        <releases />
+	        <snapshots>
+	            <enabled>false</enabled>
+	        </snapshots>
+	        <id>mygrid-repository</id>
+	        <name>myGrid Repository</name>
+	        <url>http://www.mygrid.org.uk/maven/repository</url>
+	    </repository>
+	</repositories>
+		
+	<build>
+		<resources>
+			<resource>
+				<directory>src</directory>
+				<targetPath>source/src</targetPath>
+			</resource>
+			<resource>
+				<directory>${basedir}</directory>
+				<targetPath>source</targetPath>
+				<includes>
+					<include>pom.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/java/org/wipo/analyzers/wipokr/dic</directory>
+				<targetPath>org/wipo/analyzers/wipokr/dic</targetPath>
+			</resource>
+			<resource>
+				<directory>src/main/java/org/wipo/analyzers/wipokr/kr_dictionary</directory>
+				<targetPath>org/wipo/analyzers/wipokr/kr_dictionary</targetPath>
+			</resource>
+		</resources>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+			   	<artifactId>maven-compiler-plugin</artifactId>
+		    	<version>3.0</version>
+		    	<configuration>
+	        		<source>1.6</source>
+			       	<target>1.6</target>
+					<encoding>UTF-8</encoding>
+			    </configuration>
+			</plugin>
+			
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12.4</version>
+				<configuration>
+					<forkMode>pertest</forkMode>
+					<argLine>-Xms256m -Xmx1024m</argLine>
+					<testFailureIgnore>false</testFailureIgnore>
+					<skip>false</skip>
+					<systemPropertyVariables>
+						<log4j.configuration>log4j-test.properties</log4j.configuration>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+		</plugins>
+		
+	</build>	
+		
+	<dependencies>	
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-analyzers-common</artifactId>
+			<version>4.5.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-analyzers-kuromoji</artifactId>
+			<version>4.5.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-analyzers-smartcn</artifactId>
+			<version>4.5.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-core</artifactId>
+			<version>4.5.1</version>
+		</dependency>
+		
+	</dependencies>
+	
+	<profiles>
+    </profiles>
+
+</project>
