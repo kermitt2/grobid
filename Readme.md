@@ -37,6 +37,7 @@ The key aspects of GROBID are the following ones:
 + Reinforcement of extracted bibliographical data via online call to Crossref (optional), export in OpenURL, etc. for easier integration into Digital Library environments. 
 + Rich bibliographical processing: fine grained parsing of author names, dates, affiliations, addresses, etc. but also for instance quite reliable automatic attachment of affiliations and emails to authors. 
 + "Automatic Generation" of pre-formatted training data based on new pdf documents, for supporting semi-automatic training data generation. 
++ Support for CJK and Arabic languages based on customized Lucene analyzers provided by WIPO.
 
 The default GROBID extraction and parsing algorithms uses the [Wapiti CRF library](http://wapiti.limsi.fr), but it is also possible to use the [CRF++ library](http://crfpp.googlecode.com/svn/trunk/doc/index.html). These two C++ libraries are transparently integrated as JNI with dynamic call based on the current OS. 
 
@@ -79,9 +80,10 @@ The main author is Patrice Lopez (INRIA).
 Many thanks to:
 
 * Laurent Romary (INRIA), as project promoter and TEI pope. 
-* Florian Zipser (Humboldt University & INRIA) who developed the first version of the REST API in 2011.
+* Florian Zipser (Humboldt University) who developed the first version of the REST API in 2011.
 * the contributors from ResearchGate: Vyacheslav Zholudev, Michael Häusler and Kyryl Bilokurov.
 * Damien Ridereau (Infotel).
+* Bruno Pouliquen (WIPO) for the custom analyzers for Eastern languages.
 * Thomas Lavergne, Olivier Cappé and François Yvon for Wapiti.
 * Taku Kudo for CRF++
 * Hervé Déjean and his colleagues from Xerox Research Centre Europe, for xml2pdf
