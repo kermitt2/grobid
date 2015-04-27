@@ -43,7 +43,7 @@ public class PatentRefParser {
             "TT", "TN", "TR", "UA", "GB", "US", "UY", "VE", "VN", "YU", "ZM", "ZW");
 
 	// this is the list of supported languages - language codes given ISO 639-1, two-letter codes
-    static public List<String> languages = Arrays.asList("en", "de", "fr", "es", "it", "ja", "ko", "pt", "zh");
+    static public List<String> languages = Arrays.asList("en", "de", "fr", "es", "it", "ja", "kr", "pt", "zh", "ar");
 
 	// list of regular expressions for identifying the authority in the raw reference string
 	private List<Pattern> autority_patterns = new ArrayList<Pattern>();

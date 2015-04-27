@@ -112,6 +112,8 @@ public class DocumentSource {
             } else {
                 cmd = Arrays.asList("bash", "-c", "ulimit -Sv " + PDF2XML_MEM_LIMIT_KBYTES + " && " + pdftoxml0 + " '" + pdfPath + "' " + tmpPathXML);
 
+                LOGGER.debug("Executing command: " + cmd);
+
                 tmpPathXML = processPdf2XmlThreadMode(tout, pdfPath, tmpPathXML, cmd);
             }
 

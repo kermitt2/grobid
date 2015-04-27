@@ -54,22 +54,26 @@ public class CitationParser extends AbstractParser {
             input = TextUtilities.dehyphenize(input);
             input = input.replace("\n", " ");
             input = input.replaceAll("\\p{Cntrl}", " ").trim();
-            StringTokenizer st = new StringTokenizer(input,
-                    TextUtilities.fullPunctuations, true);
+            //StringTokenizer st = new StringTokenizer(input,
+            //        TextUtilities.fullPunctuations, true);
 
-            if (st.countTokens() == 0)
+			// TBD: add the language object in the tokenizer call
+			List<String> tokenizations = analyzer.tokenize(input);
+
+            //if (st.countTokens() == 0)
+			if (tokenizations.size() == 0)
                 return null;
 
-            List<String> tokenizations = new ArrayList<String>();
-            while (st.hasMoreTokens()) {
-                final String tok = st.nextToken();
-                tokenizations.add(tok);
+            //List<String> tokenizations = new ArrayList<String>();
+            //while (st.hasMoreTokens()) {
+            //    final String tok = st.nextToken();
+			for(String tok : tokenizations) {
+                //tokenizations.add(tok);
                 if (!tok.equals(" ")) {
                     citationBlocks.add(tok + " <citation>");
                 }
             }
             citationBlocks.add("\n");
-
 
             List<List<OffsetPosition>> journalsPositions = new ArrayList<List<OffsetPosition>>();
             List<List<OffsetPosition>> abbrevJournalsPositions = new ArrayList<List<OffsetPosition>>();
@@ -479,24 +483,26 @@ public class CitationParser extends AbstractParser {
             List<List<OffsetPosition>> publishersPositions = new ArrayList<List<OffsetPosition>>();
 
             for (String input : inputs) {
-                List<String> tokenizations = new ArrayList<String>();
                 List<String> citationBlocks = new ArrayList<String>();
                 if (input == null)
                     continue;
                 // System.out.println("Input: "+input);
-                StringTokenizer st = new StringTokenizer(input, " \t\n"
-                        + TextUtilities.fullPunctuations, true);
-
-                if (st.countTokens() == 0)
+                //StringTokenizer st = new StringTokenizer(input, " \t\n"
+                //        + TextUtilities.fullPunctuations, true);
+				
+				List<String> tokenizations = analyzer.tokenize(input);
+                //if (st.countTokens() == 0)
+				if (tokenizations.size() == 0)
                     return null;
-                while (st.hasMoreTokens()) {
-                    String tok = st.nextToken();
-                    if (tok.equals("\n")) {
+                //while (st.hasMoreTokens()) {
+                //    String tok = st.nextToken();
+                for(String tok : tokenizations) {
+				    if (tok.equals("\n")) {
                         citationBlocks.add("@newline");
                     } else if (!tok.equals(" ")) {
                         citationBlocks.add(tok + " <bibl>");
                     }
-                    tokenizations.add(tok);
+                    //tokenizations.add(tok);
                 }
                 citationBlocks.add("\n");
 

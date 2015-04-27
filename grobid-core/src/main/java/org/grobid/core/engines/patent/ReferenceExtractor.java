@@ -24,6 +24,9 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.LanguageUtilities;
+import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.lang.Language;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.EntityResolver;
@@ -81,8 +84,11 @@ public class ReferenceExtractor implements Closeable {
 
     private String path = null;     // path where the patent file is stored
 
-    private static String delimiters = " \n\t" + TextUtilities.fullPunctuations;
+    //private static String delimiters = " \n\t" + TextUtilities.fullPunctuations;
     private EngineParsers parsers;
+	
+	private GrobidAnalyzer analyzer = null; 
+    private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
     public void setDocumentPath(String dirName) {
         path = dirName;
@@ -98,6 +104,7 @@ public class ReferenceExtractor implements Closeable {
         taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
     	taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_ALL);
     	taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
+		analyzer = GrobidAnalyzer.getInstance(); 
     }
 
     /**
@@ -259,25 +266,21 @@ public class ReferenceExtractor implements Closeable {
             }
             // parser for non patent references
 
-            // for keeping track of the original string (including spaces)
-            ArrayList<String> tokenizations = new ArrayList<String>();
-
             // tokenisation for the parser (with punctuation as tokens)
             ArrayList<String> patentBlocks = new ArrayList<String>();
 
             //text = TextUtilities.dehyphenize(text); // to be reviewed!
-            text = text.replace("\n", " ");
-            text = text.replace("\t", " ");
+            text = text.replace("\n", " ").replace("\t", " ");
             //text = text.replace("  ", " ");
-            //StringTokenizer st = new StringTokenizer(text, "(["+ TextUtilities.punctuations, true);
-            StringTokenizer st = new StringTokenizer(text, delimiters, true);
+			
+			// identify the language of the patent document, we use only the first 500 characters
+			// which is enough normally for a very safe language prediction
+			// the text here is the patent description, so strictly monolingual
+            Language lang = languageUtilities.runLanguageId(text, 500);
+			List<String> tokenizations = analyzer.tokenize(lang, text);
             int offset = 0;
-            if (st.countTokens() == 0) {
+			if (tokenizations.size() == 0) {	
                 return null;
-            }
-            while (st.hasMoreTokens()) {
-                String tok = st.nextToken();
-                tokenizations.add(tok);
             }
 
             List<OffsetPosition> journalPositions = null;
@@ -303,15 +306,16 @@ public class ReferenceExtractor implements Closeable {
             int currentPublisherPositions = 0;
             boolean skipTest = false;
             //st = new StringTokenizer(text, " (["+ TextUtilities.punctuations, true);
-            st = new StringTokenizer(text, delimiters, true);
+            //st = new StringTokenizer(text, delimiters, true);
             int posit = 0;
-            while (st.hasMoreTokens()) {
+            //while (st.hasMoreTokens()) {
+			for(String tok : tokenizations)	{
                 isJournalToken = false;
                 isAbbrevJournalToken = false;
                 isConferenceToken = false;
                 isPublisherToken = false;
                 skipTest = false;
-                String tok = st.nextToken();
+                //String tok = st.nextToken();
                 if (tok.trim().length() == 0) {
                     continue;
                 }

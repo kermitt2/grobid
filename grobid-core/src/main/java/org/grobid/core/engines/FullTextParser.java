@@ -41,7 +41,7 @@ import java.util.regex.Matcher;
 public class FullTextParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(FullTextParser.class);
 
-    private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
+    //private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
     //	private String tmpPathName = null;
 //    private Document doc = null;
@@ -133,6 +133,8 @@ public class FullTextParser extends AbstractParser {
             List<BibDataSet> resCitations = parsers.getCitationParser().
 				processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), consolidateCitations);
 
+            doc.setBibDataSets(resCitations);
+
             if (resCitations != null) {
                 for (BibDataSet bds : resCitations) {
                     String marker = bds.getRefSymbol();
@@ -148,7 +150,7 @@ public class FullTextParser extends AbstractParser {
 
 			// possible annexes (view as a piece of full text similar to the body)
 			documentBodyParts = doc.getDocumentPart(SegmentationLabel.ANNEX);
-			featSeg = getBodyTextFeatured(doc, documentBodyParts);
+            featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String rese2 = null;
 			List<String> tokenizationsBody2 = null;
 			if (featSeg != null) {
@@ -1105,7 +1107,7 @@ public class FullTextParser extends AbstractParser {
                     buffer.append(" ").append(outField).append(s2);
                 else
                     buffer.append(outField).append(s2);
-            }*/ else if (field.equals("<reference_marker>")) {
+            } else if (field.equals("<reference_marker>")) {
                 if (!lastTag0.equals("<reference>") && !lastTag0.equals("<reference_marker>")) {
                     for (int i = 0; i < nbIndent; i++) {
                         buffer.append("\t");
@@ -1116,7 +1118,7 @@ public class FullTextParser extends AbstractParser {
                     buffer.append(" ").append(outField).append(s2);
                 else
                     buffer.append(outField).append(s2);
-            } else if (lastTag0 == null) {
+            }*/ else if (lastTag0 == null) {
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
@@ -1341,12 +1343,14 @@ public class FullTextParser extends AbstractParser {
 					tokenizationsAnnex, doc);
 			}
 			tei = teiFormater.toTEIReferences(tei, resCitations, generateIDs);
+            doc.calculateTeiIdToBibDataSets();
+
             tei.append("\t\t</back>\n");
 			
             tei.append("\t</text>\n");
             tei.append("</TEI>\n");
         } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception occurred while running Grobid.", e);
         }
 //System.out.println(tei.toString());		
         doc.setTei(tei.toString());

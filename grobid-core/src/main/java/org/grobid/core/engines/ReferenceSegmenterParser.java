@@ -23,7 +23,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 import java.util.SortedSet;
 import java.util.regex.Matcher;
 
@@ -224,38 +223,6 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 //        }
         return resultList;
     }
-
-
-	/*public org.grobid.core.utilities.Pair<String,String> createTrainingData2(Document doc, int id) {
-        List<LabeledReferenceResult> res = extract(doc, true);
-        StringBuilder sb = new StringBuilder();
-		StringBuilder sbRaw = new StringBuilder();
-
-        sb.append("<tei>\n" +
-                "    <teiHeader>\n" +
-                "        <fileDesc xml:id=\"_D_"+ id + "\"/>\n" +
-                "    </teiHeader>\n" +
-                "    <text xml:lang=\"en\">\n" +
-                "        <listBibl>");
-
-        for (LabeledReferenceResult p : res) {
-            if (p.getLabel() != null) {
-                sb.append(String.format("<bibl> <label>%s</label> %s</bibl>", p.getLabel(), p.getReferenceText().replace("\n","<lb/> ")));
-            } else {
-                sb.append(String.format("<bibl>%s</bibl>", p.getReferenceText().replace("\n","<lb/> ")));
-            }
-            sb.append("\n");
-
-			sbRaw.append(p.getFeatures());
-			//sbRaw.append("\n");
-        }
-
-        sb.append("        </listBibl>\n" +
-                "    </text>\n" +
-                "</tei>\n");
-
-        return new Pair(sb.toString(), sbRaw.toString());
-    }*/
 
 	public org.grobid.core.utilities.Pair<String,String> createTrainingData(Document doc, int id) {
 		SortedSet<DocumentPiece> referencesParts = doc.getDocumentPart(SegmentationLabel.REFERENCES);
