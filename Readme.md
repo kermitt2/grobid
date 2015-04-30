@@ -1,6 +1,6 @@
 # GROBID
 
-[![Build Status](https://ci.inria.fr/grobid/job/Grobid/badge/icon)](https://ci.inria.fr/grobid/job/Grobid/)
+[![Build Status](https://ci.inria.fr/grobid/buildStatus/icon?job=Grobid)](https://ci.inria.fr/grobid/job/Grobid/)
 
 ## License
 
