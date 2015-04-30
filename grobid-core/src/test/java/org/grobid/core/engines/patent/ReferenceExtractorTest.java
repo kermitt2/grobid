@@ -130,7 +130,7 @@ public class ReferenceExtractorTest {
 		assertEquals(1, patents.size());
 		assertEquals(0, articles.size());
 		PatentItem patent = patents.get(0);
-		assertEquals("8303618", patent.getNumber());
+		assertEquals("8303618", patent.getNumberEpoDoc());
 		System.out.println("context=" + patent.getContext());
 		System.out.println("offset start/end/raw=" + patent.getOffsetBegin()
 				+ "/" + patent.getOffsetEnd() + "/" + patent.getOffsetRaw());
@@ -150,8 +150,8 @@ public class ReferenceExtractorTest {
 		LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals(2, patents.size());
 		assertEquals(0, articles.size());
-		assertEquals("9937368", patents.get(0).getNumber());
-		assertEquals("6083121", patents.get(1).getNumber());
+		assertEquals("9937368", patents.get(0).getNumberEpoDoc());
+		assertEquals("6083121", patents.get(1).getNumberEpoDoc());
 	}
 
 	@Ignore
@@ -177,7 +177,7 @@ public class ReferenceExtractorTest {
 		List<PatentItem> patents = new ArrayList<PatentItem>();
 		extractor.extractAllReferencesString(text_jp, false, false, patents, null);
 		LOGGER.info("PatentItem: " + patents.toString());
-		assertEquals("21287", patents.get(0).getNumber());
+		assertEquals("21287", patents.get(0).getNumberEpoDoc());
 	}
 	
 	@Test
@@ -188,7 +188,7 @@ public class ReferenceExtractorTest {
 		List<PatentItem> patents = new ArrayList<PatentItem>();
 		extractor.extractAllReferencesString(text_kr, false, false, patents, null);
 		LOGGER.info("PatentItem: " + patents.toString());
-		assertEquals("2012127110", patents.get(0).getNumber());
+		assertEquals("2012127110", patents.get(0).getNumberEpoDoc());
 	}
 	
 	@Test
@@ -202,6 +202,6 @@ public class ReferenceExtractorTest {
 		List<PatentItem> patents = new ArrayList<PatentItem>();
 		extractor.extractAllReferencesString(text_zh, false, false, patents, null);
 		LOGGER.info("PatentItem: " + patents.toString());
-		assertEquals("2008001534", patents.get(0).getNumber());
+		assertEquals("2008001534", patents.get(0).getNumberEpoDoc());
 	}
 }

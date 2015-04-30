@@ -65,7 +65,6 @@ public class ReferenceExtractor implements Closeable {
     private GenericTagger taggerPatent = null;
     private GenericTagger taggerNPL = null;
     private GenericTagger taggerAll = null;
-//    private CitationParser nplParser = null;
     private PatentRefParser patentParser = null;
     private Consolidation consolidator = null;
 
@@ -98,6 +97,7 @@ public class ReferenceExtractor implements Closeable {
     public ReferenceExtractor() {
         this(new EngineParsers());
     }
+	
     // constructors
     public ReferenceExtractor(EngineParsers parsers) {
         this.parsers = parsers;
@@ -610,7 +610,7 @@ public class ReferenceExtractor implements Closeable {
             for (String ref : referencesPatent) {
                 patentParser.setRawRefText(ref);
                 patentParser.setRawRefTextOffset(offsets_patent.get(j).intValue());
-                ArrayList<PatentItem> patents0 = patentParser.processRawRefText();
+                List<PatentItem> patents0 = patentParser.processRawRefText();
                 for (PatentItem pat : patents0) {
                     pat.setContext(ref);
 					pat.setConf(probPatent.get(j).doubleValue());
@@ -660,13 +660,13 @@ public class ReferenceExtractor implements Closeable {
             }
 
             // list for filtering duplicates, if we want to ignore the duplicate numbers
-            ArrayList<String> numberListe = new ArrayList<String>();
+            List<String> numberListe = new ArrayList<String>();
             if (filterDuplicate) {
                 // list for filtering duplicates, if we want to ignore the duplicate numbers
-                ArrayList<PatentItem> toRemove = new ArrayList<PatentItem>();
+                List<PatentItem> toRemove = new ArrayList<PatentItem>();
                 for (PatentItem pat : patents) {
-                    if (!numberListe.contains(pat.getNumber())) {
-                        numberListe.add(pat.getNumber());
+                    if (!numberListe.contains(pat.getNumberEpoDoc())) {
+                        numberListe.add(pat.getNumberEpoDoc());
                     } else {
                         toRemove.add(pat);
                     }
@@ -1135,7 +1135,7 @@ public class ReferenceExtractor implements Closeable {
 
             int i = 0;
             for (PatentItem pi : patents) {
-                String dnum = pi.getAuthority() + pi.getNumber();
+                String dnum = pi.getAuthority() + pi.getNumberEpoDoc();
                 if (pi.getKindCode() != null)
                     dnum += pi.getKindCode();
                 content.append("<patcit if=\"pcit" + i + " dnum=\"" + dnum + "\">" +
