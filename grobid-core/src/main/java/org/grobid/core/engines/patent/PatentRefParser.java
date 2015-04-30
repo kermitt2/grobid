@@ -404,6 +404,9 @@ public class PatentRefParser {
 				
 				if (!kindCodeFound) {
 					// is there a kind code between the last position and position of this number?
+					if (offsets_begin.get(i) < rawTextOffset) {
+						offsets_begin.set(i, offsets_begin.get(i) + rawTextOffset); 
+					}
 					String interChunk = rawText.substring(lastPositionVisited, (offsets_begin.get(i)-rawTextOffset));
 					fitKindCode = kindcode_pattern1.matcher(interChunk);
 					if (fitKindCode.find()) {
@@ -421,6 +424,9 @@ public class PatentRefParser {
 							if (interChunk.length() - posKind <= 4) {
 							// otherwise, we validated the kind code for this patent reference
 						    	kindcodes.set(i, tata);
+								if (offsets_end.get(i) < rawTextOffset) {
+									offsets_end.set(i, offsets_end.get(i) + rawTextOffset); 
+								}
 								lastPositionVisited = offsets_end.get(i) - rawTextOffset;
 								kindCodeFound = true;
 							}
