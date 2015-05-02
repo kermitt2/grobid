@@ -1,6 +1,7 @@
 # GROBID
 
-[![Build Status](https://ci.inria.fr/grobid/job/Grobid/badge/icon)](https://ci.inria.fr/grobid/job/Grobid/)
+[![Build Status](https://travis-ci.org/kermitt2/grobid.svg?branch=master)](https://travis-ci.org/kermitt2/grobid)
+
 
 ## License
 
