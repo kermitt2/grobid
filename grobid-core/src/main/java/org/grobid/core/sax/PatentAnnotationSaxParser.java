@@ -13,7 +13,7 @@ import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.exceptions.GrobidException;
 
 /**
- *  This SAX parser miror the input XML document, and add as extra annotation identified reference to 
+ *  This SAX parser mirror the input XML document, and add as extra annotation identified reference to 
  *  patent and NPL. The possible tags within the chunk are removed to avoid hierarchical invalid documents.
  * 
  *  @author Patrice Lopez
@@ -32,7 +32,7 @@ public class PatentAnnotationSaxParser extends DefaultHandler {
 	private int currentPatentIndex = 0;
 	private int currentArticleIndex = 0;
 	
-	private static String delimiters = " \n\t" + TextUtilities.fullPunctuations;
+	//private static String delimiters = " \n\t" + TextUtilities.fullPunctuations;
 	
     public PatentAnnotationSaxParser() {}
 
@@ -61,8 +61,6 @@ public class PatentAnnotationSaxParser extends DefaultHandler {
 		text = text.replace("  ", " ");*/
 		if (counting) {
 			/*
-			
-			
 			StringTokenizer st = new StringTokenizer(text, delimiters, true);
 			int count = 0;
 			
