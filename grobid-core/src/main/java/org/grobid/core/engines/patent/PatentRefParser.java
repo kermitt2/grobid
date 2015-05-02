@@ -38,7 +38,7 @@ public class PatentRefParser {
             "BR", "BG", "CA", "CL", "CN", "CO", 
             "HR", "CU", "CY", "CZ", "CS", "DK", "EG", "EA", "EP", "DE", "DD", "FI", "FR", "GB", "GR", "HK", "HU",
             "IS", "IN", "ID", "IB", "TP", "IR", "IQ", "IE", "IL", "IT", "JP", "JO", "KE", "KP", "KR", "LV", "LT",
-            "LU", "MW", "MY", "MX", "MD", "MC", "MN", "MA", "NL", "NZ", "NG", "NO", "OA", "WO", "W0", "PE", "PH",
+            "LU", "MW", "MY", "MX", "MD", "MC", "MN", "MA", "NL", "NZ", "NG", "NO", "OA", "WO", "PE", "PH",
             "PL", "PT", "RD", "RO", "RU", "SA", "SG", "SK", "SI", "ZA", "SU", "ES", "LK", "SE", "CH", "TW", "TH",
             "TT", "TN", "TR", "UA", "GB", "US", "UY", "VE", "VN", "YU", "ZM", "ZW");
 
@@ -404,9 +404,6 @@ public class PatentRefParser {
 				
 				if (!kindCodeFound) {
 					// is there a kind code between the last position and position of this number?
-					/*if (offsets_begin.get(i) < rawTextOffset) {
-						offsets_begin.set(i, offsets_begin.get(i) + rawTextOffset); 
-					}*/
 					String interChunk = rawText.substring(lastPositionVisited, (offsets_begin.get(i)-rawTextOffset));
 					fitKindCode = kindcode_pattern1.matcher(interChunk);
 					if (fitKindCode.find()) {
