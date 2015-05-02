@@ -278,6 +278,15 @@
 					<!--argLine>-Djava.library.path=${basedir}/lib/</argLine> <systemProperties> <property> <name>java.library.path</name> <value>lib/</value> </property> </systemProperties -->
 				</configuration>
 			</plugin>
+			
+			<plugin>
+			    <groupId>org.eluder.coveralls</groupId>
+			    <artifactId>coveralls-maven-plugin</artifactId>
+			    <version>3.1.0</version>
+			    <!--configuration>
+			        <repoToken>yourcoverallsprojectrepositorytoken</repoToken>
+			    </configuration-->
+			</plugin>
 		</plugins>
 		<!--/pluginManagement -->
 	</build>
