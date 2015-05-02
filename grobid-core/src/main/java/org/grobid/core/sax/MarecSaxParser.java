@@ -4,11 +4,15 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
 
 import java.util.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * SAX parser initially made for XML CLEF IP data (collection, training and topics).
@@ -17,6 +21,7 @@ import java.util.*;
  * @author Patrice Lopez
  */
 public class MarecSaxParser extends DefaultHandler {
+	public static final Logger LOGGER = LoggerFactory.getLogger(MarecSaxParser.class);
 
     private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
     private StringBuffer accumulatorRef = new StringBuffer(); // Accumulate parsed text
@@ -62,8 +67,8 @@ public class MarecSaxParser extends DefaultHandler {
 
     public StringBuffer accumulatedText = null;
     private StringBuffer allContent = null;
-
-    //private static String delimiters = " \n\t" + TextUtilities.fullPunctuations;
+	
+	private GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance(); 
 
     static public List<String> authorities = Arrays.asList("AP", "AL", "DZ", "AR", "AU", "AT", "BE", "BX",
             "BR", "BG", "CA", "CL", "CN", "CO", 
