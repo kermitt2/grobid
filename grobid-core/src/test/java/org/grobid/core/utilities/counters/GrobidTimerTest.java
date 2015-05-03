@@ -1,4 +1,4 @@
-package org.grobid.core.utilities;
+package org.grobid.core.utilities.counters;
 
 import static org.junit.Assert.*;
 

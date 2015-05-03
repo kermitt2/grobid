@@ -12,7 +12,7 @@ import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.factory.AbstractEngineFactory;
 import org.grobid.core.mock.MockContext;
-import org.grobid.core.utilities.GrobidTimer;
+import org.grobid.core.utilities.counters.GrobidTimer;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
