@@ -13,7 +13,7 @@ The structure of T-p53C with the Y220C mutation has been described (ref 13). Wit
 Disclosure of the Invention. 
 The present inventors have discovered that a number of compounds which contain an indole, carbazole or related scaffold bind to T-p53C-Y220C and stabilizes the protein so as to increase its melting temperature. 
 Thus in one aspect, the invention provides a method for stabilizing a p53 protein which carries a Y220C mutation, the method comprising bringing the p53 into contact with a compound of formula (I): 
-&lt;EMI ID=5.1&gt;
+ 
  
 (and isomers, salts, solvates, protected forms, and prodrugs thereof) wherein X is selected from CR&lt;X&gt; and N; 
 R&lt;N1&gt; is selected from H and Ci-4 alkyl, which may be substituted by SH or halo; R&lt;C1&gt; is selected from H and SH; 
@@ -24,7 +24,7 @@ R&lt;04&gt; is selected from: (i) an optionally substituted C3-I2 N-containing h
 (ii) C(=O)NR&lt;N5&gt;R&lt;N6&gt;, where R&lt;N5&gt; and R&lt;N6&gt; are independently selected from H, optionally substituted C1-7 alkyl, optionally substituted C3-2O heterocyclyl and optionally substituted C5-20 aryl or R&lt;N5&gt; and R&lt;N6&gt; and the nitrogen atom to which they are attached form an optionally substituted N-containing C5-7 heterocyclyl group; (iii) C(=O)OR&lt;01&gt;, where R&lt;01&gt; is selected from H, optionally substituted Ci-7 alkyl, optionally substituted C3-2O heterocyclyl and optionally substituted C5-20 aryl ; (iv) C(=O)NHNHSO2R&lt;S1&gt;, where R&lt;S1&gt; is selected from H, optionally substituted C1-7 alkyl, optionally substituted C3-20 heterocyclyl and optionally substituted C5-20 aryl; (v) OC(=O)R&lt;C8&gt;, where R&lt;C8&gt; is selected from H, optionally substituted C1-7 alkyl, optionally substituted C3-20 heterocyclyl and optionally substituted C5-2O aryl; 
 (vi) OC(=O)NR&lt;N7&gt;R&lt;N8&gt;, where R&lt;N7&gt; and R&lt;N8&gt; are independently selected from H, optionally substituted Ci-7 alkyl, optionally substituted C3-20 heterocyclyl and optionally substituted C5-20 aryl or R&lt;N7&gt; and R&lt;N8&gt; and the nitrogen atom to which they are attached form an optionally substituted N-containing C5-7 heterocyclyl group; and (vii) C(=O)CH2NH2, C(=O)NHNH2, CHC(CN)2, CHC(CN)C(=O)NH2, and carboxy; 
 R&lt;C5&gt; is selected from H, OH and NH2; or R&lt;C4&gt; and R&lt;C5&gt; together with the carbon atoms to which they are bound form an optionally substituted aromatic ring containing either 5 or 6 ring atoms, of formula: 
-&lt;EMI ID=6.1&gt;
+ 
  
 RC5 where Q represents O, N, or CR&lt;Q1&gt;=CR&lt;Q2&gt;, where R&lt;Q1&gt; and R&lt;Q2&gt; are independently selected from H, OH and NH2; 
 R&lt;C6&gt; is selected from H, OH and NH2; and R&lt;C7&gt; is selected from optionally substituted C3.12 N-containing heterocyclyl, NHC(=O)R&lt;C9&gt;, 
@@ -85,7 +85,7 @@ Carboxy (carboxylic acid): -COOH.
 Ester (carboxylate, carboxylic acid ester, oxycarbonyl): -C(=O)OR, wherein R is an ester substituent, for example, a Ci-7 alkyl group, a C3-20 heterocyclyl group, or a C5-20 aryl group, preferably a Ci-7 alkyl group (a Ci-7 alkyl ester). Examples of ester groups include, but are not limited to, -C(=O)OCH3, -C(=O)OCH2CH3, -C(=O)OC(CH3)3, and -C(=O)OPh. 
 Amido (carbamoyl, carbamyl, aminocarbonyl, carboxamide): -C(=O)NR&lt;1&gt;R&lt;2&gt;, wherein R&lt;1&gt; and R&lt;2&gt; are independently amino substituents, as defined for amino groups. Examples of amido groups include, but are not limited to, -C(=0)NH2, -C(=0)NHCH3, -C(=O)N(CH3)2, -C(=O)NHCH2CH3, and -C(=O)N(CH2CH3)2, as well as amido groups in which R&lt;1&gt; and R&lt;2&gt;, together with the nitrogen atom to which they are attached, form a heterocyclic structure as in, for example, piperidinocarbonyl, morpholinocarbonyl, thiomorpholinocarbonyl, and piperazinylcarbonyl. 
 Amino: -NR&lt;1&gt;R&lt;2&gt;, wherein R&lt;1&gt; and R&lt;2&gt; are independently amino substituents, for example, hydrogen, a C1-7 alkyl group (also referred to as Ci-7 alkylamino or di-Ci-7 alkylamino), a C3-20 heterocyclyl group, or a C5-20 aryl group, preferably H or a Ci-7 alkyl group, or, in the case of a "cyclic" amino group, R&lt;1&gt; and R&lt;2&gt;, taken together with the nitrogen atom to which they are attached, form a heterocyclic ring having from 4 to 8 ring atoms. Examples of amino groups include, but are not limited to, -NH2, -NHCH3, -NHCH(CH3)2, -N(CH3)2, -N(CH2CH3)2, and -NHPh. Examples of cyclic amino groups include, but are not limited to, aziridinyl, azetidinyl, pyrrolidinyl, piperidino, piperazinyl, perhydrodiazepinyl, morpholino, and thiomorpholino. The cylic amino groups may be substituted on their ring by any of the substituents defined here, for example carboxy, carboxylate and amido. 
-Acylamido (acylamino): -NR&lt;1&gt;C(=O)R&lt;2&gt;, wherein R&lt;1&gt; is an amide substituent, for example, hydrogen, a Ci-7 alkyl group, a C3-20 heterocyclyl group, or a C5-20 aryl group, preferably H or a C1-7 alkyl group, most preferably H, and R&lt;2&gt; is an acyl substituent, for example, a Ci-7 alkyl group, a C3-20 heterocyclyl group, or a C5-20 aryl group, preferably a Ci-7 alkyl group. Examples of acylamide groups include, but are not limited to, -NHC(=O)CH3 , -NHC(=O)CH2CH3, and -NHC(=O)Ph. R&lt;1&gt; and R&lt;2&gt; may together form a cyclic structure, as in, for example, succinimidyl, maleimidyl, and phthalimidyl: </p><p>&lt;EMI ID=13.1&gt;
+Acylamido (acylamino): -NR&lt;1&gt;C(=O)R&lt;2&gt;, wherein R&lt;1&gt; is an amide substituent, for example, hydrogen, a Ci-7 alkyl group, a C3-20 heterocyclyl group, or a C5-20 aryl group, preferably H or a C1-7 alkyl group, most preferably H, and R&lt;2&gt; is an acyl substituent, for example, a Ci-7 alkyl group, a C3-20 heterocyclyl group, or a C5-20 aryl group, preferably a Ci-7 alkyl group. Examples of acylamide groups include, but are not limited to, -NHC(=O)CH3 , -NHC(=O)CH2CH3, and -NHC(=O)Ph. R&lt;1&gt; and R&lt;2&gt; may together form a cyclic structure, as in, for example, succinimidyl, maleimidyl, and phthalimidyl: </p><p> 
 succinimidyl maleimidyl phthalimidyl 
 Ureido: -N(R&lt;1&gt;)CONR&lt;2&gt;R&lt;3&gt; wherein R&lt;2&gt; and R&lt;3&gt; are independently amino substituents, as defined for amino groups, and R&lt;1&gt; is a ureido substituent, for example, hydrogen, a Ci-7alkyl group, a C3-20heterocyclyl group, or a C5-20aryl group, preferably hydrogen or a Ci-7alkyl group. Examples of ureido groups include, but are not limited to, -NHCONH2, -NHCONHMe, -NHCONHEt, -NHCONMe2, -NHCONEt2, -NMeCONH2, -NMeCONHMe, -NMeCONHEt, - NMeCONMe2, -NMeCONEt2 and -NHC(=O)NHPh. 
 Acyloxy (reverse ester): -0C(=0)R, wherein R is an acyloxy substituent, for example, a Ci-7 alkyl group, a C3-20 heterocyclyl group, or a C5-20 aryl group, preferably a Ci-7 alkyl group. Examples of acyloxy groups include, but are not limited to, -0C(=0)CH3 (acetoxy), - OC(=O)CH2CH3, -OC(=O)C(CH3)3, -OC(=O)Ph, -OC(=O)C6H4F, and -OC(=O)CH2Ph. 
@@ -146,7 +146,7 @@ In other embodiments, R&lt;C4&gt; is C(=O)NHNHSO2R&lt;S1&gt; and R&lt;C5&gt; is 
 In other embodiments, R&lt;C4&gt; is OC(=O)NR&lt;N7&gt;R&lt;N8&gt; and R&lt;C5&gt; is selected from H, OH and NH2. In some of these embodiments, R&lt;C5&gt; is H. R&lt;N7&gt; may be H, and R&lt;N8&gt; may be optionally substituted C5-20 aryl, e.g. C5-6 aryl (such as phenyl). The optional substituents may include halo (e.g. Cl). 
 In other embodiments, R&lt;G4&gt; is OC(=O)R&lt;C8&gt; and R&lt;C5&gt; is selected from H, OH and NH2. In some of these embodiments, R&lt;G5&gt; is H. R&lt;C8&gt; may be optionally substituted C3-20 heterocyclyl (e.g. 2,3- dihydro-benzo[1 ,4]dioxinyl). 
 In other embodiments, R&lt;C4&gt; is selected from C(=O)CH2NH2, C(=O)NHNH2, CHC(CN)2, CHC(CN)C(=O)NH2, and carboxy and R&lt;05&gt; is selected from H, OH and NH2. In some of these embodiments, R&lt;05&gt; is H. 
-In other embodiments, R&lt;04&gt; and R&lt;C5&gt; together with the carbon atoms to which they are bound form an optionally substituted aromatic ring containing either 5 or 6 ring atoms, of formula: </p><p>&lt;EMI ID=21.1&gt;
+In other embodiments, R&lt;04&gt; and R&lt;C5&gt; together with the carbon atoms to which they are bound form an optionally substituted aromatic ring containing either 5 or 6 ring atoms, of formula: </p><p> 
 where Q represents O, N, or CR&lt;Q1&gt;=CR&lt;Q2&gt;, where R&lt;Q1&gt; and R&lt;Q2&gt; are independently selected from H, OH and NH2; 
 R&lt;C6&gt; is selected from H, OH and NH2; and R&lt;C7&gt; is selected from optionally substituted C3-12 N-containing heterocyclyl, NHC(=O)R&lt;C9&gt;, CH2NR&lt;N2&gt;R&lt;N3&gt; and NHC(=S)NHR&lt;N4&gt;. 
 Thus, the aromatic ring may be benzene, furan or pyrrole. 
@@ -162,28 +162,28 @@ In other embodiments, R&lt;N2&gt; and R&lt;N3&gt; and the nitrogen atom to which
 In further embodiments, R&lt;G7&gt; is NHC(=S)NHR&lt;N4&gt;, where R&lt;N4&gt; is selected from optionally substituted C1-7 alkyl (e.g. Ci-4 alkyl), optionally substituted C3-2O heterocyclyl (e.g. C5-7 heterocyclyl) and optionally substituted C5-20 aryl (e.g. C5-7 aryl). The optional substituents for these groups may be selected from C1-7 alkyl, C3-7 heterocyclyl, C5-7 aryl, halo, hydroxy, ether, nitro, cyano, acyl, carboxy, ester, amido, amino, acylamido, ureido, acyloxy, aminosulfonyl and thiol. In some of these embodiments, R&lt;N4&gt; is an optionally substituted C5-6 aryl group, such as phenyl, which may bear a aminosulfonyl (e.g. dimethylaminosulfonyl) and a C1-4 alkyl substituent (e.g. methyl). In others of these embodiments, R&lt;N4&gt; is a Ci-4 alkyl group (e.g. ethyl), which may be unsubstituted. 
 In some embodiments, Q is CR&lt;Q1&gt;=CR&lt;Q2&gt;, where R&lt;Q1&gt; is selected from H and OH, and R&lt;Q2&gt; is H. 
 Certain sets of embodiments 
-In a certain set of embodiments, the compound of the invention is of formula I': </p><p>&lt;EMI ID=24.1&gt;
+In a certain set of embodiments, the compound of the invention is of formula I': </p><p> 
 wherein X is selected from CR&lt;X&gt; and N; 
 R&lt;N1&gt; is selected from H and Ci-4 alkyl, which may be substituted by SH; 
 R&lt;C1&gt; is selected from H and SH; 
 R&lt;C2&gt; is selected from H and optionally substituted Ci-7 alkyl; 
 R&lt;C3&gt; is selected from H and optionally substituted Ci-7 alkyl; R&lt;x&gt; is selected from H, OH and NH2; 
-R&lt;C4&gt; is selected from an optionally substituted C3-I2 N-containing heterocyclyl and C(=O)NR&lt;N5&gt;R&lt;N6&gt;, where R&lt;N5&gt; and R&lt;N6&gt; are independently selected from H, optionally substituted C1-7 alkyl, optionally substituted C3-20 heterocyclyl and optionally substituted C5-20 aryl or R&lt;N5&gt; and R&lt;N6&gt; and the nitrogen atom to which they are attached form an optionally substituted N- containing C5-7 heterocyclyl group; R&lt;C5&gt; is selected from H, OH and NH2; or R&lt;C4&gt; and R&lt;05&gt; together with the carbon atoms to which they are bound form an optionally substituted aromatic ring containing either 5 or 6 ring atoms, of formula: </p><p>&lt;EMI ID=25.1&gt;
+R&lt;C4&gt; is selected from an optionally substituted C3-I2 N-containing heterocyclyl and C(=O)NR&lt;N5&gt;R&lt;N6&gt;, where R&lt;N5&gt; and R&lt;N6&gt; are independently selected from H, optionally substituted C1-7 alkyl, optionally substituted C3-20 heterocyclyl and optionally substituted C5-20 aryl or R&lt;N5&gt; and R&lt;N6&gt; and the nitrogen atom to which they are attached form an optionally substituted N- containing C5-7 heterocyclyl group; R&lt;C5&gt; is selected from H, OH and NH2; or R&lt;C4&gt; and R&lt;05&gt; together with the carbon atoms to which they are bound form an optionally substituted aromatic ring containing either 5 or 6 ring atoms, of formula: </p><p> 
 where Q represents O, N, or CR&lt;Q1&gt;=CR&lt;Q2&gt;, where R&lt;Q1&gt; and R&lt;Q2&gt; are independently selected from 
 H, OH and NH2; 
 R&lt;C6&gt; is selected from H, OH and NH2; and 
 R&lt;C7&gt; is selected from optionally substituted C3-12 N-containing heterocyclyl, NHC(=O)R&lt;C9&gt;, 
 CH2NR&lt;N2&gt;R&lt;N3&gt; and NHC(=S)NHR&lt;N4&gt;, where R&lt;C9&gt; is selected from optionally substituted C1-7 alky], optionally substituted C3-20 heterocyclyl and optionally substituted C5-20 aryl, R&lt;N2&gt; and R&lt;N3&gt; are independently selected from H, optionally substituted Ci-7 alkyl, optionally substituted C3-20 heterocyclyl and optionally substituted C5-20 aryl or R&lt;N2&gt; and R&lt;N3&gt; and the nitrogen atom to which they are attached form an optionally substituted N-containing C5-7 heterocyclyl group, and R&lt;N4&gt; is selected from optionally substituted Ci-7 alkyl, optionally substituted C3-20 heterocyclyl and optionally substituted C5-20 aryl. 
-In a certain set of embodiments, the compound of the invention is of formula (Ia): </p><p>&lt;EMI ID=25.2&gt;
+In a certain set of embodiments, the compound of the invention is of formula (Ia): </p><p> 
  
 (and isomers, salts, solvates, protected forms, and prodrugs thereof) wherein R&lt;N1&gt; is selected from H and Ci-4 alkyl; 
 R&lt;Q1&gt; is selected from H and OH; and 
 R&lt;C7&gt; is selected from NHC(=O)R&lt;C9&gt;, CH2NR&lt;N2&gt;R&lt;N3&gt; and NHC(=S)NHR&lt;N4&gt;, where R&lt;C9&gt; is selected from optionally substituted C1-7 alkyl, optionally substituted C3-20 heterocyclyl and optionally substituted C5-20 aryl, R&lt;N2&gt; and R&lt;N3&gt; are independently selected from H, optionally substituted Ci-7 alkyl, optionally substituted C3-20 heterocyclyl and optionally substituted C5-20 aryl or R&lt;N2&gt; and R&lt;N3&gt; and the nitrogen atom to which they are attached form an optionally substituted N-containing C5-7 heterocyclyl group, and R&lt;N4&gt; is selected from optionally substituted C1-7 alky], optionally substituted C3-2O heterocyclyl and optionally substituted C5-2O aryl. 
-In another certain set of embodiments, the compound of the invention is of formula (Ib): </p><p>&lt;EMI ID=26.1&gt;
+In another certain set of embodiments, the compound of the invention is of formula (Ib): </p><p> 
  
 (and isomers, salts, solvates, protected forms, and prodrugs thereof) wherein R&lt;N1&gt; is selected from H and C1-4 alkyl; and 
 R&lt;G4&gt; is an optionally substituted C3-I2 N-containing heterocyclyl. 
-In another certain set of embodiments, the compound of the invention is of formula (Ic): </p><p>&lt;EMI ID=26.2&gt;
+In another certain set of embodiments, the compound of the invention is of formula (Ic): </p><p> 
  
 (and isomers, salts, solvates, protected forms, and prodrugs thereof) wherein R&lt;N1&gt; is selected from H and Ci-4 alkyl; and R&lt;C4&gt; is selecte from: (i) an optionally substituted C3-I2 N-containing heterocyclyl; 
 (ii) C(=O)NR&lt;N5&gt;R&lt;N6&gt;, where R&lt;N5&gt; and R&lt;N6&gt; are independently selected from H, optionally substituted C1-7 alkyl, optionally substituted C3-20 heterocyclyl and optionally substituted C5-2O aryl or R&lt;N5&gt; and R&lt;N6&gt; and the nitrogen atom to which they are attached form an optionally substituted N-containing C5-7 heterocyclyl group; (iii) C(=O)OR&lt;01&gt;, where R&lt;01&gt; is selected from H, optionally substituted C1-7 alkyl, optionally substituted C3-20 heterocyclyl and optionally substituted C5-20 aryl ; (iv) C(=O)NHNHSO2R&lt;S1&gt;, where R&lt;S1&gt; is selected from H, optionally substituted C1-7 alkyl, optionally substituted C3-20 heterocyclyl and optionally substituted C5-20 aryl; (v) OC(=O)R&lt;C8&gt;, where R&lt;08&gt; is selected from H, optionally substituted C1-7 alkyl, optionally substituted C3-20 heterocyclyl and optionally substituted C5-20 aryl; 
@@ -264,24 +264,24 @@ Equilibrium sedimentation experiments were performed on a Beckman XL-I ultracent
 Time-dependent Fluorescence Studies 
 Unfolding kinetics was performed as described by Friedler et al. (ref A8) at 37&lt;0&gt;C in 50 mM Hepes, pH 7.2, 1 mM Tris-2-carboxyethylphosphine (TCEP), by following the emission of tryptophan at 340 nm on excitation at 280 nm, using a Cary Eclipse fluorescence spectrophotometer controlled by the supplied Cary software. 
 Compounds All the compounds tested were obtained from ENAMINE Ltd. (23 Alexandra Matrosova Street, 01103 KIEV, Ukraine), except for PK 390-392 which were obtained from Asinex and PK402, 407 and 408 which were obtained from InterBioScreen. 
-Results The following tables show the results of the thermal denaturation studies using capillary DSC, where [Delta]Tm is the increase in Tm on adding 250 [mu]M of the test compound. The Dunnett significance test (P) value given is the calculated probability that the change in Tm is insignificant. </p><p>&lt;EMI ID=41.1&gt;
+Results The following tables show the results of the thermal denaturation studies using capillary DSC, where [Delta]Tm is the increase in Tm on adding 250 [mu]M of the test compound. The Dunnett significance test (P) value given is the calculated probability that the change in Tm is insignificant. </p><p> 
  
-&lt;EMI ID=42.1&gt;
  
-&lt;EMI ID=43.1&gt;
  
-&lt;EMI ID=44.1&gt;
  
-&lt;EMI ID=45.1&gt;
  
-&lt;EMI ID=46.1&gt;
  
-&lt;EMI ID=47.1&gt;
- </p><p>&lt;EMI ID=47.3&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ </p><p> 
  
 HZ&lt;15&gt;N-HSQC 
 Compound PK059:
-&lt;EMI ID=47.2&gt;
+ 
  
 Compound KD (@ 20&lt;c&gt; C) 
 PK059 213 [mu]M 
@@ -314,54 +314,54 @@ Zinc 2 PhiKanO83 18
 Rcryst, (%)&lt;d&gt; 18.6 ftfree, (%)&lt;d&gt; 20.8 
 R.m.s.d. bonds (A) 0.009 R.m.s.d. angles ([deg.]) 1.5 Mean B value (A&lt;2&gt;) 16.0 Ramachandran plot statistics&lt;0&gt; Most favored/additional allowed (%) 91.9/8.1 aValues in parentheses are for the highest resolution shell. 
 Emerge = [sum](/hll " &lt;/h&gt;)/[sum]/h.l eNumber includes alternative conformations. [alpha]Rcv/si and f?free = [sum]HFobsl-
-&lt;EMI ID=50.1&gt;
+ 
 where Rfre[beta]was calculated over 5 % of the amplitudes chosen at random and not used in the refinement. 
 "Calculated with PROCHECK (B6). 
 Further results 
-The indole derivative 1H-indole-3-carboxamide: </p><p>&lt;EMI ID=50.2&gt;
-and N-(9-Ethyl-9H-carbazol-3-yl)-2,2,2-trifluoro-acetamide </p><p>&lt;EMI ID=50.3&gt;
+The indole derivative 1H-indole-3-carboxamide: </p><p> 
+and N-(9-Ethyl-9H-carbazol-3-yl)-2,2,2-trifluoro-acetamide </p><p> 
 have been shown to bind to 7&lt;"&gt;-p53C-Y220C by NMR spectroscopy and to raise its melting temperature. 
 Further thermal denaturation studies using fluorescence were carried out on the following compounds described above, yielding the results as set out in the table below. Where listed, S. E. is the calculated standard error. 
-&lt;EMI ID=51.1&gt;
  
-&lt;EMI ID=52.2&gt;
  
-Thermal denaturation studies using fluorescence were carried out on the following compounds yielding the results as set out in the table below. Where listed, S. E. is the calculated standard error. </p><p>&lt;EMI ID=52.1&gt;
  
-&lt;EMI ID=53.1&gt;
  
-&lt;EMI ID=54.1&gt;
+Thermal denaturation studies using fluorescence were carried out on the following compounds yielding the results as set out in the table below. Where listed, S. E. is the calculated standard error. </p><p> 
  
-&lt;EMI ID=55.1&gt;
  
-&lt;EMI ID=56.1&gt;
- </p><p>&lt;EMI ID=56.3&gt;
-&lt;EMI ID=56.2&gt;
-&lt;EMI ID=56.4&gt;
  
-&lt;EMI ID=57.2&gt;
- </p><p>&lt;EMI ID=57.1&gt;
-&lt;EMI ID=57.3&gt;
  
-&lt;EMI ID=58.1&gt;
  
-&lt;EMI ID=59.1&gt;
  
-&lt;EMI ID=60.1&gt;
- </p><p>&lt;EMI ID=60.2&gt;
  
-&lt;EMI ID=61.1&gt;
  
-&lt;EMI ID=62.1&gt;
-  </p><p>&lt;EMI ID=63.3&gt;
-&lt;EMI ID=63.1&gt;
-&lt;EMI ID=63.2&gt;
+ </p><p> 
  
-&lt;EMI ID=64.1&gt;
  
-&lt;EMI ID=65.1&gt;
  
-Further studies to measure the binding of certain compounds were carried out using the NMR technique described above, with some compound being tested further to yield a revised values. The results are set out below. </p><p>&lt;EMI ID=65.2&gt;
+ 
+ </p><p> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </p><p> 
+ 
+ 
+ 
+ 
+  </p><p> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Further studies to measure the binding of certain compounds were carried out using the NMR technique described above, with some compound being tested further to yield a revised values. The results are set out below. </p><p> 
  REFERENCES 
 1. <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Vogelstein, B., Lane, D., and Levine, A. J. (2000) Nature 408, 307-310</bibl> 
 2. <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Ryan, K. M., Phillips, A. C, and Vousden, K. H. (2001) Curr. Opin. Cell Biol. 13, 332- 337</bibl> 

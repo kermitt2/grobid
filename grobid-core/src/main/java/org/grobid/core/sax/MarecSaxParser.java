@@ -124,7 +124,8 @@ public class MarecSaxParser extends DefaultHandler {
                            java.lang.String qName) throws SAXException {
         if (qName.equals("date")) {
             accumulator.setLength(0);
-        } else if (qName.equals("ref")) {
+        } 
+		else if (qName.equals("ref") || qName.equals("bibl")) {
             String refString = getRefText();
             refString = refString.replace("\n", " ");
             refString = refString.replace("\t", " ");
@@ -174,7 +175,12 @@ public class MarecSaxParser extends DefaultHandler {
                 //while (st.hasMoreTokens()) {
 				for(String token : tokenizations) {	
                     //token = st.nextToken().trim();
-                    if (token.length() == 0) {
+	                if ( (token.trim().length() == 0) || 
+						 (token.equals(" ")) || 
+					     (token.equals("\t")) || 
+						 (token.equals("\n")) ||
+						 (token.equals("\r"))
+						 ) {
                         continue;
                     }
                     try {
@@ -242,7 +248,12 @@ public class MarecSaxParser extends DefaultHandler {
                 //while (st.hasMoreTokens()) {
 				for(String token : tokenizations) {	
                     //token = st.nextToken().trim();
-                    if (token.length() == 0) {
+	                if ( (token.trim().length() == 0) || 
+						 (token.equals(" ")) || 
+					     (token.equals("\t")) || 
+						 (token.equals("\n")) ||
+						 (token.equals("\r"))
+						 ) {
                         continue;
                     }
                     // we print only a window of N words
@@ -385,7 +396,12 @@ public class MarecSaxParser extends DefaultHandler {
                             //while (st.hasMoreTokens()) {
 							for(String token : tokenizations) {	
                                 //String token = st.nextToken().trim();
-                                if (token.length() == 0) {
+				                if ( (token.trim().length() == 0) || 
+									 (token.equals(" ")) || 
+								     (token.equals("\t")) || 
+									 (token.equals("\n")) ||
+									 (token.equals("\r"))
+									 ) {
                                     continue;
                                 }
 
@@ -438,7 +454,12 @@ public class MarecSaxParser extends DefaultHandler {
 							for(String token : tokenizations) {
                             	//while (st.hasMoreTokens()) {
                                 //String token = st.nextToken().trim();
-                                if (token.length() == 0) {
+				                if ( (token.trim().length() == 0) || 
+									 (token.equals(" ")) || 
+								     (token.equals("\t")) || 
+									 (token.equals("\n")) ||
+									 (token.equals("\r"))
+									 ) {
                                     continue;
                                 }
 
