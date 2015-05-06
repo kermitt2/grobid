@@ -316,7 +316,12 @@ public class ReferenceExtractor implements Closeable {
                 isPublisherToken = false;
                 skipTest = false;
                 //String tok = st.nextToken();
-                if (tok.trim().length() == 0) {
+                if ( (tok.trim().length() == 0) || 
+					 (tok.equals(" ")) || 
+				     (tok.equals("\t")) || 
+					 (tok.equals("\n")) ||
+					 (tok.equals("\r"))
+					 ) {
                     continue;
                 }
 

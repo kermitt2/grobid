@@ -68,13 +68,15 @@ public class PatentParserTrainer extends AbstractTrainer{
 
        // File templatePath1 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.npl.references.template");
        //File templatePath2 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.patent.references.template");
-        File templatePath3 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.references.template");
+        File templatePath3 = 
+			new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.references.template");
 
 
         GenericTrainer trainer = TrainerFactory.getTrainer();
         //File modelPath1 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + NEW_MODEL_EXT);
         //File modelPath2 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + NEW_MODEL_EXT);
-        File modelPath3 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL).getAbsolutePath() + NEW_MODEL_EXT);
+        File modelPath3 = 
+			new File(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL).getAbsolutePath() + NEW_MODEL_EXT);
 
         //trainer.train(templatePath1, trainingDataPath1, modelPath1, GrobidProperties.getNBThreads());
         //trainer.train(templatePath2, trainingDataPath2, modelPath2, GrobidProperties.getNBThreads());
