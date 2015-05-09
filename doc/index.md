@@ -1,4 +1,4 @@
-Welcome to the grobid wiki!
+GROBID Documentation
 
 * [Grobid service quick start](Grobid-service-quick-start)
 
