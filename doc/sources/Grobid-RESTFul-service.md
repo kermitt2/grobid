@@ -22,6 +22,3 @@ The service can work following two modes:
 
 	This mode is adapted for server running with a low amount of RAM.
 
-## Administration / Password
-
-A password is required to access the administration page. The default password and how to configure it are described [here](RESTful-services-password.md)

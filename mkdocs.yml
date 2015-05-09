@@ -1,7 +1,0 @@
-site_name: GROBID Documentation
-repo_url: https://github.com/kermitt2/grobid/
-repo_name: GitHub
-pages:
-- ['index.md', 'Introduction']
-- ['Grobid-service-quick-start.md', 'Grobid service quick start']
-- ['license.md', 'License']
