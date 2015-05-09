@@ -7,9 +7,9 @@ docs_dir: doc
 include_search: true
 pages:
 - ['index.md', 'Home']
-- ['Install-Grobid.md', 'Install GROBID']
-- ['Grobid-service.md', 'Grobid service']
-- ['Grobid-batch.md', 'Grobid batch mode']
-- ['Grobid-java-library.md', 'Java library']
+- ['Install-Grobid.md', 'User manual', 'Install GROBID']
+- ['Grobid-service.md', 'User manual', 'Grobid service']
+- ['Grobid-batch.md', 'User manual', 'Grobid batch mode']
+- ['Grobid-java-library.md', 'User manual', 'Java library']
 - ['References.md', 'About', 'References']
 - ['License.md', 'About', 'License']
