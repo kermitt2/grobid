@@ -1,12 +1,12 @@
 GROBID Documentation
 
-* [Grobid service quick start](Grobid-service-quick-start)
+* [Install GROBID](Install-Grobid.md)
 
-* [Using Grobid RESTful services](Grobid-RESTful-service)
+* [Use GROBID as a service](Grobid-service.md)
 
-* [Using Grobid in batch](Grobid-batch-quick-start)
+* [Use GROBID in batch mode](Grobid-batch.md)
 
-* [Using Grobid library in third party Java applications](Grobid-java-library)
+* [Use Grobid library in third party Java applications](Grobid-java-library.md)
 
 * [Training the different models of Grobid](Training-the-models-of-Grobid)
 
@@ -16,6 +16,6 @@ GROBID Documentation
 
 * [Recompiling and integrating CRF libraries into Grobid](Recompiling-and-integrating-CRF-libraries)
 
-* [References](wiki/References)
+* [References](References.md)
 
 * [Javadoc](http://grobid.github.com/)
