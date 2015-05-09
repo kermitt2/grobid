@@ -45,51 +45,10 @@ The default GROBID extraction and parsing algorithms uses the [Wapiti CRF librar
 
 GROBID should run properly "out of the box" on MacOS X, Linux (32 & 64), following the guidelines bellow. GROBID does currently not run on Windows environments because the required and up-to-date CRF native binaries are not yet compiled for this platform (contributors to work on Windows support are very welcome!).
 
-## Installation
+## GROBID documentation
 
-See the GROBID Wiki quick start pages: 
+Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detailed information.
 
-+ [GROBID service quick start](https://github.com/kermitt2/grobid/wiki/Grobid-service-quick-start)
-+ [GROBID batch quick start](https://github.com/kermitt2/grobid/wiki/Grobid-batch-quick-start)
-
-GROBID build relies on maven, and should be standard with respect to Open Source developments. You normally only need to build the project with maven to have it running. 
-
-
-## Usage
-
-See the Grobid Wiki pages: 
-
-+ [Grobid service quick start](https://github.com/kermitt2/grobid/wiki/Grobid-service-quick-start)
-+ [Grobid batch quick start](https://github.com/kermitt2/grobid/wiki/Grobid-batch-quick-start)
-+ [Grobid java library](https://github.com/kermitt2/grobid/wiki/Grobid-java-library)
-
-We recommand to use the Grobid RESTful service for the best performance, in particular for exploiting multithreading. 
-
-The results are provided in XML following a custumization of the TEI, see:
-
-+ [TEI encoding of results](https://github.com/kermitt2/grobid/wiki/TEI-encoding-of-results)
-
-The training and the evaluation of the models are described in the following wiki page:
-
-+ [Training the models of Grobid](https://github.com/kermitt2/grobid/wiki/Training-the-models-of-Grobid)
-+ [Evaluation against PubMed Central sample](https://github.com/kermitt2/grobid/wiki/Evaluation-against-a-PubMedCentral-set)
-
-
-## Credits
-
-The main author is Patrice Lopez (INRIA).
-
-Many thanks to:
-
-* Laurent Romary (INRIA), as project promoter and TEI pope. 
-* Florian Zipser (Humboldt University) who developed the first version of the REST API in 2011.
-* the contributors from ResearchGate: Vyacheslav Zholudev, Michael Häusler and Kyryl Bilokurov.
-* Damien Ridereau (Infotel).
-* Bruno Pouliquen (WIPO) for the custom analyzers for Eastern languages.
-* Thomas Lavergne, Olivier Cappé and François Yvon for Wapiti.
-* Taku Kudo for CRF++
-* Hervé Déjean and his colleagues from Xerox Research Centre Europe, for xml2pdf
-* and the other contributors (Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, ...)
 
 ## References
 
@@ -97,4 +56,4 @@ Please simply refer to the github project:
 
 Grobid (2008-2015) <https://github.com/kermitt2/grobid>
 
-See the [References page](https://github.com/kermitt2/grobid/wiki/References) for more related resources. 
+See the [GROBID documentation](http://grobid.readthedocs.org) for more related resources. 
