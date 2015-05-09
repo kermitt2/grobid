@@ -1,7 +1,7 @@
-## TEI customisation
+<h1>TEI customisation</h1>
 
 
-### Motivation
+## Motivation
 
 Using tabular or POJO representations is adapted to bibliographical records, which are relatively flat and simple structure. However, the goal of Grobid is complete PDF document ingestion. In other terms, Grobid aims at extracting and restructuring the complete full text of a document. 
 
@@ -10,7 +10,7 @@ Representing a complete document requires a much more sophisticated data model. 
 The TEI appears therefore as a suitable document model and XML implementation for the Grobid structured document extraction.
 
 
-### The schemas
+## The schemas
 
 Any usages of the TEI for a particular sort of documents suppose a customization of the TEI to their specificities. The TEI define a very large and rich set of encoding possibilities, often redundant taken as a whole. A customization adapts and constraints the richness of the TEI to a well scoped and tuned schema. To quote the TEI Guidelines: "it is almost impossible to use the TEI scheme without customizing or personalizing it in some way."
 
@@ -32,14 +32,14 @@ A documentation of Grobid customized TEI is available `grobid-home/schemas/doc/G
 
 We recommand to use the RelaxNG schemas, more robust, easier to use, etc., and avoid W3C schemas which are recurent sources of problems... 
 
-### Well-formedness and validation
+## Well-formedness and validation
 
 Grobid ensures that all the generated results are well-formed XML. It is actually not always straightforward to achieve 100% well-formedness because the PDF input documents can be very difficult to parse, the content very noisy, not always fully recoverable, and the Grobid parsing can include many errors. In case you observe a result from Grobid not well-formed, do not hesitate to report an issue. This error should be very rare, we tested recently Grobid on around 300k PDF from the HAL research archive and all the resulting TEI documents were well-formed. 
 
 The very large majority of Grobid TEI results will validate against the provided schemas. At this stage, we considered that 100% valid results might not be desirable, because validation is a way to detect that a document is particularly problematic. With a fully automated extraction and restructuring of unconstrained PDF full texts, a variety of unexpected structural errors can occur. A very small amount of training data is currently used by the Grobid full text model, so inconsistent structures are sometimes predicted. Failure of validation is viewed here as a way to spot important failure of Grobid, and thus to indicate the need of filtering or further process. 
 
 
-### Binding with JAXB 2.0
+## Binding with JAXB 2.0
 
 Although we are ourselves not using Java bindings for XML, developers might be interested in generating them with [JAXB 2.0](<https://jaxb.java.net>) in order to avoid writing an XML parser for Grobid's results. It appears that the XSD schema for TEI in general is not compiling out-of-the-box with JAXB - unfortunately as many real world complex XML schemas such as MathML. 
 

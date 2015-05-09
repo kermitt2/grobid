@@ -7,9 +7,16 @@ docs_dir: doc
 include_search: true
 pages:
 - ['index.md', 'Home']
+- ['Introduction.md', 'About', 'Introduction']
+- ['References.md', 'About', 'References']
+- ['License.md', 'About', 'License']
 - ['Install-Grobid.md', 'User manual', 'Install GROBID']
 - ['Grobid-service.md', 'User manual', 'Grobid service']
 - ['Grobid-batch.md', 'User manual', 'Grobid batch mode']
 - ['Grobid-java-library.md', 'User manual', 'Java library']
-- ['References.md', 'About', 'References']
-- ['License.md', 'About', 'License']
+- ['TEI-encoding-of-results.md', 'User manual', 'TEI encoding of results']
+- ['Training-the-models-of-Grobid.md', 'User manual', 'Training the GROBID models']
+- ['Evaluation-against-a-PubMedCentral-set.md', 'User manual', 'Evaluation against PubMed Central']
+- ['Recompiling-and-integrating-CRF-libraries.md', 'Developer notes', 'Recompiling CRF libraries']
+
+

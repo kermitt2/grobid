@@ -10,6 +10,7 @@ Clone source code from github:
 Or download directly the zip file:
 ```bash
 > wget https://github.com/kermitt2/grobid/zipball/master
+> unzip master
 ```
 
 ##Build GROBID with maven

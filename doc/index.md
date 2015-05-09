@@ -1,4 +1,15 @@
-GROBID Documentation
+<h1>GROBID Documentation</h1>
+
+
+<h3>About</h3>
+
+* [Introduction](Introduction.md)
+
+* [References](References.md)
+
+* [License](License.md)
+
+<h3>User manual</h3>
 
 * [Install GROBID](Install-Grobid.md)
 
@@ -8,14 +19,13 @@ GROBID Documentation
 
 * [Use Grobid library in third party Java applications](Grobid-java-library.md)
 
-* [Training the different models of Grobid](Training-the-models-of-Grobid)
+* [TEI encoding of results](TEI-encoding-of-results.md)
 
-* [Evaluating against PubMedCentral gold data](Evaluation-against-a-PubMedCentral-set)
+* [Training and evaluating the GROBID models](Training-the-models-of-Grobid.md)
 
-* [TEI encoding of results](TEI-encoding-of-results)
+* [Evaluating against PubMed Central gold data](Evaluation-against-a-PubMedCentral-set.md)
 
-* [Recompiling and integrating CRF libraries into Grobid](Recompiling-and-integrating-CRF-libraries)
+<h3>Developer notes</h3>
 
-* [References](References.md)
+* [Recompiling and integrating CRF libraries into GROBID](Recompiling-and-integrating-CRF-libraries.md)
 
-* [Javadoc](http://grobid.github.com/)
