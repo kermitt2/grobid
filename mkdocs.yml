@@ -3,7 +3,7 @@ repo_url: https://github.com/kermitt2/grobid/
 repo_name: GitHub
 theme: ReadTheDocs
 site_description: Documentation for GROBID
-docs_dir: sources
+docs_dir: doc
 include_search: true
 pages:
 - ['index.md', 'Home']
