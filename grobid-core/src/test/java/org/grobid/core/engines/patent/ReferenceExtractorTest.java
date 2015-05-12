@@ -188,7 +188,7 @@ public class ReferenceExtractorTest {
 		extractor.extractAllReferencesString(text_kr, false, false, patents, null);
 		LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals(1, patents.size());
-		assertEquals("2012127110", patents.get(0).getNumberEpoDoc());
+		assertEquals("2012012710", patents.get(0).getNumberEpoDoc());
 	}
 	
 	@Test

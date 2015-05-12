@@ -136,9 +136,9 @@ public class Person {
     }
 
     public boolean notNull() {
-        if ((firstName == null) &
-                (middleName == null) &
-                (lastName == null) &
+        if ((firstName == null) &&
+                (middleName == null) &&
+                (lastName == null) &&
                 (title == null)
                 )
             return false;
