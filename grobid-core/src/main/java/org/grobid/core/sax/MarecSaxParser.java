@@ -53,7 +53,9 @@ public class MarecSaxParser extends DefaultHandler {
     private int nbPatentRef = 0;
     public int nbAllRef = 0;
 
-    private int N = 200;  // window of text to be output around the reference strings
+    private int N = -1;  // window of text to be output around the reference strings
+	// value at -1 means no window considered - everything will be outputed
+	
     public boolean patentReferences = false;
     public boolean nplReferences = false;
 
@@ -69,14 +71,6 @@ public class MarecSaxParser extends DefaultHandler {
     private StringBuffer allContent = null;
 	
 	private GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance(); 
-
-    static public List<String> authorities = Arrays.asList("AP", "AL", "DZ", "AR", "AU", "AT", "BE", "BX",
-            "BR", "BG", "CA", "CL", "CN", "CO", 
-            "HR", "CU", "CY", "CZ", "CS", "DK", "EG", "EA", "EP", "DE", "DD", "FI", "FR", "GB", "GR", "HK", "HU",
-            "IS", "IN", "ID", "IB", "TP", "IR", "IQ", "IE", "IL", "IT", "JP", "JO", "KE", "KP", "KR", "LV", "LT",
-            "LU", "MW", "MY", "MX", "MD", "MC", "MN", "MA", "NL", "NZ", "NG", "NO", "OA", "WO", "W0", "PE", "PH",
-            "PL", "PT", "RD", "RO", "RU", "SA", "SG", "SK", "SI", "ZA", "SU", "ES", "LK", "SE", "CH", "TW", "TH",
-            "TT", "TN", "TR", "UA", "GB", "US", "UY", "VE", "VN", "YU", "ZM", "ZW");
 
     public MarecSaxParser() {
     }
@@ -257,7 +251,7 @@ public class MarecSaxParser extends DefaultHandler {
                         continue;
                     }
                     // we print only a window of N words
-                    if (i > N) {
+                    if ( (i > N) && (N != -1) ) {
                         //break;
                         token = token.trim();
                         if (token.length() > 0) {
@@ -272,7 +266,6 @@ public class MarecSaxParser extends DefaultHandler {
                                 allContent.append(token + " ");
                             }
                         } catch (Exception e) {
-                            //						e.printStackTrace();
                             throw new GrobidException("An exception occured while running Grobid.", e);
                         }
                     }
@@ -405,7 +398,7 @@ public class MarecSaxParser extends DefaultHandler {
                                     continue;
                                 }
 
-                                if ((j > (nbTokens - N)) | (refFound & (j < N))) {
+                                if ((j > (nbTokens - N) && (N != -1)) || (refFound && (j < N) && (N != -1))) {
                                     try {
                                         accumulatedText.append(token + "\t" + "<other>\n");
                                         allContent.append(token + " ");
