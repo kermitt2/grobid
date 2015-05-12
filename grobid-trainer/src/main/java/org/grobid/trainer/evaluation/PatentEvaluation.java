@@ -88,7 +88,7 @@ public class PatentEvaluation {
 
         PatentParserTrainer ppt = new PatentParserTrainer();
         //noinspection NullableProblems
-        ppt.createDataSet("test", null, evaluationPath, outputPath);
+        ppt.createDataSet("test", null, evaluationPath, outputPath, 1);
 
         List<GenericTagger> taggers = new ArrayList<GenericTagger>();
         taggers.add(taggerNPL);

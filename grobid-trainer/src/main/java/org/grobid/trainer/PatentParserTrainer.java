@@ -28,6 +28,12 @@ import org.grobid.trainer.evaluation.PatentEvaluation;
  */
 public class PatentParserTrainer extends AbstractTrainer{
 
+	// the window value indicate the right and left context of text to consider for an annotation when building
+	// the training or the test data - the value is experimentally set
+	// this window is used to maintain a certain level of occurence of the patent and NPL references, and avoid
+	// to have the citation annotation diluted because they are very rare (less than 1 token per 1000)
+	private static final int trainWindow = 200;
+
     public PatentParserTrainer() {
         super(GrobidModels.PATENT_PATENT);
     }
@@ -35,8 +41,9 @@ public class PatentParserTrainer extends AbstractTrainer{
     public int createTrainingData(String trainingDataDir) {
         int nb = 0;
         try {
-            String path = new File(new File(getFilePath2Resources(), "dataset/patent/corpus/").getAbsolutePath()).getAbsolutePath();
-            createDataSet(null, null, path, trainingDataDir);
+            String path = new File(new File(getFilePath2Resources(), 
+				"dataset/patent/corpus/").getAbsolutePath()).getAbsolutePath();
+            createDataSet(null, null, path, trainingDataDir, 0);
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while training Grobid.", e);
         }
@@ -91,10 +98,16 @@ public class PatentParserTrainer extends AbstractTrainer{
 
 
     /**
-     * Create the set of training and evaluation sets from the annotated examples
-     * Extraction of citations in the description body.
+     * Create the set of training and evaluation sets from the annotated examples with
+     * extraction of citations in the patent description body.
+	 * 
+	 * @param rank
+   	 *            rank associated to the set for n-fold data generation 	
+   	 * @param type
+   	 *            type of data to be created, 0 is training data, 1 is evaluation data 
+	 *
      */
-    public void createDataSet(String setName, String rank, String corpusPath, String outputPath) {
+    public void createDataSet(String setName, String rank, String corpusPath, String outputPath, int type) {
         int nbFiles = 0;
         int nbNPLRef = 0;
         int nbPatentRef = 0;
@@ -114,15 +127,13 @@ public class PatentParserTrainer extends AbstractTrainer{
             List<OffsetPosition> conferencesPositions = null;
             List<OffsetPosition> publishersPositions = null;
 
-            // for the test set we enlarge the focus window to include all the document.
-            // the focus window for the training has been experimentally set.
-
-            //if ((setName != null) && setName.equals("test")) {
-            sax.setN(300000);
-            /*}
-               else */
-			{
-             	//sax.setN(300);
+			if (type == 0) {
+				// training set
+				sax.setN(trainWindow);
+			}
+            else {
+				// for the test set we enlarge the focus window to include all the document.
+             	sax.setN(-1);
            	}
             // get a factory
             SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -204,14 +215,13 @@ public class PatentParserTrainer extends AbstractTrainer{
             sax.patentReferences = false;
             sax.nplReferences = true;
 
-            // for the test set we enlarge the focus window to include all the document
-            // the focus window for the training has been experimentally set.
-            //if ((setName != null) && setName.equals("test")) {
-            sax.setN(300000);
-            /*}
-               else */
-			{
-             	//sax.setN(200);
+			if (type == 0) {
+				// training set
+				sax.setN(trainWindow);
+			}
+            else {
+				// for the test set we enlarge the focus window to include all the document.
+             	sax.setN(-1);
            	}
             // get a factory
             spf = SAXParserFactory.newInstance();
@@ -297,13 +307,13 @@ public class PatentParserTrainer extends AbstractTrainer{
             sax.patentReferences = true;
             sax.nplReferences = true;
 
-            // ocus window to include part or all the document
-            //if ((setName != null) && (setName.equals("test"))) {
-            sax.setN(300000);
-            /*}
-               else */
-			{
-             	//sax.setN(300);
+			if (type == 0) {
+				// training set
+				sax.setN(trainWindow);
+			}
+            else {
+				// for the test set we enlarge the focus window to include all the document.
+             	sax.setN(-1);
            	}
             // get a factory
             spf = SAXParserFactory.newInstance();
