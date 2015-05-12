@@ -1,4 +1,4 @@
-The [RESTful API](Grobid-service.md) provides a simple and efficient way to use and deploy Grobid. As an alternative, the present page explains how to embed Grobid directly in your Java application. 
+The [RESTful API](Grobid-service.md) provides a simple and efficient way to use and deploy GROBID. As an alternative, the present page explains how to embed Grobid directly in your Java application. 
 
 After [building the project](Install-Grobid.md), two core jar files are created: grobid-core-`<current version>`.one-jar.jar and grobid-core-`<current version>`.jar
 
