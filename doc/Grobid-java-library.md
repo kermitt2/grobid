@@ -1,17 +1,21 @@
 The [RESTful API](Grobid-service.md) provides a simple and efficient way to use and deploy GROBID. As an alternative, the present page explains how to embed Grobid directly in your Java application. 
 
 After [building the project](Install-Grobid.md), two core jar files are created: grobid-core-`<current version>`.one-jar.jar and grobid-core-`<current version>`.jar
+	
+A complete working project example of usage of GROBID Java API can be found here: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTex format. 
+
+An example project for using GROBID in an ant project is available [here](https://github.com/kermitt2/grobid-test-ant).
 
 ## Using maven
 
-When using maven, you need to include in your pom file the path to the Grobid jar file, for instance as follow (replace `0.3.4` by the valid `<current version>`):
+When using maven, you need to include in your pom file the path to the Grobid jar file, for instance as follow (replace `0.3.4-SNAPSHOT` by the valid `<current version>`):
 
 	<dependency>
 	    <groupId>org.grobid.core</groupId>
 	    <artifactId>grobid</artifactId>
-	    <version>0.3.4</version>
+	    <version>0.3.4-SNAPSHOT</version>
 	    <scope>system</scope>
-	    <systemPath>${project.basedir}/lib/grobid-core-0.3.4.jar</systemPath>
+	    <systemPath>${project.basedir}/lib/grobid-core-0.3.4-SNAPSHOT.jar</systemPath>
 	</dependency>
 
 
@@ -62,13 +66,14 @@ When using Grobid, you have to initiate a context with the path to the Grobid re
 
 The context paths (`pGrobidHome` and `pGrobidProperties`) can also be set by a property file, or for a web application by a web.xml file (see for instance grobid-service).
 
+
 ## maven Skeleton project example
 
-In the following archive, you can find a toy example project integrating Grobid in a third party Java project using maven: [grobid-test](https://raw.github.com/kermitt2/grobid.github.com/master/grobid-test.zip). 
+In the following archive, you can find a toy example project integrating Grobid in a third party Java project using maven: [grobid-test](https://github.com/kermitt2/grobid-example). 
 
 Create the grobid-core jar library
 ```bash
-> cd grobid-core```bash
+> cd grobid-core
 > mvn clean install
 ```
 
@@ -78,11 +83,10 @@ Copy the Grobid jar library under grobid-test/lib
 > copy target/grobid-core-`<current version>`.jar `path_to_grobid_test`/grobid-test/lib
 ```
 
-The paths to `grobid-home` and to the property `grobid.properties` file must be changed in the file grobid-test/src/main/java/org/grobidTest/MyGrobid.java according to your installation: 
-```java
-	String pGrobidHome = "/Users/lopez/grobid/grobid-home";
-	String pGrobidProperties = "/Users/lopez/grobid/grobid-home/config/grobid.properties";
-```
+The paths to __grobid-home__ and to the property __grobid.properties__ file must be changed in the project property file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
+
+		grobid_example.pGrobidHome=/Users/lopez/grobid/grobid-home
+		grobid_example.pGrobidProperties=/Users/lopez/grobid/grobid-home/config/grobid.properties
 
 Then you can test the toy project:
 ```bash
@@ -91,7 +95,7 @@ Then you can test the toy project:
 
 ## ant Skeleton project example
 
-If you are using __ant__ to build your project, the following archive gives a toy example ant project integrating Grobid in a third party Java project: [grobid-test-ant](https://raw.github.com/kermitt2/grobid.github.com/master/grobid-test-ant.zip). 
+If you are using __ant__ to build your project, the following repo gives a toy example ant project integrating Grobid in a third party Java project: [grobid-test-ant](https://github.com/kermitt2/grobid-test-ant). 
 
 Create the grobid-core jar library
 ```bash
@@ -105,16 +109,15 @@ Copy the Grobid jar library (not the one-jar, the standard Grobid jar) under gro
 ```
 The skeleton project contains the other required jar. 
 
-The paths to __grobid-home__ and to the property __grobid.properties__ file must be changed in the file grobid-test/src/grobid_test/Testing.java according to your installation: 
+The paths to __grobid-home__ and to the property __grobid.properties__ file must be changed in the project property file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
 
-```java
-	String pGrobidHome = "/Users/lopez/grobid/grobid-home";
-	String pGrobidProperties = "/Users/lopez/grobid/grobid-home/config/grobid.properties";
-```
+		grobid_example.pGrobidHome=/Users/lopez/grobid/grobid-home
+		grobid_example.pGrobidProperties=/Users/lopez/grobid/grobid-home/config/grobid.properties
 
-Then test the toy project:
+Then build and test the toy project:
 ```bash
-> ant testing
+> ant jar
+> ant test
 ```
 
 ## Javadoc
