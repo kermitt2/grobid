@@ -69,7 +69,7 @@ The context paths (`pGrobidHome` and `pGrobidProperties`) can also be set by a p
 
 ## maven Skeleton project example
 
-In the following archive, you can find a toy example project integrating Grobid in a third party Java project using maven: [grobid-test](https://github.com/kermitt2/grobid-example). 
+In the following archive, you can find a toy example project integrating Grobid in a third party Java project using maven: [grobid-example](https://github.com/kermitt2/grobid-example). 
 
 Create the grobid-core jar library
 ```bash
