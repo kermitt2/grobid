@@ -39,17 +39,6 @@ public abstract class AbstractParser implements GenericTagger, Closeable {
         return genericTagger.label(data);
     }
 
-//    protected String augmentResultWithType(String data, String type) {
-//        Iterable<String> it = Splitter.on("\n").split(data);
-//        StringBuilder sb = new StringBuilder((int) (data.length() * 1.5));
-//        for (String s : it) {
-//            String[] split = s.split(" \t");
-//            int len = split.length;
-//            for ()
-//        }
-//
-//    }
-
     @Override
     public void close() throws IOException {
         try {	

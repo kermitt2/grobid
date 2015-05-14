@@ -16,6 +16,10 @@ public class CRFPPGenericTrainer implements GenericTrainer {
     public static final String CRF = "crf";
     private final CRFPPTrainer crfppTrainer;
 
+	// default training parameters (not exploited by CRFPP so far, it requires to extend the JNI)
+	private double epsilon = 0.00001; // default size of the interval for stopping criterion
+	private int window = 20; // default similar to CRF++
+
     public CRFPPGenericTrainer() {
         crfppTrainer = new CRFPPTrainer();
     }
@@ -33,5 +37,25 @@ public class CRFPPGenericTrainer implements GenericTrainer {
     @Override
     public String getName() {
         return CRF;
+    }
+	
+    @Override
+    public void setEpsilon(double epsilon) {
+        this.epsilon = epsilon;
+    }
+	
+    @Override
+    public void setWindow(int window) {
+        this.window = window;
+    }
+	
+    @Override
+    public double getEpsilon() {
+        return epsilon;
+    }
+	
+    @Override
+    public int getWindow() {
+        return window;
     }
 }
