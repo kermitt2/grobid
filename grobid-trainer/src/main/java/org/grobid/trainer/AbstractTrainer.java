@@ -14,14 +14,16 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * User: zholudev Date: 11/21/11 Time: 2:25 PM
+ * @author Zholudev, Lopez
  */
 public abstract class AbstractTrainer implements Trainer {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AbstractTrainer.class);
 	public static final String OLD_MODEL_EXT = ".old";
 	public static final String NEW_MODEL_EXT = ".new";
 
-//	protected final CRFPPTrainer crfppTrainer;
+	// default training parameters (only exploited by Wapiti)
+	protected double epsilon = 0.0; // default size of the interval for stopping criterion
+	protected int window = 0; // default similar to CRF++
 
 	protected GrobidModels model;
 	private File trainDataPath;
@@ -30,7 +32,6 @@ public abstract class AbstractTrainer implements Trainer {
 
 	public AbstractTrainer(final GrobidModels model) {
 		GrobidFactory.getInstance().createEngine();
-//		crfppTrainer = new CRFPPTrainer();
 		this.model = model;
 		this.trainDataPath = getTempTrainingDataPath();
 		this.evalDataPath = getTempEvaluationDataPath();
@@ -41,9 +42,12 @@ public abstract class AbstractTrainer implements Trainer {
 		final File dataPath = trainDataPath;
 		createCRFPPData(getCorpusPath(), dataPath);
         GenericTrainer trainer = TrainerFactory.getTrainer();
+		if (epsilon != 0.0)
+			trainer.setEpsilon(epsilon);
+		if (window != 0)
+			trainer.setWindow(window);
         final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
         final File oldModelPath = GrobidProperties.getModelPath(model);
-
         trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads(), model);
 		// if we are here, that means that training succeeded
 		renameModels(oldModelPath, tempModelPath);

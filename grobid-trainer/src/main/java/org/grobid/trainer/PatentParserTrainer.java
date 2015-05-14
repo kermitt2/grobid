@@ -28,6 +28,10 @@ import org.grobid.trainer.evaluation.PatentEvaluation;
  */
 public class PatentParserTrainer extends AbstractTrainer{
 
+	// adjusting CRF training parameters for this model (only with Wapiti)
+	private double epsilon = 0.0001;
+	private int window = 20;
+
 	// the window value indicate the right and left context of text to consider for an annotation when building
 	// the training or the test data - the value is experimentally set
 	// this window is used to maintain a certain level of occurence of the patent and NPL references, and avoid
@@ -78,8 +82,9 @@ public class PatentParserTrainer extends AbstractTrainer{
         File templatePath3 = 
 			new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.references.template");
 
-
         GenericTrainer trainer = TrainerFactory.getTrainer();
+		trainer.setEpsilon(epsilon);
+		trainer.setWindow(window);
         //File modelPath1 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + NEW_MODEL_EXT);
         //File modelPath2 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + NEW_MODEL_EXT);
         File modelPath3 = 
@@ -136,7 +141,7 @@ public class PatentParserTrainer extends AbstractTrainer{
              	sax.setN(-1);
            	}
             // get a factory
-            SAXParserFactory spf = SAXParserFactory.newInstance();
+            /*SAXParserFactory spf = SAXParserFactory.newInstance();
             spf.setValidating(false);
             spf.setFeature("http://xml.org/sax/features/namespaces", false);
             spf.setFeature("http://xml.org/sax/features/validation", false);
@@ -208,10 +213,10 @@ public class PatentParserTrainer extends AbstractTrainer{
                         }
                     }
                 }
-            }
+            }*/
 
             // NPL REF. textual data
-            sax = new MarecSaxParser();
+            /*sax = new MarecSaxParser();
             sax.patentReferences = false;
             sax.nplReferences = true;
 
@@ -300,7 +305,7 @@ public class PatentParserTrainer extends AbstractTrainer{
             }
 
             if (sax.citations != null)
-                srCitations += sax.citations.size();
+                srCitations += sax.citations.size();*/
 
             // Patent + NPL REF. textual data (the "all" model)
             sax = new MarecSaxParser();
@@ -316,12 +321,12 @@ public class PatentParserTrainer extends AbstractTrainer{
              	sax.setN(-1);
            	}
             // get a factory
-            spf = SAXParserFactory.newInstance();
+            SAXParserFactory spf = SAXParserFactory.newInstance();
             spf.setValidating(false);
             spf.setFeature("http://xml.org/sax/features/namespaces", false);
             spf.setFeature("http://xml.org/sax/features/validation", false);
 
-            fileList = new LinkedList<File>();
+            LinkedList<File> fileList = new LinkedList<File>();
             if (setName == null) {
                 fileList.add(new File(corpusPath));
             } else if (rank == null) {
@@ -329,6 +334,8 @@ public class PatentParserTrainer extends AbstractTrainer{
             } else {
                 fileList.add(new File(corpusPath + "/" + setName + "ing" + rank + "/"));
             }
+			
+			Writer writer = null;
             if ((setName == null) || (setName.length() == 0)) {
                 writer = new OutputStreamWriter(new FileOutputStream(
                         new File(outputPath + "/all.train"), false), "UTF-8");
@@ -348,6 +355,7 @@ public class PatentParserTrainer extends AbstractTrainer{
                     }
                 } else {
                     if (file.getName().endsWith(".xml")) {
+						nbFiles++;
                         try {
                             //get a new instance of parser
                             SAXParser p = spf.newSAXParser();
@@ -355,8 +363,8 @@ public class PatentParserTrainer extends AbstractTrainer{
                             sax.setFileName(file.toString());
                             p.parse(in, sax);
                             //writer3.write("\n");
-                            //nbNPLRef += sax.getNbNPLRef();
-                            //nbPatentRef += sax.getNbPatentRef();
+                            nbNPLRef += sax.getNbNPLRef();
+                            nbPatentRef += sax.getNbPatentRef();
                             if (sax.nbAllRef > maxRef) {
                                 maxRef = sax.nbAllRef;
                             }
@@ -407,7 +415,7 @@ public class PatentParserTrainer extends AbstractTrainer{
                     TextUtilities.formatTwoDecimals((double) (nbNPLRef + nbPatentRef) / nbFiles));
             System.out.println("Max number of references in file: " + maxRef);
 
-            if ((setName == null) || (setName.length() == 0)) {
+            /*if ((setName == null) || (setName.length() == 0)) {
                 System.out.println("patent data set under: " + outputPath + "/patent.train");
             } else {
                 System.out.println("patent data set under: " + outputPath + "/patent." + setName);
@@ -416,7 +424,7 @@ public class PatentParserTrainer extends AbstractTrainer{
                 System.out.println("npl data set under: " + outputPath + "/npl.train");
             } else {
                 System.out.println("npl data set under: " + outputPath + "/npl." + setName);
-            }
+            }*/
             if ((setName == null) || (setName.length() == 0)) {
                 System.out.println("common data set under: " + outputPath + "/all.train");
             } else {

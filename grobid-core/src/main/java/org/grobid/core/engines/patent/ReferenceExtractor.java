@@ -62,8 +62,8 @@ import java.util.zip.GZIPInputStream;
 public class ReferenceExtractor implements Closeable {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceExtractor.class);
 
-    private GenericTagger taggerPatent = null;
-    private GenericTagger taggerNPL = null;
+    //private GenericTagger taggerPatent = null;
+    //private GenericTagger taggerNPL = null;
     private GenericTagger taggerAll = null;
     private PatentRefParser patentParser = null;
     private Consolidation consolidator = null;
@@ -82,8 +82,6 @@ public class ReferenceExtractor implements Closeable {
     // bibliographical items and related information
 
     private String path = null;     // path where the patent file is stored
-
-    //private static String delimiters = " \n\t" + TextUtilities.fullPunctuations;
     private EngineParsers parsers;
 	
 	private GrobidAnalyzer analyzer = null; 
@@ -101,9 +99,9 @@ public class ReferenceExtractor implements Closeable {
     // constructors
     public ReferenceExtractor(EngineParsers parsers) {
         this.parsers = parsers;
-        taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
+        //taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
     	taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_ALL);
-    	taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
+    	//taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
 		analyzer = GrobidAnalyzer.getInstance(); 
     }
 
@@ -435,15 +433,7 @@ public class ReferenceExtractor implements Closeable {
             patentBlocks.add("\n");
 
             String theResult = null;
-            /*if (articles == null) {
-                theResult = taggerPatent.label(patentBlocks);
-            } else if (patents == null) {
-                theResult = taggerNPL.label(patentBlocks);
-            } else */
-			{
-                theResult = taggerAll.label(patentBlocks);
-            }
-
+            theResult = taggerAll.label(patentBlocks);
             //System.out.println(theResult);
 
             StringTokenizer stt = new StringTokenizer(theResult, "\n");
@@ -706,7 +696,8 @@ public class ReferenceExtractor implements Closeable {
             nbs += articles.size();
 
 		String resultTEI = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + 
-						   "<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
+						   "<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
+						   "xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
 		
 		String divID = KeyGen.getKey().substring(0,7);
 		resultTEI += "<teiHeader />\n";
@@ -740,7 +731,7 @@ public class ReferenceExtractor implements Closeable {
         return resultTEI;
     }
 
-    private String taggerRun(ArrayList<String> ress, Tagger tagger) throws Exception {
+    /*private String taggerRun(ArrayList<String> ress, Tagger tagger) throws Exception {
         // clear internal context
         tagger.clear();
 
@@ -767,7 +758,7 @@ public class ReferenceExtractor implements Closeable {
         }
 		//System.out.println(res.toString());
         return res.toString();
-    }
+    }*/
 
     /**
      * Get the TEI XML string corresponding to the recognized citation section
@@ -1212,10 +1203,10 @@ public class ReferenceExtractor implements Closeable {
     @Override
     public void close() throws IOException {
     	taggerAll.close();
-        taggerNPL.close();
-        taggerPatent.close();
+        //taggerNPL.close();
+        //taggerPatent.close();
         taggerAll = null;
-        taggerNPL = null;
-        taggerPatent = null;
+        //taggerNPL = null;
+        //taggerPatent = null;
     }
 }
