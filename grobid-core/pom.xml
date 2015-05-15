@@ -278,6 +278,7 @@
 					<!--argLine>-Djava.library.path=${basedir}/lib/</argLine> <systemProperties> <property> <name>java.library.path</name> <value>lib/</value> </property> </systemProperties -->
 				</configuration>
 			</plugin>
+			
 		</plugins>
 		<!--/pluginManagement -->
 	</build>

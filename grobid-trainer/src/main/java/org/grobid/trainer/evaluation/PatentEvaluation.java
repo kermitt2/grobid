@@ -36,11 +36,8 @@ public class PatentEvaluation {
         evaluationPath = AbstractTrainer.getEvalCorpusBasePath().getAbsolutePath();
         outputPath = GrobidProperties.getInstance().getTempPath().getAbsolutePath();
         taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
-//                new Tagger("-m " + GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + " ");
         taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
-                //new Tagger("-m " + GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + " ");
         taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_ALL);
-                //new Tagger("-m " + GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_ALL).getAbsolutePath() + " ");
     }
 
     /**
@@ -75,7 +72,6 @@ public class PatentEvaluation {
                     "type is undefined.");
         }
 
-        //return EvaluationUtilities.evaluateStandard(evaluationPath + "/" + setName + ".test", tagger);
 		return evaluate();
     }
 
@@ -92,7 +88,7 @@ public class PatentEvaluation {
 
         PatentParserTrainer ppt = new PatentParserTrainer();
         //noinspection NullableProblems
-        ppt.createDataSet("test", null, evaluationPath, outputPath);
+        ppt.createDataSet("test", null, evaluationPath, outputPath, 1);
 
         List<GenericTagger> taggers = new ArrayList<GenericTagger>();
         taggers.add(taggerNPL);
@@ -384,7 +380,7 @@ public class PatentEvaluation {
             String dossierName = null;
             BufferedReader br = new BufferedReader(
                     new InputStreamReader(
-                            new FileInputStream(evaluationPath + "/REF_20100426.txt"), "UTF8"));
+                            new FileInputStream(evaluationPath + "/gold/REF_20100426.txt"), "UTF8"));
             String s;
 //            boolean rf_part = false;
             ArrayList<String> resap_reference = null;

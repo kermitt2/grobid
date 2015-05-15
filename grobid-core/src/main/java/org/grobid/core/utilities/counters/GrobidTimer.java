@@ -1,4 +1,4 @@
-package org.grobid.core.utilities;
+package org.grobid.core.utilities.counters;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -189,6 +189,6 @@ public class GrobidTimer {
 	 * @return formatted time.
 	 */
 	public static String formatTime(final Long pTime) {
-		return Utilities.dateToString(new Date(pTime), MIN_SEC_MILI);
+		return org.grobid.core.utilities.Utilities.dateToString(new Date(pTime), MIN_SEC_MILI);
 	}
 }

@@ -75,7 +75,7 @@ public class GrobidAnalyzer {
 				jaAnalyzer = ReTokenizerFactory.create("ja_g");
 			result = jaAnalyzer.tokensAsList(text);
 		}
-		else if (lang.getLangId().equals("zh")) {
+		else if (lang.getLangId().equals("zh") || lang.getLangId().equals("zh-cn")) {
 			// Chinese analyser
 			if (zhAnalyzer == null)
 				zhAnalyzer = ReTokenizerFactory.create("zh_g");

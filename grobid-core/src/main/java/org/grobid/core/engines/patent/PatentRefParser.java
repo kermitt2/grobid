@@ -35,10 +35,10 @@ public class PatentRefParser {
     // this is the complete list of existing authorities that was identified in the nature, always 
 	// two upper-case letter codes
     static public List<String> authorities = Arrays.asList("AP", "AL", "DZ", "AR", "AU", "AT", "BE", "BX",
-            "BR", "BG", "CA", "CL", "CN",
-            "CO", "HR", "CU", "CY", "CZ", "CS", "DK", "EG", "EA", "EP", "DE", "DD", "FI", "FR", "GB", "GR", "HK",
-            "HU", "IS", "IN", "ID", "IB", "TP", "IR", "IQ", "IE", "IL", "IT", "JP", "JO", "KE", "KP", "KR", "LV",
-            "LT", "LU", "MW", "MY", "MX", "MD", "MC", "MN", "MA", "NL", "NZ", "NG", "NO", "OA", "WO", "PE", "PH",
+            "BR", "BG", "CA", "CL", "CN", "CO", 
+            "HR", "CU", "CY", "CZ", "CS", "DK", "EG", "EA", "EP", "DE", "DD", "FI", "FR", "GB", "GR", "HK", "HU",
+            "IS", "IN", "ID", "IB", "TP", "IR", "IQ", "IE", "IL", "IT", "JP", "JO", "KE", "KP", "KR", "LV", "LT",
+            "LU", "MW", "MY", "MX", "MD", "MC", "MN", "MA", "NL", "NZ", "NG", "NO", "OA", "WO", "PE", "PH",
             "PL", "PT", "RD", "RO", "RU", "SA", "SG", "SK", "SI", "ZA", "SU", "ES", "LK", "SE", "CH", "TW", "TH",
             "TT", "TN", "TR", "UA", "GB", "US", "UY", "VE", "VN", "YU", "ZM", "ZW");
 
@@ -62,9 +62,11 @@ public class PatentRefParser {
     private Pattern utility_pattern = null;
     private Pattern kindcode_pattern1 = null;
     private Pattern kindcode_pattern2 = null;
+	private Pattern kindcode_pattern3 = null;
     private Pattern jp_kokai_pattern = null;
     private Pattern jp_heisei_pattern = null;
-
+	private Pattern standardText = null;
+	
     public PatentRefParser() {
         patent_pattern = Pattern.compile("([UEWDJFA])[\\.\\s]?([SPOERKU])[\\.\\s]?-?(A|B|C)?\\s?-?([\\s,0-9/-]+(A|B|C)?[\\s,0-9/-]?)");
 
@@ -72,8 +74,11 @@ public class PatentRefParser {
         number_pattern = Pattern.compile("((RE|PP)[\\s,0-9/\\-\\.\\\\]*)|(PCT(/|\\\\)[A-Z][A-Z]([\\s,0-9/\\-\\.\\\\]*))|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+[ABCUT]?([\\s,0-9/\\-\\.\\\\])*[ABCUT]?)");
         //number_pattern = Pattern.compile("((RE|PP)[\\s,0-9/\\-\\.\\\\]*)|(PCT(/|\\\\)[A-Z][A-Z]([\\s,0-9/\\-\\.\\\\]*))|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+[ABCUT][0-9])|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+[ABCUT])|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+)");
         //number_pattern = Pattern.compile("((RE|PP)[\\s,0-9/\\-\\.\\\\]*)|(PCT(/|\\\\)[A-Z][A-Z]([\\s,0-9/\\-\\.\\\\]*))|([ABC]?([\\s,0-9/\\-\\.\\\\ABC])+[ABCUT]?)");
-        kindcode_pattern1 = Pattern.compile("([ABC][0-9]?)[0-9][\\s,0-9/\\-\\.\\\\]+");
-        kindcode_pattern2 = Pattern.compile("[0-9][\\s,0-9/\\-\\.\\\\]+([ABCUT][0-9]?)");
+        kindcode_pattern1 = Pattern.compile("([ABC][0-9]?)"); // before number
+        kindcode_pattern2 = Pattern.compile("([ABCUT][0-9]?)"); // after number
+		kindcode_pattern3 = Pattern.compile("^([ABC][0-9]?)-"); // as prefix of the number
+		
+		standardText = Pattern.compile("[a-z][A-Z]");
 		
         //application_pattern = Pattern.compile("((A|a)pplicat)|((a|A)ppln)");
         //publication_pattern = Pattern.compile("((P|p)ublicat)|((p|P)ub)");
@@ -274,13 +279,14 @@ public class PatentRefParser {
         rawTextOffset = s;
     }
 
-    public ArrayList<PatentItem> processRawRefText() {
-        ArrayList<PatentItem> res = new ArrayList<PatentItem>();
-        //System.out.println("processRawRefText: " + rawText);
+    public List<PatentItem> processRawRefText() {
+        List<PatentItem> res = new ArrayList<PatentItem>();
+		//System.out.println("processRawRefText: " + rawText);
         String country = null;
+		int country_position = -1;
         while (true) {
 			Matcher fitCountry = null;
-	
+
 			int i = 0;
 			for(String authority : authorities) {
 				Pattern thePattern = autority_patterns.get(i);				
@@ -288,6 +294,7 @@ public class PatentRefParser {
 				fitCountry = thePattern.matcher(rawText);
 	            if (fitCountry.find()) {
 	                country = authority;
+					country_position = fitCountry.end();
 	                break;
 	            }
 				i++;
@@ -296,9 +303,9 @@ public class PatentRefParser {
         }
 
         if (country != null) {
-            ArrayList<String> numbers = new ArrayList<String>();
-            ArrayList<Integer> offsets_begin = new ArrayList<Integer>();
-            ArrayList<Integer> offsets_end = new ArrayList<Integer>();
+            List<String> numbers = new ArrayList<String>();
+            List<Integer> offsets_begin = new ArrayList<Integer>();
+            List<Integer> offsets_end = new ArrayList<Integer>();
             Matcher fitNumber = number_pattern.matcher(rawText);
             while (fitNumber.find()) {
                 String toto = fitNumber.group(0);
@@ -353,13 +360,13 @@ public class PatentRefParser {
                 }
             }
 
-            ArrayList<Boolean> applications = new ArrayList<Boolean>();
-            ArrayList<Boolean> provisionals = new ArrayList<Boolean>();
-            ArrayList<Boolean> pctapps = new ArrayList<Boolean>();
-            ArrayList<Boolean> designs = new ArrayList<Boolean>();
-            ArrayList<Boolean> reissueds = new ArrayList<Boolean>();
-            ArrayList<Boolean> plants = new ArrayList<Boolean>();
-            ArrayList<String> kindcodes = new ArrayList<String>();
+            List<Boolean> applications = new ArrayList<Boolean>();
+            List<Boolean> provisionals = new ArrayList<Boolean>();
+            List<Boolean> pctapps = new ArrayList<Boolean>();
+            List<Boolean> designs = new ArrayList<Boolean>();
+            List<Boolean> reissueds = new ArrayList<Boolean>();
+            List<Boolean> plants = new ArrayList<Boolean>();
+            List<String> kindcodes = new ArrayList<String>();
 
             for (String number : numbers) {
                 applications.add(new Boolean(false));
@@ -371,16 +378,86 @@ public class PatentRefParser {
                 kindcodes.add(null);
             }
 
-            ArrayList<String> newNumbers = new ArrayList<String>();
+            List<String> newNumbers = new ArrayList<String>();
+			List<String> originalNumbers = new ArrayList<String>();
             int i = 0;
+			int lastPositionVisited = country_position;
             for (String number : numbers) {
                 String originalNumber = number;
+
+				// try to get the kind code
+				boolean kindCodeFound = false;
+				// do we have the kind code directly in the number prefix?
+				Matcher fitKindCode = kindcode_pattern3.matcher(number);
+				if (fitKindCode.find()) {
+				    String tata = fitKindCode.group(0);
+					int posKind = fitKindCode.end();
+					// if we have standard text between the kind code and the number, the kind code is not valid
+					tata = tata.replaceAll("[- ]", "");
+			    	kindcodes.set(i, tata);
+
+					lastPositionVisited = offsets_end.get(i) - rawTextOffset;
+					kindCodeFound = true;
+					int ind = number.indexOf("-");
+					number = number.substring(ind, number.length());
+				}
+				
+				if (!kindCodeFound) {
+					// is there a kind code between the last position and position of this number?
+					String interChunk = rawText.substring(lastPositionVisited, (offsets_begin.get(i)-rawTextOffset));
+					fitKindCode = kindcode_pattern1.matcher(interChunk);
+					if (fitKindCode.find()) {
+					    String tata = fitKindCode.group(0);
+						int posKind = fitKindCode.end();
+
+						// if we have standard text between the kind code and the number, the kind code is not valid
+						String subChunk = interChunk.substring(posKind, interChunk.length());
+					    Matcher m = standardText.matcher(subChunk);
+					    // just try to find a match
+					    if (!m.find()) {
+							// if the distance between the kind code and the number is too large, 
+							// the kind code is not valid
+
+							if (interChunk.length() - posKind <= 4) {
+							// otherwise, we validated the kind code for this patent reference
+						    	kindcodes.set(i, tata);
+								if (offsets_end.get(i) < rawTextOffset) {
+									offsets_end.set(i, offsets_end.get(i) + rawTextOffset); 
+								}
+								lastPositionVisited = offsets_end.get(i) - rawTextOffset;
+								kindCodeFound = true;
+							}
+						}
+					} 
+				}
+
+				if (!kindCodeFound) {
+					// is there a kind code immediatly after the number?
+					int postLength = 0;
+					if (rawText.length() - (offsets_end.get(i)-rawTextOffset) >= 3) 
+						postLength = 3;
+					else 
+						postLength = rawText.length() - (offsets_end.get(i)-rawTextOffset);
+					if (postLength>0) {
+						String postChunk = rawText.substring((offsets_end.get(i)-rawTextOffset-1), 
+							(offsets_end.get(i)-rawTextOffset) + postLength);
+					    fitKindCode = kindcode_pattern2.matcher(postChunk);
+					    if (fitKindCode.find()) {
+					        String tata = fitKindCode.group(0);
+					        kindcodes.set(i, tata);
+							kindCodeFound = true;
+							lastPositionVisited = (offsets_end.get(i)+postLength)-rawTextOffset;
+					    }
+					}
+				}
+
                 number = number.replace("-", "");
                 // do we have an application or a patent publication?
-                if (country.equals("WO")) {
+                if (country.equals("WO") || country.equals("W0")) {
                     number = number.replaceAll("[\\.\\s]", "");
                     // in case of usual typo W0 for WO
                     String numm = number.replaceAll("[/,\\.]", "").trim();
+					originalNumber = numm;
                     if ((numm.startsWith("0")) && (numm.length() == 11)) {
                         // a useless zero has been inserted
                         number = number.substring(1, number.length());
@@ -453,29 +530,20 @@ public class PatentRefParser {
 
                     if (country.equals("EP")) {
                         String numm = number.replaceAll("[ABCU,\\.\\s/]", "").trim();
+						originalNumber = numm;
                         if ((numm.length() == 8)) {
                             applications.set(i, new Boolean(true));
-                            if (numm.startsWith("0")) {
+							// epodoc format with the full year as prefix
+                            if (numm.startsWith("0") || numm.startsWith("1") ) {
                                 number = "20" + numm.substring(0, 2) + "0" + numm.substring(2, numm.length());
-                            } else //if (numm.startsWith("9") || numm.startsWith("8") || numm.startsWith("7"))
-                            {
+                            } 
+							else {
+								// we will have a problem in 2078 guys... 
                                 number = "19" + numm.substring(0, 2) + "0" + numm.substring(2, numm.length());
                             }
-                        } else if (numm.length() <= 7) {
+                        } 
+						else if (numm.length() <= 7) {
                             applications.set(i, new Boolean(false));
-
-                            // try to get the kind code
-                            Matcher fitKindCode = kindcode_pattern1.matcher(number);
-                            if (fitKindCode.find()) {
-                                String tata = fitKindCode.group(0);
-                                kindcodes.set(i, tata);
-                            } else {
-                                fitKindCode = kindcode_pattern2.matcher(number);
-                                if (fitKindCode.find()) {
-                                    String tata = fitKindCode.group(0);
-                                    kindcodes.set(i, tata);
-                                }
-                            }
                         }
                     }
                     if (country.equals("US")) {
@@ -495,6 +563,7 @@ public class PatentRefParser {
                         if (number.startsWith("60") && (appli || number.startsWith("60/"))) {
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(true));
+							originalNumber = number;
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
@@ -527,9 +596,11 @@ public class PatentRefParser {
                             else if (numb < 999999)
                                 year = "2007";
                             number = year + "0" + number;
-                        } else if (number.startsWith("61") && (appli || number.startsWith("61/"))) {  // same as for 60 but the ranges are different
+                        } else if (number.startsWith("61") && (appli || number.startsWith("61/"))) {  
+							// same as for 60 but the ranges are different
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(true));
+							originalNumber = number;
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
@@ -547,14 +618,34 @@ public class PatentRefParser {
                                 year = "2011";
 							else if (numb < 848274)
                                 year = "2012";
-                            else
+							else if (numb < 964276)
                                 year = "2013";
+							else if (numb < 999999)
+                                year = "2014";
                             number = year + "0" + number;
-                        } else if (number.startsWith("29") && (appli || number.startsWith("29/"))) {
+                        } 
+						else if (number.startsWith("62") && (appli || number.startsWith("62/"))) {  
+							// same as for 60 but the ranges are different
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(true));
+							originalNumber = number;
+                            number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 124715)
+                                year = "2014";
+                            else 
+                                year = "2015";
+                            number = year + "0" + number;
+                        } 
+						else if (number.startsWith("29") && (appli || number.startsWith("29/"))) {
                             // design patent application starts with 29
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
                             designs.set(i, new Boolean(true));
+							originalNumber = number;
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
@@ -602,13 +693,35 @@ public class PatentRefParser {
                                 year = "2011";
 							else if (numb < 442191)
                                 year = "2012";
-                            else
+							else if (numb < 463549)
                                 year = "2013";
+							else if (numb < 474693)
+                                year = "2014";
+                            else
+                                year = "2015";
                             number = year + "0" + number;
-                        } else if (number.startsWith("13") && (appli || number.startsWith("13/"))) {
+                        } 
+						else if (number.startsWith("14") && (appli || number.startsWith("14/"))) {
 	                        // standard patent application, most recent serial code
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
+							originalNumber = number;
+                            number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 544379)
+                                year = "2014";
+                            else 
+                                year = "2015";
+                            number = year + "0" + number;
+	                    }
+						else if (number.startsWith("13") && (appli || number.startsWith("13/"))) {
+	                        // standard patent application
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+							originalNumber = number;
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
@@ -618,13 +731,16 @@ public class PatentRefParser {
                                 year = "2011";
                             else if (numb < 694748)
                                 year = "2012";
+							else if (numb < 998975)
+								year = "2013";
                             else
-                                year = "2013";
+                                year = "2014";
                             number = year + "0" + number;
 	                    } else if (number.startsWith("12") && (appli || number.startsWith("12/"))) {
                             // standard patent application
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
+							originalNumber = number;
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
@@ -645,6 +761,7 @@ public class PatentRefParser {
                             // standard patent application
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
+							originalNumber = number;
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
@@ -663,6 +780,7 @@ public class PatentRefParser {
                             // standard patent application
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
+							originalNumber = number;
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
@@ -681,6 +799,7 @@ public class PatentRefParser {
                             // standard patent application
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
+							originalNumber = number;
                             if (number.startsWith("9/"))
                                 number = number.substring(2, number.length());
                             else
@@ -702,6 +821,7 @@ public class PatentRefParser {
                             // standard patent application
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
+							originalNumber = number;
                             if (number.startsWith("8/"))
                                 number = number.substring(2, number.length());
                             else
@@ -725,6 +845,7 @@ public class PatentRefParser {
                             // standard patent application
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
+							originalNumber = number;
                             if (number.startsWith("7/"))
                                 number = number.substring(2, number.length());
                             else
@@ -750,6 +871,7 @@ public class PatentRefParser {
                             // standard patent application
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
+							originalNumber = number;
                             if (number.startsWith("6/"))
                                 number = number.substring(2, number.length());
                             else
@@ -779,6 +901,7 @@ public class PatentRefParser {
                             // standard patent application
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
+							originalNumber = number;
                             if (number.startsWith("5/"))
                                 number = number.substring(2, number.length());
                             else
@@ -810,6 +933,7 @@ public class PatentRefParser {
                             // standard patent application
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
+							originalNumber = number;
                             if (number.startsWith("4/"))
                                 number = number.substring(2, number.length());
                             else
@@ -842,6 +966,7 @@ public class PatentRefParser {
                         } else if (number.startsWith("3/") || number.startsWith("03/")) {
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
+							originalNumber = number;
                             if (number.startsWith("3/"))
                                 number = number.substring(2, number.length());
                             else
@@ -877,6 +1002,7 @@ public class PatentRefParser {
                         } else if (number.startsWith("2/") || number.startsWith("02/")) {
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
+							originalNumber = number;
                             if (number.startsWith("2/"))
                                 number = number.substring(2, number.length());
                             else
@@ -915,6 +1041,7 @@ public class PatentRefParser {
                         } else if (number.startsWith("1/") || number.startsWith("01/")) {
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
+							originalNumber = number;
                             if (number.startsWith("1/"))
                                 number = number.substring(2, number.length());
                             else
@@ -979,6 +1106,7 @@ public class PatentRefParser {
                             // that it is maybe not !
                             // access to OPS would be necessary to decide but heuristitics can help !
                             String numm = number.replaceAll("[ABCU,\\.\\s/\\\\]", "").trim();
+							originalNumber = numm;
                             if ((numm.length() == 10) || (numm.length() == 11)) {
                                 applications.set(i, new Boolean(false));
                                 provisionals.set(i, new Boolean(false));
@@ -989,25 +1117,13 @@ public class PatentRefParser {
                                         number = numm.substring(0, 4) + numm.substring(5, numm.length());
                                     }
                                 }
-
-                                // try to get the kind code, if any
-                                Matcher fitKindCode = kindcode_pattern1.matcher(number);
-                                if (fitKindCode.find()) {
-                                    String tata = fitKindCode.group(0);
-                                    kindcodes.set(i, tata);
-                                } else {
-                                    fitKindCode = kindcode_pattern2.matcher(number);
-                                    if (fitKindCode.find()) {
-                                        String tata = fitKindCode.group(0);
-                                        kindcodes.set(i, tata);
-                                    }
-                                }
                             } else if ((number.indexOf("/") != -1) && !publi) {
                                 applications.set(i, new Boolean(true));
                             }
                         }
                     } else if (country.equals("JP")) {
                         String numm = number.replaceAll("[ABCU,\\.\\s/]", "").trim();
+						originalNumber = numm;
                         if ((numm.length() == 10)) {
                             applications.set(i, new Boolean(false));
                             provisionals.set(i, new Boolean(false));
@@ -1065,10 +1181,23 @@ public class PatentRefParser {
                         }
 
                     } else if (country.equals("DE")) {
+						// Application numbering format up to 2003. The first digit indicates the type of 
+						// application (1 for patent). The next 2 digits are the filing year. the remaining 
+						// digits are the serial number 
+						// ex: 195 00 002.1 -> DE19951000002
+						
+						// Numbering format (as of 1st January 2004). First two digits indicates application 
+						// type (10 for patent). The 4-digit year of filing is next, followed by a 6-digit 
+						// serial number, and an optional check digit. 
+						// ex: 102004005106.7 -> DE200410005106
+						
+						// otherwise a publication
+						
 
                     } else if (country.equals("GB")) {
                         if (applications.get(i).booleanValue()) {
                             String numm = number.replaceAll("[ABCU,\\.\\s/]", "").trim();
+							originalNumber = numm;
                             if (numm.length() == 7) {
                                 String year = numm.substring(0, 2);
                                 if ((year.charAt(0) == '7') || (year.charAt(0) == '8') || (year.charAt(0) == '9')) {
@@ -1080,8 +1209,16 @@ public class PatentRefParser {
                             }
                         }
                     }
+					else if (country.equals("FR")) {
+						// A 2 digit year followed by a 5-digit serial number in sequential order according to 
+						// year
+						// ex: 96 03098 -> FR19960003098
+					}
                 }
                 newNumbers.add(number);
+				if (originalNumber == null)
+					originalNumber = number;
+				originalNumbers.add(originalNumber);
                 i++;
             }
 
@@ -1096,15 +1233,18 @@ public class PatentRefParser {
                     res0.setReissued(reissueds.get(i).booleanValue());
                     res0.setPlant(plants.get(i).booleanValue());
                     if (pctapps.get(i).booleanValue())
-                        res0.setNumber(number.replaceAll("[\\.\\s/\\\\]", ""));
+                        res0.setNumberEpoDoc(number.replaceAll("[\\.\\s/\\\\]", ""));
                     else
-                        res0.setNumber(number.replaceAll("[ABCU,\\.\\s/\\\\]", ""));
+                        res0.setNumberEpoDoc(number.replaceAll("[ABCU,\\.\\s/\\\\]", ""));
+					if (i<originalNumbers.size()) {
+						res0.setNumberWysiwyg(originalNumbers.get(i).replaceAll("[ABCU,\\.\\s/\\\\]", ""));
+					}
 
                     // number completion
                     if (country.equals("EP")) {
                         if (!res0.getApplication()) {
-                            while (res0.getNumber().length() < 7) {
-                                res0.setNumber("0" + res0.getNumber());
+                            while (res0.getNumberEpoDoc().length() < 7) {
+                                res0.setNumberEpoDoc("0" + res0.getNumberEpoDoc());
                             }
                         }
                     }
@@ -1122,8 +1262,8 @@ public class PatentRefParser {
         return res;
     }
 
-    private void addNumber(ArrayList<String> numbers, ArrayList<Integer> offsets_begin,
-                           ArrayList<Integer> offsets_end, String toto, int offset_begin, int offset_end) {
+    private void addNumber(List<String> numbers, List<Integer> offsets_begin,
+                           List<Integer> offsets_end, String toto, int offset_begin, int offset_end) {
         // we have to check if we have a check code at the end of the number
         toto = toto.trim();
         if (toto.length() > 2) {
