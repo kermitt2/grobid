@@ -32,7 +32,7 @@ GROBID includes batch processing, a comprehensive RESTful API, a JAVA API, a rel
 The key aspects of GROBID are the following ones:
 
 + Written in Java, with JNI call to native CRF libraries. 
-+ High performance - on a modern but low profile MacBook Pro: header extraction from 4000 PDF in 10 minutes (or from 3 PDF per second with the RESTful API), parsing of 3000 references in 18 seconds.
++ High performance - on a modern but low profile MacBook Pro: header extraction from 4000 PDF in 10 minutes (or from 3 PDF per second with the RESTful API), parsing of 3000 references in 18 seconds. [INIST](http://www.inist.fr/lang=en) recently scaled GROBID REST service for processing 1 million PDF in 1 day on a Xeon 10 CPU E5-2660 and 10 GB memory (3GB used in average) with 9 threads.
 + Robust and fast PDF processing based on Xpdf and dedicated post-processing.
 + Modular and reusable machine learning models. The extractions are based on Linear Chain Conditional Random Fields which is currently the state of the art in bibliographical information extraction and labeling. The specialized CRF models are cascaded to realize a complete document structure.  
 + Full encoding in [__TEI__](http://www.tei-c.org/Guidelines/P5), both for the training corpus and the parsed results.
