@@ -8,7 +8,7 @@
 
 Automatic Extraction and Resolution of Bibliographical References in Patent Documents. P. Lopez. First Information Retrieval Facility Conference (IRFC), Vienna, May 2010. LNCS 6107, pp. 120-135. Springer, Heidelberg (2010).
 
-GROBID: Combining Automatic Bibliographic Data Recognition and Term Extraction for Scholarship Publications. P. Lopez. Proceedings of the 13th European Conference on Digital Library (ECDL), Corfu, Greece, 2009.
+[GROBID: Combining Automatic Bibliographic Data Recognition and Term Extraction for Scholarship Publications](https://lekythos.library.ucy.ac.cy/bitstream/handle/10797/14013/ECDL069.pdf?sequence=1). P. Lopez. Proceedings of the 13th European Conference on Digital Library (ECDL), Corfu, Greece, 2009.
 
 ## Project reference
 
@@ -18,7 +18,7 @@ GROBID (2008-2015) <https://github.com/kermitt2/grobid>
 
 ## Evalution
 
-M. Lipinski, K. Yao, C. Breitinger, J. Beel, and B. Gipp, Evaluation of Header Metadata Extraction Approaches and Tools for Scientific PDF Documents, in Proceedings of the 13th ACM/IEEE-CS Joint Conference on Digital Libraries (JCDL), Indianapolis, IN, USA, 2013. 
+M. Lipinski, K. Yao, C. Breitinger, J. Beel, and B. Gipp, [Evaluation of Header Metadata Extraction Approaches and Tools for Scientific PDF Documents](http://docear.org/papers/Evaluation_of_Header_Metadata_Extraction_Approaches_and_Tools_for_Scientific_PDF_Documents.pdf), in Proceedings of the 13th ACM/IEEE-CS Joint Conference on Digital Libraries (JCDL), Indianapolis, IN, USA, 2013. 
 
 Phil Gooch and Kris Jack, [How well does Mendeley’s Metadata Extraction Work?](https://krisjack.wordpress.com/2015/03/12/how-well-does-mendeleys-metadata-extraction-work/)
 

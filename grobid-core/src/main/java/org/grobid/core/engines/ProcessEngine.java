@@ -71,8 +71,16 @@ public class ProcessEngine implements Closeable {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
                         result = getEngine().processHeader(currPdf.getAbsolutePath(), false, null);
-                        Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
-                                + new File(currPdf.getAbsolutePath()).getName().replace(".pdf", ".tei.xml"), result.toString());
+						if (currPdf.getName().endsWith(".pdf")) {
+                        	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                                + new File(currPdf.getAbsolutePath())
+									.getName().replace(".pdf", ".tei.xml"), result.toString());
+						}
+						else if (currPdf.getName().endsWith(".PDF")) {
+                        	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                                + new File(currPdf.getAbsolutePath())
+									.getName().replace(".PDF", ".tei.xml"), result.toString());
+						}
                     }
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the file " + currPdf.getAbsolutePath()
@@ -101,8 +109,14 @@ public class ProcessEngine implements Closeable {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
                         result = getEngine().fullTextToTEI(currPdf.getAbsolutePath(), false, false);
-                        Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+						if (currPdf.getName().endsWith(".pdf")) {
+                       	 	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                                 + new File(currPdf.getAbsolutePath()).getName().replace(".pdf", ".tei.xml"), result);
+						}
+						else if (currPdf.getName().endsWith(".PDF")) {
+                       	 	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                                + new File(currPdf.getAbsolutePath()).getName().replace(".PDF", ".tei.xml"), result);
+						}
                     }
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the file " + currPdf.getAbsolutePath()
@@ -209,9 +223,17 @@ public class ProcessEngine implements Closeable {
 							result.append("\n");
 						}
 						result.append("\t\t\t</listBibl>\n\t\t</back>\n\t</text>\n</TEI>\n");
-                        Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+						
+						if (currPdf.getName().endsWith(".pdf")) {
+                        	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                                 + new File(currPdf.getAbsolutePath()).getName().replace(".pdf", ".references.tei.xml"), 
 									result.toString());
+						}
+						else if (currPdf.getName().endsWith(".PDF")) {
+                        	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                                + new File(currPdf.getAbsolutePath()).getName().replace(".PDF", ".references.tei.xml"), 
+									result.toString());
+						}
 					}
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the file " + currPdf.getAbsolutePath()
@@ -390,10 +412,16 @@ public class ProcessEngine implements Closeable {
                 if (currPDF.getName().toLowerCase().endsWith(".pdf")) {
                     List<BibDataSet> articles = new ArrayList<BibDataSet>();
                     List<PatentItem> patents = new ArrayList<PatentItem>();
-                    result = getEngine().processAllCitationsInPDFPatent(pGbdArgs.getPath2Input() + File.separator + currPDF.getName(),
-                            articles, patents, false);
-                    Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                    result = getEngine().processAllCitationsInPDFPatent(pGbdArgs.getPath2Input() + 
+						File.separator + currPDF.getName(), articles, patents, false);
+					if (currPDF.getName().endsWith(".pdf")) {
+                    	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                             + new File(currPDF.getAbsolutePath()).getName().replace(".pdf", ".tei.xml"), result);
+					}
+					else if (currPDF.getName().endsWith(".PDF")) {
+                    	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                            + new File(currPDF.getAbsolutePath()).getName().replace(".PDF", ".tei.xml"), result);
+					}
                 }
             } catch (final Exception exp) {
                 LOGGER.error("An error occured while processing the file " + currPDF.getAbsolutePath()
