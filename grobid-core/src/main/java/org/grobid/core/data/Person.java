@@ -179,7 +179,7 @@ public class Person {
         if (lastName != null)
             res += "<surname>" + lastName + "</surname>";
         if (suffix != null)
-            res += "<suffix>" + suffix + "</suffix>";
+            res += "<genName>" + suffix + "</genName>";
         res += "</persName>";
 
         return res;
