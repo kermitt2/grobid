@@ -3283,6 +3283,11 @@ public class BiblioItem {
                         tei.append("<roleName>" +
                                 TextUtilities.HTMLEncode(author.getTitle()) + "</roleName>\n");
                     }
+                    if (author.getSuffix() != null) {
+                        TextUtilities.appendN(tei, '\t', nbTag + 2);
+                        tei.append("<genName>" +
+                                TextUtilities.HTMLEncode(author.getSuffix()) + "</genName>\n");
+                    }
 
                     TextUtilities.appendN(tei, '\t', nbTag + 1);
                     tei.append("</persName>\n");
