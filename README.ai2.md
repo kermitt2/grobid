@@ -1,4 +1,4 @@
-Publish Grobid to Ai2 Nexus resolver
+# Publish Grobid to Ai2 Nexus resolver
 
 * The Nexus UI is here http://utility.allenai.org:8081/nexus/#welcome. Credentials required, ask Michael.
 
