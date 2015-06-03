@@ -843,10 +843,19 @@ public class EngineTest {
 //        System.out.println("--------------");
     }*/
 
+
+    @Test
+    public void testFulltext() throws Exception {
+        final Engine engine = GrobidFactory.getInstance().getEngine();
+        System.out.println(engine.fullTextToTEI("/Work/temp/context/pdf3.pdf", true, true, null, -1, -1, true));
+//        System.out.println(engine.fullTextToTEI("/tmp/x1.pdf", true, true, null, -1, -1, true));
+    }
+
     @Test
     public void testReferenceString() {
-        String ref = "Agharahimi, M.R., LeBel, N.A., 1995. Synthesis of (–)-monoterpenylmagnolol and \n" +
-                "magnolol. J. Org. Chem. 60, 1856–1863. ";
+//        String ref = "Agharahimi, M.R., LeBel, N.A., 1995. Synthesis of (–)-monoterpenylmagnolol and \n" +
+//                "magnolol. J. Org. Chem. 60, 1856–1863. ";
+        String ref = "30. Van der Veen, J. 1963. The role of adenoviruses in respiratory disease. Am. Rev. Respir. Dis. 88: 167–181.";
 
         final Engine engine = GrobidFactory.getInstance().getEngine();
         BiblioItem x = engine.processRawReference(ref, false);

@@ -7,6 +7,7 @@ import org.grobid.core.data.Person;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.GrobidProperties;
@@ -15,10 +16,7 @@ import org.grobid.core.engines.FullTextParser;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.Pair;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -967,20 +965,20 @@ public class TEIFormater {
      *  like structured indexing and search.
 	 */
 	public StringBuffer toTEIBodyLight(StringBuffer buffer,
-                       			 	String result,
-                                	BiblioItem biblio,
-                                	List<BibDataSet> bds,
-                                	List<String> tokenizations,
-                                	Document doc,
-									boolean generateIDs,
-									boolean generateImageReferences) throws Exception {
+                                       String result,
+                                       BiblioItem biblio,
+                                       List<BibDataSet> bds,
+                                       List<String> tokenizations,
+                                       List<LayoutToken> layoutTokensBody, Document doc,
+                                       boolean generateIDs,
+                                       boolean generateImageReferences) throws Exception {
 		if ( (result == null) || (tokenizations == null) ) {
 			buffer.append("\t\t<body/>\n");
 			return buffer;
 		}
 		buffer.append("\t\t<body>\n");
 		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, 
-			tokenizations, doc, generateIDs, generateImageReferences);
+			tokenizations, layoutTokensBody, doc, generateIDs, generateImageReferences);
 		
 		// footnotes are still in the body
 		buffer = toTEIFootNoteLight(buffer, doc, generateIDs);
@@ -1054,7 +1052,7 @@ public class TEIFormater {
 		StringBuffer buffer2 = new StringBuffer();
 		
 		buffer2 = toTEITextPieceLight(buffer2, reseAcknowledgement,  null,  bds, 
-			tokenizationsAcknowledgement, doc, generateIDs, false);
+			tokenizationsAcknowledgement, null, doc, generateIDs, false);
 		String acknowResult = buffer2.toString();
 		String[] acknowResultLines = acknowResult.split("\n");
 		boolean extraDiv = false;
@@ -1094,7 +1092,7 @@ public class TEIFormater {
 		}
 		buffer.append("\t\t<div type=\"annex\">\n");
 		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, 
-			tokenizations, doc, generateIDs, generateImageReferences);
+			tokenizations, null, doc, generateIDs, generateImageReferences);
       	buffer.append("\t\t</div>\n");
 		
         return buffer;
@@ -1105,7 +1103,8 @@ public class TEIFormater {
                                 	BiblioItem biblio,
                                 	List<BibDataSet> bds,
                                 	List<String> tokenizations,
-                                	Document doc,
+                                    List<LayoutToken> layoutTokensBody,
+                                    Document doc,
 									boolean generateIDs,
 									boolean generateImageReferences) throws Exception {
         StringTokenizer st = new StringTokenizer(result, "\n");
@@ -1487,10 +1486,13 @@ public class TEIFormater {
 		int endRefPosition = 0;
 		int lastMatchPos = 0;
 		p = 0;
-		StringBuilder refString = new StringBuilder(); 
+		StringBuilder refString = new StringBuilder();
+		List<LayoutToken> refTokens = layoutTokensBody != null ? new ArrayList<LayoutToken>() : null;
+        Iterator<LayoutToken> layoutTokenIterator = layoutTokensBody != null ? layoutTokensBody.iterator() : null;
         while (st.hasMoreTokens()) {
             boolean addSpace = false;
             String tok = st.nextToken().trim();
+            LayoutToken layoutToken = layoutTokenIterator != null ? layoutTokenIterator.next() : null;
             if (tok.length() == 0) {
                 continue;
             }
@@ -1569,14 +1571,21 @@ public class TEIFormater {
 			if (currentTag0.equals("<citation_marker>")) {
 				if (!currentTag0.equals(lastTag0) || s1.startsWith("I-")) {
 					startRefPosition = teiPosition;
-					refString = new StringBuilder();
-					refString.append(s2);
+//					refString = new StringBuilder();
+//                    refTokens.clear();
+
+//                    clearRefStrData(refString, refTokens);
+					appendRefStrDataClean(refString, refTokens, s2, layoutToken, false);
+
+//                    refString.append(s2);
+//                    refTokens.add(layoutToken);
 				}
 				else {
-					if (addSpace)
-						refString.append(" " + s2);
-					else 
-						refString.append(s2);
+                    appendRefStrData(refString, refTokens, s2, layoutToken, addSpace);
+//					if (addSpace)
+//						refString.append(" " + s2);
+//					else
+//						refString.append(s2);
 				}
 				endRefPosition = teiPosition + s2.length();
 				teiPosition = teiPosition + s2.length();
@@ -1584,14 +1593,16 @@ public class TEIFormater {
 			else if (currentTag0.equals("<figure_marker>")) {
 				if (!currentTag0.equals(lastTag0)) {
 					startRefPosition = teiPosition;
-					refString = new StringBuilder();
-					refString.append(s2);
+                    appendRefStrDataClean(refString, refTokens, s2, layoutToken, false);
+//					refString = new StringBuilder();
+//					refString.append(s2);
 				}
 				else {
-					if (addSpace)
-						refString.append(" " + s2);
-					else 
-						refString.append(s2);
+                    appendRefStrData(refString, refTokens, s2, layoutToken, addSpace);
+//					if (addSpace)
+//						refString.append(" " + s2);
+//					else
+//						refString.append(s2);
 				}
 				endRefPosition = teiPosition + s2.length();
 				teiPosition = teiPosition + s2.length();
@@ -1599,14 +1610,17 @@ public class TEIFormater {
 			else if (currentTag0.equals("<table_marker>")) {
 				if (!currentTag0.equals(lastTag0)) {
 					startRefPosition = teiPosition;
-					refString = new StringBuilder();
-					refString.append(s2);
+                    appendRefStrDataClean(refString, refTokens, s2, layoutToken, false);
+//					refString = new StringBuilder();
+//					refString.append(s2);
 				}
 				else {
-					if (addSpace)
-						refString.append(" " + s2);
-					else 
-						refString.append(s2);
+                    appendRefStrData(refString, refTokens, s2, layoutToken, addSpace);
+//
+//                    if (addSpace)
+//						refString.append(" " + s2);
+//					else
+//						refString.append(s2);
 				}
 				endRefPosition = teiPosition + s2.length();
 				teiPosition = teiPosition + s2.length();
@@ -1618,14 +1632,15 @@ public class TEIFormater {
 					if (chunkRefString.contains("<") && chunkRefString.contains(">")) {
 						// normally never appear - inserting tags around this chunk could harm the
 						// XML hierarchical structure, so we skip this chunk
-						refString = new StringBuilder();
+//						refString = new StringBuilder();
+                        clearRefStrData(refString, refTokens);
 						continue;
 					}
 					
 					String replacement = null;
 					
 					if (lastTag0.equals("<citation_marker>")) {
-						replacement = markReferencesTEI(chunkRefString, bds).trim();
+						replacement = markReferencesTEI(chunkRefString, refTokens, bds).trim();
 					}
 					else if (lastTag0.equals("<figure_marker>")) {
 						replacement = "<ref type=\"figure\">" + chunkRefString + "</ref>";
@@ -1654,7 +1669,8 @@ public class TEIFormater {
 								 (replacedChunk.contains("&lt;") && replacedChunk.contains("&gt;")) ) {
 								// normally never appear - inserting tags around this chunk could harm the
 								// XML hierarchical structure, so we skip this chunk
-								refString = new StringBuilder();
+                                clearRefStrData(refString, refTokens);
+//								refString = new StringBuilder();
 								teiPosition = teiPosition0;
 								continue;
 							}
@@ -1667,7 +1683,9 @@ public class TEIFormater {
 							// select the first position after the current teiPosition
 							teiPosition = teiPosition0;
 						}
-						refString = new StringBuilder();
+                        clearRefStrData(refString, refTokens);
+
+//                        refString = new StringBuilder();
 					}
 					else if (buffer.substring(startRefPosition, endRefPosition).equals(chunkRefString)) {
 						String replacedChunk = buffer.substring(startRefPosition, endRefPosition);
@@ -1675,14 +1693,18 @@ public class TEIFormater {
 							 (replacedChunk.contains("&lt;") && replacedChunk.contains("&gt;")) ) {
 							// normally never appear - inserting tags around this chunk could harm the
 							// XML hierarchical structure, so we skip this chunk
-							refString = new StringBuilder();
+                            clearRefStrData(refString, refTokens);
+
+//                            refString = new StringBuilder();
 							continue;
 						}
 						buffer = buffer.replace(startRefPosition, endRefPosition, replacement);
 						teiPosition = startRefPosition + replacement.length();
 						lastMatchPos = teiPosition;
-						refString = new StringBuilder();
-					} 
+                        clearRefStrData(refString, refTokens);
+
+//                        refString = new StringBuilder();
+					}
 				}
 			}
 			lastTag = s1;
@@ -1884,7 +1906,30 @@ public class TEIFormater {
 		
 		return buffer;								
 	}
-	
+
+    private static void clearRefStrData(StringBuilder refStr, List<LayoutToken> toks) {
+        refStr.setLength(0);
+        if (toks != null) {
+            toks.clear();
+        }
+    }
+
+    private static void appendRefStrDataClean(StringBuilder refStr, List<LayoutToken> toks, String data, LayoutToken tok, boolean addSpace) {
+        clearRefStrData(refStr, toks);
+        refStr.append(addSpace ? " " :  "").append(data);
+        if (toks != null) {
+            toks.add(tok);
+        }
+    }
+
+    private static void appendRefStrData(StringBuilder refStr, List<LayoutToken> toks, String data, LayoutToken tok, boolean addSpace) {
+        refStr.append(addSpace ? " " :  "").append(data);
+        if (toks != null) {
+            toks.add(tok);
+        }
+    }
+
+
 	/**
 	 * Return the graphic objects in a given interval position in the document.
 	 */
@@ -3579,7 +3624,7 @@ public class TEIFormater {
             } 
 			else if (currentCitationMarker.length() > 0) {
                 String theRef = currentCitationMarker.toString();
-                theRef = markReferencesTEI(theRef, bds);
+                theRef = markReferencesTEI(theRef, null, bds);
                 tei.append(theRef);
                 currentCitationMarker = new StringBuffer();
             } 
@@ -3656,10 +3701,39 @@ public class TEIFormater {
         return tei;
     }
 
-    /**
+
+    private String getCoordsString(List<LayoutToken> toks) {
+        if (toks == null || toks.isEmpty()) {
+            return null;
+        }
+        double minX = Integer.MAX_VALUE, maxX = Integer.MIN_VALUE, minY = Integer.MAX_VALUE, maxY = Integer.MIN_VALUE;
+        int page = -1;
+        for (LayoutToken t : toks) {
+            page = t.getPage();
+            if (t.getX() < minX) {
+                minX = t.getX();
+            }
+
+            if (t.getY() < minY) {
+                minY = t.getY();
+            }
+
+            if (t.getX() + t.getWidth() > maxX) {
+                maxX = t.getX() + t.getWidth();
+            }
+
+            if (t.getY() + t.getHeight() > maxY) {
+                maxY = t.getY() + t.getHeight();
+            }
+        }
+
+        return "" + page + ";" + minX + ";" + minY + ";" + maxX + ";" + maxY;
+    }
+
+     /**
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
      */
-    public String markReferencesTEI(String text, List<BibDataSet> bds) {
+    public String markReferencesTEI(String text, List<LayoutToken> refTokens, List<BibDataSet> bds) {
         // safety tests
 		if (text == null)
             return null;
@@ -3671,6 +3745,12 @@ public class TEIFormater {
         text = TextUtilities.HTMLEncode(text);
         boolean numerical = false;
 
+        String coords = getCoordsString(refTokens);
+        if (coords == null) {
+            coords = "";
+        } else {
+            coords = "coords=\"" + coords + "\"";
+        }
         // we check if we have numerical references
 
         // we re-write compact references, i.e [1,2] -> [1] [2] 
@@ -3826,7 +3906,7 @@ public class TEIFormater {
 	                        int ind = text.indexOf(marker);
 	                        if (ind != -1) {
 	                            text = text.substring(0, ind) +
-	                                    "<ref type=\"bibr\" target=\"#b" + p + "\">" + marker
+	                                    "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + marker
 	                                    + "</ref>" + text.substring(ind + marker.length(), text.length());
 	                        }
 	                    }
@@ -3886,19 +3966,19 @@ public class TEIFormater {
 	                                    if (extended) {
 											followingText = text.substring(indi2 + 5, text.length()); 
 																// 5 digits for the year + identifier character 
-	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>";
+	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
 	                                        added = 8;											
 	                                    } else {
 											followingText = text.substring(indi2 + 4, text.length());
 																// 4 digits for the year 
-	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>";
+	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
 	                                        added = 7;
 	                                    }
 										if (previousText.length() > 2) {
-											previousText = markReferencesTEI(previousText, bds);
+											previousText = markReferencesTEI(previousText, refTokens, bds);
 										}
 										if (followingText.length() > 2) {
-											followingText = markReferencesTEI(followingText, bds);
+											followingText = markReferencesTEI(followingText, refTokens, bds);
 										}
 											
 										return previousText+text+followingText;
@@ -3932,20 +4012,20 @@ public class TEIFormater {
 	                                    if (extended) {
 											followingText = text.substring(indi2 + 5, text.length()); 
 																// 5 digits for the year + identifier character
-	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>";
+	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" "  + coords + ">" + reference + "</ref>";
 	                                        added = 8;
 	                                    } 
 										else {
 											followingText = text.substring(indi2 + 4, text.length()); 
 																// 4 digits for the year 
-	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>";
+	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
 	                                        added = 7;
 										}
 	                                  	if (previousText.length() > 2) {
-											previousText = markReferencesTEI(previousText, bds);
+											previousText = markReferencesTEI(previousText, refTokens, bds);
 										}
 										if (followingText.length() > 2) {
-											followingText = markReferencesTEI(followingText, bds);
+											followingText = markReferencesTEI(followingText, refTokens, bds);
 										}
 											
 										return previousText+text+followingText;    
