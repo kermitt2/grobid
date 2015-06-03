@@ -1,8 +1,8 @@
 # Publish Grobid to Ai2 Nexus resolver
 
-* The Nexus UI is here http://utility.allenai.org:8081/nexus/#welcome. Credentials required, ask Michael.
+* The Nexus UI is here http://utility.allenai.org:8081/nexus/#welcome. Credentials required, ask Michael. This is useful for troubleshooting.
 
-* Update the Grobid versions names, avoid -SNAPSHOT releases. See https://github.com/cristipp/grobid/commit/677c9ca38f1438ecfcd6072d5187769faa5fced5
+* Update the Grobid versions names, avoid -SNAPSHOT releases. See https://github.com/cristipp/grobid/commit/677c9ca38f1438ecfcd6072d5187769faa5fced5, where we used -ai2 suffix.
 
 * Setup maven settings.xml:
 
