@@ -66,4 +66,5 @@ mvn deploy:deploy-file -Dfile=grobid-core/lib/$ORG_SLASH/$NAME/$VER/$NAME-$VER.j
 ```
 
 TODO(Patrick): Automatize the process, perhaps just use standard resolvers instead of local package copies.
+TODO(Michael): Publish to JCenter/BinTray.
 
