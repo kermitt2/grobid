@@ -13,6 +13,8 @@ public class TrainerFactory {
                 return new CRFPPGenericTrainer();
             case WAPITI:
                 return new WapitiTrainer();
+            case AI2:
+                return new AI2CRFGenericTrainer();
             default:
                 throw new IllegalStateException("Unsupported Grobid CRF engine: " + GrobidProperties.getGrobidCRFEngine());
         }

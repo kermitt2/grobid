@@ -23,6 +23,9 @@ public class TaggerFactory {
                 case WAPITI:
                     t = new WapitiTagger(model);
                     break;
+                case AI2:
+                    t = new AI2CRFTagger(model);
+                    break;
                 default:
                     throw new IllegalStateException("Unsupported Grobid CRF engine: " + GrobidProperties.getGrobidCRFEngine());
             }

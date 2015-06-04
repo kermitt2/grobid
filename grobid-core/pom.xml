@@ -53,6 +53,11 @@
             <artifactId>wapiti</artifactId>
             <version>1.5.0</version>
         </dependency>
+				<dependency>
+            <groupId>org.allenai</groupId>
+            <artifactId>ml</artifactId>
+            <version>0.2</version>
+        </dependency>
         <dependency>
 			<groupId>com.cybozu</groupId>
 			<artifactId>language-detection</artifactId>
@@ -152,12 +157,12 @@
 			<artifactId>imageio-pnm</artifactId>
 			<version>1.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.wipo.analysers</groupId>
 			<artifactId>wipo-analysers</artifactId>
 			<version>0.0.1</version>
-		</dependency>	
+		</dependency>
 
 	</dependencies>
 
@@ -214,7 +219,7 @@
 
 		<!--pluginManagement -->
 		<plugins>
-			<!--plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> <configuration> <archive> <manifest> <mainClass>org.grobid.core.engines.Engine</mainClass> </manifest> 
+			<!--plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> <configuration> <archive> <manifest> <mainClass>org.grobid.core.engines.Engine</mainClass> </manifest>
 				</archive> </configuration> </plugin -->
 			<plugin>
 				<groupId>com.jolira</groupId>
@@ -278,7 +283,7 @@
 					<!--argLine>-Djava.library.path=${basedir}/lib/</argLine> <systemProperties> <property> <name>java.library.path</name> <value>lib/</value> </property> </systemProperties -->
 				</configuration>
 			</plugin>
-			
+
 		</plugins>
 		<!--/pluginManagement -->
 	</build>
