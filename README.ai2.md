@@ -9,12 +9,6 @@ $ mvn clean test
 
 * Run MetaEval. Using meta-eval requires manually setting up a Grobid installation and data files in a very specific directory structure, as documented in the README, https://github.com/allenai/meta-eval.
 
-```
-$ git clone https://github.com/allenai/meta-eval
-$ sbt runMain org.allenai.scholar.metrics.metadata.Main runGrobid
-$ sbt runMain org.allenai.scholar.metrics.metadata.Main evalGrobid
-```
-
 # Publish Grobid to Ai2 Nexus resolver
 
 * The Nexus UI is here http://utility.allenai.org:8081/nexus/#welcome. Credentials required, ask Michael. This is useful for troubleshooting.
