@@ -1,8 +1,27 @@
+# Validate a Grobid release
+
+* Run Grobid tests.
+
+```
+$ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+$ mvn clean test
+```
+
+* Run MetaEval. Using meta-eval requires manually setting up a Grobid installation and data files in a very specific directory structure, as documented in the README.
+
+```
+$ git clone https://github.com/allenai/meta-eval
+$ sbt runMain org.allenai.scholar.metrics.metadata.Main runGrobid
+$ sbt runMain org.allenai.scholar.metrics.metadata.Main evalGrobid
+```
+
 # Publish Grobid to Ai2 Nexus resolver
 
 * The Nexus UI is here http://utility.allenai.org:8081/nexus/#welcome. Credentials required, ask Michael. This is useful for troubleshooting.
 
 * Update the Grobid versions names, avoid -SNAPSHOT releases. See https://github.com/cristipp/grobid/commit/677c9ca38f1438ecfcd6072d5187769faa5fced5, where we used -ai2 suffix.
+
+* Validate the release, see above.
 
 * Setup maven settings.xml:
 
