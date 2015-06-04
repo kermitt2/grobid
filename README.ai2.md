@@ -7,7 +7,7 @@ $ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 $ mvn clean test
 ```
 
-* Run MetaEval. Using meta-eval requires manually setting up a Grobid installation and data files in a very specific directory structure, as documented in the README.
+* Run MetaEval. Using meta-eval requires manually setting up a Grobid installation and data files in a very specific directory structure, as documented in the README, https://github.com/allenai/meta-eval.
 
 ```
 $ git clone https://github.com/allenai/meta-eval
