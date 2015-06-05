@@ -24,7 +24,7 @@
   <property file="${user.home}/.m2/maven.properties"/>
   <property file="maven-build.properties"/>
 
-  <property name="maven.build.finalName" value="grobid-core-0.3.2"/>
+  <property name="maven.build.finalName" value="grobid-core-0.3.4-SNAPSHOT"/>
   <property name="maven.build.dir" value="target"/>
   <property name="maven.build.outputDir" value="${maven.build.dir}/classes"/>
   <property name="maven.build.srcDir.0" value="src/main/java"/>
@@ -46,11 +46,17 @@
   <path id="build.classpath">
     <pathelement location="lib/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar"/>
 	<pathelement location="lib/com/cybozu/language-detection/09-13-2011/language-detection-09-13-2011.jar"/>
+	<pathelement location="lib/eugfc/imageio-pnm/1.0/imageio-pnm-1.0.jar"/>
+	<pathelement location="lib/org/wipo/analysers/wipo-analysers/0.0.1/wipo-analysers-0.0.1.jar"/>
     <pathelement location="${maven.repo.local}/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
     <pathelement location="${maven.repo.local}/commons-pool/commons-pool/1.6/commons-pool-1.6.jar"/>
     <pathelement location="${maven.repo.local}/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar"/>
     <pathelement location="${maven.repo.local}/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
     <pathelement location="${maven.repo.local}/org/apache/commons/commons-lang3/3.0.1/commons-lang3-3.0.1.jar"/>
+	<pathelement location="${maven.repo.local}/org/apache/lucene/lucene-core/4.5.1/lucene-core-4.5.1.jar"/>	
+	<pathelement location="${maven.repo.local}/org/apache/lucene/lucene-analyzers-common/4.5.1/lucene-analyzers-common-4.5.1.jar"/>
+	<pathelement location="${maven.repo.local}/org/apache/lucene/lucene-analyzers-kuromoji/4.5.1/lucene-analyzers-kuromoji-4.5.1.jar"/>
+	<pathelement location="${maven.repo.local}/org/apache/lucene/lucene-analyzers-smartcn/4.5.1/lucene-analyzers-smartcn-4.5.1.jar"/>
     <pathelement location="${maven.repo.local}/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.jar"/>
     <pathelement location="${maven.repo.local}/org/slf4j/slf4j-log4j12/1.6.6/slf4j-log4j12-1.6.6.jar"/>
     <pathelement location="${maven.repo.local}/directory-naming/naming-java/0.8/naming-java-0.8.jar"/>
@@ -58,11 +64,12 @@
 	<pathelement location="${maven.repo.local}/com/google/guava/16.0.1/guava-16.0.1.jar"/>
 	<pathelement location="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar"/>
 	<pathelement location="${maven.repo.local}/net/arnx/jsonic/1.3.5/jsonic-1.3.5.jar"/>
-	
   </path>
   <path id="build.test.classpath">
     <pathelement location="lib/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar"/>
 	<pathelement location="lib/com/cybozu/language-detection/09-13-2011/language-detection-09-13-2011.jar"/>
+	<pathelement location="lib/eugfc/imageio-pnm/1.0/imageio-pnm-1.0.jar"/>
+	<pathelement location="lib/org/wipo/analysers/wipo-analysers/0.0.1/wipo-analysers-0.0.1.jar"/>
     <pathelement location="${maven.repo.local}/junit/junit/4.8.2/junit-4.8.2.jar"/>
 	<pathelement location="${maven.repo.local}/ant-junit-1.7.1.jar"/>
     <pathelement location="${maven.repo.local}/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
@@ -88,6 +95,10 @@
 	<pathelement location="${maven.repo.local}/com/google/guava/16.0.1/guava-16.0.1.jar"/>
 	<pathelement location="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar"/>
 	<pathelement location="${maven.repo.local}/net/arnx/jsonic/1.3.5/jsonic-1.3.5.jar"/>
+	<pathelement location="${maven.repo.local}/org/apache/lucene/lucene-core/4.5.1/lucene-core-4.5.1.jar"/>	
+	<pathelement location="${maven.repo.local}/org/apache/lucene/lucene-analyzers-common/4.5.1/lucene-analyzers-common-4.5.1.jar"/>
+	<pathelement location="${maven.repo.local}/org/apache/lucene/lucene-analyzers-kuromoji/4.5.1/lucene-analyzers-kuromoji-4.5.1.jar"/>
+	<pathelement location="${maven.repo.local}/org/apache/lucene/lucene-analyzers-smartcn/4.5.1/lucene-analyzers-smartcn-4.5.1.jar"/>
   </path>
 
   <!-- ====================================================================== -->
@@ -566,6 +577,65 @@
          dest="${maven.repo.local}/xmlunit/xmlunit/1.3/xmlunit-1.3.jar" 
          usetimestamp="false" 
          ignoreerrors="true"/>
+		 
+	<mkdir dir="${maven.repo.local}/org/apache/lucene/lucene-analyzers-common/4.5.1"/>	 
+    <copy file="lib/org/apache/lucene/lucene-analyzers-common/4.5.1/lucene-analyzers-common-4.5.1.jar" 
+          tofile="${maven.repo.local}/org/apache/lucene/lucene-analyzers-common/4.5.1/lucene-analyzers-common-4.5.1.jar" 
+          failonerror="false"/>
+    <get src="http://download.java.net/maven/2/org/apache/lucene/lucene-analyzers-common/4.5.1/lucene-analyzers-common-4.5.1.jar" 
+         dest="${maven.repo.local}/org/apache/lucene/lucene-analyzers-common/4.5.1/lucene-analyzers-common-4.5.1.jar" 
+         usetimestamp="false" 
+         ignoreerrors="true"/>
+    <get src="http://repo1.maven.org/maven2/org/apache/lucene/lucene-analyzers-common/4.5.1/lucene-analyzers-common-4.5.1.jar" 
+         dest="${maven.repo.local}/org/apache/lucene/lucene-analyzers-common/4.5.1/lucene-analyzers-common-4.5.1.jar" 
+         usetimestamp="false" 
+         ignoreerrors="true"/>	 
+		 
+	<mkdir dir="${maven.repo.local}/org/apache/lucene/lucene-analyzers-kuromoji/4.5.1"/>	 
+	<copy file="lib/org/apache/lucene/lucene-analyzers-kuromoji/4.5.1/lucene-analyzers-kuromoji-4.5.1.jar" 
+	           tofile="${maven.repo.local}/org/apache/lucene/lucene-analyzers-kuromoji/4.5.1/lucene-analyzers-kuromoji-4.5.1.jar" 
+	           failonerror="false"/>
+	<get 
+		src="http://download.java.net/maven/2/org/apache/lucene/lucene-analyzers-kuromoji/4.5.1/lucene-analyzers-kuromoji-4.5.1.jar" 
+		dest="${maven.repo.local}/org/apache/lucene/lucene-analyzers-kuromoji/4.5.1/lucene-analyzers-kuromoji-4.5.1.jar" 
+	    usetimestamp="false" 
+	    ignoreerrors="true"/>
+	<get 
+		src="http://repo1.maven.org/maven2/org/apache/lucene/lucene-analyzers-kuromoji/4.5.1/lucene-analyzers-kuromoji-4.5.1.jar" 
+	   dest="${maven.repo.local}/org/apache/lucene/lucene-analyzers-kuromoji/4.5.1/lucene-analyzers-kuromoji-4.5.1.jar" 
+	    usetimestamp="false" 
+	    ignoreerrors="true"/>	 
+
+	<mkdir dir="${maven.repo.local}/org/apache/lucene/lucene-analyzers-smartcn/4.5.1"/>	 
+	<copy file="lib/org/apache/lucene/lucene-analyzers-smartcn/4.5.1/lucene-analyzers-smartcn-4.5.1.jar" 
+		           tofile="${maven.repo.local}/org/apache/lucene/lucene-analyzers-smartcn/4.5.1/lucene-analyzers-smartcn-4.5.1.jar" 
+		           failonerror="false"/>
+	<get 
+		src="http://download.java.net/maven/2/org/apache/lucene/lucene-analyzers-smartcn/4.5.1/lucene-analyzers-smartcn-4.5.1.jar" 
+		dest="${maven.repo.local}/org/apache/lucene/lucene-analyzers-smartcn/4.5.1/lucene-analyzers-smartcn-4.5.1.jar" 
+	    usetimestamp="false" 
+		ignoreerrors="true"/>
+	<get 
+		src="http://repo1.maven.org/maven2/org/apache/lucene/lucene-analyzers-smartcn/4.5.1/lucene-analyzers-smartcn-4.5.1.jar" 
+		   dest="${maven.repo.local}/org/apache/lucene/lucene-analyzers-smartcn/4.5.1/lucene-analyzers-smartcn-4.5.1.jar" 
+		usetimestamp="false" 
+		ignoreerrors="true"/>	
+
+	<mkdir dir="${maven.repo.local}/org/apache/lucene/lucene-core/4.5.1"/>	 
+	<copy file="lib/org/apache/lucene/lucene-core/4.5.1/lucene-core-4.5.1.jar" 
+			           tofile="${maven.repo.local}/org/apache/lucene/lucene-core/4.5.1/lucene-core-4.5.1.jar" 
+		           failonerror="false"/>
+	<get 
+		src="http://download.java.net/maven/2/org/apache/lucene/lucene-core/4.5.1/lucene-core-4.5.1.jar" 
+		dest="${maven.repo.local}/org/apache/lucene/lucene-core/4.5.1/lucene-core-4.5.1.jar" 
+	    usetimestamp="false" 
+		ignoreerrors="true"/>
+	<get 
+		src="http://repo1.maven.org/maven2/org/apache/lucene/lucene-core/4.5.1/lucene-core-4.5.1.jar" 
+			   dest="${maven.repo.local}/org/apache/lucene/lucene-core/4.5.1/lucene-core-4.5.1.jar" 
+		usetimestamp="false" 
+		ignoreerrors="true"/>	
+
   </target>
 
 </project>

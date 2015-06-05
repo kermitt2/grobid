@@ -62,10 +62,9 @@ import java.util.zip.GZIPInputStream;
 public class ReferenceExtractor implements Closeable {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceExtractor.class);
 
-    private GenericTagger taggerPatent = null;
-    private GenericTagger taggerNPL = null;
+    //private GenericTagger taggerPatent = null;
+    //private GenericTagger taggerNPL = null;
     private GenericTagger taggerAll = null;
-//    private CitationParser nplParser = null;
     private PatentRefParser patentParser = null;
     private Consolidation consolidator = null;
 
@@ -83,8 +82,6 @@ public class ReferenceExtractor implements Closeable {
     // bibliographical items and related information
 
     private String path = null;     // path where the patent file is stored
-
-    //private static String delimiters = " \n\t" + TextUtilities.fullPunctuations;
     private EngineParsers parsers;
 	
 	private GrobidAnalyzer analyzer = null; 
@@ -98,12 +95,13 @@ public class ReferenceExtractor implements Closeable {
     public ReferenceExtractor() {
         this(new EngineParsers());
     }
+	
     // constructors
     public ReferenceExtractor(EngineParsers parsers) {
         this.parsers = parsers;
-        taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
+        //taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
     	taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_ALL);
-    	taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
+    	//taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
 		analyzer = GrobidAnalyzer.getInstance(); 
     }
 
@@ -316,7 +314,12 @@ public class ReferenceExtractor implements Closeable {
                 isPublisherToken = false;
                 skipTest = false;
                 //String tok = st.nextToken();
-                if (tok.trim().length() == 0) {
+                if ( (tok.trim().length() == 0) || 
+					 (tok.equals(" ")) || 
+				     (tok.equals("\t")) || 
+					 (tok.equals("\n")) ||
+					 (tok.equals("\r"))
+					 ) {
                     continue;
                 }
 
@@ -430,15 +433,7 @@ public class ReferenceExtractor implements Closeable {
             patentBlocks.add("\n");
 
             String theResult = null;
-            /*if (articles == null) {
-                theResult = taggerPatent.label(patentBlocks);
-            } else if (patents == null) {
-                theResult = taggerNPL.label(patentBlocks);
-            } else */
-			{
-                theResult = taggerAll.label(patentBlocks);
-            }
-
+            theResult = taggerAll.label(patentBlocks);
             //System.out.println(theResult);
 
             StringTokenizer stt = new StringTokenizer(theResult, "\n");
@@ -610,7 +605,7 @@ public class ReferenceExtractor implements Closeable {
             for (String ref : referencesPatent) {
                 patentParser.setRawRefText(ref);
                 patentParser.setRawRefTextOffset(offsets_patent.get(j).intValue());
-                ArrayList<PatentItem> patents0 = patentParser.processRawRefText();
+                List<PatentItem> patents0 = patentParser.processRawRefText();
                 for (PatentItem pat : patents0) {
                     pat.setContext(ref);
 					pat.setConf(probPatent.get(j).doubleValue());
@@ -660,13 +655,13 @@ public class ReferenceExtractor implements Closeable {
             }
 
             // list for filtering duplicates, if we want to ignore the duplicate numbers
-            ArrayList<String> numberListe = new ArrayList<String>();
+            List<String> numberListe = new ArrayList<String>();
             if (filterDuplicate) {
                 // list for filtering duplicates, if we want to ignore the duplicate numbers
-                ArrayList<PatentItem> toRemove = new ArrayList<PatentItem>();
+                List<PatentItem> toRemove = new ArrayList<PatentItem>();
                 for (PatentItem pat : patents) {
-                    if (!numberListe.contains(pat.getNumber())) {
-                        numberListe.add(pat.getNumber());
+                    if (!numberListe.contains(pat.getNumberEpoDoc())) {
+                        numberListe.add(pat.getNumberEpoDoc());
                     } else {
                         toRemove.add(pat);
                     }
@@ -701,7 +696,8 @@ public class ReferenceExtractor implements Closeable {
             nbs += articles.size();
 
 		String resultTEI = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + 
-						   "<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
+						   "<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
+						   "xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
 		
 		String divID = KeyGen.getKey().substring(0,7);
 		resultTEI += "<teiHeader />\n";
@@ -735,7 +731,7 @@ public class ReferenceExtractor implements Closeable {
         return resultTEI;
     }
 
-    private String taggerRun(ArrayList<String> ress, Tagger tagger) throws Exception {
+    /*private String taggerRun(ArrayList<String> ress, Tagger tagger) throws Exception {
         // clear internal context
         tagger.clear();
 
@@ -762,7 +758,7 @@ public class ReferenceExtractor implements Closeable {
         }
 		//System.out.println(res.toString());
         return res.toString();
-    }
+    }*/
 
     /**
      * Get the TEI XML string corresponding to the recognized citation section
@@ -1135,7 +1131,7 @@ public class ReferenceExtractor implements Closeable {
 
             int i = 0;
             for (PatentItem pi : patents) {
-                String dnum = pi.getAuthority() + pi.getNumber();
+                String dnum = pi.getAuthority() + pi.getNumberEpoDoc();
                 if (pi.getKindCode() != null)
                     dnum += pi.getKindCode();
                 content.append("<patcit if=\"pcit" + i + " dnum=\"" + dnum + "\">" +
@@ -1207,10 +1203,10 @@ public class ReferenceExtractor implements Closeable {
     @Override
     public void close() throws IOException {
     	taggerAll.close();
-        taggerNPL.close();
-        taggerPatent.close();
+        //taggerNPL.close();
+        //taggerPatent.close();
         taggerAll = null;
-        taggerNPL = null;
-        taggerPatent = null;
+        //taggerNPL = null;
+        //taggerPatent = null;
     }
 }

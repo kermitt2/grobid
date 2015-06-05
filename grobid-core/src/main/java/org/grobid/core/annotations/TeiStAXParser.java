@@ -33,7 +33,7 @@ import org.grobid.core.data.PatentItem;
 import org.grobid.core.engines.EngineParsers;
 import org.grobid.core.engines.patent.ReferenceExtractor;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.utilities.GrobidTimer;
+import org.grobid.core.utilities.counters.GrobidTimer;
 import org.grobid.core.utilities.XMLWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

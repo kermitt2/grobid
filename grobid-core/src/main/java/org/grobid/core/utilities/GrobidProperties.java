@@ -811,14 +811,17 @@ public class GrobidProperties {
     }
 
     public static File getModelPath(final GrobidModels model) {
-        return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator + model.getFolderName() + File.separator
-                + FILE_NAME_MODEL + "." + grobidCRFEngine.getExt());
+        return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator 
+			+ model.getFolderName() + File.separator
+            + FILE_NAME_MODEL + "." + grobidCRFEngine.getExt());
     }
 
     public static File getTemplatePath(final File resourcesDir, final GrobidModels model) {
-		File theFile = new File(resourcesDir, "dataset/" + model.getFolderName() + "/crfpp-templates/" + model.getTemplateName());
+		File theFile = new File(resourcesDir, "dataset/" + model.getFolderName() 
+			+ "/crfpp-templates/" + model.getTemplateName());
 		if (!theFile.exists()) {
-			theFile = new File("resources/dataset/" + model.getFolderName() + "/crfpp-templates/" + model.getTemplateName());
+			theFile = new File("resources/dataset/" + model.getFolderName() 
+			+ "/crfpp-templates/" + model.getTemplateName());
 		}
 		return theFile;
 	}

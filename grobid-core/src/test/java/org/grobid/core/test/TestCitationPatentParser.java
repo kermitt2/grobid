@@ -102,25 +102,25 @@ public class TestCitationPatentParser extends EngineTest {
 		assertEquals(0, articles.size());
 
 		PatentItem patent = patents.get(0);
-		assertEquals("8303618", patent.getNumber());
+		assertEquals("8303618", patent.getNumberEpoDoc());
 		System.out.println("context=" + patent.getContext());
 		System.out.println("offset start/end/raw=" + patent.getOffsetBegin() + "/"+ patent.getOffsetEnd()+"/"+patent.getOffsetRaw());
 		System.out.println("corresponding span: " + text.substring(patent.getOffsetBegin(), patent.getOffsetEnd()+1));
 		
 		patent = patents.get(1);
-		assertEquals("8153667", patent.getNumber());
+		assertEquals("8153667", patent.getNumberEpoDoc());
 		System.out.println("context=" + patent.getContext());
 		System.out.println("offset start/end/raw=" + patent.getOffsetBegin() + "/"+ patent.getOffsetEnd()+"/"+patent.getOffsetRaw());
 		System.out.println("corresponding span: " + text.substring(patent.getOffsetBegin(), patent.getOffsetEnd()+1));
 		
 		patent = patents.get(2);
-		assertEquals("1000000", patent.getNumber());
+		assertEquals("1000000", patent.getNumberEpoDoc());
 		System.out.println("context=" + patent.getContext());
 		System.out.println("offset start/end/raw=" + patent.getOffsetBegin() + "/"+ patent.getOffsetEnd()+"/"+patent.getOffsetRaw());
 		System.out.println("corresponding span: " + text.substring(patent.getOffsetBegin(), patent.getOffsetEnd()+1));
 		
 		patent = patents.get(3);
-		assertEquals("1000001", patent.getNumber());
+		assertEquals("1000001", patent.getNumberEpoDoc());
 		System.out.println("context=" + patent.getContext());
 		System.out.println("offset start/end/raw=" + patent.getOffsetBegin() + "/"+ patent.getOffsetEnd()+"/"+patent.getOffsetRaw());
 		System.out.println("corresponding span: " + text.substring(patent.getOffsetBegin(), patent.getOffsetEnd()+1));

@@ -375,8 +375,8 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			}
 
 			if (tok0.length() > 0) {
-				StringTokenizer st = new StringTokenizer(tok0,
-						TextUtilities.delimiters, true);
+				//StringTokenizer st = new StringTokenizer(tok0,
+				//		TextUtilities.delimiters, true);
 				List<String> subTokenizations = new ArrayList<String>();
 				try {
 					// TBD: pass a language object to the tokenize method call 
