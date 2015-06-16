@@ -128,7 +128,8 @@ public class APIExample {
 
     public static void main(String[] args) throws Exception {
         //GrobidFactory grobidFactory = getGrobidFactory();
-        File dir = new File("/Users/ariah/Downloads/acl-pdf-2014-08-27");
+        // args[0] should be ACL PDF directory
+        File dir = new File(args[0]);
         List<String> pdfPaths = new ArrayList<String>();
         for (File f : dir.listFiles()) {
             if (f.getAbsolutePath().endsWith(".pdf")) {
