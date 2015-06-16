@@ -27,8 +27,7 @@ public enum GrobidCRFEngine {
         }
 
         String n = name.toLowerCase();
-        for (GrobidCRFEngine e : values()) {
-            System.out.println(e.name().toLowerCase());
+        for (GrobidCRFEngine e : values()) {            
             if (e.name().toLowerCase().equals(n)) {
                 return e;
             }
