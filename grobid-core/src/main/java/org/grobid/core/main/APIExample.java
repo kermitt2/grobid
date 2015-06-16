@@ -10,6 +10,9 @@ import java.io.FileInputStream;
 import java.util.*;
 import java.util.concurrent.*;
 
+/**
+ * Simple main class to benchmark a Grobid configuration
+ */
 public class APIExample {
 
     private final static int numSecsTimeout = 10;
