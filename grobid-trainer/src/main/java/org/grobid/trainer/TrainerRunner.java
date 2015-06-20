@@ -135,7 +135,8 @@ public class TrainerRunner {
 		default:
 			throw new IllegalStateException("Invalid RunType: " + mode.name());
 		}
-
+		// since a thread pool could still be active
+		System.exit(0);
 	}
 
 }
