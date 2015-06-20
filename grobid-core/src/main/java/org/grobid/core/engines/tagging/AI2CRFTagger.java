@@ -17,10 +17,6 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * User: zholudev
- * Date: 3/20/14
- */
 public class AI2CRFTagger implements GenericTagger {
     public static final Logger LOGGER = LoggerFactory.getLogger(AI2CRFTagger.class);
     private final SequenceTagger<String, ConllFormat.Row> tagger;
