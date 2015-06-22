@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>org.grobid</groupId>
 		<artifactId>grobid-parent</artifactId>
-		<version>0.3.4-ai2</version>
+		<version>0.3.5-ai2</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
     <artifactId>grobid-core</artifactId>
-	<version>0.3.4-ai2</version>
+	<version>0.3.5-ai2</version>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
 
@@ -42,6 +42,11 @@
     </repositories>
 
 	<dependencies>
+    <dependency>
+      <groupId>com.goldmansachs</groupId>
+      <artifactId>gs-collections</artifactId>
+       <version>6.2.0</version>
+    </dependency>
 		<dependency>
 			<groupId>org.chasen</groupId>
 			<artifactId>crfpp</artifactId>
