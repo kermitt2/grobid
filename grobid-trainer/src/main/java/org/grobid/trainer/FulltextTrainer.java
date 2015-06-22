@@ -96,8 +96,13 @@ public class FulltextTrainer extends AbstractTrainer{
                 TEIFulltextSaxParser parser2 = new TEIFulltextSaxParser();
 
                 //get a new instance of parser
-                SAXParser p = spf.newSAXParser();
-                p.parse(tf, parser2);
+                try {
+                    SAXParser p = spf.newSAXParser();
+                    p.parse(tf, parser2);
+                } catch (Throwable t) {
+                    System.out.println("Bad doc: " + tf);
+                }
+
 
                 List<String> labeled = parser2.getLabeledResult();
                 //totalExamples += parser2.n;
