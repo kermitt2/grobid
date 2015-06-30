@@ -4,7 +4,7 @@
 	<groupId>org.grobid</groupId>
 	<artifactId>grobid-parent</artifactId>
 	<name>${project.artifactId}</name>
-	<version>0.3.5-ai2</version>
+	<version>0.3.6-ai2</version>
 	<packaging>pom</packaging>
 
     <scm>

@@ -116,12 +116,12 @@ public class APIExample {
     }
 
     private static GrobidFactory getGrobidFactory() throws Exception {
-        Properties prop = new Properties();
-        prop.load(new FileInputStream("grobid-example.properties"));
-        String pGrobidHome = prop.getProperty("grobid_example.pGrobidHome");
-        String pGrobidProperties = prop.getProperty("grobid_example.pGrobidProperties");
-
-        MockContext.setInitialContext(pGrobidHome, pGrobidProperties);
+//        Properties prop = new Properties();
+//        prop.load(new FileInputStream("grobid-example.properties"));
+//        String pGrobidHome = prop.getProperty("grobid_example.pGrobidHome");
+//        String pGrobidProperties = prop.getProperty("grobid_example.pGrobidProperties");
+//
+        MockContext.setInitialContext("/Users/ariah/ai2/grobid/grobid-home", "/Users/ariah/ai2/grobid/grobid-home/config/grobid.properties");
         GrobidProperties.getInstance();
 
         System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
@@ -132,17 +132,21 @@ public class APIExample {
     public static void main(String[] args) throws Exception {
         //GrobidFactory grobidFactory = getGrobidFactory();
         // args[0] should be ACL PDF directory
-        File dir = new File(args[0]);
-        List<String> pdfPaths = new ArrayList<String>();
-        for (File f : dir.listFiles()) {
-            if (f.getAbsolutePath().endsWith(".pdf")) {
-                pdfPaths.add(f.getAbsolutePath());
-            }
-        }
-        Collections.shuffle(pdfPaths);
-        pdfPaths = pdfPaths.subList(0, 500);
-        new APIExample(pdfPaths, 6);
-        System.exit(0);
+        //File dir = new File(args[0]);
+        List<String> pdfPaths = Arrays.asList("/Users/ariah/Desktop/no_author.pdf");
+        GrobidFactory grobidFactory = getGrobidFactory();
+        Engine engine = grobidFactory.createEngine();
+        String tei = engine.fullTextToTEI(pdfPaths.get(0), false, false);
+        System.out.println(tei);
+//        for (File f : dir.listFiles()) {
+//            if (f.getAbsolutePath().endsWith(".pdf")) {
+//                pdfPaths.add(f.getAbsolutePath());
+//            }
+//        }
+//        Collections.shuffle(pdfPaths);
+//        pdfPaths = pdfPaths.subList(0, 500);
+//        new APIExample(pdfPaths, 6);
+//        System.exit(0);
     }
 
     public static void reportHistogram(List<Double> xs) {

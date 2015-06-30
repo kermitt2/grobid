@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>org.grobid</groupId>
 		<artifactId>grobid-parent</artifactId>
-		<version>0.3.5-ai2</version>
+		<version>0.3.6-ai2</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
-    <artifactId>grobid-core</artifactId>
-	<version>0.3.5-ai2</version>
+  <artifactId>grobid-core</artifactId>
+	<version>0.3.6-ai2</version>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
 
@@ -42,28 +42,23 @@
     </repositories>
 
 	<dependencies>
-    <dependency>
-      <groupId>com.goldmansachs</groupId>
-      <artifactId>gs-collections</artifactId>
-       <version>6.2.0</version>
-    </dependency>
 		<dependency>
 			<groupId>org.chasen</groupId>
 			<artifactId>crfpp</artifactId>
 			<version>1.0.2</version>
 			<scope>compile</scope>
 		</dependency>
-        <dependency>
-            <groupId>fr.limsi.wapiti</groupId>
-            <artifactId>wapiti</artifactId>
-            <version>1.5.0</version>
-        </dependency>
-				<dependency>
-            <groupId>org.allenai</groupId>
-            <artifactId>ml</artifactId>
-            <version>0.2</version>
-        </dependency>
-        <dependency>
+    <dependency>
+        <groupId>fr.limsi.wapiti</groupId>
+        <artifactId>wapiti</artifactId>
+        <version>1.5.0</version>
+    </dependency>
+		<dependency>
+        <groupId>org.allenai</groupId>
+        <artifactId>ml</artifactId>
+        <version>0.4</version>
+    </dependency>
+    <dependency>
 			<groupId>com.cybozu</groupId>
 			<artifactId>language-detection</artifactId>
 			<version>09-13-2011</version>

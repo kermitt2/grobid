@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>org.grobid</groupId>
 		<artifactId>grobid-parent</artifactId>
-		<version>0.3.5-ai2</version>
+		<version>0.3.6-ai2</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
     <artifactId>grobid-home</artifactId>
-	<version>0.3.5-ai2</version>
+	<version>0.3.6-ai2</version>
 	<name>${project.artifactId}</name>
 
 	<profiles>
