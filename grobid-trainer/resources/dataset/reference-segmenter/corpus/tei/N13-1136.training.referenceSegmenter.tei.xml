@@ -1,0 +1,57 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Amjad Abu-Jbara and Dragomir R. Radev. 2011. Coher-<lb/>ent citation-based summarization of scientific papers.<lb/> In Proceedings of ACL 2011, pages 500–509.<lb/> </bibl>
+<bibl>Ahmet Aker, Trevor Cohn, and Robert Gaizauskas. 2010.<lb/> Multi-document summarization using A * search and<lb/> discriminative training. In Proceedings of EMNLP<lb/> 2010.<lb/> </bibl>
+<bibl>Michele Banko, Michael Cafarella, Stephen Soderland,<lb/> Matt Broadhead, and Oren Etzioni. 2007. Open in-<lb/>formation extraction from the web. In Proceedings of<lb/> IJCAI 2007, pages 68–74.<lb/> </bibl>
+<bibl>Regina Barzilay and Michael Elhadad. 1997. Using lex-<lb/>ical chains for text summarization. In Proceedings of<lb/> the ACL Workshop on Intelligent Scalable Text Sum-<lb/>marization, pages 10–17.<lb/> </bibl>
+<bibl>Regina Barzilay and Mirella Lapata. 2008. Modeling<lb/> local coherence: An entity-based approach. Computa-<lb/>tional Linguistics, 34(1):1–34.<lb/> </bibl>
+<bibl>Regina Barzilay, Noemie Elhadad, and Kathleen R McK-<lb/>eown. 2001. Sentence ordering in multidocument<lb/> summarization. In Proceedings of HLT 2001, pages<lb/> 1–7.<lb/> </bibl>
+<bibl>Danushka Bollegala, Naoaki Okazaki, and Mitsuru<lb/> Ishizuka. 2010. A bottom-up approach to sentence<lb/> ordering for multi-document summarization. Informa-<lb/>tion Process Management, 46(1):89–109.<lb/> </bibl>
+<bibl>Jaime Carbonell and Jade Goldstein. 1998. The use of<lb/> MMR, diversity-based reranking for reordering docu-<lb/>ments and producing summaries. In Proceedings of<lb/> SIGIR 1998, pages 335–336.<lb/> </bibl>
+<bibl>Asli Celikyilmaz and Dilek Hakkani-Tur. 2010. A hy-<lb/>brid hierarchical model for multi-document summa-<lb/>rization. In Proceedings of ACL 2010, pages 815–824.<lb/> </bibl>
+<bibl>Angel Chang and Christopher Manning. 2012. SU-<lb/>TIME: A library for recognizing and normalizing time<lb/> expressions. In Proceedings of LREC 2012.<lb/> </bibl>
+<bibl>Gunes Erkan and Dragomir R Radev. 2004. LexRank:<lb/> Graph-based centrality as salience in text summa-<lb/>rization. Journal of Artificial Intelligence Research,<lb/> 22(1):457–479.<lb/> </bibl>
+<bibl>Barbara Grosz and Candace Sidner. 1986. Attention,<lb/> intentions, and the structure of discourse. Computa-<lb/>tional Linguistics, 12(3):175–204.<lb/> </bibl>
+<bibl>Aria Haghighi and Lucy Vanderwende. 2009. Explor-<lb/>ing content models for multi-document summariza-<lb/>tion. Proceedings of NAACL 2009, pages 362–370.<lb/> </bibl>
+<bibl>Maria Lucia Castro Jorge and Thiago Alexan-<lb/>dre Salgueiro Pardo.<lb/> 2010.<lb/> Multi-Document<lb/> Summarization: Content Selection based on CST<lb/> Model (Cross-document Structure Theory). Ph.D.<lb/> thesis, Núcleo Interinstitucional de Lingüística<lb/> Computacional (NILC).<lb/> </bibl>
+<bibl>Mirella Lapata. 2003. Probabilistic text structuring: Ex-<lb/>periments with sentence ordering. In Proceedings of<lb/> ACL 2003, pages 545–552.<lb/> </bibl>
+<bibl>Heeyoung Lee, Yves Peirsman, Angel Chang, Nathanael<lb/> Chambers, Mihai Surdeanu, and Dan Jurafsky. 2011.<lb/> Stanford&apos;s multi-pass sieve coreference resolution sys-<lb/>tem at the CoNLL-2011 shared task. In CoNLL 2011<lb/> Shared Task.<lb/> </bibl>
+<bibl>Peifeng Li, Guangxi Deng, and Qiaoming Zhu. 2011a.<lb/> Using context inference to improve sentence ordering<lb/> for multi-document summarization. In Proceedings of<lb/> IJCNLP 2011, pages 1055–1061.<lb/> </bibl>
+<bibl>Peng Li, Yinglin Wang, Wei Gao, and Jing Jiang. 2011b.<lb/> Generating aspect-oriented multi-document summa-<lb/>rization with event-aspect model. In Proceedings of<lb/> EMNLP 2011, pages 1137–1146.<lb/> </bibl>
+<bibl>Hui Lin and Jeff Bilmes. 2011. A class of submodular<lb/> functions for document summarization. In Proceed-<lb/>ings of ACL 2011, pages 510–520.<lb/> </bibl>
+<bibl>Chin-Yew Lin. 2004. ROUGE: A package for auto-<lb/>matic evaluation of summaries. In Text Summarization<lb/> Branches Out: Proceedings of the ACL-04 Workshop,<lb/> pages 74–81.<lb/> </bibl>
+<bibl>Annie Louis and Ani Nenkova. 2009. Automatic sum-<lb/>mary evaluation without using human models. In Pro-<lb/>ceedings of EMNLP 2009, pages 306–314.<lb/> </bibl>
+<bibl>Annie Louis, Aravind Joshi, Rashmi Prasad, and Ani<lb/> Nenkova. 2010. Using entity features to classify im-<lb/>plicit discourse relations. In Proceedings of SIGDIAL<lb/> 2010, pages 59–62.<lb/> </bibl>
+<bibl>Inderjeet Mani. 2001. Automatic Summarization. John<lb/> Benjamins Publishing Co, Amsterdam/Philadelphia.<lb/> </bibl>
+<bibl>William C. Mann and Sandra A. Thompson. 1988.<lb/> Rhetorical structure theory: Toward a functional the-<lb/>ory of text organization. Text, 8(3):243–281.<lb/> </bibl>
+<bibl>Daniel Marcu and Abdessamad Echihabi. 2002. An<lb/> unsupervised approach to recognizing discourse rela-<lb/>tions. In Proceedings of ACL 2002, pages 368–375.<lb/> </bibl>
+<bibl>Daniel Marcu. 1997. From discourse structures to text<lb/> summaries. In Proceedings of the ACL Workshop on<lb/> Intelligent Scalable Text Summarization, pages 82–88.<lb/> </bibl>
+<bibl>Mausam, Michael Schmitz, Robert Bart, Stephen Soder-<lb/>land, and Oren Etzioni. 2012. Open language learning<lb/> for information extraction. In Proceedings of EMNLP<lb/> 2012, pages 523–534.<lb/> </bibl>
+<bibl>Kathleen McKeown and Dragomir Radev. 1995. Gen-<lb/>erating summaries of multiple news articles. In Pro-<lb/>ceedings of SIGIR 1995, pages 74–82.<lb/> </bibl>
+<bibl>Chikashi Nobata and Satoshi Sekine. 2004. Crl/nyu<lb/> summarization system at duc-2004. In Proceedings of<lb/> DUC 2004.<lb/> </bibl>
+<bibl>Naoaki Okazaki, Yutaka Matsuo, and Mitsuru Ishizuka.<lb/> 2004. Improving chronological sentence ordering by<lb/> precedence relation. In Proceedings of COLING 2004,<lb/> pages 750–756.<lb/> </bibl>
+<bibl>Emily Pitler, Annie Louis, and Ani Nenkova. 2010.<lb/> Automatic evaluation of linguistic quality in multi-<lb/>document summarization. In Proceedings of ACL<lb/> 2010, pages 544–554.<lb/> </bibl>
+<bibl>Rashmi Prasad, Nikhil Dinesh, Alan Lee, Eleni Milt-<lb/>sakaki, Livio Robaldo, Aravind Joshi, and Bonnie<lb/> Webber. 2008. The Penn Discourse TreeBank 2.0.<lb/> In Proceedings of LREC 2008.<lb/> </bibl>
+<bibl>Vahed Qazvinian, Dragomir R. Radev, and Arzucan Arzucan¨ Arzucan¨Ozgür.<lb/> 2010.<lb/> Citation summarization through<lb/> keyphrase extraction. In Proceedings of COLING<lb/> 2010, pages 895–903.<lb/> </bibl>
+<bibl>Dragomir R. Radev and Kathleen R. McKeown. 1998.<lb/> Generating natural language summaries from mul-<lb/>tiple on-line sources. Computational Linguistics,<lb/> 24(3):469–500.<lb/> </bibl>
+<bibl>Dragomir R. Radev, Hongyan Jing, Malgorzata Stys, and<lb/> Daniel Tam. 2004. Centroid-based summarization<lb/> of multiple documents. Information Processing and<lb/> Management, 40(6):919–938.<lb/> </bibl>
+<bibl>Dragomir R. Radev. 2004. LexRank: Graph-based lexi-<lb/>cal centrality as salience in text summarization. Jour-<lb/>nal of Artificial Intelligence Research, 22(1):457–479.<lb/> </bibl>
+<bibl>Horacio Saggion and Robert Gaizauskas. 2004. Multi-<lb/>document summarization by cluster/profile relevance<lb/> and redundancy removal. In Proceedings of DUC<lb/> 2004.<lb/> </bibl>
+<bibl>Horacio Saggion and Guy Lapalme. 2002. Generating<lb/> indicative-informative summaries with sumUM. Com-<lb/>putational Linguistics, 28(4):497–526.<lb/> </bibl>
+<bibl>Dafna Shahaf and Carlos Guestrin. 2010. Connecting the<lb/> dots between news articles. In Proceedings of KDD<lb/> 2010, pages 623–632.<lb/> </bibl>
+<bibl>Chao Shen and Tao Li. 2010. Multi-document summa-<lb/>rization via the minimum dominating set. In Proceed-<lb/>ings of Coling 2010, pages 984–992.<lb/> </bibl>
+<bibl>Maite Taboada and William C. Mann. 2006. Applica-<lb/>tions of rhetorical structure theory. Discourse Studies,<lb/> 8(4):567–588.<lb/> </bibl>
+<bibl>Hiroya Takamura and Manabu Okumura. 2009. Text<lb/> summarization model based on maximum coverage<lb/> problem and its variant. In Proceedings of EACL 2009,<lb/> pages 781–789.<lb/> </bibl>
+<bibl>Florian Wolf and Edward Gibson. 2005. Representing<lb/> discourse coherence: A corpus-based study. Compu-<lb/>tational Linguistics, 31(2):249–288.<lb/> </bibl>
+<bibl>Zhu Zhang, Sasha Blair-Goldensohn, and Dragomir R.<lb/> Radev. 2002. Towards CST-enhanced summarization.<lb/> In Proceedings of AAAI 2002, pages 439–445.<lb/> </bibl>
+<bibl>Renxian Zhang, Li Wenjie, and Lu Qin. 2010. Sen-<lb/>tence ordering with event-enriched semantics and two-<lb/>layered clustering for multi-document news summa-<lb/>rization. In Proceedings of COLING 2010, pages<lb/> 1489–1497.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

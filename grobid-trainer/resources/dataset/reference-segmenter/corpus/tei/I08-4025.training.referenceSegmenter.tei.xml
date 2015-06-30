@@ -1,0 +1,24 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>M. Collins. 2002. Discriminative Training Methods<lb/> for Hidden Markov Models: Theory and Experiments<lb/> with Perceptron Algorithms. In Proc. of the Empirical<lb/> Methods in Natural Language Processing (EMNLP).<lb/> 
+MACL, 2002, 1–8, 2000.<lb/> </bibl>
+<bibl>M. Collins. 2002. Ranking Algorithms for Named-<lb/>Entity Extractions: Boosting and the Voted Percep-<lb/>tron. In Proc. of ACL 2002.<lb/> </bibl>
+<bibl>Y. Freund and R. Schapire. 1999. Large Margin Classi-<lb/>fication using the Perceptron Algorithm. In Machine<lb/> Learning, 37(3): 277–296.<lb/> </bibl>
+<bibl>L. Gillick and S. Cox. 1989. Some Statistical Issues<lb/> in the Comparison of Speech Recognition Algorithms.<lb/> In Proc. of IEEE Conf. on Acoustics, Speech and Sig.<lb/> Proc., Glasgow, 1989, 532–535.<lb/> </bibl>
+<bibl>J. Kazama and K. Torisawa. 2007. A New Perceptron<lb/> Algorithm for Sequence Labeling with Non-local Fea-<lb/>tures. In Proc. of EMNLP-CoNLL 2007 , pages 315–<lb/> 324.<lb/> </bibl>
+<bibl>T. Kudo, K. Yamamoto, and Y. Matsumoto. 2004. Ap-<lb/>pliying Conditional Random Fields to Japanese Mor-<lb/>phological Analysis. In Proc. of EMNLP 2004.<lb/> </bibl>
+<bibl>J. Lafferty, A. McCallum, and F. Pereira. 2001. Condi-<lb/>tional Random Fields: Probabilistic Models for Seg-<lb/>menting and Labeling Sequence Data. In Proc. of<lb/> ICML-2001, pages 591–598.<lb/> </bibl>
+<bibl>A. Ratnaparkhi. 1996. A Maximum Entropy Model for<lb/> Part-of-Speech Tagging. In Proc. of EMNLP 1996.<lb/> </bibl>
+<bibl>A. Stolcke. 2002. SRILM -An Extensible Language<lb/> Modeling Toolkit. In Proc. Intl. Conf. Spoken Lan-<lb/>guage Processing, Denver, Colorado, September 2002.<lb/> </bibl>
+<bibl>M. Wang and Y. Shi. 2006. A Maximum Entropy Model<lb/> for Part-of-Speech Tagging. In Proc. of the Fifth<lb/> SIGHAN Workshop on Chinese Language Processing,<lb/> Sydney, 2006, pages 205–208.<lb/> </bibl>
+<bibl>Y. Zhang and S. Clark. 2007. Chinese Segmentation with<lb/> a Word-based Perceptron Algorithm. In Proc. of ACL<lb/> 2007.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

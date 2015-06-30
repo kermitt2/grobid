@@ -1,0 +1,38 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Leonard E. Baum, Ted Petrie, George Soules, and Nor-<lb/>man Weiss. 1970. A maximization technique occur-<lb/>ring in the statistical analysis of probabilistic function<lb/> of Markov chains. The Annals of Mathematical Statis-<lb/>tics, 41(1):164–171.<lb/> </bibl>
+<bibl>Chris Brew and David McKelvie. 1996. Word-pair ex-<lb/>traction for lexicography. In Proceedings of the 2nd<lb/> International Conference on New Methods in Lan-<lb/>guage Processing, pages 45–55.<lb/> </bibl>
+<bibl>Alexander Clark. 2001. Learning morphology with Pair<lb/> Hidden Markov Models. In Proceedings of the Student<lb/> Workshop at ACL 2001.<lb/> </bibl>
+<bibl>Michael A. Covington. 1998. Alignment of multiple lan-<lb/>guages for historical comparison. In Proceedings of<lb/> COLING-ACL&apos;98, pages 275–280.<lb/> </bibl>
+<bibl>Richard Durbin, Sean R. Eddy, Anders Krogh, and<lb/> Graeme Mitchison. 1998. Biological sequence analy-<lb/>sis. Cambridge University Press.<lb/> </bibl>
+<bibl>Isidore Dyen, Joseph B. Kruskal, and Paul Black. 1992.<lb/> An Indoeuropean classification: A lexicostatistical ex-<lb/>periment. Transactions of the American Philosophical<lb/> Society, 82(5).<lb/> </bibl>
+<bibl>Stefan Evert. 2004. Significance tests for the evaluation<lb/> of ranking methods. In Proceedings of COLING 2004,<lb/> pages 945–951.<lb/> </bibl>
+<bibl>Patrick A. V. Hall and Geoff R. Dowling. 1980. Approxi-<lb/>mate string matching. Computing Surveys, 12(4):381–<lb/> 402.<lb/> </bibl>
+<bibl>Frederick Jelinek. 1999. Statistical Methods for Speech<lb/> Recognition. The Massachusetts Institute of Technol-<lb/>ogy Press.<lb/> </bibl>
+<bibl>Brett Kessler. 2001. The Significance of Word Lists.<lb/> Stanford: CSLI Publications.<lb/> </bibl>
+<bibl>Philipp Koehn and Kevin Knight. 2001. Knowledge<lb/> sources for word-level translation models. In Proceed-<lb/>ings of the 2001 Conference on Empirical Methods in<lb/> Natural Language Processing, pages 27–35.<lb/> </bibl>
+<bibl>Grzegorz Kondrak and Bonnie Dorr. 2004. Identification<lb/> of confusable drug names: A new approach and evalu-<lb/>ation methodology. In Proceedings of COLING 2004,<lb/> pages 952–958.<lb/> </bibl>
+<bibl>Grzegorz Kondrak. 2000. A new algorithm for the<lb/> alignment of phonetic sequences. In Proceedings of<lb/> NAACL 2000, pages 288–295.<lb/> </bibl>
+<bibl>Wesley Mackay. 2004. Word similarity using Pair Hid-<lb/>den Markov Models. Master&apos;s thesis, University of<lb/> Alberta.<lb/> </bibl>
+<bibl>Gideon S. Mann and David Yarowsky. 2001. Multipath<lb/> translation lexicon induction via bridge languages. In<lb/> Proceedings of NAACL 2001, pages 151–158.<lb/> </bibl>
+<bibl>Christopher D. Manning and Hinrich Schutze. 2001.<lb/> Foundations of Statistical Natural Language Process-<lb/>ing. The MIT Press.<lb/> </bibl>
+<bibl>I. Dan Melamed. 1999. Bitext maps and alignment<lb/> via pattern recognition. Computational Linguistics,<lb/> 25(1):107–130.<lb/> </bibl>
+<bibl>John Nerbonne. 2003. Linguistic variation and compu-<lb/>tation. In Proceedings of EACL-03, pages 3–10.<lb/> </bibl>
+<bibl>Michael P. Oakes. 2000. Computer estimation of vocab-<lb/>ulary in protolanguage from word lists in four daugh-<lb/>ter languages. Journal of Quantitative Linguistics,<lb/> 7(3):233–243.<lb/> </bibl>
+<bibl>Franz Josef Och and Hermann Ney. 2000. Improved<lb/> statistical alignment models. In Proceedings of ACL-<lb/>2000, pages 440–447.<lb/> </bibl>
+<bibl>Ari Pirkola, Jarmo Toivonen, Heikki Keskustalo, Kari<lb/> Visala, and Kalervo Jarvelin. 2003. Fuzzy transla-<lb/>tion of cross-lingual spelling variants. In Proceedings<lb/> of SIGIR&apos;03, pages 345–352.<lb/> </bibl>
+<bibl>Eric Sven Ristad and Peter N. Yianilos. 1998. Learn-<lb/>ing string edit distance. IEEE Transactions on Pattern<lb/> Analysis and Machine Intelligence, 20(2):522–532.<lb/> </bibl>
+<bibl>Jörg Tiedemann. 1999. Automatic construction of<lb/> weighted string similarity measures. In Proceedings<lb/> of the Joint SIGDAT Conference on Empirical Meth-<lb/>ods in Natural Language Processing and Very Large<lb/> Corpora, College Park, Maryland.<lb/> </bibl>
+<bibl>Jörg Tiedemann. 2003. Combining clues for word align-<lb/>ment. In Proceedings of the 10th Conference of the<lb/> European Chapter of the ACL (EACL03).<lb/> </bibl>
+<bibl>Robert A. Wagner and Michael J. Fischer. 1974. The<lb/> string-to-string correction problem. Journal of the<lb/> ACM, 21(1):168–173.<lb/> </bibl>
+<bibl>Justin Zobel and Philip Dart. 1996. Phonetic string<lb/> matching: Lessons from information retrieval. In Pro-<lb/>ceedings of SIGIR&apos;96, pages 166–172.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

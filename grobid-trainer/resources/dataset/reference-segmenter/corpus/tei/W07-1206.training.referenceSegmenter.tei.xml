@@ -1,0 +1,24 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Colin F. Baker, Charles J. Fillmore, and John B. Lowe.<lb/> 1998. The Berkeley FrameNet Project. In Proceed-<lb/>ings of COLING-ACL.<lb/> </bibl>
+<bibl>Gosse Bouma, Jori Mur, Gertjan van Noord, Lonneke<lb/> van der Plas, and Jörg Tiedemann. 2005. Question<lb/> Answering for Dutch using Dependency Relations. In<lb/> Proceedings of the CLEF 2005 Workshop.<lb/> </bibl>
+<bibl>Susan Dumais, Michele Bankom, Eric Brill, Jimmy Lin,<lb/> and Andrew Ng. 2002. Web Question Answering: Is<lb/> More Always Better? Proceedings of UAI 2003.<lb/> </bibl>
+<bibl>Gerhard Fliedner. 2004. Towards Using FrameNet for<lb/> Question Answering. In Proceedings of the LREC<lb/> 2004 Workshop on Building Lexical Resources from<lb/> Semantically Annotated Corpora.<lb/> </bibl>
+<bibl>Michael Kaisser and Tilman Becker. 2004. Question An-<lb/>swering by Searching Large Corpora with Linguistic<lb/> Methods. In The Proceedings of the 2004 Edition of<lb/> the Text REtrieval Conference, TREC 2004.<lb/> </bibl>
+<bibl>Michael Kaisser, Silke Scheible, and Bonnie Webber.<lb/> 2006. Experiments at the University of Edinburgh for<lb/> the TREC 2006 QA track. In The Proceedings of the<lb/> 2006 Edition of the Text REtrieval Conference, TREC<lb/> 2006.<lb/> </bibl>
+<bibl>Dekang Lin. 1998. Dependency-based Evaluation of<lb/> MINIPAR. In Workshop on the Evaluation of Parsing<lb/> Systems.<lb/> </bibl>
+<bibl>George A. Miller, Richard Beckwith, Christiane Fell-<lb/>baum, Derek Gross, and Katherine Miller. 1993. In-<lb/>troduction to WordNet: An On-Line Lexical Database.<lb/> </bibl>
+<bibl>Adrian Novischi and Dan Moldovan. 2006. Question<lb/> Answering with Lexical Chains Propagating Verb Ar-<lb/>guments. In Proceedings of the 21st International<lb/> Conference on Computational Linguistics and 44th<lb/> Annual Meeting of the ACL.<lb/> </bibl>
+<bibl>Martha Palmer, Daniel Gildea, and Paul Kingsbury.<lb/> 2005. The Proposition Bank: An Annotated Cor-<lb/>pus of Semantic Roles. Computational Linguistics,<lb/> 31(1):71–106.<lb/> </bibl>
+<bibl>Karin Kipper Schuler. 2005. VerbNet: A Broad-<lb/>Coverage, Comprehensive Verb Lexicon. Ph.D. thesis,<lb/> University of Pennsylvania.<lb/> </bibl>
+<bibl>Dan Shen and Dietrich Klakow. 2006. Exploring Corre-<lb/>lation of Dependency Relation Paths for Answer Ex-<lb/>traction. In Proceedings of the 21st International Con-<lb/>ference on Computational Linguistics and 44th Annual<lb/> Meeting of the ACL.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

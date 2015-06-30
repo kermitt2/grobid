@@ -1,0 +1,27 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>6.</label> References<lb/> </bibl>
+        <bibl><label>J.</label>M. Atkinson, 1984. Structures of Social Action, chapter<lb/> Public speaking and audience response: some techniques<lb/> for inviting applause, pages 370–409. Cambridge: CUP.<lb/> M. C. Bligh, J. C. Kohles, and J. R. Meindl. 2004.<lb/> Charisma under crisis: Presidential leadership, rhetoric,<lb/> and media responses before and after the september 11th<lb/> terrorist attacks. The Leadership Quarterly, 15(2):211–<lb/> 239.<lb/> </bibl>
+<bibl>P. Bull and M. Noordhuizen. 2000. The mistiming of ap-<lb/>plause in political speeches. Journal of Language and<lb/> Social Psychology, 19:275–294.<lb/> </bibl>
+<bibl>G. Carenini, R. Ng, and E. Zwart. 2005. Extracting knowl-<lb/>edge from evaluative text. In Proceedings of the 3rd<lb/> international conference on Knowledge Capture, pages<lb/> 11–18.<lb/> </bibl>
+<bibl>K. Collier. 2006. Writing for the great communicators:<lb/> Speechwriting for roosevelt and reagan. In Proocedings<lb/> of the Southwest Political Science Association Meetings,<lb/> San Antonio, Texas.<lb/> </bibl>
+<bibl>M. Guerini, O. Stock, and C. Strapparava. 2008. Valentino:<lb/> A tool for valence shifting of natural language texts. In<lb/> Proceedings of LREC 2008, Marrakech, Morocco.<lb/> </bibl>
+<bibl>J. Heritage and D. Greatbatch. 1986. Generating applause:<lb/> a study of rhetoric and response at party political confer-<lb/>ences. American Journal of Sociology, 92:110–157.<lb/> </bibl>
+<bibl>H. Jing. 1998. Usage of wordnet in natural language gener-<lb/>ation. In S. Harabagiu, editor, Proceedings of the confer-<lb/>ence &quot; Use of WordNet in Natural Language Processing<lb/> Systems &quot; , pages 128–134, Somerset, New Jersey. Asso-<lb/>ciation for Computational Linguistics.<lb/> </bibl>
+<bibl>M. Miceli, F. deRosis, and I. Poggi. 2006. Emotional<lb/> and non-emotional persuasion. Applied Artificial Intel-<lb/>ligence, 20.<lb/> </bibl>
+<bibl>C. Perelman and L. Olbrechts-Tyteca. 1969. The new<lb/> Rhetoric: a treatise on Argumentation. Notre Dame<lb/> Press.<lb/> </bibl>
+<bibl>P. Piwek. 2002. An annotated bibliography of affective<lb/> natural language generation. ITRI ITRI-02-02, Univer-<lb/>sity of Brighton.<lb/> </bibl>
+<bibl>C.A. Reed and F. Grasso. 2007. Recent advances in com-<lb/>putational models of argument. International Journal of<lb/> Intelligent Systems, 22(1):1–15.<lb/> </bibl>
+<bibl>E. Reiter, S. Sripada, and R. Robertson. 2003. Acquir-<lb/>ing correct knowledge for natural language generation.<lb/> Journal of Artificial Intelligence Research, 18:491–516.<lb/> </bibl>
+<bibl>D. J. Stevenson. 2004. Laughter and leadership. presented<lb/> at The International Center for Studies in Creativity Buf-<lb/>falo State College.<lb/> </bibl>
+<bibl>W. Weintraub. 1986. Personality profiles of american pres-<lb/>idents as revealed in their public statements: The presi-<lb/>dential news conferences of jimmy carter and ronald rea-<lb/>gan. Political Psychology, 7(2):285–295.<lb/> </bibl>
+<bibl>T. Wilson, J. Wiebe, and R. Hwa. 2004. Just how mad<lb/> are you? finding strong and weak opinion clauses. In<lb/> Proceedings of AAAI, pages 761–769.<lb/> </bibl>
+<bibl>I. Zukerman, R. McConachy, and K. Korb. 2000. Using<lb/> argumentation strategies in automated argument gener-<lb/>ation. In Proceedings of the 1st International Natural<lb/> Language Generation Conference, pages 55–62.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

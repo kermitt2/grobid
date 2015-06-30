@@ -1,0 +1,34 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl>Hungarian and Hebrew in addition to our 5 original<lb/> languages. Morphological analysis of the Arabic<lb/> text in training was performed, as in some of the<lb/> previous experiments. The results of these tests are<lb/> shown in Table 12.<lb/> ES<lb/> RU<lb/> FR<lb/> EN<lb/> AR<lb/> 11 languages (original 5 + Japanese, Afrikaans,<lb/> Czech, Danish, Dutch, and Hungarian)<lb/> ES<lb/> </bibl>
+        <bibl><label>1.</label>0000 0.6754 0.9035 0.7719 0.5526<lb/> RU 0.4737 1.0000 0.7632 0.8772 0.5175<lb/> FR 0.8596 0.8070 1.0000 0.8947 0.5088<lb/> EN 0.8421 0.8684 0.9035 1.0000 0.4912<lb/> </bibl>
+<bibl>AR 0.3772 0.2632 0.6316 0.4912 1.0000<lb/> Average precision:<lb/> Overall 0.739, within IE 0.853, IE-Semitic 0.537<lb/> 12 languages (as above plus Hebrew)<lb/> ES<lb/> </bibl>
+        <bibl><label>1.</label>0000 0.7018 0.8947 0.7719 0.6404<lb/> RU 0.6667 1.0000 0.7105 0.9123 0.6228<lb/> FR 0.8772 0.8333 1.0000 0.8421 0.6404<lb/> EN 0.6667 0.8684 0.9035 1.0000 0.6316<lb/> </bibl>
+<bibl>AR 0.5877 0.4386 0.5965 0.6491 1.0000<lb/> Average precision:<lb/> Overall 0.778, within IE 0.853, IE-Semitic 0.645<lb/> </bibl>
+        <bibl><label>7 References</label><lb/> Abdou, S., Ruck, P., and Savoy, J. 2005. Evaluation of<lb/> Stemming, Query Expansion and Manual Indexing<lb/> Approaches for the Genomic Task. In Proceedings of<lb/> TREC 2005.<lb/> </bibl>
+<bibl>Berry, M. W., Dumais, S. T., and O&apos;Brien, G. W. 1994.<lb/> Using Linear Algebra for Intelligent Information Re-<lb/>trieval. SIAM: Review, 37, 573-595.<lb/> </bibl>
+<bibl>Biola University. 2005-2006. The Unbound Bible. Ac-<lb/>cessed at http://www.unboundbible.com/ on February<lb/> 27, 2007.<lb/> </bibl>
+<bibl>Chew, P. A., and Abdelali, A. 2007. Benefits of the<lb/> &apos;Massively Parallel Rosetta Stone&apos;: Cross-Language<lb/> Information Retrieval with over 30 Languages, Pro-<lb/>ceedings of the 45th Annual Meeting of the Associa-<lb/>tion for Computational Linguistics, ACL 2007. Pra-<lb/>gue, Czech Republic, June 23–30, 2007. pp. 872-879.<lb/> </bibl>
+<bibl>Chew, P. A., Kegelmeyer, W. P., Bader, B. W. and Ab-<lb/>delali, A. Forthcoming. The Knowledge of Good and<lb/> Evil: Multilingual Ideology Classification with<lb/> PARAFAC2 and Maching Learning.<lb/> </bibl>
+<bibl>Chew, P. A., Verzi, S. J., Bauer, T. L., and McClain, J.<lb/> T. 2006. Evaluation of the Bible as a Resource for<lb/> Cross-Language Information Retrieval. Proceedings<lb/> of the Workshop on Multilingual Language Re-<lb/>sources and Interoperability, 68–74.<lb/> </bibl>
+<bibl>Darwish, K. 2002. Building a shallow Arabic morpho-<lb/>logical analyzer in one day. In Proceedings of the<lb/> Association for Computational Linguistics (ACL-02),<lb/> 40th Anniversary Meeting. pp. 47-54.<lb/> </bibl>
+<bibl>Dumais, S. T. 1991. Improving the Retrieval of Infor-<lb/>mation from External Sources. Behavior Research<lb/> Methods, Instruments, and Computers 23 (2), 229-<lb/>236.<lb/> </bibl>
+<bibl>Dumais, S. T., Furnas, G. W., Landauer, T. K., Deer-<lb/>wester, S. and Harshman, R. 1998. Using Latent Se-<lb/>mantic Analysis to Improve Access to Textual In-<lb/>formation. In CHI&apos;88: Proceedings of the SIGCHI<lb/> Conference on Human Factors in Computing Sys-<lb/>tems, 281-285. ACM Press.<lb/> </bibl>
+<bibl>Frakes, W. B. and Baeza-Yates, R. 1992. Information<lb/> Retrieval: Data Structures and Algorithms. Prentice-<lb/>Hall: New Jersey.<lb/> </bibl>
+<bibl>Habash, N. 2004. Large Scale Lexeme Based Arabic<lb/> Morphological Generation. In Proc. of Traitement<lb/> Automatique du Langage Naturel.<lb/> </bibl>
+<bibl>Larkey, L., Ballesteros, L. and Connell, M. 2002. Im-<lb/>proving Stemming for Arabic Information Retrieval:<lb/> Light Stemming and Co-Occurrence Analysis. SIGIR<lb/> 2002, Finland, pp. 275-282.<lb/> </bibl>
+<bibl>Larkey, L. and Connell, M. 2002. Arabic Information<lb/> Retrieval at Umass in TREC-10. In Voorhees, E.M.<lb/> and Harman, D.K. (eds.): The Tenth Text Retrieval<lb/> Conference, TREC 2001 NIST Special Publication<lb/> 500-250, pp. 562-570.<lb/> </bibl>
+<bibl>Lavie, A., Peterson, E., Probst, K., Wintner, S., and Ey-<lb/>tani, Y. 2004. Rapid Prototyping of a Transfer-Based<lb/> Hebrew-to-English Machine Translation System. In<lb/> Proceedings of the TMI-04.<lb/> </bibl>
+<bibl>Mathieu, B., Besançon, R. and Fluhr, C. 2004. Multilin-<lb/>gual Document Clusters Discovery. Recherche<lb/> d&apos;Information Assistée par Ordinateur (RIAO) Pro-<lb/>ceedings, 1-10.<lb/> </bibl>
+<bibl>Oard, D. and Gey, F. 2002. The TREC 2002 Ara-<lb/>bic/English CLIR Track, NIST TREC 2002 Proceed-<lb/>ings, pp. 16-26.<lb/> </bibl>
+<bibl>Peters, C. (ed.). 2001. Cross-Language Information<lb/> Retrieval and Evaluation: Workshop of the Cross-<lb/>Language Evaluation Forum, CLEF 2000. Berlin:<lb/> Springer-Verlag.<lb/> </bibl>
+<bibl>Resnik, P., Olsen, M. B., and Diab, M. 1999. The Bible<lb/> as a Parallel Corpus: Annotating the &quot;Book of 2000<lb/> Tongues&quot;. Computers and the Humanities, 33, 129-<lb/>153.<lb/> </bibl>
+<bibl>Van Rijsbergen, C. 1979. Information Retrieval (2 nd<lb/> edition). Butterworth: London.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

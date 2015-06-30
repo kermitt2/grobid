@@ -1,0 +1,22 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>6.</label> References<lb/> </bibl>
+<bibl>Davide Buscaldi and Paolo Rosso. 2008. A conceptual<lb/> density-based approach for the disambiguation of to-<lb/>ponyms. International Journal of Geographical Infor-<lb/>mation Systems, 22(3):301–313.<lb/> </bibl>
+<bibl>Davide Buscaldi, Paolo Rosso, and Emilio Sanchis. 2006a.<lb/> Using the wordnet ontology in the geoclef geographical<lb/> information retrieval task. In Carol Peters, Fredric C.<lb/> Gey, Julio Gonzalo, Henning Müller, Gareth J. F. Jones,<lb/> Michael Kluck, Bernardo Magnini, Maarten de Rijke,<lb/> and Danilo Giampiccolo, editors, Accessing Multilingual<lb/> Information Repositories, volume 4022 of Lecture Notes<lb/> in Computer Science, pages 939–946. Springer, Berlin.<lb/> </bibl>
+<bibl>Davide Buscaldi, Paolo Rosso, and Emilio Sanchis. 2006b.<lb/> Wordnet as a geographical information resource. In 3rd<lb/> Global WordNet Conference (GWC06), pages 299–304,<lb/> Cheju, South Korea.<lb/> </bibl>
+<bibl>Davide Buscaldi, Paolo Rosso, and Emilio Sanchis. 2007.<lb/> A wordnet-based indexing technique for geographical<lb/> information retrieval. In Carol Peters, Paul Clough,<lb/> Fredric C. Gey, Jussi Karlgren, Bernardo Magnini,<lb/> Douglas W. Oard, Maarten de Rijke, and Maximil-<lb/>ian Stempfhuber, editors, Evaluation of Multilingual<lb/> and Multi-modal Information Retrieval, volume 4730<lb/> of Lecture Notes in Computer Science, pages 954–957.<lb/> Springer.<lb/> </bibl>
+<bibl>Eric Garbin and Inderjeet Mani. 2005. Disambiguating to-<lb/>ponyms in news. In conference on Human Language<lb/> Technology and Empirical Methods in Natural Language<lb/> Processing (HLT05), pages 363–370, Morristown, NJ,<lb/> USA. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Jochen L. Leidner. 2004. Toponym resolution in text: &quot;<lb/> which sheffield is it? &quot; . In Proceedings of the the 27th<lb/> Annual International ACM SIGIR Conference (SIGIR<lb/> 2004), pages 602–606, Sheffield, UK. ACM Press.<lb/> </bibl>
+<bibl>George A. Miller. 1995. WordNet: A Lexical Database<lb/> for English. In Communications of the ACM, volume 38,<lb/> pages 39–41.<lb/> </bibl>
+<bibl>Simon Overell and Stefan Rüger. 2008. Using co-<lb/>occurrence models for placename disambiguation. Inter-<lb/>national Journal of Geographical Information Systems,<lb/> 22(3):265–287.<lb/> </bibl>
+<bibl>David A. Smith and Gideon S. Mann. 2003. Bootstrapping<lb/> toponym classifiers. In HLT-NAACL 2003 workshop on<lb/> Analysis of geographic references, pages 45–49, Morris-<lb/>town, NJ, USA. Association for Computational Linguis-<lb/>tics.<lb/> </bibl>
+<bibl>Rafael Volz, Joachim Kleb, and Wolfgang Mueller. 2007.<lb/> Towards ontology-based disambiguation of geographical<lb/> identifiers. In 16th International World Wide Web Con-<lb/>ference (WWW2007), Banff, Alberta, Canada.<lb/> </bibl>
+<bibl>Allison Woodruff and Christian Plaunt. 1994. Gipsy: Au-<lb/>tomated geographic indexing of text documents. Jour-<lb/>nal of the American Society of Information Science,<lb/> 45(9):645–655.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

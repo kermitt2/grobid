@@ -1,0 +1,24 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Blacquart et al, E.<lb/> dialectatlassen.<lb/> 1925/1982. Reeks nederlandse<lb/> </bibl>
+<bibl>Broe, Michael. 1996. A generalized information-<lb/>theoretic measure for systems of phonological<lb/> classification and recognition. In Computational<lb/> Phonology in Speech Technology: Proceedings of<lb/> the Second Meeting of the ACL Special Interest<lb/> Group in Computational Phonology, pages 17-24,<lb/> Santa Cruz. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>Daan, Jo and D. P. Blok. 1969. Van Randstad<lb/> tot Landrand; toelichting bij de kaart: Dialecten<lb/> en Naamkunde. Amsterdam: Noord-Hollandsche<lb/> Uitgevers.<lb/> </bibl>
+<bibl>Daelemans, Walter, Jakub Zavrel, Peter Berck, and<lb/> Steven Gillis. 1996. Memory-based part of speech<lb/> tagging. In Gert Durieux, Walter Daelemans, and<lb/> Steven Gillis, editors, Proc. of CLIN &apos;95. Antwer-<lb/>pen, pages 185-202.<lb/> </bibl>
+<bibl>Durand, Jean-Paul. 1889. Notes de philologie rouer-<lb/>gate, 18. Revues des Langues Romanes, 33:47-84.<lb/> cited by Kessler.<lb/> </bibl>
+<bibl>Hoppenbrouwers, Cot and Geer Hoppenbrouwers.<lb/> 1988. De featurefrequentiemethode en de classifi-<lb/>catie van nederlandse dialecten. TABU: Bulletin<lb/> voor Taalwetenschap, 18(2):51-92.<lb/> </bibl>
+<bibl>Jain, K. and R. C. Dubes. 1988. Algorithms for<lb/> clustering Data. Englewood Cliffs, New Jersey:<lb/> Prentice Hall.<lb/> </bibl>
+<bibl>Kessler, Brett. 1995. Computational dialectology in<lb/> Irish Gaelic. In Proc. of the European ACL, pages<lb/> 60-67, Dublin.<lb/> </bibl>
+<bibl>Kruskal, Joseph.<lb/> 1983.<lb/> An overview of se-<lb/>quence comparison. In David Sankoff and Joseph<lb/> Kruskal, editors, Time Warps, String Edits and<lb/> Macromolecules: The Theory and Practice of<lb/> Sequence Comparison. Addison-Wesley, Reading,<lb/> Mass., pages 1-44.<lb/> </bibl>
+<bibl>Moulton, William. 1962. The vowels of dutch: Pho-<lb/>netic and distributional classes. Lingua, 11:294-<lb/>312.<lb/> </bibl>
+<bibl>Aalten<lb/> Spankeren<lb/> Putten<lb/> Almelo<lb/> Ornmen<lb/> Wijhe<lb/> Steenwijk<lb/> Assen<lb/> Groningen<lb/> Roswinkel<lb/> Rodeschool<lb/> IWinschoten<lb/> Alveringem<lb/> Damme<lb/> Lamswaarde<lb/> Renesse<lb/> Geel<lb/> Kumtich<lb/> Mechelen<lb/> Geraardsbergen<lb/> Lebbeke<lb/> Born<lb/> Venray<lb/> Kerkrade<lb/> Delft<lb/> Haarlem<lb/> Schagen<lb/> Dussen<lb/> , Oosterhout<lb/> Gemert<lb/> Polsbroek<lb/> Soest<lb/> Bergum<lb/> Grouw<lb/> Ferwerd<lb/> Holwerd<lb/> Makkum<lb/> Kollum<lb/> Leeuwarden --<lb/>Nes<lb/> 0:0<lb/> 200.0<lb/> &apos;<lb/> &apos;<lb/> 600.0<lb/> </bibl>
+        <bibl><label>400.</label>0</bibl>
+        </listBibl>
+    </text>
+</tei>
+

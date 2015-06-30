@@ -1,0 +1,18 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1.</label> L. Bahl, P. Brown, P. deSouza, and R. Mercer. A tree-<lb/>based statistical language model for natural language<lb/> speech recognition. IEEE Transactions on Acoustics,<lb/> Speech, and Signal Processing, 37, pp. 1001-1008, 1989.<lb/> </bibl>
+        <bibl><label>2.</label> P. Brown, V. Della Pietra, P. deSouza, and R. Mercer.<lb/> Class-based n-gram models of natural language. Pro-<lb/>ceedings o] the IBM Natural Language ITL, pp. 283-298,<lb/> Paris, France, 1990.<lb/> </bibl>
+        <bibl><label>3.</label> K. Church. A stochastic parts program and noun phrase<lb/> parser for unrestricted text. Proceedings of the Second<lb/> Conference on Applied Natural Language Processing,<lb/> Austin, Texas, 1988.<lb/> </bibl>
+        <bibl><label>4.</label> B. Merialdo. Tagging text with a probabilistic model.<lb/> IBM Research Report, RC 1597~, 1990.<lb/> </bibl>
+        <bibl><label>5.</label> M. Meteer, R. Schwartz, and It. Weischedel. Studies in<lb/> part of speech labelling. In Proceedings of the February<lb/> 1991 DAItPA Speech and Natural Language Workshop.<lb/> Asflomar, California.<lb/> </bibl>
+        <bibl><label>6.</label> S. Katz. Estimation of probabilities from sparse data<lb/> for the language model component of a speech recog-<lb/>nizer. IEEE Transactions on Acoustics, Speech, and Sig-<lb/>nal Processing, ASSP-35, Number 3, pp. 400-401, 1987.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

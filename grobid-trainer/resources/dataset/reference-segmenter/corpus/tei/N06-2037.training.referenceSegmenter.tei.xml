@@ -1,0 +1,21 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Abhinav Sethy and Panayiotis Georgiou et al.. Building topic<lb/> specific language models from web-data using competitive<lb/> models. Proceedings of Eurospeech. 2005<lb/> </bibl>
+<bibl>Bing Liu and Yang Dai et al.. Building Text Classifiers Using<lb/> Positive and Unlabeled Examples. Proceedings of ICDM.<lb/> 2003<lb/> </bibl>
+<bibl>Kamal Nigam and Andrew Kachites McCallum et al.. Text<lb/> Classification from Labeled and Unlabeled Documents using<lb/> EM. Journal of Machine Learning. 39(2:3)103–134. 2000<lb/> </bibl>
+<bibl>Mirella Lapata and Frank Keller. Web-based models for natu-<lb/>ral language processing. ACM Transactions on Speech and<lb/> Language Processing. 2(1),2005.<lb/> </bibl>
+<bibl>Philip Resnik and Noah A. Smith. The Web as a parallel cor-<lb/>pus. Computational Linguistics. 29(3),2003.<lb/> </bibl>
+<bibl>P.G. Georgiou and S.Narayanan et al.. Transonics: A speech to<lb/> speech system for English-Persian Interactions. Proceedings<lb/> of IEEE ASRU. 2003<lb/> </bibl>
+<bibl>Ruhi Sarikaya and Agustin Gravano et al. Rapid Language<lb/> Model Development Using External Resources For New<lb/> Spoken Dialog Domains Proceedings of ICASSP. 2005<lb/> </bibl>
+<bibl>Tim Ng and Mari Ostendorf et al.. Web-data Augmented Lan-<lb/>guage Model for Mandarin Speech Recognition. Proceed-<lb/>ings of ICASSP. 2005<lb/> </bibl>
+<bibl>Xiaojin Zhu. Semi-Supervised Learning Literature Survey.<lb/> Computer Science, University of Wisconsin-Madison.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,27 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>M. Baroni, S. Bernardini, A. Ferraresi, and<lb/> E. Zanchetta. The wacky wide web: a collec-<lb/>tion of very large linguistically processed web-<lb/>crawled corpora. Language Resources and Eval-<lb/>uation, 43(3):209–226, 2009.<lb/> </bibl>
+<bibl>N. Chambers and D. Jurafsky. Unsupervised learn-<lb/>ing of narrative schemas and their participants. In<lb/> Proceedings of the Joint Conference of the 47th<lb/> Annual Meeting of the ACL and the 4th Inter-<lb/>national Joint Conference on Natural Language<lb/> Processing of the AFNLP: Volume 2-Volume 2,<lb/> pages 602–610. Association for Computational<lb/> Linguistics, 2009.<lb/> </bibl>
+<bibl>A. Ferraresi, E. Zanchetta, M. Baroni, and S. Bernar-<lb/>dini. Introducing and evaluating ukwac, a very<lb/> large web-derived corpus of english. In Proceed-<lb/>ings of the 4th Web as Corpus Workshop (WAC-4)<lb/> Can we beat Google, pages 47–54, 2008.<lb/> </bibl>
+<bibl>Morton Ann Gernsbacher, Rachel R. W. Robertson,<lb/> Paola Palladino, and Necia K. Werner. Manag-<lb/>ing mental representations during narrative com-<lb/>prehension. Discourse Processes, 37(2):145–164,<lb/> 2004.<lb/> </bibl>
+<bibl>N. Kasch and T. Oates. Mining script-like struc-<lb/>tures from the web. In Proceedings of the NAACL<lb/> HLT 2010 First International Workshop on For-<lb/>malisms and Methodology for Learning by Read-<lb/>ing, pages 34–42. Association for Computational<lb/> Linguistics, 2010.<lb/> </bibl>
+<bibl>A. Knott and R. Dale. Using linguistic phenomena<lb/> to motivate a set of coherence relations. Discourse<lb/> processes, 18(1):35–62, 1994.<lb/> </bibl>
+<bibl>J. van Kuppevelt and R. Smith, editors. Current Di-<lb/>rections in Discourse and Dialogue. Kluwer, Dor-<lb/>drecht, 2003.<lb/> </bibl>
+<bibl>William C. Mann and Sandra A. Thompson. Rhetor-<lb/>ical Structure Theory: Toward a functional theory<lb/> of text organization. Text, 8(3):243–281, 1988.<lb/> </bibl>
+<bibl>J. Nivre, J. Hall, and J. Nilsson. Maltparser: A<lb/> data-driven parser-generator for dependency pars-<lb/>ing. In Proc. of LREC, pages 2216–2219. Cite-<lb/>seer, 2006.<lb/> </bibl>
+<bibl>R. Prasad, N. Dinesh, A. Lee, E. Miltsakaki,<lb/> L. Robaldo, A. Joshi, and B. Webber. The penn<lb/> discourse treebank 2.0. In Proc. 6th International<lb/> Conference on Language Resources and Evalua-<lb/>tion (LREC 2008), Marrakech, Morocco, 2008.<lb/> </bibl>
+<bibl>M. Riaz and R. Girju. Another look at causality:<lb/> Discovering scenario-specific contingency rela-<lb/>tionships with no supervision. In Semantic Com-<lb/>puting (ICSC), 2010 IEEE Fourth International<lb/> Conference on, pages 361–368. IEEE, 2010.<lb/> </bibl>
+<bibl>M. Stede and B. Schmitz. Discourse particles and<lb/> discourse functions. Machine translation, 15(1):<lb/> 125–147, 2000.<lb/> </bibl>
+<bibl>Enric Vallduví. The Informational Component. Gar-<lb/>land, New York, 1992.<lb/> Bonnie L. Webber. Structure and ostension in the<lb/> interpretation of discourse deixis. Natural Lan-<lb/>guage and Cognitive Processes, 2(6):107–135,<lb/> 1991.<lb/> </bibl>
+<bibl>Bonnie L. Webber, Matthew Stone, Aravind K.<lb/> Joshi, and Alistair Knott. Anaphora and discourse<lb/> structure. Computational Linguistics, 4(29):545–<lb/> 587, 2003.<lb/> </bibl>
+<bibl>Z.-M. Zhou, Y. Xu, Z.-Y. Niu, M. Lan, J. Su, and<lb/> C.L. Tan. Predicting discourse connectives for<lb/> implicit discourse relation recognition. In COL-<lb/>ING 2010, pages 1507–1514, Beijing, China, Au-<lb/>gust 2010.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

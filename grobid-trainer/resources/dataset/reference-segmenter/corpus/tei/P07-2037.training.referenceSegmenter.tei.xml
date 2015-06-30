@@ -1,0 +1,20 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>H. Cunningham, et al. 2002. GATE: A Framework and<lb/> Graphical Development Environment for Robust<lb/> NLP Tools and Applications. Proc. of ACL 2002,<lb/> pp.168-175.<lb/> </bibl>
+<bibl>J. Graça , et al. 2006. NLP Tools Integration Using a<lb/> Multi-Layered Repository. Proc. of LREC 2006<lb/> </bibl>
+<bibl>Workshop on Merging and Layering Linguistic In-<lb/>formation.<lb/> </bibl>
+<bibl>Y. Hayashi and T. Ishida. 2006. A Dictionary Model for<lb/> Unifying Machine Readable Dictionaries and Com-<lb/>putational Concept Lexicons. Proc. of LREC 2006,<lb/> pp.1-6.<lb/> </bibl>
+<bibl>N. Ide and L. Romary. 2004. International Standard for<lb/> a Linguistic Annotation Framework. Journal of Natu-<lb/>ral Language Engineering, Vol.10:3-4, pp.211-225.<lb/> </bibl>
+<bibl>T. Ishida. 2006. Language Grid: An Infrastructure for<lb/> Intercultural Collaboration. Proc. of SAINT-06, pp.<lb/> 96-100, keynote address.<lb/> </bibl>
+<bibl>E. Klein and S. Potter. 2004. An Ontology for NLP Ser-<lb/>vices. Proc. of LREC 2004 Workshop on Registry of<lb/> Linguistic Data Categories.<lb/> </bibl>
+<bibl>Y. Murakami, et al. 2006. Infrastructure for Language<lb/> Service Composition. Proc. of񮽙Second International<lb/> Conference on Semantics, Knowledge, Grid.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

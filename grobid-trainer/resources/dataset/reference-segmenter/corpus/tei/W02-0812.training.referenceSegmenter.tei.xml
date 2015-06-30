@@ -1,0 +1,23 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Y. Choueka and S. Lusignan. 1985. Disambiguation<lb/> by short contexts. Computers and the Humanities,<lb/> 19:147–157.<lb/> </bibl>
+<bibl>P. Edmonds and S. Cotton, editors. 2001. Proceedings of<lb/> the Senseval–2 Workshop. Association for Computa-<lb/>tional Linguistics, Toulouse, France.<lb/> </bibl>
+<bibl>A. Kilgarriff and M. Palmer. 2000. Special issue on<lb/> SENSEVAL: Evaluating word sense disambiguation<lb/> programs. Computers and the Humanities, 34(1–2).<lb/> </bibl>
+<bibl>C. Leacock, M. Chodorow, and G. Miller. 1998. Using<lb/> corpus statistics and WordNet relations for sense iden-<lb/>tification. Computational Linguistics, 24(1):147–165,<lb/> March.<lb/> </bibl>
+<bibl>H.T. Ng and H.B. Lee. 1996. Integrating multiple<lb/> knowledge sources to disambiguate word sense: An<lb/> exemplar-based approach. In Proceedings of the 34th<lb/> Annual Meeting of the Association for Computational<lb/> Linguistics, pages 40–47.<lb/> </bibl>
+<bibl>T. Pedersen. 2000. A simple approach to building en-<lb/>sembles of Naive Bayesian classifiers for word sense<lb/> disambiguation. In Proceedings of the First Annual<lb/> Meeting of the North American Chapter of the Asso-<lb/>ciation for Computational Linguistics, pages 63–69,<lb/> Seattle, WA, May.<lb/> </bibl>
+<bibl>T. Pedersen. 2001a. A decision tree of bigrams is an ac-<lb/>curate predictor of word sense. In Proceedings of the<lb/> Second Annual Meeting of the North American Chap-<lb/>ter of the Association for Computational Linguistics,<lb/> pages 79–86, Pittsburgh, July.<lb/> </bibl>
+<bibl>T. Pedersen. 2001b. Machine learning with lexical fea-<lb/>tures: The duluth approach to senseval-2. In Pro-<lb/>ceedings of the Senseval-2 Workshop, pages 139–142,<lb/> Toulouse, July.<lb/> </bibl>
+<bibl>T. Pedersen. 2002. A baseline methodology for word<lb/> sense disambiguation. In Proceedings of the Third In-<lb/>ternational Conference on Intelligent Text Processing<lb/> and Computational Linguistics, pages 126–135, Mex-<lb/>ico City, February.<lb/> </bibl>
+<bibl>J. Quinlan. 1986. Induction of decision trees. Machine<lb/> Learning, 1:81–106.<lb/> </bibl>
+<bibl>I. Witten and E. Frank. 2000. Data Mining -Practi-<lb/>cal Machine Learning Tools and Techniques with Java<lb/> Implementations. Morgan–Kaufmann, San Francisco,<lb/> CA.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

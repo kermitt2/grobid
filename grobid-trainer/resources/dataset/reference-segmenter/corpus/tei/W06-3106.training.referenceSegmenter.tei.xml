@@ -1,0 +1,34 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Nicola Bertoldi, Roldano Cattoni, Mauro Cettolo, and<lb/> Marcello Federico. 2004. The ITC-irst statistical ma-<lb/>chine translation system for IWSLT-2004. In IWSLT,<lb/> pages 51–58, Kyoto, Japan.<lb/> </bibl>
+<bibl>Didier Bourigault and Cécile Fabre.<lb/> 2000.<lb/> Ap-<lb/>proche linguistique pour l&apos;analyse syntaxique de cor-<lb/>pus. Cahiers de Grammaire, (25):131–151. Toulouse<lb/> le Mirail.<lb/> </bibl>
+<bibl>David Chiang. 2005. A hierarchical phrase-based model<lb/> for statistical machine translation. In 43rd ACL, pages<lb/> 263–270, Ann Arbor, Michigan, USA.<lb/> </bibl>
+<bibl>Yuang Ding and Martha Palmer. 2004. Automatic learn-<lb/>ing of parallel dependency treelet pairs. In Proceed-<lb/>ings of the first International Joint Conference on NLP.<lb/> </bibl>
+<bibl>Yuan Ding and Martha Palmer. 2005. Machine trans-<lb/>lation using probabilistic synchronous dependency in-<lb/>sertion grammars. In 43rd ACL, pages 541–548, Ann<lb/> Arbor, Michigan, June.<lb/> </bibl>
+<bibl>Jonathan Graehl and Kevin Knight. 2004. Training tree<lb/> transducers. In HLT-NAACL 2004, pages 105–112,<lb/> Boston, Massachusetts, USA, May 2 -May 7. Asso-<lb/>ciation for Computational Linguistics.<lb/> </bibl>
+<bibl>Philipp Koehn, Franz Joseph Och, and Daniel Marcu.<lb/> 2003. Statistical Phrase-Based Translation. In Pro-<lb/>ceedings of HLT, pages 127–133.<lb/> </bibl>
+<bibl>Philipp Koehn. 2004. Pharaoh: a Beam Search Decoder<lb/> for Phrase-Based SMT. In Proceedings of AMTA,<lb/> pages 115–124.<lb/> </bibl>
+<bibl>Zhanyi Liu, Haifeng Wang, and Hua Wu.<lb/> 2005.<lb/> </bibl>
+<bibl>Example-based machine translation based on tsc and<lb/> statistical generation. In Proceedings of MT Summit<lb/> X, pages 25–32, Phuket, Thailand.<lb/> </bibl>
+<bibl>Evgeny Matusov, Stephan Kanthak, and Hermann Ney.<lb/> 2005. Efficient statistical machine translation with<lb/> constraint reordering. In 10th EAMT, pages 181–188,<lb/> Budapest, Hongary, May 30-31.<lb/> </bibl>
+<bibl>I. Dan Melamed. 2004. Statistical machine translation<lb/> by parsing. In 42nd ACL, pages 653–660, Barcelona,<lb/> Spain.<lb/> </bibl>
+<bibl>Franz Joseph Och and Hermann Ney. 2000. Improved<lb/> Statistical Alignment Models. In Proceedings of ACL,<lb/> pages 440–447, Hongkong, China.<lb/> </bibl>
+<bibl>Franz Joseph Och and Hermann Ney. 2002. Discrimina-<lb/>tive training and maximum entropy models for statis-<lb/>tical machine translation. In Proceedings of the ACL,<lb/> pages 295–302.<lb/> </bibl>
+<bibl>Franz Joseph Och and Hermann Ney. 2003. A Sys-<lb/>tematic Comparison of Various Statistical Alignment<lb/> Models. Computational Linguistics, 29:19–51.<lb/> </bibl>
+<bibl>Daniel Ortiz-Martínez, Ismael Garciá-Varea, and Fran-<lb/>cisco Casacuberta. 2005. Thot: a toolkit to train<lb/> phrase-based statistical translation models. In Pro-<lb/>ceedings of MT Summit X, pages 141–148, Phuket,<lb/> Thailand, Sep.<lb/> </bibl>
+<bibl>Kishore Papineni, Salim Roukos, Todd Ward, and Wei-<lb/>Jing Zhu. 2002. Bleu: a method for automatic evalua-<lb/>tion of machine translation. In 40th ACL, pages 311–<lb/> 318, Philadelphia, Pennsylvania.<lb/> </bibl>
+<bibl>Chris Quirk, Arul Menezes, and Colin Cherry. 2005. De-<lb/>pendency treelet translation: Syntactically informed<lb/> phrasal SMT. In 43rd ACL, pages 271–279, Ann Ar-<lb/>bor, Michigan, June.<lb/> </bibl>
+<bibl>Michel Simard, Nicola Cancedda, Bruno Cavestro,<lb/> Marc Dymetman, Eric Gaussier, Cyril Goutte,<lb/> Kenji Yamada, Philippe Langlais, and Arne Mauser.<lb/> 2005. Translating with non-contiguous phrases. In<lb/> HLT/EMNLP, pages 755–762, Vancouver, British<lb/> Columbia, Canada, Oct.<lb/> </bibl>
+<bibl>Andreas Stolcke. 2002. Srilm -an Extensible Language<lb/> Modeling Toolkit. In Proceedings of ICSLP, Denver,<lb/> Colorado, Sept.<lb/> </bibl>
+<bibl>Stephan Vogel, Ying Zhang, Fei Huang, Alicai Trib-<lb/>ble, Ashish Venugopal, Bing Zao, and Alex Waibel.<lb/> 2003. The CMU Statistical Machine Translation Sys-<lb/>tem. In Machine Translation Summit IX, New Orleans,<lb/> Louisina, USA, Sep.<lb/> </bibl>
+<bibl>Richard Zens and Hermann Ney. 2004. Improvements in<lb/> phrase-based statistical machine translation. In Pro-<lb/>ceedings of the HLT/NAACL, pages 257–264, Boston,<lb/> MA, May.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

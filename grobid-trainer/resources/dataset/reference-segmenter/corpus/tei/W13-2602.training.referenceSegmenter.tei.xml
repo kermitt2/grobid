@@ -1,0 +1,39 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>de Boer, Bart &amp; Patricia K. Kuhl. 2003. Inves-<lb/>tigating the role of infant-directed speech with<lb/> a computer model. Acoustic Research Letters<lb/> Online 4(4). 129–134.<lb/> </bibl>
+<bibl>Clements, George N. 2003. Feature economy in<lb/> sound systems. Phonology 20. 287–333.<lb/> </bibl>
+<bibl>Dillon, Brian, Ewan Dunbar &amp; William Idsardi.<lb/> 2013. A single-stage approach to learning<lb/> phonological categories: Insights from Inukti-<lb/>tut. Cognitive Science 37. 344–377.<lb/> </bibl>
+<bibl>Feldman, Naomi H., Thomas L. Griffiths &amp;<lb/> James L. Morgan. 2009. Learning phonetic cat-<lb/>egories by learning a lexicon. In Proceedings<lb/> of the 31st Annual Conference of the Cognitive<lb/> Science Society, 2208–2213. Austin, TX: Cog-<lb/>nitive Science Society.<lb/> </bibl>
+<bibl>Ferguson, Thomas S. 1973. A Bayesian analy-<lb/>sis of some nonparametric problems. Annals of<lb/> Statistics 1. 209–230.<lb/> </bibl>
+<bibl>Flege, James E. 1995. Second-language speech<lb/> learning: theory, findings and problems. In<lb/> Winifred Strange (ed.), Speech perception and<lb/> linguistic experience: issues in cross-language<lb/> research, 229–273. Timonium, MD: York Press.<lb/> </bibl>
+<bibl>Gelman, Andrew &amp; Donald B. Rubin. 1992. In-<lb/>ference from iterative simulation using multiple<lb/> sequences. Statistical Science 7. 457–511.<lb/> </bibl>
+<bibl>Giovanardi, Maurizio &amp; Maria-Gabriella<lb/> Di Benedetto. 1998. Acoustic analysis of<lb/> singleton and geminate fricatives in Italian.<lb/> The European Journal of Language and Speech<lb/> (EACL/ESCA/ELSNET) 1998. 1–13.<lb/> </bibl>
+<bibl>Greenberg, Steven. 1996. The Switchboard tran-<lb/>scription project. Report prepared for the<lb/> 1996 CLSP/JHU Workshop on Innovative Tech-<lb/>niques in Continuous Large Vocabulary Speech<lb/> Recognition.<lb/> </bibl>
+<bibl>Kuhl, Patricia K. 1991. Human adults and human<lb/> infants show a &quot; perceptual magnet effect &quot; for<lb/> the prototypes of speech categories, monkeys<lb/> do not. Perception and Psychophysics 50(2).<lb/> 93–107.<lb/> </bibl>
+<bibl>Kuhl, Patricia K., Karen A. Williams, Francisco<lb/> Lacerda, Kenneth N. Stevens &amp; Björn Lind-<lb/>blom. 1992. Linguistic experience alters pho-<lb/>netic perception in infants by 6 months of age.<lb/> Science 255. 606–608.<lb/> </bibl>
+<bibl>Lacerda, Francisco. 1995. The perceptual magnet-<lb/>effect: An emergent consequence of exemplar-<lb/>based phonetic memory. In K. Ellenius &amp;<lb/> P. Branderud (eds.), Proceedings of the 13th<lb/> International Congress of Phonetic Sciences,<lb/> 140–147. Stockholm: KTH and Stockholm Uni-<lb/>versity.<lb/> </bibl>
+<bibl>Ladefoged, Peter &amp; Ian Maddieson. 1996. The<lb/> sounds of the world&apos;s languages. Oxford, UK;<lb/> Cambridge, MA: Blackwell.<lb/> </bibl>
+<bibl>Lisker, Leigh &amp; Arthur S. Abramson. 1970. The<lb/> voicing dimensions: Some experiments in com-<lb/>parative phonetics. In Proceedings of the Sixth<lb/> International Congress of Phonetic Sciences,<lb/> Prague: Academia.<lb/> </bibl>
+<bibl>Mattei, Marco &amp; Maria-Gabriella Di Benedetto.<lb/> 2000. Acoustic analysis of singleton and gemi-<lb/>nate nasals in Italian. The European Journal of<lb/> Language and Speech (EACL/ESCA/ELSNET)<lb/> 2000. 1–11.<lb/> </bibl>
+<bibl>Maye, Jessica &amp; LouAnn Gerken. 2000. Learning<lb/> phonemes without minimal pairs. In S. Cather-<lb/>ine Howell, Sarah A. Fish &amp; Thea Keith-Lucas<lb/> (eds.), Proceedings of the 24th Annual Boston<lb/> University Conference on Language Develop-<lb/>ment, 522–533. Somerville, MA: Cascadilla<lb/> Press.<lb/> </bibl>
+<bibl>Maye, Jessica &amp; LouAnn Gerken. 2001. Learn-<lb/>ing phonemes: how far can the input take us?<lb/> In A. H-J. Do, L. Domínguez &amp; A. Johansen<lb/> (eds.), Proceedings of the 25th Annual Boston<lb/> University Conference on Language Develop-<lb/>ment, 480–490. Somerville, MA: Cascadilla<lb/> Press.<lb/> </bibl>
+<bibl>Maye, Jessica, Daniel J. Weiss &amp; Richard N.<lb/> Aslin. 2008. Statistical phonetic learning in<lb/> infants: facilitation and feature generalization.<lb/> Developmental Science 11(1). 122–134.<lb/> </bibl>
+<bibl>Maye, Jessica, Janet F. Werker &amp; LouAnn Gerken.<lb/> 2002. Infant sensitivity to distributional infor-<lb/>mation can affect phonetic discrimination. Cog-<lb/>nition 82. B101–B111.<lb/> </bibl>
+<bibl>McClaskey, Cynthia L., David B. Pisoni &amp;<lb/> Thomas D. Carrell. 1983. Transfer of training<lb/> of a new linguistic contrast in voicing. Percep-<lb/>tion and Psychophysics 34(4). 323–330.<lb/> </bibl>
+<bibl>McMurray, Bob, Richard N. Aslin &amp; Joseph C.<lb/> Toscano. 2009. Statistical learning of phonetic<lb/> categories: insights from a computational ap-<lb/>proach. Developmental Science 12(3). 369–<lb/> 378.<lb/> </bibl>
+<bibl>Pajak, Bozena &amp; Roger Levy. 2011a. How ab-<lb/>stract are phonological representations? Evi-<lb/>dence from distributional perceptual learning.<lb/> </bibl>
+<bibl>In Proceedings of the 47th Annual Meeting of<lb/> the Chicago Linguistic Society, Chicago, IL:<lb/> University of Chicago.<lb/> </bibl>
+<bibl>Pajak, Bozena &amp; Roger Levy. 2011b. Phono-<lb/>logical generalization from distributional evi-<lb/>dence. In L. Carlson, C. Hölscher &amp; T. Ship-<lb/>ley (eds.), Proceedings of the 33rd Annual Con-<lb/>ference of the Cognitive Science Society, 2673–<lb/> 2678. Austin, TX: Cognitive Science Society.<lb/> Perfors, Amy &amp; David Dunbar. 2010. Phonetic<lb/> training makes word learning easier. In S. Ohls-<lb/>son &amp; R. Catrambone (eds.), Proceedings of the<lb/> 32nd Annual Conference of the Cognitive Sci-<lb/>ence Society, 1613–1618. Austin, TX: Cogni-<lb/>tive Science Society.<lb/> </bibl>
+<bibl>Teh, Yee Whye, Michael I. Jordan, Matthew J.<lb/> Beal &amp; David M. Blei. 2006. Hierarchical<lb/> Dirichlet processes. Journal of the American<lb/> Statistical Association 101(476). 1566–1581.<lb/> </bibl>
+<bibl>Toscano, Joseph C. &amp; Bob McMurray. 2010. Cue<lb/> integration with categories: Weighting acoustic<lb/> cues in speech using unsupervised learning and<lb/> distributional statistics. Cognitive Science 34.<lb/> 434–464.<lb/> </bibl>
+<bibl>Vallabha, Gautam K., James L. McClelland, Fer-<lb/>ran Pons, Janet F. Werker &amp; Shigeaki Amano.<lb/> 2007. Unsupervised learning of vowel cate-<lb/>gories from infant-directed speech. Proceedings<lb/> of the National Academy of Sciences 104(33).<lb/> 13273–13278.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,32 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>J. K. Baker. 1979. Trainable grammars for speech recog-<lb/>nition. In D. Klatt and J. Wolf, editors, Speech Com-<lb/>munications Papers for the 97th Meeting of the Acous-<lb/>tical Society of America, pages 557–550.<lb/> </bibl>
+<bibl>Ted Briscoe and John Carroll. 1995. Developing<lb/> and evaluating a probabilistic LR parser of part-of-<lb/>speech and punctuation labels. In Proceedings of the<lb/> ACL/SIGPARSE 4th International Workshop on Pars-<lb/>ing Technologies, pages 48–58, Prague / Karlovy Vary,<lb/> Czech Republic.<lb/> </bibl>
+<bibl>Ted Briscoe and John Carroll. 2002. Robust accurate<lb/> statistical annotation of general text. In Proceedings<lb/> of the Conference on Language Resources and Evalu-<lb/>ation (LREC 2002), pages 1499–1504, Palmas, Canary<lb/> Islands, May.<lb/> </bibl>
+<bibl>Ted Briscoe and John Carroll. 2005. Evaluating<lb/> the speed and accuracy of an unlexicalized statistical<lb/> parser on the PARC Depbank. Under review.<lb/> </bibl>
+<bibl>John Carroll and Ted Briscoe. 2002. High precision ex-<lb/>traction of grammatical relations. In Proceedings of<lb/> the 19th International Conference on Computational<lb/> Linguistics, Taipei, Taiwan.<lb/> </bibl>
+<bibl>John Carroll, Ted Briscoe, and Antonio Sanfilippo. 1998.<lb/> Parser evaluation: a survey and a new proposal. In<lb/> Proceedings of the 1st International Conference on<lb/> Language Resources and Evaluation, pages 447–454,<lb/> Granada.<lb/> </bibl>
+<bibl>John Carroll. 1993. Practical unification-based parsing<lb/> of natural language. Ph.D. thesis, Computer Labora-<lb/>tory, University of Cambridge. Technical Report No.<lb/> 314.<lb/> </bibl>
+<bibl>Stephen Clark and James Curran. 2004. Parsing the<lb/> WSJ using CCG and log-linear models. In Pro-<lb/>ceedings of the 42nd Annual Meeting of the Associ-<lb/>ation for Computational Linguistics, pages 104–111,<lb/> Barcelona, Spain.<lb/> </bibl>
+<bibl>Ann Copestake. 2003. Report on the design of RMRS.<lb/> DeepThought Project Deliverable D1.1a, University of<lb/> Cambridge, UK.<lb/> </bibl>
+<bibl>Stuart Geman and Mark Johnson. 2002. Dynamic<lb/> programming for parsing and estimation of stochas-<lb/>tic unification-based grammars. In Proceedings of the<lb/> 40th Annual Meeting of the Association for Computa-<lb/>tional Linguistics (ACL), Philadelphia, PA.<lb/> </bibl>
+<bibl>Mark Johnson. 2001. Joint and conditional estimation<lb/> of tagging and parsing models. In Proceedings of the<lb/> 39th Annual Meeting of the Association for Computa-<lb/>tional Linguistics (ACL), Toulouse, France, July.<lb/> </bibl>
+<bibl>Ronald Kaplan, Stephen Riezler, Tracy King, John<lb/> Maxwell, Alexander Vasserman, and Richard Crouch.<lb/> 2004. Speed and accuracy in shallow and deep<lb/> stochastic parsing. In Proceedings of the Human<lb/> Language Technology conference / North American<lb/> chapter of the Association for Computational Lin-<lb/>guistics annual meeting, pages 97–113, Boston, Mas-<lb/>sachusetts, May.<lb/> </bibl>
+<bibl>Tracy King, Richard Crouch, Stephen Riezler, Mary Dal-<lb/>rymple, and Ronald Kaplan. 2003. The PARC700<lb/> Dependency Bank. In Proceedings of the 4th Interna-<lb/>tional Workshop on Linguistically Interpreted Corpora<lb/> (LINC-03).<lb/> </bibl>
+<bibl>Karim Lari and Steve Young. 1990. The estimation<lb/> of stochastic context-free grammars using the Inside-<lb/>Outside algorithm. Computer Speech and Language,<lb/> 2(4):35–56.<lb/> </bibl>
+<bibl>Dekang Lin. 1998. Dependency-based evaluation of<lb/> MINIPAR. In Proceedings of the Workshop on The<lb/> Evaluation of Parsing Systems at the 1st International<lb/> Conference on Language Resources and Evaluation,<lb/> Granada, Spain.<lb/> </bibl>
+<bibl>Yusuke Miyao and Jun&apos;ichi Tsujii. 2002. Maximum en-<lb/>tropy estimation for feature forests. In Proceedings<lb/> of the Human Language Technology Conference, San<lb/> Diego, California, March.<lb/> </bibl>
+<bibl>Stephan Oepen and John Carroll. 2000. Ambiguity pack-<lb/>ing in constraint-based parsing -practical results. In<lb/> Proceedings of the North American Chapter of the<lb/> Association for Computational Linguistics (NAACL),<lb/> pages 162–169, Seattle, WA.<lb/> </bibl>
+<bibl>Geoffrey Sampson. 1995. English for the Computer.<lb/> Oxford University Press.<lb/> </bibl>
+<bibl>Helmut Schmid and Mats Rooth. 2001. Parse forest<lb/> computation of expected governors. In Proceedings of<lb/> the 39th Annual Meeting of the Association for Com-<lb/>putational Linguistics, pages 458–465.<lb/> </bibl>
+<bibl>Ben Taskar, Dan Klein, Michael Collins, Daphne Koller,<lb/> and Christopher Manning. 2004. Max-margin pars-<lb/>ing. In Proceedings of the Conference on Empirical<lb/> Methods in Natural Language Processing.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

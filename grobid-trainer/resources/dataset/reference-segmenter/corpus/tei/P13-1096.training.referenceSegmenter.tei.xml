@@ -1,0 +1,69 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>C. Alm, D. Roth, and R. Sproat. 2005. Emotions<lb/> from text: Machine learning for text-based emotion<lb/> prediction. In Proceedings of the Conference on<lb/> Empirical Methods in Natural Language Processing,<lb/> pages 347–354, Vancouver, Canada.<lb/> </bibl>
+<bibl>C. Anagnostopoulos and E. Vovoli. 2010. Sound pro-<lb/>cessing features for speaker-dependent and phrase-<lb/>independent emotion recognition in berlin database.<lb/> In Information Systems Development, pages 413–<lb/> 421. Springer.<lb/> </bibl>
+<bibl>A. Athar and S. Teufel. 2012. Context-enhanced cita-<lb/>tion sentiment detection. In Proceedings of the 2012<lb/> Conference of the North American Chapter of the<lb/> Association for Computational Linguistics: Human<lb/> Language Technologies, Montréal, Canada, June.<lb/> </bibl>
+<bibl>P. K. Atrey, M. A. Hossain, A. El Saddik, and<lb/> M. Kankanhalli. 2010. Multimodal fusion for mul-<lb/>timedia analysis: a survey. Multimedia Systems, 16.<lb/> </bibl>
+<bibl>M. El Ayadi, M. Kamel, and F. Karray. 2011. Survey<lb/> on speech emotion recognition: Features, classifica-<lb/>tion schemes, and databases. Pattern Recognition,<lb/> 44(3):572 – 587.<lb/> </bibl>
+<bibl>K. Balog, G. Mishne, and M. de Rijke. 2006. Why are<lb/> they excited? identifying and explaining spikes in<lb/> blog mood levels. In Proceedings of the 11th Meet-<lb/>ing of the European Chapter of the As sociation for<lb/> Computational Linguistics (EACL-2006).<lb/> </bibl>
+<bibl>Dmitri Bitouk, Ragini Verma, and Ani Nenkova. 2010.<lb/> Class-level spectral features for emotion recognition.<lb/> Speech Commun., 52(7-8):613–625, July.<lb/> </bibl>
+<bibl>J. Blitzer, M. Dredze, and F. Pereira. 2007. Biogra-<lb/>phies, bollywood, boom-boxes and blenders: Do-<lb/>main adaptation for sentiment classification. In As-<lb/>sociation for Computational Linguistics.<lb/> </bibl>
+<bibl>A. J. Calder, A. M. Burton, P. Miller, A. W. Young, and<lb/> S. Akamatsu. 2001. A principal component analysis<lb/> of facial expressions. Vision research, 41(9):1179–<lb/> 1208, April.<lb/> </bibl>
+<bibl>G. Carenini, R. Ng, and X. Zhou. 2008. Summarizing<lb/> emails with conversational cohesion and subjectivity.<lb/> In Proceedings of the Association for Computational<lb/> Linguistics: Human Language Technologies (ACL-<lb/>HLT 2008), Columbus, Ohio.<lb/> </bibl>
+<bibl>P. Carvalho, L. Sarmento, J. Teixeira, and M. Silva.<lb/> 2011. Liars and saviors in a sentiment annotated<lb/> corpus of comments to political debates. In Proceed-<lb/>ings of the Association for Computational Linguis-<lb/>tics (ACL 2011), Portland, OR.<lb/> </bibl>
+<bibl>L. S. Chen, T. S. Huang, T. Miyasato, and R. Nakatsu.<lb/> 1998. Multimodal human emotion/expression recog-<lb/>nition. In Proceedings of the 3rd. International Con-<lb/>ference on Face &amp; Gesture Recognition, pages 366–,<lb/> Washington, DC, USA. IEEE Computer Society.<lb/> </bibl>
+<bibl>L C De Silva, T Miyasato, and R Nakatsu, 1997. Facial<lb/> emotion recognition using multi-modal information,<lb/> volume 1, page 397401. IEEE Signal Processing So-<lb/>ciety.<lb/> </bibl>
+<bibl>P. Ekman, W. Friesen, and J. Hager. 2002. Facial ac-<lb/>tion coding system.<lb/> </bibl>
+<bibl>P. Ekman. 1993. Facial expression of emotion. Ameri-<lb/>can Psychologist, 48:384–392.<lb/> </bibl>
+<bibl>I.A. Essa and A.P. Pentland. 1997. Coding, analy-<lb/>sis, interpretation, and recognition of facial expres-<lb/>sions. Pattern Analysis and Machine Intelligence,<lb/> IEEE Transactions on, 19(7):757 –763, jul.<lb/> </bibl>
+<bibl>A. Esuli and F. Sebastiani. 2006. SentiWordNet: A<lb/> publicly available lexical resource for opinion min-<lb/>ing. In Proceedings of the 5th Conference on Lan-<lb/>guage Resources and Evaluation (LREC 2006), Gen-<lb/>ova, IT.<lb/> </bibl>
+<bibl>D.L. Hall and J. Llinas. 1997. An introduction to mul-<lb/>tisensor fusion. IEEE Special Issue on Data Fusion,<lb/> 85(1).<lb/> </bibl>
+<bibl>S. Haq and P. Jackson. 2009. Speaker-dependent<lb/> audio-visual emotion recognition. In International<lb/> Conference on Audio-Visual Speech Processing.<lb/> </bibl>
+<bibl>V. Hatzivassiloglou and K. McKeown. 1997. Predict-<lb/>ing the semantic orientation of adjectives. In Pro-<lb/>ceedings of the Conference of the European Chap-<lb/>ter of the Association for Computational Linguistics,<lb/> pages 174–181.<lb/> </bibl>
+<bibl>M. Hu and B. Liu. 2004. Mining and summariz-<lb/>ing customer reviews. In Proceedings of the tenth<lb/> ACM SIGKDD international conference on Knowl-<lb/>edge discovery and data mining, Seattle, Washing-<lb/>ton.<lb/> </bibl>
+<bibl>F. Li, S. J. Pan, O. Jin, Q. Yang, and X. Zhu. 2012.<lb/> Cross-domain co-extraction of sentiment and topic<lb/> lexicons. In Proceedings of the 50th Annual Meet-<lb/>ing of the Association for Computational Linguistics,<lb/> Jeju Island, Korea.<lb/> </bibl>
+<bibl>G. Littlewort, J. Whitehill, Tingfan Wu, I. Fasel,<lb/> M. Frank, J. Movellan, and M. Bartlett. 2011. The<lb/> computer expression recognition toolbox (cert). In<lb/> Automatic Face Gesture Recognition and Workshops<lb/> (FG 2011), 2011 IEEE International Conference on,<lb/> pages 298 –305, march.<lb/> </bibl>
+<bibl>A. Maas, R. Daly, P. Pham, D. Huang, A. Ng, and<lb/> C. Potts. 2011. Learning word vectors for sentiment<lb/> analysis. In Proceedings of the Association for Com-<lb/>putational Linguistics (ACL 2011), Portland, OR.<lb/> </bibl>
+<bibl>F. Mairesse, J. Polifroni, and G. Di Fabbrizio. 2012.<lb/> Can prosody inform sentiment analysis? experi-<lb/>ments on short spoken reviews. In Acoustics, Speech<lb/> and Signal Processing (ICASSP), 2012 IEEE Inter-<lb/>national Conference on, pages 5093 –5096, march.<lb/> </bibl>
+<bibl>X. Meng, F. Wei, X. Liu, M. Zhou, G. Xu, and H. Wang.<lb/> 2012. Cross-lingual mixture model for sentiment<lb/> classification. In Proceedings of the 50th Annual<lb/> Meeting of the Association for Computational Lin-<lb/>guistics, Jeju Island, Korea.<lb/> </bibl>
+<bibl>F. Metze, T. Polzehl, and M. Wagner. 2009. Fusion<lb/> of acoustic and linguistic features for emotion detec-<lb/>tion. In Semantic Computing, 2009. ICSC &apos;09. IEEE<lb/> International Conference on, pages 153 –160, sept.<lb/> </bibl>
+<bibl>R. Mihalcea, C. Banea, and J. Wiebe. 2007. Learning<lb/> multilingual subjective language via cross-lingual<lb/> projections. In Proceedings of the Association for<lb/> Computational Linguistics, Prague, Czech Republic.<lb/> </bibl>
+<bibl>L.P. Morency, R. Mihalcea, and P. Doshi. 2011. To-<lb/>wards multimodal sentiment analysis: Harvesting<lb/> opinions from the web. In Proceedings of the In-<lb/>ternational Conference on Multimodal Computing,<lb/> Alicante, Spain.<lb/> </bibl>
+<bibl>J. Oh, K. Torisawa, C. Hashimoto, T. Kawada,<lb/> S. De Saeger, J. Kazama, and Y. Wang. 2012.<lb/> Why question answering using sentiment analysis<lb/> and word classes. In Proceedings of the 2012 Joint<lb/> Conference on Empirical Methods in Natural Lan-<lb/>guage Processing and Computational Natural Lan-<lb/>guage Learning, Jeju Island, Korea.<lb/> </bibl>
+<bibl>B. Pang and L. Lee. 2004. A sentimental education:<lb/> Sentiment analysis using subjectivity summarization<lb/> based on minimum cuts. In Proceedings of the 42nd<lb/> Meeting of the Association for Computational Lin-<lb/>guistics, Barcelona, Spain, July.<lb/> </bibl>
+<bibl>V. Perez-Rosas, R. Mihalcea, and L.-P. Morency. 2013.<lb/> Multimodal sentiment analysis of spanish online<lb/> videos. IEEE Intelligent Systems.<lb/> </bibl>
+<bibl>T. Polzin and A. Waibel. 1996. Recognizing emotions<lb/> in speech. In In ICSLP.<lb/> </bibl>
+<bibl>S. Raaijmakers, K. Truong, and T. Wilson. 2008. Mul-<lb/>timodal subjectivity analysis of multiparty conversa-<lb/>tion. In Proceedings of the Conference on Empiri-<lb/>cal Methods in Natural Language Processing, pages<lb/> 466–474, Honolulu, Hawaii.<lb/> </bibl>
+<bibl>M. Rosenblum, Y. Yacoob, and L.S. Davis. 1996. Hu-<lb/>man expression recognition from motion using a ra-<lb/>dial basis function network architecture. Neural Net-<lb/>works, IEEE Transactions on, 7(5):1121 –1138, sep.<lb/> </bibl>
+<bibl>B. Schuller, M. Valstar, R. Cowie, and M. Pantic, edi-<lb/>tors. 2011a. Audio/Visual Emotion Challenge and<lb/> Workshop (AVEC 2011).<lb/> </bibl>
+<bibl>B. Schuller, M. Valstar, F. Eyben, R. Cowie, and<lb/> M. Pantic, editors. 2011b. Audio/Visual Emotion<lb/> Challenge and Workshop (AVEC 2011).<lb/> </bibl>
+<bibl>F. Eyben M. Wollmer B. Schuller. 2009. Openear in-<lb/>troducing the munich open-source emotion and af-<lb/>fect recognition toolkit. In ACII.<lb/> </bibl>
+<bibl>N. Sebe, I. Cohen, T. Gevers, and T.S. Huang. 2006.<lb/> Emotion recognition based on joint visual and audio<lb/> cues. In ICPR.<lb/> </bibl>
+<bibl>D. Silva, T. Miyasato, and R. Nakatsu. 1997. Facial<lb/> emotion recognition using multi-modal information.<lb/> In Proceedings of the International Conference on<lb/> Information and Communications Security.<lb/> </bibl>
+<bibl>S. Somasundaran, J. Wiebe, P. Hoffmann, and D. Lit-<lb/>man. 2006. Manual annotation of opinion cate-<lb/>gories in meetings. In Proceedings of the Work-<lb/>shop on Frontiers in Linguistically Annotated Cor-<lb/>pora 2006.<lb/> </bibl>
+<bibl>P. Stone. 1968. General Inquirer: Computer Approach<lb/> to Content Analysis. MIT Press.<lb/> </bibl>
+<bibl>C. Strapparava and R. Mihalcea. 2007. Semeval-2007<lb/> task 14: Affective text. In Proceedings of the 4th In-<lb/>ternational Workshop on the Semantic Evaluations<lb/> (SemEval 2007), Prague, Czech Republic.<lb/> </bibl>
+<bibl>M. Taboada, J. Brooke, M. Tofiloski, K. Voli, and<lb/> M. Stede. 2011. Lexicon-based methods for sen-<lb/>timent analysis. Computational Linguistics, 37(3).<lb/> </bibl>
+<bibl>R. Tato, R. Santos, R. Kompe, and J. M. Pardo. 2002.<lb/> Emotional space improves emotion recognition. In<lb/> In Proc. ICSLP 2002, pages 2029–2032.<lb/> </bibl>
+<bibl>Y.-I. Tian, T. Kanade, and J.F. Cohn. 2001. Recogniz-<lb/>ing action units for facial expression analysis. Pat-<lb/>tern Analysis and Machine Intelligence, IEEE Trans-<lb/>actions on, 23(2):97 –115, feb.<lb/> </bibl>
+<bibl>P. Turney. 2002. Thumbs up or thumbs down? seman-<lb/>tic orientation applied to unsupervised classification<lb/> of reviews. In Proceedings of the 40th Annual Meet-<lb/>ing of the Association for Computational Linguistics<lb/> (ACL 2002), pages 417–424, Philadelphia.<lb/> </bibl>
+<bibl>D. Ververidis and C. Kotropoulos. 2006. Emotional<lb/> speech recognition: Resources, features, and meth-<lb/>ods. Speech Communication, 48(9):1162–1181,<lb/> September.<lb/> </bibl>
+<bibl>J. Wagner, E. Andre, F. Lingenfelser, and Jonghwa<lb/> Kim. 2011. Exploring fusion methods for multi-<lb/>modal emotion recognition with missing data. Af-<lb/>fective Computing, IEEE Transactions on, 2(4):206<lb/> –218, oct.-dec.<lb/> </bibl>
+<bibl>X. Wan. 2009. Co-training for cross-lingual sentiment<lb/> classification. In Proceedings of the Joint Confer-<lb/>ence of the Association of Computational Linguistics<lb/> and the International Joint Conference on Natural<lb/> Language Processing, Singapore, August.<lb/> </bibl>
+<bibl>J. Wiebe and E. Riloff. 2005. Creating subjective and<lb/> objective sentence classifiers from unannotated texts.<lb/> In Proceedings of the 6th International Conference<lb/> on Intelligent Text Processing and Computational<lb/> Linguistics (CICLing-2005) (invited paper), Mexico<lb/> City, Mexico.<lb/> </bibl>
+<bibl>J. Wiebe, T. Wilson, and C. Cardie. 2005. Annotating<lb/> expressions of opinions and emotions in language.<lb/> Language Resources and Evaluation, 39(2-3):165–<lb/> 210.<lb/> </bibl>
+<bibl>M. Wiegand and D. Klakow. 2009. The role of<lb/> knowledge-based features in polarity classification<lb/> at sentence level. In Proceedings of the Interna-<lb/>tional Conference of the Florida Artificial Intelli-<lb/>gence Research Society.<lb/> </bibl>
+<bibl>T. Wilson, J. Wiebe, and R. Hwa. 2004. Just how mad<lb/> are you? finding strong and weak opinion clauses.<lb/> In Proceedings of the American Association for Arti-<lb/>ficial Intelligence.<lb/> </bibl>
+<bibl>M. Wollmer, B. Schuller, F. Eyben, and G. Rigoll.<lb/> 2010. Combining long short-term memory and dy-<lb/>namic bayesian networks for incremental emotion-<lb/>sensitive artificial listening. IEEE Journal of Se-<lb/>lected Topics in Signal Processing, 4(5), October.<lb/> </bibl>
+<bibl>B. Yang and C. Cardie. 2012. Extracting opinion<lb/> expressions with semi-markov conditional random<lb/> fields. In Proceedings of the 2012 Joint Conference<lb/> on Empirical Methods in Natural Language Process-<lb/>ing and Computational Natural Language Learning,<lb/> Jeju Island, Korea.<lb/> </bibl>
+<bibl>Z. Zhihong, M. Pantic G.I. Roisman, and T.S. Huang.<lb/> 2009. A survey of affect recognition methods: Au-<lb/>dio, visual, and spontaneous expressions. PAMI,<lb/> 31(1).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

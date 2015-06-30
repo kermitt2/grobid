@@ -1,0 +1,24 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Andrulis Dennis, Nanette Goodman, Carol Pryor<lb/> (2002), &quot; What a Difference an Interpreter Can<lb/> make &quot;<lb/> April<lb/> 2002.<lb/> Access<lb/> Project,<lb/> www.accessproject.org/downloads/c_LEPreport<lb/> ENG.pdf<lb/> </bibl>
+<bibl>Bangalore, S. and G. Riccardi, (2001), &quot; A Finite<lb/> State Approach to Machine Translation, &quot; North<lb/> American ACL 2001, Pittsburgh.<lb/> </bibl>
+<bibl>Cohen, L, F. Rivara, E. K. Marcuse, H. McPhillips,<lb/> and R. Davis, (2005), &quot; Are Language Barriers<lb/> Associated With Serious Medical Events in<lb/> Hospitalized Pediatric Patients? &quot; , Pediatrics,<lb/> September 1, 2005; 116(3): 575 -579<lb/> </bibl>
+<bibl>Flores Glenn, (2005), &quot; The Impact of Medical In-<lb/>terpreter Services on the Quality of Health Care:<lb/> A Systematic Review, &quot; Medical Care Research<lb/> and Review, Vol. 62, No. 3, pp. 255-299<lb/> </bibl>
+<bibl>Florian M., et. al. (2002), &quot; Enhancing the Usability<lb/> and Performance of NESPOLE!: a Real-World<lb/> Speech-to-Speech Translation System &quot; , HLT<lb/> 2002, San Diego, California U.S., March 2002.<lb/> </bibl>
+<bibl>Isotani, R., Kiyoshi Yamabana, Shinichi Ando,<lb/> Ken Hanazawa, Shin-ya Ishikawa and Ken-ichi<lb/> ISO (2003), &quot; Speech-to-Speech Translation<lb/> Software on PDAs for Travel Conversation, &quot;<lb/> NEC Research and Development, Apr. 2003,<lb/> Vol.44, No.2.<lb/> </bibl>
+<bibl>O&apos;Leary and Hampers (2003) &quot; The Truth About<lb/> Language Barriers: One Residency Program&apos;s<lb/> Experience, &quot; Pediatrics, May 1, 2003; 111(5):<lb/> pp. 569 -573.<lb/> </bibl>
+<bibl>Keiji Yasuda, Eiichiro Sumita, Seiichi Yamamoto,<lb/> Genichiro Kikui, Masazo Yanagida, &quot; Real-Time<lb/> Evaluation Architecture for MT Using Multiple<lb/> Backward Translations, &quot; Recent Advances in<lb/> Natural Language Processing, pp. 518-522,<lb/> Sep., 2003<lb/> </bibl>
+<bibl>Wahlster, W. (2000), Verbmobil: Foundations of<lb/> Speech-to-Speech Translation. Springer.<lb/> </bibl>
+<bibl>Waibel, A., (1996), &quot; Interactive Translation of<lb/> Conversational Speech, &quot; IEEE Computer, July<lb/> 1996, 29-7, pp. 41-48.<lb/> </bibl>
+<bibl>Woszczyna, et al., (1993), &quot; Recent Advances in<lb/> JANUS: A Speech Translation System, &quot;<lb/> DARPA Speech and Natural Language Work-<lb/>shop 1993, session 6 – MT.<lb/> </bibl>
+<bibl>Zhang, Ying, (2003), &quot; Survey of Current Speech<lb/> Translation Research, &quot; Found on Web:<lb/> http://projectile.is.cs.cmu.edu/research/public/tal<lb/> ks/ speechTranslation/sst-survey-joy.pdf</bibl>
+        </listBibl>
+    </text>
+</tei>
+

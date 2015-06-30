@@ -1,0 +1,33 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>R.E. Bennett. 2006. Moving the field forward: Some<lb/> thoughts on validity and automated scoring. Auto-<lb/>mated scoring of complex tasks in computer-based<lb/> testing, pages 403–412.<lb/> </bibl>
+<bibl>A. Berger, S. Pietra, and V. Pietra. 1996. A maximum en-<lb/>tropy approach to natural language processing. Com-<lb/>putational Linguistics, 22:39–72.<lb/> </bibl>
+<bibl>L. Chen and S. Yoon. 2011. Detecting structural event<lb/> for assessing non-native speech. In 6th Workshop on<lb/> Innovative Use of NLP for Building Educational Ap-<lb/>plications, page 74.<lb/> </bibl>
+<bibl>Miao Chen and Klaus Zechner. 2011. Computing and<lb/> evaluating syntactic complexity features for automated<lb/> scoring of spontaneous non-native speech. In ACL&apos;11,<lb/> pages 722–731.<lb/> </bibl>
+<bibl>L. Chen, K. Zechner, and X Xi. 2009. Improved pro-<lb/>nunciation features for construct-driven assessment of<lb/> non-native spontaneous speech. In NAACL-HLT.<lb/> </bibl>
+<bibl>M.K. Enright and T. Quinlan. 2010. Complement-<lb/>ing human judgment of essays written by english lan-<lb/>guage learners with e-rater scoring. Language Testing,<lb/> 27(3):317–334.<lb/> </bibl>
+<bibl>M. Eskenazi. 2009. An overview of spoken language<lb/> technology for education. Speech Communication,<lb/> 51(10):832–844.<lb/> </bibl>
+<bibl>H. Franco, H. Bratt, R. Rossier, V. Rao Gadde,<lb/> E. Shriberg, V. Abrash, and K. Precoda. 2010. EduS-<lb/>peak: a speech recognition and pronunciation scoring<lb/> toolkit for computer-aided language learning applica-<lb/>tions. Language Testing, 27(3):401.<lb/> </bibl>
+<bibl>S.J. Haberman and S. Sinharay. 2010. The application of<lb/> the cumulative logistic regression model to automated<lb/> essay scoring. Journal of Educational and Behavioral<lb/> Statistics, 35(5):586.<lb/> </bibl>
+<bibl>C. Hacker, T. Cincarek, R. Grubn, S. Steidl, E. Noth, and<lb/> H. Niemann. 2005. Pronunciation Feature Extraction.<lb/> In Proceedings of DAGM 2005.<lb/> </bibl>
+<bibl>M. Hall, E. Frank, G. Holmes, B. Pfahringer, P. Reute-<lb/>mann, and I. H Witten. 2009. The WEKA data min-<lb/>ing software: An update. ACM SIGKDD Explorations<lb/> Newsletter, 11(1):10–18.<lb/> </bibl>
+<bibl>K. Hornik, C. Buchta, and A. Zeileis. 2009. Open-<lb/>source machine learning: R meets weka. Computa-<lb/>tional Statistics, 24(2):225–232.<lb/> </bibl>
+<bibl>T. Y Jang. 2009. Automatic assessment of non-native<lb/> prosody using rhythm metrics: Focusing on korean<lb/> speakers&apos; english pronunciation. In Proc. of the 2nd<lb/> International Conference on East Asian Linguistics.<lb/> </bibl>
+<bibl>M. Kuhn. 2008. Building predictive models in r us-<lb/>ing the caret package. Journal of Statistical Software,<lb/> 28(5):1–26.<lb/> </bibl>
+<bibl>A.J. Quinn and B.B. Bederson. 2011. Human compu-<lb/>tation: a survey and taxonomy of a growing field. In<lb/> Proceedings of the 2011 annual conference on Human<lb/> factors in computing systems, page 14031412.<lb/> </bibl>
+<bibl>A.J. Quinn, B.B. Bederson, T. Yeh, and J. Lin. 2010.<lb/> CrowdFlow: integrating machine learning with me-<lb/>chanical turk for speed-cost-quality flexibility. Better<lb/> performance over iterations.<lb/> </bibl>
+<bibl>A. Rozovskaya and D. Roth. 2011. Algorithm selection<lb/> and model adaptation for ESL correction tasks. Ur-<lb/>bana, 51:61801.<lb/> </bibl>
+<bibl>L. Von Ahn. 2006. Games with a purpose. Computer,<lb/> 39(6):92–94.<lb/> </bibl>
+<bibl>X. Xi, D. Higgins, K. Zechner, and D. Williamson.<lb/> 2008. Automated Scoring of Spontaneous Speech Us-<lb/>ing SpeechRater v1.0. Technical report, Educational<lb/> Testing Service.<lb/> </bibl>
+<bibl>Thomas W. Yee. 2010. The VGAM package for categor-<lb/>ical data analysis. J. Statist. Soft., 32(10):1–34.<lb/> </bibl>
+<bibl>Klaus Zechner, Derrick Higgins, Xiaoming Xi, and<lb/> David M. Williamson. 2009. Automatic scoring of<lb/> non-native spontaneous speech in tests of spoken en-<lb/>glish. Speech Communication, 51:883–895, October.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

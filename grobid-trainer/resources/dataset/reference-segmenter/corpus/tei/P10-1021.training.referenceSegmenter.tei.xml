@@ -1,0 +1,60 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>ACL. 2010. Proceedings of the 48th Annual Meet-<lb/>ing of the Association for Computational Lin-<lb/>guistics. Uppsala.<lb/> </bibl>
+<bibl>Altmann, Gerry T. M. and Yuki Kamide. 1999.<lb/> Incremental interpretation at verbs: Restricting<lb/> the domain of subsequent reference. Cognition<lb/> 73:247–264.<lb/> </bibl>
+<bibl>Altmann, Gerry T. M. and Mark J. Steedman.<lb/> 1988. Interaction with context during human<lb/> sentence processing. Cognition 30(3):191–238.<lb/> </bibl>
+<bibl>Bellegarda, Jerome R. 2000. Exploiting latent se-<lb/>mantic information in statistical language mod-<lb/>eling. Proceedings of the IEEE 88(8):1279–<lb/> 1296.<lb/> </bibl>
+<bibl>Berry, Michael W., Susan T. Dumais, and<lb/> Gavin W. O&apos;Brien. 1995. Using linear algebra<lb/> for intelligent information retrieval. SIAM re-<lb/>view 37(4):573–595.<lb/> </bibl>
+<bibl>Bever, Thomas G. 1970. The cognitive basis for<lb/> linguistic strutures. In J. R. Hayes, editor, Cog-<lb/>nition and the Development of Language, Wi-<lb/>ley, New York, pages 279–362.<lb/> </bibl>
+<bibl>Blei, David M., Andrew Y. Ng, and Michael I. Jor-<lb/>dan. 2003. Latent Dirichlet allocation. Journal<lb/> of Machine Learning Research 3:993–1022.<lb/> </bibl>
+<bibl>Bullinaria, John A. and Joseph P. Levy. 2007. Ex-<lb/>tracting semantic representations from word co-<lb/>occurrence statistics: A computational study.<lb/> Behavior Research Methods 39:510–526.<lb/> </bibl>
+<bibl>Clifton, Charles, Adrian Staub, and Keith Rayner.<lb/> 2007. Eye movement in reading words and sen-<lb/>tences. In R V Gompel, M Fisher, W Murray,<lb/> and R L Hill, editors, Eye Movements: A Win-<lb/>dow in Mind and Brain, Elsevier, pages 341–<lb/> 372.<lb/> </bibl>
+<bibl>Coccaro, Noah and Daniel Jurafsky. 1998. To-<lb/>wards better integration of semantic predictors<lb/> in satistical language modeling. In Proceedings<lb/> of the 5th International Conference on Spoken<lb/> Language Processing. Sydney, Australia, pages<lb/> 2403–2406.<lb/> </bibl>
+<bibl>Demberg, Vera and Frank Keller. 2008. Data from<lb/> eye-tracking corpora as evidence for theories<lb/> of syntactic processing complexity. Cognition<lb/> 101(2):193–210.<lb/> </bibl>
+<bibl>Dubey, Amit. 2010. The influence of discourse on<lb/> syntax: A psycholinguistic model of sentence<lb/> processing. In ACL.<lb/> </bibl>
+<bibl>Ferrara Boston, Marisa, John Hale, Reinhold<lb/> Kliegl, Umesh Patil, and Shravan Vasishth.<lb/> 2008. Parsing costs as predictors of reading dif-<lb/>ficulty: An evaluation using the Potsdam Sen-<lb/>tence Corpus. Journal of Eye Movement Re-<lb/>search 2(1):1–12.<lb/> </bibl>
+<bibl>Frank, Stefan L. 2009. Surprisal-based compar-<lb/>ison between a symbolic and a connectionist<lb/> model of sentence processing. In Proceedings<lb/> of the 31st Annual Conference of the Cognitive<lb/> Science Society. Austin, TX, pages 139–1144.<lb/> </bibl>
+<bibl>Gibson, Edward. 2000. Dependency locality the-<lb/>ory: A distance-dased theory of linguistic com-<lb/>plexity. In Alec Marantz, Yasushi Miyashita,<lb/> and Wayne O&apos;Neil, editors, Image, Language,<lb/> Brain: Papers from the First Mind Articulation<lb/> Project Symposium, MIT Press, Cambridge,<lb/> MA, pages 95–126.<lb/> </bibl>
+<bibl>Gildea, Daniel and Thomas Hofmann. 1999.<lb/> Topic-based language models using EM. In<lb/> Proceedings of the 6th European Conference<lb/> on Speech Communiation and Technology. Bu-<lb/>dapest, Hungary, pages 2167–2170.<lb/> </bibl>
+<bibl>Griffiths, Thomas L., Mark Steyvers, and<lb/> Joshua B. Tenenbaum. 2007. Topics in se-<lb/>mantic representation. Psychological Review<lb/> 114(2):211–244.<lb/> </bibl>
+<bibl>Hale, John. 2001. A probabilistic Earley parser as<lb/> a psycholinguistic model. In Proceedings of the<lb/> 2nd Conference of the North American Chap-<lb/>ter of the Association. Association for Compu-<lb/>tational Linguistics, Pittsburgh, PA, volume 2,<lb/> pages 159–166.<lb/> </bibl>
+<bibl>Keller, Frank. 2010. Cognitively plausible models<lb/> of human language processing. In ACL.<lb/> </bibl>
+<bibl>Kennedy, Alan and Joel Pynte. 2005. Parafoveal-<lb/>on-foveal effects in normal reading. Vision Re-<lb/>search 45:153–168.<lb/> </bibl>
+<bibl>Konieczny, Lars. 2000. Locality and parsing com-<lb/>plexity. Journal of Psycholinguistic Research<lb/> 29(6):627–645.<lb/> </bibl>
+<bibl>Landauer, Thomas K. and Susan T. Dumais. 1997.<lb/> A solution to Plato&apos;s problem: the latent seman-<lb/>tic analysis theory of acquisition, induction and<lb/> representation of knowledge. Psychological Re-<lb/>view 104(2):211–240.<lb/> </bibl>
+<bibl>Levy, Roger. 2008. Expectation-based syntactic<lb/> comprehension. Cognition 106(3):1126–1177.<lb/> </bibl>
+<bibl>Marslen-Wilson, William D. 1973. Linguistic<lb/> structure and speech shadowing at very short la-<lb/>tencies. Nature 244:522–523.<lb/> </bibl>
+<bibl>McDonald, Scott. 2000. Environmental Determi-<lb/>nants of Lexical Processing Effort. Ph.D. thesis,<lb/> University of Edinburgh.<lb/> </bibl>
+<bibl>McDonald, Scott and Chris Brew. 2004. A dis-<lb/>tributional model of semantic context effects in<lb/> lexical processing. In Proceedings of the 42th<lb/> Annual Meeting of the Association for Com-<lb/>putational Linguistics. Barcelona, Spain, pages<lb/> 17–24.<lb/> </bibl>
+<bibl>McDonald, Scott A. and Richard C. Shillcock.<lb/> 2003. Low-level predictive inference in read-<lb/>ing: The influence of transitional probabilities<lb/> on eye movements. Vision Research 43:1735–<lb/> 1751.<lb/> </bibl>
+<bibl>Mitchell, Jeff and Mirella Lapata. 2008. Vector-<lb/>based models of semantic composition. In Pro-<lb/>ceedings of ACL-08: HLT. Columbus, OH,<lb/> pages 236–244.<lb/> </bibl>
+<bibl>Mitchell, Jeff and Mirella Lapata. 2009. Language<lb/> models based on semantic composition. In Pro-<lb/>ceedings of the 2009 Conference on Empirical<lb/> Methods in Natural Language Processing. Sin-<lb/>gapore, pages 430–439.<lb/> </bibl>
+<bibl>Narayanan, Srini and Daniel Jurafsky. 2002. A<lb/> Bayesian model predicts human parse prefer-<lb/>ence and reading time in sentence processing. In<lb/> Thomas G. Dietterich, Sue Becker, and Zoubin<lb/> Ghahramani, editors, Advances in Neural In-<lb/>formation Processing Systems 14. MIT Press,<lb/> Cambridge, MA, pages 59–65.<lb/> </bibl>
+<bibl>Padó, Sebastian and Mirella Lapata. 2007.<lb/> Dependency-based construction of semantic<lb/> space models.<lb/> Computational Linguistics<lb/> 33(2):161–199.<lb/> </bibl>
+<bibl>Padó, Ulrike, Matthew W. Crocker, and Frank<lb/> Keller. 2009. A probabilistic model of semantic<lb/> plausibility in sentence processing. Cognitive<lb/> Science 33(5):794–838.<lb/> </bibl>
+<bibl>Pinheiro, Jose C. and Douglas M. Bates.<lb/> 2000. Mixed-effects Models in S and S-PLUS.<lb/> Springer, New York.<lb/> </bibl>
+<bibl>Pinker, Steven. 1994. The Language Instinct: How<lb/> the Mind Creates Language. HarperCollins,<lb/> New York.<lb/> </bibl>
+<bibl>Plate, Tony A. 1995. Holographic reduced repre-<lb/>sentations. IEEE Transactions on Neural Net-<lb/>works 6(3):623–641.<lb/> </bibl>
+<bibl>Pynte, Joel, Boris New, and Alan Kennedy. 2008.<lb/> On-line contextual influences during reading<lb/> normal text: A multiple-regression analysis. Vi-<lb/>sion Research 48:2172–2183.<lb/> </bibl>
+<bibl>Rayner, Keith. 1998. Eye movements in read-<lb/>ing and information processing: 20 years of re-<lb/>search. Psychological Bulletin 124(3):372–422.<lb/> </bibl>
+<bibl>Roark, Brian. 2001. Probabilistic top-down pars-<lb/>ing and language modeling. Computational<lb/> Linguistics 27(2):249–276.<lb/> </bibl>
+<bibl>Roark, Brian, Asaf Bachrach, Carlos Cardenas,<lb/> and Christophe Pallier. 2009. Deriving lex-<lb/>ical and syntactic expectation-based measures<lb/> for psycholinguistic modeling via incremental<lb/> top-down parsing. In Proceedings of the 2009<lb/> Conference on Empirical Methods in Natural<lb/> Language Processing. Association for Compu-<lb/>tational Linguistics, Singapore, pages 324–333.<lb/> </bibl>
+<bibl>Smolensky, Paul. 1990. Tensor product vari-<lb/>able binding and the representation of symbolic<lb/> structures in connectionist systems. Artificial<lb/> Intelligence 46:159–216.<lb/> </bibl>
+<bibl>Stanovich, Kieth E. and Richard F. West. 1981.<lb/> The effect of sentence context on ongoing word<lb/> recognition: Tests of a two-pricess theory. Jour-<lb/>nal of Experimental Psychology: Human Per-<lb/>ception and Performance 7:658–672.<lb/> </bibl>
+<bibl>Staub, Adrian and Charles Clifton. 2006. Syntac-<lb/>tic prediction in language comprehension: Evi-<lb/>dence from either . . .or. Journal of Experimen-<lb/>tal Psychology: Learning, Memory, and Cogni-<lb/>tion 32:425–436.<lb/> </bibl>
+<bibl>Steyvers, Mark and Tom Griffiths. 2007. Proba-<lb/>bilistic topic models. In T. Landauer, D. Mc-<lb/>Namara, S Dennis, and W Kintsch, editors, A<lb/> Handbook of Latent Semantic Analysis, Psy-<lb/>chology Press.<lb/> </bibl>
+<bibl>Stolcke, Andreas. 2002. Srilm -an extensible lan-<lb/>guage modeling toolkit. In Proceedings of the<lb/> Internatinal Conference on Spoken Language<lb/> Processing. Denver, Colorado.<lb/> </bibl>
+<bibl>Sturt, Patrick and Vincenzo Lombardo. 2005.<lb/> Processing coordinated structures: Incremen-<lb/>tality and connectedness. Cognitive Science<lb/> 29(2):291–305.<lb/> </bibl>
+<bibl>Tanenhaus, Michael K., Michael J. Spivey-<lb/>Knowlton, Kathleen M. Eberhard, and Julie C.<lb/> Sedivy. 1995. Integration of visual and linguis-<lb/>tic information in spoken language comprehen-<lb/>sion. Science 268:1632–1634.<lb/> </bibl>
+<bibl>van Berkum, Jos J. A., Colin M. Brown, and Peter<lb/> Hagoort. 1999. Early referential context effects<lb/> in sentence processing: Evidence from event-<lb/>related brain potentials. Journal of Memory and<lb/> Language 41:147–182.<lb/> </bibl>
+<bibl>Wright, Barton and Merrill F. Garrett. 1984. Lex-<lb/>ical decision in sentences: Effects of syntactic<lb/> structure. Memory and Cognition 12:31–45.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

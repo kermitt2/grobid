@@ -1,0 +1,42 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Amjad Abu-Jbara and Dragomir Radev. 2011. Coherent<lb/> citation-based summarization of scientific papers. In<lb/> Proceedings of the 49th Annual Meeting of the Asso-<lb/>ciation for Computational Linguistics: Human Lan-<lb/>guage Technologies, pages 500–509, Portland, Ore-<lb/>gon, USA, June. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>Awais Athar. 2011. Sentiment analysis of citations us-<lb/>ing sentence structure-based features. In Proceedings<lb/> of the ACL 2011 Student Session, pages 81–87, Port-<lb/>land, OR, USA, June. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Christine L. Borgman and Jonathan Furner. 2002. Schol-<lb/>arly communication and bibliometrics. ANNUAL RE-<lb/>VIEW OF INFORMATION SCIENCE AND TECH-<lb/>NOLOGY, 36(1):2–72.<lb/> </bibl>
+<bibl>Razvan Bunescu and Raymond Mooney. 2005. A short-<lb/>est path dependency kernel for relation extraction. In<lb/> Proceedings of Human Language Technology Confer-<lb/>ence and Conference on Empirical Methods in Nat-<lb/>ural Language Processing, pages 724–731, Vancou-<lb/>ver, British Columbia, Canada, October. Association<lb/> for Computational Linguistics.<lb/> Chih-Chung Chang and Chih-Jen Lin. 2011. LIBSVM:<lb/> A library for support vector machines. ACM Transac-<lb/>tions on Intelligent Systems and Technology, 2:27:1–<lb/> 27:27.<lb/> </bibl>
+<bibl>J. Cohen. 1968. Weighted kappa: Nominal scale agree-<lb/>ment with provision for scaled disagreement or partial<lb/> credit. Psychological Bulletin, 70:213–220.<lb/> </bibl>
+<bibl>Aaron Elkiss, Siwei Shen, Anthony Fader, GünesGünes¸Günes¸Erkan,<lb/> David States, and Dragomir Radev. 2008. Blind men<lb/> and elephants: What do citation summaries tell us<lb/> about a research article? J. Am. Soc. Inf. Sci. Tech-<lb/>nol., 59(1):51–62.<lb/> </bibl>
+<bibl>E. Garfield, Irving H. Sher, and R. J. Torpie. 1984. The<lb/> Use of Citation Data in Writing the History of Science.<lb/> Institute for Scientific Information Inc., Philadelphia,<lb/> Pennsylvania, USA.<lb/> </bibl>
+<bibl>Claire Grover, Colin Matheson, Andrei Mikheev, and<lb/> Marc Moens. 2000. Lt ttt -a flexible tokenisation<lb/> tool. In In Proceedings of Second International Con-<lb/>ference on Language Resources and Evaluation, pages<lb/> 1147–1154.<lb/> </bibl>
+<bibl>Isabelle Guyon, Jason Weston, Stephen Barnhill, and<lb/> Vladimir Vapnik. 2002. Gene selection for cancer<lb/> classification using support vector machines. Mach.<lb/> Learn., 46:389–422, March.<lb/> </bibl>
+<bibl>Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard<lb/> Pfahringer, Peter Reutemann, and Ian H. Witten.<lb/> 2009. The weka data mining software: an update.<lb/> SIGKDD Explor. Newsl., 11(1):10–18.<lb/> </bibl>
+<bibl>T. L. Hodges. 1972. Citation indexing-its theory<lb/> and application in science, technology, and humani-<lb/>ties. Ph.D. thesis, University of California at Berke-<lb/>ley.Ph.D. thesis, University of California at Berkeley.<lb/> </bibl>
+<bibl>Dan Klein and Christopher D. Manning. 2003. Accu-<lb/>rate unlexicalized parsing. In IN PROCEEDINGS OF<lb/> THE 41ST ANNUAL MEETING OF THE ASSOCIA-<lb/>TION FOR COMPUTATIONAL LINGUISTICS, pages<lb/> 423–430.<lb/> </bibl>
+<bibl>John D. Lafferty, Andrew McCallum, and Fernando C. N.<lb/> Pereira. 2001. Conditional random fields: Proba-<lb/>bilistic models for segmenting and labeling sequence<lb/> data. In Proceedings of the Eighteenth International<lb/> Conference on Machine Learning, ICML &apos;01, pages<lb/> 282–289, San Francisco, CA, USA. Morgan Kauf-<lb/>mann Publishers Inc.<lb/> </bibl>
+<bibl>J. Richard Landis and Gary G. Koch. 1977. The Mea-<lb/>surement of Observer Agreement for Categorical Data.<lb/> Biometrics, 33(1):159–174, March.<lb/> </bibl>
+<bibl>Terttu Luukkonen. 1992. Is scientists&apos; publishing be-<lb/>haviour rewardseeking? Scientometrics, 24:297–319.<lb/> 10.1007/BF02017913.<lb/> </bibl>
+<bibl>Andrew Kachites McCallum.<lb/> 2002.<lb/> Mal-<lb/>let: A machine learning for language toolkit.<lb/> http://mallet.cs.umass.edu.<lb/> </bibl>
+<bibl>Qiaozhu Mei and ChengXiang Zhai. 2008. Generating<lb/> impact-based summaries for scientific literature. In<lb/> Proceedings of ACL-08: HLT, pages 816–824, Colum-<lb/>bus, Ohio, June. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>Saif Mohammad, Bonnie Dorr, Melissa Egan, Ahmed<lb/> Hassan, Pradeep Muthukrishan, Vahed Qazvinian,<lb/> Dragomir Radev, and David Zajic. 2009. Using ci-<lb/>tations to generate surveys of scientific paradigms. In<lb/> Proceedings of Human Language Technologies: The<lb/> 2009 Annual Conference of the North American Chap-<lb/>ter of the Association for Computational Linguistics,<lb/> pages 584–592, Boulder, Colorado, June. Association<lb/> for Computational Linguistics.<lb/> </bibl>
+<bibl>Preslav I. Nakov, Ariel S. Schwartz, and Marti A. Hearst.<lb/> 2004. Citances: Citation sentences for semantic anal-<lb/>ysis of bioscience text. In In Proceedings of the SI-<lb/>GIR04 workshop on Search and Discovery in Bioin-<lb/>formatics.<lb/> </bibl>
+<bibl>Hidetsugu Nanba and Manabu Okumura. 1999. To-<lb/>wards multi-paper summarization using reference in-<lb/>formation. In IJCAI &apos;99: Proceedings of the Six-<lb/>teenth International Joint Conference on Artificial In-<lb/>telligence, pages 926–931, San Francisco, CA, USA.<lb/> Morgan Kaufmann Publishers Inc.<lb/> </bibl>
+<bibl>Hidetsugu Nanba, Noriko Kando, Manabu Okumura, and<lb/> Of Information Science. 2000. Classification of re-<lb/>search papers using citation links and citation types:<lb/> Towards automatic review article generation.<lb/> </bibl>
+<bibl>Vahed Qazvinian and Dragomir R. Radev. 2008. Scien-<lb/>tific paper summarization using citation summary net-<lb/>works. In Proceedings of the 22nd International Con-<lb/>ference on Computational Linguistics (Coling 2008),<lb/> pages 689–696, Manchester, UK, August. Coling 2008<lb/> Organizing Committee.<lb/> </bibl>
+<bibl>Vahed Qazvinian and Dragomir R. Radev. 2010. Identi-<lb/>fying non-explicit citing sentences for citation-based<lb/> summarization. In Proceedings of the 48th Annual<lb/> Meeting of the Association for Computational Linguis-<lb/>tics, pages 555–564, Uppsala, Sweden, July. Associa-<lb/>tion for Computational Linguistics.<lb/> </bibl>
+<bibl>Vahed Qazvinian, Dragomir R. Radev, and Arzucan<lb/> Ozgur.<lb/> 2010.<lb/> Citation summarization through<lb/> keyphrase extraction. In Proceedings of the 23rd In-<lb/>ternational Conference on Computational Linguistics<lb/> (Coling 2010), pages 895–903, Beijing, China, Au-<lb/>gust. Coling 2010 Organizing Committee.<lb/> </bibl>
+<bibl>Dragomir R. Radev, Pradeep Muthukrishnan, and Vahed<lb/> Qazvinian. 2009. The acl anthology network corpus.<lb/> In NLPIR4DL &apos;09: Proceedings of the 2009 Workshop<lb/> on Text and Citation Analysis for Scholarly Digital Li-<lb/>braries, pages 54–61, Morristown, NJ, USA. Associa-<lb/>tion for Computational Linguistics.<lb/> </bibl>
+<bibl>Ariel Schwartz, Anna Divoli, and Marti Hearst. 2007.<lb/> Multiple alignment of citation sentences with con-<lb/>ditional random fields and posterior decoding. In<lb/> Proceedings of the 2007 Joint Conference on Empir-<lb/>ical Methods in Natural Language Processing and<lb/> Computational Natural Language Learning (EMNLP-<lb/>CoNLL), pages 847–857.<lb/> </bibl>
+<bibl>Advaith Siddharthan and Simone Teufel. 2007. Whose<lb/> idea was this, and why does it matter? attributing<lb/> scientific work to citations. In In Proceedings of<lb/> NAACL/HLT-07.<lb/> </bibl>
+<bibl>Simone Teufel, Advaith Siddharthan, and Dan Tidhar.<lb/> 2006. Automatic classification of citation function. In<lb/> In Proc. of EMNLP-06.<lb/> </bibl>
+<bibl>Simone Teufel. 2007. Argumentative zoning for im-<lb/>proved citation indexing. computing attitude and affect<lb/> in text. In Theory and Applications, pages 159170.<lb/> </bibl>
+<bibl>Howard D. White. 2004. Citation analysis and discourse<lb/> analysis revisited. Applied Linguistics, 25(1):89–116.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

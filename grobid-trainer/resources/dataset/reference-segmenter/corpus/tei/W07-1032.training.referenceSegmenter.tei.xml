@@ -1,0 +1,31 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Adamson, G. W., and Boreham, J. 1974. The use of an<lb/> association measure based on character structure to<lb/> identify semantically related pairs of words and<lb/> document titles. Information Storage and Retrieval,<lb/> 10: 253-260.<lb/> </bibl>
+<bibl>Alberga, C. N. 1967. String similarity and misspellings.<lb/> Communications of the ACM, 10: 302-313.<lb/> </bibl>
+<bibl>Damashek, M. 1995. Gauging similarity with n-grams:<lb/> Language-independent categorization of text. Sci-<lb/>ence, 267: 843-848.<lb/> </bibl>
+<bibl>Findler, N. V., and Leeuwen, J. v. 1979. A family of<lb/> similarity measures between two strings. IEEE<lb/> Transactions on Pattern Analysis and Machine Intel-<lb/>ligence, PAMI-1: 116-119.<lb/> </bibl>
+<bibl>Freitag, D. 2005. Morphology Induction From Term<lb/> Clusters, 9th Conference on Computational Natural<lb/> Language Learning (CoNLL): Ann Arbor, Michigan,<lb/> Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Hall, P. A., and Dowling, G. R. 1980. Approximate<lb/> string matching. Computing Surveys, 12: 381-402.<lb/> </bibl>
+<bibl>Jacquemin, C. 1997. Guessing morphology from terms<lb/> and corpora, in Belkin, N. J., Narasimhalu, A. D.,<lb/> and Willett, P., editors, 20th Annual International<lb/> ACM SIGIR Conference on Research and Develop-<lb/>ment in Information Retrieval: Philadelphia, PA,<lb/> ACM Press, p. 156-165.<lb/> </bibl>
+<bibl>Jurafsky, D., and Martin, J. H. 2000. Speech and Lan-<lb/>guage Processing: Upper Saddle River, New Jersey,<lb/> Prentice Hall.<lb/> </bibl>
+<bibl>Means, R. W., Nemat-Nasser, S. C., Fan, A. T., and<lb/> Hecht-Nielsen, R. 2004. A Powerful and General<lb/> Approach to Context Exploitation in Natural Lan-<lb/>guage Processing, HLT-NAACL 2004: Workshop on<lb/> Computational Lexical Semantics Boston, Massachu-<lb/>setts, USA, Association for Computational Linguis-<lb/>tics.<lb/> </bibl>
+<bibl>Monson, C. 2004. A framework for unsupervised natu-<lb/>ral language morphology induction, Proceedings of<lb/> the ACL 2004 on Student research workshop: Barce-<lb/>lona, Spain, Association for Computational Linguis-<lb/>tics.<lb/> </bibl>
+<bibl>Nash, S. G., and Nocedal, J. 1991. A numerical study of<lb/> hte limited memory BFGS method and hte truncated-<lb/>Newton method for large scale optimization. SIAM<lb/> Journal of Optimization, 1: 358-372.<lb/> </bibl>
+<bibl>Schone, P., and Jurafsky, D. 2000. Knowledge-free in-<lb/>duction of morphology using latent semantic analy-<lb/>sis, Proceedings of the 2nd workshop on Learning<lb/> language in logic and the 4th conference on Compu-<lb/>tational natural language learning -Volume 7: Lis-<lb/>bon, Portugal, Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>Sparck Jones, K. 1972. A statistical interpretation of<lb/> term specificity and its application in retrieval. The<lb/> Journal of Documentation, 28: 11-21.<lb/> </bibl>
+<bibl>Wicentowski, R. 2004. Multilingual Noise-Robust Su-<lb/>pervised Morphological Analysis using the Word-<lb/>Frame Model, SIGPHON: Barcelona, Spain, Asso-<lb/>ciation for Computational Linguistics.<lb/> </bibl>
+<bibl>Wilbur, W. J., and Kim, W. 2001. Flexible phrase based<lb/> query handling algorithms, in Aversa, E., and Man-<lb/>ley, C., editors, Proceedings of the ASIST 2001 An-<lb/>nual Meeting: Washington, D.C., Information Today,<lb/> Inc., p. 438-449.<lb/> </bibl>
+<bibl>Willett, P. 1979. Document retrieval experiments using<lb/> indexing vocabularies of varying size. II. Hashing,<lb/> truncation, digram and trigram encoding of index<lb/> terms. Journal of Documentation, 35: 296-305.<lb/> </bibl>
+<bibl>Xu, J., and Croft, W. B. 1998. Corpus-based stemming<lb/> using cooccurrence of word variants. ACM TOIS,<lb/> 16: 61-81.<lb/> </bibl>
+<bibl>Yarowsky, D., and Wicentowski, R. 2000. Minimally<lb/> supervised morphological analysis by multimodal<lb/> alignment, Proceedings of the 38th Annual Meeting<lb/> on Association for Computational Linguistics: Hong<lb/> Kong, Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Zobel, J., and Dart, P. 1995. Finding approximate<lb/> matches in large lexicons. Software-Practice and Ex-<lb/>perience, 25: 331-345.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

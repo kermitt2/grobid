@@ -1,0 +1,19 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Fabio Celli. 2010. Automatic Semantic Relation<lb/> Annotation for Italian and English. (technical report<lb/> available at http://clic.cimec.unitn.<lb/> it/fabio).<lb/> </bibl>
+<bibl>William W. Cohen. 1995. Fast effective rule induction.<lb/> In Proceedings of the 12th International Conference<lb/> on Machine Learning. Lake Tahoe, CA.<lb/> </bibl>
+<bibl>Mark A. Hall. 1998. Correlation-based Feature<lb/> Selection for Discrete and Numeric Class Ma-<lb/>chine Learning. Technical report available<lb/> at<lb/> http://citeseerx.ist.psu.edu/<lb/> viewdoc/download?doi=10.1.1.148.<lb/> 6025&amp;rep=rep1&amp;type=pdf.<lb/> </bibl>
+<bibl>Iris Hendrickx and Su Nam Kim and Zornitsa Kozareva<lb/> and Preslav Nakov and DiarmuidDiarmuid´ Diarmuid´O Séaghdha<lb/> and Sebastian Padó and Marco Pennacchiotti and<lb/> Lorenza Romano and Stan Szpakowicz. 2010.<lb/> SemEval-2010 Task 8: Multi-Way Classification of<lb/> Semantic Relations Between Pairs of Nominals. In<lb/> Proceedings of the 5th SIGLEX Workshop on Se-<lb/>mantic Evaluation, Uppsala, Sweden.<lb/> </bibl>
+<bibl>Emanuele Pianta and Christian Girardi and Roberto<lb/> Zanoli. 2008. The TextPro tool suite. In Proceedings<lb/> of LREC, Marrakech, Morocco.<lb/> </bibl>
+<bibl>John Ross Quinlan. 1993. C4.5: Programs for Machine<lb/> Learning. Morgan Kaufmann Publishers, San Ma-<lb/>teo, CA.<lb/> </bibl>
+<bibl>Ian H. Witten and Eibe Frank. 2005. Data Mining.<lb/> Practical Machine Learning Tools and Techniques<lb/> with Java implementations. Morgan and Kaufman,<lb/> San Francisco, CA.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

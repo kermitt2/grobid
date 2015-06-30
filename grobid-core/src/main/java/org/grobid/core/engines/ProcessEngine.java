@@ -124,6 +124,9 @@ public class ProcessEngine implements Closeable {
                 }
             }
         }
+        else {
+            LOGGER.warn("No files found in "+pdfDirectory);
+        }
     }
 
     /**

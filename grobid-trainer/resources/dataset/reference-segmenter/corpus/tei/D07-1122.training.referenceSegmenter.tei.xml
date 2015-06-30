@@ -1,0 +1,32 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>A. Abeillé, editor. 2003. Treebanks: Building and Using<lb/> Parsed Corpora. Kluwer.<lb/> </bibl>
+<bibl>I. Aduriz, M. J. Aranzabe, J. M. Arriola, A. Atutxa,<lb/> A. Diaz de Ilarraza, A. Garmendia, and M. Oronoz.<lb/> 2003. Construction of a Basque dependency treebank.<lb/> In Proc. of the 2nd Workshop on Treebanks and Lin-<lb/>guistic Theories (TLT), pages 201–204.<lb/> </bibl>
+<bibl>A. Böhmová, J. Hajič, E. Hajičová, and B. Hladká. 2003.<lb/> The PDT: a 3-level annotation scenario. In Abeillé<lb/> (Abeillé, 2003), chapter 7, pages 103–127.<lb/> </bibl>
+<bibl>C.C. Chang and C.J. Lin. 2001. LIBSVM: a library<lb/> for support vector machines. Software available at<lb/> http://www. csie. ntu. edu. tw/cjlin/libsvm, 80:604–<lb/> 611.<lb/> </bibl>
+<bibl>K. Chen, C. Luo, M. Chang, F. Chen, C. Chen, C. Huang,<lb/> and Z. Gao. 2003. Sinica treebank: Design criteria,<lb/> representational issues and implementation. In Abeillé<lb/> (Abeillé, 2003), chapter 13, pages 231–248.<lb/> </bibl>
+<bibl>Wenliang Chen, Yujie Zhang, and Hitoshi Isahara. 2006.<lb/> An empirical study of chinese chunking. In COL-<lb/>ING/ACL 2006(Poster Sessions), Sydney, Australia,<lb/> July.<lb/> </bibl>
+<bibl>D. Csendes, J. Csirik, T. Gyimóthy, and A. Kocsor. 2005.<lb/> The Szeged Treebank. Springer.<lb/> </bibl>
+<bibl>J. Hajič, O. Smrž, P. Zemánek, J. ˇ<lb/> Snaidauf, and E. Beška.<lb/> </bibl>
+        <bibl><label>2004.</label> Prague Arabic dependency treebank: Develop-<lb/>ment in data and tools. In Proc. of the NEMLAR In-<lb/>tern. Conf. on Arabic Language Resources and Tools,<lb/> pages 110–117.<lb/> </bibl>
+<bibl>R. Johansson and P. Nugues.<lb/> 2007.<lb/> Extended<lb/> constituent-to-dependency conversion for English. In<lb/> Proc. of the 16th Nordic Conference on Computational<lb/> Linguistics (NODALIDA).<lb/> </bibl>
+<bibl>Taku Kudo and Yuji Matsumoto. 2001. Chunking<lb/> with support vector machines. In In Proceedings of<lb/> NAACL01.<lb/> </bibl>
+<bibl>M. Marcus, B. Santorini, and M. Marcinkiewicz. 1993.<lb/> Building a large annotated corpus of English: the Penn<lb/> Treebank. Computational Linguistics, 19(2):313–330.<lb/> </bibl>
+<bibl>M. A. Martí, M. Taulé, L. M` arquez, and M. Bertran.<lb/> 2007. CESS-ECE: A multilingual and multilevel<lb/> annotated corpus. Available for download from:<lb/> http://www.lsi.upc.edu/∼mbertran/cess-ece/.<lb/> </bibl>
+<bibl>Ryan McDonald, Kevin Lerman, and Fernando Pereira.<lb/> 2006. Multilingual dependency analysis with a two-<lb/>stage discriminative parser. In Proceedings of the<lb/> Tenth Conference on Computational Natural Lan-<lb/>guage Learning (CoNLL-X), pages 216–220, New<lb/> York City, June. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>S. Montemagni, F. Barsotti, M. Battista, N. Calzolari,<lb/> O. Corazzari, A. Lenci, A. Zampolli, F. Fanciulli,<lb/> M. Massetani, R. Raffaelli, R. Basili, M. T. Pazienza,<lb/> D. Saracino, F. Zanzotto, N. Nana, F. Pianesi, and<lb/> R. Delmonte. 2003. Building the Italian Syntactic-<lb/>Semantic Treebank. In Abeillé (Abeillé, 2003), chap-<lb/>ter 11, pages 189–210.<lb/> </bibl>
+<bibl>J. Nivre, J. Hall, J. Nilsson, G. Eryigit, and S Marinov.<lb/> 2006. Labeled pseudo-projective dependency parsing<lb/> with support vector machines.<lb/> </bibl>
+<bibl>J. Nivre, J. Hall, S. Kübler, R. McDonald, J. Nilsson,<lb/> S. Riedel, and D. Yuret. 2007. The CoNLL 2007<lb/> shared task on dependency parsing. In Proc. of the<lb/> Joint Conf. on Empirical Methods in Natural Lan-<lb/>guage Processing and Computational Natural Lan-<lb/>guage Learning (EMNLP-CoNLL).<lb/> </bibl>
+<bibl>J. Nivre. 2003. An efficient algorithm for projective<lb/> dependency parsing. Proceedings of the 8th Inter-<lb/>national Workshop on Parsing Technologies (IWPT),<lb/> pages 149–160.<lb/> </bibl>
+<bibl>K. Oflazer, B. Say, D. Zeynep Hakkani-Tür, and G. Tür.<lb/> 2003. Building a Turkish treebank. In Abeillé<lb/> (Abeillé, 2003), chapter 15, pages 261–277.<lb/> </bibl>
+<bibl>P. Prokopidis, E. Desypri, M. Koutsombogera, H. Papa-<lb/>georgiou, and S. Piperidis. 2005. Theoretical and<lb/> practical issues in the construction of a Greek depen-<lb/>dency treebank. In Proc. of the 4th Workshop on Tree-<lb/>banks and Linguistic Theories (TLT), pages 149–160.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

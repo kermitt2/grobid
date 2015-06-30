@@ -1,0 +1,47 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Adam L. Berger, Stephen A. Della Pietra, and Vin-<lb/>cent J. Della Pietra. 1996. A maximum entropy<lb/> approach to natural language processing. Compu-<lb/>tational Linguistics.<lb/> </bibl>
+<bibl>Xavier Carreras, Mihai Surdeanu, and Lluis Marquez.<lb/> 2006. Projective dependency parsing with percep-<lb/>tron. In Proceedings of the CoNLL.<lb/> </bibl>
+<bibl>Xavier Carreras, Michael Collins, and Terry Koo.<lb/> 2008. Tag, dynamic programming, and the percep-<lb/>tron for efficient, feature-rich parsing. In Proceed-<lb/>ings of the CoNLL.<lb/> </bibl>
+<bibl>Eugene Charniak and Mark Johnson. 2005. Coarse-<lb/>to-fine-grained n-best parsing and discriminative<lb/> reranking. In Proceedings of the ACL.<lb/> </bibl>
+<bibl>Michael Collins. 1996. A new statistical parser based<lb/> on bigram lexical dependencies. In Proceedings of<lb/> ACL.<lb/> </bibl>
+<bibl>Michael Collins. 2000. Discriminative reranking for<lb/> natural language parsing. In Proceedings of the<lb/> ICML, pages 175–182.<lb/> </bibl>
+<bibl>Michael Collins. 2002. Discriminative training meth-<lb/>ods for hidden markov models: Theory and exper-<lb/>iments with perceptron algorithms. In Proceedings<lb/> of the EMNLP, pages 1–8, Philadelphia, USA.<lb/> </bibl>
+<bibl>Jason M. Eisner. 1996. Three new probabilistic mod-<lb/>els for dependency parsing: An exploration. In Pro-<lb/>ceedings of COLING, pages 340–345.<lb/> </bibl>
+<bibl>Kuzman Ganchev, Jennifer Gillenwater, and Ben<lb/> Taskar. 2009. Dependency grammar induction via<lb/> bitext projection constraints. In Proceedings of the<lb/> 47th ACL.<lb/> </bibl>
+<bibl>Liang Huang and David Chiang. 2005. Better k-best<lb/> parsing. In Proceedings of the IWPT, pages 53–64.<lb/> </bibl>
+<bibl>Liang Huang. 2008. Forest reranking: Discriminative<lb/> parsing with non-local features. In Proceedings of<lb/> the ACL.<lb/> </bibl>
+<bibl>Rebecca Hwa, Philip Resnik, Amy Weinberg, and<lb/> Okan Kolak. 2002. Evaluating translational corre-<lb/>spondence using annotation projection. In Proceed-<lb/>ings of the ACL.<lb/> </bibl>
+<bibl>Rebecca Hwa, Philip Resnik, Amy Weinberg, Clara<lb/> Cabezas, and Okan Kolak. 2005. Bootstrapping<lb/> parsers via syntactic projection across parallel texts.<lb/> In Natural Language Engineering, volume 11, pages<lb/> 311–325.<lb/> </bibl>
+<bibl>Wenbin Jiang and Qun Liu. 2009. Automatic adapta-<lb/>tion of annotation standards for dependency parsing<lb/> using projected treebank as source corpus. In Pro-<lb/>ceedings of IWPT.<lb/> </bibl>
+<bibl>Wenbin Jiang, Liang Huang, and Qun Liu. 2009. Au-<lb/>tomatic adaptation of annotation standards: Chinese<lb/> word segmentation and pos tagging–a case study. In<lb/> Proceedings of the 47th ACL.<lb/> </bibl>
+<bibl>Dan Klein and Christopher D. Manning. 2004. Cor-<lb/>pusbased induction of syntactic structure: Models of<lb/> dependency and constituency. In Proceedings of the<lb/> ACL.<lb/> </bibl>
+<bibl>Terry Koo, Xavier Carreras, and Michael Collins.<lb/> 2008. Simple semi-supervised dependency parsing.<lb/> In Proceedings of the ACL.<lb/> </bibl>
+<bibl>Taku Kudo and Yuji Matsumoto. 2000. Japanese de-<lb/>pendency structure analysis based on support vector<lb/> machines. In Proceedings of the EMNLP.<lb/> </bibl>
+<bibl>Yang Liu, Tian Xia, Xinyan Xiao, and Qun Liu. 2009.<lb/> Weighted alignment matrices for statistical machine<lb/> translation. In Proceedings of the EMNLP.<lb/> </bibl>
+<bibl>Yajuan Lü, Sheng Li, Tiejun Zhao, and Muyun Yang.<lb/> 2002.<lb/> Learning chinese bracketing knowledge<lb/> based on a bilingual language model. In Proceed-<lb/>ings of the COLING.<lb/> </bibl>
+<bibl>Mitchell P. Marcus, Beatrice Santorini, and Mary Ann<lb/> Marcinkiewicz. 1993. Building a large annotated<lb/> corpus of english: The penn treebank. In Computa-<lb/>tional Linguistics.<lb/> </bibl>
+<bibl>Ryan McDonald and Fernando Pereira. 2006. Online<lb/> learning of approximate dependency parsing algo-<lb/>rithms. In Proceedings of EACL, pages 81–88.<lb/> </bibl>
+<bibl>Ryan McDonald, Koby Crammer, and Fernando<lb/> Pereira. 2005a. Online large-margin training of de-<lb/>pendency parsers. In Proceedings of ACL, pages 91–<lb/> 98.<lb/> </bibl>
+<bibl>Ryan McDonald, Fernando Pereira, Kiril Ribarov, and<lb/> Jan Haji˘ c. 2005b. Non-projective dependency pars-<lb/>ing using spanning tree algorithms. In Proceedings<lb/> of HLT-EMNLP.<lb/> </bibl>
+<bibl>J. Nivre and M. Scholz. 2004. Deterministic depen-<lb/>dency parsing of english text. In Proceedings of the<lb/> COLING.<lb/> </bibl>
+<bibl>Joakim Nivre, Johan Hall, Jens Nilsson, Gulsen<lb/> Eryigit, and Svetoslav Marinov. 2006. Labeled<lb/> pseudoprojective dependency parsing with support<lb/> vector machines. In Proceedings of CoNLL, pages<lb/> 221–225.<lb/> </bibl>
+<bibl>Franz J. Och and Hermann Ney. 2000. Improved<lb/> statistical alignment models. In Proceedings of the<lb/> ACL.<lb/> </bibl>
+<bibl>Franz Joseph Och. 2003. Minimum error rate training<lb/> in statistical machine translation. In Proceedings of<lb/> the ACL, pages 160–167.<lb/> </bibl>
+<bibl>David Smith and Jason Eisner. 2009. Parser adap-<lb/>tation and projection with quasi-synchronous gram-<lb/>mar features. In Proceedings of EMNLP.<lb/> </bibl>
+<bibl>Kiyotaka Uchimoto, Satoshi Sekine, and Hitoshi Isa-<lb/>hara. 1999. Japanese dependency structure analysis<lb/> based on maximum entropy models. In Proceedings<lb/> of the EACL.<lb/> </bibl>
+<bibl>Vladimir N. Vapnik. 1998. Statistical learning theory.<lb/> In A Wiley-Interscience Publication.<lb/> </bibl>
+<bibl>Dekai Wu. 1997. Stochastic inversion transduction<lb/> grammars and bilingual parsing of parallel corpora.<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Nianwen Xue, Fei Xia, Fu-Dong Chiou, and Martha<lb/> Palmer. 2005. The penn chinese treebank: Phrase<lb/> structure annotation of a large corpus. In Natural<lb/> Language Engineering.<lb/> </bibl>
+<bibl>H Yamada and Y Matsumoto. 2003. Statistical depen-<lb/>dency analysis using support vector machines. In<lb/> Proceedings of IWPT.<lb/> </bibl>
+<bibl>Yue Zhang and Stephen Clark. 2008. Joint word seg-<lb/>mentation and pos tagging using a single perceptron.<lb/> In Proceedings of the ACL.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

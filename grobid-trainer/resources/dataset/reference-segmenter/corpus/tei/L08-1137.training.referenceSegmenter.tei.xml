@@ -1,0 +1,21 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>8.</label> References<lb/> </bibl>
+<bibl>Sanda Harabagiu, Dan Moldovan, Marius Pasca, Rada Mihalcea,<lb/> Mihai Surdeanu, Razvan Bunsecu, Roxana Girju, Vasile Rus,<lb/> and Paul Morarescu. 2000. FALCON: Boosting knowledge<lb/> for answer engines. In Proceedings of the 9th Text REtrieval<lb/> Conference.<lb/> </bibl>
+<bibl>S. Harabagiu, D. Moldovan, M. Pasca, M. Surdeanu, R. Mihalcea,<lb/> R. Girju, V. Rus, F. Lacatusu, P. Morarescu, and R. Bunescu.<lb/> 2001. Answering Complex, List and Context Questions with<lb/> LCC&apos;s Question-Answering Server. In Proceedings of the<lb/> Tenth Text REtrieval Conference.<lb/> </bibl>
+<bibl>S. Harabagiu, D. Moldovan, C. Clark, M. Bowden, A. Hickl, and<lb/> P. Wang. 2005. Employing Two Question Answering Systems<lb/> in TREC 2005. In Proceedings of the Fourteenth Text REtrieval<lb/> Conference.<lb/> </bibl>
+<bibl>Andrew Hickl, Patrick Wang, John Lehamnn, and Sanda<lb/> Harabagiu. 2006a. Ferret: Interactive Question-Answering<lb/> for Real-World Research Environments. In Proceedings of the<lb/> 2006 COLING-ACL Interactive Presentations Session.<lb/> </bibl>
+<bibl>Andrew Hickl, John Williams, Jeremy Bensley, Kirk Roberts,<lb/> Ying Shi, and Bryan Rink. 2006b. Question Answering with<lb/> LCC&apos;s Chaucer at TREC 2006. In Proceedings of the Fifteenth<lb/> Text REtrieval Conference.<lb/> </bibl>
+<bibl>Andrew Hickl, Kirk Roberts, Bryan Rink, Jeremy Bensely, Tobias<lb/> Jungen, Ying Shi, and John Williams. 2007. Question Answer-<lb/>ing with LCC&apos;s Chaucer-2 at TREC 2007. In Proceedings of<lb/> the Sixteenth Text REtrieval Conference.<lb/> </bibl>
+<bibl>V. Krishnan, S. Das, and S. Chakrabarti. 2005. Enhanced answer<lb/> type inference from questions using sequential models. In Pro-<lb/>ceedings of EMNLP.<lb/> </bibl>
+<bibl>X. Li and D. Roth. 2002. Learning question classifiers. In<lb/> Proc. the International Conference on Computational Linguis-<lb/>tics (COLING).<lb/> </bibl>
+<bibl>George A. Miller. 1995. WordNet: a lexical database for English.<lb/> Communications of the Association for Computing Machinery,<lb/> 38(11):39–41.<lb/> </bibl>
+<bibl>Christopher Pinchak and Dekang Lin. 2006. A Probabilistic An-<lb/>swer Type Model. In Proceedings of the 11th Conference of the<lb/> European Chapter of the Association for Computational Lin-<lb/>guistics, pages pages 393 – 400.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

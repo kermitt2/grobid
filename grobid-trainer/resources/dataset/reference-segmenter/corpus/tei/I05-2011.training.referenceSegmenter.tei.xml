@@ -1,0 +1,25 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Aristotle. The Rhetorics and Poetics (trans. W. Rhys Rob-<lb/>erts, Modern Library, 1954).<lb/> </bibl>
+<bibl>Fellbaum, C., D. Gross, and K. Miller. 1993. Adjectives in<lb/> WordNet. http://www.cosgi.princeton.edu/~wn.<lb/> </bibl>
+<bibl>Kneser, R. and H. Ney. 1995. Improved Backing-off for n-<lb/>gram Language Modeling. Proceedings of ICASSP, vol.<lb/> 1, 181–184.<lb/> </bibl>
+<bibl>Miller, G.A., R. Beckwith, C. Fellbaum, D. Gross, and K.<lb/> Miller. 1993. Introduction to WordNet: An On-Line<lb/> Lexical Database. http://www.cosgi.princeton. edu/~wn.<lb/> </bibl>
+<bibl>Pang, B. L. Lee, and S. Vaithyanathan, 2002. Thumbs up?<lb/> Sentiment classification using Machine Learning Tech-<lb/>niques. Proceedings of the EMNLP conference.<lb/> </bibl>
+<bibl>Perelman, C. 1970. The New Rhetoric: A Theory of Practi-<lb/>cal Reasoning. In The Great Ideas Today. Chicago: En-<lb/>cyclopedia Britannica.<lb/> </bibl>
+<bibl>Riloff , E. and J. Wiebe. 2003. Learning Extraction Pat-<lb/>terns for Opinion-bearing Expressions. Proceedings of<lb/> the EMNLP-03.<lb/> </bibl>
+<bibl>Riloff, E., J. Wiebe, and T. Wilson 2003. Learning Subjec-<lb/>tive Nouns Using Extraction Pattern Bootstrapping.<lb/> Proceedings of CoNLL-03<lb/> </bibl>
+<bibl>Soboroff, I. and D. Harman. 2003. Overview of the TREC<lb/> 2003 Novelty Track. Proceedings of TREC-2003.<lb/> </bibl>
+<bibl>Toulmin, S.E., R. Rieke, and A. Janik. 1979. An Introduc-<lb/>tion to Reasoning. Macmillan, New York<lb/> Turney, P. 2002. Thumbs Up or Thumbs Down? Semantic<lb/> Orientation Applied to Unsupervised Classification of<lb/> Reviews. Proceedings of the 40 th Annual Meeting of the<lb/> ACL, Philadelphia, 417–424.<lb/> </bibl>
+<bibl>Wallace, K. 1975. Topoi and the Problem of Invention. In<lb/> W. Ross Winterowd (ed), Contemporary Rhetoric. Har-<lb/>court Brace Jovanovich.<lb/> </bibl>
+<bibl>Wilson, T. and J. Wiebe. 2003. Annotating Opinions in the<lb/> World Press. Proceedings of the ACL SIGDIAL-03.<lb/> </bibl>
+<bibl>Yu, H. and V. Hatzivassiloglou. 2003. Towards Answering<lb/> Opinion Questions: Separating Facts from Opinions and<lb/> Identifying the Polarity of Opinion Sentences. Proceed-<lb/>ings of EMNLP-2003.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

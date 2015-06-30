@@ -1,0 +1,20 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Michael Collins. 1997. Three generative, lexicalized<lb/> models for statistical parsing. In Philip R. Cohen and<lb/> Wolfgang Wahlster, editors, Proceedings of the Thirty-<lb/>Fifth Annual Meeting of the Association for Computa-<lb/>tional Linguistics and Eighth Conference of the Eu-<lb/>ropean Chapter of the Association for Computational<lb/> Linguistics, pages 16–23, Somerset, New Jersey. As-<lb/>sociation for Computational Linguistics.<lb/> </bibl>
+<bibl>H. Daume, Kevin Knight, I Langkilde-Geary, Daniel<lb/> Marcu, and K Yamada. 2002. The importance of lexi-<lb/>calized syntax models for natural language generation<lb/> tasks. Proceedings of the Second International Confer-<lb/>ence on Natural Language Generation. Arden House,<lb/> NJ, July 1-3.<lb/> </bibl>
+<bibl>Kevin Knight and Daniel Marcu. 2000. Statistics-<lb/>based summarization -step one: Sentence compres-<lb/>sion. In Proceedings of the Seventeenth National Con-<lb/>ference on Artificial Intelligence and Twelfth Confer-<lb/>ence on Innovative Applications of Artificial Intelli-<lb/>gence, pages 703–710. AAAI Press / The MIT Press.<lb/> </bibl>
+<bibl>Irene Langkilde. 2000. Forest-based statistical sentence<lb/> generation. In Proceedings of the first conference on<lb/> North American chapter of the Association for Com-<lb/>putational Linguistics, pages 170–177, San Francisco,<lb/> CA, USA. Morgan Kaufmann Publishers Inc.<lb/> </bibl>
+<bibl>Ryan T. McDonald. 2006. Discriminative sentence com-<lb/>pression with soft syntactic evidence. In Proceedings<lb/> of EACL 2006, 11st Conference of the European Chap-<lb/>ter of the Association for Computational Linguistics,<lb/> April 3-7, 2006, Trento, Italy, pages 297–304.<lb/> </bibl>
+<bibl>Jenine Turner and Eugene Charniak. 2005. Supervised<lb/> and unsupervised learning for sentence compression.<lb/> In ACL &apos;05: Proceedings of the 43rd Annual Meeting<lb/> on Association for Computational Linguistics, pages<lb/> 290–297, Morristown, NJ, USA. Association for Com-<lb/>putational Linguistics.<lb/> </bibl>
+<bibl>Fernanda B. Viégas, Martin Wattenberg, and Kushal<lb/> Dave. 2004. Studying cooperation and conflict be-<lb/>tween authors with istory flow visualizations. In Eliza-<lb/>beth Dykstra-Erickson and Manfred Tscheligi, editors,<lb/> CHI, pages 575–582. ACM.<lb/> </bibl>
+<bibl>I. Witten and T. Bell. 1991. The zero-frequency problem:<lb/> Estimating the probabilities of novel events in adaptive<lb/> text compression. IEEE Transactions on Information<lb/> Theory, 37(4).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,40 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Masahiro Araki. 2012. Rapid development process of<lb/> spoken dialogue systems using collaboratively con-<lb/>structed semantic resources. In Proceedings of the<lb/> 13th Annual Meeting of the Special Interest Group<lb/> on Discourse and Dialogue, pages 70–73, Seoul,<lb/> South Korea, July. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Srinivas Bangalore and Amanda J Stent. 2009. In-<lb/>cremental parsing models for dialog task structure.<lb/> In Proceedings of the 12th Conference of the Euro-<lb/>pean Chapter of the Association for Computational<lb/> Linguistics, pages 94–102. Association for Compu-<lb/>tational Linguistics.<lb/> </bibl>
+<bibl>Steven Bird, Ewan Klein, and Edward Loper. 2009.<lb/> Natural language processing with Python. O&apos;Reilly<lb/> Media.<lb/> </bibl>
+<bibl>Nate Blaylock and James Allen. 2006. Hierarchical<lb/> instantiated goal recognition. In Proceedings of the<lb/> AAAI Workshop on Modeling Others from Observa-<lb/>tions.<lb/> </bibl>
+<bibl>Stephan Bloehdorn, Roberto Basili, Marco Cammisa,<lb/> and Alessandro Moschitti. 2006. Semantic ker-<lb/>nels for text classification based on topological mea-<lb/>sures of feature similarity. In Data Mining, 2006.<lb/> ICDM&apos;06. Sixth International Conference on, pages<lb/> 808–812. IEEE.<lb/> </bibl>
+<bibl>Dan Bohus and Alexander I Rudnicky.<lb/> 2005.<lb/> </bibl>
+<bibl>Sorry, I didn&apos;t catch that!-an investigation of non-<lb/>understanding errors and recovery strategies. In 6th<lb/> SIGdial Workshop on Discourse and Dialogue.<lb/> </bibl>
+<bibl>Dan Bohus, Antoine Raux, Thomas K Harris, Maxine<lb/> Eskenazi, and Alexander I Rudnicky. 2007. Olym-<lb/>pus: an open-source framework for conversational<lb/> spoken language interface research. In Proceedings<lb/> of the workshop on bridging the gap Academic and<lb/> industrial research in dialog technologies, number<lb/> April, pages 32–39. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Dan Bohus. 2003. Roomline. http://www.cs.<lb/> cmu.edu/~dbohus/RoomLine.<lb/> </bibl>
+<bibl>Kurt Bollacker, Colin Evans, Praveen Paritosh, Tim<lb/> Sturge, and Jamie Taylor. 2008. Freebase: a col-<lb/>laboratively created graph database for structuring<lb/> human knowledge. SIGMOD 08 Proceedings of the<lb/> 2008 ACM SIGMOD international conference on<lb/> Management of data, pages 1247–1249.<lb/> </bibl>
+<bibl>Hung H Bui. 2003. A general model for online proba-<lb/>bilistic plan recognition. In International Joint Con-<lb/>ference on Artificial Intelligence, volume 18, pages<lb/> 1309–1318. Citeseer.<lb/> </bibl>
+<bibl>Andrew Carlson, Justin Betteridge, Bryan Kisiel, Burr<lb/> Settles, Estevam R Hruschka Jr., and Tom M<lb/> Mitchell. 2010. Toward an Architecture for Never-<lb/>Ending Language Learning. Artificial Intelligence,<lb/> 2(4):1306–1313.<lb/> </bibl>
+<bibl>D.L. Chen and R.J. Mooney. 2010. Learning to in-<lb/>terpret natural language navigation instructions from<lb/> observations. Journal of Artificial Intelligence Re-<lb/>search, 37:397–435.<lb/> </bibl>
+<bibl>Jennifer Chu-Carroll and Bob Carpenter.<lb/> 1999.<lb/> </bibl>
+<bibl>Vector-based natural language call routing. Compu-<lb/>tational linguistics, 25(3):361–388.<lb/> </bibl>
+<bibl>Mathias Creutz, Sami Virpioja, and Anna Kovaleva.<lb/> 2009. Web augmentation of language models for<lb/> continuous speech recognition of sms text messages.<lb/> In Proceedings of the 12th Conference of the Euro-<lb/>pean Chapter of the Association for Computational<lb/> Linguistics, pages 157–165. Association for Com-<lb/>putational Linguistics.<lb/> </bibl>
+<bibl>Nello Cristianini, John Shawe-Taylor, and Huma<lb/> Lodhi. 2002. Latent semantic kernels. Journal of<lb/> Intelligent Information Systems, 18(2):127–152.<lb/> </bibl>
+<bibl>Allen L Gorin, Giuseppe Riccardi, and Jeremy H<lb/> Wright. 1997. How may i help you? Speech com-<lb/>munication, 23(1-2):113–127.<lb/> </bibl>
+<bibl>D. Huggins-Daines, M. Kumar, A. Chan, A.W. Black,<lb/> M. Ravishankar, and A.I. Rudnicky. 2006. Pocket-<lb/>sphinx: A free, real-time continuous speech recogni-<lb/>tion system for hand-held devices. In ICASSP, vol-<lb/>ume 1. IEEE.<lb/> </bibl>
+<bibl>Thorsten Joachims. 1999. Making large-scale support<lb/> vector machine learning practical. In Advances in<lb/> kernel methods, pages 169–184. MIT Press.<lb/> </bibl>
+<bibl>George A Miller.<lb/> 1995.<lb/> WordNet: a lexical<lb/> database for English. Communications of the ACM,<lb/> 38(11):39–41.<lb/> </bibl>
+<bibl>Teruhisa Misu and Tatsuya Kawahara. 2006. A boot-<lb/>strapping approach for developing language model<lb/> of new spoken dialogue systems by selecting web<lb/> texts. In Proc. Interspeech, pages 9–12.<lb/> </bibl>
+<bibl>Alessandro Moschitti. 2009. Syntactic and semantic<lb/> kernels for short text pair categorization. In Pro-<lb/>ceedings of the 12th Conference of the European<lb/> Chapter of the ACL (EACL 2009), pages 576–584.<lb/> </bibl>
+<bibl>Aasish Pappu and Alexander I Rudnicky. 2012. The<lb/> Structure and Generality of Spoken Route Instruc-<lb/>tions. Proceedings of the 13th Annual Meeting of<lb/> the Special Interest Group on Discourse and Dia-<lb/>logue, pages 99–107.<lb/> </bibl>
+<bibl>Ted Pedersen, Siddharth Patwardhan, and Jason Miche-<lb/>lizzi. 2004. WordNet:: Similarity: measuring the<lb/> relatedness of concepts. In Demonstration Papers<lb/> at HLT-NAACL 2004, pages 38–41. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Georges Siolas and Florence d&apos;Alché Buc. 2000. Sup-<lb/>port vector machines based on a semantic kernel<lb/> for text categorization. In Neural Networks, 2000.<lb/> IJCNN 2000, Proceedings of the IEEE-INNS-ENNS<lb/> International Joint Conference, volume 5, pages<lb/> 205–209. IEEE.<lb/> </bibl>
+<bibl>Pu Wang and Carlotta Domeniconi. 2008. Build-<lb/>ing semantic kernels for text classification using<lb/> wikipedia. In Proceeding of the 14th ACM SIGKDD<lb/> international conference on Knowledge discovery<lb/> and data mining, pages 713–721. ACM.<lb/> </bibl>
+<bibl>W. Ward. 1991. Understanding spontaneous speech:<lb/> the phoenix system. In ICASSP. IEEE.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

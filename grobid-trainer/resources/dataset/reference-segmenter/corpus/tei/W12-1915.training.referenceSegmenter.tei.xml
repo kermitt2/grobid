@@ -1,0 +1,30 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>I. Aduriz, M. J. Aranzabe, J. M. Arriola, A. Atutxa,<lb/> A. Diaz de Ilarraza, A. Garmendia, , and M. Oronoz.<lb/> 2003. Construction of a basque dependency treebank.<lb/> In Proc. of the 2nd Workshop on Treebanks and Lin-<lb/>guistic Theories (TLT).<lb/> </bibl>
+<bibl>Susana Afonso, Eckhard Bick, Renato Haber, and Diana<lb/> Santos. 2002. &quot; floresta sintá(c)tica &quot; : a treebank for<lb/> Portuguese. In Proceedings of the 3rd Intern. Conf. on<lb/> Language Resources and Evaluation (LREC), pages<lb/> 1968–1703.<lb/> </bibl>
+<bibl>Van Der Beek, G. Bouma, R. Malouf, G. Van Noord, and<lb/> Rijksuniversiteit Groningen. 2002. The alpino depen-<lb/>dency treebank. In In Computational Linguistics in the<lb/> Netherlands (CLIN, pages 1686–1691.<lb/> </bibl>
+<bibl>Matthias Buch-Kromann, Jürgen Wedekind, , and<lb/> Jakob Elming. 2007. The copenhagen danish-<lb/>english dependency treebank v. 2.0. http://www.buch-<lb/>kromann.dk/matthias/cdt2.0/.<lb/> </bibl>
+<bibl>Shay B. Cohen, Kevin Gimpel, and Noah A. Smith.<lb/> 2008. Logistic normal priors for unsupervised prob-<lb/>abilistic grammar induction. In NIPS, pages 321–328.<lb/> </bibl>
+<bibl>Tomaz Erjavec, Darja Fiser, Simon Krek, and Nina<lb/> Ledinek. 2010. The jos linguistically tagged corpus<lb/> of slovene. In LREC.<lb/> </bibl>
+<bibl>Kuzman Ganchev, João Graça, Jennifer Gillenwater, and<lb/> Ben Taskar. 2010. Posterior regularization for struc-<lb/>tured latent variable models. Journal of Machine<lb/> Learning Research, 11:2001–2049.<lb/> </bibl>
+<bibl>Jennifer Gillenwater, Kuzman Ganchev, João Graça, Fer-<lb/>nando Pereira, and Ben Taskar. 2010. Sparsity in de-<lb/>pendency grammar induction. In ACL &apos;10: Proceed-<lb/>ings of the ACL 2010 Conference Short Papers, pages<lb/> 194–199, Morristown, NJ, USA. Association for Com-<lb/>putational Linguistics.<lb/> </bibl>
+<bibl>Jan Hajič, Alena Böhmová, Eva Hajičová, and Barbora<lb/> Vidová-Hladká. 2000. The Prague Dependency<lb/> Treebank: A Three-Level Annotation Scenario. In<lb/> A. Abeillé, editor, Treebanks: Building and Using<lb/> Parsed Corpora, pages 103–127. Amsterdam:Kluwer.<lb/> </bibl>
+<bibl>Jan Hajič, Otakar Smrž, Petr Zemánek, Jaň<lb/> Snaidauf, and<lb/> Emanuel Beška. 2004. Prague arabic dependency<lb/> treebank: Development in data and tools. In In Proc.<lb/> of the NEMLAR Intern. Conf. on Arabic Language Re-<lb/>sources and Tools, pages 110–117.<lb/> </bibl>
+<bibl>Mark Johnson, Thomas L. Griffiths, and Sharon Goldwa-<lb/>ter. 2007. Bayesian inference for pcfgs via markov<lb/> chain monte carlo. In HLT-NAACL, pages 139–146.<lb/> </bibl>
+<bibl>Dan Klein and Christopher D. Manning. 2004. Corpus-<lb/>based induction of syntactic structure: Models of de-<lb/>pendency and constituency. In Proceedings of ACL.<lb/> </bibl>
+<bibl>Kenichi Kurihara and Taisuke Sato. 2004. An appli-<lb/>cation of the variational Bayesian approach to prob-<lb/>abilistic contextfree grammars. In IJCNLP-04 Work-<lb/>shop beyond shallow analyses.<lb/> </bibl>
+<bibl>Mitchell P. Marcus, Beatrice Santorini, and Mary Ann<lb/> Marcinkiewicz. 1993. Building a large annotated<lb/> corpus of english: The penn treebank. COMPUTA-<lb/>TIONAL LINGUISTICS, 19(2):313–330.<lb/> </bibl>
+<bibl>Joakim Nivre, Jens Nilsson, and Johan Hall. 2006. Tal-<lb/>banken05: A Swedish Treebank with Phrase Struc-<lb/>ture and Dependency Annotation. In Proceedings of<lb/> the fifth international conference on Language Re-<lb/>sources and Evaluation (LREC2006), May 24-26,<lb/> 2006, Genoa, Italy, pages 1392–1395. European Lan-<lb/>guage Resource Association, Paris.<lb/> </bibl>
+<bibl>Slav Petrov, Leon Barrett, Romain Thibaux, and Dan<lb/> Klein. 2006. Learning accurate, compact, and inter-<lb/>pretable tree annotation. In ACL-44: Proceedings of<lb/> the 21st International Conference on Computational<lb/> Linguistics and the 44th annual meeting of the Associ-<lb/>ation for Computational Linguistics, pages 433–440,<lb/> Morristown, NJ, USA. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Kenji Sagae, Eric Davis, Alon Lavie, Brian MacWhin-<lb/>ney, and Shuly Wintner. 2007. High-accuracy anno-<lb/>tation and parsing of childes transcripts. In Proceed-<lb/>ings of the Workshop on Cognitive Aspects of Com-<lb/>putational Language Acquisition, CACLA &apos;07, pages<lb/> 25–32, Stroudsburg, PA, USA. Association for Com-<lb/>putational Linguistics.<lb/> </bibl>
+<bibl>Kewei Tu and Vasant Honavar. 2012. Unambiguity reg-<lb/>ularization for unsupervised learning of probabilistic<lb/> grammars. Technical report, Computer Science, Iowa<lb/> State University.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,24 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        BIBLIOGRAPHT<lb/> 
+        <bibl>Birnbanm, L. and M. Selfridge, &quot;Conceptual Analysis of<lb/> Natural Language&apos;, in Inside Artificial Intelligence: Five Prol~rams<lb/> Plus Miniatures, Hillsdale, N J: Lawrence Erlbaum Associates, 1981.<lb/> </bibl>
+<bibl>Crain, S. and P. Coker, sA Semantic Constraint on Parsing&apos;,<lb/> Paper presented at Linguistic Society of America Annual Meeting.<lb/> University of California at Irvine, 1979.<lb/> </bibl>
+<bibl>Dyer, M.G., In-Depth Understanding: A Computer Model of<lb/> Integrated Processing for Narrative Comprehension, Cambridge,<lb/> MA: The MIT Press, 1083.<lb/> </bibl>
+<bibl>Gershman, A.V., &quot;A Framework for Conceptual Analyzers&apos;, in<lb/> Strategies for Natural Language Processin~b Hillsdale, N J: Lawrence<lb/> Erlbaum Associates, 1982.<lb/> </bibl>
+<bibl>Katz, 3. S. and J.A. Fodor, &quot;The Structure of Semantic<lb/> Theory&apos;, in Language, 309, 1963.<lb/> </bibl>
+<bibl>Marcus, M., A Theory of Syntact~ic Recognition for Natural<lb/> Language, Cambridge, MA: The MIT Press, 1980.<lb/> </bibl>
+<bibl>Marcus, M., *Wait-and-See Strategies for Parsing Natural<lb/> Language&apos;, MIT WP-75, Cambridge, MA: 1974.<lb/> </bibl>
+<bibl>Matthews, R., mAre the Grammatical Sentences of s Language<lb/> of Recursive Set?&apos;, in Systhese 400, 1979.<lb/> </bibl>
+<bibl>Pazzani, M.J., *Interactive Script Instantiation&apos;, in<lb/> Proceedings of the National Conference on Artificial Intelligence,<lb/> 1983.<lb/> </bibl>
+<bibl>Riesbeck, C. and R.C. Schank, &quot;Comprehension by<lb/> Computer: Expectation Based Analysis of Sentences in Coute~t&apos;,<lb/> Research Report ~78, Dept. of Computer Science, Yale University,<lb/> 1976.<lb/> </bibl>
+<bibl>Schank, R.C. and L. Birnbaum, N lemory~ Meaning, and<lb/> SyntaX,, Research Report 189, Yale University Department of<lb/> Computer Science, 1980.<lb/> </bibl>
+<bibl>Shieber, S.M., &quot;Sentence Disambiguatiou by a Shift-Reduce<lb/> Parsing Technique&apos;, 21st Annual Meeting of the Association for<lb/> Computational<lb/> Linguistics, Association for</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,34 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Bahl, L.; Brown, P.; de Souza, P.; and Mercer,<lb/> R. (1989). A tree-based statistical language<lb/> model for natural language speech<lb/> recognition. IEEE Transactions on Acoustics,<lb/> Speech, and Signal Processing, 37(7).<lb/> </bibl>
+<bibl>Berger, A.; Brown, P.; Della Pietra, S.; Della<lb/> Pietra, V.; Gillett, J.; Lafferty, J.; Printz, H.;<lb/> and Urea, L. (1994). The Candide System<lb/> for Machine Translation. In Proceedings,<lb/> ARPA Conference on Human Language<lb/> Technology, Plainsborough, New Jersey.<lb/> </bibl>
+<bibl>Black, E.; Jelinek, E; Lafferty, J.; Magerman,<lb/> D.; Mercer, R.; and Roukos, S. (1992).<lb/> </bibl>
+<bibl>Towards History-based Grammars: Using<lb/> Richer Models for Probabilistic Parsing.<lb/> In Proceedings, DARPA Speech and Natural<lb/> Language Workshop, Arden House, New<lb/> York.<lb/> Brown, D. (1959). A Note on<lb/> Approximations to Discrete Probability<lb/> Distributions. Information and Control,<lb/> 2:386-392.<lb/> </bibl>
+<bibl>Brown, P.; Della Pietra, S.; Della Pietra, V.;<lb/> and Mercer, R. (1993). The Mathematics of<lb/> Statistical Machine Translation: Parameter<lb/> Estimation. Computational Linguistics,<lb/> 19(2):263--311.<lb/> </bibl>
+<bibl>Brown, P.; Cocke, J.; Della Pietra, S.; Della<lb/> Pietra, V.; Jelinek, E; Lafferty, J.; Mercer,<lb/> R.; and Roossin, P. (1990). A Statistical<lb/> Approach to Machine Translation.<lb/> Computational Linguistics, 16:79-85.<lb/> </bibl>
+<bibl>Brown, P.; Della Pietra, V.; de Souza, P.; and<lb/> Mercer, R. (1990). Class-based N-Gram<lb/> Models of Natural Language. Proceedings,<lb/> IBM Natural Language ITL, 283-298.<lb/> </bibl>
+<bibl>Brown, P.; Della Pietra, S.; Della Pietra, V.;<lb/> and Mercer, R. (1991). A Statistical<lb/> Approach to Sense Disambiguation in<lb/> Machine Translation. In Proceedings,<lb/> DARPA Speech and Natural Language<lb/> Workshop, 146-151.<lb/> </bibl>
+<bibl>Cover, T. and Thomas, J. (1991). Elements of<lb/> Information Theory. John Wiley &amp; Sons.<lb/> </bibl>
+<bibl>Csiszdr, I. (1975). I-Divergence Geometry of<lb/> Probability Distributions and<lb/> Minimization Problems, The Annals of<lb/> Probability, 3(1):146-158.<lb/> ibid. (1989). A Geometric Interpretation of<lb/> Darroch and Ratcliff&apos;s Generalized<lb/> Iterative Scaling. The Annals of Statistics,<lb/> 17(3):1409-1413.<lb/> </bibl>
+<bibl>Csisz~ir, L. and Tusn~idy, G. (1984).<lb/> Information Geometry and Alternating<lb/> Minimization Procedures. Statistics &amp;<lb/> Decisions, Supplemental Issue, no. 1,<lb/> 205-237.<lb/> </bibl>
+<bibl>Darroch, J. N. and Ratcliff, D. (1972).<lb/> Generalized Iterative Scaling for<lb/> Log-linear Models. Annals of Mathematical<lb/> Statistics, no. 43, 1470-1480.<lb/> </bibl>
+<bibl>Della Pietra, S.; Della Pietra, V.; Gillett, J.;<lb/> Lafferty, J.; Printz, H.; and Urea, L. (1994).<lb/> &quot;Inference and Estimation of a<lb/> Long-range Trigram Model.&quot; In Lecture<lb/> Notes in Artificfal Intelligence, 862.<lb/> Springer-Verlag, 78-92.<lb/> </bibl>
+<bibl>Della Pietra, S.; Della Pietra, V.; and<lb/> Lafferty, J. (1995). &quot;Inducing features of<lb/> random fields&quot; CMU Technical Report<lb/> CMU-CS-95-144.<lb/> </bibl>
+<bibl>Dempster, A. P.; Laird, N. M.; and Rubin,<lb/> D. B. (1977). Maximum Likelihood from<lb/> Incomplete Data via the EM Algorithm.<lb/> </bibl>
+<bibl>Journal of the Royal Statistical Society,<lb/> 39(B):1-38.<lb/> </bibl>
+<bibl>Guiasu, S. and Shenitzer, A. (1985). The<lb/> Principle of Maximum Entropy. The<lb/> Mathematical Intelligencer , 7(1).<lb/> </bibl>
+<bibl>Jaynes, E. T. (1990) &quot;Notes on Present Status<lb/> and Future Prospects.&quot; In Maximum<lb/> Entropy and Bayesian Methods, edited by<lb/> W. T. Grandy and L. H. Schick. Kluwer,<lb/> 1-13.<lb/> </bibl>
+<bibl>Jelinek, F. and Mercer, R. L. (1980).<lb/> Interpolated Estimation of Markov Source<lb/> Parameters from Sparse Data. In<lb/> Proceedings, Workshop on Pattern Recognition<lb/> in Practice, Amsterdam, The Netherlands.<lb/> Lucassen, J. and Mercer, R. (1984). An<lb/> Information Theoretic Approach to<lb/> Automatic Determination of Phonemic<lb/> Baseforms. In Proceedings, IEEE<lb/> International Conference on Acoustics, Speech<lb/> and Signal Processing, San Diego, CA,<lb/> 42.5.1-42.5.4.<lb/> </bibl>
+<bibl>Merialdo, B. (1990). Tagging Text with a<lb/> Probabilistic Model. In Proceedings, IBM<lb/> Natural Language ITL, Paris, France,<lb/> 161-172.<lb/> </bibl>
+<bibl>Nddas, A.; Mercer, R.; Bahl, L.; Bakis, R.;<lb/> Cohen, P.; Cole, A.-; Jelinek, F.; and Lewis,<lb/> B. (1981). Continuous Speech Recognition<lb/> with Automatically Selected Acoustic<lb/> Prototypes Obtained by either<lb/> Bootstrapping or Clustering. In<lb/> Proceedings, IEEE International Conference on<lb/> Acoustics, Speech and Signal Processing,<lb/> Atlanta, GA, 1153-1155.<lb/> </bibl>
+<bibl>Sokolnikoff, I. S. and Redheffer, R. M.<lb/> (1966). Mathematics of Physics and Modern<lb/> Engineering, Second Edition, McGraw-Hill<lb/> Book Company.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

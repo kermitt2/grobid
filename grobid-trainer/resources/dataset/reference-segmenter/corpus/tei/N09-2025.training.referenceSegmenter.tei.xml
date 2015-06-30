@@ -1,0 +1,21 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Davidov, D., E. Gabrilovich, and S. Markovitch. 2004.<lb/> Parameterized generation of labeled datasets for text<lb/> categorization based on a hierarchical directory. In<lb/> Proc. of SIGIR.<lb/> </bibl>
+<bibl>Dudík, Miroslav, Steven J. Phillips, and Robert E.<lb/> Schapire. 2007. Maximum entropy density estima-<lb/>tion with generalized regularization and an application<lb/> to species distribution modeling. JMLR, 8:1217–1260.<lb/> </bibl>
+<bibl>Gao, J., H. Suzuki, and B. Yu. 2006. Approximation<lb/> lasso methods for language modeling. In Proc. of<lb/> ACL/COLING.<lb/> </bibl>
+<bibl>Gao, J., G. Andrew, M. Johnson, and K. Toutanova.<lb/> 2007. A comparative study of parameter estimation<lb/> methods for statistical natural language processing. In<lb/> Proc. of ACL, pages 824–831.<lb/> </bibl>
+<bibl>Kudo, T. and Y. Matsumoto. 2004. A boosting algorithm<lb/> for classification of semi-structured text. In Proc. of<lb/> EMNLP.<lb/> </bibl>
+<bibl>Ng, A. 2004. Feature selection, l1 vs. l2 regularization,<lb/> and rotational invariance. In NIPS.<lb/> </bibl>
+<bibl>Perkins, S. and J. Theeiler. 2003. Online feature selec-<lb/>tion using grafting. ICML.<lb/> </bibl>
+<bibl>Saigo, H., T. Uno, and K. Tsuda. 2007. Mining com-<lb/>plex genotypic features for predicting HIV-1 drug re-<lb/>sistance. Bioinformatics, 23:2455–2462.<lb/> </bibl>
+<bibl>Sassano, Manabu. 2004. Linear-time dependency analy-<lb/>sis for japanese. In Proc. of COLING.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

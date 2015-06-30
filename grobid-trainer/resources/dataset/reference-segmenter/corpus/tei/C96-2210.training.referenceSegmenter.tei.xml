@@ -1,0 +1,26 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>1-</label>R1 SEND (Morph, (Coord, Seam); Re.quest,<lb/> /; [&quot;and&quot;=C(intra/inter)])<lb/> 2-Ill SEND (Mol&apos;t)h , Synl;; Request, Propose;<lb/> [&quot; address&quot; :F,V])<lb/> 3-R2 SEND (Seam, Morph; Ih&apos;.quest, /;<lb/> [nb_verb_(:onj ug ---?] )<lb/> 4-11.2 SEND (Morph, Seam; Answer, Assert;<lb/> [nb_verb_con.i ug --2])<lb/> 5-1/.1 SEND (Seam, Morph; Answer, Assert;<lb/> [&quot;and&quot;=C(inter)])<lb/> 6-I1 SEND (Segln, (Synt, Coord, Ellip); In-<lb/>form, Assert; [&quot;aild&quot;:C(inter)])<lb/> 7-I2 SEND (Synt, (Coord, Segm); hfform, As-<lb/>sert; [&quot;the paper&quot;=SN])<lb/> 8-H1 SEND (Synt, Morph; Answer, Assert;<lb/> [&quot;address&quot; =V,F])<lb/> 9-I3 SEND (Synt, (Se.gln, Coord); hfform, As-<lb/>sert; [&quot; address&quot; =V,F])<lb/> 10-I4 SEND (Ellip, (Synt, Seam); Inforin, As-<lb/>sert; [eJlips_subjeet =&quot; I&quot;])<lb/> 11-I5 SEND (Ellip, (Synt, Segm); Inform, As-<lb/>se.rt; [ellips_c.o.d=&quot;The paper&quot;])<lb/> 12-R1 SEND (Coord, Morph; Answer, Assert;<lb/> [&quot; and&quot;&lt; &gt; C(intra)])<lb/> 13-16 SEND (Coord, (Seam, Ellip, Synt); In-<lb/>form, Assert; [&quot;and&quot;&lt;&gt;C(intra)])<lb/> References<lb/> </bibl>
+<bibl>Benoit P., Rincel P., Sabatier P., Vienne D. A<lb/> user-friendly natural language interface to or-<lb/>acle. In Proccedings of the European Oracle<lb/> Users&apos; group Conference, Paris, 1988.<lb/> </bibl>
+<bibl>Berrendonner A., &quot;Grammaire pour un analy-<lb/>seur, aspects morphologiques&quot;, Les Cahiers du<lb/> CRISS, N 15, Novembre 1990.<lb/> </bibl>
+<bibl>Binot J.L., Demoen B., Hanne K., Solomon L.,<lb/> Vasiliou Y., von Hahn W., and Wachtel T. LO-<lb/>QUI: a logic oriented approach to data and<lb/> knowledge bases supporting natural language<lb/> interaction. In Proceedings of ESPRIT 88 Con-<lb/>ference, 1988.<lb/> </bibl>
+<bibl>Aho A. V., Corasick, M.J., &quot; Efficient string-<lb/>matching: An aid to bibliographic search&quot;,<lb/> Communications of the ACM, Vol. 18, N6, June<lb/> 1975.<lb/> </bibl>
+<bibl>Erli. SAPHIR : manuel de description du logiciel.<lb/> Technical report, Socit rli, 1887.<lb/> </bibl>
+<bibl>Esprit Project 2474. MMI2. Common meaning<lb/> representation by D. Sedlock. Report Bim/13,<lb/> October, 1989.<lb/> </bibl>
+<bibl>Koning J.L., Stefanini M.H., Demazeau Y. &quot;DAI<lb/> Interaction protocols as Control Strategies in<lb/> a Natural Language Processing System&quot;. Pro-<lb/>ceedings of IEEE International Conference on<lb/> Systems, man and Cybernetics, Vancouver, Oc-<lb/>tober, 1995.<lb/> </bibl>
+<bibl>Maegaard B., &amp; Spang Hanssen E., &quot;Segmenta-<lb/>tion automatique du frangais ~crit&quot;, documents<lb/> de linguistique quantitative, Dunod 1978.<lb/> </bibl>
+<bibl>A. Mekaouche, J.C. Bassano,Aimlyseur lingnis-<lb/>tique multi-expert pour la recherche documem<lb/> taire. Avignon, Mai 1991.<lb/> </bibl>
+<bibl>F. Pereira, &quot;The TEAM Natural-Language Inter-<lb/>face System&quot;, Final Report, SRI International,<lb/> Menlo Park, 1985.<lb/> </bibl>
+<bibl>Thomson B., Thompson F. : &quot;ASK is Trans-.<lb/> portable in Half a Dozen Ways&quot;. ACM Trans-<lb/>actions on Office Information Systems, Vol 3, N<lb/> 2, April 1985.<lb/> </bibl>
+<bibl>Searle J.R., &quot;Speech Acts&quot; by Cambridge Univer-<lb/>sity Press, 1969.<lb/> </bibl>
+<bibl>Sian S.S., Adaptation based on cooperative learn-<lb/>ing in multi-agents systems&quot;. In Proceedings<lb/> of the European workshop on Modelling Au-<lb/>tonomous Agent in a Multi-Agent World,<lb/> MAAMAW 1990.<lb/> </bibl>
+<bibl>M.H. St~fanini TALISMAN : un syst~me multi-<lb/>agent pour l&apos;analyse du fran §ais ~crit, Thhse de<lb/> Doctorat, Jan. 1993.<lb/> </bibl>
+<bibl>P. Zweigenbaum, Helene:<lb/> ComprShension<lb/> de compte-rendus d&apos;hospitalisation. Deuxi~ine<lb/> Ecole d&apos;St6 sur le Traitement des Langues Na-<lb/>turelles. L&apos;ENSSAT, Lannion, Juillet 1989.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

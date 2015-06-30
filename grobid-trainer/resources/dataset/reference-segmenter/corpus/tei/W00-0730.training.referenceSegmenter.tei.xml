@@ -1,0 +1,19 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>C. Cortes and Vladimir N. Vapnik. 1995. Support<lb/> Vector Networks. Machine Learning, 20:273-297.<lb/> </bibl>
+<bibl>Thorsten Joachims. 1998. Text Categorization with<lb/> Support Vector Machines: Learning with Many<lb/> Relevant Features. In European Conference on<lb/> Machine Learning (ECML).<lb/> </bibl>
+<bibl>Thorsten Joachims. 1999a. Making Large-Scale<lb/> Support Vector Machine Learning Practical. In<lb/> Advances in Kernel Methods. MIT Press.<lb/> </bibl>
+<bibl>Thorsten Joachims.<lb/> 2000. SVM tight version<lb/> 3.02. http://www-ai.cs.uni-dortmund.de/SOFT-<lb/>WARE/ S VM_LI G H T / svm_light.eng.html.<lb/> </bibl>
+<bibl>Ulrich H.-G Krefiel. 1999. Pairwise Classification<lb/> and Support Vector Machines. In Advances in<lb/> Kernel Methods. MIT Press.<lb/> </bibl>
+<bibl>Hirotoshi Taira and Masahiko Haruno. 1999. Fea-<lb/>ture Selection in SVM Text Categorization. In<lb/> AAAI-99.<lb/> </bibl>
+<bibl>Vladimir N. Vapnik. 1995. The Nature of Statistical<lb/> Learning Theory. Springer.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

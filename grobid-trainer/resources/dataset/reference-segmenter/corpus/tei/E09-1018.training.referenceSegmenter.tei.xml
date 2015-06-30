@@ -1,0 +1,38 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Roxana Angheluta, Patrick Jeuniaux, Rudradeb Mi-<lb/>tra, and Marie-Francine Moens. 2004. Clustering<lb/> algorithms for noun phrase coreference resolution.<lb/> In Proceedings of the 7es Journes internationales<lb/> d&apos;Analyse statistique des Donnes Textuelles, pages<lb/> 60–70, Louvain La Neuve, Belgium, March 10–12.<lb/> </bibl>
+<bibl>Amit Bagga and Breck Baldwin. 1998. Algorithms for<lb/> scoring coreference chains. In In The First Interna-<lb/>tional Conference on Language Resources and Eval-<lb/>uation Workshop on Linguistics Coreference, pages<lb/> 563–566.<lb/> </bibl>
+<bibl>P. Brown, S. Della Pietra, V. Della Pietra, and R. Mer-<lb/>cer. 1993. The mathematics of statistical machine<lb/> translation: Parameter estimation. Computational<lb/> Linguistics, 19(2).<lb/> </bibl>
+<bibl>Donna K. Byron. 2002. Resolving pronominal<lb/> reference to abstract entities. In Proceedings of<lb/> the 40th Annual Meeting of the Association for<lb/> Computational Linguistics (ACL2002), pages 80–<lb/> 87, Philadelphia, PA, USA, July 6–12.<lb/> </bibl>
+<bibl>Claire Cardie and Kiri Wagstaff. 1999. Noun phrase<lb/> coreference as clustering. In In Proceedings of<lb/> EMNLP, pages 82–89.<lb/> </bibl>
+<bibl>Eugene Charniak and Mark Johnson. 2005. Coarse-<lb/>to-fine n-best parsing and MaxEnt discriminative<lb/> reranking. In Proc. of the 2005 Meeting of the<lb/> Assoc. for Computational Linguistics (ACL), pages<lb/> 173–180.<lb/> </bibl>
+<bibl>Colin Cherry and Shane Bergsma. 2005. An Expecta-<lb/>tion Maximization approach to pronoun resolution.<lb/> In Proceedings of the Ninth Conference on Compu-<lb/>tational Natural Language Learning (CoNLL-2005),<lb/> pages 88–95, Ann Arbor, Michigan, June. Associa-<lb/>tion for Computational Linguistics.<lb/> </bibl>
+<bibl>Michael Collins and Yorav Singer. 1999. Unsuper-<lb/>vised models for named entity classification. In Pro-<lb/>ceedings of the Joint SIGDAT Conference on Empir-<lb/>ical Methods in Natural Language Processing and<lb/> Very Large Corpora (EMNLP 99).<lb/> </bibl>
+<bibl>Niyu Ge, John Hale, and Eugene Charniak. 1998. A<lb/> statistical approach to anaphora resolution. In Pro-<lb/>ceedings of the Sixth Workshop on Very Large Cor-<lb/>pora, pages 161–171, Orlando, Florida. Harcourt<lb/> Brace.<lb/> </bibl>
+<bibl>Aria Haghighi and Dan Klein. 2007. Unsupervised<lb/> coreference resolution in a nonparametric Bayesian<lb/> model. In Proceedings of the 45th Annual Meet-<lb/>ing of the Association for Computational Linguis-<lb/>tics, pages 848–855. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Andrew Kehler, Douglas Appelt, Lara Taylor, and<lb/> Aleksandr Simma. 2004a. Competitive self-trained<lb/> pronoun interpretation. In Daniel Marcu Susan Du-<lb/>mais and Salim Roukos, editors, HLT-NAACL 2004:<lb/> Short Papers, pages 33–36, Boston, Massachusetts,<lb/> USA, May 2 -May 7. Association for Computa-<lb/>tional Linguistics.<lb/> </bibl>
+<bibl>Andrew Kehler, Douglas E. Appelt, Lara Taylor, and<lb/> Aleksandr Simma. 2004b. The (non)utility of<lb/> predicate-argument frequencies for pronoun inter-<lb/>pretation. In Proceedings of the 2004 Human Lan-<lb/>guage Technology Conference of the North Ameri-<lb/>can Chapter of the Association for Computational<lb/> Linguistics, pages 289–296.<lb/> </bibl>
+<bibl>Shalom Lappin and Herber J. Leass. 1994. An algo-<lb/>rithm for pronouminal anaphora resolution. Compu-<lb/>tational Linguistics, 20(4):535–561.<lb/> </bibl>
+<bibl>Min-Yen Kan Long Qiu and Tat-Seng Chua. 2004.<lb/> A public reference implementation of the RAP<lb/> anaphora resolution algorithm. In Proceedings of<lb/> the Fourth International Conference on Language<lb/> Resources and Evaluation, volume I, pages 291–<lb/> 294.<lb/> </bibl>
+<bibl>David McClosky, Eugene Charniak, and MarkJohnson.<lb/> 2008. BLLIP North American News Text, Complete.<lb/> Linguistic Data Consortium. LDC2008T13.<lb/> </bibl>
+<bibl>Bernard Merialdo. 1991. Tagging text with a prob-<lb/>abilistic model. In International Conference on<lb/> Speech and Signal Processing, volume 2, pages<lb/> 801–818.<lb/> </bibl>
+<bibl>Ruslan Mitkov, Richard Evans, and Constantin Or˘ asan.<lb/> 2002. A new, fully automatic version of Mitkov&apos;s<lb/> knowledge-poor pronoun resolution method. In<lb/> Proceedings of the Third International Conference<lb/> on Intelligent Text Processing and Computational<lb/> Linguistics (CICLing-2002), Mexico City, Mexico,<lb/> February, 17 – 23.<lb/> </bibl>
+<bibl>Thomas Morton, Joern Kottmann, Jason Baldridge, and<lb/> Gann Bierner. 2005. Opennlp: A java-based nlp<lb/> toolkit. http://opennlp.sourceforge.net.<lb/> </bibl>
+<bibl>Massimo Poesio and Mijail A. Kabadjov. 2004.<lb/> A general-purpos, of-the-shelf anaphora resolution<lb/> module: implementataion and preliminary evalu-<lb/>ation. In Proceedings of the 2004 international<lb/> Conference on Language Evaluation and Resources,<lb/> pages 663,668.<lb/> </bibl>
+<bibl>Massimo Poesio and Renata Vieira. 1998. A corpus-<lb/>based investigation of definite description use. Com-<lb/>putational Linguistics, 24(2):183–216.<lb/> </bibl>
+<bibl>Wee Meng Soon, Hwee Tou Ng, and Daniel<lb/> Chung Yong Lim. 2001. A machine learning ap-<lb/>proach to coreference resolution of noun phrases.<lb/> Computational Linguistics, 27(4):521–544.<lb/> </bibl>
+<bibl>Joel R. Tetreault. 2001. A corpus-based evaluation<lb/> of centering and pronoun resolution. Computational<lb/> Linguistics, 27(4):507–520.<lb/> </bibl>
+<bibl>Yannick Versley, Simone Ponzetto, Massimo Poesio,<lb/> Vladimir Eidelman, Alan Jern, Jason Smith, Xi-<lb/>aofeng Yang, and Alessandro Moschitti. 2008.<lb/> Bart: A modular toolkit for coreference resolution.<lb/> In Companion Volume of the Proceedings of the 46th<lb/> Annual Meeting of the Association for Computa-<lb/>tional Linguistics, pages 9–12.<lb/> </bibl>
+<bibl>Marilyn A. Walker. 1989. Evaluating discourse pro-<lb/>cessing algorithms. In ACL, pages 251–261.<lb/> </bibl>
+<bibl>Xiaofeng Yang, Jian Su, Guodong Zhou, and<lb/> Chew Lim Tan. 2004. Improving pronoun res-<lb/>olution by incorporating coreferential information<lb/> of candidates. In Proceedings of the 42nd An-<lb/>nual Meeting of the Association for Computational<lb/> Linguistics (ACL2004), pages 127–134, Barcelona,<lb/> Spain, July 21–26.<lb/> </bibl>
+<bibl>Xiaofeng Yang, Jian Su, and Chew Lim Tan. 2006.<lb/> Kernel-based pronoun resolution with structured<lb/> syntactic knowledge. In Proceedings of the 21st In-<lb/>ternational Conference on Computational Linguis-<lb/>tics and 44th Annual Meeting of the Association for<lb/> Computational Linguistics, pages 41–48, Sydney,<lb/> Australia, July. Association for Computational Lin-<lb/>guistics.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

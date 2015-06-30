@@ -1,0 +1,29 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Statanjeev Banerjee, Alon Lavie. 2005. METEOR: An<lb/> Automatic Metric for MT Evaluation with Im-<lb/>proved Correlation with Human Judgements. In<lb/> Proceedings of the ACL Workshop on Intrinsic and<lb/> Extrinsic Evaluation Measures for Machine Trans-<lb/>lation and/or Summarization 2005.<lb/> </bibl>
+<bibl>Chris Callison-Burch, Miles Osborne, Philipp Koehn.<lb/> 2006. Re-evaluating the Role of Bleu in Machine<lb/> Translation Research. In Proceedings of the Euro-<lb/>pean Chapter of the ACL 2006.<lb/> </bibl>
+<bibl>Martin Chodorow, Claudia Leacock. 2000. An unsu-<lb/>pervised method for detecting grammatical errors,<lb/> In 1st Meeting of the North America Chapter of the<lb/> ACL, pp.140–147, 2000.<lb/> </bibl>
+<bibl>Thorsten Joachims. 1998. Making Large-scale Sup-<lb/>port Vector Machine Learning Practical, In B.<lb/> Scholkopf, C. Burges, A. Smola. Advances in Ker-<lb/>nel Methods: Support VectorMachines, MIT Press,<lb/> Cambridge, MA, December.<lb/> </bibl>
+<bibl>Jesus Gimenez and Llis Marquez. 2007. Linguistic<lb/> features for automatic evaluation of heterogeneous<lb/> MT systems, Workshop of statistical machine trans-<lb/>lation in conjunction with 45 th ACL, 2007.<lb/> </bibl>
+<bibl>Dan Klein, Christopher Manning. 2003. Accurate<lb/> Unlexicalized Parsing, Proceedings of the 41 th<lb/> Meeting of the ACL, pp. 423-430.<lb/> </bibl>
+<bibl>Philipp Koehn. 2004. Statistical Significance Tests for<lb/> Machine Translation Evaluation. In Proc. of the<lb/> EMNLP, Barcelona, Spain.<lb/> </bibl>
+<bibl>Chiho Li, Minghui Li, Dongdong Zhang, Mu Li,<lb/> Ming Zhou, Yi Guan. 2007. A Probabilistic Ap-<lb/>proach to Syntax-based Reor-dering for SMT. In<lb/> Proceedings of the 45 th ACL, 2007.<lb/> </bibl>
+<bibl>Chin-Yew Lin and Franz Josef Och. 2004. Automatic<lb/> evaluation of machine translation quality using<lb/> longest common subsequence and skip-bigram sta-<lb/>tistics. In Proceedings of the 42 th ACL 2004.<lb/> </bibl>
+<bibl>Ding Liu, Daniel Gildea. 2005. Syntactic Features for<lb/> Evaluation of Machine Translation, ACL Work-<lb/>shop on Intrinsic and Extrinsic Evaluation Meas-<lb/>ures for Machine Translation and/or Summariza-<lb/>tion.<lb/> </bibl>
+<bibl>Shuxin Liu. 2002. Linguistics of Contemporary Chi-<lb/>nese Language (in Chinese), Advanced Education<lb/> Publisher.<lb/> </bibl>
+<bibl>Jiping Lv. 2000. Foundation of Mandarin Grammar<lb/> (in Chinese), Shangwu Publisher.<lb/> </bibl>
+<bibl>Franz Josef Och, Hermann Ney. 2003. A Systematic<lb/> Comparison of Various Statistical Alignment Mod-<lb/>els, Computational Linguistics, volume 29, number<lb/> 1, pp. 19-51 March 2003.<lb/> </bibl>
+<bibl>Kishore Papieni, Salim Roukos, Todd Ward, Wei-Jing<lb/> Zhu. 2002. BLEU: a method for automatic evalua-<lb/>tion of machine translation, In Proceedings of the<lb/> ACL 2002.<lb/> </bibl>
+<bibl>Shiwen Yu. 1993. Automatic evaluation of output<lb/> quality for machine translation systems, In Pro-<lb/>ceedings of the evaluators&apos; forum, April 21-24,<lb/> 1991, Les Rasses, Vaud, 1993.<lb/> </bibl>
+<bibl>Yang Ye, Ming Zhou, Chinyew Lin. 2007. Sentence<lb/> level machine translation evaluation as a ranking<lb/> problem: one step aside from BLEU, In Workshop<lb/> of statistical machine translation, in conjunction<lb/> with 45 th ACL, 2007.<lb/> </bibl>
+<bibl>Ming Zhou. 2000, A Block-Based Robust Dependency<lb/> Parser for Unrestricted Chinese Text. Proceedings<lb/> of Second Chinese Language Processing Workshop,<lb/> 2000, held in conjunction with ACL, 2000.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

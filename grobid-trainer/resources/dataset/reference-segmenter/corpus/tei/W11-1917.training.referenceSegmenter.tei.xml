@@ -1,0 +1,29 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        ing 
+        <bibl>integer programming. In Human Language Tech-<lb/>nologies 2007: The Conference of the North Ameri-<lb/>can Chapter of the Association for Computational Lin-<lb/>guistics; Proceedings of the Main Conference, pages<lb/> 236–243, Rochester, New York, April. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Jenny Rose Finkel and Christopher D. Manning. 2008.<lb/> Enforcing transitivity in coreference resolution. In<lb/> Proceedings of ACL-08: HLT, Short Papers, pages 45–<lb/> 48, Columbus, Ohio, June. Association for Computa-<lb/>tional Linguistics.<lb/> </bibl>
+<bibl>Aria Haghighi and Dan Klein. 2009. Simple coreference<lb/> resolution with rich syntactic and semantic features.<lb/> In Proceedings of the 2009 Conference on Empiri-<lb/>cal Methods in Natural Language Processing, pages<lb/> 1152–1161, Singapore, August. Association for Com-<lb/>putational Linguistics.<lb/> </bibl>
+<bibl>J. Han and M. Kamber. 2006. Data mining: concepts<lb/> and techniques. Morgan Kaufmann.<lb/> </bibl>
+<bibl>Manfred Klenner. 2007. Enforcing consistency on coref-<lb/>erence sets. In Recent Advances in Natural Language<lb/> Processing (RANLP), pages 323–328.<lb/> </bibl>
+<bibl>Xiaoqiang Luo, Abe Ittycheriah, Hongyan Jing, Nanda<lb/> Kambhatla, and Salim Roukos. 2004. A mention-<lb/>synchronous coreference resolution algorithm based<lb/> on the bell tree. In Proceedings of the 42nd Meet-<lb/>ing of the Association for Computational Linguistics<lb/> (ACL&apos;04), Main Volume, pages 135–142, Barcelona,<lb/> Spain, July.<lb/> </bibl>
+<bibl>Andrew McCallum and Ben Wellner. 2004. Conditional<lb/> models of identity uncertainty with application to noun<lb/> coreference. In NIPS 2004.<lb/> </bibl>
+<bibl>Vincent Ng and Claire Cardie. 2002. Identifying<lb/> anaphoric and non-anaphoric noun phrases to improve<lb/> coreference resolution. In Proceedings of the 19th in-<lb/>ternational conference on Computational linguistics -<lb/>Volume 1, COLING &apos;02, pages 1–7, Stroudsburg, PA,<lb/> USA. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Vincent Ng. 2005. Machine learning for coreference res-<lb/>olution: From local classification to global ranking. In<lb/> Proceedings of the 43rd Annual Meeting of the Asso-<lb/>ciation for Computational Linguistics (ACL&apos;05), pages<lb/> 157–164, Ann Arbor, Michigan, June. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Vincent Ng. 2007. Shallow semantics for coreference<lb/> resolution. In Proceedings of IJCAI, pages 1689–<lb/> 1694.<lb/> </bibl>
+<bibl>Simone Paolo Ponzetto and Michael Strube. 2006. Ex-<lb/>ploiting semantic role labeling, wordnet and wikipedia<lb/> for coreference resolution. In Proceedings of the Hu-<lb/>man Language Technology Conference of the NAACL,<lb/> Main Conference, pages 192–199, New York City,<lb/> USA, June. Association for Computational Linguis-<lb/>tics.<lb/> </bibl>
+<bibl>Sameer Pradhan, Eduard Hovy, Mitch Marcus, Martha<lb/> Palmer, Lance Ramshaw, and Ralph Weischedel.<lb/> 2007a. Ontonotes: A unified relational semantic rep-<lb/>resentation. International Journal of Semantic Com-<lb/>puting (IJSC), 1(4):405–419.<lb/> </bibl>
+<bibl>Sameer Pradhan, Lance Ramshaw, Ralph Weischedel,<lb/> Jessica MacBride, and Linnea Micciulla. 2007b. Un-<lb/>restricted coreference: Identifying entities and events<lb/> in ontonotes. In in Proceedings of the IEEE Inter-<lb/>national Conference on Semantic Computing (ICSC),<lb/> September 17-19.<lb/> </bibl>
+<bibl>Sameer Pradhan, Lance Ramshaw, Mitchell Marcus,<lb/> Martha Palmer, Ralph Weischedel, and Nianwen Xue.<lb/> 2011. Conll-2011 shared task: Modeling unrestricted<lb/> coreference in ontonotes. In Proceedings of the Fif-<lb/>teenth Conference on Computational Natural Lan-<lb/>guage Learning (CoNLL 2011), Portland, Oregon,<lb/> June.<lb/> </bibl>
+<bibl>Wee Meng Soon, Hwee Tou Ng, and Daniel Chung Yong<lb/> Lim. 2001. A machine learning approach to coref-<lb/>erence resolution of noun phrases. Comput. Linguist.,<lb/> 27:521–544, December.<lb/> </bibl>
+<bibl>Michael Strube, Stefan Rapp, and Christoph Müller.<lb/> 2002. The influence of minimum edit distance on<lb/> reference resolution. In Proceedings of the ACL-02<lb/> conference on Empirical methods in natural language<lb/> processing -Volume 10, EMNLP &apos;02, pages 312–319,<lb/> Stroudsburg, PA, USA. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Xiaofeng Yang, Jian Su, and Chew Lim Tan. 2006.<lb/> Kernel-based pronoun resolution with structured syn-<lb/>tactic knowledge. In Proceedings of the 21st Interna-<lb/>tional Conference on Computational Linguistics and<lb/> 44th Annual Meeting of the Association for Compu-<lb/>tational Linguistics, pages 41–48, Sydney, Australia,<lb/> July. Association for Computational Linguistics.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

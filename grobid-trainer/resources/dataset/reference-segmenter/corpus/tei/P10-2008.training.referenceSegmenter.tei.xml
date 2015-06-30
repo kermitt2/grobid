@@ -1,0 +1,30 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>H. Baayen, H. van Halteren, and F. Tweedie. 1996.<lb/> Outside the cave of shadows: using syntactic annota-<lb/>tion to enhance authorship attribution. Literary and<lb/> Linguistic Computing, 11(3):121–132, September.<lb/> </bibl>
+<bibl>Binongo and Smith. 1999. A Study of Oscar Wilde&apos;s<lb/> Writings. Journal of Applied Statistics, 26:781.<lb/> </bibl>
+<bibl>J Burrows. 1987. Word-patterns and Story-shapes:<lb/> The Statistical Analysis of Narrative Style.<lb/> </bibl>
+<bibl>Joachim Diederich, Jörg Kindermann, Edda Leopold,<lb/> and Gerhard Paass. 2000. Authorship Attribu-<lb/>tion with Support Vector Machines. Applied Intel-<lb/>ligence, 19:2003.<lb/> </bibl>
+<bibl>D. I. Holmes and R. S. Forsyth. 1995. The Federal-<lb/>ist Revisited: New Directions in Authorship Attri-<lb/>bution. Literary and Linguistic Computing, 10:111–<lb/> 127.<lb/> </bibl>
+<bibl>Thorsten Joachims. 1998. Text categorization with<lb/> Support Vector Machines: Learning with many rel-<lb/>evant features. In Proceedings of the 10th European<lb/> Conference on Machine Learning (ECML), pages<lb/> 137–142, Berlin, Heidelberg. Springer-Verlag.<lb/> </bibl>
+<bibl>Patrick Juola and John Sofko. 2004. Proving and<lb/> Improving Authorship Attribution Technologies. In<lb/> Proceedings of Canadian Symposium for Text Anal-<lb/>ysis (CaSTA).<lb/> </bibl>
+<bibl>Dan Klein and Christopher D. Manning. 2003a. Ac-<lb/>curate unlexicalized parsing. In Proceedings of the<lb/> 41st Annual Meeting on Association for Computa-<lb/>tional Linguistics (ACL), pages 423–430, Morris-<lb/>town, NJ, USA. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>Dan Klein and Christopher D. Manning. 2003b. Fast<lb/> Exact Inference with a Factored Model for Natural<lb/> Language Parsing. In Advances in Neural Infor-<lb/>mation Processing Systems 15 (NIPS), pages 3–10.<lb/> MIT Press.<lb/> </bibl>
+<bibl>Kim Luyckx and Walter Daelemans. 2008. Author-<lb/>ship Attribution and Verification with Many Authors<lb/> and Limited Data. In Proceedings of the 22nd Inter-<lb/>national Conference on Computational Linguistics<lb/> (COLING), pages 513–520, August.<lb/> </bibl>
+<bibl>Andrew Kachites McCallum.<lb/> 2002.<lb/> MAL-<lb/>LET: A Machine Learning for Language Toolkit.<lb/> http://mallet.cs.umass.edu.<lb/> </bibl>
+<bibl>Frederick Mosteller and David L. Wallace. 1984. Ap-<lb/>plied Bayesian and Classical Inference: The Case of<lb/> the Federalist Papers. Springer-Verlag.<lb/> </bibl>
+<bibl>Andrew Y. Ng and Michael I. Jordan. 2001. On Dis-<lb/>criminative vs. Generative classifiers: A compari-<lb/>son of logistic regression and naive Bayes. In Ad-<lb/>vances in Neural Information Processing Systems 14<lb/> (NIPS), pages 841–848.<lb/> </bibl>
+<bibl>Fuchun Peng, Dale Schuurmans, Viado Keselj, and<lb/> Shaojun Wang. 2003. Language Independent<lb/> Authorship Attribution using Character Level Lan-<lb/>guage Models. In Proceedings of the 10th Confer-<lb/>ence of the European Chapter of the Association for<lb/> Computational Linguistics (EACL).<lb/> </bibl>
+<bibl>Bernard Rosner. 2005. Fundamentals of Biostatistics.<lb/> Duxbury Press.<lb/> </bibl>
+<bibl>E. Stamatatos, N. Fakotakis, and G. Kokkinakis. 1999.<lb/> Automatic Authorship Attribution. In Proceedings<lb/> of the 9th Conference of the European Chapter of the<lb/> Association for Computational Linguistics (EACL),<lb/> pages 158–164, Morristown, NJ, USA. Association<lb/> for Computational Linguistics.<lb/> </bibl>
+<bibl>E. Stamatatos. 2009. A Survey of Modern Author-<lb/>ship Attribution Methods. Journal of the Ameri-<lb/>can Society for Information Science and Technology,<lb/> 60(3):538–556.<lb/> </bibl>
+<bibl>Rong Zheng, Yi Qin, Zan Huang, and Hsinchun<lb/> Chen. 2009. Authorship Analysis in Cybercrime<lb/> Investigation. Lecture Notes in Computer Science,<lb/> 2665/2009:959.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

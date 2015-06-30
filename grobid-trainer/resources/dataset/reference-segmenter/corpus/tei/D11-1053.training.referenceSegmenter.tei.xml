@@ -1,0 +1,48 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>D. Agarwal and B.C. Chen. Regression-based latent<lb/> factor models. In Proceedings of the 15th ACM<lb/> SIGKDD international conference on Knowledge<lb/> discovery and data mining, pages 19–28. ACM,<lb/> 2009.<lb/> </bibl>
+<bibl>Jae-Wook Ahn, Peter Brusilovsky, Jonathan Grady,<lb/> Daqing He, and Sue Y. Syn. Open user profiles<lb/> for adaptive news systems: help or harm? In Pro-<lb/>ceedings of the 16th international conference on<lb/> World Wide Web (WWW), 2007.<lb/> </bibl>
+<bibl>Robert Bell, Yehuda Koren, and Chris Volinsky.<lb/> Modeling relationships at multiple scales to im-<lb/>prove accuracy of large recommender systems. In<lb/> KDD, 2007.<lb/> </bibl>
+<bibl>D. Billsus and M. Pazanni. Adaptive news access.<lb/> Springer, Berlin, 2007.<lb/> </bibl>
+<bibl>J.G. Booth and J.P Hobert. Maximizing generalized<lb/> linear mixed model likelihoods with an automated monte carlo EM algorithm. J.R.Statist. Soc. B,<lb/> 1999.<lb/> </bibl>
+<bibl>Wei Chu and Seung T. Park. Personalized recom-<lb/>mendation on dynamic content using predictive<lb/> bilinear models. In Proceedings of the 18th inter-<lb/>national conference on World Wide Web (WWW),<lb/> 2009.<lb/> </bibl>
+<bibl>Cristian<lb/> Danescu-Niculescu-Mizil,<lb/> Gueorgi<lb/> Kossinets, Jon Kleinberg, and Lillian Lee.<lb/> </bibl>
+<bibl>How opinions are received by online communi-<lb/>ties: A case study on Amazon.com helpfulness<lb/> votes. In Proceedings of WWW, pages 141–150,<lb/> 2009.<lb/> </bibl>
+<bibl>Abhinandan S. Das, Mayur Datar, Ashutosh Garg,<lb/> and Shyam Rajaram. Google news personaliza-<lb/>tion: scalable online collaborative filtering. In<lb/> Proceedings of the 16th international conference<lb/> on World Wide Web (WWW), 2007.<lb/> </bibl>
+<bibl>A. P. Dempster, N. M. Laird, and D. B. Rubin. Max-<lb/>imum likelihood from incomplete data via the EM<lb/> algorithm. Journal of the Royal Statistical Soci-<lb/>ety, Series B, 39:1–38, 1977.<lb/> </bibl>
+<bibl>Peter D. Hoff. Bilinear mixed-effects models for<lb/> dyadic data. Journal of the American Statistical<lb/> Association, 100(469):286–295, 2005.<lb/> </bibl>
+<bibl>Minqing Hu and Bing Liu. Mining and summa-<lb/>rizing customer reviews. In Proceedings of the<lb/> ACM SIGKDD Conference on Knowledge Dis-<lb/>covery and Data Mining (KDD), pages 168–177,<lb/> 2004.<lb/> </bibl>
+<bibl>Daisuke Kawahara, Kentaro Inui, and Sadao Kuro-<lb/>hashi. Identifying contradictory and contrastive<lb/> relations between statements to outline web infor-<lb/>mation on a given topic. In Proceedings of the<lb/> 23rd International Conference on Computational<lb/> Linguistics (COLING): Posters, 2010.<lb/> </bibl>
+<bibl>Soo-Min Kim, Patrick Pantel, Tim Chklovski, and<lb/> Marco Pennacchiotti. Automatically assessing re-<lb/>view helpfulness. In Proceedings of the Confer-<lb/>ence on Empirical Methods in Natural Language<lb/> Processing (EMNLP), pages 423–430, Sydney,<lb/> Australia, July 2006. Association for Computa-<lb/>tional Linguistics.<lb/> </bibl>
+<bibl>Y. Koren. Factor in the neighbors: Scalable and ac-<lb/>curate collaborative filtering. ACM Transactions<lb/> on Knowledge Discovery from Data (TKDD), 4<lb/> (1):1–24, 2010. ISSN 1556-4681.<lb/> </bibl>
+<bibl>Michael Laver, Kenneth Benoit, and John Garry. Ex-<lb/>tracting policy positions from political texts using<lb/> words as data. American Political Science Review,<lb/> 97(2):311–331, 2003.<lb/> </bibl>
+<bibl>Wei-Hao Lin and Alexander Hauptmann. Are these<lb/> documents written from different perspectives? A<lb/> test of different perspectives based on sta tisti-<lb/>cal distribution divergence. In Proceedings of the<lb/> International Conference on Computational Lin-<lb/>guistics (COLING)/Proceedings of the Associa-<lb/>tion for Computational Linguistics (ACL), pages<lb/> 1057–1064, Sydney, Australia, July 2006. Asso-<lb/>ciation for Computational Linguistics.<lb/> </bibl>
+<bibl>Wei-Hao Lin, Theresa Wilson, Janyce Wiebe, and<lb/> Alexander Hauptmann. Which side are you on?<lb/> identifying perspectives at the document and sen-<lb/>tence levels. In Proceedings of the Conference on<lb/> Natural Language Learning (CoNLL), 2006.<lb/> </bibl>
+<bibl>Jingjing Liu, Yunbo Cao, Chin-Yew Lin, Yalou<lb/> Huang, and Ming Zhou. Low-quality product<lb/> review detection in opinion summarization. In<lb/> Proceedings of the Joint Conference on Empir-<lb/>ical Methods in Natural Language Processing<lb/> and Computational Natural Language Learning<lb/> (EMNLP-CoNLL), pages 334–342, 2007. Poster<lb/> paper.<lb/> </bibl>
+<bibl>Yue Lu, Panayiotis Tsaparas, Alexandros Ntoulas,<lb/> and Livia Polanyi. Exploiting social context for<lb/> review quality prediction. In Proceedings of the<lb/> 19th International World Wide Web Conference<lb/> (WWW), 2010.<lb/> </bibl>
+<bibl>P. McCullagh and J. A. Nelder. Generalized Linear<lb/> Models. Chapman &amp; Hall/CRC, 1989.<lb/> </bibl>
+<bibl>Tony Mullen and Robert Malouf. A preliminary in-<lb/>vestigation into sentiment analysis of informal po-<lb/>litical discourse. In AAAI Symposium on Compu-<lb/>tational Approaches to Analysing Weblogs (AAAI-<lb/>CAAW), pages 159–162, 2006.<lb/> </bibl>
+<bibl>Tony Mullen and Robert Malouf. Taking sides:<lb/> User classification for informal online political<lb/> discourse. Internet Research, 18:177–190, 2008.<lb/> </bibl>
+<bibl>Bo Pang and Lillian Lee. Opinion mining and sen-<lb/>timent analysis. Foundations and Trends in Infor-<lb/>mation Retrieval, 2(1-2):1–135, 2008. </bibl>
+<bibl>Ana-Maria Popescu and Oren Etzioni. Extracting<lb/> product features and opinions from reviews. In<lb/> Proceedings of the Human Language Technol-<lb/>ogy Conference and the Conference on Empir-<lb/>ical Methods in Natural Language Pro cessing<lb/> (HLT/EMNLP), 2005.<lb/> </bibl>
+<bibl>Steffen Rendle and Schmidt-Thie Lars. Pairwise<lb/> interaction tensor factorization for personalized<lb/> tag recommendation. In Proceedings of the third<lb/> ACM international conference on Web search and<lb/> data mining, WSDM &apos;10, pages 81–90, New<lb/> York, NY, USA, 2010. ACM.<lb/> </bibl>
+<bibl>R. Salakhutdinov and A. Mnih. Bayesian proba-<lb/>bilistic matrix factorization using Markov chain<lb/> Monte Carlo. In Proceedings of the 25th inter-<lb/>national conference on Machine learning, pages<lb/> 880–887. ACM, 2008a.<lb/> </bibl>
+<bibl>R. Salakhutdinov and A. Mnih. Probabilistic ma-<lb/>trix factorization. Advances in neural information<lb/> processing systems, 20:1257–1264, 2008b.<lb/> </bibl>
+<bibl>Badrul Sarwar, George Karypis, Joseph Konstan,<lb/> and John Reidl. Item-based collaborative filter-<lb/>ing recommendation algorithms. In WWW &apos;01:<lb/> Proceedings of the 10th international conference<lb/> on World Wide Web, pages 285–295. ACM, 2001.<lb/> </bibl>
+<bibl>Benjamin Snyder and Regina Barzilay. Multiple as-<lb/>pect ranking using the Good Grief algorithm. In<lb/> Proceedings of the Joint Human Language Tech-<lb/>nology/North American Chapter of the ACL Con-<lb/>ference (HLT-NAACL), pages 300–307, 2007.<lb/> </bibl>
+<bibl>Swapna Somasundaran and Janyce Wiebe. Recog-<lb/>nizing stances in online debates. In Proceedings<lb/> of the Joint Conference of the 47th Annual Meet-<lb/>ing of the ACL and the 4th International Joint<lb/> Conference on Natural Language Processing of<lb/> the AFNLP, 2009.<lb/> </bibl>
+<bibl>Swapna Somasundaran and Janyce Wiebe. Recog-<lb/>nizing stances in ideological on-line debates. In<lb/> Proceedings of the NAACL HLT 2010 Workshop<lb/> on Computational Approaches to Analysis and<lb/> Generation of Emotion in Text, 2010.<lb/> </bibl>
+<bibl>David H. Stern, Ralf Herbrich, and Thore Grae-<lb/>pel. Matchbox: large scale online bayesian rec-<lb/>ommendations. In Proceedings of the 18th inter-<lb/>national conference on World Wide Web (WWW),<lb/> 2009.<lb/> </bibl>
+<bibl>Matt Thomas, Bo Pang, and Lillian Lee. Get out<lb/> the vote: Determining support or opposition from<lb/> Congressional floor-debate transcripts. In Pro-<lb/>ceedings of the Conference on Empirical Methods<lb/> in Natural Language Processing (EMNLP), pages<lb/> 327–335, 2006.<lb/> </bibl>
+<bibl>Ivan Titov and Ryan McDonald. A joint model of<lb/> text and aspect ratings for sentiment summariza-<lb/>tion. In Proceedings of the Association for Com-<lb/>putational Linguistics (ACL), 2008.<lb/> </bibl>
+<bibl>Jun Wang, Arjen P. de Vries, and Marcel J. T. Rein-<lb/>ders. Unifying user-based and item-based collab-<lb/>orative filtering approaches by similarity fusion.<lb/> In SIGIR &apos;06: Proceedings of the 29th annual in-<lb/>ternational ACM SIGIR conference on Research<lb/> and development in information retrieval, pages<lb/> 501–508, New York, NY, USA, 2006. ACM.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

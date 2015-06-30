@@ -1,0 +1,20 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Abe Kazemzadeh, Sungbok Lee and Shrikanth<lb/> Narayanan. 2003. Acoustic Correlates of User<lb/> Response to Error in Human-Computer Dialogues,<lb/> Proceedings of ASRU 2003: 215-220.<lb/> </bibl>
+<bibl>Antal van den Bosch, Emiel Krahmer and Marc<lb/> Swerts. 2001. Detecting problematic turns in<lb/> human-machine<lb/> interactions:<lb/> Rule-Induction<lb/> Versus Memory-Based Learning Approaches,<lb/> Proceedings of ACL 2001: 499-507.<lb/> </bibl>
+<bibl>Eric Nyberg, Teruko Mitamura, Paul Placeway,<lb/> Michael Duggan, Nobuo Hataoka. 2002. Dynamic<lb/> Dialog Management with VoiceXML, Proceedings<lb/> of HLT-2002.<lb/> </bibl>
+<bibl>Kyoto University, 2002, Julius Open-Source Real-<lb/>Time Large Vocabulary Speech Recognition<lb/> Engine, http://julius.sourceforge.jp.<lb/> </bibl>
+<bibl>Marilyn Walker, Jerry Wright and Irene Langkilde.<lb/> 2000. Using Natural Language Processing and<lb/> Discourse Features to Identify Understanding<lb/> Errors in a Spoken Dialogue System, Proceedings<lb/> of ICML-2000: 1111-1118.<lb/> </bibl>
+<bibl>Morena Danieli. 1996. On the Use of Expectations for<lb/> Detecting<lb/> and<lb/> Repairing<lb/> Human-Machine<lb/> Miscommunication,<lb/> Proceedings<lb/> of<lb/> AAAI<lb/> Workshop on Detection, Repair and Prevention of<lb/> Human-Machine Miscommunication: 87-93.<lb/> </bibl>
+<bibl>Norihide Kitaoka, Kaoko Kakutani and Seiichi<lb/> Nakagawa. 2003. Detection and Recognition of<lb/> Correction Utterance in Spontaneously Spoken<lb/> Dialog, Proceedings of EUROSPEECH 2003: 625-<lb/>628.<lb/> </bibl>
+<bibl>Susann LuperFoy and David Duff. 1996. Disco: A<lb/> Four-Step Dialog Recovery Program, The<lb/> Proceedings of the AAAI Workshop on Detection,<lb/> Repair and Prevention of Human-Machine<lb/> Miscommunication: 73-76.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

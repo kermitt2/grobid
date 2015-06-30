@@ -1,0 +1,33 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Bikel, Daniel M. 2004. A distributional analysis of a<lb/> lexicalized statistical parsing model. In In EMNLP,<lb/> pages 182–189.<lb/> </bibl>
+<bibl>Björne, Jari, Juho Heimonen, Filip Ginter, Antti<lb/> Airola, Tapio Pahikkala, and Tapio Salakoski. 2009.<lb/> Extracting complex biological events with rich<lb/> graph-based feature sets. In Proceedings of the<lb/> BioNLP&apos;09 Shared Task on Event Extraction, pages<lb/> 10–18.<lb/> </bibl>
+<bibl>Clegg, Andrew B. and Adrian J. Shepherd. 2007.<lb/> Benchmarking natural-language parsers for biolog-<lb/>ical applications using dependency graphs. BMC<lb/> Bioinformatics, 8.<lb/> </bibl>
+<bibl>de Marneffe, Marie-Catherine and Christopher D.<lb/> Manning. 2008. Stanford typed dependencies man-<lb/>ual. Technical report, September.<lb/> </bibl>
+<bibl>de Marneffe, Marie-Catherine, Bill MacCartney, and<lb/> Christopher D. Manning. 2006. Generating typed<lb/> dependency parses from phrase structure parses. In<lb/> Proceedings of the IEEE / ACL 2006 Workshop on<lb/> Spoken Language Technology.<lb/> </bibl>
+<bibl>Johansson, Richard and Pierre Nugues. 2007. Ex-<lb/>tended constituent-to-dependency conversion for<lb/> English. In Proceedings of NODALIDA 2007, Tartu,<lb/> Estonia, May 25-26.<lb/> </bibl>
+<bibl>Kim, Jin-Dong, Tomoko Ohta, Sampo Pyysalo, Yoshi-<lb/>nobu Kano, and Jun&apos;ichi Tsujii. 2009. Overview<lb/> of bionlp&apos;09 shared task on event extraction. In<lb/> BioNLP &apos;09: Proceedings of the Workshop on<lb/> BioNLP, pages 1–9.<lb/> </bibl>
+<bibl>Klein, Dan and Christopher D. Manning. 2003. Ac-<lb/>curate unlexicalized parsing. In ACL &apos;03: Proceed-<lb/>ings of the 41st Annual Meeting on Association for<lb/> Computational Linguistics, pages 423–430, Morris-<lb/>town, NJ, USA. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>McClosky, David. 2009. Any Domain Parsing: Au-<lb/>tomatic Domain Adaptation for Natural Language<lb/> Parsing. Ph.D. thesis, Department of Computer Sci-<lb/>ence, Brown University.<lb/> </bibl>
+<bibl>Miwa, Makoto, Sampo Pyysalo, Tadayoshi Hara, and<lb/> Jun&apos;ichi Tsujii. 2010a. A comparative study of syn-<lb/>tactic parsers for event extraction. In BioNLP2010:<lb/> Proceedings of the Workshop on BioNLP, Uppsala,<lb/> Sweden, July.<lb/> </bibl>
+<bibl>Miwa, Makoto, Rune Saetre, Jin-Dong Kim, and<lb/> Jun&apos;ichi Tsujii. 2010b. Event extraction with com-<lb/>plex event classification using rich features. Jour-<lb/>nal of Bioinformatics and Computational Biology<lb/> (JBCB), 8(1):131–146, February.<lb/> </bibl>
+<bibl>Miyao, Yusuke, Kenji Sagae, Rune Saetre, Takuya<lb/> Matsuzaki, and Jun ichi Tsujii. 2009. Evalu-<lb/>ating contributions of natural language parsers to<lb/> protein-protein interaction extraction. Bioinformat-<lb/>ics, 25(3):394–400.<lb/> </bibl>
+<bibl>¨<lb/> </bibl>
+<bibl>Onder Eker. 2009. Parser evaluation using textual<lb/> entailments. Master&apos;s thesis, Bo˘ gaziçï<lb/> Universitesi,<lb/> August.<lb/> </bibl>
+<bibl>Pyysalo, Sampo, Filip Ginter, Veronika Laippala, Ka-<lb/>tri Haverinen, Juho Heimonen, and Tapio Salakoski.<lb/> 2007. On the unification of syntactic annotations<lb/> under the stanford dependency scheme: A case<lb/> study on bioinfer and genia. In Biological, transla-<lb/>tional, and clinical language processing, pages 25–<lb/> 32, Prague, Czech Republic, June. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Riedel, Sebastian, Hong-Woo Chun, Toshihisa Takagi,<lb/> and Jun&apos;ichi Tsujii. 2009. A markov logic approach<lb/> to bio-molecular event extraction. In BioNLP &apos;09:<lb/> Proceedings of the Workshop on BioNLP, pages 41–<lb/> 49, Morristown, NJ, USA. Association for Compu-<lb/>tational Linguistics.<lb/> </bibl>
+<bibl>Rimell, Laura and Stephen Clark. 2009. Porting a<lb/> lexicalized-grammar parser to the biomedical do-<lb/>main. J. of Biomedical Informatics, 42(5):852–865.<lb/> </bibl>
+<bibl>Rimell, Laura, Stephen Clark, and Mark Steedman.<lb/> 2009. Unbounded dependency recovery for parser<lb/> evaluation. In Proceedings of the 2009 Conference<lb/> on Empirical Methods in Natural Language Pro-<lb/>cessing, pages 813–821, Singapore, August. Asso-<lb/>ciation for Computational Linguistics.<lb/> </bibl>
+<bibl>Sagae, Kenji and Jun&apos;ichi Tsujii. 2007. Dependency<lb/> parsing and domain adaptation with LR models and<lb/> parser ensembles. In EMNLP-CoNLL 2007.<lb/> </bibl>
+<bibl>Tateisi, Yuka, Akane Yakushiji, Tomoko Ohta, and<lb/> Junfichi Tsujii. 2005. Syntax annotation for the ge-<lb/>nia corpus. In Proceedings of the IJCNLP 2005,<lb/> Companion volume, pages 222–227, Jeju Island,<lb/> Korea, October.<lb/> </bibl>
+<bibl>Tsuruoka, Yoshimasa, Yuka Tateishi, Jin-Dong Kim,<lb/> Tomoko Ohta, John McNaught, Sophia Ananiadou,<lb/> and Jun&apos;ichi Tsujii. 2005. Developing a robust<lb/> part-of-speech tagger for biomedical text. In Boza-<lb/>nis, Panayiotis and Elias N. Houstis, editors, Pan-<lb/>hellenic Conference on Informatics, volume 3746 of<lb/> Lecture Notes in Computer Science, pages 382–392.<lb/> Springer.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

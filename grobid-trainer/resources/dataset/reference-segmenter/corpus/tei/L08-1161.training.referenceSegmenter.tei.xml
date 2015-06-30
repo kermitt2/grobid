@@ -1,0 +1,21 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>6.</label> References<lb/> Adjectives in Germanet, http://www.sfs.nphil.uni<lb/> -tuebingen.de/lsd/Adj.html.<lb/> </bibl>
+<bibl>Cruse, D. (1986) Lexical semantics. University Press,<lb/> Cambridge.<lb/> </bibl>
+<bibl>Fellbaum, C. (ed.) (1998) WordNet: An Electronic<lb/> Lexical Database. MIT Press, Cambridge MA.<lb/> </bibl>
+<bibl>Hundschnurscher, F. &amp; J. Splett (1982) Semantik der<lb/> Adjektive im Deutschen: Analyse der semantischen<lb/> Relationen. Westdeutscher Verlag.<lb/> </bibl>
+<bibl>Maks, I., Martin, W., Meerseman, H. de (1999) RBN<lb/> Manual, Vrije Universiteit Amsterdam.<lb/> </bibl>
+<bibl>Mendes, S. (2006) Adjectives in Wordnet.Pt, In:<lb/> Proceedings of GWC-2006.<lb/> </bibl>
+<bibl>Niles, I., Pease, A. (2001) Towards a Standard Upper<lb/> Ontology. In: Proceedings of FOIS 2, Maine.<lb/> </bibl>
+<bibl>Peters, I. &amp; W. Peters (2000) The treatment of adjectives<lb/> in SIMPLE: Theoretical Observations, In: Proceedings<lb/> of LREC 2000.<lb/> </bibl>
+<bibl>Raskin, V. And Nirenburg, S. (1995) Lexical Semantics of<lb/> Adjectives: a Microtheory of Adjectival Meaning.<lb/> MCCS report 95-288.<lb/> </bibl>
+<bibl>Vliet, H.D. van der (2007) The Referentie Bestand<lb/> Nederlands as a multi-purpose lexical database. In:<lb/> International Journal of Lexicography 20.3.<lb/> </bibl>
+<bibl>Vossen, P. (ed.) (1998) EuroWordNet: a multilingual<lb/> database with lexical semantic networks for European<lb/> Languages. Kluwer, Dordrecht.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

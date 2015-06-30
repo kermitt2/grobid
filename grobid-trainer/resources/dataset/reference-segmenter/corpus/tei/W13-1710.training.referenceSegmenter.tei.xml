@@ -1,0 +1,30 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Ahmed Abbasi and Hsinchun Chen. 2005. Apply-<lb/>ing authorship analysis to extremist-group web fo-<lb/>rum messages. IEEE Intelligent Systems, 20(5):67–75,<lb/> September.<lb/> </bibl>
+<bibl>Daniel Blanchard, Joel Tetreault, Derrick Higgins, Aoife<lb/> Cahill, and Martin Chodorow. 2013. TOEFL11: A<lb/> Corpus of Non-Native English. Technical report, Ed-<lb/>ucational Testing Service.<lb/> </bibl>
+<bibl>Chih-Chung Chang and Chih-Jen Lin. 2011. LIBSVM:<lb/> A library for support vector machines. ACM Transac-<lb/>tions on Intelligent Systems and Technology, 2:27:1–<lb/> 27:27.<lb/> </bibl>
+<bibl>Carole E. Chaski. 2005. Who&apos;s at the keyboard: Au-<lb/>thorship attribution in digital evidence investigations.<lb/> International Journal of Digital Evidence, 4:2005.<lb/> </bibl>
+<bibl>Eugene Garfield. 1964. Can citation indexing be auto-<lb/>mated?<lb/> Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard<lb/> Pfahringer, Peter Reutemann, and Ian H. Witten.<lb/> 2009. The weka data mining software: an update.<lb/> SIGKDD Explor. Newsl., 11(1):10–18.<lb/> </bibl>
+<bibl>Mark Johnson, Thomas L. Griffiths, and Sharon Goldwa-<lb/>ter. 2007. Adaptor grammars: A framework for speci-<lb/>fying compositional nonparametric bayesian models.<lb/> Advances in neural information processing systems,<lb/> 19:641.<lb/> </bibl>
+<bibl>Dan Klein and Christopher D Manning. 2003. Ac-<lb/>curate unlexicalized parsing. In Proceedings of the<lb/> 41st Annual Meeting on Association for Computa-<lb/>tional Linguistics-Volume 1, pages 423–430. Associ-<lb/>ation for Computational Linguistics.<lb/> </bibl>
+<bibl>Ekaterina Kochmar. 2011. Identification of a Writer&apos;s<lb/> Native Langauge by Error Analysis. Ph.D. thesis.<lb/> </bibl>
+<bibl>Moshe Koppel, Jonathan Schler, and Kfir Zigdon. 2005.<lb/> Determining an author&apos;s native language by mining a<lb/> text for errors. In Proceedings of the eleventh ACM<lb/> SIGKDD international conference on Knowledge dis-<lb/>covery in data mining, pages 624–628, Chicago, IL.<lb/> ACM.<lb/> </bibl>
+<bibl>Moshe Koppel, Jonathan Schler, and Shlomo Argamon.<lb/> 2008. Computational methods in authorship attribu-<lb/>tion. Journal of the American Society for information<lb/> Science and Technology, 60(1):9–26.<lb/> </bibl>
+<bibl>Andrew Kachites McCallum.<lb/> 2002.<lb/> Mal-<lb/>let: A machine learning for language toolkit.<lb/> http://mallet.cs.umass.edu.<lb/> </bibl>
+<bibl>Frederick Mosteller and David L. Wallace. 1964. Infer-<lb/>ence and Disputed Authorship: The Federalist Papers.<lb/> Addison-Wesley, Reading, Mass.<lb/> </bibl>
+<bibl>Joel Tetreault, Daniel Blanchard, and Aoife Cahill. 2013.<lb/> A report on the first native language identification<lb/> shared task. In Proceedings of the Eighth Workshop<lb/> on Innovative Use of NLP for Building Educational<lb/> Applications, Atlanta, GA, USA, June. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Oren Tsur and Ari Rappoport. 2007. Using classifier fea-<lb/>tures for studying the effect of native language on the<lb/> choice of written second language words. In Proceed-<lb/>ings of the Workshop on Cognitive Aspects of Com-<lb/>putational Language Acquisition, CACLA &apos;07, pages<lb/> 9–16, Stroudsburg, PA, USA. Association for Compu-<lb/>tational Linguistics.<lb/> </bibl>
+<bibl>Sze-Meng Jojo Wong and Mark Dras. 2009. Contrastive<lb/> Analysis and Native Language Identification. In Pro-<lb/>ceedings of the Australasian Language Technology As-<lb/>sociation Workshop 2009, pages 53–61, Sydney, Aus-<lb/>tralia, December.<lb/> </bibl>
+<bibl>Sze-Meng Jojo Wong and Mark Dras. 2011. Exploiting<lb/> Parse Structures for Native Language Identification.<lb/> In Proceedings of the 2011 Conference on Empiri-<lb/>cal Methods in Natural Language Processing, pages<lb/> 1600–1610, Edinburgh, Scotland, UK., July. Associa-<lb/>tion for Computational Linguistics.<lb/> </bibl>
+<bibl>Sze-Meng Jojo Wong, Mark Dras, and Mark Johnson.<lb/> 2011. Topic Modeling for Native Language Identifi-<lb/>cation. In Proceedings of the Australasian Language<lb/> Technology Association Workshop 2011, pages 115–<lb/> 124, Canberra, Australia, December.<lb/> </bibl>
+<bibl>Sze-Meng Jojo Wong, Mark Dras, and Mark Johnson.<lb/> 2012. Exploring Adaptor Grammars for Native Lan-<lb/>guage Identification. In Proceedings of the 2012 Joint<lb/> Conference on Empirical Methods in Natural Lan-<lb/>guage Processing and Computational Natural Lan-<lb/>guage Learning, pages 699–709, Jeju Island, Korea,<lb/> July. Association for Computational Linguistics.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

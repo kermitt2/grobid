@@ -1,0 +1,24 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>N. Alon, R. Yuster, U. Zwick. 1995. Color-coding. Jour-<lb/>nal of the ACM (JACM), 42(4):844–856.<lb/> </bibl>
+<bibl>B. Awerbuch, Y. Azar, A. Blum, S. Vempala. 1995.<lb/> Improved approximation guarantees for minimum-<lb/>weight k-trees and prize-collecting salesmen. In Pro-<lb/>ceedings of the STOC, 277–283.<lb/> </bibl>
+<bibl>E. Balas. 1989. The prize collecting traveling salesman<lb/> problem. Networks, 19:621–636.<lb/> </bibl>
+<bibl>M. Banko, V. O. Mittal, M. J. Witbrock. 2000. Headline<lb/> generation based on statistical translation. In Proceed-<lb/>ings of the ACL, 318–325.<lb/> </bibl>
+<bibl>S. Corston-Oliver, M. Gamon, E. Ringger, R. Moore.<lb/> 2002. An overview of amalgam: A machine-learned<lb/> generation module. In Proceedings of INLG, 33–40.<lb/> </bibl>
+<bibl>R. G. Downey, M. R. Fellows. 1995. Fixed-parameter<lb/> tractability and completeness II: On completeness for<lb/> W [1]. Theoretical Computer Science, 141(1–2):109–<lb/> 131.<lb/> </bibl>
+<bibl>J. Eisner, R. W. Tromble. 2006. Local search with very<lb/> large-scale neighborhoods for optimal permutations<lb/> in machine translation. In Proceedings of the HLT-<lb/>NAACL Workshop on Computationally Hard Problems<lb/> and Joint Inference in Speech and Language Process-<lb/>ing.<lb/> </bibl>
+<bibl>U. Germann, M. Jahr, K. Knight, D. Marcu, K. Yamada.<lb/> 2001. Fast decoding and optimal decoding for ma-<lb/>chine translation. In Proceedings of the EACL/ACL,<lb/> 228–235.<lb/> </bibl>
+<bibl>F. Jelinek. 1969. A fast sequential decoding algorithm<lb/> using a stack. IBM Research Journal of Research and<lb/> Development.<lb/> </bibl>
+<bibl>R. Jin, A. G. Hauptmann. 2001. Automatic title genera-<lb/>tion for spoken broadcast news. In Proceedings of the<lb/> HLT, 1–3.<lb/> </bibl>
+<bibl>R. Motwani, P. Raghavan. 1995. Randomized Algo-<lb/>rithms. Cambridge University Press, New York, NY.<lb/> </bibl>
+<bibl>D. Roth, W. Yih. 2004. A linear programming formula-<lb/>tion for global inference in natural language tasks. In<lb/> Proceedings of the CONLL, 1–8.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

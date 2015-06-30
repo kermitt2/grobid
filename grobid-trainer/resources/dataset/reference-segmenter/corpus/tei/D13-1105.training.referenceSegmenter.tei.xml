@@ -1,0 +1,44 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Sabine Brants and Silvia Hansen. 2002. Developments<lb/> in the tiger annotation scheme and their realization in<lb/> the corpus. In In Proceedings of the Third Conference<lb/> on Language Resources and Evaluation LREC-02. Las<lb/> Palmas de Gran Canaria, pages 1643–1649.<lb/> </bibl>
+<bibl>Tim Buckwalter. 2004. Buckwalter Arabic Morpho-<lb/>logical Analyzer Version 2.0. LDC catalog number<lb/> LDC2004L02, ISBN 1-58563-324-0.<lb/> </bibl>
+<bibl>Maris Camilleri. 2011. Island morphology: Morphol-<lb/>ogy&apos;s interactions in the study of stem patterns. Lin-<lb/>guistica, 51:65–84. Internal and External Boundaries<lb/> of Morphology.<lb/> </bibl>
+<bibl>Burcu Can and Suresh Manandhar. 2012. Probabilistic<lb/> hierarchical clustering of morphological paradigms.<lb/> EACL 2012, page 654.<lb/> </bibl>
+<bibl>Erwin Chan. 2006. Learning probabilistic paradigms for<lb/> morphology in a latent class model. In Proceedings of<lb/> the Eighth Meeting of the ACL Special Interest Group<lb/> on Computational Phonology at HLT-NAACL, pages<lb/> 69–78.<lb/> </bibl>
+<bibl>Lionel Clément, BenoˆBenoˆıt Sagot, and Bernard Lang. 2004.<lb/> Morphology based automatic acquisition of large-<lb/>coverage lexica. In LREC 04, pages 1841–1844.<lb/> </bibl>
+<bibl>Mathias Creutz and Krista Lagus. 2007. Unsupervised<lb/> models for morpheme segmentation and morphology<lb/> learning. ACM Transactions on Speech and Language<lb/> Processing (TSLP), 4(1).<lb/> </bibl>
+<bibl>Silviu Cucerzan and David Yarowsky. 2002. Boot-<lb/>strapping a multilingual part-of-speech tagger in one<lb/> person-day. In Proceedings of the 6th conference on<lb/> Natural language learning-Volume 20, pages 1–7.<lb/> </bibl>
+<bibl>Grégoire Détrez and Aarne Ranta.<lb/> 2012.<lb/> Smart<lb/> paradigms and the predictability and complexity of in-<lb/>flectional morphology. EACL 2012, page 645.<lb/> </bibl>
+<bibl>Markus Dreyer and Jason Eisner. 2011. Discover-<lb/>ing morphological paradigms from plain text using a<lb/> dirichlet process mixture model. In Proceedings of<lb/> the Conference on Empirical Methods in Natural Lan-<lb/>guage Processing, pages 616–627.<lb/> </bibl>
+<bibl>Greg Durrett and John DeNero. 2013. Supervised Learn-<lb/>ing of Complete Morphological Paradigms. In Pro-<lb/>ceedings of the 2013 Conference of the North Amer-<lb/>ican Chapter of the Association for Computational<lb/> Linguistics: Human Language Technologies (NAACL-<lb/>HLT), Atlanta, GA.<lb/> </bibl>
+<bibl>Ahmed El Kholy and Nizar Habash. 2010. Techniques<lb/> for Arabic morphological detokenization and ortho-<lb/>graphic denormalization. In Proceedings of LREC-<lb/>2010, May.<lb/> </bibl>
+<bibl>Ramy Eskander, Nizar Habash, Ann Bies, Seth Kulick,<lb/> and Mohamed Maamouri. 2013. Automatic correc-<lb/>tion and extension of morphological annotations. In<lb/> Proceedings of the 7th Linguistic Annotation Work-<lb/>shop and Interoperability with Discourse, pages 1–<lb/> 10, Sofia, Bulgaria, August. Association for Compu-<lb/>tational Linguistics.<lb/> </bibl>
+<bibl>Raphael Finkel and Gregory Stump. 2002. Generating<lb/> Hebrew Verb Morphology by Default Inheritance Hi-<lb/>erarchies. In Proceedings of the Workshop on Compu-<lb/>tational Approaches to Semitic Languages, pages 9–<lb/> 18.<lb/> </bibl>
+<bibl>Markus Forsberg, Harald Hammarström, and Aarne<lb/> Ranta. 2006. Morphological lexicon extraction from<lb/> raw text data. Advances in Natural Language Process-<lb/>ing, pages 488–499.<lb/> </bibl>
+<bibl>Hassan Gadalla, Hanaa Kilany, Howaida Arram, Ashraf<lb/> Yacoub, Alaa El-Habashi, Amr Shalaby, Krisjanis<lb/> Karins, Everett Rowson, Robert MacIntyre, Paul<lb/> Kingsbury, David Graff, and Cynthia McLemore.<lb/> 1997. CALLHOME Egyptian Arabic Transcripts. In<lb/> Linguistic Data Consortium, Philadelphia.<lb/> </bibl>
+<bibl>Hassan Gadalla. 2000. Comparative Morphology of<lb/> Standard and Egyptian Arabic. LINCOM EUROPA.<lb/> </bibl>
+<bibl>Nizar Habash and Owen Rambow. 2006. MAGEAD: A<lb/> morphological analyzer and generator for the Arabic<lb/> dialects. In Proceedings of the 21st International Con-<lb/>ference on Computational Linguistics and 44th Annual<lb/> Meeting of the Association for Computational Linguis-<lb/>tics, pages 681–688, Sydney, Australia.<lb/> </bibl>
+<bibl>Nizar Habash, Owen Rambow, and George Kiraz. 2005.<lb/> Morphological Analysis and Generation for Arabic<lb/> Dialects.<lb/> In Proceedings of the ACL Workshop<lb/> on Computational Approaches to Semitic Languages,<lb/> pages 17–24, Ann Arbor, Michigan.<lb/> </bibl>
+<bibl>Nizar Habash, Abdelhadi Soudi, and Tim Buckwalter.<lb/> 2007. On Arabic Transliteration. In A. van den Bosch<lb/> and A. Soudi, editors, Arabic Computational Mor-<lb/>phology: Knowledge-based and Empirical Methods.<lb/> Springer.<lb/> </bibl>
+<bibl>Nizar Habash, Ramy Eskander, and Abdelati Hawwari.<lb/> 2012. A Morphological Analyzer for Egyptian Ara-<lb/>bic. In Proceedings of the Twelfth Meeting of the Spe-<lb/>cial Interest Group on Computational Morphology and<lb/> Phonology, pages 1–9, Montréal, Canada.<lb/> </bibl>
+<bibl>Nizar Habash. 2010. Introduction to Arabic Natural<lb/> Language Processing. Morgan &amp; Claypool Publish-<lb/>ers.<lb/> </bibl>
+<bibl>Harald Hammarström and Lars Borin. 2011. Unsuper-<lb/>vised learning of morphology. Computational Lin-<lb/>guistics, 37(2):309–350.<lb/> </bibl>
+<bibl>H. Kilany, H. Gadalla, H. Arram, A. Yacoub, A. El-<lb/>Habashi, and C. McLemore.<lb/> 2002.<lb/> Egyptian<lb/> Colloquial Arabic Lexicon. LDC catalog number<lb/> LDC99L22.<lb/> </bibl>
+<bibl>Kimmo Koskenniemi. 1983. Two-Level Model for Mor-<lb/>phological Analysis. In Proceedings of the 8th In-<lb/>ternational Joint Conference on Artificial Intelligence,<lb/> pages 683–685.<lb/> </bibl>
+<bibl>Christian Monson, Jaime Carbonell, Alon Lavie, and Lori<lb/> Levin. 2008. Paramor: Finding paradigms across<lb/> morphology. Advances in Multilingual and Multi-<lb/>modal Information Retrieval, pages 900–907.<lb/> </bibl>
+<bibl>Sylvain Neuvel and Sean A Fulop. 2002. Unsuper-<lb/>vised learning of morphology without morphemes. In<lb/> Proceedings of the ACL-02 workshop on Morphologi-<lb/>cal and phonological learning-Volume 6, pages 31–40.<lb/> Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Matthew G Snover, Gaja E Jarosz, and Michael R Brent.<lb/> 2002. Unsupervised learning of morphology using a<lb/> novel directed search algorithm: Taking the first step.<lb/> In Proceedings of the ACL-02 workshop on Morpho-<lb/>logical and phonological learning-Volume 6, pages<lb/> 11–20.<lb/> </bibl>
+<bibl>Benjamin Snyder and Regina Barzilay. 2008. Unsuper-<lb/>vised multilingual learning for morphological segmen-<lb/>tation. In Proceedings of ACL-08: HLT, pages 737–<lb/> 745, Columbus, Ohio, June.<lb/> </bibl>
+<bibl>Gregory T. Stump. 2001. Inflectional Morphology. A<lb/> Theory of Paradigm Structure. Cambridge Studies in<lb/> Linguistics. Cambridge University Press.<lb/> </bibl>
+<bibl>Géraldine Walther. 2011. Measuring morphological<lb/> canonicity. Linguistica, 51:157–180. Internal and Ex-<lb/>ternal Boundaries of Morphology.<lb/> </bibl>
+<bibl>David Yarowsky and Richard Wicentowski. 2000. Min-<lb/>imally supervised morphological analysis by multi-<lb/>modal alignment. In Proceedings of the 38th Annual<lb/> Meeting on Association for Computational Linguis-<lb/>tics, pages 207–216.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

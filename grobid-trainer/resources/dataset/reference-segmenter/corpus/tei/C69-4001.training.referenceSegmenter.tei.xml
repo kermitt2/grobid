@@ -1,0 +1,23 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        Bibliography<lb/> 
+        <bibl>Cneatham, T. E., Jr. (1968) &quot;On the Generation and Implementation<lb/> of Reductions Analysis Programs for Context Free<lb/> Grammars,&quot; Computer Associates, C[ -6902-2911, Feb. 29, 1968.<lb/> </bibl>
+<bibl>Cnomsky, Noam (1965) Aspects of the Theory of Syntax, M.I.T. Press,<lb/> Cambridge, Mass.<lb/> </bibl>
+<bibl>Culicover, Peter (1969) &quot;A Discussion of the CUE Grammar&quot; (forthcoming)<lb/> Kuno, Susumu (1967) &quot;Computer Analysis of English,&quot; Mathematical<lb/> Aspects of Computer Science, American Mathematical<lb/> Society, Vol. 19.<lb/> </bibl>
+<bibl>Lewis, Clayton (1969) &quot;The RA-DRYAD System for Automated Recognition<lb/> Grammars&quot; (forthcoming)<lb/> </bibl>
+<bibl>Mitre (1964) English Preprocessor Manual, The Mitre Corporation<lb/> Bedford, Mass.<lb/> </bibl>
+<bibl>Moyne, J. A. (1967a) &quot;Toward the Understanding of Natural Languages by<lb/> Machines,&quot; Proceedings of the X International Congress of<lb/> Linguists, Bucharest.<lb/> </bibl>
+<bibl>Moyne, J. A. (1967b) Proto-RELADES: A Restrictive Natural Language<lb/> System, IBM Corp., BPC Technical Report No. 3, Oct. 3, ]967,<lb/> Cambridge, Mass.<lb/> </bibl>
+<bibl>Petrick, Stanley Roy (1965) A Recognition Procedure for Transformational<lb/> Grammars, M.I.T. doctoral thesis, ,Cambridge, Mass.<lb/> </bibl>
+<bibl>Rosenbaum, P. and D. Lochak (1966) The IBM Core Grammar of En91ish,<lb/> Thomas J. Watson Research Center, IBM Corporation,<lb/> Yorktown Heights, New York.<lb/> </bibl>
+<bibl>Rosenbaum, Peter S. (1968) Engiish Grammar II, IBM Research Report<lb/> R C 2070, Yorktown Heights, New York.<lb/> </bibl>
+<bibl>Woods, William A. (1967) Semantics for a question-Answering System<lb/> Report No. NSF-19, The Computation Laboratory, Harvard<lb/> University, Cambridge, Mass.<lb/> 3.<lb/> ¸<lb/> -II-</bibl>
+        </listBibl>
+    </text>
+</tei>
+

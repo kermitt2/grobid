@@ -1,0 +1,20 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Zhengdong Dong and Qiang Dong. 2006. HowNet<lb/> And The Computation Of Meaning. World Scien-<lb/>tific.<lb/> </bibl>
+<bibl>John Lafferty, Andrew McCallum, and Fernando<lb/> Pereira. 2001. Conditional random fields: Prob-<lb/>abilistic models for segmenting and labeling se-<lb/>quence data. In Proceedings of ICML &apos;01.<lb/> </bibl>
+<bibl>Xiaoqiang Luo. 2003. A maximum entropy Chinese<lb/> character-based parser. In Proceedings of EMNLP<lb/> &apos;03.<lb/> </bibl>
+<bibl>Hwee Tou Ng and Jin Kiat Low. 2004. Chinese part-<lb/>of-speech tagging: One-at-a-time or all-at-once?<lb/> word-based or character-based? In Proceedings of<lb/> EMNLP &apos;04.<lb/> </bibl>
+<bibl>Richard Schwartz and Yen-Lu Chow. 1990. The n-<lb/>best algorithm: An efficient and exact procedure for<lb/> finding the n most likely sentence hypotheses. In<lb/> Proceedings of ICASSP &apos;90.<lb/> </bibl>
+<bibl>Charles Sutton and Andrew McCallum. 2005. Compo-<lb/>sition of conditional random fields for transfer learn-<lb/>ing. In Proceedings of HLT/EMNLP &apos;05.<lb/> </bibl>
+<bibl>Charles Sutton, Khashayar Rohanimanesh, and An-<lb/>drew McCallum. 2004. Dynamic conditional ran-<lb/>dom fields: Factorized probabilistic models for la-<lb/>beling and segmenting sequence data. In Proceed-<lb/>ings of ICML &apos;04.<lb/> </bibl>
+<bibl>Nianwen Xue, Fu-Dong Chiou, and Martha Stone<lb/> Palmer. 2002. Building a large-scale annotated Chi-<lb/>nese corpus. In Proceedings of COLING &apos;02.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

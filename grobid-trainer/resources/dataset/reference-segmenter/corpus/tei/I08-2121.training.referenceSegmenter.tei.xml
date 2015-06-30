@@ -1,0 +1,20 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Arvind Arasu, Venkatesh Ganti, and Raghav Kaushik.<lb/> 2006. Efficient exact set-similarity joins. Proceedings<lb/> of the 32nd International Conference on Very Large<lb/> Data Bases, pages 918–929.<lb/> </bibl>
+<bibl>Roberto J. Bayardo, Yiming Ma, and Ramakrishnan<lb/> Srikant. 2007. Scaling up all pairs similarity search.<lb/> Proceedings of the 16th International Conference on<lb/> World Wide Web, pages 131–140.<lb/> </bibl>
+<bibl>Surajit Chaudhuri, Venkatesh Ganti, and Raghav<lb/> Kaushik. 2006. A primitive operator for similarity<lb/> joins in data cleaning. Proceedings of the 22nd Inter-<lb/>national Conference on Data Engineering(ICDE&apos;06),<lb/> pages 5–16.<lb/> </bibl>
+<bibl>Ahmed K. Elmagarmid, Panagiotis G. Ipeirotis, and Vas-<lb/>silios S. Verykios. 2007. Duplicate record detection:<lb/> A survey. IEEE Transactions on Knowledge and Data<lb/> Engineering, vol.19, no.1, pages 1–15.<lb/> </bibl>
+<bibl>Mauricio A. Hernandez and Salvatore J. Stolfo. 1995.<lb/> The merge/purge problem for large databases. Pro-<lb/>ceedings of the 1995 ACM SIGMOD international<lb/> conference on Management of data, pages 127–138.<lb/> </bibl>
+<bibl>M. A. Jaro. 1989. Advances in record linkage methodol-<lb/>ogy as applied to matching the 1985 census of tampa,<lb/> florida. Journal of the American Statistical Society, 84<lb/> (406), pages 414–420.<lb/> </bibl>
+<bibl>Andrew McCallum, Kamal Nigam, and Lyle H. Ungar.<lb/> 2000. Efficient clustering of high-dimensional data<lb/> sets with application to reference matching. Proceed-<lb/>ings of the sixth ACM SIGKDD international confer-<lb/>ence on Knowledge discovery and data mining, pages<lb/> 169–178.<lb/> </bibl>
+<bibl>Sunita Sarawagi and Alok Kirpal. 2004. Efficient set<lb/> joins on similarity predicates. Proceedings of the 2004<lb/> ACM SIGMOD international conference on Manage-<lb/>ment of data, pages 743–754.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

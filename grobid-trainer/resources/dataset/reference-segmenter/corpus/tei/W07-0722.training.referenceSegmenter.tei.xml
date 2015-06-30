@@ -1,0 +1,21 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>N. F. Ayan and B. J. Dorr. 2006. Going beyond AER: an<lb/> extensive analysis of word alignments and their impact<lb/> on MT. In Proc. of ACL&apos;06, pages 9–16.<lb/> </bibl>
+<bibl>J. Civera and A. Juan. 2006. Mixtures of IBM Model 2.<lb/> In Proc. of EAMT&apos;06, pages 159–167.<lb/> </bibl>
+<bibl>Y. Deng and W. Byrne. 2005. HMM word and phrase<lb/> alignment for statistical machine translation. In Proc.<lb/> of HLT-EMNLP&apos;05, pages 169–176.<lb/> </bibl>
+<bibl>G. J. McLachlan and D. Peel. 2000. Finite Mixture Mod-<lb/>els. Wiley.<lb/> </bibl>
+<bibl>F. J. Och and H. Ney. 2003. A systematic comparison of<lb/> various statistical alignment models. Computational<lb/> Linguistics, 29(1):19–51.<lb/> </bibl>
+<bibl>P. Koehn and others. 2007. Moses: Open Source<lb/> Toolkit for Statistical Machine Translation. In Proc.<lb/> of ACL&apos;07 Demo Session, page To be published.<lb/> </bibl>
+<bibl>K. Toutanova, H. T. Ilhan, and C. D. Manning. 2002.<lb/> Extensions to HMM-based statistical word alignment<lb/> models. In Proc. of EMNLP &apos;02, pages 87–94.<lb/> </bibl>
+<bibl>S. Vogel et al. 1996. HMM-based word alignment in<lb/> statistical translation. In Proc. of CL, pages 836–841.<lb/> </bibl>
+<bibl>B. Zhao and E. P. Xing. 2006. BiTAM: Bilingual Topic<lb/> AdMixture Models for Word Alignment. In Proc. of<lb/> COLING/ACL&apos;06.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

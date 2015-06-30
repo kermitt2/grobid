@@ -1,0 +1,53 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> Eytan Adar, Li Zhang, Lada A. Adamic, and<lb/> Rajan M. Lukose. Implicit structure and the<lb/> dynamics of blogspace. In Workshop on the<lb/> Weblogging Ecosystem, 2004.<lb/> </bibl>
+        <bibl><label>[2]</label> Lars Backstrom, Dan Huttenlocher, Jon Klein-<lb/>berg, and Xiangyang Lan. Group formation<lb/> in large social networks: Membership, growth,<lb/> and evolution. In Proceedings of KDD, 2006.<lb/> </bibl>
+        <bibl><label>[3]</label> Elizabeth Bates, Walter Kintsch, Charles R.<lb/> Fletcher, and Vittoria Giuliani. The role of<lb/> pronominalization and ellipsis in texts: Some<lb/> memory experiments. Journal of Experimental<lb/> Psychology: Human Learning and Memory, 6<lb/> (6):676–691, 1980.<lb/> </bibl>
+        <bibl><label>[4]</label> Frank Boers and Seth Lindstromberg. Find-<lb/>ing ways to make phrase-learning feasible: The<lb/> mnemonic effect of alliteration. System, 33(2):<lb/> 225–238, 2005.<lb/> </bibl>
+        <bibl><label>[5]</label> Samuel D. Bradley and Robert Meeds.<lb/> Surface-structure transformations and advertis-<lb/>ing slogans: The case for moderate syntactic<lb/> complexity. Psychology and Marketing, 19:<lb/> 595–619, 2002.<lb/> </bibl>
+        <bibl><label>[6]</label> Robert Chamblee, Robert Gilmore, Gloria<lb/> Thomas, and Gary Soldow. When copy com-<lb/>plexity can help ad readership. Journal of Ad-<lb/>vertising Research, 33(3):23–23, 1993.<lb/> </bibl>
+        <bibl><label>[7]</label> John Colapinto. Famous names. The New<lb/> Yorker, pages 38–43, 2011.<lb/> </bibl>
+        <bibl><label>[8]</label> Cristian Danescu-Niculescu-Mizil and Lillian<lb/> Lee. Chameleons in imagined conversations:<lb/> A new approach to understanding coordination<lb/> of linguistic style in dialogs. In Proceedings<lb/> of the Workshop on Cognitive Modeling and<lb/> Computational Linguistics, 2011.<lb/> </bibl>
+        <bibl><label>[9]</label> Cristian Danescu-Niculescu-Mizil, Gueorgi<lb/> Kossinets, Jon Kleinberg, and Lillian Lee.<lb/> How opinions are received by online commu-<lb/>nities: A case study on Amazon.com helpful-<lb/>ness votes. In Proceedings of WWW, pages<lb/> 141–150, 2009.<lb/> </bibl>
+        <bibl><label>[10]</label> Stuart Fischoff, Esmeralda Cardenas, Angela<lb/> Hernandez, Korey Wyatt, Jared Young, and<lb/> Rachel Gordon. Popular movie quotes: Re-<lb/>flections of a people and a culture. In Annual<lb/> Convention of the American Psychological As-<lb/>sociation, 2000.<lb/> </bibl>
+        <bibl><label>[11]</label> Daniel Gruhl, R. Guha, David Liben-Nowell,<lb/> and Andrew Tomkins. Information diffusion<lb/> through blogspace. Proceedings of WWW,<lb/> pages 491–501, 2004.<lb/> </bibl>
+        <bibl><label>[12]</label> Marco Guerini, Carlo Strapparava, and<lb/> Oliviero Stock. Trusting politicians&apos; words<lb/> (for persuasive NLP).<lb/> </bibl>
+<bibl>In Proceedings of<lb/> CICLing, pages 263–274, 2008.<lb/> </bibl>
+        <bibl><label>[13]</label> Marco Guerini, Carlo Strapparava, and GözdeGözdë<lb/> Ozbal. Exploring text virality in social net-<lb/>works. In Proceedings of ICWSM (poster),<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[14]</label> Marco Guerini, Alberto Pepe, and Bruno<lb/> Lepri. Do linguistic style and readability of<lb/> scientific abstracts affect their virality? In Pro-<lb/>ceedings of ICWSM, 2012.<lb/> </bibl>
+        <bibl><label>[15]</label> Richard Jackson Harris, Abigail J. Werth,<lb/> Kyle E. Bures, and Chelsea M. Bartel. Social<lb/> movie quoting: What, why, and how? Ciencias<lb/> Psicologicas, 2(1):35–45, 2008.<lb/> </bibl>
+        <bibl><label>[16]</label> Chip Heath, Chris Bell, and Emily Steinberg.<lb/> Emotional selection in memes: The case of<lb/> urban legends. Journal of Personality, 81(6):<lb/> 1028–1041, 2001.<lb/> </bibl>
+        <bibl><label>[17]</label> R. Reed Hunt. The subtlety of distinctiveness:<lb/> What von Restorff really did. Psychonomic<lb/> Bulletin &amp; Review, 2(1):105–112, 1995.<lb/> </bibl>
+        <bibl><label>[18]</label> Ira E. Hyman Jr. and David C. Rubin. Mem-<lb/>orabeatlia: A naturalistic study of long-term<lb/> memory. Memory &amp; Cognition, 18(2):205–<lb/> 214, 1990.<lb/> </bibl>
+        <bibl><label>[19]</label> Richard R. Klink. Creating brand names with<lb/> meaning: The use of sound symbolism. Mar-<lb/>keting Letters, 11(1):5–20, 2000.<lb/> </bibl>
+        <bibl><label>[20]</label> Mark L. Knapp, Cynthia Stohl, and Kath-<lb/>leen K. Reardon.<lb/> &quot; Memorable &quot; mes-<lb/>sages. Journal of Communication, 31(4):27–<lb/> 41, 1981.<lb/> </bibl>
+        <bibl><label>[21]</label> Henry Kučera and W. Nelson Francis. Compu-<lb/>tational analysis of present-day American En-<lb/>glish. Dartmouth Publishing Group, 1967.<lb/> </bibl>
+        <bibl><label>[22]</label> Jure Leskovec, Lada Adamic, and Bernardo<lb/> Huberman. The dynamics of viral market-<lb/>ing. ACM Transactions on the Web, 1(1), May<lb/> 2007.<lb/> </bibl>
+        <bibl><label>[23]</label> Jure Leskovec, Lars Backstrom, and Jon Klein-<lb/>berg. Meme-tracking and the dynamics of the<lb/> news cycle. In Proceedings of KDD, pages<lb/> 497–506, 2009.<lb/> </bibl>
+        <bibl><label>[24]</label> Tina M. Lowrey.<lb/> The relation between<lb/> script complexity and commercial memorabil-<lb/>ity. Journal of Advertising, 35(3):7–15, 2006.<lb/> </bibl>
+        <bibl><label>[25]</label> Rada Mihalcea and Carlo Strapparava. Learn-<lb/>ing to laugh (automatically): Computational<lb/> models for humor recognition. Computational<lb/> Intelligence, 22(2):126–142, 2006.<lb/> </bibl>
+        <bibl><label>[26]</label> Milman Parry and Adam Parry. The making of<lb/> Homeric verse: The collected papers of Mil-<lb/>man Parry. Clarendon Press, Oxford, 1971.<lb/> </bibl>
+        <bibl><label>[27]</label> Everett Rogers. Diffusion of Innovations. Free<lb/> Press, fourth edition, 1995.<lb/> </bibl>
+        <bibl><label>[28]</label> Daniel M. Romero, Brendan Meeder, and Jon<lb/> Kleinberg. Differences in the mechanics of<lb/> information diffusion across topics: Idioms,<lb/> political hashtags, and complex contagion on<lb/> Twitter. Proceedings of WWW, pages 695–704,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[29]</label> David C. Rubin. Very long-term memory for<lb/> prose and verse. Journal of Verbal Learning<lb/> and Verbal Behavior, 16(5):611–621, 1977.<lb/> </bibl>
+        <bibl><label>[30]</label> Nathan Schneider, Rebecca Hwa, Philip Gi-<lb/>anfortoni, Dipanjan Das, Michael Heilman,<lb/> Alan W. Black, Frederick L. Crabbe, and<lb/> Noah A. Smith. Visualizing topical quotations<lb/> over time to understand news discourse. Tech-<lb/>nical Report CMU-LTI-01-103, CMU, 2010.<lb/> </bibl>
+        <bibl><label>[31]</label> David Strang and Sarah Soule. Diffusion in or-<lb/>ganizations and social movements: From hy-<lb/>brid corn to poison pills. Annual Review of So-<lb/>ciology, 24:265–290, 1998.<lb/> </bibl>
+        <bibl><label>[32]</label> Hannah Summerfelt, Louis Lippman, and<lb/> Ira E. Hyman Jr. The effect of humor on mem-<lb/>ory: Constrained by the pun. The Journal of<lb/> General Psychology, 137(4), 2010.<lb/> </bibl>
+        <bibl><label>[33]</label> Eric Sun, Itamar Rosenn, Cameron Marlow,<lb/> and Thomas M. Lento. Gesundheit! Model-<lb/>ing contagion through Facebook News Feed. In<lb/> Proceedings of ICWSM, 2009.<lb/> </bibl>
+        <bibl><label>[34]</label> Annabel Thorn and Mike Page. Interactions<lb/> Between Short-Term and Long-Term Memory<lb/> in the Verbal Domain. Psychology Press, 2009.<lb/> </bibl>
+        <bibl><label>[35]</label> Louis L. Thurstone. A law of comparative<lb/> judgment. Psychological Review, 34(4):273–<lb/> 286, 1927.<lb/> </bibl>
+        <bibl><label>[36]</label> Oren Tsur and Ari Rappoport. What&apos;s in<lb/> a Hashtag? Content based prediction of the<lb/> spread of ideas in microblogging communities.<lb/> In Proceedings of WSDM, 2012.<lb/> </bibl>
+        <bibl><label>[37]</label> Fang Wu, Bernardo A. Huberman, Lada A.<lb/> Adamic, and Joshua R. Tyler. Information flow<lb/> in social groups. Physica A: Statistical and<lb/> Theoretical Physics, 337(1-2):327–335, 2004.<lb/> </bibl>
+        <bibl><label>[38]</label> Shaomei Wu, Jake M. Hofman, Winter A. Ma-<lb/>son, and Duncan J. Watts. Who says what to<lb/> whom on Twitter. In Proceedings of WWW,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[39]</label> Jaewon Yang and Jure Leskovec. Patterns of<lb/> temporal variation in online media. In Pro-<lb/>ceedings of WSDM, 2011.<lb/> </bibl>
+        <bibl><label>[40]</label> Eric Yorkston and Geeta Menon. A sound idea:<lb/> Phonetic effects of brand names on consumer<lb/> judgments. Journal of Consumer Research, 31<lb/> (1):43–51, 2004.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

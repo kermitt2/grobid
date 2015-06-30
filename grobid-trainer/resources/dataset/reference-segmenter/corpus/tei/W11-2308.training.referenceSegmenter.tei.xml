@@ -1,0 +1,46 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Sandra Aluisio, Lucia Specia, Caroline Gasperin and<lb/> Carolina Scarton. 2010. Readability assessment for<lb/> text simplification. In Proceedings of the NAACL HLT<lb/> 2010 Fifth Workshop on Innovative Use of NLP for<lb/> Building Educational Applications, pp. 1–9.<lb/> </bibl>
+<bibl>Giuseppe Attardi. 2006. Experiments with a multilan-<lb/>guage non-projective dependency parser. In Proceed-<lb/>ings of the Tenth Conference on Computational Nat-<lb/>ural Language Learning (CoNLL-X &apos;06), New York<lb/> City, New York, pp. 166–170.<lb/> </bibl>
+<bibl>Regina Barzilay and Mirella Lapata. 2008. Modeling<lb/> local coherence: An entity-based approach. In Com-<lb/>putational Linguistics, 34(1), pp. 1–34.<lb/> </bibl>
+<bibl>Douglas Biber and Susan Conrad. 2009. Register, genre,<lb/> and style. Cambridge, Cambridge University Press.<lb/> </bibl>
+<bibl>Tim vor der Brück, Sven Hartrumpf, Hermann Helbig.<lb/> 2008. A Readability Checker with Supervised Learn-<lb/>ing using Deep Syntactic and Semantic Indicators. In<lb/> Proceedings of the 11th International Multiconference:<lb/> Information Society -IS 2008 -Language Technolo-<lb/>gies, Ljubljana, Slovenia, pp. 92–97.<lb/> </bibl>
+<bibl>Jeanne S. Chall and Edgar Dale. 1995. Readability<lb/> Revisited: The New Dale–Chall Readability Formula.<lb/> Brookline Books, Cambridge, MA.<lb/> Chih-Chung Chang and Chih-Jen Lin. 2001. LIB-<lb/>SVM: a library for support vector machines. Soft-<lb/>ware available at http://www.csie.ntu.edu.<lb/> tw/ ˜ cjlin/libsvm<lb/> Kevyn Collins-Thompson and Jamie Callan. 2004. A<lb/> language modeling approach to predicting reading dif-<lb/>ficulty. In Proceedings of the HLT / NAACL, pp. 193–<lb/> 200.<lb/> </bibl>
+<bibl>Felice Dell&apos;Orletta. 2009. Ensemble system for Part-of-<lb/>Speech tagging. In Proceedings of Evalita&apos;09, Eval-<lb/>uation of NLP and Speech Tools for Italian, Reggio<lb/> Emilia, December.<lb/> </bibl>
+<bibl>Tullio De Mauro. 2000. Il dizionario della lingua ital-<lb/>iana. Torino, Paravia.<lb/> </bibl>
+<bibl>Lijun Feng, Martin Jansche, Matt Huenerfauth and<lb/> Noémie Elhadad. 2010. A comparison of features for<lb/> automatic readability assessment. In Proceedings of<lb/> the 23rd International Conference on Computational<lb/> Linguistics (COLING 2010), pp. 276–284.<lb/> </bibl>
+<bibl>Lijun Feng, Noémie Elhadad and Matt Huenerfauth.<lb/> 2009. Cognitively motivated features for readability<lb/> assessment. In Proceedings of the 12th Conference of<lb/> the European Chapter of the Association for Compu-<lb/>tational Linguistics (EACL &apos;09), pp. 229–237.<lb/> </bibl>
+<bibl>V. Franchina and Roberto Vacca. 1986. Adaptation of<lb/> Flesh readability index on a bilingual text written by<lb/> the same author both in Italian and English languages.<lb/> In Linguaggi (3), pp. 47–49.<lb/> </bibl>
+<bibl>Lyn Frazier. 1985. Syntactic complexity. In D.R.<lb/> Dowty, L. Karttunen and A.M. Zwicky (eds.), Natural<lb/> Language Parsing, Cambridge University Press, Cam-<lb/>bridge, UK.<lb/> </bibl>
+<bibl>Edward Gibson. 1998. Linguistic complexity: Locality<lb/> of syntactic dependencies. In Cognition, 68(1), pp. 1-<lb/>76.<lb/> </bibl>
+<bibl>Michael J. Heilman, Kevyn Collins and Jamie Callan.<lb/> 2007. Combining Lexical and Grammatical Features<lb/> to Improve Readability Measures for First and Second<lb/> Language Texts. In Proceedings of the Human Lan-<lb/>guage Technology Conference, pp. 460–467.<lb/> </bibl>
+<bibl>Michael J. Heilman, Kevyn Collins and Maxine Eske-<lb/>nazi. 2008. An analysis of statistical models and fea-<lb/>tures for reading difficulty prediction. In Proceedings<lb/> of the Third Workshop on Innovative Use of NLP for<lb/> Building Educational Applications (EANL &apos;08), pp.<lb/> 71–79.<lb/> </bibl>
+<bibl>Rohit J. Kate, Xiaoqiang Luo, Siddharth Patwardhan,<lb/> Martin Franz, Radu Florian, Raymond J. Mooney,<lb/> Salim Roukos, Chris Welty. 2010. Learning to Pre-<lb/>dict Readability using Diverse Linguistic Features. In<lb/> Proceedings of the 23rd International Conference on<lb/> Computational Linguistics (COLING 2010), pp. 546–<lb/> 554.<lb/> </bibl>
+<bibl>J. Peter Kincaid, Lieutenant Robert P. Fishburne, Richard<lb/> L. Rogers and Brad S. Chissom. 1975. Derivation<lb/> of new readability formulas for Navy enlisted person-<lb/>nel. Research Branch Report, Millington, TN: Chief<lb/> of Naval Training, pp. 8–75.<lb/> </bibl>
+<bibl>George Kingsley Zipf. 1988. The Psychobiology of Lan-<lb/>guage. Houghton–Miflin, Boston.<lb/> </bibl>
+<bibl>Dekan Lin. 1996. On the structural complexity of nat-<lb/>ural language sentences. In Proceedings of COLING<lb/> 1996, pp. 729–733.<lb/> </bibl>
+<bibl>Pietro Lucisano and Maria Emanuela Piemontese. 1988.<lb/> Gulpease. Una formula per la predizione della diffi-<lb/>coltà dei testi in lingua italiana. In Scuola e Città (3),<lb/> pp. 57–68.<lb/> </bibl>
+<bibl>Ryan McDonald and Joakim Nivre. 2007. Character-<lb/>izing the Errors of Data-Driven Dependency Parsing<lb/> Models. In Proceedings of EMNLP-CoNLL, 2007, pp.<lb/> 122-131.<lb/> </bibl>
+<bibl>Jim Miller and Regina Weinert. 1998. Spontaneous spo-<lb/>ken language. Syntax and discourse. Oxford, Claren-<lb/>don Press.<lb/> </bibl>
+<bibl>Ani Nenkova, Jieun Chae, Annie Louis, and Emily Pitler.<lb/> 2010. Structural Features for Predicting the Linguistic<lb/> Quality of Text Applications to Machine Translation,<lb/> Automatic Summarization and Human–Authored Text.<lb/> In E. Krahmer, M. Theune (eds.), Empirical Methods<lb/> in NLG, LNAI 5790, Springer-Verlag Berlin Heidel-<lb/>berg, pp. 222–241.<lb/> </bibl>
+<bibl>Sarah E. Petersen and Mari Ostendorf. 2006. A machine<lb/> learning approach to reading level assessment. Uni-<lb/>versity of Washington CSE Technical Report.<lb/> </bibl>
+<bibl>Sarah E. Petersen and Mari Ostendorf. 2009. A ma-<lb/>chine learning approach to reading level assessment.<lb/> In Computer Speech and Language (23), pp. 89–106.<lb/> </bibl>
+<bibl>Maria Emanuela Piemontese. 1996. Capire e farsi<lb/> capire. Teorie e tecniche della scrittura controllata<lb/> Napoli, Tecnodid.<lb/> </bibl>
+<bibl>Emily Pitler and Ani Nenkova. 2008. Revisiting read-<lb/>ability: A unified framework for predicting text qual-<lb/>ity. In Proceedings of the 2008 Conference on Em-<lb/>pirical Methods in Natural Language Processing, pp.<lb/> 186–195.<lb/> </bibl>
+<bibl>Kristine Retherford. 2003. Normal development: a<lb/> database of communication and related behaviors.<lb/> Eau Claire, WI: Thinking Publications.<lb/> </bibl>
+<bibl>Brian Roark, Margaret Mitchell and Kristy Hollingshead.<lb/> 2007. Syntactic complexity measures for detecting<lb/> mild cognitive impairment. In Proceedings of the<lb/> Workshop on BioNLP 2007: Biological, Translational,<lb/> and Clinical Language Processing, pp. 1–8.<lb/> </bibl>
+<bibl>Sarah E. Schwarm and Mari Ostendorf. 2005. Read-<lb/>ing level assessment using support vector machines<lb/> and statistical language models. In Proceedings of<lb/> the 43rd Annual Meeting on Association for Compu-<lb/>tational Linguistics (ACL 05), pp. 523–530.<lb/> </bibl>
+<bibl>Luo Si and Jamie Callan. 2001. A statistical model for<lb/> scientific readability. In Proceedings of the tenth in-<lb/>ternational conference on Information and knowledge<lb/> management, pp. 574–576.<lb/> </bibl>
+<bibl>Adam Skory and Maxine Eskenazi. 2010. Predicting<lb/> cloze task quality for vocabulary training. In Proceed-<lb/>ings of the NAACL HLT 2010 Fifth Workshop on In-<lb/>novative Use of NLP for Building Educational Appli-<lb/>cations, pp. 49–56.<lb/> </bibl>
+<bibl>Victor H.A. Yngve. 1960. A model and an hypothesis for<lb/> language structure. In Proceedings of the American<lb/> Philosophical Society, pp. 444-466.<lb/> </bibl>
+<bibl>Heather Harris Wright, Stacy W. Silverman and Marilyn<lb/> Newhoff. 2003. Measures of lexical diversity in apha-<lb/>sia. In Aphasiology, 17(5), pp. 443-452.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

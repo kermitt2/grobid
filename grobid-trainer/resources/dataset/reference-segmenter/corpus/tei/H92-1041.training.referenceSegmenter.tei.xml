@@ -1,0 +1,24 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1.</label> Hayes, P. and Weinstein, S. CONSTRUE/TIS: a system<lb/> for content-based indexing of a database of news stories.<lb/> In IAAIogO, 1990.<lb/> </bibl>
+        <bibl><label>2.</label> Sundheim, B., ed. Proceedings of the Third Message Un-<lb/>derstanding Evaluation and Conference, Morgan Kauf-<lb/>mann, Los Altos, CA, May 1991.<lb/> </bibl>
+        <bibl><label>3.</label> Lewis, D. and Croft, W. Term clustering of syntactic<lb/> phrases. In ACM SIGIR-90, pp. 385-404, 1990.<lb/> </bibl>
+        <bibl><label>4.</label> Lewis, D. Representation and Learning in Information<lb/> Retrieval. PhD thesis, Computer Science Dept.; Univ.<lb/> of Mass.; Amherst, MA, 1992. Technical Report 91-93.<lb/> </bibl>
+        <bibl><label>5.</label> Fuhr, N. Models for retrieval with probabilistic index-<lb/>ing. Information Processing and Management, 25(1):55-<lb/>72, 1989.<lb/> </bibl>
+        <bibl><label>6.</label> Duda, It. and Hart, P. Pattern Classification and Scene<lb/> Analysis. Wiley-Interscience, New York, 1973.<lb/> </bibl>
+        <bibl><label>7.</label> Hamming, It.<lb/> Coding and Information Theory.<lb/> </bibl>
+<bibl>Prentice-Hall, Englewood Cliffs, N J, 1980.<lb/> </bibl>
+        <bibl><label>8.</label> Church, K. A stochastic parts program and noun phrase<lb/> parser for unrestricted text. In Second Conference on<lb/> Applied NLP, pp. 136-143, 1988.<lb/> </bibl>
+        <bibl><label>9.</label> Lewis, D. Evaluating text categorization. In Speech and<lb/> Natural Language Workshop, pp. 312-318, Feb. 1991.<lb/> </bibl>
+        <bibl><label>10.</label> Fuhr, N., et ai. AIR/X--a rule-based multistage index-<lb/>ing system for large subject fields. In RIAO 91, pp.<lb/> 606-623, 1991.<lb/> </bibl>
+        <bibl><label>11.</label> Lewis, D. Data extraction as text categorization: An ex-<lb/>periment with the MUC-3 corpus. In Proceedings MUC-<lb/>3, May 1991.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,26 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl>[pǝ(r)veIz] [mƱ∫Λrf] [neI] [nɒvɒz] [hɒkƱmǝt]<lb/> [bǝ(r)kxƱɒst] [ki] [tǝƱ] [ƱnhǝƱñ] [neI] [ƱnkeI]<lb/> [xIlɒf] [ʧɒrʤ] [∫i:t] [ʤɒri] [ki].<lb/> </bibl>
+<bibl>Pervaiz Musharaf when expelled Nawaz Government. He issued the<lb/> charge sheet against him.<lb/> References<lb/> M.N. Ali, M.A. Khan, and M. Aamir. 2007.<lb/> Computational Treatment of Demonstrative<lb/> Pronouns in Urdu. In Proceedings of International<lb/> Conference on Language and Technology CLT07,<lb/> 25-31. Bara Gali Summer Campus, Pakistan.<lb/> </bibl>
+<bibl>C. Aone , S. Bennett. 1996. Applying Machine Learning<lb/> to Anaphora Resolution. In Wermter, S., Riloff, E.,<lb/> Scheler, G. (Eds) Connectionist, Statistical and<lb/> Symbolic approaches to learning for NLP, 302-314.<lb/> Springer, Berlin.<lb/> </bibl>
+<bibl>S. Brenan, M. Friedman and C. Pollard. 1987. A 25 th<lb/> Annual Meeting of the ACL, 155-162. Stanford,<lb/> Ca, USA,.<lb/> </bibl>
+<bibl>N. Ge, J. Hale and E. Chaniak. 1998. A Statistical<lb/> Approach to Anaphora Resolution. Proceeding of<lb/> the workshop on very large Corpora, 161-171.<lb/> Montreal, Canada.<lb/> </bibl>
+<bibl>B. Grosz, J. Aravind and S. Weinstein. 1995. Centering<lb/> a framework for modelling local coherence of<lb/> discourse. Computational Linguistics, 21 (2), 203-<lb/>225.<lb/> </bibl>
+<bibl>M. Halliday, R. Hassan. 1976. Cohesion in English.<lb/> Longman, London.<lb/> </bibl>
+<bibl>B. Kalsoom, B. Rashida. 1993. Urdu Anaphora<lb/> Resolution in Monologue. M.Sc. Computer Sc.<lb/> Thesis, Department of<lb/> Computer Science<lb/> University of Peshawar, NWFP, Pakistan.<lb/> </bibl>
+<bibl>M.A. Khan , M.N. Ali and M. Aamir. 2006. Treatment<lb/> of Pronominal Anaphora in Urdu Discourse. In<lb/> Proceedings, IEEE, ICET Conference on Emerging<lb/> Technologies, 543-548. Peshawar, Pakistan.<lb/> </bibl>
+<bibl>S. Lappins, H. Leass. 1994. An algorithm for<lb/> pronominal anaphora resolution. Computational<lb/> Linguistics, 20(4), 535-561.<lb/> </bibl>
+<bibl>J. MaCarthy, W. Lehnert. 1995. Using decision trees for<lb/> coreferences resolution. Proceedings of the 14 th<lb/> International Conference on AI, 1050-1055.<lb/> Montreal, Canada.<lb/> </bibl>
+<bibl>R. Mitkov. 1998. Robust Pronoun Resolution with<lb/> Limited Knowledge. Proceedings of 17 th<lb/> International conference on Computational<lb/> Linguistics, 869-875. Montreal, Canada..<lb/> </bibl>
+<bibl>R. Prasad, M. Strube. 2000. Discourse Salience and<lb/> Pronoun Resolution in Hindi. Penn Working Papers<lb/> in Linguistics, Vol. 6.3, 189-208.<lb/> </bibl>
+<bibl>L. Sobha. 1998. Anaphora Resolution in Malayalam and<lb/> Hindi. Doctorial dissertation submitted to<lb/> Mahatma Gandhi University, Kottayam, Kerala.<lb/> </bibl>
+<bibl>W.M. Soon, H.T. Ng, and C.Y. Lim. 1999. Corpus<lb/> based learning for noun phrase coreference<lb/> resolution. Proceedings of the 1999 Joint SIGDAT<lb/> Conference on Empirical Methods in NLP and in<lb/> very large Corpora, 285-291. University of<lb/> Maryland, USA.<lb/> </bibl>
+<bibl>M. Strube. 1998. Never look back: An alternative to<lb/> Centering. In Proceedings of the 17 th Int.<lb/> Conference on Computational Linguistics and 36 th<lb/> Annual Meeting of the Association for<lb/> Computational Linguistics, 1251–1257. Montreal,<lb/> Quebec, Canada.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

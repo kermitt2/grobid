@@ -1,0 +1,32 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Abhishek Arun and Phillip Koehn. 2007. Online<lb/> Learning Methods for Discriminative Training of<lb/> Phrase Based Statistical Machine Translation. In<lb/> Proceedings of the Eleventh Machine Translation<lb/> Summit (MT Summit XI).<lb/> </bibl>
+<bibl>Satanjeev Banerjee and Alon Lavie. 2005. METEOR:<lb/> An Automatic Metric for MT Evaluation with Im-<lb/>proved Correlation with Human Judgements. In<lb/> Proceedings of the Workshop on Intrinsic and Ex-<lb/>trinsic Evaluation Measures for MT and/or Summa-<lb/>rization at the 43rd Annual Meeting of the Asso-<lb/>ciation for Computational Linguistics (ACL-2005),<lb/> June.<lb/> </bibl>
+<bibl>Nicola Bertoldi, Barry Haddow, and Jean-Baptiste<lb/> Fouet. 2009. Improved Minimum Error Rate Train-<lb/>ing in Moses. The Prague Bulletin of Mathematical<lb/> Linguistics, pages 1–11, February.<lb/> </bibl>
+<bibl>Ralf D. Brown. 1996. Example-Based Machine<lb/> Translation in the PANGLOSS System. In Proceed-<lb/>ings of the Sixteenth International Conference on<lb/> Computational Linguistics, pages 169–174, Copen-<lb/>hagen, Denmark. http://www.cs.cmu.edu-<lb/>/˜ralf/papers.html.<lb/> </bibl>
+<bibl>Ralf D. Brown.<lb/> 2008.<lb/> Exploiting Document-<lb/>Level Context for Data-Driven Machine Trans-<lb/>lation.<lb/> In Proceedings of the Eighth Con-<lb/>ference of the Association for Machine Trans-<lb/>lation in the Americas (AMTA-2008), Octo-<lb/>ber. http://www.amtaweb.org/papers/-<lb/>2.02 Brown.pdf.<lb/> </bibl>
+<bibl>Carnegie Mellon University. 2010. Public release of<lb/> haitian-creole language data, January. http://-<lb/>www.speech.cs.cmu.edu/haitian/text.<lb/> </bibl>
+<bibl>David Chiang, Yuval Marton, and Philis Resnik. 2008.<lb/> </bibl>
+<bibl>Online Large-Margin Training of Syntactic and<lb/> Structural Translation Features. In Proceedings of<lb/> the Conference on Empirical Methods in Natural<lb/> Langauge Processing (EMNLP-2008), pages 224–<lb/> 233, October.<lb/> </bibl>
+<bibl>Michael Collins. 2002. Discriminative Training<lb/> Methods for Hidden Markov Models: Theory and<lb/> Experiments with Perceptron Algorithms. In Pro-<lb/>ceedings of EMNLP-2002. http://people.-<lb/>csail.mit.edu/mcollins/papers/-<lb/>tagperc.pdf.<lb/> </bibl>
+<bibl>Koby Crammer, Ofer Deke, Joseph Keshet, Shai<lb/> Shalev-Shwartz, and Yoram Singer. 2006. Online<lb/> Passive-Aggressive Algorithms. The Journal of Ma-<lb/>chine Learning Research, 7:551–585, December.<lb/> </bibl>
+<bibl>Koby Cranmer and Yoram Singer. 2003. Ultraconser-<lb/>vative Online Algorithms for Multiclass Problems.<lb/> The Journal of Machine Learning Research, 3:951–<lb/> 991, March.<lb/> </bibl>
+<bibl>Philipp Koehn. 2005. Europarl: A Parallel Corpus for<lb/> Statistical Machine Translation. In Proceedings of<lb/> the Tenth Machine Translation Summit (MT Summix<lb/> X), pages 79–86.<lb/> </bibl>
+<bibl>Chin-Yew Lin and Franz Joseph Och. 2004a. Au-<lb/>tomatic Evaluation of Machine Translation Qual-<lb/>ity using Longest Common Subsequence and Skip-<lb/>Bigram Statistics. In Proceedings of ACL-2004.<lb/> </bibl>
+<bibl>Chin-Yew Lin and Franz Joseph Och. 2004b. OR-<lb/>ANGE: A Method for Evaluating Automatic Evalu-<lb/>ation Metrics for Machine Translation. In Proceed-<lb/>ings of the 20th International Conference on Com-<lb/>putational Linguistics (COLING 2004).<lb/> </bibl>
+<bibl>USC Information Sciences Institute Natural Language<lb/> Group. 2001. Aligned Hansards of the 36th Par-<lb/>liament of Canada, Release 2001-1a. http://-<lb/>www.isi.edu/natural-language/-<lb/>download/hansard/.<lb/> </bibl>
+<bibl>Franz Josef Och. 2003. Minimum Error Rate Training<lb/> in Statistical Machine Translation. In Proceedings<lb/> of the 41st Meeting of the Association for Computa-<lb/>tional Linguistics (ACL-2003), Sapporo, Japan, July<lb/> 6–7.<lb/> </bibl>
+<bibl>Kishore Papineni, Salim Roukos, Todd Ward, and<lb/> Wei-Jing Zhu. 2002. BLEU: a Method for Au-<lb/>tomatic Evaluation of Machine Translation. In<lb/> Proceedings of the 40th Annual Meeting of the<lb/> Association for Computational Linguistics, July.<lb/> http://acl.ldc.upenn.edu/P/P02/.<lb/> </bibl>
+<bibl>Aaron B. Phillips and Ralf D. Brown. 2009. Cunei<lb/> Machine Translation Platform: System Descrip-<lb/>tion. In Proceedings of the Third Workshop on<lb/> Example-Based Machine Translation, Dublin, Ire-<lb/>land, November.<lb/> </bibl>
+<bibl>Aaron B. Phillips. 2010. The Cunei Machine Trans-<lb/>lation Platform for WMT&apos;10. In Proceedings of the<lb/> ACL 2010 Joint Fifth Workshop on Statistical Ma-<lb/>chine Translation and Metrics MATR, July.<lb/> </bibl>
+<bibl>F. Rosenblatt. 1958. The Perceptron: A Probabilistic<lb/> Model for Information Storage and Organization in<lb/> the Brain. Psychological Review, 65:386–408.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

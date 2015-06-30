@@ -1,0 +1,19 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>S. Bangalore, G. Bordel, and G. Riccardi. 2001. Com-<lb/>puting consensus translation from multiple machine<lb/> translation systems. In Proc. ASRU, pages 351–354.<lb/> </bibl>
+<bibl>R. Durbin, S.R. Eddy, A. Krogh, and G. Mitchison. 1988.<lb/> Biological Sequence Analysis: Probabilistic Models of<lb/> Proteins and Nucleic Acids. Cambridge Univ. Press.<lb/> </bibl>
+<bibl>A. Lavie and A. Agarwal. 2007. METEOR: An auto-<lb/>matic metric for MT evaluation with high levels of cor-<lb/>relation with human judgments. In Proc. ACL/WMT,<lb/> pages 228–231.<lb/> </bibl>
+<bibl>E. Matusov, N. Ueffing, and H. Ney. 2006. Computing<lb/> consensus translation from multiple machine transla-<lb/>tion systems using enhanced hypotheses alignment. In<lb/> Proc. EACL, pages 33–40.<lb/> </bibl>
+<bibl>K. Papineni, S. Roukos, T. Ward, and W.-J. Zhu. 2002.<lb/> BLEU: a method for automatic evaluation of machine<lb/> translation. In Proc. ACL, pages 311–318.<lb/> </bibl>
+<bibl>A.-V.I. Rosti, S. Matsoukas, and R. Schwartz. 2007.<lb/> Improved word-level system combination for machine<lb/> translation. In Proc. ACL 2007, pages 312–319.<lb/> </bibl>
+<bibl>M. Snover, B. Dorr, R. Schwartz, L. Micciula, and<lb/> J. Makhoul. 2006. A study of translation edit rate with<lb/> targeted human annotation. In Proc. AMTA, pages<lb/> 223–231.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

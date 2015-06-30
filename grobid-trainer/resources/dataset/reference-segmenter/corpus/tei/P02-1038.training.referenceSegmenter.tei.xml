@@ -1,0 +1,27 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>L. R. Bahl, P. F. Brown, P. V. de Souza, and R. L. Mer-<lb/>cer. 1986. Maximum mutual information estimation<lb/> of hidden markov model parameters. In Proc. Int.<lb/> Conf. on Acoustics, Speech, and Signal Processing,<lb/> pages 49–52, Tokyo, Japan, April.<lb/> </bibl>
+<bibl>A. L. Berger, S. A. Della Pietra, and V. J. Della<lb/> Pietra. 1996. A maximum entropy approach to nat-<lb/>ural language processing. Computational Linguistics,<lb/> 22(1):39–72, March.<lb/> </bibl>
+<bibl>P. Beyerlein. 1997. Discriminative model combina-<lb/>tion. In Proc. of the IEEE Workshop on Automatic<lb/> Speech Recognition and Understanding, pages 238–<lb/> 245, Santa Barbara, CA, December.<lb/> </bibl>
+<bibl>P. F. Brown, S. A. Della Pietra, V. J. Della Pietra, and<lb/> R. L. Mercer. 1993. The mathematics of statistical<lb/> machine translation: Parameter estimation. Computa-<lb/>tional Linguistics, 19(2):263–311.<lb/> </bibl>
+<bibl>J. N. Darroch and D. Ratcliff. 1972. Generalized itera-<lb/>tive scaling for log-linear models. Annals of Mathe-<lb/>matical Statistics, 43:1470–1480.<lb/> </bibl>
+<bibl>B. H. Juang, W. Chou, and C. H. Lee. 1995. Statisti-<lb/>cal and discriminative methods for speech recognition.<lb/> In A. J. R. Ayuso and J. M. L. Soler, editors, Speech<lb/> Recognition and Coding -New Advances and Trends.<lb/> Springer Verlag, Berlin, Germany.<lb/> </bibl>
+<bibl>H. Ney. 1995. On the probabilistic-interpretation of<lb/> neural-network classifiers and discriminative training<lb/> criteria. IEEE Trans. on Pattern Analysis and Machine<lb/> Intelligence, 17(2):107–119, February.<lb/> </bibl>
+<bibl>S. Nießen, F. J. Och, G. Leusch, and H. Ney. 2000.<lb/> An evaluation tool for machine translation: Fast eval-<lb/>uation for MT research. In Proc. of the Second Int.<lb/> Conf. on Language Resources and Evaluation (LREC),<lb/> pages 39–45, Athens, Greece, May.<lb/> </bibl>
+<bibl>F. J. Och, C. Tillmann, and H. Ney. 1999. Improved<lb/> alignment models for statistical machine translation.<lb/> In Proc. of the Joint SIGDAT Conf. on Empirical Meth-<lb/>ods in Natural Language Processing and Very Large<lb/> Corpora, pages 20–28, University of Maryland, Col-<lb/>lege Park, MD, June.<lb/> </bibl>
+<bibl>K. A. Papineni, S. Roukos, and R. T. Ward. 1997.<lb/> Feature-based language understanding. In European<lb/> Conf. on Speech Communication and Technology,<lb/> pages 1435–1438, Rhodes, Greece, September.<lb/> </bibl>
+<bibl>K. A. Papineni, S. Roukos, and R. T. Ward. 1998. Max-<lb/>imum likelihood and discriminative training of direct<lb/> translation models. In Proc. Int. Conf. on Acoustics,<lb/> Speech, and Signal Processing, pages 189–192, Seat-<lb/>tle, WA, May.<lb/> </bibl>
+<bibl>K. A. Papineni, S. Roukos, T. Ward, and W.-J. Zhu. 2001.<lb/> Bleu: a method for automatic evaluation of machine<lb/> translation. Technical Report RC22176 (W0109-022),<lb/> IBM Research Division, Thomas J. Watson Research<lb/> Center, Yorktown Heights, NY, September.<lb/> </bibl>
+<bibl>J. Peters and D. Klakow. 1999. Compact maximum en-<lb/>tropy language models. In Proc. of the IEEE Workshop<lb/> on Automatic Speech Recognition and Understanding,<lb/> Keystone, CO, December.<lb/> </bibl>
+<bibl>R. Schlüter and H. Ney. 2001. Model-based MCE bound<lb/> to the true Bayes&apos; error. IEEE Signal Processing Let-<lb/>ters, 8(5):131–133, May.<lb/> </bibl>
+<bibl>W. Wahlster. 1993. Verbmobil: Translation of face-to-<lb/>face dialogs. In Proc. of MT Summit IV, pages 127–<lb/> 135, Kobe, Japan, July.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

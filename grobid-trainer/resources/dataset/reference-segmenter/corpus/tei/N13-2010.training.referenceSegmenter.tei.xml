@@ -1,0 +1,38 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Ahmet Aker and Robert Gaizauskas. 2010. Generating<lb/> image descriptions using dependency relational pat-<lb/>terns. In Proceedings of the 48th Annual Meeting of<lb/> the Association for Computational Linguistics, ACL<lb/> &apos;10, pages 1250–1258, Stroudsburg, PA, USA. Asso-<lb/>ciation for Computational Linguistics.<lb/> </bibl>
+<bibl>Tamara L. Berg, Alexander C. Berg, and Jonathan Shih.<lb/> 2010. Automatic attribute discovery and character-<lb/>ization from noisy web data. In Proceedings of<lb/> the 11th European conference on Computer vision:<lb/> Part I, ECCV&apos;10, pages 663–676, Berlin, Heidelberg.<lb/> Springer-Verlag.<lb/> </bibl>
+<bibl>Taylor Berg-Kirkpatrick, Dan Gillick, and Dan Klein.<lb/> 2011. Jointly learning to extract and compress. In<lb/> Proceedings of the 49th Annual Meeting of the Asso-<lb/>ciation for Computational Linguistics: Human Lan-<lb/>guage Technologies -Volume 1, HLT &apos;11, pages 481–<lb/> 490, Stroudsburg, PA, USA. Association for Compu-<lb/>tational Linguistics.<lb/> </bibl>
+<bibl>David M. Blei and Michael I. Jordan. 2003. Modeling<lb/> annotated data. In Proceedings of the 26th annual in-<lb/>ternational ACM SIGIR conference on Research and<lb/> development in informaion retrieval, SIGIR &apos;03, pages<lb/> 127–134, New York, NY, USA. ACM.<lb/> </bibl>
+<bibl>David M. Blei, Andrew Y. Ng, and Michael I. Jordan.<lb/> 2003. Latent dirichlet allocation. J. Mach. Learn.<lb/> Res., 3:993–1022, March.<lb/> </bibl>
+<bibl>James Clarke and Mirella Lapata. 2008. Global infer-<lb/>ence for sentence compression an integer linear pro-<lb/>gramming approach. J. Artif. Int. Res., 31(1):399–429,<lb/> March.<lb/> </bibl>
+<bibl>James Clarke. 2008. Global Inference for Sentence Com-<lb/>pression: An Integer Linear Programming Approach.<lb/> Dissertation, University of Edinburgh.<lb/> </bibl>
+<bibl>Michael John Collins. 1999. Head-driven statistical<lb/> models for natural language parsing. Ph.D. thesis,<lb/> Philadelphia, PA, USA. AAI9926110.<lb/> </bibl>
+<bibl>Koen Deschacht and Marie-Francine Moens. 2007. Text<lb/> analysis for automatic image annotation. In ACL, vol-<lb/>ume 45, page 1000.<lb/> </bibl>
+<bibl>Xin Fan, Ahmet Aker, Martin Tomko, Philip Smart, Mark<lb/> Sanderson, and Robert Gaizauskas. 2010. Automatic<lb/> image captioning from the web for gps photographs.<lb/> In Proceedings of the international conference on Mul-<lb/>timedia information retrieval, MIR &apos;10, pages 445–<lb/> 448, New York, NY, USA. ACM.<lb/> </bibl>
+<bibl>Ali Farhadi, Mohsen Hejrati, Mohammad Amin Sadeghi,<lb/> Peter Young, Cyrus Rashtchian, Julia Hockenmaier,<lb/> and David Forsyth. 2010. Every picture tells a story:<lb/> generating sentences from images. In Proceedings of<lb/> the 11th European conference on Computer vision:<lb/> Part IV, ECCV&apos;10, pages 15–29, Berlin, Heidelberg.<lb/> Springer-Verlag.<lb/> </bibl>
+<bibl>Yansong Feng and Mirella Lapata. 2010a. How many<lb/> words is a picture worth? automatic caption gener-<lb/>ation for news images. In Proceedings of the 48th<lb/> Annual Meeting of the Association for Computational<lb/> Linguistics, ACL &apos;10, pages 1239–1249, Stroudsburg,<lb/> PA, USA. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Yansong Feng and Mirella Lapata. 2010b. Topic mod-<lb/>els for image annotation and text illustration. In HLT-<lb/>NAACL, pages 831–839.<lb/> </bibl>
+<bibl>Girish Kulkarni, Visruth Premraj, Sagnik Dhar, Siming<lb/> Li, Yejin Choi, Alexander C. Berg, and Tamara L.<lb/> Berg. 2011. Baby talk: Understanding and generat-<lb/>ing simple image descriptions. In CVPR, pages 1601–<lb/> 1608.<lb/> </bibl>
+<bibl>Polina Kuznetsova, Vicente Ordonez, Alexander C. Berg,<lb/> Tamara L. Berg, and Yejin Choi. 2012. Collective<lb/> generation of natural image descriptions. In ACL.<lb/> </bibl>
+<bibl>Siming Li, Girish Kulkarni, Tamara L. Berg, Alexan-<lb/>der C. Berg, and Yejin Choi. 2011. Composing<lb/> simple image descriptions using web-scale n-grams.<lb/> In Proceedings of the Fifteenth Conference on Com-<lb/>putational Natural Language Learning, CoNLL &apos;11,<lb/> pages 220–228, Stroudsburg, PA, USA. Association<lb/> for Computational Linguistics.<lb/> </bibl>
+<bibl>Chin-Yew Lin. 2004. Rouge: A package for automatic<lb/> evaluation of summaries. In Stan Szpakowicz Marie-<lb/>Francine Moens, editor, Text Summarization Branches<lb/> Out: Proceedings of the ACL-04 Workshop, pages 74–<lb/> 81, Barcelona, Spain, July. Association for Computa-<lb/>tional Linguistics.<lb/> </bibl>
+<bibl>André F. T. Martins and Noah A. Smith. 2009. Summa-<lb/>rization with a joint model for sentence extraction and<lb/> compression. In Proceedings of the Workshop on In-<lb/>teger Linear Programming for Natural Langauge Pro-<lb/>cessing, ILP &apos;09, pages 1–9, Stroudsburg, PA, USA.<lb/> Association for Computational Linguistics.<lb/> </bibl>
+<bibl>David Mimno, Hanna M. Wallach, Jason Naradowsky,<lb/> David A. Smith, and Andrew McCallum. 2009.<lb/> Polylingual topic models. In Proceedings of the 2009<lb/> Conference on Empirical Methods in Natural Lan-<lb/>guage Processing: Volume 2 -Volume 2, EMNLP &apos;09,<lb/> pages 880–889, Stroudsburg, PA, USA. Association<lb/> for Computational Linguistics.<lb/> </bibl>
+<bibl>Margaret Mitchell, Jesse Dodge, Amit Goyal, Kota Ya-<lb/>maguchi, Karl Stratos, Xufeng Han, Alyssa Mensch,<lb/> Alexander C. Berg, Tamara L. Berg, and Hal Daumé<lb/> III. 2012. Midge: Generating image descriptions<lb/> from computer vision detections. In European Chap-<lb/>ter of the Association for Computational Linguistics<lb/> (EACL).<lb/> </bibl>
+<bibl>Aude Oliva and Antonio Torralba. 2001. Modeling the<lb/> shape of the scene: A holistic representation of the<lb/> spatial envelope. International Journal of Computer<lb/> Vision, 42:145–175.<lb/> </bibl>
+<bibl>V. Ordonez, G. Kulkarni, and T.L. Berg. 2011. Im2text:<lb/> Describing images using 1 million captioned pho-<lb/>tographs. In NIPS.<lb/> </bibl>
+<bibl>Kishore Papineni, Salim Roukos, Todd Ward, and Wei-<lb/>Jing Zhu. 2002. Bleu: a method for automatic eval-<lb/>uation of machine translation. In Proceedings of the<lb/> 40th Annual Meeting on Association for Computa-<lb/>tional Linguistics, ACL &apos;02, pages 311–318, Strouds-<lb/>burg, PA, USA. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>G. Patterson and J. Hays. 2012. Sun attribute database:<lb/> Discovering, annotating, and recognizing scene at-<lb/>tributes. 2012 IEEE Conference on Computer Vision<lb/> and Pattern Recognition, 0:2751–2758.<lb/> </bibl>
+<bibl>Arnold W. M. Smeulders, Marcel Worring, Simone San-<lb/>tini, Amarnath Gupta, and Ramesh Jain. 2000.<lb/> Content-based image retrieval at the end of the early<lb/> years. IEEE Trans. Pattern Anal. Mach. Intell.,<lb/> 22(12):1349–1380, December.<lb/> </bibl>
+<bibl>Yezhou Yang, Ching Lik Teo, Hal Daumé III, and Yian-<lb/>nis Aloimonos. 2011. Corpus-guided sentence gen-<lb/>eration of natural images. In Empirical Methods in<lb/> Natural Language Processing (EMNLP), Edinburgh,<lb/> Scotland.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

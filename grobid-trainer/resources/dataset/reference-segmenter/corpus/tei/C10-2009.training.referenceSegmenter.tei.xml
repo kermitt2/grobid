@@ -1,0 +1,38 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Badulescu, Adriana and Munirathnam Srikanth. 2007.<lb/> </bibl>
+<bibl>LCC-SRN: LCC&apos;s SRN System for SemEval 2007<lb/> </bibl>
+<bibl>Task 4. In Proceedings of the Fourth International<lb/> Workshop on Semantic Evaluations, pages 215–218.<lb/> </bibl>
+<bibl>Baker, Collin F., Charles J. Fillmore, and John B.<lb/> Lowe. 1998. The Berkeley FrameNet Project. In<lb/> Proceedings of the 17th international conference on<lb/> Computational Linguistics, Montreal, Canada.<lb/> </bibl>
+<bibl>Bethard, Steven, William Corvey, Sara Klingenstein,<lb/> and James H. Martin. 2008. Building a Corpus of<lb/> Temporal-Causal Structure. In Proceedings of the<lb/> Sixth International Language Resources and Evalu-<lb/>ation Conference, Marrakech, Morocco.<lb/> </bibl>
+<bibl>Chang, Du S. and Key S. Choi. 2006. Incremental<lb/> cue phrase learning and bootstrapping method for<lb/> causality extraction using cue phrase and word pair<lb/> probabilities. Information Processing &amp; Manage-<lb/>ment, 42(3):662–678.<lb/> </bibl>
+<bibl>Copestake, Ann, Alex Lascarides, and Dan Flickinger.<lb/> 2001. An Algebra for Semantic Construction in<lb/> Constraint-based Grammars. In Proceedings of<lb/> 39th Annual Meeting of the ACL, pages 140–147.<lb/> </bibl>
+<bibl>Davidov, Dmitry and Ari Rappoport. 2008. Classifi-<lb/>cation of Semantic Relationships between Nominals<lb/> Using Pattern Clusters. In Proceedings of ACL-08:<lb/> HLT, pages 227–235, Columbus, Ohio.<lb/> </bibl>
+<bibl>Fillmore, Charles J. 1971. Some Problems for Case<lb/> Grammar. Monograph Series on Languages and<lb/> Linguistics, 24:35–36.<lb/> </bibl>
+<bibl>Giampiccolo, Danilo, Bernardo Magnini, Ido Dagan,<lb/> and Bill Dolan. 2007. The Third PASCAL Recog-<lb/>nizing Textual Entailment Challenge. In Proceed-<lb/>ings of the ACL-PASCAL Workshop on Textual En-<lb/>tailment and Paraphrasing, pages 1–9.<lb/> </bibl>
+<bibl>Girju, Roxana, Adriana Badulescu, and Dan<lb/> Moldovan.<lb/> 2006.<lb/> Automatic Discovery of<lb/> Part-Whole Relations. Computational Linguistics,<lb/> 32(1):83–135.<lb/> </bibl>
+<bibl>Girju, Roxana, Preslav Nakov, Vivi Nastase, Stan Sz-<lb/>pakowicz, Peter Turney, and Deniz Yuret. 2007.<lb/> SemEval-2007 Task 04: Classification of Semantic<lb/> Relations between Nominals. In Proceedings of the<lb/> Fourth International Workshop on Semantic Evalu-<lb/>ations, pages 13–18, Prague, Czech Republic.<lb/> </bibl>
+<bibl>Harabagiu, Sanda and Dan Moldovan. 1998. Knowl-<lb/>edge Processing on an Extended WordNet. In Fell-<lb/>baum, Christiane, editor, WordNet: An Electronic<lb/> Lexical Database and Some of its Applications,<lb/> chapter 17, pages 684–714. The MIT Press.<lb/> </bibl>
+<bibl>Helbig, Hermann. 2005. Knowledge Representation<lb/> and the Semantics of Natural Language. Springer.<lb/> </bibl>
+<bibl>Hirano, Toru, Yoshihiro Matsuo, and Genichiro Kikui.<lb/> 2007.<lb/> Detecting Semantic Relations between<lb/> Named Entities in Text Using Contextual Features.<lb/> In Proceedings of the 45th Annual Meeting of the<lb/> ACL, Demo and Poster Sessions, pages 157–160.<lb/> </bibl>
+<bibl>Lakoff, George. 1970. Linguistics and Natural Logic.<lb/> Synthese, 22(1):151–271.<lb/> </bibl>
+<bibl>M` arquez, Lluís, Xavier Carreras, Kenneth C.<lb/> Litkowski, and Suzanne Stevenson. 2008. Seman-<lb/>tic Role Labeling: An Introduction to the Special<lb/> Issue. Computational Linguistics, 34(2):145–159.<lb/> </bibl>
+<bibl>Miller, George A. 1995. WordNet: A Lexical<lb/> Database for English. Communications of the ACM,<lb/> 38:39–41.<lb/> </bibl>
+<bibl>Moldovan, Dan, Adriana Badulescu, Marta Tatu,<lb/> Daniel Antohe, and Roxana Girju. 2004. Mod-<lb/>els for the Semantic Classification of Noun Phrases.<lb/> In HLT-NAACL 2004: Workshop on Computational<lb/> Lexical Semantics, pages 60–67.<lb/> </bibl>
+<bibl>Palmer, Martha, Daniel Gildea, and Paul Kingsbury.<lb/> 2005. The Proposition Bank: An Annotated Cor-<lb/>pus of Semantic Roles. Computational Linguistics,<lb/> 31(1):71–106.<lb/> </bibl>
+<bibl>Rosario, Barbara and Marti Hearst. 2004. Classifying<lb/> Semantic Relations in Bioscience Texts. In Proc. of<lb/> the 42nd Meeting of the ACL, pages 430–437.<lb/> </bibl>
+<bibl>Sánchez Valencia, Victor. 1991. Studies on Natural<lb/> Logic and Categorial Grammar. Ph.D. thesis, Uni-<lb/>versity of Amsterdam.<lb/> </bibl>
+<bibl>Szpakowicz, Barker, Ken Barker, and Stan Szpakow-<lb/>icz. 1995. Interactive semantic analysis of Clause-<lb/>Level Relationships. In Proceedings of the Second<lb/> Conference of the Pacific ACL, pages 22–30.<lb/> </bibl>
+<bibl>Tatu, Marta and Dan Moldovan. 2007. COGEX<lb/> at RTE 3. In Proceedings of the ACL-PASCAL<lb/> Workshop on Textual Entailment and Paraphrasing,<lb/> pages 22–27, Prague, Czech Republic.<lb/> </bibl>
+<bibl>Tatu, Marta. 2005. Automatic Discovery of Intentions<lb/> in Text and its Application to Question Answering.<lb/> In Proceedings of the ACL Student Research Work-<lb/>shop, pages 31–36, Ann Arbor, Michigan.<lb/> </bibl>
+<bibl>Turney, Peter D. 2006. Expressing Implicit Seman-<lb/>tic Relations without Supervision. In Proceedings<lb/> of the 21st International Conference on Computa-<lb/>tional Linguistics and 44th Annual Meeting of the<lb/> ACL, pages 313–320, Sydney, Australia.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

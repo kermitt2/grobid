@@ -1,0 +1,35 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Sheng, Victor S., Provost, Foster, and Ipeirotis, Panagi-<lb/>otis G.. 2008. Get Another Label? Improving Data<lb/> Quality and Data Mining Using Multiple, Noisy La-<lb/>belers. KDD 2008 Proceedings 614-622.<lb/> </bibl>
+<bibl>Pang, Bo, Lee, Lillian, and Vaithyanathan, Shivakumar.<lb/> 2002. Thumbs up? Sentiment classification using<lb/> machine learning techniques. Proceedings of the<lb/> Conference on Empirical Methods in Natural Lan-<lb/>guage Processing (EMNLP) 79-86.<lb/> </bibl>
+<bibl>Dave, Kushal, Lawrence, Steve, and Pennock, David<lb/> M.. 2003. Mining the peanut gallery: Opinion ex-<lb/>traction and semantic classification of product re-<lb/>views. Proceedings of WWW 519-528.<lb/> </bibl>
+<bibl>Kim, Soo–Min and Hovy, Eduard. 2005. Identifying<lb/> opinion holders for question answering in opinion<lb/> texts. Proceedings of the AAAI Workshop on Ques-<lb/>tion Answering in Restricted Domains.<lb/> </bibl>
+<bibl>Wiebe, Janyce M. , Wilson, Theresa , Bruce, Rebecca<lb/> , Bell, Matthew and Martin, Melanie. 2004. Learn-<lb/>ing subjective language. Computational Linguistics,<lb/> 30(3):277-308.<lb/> </bibl>
+<bibl>Yang, Kiduk , Yu, Ning , Valerio, Alejandro and Zhang,<lb/> Hui. 2006. WIDIT in TREC-2006 Blog track. Pro-<lb/>ceedings of TREC.<lb/> </bibl>
+<bibl>Gamon, Michael. 2004. Sentiment classification on<lb/> customer feedback data: noisy data, large feature<lb/> vectors, and the role of linguistic analysis. Proceed-<lb/>ings of the International Conference on Computa-<lb/>tional Linguistics (COLING).<lb/> </bibl>
+<bibl>Matsumoto, Shotaro, Takamura, Hiroya and Okumura,<lb/> Manabu. 2005. Sentiment classification using word<lb/> sub-sequences and dependency sub-trees. Proceed-<lb/>ings of PAKDD05, the 9th Pacific-Asia Conference<lb/> on Advances in Knowledge Discovery and Data<lb/> Mining.<lb/> </bibl>
+<bibl>Ng, Vincent, Dasgupta, Sajib and Arifin, S. M. Niaz.<lb/> 2006. Examining the role of linguistic knowledge<lb/> sources in the automatic identification and classifi-<lb/>cation of reviews. Proceedings of the COLING/ACL<lb/> Main Conference Poster Sessions 611-618.<lb/> </bibl>
+<bibl>Mullen, Tony and Collier, Nigel. 2004. Sentiment<lb/> analysis using support vector machines with diverse<lb/> in-formation sources. Proceedings of the Confer-<lb/>ence on Empirical Methods in Natural Language<lb/> Processing (EMNLP) 412-418.<lb/> </bibl>
+<bibl>Turney, Peter. 2002. Thumbs up or thumbs down? Se-<lb/>mantic orientation applied to unsupervised classifi-<lb/>cation of reviews. Proceedings of the Association<lb/> for Computational Linguistics (ACL) 417-424.<lb/> </bibl>
+<bibl>Whitelaw, Casey, Garg, Navendu and Argamon,<lb/> Shlomo. 2005. Using appraisal groups for sen-<lb/>timent analysis. Proceedings of the ACM SIGIR<lb/> Conference on Information and Knowledge Man-<lb/>agement (CIKM) 625-631.<lb/> </bibl>
+<bibl>Dillard, Logan. 2007. I Can&apos;t Recommend This Paper<lb/> Highly Enough: Valence-Shifted Sentences in Senti-<lb/>ment Classification. Master Thesis.<lb/> </bibl>
+<bibl>Riloff, Ellen and Wiebe, Janyce. 2003. Learning ex-<lb/>traction patterns for subjective expressions. Pro-<lb/>ceedings of the Conference on Empirical Methods<lb/> in Natural Language Processing (EMNLP).<lb/> </bibl>
+<bibl>Su, Qi, Pavlov, Dmitry, Chow, Jyh-Herng and Baker,<lb/> Wendell C.. 2007. Internet-Scale Collection of<lb/> Human-Reviewed Data. Proceedings of WWW-<lb/>2007.<lb/> </bibl>
+<bibl>Nakov, Preslav. 2008. Paraphrasing Verbs for<lb/> Noun Compound Interpretation. Proceedings of the<lb/> Workshop on Multiword Expressions, LREC-2008.<lb/> </bibl>
+<bibl>Kaisser, Michael and Lowe, John B.. 2008. A<lb/> Re-search Collection of QuestionAnswer Sentence<lb/> Pairs. Proceedings of LREC-2008.<lb/> </bibl>
+<bibl>Snow, Rion, O&apos;Connor, Brendan, Jurafsky, Daniel and<lb/> Ng, Andrew Y. 2008. Cheap and Fast -But is<lb/> it Good? Evaluating Non-Expert Annotations for<lb/> Natural Language Tasks. Proceedings of the Con-<lb/>ference on Empirical Methods in Natural Language<lb/> Processing (EMNLP).<lb/> </bibl>
+<bibl>Blitzer, John, Dredze, Mark, Biographies, Fernando<lb/> Pereira., Bollywood, Boom-boxes and Blenders.<lb/> 2007. Domain Adaptation for Sentiment Classifica-<lb/>tion. Proceedings of the Association for Computa-<lb/>tional Linguistics (ACL).<lb/> </bibl>
+<bibl>Porter, M.F.. 1980. An algorithm for suffix stripping.<lb/> Program.<lb/> </bibl>
+<bibl>Chang, Chih-Chung and Lin, Chih-Jen.<lb/> 2001.<lb/> </bibl>
+<bibl>LIBSVM: a library for support vector machines.<lb/> Software available at http://www.csie.ntu.<lb/> edu.tw/ ˜ cjlin/libsvm.<lb/> </bibl>
+<bibl>Nigam, K., McCallum, A.K., Thrun, S., and Mitchell,<lb/> T.. 2000. Text Classification from labeled and unla-<lb/>beled documents using em. Machine Learning 39(2-<lb/>3) 103-134.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

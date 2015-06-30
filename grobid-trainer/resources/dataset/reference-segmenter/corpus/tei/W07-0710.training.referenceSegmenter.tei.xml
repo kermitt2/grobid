@@ -1,0 +1,27 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>K. Papineni, S. Roukos, T. Ward, W.-J. Zhu. 2002.<lb/> BLEU: a method for automatic evaluation of machine<lb/> translation. ACL&apos;02.<lb/> </bibl>
+<bibl>A. Berger, S. Della Pietra, and V. Della Pietra. 1996.<lb/> A Maximum Entropy Approach to Natural Language<lb/> Processing. Computational Linguistics, vol 22:1, pp.<lb/> 39–71.<lb/> </bibl>
+<bibl>S. Chen and R. Rosenfeld. 2000. A survey of smoothing<lb/> techniques for ME models. IEEE Trans. on Speech and<lb/> Audio Processing, vol 8:2, pp. 37–50.<lb/> </bibl>
+<bibl>R. O. Duda and P. E. Hart. 1973. Pattern Classification<lb/> and Scene Analysis. Wiley &amp; Sons, 1973.<lb/> </bibl>
+<bibl>H. J. Kushner and G. G. Yin. 1997. Stochastic Approxi-<lb/>mation Algorithms and Applications. Springer-Verlag,<lb/> 1997.<lb/> </bibl>
+<bibl>National Institute of Standards and Technology. 2006.<lb/> The 2006 Machine Translation Evaluation Plan.<lb/> </bibl>
+<bibl>J. Nocedal and S. J. Wright. 1999. Numerical Optimiza-<lb/>tion. Springer-Verlag, 1999.<lb/> </bibl>
+<bibl>F. J. Och. 2003. Minimum Error Rate Training in Statis-<lb/>tical Machine Translation. ACL&apos;03.<lb/> </bibl>
+<bibl>F. J. Och, D. Gildea, S. Khudanpur, A. Sarkar, K. Ya-<lb/>mada, A. Fraser, S. Kumar, L. Shen, D. Smith, K. Eng,<lb/> V. Jain, Z. Jin, and D. Radev. 2004. A Smorgas-<lb/>bord of Features for Statistical Machine Translation.<lb/> HLT/NAACL&apos;04.<lb/> </bibl>
+<bibl>F. J. Och and H. Ney. 2002. Discriminative Training<lb/> and Maximum Entropy Models for Statistical Machine<lb/> Translation. ACL&apos;02.<lb/> </bibl>
+<bibl>D. Povey, B. Kingsbury, L. Mangu, G. Saon, H. Soltau<lb/> and G. Zweig. 2004. fMPE: Discriminatively trained<lb/> features for speech recognition. RT&apos;04 Meeting.<lb/> </bibl>
+<bibl>C. Quirk, A. Menezes and C. Cherry. 2005. De-<lb/>pendency Tree Translation: Syntactically Informed<lb/> Phrasal SMT. ACL&apos;05.<lb/> </bibl>
+<bibl>L. R. Rabiner and B.-H. Huang. 1993. Fundamentals of<lb/> Speech Recognition. Prentice Hall.<lb/> </bibl>
+<bibl>M. Riedmiller and H. Braun. 1992. RPROP: A Fast<lb/> Adaptive Learning Algorithm. Proc. of ISCIS VII.<lb/> </bibl>
+<bibl>D. A. Smith and J. Eisner. 2006. Minimum-Risk<lb/> Annealing for Training Log-Linear Models. ACL-<lb/>COLING&apos;06.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,29 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Lo¨Lo¨ıc Barrault. 2010. MANY: Open source MT sys-<lb/>tem combination at WMT&apos;10. In Proceedings of the<lb/> Joint Fifth Workshop on Statistical Machine Trans-<lb/>lation and MetricsMATR, pages 277–281, Uppsala,<lb/> Sweden, July. Association for Computational Linguis-<lb/>tics.<lb/> </bibl>
+<bibl>C. Callison-Burch, M. Osborne, and P. Koehn. 2006.<lb/> </bibl>
+<bibl>Re-evaluating the role of BLEU in machine transla-<lb/>tion research. In Proceedings the Eleventh Conference<lb/> of the European Chapter of the Association for Com-<lb/>putational Linguistics, pages 249–256, Trento, Italy.<lb/> </bibl>
+<bibl>Chris Callison-Burch, Philipp Koehn, Christof Monz,<lb/> and Josh Schroeder. 2009. Findings of the 2009 work-<lb/>shop on statistical machine translation. In Proceedings<lb/> of the Fourth Workshop on Statistical Machine Trans-<lb/>lation, pages 1–28, Athens, Greece, March. Associa-<lb/>tion for Computational Linguistics.<lb/> </bibl>
+<bibl>Chris Callison-Burch, Philipp Koehn, Christof Monz,<lb/> Kay Peterson, Mark Przybocki, and Omar Zaidan.<lb/> 2010. Findings of the 2010 joint workshop on sta-<lb/>tistical machine translation and metrics for machine<lb/> translation. In Proceedings of the Joint Fifth Workshop<lb/> on Statistical Machine Translation and MetricsMATR,<lb/> pages 17–53, Uppsala, Sweden, July. Association for<lb/> Computational Linguistics. Revised August 2010.<lb/> </bibl>
+<bibl>Yu Chen, Andreas Eisele, Christian Federmann, Eva<lb/> Hasler, Michael Jellinghaus, and Silke Theison. 2007.<lb/> Multi-engine machine translation with an open-source<lb/> decoder for statistical machine translation. In Pro-<lb/>ceedings of the Second Workshop on Statistical Ma-<lb/>chine Translation, StatMT &apos;07, pages 193–196, Mor-<lb/>ristown, NJ, USA. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>Yu Chen, Michael Jellinghaus, Andreas Eisele, Yi Zhang,<lb/> Sabine Hunsicker, Silke Theison, Christian Feder-<lb/>mann, and Hans Uszkoreit. 2009. Combining multi-<lb/>engine translations with Moses. In Proceedings of the<lb/> Fourth Workshop on Statistical Machine Translation,<lb/> StatMT &apos;09, pages 42–46, Morristown, NJ, USA. As-<lb/>sociation for Computational Linguistics.<lb/> </bibl>
+<bibl>Michael Collins, Philipp Koehn, and Ivona Kučerová.<lb/> 2005. Clause restructuring for statistical machine<lb/> translation. In ACL &apos;05: Proceedings of the 43rd An-<lb/>nual Meeting on Association for Computational Lin-<lb/>guistics, pages 531–540, Morristown, NJ, USA. Asso-<lb/>ciation for Computational Linguistics.<lb/> </bibl>
+<bibl>Qin Gao and Stephan Vogel. 2008. Parallel implemen-<lb/>tations of word alignment tool. In Software Engi-<lb/>neering, Testing, and Quality Assurance for Natural<lb/> Language Processing, pages 49–57, Columbus, Ohio,<lb/> June. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Kenneth Heafield and Alon Lavie. 2010. CMU multi-<lb/>engine machine translation for WMT 2010. In Pro-<lb/>ceedings of the Joint Fifth Workshop on Statistical<lb/> Machine Translation and MetricsMATR, WMT &apos;10,<lb/> pages 301–306, Stroudsburg, PA, USA. Association<lb/> for Computational Linguistics.<lb/> </bibl>
+<bibl>Howard Johnson, Joel Martin, George Foster, and Roland<lb/> Kuhn. 2007. Improving translation quality by dis-<lb/>carding most of the phrasetable. In Proceedings of the<lb/> 2007 Joint Conference on Empirical Methods in Nat-<lb/>ural Language Processing and Computational Natu-<lb/>ral Language Learning (EMNLP-CoNLL), pages 967–<lb/> 975, Prague, Czech Republic, June. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Philipp Koehn, Franz Josef Och, and Daniel Marcu.<lb/> 2003. Statistical phrase-based translation. In NAACL<lb/> &apos;03: Proceedings of the 2003 Conference of the North<lb/> American Chapter of the Association for Computa-<lb/>tional Linguistics on Human Language Technology,<lb/> pages 48–54, Morristown, NJ, USA. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Philipp Koehn, Hieu Hoang, Alexandra Birch, Chris<lb/> Callison-Burch, Marcello Federico, Nicola Bertoldi,<lb/> Brooke Cowan, Wade Shen, Christine Moran, Richard<lb/> Zens, Chris Dyer, Ondřej Bojar, Alexandra Con-<lb/>stantin, and Evan Herbst. 2007. Moses: Open Source<lb/> Toolkit for Statistical Machine Translation. In Pro-<lb/>ceedings of ACL 2007, pages 177–180, Prague, Czech<lb/> Republic, June.<lb/> </bibl>
+<bibl>Kishore Papineni, Salim Roukos, Todd Ward, and Wei-<lb/>Jing Zhu. 2002. BLEU: A method for automatic<lb/> evaluation of machine translation. In ACL &apos;02: Pro-<lb/>ceedings of the 40th Annual Meeting on Association<lb/> for Computational Linguistics, pages 311–318, Mor-<lb/>ristown, NJ, USA. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>Stefan Riezler and John T. Maxwell. 2005. On some<lb/> pitfalls in automatic evaluation and significance test-<lb/>ing for MT. In Proceedings of the ACL Workshop on<lb/> Intrinsic and Extrinsic Evaluation Measures for Ma-<lb/>chine Translation and/or Summarization, pages 57–<lb/> 64, Ann Arbor, Michigan, June. Association for Com-<lb/>putational Linguistics.<lb/> </bibl>
+<bibl>Rico Sennrich, Gerold Schneider, Martin Volk, and Mar-<lb/>tin Warin. 2009. A New Hybrid Dependency Parser<lb/> for German. In Proceedings of the German Society for<lb/> Computational Linguistics and Language Technology<lb/> 2009 (GSCL 2009), Potsdam, Germany.<lb/> </bibl>
+<bibl>Rico Sennrich. 2011. Combining multi-engine ma-<lb/>chine translation and online learning through dynamic<lb/> phrase tables. In 15th Annual Conference of the Eu-<lb/>ropean Association for Machine Translation (EAMT<lb/> 2011), Leuven, Belgium.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

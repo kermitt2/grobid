@@ -1,0 +1,41 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Jean-Michel Adam. 2008a. La linguistique textuelle:<lb/> IntroductionIntroduction`Introductionà l&apos;analyse textuelle des discours. Ar-<lb/>mand Colin, Paris, 2nd edition.<lb/> </bibl>
+<bibl>Jean-Michel Adam. 2008b. Les textes: types et proto-<lb/>types. Armand Colin, Paris, 2nd edition.<lb/> </bibl>
+<bibl>François Bavaud. 2009. Aggregation invariance in<lb/> general clustering approaches. Advances in Data<lb/> Analysis and Classification, 3(3):205–225.<lb/> </bibl>
+<bibl>François Bavaud. 2010. Euclidean distances, soft<lb/> and spectral clustering on weighted graphs. In<lb/> José Balcázar, Francesco Bonchi, Aristides Gionis,<lb/> and Michèle Sebag, editors, Machine Learning and<lb/> Knowledge Discovery in Databases, volume 6321<lb/> of Lecture Notes in Computer Science, pages 103–<lb/> 118. Springer, Berlin; Heidelberg.<lb/> </bibl>
+<bibl>François Bavaud. 2011. On the Schoenberg transfor-<lb/>mations in data analysis: Theory and illustrations.<lb/> Journal of Classification, 28(3):297–314.<lb/> </bibl>
+<bibl>Douglas Biber. 1988. Variation across Speech and<lb/> Writing. Cambridge University Press.<lb/> </bibl>
+<bibl>Jean-Paul Bronckart. 1996. Activitélangagì ere,<lb/> textes et discours: Pour un interactionisme socio-<lb/>discursif. Delachaux et Niestlé, Lausanne; Paris.<lb/> </bibl>
+<bibl>Christelle Cocco, Raphaël Pittier, François Bavaud,<lb/> and Aris Xanthos. 2011. Segmentation and clus-<lb/>tering of textual sequences: a typological approach.<lb/> </bibl>
+<bibl>In Proceedings of the International Conference Re-<lb/>cent Advances in Natural Language Processing<lb/> 2011, pages 427–433, Hissar, Bulgaria, September.<lb/> </bibl>
+<bibl>RANLP 2011 Organising Committee.<lb/> </bibl>
+<bibl>Guy de Maupassant. 1882. Le voleur. Gil Blas, June<lb/> 21. http://un2sg4.unige.ch/athena/<lb/> selva/maupassant/textes/voleur.<lb/> html. Thierry Selva. Accessed 2011, July 6.<lb/> </bibl>
+<bibl>Guy de Maupassant. 1883. L&apos;orient. Le Gaulois,<lb/> September 13. http://un2sg4.unige.ch/<lb/> athena/selva/maupassant/textes/<lb/> orient.html. Thierry Selva. Accessed 2011,<lb/> March 5.<lb/> </bibl>
+<bibl>Guy de Maupassant. 1884. Un fou?. Le Figaro,<lb/> September 1. http://un2sg4.unige.ch/<lb/> athena/maupassant/maup_fou.html.<lb/> </bibl>
+<bibl>Thierry Selva. Accessed 2011, February 7.<lb/> </bibl>
+<bibl>Guy de Maupassant. 1885. Un fou. Le Gaulois,<lb/> September 2. http://un2sg4.unige.ch/<lb/> athena/selva/maupassant/textes/<lb/> unfou.html. Thierry Selva. Accessed 2011,<lb/> April 26.<lb/> </bibl>
+<bibl>Lucile Denoeud and Alain Guénoche. 2006. Com-<lb/>parison of distance indices between partitions. In<lb/> Vladimir Batagelj, Hans-Hermann Bock, Anuška<lb/> Ferligoj, and AlešAlešˇAlešŽiberna, editors, Data Science<lb/> and Classification, Studies in Classification, Data<lb/> Analysis, and Knowledge Organization, pages 21–<lb/> 28. Springer Berlin Heidelberg.<lb/> </bibl>
+<bibl>Michael Houle, Hans-Peter Kriegel, Peer Kröger,<lb/> Erich Schubert, and Arthur Zimek.<lb/> 2010.<lb/> Can shared-neighbor distances defeat the curse<lb/> of dimensionality?<lb/> In Michael Gertz and<lb/> Bertram Ludäscher, editors, Scientific and Statisti-<lb/>cal Database Management, volume 6187 of Lec-<lb/>ture Notes in Computer Science, pages 482–500.<lb/> </bibl>
+<bibl>Springer, Berlin; Heidelberg.<lb/> </bibl>
+<bibl>Lawrence Hubert and Phipps Arabie. 1985. Compar-<lb/>ing partitions. Journal of Classification, 2(1):193–<lb/> 218.<lb/> </bibl>
+<bibl>Jussi Karlgren and Douglass Cutting. 1994. Recog-<lb/>nizing text genres with simple metrics using dis-<lb/>criminant analysis. In Proceedings of the 15th con-<lb/>ference on Computational linguistics, volume 2 of<lb/> COLING &apos;94, pages 1071–1075, Stroudsburg, PA,<lb/> USA. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Denise Malrieu and Francois Rastier. 2001. Genres et<lb/> variations morphosyntaxiques. Traitement automa-<lb/>tique des langues, 42(2):547–577.<lb/> </bibl>
+<bibl>Christopher D. Manning and Hinrich Schütze. 1999.<lb/> Foundations of Statistical Natural Language Pro-<lb/>cessing. The MIT Press, 1st edition, June.<lb/> </bibl>
+<bibl>Glenn W. Milligan and Martha C. Cooper. 1986. A<lb/> study of the comparability of external criteria for hi-<lb/>erarchical cluster analysis. Multivariate Behavioral<lb/> Research, 21(4):441–458.<lb/> </bibl>
+<bibl>Alexis Palmer, Elias Ponvert, Jason Baldridge, and<lb/> Carlota Smith. 2007. A sequencing model for sit-<lb/>uation entity classification. In Proceedings of the<lb/> 45th Annual Meeting of the Association of Compu-<lb/>tational Linguistics, pages 896–903, Prague, Czech<lb/> Republic, June.<lb/> </bibl>
+<bibl>Kenneth Rose, Eitan Gurewitz, and Geoffrey C. Fox.<lb/> 1990. Statistical mechanics and phase transitions<lb/> in clustering. Physical Review Letters, 65(8):945–<lb/> 948.<lb/> </bibl>
+<bibl>Helmut Schmid. 1994. Probabilistic part-of-speech<lb/> tagging using decision trees. In Proceedings of the<lb/> International Conference on New Methods in Lan-<lb/>guage Processing, pages 44–49.<lb/> </bibl>
+<bibl>Carlota S. Smith. 2009. Modes of Discourse: The<lb/> Local Structure of Texts. Number 103 in Cambridge<lb/> studies in linguistics. Cambridge University Press,<lb/> Cambridge, UK, digitally printed version edition.<lb/> </bibl>
+<bibl>Yiming Yang and Jan O. Pedersen. 1997. A compara-<lb/>tive study on feature selection in text categorization.<lb/> In Proceedings of the 14th International Conference<lb/> on Machine Learning, pages 412–420.<lb/> </bibl>
+<bibl>Genane Youness and Gilbert Saporta. 2004. Une<lb/> Méthodologie pour la Comparaison de Partitions.<lb/> Revue de Statistique Appliquée, 52(1):97–120.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

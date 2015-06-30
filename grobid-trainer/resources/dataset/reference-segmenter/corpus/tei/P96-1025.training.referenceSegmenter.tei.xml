@@ -1,0 +1,27 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>E. Black et al. 1991. A Procedure for Quantita-<lb/>tively Comparing the Syntactic Coverage of En-<lb/>glish Grammars. Proceedings of the February 1991<lb/> DARPA Speech and Natural Language Workshop.<lb/> </bibl>
+<bibl>T. Briscoe and J. Carroll. 1993. Generalized<lb/> LR Parsing of Natural Language (Corpora)<lb/> with Unification-Based Grammars. Computa-<lb/>tional Linguistics, 19(1):25-60.<lb/> </bibl>
+<bibl>K. Church. 1988. A Stochastic Parts Program and<lb/> Noun Phrase Parser for Unrestricted Text. Second<lb/> Conference on Applied Natural Language Process-<lb/>ing, A CL.<lb/> </bibl>
+<bibl>M. Collins and J. Brooks. 1995. Prepositional Phrase<lb/> Attachment through a Backed-off Model. Proceed-<lb/>ings of the Third Workshop on Very Large Cor-<lb/>pora, pages 27-38.<lb/> </bibl>
+<bibl>D. Hindle and M. Rooth. 1993. Structural Ambigu-<lb/>ity and Lexical Relations. Computational Linguis-<lb/>tics, 19(1):103-120.<lb/> </bibl>
+<bibl>F. Jelinek. 1990. Self-organized Language Model-<lb/>ing for Speech Recognition. In Readings in Speech<lb/> Recognition. Edited by Waibel and Lee. Morgan<lb/> Kaufmann Publishers.<lb/> </bibl>
+<bibl>F. Jelinek, J. Lafferty, D. Magerman, R. Mercer, A.<lb/> Ratnaparkhi, S. Roukos. 1994. Decision Tree Pars-<lb/>ing using a Hidden Derivation Model. Proceedings<lb/> of the 1994 Human Language Technology Work-<lb/>shop, pages 272-277.<lb/> </bibl>
+<bibl>J. Lafferty, D. Sleator and, D. Temperley. 1992.<lb/> Grammatical Trigrams: A Probabilistic Model of<lb/> Link Grammar. Proceedings of the 1992 AAAI<lb/> Fall Symposium on Probabilistic Approaches to<lb/> Natural Language.<lb/> </bibl>
+<bibl>D. Magerman. 1995. Statistical Decision-Tree Mod-<lb/>els for Parsing. Proceedings of the 33rd Annual<lb/> Meeting of the Association for Computational<lb/> Linguistics, pages 276-283.<lb/> </bibl>
+<bibl>D. Magerman and M. Marcus. 1991. Pearl: A Prob-<lb/>abilistic Chart Parser. Proceedings of the 1991 Eu-<lb/>ropean A CL Conference, Berlin, Germany.<lb/> </bibl>
+<bibl>M. Marcus, B. Santorini and M. Marcinkiewicz.<lb/> 1993. Building a Large Annotated Corpus of En-<lb/>glish: the Penn Treebank. Computational Linguis-<lb/>tics, 19(2):313-330.<lb/> </bibl>
+<bibl>F. Pereira and Y. Schabes. 1992. Inside-Outside<lb/> Reestimation from Partially Bracketed Corpora.<lb/> Proceedings of the 30th Annual Meeting of the<lb/> Association for Computational Linguistics, pages<lb/> 128-135.<lb/> </bibl>
+<bibl>L. Ramshaw and M. Marcus. 1995. Text Chunk-<lb/>ing using Transformation-Based Learning. Pro-<lb/>ceedings of the Third Workshop on Very Large<lb/> Corpora, pages 82-94.<lb/> </bibl>
+<bibl>A. Ratnaparkhi. 1996. A Maximum Entropy Model<lb/> for Part-Of-Speech Tagging. Conference on Em-<lb/>pirical Methods in Natural Language Processing,<lb/> May 1996.<lb/> </bibl>
+<bibl>M. M. Wood. 1993. Categorial Grammars, Rout-<lb/>ledge.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

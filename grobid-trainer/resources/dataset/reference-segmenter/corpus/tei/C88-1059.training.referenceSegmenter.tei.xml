@@ -1,0 +1,15 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> Hayes, P.J.et al., &quot;Parsing Spoken Language; A Semantic<lb/> Caseframe Approach&quot;, EOLING,86<lb/> </bibl>
+        <bibl><label>[2]</label> Niedermair, G., &quot;Divided a~d Valency-Oriented Parsing in<lb/> Speech Understandir)g&quot;, COLING 86.<lb/> </bibl>
+<bibl>29~</bibl>
+        </listBibl>
+    </text>
+</tei>
+

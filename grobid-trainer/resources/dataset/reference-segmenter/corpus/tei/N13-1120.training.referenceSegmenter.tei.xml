@@ -1,0 +1,43 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>E. Agirre, E. Alfonseca, K. Hall, J. Kravalova, M. PasPas¸ca<lb/> and A. Soroa. 2009. A study on similarity and re-<lb/>latedness using distributional and WordNet-based ap-<lb/>proaches. In NAACL &apos;09, pages 19–27.<lb/> </bibl>
+<bibl>Galen Andrew and Jianfeng Gao. 2007. Scalable train-<lb/>ing of L1-regularized log-linear models. In ICML &apos;07.<lb/> I.I. Bejar, R. Chaffin, and S.E. Embretson. 1991. Cog-<lb/>nitive and psychometric analysis of analogical prob-<lb/>lem solving. Recent research in psychology. Springer-<lb/>Verlag.<lb/> </bibl>
+<bibl>Y. Bengio, R. Ducharme, P. Vincent, and C. Jauvin. 2003.<lb/> A neural probabilistic language model. Journal of Ma-<lb/>chine Learning Research, 3:1137–1155.<lb/> </bibl>
+<bibl>Peter F. Brown, Peter V. deSouza, Robert L. Mercer, Vin-<lb/>cent J. Della Pietra, and Jenifer C. Lai. 1992. Class-<lb/>based n-gram models of natural language. Computa-<lb/>tional Linguistics, 18:467–479.<lb/> </bibl>
+<bibl>A. Budanitsky and G. Hirst. 2006. Evaluating WordNet-<lb/>based measures of lexical semantic relatedness. Com-<lb/>putational Linguistics, 32:13–47, March.<lb/> </bibl>
+<bibl>Andrew Carlson, Justin Betteridge, Bryan Kisiel, Burr<lb/> Settles, Estevam R. Hruschka Jr., and Tom M.<lb/> Mitchell. 2010. Toward an architecture for never-<lb/>ending language learning. In Proceedings of the<lb/> Twenty-Fourth Conference on Artificial Intelligence<lb/> (AAAI 2010).<lb/> </bibl>
+<bibl>Timothy W. Finin. 1980. The Semantic Interpretation<lb/> of Compound Nominals. Ph.D. thesis, University of<lb/> Illinois at Urbana-Champaign.<lb/> </bibl>
+<bibl>J.H. Friedman. 2001. Greedy function approximation: a<lb/> gradient boosting machine. Ann. Statist, 29(5):1189–<lb/> 1232.<lb/> </bibl>
+<bibl>David Jurgens, Saif Mohammad, Peter Turney, and Keith<lb/> Holyoak. 2012. SemEval-2012 Task 2: Measuring<lb/> degrees of relational similarity. In Proceedings of the<lb/> Sixth International Workshop on Semantic Evaluation<lb/> (SemEval 2012), pages 356–364, Montréal, Canada,<lb/> 7-8 June. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Thomas K. Landauer, Peter W. Foltz, and Darrell La-<lb/>ham. 1998. An introduction to latent semantic analy-<lb/>sis. Discourse Processes, 25, pages 259–284.<lb/> </bibl>
+<bibl>Jordan J. Louviere and G. G. Woodworth. 1991. Best-<lb/>worst scaling: A model for the largest difference judg-<lb/>ments. Technical report, University of Alberta.<lb/> </bibl>
+<bibl>Tomas Mikolov, Martin Karafiát, Lukas Burget, Jan Cer-<lb/>nock´nock´y, and Sanjeev Khudanpur. 2010. Recurrent<lb/> neural network based language model. In INTER-<lb/>SPEECH, pages 1045–1048.<lb/> </bibl>
+<bibl>Tomas Mikolov, Anoop Deoras, Daniel Povey, Lukas<lb/> Burget, and Jan Cernocky. 2011. Strategies for train-<lb/>ing large scale neural network language models. In<lb/> ASRU.<lb/> </bibl>
+<bibl>Tomas Mikolov, Wen tau Yih, and Geoffrey Zweig. 2013.<lb/> Linguistic regularities in continuous space word repre-<lb/>sentations. In Proceedings of NAACL-HLT.<lb/> </bibl>
+<bibl>Vivi Nastase and Stan Szpakowicz. 2003. Exploring<lb/> noun-modifier semantic relations. In Proceedings of<lb/> the 5th International Workshop on Computational Se-<lb/>mantics.<lb/> </bibl>
+<bibl>Robert Parker, David Graff, Junbo Kong, Ke Chen, and<lb/> Kazuaki Maeda. 2009. English Gigaword fourth edi-<lb/>tion. Technical report, Linguistic Data Consortium,<lb/> Philadelphia.<lb/> </bibl>
+<bibl>Ted Pedersen. 2012. Duluth: Measuring degrees of re-<lb/>lational similarity with the gloss vector measure of se-<lb/>mantic relatedness. In Proceedings of the Sixth Inter-<lb/>national Workshop on Semantic Evaluation (SemEval<lb/> 2012), pages 497–501, Montréal, Canada, 7-8 June.<lb/> Association for Computational Linguistics.<lb/> </bibl>
+<bibl>K. Radinsky, E. Agichtein, E. Gabrilovich, and<lb/> S. Markovitch. 2011. A word at a time: computing<lb/> word relatedness using temporal semantic analysis. In<lb/> WWW &apos;11, pages 337–346.<lb/> </bibl>
+<bibl>J. Reisinger and R. Mooney. 2010. Multi-prototype<lb/> vector-space models of word meaning. In NAACL &apos;10.<lb/> </bibl>
+<bibl>Bryan Rink and Sanda Harabagiu. 2012. UTD: Deter-<lb/>mining relational similarity using lexical patterns. In<lb/> Proceedings of the Sixth International Workshop on<lb/> Semantic Evaluation (SemEval 2012), pages 413–418,<lb/> Montréal, Canada, 7-8 June. Association for Compu-<lb/>tational Linguistics.<lb/> </bibl>
+<bibl>Barbara Rosario and Marti Hearst. 2001. Classify-<lb/>ing the semantic relations in noun compounds via a<lb/> domain-specific lexical hierarchy. In Proceedings of<lb/> the 2001 Conference on Empirical Methods in Natural<lb/> Language Processing (EMNLP-01, pages 82–90.<lb/> </bibl>
+<bibl>Mireya Tovar, J. Alejandro Reyes, Azucena Montes,<lb/> Darnes Vilariño, David Pinto, and Saul León. 2012.<lb/> BUAP: A first approximation to relational similarity<lb/> measuring. In Proceedings of the Sixth International<lb/> Workshop on Semantic Evaluation (SemEval 2012),<lb/> pages 502–505, Montréal, Canada, 7-8 June. Associa-<lb/>tion for Computational Linguistics.<lb/> </bibl>
+<bibl>J. Turian, L. Ratinov, and Y. Bengio. 2010. Word rep-<lb/>resentations: a simple and general method for semi-<lb/>supervised learning. In Proceedings of Association for<lb/> Computational Linguistics (ACL 2010).<lb/> </bibl>
+<bibl>Peter Turney and Michael Littman. 2005. Corpus-based<lb/> learning of analogies and semantic relations. Machine<lb/> Learning, 60 (1-3), pages 251–278.<lb/> </bibl>
+<bibl>P. D. Turney. 2006. Similarity of semantic relations.<lb/> Computational Linguistics, 32(3):379–416.<lb/> </bibl>
+<bibl>Peter Turney. 2008. A uniform approach to analo-<lb/>gies, synonyms, antonyms, and associations. In In-<lb/>ternational Conference on Computational Linguistics<lb/> (COLING).<lb/> </bibl>
+<bibl>Peter D. Turney. 2012. Domain and function: A<lb/> dual-space model of semantic relations and compo-<lb/>sitions. Journal of Artificial Intelligence Research<lb/> (JAIR), 44:533–585.<lb/> </bibl>
+<bibl>Lucy Vanderwende. 1994. Algorithm for automatic<lb/> interpretation of noun sequences. In Proceedings of<lb/> COLING-94, pages 782–788.<lb/> </bibl>
+<bibl>Wentao Wu, Hongsong Li, Haixun Wang, and Kenny Q.<lb/> Zhu. 2012. Probase: a probabilistic taxonomy for<lb/> text understanding. In Proceedings of the 2012 ACM<lb/> SIGMOD International Conference on Management of<lb/> Data, pages 481–492, May.<lb/> </bibl>
+<bibl>Wen-tau Yih and Vahed Qazvinian. 2012. Measur-<lb/>ing word relatedness using heterogeneous vector space<lb/> models. In Proceedings of NAACL-HLT, pages 616–<lb/> 620, Montréal, Canada, June.<lb/> </bibl>
+<bibl>Wen-tau Yih, Geoffrey Zweig, and John Platt. 2012. Po-<lb/>larity inducing latent semantic analysis. In Proceed-<lb/>ings of NAACL-HLT, pages 1212–1222, Jeju Island,<lb/> Korea, July.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,29 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Agerri, R., J. Barnden, M. Lee, and A. Wallington (2007). Metaphor, inference and<lb/> domain independent mappings. In Proceedings of Research Advances in Natural<lb/> Language Processing (RANLP 2007), Borovets, Bulgaria, pp. 17–24.<lb/> </bibl>
+<bibl>Barnden, J., S. Glasbey, M. Lee, and A. Wallington (2003). Domain-transcending<lb/> mappings in a system for metaphorical reasoning. In Companion Proceedings of<lb/> the 10th Conference on the European Chapter of the Association for Computational<lb/> Linguistics (EACL-03), pp. 57–61.<lb/> </bibl>
+<bibl>Birke, J. and A. Sarkar (2006). A clustering approach for the nearly unsupervised<lb/> recognition of nonliteral language. In Proceedings of the 11th Conference on the<lb/> European Chapter of the Association for Computational Linguistics (EACL 2006),<lb/> Trento, Italy, pp. 329–336.<lb/> </bibl>
+<bibl>Bos, J. and K. Markert (2006). Recognizing textual entailment with robust logical<lb/> inference. In J. Quiñonero-Candela, I. Dagan, B. Magnini, and F. d&apos;Alché Buc<lb/> (Eds.), MLCW 2005, Volume 3944 of LNAI, pp. 404–426. Springer-Verlag.<lb/> </bibl>
+<bibl>Clark, P., W. Murray, J. Thompson, P. Harrison, J. Hobbs, and C. Fellbaum (2007). On<lb/> the role of lexical and world knowledge in RTE3. In Proceedings of the Workshop<lb/> on Textual Entailment and Paraphrasing, Prague, pp. 54–59. ACL 2007.<lb/> </bibl>
+<bibl>Dagan, I., O. Glickman, and B. Magnini (2007). The PASCAL Recognising Tex-<lb/>tual Entailment challenge. In J. Quiñonero-Candela, I. Dagan, B. Magnini, and<lb/> F. d&apos;Alché Buc (Eds.), MLCW 2005, Volume 3944 of LNAI, pp. 177–190. Springer-<lb/>Verlag.<lb/> </bibl>
+<bibl>Falkenhainer, B., K. Forbus, and D. Gentner (1989). The structure-mapping engine:<lb/> algorithm and examples. Artificial Intelligence 41(1), 1–63.<lb/> </bibl>
+<bibl>Fass, D. (1997). Processing metaphor and metonymy. Greenwich, Connecticut:<lb/> Ablex.<lb/> </bibl>
+<bibl>Gedigian, M., J. Bryant, S. Narayanan, and B. Ciric (2006). Catching metaphors. In<lb/> Proceedings of the 3rd Workshop on Scalable Natural Language Understanding,<lb/> New York, pp. 41–48.<lb/> </bibl>
+<bibl>Goatly, A. (1997). The Language of Metaphors. Routledge.<lb/> </bibl>
+<bibl>Textual Entailment as an Evaluation Framework for Metaphor Resolution<lb/> 363<lb/> </bibl>
+<bibl>Markert, K. and M. Nissim (2007, June). Semeval-2007: Metonymy resolution at<lb/> semeval-2007. In International Workshop on Semantic Evaluations (SemEval-<lb/>2007), Prague, pp. 36–41. Association for Computational Linguistics (ACL-07).<lb/> </bibl>
+<bibl>Martin, J. (1990). A computational model of metaphor interpretation. New York:<lb/> Academic Press.<lb/> </bibl>
+<bibl>Mason, Z. (2004). CorMet: a computational, corpus-based conventional metaphor<lb/> extraction system. Computational Linguistics 30(1), 23–44.<lb/> </bibl>
+<bibl>Veale, T. and Y. Hao (2008). Enriching WordNet with folk knowledge and stereotypes.<lb/> In Proceedings of the 4th Global WordNet Conference, Szeged, Hungary.<lb/> </bibl>
+<bibl>Wallington, A., R. Agerri, J. Barnden, M. Lee, and T. Rumbell (2008, May). Affect<lb/> transfer by metaphor for an intelligent conversational agent. In Proceedings of the<lb/> LREC 2008 Workshop on Sentiment Analysis: Emotion, Metaphor, Ontology and<lb/> Terminology (EMOT 08), Marrakech, Morocco, pp. 102–107.<lb/> </bibl>
+<bibl>Zaenen, A., L. Karttunen, and R. Crouch (2005). Local textual inference: Can it be<lb/> defined or circumscribed? In Proceedings of the ACL 05 Workshop on Empirical<lb/> Modelling of Semantic Equivalence and Entailment, pp. 31–36.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

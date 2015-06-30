@@ -1,0 +1,28 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>M. Bautin, L. Vijayarenu, and S. Skiena. 2008. Inter-<lb/>national sentiment analysis for news and blogs. In<lb/> Proceedings of the International Conference on We-<lb/>blogs and Social Media (ICWSM).<lb/> </bibl>
+<bibl>J. Brooke, M. Tofiloski, and M. Taboada. 2009. Cross-<lb/>linguistic sentiment analysis: From english to span-<lb/>ish. In International Conference RANLP, pages 50–<lb/> 54.<lb/> </bibl>
+<bibl>E. Cambria, R. Speer, C. Havasi, and A. Hussain.<lb/> 2010. Senticnet: A publicly available semantic re-<lb/>source for opinion mining. Artificial Intelligence,<lb/> pages 14–18.<lb/> </bibl>
+<bibl>H. Cui, V. Mittal, and M. Datar. 2006. Compara-<lb/>tive experiments on sentiment classification for on-<lb/>line product reviews. In proceedings of the 21st na-<lb/>tional conference on Artificial intelligence -Volume<lb/> 2, AAAI&apos;06, pages 1265–1270. AAAI Press.<lb/> </bibl>
+<bibl>K. Dave, S. Lawrence, and D. M. Pennock. 2003.<lb/> Mining the peanut gallery: opinion extraction and<lb/> semantic classification of product reviews. In Pro-<lb/>ceedings of the 12th international conference on<lb/> World Wide Web, WWW &apos;03, pages 519–528, New<lb/> York, NY, USA. ACM.<lb/> </bibl>
+<bibl>K. Denecke. 2008. Using sentiwordnet for multilin-<lb/>gual sentiment analysis. In Data Engineering Work-<lb/>shop, 2008. ICDEW 2008. IEEE 24th International<lb/> Conference on, pages 507–512.<lb/> </bibl>
+<bibl>A. Esuli and F. Sebastiani. 2006. Sentiwordnet: A<lb/> publicly available lexical resource for opinion min-<lb/>ing. In In Proceedings of the 5th Conference on Lan-<lb/>guage Resources and Evaluation, pages 417–422.<lb/> </bibl>
+<bibl>H. Ghorbel. 2012. Experiments in cross-lingual sen-<lb/>timent analysis in discussion forums. In K. Aberer,<lb/> A. Flache, W. Jager, L. Liu, J. Tang, and C. Guret,<lb/> editors, Social Informatics, volume 7710 of Lec-<lb/>ture Notes in Computer Science, pages 138–151.<lb/> Springer Berlin Heidelberg.<lb/> </bibl>
+<bibl>S.-M. Kim and E. Hovy. 2004. Determining the senti-<lb/>ment of opinions. In Proceedings of the 20th inter-<lb/>national conference on Computational Linguistics,<lb/> COLING &apos;04, Stroudsburg, PA, USA. Association<lb/> for Computational Linguistics.<lb/> </bibl>
+<bibl>B. Pang and L. Lee. 2004. A sentimental educa-<lb/>tion: Sentiment analysis using subjectivity summa-<lb/>rization based on minimum cuts. In Proceedings of<lb/> the 42nd Annual Meeting on Association for Compu-<lb/>tational Linguistics, page 271. Association for Com-<lb/>putational Linguistics.<lb/> </bibl>
+<bibl>B. Pang and L. Lee. 2008. Opinion mining and sen-<lb/>timent analysis. Found. Trends Inf. Retr., 2(1-2):1–<lb/> 135, January.<lb/> </bibl>
+<bibl>B. Pang, L. Lee, and S. Vaithyanathan. 2002. Thumbs<lb/> up?: sentiment classification using machine learn-<lb/>ing techniques. In Proceedings of the ACL-02 con-<lb/>ference on Empirical methods in natural language<lb/> processing-Volume 10, pages 79–86. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>M. Rushdi-Saleh, M. T. Martín-Valdivia, L. A. Ureña<lb/> López, and J. M. Perea-Ortega. 2011. Bilingual<lb/> experiments with an arabic-english corpus for opin-<lb/>ion mining. In Proceedings of the International<lb/> Conference Recent Advances in Natural Language<lb/> Processing 2011, pages 740–745, Hissar, Bulgaria,<lb/> September. RANLP 2011 Organising Committee.<lb/> </bibl>
+<bibl>M. Saad, D. Langlois, and K. Sma¨Sma¨ıli. 2013. Extract-<lb/>ing comparable articles from wikipedia and measur-<lb/>ing their comparabilities. In V International Confer-<lb/>ence on Corpus Linguistics. University of Alicante,<lb/> Spain.<lb/> </bibl>
+<bibl>S. Tan, X. Cheng, Y. Wang, and H. Xu. 2009. Adapt-<lb/>ing naive bayes to domain adaptation for sentiment<lb/> analysis. In Advances in Information Retrieval,<lb/> pages 337–349. Springer.<lb/> </bibl>
+<bibl>R. Valitutti. 2004. Wordnet-affect: an affective exten-<lb/>sion of wordnet. In In Proceedings of the 4th In-<lb/>ternational Conference on Language Resources and<lb/> Evaluation, pages 1083–1086.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,46 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>A. E. Ades and M. Steedman. 1982. On the order of<lb/> words. Linguistics and Philosophy, pages 517 – 558.<lb/> </bibl>
+<bibl>Johan Bos, Stephen Clark, Mark Steedman, James R.<lb/> Curran, and Julia Hockenmaier. 2004. Wide-coverage<lb/> semantic representations from a CCG parser. In Pro-<lb/>ceedings of COLING-04, pages 1240–1246, Geneva,<lb/> Switzerland.<lb/> </bibl>
+<bibl>Stephen Clark and James R. Curran. 2007. Wide-<lb/>coverage efficient statistical parsing with CCG and<lb/> log-linear models.<lb/> Computational Linguistics,<lb/> 33(4):493–552.<lb/> </bibl>
+<bibl>Stephen Clark and James R. Curran. 2009. Comparing<lb/> the accuracy of CCG and Penn Treebank parsers. In<lb/> Proceedings of ACL-2009 (short papers), pages 53–<lb/> 56, Singapore.<lb/> </bibl>
+<bibl>Michael Collins and Brian Roark. 2004. Incremental<lb/> parsing with the perceptron algorithm. In Proceedings<lb/> of ACL, pages 111–118, Barcelona, Spain.<lb/> </bibl>
+<bibl>Michael Collins. 2002. Discriminative training meth-<lb/>ods for hidden Markov models: Theory and experi-<lb/>ments with perceptron algorithms. In Proceedings of<lb/> EMNLP, pages 1–8, Philadelphia, USA.<lb/> </bibl>
+<bibl>Jenny Rose Finkel, Alex Kleeman, and Christopher D.<lb/> Manning. 2008. Feature-based, conditional random<lb/> field parsing. In Proceedings of the 46th Meeting of<lb/> the ACL, pages 959–967, Columbus, Ohio.<lb/> </bibl>
+<bibl>Timothy A. D. Fowler and Gerald Penn. 2010. Ac-<lb/>curate context-free parsing with Combinatory Catego-<lb/>rial Grammar. In Proceedings of ACL-2010, Uppsala,<lb/> Sweden.<lb/> </bibl>
+<bibl>H. Hassan, K. Sima&apos;an, and A. Way. 2008. A syntactic<lb/> language model based on incremental CCG parsing.<lb/> In Proceedings of the Second IEEE Spoken Language<lb/> Technology Workshop, Goa, India.<lb/> </bibl>
+<bibl>Julia Hockenmaier and Mark Steedman. 2007. CCG-<lb/>bank: A corpus of CCG derivations and dependency<lb/> structures extracted from the Penn Treebank. Compu-<lb/>tational Linguistics, 33(3):355–396.<lb/> </bibl>
+<bibl>Julia Hockenmaier. 2003. Data and Models for Statis-<lb/>tical Parsing with Combinatory Categorial Grammar.<lb/> Ph.D. thesis, University of Edinburgh.<lb/> </bibl>
+<bibl>Liang Huang, Wenbin Jiang, and Qun Liu. 2009.<lb/> Bilingually-constrained (monolingual) shift-reduce<lb/> parsing. In Proceedings of the 2009 EMNLP Confer-<lb/>ence, pages 1222–1231, Singapore.<lb/> </bibl>
+<bibl>Richard Johansson and Pierre Nugues. 2007. Incre-<lb/>mental dependency parsing using online learning. In<lb/> Proceedings of the CoNLL/EMNLP Conference, pages<lb/> 1134–1138, Prague, Czech Republic.<lb/> </bibl>
+<bibl>Takuya Matsuzaki, Yusuke Miyao, and Jun ichi Tsu-<lb/>jii. 2007. Efficient HPSG parsing with supertagging<lb/> and CFG-filtering. In Proceedings of IJCAI-07, pages<lb/> 1671–1676, Hyderabad, India.<lb/> </bibl>
+<bibl>Ryan McDonald and Joakim Nivre. 2007. Characteriz-<lb/>ing the errors of data-driven dependency parsing mod-<lb/>els. In Proceedings of EMNLP/CoNLL, pages 122–<lb/> 131, Prague, Czech Republic.<lb/> </bibl>
+<bibl>Ryan McDonald, Koby Crammer, and Fernando Pereira.<lb/> 2005. Online large-margin training of dependency<lb/> parsers. In Proceedings of the 43rd Meeting of the<lb/> ACL, pages 91–98, Michigan, Ann Arbor.<lb/> </bibl>
+<bibl>Yusuke Miyao and Jun&apos;ichi Tsujii. 2005. Probabilistic<lb/> disambiguation models for wide-coverage HPSG pars-<lb/>ing. In Proceedings of the 43rd meeting of the ACL,<lb/> pages 83–90, University of Michigan, Ann Arbor.<lb/> </bibl>
+<bibl>Takashi Ninomiya, Takuya Matsuzaki, Nobuyuki<lb/> Shimizu, and Hiroshi Nakagawa. 2009. Deterministic<lb/> shift-reduce parsing for unification-based grammars<lb/> by using default unification.<lb/> In Proceedings of<lb/> EACL-09, pages 603–611, Athens, Greece.<lb/> </bibl>
+<bibl>Takashi Ninomiya, Takuya Matsuzaki, Nobuyuki<lb/> Shimizu, and Hiroshi Nakagawa. 2010. Deter-<lb/>ministic shift-reduce parsing for unification-based<lb/> grammars. Journal of Natural Language Engineering,<lb/> DOI:10.1017/S1351324910000240.<lb/> </bibl>
+<bibl>J. Nivre and M. Scholz. 2004. Deterministic dependency<lb/> parsing of English text. In Proceedings of COLING-<lb/>04, pages 64–70, Geneva, Switzerland.<lb/> </bibl>
+<bibl>Joakim Nivre, Johan Hall, Jens Nilsson, GülsGüls¸en EryiˇEryiˇgit,<lb/> and Svetoslav Marinov. 2006. Labeled pseudo-<lb/>projective dependency parsing with support vector ma-<lb/>chines. In Proceedings of CoNLL, pages 221–225,<lb/> New York, USA.<lb/> </bibl>
+<bibl>Slav Petrov and Dan Klein. 2007. Improved infer-<lb/>ence for unlexicalized parsing. In Proceedings of<lb/> HLT/NAACL, pages 404–411, Rochester, New York,<lb/> April.<lb/> </bibl>
+<bibl>Stefan Riezler, Tracy H. King, Ronald M. Kaplan,<lb/> Richard Crouch, John T. Maxwell III, and Mark John-<lb/>son. 2002. Parsing the Wall Street Journal using a<lb/> Lexical-Functional Grammar and discriminative esti-<lb/>mation techniques. In Proceedings of the 40th Meet-<lb/>ing of the ACL, pages 271–278, Philadelphia, PA.<lb/> </bibl>
+<bibl>Laura Rimell, Stephen Clark, and Mark Steedman. 2009.<lb/> Unbounded dependency recovery for parser evalua-<lb/>tion. In Proceedings of EMNLP-09, pages 813–821,<lb/> Singapore.<lb/> </bibl>
+<bibl>Kenji Sagae and Alon Lavie. 2005. A classifier-based<lb/> parser with linear run-time complexity. In Proceed-<lb/>ings of IWPT, pages 125–132, Vancouver, Canada.<lb/> </bibl>
+<bibl>Kenji Sagae and Alon Lavie. 2006a. A best-first<lb/> probabilistic shift-reduce parser. In Proceedings of<lb/> COLING/ACL poster session, pages 691–698, Sydney,<lb/> Australia, July.<lb/> </bibl>
+<bibl>Kenji Sagae and Alon Lavie. 2006b. Parser combination<lb/> by reparsing. In Proceedings of HLT/NAACL, Com-<lb/>panion Volume: Short Papers, pages 129–132, New<lb/> York, USA.<lb/> </bibl>
+<bibl>Mark Steedman. 2000. The Syntactic Process. The MIT<lb/> Press, Cambridge, Mass.<lb/> </bibl>
+<bibl>David Weir. 1988. Characterizing Mildly Context-<lb/>Sensitive Grammar Formalisms. Ph.D. thesis, Univer-<lb/>sity of Pennsylviania.<lb/> </bibl>
+<bibl>Michael White and Rajakrishnan Rajkumar. 2009. Per-<lb/>ceptron reranking for CCG realization. In Proceedings<lb/> of the 2009 Conference on Empirical Methods in Nat-<lb/>ural Language Processing, pages 410–419, Singapore.<lb/> </bibl>
+<bibl>H Yamada and Y Matsumoto. 2003. Statistical depen-<lb/>dency analysis using support vector machines. In Pro-<lb/>ceedings of IWPT, Nancy, France.<lb/> </bibl>
+<bibl>Yue Zhang and Stephen Clark. 2008. A tale of<lb/> two parsers: investigating and combining graph-based<lb/> and transition-based dependency parsing using beam-<lb/>search. In Proceedings of EMNLP-08, Hawaii, USA.<lb/> </bibl>
+<bibl>Yue Zhang and Stephen Clark. 2009. Transition-based<lb/> parsing of the Chinese Treebank using a global dis-<lb/>criminative model. In Proceedings of IWPT, Paris,<lb/> France, October.<lb/> </bibl>
+<bibl>Yi Zhang, Valia Kordoni, and Erin Fitzgerald. 2007. Par-<lb/>tial parse selection for robust deep processing. In Pro-<lb/>ceedings of the ACL 2007 Workshop on Deep Linguis-<lb/>tic Processing, Prague, Czech Republic.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

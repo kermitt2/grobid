@@ -1,0 +1,33 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Francis Bond, Kentaro Ogura, and Satoru Ikehara. 1994.<lb/> Countability and number in Japanese to English ma-<lb/>chine translation. Proc. of the 15th conference on<lb/> Computational Linguistics, pages 32-38.<lb/> </bibl>
+<bibl>Chris Brockett, William B. Dolan, and Michael Gamon.<lb/> 2006. Correcting ESL errors using phrasal SMT<lb/> techniques. Proc. of the 21st International Confer-<lb/>ence on Computational Linguistics and the 44th An-<lb/>nual Meeting on Association for Computational<lb/> Linguistics, pages 249-256.<lb/> </bibl>
+<bibl>Michael Collins. 2002. Discriminative training methods<lb/> for hidden Markov models: theory and experiments<lb/> with perceptron algorithms. Proc. of the ACL-02<lb/> Conference on Empirical Methods in Natural Lan-<lb/>guage Processing, pages 1-8.<lb/> </bibl>
+<bibl>Jens Eeg-Olofsson and Ola Knutsson. 2003. Automatic<lb/> Grammar Checking for Second Language Learners –<lb/> the Use of Prepositions. Proc. of NoDaliDa.<lb/> </bibl>
+<bibl>Michael Gamon, Jianfeng Gao, Chris Brockett, Alexan-<lb/>dre Klementiev, William B. Dolan, Dmitrtiy Belen-<lb/>ko, and Lucy Vanderwende. 2008. Using Contextual<lb/> Speller Techniques and Language Modeling for ESL<lb/> Error Correction. Proc. of the International Joint<lb/> Conference on Natural Language Processing.<lb/> </bibl>
+<bibl>Shichun Gui and Huizhong Yang. 2002. Chinese Learn-<lb/>er English Corpus. Shanghai Foreign Languages Ed-<lb/>ucation Press, Shanghai, China.<lb/> </bibl>
+<bibl>Julia E. Heine. 1998. Definiteness predictions for Japa-<lb/>nese noun phrases. Proc. of the 36th Annual Meeting<lb/> of the Association for Computational Linguistics and<lb/> 17th International Conference on Computational<lb/> Linguistics, pages 519-525.<lb/> </bibl>
+<bibl>John Lee and Stephanie Seneff. 2008. Correcting mis-<lb/>use of verb forms. Proc. of the 46th Annual Meeting<lb/> on Association for Computational Linguistics, pages<lb/> 174-182.<lb/> </bibl>
+<bibl>Ting Liu, Ming Zhou, Jianfeng Gao, Endong Xun and<lb/> Changning Huang. 2000. PENS: A Machine-aided<lb/> English Writing System for Chinese Users. Proc. of<lb/> the 38th Annual Meeting on Association for Compu-<lb/>tational Linguistics, pages 529-536.<lb/> </bibl>
+<bibl>Lluí s Mà rquez. 2009. Semantic Role Labeling Past,<lb/> Present and Future, Tutorial of ACL-IJCNLP 2009.<lb/> </bibl>
+<bibl>Dan Moldovan, Adriana Badulescu, Marta Tatu, Daniel<lb/> Antohe and Roxana Girju. 2004. Models for the se-<lb/>mantic classification of noun phrases. Proc. of the<lb/> HLT-NAACL Workshop on Computational Lexical<lb/> Semantics, pages 60-67.<lb/> </bibl>
+<bibl>Srini Narayanan and Sanda Harabagiu. 2004. Question<lb/> answering based on semantic structures. Proc. of the<lb/> 20th International Conference on Computational<lb/> Linguistics, pages 693-701.<lb/> </bibl>
+<bibl>Franz J. Och and Hermann Ney. 2004. The Alignment<lb/> Template Approach to Statistical Machine Transla-<lb/>tion. Journal of Computational Linguistics, 30(4),<lb/> pages 417-449.<lb/> </bibl>
+<bibl>Sebastian Riedel and Ivan Meza-Ruiz. 2008. Collective<lb/> semantic role labelling with Markov Logic. Proc. of<lb/> the Twelfth Conference on Computational Natural<lb/> Language Learning, pages 193-197.<lb/> </bibl>
+<bibl>Andreas Stolcke. 2002. SRILM --An Extensible Lan-<lb/>guage Modeling Toolkit. Proc. of International Con-<lb/>ference on Spoken Language Processing, pages: 901-<lb/>904.<lb/> </bibl>
+<bibl>Mihai Surdeanu, Lluis Mà rquez, Xavier Carreras, and<lb/> Pere R. Comas. 2007. Combination strategies for se-<lb/>mantic role labeling. Journal of Artificial Intelligence<lb/> Research, page 105-151.<lb/> </bibl>
+<bibl>Mihai Surdeanu, Sanda Harabagiu, John Williams, and<lb/> Paul Aarseth. 2003. Using predicate-argument struc-<lb/>tures for information extraction. Proc. of the 41st<lb/> Annual Meeting on Association for Computational<lb/> Linguistics, pages 8-15.<lb/> </bibl>
+<bibl>Joel R. Tetreault and Martin Chodorow. 2008. The ups<lb/> and downs of preposition error detection in ESL writ-<lb/>ing. Proc. of the 22nd international Conference on<lb/> Computational Linguistics, pages 865-872.<lb/> </bibl>
+<bibl>Vladimir N. Vapnik. 1995. The Nature of Statistical<lb/> Learning Theory. Springer-Verlag, New York.<lb/> </bibl>
+<bibl>Patrick Ye and Timothy Baldwin. 2006. Verb Sense<lb/> Disambiguation Using Selectional Preferences<lb/> Extracted with a State-of-the-art Semantic Role<lb/> Labeler. Proc. of the Australasian Language<lb/> Technology Workshop, pages 141-148.<lb/> </bibl>
+<bibl>Xing Yi, Jianfeng Gao, and William B. Dolan. 2008. A<lb/> Web-based English Proofing System for English as a<lb/> Second Language Users. Proc. of International Joint<lb/> Conference on Natural Language Processing, pages<lb/> 619-624.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,47 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>A. Airola, S. Pyysalo, J. Björne, T. Pahikkala,<lb/> F. Ginter, and T. Salakoski. 2008. All-paths graph<lb/> kernel for protein-protein interaction extraction<lb/> with evaluation of cross-corpus learning. BMC<lb/> Bioinformatics, 9 Suppl 11:S2.<lb/> </bibl>
+<bibl>J. Björne, J. Heimonen, F. Ginter, A. Airola,<lb/> T. Pahikkala, and T. Salakoski. 2011. Extracting<lb/> Contextualized Complex Biological Events with<lb/> Rich Graph-Based Features Sets. Computational<lb/> Intelligence, 27(4):541–557.<lb/> </bibl>
+<bibl>R. C. Bunescu and R. J. Mooney. 2006. Sub-<lb/>sequence Kernels for Relation Extraction. Ad-<lb/>vances in Neural Information Processing Sys-<lb/>tems, 18:171.<lb/> </bibl>
+<bibl>E. Charniak and M. Johnson. 2005. Coarse-to-<lb/>Fine n-Best Parsing and MaxEnt Discriminative<lb/> Reranking. In Proc. of ACL&apos;05, pages 173–180.<lb/> </bibl>
+<bibl>M. D. Cheitlin, A. M. Hutter, R. G. Brindis, P. Ganz,<lb/> S. Kaul, R. O. Russell, and R. M. Zusman. 1999.<lb/> Use of sildenafil (viagra) in patients with cardio-<lb/>vascular disease. J Am Coll Cardiol, 33(1):273–<lb/> 282.<lb/> </bibl>
+<bibl>K. Cohen, Helen L Johnson, Karin Verspoor,<lb/> Christophe Roeder, and Lawrence E Hunter.<lb/> 2010. The structural and content aspects of ab-<lb/>stracts versus bodies of full text journal articles<lb/> are different. BMC Bioinformatics, 11:492.<lb/> </bibl>
+<bibl>M. Collins and N. Duffy. 2001. Convolution Kernels<lb/> for Natural Language. In Proc. of NIPS&apos;01, pages<lb/> 625–632.<lb/> </bibl>
+<bibl>A. Coulet, Y. Garten, M. Dumontier, R. Altman,<lb/> M. Musen, and N. Shah. 2011. Integration and<lb/> publication of heterogeneous text-mined relation-<lb/>ships on the semantic web. Journal of Biomedical<lb/> Semantics, 2(Suppl 2):S10.<lb/> </bibl>
+<bibl>M.C. De Marneffe, B. MacCartney, and C.D. Man-<lb/>ning. 2006. Generating typed dependency parses<lb/> from phrase structure parses. In Proc. of LREC<lb/> 2006, pages 449–454.<lb/> </bibl>
+<bibl>L. French, S. Lane, L. Xu, C. Siu, C. Kwok, Y. Chen,<lb/> C. Krebs, and P. Pavlidis. 2012. Application and<lb/> evaluation of automated methods to extract neu-<lb/>roanatomical connectivity statements from free<lb/> text. Bioinformatics, 28(22):2963–2970.<lb/> </bibl>
+<bibl>C. Giuliano, A. Lavelli, and L. Romano. 2006. Ex-<lb/>ploiting Shallow Linguistic Information for Re-<lb/>lation Extraction from Biomedical Literature. In<lb/> Proc. of EACL&apos;06, pages 401–408.<lb/> </bibl>
+<bibl>S. I. Haider, K. Johnell, M. Thorslund, and J. Fast-<lb/>bom. 2007. Trends in polypharmacy and potential<lb/> drug-drug interactions across educational groups<lb/> in elderly patients in Sweden for the period 1992<lb/> -2002. Int J Clin Pharmacol Ther, 45(12):643–<lb/> 653.<lb/> </bibl>
+<bibl>L. Hunter and K. Cohen. 2006. Biomedical language<lb/> processing: what&apos;s beyond PubMed? Mol Cell,<lb/> 21(5):589–594.<lb/> </bibl>
+<bibl>J.D. Kim, T. Ohta, S. Pyysalo, Y. Kano, and J. Tsu-<lb/>jii. 2009. Overview of BioNLP&apos;09 shared task on<lb/> event extraction. In Proc. of BioNLP&apos;09, pages<lb/> 1–9.<lb/> </bibl>
+<bibl>C. Knox, V. Law, T. Jewison, P. Liu, S. Ly, A. Frol-<lb/>kis, A. Pon, K. Banco, C. Mak, V. Neveu,<lb/> Y. Djoumbou, R. Eisner, A. Chi Guo, and D. S<lb/> Wishart. 2011. Drugbank 3.0: a comprehensive<lb/> resource for &apos;omics&apos; research on drugs. Nucleic<lb/> Acids Res, 39(Database issue):D1035–D1041.<lb/> </bibl>
+<bibl>T. Kuboyama, K. Hirata, H. Kashima, K. F. Aoki-<lb/>Kinoshita, and H. Yasuda. 2007. A Spectrum<lb/> Tree Kernel. Information and Media Technolo-<lb/>gies, 2(1):292–299.<lb/> </bibl>
+<bibl>F. Leitner, S.A. Mardis, M. Krallinger, G. Ce-<lb/>sareni, L.A. Hirschman, and A. Valencia. 2010.<lb/> An overview of BioCreative II. 5.<lb/> IEEE<lb/> IEEE/ACM Transactions on Computational Biol-<lb/>ogy and Bioinformatics, pages 385–399.<lb/> </bibl>
+<bibl>H. Liu, T. Christiansen, W. Baumgartner, and<lb/> K. Verspoor. 2012. Biolemmatizer: a lemmatiza-<lb/>tion tool for morphological processing of biomed-<lb/>ical text. Journal of Biomedical Semantics, 3(1):3.<lb/> </bibl>
+<bibl>D. McClosky. 2010. Any Domain Parsing: Auto-<lb/>matic Domain Adaptation for Natural Language<lb/> Parsing. Ph.D. thesis, Brown University.<lb/> </bibl>
+<bibl>A. Moschitti. 2006. Efficient Convolution Kernels<lb/> for Dependency and Constituent Syntactic Trees.<lb/> In Proc. of ECML&apos;06, pages 318–329.<lb/> </bibl>
+<bibl>M. Neves, J.-M. Carazo, and A. Pascual-Montano.<lb/> 2009. Extraction of biomedical events using case-<lb/>based reasoning. In Proc. of BioNLP&apos;09, pages<lb/> 68–76.<lb/> </bibl>
+<bibl>S. J. Pan and Q. Yang. 2010. A Survey on Transfer<lb/> Learning. IEEE Transactions on Knowledge and<lb/> Data Engineering, 22(10):1345–1359.<lb/> </bibl>
+<bibl>R. Polikar. 2006. Ensemble Based Systems in Deci-<lb/>sion Making. IEEE Circuits and Systems Maga-<lb/>zine, 6(3):21–45.<lb/> </bibl>
+<bibl>S. Pyysalo, R. Saetre, J. Tsujii, and T. Salakoski.<lb/> 2008. Why Biomedical Relation Extraction Re-<lb/>sults are Incomparable and What to do about it.<lb/> In Proc. of SMBM&apos;08, pages 149–152.<lb/> </bibl>
+<bibl>T. Rocktäschel, T. Huber, M. Weidlich, and U. Leser.<lb/> 2013. WBI-NER: The impact of domain-specific<lb/> features on the performance of identifying and<lb/> classifying mentions of drugs. In Proceedings of<lb/> the 7th International Workshop on Semantic Eval-<lb/>uation (SemEval 2013).<lb/> </bibl>
+<bibl>R. Saetre, K. Sagae, and J. Tsujii. 2008. Syntactic<lb/> features for protein-protein interaction extraction.<lb/> In Proc. of LBM&apos;07.<lb/> </bibl>
+<bibl>I. Segura-Bedmar, P. Martínez, and M. Herrero-<lb/>Zazo. 2013. Semeval-2013 task 9: Extraction of<lb/> drug-drug interactions from biomedical texts. In<lb/> Proc. of the 7th International Workshop on Se-<lb/>mantic Evaluation (SemEval 2013).<lb/> </bibl>
+<bibl>I. Segura-Bedmar, P. Martínez, and D. Sanchez-<lb/>Cisneros. 2011. The 1st ddiextraction-2011 chal-<lb/>lenge task: Extraction of drug-drug interactions<lb/> from biomedical text. In Proc. of the 1st Chal-<lb/>lenge Task on Drug-Drug Interaction Extraction<lb/> 2011, pages 1–9.<lb/> </bibl>
+<bibl>I. Solt, F. P. Szidarovszky, and D. Tikk. 2010. Con-<lb/>cept, Assertion and Relation Extraction at the<lb/> 2010 i2b2 Relation Extraction Challenge using<lb/> parsing information and dictionaries. In Proc. of<lb/> i2b2/VA Shared-Task.<lb/> </bibl>
+<bibl>I. Spasic, S. Ananiadou, and J. Tsujii. 2005. MaS-<lb/>TerClass: a case-based reasoning system for the<lb/> classification of biomedical terms. Bioinformat-<lb/>ics, 21(11):2748–2758.<lb/> </bibl>
+<bibl>P. Thomas, M. Neves, I. Solt, D. Tikk, and U. Leser.<lb/> 2011. Relation extraction for drug-drug interac-<lb/>tions using ensemble learning. In Proc. of the<lb/> 1st Challenge Task on Drug-Drug Interaction Ex-<lb/>traction 2011, pages 11–18.<lb/> </bibl>
+<bibl>D. Tikk, I. Solt, P. Thomas, and U. Leser. 2013.<lb/> A detailed error analysis of 13 kernel methods<lb/> for protein-protein interaction extraction. BMC<lb/> Bioinformatics, 14(1):12.<lb/> </bibl>
+<bibl>D. Tikk, P. Thomas, P. Palaga, J. Hakenberg, and<lb/> U. Leser. 2010. A comprehensive benchmark of<lb/> kernel methods to extract protein-protein interac-<lb/>tions from literature. PLoS Comput Biol, 6.<lb/> </bibl>
+<bibl>S. V. N. Vishwanathan and A. J. Smola. 2002. Fast<lb/> Kernels for String and Tree Matching. In Proc. of<lb/> NIPS&apos;02, pages 569–576.<lb/> </bibl>
+<bibl>M. Zhang, J. Zhang, J. Su, and G. Zhou. 2006. A<lb/> Composite Kernel to Extract Relations between<lb/> Entities with Both Flat and Structured Features.<lb/> In Proc. of ICML&apos;06, pages 825–832.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

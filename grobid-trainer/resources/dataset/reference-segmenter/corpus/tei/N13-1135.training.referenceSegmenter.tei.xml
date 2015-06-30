@@ -1,0 +1,45 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>James Allan. 2002. Topic detection and tracking: Event-<lb/>based information organization. Kluwer Academic<lb/> Publishers Norwell, MA, USA.<lb/> </bibl>
+<bibl>Hila Becker, Feiyang Chen, Dan Iter, Mor Naaman, and<lb/> Luis Gravano. 2011a. Automatic identification and<lb/> presentation of twitter content for planned events. In<lb/> Proceedings of the Fifth International AAAI Confer-<lb/>ence on Weblogs and Social Media (ICWSM), pages<lb/> 655–656.<lb/> </bibl>
+<bibl>Hila Becker, Mor Naaman, and Luis Gravano. 2011b.<lb/> Beyond trending topics: Real-world event identifica-<lb/>tion on twitter. In Proceedings of the Fifth Interna-<lb/>tional AAAI Conference on Weblogs and Social Media<lb/> (ICWSM), pages 438–441.<lb/> </bibl>
+<bibl>Deepayan Chakrabarti and Kunal Punera. 2011. Event<lb/> summarization using tweets. In Proceedings of the<lb/> Fifth International AAAI Conference on Weblogs and<lb/> Social Media (ICWSM), pages 66–73.<lb/> </bibl>
+<bibl>Qiming Diao, Jing Jiang, Feida Zhu, and Ee-Peng Lim.<lb/> 2012. Finding bursty topics from microblogs. In Pro-<lb/>ceedings of the 50th Annual Meeting of the Association<lb/> for Computational Linguistics (ACL), pages 536–544.<lb/> </bibl>
+<bibl>Jacob Eisenstein. 2013. What to do about bad language<lb/> on the internet. In Proceedings of the 2013 Confer-<lb/>ence of the North American Chapter of the Associa-<lb/>tion for Computational Linguistics: Human Language<lb/> Technologies (NAACL/HLT).<lb/> </bibl>
+<bibl>Jennifer Foster, Ozlem Cetinoglu, Joachim Wagner,<lb/> Joseph Le Roux, Stephen Hogan, Joakim Nivre,<lb/> Deirdre Hogan, and Josef van Genabith. 2011. #hard-<lb/>toparse: POS tagging and parsing the twitterverse. In<lb/> Proceedings of the AAAI Workshop on Analyzing Mi-<lb/>crotext, pages 20–25.<lb/> </bibl>
+<bibl>Kevin Gimpel, Nathan Schneider, Brendan O&apos;Connor,<lb/> Dipanjan Das, Daniel Mills, Jacob Eisenstein, Michael<lb/> Heilman, Dani Yogatama, Jeffrey Flanigan, and<lb/> Noah A. Smith. 2011. Part-of-speech tagging for twit-<lb/>ter: Annotation, features, and experiments. In Pro-<lb/>ceedings of the 49th Annual Meeting of the Associa-<lb/>tion for Computational Linguistics: Human Language<lb/> Technologies (ACL-HLT), pages 42–47.<lb/> </bibl>
+<bibl>Aria Haghighi and Lucy Vanderwende. 2009. Explor-<lb/>ing content models for multi-Document summariza-<lb/>tion. In Proceedings of Human Language Technolo-<lb/>gies: The 2009 Annual Conference of the North Ameri-<lb/>can Chapter of the Association for Computational Lin-<lb/>guistics (NAACL), pages 362–370.<lb/> </bibl>
+<bibl>Sanda Harabagiu and Andrew Hickl. 2011. Relevance<lb/> modeling for microblog summarization. In Proceed-<lb/>ings of the Fifth International AAAI Conference on We-<lb/>blogs and Social Media (ICWSM), pages 514–517.<lb/> </bibl>
+<bibl>Thomas Hofmann. 1999. Probabilistic latent semantic<lb/> analysis. In Proceedings of Uncertainty in Artificial<lb/> Intelligence (UAI).<lb/> </bibl>
+<bibl>David Inouye and Jugal K. Kalita. 2011. Compar-<lb/>ing twitter summarization algorithms for multiple post<lb/> summaries. In Proceedings of 2011 IEEE Third Inter-<lb/>national Conference on Social Computing, pages 290–<lb/> 306.<lb/> </bibl>
+<bibl>Lillian Lee. 1999. Measures of distributional similarity.<lb/> In Proceedings of the 37th Annual Meeting of the As-<lb/>sociation for Computational Linguistics (ACL), pages<lb/> 25–32.<lb/> </bibl>
+<bibl>Chin-Yew Lin. 2004. ROUGE: A package for automatic<lb/> evaluation of summaries. In Workshop on Text Sum-<lb/>marization Branches Out.<lb/> </bibl>
+<bibl>Feifan Liu and Yang Liu. 2010. Exploring correlation<lb/> between ROUGE and human evaluation on meeting<lb/> summaries. IEEE Transactions on Audio, Speech, and<lb/> Language Processing, 18(1):187–196.<lb/> </bibl>
+<bibl>Fei Liu, Yang Liu, and Fuliang Weng. 2011a. Why is<lb/> &quot; SXSW &quot; trending? Exploring multiple text sources<lb/> for twitter topic summarization. In Proceedings of the<lb/> ACL Workshop on Language in Social Media (LSM),<lb/> pages 66–75.<lb/> </bibl>
+<bibl>Fei Liu, Fuliang Weng, Bingqing Wang, and Yang Liu.<lb/> 2011b. Insertion, deletion, or substitution? Normal-<lb/>izing text messages without pre-categorization nor su-<lb/>pervision. In Proceedings of the 49th Annual Meet-<lb/>ing of the Association for Computational Linguistics<lb/> (ACL), pages 71–76.<lb/> </bibl>
+<bibl>Fei Liu, Fuliang Weng, and Xiao Jiang. 2012. A broad-<lb/>coverage normalization system for social media lan-<lb/>guage. In Proceedings of the 50th Annual Meeting of<lb/> the Association for Computational Linguistics (ACL),<lb/> pages 1035–1044.<lb/> </bibl>
+<bibl>Annie Louis and Todd Newman. 2012. Summarization<lb/> of business-related tweets: A concept-based approach.<lb/> In Proceedings of the 24th International Conference<lb/> on Computational Linguistics (COLING).<lb/> </bibl>
+<bibl>Adam Marcus, Michael S. Bernstein, Osama Badar,<lb/> David R. Karger, Samuel Madden, and Robert C.<lb/> Miller. 2011. Twitinfo: Aggregating and visualizing<lb/> microblogs for event exploration. In Proceedings of<lb/> the SIGCHI Conference on Human Factors in Com-<lb/>puting Systems, pages 227–236.<lb/> </bibl>
+<bibl>Ani Nenkova and Kathleen Mckeown. 2011. Automatic<lb/> summarization. Foundations and Trends in Informa-<lb/>tion Retrieval, 5(2–3):103–233.<lb/> </bibl>
+<bibl>Ani Nenkova, Rebecca Passonneau, and Kathleen Mcke-<lb/>own. 2007. The pyramid method: Incorporating hu-<lb/>man content selection variation in summarization eval-<lb/>uation. ACM Transactions on Speech and Language<lb/> Processing, 4(2).<lb/> </bibl>
+<bibl>Jeffrey Nichols, Jalal Mahmud, and Clemens Drews.<lb/> 2012. Summarizing sporting events using twitter. In<lb/> Proceedings of the 2012 ACM Interntional Conference<lb/> on Intelligent User Interfaces (IUI), pages 189–198.<lb/> </bibl>
+<bibl>Brendan O&apos;Connor, Michel Krieger, and David Ahn.<lb/> 2010. TweetMotif: Exploratory search and topic sum-<lb/>marization for twitter. In Proceedings of the Fourth<lb/> International AAAI Conference on Weblogs and Social<lb/> Media (ICWSM), pages 384–385.<lb/> </bibl>
+<bibl>Sasa Petrovic, Miles Osborne, and Victor Lavrenko.<lb/> 2010. Streaming first story detection with application<lb/> to twitter. In Proceedings of the 2010 Annual Con-<lb/>ference of the North American Chapter of the Associ-<lb/>ation for Computational Linguistics (NAACL), pages<lb/> 181–189.<lb/> </bibl>
+<bibl>Alan Ritter, Sam Clark, Mausam, and Oren Etzioni.<lb/> 2011. Named entity recognition in tweets: An exper-<lb/>imental study. In Proceedings of the Conference on<lb/> Empirical Methods in Natural Language Processing<lb/> (EMNLP), pages 1524–1534.<lb/> </bibl>
+<bibl>Alan Ritter, Mausam, Oren Etzioni, and Sam Clark.<lb/> 2012. Open domain event extraction from twitter. In<lb/> Proceedings of the 18th ACM SIGKDD International<lb/> Conference on Knowledge Discovery and Data Min-<lb/>ing, pages 1104–1112.<lb/> </bibl>
+<bibl>Beaux Sharifi, Mark-Anthony Hutton, and Jugal K.<lb/> Kalita. 2010a. Experiments in microblog summariza-<lb/>tion. In Proceedings of the 2010 IEEE Second Interna-<lb/>tional Conference on Social Computing, pages 49–56.<lb/> </bibl>
+<bibl>Beaux Sharifi, Mark-Anthony Hutton, and Jugal K.<lb/> Kalita. 2010b. Summarizing microblogs automati-<lb/>cally. In Proceedings of the 2010 Annual Conference<lb/> of the North American Chapter of the Association for<lb/> Computational Linguistics (NAACL), pages 685–688.<lb/> </bibl>
+<bibl>Hiroya Takamura, Hikaru Yokono, and Manabu Oku-<lb/>mura. 2011. Summarizing a document stream. In<lb/> Proceedings of the 33rd European Conference on Ad-<lb/>vances in Information Retrieval (ECIR), pages 177–<lb/> 188.<lb/> </bibl>
+<bibl>Jui-Yu Weng, Cheng-Lun Yang, Bo-Nian Chen, Yen-Kai<lb/> Wang, and Shou-De Lin. 2011. Imass: An intelli-<lb/>gent microblog analysis and summarization system. In<lb/> Proceedings of the 49th Annual Meeting of the Asso-<lb/>ciation for Computational Linguistics: Human Lan-<lb/>guage Technologies (ACL-HLT), pages 133–138.<lb/> </bibl>
+<bibl>Siqi Zhao, Lin Zhong, Jehan Wickramasuriya, and Venu<lb/> Vasudevan. 2011. Human as real-time sensors of so-<lb/>cial and physical events: A case study of twitter and<lb/> sports games. Technical Report TR0620-2011, Rice<lb/> University and Motorola Labs.<lb/> </bibl>
+<bibl>Arkaitz Zubiaga, Damiano Spina, Enrique Amigó, and<lb/> Julio Gonzalo. 2012. Towards real-time summariza-<lb/>tion of scheduled events from twitter streams. In Pro-<lb/>ceedings of the 23rd ACM Conference on Hypertext<lb/> and Social Media, pages 319–320.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

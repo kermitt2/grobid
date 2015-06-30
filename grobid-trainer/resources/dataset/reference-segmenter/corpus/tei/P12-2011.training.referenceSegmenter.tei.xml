@@ -1,0 +1,42 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>ACE. 2004. The automatic content extraction projects.<lb/> http://projects.ldc.upenn.edu/ace.<lb/> </bibl>
+<bibl>Michele Banko, Michael J. Cafarella, Stephen Soderland,<lb/> Matt Broadhead, and Oren Etzioni. 2007. Open infor-<lb/>mation extraction from the web. In IJCAI&apos;07.<lb/> </bibl>
+<bibl>D.T. Bollegala, Y. Matsuo, and M. Ishizuka. 2010. Rela-<lb/>tional duality: Unsupervised extraction of semantic re-<lb/>lations between entities on the web. In Proceedings of<lb/> the 19th international conference on World wide web,<lb/> pages 151–160. ACM.<lb/> </bibl>
+<bibl>R. Bunescu and M. Pasca. 2006. Using encyclopedic<lb/> knowledge for named entity disambiguation. In Pro-<lb/>ceedings of EACL, volume 6, pages 9–16.<lb/> </bibl>
+<bibl>S. Cucerzan. 2007. Large-scale named entity disam-<lb/>biguation based on wikipedia data. In Proceedings of<lb/> EMNLP-CoNLL, volume 2007, pages 708–716.<lb/> </bibl>
+<bibl>G. Doddington, A. Mitchell, M. Przybocki, L. Ramshaw,<lb/> S. Strassel, and R. Weischedel. 2004. The automatic<lb/> content extraction (ace) program–tasks, data, and eval-<lb/>uation. In Proceedings of LREC, volume 4, pages<lb/> 837–840. Citeseer.<lb/> </bibl>
+<bibl>A. Fader, S. Soderland, and O. Etzioni. 2011. Identify-<lb/>ing relations for open information extraction. In Pro-<lb/>ceedings of Empirical Methods in Natural Language<lb/> Processing.<lb/> </bibl>
+<bibl>A. Haghighi and L. Vanderwende. 2009. Exploring con-<lb/>tent models for multi-document summarization. In<lb/> Proceedings of Human Language Technologies: The<lb/> 2009 Annual Conference of the North American Chap-<lb/>ter of the Association for Computational Linguistics,<lb/> pages 362–370. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>R. Hoffmann, C. Zhang, and D.S. Weld. 2010. Learning<lb/> 5000 relational extractors. In Proceedings of the 48th<lb/> Annual Meeting of the Association for Computational<lb/> Linguistics, pages 286–295. Association for Computa-<lb/>tional Linguistics.<lb/> </bibl>
+<bibl>R. Hoffmann, C. Zhang, X. Ling, L. Zettlemoyer, and<lb/> D.S. Weld. 2011. Knowledge-based weak supervision<lb/> for information extraction of overlapping relations. In<lb/> Proceedings of the 49th Annual Meeting of the Asso-<lb/>ciation for Computational Linguistics: Human Lan-<lb/>guage Technologies-Volume 1, pages 541–550. Asso-<lb/>ciation for Computational Linguistics.<lb/> </bibl>
+<bibl>G. Kasneci, M. Ramanath, F. Suchanek, and G. Weikum.<lb/> 2009. The yago-naga approach to knowledge discov-<lb/>ery. ACM SIGMOD Record, 37(4):41–47.<lb/> </bibl>
+<bibl>Z. Kozareva and E. Hovy. 2010. Learning arguments<lb/> and supertypes of semantic relations using recursive<lb/> patterns. In Proceedings of the 48th Annual Meet-<lb/>ing of the Association for Computational Linguistics,<lb/> pages 1482–1491. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>C. Kwok, O. Etzioni, and D.S. Weld. 2001. Scaling<lb/> question answering to the web. ACM Transactions on<lb/> Information Systems (TOIS), 19(3):242–262.<lb/> </bibl>
+<bibl>D. Li, S. Somasundaran, and A. Chakraborty. 2011. A<lb/> combination of topic models with max-margin learn-<lb/>ing for relation detection.<lb/> </bibl>
+<bibl>P. McNamee and H.T. Dang. 2009. Overview of the tac<lb/> 2009 knowledge base population track. In Text Analy-<lb/>sis Conference (TAC).<lb/> </bibl>
+<bibl>D. Milne and I.H. Witten. 2008. Learning to link with<lb/> wikipedia. In Proceeding of the 17th ACM conference<lb/> on Information and knowledge management, pages<lb/> 509–518. ACM.<lb/> </bibl>
+<bibl>M. Mintz, S. Bills, R. Snow, and D. Jurafsky. 2009. Dis-<lb/>tant supervision for relation extraction without labeled<lb/> data. In Proceedings of the Joint Conference of the<lb/> 47th Annual Meeting of the ACL and the 4th Interna-<lb/>tional Joint Conference on Natural Language Process-<lb/>ing of the AFNLP: Volume 2-Volume 2, pages 1003–<lb/> 1011. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>J. Nivre. 2006. Inductive dependency parsing. In<lb/> Text, Speech and Language Technology, volume 34.<lb/> Springer Verlag.<lb/> </bibl>
+<bibl>M. Pasca, D. Lin, J. Bigham, A. Lifchits, and A. Jain.<lb/> 2006. Organizing and searching the world wide web<lb/> of facts-step one: the one-million fact extraction chal-<lb/>lenge. In Proceedings of the National Conference on<lb/> Artificial Intelligence, page 1400. Menlo Park, CA;<lb/> Cambridge, MA; London; AAAI Press; MIT Press;<lb/> 1999.<lb/> </bibl>
+<bibl>F. Pereira, A. Rajaraman, S. Sarawagi, W. Tunstall-<lb/>Pedoe, G. Weikum, and A. Halevy. 2009. An-<lb/>swering web questions using structured data: dream<lb/> or reality? Proceedings of the VLDB Endowment,<lb/> 2(2):1646–1646.<lb/> </bibl>
+<bibl>H. Poon and P. Domingos. 2009. Unsupervised seman-<lb/>tic parsing. In Proceedings of the 2009 Conference<lb/> on Empirical Methods in Natural Language Process-<lb/>ing: Volume 1-Volume 1, pages 1–10. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>D. Ravichandran and E. Hovy. 2002. Learning surface<lb/> text patterns for a question answering system. In Pro-<lb/>ceedings of the 40th Annual Meeting on Association<lb/> for Computational Linguistics, pages 41–47. Associa-<lb/>tion for Computational Linguistics.<lb/> </bibl>
+<bibl>S. Sekine. 2006. On-demand information extraction. In<lb/> Proceedings of the COLING/ACL on Main conference<lb/> poster sessions, pages 731–738. Association for Com-<lb/>putational Linguistics.<lb/> </bibl>
+<bibl>Beth M. Sundheim and Nancy A. Chinchor. 1993. Sur-<lb/>vey of the message understanding conferences. In<lb/> HLT&apos;93.<lb/> </bibl>
+<bibl>I. Titov and A. Klementiev. 2011. A bayesian model for<lb/> unsupervised semantic parsing. In The 49th Annual<lb/> Meeting of the Association for Computational Linguis-<lb/>tics.<lb/> </bibl>
+<bibl>C. Wang, J. Fan, A. Kalyanpur, and D. Gondek. 2011.<lb/> Relation extraction with relation topics. In Proceed-<lb/>ings of Empirical Methods in Natural Language Pro-<lb/>cessing.<lb/> </bibl>
+<bibl>Daniel S. Weld, Fei Wu, Eytan Adar, Saleema Amershi,<lb/> James Fogarty, Raphael Hoffmann, Kayur Patel, and<lb/> Michael Skinner. 2008. Intelligence in wikipedia. In<lb/> Proceedings of the 23rd national conference on Artifi-<lb/>cial intelligence, pages 1609–1614. AAAI Press.<lb/> </bibl>
+<bibl>F. Wu and D.S. Weld. 2010. Open information extraction<lb/> using wikipedia. In Proceedings of the 48th Annual<lb/> Meeting of the Association for Computational Linguis-<lb/>tics, pages 118–127. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>L. Yao, A. Haghighi, S. Riedel, and A. McCallum. 2011.<lb/> Structured relation discovery using generative models.<lb/> In Empirical Methods in Natural Language Process-<lb/>ing (EMNLP).<lb/> </bibl>
+<bibl>A. Yates, M. Cafarella, M. Banko, O. Etzioni, M. Broad-<lb/>head, and S. Soderland. 2007. Textrunner: Open in-<lb/>formation extraction on the web. In Proceedings of<lb/> Human Language Technologies: The Annual Confer-<lb/>ence of the North American Chapter of the Association<lb/> for Computational Linguistics: Demonstrations, pages<lb/> 25–26. Association for Computational Linguistics.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

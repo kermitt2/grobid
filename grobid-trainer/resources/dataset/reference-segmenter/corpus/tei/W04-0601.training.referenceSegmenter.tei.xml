@@ -1,0 +1,26 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Tilman Becker. 2002. Practical, template-based<lb/> natural language generation with TAG. In Pro-<lb/>ceedings of TAG+6.<lb/> </bibl>
+<bibl>Kees van Deemter, Emiel Krahmer, and Mariët The-<lb/>une. 1999. Plan-based vs. template-based NLG:<lb/> a false opposition? In Proceedings of &quot; May I<lb/> speak freely? &quot; workshop at KI-99.<lb/> </bibl>
+<bibl>Rodger Kibble and Richard Power. 2000. An inte-<lb/>grated framework for text planning and pronomi-<lb/>nalisation. In Proceedings of INLG 2000.<lb/> </bibl>
+<bibl>Johanna Moore, Mary Ellen Foster, Oliver Lemon,<lb/> and Michael White. 2004. Generating tailored,<lb/> comparative descriptions in spoken dialogue. In<lb/> Proceedings of FLAIRS 2004.<lb/> </bibl>
+<bibl>Els den Os and Lou Boves. 2003. Towards ambi-<lb/>ent intelligence: Multimodal computers that un-<lb/>derstand our intentions. In Proceedings of eChal-<lb/>lenges e-2003.<lb/> </bibl>
+<bibl>Ehud Reiter. 1995. NLG vs. templates. In Proceed-<lb/>ings of EWNLG-95.<lb/> </bibl>
+<bibl>Ehud Reiter and Robert Dale. 2000. Building Nat-<lb/>ural Language Generation Systems. Cambridge<lb/> University Press.<lb/> </bibl>
+<bibl>Mark Steedman. 2000. The Syntactic Process.<lb/> MIT Press.<lb/> </bibl>
+<bibl>Michael White. 2004a. Efficient realization of<lb/> coordinate structures in Combinatory Categorial<lb/> Grammar. Research on Language and Computa-<lb/>tion. To appear.<lb/> </bibl>
+<bibl>Michael White. 2004b. Reining in CCG chart re-<lb/>alization. In Proceedings of INLG 2004. To ap-<lb/>pear.<lb/> </bibl>
+<bibl>Michael White and Jason Baldridge. 2003. Adapt-<lb/>ing chart realization to CCG. In Proceedings of<lb/> EWNLG-03.<lb/> </bibl>
+<bibl>Michael White and Ted Caldwell. 1998. EXEM-<lb/>PLARS: A practical, extensible framework for<lb/> dynamic text generation. In Proceedings of INLG<lb/> 1998.<lb/> </bibl>
+<bibl>Graham Wilcock. 2001. Pipelines, templates and<lb/> transformations: XML for natural language gen-<lb/>eration. In Proceedings of NLPXML-2001.<lb/> </bibl>
+<bibl>Graham Wilcock. 2003. Integrating natural lan-<lb/>guage generation with XML web technology. In<lb/> Proceedings of EACL-2003 Demo Sessions.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

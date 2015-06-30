@@ -1,0 +1,35 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>J. Berant, I. Dagan, and J. Goldberger. 2011. Global<lb/> learning of typed entailment rules. In Proceedings of<lb/> ACL 2011, pages 610–619.<lb/> </bibl>
+<bibl>D. G. Bobrow, C. Condoravdi, R. Crouch, V. De Paiva,<lb/> L. Karttunen, T. H. King, R. Nairn, L. Price, and<lb/> A. Zaenen. 2007. Precision-focused textual inference.<lb/> In Proceedings of the ACL-PASCAL Workshop on Tex-<lb/>tual Entailment and Paraphrasing, page 1621.<lb/> </bibl>
+<bibl>M.-C. De Marneffe, A. N. Rafferty, and C. D. Manning.<lb/> 2008. Finding contradictions in text. Proceedings of<lb/> ACL 2008, page 10391047.<lb/> </bibl>
+<bibl>S. De Saeger, K. Torisawa, J. Kazama, K. Kuroda, and<lb/> M. Murata. 2009. Large scale relation acquisition us-<lb/>ing class dependent patterns. In Proceedings of ICDM<lb/> 2009, page 764769.<lb/> </bibl>
+<bibl>S.M. Harabagiu, A. Hickl, and V.F. Lacatusu. 2006.<lb/> Negation, contrast and contradiction in text process-<lb/>ing. In Proceedings of AAAI 2006, pages 755–762.<lb/> </bibl>
+<bibl>C. Hashimoto, K. Torisawa, K. Kuroda, S. De Saeger,<lb/> M. Murata, and J. Kazama. 2009. Large-scale verb<lb/> entailment acquisition from the web. In Proceedings<lb/> of EMNLP 2009, volume 3, page 11721181.<lb/> </bibl>
+<bibl>C. Hashimoto, K. Torisawa, S. De Saeger, J.-H. Oh, and<lb/> J. Kazama. 2012. Excitatory or inhibitory: A new se-<lb/>mantic orientation extracts contradiction and causality<lb/> from the web. In Proceedings of EMNLP 2012.<lb/> </bibl>
+<bibl>D. Kawahara, S. Kurohashi, and K. Inui. 2008. Grasp-<lb/>ing major statements and their contradictions toward<lb/> information credibility analysis of web contents. In<lb/> Proceedings of WI-IAT 2008, volume 1, page 393<lb/> 397.<lb/> </bibl>
+<bibl>D. Kawahara, K. Inui, and S. Kurohashi. 2010. Iden-<lb/>tifying contradictory and contrastive relations between<lb/> statements to outline web information on a given topic.<lb/> In Proceedings of COLING 2010, page 534542.<lb/> </bibl>
+<bibl>J. Kazama and K. Torisawa. 2008. Inducing gazetteers<lb/> for named entity recognition by large-scale clustering<lb/> of dependency relations. Proceedings of ACL 2008,<lb/> page 407415.<lb/> </bibl>
+<bibl>J. Kloetzer, S. De Saeger, K. Torisawa, M. Sano,<lb/> C. Hashimoto, and J. Gotoh. 2013. Large-scale acqui-<lb/>sition of entailment pattern pairs. In Information Pro-<lb/>cessing Society of Japan (IPSJ) Kansai-Branch Con-<lb/>vention.<lb/> </bibl>
+<bibl>S. Kurohashi and M. Nagao. 1994. KN parser: Japanese<lb/> dependency/case structure analyzer. In Proceedings<lb/> of the Workshop on Sharable Natural Language Re-<lb/>sources, page 4855.<lb/> </bibl>
+<bibl>J. R. Landis and G. G. Koch. 1977. The measurement of<lb/> observer agreement for categorical data. Biometrics,<lb/> page 159174.<lb/> </bibl>
+<bibl>D. Lin and P. Pantel. 2001. Dirt -discovery of inference<lb/> rules from text. In Proceedings of the ACM SIGKDD<lb/> Conference on Knowledge Discovery and Data Min-<lb/>ing, pages 323–328.<lb/> </bibl>
+<bibl>B. Magnini and E. Cabrio. 2010. Contradiction-focused<lb/> qualitative evaluation of textual entailment. In Pro-<lb/>ceedings of the Workshop on Negation and Speculation<lb/> in Natural Language Processing, page 8694.<lb/> </bibl>
+<bibl>P. Malakasiotis and I. Androutsopoulos. 2007. Learning<lb/> textual entailment using SVMs and string similarity<lb/> measures. In Proceedings of the ACL-PASCAL Work-<lb/>shop on Textual Entailment and Paraphrasing, page 42<lb/> 47.<lb/> </bibl>
+<bibl>K. Murakami, E. Nichols, S. Matsuyoshi, A. Sumida,<lb/> S. Masuda, K. Inui, and Y. Matumoto. 2009. State-<lb/>ment map: assisting information crediblity analysis<lb/> by visualizing arguments. In Proceedings of the 3rd<lb/> workshop on Information credibility on the web, page<lb/> 4350. ACM.<lb/> </bibl>
+<bibl>M. Ohki, S. Matsuyoshi, J. Mizuno, K. Inui, E. Nichols,<lb/> K. Murakami, S. Masuda, and Y. Matsumoto. 2011.<lb/> Recognizing confinement in web texts. In the Pro-<lb/>ceedings of the Ninth International Conference on<lb/> Computational Semantics, page 215224.<lb/> </bibl>
+<bibl>A. Ritter, D. Downey, S. Soderland, and O. Etzioni.<lb/> 2008. It&apos;s a contradiction—no, it&apos;s not: a case study<lb/> using functional relations. In Proceedings of EMNLP<lb/> 2008, pages 11–20.<lb/> </bibl>
+<bibl>S. Schoenmackers, O. Etzioni, D. S Weld, and J. Davis.<lb/> 2010. Learning first-order horn clauses from web text.<lb/> In Proceedings of EMNLP 2010, page 10881098.<lb/> </bibl>
+<bibl>I. Szpektor, E. Shnarch, and I. Dagan. 2007. Instance-<lb/>based evaluation of entailment rule acquisition. In<lb/> Proceedings of ACL 2007, volume 45, page 456463.<lb/> </bibl>
+<bibl>E. M. Voorhees. 2008. Contradictions and justifications:<lb/> Extensions to the textual entailment task. In Proceed-<lb/>ings of ACL 2008, page 6371.<lb/> </bibl>
+<bibl>J. Weeds and D. Weir. 2003. A general framework for<lb/> distributional similarity. In Proceedings of EMNLP<lb/> 2003, page 8188. Association for Computational<lb/> Linguistics.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

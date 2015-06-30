@@ -8,7 +8,8 @@ import java.util.Arrays;
  */
 public enum GrobidCRFEngine {
     WAPITI("wapiti"),
-    CRFPP("crf");
+    CRFPP("crf"),
+    AI2("ai2");
 
     private final String ext;
 
@@ -26,7 +27,7 @@ public enum GrobidCRFEngine {
         }
 
         String n = name.toLowerCase();
-        for (GrobidCRFEngine e : values()) {
+        for (GrobidCRFEngine e : values()) {            
             if (e.name().toLowerCase().equals(n)) {
                 return e;
             }

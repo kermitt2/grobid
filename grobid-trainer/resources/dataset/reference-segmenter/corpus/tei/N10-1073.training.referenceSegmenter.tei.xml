@@ -1,0 +1,26 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Farooq Ahmad and Grzegorz Kondrak. 2005. Learn-<lb/>ing a spelling error model from search query logs. In<lb/> HLT &apos;05: Proceedings of the conference on Human<lb/> Language Technology and Empirical Methods in Nat-<lb/>ural Language Processing, pages 955–962, Morris-<lb/>town, NJ, USA. Association for Computational Lin-<lb/>guistics.<lb/> </bibl>
+<bibl>Sunil Arya, David M. Mount, Nathan S. Netanyahu, Ruth<lb/> Silverman, and Angela Y. Wu. 1998. An optimal<lb/> algorithm for approximate nearest neighbor searching<lb/> fixed dimensions. J. ACM, 45(6):891–923.<lb/> </bibl>
+´
+<bibl>Eric Gaussier, Jean-Michel Renders, Irina Matveeva,<lb/> Cyril Goutte, and Hervé Déjean. 2004. A geometric<lb/> view on bilingual lexicon extraction from comparable<lb/> corpora. In ACL, pages 526–533.<lb/> </bibl>
+<bibl>Dan Goldwasser and Dan Roth. 2008. Transliteration as<lb/> constrained optimization. In EMNLP, pages 353–362.<lb/> </bibl>
+<bibl>Aria Haghighi, Percy Liang, Taylor Berg-Kirkpatrick,<lb/> and Dan Klein. 2008. Learning bilingual lexicons<lb/> from monolingual corpora. In Proceedings of ACL-<lb/>08: HLT, pages 771–779, Columbus, Ohio, June. As-<lb/>sociation for Computational Linguistics.<lb/> </bibl>
+<bibl>David R. Hardoon, Sándor Szedmák, and John Shawe-<lb/>Taylor. 2004. Canonical correlation analysis: An<lb/> overview with application to learning methods. Neu-<lb/>ral Computation, 16(12):2639–2664.<lb/> </bibl>
+<bibl>Liang Jin, Nick Koudas, Chen Li, and Anthony K. H.<lb/> Tung. 2005. Indexing mixed types for approximate<lb/> retrieval. In VLDB, pages 793–804.<lb/> </bibl>
+<bibl>Mitesh Khapra and Pushpak Bhattacharyya. 2009. Im-<lb/>proving transliteration accuracy using word-origin de-<lb/>tection and lexicon lookup. In Proceedings of the 2009<lb/> Named Entities Workshop: Shared Task on Translit-<lb/>eration (NEWS 2009). Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Alexandre Klementiev and Dan Roth. 2006. Named<lb/> entity transliteration and discovery from multilingual<lb/> comparable corpora. In HLT-NAACL.<lb/> </bibl>
+<bibl>Kevin Knight and Jonathan Graehl. 1998. Machine<lb/> transliteration. Computational Linguistics, 24(4):599–<lb/> 612.<lb/> </bibl>
+<bibl>Jin-Shea Kuo, Haizhou Li, and Ying-Kuei Yang. 2006.<lb/> Learning transliteration lexicons from the web. In<lb/> ACL.<lb/> </bibl>
+<bibl>John D. Lafferty, Andrew McCallum, and Fernando C. N.<lb/> Pereira. 2001. Conditional random fields: Probabilis-<lb/>tic models for segmenting and labeling sequence data.<lb/> In ICML, pages 282–289.<lb/> </bibl>
+<bibl>Haizhou Li, A Kumaran, Vladimir Pervouchine, and<lb/> Min Zhang. 2009. Report of news 2009 machine<lb/> transliteration shared task. In Proceedings of the 2009</bibl>
+        </listBibl>
+    </text>
+</tei>
+

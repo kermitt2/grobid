@@ -1,0 +1,49 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Michael Auli and Adam Lopez. 2011. Training a log-<lb/>linear parser with loss functions via softmax-margin.<lb/> In Proceedings of the 2011 Conference on Empirical<lb/> Methods in Natural Language Processing, pages 333–<lb/> 343, Edinburgh, Scotland, UK., July. Association for<lb/> Computational Linguistics.<lb/> </bibl>
+<bibl>Wilker Aziz, Sheila Castilho Monteiro de Sousa, and<lb/> Lucia Specia. 2012. PET: a tool for post-editing<lb/> and assessing machine translation.<lb/> In Proceed-<lb/>ings of the Eight International Conference on Lan-<lb/>guage Resources and Evaluation (LREC&apos;12), Istanbul,<lb/> Turkey, may. European Language Resources Associa-<lb/>tion (ELRA).<lb/> </bibl>
+<bibl>Marzieh Bazrafshan, Tagyoung Chung, and Daniel<lb/> Gildea. 2012. Tuning as linear regression. In Pro-<lb/>ceedings of the 2012 Conference of the North Ameri-<lb/>can Chapter of the ACL: Human Language Technolo-<lb/>gies, pages 543–547, Montréal, Canada. ACL.<lb/> </bibl>
+<bibl>Chris Callison-Burch, Philipp Koehn, Christof Monz,<lb/> and Omar Zaidan. 2011. Findings of the 2011 work-<lb/>shop on statistical machine translation. In Proceedings<lb/> of the Sixth Workshop on Statistical Machine Transla-<lb/>tion, pages 22–64, Edinburgh, Scotland, July. ACL.<lb/> </bibl>
+<bibl>Daniel Cer, Christopher D. Manning, and Daniel Juraf-<lb/>sky. 2010. The best lexical metric for phrase-based<lb/> statistical mt system optimization. In Human Lan-<lb/>guage Technologies: The 2010 Annual Conference of<lb/> the North American Chapter of the ACL, pages 555–<lb/> 563. ACL.<lb/> </bibl>
+<bibl>Boxing Chen, Roland Kuhn, and Samuel Larkin. 2012.<lb/> Port: a precision-order-recall mt evaluation metric for<lb/> tuning. In Proceedings of the 50th Annual Meeting<lb/> of the ACL (Volume 1: Long Papers), pages 930–939,<lb/> Jeju Island, Korea. ACL.<lb/> </bibl>
+<bibl>Colin Cherry and George Foster. 2012. Batch tuning<lb/> strategies for statistical machine translation. In Pro-<lb/>ceedings of the 2012 Conference of the North Ameri-<lb/>can Chapter of the ACL: Human Language Technolo-<lb/>gies, pages 427–436, Montréal, Canada. ACL.<lb/> </bibl>
+<bibl>David Chiang, Yuval Marton, and Philip Resnik. 2008.<lb/> Online large-margin training of syntactic and struc-<lb/>tural translation features. In Proceedings of the Con-<lb/>ference on Empirical Methods in Natural Language<lb/> Processing, pages 224–233. ACL.<lb/> </bibl>
+<bibl>David Chiang. 2007. Hierarchical phrase-based transla-<lb/>tion. Computational Linguistics, 33.<lb/> </bibl>
+<bibl>Michael Denkowski and Alon Lavie. 2011. Meteor<lb/> 1.3: Automatic Metric for Reliable Optimization and<lb/> Evaluation of Machine Translation Systems. In Pro-<lb/>ceedings of the Sixth Workshop on Statistical Machine<lb/> Translation, Edinburgh, Scotland, July. ACL.<lb/> </bibl>
+<bibl>Jacob Devlin and Spyros Matsoukas. 2012. Trait-based<lb/> hypothesis selection for machine translation. In Pro-<lb/>ceedings of the 2012 Conference of the North Ameri-<lb/>can Chapter of the ACL: Human Language Technolo-<lb/>gies, pages 528–532. ACL.<lb/> </bibl>
+<bibl>Kevin Duh, Katsuhito Sudoh, Xianchao Wu, Hajime<lb/> Tsukada, and Masaaki Nagata. 2012. Learning to<lb/> translate with multiple objectives. In Proceedings of<lb/> the 50th Annual Meeting of the ACL, Jeju Island, Ko-<lb/>rea. ACL.<lb/> </bibl>
+<bibl>Chris Dyer, Hendra Setiawan, Yuval Marton, and Philip<lb/> Resnik. 2009. The university of maryland statistical<lb/> machine translation system for the fourth workshop on<lb/> machine translation. In Proc. of the Fourth Workshop<lb/> on Machine Translation.<lb/> </bibl>
+<bibl>Kevin Gimpel and Noah A. Smith. 2012. Struc-<lb/>tured ramp loss minimization for machine transla-<lb/>tion. In Proceedings of the 2012 Conference of<lb/> the North American Chapter of the ACL: Human<lb/> Language Technologies, pages 221–231, Montréal,<lb/> Canada. ACL.<lb/> </bibl>
+<bibl>Keith Hall, Ryan T. McDonald, Jason Katz-Brown, and<lb/> Michael Ringgaard. 2011. Training dependency<lb/> parsers by jointly optimizing multiple objectives. In<lb/> Proceedings of the Empirical Methods in Natural Lan-<lb/>guage Processing, pages 1489–1499.<lb/> </bibl>
+<bibl>Xiaodong He and Li Deng. 2012. Maximum expected<lb/> bleu training of phrase and lexicon translation mod-<lb/>els. In Proceedings of the 50th Annual Meeting of<lb/> the Association for Computational Linguistics (Vol-<lb/>ume 1: Long Papers), pages 292–301, Jeju Island, Ko-<lb/>rea. ACL.<lb/> </bibl>
+<bibl>Yifan He and Andy Way. 2009. Improving the objec-<lb/>tive function in minimum error rate training. In MT<lb/> Summit.<lb/> </bibl>
+<bibl>Mark Hopkins and Jonathan May. 2011. Tuning as rank-<lb/>ing. In Proceedings of the 2011 Conference on Empir-<lb/>ical Methods in Natural Language Processing, Edin-<lb/>burgh, Scotland. ACL.<lb/> </bibl>
+<bibl>Hideki Isozaki, Tsutomu Hirao, Kevin Duh, Katsuhito<lb/> Sudoh, and Hajime Tsukada. 2010. Automatic evalu-<lb/>ation of translation quality for distant language pairs.<lb/> In Proceedings of the 2010 Conference on Empirical<lb/> Methods in Natural Language Processing, pages 944–<lb/> 952, Cambridge, MA. ACL.<lb/> </bibl>
+<bibl>Thorsten Joachims. 2006. Training linear svms in linear<lb/> time. In Proceedings of the 12th ACM SIGKDD inter-<lb/>national conference on Knowledge discovery and data<lb/> mining, pages 217–226.<lb/> </bibl>
+<bibl>Alon Lavie and Michael J. Denkowski. 2009. The me-<lb/>teor metric for automatic evaluation of machine trans-<lb/>lation. Machine Translation, 23(2-3):105–115.<lb/> </bibl>
+<bibl>Chang Liu, Daniel Dahlmeier, and Hwee Tou Ng. 2011.<lb/> Better evaluation metrics lead to better machine trans-<lb/>lation. In Proceedings of the Conference on Empirical<lb/> Methods in Natural Language Processing.<lb/> </bibl>
+<bibl>R. T. Marler and J. S. Arora. 2004. Survey of<lb/> multi-objective optimization methods for engineer-<lb/>ing. Structural and Multidisciplinary Optimization,<lb/> 26(6):369–395, April.<lb/> </bibl>
+<bibl>Arne Mauser, Saša Hasan, and Hermann Ney. 2008.<lb/> Automatic evaluation measures for statistical machine<lb/> translation system optimization. In International Con-<lb/>ference on Language Resources and Evaluation, Mar-<lb/>rakech, Morocco.<lb/> </bibl>
+<bibl>Franz Josef Och. 2003. Minimum error rate training in<lb/> statistical machine translation. In Proceedings of the<lb/> 41st Annual Meeting of the ACL, pages 160–167. ACL.<lb/> </bibl>
+<bibl>Sebastian Padó, Daniel Cer, Michel Galley, Dan Jurafsky,<lb/> and Christopher D. Manning. 2009. Measuring ma-<lb/>chine translation quality as semantic equivalence: A<lb/> metric based on entailment features. Machine Trans-<lb/>lation, 23(2-3):181–193.<lb/> </bibl>
+<bibl>Kishore Papineni, Salim Roukos, Todd Ward, and Wie-<lb/>Jing Zhu. 2002. BLEU: a method for automatic eval-<lb/>uation of machine translation. In Proceedings of Asso-<lb/>ciation of Computational Linguistics, pages 311–318.<lb/> ACL.<lb/> </bibl>
+<bibl>Majid Razmara, George Foster, Baskaran Sankaran, and<lb/> Anoop Sarkar. 2012. Mixing multiple translation<lb/> models in statistical machine translation. In Proceed-<lb/>ings of the 50th Annual Meeting of the ACL, Jeju, Re-<lb/>public of Korea. ACL.<lb/> </bibl>
+<bibl>Baskaran Sankaran, Majid Razmara, and Anoop Sarkar.<lb/> 2012. Kriya an end-to-end hierarchical phrase-based<lb/> mt system. The Prague Bulletin of Mathematical Lin-<lb/>guistics (PBML), 97(97):83–98.<lb/> </bibl>
+<bibl>Christophe Servan and Holger Schwenk. 2011. Optimis-<lb/>ing multiple metrics with mert. Prague Bull. Math.<lb/> Linguistics, 96:109–118.<lb/> </bibl>
+<bibl>Patrick Simianer, Stefan Riezler, and Chris Dyer. 2012.<lb/> Joint feature selection in distributed stochastic learn-<lb/>ing for large-scale discriminative training in smt. In<lb/> Proceedings of the 50th Annual Meeting of the Associ-<lb/>ation for Computational Linguistics (Volume 1: Long<lb/> Papers), pages 11–21, Jeju Island, Korea. ACL.<lb/> </bibl>
+<bibl>Matthew Snover, Bonnie Dorr, Richard Schwartz, Lin-<lb/>nea Micciulla, and John Makhoul. 2006. A study of<lb/> translation edit rate with targeted human annotation.<lb/> In Proceedings of Association for Machine Translation<lb/> in the Americas, pages 223–231.<lb/> </bibl>
+<bibl>Valentin I. Spitkovsky, Hiyan Alshawi, and Daniel Juraf-<lb/>sky. 2011. Lateen EM: Unsupervised training with<lb/> multiple objectives, applied to dependency grammar<lb/> induction. In Proceedings of the Empirical Methods in<lb/> Natural Language Processing, pages 1269–1280. As-<lb/>sociation of Computational Linguistics.<lb/> </bibl>
+<bibl>Taro Watanabe, Jun Suzuki, Hajime Tsukada, and Hideki<lb/> Isozaki. 2007. Online large-margin training for sta-<lb/>tistical machine translation. In Proceedings of the<lb/> 2007 Joint Conference on Empirical Methods in Nat-<lb/>ural Language Processing and Computational Natu-<lb/>ral Language Learning (EMNLP-CoNLL), pages 764–<lb/> 773. ACL.<lb/> </bibl>
+<bibl>Taro Watanabe. 2012. Optimized online rank learn-<lb/>ing for machine translation. In Proceedings of the<lb/> 2012 Conference of the North American Chapter of the<lb/> ACL: Human Language Technologies, pages 253–262,<lb/> Montréal, Canada, June. ACL.<lb/> </bibl>
+<bibl>Omar F. Zaidan. 2009. Z-MERT: A fully configurable<lb/> open source tool for minimum error rate training of<lb/> machine translation systems. The Prague Bulletin of<lb/> Mathematical Linguistics, 91:79–88.<lb/> </bibl>
+<bibl>Daqi Zheng, Yifan He, Yang Liu, and Qun Liu. 2012.<lb/> Maximum rank correlation training for statistical ma-<lb/>chine translation. In MT Summit XIII.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

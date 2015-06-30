@@ -1,0 +1,31 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Eneko Agirre, Mona Diab, Daniel Cer, and Aitor<lb/> Gonzalez-Agirre. 2012. Semeval-2012 task 6: A pilot<lb/> on semantic textual similarity. In Proceedings of the<lb/> First Joint Conference on Lexical and Computational<lb/> Semantics-Volume 1: Proceedings of the main confer-<lb/>ence and the shared task, and Volume 2: Proceedings<lb/> of the Sixth International Workshop on Semantic Eval-<lb/>uation, pages 385–393. Association for Computational<lb/> Linguistics.<lb/> </bibl>
+<bibl>Eneko Agirre, Daniel Cer, Mona Diab, Aitor Gonzalez-<lb/>Agirre, and Weiwei Guo. 2013. *sem 2013 shared<lb/> task: Semantic textual similarity, including a pilot on<lb/> typed-similarity. In *SEM 2013: The Second Joint<lb/> Conference on Lexical and Computational Semantics.<lb/> Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Lloyd Allison and Trevor I Dix. 1986. A bit-string<lb/> longest-common-subsequence algorithm. Information<lb/> Processing Letters, 23(5):305–310.<lb/> </bibl>
+<bibl>Daniel Bär, Chris Biemann, Iryna Gurevych, and Torsten<lb/> Zesch. 2012. Ukp: Computing semantic textual sim-<lb/>ilarity by combining multiple content similarity mea-<lb/>sures. In Proceedings of the First Joint Conference<lb/> on Lexical and Computational Semantics-Volume 1:<lb/> Proceedings of the main conference and the shared<lb/> task, and Volume 2: Proceedings of the Sixth Interna-<lb/>tional Workshop on Semantic Evaluation, pages 435–<lb/> 440. Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Scott Deerwester, Susan Dumais, George W. Furnas,<lb/> Thomas K. Landauer, and Richard Harshman. 1990.<lb/> Indexing by latent semantic analysis. Journal of the<lb/> American Society for Information Science, 41(6):391–<lb/> 407.<lb/> </bibl>
+<bibl>Katrin Erk and Sebastian Padó. 2008. A structured vec-<lb/>tor space model for word meaning in context. In Pro-<lb/>ceedings of EMNLP 2008.<lb/> </bibl>
+<bibl>Jenny Rose Finkel, Trond Grenager, and Christopher<lb/> Manning. 2005. Incorporating non-local information<lb/> into information extraction systems by gibbs sampling.<lb/> In Proceedings of the 43rd Annual Meeting on Associ-<lb/>ation for Computational Linguistics, pages 363–370.<lb/> Association for Computational Linguistics.<lb/> </bibl>
+<bibl>Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard<lb/> Pfahringer, Peter Reutemann, and Ian H. Witten.<lb/> 2009. The weka data mining software: an update.<lb/> SIGKDD Explor. Newsl., 11(1):10–18, November.<lb/> </bibl>
+<bibl>Pentti Kanerva, Jan Kristofersson, and Anders Holst.<lb/> 2000. Random indexing of text samples for latent se-<lb/>mantic analysis. In Proceedings of the 22nd annual<lb/> conference of the cognitive science society, volume<lb/> 1036. Citeseer.<lb/> </bibl>
+<bibl>T.K. Landauer and S.T. Dumais. 1997. A Solution to<lb/> Plato&apos;s Problem: The Latent Semantic Analysis The-<lb/>ory of Acquisition, Induction, and Representation of<lb/> Knowledge. Psychological Review, 104:211–240.<lb/> </bibl>
+<bibl>Alon Lavie and Michael J Denkowski. 2009. The meteor<lb/> metric for automatic evaluation of machine translation.<lb/> Machine translation, 23(2-3):105–115.<lb/> </bibl>
+<bibl>Jeff Mitchell and Mirella Lapata. 2008. Vector-based<lb/> models of semantic composition. In Proceedings of<lb/> ACL-08: HLT, pages 236–244, Columbus, OH.<lb/> </bibl>
+<bibl>M. Sahlgren. 2005. An introduction to random index-<lb/>ing. In Methods and Applications of Semantic Index-<lb/>ing Workshop at the 7th International Conference on<lb/> Terminology and Knowledge Engineering, TKE, vol-<lb/>ume 5.<lb/> </bibl>
+<bibl>Franě<lb/> Sari´Sari´c, Goran Glavaš, Mladen Karan, Jaň<lb/> Snajder,<lb/> and Bojana Dalbelo Baši´Baši´c. 2012. Takelab: Sys-<lb/>tems for measuring semantic text similarity. In Pro-<lb/>ceedings of the Sixth International Workshop on Se-<lb/>mantic Evaluation (SemEval 2012), pages 441–448,<lb/> Montréal, Canada, 7-8 June. Association for Compu-<lb/>tational Linguistics.<lb/> </bibl>
+<bibl>Dominic Widdows and Trevor Cohen. 2010. The seman-<lb/>tic vectors package: New algorithms and public tools<lb/> for distributional semantics. In Semantic Computing<lb/> (ICSC), 2010 IEEE Fourth International Conference<lb/> on, pages 9–15. IEEE.<lb/> </bibl>
+<bibl>D. Widdows and K. Ferraro. 2008. Semantic vec-<lb/>tors: a scalable open source package and online tech-<lb/>nology management application. Proceedings of the<lb/> Sixth International Language Resources and Evalua-<lb/>tion (LREC&apos;08), pages 1183–1190.<lb/> </bibl>
+<bibl>Michael J Wise. 1996. Yap3: Improved detection of sim-<lb/>ilarities in computer program and other texts. In ACM<lb/> SIGCSE Bulletin, volume 28, pages 130–134. ACM.<lb/> </bibl>
+<bibl>Stephen Wu and William Schuler. 2011. Structured com-<lb/>position of semantic vectors. In Proceedings of the In-<lb/>ternational Conference on Computational Semantics.<lb/> </bibl>
+<bibl>Stephen Tze-Inn Wu. 2010. Vectorial Representations<lb/> of Meaning for a Computational Model of Language<lb/> Comprehension. Ph.D. thesis, Department of Com-<lb/>puter Science and Engineering, University of Min-<lb/>nesota.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

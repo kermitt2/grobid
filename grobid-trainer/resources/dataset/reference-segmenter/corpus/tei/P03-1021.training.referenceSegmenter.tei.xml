@@ -1,0 +1,29 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Srinivas Bangalore, O. Rambox, and S. Whittaker. 2000.<lb/> Evaluation metrics for generation. In Proceedings<lb/> of the International Conference on Natural Language<lb/> Generation, Mitzpe Ramon, Israel.<lb/> </bibl>
+<bibl>George Doddington. 2002. Automatic evaluation of ma-<lb/>chine translation quality using n-gram co-occurrence<lb/> statistics. In Proc. ARPA Workshop on Human Lan-<lb/>guage Technology.<lb/> </bibl>
+<bibl>Richhard O. Duda and Peter E. Hart. 1973. Pattern Clas-<lb/>sification and Scene Analysis. John Wiley, New York,<lb/> NY.<lb/> </bibl>
+<bibl>Joshua Goodman. 1996. Parsing algorithms and metrics.<lb/> In Proceedings of the 34th Annual Meeting of the ACL,<lb/> pages 177–183, Santa Cruz, CA, June.<lb/> </bibl>
+<bibl>B. H. Juang, W. Chou, and C. H. Lee. 1995. Statisti-<lb/>cal and discriminative methods for speech recognition.<lb/> In A. J. Rubio Ayuso and J. M. Lopez Soler, editors,<lb/> Speech Recognition and Coding -New Advances and<lb/> Trends. Springer Verlag, Berlin, Germany.<lb/> </bibl>
+<bibl>Shankar Kumar and William Byrne. 2002. Minimum<lb/> bayes-risk alignment of bilingual texts. In Proc. of<lb/> the Conference on Empirical Methods in Natural Lan-<lb/>guage Processing, Philadelphia, PA.<lb/> </bibl>
+<bibl>Sonja Nießen, Franz J. Och, G. Leusch, and Hermann<lb/> Ney. 2000. An evaluation tool for machine transla-<lb/>tion: Fast evaluation for machine translation research.<lb/> In Proc. of the Second Int. Conf. on Language Re-<lb/>sources and Evaluation (LREC), pages 39–45, Athens,<lb/> Greece, May.<lb/> </bibl>
+<bibl>Franz Josef Och and Hermann Ney. 2002. Discrimina-<lb/>tive training and maximum entropy models for statis-<lb/>tical machine translation. In Proc. of the 40th Annual<lb/> Meeting of the Association for Computational Linguis-<lb/>tics (ACL), Philadelphia, PA, July.<lb/> </bibl>
+<bibl>Franz J. Och, Christoph Tillmann, and Hermann Ney.<lb/> 1999. Improved alignment models for statistical ma-<lb/>chine translation. In Proc. of the Joint SIGDAT Conf.<lb/> on Empirical Methods in Natural Language Process-<lb/>ing and Very Large Corpora, pages 20–28, University<lb/> of Maryland, College Park, MD, June.<lb/> </bibl>
+<bibl>Chris Paciorek and Roni Rosenfeld. 2000. Minimum<lb/> classification error training in exponential language<lb/> models. In NIST/DARPA Speech Transcription Work-<lb/>shop, May.<lb/> </bibl>
+<bibl>Kishore A. Papineni, Salim Roukos, and R. T. Ward.<lb/> 1997. Feature-based language understanding. In Eu-<lb/>ropean Conf. on Speech Communication and Technol-<lb/>ogy, pages 1435–1438, Rhodes, Greece, September.<lb/> </bibl>
+<bibl>Kishore A. Papineni, Salim Roukos, Todd Ward, and<lb/> Wei-Jing Zhu. 2001. Bleu: a method for auto-<lb/>matic evaluation of machine translation. Technical<lb/> Report RC22176 (W0109-022), IBM Research Divi-<lb/>sion, Thomas J. Watson Research Center, Yorktown<lb/> Heights, NY, September.<lb/> </bibl>
+<bibl>Kishore A. Papineni. 1999. Discriminative training via<lb/> linear programming. In Proceedings of the 1999 IEEE<lb/> International Conference on Acoustics, Speech &amp; Sig-<lb/>nal Processing, Atlanta, March.<lb/> </bibl>
+<bibl>William H. Press, Saul A. Teukolsky, William T. Vetter-<lb/>ling, and Brian P. Flannery. 2002. Numerical Recipes<lb/> in C++. Cambridge University Press, Cambridge,<lb/> UK.<lb/> </bibl>
+<bibl>Ralf Schlüter and Hermann Ney. 2001. Model-based<lb/> MCE bound to the true Bayes&apos; error. IEEE Signal Pro-<lb/>cessing Letters, 8(5):131–133, May.<lb/> </bibl>
+<bibl>Christoph Tillmann, Stephan Vogel, Hermann Ney, Alex<lb/> Zubiaga, and Hassan Sawaf. 1997. Accelerated<lb/> DP based search for statistical translation. In Euro-<lb/>pean Conf. on Speech Communication and Technol-<lb/>ogy, pages 2667–2670, Rhodes, Greece, September.<lb/> </bibl>
+<bibl>Nicola Ueffing, Franz Josef Och, and Hermann Ney.<lb/> 2002. Generation of word graphs in statistical ma-<lb/>chine translation. In Proc. Conference on Empiri-<lb/>cal Methods for Natural Language Processing, pages<lb/> 156–163, Philadelphia, PE, July.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

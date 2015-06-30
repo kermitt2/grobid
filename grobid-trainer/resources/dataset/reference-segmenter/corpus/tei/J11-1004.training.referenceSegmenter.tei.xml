@@ -1,0 +1,61 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Ayers, Gayle M. 1992. Discourse functions<lb/> of pitch range in spontaneous and read<lb/> speech. Presented at the Linguistic Society<lb/> of America Annual Meeting. 9–12 January,<lb/> Philadelphia, PA.<lb/> </bibl>
+<bibl>Bangerter, Adrian and Herbert H. Clark.<lb/> 2003. Navigating joint projects with<lb/> dialogue. Cognitive Science, 27:195–229.<lb/> </bibl>
+<bibl>Butterworth, Brian. 1972. Hesitation and<lb/> semantic planning in speech. Journal of<lb/> Psycholinguistic Research, 4:75–87.<lb/> </bibl>
+<bibl>Byron, Donna K. and P. Heeman. 1997.<lb/> Discourse marker use in task-oriented<lb/> spoken dialog. In Proceedings of the 5th<lb/> EUROSPEECH, pages 2223–2226, Rhodes.<lb/> </bibl>
+<bibl>Chang, Chih-Chung and Chih-Jen Lin.<lb/> 2001. LIBSVM: a library for support<lb/> vector machines. Software available at<lb/> www.csie.ntu.edu.tw/ ∼ cjlin/libsvm.<lb/> </bibl>
+<bibl>Clark, Herbert H. and Deanna Wilkes-Gibbs.<lb/> 1986. Referring as a collaborative process.<lb/> Cognitive Science, 22:1–39.<lb/> </bibl>
+<bibl>Cutrell, Edward, Mary Czerwinski,<lb/> Eric Horvitz. 2001. Notification,<lb/> disruption, and memory: Effects of<lb/> messaging interruptions on memory<lb/> and performance. In Proceedings of<lb/> INTERACT, pages 263–269, Tokyo.<lb/> </bibl>
+<bibl>Doran, Christine, John Aberdeen, Laurie<lb/> Damianos, and Lynette Hirschman.<lb/> 2001. Comparing several aspects of<lb/> human–computer and human–human<lb/> dialogues. In 2nd SigDial Workshop on<lb/> Discourse and Dialogue, pages 1–10,<lb/> Aalborg, Denmark.<lb/> </bibl>
+<bibl>Gillie, Tony and Donald Broadbent. 1989.<lb/> What makes interruptions disruptive? A<lb/> study of length, similarity, and complexity.<lb/> Psychological Research, 50(4):243–250.<lb/> </bibl>
+<bibl>Gopher, Daniel, Yaakov Greenshpan, and<lb/> Lilach Armony. 1996. Switching attention<lb/> between tasks: Exploration of the<lb/> components of executive control and their<lb/> development with training. In Proceedings<lb/> of the Human Factors and Ergonomics Society<lb/> 40th Annual Meeting, pages 1060–1064,<lb/> Santa Monica, CA.<lb/> </bibl>
+<bibl>Gravano, Agustin, Stefan Benus, Julia<lb/> Hirschberg, Shira Mitchell, and Illa<lb/> Vovsha. 2007. Classification of discourse<lb/> functions of affirmative words in spoken<lb/> dialogue. In Proceedings of INTERSPEECH,<lb/> pages 1613–1616, Antwerp, Belgium.<lb/> </bibl>
+<bibl>Grosz, Barbara J. and Julia Hirschberg.<lb/> 1992. Some intonational characteristics<lb/> of discourse structure. In Proceedings<lb/> of 2nd International Conference on Spoken<lb/> Language Processing, pages 429–432, Banff.<lb/> </bibl>
+<bibl>Grosz, Barbara J. and Candace L. Sidner.<lb/> 1986. Attention, intentions, and the<lb/> structure of discourse. Computational<lb/> Linguistics, 12(3):175–204.<lb/> </bibl>
+<bibl>Heeman, Peter A. and James F. Allen. 1995.<lb/> The Trains 93 dialogues. Trains Technical<lb/> Note 94-2, Department of Computer<lb/> Science, University of Rochester.<lb/> </bibl>
+<bibl>Heeman, Peter A., Fan Yang, Andrew L.<lb/> Kun, and Alexander Shyrokov. 2005.<lb/> Conventions in human–human<lb/> multithreaded dialogues: A preliminary<lb/> study. In Proceedings of Intelligent User<lb/> Interface, pages 293–295, San Diego, CA.<lb/> </bibl>
+<bibl>Heritage, John. 1984. A change-of-state<lb/> token and aspects of its sequential<lb/> placement. In J. Maxwell Atkinson and<lb/> John Heritage, editors, Structures of Social<lb/> Action: Studies in Conversation Analysis.<lb/> Cambridge University Press, chapter 13,<lb/> pages 299–345.<lb/> </bibl>
+<bibl>Hess, Stephen M. and Mark C. Detweiler.<lb/> 1994. Training to reduce the disruptive<lb/> effects of interruptions. In Proceedings of<lb/> the Human Factors and Ergonomics Society<lb/> 38th Annual Meeting, pages 1173–1177,<lb/> Nashville, TN.<lb/> </bibl>
+<bibl>Hirschberg, Julia and Diane Litman. 1987.<lb/> Now let&apos;s talk about now: Identifying cue<lb/> phrases intonationally. In Proceedings of the<lb/> 25th Annual Meeting of the Association for<lb/> Computational Linguistics, pages 163–171,<lb/> Stanford, California.<lb/> </bibl>
+<bibl>Hirschberg, Julia and Christine H. Nakatani.<lb/> 1996. A prosodic analysis of discourse<lb/> segments in direction-giving monologues.<lb/> In Proceedings of 34th Annual Meeting of the<lb/> Association for Computational Linguistics,<lb/> pages 286–293, Santa Cruz, CA.<lb/> </bibl>
+<bibl>Iyer, Rukmini M. and Mari Ostendorf. 1999.<lb/> Modeling long distance dependence in<lb/> language: Topic mixtures versus dynamic<lb/> cache models. IEEE Transactions on Speech<lb/> and Audio Process, 7(1):30–39.<lb/> </bibl>
+<bibl>Kun, Andrew L., W. Thomas Miller, and<lb/> William H. Lenharth. 2004. Computers in<lb/> police cruisers. IEEE Pervasive Computing,<lb/> 3(4):34–41.<lb/> </bibl>
+<bibl>Larsson, Staffan. 2003. Interactive<lb/> communication management in an<lb/> issue-based dialogue system. In<lb/> Proceedings 7th Workshop on the Semantics<lb/> and Pragmatics of Dialogue, pages 75–83,<lb/> SaarbrSaarbr¨Saarbrücken.<lb/> Lemon, Oliver and Alexander Gruenstein.<lb/> 2004. Multithreaded context for<lb/> robust conversational interfaces:<lb/> Context-sensitive speech recognition and<lb/> interpretation of corrective fragments.<lb/> ACM Transactions on Computer-Human<lb/> Interaction, 11(3):241–267.<lb/> </bibl>
+<bibl>Linde, Charlotte and Joseph Goguen. 1987.<lb/> Checklist interruption and resumption:<lb/> A linguistic study. Technical Report<lb/> CR-177460, National Aeronautics and<lb/> Space Administration.<lb/> </bibl>
+<bibl>McFarlane, Daniel C. 1999. Coordinating<lb/> the interruption of people in<lb/> human–computer interaction. In<lb/> Proceedings of INTERACT, pages 295–303,<lb/> Edinburgh, Scotland.<lb/> </bibl>
+<bibl>Meiran, Nacshon, Ziv Chorev, and Ayelet<lb/> Sapir. 2000. Component processes in<lb/> task switching. Cognitive Psychology,<lb/> 41:211–253.<lb/> </bibl>
+<bibl>Miyata, Yoshiro and Donald A. Norman.<lb/> 1986. Psychological issues in support of<lb/> multiple activities. In D. A. Norman and<lb/> S. W. Draper, editors, Participant Centered<lb/> Design: New Perspectives on Human<lb/> Computer Interaction. Lawrence Erlbaum,<lb/> Hillsdale, NJ, chapter 13, pages 265–284.<lb/> </bibl>
+<bibl>Moser, Megan and Johanna D. Moore. 1995.<lb/> Investigating cue selection and placement<lb/> in tutorial discourse. In Proceedings of<lb/> 33rd Annual Meeting of the Association for<lb/> Computational Linguistics, pages 130–135,<lb/> Cambridge, MA.<lb/> </bibl>
+<bibl>Nakajima, Shin&apos;ya and James F. Allen.<lb/> 1993. A study on prosody and discourse<lb/> structure in cooperative dialogues.<lb/> TRAINS Technical Note 93-2, University<lb/> of Rochester, Rochester, NY.<lb/> </bibl>
+<bibl>Passonneau, Rebecca J. and Diane J. Litman.<lb/> 1997. Discourse segmentation by human<lb/> and automated means. Computational<lb/> Linguistics, 23(1):103–139.<lb/> </bibl>
+<bibl>Quinlan, J. R. 1986. Induction of decision<lb/> trees. Machine Learning, 1(1):81–106.<lb/> </bibl>
+<bibl>Renaud, Karen. 2000. Expediting rapid<lb/> recovery from interruptions by providing<lb/> a visualisation of application activity. In<lb/> Proceedings of OzCHI, pages 348–355,<lb/> Sydney.<lb/> </bibl>
+<bibl>Rickel, Jeff, Stacy Marsella, Jonathan Gratch,<lb/> Randall Hill, David Traum, and William<lb/> Swartout. 2002. Towards a new generation<lb/> of virtual humans for interactive<lb/> experiences. IEEE Intelligent Systems,<lb/> 17(4):32–38.<lb/> </bibl>
+<bibl>Schiffrin, Deborah. 1987. Discourse Markers.<lb/> Cambridge University Press.<lb/> </bibl>
+<bibl>Shyrokov, Alexander, Andrew Kun, and<lb/> Peter Heeman. 2007. Experiments<lb/> modeling of human–human<lb/> multi-threaded dialogues in the presence<lb/> of a manual–visual task. In Proceedings of<lb/> 8th SIGdial Workshop on Discourse and<lb/> Dialogue, pages 190–193, Antwerp.<lb/> </bibl>
+<bibl>Strayer, Susan E., Peter A. Heeman, and<lb/> Fan Yang. 2003. Reconciling control and<lb/> discourse structure. In J. van Kuppevelt<lb/> and R. W. Smith, editors, Current and<lb/> New Directions in Discourse and Dialogue.<lb/> Kluwer Academic Publishers, Dordrecht,<lb/> chapter 14, pages 305–323.<lb/> </bibl>
+<bibl>Sussman, E., I. Winkler, and E. SchrSchr¨Schröger.<lb/> 2003. Top–down control over involuntary<lb/> attention switching in the auditory<lb/> modality. Psychonomic Bulletin &amp; Review,<lb/> 10(3):630–637.<lb/> </bibl>
+<bibl>Swerts, Marc. 1995. Combining statistical<lb/> and phonetic analyses of spontaneous<lb/> discourse segmentation. In Proceedings of<lb/> the 12th ICPhS, volume 4, pages 208–211,<lb/> Stockholm.<lb/> </bibl>
+<bibl>Swerts, Marc. 1998. Filled pauses as markers<lb/> of discourse structure. Journal of<lb/> Pragmatics, 30:485–496.<lb/> </bibl>
+<bibl>Swerts, Marc and Mari Ostendorf. 1995.<lb/> Discourse prosody in human–machine<lb/> interactions. In Proceedings of ESCA<lb/> Workshop on Spoken Dialogue Systems:<lb/> Theories and Applications, pages 205–208,<lb/> Visgo.<lb/> </bibl>
+<bibl>Toh, Siew Leng, Fan Yang, and Peter A.<lb/> Heeman. 2006. An annotation scheme for<lb/> agreement analysis. In Proceedings of 9th<lb/> International Conference on Spoken Language<lb/> Processing, pages 201–204, Pittsburgh, PA.<lb/> </bibl>
+<bibl>Traum, David and Jeff Rickel. 2002.<lb/> Embodied agents for multi-party dialogue<lb/> in immersive virtual world. In Proceedings<lb/> of the First International Joint Conference on<lb/> Autonomous Agents and Multi-agent<lb/> Systems, pages 766–773, Bologna.<lb/> </bibl>
+<bibl>Villing, Jessica. 2010. Now, where was I?<lb/> Resumption strategies for an in-vehicle<lb/> dialogue system. In Proceedings of the<lb/> 48th Annual Meeting of the Association for<lb/> Computational Linguistics, pages 798–805,<lb/> Uppsala.<lb/> </bibl>
+<bibl>Villing, Jessica, Cecilia Holtelius, Staffan<lb/> Larsson, Anders LindstrLindstr¨Lindström, Alexander<lb/> Seward, and Ninå<lb/> Aberg. 2008.<lb/> Interruption, resumption and domain<lb/> switching in in-vehicle dialogue. In<lb/> Proceedings of the 6th International<lb/> Conference on Advances in Natural<lb/> Language Processing, pages 488–499,<lb/> Berlin.<lb/> </bibl>
+<bibl>Walker, Marilyn A. 1996. The effect of<lb/> resource limits and task complexity on<lb/> collaborative planning in dialogue.<lb/> Artificial Intelligence Journal, 85:181–243.<lb/> </bibl>
+<bibl>Walker, Marilyn A., Rebecca Passonneau,<lb/> and Julie E. Boland. 2001. Quantitative<lb/> and qualitative evaluation of DARPA<lb/> communicator spoken dialogue systems.<lb/> In Proceedings of the Association of<lb/> Computational Linguistics, pages 515–522,<lb/> Toulouse, France.<lb/> </bibl>
+<bibl>Weng, Fuliang, Sebastian Varges, Badri<lb/> Raghunathan, Florin Ratiu, Heather<lb/> Pon-barry, Brian Lathrop, Qi Zhang,<lb/> Harry Bratt, Tobias Scheideck, Kui Xu,<lb/> Matthew Purver, and Rohit Mishra.<lb/> 2006. CHAT: A conversational helper<lb/> for automotive tasks. In Proceedings of<lb/> 9th International Conference on Spoken<lb/> Language Processing, pages 1061–1064,<lb/> Pittsburgh, PA.<lb/> </bibl>
+<bibl>Yang, Fan and Peter A. Heeman. 2009.<lb/> Context restoration in multi-tasking<lb/> dialogue. In Proceedings of 13th International<lb/> Conference on Intelligent User Interfaces,<lb/> pages 373–377, Sanibel, FL.<lb/> </bibl>
+<bibl>Yang, Fan and Peter A. Heeman. 2010.<lb/> Initiative conflicts in task-oriented<lb/> dialogue. Computer Speech and Language,<lb/> 24:175–189.<lb/> </bibl>
+<bibl>Yang, Fan, Peter A. Heeman, and Andrew<lb/> Kun. 2008. Switching to real-time tasks in<lb/> multi-tasking dialogue. In Proceedings of<lb/> International Conference on Computational<lb/> Linguistics, pages 1025–1032, Manchester.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

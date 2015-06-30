@@ -1,0 +1,37 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>E. Agirre and A. Soroa. 2007. SemEval-2007 Task<lb/> 02: Evaluating Word Sense Induction and Discrimi-<lb/>nation Systems. In Proceedings of the Fourth Interna-<lb/>tional Workshop on Semantic Evaluations, pages 7–12,<lb/> Prague, Czech Republic.<lb/> </bibl>
+<bibl>R. A. Amsler. 1981. A Taxonomy for English Nouns and<lb/> Verbs. In Proceedings of the 19th ACL Conference,<lb/> pages 133–138, Stanford, California.<lb/> </bibl>
+<bibl>C. Biemann. 2006. Chinese Whispers -An Efficient<lb/> Graph Clustering Algorithm and its Application to<lb/> Natural Language Processing Problems. In Proceed-<lb/>ings of TextGraphs, pages 73–80, New York,USA.<lb/> </bibl>
+<bibl>P. Buitelaar, D. Olejnik, and M. Sintek. 2004. A Ptotégé<lb/> Plug-in for Ontology Extraction from Text Based on<lb/> Linguistic Analysis. In Proceedings of the 1st Euro-<lb/>pean Semantic Web Symposium, pages 31–44, Crete,<lb/> Greece. CEUR-WS.org.<lb/> </bibl>
+<bibl>S. A. Caraballo. 1999. Automatic Construction of a<lb/> Hypernym-labeled Noun Hierarchy from Text. In Pro-<lb/>ceedings of the 37th ACL Conference, pages 120–126,<lb/> College Park, Maryland.<lb/> </bibl>
+<bibl>P. Cimiano, A. Hotho, and S. Staab. 2004. Compar-<lb/>ing Conceptual, Divisive and Agglomerative Cluster-<lb/>ing for Learning Taxonomies from Text. In Proceed-<lb/>ings of the 16th ECAI Conference, pages 435–439, Va-<lb/>lencia, Spain.<lb/> </bibl>
+<bibl>P. Cimiano, A. Hotho, and S. Staab. 2005. Learning<lb/> Concept Hieararchies from Text Corpora Using For-<lb/>mal Concept Analysis. Journal of Artificial Intelli-<lb/>gence Research, 24:305–339.<lb/> </bibl>
+<bibl>P. Cimiano. 2006. Ontology Learning and Population<lb/> from Text: Algorithms, Evaluation and Applications.<lb/> Springer-Verlag New York, Inc., Secaucus, NJ, USA.<lb/> </bibl>
+<bibl>T. Dunning. 1993. Accurate Methods for the Statistics of<lb/> Surprise and Coincidence. Computational Linguistics,<lb/> 19(1):61–74.<lb/> </bibl>
+<bibl>D. Faure and C. Nédellec. 1998. A Corpus-based Con-<lb/>ceptual Clustering Method for Verb Frames and On-<lb/>tology Acquisition. In LREC workshop on Adapting<lb/> lexical and corpus resources to sublanguages and ap-<lb/>plications, pages 5–12, Granada, Spain.<lb/> </bibl>
+<bibl>C. Fellbaum. 1998. Wordnet: An Electronic Lexical<lb/> Database. MIT Press, Cambridge, Massachusetts,<lb/> USA.<lb/> </bibl>
+<bibl>B. Ganter and R. Wille. 1999. Formal Concept Anal-<lb/>ysis: Mathematical Foundations. Springer-Verlag<lb/> New York, Inc., Secaucus, NJ, USA. Translator-C.<lb/> Franzke.<lb/> </bibl>
+<bibl>Z. Harris. 1968. Mathematical Structures of Language.<lb/> Wiley, New York, USA.<lb/> </bibl>
+<bibl>M. A. Hearst. 1992. Automatic Acquisition of Hy-<lb/>ponyms from Large Text Corpora. In Proceedings of<lb/> the 14th Coling Conference, pages 539–545, Nantes,<lb/> France.<lb/> </bibl>
+<bibl>C. H. Hwang. 1999. Incompletely and Imprecisely<lb/> Speaking: Using Dynamic Ontologies for Represent-<lb/>ing and Retrieving Information. In Proceedings of<lb/> the 6th International Workshop on Knowledge Repre-<lb/>sentation Meets Databases, pages 14–20, Linkoping,<lb/> Sweden. CEUR-WS.org.<lb/> </bibl>
+<bibl>B. King. 1967. Step-wise Clustering Procedures. Jour-<lb/>nal of the American Statistical Association, 69:86–<lb/> 101.<lb/> </bibl>
+<bibl>I. P. Klapaftis and S. Manandhar. 2008. Word Sense In-<lb/>duction Using Graphs of Collocations. In Proceedings<lb/> of the 18th ECAI Conference, pages 298–302, Patras,<lb/> Greece. IOS Press.<lb/> </bibl>
+<bibl>A. Maedche and S. Staab. 2002. Measuring Similarity<lb/> between Ontologies. In Proceedings of the European<lb/> Conference on Knowledge Acquisition and Manage-<lb/>ment (EKAW), pages 251–263, London,UK. Springer-<lb/>Verlag.<lb/> </bibl>
+<bibl>D. Moldovan and A. Novischi. 2002. Lexical Chains<lb/> for Question Answering. In Proceedings of the 19th<lb/> Coling Conference, pages 1–7, Taipei, Taiwan.<lb/> </bibl>
+<bibl>R. Navigli and P. Velardi. 2004a. Learning Domain On-<lb/>tologies from Document Warehouses and Dedicated<lb/> web Sites. Computational Linguistics, 30(2):151–179.<lb/> </bibl>
+<bibl>R. Navigli and P. Velardi. 2004b. Structural Semantic In-<lb/>terconnection: a Knowledge-based Approach to Word<lb/> Sense Disambiguation. In Proceedings of Senseval-<lb/>3: Third International Workshop on the Evaluation of<lb/> Systems for the Semantic Analysis of Text, pages 179–<lb/> 182, Barcelona, Spain.<lb/> </bibl>
+<bibl>M.L. Reinberger and P. Spyns. 2004. Discovering<lb/> Knowledge in Texts for the Learning of Dogma-<lb/>inspired Ontologies. In Proceedings of the ECAI<lb/> Workshop on Ontology Learning and Population,<lb/> pages 19–24, Valencia, Spain.<lb/> </bibl>
+<bibl>M. L. Reinberger, P. Spyns, W. Daelemans, and R. Meers-<lb/>man. 2003. Mining for Lexons: Applying Unsuper-<lb/>vised Learning Methods to create ontology bases. In<lb/> CoopIS/DOA/ODBASE, pages 803–819.<lb/> </bibl>
+<bibl>D. Sánchez and A. Moreno. 2005. Web-scale Taxon-<lb/>omy Learning. In Proceedings of the Workshop on<lb/> Learning and Extending Ontologies by using Machine<lb/> Learning methods, pages 53–60, Bonn, Germany.<lb/> </bibl>
+<bibl>P. H. A. Sneath and R. R. Sokal. 1973. Numerical Taxon-<lb/>omy, The Principles and Practice of Numerical Clas-<lb/>sification. W. H. Freeman, San Francisco, USA.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

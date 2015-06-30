@@ -1,0 +1,18 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>J. B. Bavelas and N. Chovil. 1997. Faces in dialogue. In J. A. Russell and J. M. Fernandez-Dols, editors,<lb/> The psychology of facial expression, pages 334–346. Cambridge University Press.<lb/> </bibl>
+<bibl>J. B. Bavelas, N. Chovil, L. Coates, and L. Roe. 1995. Gestures specialized for dialogue. Personality and<lb/> Social Psychology Bulletin, 21:394–405.<lb/> </bibl>
+<bibl>J. B. Bavelas, L. Coates, and T. Johnson. 2000. Listeners as co-narrators. Journal of Personality and Social<lb/> Psychology, 79:941–952.<lb/> </bibl>
+<bibl>J. B. Bavelas, L. Coates, and T. Johnson. 2002. Listener responses as a collaborative process: The role of<lb/> gaze. Journal of Communication, 52:566–580.<lb/> </bibl>
+<bibl>J. B. Bavelas, J. Gerwing, C. Sutton, and D. Prevost. 2008. Gesturing on the telephone: Independent effects<lb/> of dialogue and visibility. Journal of Memory and Language, 58:495–520.<lb/> </bibl>
+<bibl>H. H. Clark and R. J. Gerrig. 1990. Quotations as demonstrations. Language, 66:764–805.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

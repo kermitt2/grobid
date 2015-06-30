@@ -1,0 +1,17 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Chen, H.H., Huang, S-J., Ding, Y-W. and Tsai, S-C.<lb/> (1998) Proper name translation in cross-language<lb/> information retrieval. Proceedings of COLING-<lb/>ACL98. pp.232-236.<lb/> </bibl>
+<bibl>Knight, K. and Graehl, J. (1997) Machine transliteration.<lb/> Proceedings of 35 th Annual Meeting of Association<lb/> for Computational Linguistics, pp. 128-135.<lb/> </bibl>
+<bibl>Kwok, K.L. and Deng, Q. (2002) Corpus-based Pinyin<lb/> Name Resolution. Proceedings of the First SIGHAN<lb/> Workshop on Chinese Language Processing<lb/> (COLING 2002). pp. 41-47.<lb/> </bibl>
+<bibl>Library of Congress Pinyin Conversion Project (2000).<lb/> http://www.loc.gov/catdir/pinyin/outline.html.<lb/> Map of the Peoples&apos; Republic of China. (2001)<lb/> ISBN7-80544-601-6/K.573. Chengdu Cartographic<lb/> Publishing House. (http://www.ccph-map.com)<lb/> Miller, D., Schwartz, R., Weischedel, R. and Stone, R.<lb/> (1999) Named Entity Extraction from Broadcast News.<lb/> Proceedings of DARPA Broadcst News Workshop. pp.<lb/> 37-40.<lb/> </bibl>
+<bibl>Fig.2: GUI of GeoName</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -94,6 +94,8 @@ public class LibraryLoader {
                     System.load(wapitiLibFiles[0].getAbsolutePath());
                 }
 
+            } else if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.AI2) {
+              // no-op here, nothing to load
             } else {
                 throw new IllegalStateException("Unsupported CRF engine: " + GrobidProperties.getGrobidCRFEngine());
             }

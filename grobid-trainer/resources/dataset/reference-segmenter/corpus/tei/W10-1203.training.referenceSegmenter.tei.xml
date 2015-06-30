@@ -1,0 +1,21 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>M. Hall, E. Frank, G. Holmes, B. Pfahringer, P. Reute-<lb/>mann, and I.H. Witten. 2009. The WEKA Data Min-<lb/>ing Software: An Update. SIGKDD Explorations,<lb/> 1:10–18.<lb/> </bibl>
+<bibl>David A. Hull. 1996. Stemming algorithms: A case<lb/> study for detailed evaluation. Journal of the American<lb/> Society for Information Science, 47(1):70–84.<lb/> </bibl>
+<bibl>L. Kaufman and P.J. Rousseeuw. 1990. Finding groups<lb/> in data. An introduction to cluster analysis. Wiley,<lb/> New York.<lb/> </bibl>
+<bibl>Robert Krovetz. 2000. Viewing morphology as an in-<lb/>ference process. Artificial Intelligence, 118(1-2):277–<lb/> 294, April.<lb/> </bibl>
+<bibl>Christopher D Manning and Hinrich Schtze. 1999. Foun-<lb/>dations of Statistical Natural Language Processing.<lb/> MIT Press, Cambridge, Mass.<lb/> </bibl>
+<bibl>Paul McNamee, Charles Nicholas, and James Mayfield.<lb/> 2008. Don&apos;t have a stemmer?: be un+concern+ed.<lb/> In Proceedings of the 31st International ACM SIGIR<lb/> Conference on Research and Development in Informa-<lb/>tion retrieval, pages 813–814, Singapore, Singapore.<lb/> ACM.<lb/> </bibl>
+<bibl>Ellen Riloff. 1995. Little words can make a big differ-<lb/>ence for text classification. In Proceedings of the 18th<lb/> International ACM SIGIR Conference on Research<lb/> and Development in Information Retrieval, pages 130–<lb/> 136, Seattle, Washington, United States. ACM.<lb/> </bibl>
+<bibl>Alex J. Smola and Bernhard Schlkopf. 2004. A tutorial<lb/> on support vector regression. Statistics and Comput-<lb/>ing, 14(3):199–222.<lb/> </bibl>
+<bibl>E. M. Voorhees. 2006. The TREC 2005 robust track.<lb/> In ACM SIGIR Forum, volume 40, pages 41–48. ACM<lb/> New York, NY, USA.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

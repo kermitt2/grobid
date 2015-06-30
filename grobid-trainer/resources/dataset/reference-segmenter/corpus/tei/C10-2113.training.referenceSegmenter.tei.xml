@@ -1,0 +1,23 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Banko, M., Cafarella, M., Soderland, S., Broadhead,<lb/> M., Etzioni, O. 2007. Open Information Extrac-<lb/>tion from the Web. IJCAI 2007.<lb/> </bibl>
+<bibl>Barker, K. 2007. Building Models by Reading Texts.<lb/> Invited talk at the AAAI 2007 Spring Symposium<lb/> on Machine Reading, Stanford University.<lb/> </bibl>
+<bibl>Clark, P. and Harrison, P. 2009. Large-scale extrac-<lb/>tion and use of knowledge from text. The Fifth<lb/> International Conference on Knowledge Capture<lb/> (K-CAP<lb/> 2009).<lb/> </bibl>
+<bibl>http://www.cs.utexas.edu/users/pclark/dart/<lb/> Hobbs, J.R., Stickel, M., Appelt, D. and Martin, P.,<lb/> 1993. Interpretation as Abduction. Artificial In-<lb/>telligence, Vol. 63, Nos. 1-2, pp. 69-142.<lb/> http://www.isi.edu/~hobbs/interp-abduct-ai.pdf<lb/> Huang, L. and Sagae, K. 2010. Dynamic Program-<lb/>ming for Linear-Time Shift-Reduce Parsing.<lb/> ACL 2010.<lb/> </bibl>
+<bibl>Klein, D. and Manning, C.D. 2003. Accurate Unlexi-<lb/>calized Parsing. Proceedings of the 41st Meeting<lb/> of the Association for Computational Linguistics,<lb/> pp. 423-430<lb/> </bibl>
+<bibl>Marneffe, M. and Manning, C.D. 2008. The Stanford<lb/> typed dependencies representation. In COLING<lb/> 2008 Workshop on Cross-framework and Cross-<lb/>domain Parser Evaluation.<lb/> </bibl>
+<bibl>Mitchell, T. M., Betteridge, J., Carlson, A., Hruschka,<lb/> E., and Wang, R. Populating the Semantic Web<lb/> by Macro-reading Internet Text. The Semantic<lb/> Web -ISWC 2009. LNCS Volume 5823. Sprin-<lb/>ger-Verlag.<lb/> </bibl>
+<bibl>Sekine, S. 2006. On Demand Information Extraction.<lb/> COLING 2006.<lb/> </bibl>
+<bibl>Shinyama, Y. and Sekine, S. 2006. Preemptive Infor-<lb/>mation Extraction using Unrestricted Relation<lb/> Discovery. HLT-NAACL 2006.<lb/> </bibl>
+<bibl>Sperber, D. and Wilson, D. 1995. Relevance: Com-<lb/>munication and cognition (2nd ed.) Oxford,<lb/> Blackwell.<lb/> </bibl>
+<bibl>Van Durme, B., Schubert, L. 2008. Open Knowledge<lb/> Extraction through Compositional Language<lb/> Processing. Symposium on Semantics in Systems<lb/> for Text Processing, STEP 2008.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

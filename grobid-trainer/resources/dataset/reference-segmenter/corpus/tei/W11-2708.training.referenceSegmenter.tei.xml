@@ -1,0 +1,31 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Adam L. Berger, Stephen A. Della Pietra, and Vincent J.<lb/> Della Pietra. 1996. A maximum entropy approach to<lb/> natural language processing. Computational linguis-<lb/>tics, 22(1):71.<lb/> </bibl>
+<bibl>Aoife Cahill, Martin Forst, and Christian Rohrer. 2007.<lb/> Designing features for parse disambiguation and real-<lb/>isation ranking. In The Proceedings of the LFG &apos;07<lb/> Conference, pages 128–147. CSLI Publications.<lb/> </bibl>
+<bibl>Aoife Cahill. 2009. Correlating human and automatic<lb/> evaluation of a german surface realiser. In Proceed-<lb/>ings of the ACL-IJCNLP 2009 Conference -Short Pa-<lb/>pers, pages 97–100.<lb/> </bibl>
+<bibl>Daniël de Kok and Gertjan van Noord. 2010. A sentence<lb/> generator for Dutch. In Proceedings of the 20th Com-<lb/>putational Linguistics in the Netherlands conference<lb/> (CLIN), pages 75–90.<lb/> </bibl>
+<bibl>Daniël de Kok, Barbara Plank, and Gertjan van Noord.<lb/> 2011. Reversible stochastic attribute-value grammars.<lb/> In Proceedings of the ACL HLT 2011 Conference -<lb/>Short Papers.<lb/> </bibl>
+<bibl>Daniël de Kok. 2010. Feature selection for fluency rank-<lb/>ing. In Proceedings of the 6th International Natural<lb/> Language Generation Conference (INLG), pages 155–<lb/> 163.<lb/> </bibl>
+<bibl>Mark Johnson and Stefan Riezler. 2000. Exploiting<lb/> auxiliary distributions in stochastic unification-based<lb/> grammars. In Proceedings of the 1st Meeting of the<lb/> North American Chapter of the Association for Com-<lb/>putational Linguistics, pages 154–161, Seattle, Wash-<lb/>ington.<lb/> </bibl>
+<bibl>Robert Malouf and Gertjan van Noord. 2004. Wide<lb/> coverage parsing with stochastic attribute value gram-<lb/>mars. In IJCNLP-04 Workshop: Beyond shallow anal-<lb/>yses -Formalisms and statistical modeling for deep<lb/> analyses. JST CREST, March.<lb/> </bibl>
+<bibl>I. Dan Melamed, Ryan Green, and Joseph Turian. 2003.<lb/> Precision and recall of machine translation. In HLT-<lb/>NAACL.<lb/> </bibl>
+<bibl>Miles Osborne. 2000. Estimation of stochastic attribute-<lb/>value grammars using an informative sample. In Pro-<lb/>ceedings of the 18th conference on Computational lin-<lb/>guistics (COLING), pages 586–592.<lb/> </bibl>
+<bibl>Simon Perkins, Kevin Lacker, and James Theiler. 2003.<lb/> Grafting: Fast, incremental feature selection by gradi-<lb/>ent descent in function space. The Journal of Machine<lb/> Learning Research, 3:1333–1356.<lb/> </bibl>
+<bibl>Stefan Riezler and Alexander Vasserman. 2004. Incre-<lb/>mental feature selection and l1 regularization for re-<lb/>laxed maximum-entropy modeling. In Proceedings of<lb/> the 2004 Conference on Empirical Methods in Natural<lb/> Language Processing (EMNLP04), Barcelona, Spain.<lb/> </bibl>
+<bibl>Robert Tibshirani. 1996. Regression shrinkage and se-<lb/>lection via the Lasso. Journal of the Royal Statistical<lb/> Society. Series B (Methodological), pages 267–288.<lb/> </bibl>
+<bibl>Leonoor van der Beek, Gosse Bouma, Robert Malouf,<lb/> and Gertjan van Noord. 2002. The Alpino depen-<lb/>dency treebank. In Computational Linguistics in the<lb/> Netherlands (CLIN).<lb/> </bibl>
+<bibl>Gertjan van Noord, Ineke Schuurman, and Gosse<lb/> Bouma.<lb/> 2010.<lb/> Lassy syntactische annotatie,<lb/> revision 19053.<lb/> http://www.let.rug.nl/<lb/> vannoord/Lassy/sa-man_lassy.pdf.<lb/> </bibl>
+<bibl>Gertjan van Noord. 2006. At Last Parsing Is Now<lb/> Operational. In TALN 2006 Verbum Ex Machina,<lb/> Actes De La 13e Conference sur Le Traitement Au-<lb/>tomatique des Langues naturelles, pages 20–42, Leu-<lb/>ven.<lb/> </bibl>
+<bibl>Gertjan van Noord. 2007. Using self-trained bilexical<lb/> preferences to improve disambiguation accuracy. In<lb/> Proceedings of the International Workshop on Pars-<lb/>ing Technology (IWPT), ACL 2007 Workshop, pages<lb/> 1–10, Prague. Association for Computational Linguis-<lb/>tics, ACL.<lb/> </bibl>
+<bibl>Yaqian Zhou, Lide Wu, Fuliang Weng, and Hauke<lb/> Schmidt. 2003. A fast algorithm for feature se-<lb/>lection in conditional maximum entropy modeling.<lb/> In Proceedings of the 2003 conference on Empirical<lb/> methods in natural language processing, EMNLP &apos;03,<lb/> pages 153–159, Stroudsburg, PA, USA. Association<lb/> for Computational Linguistics.<lb/> </bibl>
+<bibl>Jun Zhu, Ni Lao, and Eric P. Xing. 2010. Grafting-<lb/>light: fast, incremental feature selection and structure<lb/> learning of Markov random fields. In Proceedings of<lb/> the 16th ACM SIGKDD international conference on<lb/> Knowledge discovery and data mining, pages 303–<lb/> 312. ACM.</bibl>
+        </listBibl>
+    </text>
+</tei>
+
