@@ -17,6 +17,13 @@
 package org.grobid.service;
 
 import java.io.InputStream;
+// rloth: 6 imports for remote PDF retrieval via an URL
+import java.io.IOException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.Proxy;
+import java.net.InetSocketAddress;
+import java.net.MalformedURLException;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
@@ -70,6 +77,8 @@ public class GrobidRestService implements GrobidPathes {
 	private static final String SHA1 = "sha1";
 	private static final String XML = "xml";
 	private static final String INPUT = "input";
+	// rloth: new GET parameter for remote PDF retrieval
+	private static final String PDF_URL = "pdf_url";
 
 	public GrobidRestService() {
 		LOGGER.info("Initiating Servlet GrobidRestService");
@@ -617,5 +626,58 @@ public class GrobidRestService implements GrobidPathes {
 		return GrobidRestProcessFiles.processStatelessReferencesDocument(inputStream, consol);
 	}
 	
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessReferencesDocument(InputStream, bool)
+	 *
+	 * rloth: new GET route /processReferencesViaUrl?pdf_url=...
+	 *   1) connects via the pdf_url QueryParam to a 3rd-party PDF file
+	 *      (optional params: proxy_host, proxy_port + consolidate)
+	 *   2) pass the inputStream to processStatelessReferencesDocument
+	 *      and proceed in same way as processReferences
+	 *   3) return resulting tei
+	 */
+	@Path(PATH_REFERENCES_URL)
+	@Consumes(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_XML)
+	@GET
+	public Response processStatelessReferencesUrl(@QueryParam(PDF_URL) String pdf_url,
+	                                              @QueryParam("proxy_host") String proxy_host,
+	                                              @QueryParam("proxy_port") String proxy_port,
+												  @QueryParam("consolidate") String consolidate) {
+		URL remote_pdf_data = null;
+
+		try {
+			remote_pdf_data = new URL(pdf_url);
+		}
+		catch (MalformedURLException mue) {
+			// Message shown on server side...
+			// TODO better logging
+			System.out.println("FAILED processReferencesViaUrl:MalformedURL.\n[" + mue.getMessage() + "]\n");
+		}
+
+		InputStream inputStream = null;
+		URLConnection c = null;
+		try {
+			if (proxy_host != null && proxy_port != null) {
+				Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxy_host, Integer.parseInt(proxy_port)));
+				c = remote_pdf_data.openConnection(proxy);
+			}
+			else {
+				c = remote_pdf_data.openConnection();
+			}
+			inputStream = c.getInputStream();
+		}
+		catch (IOException ioe) {
+	          System.out.println("FAILED processReferencesViaUrl:IO.\n[" + ioe.getMessage() + "]\n");
+	    }
+
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processStatelessReferencesDocument(inputStream, consol);
+	}
+
 
 }

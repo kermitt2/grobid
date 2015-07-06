@@ -126,6 +126,12 @@ public interface GrobidPathes {
 	 * path extension for processing all the references in a PDF file.
 	 */
 	public static final String PATH_REFERENCES= "processReferences";
+	/**
+	 * rloth: added new route /processReferencesViaUrl
+	 *   path extension for processing all the references from a URL
+	 *   that points to a 3rd-party PDF file (pdf_url in GET params)
+	 */
+	public static final String PATH_REFERENCES_URL= "processReferencesViaUrl";
 	
 	/**
 	 * path extension for processing sha1.

@@ -72,6 +72,10 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/processReferencesViaUrl</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
         <url-pattern>/sha1</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
