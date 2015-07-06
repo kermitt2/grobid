@@ -1,7 +1,7 @@
 <h1>GROBID batch mode</h1>
 
 ## Using the batch
-Go under the `grobid/grobid-core/traget` directory where the core library has been built:
+Go under the `grobid/grobid-core/target` directory where the core library has been built:
 ```bash
 > cd grobid-core/target
 ```

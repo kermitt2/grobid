@@ -227,7 +227,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 				else if (tok.equals("+PAGE+")) {
                     // page break should be a distinct feature
                     labeled.add("@newpage\n");
-                } 
+                }
 				else {
                     String content = tok;
                     int i = 0;

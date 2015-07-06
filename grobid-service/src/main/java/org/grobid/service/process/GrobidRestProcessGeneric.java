@@ -36,7 +36,7 @@ public class GrobidRestProcessGeneric {
 			try {
 				retVal = Boolean.valueOf(true).toString();
 			} catch (Exception e) {
-				LOGGER.error("COSMATService is not alive, because of: ", e);
+				LOGGER.error("GROBID Service is not alive, because of: ", e);
 				retVal = Boolean.valueOf(false).toString();
 			}
 			response = Response.status(Status.OK).entity(retVal).build();
