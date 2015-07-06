@@ -283,6 +283,14 @@ public class Engine implements Closeable {
                     writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
                     writer.write(raw + "\n");
                     writer.close();
+					
+					// also write the raw text as it is before reference segmentation
+					String outPathRawtext = pathTEI + "/" + inputFile.getName()
+						.replace(".pdf", ".training.referenceSegmenter.rawtxt");
+					Writer strWriter = new OutputStreamWriter(
+						new FileOutputStream(new File(outPathRawtext), false), "UTF-8");
+					strWriter.write(referencesStr + "\n");
+					strWriter.close();
                 }
 			}
 		}
