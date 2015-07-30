@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345408"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">LETTER<lb/></note>
+
+	<idno>doi:10.1038/nature12522<lb/></idno>
+
+	<docTitle>
+	<titlePart>Evidence for a new nuclear &apos;magic number&apos; from the<lb/> level structure of<lb/> 54<lb/> Ca<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>D. Steppenbeck<lb/> 1<lb/> , S. Takeuchi<lb/> 2<lb/> , N. Aoi<lb/> 3<lb/> , P. Doornenbal<lb/> 2<lb/> , M. Matsushita<lb/> 1<lb/> , H. Wang<lb/> 2<lb/> , H. Baba<lb/> 2<lb/> , N. Fukuda<lb/> 2<lb/> , S. Go<lb/> 1<lb/> , M. Honma<lb/> 4<lb/> ,<lb/> J. Lee<lb/> 2<lb/> , K. Matsui<lb/> 5<lb/> , S. Michimasa<lb/> 1<lb/> , T. Motobayashi<lb/> 2<lb/> , D. Nishimura<lb/> 6<lb/> , T. Otsuka<lb/>1,5<lb/>, H. Sakurai<lb/>2,5<lb/>, Y. Shiga<lb/> 7<lb/> , P.-A. Söderström<lb/> 2<lb/> ,<lb/> T. Sumikama<lb/> 8<lb/> , H. Suzuki<lb/> 2<lb/> , R. Taniuchi<lb/> 5 , Y. Utsuno<lb/> 9<lb/> , J. J. Valiente-Dobón<lb/> 10 &amp; K. Yoneda<lb/>2<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Atomic nuclei are finite quantum systems composed of two distinct<lb/> types of fermion—protons and neutrons. In a manner similar to<lb/> that of electrons orbiting in an atom, protons and neutrons in a<lb/> nucleus form shell structures. In the case of stable, naturally occur-<lb/>ring nuclei, large energy gaps exist between shells that fill completely<lb/> when the proton or neutron number is equal to 2, 8, 20, 28, 50, 82 or<lb/> 126 (ref. 1). Away from stability, however, these so-called &apos;magic<lb/> numbers&apos; are known to evolve in systems with a large imbalance of<lb/> protons and neutrons. Although some of the standard shell closures<lb/> can disappear, new ones are known to appear<lb/> 2,3<lb/> . Studies aiming to<lb/> identify and understand such behaviour are of major importance in<lb/> the field of experimental and theoretical nuclear physics. Here we<lb/> report a spectroscopic study of the neutron-rich nucleus<lb/> 54<lb/> Ca (a<lb/> bound system composed of 20 protons and 34 neutrons) using<lb/> proton knockout reactions involving fast radioactive projectiles.<lb/> The results highlight the doubly magic nature of<lb/> 54<lb/> Ca and provide<lb/> direct experimental evidence for the onset of a sizable subshell clos-<lb/>ure at neutron number 34 in isotopes far from stability.<lb/></div>
+
+	<byline>
+	<affiliation>1 Center for Nuclear Study, University of Tokyo,</affiliation>
+	</byline>
+
+	<address>Hongo, Bunkyo, Tokyo 113-0033, Japan.<lb/></address>
+
+	<byline>
+	<affiliation>2 RIKEN Nishina Center,</affiliation>
+	</byline>
+
+	<address>2-1, Hirosawa, Wako, Saitama 351-0198, Japan.<lb/></address>
+
+	<byline>
+	<affiliation>3 Research Center for Nuclear Physics,<lb/> University of Osaka,</affiliation>
+	</byline>
+
+	<address>Ibaraki, Osaka 567-0047, Japan.<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> Center for Mathematical Sciences, Aizu University,</affiliation>
+	</byline>
+
+	<address>Aizu-Wakamatsu, Fukushima 965-8580, Japan.<lb/></address>
+
+	<byline>
+	<affiliation>5 Department of Physics, University of Tokyo,<lb/></affiliation>
+	</byline>
+
+	<address>Hongo, Bunkyo, Tokyo 113-0033, Japan.<lb/></address>
+
+	<byline>
+	<affiliation>6 Department of Physics, Tokyo University of Science,</affiliation>
+	</byline>
+
+	<address>Noda, Chiba 278-8510, Japan.<lb/></address>
+
+	<byline>
+	<affiliation>7 Department of Physics, Rikkyo University,</affiliation>
+	</byline>
+
+	<address>Toshima, Tokyo 171-8501, Japan.<lb/></address>
+
+	<byline>
+	<affiliation>8 Department of Physics, Tohoku University,</affiliation>
+	</byline>
+
+	<address>Sendai, Miyagi 980-8578, Japan.<lb/></address>
+
+	<byline>
+	<affiliation> 9 Japan Atomic Energy Agency,</affiliation>
+	</byline>
+
+	<address> Tokai, Ibaraki 319-1195, Japan.<lb/></address>
+
+	<byline>
+	<affiliation>10 Istituto Nazionale di Fisica Nucleare, Laboratori Nazionali di<lb/> Legnaro,</affiliation>
+	</byline>
+
+	<address>Legnaro 35020, Italy.<lb/></address>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345872"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>International Journal of Mass Spectrometry 349– 350 (2013) 87– 93<lb/></reference>
+
+	<note type="other">Contents lists available at ScienceDirect<lb/></note>
+
+	<div type="abstract">International Journal of Mass Spectrometry<lb/> j o u r n a l h o m e p a g e : w w w . e l s e v i e r . c o m / l o c a t e / i j m s<lb/> Penning trap mass spectrometry of rare isotopes produced via projectile<lb/> fragmentation at the LEBIT facility<lb/></div>
+
+	<byline>
+	<docAuthor>Ryan Ringle<lb/> a, * , Stefan Schwarz<lb/> a , Georg Bollen<lb/> a,b,c<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a National Superconducting Cyclotron Laboratory,</affiliation>
+	</byline>
+
+	<address>East Lansing, MI, USA<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Physics and Astronomy, l Michigan State University,</affiliation>
+	</byline>
+
+	<address>East Lansing, MI, USA<lb/></address>
+
+	<byline>
+	<affiliation>c Facility for Rare Isotope Beams,</affiliation>
+	</byline>
+
+	<address>East Lansing, MI, USA<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 12 February 2013<lb/> Received in revised form 1 April 2013<lb/> Accepted 1 April 2013<lb/></note>
+
+	<date>Available online 12 April 2013<lb/></date>
+
+	<keyword>Keywords:<lb/> Mass spectrometry<lb/> Penning trap<lb/> Rare isotopes<lb/> Projectile fragmentation<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> The low-energy beam and ion trap facility, LEBIT, has been used to perform high-precision Penning trap<lb/> mass spectrometry using rare isotopes produced by fast-beam fragmentation. Gas stopping of the fast-<lb/>fragment beams and advanced ion manipulation techniques are used to produce brilliant, low-energy<lb/> beams for this type of measurement. The unique combination of fast, high-precision mass spectrom-<lb/>etry with the reach beyond the valley of beta stability afforded by projectile fragmentation has made<lb/> measurements possible that could not be performed at other facilities.<lb/></div>
+
+	<note type="copyright">© 2013 Elsevier B.V. All rights reserved.<lb/></note>
+
+	<note type="phone"> *  Corresponding author. Tel.: +1 517 908 7195. <lb/></note>
+
+	<email> E-mail addresses: ringle@nscl.msu.edu, ryan.ringle@me.com (R. Ringle). <lb/></email>
+
+		</front>
+	</text>
+</tei>

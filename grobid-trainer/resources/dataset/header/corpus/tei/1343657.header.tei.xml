@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1343657"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>29th International Cosmic Ray Conference Pune (2005) 3, 293–296<lb/></reference>
+
+	<docTitle>
+	<titlePart>The Space Experiment PAMELA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Boezio</docAuthor>
+	</byline>
+
+	<note type="other"> on behalf of the </note>
+
+	<orgName> PAMELA Collaboration<lb/></orgName>
+
+	<byline>
+	<affiliation> INFN, Structure of Trieste,</affiliation>
+	</byline>
+
+	<address>Via Valerio, 2 I -34127 Trieste, Italy<lb/></address>
+
+	<note type="other">Presenter: M. Boezio</note>
+
+	<email> (Mirko.Boezio@trieste.infn.it),</email>
+
+	<note type="other"> ita-boezio-M-abs1-og15-oral<lb/></note>
+
+	<div type="abstract"> We present a status report of the space experiment PAMELA. PAMELA is a satellite-borne experiment which<lb/> aims primarily to measure the antiproton and positron spectra in the cosmic radiation over the largest energy<lb/> range ever achieved and to search for antinuclei with unprecedented sensitivity. In addition, it will measure the<lb/> light nuclear component of cosmic rays and investigate phenomena connected with Solar and Earth physics.<lb/> All detectors have been successfully integrated in the apparatus that has been installed on-board the polar<lb/> orbiting Resource DK1 satellite. Before the end of 2005 it will be launched from the Baikonur cosmodrome<lb/> in Kazakhstan, for a 3 year long mission. Details of the integration phase and detectors performances will be<lb/> presented along with results of ground data taking and expected scientific output from the mission.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1334016"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proceedings of Symposia in Pure Mathematics<lb/></reference>
+
+	<docTitle>
+	<titlePart>Krichever–Novikov Type Algebras. An Introduction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Martin Schlichenmaier<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. Krichever–Novikov type algebras are generalizations of the Witt,<lb/> Virasoro, affine Lie algebras, and their relatives to Riemann surfaces of ar-<lb/>bitrary genus. We give the most important results about their structure,<lb/> almost-grading and central extensions. This contribution is based on a se-<lb/>quence of introductory lectures delivered by the author at the Southeast Lie<lb/> Theory Workshop 2012 in Charleston, U.S.A.<lb/></div>
+
+	<keywords type="classes">2010 Mathematics Subject Classification. Primary: 17B65; Secondary: 14H15, 17B56, <lb/>17B66, 17B67, 17B68, 30F30, 81R10, 81T40. <lb/></keywords>
+
+	<note type="grant"> Partial support by the Internal Research Project GEOMQ11, University of Luxembourg, and <lb/>in the frame of the OPEN scheme of the Fonds National de la Recherche (FNR) with the project <lb/>QUANTMOD O13/570706 is gratefully acknowledged. <lb/></note>
+
+		</front>
+	</text>
+</tei>

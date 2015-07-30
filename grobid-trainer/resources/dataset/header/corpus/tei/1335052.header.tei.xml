@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1335052"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>EJTP 9, No. 26 (2012) 277–292<lb/> Electronic Journal of Theoretical Physics<lb/></reference>
+
+	<docTitle>
+	<titlePart>Counting States in Spacetime<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Lawrence B. Crowell *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Alpha Institute of Advanced Study,</affiliation>
+	</byline>
+
+	<address>11 Rutafa Street, H-1165 Budapest, Hungary<lb/> And<lb/> 10600 Cibola Lp 311 NW Albuquerque, NM 87114 USA<lb/></address>
+
+	<note type="submission">Received 3 July 2011, Accepted 10 December 2011, Published 17 January 2012<lb/></note>
+
+	<div type="abstract">Abstract: The recent derivation of an exact integer partition function (IPF) is related to a<lb/> generating function for strings which compose the states of a black hole. Quantum gravity states<lb/> have representations as modular functions for exception algebras. The SLOCC group for the<lb/> accounting of these states is a quotient group on the Jordan matrix algebra. Quantum gravity<lb/> is then described by a set of symmetries which act as quantum Golay codes. The emulation of<lb/> quantum gravity in n-partite entanglements is then a technology for quantum computing and<lb/> encryption.<lb/></div>
+
+	<note type="copyright">c<lb/> Electronic Journal of Theoretical Physics. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Stringy Black Holes; Integer Partition Function; Exceptional Groups; Jordan Matrix<lb/> Algebra; Quantum Encryption<lb/> PACS (2010): 04.60.Cf ; 04.70.Dy; 03.67.Mn<lb/></keyword>
+
+	<email>* Email:lcrowell@swcp.com</email>
+
+		</front>
+	</text>
+</tei>

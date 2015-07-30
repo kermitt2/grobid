@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1343221"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:math-ph/0208002v1</idno>
+
+	<date>1 Aug 2002<lb/></date>
+
+	<note type="other">LPTENS-02/39<lb/></note>
+
+	<docTitle>
+	<titlePart>An extension of the HarishChandra-Itzykson-Zuber integral<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>E. Brézin<lb/> a) and S. Hikami<lb/> b)<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a) Laboratoire de Physique Théorique, Ecole Normale Supérieure<lb/></affiliation>
+	</byline>
+
+	<address>24 rue Lhomond 75231, Paris Cedex 05, France<lb/></address>
+
+	<byline>
+	<affiliation>1<lb/> b) Department of Basic Sciences,<lb/> University of Tokyo,</affiliation>
+	</byline>
+
+	<address>Meguro-ku, Komaba, Tokyo 153, Japan<lb/></address>
+
+	<div type="abstract">Abstract<lb/> The HarishChandra-Itzykson-Zuber integral over the unitary group U(k)<lb/> (β = 2) is present in numerous problems involving Hermitian random ma-<lb/>trices. It is well known that the result is semi-classically exact. This simple<lb/> result does not extend to other symmetry groups, such as the symplectic or<lb/> orthogonal groups. In this article the analysis of this integral is extended<lb/> first to the symplectic group Sp(k) (β=4). There the semi-classical approx-<lb/>imation has to be corrected by a WKB expansion. It turns out that this<lb/> expansion stops after a finite number of terms ; in other words the WKB ap-<lb/>proximation is corrected by a polynomial in the appropriate variables. The<lb/> analysis is based upon new solutions to the heat kernel differential equation.<lb/> We have also investigated arbitrary values of the parameter β, which char-<lb/>acterizes the symmetry group. Closed formulae are derived for arbitrary β<lb/> and k = 3, and also for large β and arbitrary k.<lb/></div>
+
+	<byline>
+	<affiliation>1 Unité Mixte de Recherche 8549 du Centre National de la Recherche Scientifique et<lb/> de l&apos; ´<lb/> Ecole Normale Supérieure.<lb/></affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

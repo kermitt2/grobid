@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1347450"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>February 16, 2015 14:54 WSPC/CRC<lb/> 9.75 x 6.5<lb/> 1560022<lb/> QCD Evolution Workshop 2014<lb/> International Journal of Modern Physics: Conference Series<lb/> Vol. 37 (2015) 1560022 (8 pages)<lb/> c<lb/> The Authors<lb/></reference>
+
+	<idno>DOI: 10.1142/S2010194515600228<lb/></idno>
+
+	<docTitle>
+	<titlePart>Color Entanglement in Hadronic Processes for Transverse<lb/> Momentum Dependent Parton Distribution Functions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. G. A. Buffing * and P. J. Mulders †<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Theory Group, Nikhef &amp; Department of Physics,<lb/> Faculty of Science, VU University<lb/></affiliation>
+	</byline>
+
+	<address>De Boelelaan 1081, NL-1081 HV Amsterdam, the Netherlands<lb/></address>
+
+	<email>* m.g.a.buffing@vu.nl<lb/> † p.j.g.mulders@vu.nl<lb/></email>
+
+	<date>Published 25 February 2015<lb/></date>
+
+	<div type="abstract">In the description of protons, we go beyond the ordinary collinear parton distribution<lb/> functions (PDFs), by including transverse momentum dependent PDFs (TMDs). As<lb/> such, we become sensitive to polarization modes of the partons and protons that one<lb/> cannot probe without accounting for transverse momenta of partons, in particular when<lb/> looking at azimuthal asymmetries.<lb/> Hadronic processes require the inclusion of gluon contributions forming the gauge<lb/> links, which are path-ordered exponentials tracing the color flow. In processes with two<lb/> hadrons in the initial state, such as Drell-Yan (DY), the gauge links from different parts of<lb/> the process get entangled. We show that in color disentangling this gauge link structure,<lb/> one becomes sensitive to this color flow. After disentanglement, particular combinations<lb/> of TMDs will require a different numerical color factor than one naively might have<lb/> expected. Such color factors will even play a role for azimuthal asymmetries in the<lb/> simplest hadronic processes such as DY.<lb/></div>
+
+	<keyword>Keywords: Drell-Yan; parton distribution functions; gauge links.<lb/></keyword>
+
+	<note type="other">PACS Numbers: 12.38.−t, 13.85.Qk, 13.90.+i<lb/></note>
+
+		</front>
+	</text>
+</tei>

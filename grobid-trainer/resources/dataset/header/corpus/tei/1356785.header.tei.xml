@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1356785"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>BLED WORKSHOPS<lb/> IN PHYSICS<lb/> VOL. 4, NO. 1<lb/> Proceedings of the Mini-Workshop<lb/> Effective q-q Interaction (p. 19)<lb/> Bled, Slovenia, July 7-14, 2003<lb/></reference>
+
+	<docTitle>
+	<titlePart>Scalar mesons in the Gaussian approximation<lb/> to the linear˚model<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>V. Dmitrašinovi´c<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Vinča Institute (Lab 010),</affiliation>
+	</byline>
+
+	<address>P.O.Box 522, 11001 Belgrade<lb/></address>
+
+	<div type="abstract">Abstract. I report on recent progress in our understanding of the bosonic sector of the<lb/> linear sigma model in the nonperturbative Gaussian wave functional approximation, ac-<lb/>complished in collaboration with I. Nakamura. We have proven a number of chiral Ward-<lb/>Takahashi identities, such as the Nambu-Goldstone theorem and axial current conserva-<lb/>tion in the Gaussian approximation to these models. The particle content of the models is<lb/> elucidated with particular emphasis on the question of multiple states in the scalar chan-<lb/>nel.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -21,7 +21,7 @@
 		<email>irani@wisdom.weizmann.ac.il <lb/></email>
 		<div type="abstract">Abstract <lb/>Since uncalibrated images permit only projective reconstruction, metric information requires either <lb/>camera or scene calibration. We propose a stratified approach to projective reconstruction, in which <lb/>gradual increase in domain information for scene calibration leads to gradual increase in 3D information. <lb/>Our scheme includes the following steps: (1) Register the images with respect to a reference plane; this <lb/>can be done using limited scene information, e.g., the knowledge that two pairs of lines on the plane are <lb/>parallel. We show that this calibration is sufficient for ordinal reconstruction sorting the points by their <lb/>height over the reference plane. (2) If available, use the relative height of two additional out-of-plane <lb/>points to compute the height of the remaining points up to constant scaling. Our scheme is based on the <lb/>dual epipolar geometry in the reference frame, which we develop below. We show good results with five <lb/>sequences of real images, using mostly scene calibration that can be inferred directly from the images <lb/>themselves. <lb/></div>
 		<keywords>Keywords: projective reconstruction, affine reconstruction, partial calibration, qualitative depth <lb/></keywords>
-		<div type="intro">1 Introduction</div>
+		<div type="intro">1 Introduction<lb/></div>
 		</front>
 </text>
 </tei>

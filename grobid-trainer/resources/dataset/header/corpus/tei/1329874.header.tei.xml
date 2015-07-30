@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1329874"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of Nonlinear Mathematical Physics<lb/> Volume 12, Number 4 (2005), 457–461<lb/> Letter<lb/></reference>
+
+	<docTitle>
+	<titlePart>Seiberg-Witten-like Equations on 7-Manifolds<lb/> with G 2 -Structure<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nedim DĚ<lb/> GIRMENCI and Nülifer¨OZDEMIR<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Anadolu University, Science Faculty, Mathematics Department<lb/></affiliation>
+	</byline>
+
+	<address>26470 Eskisehir, Turkey<lb/></address>
+
+	<email>E-mail: ndegirmenci@anadolu.edu.tr<lb/> E-mail: nozdemir@anadolu.edu.tr<lb/></email>
+
+	<note type="submission">Received October 21, 2004; Accepted in Revised Form January 18, 2005<lb/></note>
+
+	<div type="abstract">Abstract<lb/> The Seiberg-Witten equations are of great importance in the study of topology of<lb/> smooth four-dimensional manifolds. In this work, we propose similar equations for<lb/> 7-dimensional compact manifolds with G 2 -structure.<lb/></div>
+
+		</front>
+	</text>
+</tei>

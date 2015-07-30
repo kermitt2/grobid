@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1357949"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proc Indian Natn Sci Acad 81 No. 1 February 2015 Special Issue, pp. 75-85<lb/> c<lb/> Printed in India.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Imaginary Part of the Medium Modified Heavy Quark Potential<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>LATA THAKUR * , UTTAM KAKADE and BINOY KRISHNA PATRA<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Indian Institute of Technology</affiliation>
+	</byline>
+
+	<address>Roorkee 247 667, India<lb/></address>
+
+	<note type="submission">(Received on 31 May 2014; Accepted on 25 June 2014)<lb/></note>
+
+	<div type="abstract">We have calculated the dissociation of quarkonia through an imaginary potential which is obtained by<lb/> correcting both the perturbative and non-perturbative terms of the potential at T=0 through the dielectric<lb/> function in real-time formalism. The real-part of the potential becomes stronger and thus makes the<lb/> quarkonia more bound whereas the (magnitude) imaginary-part too becomes larger and thus contribute<lb/> more to the thermal width, compared to the medium-contribution of the Coulomb term alone. We have<lb/> also extended our calculation to anisotropic medium, by calculating the leading anisotropic corrections<lb/> to the propagators in Keldysh representation. The presence of anisotropy makes the real-part of the<lb/> potential stronger but the imaginary-part is weakened slightly and the competition between them results<lb/> in higher dissociation temperatures compared to isotropic medium.<lb/></div>
+
+	<keyword>Key Words : Quantum Chromodynamics; Debye Mass; Momentum Anisotropy; String Tension;<lb/> Dielectric Permittivity; Heavy Quark Potential; Decay Width<lb/></keyword>
+
+	<email> *  Author for Correspondence : E-mail: thakurphyom@gmail.com <lb/></email>
+
+	<idno> DOI: 10.16943/ptinsa/2015/v81i1/48054 <lb/></idno>
+
+		</front>
+	</text>
+</tei>

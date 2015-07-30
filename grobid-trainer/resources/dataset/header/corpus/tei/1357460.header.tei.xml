@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1357460"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>BLED WORKSHOPS<lb/> IN PHYSICS<lb/> VOL. 8, NO. 1<lb/> p. 17<lb/> Proceedings of the Mini-Workshop<lb/> Hadron Structure and Lattice QCD<lb/> Bled, Slovenia, July 9-16, 2007<lb/></reference>
+
+	<docTitle>
+	<titlePart>Does nucleon parity doubling imply U A (1) symmetry<lb/> restoration?<lb/>⋆<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor> V. Dmitrašinovi´c<lb/> a , K. Nagata<lb/> b , A. Hosaka<lb/> c<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Vinča Institute of Nuclear Sciences,</affiliation>
+	</byline>
+
+	<address>lab 010, P.O.Box 522, 11001 Beograd, Serbia<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Physics, Chung-Yuan Christian University,</affiliation>
+	</byline>
+
+	<address>Chung-Li 320, Taiwan<lb/></address>
+
+	<byline>
+	<affiliation>c Research Center for Nuclear Physics, Osaka University,</affiliation>
+	</byline>
+
+	<address>Mihogaoka 10-1,<lb/> Osaka 567-0047, Japan<lb/></address>
+
+	<div type="abstract">Abstract. We examine the role of U A (1) symmetry and its breaking/restoration in two<lb/> complete chiral multiplets consisting of the nucleon and the Roper and their two &quot; chiral<lb/> mirror &quot; odd-parity resonances. We base our work on the recent classification of the chiral<lb/> SU L (2) × SU R (2) transformation properties of the two (Ioffe) independent local tri-quark<lb/> nucleon interpolating fields in QCD [1].<lb/></div>
+
+		</front>
+	</text>
+</tei>

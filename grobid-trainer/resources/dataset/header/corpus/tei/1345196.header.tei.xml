@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345196"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<note type="other"> INSTITUTE OF PHYSICS PUBLISHING<lb/> JOURNAL OF PHYSICS A: MATHEMATICAL AND GENERAL<lb/></note>
+
+	<reference>J. Phys. A: Math. Gen. 39 (2006) 14985–14996<lb/></reference>
+
+	<idno>doi:10.1088/0305-4470/39/48/010<lb/></idno>
+
+	<docTitle>
+	<titlePart>A perturbative approach to Snyder space with<lb/> applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mark K Transtrum and Jean-François S Van Huele<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics and Astronomy, Brigham Young University,</affiliation>
+	</byline>
+
+	<address>Provo, UT 84602, USA<lb/></address>
+
+	<email>E-mail: mktranstrum@hotmail.com and vanhuele@byu.edu<lb/></email>
+
+	<note type="submission">Received 19 June 2006, in final form 25 October 2006<lb/> Published 15 November 2006<lb/></note>
+
+	<note type="other">Online at stacks.iop.org/JPhysA/39/14985<lb/></note>
+
+	<div type="abstract">Abstract<lb/> In this paper, we present a method for studying systems in the modified<lb/> formulation of quantum mechanics known as Snyder space, proposed by Snyder<lb/> (1947 Phys. Rev. 71 38–41). Snyder space predicts a modified commutation<lb/> algebra for position and momentum operators. The method described in<lb/> this paper introduces operators satisfying the canonical commutation relations<lb/> and relates them to the position and momentum operators of Snyder space,<lb/> effectively mapping a problem in Snyder space into a similar problem in<lb/> standard quantum mechanics. The method is applied to the simple harmonic<lb/> oscillator (SHO) in one and two dimensions as well as to the one-dimensional<lb/> infinite square well. The energy spectra are calculated perturbatively for the<lb/> SHO. We also find an exact spectrum for the one-dimensional infinite square<lb/> well potential. These results are shown to agree with similar results found<lb/> elsewhere in the literature.<lb/> PACS numbers: 03.65.−w, 03.65.Fd<lb/></div>
+
+		</front>
+	</text>
+</tei>

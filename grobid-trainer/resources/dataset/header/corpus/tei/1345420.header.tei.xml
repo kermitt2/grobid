@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345420"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Progress on the study of nuclear states with mixed proton-neutron<lb/> symmetry<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>N. Pietralla<lb/> 1,2,a , Th. Möller<lb/> 1 , T. Ahn<lb/> 1,3,4 , Ch. Bauer<lb/> 1 , L. Coquard<lb/> 1 , M. Danchev<lb/> 5 , K.A. Gladnishki<lb/> 5 , A. Krugmann<lb/> 1 , J.<lb/> Leske<lb/> 1 , O. Möller<lb/> 1 , P. von Neumann-Cosel<lb/> 1 , V.Yu. Ponomarev<lb/> 1 , G. Rainovski<lb/> 5 , A. Scheikh Obeid<lb/> 1 , M. Scheck<lb/> 1 , Ch.<lb/> Walz<lb/> 1 , and J. Wambach<lb/> 1,2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institut für Kernphysik, Technische Universität Darmstadt,</affiliation>
+	</byline>
+
+	<address>64289 Darmstadt, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2 GSI Helmholtzzentrum für Schwerionenforschung mbH,</affiliation>
+	</byline>
+
+	<address>64291 Darmstadt, Germany<lb/></address>
+
+	<byline>
+	<affiliation>3 Wright Nuclear Structure Laboratory, Yale University,</affiliation>
+	</byline>
+
+	<address>New Haven, CT, U.S.A.<lb/></address>
+
+	<byline>
+	<affiliation>4 National Superconducting Cyclotron Lab, Michigan State University,</affiliation>
+	</byline>
+
+	<address>East Lansing, MI 48824, USA<lb/></address>
+
+	<byline>
+	<affiliation>5 Faculty of Physics, St. Kliment Ohridski University of Sofia,</affiliation>
+	</byline>
+
+	<address>BG-1164 Sofia, Bulgaria<lb/></address>
+
+	<div type="abstract">Abstract. The one-quadrupole phonon excitation of mixed symmetry, the 2<lb/> +<lb/> 1,ms state, is a fundamental building<lb/> block of nuclear structure. This article gives a summary of our recent experimental research on this excitation<lb/> mode in the A = 90 and A = 130 mass regions.<lb/></div>
+
+	<email> a e-mail: pietralla@ikp.tu-darmstadt.de <lb/></email>
+
+		</front>
+	</text>
+</tei>

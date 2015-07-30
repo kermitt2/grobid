@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1335008"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Mem. S.A.It. Vol. 79, 545<lb/></reference>
+
+	<note type="copyright">c<lb/> SAIt 2008<lb/></note>
+
+	<note type="other">Memorie della<lb/> White dwarfs as physics laboratories: the axion<lb/> case<lb/></note>
+
+	<byline>
+	<docAuthor>J. Isern 1,2 and E. García–Berro 1,3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institut d&apos;Estudis Espacials de Catalunya (IEEC), Edifici Nexus,</affiliation>
+	</byline>
+
+	<address>c/ Gran Capità 2, E-<lb/>08034 Barcelona, Spain</address>
+
+	<email>e-mail: isern@ieec.cat<lb/></email>
+
+	<byline>
+	<affiliation>2 Institut deCì encies de l&apos;Espai (CSIC), Torre C-5 Parell, Facultat deCì encies, Campus<lb/> UAB,</affiliation>
+	</byline>
+
+	<address>E-08193 Bellaterra (Spain)<lb/></address>
+
+	<byline>
+	<affiliation>3 Departament de Física Aplicada, Escola Politècnica Superior de Castelldefels, Universitat<lb/> Politècnica de Catalunya, Avda. Canal Olímpic s/n,</affiliation>
+	</byline>
+
+	<address>E-08860 Castelldefels (Spain)<lb/></address>
+
+	<email>e-mail: garcia@fa.upc.edu<lb/></email>
+
+	<div type="abstract">Abstract. One of the tools for constraining the properties of some particles predicted by the<lb/> different non-standard physical theories is the study of the evolutive properties of stars. The<lb/> reason is that the hot and dense interior of stars is a powerful source of low-mass weakly-<lb/>interacting particles that freely escape to the space. Therefore, these particles constitute a<lb/> sink of energy that modifies the evolutionary timescales of stars, thus opening the door to<lb/> constraint the properties of such hypothetical particles. Several stellar objects have been<lb/> used up to now to this regard. Among these are the Sun, supernovae, red giants and AGB<lb/> stars. However, the uncertainties and model dependences recommend the use of different<lb/> astrophysical techniques to constrain or verify these new theories. Here we show that, for<lb/> several reasons being the most outstanding one the their simplicity, white dwarfs can be used<lb/> as excellent laboratories for testing new physics. In this paper we apply them to constrain<lb/> the mass of the axions.<lb/></div>
+
+	<keyword>Key words. Stars: white dwarfs — stars: oscillations — particles: axions<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1346433"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<note type="other">30TH INTERNATIONAL COSMIC RAY CONFERENCE<lb/></note>
+	
+	<docTitle>
+	<titlePart>	Search for point-like Dark Matter sources with the GLAST Large Area Telescope<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A.MORSELLI<lb/>1</docAuthor>
+	</byline>
+
+	<note type="other"> ON BEHALF OF THE </note>
+
+	<orgName>GLAST LAT COLLABORATION</orgName>
+
+	<address>.<lb/></address>
+
+	<byline>
+	<affiliation>1 INFN Roma Tor Vergata,</affiliation>
+	</byline>
+
+	<address>Via della Ricerca Scientifica 1 I00133 ROMA, ITALY<lb/></address>
+
+	<email>aldo.morselli@roma2.infn.it<lb/></email>
+
+	<div type="abstract">Abstract: The space satellite GLAST is expected to play a crucial role in indirect Dark Matter (DM)<lb/> searches, thanks both to its ability to perform observations at energy scales comparable to the mass of<lb/> common DM candidates and to its potential of making deep full-sky maps in gamma-rays, thanks to its<lb/> large (∼ 2.4 sr) field-of-view. Here we will describe the prospects for detecting gamma-rays from point<lb/> sources of Dark Matter annihilation.<lb/></div>
+
+	<reference> Proceedings of the 30th International Cosmic Ray Conference <lb/> Rogelio Caballero, Juan Carlos D&apos;Olivo, Gustavo Medina-Tanco, <lb/>Lukas Nellen, Federico A. Sánchez, José F. Valdés-Galicia (eds.) <lb/>Universidad Nacional Autónoma de México, <lb/>Mexico City, Mexico, 2008 <lb/>Vol. 4 (HE part 1), pages 733–736 <lb/> ID 619 <lb/></reference>
+
+		</front>
+	</text>
+</tei>

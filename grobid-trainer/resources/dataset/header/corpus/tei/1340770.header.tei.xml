@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1340770"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:math/0008067v4 [math.AG]</idno>
+
+	<date>15 Aug 2001<lb/></date>
+
+	<docTitle>
+	<titlePart>SEMISIMPLE FROBENIUS STRUCTURES<lb/> AT HIGHER GENUS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>ALEXANDER B. GIVENTAL<lb/></docAuthor>
+	</byline>
+
+	<dedication>To the memory of Tom Wolff<lb/></dedication>
+
+	<date> Date: August 8, 2000, revised May 4, 2001. <lb/></date>
+
+	<note type="grant">Research partially supported by NSF Grant DMS-0072658. <lb/></note>
+
+		</front>
+	</text>
+</tei>

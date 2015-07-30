@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1329868"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<docTitle>
+	<titlePart>Integrable hierarchies related to the Kuper-CH<lb/> spectral problem<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ling Zhang<lb/> 1,2,a) and Dafeng Zuo<lb/> 1,3,b)<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 School of Mathematical Science, University of Science and Technology of China,<lb/></affiliation>
+	</byline>
+
+	<address>Hefei 230026, People&apos;s Republic of China<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Mathematics, Chuzhou University,</affiliation>
+	</byline>
+
+	<address>Chuzhou, 239012 Anhui,<lb/> People&apos;s Republic of China<lb/></address>
+
+	<byline>
+	<affiliation>3 Wu Wen-Tsun Key Laboratory of Mathematics, USTC, Chinese Academy of Sciences<lb/></affiliation>
+	</byline>
+
+	<note type="submission">(Received 11 April 2011; accepted 31 May 2011; published online 5 July 2011)<lb/></note>
+
+	<div type="abstract">In this paper, from a given Kuper-CH spectral problem, we propose two kinds of<lb/> super integrable hierarchies. One is the Kuper-CH hierarchy, the other is the gen-<lb/>eralized Kuper-Harry-Dym hierarchy. Moreover, we construct their zero curvature<lb/> representations and super-bi-Hamiltonian structures.</div>
+
+	<note type="copyright">C<lb/>2011 American Institute of<lb/> Physics.</note>
+
+	<idno>[doi:10.1063/1.3603817]<lb/></idno>
+
+	<email> a) Electronic mail: dianzhengling@126.com. <lb/> b) Author to whom correspondence should be addressed. Electronic mail: dfzuo@ustc.edu.cn.</email> 
+
+		</front>
+	</text>
+</tei>

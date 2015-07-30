@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345913"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Midrapidity Hyperon Production in pp<lb/> and pA Collisions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G.H. Arakelyan, C. Merino, and Yu.M. Shabelski<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Presented by C. Merino at Initial Stages 2014 (IS2014)<lb/> The 2nd International Conference on the<lb/> Initial Stages in High-Energy Nuclear Collisions<lb/>Napa Valley, CA, USA, 3-7 December, 2014<lb/></note>
+
+	<div type="abstract">Abstract In this paper we present the description of the production of strange and<lb/> mulistrange baryons in a wide energy region, from CERN SpS up to LHC, in the<lb/> framework of the Quark-Gluon String model.<lb/></div>
+
+	<byline>
+	<docAuthor>G.H. Arakelyan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation> A.Alikhanyan National Scientific Laboratory (Yerevan Physics Institute),</affiliation>
+	</byline>
+
+	<address>Yerevan, 0036, Armenia.<lb/></address>
+
+	<email>e-mail: argev@mail.yerphi.am<lb/></email>
+
+	<byline>
+	<docAuthor>C. Merino<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation> Departamento de Física de Partículas, Facultade de Física and Instituto Galego de Física de Altas<lb/> Enerxías (IGFAE), Universidade de Santiago de Compostela,</affiliation>
+	</byline>
+
+	<address>Santiago de Compostela 15782, Gal-<lb/>iza, Spain.</address>
+
+	<email>e-mail: carlos.merino@usc.es<lb/></email>
+
+	<byline>
+	<docAuthor>Yu.M. Shabelski<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Petersburg Nuclear Physics Institute, NCR Kurchatov Institute,</affiliation>
+	</byline>
+
+	<address>Gatchina, St.Petersburg 188350,<lb/> Russia.</address>
+
+	<email>e-mail: shabelsk@thd.pnpi.spb.ru<lb/></email>
+
+		</front>
+	</text>
+</tei>

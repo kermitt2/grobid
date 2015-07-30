@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345923"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>PHYSICA<lb/> ELSEVIER<lb/> Physica A 218 (1995) 237-244<lb/></reference>
+
+	<docTitle>
+	<titlePart>Equivalence of classical spins and<lb/> Hartree-Fock-Bogoliubov approximation of the<lb/> fermionic anharmonic oscillator<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M.T. Thomaz a,l, A.ER. de Toledo Piza b,2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Instituto de F(sica, Universidade Federal Fluminense, R. Gal. Milton Tavares dr Souza s/n.,</affiliation>
+	</byline>
+
+	<address>Campus da<lb/> Praia Vermelha, Niter6i, R.J., 24210-340, Brazil<lb/></address>
+
+	<byline>
+	<affiliation>b Instituto de F(sica, Universidade de Stio Paulo,</affiliation>
+	</byline>
+
+	<address>Sdo Paulo, S.P, 01452-990, Brazil<lb/></address>
+
+	<date>Received 23 May 1994; revised 22 February 1995<lb/></date>
+
+	<div type="abstract">Abstract<lb/> We show that the Hartree-Fock-Bogoliubov (alias Gaussian) approximation of the initial<lb/> condition problem of the fermionic anharmonic oscillator is equivalent to a bosonic Hamiltonian<lb/> system of two classical spins.<lb/></div>
+
+	<email> 1 E-mail: GFIMTT@BRUFEBITNET<lb/> 2 E-mail: PIZA@USPIE1EUSEBR<lb/></email>
+
+	<note type="copyright"> 0378-437 l/95/$09.50 (~) 1995 Elsevier Science B.V. All rights reserved<lb/> SSDI 0378-437 1 (95)00100-X</note>
+
+		</front>
+	</text>
+</tei>

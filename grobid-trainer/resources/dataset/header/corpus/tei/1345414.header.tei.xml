@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345414"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>PRAMANA<lb/> c<lb/> Indian Academy of Sciences<lb/> Vol. 75, No. 1<lb/> — journal of<lb/> July 2010<lb/> physics<lb/> pp. 163–170<lb/></reference>
+
+	<docTitle>
+	<titlePart>β-Decay and the electric dipole moment:<lb/> Searches for time-reversal violation in radioactive<lb/> nuclei and atoms<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>H W WILSCHUT<lb/> * , U DAMMALAPATI, D J VAN DER HOEK,<lb/> K JUNGMANN, W KRUITHOF, C J G ONDERWATER, B SANTRA,<lb/> P D SHIDLING and L WILLMANN<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Kernfysisch Versneller Instituut, University of Groningen,</affiliation>
+	</byline>
+
+	<address>9747AA Groningen,<lb/> The Netherlands<lb/></address>
+
+	<note type="other">* Corresponding author.</note>
+
+	<email>E-mail: wilschut@kvi.nl<lb/></email>
+
+	<div type="abstract">Abstract. One of the greatest successes of the Standard Model of particle physics is<lb/> the explanation of time-reversal violation (TRV) in heavy mesons. It also implies that<lb/> TRV is immeasurably small in normal nuclear matter. However, unifying models beyond<lb/> the Standard Model predict TRV to be within reach of measurement in nuclei and atoms,<lb/> thus opening an important window to search for new physics. We will discuss two com-<lb/>plementary experiments sensitive to TRV: Correlations in the β-decay of<lb/> 21 Na and the<lb/> search for an electric dipole moment (EDM) in radium.<lb/></div>
+
+	<keyword>Keywords. β-decay; electric dipole moment; searches for new physics.<lb/></keyword>
+
+	<reference>PACS Nos 23.40.Bw; 24.80.+y; 29.38.-c; 11.30.Er; 12.15.-y<lb/></reference>
+
+		</front>
+	</text>
+</tei>

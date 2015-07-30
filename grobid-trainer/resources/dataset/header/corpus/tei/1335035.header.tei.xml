@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1335035"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<reference> JOURNAL OF MATHEMATICAL PHYSICS 54, 083509 (2013)<lb/></reference>
+
+	<docTitle>
+	<titlePart>A super hierarchy of the vector nonlinear Schrödinger<lb/> equations and Hamiltonian structures, conservation laws<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Guoliang He,<lb/> 1 Yunyun Zhai,<lb/> 2,a) and Xianguo Geng<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Mathematics and Information Science, Zhengzhou University of Light<lb/> Industry,</affiliation>
+	</byline>
+
+	<address>Zhengzhou 450002, China<lb/></address>
+
+	<byline>
+	<affiliation>2 School of Mathematics and Statistics, Zhengzhou University,</affiliation>
+	</byline>
+
+	<address>Zhengzhou, 450001, China<lb/></address>
+
+	<note type="submission">(Received 12 April 2013; accepted 14 August 2013; published online 30 August 2013)<lb/></note>
+
+	<div type="abstract">A super hierarchy of the vector nonlinear Schrödinger equations associated with the<lb/> 3 × 3 matrix spectral problem is proposed by using the Lenard recursion equations<lb/> and the zero-curvature equation. The corresponding super bi-Hamiltonian structures<lb/> are established with the help of the super trace identity. Furthermore, we derive the<lb/> infinite conservation flows of the super vector nonlinear Schrödinger equation and the<lb/> second equation in the hierarchy by utilizing spectral parameter expansions. C<lb/> 2013<lb/> AIP Publishing LLC. [http://dx.doi.org/10.1063/1.4819469]<lb/></div>
+
+	<email> a) Author to whom correspondence should be addressed. Electronic mail: zhai1226@163.com <lb/></email>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1335778"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Exactly solvable deformations of the oscillator and Coulomb<lb/> systems and their generalization´Angel<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ballesteros a , Alberto Enciso b , Francisco J. Herranz a,1<lb/> Orlando Ragnisco c and Danilo Riglioni d<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Departamento de Física, Universidad de Burgos,</affiliation>
+	</byline>
+
+	<address>E-09001 Burgos, Spain<lb/></address>
+
+	<byline>
+	<affiliation>b Instituto de Ciencias Matemáticas, CSIC, Nicolás Cabrera 13-15,</affiliation>
+	</byline>
+
+	<address>E-28049 Madrid, Spain<lb/></address>
+
+	<byline>
+	<affiliation>c Dipartimento di Matematica e Fisica, Università di Roma Tre and Istituto Nazionale di Fisica<lb/> Nucleare sezione di Roma Tre,</affiliation>
+	</byline>
+
+	<address>Via Vasca Navale 84, I-00146 Roma, Italy<lb/></address>
+
+	<byline>
+	<affiliation>d Centre de Recherches Mathématiques, Université de Montréal,</affiliation>
+	</byline>
+
+	<address>H3T 1J4 2920 Chemin de la<lb/> tour, Montreal, Canada<lb/></address>
+
+	<email>E-mail: angelb@ubu.es, aenciso@icmat.es, fjherranz@ubu.es,<lb/> ragnisco@fis.uniroma3.it, riglioni@crm.umontreal.ca<lb/></email>
+
+	<div type="abstract">Abstract<lb/> We present two maximally superintegrable Hamiltonian systems H λ and H η that are defined,<lb/> respectively, on an N -dimensional spherically symmetric generalization of the Darboux sur-<lb/>face of type III and on an N -dimensional Taub–NUT space. Afterwards, we show that the<lb/> quantization of H λ and H η leads, respectively, to exactly solvable deformations (with pa-<lb/>rameters λ and η) of the two basic quantum mechanical systems: the harmonic oscillator<lb/> and the Coulomb problem. In both cases the quantization is performed in such a way that<lb/> the maximal superintegrability of the classical Hamiltonian is fully preserved. In particular,<lb/> we prove that this strong condition is fulfilled by applying the so-called conformal Laplace–<lb/> Beltrami quantization prescription, where the conformal Laplacian operator contains the<lb/> usual Laplace–Beltrami operator on the underlying manifold plus a term proportional to its<lb/> scalar curvature (which in both cases has non-constant value). In this way, the eigenvalue<lb/> problems for the quantum counterparts of H λ and H η can be rigorously solved, and it is<lb/> found that their discrete spectrum is just a smooth deformation (in terms of the parameters<lb/> λ and η) of the oscillator and Coulomb spectrum, respectively. Moreover, it turns out that<lb/> the maximal degeneracy of both systems is preserved under deformation. Finally, new fur-<lb/>ther multiparametric generalizations of both systems that preserve their superintegrability<lb/> are envisaged.<lb/></div>
+
+	<note type="grant">1</note>
+
+	<reference>Based on the contribution presented at &quot; The 30th International Colloquium on Group Theoretical Methods<lb/> in Physics &quot; , July 14–18, 2014, Ghent, Belgium.<lb/></reference>
+
+	<idno>arXiv:1411.7569v1 [quant-ph]</idno>
+
+	<date>27 Nov 2014<lb/></date>
+
+		</front>
+	</text>
+</tei>

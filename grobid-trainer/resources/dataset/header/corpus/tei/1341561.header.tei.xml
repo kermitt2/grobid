@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1341561"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1312.2484v3 [math-ph]</idno>
+
+	<date>12 Mar 2014<lb/></date>
+
+	<docTitle>
+	<titlePart>QUANTUM GROUPS AND FUNCTIONAL RELATIONS FOR HIGHER RANK<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>HERMANN BOOS, FRANK G ¨<lb/> OHMANN, ANDREAS KL¨UMPER<lb/>,<lb/> KHAZRET S. NIROV, AND ALEXANDER V. RAZUMOV<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">ABSTRACT. A detailed construction of the universal integrability objects related to the<lb/> integrable systems associated with the quantum group U q (L(sl 3 )) is given. The full proof<lb/> of the functional relations in the form independent of the representation of the quantum<lb/> group on the quantum space is presented. The case of the general gradation and general<lb/> twisting is treated. The specialization of the universal functional relations to the case when<lb/> the quantum space is the state space of a discrete spin chain is described.<lb/></div>
+
+	<byline><affiliation> FACHBEREICH C – PHYSIK, BERGISCHE UNIVERSIT <lb/> T WUPPERTAL, 42097 WUPPERTAL, GERMANY <lb/></affiliation></byline>
+
+	<email> E-mail address: hboos@uni-wuppertal.de <lb/></email>
+
+	<byline><affiliation> FACHBEREICH C – PHYSIK, BERGISCHE UNIVERSIT <lb/> T WUPPERTAL, 42097 WUPPERTAL, GERMANY <lb/></affiliation></byline>
+
+	<email> E-mail address: goehmann@uni-wuppertal.de <lb/></email>
+
+	<byline><affiliation> FACHBEREICH C – PHYSIK, BERGISCHE UNIVERSIT <lb/> T WUPPERTAL, 42097 WUPPERTAL, GERMANY <lb/></affiliation></byline>
+
+	<email> E-mail address: kluemper@uni-wuppertal.de <lb/></email>
+
+	<byline><affiliation> INSTITUTE FOR NUCLEAR RESEARCH OF THE RUSSIAN ACADEMY OF SCIENCES,</affiliation></byline>
+
+	<address> 60TH OCTOBER AVE <lb/>7A, 117312 MOSCOW, RUSSIA <lb/> Current address: Fachbereich C – Physik, Bergische Universität Wuppertal, 42097 Wuppertal, Germany <lb/></address>
+
+	<email> E-mail address: nirov@uni-wuppertal.de <lb/></email>
+
+	<byline><affiliation> INSTITUTE FOR HIGH ENERGY PHYSICS, 142281 PROTVINO, MOSCOW REGION, RUSSIA <lb/></affiliation></byline>
+
+	<email> E-mail address: Alexander.Razumov@ihep.ru</email>
+
+		</front>
+	</text>
+</tei>

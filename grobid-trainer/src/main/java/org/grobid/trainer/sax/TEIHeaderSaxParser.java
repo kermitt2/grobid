@@ -300,6 +300,8 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                     }
                 }
             }
+        } else if (qName.equals("orgName")) {
+            currentTag = "<collaboration>";
         } else if ((qName.equals("keywords")) | (qName.equals("keyword"))) {
             currentTag = "<keyword>";
             accumulator.setLength(0);

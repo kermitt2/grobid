@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1356926"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1412.1698v1 [math-ph]</idno>
+
+	<date>4 Dec 2014<lb/></date>
+
+	<docTitle>
+	<titlePart>COMBINATORICS OF LOOP EQUATIONS FOR<lb/> BRANCHED COVERS OF SPHERE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>P. DUNIN-BARKOWSKI, N. ORANTIN, A. POPOLITOV, AND S. SHADRIN<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. We prove, in a purely combinatorial way, the spec-<lb/>tral curve topological recursion for the problem of enumeration<lb/> of bi-colored maps, which in a certain way generalize the notion<lb/> of dessins d&apos;enfant. Furthermore, we give a proof of the quantum<lb/> spectral curve equation for this problem. As a corollary, we prove a<lb/> recent conjecture due to Do and Manescu on enumeration of hyper-<lb/>maps and give a new proof for their quantum spectral curve result<lb/> in this case. Then we consider the generalized case of 4-colored<lb/> maps and prove the corresponding spectral curve topological re-<lb/>cursion .<lb/> Contents</div>
+
+	<byline><affiliation> P. D.-B.: Korteweg-de Vries Institute for Mathematics, University <lb/>of Amsterdam,</affiliation></byline>
+
+	<address> P. O. Box 94248, 1090 GE Amsterdam, The Netherlands; <lb/></address>
+
+	<byline><affiliation>ITEP, Moscow, Russia; and National Research University Higher School <lb/>of Economics, Laboratory of Mathematical Physics,</affiliation></byline>
+
+	<address> 20 Myasnitskaya <lb/>Ulitsa, Moscow 101000, Russia <lb/></address>
+
+	<email> E-mail address: P.Dunin-Barkovskiy@uva.nl <lb/></email>
+
+	<byline><affiliation> N. O.: Département de mathématiques, Ecole Polytechnique Fédérale <lb/>de Lausanne,</affiliation></byline>
+
+	<address> CH-1015 Lausanne, Switzerland <lb/></address>
+
+	<email> E-mail address: nicolas.orantin@epfl.ch <lb/></email>
+
+	<byline><affiliation> A. P.: Korteweg-de Vries Institute for Mathematics, University of <lb/>Amsterdam,</affiliation></byline>
+
+	<address> P. O. Box 94248, 1090 GE Amsterdam, The Netherlands <lb/>and</address>
+
+	<byline><affiliation> ITEP,</affiliation></byline>
+
+	<address> Moscow, Russia <lb/></address>
+
+	<email> E-mail address: A.Popolitov@uva.nl <lb/></email>
+
+	<byline><affiliation> S. S.: Korteweg-de Vries Institute for Mathematics, University of <lb/>Amsterdam,</affiliation></byline>
+
+	<address> P. O. Box 94248, 1090 GE Amsterdam, The Netherlands <lb/></address>
+
+	<email> E-mail address: S.Shadrin@uva.nl </email>
+
+		</front>
+	</text>
+</tei>

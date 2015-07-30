@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1358098"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Prog. Theor. Exp. Phys. 2014, 103D02 (7 pages)<lb/></reference>
+
+	<idno>DOI: 10.1093/ptep/ptu129<lb/></idno>
+
+	<docTitle>
+	<titlePart>Quark–gluon plasma fireball evolution with<lb/> one-loop correction in the mean-field potential<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S. Somorendro Singh * and R. Ramanathan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics and Astrophysics, University of Delhi,</affiliation>
+	</byline>
+
+	<address>Delhi -110007, India<lb/></address>
+
+	<email>* E-mail: sssingh@physics.du.ac.in<lb/></email>
+
+	<note type="submission">Received June 5, 2014; Revised August 14, 2014; Accepted August 15, 2014; Published October , 2014<lb/></note>
+
+	<note type="other">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<lb/></note>
+
+	<div type="abstract">The study of the free energy evolution of quark–gluon plasma (QGP) with one-loop correction<lb/> factor in the mean-field potential is discussed. The energy evolution with the effect of the correc-<lb/>tion factor in potential shows a higher transition temperature in the range of T = 180 to 250 MeV<lb/> in comparison to the transition temperature without the one-loop correction factor. The transi-<lb/>tion temperature is also affected by the dynamical flow parameter of quark and gluon used in the<lb/> potential and it results in decreasing observable QGP droplets of stable radius 2.5–4.5 fm.<lb/></div>
+
+	<note type="other">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<lb/></note>
+
+	<keyword type="classes">Subject Index<lb/> D31<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

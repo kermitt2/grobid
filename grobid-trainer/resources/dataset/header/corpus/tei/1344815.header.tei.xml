@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1344815"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Chaotic Modeling and Simulation (CMSIM) 1: 123–145, 2012<lb/></reference>
+
+	<docTitle>
+	<titlePart>Complexity in Theory and Practice: Toward<lb/> the Unification of Non-equilibrium Physical<lb/> Processes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Georgios P. Pavlos<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Electrical Engineering and Computer Engineering,<lb/> Democritus University of Thrace,<lb/> Kimmeria University</affiliation>
+	</byline>
+
+	<address>Campus Xanthi, 67100, Greece<lb/></address>
+
+	<email>(E-mail: gpavlos@ee.duth.gr)<lb/></email>
+
+	<div type="abstract">Abstract. During the last two decades our scientific group has developed new non-<lb/>linear methods of analysis applied to various physical systems. In this review study<lb/> we present our scientific contribution to nonlinear science, including also some novel<lb/> concepts as for the constructive role of complexity in modern physical theory. The<lb/> experimental verification of chaos existence in physical systems remains one of the<lb/> most significant problems of non linear science and complexity. The extended chaotic<lb/> algorithm presented in the following as well as the results concerning its application at<lb/> different experimental time series reveal the universal character of the complexity the-<lb/>ory for the far from equilibrium dynamics of spatially extended physical systems. The<lb/> developed methodology that was used compromises different types of computational<lb/> tools as well as theoretical concepts for the physical interpretation of the experimental<lb/> information. As we present here the strong dispute and criticism of chaos hypothesis<lb/> in physical systems during the last two decades was fruitful and challenged us to<lb/> develop a novel composition of experimental and theoretical knowledge of universal<lb/> character for the far from equilibrium dynamics. The solar and magnetospheric dy-<lb/>namics included in space plasma processes, the environmental and seismic dynamics,<lb/> the human brain or the on–chip workload are distinct systems which were studied<lb/> by our group revealing common chaotic characteristics and chaotic phase transition<lb/> processes. Moreover, the intellectual struggle for the comprehension of the theoretical<lb/> presuppositions of the experimentally observed universal chaotic character of spatially<lb/> distributed systems lead us to the fundamentals of complexity theory as manifested<lb/> at the macroscopic and microscopic level of physical reality. From this point of view,<lb/> some common characteristics of macroscopic and microscopic complexity included in<lb/> the scientific knowledge of the recent two or three decades can be used as a road<lb/> for the physical theory unification. That is complexity, scaling, chaos, quanticity and<lb/> fractality could be supported as different manifestations of a unified physical law from<lb/> the microscopic to the macroscopic and cosmological level. As we can argue, deter-<lb/>minism and probabilism can also be unified through chaoticity. Moreover, the rising<lb/> of new physical knowledge reveals that under the macroscopic or the microscopic<lb/> physical phenomena there exist a fundamental and multilevel acting unit physical<lb/> process that produces physical reality rather than a fundamental essence or simple<lb/></div>
+
+	<note type="submission"> Received: 7 August 2011 / Accepted: 30 December 2011<lb/></note>
+
+	<note type="copyright"> c<lb/> 2012 CMSIM<lb/></note>
+
+	<idno> ISSN 2241-0503<lb/></idno>
+
+	<note type="other"> 124<lb/> G. P. Pavlos<lb/> substance from which cosmos can be build.<lb/></note>
+
+	<keyword>Keywords: Complexity theory, Intermittent turbulence, Nonlinear time series anal-<lb/>ysis, Nonextensive Tsallis statistics, Nonequilibrium phase transition, Chaos, SOC,<lb/> Macroscopic-microscopic complexity, Physical theory unification.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

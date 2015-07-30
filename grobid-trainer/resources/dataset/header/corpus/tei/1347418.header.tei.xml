@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1347418"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<orgName>DELPHI Collaboration<lb/></orgName>
+
+	<idno>DELPHI 2001-012 CONF 453<lb/></idno>
+
+	<date>2 February 2001<lb/></date>
+
+	<docTitle>
+	<titlePart>Update of the search for supersymmetric particles in<lb/> light gravitino scenarios at<lb/> √<lb/> s from 204 to 208 GeV<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R. Alemany<lb/> 1 , E. Anashkin<lb/> 2 , F. Cavallo<lb/> 3 , P. Checchia<lb/> 2 , C. García<lb/> 4 ,<lb/> F. Navarria<lb/> 3 , F. Mazzucato<lb/> 5 , E. Piotto<lb/> 1 , U. Schwickerath<lb/>1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> An update of the search for sleptons, sgoldstinos and heavy stable charged particles<lb/> is presented in the context of light gravitino scenarios. Data collected in 2000 with<lb/> the DELPHI detector at centre-of-mass energies from 204 to 208 GeV were analysed.<lb/> No evidence for the production of these supersymmetric particles was found. Hence,<lb/> new mass limits were derived at 95% confidence level.<lb/></div>
+
+	<note type="submission">Paper submitted to the Moriond Conference 2001<lb/></note>
+
+	<byline>
+	<affiliation>1<lb/> CERN,</affiliation>
+	</byline>
+
+	<address>CH-1211 Geneva 23, Switzerland,<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> INFN,</affiliation>
+	</byline>
+
+	<address>Via Marzolo 8, 35131 Padova, Italy,<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> INFN,</affiliation>
+	</byline>
+
+	<address>Viale Berti-Pichat 6/2, 40127 Bologna, Italy,<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> IFIC,</affiliation>
+	</byline>
+
+	<address>Avda. Dr. Molliner 50, Burjassot 46100, Valencia, Spain,<lb/></address>
+
+	<byline>
+	<affiliation>5<lb/> Geneva University,</affiliation>
+	</byline>
+
+	<address>Quai Ernest-Ansermet 24, CH-1211 Geneva 4, Switzerland.<lb/></address>
+
+		</front>
+	</text>
+</tei>

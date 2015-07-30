@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1332844"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>REVIEW OF CROSSTALK BETWEEN BEAM-BEAM INTERACTION<lb/> AND LATTICE NONLINEARITY IN + − COLLIDERS *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Y. Zhang †<lb/>, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>IHEP,</affiliation>
+	</byline>
+
+	<address>Beijing, China;</address>
+
+	<byline>
+	<docAuthor> D. Zhou,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation> KEK, </affiliation>
+	</byline>
+
+	<address> Ibaraki, Japan<lb/></address>
+
+	<div type="abstract">Abstract<lb/> According to the conventional knowledge, it is believed<lb/> that the nonlinearity in the arc would not reduce the beam-<lb/>beam performance, since the beam-beam force is dominated<lb/> in the beam core region while the lattice nonlinearity is dom-<lb/>inated in the beam halo region. However in the recent few<lb/> + − storage ring colliders, it has been shown that the lat-<lb/>tice nonlinearity may be important to the luminosity perfor-<lb/>mance. In this paper, we&apos;ll try to review the related story<lb/> in DAFNE, and its upgrade with crab waist scheme, KEKB,<lb/> Super-KEKB and BEPCII.<lb/></div>
+
+	<div type="grant">*  Work supported by Project U1332108 supported by NSFC and Youth <lb/>Innovation Promotion Association, CAS. <lb/></div>
+
+	<email> †  zhangy@ihep.ac.cn <lb/></email>
+
+		</front>
+	</text>
+</tei>

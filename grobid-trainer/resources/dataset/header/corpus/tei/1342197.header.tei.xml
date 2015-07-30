@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1342197"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Topological invariants in interacting Quantum Spin Hall: a Cluster Perturbation<lb/> Theory approach.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F. Grandi,<lb/> 1 F. Manghi,<lb/> 1, 2 O. Corradini,<lb/> 3, 1 C.M. Bertoni,<lb/> 1, 2 and A. Bonini<lb/> 4<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Dipartimento di Scienze Fisiche, Informatiche e Matematiche,<lb/> Università di Modena e Reggio Emilia,</affiliation>
+	</byline>
+
+	<address>Via Campi 213/A, I-41125 Modena, Italy<lb/></address>
+
+	<byline>
+	<affiliation>2 CNR -Institute of NanoSciences</affiliation>
+	</byline>
+
+	<address>-S3<lb/></address>
+
+	<byline>
+	<affiliation>3 Facultad de Ciencias en Física y Matemáticas, Universidad Autónoma de Chiapas, Ciudad Universitaria, <lb/></affiliation>
+	</byline>
+
+	<address>Tuxtla Gutiérrez 29050, México<lb/></address>
+
+	<byline>
+	<affiliation>4 Dipartimento di Fisica e Astronomia, Università di Bologna,</affiliation>
+	</byline>
+
+	<address>Via Irnerio 46, I-40126 Bologna, Italy<lb/></address>
+
+	<note type="other">(Dated: February 3, 2015)<lb/></note>
+
+	<div type="abstract">Using Cluster Perturbation Theory we calculate Green&apos;s functions, quasi-particle energies and<lb/> topological invariants for interacting electrons on a 2-D honeycomb lattice, with intrinsic spin-orbit<lb/> coupling and on-site e-e interaction. This allows to define the parameter range (Hubbard U vs<lb/> spin-orbit coupling) where the 2D system behaves as a trivial insulator or Quantum Spin Hall<lb/> insulator. This behavior is confirmed by the existence of gapless quasi-particle states in honeycomb<lb/> ribbons. We have discussed the importance of the cluster symmetry and the effects of the lack of<lb/> full translation symmetry typical of CPT and of most Quantum Cluster approaches. Comments on<lb/> the limits of applicability of the method are also provided.<lb/> PACS numbers: 71.10.Fd, 71.27.+a,73.43-f,73.22-f<lb/></div>
+
+		</front>
+	</text>
+</tei>

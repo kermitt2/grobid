@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1343213"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:math/0601194v3 [math.QA]</idno>
+
+	<date>4 Mar 2006<lb/></date>
+
+	<docTitle>
+	<titlePart>MIRZAKHANI&apos;S RECURSION RELATIONS, VIRASORO<lb/> CONSTRAINTS AND THE KDV HIERARCHY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>MOTOHICO MULASE 1 AND BRAD SAFNUK 2<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. We present in this paper a differential version of Mirzakhani&apos;s<lb/> recursion relation for the Weil-Petersson volumes of the moduli spaces of bor-<lb/>dered Riemann surfaces. We discover that the differential relation, which is<lb/> equivalent to the original integral formula of Mirzakhani, is a Virasoro con-<lb/>straint condition on a generating function for these volumes. We also show that<lb/> the generating function for ψ and κ 1 intersections on Mg,n is a 1-parameter<lb/> solution to the KdV hierarchy. It recovers the Witten-Kontsevich generating<lb/> function when the parameter is set to be 0.<lb/></div>
+
+	<keywords type="classes">2000 Mathematics Subject Classification. Primary 14H10, 14H70, 53D45; Secondary 17B68, <lb/>58D27. <lb/></keywords>
+
+	<note type="grant"> 1  Research supported by NSF grant DMS-0406077 and UC Davis. <lb/> 2  Research supported by NSF grant DMS-0406077 and a UC Davis Dissertation Year Fellowship. <lb/></note>
+
+	<byline><affiliation>Department of Mathematics, University of California, Davis, CA 95616-8633 <lb/></affiliation></byline>
+
+	<email> E-mail address: mulase@math.ucdavis.edu <lb/></email>
+
+	<byline><affiliation> Department of Mathematics, University of California,</affiliation></byline>
+
+	<address> Davis, CA 95616-8633 <lb/></address>
+
+	<email> E-mail address: safnuk@math.ucdavis.edu </email>
+
+		</front>
+	</text>
+</tei>

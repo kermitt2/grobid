@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1347307"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1503.01371v1 [quant-ph]</idno>
+
+	<date>4 Mar 2015<lb/></date>
+
+	<docTitle>
+	<titlePart>On the Lewis–Riesenfeld (Dodonov–Man&apos;ko)<lb/> invariant method<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Julio Guerrero and Francisco F. López-Ruiz<lb/></docAuthor>
+	</byline>
+
+	<email>E-mail: juguerre@um.es, paco.lopezruiz@uca.es<lb/></email>
+
+	<div type="abstract">Abstract.<lb/> We revise the Lewis–Riesenfeld invariant method for solving the quantum time-<lb/>dependent harmonic oscillator in light of the Quantum Arnold Transformation<lb/> previously introduced and its recent generalization to the Quantum Arnold–Ermakov–<lb/> Pinney Transformation. We prove that both methods are equivalent and show the<lb/> advantages of the Quantum Arnold–Ermakov–Pinney transformation over the Lewis–<lb/> Riesenfeld invariant method. We show that, in the quantum time-dependent and<lb/> damped harmonic oscillator, the invariant proposed by Dodonov &amp; Man&apos;ko is more<lb/> suitable and provide some examples to illustrate it, focusing on the damped case.<lb/></div>
+
+		</front>
+	</text>
+</tei>

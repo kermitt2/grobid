@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1338131"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>IOP PUBLISHING <lb/>EUROPEAN JOURNAL OF PHYSICS <lb/>Eur. J. Phys. 31 (2010) L13–L14 <lb/></reference>
+
+	<idno> doi:10.1088/0143-0807/31/1/L04 <lb/></idno>
+
+	<note type="other"> LETTERS AND COMMENTS <lb/></note>
+
+	<docTitle><titlePart> Note on &apos;The Planck length as the dimension of a <lb/>transient black hole&apos; <lb/></titlePart></docTitle>
+
+	<byline><docAuthor> Kwang-Hua W Chu <lb/> 1 <lb/></docAuthor></byline>
+
+	<byline><affiliation> Department of Physics, Hebei Normal University,</affiliation></byline>
+
+	<address> Shijiazhuang 050016, People&apos;s Republic of <lb/>China <lb/></address> 
+
+	<note type="submission"> Received 26 August 2009, in final form 13 October 2009 <lb/>Published 25 November 2009 <lb/>Online at stacks.iop.org/EJP/31/L13 <lb/></note>
+
+	<div type="abstract"> Abstract <lb/> This note is on Lattman&apos;s paper (2009 Eur. J. Phys. 30 L41). It seems to us <lb/>that the direct unification of the quantum mechanics and the gravity theory (for <lb/>a black hole) by Lattman is in doubt. <lb/></div>
+
+		</front>
+	</text>
+</tei>

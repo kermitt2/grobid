@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345411"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Physics Procedia 31 ( 2012 ) 141 – 146<lb/> 1875-3892 © 2012</reference>
+
+	<note type="other">Published by Elsevier B.V. Selection and/or peer-review under responsibility of Institute for Reference<lb/> Materials and Measurements.<lb/></note>
+
+	<idno>doi: 10.1016/j.phpro.2012.04.019<lb/></idno>
+
+	<docTitle>
+	<titlePart>Development of an Active<lb/> 238 UF 6 Gas Target<lb/>$<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor> C. Eckardt<lb/> a, *<lb/> , J. Enders<lb/> a , M. Freudenberger<lb/> a , A. Göök<lb/> a , P. von Neumann-Cosel<lb/> a , A. Oberstedt<lb/> b,c , S. Oberstedt<lb/> d<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Institut für Kernphysik, Technische Universität Darmstadt,</affiliation>
+	</byline>
+
+	<address>Germany<lb/></address>
+
+	<byline>
+	<affiliation>b Akademin för naturvetenskap och teknik, ¨<lb/> Orebro universitet, </affiliation>
+	</byline>
+
+	<address>Sweden<lb/></address>
+
+	<byline>
+	<affiliation>c Fundamental Fysik, Chalmers tekniska högskola, </affiliation>
+	</byline>
+
+	<address>Göteborg, Sweden<lb/></address>
+
+	<byline>
+	<affiliation>d European Commission -Joint Research Center -IRMM,</affiliation>
+	</byline>
+
+	<address>Geel, Belgium<lb/></address>
+
+	<div type="abstract">Abstract<lb/> At the superconducting 130 MeV Darmstadt electron linac S-DALINAC a new source of spin-polarized elec-<lb/>trons using a GaAs cathode has been installed, opening the path for experiments with polarized electron and photon<lb/> beams for nuclear structure studies at low momentum transfers, e.g., the search for forward-backward asymmetries<lb/> originating from parity non-conservation (PNC) in the photon-induced fission process of<lb/> 238 U.<lb/> Detailed studies of different properties, e.g., the energy dependence of fission modes, the population of fission<lb/> isomers, or the search for (PNC) effects in the photon-induced fission process of<lb/> 238 U, depends on high quality data,<lb/> therefore needing high luminosities. An active gas target containing uranium may overcome the problem that large<lb/> solid target thicknesses cause poor energy and angular resolution.<lb/> A single Frisch-grid ionization chamber has been built to test a mixture of standard counting gases (e.g., argon)<lb/> with depleted uraniumhexafluoride (<lb/> 238 UF 6 ) using a triple alpha source, evaluating signal quality and drift velocity.<lb/> For mass fractions up to 2 percent of<lb/> 238 U in the counting gas. The drift velocity increases with rising UF 6 content,<lb/> while a good signal quality and energy resolution is preserved.<lb/></div>
+
+	<keyword>Keywords:<lb/> photo fission, S-DALINAC, active target, UF 6 , gaseous detector, ionization chamber, electrical properties<lb/> </keyword>
+
+	<keywords type="classes">PACS: 25.85.Jg, 29.25.Bx, 29.27.Hj, 29.40.Cs, 51.50.+v<lb/></keywords>
+
+	<note type="grant"> $ Work supported in part by DFG through SFB 634, by the state of Hesse through the LOEWE center HIC for FAIR, and through the GSI-TU<lb/> Darmstadt cooperation agreement.<lb/></note>
+
+	<note type="other">* Corresponding Author<lb/></note>
+
+	<email>Email address: eckardt@ikp.tu-darmstadt.de (C. Eckardt)<lb/></email>
+
+		</front>
+	</text>
+</tei>

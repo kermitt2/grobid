@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1341562"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1406.5976v2 [math.CO]</idno>
+
+	<date>7 Dec 2014<lb/></date>
+
+	<docTitle>
+	<titlePart>VIRASORO CONSTRAINTS AND TOPOLOGICAL RECURSION<lb/> FOR GROTHENDIECK&apos;S DESSIN COUNTING<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. KAZARIAN, P. ZOGRAF<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. We compute the number of coverings of CP 1 \ {0, 1, ∞} with a<lb/> given monodromy type over ∞ and given numbers of preimages of 0 and 1. We<lb/> show that the generating function for these numbers enjoys several remarkable<lb/> integrability properties: it obeys the Virasoro constraints, an evolution equa-<lb/>tion, the KP (Kadomtsev-Petviashvili) hierarchy and satisfies a topological<lb/> recursion in the sense of Eynard-Orantin.<lb/></div>
+
+	<byline><affiliation>Steklov Mathematical Institute,</affiliation></byline>
+
+	<address> 8 Gubkin St., Moscow 119991 Russia <lb/></address>
+
+	<email> E-mail address: kazarian@mccme.ru <lb/></email>
+
+	<byline><affiliation> St.Petersburg Department of the Steklov Mathematical Institute,</affiliation></byline>
+
+	<address>Fontanka 27, St. <lb/>Petersburg 191023, and</address>
+
+	<byline><affiliation> Chebyshev Laboratory of St. Petersburg State University, <lb/></affiliation></byline>
+
+	<address>14th Line V.O. 29B, St.Petersburg 199178 Russia <lb/></address>
+
+	<email> E-mail address: zograf@pdmi.ras.ru </email>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1356763"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>BLED WORKSHOPS<lb/> IN PHYSICS<lb/> VOL. 3, NO. 3<lb/> Proceedins of the Mini-Workshop<lb/> Quarks and hadrons (p. 7)<lb/> Bled, Slovenia, July 7-14, 2002<lb/></reference>
+
+	<docTitle>
+	<titlePart>Effective U A (1) symmetry breaking interactions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>V. Dmitrašinovi´c<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Vinča Institute of Nuclear Sciences,</affiliation>
+	</byline>
+
+	<address>P.O.Box 522, 11001 Beograd, Yugoslavia<lb/></address>
+
+	<div type="abstract">Abstract. We review the phenomenological consequences of various effective U A (1) sym-<lb/>metry breaking interactions. In particular we look at the baryon spectra. We comment on<lb/> the recent conjecture that the chiral symmetry might be restored in the higher regions of<lb/> hadron spectra in the light of our results for scalar mesons and the spectral sum rules.<lb/></div>
+
+		</front>
+	</text>
+</tei>

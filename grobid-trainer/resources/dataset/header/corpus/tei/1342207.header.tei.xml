@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1342207"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>December 30, 2014 16:10<lb/></date>
+
+	<note type="other">MPLA<lb/> S0217732315500054 page 1<lb/></note>
+
+	<reference>Modern Physics Letters A<lb/> Vol. 30, No. 1 (2015) 1550005 (13 pages)<lb/></reference>
+
+	<note type="copyright">c<lb/> World Scientific Publishing Company<lb/></note>
+
+	<idno>DOI: 10.1142/S0217732315500054<lb/></idno>
+
+	<docTitle>
+	<titlePart>Analysis on modified Chaplygin gas as dark energy model<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ya-Bo Wu * , Cheng-Yuan Zhang, Jian-Bo Lu, Jun-Wang Lu, Xue Zhang,<lb/> Qing-Mei Qi and Bi Fan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Liaoning Normal University,</affiliation>
+	</byline>
+
+	<address>Dalian 116029, P. R. China<lb/></address>
+
+	<email>* ybwu61@163.com<lb/></email>
+
+	<note type="submission">Received 26 September 2014<lb/> Revised 4 November 2014<lb/> Accepted 4 November 2014<lb/> Published 2 January 2015<lb/></note>
+
+	<div type="abstract">In this paper, we will continue to study the modified Chaplygin gas (MCG) based on<lb/> Ref. 25. Concretely, we not only discuss both the change rates of the energy densities and<lb/> the Hubble parameter H(z) as a function of the model parameters, which is compared<lb/> and consistent with the related data in Ref. 27, but also perform the Om diagnostic<lb/> in order to geometrically differentiate the MCG model from the ΛCDM, GCG and CG<lb/> models. Moreover, we plot the evolutionary trajectories of MCG model with different<lb/> interaction terms in Om planes, and find that the coupling intensity b 2 plays an impor-<lb/>tant role in the MCG model. Furthermore, we also reconstruct the potential of MCG<lb/> scalar field as well as the dynamics of the scalar field according to the evolution of the<lb/> MCG dark energy. It is worth stressing that the results given by us can include the ones<lb/> without interaction as the special cases.<lb/></div>
+
+	<keyword>Keywords: Modified Chaplygin gas; dark energy; Om diagnostic.<lb/></keyword>
+
+	<note type="other">PACS Nos.: 98.80.-k, 98.80.Jk<lb/></note>
+
+		</front>
+	</text>
+</tei>

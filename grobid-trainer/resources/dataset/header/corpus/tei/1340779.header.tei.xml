@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1340779"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0809.3263v1 [math.AG]</idno>
+
+	<date>18 Sep 2008<lb/></date>
+
+	<docTitle>
+	<titlePart>KP hierarchy for Hodge integrals<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Kazarian<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Starting from the ELSV formula, we derive a number of new equations on the<lb/> generating functions for Hodge integrals over the moduli space of complex curves. This<lb/> gives a new simple and uniform treatment of certain known results on Hodge integrals<lb/> like Witten&apos;s conjecture, Virasoro constrains, Faber&apos;s λ g -conjecture etc. Among other<lb/> results we show that a properly arranged generating function for Hodge integrals satisfies<lb/> the equations of the KP hierarchy.<lb/></div>
+
+		</front>
+	</text>
+</tei>

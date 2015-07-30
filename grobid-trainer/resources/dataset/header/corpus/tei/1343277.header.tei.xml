@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1343277"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">32ND INTERNATIONAL COSMIC RAY CONFERENCE, BEIJING 2011<lb/></note>
+
+	<docTitle>
+	<titlePart>Search for atmospheric neutrino induced particle showers with IceCube 40<lb/></titlePart>
+	</docTitle>
+
+	<orgName> THE ICECUBE COLLABORATION<lb/> 1<lb/></orgName>
+
+	<note type="other"> 1 See special section of these proceedings<lb/></note>
+
+	<div type="abstract">Abstract: One of the guaranteed fluxes under study by the IceCube neutrino telescope are neutrinos originating from<lb/> cosmic ray induced air showers. These neutrinos come from the decay of π and K mesons (the conventional flux) and<lb/> from the decay of charmed mesons (the prompt flux). Although several flux predictions exist, the electron neutrino flux<lb/> has been measured only up to GeV energies. At TeV energies, where atmospheric neutrinos are an inevitable source<lb/> of background events for astrophysical neutrino searches, the prompt flux becomes important and the flux predictions<lb/> vary greatly. The detection of electromagnetic and hadronic particle showers, which are not only produced by electron<lb/> neutrinos but which can be found in the final states of charged and neutral current interactions of all neutrino flavours,<lb/> remains challenging. Given the sensitivity to all neutrino flavours, the good energy resolution that will be possible with<lb/> fully contained shower events and the possibility to isolate the prompt from the conventional flux, the prospects of this<lb/> detection channel are very promising. This poster will present an analysis done on a data sample collected with IceCube<lb/> in its 40 string configuration as it was running from 2008 to 2009. The development of the event selection on a small part<lb/> of the sample will be discussed.<lb/></div>
+
+	<byline>
+		<docAuthor>Corresponding Author: Eike Middell<lb/> 2</docAuthor>
+	</byline>
+
+	<email>(eike.middell@desy.de)<lb/></email>
+
+	<byline>
+	<affiliation>2 DESY Zeuthen,</affiliation>
+	</byline>
+
+	<address>Platanenallee 6, 15738 Zeuthen, Germany<lb/></address>
+
+	<keyword>Keywords: atmospheric neutrinos, IceCube, particle showers<lb/></keyword>
+
+	<idno> DOI: 10.7529/ICRC2011/V04/1097 <lb/></idno>
+
+		</front>
+	</text>
+</tei>

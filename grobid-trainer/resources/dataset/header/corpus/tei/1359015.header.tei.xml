@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1359015"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<email>rspa.royalsocietypublishing.org<lb/></email>
+
+	<note type="other">Research<lb/> Cite this article: Holland J, Sparling G. 2013<lb/> Null electromagnetic fields and relative<lb/></note>
+
+	<reference>Cauchy–Riemann embeddings. Proc R Soc A<lb/> 469: 2012.0583.<lb/></reference>
+
+	<idno>http://dx.doi.org/10.1098/rspa.2012.0583<lb/></idno>
+
+	<note type="submission">Received: 4 October 2012<lb/> Accepted: 19 December 2012<lb/></note>
+
+	<keyword>Subject Areas:<lb/> geometry, mathematical physics<lb/> Keywords:<lb/> twistor theory, Cauchy–Riemann manifolds,<lb/> Cauchy–Riemann embeddings,<lb/> null electromagnetic fields,<lb/> shear-free congruences<lb/></keyword>
+
+	<note type="other">Author for correspondence:<lb/> Jonathan Holland<lb/></note>
+
+	<email>e-mail: jeh89@pitt.edu<lb/></email>
+
+	<docTitle>
+	<titlePart>Null electromagnetic fields<lb/> and relative Cauchy–Riemann<lb/> embeddings<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jonathan Holland and George Sparling<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Mathematics, University of Pittsburgh,<lb/></affiliation>
+	</byline>
+
+	<address>301 Thackeray Hall, Pittsburgh, PA 15260, USA<lb/></address>
+
+	<div type="abstract">This paper applies the notion of relative Cauchy–<lb/> Riemann (CR) embeddings to study two related<lb/> questions. First, it answers negatively the question<lb/> posed by Penrose whether every shear-free null<lb/> rotating congruence is analytic. Second, it proves<lb/> that, given any shear-free null rotating congruence in<lb/> Minkowski space, there exists a null electromagnetic<lb/> field that is null with respect to the given congruence.<lb/> In the course of answering these questions, we<lb/> introduce some new techniques for studying null<lb/> electromagnetic fields and shear-free congruences,<lb/> in general, based on the notion of a relative<lb/> CR embedding.<lb/></div>
+
+		</front>
+	</text>
+</tei>

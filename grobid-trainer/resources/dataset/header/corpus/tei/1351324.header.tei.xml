@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1351324"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>ELSEVIER<lb/> Physica A 241 (1997) 535-548<lb/></reference>
+
+	<docTitle>
+	<titlePart>Dynamics of one-site fermionic model in the<lb/> presence of precessing magnetic field<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A.C. Aguiar Pinto, R. Bruno, M.T. Thomaz*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Instituto de Fisica, Unioersidade Federal Fluminense, R. Gal. Milton Tavares de Souza s/n°.,<lb/></affiliation>
+	</byline>
+
+	<address>Campus da Praia Vermelha, Niter6i, R.J., 24210-340, Brazil<lb/></address>
+
+	<note type="submission">Received 19 August 1996; received in revised form 3 December 1996<lb/></note>
+
+	<div type="abstract">Abstract<lb/> The one site self-interacting fermionic model is considered in the presence of an external<lb/> magnetic field precessing with constant angular velocity around a fixed axis. We get the exact<lb/> density operator for the identical particle system as well as its one-particle properties, for general<lb/> initial conditions. Due to the non-trivial topology of the external magnetic field, the one-particle<lb/> states get Berry&apos;s phases. We show that the geometric phases contribute to the frequency of the<lb/> one-particle population state in the adiabatic regime.<lb/> PACS: 03.65.-w; 05.30.-d<lb/></div>
+
+	<keyword>Keywords: Matrix operator; Fermionic system; Berry&apos;s phases<lb/></keyword>
+
+	<email>* Corresponding author. E-mail: mtt@if.uff.br. <lb/></email>
+
+	<note type="copyright">0378-4371/97/$17.00 Copyright (~) 1997 Published by Elsevier Science B.V. All rights reserved <lb/> PH  S0378-4371 (97)00172-6 <lb/></note>
+
+		</front>
+	</text>
+</tei>

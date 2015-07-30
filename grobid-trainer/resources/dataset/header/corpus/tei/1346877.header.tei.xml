@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1346877"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>October 8, 2010 0:12<lb/> WSPC -Proceedings Trim Size: 9in x 6in Schussler˙Antares<lb/> 1<lb/></reference>
+
+	<docTitle>
+	<titlePart>Status and recent results of the ANTARES experiment<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F. Schüssler *</docAuthor>
+	</byline>
+
+	<note type="other"> for the </note>
+
+	<orgName> ANTARES Collaboration<lb/></orgName>
+
+	<byline>
+	<affiliation> Commissariatà l&apos;´ energie atomique et auxénergies alternatives<lb/>Institut de recherche sur les lois fondamentales de l&apos;Univers<lb/></affiliation>
+	</byline>
+
+	<address>91191 Gif-sur-Yvette Cedex, France<lb/></address>
+
+	<email>* E-mail: fabian.schussler@cea.fr<lb/></email>
+
+	<div type="abstract">The ANTARES neutrino telescope located in the Mediterranean Sea has been<lb/> fully installed in 2008. As examples for the ongoing physics studies, we discuss<lb/> the search for a high energy excess over the atmospheric neutrino flux leading to<lb/> significant limits on the diffuse astrophysical neutrino flux in the multi TeV to<lb/> PeV range. Using data taken during the construction phase of the experiment,<lb/> an analysis searching for point-like excesses in the neutrino sky distribution<lb/> has been performed and the atmospheric muon flux has been determined.<lb/></div>
+
+	<keyword>Keywords: ANTARES; neutrino telescope; diffuse flux; point sources; atmo-<lb/>spheric muon flux<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

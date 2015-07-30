@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1358890"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Nuclear Physics A 739 (2004) 30–56<lb/></reference>
+
+	<ptr type="web">www.elsevier.com/locate/npe<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Analysis of the 11 B( 7 Li, 7 Be) 11	Be reaction at<lb/> 57 MeV in a microscopic approach<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F. Cappuzzello<lb/> a, * , H. Lenske<lb/> b , A. Cunsolo<lb/> a,c , D. Beaumel<lb/> d ,<lb/> S. Fortier<lb/> d , A. Foti<lb/> c,e , A. Lazzaro<lb/> a,c , C. Nociforo<lb/> a ,<lb/> S.E.A. Orrigo<lb/> a,c , J.S. Winfield<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a<lb/> a INFN–Laboratori Nazionali del Sud.,</affiliation>
+	</byline>
+
+	<address>Via S. Sofia 44, 95123 Catania, Italy<lb/></address>
+
+	<byline>
+	<affiliation>b Institut für Theoretische Physik, Universität Giessen,</affiliation>
+	</byline>
+
+	<address>Heinrich–Buff-Ring 16, D-35392 Giessen, Germany<lb/></address>
+
+	<byline>
+	<affiliation>c Dipartimento di Fisica e Astronomia, Università di Catania,</affiliation>
+	</byline>
+
+	<address>Via S. Sofia 64, 95123 Catania, Italy<lb/></address>
+
+	<byline>
+	<affiliation>d Institut de Physique Nucléaire, IN2P3-CNRS,</affiliation>
+	</byline>
+
+	<address>91406 Orsay cedex, France<lb/></address>
+
+	<byline>
+	<affiliation>e INFN–Sezione di Catania,</affiliation>
+	</byline>
+
+	<address>Via S. Sofia 64, 95123 Catania, Italy<lb/></address>
+
+	<note type="submission">Received 25 June 2003; received in revised form 26 March 2004; accepted 30 March 2004<lb/></note>
+
+	<date>Available online 23 April 2004<lb/></date>
+
+	<div type="abstract">Abstract<lb/> The 11 B( 7 Li, 7 Be) 11 Be charge exchange reaction has been studied at an incident energy of 57<lb/> MeV. Spectra were measured at forward angles, θ cm 35 @BULLET . The good energy resolution (∼50 keV)<lb/> allowed the identification of transitions both to the 7 Be (3/2 − , gs) and 7 Be(1/2 − , 429 keV)<lb/> exit channels and hence the direct measurement of the ratio of the respective cross sections and<lb/> angular distributions. Besides the bound ground and first excited state of 11 Be several low lying<lb/> excitations just above the neutron threshold are observed. A structure seen at E * = 9.4 MeV with<lb/> FWHM ∼7 MeV is compatible with the spin dipole resonance (SDR). The data are analysed in<lb/> a many-body approach. For the projectile transitions shell model results are used. In order to<lb/> account properly for the special features of the weakly bound 11 Be system the target transitions<lb/> are described microscopically by Hartree–Fock–Bogoliubov (HFB) and quasi-particle random phase<lb/> approximation (QRPA) theory. The HFB ground state densities and the QRPA transition densities,<lb/> respectively, are used in folding calculations for the optical potentials and transition form factors.<lb/> Spectra and β-decay transitions strengths are reasonably well described. The measured cross section<lb/> are well reproduced by one-step direct charge exchange distorted wave born approximation (DWBA)<lb/> calculations. A dominance of unnatural parity transitions is found. This is explained in terms of the<lb/> spin transfer behaviour of the nucleon–nucleon isovector interaction at low bombarding energy.<lb/></div>
+
+	<note type="other">* Corresponding author.<lb/></note>
+
+	<email>E-mail address: cappuzzello@lns.infn.it (F. Cappuzzello).<lb/></email>
+
+	<note type="other">0375-9474/$ – see front matter  2004 Elsevier B.V. All rights reserved.<lb/></note>
+
+	<idno>doi:10.1016/j.nuclphysa.2004.03.221<lb/></idno>
+
+	<reference>F. Cappuzzello et al. / Nuclear Physics A 739 (2004) 30–56<lb/></reference>
+
+	<note type="copyright">31<lb/>  2004 Elsevier B.V. All rights reserved.<lb/></note>
+
+	<keywords type="classes">PACS: 21.10.-k; 21.10.Pc; 21.30.Fe; 21.60.Jz; 23.20.En; 23.40.Hc; 24.10.Eq; 24.50.+g; 25.70.kk; 27.20.+n<lb/></keywords>
+
+	<keywords> Keywords: NUCLEAR REACTIONS +11 B( +7 Li, +7 Be), E = 57 MeV; measured particle spectra, σ (E, θ). +11 Be<lb/> deduced levels, configurations. Quasiparticle RPA analysis.<lb/></keywords>
+
+		</front>
+	</text>
+</tei>

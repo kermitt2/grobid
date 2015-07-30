@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1356790"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:math/0612510v3 [math.AG]</idno>
+
+	<date>21 Jan 2009<lb/></date>
+
+	<docTitle>
+	<titlePart>Tautological relations and the r-spin Witten<lb/> conjecture<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Carel Faber *<lb/> , Sergey Shadrin †<lb/> , Dimitri Zvonkine ‡<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> In [23, 24], Y.-P. Lee introduced a notion of universal relation for<lb/> formal Gromov–Witten potentials. Universal relations are connected<lb/> to tautological relations in the cohomology ring of the moduli space<lb/> M g,n of stable curves. Y.-P. Lee conjectured that the two sets of<lb/> relations coincide and proved the inclusion (tautological relations) ⊂<lb/> (universal relations) modulo certain results announced by C. Teleman.<lb/> He also proposed an algorithm that, conjecturally, computes all uni-<lb/>versal/tautological relations.<lb/> Here we give a geometric interpretation of Y.-P. Lee&apos;s algorithm.<lb/> This leads to a much simpler proof of the fact that every tautological<lb/> relation gives rise to a universal relation. We also show that Y.-P. Lee&apos;s<lb/> algorithm computes the tautological relations correctly if and only if<lb/> the Gorenstein conjecture on the tautological cohomology ring of M g,n<lb/> is true. These results are first steps in the task of establishing an<lb/> equivalence between formal and geometric Gromov–Witten theories.<lb/> In particular, it implies that in any semi-simple Gromov–Witten<lb/> theory where arbitrary correlators can be expressed in genus 0 corre-<lb/>lators using only tautological relations, the formal and the geometric<lb/> Gromov–Witten potentials coincide.</div>
+
+	<byline>
+	<affiliation>* Institutionen för Matematik, Kungliga Tekniska Högskolan, </affiliation>
+	</byline>
+
+	<address>S-10044 Stockholm, Swe-<lb/>den.</address>
+
+	<email>E-mail: faber@kth.se.<lb/></email>
+
+	<byline>
+	<affiliation>† Korteweg -de Vries Instituut voor Wiskunde, Universiteit van Amsterdam,</affiliation>
+	</byline>
+
+	<address>Plantage<lb/> Muidergracht 24, 1018 TV Amsterdam, Netherlands.</address>
+
+	<byline>
+	<affiliation>Department of Mathematics, Insti-<lb/>tute of System Research,</affiliation>
+	</byline>
+
+	<address>Nakhimovskii prospekt 36-1, Moscow 117218, Russia.</address>
+
+	<email>E-mail:<lb/> s.shadrin@uva.nl, shadrin@mccme.ru .<lb/></email>
+
+	<byline>
+	<affiliation>‡ Institut mathématique de Jussieu, Université Paris VI,</affiliation>
+	</byline>
+
+	<address>175, rue du Chevaleret, 75013<lb/> Paris, France.</address>
+
+	<email>E-mail: zvonkine@math.jussieu.fr.<lb/></email>
+
+	<keywords type="classes"> 2000 Mathematics Subject Classification: 14H10, 14N35, 53D45, 53D50.<lb/></keywords>
+
+	<keywords> Key words: Quantization of Frobenius manifolds, Gromov–Witten potential, moduli of<lb/> curves, r-spin structures, Witten&apos;s conjecture.<lb/></keywords>
+
+	<div type="abstract">1<lb/> As the most important application we show that our results suf-<lb/>fice to deduce the statement of a 1991 Witten conjecture on r-spin<lb/> structures from the results obtained by Givental for the correspond-<lb/>ing formal Gromov–Witten potential.<lb/> The conjecture in question states that certain intersection numbers<lb/> on the moduli space of r-spin structures can be arranged into a power<lb/> series that satisfies the r-KdV (or rth higher Gelfand-Dikii) hierarchy<lb/> of partial differential equations.<lb/></div>
+	
+		</front>
+	</text>
+</tei>

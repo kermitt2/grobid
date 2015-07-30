@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1347300"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Beyond the Standard Model<lb/> Lectures at the European School of High Energy Physics 2013<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Csaba Csáki<lb/> a * and Philip Tanedo<lb/> a,b †<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Physics, lepp, Cornell University,</affiliation>
+	</byline>
+
+	<address>Ithaca, ny 14853<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Physics &amp; Astronomy, University of California, </affiliation>
+	</byline>
+
+	<address>Irvine, ca 92697<lb/></address>
+
+	<div type="abstract">Abstract<lb/> We introduce aspects of physics beyond the Standard Model focusing on supersymmetry,<lb/> extra dimensions, and a composite Higgs as solutions to the Hierarchy problem. Lectures<lb/> given at the 2013 European School</div>
+
+	<reference>of High Energy Physics, Parádfürd˝ o, Hungary, 5 – 18<lb/> June 2013.<lb/></reference>
+
+	<email> *  csaki@cornell.edu, <lb/>  †  flip.tanedo@uci.edu <lb/></email>
+
+		</front>
+	</text>
+</tei>

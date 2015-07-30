@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1340792"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1411.5717v1 [math-ph]</idno>
+
+	<date>20 Nov 2014<lb/></date>
+
+	<docTitle>
+	<titlePart>The partition function of the extended r-reduced<lb/> Kadomtsev-Petviashvili hierarchy<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Marco Bertola<lb/> * , * * , † , Di Yang †</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>* Centre de recherches mathématiques, Université de Montréal<lb/></affiliation>
+	</byline>
+
+	<address>C. P. 6128, succ. centre ville, Montréal, Québec, Canada H3C 3J7<lb/></address>
+
+	<byline>
+	<affiliation>* * Department of Mathematics and Statistics, Concordia University,<lb/></affiliation>
+	</byline>
+
+	<address>1455 de Maisonneuve W., Montréal, Québec, Canada H3G 1M8<lb/></address>
+
+	<byline>
+	<affiliation>† SISSA,</affiliation>
+	</byline>
+
+	<address>via Bonomea 265, Trieste 34136, Italy<lb/></address>
+
+	<div type="abstract">Abstract<lb/> We derive a particular solution of the extended r-reduced KP hierarchy, which is specified<lb/> by a generalized string equation. The work is a generalization to arbitrary r ≥ 2 of Buryak&apos;s<lb/> recent results of a solution to the extended open KdV hierarchy which corresponds to r = 2.<lb/></div>
+
+	<keywords type="classes"> Mathematics Subject Classification (2010). 53D45; 37K10; 37K20.<lb/></keywords>
+
+	<keywords>Keywords. KP hierarchy; tau function; wave function; string equation.<lb/></keywords>
+
+		</front>
+	</text>
+</tei>

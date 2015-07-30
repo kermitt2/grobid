@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1341950"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1407.8323v2 [nlin.SI]</idno>
+
+	<date>29 Oct 2014<lb/></date>
+
+	<docTitle>
+	<titlePart>Hurwitz numbers and BKP hierarchy<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S.M. Natanzon *<lb/> A. Yu. Orlov †<lb/></docAuthor>
+	</byline>
+
+	<date>October 30, 2014<lb/></date>
+
+	<div type="abstract">Abstract<lb/> We consider special series in ratios of the Schur functions which are defined by integers f ≥ 0<lb/> and e ≤ 2, and also by the set of 3k parameters ni, qi, ti, i = 1, . . . , k. These series may be presented<lb/> in form of matrix integrals. In case k = 0 these series generates Hurwitz numbers for the d-fold<lb/> branched covering of connected surfaces with a given Euler characteristic e and arbitrary profiles at<lb/> f ramification points. If k &gt; 0 they generate weighted sums of the Hurwitz numbers with additional<lb/> ramification points which are distributed between color groups indexed by i = 1, . . . , k, the weights<lb/> being written in terms of parameters ni, qi, ti. By specifying the parameters we get sums of all<lb/> Hurwitz numbers with f arbitrary fixed profiles and the additional profiles provided the following<lb/> condition: both, the sum of profile lengths and the number of ramification points in each color group<lb/> are given numbers. In case e = f = 1, 2 the series may be identified with BKP tau functions of Kac<lb/> and van de Leur of a special type called hypergeometric tau functions. Sums of Hurwitz numbers for<lb/> d-fold branched coverings of RP<lb/> 2 are related to the one-component BKP hierarchy. We also present<lb/> links between sums of Hurwitz numbers and one-matrix model of the fat graphs.<lb/></div>
+
+	<keyword>Key words: Hurwitz numbers, tau functions, matrix integrals, BKP, multi-component KP, non-<lb/>orientable surfaces, projective plane, Schur functions, hypergeometric functions, random partitions<lb/></keyword>
+
+	<byline><affiliation> *  National Research University Higher School of Economics,</affiliation></byline>
+
+	<address> Moscow, Russia;</address>
+
+	<byline><affiliation> Institute for Theoretical and Experimental Physics,<lb/></affiliation></byline>
+
+	<address> Moscow, Russia;</address>
+
+	<byline><affiliation> Laboratory of Quantum Topology, Chelyabinsk State University,</affiliation></byline>
+
+	<address> Chelyabinsk, Russia;</address>
+
+	<email> email: <lb/>natanzons@mail.ru <lb/></email>
+
+	<byline><affiliation> †  Institute of Oceanology,</affiliation></byline>
+
+	<address> Nahimovskii Prospekt 36, Moscow 117997, Russia, and</address>
+
+	<byline><affiliation> National Research University Higher <lb/>School of Economics, International Laboratory of Representation Theory and Mathematical Physics,</affiliation></byline>
+
+	<address> 20 Myasnitskaya <lb/>Ulitsa, Moscow 101000, Russia,</address>
+
+	<email> email: orlovs@ocean.ru <lb/></email>
+
+		</front>
+	</text>
+</tei>

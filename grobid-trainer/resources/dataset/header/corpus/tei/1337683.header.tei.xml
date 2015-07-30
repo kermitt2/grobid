@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1337683"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A dispersive treatment of K 4 decays<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Peter Stoffer<lb/> 1,a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Albert Einstein Center for Fundamental Physics, Institute for Theoretical Physics,<lb/> University of Bern,</affiliation>
+	</byline>
+
+	<address>Sidlerstrasse 5, CH-3012 Bern, Switzerland<lb/></address>
+
+	<div type="abstract">Abstract. The K 4 decay is one of the best sources of information on some low-energy<lb/> constants of chiral perturbation theory (χPT). We present a dispersive approach to K 4<lb/> decays, which takes rescattering effects fully into account. The dispersion relation treats<lb/> both experimentally accessible form factors simultaneously and also describes the de-<lb/>pendence on the dilepton invariant mass. We apply isospin-breaking corrections before<lb/> fitting the data of NA48/2 and E865 experiments and extract the values of the low-energy<lb/> constants L<lb/> r<lb/> 1 , L<lb/> r<lb/> 2 and L<lb/> r<lb/> 3 from a matching to χPT.<lb/></div>
+
+	<email> a e-mail: stoffer@itp.unibe.ch <lb/></email>
+
+	<idno> DOI: 10.1051/ <lb/></idno>
+
+	<note type="copyright"> C <lb/>  Owned by the authors, published by EDP Sciences, 2014 <lb/></note>
+
+	<reference> / <lb/> 0502 (2014) <lb/>201 <lb/>epjconf <lb/>EPJ Web of Conferences <lb/>4 0502 <lb/> 81 <lb/> 81 <lb/> , <lb/> 7 <lb/> 7 <lb/> </reference>
+
+		</front>
+	</text>
+</tei>

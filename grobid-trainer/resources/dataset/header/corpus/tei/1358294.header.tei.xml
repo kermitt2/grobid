@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1358294"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<reference>JOURNAL OF MATHEMATICAL PHYSICS<lb/> VOLUME 3, NUMBER 5<lb/> SEPTE:\I BER-OCTOBER 1962<lb/></reference>
+
+	<docTitle>
+	<titlePart>Behavior of Asymptotically Flat Empty Spaces*<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>EZRA T. NEWMAN AND THEODORE W. J. UNTI<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Pittsburgh,</affiliation>
+	</byline>
+
+	<address>Pittsburgh, Pennsylvania<lb/></address>
+
+	<note type="submission">(Received April 27, 1962)<lb/></note>
+
+	<div type="abstract">The asymptotic behavior of the Weyl tensor and metric tensor is investigated for probably all<lb/> as~~ptotically flat solutions of the empty space Einstein field equations. The systematic investigation<lb/> utilizes a set of first order differential equations which are equivalent to the empty space Einstein<lb/> equations. These are solved asymptotically, subject to a condition imposed on a tetrad component<lb/> of the Riemann tensor \[fo which ensures the approach to flatness at spatial infinity of the space-time.<lb/> If \[fo. is assumed to be an analytic function of a suitably defined radial coordinate, uniqueness of the<lb/> s?lutlOns can be proved. However, this paper makes considerable progress toward establishing a<lb/> ngorous proof of uniqueness in the nonanalytic case. A brief discussion of the remaining coordinate<lb/> freedom, with certain topological aspects, is also included.<lb/></div>
+
+	
+
+		</front>
+	</text>
+</tei>

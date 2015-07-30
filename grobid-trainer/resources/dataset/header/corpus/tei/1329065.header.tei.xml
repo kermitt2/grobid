@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1329065"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1411.5583v3 [math-ph]</idno>
+
+	<date>2 Feb 2015<lb/></date>
+
+	<docTitle>
+	<titlePart>WONDERFUL COMPACIFICATIONS IN QUANTUM FIELD<lb/> THEORY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>MARKO BERGHOFF<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. In [BBK10] it was shown how so-called wonderful compactifica-<lb/>tions can be used for renormalization in the position space formulation of<lb/> quantum field theory. This article aims to continue this idea, using a slightly<lb/> different approach; instead of the subspaces in the arrangement of divergent<lb/> loci, we use the poset of divergent subgraphs as the main tool to describe the<lb/> whole renormalization process. This is based on [Fei05] where wonderful mod-<lb/>els were studied from a purely combinatorial viewpoint. The main motivation<lb/> for this approach is the fact that both, renormalization and the model con-<lb/>struction, are governed by the combinatorics of this poset. Not only simplifies<lb/> this the exposition considerably, but also allows to study the renormalization<lb/> operators in more detail. Moreover, we explore the renormalization group in<lb/> this setting by studying how the renormalized distributions behave under a<lb/> change of renormalization points.<lb/></div>
+
+		</front>
+	</text>
+</tei>

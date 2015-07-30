@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345409"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Physics Procedia 31 ( 2012 ) 110 – 117<lb/> 1875-3892 © 2012</reference>
+
+	<note type="other">Published by Elsevier B.V. Selection and/or peer-review under responsibility of Institute for Reference<lb/> Materials and Measurements.<lb/></note>
+
+	<idno>doi: 10.1016/j.phpro.2012.04.015<lb/></idno>
+
+	<docTitle>
+	<titlePart>Reactions induced by real photons<lb/> for nuclear structure and nuclear astrophysics<lb/>$<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. Enders<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Kernphysik, Technische Universität Darmstadt,</affiliation>
+	</byline>
+
+	<address>Schlossgartenstraße 9, D-64289 Darmstadt, Germany<lb/></address>
+
+	<div type="abstract">Abstract<lb/> This contribution presents examples for recent experimental studies with real photons. Topics include the electric<lb/> dipole response below the particle separation energy (pygmy resonance), the magnetic scissors mode in deformed nu-<lb/>clei, an analysis of low-lying electric quadrupole strength and astrophysical applications. Results of reactions induced<lb/> by real photons are compared to those obtained from virtual photons (electron scattering, Coulomb excitation).<lb/></div>
+
+	<keyword>Keywords: Nuclear reactions, Photon scattering, Photo-disintegration, E1 pygmy resonance, M1 scissors mode,<lb/> Big-bang nucleosynthesis, E1 giant quadrupole resonance, Mixed-symmetry states<lb/></keyword>
+
+	<keywords type="classes">PACS: 21.10-k, 23.20.Lv, 24.30.-v, 25.20.Dc, 26.30.-k, 26.35.+c<lb/></keywords>
+
+	<note type="grant"> $  Work supported in part by DFG through SFB634, by the state of Hesse through the HIC for FAIR within the LOEWE initiative, by BMBF <lb/>(06DA9040I), and through the GSI-TU-Darmstadt cooperation contract. <lb/></note>
+
+	<email> Email address: enders@ikp.tu-darmstadt.de (J. Enders) <lb/></email>
+
+		</front>
+	</text>
+</tei>

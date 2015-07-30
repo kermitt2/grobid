@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1357951"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">March 24, 2015 15:52<lb/> IJMPA<lb/> S0217751X15500438 page 1<lb/></note>
+
+	<reference>International Journal of Modern Physics A<lb/> Vol. 30, No. 9 (2015) 1550043 (29 pages)<lb/></reference>
+
+	<note type="copyright">c<lb/> World Scientific Publishing Company<lb/></note>
+
+	<idno>DOI: 10.1142/S0217751X15500438<lb/></idno>
+
+	<docTitle>
+	<titlePart>Complex potential and bottomonium suppression at LHC energy<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Uttam Kakade, * Binoy Krishna Patra † and Lata Thakur ‡<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Indian Institute of Technology</affiliation>
+	</byline>
+
+	<address>Roorkee, 247 667, India<lb/></address>
+
+	<email>* usk11dph@iitr.ac.in<lb/> † binoyfph@iitr.ac.in<lb/> ‡ lata1dph@iitr.ac.in<lb/></email>
+
+	<note type="submission">Received 29 October 2014<lb/> Revised 16 January 2015<lb/> Accepted 22 January 2015<lb/> Published 18 March 2015<lb/></note>
+
+	<div type="abstract">We have studied the thermal suppression of the bottomonium states in relativistic heavy-<lb/>ion collision at LHC energies as function of centrality, rapidity, transverse momentum.<lb/> First, we address the effects of the nonperturbative confining force and the momentum<lb/> anisotropy together on heavy quark potential at finite temperature, which are resolved<lb/> by correcting both the perturbative and nonperturbative terms of the potential at T = 0<lb/> in a weakly-anisotropic medium, not its perturbative term alone as usually done in the<lb/> literature. Second, we model the expansion of medium by the Bjorken hydrodynamics in<lb/> the presence of both shear and bulk viscosity, followed by an additional pre-equilibrium<lb/> anisotropic evolution. Finally, we couple them together to quantify the yields of bottomo-<lb/>nium production in nucleus–nucleus collisions at LHC energies and found a better agree-<lb/>ment with the CMS data. Our estimate of the inclusive Υ(1S) production indirectly<lb/> constrains both the uncertainties in isotropization time and the shear-to-entropy den-<lb/>sity ratio and favors the values as 0.3 fm/c and 0.3 (perturbative result), respectively.<lb/></div>
+
+	<keyword>Keywords: Bottomonium states; nonperturbative effects; thermal suppression; aniso-<lb/>tropy; pre-equilibrium; isotropization; viscous forces.<lb/></keyword>
+
+	<keywords type="classes">PACS numbers: 12.39.−x, 11.10.St, 12.38.Mh, 12.39.Pn, 12.39.Hg, 12.38.Gc<lb/></keywords>
+
+		</front>
+	</text>
+</tei>

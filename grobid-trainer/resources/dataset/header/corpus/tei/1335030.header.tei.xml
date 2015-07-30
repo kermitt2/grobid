@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1335030"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>ISSN 2347-1921<lb/></idno>
+
+	<note type="other">351 | P a g e<lb/> N o v 1 6 , 2 0 1 3<lb/></note>
+
+	<docTitle>
+	<titlePart>Derivation of Yang – Mills equations from Maxwell Equations and Exact<lb/> solutions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G.M. Gharib<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Mathematics Department, College of Science and Information Technology,<lb/> Zarqa University</affiliation>
+	</byline>
+
+	<address>, Jordan<lb/></address>
+
+	<email>gharibmusa@gmail.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> In this paper we derived the Yang-Mills equations from Maxwell equations. Consequently we find a new form for self-<lb/>duality equations. In addition exact solution class of the classical SU(2) Yang-Mills field equations in four-dimensional<lb/> Euclidean space and two exact solution classes for SU(2) Yang-Mills equations when is í µí¼ a complex analytic function are<lb/> also obtained.<lb/></div>
+
+	<keyword>Keywords : Self-dual SU(2); Yang-Mills fields; Gauge theory<lb/></keyword>
+
+	<note type="grant">______________________<lb/> &quot;This research is funded by the Deanship of Research and Graduate Studies in Zarqa University/ Jordan&quot;<lb/></note>
+
+	<docTitle>
+	<titlePart>Council for Innovative Research<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Peer Review Research Publishing System<lb/></note>
+
+	<reference>Journal: Journal of Advances in Mathematics<lb/> Vol 4, No 1<lb/></reference>
+
+	<email>editor@cirworld.com<lb/> www.cirworld.com, member.cirworld.com</email>
+
+		</front>
+	</text>
+</tei>

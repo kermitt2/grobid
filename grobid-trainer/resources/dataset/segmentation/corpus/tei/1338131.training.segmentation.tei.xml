@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<titlePage> This content has been downloaded from IOPscience. Please scroll down to see the full text. <lb/>Download details: <lb/>IP Address: 137.138.124.224 <lb/>This content was downloaded on 13/04/2015 at 18:39 <lb/>Please note that terms and conditions apply. <lb/> Note on &apos;The Planck length as the dimension of a transient black hole&apos; <lb/> View the table of contents for this issue, or go to the journal homepage for more <lb/>2010 Eur. J. Phys. 31 L13 <lb/>(http://iopscience.iop.org/0143-0807/31/1/L04) <lb/>Home Search Collections Journals About Contact us My IOPscience <lb/></titlePage>
+
+			<front> IOP PUBLISHING <lb/>EUROPEAN JOURNAL OF PHYSICS <lb/>Eur. J. Phys. 31 (2010) L13–L14 <lb/> doi:10.1088/0143-0807/31/1/L04 <lb/> LETTERS AND COMMENTS <lb/> Note on &apos;The Planck length as the dimension of a <lb/>transient black hole&apos; <lb/> Kwang-Hua W Chu <lb/> 1 <lb/> Department of Physics, Hebei Normal University, Shijiazhuang 050016, People&apos;s Republic of <lb/>China <lb/> Received 26 August 2009, in final form 13 October 2009 <lb/>Published 25 November 2009 <lb/>Online at stacks.iop.org/EJP/31/L13 <lb/> Abstract <lb/> This note is on Lattman&apos;s paper (2009 Eur. J. Phys. 30 L41). It seems to us <lb/>that the direct unification of the quantum mechanics and the gravity theory (for <lb/>a black hole) by Lattman is in doubt. <lb/></front>
+
+			<body>Lattman recently just presented a heuristic derivation of the Planck length by combining the <lb/>concepts of general relativity and quantum mechanics (Heisenberg uncertainty relation) [1]. <lb/>His idea was that the Planck length is the dimension of a volume of space in which mass <lb/>fluctuations arising from the uncertainty principle are sufficient to create a transient black <lb/>hole. As Lattman mentioned [1], his treatment was not a rigorous derivation, but rather a <lb/>simple didactic device, suitable for presentation to undergraduates. <lb/>To help the relevant researchers as well as postgraduates understand the current status of <lb/>quantum gravity development which should be of pedagogical purpose, the present author <lb/>would like to make some remarks in the following. Note that, however, an intriguing <lb/>prediction of various theories of quantum gravity (such as string theory) and black hole <lb/>physics is the existence of a minimum measurable length. This has given rise to the so-called <lb/>generalized uncertainty principle, or GUP, or equivalently, modified commutation relations <lb/>between position coordinates and momenta [2]. It means that in a gravity field the Heisenberg <lb/>uncertainty relation should be replaced by the generalized uncertainty principle [3] <lb/> x  i  <lb/> ¯ <lb/> h <lb/>p i <lb/> + α <lb/> 2  L <lb/> 2 <lb/>Pl <lb/> p i <lb/> ¯ <lb/> h <lb/>, <lb/> (1) <lb/>where L  Pl  = (¯ hG/c <lb/> 3  ) <lb/> 1/2 is the Planck length, and α is a constant. Thus, to the best of the <lb/>present author&apos;s knowledge, it seems to him that the direct unification of equations (2) (which <lb/>is related to quantum mechanics) and (3) (which is related to gravity) in [1] by Lattman is in <lb/>doubt as the theory for quantum gravity is still open! <lb/> 1 Author&apos;s address after July 2010: 24, Lane 260, Section 1, Road Muja, Taiwan 11646, Republic of China. <lb/> 0143-0807/10/010013+02$30.00 c <lb/>  2010 IOP Publishing Ltd Printed in the UK <lb/></body>
+
+			<page>L13 <lb/> L14 <lb/></page>
+
+			<note place="headnote"> Letters and Comments <lb/></note>
+
+			<div type="acknowledgement"> Acknowledgment <lb/> The author thanks the support by the Starting Funds for 2009-Hebei-Normal-Univ. Scientific <lb/>Researcher. <lb/></div>
+
+			<listBibl> References <lb/> [1] Lattman E E 2009 Eur. J. Phys. 30 L41 <lb/>[2] Ali A F, Das S and Vagenas E C 2009 Phys. Lett. B 678 497 <lb/>[3] Chang L N, Minic D, Okaruma N and Takeuchi T 2002 Phys. Rev. D 65 125028 <lb/>Amati D, Ciafaloni M and Veneziano G 1989 Phys. Lett. B 216 41 </listBibl>
+
+
+	</text>
+</tei>

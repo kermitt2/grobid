@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1334750"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:math/9807131v1 [math.QA]</idno>
+
+	<date>23 Jul 1998<lb/></date>
+
+	<docTitle>
+	<titlePart>q-deformed W-algebras and elliptic algebras<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. Avan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>LPTHE, CNRS-URA 280, Universités Paris VI/VII,</affiliation>
+	</byline>
+
+	<address>France<lb/></address>
+
+	<byline>
+	<docAuthor>L. Frappat, M. Rossi, P. Sorba<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratoire d&apos;Annecy-le-Vieux de Physique Théorique LAPTH, CNRS-URA 1436<lb/> LAPP, BP 110, </affiliation>
+	</byline>
+
+	<address>F-74941 Annecy-le-Vieux Cedex, France<lb/></address>
+
+	<div type="abstract">Abstract<lb/> The elliptic algebra A q,p (<lb/> sl(N ) c ) at the critical level c = −N has an extended center con-<lb/>taining trace-like operators t(z). Families of Poisson structures, defining q-deformations of<lb/> the W N algebra, are constructed. The operators t(z) also close an exchange algebra when<lb/> (−p 1/2 ) N M = q −c−N for M ∈ Z. It becomes Abelian when in addition p = q N h where h is<lb/> a non-zero integer. The Poisson structures obtained in these classical limits contain different<lb/> q-deformed W N algebras depending on the parity of h, characterizing the exchange structures<lb/> at p = q N h as new W q,p (sl(N )) algebras.<lb/></div>
+
+	<note type="other">MSC number: 81R50, 17B37<lb/> Talk presented by L. Frappat at the 7th International Colloquium &quot; Quantum Groups and Integrable<lb/> Systems &quot; (QGIS), Prague, 18-20 June 1998.<lb/> math.QA/9807131<lb/></note>
+
+	<date>July 1998<lb/></date>
+
+		</front>
+	</text>
+</tei>

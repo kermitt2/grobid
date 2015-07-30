@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1343222"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>20th IMEKO TC4 International Symposium and<lb/> 18th International Workshop on ADC Modelling and Testing<lb/> Research on Electric and Electronic Measurement for the Economic Upturn<lb/> Benevento, Italy, September 15-17, 2014<lb/></reference>
+
+	<docTitle>
+	<titlePart>Single-shot and non-destructive longitudinal<lb/> monitor by means of Electro-Optical Sampling<lb/> for future Plasma Wakefield Acceleration<lb/> experiments<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R. Pompili<lb/> 1<lb/> , M.P. Anania<lb/> 1<lb/> , M. Bellaveglia<lb/> 1<lb/> , M. Castellano<lb/> 1<lb/> , E. Chiadroni<lb/> 1<lb/> , A. Cianchi<lb/> 2<lb/> , D. Di<lb/> Giovenale<lb/> 1<lb/> , G. Di Pirro<lb/> 1<lb/> , G. Gatti<lb/> 1<lb/> , F. Giorgianni<lb/> 4<lb/> , M. Ferrario<lb/> 1<lb/> , F. Massimo<lb/> 4<lb/> , A. Mostacci<lb/> 1<lb/> , C.<lb/> Vaccarezza<lb/> 1<lb/> , F. Villa<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> 1<lb/> INFN-LNF,</affiliation>
+	</byline>
+
+	<address>Via E. Fermi 40, 00044 Frascati, Rome, Italy<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Università di Roma &quot;Tor Vergata&quot;, Physics Department,</affiliation>
+	</byline>
+
+	<address>Via della Ricerca Scientifica 1, 00133<lb/> Rome, Italy<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> INFN Milano,</affiliation>
+	</byline>
+
+	<address>Via Celoria 16, 20133 Milan, Italy<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> Università di Roma &quot;Sapienza&quot;, Physics Department,</affiliation>
+	</byline>
+
+	<address>Via Aldo Moro 2, 00185 Rome, Italy<lb/></address>
+
+	<div type="abstract">Abstract – At SPARC-LAB, we have installed an<lb/> Electro-Optic Sampling (EOS) experiment for single<lb/> shot, non-destructive measurements of the longitudinal<lb/> distribution charge of individual electron bunches. The<lb/> profile of the electron bunch field is electro-optically<lb/> encoded into a Ti:Sa laser, having 130 fs (rms) pulse<lb/> length, directly derived from the photocathode&apos;s laser.<lb/> The bunch profile information is spatially retrieved,<lb/> i.e., the laser crosses with an angle of 30 deg with re-<lb/>spect the normal to the surface of EO crystal (ZnTe,<lb/> GaP) and the bunch longitudinal profile is mapped into<lb/> the laser&apos;s transverse profile. In particular, we used<lb/> the EOS for a single-shot direct visualization of the<lb/> time profile of a comb-like electron beam, consisting of<lb/> two bunches, about 100 fs (rms) long, sub-picosecond<lb/> spaced with a total charge of 160 pC. The electro-optic<lb/> measurements (done with both ZnTe and GaP crystals)<lb/> have been validated with both RF Deflector (RFD) and<lb/> Michelson interferometer measurements.<lb/></div>
+
+		</front>
+	</text>
+</tei>

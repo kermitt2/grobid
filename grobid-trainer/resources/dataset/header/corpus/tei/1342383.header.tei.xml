@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1342383"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Revista Colombiana de Física, vol. 44, No.2, 2012<lb/></reference>
+
+	<docTitle>
+	<titlePart>Diagnósticos statefinder y Om para un modelo holográfico de<lb/> energía oscura<lb/> Statefinder and Om Diagnostics for a Holographic Dark Energy Model<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Oliveros, ⋆ L.N. Granda, y W. Cardona<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Grupo de Gravitación, Departamento de Física, Universidad del Valle,</affiliation>
+	</byline>
+
+	<address>A.A. 25360, Cali, Colombia.<lb/></address>
+
+	<div type="abstract">Recibido mayo 5 de 2010; aceptado agosto 12 de 2011.<lb/> Resumen<lb/> El diagnóstico statefinder es un método de mucha utilidad que permite establecer las diferencias entre<lb/> varios modelos de energía oscura. En este artículo, aplicamos este método a un modelo holográfico de<lb/> energía oscura introducido por L. N. Granda et. al (Phys. Lett. B 669: 275-277, 2008). Trazamos las<lb/> trayectorias evolutivas de este modelo en los planos de los parámetros statefinder, y hemos encontrado<lb/> que los parámetros de este modelo juegan un papel muy importante en este contexto. También, hemos<lb/> aplicado un nuevo diagnóstico propuesto recientemente llamado Om, con el cual podemos comparar el<lb/> modelo holográfico con el modelo LCDM.<lb/> Palabras Clave: energía oscura, principio holográfico, cosmología.<lb/> Abstract<lb/> The statefinder diagnostic is a useful method that allows to establish differences between dark energy<lb/> models. In this article, we apply this method to a holographic dark energy model, introduced by L. N.<lb/> Granda et. al (Phys. Lett. B 669: 275-277, 2008). We plot evolutionary trajectories of this model in the<lb/> statefinder parameter-planes, and it is found that the parameters of this model plays a significant role from<lb/> the statefinder viewpoint. Also, we apply a new diagnostic , recently proposed, called the Om diagnostc,<lb/> with which we can compare the holographic model with the LCDM model.<lb/></div>
+
+	<keyword>Keywords: dark energy, holographic principle, cosmology.<lb/></keyword>
+
+	<email> ⋆ alexogar@univalle.edu.co <lb/></email>
+
+		</front>
+	</text>
+</tei>

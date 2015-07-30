@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1329661"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>DESIGN AND IMPEDANCE OPTIMIZATION OF THE LNLS-UVX<lb/> LONGITUDINAL KICKER CAVITY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>L. Sanfelici<lb/> #<lb/> , H. O. C. Duarte, S. R. Marques, </docAuthor>
+	</byline>
+
+	<byline>
+		<affiliation>LNLS, </affiliation>
+	</byline>
+
+	<address>Campinas, SP, Brazil<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Performance evolution of parameters achieved during<lb/> the electromagnetic design of the longitudinal kicker<lb/> cavity for the LNLS UVX storage ring is presented. The<lb/> effort on the electromagnetic optimization process of the<lb/> heavily loaded cavity has been made to reach the required<lb/> electrodynamic parameters of the kicker. The results for<lb/> three different geometries are compared and a good<lb/> compromise between the longitudinal shunt impedance<lb/> and the effect of the longitudinal Higher Order Modes<lb/> (HOM&apos;s) on beam stability has been found.<lb/></div>
+
+	<note type="other"> ___________________________________________ <lb/></note>
+
+	<email> #lucas.sanfelici@lnls.br <lb/></email>
+
+		</front>
+	</text>
+</tei>

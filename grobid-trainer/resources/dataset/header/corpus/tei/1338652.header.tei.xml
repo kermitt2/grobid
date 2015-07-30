@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1338652"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>ANNALS<lb/> OF PHYSICS:<lb/>49,202-218 (1968)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Method of Construction<lb/> of the Green&apos;s Functions<lb/> in Momentum<lb/> Space for Unrenormalizable<lb/> Interactions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. K. VOLKOV<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Joint Institute for Nuclear Research,</affiliation>
+	</byline>
+
+	<address>Dubna, USSR<lb/></address>
+
+	<div type="abstract">A unitary method is developed for constructing the Fourier transform of the two-<lb/>point Green&apos;s functions in local and nonlocal theories with unrenormalizable<lb/> inter-<lb/>actions. The spectral representations of these functions are derived. It is shown that the<lb/> functions considered have a logarithmic branch point with respect to g for g = 0 in the<lb/> momentum space.<lb/></div>
+
+		</front>
+	</text>
+</tei>

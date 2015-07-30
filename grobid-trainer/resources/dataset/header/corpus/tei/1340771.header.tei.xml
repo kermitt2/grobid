@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1340771"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>THE SPECTRAL CURVE OF THE EYNARD-ORANTIN RECURSION VIA<lb/> THE LAPLACE TRANSFORM<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>OLIVIA DUMITRESCU, MOTOHICO MULASE, BRAD SAFNUK, AND ADAM SORKIN<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. The Eynard-Orantin recursion formula provides an effective tool for certain enumer-<lb/>ation problems in geometry. The formula requires a spectral curve and the recursion kernel. We<lb/> present a uniform construction of the spectral curve and the recursion kernel from the unstable<lb/> geometries of the original counting problem. We examine this construction using four concrete ex-<lb/>amples: Grothendieck&apos;s dessins d&apos;enfants (or higher-genus analogue of the Catalan numbers), the<lb/> intersection numbers of tautological cotangent classes on the moduli stack of stable pointed curves,<lb/> single Hurwitz numbers, and the stationary Gromov-Witten invariants of the complex projective<lb/> line.<lb/></div>
+
+		</front>
+	</text>
+</tei>

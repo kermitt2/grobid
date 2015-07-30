@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1340742"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:math/0108100v2 [math.AG]</idno>
+
+	<date>16 Oct 2001<lb/></date>
+
+	<docTitle>
+	<titlePart>GROMOV – WITTEN INVARIANTS AND QUANTIZATION OF<lb/> QUADRATIC HAMILTONIANS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>ALEXANDER B. GIVENTAL<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. We describe a formalism based on quantization of quadratic hamil-<lb/>tonians and symplectic actions of loop groups which provides a convenient<lb/> home for most of known general results and conjectures about Gromov-Witten<lb/> invariants of compact symplectic manifolds and, more generally, Frobenius<lb/> structures at higher genus. We state several results illustrating the formalism<lb/> and its use. In particular, we establish Virasoro constraints for semisimple<lb/> Frobenius structures and outline a proof of the Virasoro conjecture for Gro-<lb/>mov – Witten invariants of complex projective spaces and other Fano toric<lb/> manifolds. Details will be published elsewhere.</div>
+
+	<note type="submission">Date: April 12, 2001, revised on July 15 and August 14, 2001.<lb/></note>
+
+	<note type="grant">Research partially supported by NSF Grant DMS-0072658.<lb/></note>
+
+		</front>
+	</text>
+</tei>

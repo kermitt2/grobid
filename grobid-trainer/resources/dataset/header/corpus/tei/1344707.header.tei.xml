@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1344707"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Homogeneous and isotropic calorimetry for space experiments<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>N. Mori<lb/> a,n<lb/> , O. Adriani<lb/> a,b<lb/> , A. Basti<lb/> c , G. Bigongiari<lb/> d , L. Bonechi<lb/> a<lb/> , S. Bonechi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>c,d<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>, M. Bongi<lb/> a,b<lb/> ,<lb/> S. Bottai<lb/> a , P. Brogi<lb/> c,d , R. D&apos;Alessandro<lb/> a,b<lb/> , S. Detti<lb/> a<lb/> , P. Lenzi<lb/> a<lb/> , P. Maestro<lb/> c,d<lb/> ,<lb/> P.S. Marrocchesi<lb/>c,d<lb/>, P. Papini<lb/> a<lb/> , P. Spillantini<lb/> a,b , O. Starodubtsev<lb/> a,b<lb/> , A. Sulaj<lb/> c,d<lb/> ,<lb/> E. Vannuccini<lb/> a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a INFN sezione di Firenze,</affiliation>
+	</byline>
+
+	<address>via B. Rossi 1, 50019 Sesto Fiorentino (FI), Italy<lb/></address>
+
+	<byline>
+	<affiliation>b University of Florence, Department of Physics and Astronomy, via G.</affiliation>
+	</byline>
+
+	<address>Sansone 1, 50019 Sesto Fiorentino (FI), Italy<lb/></address>
+
+	<byline>
+	<affiliation>c INFN sezione di Pisa,</affiliation>
+	</byline>
+
+	<address>Largo B. Pontecorvo 3, 56127 Pisa, Italy<lb/></address>
+
+	<byline>
+	<affiliation>d University of Siena, Department of Physics, Earth and Environmental Sciences,</affiliation>
+	</byline>
+
+	<address>Via Laterina 8, 53100 Siena, Italy<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<date>Available online 12 June 2013<lb/></date>
+
+	<keyword>Keywords:<lb/> Cosmic rays<lb/> Calorimetry<lb/> Space experiments<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> Calorimetry plays an essential role in experiments observing high energy gamma and cosmic rays in<lb/> space. The observational capabilities are mainly limited by the geometrical dimensions and the mass of<lb/> the calorimeter. Since deployable mass depends on the design of the detector and the total mass of the<lb/> payload, it is important to optimize the geometrical acceptance of the calorimeter for rare events, its<lb/> granularity for particle identification, and its absorption depth for the measurement of the particle<lb/> energy. A design of a calorimeter that could simultaneously optimize these characteristics assuming a<lb/> mass limit of about 1.6 t has been studied. As a result, a homogeneous calorimeter instrumented with<lb/> cesium iodide (CsI) crystals was chosen as the best compromise given the total mass constraint. The most<lb/> suitable geometry found is cubic and isotropic, so as to detect particles arriving from every direction in<lb/> space, thus maximizing the acceptance; granularity is obtained by filling the cubic volume with small<lb/> cubic CsI crystals. The total radiation length in any direction is very large, and allows for optimal<lb/> electromagnetic particle identification and energy measurement, while the interaction length is at least<lb/> sufficient to allow a precise reconstruction of hadronic showers. Optimal values for the size of the<lb/> crystals and spacing among them have been studied. Two prototypes have been constructed and<lb/> preliminary tests with high energy ion and muon beams are reported.<lb/> &amp; 2013 Elsevier B.V. All rights reserved.<lb/></div>
+
+	<note type="phone"> n  Corresponding author. Tel.: +39 0554572660. <lb/></note>
+
+	<email> E-mail address: mori@fi.infn.it (N. Mori). <lb/></email>
+
+	<reference>Nuclear Instruments and Methods in Physics Research A 732 (2013) 311–315 <lb/></reference>
+
+		</front>
+	</text>
+</tei>

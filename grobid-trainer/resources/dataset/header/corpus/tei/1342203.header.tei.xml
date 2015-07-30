@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1342203"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:math/0004128v1 [math.AG]</idno>
+
+	<date>19 Apr 2000<lb/></date>
+
+	<docTitle>
+	<titlePart>Toda equations for Hurwitz numbers<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andrei Okounkov *<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> We consider ramified coverings of P 1 with arbitrary ramification<lb/> type over 0, ∞ ∈ P 1 and simple ramifications elsewhere and prove<lb/> that the generating function for the numbers of such coverings is a<lb/> τ -function for the Toda lattice hierarchy of Ueno and Takasaki.<lb/></div>
+
+	<byline><affiliation> *  Department of Mathematics, University of California at Berkeley, Evans Hall #3840, <lb/></affiliation></byline>
+
+	<address>Berkeley, CA 94720-3840.</address>
+
+	<email> E-mail: okounkov@math.berkeley.edu <lb/></email>
+
+
+		</front>
+	</text>
+</tei>

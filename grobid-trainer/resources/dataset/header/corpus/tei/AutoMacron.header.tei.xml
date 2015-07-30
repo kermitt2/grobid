@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="AutoMacron"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Visual Compression of Workflow Visualizations<lb/> with Automated Detection of Macro Motifs<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Eamonn Maguire, Student Member, IEEE, Philippe Rocca-Serra, Susanna-Assunta Sansone, Jim Davies,<lb/> and Min Chen, Member, IEEE<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">MOTIF EXTRACTION<lb/> ALGORITHM<lb/> RANKING<lb/> ALGORITHM<lb/> MACRO SELECTION<lb/> VIA UI<lb/> BIOLOGICAL<lb/> WORKFLOW<lb/> REPOSITORY<lb/> MACRO<lb/> SELECTION<lb/> GLYPH DESIGN<lb/> MACRO<lb/> ANNOTATION<lb/> 2.87<lb/> OCCURRENCE<lb/> 1092 WORKFLOWS<lb/> 476 COMPRESSION<lb/> 3276<lb/> 2.4<lb/> OCCURRENCE<lb/> 600 WORKFLOWS<lb/> 240 COMPRESSION<lb/> 2400<lb/> SELECTED MACROS<lb/> DOMAIN EXPERT<lb/> Branch &amp; Merge<lb/> Branch &amp; Merge<lb/> F<lb/> A<lb/> s1<lb/> s0 A<lb/> B<lb/> D<lb/> B<lb/> E<lb/> E<lb/> G<lb/> H<lb/> s2<lb/> s3<lb/> C<lb/> C<lb/> s4<lb/> E<lb/> H<lb/> C<lb/> E<lb/> Branch &amp; Merge<lb/> Branch &amp; Merge<lb/> MACRO INSERTION<lb/> IN GRAPH<lb/> MOTIFS<lb/> ...<lb/> 2.87<lb/> 1<lb/> OCCURRENCE<lb/> 1092<lb/> WORKFLOWS<lb/> 476<lb/> COMPRESSION<lb/> 3276<lb/> -2.43<lb/> n<lb/> OCCURRENCE<lb/> 20<lb/> WORKFLOWS<lb/> 10<lb/> COMPRESSION<lb/> 200<lb/> ...<lb/> DOMAIN EXPERT<lb/> Fig. 1. An overview of the processes implemented in our system, AutoMacron, for compression of workflow visualizations. A)<lb/> Biological workflows are imported from public repositories. B) The database of workflows is analyzed by our novel motif extraction<lb/> algorithm that is sensitive to node/edge types and is built using a state-transition approach. C) The algorithm generates a large list<lb/> of motifs. D) The motifs are ranked using metrics measuring their overall occurrence, scope of influence and compression potential.<lb/> E) Based on the ordered recommendations by the system as well as their own knowledge, domain experts explore the space of<lb/> motifs to identify suitable &apos;macros&apos;. F) A subset of motifs are selected for macro generation. G) A glyph is assigned to each macro<lb/> automatically using a design pattern that utilizes the state output from the motif extraction algorithm. H) Domain experts are able to<lb/> annotate macros with additional text labels. I) Macros can be inserted into the relevant workflows as a method for graph compression.<lb/> Abstract—This paper is concerned with the creation of &apos;macros&apos; in workflow visualization as a support tool to increase the efficiency<lb/> of data curation tasks. We propose computation of candidate macros based on their usage in large collections of workflows in data<lb/> repositories. We describe an efficient algorithm for extracting macro motifs from workflow graphs. We discovered that the state<lb/> transition information, used to identify macro candidates, characterizes the structural pattern of the macro and can be harnessed<lb/> as part of the visual design of the corresponding macro glyph. This facilitates partial automation and consistency in glyph design<lb/> applicable to a large set of macro glyphs. We tested this approach against a repository of biological data holding some 9,670<lb/> workflows and found that the algorithmically generated candidate macros are in keeping with domain expert expectations.<lb/></div>
+
+	<keyword>Index Terms—Workflow visualization, motif detection, glyph-based visualization, glyph generation, state-transition-based algorithm<lb/></keyword>
+
+	<byline><affiliation> • Eamonn Maguire is with the Oxford e-Research Centre and Department of <lb/>Computer Science, University of Oxford,</affiliation></byline>
+
+	<address> UK.</address>
+
+	<email> E-mail: <lb/>eamonn.maguire@st-annes.ox.ac.uk. <lb/></email>
+
+	<byline><affiliation> • Philippe Rocca-Serra is with the Oxford e-Research Centre, University of <lb/>Oxford,</affiliation></byline>
+
+	<address> UK.</address>
+
+	<email> E-mail: philippe.rocca-serra@oerc.ox.ac.uk. <lb/></email>
+
+	<byline><affiliation> • Susanna-Assunta Sansone and Min Chen are with the Oxford e-Research <lb/>Centre, University of Oxford,</affiliation></byline> 
+
+	<address>UK.</address>
+
+	<email> E-mail: <lb/>susanna-assunta.sansone@oerc.ox.ac.uk. <lb/></email>
+
+	<byline><affiliation>• Jim Davies is with Department of Computer Science, University of Oxford, <lb/></affiliation></byline>
+
+	<address> UK.</address>
+
+	<email> E-mail: jim.davies@cs.ox.ac.uk. <lb/></email>
+
+	<byline><affiliation> • Min Chen is with the Oxford e-Research Centre, University of Oxford,</affiliation></byline>
+
+	<address> UK. <lb/></address>
+
+	<email>E-mail: min.chen@oerc.ox.ac.uk. <lb/></email>
+
+	<note type="submission">Manuscript received 31 March 2013; accepted 1 August 2013; posted online <lb/>13 October 2013; mailed on 4 October 2013. <lb/>For information on obtaining reprints of this article, please send <lb/>e-mail to: tvcg@computer.org. <lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1342198"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<orgName>DELPHI Collaboration<lb/></orgName>
+
+	<idno>DELPHI 2000-011 CONF 332<lb/></idno>
+
+	<date>26 February 2000<lb/></date>
+
+	<docTitle>
+	<titlePart>Search for Neutralinos and Sleptons in scenarios with<lb/> Gravitino LSP and Stau NLSP with the DELPHI<lb/> detector up to 202 GeV centre-of-mass energy<lb/> Preliminary<lb/></titlePart>
+	</docTitle>
+
+	<orgName>DELPHI Collaboration<lb/></orgName>
+
+	<byline>
+	<docAuthor>R. Alemany<lb/> 1 , F.R. Cavallo<lb/> 2 , C. García<lb/> 3 , F.L. Navarria<lb/> 2 , G. Wolf<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Sleptons and neutralinos were searched for in the context of scenarios where the<lb/> lightest supersymmetric particle is the gravitino. It was assumed that the stau is the<lb/> next-to-lightest supersymmetric particle. Data collected with the DELPHI detector<lb/> at centre-of-mass energies of 192, 196, 200 and 202 GeV were analysed combining<lb/> the methods developed in previous searches at lower energies. No evidence for the<lb/> production of these supersymmetric particles was found. Hence, limits were derived<lb/> at 95% confidence level.<lb/></div>
+
+	<note type="submission"> Paper submitted to the Moriond Conference 2000<lb/></note>
+
+	<byline>
+	<affiliation>1 CERN,</affiliation>
+	</byline>
+
+	<address>CH-1211 Geneva 23, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>2 INFN,</affiliation>
+	</byline>
+
+	<address>Bologna, V. le Berti Pichat 6/2, I00126 Bologna, Italy<lb/></address>
+
+	<byline>
+	<affiliation>3 IFIC,</affiliation>
+	</byline>
+
+	<address>Avda. Dr. Molliner 50, Burjassot 46100, Valencia, Spain<lb/></address>
+
+		</front>
+	</text>
+</tei>
