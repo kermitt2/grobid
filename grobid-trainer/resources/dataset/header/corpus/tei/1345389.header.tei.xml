@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345389"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1501.03621v1 [math-ph]</idno>
+
+	<date>15 Jan 2015<lb/></date>
+
+	<docTitle><titlePart>Classification of multipartite systems featuring only |W and |GHZ genuine<lb/> entangled states<lb/></titlePart></docTitle>
+
+	<byline><docAuthor> Frédéric Holweck<lb/> a) , Péter Lévay<lb/> b)c)<lb/></docAuthor></byline>
+
+	<div type="abstract"> In this paper we present several multipartite quantum systems featuring the same<lb/> type of genuine (tripartite) entanglement. Based on a geometric interpretation of the<lb/> so-called |W and |GHZ states we show that the classification of all multipartite<lb/> systems featuring those and only those two classes of genuine entanglement can be<lb/> deduced from earlier work of algebraic geometers. This classification corresponds in<lb/> fact to classification of fundamental subadjoint varieties and establish a connection<lb/> between those systems, well known in Quantum Information Theory and fundamental<lb/> simple Lie algebras.<lb/></div>
+
+	<email>a) frederic.holweck@utbm.fr</email>
+
+	<byline>
+	<affiliation>, Laboratoire IRTES-M3M, Université de Technologie de Belfort-Montbéliard,<lb/></affiliation>
+	</byline>
+
+	<address>90010 Belfort Cedex, France<lb/></address>
+
+	<email>b) levay@phy.bme.hu,</email>
+
+	<byline>
+	<affiliation>Department of Theoretical Physics, Institute of Physics, Budapest University of Tech-<lb/>nology and Economics ,</affiliation>
+	</byline>
+
+	<address>H-1521 Budapest, Hungary<lb/></address>
+
+	<byline>
+	<affiliation>c) Hungarian Academy of Sciences<lb/></affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

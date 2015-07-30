@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1336700"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1410.1182v1 [math.AG]</idno>
+
+	<date>5 Oct 2014<lb/></date>
+
+	<docTitle>
+	<titlePart>A GENERALIZED QUOT SCHEME AND MEROMORPHIC VORTICES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>INDRANIL BISWAS, AJNEET DHILLON, JACQUES HURTUBISE,<lb/> AND RICHARD A. WENTWORTH<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. Let X be a compact connected Riemann surface. Fix a positive integer r<lb/> and two nonnegative integers d p and d z . Consider all pairs of the form (F , f ), where F<lb/> is a holomorphic vector bundle on X of rank r and degree d z − d p , and<lb/> f : O<lb/> ⊕r<lb/> X −→ F<lb/> is a meromorphic homomorphism which an isomorphism outside a finite subset of X<lb/> and has pole (respectively, zero) of total degree d p (respectively, d z ). Two such pairs<lb/> (F 1 , f 1 ) and (F 2 , f 2 ) are called isomorphic if there is a holomorphic isomorphism of F 1<lb/> with F 2 over X that takes f 1 to f 2 . We construct a natural compactification of the<lb/> moduli space equivalence classes pairs of the above type. The Poincaré polynomial of<lb/> this compactification is computed.<lb/></div>
+
+	<keywords type="classes"> 2000 Mathematics Subject Classification. 14H60, 14D21, 14D23. <lb/></keywords>
+
+	<keywords> Key words and phrases. Generalized Quot scheme, meromorphic vortices, moduli space, Poincaré <lb/>polynomial. <lb/></keywords>
+
+	<byline><affiliation> School of Mathematics, Tata Institute of Fundamental Research, Homi Bhabha Road, <lb/></affiliation></byline>
+
+	<address>Bombay 400005, India <lb/></address>
+
+	<email> E-mail address: indranil@math.tifr.res.in <lb/></email>
+
+	<byline><affiliation> Department of Mathematics, Middlesex College, University of Western Ontario, Lon-<lb/>don,</affiliation></byline>
+
+	<address> ON N6A 5B7, Canada <lb/></address>
+
+	<email> E-mail address: adhill3@uwo.ca <lb/></email>
+
+	<byline><affiliation> Department of Mathematics, McGill University,</affiliation></byline>
+
+	<address> Burnside Hall, 805 Sherbrooke St. <lb/>W., Montreal, Que. H3A 0B9, Canada <lb/></address>
+
+	<email> E-mail address: jacques.hurtubise@mcgill.ca <lb/></email>
+
+	<byline><affiliation> Department of Mathematics, University of Maryland,</affiliation></byline>
+
+	<address> College Park, MD 20742, USA <lb/></address>
+
+	<email> E-mail address: raw@umd.edu </email>
+
+		</front>
+	</text>
+</tei>

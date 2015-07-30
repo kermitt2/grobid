@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1358320"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<reference>Physica Scripta. Vol. 21, 708-713, 1980<lb/></reference>
+
+	<docTitle>
+	<titlePart>Residual Fluctuations in the Matter and Radiation Distribution<lb/> After the Oecoupling Epoch<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Joseph Silk<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Astronomy Dept., University of California, Berkeley,</affiliation>
+	</byline>
+
+	<address>Calif. 94720, U.S.A.<lb/></address>
+
+	<note type="other">and<lb/></note>
+
+	<byline>
+	<docAuthor>Michael L. Wilson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Physics Dept., University of California, Berkeley,</affiliation>
+	</byline>
+
+	<address>Calif. 94720, U.S.A.<lb/></address>
+
+	<note type="submission">Received August 31, 1979<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Residual fluctuations in the matter and radiation distribution after the<lb/> decoupling epoch.</div>
+
+	<byline>
+	<affiliation>Joseph Silk (Astronomy Department, University of<lb/> California, Berkeley,</affiliation>
+	</byline>
+
+	<address>Calif. 94720, U.S.A.); and </address>
+
+	<byline>
+	<docAuthor>Michael L. Wilson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>(Physics Department, University of California, Berkeley,</affiliation>
+	</byline>
+
+	<address>Calif. 94720,<lb/> U.S.A.</address>
+
+	<reference>).<lb/> Physica Scripta (Sweden) 21, 708-713, 1980.<lb/></reference>
+
+	<div type="abstract">The residual spectra of matter and radiation fluctuations in the early uni-<lb/>verse are investigated. We study the evolution of primordial adiabatic and<lb/> isothermal fluctuations through the decoupling epoch. Amplification of<lb/> adiabatic density fluctuations during decoupling, or velocity &quot; overshoot &quot; ,<lb/> is largely suppressed by Compton drag. Consequently, the amplitude of<lb/> density fluctuations entering the horizon prior to decoupling is larger<lb/> than hitherto assumed in the adiabatic theory. Damping of primordial<lb/> adiabatic density fluctuations by an order of magnitude occurs on mass-<lb/>scales of 3 x 1oi3&amp;fD ( a = 1) or 1 0 1 4 ~ 0<lb/> ( a = 0.2).<lb/> Comparison of the residual radiation fluctuations with observational<lb/> limits indicates that the adiabatic theory is only acceptable if re-ionization<lb/> of the intergalactic medium results in additional scattering of the radiation<lb/> after decoupling. Primordial isothermal fluctuations are found to yield<lb/> radiation fluctuations which are insensitive to the assumed spectrum and<lb/> lie a factor -5 below current limits.<lb/></div>
+
+		</front>
+	</text>
+</tei>

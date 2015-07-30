@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1357816"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1503.08530v1 [math.DG]</idno>
+
+	<date>30 Mar 2015<lb/></date>
+
+	<docTitle>
+	<titlePart>ON THE K ¨<lb/> AHLER STRUCTURES OVER QUOT SCHEMES, II<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>INDRANIL BISWAS AND HARISH SESHADRI<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. Let X be a compact connected Riemann surface of genus g, with g ≥ 2,<lb/> and let O X denote the sheaf of holomorphic functions on X. Fix positive integers r and<lb/> d and let Q(r, d) be the Quot scheme parametrizing all torsion coherent quotients of O<lb/> ⊕r<lb/> X<lb/> of degree d. We prove that Q(r, d) does not admit a Kähler metric whose holomorphic<lb/> bisectional curvatures are all nonnegative.<lb/></div>
+
+	<keywords type="classes"> 2000 Mathematics Subject Classification. 14H60, 32Q10, 14H81. <lb/></keywords>
+
+	<keywords> Key words and phrases. Quot scheme, holomorphic bisectional curvature, automorphism, Albanese <lb/>map. <lb/></keywords>
+
+	<byline><affiliation>School of Mathematics, Tata Institute of Fundamental Research,</affiliation></byline>
+
+	<address> Homi Bhabha Road, <lb/>Bombay 400005, India <lb/></address>
+
+	<email> E-mail address: indranil@math.tifr.res.in <lb/></email>
+
+	<byline><affiliation> Indian Institute of Science, Department of Mathematics,</affiliation></byline>
+
+	<address> Bangalore 560003, India <lb/></address>
+
+	<email> E-mail address: harish@math.iisc.ernet.in </email>
+
+		</front>
+	</text>
+</tei>

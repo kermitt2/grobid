@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1332967"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>HIGHER ORDER MODES DAMPING FOR 9-CELL STRUCTURE WITH<lb/> MODIFIED DRIFT TUBE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Mitrofanov, Ya.Shashkov, N. Sobenin,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Research Nuclear University MEPhI<lb/> (Moscow Engineering Physics Institute),</affiliation>
+	</byline>
+
+	<address>Moscow, Russia,<lb/></address>
+
+	<byline><docAuthor> V. Zvyagintsev,</docAuthor></byline>
+
+	<affiliation> TRIUMF,</affiliation>
+
+	<address> Canada, Vancouver<lb/></address>
+
+	<div type="abstract">Abstract<lb/> This paper is focused on HOM damping in 9-cell<lb/> superconducting cavities. We are considering HOM<lb/> propagation outside from the cavity ridged and fluted drift<lb/> tubes. The analysis of the influence of the parameters of<lb/> the drift tube on the HOM damping was conducted. The<lb/> considered methods were analysed and compared.<lb/></div>
+
+	<note type="other"> ____________________________________________ <lb/></note>
+
+	<note type="grant"> *Work supported by RFBR grant 13-02-00562/14 <lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1343231"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1411.7293v1 [quant-ph]</idno>
+
+	<date>26 Nov 2014<lb/></date>
+
+	<docTitle>
+	<titlePart>Information processing with Page–Wootters states<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stam Nicolis<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> CNRS–Laboratoire de Mathématiques et Physique Théorique (UMR 7350)<lb/> Fédération de Recherche &quot; Denis Poisson &quot; (FR 2964)<lb/> Département de Physique<lb/> Université &quot; François Rabelais &quot; de Tours<lb/></affiliation>
+	</byline>
+
+	<address>Parc Grandmont, Tours 37200, France<lb/></address>
+
+	<div type="abstract">Abstract<lb/> In order to perceive that a physical system evolves in time, two requirements must be<lb/> met: (a) it must be possible to define a &quot; clock &quot; and (b) it must be possible to make a<lb/> copy of the state of the system, that can be reliably retrieved to make a comparison. We<lb/> investigate what constraints quantum mechanics poses on these issues, in light of recent<lb/> experiments with entangled photons.<lb/></div>
+
+	<email>1  E-Mail: Stam.Nicolis@lmpt.univ-tours.fr <lb/></email>
+
+		</front>
+	</text>
+</tei>

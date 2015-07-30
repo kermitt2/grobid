@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1353185"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">2nd Reading<lb/> February 9, 2015 16:23 WSPC/S0218-3013<lb/> 143-IJMPE<lb/> 1550008<lb/></note>
+
+	<reference>International Journal of Modern Physics E<lb/> Vol. 24, No. 2 (2015) 1550008 (17 pages)<lb/></reference>
+
+	<note type="copyright">c<lb/> World Scientific Publishing Company<lb/></note>
+
+	<idno>DOI: 10.1142/S0218301315500081<lb/></idno>
+
+	<docTitle>
+	<titlePart>A combination of hadronic form factors for modeling<lb/> the kaon photoproduction process γp → K<lb/> + Λ<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>L. Syukurilla and T. Mart *<lb/></docAuthor>
+	</byline>
+
+	<address>Departemen Fisika, FMIPA,<lb/> Universitas Indonesia, Depok 16424, Indonesia<lb/></address>
+
+	<email>* tmart@fisika.ui.ac.id<lb/></email>
+
+	<note type="submission">Received 9 November 2014<lb/> Revised 16 December 2014<lb/> Accepted 9 January 2015<lb/> Published 11 February 2015<lb/></note>
+
+	<div type="abstract">We have phenomenologically investigated the kaon photoproduction process γp → K + Λ<lb/> by combining different types of hadronic form factors (HFFs) inside a covariant isobar<lb/> model. We obtained the best model with the smallest χ 2 /N by using the dipole form<lb/> factor in the Born terms and a combination of the dipole, Gaussian, as well as generalized<lb/> dipole form factors in the hadronic vertices of the nucleon, kaon and hyperon resonances.<lb/> By utilizing this model we found that the experimental data used in the analysis are<lb/> internally consistent, whereas the behavior of differential cross-section at forward angles<lb/> is not significantly affected by the variation of hadronic coupling constants (CCs) and<lb/> form factor cutoffs in the model.<lb/></div>
+
+	<keyword>Keywords: Kaon; hadronic form factor; photoproduction.<lb/></keyword>
+
+	<reference>PACS Number(s): 13.60.Le, 25.20.Lj, 14.20.Gk<lb/></reference>
+
+		</front>
+	</text>
+</tei>

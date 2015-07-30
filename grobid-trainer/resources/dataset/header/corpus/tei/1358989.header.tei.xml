@@ -1,0 +1,1175 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1358989"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Società Italiana<lb/> di Fisica<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Zsolt Fülöp<lb/> ATOMKI<lb/> P.O.B</docAuthor>
+	</byline>
+
+	<address>. 51<lb/> H-4001, Debrecen, Hungary<lb/></address>
+
+	<email>fulop@atomki.hu<lb/></email>
+
+	<byline>
+	<affiliation>György Gyürky<lb/></affiliation>
+	</byline>
+
+	<address>ATOMKI<lb/> P.O.B. 51<lb/> H-4001, Debrecen, Hungary<lb/></address>
+
+	<email>gyurky@atomki.hu<lb/></email>
+
+	<byline>
+	<affiliation>Endre Somorjai<lb/></affiliation>
+	</byline>
+
+	<address>ATOMKI<lb/> P.O.B. 51<lb/> H-4001, Debrecen, Hungary<lb/></address>
+
+	<email>somorjai@atomki.hu<lb/></email>
+
+	<div type="abstract">The articles in this book originally appeared on the internet (www.eurphysj.org) as open access<lb/> publication of the journal<lb/> The European</div>
+
+	<reference>Physical Journal A – Hadrons and Nuclei<lb/> Volume 27, Supplement 1<lb/> ISSN 1434-601X<lb/> c<lb/> SIF and Springer-Verlag Berlin Heidelberg 2006<lb/></reference>
+
+	<docTitle>
+	<titlePart>Cataloging-in-Publication Data applied for<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Bibliographic information published by Die Deutsche Bibliothek. Die Deutsche Bibliothek lists this<lb/> publication in the Deutsche Nationalbibliografie; detailed bibliographic data is available in the Internet at<lb/></note>
+
+	<ptr type="web">http://dnb.ddb.de<lb/></ptr>
+
+	<idno>ISBN-10 3-540-32842-</idno>
+
+	<byline>
+	<docAuthor>4 Springer Berlin Heidelberg New York<lb/></docAuthor>
+	</byline>
+
+	<idno>ISBN-13 978-3-540-32842-1</idno>
+
+	<note type="copyright">Springer Berlin Heidelberg New York<lb/> Library of Congress Control Number: 2006921998<lb/> This work is subject to copyright. All rights reserved, whether the whole or part of the material is concerned</note>
+
+	<div type="abstract">,<lb/> specifically the rights of translation, reprinting, reuse of illustrations, recitation, broadcasting, reproduction<lb/> on microfilm or in any other way, and storage in data banks. Duplication of this publication or parts thereof<lb/> is permitted only under the provisions of the German Copyright Law of September 9, 1965, in its current<lb/> version, and permission for use must always be obtained from SIF and Springer. Violations are liable for<lb/> prosecution under the German Copyright Law.<lb/> Springer is a part of Springer Science+Business Media<lb/> springer.com<lb/> c<lb/> SIF and Springer-Verlag Berlin Heidelberg 2006<lb/> Printed in Italy<lb/> The use of general descriptive names, registered names, trademarks, etc. in this publication does not imply,<lb/> even in the absence of a specific statement, that such names are exempt from the relevant protective laws<lb/> and regulations and therefore free for general use.<lb/></div>
+
+	<keyword>Typesetting and Cover design: SIF Production Office, Bologna, Italy<lb/> Printing and Binding: Tipografia Compositori, Bologna, Italy<lb/></keyword>
+
+	<note type="other">Printed on acid-free paper<lb/> SPIN: 11683636 – 5 4 3 2 1 0<lb/></note>
+
+	<docTitle>
+	<titlePart>NPA-II Organization<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">The 2nd International Conference on Nuclear Physics in Astrophysics, NPA-II, has been organized by<lb/> the Board of the Nuclear Physics Division of the European Physical Society and the Institute of Nuclear<lb/> Research (ATOMKI), Debrecen, Hungary.<lb/></note>
+
+	<docTitle>
+	<titlePart>International<lb/> Advisory<lb/> Committee<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. ARNOULD<lb/> (Brussels)<lb/> R.C. JOHNSON<lb/> (Guildford)<lb/> A. KUGLER<lb/> ( ˇ<lb/> Rež)<lb/> R.G. LOVAS<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>(Debrecen)<lb/></affiliation>
+	</byline>
+
+	<address>Yu</address>
+
+	<reference>.N. NOVIKOV<lb/> (Gatchina)<lb/> B. RUBIO<lb/> (Valencia)<lb/> Z. SUJKOWSKI<lb/> (Swierk)<lb/> F. TERRASI<lb/> (Naples)<lb/> N. VAN GIAI<lb/> (Orsay)<lb/> R. WYSS<lb/> (Stockholm)<lb/></reference>
+
+	<div type="abstract">International<lb/> Organizing<lb/> Committee<lb/> C. ANGULO<lb/> (Louvain-la-Neuve)<lb/> N. AUERBACH<lb/> (Tel-Aviv)<lb/> E. GROSSE<lb/> (Dresden)<lb/> K. LANGANKE<lb/> (Aarhus)<lb/> M. LEWITOWICZ<lb/> (Caen)<lb/> C. ROLFS (Chairman)<lb/> (Bochum)<lb/> O. SCHOLTEN<lb/> (Groningen)<lb/> E. SOMORJAI<lb/> (Debrecen)<lb/> C. SPITALERI<lb/> (Catania)<lb/> K. S ¨<lb/> UMMERER<lb/> (Darmstadt)<lb/></div>
+
+	<docTitle>
+	<titlePart>Local<lb/> Organizing<lb/> Committee<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Zs. F ¨<lb/> UL¨OP<lb/> (Chairman)<lb/> Z. ELEKES<lb/> Gy. GY¨URKY<lb/> G.G. KISS<lb/></docAuthor>
+	</byline>
+
+	<email>E. SOMORJAI<lb/></email>
+
+	<docTitle>
+	<titlePart>NPA-II Sponsors<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">HUNGARIAN ACADEMY OF SCIENCES<lb/> EPS YOUNG PHYSICISTS FUND<lb/> EPS EAST WEST TASK FORCE<lb/> PAKS NUCLEAR POWER PLANT<lb/></note>
+
+	<docTitle>
+	<titlePart>The European Physical Journal A<lb/> Volume 27 @BULLET Supplement 1 @BULLET 2006<lb/> List of participants<lb/> Foreword<lb/> Big-Bang Nucleosynthesis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>3 B.D. Fields<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Big bang nucleosynthesis in the new cosmology<lb/> Neutrino Physics<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>17 S.J.M. Peeters<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Salty neutrinos from the Sun<lb/> Results from the salt phase of the Sudbury Neutrino Obser-<lb/>vatory<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>25 S. Pirro<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Prospects in double beta decay searches<lb/> 35 R. Bernabei et al.<lb/></note>
+
+	<docTitle>
+	<titlePart>Search for rare processes with DAMA/LXe experi-<lb/>ment at Gran Sasso<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>43 N. Jachowicz and G.C. McLaughlin<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">On the importance of low-energy beta beams for su-<lb/>pernova neutrino physics<lb/> 49 L. Mornas<lb/> Neutrino-nucleon scattering rates in protoneutron<lb/> stars and nuclear correlations in the spin S = 1<lb/> channel<lb/> 57 R. Bernabei et al.<lb/> From DAMA/NaI to DAMA/LIBRA at LNGS<lb/> 63 L. Lukaszuk et al.<lb/> Searching for Majorana neutrinos with double beta<lb/> decay and with beta beams<lb/> 67 B. Mosconi et al.<lb/> Interactions of the solar neutrinos with the deuterons<lb/> Non-explosive Nucleosynthesis<lb/> 75 P. Mohr et al.<lb/> Relation between the<lb/> 16 O(α, γ)<lb/> 20 Ne reaction and its<lb/> reverse<lb/> 20 Ne(γ, α)<lb/> 16 O reaction in stars and in the lab-<lb/>oratory<lb/> 79 F. Raiola et al.<lb/> Enhanced d(d,p)t fusion reaction in metals<lb/> 83 K. Czerski et al.<lb/> Experimental and theoretical screening energies for<lb/> the<lb/> 2 H(d, p)<lb/> 3 H reaction in metallic environments<lb/> 89 S. Kimura et al.<lb/> Influence of chaos on the fusion enhancement by elec-<lb/>tron screening<lb/> Explosive Nucleosynthesis<lb/> 97 D.W. Bardayan<lb/> Recent astrophysical studies with exotic beams at<lb/> ORNL<lb/> VI<lb/> 107 J. José and M. Hernanz<lb/> Beacons in the sky: Classical novae vs. X-ray bursts<lb/> 117 D.G. Jenkins et al.<lb/> Re-evaluating reaction rates relevant to nova nucle-<lb/>osynthesis from a nuclear structure perspective<lb/> 123 T. Hayakawa et al.<lb/> Evidence for p-process nucleosynthesis recorded at<lb/> the Solar System abundances<lb/> 129 I. Dillmann et al.<lb/> (n, γ) cross-sections of light p nuclei<lb/> Towards an updated database for the p process<lb/> 135 M. Erhard et al.<lb/> Photodissociation of p-process nuclei studied by<lb/> bremsstrahlung-induced activation<lb/> 141 Gy. Gyürky et al.<lb/> 106,108 Cd(p, γ)<lb/> 107,109 In cross-sections for the astro-<lb/>physical p-process<lb/> 145 N. ¨<lb/> Ozkan et al.<lb/> A study of alpha capture cross-sections of<lb/> 112 Sn<lb/> 149 K. Sonnabend et al.<lb/> Photodissociation of neutron deficient nuclei<lb/> 153 H. Utsunomiya et al.<lb/> Photonuclear reaction data and γ-ray sources for as-<lb/>trophysics<lb/></div>
+
+	<docTitle>
+	<titlePart>Cross-Section Measurements and Nuclear<lb/> Data for Astrophysics<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>161 D. Bemmerer et al.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The LUNA Collaboration<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">CNO hydrogen burning studied deep underground<lb/> 171 G. Rusev et al.<lb/> Pygmy dipole strength close to particle-separation en-<lb/>ergies —The case of the Mo isotopes<lb/> 177 H. Costantini et al.<lb/> Towards a high-precision measurement of the<lb/> 3 He(α, γ)<lb/> 7 Be cross section at LUNA<lb/> 181 A. Gójska et al.<lb/> Radiative and non-radiative electron capture from<lb/> carbon atoms by relativistic helium ions<lb/> 187 A. Huke et al.<lb/> Evidence for a host-material dependence of the n/p<lb/> branching ratio of low-energy d+d reactions within<lb/> metallic environments<lb/> 193 B.N. Limata et al.<lb/> New measurement of<lb/> 7 Be half-life in different metallic<lb/> environments<lb/> 197 G.G. Kiss et al.<lb/> Study of the<lb/> 106 Cd(α, α)<lb/> 106 Cd scattering at energies<lb/> relevant to the p-process<lb/> 201 M. Yalçınkaya et al.<lb/> Study of fission fragments produced by<lb/> 14 N +<lb/> 235 U<lb/> reaction<lb/> 205 A.M. Mukhamedzhanov et al.<lb/> Indirect techniques in nuclear astrophysics<lb/> Asymptotic Normalization Coefficient and Trojan Horse<lb/> 217´A<lb/>. Horváth et al.<lb/> Can the neutron-capture cross sections be measured<lb/> with Coulomb dissociation?<lb/> 221 S. Romano et al.<lb/> Study of the<lb/> 9 Be(p, α)<lb/> 6 Li reaction via the Trojan<lb/> Horse Method<lb/> 227 K. Sümmerer<lb/> Re-evaluation of the low-energy Coulomb-dissociation<lb/> cross section of<lb/> 8 B and the astrophysical S17 factor<lb/> 233 Y. Togano et al.<lb/> Study of the<lb/> 26 Si(p, γ)<lb/> 27 P reaction through Coulomb<lb/> dissociation of<lb/> 27 P<lb/> VII<lb/> 237 L. Trache et al.<lb/> Breakup of loosely bound nuclei as indirect method<lb/> in nuclear astrophysics:<lb/> 8 B,<lb/> 9 C,<lb/> 23 Al<lb/> 243 A. Tumino et al.<lb/> Validity test of the Trojan Horse Method applied to<lb/> the<lb/> 7 Li + p → α + α reaction via the<lb/> 3 He break-up<lb/> 249 M. La Cognata et al.<lb/> Indirect measurement of the<lb/> 15 N(p, α)<lb/> 12 C reaction<lb/> cross section through the Trojan-Horse Method<lb/> Nuclear Structure Far from Stability<lb/> 257 H. Grawe et al.<lb/> Nuclear structure far off stability —Implications for<lb/> nuclear astrophysics<lb/> 269 N.K. Timofeyuk et al.<lb/> Relation between proton and neutron asymptotic nor-<lb/>malization coefficients for light mirror nuclei and its<lb/> relevance for nuclear astrophysics<lb/> 277 G. Lévai and P.O. Hess<lb/> A simple interpretation of global trends in the lowest<lb/> levels of p-and sd-shell nuclei<lb/> 283 C. Nociforo et al.<lb/> Exploring the Nα + 3n light nuclei via the (<lb/> 7 Li,<lb/> 7 Be)<lb/> reaction<lb/> 289 A. Lavagno and G. Pagliara<lb/> Equation of state of strongly interacting matter in<lb/> compact stars<lb/> 295 N.P. Andreeva et al.<lb/> Clustering in light nuclei in fragmentation above<lb/> 1 A GeV<lb/> 301 N.H. Allal et al.<lb/> Effects of the particle-number projection on the<lb/> isovector pairing energy<lb/> Rare-Ion Beam Facilities and Experiments<lb/> 309 L. Gaudefroy et al.<lb/> Study of the N = 28 shell closure in the Ar isotopic<lb/> chain<lb/> A SPIRAL experiment for nuclear astrophysics<lb/> 315 G. Ruprecht et al.<lb/> Status of the TRIUMF annular chamber for the track-<lb/>ing and identification of charged particles (TACTIC)<lb/> 321 Z. Elekes et al.<lb/> Testing of the RIKEN-ATOMKI CsI(Tl) array in the<lb/> study of<lb/> 22,23 O nuclear structure<lb/> Perspectives of Nuclear Physics and<lb/> Astrophysics<lb/> 327 S. Kubono et al.<lb/> Nuclear astrophysics at the east drip line<lb/> 333 D. Chmielewska and Z. Sujkowski<lb/> Radiative electron capture —A tool to detect He<lb/> ++<lb/> in space<lb/> 337 A. Wallner et al.<lb/> AMS —A powerful tool for probing nucleosynthesis<lb/> via long-lived radionuclides<lb/></div>
+
+	<note type="other">Author index<lb/></note>
+
+	<docTitle>
+	<titlePart>List of participants<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>N.H. Allal<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratoire de Physique<lb/> Theorique Faculte de Physique USTHB<lb/> Algeria<lb/></affiliation>
+	</byline>
+
+	<email>allaln@yahoo.com<lb/></email>
+
+	<byline>
+	<docAuthor>N. Auerbach<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Tel Aviv University<lb/> School of Physics and Astronomy<lb/></affiliation>
+	</byline>
+
+	<address>Tel Aviv, 69978 Israel<lb/></address>
+
+	<email>auerbach@post.tau.ac.il<lb/></email>
+
+	<byline>
+	<docAuthor>J. ¨<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Aystö<lb/> Department of Physics<lb/> University of Jyväskylä<lb/></affiliation>
+	</byline>
+
+	<address>P.O.B. 35 (YFL), FIN-40014 , Finland<lb/></address>
+
+	<email>juha.aysto@phys.jyu.fi<lb/></email>
+
+	<byline>
+	<docAuthor>D. Bardayan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Oak Ridge National Laboratory<lb/></affiliation>
+	</byline>
+
+	<address>Physics Division P.O.B. 2008 Bldg 6025,<lb/> MS-6354 Oak Ridge, TN 37831-6354, USA<lb/></address>
+
+	<email>bardayan@mail.phy.ornl.gov<lb/></email>
+
+	<byline>
+	<docAuthor>W. Beiglböck<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Springer-Verlag Heidelberg, Physics Editorial<lb/></affiliation>
+	</byline>
+
+	<address>Tiergartenstr. 17, D-69121 Heidelberg, Germany<lb/></address>
+
+	<email>beiglboeck@springer.de<lb/></email>
+
+	<byline>
+	<docAuthor>D. Bemmerer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>INFN Sezione di Padova<lb/></affiliation>
+	</byline>
+
+	<address>Via Marzolo 8, I-35131 Padova, Italy<lb/></address>
+
+	<email>bemmerer@pd.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>P.F. Bortignon<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dipartimento di Fisica, Università di Milano,<lb/> and Istituto Nazionale di Fisica Nucleare<lb/></affiliation>
+	</byline>
+
+	<address>Via Celoria 16, I-20133 Milano, Italy<lb/></address>
+
+	<email>pierfrancesco.bortignon@mi.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>R. Cerulli<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>INFN -Laboratori Nazionali del Gran Sasso<lb/></affiliation>
+	</byline>
+
+	<address>S.S. 17 bis km. 18.910, I-67010<lb/> Assergi, L&apos;Aquila, Italy<lb/></address>
+
+	<email>riccardo.cerulli@lngs.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>D. Chmielewska<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute for Nuclear Studies (IPJ)<lb/></affiliation>
+	</byline>
+
+	<address>05- 400´Swierk<lb/>, Poland<lb/></address>
+
+	<email>danka@ipj.gov.pl<lb/></email>
+
+	<byline>
+	<docAuthor>H. Costantini<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Università di Genova and<lb/> INFN, Department of Physics<lb/></affiliation>
+	</byline>
+
+	<address>Via Dodecaneso 33, I-16142 Genova, Italy<lb/></address>
+
+	<email>costant@ge.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>J. Csikai<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Experimental Physics<lb/> University of Debrecen<lb/></affiliation>
+	</byline>
+
+	<address>Bem tér 18/a, Debrecen, Hungary<lb/></address>
+
+	<email>csikai@delfin.klte.hu<lb/></email>
+
+	<byline>
+	<docAuthor>K. Czerski<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Hahn-Meitner-Institut Berlin<lb/></affiliation>
+	</byline>
+
+	<address>Glienicker Str. 100<lb/> D-14109 Berlin, Germany<lb/></address>
+
+	<email>czerski@hmi.de<lb/></email>
+
+	<byline>
+	<docAuthor>J. Dilling<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>TRIUMF National Laboratory<lb/></affiliation>
+	</byline>
+
+	<address>4004 Wesbrook Mall Vancouver, BC<lb/> V6T 2A3 Canada<lb/></address>
+
+	<email>JDilling@triumf.ca<lb/></email>
+
+	<byline>
+	<affiliation>I. Dillmann<lb/> Institut für Kernphysik<lb/> Forschungszentrum Karlsruhe<lb/> and Universität Basel<lb/> Departement für Physik und Astronomie<lb/></affiliation>
+	</byline>
+
+	<address>Postfach 3640, D-76021 Karlsruhe, Germany<lb/></address>
+
+	<email>iris.dillmann@ik.fzk.de<lb/></email>
+
+	<byline>
+	<affiliation>Z. Elekes<lb/> Institute of Nuclear Research (ATOMKI)<lb/></affiliation>
+	</byline>
+
+	<address>4028 Debrecen Bem tér 18/c, Hungary<lb/></address>
+
+	<email>elekes@atomki.hu<lb/></email>
+
+	<byline>
+	<affiliation>G. Endr˝ odi<lb/> Eötvös University Budapest<lb/></affiliation>
+	</byline>
+
+	<address>Pázmány P. sétány. 1/A<lb/> 1117 Budapest, Hungary<lb/></address>
+
+	<email>endrodigergo@freemail.hu<lb/></email>
+
+	<byline>
+	<docAuthor>B.D. Fields<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departments of Physics and Astronomy<lb/> University of Illinois,</affiliation>
+	</byline>
+
+	<address>Urbana<lb/> IL 61801, USA<lb/></address>
+
+	<email>bdfields@uiuc.edu<lb/></email>
+
+	<reference>X<lb/> The European Physical Journal A<lb/></reference>
+
+	<byline>
+	<docAuthor>A. Formicola<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>INFN -Laboratori Nazionali del Gran Sasso<lb/></affiliation>
+	</byline>
+
+	<address>S.S. 17 bis km. 18.910, I-67010<lb/> Assergi, L&apos;Aquila, Italy<lb/></address>
+
+	<email>formicola@na.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>Zs. Fülöp<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Nuclear Research (ATOMKI)<lb/></affiliation>
+	</byline>
+
+	<address>4028 Debrecen Bem tér 18/c, Hungary<lb/></address>
+
+	<email>fulop@atomki.hu<lb/></email>
+
+	<byline>
+	<affiliation>L. Gaudefroy<lb/> Institut de Physique Nucleaire d&apos;Orsay<lb/></affiliation>
+	</byline>
+
+	<address>15 rue G. Clemenceau<lb/> IPNO -Groupe NESTER<lb/> 91400 Orsay, France<lb/></address>
+
+	<email>gaudefro@ipno.in2p3.fr<lb/></email>
+
+	<byline>
+	<docAuthor>A. Gójska<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute for Nuclear Studies (IPJ)<lb/></affiliation>
+	</byline>
+
+	<address>05- 400´Swierk<lb/>, Poland<lb/></address>
+
+	<email>gojska@ipj.gov.pl<lb/></email>
+
+	<byline>
+	<docAuthor>H. Grawe<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Gesellschaft für Schwerionenforschung<lb/></affiliation>
+	</byline>
+
+	<address>Planckstr. 1, D-64291 Darmstadt, Germany<lb/></address>
+
+	<email>h.grawe@gsi.de<lb/></email>
+
+	<byline>
+	<docAuthor>E. Grosse<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Kern-und Hadronenphysik<lb/> Forschungszentrum Rossendorf<lb/></affiliation>
+	</byline>
+
+	<address>Postfach 510119, D-01314 Dresden, Germany<lb/></address>
+
+	<email>E.Grosse@fz-rossendorf.de<lb/></email>
+
+	<byline>
+	<affiliation>C. Gustavino<lb/> INFN -Laboratori Nazionali del Gran Sasso<lb/></affiliation>
+	</byline>
+
+	<address>S.S. 17 bis km. 18.910, I-67010<lb/> Assergi, L&apos;Aquila, Italy<lb/></address>
+
+	<email>gustavino@lngs.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>R. T. Güray<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Kocaeli University<lb/></affiliation>
+	</byline>
+
+	<address>41380 Umuttepe, Kocaeli, Turkey<lb/></address>
+
+	<email>tguray@kou.edu.tr<lb/></email>
+
+	<byline>
+	<docAuthor>Gy. Gyürky<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Nuclear Research (ATOMKI)<lb/></affiliation>
+	</byline>
+
+	<address>4028 Debrecen Bem tér 18/c, Hungary<lb/></address>
+
+	<email>gyurky@atomki.hu<lb/></email>
+
+	<byline>
+	<docAuthor>M. Hass<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Weizmann Institute of Science<lb/> Department of Particle Physics<lb/></affiliation>
+	</byline>
+
+	<address>Rehovot 76100, Israel<lb/></address>
+
+	<email>michael.hass@weizmann.ac.il<lb/></email>
+
+	<byline>
+	<docAuthor>T. Hayakawa<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Japan Atomic Energy Research Institute<lb/> Advanced Photon Secience Reserch Center<lb/></affiliation>
+	</byline>
+
+	<address>619-0215 Kizu, Umemidai 8-1, Kyoto, Japan<lb/></address>
+
+	<email>hayakawa@jball4.tokai.jaeri.go.jp<lb/></email>
+
+	<byline>
+	<docAuthor>´<lb/> A. Horváth<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Eötvös University Budapest<lb/></affiliation>
+	</byline>
+
+	<address>Pázmány P. sétány. 1/A<lb/> 1117 Budapest, Hungary<lb/></address>
+
+	<email>akos@ludens.elte.hu<lb/></email>
+
+	<byline>
+	<docAuthor>N. Jachowicz<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Subatomic and Radiation Physics<lb/> Ghent University<lb/></affiliation>
+	</byline>
+
+	<address>Proeftuinstraat 86, B-9000 Gent, Belgium<lb/></address>
+
+	<email>natalie.jachowicz@ugent.be<lb/></email>
+
+	<byline>
+	<docAuthor>D. Jenkins<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics<lb/> University of York<lb/></affiliation>
+	</byline>
+
+	<address>York, YO10 5DD, UK<lb/></address>
+
+	<email>dj4@york.ac.uk<lb/></email>
+
+	<byline>
+	<docAuthor>R.C. Johnson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, University of Surrey<lb/></affiliation>
+	</byline>
+
+	<address>Guildford, Surrey GU2 7XH, UK<lb/></address>
+
+	<email>R.Johnson@Surrey.ac.uk<lb/></email>
+
+	<byline>
+	<docAuthor>J. José<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut d&apos;Estudis Espacials de Catalunya<lb/> C. Gran Capita</affiliation>
+	</byline>
+
+	<address>2-4, Ed. Nexus 201<lb/> E-08034 Barcelona, Spain<lb/></address>
+
+	<email>jjose@ieec.fcr.es<lb/></email>
+
+	<byline>
+	<docAuthor>A. Junghans<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Kern-und Hadronenphysik<lb/> Forschungszentrum Rossendorf<lb/></affiliation>
+	</byline>
+
+	<address>Postfach 510119, D-01314 Dresden, Germany<lb/></address>
+
+	<email>a.junghans@fz-rossendorf.de<lb/></email>
+
+	<byline>
+	<docAuthor>T. Kajino<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Astronomical Observatory<lb/> University of Tokyo</affiliation>
+	</byline>
+
+	<address>2-21-1 Osawa<lb/> Mitaka Tokyo 181-8588, Japan<lb/></address>
+
+	<email>kajino@nao.ac.jp<lb/></email>
+
+	<byline>
+	<affiliation>List of participants<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>XI<lb/> F. Käppeler<lb/> Forschungszentrum Karlsruhe<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Kernphysik<lb/></affiliation>
+	</byline>
+
+	<address>Postfach 3640, D-76021 Karlsruhe, Germany<lb/></address>
+
+	<email>franz.kaeppeler@ik.fzk.de<lb/></email>
+
+	<byline>
+	<affiliation>K.-U. Kettner<lb/> Ruhr-Universität Bochum<lb/> Institut für Experimentalphysik III<lb/></affiliation>
+	</byline>
+
+	<address>Universitätsstr. 150<lb/> D-44780 Bochum, Germany<lb/></address>
+
+	<email>kettner@warpserv.fh-bielefeld.de<lb/></email>
+
+	<byline>
+	<docAuthor>S. Kimura<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>INFN-LNS<lb/></affiliation>
+	</byline>
+
+	<address>Via Santa Sofia, 62, I-95123 Catania, Italy<lb/></address>
+
+	<email>kimura@lns.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>G.G. Kiss<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Nuclear Research (ATOMKI)<lb/></affiliation>
+	</byline>
+
+	<address>4028 Debrecen Bem tér 18/c, Hungary<lb/></address>
+
+	<email>ggkiss@atomki.hu<lb/></email>
+
+	<byline>
+	<docAuthor>J. Klug<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Ruhr-Universität Bochum<lb/> Institut für Experimentalphysik III<lb/></affiliation>
+	</byline>
+
+	<address>Universitätsstr. 150<lb/> D-44780 Bochum, Germany<lb/></address>
+
+	<email>klug@ep3.rub.de<lb/></email>
+
+	<byline>
+	<docAuthor>S. Kubono<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Center for Nuclear Study, University of Tokyo<lb/></affiliation>
+	</byline>
+
+	<address>Hirosawa 2-1, Wako, Saitama, 351-0198 Japan<lb/></address>
+
+	<email>kubono@cns.s.u-tokyo.ac.jp<lb/></email>
+
+	<byline>
+	<docAuthor>Y.K. Kwon<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Chung-Ang University<lb/></affiliation>
+	</byline>
+
+	<address>221 Huksuk-Dong, Dongjak-ku Seoul<lb/> 156-756 Korea<lb/></address>
+
+	<email>ykkwon11@hanmail.net<lb/></email>
+
+	<byline>
+	<docAuthor>G. Lévai<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Nuclear Research (ATOMKI)<lb/></affiliation>
+	</byline>
+
+	<address>4028 Debrecen Bem tér 18/c, Hungary<lb/></address>
+
+	<email>levai@atomki.hu<lb/></email>
+
+	<byline>
+	<docAuthor>B-A. Li<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics<lb/> Arkansas State University<lb/></affiliation>
+	</byline>
+
+	<address>P.O.B. 419, AR 72467-0419 USA<lb/></address>
+
+	<email>Bali@astate.edu<lb/></email>
+
+	<byline>
+	<docAuthor>B.N. Limata<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Università Federico II di Napoli<lb/> and INFN Sezione di Napoli<lb/> Complesso Universitario Monte Sant&apos;Angelo<lb/></affiliation>
+	</byline>
+
+	<address>Via Cintia, I-80126 Napoli, Italy<lb/></address>
+
+	<email>limata@na.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>R.G. Lovas<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Nuclear Research (ATOMKI)<lb/></affiliation>
+	</byline>
+
+	<address>4028 Debrecen Bem tér 18/c, Hungary<lb/></address>
+
+	<email>rgl@atomki.hu<lb/></email>
+
+	<byline>
+	<docAuthor>G. Martinez-Pinedo<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>ICREA and<lb/> Institut d&apos;Estudis Espacials de Catalunya<lb/> Universitat Autonoma de Barcelona<lb/> Torre C-5 parell,</affiliation>
+	</byline>
+
+	<address>planta 2<lb/> E-08193 Bellaterra, Spain<lb/></address>
+
+	<email>martinez@ieec.uab.es<lb/></email>
+
+	<byline>
+	<docAuthor>A. Mengoni<lb/></docAuthor>
+	</byline>
+
+	<address>CERN<lb/> CH-1211 Geneve, 23 Switzerland<lb/></address>
+
+	<email>alberto.mengoni@cern.ch<lb/></email>
+
+	<byline>
+	<docAuthor>J.Y. Moon<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Chung-Ang University<lb/></affiliation>
+	</byline>
+
+	<address>221 Huksuk-Dong, Dongjak-ku Seoul<lb/> 156-756 Korea<lb/></address>
+
+	<email>jymoon70@hanmail.net<lb/></email>
+
+	<byline>
+	<affiliation>L. Mornas<lb/> Departamento de Fisica, Universidad de Oviedo<lb/></affiliation>
+	</byline>
+
+	<address>Avda Calvo Sotelo, 18<lb/> E-33007 Oviedo (Asturias), Spain<lb/></address>
+
+	<email>lysiane@pinon.ccu.uniovi.es<lb/></email>
+
+	<byline>
+	<docAuthor>A. Mukhamedzhanov<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Cyclotron Institute, Texas A&amp;M University<lb/></affiliation>
+	</byline>
+
+	<address>College Station, TX 77843-3366, USA<lb/></address>
+
+	<email>akram@comp.tamu.edu<lb/></email>
+
+	<byline>
+	<docAuthor>C. Nociforo<lb/> GSI, Darmstadt<lb/> Planckstr. 1</docAuthor>
+	</byline>
+
+	<address>, 64291 Darmstadt, Germany<lb/></address>
+
+	<email>c.nociforo@gsi.de<lb/></email>
+
+	<byline>
+	<affiliation>XII<lb/> The European Physical Journal A<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>F. Nozzoli<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dipartimento di Fisica<lb/> Università di Roma &quot; Tor Vergata &quot;<lb/> and INFN Sezione di Roma 2<lb/></affiliation>
+	</byline>
+
+	<address>Via della Ricerca Scientifica 1<lb/> I-00133 Rome, Italy<lb/></address>
+
+	<email>Francesco.Nozzoli@roma2.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>N. ¨<lb/> Ozkan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Kocaeli University<lb/></affiliation>
+	</byline>
+
+	<address>41380 Umuttepe, Kocaeli, Turkey<lb/></address>
+
+	<email>nozkan@kou.edu.tr<lb/></email>
+
+	<byline>
+	<docAuthor>G. Pagliara<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dipartimento di Fisica, Politecnico di Torino<lb/> and INFN Sezione di Ferrara<lb/></affiliation>
+	</byline>
+
+	<address>Via Paradiso 12, I-44100 Ferrara, Italy<lb/></address>
+
+	<email>pagliara@fe.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>S.J.M. Peeters<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Oxford<lb/></affiliation>
+	</byline>
+
+	<address>The Denys Wilkinson Building, Keble Road<lb/> Oxford OX1 3RH, UK<lb/></address>
+
+	<email>s.peeters1@physics.ox.ac.uk<lb/></email>
+
+	<byline>
+	<docAuthor>S. Pirro<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>INFN Sezione di Milano<lb/></affiliation>
+	</byline>
+
+	<address>P.zza della Scienza 3, I-20126 Milano, Italy<lb/></address>
+
+	<email>Stefano.Pirro@mib.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>R.G. Pizzone<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Università di Catania and LNS-INFN<lb/></affiliation>
+	</byline>
+
+	<address>Via S. Sofia 62, I-95123, Catania, Italy<lb/></address>
+
+	<email>rgpizzone@lns.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>F. Raiola<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Ruhr-Universität Bochum<lb/> Institut für Experimentalphysik III<lb/></affiliation>
+	</byline>
+
+	<address>Universitätsstr. 150<lb/> D-44780 Bochum, Germany<lb/></address>
+
+	<email>raiola@ep3.rub.de<lb/></email>
+
+	<byline>
+	<affiliation>C. Rolfs<lb/> Ruhr-Universität Bochum<lb/> Institut für Experimentalphysik III<lb/></affiliation>
+	</byline>
+
+	<address>Universitätsstr. 150<lb/> D-44780 Bochum, Germany<lb/></address>
+
+	<email>rolfs@ep3.rub.de<lb/></email>
+
+	<byline>
+	<docAuthor>S. Romano<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Università di Catania and LNS-INFN<lb/></affiliation>
+	</byline>
+
+	<address>Via S. Sofia 62, I-95123, Catania, Italy<lb/></address>
+
+	<email>romano@lns.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>G. Ruprecht<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>TRIUMF National Laboratory<lb/></affiliation>
+	</byline>
+
+	<address>4004 Wesbrook Mall Vancouver, BC<lb/> V6T 2A3 Canada<lb/></address>
+
+	<email>ruprecht@triumf.ca<lb/></email>
+
+	<byline>
+	<docAuthor>M.M. Sharma<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Physics Department, Kuwait University<lb/></affiliation>
+	</byline>
+
+	<address>13060 Kuwait<lb/></address>
+
+	<email>sharma@kuc01.kuniv.edu.kw<lb/></email>
+
+	<byline>
+	<docAuthor>E. Somorjai<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Nuclear Research (ATOMKI)<lb/></affiliation>
+	</byline>
+
+	<address>4028 Debrecen Bem tér 18/c, Hungary<lb/></address>
+
+	<email>somorjai@atomki.hu<lb/></email>
+
+	<byline>
+	<docAuthor>K. Sonnabend<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Kernphysik, TU Darmstadt<lb/></affiliation>
+	</byline>
+
+	<address>Schlossgartenstr. 9 D-64289, Darmstadt<lb/> Germany<lb/></address>
+
+	<email>kerstin@ikp.tu-darmstadt.de<lb/></email>
+
+	<byline>
+	<affiliation>C. Spitaleri<lb/> Università di Catania and LNS-INFN<lb/></affiliation>
+	</byline>
+
+	<address>Via S. Sofia 62, I-95123, Catania, Italy<lb/></address>
+
+	<email>spitaleri@lns.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>F. Strieder<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Ruhr-Universität Bochum<lb/> Institut für Experimentalphysik III<lb/></affiliation>
+	</byline>
+
+	<address>Universitätsstr. 150<lb/> D-44780 Bochum, Germany<lb/></address>
+
+	<email>strieder@ep3.rub.de<lb/></email>
+
+	<byline>
+	<docAuthor>J. Stroth<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Kernphysik<lb/></affiliation>
+	</byline>
+
+	<address>Max von Laue-Strasse 1<lb/> D-60438 Frankfurt, Germany<lb/></address>
+
+	<email>j.stroth@gsi.de<lb/></email>
+
+	<byline>
+	<docAuthor>Z. Sujkowski<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The Andrzej Soltan Institute<lb/> for Nuclear Studies (IPJ)<lb/></affiliation>
+	</byline>
+
+	<address>05- 400´Swierk<lb/>, Poland<lb/></address>
+
+	<email>sujkowsk@ipj.gov.pl<lb/></email>
+
+	<byline>
+	<docAuthor>K. Sümmerer<lb/> GSI, Darmstadt<lb/> Planckstr. 1</docAuthor>
+	</byline>
+
+	<address>, D-64291 Darmstadt, Germany<lb/></address>
+
+	<email>k.suemmerer@gsi.de<lb/></email>
+
+	<byline>
+	<affiliation>List of participants<lb/> XIII<lb/> A. Szanto de Toledo<lb/> Departamento de Física Nuclear<lb/> Instituto de Física da Universidade de Sao Paulo<lb/></affiliation>
+	</byline>
+
+	<address>C.P. 66318, 5315-970 Sao Paulo, S.P., Brasil<lb/></address>
+
+	<email>szanto@dfn.if.usp.br<lb/></email>
+
+	<byline>
+	<docAuthor>N. Timofeyuk<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, University of Surrey<lb/></affiliation>
+	</byline>
+
+	<address>Guildford, Surrey GU2 7XH, UK<lb/></address>
+
+	<email>N.Timofeyuk@surrey.ac.uk<lb/></email>
+
+	<byline>
+	<docAuthor>N. Todorovic<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, University of Novi Sad<lb/></affiliation>
+	</byline>
+
+	<address>Trg Dositeja Obradovica 4 21000 Novi Sad<lb/> Serbia and Montenegro<lb/></address>
+
+	<email>zikic@im.ns.ac.yu<lb/></email>
+
+	<byline>
+	<docAuthor>Y. Togano<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Nuclear and Radiation Physics Laboratory<lb/> Department of Physics<lb/> Rikkyo University</affiliation>
+	</byline>
+
+	<address>3-34-1 Nishi-Ikebukuro,<lb/> Toshima, Tokyo 171-8501, Japan<lb/></address>
+
+	<email>toga@ne.rikkyo.ac.jp<lb/></email>
+
+	<byline>
+	<docAuthor>T. Toró<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics<lb/> Western University of Timisoara<lb/></affiliation>
+	</byline>
+
+	<address>str. Beethoven nr. 4<lb/> RO-1900, Timisoara, Romania<lb/></address>
+
+	<email>toro@qusar.uvt.ro<lb/></email>
+
+	<byline>
+	<affiliation>L. Trache<lb/> Cyclotron Institute, Texas A&amp;M University<lb/></affiliation>
+	</byline>
+
+	<address>College Station, TX 77843-3366, USA<lb/></address>
+
+	<email>livius trache@tamu.edu<lb/></email>
+
+	<byline>
+	<docAuthor>E. Truhlík<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Nuclear Physicš<lb/></affiliation>
+	</byline>
+
+	<address>Rež, CZ 250 68, Czech Republic<lb/></address>
+
+	<email>truhlik@ujf.cas.cz<lb/></email>
+
+	<byline>
+	<docAuthor>H. Utsunomiya<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Konan University<lb/></affiliation>
+	</byline>
+
+	<address>8-9-1 Okamoto, Higashinada<lb/> Kobe 658-8501 Japan<lb/></address>
+
+	<email>hiro@konan-u.ac.jp<lb/></email>
+
+	<byline>
+	<docAuthor>E. Vigezzi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>INFN Sezione di Milano<lb/></affiliation>
+	</byline>
+
+	<address>Via Celoria 16, I-20133 Milan, Italy<lb/></address>
+
+	<email>Enrico.vigezzi@mi.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>A. Wallner<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>VERA Laboratory<lb/> Institut für Isotopenforschung und Kernphysik<lb/> Universität Wien<lb/></affiliation>
+	</byline>
+
+	<address>Währinger Strasse 17, A-1090 Wien, Austria<lb/></address>
+
+	<email>anton.wallner@univie.ac.at<lb/></email>
+
+	<byline>
+	<docAuthor>J.L. Weil<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Isotopes<lb/> Chemical Research Center of the<lb/> Hungarian Academy of Sciences<lb/></affiliation>
+	</byline>
+
+	<address>P.O.B. 77 1525 Budapest, Hungary<lb/></address>
+
+	<email>weil@alpha0.iki.kfki.hu<lb/></email>
+
+	<byline>
+	<docAuthor>M. Yalcinkaya<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics<lb/> Istanbul University<lb/></affiliation>
+	</byline>
+
+	<address>34459 Vezneciler, Istanbul, Turkey<lb/></address>
+
+	<email>yalcinm@istanbul.edu.tr<lb/></email>
+
+	<byline>
+	<docAuthor>P. Zarubin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Joint Institute for Nuclear Research<lb/> Dubna,</affiliation>
+	</byline>
+
+	<address>Moscow Region, 141980 Russia<lb/></address>
+
+	<email>zarubin@lhe.jinr.ru<lb/></email>
+
+	<idno>DOI: 10.1140/epja/i2006-08-053-2<lb/></idno>
+
+	<reference>Eur. Phys. J. A 27, s01, XV–XVI (2006)<lb/></reference>
+
+	<div type="abstract">EPJ A direct<lb/> electronic only<lb/> Foreword<lb/> The Nuclear Physics in Astrophysics II Conference was held on May 16-20, 2005, in Debrecen, Hungary, hosted<lb/> by ATOMKI (the Institute of Nuclear Research of the Hungarian Academy of Sciences).<lb/> The first Nuclear Physics in Astrophysics Conference was the 17th Nuclear Physics Divisional Conference of the<lb/> European Physical Society in 2002. Based on the success of the event, the Board of the Nuclear Physics Division<lb/> decided to launch a series of conferences called Nuclear Physics in Astrophysics (NPA) devoted to the interplay<lb/> between nuclear physics and astrophysics. NPA-II, &quot; a Europhysics Conference &quot; was organized under the auspices of<lb/> the Nuclear Physics Board of the European Physical Society as its 20th Divisional Conference.<lb/> Nuclear physics and astrophysics have been strongly linked ever since it was realised that nuclear reactions were<lb/> a key source of energy in stars. There has been a recent resurgence of activity in the field because of technological<lb/> developments which have raised the possibility of measuring rates for nuclear processes which are very relevant to the<lb/> physics of stars and which were previously inaccessible to laboratory measurement. It is fair to say that the issues<lb/> addressed in nuclear astrophysics are some of the most important and fascinating in the whole of science. Many of<lb/> them were discussed at this Conference.<lb/> The program consisted of review talks on recent developments in nuclear astrophysics and selected oral and poster<lb/> contributions on experimental and theoretical results in the following fields:<lb/> – Big-Bang Nucleosynthesis<lb/> – Neutrino Physics<lb/> – Stellar (non-explosive</div>
+
+	<docTitle>
+	<titlePart>) Nucleosynthesis<lb/> – Explosive Nucleosynthesis<lb/> – Cross-Section Measurements and Nuclear Data for Astrophysics<lb/> – Nuclear Structure Far from Stability<lb/> – Rare-Ion-Beam Facilities and Experiments<lb/> – Perspectives of Nuclear Physics and Astrophysics<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">The Editor-in-Chief and the publishers kindly agreed to publish a Topical Volume in EPJAdirect consisting of<lb/> original and refereed papers from the conference as electronic-only supplement to The European Physical Journal A.<lb/> Independently, this Topical Volume will also be made available in book form for the conference participants and<lb/> the library book market. The electronic version of this Topical Volume in EPJAdirect will be open access to everyone<lb/> worldwide without a time limit. Both oral contributions and posters were peer reviewed by a dedicated committee of<lb/> referees. This rigorous refereeing process assured a high scientific standard for accepted papers.<lb/> Nuclear astrophysics is an outstanding example of state-of-the-art interdisciplinary research. The origin of elements<lb/> studied by geologists is explored by astrophysicists using reactions measured by the nuclear-physics community. Low-<lb/>energy reactions also have an impact on solid-state physics. The Nuclear Physics in Astrophysics II Conference provided<lb/> a good opportunity to discuss the progress in various topics of nuclear astrophysics and stimulated new collaborations<lb/> in the field.<lb/> We would like to thank all of those who attended the conference and the International Advisory and Organizing<lb/> Committees for their time and effort.<lb/> XVI<lb/> The conference would not have been a success without the financial help of the host institute ATOMKI, the<lb/> Hungarian Academy of Sciences and the European Physical Society.<lb/> At its meeting in Albena, Bulgaria on 1st October, 2005, the Nuclear Physics Board of EPS recommended that<lb/> the next Nuclear Physics in Astrophysics Conference (NPA-III) be held in Dresden, Germany in the spring of 2007.<lb/></div>
+
+	<byline>
+	<docAuthor>Zs. Fülöp<lb/></docAuthor>
+	</byline>
+
+	<email>(on</email>
+
+	<docTitle>
+	<titlePart>behalf of the NPA-II Local Organizing Committee)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R.C. Johnson<lb/></docAuthor>
+	</byline>
+
+	<note type="other">(on behalf of the EPS Nuclear Physics Board)<lb/></note>
+
+	<byline>
+	<docAuthor>S. Kubono<lb/></docAuthor>
+	</byline>
+
+	<note type="other">(on behalf of the EPJ A Editorial Board)<lb/></note>
+
+	<docTitle>
+	<titlePart>1 Big-Bang Nucleosynthesis<lb/></titlePart>
+	</docTitle>
+
+	<idno>DOI: 10.1140/epja/i2006-08-001-2<lb/></idno>
+
+	<reference>Eur. Phys. J. A 27, s01, 3–14 (2006)<lb/></reference>
+
+	<note type="other">EPJ A direct<lb/> electronic only<lb/></note>
+
+	<docTitle>
+	<titlePart>Big bang nucleosynthesis in the new cosmology<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>B.D. Fields<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a<lb/> Center for Theoretical Astrophysics, Departments of Astronomy and Physics, University of Illinois,</affiliation>
+	</byline>
+
+	<address>Urbana, IL 61801, USA<lb/></address>
+
+	<note type="submission">Received: 30 June 2005 /<lb/></note>
+
+	<note type="other">Published online: 13 February 2006 – c<lb/> Società Italiana di Fisica / Springer-Verlag 2006<lb/></note>
+
+	<div type="abstract">Abstract. Big bang nucleosynthesis (BBN) describes the production of the lightest elements in the first<lb/> minutes of cosmic time. We review the physics of cosmological element production, and the observations<lb/> of the primordial element abundances. The comparison between theory and observation has heretofore<lb/> provided our earliest probe of the universe, and given the best measure of the cosmic baryon content.<lb/> However, BBN has now taken a new role in cosmology, in light of new precision measurements of the cosmic<lb/> microwave background (CMB). Recent CMB anisotropy data yield a wealth of cosmological parameters; in<lb/> particular, the baryon-to-photon ratio η = n B /nγ is measured to high precision. The confrontation between<lb/> the BBN and CMB &quot; baryometers &quot; poses a new and stringent test of the standard cosmology; the status of<lb/> this test is discussed. Moreover, it is now possible to recast the role of BBN by using the CMB to fix the<lb/> baryon density and even some light element abundances. This strategy sharpens BBN into a more powerful<lb/> probe of early universe physics, and of galactic nucleosynthesis processes. The impact of the CMB results<lb/> on particle physics beyond the Standard Model, and on non-standard cosmology, are illustrated. Prospects<lb/> for improvement of these bounds via additional astronomical observations and nuclear experiments are<lb/> discussed, as is the lingering &quot; lithium problem. &quot;<lb/> PACS. 98.80.Ft Origin, formation, and abundances of the elements – 26.35.+c Big Bang nucleosynthesis<lb/></div>
+
+		</front>
+	</text>
+</tei>

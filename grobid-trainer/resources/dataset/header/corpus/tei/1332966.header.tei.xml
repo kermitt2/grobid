@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1332966"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Sanabria JC<lb/> 34<lb/> Rev. Acad. Colomb. Cienc. 38(Supl.):34-55, 2014<lb/></reference>
+
+	<docTitle>
+	<titlePart>Búsquedas de Materia Oscura Supersimétrica en el LHC<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Juan Carlos Sanabria<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departamento de Física, Universidad de Los Andes, </affiliation>
+	</byline>
+
+	<address>Colombia<lb/></address>
+
+	<div type="abstract">Resumen<lb/> La composición microscópica de la materia oscura y la observación directa o indirecta de su presencia, más allá de<lb/> sus efectos gravitacionales, representa uno de los problemas más urgentes que enfrentan la Física de Partículas, la<lb/> Astrofísica y la Cosmología. Desde hace varios años se han llevado a cabo búsquedas experimentales de diversa índole,<lb/> sin ningún resultado concluyente. Toda la evidencia indica que los constituyentes microscópicos de la materia oscura<lb/> no pueden pertenecer al espectro de partículas del Modelo Estándar. Varios modelos teóricos proponen candidatos a ser<lb/> los constituyentes fundamentales de este tipo de materia; entre ellos, algunas versiones de modelos supersimétricos,<lb/> en las cuales los neutralinos más ligeros son estables, masivos, neutros y sin carga de color, haciéndolos excelentes<lb/> candidatos. En los experimentos del LHC se han llevado a cabo búsquedas exhaustivas de partículas supersimétricas<lb/> durante las primeras corridas a energías de 7 y 8 TeV, sin ningún resultado positivo. Estas búsquedas se han concentrado<lb/> en canales de producción fuertes, con gluinos y s-quarks en el estado final. Dados los resultados negativos, es imperativo<lb/> llevar a cabo búsquedas detalladas en canales de producción electro-débiles, en los cuales las partículas supersimétricas<lb/> del estado final deberán ser más ligeras y, por tanto, tener mayor probabilidad de ser observadas, incluyendo los<lb/>neutralinos. Los canales de producción de materia supersimétrica mediados por la fusión de bosones vectoriales son,<lb/> hoy por hoy, los más prometedores, desde este punto de vista. En este artículo se presenta una revisión de las búsquedas<lb/> de materia oscura en las primeras corridas del LHC, haciendo énfasis en los canales de fusión de bosones</div>
+
+	<div type="abstract">vectoriales y<lb/> se presentan estrategias para llevar a cabo estas búsquedas, en la próxima corrida, a una energía de 14 TeV.<lb/></div>
+
+	<note type="other">Search for Supersymmetric Dark Matter in the LHC<lb/></note>
+
+	<div type="abstract">Abstract<lb/> The microscopic composition and the direct or indirect observation of dark matter, other than trough its gravitational<lb/> effects, is currently one of the most urgent and important problems in particle physics, astrophysics and cosmology.<lb/> Since several years ago, different kinds of experimental searches have been conducted without any conclusive<lb/> results. All the evidence shows that the microscopic constituents of dark matter cannot belong to the particle spectrum<lb/> of the Standard Model. Several other theoretical models provide candidates to be the constituents of this kind of<lb/> matter, among them some versions of supersymmetric models, in which the lightest neutralinos are stable, neutral,<lb/> massive and do not have color charge, making them excellent candidates. The LHC experiments have conducted<lb/> thorough searches of supersymmetric particles during the first runs of the LHC at 7 and 8 TeV, without any positive<lb/> result. These searches have been concentrated in strong production channels, with gluinos and s-quarks in the final<lb/> state. Given the negative results, it is necessary to perform detailed searches in electro-weak channels in which the<lb/> supersymmetric particles in the final state are expected to be lighter, and therefore, have higher probability to be<lb/> produced, including the neutralinos. The supersymmetric production channels mediated by vector boson fusion are<lb/> the most promising ones. In this article, a review of the dark matter searches performed during the first runs of the<lb/> LHC are presented, making emphasis on the vector boson fusion channels, as well as the strategies for the searches<lb/> to be performed in the next run, at 14 TeV.<lb/> Ciencias físicas<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -241,6 +241,7 @@ public class BiblioItem {
     private String uri = null;
     private String confidence = null;
     private double conf = 0.0;
+    private String collaboration = null;
 
     // date for electronic publishing
     private String e_year = null;
@@ -721,6 +722,10 @@ public class BiblioItem {
         return grant;
     }
 
+    public String getCollaboration() {
+        return collaboration;
+    }
+
     public void setISBN13(String isbn) {
         /* some cleaning... */
         this.ISBN13 = cleanSQLString(cleanISBNString(isbn));
@@ -1185,6 +1190,10 @@ public class BiblioItem {
 
     public void setGrant(String gra) {
         grant = gra;
+    }
+
+    public void setCollaboration(String c) {
+        collaboration = c;      
     }
 
     /**

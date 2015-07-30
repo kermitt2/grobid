@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="IEEE2014_Chronoglyph"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Visual Analytical Approach for Model Editing and Testing in<lb/> Glyph-based Time Series Compression<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Eamonn Maguire, Student Member, IEEE, Susanna-Assunta Sansone, and Min Chen, Member, IEEE<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract— Time series data is ubiquitous in the present world. In many applications, e.g., finance, meteorology, biology, chemistry,<lb/> physics and engineering, such data is constantly being recorded. It is highly desirable to speed up the process of viewing time series<lb/> data by exploring new visual representations to complement the conventional line graph that was invented over a millennium ago. One<lb/> existing methodology is to detect Frequent Long Patterns (FLPs) and replace them with short and abstract notations, such as glyphs.<lb/> In many applications, the deployment of this methodology has encountered the familiar problem of separating noise from anomalous<lb/> features. On the one hand, the detection algorithm needs to tolerate a fair amount of noise to facilitate a high compression ratio.<lb/> On the other hand, the detection algorithm needs to avoid any false positive at all cost. In this paper, we propose a visual analytics<lb/> approach to address this paradoxical problem. We first use the conventional FLP detection algorithm to create a rough model that<lb/> places its emphasis on noise tolerance. This initial model is then used to identify a set of FLPs in a corpus of time series, which<lb/> serve as the testing results of the model. We transform this set of test FLPs to a parameter space, allowing for in detail analysis using<lb/> parallel coordinates and network plots. Interactive visualization enables users to identify as many false positive results as possible,<lb/> and more importantly, to identify features that can be used to filter them out. The brushing interaction with the parallel coordinates is<lb/> then used to refine the initial model by activating feature-based filtering instructions in a model editing window. This approach can be<lb/> iteratively applied to a model being developed. We have implemented a prototype system to demonstrate this novel approach.<lb/></div>
+
+	<byline><affiliation> • Eamonn Maguire is with the Oxford e-Research Centre and Department of <lb/>Computer Science, University of Oxford. </affiliation></byline>
+
+	<email>E-mail: <lb/>eamonn.maguire@st-annes.ox.ac.uk. <lb/></email>
+
+	<byline><affiliation> • Susanna-Assunta Sansone is with the Oxford e-Research Centre, <lb/>University of Oxford. </affiliation></byline>
+
+	<email>E-mail: sa.sansone@gmail.com. <lb/></email>
+
+	<byline><affiliation> • Min Chen is with the Oxford e-Research Centre, University of Oxford. <lb/></affiliation></byline>
+
+	<email>E-mail: min.chen@oerc.ox.ac.uk. <lb/></email>
+
+	<note type="submission">Manuscript received 31 March 2014; accepted 1 August 2014; posted online <lb/>13 October 2014; mailed on 4 October 2014. <lb/>For information on obtaining reprints of this article, please send <lb/>e-mail to: tvcg@computer.org. <lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1340758"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Monte Carlo generators for central exclusive diffraction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Maarten Boonekamp, Creighton Hogg, James Monk, Andrew Pilkington &amp; Marek Tasevsky<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> We review the three Monte Carlo generators that are available for simulating<lb/> the central exclusive reaction, pp → p + X + p.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1342056"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1403.5691v2 [math.RT]</idno>
+
+	<date>12 Aug 2014<lb/></date>
+
+	<docTitle>
+	<titlePart>CLASSIFICATION OF SIMPLE WEIGHT MODULES<lb/> OVER THE 1-SPATIAL AGEING ALGEBRA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>RENCAI L ¨<lb/> U, VOLODYMYR MAZORCHUK AND KAIMING ZHAO<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. In this paper we use Block&apos;s classification of simple<lb/> modules over the first Weyl algebra to obtain a complete classifi-<lb/>cation of simple weight modules, in particular, of Harish-Chandra<lb/> modules, over the 1-spatial ageing algebra age(1). Most of these<lb/> modules have infinite dimensional weight spaces and so far the al-<lb/>gebra age(1) is the only Lie algebra having simple weight modules<lb/> with infinite dimensional weight spaces for which such a classifica-<lb/>tion exists. As an application we classify all simple weight modules<lb/> over the (1 + 1)-dimensional space-time Schrödinger algebra S that<lb/> have a simple age(1)-submodule thus constructing many new sim-<lb/>ple weight S-modules.<lb/></div>
+
+	<keywords>Keywords: weight module, Schrödinger algebra, ageing<lb/> algebra, highest weight module<lb/></keywords>
+
+	<keywords type="classes"> Mathematics Subject Classification 2010: 17B10,<lb/> 17B30, 17B80<lb/></keywords>
+
+	<byline><affiliation> R.L.: Department of Mathematics, Soochow University,</affiliation></byline>
+
+	<address> Suzhou, P. R. <lb/>China;</address>
+
+	<email> e-mail: rencail@amss.ac.cn <lb/></email>
+
+	<byline><affiliation>.M.: Department of Mathematics, Uppsala University,</affiliation></byline>
+
+	<address>Box 480, SE-<lb/>751 06, Uppsala, Sweden;</address>
+
+	<email> e-mail: mazor@math.uu.se <lb/></email>
+
+	<byline><affiliation>K.Z.: Department of Mathematics, Wilfrid Laurier University,</affiliation></byline>
+
+	<address> Water-<lb/>loo, Ontario, N2L 3C5, Canada; and</address>
+
+	<byline><affiliation> College of Mathematics and In-<lb/>formation Science, Hebei Normal (Teachers) University, Shijiazhuang <lb/></affiliation></byline>
+
+	<address>050016, Hebei, P. R. China;</address>
+
+	<email> e-mail: kzhao@wlu.ca </email>
+
+		</front>
+	</text>
+</tei>

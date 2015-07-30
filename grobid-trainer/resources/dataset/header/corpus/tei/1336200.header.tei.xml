@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1336200"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Physics Reports 550–551 (2015) 1–103<lb/></reference>
+
+	<note type="other">Contents lists available at ScienceDirect<lb/> Physics Reports<lb/> journal homepage: www.elsevier.com/locate/physrep<lb/></note>
+
+	<docTitle>
+	<titlePart>Proton electromagnetic form factors: Basic notions, present<lb/> achievements and future perspectives<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Simone Pacetti<lb/> a, * , Rinaldo Baldini Ferroli<lb/> b , Egle Tomasi-Gustafsson<lb/> c,d<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Dipartimento di Fisica e Geologia dell&apos;Universitá degli Studi di Perugia and INFN Sezione di Perugia,</affiliation>
+	</byline>
+
+	<address>06123 Perugia, Italy<lb/></address>
+
+	<byline>
+	<affiliation>b INFN, Laboratori Nazionali di Frascati,</affiliation>
+	</byline>
+
+	<address>00044 Frascati, Italy<lb/></address>
+
+	<byline>
+	<affiliation>c CEA, IRFU, SPhN, Saclay,</affiliation>
+	</byline>
+
+	<address>91191 Gif-sur-Yvette Cedex, France<lb/></address>
+
+	<byline>
+	<affiliation>d CNRS/IN2P3, Institut de Physique Nucléaire, UMR 8608,</affiliation>
+	</byline>
+
+	<address>91406 Orsay, France<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Accepted 22 September 2014<lb/> Available online 7 October 2014<lb/> editor:</note>
+
+	<byline>
+	<docAuthor>M. Ramsey-Musolf<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">a b s t r a c t<lb/> The aim of this report is to give basic notions on electromagnetic hadron form factors<lb/> (FFs), as they are understood at the present time, to summarize and analyze the present<lb/> experimental results and available theoretical models and to open a view on future<lb/> perspectives.<lb/> FFs are fundamental quantities, which describe the internal, dynamical structure of<lb/> hadrons. Although the theoretical formalism was settled in the middle of last century, as<lb/> well as the first experiments in electron–proton elastic scattering for which R. Hofstadter<lb/> got the Nobel prize in 1961, a renewed activity is due to recent, surprising results and<lb/> to the opening of new experimental possibilities. An elegant formalism was built on the<lb/> assumption of a hadron electromagnetic interaction based on the exchange of a virtual<lb/> photon of four-momentum q<lb/> 2 . In this case FFs are analytic functions of only one variable,<lb/> q<lb/> 2 , and the electromagnetic vertex γ * hh (h is any hadron) is defined by two structure<lb/> functions, which, in turn, are expressed in terms of (2S + 1) FFs, S being the hadron spin,<lb/> assuming parity and time-invariance.<lb/> Our aim is to anticipate the potentiality contained in the future data, combined with<lb/> the present knowledge, to point out the relevant observables and the most significative<lb/> measurements, and to give predictions to be compared to the data when they will be<lb/> available.<lb/></div>
+
+	<note type="copyright">© 2014 Elsevier B.V. All rights reserved.<lb/></note>
+
+	<email>*  Corresponding author. <lb/> E-mail addresses: simone.pacetti@pg.infn.it, simone.pacetti@unipg.it (S. Pacetti). <lb/></email>
+
+	<ptr type="web">http://dx.doi.org/10.1016/j.physrep.2014.09.005 <lb/></ptr>
+
+	<note type="other">0370-1573/© 2014 Elsevier B.V. All rights reserved. <lb/></note>
+
+		</front>
+	</text>
+</tei>

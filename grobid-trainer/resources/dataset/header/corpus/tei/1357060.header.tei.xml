@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1357060"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0706.3897v1 [quant-ph]</idno>
+
+	<date>26 Jun 2007<lb/></date>
+
+	<docTitle>
+	<titlePart>Romanovski Polynomials in Selected Physics Problems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. P. Raposo<lb/> 1 , H. J. Weber<lb/> 2 , D. Alvarez-Castillo<lb/> 3 , M. Kirchbach<lb/> 3 ,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Facultad de Ciencias,</affiliation>
+	</byline>
+
+	<address>Av. Salvador Nava s/n, San Luis Potosí,<lb/> S.L.P. 78290, Universidad Autónoma de San Luis Potosí, México,<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Physics, University of Virginia,<lb/></affiliation>
+	</byline>
+
+	<address>Charlottesville, VA 22904, USA and<lb/></address>
+
+	<byline>
+	<affiliation>3 Instituto de Física,</affiliation>
+	</byline>
+
+	<address>Av. Manuel Nava 6, San Luis Potosí,<lb/> S.L.P. 78290, Universidad Autónoma de San Luis Potosí, México<lb/></address>
+
+	<date>(Dated: February 1, 2008)<lb/></date>
+
+	<div type="abstract">Abstract<lb/> We briefly review the five possible real polynomial solutions of hypergeometric differential equa-<lb/>tions. Three of them are the well known classical orthogonal polynomials, but the other two are<lb/> different with respect to their orthogonality properties. We then focus on the family of polynomials<lb/> which exhibits a finite orthogonality. This family, to be referred to as the Romanovski polynomi-<lb/>als, is required in exact solutions of several physics problems ranging from quantum mechanics and<lb/> quark physics to random matrix theory. It appears timely to draw attention to it by the present<lb/> study. Our survey also includes several new observations on the orthogonality properties of the<lb/> Romanovski polynomials and new developments from their Rodrigues formula.<lb/></div>
+
+		</front>
+	</text>
+</tei>

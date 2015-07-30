@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1359032"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">181<lb/></note>
+
+	<docTitle>
+	<titlePart>Preliminary study of the<lb/>19<lb/> F(<lb/> 7<lb/> Li,<lb/>7<lb/>Be)<lb/> 19<lb/>O reaction at 52 MeV with MAGNEX<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Cavallaro<lb/> a,b , A. Cunsolo<lb/> a,b , F. Cappuzzello<lb/> a,b , D. Carbone<lb/> a,b , A. Foti<lb/> c , S.E.A.Orrigo<lb/> a,b , M.R.D.<lb/> Rodrigues<lb/> b , M. Schillaci<lb/> a,b , T.Borello-Lewin<lb/> e , H.Petrascu<lb/> f<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Dipartimento di Fisica e Astronomia, Università di Catania,</affiliation>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<byline>
+	<affiliation>b INFN-Laboratori Nazionali del Sud,</affiliation>
+	</byline>
+
+	<address>Catania, Italy<lb/></address>
+
+	<byline>
+	<affiliation>c INFN-Sezione di Catania,</affiliation>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<byline>
+	<affiliation>e NIPNE,</affiliation>
+	</byline>
+
+	<address>Bucarest, Romania<lb/></address>
+
+	<div type="abstract">Abstract<lb/> The<lb/> 19 F(<lb/> 7 Li,<lb/> 7<lb/> Be)<lb/> 19 O charge-exchange reaction at 52 MeV incident energy has been<lb/> performed at INFN-LNS in Catania using the MAGNEX spectrometer. The use of<lb/> an algebraic ray-reconstruction technique has allowed to extract the<lb/> 19 O excitation<lb/> energy spectrum and the experimental angular distributions obtained with a single<lb/> angular setting of the spectrometer.<lb/></div>
+
+		</front>
+	</text>
+</tei>

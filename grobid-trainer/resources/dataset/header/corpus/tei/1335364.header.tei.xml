@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1335364"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ELECTRON AND POSITRON BEAMS TRANSPORTATION CHANNELS<lb/> TO BINP COLLIDERS*<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>I.M. Zemlyansky<lb/> #<lb/> , D.E. Berkaev, V.A. Kiselev, I.A. Koop, A.V. Otboev, A.M. Semenov,<lb/> A.A. Starostenko, Budker</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Nuclear Physics,</affiliation>
+	</byline>
+
+	<address>Novosibirsk, Russia<lb/></address>
+
+	<div type="abstract">Abstract<lb/> There are two accelerator complexes VEPP-2000 and<lb/> VEPP-4M in BINP. There is preparatory work for<lb/> building of new accelerator – Super Charm-Tau Factory.<lb/> As an injector of positrons for Super c-t Factory the<lb/> existing injection complex VEPP-5 will be used.<lb/> Existence of the powerful injection complex provokes the<lb/> desire to use it for needs of the working accelerator<lb/> complexes VEPP-2000 and VEPP-4M. Replacement of<lb/> the existing injection subsystems with the injection<lb/> complex VEPP-5 will allow us to increase the speed of<lb/> accumulation of positrons at the accelerator complexes<lb/> VEPP-2000 and VEPP-4M in 1000 and 100 times<lb/> respectively. For VEPP-2000 this improvement has a<lb/> great significance as the existing conversion system<lb/> doesn&apos;t provide the demanded quantity of positrons for<lb/> designed luminosity of a collider 1x10<lb/> 32 сm<lb/> -2 s<lb/> -1 .<lb/> In the article the short review of transportation channels<lb/> from the injection complex VEPP-5 to the accelerator<lb/> complexes VEPP-2000 and VEPP-4M, time sequence of<lb/> an injector&apos;s work for both complexes are given. The<lb/> transportation channel from the injection complex VEPP-<lb/>5 to the booster ring BEP of the accelerator complex<lb/> VEPP-2000 is described in details.<lb/></div>
+
+	<note type="other">___________________________________________<lb/></note>
+
+	<note type="grant">*Work supported by the Ministry of Education and Science of the<lb/> Russian Federation, NSh-4860.2014.2<lb/></note>
+
+	<email>#I.M.Zemlyansky@inp.nsk.su<lb/></email>
+
+		</front>
+	</text>
+</tei>

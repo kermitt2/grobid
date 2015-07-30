@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1341533"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>About Time<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Vishnu Jejjala<lb/> 1 * , Michael Kavic<lb/> 2 † , Djordje Minic<lb/> 2 ‡ , Chia-Hsiung Tze<lb/> 2 §<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institut des HautesÉtudes<lb/>Scientifiques<lb/></affiliation>
+	</byline>
+
+	<address> 35, Route de Chartres<lb/> 91440 Bures-sur-Yvette, France<lb/></address>
+
+	<byline>
+	<affiliation>2 Institute for Particle, Nuclear, and Astronomical Sciences<lb/> Department of Physics, Virginia Tech<lb/></affiliation>
+	</byline>
+
+	<address>Blacksburg, VA 24061, U.S.A.<lb/></address>
+
+	<div type="abstract">Abstract<lb/> We present a novel perspective on the problem of time in quantum gravity. Inspired<lb/> by Einstein&apos;s analysis of the concept of time and the equivalence principle and guided<lb/> by the geometric structure of quantum theory, we offer new insights into the nature<lb/> and the origin of time ¶ .</div>
+
+	<email>* vishnu@ihes.fr<lb/> † kavic@vt.edu<lb/> ‡ dminic@vt.edu<lb/> § kahong@vt.edu<lb/></email>
+
+	<note type="submission">¶ Essay submitted to the FQXi Inaugural Essay Contest on the Nature of Time.<lb/></note>
+
+		</front>
+	</text>
+</tei>

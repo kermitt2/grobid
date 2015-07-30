@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1348569"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Topological properties of the bond-modulated honeycomb lattice<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F. Grandi,<lb/> 1, 2 F. Manghi,<lb/> 1, 3 O. Corradini,<lb/> 4, 1 and C.M. Bertoni<lb/> 1, 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Dipartimento di Scienze Fisiche, Informatiche e Matematiche,<lb/> Università di Modena e Reggio Emilia,</affiliation>
+	</byline>
+
+	<address>Via Campi 213/A, I-41125 Modena, Italy<lb/></address>
+
+	<byline>
+	<affiliation>2 Scuola Internazionale Superiore di Studi Avanzati (SISSA),</affiliation>
+	</byline>
+
+	<address>Via Bonomea 265, I-34136 Trieste, Italy<lb/></address>
+
+	<byline>
+	<affiliation>3 Centro S3, CNR -Istituto Nanoscienze,</affiliation>
+	</byline>
+
+	<address>Via Campi 213/A, I-41125 Modena, Italy<lb/></address>
+
+	<byline>
+	<affiliation>4 Facultad de Ciencias en Física y Matemáticas, Universidad Autónoma de Chiapas,<lb/>Ciudad Universitaria,</affiliation>
+	</byline>
+
+	<address>Tuxtla Gutiérrez 29050, México<lb/></address>
+
+	<note type="other">(Dated: March 9, 2015)<lb/></note>
+
+	<div type="abstract">We study the combined effects of lattice deformation, e-e interaction and spin-orbit coupling<lb/> in a two-dimensional (2D) honeycomb lattice. We adopt different kinds of hopping modulation—<lb/> generalized dimerization and a Kekulé distortion—and calculate topological invariants for the non-<lb/>interacting system and for the interacting system. We identify the parameter range (Hubbard U ,<lb/> hopping modulation, spin-orbit coupling) where the 2D system behaves as a trivial insulator or<lb/> Quantum Spin Hall Insulator.<lb/></div>
+
+	<keywords type="classes">PACS numbers: 71.10.Fd, 71.27.+a, 73.43.-f, 73.22.-f<lb/></keywords>
+
+		</front>
+	</text>
+</tei>

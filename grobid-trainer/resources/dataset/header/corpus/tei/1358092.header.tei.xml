@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1358092"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proc Indian Natn Sci Acad 81 No. 1 February 2015 Special Issue, pp. 174-178<lb/> c<lb/> Printed in India.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Modified Surface Tension of a QGP-Droplet Under One Loop Correction in<lb/> Peshier Potential<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S SOMORENDRO SINGH 1 , AGAM K JHA * 2 and K K GUPTA 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Physics and Astrophysics, University of Delhi,</affiliation>
+	</byline>
+
+	<address>Delhi 110 007, India<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Physics, Bose Institute,</affiliation>
+	</byline>
+
+	<address>Kolkata 700 009, India<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Physics, Kirori Mal College, University of Delhi,</affiliation>
+	</byline>
+
+	<address>Delhi 110 007, India<lb/></address>
+
+	<note type="submission">(Received on 1 May 2014; Accepted on 23 June 2014)<lb/></note>
+
+	<div type="abstract">Under one loop correction in Peshier potential surface tension of a Quark-Gluon Plasma (QGP) droplet<lb/> has been recomputed. The correction reduces the stable size of a QGP droplet. The value of surface<lb/> tension obtained here is in better agreement with the current lattice result.<lb/></div>
+
+	<keyword>Key Words : Quark-Gluon Plasma; Quark-Hadron Phase Transition<lb/></keyword>
+
+	<email> *  Author for Correspondence : E-mail: agamjha 2001@yahoo.co.in <lb/> </email>
+
+	<idno> DOI: 10.16943/ptinsa/2015/v81i1/48066 <lb/></idno>
+
+		</front>
+	</text>
+</tei>

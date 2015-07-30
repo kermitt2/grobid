@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1331879"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ANALYSIS OF HIGH ORDER MODES DAMPING TECHNIQUES FOR 800<lb/> MHZ SINGLE CELL SUPERCONDUCTING CAVITIES*<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ya.V. Shashkov, N.P. Sobenin</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>, National Research Nuclear University MEPhI<lb/> (Moscow Engineering Physics Institute),</affiliation>
+	</byline>
+
+	<address>Moscow, Russia<lb/></address>
+
+	<byline>
+	<docAuthor> M.M. Zobov,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>LNF-INFN,</affiliation>
+	</byline>
+
+	<address>Frascati (Rome), Italy<lb/></address>
+
+	<div type="abstract">Abstract<lb/> The High Luminosity LHC upgrade program foresees a<lb/> possibility of using the second harmonic cavities working<lb/> at 800 MHz for the collider bunch length variation. Such<lb/> harmonic cavities should provide an opportunity to vary<lb/> the length of colliding bunches. In order to supply the<lb/> required harmonic voltage several single cell<lb/> superconducting cavities are to be used. Different cavity<lb/> designs and several higher order mode (HOM) damping<lb/> techniques are being studied in order to reduce the cavity<lb/> HOM impact on the beam stability and to minimize<lb/> parasitic power losses. In this paper we analyze and<lb/> compare the HOM electromagnetic characteristics and<lb/> respective wake potential decay rates for cavities with<lb/> grooves, fluted and ridged beam pipes. The problem of<lb/> Lorentz force detuning is also addressed.<lb/></div>
+
+	<note type="other">___________________________________________ <lb/></note>
+
+	<note type="grant"> *Work supported by RFBR grant 13-02-00562/14 and by the EU FP7 <lb/>HiLumi LHC -Grant Agreement 284404 <lb/></note>
+
+		</front>
+	</text>
+</tei>

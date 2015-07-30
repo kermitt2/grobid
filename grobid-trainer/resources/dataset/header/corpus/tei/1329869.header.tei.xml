@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1329869"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Super Camassa–Holm Equation with N-Peakon<lb/> Solutions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Xianguo Geng, Bo Xue, and Lihua Wu<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">A super Camassa–Holm equation with peakon solutions is proposed, which is<lb/> associated with a 3 × 3 matrix spectral problem with two potentials. With<lb/> the aid of the zero-curvature equation, we derive a hierarchy of super Harry<lb/> Dym type equations and establish their Hamiltonian structures. It is shown<lb/> that the super Camassa–Holm equation is exactly a negative flow in the<lb/> hierarchy and admits exact solutions with N peakons. As an example, exact<lb/> 1-peakon solutions of the super Camassa–Holm equation are given. Infinitely<lb/> many conserved quantities of the super Camassa–Holm equation and the super<lb/> Harry Dym type equation are, respectively, obtained.<lb/></div>
+
+	<byline>
+	<affiliation> Address for correspondence: Bo Xue, Department of Mathematics, Zhengzhou University,</affiliation>
+	</byline>
+
+	<address> 100 Kexue <lb/>Road, Zhengzhou, Henan 450001, People&apos; s Republic of China;</address>
+
+	<email>e-mail: xuebo@zzu.edu.cn <lb/></email>
+
+	<idno>DOI: 10.1111/j.1467-9590.2012.00555.x <lb/></idno>
+
+	<note type="copyright"> 1 <lb/> STUDIES IN APPLIED MATHEMATICS 130:1–16 <lb/> C <lb/> 2012 by the Massachusetts Institute of Technology <lb/></note>
+
+		</front>
+	</text>
+</tei>

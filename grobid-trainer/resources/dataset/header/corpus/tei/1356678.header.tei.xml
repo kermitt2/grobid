@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1356678"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Physics Procedia 61 ( 2015 ) 633 – 640<lb/></reference>
+
+	<note type="copyright">Available online at www.sciencedirect.com<lb/> 1875-3892 © 2015 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license<lb/>(http://creativecommons.org/licenses/by-nc-nd/4.0/).<lb/> Selection and peer review is the responsibility of the Conference lead organizers, Frank Avignone, University of South Carolina, and Wick Haxton,<lb/>University of California, Berkeley, and Lawrence Berkeley Laboratory<lb/></note>
+
+	<idno>doi: 10.1016/j.phpro.2014.12.063<lb/></idno>
+
+	<note type="other">ScienceDirect<lb/> 13th International Conference on Topics in Astroparticle and Underground Physics<lb/></note>
+
+	<docTitle>
+	<titlePart>Probing extraterrestrial neutrino fluxes and atmospheric charm<lb/> with contained neutrino events above 1 TeV in IceCube<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jakob van Santen<lb/></docAuthor>
+	</byline>
+
+	<note type="other">a , for the</note>
+
+	<orgName>IceCube Collaboration<lb/>b<lb/></orgName>
+
+	<byline>
+	<affiliation>a Dept. of Physics and Wisconsin IceCube Particle Astrophysics Center, University of Wisconsin,</affiliation>
+	</byline>
+
+	<address>Madison, WI 53706, USA<lb/></address>
+
+	<ptr type="web">b http: // icecube. wisc. edu/ collaboration/ authors/ current<lb/></ptr>
+
+	<div type="abstract">Abstract<lb/> The IceCube Neutrino Observatory [1] was designed primarily to search for high-energy ( 100 TeV) neutrinos<lb/> produced in distant astrophysical objects, and a search for high-energy neutrinos interacting inside the instrumented<lb/> volume has recently provided evidence for a diffuse flux of such neutrinos [2]. Its energy threshold is however low<lb/> enough to detect large numbers of neutrinos from the weak decays of pions and kaons produced in air showers; both the<lb/> atmospheric ν μ flux [3] and the sub-dominant atmospheric ν e flux [4] have been observed by IceCube. A second, harder<lb/> component of the atmospheric neutrino flux from decays of short-lived, charmed mesons in air showers has yet to be<lb/> conclusively observed. Here, we present a strategy for extending the search for neutrino interactions in the instrumented<lb/> volume down to ∼ 1 TeV and discuss the challenges of disentangling possible contributions of atmospheric charm decay<lb/> from the high-energy extraterrestrial neutrino flux.<lb/></div>
+
+	<note type="copyright">c<lb/> 2011 Published by Elsevier Ltd.<lb/> © 2015 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license<lb/> (http://creativecommons.org/licenses/by-nc-nd/4.0/).<lb/></note>
+
+	<note type="other"> Selection and peer review is the responsibility of the Conference lead organizers, Frank Avignone,</note>
+
+	<byline>
+	<affiliation>University of South Carolina,<lb/> and Wick Haxton, University of California, Berkeley, and Lawrence Berkeley Laboratory<lb/></affiliation>
+	</byline>
+
+	<keyword>Keywords:<lb/> IceCube, atmospheric neutrinos, charm production<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

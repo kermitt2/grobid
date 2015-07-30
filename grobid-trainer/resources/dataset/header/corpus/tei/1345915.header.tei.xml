@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345915"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The nonlinear Dirac equation in Bose-Einstein<lb/> condensates: Vortex solutions and spectra in a weak<lb/> harmonic trap<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>L. H. Haddad<lb/> 1 and Lincoln D. Carr<lb/> 1,2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Physics, Colorado School of Mines,</affiliation>
+	</byline>
+
+	<address>Golden, CO 80401,USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Physikalisches Institut, Universität Heidelberg,</affiliation>
+	</byline>
+
+	<address>D-69120 Heidelberg, Germany<lb/></address>
+
+	<email>E-mail: laith.haddad@gmail.com, lcarr@mines.edu<lb/></email>
+
+	<div type="abstract">Abstract. We analyze the vortex solution space of the (2 + 1)-dimensional nonlinear<lb/> Dirac equation for bosons in a honeycomb optical lattice at length scales much larger<lb/> than the lattice spacing. Dirac point relativistic covariance combined with s-wave<lb/> scattering for bosons leads to a large number of vortex solutions characterized by<lb/> different functional forms for the internal spin and overall phase of the order parameter.<lb/> We present a detailed derivation of these solutions which include skyrmions, half-<lb/>quantum vortices, Mermin-Ho and Anderson-Toulouse vortices for vortex winding<lb/> = 1. For ≥ 2 we obtain topological as well as non-topological solutions defined<lb/> by the asymptotic radial dependence. For arbitrary values of the non-topological<lb/> solutions are bright ring-vortices which explicitly demonstrate the confining effects<lb/> of the Dirac operator. We arrive at solutions through an asymptotic Bessel series,<lb/> algebraic closed-forms, and using standard numerical shooting methods. By including a<lb/> harmonic potential to simulate a finite trap we compute the discrete spectra associated<lb/> with radially quantized modes. We demonstrate the continuous spectral mapping<lb/> between the vortex and free particle limits for all of our solutions.<lb/></div>
+
+	<reference>PACS numbers: 67.85.Hj, 67.85.Jk, 05.45.-a, 67.85.-d, 03.65.Pm, 02.30.Jr, 03.65.Pm<lb/></reference>
+
+	<note type="other">Submitted to: New J. Phys.<lb/></note>
+
+	<idno>arXiv:1502.05621v1 [cond-mat.quant-gas]</idno>
+
+	<date>19 Feb 2015<lb/></date>
+
+		</front>
+	</text>
+</tei>

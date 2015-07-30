@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1342206"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">2nd Reading<lb/> November 25, 2014 12:56 WSPC/S0218-2718<lb/> 142-IJMPD<lb/> 1550007<lb/></note>
+
+	<reference>International Journal of Modern Physics D<lb/> Vol. 24, No. 1 (2015) 1550007 (14 pages)<lb/></reference>
+
+	<note type="copyright">c<lb/> World Scientific Publishing Company<lb/></note>
+
+	<idno>DOI: 10.1142/S0218271815500078<lb/></idno>
+
+	<docTitle>
+	<titlePart>Kerr–Newman solution in modified teleparallel<lb/> theory of gravity<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gamal G. L. Nashed *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centre for Theoretical Physics,<lb/> The British University in Egypt,<lb/></affiliation>
+	</byline>
+
+	<address>Sherouk City 11837, P.O. Box 43, Egypt<lb/></address>
+
+	<email>nashed@bue.edu.eg<lb/></email>
+
+	<note type="submission">Received 11 July 2014<lb/> Revised 27 September 2014<lb/> Accepted 28 October 2014<lb/> Published 27 November 2014<lb/></note>
+
+	<div type="abstract">A nondiagonal tetrad field having six unknown functions plus an angle Φ, which is a<lb/> function of the radial coordinate r, azimuthal angle θ and the polar angle φ, is applied<lb/> to the charged field equations of modified teleparallel theory of gravity. A special non-<lb/>vacuum solution is derived with three constants of integration. The tetrad field of this<lb/> solution is axially symmetric and its scalar torsion is constant. The associated metric<lb/> of the derived solution gives Kerr–Newman spacetime. We have shown that the derived<lb/> solution can be described by a local Lorentz transformations plus a diagonal tetrad field<lb/> that is the square root of the Kerr–Newman metric. We show that any solution of general<lb/> relativity (GR) can be a solution in f (T ) under certain conditions.<lb/></div>
+
+	<keyword>Keywords: f (T ) Theories of gravity; charged axially symmetric solution; energy.<lb/></keyword>
+
+	<keywords type="classes">PACS Number(s): 04.50.Kd, 04.70.Bw, 04.20.Jb<lb/></keywords>
+
+	<byline><affiliation>*  Address: Mathematics Department, Faculty of Science, Ain Shams University,</affiliation></byline>
+
+	<address> Cairo, 11566, <lb/>Egypt. <lb/></address>
+
+		</front>
+	</text>
+</tei>

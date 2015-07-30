@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1335054"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<docTitle>
+	<titlePart>Boundary condition for D-brane from Wilson loop<lb/> at the AdS boundary<lb/>1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Tsunehide Kuroki<lb/>2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Rikkyo University,</affiliation>
+	</byline>
+
+	<address>Toshima, Tokyo 171-8501<lb/></address>
+
+	<div type="abstract">Abstract<lb/> We study the supersymmetric Wilson loops in the four-dimensional N = 4 super<lb/> Yang-Mills theory in the context of the AdS/CFT correspondence. In the gauge<lb/> theory side, it is known that the expectation value of the Wilson loops of circular<lb/> shape with winding number k, W k (C), is calculable by using a Gaussian matrix model.<lb/> In the gravity side, the expectation value of the loop is conjectured to be given by<lb/> the classical value of the action SD3 for a probe D3-brane with k electric fluxes as<lb/> ⟨W k (C)⟩ = e<lb/> −S D3 . However, according to the spirit of the AdS/CFT correspondence,<lb/> in principle we have to perform the path integral for the D3-brane action in the<lb/> AdS5×S<lb/> 5 under appropriate boundary conditions which should be given in terms<lb/> of data of the Wilson loop at the AdS boundary. We clarify what kind of boundary<lb/> conditions are imposed on the D3-brane from the Wilson loop. As an application, our<lb/> boundary conditions provide a natural interpretation of a position of an eigenvalue<lb/> in the Gaussian matrix model as an integrated flux on the D3-brane.<lb/></div>
+
+	<email> 2  Email address: tkuroki@rikkyo.ac.jp <lb/></email>
+
+		</front>
+	</text>
+</tei>

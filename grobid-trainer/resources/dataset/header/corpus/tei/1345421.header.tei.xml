@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345421"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<docTitle>
+	<titlePart>Experimental evidences for low-lying octupole<lb/> isovector states<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M Scheck<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Kernphysik, TU Darmstadt,</affiliation>
+	</byline>
+
+	<address>D-64289 Darmstadt, Germany<lb/></address>
+
+	<email>E-mail: mscheck@ikp.tu-darmstadt.de<lb/></email>
+
+	<div type="abstract">Abstract. An evaluation of data obtained with the (n, n<lb/> ′ γ) technique revealed in near<lb/> spherical nuclei strong M1 components in transitions connecting higher-lying 3<lb/> −<lb/> i states with the<lb/> 3<lb/> −<lb/> 1 state. The ⟨3<lb/> −<lb/> 1 |M 1|3<lb/> −<lb/> i ⟩ matrix elements of these transitions are in the order of 1 µN . In the<lb/> quadrupole sector strong ⟨2<lb/> +<lb/> 1 |M 1|2<lb/> +<lb/> ms ⟩ matrix elements serve as fingerprints for the identification<lb/> of low-lying 2<lb/> +<lb/> ms isovector states, which are commonly referred to as mixed-symmetry states.<lb/> The ratio of the two matrix elements scales for most candidates to unity indicating similar<lb/> physics. Additional evidence for the assignment of the 3<lb/> −<lb/> i states as low-lying octupole isovector<lb/> states is provided by particle-scattering experiments, e.g. (e, e<lb/> ′ ) or (p, p<lb/> ′ ). The octupole states<lb/> under investigation exhibit enhanced scattering cross sections. This observation is in accordance<lb/> with the assignment of a one-phonon nature to these octupole excitations.<lb/></div>
+
+		</front>
+	</text>
+</tei>

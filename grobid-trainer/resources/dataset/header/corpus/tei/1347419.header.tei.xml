@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1347419"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Theory of Higgs to tau tau signatures at the LHC<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hiroshi Yokoya<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, University of Toyama,</affiliation>
+	</byline>
+
+	<address>Toyama 930-8555, Japan<lb/></address>
+
+	<div type="abstract">Abstract<lb/> In this report, selected topics of tau leptons are collected in view of the high-energy collider experiments and<lb/> the Higgs-boson search. Those topics include decay modes, tau-jet tagging, collinear approximation and the tau<lb/> polarization. Using these unique properties of tau leptons, it is possible to observe various properties of the Higgs<lb/> boson or the associated scalars in the extended Higgs models at the LHC.<lb/></div>
+
+	<keyword>Keywords: Higgs boson, tau lepton, collider experiments<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1352751"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Ideal Black Hole Gas<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Larry L. Smalley<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics<lb/> University of Alabama in Huntsville<lb/></affiliation>
+	</byline>
+
+	<address> Huntsville, AL 35899<lb/> and<lb/> Space Science Laboratory<lb/></address>
+
+	<byline>
+	<affiliation>Marshall Space Flight Center, AL 35812<lb/></affiliation>
+	</byline>
+
+	<date>7 August 1987<lb/></date>
+
+	<note type="other">(NASA-TB-107788)<lb/> I D E A L BLACK HOLE G A S<lb/>(NASA.<lb/> Marshall S p a c e P l i q h t C e n t e r )<lb/> 1 2 F<lb/> CSCL 0 3 8<lb/> -4<lb/> 1<lb/> w<lb/> U n c l a s<lb/> G3/9Ct<lb/> 0213096</note>
+
+		</front>
+	</text>
+</tei>

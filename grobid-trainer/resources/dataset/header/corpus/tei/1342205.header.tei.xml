@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1342205"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>SEARCHES FOR SIGNATURES FROM GAUGE MEDIATED<lb/> SUSY BREAKING<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>NAOKO KANAYA<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Victoria, Physics and Astronomy<lb/></affiliation>
+	</byline>
+
+	<address>PO Box 3040 STN CSC Victoria BC V8W 3N7, CANADA<lb/></address>
+
+	<email>E-mail: nkanaya@uvic.ca<lb/></email>
+
+	<div type="abstract">Gauge-mediated SUSY breaking is an attractive model both theoretically and ex-<lb/>perimentally. In this paper, gauge-mediated SUSY breaking signatures studied<lb/> with the OPAL experiment are summarized.<lb/></div>
+
+	<note type="submission"> cr494: submitted to World Scientific on June 16, 2002 <lb/></note>
+
+		</front>
+	</text>
+</tei>

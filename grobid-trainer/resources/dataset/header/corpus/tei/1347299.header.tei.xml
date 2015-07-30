@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1347299"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<orgName>DELPHI Collaboration<lb/></orgName>
+
+	<idno>DELPHI 2001-075 CONF 503<lb/></idno>
+
+	<date>14 June 2001<lb/></date>
+
+	<docTitle>
+	<titlePart>Search for supersymmetric particles in light gravitino<lb/> scenarios<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R. Alemany<lb/> 1 , E. Anashkin<lb/> 2 , F. Cavallo<lb/> 3 , P. Checchia<lb/> 2 , C. García<lb/> 4 ,<lb/> F. Navarria<lb/> 3 , F. Mazzucato<lb/> 5 , E. Piotto<lb/> 1 , U. Schwickerath<lb/>1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> The search for sleptons and sgoldstinos in the context of scenarios where the lightest<lb/> supersymmetric particle is the gravitino, and the search for heavy stable charged<lb/> particles in light gravitino scenarios and Minimal Supersymmetric Standard Models,<lb/> is presented. Data collected during 2000 with the DELPHI detector at centre-of-<lb/>mass energies from around 204 to 208 GeV were analysed and combined with all the<lb/> data collected from 1995 to 1999 at lower energies. No evidence for the production<lb/> of these particles was found. Therefore, the DELPHI collaboration sets new mass<lb/> limits of the supersymmetric and the heavy stable charged particles searched for at<lb/> 95% confidence level.<lb/></div>
+
+	<note type="submission">Contributed Paper for EPS HEP 2001 (Budapest) and LP01 (Rome)<lb/></note>
+
+	<byline>
+	<affiliation>1<lb/> CERN,</affiliation>
+	</byline>
+
+	<address>CH-1211 Geneva 23, Switzerland,<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> INFN,</affiliation>
+	</byline>
+
+	<address>Via Marzolo 8, 35131 Padova, Italy,<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> INFN,</affiliation>
+	</byline>
+
+	<address>Viale Berti-Pichat 6/2, 40127 Bologna, Italy,<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> IFIC,</affiliation>
+	</byline>
+
+	<address>Avda. Dr. Molliner 50, Burjassot 46100, Valencia, Spain,<lb/></address>
+
+	<byline>
+	<affiliation>5<lb/> Geneva University,</affiliation>
+	</byline>
+
+	<address>Quai Ernest-Ansermet 24, CH-1211 Geneva 4, Switzerland.<lb/></address>
+
+		</front>
+	</text>
+</tei>

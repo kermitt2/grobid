@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1340791"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">33ND INTERNATIONAL COSMIC RAY CONFERENCE, RIO DE JANEIRO 2013<lb/> THE ASTROPARTICLE PHYSICS CONFERENCE<lb/></note>
+
+	<docTitle>
+	<titlePart>Analysis of High Muon Multiplicity Cosmic Events with the ALICE Experiment<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>B. ALESSANDRO 1 , A. FERN´ANDEZ<lb/> T ´<lb/> ELLEZ 2 , K. SHTEJER D´IAZ 3 , M. RODR´IGUEZ CAHUANTZI 1,2</docAuthor>
+	</byline>
+
+	<note type="other"> FOR THE </note>
+
+	<orgName> ALICE<lb/> COLLABORATION.<lb/></orgName>
+
+	<byline>
+	<affiliation>1 I.N.F.N. sez. di Torino,</affiliation>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<byline>
+	<affiliation>2 Fac. Ciencias Físico Matemáticas, B. Universidad Autónoma de Puebla,</affiliation>
+	</byline>
+
+	<address>México<lb/></address>
+
+	<byline>
+	<affiliation>3 Center of Technological Applications &amp; Nuclear Development (CEADEN),</affiliation>
+	</byline>
+
+	<address> Cuba<lb/></address>
+
+	<email>afernand@fcfm.buap.mx<lb/></email>
+
+	<div type="abstract">Abstract:<lb/> ALICE is one of the four main experiments of the LHC at CERN. Located 40 m underground with 30 m of<lb/> overburden rock it can also operate to detect atmospheric muons produced by cosmic ray interactions in the<lb/> atmosphere. The analysis of the data collected with cosmic triggers from 2010 until 2013, corresponding to<lb/> around 32 days of live time, will be presented. Exploiting the specific capability of the Time Projection Chamber<lb/> (TPC) in tracking a high number of charged particles, a special emphasis will be addressed in the study of cosmic<lb/> event with high muon content , with a particular attention on very high muon density events. In particular the<lb/> muon multiplicity distribution, that gives information on the primary cosmic ray composition in the energy range<lb/> beyond the knee, has shown some unexpected events of very high multiplicity. The search and the study of these<lb/> events, already detected in previous experiments as ALEPH and DELPHI at LEP, will be discussed in detail. An<lb/> interpretation of these events detected by ALICE, in terms of standard cosmic ray composition with the use of the<lb/> latest hadronic interaction models, will be discussed.<lb/></div>
+
+	<keyword>Keywords: Cosmic rays, Atmospheric muons, High Energy Interactions.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1359028"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<docTitle>
+	<titlePart>States of<lb/> 15<lb/>C via the (<lb/> 18 O,<lb/> 16 O) reaction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F.Cappuzzello<lb/> a,b , D.Carbone<lb/> a,b , M.Cavallaro<lb/> a,b , A.Cunsolo<lb/> a,b ,<lb/> A.Foti<lb/> a,c<lb/> , S.E.A.Orrigo<lb/> a,b, M.R.D.Rodrigues<lb/> b ,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Dipartimento di Fisica e Astronomia, Università degli Studi di Catania,</affiliation>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<byline>
+	<affiliation>b Istituto Nazionale di Fisica Nucleare – Laboratori Nazionali del Sud,</affiliation>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<byline>
+	<affiliation>c Istituto Nazionale di Fisica Nucleare – Sezione Catania, Italy<lb/> d Instituto de Fisica, Universidade de Sao Paulo,</affiliation>
+	</byline>
+
+	<address>Sao Paulo, Brazil<lb/></address>
+
+	<div type="abstract">Abstract. A study of the<lb/> 15 C states was pursued in 2008 at the Catania INFN-LNS laboratory by<lb/> the<lb/> 13 C(<lb/> 18 O,<lb/> 16 O)<lb/> 15 C reaction at 84 MeV incident energy. The<lb/> 16<lb/> O ejectiles were detected at<lb/> forward angles by the MAGNEX magnetic spectrometer. The spectra show several known low<lb/> lying states up to about 7 MeV excitation energy as well as two unknown resonant structures at<lb/> about 11.4 and 13.5 MeV. The strong excitation of these latter together with the measured width<lb/> of about 2 MeV FWHM could indicate the presence of collective modes of excitation connected<lb/> to the transfer of a correlated neutron pair.<lb/></div>
+
+	<keyword>Keywords: Pairing modes. Spectroscopy</keyword>
+
+	<reference>of light nuclei.<lb/> PACS: 21.10.Pc 21.10.Re 25.70.Hi<lb/></reference>
+
+	<docTitle>
+	<titlePart>INTRODUCTION</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

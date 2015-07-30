@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345419"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Exotic ideas on mixed proton-neutron symmetry and<lb/> their manifestation in heavy nuclei<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>N Pietralla 1 , C Bauer 1 , J Leske 1,3 , O Möller 1 , T Möller 1 , P<lb/> von Neumann-Cosel 1 , G Rainovski 2 , A Scheikh-Obeid 1 and C Walz 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institut für Kernphysik, Technische Universität Darmstadt,</affiliation>
+	</byline>
+
+	<address>64289 Darmstadt, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2 Faculty of Physics, St. Kliment Ohridski University of Sofia,</affiliation>
+	</byline>
+
+	<address>1164 Sofia, Bulgaria<lb/></address>
+
+	<div type="abstract">Abstract. The one-quadrupole phonon excitation of mixed symmetry, the 2<lb/> +<lb/> 1,ms state, is a<lb/> fundamental building block of nuclear structure. This article gives a summary of our recent<lb/> experimental research on this excitation mode in the A = 90 and A = 130 mass regions.<lb/></div>
+
+		</front>
+	</text>
+</tei>

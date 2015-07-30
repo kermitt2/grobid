@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1335047"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1503.06645v1 [physics.gen-ph]</idno>
+
+	<date>12 Feb 2015<lb/></date>
+
+	<docTitle>
+	<titlePart>A Bound System in the Expanding Universe with Modified<lb/> Holographic Ricci Dark Energy and Dark Matter<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>En-Kun Li,<lb/> a Yu Zhang,<lb/> a, *<lb/> Jin-Ling Geng<lb/> a , Peng-Fei Duan<lb/> b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Faculty of Science, Kunming University of Science and Technology,<lb/></affiliation>
+	</byline>
+
+	<address>Kunming 650500, China.<lb/></address>
+
+	<byline>
+	<affiliation>b City College, Kunming University of Science and Technology,<lb/></affiliation>
+	</byline>
+
+	<address>Kunming 650051, China<lb/></address>
+
+	<div type="abstract">Abstract<lb/> The evolution of a bound system in the expanding background has been investigated in this paper.<lb/> The background is described by a FRW universe with the modified holographic dark energy model,<lb/> whose equation of state parameter changes with time and can cross the phantom boundary. To study<lb/> the evolution of the bound system, an interpolating metric is considered, and on this basis the geodesics<lb/> of a test particle are given. The equation of motion and the effective potential are also derived from the<lb/> geodesics. By studying the the effective potential and the evolution of the radius of a test particle in the<lb/> bound system of the Milky Way galaxy, we have found that the galaxy would go through three stages:<lb/> expands from a singular point; stays in a discoid for a period of time; big rip in the future. With the help<lb/> of analysing the critical angular momentum, we find that the test particle needs less angular momentum<lb/> to escape from the center mass as time passes.<lb/></div>
+
+	<keyword>keywords: bound system; expanding background; modified holographic dark energy<lb/></keyword>
+
+	<note> *  Email: zhangyu 128@126.com </note>
+
+		</front>
+	</text>
+</tei>

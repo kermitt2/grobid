@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1351388"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>February 5, 2015 17:14<lb/> MPLA<lb/> S0217732315500297 page 1<lb/> Modern Physics Letters A<lb/> Vol. 30, No. 6 (2015) 1550029 (8 pages)<lb/></reference>
+
+	<note type="copyright">c<lb/> World Scientific Publishing Company<lb/></note>
+
+	<idno>DOI: 10.1142/S0217732315500297<lb/></idno>
+
+	<docTitle>
+	<titlePart>Degeneracy pressure of noncommutative fermions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S. Heydarnezhad * and M. Soudmand<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Payame Noor University,<lb/></affiliation>
+	</byline>
+
+	<address>P. O. Box 193953697, Tehran, Iran<lb/></address>
+
+	<email>* sevda.heydarnezhad@live.com<lb/></email>
+
+	<note type="submission">Received 28 July 2014<lb/> Revised 13 November 2014<lb/> Accepted 15 December 2014<lb/> Published 6 February 2015<lb/></note>
+
+	<div type="abstract">The free energy of an imperfect gas of nonrelativistic fermions in noncommutative space<lb/> is calculated to 2-loop order and its zero and low temperature limits are derived. Impli-<lb/>cations on the degeneracy pressure of the system is discussed.<lb/></div>
+
+	<keyword>Keywords: Noncommutative space; imperfect fermion gas; 2-loop degeneracy pressure.<lb/></keyword>
+
+	<keywords type="classes">PACS Nos.: 03.70.+k, 11.10.Nx<lb/></keywords>
+
+		</front>
+	</text>
+</tei>

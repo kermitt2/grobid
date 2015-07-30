@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345769"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+		<date>February 2013 <lb/></date>
+
+		<note type="other"> EPL, 101 (2013) 42001 <lb/> www.epljournal.org <lb/></note>
+
+		<idno> doi: 10.1209/0295-5075/101/42001 <lb/></idno>
+
+		<note type="other"> Comment <lb/></note>
+
+		<docTitle><titlePart> Comment on &quot; Is radioactive decay really exponential? &quot; <lb/>by Aston P. J. <lb/></titlePart></docTitle>
+
+		<byline><docAuthor> Cleanthes A. Nicolaides <lb/> (a) <lb/></docAuthor></byline>
+
+		<byline><affiliation> Theoretical and Physical Chemistry Institute, National Hellenic Research Foundation <lb/></affiliation></byline>
+
+		<address>48, Vasileos Constantinou Avenue, Athens, 11635 Greece, EU <lb/></address> 
+
+		<note type="submission"> received 23 October 2012; accepted in final form 8 February 2013 <lb/>published online 1 March 2013 <lb/></note>
+
+		<note type="other"> PACS  23.90.+w – Other topics in radioactive decay and in-beam spectroscopy <lb/> PACS  03.65.Sq – Quantum mechanics: Semiclassical theories and applications <lb/> PACS  02.30.Hq – Mathematical methods in physics: Ordinary differential equations <lb/></note>
+
+		<note type="copyright"> Copyright c <lb/> EPLA, 2013 <lb/></note>
+
+		<email>(a)  E-mail: caan@eie.gr <lb/></email>
+
+		</front>
+	</text>
+</tei>

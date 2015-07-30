@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1340793"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1407.5824v1 [math-ph]</idno>
+
+	<date>22 Jul 2014<lb/></date>
+
+	<docTitle>
+	<titlePart>Symplectic field theory of a disk, quantum<lb/> integrable systems, and Schur polynomials<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Boris Dubrovin<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. We consider commuting operators obtained by quantization<lb/> of Hamiltonians of the Hopf (aka dispersionless KdV) hierarchy. Such op-<lb/>erators naturally arise in the setting of Symplectic Field Theory (SFT).<lb/> A complete set of common eigenvectors of these operators is given by<lb/> Schur polynomials. We use this result for computing the SFT potential<lb/> of a disk.<lb/></div>
+
+	<keyword>Keywords. Quantum integrable systems, Symplectic field theory, Schur<lb/> polynomials.<lb/></keyword>
+
+	<byline><docAuthor>Boris Dubrovin <lb/></docAuthor></byline>
+
+	<byline><affiliation> SISSA <lb/></affiliation></byline>
+
+	<address>Via Bonomea, 265 <lb/>I-34136 TRIESTE <lb/>ITALY <lb/></address>
+
+	<byline><affiliation>and N.N.Bogolyubov Laboratory of Geometrical Methods in Mathematical Physics, <lb/>Moscow State University,</affiliation></byline>
+
+	<address> Moscow, RUSSIA <lb/></address>
+
+	<email>e-mail: dubrovin@sissa.it </email>
+
+		</front>
+	</text>
+</tei>

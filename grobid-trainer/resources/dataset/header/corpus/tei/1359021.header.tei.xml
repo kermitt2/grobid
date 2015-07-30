@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1359021"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:cond-mat/9711200v1</idno>
+
+	<date>20 Nov 1997<lb/></date>
+
+	<docTitle>
+	<titlePart>The Cooperon and the Random Matrix Model for Type-II Superconductors<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Safi R. Bahcall<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, University of California,</affiliation>
+	</byline>
+
+	<address>Berkeley CA 94720<lb/></address>
+
+	<div type="abstract">We derive the connection between the Cooperon problem in weak localization theory and the random<lb/> matrix description of type-II superconductors. As magnetic field and disorder increase, an extreme<lb/> type-II superconductor crosses over from a state in which the low energy quasiparticles are primarily<lb/> localized and the density of states is determined by the electronic structure of individual vortices,<lb/> to a &apos;chaotic&apos; state, in which quasiparticles are primarily extended and the density of states is<lb/> determined by the random matrix description.<lb/></div>
+
+	<keywords type="classes">PACS numbers: 74.60.-w, 74.25.Jb, 74.50.+r, 05.40.+j<lb/></keywords>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1357950"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proc Indian Natn Sci Acad 81 No. 1 February 2015 Special Issue, pp. 86-94<lb/> c<lb/> Printed in India.<lb/></reference>
+
+	<docTitle>
+	<titlePart>QCD Thermodynamics at Finite Temperature and Finite Chemical Potential<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>NAJMUL HAQUE *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Theory Division, Saha Institute of Nuclear Physics, 1/AF Bidhannagar,</affiliation>
+	</byline>
+
+	<address>Kolkata 700 064 India<lb/></address>
+
+	<note type="submission">(Received on 11 May 2014; Accepted on 9 September 2014)<lb/></note>
+
+	<div type="abstract">We calculate thermodynamic functions viz. pressure, change in pressure due to chemical potential, quark<lb/> number density of hot and dense nuclear matter at finite temperature and chemical potential using three-<lb/>loop Hard Thermal Loop perturbation theory.<lb/></div>
+
+	<keyword>Key Words : Quantum Chromodynamics; Quark Gluon Plasma; Hard Thermal Loop Perturba-<lb/>tion Theory; Temperature; Chemical Potential<lb/></keyword>
+
+	<email> *  Author for Correspondence : E-mail: najmul.haque@saha.ac.in <lb/></email>
+
+	<idno> DOI: 10.16943/ptinsa/2015/v81i1/48055 <lb/></idno>
+
+		</front>
+	</text>
+</tei>

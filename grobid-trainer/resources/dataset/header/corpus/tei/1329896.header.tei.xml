@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1329896"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Fragmentation of CDF jets: perturbative or non-perturbative?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alexei Safonov<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, University of Florida,<lb/></affiliation>
+	</byline>
+
+	<address>Gainesville FL32611-8440, USA<lb/></address>
+
+	<note type="other">For</note>
+
+	<orgName> CDF Collaboration<lb/></orgName>
+
+	<div type="abstract"> Presented are the most recent jet fragmentation results from CDF: inclusive distributions of charged particle<lb/> momenta and their k T in jets; average track multiplicities, as well as angular distributions of multiplicity flow,<lb/> for a wide range of jet energies with E T from 40 to 300 GeV. The results are compared with Monte-Carlo and,<lb/> when possible, analytical calculations performed in resummed perturbative QCD approximations (MLLA).<lb/></div>
+
+		</front>
+	</text>
+</tei>

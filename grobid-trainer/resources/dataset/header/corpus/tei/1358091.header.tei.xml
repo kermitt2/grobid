@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1358091"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Entropy 2015, 17, 1549-1557;</reference>
+
+	<idno>doi:10.3390/e17041549<lb/></idno>
+
+	<note type="other">OPEN ACCESS<lb/> entropy<lb/></note>
+
+	<idno>ISSN 1099-4300<lb/></idno>
+
+	<ptr type="web">www.mdpi.com/journal/entropy<lb/></ptr>
+
+	<note type="other">Article<lb/></note>
+
+	<docTitle>
+	<titlePart>Thermodynamics in Curved Space-Time and Its Application to<lb/> Holography<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yong Xiao *, Li-Hua Feng and Li Guan *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>College of Physical Science and Technology, Hebei University,</affiliation>
+	</byline>
+
+	<address>Baoding 071002, China<lb/></address>
+
+	<note type="other">* Authors to whom correspondence should be addressed;</note>
+
+	<email> E-Mails: xiaoyong@hbu.edu.cn (Y.X.);<lb/> yuanche2008@aliyun.com (L.G.).<lb/></email>
+
+	<note type="other">Academic Editors: Kazuharu Bamba and Oleg Lunin<lb/></note>
+
+	<note type="submission">Received: 8 January 2015 / Accepted: 18 March 2015 / Published: 24 March 2015<lb/></note>
+
+	<div type="abstract">Abstract: The thermodynamic behaviors of a system living in a curved space-time<lb/> are different from those of a system in a flat space-time. We have investigated the<lb/> thermodynamics for a system consisting of relativistic massless bosons. We show that a<lb/> strongly curved metric will produce a large enhancement of the degrees of freedom in the<lb/> formulae of energy and entropy of the system, as a comparison to the case in a flat space-time.<lb/> We are mainly concerned with its implications to holography, including the derivations of<lb/> holographic entropy and holographic screen.<lb/></div>
+
+	<keyword>Keywords: black hole; holographic principle; entropy bounds<lb/> PACS classifications: 04.70.Dy; 04.60.-m; 05.30.-d<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

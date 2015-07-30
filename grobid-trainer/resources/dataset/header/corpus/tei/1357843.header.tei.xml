@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1357843"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">33RD INTERNATIONAL COSMIC RAY CONFERENCE, RIO DE JANEIRO 2013<lb/> THE ASTROPARTICLE PHYSICS CONFERENCE<lb/></note>
+
+	<docTitle>
+	<titlePart>The Multiple Muon Charge Ratio in MINOS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C. M. CASTROMONTE 1 , R. A. GOMES 1 , FOR THE </docAuthor>
+	</byline>
+
+	<orgName>MINOS COLLABORATION.<lb/></orgName>
+
+	<byline>
+	<affiliation>1 Instituto de Física, Universidade Federal de Goiás,</affiliation>
+	</byline>
+
+	<address>CP 131, 74001-970, Goiânia, GO, Brazil<lb/></address>
+
+	<email>cesarc@if.ufg.br<lb/></email>
+
+	<div type="abstract">Abstract: The MINOS Far Detector is a magnetized planar steel-scintillator detector situated underground at<lb/> depth of 2070 mwe. A small fraction of the cosmic ray muons observed in the MINOS FD contain multiple muons.<lb/> These events on average are expected to have originated from either higher mass primaries, or higher energy<lb/> protons than their single muon counterparts. Using the complete MINOS atmospheric data set we will present the<lb/> first measurement of the multiple muon events charge ratio R µ = N µ + /N µ − . Systematic uncertainties on the charge<lb/> ratio were minimized by utilizing data collected with both forward and reversed magnetic field running.<lb/></div>
+
+	<keyword>Keywords: MINOS, cosmic rays, multiple muons.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

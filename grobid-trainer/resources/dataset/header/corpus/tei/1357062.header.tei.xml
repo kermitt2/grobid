@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1357062"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Symmetry, Integrability and Geometry: Methods and Applications<lb/> SIGMA 7 (2011), 113, 11 pages<lb/></reference>
+
+	<docTitle>
+	<titlePart>Breaking Pseudo-Rotational Symmetry through H<lb/> 2<lb/> +<lb/> Metric Deformation in the Eckart Potential Problem<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nehemias LEIJA-MARTINEZ † , David Edwin ALVAREZ-CASTILLO ‡<lb/> and Mariana KIRCHBACH † </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>† Institute of Physics, Autonomous University of San Luis Potosi,<lb/></affiliation>
+	</byline>
+
+	<address>Av. Manuel Nava 6, San Luis Potosi, S.L.P. 78290, Mexico<lb/></address>
+
+	<email>E-mail: nemy@ifisica.uaslp.mx, mariana@ifisica.uaslp.mx</email>
+
+	<byline>
+	<affiliation>‡ H. Niewodnicza´nski Institute of Nuclear Physics,</affiliation>
+	</byline>
+
+	<address>Radzikowskiego 152, 31-342 Kraków, Poland<lb/></address>
+
+	<email>E-mail: david.alvarez@ifj.edu.pl<lb/></email>
+
+	<note type="submission">Received October 12, 2011, in final form December 08, 2011; Published online December 11, 2011<lb/></note>
+
+	<ptr type="web">http://dx.doi.org/10.3842/SIGMA.2011.113<lb/></ptr>
+
+	<div type="abstract">Abstract. The peculiarity of the Eckart potential problem on H<lb/> 2<lb/> + (the upper sheet of the<lb/> two-sheeted two-dimensional hyperboloid), to preserve the (2l + 1)-fold degeneracy of the<lb/> states typical for the geodesic motion there, is usually explained in casting the respective<lb/> Hamiltonian in terms of the Casimir invariant of an so(2,1) algebra, referred to as potential<lb/> algebra. In general, there are many possible similarity transformations of the symmetry<lb/> algebras of the free motions on curved surfaces towards potential algebras, which are not<lb/> all necessarily unitary. In the literature, a transformation of the symmetry algebra of the<lb/> geodesic motion on H<lb/> 2<lb/> + towards the potential algebra of Eckart&apos;s Hamiltonian has been<lb/> constructed for the prime purpose to prove that the Eckart interaction belongs to the class<lb/> of Natanzon potentials. We here take a different path and search for a transformation<lb/> which connects the (2l +1) dimensional representation space of the pseudo-rotational so(2,1)<lb/> algebra, spanned by the rank-l pseudo-spherical harmonics, to the representation space of<lb/> equal dimension of the potential algebra and find a transformation of the scaling type. Our<lb/> case is that in so doing one is producing a deformed isometry copy to H<lb/> 2<lb/> + such that the<lb/> free motion on the copy is equivalent to a motion on H<lb/> 2<lb/> + , perturbed by a coth interaction.<lb/> In this way, we link the so(2,1) potential algebra concept of the Eckart Hamiltonian to<lb/> a subtle type of pseudo-rotational symmetry breaking through H<lb/> 2<lb/> + metric deformation.<lb/> From a technical point of view, the results reported here are obtained by virtue of certain<lb/> nonlinear finite expansions of Jacobi polynomials into pseudo-spherical harmonics. In due<lb/> places, the pseudo-rotational case is paralleled by its so(3) compact analogue, the cotangent<lb/> perturbed motion on S<lb/> 2 . We expect awareness of different so(2,1)/so(3) isometry copies to<lb/> benefit simulation studies on curved manifolds of many-body systems.<lb/></div>
+
+	<keywords>Key words: pseudo-rotational symmetry; Eckart potential; symmetry breaking through met-<lb/>ric deformation<lb/></keywords>
+
+	<keywords type="classes"> 2010 Mathematics Subject Classification: 47E05; 81R40<lb/></keywords>
+
+		</front>
+	</text>
+</tei>

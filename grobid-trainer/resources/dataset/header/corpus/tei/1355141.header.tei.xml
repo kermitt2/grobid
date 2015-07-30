@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1355141"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0805.2980v3 [quant-ph]</idno>
+
+	<date>5 Jan 2009<lb/></date>
+
+	<docTitle>
+	<titlePart>Spin lattices with two-body Hamiltonians for which the ground state encodes a<lb/> cluster state<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Tom Griffin and Stephen D. Bartlett<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Physics, The University of Sydney,</affiliation>
+	</byline>
+
+	<address>Sydney, New South Wales 2006, Australia<lb/></address>
+
+	<date>(Dated: 4 December 2008)<lb/></date>
+
+	<div type="abstract">We present a general procedure for constructing lattices of qubits with a Hamiltonian composed<lb/> of nearest-neighbour two-body interactions such that the ground state encodes a cluster state. We<lb/> give specific details for lattices in one-, two-, and three-dimensions, investigating both periodic and<lb/> fixed boundary conditions, as well as present a proof for the applicability of this procedure to any<lb/> graph. We determine the energy gap of these systems, which is shown to be independent of the<lb/> size of the lattice but dependent on the type of lattice (in particular, the coordination number),<lb/> and investigate the scaling of this gap in terms of the coupling constants of the Hamiltonian. We<lb/> provide a comparative analysis of the different lattice types with respect to their usefulness for<lb/> measurement-based quantum computation.<lb/></div>
+
+	<keywords type="classes">PACS numbers: 03.67.Lx<lb/></keywords>
+
+		</front>
+	</text>
+</tei>

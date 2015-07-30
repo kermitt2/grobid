@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1329013"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Physics of the Dark Universe 5–6 (2014) 35–44<lb/></reference>
+
+	<note type="other">Contents lists available at ScienceDirect<lb/> Physics of the Dark Universe<lb/> journal homepage: www.elsevier.com/locate/dark<lb/></note>
+
+	<docTitle>
+	<titlePart>Solar WIMPs unravelled: Experiments, astrophysical uncertainties,<lb/> and interactive tools<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Matthias Danninger<lb/> a, * , Carsten Rott<lb/> b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Physics, University of British Columbia,</affiliation>
+	</byline>
+
+	<address>Vancouver BC, Canada<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Physics, Sungkyunkwan University,</affiliation>
+	</byline>
+
+	<address>Suwon 440-746, Republic of Korea<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<keyword>Keywords:<lb/> Dark matter<lb/> Indirect detection<lb/> Neutrino astronomy<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> The absence of a neutrino flux from self-annihilating dark matter captured in the Sun has tightly con-<lb/>strained some leading particle dark matter scenarios. The impact of astrophysical uncertainties on the<lb/> capture process of dark matter in the Sun and hence also the derived constraints by neutrino telescopes<lb/> need to be taken into account. In this review we have explored relevant uncertainties in solar WIMP<lb/> searches, summarized results from leading experiments, and provided an outlook into upcoming searches<lb/> and future experiments. We have created an interactive plotting tool that allows the user to view current<lb/> limits and projected sensitivities of major experiments under changing astrophysical conditions.<lb/></div>
+
+	<note type="copyright"> © 2014 Published by Elsevier B.V.<lb/> This is an open access article under the CC BY-NC-ND license<lb/> (http://creativecommons.org/licenses/by-nc-nd/3.0/).<lb/></note>
+
+	<email> *  Corresponding author. <lb/> E-mail addresses: matthias.danninger@cern.ch (M. Danninger), rott@skku.edu <lb/>(C. Rott). <lb/></email>
+
+		</front>
+	</text>
+</tei>

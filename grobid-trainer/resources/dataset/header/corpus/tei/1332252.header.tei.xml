@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1332252"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Umbral Moonshine and Linear Codes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>John F. R. Duncan *<lb/></docAuthor>
+	</byline>
+
+	<date>7 June 2013<lb/></date>
+
+	<div type="abstract">Abstract<lb/> We exhibit each of the finite groups of umbral moonshine as a distinguished subgroup of<lb/> the automorphism group of a distinguished linear code, each code being defined over a different<lb/> quotient of the ring of integers. These code constructions entail permutation representations<lb/> which we use to give a description of the multiplier systems of the vector-valued mock modular<lb/> forms attached to the conjugacy classes of the umbral groups by umbral moonshine.<lb/></div>
+
+	<byline><affiliation> *  Department of Mathematics, Case Western Reserve University,</affiliation></byline>
+
+	<address> Cleveland, OH 44106, U.S.A. <lb/></address>
+
+	<email> E-mail: john.duncan@case.edu <lb/></email>
+
+		</front>
+	</text>
+</tei>

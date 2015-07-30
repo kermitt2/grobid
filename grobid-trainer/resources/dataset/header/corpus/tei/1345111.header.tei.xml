@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345111"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1203.6714v1 [math.DG]</idno>
+
+	<date>30 Mar 2012<lb/></date>
+
+	<docTitle>
+	<titlePart>EXTENSIONS OF THE COEFFECTIVE COMPLEX<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>MICHAEL EASTWOOD †<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. The coeffective differential complex on a symplectic<lb/> manifold is extended both in length and in scope, unifying the<lb/> constructions of various other authors.<lb/></div>
+
+	<note type="grant"> †  Support by the Australian Research Council. <lb/></note>
+
+	<keywords type="classes">2010 Mathematics Subject Classification. Primary 58J10; Secondary 53D05. <lb/></keywords>
+
+	<byline><affiliation>Mathematical Sciences Institute, Australian National University, <lb/></affiliation></byline>
+
+	<address>ACT 0200, Australia <lb/></address>
+
+	<email> E-mail address: meastwoo@member.ams.org </email>
+
+		</front>
+	</text>
+</tei>

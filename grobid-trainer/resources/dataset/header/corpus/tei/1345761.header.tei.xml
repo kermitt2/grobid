@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345761"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">SF2A 2010<lb/></note>
+
+	<byline>
+	<docAuthor>S. Boissier, M. Heydari-Malayeri, R. Samadi and D. Valls-Gabaud (eds)<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>HAVE WE SEEN DARK MATTER ANNIHILATION IN THE COSMIC-RAY<lb/> ELECTRON AND POSITRON SPECTRA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. Lavalle 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. Measurements of a rise in the cosmic positron fraction up to ∼ 100 GeV by the PAMELA<lb/> satellite have triggered putative interpretation attempts in terms of dark matter (DM) annihilation or decay,<lb/> even though generic DM particle models are not expected to contribute to this signal. Here, we review the<lb/> tricks that have been invoked to make DM-induced signals fit the data. We also recall how considering<lb/> conventional astrophysical sources — supernova remnants (SNRs) and pulsars — in a consistent cosmic-ray<lb/> (CR) propagation framework can easily explain these observations, despite large theoretical uncertainties.<lb/> Although this does not dismiss potential DM contributions, this unfortunately makes the related background<lb/> far too difficult to control for discovery purposes. Though the positron puzzle appears qualitatively solved<lb/> in terms of standard astrophysics, substantial improvements in the CR source and propagation modelings<lb/> are now clearly necessary to improve our understanding of the Galactic CR lepton budget and associated<lb/> multi-wavelength diffuse emissions.<lb/></div>
+
+	<keyword>Keywords: dark matter, cosmic-ray propagation, cosmic-ray sources, pulsars, supernova remnants<lb/></keyword>
+
+	<byline>
+	<affiliation> 1  Università di Torino &amp; INFN, Dipartimento di Fisica Teorica,</affiliation>
+	</byline>
+
+	<address>Via Giuria 1, 10125 Torino — Italia <lb/></address>
+
+	<byline>
+		<affiliation>(from Oct. 2010: Instituto de Física Teórica (IFT),</affiliation>
+	</byline>
+
+	<address> Madrid — Spain).</address>
+
+	<email>e-mail: lavalle@in2p3.fr, lavalle@to.infn.it, <lb/>julien.lavalle@uam.es <lb/></email>
+
+		</front>
+	</text>
+</tei>

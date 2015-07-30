@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345416"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Excited Nuclear States for Zr-94 (Zirconium)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Excited Nuclear States for Zr-94 (Zirconium)<lb/> Data extract from the complete set of data provided in the Supplement to Landolt-Börnstein I/25B &quot; Excited Nuclear States<lb/> – Nuclei with Z = 30 -47 &quot; .<lb/> Element 40-Zr (Zirconium)<lb/> Isotope<lb/> Zr-94<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Landolt-Börnstein<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>New Series I/25B<lb/></affiliation>
+	</byline>
+
+	<idno>DOI: 10.1007/978</idno>
+
+	<phone>-3-642-22930-5 315<lb/></phone>
+
+	<byline>
+	<docAuthor>c<lb/> Springer-Verlag Berlin Heidelberg 2012</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

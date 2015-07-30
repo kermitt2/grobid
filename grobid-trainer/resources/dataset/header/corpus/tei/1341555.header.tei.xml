@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1341555"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:math/9910004v1 [math.AG]</idno>
+
+	<date>1 Oct 1999<lb/></date>
+
+	<docTitle>
+	<titlePart>THE GROMOV-WITTEN POTENTIAL OF A POINT, HURWITZ<lb/> NUMBERS, AND HODGE INTEGRALS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>I.P. GOULDEN, D.M. JACKSON, AND R. VAKIL<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. Hurwitz numbers, which count certain covers of the projective<lb/> line (or, equivalently, factorizations of permutations into transpositions), have<lb/> been extensively studied for over a century. The Gromov-Witten potential F<lb/> of a point, the generating series for Hodge integrals on the moduli space of<lb/> curves, has been a central object of study in Gromov-Witten theory. We define<lb/> a slightly enriched Gromov-Witten potential G (including integrals involving<lb/> one &quot; λ-class &quot; ), and show that after a non-trivial change of variables, G = H<lb/> in positive genus, where H is a generating series for Hurwitz numbers. We<lb/> prove a conjecture of Goulden and Jackson on higher genus Hurwitz numbers,<lb/> which turns out to be an analogue of a genus expansion ansatz of Itzykson and<lb/> Zuber. As consequences, we have new combinatorial constraints on F , and a<lb/> much more direct proof of the ansatz of Itzykson and Zuber.<lb/> We can produce recursions and explicit formulas for Hurwitz numbers; the<lb/> algorithm presented should prove &quot; all &quot; such recursions. Furthermore, there are<lb/> many more recursions than previously suspected from geometry (and indeed<lb/> they should exist in all genera); as examples we present surprisingly simple<lb/> new recursions in genus up to 3 that are geometrically mysterious.<lb/> As we expect this paper also to be of interest to combinatorialists, we<lb/> have tried to make it as self-contained as possible, including reviewing some<lb/> results and definitions well known in algebraic and symplectic geometry, and<lb/> mathematical physics.<lb/></div>
+
+	<date>Date: September 30, 1999. <lb/></date>
+
+	<keywords> Key words and phrases. Hurwitz numbers, Gromov-Witten potential, moduli space, ramified <lb/>covers, recurrences, Itzykson-Zuber ansatz, combinatorialization, Hodge integrals. <lb/></keywords>
+
+	<note type="grant">Supported by a research grant from the Natural Sciences and Engineering Research Council of <lb/>Canada. <lb/>Supported by a research grant from the Natural Sciences and Engineering Research Council of <lb/>Canada. <lb/>Partially supported by a research grant DMS 9970101 from the National Science Foundation. <lb/></note>
+
+	<note type="other">1991 MATHEMATICS SUBJECT CLASSIFICATION: PRIMARY 14H10, 81T40; SEC-<lb/>ONDARY 05C30, 58D29 <lb/></note>
+
+	<byline><affiliation>Dept. of Combinatorics and Optimization, University of Waterloo,</affiliation></byline>
+
+	<address>Waterloo, On-<lb/>tario, Canada <lb/></address>
+
+	<email> E-mail address: ipgoulden@math.uwaterloo.ca <lb/></email>
+
+	<byline><affiliation> Dept. of Combinatorics and Optimization, University of Waterloo, Waterloo, On-<lb/>tario, Canada <lb/></affiliation></byline>
+
+	<email> E-mail address: dmjackson@math.uwaterloo.ca <lb/></email>
+
+	<byline><affiliation> Dept. of Mathematics, MIT, Cambridge, MA 02139 <lb/></affiliation></byline>
+
+	<email> E-mail address: vakil@math.mit.edu <lb/></email>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1334272"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Ann. Henri Poincaré 7 (2006), 975–1011<lb/> c<lb/> 2006 Birkhäuser Verlag Basel/Switzerland<lb/> 1424-0637/050975-37, published online 2006-08-08<lb/></reference>
+
+	<idno>DOI 10.1007/s00023-006-0273-9<lb/></idno>
+
+	<byline>
+	<docAuthor>Annales Henri Poincaré<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Positive Energy-Momentum Theorem for<lb/> AdS-Asymptotically Hyperbolic Manifolds<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Daniel Maerten<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. The aim of this paper is to prove a positive energy-momentum the-<lb/>orem under the (well known in general relativity) dominant energy condition,<lb/> for AdS-asymptotically hyperbolic manifolds. These manifolds are by defi-<lb/>nition endowed with a Riemannian metric and a symmetric 2-tensor which<lb/> respectively tend to the metric and second fundamental form of a standard<lb/> hyperbolic slice in Anti-de Sitter space-time. There exists a positive mass<lb/> theorem for asymptotically hyperbolic spin Riemannian manifolds (with zero<lb/> extrinsic curvature), and we present an extension of this result for the non<lb/> zero extrinsic curvature case.<lb/></div>
+
+	<byline>
+	<docAuthor>Daniel Maerten <lb/></docAuthor>
+	</byline>
+
+	<byline>
+		<affiliation>Institut de Mathématiques et de Modélisation de Montpellier (I3M) <lb/>Université Montpellier II <lb/>UMR 5149 CNRS <lb/></affiliation>
+	</byline>
+
+	<address>Place Euène Bataillon <lb/>F-34095 Montpellier <lb/>France <lb/></address>
+
+	<email>e-mail: maerten@math.univ-montp2.fr <lb/></email> 
+
+	<note type="submission">Communicated by Sergiu Klainerman <lb/>Submitted: January 15, 2006 <lb/>Accepted: January 15, 2006 <lb/> To access this journal online: <lb/>http://www.birkhauser.ch</note>
+
+		</front>
+	</text>
+</tei>

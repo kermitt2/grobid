@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1353467"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>DISTA-2007<lb/></idno>
+
+	<docTitle>
+	<titlePart>Balanced Superprojective Varieties<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R. Catenacci ®,H , M. Debernardi ® ,<lb/> P.A. Grassi ®,H,K , and D. Matessi ®<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>® DISTA, Università del Piemonte Orientale,<lb/></affiliation>
+	</byline>
+
+	<address>Via Bellini 25/G, Alessandria, I-15100, Italy,<lb/></address>
+
+	<byline>
+	<affiliation>H INFN -Sezione di Torino-Gruppo collegato di Alessandria<lb/> K Centro Studi e Ricerche E. Fermi, Compendio Viminale,</affiliation>
+	</byline>
+
+	<address>I-00184, Roma, Italy.<lb/></address>
+
+	<div type="abstract">Abstract<lb/> We first review the definition of superprojective spaces from the functor-of-points<lb/> perspective. We derive the relation between superprojective spaces and supercosets<lb/> in the framework of the theory of sheaves. As an application of the geometry of<lb/> superprojective spaces, we extend Donaldson&apos;s definition of balanced manifolds to su-<lb/>permanifolds and we derive the new conditions of a balanced supermanifold. We apply<lb/> the construction to superpoints viewed as submanifolds of superprojective spaces. We<lb/> conclude with a list of open issues and interesting problems that can be addressed in<lb/> the present context.<lb/></div>
+
+	<email>catenacc@mfn.unipmn.it, marcod@mfn.unipmn.i, pgrassi@cern.ch, and matessi@mfn.unipmn.it<lb/></email>
+
+	<idno>arXiv:0707.4246v1 [math-ph]</idno>
+
+	<date>28 Jul 2007<lb/></date>
+
+		</front>
+	</text>
+</tei>

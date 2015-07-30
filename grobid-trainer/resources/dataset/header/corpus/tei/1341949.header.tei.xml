@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1341949"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Available; at: http://www.ictp.trieste. it/~pub_ off<lb/></note>
+
+	<idno>IC/2000/182<lb/></idno>
+
+	<note type="other"> United Nations Educational Scientific and Cultural Organization<lb/> and<lb/> International Atomic Energy Agency<lb/>THE ABDUS SALAM INTERNATIONAL CENTRE FOR THEORETICAL PHYSICS<lb/></note>
+
+	<docTitle>
+	<titlePart> AXINO PRODUCTION IN e+e&quot; AND 77 COLLISIONS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hoang Ngoc Long<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Physics, NCST,</affiliation>
+	</byline>
+
+	<address>P.O. Box 429, Bo Ho, Hanoi 10000, Vietnam}<lb/></address>
+
+	<byline>
+	<affiliation>and<lb/> The Abdus Salam International Centre for Theoretical Physics,</affiliation>
+	</byline>
+
+	<address>Trieste, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>and<lb/> Dang Van Soa<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Hanoi University of Mining and Geology,<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Dong Ngac. Tu Liern. Hanoi, Vietnam<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> and<lb/> The Abdus Salam International Centre for Theoretical Physics,</affiliation>
+	</byline>
+
+	<address>Trieste, Italy.<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Production of axinos and photinos in e<lb/> + e~ and 77 collisions is calculated and estimated. It<lb/> is shown that there is an upper limit of the cross section for the process e~e<lb/> + —&gt; orf dependent<lb/> only 011 the breaking scale. For the process 77 —»@BULLET «,a<lb/> c<lb/> , there is a special direction in which axinos<lb/> are mainly produced. Behaviour of cross section for this process is also analysed. Based 011 the<lb/> result a new constraint for FjN is derived: j^ &gt; 10<lb/> 14 GeV.<lb/> MIRAMARE TRIESTE<lb/></div>
+
+	<date>December 2000<lb/></date>
+	
+		</front>
+	</text>
+</tei>

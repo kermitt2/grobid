@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1329877"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Linear Algebra and its Applications 434 (2011) 1200–1214<lb/></reference>
+
+	<note type="other">Contents lists available at ScienceDirect<lb/> Linear Algebra and its Applications<lb/> journal homepage: www.elsevier.com/locate/laa<lb/></note>
+
+	<docTitle>
+	<titlePart>Maximal linear subspaces of strong self-dual 2-forms and the<lb/> Bonan 4-form<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ay¸se Hümeyra Bilge<lb/> a, * , Tekin Dereli<lb/> b , ¸<lb/> Sahin Koçak<lb/> c<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Faculty of Sciences and Letters, Kadir Has University,</affiliation>
+	</byline>
+
+	<address>Cibali, Istanbul, Turkey<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Physics, Koç University,</affiliation>
+	</byline>
+
+	<address>Sarıyer, Istanbul, Turkey<lb/></address>
+
+	<byline>
+	<affiliation>c Department of Mathematics, Anadolu University,</affiliation>
+	</byline>
+
+	<address>Eski¸sehir, Turkey<lb/></address>
+
+	<note type="other">A R T I C L E I N F O<lb/> A B S T R A C T<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 21 August 2009<lb/> Accepted 1 November 2010<lb/> Available online 3 December 2010<lb/> Submitted by V. Sergeichuk<lb/></note>
+
+	<note type="other">AMS classification:<lb/> 11E76<lb/> 15A66<lb/></note>
+
+	<keyword> Keywords:<lb/> Bonan form<lb/> Self-duality<lb/> Eight manifolds<lb/></keyword>
+
+	<div type="abstract">The notion of self-duality of 2-forms in 4-dimensions plays an em-<lb/>inent role in many areas of mathematics and physics, but although<lb/> the 2-forms have a genuine meaning related to curvature and gauge-<lb/>field-strength in higher dimensions also, their &quot; self-duality&quot; is some-<lb/>thing which is almost avoided above 4-dimensions. We show that<lb/> self-duality of 2-forms is a very natural notion in higher (even) di-<lb/>mensions also and we prove the equivalence of some scattered and<lb/> rarely used definitions in the literature. We demonstrate the useful-<lb/>ness of this higher self-duality by studying it in 8-dimensions and<lb/> we derive a natural expression for the Bonan form in terms of self-<lb/>dual 2-forms and we give an explicit expression of the local action<lb/> of SO(8) on the Bonan form.<lb/></div>
+
+	<note type="copyright">© 2010 Elsevier Inc. All rights reserved.<lb/></note>
+
+	<email>*  Corresponding author. <lb/> E-mail addresses: ayse.bilge@khas.edu.tr (A.H. Bilge), tdereli@ku.edu.tr (T. Dereli), skocak@anadolu.edu.tr (S. Koçak). <lb/></email>
+
+	<note type="other"> 0024-3795/$ -see front matter © 2010 Elsevier Inc. All rights reserved. <lb/></note>
+
+	<idno>doi:10.1016/j.laa.2010.11.002 <lb/></idno>
+
+		</front>
+	</text>
+</tei>

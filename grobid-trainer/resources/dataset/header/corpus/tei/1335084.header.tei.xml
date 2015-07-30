@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1335084"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+		<reference> Physica Scripta. Vol.  46,  385-388, 1992. <lb/></reference>
+
+		<docTitle><titlePart> Two Potential Solution for an Abelian Dyon in Born lnfeld <lb/>Theory <lb/></titlePart></docTitle>
+
+		<byline>
+		<docAuthor> c. Wolf <lb/></docAuthor>
+		</byline>
+		
+		<byline><affiliation>Department of Physics, North Adams State College,</affiliation></byline>
+
+		<address> North Adams, MA 01247, U.S.A. <lb/></address>
+
+		<note type="submission"> Received April 1,1992; accepted May 25,1992 <lb/></note>
+
+		<div type="abstract"> Abstract <lb/> By introducing two potentials to describe the electromagnetic field we <lb/>arrive at a symmetric solution for the field of an Abelian dyon in Born <lb/>Infeld theory. A discussion is given regarding the difference between a two <lb/>potential theory and a one potential theory in the case of an Abelian dyon. <lb/></div>
+
+		</front>
+	</text>
+</tei>

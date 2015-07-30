@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="Taxonomy-basedGlyphDesign"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Taxonomy-Based Glyph Design — with a Case Study on<lb/> Visualizing Workflows of Biological Experiments<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Eamonn Maguire, Philippe Rocca-Serra, Susanna-Assunta Sansone, Jim Davies, and Min Chen<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Saccharomyces cerevisiae FY1679<lb/> NZ_0hrs_Grow_1<lb/> growth<lb/> mRNA extraction<lb/> NZ_0hrs_Sample_1_Extract<lb/> NZ_1hrs_Drug_Sample_1_Extract<lb/> NZ_2hrs_Drug_Sample_1_Extract<lb/> NZ_4hrs_Drug_Sample_1_Extract<lb/> NZ_2hrs_Vehicle_Sample_1_Extract<lb/> NZ_4hrs_Vehicle_Sample_1_Extract<lb/> NZ_4hrs_Vehicle_Sample_1_Extract<lb/> biotin labeling<lb/> biotin labeling<lb/> biotin labeling<lb/> biotin labeling<lb/> biotin labeling<lb/> biotin labeling<lb/> biotin labeling<lb/> NZ_0hrs_Sample_1_Labeled<lb/> NZ_1hrs_Drug_Sample_1_Extract_Labeled<lb/> NZ_2hrs_Drug_Sample_1_Extract_Labeled<lb/> NZ_4hrs_Drug_Sample_1_Extract_Labeled<lb/> NZ_2hrs_Vehicle_Sample_1_Extract_Labeled<lb/> NZ_4hrs_Vehicle_Sample_1_Extract_Labeled<lb/> NZ_4hrs_Vehicle_Sample_1_Extract_Labeled<lb/> mRNA extraction<lb/> mRNA extraction<lb/> mRNA extraction<lb/> mRNA extraction<lb/> mRNA extraction<lb/> mRNA extraction<lb/> biotin<lb/> biotin<lb/> biotin<lb/> biotin<lb/> biotin<lb/> biotin<lb/> biotin<lb/> hybridization<lb/> hybridization<lb/> hybridization<lb/> hybridization<lb/> hybridization<lb/> hybridization<lb/> hybridization<lb/> NZ_0hrs_Sample_1_Labeled_Hyb1<lb/> NZ_1hrs_Drug_Sample_1_Extract_Labeled_Hyb3<lb/> NZ_2hrs_Drug_Sample_1_Extract_Labeled_Hyb7<lb/> NZ_4hrs_Drug_Sample_1_Extract_Labeled_Hyb11<lb/> NZ_2hrs_Vehicle_Sample_1_Extract_Labeled_Hyb9<lb/> NZ_4hrs_Vehicle_Sample_1_Extract_Labeled_Hyb13<lb/> NZ_4hrs_Vehicle_Sample_1_Extract_Labeled_Hyb5<lb/> scanning<lb/> scanning<lb/> scanning<lb/> scanning<lb/> scanning<lb/> scanning<lb/> scanning<lb/> NZ_0hrs_Sample_1_Labeled_Hyb1_Scan1<lb/> NZ_1hrs_Drug_Sample_1_Extract_Labeled_Hyb3_Scan3<lb/> NZ_2hrs_Drug_Sample_1_Extract_Labeled_Hyb7_Scan7<lb/> NZ_4hrs_Drug_Sample_1_Extract_Labeled_Hyb11_Scan11<lb/> NZ_2hrs_Vehicle_Sample_1_Extract_Labeled_Hyb9_Scan9<lb/> NZ_4hrs_Vehicle_Sample_1_Extract_Labeled_Hyb13_Scan13<lb/> NZ_4hrs_Vehicle_Sample_1_Extract_Labeled_Hyb5_Scan5<lb/> feature extraction<lb/> feature extraction<lb/> feature extraction<lb/> feature extraction<lb/> feature extraction<lb/> feature extraction<lb/> feature extraction<lb/> E-MAXD-4-raw-data-426648549.txt<lb/> E-MAXD-4-raw-data-426648567.txt<lb/> E-MAXD-4-raw-data-426648585.txt<lb/> E-MAXD-4-raw-data-426648603.txt<lb/> E-MAXD-4-raw-data-426648639.txt<lb/> E-MAXD-4-raw-data-426648657.txt<lb/> E-MAXD-4-raw-data-426648621.txt<lb/> data processing<lb/> data processing<lb/> data processing<lb/> data processing<lb/> data processing<lb/> data processing<lb/> data processing<lb/> E-MAXD-4-processed-data-1342566476.txt<lb/> E-MAXD-4-processed-data-1342566476.txt<lb/> E-MAXD-4-processed-data-1342566476.txt<lb/> E-MAXD-4-processed-data-1342566476.txt<lb/> E-MAXD-4-processed-data-1342566476.txt<lb/> E-MAXD-4-processed-data-1342566476.txt<lb/> E-MAXD-4-processed-data-1342566476.txt<lb/> Fig. 1. a) Workflow as rendered currently using toolkits such as GraphViz. b) We propose to replace the textual labels with glyphs,<lb/> while allowing interactive access to detailed descriptions. This makes it easy to gain an overview, search components and compare<lb/> workflows. The screenshot shows a prototype developed within ISAcreator, a system for capturing biological experiment metadata.<lb/> Abstract—Glyph-based visualization can offer elegant and concise presentation of multivariate information while enhancing speed<lb/> and ease in visual search experienced by users. As with icon designs, glyphs are usually created based on the designers&apos; experience<lb/> and intuition, often in a spontaneous manner. Such a process does not scale well with the requirements of applications where a large<lb/> number of concepts are to be encoded using glyphs. To alleviate such limitations, we propose a new systematic process for glyph<lb/> design by exploring the parallel between the hierarchy of concept categorization and the ordering of discriminative capacity of visual<lb/> channels. We examine the feasibility of this approach in an application where there is a pressing need for an efficient and effective<lb/> means to visualize workflows of biological experiments. By processing thousands of workflow records in a public archive of biological<lb/> experiments, we demonstrate that a cost-effective glyph design can be obtained by following a process of formulating a taxonomy<lb/> with the aid of computation, identifying visual channels hierarchically, and defining application-specific abstraction and metaphors.<lb/></div>
+
+	<keyword>Index Terms—Glyph-based techniques, taxonomies, design methodologies, bioinformatics visualization.<lb/></keyword>
+
+	<byline><affiliation> • Eamonn Maguire is with Oxford e-Research Centre and Department of <lb/>Computer Science, University of Oxford,</affiliation></byline>
+
+	<address> UK. E-mail: <lb/></address>
+
+	<email>eamonn.maguire@st-annes.ox.ac.uk. <lb/></email>
+
+	<byline><affiliation> • Philippe Rocca-Serra, Susanna-Assunta Sansone and Min Chen are with <lb/>Oxford e-Research Centre, University of Oxford,</affiliation></byline>
+
+	<address> UK.</address>
+
+	<email> E-mail: {philippe. <lb/> rocca-serra,susanna-assunta.sansone,min.chen}@oerc.ox.ac.uk. <lb/></email>
+
+	<byline><affiliation> • Jim Davies is with Department of Computer Science, University of Oxford, <lb/></affiliation></byline>
+
+	<address>UK.</address>
+
+	<email> E-mail: jim.davies@cs.ox.ac.uk. <lb/></email>
+
+	<note type="submission">Manuscript received 31 March 2012; accepted 1 August 2012; posted online <lb/>14 October 2012; mailed on 5 October 2012. <lb/>For information on obtaining reprints of this article, please send <lb/>e-mail to: tvcg@computer.org. <lb/></note>
+
+		</front>
+	</text>
+</tei>

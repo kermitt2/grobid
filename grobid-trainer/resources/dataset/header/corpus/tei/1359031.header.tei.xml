@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1359031"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">187<lb/></note>
+
+	<docTitle>
+	<titlePart>States of<lb/> 15<lb/> C via the (<lb/>18<lb/> O,<lb/>16<lb/>O) reaction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F.Cappuzzello<lb/> 1,2 , M.Cavallaro<lb/> 1,2 , A.Cunsolo<lb/> 1,2 , A.Foti<lb/> 1,3 , S.E.A.Orrigo<lb/> 1,2 ,<lb/> M.R.D.Rodrigues<lb/> 2 , T.Borello-Lewin<lb/> 4 , D.Carbone<lb/> 1,2 , C.Schillaci<lb/> 1,2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Dipartimento di Fisica e Astronomia, Università degli Studi di Catania,</affiliation>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<byline>
+	<affiliation>2 Istituto Nazionale di Fisica Nucleare – Laboratori Nazionali del Sud,</affiliation>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<byline>
+	<affiliation>3 Istituto Nazionale di Fisica Nucleare –</affiliation>
+	</byline>
+
+	<address>Sezione Catania, Italy<lb/></address>
+
+	<byline>
+	<affiliation>4 Instituto de Fisica, Universidade de Sao Paulo,</affiliation>
+	</byline>
+
+	<address>Sao Paulo, Brazil<lb/></address>
+
+	<div type="abstract">Abstract<lb/> A study of the<lb/> 15 C states was pursued in 2008 at the Catania INFN-LNS<lb/> laboratory by the<lb/> 13 C(<lb/> 18 O,<lb/> 16 O)<lb/> 15 C reaction at 84 MeV incident energy. The<lb/> 16 O ejectiles were detected at forward angles by the MAGNEX magnetic<lb/> spectrometer. Thanks to an innovative technique the ejectiles were identified<lb/> without the need of time of flight measurements.<lb/> Exploiting the large momentum acceptance (25%) and solid angle (50 msr)<lb/> of the spectrometer, the<lb/> 15 C energy spectra were obtained with a quite<lb/> relevant yield up to about 20 MeV excitation energy. The application of the<lb/> powerful technique of the trajectory reconstruction did allow to get an<lb/> energy resolution of about 250 keV FWHM, limited mainly by straggling<lb/> effects. The spectra show several known low lying states up to about 7 MeV<lb/> excitation energy as well as two unknown resonant structures at about 11.4<lb/> and 13.5 MeV. The strong excitation of these latter together with the<lb/> measured width of about 2 MeV FWHM could indicate the presence of<lb/> collective modes of excitation connected to the transfer of a correlated<lb/> neutron pair.<lb/></div>
+
+		</front>
+	</text>
+</tei>

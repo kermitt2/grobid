@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345197"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>DOI 10.1140/epjp/i2013-13138-5<lb/></idno>
+
+	<note type="other">Regular Article<lb/></note>
+
+	<reference>Eur. Phys. J. Plus (2013) 128: 138<lb/></reference>
+
+	<docTitle>
+	<titlePart>THE EUROPEAN<lb/> PHYSICAL JOURNAL PLUS<lb/> Potential well and step potential within the framework of<lb/> minimal length quantum mechanics<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>H. Hassanabadi<lb/> 1 , S. Zarrinkamar<lb/> 2 , and E. Maghsoodi<lb/>1,a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Basic Sciences, Shahrood Branch, Islamic Azad University,</affiliation>
+	</byline>
+
+	<address>Shahrood, Iran<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Basic Sciences, Garmsar Branch, Islamic Azad University,</affiliation>
+	</byline>
+
+	<address>Garmsar, Iran<lb/></address>
+
+	<note type="submission">Received: 5 August 2013 / Revised: 4 October 2013<lb/></note>
+
+	<note type="other">Published online: 18 November 2013 – c<lb/> Società Italiana di Fisica / Springer-Verlag 2013<lb/></note>
+
+	<div type="abstract">Abstract. The potential well and the step potential are studied under the modified Schrödinger equation<lb/> due to minimal length in an exact analytical manner. The scattering problems as well as the reflection and<lb/> transmission parameters are reported.<lb/></div>
+
+	<email>a  e-mail: e.maghsoodi184@gmail.com <lb/></email>
+
+		</front>
+	</text>
+</tei>

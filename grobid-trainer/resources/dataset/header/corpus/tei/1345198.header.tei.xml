@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345198"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">May 3, 2013 9:19 WSPC/139-IJMPA<lb/> S0217751X13500413<lb/></note>
+
+	<reference>International Journal of Modern Physics A<lb/> Vol. 28, No. 12 (2013) 1350041 (13 pages)<lb/></reference>
+
+	<note type="copyright">c<lb/> World Scientific Publishing Company<lb/></note>
+
+	<idno>DOI: 10.1142/S0217751X13500413<lb/></idno>
+
+	<docTitle>
+	<titlePart>SCATTERING STATES OF HULTHÉN<lb/> INTERACTION<lb/> IN MINIMAL LENGTH QUANTUM MECHANICS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>H. HASSANABADI, * , ‡ S. ZARRINKAMAR † and E. MAGHSOODI *<lb/> *</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Basic Sciences, Shahrood Branch,<lb/>Islamic Azad University,</affiliation>
+	</byline>
+
+	<address>Shahrood, Iran<lb/></address>
+
+	<byline>
+	<affiliation>† Department of Basic Sciences, Garmsar Branch,<lb/> Islamic Azad University,</affiliation>
+	</byline>
+
+	<address>Garmsar, Iran<lb/></address>
+
+	<email>‡ h.hasanabadi@shahroodut.ac.ir<lb/></email>
+
+	<note type="submission">Received 20 January 2013<lb/> Revised 13 March 2013<lb/> Accepted 18 March 2013<lb/> Published 3 May 2013<lb/></note>
+
+	<div type="abstract">We first revisit the nonrelativistic minimal length quantum mechanics and reveal an<lb/> interesting symmetry of the problem. In fact, we will show that the cumbersome problem<lb/> can be cast into the ordinary Schrödinger equation with a new effective potential. Next,<lb/> as a typical example, we show the minimal length Schrödinger equation in the presence<lb/> of a nonminimal Hulthén vector interaction. The transmission and reflection coefficients<lb/> are reported as well.<lb/></div>
+
+	<keyword>Keywords: Generalized uncertainty principle; Hulthén potential; transmission and reflec-<lb/>tion coefficients.<lb/></keyword>
+
+	<note type="other">PACS numbers: 03.65.−w, 04.60.−m, 42.50.Nn, 04.62.+v<lb/></note>
+
+		</front>
+	</text>
+</tei>

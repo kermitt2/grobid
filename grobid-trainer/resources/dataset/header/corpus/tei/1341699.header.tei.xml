@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1341699"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1007.2701v1 [nlin.SI]</idno>
+
+	<date>16 Jul 2010<lb/></date>
+
+	<docTitle>
+	<titlePart>ADDITIONAL SYMMETRIES OF CONSTRAINED CKP AND BKP<lb/> HIERARCHIES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>KELEI TIAN †, JINGSONG HE<lb/> * ‡, JIPENG CHENG † AND YI CHENG † †</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Mathematics, University of Science and Technology of</affiliation>
+	</byline>
+
+	<address>China, China<lb/></address>
+
+	<byline>
+	<affiliation>‡ Department of Mathematics, Ningbo University</affiliation>
+	</byline>
+
+	<address>, China<lb/></address>
+
+	<div type="abstract">Abstract. The additional symmetries of the constrained CKP (cCKP) and BKP (cBKP) hi-<lb/>erarchies are given by their actions on the Lax operators, and their actions on the eigenfunction<lb/> and adjoint eigenfunction {Φ i , Ψ i } are presented explicitly. Furthermore, we show that acting<lb/> on the space of the wave operator, ∂ *<lb/> k forms new centerless W<lb/> cC<lb/> 1+∞ and W<lb/> cB<lb/> 1+∞ -subalgebra of<lb/> centerless W 1+∞ respectively. In order to define above symmetry flows ∂ *<lb/> k of the cCKP and<lb/> cBKP hierarchies, two vital operators Y k are introduced to revise the additional symmetry<lb/> flows of the CKP and BKP hierarchies.<lb/></div>
+
+	<keywords type="classes">PACS (2003). 02.30.Ik.<lb/> Mathematics Subject Classification (2000). 17B80, 37K05, 37K10.<lb/></keywords>
+
+	<keywords>Keywords. constrained CKP hierarchy, constrained BKP hierarchy, additional symmetry.<lb/></keywords>
+
+	<email>*  Corresponding author. email: hejingsong@nbu.edu.cn. <lb/></email>
+
+		</front>
+	</text>
+</tei>

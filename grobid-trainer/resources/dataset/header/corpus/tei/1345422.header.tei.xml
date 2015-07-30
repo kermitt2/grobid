@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345422"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<docTitle>
+	<titlePart>Direct Evidence for Proton-Neutron Out-of-Phase<lb/> Coupling in Mixed-Symmetry States from Scattering<lb/> Experiments on<lb/>92<lb/> Zr<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>N Pietralla 1 , C Walz 1 , V Yu Ponomarev 1 , H Fujita 2,3 , A Krugmann 1 ,<lb/> P von Neumann-Cosel 1 , A Scheikh-Obeid 1 , J Wambach 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institut für Kernphysik, TU Darmstadt,</affiliation>
+	</byline>
+
+	<address>Schlossgartenstraße 9, D-64289 Darmstadt,<lb/> Germany<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Physics, Osaka University,</affiliation>
+	</byline>
+
+	<address>Toyonaka, Osaka 560-0043, Japan<lb/></address>
+
+	<byline>
+	<affiliation>3 iThemba LABS,</affiliation>
+	</byline>
+
+	<address>Post Office Box 722, Somerset West 7129, South Africa<lb/></address>
+
+	<email>E-mail: pietralla@ikp.tu-darmstadt.de<lb/></email>
+
+	<div type="abstract">Abstract. The coupling of the giant quadrupole resonance to valence space configurations is<lb/> shown to dominantly contribute to the formation of low-lying quadrupole collective structures<lb/> in vibrational nuclei with symmetric and mixed-symmetric character with respect to the proton-<lb/>neutron degree of freedom. Experimental evidence is obtained from electron-and proton<lb/> scattering experiments on the nucleus<lb/> 92 Zr that are directly sensitive to the relative phase<lb/> of valence space amplitudes by quantum interference.<lb/></div>
+
+		</front>
+	</text>
+</tei>

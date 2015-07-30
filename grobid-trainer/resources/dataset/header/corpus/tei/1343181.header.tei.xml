@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1343181"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Tojdo~y Vol. 24. No. 1, pp. 89-95, 1985.<lb/></reference>
+
+	<note type="other">two-9383/85 53.00+ .oo<lb/> Printed m Great kitam<lb/> Pergamon Press Ltd.<lb/></note>
+
+	<docTitle>
+	<titlePart>SUPERCONNECTIONS<lb/> AND THE CHERN CHARACTER<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>DANIEL QUILLEN<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">(Received 14 February 1984)<lb/></note>
+
+	<note type="grant">This work is supported in part by the National Science Foundation<lb/> 89</note>
+
+		</front>
+	</text>
+</tei>

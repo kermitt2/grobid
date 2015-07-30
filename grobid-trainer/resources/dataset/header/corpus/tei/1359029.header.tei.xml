@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1359029"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<docTitle>
+	<titlePart>First results and planned experiments with the<lb/> INFN-LNS ray-tracing magnetic spectrometer<lb/> MAGNEX<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A.Cunsolo<lb/> a,b , F.Cappuzzello<lb/> a,b , M.Cavallaro<lb/> a,b , A.Foti<lb/> c<lb/> , S.E.A.Orrigo<lb/> a,b ,<lb/> M.R.D.Rodrigues<lb/> b T.Borello-Lewin<lb/> d , H.Petrascu<lb/> e , D.Carbone<lb/>a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation> a<lb/> Dipartimento di Fisica e Astronomia, Università di Catania,</affiliation>
+	</byline>
+
+	<address>Catania, Italy<lb/></address>
+
+	<byline>
+	<affiliation>b<lb/> INFN-Laboratori Nazionali del Sud,</affiliation>
+	</byline>
+
+	<address>Catania, Italy<lb/></address>
+
+	<byline>
+	<affiliation>c INFN-Sezione di Catania,</affiliation>
+	</byline>
+
+	<address>Catania, Italy<lb/></address>
+
+	<byline>
+	<affiliation> d IFUSP,</affiliation>
+	</byline>
+
+	<address>S.Paolo,Brazil<lb/></address>
+
+	<byline>
+	<affiliation>e NIPNE,</affiliation>
+	</byline>
+
+	<address>Bucarest, Romania<lb/></address>
+
+	<div type="abstract">Abstract. The MAGNEX large-acceptance ray-tracing magnetic spectrometer has recently been<lb/> used with beams from the INFN-LNS Tandem accelerator. After an accurate commissioning, the<lb/> instrument has started an ambitious experimental program. In the first experiment the<lb/> 19 F<lb/> (7 Li,<lb/> 7 Be)<lb/> 19<lb/> O charge-exchange reaction was studied at 52 MeV incident energy. The<lb/> 19<lb/> O<lb/> excitation energy spectrum was reconstructed and the angular distributions measured. The<lb/> second experiment was aimed at the study of the<lb/> 15 C via the<lb/> 13<lb/> C(<lb/> 18<lb/> O,<lb/> 16 O)<lb/> 15 C reaction at 84 MeV<lb/> incident energy. The ejectiles where detected at forward angles and mass identified by means of<lb/> an innovative technique. The<lb/> 15<lb/> C excitation energy spectra up to about 20 MeV were obtained<lb/> with a 250 keV FWHM energy resolution. In addition to several known states, the spectra show<lb/> two unknown resonant-like structures at 11.4 and 14.0 MeV. The strong population of these<lb/> structures, together with the measured widths, could indicate the collective nature of these states<lb/> associated to a correlated neutron pair transfer. Besides the first results of physical interest from<lb/> these two experiments, future experiments with MAGNEX are briefly outlined.<lb/></div>
+
+	<keyword>Keywords: Magnetic spectrometers. Spectroscopy of light nuclei.<lb/></keyword>
+
+	<keywords type="classes"> PACS: 07.81.+a, 07.77.Ka, 29.30.Ep, 29.40.-n, 21.10.Pc, 21.10.Re, 25.70.Hi<lb/></keywords>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1333125"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of Geometry and Physics 62 (2012) 53–60<lb/></reference>
+
+	<note type="other">Contents lists available at SciVerse ScienceDirect<lb/> Journal of Geometry and Physics<lb/> journal homepage: www.elsevier.com/locate/jgp<lb/></note>
+
+	<docTitle>
+	<titlePart>Some remarks on the geometry of superspace supergravity<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michel Egeileh<lb/> a, * , Fida El Chami<lb/> b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Mathematics, American University of Beirut,</affiliation>
+	</byline>
+
+	<address>P.O. Box 11-0236/Mathematics, Riad El-Solh/Beirut 1107 2020, Lebanon<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Mathematics, Lebanese University, Faculty of Sciences II,</affiliation>
+	</byline>
+
+	<address>B.P. 90656, Fanar-Maten, Lebanon<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 17 February 2010<lb/> Accepted 11 September 2011<lb/>Available online 21 September 2011<lb/></note>
+
+	<keyword>Keywords:<lb/> Supergravity<lb/> Superspace<lb/> Killing spinors<lb/> Cartan connections<lb/> G-structures<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> In this note, we first give a quick presentation of the supergeometry underlying<lb/> supergravity theories, using an intrinsic differential geometric language. For this, we adopt<lb/> the point of view of Cartan geometries, and rely as well on the work of John Lott, who has<lb/> found a unified geometrical interpretation of the torsion constraints for many supergravity<lb/> theories, based on the use of H-structures. In this framework, the constraints amount to<lb/> requiring first-order integrability of H-structures, for a specific supergroup H.<lb/> The supergroup H used by Lott is not the usual diagonal representation of the Lorentz<lb/> group on superspace, but an extension of the latter. This extension appears to be natural<lb/> and it can be related to the super-Poincaré group. We also observe that the constraints<lb/> arising from the requirement of first-order integrability have basically the same form, in<lb/> any spacetime dimension.<lb/> Looking at supergravity from an affine viewpoint (i.e. as a gauge theory for the<lb/> super-Poincaré group), we show that requiring first-order integrability amounts to<lb/> requiring the equivalence, up to gauge transformations, between infinitesimal gauge<lb/> supertranslations acting on the supervielbein and infinitesimal superdiffeomorphisms<lb/> acting on the supervielbein.<lb/> The latter action is performed through a covariant Lie derivative, whose expression<lb/> involves naturally the supertorsion tensor. We use this expression to show that the term<lb/> added to the spin connection, in the supercovariant derivative of d = 11 supergravity, has<lb/> a natural superspace origin. In particular, the 4-form field strength is related to a specific<lb/> component of the supertorsion tensor.<lb/> We conclude by some general remarks concerning Killing spinors in geometry and<lb/> supergravity, discussing their possible interpretations, as Killing vector fields on a specific<lb/> supermanifold on one hand, and as parallel spinors for an appropriate connection on the<lb/> other hand. We show that this last interpretation is very natural from the point of view of<lb/> Klein and Cartan geometries.<lb/></div>
+
+	<note type="copyright">© 2011 Elsevier B.V. All rights reserved.<lb/></note>
+
+	<note type="phone"> *  Corresponding author. Tel.: +961 1 350 000. <lb/></note>
+
+	<email> E-mail addresses: me58@aub.edu.lb (M. Egeileh), fchami@ul.edu.lb (F. El Chami). <lb/></email>
+
+	<note type="copyright">0393-0440/$ – see front matter  ©  2011 Elsevier B.V. All rights reserved. <lb/></note>
+
+	<idno>doi:10.1016/j.geomphys.2011.09.008 <lb/></idno>
+
+
+		</front>
+	</text>
+</tei>

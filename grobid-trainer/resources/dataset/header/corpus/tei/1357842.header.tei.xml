@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1357842"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>International Journal of Quantum Foundations 1 (2015) 100-106<lb/></reference>
+
+	<note type="other">Original Paper<lb/></note>
+
+	<docTitle>
+	<titlePart>Non-local beables<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Lee Smolin 1,2,3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Perimeter Institute for Theoretical Physics,</affiliation>
+	</byline>
+
+	<address>31 Caroline Street North, Waterloo, Ontario<lb/> N2J 2Y5, Canada<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Physics and Astronomy, University of Waterloo<lb/> 3 Department of Philosophy, University of Toronto<lb/></affiliation>
+	</byline>
+
+	<email>E-mail: lsmolin@perimeterinstitute.ca<lb/></email>
+
+	<note type="submission">Received: 2 February 2014 / Accepted: 16 March 2015 / Published: 25 March 2015<lb/></note>
+
+	<div type="abstract">Abstract: I discuss the idea that the beables underlying quantum physics are<lb/> non-local and relational, and give an example of a dynamical theory of such<lb/> beables based on a matrix model, which is the bosonic sector of the BF SS<lb/> model. Given that the same model has been proposed as a description of M<lb/> theory, this shows that quantum mechanics may be emergent from a theory of<lb/> gravity from which space is also emergent.<lb/></div>
+
+	<keyword>Keywords: non-local beables; matrix model; M theory; gravity<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

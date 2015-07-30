@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345760"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Mem. S.A.It. Vol. 81, 204<lb/> c<lb/> SAIt 2010<lb/></reference>
+
+	<note type="other">Memorie della<lb/></note>
+
+	<docTitle>
+	<titlePart>MAGIC highlights<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Josep M. Paredes 1 and Massimo Persic 2</docAuthor>
+	</byline>
+
+	<note type="other">on behalf of the</note>
+
+	<orgName> MAGIC Collaboration<lb/> </orgName>
+
+	<byline>
+	<affiliation>1 Departament d&apos;Astronomia i Meteorologia and Institut deCì encies del Cosmos (ICC),<lb/> Universitat de Barcelona (UB/IEEC), </affiliation>
+	</byline>
+
+	<address>Barcelona, Spain,</address>
+
+	<email>e-mail: jmparedes@ub.edu<lb/></email>
+
+	<byline>
+	<affiliation>2 INAF and INFN,</affiliation>
+	</byline>
+
+	<address>Trieste, Italy,v</address>
+
+	<email>e-mail: persic@oats.inaf.it<lb/></email>
+
+	<div type="abstract">Abstract. The single-dish configuration of the MAGIC Cherenkov telescope has been in<lb/> operation since 2004 , with an operational window of 0.03–30 TeV. The stereo configura-<lb/>tion, made possible by the recently completed second dish, is due to start a second phase of<lb/> MAGIC operation soon. In this paper we offer a review of MAGIC phase-1 (mono) results.<lb/></div>
+
+	<keyword>Key words. Gamma rays: observations, supernova remnants, pulsars, pulsar wind nebulae,<lb/> active galactic nuclei; γ-ray bursts; cosmic rays; dark matter<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

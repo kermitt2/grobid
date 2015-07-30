@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1344720"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>LOOP GROUPS AND EQUATIONS OF KdV TYPE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by GRAEME SEGAL and GEORGE WILSON<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">The purpose of this paper is to work out some of the implications of recent ideas<lb/> of M. and Y. Sato about the Korteweg-de Vries (KdV) equation and related non-linear<lb/> partial differential equations. We learned of these ideas from the papers [5] of Date,<lb/> Jimbo, Kashiwara and Miwa (the original work ofM. and Y. Sato appears to be available<lb/> only in Japanese). We shall describe a construction which assigns a solution of the<lb/> KdV equation to each point of a certain infinite dimensional Grassmannian. The class<lb/> of solutions obtained in this way, which is misleadingly referred to as<lb/> &lt;( the general<lb/> solution &quot; in [5], includes the explicit algebro-geometric solutions ofKrichever [10, n];<lb/> among these are the well known<lb/> c&lt; n-soliton &quot; and rational solutions.<lb/> Our main aims are to determine what class of solutions is obtained by the method,<lb/> to illustrate in detail how the geometry of the Grassmannian is reflected in properties<lb/> of the solutions, and to show how the algebro-geometric solutions fit into the picture.<lb/> We have also tried to explain the geometric meaning of the &quot; r-function &quot;, which plays<lb/> a fundamental role in the papers [5]. But above all we have endeavoured to present<lb/> a clear and self-contained account of the theory, and hope to have elucidated a number<lb/> of points left obscure in the literature.<lb/></div>
+
+		</front>
+	</text>
+</tei>

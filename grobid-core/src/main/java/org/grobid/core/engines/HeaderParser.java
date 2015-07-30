@@ -1316,6 +1316,16 @@ public class HeaderParser extends AbstractParser {
                     biblio.setEnglishTitle(s2);
             } else if (((s1.equals("<intro>")) || (s1.equals("I-<intro>"))) && intro) {
                 return biblio;
+            } else if ((s1.equals("<collaboration>")) || (s1.equals("I-<collaboration>"))) {
+                if(biblio.getCollaboration() != null) {
+                    if (addSpace) {
+                        biblio.setCollaboration(biblio.getCollaboration() + " " + s2);
+                    } else {
+                        biblio.setCollaboration(biblio.getCollaboration() + s2);
+                    }
+                } else {
+                    biblio.setCollaboration(s2);
+                }
             }
             lastTag = s1;
         }

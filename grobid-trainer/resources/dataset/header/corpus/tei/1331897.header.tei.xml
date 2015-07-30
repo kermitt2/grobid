@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1331897"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:quant-ph/0403136v1</idno>
+
+	<date>18 Mar 2004<lb/></date>
+
+	<docTitle>
+	<titlePart>A Bloch-Sphere-Type Model for Two Qubits in the<lb/> Geometric Algebra of a 6-D Euclidean Vector Space<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Timothy F. Havel a and Chris J. L. Doran b<lb/> a</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Nuclear Engineering, Massachusetts Institute of Technology,<lb/></affiliation>
+	</byline>
+
+	<address>Cambridge, MA 02139, USA<lb/></address>
+
+	<byline>
+	<affiliation>b MRAO, Cavendish Laboratory, Cambridge University,</affiliation>
+	</byline>
+
+	<address>Cambridge,<lb/> CB3 OHE, United Kingdom<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Geometric algebra is a mathematical structure that is inherent in any metric vector space, and defined by the<lb/> requirement that the metric tensor is given by the scalar part of the product of vectors. It provides a natural<lb/> framework in which to represent the classical groups as subgroups of rotation groups, and similarly their Lie<lb/> algebras. In this article we show how the geometric algebra of a six-dimensional real Euclidean vector space<lb/> naturally allows one to construct the special unitary group on a two-qubit (quantum bit) Hilbert space, in a<lb/> fashion similar to that used in the well-established Bloch sphere model for a single qubit. This is then used to<lb/> illustrate the Cartan decompositions and subalgebras of the four-dimensional unitary group, which have recently<lb/> been used by J. Zhang, J. Vala, S. Sastry and K. B. Whaley [Phys. Rev. A 67, 042313, 2003] to study the<lb/> entangling capabilities of two-qubit unitaries.<lb/></div>
+
+	<keyword>Keywords: Lie algebra, geometric algebra, quantum information<lb/></keyword>
+
+	<email>Further author information: T.F.H.: E-mail: tfhavel@MIT.EDU <lb/>C.J.L.D.: E-mail: C.Doran@MRAO.CAM.AC.UK <lb/></email>
+
+		</front>
+	</text>
+</tei>

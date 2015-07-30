@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1340769"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Journées<lb/> de prospectives IN2P3-IRFU, Giens, 2012<lb/> Groupe 1 : Modèle<lb/> Standard :<lb/> mesures de précision<lb/> et brisure de symétrié<lb/> electrofaible<lb/> 29 mars 2012<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Coordinateurs :<lb/> N. Besson a , J.Malcì es a , M. Talby b , P. Verdier b<lb/> Auteurs :<lb/> G. Bernardi b , D. Bloch b , M. Boonekamp a , R. Chierici b , L. Di Ciaccio b , Y. Coadou b ,<lb/> F. Déliot a , A. Djouadi, A. I. Etienvre a , J.-L. Faure a , S. Ganjour a , P. Gras a , G. Ha-<lb/>mel De Monchenault a , S. Hassani a , M. Knecht b , A. Lucotte b , C. Ochando b , L. Roos b ,<lb/> C. Royon a , J. Schwindling a , V. Sharry a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a IRFU<lb/></affiliation>
+	</byline>
+
+	<address>b IN2P3<lb/></address>
+
+		</front>
+	</text>
+</tei>

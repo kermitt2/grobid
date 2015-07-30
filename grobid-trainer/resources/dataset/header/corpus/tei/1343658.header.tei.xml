@@ -1,0 +1,145 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1343658"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>PAMELA: a Payload for Antimatter Matter<lb/> Exploration and Light-nuclei Astrophysics – status<lb/> and first results<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Pearce, O. Adriani, M. Ambriola, G.C. Barbarino, A. Basili, G.A. Bazilevskaja, R. Bellotti, M. Boezio, E.A.<lb/> Bogomolov, L. Bonechi, M. Bongi, L. Bongiorno, V. Bonvicini, A. Bruno, F. Cafagna, D. Campana, P. Carlson, M.<lb/> Casolino, G. Castellini, M. P. De Pascale, G. De Rosa, V. Di Felice, D. Fedele, A. M. Galper, P. Hofverberg, S.V.<lb/> Koldashov, S.Y. Krutkov, A.N. Kvashnin, J. Lundquist, O. Maksumov, V. Malvezzi, L. Marcelli, W. Menn, V.V.<lb/> Mikhailov, M. Minori, S. Misin, E. Mocchiutti, A. Morselli, N.N. Nikonov, S. Orsi, G. Osteria, P. Papini, P. Picozza,<lb/> M. Ricci, S.B. Ricciarini, M.F. Runtso, S. Russo, M. Simon, R. Sparvoli, P. Spillantini, Y.I. Stozhkov, E. Taddei, A.<lb/> Vacchi, E. Vannuccini, G. Vasilyev, S.A. Voronov, Y.T. Yurkin, G. Zampa, N. Zampa, and V.G. Zverev<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract– PAMELA is a satellite-borne experiment designed<lb/> for precision studies of the charged cosmic radiation. The<lb/> primary scientific goal is the study of the antimatter component<lb/> of the cosmic radiation (antiprotons, 80 MeV -190 GeV; and<lb/> positrons, 50 MeV -270 GeV) in order to search for evidence of<lb/> dark matter particle annihilations. PAMELA will also search for<lb/> primordial antinuclei (in particular, anti-helium), and test<lb/> cosmic-ray propagation models through precise measurements of<lb/> the antiparticle energy spectrum and studies of light nuclei and<lb/> their isotopes. Concomitant goals include a study of solar physics<lb/> and solar modulation during the 24th solar minimum by<lb/> investigating low energy particles in the cosmic radiation; and a<lb/> reconstruction of the cosmic ray electron energy spectrum up to<lb/> several TeV thereby allowing a possible contribution from local<lb/> Manuscript received November 21, 2007. The PAMELA mission is<lb/> sponsored by the Italian National Institute of Nuclear Physics (INFN), the<lb/> Italian Space Agency (ASI), the Russian Space Agency (Roskosmos), the<lb/> Russian Academy of Science, the German Space Agency (DLR), the Swedish<lb/> National Space Board and the Swedish Research Council (VR).<lb/></div>
+
+	<byline>
+	<docAuthor>M. Pearce, P. Carlson, P. Hofverberg</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>are with the Department of Physics,<lb/></affiliation>
+	</byline>
+
+	<address>KTH, Stockholm, Sweden.</address>
+
+	<email>(e-mail: pearce@kth.se)</email>
+
+	<byline>
+	<docAuthor>.<lb/> O. Adriani, L. Bonechi, M. Bongi, D. Fedele, P. Papini, S.B. Riccardini, P.<lb/> Spillantini, E. Taddei, E. Vannuccini</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>are with INFN, Structure of Florence<lb/> and Physics Department of University of Florence,</affiliation>
+	</byline>
+
+	<address>Florence, Italy.<lb/></address>
+
+	<byline>
+	<docAuthor>M. Ambriola, R. Bellotti, A Bruno, F. Cafagna</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>are with INFN, Structure of<lb/> Bari and Physics Department of University of Bari,</affiliation>
+	</byline>
+
+	<address>Bari, Italy.<lb/></address>
+
+	<byline>
+	<docAuthor> G.C. Barbarino, D. Campana, D. De Rosa, G. Osteria, S. Russo</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>are with<lb/> INFN, Structure of Naples and Physics Department of University of Naples <lb/>&apos;Federico II&apos;,</affiliation>
+	</byline>
+
+	<address> Naples, Italy.<lb/></address>
+
+	<byline>
+	<docAuthor>A. Basili, M. Casolino, M.P. De Pascale, V. Di Felice, V. Malvezzi, L.<lb/> Marcelli, M. Minori, A. Morselli, S. Orsi, P. Picozza, R. Sparvoli</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>are with<lb/> INFN, Structure of Rome &apos;Tor Vergata&apos; and Physics Department of<lb/> University of Rome &apos;Tor Vergata&apos;,</affiliation>
+	</byline>
+
+	<address>Rome, Italy.<lb/></address>
+
+	<byline>
+	<docAuthor>G.A. Bazilevskaja, A.N. Kvashnin, O. Maksumov, S. Misin, Y.I. Stozhkov<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>are at Lebedev Physical Institute,</affiliation>
+	</byline>
+
+	<address>Moscow, Russia.<lb/></address>
+
+	<byline>
+	<docAuthor>M. Boezio, V. Bonvicini, J. Lundquist, E. Mocchiutti, A. Vacchi, G.<lb/> Zampa, N. Zampa</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>are with INFN, Structure of Trieste,</affiliation>
+	</byline>
+
+	<address>Trieste, Italy.<lb/></address>
+
+	<byline>
+	<docAuthor>E.A. Bogomolov, S.Y. Krutkov, N.N. Nikonov, G. Vasilyev</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>are at Ioffe<lb/> Physical Technical Institute,</affiliation>
+	</byline>
+
+	<address>St. Petersburg, Russia.<lb/></address>
+
+	<byline>
+	<docAuthor>L. Bongiorno, M. Ricci</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>are with INFN, Laboratori Nazionali di Frascati,<lb/></affiliation>
+	</byline>
+
+	<address>Frascati, Italy.<lb/></address>
+
+	<byline>
+		<docAuthor> G. Castellini </docAuthor>
+	</byline>	
+
+	<byline>
+	<affiliation> is with IFAC, </affiliation>
+	</byline>
+
+	<address> Sesto Fiorentino, Florence, Italy.<lb/></address>
+
+	<byline>
+	<docAuthor>A.M. Galper, S.V. Koldashov, V.V. Mikhailov, M.F. Runtso, S.A.<lb/> Voronov, Y.T. Yurkin, V.G. Zverev</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>are with Moscow Engineering and<lb/> Physics Institute,</affiliation>
+	</byline>
+
+	<address>Moscow, Russia.<lb/></address>
+
+	<byline>
+	<docAuthor>W. Menn, M. Simon</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>are with Universität Siegen,</affiliation>
+	</byline>
+
+	<address>Siegen, Germany.<lb/></address>
+
+	<div type="abstract">sources to be studied. PAMELA is housed on-board the Russian<lb/> Resurs-DK1 satellite, which was launched on June 15th 2006 in<lb/> an elliptical (350-600 km altitude) orbit with an inclination of 70<lb/> degrees. PAMELA consists of a permanent magnet spectrometer,<lb/> to provide rigidity and charge sign information; a Time-of-Flight<lb/> and trigger system, for velocity and charge determination; a<lb/> silicon-tungsten calorimeter, for lepton/hadron discrimination;<lb/> and a neutron detector. An anticoincidence system is used offline<lb/> to reject false triggers. In this article the PAMELA experiment<lb/> and its status are reviewed. A preliminary discussion of data<lb/> recorded in-orbit is also presented.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1355476"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Counting Majorana bound states using complex momenta<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ipsita Mandal<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Perimeter Institute for Theoretical Physics</affiliation>
+	</byline>
+
+	<address>, 31 Caroline St. N., Waterloo ON N2L 2Y5, Canada *<lb/> </address>
+
+	<note type="other">(Dated: March 25, 2015)<lb/></note>
+
+	<div type="abstract">Recently the connection between Majorana fermions bound to defects in arbitrary dimensions,<lb/> and complex momentum roots of the the vanishing determinant of the corresponding bulk BdG<lb/> Hamiltonian, has been established (arXiv:1503.03839). Based on this understanding, a formula has<lb/> been proposed to count the number (n) of the zero energy Majorana bound states, which is related<lb/> to the topological phase of the system. In this paper, we apply this formula to a variety of 1d and<lb/> 2d models belonging to the classes BDI, DIII and D. We show that we can successfully chart out<lb/> the topological phase diagrams. Studying these examples also enables us to explicitly observe the<lb/> correspondence between these complex momentum solutions in the Fourier space, and the localized<lb/> Majorana fermion wavefunctions in the position space. Finally, we corroborate the fact that for<lb/> systems with a chiral symmetry, these solutions are the so-called &quot; Exceptional Points &quot; , where two<lb/> or more eigenvalues of the complexified Hamiltonian coalesce.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1335201"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<docTitle>
+	<titlePart>First non-intercepting emittance measurement by<lb/> means of optical diffraction radiation interference<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A Cianchi<lb/> 1<lb/> , V Balandin<lb/> 2<lb/> , M Castellano<lb/> 3<lb/> , E Chiadroni<lb/> 3<lb/> , L Catani<lb/> 4<lb/> ,<lb/> N Golubeva<lb/> 2<lb/> , K Honkavaara<lb/> 2<lb/> , G Kube<lb/> 2 and M Migliorati<lb/> 5<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 INFN-Roma Tor Vergata &amp; University of Rome &apos;Tor Vergata&apos;,</affiliation>
+	</byline>
+
+	<address>Via della Ricerca Scientifica,<lb/> 1-00133 Rome, Italy<lb/></address>
+
+	<byline>
+	<affiliation>2 DESY,</affiliation>
+	</byline>
+
+	<address>Notkestrasse 85, 22607 Hamburg, Germany<lb/></address>
+
+	<byline>
+	<affiliation>3 INFN-LNF,</affiliation>
+	</byline>
+
+	<address>Via E. Fermi, 40-00044 Frascati, Rome, Italy<lb/></address>
+
+	<byline>
+	<affiliation>4 INFN-Roma &apos;Tor Vergata&apos;,</affiliation>
+	</byline>
+
+	<address>Via della Ricerca Scientifica, 1-00133 Rome, Italy<lb/></address>
+
+	<byline>
+	<affiliation>5 Dept. SBAI, Sapienza University of Rome,</affiliation>
+	</byline>
+
+	<address>Via A. Scarpa 16, 00161 Roma, Italy<lb/></address>
+
+	<email>E-mail: alessandro.cianchi@roma2.infn.it<lb/></email>
+
+	<note type="submission">Received 18 May 2014, revised 29 August 2014<lb/> Accepted for publication 4 September 2014<lb/> Published 11 November 2014<lb/></note>
+
+	<reference>New Journal of Physics 16 (2014) 113029<lb/></reference>
+
+	<idno>doi:10.1088/1367-2630/16/11/113029<lb/></idno>
+
+	<div type="abstract">Abstract<lb/> Transverse electron beam size measurements are required in order to determine<lb/> the transverse emittance. In the case of high brightness electron beams produced<lb/> by high repetition rate linear accelerators, conventional invasive diagnostics<lb/> cannot sustain the intense power dissipated in intercepting devices. The analysis<lb/> of the angular distribution of diffraction radiation has been proven to be a<lb/> competent candidate for non-intercepting measurements of electron beam<lb/> parameters. In addition, optical diffraction radiation interference (ODRI) has<lb/> been demonstrated to be superior to the single slit ODR due to its shielding<lb/> capability against the synchrotron radiation background and the possibility of<lb/> avoiding complementary diagnostics. This paper reports the first transverse<lb/> emittance measurement ever performed with the ODRI technique. In addition,<lb/> the intrinsic non-intercepting and non-disturbing feature of the ODRI method<lb/> has been checked in our experimental conditions by wakefield calculations.<lb/></div>
+
+	<keyword>Keywords: diffraction radiation, high brightness beam, emittance measurement<lb/></keyword>
+
+	<note type="copyright">Content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence.<lb/> Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal<lb/> citation and DOI.</note>
+
+		</front>
+	</text>
+</tei>

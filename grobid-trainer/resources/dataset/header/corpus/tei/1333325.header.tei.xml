@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1333325"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:quant-ph/0204016v1</idno>
+
+	<date>4 Apr 2002<lb/></date>
+
+	<docTitle>
+	<titlePart>Encoded Universality for Generalized Anisotropic Exchange Hamiltonians<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jiri Vala and K. Birgitta Whaley<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, University of California,</affiliation>
+	</byline>
+
+	<address>Berkeley, CA 94720<lb/></address>
+
+	<div type="abstract">We derive an encoded universality representation for a generalized anisotropic exchange Hamil-<lb/>tonian that contains cross-product terms in addition to the usual two-particle exchange terms. The<lb/> recently developed algebraic approach is used to show that the minimal universality-generating en-<lb/>codings of one logical qubit are based on three physical qubits. We show how to generate both<lb/> single-and two-qubit operations on the logical qubits, using suitably timed conjugating operations<lb/> derived from analysis of the commutator algebra. The timing of the operations is seen to be crucial<lb/> in allowing simplification of the gate sequences for the generalized Hamiltonian to forms similar<lb/> to that derived previously for the symmetric (XY) anisotropic exchange Hamiltonian. The total<lb/> number of operations needed for a controlled-Z gate up to local transformations is five. A scalable<lb/> architecture is proposed.<lb/></div>
+
+		</front>
+	</text>
+</tei>

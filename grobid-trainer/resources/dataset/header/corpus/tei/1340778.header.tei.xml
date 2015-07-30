@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1340778"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1306.5429v1 [math.AG]</idno>
+
+	<date>23 Jun 2013<lb/></date>
+
+	<docTitle>
+	<titlePart>EXPLICIT FORMULA FOR WITTEN-KONTSEVICH<lb/> TAU-FUNCTION<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>JIAN ZHOU<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. We present an explicit formula for Witten-Kontsevich<lb/> tau-function.<lb/></div>
+
+	<byline><affiliation> Department of Mathematical Sciences, Tsinghua University,</affiliation></byline>
+
+	<address> Beijng, <lb/>100084, China <lb/></address>
+
+	<email> E-mail address: jzhou@math.tsinghua.edu.cn </email>
+
+		</front>
+	</text>
+</tei>

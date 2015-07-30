@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345405"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">32ND INTERNATIONAL COSMIC RAY CONFERENCE, BEIJING 2011<lb/></note>
+
+	<docTitle>
+	<titlePart>The search for extremely high-energy neutrinos with IceCube<lb/></titlePart>
+	</docTitle>
+
+	<orgName>THE ICECUBE COLLABORATION<lb/> 1<lb/></orgName>
+
+	<note type="other"> 1<lb/> See special section in these proceedings<lb/></note>
+
+	<div type="abstract">Abstract: The IceCube neutrino telescope was constructed to search for high energy neutrinos of cosmic origin. At<lb/> the highest energies, neutrinos associated with the interaction of the most energetic cosmic rays with cosmic microwave<lb/> background photons (GZK effect) are considered a guaranteed signal, with expected event rates of up to a few events<lb/> per year in a cubic kilometer detector. Searches for GZK neutrinos have been performed using data taken with the<lb/> intermediate construction stages of the now complete IceCube detector. We present the results of finished and on-going<lb/> analyses, with a focus on the search using data taken between spring 2009 and spring 2010, when the IceCube detector<lb/> was roughly 70% complete.<lb/></div>
+
+	<byline><docAuthor> Corresponding authors: Henrike Wissing<lb/></docAuthor></byline>
+
+	<email> 2 (hwissing@icecube.umd.edu), </email>
+
+	<byline><docAuthor> Aya Ishihara<lb/></docAuthor></byline>
+
+	<email> 3 (aya@hepburn.s.chiba-u.ac.jp)<lb/></email>
+
+	<byline>
+	<affiliation>2 University of Maryland.</affiliation>
+	</byline>
+
+	<address>College Park, MD 20742, USA<lb/></address>
+
+	<byline>
+	<affiliation>3 Chiba University,</affiliation>
+	</byline>
+
+	<address>Chiba 263-8522, Japan<lb/></address>
+
+	<keyword>Keywords: IceCube, GZK neutrinos, EHE neurtinos<lb/></keyword>
+
+	<idno> DOI: 10.7529/ICRC2011/V02/0949 <lb/></idno>
+
+		</front>
+	</text>
+</tei>

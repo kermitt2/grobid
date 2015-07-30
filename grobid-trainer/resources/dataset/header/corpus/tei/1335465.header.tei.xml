@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1335465"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Gravity on All the Energy Steps. The Contours of a Future<lb/> Building<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A.E.Shalyt-Margolin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> National Centre of Particles and High Energy Physics,</affiliation>
+	</byline>
+
+	<address>Pervomaiskaya Str.<lb/> 18, Minsk 220088, Belarus<lb/> PACS: 03.65, 05.20<lb/></address>
+
+	<keyword>Keywords:gravity,fundamental length,discrete parameters<lb/></keyword>
+
+	<div type="abstract">Abstract<lb/> At the present time a theory of gravity is subdivided into two ab-<lb/>solutely different parts: low-energy theory represented by the Gen-<lb/>eral Relativity (GR) and hypothetical high-energy theory – Quan-<lb/>tum Gravity (QG) – that is still unresolved. In this way there is<lb/> a certain dichotomy in gravity considered as a unified theory. This<lb/> paper is an effort to reveal the main causes for such a dichotomy;<lb/> the means for departure from this dichotomy are proposed. By one<lb/> of the approaches gravity is considered at low and at high ener-<lb/>gies as a single whole dependent on the same parameters, which are<lb/> discrete for the fundamental length if present.There are grounds to<lb/> believe that in this case the mathematical formalism must be modi-<lb/>fied – all infinitesimal space-time quantities must be replaced by the<lb/> corresponding finite quantities dependent on the existent energies.<lb/> Possible approaches to this problem are proposed with the proper<lb/> illustrations.<lb/></div>
+
+	<email> 1  E-mail: a.shalyt@mail.ru; alexm@hep.by <lb/></email>
+
+		</front>
+	</text>
+</tei>

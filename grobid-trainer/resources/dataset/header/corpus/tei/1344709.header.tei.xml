@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1344709"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Hyperfine Interact (2012) 213:147–158<lb/></reference>
+
+	<idno>DOI 10.1007/s10751-011-0397-2<lb/></idno>
+
+	<docTitle>
+	<titlePart>The PAMELA space mission for antimatter and dark<lb/> matter searches in space<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Boezio · A. Bruno · O. Adriani · G. C. Barbarino · G. A. Bazilevskaya ·<lb/> R. Bellotti · E. A. Bogomolov · M. Bongi · V. Bonvicini · S. Borisov · S. Bottai ·<lb/> F. Cafagna · D. Campana · R. Carbone · P. Carlson · M. Casolino · G. Castellini ·<lb/> L. Consiglio · M. P. De Pascale · C. De Santis · N. De Simone · V. Di Felice ·<lb/> A. M. Galper · W. Gillard · L. Grishantseva · G. Jerse · A. V. Karelin ·<lb/> M. D. Kheymits · S. V. Koldashov · S. Y. Krutkov · A. N. Kvashnin · A. Leonov ·<lb/> V. Malakhov · L. Marcelli · A. G. Mayorov · W. Menn · V. V. Mikhailov ·<lb/> E. Mocchiutti · A. Monaco · N. Mori · N. Nikonov · G. Osteria · F. Palma · P. Papini ·<lb/> M. Pearce · P. Picozza · C. Pizzolotto · M. Ricci · S. B. Ricciarini · L. Rossetto ·<lb/> R. Sarkar · M. Simon · R. Sparvoli · P. Spillantini · Y. I. Stozhkov · A. Vacchi ·<lb/> E. Vannuccini · G. Vasilyev · S. A. Voronov · Y. T. Yurkin · J. Wu · G. Zampa ·<lb/> N. Zampa · V. G. Zverev<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Published online: 21 October 2011<lb/></note>
+
+	<note type="copyright"> © Springer Science+Business Media B.V. 2011<lb/></note>
+
+	<note type="other"> J. Wu was on leave from School of Mathematics and Physics, China University of Geosciences,<lb/>430074 Wuhan, China.<lb/></note>
+
+	<byline>
+	<docAuthor>M. Boezio (B) · V. Bonvicini · G. Jerse · E. Mocchiutti · C. Pizzolotto · R. Sarkar · A. Vacchi ·<lb/> G. Zampa · N. Zampa<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Sezione di Trieste,</affiliation>
+	</byline>
+
+	<address>INFN, 34149 Trieste, Italy<lb/></address>
+
+	<email>e-mail: Mirko.Boezio@ts.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>A. Bruno · R. Bellotti · F. Cafagna · A. Monaco<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, University of Bari,</affiliation>
+	</byline>
+
+	<address>70126 Bari, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>A. Bruno · R. Bellotti · A. Monaco<lb/></docAuthor>
+	</byline>
+
+	<address>Sezione di Bari, INFN, 70126 Bari, Italy<lb/> A. Bruno<lb/></address>
+
+	<email>e-mail: Alessandro.Bruno@ba.infn.it<lb/></email>
+
+	<byline>
+	<docAuthor>O. Adriani · N. Mori · P. Spillantini<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, University of Florence,</affiliation>
+	</byline>
+
+	<address>Sesto Fiorentino, 50019 Florence, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>O. Adriani · M. Bongi · S. Bottai · N. Mori · P. Papini · S. B. Ricciarini · P. Spillantini ·<lb/> E. Vannuccini<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Sezione di Florence, INFN,</affiliation>
+	</byline>
+
+	<address>Sesto Fiorentino, 50019 Florence, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>G. C. Barbarino<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, University of Naples &quot; Federico II &quot; ,</affiliation>
+	</byline>
+
+	<address>80126 Naples, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>G. C. Barbarino · D. Campana · R. Carbone · L. Consiglio · G. Osteria<lb/></docAuthor>
+	</byline>
+
+	<address>Sezione di Naples, INFN, 80126 Naples, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>G. A. Bazilevskaya · A. N. Kvashnin · Y. I. Stozhkov<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Lebedev Physical Institute,</affiliation>
+	</byline>
+
+	<address>119991, Moscow, Russia<lb/> 148<lb/></address>
+
+	<note type="other">M. Boezio et al.<lb/></note>
+
+	<div type="abstract">Abstract The PAMELA satellite-borne experiment has presented new results on<lb/> cosmic-ray antiparticles that can be interpreted in terms of DM annihilation or pulsar<lb/> contribution. The instrument was launched from the Baikonur cosmodrome and it<lb/> has been collecting data since July 2006. The combination of a permanent magnet<lb/> silicon strip spectrometer and a silicon-tungsten imaging calorimeter allows precision<lb/> studies of the charged cosmic radiation to be conducted over a wide energy range<lb/> with high statistics. The primary scientific goal is the measurement of the antiproton<lb/> and positron energy spectrum in order to search for exotic sources. PAMELA is also<lb/> searching for primordial antinuclei (anti-helium), and testing cosmic-ray propagation<lb/> models through precise measurements of the antiparticle energy spectrum and<lb/> precision studies of light nuclei and their isotopes. This talk illustrates the most recent<lb/> scientific results obtained by the PAMELA experiment.<lb/></div>
+
+	<keyword>Keywords Cosmic rays · Antimatter · Dark matter<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1343597"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Astron. Nachr. /AN 334, No. 6, 605 – 610 (2013)</reference>
+
+	<note type="other">/ DOI 10.1002/asna.201311906<lb/></note>
+
+	<docTitle>
+	<titlePart>Large Hadron Collider and Dark Matter<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>L. Covi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für theoretische Physik,</affiliation>
+	</byline>
+
+	<address>Friedrich-Hund-Platz 1, D-37077 Göttingen, Germany<lb/></address>
+
+	<note type="submission">Received 2013 Apr 24, accepted 2013 Apr 29<lb/> Published online 2013 Jul 1<lb/></note>
+
+	<keyword>Key words Cosmology: theory – dark matter<lb/></keyword>
+
+	<div type="abstract">We review shortly the scenarios of Weakly Interactive Massive Particle (WIMP) and Super-Weakly Interacting Massive<lb/> Particle (SuperWIMP) Dark Matter candidates and discuss the recent searches for Dark Matter candidates at the Large<lb/> Hadron Collider (LHC).<lb/></div>
+
+	<note type="copyright">c<lb/> 2013 WILEY-VCH Verlag GmbH &amp; Co. KGaA, Weinheim<lb/></note>
+
+	<email>Corresponding author: laura.covi@theorie.physik.uni-goettingen.de <lb/></email>
+
+		</front>
+	</text>
+</tei>

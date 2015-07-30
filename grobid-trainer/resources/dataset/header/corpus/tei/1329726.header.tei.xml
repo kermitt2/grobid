@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1329726"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0806.4793v1 [math-ph]</idno>
+
+	<date>29 Jun 2008<lb/></date>
+
+	<docTitle>
+	<titlePart>A bi-Hamiltonian Supersymmetric Geodesic<lb/> Equation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. Lenells<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Applied Mathematics and Theoretical Physics, University of Cambridge,<lb/></affiliation>
+	</byline>
+
+	<address>Cambridge CB3 0WA, United Kingdom<lb/></address>
+
+	<div type="abstract">Abstract<lb/> A supersymmetric extension of the Hunter-Saxton equation is constructed. We<lb/> present its bi-Hamiltonian structure and show that it arises geometrically as a<lb/> geodesic equation on the space of superdiffeomorphisms of the circle that leave<lb/> a point fixed endowed with a right-invariant metric.<lb/> AMS Subject Classification (2000): 37K10, 17A70.<lb/></div>
+
+	<keyword>Keywords: Supersymmetry, integrable systems, Hunter-Saxton equation.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

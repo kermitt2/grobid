@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345873"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>International Journal of Mass Spectrometry 349– 350 (2013) 172– 180<lb/></reference>
+
+	<note type="other">Contents lists available at ScienceDirect<lb/></note>
+
+	<div type="abstract">International Journal of Mass Spectrometry<lb/> j o u r n a l h o m e p a g e : w w w . e l s e v i e r . c o m / l o c a t e / i j m s<lb/></div>
+
+	<docTitle>
+	<titlePart>Masses of unbound nuclear systems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>H. Simon *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>GSI Helmholtzzentrum für Schwerionenforschung GmbH,</affiliation>
+	</byline>
+
+	<address>Planckstr. 1, 64291 Darmstadt, Germany<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 12 March 2013<lb/> Received in revised form 12 May 2013<lb/> Accepted 13 May 2013<lb/></note>
+
+	<date>Available online 23 May 2013<lb/></date>
+
+	<keyword>Keywords:<lb/> Unbound nuclear systems<lb/> Halo nuclei<lb/> nuclear reactions<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> The availability of intense secondary beams in conjunction with modern efficient detection setups allows<lb/> for the production and detailed study of the most extreme nuclear systems, in terms of asymmetry of<lb/> proton and neutron number, in the continuum. The extraction of even fundamental quantities like masses<lb/> together with other spectroscopic information is challenging, as their determination requires disentan-<lb/>gling the production process from structures appearing in the extracted spectra due to the final state<lb/> interaction of the unbound system in the continuum that is to be described. Beta-unstable nuclei that<lb/> are produced close to the drip-lines, can be used as starting point for reaching out even more into the<lb/> unknown by producing unbound exotic nuclear systems e.g., in transfer and knockout reactions. Already<lb/> these represent open quantum systems where properties are hard to predict by nuclear structure the-<lb/>ory as they are strongly affected by their nearby lying continuum states. Experiments allow to measure<lb/> the momenta of the reaction products and the energy of the gamma radiation emerging from the reac-<lb/>tion zone. Information on momenta and correlations are gathered, which appear e.g., in the measured<lb/> momentum vectors, relative energy spectra, the spin alignment during the reaction process, and can be<lb/> further distinguished by observing dependent quantities like the profile function, denoting a momentum<lb/> width as function of relative energy.<lb/> In order to relate them to intrinsic properties of the unbound systems, properties of the seed nuclei<lb/> are to be studied and related to the observations in the continuum. In this paper examples for the above-<lb/>mentioned methods are presented. The quest for masses of their ground states is exemplified for light<lb/> systems like<lb/> 5,7 H,<lb/> 7−10 He,<lb/> 10−13 Li, and the most neutron-rich Oxygen systems.<lb/></div>
+
+	<note type="copyright">© 2013 Elsevier B.V. All rights reserved.<lb/></note>
+
+	<note type="phone">  *  Tel.: +49 6159 71 2887. <lb/></note>
+
+	<email> E-mail address: h.simon@gsi.de <lb/></email>
+
+		</front>
+	</text>
+</tei>

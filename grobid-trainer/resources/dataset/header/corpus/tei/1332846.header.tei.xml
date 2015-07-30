@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1332846"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+	
+	<docTitle>
+		<titlePart><lb/>Fondements Géométriques de la<lb/> Mécanique des Milieux Continus<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G. de Saxcé<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation> Ecole d&apos;Eté MatSyMat &quot; Matériaux et Symétries Matérielles &quot;<lb/></affiliation>
+	</byline>
+
+	<address>Nantes, </address>
+
+	<date>08-10 Septembre 2014</date>
+
+		</front>
+	</text>
+</tei>

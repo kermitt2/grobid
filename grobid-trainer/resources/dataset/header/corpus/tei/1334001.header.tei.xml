@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1334001"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>COMPARSION OF HIGHER ORDER MODES DAMPING TECHNIQUES<lb/> FOR AN ARRAY OF SINGLE CELL CAVITIES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ya.V. Shashkov, N.P. Sobenin</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>, National Research Nuclear University MEPhI<lb/> (Moscow Engineering Physics Institute),</affiliation>
+	</byline>
+
+	<address>Moscow, Russia<lb/></address>
+
+	<byline><docAuthor> M.M. Zobov,</docAuthor></byline>
+
+	<affiliation> LNF-INFN,</affiliation>
+
+	<address> Frascati (Rome), Italy<lb/></address>
+
+	<div type="abstract">Abstract<lb/> The LHC High Luminosity upgrade program considers<lb/> an option of using additional cavities, operating at<lb/> multiplies of the main RF system frequency of 400 MHz.<lb/> Such harmonic cavities should provide a possibility to<lb/> vary the length of colliding bunches. In order to supply<lb/> the required harmonic voltage several single cell<lb/> superconducting cavities are to be used. It is desirable to<lb/> house more cavities in a single cryostat to reduce the<lb/> number of transitions between &quot;warm&quot; and &quot;cold&quot; parts of<lb/> the cryogenic system. In this paper we study<lb/> electromagnetic characteristics of a chain of the single<lb/> cell superconducting cavities coupled by drifts tubes. In<lb/> order to reduce the influence of Higher order modes<lb/> (HOM) excited in the structure on the beam stability and<lb/> to minimize eventual power losses we analyze the HOM<lb/> parameters and calculate the wake potential decay rates<lb/> due to application of different HOM damping devices. In<lb/> particular, the methods of HOM damping with<lb/> rectangular waveguides connected to the drift tubes, the<lb/> loads placed in the fluted and ridged drift tubes, as well as<lb/> combinations of these methods are compared.<lb/></div>
+
+	<note type="other">___________________________________________ <lb/></note>
+
+	<note type="grant"> *Work supported by RFBR grant 13-02-00562/14 and by the EU FP7 <lb/> HiLumi LHC -Grant Agreement 284404 <lb/></note>
+
+		</front>
+	</text>
+</tei>

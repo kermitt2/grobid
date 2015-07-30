@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1334015"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Lie superalgebras of Krichever–Novikov type<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Martin Schlichenmaier<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. Classically, starting from the Witt and Virasoro algebra im-<lb/>portant examples of Lie superalgebras were constructed. In this write-up<lb/> of a talk presented at the Biaa lowie˙ za meetings we report on results on<lb/> Lie superalgebras of Krichever-Novikov type. These algebras are multi-<lb/>point and higher genus equivalents of the classical algebras. The grading<lb/> in the classical case is replaced by an almost-grading. It is induced by<lb/> a splitting of the set of points, were poles are allowed, into two disjoint<lb/> subsets. With respect to a fixed splitting, or equivalently with respect<lb/> to a fixed almost-grading, it is shown that there is up to rescaling and<lb/> equivalence a unique non-trivial central extension of the Lie superalge-<lb/>bra of Krichever–Novikov type. It is given explicitly.<lb/></div>
+
+	<keywords type="other">Mathematics Subject Classification (2010). Primary: 17B56; Secondary:<lb/> 17B68, 17B65, 17B66, 14H99, 81R10, 81T40.<lb/></keywords>
+
+	<keywords>Keywords. Superalgebra; Krichever–Novikov type algebra; central ex-<lb/>tensions; Witt algebra; Virasoro algebra; Lie algebra cohomology; con-<lb/>formal field theory.<lb/></keywords>
+
+	<note type="grant">Partial support by the Internal Research Project GEOMQ11, University of Luxembourg, <lb/>and by the OPEN scheme of the Fonds National de la Recherche (FNR) with the project <lb/>QUANTMOD O13/5707106 is acknowledged. <lb/></note>
+
+	<byline><docAuthor>Martin Schlichenmaier <lb/></docAuthor></byline>
+
+	<byline><affiliation>University of Luxembourg <lb/>Mathematics Research Unit, FSTC <lb/></affiliation></byline>
+
+	<address>Campus Kirchberg, 6, rue Coudenhove-Kalergi <lb/>L-1359 Luxembourg-Kirchberg, Luxembourg <lb/></address>
+
+	<email>e-mail: martin.schlichenmaier@uni.lu</email>
+
+		</front>
+	</text>
+</tei>

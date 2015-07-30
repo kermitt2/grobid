@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1334633"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>International Journal of Theoretical and Mathematical Physics 2011; 1(1): 1-11<lb/></reference>
+
+	<idno>DOI: 10.5923/j.ijtmp.20110101.01<lb/></idno>
+
+	<docTitle>
+	<titlePart>Quantum Theory at Planck Scale, Dynamical<lb/> Cosmological Term and Deformed Gravity<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. E. Shalyt-Margolin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Centre of Particles and High Energy Physics,</affiliation>
+	</byline>
+
+	<address>Bogdanovich Str. 153, Minsk, 220040, Belarus<lb/></address>
+
+	<div type="abstract">Abstract The dark energy problem is analyzed from the viewpoint of the time-varying cosmological term. It is demon-<lb/>strated that, at least within the scope of the holographic principle, an experimental value of the vacuum energy density may be<lb/> derived and may be tested quite well with a new small parameter arising in a quantum theory with the fundamental length on<lb/> the order of Planck&apos;s length. Besides, within a theory proclaiming the existence of such fundamental length a high-energy<lb/> deformation of the General Relativity for the space with horizon has been constructed. The obtained results have been applied<lb/> to solving of the dark energy problem, making it possible to frame the following hypothesis: a dynamic cosmological term is<lb/> a measure of deviation from a thermodynamic identity (the first law of thermodynamics) of the high-energy (Planck&apos;s) de-<lb/>formation of Einstein equations for horizon spaces in their thermodynamic interpretation.<lb/></div>
+
+	<keyword>Keywords Dark Energy, Fundamental Length, Deformation Parameter<lb/></keyword>
+
+	<email> * Corresponding author: <lb/>a.shalyt@mail.ru (A. E. Shalyt-Margolin) <lb/></email>
+
+	<note type="submission">Published online at http://journal.sapub.org/ijtmp <lb/>Copyright © 2011 Scientific &amp; Academic Publishing. All Rights Reserved <lb/></note>
+
+		</front>
+	</text>
+</tei>

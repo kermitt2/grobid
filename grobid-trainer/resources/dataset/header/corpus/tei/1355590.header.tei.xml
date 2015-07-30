@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1355590"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>January 30, 2015 10:36<lb/></date>
+
+	<note type="other">IJMPA<lb/> S0217751X15300161 page 1<lb/></note>
+
+	<reference>International Journal of Modern Physics A<lb/> Vol. 30, No. 3 (2015) 1530016 (50 pages)<lb/></reference>
+
+	<note type="copyright">c<lb/> World Scientific Publishing Company<lb/></note>
+
+	<idno>DOI: 10.1142/S0217751X15300161<lb/></idno>
+
+	<docTitle>
+	<titlePart>The string theory landscape *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. N. Schellekens †<lb/></docAuthor>
+	</byline>
+
+	<address>Nikhef, Science Park 105, 1098 XG Amsterdam, The Netherlands<lb/></address>
+
+	<date>Published 30 January 2015<lb/></date>
+
+	<div type="abstract">Perhaps the most important way string theory has affected the perspective of particle<lb/> physics phenomenology is through the &quot; string theory landscape &quot; . We discuss the ev-<lb/>idence supporting its existence, describe the regions of the landscape that have been<lb/> explored, and examine what the string theory landscape might imply for most Standard<lb/> Model problems.<lb/></div>
+
+	<reference>* Also published in &quot; Perspectives on String Phenomenology &quot; , edited by B. Acharya, G. L. Kane<lb/> and P. Kumar (World Scientific, 2015), pp. 155–217.<lb/></reference>
+
+	<byline>
+	<affiliation>† Nikhef, Amsterdam; IMAPP, Radboud Universiteit Nijmegen;</affiliation>
+	</byline>
+
+	<address>IFF-CSIC, Madrid.<lb/></address>
+
+		</front>
+	</text>
+</tei>

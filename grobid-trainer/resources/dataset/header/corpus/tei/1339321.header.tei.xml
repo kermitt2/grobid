@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1339321"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>doi:10.14311/AP.2013.53.0707<lb/></idno>
+
+	<reference>Acta Polytechnica 53(Supplement):707–711, 2013<lb/> © Czech Technical University in Prague, 2013<lb/></reference>
+
+	<note type="other">available online at</note>
+
+	<ptr type="web">http://ojs.cvut.cz/ojs/index.php/ap<lb/></ptr>
+
+	<docTitle>
+	<titlePart>INFLUENCE OF THE RESULTS OF UHECR DETECTION ON THE<lb/> LHC EXPERIMENTS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Anatoly A. Petrukhin *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Research Nuclear University MEPhI,</affiliation>
+	</byline>
+
+	<address>Moscow, Russia<lb/></address>
+
+	<email>* corresponding author: AAPetrukhin@mephi.ru<lb/></email>
+
+	<div type="abstract">Abstract. The cosmic ray energy region 10<lb/> 15 ÷ 10<lb/> 17<lb/> eV corresponds to LHC energies 1 ÷ 14 TeV<lb/> in the center-of-mass system. The results obtained in cosmic rays (CR) in this energy interval can<lb/> therefore be used for developing new approaches to the analysis of experimental data, for interpreting<lb/> the results, and for planning new experiments. The main problem in cosmic ray investigations is<lb/> the remarkable excess of muons, which increases with energy and cannot be explained by means of<lb/> contemporary theoretical models. Some possible new explanations of this effect and other unusual<lb/> phenomena observed in CR, and ways of searching for them in the LHC experiments are discussed.<lb/></div>
+
+	<keyword>Keywords: cosmic ray energy spectrum, cosmic ray composition, EAS, muons, quark-gluon matter.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

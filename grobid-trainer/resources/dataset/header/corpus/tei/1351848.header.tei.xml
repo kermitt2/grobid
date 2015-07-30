@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1351848"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<docTitle>
+	<titlePart>Fock-Tani representation for composite particles in a soluble model<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. D. Girardeau a)<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Physique Thiorique, Universite de Nice,</affiliation>
+	</byline>
+
+	<address>b) Nice, France<lb/></address>
+
+	<note type="submission">(Received 29 January 1980; accepted for publication 6 June 1980)<lb/></note>
+
+	<div type="abstract">The transformation from the usual Fock representation to the Fock-Tani representation for<lb/> composite particles is carried out for a simplified model of the composite which allows closed-<lb/>form expressions for the transformed quantities. A &quot;statistical renormalization&quot;, in which single<lb/> particle energies and interactions become dependent on the composite particle occupation<lb/> number, plays an essential role in the solution, allowing absorption of unlinked terms into the<lb/> definition of the renormalized energies.<lb/></div>
+
+	<byline><affiliation> a)On leave from Dept. of Physics, University of Oregon,</affiliation></byline>
+
+	<address> Eugene, Oregon <lb/>97043. (present address). <lb/></address>
+
+	<byline><affiliation>b)Laboratoire de Physique Theorique, Universite de Nice,</affiliation></byline>
+
+	<address>Pare Valrose <lb/>06034 Nice Cedex, France.</address>
+
+	<byline><affiliation>Equipe de Recherche Associee au C.N.R.S. <lb/>N&quot;.128. <lb/></affiliation></byline>
+
+		</front>
+	</text>
+</tei>

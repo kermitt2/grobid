@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1345110"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<docTitle><titlePart>Introduction to Axion Photon Interaction in Particle Physics and Photon Dispersion in Magnetized Media
+			</titlePart></docTitle>
+
+			<byline><docAuthor>Avijit K. Ganguly</docAuthor></byline>
+
+			<byline><affiliation>Banaras Hindu University (MMV),</affiliation></byline> 
+
+			<address>Varanasi, India</address>
+		</front>
+	</text>
+</tei>

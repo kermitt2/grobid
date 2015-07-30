@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1334585"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Recent Results from the ATLAS Experiment<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Paul D. Jackson 1,2</docAuthor>
+	</byline>
+
+	<note type="other">on behalf of the</note>
+
+	<orgName> ATLAS Collaboration<lb/></orgName>
+
+	<byline>
+	<affiliation>1 University of Adelaide, School of Chemistry and Physics,</affiliation>
+	</byline>
+
+	<address>Adelaide, SA 5005, Australia,<lb/></address>
+
+	<byline>
+	<affiliation>2 ARC Centre of Excellence for Particle Physics at the Tera-scale, University of Adelaide<lb/></affiliation>
+	</byline>
+
+	<email>E-mail: p.jackson@adelaide.edu.au<lb/></email>
+
+	<date>(Received July 31, 2013)<lb/></date>
+
+	<div type="abstract">The ATLAS experiment [1] at the Large Hadron Collider at CERN is a general purpose detector<lb/> for studying proton-proton collisions at TeV energies. This talk presents the latest ATLAS physics<lb/> results, based on the data collected in 2011 and 2012, summing to over 20 fb<lb/> −1 . The latest measure-<lb/>ments of the Higgs boson, and studies of its properties are described. Recent searches for processes<lb/> beyond the Standard Model such as Supersymmetry, and other Exotica, are also covered.<lb/></div>
+
+	<keyword>KEYWORDS: ATLAS, LHC, Higgs, SUSY, Exotics<lb/></keyword>
+
+		</front>
+	</text>
+</tei>
