@@ -1,0 +1,37 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        References<lb/> 
+        <bibl><label>[1]</label> S. Forte and L. Magnea, &quot; Truncated moments of parton distri-<lb/>butions, &quot; Physics Letters B, vol. 448, no. 3-4, pp. 295–302, 1999.<lb/> </bibl>
+        <bibl><label>[2]</label> S. Forte, L. Magnea, A. Piccione, and G. Ridolfi, &quot; Evolution<lb/> of truncated moments of singlet parton distributions, &quot; Nuclear<lb/> Physics B, vol. 594, no. 1-2, pp. 46–70, 2001.<lb/> </bibl>
+        <bibl><label>[3]</label> D. Kotlorz and A. Kotlorz, &quot; Evolution equations for truncated<lb/> moments of the parton distributions, &quot; Physics Letters B, vol. 644,<lb/> no. 4, pp. 284–287, 2007.<lb/> </bibl>
+        <bibl><label>[4]</label> D. Kotlorz and A. Kotlorz, &quot; Evolution equations of the trun-<lb/>cated moments of the parton densities. A possible application, &quot;<lb/> Acta Physica Polonica B, vol. 40, no. 6, pp. 1661–1671, 2009.<lb/> </bibl>
+        <bibl><label>[5]</label> D. Kotlorz and S. V. Mikhailov, &quot; Cut moments and a generaliza-<lb/>tion of DGLAP equations, &quot; Journal of High Energy Physics, vol.<lb/> 2014, no. 6, article 065, 2014.<lb/> </bibl>
+        <bibl><label>[6]</label> C. J. Maxwell and A. Mirjalili, &quot; Direct extraction of QCD<lb/> Λ MS from moments of structure functions in neutrino-nucleon<lb/> scattering, using the CORGI approach, &quot; Nuclear Physics B, vol.<lb/> 645, pp. 298–308, 2002.<lb/> </bibl>
+        <bibl><label>[7]</label> Y. L. Dokshitzer, &quot; Calculation of the structure functions for<lb/> deep inelastic scattering and e+ e-annihilation by perturbation<lb/> theory in quantum chromodynamics, &quot; Soviet Physics-JETP, vol.<lb/> 46, pp. 641–653, 1977.<lb/> </bibl>
+        <bibl><label>[8]</label> Y. L. Dokshitzer, &quot; Perturbational calculation of the deep inelas-<lb/>tic and e+ e-annihilation structure functions in QCD, &quot; ZhurnalZhurnaí<lb/> Eksperimental&apos;noi i Teoreticheskoi Fiziki, vol. 73, p. 1216, 1977.<lb/> </bibl>
+        <bibl><label>[9]</label> V. N. Gribov and L. N. Lipatov, &quot; e+ e− pair annihilation and<lb/> deep inelastic e p scattering in perturbation theory, &quot; Soviet<lb/> Journal of Nuclear Physics, vol. 15, pp. 675–684, 1972.<lb/> </bibl>
+        <bibl><label>[10]</label> V. N. Gribov and L. N. Lipatov, &quot; Annigilyatsiya e+ e− par<lb/> i gluboko neuprugoe ep-rasseyanie v teorii vozmushchenii, &quot;<lb/> Yadernaya Fizika, vol. 15, no. 6, pp. 1218–1237, 1972.<lb/> </bibl>
+        <bibl><label>[11]</label> V. N. Gribov and L. N. Lipatov, &quot; Deep inelastic e p scattering in<lb/> perturbation theory, &quot; Soviet Journal of Nuclear Physics, vol. 15,<lb/> p. 438, 1972.<lb/> </bibl>
+        <bibl><label>[12]</label> V. N. Gribov and L. N. Lipatov, &quot; Gluboko neuprugoe ep-<lb/>rasseyanie v teorii vozmushchenii, &quot; Yadernaya Fizika, vol. 15,<lb/> no. 4, pp. 781–807, 1972.<lb/> </bibl>
+        <bibl><label>[13]</label> G. Altarelli and G. Parisi, &quot; Asymptotic freedom in parton<lb/> language, &quot; Nuclear Physics B, vol. 126, no. 2, pp. 298–318, 1977.<lb/> </bibl>
+        <bibl><label>[14]</label> M. Glück, E. Reya, and A. Vogt, &quot; Dynamical parton distribu-<lb/>tions of the proton and small-x physics, &quot; Zeitschrift für Physik<lb/> C, vol. 67, no. 3, pp. 433–447, 1995.<lb/> </bibl>
+        <bibl><label>[15]</label> A. Mirjalili and K. Keshavarzian, &quot; The NLO QCD calculation<lb/> of sea quark distributions in the CORGI approach, based on<lb/> the constituent quark model, &quot; International Journal of Modern<lb/> Physics A, vol. 22, no. 24, pp. 4519–4535, 2007.<lb/> </bibl>
+        <bibl><label>[16]</label> A. Cafarella, C. Coriano, and M. Guzzi, &quot; NNLO logarithmic<lb/> expansions and exact solutions of the DGLAP equations from<lb/> x-space: new algorithms for precision studies at the LHC, &quot;<lb/> Nuclear Physics B, vol. 748, pp. 253–308, 2006.<lb/></bibl>
+        <bibl><label>[17]</label> F. J. Yndurain, &quot; Reconstruction of the deep inelastic structure<lb/> functions from their moments, &quot; Physics Letters B, vol. 74, pp.<lb/> 68–72, 1978.<lb/> </bibl>
+        <bibl><label>[18]</label> J. Santiago and F. J. Ynduráin, &quot; Improved calculation of í µí°¹ 2 in<lb/> electroproduction and í µí±¥í µí°¹ 3 in neutrino scattering to NNLO and<lb/> determination of í µí»¼ í µí± , &quot; Nuclear Physics B, vol. 611, no. 1–3, pp. 447–<lb/> 466, 2001.<lb/> </bibl>
+        <bibl><label>[19]</label> J. J. Aubert, G. Bassompierre, K. H. Becks et al., &quot; Measurements<lb/> of the nucleon structure functions í µí°¹ 2<lb/> N in deep inelastic muon<lb/> scattering from deuterium and comparison with those from<lb/> hydrogen and iron, &quot; Nuclear Physics B, vol. 293, pp. 740–786,<lb/> 1987.<lb/> </bibl>
+        <bibl><label>[20]</label> D. Allasia, C. Angelini, A. Baldini et al., &quot; Measurement of the<lb/> neutron and proton structure functions from neutrino and<lb/> antineutrino scattering in deuterium, &quot; Physics Letters B, vol. 135,<lb/> no. 1–3, pp. 231–236, 1984.<lb/> </bibl>
+        <bibl><label>[21]</label> A. N. Khorramian, A. Mirjalili, and S. A. Tehrani, &quot; Next-to-<lb/>leading order approximation of polarized valon and parton<lb/> distributions, &quot; Journal of High Energy Physics, vol. 2004, no. 10,<lb/> article 062, 2004.<lb/> </bibl>
+        <bibl><label>[22]</label> A. L. Kataev, A. V. Kotikov, G. Parente, and A. V. Sidorov,<lb/> &quot; Next-to-next-to-leading order QCD analysis of the revised<lb/> CCFR data for xF 3 structure function and the higher twist<lb/> contributions, &quot; Physics Letters B, vol. 417, no. 3-4, pp. 374–384,<lb/> 1998.<lb/> </bibl>
+        <bibl><label>[23]</label> S.-Q. Wang, X.-G. Wu, and S. Brodsky, &quot; Reanalysis of the higher<lb/> order perturbative QCD corrections to hadronic Z decays using<lb/> the principle of maximum conformality, &quot; Physical Review D, vol.<lb/> 90, Article ID 037503, 2014.<lb/> </bibl>
+        <bibl><label>[24]</label> W. Bernreuther and W. Wetzel, &quot; Decoupling of heavy quarks in<lb/> the minimal subtraction scheme, &quot; Nuclear Physics B, vol. 197, no.<lb/> 2, pp. 228–236, 1982.<lb/> </bibl>
+        <bibl><label>[25]</label> W. Bernreuther and W. Wetzel, &quot; Erratum to &quot; decoupling of<lb/> heavy quarks in the minimal subtraction scheme &quot; , Nuclear<lb/> Physics B, vol. 197, pp. 228–236, 1982, &quot; Nuclear Physics B, vol. 513,<lb/> p. 758, 1998.<lb/> </bibl>
+        <bibl><label>[26]</label> A. L. Kataev and S. V. Mikhailov, &quot; Generalization of BLM within<lb/> the {í µí»½}-expansion and the principle of maximal conformality, &quot;<lb/> In press, http://arxiv.org/abs/1408.0122.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

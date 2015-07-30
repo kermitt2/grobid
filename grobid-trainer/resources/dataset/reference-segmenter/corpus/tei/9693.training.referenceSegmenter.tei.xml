@@ -1,0 +1,40 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> M. Born and L. Infeld, &quot; Foundations of the new field theory, &quot;<lb/> Proceedings of the Royal Society of London A, vol. 144, p. 425,<lb/> 1934.<lb/> </bibl>
+        <bibl><label>[2]</label> D. Fortunato, L. Orsina, and L. Pisani, &quot; Born-Infeld type equa-<lb/>tions for electrostatic fields, &quot; Journal of Mathematical Physics,<lb/> vol. 43, no. 11, pp. 5698–5706, 2002.<lb/> </bibl>
+        <bibl><label>[3]</label> S. H. Mazharimousavi and M. Halilsoy, &quot; Ground state H-atom<lb/> in born-infeld teory, &quot; Foundations of Physics, vol. 42, no. 4, pp.<lb/> 524–530, 2012.<lb/> </bibl>
+        <bibl><label>[4]</label> L. P. De Assis, P. Gaete, J. A. Helayel-Neto, and S. O. Vellozo,<lb/> &quot; Aspects of magnetic field configurations in planar nonlinear<lb/> electrodynamics, &quot; International Journal of Theoretical Physics,<lb/> vol. 51, no. 2, pp. 477–486, 2012.<lb/> </bibl>
+        <bibl><label>[5]</label> Z. K. Vad, &quot; Some solutions of Einstein-Born-Infeld field equa-<lb/>tions, &quot; Acta Physica Hungarica, vol. 63, no. 3-4, pp. 353–364,<lb/> 1988.<lb/> </bibl>
+        <bibl><label>[6]</label> P. Gaete and I. Schmidt, &quot; Coulomb&apos;s law modification in non-<lb/>linear and in noncommutative electrodynamics, &quot; International<lb/> Journal of Modern Physics A, vol. 19, no. 20, pp. 3427–3437, 2004.<lb/> </bibl>
+        <bibl><label>[7]</label> C. G. Callan and J. M. Maldacena, &quot; Brane dynamics from the<lb/> Born-Infeld action, &quot; Nuclear Physics B, vol. 513, no. 1-2, pp. 198–<lb/> 212, 1998.<lb/> </bibl>
+        <bibl><label>[8]</label> G. W. Gibbons, &quot; Born-Infeld particles and Dirichlet í µí±-branes, &quot;<lb/> Nuclear Physics. B, vol. 514, no. 3, pp. 603–639, 1998.<lb/> </bibl>
+        <bibl><label>[9]</label> G. W. Gibbons, &quot; Aspects of born-infeld theory and string/M-<lb/>theory, &quot; Revista Mexicana de Física, vol. 49, supplement 1, pp.<lb/> 19–29, 2003.<lb/> </bibl>
+        <bibl><label>[10]</label> B. Zwiebach, A First Course in String Theory, Cambridge<lb/> University Press, Cambridge, UK, 2nd edition, 2009.<lb/> </bibl>
+        <bibl><label>[11]</label> H. Q. Lu, &quot; Phantom cosmology with a nonlinear born-infeld<lb/> type scalar field, &quot; International Journal of Modern Physics D, vol.<lb/> 14, no. 2, p. 355, 2005.<lb/> </bibl>
+        <bibl><label>[12]</label> E. Serie, T. Masson, and R. Kerner, &quot; Non-abelian generalization<lb/> of Born-Infeld theory inspired by noncommutative geometry, &quot;<lb/> Physical Review D, vol. 68, no. 12, Article ID 125003, 2003.<lb/> </bibl>
+        <bibl><label>[13]</label> S. H. Hendi, &quot; Asymptotic Reissner–Nordström black holes, &quot;<lb/> Annals of Physics, vol. 333, pp. 282–289, 2013.<lb/> </bibl>
+        <bibl><label>[14]</label> P. Gaete and J. Helayël-Neto, &quot; Finite field-energy and interpar-<lb/>ticle potential in logarithmic electrodynamics, &quot; The European<lb/> Physical Journal C, vol. 74, article 2816, 2014.<lb/> </bibl>
+        <bibl><label>[15]</label> P. Gaete and J. Helayël-Neto, &quot; Remarks on nonlinear electrody-<lb/>namics, &quot; The European Physical Journal C, vol. 74, no. 11, article<lb/> 3182, 2014.<lb/> </bibl>
+        <bibl><label>[16]</label> N. Riazi and M. Mohammadi, &quot; Composite lane-emden equa-<lb/>tion as a nonlinear poisson equation, &quot; International Journal of<lb/> Theoretical Physics, vol. 51, no. 4, pp. 1276–1283, 2012.<lb/> </bibl>
+        <bibl><label>[17]</label> H. Euler and B. Kockel, &quot; ¨<lb/> Uber die streuung von licht an licht<lb/> nach der diracschen theorie, &quot; Naturwissenschaften, vol. 23, no.<lb/> 15, pp. 246–247, 1935.<lb/> </bibl>
+        <bibl><label>[18]</label> H. Euler, &quot; Ober die Streuung von Licht an Licht nach der<lb/> Diracschen Theorie, &quot; Annalen der Physik (Leipzig), vol. 26, pp.<lb/> 398–448, 1936.<lb/> </bibl>
+        <bibl><label>[19]</label> W. Heisenberg and H. Euler, &quot; Folgerungen aus der diracschen<lb/> theorie des positrons, &quot; Zeitschrift für Physik, vol. 98, no. 11-12,<lb/> pp. 714–732, 1936.<lb/> </bibl>
+        <bibl><label>[20]</label> R. Ruffini, Y.-B. Wu, and S.-S. Xue, &quot; Einstein-Euler-Heisenberg<lb/> theory and charged black holes, &quot; Physical Review D, vol. 88,<lb/> Article ID 085004, 2013.<lb/> </bibl>
+        <bibl><label>[21]</label> A. Accioly, &quot; Energy and momentum for the electromagnetic<lb/> field described by three outstanding electrodynamics, &quot; Ameri-<lb/>can Journal of Physics, vol. 65, no. 9, pp. 882–887, 1997.<lb/> </bibl>
+        <bibl><label>[22]</label> G. Soff, J. Rafelski, and W. Greiner, &quot; Lower bound to limiting<lb/> fields in nonlinear electrodynamics, &quot; Physical Review A, vol. 7,<lb/> no. 3, pp. 903–907, 1973.<lb/> </bibl>
+        <bibl><label>[23]</label> J. M. Davila, C. Schubert, and M. A. Trejo, &quot; Photonic processes<lb/> in Born-Infeld theory, &quot; International Journal of Modern Physics<lb/> A. Particles and Fields. Gravitation. Cosmology, vol. 29, Article<lb/> ID 1450174, 2014.<lb/> </bibl>
+        <bibl><label>[24]</label> D. Halliday, R. Resnick, and J. Walker, Fundamentals of Physics<lb/> Extended, Wiley, 10th edition, 2014.<lb/> </bibl>
+        <bibl><label>[25]</label> C. V. Costa, D. M. Gitman, and A. E. Shabad, &quot; Finite field-<lb/>energy of a point charge in QED, &quot; http://arxiv.org/abs/1312<lb/> .0447.<lb/> </bibl>
+        <bibl><label>[26]</label> S. I. Kruglov, &quot; A model of nonlinear electrodynamics, &quot; Annals of<lb/> Physics, vol. 353, pp. 299–306, 2015.<lb/> </bibl>
+        <bibl><label>[27]</label> S. I. Kruglov, &quot; Nonlinear arcsin-electrodynamics, &quot; http://arxiv<lb/> .org/abs/1410.7633.<lb/> </bibl>
+        <bibl><label>[28]</label> A. A. Tseytlin, &quot; Self-duality of Born-Infeld action and Dirichlet<lb/> 3-brane of type IIB superstring theory, &quot; Nuclear Physics B, vol.<lb/> 469, no. 1-2, pp. 51–67, 1996.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

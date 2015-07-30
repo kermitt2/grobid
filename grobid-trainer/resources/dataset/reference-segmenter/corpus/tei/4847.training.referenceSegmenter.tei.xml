@@ -1,0 +1,63 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> V. N. Gribov and L. N. Lipatov, &quot; Deep inelastic ep scattering in<lb/> perturbation theory, &quot; Soviet Journal of Nuclear Physics, vol. 15,<lb/> p. 438, 1972.<lb/> </bibl>
+        <bibl><label>[2]</label> L. N. Lipatov, &quot; The parton model and perturbation theory, &quot;<lb/> Soviet Journal of Nuclear Physics, vol. 20, pp. 94–102, 1975.<lb/> </bibl>
+        <bibl><label>[3]</label> Y. L. Dokshitzer, &quot; Calculation of the structure functions for<lb/> deep inelastic scattering and e+ e− annihilation by perturbation<lb/> theory in quantum chromodynamics, &quot; Soviet Physics—JETP,<lb/> vol. 46, pp. 641–653, 1977.<lb/> </bibl>
+        <bibl><label>[4]</label> G. Altarelli and G. Parisi, &quot; Asymptotic freedom in parton<lb/> language, &quot; Nuclear Physics B, vol. 126, no. 2, pp. 298–318, 1977.<lb/> </bibl>
+        <bibl><label>[5]</label> R. Toldra, &quot; A C++ code to solve the DGLAP equations applied<lb/> to Ultra High Energy Cosmic Rays, &quot; Computer Physics Commu-<lb/>nications, vol. 143, no. 3, pp. 287–304, 2002.<lb/> </bibl>
+        <bibl><label>[6]</label> C. Pascaud and F. Zomer, &quot; A fast and precise method to solve the<lb/> Altarelli-Parisi equations in x space, &quot; http://arxiv.org/abs/hep-<lb/>ph/0104013.<lb/> </bibl>
+        <bibl><label>[7]</label> N. Cabibbo and R. Petronzio, &quot; Two-stage model of hadron<lb/> structure: parton distributions and their Q<lb/> 2 dependence, &quot;<lb/> Nuclear Physics B, vol. 137, no. 4, pp. 395–412, 1978.<lb/> </bibl>
+        <bibl><label>[8]</label> M. Stratmann and W. Vogelsang, &quot; Towards a global analysis of<lb/> polarized parton distributions, &quot; Physical Review D, vol. 64, no.<lb/> 11, Article ID 114007, 10 pages, 2001.<lb/> </bibl>
+        <bibl><label>[9]</label> A. Vogt, &quot; Efficient evolution of unpolarized and polarized<lb/> parton distributions with QCD-Pegasus, &quot; Computer Physics<lb/> Communications, vol. 170, pp. 65–92, 2005.<lb/> </bibl>
+        <bibl><label>[10]</label> M. Botje, QCDNUM, http://www.nikhef.nl/∼h24/qcdnum.<lb/> </bibl>
+        <bibl><label>[11]</label> L. Schoeffel, &quot; An elegant and fast method to solve QCD evolu-<lb/>tion equations. Application to the determination of the gluon<lb/> content of the Pomeron, &quot; Nuclear Instruments and Methods in<lb/> Physics Research Section A, vol. 423, no. 2-3, pp. 439–445, 1999.<lb/></bibl>
+        <bibl><label>[12]</label> A. Cafarella and C. Corianò, &quot; Direct solution of renormaliza-<lb/>tion group equations of QCD in x-space: NLO implementations<lb/> at leading twist, &quot; Computer Physics Communications, vol. 160,<lb/> no. 3, pp. 213–242, 2004.<lb/> </bibl>
+        <bibl><label>[13]</label> A. Cafarella, C. Corianò, and M. Guzzi, &quot; NNLO logarithmic<lb/> expansions and exact solutions of the DGLAP equations from<lb/> í µí±¥-space: new algorithms for precision studies at the LHC, &quot;<lb/> Nuclear Physics B, vol. 748, no. 1-2, pp. 253–308, 2006.<lb/> </bibl>
+        <bibl><label>[14]</label> A. Cafarella, C. Coriano, and M. Guzzi, &quot; Precision studies of the<lb/> NNLO DGLAP evolution at the LHC with Candia, &quot; Computer<lb/> Physics Communications, vol. 179, no. 9, pp. 665–684, 2008.<lb/> </bibl>
+        <bibl><label>[15]</label> S. Weinzierl, &quot; Fast evolution of parton distributions, &quot; Computer<lb/> Physics Communications, vol. 148, no. 3, pp. 314–326, 2002.<lb/> </bibl>
+        <bibl><label>[16]</label> M. Roth and S. Weinzierl, &quot; QED corrections to the evolution<lb/> of parton distributions, &quot; Physics Letters B, vol. 590, no. 3-4, pp.<lb/> 190–198, 2004.<lb/> </bibl>
+        <bibl><label>[17]</label> L. del Debbio, S. Forte, J. I. Latorre, A. Piccione, and J. Rojo,<lb/> &quot; Neural network determination of parton distributions: the<lb/> Nonsinglet case, &quot; Journal of High Energy Physics, vol. 2007,<lb/> article 039, 2007.<lb/> </bibl>
+        <bibl><label>[18]</label> D. K. Choudhury and J. K. Sarma, &quot; Perturbative and nonper-<lb/>turbative evolutions of structure functions at low x, &quot; Pramana-<lb/>Journal of Physics, vol. 38, p. 481, 1992.<lb/> </bibl>
+        <bibl><label>[19]</label> D. K. Choudhury, J. K. Sarma, and G. K. Medhi, &quot; í µí±¥-distribution<lb/> of deuteron structure function at low-í µí±¥, &quot; Physics Letters B, vol.<lb/> 403, no. 1-2, pp. 139–144, 1997.<lb/> </bibl>
+        <bibl><label>[20]</label> D. K. Choudhury and A. Deshamukhya, &quot; Non-singlet structure<lb/> function at high x and neutrino scattering, &quot; Indian Journal of<lb/> Physics A, vol. 75, no. 2, p. 175, 2001.<lb/> </bibl>
+        <bibl><label>[21]</label> D. K. Choudhury and P. K. Sahariah, &quot; A solution of the DGLAP<lb/> equation for gluon at low x, &quot; Pramana, vol. 58, no. 4, pp. 599–<lb/> 610, 2002.<lb/> </bibl>
+        <bibl><label>[22]</label> D. K. Choudhury and P. K. Sahariah, &quot; Analytic and semi-<lb/>analytic solution of the coupled DGLAP equations at small x<lb/> by the method of characteristics, &quot; http://arxiv.org/abs/hep-ph/<lb/> 0606085.<lb/> </bibl>
+        <bibl><label>[23]</label> D. K. Choudhury and P. K. Sahariah, &quot; Solution of polarised<lb/> singlet DGLAP evolution equations by the method of charac-<lb/>teristics, &quot; http://arxiv.org/abs/hep-ph/0601059.<lb/> </bibl>
+        <bibl><label>[24]</label> NNPDF Collaboration, &quot; Unbiased determination of polarized<lb/> parton distributions and their uncertainties, &quot; Nuclear Physics B,<lb/> vol. 874, no. 1, pp. 36–84, 2013.<lb/> </bibl>
+        <bibl><label>[25]</label> M. Hirai, S. Kumano, N. Saito, and Asymmetry Analysis<lb/> Collaboration, &quot; Determination of polarized parton distribution<lb/> functions and their uncertainties, &quot; Physical Review D, vol. 69,<lb/> no. 5, Article ID 054021, 10 pages, 2004.<lb/> </bibl>
+        <bibl><label>[26]</label> M. Glück, E. Reya, M. Stratmann, and W. Vogelsang, &quot; Models<lb/> for the polarized parton distributions of the nucleon, &quot; Physical<lb/> Review D, vol. 63, Article ID 094005, 2001.<lb/> </bibl>
+        <bibl><label>[27]</label> E. Leader, A. V. Sidorov, and D. B. Stamenov, &quot; Determination of<lb/> polarized parton densities from a QCD analysis of inclusive and<lb/> semi-inclusive deep inelastic scattering data, &quot; Physical Review<lb/> D, vol. 82, no. 11, Article ID 114018, 12 pages, 2010.<lb/> </bibl>
+        <bibl><label>[28]</label> J. Blimlein and H. Böttcher, &quot; QCD analysis of polarized deep<lb/> inelastic scattering data, &quot; Nuclear Physics B, vol. 841, no. 1-2, pp.<lb/> 205–230, 2010.<lb/> </bibl>
+        <bibl><label>[29]</label> E. R. Nocera, R. D. Balla, S. Forteb, G. Ridolfic, and J. Rojod, &quot; A<lb/> first unbiased global determination of polarized PDFs and their<lb/> uncertainties, &quot; Nuclear Physics B, vol. 887, pp. 276–308, 2014.<lb/></bibl>
+        <bibl><label>[30]</label> G. P. Salam and J. Rojo, &quot; A Higher Order Perturbative Parton<lb/> Evolution Toolkit (HOPPET), &quot; Computer Physics Communica-<lb/>tions, vol. 180, no. 1, pp. 120–156, 2009.<lb/> </bibl>
+        <bibl><label>[31]</label> D. de Florian, R. Sassot, M. Stratmann, and W. Vogelsang,<lb/> &quot; Global analysis of helicity parton densities and their uncertain-<lb/>ties, &quot; Physical Review Letters, vol. 101, no. 7, Article ID 072001, 4<lb/> pages, 2001.<lb/> </bibl>
+        <bibl><label>[32]</label> D. de Florian, R. Sassot, M. Stratmann, and W. Vogelsang,<lb/> &quot; Extraction of spin-dependent parton densities and their uncer-<lb/>tainties, &quot; Physical Review D, vol. 80, no. 3, Article ID 034030, 26<lb/> pages, 2009.<lb/> </bibl>
+        <bibl><label>[33]</label> N. N. K. Borah, D. K. Choudhury, and P. K. Sahariah,<lb/> &quot; Non-singlet spin structure function í µí± 1<lb/> í µí±í µí± (í µí±¥, í µí±¡) in the DGLAP<lb/> approach, &quot; Pramana—Journal of Physics, vol. 79, no. 4, pp. 833–<lb/> 837, 2012.<lb/> </bibl>
+        <bibl><label>[34]</label> R. D. Ball, S. Forte, and G. Ridolfi, &quot; Scale dependence and small-<lb/>x behaviour of polarized parton distributions, &quot; Nuclear Physics<lb/> B, vol. 444, no. 1-2, pp. 287–309, 1995.<lb/> </bibl>
+        <bibl><label>[35]</label> B. Lampe and E. Reya, &quot; Spin physics and polarized structure<lb/> functions, &quot; Physics Reports, vol. 332, no. 1–3, pp. 1–163, 1998.<lb/> </bibl>
+        <bibl><label>[36]</label> T. Gehrmann and W. J. Stirling, &quot; Analytic approaches to the<lb/> evolution of polarised parton distributions at small í µí±¥, &quot; Physics<lb/> Letters B, vol. 365, no. 1–4, pp. 347–358, 1996.<lb/> </bibl>
+        <bibl><label>[37]</label> N. N. K. Borah, D. K. Choudhury, and P. K. Sahariah, &quot; Compar-<lb/>ison of analytical solution of DGLAP equations for í µí°¹<lb/> NS<lb/> 2 (x,t) at<lb/> small x by two methods, &quot; Advances in High Energy Physics, vol.<lb/> 2013, Article ID 829803, 10 pages, 2013.<lb/> </bibl>
+        <bibl><label>[38]</label> R. Choudhury, &quot; Spin-dependent coupled Altarelli-Parisi equa-<lb/>tions in the NLO and the method of successive approximations, &quot;<lb/> ISRN High Energy Physics, vol. 2012, Article ID 943871, 22 pages,<lb/> 2012.<lb/> </bibl>
+        <bibl><label>[39]</label> D. K. Atri Deshamukhya, in Proceedings of the 2nd Regional<lb/> Conference on Physics Research in North East, 2001.<lb/> </bibl>
+        <bibl><label>[40]</label> R. Baishya and J. K. Sarma, &quot; Solution of non-singlet DGLAP<lb/> evolution equation in leading order and next to leading order at<lb/> small-x, &quot; Indian Journal of Physics, vol. 83, no. 9, pp. 1333–1341,<lb/> 2009.<lb/> </bibl>
+        <bibl><label>[41]</label> I. N. Sneddon, Elements of Partial Differential Equations,<lb/> McGraw-Hill, New York, NY, USA, 1957.<lb/> </bibl>
+        <bibl><label>[42]</label> W. E. Williams, Partial Differential Equations, Oxford Univer-<lb/>sity Press, Oxford, UK, 1980.<lb/> </bibl>
+        <bibl><label>[43]</label> S. J. Farlow, Partial Differential Equations for Scientists and<lb/> Engineers, John Wiley &amp; Sons, New York, NY, USA, 1982.<lb/> </bibl>
+        <bibl><label>[44]</label> H. B. Dwight, Table of Integrals and Other Mathematical Data,<lb/> Macmillan Publishers, New York, NY, USA, 1961.<lb/> </bibl>
+        <bibl><label>[45]</label> I. S. Gradshteyn and I. M. Ryzhik, Tables of Integrals, Series and<lb/> Products, Academic Press, New York, NY, USA, 1965.<lb/> </bibl>
+        <bibl><label>[46]</label> R. Rajkhowa, &quot; Comparison of analytical solutions of DGLAP<lb/> evolution equations, &quot; http://arxiv.org/abs/1004.3731.<lb/> </bibl>
+        <bibl><label>[47]</label> A. Airapetian, W. Deconinck, W. Lorenzon et al., &quot; Precise<lb/> determination of the spin structure function í µí± 1 of the proton,<lb/> deuteron, and neutron, &quot; Physical Review D, vol. 75, Article ID<lb/> 012007, 2007.<lb/> </bibl>
+        <bibl><label>[48]</label> A. N. Khorramian, S. A. Tehrani, S. T. Monfared, F. Arbabifar,<lb/> and F. I. Olnes, &quot; Polarized deeply inelastic scattering (DIS)<lb/> structure functions for nucleons and nuclei, &quot; Physical Review D,<lb/> vol. 83, Article ID 054017, 2011.<lb/> </bibl>
+        <bibl><label>[49]</label> B. I. Ermolaev, M. Greco, and S. I. Troyan, &quot; Non-singlet struc-<lb/>ture functions: combining the leading logarithms resummation<lb/> at small-í µí±¥ with DGLAP, &quot; Physics Letters B, vol. 622, no. 1-2, pp.<lb/> 93–101, 2005.<lb/> </bibl>
+        <bibl><label>[50]</label> A. Vogt, S. Moch, and J. A. M. Vermaseren, &quot; A calculation of<lb/> the three-loop helicity-dependent splitting functions in QCD, &quot;<lb/> http://arxiv.org/abs/1405.3407.<lb/> </bibl>
+        <bibl><label>[51]</label> S. Moch, J. A. M. Vermaseren, and A. Vogt, &quot; The three-<lb/>loop splitting functions in QCD: the helicity-dependent case, &quot;<lb/> http://arxiv.org/abs/1409.5131.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

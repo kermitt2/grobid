@@ -1,0 +1,80 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1 </label>F. Denef and G. Moore, &quot; Split states, entropy enigmas, holes and halos, &quot; . In press, http://arxiv.org/<lb/> abs/hep-th/0702146.<lb/> </bibl>
+        <bibl><label>2 M</label>. Kontsevich and Y. Soibelman, &quot; Stability structures, motivic Donaldson-Thomas invariants and<lb/> cluster transformations, &quot; . In press, http://arxiv.org/abs/0811.2435.<lb/> </bibl>
+        <bibl><label>3 </label>R. Gopakumar and C. Vafa, &quot; M-theory and topological strings. I, &quot; . In press, http://arxiv.org/abs/<lb/> hep-th/9809187.<lb/> </bibl>
+        <bibl><label>4 </label>R. Gopakumar and C. Vafa, &quot; M-theory and topological strings. II, &quot; . In press, http://arxiv.org/abs/<lb/> hep-th/9812127.<lb/> </bibl>
+        <bibl><label>5 </label>H. Ooguri and C. Vafa, &quot; Knot invariants and topological strings, &quot; Nuclear Physics B, vol. 577, no. 3,<lb/> pp. 419–438, 2000.<lb/> </bibl>
+        <bibl><label>6 </label>M. Aganagic, A. Klemm, M. MariMari˜Mariño, and C. Vafa, &quot; The topological vertex, &quot; Communications in<lb/> Mathematical Physics, vol. 254, no. 2, pp. 425–478, 2005.<lb/> </bibl>
+        <bibl><label>7 </label>A. Okounkov, N. Reshetikhin, and C. Vafa, &quot; Quantum Calabi-Yau and classical crystals, &quot; . In press,<lb/> http://arxiv.org/abs/hep-th/0309208.<lb/> </bibl>
+        <bibl><label>8 </label>A. Iqbal, C. Vafa, N. Nekrasov, and A. Okounkov, &quot; Quantum foam and topological strings, &quot; Journal<lb/> of High Energy Physics, vol. 2008, no. 4, article 011, 2008.<lb/> </bibl>
+        <bibl><label>9 </label>D. Maulik, N. Nekrasov, A. Okounkov, and R. Pandharipande, &quot; Gromov-Witten theory and<lb/> Donaldson-Thomas theory, I, &quot; Compositio Mathematica, vol. 142, no. 5, pp. 1263–1285, 2006.<lb/> </bibl>
+        <bibl><label>10 </label>T. Dimofte and S. Gukov, &quot; Refined, motivic, and quantum, &quot; Letters in Mathematical Physics, vol. 91,<lb/> no. 1, pp. 1–27, 2009.<lb/> </bibl>
+        <bibl><label>11 </label>N. A. Nekrasov, &quot; Seiberg-Witten prepotential from instanton counting, &quot; Advances in Theoretical and<lb/> Mathematical Physics, vol. 7, no. 5, pp. 831–864, 2004.<lb/> </bibl>
+        <bibl><label>12 </label>A. Iqbal, C. Kozçaz, and C. Vafa, &quot; The refined topological vertex, &quot; Journal of High Energy Physics, no.<lb/> 10, p. 69, 2009.<lb/> </bibl>
+        <bibl><label>13 </label>K. Nagao, &quot; Refined open noncommutative Donaldson-Thomas invariants for small crepant<lb/> resolutions, &quot; . In press, http://arxiv.org/abs/0907.3784.<lb/> </bibl>
+        <bibl><label>14 </label>B. Szendr˝ oi, &quot; Non-commutative Donaldson-Thomas theory and the conifold, &quot; Geometry &amp; Topology,<lb/> vol. 12, no. 2, pp. 1171–1202, 2008.<lb/> </bibl>
+        <bibl><label>15 </label>J. Bryan and B. Young, &quot; Generating functions for colored 3D young diagrams and the Donaldson-<lb/>Thomas invariants of orbifolds, &quot; Duke Mathematical Journal, vol. 152, no. 1, pp. 115–153, 2010.<lb/> </bibl>
+        <bibl><label>16 </label>P. Sułkowski, &quot; Wall-crossing, free fermions and crystal melting, &quot; Communications in Mathematical<lb/> Physics, vol. 301, no. 2, pp. 517–562, 2011.<lb/> </bibl>
+        <bibl><label>17 </label>K. Nagao, &quot; Noncommutative Donaldson-Thomas theory and vertex operators, &quot; . In press, http://<lb/> arxiv.org/abs/0910.5477.<lb/> </bibl>
+        <bibl><label>18 </label>K. Nagao and H. Nakajima, &quot; Counting invariant of perverse coherent sheaves and its wallcrossing, &quot;<lb/> International Mathematics Research Notices, vol. 2011, no. 13, 2011.<lb/> </bibl>
+        <bibl><label>19 </label>K. Nagao, &quot; Derived categories of small toric Calabi-Yau 3-folds and counting invariants, &quot; . In press,<lb/> http://arxiv.org/abs/0809.2994.<lb/> </bibl>
+        <bibl><label>20 </label>D. Jafferis and G. Moore, &quot; Wall crossing in local Calabi Yau manifolds, &quot; . In press, http://arxiv.org/<lb/> abs/0810.4909.<lb/> </bibl>
+        <bibl><label>21 </label>W. Y. Chuang and D. L. Jafferis, &quot; Wall crossing of BPS states on the conifold from Seiberg duality and<lb/> pyramid partitions, &quot; Communications in Mathematical Physics, vol. 292, no. 1, pp. 285–301, 2009.<lb/> </bibl>
+        <bibl><label>22 </label>H. Ooguri and M. Yamazaki, &quot; Crystal melting and toric Calabi-Yau manifolds, &quot; Communications in<lb/> Mathematical Physics, vol. 292, no. 1, pp. 179–199, 2009.<lb/> </bibl>
+        <bibl><label>23 </label>M. Aganagic, H. Ooguri, C. Vafa, and M. Yamazaki, &quot; Wall crossing and M-theory, &quot; Nuclear Physics B,<lb/> vol. 47, no. 2, pp. 569–584, 2011.<lb/> </bibl>
+        <bibl><label>24 </label>M. Aganagic and M. Yamazaki, &quot; Open BPS wall crossing and M-theory, &quot; Nuclear Physics B, vol. 834,<lb/> no. 1-2, pp. 258–272, 2010.<lb/> </bibl>
+        <bibl><label>25 </label>R. Dijkgraaf, P. Sułkowski, and C. Vafa, unpublished .<lb/> </bibl>
+        <bibl><label>26 </label>K. Nagao and M. Yamazaki, &quot; The non-commutative topological vertex and wall crossing phenom-<lb/>ena, &quot; Advances in Theoretical and Mathematical Physics, vol. 14, pp. 1147–1181, 2010.<lb/> </bibl>
+        <bibl><label>27 </label>P. Sułkowski, &quot; Wall-crossing, open BPS counting and matrix models, &quot; Journal of High Energy Physics,<lb/> vol. 2011, no. 3, p. 89, 2011.<lb/> </bibl>
+        <bibl><label>28 </label>B. Eynard, &quot; A matrix model for plane partitions and TASEP, &quot; Journal of Statistical Mechanics, no. 10,<lb/> Article ID P10011, 2009.<lb/> </bibl>
+        <bibl><label>29 </label>H. Ooguri, P. Sułkowski, and M. Yamazaki, &quot; Wall Crossing As Seen By Matrix Models, &quot;<lb/> Communications in Mathematical Physics, 2011.<lb/> </bibl>
+        <bibl><label>30 </label>R. Szabo and M. Tierz, &quot; Matrix models and stochastic growth in Donaldson-Thomas theory, &quot; . In<lb/> press, http://arxiv.org/abs/1005.5643.<lb/> </bibl>
+        <bibl><label>31 </label>P. Sułkowski, &quot; Refined matrix models from BPS counting, &quot; Physical Review D, vol. 83, no. 8, Article ID<lb/> 085021, 12 pages, 2011.<lb/> </bibl>
+        <bibl><label>32 </label>N. Saulina and C. Vafa, &quot; D-branes as defects in the Calabi-Yau crystal, &quot; . In press, http://arxiv.org/<lb/> abs/hep-th/0404246.<lb/> </bibl>
+        <bibl><label>33 </label>N. Halmagyi, A. Sinkovics, and P. Sułkowski, &quot; Knot invariants and Calabi-Yau crystals, &quot; Journal of<lb/> High Energy Physics, no. 1, article 040, p. 32, 2006.<lb/> </bibl>
+        <bibl><label>34 </label>J. Gomis and T. Okuda, &quot; D-branes as a bubbling Calabi-Yau, &quot; Journal of High Energy Physics, no. 7,<lb/> article 005, p. 28, 2007.<lb/> </bibl>
+        <bibl><label>35 </label>M. Aganagic and K. Schaeffer, &quot; Wall crossing, quivers and crystals, &quot; . In press, http://arxiv.org/abs/<lb/> 1006.2113.<lb/> </bibl>
+        <bibl><label>36 </label>T. Nishinaka and S. Yamaguchi, &quot; Wall-crossing of D4-D2-D0 and flop of the conifold, &quot; Journal of High<lb/> Energy Physics, vol. 2010, no. 9, 2010.<lb/> </bibl>
+        <bibl><label>37 </label>P. Sułkowski, &quot; Calabi-Yau crystals in topological string theory, &quot; . In press, http://arxiv.org/abs/<lb/> 0712.2173.<lb/> </bibl>
+        <bibl><label>38 </label>M. Yamazaki, &quot; Crystal melting and wall crossing phenomena, &quot; International Journal of Modern Physics<lb/> A, vol. 26, no. 7-8, pp. 1097–1228, 2011.<lb/> </bibl>
+        <bibl><label>39 </label>C. Vafa and E. Zaslow, Eds., Mirror Symmetry, CMI/AMS publication.<lb/> </bibl>
+        <bibl><label>40 </label>R. Dijkgraaf, C. Vafa, and E. Verlinde, &quot; M-theory and a topological string duality, &quot; . In press, http://<lb/> arxiv.org/abs/hep-th/0602087.<lb/> </bibl>
+        <bibl><label>41 </label>J. M. F. Labastida, M. MariMari˜Mariño, and C. Vafa, &quot; Knots, links and branes at large N, &quot; Journal of High Energy<lb/> Physics, no. 11, p. 7, 2000.<lb/> </bibl>
+        <bibl><label>42 </label>D. Gaiotto, A. Strominger, and X. Yin, &quot; New connections between 4D and 5D black holes, &quot; Journal of<lb/> High Energy Physics, no. 2, p. 10, article 024, 2006.<lb/> </bibl>
+        <bibl><label>43 </label>M. Jimbo and T. Miwa, &quot; Solitons and infinite-dimensional lie algebras, &quot; Kyoto University. Research<lb/> Institute for Mathematical Sciences. Publications, vol. 19, no. 3, pp. 943–1001, 1983.<lb/> </bibl>
+        <bibl><label>44 </label>I. G. Macdonald, Symmetric Functions and Hall Polynomials, Oxford Mathematical Monographs, The<lb/> Clarendon Press Oxford University Press, New York, NY, USA, 2nd edition, 1995.<lb/> </bibl>
+        <bibl><label>45 </label>M. Aganagic, R. Dijkgraaf, A. Klemm, M. MariMari˜Mariño, and C. Vafa, &quot; Topological strings and integrable<lb/> hierarchies, &quot; Communications in Mathematical Physics, vol. 261, no. 2, pp. 451–516, 2006.<lb/> </bibl>
+        <bibl><label>46 </label>P. Di Francesco, P. Ginsparg, and J. Zinn-Justin, &quot; 2D gravity and random matrices, &quot; Physics Reports,<lb/> vol. 254, no. 1-2, pp. 1–133, 1995.<lb/> </bibl>
+        <bibl><label>47 </label>M. MariMari˜Mariño, Chern-Simons Theory, Matrix Models, And Topological Strings, vol. 131 of International Series<lb/> of Monographs on Physics, The Clarendon Press Oxford University Press, Oxford, UK, 2005.<lb/> </bibl>
+        <bibl><label>48 </label>B. Eynard and N. Orantin, &quot; Invariants of algebraic curves and topological expansion, &quot; . In press,<lb/> http://arxiv.org/abs/math-ph/0702045.<lb/></bibl>
+        <bibl><label>49 </label>M. MariMari˜Mariño, &quot; Chern-Simons theory, matrix integrals, and perturbative three-manifold invariants, &quot;<lb/> Communications in Mathematical Physics, vol. 253, no. 1, pp. 25–49, 2004.<lb/> </bibl>
+        <bibl><label>50 </label>M. Aganagic, A. Klemm, M. MariMari˜Mariño, and C. Vafa, &quot; Matrix model as a mirror of Chern-Simons theory, &quot;<lb/> Journal of High Energy Physics, no. 2, article 010, p. 46, 2004.<lb/> </bibl>
+        <bibl><label>51 </label>V. Bouchard, A. Klemm, M. MariMari˜Mariño, and S. Pasquetti, &quot; Remodeling the B-model, &quot; Communications in<lb/> Mathematical Physics, vol. 287, no. 1, pp. 117–178, 2009.<lb/> </bibl>
+        <bibl><label>52 </label>B. Eynard, &quot; All order asymptotic expansion of large partitions, &quot; Journal of Statistical Mechanics, no. 7,<lb/> Article ID P07023, 2008.<lb/> </bibl>
+        <bibl><label>53 </label>A. Klemm and P. Sułkowski, &quot; Seiberg-Witten theory and matrix models, &quot; Nuclear Physics B, vol. 819,<lb/> no. 3, pp. 400–430, 2009.<lb/></bibl>
+        <bibl><label> 54</label> P. Sułkowski, &quot; Matrix models for 2<lb/> * theories, &quot; Physical Review D, vol. 80, no. 8, Article ID 086006, 2009.<lb/> </bibl>
+        <bibl><label>55 </label>P. Sułkowski, &quot; Matrix models for β-ensembles from Nekrasov partition functions, &quot; Journal of High<lb/> Energy Physics, no. 4, article 063, p. 63, 2010.<lb/> </bibl>
+        <bibl><label>56 </label>B. Eynard, A. K. Kashani-Poor, and O. Marchal, &quot; A matrix model for the topological string I: deriving<lb/> the matrix model, &quot; . In press, http://arxiv.org/abs/1003.1737.<lb/> </bibl>
+        <bibl><label>57 </label>M. Taki, &quot; Refined topological vertex and instanton counting, &quot; Journal of High Energy Physics, no. 3,<lb/> article 048, p. 48, 2008.<lb/> </bibl>
+        <bibl><label>58 </label>H. Awata and H. Kanno, &quot; Instanton counting, Macdonald function and the moduli space of D-<lb/>branes, &quot; Journal of High Energy Physics, no. 5, article 039, p. 26, 2005.<lb/> </bibl>
+        <bibl><label>59 </label>H. Awata and H. Kanno, &quot; Refined BPS state counting from Nekrasov&apos;s formula and Macdonald<lb/> functions, &quot; International Journal of Modern Physics A, vol. 24, no. 12, pp. 2253–2306, 2009.<lb/> </bibl>
+        <bibl><label>60 </label>I. Antoniadis, S. Hohenegger, K. S. Narain, and T. R. Taylor, &quot; Deformed topological partition function<lb/> and Nekrasov backgrounds, &quot; Nuclear Physics B, vol. 838, no. 3, pp. 253–265, 2010.<lb/> </bibl>
+        <bibl><label>61 </label>Y. Nakayama, &quot; Refined topological amplitudes in N 1 flux compactification, &quot; Journal of High Energy<lb/> Physics, vol. 2010, no. 11, article 117, pp. 1–14, 2010.<lb/> </bibl>
+        <bibl><label>62 </label>L. F. Alday, D. Gaiotto, and Y. Tachikawa, &quot; Liouville correlation functions from four-dimensional<lb/> Gauge theories, &quot; Letters in Mathematical Physics, vol. 91, no. 2, pp. 167–197, 2010.<lb/> </bibl>
+        <bibl><label>63 </label>R. Dijkgraaf and C. Vafa, &quot; Toda theories, matrix models, topological strings, and N 2 Gauge<lb/> systems, &quot; . In press, http://arxiv.org/abs/0909.2453.<lb/> </bibl>
+        <bibl><label>64 </label>A. Mironov, A. Morozov, and A. Morozov, &quot; Matrix model version of AGT conjecture and generalized<lb/> Selberg integrals, &quot; Nuclear Physics B, vol. 843, no. 2, pp. 534–557, 2011.<lb/> </bibl>
+        <bibl><label>65 </label>H. Awata and Y. Yamada, &quot; Five-dimensional AGT relation and the deformed beta-ensemble, &quot; Progress<lb/> of Theoretical Physics, vol. 124, no. 2, pp. 227–262, 2010.<lb/> </bibl>
+        <bibl><label>66 </label>M. Huang and A. Klemm, &quot; Direct integration for general Omega backgrounds, &quot; . In press,<lb/> http://arxiv.org/abs/1009.1126.<lb/> </bibl>
+        <bibl><label>67 </label>A. Brini, M. MariMari˜Mariño, and S. Stevan, &quot; The uses of the refined matrix model recursion, &quot; Journal of<lb/> Mathematical Physics, vol. 52, no. 5, 2011.<lb/> </bibl>
+        <bibl><label>68 </label>M. Aganagic and S. Shakirov, &quot; Knot homology from refined Chern-Simons theory, &quot; . In press,<lb/> http://arxiv.org/abs/1105.5117.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

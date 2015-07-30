@@ -1,0 +1,79 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> L. Randall and R. Sundrum, &quot; Large mass hierarchy from a small<lb/> extra dimension, &quot; Physical Review Letters, vol. 83, no. 17, pp.<lb/> 3370–3373, 1999.<lb/> </bibl>
+        <bibl><label>[2]</label> L. Randall and R. Sundrum, &quot; An alternative to compactifica-<lb/>tion, &quot; Physical Review Letters, vol. 83, no. 23, pp. 4690–4693,<lb/> 1999.<lb/> </bibl>
+        <bibl><label>[3]</label> P. Hořava and E. Witten, &quot; Heterotic and type-I string dynamics<lb/> from eleven dimensions, &quot; Nuclear Physics B, vol. 460, no. 3, pp.<lb/> 506–524, 1996.<lb/> </bibl>
+        <bibl><label>[4]</label> R. Maartens and K. Koyama, &quot; Brane-world gravity, &quot; Living<lb/> Reviews in Relativity, vol. 13, no. 5, 2010.<lb/> </bibl>
+        <bibl><label>[5]</label> M. Gogberashvili, &quot; Our world as an expanding shell, &quot; Euro-<lb/>physics Letters, vol. 49, no. 3, pp. 396–399, 2000.<lb/> </bibl>
+        <bibl><label>[6]</label> P. Binétruy, C. Deffayet, and D. Langlois, &quot; Non-conventional<lb/> cosmology from a brane universe, &quot; Nuclear Physics, B, vol. 565,<lb/> no. 1-2, pp. 269–287, 2000.<lb/> </bibl>
+        <bibl><label>[7]</label> R. Maartens, &quot; Cosmological dynamics on the brane, &quot; Physical<lb/> Review D, vol. 62, no. 8, Article ID 084023, 2000.<lb/> </bibl>
+        <bibl><label>[8]</label> A. Campos and C. F. Sopuerta, &quot; Evolution of cosmological<lb/> models in the brane-world scenario, &quot; Physical Review D, vol. 63,<lb/> no. 10, Article ID 104012, 2001.<lb/> </bibl>
+        <bibl><label>[9]</label> M. Gogberashvili, A. Herrera-Aguilar, D. Malagón-Morejón, R.<lb/> R. Mora-Luna, and U. Nucamendi, &quot; Thick brane isotropization<lb/> in a generalized 5D anisotropic standing wave braneworld<lb/> model, &quot; Physical Review D—Particles, Fields, Gravitation and<lb/> Cosmology, vol. 87, no. 8, Article ID 084059, 2013.<lb/> </bibl>
+        <bibl><label>[10]</label> N. Barbosa-Cendejas and A. Herrera-Aguilar, &quot; 4D gravity<lb/> localized in non Z 2 -symmetric thick branes, &quot; Journal of High<lb/> Energy Physics, no. 10, article 101, 2005.<lb/> </bibl>
+        <bibl><label>[11]</label> J. E. Silva, V. Santos, and C. A. Almeida, &quot; Gravity localization in<lb/> a string-cigar braneworld, &quot; Classical and Quantum Gravity, vol.<lb/> 30, no. 2, Article ID 025005, 2013.<lb/> </bibl>
+        <bibl><label>[12]</label> I. C. Jardim, R. R. Landim, G. Alencar, and R. N. Costa<lb/> Filho, &quot; Construction of multiple spherical branes cosmological<lb/> scenario, &quot; Physical Review D, vol. 84, no. 6, Article ID 064019,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[13]</label> A. E. Bernardini, R. T. Cavalcanti, and R. da Rocha, &quot; Spheri-<lb/>cally symmetric thick branes cosmological evolution, &quot; General<lb/> Relativity and Gravitation, vol. 47, no. 1, article 1840, 2015.<lb/> </bibl>
+        <bibl><label>[14]</label> M. C. Abdalla, J. M. Hoff da Silva, and R. da Rocha, &quot; Notes<lb/> on the two-brane model with variable tension, &quot; Physical Review<lb/> D: Particles, Fields, Gravitation, and Cosmology, vol. 80, no. 4,<lb/> Article ID 046003, 2009.<lb/> </bibl>
+        <bibl><label>[15]</label> R. da Rocha and J. M. Hoff da Silva, &quot; Black string corrections<lb/> in variable tension braneworld scenarios, &quot; Physical Review D:<lb/> Particles, Fields, Gravitation and Cosmology, vol. 85, no. 4,<lb/> Article ID 046009, 2012.<lb/> </bibl>
+        <bibl><label>[16]</label> M. Gogberashvili, A. Herrera-Aguilar, and D. Malagón-<lb/>Morejón, &quot; An anisotropic standing wave braneworld and associ-<lb/>ated Sturm-Liouville problem, &quot; Classical and Quantum Gravity,<lb/> vol. 29, no. 2, Article ID 025007, 2012.<lb/> </bibl>
+        <bibl><label>[17]</label> M. Gogberashvili, A. Herrera-Aguilar, D. Malagón-Morejón,<lb/> and R. R. Mora-Luna, &quot; Anisotropic inflation in a 5D standing<lb/> wave braneworld and effective dimensional reduction, &quot; Physics<lb/> Letters B, vol. 725, no. 4-5, pp. 208–211, 2013.<lb/> </bibl>
+        <bibl><label>[18]</label> J. M. Hoff da Silva and R. da Rocha, &quot; Braneworld remarks in<lb/> Riemann-Cartan manifolds, &quot; Classical and Quantum Gravity,<lb/> vol. 26, no. 5, Article ID 055007, 9 pages, 2009.<lb/> </bibl>
+        <bibl><label>[19]</label> R. Casadio, J. Ovalle, and R. da Rocha, &quot; Black strings from<lb/> minimal geometric deformation in a variable tension brane-<lb/>world, &quot; Classical and Quantum Gravity, vol. 31, no. 4, Article ID<lb/> 045016, 2014.<lb/> </bibl>
+        <bibl><label>[20]</label> J. M. H. da Silva and R. da Rocha, &quot; Schwarzschild generalized<lb/> black hole horizon and the embedding space, &quot; The European<lb/> Physical Journal C, vol. 72, pp. 22–58, 2012.<lb/> </bibl>
+        <bibl><label>[21]</label> J. M. da Silva and R. da Rocha, &quot; Gravitational constraints of<lb/> dS branes in an AdS EInstein-Brans-Dicke bulk, &quot; Classical and<lb/> Quantum Gravity, vol. 27, no. 22, Article ID 225008, 2010.<lb/> </bibl>
+        <bibl><label>[22]</label> C. H. Coimbra-Araújo, R. D. A. Rocha, and I. T. Pedron, &quot; Anti-<lb/>de sitter curvature radius constrained by quasars in brane-world<lb/> scenarios, &quot; International Journal of Modern Physics D, vol. 14, no.<lb/> 11, pp. 1883–1898, 2005.<lb/> </bibl>
+        <bibl><label>[23]</label> L. A. Gergely, &quot; Generalized Friedmann branes, &quot; Physical Review,<lb/> D: Third Series, vol. 68, no. 12, Article ID 124011, 2003.<lb/></bibl>
+        <bibl><label>[24]</label> P. Kanti, N. Pappas, and K. Zuleta, &quot; On the localization of four-<lb/>dimensional brane-world black holes, &quot; Classical and Quantum<lb/> Gravity, vol. 30, no. 23, Article ID 235017, 19 pages, 2013.<lb/> </bibl>
+        <bibl><label>[25]</label> R. Casadio and J. Ovalle, &quot; Brane-world stars from minimal<lb/> geometric deformation, and black holes, &quot; General Relativity and<lb/> Gravitation, vol. 46, article 1669, 2014.<lb/> </bibl>
+        <bibl><label>[26]</label> N. Dadhich and S. G. Ghosh, &quot; Gravitational collapse of null fluid<lb/> on the brane, &quot; Physics Letters B, vol. 518, no. 1-2, pp. 1–7, 2001.<lb/> </bibl>
+        <bibl><label>[27]</label> G. Kofinas and E. Papantonopoulos, &quot; Gravitational collapse<lb/> in braneworld models with curvature corrections, &quot; Journal of<lb/> Cosmology and Astroparticle Physics, vol. 12, article 011, 2004.<lb/> </bibl>
+        <bibl><label>[28]</label> M. Bruni, C. Germani, and R. Maartens, &quot; Gravitational collapse<lb/> on the brane: a no-go theorem, &quot; Physical Review Letters, vol. 87,<lb/> no. 23, Article ID 231302, 2001.<lb/> </bibl>
+        <bibl><label>[29]</label> C. G. Bohmer and T. Harko, &quot; Galactic dark matter as a bulk<lb/> effect on the brane, &quot; Classical and Quantum Gravity, vol. 24, p.<lb/> 3191, 2007.<lb/> </bibl>
+        <bibl><label>[30]</label> G. T. Horowitz and A. Strominger, &quot; Black strings and p-branes, &quot;<lb/> Nuclear Physics B, vol. 360, no. 1, pp. 197–209, 1991.<lb/> </bibl>
+        <bibl><label>[31]</label> A. Chamblin, S. W. Hawking, and H. S. Reall, &quot; Brane-world<lb/> black holes, &quot; Physical Review D, vol. 61, Article ID 065007, 2000.<lb/> </bibl>
+        <bibl><label>[32]</label> D. Bazeia, J. M. Hoff da Silva, and R. da Rocha, &quot; Regular bulk<lb/> solutions a nd black strings from dynamical brane-worlds with<lb/> variable tension, &quot; Physical Review D, vol. 90, Article ID 047902,<lb/> 2014.<lb/> </bibl>
+        <bibl><label>[33]</label> R. Casadio, A. Fabbri, and L. Mazzacurati, &quot; New black holes in<lb/> the brane world? &quot; Physical Review D, vol. 65, no. 8, Article ID<lb/> 084040, 5 pages, 2002.<lb/> </bibl>
+        <bibl><label>[34]</label> R. da Rocha, A. Piloyan, A. M. Kuerten, and C. H. Coimbra-<lb/>Araujo, &quot; Casadio-Fabbri-Mazzacurati black strings and brane-<lb/>world-induced quasars luminosity corrections, &quot; Classical and<lb/> Quantum Gravity, vol. 30, no. 4, Article ID 045014, 2013.<lb/> </bibl>
+        <bibl><label>[35]</label> R. Casadio and C. Germani, &quot; Gravitational collapse and black<lb/> hole evolution—do holographic black holes eventually &quot; anti-<lb/>evaporate &quot; ? &quot; Progress of Theoretical Physics, vol. 114, no. 1, pp.<lb/> 23–56, 2005.<lb/> </bibl>
+        <bibl><label>[36]</label> N. Dadhich, R. Maartens, P. Papadopoulos, and V. Rezania,<lb/> &quot; Black holes on the brane, &quot; Physics Letters B, vol. 487, no. 1-2,<lb/> pp. 1–6, 2000.<lb/> </bibl>
+        <bibl><label>[37]</label> C. Germani and R. Maartens, &quot; Stars in the braneworld, &quot; Physical<lb/> Review D, vol. 64, no. 12, Article ID 124010, 2001.<lb/> </bibl>
+        <bibl><label>[38]</label> M. Visser and D. L. Wiltshire, &quot; On-brane data for braneworld<lb/> stars, &quot; Physical Review D, vol. 67, Article ID 104004, 2003.<lb/> </bibl>
+        <bibl><label>[39]</label> P. Kanti, I. Olasagasti, and K. Tamvakis, &quot; Quest for localized 4D<lb/> black holes in brane worlds. II. Removing the bulk singularities, &quot;<lb/> Physical Review D, vol. 68, no. 12, Article ID 124001, 10 pages,<lb/> 2003.<lb/> </bibl>
+        <bibl><label>[40]</label> R. Gregory and R. Laflamme, &quot; Black strings and í µí±-branes are<lb/> unstable, &quot; Physical Review Letters, vol. 70, no. 19, pp. 2837–2840,<lb/> 1993.<lb/> </bibl>
+        <bibl><label>[41]</label> M. Choptuik, L. Lehner, I. Olabarrieta, R. Petryk, F. Pretorius,<lb/> and H. Villegas, &quot; Towards the final fate of an unstable black<lb/> string, &quot; Physical Review D, vol. 68, no. 4, Article ID 044001,<lb/> 2003.<lb/> </bibl>
+        <bibl><label>[42]</label> T. Shiromizu, K. Maeda, and M. Sasaki, &quot; The Einstein equations<lb/> on the 3-brane world, &quot; Physical Review, D: Third Series, vol. 62,<lb/> no. 2, Article ID 024012, 2000.<lb/> </bibl>
+        <bibl><label>[43]</label> L. A. Gergely, &quot; Black holes and dark energy from gravitational<lb/> collapse on the brane, &quot; Journal of Cosmology and Astroparticle<lb/> Physics, vol. 2, article 27, 2007.<lb/></bibl>
+        <bibl><label>[44]</label> N. Haddad, &quot; Black strings ending in horizons, &quot; Classical and<lb/> Quantum Gravity, vol. 29, Article ID 245001, 2012.<lb/> </bibl>
+        <bibl><label>[45]</label> D. Bazeia, J. M. H. da Silva, and R. da Rocha, &quot; Black holes in<lb/> realistic branes: black string-like objects? &quot; Physics Letters B, vol.<lb/> 721, no. 4-5, pp. 306–311, 2013.<lb/> </bibl>
+        <bibl><label>[46]</label> R. Neves and C. Vaz, &quot; Dark radiation dynamics on the brane, &quot;<lb/> Physical Review D, vol. 66, no. 12, Article ID 124002, 2002.<lb/> </bibl>
+        <bibl><label>[47]</label> R. Neves and C. Vaz, &quot; Brane world dynamics and conformal<lb/> bulk fields, &quot; Physical Review D, vol. 68, Article ID 024007, 2003.<lb/> </bibl>
+        <bibl><label>[48]</label> R. Neves, &quot; Braneworlds, conformal fields and the gravitons, &quot;<lb/> Journal of Physics A: Mathematical and Theoretical, vol. 40, no.<lb/> 25, pp. 6991–6997, 2007.<lb/> </bibl>
+        <bibl><label>[49]</label> A. G. LemaˆLemaˆıtre, &quot; L&apos;Univers en Expansion, &quot; General Relativity<lb/> and Gravitation, vol. 29, no. 5, pp. 641–680, 1997.<lb/> </bibl>
+        <bibl><label>[50]</label> R. C. Tolman, &quot; Effect of inhomogeneity on cosmological mod-<lb/>els, &quot; Proceedings of the National Academy of Sciences of the<lb/> United States of America, vol. 20, no. 3, pp. 169–176, 1934.<lb/> </bibl>
+        <bibl><label>[51]</label> H. Bondi, &quot; Spherically symmetrical models in general relativ-<lb/>ity, &quot; Royal Astronomical Society. Monthly Notices, vol. 107, pp.<lb/> 410–425, 1947.<lb/> </bibl>
+        <bibl><label>[52]</label> P. Binétruy, C. Deffayet, U. Ellwanger, and D. Langlois, &quot; Brane<lb/> cosmological evolution in a bulk with cosmological constant, &quot;<lb/> Physics Letters B: Nuclear, Elementary Particle and High-Energy<lb/> Physics, vol. 477, no. 1–3, pp. 285–291, 2000.<lb/> </bibl>
+        <bibl><label>[53]</label> S. Mukohyama, &quot; Brane-world solutions, standard cosmology,<lb/> and dark radiation, &quot; Physics Letters B, vol. 473, no. 3-4, pp. 241–<lb/> 245, 2000.<lb/> </bibl>
+        <bibl><label>[54]</label> P. Bowcock, C. Charmousis, and R. Gregory, &quot; General brane<lb/> cosmologies and their global spacetime structure, &quot; Classical and<lb/> Quantum Gravity, vol. 17, no. 22, pp. 4745–4763, 2000.<lb/> </bibl>
+        <bibl><label>[55]</label> A. Ahmed, L. Dulny, and B. Grzadkowski, &quot; Generalized<lb/> Randall-Sundrum model with a single thick brane, &quot; The Euro-<lb/>pean Physical Journal C, vol. 74, no. 4, pp. 28–62, 2014.<lb/> </bibl>
+        <bibl><label>[56]</label> G. F. R. Ellis and H. van Elst, &quot; Cosmological models (Cargèse<lb/> lectures 1998), &quot; http://arxiv.org/abs/gr-qc/9812046.<lb/> </bibl>
+        <bibl><label>[57]</label> R. A. Sussman, &quot; A dynamical system approach to inhomoge-<lb/>neous dust solutions, &quot; Classical and Quantum Gravity, vol. 25,<lb/> no. 1, Article ID 015012, 2008.<lb/> </bibl>
+        <bibl><label>[58]</label> R. A. Sussman, &quot; Quasilocal variables in spherical symmetry:<lb/> numerical applications to dark matter and dark energy sources, &quot;<lb/> Physical Review D: Particles, Fields, Gravitation and Cosmology,<lb/> vol. 79, Article ID 025009, 2009.<lb/> </bibl>
+        <bibl><label>[59]</label> K. Bolejko, A. Krasi´Krasi´nski, C. Hellaby, and M.-N. Célérier, Struc-<lb/>tures in the Universe by Exact Methods: Formation, Evolution,<lb/> Interactions, Cambridge Monographs on Mathematical Physics,<lb/> Cambridge University Press, Cambridge, UK, 2010.<lb/> </bibl>
+        <bibl><label>[60]</label> A. N. Aliev and A. E. Gümrükçüoglu, &quot; Gravitational field<lb/> equations on and off a 3-brane world, &quot; Classical and Quantum<lb/> Gravity, vol. 21, no. 22, pp. 5081–5095, 2004.<lb/> </bibl>
+        <bibl><label>[61]</label> R. Maartens, &quot; Cosmological dynamics on the brane, &quot; Physical<lb/> Review D, vol. 62, no. 8, Article ID 084023, 2000.<lb/> </bibl>
+        <bibl><label>[62]</label> M. Govender and N. Dadhich, &quot; Collapsing sphere on the brane<lb/> radiates, &quot; Physics Letters. B, vol. 538, no. 3-4, pp. 233–238, 2002.<lb/> </bibl>
+        <bibl><label>[63]</label> R. M. Wald, General Relativity, The University of Chicago Press,<lb/> Chicago, Ill, USA, 1984.<lb/> </bibl>
+        <bibl><label>[64]</label> R. Penrose, &quot; Gravitational collapse: the role of general relativity, &quot;<lb/> Rivista del Nuovo Cimento, vol. 1, pp. 252–276, 1969.<lb/> </bibl>
+        <bibl><label>[65]</label> L. A. Gergely, &quot; Friedmann branes with variable tension, &quot; Physi-<lb/>cal Review D, vol. 78, no. 8, Article ID 084006, 2008.<lb/> </bibl>
+        <bibl><label>[66]</label> S. S. Seahra, C. Clarkson, and R. Maartens, &quot; Detecting extra<lb/> dimensions with gravity-wave spectroscopy: the black-string<lb/> brane world, &quot; Physical Review Letters, vol. 94, no. 12, Article ID<lb/> 121302, 2005.<lb/> </bibl>
+        <bibl><label>[67]</label> R. Casadio and B. Harms, &quot; Black hole evaporation and compact<lb/> extra dimensions, &quot; Physical Review D, vol. 64, no. 2, Article ID<lb/> 024016, 2001.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

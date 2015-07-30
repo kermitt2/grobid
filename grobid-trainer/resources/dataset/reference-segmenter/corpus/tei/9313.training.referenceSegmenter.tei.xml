@@ -1,0 +1,40 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label>S. S. Lee, &quot; Non-Fermi liquid from a charged black hole: a critical<lb/> Fermi ball, &quot; Physical Review D, vol. 79, Article ID 086006, 2009.<lb/> </bibl>
+        <bibl><label>[2]</label> H. Liu, J. McGreevy, and D. Vegh, &quot; Non-Fermi liquids from<lb/> holography, &quot; Physical Review D, vol. 83, no. 6, Article ID 065029,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[3]</label> T. Faulkner, H. Liu, J. McGreevy, and D. Vegh, &quot; Emergent<lb/> quantum criticality, Fermi surfaces, and AdS2, &quot; Physical Review<lb/> D, vol. 83, no. 12, Article ID 125002, 2011.<lb/></bibl>
+        <bibl><label>[4]</label> M. ˇ<lb/> Cubrovi´Cubrovi´c, J. Zaanen, and K. Schalm, &quot; String theory, quantum<lb/> phase transitions, and the emergent Fermi liquid, &quot; Science, vol.<lb/> 325, no. 5939, pp. 439–444, 2009.<lb/> </bibl>
+        <bibl><label>[5]</label> N. Iqbal, H. Liu, and M. Mezei, &quot; Lectures on holographic non-<lb/>Fermi liquids and quantum phase transitions, &quot; http://arxiv.org/<lb/> abs/1110.3814.<lb/> </bibl>
+        <bibl><label>[6]</label> M. Edalati, R. Leigh, and P. W. Phillips, &quot; Dynamically generated<lb/> Mott gap from holography, &quot; Physical Review Letters, vol. 106, no.<lb/> 9, Article ID 091602, 4 pages, 2011.<lb/> </bibl>
+        <bibl><label>[7]</label> M. Edalati, R. Leigh, K. W. Lo, and P. W. Phillips, &quot; Dynamical<lb/> gap and cupratelike physics from holography, &quot; Physical Review<lb/> D, vol. 83, Article ID 046012, 2011.<lb/> </bibl>
+        <bibl><label>[8]</label> W. J. Li and H. Zhang, &quot; Holographic non-relativistic fermionic<lb/> fixed point and bulk dipole coupling, &quot; Journal of High Energy<lb/> Physics, vol. 2011, article 18, 2011.<lb/> </bibl>
+        <bibl><label>[9]</label> J. P. Wu and H. B. Zeng, &quot; Dynamic gap from holographic<lb/> fermions in charged dilaton black branes, &quot; Journal of High<lb/> Energy Physics, vol. 6, article 68, 2012.<lb/> </bibl>
+        <bibl><label>[10]</label> W. Y. Wen and S. Y. Wu, &quot; Dipole coupling effect of holographic<lb/> fermion in charged dilatonic gravity, &quot; Physics Letters B, vol. 712,<lb/> no. 3, pp. 266–271, 2012.<lb/> </bibl>
+        <bibl><label>[11]</label> X. M. Kuang, B. Wang, and J. P. Wu, &quot; Dipole coupling effect<lb/> of holographic fermion in the background of charged Gauss-<lb/>Bonnet AdS black hole, &quot; Journal of High Energy Physics, vol. 7,<lb/> article 125, 2012.<lb/> </bibl>
+        <bibl><label>[12]</label> X.-M. Kuang, B. Wang, and J.-P. Wu, &quot; Dynamical gap from<lb/> holography in the charged dilaton black hole, &quot; Classical and<lb/> Quantum Gravity, vol. 30, no. 14, Article ID 145011, 2013.<lb/> </bibl>
+        <bibl><label>[13]</label> J. N. Laia and D. Tong, &quot; A holographic flat band, &quot; Journal of High<lb/> Energy Physics, vol. 2011, article 125, 2011.<lb/> </bibl>
+        <bibl><label>[14]</label> S. P. Strong, D. G. Clarke, and P. W. Anderson, &quot; Magnetic<lb/> field induced confinement in strongly correlated anisotropic<lb/> materials, &quot; Physical Review Letters, vol. 73, no. 7, pp. 1007–1010,<lb/> 1994.<lb/> </bibl>
+        <bibl><label>[15]</label> S. B. Dugdale, M. A. Alam, I. Wilkinson et al., &quot; Nesting<lb/> properties and anisotropy of the Fermi surface of LuNi 2 B 2 C, &quot;<lb/> Physical Review Letters, vol. 83, no. 23, pp. 4824–4827, 1999.<lb/> </bibl>
+        <bibl><label>[16]</label> A. Vishwanath and D. Carpentier, &quot; Two-dimensional anisotro-<lb/>pic non-fermi-liquid phase of coupled luttinger liquids, &quot; Physi-<lb/>cal Review Letters, vol. 86, no. 4, pp. 676–679, 2001.<lb/> </bibl>
+        <bibl><label>[17]</label> T. Das, A. B. Vorontsov, I. Vekhter, and M. J. Graf, &quot; Role of<lb/> the Fermi surface anisotropy in angle-dependent magnetic-<lb/>field oscillations for identifying the energy-gap anisotropy of<lb/> A í µí±¦ Fe 2 Se 2 superconductors, &quot; Physical Review Letters, vol. 109,<lb/> Article ID 187006, 2012.<lb/> </bibl>
+        <bibl><label>[18]</label> M. Edalati, K. W. Lo, and P. W. Phillips, &quot; Pomeranchuk instabil-<lb/>ity in a non-Fermi liquid from holography, &quot; Physical Review D,<lb/> vol. 86, Article ID 086003, 2012.<lb/> </bibl>
+        <bibl><label>[19]</label> I. L. Buchbinder, D. M. Gitman, and V. D. Pershin, &quot; Causality of<lb/> massive spin-2 field in external gravity, &quot; Physics Letters. B, vol.<lb/> 492, no. 1-2, pp. 161–170, 2000.<lb/> </bibl>
+        <bibl><label>[20]</label> Y. Ling, C. Niu, J. P. Wu, Z. Y. Xian, and H. Zhang, &quot; Holographic<lb/> fermionic liquid with lattices, &quot; Journal of High Energy Physics,<lb/> vol. 2013, no. 7, article 45, 2013.<lb/> </bibl>
+        <bibl><label>[21]</label> D. Mateos and D. Trancanelli, &quot; Thermodynamics and instabil-<lb/>ities of a strongly coupled anisotropic plasma, &quot; Journal of High<lb/> Energy Physics, vol. 2011, no. 7, article 54, 2011.<lb/> </bibl>
+        <bibl><label>[22]</label> D. Mateos and D. Trancanelli, &quot; Anisotropic N = 4 super-Yang-<lb/>mills plasma and its instabilities, &quot; Physical Review Letters, vol.<lb/> 107, Article ID 101601, 2011.<lb/> </bibl>
+        <bibl><label>[23]</label> L. Cheng, X. H. Ge, and S. J. Sin, &quot; Anisotropic plasma with<lb/> a chemical potential and scheme-independent instabilities, &quot;<lb/> Physics Letters B, vol. 734, pp. 116–121, 2014.<lb/> </bibl>
+        <bibl><label>[24]</label> L. Cheng, X. H. Ge, and S. J. Sin, &quot; Anisotropic plasma at finite<lb/> U(1) chemical potential, &quot; Journal of High Energy Physics, vol.<lb/> 2014, no. 7, article 83, 2014.<lb/> </bibl>
+        <bibl><label>[25]</label> L. Q. Fang, X.-H. Ge, J.-P. Wu, and H.-Q. Leng, &quot; Anisotropic<lb/> Fermi surface from holography, &quot; http://arxiv.org/abs/1409.6062.<lb/> </bibl>
+        <bibl><label>[26]</label> T. Senthil, &quot; Critical Fermi surfaces and non-Fermi liquid<lb/> metals, &quot; Physical Review B, vol. 78, no. 3, Article ID 035103, 14<lb/> pages, 2008.<lb/> </bibl>
+        <bibl><label>[27]</label> T. Senthil, &quot; Theory of a continuous Mott transition in two<lb/> dimensions, &quot; Physical Review B, vol. 78, Article ID 045109, 2008.<lb/> </bibl>
+        <bibl><label>[28]</label> X. M. Kuang, E. Papantonopoulos, B. Wang, and J. P. Wu,<lb/> &quot; Formation of Fermi surfaces and the appearance of liquid<lb/> phases in holographic theories with hyperscaling violation, &quot;<lb/> Journal of High Energy Physics, vol. 2014, no. 11, article 86, 2014.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

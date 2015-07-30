@@ -1,0 +1,53 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> S. Capozziello and V. Faraoni, Beyond Einstein Gravity: A Sur-<lb/>vey of Gravitational Theories for Cosmology and Astrophysics,<lb/> Springer, New York, NY, USA, 2011.<lb/> </bibl>
+        <bibl><label>[2]</label> S. Nojiri and S. D. Odintsov, &quot; Introduction to modified gravity<lb/> and gravitational alternative for dark energy, &quot; International<lb/> Journal of Geometric Methods in Modern Physics, vol. 4, no. 1,<lb/> pp. 115–145, 2007.<lb/> </bibl>
+        <bibl><label>[3]</label> S. Capozziello and M. De Laurentis, &quot; Extended theories of grav-<lb/>ity, &quot; Physics Reports, vol. 509, no. 4-5, p. 167, 2011.<lb/> </bibl>
+        <bibl><label>[4]</label> H. F. M. Goenner, &quot; On the history of unified field theories, &quot;<lb/> Living Reviews in Relativity, vol. 7, article 2, 2004.<lb/> </bibl>
+        <bibl><label>[5]</label> S. Nojiri and S. D. Odintsov, &quot; Unified cosmic history in mod-<lb/>ified gravity: from í µí°¹(í µí±) theory to Lorentz non-invariant mod-<lb/>els, &quot; Physics Reports, vol. 505, no. 2–4, pp. 59–144, 2011.<lb/> </bibl>
+        <bibl><label>[6]</label> F. W. Hehl, J. D. McCrea, E. W. Mielke, and Y. Ne&apos; eman,<lb/> &quot; Metric-affine gauge theory of gravity: field equations, Noether<lb/> identities, world spinors, and breaking of dilation invariance, &quot;<lb/> Physics Reports, vol. 258, no. 1-2, pp. 1–171, 1995.<lb/> </bibl>
+        <bibl><label>[7]</label> D. Puetzfeld, &quot; Prospects of non-Riemannian cosmology, &quot; in<lb/> Proceedings of 22nd Texas Symposium on Relativistic Astro-<lb/>physics at Stanford University, Stanford, Calif, USA, December<lb/> 2004.<lb/> </bibl>
+        <bibl><label>[8]</label> D. Puetzfeld, &quot; Status of non-riemannian cosmology, &quot; New<lb/> Astronomy Reviews, vol. 49, no. 2, pp. 59–64, 2005.<lb/> </bibl>
+        <bibl><label>[9]</label> A. V. Minkevich and A. S. Garkun, &quot; Isotropic cosmology in<lb/> metric-affine gauge theory of gravity, &quot; http://arxiv.org/abs/gr-<lb/>qc/9805007.<lb/> </bibl>
+        <bibl><label>[10]</label> N. J. Poplawski, &quot; Acceleration of the universe in the Einstein<lb/> frame of a metric-affine í µí±(í µí±) gravity, &quot; Classical and Quantum<lb/> Gravity, vol. 23, no. 6, pp. 2011–2020, 2006.<lb/> </bibl>
+        <bibl><label>[11]</label> D. Puetzfeld and Y. N. Obukhov, &quot; Probing non-riemannian<lb/> spacetime geometry, &quot; Physics Letters A, vol. 372, no. 45, pp. 6711–<lb/> 6716, 2008.<lb/> </bibl>
+        <bibl><label>[12]</label> F. W. Hehl and Y. N. Obukhov, &quot; Elie Cartan&apos;s torsion in geometry<lb/> and in field theory, an essay, &quot; http://arxiv.org/abs/0711.1535.<lb/> </bibl>
+        <bibl><label>[13]</label> M. Yi Mao, A. Tegmark, S. Guth, and S. Cabi, &quot; Constraining<lb/> torsion with gravity probe B, &quot; Physical Review D, vol. 76, no. 10,<lb/> Article ID 104029, 26 pages, 2007.<lb/> </bibl>
+        <bibl><label>[14]</label> K. S. Stelle, &quot; Renormalization of higher-derivative quantum<lb/> gravity, &quot; Physical Review, D: Particles and Fields: Third Series, vol.<lb/> 16, no. 4, pp. 953–969, 1977.<lb/> </bibl>
+        <bibl><label>[15]</label> P. D. Mannheim and D. Kazanas, &quot; Exact vacuum solution to<lb/> conformal Weyl gravity and galactic rotation curves, &quot; The Astro-<lb/>physical Journal, vol. 342, no. 2, pp. 635–638, 1989.<lb/> </bibl>
+        <bibl><label>[16]</label> P. D. Mannheim, &quot; Conformal cosmology with no cosmological<lb/> constant, &quot; General Relativity and Gravitation, vol. 22, no. 3, pp.<lb/> 289–298, 1990.<lb/> </bibl>
+        <bibl><label>[17]</label> L. Fabbri, &quot; Metric-torsional conformal gravity, &quot; Physics Letters<lb/> B, vol. 707, no. 5, pp. 415–417, 2012.<lb/> </bibl>
+        <bibl><label>[18]</label> C. N. Karahan, O. Dogangün, and D. A. Demir, &quot; Conformal<lb/> transformations in metric-affine gravity and ghosts, &quot; Annalen<lb/> der Physik, vol. 524, no. 8, pp. 461–469, 2012.<lb/> </bibl>
+        <bibl><label>[19]</label> Y. N. Obukhov, &quot; Conformal invariance and space-time torsion, &quot;<lb/> Physics Letters A, vol. 90, no. 1-2, pp. 13–16, 1982.<lb/> </bibl>
+        <bibl><label>[20]</label> J. W. Maluf, &quot; Conformal invariance and torsion in general<lb/> relativity, &quot; General Relativity and Gravitation, vol. 19, no. 1, pp.<lb/> 57–71, 1987.<lb/> </bibl>
+        <bibl><label>[21]</label> I. L. Shapiro, &quot; Physical aspects of the space-time torsion, &quot;<lb/> Physics Reports, vol. 357, no. 2, pp. 113–213, 2002.<lb/> </bibl>
+        <bibl><label>[22]</label> T. Moon, J. Lee, and P. Oh, &quot; Conformal invariance in Einstein-<lb/>Cartan-Weyl space, &quot; Modern Physics Letters A, vol. 25, no. 37, pp.<lb/> 3129–3143, 2010.<lb/> </bibl>
+        <bibl><label>[23]</label> V. Vitagliano, T. P. Sotiriou, and S. Liberati, &quot; The dynamics of<lb/> metric-affine gravity, &quot; Annals of Physics, vol. 326, no. 5, pp. 1259–<lb/> 1273, 2011.<lb/> </bibl>
+        <bibl><label>[24]</label> T. P. Sotiriou, &quot; Modified actions for gravity: theory and phe-<lb/>nomenology, &quot; International School for Advanced Studies, 2007,<lb/> http://arxiv.org/abs/0710.4438.<lb/> </bibl>
+        <bibl><label>[25]</label> M. Blau, Lecture Notes on General Relativity, Albert Ein-<lb/>stein Center for Fundamental Physics, Bern University, 2012,<lb/> http://www.blau.itp.unibe.ch/Lecturenotes.html.<lb/> </bibl>
+        <bibl><label>[26]</label> A. Kleyn, &quot; Metric-Affine manifold, &quot; http://arxiv.org/abs/gr-qc/<lb/> 0405028.<lb/> </bibl>
+        <bibl><label>[27]</label> T. P. Sotiriou, &quot; The significance of matter coupling in f(R)<lb/> gravity, &quot; in Proceedings of the 11th Marcel Grossmann Meeting on<lb/> General Relativity, World Scientific, Singapore, 2008.<lb/> </bibl>
+        <bibl><label>[28]</label> F. W. Hehl, G. D. Kerlick, and P. von der Heyde, &quot; On a new met-<lb/>ric affine theory of gravitation, &quot; Physics Letters B, vol. 63, no. 4,<lb/> pp. 446–448, 1976.<lb/> </bibl>
+        <bibl><label>[29]</label> T. Clifton, P. G. Ferreira, A. Padilla, and C. Skordis, &quot; Modified<lb/> gravity and cosmology, &quot; Physics Reports, vol. 513, no. 1–3, pp. 1–<lb/> 189, 2012.<lb/> </bibl>
+        <bibl><label>[30]</label> V. Vitagliano, &quot; The role of nonmetricity in metric-affine theo-<lb/>ries of gravity, &quot; http://xxx.tau.ac.il/abs/1308.1642v1.<lb/> </bibl>
+        <bibl><label>[31]</label> C. N. Karahan, A. AltasAltas¸, and D. A. Demir, &quot; Scalars, vectors<lb/> and tensors from metric-affine gravity, &quot; General Relativity and<lb/> Gravitation, vol. 45, no. 2, pp. 319–343, 2013.<lb/> </bibl>
+        <bibl><label>[32]</label> T. Fulton, F. Rohrlich, and L. Witten, &quot; Conformal invariance in<lb/> physics, &quot; Reviews of Modern Physics, vol. 34, no. 3, pp. 442–457,<lb/> 1962.<lb/> </bibl>
+        <bibl><label>[33]</label> L. O&apos;Raifeartaigh, I. Sachs, and C. Wiesendanger, &quot; Weyl gauging<lb/> and curved space approach to scale and conformal invariance, &quot;<lb/> in Meeting on 70 Years of Quantum Mechanics, Calcutta, India,<lb/> January-February 1996.<lb/> </bibl>
+        <bibl><label>[34]</label> K. Bamba, S. D. Odintsov, and D. Sáez-Gómez, &quot; Conformal<lb/> symmetry and accelerating cosmology in teleparallel gravity, &quot;<lb/> Physical Review D, vol. 88, no. 8, Article ID 084042, 10 pages,<lb/> 2013.<lb/></bibl>
+        <bibl><label>[35]</label> M. P. Dabrowski, J. Garecki, and D. B. Blaschke, &quot; Conformal<lb/> transformations and conformal invariance in gravitation, &quot;<lb/> Annalen der Physik, vol. 18, no. 1, pp. 13–32, 2009.<lb/> </bibl>
+        <bibl><label>[36]</label> R. Aldrovandi and J. G. Pereira, &quot; Gravitation: in search of the<lb/> missing torsion, &quot; Annales de la Fondation Louis de Broglie, vol.<lb/> 32, p. 229, 2007, http://arxiv.org/abs/0801.4148.<lb/> </bibl>
+        <bibl><label>[37]</label> J. W. Maluf and F. F. Faria, &quot; Conformally invariant teleparallel<lb/> theories of gravity, &quot; Physical Review D, vol. 85, no. 2, Article ID<lb/> 027502, 5 pages, 2012.<lb/> </bibl>
+        <bibl><label>[38]</label> N. J. Poplawski, &quot; Matter-antimatter asymmetry and dark matter<lb/> from torsion, &quot; Physical Review D—Particles, Fields, Gravitation<lb/> and Cosmology, vol. 83, no. 8, Article ID 084033, 2011.<lb/> </bibl>
+        <bibl><label>[39]</label> B. Binegar, C. Fronsdal, and W. Heidenreich, &quot; Linear conformal<lb/> quantum gravity, &quot; Physical Review D, vol. 27, no. 10, pp. 2249–<lb/> 2261, 1983.<lb/> </bibl>
+        <bibl><label>[40]</label> M. V. Takook and M. R. Tanhayi, &quot; Linear Weyl gravity in de<lb/> Sitter universe, &quot; Journal of High Energy Physics, vol. 2010, article<lb/> 44, 2010.<lb/> </bibl>
+        <bibl><label>[41]</label> M. V. Takook, M. R. Tanhayi, and S. Fatemi, &quot; Conformal linear<lb/> gravity in de Sitter space, &quot; Journal of Mathematical Physics, vol.<lb/> 51, no. 3, Article ID 032503, 2010.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

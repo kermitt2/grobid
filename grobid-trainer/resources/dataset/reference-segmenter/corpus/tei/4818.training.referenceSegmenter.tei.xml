@@ -1,0 +1,41 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> J. M. Bardeen, B. Carter, and S. W. Hawking, &quot; The four laws<lb/> of black hole mechanics, &quot; Communications in Mathematical<lb/> Physics, vol. 31, pp. 161–170, 1973.<lb/> </bibl>
+        <bibl><label>[2]</label> P. Davies, &quot; The thermodynamic theory of black holes, &quot; Proceed-<lb/>ings of the Royal Society of London A, vol. 353, no. 1675, pp. 499–<lb/> 521, 1977.<lb/> </bibl>
+        <bibl><label>[3]</label> S. W. Hawking and D. N. Page, &quot; Thermodynamics of black<lb/> holes in anti-de Sitter space, &quot; Communications in Mathematical<lb/> Physics, vol. 87, no. 4, pp. 577–588, 1983.<lb/> </bibl>
+        <bibl><label>[4]</label> P. Hut, &quot; Charged black holes and phase transitions, &quot; Monthly<lb/> Notices of the Royal Astronomical Society, vol. 180, no. 3, pp. 379–<lb/> 389, 1977.<lb/> </bibl>
+        <bibl><label>[5]</label> L. M. Sokolowski and P. Mazur, &quot; Second-order phase transitions<lb/> in black-hole thermodynamics, &quot; Journal of Physics A, vol. 13, no.<lb/> 3, pp. 1113–1120, 1980.<lb/> </bibl>
+        <bibl><label>[6]</label> C. O. Lousto, &quot; Emergence of an effective two-dimensional<lb/> quantum description from the study of critical phenomena in<lb/> black holes, &quot; Physical Review D, vol. 51, no. 4, pp. 1733–1740,<lb/> 1995.<lb/> </bibl>
+        <bibl><label>[7]</label> C. S. Peça and J. P. S. Lemos, &quot; Thermodynamics of Reissner-<lb/>Nordström-anti-de Sitter black holes in the grand canonical<lb/> ensemble, &quot; Physical Review D, vol. 59, no. 12, Article ID 124007,<lb/> 1999.<lb/> </bibl>
+        <bibl><label>[8]</label> R. Banerjee, S. K. Modak, and S. Samanta, &quot; Second order phase<lb/> transition and thermodynamic geometry in Kerr-AdS black<lb/> holes, &quot; Physical Review D, vol. 84, Article ID 064024, 2011.<lb/> </bibl>
+        <bibl><label>[9]</label> R. Banerjee and D. Roychowdhury, &quot; Critical phenomena in<lb/> born-infeld AdS black holes, &quot; Physical Review D, vol. 85, Article<lb/> ID 044040, 2012.<lb/> </bibl>
+        <bibl><label>[10]</label> Y. S. Myung, &quot; Phase transitions for Lifshitz black holes, &quot; The<lb/> European Physical Journal C, vol. 72, article 2116, 2012.<lb/> </bibl>
+        <bibl><label>[11]</label> A. Chamblin, R. Emparan, C. V. Johnson, and R. C. Myers,<lb/> &quot; Charged AdS black holes and catastrophic holography, &quot; Physi-<lb/>cal Review D, vol. 60, no. 6, 1999.<lb/> </bibl>
+        <bibl><label>[12]</label> A. Chamblin, R. Emparan, C. V. Johnson, and R. C. Myers,<lb/> &quot; Holography, thermodynamics, and fluctuations of charged<lb/> AdS black holes, &quot; Physical Review D, vol. 60, no. 10, Article ID<lb/> 104026, 20 pages, 1999.<lb/> </bibl>
+        <bibl><label>[13]</label> X. N. Wu, &quot; Multicritical phenomena of Reissner-Nordström<lb/> anti–de Sitter black holes, &quot; Physical Review D, vol. 62, no. 12,<lb/> Article ID 124023, 2000.<lb/> </bibl>
+        <bibl><label>[14]</label> D. Kastor, S. Ray, and J. Traschen, &quot; Enthalpy and the mechanics<lb/> of AdS black holes, &quot; Classical and Quantum Gravity, vol. 26, no.<lb/> 19, Article ID 195011, 16 pages, 2009.<lb/> </bibl>
+        <bibl><label>[15]</label> M. Cvetic, G. Gibbons, D. Kubiznak, and C. Pope, &quot; Black hole<lb/> enthalpy and an entropy inequality for the thermodynamic<lb/> volume, &quot; Physical Review D, vol. 84, Article ID 024037, 2011.<lb/> </bibl>
+        <bibl><label>[16]</label> C. Niu, Y. Tian, and X. N. Wu, &quot; Critical phenomena and<lb/> thermodynamic geometry of Reissner-Nordström-anti-de Sit-<lb/>ter black holes, &quot; Physical Review D, vol. 85, no. 2, Article ID<lb/> 024017, 8 pages, 2012.<lb/> </bibl>
+        <bibl><label>[17]</label> R. Banerjee, S. K. Modak, and D. Roychowdhury, &quot; A unified<lb/> picture of phase transition: from liquid-vapour systems to AdS<lb/> black holes, &quot; Journal of High Energy Physics (JHEP), vol. 1210, p.<lb/> 125, 2012.<lb/> </bibl>
+        <bibl><label>[18]</label> S.-W. Wei and Y.-X. Liu, &quot; Critical phenomena and thermody-<lb/>namic geometry of charged Gauss-Bonnet AdS black holes, &quot;<lb/> Physical Review D, vol. 87, Article ID 044014, 2013.<lb/> </bibl>
+        <bibl><label>[19]</label> M. B. Jahani Poshteh, B. Mirza, and Z. Sherkatghanad, &quot; Phase<lb/> transition, critical behavior, and critical exponents of Myers-<lb/>Perry black holes, &quot; Physical Review D—Particles, Fields, Grav-<lb/>itation and Cosmology, vol. 88, no. 2, Article ID 024005, 2013.<lb/> </bibl>
+        <bibl><label>[20]</label> R. Zhao, M. Ma, H. Li, and L. Zhang, &quot; On thermodynamics<lb/> of charged and rotating asymptotically AdS black strings, &quot;<lb/> Advances in High Energy Physics, vol. 2013, Article ID 371084,<lb/> 7 pages, 2013.<lb/> </bibl>
+        <bibl><label>[21]</label> R. Zhao, H. H. Zhao, M. S. Ma, and L. C. Zhang, &quot; On the critical<lb/> phenomena and thermodynamics of charged topological dila-<lb/>ton AdS black holes, &quot; European Physical Journal C, vol. 73, no.<lb/> 12, pp. 1–10, 2013.<lb/> </bibl>
+        <bibl><label>[22]</label> M.-S. Ma, H.-H. Zhao, L.-C. Zhang, and R. Zhao, &quot; Existence<lb/> condition and phase transition of Reissner-Nordström-de Sitter<lb/> black hole, &quot; International Journal of Modern Physics A, vol. 29,<lb/> no. 9, Article ID 1450050, 2014.<lb/> </bibl>
+        <bibl><label>[23]</label> R. Zhao, M.-S. Ma, H.-H. Zhao, and L.-C. Zhang, &quot; The critical<lb/> phenomena and thermodynamics of the Reissner-Nordstrom-<lb/>de Sitter black hole, &quot; Advances in High Energy Physics, vol. 2014,<lb/> Article ID 124854, 6 pages, 2014.<lb/> </bibl>
+        <bibl><label>[24]</label> B. P. Dolan, &quot; Pressure and volume in the first law of black hole<lb/> thermodynamics, &quot; Classical and Quantum Gravity, vol. 28, no.<lb/> 23, Article ID 235017, 2011.<lb/> </bibl>
+        <bibl><label>[25]</label> D. Kubiznak and R. B. Mann, &quot; P-V criticality of charged AdS<lb/> black holes, &quot; Journal of High Energy Physics, vol. 2012, no. 7,<lb/> article 033, 2012.<lb/> </bibl>
+        <bibl><label>[26]</label> S. Gunasekaran, D. Kubiznak, and R. B. Mann, &quot; Extended phase<lb/> space thermodynamics for charged and rotating black holes<lb/> and Born-Infeld vacuum polarization, &quot; Journal of High Energy<lb/> Physics, no. 11, pp. 1–43, 2012.<lb/> </bibl>
+        <bibl><label>[27]</label> R.-G. Cai, L.-M. Cao, and R.-Q. Yang, &quot; PV criticality in the<lb/> extended phase space of Gauss-Bonnet black holes in AdS<lb/> space, &quot; Journal of High Energy Physics, vol. 2013, no. 9, article<lb/> 5, 2013.<lb/> </bibl>
+        <bibl><label>[28]</label> S. H. Hendi and M. H. Vahidinia, &quot; Extended phase space<lb/> thermodynamics and P-V criticality of black holes with a<lb/> nonlinear source, &quot; Physical Review D, vol. 88, no. 8, Article ID<lb/> 084045, 11 pages, 2013.<lb/> </bibl>
+        <bibl><label>[29]</label> E. Spallucci and A. Smailagic, &quot; Maxwell&apos;s equal-area law for<lb/> charged Anti-de Sitter black holes, &quot; Physics Letters. B, vol. 723,<lb/> no. 4-5, pp. 436–441, 2013.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

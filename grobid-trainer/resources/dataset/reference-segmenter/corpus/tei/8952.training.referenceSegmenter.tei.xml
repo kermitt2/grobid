@@ -1,0 +1,42 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1</label>D. H. Perkins, An Introduction to High Energy Physics, Cambridge University Press, 2000.<lb/> </bibl>
+        <bibl><label>2</label>J. N. Ginocchio, &quot; Relativistic symmetries in nuclei and hadrons, &quot; Physics Reports, vol. 414, no. 4-5, pp.<lb/> 165–261, 2005.<lb/> </bibl>
+        <bibl><label>3</label>J. N. Ginocchio and A. Leviatan, &quot; On the relativistic foundations of pseudospin symmetry in nuclei, &quot;<lb/> Physics Letters B, vol. 425, no. 1-2, pp. 1–5, 1998.<lb/> </bibl>
+        <bibl><label>4</label>G. Mao, &quot; Effect of tensor couplings in a relativistic Hartree approach for finite nuclei, &quot; Physical Review<lb/> C, vol. 67, no. 4, Article ID 044318, 12 pages, 2003.<lb/> </bibl>
+        <bibl><label>5</label>P. Alberto, R. Lisboa, M. Malheiro, and A. S. de Castro, &quot; Tensor coupling and pseudospin symmetry<lb/> in nuclei, &quot; Physical Review C, vol. 71, no. 3, Article ID 034313, 7 pages, 2005.<lb/> </bibl>
+        <bibl><label>6</label>R. J. Furnstahl, J. J. Rusnak, and B. D. Serot, &quot; The nuclear spin-orbit force in chiral effective field<lb/> theories, &quot; Nuclear Physics A, vol. 632, no. 4, pp. 607–623, 1998.<lb/> </bibl>
+        <bibl><label>7</label>G.-F. Wei and S.-H. Dong, &quot; Approximately analytical solutions of the Manning-Rosen potential with<lb/> the spin-orbit coupling term and spin symmetry, &quot; Physics Letters A, vol. 373, no. 1, pp. 49–53, 2008.<lb/> </bibl>
+        <bibl><label>8</label>G. F. Wei and S. H. Dong, &quot; Algebraic approach to pseudospin symmetry for the Dirac equation with<lb/> scalar and vector modified P ¨<lb/> oschl-Teller potentials, &quot; Europhysics Letters, vol. 87, no. 4, article 40004,<lb/> 2009.<lb/> </bibl>
+        <bibl><label>9</label>G. F. Wei and S. H. Dong, &quot; Spin symmetry in the relativistic symmetrical well potential including<lb/> a proper approximation to the spin-orbit coupling term, &quot; Physica Scripta, vol. 81, no. 3, Article ID<lb/> 035009, 2010.<lb/> </bibl>
+        <bibl><label>10</label>G. F. Wei and S. H. Dong, &quot; Pseudospin symmetry for modified Rosen-Morse potential including a<lb/> Pekeris-type approximation to the pseudo-centrifugal term, &quot; European Journal of Physics A, vol. 46, no.<lb/> 2, pp. 207–212, 2010.<lb/> </bibl>
+        <bibl><label>11</label>G. F. Wei and S. H. Dong, &quot; Pseudospin symmetry in the relativistic Manning-Rosen potential<lb/> including a Pekeris-type approximation to the pseudo-centrifugal term, &quot; Physics Letters B, vol. 686,<lb/> no. 4-5, pp. 288–292, 2010.<lb/> </bibl>
+        <bibl><label>12</label>W.-C. Qiang and S.-H. Dong, &quot; SUSYQM and SWKB approaches to the relativistic equations with<lb/> hyperbolic potential V 0 tanh<lb/> 2<lb/> </bibl>
+<bibl>r/d, &quot; Physica Scripta, vol. 72, no. 2-3, pp. 127–131, 2005.<lb/> </bibl>
+        <bibl><label>13</label>S. Zarrinkamar, A. A. Rajabi, and H. Hassanabadi, &quot; Dirac equation for the harmonic scalar and vector<lb/> potentials and linear plus Coulomb-like tensor potential; the SUSY approach, &quot; Annals of Physics, vol.<lb/> 325, no. 11, pp. 2522–2528, 2010.<lb/></bibl>
+        <bibl><label>14</label> O. Aydo ˘<lb/> gdu and R. Sever, &quot; Pseudospin and spin symmetry in Dirac-Morse problem with a tensor<lb/> potential, &quot; Physics Letters. B, vol. 703, no. 3, pp. 379–385, 2011.<lb/> </bibl>
+        <bibl><label>15</label>Y. Xu, S. He, and C.-S. Jia, &quot; Approximate analytical solutions of the Dirac equation with the P ¨<lb/> oschl-<lb/>Teller potential including the spin-orbit coupling term, &quot; Journal of Physics A, vol. 41, no. 25, article<lb/> 255302, 2008.<lb/> </bibl>
+        <bibl><label>16</label>M. R. Setare and Z. Nazari, &quot; Pseudospin symmetry in deformed nuclei with axially-symmetric<lb/> harmonic oscillator potential, &quot; Modern Physics Letters A, vol. 25, no. 549, 2010.<lb/> </bibl>
+        <bibl><label>17</label>K. J. Oyewumi and C. O. Akoshile, &quot; Bound-state solutions of the Dirac-Rosen-Morse potential with<lb/> spin and pseudospin symmetry, &quot; European Physical Journal A, vol. 45, no. 3, pp. 311–318, 2010.<lb/> </bibl>
+        <bibl><label>18</label>E. Maghsoodi, H. Hassanabadi, and O. Aydogdu, &quot; Dirac particles in the presence of the Yukawa<lb/> potential plus a tensor interaction in SUSYQM framework, &quot; Physica Scripta, vol. 86, Article ID 015005,<lb/> 2012.<lb/> </bibl>
+        <bibl><label>19</label>H. Hassanabadi and A. A. Rajabi, &quot; Energy levels of a spherical quantum dot in a confining potential, &quot;<lb/> Physics Letters A, vol. 373, no. 6, pp. 679–681, 2009.<lb/> </bibl>
+        <bibl><label>20</label>H. Hassanabadi and A. A. Rajabi, &quot; Relativistic versus nonrelativistic solution of the N-fermion<lb/> problem in a hyperradius-confining potential, &quot; Few-Body Systems, vol. 41, no. 3-4, pp. 201–210, 2007.<lb/> </bibl>
+        <bibl><label>21</label>S.-H. Dong, Z.-Q. Ma, and G. Esposito, &quot; Exact solutions of the SchrSchr¨Schrödinger equation with inverse-<lb/>power potential, &quot; Foundations of Physics Letters, vol. 12, no. 5, pp. 465–474, 1999.<lb/> </bibl>
+        <bibl><label>22</label>S.-H. Dong, &quot; Exact solutions of the two-dimensional SchrSchr¨Schrödinger equation with certain central<lb/> potentials, &quot; International Journal of Theoretical Physics, vol. 39, no. 4, pp. 1119–1128, 2000.<lb/> </bibl>
+        <bibl><label>23</label>S. H. Dong, &quot; A new approach to the relativistic SchrSchr¨Schrödinger equation with central potential: Ansatz<lb/> method, &quot; International Journal of Theoretical Physics, vol. 40, no. 2, pp. 559–567, 2001.<lb/></bibl>
+        <bibl><label>24</label>H. Hassanabadi, H. Rahimov, and S. Zarrinkamar, &quot; Cornell and Coulomb interactions for the D-<lb/>dimensional Klein-Gordon equation, &quot; Annalen der Physik, vol. 523, no. 7, pp. 566–575, 2011.<lb/> </bibl>
+        <bibl><label>25</label>D. Agboola and Y. Zhang, &quot; Unified derivation of exact solutions for a class of quasi-exactly solvable<lb/> models, &quot; Journal of Mathematical Physics, vol. 53, Article ID 042101, 13 pages, 2012.<lb/> </bibl>
+        <bibl><label>26</label>H. Hassanabadi, B. H. Yazarloo, S. Zarrinkamar, and A. A. Rajabi, &quot; Duffin-Kemmer-Petiau equation<lb/> under a scalar Coulomb interaction, &quot; Physical Review C, vol. 84, Article ID 064003, 4 pages, 2011.<lb/> </bibl>
+        <bibl><label>27</label>S. M. Ikhdair, &quot; Bound state energies and wave functions of spherical quantum dots in presence of<lb/> aconfining potential model, &quot; http://arxiv.org/abs/1110.0340.<lb/> </bibl>
+        <bibl><label>28</label>M. Znojil, &quot; Singular anharmonicities and the analytic continued fractions, &quot; Journal of Mathematical<lb/> Physics, vol. 30, no. 1, pp. 23–27, 1989.<lb/> </bibl>
+        <bibl><label>29</label>M. Znojil, &quot; The generalized continued fractions and potentials of the Lennard-Jones type, &quot; Journal of<lb/> Mathematical Physics, vol. 31, no. 1955, 7 pages, 1990.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

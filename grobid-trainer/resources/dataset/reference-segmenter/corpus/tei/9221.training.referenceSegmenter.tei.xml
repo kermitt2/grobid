@@ -1,0 +1,41 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> A. D. Linde, Particle Physics and Inflationary Cosmology, Har-<lb/>wood Academic Publishers, Chur, Switzerland, 1990.<lb/> </bibl>
+        <bibl><label>[2]</label> R. Fakir and W. G. Unruh, &quot; Improvement on cosmologi-<lb/>cal chaotic inflation through nonminimal coupling, &quot; Physical<lb/> Review D, vol. 41, no. 6, pp. 1783–1791, 1990.<lb/> </bibl>
+        <bibl><label>[3]</label> D. I. Kaiser, &quot; Primordial spectral indices from generalized<lb/> Einstein theories, &quot; Physical Review D, vol. 52, no. 8, pp. 4295–<lb/> 4306, 1995.<lb/> </bibl>
+        <bibl><label>[4]</label> E. Komatsu and T. Futamase, &quot; Complete constraints on a<lb/> nonminimally coupled chaotic inflationary scenario from the<lb/> cosmic microwave background, &quot; Physical Review D, vol. 59, no.<lb/> 6, Article ID 064029, 1999.<lb/> </bibl>
+        <bibl><label>[5]</label> J.-C. Hwang and H. Noh, &quot; COBE constraints on inflation<lb/> models with a massive nonminimal scalar field, &quot; Physical Review<lb/> D—Particles, Fields, Gravitation and Cosmology, vol. 60, no. 12,<lb/> Article ID 123001, 1999.<lb/> </bibl>
+        <bibl><label>[6]</label> T. Qiu and K.-C. Yang, &quot; Non-Gaussianities of single field<lb/> inflation with nonminimal coupling, &quot; Physical Review D, vol. 83,<lb/> no. 8, Article ID 084022, 2011.<lb/> </bibl>
+        <bibl><label>[7]</label> R. Kallosh and A. D. Linde, &quot; New models of chaotic inflation<lb/> in supergravity, &quot; Journal of Cosmology and Astroparticle Physics,<lb/> vol. 11, article 011, 2010.<lb/> </bibl>
+        <bibl><label>[8]</label> A. D. Linde, M. Noorbala, and A. Westphal, &quot; Observational<lb/> consequences of chaotic inflation with nonminimal coupling<lb/> to gravity, &quot; Journal of Cosmology and Astroparticle Physics, vol.<lb/> 2011, article 013, 2011.<lb/> </bibl>
+        <bibl><label>[9]</label> D. C. Edwards and A. R. Liddle, &quot; The observational posi-<lb/>tion of simple non-minimally coupled inflationary scenarios, &quot;<lb/> http://arxiv.org/abs/1406.5768.<lb/> </bibl>
+        <bibl><label>[10]</label> U. H. Danielsson, &quot; Note on inflation and trans-Planckian<lb/> physics, &quot; Physical Review D, vol. 66, no. 2, Article ID 023511,<lb/> 2002.<lb/> </bibl>
+        <bibl><label>[11]</label> C. Armendariz-Picon and E. A. Lim, &quot; Vacuum choices and the<lb/> predictions of inflation, &quot; Journal of Cosmology and Astroparticle<lb/> Physics, vol. 2003, article 006, 2003.<lb/> </bibl>
+        <bibl><label>[12]</label> J. Martin and R. Brandenberger, &quot; Trans-planckian problem of<lb/> inflationary cosmology, &quot; Physical Review D, vol. 63, no. 12,<lb/> Article ID 123501, 16 pages, 2001.<lb/> </bibl>
+        <bibl><label>[13]</label> R. H. Brandenberger and J. Martin, &quot; The robustness of inflation<lb/> to changes in super-Planck-scale physics, &quot; Modern Physics<lb/> Letters A, vol. 16, no. 15, pp. 999–1006, 2001.<lb/> </bibl>
+        <bibl><label>[14]</label> J. Martin and R. H. Brandenberger, &quot; Corley-Jacobson disper-<lb/>sion relation and trans-Planckian inflation, &quot; Physical Review D,<lb/> vol. 65, no. 10, Article ID 103514, 2002.<lb/> </bibl>
+        <bibl><label>[15]</label> P. Hořava, &quot; Quantum gravity at a Lifshitz point, &quot; Physical Review<lb/> D: Particles, Fields, Gravitation, and Cosmology, vol. 79, no. 8, p.<lb/> 084008, 2009.<lb/> </bibl>
+        <bibl><label>[16]</label> P. Hořava, &quot; Spectral dimension of the universe in quantum<lb/> gravity at a Lifshitz point, &quot; Physical Review Letters, vol. 102, no.<lb/> 16, Article ID 161301, 2009.<lb/> </bibl>
+        <bibl><label>[17]</label> G. Amelino-Camelia, M. Arzano, G. Gubitosi, and J. Magueijo,<lb/> &quot; Dimensional reduction in the sky, &quot; Physical Review D: Particles,<lb/> Fields, Gravitation and Cosmology, vol. 87, no. 12, Article ID<lb/> 123532, 2013.<lb/> </bibl>
+        <bibl><label>[18]</label> G. Amelino-Camelia, M. Arzano, G. Gubitosi, and J. Magueijo,<lb/> &quot; Rainbow gravity and scale-invariant fluctuations, &quot; Physical<lb/> Review D—Particles, Fields, Gravitation and Cosmology, vol. 88,<lb/> no. 4, Article ID 041303, 2013.<lb/> </bibl>
+        <bibl><label>[19]</label> J.-J. Huang and M.-J. Wang, &quot; Green&apos;s functions of scalar field in<lb/> de Sitter space: discrete lattice formalism.-I, &quot; Il Nuovo Cimento<lb/> A, vol. 100, no. 5, pp. 723–734, 1988.<lb/> </bibl>
+        <bibl><label>[20]</label> J.-J. Huang, &quot; Excited states of de Sitter space scalar fields: lattice<lb/> Schrödinger picture, &quot; Modern Physics Letters A, vol. 21, no. 22,<lb/> pp. 1717–1725, 2006.<lb/> </bibl>
+        <bibl><label>[21]</label> J.-J. Huang, &quot; Inflation and squeezed states: lattice Schrödinger<lb/> picture, &quot; Modern Physics Letters A, vol. 24, no. 7, pp. 497–508,<lb/> 2009.<lb/> </bibl>
+        <bibl><label>[22]</label> J.-J. Huang, &quot; Pilot-wave scalar field theory in de Sitter space:<lb/> lattice Schrödinger picture, &quot; Modern Physics Letters A, vol. 25,<lb/> no. 1, pp. 1–13, 2010.<lb/> </bibl>
+        <bibl><label>[23]</label> J.-J. Huang, &quot; Bohm quantum trajectories of scalar field in trans-<lb/>Planckian physics, &quot; Advances in High Energy Physics, vol. 2012,<lb/> Article ID 312841, 19 pages, 2012.<lb/> </bibl>
+        <bibl><label>[24]</label> S. Tsujikawa, J. Ohashi, S. Kuroyanagi, and A. De Felice,<lb/> &quot; Planck constraints on single-field inflation, &quot; Physical Review<lb/> D: Particles, Fields, Gravitation and Cosmology, vol. 88, no. 2,<lb/> p. 023529, 2013.<lb/> </bibl>
+        <bibl><label>[25]</label> P. A. R. Ade, N. Aghanim, M. Arnaud et al., &quot; Planck 2015<lb/> results. XIII. Cosmological parameters, &quot; http://arxiv.org/abs/<lb/> 1502.01589.<lb/> </bibl>
+        <bibl><label>[26]</label> P. A. R. Ade, R. W. Aikin, D. Barkats et al., &quot; Detection of B-<lb/>mode polarization at degree angular scales by BICEP2, &quot; Physical<lb/> Review Letters, vol. 112, Article ID 241101, 2014.<lb/> </bibl>
+        <bibl><label>[27]</label> C. M. Ho and S. D. H. Hsu, &quot; Does the BICEP2 observation of<lb/> cosmological tensor modes imply an era of nearly Planckian<lb/> energy densities? &quot; Journal of High Energy Physics, vol. 2014, no.<lb/> 7, article 60, 2014.<lb/> </bibl>
+        <bibl><label>[28]</label> P. A. R. Ade, N. Aghanim, C. Armitage-Caplan et al., &quot; Planck<lb/> 2013 results. XXII. Constraints on inflation, &quot; Worldwide Astro-<lb/>nomical and Astrophysical Research, vol. 571, article A22, 2013.<lb/> </bibl>
+        <bibl><label>[29]</label> J.-J. Huang, &quot; Effect of the generalized uncertainty principle on<lb/> the primordial power spectrum: lattice Schrödinger picture, &quot;<lb/> Chinese Journal of Physics, vol. 51, no. 6, pp. 1151–1161, 2013.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,46 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> A. G. Riess, A. V. Filippenko, P. Challis et al., &quot; Observational<lb/> evidence from supernovae for an accelerating universe and a<lb/> cosmological constant, &quot; The Astronomical Journal, vol. 116, no.<lb/> 3, p. 1009, 1998.<lb/> </bibl>
+        <bibl><label>[2]</label> S. Perlmutter, G. Aldering, G. Goldhaber et al., &quot; Measurements<lb/> of Ω and Λ from 42 High-Redshift Supernovae, &quot; The Astrophys-<lb/>ical Journal, vol. 517, no. 2, pp. 565–586, 1999.<lb/> </bibl>
+        <bibl><label>[3]</label> A. G. Riess, L.-G. Strolger, J. Tonry et al., &quot; Type Ia Supernova<lb/> discoveries at í µí± § &gt; 1 from the hubble space telescope: evidence<lb/> for past deceleration and constraints on dark energy evolution, &quot;<lb/> The Astrophysical Journal, vol. 607, no. 2, pp. 665–687, 2004.<lb/> </bibl>
+        <bibl><label>[4]</label> P. Astier, J. Guy, N. Regnault et al., &quot; The supernova legacy<lb/> survey: measurement of Ω í µí± , Ω Λ and w from the first year data<lb/> set, &quot; Astronomy &amp; Astrophysics, vol. 447, no. 1, pp. 31–48, 2006.<lb/> </bibl>
+        <bibl><label>[5]</label> D. N. Spergel, R. Bean, O. Doré et al., &quot; Three-year Wilkinson<lb/> microwave anisotropy probe (WMAP) observations: implica-<lb/>tions for cosmology, &quot; The Astrophysical Journal, vol. 170, no. 2,<lb/> p. 377, 2007.<lb/> </bibl>
+        <bibl><label>[6]</label> E. Komatsu, J. Dunkley, M. R. Nolta et al., &quot; Five-year Wilkinson<lb/> Microwave Anisotropy Probe (WMAP) observations: cosmo-<lb/>logical interpretation, &quot; The Astrophysical Journal Supplement<lb/> Series, vol. 180, no. 2, p. 330, 2009.<lb/> </bibl>
+        <bibl><label>[7]</label> T. P. Sotiriou and V. Faraoni, &quot; í µí±(í µí±) theories of gravity, &quot; Reviews<lb/> of Modern Physics, vol. 82, no. 1, pp. 451–497, 2010.<lb/> </bibl>
+        <bibl><label>[8]</label> S. Nojiri and S. D. Odintsov, &quot; Unified cosmic history in<lb/> modified gravity: from í µí°¹(í µí±) theory to Lorentz non-invariant<lb/> models, &quot; Physics Reports, vol. 505, no. 2–4, pp. 59–144, 2011.<lb/> </bibl>
+        <bibl><label>[9]</label> T. Padmanabhan, &quot; Cosmological constant—the weight of the<lb/> vacuum, &quot; Physics Reports, vol. 380, no. 5-6, pp. 235–320, 2003.<lb/> </bibl>
+        <bibl><label>[10]</label> S. M. Carroll, &quot; The cosmological constant, &quot; Living Reviews in<lb/> Relativity, vol. 4, p. 1, 2001.<lb/> </bibl>
+        <bibl><label>[11]</label> V. Sahni and A. Starobinsky, &quot; The case for a positive cosmolog-<lb/>ical í µí¼-term, &quot; International Journal of Modern Physics D, vol. 9,<lb/> no. 4, p. 373, 2000.<lb/> </bibl>
+        <bibl><label>[12]</label> P. J. Peebles and B. Ratra, &quot; The cosmological constant and dark<lb/> energy, &quot; Reviews of Modern Physics, vol. 75, no. 2, pp. 559–606,<lb/> 2003.<lb/> </bibl>
+        <bibl><label>[13]</label> R. R. Caldwell, R. Dave, and P. J. Steinhardt, &quot; Cosmological<lb/> imprint of an energy component with general equation of state, &quot;<lb/> Physical Review Letters, vol. 80, no. 8, pp. 1582–1585, 1998.<lb/> </bibl>
+        <bibl><label>[14]</label> I. Zlatev, L. Wang, and P. J. Steinhardt, &quot; Quintessence, cosmic<lb/> coincidence, and the cosmological constant, &quot; Physical Review<lb/> Letters, vol. 82, no. 5, pp. 896–899, 1999.<lb/> </bibl>
+        <bibl><label>[15]</label> R. R. Caldwell, M. Kamionkowski, and N. N. Weinberg,<lb/> &quot; Phantom energy: dark energy with í µí±¤ &lt; −1 causes a cosmic<lb/> doomsday, &quot; Physical Review Letters, vol. 91, Article ID 071301,<lb/> 2003.<lb/> </bibl>
+        <bibl><label>[16]</label> A. Sen, &quot; Tachyon matter, &quot; Journal of High Energy Physics, no. 7,<lb/> article 65, 2002.<lb/> </bibl>
+        <bibl><label>[17]</label> A. Sen, &quot; Field theory of tachyon matter, &quot; Modern Physics Letters<lb/> A: Particles and Fields, Gravitation, Cosmology, Nuclear Physics,<lb/> vol. 17, no. 27, pp. 1797–1804, 2002.<lb/> </bibl>
+        <bibl><label>[18]</label> E. J. Copeland, M. Sami, and S. Tsujikawa, &quot; Dynamics of dark<lb/> energy, &quot; International Journal of Modern Physics D, vol. 15, no.<lb/> 11, pp. 1753–1935, 2006.<lb/> </bibl>
+        <bibl><label>[19]</label> T. Gonzalez, G. Leon, and I. Quiros, &quot; Dynamics of quintessence<lb/> models of dark energy with exponential coupling to dark<lb/> matter, &quot; Classical and Quantum Gravity, vol. 23, no. 9, pp. 3165–<lb/> 3179, 2006.<lb/> </bibl>
+        <bibl><label>[20]</label> L. Amendola and D. Tochini, &quot; Baryon bias and structure<lb/> formation in an accelerating universe, &quot; Physical Review D, vol.<lb/> 66, Article ID 043528, 2002.<lb/> </bibl>
+        <bibl><label>[21]</label> L. Amendola, &quot; Coupled quintessence, &quot; Physical Review D, vol.<lb/> 62, no. 4, Article ID 043511, 10 pages, 2000.<lb/> </bibl>
+        <bibl><label>[22]</label> W. Zimdahl, D. Pavón, and L. P. Chimento, &quot; Interacting<lb/> quintessence, &quot; Physics Letters B, vol. 521, no. 3-4, pp. 133–138,<lb/> 2001.<lb/> </bibl>
+        <bibl><label>[23]</label> L. P. Chimento, A. S. Jakubi, D. Pavón, and W. Zimdahl,<lb/> &quot; Interacting quintessence solution to the coincidence problem, &quot;<lb/> Physical Review D, vol. 67, Article ID 083513, 2003.<lb/> </bibl>
+        <bibl><label>[24]</label> L. P. Chimento, A. S. Jakubi, and D. Pavon, &quot; Enlarged quint-<lb/>essence cosmology, &quot; Physical Review D, vol. 62, Article ID<lb/> 063508, 2000.<lb/> </bibl>
+        <bibl><label>[25]</label> L. P. Chimento, A. S. Jakubi, and D. Pavon, &quot; Dark energy,<lb/> dissipation, and the coincidence problem, &quot; Physical Review D,<lb/> vol. 67, Article ID 087302, 2003.<lb/> </bibl>
+        <bibl><label>[26]</label> M. U. Farooq, M. Jamil, and U. Debnath, &quot; Dynamics of interact-<lb/>ing phantom and quintessence dark energies, &quot; Astrophysics and<lb/> Space Science, vol. 334, no. 2, pp. 243–248, 2011.<lb/> </bibl>
+        <bibl><label>[27]</label> C. M. Will, Theory and Experiment in Gravitational Physics,<lb/> Cambridge University Press, 1993.<lb/> </bibl>
+        <bibl><label>[28]</label> C. G. Boehmer, G. Caldera-Cabral, R. Lazkoz, and R. Maartens,<lb/> &quot; Dynamics of dark energy with a coupling to dark matter, &quot;<lb/> Physical Review D, vol. 78, Article ID 023505, 2008.<lb/> </bibl>
+        <bibl><label>[29]</label> L. Amendola and D. Tocchini-Valentini, &quot; Stationary dark<lb/> energy: the present universe as a global attractor, &quot; Physical<lb/> Review D, vol. 64, no. 4, Article ID 043509, 5 pages, 2001.<lb/> </bibl>
+        <bibl><label>[30]</label> P. A. R. Ade, N. Aghanim, C. Armitage-Caplan et al., &quot; Planck<lb/> 2013 results. XVI. Cosmological parameters, &quot; http://arxiv.org/<lb/> abs/1303.5076.<lb/> </bibl>
+        <bibl><label>[31]</label> L. N. Granda, &quot; Transporte de señales eléctricas en micro-<lb/>túbulos: una aproximación cuántica, &quot; Revista Colombiana de<lb/> Física, vol. 42, no. 2, pp. 63–251, 2010.<lb/> </bibl>
+        <bibl><label>[32]</label> V. Faraoni, &quot; Inflation and quintessence with nonminimal cou-<lb/>pling, &quot; Physical Review D, vol. 62, Article ID 023504, 2000.<lb/> </bibl>
+        <bibl><label>[33]</label> V. Sahni, T. D. Saini, A. A. Starobinsky, and U. Alam, &quot; State-<lb/>finder—a new geometrical diagnostic of dark energy, &quot; Journal<lb/> of Experimental and Theoretical Physics Letters, vol. 77, no. 5, pp.<lb/> 201–206, 2003.<lb/> </bibl>
+        <bibl><label>[34]</label> U. Alam, V. Sahni, T. D. Saini, and A. A. Starobinsky, &quot; Exploring<lb/> the expanding Universe and dark energy using the statefinder<lb/> diagnostic, &quot; Monthly Notices of the Royal Astronomical Society,<lb/> vol. 344, no. 4, pp. 1057–1074, 2003.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

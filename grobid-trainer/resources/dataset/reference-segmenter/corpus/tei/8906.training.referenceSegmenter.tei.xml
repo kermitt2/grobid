@@ -1,0 +1,70 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> S. W. Hawking, &quot; Particle creation by black holes, &quot; Communica-<lb/>tions in Mathematical Physics, vol. 43, no. 3, pp. 199–220, 1975,<lb/> Erratum in Communications in Mathematical Physics, vol. 46, p.<lb/> 206, 1976.<lb/> </bibl>
+        <bibl><label>[2]</label> P. Kraus and F. Wilczek, &quot; Self-interaction correction to black<lb/> hole radiance, &quot; Nuclear Physics B, vol. 433, no. 2, pp. 403–420,<lb/> 1995.<lb/> </bibl>
+        <bibl><label>[3]</label> P. Kraus and F. Wilczek, &quot; Effect of self-interaction on charged<lb/> black hole radiance, &quot; Nuclear Physics B, vol. 437, no. 1, pp. 231–<lb/> 242, 1995.<lb/> </bibl>
+        <bibl><label>[4]</label> K. Srinivasan and T. Padmanabhan, &quot; Particle production and<lb/> complex path analysis, &quot; Physical Review D, vol. 60, no. 2, Article<lb/> ID 024007, 20 pages, 1999.<lb/> </bibl>
+        <bibl><label>[5]</label> M. Angheben, M. Nadalini, L. Vanzo, and S. Zerbini, &quot; Hawking<lb/> radiation as tunneling for extremal and rotating black holes, &quot;<lb/> Journal of High Energy Physics, vol. 2005, no. 5, article 014, 2005.<lb/> </bibl>
+        <bibl><label>[6]</label> R. Kerner and R. B. Mann, &quot; Tunnelling, temperature, and Taub-<lb/>NUT black holes, &quot; Physical Review D, vol. 73, no. 10, Article ID<lb/> 104010, 2006.<lb/> </bibl>
+        <bibl><label>[7]</label> S. Hemming and E. Keski-Vakkuri, &quot; The Spectrum of strings on<lb/> BTZ black holes and spectral ow in the SL(2,R) WZW model, &quot;<lb/> Nuclear Physics B, vol. 626, no. 1-2, pp. 363–376, 2002.<lb/> </bibl>
+        <bibl><label>[8]</label> A. J. M. Medved, &quot; Radiation via tunneling from a de Sitter<lb/> cosmological horizon, &quot; Physical Review D, vol. 66, no. 12, Article<lb/> ID 124009, 7 pages, 2002.<lb/> </bibl>
+        <bibl><label>[9]</label> E. C. Vagenas, &quot; Semiclassical corrections to the Bekenstein-<lb/>Hawking entropy of the BTZ black hole via self-gravitation, &quot;<lb/> Physics Letters Section B: Nuclear, Elementary Particle and High-<lb/>Energy Physics, vol. 533, no. 3-4, pp. 302–306, 2002.<lb/> </bibl>
+        <bibl><label>[10]</label> M. Arzano, A. J. Medved, and E. C. Vagenas, &quot; Hawking<lb/> radiation as tunneling through the quantum horizon, &quot; Journal<lb/> of High Energy Physics, vol. 2005, article 037, 2005.<lb/> </bibl>
+        <bibl><label>[11]</label> S.-Q. Wu and Q.-Q. Jiang, &quot; Remarks on Hawking radiation as<lb/> tunneling from the BTZ black holes, &quot; Journal of High Energy<lb/> Physics, vol. 3, article 79, 2006.<lb/> </bibl>
+        <bibl><label>[12]</label> M. Nadalini, L. Vanzo, and S. Zerbini, &quot; Hawking radiation as<lb/> tunnelling: the í µí°·-dimensional rotating case, &quot; Journal of Physics<lb/> A: Mathematical and Theoretical, vol. 39, no. 21, pp. 6601–6608,<lb/> 2006.<lb/> </bibl>
+        <bibl><label>[13]</label> B. Chatterjee, A. Ghosh, and P. Mitra, &quot; Tunnelling from black<lb/> holes and tunnelling into white holes, &quot; Physics Letters B, vol. 661,<lb/> no. 4, pp. 307–311, 2008.<lb/> </bibl>
+        <bibl><label>[14]</label> V. Akhmedova, T. Pilling, A. de Gill, and D. Singleton, &quot; Tempo-<lb/>ral contribution to gravitational WKB-like calculations, &quot; Physics<lb/> Letters B, vol. 666, no. 3, pp. 269–271, 2008.<lb/> </bibl>
+        <bibl><label>[15]</label> E. T. Akhmedov, T. Pilling, and D. Singleton, &quot; Subtleties in the<lb/> quasi-classical calculation of Hawking radiation, &quot; International<lb/> Journal of Modern Physics D: Gravitation, Astrophysics, Cosmol-<lb/>ogy, vol. 17, no. 13-14, pp. 2453–2458, 2008.<lb/> </bibl>
+        <bibl><label>[16]</label> V. Akhmedova, T. Pilling, A. de Gill, and D. Singleton,<lb/> &quot; Comments on anomaly versus WKB/tunneling methods for<lb/> calculating Unruh radiation, &quot; Physics Letters B, vol. 673, no. 3,<lb/> pp. 227–231, 2009.<lb/> </bibl>
+        <bibl><label>[17]</label> R. Banerjee and B. R. Majhi, &quot; Quantum tunneling and back<lb/> reaction, &quot; Physics Letters B, vol. 662, no. 1, pp. 62–65, 2008.<lb/> </bibl>
+        <bibl><label>[18]</label> D. Singleton, E. C. Vagenas, T. Zhu, and J. R. Ren, &quot; Insights<lb/> and possible resolution to the information loss paradox via the<lb/> tunneling picture, &quot; Journal of High Energy Physics, vol. 2010, no.<lb/> 8, article 089, 2010, Erratum to: Journal of High Energy Physics,<lb/> vol. 2011, no. 1, article 021, 2011.<lb/> </bibl>
+        <bibl><label>[19]</label> P. K. Townsend, &quot; Small-scale structure of spacetime as the<lb/> origin of the gravitational constant, &quot; Physical Review D, vol. 15,<lb/> article 2795, 1977.<lb/> </bibl>
+        <bibl><label>[20]</label> D. Amati, M. Ciafaloni, and G. Veneziano, &quot; Can spacetime be<lb/> probed below the string size? &quot; Physics Letters B, vol. 216, no. 1-2,<lb/> pp. 41–47, 1989.<lb/> </bibl>
+        <bibl><label>[21]</label> K. Konishi, G. Paffuti, and P. Provero, &quot; Minimum physical<lb/> length and the generalized uncertainty principle in string<lb/> theory, &quot; Physics Letters B, vol. 234, no. 3, pp. 276–284, 1990.<lb/> </bibl>
+        <bibl><label>[22]</label> A. Kempf, G. Mangano, and R. B. Mann, &quot; Hilbert space<lb/> representation of the minimal length uncertainty relation, &quot;<lb/> Physical Review D, vol. 52, pp. 1108–1118, 1995.<lb/> </bibl>
+        <bibl><label>[23]</label> S. Hossenfelder, M. Bleicher, S. Hofmann, J. Ruppert, S. Scherer,<lb/> and H. Stöcker, &quot; Collider signatures in the Planck regime, &quot;<lb/> Physics Letters B, vol. 575, no. 1-2, pp. 85–99, 2003.<lb/> </bibl>
+        <bibl><label>[24]</label> S. F. Hassan and M. S. Sloth, &quot; Trans-Planckian effects in<lb/> inflationary cosmology and the modified uncertainty principle, &quot;<lb/> Nuclear Physics B, vol. 674, no. 1-2, pp. 434–458, 2003.<lb/> </bibl>
+        <bibl><label>[25]</label> A. F. Ali, &quot; No existence of black holes at LHC due to minimal<lb/> length in quantum gravity, &quot; Journal of High Energy Physics, vol.<lb/> 2012, article 67, 2012.<lb/> </bibl>
+        <bibl><label>[26]</label> B. Majumder, &quot; Quantum black hole and the modified uncer-<lb/>tainty principle, &quot; Physics Letters B, vol. 701, no. 4, pp. 384–387,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[27]</label> A. Bina, S. Jalalzadeh, and A. Moslehi, &quot; Quantum black hole<lb/> in the generalized uncertainty principle framework, &quot; Physical<lb/> Review D, vol. 81, no. 2, Article ID 023528, 2010.<lb/> </bibl>
+        <bibl><label>[28]</label> P. Chen and R. J. Adler, &quot; Black hole remnants and dark matter, &quot;<lb/> Nuclear Physics B—Proceedings Supplements, vol. 124, pp. 103–<lb/> 106, 2003.<lb/> </bibl>
+        <bibl><label>[29]</label> L. Xiang and X. Q. Wen, &quot; Black hole thermodynamics with gen-<lb/>eralized uncertainty principle, &quot; Journal of High Energy Physics,<lb/> vol. 2009, no. 10, article 46, 2009.<lb/> </bibl>
+        <bibl><label>[30]</label> W. Kim, E. J. Son, and M. Yoon, &quot; Thermodynamics of a black<lb/> hole based on a generalized uncertainty principle, &quot; Journal of<lb/> High Energy Physics, vol. 2008, no. 1, article 35, 2008.<lb/> </bibl>
+        <bibl><label>[31]</label> B. R. Majhi and E. C. Vagenas, &quot; Modified dispersion relation,<lb/> photon&apos;s velocity, and unruh effect, &quot; Physics Letters B, vol. 725,<lb/> no. 4-5, pp. 477–480, 2013.<lb/> </bibl>
+        <bibl><label>[32]</label> D. Chen, H. Wu, and H. Yang, &quot; Fermion&apos;s tunnelling with effects<lb/> of quantum gravity, &quot; Advances in High Energy Physics, vol. 2013,<lb/> Article ID 432412, 6 pages, 2013.<lb/> </bibl>
+        <bibl><label>[33]</label> D. Chen, H. Wu, and H. Yang, &quot; Observing remnants by<lb/> fermions&apos; tunneling, &quot; Journal of Cosmology and Astroparticle<lb/> Physics, vol. 2014, no. 3, article 36, 2014.<lb/> </bibl>
+        <bibl><label>[34]</label> D. Y. Chen, Q. Q. Jiang, P. Wang, and H. Yang, &quot; Remnants,<lb/> fermions&apos; tunnelling and effects of quantum gravity, &quot; Journal of<lb/> High Energy Physics, vol. 2013, no. 11, article 176, 2013.<lb/></bibl>
+        <bibl><label>[35]</label> D. Chen and Z. Li, &quot; Remarks on remnants by fermions&apos;<lb/> tunnelling from black strings, &quot; Advances in High Energy Physics,<lb/> vol. 2014, Article ID 620157, 9 pages, 2014.<lb/> </bibl>
+        <bibl><label>[36]</label> Z. Y. liu and J. R. Ren, &quot; Fermions tunnelling with quantum<lb/> gravity correction, &quot; http://arxiv.org/abs/1403.7307.<lb/> </bibl>
+        <bibl><label>[37]</label> M. Benrong, P. Wang, and H. Yang, &quot; Deformed Hamilton-<lb/>Jacobi method in covariant quantum gravity effective models, &quot;<lb/> http://arxiv.org/abs/1408.5055.<lb/> </bibl>
+        <bibl><label>[38]</label> E. T. Akhmedov, V. Akhmedova, and D. Singleton, &quot; Hawking<lb/> temperature in the tunneling picture, &quot; Physics Letters B, vol. 642,<lb/> no. 1-2, pp. 124–128, 2006.<lb/> </bibl>
+        <bibl><label>[39]</label> B. D. Chowdhury, &quot; Problems with tunneling of thin shells from<lb/> black holes, &quot; Pramana, vol. 70, no. 1, pp. 3–26, 2008.<lb/> </bibl>
+        <bibl><label>[40]</label> E. T. Akhmedov, V. Akhmedova, D. Singleton, and T. Pilling,<lb/> &quot; Thermal radiation of various gravitational backgrounds, &quot; Inter-<lb/>national Journal of Modern Physics A, vol. 22, no. 8-9, pp. 1705–<lb/> 1715, 2007.<lb/> </bibl>
+        <bibl><label>[41]</label> W. G. Unruh, &quot; Sonic analogue of black holes and the effects of<lb/> high frequencies on black hole evaporation, &quot; Physical Review D,<lb/> vol. 51, article 2827, 1995.<lb/> </bibl>
+        <bibl><label>[42]</label> S. Corley and T. Jacobson, &quot; Hawking spectrum and high<lb/> frequency dispersion, &quot; Physical Review D, vol. 54, no. 2, pp.<lb/> 1568–1586, 1996.<lb/> </bibl>
+        <bibl><label>[43]</label> G. Amelino-Camelia, M. Arzano, Y. Ling, and G. Mandanici,<lb/> &quot; Black-hole thermodynamics with modified dispersion rela-<lb/>tions and generalized uncertainty principles, &quot; Classical and<lb/> Quantum Gravity, vol. 23, no. 7, pp. 2585–2606, 2006.<lb/> </bibl>
+        <bibl><label>[44]</label> J. D. Bekenstein, &quot; Black holes and entropy, &quot; Physical Review D,<lb/> vol. 7, pp. 2333–2346, 1973.<lb/> </bibl>
+        <bibl><label>[45]</label> B. Majumder, &quot; Black hole entropy and the modified uncertainty<lb/> principle: a heuristic analysis, &quot; Physics Letters B, vol. 703, no. 4,<lb/> pp. 402–405, 2011.<lb/> </bibl>
+        <bibl><label>[46]</label> K. Nozari and S. Saghafi, &quot; Natural cutoffs and quantum tunnel-<lb/>ing from black hole horizon, &quot; Journal of High Energy Physics, vol.<lb/> 2012, no. 11, article 005, 2012.<lb/> </bibl>
+        <bibl><label>[47]</label> R. Banerjee and S. Ghosh, &quot; Generalised uncertainty principle,<lb/> remnant mass and singularity problem in black hole thermody-<lb/>namics, &quot; Physics Letters B, vol. 688, no. 2-3, pp. 224–229, 2010.<lb/> </bibl>
+        <bibl><label>[48]</label> M.Cavaglì a and S. Das, &quot; How classical are TeV-scale black<lb/> holes? &quot; Classical and Quantum Gravity, vol. 21, no. 19, pp. 4511–<lb/> 4522, 2004.<lb/> </bibl>
+        <bibl><label>[49]</label> Y. S. Myung, Y.-W. Kim, and Y.-J. Park, &quot; Black hole thermody-<lb/>namics with generalized uncertainty principle, &quot; Physics Letters<lb/> B, vol. 645, no. 5-6, pp. 393–397, 2007.<lb/> </bibl>
+        <bibl><label>[50]</label> K. Nouicer, &quot; Quantum-corrected black hole thermodynamics<lb/> to all orders in the Planck length, &quot; Physics Letters B, vol. 646,<lb/> no. 2-3, pp. 63–71, 2007.<lb/> </bibl>
+        <bibl><label>[51]</label> B. Majumder, &quot; Black hole entropy with minimal length in<lb/> tunneling formalism, &quot; General Relativity and Gravitation, vol.<lb/> 45, no. 11, pp. 2403–2414, 2013.<lb/> </bibl>
+        <bibl><label>[52]</label> J. B. Hartle and S. W. Hawking, &quot; Path-integral derivation of<lb/> black-hole radiance, &quot; Physical Review D, vol. 13, no. 8, pp. 2188–<lb/> 2203, 1976.<lb/> </bibl>
+        <bibl><label>[53]</label> D. N. Page, &quot; Particle emission rates from a black hole: massless<lb/> particles from an uncharged, nonrotating hole, &quot; Physical Review<lb/> D, vol. 13, no. 2, pp. 198–206, 1976.<lb/> </bibl>
+        <bibl><label>[54]</label> R. M. Wald, General Relativity, University of Chicago, Chicago,<lb/> Ill, USA, 1984.<lb/> </bibl>
+        <bibl><label>[55]</label> P. Nicolini, &quot; Noncommutative black holes, the final appeal to<lb/> quantum gravity: a review, &quot; International Journal of Modern<lb/> Physics A, vol. 24, no. 7, pp. 1229–1308, 2009.<lb/></bibl>
+        <bibl><label>[56]</label> R. Banerjee, B. R. Majhi, and S. Samanta, &quot; Noncommutative<lb/> black hole thermodynamics, &quot; Physical Review D, vol. 77, no. 12,<lb/> Article ID 124035, 2008.<lb/> </bibl>
+        <bibl><label>[57]</label> R. Banerjee, B. R. Majhi, and S. K. Modak, &quot; Noncommutative<lb/> Schwarzschild black hole and area law, &quot; Classical and Quantum<lb/> Gravity, vol. 26, no. 8, Article ID 085010, 2009.<lb/> </bibl>
+        <bibl><label>[58]</label> E. Spallucci, A. Smailagic, and P. Nicolini, &quot; Non-commutative<lb/> geometry inspired higher-dimensional charged black holes, &quot;<lb/> Physics Letters B, vol. 670, no. 4-5, pp. 449–454, 2009.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

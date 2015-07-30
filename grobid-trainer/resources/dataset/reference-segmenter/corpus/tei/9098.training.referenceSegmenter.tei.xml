@@ -1,0 +1,60 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> J. Robson, Keeping It Real (Quantum Gravity, Book 1), Pyr Press,<lb/> London, UK, 2006.<lb/> </bibl>
+        <bibl><label>[2]</label> R. Oerter, The Theory of Almost Everything: The Standard Model,<lb/> The Unsung Triumph of Modern Physics, Plume, New York, NY,<lb/> USA, 2006.<lb/> </bibl>
+        <bibl><label>[3]</label> S. W. Hawking, &quot; Black hole explosions? &quot; Nature, vol. 248, no.<lb/> 5443, pp. 30–31, 1974.<lb/> </bibl>
+        <bibl><label>[4]</label> S. W. Hawking, &quot; Particle creation by black holes, &quot; Communica-<lb/>tions in Mathematical Physics, vol. 43, no. 3, pp. 199–220, 1975.<lb/> </bibl>
+        <bibl><label>[5]</label> J. D. Bekenstein, &quot; Black holes and the second law, &quot; Lettere Al<lb/> Nuovo Cimento Series 2, vol. 4, no. 15, pp. 737–740, 1972.<lb/> </bibl>
+        <bibl><label>[6]</label> J. D. Bekenstein, &quot; Black holes and entropy, &quot; Physical Review D,<lb/> vol. 7, pp. 2333–2346, 1973.<lb/> </bibl>
+        <bibl><label>[7]</label> J. D. Bekenstein, &quot; The quantum mass spectrum of the Kerr black<lb/> hole, &quot; Lettere Al Nuovo Cimento Series 2, vol. 11, no. 9, pp. 467–<lb/> 470, 1974.<lb/> </bibl>
+        <bibl><label>[8]</label> J. D. Bekenstein, &quot; Quantum black holes as atoms, &quot; http://arxiv<lb/> .org/abs/gr-qc/9710076.<lb/> </bibl>
+        <bibl><label>[9]</label> J. D. Bekenstein, &quot; Black holes: classical properties, thermo-<lb/>dynamics and heuristic quantization, &quot; http://arxiv.org/abs/gr-<lb/>qc/9808028.<lb/> </bibl>
+        <bibl><label>[10]</label> G. Gua, &quot; Area spectra of extreme Kerr and nearly extreme<lb/> Kerr-Newmann black holes from quasinormal modes, &quot; General<lb/> Relativity and Gravitation, vol. 45, no. 9, pp. 1711–1721, 2013.<lb/> </bibl>
+        <bibl><label>[11]</label> M. Maggiore, &quot; Physical interpretation of the spectrum of black<lb/> hole quasinormal modes, &quot; Physical Review Letters, vol. 100,<lb/> Article ID 141301, 2008.<lb/> </bibl>
+        <bibl><label>[12]</label> G. Kunstatter, &quot; d-dimensional black hole entropy spectrum<lb/> from quasinormal modes, &quot; Physical Review Letters, vol. 90,<lb/> Article ID 161301, 2003.<lb/> </bibl>
+        <bibl><label>[13]</label> E. C. Vagenas, &quot; Area spectrum of rotating black holes via the<lb/> new interpretation of quasinormal modes, &quot; Journal of High<lb/> Energy Physics, vol. 11, article 073, 2008.<lb/> </bibl>
+        <bibl><label>[14]</label> A. J. M. Medved, &quot; On the Kerr quantum area spectrum, &quot;<lb/> Classical and Quantum Gravity, vol. 25, no. 20, Article ID<lb/> 205014, 2008.<lb/> </bibl>
+        <bibl><label>[15]</label> I. Sakalli, &quot; Quantization of rotating linear dilaton black holes, &quot;<lb/> http://arxiv.org/abs/1406.5130.<lb/> </bibl>
+        <bibl><label>[16]</label> S. Hod, &quot; Bohr&apos;s correspondence principle and the area spectrum<lb/> of quantum black holes, &quot; Physical Review Letters, vol. 81, no. 20,<lb/> pp. 4293–4296, 1998.<lb/> </bibl>
+        <bibl><label>[17]</label> S. Hod, &quot; Best approximation to a reversible process in black-<lb/>hole physics and the area spectrum of spherical black holes, &quot;<lb/> Physical Review D, vol. 59, no. 2, Article ID 024014, 1998.<lb/> </bibl>
+        <bibl><label>[18]</label> D. Kothawala, T. Padmanabhan, and S. Sarkar, &quot; Is gravitational<lb/> entropy quantized? &quot; Physical Review D: Particles, Fields, Gravi-<lb/>tation, and Cosmology, vol. 78, no. 10, Article ID 104018, 5 pages,<lb/> 2008.<lb/> </bibl>
+        <bibl><label>[19]</label> W. Li, L. Xu, and J. Lu, &quot; Area spectrum of near-extremal SdS<lb/> Black holes via the new interpretation of quasinormal modes, &quot;<lb/> Physics Letters B, vol. 676, no. 4-5, pp. 177–179, 2009.<lb/> </bibl>
+        <bibl><label>[20]</label> A. López-Ortega, &quot; Area spectrum of the í µí°·-dimensional de<lb/> Sitter spacetime, &quot; Physics Letters B, vol. 682, no. 1, pp. 85–88,<lb/> 2009.<lb/> </bibl>
+        <bibl><label>[21]</label> M. R. Setare and D. Momeni, &quot; Spacing of the entropy spectrum<lb/> for KS black hole in Hořava-Lifshitz gravity, &quot; Modern Physics<lb/> Letters A, vol. 26, no. 2, pp. 151–159, 2011.<lb/> </bibl>
+        <bibl><label>[22]</label> C. Z. Liu, &quot; Black hole spectroscopy via adiabatic invariant in a<lb/> quantum corrected spacetime, &quot; The European Physical Journal<lb/> C, vol. 72, article 2009, 2012.<lb/> </bibl>
+        <bibl><label>[23]</label> S. Sebastian and V. C. Kuriakose, &quot; Spectroscopy and thermody-<lb/>namics of MSW black hole, &quot; Modern Physics Letters A, vol. 28,<lb/> no. 33, Article ID 1350149, 2013.<lb/> </bibl>
+        <bibl><label>[24]</label> I. Sakalli, &quot; Quasinormal modes of charged dilaton black holes<lb/> and their entropy spectra, &quot; Modern Physics Letters A: Particles<lb/> and Fields, Gravitation, Cosmology, Nuclear Physics, vol. 28, no.<lb/> 27, Article ID 1350109, 10 pages, 2013.<lb/> </bibl>
+        <bibl><label>[25]</label> I. Sakalli and S. F. Mirekhtiary, &quot; Spectroscopy of Rindler<lb/> modified Schwarzschild black hole, &quot; Astrophysics and Space<lb/> Science, vol. 350, no. 2, pp. 727–731, 2014.<lb/> </bibl>
+        <bibl><label>[26]</label> D. Garfinkle, G. T. Horowitz, and A. Strominger, &quot; Charged black<lb/> holes in string theory, &quot; Physical Review D, vol. 43, no. 10, 3140<lb/> pages, 1991.<lb/> </bibl>
+        <bibl><label>[27]</label> D. Garfinkle, G. T. Horowitz, and A. Strominger, &quot; Erratum:<lb/> charged black holes in string theory, &quot; Physical Review D, vol. 43,<lb/> p. 3140, 1992.<lb/> </bibl>
+        <bibl><label>[28]</label> S. Chandrasekhar, The Mathematical Theory of Black Holes,<lb/> Oxford University Press, New York, NY, USA, 1998.<lb/> </bibl>
+        <bibl><label>[29]</label> S.-W. Wei, Y.-X. Liu, K. Yang, and Y. Zhong, &quot; Entropy/area<lb/> spectra of the charged black hole from quasinormal modes, &quot;<lb/> Physical Review D, vol. 81, Article ID 104042, 2010.<lb/> </bibl>
+        <bibl><label>[30]</label> S. Chen and J. Jing, &quot; Asymptotic quasinormal modes of a cou-<lb/>pled scalar field in the Garfinkle-Horowitz-Strominger dilaton<lb/> spacetime, &quot; Classical and Quantum Gravity, vol. 22, no. 3, p. 533,<lb/> 2005.<lb/> </bibl>
+        <bibl><label>[31]</label> L. Motl and A. Neitzke, &quot; Asymptotic black hole quasinormal<lb/> frequencies, &quot; Advances in Theoretical and Mathematical Physics,<lb/> vol. 7, no. 2, pp. 307–330, 2003.<lb/> </bibl>
+        <bibl><label>[32]</label> E. Berti, &quot; Black hole quasinormal modes: hints of quantum<lb/> gravity? &quot; in Proceedings of the International Workshop on<lb/> Dynamics and Thermodynamics of Black Holes and Naked<lb/> Singularities, Milan, Italy, May 2004.<lb/> </bibl>
+        <bibl><label>[33]</label> S. Hod, &quot; Resonance spectra of caged black holes, &quot; The European<lb/> Physical Journal C, vol. 74, no. 11, article 3137, 2014.<lb/> </bibl>
+        <bibl><label>[34]</label> V. Cardoso, O. J. C. Dias, J. P. S. Lemos, and S. Yoshida, &quot; Black-<lb/>hole bomb and superradiant instabilities, &quot; Physical Review D,<lb/> vol. 70, no. 4, Article ID 044039, 9 pages, 2004.<lb/> </bibl>
+        <bibl><label>[35]</label> V. Cardoso, O. J. C. Dias, J. P. S. Lemos, and S. Yoshida,<lb/> &quot; Erratum: Black-hole bomb and superradiant instabilities, &quot;<lb/> Physical Review D, vol. 70, no. 4, Article ID 049903, p. 1, 2004.<lb/> </bibl>
+        <bibl><label>[36]</label> R. Li and J. Zhao, &quot; Superradiant instability of the charged scalar<lb/> field in stringy black hole mirror system, &quot; The European Physical<lb/> Journal C, vol. 74, article 3051, 2014.<lb/> </bibl>
+        <bibl><label>[37]</label> R. Li and J. Zhao, &quot; Numerical study of superradiant instability<lb/> for charged stringy black hole-mirror system, &quot; Physics Letters B,<lb/> vol. 740, pp. 317–321, 2015.<lb/> </bibl>
+        <bibl><label>[38]</label> H. Okawa, V. Cardoso, and P. Pani, &quot; Study of the nonlinear<lb/> instability of confined geometries, &quot; Physical Review D, vol. 90,<lb/> Article ID 104032, 2014.<lb/> </bibl>
+        <bibl><label>[39]</label> M. Abramowitz and I. A. Stegun, Handbook of Mathematical<lb/> Functions, Dover, New York, NY, USA, 1965.<lb/> </bibl>
+        <bibl><label>[40]</label> R. M. Wald, General Relativity, University of Chicago Press,<lb/> Chicago, Ill, USA, 1984.<lb/> </bibl>
+        <bibl><label>[41]</label> S. Fernando, &quot; Null geodesics of charged black holes in string<lb/> theory, &quot; Physical Review D, vol. 85, Article ID 024033, 2012.<lb/></bibl>
+        <bibl><label>[42]</label> R. M. Corless, G. H. Gonnet, D. E. Hare, D. J. Jeffrey, and D.<lb/> E. Knuth, &quot; On the LambertW function, &quot; Advances in Computa-<lb/>tional Mathematics, vol. 5, no. 4, pp. 329–359, 1996.<lb/> </bibl>
+        <bibl><label>[43]</label> F. W. J. Olver, D. W. Lozier, R. F. Boisvert, and C. W. Clark, NIST<lb/> Handbook of Mathematical Functions, Cambridge University<lb/> Press, New York, NY, USA, 2010.<lb/> </bibl>
+        <bibl><label>[44]</label> S. Hod, &quot; Kerr-Newman black holes with stationary charged<lb/> scalar clouds, &quot; Physical Review D, vol. 90, Article ID 024051,<lb/> 2014.<lb/> </bibl>
+        <bibl><label>[45]</label> H.-P. Nollert, &quot; Quasinormal modes of Schwarzschild black<lb/> holes: the determination of quasinormal frequencies with very<lb/> large imaginary parts, &quot; Physical Review D, vol. 47, no. 12, pp.<lb/> 5253–5258, 1993.<lb/> </bibl>
+        <bibl><label>[46]</label> S. Hod, &quot; Slow relaxation of rapidly rotating black holes, &quot; Physical<lb/> Review D: Particles, Fields, Gravitation, and Cosmology, vol. 78,<lb/> no. 8, Article ID 084035, 5 pages, 2008.<lb/> </bibl>
+        <bibl><label>[47]</label> S. Hod, &quot; Black-hole quasinormal resonances: wave analysis<lb/> versus a geometric-optics approximation, &quot; Physical Review D,<lb/> vol. 80, no. 6, Article ID 064004, 4 pages, 2009.<lb/> </bibl>
+        <bibl><label>[48]</label> S. Hod, &quot; Relaxation dynamics of charged gravitational collapse, &quot;<lb/> Physics Letters A, vol. 374, no. 29, pp. 2901–2903, 2010.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,81 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> R. Penrose, &quot; Gravitational collapse and space-time singulari-<lb/>ties, &quot; Physical Review Letters, vol. 14, pp. 57–59, 1965.<lb/> </bibl>
+        <bibl><label>[2]</label> S. W. Hawking and R. Penrose, &quot; The singularities of gravita-<lb/>tional collapse and cosmology, &quot; Proceedings of the Royal Society<lb/> of London. Series A: Mathematical, Physical and Engineering<lb/> Sciences, vol. 314, no. 1519, pp. 529–548, 1970.<lb/> </bibl>
+        <bibl><label>[3]</label> S. W. Hawking, &quot; Breakdown of predictability in gravitational<lb/> collapse, &quot; Physical Review D, vol. 14, no. 10, pp. 2460–2473, 1976.<lb/> </bibl>
+        <bibl><label>[4]</label> P. Nicolini, A. Smailagic, and E. Spallucci, &quot; The fate of radiating<lb/> black holes in noncommutative geometry, &quot; ESA Special Publica-<lb/>tion, vol. 637, 11.1, 2006, http://arxiv.org/abs/hep-th/0507226.<lb/> </bibl>
+        <bibl><label>[5]</label> P. Nicolini, A. Smailagic, and E. Spallucci, &quot; Noncommutative<lb/> geometry inspired Schwarzschild black hole, &quot; Physics Letters B,<lb/> vol. 632, no. 4, pp. 547–551, 2006.<lb/> </bibl>
+        <bibl><label>[6]</label> J. Bardeen, in Proccedings of GR5, USSR, Tbilisi, Georgia, 1968.<lb/> </bibl>
+        <bibl><label>[7]</label> A. Borde, &quot; Open and closed universes, initial singularities, and<lb/> inflation, &quot; Physical Review D, vol. 50, no. 6, pp. 3692–3702, 1994.<lb/> </bibl>
+        <bibl><label>[8]</label> A. Borde, &quot; Regular black holes and topology change, &quot; Physical<lb/> Review D, vol. 55, no. 12, pp. 7615–7617, 1997.<lb/> </bibl>
+        <bibl><label>[9]</label> E. Ayón-Beato and A. Garcıa, &quot; The Bardeen model as a nonlin-<lb/>ear magnetic monopole, &quot; Physics Letters B, vol. 493, no. 1-2, pp.<lb/> 149–152, 2000.<lb/> </bibl>
+        <bibl><label>[10]</label> S. A. Hayward, &quot; Formation and evaporation of nonsingular<lb/> black holes, &quot; Physical Review Letters, vol. 96, Article ID 031103,<lb/> 2006.<lb/> </bibl>
+        <bibl><label>[11]</label> E. Poisson and W. Israel, &quot; Structure of the black hole nucleus, &quot;<lb/> Classical and Quantum Gravity, vol. 5, no. 12, pp. L201–L205,<lb/> 1988.<lb/> </bibl>
+        <bibl><label>[12]</label> R. Balbinot and E. Poisson, &quot; Stability of the Schwarzschild-de<lb/> Sitter model, &quot; Physical Review D, vol. 41, no. 2, pp. 395–402,<lb/> 1990.<lb/> </bibl>
+        <bibl><label>[13]</label> E. Spallucci and A. Smailagic, &quot; Black holes production in self-<lb/>complete quantum gravity, &quot; Physics Letters B, vol. 709, no. 3, pp.<lb/> 266–269, 2012.<lb/> </bibl>
+        <bibl><label>[14]</label> A. Flachi and J. P. S. Lemos, &quot; Quasinormal modes of regular<lb/> black holes, &quot; Physical Review D, vol. 87, no. 2, Article ID 024034,<lb/> 2013.<lb/> </bibl>
+        <bibl><label>[15]</label> M. Cataldo and A. Garcia, &quot; Regular (2 + 1)-dimensional black<lb/> holes within nonlinear electrodynamics, &quot; Physical Review D,<lb/> vol. 61, Article ID 084003, 2000.<lb/> </bibl>
+        <bibl><label>[16]</label> A. Burinskii and S. R. Hildebrandt, &quot; New type of regular black<lb/> holes and particlelike solutions from nonlinear electrodynam-<lb/>ics, &quot; Physical Review D, vol. 65, no. 10, Article ID 104017, 2002.<lb/> </bibl>
+        <bibl><label>[17]</label> K. A. Bronnikov and J. C. Fabris, &quot; Regular phantom black holes, &quot;<lb/> Physical Review Letters, vol. 96, Article ID 251101, 2006.<lb/> </bibl>
+        <bibl><label>[18]</label> W. Berej, J. Matyjasek, D. Tryniecki, and M. Woronowicz, &quot; Reg-<lb/>ular black holes in quadratic gravity, &quot; General Relativity and<lb/> Gravitation, vol. 38, no. 5, pp. 885–906, 2006.<lb/> </bibl>
+        <bibl><label>[19]</label> I. Dymnikova, &quot; Regular electrically charged structures in non-<lb/>linear electrodynamics coupled to general relativity, &quot; Classical<lb/> and Quantum Gravity, vol. 21, pp. 4417–4429, 2004.<lb/> </bibl>
+        <bibl><label>[20]</label> E. Ayón-Beato and A. García, &quot; Regular black hole in general rel-<lb/>ativity coupled to nonlinear electrodynamics, &quot; Physical Review<lb/> Letters, vol. 80, no. 23, pp. 5056–5059, 1998.<lb/> </bibl>
+        <bibl><label>[21]</label> J. P. S. Lemos and V. T. Zanchin, &quot; Regular black holes: electri-<lb/>cally charged solutions, Reissner-Nordström outside a de Sitter<lb/> core, &quot; Physical Review D, vol. 83, no. 12, Article ID 124005, 2011.<lb/> </bibl>
+        <bibl><label>[22]</label> S. Ansoldi, &quot; Spherical black holes with regular center: a<lb/> review of existing models including a recent realization with<lb/> Gaussian sources, &quot; Proceedings of the BH2, Dynamics and<lb/> Thermodynamics of Black holes and Naked Singularities,<lb/> http://arxiv.org/abs/0802.0330.<lb/> </bibl>
+        <bibl><label>[23]</label> C. Darwin, &quot; The gravity field of a particle, &quot; Proceedings of the<lb/> Royal Society. London. Series A. Mathematical, Physical and<lb/> Engineering Sciences, vol. 249, pp. 180–194, 1959.<lb/> </bibl>
+        <bibl><label>[24]</label> K. S. Virbhadra, D. Narasimha, and S. M. Chitre, &quot; Role of the<lb/> scalar field in gravitational lensing, &quot; Astronomy &amp; Astrophysics,<lb/> vol. 337, no. 1, pp. 1–8, 1998.<lb/> </bibl>
+        <bibl><label>[25]</label> K. S. Virbhadra and G. F. R. Ellis, &quot; Schwarzschild black hole<lb/> lensing, &quot; Physical Review D, vol. 62, no. 8, Article ID 084003,<lb/> 2000.<lb/> </bibl>
+        <bibl><label>[26]</label> K. S. Virbhadra and G. F. R. Ellis, &quot; Gravitational lensing by<lb/> naked singularities, &quot; Physical Review D, vol. 65, no. 10, Article<lb/> ID 103004, 2002.<lb/> </bibl>
+        <bibl><label>[27]</label> K. S. Virbhadra, &quot; Relativistic images of Schwarzschild black<lb/> hole lensing, &quot; Physical Review D, vol. 79, no. 8, Article ID<lb/> 083004, 2009.<lb/> </bibl>
+        <bibl><label>[28]</label> E. F. Eiroa, G. E. Romero, and D. F. Torres, &quot; Reissner-Nordström<lb/> black hole lensing, &quot; Physical Review D, vol. 66, no. 2, 2002.<lb/> </bibl>
+        <bibl><label>[29]</label> V. Perlick, &quot; Exact gravitational lens equation in spherically<lb/> symmetric and static spacetimes, &quot; Physical Review D, vol. 69, no.<lb/> 6, Article ID 064017, 2004.<lb/> </bibl>
+        <bibl><label>[30]</label> S. Frittelli, T. P. Kling, and E. T. Newman, &quot; Spacetime perspec-<lb/>tive of Schwarzschild lensing, &quot; Physical Review D, vol. 61, Article<lb/> ID 064021, 2000.<lb/> </bibl>
+        <bibl><label>[31]</label> V. Bozza, S. Capozziello, G. Iovane, and G. Scarpetta, &quot; Strong<lb/> field limit of black hole gravitational lensing, &quot; General Relativity<lb/> and Gravitation, vol. 33, no. 9, pp. 1535–1548, 2001.<lb/> </bibl>
+        <bibl><label>[32]</label> V. Bozza, &quot; Quasi-equatorial gravitational lensing by spinning<lb/> black holes in the strong field limit, &quot; Physical Review D, vol. 67,<lb/> Article ID 103006, 2003.<lb/> </bibl>
+        <bibl><label>[33]</label> V. Bozza, F. de Luca, G. Scarpetta, and M. Sereno, &quot; Analytic<lb/> Kerr black hole lensing for equatorial observers in the strong<lb/> deflection limit, &quot; Physical Review D, vol. 72, no. 8, Article ID<lb/> 083003, 2005.<lb/> </bibl>
+        <bibl><label>[34]</label> V. Bozza, F. de Luca, and G. Scarpetta, &quot; Kerr black hole lensing<lb/> for generic observers in the strong deflection limit, &quot; Physical<lb/> Review D, vol. 74, no. 6, Article ID 063001, 2006.<lb/> </bibl>
+        <bibl><label>[35]</label> V. Bozza, &quot; Gravitational lensing by black holes, &quot; General Rela-<lb/>tivity and Gravitation, vol. 42, no. 9, pp. 2269–2300, 2010.<lb/> </bibl>
+        <bibl><label>[36]</label> V. Bozza, &quot; Gravitational lensing in the strong field limit, &quot;<lb/> Physical Review D, vol. 66, Article ID 103001, 2002.<lb/> </bibl>
+        <bibl><label>[37]</label> E. F. Eiroa, &quot; Gravitational lensing by Einstein-Born-Infeld black<lb/> holes, &quot; Physical Review D, vol. 73, no. 4, Article ID 043002, 2006.<lb/> </bibl>
+        <bibl><label>[38]</label> K. Sarkar and A. Bhadra, &quot; Strong field gravitational lensing in<lb/> scalar-tensor theories, &quot; Classical and Quantum Gravity, vol. 23,<lb/> no. 22, pp. 6101–6113, 2006.<lb/> </bibl>
+        <bibl><label>[39]</label> S. Chen and J. Jing, &quot; Strong field gravitational lensing in the<lb/> deformed Hrava-Lifshitz black hole, &quot; Physical Review D, vol. 80,<lb/> no. 2, Article ID 024036, 2009.<lb/> </bibl>
+        <bibl><label>[40]</label> E. F. Eiroa, G. E. Romero, and D. F. Torres, &quot; Reissner-Nordstrom<lb/> black hole lensing, &quot; Physical Review D, vol. 66, no. 2, Article ID<lb/> 024010, 2002.<lb/> </bibl>
+        <bibl><label>[41]</label> E. F. Eiroa and C. M. Sendra, &quot; Gravitational lensing by massless<lb/> braneworld black holes, &quot; Physical Review D, vol. 86, no. 8,<lb/> Article ID 083009, 2012.<lb/> </bibl>
+        <bibl><label>[42]</label> E. F. Eiroa and C. M. Sendra, &quot; Regular phantom black hole<lb/> gravitational lensing, &quot; Physical Review D, vol. 88, no. 10, Article<lb/> ID 103007, 2013.<lb/> </bibl>
+        <bibl><label>[43]</label> R. Whisker, &quot; Strong gravitational lensing by braneworld black<lb/> holes, &quot; Physical Review D, vol. 71, Article ID 064004, 2005.<lb/></bibl>
+        <bibl><label>[44]</label> A. Bhadra, &quot; Gravitational lensing by a charged black hole of<lb/> string theory, &quot; Physical Review D, vol. 67, no. 10, Article ID<lb/> 103009, 2003.<lb/> </bibl>
+        <bibl><label>[45]</label> S. E. Vázquez and E. P. Esteban, &quot; Strong-field gravitational<lb/> lensing by a Kerr black hole, &quot; Il Nuovo Cimento della Società<lb/> Italiana di Fisisca B, vol. 119, no. 5, pp. 489–519, 2004.<lb/> </bibl>
+        <bibl><label>[46]</label> K. K. Nandi, Y. Z. Zhang, and A. V. Zakharov, &quot; Gravitational<lb/> lensing by wormholes, &quot; Physical Review D, vol. 74, Article ID<lb/> 024020, 2006.<lb/> </bibl>
+        <bibl><label>[47]</label> G. N. Gyulchev and S. S. Yazadjiev, &quot; Kerr-Sen dilaton-axion<lb/> black hole lensing in the strong deflection limit, &quot; Physical Review<lb/> D, vol. 75, no. 2, Article ID 023006, 2007.<lb/> </bibl>
+        <bibl><label>[48]</label> G. N. Gyulchev and I. Z. Stefanov, &quot; Gravitational lensing by<lb/> phantom black holes, &quot; Physical Review D, vol. 87, no. 6, Article<lb/> ID 063005, 2013.<lb/> </bibl>
+        <bibl><label>[49]</label> V. Bozza and G. Scarpetta, &quot; Strong deflection limit of black hole<lb/> gravitational lensing with arbitrary source distances, &quot; Physical<lb/> Review D, vol. 76, no. 8, Article ID 083008, 2007.<lb/> </bibl>
+        <bibl><label>[50]</label> K. S. Virbhadra and C. R. Keeton, &quot; Time delay and magnifi-<lb/>cation centroid due to gravitational lensing by black holes and<lb/> naked singularities, &quot; Physical Review D, vol. 77, no. 12, Article<lb/> ID 124014, 2008.<lb/> </bibl>
+        <bibl><label>[51]</label> G. S. Bisnovatyi-Kogan and O. Y. Tsupko, &quot; Strong gravitational<lb/> lensing by Schwarzschild black holes, &quot; Astrophysics, vol. 51, no.<lb/> 1, pp. 99–111, 2008.<lb/></bibl>
+        <bibl><label>[52]</label> A. Y. Bin-Nun, &quot; Strong gravitational lensing by Sgr A<lb/> * , &quot; Classical<lb/> and Quantum Gravity, vol. 28, no. 11, Article ID 114003, 2011.<lb/> </bibl>
+        <bibl><label>[53]</label> Y. Liu, S. Chen, and J. Jing, &quot; Strong gravitational lensing in a<lb/> squashed Kaluza-Klein black hole spacetime, &quot; Physical Review<lb/> D, vol. 81, no. 12, Article ID 124017, 2010.<lb/> </bibl>
+        <bibl><label>[54]</label> C. Ding, S. Kang, C.-Y. Chen, S. Chen, and J. Jing, &quot; Strong grav-<lb/>itational lensing in a noncommutative black-hole spacetime, &quot;<lb/> Physical Review D, vol. 83, no. 8, Article ID 084005, 2011.<lb/> </bibl>
+        <bibl><label>[55]</label> C. Ding and J. Jing, &quot; Probing spacetime noncommutative<lb/> constant via charged astrophysical black hole lensing, &quot; Journal<lb/> of High Energy Physics, vol. 2011, no. 10, article 52, 2011.<lb/> </bibl>
+        <bibl><label>[56]</label> C. Liu, S. Chen, and J. Jing, &quot; Strong gravitational lens-<lb/>ing of quasi-Kerr compact object with arbitrary quadrupole<lb/> moments, &quot; Journal of High Energy Physics, vol. 2012, p. 97, 2012.<lb/> </bibl>
+        <bibl><label>[57]</label> T. Ghosh and S. SenGupta, &quot; Strong gravitational lensing across<lb/> a dilaton anti-de Sitter black hole, &quot; Physical Review D, vol. 81,<lb/> no. 4, Article ID 044013, 2010.<lb/> </bibl>
+        <bibl><label>[58]</label> S. W. Wei and Y. X. Liu, &quot; Equatorial and quasi-equatorial<lb/> gravitational lensing by Kerr black hole pierced by a cosmic<lb/> string, &quot; Physical Review D, vol. 85, Article ID 064044, 2012.<lb/> </bibl>
+        <bibl><label>[59]</label> S. W. Wei, Y. X. Liu, C.-E. Fu, and K. Yang, &quot; Strong field limit<lb/> analysis of gravitational lensing in Kerr-Taub-NUT spacetime, &quot;<lb/> Journal of Cosmology and Astroparticle Physics, vol. 2012, no. 10,<lb/> article 53, 2012.<lb/> </bibl>
+        <bibl><label>[60]</label> S. Sahu, M. Patil, D. Narasimha, and P. S. Joshi, &quot; Can strong<lb/> gravitational lensing distinguish naked singularities from black<lb/> holes? &quot; Physical Review D—Particles, Fields, Gravitation and<lb/> Cosmology, vol. 86, no. 6, Article ID 063010, 2012.<lb/> </bibl>
+        <bibl><label>[61]</label> V. Perlick, &quot; Gravitational lensing from a spacetime perspective, &quot;<lb/> Living Reviews in Relativity, vol. 7, p. 9, 2004.<lb/> </bibl>
+        <bibl><label>[62]</label> I. Z. Stefanov, S. S. Yazadjiev, and G. G. Gyulchev, &quot; Connection<lb/> between black-hole quasinormal modes and lensing in the<lb/> strong deflection limit, &quot; Physical Review Letters, vol. 104, no. 25,<lb/> Article ID 251103, 2010.<lb/> </bibl>
+        <bibl><label>[63]</label> S. W. Wei, Y. X. Liu, and H. Guo, &quot; Relationship between high-<lb/>energy absorption cross section and strong gravitational lensing<lb/> for black hole, &quot; Physical Review D, vol. 84, Article ID 041501(R),<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[64]</label> S. Chandrasekhar, The Mathematical Theory of Black Holes,<lb/> Oxford University Press, New York, NY, USA, 1983.<lb/> </bibl>
+        <bibl><label>[65]</label> C.-M. Claudel, K. S. Virbhadra, and G. F. R. Ellis, &quot; The geometry<lb/> of photon surfaces, &quot; Journal of Mathematical Physics, vol. 42, no.<lb/> 2, pp. 818–838, 2001.<lb/> </bibl>
+        <bibl><label>[66]</label> V. Bozza, &quot; Comparison of approximate gravitational lens equa-<lb/>tions and a proposal for an improved new one, &quot; Physical Review<lb/> D—Particles, Fields, Gravitation and Cosmology, vol. 78, no. 10,<lb/> Article ID 103005, 2008.<lb/> </bibl>
+        <bibl><label>[67]</label> C. R. Keeton and A. O. Petters, &quot; Formalism for testing theories<lb/> of gravity using lensing by compact objects: static, spherically<lb/> symmetric case, &quot; Physical Review D, vol. 72, no. 10, Article ID<lb/> 104006, 2005.<lb/> </bibl>
+        <bibl><label>[68]</label> A. Eckart, T. Bertram, N. Mouawad, T. Viehmann, C. Straub-<lb/>meier, and J. Zuther, &quot; Long range science perspectives for the<lb/> VLTI, &quot; Astrophysics and Space Science, vol. 286, no. 1-2, pp. 269–<lb/> 276, 2003.<lb/> </bibl>
+        <bibl><label>[69]</label> V. Bozza and L. Mancini, &quot; Observing gravitational lensing<lb/> effects by Sgr A<lb/> * with gravity, &quot; Astrophysical Journal, vol. 753,<lb/> no. 1, article 56, 2012.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

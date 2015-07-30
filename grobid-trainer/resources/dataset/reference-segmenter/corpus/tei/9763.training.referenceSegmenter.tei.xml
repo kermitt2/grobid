@@ -1,0 +1,36 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> B. K. Srivastava, &quot; Percolation approach to initial stage<lb/> effects in high energy collisions, &quot; in Proceedings of the<lb/> International Conference on the Initial Stages in High-Energy<lb/> Nuclear Collisions (IS &apos;13), Galicia, Spain, September 2013,<lb/> http://arxiv.org/abs/1402.2306.<lb/> </bibl>
+        <bibl><label>[2]</label> E. L. Bratkovskaya, S. M. Kiselev, and G. B. Sharkov, &quot; Direct<lb/> photon production from hadronic sources in high-energy<lb/> heavy-ion collisions, &quot; Physical Review C, vol. 78, no. 3, Article<lb/> ID 034905, 10 pages, 2008.<lb/> </bibl>
+        <bibl><label>[3]</label> B. Mohanty, &quot; Exploring the QCD phase diagram through high<lb/> energy nuclear collisions: an overview, &quot; in Proceedings of the<lb/> 8th International Workshop on Critical Point and Onset of<lb/> Deconfinement (CPOD &apos;13), Napa, Calif, USA, March 2013,<lb/> http://arxiv.org/abs/1308.3328.<lb/> </bibl>
+        <bibl><label>[4]</label> G. Burau, J. Bleibel, C. Fuchs, A. Faessler, L. V. Bravina, and<lb/> E. E. Zabrodin, &quot; Anisotropic flow of charged and identified<lb/> hadrons in the quark-gluon string model for Au+Au collisions<lb/> at √í µí± í µí±í µí± = 200 GeV, &quot; Physical Review C, vol. 71, no. 5, Article ID<lb/> 054905, 10 pages, 2005.<lb/> </bibl>
+        <bibl><label>[5]</label> A. Jahns, C. Spieles, R. Mattiello et al., &quot; Antibaryon shadowing<lb/> in massive Au + Au collisions at 11 A GeV, &quot; Nuclear Physics A,<lb/> vol. 566, pp. 483–486, 1994.<lb/> </bibl>
+        <bibl><label>[6]</label> G. D. Westfall, J. Gosset, P. J. Johansen et al., &quot; Nuclear Fireball<lb/> Model for proton inclusive spectra from relativistic heavy-ion<lb/> collisions, &quot; Physical Review Letters, vol. 37, no. 18, pp. 1202–1205,<lb/> 1976.<lb/> </bibl>
+        <bibl><label>[7]</label> M. Lublinsky and E. Shuryak, &quot; How much entropy is produced<lb/> in strongly coupled quark-gluon plasma (sQGP) by dissipative<lb/> effects? &quot; Physical Review C, vol. 76, no. 2, Article ID 021901(R),<lb/> 4 pages, 2007.<lb/> </bibl>
+        <bibl><label>[8]</label> B. K. Srivastava, &quot; Clustering of color sources and the equation of<lb/> state of the QGP, &quot; in Proceedings of the International Conference<lb/> on New Frontiers in Physics (ICFP &apos;12), Creta, Greece, June 2012,<lb/> http://arxiv.org/abs/1209.6603.<lb/> </bibl>
+        <bibl><label>[9]</label> J. Steinheimer and M. Bleicher, &quot; Extraction of the sound<lb/> velocity from rapidity spectra: evidence for QGP formation at<lb/> FAIR/RHIC-BES energies, &quot; The European Physical Journal A,<lb/> vol. 48, no. 7, article 100, 5 pages, 2012.<lb/> </bibl>
+        <bibl><label>[10]</label> A. Z. Mekjian, &quot; Properties of baryonic, electric and strangeness<lb/> chemical potentials and some of their consequences in relativis-<lb/>tic heavy ion collisions, &quot; Physics Letters B, vol. 651, no. 1, pp. 33–<lb/> 38, 2007.<lb/> </bibl>
+        <bibl><label>[11]</label> Y. D. Mercado, H. G. Evertz, and C. Gattringer, &quot; Worm<lb/> algorithms for the 3-state Potts model with magnetic field and<lb/> chemical potential, &quot; Computer Physics Communications, vol.<lb/> 183, no. 9, pp. 1920–1927, 2012.<lb/> </bibl>
+        <bibl><label>[12]</label> U. Marzolino and D. Braun, &quot; Precision measurements of tem-<lb/>perature and chemical potential of quantum gases, &quot; Physical<lb/> Review A, vol. 88, no. 6, Article ID 063609, 22 pages, 2013.<lb/> </bibl>
+        <bibl><label>[13]</label> I. Arsene, I. G. Bearden, D. Beavis et al., &quot; Quark-gluon plasma<lb/> and color glass condensate at RHIC? The perspective from the<lb/> BRAHMS experiment, &quot; Nuclear Physics A, vol. 757, no. 1-2, pp.<lb/> 1–27, 2005.<lb/> </bibl>
+        <bibl><label>[14]</label> H. Zhao and F.-H. Liu, &quot; Chemical potentials of quarks extracted<lb/> from particle transverse momentum distributions in heavy ion<lb/> collisions at RHIC energies, &quot; Advances in High Energy Physics,<lb/> vol. 2014, Article ID 742193, 14 pages, 2014.<lb/> </bibl>
+        <bibl><label>[15]</label> F.-H. Liu, T. Tian, H. Zhao, and B.-C. Li, &quot; Extracting chemical<lb/> potentials of quarks from ratios of negatively/positively charged<lb/> particles in high-energy collisions, &quot; The European Physical<lb/> Journal A, vol. 50, article 62, 8 pages, 2014.<lb/> </bibl>
+        <bibl><label>[16]</label> A. Quadt, &quot; Top quark physics at hadron colliders, &quot; The European<lb/> Physical Journal C, vol. 48, no. 3, pp. 835–1000, 2006.<lb/> </bibl>
+        <bibl><label>[17]</label> K. Nakamura, K. Hagiwara, K. Hikasa et al., &quot; Review of particle<lb/> physics, &quot; Journal of Physics G, vol. 37, no. 7, Article ID 075021,<lb/> 1422 pages, 2010.<lb/> </bibl>
+        <bibl><label>[18]</label> F.-H. Liu, &quot; Particle production in Au-Au collisions at RHIC<lb/> energies, &quot; Physics Letters B, vol. 583, no. 1-2, pp. 68–72, 2004.<lb/> </bibl>
+        <bibl><label>[19]</label> F.-H. Liu, &quot; Dependence of charged particle pseudorapidity<lb/> distributions on centrality and energy in p(d)A collisions at<lb/> high energies, &quot; Physical Review C, vol. 78, no. 1, Article ID<lb/> 014902, 6 pages, 2008.<lb/> </bibl>
+        <bibl><label>[20]</label> F.-H. Liu, &quot; Unified description of multiplicity distributions of<lb/> final-state particles produced in collisions at high energies, &quot;<lb/> Nuclear Physics A, vol. 810, no. 1–4, pp. 159–172, 2008.<lb/> </bibl>
+        <bibl><label>[21]</label> C. Alt, T. Anticic, and B. Battar, &quot; High transverse momentum<lb/> hadron spectra at √í µí± NN = 17.3 GeV in Pb+Pb and p+p<lb/> collisions, &quot; Physical Review C, vol. 77, no. 3, Article ID 034906,<lb/> 11 pages, 2008.<lb/> </bibl>
+        <bibl><label>[22]</label> B.-C. Li, Y.-Y. Fu, L.-L. Wang, and F.-H. Liu, &quot; Dependence<lb/> of elliptic flows on transverse momentum and number of<lb/> participants in AuAu collisions at 200 GeV, &quot; Journal of Physics<lb/> G, vol. 40, no. 2, Article ID 025104, 9 pages, 2013.<lb/> </bibl>
+        <bibl><label>[23]</label> B.-C. Li and M. Huang, &quot; Strongly coupled matter near phase<lb/> transition, &quot; Journal of Physics G, vol. 36, no. 6, Article ID 064062,<lb/> 5 pages, 2009.<lb/> </bibl>
+        <bibl><label>[24]</label> B.-C. Li and L.-L. Wang, &quot; Entropy in scalar O(N) model with<lb/> a spontaneously broken symmetry, &quot; International Journal of<lb/> Modern Physics A, vol. 24, no. 30, pp. 5725–5736, 2009.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

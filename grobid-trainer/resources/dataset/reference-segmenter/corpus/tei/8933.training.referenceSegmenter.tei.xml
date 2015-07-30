@@ -1,0 +1,61 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> S. Nojiri and S. D. Odintsov, &quot; Dark energy, inflation and dark<lb/> matter from modified F(R) gravity, &quot; TSPU Bulletin, vol. 110, no.<lb/> 8, pp. 7–19, 2011.<lb/> </bibl>
+        <bibl><label>[2]</label> T. P. Sotiriou and V. Faraoni, &quot; í µí±(í µí±) theories of gravity, &quot; Reviews<lb/> of Modern Physics, vol. 82, no. 1, pp. 451–497, 2010.<lb/> </bibl>
+        <bibl><label>[3]</label> A. de Felice and S. Tsujikawa, &quot; f(R) theories, &quot; Living Reviews in<lb/> Relativity, vol. 13, p. 3, 2010.<lb/> </bibl>
+        <bibl><label>[4]</label> R. Durrer and R. Maartens, &quot; Dark energy and modified gravity, &quot;<lb/> in Dark Energy: Observational and Theoretical Approaches, P.<lb/> </bibl>
+<bibl>Ruiz-Lapuente, Ed., pp. 48–91, Cambridge University Press,<lb/> 2010.<lb/> </bibl>
+        <bibl><label>[5]</label> A. Einstein, &quot; Riemannian geometry with preservation of the<lb/> concept of distant parallelism, &quot; Sitzungsberichte der Deutschen<lb/> Akademie der Wissenschaften zu Berlin, Mathematisch-Natur-<lb/>wissenschaftliche Klasse, vol. 17, p. 217, 1928.<lb/> </bibl>
+        <bibl><label>[6]</label> A. Einstein, &quot; Theory of spaces with a Riemannian metric<lb/> and distance parallelism, &quot; Sitzungsberichte der Preussischen<lb/> Akademie der Wissenschaften. Physikalisch-Mathematische<lb/> Klasse, vol. 401, 1930.<lb/> </bibl>
+        <bibl><label>[7]</label> C. Møller, &quot; On the crisis in the theory of gravitation and a<lb/> possible solution, &quot; Det Kongelige Danske Videnskabernes Selskab<lb/> Matematisk-fysiske Meddelelser, vol. 39, no. 13, pp. 1–31, 1978.<lb/> </bibl>
+        <bibl><label>[8]</label> K. Hayashi and T. Shirafuji, &quot; New general relativity, &quot; Physical<lb/> Review D: Particles and Fields, vol. 19, no. 12, pp. 3524–3553, 1979.<lb/> </bibl>
+        <bibl><label>[9]</label> K. Hayashi and T. Shirafuji, &quot; Addendum to &apos;new general<lb/> relativity&apos; , &quot; Physical Review D, vol. 24, no. 12, pp. 3312–3314, 1981.<lb/> </bibl>
+        <bibl><label>[10]</label> M. I. Mikhail and M. I. Wanas, &quot; A generalized field theory. I.<lb/> Field equations, &quot; Proceedings of the Royal Society of London A,<lb/> vol. 356, no. 1687, pp. 471–481, 1977.<lb/> </bibl>
+        <bibl><label>[11]</label> C. Pellegrini and J. Pleba´Pleba´nski, &quot; Tetrad fields and gravitational<lb/> fields, &quot; Mat. Fys . Scr. Dan.Vid. Selsk, vol. 2, no. 4, 1963.<lb/> </bibl>
+        <bibl><label>[12]</label> R. Weitzenböck, Invariantentheorie, Nordhoff, Groningen, The<lb/> Netherlands, 1923.<lb/> </bibl>
+        <bibl><label>[13]</label> R. Ferraro and F. Fiorini, &quot; Modified teleparallel gravity: inflation<lb/> without an inflaton, &quot; Physical Review D: Particles, Fields, Gravi-<lb/>tation, and Cosmology, vol. 75, no. 8, Article ID 084031, 2007.<lb/></bibl>
+        <bibl><label>[14]</label> R. Ferraro and F. Fiorini, &quot; Born-infeld gravity in Weitzenböck<lb/> spacetime, &quot; Physical Review D, vol. 78, Article ID 124019, 2008.<lb/> </bibl>
+        <bibl><label>[15]</label> R. Ferraro and F. Fiorini, &quot; Spherically symmetric static space-<lb/>times in vacuum, &quot; Physical Review D, vol. 84, Article ID 083518,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[16]</label> G. R. Bengochea and R. Ferraro, &quot; Dark torsion as the cosmic<lb/> speed-up, &quot; Physical Review D, vol. 79, Article ID 124019, 2009.<lb/> </bibl>
+        <bibl><label>[17]</label> R.-X. Miao, M. Li, and Y.-G. Miao, &quot; Violation of the first<lb/> law of black hole thermodynamics in f (T) gravity, &quot; Journal of<lb/> Cosmology and Astroparticle Physics, vol. 2011, no. 11, article 033,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[18]</label> H. Wei, X.-J. Guo, and L.-F. Wang, &quot; Noether symmetry in f(T)<lb/> theory, &quot; Physics Letters B, vol. 707, no. 2, pp. 298–304, 2012.<lb/> </bibl>
+        <bibl><label>[19]</label> P. A. González, E. N. Saridakis, and Y. Vásquez, &quot; Circularly<lb/> symmetric solutions in three-dimensional teleparallel, í µí±(í µí±)<lb/> and Maxwell-í µí±(í µí±) gravity, &quot; Journal of High Energy Physics, vol.<lb/> 2012, article 53, 2012.<lb/> </bibl>
+        <bibl><label>[20]</label> R. Ferraro and F. Fiorini, &quot; Cosmological frames for theories<lb/> with absolute parallelism, &quot; IJMP (Conference Series), vol. 3, pp.<lb/> 227–237, 2011.<lb/> </bibl>
+        <bibl><label>[21]</label> L. Iorio and E. N. Saridakis, &quot; Solar system constraints on f (T)<lb/> gravity, &quot; Monthly Notices of the Royal Astronomical Society, vol.<lb/> 427, no. 2, pp. 1555–1561, 2012.<lb/> </bibl>
+        <bibl><label>[22]</label> N. Tamanini and C. G. Böhmer, &quot; Good and bad tetrads in í µí±(í µí±)<lb/> gravity, &quot; Physical Review D, vol. 86, Article ID 044009, 2012.<lb/> </bibl>
+        <bibl><label>[23]</label> F. W. Hehl, P. von der Heyde, G. . Kerlick, and J. M. Nester,<lb/> &quot; General relativity with spin and torsion: foundations and<lb/> prospect, &quot; Reviews of Modern Physics, vol. 48, no. 3, pp. 393–416,<lb/> 1976.<lb/> </bibl>
+        <bibl><label>[24]</label> F. W. Hehl, J. D. McCrea, E. W. Mielke, and Y. Ne&apos; eman,<lb/> &quot; Metric-affine gauge theory of gravity: field equations, Noether<lb/> identities, world spinors, and breaking of dilation invariance, &quot;<lb/> Physics Reports, vol. 258, no. 1-2, pp. 1–171, 1995.<lb/> </bibl>
+        <bibl><label>[25]</label> E. V. Linder, &quot; Einstein&apos;s other gravity and the acceleration of the<lb/> Universe, &quot; Physical Review D, vol. 81, no. 12, Article ID 127301, 3<lb/> pages, 2010.<lb/> </bibl>
+        <bibl><label>[26]</label> R. Myrzakulov, &quot; Accelerating universe from í µí°¹(í µí±) gravity, &quot; The<lb/> European Physical Journal C, vol. 71, no. 9, article 1752, 2011.<lb/> </bibl>
+        <bibl><label>[27]</label> K. Bamba, C.-Q. Geng, C.-C. Lee, and L.-W. Luo, &quot; Equation of<lb/> state for dark energy in f(T) gravity, &quot; Journal of Cosmology and<lb/> Astroparticle Physics, vol. 2011, no. 1, article 021, 2011.<lb/> </bibl>
+        <bibl><label>[28]</label> P. Wu and H. Yu, &quot; f (T) models with phantom divide line<lb/> crossing, &quot; The European Physical Journal C, vol. 71, no. 2, article<lb/> 1552, 2011.<lb/> </bibl>
+        <bibl><label>[29]</label> R.-J. Yang, &quot; Conformal transformation in f (T) theories, &quot; Euro-<lb/>physics Letters, vol. 93, no. 6, Article ID 60001, 2011.<lb/> </bibl>
+        <bibl><label>[30]</label> G. R. Bengochea, &quot; Observational information for f(T) theories<lb/> and dark torsion, &quot; Physics Letters B, vol. 695, no. 5, pp. 405–411,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[31]</label> P. Wu and H. Yu, &quot; Observational constraints on f(T) theory, &quot;<lb/> Physics Letters B, vol. 693, pp. 415–420, 2010.<lb/> </bibl>
+        <bibl><label>[32]</label> Y. Zhang, H. Li, Y. Gong, and Z.-H. Zhu, &quot; Notes on f (T)<lb/> theories, &quot; Journal of Cosmology and Astroparticle Physics, vol.<lb/> 2011, no. 7, article 015, 2011.<lb/> </bibl>
+        <bibl><label>[33]</label> H. Wei, X.-P. Ma, and H.-Y. Qi, &quot; f (T) theories and varying fine<lb/> structure constant, &quot; Physics Letters B, vol. 703, no. 1, pp. 74–80,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[34]</label> B. Li, T. P. Sotirious, and J. D. Barrow, &quot; f (T) gravity and local<lb/> Lorentz invariance, &quot; Physical Review D, vol. 83, no. 6, Article ID<lb/> 064035, 5 pages, 2011.<lb/></bibl>
+        <bibl><label>[35]</label> T. P. Sotirious, B. Li, and J. D. Barrow, &quot; Generalizations of<lb/> teleparallel gravity and local Lorentz symmetry, &quot; Physical<lb/> Review D, vol. 83, Article ID 104030, 2011.<lb/> </bibl>
+        <bibl><label>[36]</label> T. Shirafuji, G. G. Nashed, and K. Hayashi, &quot; Energy of general<lb/> spherically symmetric solution in the tetrad theory of gravita-<lb/>tion, &quot; Progress of Theoretical Physics, vol. 95, no. 3, pp. 665–678,<lb/> 1996.<lb/> </bibl>
+        <bibl><label>[37]</label> J. B. Dent, S. Dutta, and E. N. Saridakis, &quot; f (T) gravity mimicking<lb/> dynamical dark energy. Background and perturbation analysis, &quot;<lb/> Journal of Cosmology and Astroparticle Physics, vol. 2011, no. 1,<lb/> article 009, 2011.<lb/> </bibl>
+        <bibl><label>[38]</label> S.-H. Chen, J. B. Dent, S. Dutta, and E. N. Saridakis, &quot; Cosmo-<lb/>logical perturbations in í µí±(í µí±) gravity, &quot; Physical Review D, vol. 83,<lb/> no. 2, Article ID 023508, 11 pages, 2011.<lb/> </bibl>
+        <bibl><label>[39]</label> R. Zheng and Q.-G. Huang, &quot; Growth factor in í µí±(í µí±) gravity, &quot;<lb/> Journal of Cosmology and Astroparticle Physics, vol. 2011, no. 3,<lb/> article 2, 2011.<lb/> </bibl>
+        <bibl><label>[40]</label> Y.-F. Cai, S.-H. Chen, J. B. Dent, S. Dutta, and E. N. Saridakis,<lb/> &quot; Matter bounce cosmology with the f (T) gravity, &quot; Classical and<lb/> Quantum Gravity, vol. 28, no. 21, Article ID 215011, 2011.<lb/> </bibl>
+        <bibl><label>[41]</label> X.-H. Meng and Y.-B. Wang, &quot; Birkhoff &apos;s theorem in f (T)<lb/> gravity, &quot; The European Physical Journal C, vol. 71, article 1755,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[42]</label> T. Wang, &quot; Static solutions with spherical symmetry in f (T)<lb/> theories, &quot; Physical Review D, vol. 84, no. 2, Article ID 024042,<lb/> 10 pages, 2011.<lb/> </bibl>
+        <bibl><label>[43]</label> G. G. Nashed, &quot; A special exact spherically symmetric solution<lb/> in f(T) gravity theories, &quot; General Relativity and Gravitation, vol.<lb/> 45, no. 10, pp. 1887–1899, 2013.<lb/> </bibl>
+        <bibl><label>[44]</label> G. G. L. Nashed, &quot; Spherically symmetric charged-dS solution<lb/> in f(T) gravity theories, &quot; Physical Review D, vol. 88, Article ID<lb/> 104034, 2013.<lb/> </bibl>
+        <bibl><label>[45]</label> G. G. L. Nashed, &quot; Local Lorentz transformation and exact solu-<lb/>tion in í µí±(í µí±) gravity theories, &quot; Astrophysics and Space Science,<lb/> vol. 348, no. 2, pp. 591–598, 2013.<lb/> </bibl>
+        <bibl><label>[46]</label> C. Deliduman and B. Yapiskan, &quot; Absence of relativistic stars in<lb/> f (T) gravity, &quot; http://arxiv.org/abs/1103.2225.<lb/> </bibl>
+        <bibl><label>[47]</label> S. Capozziello, V. F. Cardone, H. Farajollahi, and A. Ravanpak,<lb/> &quot; Cosmography in í µí±(í µí±) gravity, &quot; Physical Review D: Particles,<lb/> Fields, Gravitation and Cosmology, vol. 84, no. 4, Article ID<lb/> 043527, 2011.<lb/> </bibl>
+        <bibl><label>[48]</label> S. Capozziello, P. A. González, E. N. Saridakis, and Y. Vásquez,<lb/> &quot; Exact charged black-hole solutions in D-dimensional í µí±(í µí±)<lb/> gravity: torsion vs curvature analysis, &quot; Journal of High Energy<lb/> Physics, vol. 2013, article 39, 2013.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

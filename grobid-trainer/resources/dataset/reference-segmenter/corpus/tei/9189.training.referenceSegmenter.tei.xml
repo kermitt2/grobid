@@ -1,0 +1,67 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> S. Weinberg, &quot; The cosmological constant problem, &quot; Reviews of<lb/> Modern Physics, vol. 61, no. 1, pp. 1–23, 1989.<lb/> </bibl>
+        <bibl><label>[2] S.</label> M. Carroll, &quot; The cosmological constant, &quot; Living Reviews in<lb/> Relativity, vol. 4, article 1, 2001.<lb/> </bibl>
+        <bibl><label>[3]</label> R.-J. Yang and S. N. Zhang, &quot; The age problem in the ΛCDM<lb/> model, &quot; Monthly Notices of the Royal Astronomical Society, vol.<lb/> 407, no. 3, pp. 1835–1841, 2010.<lb/> </bibl>
+        <bibl><label>[4]</label> Y.-F. Cai, E. N. Saridakis, M. R. Setare, and J.-Q. Xia, &quot; Quintom<lb/> cosmology: theoretical implications and observations, &quot; Physics<lb/> Reports, vol. 493, no. 1, pp. 1–60, 2010.<lb/> </bibl>
+        <bibl><label>[5]</label> K. Bamba, S. Capozziello, S. Nojiri, and S. D. Odintsov, &quot; Dark<lb/> energy cosmology: the equivalent description via different<lb/> theoretical models and cosmography tests, &quot; Astrophysics and<lb/> Space Science, vol. 342, no. 1, pp. 155–228, 2012.<lb/> </bibl>
+        <bibl><label>[6]</label> A. Sen, &quot; Remarks on tachyon driven cosmology, &quot; Physica<lb/> Scripta, vol. 2005, no. 117, article 70, 2005.<lb/> </bibl>
+        <bibl><label>[7]</label> G. W. Gibbons, &quot; Cosmological evolution of the rolling tachyon, &quot;<lb/> Physics Letters B, vol. 537, no. 1-2, pp. 1–4, 2002.<lb/> </bibl>
+        <bibl><label>[8]</label> M. R. Garousi, &quot; Tachyon couplings on non-BPS D-branes and<lb/> Dirac–Born–Infeld action, &quot; Nuclear Physics B, vol. 584, no. 1-2,<lb/> pp. 284–299, 2000.<lb/> </bibl>
+        <bibl><label>[9]</label> A. Sen, &quot; Field theory of tachyon matter, &quot; Modern Physics Letters<lb/> A, vol. 17, no. 27, pp. 1797–1804, 2002.<lb/> </bibl>
+        <bibl><label>[10]</label> A. Unzicker and T. Case, &quot; Translation of Einstein&apos;s attempt of<lb/> a unified field theory with teleparallelism, &quot; http://arxiv.org/abs/<lb/> physics/0503046.<lb/> </bibl>
+        <bibl><label>[11]</label> K. Hayashi and T. Shirafuji, &quot; New general relativity, &quot; Physical<lb/> Review D, vol. 19, pp. 3524–3553, 1979, Addendum in Physical<lb/> Review D, vol. 24, pp. 3312-3314, 1982.<lb/> </bibl>
+        <bibl><label>[12]</label> R. Aldrovandi and J. G. Pereira, Teleparallel Gravity: An Intro-<lb/>duction, Springer, Dordrecht, Netherlands, 2013.<lb/> </bibl>
+        <bibl><label>[13]</label> J. W. Maluf, &quot; The teleparallel equivalent of general relativity, &quot;<lb/> Annalen der Physik, vol. 525, no. 5, pp. 339–357, 2013.<lb/> </bibl>
+        <bibl><label>[14]</label> R. Ferraro and F. Fiorini, &quot; Modified teleparallel gravity: inflation<lb/> without an inflaton, &quot; Physical Review D: Particles, Fields, Gravi-<lb/>tation, and Cosmology, vol. 75, no. 8, Article ID 084031, 2007.<lb/> </bibl>
+        <bibl><label>[15]</label> G. R. Bengochea and R. Ferraro, &quot; Dark torsion as the cosmic<lb/> speed-up, &quot; Physical Review D: Particles, Fields, Gravitation, and<lb/> Cosmology, vol. 79, Article ID 124019, 2009.<lb/> </bibl>
+        <bibl><label>[16]</label> E. V. Linder, &quot; Einstein&apos;s other gravity and the acceleration of the<lb/> Universe, &quot; Physical Review D, vol. 81, Article ID 127301, 2010.<lb/></bibl>
+        <bibl><label>[17]</label> A. de Felice and S. Tsujikawa, &quot; f (R) theories, &quot; Living Reviews in<lb/> Relativity, vol. 13, no. 3, pp. 1–161, 2010.<lb/> </bibl>
+        <bibl><label>[18]</label> S. Nojiri and S. D. Odintsov, &quot; Unified cosmic history in<lb/> modified gravity: from F(R) theory to Lorentz non-invariant<lb/> models, &quot; Physics Reports, vol. 505, no. 2–4, pp. 59–144, 2011.<lb/> </bibl>
+        <bibl><label>[19]</label> B. L. Spokoiny, &quot; Inflation and generation of perturbations in<lb/> broken-symmetric theory of gravity, &quot; Physics Letters B, vol. 147,<lb/> no. 1–3, pp. 39–43, 1984.<lb/> </bibl>
+        <bibl><label>[20]</label> F. Perrotta, C. Baccigalupi, and S. Matarrese, &quot; Extended<lb/> quintessence, &quot; Physical Review D, vol. 61, Article ID 023507,<lb/> 1999.<lb/> </bibl>
+        <bibl><label>[21]</label> V. Faraoni, &quot; Inflation and quintessence with nonminimal cou-<lb/>pling, &quot; Physical Review D, vol. 62, no. 2, Article ID 023504, 15<lb/> pages, 2000.<lb/> </bibl>
+        <bibl><label>[22]</label> E. Elizalde, S. Nojiri, and S. D. Odintsov, &quot; Late-time cosmology<lb/> in a (phantom) scalar-tensor theory: dark energy and the<lb/> cosmic speed-up, &quot; Physical Review D, vol. 70, Article ID 043539,<lb/> 2004.<lb/> </bibl>
+        <bibl><label>[23]</label> O. Hrycyna and M. Szydlowski, &quot; Non-minimally coupled scalar<lb/> field cosmology on the phase plane, &quot; Journal of Cosmology and<lb/> Astroparticle Physics, vol. 2009, article 026, 2009.<lb/> </bibl>
+        <bibl><label>[24]</label> O. Hrycyna and M. Szydlowski, &quot; Extended Quintessence with<lb/> non-minimally coupled phantom scalar field, &quot; Physical Review<lb/> D: Particles, Fields, Gravitation, and Cosmology, vol. 76, Article<lb/> ID 123510, 2007.<lb/> </bibl>
+        <bibl><label>[25]</label> R. C. de Souza and G. M. Kremer, &quot; Constraining non-minimally<lb/> coupled tachyon fields by the Noether symmetry, &quot; Classical and<lb/> Quantum Gravity, vol. 26, no. 13, Article ID 135008, 2009.<lb/> </bibl>
+        <bibl><label>[26]</label> A. A. Sen and N. C. Devi, &quot; Cosmology with non-minimally<lb/> coupled í µí±-field, &quot; General Relativity and Gravitation, vol. 42, no.<lb/> 4, pp. 821–838, 2010.<lb/> </bibl>
+        <bibl><label>[27]</label> C.-Q. Geng, C.-C. Lee, E. N. Saridakis, and Y.-P. Wu, &quot; &apos;Telepar-<lb/>allel&apos; dark energy, &quot; Physics Letters, Section B: Nuclear, Elementary<lb/> Particle and High-Energy Physics, vol. 704, no. 5, pp. 384–387,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[28]</label> C.-Q. Geng, C.-C. Lee, and E. N. Saridakis, &quot; Observational<lb/> constraints on teleparallel dark energy, &quot; Journal of Cosmology<lb/> and Astroparticle Physics, vol. 2012, no. 1, article 002, 2012.<lb/> </bibl>
+        <bibl><label>[29]</label> C. Xu, E. N. Saridakis, and G. Leon, &quot; Phase-space analysis of<lb/> teleparallel dark energy, &quot; Journal of Cosmology and Astroparticle<lb/> Physics, vol. 2012, no. 7, article 5, 2012.<lb/> </bibl>
+        <bibl><label>[30]</label> H. Wei, &quot; Dynamics of teleparallel dark energy, &quot; Physics Letters<lb/> B, vol. 712, no. 4-5, pp. 430–436, 2012.<lb/> </bibl>
+        <bibl><label>[31]</label> G. Otalora, &quot; Scaling attractors in interacting teleparallel dark<lb/> energy, &quot; Journal of Cosmology and Astroparticle Physics, vol.<lb/> 2013, no. 7, article 44, 2013.<lb/> </bibl>
+        <bibl><label>[32]</label> A. Banijamali and B. Fazlpour, &quot; Tachyonic teleparallel dark<lb/> energy, &quot; Astrophysics and Space Science, vol. 342, no. 1, pp. 229–<lb/> 235, 2012.<lb/> </bibl>
+        <bibl><label>[33]</label> G. Otalora, &quot; Cosmological dynamics of tachyonic teleparallel<lb/> dark energy, &quot; Physical Review D, vol. 88, no. 6, Article ID<lb/> 063505, 8 pages, 2013.<lb/> </bibl>
+        <bibl><label>[34]</label> S. H. Pereira, S. S. A. Pinho, and J. M. H. da Silva, &quot; Some remarks<lb/> on the attractor behaviour in ELKO cosmology, &quot; Journal of<lb/> Cosmology and Astroparticle Physics, vol. 2014, article 020, 2014.<lb/> </bibl>
+        <bibl><label>[35]</label> O. Bertolami, F. Gil Pedro, and M. Le Delliou, &quot; Dark energy-<lb/>dark matter interaction and putative violation of the equiva-<lb/>lence principle from the Abell cluster A586, &quot; Physics Letters B,<lb/> vol. 654, no. 5-6, pp. 165–169, 2007.<lb/> </bibl>
+        <bibl><label>[36]</label> O. Bertolami, F. Gil Pedro, and M. le Delliou, &quot; The Abell<lb/> cluster A586 and the detection of violation of the equivalence<lb/> principle, &quot; General Relativity and Gravitation, vol. 41, no. 12, pp.<lb/> 2839–2846, 2009.<lb/> </bibl>
+        <bibl><label>[37]</label> M. Le Delliou, O. Bertolami, and F. Gil Pedro, &quot; Dark energy-<lb/>dark matter interaction from the abell cluster A586 and viola-<lb/>tion of the equivalence principle, &quot; AIP Conference Proceedings,<lb/> vol. 957, p. 421, 2007.<lb/> </bibl>
+        <bibl><label>[38]</label> O. Bertolami, F. G. Pedro, and M. L. Delliou, &quot; Dark energy-<lb/>dark matter interaction from the abell cluster A586, &quot; European<lb/> Astronomical Society Publications Series, vol. 30, pp. 161–167,<lb/> 2008.<lb/> </bibl>
+        <bibl><label>[39]</label> E. Abdalla, L. R. Abramo, L. Sodre, and B. Wang, &quot; Signature of<lb/> the interaction between dark energy and dark matter in galaxy<lb/> clusters, &quot; Physics Letters B, vol. 673, pp. 107–110, 2009.<lb/> </bibl>
+        <bibl><label>[40]</label> E. Abdalla, L. R. Abramo, and J. C. C. de Souza, &quot; Signature<lb/> of the interaction between dark energy and dark matter in<lb/> observations, &quot; Physical Review D, vol. 82, Article ID 023508,<lb/> 2010.<lb/> </bibl>
+        <bibl><label>[41]</label> N. Banerjee and S. Das, &quot; Acceleration of the universe with a sim-<lb/>ple trigonometric potential, &quot; General Relativity and Gravitation,<lb/> vol. 37, no. 10, pp. 1695–1703, 2005.<lb/> </bibl>
+        <bibl><label>[42]</label> S. Das and N. Banerjee, &quot; An interacting scalar field and the<lb/> recent cosmic acceleration, &quot; General Relativity and Gravitation,<lb/> vol. 38, no. 5, pp. 785–794, 2006.<lb/> </bibl>
+        <bibl><label>[43]</label> S. Das and N. Banerjee, &quot; Brans-Dicke scalar field as a<lb/> chameleon, &quot; Physical Review D, vol. 78, Article ID 043512, 2008.<lb/> </bibl>
+        <bibl><label>[44]</label> S. Unnikrishnan, &quot; Can cosmological observations uniquely<lb/> determine the nature of dark energy? &quot; Physical Review D, vol.<lb/> 78, Article ID 063007, 2008.<lb/> </bibl>
+        <bibl><label>[45]</label> R. Yang and J. Qi, &quot; Dynamics of generalized tachyon field, &quot; The<lb/> European Physical Journal C, vol. 72, article 2095, 2012.<lb/> </bibl>
+        <bibl><label>[46]</label> I. Quiros, T. Gonzalez, D. Gonzalez, Y. Napoles, R. García-<lb/>Salcedo, and C. Moreno, &quot; A study of tachyon dynamics for broad<lb/> classes of potentials, &quot; Classical and Quantum Gravity, vol. 27, no.<lb/> 21, Article ID 215021, 2010.<lb/> </bibl>
+        <bibl><label>[47]</label> E. J. Copeland, A. R. Liddle, and D. Wands, &quot; Exponential<lb/> potentials and cosmological scaling solutions, &quot; Physical Review<lb/> D, vol. 57, no. 8, pp. 4686–4690, 1998.<lb/> </bibl>
+        <bibl><label>[48]</label> L. Amendola, &quot; Scaling solutions in general nonminimal cou-<lb/>pling theories, &quot; Physical Review D, vol. 60, Article ID 043501,<lb/> 1999.<lb/> </bibl>
+        <bibl><label>[49]</label> Z. K. Guo, R. G. Cai, and Y. Z. Zhang, &quot; Cosmological evolution<lb/> of interacting phantom energy with dark matter, &quot; Journal of<lb/> Cosmology and Astroparticle Physics, vol. 2005, article 002, 2005.<lb/> </bibl>
+        <bibl><label>[50]</label> H. Wei, &quot; Cosmological evolution of quintessence and phantom<lb/> with a new type of interaction in dark sector, &quot; Nuclear Physics B,<lb/> vol. 845, no. 3, pp. 381–392, 2011.<lb/> </bibl>
+        <bibl><label>[51]</label> L. P. Chimento, A. S. Jakubi, D. Pavón, and W. Zimdahl,<lb/> &quot; Interacting quintessence solution to the coincidence problem, &quot;<lb/> Physical Review D, vol. 67, no. 8, Article ID 083513, 2003.<lb/> </bibl>
+        <bibl><label>[52]</label> E. J. Copeland, M. Sami, and S. Tsujikawa, &quot; Dynamics of dark<lb/> energy, &quot; International Journal of Modern Physics, D: Gravitation,<lb/> Astrophysics, Cosmology, vol. 15, no. 11, pp. 1753–1935, 2006.<lb/> </bibl>
+        <bibl><label>[53]</label> J. A. Frieman, M. S. Turner, and D. Huterer, &quot; Dark energy and<lb/> the accelerating universe, &quot; Annual Review of Astronomy and<lb/> Astrophysics, vol. 46, pp. 385–432, 2008.<lb/> </bibl>
+        <bibl><label>[54]</label> S. Tsujikawa, &quot; Dark energy: investigation and modeling, &quot; in<lb/> A Challenge for Modern Cosmology, vol. 370 of Astrophysics<lb/> and Space Science Library, pp. 331–402, Springer, Dordrecht,<lb/> Netherlands, 2011.<lb/> </bibl>
+        <bibl><label>[55]</label> M. Skugoreva, E. Saridakis, and A. Toporensky, &quot; Dynamical<lb/> features of scalar-torsion theories, &quot; to appear in Physical Review<lb/> D.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

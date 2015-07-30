@@ -1,0 +1,61 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> V. V. Nesvizhevsky, H. G. Börner, A. K. Petukhov et al.,<lb/> &quot; Quantum states of neutrons in the Earth&apos;s gravitational field, &quot;<lb/> Nature, vol. 415, no. 6869, pp. 297–299, 2002.<lb/> </bibl>
+        <bibl><label>[2]</label> L. D. Landau and E. M. Lifshitz, Quantum Mechanics, Pergamon<lb/> Press, Oxford, UK, 1976.<lb/> </bibl>
+        <bibl><label>[3]</label> A. Mills and M. Leventhal, &quot; Can we measure the gravitational<lb/> free fall of cold Rydberg state positronium? &quot; Nuclear Instru-<lb/>ments and Methods B, vol. 192, pp. 102–106, 2002.<lb/> </bibl>
+        <bibl><label>[4]</label> A. van Veen, H. Schut, F. Labohm, and J. de Roode, &quot; Positron<lb/> extraction andtransport in a nuclear-reactor-based positron<lb/> beam, &quot; Nuclear Instruments and Methods in Physics Research A,<lb/> vol. 427, no. 1-2, pp. 266–270, 1999.<lb/> </bibl>
+        <bibl><label>[5]</label> A. W. Hunt, L. Pilant, D. B. Cassidy et al., &quot; The development<lb/> of the intense positron beam at Washington State University, &quot;<lb/> Applied Surface Science, vol. 194, no. 1–4, pp. 296–300, 2002.<lb/></bibl>
+        <bibl><label>[6]</label> R. Krause-Rehberg, G. Brauer, M. Jungmann, A. Krille, A.<lb/> Rogov, and K. Noack, &quot; Progress of the intense positron beam<lb/> project EPOS, &quot; Applied Surface Science, vol. 255, no. 1, pp. 22–<lb/> 24, 2008.<lb/> </bibl>
+        <bibl><label>[7]</label> AIST, http://unit.aist.go.jp/riif/adcg/english.<lb/> </bibl>
+        <bibl><label>[8]</label> N. Oshima, R. Suzuki, T. Ohdaira et al., &quot; A positron annihi-<lb/>lation lifetime measurement system with an intense positron<lb/> microbeam, &quot; Radiation Physics and Chemistry, vol. 78, no. 12,<lb/> pp. 1096–1098, 2009.<lb/> </bibl>
+        <bibl><label>[9]</label> N. Oshima, R. Suzuki, T. Ohdaira et al., &quot; Development of<lb/> positron microbeam in AIST, &quot; Materials Science Forum, vol. 607,<lb/> pp. 238–242, 2009.<lb/> </bibl>
+        <bibl><label>[10]</label> A. I. Hawari, D. W. Gidley, J. Xu et al., &quot; The intense slow positron<lb/> beam facility at the NC State University PULSTAR reactor, &quot; AIP<lb/> Conference Proceedings, vol. 1099, pp. 862–865, 2009.<lb/> </bibl>
+        <bibl><label>[11]</label> A. I. Hawari, D. W. Gidley, J. Moxom, A. G. Hathaway, and<lb/> S. Mukherjee, &quot; Operation and testing of the PULSTAR reactor<lb/> intense slow positron beam and PALS spectrometers, &quot; Journal<lb/> of Physics: Conference Series, vol. 262, no. 1, Article ID 012024,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[12]</label> C. Hugenschmidt, B. Löwe, J. Mayer et al., &quot; Unprecedented<lb/> intensity of a low-energy positron beam, &quot; Nuclear Instruments<lb/> and Methods in Physics Research A, vol. 593, no. 3, pp. 616–618,<lb/> 2008.<lb/> </bibl>
+        <bibl><label>[13]</label> S. Chemerisov and C. D. Jonah, &quot; Development of high intensity<lb/> source of thermal positrons APosS (Argonne Positron Source), &quot;<lb/> Journal of Physics: Conference Series, vol. 262, Article ID 012012,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[14]</label> S. Golge, B. Vlahovic, and B. Wojtsekhowski, &quot; High intensity<lb/> low-energy positron source at Jefferson, &quot; in Proceedings of the<lb/> International Particle Accelerator Conference (IPAC &apos;12), 2012.<lb/> </bibl>
+        <bibl><label>[15]</label> D. B. Cassidy, S. H. M. Deng, R. G. Greaves, and A. P. Mills<lb/> Jr., &quot; Accumulator for the production of intense positron pulses, &quot;<lb/> Review of Scientific Instruments, vol. 77, no. 7, Article ID 073106,<lb/> 2006.<lb/> </bibl>
+        <bibl><label>[16]</label> N. Alberola, T. Anthonioz, A. Badertscher et al., &quot; Development<lb/> of a high-efficiency pulsed slow positron beam for measure-<lb/>ments with orthopositronium in vacuum, &quot; Nuclear Instruments<lb/> and Methods A, vol. 560, no. 2, pp. 224–232, 2006.<lb/> </bibl>
+        <bibl><label>[17]</label> D. J. Murtagh, &quot; A positron buncher-cooler, &quot; The European<lb/> Physical Journal D, vol. 68, p. 213, 2014.<lb/> </bibl>
+        <bibl><label>[18]</label> G. R. Brandes, K. F. Canter, T. N. Horsky, P. H. Lippel, and A.<lb/> P. Mills Jr., &quot; Scanning positron microbeam, &quot; Review of Scientific<lb/> Instruments, vol. 59, no. 2, pp. 228–232, 1988.<lb/> </bibl>
+        <bibl><label>[19]</label> N. Oshima, R. Suzuki, T. Ohdaira et al., &quot; Brightness enhance-<lb/>ment method for a high-intensity positron beam produced by<lb/> an electron accelerator, &quot; Journal of Applied Physics, vol. 103, no.<lb/> 9, Article ID 094916, 2008.<lb/> </bibl>
+        <bibl><label>[20]</label> M. Fujinami, S. Jinno, M. Fukuzumi, T. Kawaguchi, K. Oguma,<lb/> and T. Akahane, &quot; Production of a positron microprobe using a<lb/> transmission remoderator, &quot; Analytical Sciences, vol. 24, no. 1, pp.<lb/> 73–79, 2008.<lb/> </bibl>
+        <bibl><label>[21]</label> D. B. Cassidy and S. Hogan, &quot; Atom control and gravity mea-<lb/>surements using Rydberg positronium, &quot; International Journal of<lb/> Modern Physics: Conference Series, vol. 30, Article ID 1460259,<lb/> 9 pages, 2014.<lb/> </bibl>
+        <bibl><label>[22]</label> P. Crivelli, U. Gendotti, A. Rubbia, L. Liszkay, P. Perez, and C.<lb/> Corbel, &quot; Measurement of the orthopositronium confinement<lb/> energy in mesoporous thin films, &quot; Physical Review A, vol. 81, no.<lb/> 5, Article ID 052703, 2010.<lb/> </bibl>
+        <bibl><label>[23]</label> D. B. Cassidy, P. Crivelli, T. H. Hisakado et al., &quot; Positronium<lb/> cooling in porous silica measured via Doppler spectroscopy, &quot;<lb/> Physical Review A, vol. 81, no. 1, Article ID 012715, 12 pages, 2010.<lb/> </bibl>
+        <bibl><label>[24]</label> D. W. Gidley, H.-G. Peng, and R. S. Vallery, &quot; Positron annihi-<lb/>lation as a method to characterize porous materials, &quot; Annual<lb/> Review of Materials Research, vol. 36, pp. 49–79, 2006.<lb/> </bibl>
+        <bibl><label>[25]</label> P. Crivelli, D. Cooke, B. Barbiellini et al., &quot; Positronium emission<lb/> spectra from self-assembled metal-organic frameworks, &quot; Physi-<lb/>cal Review B, vol. 89, Article ID 241103(R), 2014.<lb/> </bibl>
+        <bibl><label>[26]</label> D. B. Cassidy, T. H. Hisakado, V. E. Meligne, H. W. K. Tom,<lb/> and A. P. Mills Jr., &quot; Delayed emission of cold positronium from<lb/> mesoporous materials, &quot; Physical Review A, vol. 82, Article ID<lb/> 052511, 2010.<lb/> </bibl>
+        <bibl><label>[27]</label> D. B. Cassidy and A. P. Mills, &quot; Enhanced Ps-Ps interactions<lb/> due to quantum confinement, &quot; Physical Review Letters, vol. 107,<lb/> Article ID 213401, 2011.<lb/> </bibl>
+        <bibl><label>[28]</label> S. D. Hogan and F. Merkt, &quot; Demonstration of three-dimensional<lb/> electrostatic trapping of state-selected rydberg atoms, &quot; Physical<lb/> Review Letters, vol. 100, Article ID 043001, 2008.<lb/> </bibl>
+        <bibl><label>[29]</label> S. D. Hogan, C. Seiler, and F. Merkt, &quot; Rydberg-state-enabled<lb/> deceleration and trapping of cold molecules, &quot; Physical Review<lb/> Letters, vol. 103, Article ID 123001, 2009.<lb/> </bibl>
+        <bibl><label>[30]</label> S. Mariazzi, P. Bettotti, and R. S. Brusa, &quot; Positronium cooling<lb/> and emission in vacuum from nanochannels at cryogenic tem-<lb/>perature, &quot; Physical Review Letters, vol. 104, Article ID 243401,<lb/> 2010.<lb/> </bibl>
+        <bibl><label>[31]</label> D. B. Cassidy, T. H. Hisakado, H. W. K. Tom, and A. P.<lb/> Mills, &quot; Optical spectroscopy of molecular positronium, &quot; Phys-<lb/>ical Review Letters, vol. 108, no. 13, Article ID 133402, 2012.<lb/> </bibl>
+        <bibl><label>[32]</label> G. Consolati, R. Ferragut, A. Galarneau, F. di Renzo, and F.<lb/> Quasso, &quot; Mesoporous materials for antihydrogen production, &quot;<lb/> Chemical Society Reviews, vol. 42, no. 9, pp. 3821–3832, 2013.<lb/> </bibl>
+        <bibl><label>[33]</label> A. P. Mills, &quot; Positronium formation at surfaces, &quot; Physical Review<lb/> Letters, vol. 41, article 1828, 1978.<lb/> </bibl>
+        <bibl><label>[34]</label> M. S. Fee, A. P. Mills Jr., S. Chu et al., &quot; Measurement of<lb/> the positronium 13S1-23 S1 interval by continuous-wave two-<lb/>photon excitation, &quot; Physical Review Letters, vol. 70, no. 10, pp.<lb/> 1397–1400, 1993.<lb/> </bibl>
+        <bibl><label>[35]</label> K. P. Ziock, R. H. Howell, F. Magnotta, R. A. Failor, and K.<lb/> </bibl>
+<bibl>M. Jones, &quot; First observation of resonant excitation of high-n<lb/> states in positronium, &quot; Physical Review Letters, vol. 64, no. 20,<lb/> pp. 2366–2369, 1990.<lb/> </bibl>
+        <bibl><label>[36]</label> D. B. Cassidy, T. H. Hisakado, H. W. K. Tom, and A. P.<lb/> Mills, &quot; Optical spectroscopy of molecular positronium, &quot; Phys-<lb/>ical Review Letters, vol. 108, Article ID 133402, 2012.<lb/> </bibl>
+        <bibl><label>[37]</label> A. C. L. Jones, T. H. Hisakado, H. J. Goldman, H. W. K. Tom,<lb/> A. P. Mills Jr., and D. B. Cassidy, &quot; Doppler-corrected Balmer<lb/> spectroscopy of Rydberg positronium, &quot; Physical Review A, vol.<lb/> 90, Article ID 012503, 2014.<lb/> </bibl>
+        <bibl><label>[38]</label> P. Crivelli, D. A. Cooke, and S. Friedreich, &quot; Experimental con-<lb/>siderations for testing antimatter antigravity using positronium<lb/> 1S-2S spectroscopy, &quot; International Journal of Modern Physics:<lb/> Conference Series, vol. 30, Article ID 1460257, 10 pages, 2014.<lb/> </bibl>
+        <bibl><label>[39]</label> G. Dufour, A. Gerardin, R. Guerout et al., &quot; Quantum reflection<lb/> of antihydrogen from the Casimir potential above matter slabs, &quot;<lb/> Physical Review A, vol. 87, Article ID 012901, 2013.<lb/> </bibl>
+        <bibl><label>[40]</label> A. Badertscher, P. Crivelli, W. Fetscher et al., &quot; Improved limit on<lb/> invisible decays of positronium, &quot; Physical Review D, vol. 75, no.<lb/> 3, Article ID 032004, 2007.<lb/> </bibl>
+        <bibl><label>[41]</label> T. F. Gallagher, Rydberg Atoms, Cambridge University Press,<lb/> Cambridge, Mass, USA, 1994.<lb/> </bibl>
+        <bibl><label>[42]</label> A. Kellerbauer, M. Amoretti, A. S. Belov et al., &quot; Proposed<lb/> antimatter gravity measurement with an antihydrogen beam, &quot;<lb/> Nuclear Instruments and Methods in Physics Research B, vol. 266,<lb/> pp. 351–356, 2008.<lb/> </bibl>
+        <bibl><label>[43]</label> D. P. van der Werf and GBAR collaboration, &quot; The GBAR exper-<lb/>iment, &quot; International Journal of Modern Physics: Conference<lb/> Series, vol. 30, Article ID 1460263, 2014.<lb/> </bibl>
+        <bibl><label>[44]</label> A. I. Zhmoginov, A. E. Charman, R. Shalloo, J. Fajans, and<lb/> J. S. Wurtele, &quot; Nonlinear dynamics of anti-hydrogen in mag-<lb/>netostatic traps: implications for gravitational measurements, &quot;<lb/> Classical and Quantum Gravity, vol. 30, no. 20, Article ID<lb/> 205014, 2013.<lb/> </bibl>
+        <bibl><label>[45]</label> P. J. Mohr, B. N. Taylor, and D. B. Newell, &quot; CODATA recom-<lb/>mended values of the fundamental physical constants: 2010, &quot;<lb/> Reviews of Modern Physics, vol. 84, article 1527, 2012.<lb/> </bibl>
+        <bibl><label>[46]</label> R. Pohl, A. Antognini, F. Nez et al., &quot; The size of the proton, &quot;<lb/> Nature, vol. 466, pp. 213–216, 2010.<lb/> </bibl>
+        <bibl><label>[47]</label> A. Antognini, F. Nez, K. Schuhmann et al., &quot; Proton structure<lb/> from the measurement of 2S-2P transition frequencies of<lb/> muonic hydrogen, &quot; Science, vol. 339, no. 6118, pp. 417–420, 2013.<lb/> </bibl>
+        <bibl><label>[48]</label> F. Nez, A. Antognini, F. D. Amaro et al., &quot; Is the proton radius a<lb/> player in the redefinition of the international system of units? &quot;<lb/> Philosophical Transactions of the Royal Society A, vol. 369, no.<lb/> 1953, pp. 4064–4077, 2011.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

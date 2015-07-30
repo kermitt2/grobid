@@ -1,0 +1,37 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1</label>W. C. Qiang, &quot; Bound states of the Klein-Gordon and Dirac equations for potential V r Ar<lb/> −2<lb/> −Br<lb/> −1 , &quot;<lb/> Chinese Physics, vol. 12, no. 10, pp. 1054–1057, 2003.<lb/> </bibl>
+        <bibl><label>2</label>Y. F. Cheng and T. Q. Dai, &quot; Exact solution of the SchrSchr¨Schrödinger equation for the modified Kratzer<lb/> potential plus a ring-shaped potential by the Nikiforov-Uvarov method, &quot; Physica Scripta, vol. 75, no.<lb/> 3, pp. 274–277, 2007.<lb/> </bibl>
+        <bibl><label>3</label>C. Berkdemir, A. Berkdemir, and J. Han, &quot; Bound state solutions of the SchrSchr¨Schrödinger equation for<lb/> modified Kratzer&apos;s molecular potential, &quot; Chemical Physics Letters, vol. 417, no. 4–6, pp. 326–329, 2006.<lb/> </bibl>
+        <bibl><label>4</label>S. M. Ikhdair and R. Sever, &quot; Exact solutions of the modified kratzer potential plus ring-shaped<lb/> potential in the D-dimensional SchrSchr¨Schrödinger equation by the nikiforovuvarov method, &quot; International<lb/> Journal of Modern Physics C, vol. 19, no. 2, pp. 221–235, 2008.<lb/> </bibl>
+        <bibl><label>5</label>R. J. Leroy and R. B. Bernstein, &quot; Dissociation energy and long-range potential of diatomic molecules<lb/> from vibrational spacings of higher levels, &quot; The Journal of Chemical Physics, vol. 52, no. 8, pp. 3869–<lb/> 3879, 1970.<lb/> </bibl>
+        <bibl><label>6</label>C. L. Pekeris, &quot; The rotation-vibration coupling in diatomic molecules, &quot; Physical Review, vol. 45, no. 2,<lb/> pp. 98–103, 1934.<lb/> </bibl>
+        <bibl><label>7</label>C. Y. Chen and S. H. Dong, &quot; Exactly complete solutions of the Coulomb potential plus a new ring-<lb/>shaped potential, &quot; Physics Letters. A, vol. 335, no. 5-6, pp. 374–382, 2005.<lb/> </bibl>
+        <bibl><label>8</label>B. K. Bagchi, Supersymmetry in Quantum and Classical Mechanics, vol. 116, Chapman and Hall, Boca<lb/> Raton, Fla, USA, 2001.<lb/> </bibl>
+        <bibl><label>9</label>F. Cooper, A. Khare, and U. Sukhatme, &quot; Supersymmetry and quantum mechanics, &quot; Physics Reports,<lb/> vol. 251, no. 5-6, pp. 267–385, 1995.<lb/> </bibl>
+        <bibl><label>10</label>G. Junker, Supersymmetric Methods in Quantum and Statistical Physics, Springer, Berlin, Germany, 1996.<lb/> </bibl>
+        <bibl><label>11</label>A. F. Nikiforov and V. B. Uvarov, Special Functions of Mathematical Physics, Birkhäuser, Basel, Germany,<lb/> 1988.<lb/> </bibl>
+        <bibl><label>12</label>R. De, R. Dutt, and U. Sukhatme, &quot; Mapping of shape invariant potentials under point canonical<lb/> transformations, &quot; Journal of Physics A: Mathematical and General, vol. 25, no. 13, pp. L843–L850, 1992.<lb/> </bibl>
+        <bibl><label>13</label>A. Gangopadhyaya, P. K. Panigrahi, and U. P. Sukhatme, &quot; Inter-relations of solvable potentials, &quot;<lb/> Helvetica Physica Acta, vol. 67, no. 4, pp. 363–368, 1994.<lb/></bibl>
+        <bibl><label>14</label> A. Gangopadhyaya, J. V. Mallow, C. Rasinariu, and U. P. Sukhatme, Supersymmetric Quantum<lb/> Mechanics: An Introduction.<lb/> </bibl>
+        <bibl><label>15</label>A. Lahiri, P. K. Roy, and B. Bagchi, &quot; Supersymmetry in atomic physics and the radial problem, &quot; Journal<lb/> of Physics. A. Mathematical and General, vol. 20, no. 12, pp. 3825–3832, 1987.<lb/> </bibl>
+        <bibl><label>16</label>A. D. Alhaidari, &quot; Solutions of the nonrelativistic wave equation with position-dependent effective<lb/> mass, &quot; Physical Review A, vol. 66, no. 4, pp. 421161–421167, 2002.<lb/> </bibl>
+        <bibl><label>17</label>O. Mustafa and M. Znojil, &quot; PT-symmetric pseudo-perturbation recipe: an imaginary cubic oscillator<lb/> with spikes, &quot; Journal of Physics A: Mathematical and General, vol. 35, no. 42, pp. 8929–8942, 2002.<lb/> </bibl>
+        <bibl><label>18</label>M. Znojil, &quot; PT-symmetric harmonic oscillators, &quot; Physics Letters. A, vol. 259, no. 3-4, pp. 220–223, 1999.<lb/> </bibl>
+        <bibl><label>19</label>O. Mustafa, &quot; Energy-levels crossing and radial Dirac equation: supersymmetry and quasi-parity<lb/> spectral signatures, &quot; International Journal of Theoretical Physics, vol. 47, no. 5, pp. 1300–1311, 2008.<lb/> </bibl>
+        <bibl><label>20</label>O. Mustafa and S. H. Mazharimousavi, &quot; d-dimensional generalization of the point canonical<lb/> transformation for a quantum particle with position-dependent mass, &quot; Journal of Physics. A.<lb/> Mathematical and General, vol. 39, no. 33, pp. 10537–10547, 2006.<lb/> </bibl>
+        <bibl><label>21</label>A. D. Alhaidari, H. Bahlouli, and A. Al-Hasan, &quot; Dirac and Klein-Gordon equations with equal scalar<lb/> and vector potentials, &quot; Physics Letters. A, vol. 349, no. 1–4, pp. 87–97, 2006.<lb/> </bibl>
+        <bibl><label>22</label>H. Akcay, &quot; Dirac equation with scalar and vector quadratic potentials and Coulomb-like tensor<lb/> potential, &quot; Physics Letters. A, vol. 373, no. 6, pp. 616–620, 2009.<lb/> </bibl>
+        <bibl><label>23</label>S. Zarrinkamar, A. A. Rajabi, and H. Hassanabadi, &quot; Dirac equation for the harmonic scalar and vector<lb/> potentials and linear plus coulomb-like tensor potential; The SUSY approach, &quot; Annals of Physics, vol.<lb/> 325, no. 11, pp. 2522–2528, 2010.<lb/> </bibl>
+        <bibl><label>24</label>A. Lahiri, P. K. Roy, and B. Bagchi, &quot; Supersymmetry and the three-dimensional isotropic oscillator<lb/> problem, &quot; Journal of Physics A: Mathematical and General, vol. 20, no. 15, article 052, pp. 5403–5404,<lb/> 1987.<lb/> </bibl>
+        <bibl><label>25</label>S.-H. Dong, &quot; SchrSchr¨Schrödinger equation with the potential V r Ar<lb/> −4<lb/> Br<lb/> −3<lb/> Cr<lb/> −2<lb/> Dr<lb/> −1 , &quot; Physica<lb/> Scripta, vol. 64, no. 4, pp. 273–276, 2001.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

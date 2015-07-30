@@ -1,0 +1,38 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/>
+        <bibl><label>[1]</label> F. Haas, G. Manfredi, and M. R. Feix, &quot; Multistream model for<lb/> quantum plasmas, &quot; Physical Review E, vol. 62, no. 2, pp. 2763–<lb/> 2772, 2000.<lb/> </bibl>
+        <bibl><label>[2]</label> M. Marklund and G. Brodin, &quot; Dynamics of spin-1/2 quantum<lb/> plasmas, &quot; Physical Review Letters, vol. 98, no. 2, Article ID<lb/> 025001, 4 pages, 2007.<lb/> </bibl>
+        <bibl><label>[3]</label> S. Y. Gus&apos;kov, &quot; Thermonuclear gain and parameters of fast<lb/> ignition ICF-targets, &quot; Laser and Particle Beams, vol. 23, no. 2,<lb/> pp. 255–260, 2005.<lb/> </bibl>
+        <bibl><label>[4]</label> P. Velarde, F. Ogando, S. Eliezer, J. M. Martínez-Val, J. M.<lb/> Perlado, and M. Murakami, &quot; Comparison between jet collision<lb/> and shell impact concepts for fast ignition, &quot; Laser and Particle<lb/> Beams, vol. 23, no. 1, pp. 43–46, 2005.<lb/> </bibl>
+        <bibl><label>[5]</label> C. T. Zhou and X. T. He, &quot; Influence of a large oblique incident<lb/> angle on energetic protons accelerated from solid-density plas-<lb/>mas by ultraintense laser pulses, &quot; Applied Physics Letters, vol. 90,<lb/> no. 3, Article ID 031503, 3 pages, 2007.<lb/> </bibl>
+        <bibl><label>[6]</label> C. T. Zhou and X. T. He, &quot; Intense laser-driven energetic proton<lb/> beams from solid density targets, &quot; Optics Letters, vol. 32, no. 16,<lb/> pp. 2444–2446, 2007.<lb/> </bibl>
+        <bibl><label>[7]</label> M. Mahdavi and F. Khodadadi Azadboni, &quot; The effect of degen-<lb/>eracy parameter on Weibel instability in dense plasma, &quot; Physics<lb/> of Plasmas, vol. 20, no. 12, Article ID 122708, 2013.<lb/> </bibl>
+        <bibl><label>[8]</label> M. Mahdavi and H. Khanzadeh, &quot; Collisional effect on the<lb/> Weibel instability with the bi-Maxwellian distribution func-<lb/>tion, &quot; Physics of Plasmas, vol. 20, no. 5, Article ID 052114, 2013.<lb/> </bibl>
+        <bibl><label>[9]</label> R. Jung, J. Osterholz, K. Löwenbrück et al., &quot; Study of electron-<lb/>beam propagation through preionized dense foam plasmas, &quot;<lb/> Physical Review Letters, vol. 94, no. 19, Article ID 195001, 2005.<lb/> </bibl>
+        <bibl><label>[10]</label> K. V. Starikov and C. Deutsch, &quot; Stopping of relativistic electrons<lb/> in a partially degenerate electron fluid, &quot; Physical Review E, vol.<lb/> 71, Article ID 026407, 2005.<lb/> </bibl>
+        <bibl><label>[11]</label> J. R. Davies, &quot; Electric and magnetic field generation and target<lb/> heating by laser-generated fast electrons, &quot; Physical Review E, vol.<lb/> 68, Article ID 056404, 2003.<lb/> </bibl>
+        <bibl><label>[12]</label> V. M. Malkin and N. J. Fisch, &quot; Collective deceleration of<lb/> relativistic electrons precisely in the core of an inertial-fusion<lb/> target, &quot; Physical Review Letters, vol. 89, no. 12, Article ID 125004,<lb/> 4 pages, 2002.<lb/> </bibl>
+        <bibl><label>[13]</label> M. Mahdavi and F. K. Azadboni, &quot; The effect of density gradient<lb/> on the growth rate of relativistic Weibel instability, &quot; Physics of<lb/> Plasmas, vol. 21, no. 2, Article ID 022707, 2014.<lb/> </bibl>
+        <bibl><label>[14]</label> R. C. Fadanelli, J. F. Dias, and M. Behar, &quot; Coulomb heating<lb/> behavior of fast light diclusters thorough the Si ⟨110⟩ direction:<lb/> influence of the mean charge state, &quot; The European Physical<lb/> Journal D, vol. 68, pp. 1–5, 2014.<lb/> </bibl>
+        <bibl><label>[15]</label> A. Bret and C. Deutsch, &quot; Density gradient effects on beam<lb/> plasma linear instabilities for fast ignition scenario, &quot; Laser and<lb/> Particle Beams, vol. 24, no. 2, pp. 269–273, 2006.<lb/> </bibl>
+        <bibl><label>[16]</label> R. J. Mason, &quot; Heating mechanisms in short-pulse laser-driven<lb/> cone targets, &quot; Physical Review Letters, vol. 96, Article ID 035001,<lb/> 4 pages, 2006.<lb/> </bibl>
+        <bibl><label>[17]</label> M. Tzoufras, C. Ren, F. Tsung et al., &quot; Space-charge effects in<lb/> the current-filamentation or weibel instability, &quot; Physical Review<lb/> Letters, vol. 96, Article ID 105002, 2 pages, 2006.<lb/> </bibl>
+        <bibl><label>[18]</label> M. V. Medvedev and A. Leob, &quot; Generation of magnetic fields<lb/> in the relativistic shock of gamma-ray burst sources, &quot; The<lb/> Astrophysical Journal, vol. 526, no. 2, pp. 697–706, 1999.<lb/></bibl>
+        <bibl><label>[19]</label> K. O. Mikaelian and J. D. Lindl, &quot; Density gradients to reduce<lb/> fluid instabilities in multishell inertial-confinement-fusion tar-<lb/>gets, &quot; Physical Review A, vol. 29, no. 1, pp. 290–296, 1984.<lb/> </bibl>
+        <bibl><label>[20]</label> H. Ren, Z. Wu, J. Cao, C. Dong, and P. K. Chu, &quot; Density gradient<lb/> effects on the magnetorotational instability, &quot; Plasma Physics and<lb/> Controlled Fusion, vol. 53, no. 3, Article ID 035012, 2011.<lb/> </bibl>
+        <bibl><label>[21]</label> A. Bret and C. Deutsch, &quot; Beam plasma electromagnetic instabil-<lb/>ities in a smooth density gradient: application to the fast ignition<lb/> scenario, &quot; Physics of Plasmas, vol. 12, no. 10, Article ID 102702,<lb/> 2005.<lb/> </bibl>
+        <bibl><label>[22]</label> J. Pétri and J. G. Kirk, &quot; Numerical solution of the linear<lb/> dispersion relation in a relativistic pair plasma, &quot; Plasma Physics<lb/> and Controlled Fusion, vol. 49, no. 3, p. 297, 2007.<lb/> </bibl>
+        <bibl><label>[23]</label> U. Schaefer-Rolffs and R. C. Tautz, &quot; The relativistic kinetic<lb/> weibel instability: comparison of different distribution func-<lb/>tions, &quot; Physics of Plasmas, vol. 15, no. 6, Article ID 062105, 2008.<lb/> </bibl>
+        <bibl><label>[24]</label> M. Honda, J. Meyer-ter-Vehn, and A. Pukhov, &quot; Collective<lb/> stopping and ion heating in relativistic-electron-beam transport<lb/> for fast ignition, &quot; Physical Review Letters, vol. 85, no. 10, pp.<lb/> 2128–2131, 2000.<lb/> </bibl>
+        <bibl><label>[25]</label> W. P. Leemans, C. E. Clayton, W. B. Mori et al., &quot; Experiments<lb/> and simulations of tunnel-ionized plasmas, &quot; Physical Review A,<lb/> vol. 46, no. 2, pp. 1091–1105, 1992.<lb/> </bibl>
+        <bibl><label>[26]</label> F. Haas, &quot; Quantum Weibel instability, &quot; Physics of Plasmas, vol.<lb/> 15, no. 2, Article ID 022104, 6 pages, 2008.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

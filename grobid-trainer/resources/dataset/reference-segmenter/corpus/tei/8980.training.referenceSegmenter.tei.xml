@@ -1,0 +1,26 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> Y. Fukuda, T. Hayakawa, E. Ichihara et al., &quot; Evidence for<lb/> oscillation of atmospheric neutrinos, &quot; Physical Review Letters,<lb/> vol. 81, no. 8, pp. 1562–1567, 1998.<lb/> </bibl>
+        <bibl><label>[2]</label> M. Apollonio, A. Baldini, C. Bemporad et al., &quot; Limits on<lb/> neutrino oscillations from the CHOOZ experiment, &quot; Physics<lb/> Letters B, vol. 466, pp. 415–430, 1999.<lb/> </bibl>
+        <bibl><label>[3]</label> Q. Ahmad, R. C. Allen, T. C. Andersen et al., &quot; Direct evidence<lb/> for neutrino flavor transformation from neutral-current inter-<lb/>actions in the Sudbury Neutrino Observatory, &quot; Physical Review<lb/> Letters, vol. 89, Article ID 011301, 2002.<lb/> </bibl>
+        <bibl><label>[4]</label> S. N. Ahmed, A. E. Anthony, E. W. Beier et al., &quot; Measurement<lb/> of the total active<lb/> 8 B solar neutrino flux at the sudbury neutrino<lb/> observatory with enhanced neutral current sensitivity, &quot; Physical<lb/> Review Letters, vol. 92, Article ID 181301, 2004.<lb/> </bibl>
+        <bibl><label>[5]</label> K. Eguchi, S. Enomoto, K. Furuno et al., &quot; First results from<lb/> KamLAND: evidence for reactor antineutrino disappearance, &quot;<lb/> Physical Review Letters, vol. 90, Article ID 021802, 2003.<lb/> </bibl>
+        <bibl><label>[6]</label> M. Ahn, E. Aliu, S. Andringa et al., &quot; Measurement of neutrino<lb/> oscillation by the K2K experiment, &quot; Physical Review D, vol. 74,<lb/> no. 7, Article ID 072003, 39 pages, 2006.<lb/> </bibl>
+        <bibl><label>[7]</label> F. An, J. Z. Bai, A. B. Balantekin et al., &quot; Observation of electron-<lb/>antineutrino disappearance at daya bay, &quot; Physical Review Let-<lb/>ters, vol. 108, Article ID 171803, 2012.<lb/> </bibl>
+        <bibl><label>[8]</label> F. P. An, Q. An, J. Z. Bai et al., &quot; Improved measurement<lb/> of electron antineutrino disappearance at Daya Bay, &quot; Chinese<lb/> Physics C, vol. 37, no. 1, Article ID 011001, 2013.<lb/> </bibl>
+        <bibl><label>[9]</label> Y. Abe, C. Aberle, T. Akiri et al., &quot; Indication of reactor ] í µí±<lb/> disappearance in the double chooz experiment, &quot; Physical Review<lb/> Letters, vol. 108, no. 13, Article ID 131801, 7 pages, 2012.<lb/> </bibl>
+        <bibl><label>[10]</label> Y. Abe, C. Aberle, J. C. dos Anjos et al., &quot; Reactor í µí± í µí± disap-<lb/>pearance in the Double Chooz experiment, &quot; Physical Review D,<lb/> Article ID 052008, 2012.<lb/> </bibl>
+        <bibl><label>[11]</label> J. Ahn, S. Chebotaryov, J. H. Choi et al., &quot; Observation of<lb/> reactor electron antineutrinos disappearance in the RENO<lb/> experiment, &quot; Physical Review Letters, vol. 108, no. 19, 6 pages,<lb/> 2012.<lb/> </bibl>
+        <bibl><label>[12]</label> K. Abe, N. Abgrall, Y. Ajima et al., &quot; Indication of electron<lb/> neutrino appearance from an accelerator-produced off-axis<lb/> muon neutrino beam, &quot; Physical Review Letters, vol. 107, Article<lb/> ID 041801, 2011.<lb/> </bibl>
+        <bibl><label>[13]</label> D. G. Michael, P. Adamson, T. Alexopoulos et al., &quot; Observation<lb/> of muon neutrino disappearance with the MINOS detectors<lb/> in the NuMI neutrino beam, &quot; Physical Review Letters, vol. 97,<lb/> Article ID 191801, 2006.<lb/> </bibl>
+        <bibl><label>[14]</label> P. Adamson, D. J. Auty, D. S. Ayres et al., &quot; Improved search for<lb/> Muon-neutrino to electron-neutrino oscillations in MINOS, &quot;<lb/> Physical Review Letters, vol. 107, no. 18, Article ID 181802, 6<lb/> pages, 2011.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

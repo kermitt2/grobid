@@ -1,0 +1,30 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> V. G. Gurzadyan, &quot; 10 key problems in stellar dynamics: in<lb/> retrospect, &quot; http://arxiv.org/abs/1407.0398.<lb/> </bibl>
+        <bibl><label>[2]</label> S. J. Aarseth, Gravitational N-Body Simulations, Cambridge<lb/> Monographs on Mathematical Physics, Cambridge University<lb/> Press, Cambridge, UK, 2003.<lb/> </bibl>
+        <bibl><label>[3]</label> J. Makino, T. Fukushige, M. Koga, and K. Namura, &quot; GRAPE-6:<lb/> massively-parallel special-purpose computer for astrophysical<lb/> particle simulations, &quot; Publications of the Astronomical Society of<lb/> Japan, vol. 55, no. 6, pp. 1163–1187, 2003.<lb/> </bibl>
+        <bibl><label>[4]</label> M. Eingorn and A. Zhuk, &quot; Hubble flows and gravitational<lb/> potentials in observable Universe, &quot; Journal of Cosmology and<lb/> Astroparticle Physics, vol. 9, article 026, 2012.<lb/> </bibl>
+        <bibl><label>[5]</label> M. Eingorn, A. Kudinova, and A. Zhuk, &quot; Dynamics of astro-<lb/>physical objects against the cosmological background, &quot; Journal<lb/> of Cosmology and Astroparticle Physics, vol. 4, article 010, 2013.<lb/> </bibl>
+        <bibl><label>[6]</label> M. Eingorn and A. Zhuk, &quot; Remarks on mechanical approach<lb/> to observable Universe, &quot; Journal of Cosmology and Astroparticle<lb/> Physics, vol. 5, article 024, 2014.<lb/> </bibl>
+        <bibl><label>[7]</label> P. J. Peebles, The Large-Scale Structure of the Universe, Princeton<lb/> University Press, Princeton, NJ, USA, 1980.<lb/> </bibl>
+        <bibl><label>[8]</label> V. Springel, &quot; The cosmological simulation code GADGET-2, &quot;<lb/> Monthly Notices of the Royal Astronomical Society, vol. 364, no.<lb/> 4, pp. 1105–1134, 2005.<lb/> </bibl>
+        <bibl><label>[9]</label> L. D. Landau and E. M. Lifshitz, The Classical Theory of Fields,<lb/> vol. 2 of Course of Theoretical Physics Series, Oxford Pergamon<lb/> Press, Oxford, UK, 4th edition, 2000.<lb/> </bibl>
+        <bibl><label>[10]</label> M. Eingorn, M. Brilenkov, and B. Vlahovic, &quot; Zero average val-<lb/>ues of cosmological perturbations as an indispensable condition<lb/> for the theory and simulations, &quot; http://arxiv.org/abs/1407.3244.<lb/> </bibl>
+        <bibl><label>[11]</label> H. C. Plummer, &quot; On the problem of distribution in globular star<lb/> clusters, &quot; Monthly Notices of the Royal Astronomical Society, vol.<lb/> 71, pp. 460–470, 1911.<lb/> </bibl>
+        <bibl><label>[12]</label> K. Dolag, S. Borgani, S. Schindler, A. Diaferio, and A. M. Bykov,<lb/> &quot; Simulation techniques for cosmological simulations, &quot; Space<lb/> Science Reviews, vol. 134, no. 1–4, pp. 229–268, 2008.<lb/> </bibl>
+        <bibl><label>[13]</label> F. Iannuzzi and K. Dolag, &quot; Adaptive gravitational softening in<lb/> GADGET, &quot; Monthly Notices of the Royal Astronomical Society,<lb/> vol. 417, no. 4, pp. 2846–2859, 2011.<lb/> </bibl>
+        <bibl><label>[14]</label> J. E. Barnes, &quot; Gravitational softening as a smoothing operation, &quot;<lb/> Monthly Notices of the Royal Astronomical Society, vol. 425, no.<lb/> 2, pp. 1104–1120, 2012.<lb/> </bibl>
+        <bibl><label>[15]</label> B. Röttgers, T. Naab, and L. Oser, &quot; Stellar orbits in cosmological<lb/> galaxy simulations: the connection to formation history and<lb/> line-of-sight kinematics, &quot; Monthly Notices of the Royal Astro-<lb/>nomical Society, vol. 445, no. 2, pp. 1065–1083, 2014.<lb/> </bibl>
+        <bibl><label>[16]</label> L. Hernquist, &quot; An analytical model for spherical galaxies and<lb/> bulges, &quot; Astrophysical Journal, vol. 356, no. 2, pp. 359–364, 1990.<lb/> </bibl>
+        <bibl><label>[17]</label> L. D. Landau and E. M. Lifshitz, Mechanics, vol. 1 of Course of<lb/> Theoretical Physics Series, Oxford Pergamon Press, Oxford, UK,<lb/> 3rd edition, 2000.<lb/> </bibl>
+        <bibl><label>[18]</label> K. S. Oh, D. N. C. Lin, and S. J. Aarseth, &quot; On the tidal<lb/> disruption of dwarf spheroidal galaxies around the galaxy, &quot; The<lb/> Astrophysical Journal, vol. 442, no. 1, pp. 142–158, 1995.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

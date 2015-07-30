@@ -1,0 +1,38 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> J. Adams, M. M. Aggarwal, Z. Ahammed et al., &quot; Experimental<lb/> and theoretical challenges in the search for the quark–gluon<lb/> plasma: The STAR Collaboration&apos;s critical assessment of the<lb/> evidence from RHIC collisions, &quot; Nuclear Physics A, vol. 757, no.<lb/> 1-2, pp. 102–183, 2005.<lb/> </bibl>
+        <bibl><label>[2]</label> B. Abelev, J. Adam, D. Adamova et al., &quot; Centrality dependence<lb/> of í µí¼, K, and p production in Pb-Pb collisions at √í µí± í µí±í µí± = 2.76<lb/> </bibl>
+<bibl>TeV, &quot; Physical Review C, vol. 88, no. 4, Article ID 044910, 23<lb/> pages, 2013.<lb/> </bibl>
+        <bibl><label>[3]</label> J. W. Harris and B. Müller, &quot; The search for the Quark-Gluon<lb/> plasma, &quot; Annual Review of Nuclear and Particle Science, vol. 46,<lb/> pp. 71–107, 1996.<lb/> </bibl>
+        <bibl><label>[4]</label> B. Blaizot, &quot; Signals of the quark-gluon plasma in nucleus-<lb/>nucleus collisions, &quot; Nuclear Physics A, vol. 661, pp. 3–12, 1999.<lb/> </bibl>
+        <bibl><label>[5]</label> C. Y. Wong, Introduction to High-Energy Heavy Ion Collisions,<lb/> World Scientific, Singapore, 1994.<lb/> </bibl>
+        <bibl><label>[6]</label> K. Adcox, S. S. Adler, S. Afanasiev et al., &quot; Formation of dense<lb/> partonic matter in relativistic nucleus–nucleus collisions at<lb/> RHIC: experimental evaluation by the PHENIX Collaboration, &quot;<lb/> Nuclear Physics A, vol. 757, pp. 184–283, 2005.<lb/> </bibl>
+        <bibl><label>[7]</label> T. S. Biró, E. Van Doorn, B. Müller, M. H. Thoma, and X.-N.<lb/> </bibl>
+<bibl>Wang, &quot; Parton equilibration in relativistic heavy ion collisions, &quot;<lb/> Physical Review C, vol. 48, no. 3, pp. 1275–1284, 1993.<lb/> </bibl>
+        <bibl><label>[8]</label> K. Geiger and J. I. Kapusta, &quot; Chemical equilibration of partons<lb/> in high-energy heavy-ion collisions? &quot; Physical Review D, vol. 47,<lb/> no. 11, pp. 4905–4919, 1993.<lb/> </bibl>
+        <bibl><label>[9]</label> P. Koch, B. Müller, and J. Rafelski, &quot; Strangeness in relativistic<lb/> heavy ion collisions, &quot; Physics Reports, vol. 142, no. 4, pp. 167–<lb/> 262, 1986.<lb/> </bibl>
+        <bibl><label>[10]</label> S. A. Bass, P. Danielewicz, and S. Pratt, &quot; Clocking hadronization<lb/> in relativistic heavy-ion collisions with balance functions, &quot;<lb/> Physical Review Letters, vol. 85, no. 13, pp. 2689–2692, 2000.<lb/> </bibl>
+        <bibl><label>[11]</label> S. Pratt, &quot; General charge balance functions: a tool for studying<lb/> the chemical evolution of the quark-gluon plasma, &quot; Physical<lb/> Review C, vol. 85, Article ID 014904, 2012.<lb/> </bibl>
+        <bibl><label>[12]</label> U. Heinz, &quot; Early collective expansion: relativistic hydrodynam-<lb/>ics and the transport properties of QCD matter, &quot; in Relativistic<lb/> Heavy Ion Physics, vol. 23, pp. 240–292, Springer, Belin, Ger-<lb/>many, 2010.<lb/> </bibl>
+        <bibl><label>[13]</label> S. Borsányi, G. Endr˝ odi, Z. Fodor et al., &quot; The QCD equation<lb/> of state with dynamical quarks, &quot; Journal of High Energy Physics,<lb/> vol. 2010, article 77, 2010.<lb/> </bibl>
+        <bibl><label>[14]</label> S. Borsányi, Z. Fodor, S. D. Katz, S. Krieg, C. Ratti, and K. Szabó,<lb/> &quot; Fluctuations of conserved charges at finite temperature from<lb/> lattice QCD, &quot; Journal of High Energy Physics, vol. 2012, article<lb/> 138, 2012.<lb/> </bibl>
+        <bibl><label>[15]</label> S. Plumari, W. M. Alberico, V. Greco, and C. Ratti, &quot; Recent<lb/> thermodynamic results from lattice QCD analyzed within a<lb/> quasiparticle model, &quot; Physical Review D, vol. 84, no. 9, Article<lb/> ID 094004, 10 pages, 2011.<lb/> [16] G. F. Bertsch, &quot; Meson phase space density in heavy ion<lb/> collisions from interferometry, &quot; Physical Review Letters, vol. 72,<lb/> Article ID 2349, 1994.<lb/> </bibl>
+        <bibl><label>[17]</label> S. Jeon and V. Koch, &quot; Event-by-event fluctuations, &quot; http://arxiv<lb/> .org/abs/hep-ph/0304012.<lb/> </bibl>
+        <bibl><label>[18]</label> J. D. Bjorken, &quot; Highly relativistic nucleus-nucleus collisions: the<lb/> central rapidity region, &quot; Physical Review D, vol. 27, no. 1, pp. 140–<lb/> 151, 1983.<lb/> </bibl>
+        <bibl><label>[19]</label> D. H. Rischke and M. Gyulassy, &quot; The time-delay signature of<lb/> quark-gluon plasma formation in relativistic nuclear collisions, &quot;<lb/> Nuclear Physics A, vol. 608, pp. 479–512, 1996.<lb/> </bibl>
+        <bibl><label>[20]</label> S. S. Adler, S. Afanasiev, C. Aidala et al., &quot; Identified charged<lb/> particle spectra and yields in Au+Aucollisions at √í µí± í µí±í µí± = 200<lb/> </bibl>
+<bibl>GeV, &quot; Physical Review C, vol. 69, Article ID 034909, 2004.<lb/> </bibl>
+        <bibl><label>[21]</label> Y. H. Pan and S. Pratt, &quot; Baryon annihilation and regeneration<lb/> in heavy ion collisions, &quot; Physical Review C, vol. 89, Article ID<lb/> 044911, 2014.<lb/> </bibl>
+        <bibl><label>[22]</label> Y. H. Pan and W. N. Zhang, &quot; Resonance-like QGP signals<lb/> displayed in general charge balance functions<lb/> , &quot; International Journal of Modern Physics E, vol. 23, no. 8, Article<lb/> ID 1450036, 2014.<lb/> </bibl>
+        <bibl><label>[23]</label> M. A. Aziz and S. Gavin, &quot; Causal diffusion and the survival of<lb/> charge fluctuations in nuclear collisions, &quot; Physical Review C, vol.<lb/> 70, Article ID 034905, 2004.<lb/> </bibl>
+        <bibl><label>[24]</label> M. M. Aggarwal, &quot; Balance functions from Au+Au, d+Au, and<lb/> í µí± + í µí± collisions at √í µí± í µí±í µí± = 200 GeV, &quot; Physical Review C, vol. 82,<lb/> Article ID 024905, 2010.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

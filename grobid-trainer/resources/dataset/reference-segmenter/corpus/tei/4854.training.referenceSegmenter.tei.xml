@@ -1,0 +1,26 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> W. Stallings, Cryptography and Network Security: Principles and<lb/> Practice, Pearson Custom Computer Science, Prentice Hall, 5th<lb/> edition, 2010.<lb/> </bibl>
+        <bibl><label>[2]</label> H. C. Bennett and G. Brassard, &quot; Quantum cryptography: public<lb/> key distribution and coin tossing, &quot; in Proceedings of the IEEE<lb/> International Conference on Computers, Systems and Signal<lb/> Processing, vol. 175, pp. 175–179, New York, NY, USA, 1984.<lb/> </bibl>
+        <bibl><label>[3]</label> C. H. Bennett, F. Bessette, G. Brassard, L. Salvail, and J. Smolin,<lb/> &quot; Experimental quantum cryptography, &quot; Journal of Cryptology,<lb/> vol. 5, no. 1, pp. 3–28, 1992.<lb/> </bibl>
+        <bibl><label>[4]</label> S. Dutta, A. Kumar, and N. C. Mahanti, &quot; Network security based<lb/> on quantum cryptography and multi qubit hadamard matrices, &quot;<lb/> Global Journal of Computer Science and Technology, vol. 11, no.<lb/> 12, 2011.<lb/> </bibl>
+        <bibl><label>[5]</label> Z. Cao and L. Liu, &quot; Improvement of one quantum encryption<lb/> scheme, &quot; in Proceedings of the IEEE International Conference on<lb/> Intelligent Computing and Intelligent Systems (ICIS &apos;12), vol. 1, pp.<lb/> 335–339, IEEE, 2012.<lb/> </bibl>
+        <bibl><label>[6]</label> R.-G. Zhou, Q. Wu, M.-Q. Zhang, and C.-Y. Shen, &quot; Quantum<lb/> image encryption and decryption algorithms based on quan-<lb/>tum image geometric transformations, &quot; International Journal of<lb/> Theoretical Physics, vol. 52, no. 6, pp. 1802–1817, 2013.<lb/> </bibl>
+        <bibl><label>[7]</label> T. Hua, J. Chen, D. Pei, W. Zhang, and N. Zhou, &quot; Quantum<lb/> image encryption algorithm based on image correlation decom-<lb/>position, &quot; International Journal of Theoretical Physics, 2014.<lb/> </bibl>
+        <bibl><label>[8]</label> M. A. Nielsen and I. L. Chuang, Quantum Computation and<lb/> Quantum Information, Cambridge University Press, 2000.<lb/> </bibl>
+        <bibl><label>[9]</label> M. M. Wilde, &quot; Quantum-shift-register circuits, &quot; Physical Review<lb/> A, vol. 79, no. 6, Article ID 062325, 16 pages, 2009.<lb/> </bibl>
+        <bibl><label>[10]</label> J. H. Park, J. H. Kang, T. B. Jung et al., &quot; Low error operation of<lb/> a 4 stage single flux quantum shift register built with Y-Ba-Cu-<lb/>O bicrystal Josephson junctions, &quot; IEEE Transactions on Applied<lb/> Superconductivity, vol. 11, no. 1, pp. 625–628, 2001.<lb/> </bibl>
+        <bibl><label>[11]</label> J.-W. Lee, E. K. Lee, J. Kim, and S. Lee, &quot; Quantum shift register, &quot;<lb/> http://arxiv.org/abs/quant-ph/0112107.<lb/> </bibl>
+        <bibl><label>[12]</label> M. Grassl and T. Beth, &quot; Cyclic quantum error-correcting codes<lb/> and quantum shift registers, &quot; Proceedings of the Royal Society of<lb/> London A: Mathematical, Physical and Engineering Sciences, vol.<lb/> 456, no. 2003, pp. 2689–2706, 2000.<lb/> </bibl>
+        <bibl><label>[13]</label> A. Barenco, D. Deutsch, A. Ekert, and R. Jozsa, &quot; Conditional<lb/> quantum dynamics and logic gates, &quot; Physical Review Letters, vol.<lb/> 74, no. 20, pp. 4083–4086, 1995.<lb/> </bibl>
+        <bibl><label>[14]</label> N. Linden, E. Kupče, and R. Freeman, &quot; NMR quantum logic<lb/> gates for homonuclear spin systems, &quot; Chemical Physics Letters,<lb/> vol. 311, no. 3-4, pp. 321–327, 1999.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

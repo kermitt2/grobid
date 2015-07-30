@@ -1,0 +1,67 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        References<lb/> 
+        <bibl><label>1 </label>B. S. Rajput, &quot; Relationship between restricted chromodynamics and the dual superconductivity, &quot;<lb/> Indian Journal of Pure and Applied Physics, vol. 34, no. 88, pp. 528–533, 1996.<lb/> </bibl>
+        <bibl><label>2 </label>B. S. Raiput, &quot; Superconductivity at higher temperature as restoration of supersymmetry, &quot; Indian<lb/> Journal of Pure and Applied Physics, vol. 33, p. 166, 1995.<lb/> </bibl>
+        <bibl><label>3 </label>S. Kumar, R. Swarup, B. S. Rajput, and B. Singh, &quot; Dual superconductivity in restricted chromo-<lb/>dynamics RCD, &quot; International Journal of Theoretical Physics, vol. 48, no. 6, pp. 1766–1780, 2009.<lb/> </bibl>
+        <bibl><label>4 </label>S. Kumar, &quot; Superconductivity in restricted chromo-dynamics RCD in SU2 and SU3 Gauge<lb/> theories, &quot; International Journal of Theoretical Physics, vol. 49, no. 3, pp. 512–525, 2010.<lb/> </bibl>
+        <bibl><label>5 </label>Y. Nambu, &quot; Strings, monopoles, and gauge fields, &quot; Physical Review D, vol. 10, no. 12, pp. 4262–4268,<lb/> 1974.<lb/> </bibl>
+        <bibl><label>6 </label>Y. Nambu, &quot; Magnetic and electric confinement of quarks, &quot; Physics Reports, vol. 23, no. 3, pp. 250–253,<lb/> 1976.<lb/> </bibl>
+        <bibl><label>7 </label>G. &apos;t Hooft, &quot; On the phase transition towards permanent quark confinement, &quot; Nuclear Physics B, vol.<lb/> 138, no. 1, pp. 1–25, 1978.<lb/> </bibl>
+        <bibl><label>8 </label>B. S. Rajput, J. M. S. Rana, and H. C. Chandola, &quot; Quark confinement through dyonic condensation, &quot;<lb/> Progress of Theoretical Physics, vol. 82, pp. 153–161, 1989.<lb/> </bibl>
+        <bibl><label>9 </label>B. S. Rajput, J. M. S. Rana, and H. C. Chandola, &quot; The quark confinement in extended gauge theory, &quot;<lb/> Canadian Journal of Physics, vol. 69, pp. 1441–1446, 1991.<lb/> </bibl>
+        <bibl><label>10 </label>S. Mandelstam, &quot; Vortices and quark confinement in non-Abelian gauge theories, &quot; Physics Reports, vol.<lb/> 23, no. 3, pp. 245–249, 1976.<lb/> </bibl>
+        <bibl><label>11 </label>S. Mandelstam, &quot; Approximation scheme for quantum chromodynamics, &quot; Physical Review C, vol. 35,<lb/> p. 259, 1984.<lb/> </bibl>
+        <bibl><label>12 </label>S. Mandelstam, &quot; Charge-monopole duality and the phases of non-Abelian gauge theories, &quot; Physical<lb/> Review D, vol. 19, no. 8, pp. 2391–2409, 1979.<lb/> </bibl>
+        <bibl><label>13 </label>Z. F. Ezawa and A. Iwazaki, &quot; ZN topology and charge confinement in SUN Higgs models, &quot; Physical<lb/> Review D, vol. 23, no. 12, pp. 3036–3045, 1981.<lb/> </bibl>
+        <bibl><label>14 </label>Z. F. Ezawa and A. Iwazaki, &quot; ZN topology and charge confinement in SUN Higgs models. II, &quot;<lb/> Physical Review D, vol. 24, no. 8, pp. 2264–2273, 1981.<lb/> </bibl>
+        <bibl><label>15 </label>Z. F. Ezawa and A. Iwazaki, &quot; Abelian dominance and quark confinement in Yang-Mills theories, &quot;<lb/> Physical Review D, vol. 25, no. 10, pp. 2681–2689, 1982.<lb/> </bibl>
+        <bibl><label>16 </label>Z. F. Ezawa and A. Iwazaki, &quot; Abelian dominance and quark confinement in Yang-Mills theories. II.<lb/> Oblique confinement and η mass, &quot; Physical Review D, vol. 26, no. 3, pp. 631–647, 1982.<lb/> </bibl>
+        <bibl><label>17 </label>V. P. Nair and C. Rosenzweig, &quot; QCD vacuum as a chromomagnetic superconductor: microscopic<lb/> physics, &quot; Physical Review D, vol. 31, no. 2, pp. 401–410, 1985.<lb/> </bibl>
+        <bibl><label>18</label> G. t&apos;Hooft, &quot; Topology of the gauge condition and new confinement phases in non-abelian gauge<lb/> theories, &quot; Nuclear Physics B, vol. 190, no. 3, pp. 455–478, 1981.<lb/> </bibl>
+        <bibl><label>19</label> Yu. A. Simonov, &quot; The confinement, &quot; Physics-Uspekhi, vol. 39, no. 4, pp. 313–336, 1996.<lb/> </bibl>
+        <bibl><label>20 </label>A. D&apos;Alessandro, M. D&apos;Elia, and L. Tagliacozzo, &quot; Dual superconductivity and vacuum properties in<lb/> Yang-Mills theories, &quot; Nuclear Physics B, vol. 774, no. 1–3, pp. 168–181, 2007.<lb/> </bibl>
+        <bibl><label>21 </label>P. Yu. Boyko, V. G. Bornyakov, E.-M. Ilgenfritz et al., &quot; Once more on the interrelation between Abelian<lb/> monopoles and P-vortices in SU 2 LGT, &quot; Nuclear Physics B, vol. 756, no. 1-2, pp. 71–85, 2006.<lb/> </bibl>
+        <bibl><label>22 </label>V. Bornyakov and G. Schierholz, &quot; Instantons or monopoles? Dyons, &quot; Physics Letters B, vol. 384, no.<lb/> 1–4, pp. 190–196, 1996.<lb/> </bibl>
+        <bibl><label>23 </label>M. N. Chernodub and F. V. Gubarev, Journal of Experimental and Theoretical Physics Letters, vol. 62, p.<lb/> 100, 1995.<lb/> </bibl>
+        <bibl><label>24 </label>A. Hart and M. Teper, &quot; Instantons and monopoles in the maximally Abelian gauge, &quot; Physics Letters ,<lb/> vol. 371, no. 3-4, pp. 261–269, 1996.<lb/> </bibl>
+        <bibl><label>25 </label>T. C. Kraan and P. Van Baal, &quot; Exact T-duality between calorons and Taub-NUT spaces, &quot; Physics Letters<lb/> B, vol. 428, no. 3-4, pp. 268–276, 1998.<lb/> </bibl>
+        <bibl><label>26 </label>T. C. Kraan and P. Van Baal, &quot; Periodic instantons with non-trivial holonomy, &quot; Nuclear Physics B, vol.<lb/> 533, no. 1–3, pp. 627–659, 1998.<lb/> </bibl>
+        <bibl><label>27 </label>D. Diakonov and V. Petrov, &quot; Confining ensemble of dyons, &quot; Physical Review D, vol. 76, no. 5, Article<lb/> ID 056001, 2007.<lb/></bibl>
+        <bibl><label> 28</label> G. S. Bali, V. Bornyakov, M. M ¨<lb/> uller-Preussker, and K. Schilling, &quot; Dual superconductor scenario of<lb/> confinement: a systematic study of Gribov copy effects, &quot; Physical Review D, vol. 54, no. 4, pp. 2863–<lb/> 2875, 1996.<lb/> </bibl>
+        <bibl><label>29 </label>T. Suzuki and I. Yotsuyanagi, &quot; Possible evidence for Abelian dominance in quark confinement, &quot;<lb/> Physical Review D, vol. 42, no. 12, pp. 4257–4260, 1990.<lb/> </bibl>
+        <bibl><label>30 </label>T. Suzuki, &quot; Monopoles and confinement, &quot; Nuclear Physics B, vol. 30, pp. 176–183, 1993.<lb/> </bibl>
+        <bibl><label>31 Y.</label> Koma, M. Koma, E.-M. Ilgenfritz, T. Suzuki, and M. I. Polikarpov, &quot; Duality of gauge field<lb/> singularities and the structure of the flux tube in Abelian-projected SU2 gauge theory and the dual<lb/> Abelian Higgs model, &quot; Physical Review D, vol. 68, no. 9, Article ID 094018, 11 pages, 2003.<lb/> 32 A. AchAch´Achúcarro and T. Vachaspati, &quot; Semilocal and electroweak strings, &quot; Physics Report, vol. 327, no. 6,<lb/> pp. 347–426, 2000.<lb/> </bibl>
+        <bibl><label>33 P.</label> Forgács, S. Reuillon, and M. S. Volkov, &quot; Twisted superconducting semilocal strings, &quot; Nuclear Physics<lb/> B, vol. 751, no. 3, pp. 390–418, 2006.<lb/> </bibl>
+        <bibl><label>34 T.</label> Sekido, K. Ishiguro, Y. Koma, Y. Mori, and T. Suzuki, &quot; Abelian dominance and the dual Meissner<lb/> effect in local unitary gauges in SU2 gluodynamics, &quot; Physical Review D, vol. 76, no. 3, Article ID<lb/> 031501, 2007.<lb/> </bibl>
+        <bibl><label>35 </label>M. N. Chernodub, K. Ishiguro, Y. Mori et al., &quot; Vacuum type of SU2 gluodynamics in maximally<lb/> Abelian and Landau gauges, &quot; Physical Review D, vol. 72, no. 7, Article ID 074505, 14 pages, 2005.<lb/> </bibl>
+        <bibl><label>36 </label>Q. Wang, Z.-G. Wang, and J. Wu, &quot; Phase space and quark mass effects in neutrino emissions in a color<lb/> superconductor, &quot; Physical Review D, vol. 74, no. 1, Article ID 014021, 2006.<lb/> </bibl>
+        <bibl><label>37 </label>W. Zhang and C. A. R. Sá De Melo, &quot; Coexistence of triplet superconductivity and spin density waves, &quot;<lb/> Physical Review Letters, vol. 97, no. 4, Article ID 047001, 2006.<lb/> </bibl>
+        <bibl><label>38 </label>S. Corlevi, W. Guichard, F. W. J. Hekking, and D. B. Haviland, &quot; Phase-charge duality of a Josephson<lb/> junction in a fluctuating electromagnetic environment, &quot; Physical Review Letters, vol. 97, no. 9, Article<lb/> ID 096802, 2006.<lb/> </bibl>
+        <bibl><label>39 </label>M. N. Chernodub, &quot; Kertész line and embedded monopoles in QCD, &quot; Physical Review Letters, vol. 95,<lb/> no. 25, Article ID 252002, 4 pages, 2005.<lb/> </bibl>
+        <bibl><label>40 </label>J. Greensite, &quot; The confinement problem in lattice gauge theory, &quot; Progress in Particle and Nuclear Physics,<lb/> vol. 51, no. 1, pp. 1–83, 2003.<lb/> </bibl>
+        <bibl><label>41 </label>B. S. Rajput and D. C. Joshi, &quot; Generalized electromagnetic fields associated with spin 1/2 particles, &quot;<lb/> Hadronic Journal, vol. 4, pp. 1805–1830, 1981.<lb/> </bibl>
+        <bibl><label>42 </label>B. S. Rajput and O. Prakash, &quot; Study of fields associated with particles carrying, &quot; Indian Journal of<lb/> Physics, vol. 50, p. 929, 1976.<lb/> </bibl>
+        <bibl><label>43 </label>B. S. Rajput, D. S. Bhakuni, and O. P. S. Negi, &quot; Generalized fields associated with dyons, &quot; Lettere al<lb/> Nuovo Cimento, vol. 34, p. 50, 1983.<lb/> </bibl>
+        <bibl><label>44 </label>B. S. Rajput and D. C. Joshi, &quot; Reduction and second quantization of generalized electromagnetic fields<lb/> for non-zero mass system, &quot; Pramana, vol. 13, p. 637, 1979.<lb/> </bibl>
+        <bibl><label>45 </label>B. S. Rajput, D. S. Bhakuni, and O. P. S. Negi, &quot; Angular momentum operators for dyons, &quot; Lettere al<lb/> Nuovo Cimento, vol. 36, p. 15, 1983.<lb/> </bibl>
+        <bibl><label>46 </label>B. Julia and A. Zee, &quot; Poles with both magnetic and electric charges in non-Abelian gauge theory, &quot;<lb/> Physical Review D, vol. 11, no. 8, pp. 2227–2232, 1975.<lb/> </bibl>
+        <bibl><label>47 </label>M. K. Prasad and C. M. Sommerfield, &quot; Exact classical solution for the &apos;t hooft monopole and the<lb/> Julia-Zee dyon, &quot; Physical Review Letters, vol. 35, no. 12, pp. 760–762, 1975.<lb/> </bibl>
+        <bibl><label>48 </label>M. N. Chernodub and F. V. Gubarev, &quot; Instantons and monopoles in maximal Abelian projection of<lb/> SU2 gluodynamics, &quot; Journal of Experimental and Theoretical Physics Letters, vol. 62, pp. 100–104, 1995.<lb/> </bibl>
+        <bibl><label>49 </label>P. C. Pant, V. P. Pandey, and B. S. Rajput, &quot; Pauli equation for spin-1/2 dyonium in non-Abelian gauge<lb/> theory, &quot; Nuovo Cimento della Societa Italiana di Fisica A, vol. 110, no. 12, pp. 1421–1434, 1997.<lb/> </bibl>
+        <bibl><label>50 </label>B. S. Rajput, V. P. Pandey, and H. C. Chandola, &quot; Dyon-dyon bound states, &quot; Canadian Journal of Physics,<lb/> vol. 67, pp. 1002–1006, 1989.<lb/> </bibl>
+        <bibl><label>51 </label>B. S. Rajput, P. P. Purohit, and V. P. Pandey, &quot; Scattering of dyons and decay of anti-dyonium, &quot; Indian<lb/> Journal of Physics, vol. 76, p. 199, 2002.<lb/> </bibl>
+        <bibl><label>52 </label>E. -M. Ilgenfritz and M. Mueller-Preussker, &quot; Statistical mechanics of the interacting Yang-Mills<lb/> instanton gas, &quot; Nuclear Physics B, vol. 184, pp. 443–460, 1981.<lb/> </bibl>
+        <bibl><label>53 </label>E. V. Shuryak, &quot; The role of instantons in quantum chromodynamics. I. Physical vacuum, &quot; Nuclear<lb/> Physics B, vol. 203, no. 1, pp. 93–115, 1982.<lb/> </bibl>
+        <bibl><label>54 </label>D. I. Dyakonov and V. Yu. Petrov, &quot; Instanton-based vacuum from the Feynman variational principle, &quot;<lb/> Nuclear Physics B, vol. 245, pp. 259–292, 1984.<lb/> </bibl>
+        <bibl><label>55 </label>D. Diakonov, N. Gromov, V. Petrov, and S. Slizovskiy, &quot; Quantum weights of dyons and of instantons<lb/> with nontrivial holonomy, &quot; Physical Review D, vol. 70, no. 3, Article ID 036003, 2004.<lb/> </bibl>
+        <bibl><label>56 </label>D. Diakonov, &quot; Topology and confinement, &quot; Nuclear Physics B, vol. 195, pp. 5–45, 2009.<lb/> </bibl>
+        <bibl><label>57 </label>P. S. Bisht, T. Li, Pushpa, and O. P. S. Negi, &quot; Discrete symmetries and generalized fields of dyons, &quot;<lb/> International Journal of Theoretical Physics, vol. 49, no. 6, pp. 1370–1383, 2010.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,44 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> T. Faber and M. Visser, &quot; Combining rotation curves and<lb/> gravitational lensing: how to measure the equation of state of<lb/> dark matter in the galactic halo, &quot; Monthly Notices of the Royal<lb/> Astronomical Society, vol. 372, no. 1, pp. 136–142, 2006.<lb/> </bibl>
+        <bibl><label>[2]</label> F. Rahaman, M. Kalam, A. DeBenedictis, A. Usmani, and S. Ray,<lb/> &quot; Galactic rotation curves and brane-world models, &quot; Monthly<lb/> Notices of the Royal Astronomical Society, vol. 389, no. 1, pp. 27–<lb/> 33, 2008.<lb/> </bibl>
+        <bibl><label>[3]</label> K. K. Nandi, A. I. Filippov, F. Rahaman et al., &quot; Features<lb/> of galactic halo in a brane world model and observational<lb/> constraints, &quot; Monthly Notices of the Royal Astronomical Society,<lb/> vol. 399, no. 4, pp. 2079–2087, 2009.<lb/> </bibl>
+        <bibl><label>[4]</label> E. W. Kolb and M. S. Turner, The Early Universe, Addison-<lb/>Wesley, Reading, Mass, USA, 1990.<lb/> </bibl>
+        <bibl><label>[5]</label> G. Jungman, M. Kamionkowski, and K. Griest, &quot; Supersymmet-<lb/>ric dark matter, &quot; Physics Report, vol. 267, no. 5-6, pp. 195–373,<lb/> 1996.<lb/> </bibl>
+        <bibl><label>[6]</label> C. G. Böhmer, T. Harko, and F. S. N. Lobo, &quot; Dark matter as a<lb/> geometric effect in f (R) gravity, &quot; Astroparticle Physics, vol. 29,<lb/> no. 6, pp. 386–392, 2008.<lb/> </bibl>
+        <bibl><label>[7]</label> F. Rahaman, R. Biswas, H. I. Fatima, and N. Islam, &quot; A new<lb/> proposal for galactic dark matter: effect of í µí±(í µí±) gravity, &quot;<lb/> International Journal of Theoretical Physics, vol. 53, no. 2, pp.<lb/> 370–379, 2014.<lb/> </bibl>
+        <bibl><label>[8]</label> S. Fay, &quot; Scalar fields properties for flat galactic rotation curves, &quot;<lb/> Astronomy &amp; Astrophysics, vol. 41, no. 3, pp. 799–805, 2004.<lb/> </bibl>
+        <bibl><label>[9]</label> K. K. Nandi, I. Valitov, and N. G. Migranov, &quot; Remarks on the<lb/> spherical scalar field halo in galaxies, &quot; Physical Review D, vol.<lb/> 80, no. 4, Article ID 047301, 2009.<lb/> </bibl>
+        <bibl><label>[10]</label> J. F. Navarro, C. S. Frenk, and S. D. M. White, &quot; The structure of<lb/> cold dark matter halos, &quot; Astrophysical Journal, vol. 462, p. 563,<lb/> 1996.<lb/> </bibl>
+        <bibl><label>[11]</label> J. F. Navarro, C. S. Frenk, and S. D. M. White, &quot; A universal<lb/> density profile from hierarchical clustering, &quot; The Astrophysical<lb/> Journal, vol. 490, p. 493, 1997.<lb/> </bibl>
+        <bibl><label>[12]</label> F. Rahaman, P. K. F. Kuhfittig, S. Ray, and N. Islam, &quot; Possible<lb/> existence of wormholes in the galactic halo region, &quot; European<lb/> Physical Journal C, vol. 74, no. 2, pp. 1–7, 2014.<lb/> </bibl>
+        <bibl><label>[13]</label> P. K. F. Kuhfittig, &quot; Gravitational lensing of wormholes in the<lb/> galactic halo region, &quot; The European Physical Journal C, vol. 74,<lb/> article 2818, 2014.<lb/> </bibl>
+        <bibl><label>[14]</label> S.-H. Chen, J. B. Dent, S. Dutta, and E. N. Saridakis, &quot; Cosmo-<lb/>logical perturbations in f(T) gravity, &quot; Physical Review D, vol. 83,<lb/> Article ID 023508, 2011.<lb/> </bibl>
+        <bibl><label>[15]</label> M. Sharif and S. Rani, &quot; Generalized teleparallel gravity via some<lb/> scalar field dark energy models, &quot; Astrophysics and Space Science,<lb/> vol. 34, no. 1, pp. 217–223, 2013.<lb/> </bibl>
+        <bibl><label>[16]</label> L. Iorio and E. N. Saridakis, &quot; Solar system constraints on í µí±(í µí±)<lb/> gravity, &quot; Monthly Notices of the Royal Astronomical Society, vol.<lb/> 427, no. 2, pp. 1555–1561, 2012.<lb/> </bibl>
+        <bibl><label>[17]</label> S. Capozziello, P. A. González, E. N. Saridakis, and Y. Vásquez,<lb/> &quot; Exact charged black-hole solutions in D-dimensional í µí±(í µí±)<lb/> gravity: torsion vs curvature analysis, &quot; Journal of High Energy<lb/> Physics, vol. 2013, no. 2, article 39, 2013.<lb/> </bibl>
+        <bibl><label>[18]</label> H. M. Sadjadi, &quot; Generalized Noether symmetry in f (T) gravity, &quot;<lb/> Physics Letters B, vol. 718, no. 2, pp. 270–275, 2012.<lb/> </bibl>
+        <bibl><label>[19]</label> M. Farooq, M. Akbar, and M. Jamil, &quot; Dynamics and thermo-<lb/>dynamics of (2+1)-dimensional evolving lorentzian wormhole, &quot;<lb/> AIP Conference Proceedings, vol. 1295, pp. 176–190, 2010.<lb/> </bibl>
+        <bibl><label>[20]</label> C. G. Böhmer, T. Harko, and F. S. N. Lobo, &quot; Wormhole<lb/> geometries in modified teleparallel gravity and the energy<lb/> conditions, &quot; Physical Review D, vol. 85, Article ID 044033, 2012.<lb/> </bibl>
+        <bibl><label>[21]</label> M. Sharif and S. Rani, &quot; Nonlinear electrodynamics in f (T)<lb/> gravity and generalized second law of thermodynamics, &quot; Astro-<lb/>physics and Space Science, vol. 34, no. 2, pp. 573–582, 2013.<lb/></bibl>
+        <bibl><label>[22]</label> M. Sharif and S. Rani, &quot; Thermodynamics in f (T) gravity and<lb/> corrected entropies, &quot; The European Physical Journal Plus, vol.<lb/> 128, article 96, 2013.<lb/> </bibl>
+        <bibl><label>[23]</label> M. Jamil, D. Momeni, and R. Myrzakulov, &quot; Wormholes in a<lb/> viable í µí±(T) gravity, &quot; European Physical Journal C, vol. 73, no.<lb/> 1, pp. 1–13, 2013.<lb/> </bibl>
+        <bibl><label>[24]</label> M. Sharif and S. Rani, &quot; Dynamical wormhole solutions in TeX<lb/> gravity, &quot; General Relativity and Gravitation, vol. 45, no. 11, pp.<lb/> 2389–2402, 2013.<lb/> </bibl>
+        <bibl><label>[25]</label> M. Sharif and S. Rani, &quot; Wormhole solutions in f(T) gravity with<lb/> noncommutative geometry, &quot; Physical Review D, vol. 88, Article<lb/> ID 123501, 2013.<lb/> </bibl>
+        <bibl><label>[26]</label> M. Sharif and S. Rani, &quot; Charged noncommutative wormhole<lb/> solutions in f(T) gravity, &quot; The European Physical Journal Plus,<lb/> vol. 129, article 237, 2014.<lb/> </bibl>
+        <bibl><label>[27]</label> E. V. Linder, &quot; Einstein&apos;s other gravity and the acceleration of the<lb/> Universe, &quot; Physical Review D, vol. 81, Article ID 127301, 2010.<lb/> </bibl>
+        <bibl><label>[28]</label> R. Ferraro and F. Fiorini, &quot; Non-trivial frames for í µí±(í µí±) theories<lb/> of gravity and beyond, &quot; Physics Letters. B, vol. 702, no. 1, pp. 75–<lb/> 80, 2011.<lb/> </bibl>
+        <bibl><label>[29]</label> K. Bamba and C. Q. Geng, &quot; Thermodynamics of cosmological<lb/> horizons in f(T) gravity, &quot; Journal of Cosmology and Astroparticle<lb/> Physics, vol. 2011, article 008, 2011.<lb/> </bibl>
+        <bibl><label>[30]</label> Y.-F. Cai, S.-H. Chen, J. B. Dent, S. Dutta, and E. N. Saridakis,<lb/> &quot; Matter bounce cosmology with the f (T) gravity, &quot; Classical and<lb/> Quantum Gravity, vol. 28, no. 21, Article ID 215011, 2011.<lb/> </bibl>
+        <bibl><label>[31]</label> K. Karami and A. Abdolmaleki, &quot; Generalized second law of<lb/> thermodynamics in f (T) gravity, &quot; Journal of Cosmology and<lb/> Astroparticle Physics, vol. 2012, no. 4, article 007, 2012.<lb/> </bibl>
+        <bibl><label>[32]</label> K. Bamba, C.-Q. Geng, C.-C. Lee, and L.-W. Luo, &quot; Equation of<lb/> state for dark energy in í µí±(í µí±) gravity, &quot; Journal of Cosmology and<lb/> Astroparticle Physics, vol. 2011, no. 1, article 21, 2011.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

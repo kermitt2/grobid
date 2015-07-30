@@ -1,0 +1,53 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1 </label>M. Demiá<lb/> nski and E. T. Newman, &quot; Algebraically special of Petrov type II with repeated principal null<lb/> vector P, &quot; Bulletin de l&apos;Académie Polonaise des Sciences, vol. 14, p. 653, 1966.<lb/> </bibl>
+        <bibl><label>2 </label>L. D. Landau and E. M. Lifshitz, The Classical Theory of Fields, Pergamon Press, Oxford, UK, 1980.<lb/> </bibl>
+        <bibl><label>3 </label>M. Dubois-Violette and J. Madore, &quot; Conservation laws and integrability conditions for gravitational<lb/> and Yang-Mills field equations, &quot; Communications in Mathematical Physics, vol. 108, no. 2, pp. 213–223,<lb/> 1987.<lb/> </bibl>
+        <bibl><label>4 </label>J. Frauendiener, &quot; Geometric description of energy-momentum pseudotensors, &quot; Classical and Quantum<lb/> Gravity, vol. 6, no. 12, pp. L237–L241, 1989.<lb/> </bibl>
+        <bibl><label>5 </label>T. Ortín, Gravity and Strings, Cambridge University Press, Cambridge, UK, 2004.<lb/> </bibl>
+        <bibl><label>6 </label>C. Møller, &quot; Tetrad fields and conservation laws in general relativity, &quot; in Proceedings of the International<lb/> School of Physics Enrico Fermi, C. Mlle, Ed., Academic Press, London, UK, 1962.<lb/></bibl>
+        <bibl><label>7 </label>C. Møller, &quot; Conservation laws in the tetrad theory of gravitation, &quot; in Proceedings of the Conference on<lb/> Theory of Gravitation, Warszawa and Jablonna, 1962, vol. 136 of NORDITA Publications, Gauthier-Villars,<lb/> Paris, France, PWN-Polish Scientific Publishers, Warsaw, Poland, 1964.<lb/> </bibl>
+        <bibl><label>8 </label>C. Pellegrini and J. Plebá<lb/> nski, &quot; Tetrad fields and gravitional fields, &quot; Matematisk-Fysiske Skrifter udg. af<lb/> det Kongelige Danske Videnskabernes Selskab, vol. 2, no. 4, 1963.<lb/> </bibl>
+        <bibl><label>9 </label>T. G. Lucas, Y. N. Obukhov, and J. G. Pereira, &quot; Regularizing role of teleparallelism, &quot; Physical Review<lb/> D, vol. 80, no. 6, article 064043.<lb/> </bibl>
+        <bibl><label>10 </label>F. W. Hehl, &quot; Poincare gauge field theory, &quot; in Proceedings of the 6th School of Cosmology and Gravitation<lb/> on Spin, Torsion, Rotation and Supergravity, Erice, Italy, 1979, P. G. Bergmann and V. de Sabbata, Eds.,<lb/> Plenum, New York, NY, USA, 1980.<lb/> </bibl>
+        <bibl><label>11 </label>K. Hayashi, &quot; The gauge theory of the translation group and underlying geometry, &quot; Physics Letters B,<lb/> vol. 69, no. 4, pp. 441–444, 1977.<lb/> </bibl>
+        <bibl><label>12 </label>K. Hayashi and T. Shirafuji, &quot; New general relativity, &quot; Physical Review D, vol. 19, no. 12, pp. 3524–3553,<lb/> 1979.<lb/> </bibl>
+        <bibl><label>13 </label>K. Hayashi and T. Shirafuji, &quot; Addendum to &quot; new general relativity &quot; , &quot; Physical Review D, vol. 24, no.<lb/> 12, pp. 3312–3314, 1981.<lb/> </bibl>
+        <bibl><label>14 </label>M. Blagojevi´Blagojevi´c and M. Vasili´Vasili´c, &quot; Asymptotic symmetry and conserved quantities in the Poincare gauge<lb/> theory of gravity, &quot; Classical and Quantum Gravity, vol. 5, no. 9, pp. 1241–1257, 1988.<lb/> </bibl>
+        <bibl><label>15 </label>T. Kawai, &quot; Energy-momentum and angular momentum densities in gauge theories of gravity, &quot;<lb/> Physical Review D, vol. 62, no. 10, article 104014, pp. 1–9, 2000.<lb/> </bibl>
+        <bibl><label>16 </label>T. Kawai, K. Shibata, and I. Tanaka, &quot; Generalized equivalence principle in extended new general<lb/> relativity, &quot; Progress of Theoretical Physics, vol. 104, no. 3, pp. 505–530, 2000.<lb/> </bibl>
+        <bibl><label>17 </label>J. W. Maluf, J. F. DaRocha-Neto, T. M. L. Toribio, and K. H. Castello-Branco, &quot; Energy and angular<lb/> momentum of the gravitational field in the teleparallel geometry, &quot; Physical Review D, vol. 65, no. 12,<lb/> Article ID 124001, 2002.<lb/> </bibl>
+        <bibl><label>18 </label>R. Arnowitt, S. Deser, and C. W. Misner, &quot; The dynamics of general relativity, &quot; in Gravitation: An<lb/> Introduction to Current Research, L. Witten, Ed., chapter 7, p. 227, Wiley, New York, NY, USA, 1962.<lb/> </bibl>
+        <bibl><label>19 </label>J. W. Maluf, &quot; Hamiltonian formulation of the teleparallel description of general relativity, &quot; Journal of<lb/> Mathematical Physics, vol. 35, no. 1, pp. 335–343, 1994.<lb/> </bibl>
+        <bibl><label>20 </label>J. W. Maluf and S. C. Ulhoa, &quot; On the gravitational angular momentum of rotating sources, &quot; General<lb/> Relativity and Gravitation, vol. 41, no. 6, pp. 1233–1247, 2009.<lb/> </bibl>
+        <bibl><label>21 </label>N. Toma, &quot; A Kerr metric solution in new general relativity, &quot; Progress of Theoretical Physics, vol. 86, p.<lb/> 659, 1991.<lb/> </bibl>
+        <bibl><label>22 </label>M. Ahmed and S. M. Hossain, &quot; Energy localization in curved spacetime, &quot; Progress of Theoretical<lb/> Physics, vol. 93, p. 901, 1995.<lb/> </bibl>
+        <bibl><label>23 </label>G. G. L. Nashed, &quot; Reissner-NordstrNordstr¨Nordström solutions and energy in teleparallel theory, &quot; Modern Physics<lb/> Letters A, vol. 21, no. 29, pp. 2241–2250, 2006.<lb/> </bibl>
+        <bibl><label>24 </label>A. A. Sousa, R. B. Pereira, and J. F. da Rocha-Neto, &quot; Angular momentum of the BTZ black hole in the<lb/> teleparallel geometry, &quot; Progress of Theoretical Physics, vol. 114, no. 6, pp. 1179–1190, 2006.<lb/> </bibl>
+        <bibl><label>25 </label>F. Gronwald, &quot; Metric-affine gauge theory of gravity I. Fundamental structure and field equations, &quot;<lb/> International Journal of Modern Physics D, vol. 6, no. 3, pp. 263–303, 1997.<lb/> </bibl>
+        <bibl><label>26 </label>Y. M. Cho, &quot; Einstein Lagrangian as the translational Yang-Mills Lagrangian, &quot; Physical Review D, vol.<lb/> 14, no. 10, pp. 2521–2525, 1976.<lb/> </bibl>
+        <bibl><label>27</label> U. Muench, U ber teleparallele Gravitationstheorien, Diploma thesis, University of Cologne, 1997.<lb/> </bibl>
+        <bibl><label>28 </label>R. Tresguerres, &quot; Translations and dynamics, &quot; International Journal of Geometric Methods in Modern<lb/> Physics, vol. 5, no. 6, pp. 905–946, 2008.<lb/> </bibl>
+        <bibl><label>29 </label>Yu. N. Obukhov and J. G. Pereira, &quot; Metric-affine approach to teleparallel gravity, &quot; Physical Review D,<lb/> vol. 67, no. 4, article 044016, 2003.<lb/> </bibl>
+        <bibl><label>30</label> Yu. N. Obukhov and J. G. Pereira, &quot; Lessons of spin and torsion: reply to &apos;Consistent coupling to Dirac<lb/> fields in teleparallelism&apos;, &quot; Physical Review D, vol. 69, no. 12, article 128502, 2004.<lb/> </bibl>
+        <bibl><label>31</label> Yu. N. Obukhov, G. F. Rubilar, and J. G. Pereira, &quot; Conserved currents in gravitational models with<lb/> quasi-invariant Lagrangians: application to teleparallel gravity, &quot; Physical Review D, vol. 74, no. 10,<lb/> article 104007, 2006.<lb/> </bibl>
+        <bibl><label>32 </label>D. Puetzfeld, &quot; An exact-plane fronted wave solution in metric-affine gravity, &quot; in Exact Solutions and<lb/> Scalar Field in Gravity: Recent Developments, A. Macías, J. Cervantes-Cota, and C. Lämmerzahl, Eds.,<lb/> pp. 141–151, Kluwer, Dordrecht, The Netherlands, 2001.<lb/> </bibl>
+        <bibl><label>33 </label>A. García, A. Macías, D. Puetzfeld, and J. Socorro, &quot; Plane-fronted waves in metric-affine gravity, &quot;<lb/> Physical Review D, vol. 62, no. 4, article 044021, pp. 1–7, 2000.<lb/></bibl>
+        <bibl><label>34</label> A. D. King and D. Vassiliev, &quot; Torsion waves in metric-affine field theory, &quot; Classical and Quantum<lb/> Gravity, vol. 18, no. 12, pp. 2317–2329, 2001.<lb/> </bibl>
+        <bibl><label>35 </label>V. Pasic and D. Vassiliev, &quot; Pp-waves with torsion and metric-affine gravity, &quot; Classical and Quantum<lb/> Gravity, vol. 22, no. 19, pp. 3961–3975, 2005.<lb/> </bibl>
+        <bibl><label>36 </label>D. Vassiliev, &quot; Pseudoinstantons in metric-affine field theory, &quot; General Relativity and Gravitation, vol.<lb/> 34, no. 8, pp. 1239–1265, 2002.<lb/> </bibl>
+        <bibl><label>37 </label>D. Vassiliev, &quot; Quadratic metric-affine gravity, &quot; Annalen der Physik, vol. 14, no. 4, pp. 231–252, 2005.<lb/> </bibl>
+        <bibl><label>38</label> Yu. N. Obukhov, &quot; Dirac fermions in strong gravitational fields, &quot; Physical Review D, vol. 73, no. 2,<lb/> article 024025, 2006.<lb/> </bibl>
+        <bibl><label>39</label> Yu. N. Obukhov, &quot; Poincaré gauge gravity: selected topics, &quot; International Journal of Geometric Methods<lb/> in Modern Physics, vol. 3, no. 1, pp. 95–137, 2006, http://www.worldscinet.com/ijgmmp/.<lb/> </bibl>
+        <bibl><label>40 </label>G. G. L. Nashed, &quot; Energy and momentum of a spherically symmetric dilaton frame as regularized by<lb/> teleparallel gravity, &quot; Annals of Physics, vol. 523, no. 6, p. 450, 2011.<lb/> </bibl>
+        <bibl><label>41</label> Yu. N. Obukhov and G. F. Rubilar, &quot; Covariance properties and regularization of conserved currents<lb/> in tetrad gravity, &quot; Physical Review D, vol. 73, no. 12, article 124017, 2006.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

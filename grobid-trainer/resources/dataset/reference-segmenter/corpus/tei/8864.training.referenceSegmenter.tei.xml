@@ -1,0 +1,14 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> D. Beznosko, A. Batyrkhanov, A. Duspayev, A. Iakovlev, and<lb/> M. Yessenov, &quot; Performance of water-based liquid scintillator:<lb/> an independent analysis, &quot; Advances in High Energy Physics, vol.<lb/> 2014, Article ID 250646, 8 pages, 2014.<lb/> </bibl>
+<bibl>Hindawi Publishing Corporation<lb/> Advances in High Energy Physics<lb/> Volume 2015, Article ID 893920, 1 page<lb/> http://dx.doi.org/10.1155/2015/893920</bibl>
+        </listBibl>
+    </text>
+</tei>
+

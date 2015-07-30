@@ -1,0 +1,29 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> T. N. Truong and R. S. Willey, &quot; Branching ratios for decays of<lb/> light Higgs bosons, &quot; Physical Review D, vol. 40, no. 11, pp. 3635–<lb/> 3640, 1989.<lb/> </bibl>
+        <bibl><label>[2]</label> J. F. Donoghue, J. Gasser, and H. Leutwyler, &quot; The decay of a light<lb/> Higgs boson, &quot; Nuclear Physics B, vol. 343, no. 2, pp. 341–368,<lb/> 1990.<lb/> </bibl>
+        <bibl><label>[3]</label> S. Scherer, &quot; Introduction to chiral perturbation theory, &quot;<lb/> Advances in Nuclear Physics, vol. 27, p. 277, 2003.<lb/> </bibl>
+        <bibl><label>[4]</label> J. Gasser, &quot; Light-quark dynamics, &quot; in Lectures on Flavor Physics,<lb/> vol. 629 of Lecture Notes in Physics, pp. 1–35, Springer, Berlin,<lb/> Germany, 2004.<lb/> </bibl>
+        <bibl><label>[5]</label> J. Beringer, J. F. Arguin, R. M. Barnett et al., &quot; Review of particle<lb/> physics, &quot; Physical Review D, vol. 86, Article ID 010001, 2012.<lb/> </bibl>
+        <bibl><label>[6]</label> S. Aoki, T. W. Chiu, H. Fukaya et al., &quot; Pion form factors from<lb/> two-flavor lattice QCD with exact chiral symmetry, &quot; Physical<lb/> Review D, vol. 80, Article ID 034508, 2009.<lb/> </bibl>
+        <bibl><label>[7]</label> S. Aoki, Y. Aoki, C. Bernard et al., &quot; Review of lattice results con-<lb/>cerning low energy particle physics, &quot; http://arxiv.org/abs/1310<lb/> .8555.<lb/> </bibl>
+        <bibl><label>[8]</label> V. Gülpers, G. von Hippel, and H. Wittig, &quot; The scalar pion form<lb/> factor in two-flavor lattice QCD, &quot; Physical Review D, vol. 89,<lb/> Article ID 094503, 2014.<lb/> </bibl>
+        <bibl><label>[9]</label> J. A. Oller and L. Roca, &quot; Scalar radius of the pion and zeros in<lb/> the form factor, &quot; Physics Letters B, vol. 651, no. 2-3, pp. 139–146,<lb/> 2007.<lb/> </bibl>
+        <bibl><label>[10]</label> L. Roca, J. A. Oller, and C. Schat, &quot; Scalar radius of the pion and<lb/> í µí»¾í µí»¾ → í µí¼í µí¼, &quot; PoS EFT, vol. 09, p. 031, 2009.<lb/> </bibl>
+        <bibl><label>[11]</label> N. M. Kroll, T. D. Lee, and B. Zumino, &quot; Neutral vector mesons<lb/> and the hadronic electromagnetic current, &quot; Physical Review, vol.<lb/> 157, no. 5, pp. 1376–1399, 1967.<lb/> </bibl>
+        <bibl><label>[12]</label> J. H. Lowenstein and B. Schroer, &quot; Gauge invariance and ward<lb/> identities in a massive-vector-meson model, &quot; Physical Review D,<lb/> vol. 6, no. 6, pp. 1553–1571, 1972.<lb/></bibl>
+        <bibl><label>[13]</label> J. J. Sakurai, &quot; Theory of strong interactions, &quot; Annals of Physics,<lb/> vol. 11, no. 1, pp. 1–48, 1960.<lb/> </bibl>
+        <bibl><label>[14]</label> J. J. Sakurai, Currents and Mesons, University of Chicago Press,<lb/> Chicago, Ill, USA, 1969.<lb/> </bibl>
+        <bibl><label>[15]</label> C. A. Dominguez, J. I. Jottar, M. Loewe, and B. Willers, &quot; Pion<lb/> form factor in the Kroll-Lee-Zumino model, &quot; Physical Review<lb/> D, vol. 76, no. 9, Article ID 095002, 2007.<lb/> </bibl>
+        <bibl><label>[16]</label> C. A. Dominguez, M. Loewe, and B. Willers, &quot; Scalar radius<lb/> of the pion in the Kroll-Lee-Zumino renormalizable theory, &quot;<lb/> Physical Review D, vol. 78, Article ID 057901, 2008.<lb/> </bibl>
+        <bibl><label>[17]</label> A. Jüttner, &quot; Revisiting the pion&apos;s scalar form factor in chiral<lb/> perturbation theory, &quot; Journal of High Energy Physics, vol. 2012,<lb/> no. 1, article 7, 2012.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

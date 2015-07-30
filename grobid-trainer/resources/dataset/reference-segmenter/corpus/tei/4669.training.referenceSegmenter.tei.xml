@@ -1,0 +1,44 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1 </label>N. Kemmer, &quot; Quantum theory of Einstein-Bose particles and nuclear interaction, &quot; Proceedings of the<lb/> Royal Society A, vol. 166, pp. 127–153, 1938.<lb/> </bibl>
+        <bibl><label>2 </label>R. J. Duffin, &quot; On the characteristic matrices of covariant systems, &quot; Physical Review, vol. 54, no. 12, p.<lb/> 1114, 1938.<lb/> </bibl>
+        <bibl><label>3 </label>G. Petiau, University of Paris thesis, Published in Académie Royale de Médecine de Belgique, Classe<lb/> des Sciences, Mémoires in 8<lb/> @BULLET , 16, 2, 1936.<lb/> </bibl>
+        <bibl><label>4 </label>V. Gribov, &quot; QCD at large and short distances annotated version, &quot; European Physical Journal C, vol.<lb/> 10, no. 1, pp. 71–90, 1999.<lb/> </bibl>
+        <bibl><label>5 </label>I. V. Kanatchikov, &quot; De Donder-Weyl theory and a hypercomplex extension of quantum mechanics to<lb/> field theory, &quot; Reports on Mathematical Physics, vol. 43, no. 1-2, pp. 157–170, 1999.<lb/> </bibl>
+        <bibl><label>6 </label>V. M. Red&apos;kov, &quot; Generally relativistical Tetrode-Weyl-Fock-Ivanenko formalism and behaviour<lb/> of quantum-mechanical particles of spin 1/2 in the Abelian monopole field, &quot; 26 pages, 2008,<lb/> http://arxiv.org/pdf/quant-ph/9812007.pdf .<lb/> </bibl>
+        <bibl><label>7 </label>J. T. Lunardi, B. M. Pimentel, and R. G. Teixeira, &quot; Duffin-Kemmer-Petiau equation in Riemannian<lb/> space-times, &quot; in Geometrical Aspects of Quantum Fields, pp. 111–127, World Scientific, River Edge, NJ,<lb/> USA, 2001.<lb/> </bibl>
+        <bibl><label>8 </label>S. Ait-Tahar, J. S. Al-Khalili, and Y. Nedjadi, &quot; A relativistic model for α-nucleus elastic scattering, &quot;<lb/> Nuclear Physics A, vol. 589, pp. 307–319, 1995.<lb/> </bibl>
+        <bibl><label>9 </label>I. V. Kanatchikov, &quot; On the Duffin-Kemmer-Petiau formulation of the covariant Hamiltonian dynamics<lb/> in field theory, &quot; Reports on Mathematical Physics, vol. 46, no. 1-2, pp. 107–112, 2000.<lb/> </bibl>
+        <bibl><label>10 </label>J. T. Lunardi, B. M. Pimentel, R. G. Teixeira, and J. S. Valverde, &quot; Remarks on Duffin-Kemmer-Petiau<lb/> theory and gauge invariance, &quot; Physics Letters A, vol. 268, no. 3, pp. 165–173, 2000.<lb/> </bibl>
+        <bibl><label>11 </label>J. T. Lunardi, B. M. Pimentel, J. S. Valverde, and L. A. Manzoni, &quot; Duffin-Kemmer-Petiau theory in the<lb/> causal approach, &quot; International Journal of Modern Physics A, vol. 17, no. 2, pp. 205–227, 2002.<lb/> </bibl>
+        <bibl><label>12 </label>N. Debergh, J. Ndimubandi, and D. Strivay, &quot; On relativistic scalar and vector mesons with harmonic<lb/> oscillatorlike interactions, &quot; Zeitschrift f ¨<lb/> ur Physik C, vol. 56, p. 421, 1992.<lb/> </bibl>
+        <bibl><label>13 </label>Y. Nedjadi and R. C. Barret, &quot; The Duffin-Kemmer-Petiau oscillator, &quot; Journal of Physics A, vol. 27, p.<lb/> 4301, 1994.<lb/> </bibl>
+        <bibl><label>14 </label>G. Guo, C. Long, Z. Yang et al., &quot; DKP oscillator in noncommutative phase space, &quot; Canadian Journal of<lb/> Physics, vol. 87, pp. 989–993, 2009.<lb/> </bibl>
+        <bibl><label>15 </label>I. Boztosun, M. Karakoc, F. Yasuk, and A. Durmus, &quot; Asymptotic iteration method solutions to the<lb/> relativistic Duffin-Kemmer-Petiau equation, &quot; Journal of Mathematical Physics, vol. 47, no. 6, p. 062301,<lb/> 11, 2006.<lb/> </bibl>
+        <bibl><label>16 </label>F. Yasuk, M. Karakoc, and I. Boztosun, &quot; The relativistic Duffin-Kemmer-Petiau sexticoscillator, &quot;<lb/> Physica Scripta, vol. 78, Article ID 045010, 2008.<lb/> </bibl>
+        <bibl><label>17 </label>M. Falek and M. Merad, &quot; DKP oscillator in a noncommutative space, &quot; Communications in Theoretical<lb/> Physics, vol. 50, no. 3, pp. 587–592, 2008.<lb/> </bibl>
+        <bibl><label>18 </label>S. Zarrinkamar, A. A. Rajabi, H. Rahimov, and H. Hassanabadi, &quot; DKP equation under a vector<lb/> Hulthén-type potential: an approximate solution, &quot; Modern Physics Letters A, vol. 26, no. 22, pp. 1621–<lb/> 1629, 2011.<lb/> </bibl>
+        <bibl><label>19 </label>H. Hassanabadi, B. H. Yazarloo, S. Zarrinkamar, and A. A. Rajabi, &quot; Duffin-Kemmer-Petiau equation<lb/> under a scalar Coulomb interaction, &quot; Physical Review C, vol. 84, Article ID 064003, 2011.<lb/> </bibl>
+        <bibl><label>20 </label>R. Oudi, S. Hassanabadi, A. A. Rajabi, and H. Hassanabadi, &quot; Approximate bound state solutions of<lb/> DKP equation for any J state in the presence of Woods–Saxon Potential, &quot; Communications in Theoretical<lb/> Physics, vol. 57, pp. 15–18, 2012.<lb/> </bibl>
+        <bibl><label>21 </label>H. Hassanabadi, S. F. Forouhandeh, H. Rahimov, S. Zarrinkamar, and B. H. Yazarloo, &quot; Duffin-<lb/>Kemmer-Petiau equation under a scalar and vector Hulthen potential; an ansatz solution to the<lb/> corresponding Heun equation, &quot; Canadian Journal of Physics, vol. 90, no. 3, pp. 299–304, 2012.<lb/> </bibl>
+        <bibl><label>22 </label>A. Boumali, &quot; Particule de spin-1 dans un potentiel d&apos;Aharonov-Bohm, &quot; Canadian Journal of Physics,<lb/> vol. 85, pp. 1417–1429, 2007.<lb/> </bibl>
+        <bibl><label>23 </label>A. Boumali, &quot; On the eigensolutions of the one-dimensional Duffin-Kemmer-Petiau oscillator, &quot; Journal<lb/> of Mathematical Physics, vol. 49, no. 2, Article ID 022302, 2008.<lb/> </bibl>
+        <bibl><label>24 </label>M. Merad and S. Bensaid, &quot; Wave functions for a Duffin-Kemmer-Petiau particle in a time-dependent<lb/> potential, &quot; Journal of Mathematical Physics, vol. 48, no. 7, Article ID 073515, 2007.<lb/> </bibl>
+        <bibl><label>25 </label>Y. Kasri and L. Chetouani, &quot; Energy spectrum of the relativistic Duffin-Kemmer-Petiau equation, &quot;<lb/> International Journal of Theoretical Physics, vol. 47, no. 9, pp. 2249–2258, 2008.<lb/> </bibl>
+        <bibl><label>26 </label>A. Boumali and L. Chetouani, &quot; Exact solutions of the Kemmer equation for a Dirac oscillator, &quot; Physics<lb/> Letters A, vol. 346, no. 4, pp. 261–268, 2005.<lb/></bibl>
+        <bibl><label>27 </label>P. Ghose, M. K. Samal, and A. Datta, &quot; Klein paradox for bosons, &quot; Physics Letters A, vol. 315, no. 1-2,<lb/> pp. 23–27, 2003.<lb/> </bibl>
+        <bibl><label>28 </label>H. Hassanabadi, Z. Molaee, M. Ghominejad, and S. Zarrinkamar, &quot; Duffin-Kemmer-Petiau equation<lb/> with a hyperbolical potential in 21 dimensions for spin-one particles, &quot; Few-Body Systems. In press.<lb/> </bibl>
+        <bibl><label>29 </label>Z. Molaee, M. Ghominejad, H. Hassanabadi, and S. Zarrinkamar, &quot; S-wave solutions of spin-one DKP<lb/> equation for a deformed Hulthén potential in 13 dimensions, &quot; European Physical Journal Plus, vol.<lb/> 127, p. 116, 2012.<lb/> </bibl>
+        <bibl><label>30 </label>Y. Chargui, A. Trabelsi, and L. Chetouani, &quot; Bound-states of the 11-dimensional DKP equation with<lb/> a pseudoscalar linear plus Coulomb-like potential, &quot; Physics Letters A, vol. 374, no. 29, pp. 2907–2913,<lb/> 2010.<lb/> </bibl>
+        <bibl><label>31 </label>R. E. Kozack, B. C. Clark, S. Hama, V. K. Mishra, R. L. Mercer, and L. Ray, &quot; Spin-one Kemmer-Duffin-<lb/>Petiau equations and intermediate-energy deuteron-nucleus scattering, &quot; Physical Review C, vol. 40,<lb/> no. 5, pp. 2181–2194, 1989.<lb/> </bibl>
+        <bibl><label>32 </label>F. Cooper, A. Khare, and U. Sukhatme, &quot; Supersymmetry and quantum mechanics, &quot; Physics Reports,<lb/> vol. 251, no. 5-6, pp. 267–385, 1995.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

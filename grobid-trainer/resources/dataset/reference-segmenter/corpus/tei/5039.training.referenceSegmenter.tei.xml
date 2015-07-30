@@ -1,0 +1,40 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label>S. W. Hawking, &quot; Particle creation by black holes, &quot; Communica-<lb/>tions in Mathematical Physics, vol. 43, no. 3, pp. 199–220, 1975.<lb/> </bibl>
+        <bibl><label>[2]</label> J. D. Bekenstein, &quot; Black holes and entropy, &quot; Physical Review D,<lb/> vol. 7, no. 8, pp. 2333–2346, 1973.<lb/> </bibl>
+        <bibl><label>[3]</label> J. M. Bardeen, B. Carter, and S. W. Hawking, &quot; The four laws<lb/> of black hole mechanics, &quot; Communications in Mathematical<lb/> Physics, vol. 31, pp. 161–170, 1973.<lb/> </bibl>
+        <bibl><label>[4]</label> T. Jacobson, &quot; Thermodynamics of spacetime: the Einstein<lb/> equation of state, &quot; Physical Review Letters, vol. 75, p. 1260, 1995.<lb/> </bibl>
+        <bibl><label>[5]</label> T. Padmanabhan, &quot; Classical and quantum thermodynamics of<lb/> horizons in spherically symmetric spacetimes, &quot; Classical and<lb/> Quantum Gravity, vol. 19, no. 21, pp. 5387–5408, 2002.<lb/> </bibl>
+        <bibl><label>[6]</label> C. Eling, R. Guedens, and T. Jacobson, &quot; Nonequilibrium ther-<lb/>modynamics of spacetime, &quot; Physical Review Letters, vol. 96, no.<lb/> 12, Article ID 121301, 2006.<lb/> </bibl>
+        <bibl><label>[7]</label> C. Eling, &quot; Hydrodynamics of spacetime and vacuum viscosity, &quot;<lb/> Journal of High Energy Physics, vol. 11, article 048, 2008.<lb/> </bibl>
+        <bibl><label>[8]</label> G. Wang and W.-B. Liu, &quot; Nonequilibrium thermodynamics of<lb/> dark energy on cosmic apparent horizon, &quot; Communications in<lb/> Theoretical Physics, vol. 52, no. 2, pp. 383–384, 2009.<lb/> </bibl>
+        <bibl><label>[9]</label> S. Chakraborty and A. Biswas, &quot; Universe bounded by apparent<lb/> horizon: an irreversible thermodynamic prescription, &quot; Astro-<lb/>physics and Space Science, vol. 343, no. 1, pp. 395–399, 2013.<lb/></bibl>
+        <bibl><label>[10]</label> S. Chakraborty and A. Biswas, &quot; Universe bounded by event<lb/> horizon: a non equilibrium thermodynamic prescription, &quot;<lb/> Astrophysics and Space Science, vol. 343, no. 2, pp. 791–794, 2013.<lb/> </bibl>
+        <bibl><label>[11]</label> K. Karami, M. Jamil, and N. Sahraei, &quot; Irreversible thermo-<lb/>dynamics of dark energy on the entropy-corrected apparent<lb/> horizon, &quot; Physica Scripta, vol. 82, no. 4, Article ID 045901, 2010.<lb/> </bibl>
+        <bibl><label>[12]</label> R. Maartens, &quot; Causal thermodynamics in relativity, &quot; http://arxiv<lb/> .org/abs/astro-ph/9609119.<lb/> </bibl>
+        <bibl><label>[13]</label> W. Zimdahl, &quot; Cosmological particle production, causal ther-<lb/>modynamics, and inflationary expansion, &quot; Physical Review D,<lb/> vol. 61, Article ID 083511, 2000.<lb/> </bibl>
+        <bibl><label>[14]</label> W. Zimdahl, &quot; Bulk viscous cosmology, &quot; Physical Review D, vol.<lb/> 53, no. 10, pp. 5483–5493, 1996.<lb/> </bibl>
+        <bibl><label>[15]</label> B. Wang, Y. G. Gong, and E. Abdalla, &quot; Thermodynamics of<lb/> an accelerated expanding universe, &quot; Physical Review D, vol. 74,<lb/> Article ID 083520, 2006.<lb/> </bibl>
+        <bibl><label>[16]</label> M. Li, &quot; A model of holographic dark energy, &quot; Physics Letters B,<lb/> vol. 603, no. 1-2, pp. 1–5, 2004.<lb/> </bibl>
+        <bibl><label>[17]</label> N. Mazumder and S. Chakraborty, &quot; Validity of the generalized<lb/> second law of thermodynamics of the universe bounded by<lb/> the event horizon in holographic dark energy model, &quot; General<lb/> Relativity and Gravitation, vol. 42, no. 4, pp. 813–820, 2010.<lb/> </bibl>
+        <bibl><label>[18]</label> A. G. Cohen, D. B. Kaplan, and A. E. Nelson, &quot; Effective field<lb/> theory, black holes, and the cosmological constant, &quot; Physical<lb/> Review Letters, vol. 82, no. 25, pp. 4971–4974, 1999.<lb/> </bibl>
+        <bibl><label>[19]</label> B. Wang, Y. G. Gong, and E. Abdalla, &quot; Transition of the dark<lb/> energy equation of state in an interacting holographic dark<lb/> energy model, &quot; Physics Letters B, vol. 624, no. 3-4, pp. 141–146,<lb/> 2005.<lb/> </bibl>
+        <bibl><label>[20]</label> P. A. R. Ade, N. Aghanim, M. I. R. Alves et al., &quot; Planck<lb/> 2013 results. I. Overview of products and scientific results, &quot;<lb/> Astronomy &amp; Astrophysics, vol. 571, article A1, 48 pages, 2014.<lb/> </bibl>
+        <bibl><label>[21]</label> M. Li, X. D. Li, Y. Z. Ma, X. Zhang, and Z. Zhang, &quot; Planck<lb/> constraints on holographic dark energy, &quot; Journal of Cosmology<lb/> and Astroparticle Physics, vol. 9, p. 21, 2013.<lb/> </bibl>
+        <bibl><label>[22]</label> A. G. Riess, L. Macri, S. Casertano et al., &quot; A 3% solution:<lb/> determination of the Hubble constant with the Hubble space<lb/> telescope and wide field camera 3, &quot; The Astrophysical Journal,<lb/> vol. 730, p. 119, 2011.<lb/> </bibl>
+        <bibl><label>[23]</label> J. Guy, M. Sullivan, A. Conley et al., &quot; The Supernova Legacy<lb/> Survey 3-year sample: type Ia supernovae photometric distances<lb/> and cosmological constraints, &quot; Astronomy &amp; Astrophysics, vol.<lb/> 523, article A7, 2010.<lb/> </bibl>
+        <bibl><label>[24]</label> M. Sullivan, J. Guy, A. Conley et al., &quot; SNLS3: constraints on dark<lb/> energy combining the supernova legacy survey three year data<lb/> with other probes, &quot; The Astrophysical Journal, vol. 737, no. 2, p.<lb/> 102, 2011.<lb/> </bibl>
+        <bibl><label>[25]</label> S. Cole, W. J. Percival, J. A. Peacock et al., &quot; The 2dF Galaxy<lb/> Redshift Survey: power-spectrum analysis of the final data set<lb/> and cosmological implications, &quot; Monthly Notices of the Royal<lb/> Astronomical Society, vol. 362, no. 2, pp. 505–534, 2005.<lb/> </bibl>
+        <bibl><label>[26]</label> J. Guy, P. Astier, S. Baumont et al., &quot; SALT2: using distant<lb/> supernovae to improve the use of type Ia supernovae as distance<lb/> indicators, &quot; Astronomy &amp; Astrophysics, vol. 466, no. 1, pp. 11–21,<lb/> 2007.<lb/> </bibl>
+        <bibl><label>[27]</label> N. Suzuki, D. Rubin, C. Lidman et al., &quot; The hubble space tele-<lb/>scope cluster supernova survey: V. Improving the dark energy<lb/> constraints above í µí± § &gt; 1 and building an early-type-hosted<lb/> supernova sample, &quot; The Astrophysical Journal, vol. 746, no. 1, p.<lb/> 85, 2012.<lb/> </bibl>
+        <bibl><label>[28]</label> S. Saha and S. Chakraborty, &quot; Do recent observations favor a<lb/> cosmological event horizon: a thermodynamical prescription? &quot;<lb/> Physical Review D, vol. 89, Article ID 043512, 2014.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

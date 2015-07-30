@@ -1,0 +1,51 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> S. Ryu and T. Takayanagi, &quot; Holographic derivation of entan-<lb/>glement entropy from the anti-de Sitter space/conformal field<lb/> theory correspondence, &quot; Physical Review Letters, vol. 96, no. 18,<lb/> Article ID 181602, 2006.<lb/> </bibl>
+        <bibl><label>[2]</label> S. Ryu and T. Takayanagi, &quot; Aspects of holographic entanglement<lb/> entropy, &quot; Journal of High Energy Physics, vol. 2006, no. 8, article<lb/> 45, 2006.<lb/> </bibl>
+        <bibl><label>[3]</label> E. Bianchi and R. C. Myers, &quot; On the architecture of spacetime<lb/> geometry, &quot; Classical and Quantum Gravity, vol. 31, no. 21, Article<lb/> ID 214002, 2014.<lb/> </bibl>
+        <bibl><label>[4]</label> J. Maldacena, &quot; The large í µí± limit of superconformal field<lb/> theories and supergravity, &quot; Advances in Theoretical and Math-<lb/>ematical Physics, vol. 2, no. 2, pp. 231–252, 1998.<lb/> </bibl>
+        <bibl><label>[5] S.</label> S. Gubser, I. R. Klebanov, and A. M. Polyakov, &quot; Gauge theory<lb/> correlators from non-critical string theory, &quot; Physics Letters. B,<lb/> vol. 428, no. 1-2, pp. 105–114, 1998.<lb/> </bibl>
+        <bibl><label>[6]</label> E. Witten, &quot; Anti de sitter space and holography, &quot; Advances in<lb/> Theoretical and Mathematical Physics, vol. 2, Article ID 9802150,<lb/> pp. 253–291, 1998, http://arxiv.org/abs/hep-th/9802150.<lb/> </bibl>
+        <bibl><label>[7]</label> O. Aharony, S. S. Gubser, J. Maldacena, H. Ooguri, and Y. Oz,<lb/> &quot; Large N field tTheories, string theory and Ggravity, &quot; Physics<lb/> Reports, vol. 323, no. 3-4, pp. 183–386, 2000.<lb/> </bibl>
+        <bibl><label>[8]</label> V. E. Hubeny, M. Rangamani, and T. Takayanagi, &quot; A covariant<lb/> holographic entanglement entropy proposal, &quot; Journal of High<lb/> Energy Physics, vol. 2007, no. 7, article 62, 2007.<lb/> </bibl>
+        <bibl><label>[9]</label> M. Alishahiha, A. F. Astaneh, and M. R. M. Mozaffar, &quot; Holo-<lb/>graphic entanglement entropy for 4D conformal gravity, &quot; Jour-<lb/>nal of High Energy Physics, vol. 2014, article 8, 2014.<lb/> </bibl>
+        <bibl><label>[10]</label> M. Alishahiha, A. F. Astaneh, and M. R. M. Mozaffar, &quot; Entangle-<lb/>ment entropy for logarithmic conformal field theory, &quot; Physical<lb/> Review D, vol. 89, Article ID 065023, 2014.<lb/> </bibl>
+        <bibl><label>[11]</label> B. Chen and J.-J. Zhang, &quot; Note on generalized gravitational<lb/> entropy in Lovelock gravity, &quot; Journal of High Energy Physics, vol.<lb/> 2013, article 185, 2013.<lb/> </bibl>
+        <bibl><label>[12]</label> S. S. Pal, &quot; Extremal surfaces and entanglement entropy, &quot; Nuclear<lb/> Physics B, vol. 882, pp. 352–385, 2014.<lb/> </bibl>
+        <bibl><label>[13]</label> J. Erdmenger, M. Flory, and C. Sleight, &quot; Conditions on holo-<lb/>graphic entangling surfaces in higher curvature gravity, &quot; Journal<lb/> of High Energy Physics, vol. 2014, article 104, 2014.<lb/> </bibl>
+        <bibl><label>[14]</label> A. Bhattacharyya and M. Sharma, &quot; On entanglement entropy<lb/> functionals in higher-derivative gravity theories, &quot; Journal of<lb/> High Energy Physics, vol. 2014, article 130, 2014.<lb/> </bibl>
+        <bibl><label>[15]</label> R. C. Myers and A. Singh, &quot; Comments on holographic entan-<lb/>glement entropy and RG flows, &quot; Journal of High Energy Physics,<lb/> vol. 2012, no. 4, article 122, 2012.<lb/> </bibl>
+        <bibl><label>[16]</label> N. Engelhardt and A. C. Wall, &quot; Extremal surface barriers, &quot;<lb/> Journal of High Energy Physics, vol. 2014, article 68, 2014.<lb/> </bibl>
+        <bibl><label>[17]</label> V. E. Hubeny, &quot; Extremal surfaces as bulk probes in AdS/CFT, &quot;<lb/> Journal of High Energy Physics, vol. 2012, article 93, 2012.<lb/> </bibl>
+        <bibl><label>[18]</label> X. Dong, &quot; Holographic entanglement entropy for general<lb/> higher derivative gravity, &quot; Journal of High Energy Physics, vol.<lb/> 2014, p. 44, 2014.<lb/> </bibl>
+        <bibl><label>[19]</label> J. Camps, &quot; Generalized entropy and higher derivative gravity, &quot;<lb/> Journal of High Energy Physics, vol. 2014, no. 3, article 70, 2014.<lb/> </bibl>
+        <bibl><label>[20]</label> D. V. Fursaev, A. Patrushev, and S. N. Solodukhin, &quot; Distribu-<lb/>tional geometry of squashed cones, &quot; Physical Review D, vol. 88,<lb/> no. 4, Article ID 044054, 13 pages, 2013.<lb/> </bibl>
+        <bibl><label>[21]</label> D. V. Fursaev, &quot; Proof of the holographic formula for entangle-<lb/>ment entropy, &quot; Journal of High Energy Physics, no. 9, article 018,<lb/> 2006.<lb/> </bibl>
+        <bibl><label>[22]</label> J. de Boer, M. Kulaxizi, and A. Parnachev, &quot; Holographic entan-<lb/>glement entropy in Lovelock gravities, &quot; Journal of High Energy<lb/> Physics, vol. 2011, article 109, 2011.<lb/> </bibl>
+        <bibl><label>[23]</label> L.-Y. Hung, R. C. Myers, and M. Smolkin, &quot; On holographic<lb/> entanglement entropy and higher curvature gravity, &quot; Journal of<lb/> High Energy Physics, vol. 2011, article 25, 2011.<lb/> </bibl>
+        <bibl><label>[24]</label> A. Buchel, J. Escobedo, R. C. Myers, M. F. Paulos, A. Sinha, and<lb/> M. Smolkin, &quot; Holographic GB gravity in arbitrary dimensions, &quot;<lb/> Journal of High Energy Physics, vol. 2010, article 111, 2010.<lb/> </bibl>
+        <bibl><label>[25]</label> X. O. Camanho and J. D. Edelstein, &quot; Causality in AdS/CFT and<lb/> Lovelock theory, &quot; Journal of High Energy Physics, vol. 2010, p. 99,<lb/> 2010.<lb/> </bibl>
+        <bibl><label>[26]</label> S. S. Pal, &quot; Fermi-like liquid from Einstein-DBI-dilaton system, &quot;<lb/> Journal of High Energy Physics, vol. 2013, article 7, 2013.<lb/> </bibl>
+        <bibl><label>[27]</label> I. R. Klebanov, D. Kutasov, and A. Murugan, &quot; Entanglement as<lb/> a probe of confinement, &quot; Nuclear Physics, B, vol. 796, no. 1-2, pp.<lb/> 274–293, 2008.<lb/> </bibl>
+        <bibl><label>[28]</label> T. Jacobson and R. C. Myers, &quot; Black hole entropy and higher-<lb/>curvature interactions, &quot; Physical Review Letters, vol. 70, no. 24,<lb/> pp. 3684–3687, 1993.<lb/> </bibl>
+        <bibl><label>[29]</label> R.-G. Cai, &quot; Gauss-Bonnet black holes in AdS spaces, &quot; Physical<lb/> Review D, vol. 65, no. 8, Article ID 084014, 2002.<lb/> </bibl>
+        <bibl><label>[30]</label> I. Nojiri and S. D. Odintsov, &quot; Anti-de-Sitter black hole ther-<lb/>modynamics in higher derivative gravity and new confining–<lb/> deconfining phases in dual CFT, &quot; Physics Letters B, vol. 521, no.<lb/> 1-2, pp. 87–95, 2001, Erratum in Physics Letters B, vol. 542, p. 301,<lb/> 2002.<lb/> </bibl>
+        <bibl><label>[31]</label> M. Cvetič, S. Nojiri, and S. D. Odintsov, &quot; Black hole thermo-<lb/>dynamics and negative entropy in de SITter and anti-de SITter<lb/> Einstein-Gauss-Bonnet gravity, &quot; Nuclear Physics B, vol. 628, no.<lb/> 1-2, pp. 295–330, 2002.<lb/> </bibl>
+        <bibl><label>[32]</label> Y. M. Cho and I. P. Neupane, &quot; Anti–de Sitter black holes,<lb/> thermal phase transition, and holography in higher curvature<lb/> gravity, &quot; Physical Review D, vol. 67, Article ID 024044, 2002, I.<lb/> P. Neupane, Phys. Rev. D 67, 061501 (2003), [hep-th/0212092].<lb/> </bibl>
+        <bibl><label>[33]</label> I. P. Neupane, &quot; Black hole entropy in string-generated gravity<lb/> models, &quot; Physical Review D: Particles, Fields, Gravitation and<lb/> Cosmology, vol. 67, Article ID 061501, 2003.<lb/> </bibl>
+        <bibl><label>[34]</label> I. P. Neupane, &quot; Thermodynamic and gravitational instability on<lb/> hyperbolic spaces, &quot; Physical Review D, vol. 69, no. 8, Article ID<lb/> 084011, 18 pages, 2004.<lb/> </bibl>
+        <bibl><label>[35]</label> M. Headrick and T. Takayanagi, &quot; Holographic proof of the<lb/> strong subadditivity of entanglement entropy, &quot; Physical Review<lb/> D. Particles, Fields, Gravitation, and Cosmology, vol. 76, no. 10,<lb/> Article ID 106013, 2007.<lb/> </bibl>
+        <bibl><label>[36]</label> A. Buchel and R. C. Myers, &quot; Causality of holographic hydrody-<lb/>namics, &quot; Journal of High Energy Physics, vol. 2009, no. 8, article<lb/> 16, 2009.<lb/> </bibl>
+        <bibl><label>[37]</label> X.-H. Ge and S.-J. Sin, &quot; Shear viscosity, instability and the upper<lb/> bound of the Gauss-Bonnet coupling constant, &quot; Journal of High<lb/> Energy Physics, vol. 2009, no. 5, article 51, 2009.<lb/> </bibl>
+        <bibl><label>[38]</label> X.-H. Ge, S.-J. Sin, S.-F. Wu, and G.-H. Yang, &quot; Shear viscosity<lb/> and instability from third order Lovelock gravity, &quot; Physical<lb/> Review D, vol. 80, Article ID 104019, 2009.<lb/> </bibl>
+        <bibl><label>[39]</label> X.-H. Ge, Y. Matsuo, F.-W. Shu, S.-J. Sin, and T. Tsukioka,<lb/> &quot; Viscosity bound, causality violation and instability with stringy<lb/> correction and charge, &quot; Journal of High Energy Physics, vol. 2008,<lb/> no. 10, p. 009, 2008.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,66 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        References<lb/> 
+        <bibl><label>[1]</label> M. R. Douglas and N. A. Nekrasov, &quot; Noncommutative field<lb/> theory, &quot; Reviews of Modern Physics, vol. 73, no. 4, pp. 977–1029,<lb/> 2001.<lb/> </bibl>
+        <bibl><label>[2]</label> W. Kalau and M. Walze, &quot; Gravity, non-commutative geometry<lb/> and the Wodzicki residue, &quot; Journal of Geometry and Physics, vol.<lb/> 16, no. 4, pp. 327–344, 1995.<lb/> </bibl>
+        <bibl><label>[3]</label> P. Nicolini, &quot; Noncommutative black holes, the final appeal to<lb/> quantum gravity: a review, &quot; International Journal of Modern<lb/> Physics A, vol. 24, no. 7, pp. 1229–1308, 2009.<lb/> </bibl>
+        <bibl><label>[4]</label> R. J. Szabo, &quot; Quantum field theory on noncommutative spaces, &quot;<lb/> Physics Reports, vol. 378, no. 4, pp. 207–299, 2003.<lb/> </bibl>
+        <bibl><label>[5]</label> E. Langmann and R. J. Szabo, &quot; Teleparallel gravity and dimen-<lb/>sional reductions of noncommutative gauge theory, &quot; Physical<lb/> Review D, vol. 64, no. 10, Article ID 104019, 15 pages, 2001.<lb/> </bibl>
+        <bibl><label>[6]</label> X. Calmet and A. Kobakhidze, &quot; Noncommutative general<lb/> relativity, &quot; Physical Review D, vol. 72, no. 4, Article ID 045010,<lb/> 2005.<lb/> </bibl>
+        <bibl><label>[7]</label> X. Calmet and A. Kobakhidze, &quot; Second order noncommutative<lb/> corrections to gravity, &quot; Physical Review D: Particles, Fields,<lb/> Gravitation and Cosmology, vol. 74, no. 4, Article ID 047702,<lb/> 2006.<lb/> </bibl>
+        <bibl><label>[8]</label> A. H. Chamseddine, &quot; Deforming Einstein&apos;s gravity, &quot; Physics<lb/> Letters B, vol. 504, no. 1-2, pp. 33–37, 2001.<lb/> </bibl>
+        <bibl><label>[9]</label> P. Aschieri, C. Blohmann, M. Dimitrijevi´Dimitrijevi´c, F. Meyer, P. Schupp,<lb/> and J. Wess, &quot; A gravity theory on noncommutative spaces, &quot;<lb/> Classical and Quantum Gravity, vol. 22, no. 17, p. 3511, 2005.<lb/> </bibl>
+        <bibl><label>[10]</label> A. Smailagic and E. Spallucci, &quot; Feynman path integral on the<lb/> noncommutative plane, &quot; Journal of Physics A, vol. 36, p. L467,<lb/> 2003.<lb/> </bibl>
+        <bibl><label>[11]</label> A. Smailagic and E. Spallucci, &quot; UV divergence-free QFT on<lb/> noncommutative plane, &quot; Journal of Physics A: Mathematical and<lb/> General, vol. 36, no. 39, pp. L517–L521, 2003.<lb/> </bibl>
+        <bibl><label>[12]</label> A. Smailagic and E. Spallucci, &quot; Lorentz invariance, unitarity and<lb/> UV-finiteness of QFT on noncommutative spacetime, &quot; Journal<lb/> of Physics A: Mathematical and General, vol. 37, no. 28, pp. 7169–<lb/> 7178, 2004.<lb/> </bibl>
+        <bibl><label>[13]</label> P. Nicolini, A. Smailagic, and E. Spallucci, &quot; Noncommutative<lb/> geometry inspired Schwarzschild black hole, &quot; Physics Letters. B,<lb/> vol. 632, no. 4, pp. 547–551, 2006.<lb/> </bibl>
+        <bibl><label>[14]</label> C.-S. Chu and P.-M. Ho, &quot; Non-commutative open string and D-<lb/>brane, &quot; Nuclear Physics B, vol. 550, no. 1-2, pp. 151–168, 1999.<lb/></bibl>
+        <bibl><label> [15]</label> N. Seiberg and E. Witten, &quot; String theory and noncommutative<lb/> geometry, &quot; The Journal of High Energy Physics, vol. 9, article 32,<lb/> 1999.<lb/> </bibl>
+        <bibl><label>[16]</label> F. Ardalan, H. Arfaei, and M. Sheikh-Jabbari, &quot; Noncommuta-<lb/>tive geometry from strings and branes, &quot; Journal of High Energy<lb/> Physics, vol. 2, p. 16, 1999.<lb/> </bibl>
+        <bibl><label>[17]</label> F. Ardalan, H. Arfaei, and M. M. Sheikh-Jabbari, &quot; Dirac<lb/> quantization of open strings and noncommutativity in branes, &quot;<lb/> Nuclear Physics B, vol. 576, no. 1–3, pp. 578–596, 2000.<lb/> </bibl>
+        <bibl><label>[18]</label> C. Sochichiu, &quot; M[any] vacua of IIB, &quot; Journal of High Energy<lb/> Physics, vol. 2000, no. 5, article 026, 12 pages, 2000.<lb/> </bibl>
+        <bibl><label>[19]</label> R. Blumenhagen and E. Plauschinn, &quot; Nonassociative gravity<lb/> in string theory? &quot; Journal of Physics A: Mathematical and<lb/> Theoretical, vol. 44, no. 1, Article ID 015401, 19 pages, 2011.<lb/> </bibl>
+        <bibl><label>[20]</label> D. Lust, &quot; T-duality and closed string non-commutative (dou-<lb/>bled) geometry, &quot; Journal of High Energy Physics, vol. 2010, article<lb/> 84, 2010.<lb/> </bibl>
+        <bibl><label>[21]</label> C. Condeescu, I. Florakis, and D. Lüst, &quot; Asymmetric orbifolds,<lb/> non-geometric fluxes and non-commutativity in closed string<lb/> theory, &quot; Journal of High Energy Physics, vol. 2012, no. 4, p. 121,<lb/> 2012.<lb/> </bibl>
+        <bibl><label>[22]</label> C. Sämann and R. J. Szabo, &quot; Groupoids, loop spaces and<lb/> quantization of 2-plectic manifolds, &quot; Reviews in Mathematical<lb/> Physics, vol. 25, no. 3, Article ID 1330005, 72 pages, 2013.<lb/> </bibl>
+        <bibl><label>[23]</label> A. Konechny and A. Schwarz, &quot; Introduction to M(atrix) theory<lb/> and noncommutative geometry, &quot; Physics Reports, vol. 360, no.<lb/> 5-6, pp. 353–465, 2002.<lb/> </bibl>
+        <bibl><label>[24]</label> D. Mylonas, P. Schupp, and R. J. Szabo, &quot; Membrane sigma-<lb/>models and quantization of non-geometric flux backgrounds, &quot;<lb/> Journal of High Energy Physics, vol. 2012, article 12, 2012.<lb/> </bibl>
+        <bibl><label>[25]</label> A. Chatzistavrakidis and L. Jonke, &quot; Matrix theory origins of<lb/> non-geometric fluxes, &quot; Journal of High Energy Physics, vol. 2013,<lb/> no. 2, article 040, 2013.<lb/> </bibl>
+        <bibl><label>[26]</label> P. Nicolini, &quot; Vacuum energy momentum tensor in (2+1)<lb/> NC scalar field theory, &quot; In press, http://arxiv.org/abs/hep-th/<lb/> 0401204.<lb/> </bibl>
+        <bibl><label>[27]</label> A. Gruppuso, &quot; Newton&apos;s law in an effective non-commutative<lb/> space-time, &quot; Journal of Physics A, vol. 38, no. 9, pp. 2039–2042,<lb/> 2005.<lb/> </bibl>
+        <bibl><label>[28]</label> S. Ansoldi, P. Nicolini, A. Smailagic, and E. Spallucci, &quot; Non-<lb/>commutative geometry inspired charged black holes, &quot; Physics<lb/> Letters B, vol. 645, no. 2-3, pp. 261–266, 2007.<lb/> </bibl>
+        <bibl><label>[29]</label> D. McMahon, Relativity Demystified, Tata McGraw-Hill Educa-<lb/>tion, 2006.<lb/> </bibl>
+        <bibl><label>[30]</label> Ø. Grøn and S. Hervik, Einstein&apos;s General Theory of Relativity:<lb/> With Modern Applications in Cosmology, Springer, 2007.<lb/> </bibl>
+        <bibl><label>[31]</label> S. Weinberg, Gravitation and Cosmology, vol. 126, John Wiley &amp;<lb/> Sons, New York, NY, USA, 1972.<lb/> </bibl>
+        <bibl><label>[32]</label> V. C. de Andrade, L. C. T. Guillen, and J. G. Pereira, &quot; Teleparallel<lb/> gravity: an overview, &quot; in Proceedings of the 9th Marcel Gross-<lb/>mann Meeting, pp. 1022–1023, July 2000.<lb/> </bibl>
+        <bibl><label>[33]</label> D. I. Olive, Lectures on Gauge Theories and Lie Algebras,<lb/> University of Virginia, Charlottesville, Va, USA, 1982, notes<lb/> taken by G. Bhattacharya and N. Turok.<lb/> </bibl>
+        <bibl><label>[34]</label> J. W. Maluf, M. V. Veiga, and J. F. da Rocha-Neto, &quot; Regularized<lb/> expression for the gravitational energy-momentum in telepar-<lb/>allel gravity and the principle of equivalence, &quot; General Relativity<lb/> and Gravitation, vol. 39, no. 3, pp. 227–240, 2007.<lb/> </bibl>
+        <bibl><label>[35]</label> J. W. Maluf, &quot; The teleparallel equivalent of general relativity, &quot;<lb/> Annalen der Physik, vol. 525, no. 5, pp. 339–357, 2013.<lb/> </bibl>
+        <bibl><label>[36]</label> J. G. Pereira, &quot; Teleparallelism: a new insight into gravity, &quot;<lb/> http://arxiv.org/abs/1302.6983.<lb/> </bibl>
+        <bibl><label>[37]</label> M. Sharif and M. J. Amir, &quot; Teleparallel Killing vectors of the<lb/> Einstein universe, &quot; Modern Physics Letters A: Particles and<lb/> Fields, Gravitation, Cosmology, Nuclear Physics, vol. 23, no. 13,<lb/> pp. 963–969, 2008.<lb/> </bibl>
+        <bibl><label>[38]</label> J. G. Pereira, T. Vargas, and C. M. Zhang, &quot; Axial-vector torsion<lb/> and the teleparallel Kerr spacetime, &quot; Classical and Quantum<lb/> Gravity, vol. 18, no. 5, pp. 833–841, 2001.<lb/> </bibl>
+        <bibl><label>[39]</label> K. Nozari and A. Yazdani, &quot; The energy distribution of a<lb/> noncommutative Reissner—Nordström black hole, &quot; Chinese<lb/> Physics Letters, vol. 30, no. 9, Article ID 090401, 2013.<lb/> </bibl>
+        <bibl><label>[40]</label> R. Aldrovandi and J. G. Pereira, Teleparallel Gravity: An Intro-<lb/>duction, vol. 173, Springer, New York, NY, USA, 2013.<lb/> </bibl>
+        <bibl><label>[41]</label> V. C. de Andrade and J. G. Pereira, &quot; Gravitational Lorentz force<lb/> and the description of the gravitational interaction, &quot; Physical<lb/> Review D: Particles, Fields, Gravitation and Cosmology, vol. 56,<lb/> no. 8, pp. 4689–4695, 1997.<lb/> </bibl>
+        <bibl><label>[42]</label> D. Goss, &quot; The adjoint of the Carlitz module and Fermat&apos;s last<lb/> theorem, &quot; Finite Fields and Their Applications, vol. 1, no. 2, pp.<lb/> 165–188, 1995.<lb/> </bibl>
+        <bibl><label>[43]</label> D. S. Thakur, &quot; Hypergeometric functions for function fields, &quot;<lb/> Finite Fields and Their Applications, vol. 1, no. 2, pp. 219–231,<lb/> 1995.<lb/> </bibl>
+        <bibl><label>[44]</label> D. Goss, Basic Structures of Function Field Arithmetic, Springer,<lb/> New York, NY, USA, 1997.<lb/> </bibl>
+        <bibl><label>[45]</label> K. S. Kedlaya, &quot; The algebraic closure of the power series<lb/> field in positive characteristic, &quot; Proceedings of the American<lb/> Mathematical Society, vol. 129, no. 12, pp. 3461–3470, 2001.<lb/> </bibl>
+        <bibl><label>[46]</label> H. Hironaka, &quot; Resolution of singularities of an algebraic variety<lb/> over a field of characteristic zero: II, &quot; Annals of Mathematics, vol.<lb/> 79, pp. 205–326, 1964.<lb/> </bibl>
+        <bibl><label>[47]</label> B. Poonen, &quot; Fractional power series and pairings on Drinfeld<lb/> modules, &quot; Journal of the American Mathematical Society, vol. 9,<lb/> no. 3, pp. 783–812, 1996.<lb/> </bibl>
+        <bibl><label>[48]</label> G. Zet, &quot; Schwarzschild solution on a space-time with torsion, &quot;<lb/> http://arxiv.org/abs/gr-qc/0308078.<lb/> </bibl>
+        <bibl><label>[49]</label> H. I. Arcos and J. G. Pereira, &quot; Torsion gravity: a reappraisal, &quot;<lb/> International Journal of Modern Physics D, vol. 13, no. 10, pp.<lb/> 2193–2240, 2004.<lb/> </bibl>
+        <bibl><label>[50]</label> N. Ishibashi, S. Iso, H. Kawai, and Y. Kitazawa, &quot; String scale in<lb/> noncommutative Yang-Mills, &quot; Nuclear Physics: B, vol. 583, no.<lb/> 1-2, pp. 159–181, 2000.<lb/> </bibl>
+        <bibl><label>[51]</label> http://en.wikipedia.org/wiki/Newton%27s law of universal<lb/> gravitation.<lb/> </bibl>
+        <bibl><label>[52]</label> G. J. Olmo, &quot; Violation of the equivalence principle in modified<lb/> theories of gravity, &quot; Physical Review Letters, vol. 98, no. 6, Article<lb/> ID 061101, 2007.<lb/> </bibl>
+        <bibl><label>[53]</label> R. Aldrovandi, J. G. Pereira, and K. H. Vu, &quot; Gravitation without<lb/> the equivalence principle, &quot; General Relativity and Gravitation,<lb/> vol. 36, no. 1, pp. 101–110, 2004.<lb/> </bibl>
+        <bibl><label>[54]</label> C. Brans and R. H. Dicke, &quot; Mach&apos;s principle and a relativistic<lb/> theory of gravitation, &quot; Physical Review, vol. 124, no. 3, pp. 925–<lb/> 935, 1961.<lb/> </bibl>
+        <bibl><label>[55]</label> A. Trautman, &quot; Einstein-Cartan theory, &quot; http://arxiv.org/abs/gr-<lb/>qc/0606062.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

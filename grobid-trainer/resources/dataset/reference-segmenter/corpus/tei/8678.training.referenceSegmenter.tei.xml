@@ -1,0 +1,47 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> W. P. Su, J. R. Schrieffer, and A. J. Heeger, &quot; Solitons in<lb/> polyacetylene, &quot; Physical Review Letters, vol. 42, no. 25, pp. 1698–<lb/> 1701, 1979.<lb/> </bibl>
+        <bibl><label>[2]</label> E. Fradkin, Field Theories of Condensed Matter Physics, Cam-<lb/>bridge University Press, 2nd edition, 2013.<lb/> </bibl>
+        <bibl><label>[3]</label> T. H. Skyrme, &quot; A non-linear field theory, &quot; Proceedings of the<lb/> Royal Society, London, Series A: Mathematical, Physical and<lb/> Engineering Sciences, vol. 260, pp. 127–138, 1961.<lb/> </bibl>
+        <bibl><label>[4]</label> C. J. Houghton, N. S. Manton, and P. M. Sutcliffe, &quot; Rational<lb/> maps, monopoles and skyrmions, &quot; Nuclear Physics B, vol. 510,<lb/> no. 3, pp. 507–537, 1998.<lb/> </bibl>
+        <bibl><label>[5]</label> N. Manton and P. Sutcliffe, Topological Solitons, Cambridge<lb/> University Press, Cambridge, UK, 2004.<lb/> </bibl>
+        <bibl><label>[6]</label> M. Baker, J. S. Ball, and F. Zachariasen, &quot; Effective quark-<lb/>antiquark potential for the constituent quark model, &quot; Physical<lb/> Review D, vol. 51, no. 4, pp. 1968–1988, 1995.<lb/> </bibl>
+        <bibl><label>[7]</label> M. Baker, J. S. Ball, N. Brambilla, G. M. Prosperi, and F. Zachari-<lb/>asen, &quot; Confinement: understanding the relation between the<lb/> Wilson loop and dual theories of long distance Yang-Mills<lb/> theory, &quot; Physical Review D, vol. 54, no. 4, pp. 2829–2844, 1996.<lb/> </bibl>
+        <bibl><label>[8]</label> M. Baker, J. S. Ball, N. Brambilla, G. M. Prosperi, and F.<lb/> Zachariasen, &quot; Erratum: confinement: understanding the rela-<lb/>tion between the Wilson loop and dual theories of long distance<lb/> Yang-Mills theory [Phys. Rev. D 54, 2829 (1996)], &quot; Physical<lb/> Review D, vol. 56, no. 4, p. 2475, 1997.<lb/> </bibl>
+        <bibl><label>[9]</label> S. Maedan and T. Suzuki, &quot; An infrared effective theory of quark<lb/> confinement based on monopole condensation, &quot; Progress of<lb/> Theoretical Physics, vol. 81, no. 1, pp. 229–240, 1989.<lb/> </bibl>
+        <bibl><label>[10]</label> H. Shiba, S. Kamisawa, Y. Matsubara, and T. Suzuki, &quot; A static<lb/> baryon in a dual abelian effective theory of QCD, &quot; Nuclear<lb/> Physics B, vol. 389, pp. 563–573, 1993.<lb/> </bibl>
+        <bibl><label>[11]</label> D. A. Komarov and M. N. Chernodub, &quot; String representation<lb/> of SU(3) gluodynamics in the Abelian projection, &quot; JETP Letters,<lb/> vol. 68, no. 2, pp. 117–123, 1998.<lb/> </bibl>
+        <bibl><label>[12]</label> H. J. de Vega, &quot; Fermions and vortex solutions in Abelian and<lb/> non-Abelian gauge theories, &quot; Physical Review D, vol. 18, p. 2932,<lb/> 1978.<lb/></bibl>
+        <bibl><label>[13]</label> H. J. de Vega and F. A. Schaposnik, &quot; Electrically charged vor-<lb/>tices in nonabelian gauge theories with Chern-Simons term, &quot;<lb/> Physical Review Letters, vol. 56, no. 24, pp. 2564–2566, 1986.<lb/> </bibl>
+        <bibl><label>[14]</label> H. J. De Vega and F. A. Schaposnik, &quot; Vortices and electri-<lb/>cally charged vortices in non-Abelian gauge theories, &quot; Physical<lb/> Review D, vol. 34, no. 10, pp. 3206–3213, 1986.<lb/> </bibl>
+        <bibl><label>[15]</label> J. Heo and T. Vachaspati, &quot; í µí± 3 strings and their interactions, &quot;<lb/> Physical Review D, vol. 58, Article ID 065011, 1998.<lb/> </bibl>
+        <bibl><label>[16]</label> K. Konishi and L. Spanu, &quot; Non-abelian vortex and confine-<lb/>ment, &quot; International Journal of Modern Physics A, vol. 18, no. 2,<lb/> pp. 249–269, 2003.<lb/> </bibl>
+        <bibl><label>[17]</label> L. E. Oxman, &quot; Confinement of quarks and valence gluons<lb/> in SU(N) Yang-Mills-Higgs models, &quot; Journal of High Energy<lb/> Physics, vol. 3, article 38, 2013.<lb/> </bibl>
+        <bibl><label>[18]</label> B. Ketzer, &quot; Hybrid mesons, &quot; in Proceedings of the 6th Interna-<lb/>tional Conference on Quarks and Nuclear Physics (QNP &apos;12),<lb/> PoS(QNP2012)025, Paris, France, April 2012.<lb/> </bibl>
+        <bibl><label>[19]</label> J. J. Dudek, R. G. Edwards, M. J. Peardon, D. G. Richards, and<lb/> C. E. Thomas, &quot; Highly excited and exotic meson spectrum from<lb/> dynamical lattice QCD, &quot; Physical Review Letters, vol. 103, Article<lb/> ID 262001, 2009.<lb/> </bibl>
+        <bibl><label>[20]</label> J. J. Dudek and R. G. Edwards, &quot; Hybrid baryons in QCD, &quot;<lb/> Physical Review D, vol. 85, no. 5, Article ID 054016, 11 pages,<lb/> 2012.<lb/> </bibl>
+        <bibl><label>[21]</label> P. Goddard, J. Nyuts, and D. Olive, &quot; Gauge theories and<lb/> magnetic charge, &quot; Nuclear Physics B, vol. 125, pp. 1–28, 1977.<lb/> </bibl>
+        <bibl><label>[22]</label> A. Hanany and D. Tong, &quot; Vortices, instantons and branes, &quot;<lb/> Journal of High Energy Physics, vol. 07, article 037, 2003.<lb/> </bibl>
+        <bibl><label>[23]</label> R. Auzzi, S. Bolognesi, J. Evslin, K. Konishi, and A. Yung,<lb/> &quot; Nonabelian superconductors: vortices and confinement in<lb/> í µí± = 2 SQCD, &quot; Nuclear Physics B, vol. 673, no. 1-2, pp. 187–216,<lb/> 2003.<lb/> </bibl>
+        <bibl><label>[24]</label> D. Tong, &quot; Monopoles in the Higgs phase, &quot; Physical Review D,<lb/> vol. 69, Article ID 065003, 2004.<lb/> </bibl>
+        <bibl><label>[25]</label> D. Tong, &quot; Quantum vortex strings: a review, &quot; Annals of Physics,<lb/> vol. 324, no. 1, pp. 30–52, 2009.<lb/> </bibl>
+        <bibl><label>[26]</label> K. Konishi, &quot; The magnetic monopoles seventy-five years later, &quot;<lb/> in String Theory and Fundamental Interactions, vol. 737 of<lb/> Lecture Notes in Physics, pp. 471–521, 2008.<lb/> </bibl>
+        <bibl><label>[27]</label> S. B. Bradlow and O. Garcia-Prada, &quot; Non-abelian monopoles<lb/> and vortices, &quot; in Geometry and Physics: Proceedings of the<lb/> Conference at Aarhus University, Aarhus, Denmark, 1995, J. E.<lb/> Andersen, J. Dupont, H. Pedersen, and A. Swann, Eds., Marcel<lb/> Dekker, New York, NY, USA, 1997.<lb/> </bibl>
+        <bibl><label>[28]</label> J. E. Humphreys, Introduction to Lie A lgebras and Representa-<lb/>tion Theory, Springer, New York, NY, USA, 1972.<lb/> </bibl>
+        <bibl><label>[29]</label> B. C. Hall, Lie Groups, Lie Algebras and Representations,<lb/> Springer, New York, NY, USA, 2003.<lb/> </bibl>
+        <bibl><label>[30]</label> H. Giorgi, Lie Algebras in Particle Physics, Frontiers in Physics,<lb/> Westview Press, 1999.<lb/> </bibl>
+        <bibl><label>[31]</label> Ph. de Forcrand and M. Pepe, &quot; Center vortices and monopoles<lb/> without lattice Gribov copies, &quot; Nuclear Physics B, vol. 598, pp.<lb/> 557–577, 2001.<lb/> </bibl>
+        <bibl><label>[32]</label> M. Engelhardt and H. Reinhardt, &quot; Center projection vortices in<lb/> continuum Yang-Mills theory, &quot; Nuclear Physics: B, vol. 567, no.<lb/> 1-2, pp. 249–292, 2000.<lb/> </bibl>
+        <bibl><label>[33]</label> H. Reinhardt, &quot; Topology of center vortices, &quot; Nuclear Physics B,<lb/> vol. 628, no. 1-2, pp. 133–166, 2002.<lb/></bibl>
+        <bibl><label>[34]</label> L. E. Oxman, &quot; Center vortices as sources of abelian dominance<lb/> in pure SU(2) Yang-Mills theory, &quot; Journal of High Energy<lb/> Physics, vol. 12, article 089, 2008.<lb/> </bibl>
+        <bibl><label>[35]</label> L. E. Oxman, &quot; Diagonal deformations of thin center vortices<lb/> and their stability in Yang-Mills theories, &quot; Journal of High<lb/> Energy Physics, vol. 2011, no. 7, article 78, 2011.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

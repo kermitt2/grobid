@@ -1,0 +1,52 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> Committee on the Physics of the Universe, Board on Physics<lb/> and Astronomy, and Division on Engineering and Physical<lb/> Sciences of the National Research Council of the National<lb/> Academies, Connecting Quarks with the Cosmos: Eleven Science<lb/> Questions for the New Century, National Academies Press, 2003.<lb/> </bibl>
+        <bibl><label>[2]</label> National Science and Technology Council, Committee on Sci-<lb/>ence, A 21st Century Frontier of Discovery, The Physics of the<lb/> Universe, 2004.<lb/> </bibl>
+        <bibl><label>[3]</label> The Dark Matter Scientific Assessment Group, Report on the<lb/> Direct Detection and Study of Dark Matter, 2007.<lb/> </bibl>
+        <bibl><label>[4]</label> The Particle Astrophysics Scientific Assessment Group, &quot; Report<lb/> of the HEPAP Particle Astrophysics Scientific Assessment<lb/> Group (PASAG), &quot; 2009.<lb/> </bibl>
+        <bibl><label>[5]</label> Z. Ahmed, D. S. Akerib, S. Arrenberg et al., &quot; Search for inelastic<lb/> dark matter with the CDMS II experiment, &quot; Physical Review D,<lb/> vol. 83, Article ID 112002, 2011.<lb/> </bibl>
+        <bibl><label>[6]</label> E. Armengaud, C. Augier, A. Beno&apos;it [EDELWEISS Collabora-<lb/>tion] et al., &quot; Search for low-mass WIMPs with EDELWEISS-<lb/>II heat-and-ionization detectors, &quot; Physical Review D, vol. 86,<lb/> Article ID 051701, 2012.<lb/> </bibl>
+        <bibl><label>[7]</label> G. Angloher, M. Bauer, I. Bavykina et al., &quot; Results from 730 kg<lb/> days of the CRESST-II Dark Matter search, &quot; European Physical<lb/> Journal C, vol. 72, no. 4, pp. 1–22, 2012.<lb/></bibl>
+        <bibl><label>[8]</label> R. Bernabei, P. Belli, F. Cappella et al., &quot; New results from<lb/> DAMA/LIBRA, &quot; The European Physical Journal C, vol. 67, no.<lb/> 1-2, pp. 39–49, 2010.<lb/> </bibl>
+        <bibl><label>[9] S.</label> C. Kim, H. Bhang, J. H. Choi et al., &quot; New limits on interactions<lb/> between weakly interacting massive particles and nucleons<lb/> obtained with CsI(Tl) crystal detectors, &quot; Physical Review Letters,<lb/> vol. 108, Article ID 181301, 2012.<lb/> </bibl>
+        <bibl><label>[10]</label> S. Archambault, F. Aubin, M. Auger et al., &quot; Dark matter spin-<lb/>dependent limits for WIMP interactions on 19F by PICASSO, &quot;<lb/> Physics Letters, Section B: Nuclear, Elementary Particle and High-<lb/>Energy Physics, vol. 682, no. 2, pp. 185–192, 2009.<lb/> </bibl>
+        <bibl><label>[11]</label> E. Behnke, J. Behnke, S. J. Brice et al., &quot; Improved limits on spin-<lb/>dependent WIMP-proton interactions from a two liter CF3I<lb/> bubble chamber, &quot; Physical Review Letters, vol. 106, no. 2, Article<lb/> ID 021303, 2011.<lb/> </bibl>
+        <bibl><label>[12]</label> C. E. Aalseth, P. S. Barbeau, N. S. Bowden [CoGeNT Collabora-<lb/>tion] et al., &quot; Results from a search for light-mass dark matter<lb/> with a p-type point contact germanium detector, &quot; Physical<lb/> Review Letters, vol. 106, Article ID 131301, 2011.<lb/> </bibl>
+        <bibl><label>[13]</label> E. Aprile, M. Alfonsi, K. Arisaka et al., &quot; Dark matter results from<lb/> 225 live days of XENON100 data, &quot; Physical Review Letters, vol.<lb/> 109, Article ID 181301, 1813.<lb/> </bibl>
+        <bibl><label>[14]</label> G. J. Alner, H. M. Araújo, A. Bewick et al., &quot; First limits on WIMP<lb/> nuclear recoil signals in ZEPLIN-II: a two-phase xenon detector<lb/> for dark matter detection, &quot; Astroparticle Physics, vol. 28, no. 3,<lb/> pp. 287–302, 2007.<lb/> </bibl>
+        <bibl><label>[15]</label> D. S. Akerib, X. Bai, H. M. Araujo et al., &quot; First results from<lb/> the LUX dark matter experiment at the Sanford Underground<lb/> Research Facility, &quot; Physical Review Letters, vol. 112, Article ID<lb/> 091303, 2014.<lb/></bibl>
+        <bibl><label>[16]</label> http://www-sk.icrr.u-tokyo.ac.jp/xmass/.<lb/> </bibl>
+        <bibl><label>[17]</label> A. Hime, &quot; The MiniCLEAN dark matter experiment, &quot; in Pro-<lb/>ceedings of the DPF Conference Proceedings, 2011.<lb/> </bibl>
+        <bibl><label>[18]</label> M. G. Boulay, &quot; DEAP-3600 dark matter search at SNOLAB, &quot;<lb/> Journal of Physics: Conference Series, vol. 375, Article ID 012027,<lb/> 2012.<lb/> </bibl>
+        <bibl><label>[19]</label> A. Rubbia, &quot; ArDM: a ton-scale liquid Argon experiment for<lb/> direct detection of Dark Matter in the Universe, &quot; Journal of<lb/> Physics: Conference Series, vol. 39, no. 39, article 129, 2006.<lb/> </bibl>
+        <bibl><label>[20]</label> R. Agnese, Z. Ahmed, A. J. Anderson et al., &quot; Silicon detector<lb/> dark matter results from the final exposure of CDMS II, &quot;<lb/> Physical Review Letters, vol. 111, Article ID 251301, 2013.<lb/> </bibl>
+        <bibl><label>[21]</label> R. Agnese, A. J. Anderson, M. Asai et al., &quot; CDMSlite: a search for<lb/> low-mass WIMPs using voltage-assisted calorimetric ionization<lb/> detection in the superCDMS experiment, &quot; Physical Review<lb/> Letters, vol. 112, Article ID 041302, 2014.<lb/> </bibl>
+        <bibl><label>[22]</label> K. Zurek, &quot; Theoretical results on Dark Matter, &quot; in Proceedings of<lb/> the 26th International Symposium on Lepton Photon Interactions<lb/> at High Energies, San Francisco, Calif, USA, June 2013.<lb/> </bibl>
+        <bibl><label>[23]</label> T. Alexander, D. Alton, K. Arisaka et al., &quot; Light yield in<lb/> DarkSide-10: a prototype two-phase argon TPC for dark matter<lb/> searches, &quot; Astroparticle Physics, vol. 49, pp. 44–51, 2013.<lb/> </bibl>
+        <bibl><label>[24]</label> P. Cushman, C. Galbiati, D. N. McKinsey et al., &quot; Snow-<lb/>mass CF1 summary: WIMP dark matter direct detection, &quot;<lb/> http://arxiv.org/abs/1310.8327.<lb/> </bibl>
+        <bibl><label>[25]</label> J. Xu, F. Calaprice, C. Galbiati et al., &quot; A study of the<lb/> residual<lb/> 39 Ar content in argon from underground sources, &quot;<lb/> http://arxiv.org/abs/1204.6011.<lb/> </bibl>
+        <bibl><label>[26]</label> P. Benetti, R. Acciarrif, F. Adamo et al., &quot; First results from a<lb/> dark matter search with liquid argon at 87 K in the Gran Sasso<lb/> underground laboratory, &quot; Astroparticle Physics, vol. 28, no. 6, pp.<lb/> 495–507, 2008.<lb/></bibl>
+        <bibl><label>[27]</label> M. G. Boulay and A. Hime, &quot; Technique for direct detection<lb/> of weakly interacting massive particles using scintillation time<lb/> discrimination in liquid argon, &quot; Astroparticle Physics, vol. 25, pp.<lb/> 179–182, 2006.<lb/> </bibl>
+        <bibl><label>[28]</label> T. Alexander, H. O. Back, H. Cao et al., &quot; Observation of the<lb/> dependence on drift field of scintillation from nuclear recoils<lb/> in liquid argon, &quot; Physical Review D, vol. 88, Article ID 092006,<lb/> 2013.<lb/> </bibl>
+        <bibl><label>[29]</label> A. Wright, P. Mosteiro, B. Loer, and F. Calaprice, &quot; A highly<lb/> efficient neutron veto for dark matter experiments, &quot; Nuclear<lb/> Instruments and Methods in Physics Research A: Accelerators,<lb/> Spectrometers, Detectors and Associated Equipment, vol. 644, no.<lb/> 1, pp. 18–26, 2011.<lb/> </bibl>
+        <bibl><label>[30]</label> http://www.toray.us/products/electronics/ele 003.html.<lb/> </bibl>
+        <bibl><label>[31]</label> R. Greenwood and N. R. Chellew, &quot; Improved<lb/> 10 B-loaded liquid<lb/> scintillator with pulse-shape discrimination, &quot; Review of Scien-<lb/>tific Instruments, vol. 50, p. 466, 1979.<lb/> </bibl>
+        <bibl><label>[32]</label> M. Flaska and S. A. Pozzi, &quot; Digital pulse shape analysis for the<lb/> capture-gated liquid scintillator BC-523A, &quot; Nuclear Instruments<lb/> and Methods in Physics Research A: Accelerators, Spectrometers,<lb/> Detectors and Associated Equipment, vol. 599, no. 2-3, pp. 221–<lb/> 225, 2009.<lb/> </bibl>
+        <bibl><label>[33]</label> G. Alimonti, G. Anghloherd, C. Arpesella et al., &quot; Ultra-low<lb/> background measurements in a large volume underground<lb/> detector, &quot; Astroparticle Physics, vol. 8, no. 3, pp. 141–157, 1998.<lb/> </bibl>
+        <bibl><label>[34]</label> G. Alimonti, C. Arpesella, G. Bacchiocchi et al., &quot; A large-scale<lb/> low-background liquid scintillation detector: the counting test<lb/> facility at Gran Sasso, &quot; Nuclear Instruments and Methods in<lb/> Physics Research A: Accelerators, Spectrometers, Detectors and<lb/> Associated Equipment, vol. 406, no. 3, pp. 411–426, 1998.<lb/> </bibl>
+        <bibl><label>[35]</label> G. Alimonti, C. Arpesella, H. Back et al., &quot; The Borexino detector<lb/> at the Laboratori Nazionali del Gran Sasso, &quot; Nuclear Instruments<lb/> and Methods in Physics Research A, vol. 600, no. 3, pp. 568–593,<lb/> 2009.<lb/> </bibl>
+        <bibl><label>[36]</label> H. O. Back, F. Calaprice, C. Condon et al., &quot; First large scale pro-<lb/>duction of low radioactivity argon from underground sources, &quot;<lb/> http://arxiv.org/abs/1204.6024.<lb/> </bibl>
+        <bibl><label>[37]</label> H. O. Back, T. Alexander, A. Alton et al., &quot; First commissioning<lb/> of a cryogenic distillation column for low radioactivity under-<lb/>ground argon, &quot; http://arxiv.org/abs/1204.6061.<lb/> </bibl>
+        <bibl><label>[38]</label> A. Empl, R. Jasim, E. Hungerford, and P. Mosteiro, &quot; Study<lb/> of cosmogenic neutron backgrounds at LNGS, &quot; Submitted,<lb/> http://arxiv.org/abs/1210.2708.<lb/> </bibl>
+        <bibl><label>[39]</label> R. Heaton, H. Lee, P. Skensved, and B. C. Robertson, &quot; Neutron<lb/> production from thick-target (í µí»¼, n) reactions, &quot; Nuclear Instru-<lb/>ments and Methods in Physics Research A, vol. 276, no. 3, pp.<lb/> 529–538, 1989.<lb/> </bibl>
+        <bibl><label>[40]</label> R. Agnese, T. Alexander, A. Alto et al., &quot; First results from the<lb/> darkside-50 dark matter experiment at Laboratori Nazionali del<lb/> Gran Sasso, &quot; http://arxiv.org/abs/1410.0653.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

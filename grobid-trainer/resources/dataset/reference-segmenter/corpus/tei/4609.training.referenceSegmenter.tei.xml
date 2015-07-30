@@ -1,0 +1,57 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        References<lb/> 
+        <bibl><label>[1]</label> ATLAS<lb/> Collaboration,<lb/> CDF<lb/> Collaboration,<lb/> CMS<lb/> Collaboration, and D0 Collaboration, &quot; First combination<lb/> of Tevatron and LHC measurements of the top-quark mass, &quot;<lb/> http://arxiv.org/abs/1403.4427.<lb/> </bibl>
+        <bibl><label>[2]</label> J. A. Aguilar-Saavedra, &quot; Top flavour-changing neutral coupling<lb/> signals at a linear collider, &quot; Physics Letters B, vol. 502, no. 1–4,<lb/> pp. 115–124, 2001.<lb/> </bibl>
+        <bibl><label>[3]</label> S. L. Glashow, J. Iliopoulos, and L. Maiani, &quot; Weak interactions<lb/> with lepton-hadron symmetry, &quot; Physical Review D, vol. 2, no. 7,<lb/> pp. 1285–1292, 1970.<lb/> </bibl>
+        <bibl><label>[4]</label> G. Eilam, J. L. Hewett, and A. Soni, &quot; Rare decays of the top<lb/> quark in the standard and two-Higgs-doublet models, &quot; Physical<lb/> Review D, vol. 44, article 1473, 1991.<lb/> </bibl>
+        <bibl><label>[5]</label> B. Mele, S. Petrarca, and A. Soddu, &quot; A new evaluation of the t →<lb/> cH decay width in the standard model, &quot; Physics Letters B, vol.<lb/> 435, no. 3-4, pp. 401–406, 1998.<lb/> </bibl>
+        <bibl><label>[6]</label> S. Bejar, J. Guasch, D. Lopez-Val, and J. Sola, &quot; FCNC-induced<lb/> heavy-quark events at the LHC from supersymmetry, &quot; Physics<lb/> Letters B, vol. 668, no. 5, pp. 364–372, 2008.<lb/> </bibl>
+        <bibl><label>[7]</label> J. Cao, Z. Heng, L. Wu, and J. M. Yang, &quot; R-parity violating<lb/> effects in top quark flavor-changing neutral-current production<lb/> at LHC, &quot; Physical Review D, vol. 79, no. 5, Article ID 054003, 7<lb/> pages, 2009.<lb/> </bibl>
+        <bibl><label>[8]</label> R. Guedes, R. Santos, and M. Won, &quot; Limits on strong flavor<lb/> changing neutral current top couplings at the LHC, &quot; Physical<lb/> Review D, vol. 88, Article ID 114011, 2013.<lb/> </bibl>
+        <bibl><label>[9]</label> G. A. González-Sprinberg, R. Martínez, and J.-A. Rodriguez,<lb/> &quot; FCNC top quark decays in extra dimensions, &quot; The European<lb/> Physical Journal C, vol. 51, no. 4, pp. 919–926, 2007.<lb/> </bibl>
+        <bibl><label>[10]</label> R. Coimbra, A. Onofre, R. Santos, and M. Won, &quot; MEtop—a<lb/> generator for single top production via FCNC interactions, &quot; The<lb/> European Physical Journal C, vol. 72, article 2222, 26 pages, 2012.<lb/> </bibl>
+        <bibl><label>[11]</label> J. Gao, C. S. Li, L. L. Yang, and H. Zhang, &quot; Searching for<lb/> anomalous top quark production at the early LHC, &quot; Physical<lb/> Review Letters, vol. 107, no. 9, Article ID 092002, 5 pages, 2011.<lb/> </bibl>
+        <bibl><label>[12]</label> J.-L. Agram, J. Andrea, E. Conte, B. Fuks, D. Gelé, and P.<lb/> Lansonneur, &quot; Probing top anomalous couplings at the LHC<lb/> with trilepton signatures in the single top mode, &quot; Physics Letters<lb/> B, vol. 725, no. 1–3, pp. 123–126, 2013.<lb/> </bibl>
+        <bibl><label>[13]</label> S. Khatibi and M. M. Najafabadi, &quot; Probing the anomalous<lb/> FCNC interactions in a top-Higgs boson final state and the<lb/> charge ratio approach, &quot; Physical Review D, vol. 89, Article ID<lb/> 054011, 2014.<lb/> </bibl>
+        <bibl><label>[14]</label> S. M. Etesami and M. M. Najafabadi, &quot; Study of anomalous top<lb/> quark flavor-changing neutral current interactions via the tW<lb/> channel of single-top-quark production, &quot; Physical Review D,<lb/> vol. 81, Article ID 117502, 2010.<lb/></bibl>
+        <bibl><label>[15]</label> The<lb/> ATLAS<lb/> collaboration,<lb/> ATLAS-CONF-2013-063,<lb/> http://cds.cern.ch/record/1562777.<lb/> </bibl>
+        <bibl><label>[16]</label> E. Yazgan, &quot; Flavor changing neutral currents in top quark<lb/> production and decay, &quot; in Proceedings of the 6th International<lb/> Workshop on Top Quark Physics (TOP &apos;13), Durbach, Germany,<lb/> September 2013.<lb/> </bibl>
+        <bibl><label>[17]</label> J. A. Aguilar-Saavedra and T. Riemann, &quot; Probing top flavour-<lb/>changing neutral couplings at TESLA, &quot; in Proceedings of the 5th<lb/> Workshop of the 2nd ECFA/DESY Study on Physics and Detectors<lb/> for a Linear Electron-Positron Collider, pp. 2428–2450, Obernai,<lb/> France, October 1999.<lb/> </bibl>
+        <bibl><label>[18]</label> P. Lebrun, L. Linssen, A. Lucaci-Timoce et al., &quot; The<lb/> CLIC Programme: towards a staged e+e-linear collider<lb/> exploring the terascale: CLIC conceptual design report, &quot;<lb/> http://arxiv.org/abs/1209.2543.<lb/> </bibl>
+        <bibl><label>[19]</label> L. Linssen, A. Miyamoto, M. Stanitzki, and H. Weerts, &quot; Physics<lb/> and detectors at CLIC: CLIC conceptual design report, &quot;<lb/> http://arxiv.org/abs/1202.5940.<lb/> </bibl>
+        <bibl><label>[20]</label> J. E. Brau, R. M. Godbole, F. R. L. Diberder et al., &quot; The physics<lb/> case for an e+e-linear collider, &quot; http://arxiv.org/abs/1210.0202.<lb/> </bibl>
+        <bibl><label>[21]</label> A. Aicheler, P. Burrows, M. Draper et al., A Multi-TeV Linear<lb/> Collider Based on CLIC Technology : CLIC Conceptual Design<lb/> Report, CERN, Geneva, Switzerland, 2012.<lb/> </bibl>
+        <bibl><label>[22]</label> H. Baer, T. Barklow, K. Fujii et al., &quot; The international<lb/> linear collider technical design report—volume 2: physics, &quot;<lb/> http://arxiv.org/abs/1306.6352.<lb/> </bibl>
+        <bibl><label>[23]</label> T. Behnke, J. E. Brau, B. Foster et al., &quot; The international<lb/> linear collider technical design report—volume 1: executive<lb/> summary, &quot; http://arxiv.org/abs/1306.6327.<lb/> </bibl>
+        <bibl><label>[24]</label> W. Buchmuller and D. Wyler, &quot; Effective lagrangian analysis of<lb/> new interactions and flavour conservation, &quot; Nuclear Physics B,<lb/> vol. 268, pp. 621–653, 1986.<lb/> </bibl>
+        <bibl><label>[25]</label> E. Malkawi and T. M. P. Tait, &quot; Top-quark-charm-quark strong<lb/> flavor-changing neutral currents at the Fermilab Tevatron, &quot;<lb/> Physical Review D, vol. 54, p. 5758, 1996.<lb/> </bibl>
+        <bibl><label>[26]</label> M. Hosch, K. Whisnant, and B. L. Young, &quot; Direct top quark<lb/> production at hadron colliders as a probe of new physics, &quot;<lb/> Physical Review D, vol. 56, no. 9, pp. 5725–5830, 1997.<lb/> </bibl>
+        <bibl><label>[27]</label> J. A. Aguilar-Saavedra, &quot; A minimal set of top anomalous<lb/> couplings, &quot; Nuclear Physics B, vol. 812, no. 1, pp. 181–204, 2009.<lb/></bibl>
+        <bibl><label>[28]</label> N. D. Christensen and C. Duhr, &quot; FeynRules—Feynman rules<lb/> made easy, &quot; Computer Physics Communications, vol. 180, pp.<lb/> 1614–1641, 2009.<lb/> </bibl>
+        <bibl><label>[29]</label> C. Duhr and B. Fuks, &quot; A superspace module for the Feyn-<lb/>Rules package, &quot; Computer Physics Communications, vol. 182, pp.<lb/> 2404–2426, 2011.<lb/> </bibl>
+        <bibl><label>[30]</label> C. Degrande, C. Duhr, B. Fuks, D. Grellscheid, O. Mattelaer,<lb/> and T. Reiter, &quot; UFO-the universal FeynRules output, &quot; Computer<lb/> Physics Communications, vol. 183, pp. 1201–1214, 2012.<lb/> </bibl>
+        <bibl><label>[31]</label> J. Alwall, M. Herquet, F. Maltoni, O. Mattelaer, and T. Stelzer,<lb/> &quot; MadGraph 5: going beyond, &quot; Journal of High Energy Physics,<lb/> vol. 1106, p. 128, 2011.<lb/> </bibl>
+        <bibl><label>[32]</label> A. Sherstnev, A. Kryukov, E. Boos et al., &quot; CompHEP status<lb/> report (version 4.5), &quot; in Proceedings of the 12th Conference<lb/> on Advanced Computing and Analysis Techniques in Physics<lb/> Research, PoS(ACAT08)008, Erice, Italy, November 2008.<lb/> </bibl>
+        <bibl><label>[33]</label> E. Boos, V. Bunichev, M. Dubinin et al., &quot; CompHEP 4.4—<lb/> automatic computations from lagrangians to events, &quot; Nuclear<lb/> Instruments and Methods in Physics Research A, vol. 534, pp.<lb/> 250–259, 2004.<lb/> </bibl>
+        <bibl><label>[34]</label> J. Brau, Y. Okada, N. Walker et al., &quot; ILC reference design report<lb/> volume 1—executive summary, &quot; http://arxiv.org/abs/0712.1950.<lb/> </bibl>
+        <bibl><label>[35]</label> H. Baer, T. Barklow, K. Fujii et al., &quot; The international<lb/> linear collider technical design report—volume 2: physics, &quot;<lb/> http://xxx.lanl.gov/abs/1306.6352.<lb/> </bibl>
+        <bibl><label>[36]</label> H. Abramowicz, A. Abusleme, K. Afanaciev et al., &quot; Physics at<lb/> the CLIC e+ e-Linear Collider—input to the Snowmass process<lb/> 2013, &quot; http://arxiv.org/abs/1307.5288.<lb/> </bibl>
+        <bibl><label>[37]</label> J. Therhaag, PoS ICHEP, vol. 2010, p. 510, 2010.<lb/> </bibl>
+        <bibl><label>[38]</label> A. Hocker, P. Speckmayer, J. Stelzer et al., &quot; TMVA-<lb/>Toolkit for multivariate data analysis in ROOT, &quot;<lb/> http://arxiv.org/abs/physics/0703039.<lb/> </bibl>
+        <bibl><label>[39]</label> B. P. Roe, H.-J. Yang, J. Zhu, Y. Liu, I. Stancu, and G. McGregor,<lb/> &quot; Boosted decision trees as an alternative to artificial neural<lb/> networks for particle identification, &quot; Nuclear Instruments and<lb/> Methods A, vol. 543, pp. 577–584, 2005.<lb/> </bibl>
+        <bibl><label>[40]</label> H.-J. Yang, B. P. Roe, and J. Zhu, &quot; Studies of boosted decision<lb/> trees for MiniBooNE particle identification, &quot; Nuclear Instru-<lb/>ments and Methods in Physics Research A, vol. 555, no. 1-2, pp.<lb/> 370–385, 2005.<lb/> </bibl>
+        <bibl><label>[41]</label> H.-J. Yang, B. P. Roe, and J. Zhu, &quot; Studies of stability and<lb/> robustness for artificial neural networks and boosted decision<lb/> trees, &quot; Nuclear Instruments and Methods in Physics Research A,<lb/> vol. 574, pp. 342–349, 2007.<lb/> </bibl>
+        <bibl><label>[42]</label> R. Pöschl and CALICE Collaboration, &quot; R&amp;D for a SiW elec-<lb/>tromagnetic calorimeter for a future linear collider, &quot; Journal of<lb/> Physics: Conference Series, vol. 293, no. 1, Article ID 012069, 2011.<lb/> </bibl>
+        <bibl><label>[43]</label> A. L. Read, &quot; Modified frequentist analysis of search results (the<lb/> CL(s) method), &quot; in Proceedings of the Workshop on Confidence<lb/> Limits, p. 81, Geneva, Switzerland, 2000.<lb/> </bibl>
+        <bibl><label>[44]</label> L. Moneta, K. Belasco, K. Cranmer et al., &quot; The RooStats project, &quot;<lb/> in Proceedings of the ACAT2010 Conference, 2010.<lb/> </bibl>
+        <bibl><label>[45]</label> M. Beneke, I. Efthymiopoulos, M. L. Mangano et al., &quot; Top quark<lb/> physics, &quot; in Proceedings of the CERN Workshop on Standard<lb/> Model Physics (and More) at the LHC, pp. 419–529, Geneva,<lb/> Switzerland, 1999.<lb/> </bibl>
+        <bibl><label>[46]</label> T. Han, K. Whisnant, B. L. Young, and X. Zhang, &quot; Searching for<lb/> í µí±¡ → í µí±í µí± at the Fermilab Tevatron, &quot; Physics Letters B, vol. 385,<lb/> pp. 311–316, 1996.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

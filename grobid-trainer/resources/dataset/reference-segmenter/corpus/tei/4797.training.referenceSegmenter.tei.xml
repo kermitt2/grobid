@@ -1,0 +1,37 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> J. D. Lindl, Inertial Confinement Fusion, Springer, New York, NY,<lb/> USA, 1998.<lb/> </bibl>
+        <bibl><label>[2]</label> J. D. Lindl, P. Amendt, R. L. Berger et al., &quot; The physics basis<lb/> for ignition using indirect-drive targets on the National Ignition<lb/> Facility, &quot; Physics of Plasmas, vol. 11, no. 2, pp. 339–491, 2004.<lb/> </bibl>
+        <bibl><label>[3]</label> S. Atzeni and J. Meyer-ter-Vehnl, The Physics of Inertial Fusion,<lb/> Oxford University Press, Oxford, UK, 2004.<lb/> </bibl>
+        <bibl><label>[4]</label> L. D. Landau, &quot; Die kinetische Gleichung für den Fall Coulomb-<lb/>scher Wechselwirkung, &quot; in Physikalische Zeitschrift der Sowjetu-<lb/>nion, vol. 10, pp. 154–164, 1936.<lb/> </bibl>
+        <bibl><label>[5]</label> L. D. Landau, &quot; Kinetic equation for the case of Coulomb inter-<lb/>action, &quot; Zhurnal Eksperimental&apos;noi i Teoreticheskoi Fiziki, vol. 7,<lb/> p. 203, 1958.<lb/> </bibl>
+        <bibl><label>[6]</label> L. Spitzer Jr., Physics of Fully Ionized Gases, Interscience, New<lb/> York, NY, USA, 2nd edition, 1992.<lb/> </bibl>
+        <bibl><label>[7]</label> M. W. C. Dharma-Wardana and F. Perrot, &quot; Energy relaxation<lb/> and the quasiequation of state of a dense two-temperature non-<lb/>equilibrium plasma, &quot; Physical Review E, vol. 58, no. 3, pp. 3705–<lb/> 3718, 1998.<lb/> </bibl>
+        <bibl><label>[8]</label> D. O. Gericke, M. S. Murillo, and M. Schlanges, &quot; Dense plasma<lb/> temperature equilibration in the binary collision approxima-<lb/>tion, &quot; Physical Review E—Statistical, Nonlinear, and Soft Matter<lb/> Physics, vol. 65, no. 3, Article ID 036418, 2002.<lb/> </bibl>
+        <bibl><label>[9]</label> L. S. Brown, D. L. Preston, and R. L. Singleton Jr., &quot; Charged<lb/> particle motion in a highly ionized plasma, &quot; Physics Reports, vol.<lb/> 410, no. 4, pp. 237–333, 2005.<lb/> </bibl>
+        <bibl><label>[10]</label> J. N. Glosli, F. R. Graziani, R. M. More et al., &quot; Molecular dynam-<lb/>ics simulations of temperature equilibration in dense hydrogen, &quot;<lb/> Physical Review E, vol. 78, no. 2, Article ID 025401(R), 2008.<lb/> </bibl>
+        <bibl><label>[11]</label> G. Dimonte and J. Daligault, &quot; Molecular-dynamics simulations<lb/> of electron-ion temperature relaxation in a classical Coulomb<lb/> plasma, &quot; Physical Review Letters, vol. 101, no. 13, Article ID<lb/> 135001, 2008.<lb/> </bibl>
+        <bibl><label>[12]</label> B. Jeon, M. Foster, J. Colgan et al., &quot; Energy relaxation rates in<lb/> dense hydrogen plasmas, &quot; Physical Review E—Statistical, Non-<lb/>linear, and Soft Matter Physics, vol. 78, no. 3, Article ID 036403,<lb/> 2008.<lb/> </bibl>
+        <bibl><label>[13]</label> M. Mahdavi and T. Koohrokhi, &quot; Nuclear elastic scattering effect<lb/> on stopping power of charged particles in high-temperature<lb/> media, &quot; Modern Physics Letters A, vol. 26, no. 21, pp. 1561–1570,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[14]</label> M. Mahdavi and T. Koohrokhi, &quot; Energy deposition of multi-<lb/>MeV protons in compressed targets of fast-ignition inertial con-<lb/>finement fusion, &quot; Physical Review E: Statistical, Nonlinear, and<lb/> Soft Matter Physics, vol. 85, no. 1, Article ID 016405, 2012.<lb/> </bibl>
+        <bibl><label>[15]</label> M. Mahdavi, T. Koohrokhi, and R. Azadifar, &quot; The interaction<lb/> of quasi-monoenergetic protons with pre-compressed inertial<lb/> fusion fuels, &quot; Physics of Plasmas, vol. 19, no. 8, Article ID 082707,<lb/> 2012.<lb/> </bibl>
+        <bibl><label>[16]</label> L. S. Brown and R. L. Singleton, &quot; Temperature equilibration rate<lb/> with Fermi-Dirac statistics, &quot; Physical Review E, vol. 76, no. 6,<lb/> Article ID 066404, 2007.<lb/> </bibl>
+        <bibl><label>[17]</label> R. L. Singleton, &quot; Charged particle stopping power effects on<lb/> ignition: some results from an exact calculation, &quot; Physics of Plas-<lb/>mas, vol. 15, no. 5, Article ID 056302, 2008.<lb/> </bibl>
+        <bibl><label>[18]</label> D. Kremp, M. Schlanges, and W.-D. Kraeft, Quantum Statistics<lb/> of Nonideal Plasma, vol. 25 of Atomic, Optical, and Plasma<lb/> Physics, Springer, Berlin, Germany, 2005.<lb/> </bibl>
+        <bibl><label>[19]</label> J. C. Fernandez, B. J. Albright, F. N. Beg et al., &quot; Fast ignition with<lb/> laser-driven proton and ion beams, &quot; Nuclear Fusion, vol. 54, no.<lb/> 5, Article ID 054006, 2014.<lb/> </bibl>
+        <bibl><label>[20]</label> M. Tabak, J. Hammer, M. E. Glinsky et al., &quot; Ignition and high<lb/> gain with ultrapowerful lasers, &quot; Physics of Plasmas, vol. 1, no. 5,<lb/> pp. 1626–1634, 1994.<lb/> </bibl>
+        <bibl><label>[21]</label> M. Roth, T. E. Cowan, M. H. Key et al., &quot; Fast ignition by intense<lb/> laser-accelerated proton beams, &quot; Physical Review Letters, vol. 86,<lb/> no. 3, pp. 436–439, 2001.<lb/> </bibl>
+        <bibl><label>[22]</label> B. M. Hegelich, B. J. Albright, J. Cobble et al., &quot; Laser acceleration<lb/> of quasi-monoenergetic MeV ion beams, &quot; Nature, vol. 439, no.<lb/> 7075, pp. 441–444, 2006.<lb/> </bibl>
+        <bibl><label>[23]</label> M. Roth, D. Jung, K. Falk et al., &quot; Bright laser-driven neutron<lb/> source based on the relativistic transparency of solids, &quot; Physical<lb/> Review Letters, vol. 110, no. 4, Article ID 044802, 2013.<lb/> </bibl>
+        <bibl><label>[24]</label> D.-X. Liu, W. Hong, L.-Q. Shan, S.-C. Wu, and Y.-Q. Gu, &quot; Fast<lb/> ignition by a laser-accelerated deuteron beam, &quot; Plasma Physics<lb/> and Controlled Fusion, vol. 53, no. 3, Article ID 035022, 2011.<lb/> </bibl>
+        <bibl><label>[25]</label> X. Yang, G. H. Miley, K. A. Flippo, and H. Hora, &quot; Energy<lb/> enhancement for deuteron beam fast ignition of a precom-<lb/>pressed inertial confinement fusion target, &quot; Physics of Plasmas,<lb/> vol. 18, no. 3, Article ID 032703, 2011.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

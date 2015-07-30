@@ -1,0 +1,52 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> J. N. Ginocchio, &quot; Relativistic symmetries in nuclei and hadrons, &quot;<lb/> Physics Reports, vol. 414, no. 4-5, pp. 165–261, 2005.<lb/> </bibl>
+        <bibl><label>[2]</label> D. Troltenier, C. Bahri, and J. P. Draayer, &quot; Generalized pseudo-<lb/>SU(3) model and pairing, &quot; Nuclear Physics A, vol. 586, no. 1, pp.<lb/> 53–72, 1995.<lb/> </bibl>
+        <bibl><label>[3]</label> J. N. Ginocchio, &quot; Pseudospin as a relativistic symmetry, &quot; Physi-<lb/>cal Review Letters, vol. 78, no. 3, pp. 436–439, 1997.<lb/> </bibl>
+        <bibl><label>[4]</label> J. N. Ginocchio, A. Leviatan, J. Meng, and S.-G. Zhou, &quot; Test of<lb/> pseudospin symmetry in deformed nuclei, &quot; Physical Review C,<lb/> vol. 69, no. 3, Article ID 034303, 2004.<lb/> </bibl>
+        <bibl><label>[5]</label> S.-H. Dong and M. Lozada-Cassou, &quot; Generalized hypervirial<lb/> and recurrence relations for radial matrix elements in arbitrary<lb/> dimensions, &quot; Modern Physics Letters A: Particles and Fields,<lb/> Gravitation, Cosmology, Nuclear Physics, vol. 20, no. 20, pp.<lb/> 1533–1540, 2005.<lb/> </bibl>
+        <bibl><label>[6]</label> G.-F. Wei, C.-Y. Long, and S.-H. Dong, &quot; The scattering of the<lb/> Manning-Rosen potential with centrifugal term, &quot; Physics Letters<lb/> A, vol. 372, no. 15, pp. 2592–2596, 2008.<lb/> </bibl>
+        <bibl><label>[7]</label> W. C. Qiang and S. H. Dong, &quot; The Manning–Rosen potential<lb/> studied by a new approximate scheme to the centrifugal term, &quot;<lb/> Physica Scripta, vol. 79, Article ID 045004, 2009.<lb/> </bibl>
+        <bibl><label>[8]</label> A. F. Nikiforov and V. B. Uvarov, Special Functions of Mathemat-<lb/>ical Physics, Birkhäuser, Basel, Switzerland, 1988.<lb/> </bibl>
+        <bibl><label>[9]</label> G. F. Wei and S. H. Dong, &quot; Algebraic approach to energy spectra<lb/> of the Scarf type and generalized Pöschl–Teller potentials, &quot;<lb/> Canadian Journal of Physics, vol. 89, no. 12, pp. 1225–1231, 2011.<lb/> </bibl>
+        <bibl><label>[10]</label> G.-F. Wei and S.-H. Dong, &quot; Approximately analytical solutions<lb/> of the Manning-Rosen potential with the spin-orbit coupling<lb/> term and spin symmetry, &quot; Physics Letters A, vol. 373, no. 1, pp.<lb/> 49–53, 2008.<lb/> </bibl>
+        <bibl><label>[11]</label> G. F. Wei and S. H. Dong, &quot; Pseudospin symmetry in the<lb/> relativistic Manning-Rosen potential including a Pekeris-type<lb/> approximation to the pseudo-centrifugal term, &quot; Physics Letters<lb/> B, vol. 686, no. 4-5, pp. 288–292, 2010.<lb/> </bibl>
+        <bibl><label>[12]</label> J. Meng, K. Sugawara-Tanabe, S. Yamaji, and A. Arima, &quot; Pseu-<lb/>dospin symmetry in Zr and Sn isotopes from the proton drip<lb/> line to the neutron drip line, &quot; Physical Review C, vol. 59, p. 154,<lb/> 1999.<lb/> </bibl>
+        <bibl><label>[13]</label> F. S. Stephen, M. A. Deleplanque, J. E. Draper et al., &quot; Pseudospin<lb/> symmetry and quantized alignment in nuclei, &quot; Physical Review<lb/> Letters, vol. 65, no. 3, pp. 301–304, 1990.<lb/> </bibl>
+        <bibl><label>[14]</label> A. E. Stuchbery, &quot; Magnetic properties of rotational states in the<lb/> pseudo-Nilsson model, &quot; Nuclear Physics A, vol. 700, no. 1-2, pp.<lb/> 83–116, 2002.<lb/> </bibl>
+        <bibl><label>[15]</label> E. Maghsoodi, H. Hassanabadi, S. Zarrinkamar, and H. Rahi-<lb/>mov, &quot; Relativistic symmetries of the Dirac equation under the<lb/> nuclear WoodsSaxon potential, &quot; Physica Scripta, vol. 85, no. 5,<lb/> Article ID 055007, 2012.<lb/> </bibl>
+        <bibl><label>[16]</label> C.-S. Jia, P. Guo, and X.-L. Peng, &quot; Exact solution of the Dirac-<lb/>Eckart problem with spin and pseudospin symmetry, &quot; Journal of<lb/> Physics A: Mathematical and General, vol. 39, no. 24, pp. 7737–<lb/> 7744, 2006.<lb/> </bibl>
+        <bibl><label>[17]</label> C.-S. Jia and A. de Souza Dutra, &quot; Position-dependent effec-<lb/>tive mass Dirac equations with PT-symmetric and non-PT-<lb/>symmetric potentials, &quot; Journal of Physics A: Mathematical and<lb/> General, vol. 39, no. 38, pp. 11877–11887, 2006.<lb/> </bibl>
+        <bibl><label>[18]</label> H. Hassanabadi, E. Maghsoodi, S. Zarrinkamar, and H. Rahi-<lb/>mov, &quot; Dirac equation for generalized Pöschl-Teller scalar<lb/> and vector potentials and a Coulomb tensor interaction by<lb/> Nikiforov-Uvarov method, &quot; Journal of Mathematical Physics,<lb/> vol. 53, no. 2, Article ID 022104, 2012.<lb/> </bibl>
+        <bibl><label>[19]</label> H. Akcay, &quot; Dirac equation with scalar and vector quadratic<lb/> potentials and Coulomb-like tensor potential, &quot; Physics Letters:<lb/> A, vol. 373, no. 6, pp. 616–620, 2009.<lb/> </bibl>
+        <bibl><label>[20]</label> C.-S. Jia, T. Chen, and L.-G. Cui, &quot; Approximate analytical<lb/> solutions of the Dirac equation with the generalized Pöschl-<lb/>Teller potential including the pseudo-centrifugal term, &quot; Physics<lb/> Letters A, vol. 373, no. 18-19, pp. 1621–1626, 2009.<lb/> </bibl>
+        <bibl><label>[21]</label> L. H. Zhang, X. P. Li, and C. S. Jia, &quot; Approximate analytical<lb/> solutions of the Dirac equation with the generalized Morse<lb/> potential model in the presence of the spin symmetry and<lb/> pseudo-spin symmetry, &quot; Physica Scripta, vol. 80, no. 3, Article<lb/> ID 035003, 2009.<lb/> </bibl>
+        <bibl><label>[22]</label> H. Akcay, &quot; The Dirac oscillator with a Coulomb-like tensor<lb/> potential, &quot; Journal of Physics A: Mathematical and Theoretical,<lb/> vol. 40, no. 24, pp. 6427–6432, 2007.<lb/> </bibl>
+        <bibl><label>[23]</label> O. Aydogdu and R. Sever, &quot; Exact pseudospin symmetric solu-<lb/>tion of the dirac equation for pseudoharmonic potential in the<lb/> presence of tensor potential, &quot; Few-Body Systems, vol. 47, pp. 193–<lb/> 200, 2010.<lb/> </bibl>
+        <bibl><label>[24]</label> S.-H. Dong, Factorization Method in Quantum Mechanics,<lb/> Springer, Berlin, Germany, 2007.<lb/> </bibl>
+        <bibl><label>[25]</label> J. Meng, K. Sugawara-Tanabe, S. Yamaji, P. Ring, and A.<lb/> </bibl>
+<bibl>Arima, &quot; Pseudospin symmetry in relativistic mean field theory, &quot;<lb/> Physical Review C, vol. 58, no. 2, article R628, 1998.<lb/> </bibl>
+        <bibl><label>[26]</label> K. Thirulogasanther and N. Saad, &quot; Coherent states associated<lb/> with the wavefunctions and the spectrum of the isotonic<lb/> oscillator, &quot; Journal of Physics A: Mathematical and General, vol.<lb/> 37, no. 16, p. 4567, 2004.<lb/> </bibl>
+        <bibl><label>[27]</label> J.-S. Wang, T.-K. Liu, and M.-S. Zhan, &quot; Nonclassical properties<lb/> of even and odd generalized coherent states for an isotonic<lb/> oscillator, &quot; Journal of Optics B: Quantum and Semiclassical<lb/> Optics, vol. 2, no. 6, pp. 758–763, 2000.<lb/> </bibl>
+        <bibl><label>[28]</label> O. A. Chalykh and A. P. Veselov, &quot; A remark on rational<lb/> isochronous potentials, &quot; Journal of Nonlinear Mathematical<lb/> Physics, vol. 12, no. 1, pp. 179–183, 2005.<lb/> </bibl>
+        <bibl><label>[29]</label> J. Casahorran, &quot; On a novel supersymmetric connections<lb/> between harmonic and isotonic oscillators, &quot; Physica A, vol. 217,<lb/> no. 3-4, pp. 429–439, 1995.<lb/> </bibl>
+        <bibl><label>[30]</label> C. Grosche, G. S. Pogosyan, and A. N. Sissakian, &quot; Path integral<lb/> discussion for Smorodinsky-Winternitz potentials: II. The two-<lb/>and three-dimensional sphere, &quot; Fortschritte der Physik/Progress<lb/> of Physics, vol. 43, no. 6, pp. 523–563, 1995.<lb/> </bibl>
+        <bibl><label>[31]</label> N. Akpan, E. Ikot, S. Maghsoodi, H. Zarrinkamar, and Z.<lb/> Hassanabadi, &quot; Shape-invariant approach to study relativistic<lb/> symmetries of the dirac equation with a new hyperbolical<lb/> potential combination, &quot; Zeitschrift für Naturforschung A, vol. 68,<lb/> pp. 499–509, 2013.<lb/> </bibl>
+        <bibl><label>[32]</label> H. Hassanabadi, E. Maghsoodi, N. Salehi, A. N. Ikot, and S.<lb/> Zarrinkamar, &quot; Scattering states of the dirac equation under<lb/> asymmetric Hulthén potential, &quot; The European Physical Journal<lb/> Plus, vol. 128, no. 10, pp. 1–9, 2013.<lb/> </bibl>
+        <bibl><label>[33]</label> S.-H. Dong, &quot; Exact solutions of the two-dimensional Schrding-<lb/>er equation with certain central potentials, &quot; International Jour-<lb/>nal of Theoretical Physics, vol. 39, no. 4, pp. 1119–1128, 2000.<lb/> </bibl>
+        <bibl><label>[34]</label> S. H. Dong, &quot; Correlations of spin states for icosahedral double<lb/> group, &quot; International Journal of Theoretical Physics, vol. 40, no.<lb/> 2, pp. 569–581, 2001.<lb/> </bibl>
+        <bibl><label>[35]</label> H. Hassanabadi and A. A. Rajabi, &quot; Energy levels of a spherical<lb/> quantum dot in a confining potential, &quot; Physics Letters A, vol. 373,<lb/> no. 6, pp. 679–681, 2009.<lb/> </bibl>
+        <bibl><label>[36]</label> H. Hassanabadi and A. A. Rajabi, &quot; Relativistic versus nonrel-<lb/>ativistic solution of the N-fermion problem in a hyperradius-<lb/>confining potential, &quot; Few-Body Systems, vol. 41, no. 3-4, pp. 201–<lb/> 210, 2007.<lb/> </bibl>
+        <bibl><label>[37]</label> S.-H. Dong, Z.-Q. Ma, and G. Esposito, &quot; Exact solutions<lb/> of the Schrödinger equation with inverse-power potential, &quot;<lb/> Foundations of Physics Letters, vol. 12, no. 5, pp. 465–474, 1999.<lb/> </bibl>
+        <bibl><label>[38]</label> H. Hassanabadi, H. Rahimov, and S. Zarrinkamar, &quot; Cornell and<lb/> Coulomb interactions for the D-dimensional Klein-Gordon<lb/> equation, &quot; Annalen der Physik, vol. 523, no. 7, pp. 566–575, 2011.<lb/> </bibl>
+        <bibl><label>[39]</label> D. Agboola and Y.-Z. Zhang, &quot; Unified derivation of exact<lb/> solutions for a class of quasi-exactly solvable models, &quot; Journal of<lb/> Mathematical Physics, vol. 53, no. 4, Article ID 042101, 13 pages,<lb/> 2012.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,38 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> S. Weinberg, Gravitation and Cosmology: Principles and Appli-<lb/>cations of the General Theory of Relativity, John Wiley &amp; Sons,<lb/> New York, NY, USA, 1972.<lb/> </bibl>
+        <bibl><label>[2]</label> C. W. Misner, K. S. Thorne, and J. A. Wheeler, Gravitation, W.<lb/> H. Freeman and Co., San Francisco, Calif, USA, 1973.<lb/> </bibl>
+        <bibl><label>[3]</label> R. M. Wald, General Relativity, University of Chicago Press,<lb/> Chicago, Ill, USA, 1984.<lb/> </bibl>
+        <bibl><label>[4]</label> S. G. Turyshev, U. E. Israelsson, M. Shao et al., &quot; Space-based<lb/> research in fundamental physics and quantum technologies, &quot;<lb/> International Journal of Modern Physics D, vol. 16, no. 12, pp.<lb/> 1879–1925, 2008.<lb/> </bibl>
+        <bibl><label>[5]</label> S. G. Turyshev, &quot; Experimental tests of general relativity, &quot; Annual<lb/> Review of Nuclear and Particle Science, vol. 58, pp. 207–248,<lb/> 2008.<lb/> </bibl>
+        <bibl><label>[6]</label> T. P. Sotiriou and V. Faraoni, &quot; í µí±(í µí±) theories of gravity, &quot; Reviews<lb/> of Modern Physics, vol. 82, no. 1, pp. 451–497, 2010.<lb/> </bibl>
+        <bibl><label>[7]</label> R. G. Cai, L. M. Cao, Y. P. Hu, and N. Ohta, &quot; Generalized<lb/> Misner-Sharp energy in f (R) gravity, &quot; Physical Review D, vol.<lb/> 80, Article ID 104016, 2009.<lb/> </bibl>
+        <bibl><label>[8]</label> T. Clifton and J. D. Barrow, &quot; The power of general relativity, &quot;<lb/> Physical Review, D: Third Series, vol. 72, no. 10, Article ID<lb/> 103005, 2005, Erratum in Physical Review, D: Third Series, vol.<lb/> 90, Article ID 029902, 2014.<lb/> </bibl>
+        <bibl><label>[9]</label> H. Zhang, Y. Hu, and X. Z. Li, &quot; Misner-Sharp mass in n-<lb/>dimensional f(R) gravity, &quot; Physical Review D, vol. 90, Article ID<lb/> 024062, 2014.<lb/> </bibl>
+        <bibl><label>[10]</label> S. Weinberg, &quot; The cosmological constant problem, &quot; Reviews of<lb/> Modern Physics, vol. 61, no. 1, 1989.<lb/> </bibl>
+        <bibl><label>[11]</label> P. J. Peebles and B. Ratra, &quot; The cosmological constant and dark<lb/> energy, &quot; Reviews of Modern Physics, vol. 75, no. 2, pp. 559–606,<lb/> 2003.<lb/> </bibl>
+        <bibl><label>[12]</label> A. Albrecht and C. Skordis, &quot; Phenomenology of a realistic<lb/> accelerating universe using only Planck-scale physics, &quot; Physical<lb/> Review Letters, vol. 84, p. 2076, 2000.<lb/> </bibl>
+        <bibl><label>[13]</label> M. Li, X. D. Li, S. Wang, and Y. Wang, &quot; Dark energy, &quot; Commu-<lb/>nications in Theoretical Physics, vol. 56, no. 3, p. 525, 2011.<lb/> </bibl>
+        <bibl><label>[14]</label> V. Kagramanova, J. Kunz, and C. Lammerzahl, &quot; Solar system<lb/> effects in Schwarzschild-de Sitter space-time, &quot; Physics Letters B,<lb/> vol. 634, pp. 465–470, 2006.<lb/> </bibl>
+        <bibl><label>[15]</label> P. Jetzer and M. Sereno, &quot; Two-body problem with the cosmo-<lb/>logical constant and observational constraints, &quot; Physical Review<lb/> D, vol. 73, no. 4, Article ID 044015, 6 pages, 2006.<lb/> </bibl>
+        <bibl><label>[16]</label> L. Iorio, &quot; Solar System motions and the cosmological constant:<lb/> a new approach, &quot; Advances in Astronomy, vol. 2012, Article ID<lb/> 268647, 9 pages, 2012.<lb/> </bibl>
+        <bibl><label>[17]</label> L. Iorio, &quot; Constraining the angular momentum of the sun with<lb/> planetary orbital motions and general relativity, &quot; Solar Physics,<lb/> vol. 281, no. 2, pp. 815–826, 2012.<lb/> </bibl>
+        <bibl><label>[18]</label> L. Iorio, &quot; Constraining the electric charges of some astro-<lb/>nomical bodies in Reissner-Nordström spacetimes and generic<lb/> í µí±<lb/> −2 -type power-law potentials from orbital motions, &quot; General<lb/> Relativity and Gravitation, vol. 44, no. 7, pp. 1753–1767, 2012.<lb/> </bibl>
+        <bibl><label>[19]</label> M. Sereno and P. Jetzer, &quot; Dark matter versus modifications<lb/> of the gravitational inverse-square law: results from planetary<lb/> motion in the Solar system, &quot; Monthly Notices of the Royal<lb/> Astronomical Society, vol. 371, no. 2, pp. 626–632, 2006.<lb/> </bibl>
+        <bibl><label>[20]</label> M. Sereno, &quot; Weak field limit of Reissner-Nordström black hole<lb/> lensing, &quot; Physical Review D, vol. 69, no. 2, Article ID 023002, 4<lb/> pages, 2004.<lb/> </bibl>
+        <bibl><label>[21]</label> M. Sereno and P. Jetzer, &quot; Solar and stellar system tests of the<lb/> cosmological constant, &quot; Physical Review D, vol. 73, Article ID<lb/> 063004, 2006.<lb/> </bibl>
+        <bibl><label>[22]</label> M. Sereno, &quot; Influence of the cosmological constant on gravi-<lb/>tational lensing in small systems, &quot; Physical Review D, vol. 77,<lb/> Article ID 043004, 2008.<lb/> </bibl>
+        <bibl><label>[23]</label> M. Sereno, &quot; Role of Λ in the cosmological lens equation, &quot;<lb/> Physical Review Letters, vol. 102, no. 2, Article ID 021301, 2009.<lb/> </bibl>
+        <bibl><label>[24]</label> F. W. Dyson, A. S. Eddington, and C. Davidson, &quot; A determi-<lb/>nation of the deflection of light by the sun&apos;s gravitational field,<lb/> from observations made at the total eclipse of May 29, 1919, &quot;<lb/> Philosophical Transactions of the Royal Society A, vol. 220, no.<lb/> 571–581, pp. 291–333, 1920.<lb/> </bibl>
+        <bibl><label>[25]</label> D. Kennefick, &quot; Testing relativity from the 1919 eclipse—a ques-<lb/>tion of bias, &quot; Physics Today, vol. 62, no. 3, pp. 37–42, 2009.<lb/> </bibl>
+        <bibl><label>[26]</label> G. M. Clemence, &quot; The relativity effect in planetary motions, &quot;<lb/> Reviews of Modern Physics, vol. 19, p. 361, 1947.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

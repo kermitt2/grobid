@@ -1,0 +1,77 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> S. Perlmutter, G. Aldering, M. D. Valle et al., &quot; Discovery of a<lb/> supernova explosion at half the age of the universe, &quot; Nature, vol.<lb/> 391, no. 6662, pp. 51–54, 1998.<lb/> </bibl>
+        <bibl><label>[2]</label> A. G. Riess, A. V. Filippenko, and P. Challis, &quot; Observational<lb/> evidence from supernovae for an accelerating universe and a<lb/> cosmological constant, &quot; The Astronomical Journal, vol. 116, p.<lb/> 1009, 1998.<lb/> </bibl>
+        <bibl><label>[3]</label> M. Tegmark, M. Strauss, M. Blanton et al., &quot; Cosmological<lb/> parameters from SDSS and WMAP, &quot; Physical Review D, vol. 69,<lb/> Article ID 103501, 2004.<lb/> </bibl>
+        <bibl><label>[4]</label> D. N. Spergel, L. Verde, H. V. Peiris et al., &quot; First year Wilkinson<lb/> Microwave Anisotropy Probe (WMAP) observations: determi-<lb/>nation of cosmological parameters, &quot; The Astrophysical Journal<lb/> Supplement, vol. 148, no. 1, pp. 175–194, 2003.<lb/> </bibl>
+        <bibl><label>[5]</label> S. Briddle, O. Lahav, J. P. Ostriker, and P. J. Steinhardt, &quot; Precision<lb/> cosmology? Not just yet, &quot; Science, vol. 299, pp. 1532–1533, 2003.<lb/> </bibl>
+        <bibl><label>[6]</label> A. Einstein, Sitzungsberichte der Preussischen Akademie der<lb/> Wissenschaften, vol. 1917, p. 142, 1917.<lb/> </bibl>
+        <bibl><label>[7]</label> S. Weinberg, &quot; The cosmological constant problem, &quot; Reviews of<lb/> Modern Physics, vol. 61, no. 1, pp. 1–23, 1989.<lb/> </bibl>
+        <bibl><label>[8]</label> V. Sahni and A. Starobinsky, &quot; The case for a postive cosmolog-<lb/>ical í µí¼-term, &quot; International Journal of Modern Physics D, vol. 9,<lb/> no. 4, pp. 373–443, 2000.<lb/> </bibl>
+        <bibl><label>[9]</label> P. J. Steinhardt, &quot; Cosmological challenges for the 21st century, &quot;<lb/> in Critical Problems in Physics, V. L. Fitch and D. R. Marlow,<lb/> Eds., pp. 123–145, Princeton University Press, 1997.<lb/> </bibl>
+        <bibl><label>[10]</label> C. Armendariz-Picon, V. Mukhanov, and P. J. Steinhardt,<lb/> &quot; Dynamical solution to the problem of a small cosmological<lb/> constant and late-time cosmic acceleration, &quot; Physical Review<lb/> Letters, vol. 85, no. 21, pp. 4438–4441, 2000.<lb/> </bibl>
+        <bibl><label>[11]</label> A. Sen, &quot; Tachyon matter, &quot; Journal of High Energy Physics, vol.<lb/> 2002, no. 7, article 065, 2002.<lb/> </bibl>
+        <bibl><label>[12]</label> B. Feng, X. L. Wang, and X. M. Zhang, &quot; Dark energy constraints<lb/> from the cosmic age and supernova, &quot; Physics Letters B, vol. 607,<lb/> no. 1-2, pp. 35–41, 2005.<lb/> </bibl>
+        <bibl><label>[13]</label> A. Kamenshchik, U. Moschella, and V. Pasquier, &quot; An alternative<lb/> to quintessence, &quot; Physics Letters, Section B: Nuclear, Elementary<lb/> Particle and High-Energy Physics, vol. 511, no. 2–4, pp. 265–268,<lb/> 2001.<lb/> </bibl>
+        <bibl><label>[14]</label> E. J. Copeland, M. Sami, and S. Tsujikawa, &quot; Dynamics of dark<lb/> energy, &quot; International Journal of Modern Physics D, vol. 15, no.<lb/> 11, pp. 1753–1935, 2006.<lb/> </bibl>
+        <bibl><label>[15]</label> P. J. E. Peebles and B. Ratra, &quot; Cosmology with a time-variable<lb/> cosmological &quot; constant &quot; , &quot; The Astrophysical Journal, vol. 325, pp.<lb/> L17–L20, 1988.<lb/> </bibl>
+        <bibl><label>[16]</label> R. R. Caldwell, R. Dave, and P. J. Steinhardt, &quot; Cosmological<lb/> imprint of an energy component with general equation of state, &quot;<lb/> Physical Review Letters, vol. 80, no. 8, pp. 1582–1585, 1998.<lb/> </bibl>
+        <bibl><label>[17]</label> A. R. Liddle and R. J. Scherrer, &quot; Classification of scalar field<lb/> potentials with cosmological scaling solutions, &quot; Physical Review<lb/> D, vol. 59, no. 2, Article ID 023509, 7 pages, 1998.<lb/> </bibl>
+        <bibl><label>[18]</label> M. Gasperini, F. Piazza, and G. Veneziano, &quot; Quintessence as a<lb/> runaway dilaton, &quot; Physical Review D, vol. 65, no. 2, Article ID<lb/> 023508, 13 pages, 2002.<lb/> </bibl>
+        <bibl><label>[19]</label> B. Gumjudpai and J. Ward, &quot; Generalized DBI quintessence, &quot;<lb/> Physical Review D, vol. 80, Article ID 023528, 2009.<lb/> </bibl>
+        <bibl><label>[20]</label> J. Martin and M. Yamaguchi, &quot; DBI-essence, &quot; Physical Review D,<lb/> vol. 77, Article ID 123508, 2008.<lb/> </bibl>
+        <bibl><label>[21]</label> H. Wei, R.-G. Cai, and D.-F. Zeng, &quot; Hessence: a new view of<lb/> quintom dark energy, &quot; Classical and Quantum Gravity, vol. 22,<lb/> no. 16, pp. 3189–3202, 2005.<lb/> </bibl>
+        <bibl><label>[22]</label> R. R. Caldwell, &quot; A phantom menace? Cosmological conse-<lb/>quences of a dark energy component with super-negative<lb/> equation of state, &quot; Physics Letters B, vol. 545, no. 1-2, pp. 23–29,<lb/> 2002.<lb/> </bibl>
+        <bibl><label>[23]</label> N. Arkani-Hamed, H.-C. Cheng, M. A. Luty, and S. Muko-<lb/>hyama, &quot; Ghost condensation and a consistent infrared modifi-<lb/>cation of gravity, &quot; Journal of High Energy Physics, vol. 2004, no.<lb/> 5, article 074, 2004.<lb/> </bibl>
+        <bibl><label>[24]</label> F. Piazza and S. Tsujikawa, &quot; Dilatonic ghost condensate as dark<lb/> energy, &quot; Journal of Cosmology and Astroparticle Physics, vol.<lb/> 2004, no. 7, article 4, 2004.<lb/> </bibl>
+        <bibl><label>[25]</label> Z. K. Guo, Y. S. Piao, X. M. Zhang, and Y. Z. Zhang, &quot; Cosmo-<lb/>logical evolution of a quintom model of dark energy, &quot; Physics<lb/> Letters B, vol. 608, pp. 177–182, 2005.<lb/> </bibl>
+        <bibl><label>[26]</label> Y. F. Cai, E. N. Saridakis, M. R. Setare, and J. Q. Xia, &quot; Quintom<lb/> cosmology: theoretical implications and observations, &quot; Physics<lb/> Reports, vol. 493, no. 1, pp. 1–60, 2010.<lb/> </bibl>
+        <bibl><label>[27]</label> L. Amendola, &quot; Coupled quintessence, &quot; Physical Review D, vol.<lb/> 62, no. 4, Article ID 043511, 10 pages, 2000.<lb/> </bibl>
+        <bibl><label>[28]</label> X. Zhang, &quot; Coupled quintessence in a power-law case and the<lb/> cosmic coincidence problem, &quot; Modern Physics Letters A, vol. 20,<lb/> no. 33, p. 2575, 2005.<lb/> </bibl>
+        <bibl><label>[29]</label> V. Sahni and Y. Shtanov, &quot; Braneworld models of dark energy, &quot;<lb/> Journal of Cosmology and Astroparticle Physics, vol. 11, article<lb/> 014, 2003.<lb/> </bibl>
+        <bibl><label>[30]</label> G. Dvali, G. Gabadadze, and M. Porrati, &quot; Metastable gravitons<lb/> and infinite volume extra dimensions, &quot; Physics Letters B, vol.<lb/> 484, no. 1-2, pp. 112–118, 2000.<lb/> </bibl>
+        <bibl><label>[31]</label> A. de Felice and T. Tsujikawa, &quot; f(R) theories, &quot; vol. 13, article 3,<lb/> 2010.<lb/> </bibl>
+        <bibl><label>[32]</label> M. C. B. Abdalla, S. Nojiri, and S. D. Odintsov, &quot; Consistent<lb/> modified gravity: dark energy, acceleration and the absence of<lb/> cosmic doomsday, &quot; Classical and Quantum Gravity, vol. 22, no.<lb/> 5, pp. L35–L42, 2005.<lb/> </bibl>
+        <bibl><label>[33]</label> E. V. Linder, &quot; Einstein&apos;s other gravity and the acceleration of the<lb/> Universe, &quot; Physical Review D, vol. 81, Article ID 127301, 2010.<lb/> </bibl>
+        <bibl><label>[34]</label> M. Sharif and S. Rani, &quot; Generalized teleparallel gravity via some<lb/> scalar field dark energy models, &quot; Astrophysics and Space Science,<lb/> vol. 345, no. 1, pp. 217–223, 2013.<lb/> </bibl>
+        <bibl><label>[35]</label> M. Sharif and S. Rani, &quot; Nonlinear electrodynamics in f (T)<lb/> gravity and generalized second law of thermodynamics, &quot; Astro-<lb/>physics and Space Science, vol. 346, no. 2, pp. 573–582, 2013.<lb/> </bibl>
+        <bibl><label>[36]</label> M. Sharif and S. Rani, &quot; Dynamical instability of spherical col-<lb/>lapse in f (T) gravity, &quot; Monthly Notices of the Royal Astronomical<lb/> Society, vol. 440, no. 3, pp. 2255–2264, 2014.<lb/> </bibl>
+        <bibl><label>[37]</label> K. K. Yerzhanov, S. R. Myrzakul, I. I. Kulnazarov, and R.<lb/> Myrzakulov, &quot; Accelerating cosmology in F(T) gravity with<lb/> scalar field, &quot; http://arxiv.org/abs/1006.3879.<lb/> </bibl>
+        <bibl><label>[38]</label> S. Nojiri and S. D. Odintsov, &quot; Modified Gauss-Bonnet theory as<lb/> gravitational alternative for dark energy, &quot; Physics Letters B, vol.<lb/> 631, no. 1-2, pp. 1–6, 2005.<lb/> </bibl>
+        <bibl><label>[39]</label> I. Antoniadis, J. Rizos, and K. Tamvakis, &quot; Singularity-free cos-<lb/>mological solutions of the superstring effective action, &quot; Nuclear<lb/> Physics B, vol. 415, no. 2, pp. 497–514, 1994.<lb/> </bibl>
+        <bibl><label>[40]</label> P. Hořava, &quot; Membranes at quantum criticality, &quot; Journal of High<lb/> Energy Physics, vol. 2009, article 020, 2009.<lb/> </bibl>
+        <bibl><label>[41]</label> C. Brans and H. Dicke, &quot; Mach&apos;s principle and a relativistic<lb/> theory of gravitation, &quot; Physical Review, vol. 124, no. 3, pp. 925–<lb/> 935, 1961.<lb/> </bibl>
+        <bibl><label>[42]</label> R. R. Cuzinatto, C. A. M. de Melo, L. G. Medeiros, and P.<lb/> J. Pompeia, &quot; Observational constraints to a phenomenological<lb/> í µí± (í µí±, ∇í µí±)-model, &quot; http://arxiv.org/abs/1311.7312.<lb/> </bibl>
+        <bibl><label>[43]</label> S. Gottlober, H.-J. Schmidt, and A. A. Starobinsky, &quot; Sixth-order<lb/> gravity and conformal transformations, &quot; Classical and Quantum<lb/> Gravity, vol. 7, no. 5, pp. 893–900, 1990.<lb/> </bibl>
+        <bibl><label>[44]</label> T. Biswas, A. Mazumdar, and W. Siegel, &quot; Bouncing universes in<lb/> string-inspired gravity, &quot; Journal of Cosmology and Astroparticle<lb/> Physics, vol. 2006, no. 3, article 009, 2006.<lb/> </bibl>
+        <bibl><label>[45]</label> T. Biswas, T. Koivisto, and A. Mazumdar, &quot; Towards a resolution<lb/> of the cosmological singularity in non-local higher derivative<lb/> theories of gravity, &quot; Journal of Cosmology and Astroparticle<lb/> Physics, vol. 2010, article 008, 2010.<lb/> </bibl>
+        <bibl><label>[46]</label> T. Biswas, A. S. Koshelev, A. Mazumdar, and S. Y. Vernov, &quot; Stable<lb/> bounce and inflation in non-local higher derivative cosmology, &quot;<lb/> Journal of Cosmology and Astroparticle Physics, vol. 2012, no. 8,<lb/> article 024, 2012.<lb/></bibl>
+        <bibl><label>[47]</label> K. Karami and M. S. Khaledian, &quot; Reconstructing f (R) modified<lb/> gravity from ordinary and entropy-corrected versions of the<lb/> holographic and new agegraphic dark energy models, &quot; Journal<lb/> of High Energy Physics, vol. 2011, no. 3, p. 86, 2011.<lb/> </bibl>
+        <bibl><label>[48]</label> A. Khodam-Mohammadi, P. Majari, and M. Malekjani, &quot; Age-<lb/>graphic reconstruction of modified F(R) and F(G) gravities, &quot;<lb/> Astrophysics and Space Science, vol. 331, no. 2, pp. 673–677, 2011.<lb/> </bibl>
+        <bibl><label>[49]</label> M. H. Daouda, M. E. Rodrigues, and M. J. S. Houndjo, &quot; Static<lb/> anisotropic solutions in f(T) theory, &quot; European Physical Journal<lb/> C, vol. 72, no. 2, pp. 1–12, 2012.<lb/> </bibl>
+        <bibl><label>[50]</label> M. J. S. Houndjo and O. F. Piattella, &quot; Reconstructing f(R, T)<lb/> gravity from holographic dark energy, &quot; International Journal of<lb/> Modern Physics D, vol. 21, no. 3, Article ID 1250024, 2012.<lb/> </bibl>
+        <bibl><label>[51]</label> M. R. Setare, &quot; Holographic modified gravity, &quot; International<lb/> Journal of Modern Physics D, vol. 17, no. 12, pp. 2219–2228, 2008.<lb/> </bibl>
+        <bibl><label>[52]</label> M. R. Setare and E. N. Saridakis, &quot; Correspondence between<lb/> holographic and Gauss-Bonnet dark energy models, &quot; Physics<lb/> Letters B, vol. 670, no. 1, pp. 1–4, 2008.<lb/> </bibl>
+        <bibl><label>[53]</label> M. R. Setare and M. Jamil, &quot; Correspondence between entropy-<lb/>corrected holographic and Gauss-Bonnet dark-energy models, &quot;<lb/> Europhysics Letters, vol. 92, no. 4, Article ID 49003, 2010.<lb/> </bibl>
+        <bibl><label>[54]</label> U. Debnath and M. Jamil, &quot; Correspondence between DBI-<lb/>essence and modified Chaplygin gas and the generalized second<lb/> law of thermodynamics, &quot; Astrophysics and Space Science, vol.<lb/> 335, no. 2, pp. 545–552, 2011.<lb/> </bibl>
+        <bibl><label>[55]</label> S. Chottopadhyay and U. Debnath, &quot; Correspondence between<lb/> Ricci and other dark energies, &quot; International Journal of Theoret-<lb/>ical Physics, vol. 50, no. 2, pp. 315–324, 2011.<lb/> </bibl>
+        <bibl><label>[56]</label> A. Jawad, S. Chattopadhyay, and A. Pasqua, &quot; Reconstruction of<lb/> f(G) gravity with the new agegraphic dark-energy model, &quot; The<lb/> European Physical Journal Plus, vol. 128, p. 88, 2013.<lb/> </bibl>
+        <bibl><label>[57]</label> M. Sharif and A. Jawad, &quot; Cosmological evolution of interacting<lb/> new holographic dark energy in non-flat universe, &quot; The Euro-<lb/>pean Physical Journal C, vol. 72, no. 8, pp. 2097–2098, 2097.<lb/> </bibl>
+        <bibl><label>[58]</label> M. Sharif and Abdul Jawad, &quot; Interacting generalized dark<lb/> energy and reconstruction of scalar field models, &quot; Modern<lb/> Physics Letters A, vol. 28, no. 38, Article ID 1350180, 15 pages,<lb/> 2013.<lb/> </bibl>
+        <bibl><label>[59]</label> M. Sharif and A. Jawad, &quot; Reconstruction of scalar field dark<lb/> energy models in Kaluza-Klein universe, &quot; Communications in<lb/> Theoretical Physics, vol. 60, no. 2, p. 183, 2013.<lb/> </bibl>
+        <bibl><label>[60]</label> A. Jawad, A. Pasqua, and S. Chattopadhyay, &quot; Correspondence<lb/> between f(G) gravity and holographic dark energy via power-<lb/>law solution, &quot; Astrophysics and Space Science, vol. 344, no. 2, pp.<lb/> 489–494, 2013.<lb/> </bibl>
+        <bibl><label>[61]</label> S. Tsujikawa and M. Sami, &quot; A unified approach to scaling solu-<lb/>tions in a general cosmological background, &quot; Physics Letters,<lb/> Section B: Nuclear, Elementary Particle and High-Energy Physics,<lb/> vol. 603, no. 3-4, pp. 113–123, 2004.<lb/> </bibl>
+        <bibl><label>[62]</label> S. Mizuno, S.-J. Lee, and E. J. Copeland, &quot; Cosmological evo-<lb/>lution of general scalar fields in a brane-world cosmology, &quot;<lb/> Physical Review D, vol. 70, no. 4, Article ID 043525, 10 pages,<lb/> 2004.<lb/> </bibl>
+        <bibl><label>[63]</label> C. Armendáriz-Picón, T. Damour, and V. Mukhanov, &quot; k-<lb/>Inflation, &quot; Physics Letters B, vol. 458, no. 2-3, pp. 209–218, 1999.<lb/> </bibl>
+        <bibl><label>[64]</label> T. Chiba, T. Okabe, and M. Yamaguchi, &quot; Kinetically driven<lb/> quintessence, &quot; Physical Review D, vol. 62, Article ID 023511,<lb/> 2000.<lb/> </bibl>
+        <bibl><label>[65]</label> C. Armendáriz-Picón, V. Mukhanov, and P. J. Steinhardt,<lb/> &quot; Essentials of k-essence, &quot; Physical Review D, vol. 63, Article ID<lb/> 103510, 2001.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

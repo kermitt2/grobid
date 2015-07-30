@@ -1,0 +1,33 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> M. Fierz and W. Pauli, &quot; On relativistic wave equations for par-<lb/>ticles of arbitrary spin in an electromagnetic field, &quot; Proceedings<lb/> of the Royal Society of London A, vol. 173, no. 953, pp. 211–232,<lb/> 1939.<lb/> </bibl>
+        <bibl><label>[2]</label> H. van Dam and M. Veltman, &quot; Massive and mass-less Yang-<lb/>Mills and gravitational fields, &quot; Nuclear Physics B, vol. 22, no. 2,<lb/> pp. 397–411, 1970.<lb/> </bibl>
+        <bibl><label>[3]</label> V. I. Zakharov, &quot; Linearized gravitation theory and the graviton<lb/> mass, &quot; JETP Letters, vol. 12, p. 312, 1970.<lb/> </bibl>
+        <bibl><label>[4]</label> A. I. Vainshtein, &quot; To the problem of nonvanishing gravitation<lb/> mass, &quot; Physics Letters B, vol. 39, no. 3, pp. 393–394, 1972.<lb/> </bibl>
+        <bibl><label>[5]</label> D. G. Boulware and S. Deser, &quot; Can gravitation have a finite<lb/> range? &quot; Physical Review D, vol. 6, no. 12, pp. 3368–3382, 1972.<lb/> </bibl>
+        <bibl><label>[6]</label> C. de Rham and G. Gabadadze, &quot; Generalization of the Fierz-<lb/>Pauli action, &quot; Physical Review D, vol. 82, no. 4, Article ID<lb/> 044020, 9 pages, 2010.<lb/> </bibl>
+        <bibl><label>[7]</label> C. De Rham, G. Gabadadze, and A. J. Tolley, &quot; Resummation of<lb/> massive gravity, &quot; Physical Review Letters, vol. 106, no. 23, Article<lb/> ID 231101, 2011.<lb/> </bibl>
+        <bibl><label>[8]</label> A. De Felice, A. E. Gümrükçüo˘ glu, and S. Mukohyama,<lb/> &quot; Massive gravity: nonlinear instability of a homogeneous and<lb/> isotropic universe, &quot; Physical Review Letters, vol. 109, no. 17,<lb/> Article ID 171101, 4 pages, 2012.<lb/> </bibl>
+        <bibl><label>[9]</label> D. Comelli, F. Nesti, and L. Pilo, &quot; Massive gravity: a general<lb/> analysis, &quot; Journal of High Energy Physics, vol. 2013, article 161,<lb/> 2013.<lb/> </bibl>
+        <bibl><label>[10]</label> H. Weyl, Spacetime Matter, Dover, New York, NY, USA, 1952.<lb/> </bibl>
+        <bibl><label>[11]</label> P. A. M. Dirac, &quot; Long range forces and broken symmetries, &quot;<lb/> Proceedings of the Royal Society Series A: Mathematical and<lb/> Physical Sciences, vol. 333, no. 1595, pp. 403–418, 1973.<lb/> </bibl>
+        <bibl><label>[12]</label> P. D. Mannheim and D. Kazanas, &quot; Exact vacuum solution<lb/> to conformal Weyl gravity and galactic rotation curves, &quot; The<lb/> Astrophysical Journal, vol. 342, no. 2, pp. 635–638, 1989.<lb/> </bibl>
+        <bibl><label>[13]</label> D. Kazanas and P. D. Mannheim, &quot; General structure of the<lb/> gravitational equations of motion in conformal Weyl gravity, &quot;<lb/> Astrophysical Journal Supplement Series, vol. 76, pp. 431–453,<lb/> 1991.<lb/> </bibl>
+        <bibl><label>[14]</label> P. D. Mannheim, &quot; Alternatives to dark matter and dark energy, &quot;<lb/> Progress in Particle and Nuclear Physics, vol. 56, pp. 340–445,<lb/> 2006.<lb/> </bibl>
+        <bibl><label>[15]</label> Y. Fujii and K.-I. Maeda, The Scalar-Tensor Theory of Gravita-<lb/>tion, Cambridge University Press, Cambridge, UK, 2003.<lb/> </bibl>
+        <bibl><label>[16]</label> G. T. Hooft, &quot; Local conformal symmetry: the missing symmetry<lb/> component for space and time, &quot; http://arxiv.org/abs/1410.6675.<lb/> </bibl>
+        <bibl><label>[17]</label> C. M. Bender and P. D. Mannheim, &quot; No-ghost theorem for<lb/> the fourth-order derivative Pais-Uhlenbeck oscillator model, &quot;<lb/> Physical Review Letters, vol. 100, Article ID 110402, 2008.<lb/> </bibl>
+        <bibl><label>[18]</label> J. Wood and W. Moreau, &quot; Solutions of conformal grav-<lb/>ity with dynamical mass generation in the solar system, &quot;<lb/> http://arxiv.org/abs/gr-qc/0102056.<lb/> </bibl>
+        <bibl><label>[19]</label> R. H. Sanders, &quot; Anti-gravity and galaxy rotation curves, &quot; Astron-<lb/>omy &amp; Astrophysics, vol. 136, p. L21, 1984.<lb/> </bibl>
+        <bibl><label>[20]</label> E. Griv and V. V. Zhytnikov, &quot; Simulations of stellar disks in<lb/> galaxies with non-Newtonian interactions, &quot; Astrophysics and<lb/> Space Science, vol. 226, no. 1, pp. 51–72, 1995.<lb/> [21] ´<lb/> E. ´<lb/> E. Flanagan, &quot; Fourth order Weyl gravity, &quot; Physical Review D,<lb/> vol. 74, Article ID 023002, 2006.<lb/> </bibl>
+        <bibl><label>[22]</label> P. D. Mannheim, &quot; Schwarzschild limit of conformal gravity in<lb/> the presence of macroscopic scalar fields, &quot; Physical Review D<lb/> Particles, Fields, Gravitation, and Cosmology, vol. 75, no. 12,<lb/> Article ID 124006, 2007.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+
