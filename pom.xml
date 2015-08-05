@@ -203,7 +203,6 @@
                         <version>${plugin.version}</version>
                         <configuration>
                             <mavenExecutorId>forked-path</mavenExecutorId>
-                            <connectionUrl>https://github.com/kermitt2/grobid/tree/master/grobid-core</connectionUrl>
                             <useReleaseProfile>false</useReleaseProfile>
                             <arguments>-Psonatype-oss-release</arguments>
                         </configuration>
