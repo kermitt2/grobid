@@ -655,29 +655,26 @@ public class TextUtilities {
                         if (c2 == 'a') {
                             if (c3 == 'm') {
                                 if (c4 == 'p') {
-									if (string.length() > i + 4) {
-										char c5 = string.charAt(i + 4);
-										if (c5 == ';') {
-											skip = true;
-										}
-									}
+                                    if (string.length() > i + 4) {
+                                        char c5 = string.charAt(i + 4);
+                                        if (c5 == ';') {
+                                            skip = true;
+                                        }
+                                    }
                                 }
                             }
                         } else if (c2 == 'q') {
                             if (c3 == 'u') {
                                 if (c4 == 'o') {
-									if (string.length() > i + 6) {
-				                        char c5 = string.charAt(i + 4);
-				                        char c6 = string.charAt(i + 5);
-										char c7 = string.charAt(i + 6);
-										if (c5 == 't') {
-											if (c6 == 'e') {
-												if (c7 == ';') {
-													skip = true;
-												}
-											}
-										}
-									}
+                                    if (string.length() > i + 5) {
+                                        char c5 = string.charAt(i + 4);
+                                        char c6 = string.charAt(i + 5);
+                                        if (c5 == 't') {
+                                            if (c6 == ';') {
+                                                    skip = true;
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         } else if (c2 == 'l' || c2 == 'g') {
