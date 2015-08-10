@@ -1683,7 +1683,7 @@ public class BiblioItem {
             if (language != null) {
                 if (n == -1) {
                     if (pubnum != null) {
-                        teiId = pubnum;
+                        teiId = TextUtilities.HTMLEncode(pubnum);
                         tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + teiId + "\">\n");
                     } else
                         tei.append(" xml:lang=\"" + language + ">\n");
@@ -1695,7 +1695,7 @@ public class BiblioItem {
             } else {
                 if (n == -1) {
                     if (pubnum != null) {
-                        teiId = pubnum;
+                        teiId = TextUtilities.HTMLEncode(pubnum);
                         tei.append(" xml:id=\"" + teiId + "\">\n");
                     } else
                         tei.append(">\n");
