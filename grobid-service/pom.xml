@@ -184,6 +184,12 @@
 					<resourceBases>
 					    <resourceBase>${basedir}/src/main/webapp</resourceBase>   
 			        </resourceBases>
+                                        <systemProperties>
+            <systemProperty>
+                <name>log4j.configuration</name>
+                <value>log4j-jetty.properties</value>
+            </systemProperty>
+        </systemProperties>
 				</configuration>
 			</plugin>
 		</plugins>
