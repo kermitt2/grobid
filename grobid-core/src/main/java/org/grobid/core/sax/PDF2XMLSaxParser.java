@@ -4,6 +4,7 @@ import org.grobid.core.layout.Block;
 import org.grobid.core.document.Document;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.*;
@@ -47,6 +48,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 	private Document doc = null;
 
 	private int currentPage = -1;
+	private GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance(); 
 
 	public PDF2XMLSaxParser() {
 		blabla = new StringBuffer();
@@ -373,207 +375,217 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			}
 
 			if (tok0.length() > 0) {
-				StringTokenizer st = new StringTokenizer(tok0,
-						//TextUtilities.fullPunctuations, true);
-						TextUtilities.delimiters, true);
+				//StringTokenizer st = new StringTokenizer(tok0,
+				//		TextUtilities.delimiters, true);
+				List<String> subTokenizations = new ArrayList<String>();
+				try {
+					// TBD: pass a language object to the tokenize method call 
+					subTokenizations = analyzer.tokenize(tok0);		
+				}
+				catch(Exception e) {
+					LOGGER.debug("Sub-tokenization of pdf2xml token has failed.");
+				}
 				boolean diaresis = false;
 				boolean accent = false;
-				while (st.hasMoreTokens()) {
+				//while (st.hasMoreTokens()) {
+				if (subTokenizations.size() != 0) {
+				//{	
+					for(String tok : subTokenizations) {	
+						diaresis = false;
+						accent = false;
 
-					diaresis = false;
-					accent = false;
+						//String tok = st.nextToken();
+						if (tok.length() > 0) {
 
-					String tok = st.nextToken();
-					if (tok.length() > 0) {
+							LayoutToken token = new LayoutToken();
 
-						LayoutToken token = new LayoutToken();
+							if ( (previousToken != null) && (tok != null)
+									&& (previousToken.length() > 0)
+									&& (tok.length() > 0) 
+									&& (blabla.length() > 0)
+							        && (previousTok.getText() != null)
+									&& (previousTok.getText().length() > 1)	) {
 
-						if ( (previousToken != null) && (tok != null)
-								&& (previousToken.length() > 0)
-								&& (tok.length() > 0) 
-								&& (blabla.length() > 0)
-						        && (previousTok.getText() != null)
-								&& (previousTok.getText().length() > 1)	) {
+								Character leftChar = previousTok.getText().charAt(
+										previousTok.getText().length() - 1);
+								Character rightChar = tok.charAt(0);
 
-							Character leftChar = previousTok.getText().charAt(
-									previousTok.getText().length() - 1);
-							Character rightChar = tok.charAt(0);
+								ModifierClass leftClass = classifyChar(leftChar);
+								ModifierClass rightClass = classifyChar(rightChar);
+								ModifierClass modifierClass = ModifierClass.NOT_A_MODIFIER;
 
-							ModifierClass leftClass = classifyChar(leftChar);
-							ModifierClass rightClass = classifyChar(rightChar);
-							ModifierClass modifierClass = ModifierClass.NOT_A_MODIFIER;
+								if (leftClass != ModifierClass.NOT_A_MODIFIER
+										|| rightClass != ModifierClass.NOT_A_MODIFIER) {
+									Character baseChar = null;
+									Character modifierChar = null;
 
-							if (leftClass != ModifierClass.NOT_A_MODIFIER
-									|| rightClass != ModifierClass.NOT_A_MODIFIER) {
-								Character baseChar = null;
-								Character modifierChar = null;
-
-								if (leftClass != ModifierClass.NOT_A_MODIFIER) {
-									if (rightClass != ModifierClass.NOT_A_MODIFIER) {
-										//assert false;
-										// keeping characters, but setting class
-										// to not a modifier
+									if (leftClass != ModifierClass.NOT_A_MODIFIER) {
+										if (rightClass != ModifierClass.NOT_A_MODIFIER) {
+											//assert false;
+											// keeping characters, but setting class
+											// to not a modifier
+											baseChar = leftChar;
+											modifierChar = rightChar;
+											modifierClass = ModifierClass.NOT_A_MODIFIER;
+										} else {
+											baseChar = rightChar;
+											modifierChar = leftChar;
+											modifierClass = leftClass;
+										}
+									} else {
 										baseChar = leftChar;
 										modifierChar = rightChar;
-										modifierClass = ModifierClass.NOT_A_MODIFIER;
-									} else {
-										baseChar = rightChar;
-										modifierChar = leftChar;
-										modifierClass = leftClass;
-									}
-								} else {
-									baseChar = leftChar;
-									modifierChar = rightChar;
-									modifierClass = rightClass;
-								}
-
-								String updatedChar = modifyCharacter(baseChar,
-										modifierChar);
-
-								//System.out.println("\t"+"baseChar: " + baseChar + ", modifierChar: " 
-								//	+ modifierChar +", updatedChar is " + updatedChar);
-
-								if (updatedChar != null) {
-									//System.out.println("\n");									
-									//}
-									//else {
-									tokenizations.remove(tokenizations.size() - 1);
-									if (tokenizations.size() > 0) {
-										tokenizations
-											.remove(tokenizations.size() - 1);
+										modifierClass = rightClass;
 									}
 
-									blabla.deleteCharAt(blabla.length() - 1);
-									if (blabla.length() > 0) {
-										blabla.deleteCharAt(blabla.length() - 1);
-									}
+									String updatedChar = modifyCharacter(baseChar,
+											modifierChar);
 
-									removeLastCharacterIfPresent(previousTok);
-								}
+									//System.out.println("\t"+"baseChar: " + baseChar + ", modifierChar: " 
+									//	+ modifierChar +", updatedChar is " + updatedChar);
 
-								if (updatedChar != null) {
-									blabla.append(updatedChar);
-									previousTok.setText(previousTok.getText()
-											+ updatedChar);
-									tokenizations.add(previousTok.getText());
-									//System.out.println("add token layout: " + previousTok.getText());
-									//System.out.println("add tokenizations: " + previousTok.getText());
-								}
-								{
-									// PL 
-									blabla.append(tok.substring(1, tok.length()));
 									if (updatedChar != null) {
+										//System.out.println("\n");									
+										//}
+										//else {
+										tokenizations.remove(tokenizations.size() - 1);
+										if (tokenizations.size() > 0) {
+											tokenizations
+												.remove(tokenizations.size() - 1);
+										}
+
+										blabla.deleteCharAt(blabla.length() - 1);
+										if (blabla.length() > 0) {
+											blabla.deleteCharAt(blabla.length() - 1);
+										}
+
+										removeLastCharacterIfPresent(previousTok);
+									}
+
+									if (updatedChar != null) {
+										blabla.append(updatedChar);
 										previousTok.setText(previousTok.getText()
-											+ tok.substring(1, tok.length()));
+												+ updatedChar);
+										tokenizations.add(previousTok.getText());
+										//System.out.println("add token layout: " + previousTok.getText());
+										//System.out.println("add tokenizations: " + previousTok.getText());
 									}
-									else {
-										// in this case, the diaresis/accent might be before the charcater 
-										// to be modified and not after as incorrectly considered first 
-										// see issue #47
-										previousTok.setText(previousTok.getText() + tok);
-									}
+									{
+										// PL 
+										blabla.append(tok.substring(1, tok.length()));
+										if (updatedChar != null) {
+											previousTok.setText(previousTok.getText()
+												+ tok.substring(1, tok.length()));
+										}
+										else {
+											// in this case, the diaresis/accent might be before the charcater 
+											// to be modified and not after as incorrectly considered first 
+											// see issue #47
+											previousTok.setText(previousTok.getText() + tok);
+										}
 									
-									//System.out.println("add token layout: " + previousTok.getText());
-									if (tokenizations.size()>0) {
-										//System.out.println("last tokenizations was: " + 
-										//	tokenizations.get(tokenizations.size()-1));
-										tokenizations.remove(tokenizations.size()-1);
+										//System.out.println("add token layout: " + previousTok.getText());
+										if (tokenizations.size()>0) {
+											//System.out.println("last tokenizations was: " + 
+											//	tokenizations.get(tokenizations.size()-1));
+											tokenizations.remove(tokenizations.size()-1);
+										}
+										tokenizations.add(previousTok.getText());
+										//System.out.println("replaced by tokenizations: " + previousTok.getText());
 									}
-									tokenizations.add(previousTok.getText());
-									//System.out.println("replaced by tokenizations: " + previousTok.getText());
-								}
 
-								diaresis = (modifierClass == ModifierClass.DIAERESIS
-										|| modifierClass == ModifierClass.NORDIC_RING
-										|| modifierClass == ModifierClass.CZECH_CARON
-										|| modifierClass == ModifierClass.TILDE 
-										|| modifierClass == ModifierClass.CEDILLA);
+									diaresis = (modifierClass == ModifierClass.DIAERESIS
+											|| modifierClass == ModifierClass.NORDIC_RING
+											|| modifierClass == ModifierClass.CZECH_CARON
+											|| modifierClass == ModifierClass.TILDE 
+											|| modifierClass == ModifierClass.CEDILLA);
 
-								accent = (modifierClass == ModifierClass.ACUTE_ACCENT
-										|| modifierClass == ModifierClass.CIRCUMFLEX 
-										|| modifierClass == ModifierClass.GRAVE_ACCENT);
+									accent = (modifierClass == ModifierClass.ACUTE_ACCENT
+											|| modifierClass == ModifierClass.CIRCUMFLEX 
+											|| modifierClass == ModifierClass.GRAVE_ACCENT);
 
-								if (rightClass != ModifierClass.NOT_A_MODIFIER) {
-									tok = ""; // resetting current token as it
-												// is a single-item
+									if (rightClass != ModifierClass.NOT_A_MODIFIER) {
+										tok = ""; // resetting current token as it
+													// is a single-item
+									}
 								}
 							}
-						}
 
-						if (tok != null) {
-							// actually in certain cases, the extracted string under token can be a chunk of text 
-							// with separators that need to be preserved
-							//tok = tok.replace(" ", "");
-						}
+							if (tok != null) {
+								// actually in certain cases, the extracted string under token can be a chunk of text 
+								// with separators that need to be preserved
+								//tok = tok.replace(" ", "");
+							}
 
-						if ((!diaresis) && (!accent)) {
-							// blabla.append(" ");
-							blabla.append(tok);
-							token.setText(tok);
+							if ((!diaresis) && (!accent)) {
+								// blabla.append(" ");
+								blabla.append(tok);
+								token.setText(tok);
 
-							tokenizations.add(tok);
-						} else {
-							tok = "";
-							//keepLast = true;
-						}
+								tokenizations.add(tok);
+							} else {
+								tok = "";
+								//keepLast = true;
+							}
 						
-						if (currentRotation) {
-							// if the text is rotated, it appears that the font size is multiplied
-							// by 2? we should have a look at pdf2xml for this
-							currentFontSize = currentFontSize / 2;
-						}
+							if (currentRotation) {
+								// if the text is rotated, it appears that the font size is multiplied
+								// by 2? we should have a look at pdf2xml for this
+								currentFontSize = currentFontSize / 2;
+							}
 
-						if (currentFont != null)
-							token.setFont(currentFont.toLowerCase());
-						else
-							token.setFont("default");
-						token.setItalic(currentItalic);
-						token.setBold(currentBold);
-						token.setRotation(currentRotation);
-                        token.setPage(currentPage);
-						token.setColorFont(colorFont);
-						token.setX(currentX);
-						token.setY(currentY);
-						token.setWidth(currentWidth);
-						token.setHeight(currentHeight);
-						token.setFontSize(currentFontSize);
-
-						if (!diaresis && !accent) {
-							block.addToken(token);
-						}
-
-						if (block.getFont() == null) {
 							if (currentFont != null)
-								block.setFont(currentFont.toLowerCase());
+								token.setFont(currentFont.toLowerCase());
 							else
 								token.setFont("default");
-						}
-						if (nbTokens == 0) {
-							block.setItalic(currentItalic);
-							block.setBold(currentBold);
-						}
-						if (block.getColorFont() == null)
-							block.setColorFont(colorFont);
-						if (block.getX() == 0.0)
-							block.setX(currentX);
-						if (block.getY() == 0.0)
-							block.setY(currentY);
-						if (block.getWidth() == 0.0)
-							block.setWidth(currentWidth);
-						if (block.getHeight() == 0.0)
-							block.setHeight(currentHeight);
-						if (block.getFontSize() == 0.0)
-							block.setFontSize(currentFontSize);
+							token.setItalic(currentItalic);
+							token.setBold(currentBold);
+							token.setRotation(currentRotation);
+                            token.setPage(currentPage);
+							token.setColorFont(colorFont);
+							token.setX(currentX);
+							token.setY(currentY);
+							token.setWidth(currentWidth);
+							token.setHeight(currentHeight);
+							token.setFontSize(currentFontSize);
 
-						if (!diaresis && !accent) {
-							previousToken = tok;
-							previousTok = token;
-						} else {
-							previousToken = previousTok.getText();
-						}
+							if (!diaresis && !accent) {
+								block.addToken(token);
+							}
 
-						nbTokens++;
-						accumulator.setLength(0);
+							if (block.getFont() == null) {
+								if (currentFont != null)
+									block.setFont(currentFont.toLowerCase());
+								else
+									token.setFont("default");
+							}
+							if (nbTokens == 0) {
+								block.setItalic(currentItalic);
+								block.setBold(currentBold);
+							}
+							if (block.getColorFont() == null)
+								block.setColorFont(colorFont);
+							if (block.getX() == 0.0)
+								block.setX(currentX);
+							if (block.getY() == 0.0)
+								block.setY(currentY);
+							if (block.getWidth() == 0.0)
+								block.setWidth(currentWidth);
+							if (block.getHeight() == 0.0)
+								block.setHeight(currentHeight);
+							if (block.getFontSize() == 0.0)
+								block.setFontSize(currentFontSize);
+
+							if (!diaresis && !accent) {
+								previousToken = tok;
+								previousTok = token;
+							} else {
+								previousToken = previousTok.getText();
+							}
+
+							nbTokens++;
+							accumulator.setLength(0);
+						}
 					}
 				}
 				if (tokenizations.size() > 0) {

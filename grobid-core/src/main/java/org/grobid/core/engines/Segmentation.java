@@ -966,11 +966,20 @@ public class Segmentation extends AbstractParser {
                     getAllLinesFeatured(doc);
             List<String> tokenizations = doc.getTokenizationsFulltext();
 
-            // we write the full text untagged
+            // we write the full text untagged (but featurized)
             String outPathFulltext = pathFullText + "/" + PDFFileName.replace(".pdf", ".training.segmentation");
             Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
             writer.write(fulltext + "\n");
             writer.close();
+
+			// also write the raw text as seen before segmentation
+			StringBuffer rawtxt = new StringBuffer();
+			for(String txtline : tokenizations) {
+				rawtxt.append(txtline);
+			}
+			String outPathRawtext = pathFullText + "/" + 
+				PDFFileName.replace(".pdf", ".training.segmentation.rawtxt");
+			FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), "UTF-8");
 
             if ((fulltext != null) && (fulltext.length() > 0)) {
                 String rese = label(fulltext);

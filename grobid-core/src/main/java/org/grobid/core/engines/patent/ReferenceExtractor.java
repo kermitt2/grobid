@@ -24,6 +24,9 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.LanguageUtilities;
+import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.lang.Language;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.EntityResolver;
@@ -59,10 +62,9 @@ import java.util.zip.GZIPInputStream;
 public class ReferenceExtractor implements Closeable {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceExtractor.class);
 
-    private GenericTagger taggerPatent = null;
-    private GenericTagger taggerNPL = null;
+    //private GenericTagger taggerPatent = null;
+    //private GenericTagger taggerNPL = null;
     private GenericTagger taggerAll = null;
-//    private CitationParser nplParser = null;
     private PatentRefParser patentParser = null;
     private Consolidation consolidator = null;
 
@@ -80,9 +82,10 @@ public class ReferenceExtractor implements Closeable {
     // bibliographical items and related information
 
     private String path = null;     // path where the patent file is stored
-
-    private static String delimiters = " \n\t" + TextUtilities.fullPunctuations;
     private EngineParsers parsers;
+	
+	private GrobidAnalyzer analyzer = null; 
+    private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
     public void setDocumentPath(String dirName) {
         path = dirName;
@@ -92,12 +95,14 @@ public class ReferenceExtractor implements Closeable {
     public ReferenceExtractor() {
         this(new EngineParsers());
     }
+	
     // constructors
     public ReferenceExtractor(EngineParsers parsers) {
         this.parsers = parsers;
-        taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
+        //taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
     	taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_ALL);
-    	taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
+    	//taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
+		analyzer = GrobidAnalyzer.getInstance(); 
     }
 
     /**
@@ -259,25 +264,21 @@ public class ReferenceExtractor implements Closeable {
             }
             // parser for non patent references
 
-            // for keeping track of the original string (including spaces)
-            ArrayList<String> tokenizations = new ArrayList<String>();
-
             // tokenisation for the parser (with punctuation as tokens)
             ArrayList<String> patentBlocks = new ArrayList<String>();
 
             //text = TextUtilities.dehyphenize(text); // to be reviewed!
-            text = text.replace("\n", " ");
-            text = text.replace("\t", " ");
+            text = text.replace("\n", " ").replace("\t", " ");
             //text = text.replace("  ", " ");
-            //StringTokenizer st = new StringTokenizer(text, "(["+ TextUtilities.punctuations, true);
-            StringTokenizer st = new StringTokenizer(text, delimiters, true);
+			
+			// identify the language of the patent document, we use only the first 500 characters
+			// which is enough normally for a very safe language prediction
+			// the text here is the patent description, so strictly monolingual
+            Language lang = languageUtilities.runLanguageId(text, 500);
+			List<String> tokenizations = analyzer.tokenize(lang, text);
             int offset = 0;
-            if (st.countTokens() == 0) {
+			if (tokenizations.size() == 0) {	
                 return null;
-            }
-            while (st.hasMoreTokens()) {
-                String tok = st.nextToken();
-                tokenizations.add(tok);
             }
 
             List<OffsetPosition> journalPositions = null;
@@ -303,16 +304,22 @@ public class ReferenceExtractor implements Closeable {
             int currentPublisherPositions = 0;
             boolean skipTest = false;
             //st = new StringTokenizer(text, " (["+ TextUtilities.punctuations, true);
-            st = new StringTokenizer(text, delimiters, true);
+            //st = new StringTokenizer(text, delimiters, true);
             int posit = 0;
-            while (st.hasMoreTokens()) {
+            //while (st.hasMoreTokens()) {
+			for(String tok : tokenizations)	{
                 isJournalToken = false;
                 isAbbrevJournalToken = false;
                 isConferenceToken = false;
                 isPublisherToken = false;
                 skipTest = false;
-                String tok = st.nextToken();
-                if (tok.trim().length() == 0) {
+                //String tok = st.nextToken();
+                if ( (tok.trim().length() == 0) || 
+					 (tok.equals(" ")) || 
+				     (tok.equals("\t")) || 
+					 (tok.equals("\n")) ||
+					 (tok.equals("\r"))
+					 ) {
                     continue;
                 }
 
@@ -426,15 +433,7 @@ public class ReferenceExtractor implements Closeable {
             patentBlocks.add("\n");
 
             String theResult = null;
-            /*if (articles == null) {
-                theResult = taggerPatent.label(patentBlocks);
-            } else if (patents == null) {
-                theResult = taggerNPL.label(patentBlocks);
-            } else */
-			{
-                theResult = taggerAll.label(patentBlocks);
-            }
-
+            theResult = taggerAll.label(patentBlocks);
             //System.out.println(theResult);
 
             StringTokenizer stt = new StringTokenizer(theResult, "\n");
@@ -606,7 +605,7 @@ public class ReferenceExtractor implements Closeable {
             for (String ref : referencesPatent) {
                 patentParser.setRawRefText(ref);
                 patentParser.setRawRefTextOffset(offsets_patent.get(j).intValue());
-                ArrayList<PatentItem> patents0 = patentParser.processRawRefText();
+                List<PatentItem> patents0 = patentParser.processRawRefText();
                 for (PatentItem pat : patents0) {
                     pat.setContext(ref);
 					pat.setConf(probPatent.get(j).doubleValue());
@@ -656,13 +655,13 @@ public class ReferenceExtractor implements Closeable {
             }
 
             // list for filtering duplicates, if we want to ignore the duplicate numbers
-            ArrayList<String> numberListe = new ArrayList<String>();
+            List<String> numberListe = new ArrayList<String>();
             if (filterDuplicate) {
                 // list for filtering duplicates, if we want to ignore the duplicate numbers
-                ArrayList<PatentItem> toRemove = new ArrayList<PatentItem>();
+                List<PatentItem> toRemove = new ArrayList<PatentItem>();
                 for (PatentItem pat : patents) {
-                    if (!numberListe.contains(pat.getNumber())) {
-                        numberListe.add(pat.getNumber());
+                    if (!numberListe.contains(pat.getNumberEpoDoc())) {
+                        numberListe.add(pat.getNumberEpoDoc());
                     } else {
                         toRemove.add(pat);
                     }
@@ -697,7 +696,8 @@ public class ReferenceExtractor implements Closeable {
             nbs += articles.size();
 
 		String resultTEI = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + 
-						   "<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
+						   "<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
+						   "xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
 		
 		String divID = KeyGen.getKey().substring(0,7);
 		resultTEI += "<teiHeader />\n";
@@ -731,7 +731,7 @@ public class ReferenceExtractor implements Closeable {
         return resultTEI;
     }
 
-    private String taggerRun(ArrayList<String> ress, Tagger tagger) throws Exception {
+    /*private String taggerRun(ArrayList<String> ress, Tagger tagger) throws Exception {
         // clear internal context
         tagger.clear();
 
@@ -758,7 +758,7 @@ public class ReferenceExtractor implements Closeable {
         }
 		//System.out.println(res.toString());
         return res.toString();
-    }
+    }*/
 
     /**
      * Get the TEI XML string corresponding to the recognized citation section
@@ -1131,7 +1131,7 @@ public class ReferenceExtractor implements Closeable {
 
             int i = 0;
             for (PatentItem pi : patents) {
-                String dnum = pi.getAuthority() + pi.getNumber();
+                String dnum = pi.getAuthority() + pi.getNumberEpoDoc();
                 if (pi.getKindCode() != null)
                     dnum += pi.getKindCode();
                 content.append("<patcit if=\"pcit" + i + " dnum=\"" + dnum + "\">" +
@@ -1203,10 +1203,10 @@ public class ReferenceExtractor implements Closeable {
     @Override
     public void close() throws IOException {
     	taggerAll.close();
-        taggerNPL.close();
-        taggerPatent.close();
+        //taggerNPL.close();
+        //taggerPatent.close();
         taggerAll = null;
-        taggerNPL = null;
-        taggerPatent = null;
+        //taggerNPL = null;
+        //taggerPatent = null;
     }
 }

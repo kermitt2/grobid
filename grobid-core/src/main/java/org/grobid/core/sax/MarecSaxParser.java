@@ -4,19 +4,24 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
 
 import java.util.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
- * SAX parser for XML CLEF IP data (collection, training and topics).
+ * SAX parser initially made for XML CLEF IP data (collection, training and topics).
  * But it works also fine for parsing ST.36 stuff as the formats are similar.
  *
  * @author Patrice Lopez
  */
 public class MarecSaxParser extends DefaultHandler {
+	public static final Logger LOGGER = LoggerFactory.getLogger(MarecSaxParser.class);
 
     private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
     private StringBuffer accumulatorRef = new StringBuffer(); // Accumulate parsed text
@@ -34,11 +39,7 @@ public class MarecSaxParser extends DefaultHandler {
 
     // working variables
     private String cited_number = null;
-
-    // Regular expressions for identifying and normalizing patent number pattern
-    private List<String> countries = null;
-
-    //public ArrayList<String> referencesPatent = null;
+	
     public Map<String, ArrayList<String>> referencesPatent = null;
     public List<String> referencesNPL = null;
     public List<String> citations = null; // search report citations
@@ -52,7 +53,9 @@ public class MarecSaxParser extends DefaultHandler {
     private int nbPatentRef = 0;
     public int nbAllRef = 0;
 
-    private int N = 200;  // window of text to be output around the reference strings
+    private int N = -1;  // window of text to be output around the reference strings
+	// value at -1 means no window considered - everything will be outputed
+	
     public boolean patentReferences = false;
     public boolean nplReferences = false;
 
@@ -66,20 +69,10 @@ public class MarecSaxParser extends DefaultHandler {
 
     public StringBuffer accumulatedText = null;
     private StringBuffer allContent = null;
-
-    private static String delimiters = " \n\t" + TextUtilities.fullPunctuations;
+	
+	private GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance(); 
 
     public MarecSaxParser() {
-        countries = new ArrayList<String>();
-        // offices considered for citations - other are currently ignored !
-        countries.add("US");
-        countries.add("EP");
-        countries.add("WO");
-        countries.add("DE");
-        countries.add("AU");
-        countries.add("JP");
-        countries.add("FR");
-        countries.add("UK");
     }
 
     public void setN(int n) {
@@ -125,7 +118,8 @@ public class MarecSaxParser extends DefaultHandler {
                            java.lang.String qName) throws SAXException {
         if (qName.equals("date")) {
             accumulator.setLength(0);
-        } else if (qName.equals("ref")) {
+        } 
+		else if (qName.equals("ref") || qName.equals("bibl")) {
             String refString = getRefText();
             refString = refString.replace("\n", " ");
             refString = refString.replace("\t", " ");
@@ -159,14 +153,28 @@ public class MarecSaxParser extends DefaultHandler {
             if (refFound) {
                 // we tokenize the text
                 //ArrayList<String> tokens = TextUtilities.segment(refString, "[("+TextUtilities.punctuations);
-                StringTokenizer st = new StringTokenizer(refString, delimiters, true);
-
+                //StringTokenizer st = new StringTokenizer(refString, delimiters, true);
+				List<String> tokenizations = new ArrayList<String>();
+				try {
+					// TBD: pass a language object to the tokenize method call 
+					tokenizations = analyzer.tokenize(refString);
+				}
+				catch(Exception e) {
+					LOGGER.debug("Tokenization for XML patent document has failed.");
+				}
+				
                 int i = 0;
-                String token = null;
+                //String token = null;
                 //for(String token : tokens) {
-                while (st.hasMoreTokens()) {
-                    token = st.nextToken().trim();
-                    if (token.length() == 0) {
+                //while (st.hasMoreTokens()) {
+				for(String token : tokenizations) {	
+                    //token = st.nextToken().trim();
+	                if ( (token.trim().length() == 0) || 
+						 (token.equals(" ")) || 
+					     (token.equals("\t")) || 
+						 (token.equals("\n")) ||
+						 (token.equals("\r"))
+						 ) {
                         continue;
                     }
                     try {
@@ -218,18 +226,32 @@ public class MarecSaxParser extends DefaultHandler {
 
                 // we tokenize the text
                 //ArrayList<String> tokens = TextUtilities.segment(content, "[("+TextUtilities.punctuations);
-                StringTokenizer st = new StringTokenizer(content, delimiters, true);
+                //StringTokenizer st = new StringTokenizer(content, delimiters, true);
+				List<String> tokenizations = new ArrayList<String>();
+				try {
+					// TBD: pass a language object to the tokenize method call 
+					tokenizations = analyzer.tokenize(content);	
+				}
+				catch(Exception e) {
+					LOGGER.debug("Tokenization for XML patent document has failed.");
+				}
 
                 int i = 0;
-                String token = null;
+                //String token = null;
                 //for(String token : tokens) {
-                while (st.hasMoreTokens()) {
-                    token = st.nextToken().trim();
-                    if (token.length() == 0) {
+                //while (st.hasMoreTokens()) {
+				for(String token : tokenizations) {	
+                    //token = st.nextToken().trim();
+	                if ( (token.trim().length() == 0) || 
+						 (token.equals(" ")) || 
+					     (token.equals("\t")) || 
+						 (token.equals("\n")) ||
+						 (token.equals("\r"))
+						 ) {
                         continue;
                     }
                     // we print only a window of N words
-                    if (i > N) {
+                    if ( (i > N) && (N != -1) ) {
                         //break;
                         token = token.trim();
                         if (token.length() > 0) {
@@ -244,7 +266,6 @@ public class MarecSaxParser extends DefaultHandler {
                                 allContent.append(token + " ");
                             }
                         } catch (Exception e) {
-                            //						e.printStackTrace();
                             throw new GrobidException("An exception occured while running Grobid.", e);
                         }
                     }
@@ -335,7 +356,7 @@ public class MarecSaxParser extends DefaultHandler {
             accumulator.setLength(0);
         } else if (qName.equals("description")) {
             accumulator.setLength(0);
-        } else if (qName.equals("ref")) {
+        } else if (qName.equals("ref") || qName.equals("bibl")) {
             int length = atts.getLength();
             nbAllRef++;
             // Process each attribute
@@ -346,25 +367,38 @@ public class MarecSaxParser extends DefaultHandler {
 
                 if (name != null) {
                     if (name.equals("type") || name.equals("typ")) {
-                        if (value.equals("npl") || value.equals("book")) {
+                        if (value.equals("npl") || value.equals("book") || value.equals("journal")) {
                             String content = getText();
 
                             // we output what has been read so far in the description
                             // we tokenize the text
                             //ArrayList<String> tokens =
-                            //	TextUtilities.segment(content, "[("+TextUtilities.punctuations);
-                            StringTokenizer st = new StringTokenizer(content, delimiters, true);
+                            //StringTokenizer st = new StringTokenizer(content, delimiters, true);
+							List<String> tokenizations = new ArrayList<String>();
+							try {
+								// TBD: pass a language object to the tokenize method call 
+								tokenizations = analyzer.tokenize(content);		
+							}
+							catch(Exception e) {
+								LOGGER.debug("Tokenization for XML patent document has failed.");
+							}
 
-                            //int nbTokens = tokens.size();
-                            int nbTokens = st.countTokens();
+                            //int nbTokens = st.countTokens();
+							int nbTokens = tokenizations.size();
                             int j = 0;
-                            while (st.hasMoreTokens()) {
-                                String token = st.nextToken().trim();
-                                if (token.length() == 0) {
+                            //while (st.hasMoreTokens()) {
+							for(String token : tokenizations) {	
+                                //String token = st.nextToken().trim();
+				                if ( (token.trim().length() == 0) || 
+									 (token.equals(" ")) || 
+								     (token.equals("\t")) || 
+									 (token.equals("\n")) ||
+									 (token.equals("\r"))
+									 ) {
                                     continue;
                                 }
 
-                                if ((j > (nbTokens - N)) | (refFound & (j < N))) {
+                                if ((j > (nbTokens - N) && (N != -1)) || (refFound && (j < N) && (N != -1))) {
                                     try {
                                         accumulatedText.append(token + "\t" + "<other>\n");
                                         allContent.append(token + " ");
@@ -397,13 +431,28 @@ public class MarecSaxParser extends DefaultHandler {
                             // we tokenize the text
                             //ArrayList<String> tokens =
                             //	TextUtilities.segment(content,"[("+TextUtilities.punctuations);
-                            StringTokenizer st = new StringTokenizer(content, delimiters, true);
-                            int nbTokens = st.countTokens();
+                            //StringTokenizer st = new StringTokenizer(content, delimiters, true);
+							List<String> tokenizations = new ArrayList<String>();
+							try {
+								// TBD: pass a language object to the tokenize method call 
+								tokenizations = analyzer.tokenize(content);		
+							}
+							catch(Exception e) {
+								LOGGER.debug("Tokenization for XML patent document has failed.");
+							}
+							
+                            //int nbTokens = st.countTokens();
+							int nbTokens = tokenizations.size();
                             int j = 0;
-
-                            while (st.hasMoreTokens()) {
-                                String token = st.nextToken().trim();
-                                if (token.length() == 0) {
+							for(String token : tokenizations) {
+                            	//while (st.hasMoreTokens()) {
+                                //String token = st.nextToken().trim();
+				                if ( (token.trim().length() == 0) || 
+									 (token.equals(" ")) || 
+								     (token.equals("\t")) || 
+									 (token.equals("\n")) ||
+									 (token.equals("\r"))
+									 ) {
                                     continue;
                                 }
 
@@ -433,7 +482,7 @@ public class MarecSaxParser extends DefaultHandler {
                             npl = false;
                             ref = true;
                         } else {
-                            System.out.println("Warning: wrong attribute value for ref: " + value);
+                            System.out.println("Warning: unknown attribute value for ref or bibl: " + value);
                             ref = false;
                             npl = false;
                         }

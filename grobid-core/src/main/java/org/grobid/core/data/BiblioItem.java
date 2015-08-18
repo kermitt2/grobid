@@ -192,7 +192,7 @@ public class BiblioItem {
     private String largeImageURL = null;
     private String publisherPlace = null;
     private String review = null;
-    private List<String> keywords;
+    private List<Keyword> keywords;
     private List<String> subjects;
     private List<String> categories;
     private String type = null; // book, journal, proceedings, in book, etc
@@ -547,7 +547,7 @@ public class BiblioItem {
         return keyword;
     }
 
-    public List<String> getKeywords() {
+    public List<Keyword> getKeywords() {
         return keywords;
     }
 
@@ -1012,17 +1012,18 @@ public class BiblioItem {
 
     public void addKeyword(String k) {
         if (keywords == null)
-            keywords = new ArrayList<String>();
+            keywords = new ArrayList<Keyword>();
 		String theKey = cleanKeywords(k);
 		if (theKey.toLowerCase().contains("introduction")) {
 			// if the keyword contains introduction, this is normally a segmentation error
 			theKey = null;
 		}
-		if (theKey != null)
-        	keywords.add(theKey);
+		if (theKey != null) {
+        	keywords.add(new Keyword(theKey));
+		}
     }
 
-    public void setKeywords(List<String> k) {
+    public void setKeywords(List<Keyword> k) {
         keywords = k;
     }
 
@@ -1427,7 +1428,7 @@ public class BiblioItem {
     }
 
     /**
-     * Some little cleaning of the abstract field.
+     * Some little cleaning of the keyword field.
      */
     public static String cleanKeywords(String string) {
         if (string == null)
@@ -1438,11 +1439,7 @@ public class BiblioItem {
         String resLow = res.toLowerCase();
         if (resLow.startsWith("keywords")) {
             res = res.substring(8);
-        } else if (resLow.startsWith("key words")) {
-            res = res.substring(9);
-        } else if (resLow.startsWith("mots clés")) {
-            res = res.substring(9);
-        } else if (resLow.startsWith("mots cles")) {
+        } else if (resLow.startsWith("key words") || resLow.startsWith("mots clés") || resLow.startsWith("mots cles")) {
             res = res.substring(9);
         } else if (resLow.startsWith("mots clefs")) {
             res = res.substring(10);
@@ -1458,6 +1455,55 @@ public class BiblioItem {
 
         return res.trim();
     }
+
+    /**
+     * Keyword field segmentation.
+     */
+    public static List<Keyword> segmentKeywords(String string) {
+        if (string == null)
+            return null;
+        if (string.length() == 0)
+            return null;
+		String type = null;
+        if (string.startsWith("Categories and Subject Descriptors")) {
+            type = "subject-headers";
+			 string = string.replace("Categories and Subject Descriptors", "").trim();
+        } 
+		else if (string.startsWith("PACS Numbers") || 
+				   string.startsWith("PACS") ) {
+            type = "pacs";
+            string = string.replace("PACS Numbers", "").replace("PACS", "").trim();
+			if (string.startsWith(":")) {
+	            string = string.substring(1);
+			}
+        }
+		else {
+			type = "author";
+		}
+		
+		List<Keyword> result = new ArrayList<Keyword>();
+		
+		// the list of possible keyword separators
+		List<String> separators = Arrays.asList(";•", "Á", "\n", ",");
+		
+		for(String separator : separators) {
+	        StringTokenizer st = new StringTokenizer(string, separator);
+	        if (st.countTokens() > 2) {
+	            while (st.hasMoreTokens()) {
+					String res = st.nextToken().trim();
+					if (res.startsWith(":")) {
+			            res = res.substring(1);
+			        }
+					res = res.replace("\n", " ").replace("  ", " ");
+					Keyword keyw = new Keyword(res, type);
+					result.add(keyw);
+	            }
+				break;
+	        }
+		}
+		
+		return result;
+	}	
 
     /**
      * Export to BibTeX format
@@ -1587,12 +1633,14 @@ public class BiblioItem {
             if (keywords != null) {
                 bibtex += ",\nkeywords\t=\t\"";
                 boolean begin = true;
-                for (String keyword : keywords) {
+                for (Keyword keyw : keywords) {
+					if ( (keyw.getKeyword() == null) || (keyw.getKeyword().length() == 0) )
+						continue;
                     if (begin) {
                         begin = false;
-                        bibtex += keyword;
+                        bibtex += keyw.getKeyword();
                     } else
-                        bibtex += ", " + keyword;
+                        bibtex += ", " + keyw.getKeyword();
                 }
                 bibtex += "\"";
             }
@@ -1635,7 +1683,7 @@ public class BiblioItem {
             if (language != null) {
                 if (n == -1) {
                     if (pubnum != null) {
-                        teiId = pubnum;
+                        teiId = TextUtilities.HTMLEncode(pubnum);
                         tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + teiId + "\">\n");
                     } else
                         tei.append(" xml:lang=\"" + language + ">\n");
@@ -1647,7 +1695,7 @@ public class BiblioItem {
             } else {
                 if (n == -1) {
                     if (pubnum != null) {
-                        teiId = pubnum;
+                        teiId = TextUtilities.HTMLEncode(pubnum);
                         tei.append(" xml:id=\"" + teiId + "\">\n");
                     } else
                         tei.append(">\n");
@@ -3234,6 +3282,11 @@ public class BiblioItem {
                         TextUtilities.appendN(tei, '\t', nbTag + 2);
                         tei.append("<roleName>" +
                                 TextUtilities.HTMLEncode(author.getTitle()) + "</roleName>\n");
+                    }
+                    if (author.getSuffix() != null) {
+                        TextUtilities.appendN(tei, '\t', nbTag + 2);
+                        tei.append("<genName>" +
+                                TextUtilities.HTMLEncode(author.getSuffix()) + "</genName>\n");
                     }
 
                     TextUtilities.appendN(tei, '\t', nbTag + 1);

@@ -12,7 +12,7 @@ import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.factory.AbstractEngineFactory;
 import org.grobid.core.mock.MockContext;
-import org.grobid.core.utilities.GrobidTimer;
+import org.grobid.core.utilities.counters.GrobidTimer;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -55,21 +55,18 @@ public class ReferenceExtractorTest {
 		ReferenceExtractor extractor = new ReferenceExtractor();
 		List<PatentItem> patents = new ArrayList<PatentItem>();
 		List<BibDataSet> articles = new ArrayList<BibDataSet>();
-		String toExtract = "That article It refers to Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011.";
-		toExtract = "First description.This desciption was published by ABBS Editorial Office in association with Oxford University " +
-                "Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences, " +
-                "Chinese Academy of Sciences.Some other description. ref. US 2011/0155847 A1 aerodynamic and applied physics. " +
-                "This patent, ref. US 7930197 says data mining of personal data is patented. " +
-                "That article refers to Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011." +
-                "Third description.First description.This desciption was published by ABBS Editorial Office in association with Oxford University " +
-                "Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences.Some other description.";
+		String toExtract = "Some other description includes ref. US 2011/0155847 A1 in aerodynamic" + 
+			" and applied physics. " +
+            "This patent, ref. US 7930197 says data mining of personal data is patented. " +
+            "That article refers to Economic Development Quarterly November 2011 25: 353-365, first" + 
+			" published on August 25, 2011.";
 		GrobidTimer timer = new GrobidTimer(true);
 		extractor.extractAllReferencesString(toExtract, false, false, patents, articles);
 		timer.stop("STOP");
 		System.out.println(timer.getElapsedTimeFromStartFormated("STOP"));
 		LOGGER.info("BibDataSet: " + articles.toString());
 		assertEquals(2, patents.size());
-		assertEquals(2, articles.size());
+		assertEquals(1, articles.size());
 		LOGGER.info(articles.get(0).getOffsets().toString());
 	}
 
@@ -80,7 +77,8 @@ public class ReferenceExtractorTest {
 		List<BibDataSet> articles = new ArrayList<BibDataSet>();
 		extractor
 				.extractAllReferencesString(
-						"That article It refers to Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011.",
+						"That article It refers to Economic Development Quarterly November 2011 25: 353-365," + 
+						" first published on August 25, 2011.",
 						false, false, patents, articles);
 		LOGGER.info("BibDataSet: " + articles.toString());
 		assertEquals(0, patents.size());
@@ -130,7 +128,7 @@ public class ReferenceExtractorTest {
 		assertEquals(1, patents.size());
 		assertEquals(0, articles.size());
 		PatentItem patent = patents.get(0);
-		assertEquals("8303618", patent.getNumber());
+		assertEquals("8303618", patent.getNumberEpoDoc());
 		System.out.println("context=" + patent.getContext());
 		System.out.println("offset start/end/raw=" + patent.getOffsetBegin()
 				+ "/" + patent.getOffsetEnd() + "/" + patent.getOffsetRaw());
@@ -150,8 +148,8 @@ public class ReferenceExtractorTest {
 		LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals(2, patents.size());
 		assertEquals(0, articles.size());
-		assertEquals("9937368", patents.get(0).getNumber());
-		assertEquals("6083121", patents.get(1).getNumber());
+		assertEquals("9937368", patents.get(0).getNumberEpoDoc());
+		assertEquals("6083121", patents.get(1).getNumberEpoDoc());
 	}
 
 	@Ignore
@@ -165,5 +163,46 @@ public class ReferenceExtractorTest {
 								"src/test/resources/org/grobid/core/engines/patent/ReferenceExtractor/sample-1.pdf")
 								.getAbsolutePath(), false, false, patents,
 						articles);
+	}
+	
+	@Test
+	public void jaProcessing() {
+		String text_jp = "すなわち、相対的な頻度で、エポキシドをベースとする液体接着剤及び接着結合剤が、" + 
+			"例えばＷＯ９８／２１２８７Ａ１。これらの主な使用分野は、硬質装置のみならず適度に柔軟な装置における縁部の結合である。" +
+			"硬化は、熱により又はＵＶ照射により行われる。";
+		System.out.println(text_jp);
+		ReferenceExtractor extractor = new ReferenceExtractor();
+		List<PatentItem> patents = new ArrayList<PatentItem>();
+		extractor.extractAllReferencesString(text_jp, false, false, patents, null);
+		LOGGER.info("PatentItem: " + patents.toString());
+		assertEquals(1, patents.size());
+		assertEquals("21287", patents.get(0).getNumberEpoDoc());
+	}
+	
+	@Test
+	public void krProcessing() {
+		String text_kr = "미국의 애플사의 미국 출원 2012/012710.";
+		System.out.println(text_kr);
+		ReferenceExtractor extractor = new ReferenceExtractor();
+		List<PatentItem> patents = new ArrayList<PatentItem>();
+		extractor.extractAllReferencesString(text_kr, false, false, patents, null);
+		LOGGER.info("PatentItem: " + patents.toString());
+		assertEquals(1, patents.size());
+		assertEquals("2012012710", patents.get(0).getNumberEpoDoc());
+	}
+	
+	@Test
+	public void zhProcessing() {
+		String text_zh = "在本申请的申请人于2008年8月26日提交的申请号为US2008/001534的PCT国际申请中，" + 
+			"揭示了一种等截面三角形定向棱镜圆形反光板及由其制成的圆板灯。该圆板灯包括：等截面三角形微棱镜圆形导光板；" + 
+			"围绕导光板的散热框，该散热框与导光板之间形成间隙而构成环形灯槽；以及嵌装于环形灯槽内的环形灯组件，" + 
+			"该环形灯组件由多个发光二极管(LED)贴片、电阻和线路板构成。该申请的全部内容，通过引用结合于此。";
+		System.out.println(text_zh);
+		ReferenceExtractor extractor = new ReferenceExtractor();
+		List<PatentItem> patents = new ArrayList<PatentItem>();
+		extractor.extractAllReferencesString(text_zh, false, false, patents, null);
+		LOGGER.info("PatentItem: " + patents.toString());
+		assertEquals(1, patents.size());
+		assertEquals("2008001534", patents.get(0).getNumberEpoDoc());
 	}
 }

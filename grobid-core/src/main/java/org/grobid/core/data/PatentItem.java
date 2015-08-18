@@ -8,7 +8,8 @@ package org.grobid.core.data;
 public class PatentItem implements Comparable<PatentItem> {
     // attribute
     private String authority = null;
-    private String number = null;
+    private String number_epodoc = null;
+	private String number_wysiwyg = null;
     private String kindCode = null;
 
     // patent type when applicable
@@ -37,8 +38,12 @@ public class PatentItem implements Comparable<PatentItem> {
         return authority;
     }
 
-    public String getNumber() {
-        return number;
+    public String getNumberEpoDoc() {
+        return number_epodoc;
+    }
+
+    public String getNumberWysiwyg() {
+        return number_wysiwyg;
     }
 
     public String getKindCode() {
@@ -116,8 +121,12 @@ public class PatentItem implements Comparable<PatentItem> {
         kindCode = kc;
     }
 
-    public void setNumber(String num) {
-        number = num;
+    public void setNumberEpoDoc(String num) {
+        number_epodoc = num;
+    }
+
+    public void setNumberWysiwyg(String num) {
+        number_wysiwyg = num;
     }
 
     public void setAuthority(String s) {
@@ -149,12 +158,11 @@ public class PatentItem implements Comparable<PatentItem> {
     }
 
 	public void setConf(double val) {
-System.out.println("conf set: " + val);
 		conf = val;
 	}
 
     public int compareTo(PatentItem another) {
-        return number.compareTo(another.getNumber());
+        return number_wysiwyg.compareTo(another.getNumberWysiwyg());
     }
 
     private final static String espacenet = "http://v3.espacenet.com/publicationDetails/biblio?DB=EPODOC";
@@ -168,11 +176,11 @@ System.out.println("conf set: " + val);
     public String getEspacenetURL() {
         String res = null;
         if (provisional) {
-            res = espacenet2 + "&PR=" + authority + number + "P";
+            res = espacenet2 + "&PR=" + authority + number_epodoc + "P";
         } else if (application) {
-            res = espacenet2 + "&AP=" + authority + number;
+            res = espacenet2 + "&AP=" + authority + number_epodoc;
         } else {
-            res = espacenet + "&CC=" + authority + "&NR=" + number;
+            res = espacenet + "&CC=" + authority + "&NR=" + number_epodoc;
         }
         return res;
     }
@@ -180,10 +188,10 @@ System.out.println("conf set: " + val);
     public String getEpolineURL() {
         String res = null;
         if (application) {
-            res = epoline + authority + number;
+            res = epoline + authority + number_epodoc;
         } else {
             // we need the application number corresponding to the publication
-            res = epoline2 + authority + number + epoline3;
+            res = epoline2 + authority + number_epodoc + epoline3;
         }
         return res;
     }
@@ -221,7 +229,8 @@ System.out.println("conf set: " + val);
 	
 	@Override
 	public String toString() {
-		return "PatentItem [authority=" + authority + ", number=" + number
+		return "PatentItem [authority=" + authority + ", number_wysiwyg=" + number_wysiwyg
+				+ ", number_epodoc=" + number_epodoc 
 				+ ", kindCode=" + kindCode + ", application=" + application
 				+ ", provisional=" + provisional + ", reissued=" + reissued
 				+ ", plant=" + plant + ", design=" + design + ", conf=" + conf
@@ -300,7 +309,8 @@ System.out.println("conf set: " + val);
 			biblStruct.append("national");
 		}
 		biblStruct.append("\">"+authority+"</orgName></authority>");
-		biblStruct.append("<idno type=\"docNumber\">"+number+"</idno>");
+		biblStruct.append("<idno type=\"docNumber\" subtype=\"epodoc\">"+number_epodoc+"</idno>");
+		biblStruct.append("<idno type=\"docNumber\" subtype=\"original\">"+number_wysiwyg+"</idno>");
 		
 		if ((kindCode != null) || (date != null)) {
 			biblStruct.append("<imprint>");

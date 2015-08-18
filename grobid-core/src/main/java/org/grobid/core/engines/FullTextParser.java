@@ -41,7 +41,7 @@ import java.util.regex.Matcher;
 public class FullTextParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(FullTextParser.class);
 
-    private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
+    //private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
     //	private String tmpPathName = null;
 //    private Document doc = null;
@@ -134,7 +134,6 @@ public class FullTextParser extends AbstractParser {
             // citation processing
             List<BibDataSet> resCitations = parsers.getCitationParser().
 				processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), consolidateCitations);
-
 
             doc.setBibDataSets(resCitations);
 

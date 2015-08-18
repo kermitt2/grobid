@@ -24,7 +24,7 @@
   <property file="${user.home}/.m2/maven.properties"/>
   <property file="maven-build.properties"/>
 
-  <property name="maven.build.finalName" value="grobid-service-0.3.2"/>
+  <property name="maven.build.finalName" value="grobid-service-0.3.4-SNAPSHOT"/>
   <property name="maven.build.dir" value="target"/>
   <property name="maven.build.outputDir" value="${maven.build.dir}/classes"/>
   <property name="maven.build.srcDir.0" value="src/main/java"/>
@@ -47,6 +47,8 @@
     <pathelement location="../grobid-core/target/grobid-core-0.3.2.jar"/>
     <pathelement location="../grobid-core/target/classes"/>
     <pathelement location="../grobid-core/lib/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar"/>
+	<pathelement location="../grobid-core/lib/eugfc/imageio-pnm/1.0/imageio-pnm-1.0.jar"/>
+	<pathelement location="../grobid-core/lib/org/wipo/analysers/wipo-analysers/0.0.1/wipo-analysers-0.0.1.jar"/>
     <pathelement location="../grobid-core/lib/com/cybozu/language-detection/09-13-2011/language-detection-09-13-2011.jar"/>
     <pathelement location="${maven.repo.local}/commons-pool/commons-pool/1.6/commons-pool-1.6.jar"/>
     <pathelement location="${maven.repo.local}/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar"/>
@@ -72,6 +74,8 @@
     <pathelement location="../grobid-core/target/classes"/>
     <pathelement location="../grobid-core/target/test-classes"/>
     <pathelement location="../grobid-core/lib/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar"/>
+	<pathelement location="../grobid-core/lib/eugfc/imageio-pnm/1.0/imageio-pnm-1.0.jar"/>
+	<pathelement location="../grobid-core/lib/org/wipo/analysers/wipo-analysers/0.0.1/wipo-analysers-0.0.1.jar"/>
     <pathelement location="../grobid-core/lib/com/cybozu/language-detection/09-13-2011/language-detection-09-13-2011.jar"/>
     <pathelement location="${maven.repo.local}/commons-pool/commons-pool/1.6/commons-pool-1.6.jar"/>
     <pathelement location="${maven.repo.local}/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar"/>
@@ -261,6 +265,10 @@
           todir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>
     <copy file="../grobid-core/lib/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar" 
           todir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>
+	<copy file="../grobid-core/lib/eugfc/imageio-pnm/1.0/imageio-pnm-1.0.jar" 
+          todir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>
+	<copy file="../grobid-core/lib/org/wipo/analysers/wipo-analysers/0.0.1/wipo-analysers-0.0.1.jar" 
+          todir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>		  
   	<copy file="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar" 
    		  todir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>		  
   	<copy file="../grobid-core/lib/com/cybozu/language-detection/09-13-2011/language-detection-09-13-2011.jar" 
@@ -324,9 +332,9 @@
           description="Download all dependencies" 
           unless="maven.mode.offline">
     <mkdir dir="${maven.repo.local}"/>
-    <mkdir dir="${maven.repo.local}/org/grobid/grobid-core/0.3.2"/>
-    <get src="http://repo1.maven.org/maven2/org/grobid/grobid-core/0.3.2/grobid-core-0.3.2.jar" 
-         dest="${maven.repo.local}/org/grobid/grobid-core/0.3.2/grobid-core-0.3.2.jar" 
+    <mkdir dir="${maven.repo.local}/org/grobid/grobid-core/0.3.4-SNAPSHOT"/>
+    <get src="http://repo1.maven.org/maven2/org/grobid/grobid-core/0.3.4-SNAPSHOT/grobid-core-0.3.4-SNAPSHOT.jar" 
+         dest="${maven.repo.local}/org/grobid/grobid-core/0.3.4-SNAPSHOT/grobid-core-0.3.4-SNAPSHOT.jar" 
          usetimestamp="false" 
          ignoreerrors="true"/>
     <mkdir dir="${maven.repo.local}/org/chasen/crfpp/1.0.2"/>
@@ -334,6 +342,16 @@
          dest="${maven.repo.local}/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar" 
          usetimestamp="false" 
          ignoreerrors="true"/>
+     <mkdir dir="${maven.repo.local}/eugfc/imageio-pnm/1.0"/>
+     <get src="../grobid-core/lib/eugfc/imageio-pnm/1.0/imageio-pnm-1.0.jar" 
+          dest="${maven.repo.local}/eugfc/imageio-pnm/1.0/imageio-pnm-1.0.jar" 
+          usetimestamp="false" 
+          ignoreerrors="true"/>	
+      <mkdir dir="${maven.repo.local}/org/wipo/analysers/wipo-analysers/0.0.1"/>
+      <get src="../grobid-core/lib/org/wipo/analysers/wipo-analysers/0.0.1/wipo-analysers-0.0.1.jar" 
+           dest="${maven.repo.local}/org/wipo/analysers/wipo-analysers/0.0.1/wipo-analysers-0.0.1.jar" 
+           usetimestamp="false" 
+           ignoreerrors="true"/>		 
   	<mkdir dir="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0"/>	 
     <get src="http://repo1.maven.org/maven2/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar" 
          dest="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar" 
@@ -342,10 +360,6 @@
     <copy file="../grobid-core/lib/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar" 
          tofile="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar" 
          failonerror="false"/>
- 
-	
-	
-		  
     <mkdir dir="${maven.repo.local}/commons-pool/commons-pool/1.6"/>
     <get src="http://repo1.maven.org/maven2/commons-pool/commons-pool/1.6/commons-pool-1.6.jar" 
          dest="${maven.repo.local}/commons-pool/commons-pool/1.6/commons-pool-1.6.jar" 
