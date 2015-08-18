@@ -541,6 +541,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 							token.setItalic(currentItalic);
 							token.setBold(currentBold);
 							token.setRotation(currentRotation);
+                            token.setPage(currentPage);
 							token.setColorFont(colorFont);
 							token.setX(currentX);
 							token.setY(currentY);

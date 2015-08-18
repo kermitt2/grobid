@@ -17,6 +17,7 @@ public class LayoutToken {
     private String colorFont = null;
     public double fontSize = 0.0;
     private boolean rotation = false;
+    private int page = -1;
 
     public LayoutToken() {
     }
@@ -108,6 +109,14 @@ public class LayoutToken {
 
     public double getWidth() {
         return width;
+    }
+
+    public int getPage() {
+        return page;
+    }
+
+    public void setPage(int page) {
+        this.page = page;
     }
 
     @Override
