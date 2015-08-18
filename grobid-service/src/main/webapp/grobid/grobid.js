@@ -150,8 +150,8 @@ var grobid = (function($) {
 	    return true;
 	}
 	
-	function AjaxError() {
-		$('#requestResult').html("<font color='red'>Error encountered while requesting the server.</font>");      
+	function AjaxError(jqXHR, textStatus, errorThrown) {
+		$('#requestResult').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");      
 		responseJson = null;
 	}
 	
