@@ -847,7 +847,7 @@ public class EngineTest {
     @Test
     public void testFulltext() throws Exception {
         final Engine engine = GrobidFactory.getInstance().getEngine();
-        System.out.println(engine.fullTextToTEI("/Work/temp/context/pdf3.pdf", true, true, null, -1, -1, true));
+        System.out.println(engine.fullTextToTEI("/Work/temp/context/coords/2.pdf", true, true, null, -1, -1, true));
 //        System.out.println(engine.fullTextToTEI("/tmp/x1.pdf", true, true, null, -1, -1, true));
     }
 

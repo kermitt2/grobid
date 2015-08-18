@@ -1,5 +1,6 @@
 package org.grobid.core.document;
 
+import com.google.common.base.Joiner;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
@@ -8,7 +9,9 @@ import org.grobid.core.data.Keyword;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
+import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.GrobidProperties;
@@ -3648,31 +3651,8 @@ public class TEIFormater {
 
 
     private String getCoordsString(List<LayoutToken> toks) {
-        if (toks == null || toks.isEmpty()) {
-            return null;
-        }
-        double minX = Integer.MAX_VALUE, maxX = Integer.MIN_VALUE, minY = Integer.MAX_VALUE, maxY = Integer.MIN_VALUE;
-        int page = -1;
-        for (LayoutToken t : toks) {
-            page = t.getPage();
-            if (t.getX() < minX) {
-                minX = t.getX();
-            }
-
-            if (t.getY() < minY) {
-                minY = t.getY();
-            }
-
-            if (t.getX() + t.getWidth() > maxX) {
-                maxX = t.getX() + t.getWidth();
-            }
-
-            if (t.getY() + t.getHeight() > maxY) {
-                maxY = t.getY() + t.getHeight();
-            }
-        }
-
-        return "" + page + ";" + minX + ";" + minY + ";" + maxX + ";" + maxY;
+        List<BoundingBox> res = BoundingBoxCalculator.calculate(toks);
+        return Joiner.on(";").join(res);
     }
 
      /**
