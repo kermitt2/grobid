@@ -39,12 +39,6 @@
 		    <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
 		    <url>http://repository.springsource.com/maven/bundles/external</url>
 		</repository>
-        <!--<repository>-->
-            <!--<id>maven.amplafi.com</id>-->
-            <!--<name>Amplafi repository</name>-->
-            <!--<url>http://maven.amplafi.com/</url>-->
-            <!--<layout>default</layout>-->
-        <!--</repository>-->
     </repositories>
 
 	<dependencies>
@@ -54,38 +48,27 @@
 			<version>1.0.2</version>
 			<scope>compile</scope>
 		</dependency>
-
         <dependency>
             <groupId>fr.limsi.wapiti</groupId>
             <artifactId>wapiti</artifactId>
             <version>1.5.0</version>
         </dependency>
-
         <dependency>
 			<groupId>com.cybozu</groupId>
 			<artifactId>language-detection</artifactId>
 			<version>09-13-2011</version>
 		</dependency>
-
         <dependency>
 			<groupId>net.arnx</groupId>
 			<artifactId>jsonic</artifactId>
 			<version>1.3.5</version>
 		</dependency>
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.8.2</version>
 			<scope>test</scope>
 		</dependency>
-		<!--dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.16</version>
-			<optional>true</optional>
-		</dependency-->
-		<!-- for pooling e.g. Engine -->
 		<dependency>
 			<groupId>commons-pool</groupId>
 			<artifactId>commons-pool</artifactId>
@@ -121,7 +104,11 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-
+		<dependency>
+		    <groupId>xerces</groupId>
+		    <artifactId>xercesImpl</artifactId>
+		    <version>2.11.0</version>
+		</dependency>
 		<dependency>
 			<groupId>directory-naming</groupId>
 			<artifactId>naming-java</artifactId>
@@ -169,6 +156,12 @@
 			<artifactId>imageio-pnm</artifactId>
 			<version>1.0</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.wipo.analysers</groupId>
+			<artifactId>wipo-analysers</artifactId>
+			<version>0.0.1</version>
+		</dependency>	
 
 	</dependencies>
 
@@ -289,6 +282,7 @@
 					<!--argLine>-Djava.library.path=${basedir}/lib/</argLine> <systemProperties> <property> <name>java.library.path</name> <value>lib/</value> </property> </systemProperties -->
 				</configuration>
 			</plugin>
+			
 		</plugins>
 		<!--/pluginManagement -->
 	</build>

@@ -4,6 +4,7 @@ import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
+import org.grobid.core.data.Keyword;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
@@ -672,16 +673,20 @@ public class TEIFormater {
 
 		tei.append("\t\t<profileDesc>\n");
 
-        // keywords here !!
+        // keywords here !! Normally the keyword field has been preprocessed
+		// if the segmentation into individual keywords worked, the first conditional
+		// statement will be used - otherwise the whole keyword field is outputed 
 		if ( (biblio.getKeywords() != null) && (biblio.getKeywords().size() > 0) ) {
 			textClassWritten = true;
 	        tei.append("\t\t\t<textClass>\n");
-			tei.append("\t\t\t\t<keywords>");
+			tei.append("\t\t\t\t<keywords>\n");
 			
-			List<String> keywords = biblio.getKeywords();
+			List<Keyword> keywords = biblio.getKeywords();
 			int pos = 0;
-			for(String keyw : keywords) {
-				String res = keyw.trim();
+			for(Keyword keyw : keywords) {
+				if ( (keyw.getKeyword() == null) || (keyw.getKeyword().length() == 0) )
+					continue;
+				String res = keyw.getKeyword().trim();
 				if (res.startsWith(":")) {
 					res = res.substring(1);
 			    }
@@ -704,74 +709,14 @@ public class TEIFormater {
           	String keywords = biblio.getKeyword();
 			textClassWritten = true;
             tei.append("\t\t\t<textClass>\n");
+            tei.append("\t\t\t\t<keywords");
 			
-			// Note: to be cleaned...
-            if (keywords.startsWith("Categories and Subject Descriptors")) {
-                tei.append("\t\t\t\t<keywords scheme=\"subject-headers\"");
-            } else if (keywords.startsWith("PACS Numbers:")) {
-                tei.append("\t\t\t\t<keywords scheme=\"pacs\"");
-                keywords = keywords.replace("PACS Numbers:", "").trim();
-            } else if (keywords.startsWith("PACS numbers:")) {
-                tei.append("\t\t\t\t<keywords scheme=\"pacs\"");
-                keywords = keywords.replace("PACS numbers:", "").trim();
-            } else if (keywords.startsWith("PACS")) {
-                tei.append("\t\t\t\t<keywords scheme=\"pacs\"");
-                keywords = keywords.replace("PACS", "").trim();
-            } else {
-                tei.append("\t\t\t\t<keywords");
-			}
 			if (generateIDs) {
 				String divID = KeyGen.getKey().substring(0,7);
 				tei.append(" xml:id=\"_" + divID + "\"");
 			}
 			tei.append(">");
-            int start = keywords.indexOf("Keywords");
-            if (start != -1) {
-                //String keywords1 = keywords.substring(0, start-1);
-                keywords = keywords.substring(start + 8, keywords.length());
-            }
-			if (keywords.endsWith(".")) {
-		          keywords = keywords.substring(0, keywords.length()-1);
-			}
-			
-            StringTokenizer st1 = new StringTokenizer(keywords, ";");
-            if (st1.countTokens() > 2) {
-				tei.append("\n");
-                while (st1.hasMoreTokens()) {
-					String res = st1.nextToken().trim();
-					if (res.startsWith(":")) {
-			            res = res.substring(1);
-			        }
-                    tei.append("\t\t\t\t\t<term");
-					if (generateIDs) {
-						String divID = KeyGen.getKey().substring(0,7);
-						tei.append(" xml:id=\"_" + divID + "\"");
-					}
-					tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
-                }
-                tei.append("\t\t\t\t</keywords>\n");
-            } else {
-                st1 = new StringTokenizer(keywords, ",");
-                if (st1.countTokens() > 2) {
-					tei.append("\n");
-                    while (st1.hasMoreTokens()) {
-						String res = st1.nextToken().trim();
-						if (res.startsWith(":")) {
-				            res = res.substring(1);
-				        }
-                        tei.append("\t\t\t\t\t<term");
-						if (generateIDs) {
-							String divID = KeyGen.getKey().substring(0,7);
-							tei.append(" xml:id=\"_" + divID + "\"");
-						}	
-						tei.append(">" + TextUtilities.HTMLEncode(res) + "</term>\n");
-                    }
-                    tei.append("\t\t\t\t</keywords>\n");
-                } 
-				else {
-                    tei.append(TextUtilities.HTMLEncode(biblio.getKeyword())).append("</keywords>\n");
-                }
-            }
+            tei.append(TextUtilities.HTMLEncode(biblio.getKeyword())).append("</keywords>\n");
 		}
 		
         if (biblio.getCategories() != null) {

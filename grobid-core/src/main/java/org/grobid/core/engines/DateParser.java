@@ -32,17 +32,19 @@ public class DateParser extends AbstractParser {
 
         List<String> dateBlocks = new ArrayList<String>();
         try {
-            StringTokenizer st = new StringTokenizer(input, "([" + TextUtilities.punctuations, true);
-
-            if (st.countTokens() == 0)
+            //StringTokenizer st = new StringTokenizer(input, "([" + TextUtilities.punctuations, true);
+			List<String> tokenizations = analyzer.tokenize(input);
+            //if (st.countTokens() == 0)
+			if (tokenizations.size() == 0) 
                 return null;
-            while (st.hasMoreTokens()) {
-                String tok = st.nextToken();
+            //while (st.hasMoreTokens()) {
+            //    String tok = st.nextToken();
+			for(String tok : tokenizations) {
                 if (!tok.equals(" ")) {
                     dateBlocks.add(tok + " <date>");
                 }
             }
-//            dateBlocks.add("\n");
+//          dateBlocks.add("\n");
 
             String headerDate = FeaturesVectorDate.addFeaturesDate(dateBlocks);
 
@@ -299,25 +301,28 @@ public class DateParser extends AbstractParser {
             if (inputs.size() == 0)
                 return null;
 
-            List<String> tokenizations = new ArrayList<String>();
+            List<String> tokenizations = null;
             List<String> dateBlocks = new ArrayList<String>();
             for (String input : inputs) {
                 if (input == null)
                     continue;
 
                 //StringTokenizer st = new StringTokenizer(input, " \t\n"+TextUtilities.fullPunctuations, true);
-                StringTokenizer st = new StringTokenizer(input, "([" + TextUtilities.punctuations, true);
-
-                if (st.countTokens() == 0)
+                //StringTokenizer st = new StringTokenizer(input, "([" + TextUtilities.punctuations, true);
+				tokenizations = analyzer.tokenize(input);
+				
+                //if (st.countTokens() == 0)
+				if (tokenizations.size() == 0)
                     return null;
-                while (st.hasMoreTokens()) {
-                    String tok = st.nextToken();
+                //while (st.hasMoreTokens()) {
+                //    String tok = st.nextToken();
+				for(String tok : tokenizations) {
                     if (tok.equals("\n")) {
                         dateBlocks.add("@newline");
                     } else if (!tok.equals(" ")) {
                         dateBlocks.add(tok + " <date>");
                     }
-                    tokenizations.add(tok);
+                    //tokenizations.add(tok);
                 }
                 dateBlocks.add("\n");
             }

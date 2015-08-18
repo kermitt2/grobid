@@ -6,6 +6,7 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
+import org.grobid.core.data.Keyword;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
@@ -88,6 +89,9 @@ public class HeaderParser extends AbstractParser {
         }
     }
 
+    /**
+     * Header processing after identification of the header blocks with heuristics (old approach)
+     */
     public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) {
         String header;
         if (doc.getBlockDocumentHeaders() == null) {
@@ -169,7 +173,8 @@ public class HeaderParser extends AbstractParser {
                         }
                     }
 
-                    resHeader.setFullAffiliations(parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
+                    resHeader.setFullAffiliations(
+						parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
                     resHeader.attachEmails();
                     boolean attached = false;
                     if (fragmentedAuthors && !hasMarker) {
@@ -211,6 +216,15 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
+				// keyword post-processing
+				if (resHeader.getKeyword() != null) {
+					String keywords = TextUtilities.dehyphenize(resHeader.getKeyword());
+					keywords = BiblioItem.cleanKeywords(keywords);
+					resHeader.setKeyword(keywords.replace("\n", " ").replace("  ", " "));
+					List<Keyword> keywordsSegmented = BiblioItem.segmentKeywords(keywords);
+					if ( (keywordsSegmented != null) && (keywordsSegmented.size() > 0) )
+						resHeader.setKeywords(keywordsSegmented);
+				}
 
                 // DOI pass
                 List<String> dois = doc.getDOIMatches();
@@ -260,7 +274,7 @@ public class HeaderParser extends AbstractParser {
     }
 
     /**
-     * Header processing after application of the segmentation model
+     * Header processing after application of the segmentation model (new approach)
      */
     public String processingHeaderSection(Document doc, boolean consolidate, BiblioItem resHeader) {
         try {
@@ -321,8 +335,8 @@ public class HeaderParser extends AbstractParser {
 
                 if (resHeader != null) {
                     if (resHeader.getAbstract() != null) {
-                        // resHeader.setAbstract(utilities.dehyphenizeHard(resHeader.getAbstract()));
-                        resHeader.setAbstract(TextUtilities.dehyphenize(resHeader.getAbstract()));
+                        resHeader.setAbstract(TextUtilities.dehyphenizeHard(resHeader.getAbstract()));
+                        //resHeader.setAbstract(TextUtilities.dehyphenize(resHeader.getAbstract()));
                     }
                     BiblioItem.cleanTitles(resHeader);
                     if (resHeader.getTitle() != null) {
@@ -368,7 +382,8 @@ public class HeaderParser extends AbstractParser {
                         }
                     }
 
-                    resHeader.setFullAffiliations(parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
+                    resHeader.setFullAffiliations(
+						parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
                     resHeader.attachEmails();
                     boolean attached = false;
                     if (fragmentedAuthors && !hasMarker) {
@@ -409,6 +424,16 @@ public class HeaderParser extends AbstractParser {
                         BiblioItem.correct(resHeader, refer);
                     }
                 }
+
+				// keyword post-processing
+				if (resHeader.getKeyword() != null) {
+					String keywords = TextUtilities.dehyphenize(resHeader.getKeyword());
+					keywords = BiblioItem.cleanKeywords(keywords);
+					resHeader.setKeyword(keywords.replace("\n", " ").replace("  ", " "));
+					List<Keyword> keywordsSegmented = BiblioItem.segmentKeywords(keywords);
+					if ( (keywordsSegmented != null) && (keywordsSegmented.size() > 0) )
+						resHeader.setKeywords(keywordsSegmented);
+				}
 
                 // DOI pass
                 List<String> dois = doc.getDOIMatches();

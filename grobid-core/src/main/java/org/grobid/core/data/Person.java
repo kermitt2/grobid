@@ -136,9 +136,9 @@ public class Person {
     }
 
     public boolean notNull() {
-        if ((firstName == null) &
-                (middleName == null) &
-                (lastName == null) &
+        if ((firstName == null) &&
+                (middleName == null) &&
+                (lastName == null) &&
                 (title == null)
                 )
             return false;
@@ -179,7 +179,7 @@ public class Person {
         if (lastName != null)
             res += "<surname>" + lastName + "</surname>";
         if (suffix != null)
-            res += "<suffix>" + suffix + "</suffix>";
+            res += "<genName>" + suffix + "</genName>";
         res += "</persName>";
 
         return res;

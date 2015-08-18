@@ -23,8 +23,8 @@ public class SegmentationTrainer extends AbstractTrainer{
     }
 
 	// adjusting CRF training parameters for this model (only with Wapiti)
-	public static final double epsilon = 0.00001;
-	public static final int window = 20;
+	private double epsilon = 0.00001;
+	private int window = 20;
 
     @Override
     public int createCRFPPData(File corpusPath, File outputFile) {

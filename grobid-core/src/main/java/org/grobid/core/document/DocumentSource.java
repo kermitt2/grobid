@@ -110,7 +110,8 @@ public class DocumentSource {
             if (GrobidProperties.isContextExecutionServer()) {
                 tmpPathXML = processPdf2XmlServerMode(pdfPath, tmpPathXML, cmd);
             } else {
-                cmd = Arrays.asList("bash", "-c", "ulimit -Sv " + PDF2XML_MEM_LIMIT_KBYTES + " && " + pdftoxml0 + " '" + pdfPath + "' " + tmpPathXML);
+                cmd = Arrays.asList("bash", "-c", "ulimit -Sv " + 
+					PDF2XML_MEM_LIMIT_KBYTES + " && " + pdftoxml0 + " '" + pdfPath + "' " + tmpPathXML);
 
                 LOGGER.debug("Executing command: " + cmd);
 
