@@ -42,7 +42,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 
     /**
      *
-     * @param referenceBlock text containing citation block
+     * @param doc Document object
      * @return <reference_label, reference_string>  Note, that label is null when no label was detected
      *              example: <"[1]", "Hu W., Barkana, R., &amp; Gruzinov A. Phys. Rev. Lett. 85, 1158">
      */
