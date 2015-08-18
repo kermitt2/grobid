@@ -32,7 +32,7 @@ public class BoundingBox {
     }
 
     public static BoundingBox fromLayoutToken(LayoutToken tok) {
-        return BoundingBox.fromTwoPoints(tok.getPage(), tok.getX(), tok.getY(), tok.getWidth(), tok.getHeight());
+        return BoundingBox.fromPointAndDimensions(tok.getPage(), tok.getX(), tok.getY(), tok.getWidth(), tok.getHeight());
     }
 
     public int getPage() {
