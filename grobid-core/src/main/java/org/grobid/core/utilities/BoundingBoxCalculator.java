@@ -11,8 +11,8 @@ import java.util.List;
  * Utilities to calculate bounding boxes from coordinates
  */
 public class BoundingBoxCalculator {
-    private static final double EPS_X = 5;
-    private static final double EPS_Y = 2;
+    private static final double EPS_X = 10;
+    private static final double EPS_Y = 3;
 
     public static List<BoundingBox> calculate(List<LayoutToken> tokens) {
         List<BoundingBox> result = Lists.newArrayList();
