@@ -11,6 +11,7 @@ import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
@@ -60,7 +61,6 @@ public class TEIFormater {
 	private static Pattern numberRef = Pattern.compile("(\\[|\\()\\d+\\w?(\\)|\\])");
     private static Pattern numberRefCompact =
             Pattern.compile("(\\[|\\()((\\d)+(\\w)?(\\-\\d+\\w?)?,\\s?)+(\\d+\\w?)(\\-\\d+\\w?)?(\\)|\\])");
-    //private static Pattern numberRefVeryCompact = Pattern.compile("(\\[|\\()(\\d)+-(\\d)+(\\)|\\])");
     private static Pattern numberRefCompact2 = Pattern.compile("(\\[|\\()(\\d+)(-|‒|–|—|―|\u2013)(\\d+)(\\)|\\])");
 
 	private static Pattern startNum = Pattern.compile("^(\\d+)(.*)");
@@ -916,20 +916,21 @@ public class TEIFormater {
                                        String result,
                                        BiblioItem biblio,
                                        List<BibDataSet> bds,
-                                       List<String> tokenizations,
-                                       List<LayoutToken> layoutTokensBody, Document doc,
+									   LayoutTokenization layoutTokenization,
+									   Document doc,
                                        boolean generateIDs,
-                                       boolean generateImageReferences) throws Exception {
-		if ( (result == null) || (tokenizations == null) ) {
+                                       boolean generateImageReferences,
+									   boolean generateCoordinates) throws Exception {
+		if ( (result == null) || (layoutTokenization == null) || (layoutTokenization.getTokenization() == null) ) {
 			buffer.append("\t\t<body/>\n");
 			return buffer;
 		}
 		buffer.append("\t\t<body>\n");
 		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, 
-			tokenizations, layoutTokensBody, doc, generateIDs, generateImageReferences);
+			layoutTokenization, doc, generateIDs, generateImageReferences, generateCoordinates);
 		
 		// footnotes are still in the body
-		buffer = toTEIFootNoteLight(buffer, doc, generateIDs);
+		buffer = toTEIFootNoteLight(buffer, doc, generateIDs, generateCoordinates);
 
       	buffer.append("\t\t</body>\n");
 		
@@ -938,7 +939,8 @@ public class TEIFormater {
 	
 	public StringBuffer toTEIFootNoteLight(StringBuffer tei, 
 										Document doc, 
-										boolean generateIDs) throws Exception {		
+										boolean generateIDs,
+										boolean generateCoordinates) throws Exception {		
 		// write the footnotes
 		SortedSet<DocumentPiece> documentFootnoteParts = doc.getDocumentPart(SegmentationLabel.FOOTNOTE);
 		String footnotes = doc.getDocumentPartText(SegmentationLabel.FOOTNOTE);
@@ -991,7 +993,8 @@ public class TEIFormater {
 												String reseAcknowledgement, 
 												List<String> tokenizationsAcknowledgement,
 												List<BibDataSet> bds,
-												boolean generateIDs) throws Exception {
+												boolean generateIDs,
+												boolean generateCoordinates) throws Exception {
 		if ( (reseAcknowledgement == null) || (tokenizationsAcknowledgement == null) ) {
 			return buffer;
 		}
@@ -1000,7 +1003,8 @@ public class TEIFormater {
 		StringBuffer buffer2 = new StringBuffer();
 		
 		buffer2 = toTEITextPieceLight(buffer2, reseAcknowledgement,  null,  bds, 
-			tokenizationsAcknowledgement, null, doc, generateIDs, false);
+			new LayoutTokenization(tokenizationsAcknowledgement, null), doc, generateIDs, 
+			false, generateCoordinates);
 		String acknowResult = buffer2.toString();
 		String[] acknowResultLines = acknowResult.split("\n");
 		boolean extraDiv = false;
@@ -1034,13 +1038,15 @@ public class TEIFormater {
                                 	List<String> tokenizations,
                                 	Document doc,
 									boolean generateIDs,
-									boolean generateImageReferences) throws Exception {
+									boolean generateImageReferences,
+									boolean generateCoordinates) throws Exception {
 		if ( (result == null) || (tokenizations == null) ) {
 			return buffer;
 		}
 		buffer.append("\t\t<div type=\"annex\">\n");
 		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, 
-			tokenizations, null, doc, generateIDs, generateImageReferences);
+			new LayoutTokenization(tokenizations, null), doc, generateIDs, 
+			generateImageReferences, generateCoordinates);
       	buffer.append("\t\t</div>\n");
 		
         return buffer;
@@ -1050,11 +1056,11 @@ public class TEIFormater {
                        			 	String result,
                                 	BiblioItem biblio,
                                 	List<BibDataSet> bds,
-                                	List<String> tokenizations,
-                                    List<LayoutToken> layoutTokensBody,
+									LayoutTokenization layoutTokenization,	
                                     Document doc,
 									boolean generateIDs,
-									boolean generateImageReferences) throws Exception {
+									boolean generateImageReferences,
+									boolean generateCoordinates) throws Exception {
         StringTokenizer st = new StringTokenizer(result, "\n");
         String s1 = null;
         String s2 = null;
@@ -1121,7 +1127,9 @@ public class TEIFormater {
 				System.out.println(nto.toString());
 			}*/
 		}
-		
+		List<String> tokenizations = layoutTokenization.getTokenization();
+		List<LayoutToken> layoutTokensBody = layoutTokenization.getLayoutTokens();
+			
         while (st.hasMoreTokens()) {
             boolean addSpace = false;
             String tok = st.nextToken().trim();
@@ -1588,7 +1596,7 @@ public class TEIFormater {
 					String replacement = null;
 					
 					if (lastTag0.equals("<citation_marker>")) {
-						replacement = markReferencesTEI(chunkRefString, refTokens, bds).trim();
+						replacement = markReferencesTEI(chunkRefString, refTokens, bds, generateCoordinates).trim();
 					}
 					else if (lastTag0.equals("<figure_marker>")) {
 						replacement = "<ref type=\"figure\">" + chunkRefString + "</ref>";
@@ -3572,7 +3580,7 @@ public class TEIFormater {
             } 
 			else if (currentCitationMarker.length() > 0) {
                 String theRef = currentCitationMarker.toString();
-                theRef = markReferencesTEI(theRef, null, bds);
+                theRef = markReferencesTEI(theRef, null, bds, false);
                 tei.append(theRef);
                 currentCitationMarker = new StringBuffer();
             } 
@@ -3655,10 +3663,11 @@ public class TEIFormater {
         return Joiner.on(";").join(res);
     }
 
-     /**
+    /**
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
      */
-    public String markReferencesTEI(String text, List<LayoutToken> refTokens, List<BibDataSet> bds) {
+    public String markReferencesTEI(String text, List<LayoutToken> refTokens, 
+	 								List<BibDataSet> bds, boolean generateCoordinates) {
         // safety tests
 		if (text == null)
             return null;
@@ -3670,7 +3679,9 @@ public class TEIFormater {
         text = TextUtilities.HTMLEncode(text);
         boolean numerical = false;
 
-        String coords = getCoordsString(refTokens);
+        String coords = null;
+		if (generateCoordinates)
+			coords = getCoordsString(refTokens);
         if (coords == null) {
             coords = "";
         } else {
@@ -3900,10 +3911,14 @@ public class TEIFormater {
 	                                        added = 7;
 	                                    }
 										if (previousText.length() > 2) {
-											previousText = markReferencesTEI(previousText, refTokens, bds);
+											previousText = 
+												markReferencesTEI(previousText, refTokens, bds, 
+													generateCoordinates);
 										}
 										if (followingText.length() > 2) {
-											followingText = markReferencesTEI(followingText, refTokens, bds);
+											followingText = 
+												markReferencesTEI(followingText, refTokens, bds, 
+													generateCoordinates);
 										}
 											
 										return previousText+text+followingText;
@@ -3947,10 +3962,14 @@ public class TEIFormater {
 	                                        added = 7;
 										}
 	                                  	if (previousText.length() > 2) {
-											previousText = markReferencesTEI(previousText, refTokens, bds);
+											previousText = 
+												markReferencesTEI(previousText, refTokens, bds, 
+													generateCoordinates);
 										}
 										if (followingText.length() > 2) {
-											followingText = markReferencesTEI(followingText, refTokens, bds);
+											followingText = 
+												markReferencesTEI(followingText, refTokens, bds, 
+													generateCoordinates);
 										}
 											
 										return previousText+text+followingText;    
@@ -4014,5 +4033,4 @@ public class TEIFormater {
 
         return localText.trim();
     }
-
 }

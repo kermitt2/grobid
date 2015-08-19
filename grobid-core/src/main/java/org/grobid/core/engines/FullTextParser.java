@@ -13,6 +13,7 @@ import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.Pair;
@@ -77,6 +78,8 @@ public class FullTextParser extends AbstractParser {
 	 * PDF, -1 for the last page (default) 
 	 * @param generateIDs if true, generate random attribute id on the textual elements of 
 	 * the resulting TEI 
+	 * @param generateCoordinates if true, generates the coordinates in the PDF corresponding
+	 * to the TEI full text substructures (e.g. reference markers) 
      * @return the document object with built TEI
      */
     public Document processing(String input, 
@@ -86,7 +89,8 @@ public class FullTextParser extends AbstractParser {
 							String assetPath,
 							int startPage,
 							int endPage,
-							boolean generateIDs) throws Exception {
+							boolean generateIDs, 
+							boolean generateCoordinates) throws Exception {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -106,16 +110,18 @@ public class FullTextParser extends AbstractParser {
             // general segmentation
             Document doc = parsers.getSegmentationParser().processing(input, assetPath, startPage, endPage); 
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
-			Pair<String, Pair<List<String>, List<LayoutToken>>> featSeg = getBodyTextFeatured(doc, documentBodyParts);
+			Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String rese = null;
-			List<String> tokenizationsBody = null;
-			List<LayoutToken> layoutTokensBody = null;
+			LayoutTokenization layoutTokenization = null;
+			//List<String> tokenizationsBody = null;
+			//List<LayoutToken> layoutTokensBody = null;
 			if (featSeg != null) {
 				// if featSeg is null, it usually means that no body segment is found in the 
 				// document segmentation
 				String bodytext = featSeg.getA();
-				tokenizationsBody = featSeg.getB().getA();
-                layoutTokensBody = featSeg.getB().getB();
+				layoutTokenization = featSeg.getB();
+				//tokenizationsBody = featSeg.getB().getTokenization();
+                //layoutTokensBody = featSeg.getB().getLayoutTokens();
 				if ( (bodytext != null) && (bodytext.trim().length() > 0) ) { 
 					rese = label(bodytext);
 				}
@@ -159,7 +165,7 @@ public class FullTextParser extends AbstractParser {
 				// if featSeg is null, it usually means that no body segment is found in the 
 				// document segmentation
 				String bodytext = featSeg.getA();
-				tokenizationsBody2 = featSeg.getB().getA();
+				tokenizationsBody2 = featSeg.getB().getTokenization();
 	            rese2 = label(bodytext);
 				//System.out.println(rese);
 			}
@@ -171,18 +177,20 @@ public class FullTextParser extends AbstractParser {
             // final combination
             toTEI(doc, // document
 				rese, rese2, // labeled data for body and annex  
-				tokenizationsBody, layoutTokensBody, tokenizationsBody2, // tokenization for body and annex
+				layoutTokenization, tokenizationsBody2, // tokenization for body and annex
 				resHeader, resCitations, // header and bibliographical citations
 				null, false, mode,
-				generateIDs, generateImageReferences);
+				generateIDs, // add automatically generated xml:id in the elements containing text
+				generateImageReferences, 
+				generateCoordinates);
             return doc;
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
         }
     }
 
-	static public Pair<String, Pair<List<String>, List<LayoutToken>>> getBodyTextFeatured(Document doc,
-                                                                                          SortedSet<DocumentPiece> documentBodyParts) {
+	static public Pair<String, LayoutTokenization> getBodyTextFeatured(Document doc,
+                                                                       SortedSet<DocumentPiece> documentBodyParts) {
 		if ((documentBodyParts == null) || (documentBodyParts.size() == 0)) {				
 			return null;
 		}
@@ -572,8 +580,8 @@ public class FullTextParser extends AbstractParser {
 
         }
 
-
-        return new Pair<String,Pair<List<String>, List<LayoutToken>>>(fulltext.toString(), new Pair<List<String>, List<LayoutToken>>(tokenizationsBody, layoutTokens));
+        return new Pair<String,LayoutTokenization>(fulltext.toString(), 
+			new LayoutTokenization(tokenizationsBody, layoutTokens));
 	}
 
     /**
@@ -608,14 +616,14 @@ public class FullTextParser extends AbstractParser {
             //String fulltext = doc.getFulltextFeatured(true, true);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);	
 			if (documentBodyParts != null) {			
-				Pair<String, Pair<List<String>, List<LayoutToken>>> featSeg = getBodyTextFeatured(doc, documentBodyParts);
+				Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentBodyParts);
 				if (featSeg == null) {
 					// no textual body part found, nothing to generate
 					return doc;
 				}
 				
 				String bodytext = featSeg.getA();
-				List<String> tokenizationsBody = featSeg.getB().getA();
+				List<String> tokenizationsBody = featSeg.getB().getTokenization();
 				
 				/*List<String> tokenizationsBody = new ArrayList<String>();
 				List<String> tokenizations = doc.getTokenizations();
@@ -1298,8 +1306,7 @@ public class FullTextParser extends AbstractParser {
     private void toTEI(Document doc,
                        String reseBody,
                        String reseAnnex,
-                       List<String> tokenizationsBody,
-                       List<LayoutToken> layoutTokensBody,
+					   LayoutTokenization layoutTokenization,
                        List<String> tokenizationsAnnex,
                        BiblioItem resHeader,
                        List<BibDataSet> resCitations,
@@ -1307,7 +1314,8 @@ public class FullTextParser extends AbstractParser {
                        boolean withStyleSheet,
                        int mode,
                        boolean generateIDs,
-                       boolean generateImageReferences) {
+                       boolean generateImageReferences,
+					   boolean generateCoordinates) {
         if (doc.getBlocks() == null) {
             return;
         }
@@ -1319,11 +1327,11 @@ public class FullTextParser extends AbstractParser {
 			//System.out.println(rese);
 			if (mode == 0) {
 				tei = teiFormater.toTEIBodyLight(tei, reseBody, resHeader, resCitations, 
-					tokenizationsBody, layoutTokensBody, doc, generateIDs, generateImageReferences);
+					layoutTokenization, doc, generateIDs, generateImageReferences, generateCoordinates);
 			}
 			else if (mode == 1) {
            		tei = teiFormater.toTEIBodyML(tei, reseBody, resHeader, resCitations, 
-					tokenizationsBody, doc);
+					layoutTokenization.getTokenization(), doc);
 			}
 
 			tei.append("\t\t<back>\n");
@@ -1331,23 +1339,23 @@ public class FullTextParser extends AbstractParser {
 				// acknowledgement is in the back
 				SortedSet<DocumentPiece> documentAcknowledgementParts = 
 					doc.getDocumentPart(SegmentationLabel.ACKNOWLEDGEMENT);
-				Pair<String, Pair<List<String>, List<LayoutToken>>> featSeg =
+				Pair<String, LayoutTokenization> featSeg =
 					getBodyTextFeatured(doc, documentAcknowledgementParts);
 				List<String> tokenizationsAcknowledgement = null;
 				if (featSeg != null) {
 					// if featSeg is null, it usually means that no body segment is found in the 
 					// document segmentation
 					String acknowledgementText = featSeg.getA();
-					tokenizationsAcknowledgement = featSeg.getB().getA();
+					tokenizationsAcknowledgement = featSeg.getB().getTokenization();
 					String reseAcknowledgement = null;
 					if ( (acknowledgementText != null) && (acknowledgementText.length() >0) )
 						reseAcknowledgement = label(acknowledgementText);
 					tei = teiFormater.toTEIAcknowledgementLight(tei, reseAcknowledgement, 
-						tokenizationsAcknowledgement, resCitations, generateIDs);
+						tokenizationsAcknowledgement, resCitations, generateIDs, false);
 				}
 				
 				tei = teiFormater.toTEIAnnexLight(tei, reseAnnex, resHeader, resCitations, 
-					tokenizationsAnnex, doc, generateIDs, generateImageReferences);
+					tokenizationsAnnex, doc, generateIDs, generateImageReferences, false);
 			}
 			else if (mode == 1) {
 				tei = teiFormater.toTEIAnnexML(tei, reseAnnex, resHeader, resCitations, 
