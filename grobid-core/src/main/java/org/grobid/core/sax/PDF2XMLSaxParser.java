@@ -47,7 +47,8 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 	private Document doc = null;
 
-	private int currentPage = -1;
+    //starting page count from 1 since most of the PDF-related software count pages from 1
+	private int currentPage = 0;
 	private GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance(); 
 
 	public PDF2XMLSaxParser() {
