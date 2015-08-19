@@ -76,7 +76,9 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 		//res = res.replace("\u00A0", " "); // stdandard NO-BREAK SPACE are viewed
 											// as space
 		res = res.replaceAll("\\p{javaSpaceChar}", " "); // replace all unicode space separators
-		 												 // by a usual SPACE									
+		 												 // by a usual SPACE
+		res = res.replace("\t"," "); // case where tabulation are used as separator
+									 // -> replace tabulation with a usual space
 		return res.trim();
 	}
 
