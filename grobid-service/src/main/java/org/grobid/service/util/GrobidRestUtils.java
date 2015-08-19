@@ -52,7 +52,7 @@ public class GrobidRestUtils {
 		File originFile = null;
 		OutputStream out = null;
 		try {
-			originFile = newTempFile("origin", "pdf");
+			originFile = newTempFile("origin", ".pdf");
 
 			out = new FileOutputStream(originFile);
 
