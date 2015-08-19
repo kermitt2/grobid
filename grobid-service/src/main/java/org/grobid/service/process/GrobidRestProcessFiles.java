@@ -100,7 +100,7 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
         } catch (Exception exp) {
             LOGGER.error("An unexpected exception occured: " + exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(((GrobidException)exp.getCause()).getMessage()).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
@@ -335,7 +335,7 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
         } catch (Exception exp) {
             LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(((GrobidException)exp.getCause()).getMessage()).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
 			if (assetPath != null) {
@@ -422,7 +422,7 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
         } catch (Exception exp) {
             LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(((GrobidException)exp.getCause()).getMessage()).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
@@ -483,7 +483,7 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
         } catch (Exception exp) {
             LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(((GrobidException)exp.getCause()).getMessage()).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
@@ -559,7 +559,7 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
         } catch (Exception exp) {
             LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(((GrobidException)exp.getCause()).getMessage()).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
