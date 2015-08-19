@@ -20,10 +20,6 @@
 
     <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
-        <url-pattern>/isalive</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>grobid-service</servlet-name>
         <url-pattern>/admin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
