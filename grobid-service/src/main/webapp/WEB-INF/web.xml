@@ -28,6 +28,10 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/isalive</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
         <url-pattern>/grobid</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
