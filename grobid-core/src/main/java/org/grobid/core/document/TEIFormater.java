@@ -3690,102 +3690,106 @@ public class TEIFormater {
         // we check if we have numerical references
 
         // we re-write compact references, i.e [1,2] -> [1] [2] 
-        Matcher m2 = numberRefCompact.matcher(text);
-        StringBuffer sb = new StringBuffer();
-        boolean result = m2.find();
-        // Loop through and create a new String 
-        // with the replacements
-        while (result) {
-            String toto = m2.group(0);
-            if (toto.indexOf("]") != -1) {
-                toto = toto.replace(",", "] [");
-                toto = toto.replace("[ ", "[");
-                toto = toto.replace(" ]", "]");
-            } else {
-                toto = toto.replace(",", ") (");
-                toto = toto.replace("( ", "(");
-                toto = toto.replace(" )", ")");
-            }
-            m2.appendReplacement(sb, toto);
-            result = m2.find();
-        }
-        // Add the last segment of input to 
-        // the new String
-        m2.appendTail(sb);
-        text = sb.toString();
+		// 
+		String relevantText = bracketReferenceSegment(text);
+		if (relevantText != null) {
+	        Matcher m2 = numberRefCompact.matcher(text);
+	        StringBuffer sb = new StringBuffer();
+	        boolean result = m2.find();
+	        // Loop through and create a new String 
+	        // with the replacements
+	        while (result) {
+	            String toto = m2.group(0);
+	            if (toto.indexOf("]") != -1) {
+	                toto = toto.replace(",", "] [");
+	                toto = toto.replace("[ ", "[");
+	                toto = toto.replace(" ]", "]");
+	            } else {
+	                toto = toto.replace(",", ") (");
+	                toto = toto.replace("( ", "(");
+	                toto = toto.replace(" )", ")");
+	            }
+	            m2.appendReplacement(sb, toto);
+	            result = m2.find();
+	        }
+	        // Add the last segment of input to 
+	        // the new String
+	        m2.appendTail(sb);
+	        text = sb.toString();
 
-        // we expend the references [1-3] -> [1] [2] [3]
-        Matcher m3 = numberRefCompact2.matcher(text);
-        StringBuffer sb2 = new StringBuffer();
-        boolean result2 = m3.find();
-        // Loop through and create a new String 
-        // with the replacements
-        while (result2) {
-            String toto = m3.group(0);
-            if (toto.indexOf("]") != -1) {
-                toto = toto.replace("]", "");
-                toto = toto.replace("[", "");
-                int ind = toto.indexOf('-');
-                if (ind == -1)
-                    ind = toto.indexOf('\u2013');
-                if (ind != -1) {
-                    try {
-                        int firstIndex = Integer.parseInt(toto.substring(0, ind));
-                        int secondIndex = Integer.parseInt(toto.substring(ind + 1, toto.length()));
-						// how much values can we expend? We use a ratio of the total number of references
-						// with a minimal value
-						int maxExpend = 10 + (bds.size() / 10);
-						if (secondIndex - firstIndex > maxExpend) {
-							break;
-						}
-						toto = "";
-                        boolean first = true;
-                        for (int j = firstIndex; j <= secondIndex; j++) {
-                            if (first) {
-                                toto += "[" + j + "]";
-                                first = false;
-                            } else
-                                toto += " [" + j + "]";
-                        }
-                    } catch (Exception e) {
-                        throw new GrobidException("An exception occurs.", e);
-                    }
-                }
-            } 
-			else {
-                toto = toto.replace(")", "");
-                toto = toto.replace("(", "");
-                int ind = toto.indexOf('-');
-                if (ind == -1)
-                    ind = toto.indexOf('\u2013');
-                if (ind != -1) {
-                    try {
-                        int firstIndex = Integer.parseInt(toto.substring(0, ind));
-                        int secondIndex = Integer.parseInt(toto.substring(ind + 1, toto.length()));
-						if (secondIndex - firstIndex > 9) {
-							break;
-						}
-                        toto = "";
-                        boolean first = true;
-                        for (int j = firstIndex; j <= secondIndex; j++) {
-                            if (first) {
-                                toto += "(" + j + ")";
-                                first = false;
-                            } else
-                                toto += " (" + j + ")";
-                        }
-                    } catch (Exception e) {
-                        throw new GrobidException("An exception occurs.", e);
-                    }
-                }
-            }
-            m3.appendReplacement(sb2, toto);
-            result2 = m3.find();
-        }
-        // Add the last segment of input to 
-        // the new String
-        m3.appendTail(sb2);
-        text = sb2.toString();
+	        // we expend the references [1-3] -> [1] [2] [3]
+	        Matcher m3 = numberRefCompact2.matcher(text);
+	        StringBuffer sb2 = new StringBuffer();
+	        boolean result2 = m3.find();
+	        // Loop through and create a new String 
+	        // with the replacements
+	        while (result2) {
+	            String toto = m3.group(0);
+	            if (toto.indexOf("]") != -1) {
+	                toto = toto.replace("]", "");
+	                toto = toto.replace("[", "");
+	                int ind = toto.indexOf('-');
+	                if (ind == -1)
+	                    ind = toto.indexOf('\u2013');
+	                if (ind != -1) {
+	                    try {
+	                        int firstIndex = Integer.parseInt(toto.substring(0, ind));
+	                        int secondIndex = Integer.parseInt(toto.substring(ind + 1, toto.length()));
+							// how much values can we expend? We use a ratio of the total number of references
+							// with a minimal value
+							int maxExpend = 10 + (bds.size() / 10);
+							if (secondIndex - firstIndex > maxExpend) {
+								break;
+							}
+							toto = "";
+	                        boolean first = true;
+	                        for (int j = firstIndex; j <= secondIndex; j++) {
+	                            if (first) {
+	                                toto += "[" + j + "]";
+	                                first = false;
+	                            } else
+	                                toto += " [" + j + "]";
+	                        }
+	                    } catch (Exception e) {
+	                        throw new GrobidException("An exception occurs.", e);
+	                    }
+	                }
+	            } 
+				else {
+	                toto = toto.replace(")", "");
+	                toto = toto.replace("(", "");
+	                int ind = toto.indexOf('-');
+	                if (ind == -1)
+	                    ind = toto.indexOf('\u2013');
+	                if (ind != -1) {
+	                    try {
+	                        int firstIndex = Integer.parseInt(toto.substring(0, ind));
+	                        int secondIndex = Integer.parseInt(toto.substring(ind + 1, toto.length()));
+							if (secondIndex - firstIndex > 9) {
+								break;
+							}
+	                        toto = "";
+	                        boolean first = true;
+	                        for (int j = firstIndex; j <= secondIndex; j++) {
+	                            if (first) {
+	                                toto += "(" + j + ")";
+	                                first = false;
+	                            } else
+	                                toto += " (" + j + ")";
+	                        }
+	                    } catch (Exception e) {
+	                        throw new GrobidException("An exception occurs.", e);
+	                    }
+	                }
+	            }
+	            m3.appendReplacement(sb2, toto);
+	            result2 = m3.find();
+	        }
+	        // Add the last segment of input to 
+	        // the new String
+	        m3.appendTail(sb2);
+			text = sb2.toString();
+		}
         String res = "";
         int p = 0;
 		if ( (bds != null) && (bds.size() > 0)) {
@@ -3994,6 +3998,25 @@ public class TEIFormater {
 			text = "<ref type=\"bibr\">" + text + "</ref>";
         return text;
     }
+
+	/**
+	 * Identify in a reference string the part in bracket. Return null if no opening and closing bracket
+	 * can be found.   
+	 */
+	public static String bracketReferenceSegment(String text) {
+		int ind1 = text.indexOf("(");
+		if (ind1 == -1) 
+			ind1 = text.indexOf("[");
+		if (ind1 != -1) {
+			int ind2 = text.lastIndexOf(")");
+			if (ind2 == -1) 
+				ind2 = text.lastIndexOf("]");
+			if (ind2 != -1) {
+				return text.substring(ind1, ind2+1);
+			}
+		}
+		return null;
+	}
 
     public String markReferencesFigureTEI(String text, List<NonTextObject> ntos) {
         if (text == null)
