@@ -60,7 +60,7 @@ public class TestFullTextParser extends EngineTest {
 		getTestResourcePath();
 
 		String pdfPath = testPath + "/Wang-paperAVE2008.pdf";
-		
+
 		String tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false);
 		assertNotNull(tei);
  		//System.out.println(tei);
