@@ -1,7 +1,7 @@
 site_name: GROBID Documentation
 repo_url: https://github.com/kermitt2/grobid/
 repo_name: GitHub
-theme: ReadTheDocs
+theme: readthedocs
 site_description: Documentation for GROBID
 docs_dir: doc
 include_search: true
@@ -18,5 +18,4 @@ pages:
 - ['Training-the-models-of-Grobid.md', 'User manual', 'Training the GROBID models']
 - ['Evaluation-against-a-PubMedCentral-set.md', 'User manual', 'Evaluation against PubMed Central']
 - ['Recompiling-and-integrating-CRF-libraries.md', 'Developer notes', 'Recompiling CRF libraries']
-
 
