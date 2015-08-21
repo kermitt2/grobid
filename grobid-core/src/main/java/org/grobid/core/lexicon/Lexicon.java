@@ -82,16 +82,23 @@ public class Lexicon {
         initDictionary();
         initNames();
 		// the loading of the journal and conference names is lazy
-        addDictionary(GrobidProperties.getGrobidHomePath() + "/lexicon/wordforms/english.wf", Language.EN);
-        addDictionary(GrobidProperties.getGrobidHomePath() + "/lexicon/wordforms/german.wf", Language.EN);
-        addLastNames(GrobidProperties.getGrobidHomePath() + "/lexicon/names/names.family");
-		addLastNames(GrobidProperties.getGrobidHomePath() + "/lexicon/names/lastname.5k");
-        addFirstNames(GrobidProperties.getGrobidHomePath() + "/lexicon/names/names.female");
-        addFirstNames(GrobidProperties.getGrobidHomePath() + "/lexicon/names/names.male");
-		addFirstNames(GrobidProperties.getGrobidHomePath() + "/lexicon/names/firstname.5k");
+        addDictionary(GrobidProperties.getGrobidHomePath() + File.separator + 
+			"lexicon"+File.separator+"wordforms"+File.separator+"english.wf", Language.EN);
+        addDictionary(GrobidProperties.getGrobidHomePath() + File.separator + 
+			"lexicon"+File.separator+"wordforms"+File.separator+"german.wf", Language.EN);
+        addLastNames(GrobidProperties.getGrobidHomePath() + File.separator +
+			"lexicon"+File.separator+"names"+File.separator+"names.family");
+		addLastNames(GrobidProperties.getGrobidHomePath() + File.separator +
+			"lexicon"+File.separator+"names"+File.separator+"lastname.5k");
+        addFirstNames(GrobidProperties.getGrobidHomePath() + File.separator + 
+			"lexicon"+File.separator+"names"+File.separator+"names.female");
+        addFirstNames(GrobidProperties.getGrobidHomePath() + File.separator + 
+			"lexicon"+File.separator+"names"+File.separator+"names.male");
+		addFirstNames(GrobidProperties.getGrobidHomePath() + File.separator + 
+			"lexicon"+File.separator+"names"+File.separator+"firstname.5k");
         initCountryCodes();
-        addCountryCodes(GrobidProperties.getGrobidHomePath() +
-                "/lexicon/countries/CountryCodes.xml");
+        addCountryCodes(GrobidProperties.getGrobidHomePath() + File.separator +
+            "lexicon"+File.separator+"countries"+File.separator+"CountryCodes.xml");
     }
 
     private void initDictionary() {

@@ -9,9 +9,9 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Utilities;
 
 /**
- * The entrance point, to start grobid from command line
+ * The entrance point for starting grobid from command line and perform batch processing
  * 
- * @author Florian Zipser
+ * @author Florian, Damien, Patrice
  */
 public class GrobidMain {
 
@@ -65,11 +65,12 @@ public class GrobidMain {
 		final StringBuffer help = new StringBuffer();
 		help.append("HELP GROBID\n");
 		help.append("-h: displays help\n");
-		help.append("-gH: gives the path to grobid home directory\n");
-		help.append("-dIn: gives the path to the directory where inputs are saved. To use only when the called method needs it.\n");
-		help.append("-dOut: gives the path to the directory where results are saved. Output directory is the curent directory if not set.\n");
+		help.append("-gH: gives the path to grobid home directory.\n");
+		help.append("-dIn: gives the path to the directory where the files to be processed are located, to be used only when the called method needs it.\n");
+		help.append("-dOut: gives the path to the directory where the result files will be saved. The default output directory is the curent directory.\n");
 		help.append("-s: is the parameter used for process using string as input and not file.\n");
-		help.append("-exe: gives the command to execute. The Value should be one of these:\n");
+		help.append("-r: recursive directory processing, default processing is not recursive.\n");
+		help.append("-exe: gives the command to execute. The value should be one of these:\n");
 		help.append("\t" + availableCommands + "\n");
 		return help.toString();
 	}
@@ -85,7 +86,8 @@ public class GrobidMain {
 		if (pArgs.length == 0) {
 			System.out.println(getHelp());
 			result = false;
-		} else {
+		} 
+		else {
 			String currArg;
 			for (int i = 0; i < pArgs.length; i++) {
 				currArg = pArgs[i];
@@ -103,19 +105,25 @@ public class GrobidMain {
 					continue;
 				}
 				if (currArg.equals("-dIn")) {
-					gbdArgs.setPath2Input(pArgs[i + 1]);
-					gbdArgs.setPdf(true);
+					if (pArgs[i + 1] != null) {
+						gbdArgs.setPath2Input(pArgs[i + 1]);
+						gbdArgs.setPdf(true);
+					}
 					i++;
 					continue;
 				}
 				if (currArg.equals("-s")) {
-					gbdArgs.setInput(pArgs[i + 1]);
-					gbdArgs.setPdf(false);
+					if (pArgs[i + 1] != null) {
+						gbdArgs.setInput(pArgs[i + 1]);
+						gbdArgs.setPdf(false);
+					}
 					i++;
 					continue;
 				}
 				if (currArg.equals("-dOut")) {
-					gbdArgs.setPath2Output(pArgs[i + 1]);
+					if (pArgs[i + 1] != null) {
+						gbdArgs.setPath2Output(pArgs[i + 1]);
+					}
 					i++;
 					continue;
 				}
@@ -125,12 +133,16 @@ public class GrobidMain {
 						gbdArgs.setProcessMethodName(command);
 						i++;
 						continue;
-					} else {
+					} 
+					else {
 						System.err.println("-exe value should be one value from this list: " + availableCommands);
 						result = false;
 						break;
 					}
-
+				}
+				if (currArg.equals("-r")) {
+					gbdArgs.setRecursive(true);
+					continue;
 				}
 			}
 		}

@@ -151,7 +151,7 @@ public class HeaderTrainer extends AbstractTrainer{
                 if (headerFile == null)
                     continue;
                 //System.out.println(headerFile);
-                String pathHeader = headerPath + "/" + headerFile;
+                String pathHeader = headerPath + File.separator + headerFile;
                 int p = 0;
                 BufferedReader bis = new BufferedReader(
                         new InputStreamReader(new FileInputStream(pathHeader), "UTF8"));

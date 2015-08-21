@@ -22,6 +22,12 @@ import org.grobid.core.utilities.Utilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/** 
+ * Perform the batch processing for the different engine methods.
+ *
+ * @author Damien, Patrice
+ */
+
 public class ProcessEngine implements Closeable {
 
     /**
@@ -64,33 +70,61 @@ public class ProcessEngine implements Closeable {
         inferPdfInputPath(pGbdArgs);
         inferOutputPath(pGbdArgs);
         final File pdfDirectory = new File(pGbdArgs.getPath2Input());
-        String result;
-        File[] files = pdfDirectory.listFiles();
+		File[] files = pdfDirectory.listFiles();
+		if (files == null) {
+			LOGGER.warn("No files in directory: " + pdfDirectory);
+		}
+		else {
+			processHeaderDirectory(files, pGbdArgs, pGbdArgs.getPath2Output());
+		}
+    }
+		
+    /**
+     * Process the header recursively or not using pGbdArgs parameters.
+     *
+	 * @param files list of files to be processed	
+     * @param pGbdArgs The parameters.
+     * @throws Exception
+     */
+	private void processHeaderDirectory(File[] files, final GrobidMainArgs pGbdArgs, String outputPath) {
         if (files != null) {
+			boolean recurse = pGbdArgs.isRecursive();
+			String result;
             for (final File currPdf : files) {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
                         result = getEngine().processHeader(currPdf.getAbsolutePath(), false, null);
+						File outputPathFile = new File(outputPath);
+						if (!outputPathFile.exists()) {
+							outputPathFile.mkdir();
+						}
 						if (currPdf.getName().endsWith(".pdf")) {
-                        	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                        	Utilities.writeInFile(outputPath + File.separator
                                 + new File(currPdf.getAbsolutePath())
 									.getName().replace(".pdf", ".tei.xml"), result.toString());
 						}
 						else if (currPdf.getName().endsWith(".PDF")) {
-                        	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                        	Utilities.writeInFile(outputPath + File.separator
                                 + new File(currPdf.getAbsolutePath())
 									.getName().replace(".PDF", ".tei.xml"), result.toString());
 						}
+					}
+					else if (recurse && currPdf.isDirectory()) {
+						File[] newFiles = currPdf.listFiles();
+						if (newFiles != null) {
+							String newLevel = currPdf.getName();
+							processHeaderDirectory(newFiles, pGbdArgs, outputPath + 
+								File.separator + newLevel);
+						}
                     }
-                } catch (final Exception exp) {
+                } 
+				catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the file " + currPdf.getAbsolutePath()
                             + ". Continuing the process for the other files");
                 }
             }
-        } else {
-            LOGGER.warn("No files in directory: " + pdfDirectory);
-        }
-    }
+        } 
+	}
 
     /**
      * Process the full text using pGbdArgs parameters.
@@ -102,28 +136,60 @@ public class ProcessEngine implements Closeable {
         inferPdfInputPath(pGbdArgs);
         inferOutputPath(pGbdArgs);
         final File pdfDirectory = new File(pGbdArgs.getPath2Input());
-        String result;
-        File[] files = pdfDirectory.listFiles();
+		File[] files = pdfDirectory.listFiles();
+		if (files == null) {
+			LOGGER.warn("No files in directory: " + pdfDirectory);
+		}
+		else {
+			processFullTextDirectory(files, pGbdArgs, pGbdArgs.getPath2Output());
+		}
+	}
+		
+    /**
+     * Process the full text recursively or not using pGbdArgs parameters.
+     *
+	 * @param files list of files to be processed	
+     * @param pGbdArgs The parameters.
+     * @throws Exception
+     */
+	private void processFullTextDirectory(File[] files, final GrobidMainArgs pGbdArgs, String outputPath) {	
         if (files != null) {
+			boolean recurse = pGbdArgs.isRecursive();
+			String result;
             for (final File currPdf : files) {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
                         result = getEngine().fullTextToTEI(currPdf.getAbsolutePath(), false, false);
+						File outputPathFile = new File(outputPath);
+						if (!outputPathFile.exists()) {
+							outputPathFile.mkdir();
+						}
 						if (currPdf.getName().endsWith(".pdf")) {
-                       	 	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
-                                + new File(currPdf.getAbsolutePath()).getName().replace(".pdf", ".tei.xml"), result);
+                        	Utilities.writeInFile(outputPath + File.separator
+                                + new File(currPdf.getAbsolutePath())
+									.getName().replace(".pdf", ".tei.xml"), result.toString());
 						}
 						else if (currPdf.getName().endsWith(".PDF")) {
-                       	 	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
-                                + new File(currPdf.getAbsolutePath()).getName().replace(".PDF", ".tei.xml"), result);
+                        	Utilities.writeInFile(outputPath + File.separator
+                                + new File(currPdf.getAbsolutePath())
+									.getName().replace(".PDF", ".tei.xml"), result.toString());
+						}
+					}
+					else if (recurse && currPdf.isDirectory()) {
+						File[] newFiles = currPdf.listFiles();
+						if (newFiles != null) {
+							String newLevel = currPdf.getName();
+							processFullTextDirectory(newFiles, pGbdArgs, outputPath + 
+								File.separator + newLevel);
 						}
                     }
-                } catch (final Exception exp) {
+                } 
+				catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the file " + currPdf.getAbsolutePath()
-                            + ". Continuing the process for the other files", exp);
+                            + ". Continuing the process for the other files");
                 }
             }
-        }
+        } 
     }
 
     /**
@@ -201,41 +267,73 @@ public class ProcessEngine implements Closeable {
         inferPdfInputPath(pGbdArgs);
         inferOutputPath(pGbdArgs);
         final File pdfDirectory = new File(pGbdArgs.getPath2Input());
-        File[] files = pdfDirectory.listFiles();
+		File[] files = pdfDirectory.listFiles();
+		if (files == null) {
+			LOGGER.warn("No files in directory: " + pdfDirectory);
+		}
+		else {
+			processReferencesDirectory(files, pGbdArgs, pGbdArgs.getPath2Output());
+		}
+	}
+		
+    /**
+     * Process the references recursively or not using pGbdArgs parameters.
+     *
+	 * @param files list of files to be processed	
+     * @param pGbdArgs The parameters.
+     * @throws Exception
+     */
+	private void processReferencesDirectory(File[] files, final GrobidMainArgs pGbdArgs, String outputPath) {	
         if (files != null) {
+			boolean recurse = pGbdArgs.isRecursive();
 			int id = 0;
             for (final File currPdf : files) {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
-						final List<BibDataSet> results = getEngine().processReferences(currPdf.getAbsolutePath(), false);
+                        final List<BibDataSet> results = 
+							getEngine().processReferences(currPdf.getAbsolutePath(), false);
+						File outputPathFile = new File(outputPath);
+						if (!outputPathFile.exists()) {
+							outputPathFile.mkdir();
+						}
+
 						StringBuffer result = new StringBuffer();
 						// dummy header
 						result.append("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " + 	
 						"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
                 		"\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
-						
+
 						result.append("\t<teiHeader>\n\t\t<fileDesc xml:id=\"f_" + id + 
 							"\"/>\n\t</teiHeader>\n");
-						
+
 						result.append("\t<text>\n\t\t<front/>\n\t\t<body/>\n\t\t<back>\n\t\t\t<listBibl>\n");
 						for(BibDataSet res : results) {
 							result.append(res.toTEI());
 							result.append("\n");
 						}
 						result.append("\t\t\t</listBibl>\n\t\t</back>\n\t</text>\n</TEI>\n");
-						
+
 						if (currPdf.getName().endsWith(".pdf")) {
-                        	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                        	Utilities.writeInFile(outputPath + File.separator
                                 + new File(currPdf.getAbsolutePath()).getName().replace(".pdf", ".references.tei.xml"), 
 									result.toString());
 						}
 						else if (currPdf.getName().endsWith(".PDF")) {
-                        	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                        	Utilities.writeInFile(outputPath + File.separator
                                 + new File(currPdf.getAbsolutePath()).getName().replace(".PDF", ".references.tei.xml"), 
 									result.toString());
 						}
 					}
-                } catch (final Exception exp) {
+					else if (recurse && currPdf.isDirectory()) {
+						File[] newFiles = currPdf.listFiles();
+						if (newFiles != null) {
+							String newLevel = currPdf.getName();
+							processReferencesDirectory(newFiles, pGbdArgs, outputPath + 
+								File.separator + newLevel);
+						}
+                    }
+                }
+				catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the file " + currPdf.getAbsolutePath()
                             + ". Continuing the process for the other files", exp);
                 }

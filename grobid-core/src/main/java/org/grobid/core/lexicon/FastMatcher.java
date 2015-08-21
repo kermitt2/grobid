@@ -51,29 +51,6 @@ public final class FastMatcher {
             if (line.length() == 0) continue;
 			line = line.toLowerCase();
 			nbTerms += loadTerm(line);
-            /*StringTokenizer st = new StringTokenizer(line, " \n\t" + TextUtilities.fullPunctuations, false);
-            while (st.hasMoreTokens()) {
-				token = st.nextToken();
-                if (token.length() == 0) {
-                    continue;
-                }
-                Map t2 = (Map) t.get(token);
-                if (t2 == null) {
-                    t2 = new HashMap();
-                    t.put(token, t2);
-                }
-                t = t2;
-            }
-            // end of the term
-            if (t != terms) {
-                Map t2 = (Map) t.get("#");
-                if (t2 == null) {
-                    t2 = new HashMap();
-                    t.put("#", t2);
-                }
-                nbTerms++;
-                t = terms;
-            }*/
         }
         bufReader.close();
         reader.close();

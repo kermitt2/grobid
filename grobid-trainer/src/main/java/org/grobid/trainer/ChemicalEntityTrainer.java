@@ -364,7 +364,7 @@ public class ChemicalEntityTrainer extends AbstractTrainer {
                 parser.setChemicalLigand(chemicalLigandList, chemicalLigandStartsList);
                 File thefileWords;
                 try {
-                    thefileWords = new File(thefile.getParent() + "/"
+                    thefileWords = new File(thefile.getParent() + File.separator
                             + thefile.getName().replace(".HC.chemical-names.xml", ".words.xml"));
                 } catch (Exception e) {
                     throw new GrobidException("An exception occured while running Grobid.", e);

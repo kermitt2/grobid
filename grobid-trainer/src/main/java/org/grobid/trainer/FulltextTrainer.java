@@ -107,7 +107,8 @@ public class FulltextTrainer extends AbstractTrainer{
                 int q = 0;
                 BufferedReader bis = new BufferedReader(
                         new InputStreamReader(new FileInputStream(
-                                sourceFulltextsPathLabel + "/" + name.replace(".tei.xml", "")), "UTF8"));
+                                sourceFulltextsPathLabel + File.separator + 
+								name.replace(".tei.xml", "")), "UTF8"));
 
                 StringBuilder fulltext = new StringBuilder();
 
