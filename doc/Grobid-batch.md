@@ -21,11 +21,13 @@ Will extract and normalize the header of pdf files. The needed parameters for th
 
 * -dIn: path to the directory of input pdf files
 
-* -dOut: path to the output directory
+* -dOut: path to the output directory (if omitted the current directory)
+
+* -r: recursive processing of files in the sub-directories (by default not recursive)
 
 Exemple:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processHeader 
+> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -r -exe processHeader 
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
@@ -37,7 +39,9 @@ Will extract and normalize the full text of pdf files. The needed parameters for
 
 * -dIn: path to the directory of input pdf files
 
-* -dOut: path to the output directory
+* -dOut: path to the output directory (if omitted the current directory)
+
+* -r: recursive processing of files in the sub-directories (by default not recursive)
 
 Exemple:
 ```bash
@@ -113,7 +117,9 @@ Will process, extract and format all the references in the PDF files present in 
 
 * -dIn: path to the directory of input pdf files
 
-* -dOut: path to the output directory
+* -dOut: path to the output directory (if omitted the current directory)
+
+* -r: recursive processing of files in the sub-directories (by default not recursive)
 
 Exemple:
 ```bash

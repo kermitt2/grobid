@@ -791,7 +791,7 @@ public class HeaderParser extends AbstractParser {
             List<String> tokenizations = doc.getTokenizationsHeader();
 
             // we write the header untagged
-            String outPathHeader = pathHeader + "/" + PDFFileName.replace(".pdf", ".header");
+            String outPathHeader = pathHeader + File.separator + PDFFileName.replace(".pdf", ".header");
             Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), "UTF-8");
             writer.write(header + "\n");
             writer.close();
@@ -890,7 +890,7 @@ public class HeaderParser extends AbstractParser {
 
             // write the TEI file to reflect the extract layout of the text as
             // extracted from the pdf
-            writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + "/"
+            writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + File.separator
                     + PDFFileName.replace(".pdf", GrobidProperties.FILE_ENDING_TEI_HEADER)), false), "UTF-8");
             writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + PDFFileName.replace(".pdf", "")
                     + "\"/>\n\t</teiHeader>\n\t<text");
@@ -907,7 +907,8 @@ public class HeaderParser extends AbstractParser {
 
             if (bufferAffiliation != null) {
                 if (bufferAffiliation.length() > 0) {
-                    Writer writerAffiliation = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + "/"
+                    Writer writerAffiliation = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + 
+						File.separator
                             + PDFFileName.replace(".pdf", ".affiliation.tei.xml")), false), "UTF-8");
                     writerAffiliation.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
                     writerAffiliation.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\""
@@ -926,7 +927,8 @@ public class HeaderParser extends AbstractParser {
 
             if (bufferDate != null) {
                 if (bufferDate.length() > 0) {
-                    Writer writerDate = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + "/"
+                    Writer writerDate = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + 
+						File.separator
                             + PDFFileName.replace(".pdf", ".date.xml")), false), "UTF-8");
                     writerDate.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                     writerDate.write("<dates>\n");
@@ -940,7 +942,8 @@ public class HeaderParser extends AbstractParser {
 
             if (bufferName != null) {
                 if (bufferName.length() > 0) {
-                    Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + "/"
+                    Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + 
+						File.separator
                             + PDFFileName.replace(".pdf", ".authors.tei.xml")), false), "UTF-8");
                     writerName.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
                     writerName.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\"" + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" "
@@ -961,7 +964,8 @@ public class HeaderParser extends AbstractParser {
 
             if (bufferReference != null) {
                 if (bufferReference.length() > 0) {
-                    Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + "/"
+                    Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + 
+						File.separator
                             + PDFFileName.replace(".pdf", ".header-reference.xml")), false), "UTF-8");
                     writerReference.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                     writerReference.write("<citations>\n");

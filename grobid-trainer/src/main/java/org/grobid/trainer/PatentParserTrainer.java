@@ -153,7 +153,7 @@ public class PatentParserTrainer extends AbstractTrainer{
                 fileList.add(new File(corpusPath));
             } else {
                 // n-fold evaluation
-                fileList.add(new File(corpusPath + "/" + setName + "ing" + rank + "/"));
+                fileList.add(new File(corpusPath + File.separator + setName + "ing" + rank + File.separator));
             }
             Writer writer = null;
             if ((setName == null) || (setName.length() == 0)) {
@@ -240,7 +240,7 @@ public class PatentParserTrainer extends AbstractTrainer{
             } else if (rank == null) {
                 fileList.add(new File(corpusPath));
             } else {
-                fileList.add(new File(corpusPath + "/" + setName + "ing" + rank + "/"));
+                fileList.add(new File(corpusPath + File.separator + setName + "ing" + rank + File.separator));
             }
             if ((setName == null) || (setName.length() == 0)) {
                 writer = new OutputStreamWriter(new FileOutputStream(
@@ -250,7 +250,8 @@ public class PatentParserTrainer extends AbstractTrainer{
                         new File(outputPath + "/npl." + setName), false), "UTF-8");
             } else {
                 writer = new OutputStreamWriter(new FileOutputStream(
-                        new File(outputPath + "/" + setName + "ing" + rank + "/npl." + setName), false), "UTF-8");
+                        new File(outputPath + File.separator + setName + "ing" + rank + File.separator + 
+						"npl." + setName), false), "UTF-8");
             }
             while (fileList.size() > 0) {
                 File file = fileList.removeFirst();
@@ -332,19 +333,20 @@ public class PatentParserTrainer extends AbstractTrainer{
             } else if (rank == null) {
                 fileList.add(new File(corpusPath));
             } else {
-                fileList.add(new File(corpusPath + "/" + setName + "ing" + rank + "/"));
+                fileList.add(new File(corpusPath + File.separator + setName + "ing" + rank + File.separator));
             }
 			
 			Writer writer = null;
             if ((setName == null) || (setName.length() == 0)) {
                 writer = new OutputStreamWriter(new FileOutputStream(
-                        new File(outputPath + "/all.train"), false), "UTF-8");
+                        new File(outputPath + File.separator + "all.train"), false), "UTF-8");
             } else if (rank == null) {
                 writer = new OutputStreamWriter(new FileOutputStream(
-                        new File(outputPath + "/all." + setName), false), "UTF-8");
+                        new File(outputPath + File.separator + "all." + setName), false), "UTF-8");
             } else {
                 writer = new OutputStreamWriter(new FileOutputStream(
-                        new File(outputPath + "/" + setName + "ing" + rank + "/all." + setName), false), "UTF-8");
+                        new File(outputPath + File.separator + setName + "ing" + rank + File.separator + 
+							"all." + setName), false), "UTF-8");
             }
             //int totalLength = 0;
             while (fileList.size() > 0) {

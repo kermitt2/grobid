@@ -3,7 +3,7 @@ package org.grobid.core.main.batch;
 /**
  * Class containing args of the batch {@link GrobidMain}.
  * 
- * @author Damien
+ * @author Damien, Patrice
  * 
  */
 public class GrobidMainArgs {
@@ -21,6 +21,8 @@ public class GrobidMainArgs {
 	private String input;
 
 	private boolean isPdf;
+	
+	private boolean recursive; 
 
 	/**
 	 * @return the path2grobidHome
@@ -125,6 +127,21 @@ public class GrobidMainArgs {
 	 */
 	public final void setPdf(final boolean pIsPdf) {
 		isPdf = pIsPdf;
+	}
+
+	/**
+	 * @return true if recursive file processing
+	 */
+	public final boolean isRecursive() {
+		return recursive;
+	}
+
+	/**
+	 * @param pRecursive
+	 *            recursive file processing parameter to set
+	 */
+	public final void setRecursive(final boolean pRecursive) {
+		recursive = pRecursive;
 	}
 
 }

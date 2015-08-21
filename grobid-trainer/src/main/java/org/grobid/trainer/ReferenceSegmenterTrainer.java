@@ -109,7 +109,8 @@ public class ReferenceSegmenterTrainer extends AbstractTrainer {
 	                        " does not exist. Please have a look!");
 				}
 				
-				File theRawFile = new File(rawCorpusDir.getAbsolutePath() + "/" + name.replace(".tei.xml", ""));
+				File theRawFile = new File(rawCorpusDir.getAbsolutePath() + File.separator + 
+					name.replace(".tei.xml", ""));
 				if (!theRawFile.exists()) {
 	                System.out.println("Raw file " + theRawFile +
 	                        " does not exist. Please have a look!");
@@ -119,7 +120,8 @@ public class ReferenceSegmenterTrainer extends AbstractTrainer {
                 int q = 0;
                 BufferedReader bis = new BufferedReader(
                         new InputStreamReader(new FileInputStream(
-                                rawCorpusDir.getAbsolutePath() + "/" + name.replace(".tei.xml", "")), "UTF8"));
+                                rawCorpusDir.getAbsolutePath() + File.separator + 
+									name.replace(".tei.xml", "")), "UTF8"));
 
                 StringBuilder referenceText = new StringBuilder();
 

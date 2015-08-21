@@ -265,7 +265,7 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
 				// set the path for the asset files
-				assetPath = GrobidProperties.getTempPath().getPath() + "/" + KeyGen.getKey();
+				assetPath = GrobidProperties.getTempPath().getPath() + File.separator + KeyGen.getKey();
 				
                 // starts conversion process
 				engine = GrobidRestUtils.getEngine(isparallelExec);

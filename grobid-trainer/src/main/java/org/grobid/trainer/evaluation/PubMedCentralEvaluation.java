@@ -147,7 +147,8 @@ public class PubMedCentralEvaluation {
 					System.out.println(n + " - " + pdfFile.getPath());
 					String tei = engine.fullTextToTEI(pdfFile.getPath(), false, false);
 					// write the result in the same directory
-					File resultTEI = new File(dir.getPath()+"/"+pdfFile.getName().replace(".pdf", ".tei.xml"));
+					File resultTEI = new File(dir.getPath() + File.separator
+						+ pdfFile.getName().replace(".pdf", ".tei.xml"));
 					FileUtils.writeStringToFile(resultTEI, tei, "UTF-8");
 				} 
 				catch (Exception e) {

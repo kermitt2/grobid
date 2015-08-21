@@ -641,7 +641,8 @@ public class FullTextParser extends AbstractParser {
 				*/
 				
 	            // we write the full text untagged
-	            String outPathFulltext = pathFullText + "/" + PDFFileName.replace(".pdf", ".training.fulltext");
+	            String outPathFulltext = pathFullText + File.separator 
+					+ PDFFileName.replace(".pdf", ".training.fulltext");
 	            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
 	            writer.write(bodytext + "\n");
 	            writer.close();
@@ -652,7 +653,8 @@ public class FullTextParser extends AbstractParser {
 
 	            // write the TEI file to reflect the extract layout of the text as extracted from the pdf
 	            writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-	                    "/" + PDFFileName.replace(".pdf", ".training.fulltext.tei.xml")), false), "UTF-8");
+	                    File.separator + 
+						PDFFileName.replace(".pdf", ".training.fulltext.tei.xml")), false), "UTF-8");
 				if (id == -1) {
 					writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader/>\n\t<text xml:lang=\"en\">\n");
 				}
@@ -693,7 +695,8 @@ public class FullTextParser extends AbstractParser {
                     bufferReference.append("\n");
 
 	                Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-	                        "/" + PDFFileName.replace(".pdf", ".training.references.tei.xml")), false), "UTF-8");
+	                        File.separator + 
+							PDFFileName.replace(".pdf", ".training.references.tei.xml")), false), "UTF-8");
 					
 					writerReference.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " + 	
 											"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
@@ -714,7 +717,8 @@ public class FullTextParser extends AbstractParser {
 					
 					// output of citation author names
 	                Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-	                        "/" + PDFFileName.replace(".pdf", ".training.citations.authors.tei.xml")), false), "UTF-8");
+	                        File.separator + 
+							PDFFileName.replace(".pdf", ".training.citations.authors.tei.xml")), false), "UTF-8");
 					
 					writerName.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " + 	
 											"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +

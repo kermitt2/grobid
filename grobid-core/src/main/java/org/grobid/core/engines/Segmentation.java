@@ -181,15 +181,15 @@ public class Segmentation extends AbstractParser {
                                         final BufferedImage bi = ImageIO.read(currFile);
                                         String outputfilePath = null;
                                         if (currFile.getName().toLowerCase().endsWith(".jpg")) {
-                                            outputfilePath = assetFile.getPath() + "/" +
+                                            outputfilePath = assetFile.getPath() + File.separator +
                                                     currFile.getName().toLowerCase().replace(".jpg", ".png");
                                         }
 										/*else if (currFile.getName().toLowerCase().endsWith(".pbm")) {
-											outputfilePath = assetFile.getPath() + "/" +
+											outputfilePath = assetFile.getPath() + File.separator +
 												 currFile.getName().toLowerCase().replace(".pbm",".png");
 										}*/
                                         else {
-                                            outputfilePath = assetFile.getPath() + "/" +
+                                            outputfilePath = assetFile.getPath() + File.separator +
                                                     currFile.getName().toLowerCase().replace(".ppm", ".png");
                                         }
                                         ImageIO.write(bi, "png", new File(outputfilePath));
@@ -967,7 +967,8 @@ public class Segmentation extends AbstractParser {
             List<String> tokenizations = doc.getTokenizationsFulltext();
 
             // we write the full text untagged (but featurized)
-            String outPathFulltext = pathFullText + "/" + PDFFileName.replace(".pdf", ".training.segmentation");
+            String outPathFulltext = pathFullText + File.separator + 
+				PDFFileName.replace(".pdf", ".training.segmentation");
             Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
             writer.write(fulltext + "\n");
             writer.close();
@@ -977,7 +978,7 @@ public class Segmentation extends AbstractParser {
 			for(String txtline : tokenizations) {
 				rawtxt.append(txtline);
 			}
-			String outPathRawtext = pathFullText + "/" + 
+			String outPathRawtext = pathFullText + File.separator + 
 				PDFFileName.replace(".pdf", ".training.segmentation.rawtxt");
 			FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), "UTF-8");
 
@@ -987,7 +988,8 @@ public class Segmentation extends AbstractParser {
 
                 // write the TEI file to reflect the extact layout of the text as extracted from the pdf
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                        "/" + PDFFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), "UTF-8");
+                        File.separator + 
+						PDFFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), "UTF-8");
                 writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
                         "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
 
