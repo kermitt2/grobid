@@ -12,6 +12,7 @@ import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.CitationParserCounters;
 import org.grobid.core.engines.tagging.WapitiTagger;
 import org.grobid.core.exceptions.GrobidException;
@@ -641,9 +642,9 @@ public class EngineTest {
     public void testPDF() throws Exception {
         Engine engine = GrobidFactory.getInstance().getEngine();
         BiblioItem resHeader = new BiblioItem();
-        engine.getParsers().getHeaderParser().processing("//Work/temp/1.pdf", false, resHeader);
+        engine.getParsers().getHeaderParser().processing(new File("//Work/temp/1.pdf"), resHeader, GrobidAnalysisConfig.defaultInstance());
         System.out.println(resHeader);
-        System.out.println(engine.fullTextToTEI("//Work/temp/1.pdf", false, false));
+        System.out.println(engine.fullTextToTEI(new File("//Work/temp/1.pdf"), GrobidAnalysisConfig.defaultInstance()));
 
     }
 
@@ -651,7 +652,7 @@ public class EngineTest {
     public void testEmailPDF() throws Exception {
         Engine engine = GrobidFactory.getInstance().getEngine();
         BiblioItem resHeader = new BiblioItem();
-        engine.getParsers().getHeaderParser().processing("/Work/temp/1.pdf", false, resHeader);
+        engine.getParsers().getHeaderParser().processing(new File("/Work/temp/1.pdf"), resHeader, GrobidAnalysisConfig.defaultInstance());
         System.out.println(resHeader);
 //        System.out.println(engine.fullTextToTEI("/tmp/2.pdf", false, false));
 
@@ -678,7 +679,7 @@ public class EngineTest {
 //        String input = "/Work/workspace/pdf-analysis/pdf-analysis-service/scripts/grobid/pdfs/grobid-input-2086711400313078388.pdf";
 //        String input = "/Work/workspace/pdf-analysis/pdf-analysis-service/scripts/grobid/AS_190528951947270_1422437050969.pdf";
         String input = "/Work/temp/1.pdf";
-        Document doc = engine.getParsers().getSegmentationParser().processing(input);
+        Document doc = engine.getParsers().getSegmentationParser().processing(new File(input), GrobidAnalysisConfig.defaultInstance());
         System.out.println("Extracting citations");
         List<BibDataSet> cits = engine.getParsers().getCitationParser().processingReferenceSection(doc, engine.getParsers().getReferenceSegmenterParser(), false);
         for (BibDataSet c : cits) {
@@ -692,7 +693,8 @@ public class EngineTest {
     @Test
     public void testSegmentation() throws Exception {
         Engine engine = GrobidFactory.getInstance().getEngine();
-        Document result = engine.getParsers().getSegmentationParser().processing("/Work/workspace/data/pdf2xmlreflow/1.pdf");
+        Document result = engine.getParsers().getSegmentationParser().processing(new File("/Work/workspace/data/pdf2xmlreflow/1.pdf"),
+                GrobidAnalysisConfig.defaultInstance());
         System.out.println(result);
 
     }
@@ -847,7 +849,7 @@ public class EngineTest {
     @Test
     public void testFulltext() throws Exception {
         final Engine engine = GrobidFactory.getInstance().getEngine();
-        System.out.println(engine.fullTextToTEI("/Work/temp/context/coords/2.pdf", true, true, null, -1, -1, true));
+        System.out.println(engine.fullTextToTEI(new File("/Work/temp/context/coords/2.pdf"), GrobidAnalysisConfig.defaultInstance()));
 //        System.out.println(engine.fullTextToTEI("/tmp/x1.pdf", true, true, null, -1, -1, true));
     }
 

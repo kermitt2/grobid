@@ -1,40 +1,41 @@
 package org.grobid.service.process;
 
-import java.io.*;
-import java.nio.charset.Charset;
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeoutException;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
-
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-import javax.ws.rs.core.StreamingOutput;
-
 import org.grobid.core.annotations.TeiStAXParser;
-import org.grobid.core.engines.Engine;
-import org.grobid.core.data.PatentItem;
 import org.grobid.core.data.BibDataSet;
-import org.grobid.core.factory.GrobidFactory;
+import org.grobid.core.data.PatentItem;
+import org.grobid.core.engines.Engine;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidPoolingFactory;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.KeyGen;
 import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.GrobidServiceProperties;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.engines.tagging.GrobidCRFEngine;
-import org.grobid.core.exceptions.GrobidException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
+
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
+import javax.ws.rs.core.StreamingOutput;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 /**
  * @author Damien, Patrice
@@ -54,7 +55,7 @@ public class GrobidRestProcessFiles {
      * @param consolidate consolidation parameter for the header extraction
      * @param htmlFormat  if the result has to be formatted to be displayed as html
      * @return a response object which contains a TEI representation of the
-     *         header part
+     * header part
      */
     public static Response processStatelessHeaderDocument(final InputStream inputStream,
                                                           final boolean consolidate,
@@ -76,9 +77,10 @@ public class GrobidRestProcessFiles {
                 if (isparallelExec) {
                     retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
                     //retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
-					GrobidPoolingFactory.returnEngine(engine);
-					engine = null;
+                    GrobidPoolingFactory.returnEngine(engine);
+                    engine = null;
                 } else {
+                    //TODO: sync does not make sense
                     synchronized (engine) {
                         retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
                         //retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
@@ -100,7 +102,7 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
         } catch (Exception exp) {
             LOGGER.error("An unexpected exception occured: " + exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(((GrobidException)exp.getCause()).getMessage()).build();
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getCause().getMessage()).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
@@ -157,26 +159,26 @@ public class GrobidRestProcessFiles {
      *
      * @param inputStream the data of origin document
      * @param consolidate the consolidation option allows GROBID to exploit Crossref
-     *                             web services for improving header information		
+     *                    web services for improving header information
      * @param htmlFormat  if the result has to be formatted to be displayed as html.
-   	 * @param startPage give the starting page to consider in case of segmentation of the 
-   	 * PDF, -1 for the first page (default) 
-   	 * @param endPage give the end page to consider in case of segmentation of the 
-   	 * PDF, -1 for the last page (default)
-	 * @param generateIDs if true, generate random attribute id on the textual elements of 
-	 * the resulting TEI 		
+     * @param startPage   give the starting page to consider in case of segmentation of the
+     *                    PDF, -1 for the first page (default)
+     * @param endPage     give the end page to consider in case of segmentation of the
+     *                    PDF, -1 for the last page (default)
+     * @param generateIDs if true, generate random attribute id on the textual elements of
+     *                    the resulting TEI
      * @return a response object mainly contain the TEI representation of the
-     *         full text
+     * full text
      */
     public static Response processStatelessFulltextDocument(final InputStream inputStream,
                                                             final boolean consolidate,
                                                             final boolean htmlFormat,
-															final int startPage,
-															final int endPage, 
-															final boolean generateIDs) {
+                                                            final int startPage,
+                                                            final int endPage,
+                                                            final boolean generateIDs) {
         LOGGER.debug(methodLogIn());
         Response response = null;
-        String retVal = null;
+        String retVal;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
@@ -187,17 +189,22 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
                 // starts conversion process
-				engine = GrobidRestUtils.getEngine(isparallelExec);
+                engine = GrobidRestUtils.getEngine(isparallelExec);
+                GrobidAnalysisConfig config =
+                        GrobidAnalysisConfig.builder()
+                                .consolidateHeader(consolidate)
+                                .consolidateCitations(false)
+                                .startPage(startPage)
+                                .endPage(endPage)
+                                .generateTeiIds(generateIDs)
+                                .build();
+
+                retVal = engine.fullTextToTEI(originFile,
+                        config);
+
                 if (isparallelExec) {
-                    retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), 
-						consolidate, false, null, startPage, endPage, generateIDs);
                     GrobidPoolingFactory.returnEngine(engine);
-					engine = null;
-                } else {
-                    synchronized (engine) {
-                        retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), 
-							consolidate, false, null, startPage, endPage, generateIDs);
-                    }
+                    engine = null;
                 }
 
                 GrobidRestUtils.removeTempFile(originFile);
@@ -207,7 +214,7 @@ public class GrobidRestProcessFiles {
                 } else {
                     if (htmlFormat) {
                         response = Response.status(Status.OK).entity(formatAsHTML(retVal)).
-							type(MediaType.APPLICATION_XML).build();
+                                type(MediaType.APPLICATION_XML).build();
                     } else {
                         response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
                     }
@@ -218,7 +225,7 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
         } catch (Exception exp) {
             LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(((GrobidException)exp.getCause()).getMessage()).build();
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getCause().getMessage()).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
             if (isparallelExec && (engine != null)) {
@@ -230,104 +237,108 @@ public class GrobidRestProcessFiles {
     }
 
     /**
-     * Uploads the origin document which shall be extracted into TEI + assets in a ZIP 
-	 * archive.
+     * Uploads the origin document which shall be extracted into TEI + assets in a ZIP
+     * archive.
      *
      * @param inputStream the data of origin document
      * @param consolidate the consolidation option allows GROBID to exploit Crossref
-     *                             web services for improving header information		
-     * @param htmlFormat  if the result has to be formatted to be displayed as html.
-   	 * @param startPage give the starting page to consider in case of segmentation of the 
-   	 * PDF, -1 for the first page (default) 
-   	 * @param endPage give the end page to consider in case of segmentation of the 
-   	 * PDF, -1 for the last page (default)
-	 * @param generateIDs if true, generate random attribute id on the textual elements of 
-	 * the resulting TEI 		
+     *                    web services for improving header information
+     * @param startPage   give the starting page to consider in case of segmentation of the
+     *                    PDF, -1 for the first page (default)
+     * @param endPage     give the end page to consider in case of segmentation of the
+     *                    PDF, -1 for the last page (default)
+     * @param generateIDs if true, generate random attribute id on the textual elements of
+     *                    the resulting TEI
      * @return a response object mainly contain the TEI representation of the
-     *         full text
+     * full text
      */
     public static Response processStatelessFulltextAssetDocument(final InputStream inputStream,
-                                                            final boolean consolidate,
-															final int startPage,
-															final int endPage, 
-															final boolean generateIDs) {
+                                                                 final boolean consolidate,
+                                                                 final int startPage,
+                                                                 final int endPage,
+                                                                 final boolean generateIDs) {
         LOGGER.debug(methodLogIn());
         Response response = null;
-        String retVal = null;
+        String retVal;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
-		String assetPath = null;
+        String assetPath = null;
         try {
             originFile = GrobidRestUtils.writeInputFile(inputStream);
 
             if (originFile == null) {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
-				// set the path for the asset files
-				assetPath = GrobidProperties.getTempPath().getPath() + File.separator + KeyGen.getKey();
-				
+                // set the path for the asset files
+                assetPath = GrobidProperties.getTempPath().getPath() + File.separator + KeyGen.getKey();
+
                 // starts conversion process
-				engine = GrobidRestUtils.getEngine(isparallelExec);
+                engine = GrobidRestUtils.getEngine(isparallelExec);
+                GrobidAnalysisConfig config =
+                        GrobidAnalysisConfig.builder()
+                                .consolidateHeader(consolidate)
+                                .consolidateCitations(false)
+                                .startPage(startPage)
+                                .endPage(endPage)
+                                .generateTeiIds(generateIDs)
+                                .pdfAssetPath(new File(assetPath))
+                                .build();
+
+                retVal = engine.fullTextToTEI(originFile, config);
+
                 if (isparallelExec) {
-                    retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), 
-						consolidate, false, assetPath, startPage, endPage, generateIDs);
                     GrobidPoolingFactory.returnEngine(engine);
-					engine = null;
-                } else {
-                    synchronized (engine) {
-                        retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), 
-							consolidate, false, assetPath, startPage, endPage, generateIDs);
-                    }
+                    engine = null;
                 }
 
-                GrobidRestUtils.removeTempFile(originFile);				
+                GrobidRestUtils.removeTempFile(originFile);
 
                 if (!GrobidRestUtils.isResultOK(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
-                   
-                    response = Response.status(Status.OK).type("application/zip").build();
-					
-					ByteArrayOutputStream ouputStream = new ByteArrayOutputStream();
-					ZipOutputStream out = new ZipOutputStream(ouputStream);
-					out.putNextEntry(new ZipEntry("tei.xml"));
-					out.write(retVal.getBytes(Charset.forName("UTF-8")));
-					// put now the assets, i.e. all the files under the asset path
-					File assetPathDir = new File(assetPath);
-					if (assetPathDir.exists()) {
-				        File[] files = assetPathDir.listFiles();
-				        if (files != null) {
-							byte[] buffer = new byte[1024];
-				            for (final File currFile : files) {
-			                    if (currFile.getName().toLowerCase().endsWith(".jpg") 
-									|| currFile.getName().toLowerCase().endsWith(".png") ) {
-									try {
-										ZipEntry ze= new ZipEntry(currFile.getName());
-										out.putNextEntry(ze);
-										FileInputStream in = new FileInputStream(currFile);
-										int len;
-										while ((len = in.read(buffer)) > 0) {
-											out.write(buffer, 0, len);
-										}
-										in.close();
-										out.closeEntry();
-									} catch (IOException e) {
-									    e.printStackTrace();
-									}
-								}
-							}
-						}
-					}
-					out.finish();
 
-					response = Response
-					            .ok()
-					            .type("application/zip")
-					            .entity(ouputStream.toByteArray())
-								.header("Content-Disposition", "attachment; filename=\"result.zip\"")
-					            .build();
-					out.close();
+                    response = Response.status(Status.OK).type("application/zip").build();
+
+                    ByteArrayOutputStream ouputStream = new ByteArrayOutputStream();
+                    ZipOutputStream out = new ZipOutputStream(ouputStream);
+                    out.putNextEntry(new ZipEntry("tei.xml"));
+                    out.write(retVal.getBytes(Charset.forName("UTF-8")));
+                    // put now the assets, i.e. all the files under the asset path
+                    File assetPathDir = new File(assetPath);
+                    if (assetPathDir.exists()) {
+                        File[] files = assetPathDir.listFiles();
+                        if (files != null) {
+                            byte[] buffer = new byte[1024];
+                            for (final File currFile : files) {
+                                if (currFile.getName().toLowerCase().endsWith(".jpg")
+                                        || currFile.getName().toLowerCase().endsWith(".png")) {
+                                    try {
+                                        ZipEntry ze = new ZipEntry(currFile.getName());
+                                        out.putNextEntry(ze);
+                                        FileInputStream in = new FileInputStream(currFile);
+                                        int len;
+                                        while ((len = in.read(buffer)) > 0) {
+                                            out.write(buffer, 0, len);
+                                        }
+                                        in.close();
+                                        out.closeEntry();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    out.finish();
+
+                    response = Response
+                            .ok()
+                            .type("application/zip")
+                            .entity(ouputStream.toByteArray())
+                            .header("Content-Disposition", "attachment; filename=\"result.zip\"")
+                            .build();
+                    out.close();
                 }
             }
         } catch (NoSuchElementException nseExp) {
@@ -335,12 +346,12 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
         } catch (Exception exp) {
             LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(((GrobidException)exp.getCause()).getMessage()).build();
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getCause().getMessage()).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
-			if (assetPath != null) {
-				GrobidRestUtils.removeTempDirectory(assetPath);
-			}
+            if (assetPath != null) {
+                GrobidRestUtils.removeTempDirectory(assetPath);
+            }
             if (isparallelExec && (engine != null)) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
@@ -355,7 +366,7 @@ public class GrobidRestProcessFiles {
      *
      * @param pInputStream The input stream to process.
      * @return StreamingOutput wrapping the response in streaming while parsing
-     *         the input.
+     * the input.
      */
     public static StreamingOutput processCitationPatentTEI(final InputStream pInputStream,
                                                            final boolean consolidate) {
@@ -377,13 +388,13 @@ public class GrobidRestProcessFiles {
      *
      * @param inputStream the data of origin document
      * @return a response object mainly containing the TEI representation of the
-     *         citation
+     * citation
      */
     public static Response processCitationPatentPDF(final InputStream inputStream,
                                                     final boolean consolidate) {
         LOGGER.debug(methodLogIn());
         Response response = null;
-        String retVal = null;
+        String retVal;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
@@ -401,7 +412,7 @@ public class GrobidRestProcessFiles {
                     retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(),
                             articles, patents, consolidate);
                     GrobidPoolingFactory.returnEngine(engine);
-					engine = null;
+                    engine = null;
                 } else {
                     synchronized (engine) {
                         retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(),
@@ -422,7 +433,7 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
         } catch (Exception exp) {
             LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(((GrobidException)exp.getCause()).getMessage()).build();
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getCause().getMessage()).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
@@ -438,13 +449,13 @@ public class GrobidRestProcessFiles {
      *
      * @param inputStream the data of origin document
      * @return a response object mainly containing the TEI representation of the
-     *         citation
+     * citation
      */
     public static Response processCitationPatentST36(final InputStream inputStream,
                                                      final boolean consolidate) {
         LOGGER.debug(methodLogIn());
         Response response = null;
-        String retVal = null;
+        String retVal;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
@@ -462,7 +473,7 @@ public class GrobidRestProcessFiles {
                     retVal = engine.processAllCitationsInXMLPatent(originFile.getAbsolutePath(),
                             articles, patents, consolidate);
                     GrobidPoolingFactory.returnEngine(engine);
-					engine = null;
+                    engine = null;
                 } else {
                     synchronized (engine) {
                         retVal = engine.processAllCitationsInXMLPatent(originFile.getAbsolutePath(),
@@ -483,7 +494,7 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
         } catch (Exception exp) {
             LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(((GrobidException)exp.getCause()).getMessage()).build();
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getCause().getMessage()).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
@@ -501,13 +512,13 @@ public class GrobidRestProcessFiles {
      * @param inputStream the data of origin document
      * @param consolidate if the result has to be consolidated with CrossRef access.
      * @return a response object mainly contain the TEI representation of the
-     *         full text
+     * full text
      */
     public static Response processStatelessReferencesDocument(final InputStream inputStream,
                                                               final boolean consolidate) {
         LOGGER.debug(methodLogIn());
         Response response = null;
-        String retVal = null;
+        String retVal;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
@@ -518,34 +529,35 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
                 // starts conversion process
-				engine = GrobidRestUtils.getEngine(isparallelExec);
+                engine = GrobidRestUtils.getEngine(isparallelExec);
                 List<BibDataSet> results = null;
                 if (isparallelExec) {
-                    results = engine.processReferences(originFile.getAbsolutePath(), consolidate);
+                    results = engine.processReferences(originFile, consolidate);
                     GrobidPoolingFactory.returnEngine(engine);
-					engine = null;
+                    engine = null;
                 } else {
                     synchronized (engine) {
-                        results = engine.processReferences(originFile.getAbsolutePath(), consolidate);
+                        //TODO: VZ: sync on local var does not make sense
+                        results = engine.processReferences(originFile, consolidate);
                     }
                 }
 
                 GrobidRestUtils.removeTempFile(originFile);
 
-                StringBuffer result = new StringBuffer();
+                StringBuilder result = new StringBuilder();
                 // dummy header
                 result.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
                         "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
                         "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
-				result.append("\t<teiHeader/>\n\t<text>\n\t\t<front/>\n\t\t<body/>\n\t\t<back>\n\t\t\t<listBibl>\n");
+                result.append("\t<teiHeader/>\n\t<text>\n\t\t<front/>\n\t\t<body/>\n\t\t<back>\n\t\t\t<listBibl>\n");
                 int p = 0;
-				for (BibDataSet res : results) {
+                for (BibDataSet res : results) {
                     result.append(res.toTEI(p));
                     result.append("\n");
-					p++;
+                    p++;
                 }
-				result.append("\t\t\t</listBibl>\n\t\t</back>\n\t</text>\n</TEI>\n");
-				
+                result.append("\t\t\t</listBibl>\n\t\t</back>\n\t</text>\n</TEI>\n");
+
                 retVal = result.toString();
 
                 if (!GrobidRestUtils.isResultOK(retVal)) {
@@ -559,7 +571,7 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
         } catch (Exception exp) {
             LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(((GrobidException)exp.getCause()).getMessage()).build();
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getCause().getMessage()).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
@@ -570,16 +582,10 @@ public class GrobidRestProcessFiles {
         return response;
     }
 
-    /**
-     * @return
-     */
     public static String methodLogIn() {
         return ">> " + GrobidRestProcessFiles.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
     }
 
-    /**
-     * @return
-     */
     public static String methodLogOut() {
         return "<< " + GrobidRestProcessFiles.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
     }

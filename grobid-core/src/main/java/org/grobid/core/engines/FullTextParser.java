@@ -7,6 +7,7 @@ import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.document.TEIFormater;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
@@ -66,38 +67,18 @@ public class FullTextParser extends AbstractParser {
     /**
      * Machine-learning recognition of the complete full text structures.
      *
-     * @param input filename of pdf file
-     * @param consolidateHeader if consolidate header
-     * @param consolidateCitations if consolidate citations
-	 * @param mode, 0 for light re-structuring (more robust), 1 for full re-structuring
-     * @param assetPath if not null, the PDF assets (embedded images) will be extracted 
-	 * and saved under the indicated repository path
-	 * @param startPage give the starting page to consider in case of segmentation of the 
-	 * PDF, -1 for the first page (default) 
-	 * @param endPage give the end page to consider in case of segmentation of the 
-	 * PDF, -1 for the last page (default) 
-	 * @param generateIDs if true, generate random attribute id on the textual elements of 
-	 * the resulting TEI 
-	 * @param generateCoordinates if true, generates the coordinates in the PDF corresponding
-	 * to the TEI full text substructures (e.g. reference markers) 
+     * @param inputPdf filename of pdf file
+     * @param config config
      * @return the document object with built TEI
      */
-    public Document processing(String input, 
-							boolean consolidateHeader, 
-							boolean consolidateCitations,
-							int mode,
-							String assetPath,
-							int startPage,
-							int endPage,
-							boolean generateIDs, 
-							boolean generateCoordinates) throws Exception {
-        if (input == null) {
+    public Document processing(File inputPdf,
+                               GrobidAnalysisConfig config) throws Exception {
+        if (inputPdf == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
-        File inputFile = new File(input);
-        if (!inputFile.exists()) {
+        if (!inputPdf.exists()) {
             throw new GrobidResourceException("Cannot process pdf file, because input file '" +
-                    inputFile.getAbsolutePath() + "' does not exists.");
+                    inputPdf.getAbsolutePath() + "' does not exists.");
         }
         if (tmpPath == null) {
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
@@ -108,7 +89,7 @@ public class FullTextParser extends AbstractParser {
         }
         try {
             // general segmentation
-            Document doc = parsers.getSegmentationParser().processing(input, assetPath, startPage, endPage); 
+            Document doc = parsers.getSegmentationParser().processing(inputPdf, config);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
 			Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String rese = null;
@@ -132,14 +113,14 @@ public class FullTextParser extends AbstractParser {
 			BiblioItem resHeader = new BiblioItem();
 			//if (mode == 0) 
 			{
-            	parsers.getHeaderParser().processingHeaderBlock(consolidateHeader, doc, resHeader);
+            	parsers.getHeaderParser().processingHeaderBlock(config.isConsolidateHeader(), doc, resHeader);
 			}
 			/*else {
 				parsers.getHeaderParser().processingHeaderSection(doc, consolidateHeader, resHeader);
 			}*/
             // citation processing
             List<BibDataSet> resCitations = parsers.getCitationParser().
-				processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), consolidateCitations);
+				processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), config.isConsolidateCitations());
 
             doc.setBibDataSets(resCitations);
 
@@ -169,20 +150,13 @@ public class FullTextParser extends AbstractParser {
 	            rese2 = label(bodytext);
 				//System.out.println(rese);
 			}
-			
-			boolean generateImageReferences = false;
-			if (assetPath != null) 
-				generateImageReferences = true;
 
             // final combination
             toTEI(doc, // document
 				rese, rese2, // labeled data for body and annex  
 				layoutTokenization, tokenizationsBody2, // tokenization for body and annex
 				resHeader, resCitations, // header and bibliographical citations
-				null, false, mode,
-				generateIDs, // add automatically generated xml:id in the elements containing text
-				generateImageReferences, 
-				generateCoordinates);
+				config);
             return doc;
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
@@ -592,7 +566,7 @@ public class FullTextParser extends AbstractParser {
      * @param pathTEI path to TEI
      * @param id id
      */
-    public Document createTrainingFullText(String inputFile,
+    public Document createTrainingFullText(File inputFile,
                                        String pathFullText,
                                        String pathTEI,
                                        int id) {
@@ -602,16 +576,15 @@ public class FullTextParser extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
-        Document doc = null;
+        Document doc;
         try {
-			File file = new File(inputFile);
-			if (!file.exists()) {
+            if (!inputFile.exists()) {
                	throw new GrobidResourceException("Cannot train for fulltext, becuase file '" +
-                       file.getAbsolutePath() + "' does not exists.");
+                       inputFile.getAbsolutePath() + "' does not exists.");
            	}
-           	String PDFFileName = file.getName();
+           	String PDFFileName = inputFile.getName();
 			
-            doc = parsers.getSegmentationParser().processing(inputFile);
+            doc = parsers.getSegmentationParser().processing(inputFile, GrobidAnalysisConfig.defaultInstance());
 
             //String fulltext = doc.getFulltextFeatured(true, true);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);	
@@ -1314,24 +1287,20 @@ public class FullTextParser extends AbstractParser {
                        List<String> tokenizationsAnnex,
                        BiblioItem resHeader,
                        List<BibDataSet> resCitations,
-                       BiblioItem catalogue,
-                       boolean withStyleSheet,
-                       int mode,
-                       boolean generateIDs,
-                       boolean generateImageReferences,
-					   boolean generateCoordinates) {
+                       GrobidAnalysisConfig config) {
         if (doc.getBlocks() == null) {
             return;
         }
         TEIFormater teiFormater = new TEIFormater(doc);
         StringBuffer tei;
         try {
-            tei = teiFormater.toTEIHeader(resHeader, withStyleSheet, null, generateIDs);
+            tei = teiFormater.toTEIHeader(resHeader, null, config);
 			
 			//System.out.println(rese);
-			if (mode == 0) {
+            int mode = config.getFulltextProcessingMode();
+            if (config.getFulltextProcessingMode() == 0) {
 				tei = teiFormater.toTEIBodyLight(tei, reseBody, resHeader, resCitations, 
-					layoutTokenization, doc, generateIDs, generateImageReferences, generateCoordinates);
+					layoutTokenization, doc, config);
 			}
 			else if (mode == 1) {
            		tei = teiFormater.toTEIBodyML(tei, reseBody, resHeader, resCitations, 
@@ -1355,17 +1324,17 @@ public class FullTextParser extends AbstractParser {
 					if ( (acknowledgementText != null) && (acknowledgementText.length() >0) )
 						reseAcknowledgement = label(acknowledgementText);
 					tei = teiFormater.toTEIAcknowledgementLight(tei, reseAcknowledgement, 
-						tokenizationsAcknowledgement, resCitations, generateIDs, false);
+						tokenizationsAcknowledgement, resCitations, config);
 				}
 				
 				tei = teiFormater.toTEIAnnexLight(tei, reseAnnex, resHeader, resCitations, 
-					tokenizationsAnnex, doc, generateIDs, generateImageReferences, false);
+					tokenizationsAnnex, doc, config);
 			}
 			else if (mode == 1) {
 				tei = teiFormater.toTEIAnnexML(tei, reseAnnex, resHeader, resCitations, 
 					tokenizationsAnnex, doc);
 			}
-			tei = teiFormater.toTEIReferences(tei, resCitations, generateIDs);
+			tei = teiFormater.toTEIReferences(tei, resCitations, config.isGenerateTeiIds());
             doc.calculateTeiIdToBibDataSets();
 
             tei.append("\t\t</back>\n");

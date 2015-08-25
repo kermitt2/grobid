@@ -8,6 +8,7 @@ import org.grobid.core.data.Date;
 import org.grobid.core.document.Document;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.CitationParserCounters;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorCitation;
@@ -17,6 +18,7 @@ import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.counters.CntManager;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,17 +59,17 @@ public class CitationParser extends AbstractParser {
             //StringTokenizer st = new StringTokenizer(input,
             //        TextUtilities.fullPunctuations, true);
 
-			// TBD: add the language object in the tokenizer call
-			List<String> tokenizations = analyzer.tokenize(input);
+            // TBD: add the language object in the tokenizer call
+            List<String> tokenizations = analyzer.tokenize(input);
 
             //if (st.countTokens() == 0)
-			if (tokenizations.size() == 0)
+            if (tokenizations.size() == 0)
                 return null;
 
             //List<String> tokenizations = new ArrayList<String>();
             //while (st.hasMoreTokens()) {
             //    final String tok = st.nextToken();
-			for(String tok : tokenizations) {
+            for (String tok : tokenizations) {
                 //tokenizations.add(tok);
                 if (!tok.equals(" ")) {
                     citationBlocks.add(tok + " <citation>");
@@ -170,26 +172,27 @@ public class CitationParser extends AbstractParser {
 
         for (LabeledReferenceResult ref : references) {
             BiblioItem bib = processing(TextUtilities.dehyphenize(ref.getReferenceText()), consolidate);
-			if (!bib.rejectAsReference()) {
-	            BibDataSet bds = new BibDataSet();
-	            bds.setRefSymbol(ref.getLabel());
-	            bds.setResBib(bib);
-	            bds.setRawBib(ref.getReferenceText());
-	            results.add(bds);
-			}
+            if (!bib.rejectAsReference()) {
+                BibDataSet bds = new BibDataSet();
+                bds.setRefSymbol(ref.getLabel());
+                bds.setResBib(bib);
+                bds.setRawBib(ref.getReferenceText());
+                results.add(bds);
+            }
         }
         return results;
     }
 
 
-    public List<BibDataSet> processingReferenceSection(String input,
+    public List<BibDataSet> processingReferenceSection(File input,
                                                        ReferenceSegmenter referenceSegmenter,
                                                        boolean consolidate) {
         List<BibDataSet> results;
         try {
 
-            Document doc = parsers.getSegmentationParser().processing(input);
-			results = processingReferenceSection(doc, referenceSegmenter, consolidate); 
+            Document doc = parsers.getSegmentationParser().processing(input,
+                    GrobidAnalysisConfig.builder().consolidateCitations(consolidate).build());
+            results = processingReferenceSection(doc, referenceSegmenter, consolidate);
         } catch (GrobidException e) {
             throw e;
         } catch (Exception e) {
@@ -489,15 +492,15 @@ public class CitationParser extends AbstractParser {
                 // System.out.println("Input: "+input);
                 //StringTokenizer st = new StringTokenizer(input, " \t\n"
                 //        + TextUtilities.fullPunctuations, true);
-				
-				List<String> tokenizations = analyzer.tokenize(input);
+
+                List<String> tokenizations = analyzer.tokenize(input);
                 //if (st.countTokens() == 0)
-				if (tokenizations.size() == 0)
+                if (tokenizations.size() == 0)
                     return null;
                 //while (st.hasMoreTokens()) {
                 //    String tok = st.nextToken();
-                for(String tok : tokenizations) {
-				    if (tok.equals("\n")) {
+                for (String tok : tokenizations) {
+                    if (tok.equals("\n")) {
                         citationBlocks.add("@newline");
                     } else if (!tok.equals(" ")) {
                         citationBlocks.add(tok + " <bibl>");

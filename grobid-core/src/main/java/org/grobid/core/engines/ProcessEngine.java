@@ -16,6 +16,7 @@ import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.main.batch.GrobidMainArgs;
 import org.grobid.core.utilities.Utilities;
@@ -159,7 +160,7 @@ public class ProcessEngine implements Closeable {
             for (final File currPdf : files) {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
-                        result = getEngine().fullTextToTEI(currPdf.getAbsolutePath(), false, false);
+                        result = getEngine().fullTextToTEI(currPdf, GrobidAnalysisConfig.defaultInstance());
 						File outputPathFile = new File(outputPath);
 						if (!outputPathFile.exists()) {
 							outputPathFile.mkdir();
@@ -281,7 +282,6 @@ public class ProcessEngine implements Closeable {
      *
 	 * @param files list of files to be processed	
      * @param pGbdArgs The parameters.
-     * @throws Exception
      */
 	private void processReferencesDirectory(File[] files, final GrobidMainArgs pGbdArgs, String outputPath) {	
         if (files != null) {
@@ -291,13 +291,13 @@ public class ProcessEngine implements Closeable {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
                         final List<BibDataSet> results = 
-							getEngine().processReferences(currPdf.getAbsolutePath(), false);
+							getEngine().processReferences(currPdf, false);
 						File outputPathFile = new File(outputPath);
 						if (!outputPathFile.exists()) {
 							outputPathFile.mkdir();
 						}
 
-						StringBuffer result = new StringBuffer();
+						StringBuilder result = new StringBuilder();
 						// dummy header
 						result.append("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " + 	
 						"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
