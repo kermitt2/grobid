@@ -6,6 +6,7 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.document.BasicStructureBuilder;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
@@ -81,9 +82,9 @@ public class Segmentation extends AbstractParser {
      * @param input filename of pdf file
      * @return Document object with segmentation informations
      */
-    public Document processing(String input) {
-        return processing(input, null);
-    }
+//    public Document processing(File input) {
+//        return processing(input, null);
+//    }
 
     /**
      * Segment a PDF document into high level zones: cover page, document header,
@@ -94,41 +95,34 @@ public class Segmentation extends AbstractParser {
      *                  saved under the indicated repository path
      * @return Document object with segmentation informations
      */
-    public Document processing(String input, String assetPath) {
-        return processing(input, assetPath, -1, -1);
-    }
+//    public Document processing(String input, String assetPath) {
+//        return processing(input, assetPath, -1, -1);
+//    }
 
     /**
      * Segment a PDF document into high level zones: cover page, document header,
      * page footer, page header, body, page numbers, biblio section and annexes.
      *
      * @param input     filename of pdf file
-     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and
-     *                  saved under the indicated repository path
-     * @param startPage give the starting page to consider in case of segmentation of the
-     *                  PDF, -1 for the first page (default)
-     * @param endPage   give the end page to consider in case of segmentation of the
-     *                  PDF, -1 for the last page (default)
      * @return Document object with segmentation informations
      */
-    public Document processing(String input, String assetPath, int startPage, int endPage) {
+    public Document processing(File input, GrobidAnalysisConfig config) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
-        File inputFile = new File(input);
-        if (!inputFile.exists()) {
+        if (!input.exists()) {
             throw new GrobidResourceException("Cannot process pdf file, because input file '" +
-                    inputFile.getAbsolutePath() + "' does not exist.");
+                    input.getAbsolutePath() + "' does not exist.");
         }
 
         DocumentSource documentSource = null;
         try {
             boolean assets = false;
-            if (assetPath != null) {
+            if (config.getPdfAssetPath() != null) {
                 assets = true;
             }
 
-            documentSource = DocumentSource.fromPdf(new File(input), startPage, endPage, assets);
+            documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage(), assets);
             Document doc = new Document(documentSource);
 
             List<String> tokenizations = doc.addTokenizedDocument();
@@ -147,10 +141,11 @@ public class Segmentation extends AbstractParser {
 
                 // if assets is true, the images are still there under directory pathXML+"_data"
                 // we copy them to the assetPath directory
-                if (assetPath != null) {
+                File assetFile = config.getPdfAssetPath();
+                if (assetFile != null) {
                     // copy the files under the directory pathXML+"_data"
                     // we copy the asset files into the path specified by assetPath
-                    File assetFile = new File(assetPath);
+
                     if (!assetFile.exists()) {
                         // we create it
                         if (assetFile.mkdir()) {
@@ -205,7 +200,7 @@ public class Segmentation extends AbstractParser {
             return doc;
         } finally {
             // keep it clean when leaving...
-            if (assetPath == null) {
+            if (config.getPdfAssetPath() == null) {
                 // remove the pdf2xml tmp file
                 DocumentSource.close(documentSource, false);
             } else {

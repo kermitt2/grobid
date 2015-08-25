@@ -12,6 +12,7 @@ import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.document.TEIFormater;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorHeader;
@@ -57,10 +58,10 @@ public class HeaderParser extends AbstractParser {
     /**
      * Processing with application of the segmentation model
      */
-    public Pair<String, Document> processing(String input, boolean consolidate, BiblioItem resHeader) {
-        Document doc = parsers.getSegmentationParser().processing(input);
+    public Pair<String, Document> processing(File input, BiblioItem resHeader, GrobidAnalysisConfig config) {
+        Document doc = parsers.getSegmentationParser().processing(input, config);
 
-        String tei = processingHeaderSection(doc, consolidate, resHeader);
+        String tei = processingHeaderSection(doc, config.isConsolidateHeader(), resHeader);
         return new ImmutablePair<String, Document>(tei, doc);
     }
 
@@ -266,7 +267,7 @@ public class HeaderParser extends AbstractParser {
         }
 
         TEIFormater teiFormater = new TEIFormater(doc);
-        StringBuffer tei = teiFormater.toTEIHeader(resHeader, false, null, false);
+        StringBuffer tei = teiFormater.toTEIHeader(resHeader, null, GrobidAnalysisConfig.builder().consolidateHeader(consolidate).build());
         tei.append("\t</text>\n");
         tei.append("</TEI>\n");
         //LOGGER.debug(tei.toString());
@@ -471,7 +472,7 @@ public class HeaderParser extends AbstractParser {
                 }
 
                 TEIFormater teiFormater = new TEIFormater(doc);
-                StringBuffer tei = teiFormater.toTEIHeader(resHeader, false, null, false);
+                StringBuffer tei = teiFormater.toTEIHeader(resHeader, null, GrobidAnalysisConfig.defaultInstance());
                 tei.append("\t</text>\n");
                 tei.append("</TEI>\n");
                 //LOGGER.debug(tei);
