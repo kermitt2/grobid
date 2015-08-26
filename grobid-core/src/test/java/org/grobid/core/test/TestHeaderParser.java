@@ -11,6 +11,8 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.io.File;
+
 /**
  *  @author Patrice Lopez
  */
@@ -76,7 +78,7 @@ public class TestHeaderParser extends EngineTest{
 	public void testSegmentationHeader() throws Exception {
 		getTestResourcePath();
 		
-		String pdfPath = testPath + "/Wang-paperAVE2008.pdf";
+		File pdfPath = new File(testPath + "/Wang-paperAVE2008.pdf");
 		BiblioItem resHeader = new BiblioItem();
 		
 		String tei = engine.segmentAndProcessHeader(pdfPath, false, resHeader);
