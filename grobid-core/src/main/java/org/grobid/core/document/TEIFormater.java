@@ -4002,7 +4002,7 @@ public class TEIFormater {
 			int ind2 = text.lastIndexOf(")");
 			if (ind2 == -1) 
 				ind2 = text.lastIndexOf("]");
-			if (ind2 != -1) {
+			if ( (ind2 != -1) && (ind1 < ind2) ) {
 				return text.substring(ind1, ind2+1);
 			}
 		}
