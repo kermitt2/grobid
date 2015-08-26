@@ -6,6 +6,7 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
 import org.grobid.core.data.Keyword;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
@@ -70,21 +71,19 @@ public class TEIFormater {
     }
 	
     public StringBuffer toTEIHeader(BiblioItem biblio,
-                                    boolean withStyleSheet,
                                     String defaultPublicationStatement,
-									boolean generateIDs) {
-		return toTEIHeader(biblio, withStyleSheet, SchemaDeclaration.RNG, 
-			defaultPublicationStatement, generateIDs);
+									GrobidAnalysisConfig config) {
+		return toTEIHeader(biblio, SchemaDeclaration.RNG,
+			defaultPublicationStatement, config);
 	}
 
     public StringBuffer toTEIHeader(BiblioItem biblio,
-                                    boolean withStyleSheet,
 									SchemaDeclaration schemaDeclaration,
                                     String defaultPublicationStatement,
-									boolean generateIDs) {
+									GrobidAnalysisConfig config) {
         StringBuffer tei = new StringBuffer();
         tei.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-        if (withStyleSheet) {
+        if (config.isWithXslStylesheet()) {
             tei.append("<?xml-stylesheet type=\"text/xsl\" href=\"../jsp/xmlverbatimwrapper.xsl\"?> \n");
         }
 		if (schemaDeclaration == SchemaDeclaration.DTD) {
@@ -127,7 +126,7 @@ public class TEIFormater {
         }
 		
 		tei.append("\n\t\t<fileDesc>\n\t\t\t<titleStmt>\n\t\t\t\t<title level=\"a\" type=\"main\"");
-		if (generateIDs) {
+		if (config.isGenerateTeiIds()) {
 			String divID = KeyGen.getKey().substring(0,7);
 			tei.append(" xml:id=\"_" + divID + "\"");
 		}
@@ -307,7 +306,7 @@ public class TEIFormater {
 		    	else */
             tei.append(" level=\"a\" type=\"main\"");
 			
-			if (generateIDs) {
+			if (config.isGenerateTeiIds()) {
 				String divID = KeyGen.getKey().substring(0,7);
 				tei.append(" xml:id=\"_" + divID + "\"");
 			}
@@ -320,6 +319,7 @@ public class TEIFormater {
         }
 
         boolean hasEnglishTitle = false;
+        boolean generateIDs = config.isGenerateTeiIds();
         if (english_title != null) {
             // here do check the language!
             LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
@@ -918,19 +918,17 @@ public class TEIFormater {
                                        List<BibDataSet> bds,
 									   LayoutTokenization layoutTokenization,
 									   Document doc,
-                                       boolean generateIDs,
-                                       boolean generateImageReferences,
-									   boolean generateCoordinates) throws Exception {
+                                       GrobidAnalysisConfig config) throws Exception {
 		if ( (result == null) || (layoutTokenization == null) || (layoutTokenization.getTokenization() == null) ) {
 			buffer.append("\t\t<body/>\n");
 			return buffer;
 		}
 		buffer.append("\t\t<body>\n");
 		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, 
-			layoutTokenization, doc, generateIDs, generateImageReferences, generateCoordinates);
+			layoutTokenization, doc, config);
 		
 		// footnotes are still in the body
-		buffer = toTEIFootNoteLight(buffer, doc, generateIDs, generateCoordinates);
+		buffer = toTEIFootNoteLight(buffer, doc, config);
 
       	buffer.append("\t\t</body>\n");
 		
@@ -939,8 +937,7 @@ public class TEIFormater {
 	
 	public StringBuffer toTEIFootNoteLight(StringBuffer tei, 
 										Document doc, 
-										boolean generateIDs,
-										boolean generateCoordinates) throws Exception {		
+										GrobidAnalysisConfig config) throws Exception {
 		// write the footnotes
 		SortedSet<DocumentPiece> documentFootnoteParts = doc.getDocumentPart(SegmentationLabel.FOOTNOTE);
 		String footnotes = doc.getDocumentPartText(SegmentationLabel.FOOTNOTE);
@@ -975,7 +972,7 @@ public class TEIFormater {
 				if (currentNumber != -1) {
 					tei.append(" n=\"" + currentNumber + "\"");
 				}
-				if (generateIDs) {
+				if (config.isGenerateTeiIds()) {
 					String divID = KeyGen.getKey().substring(0,7);
 					tei.append(" xml:id=\"_" + divID + "\"");
 				}
@@ -993,8 +990,7 @@ public class TEIFormater {
 												String reseAcknowledgement, 
 												List<String> tokenizationsAcknowledgement,
 												List<BibDataSet> bds,
-												boolean generateIDs,
-												boolean generateCoordinates) throws Exception {
+												GrobidAnalysisConfig config) throws Exception {
 		if ( (reseAcknowledgement == null) || (tokenizationsAcknowledgement == null) ) {
 			return buffer;
 		}
@@ -1003,12 +999,11 @@ public class TEIFormater {
 		StringBuffer buffer2 = new StringBuffer();
 		
 		buffer2 = toTEITextPieceLight(buffer2, reseAcknowledgement,  null,  bds, 
-			new LayoutTokenization(tokenizationsAcknowledgement, null), doc, generateIDs, 
-			false, generateCoordinates);
+			new LayoutTokenization(tokenizationsAcknowledgement, null), doc, config);
 		String acknowResult = buffer2.toString();
 		String[] acknowResultLines = acknowResult.split("\n");
 		boolean extraDiv = false;
-		if ( (acknowResultLines != null) && (acknowResultLines.length != 0) ) {
+		if (acknowResultLines.length != 0) {
 			for(int i=0; i<acknowResultLines.length; i++) {
 				if (acknowResultLines[i].trim().length() == 0)
 					continue;
@@ -1037,16 +1032,13 @@ public class TEIFormater {
                                 	List<BibDataSet> bds,
                                 	List<String> tokenizations,
                                 	Document doc,
-									boolean generateIDs,
-									boolean generateImageReferences,
-									boolean generateCoordinates) throws Exception {
+									GrobidAnalysisConfig config) throws Exception {
 		if ( (result == null) || (tokenizations == null) ) {
 			return buffer;
 		}
 		buffer.append("\t\t<div type=\"annex\">\n");
 		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, 
-			new LayoutTokenization(tokenizations, null), doc, generateIDs, 
-			generateImageReferences, generateCoordinates);
+			new LayoutTokenization(tokenizations, null), doc, config);
       	buffer.append("\t\t</div>\n");
 		
         return buffer;
@@ -1058,9 +1050,7 @@ public class TEIFormater {
                                 	List<BibDataSet> bds,
 									LayoutTokenization layoutTokenization,	
                                     Document doc,
-									boolean generateIDs,
-									boolean generateImageReferences,
-									boolean generateCoordinates) throws Exception {
+									GrobidAnalysisConfig config) throws Exception {
         StringTokenizer st = new StringTokenizer(result, "\n");
         String s1 = null;
         String s2 = null;
@@ -1085,7 +1075,7 @@ public class TEIFormater {
 		List<NonTextObject> graphicObjects = new ArrayList<NonTextObject>();
 		
         // graphic object identification based on blocks
-		if (generateImageReferences) {
+		if (config.isGenerateImageReferences()) {
 	        int n = 0;
 			List<Block> blocks = doc.getBlocks();
 	        for (Block bl : blocks) {
@@ -1226,7 +1216,7 @@ public class TEIFormater {
 			lastOriginalTag = currentOriginalTag;
             boolean closeParagraph = false;
             if (lastTag != null) {
-                closeParagraph = testClosingTag(buffer, currentTag0, lastTag0, s1, bds, generateIDs);
+                closeParagraph = testClosingTag(buffer, currentTag0, lastTag0, s1, bds, config.isGenerateTeiIds());
             }
             boolean output;
 
@@ -1235,7 +1225,7 @@ public class TEIFormater {
                     !currentTag0.equals("<figure_head>") &&
                     !currentTag0.equals("<figDesc>")) {
                 if (openFigure) {
-					if (generateImageReferences) {
+					if (config.isGenerateImageReferences()) {
 						// we output the graphic object before closing the figure
 						List<NonTextObject> images = getGraphicObject(graphicObjects, startPosFigure, p);
 						for(NonTextObject image : images) {
@@ -1250,8 +1240,9 @@ public class TEIFormater {
                 descFigure = false;
                 tableBlock = false;
             }
-               
-			output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<other>", 
+
+            boolean generateIDs = config.isGenerateTeiIds();
+            output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<other>",
 				"<note type=\"other\">", addSpace, 3, generateIDs);
 
             // for paragraph we must distinguish starting and closing tags
@@ -1315,7 +1306,7 @@ public class TEIFormater {
             if (!output) {
                 if (openFigure) {
                     if (descFigure && (!lastTag0.equals("<figDesc>")) && (currentTag0.equals("<figDesc>"))) {
-						if (generateImageReferences) {
+						if (config.isGenerateImageReferences()) {
 							// we output the graphic object before closing the figure
 							List<NonTextObject> images = getGraphicObject(graphicObjects, startPosFigure, p);
 							for(NonTextObject image : images) {
@@ -1353,7 +1344,7 @@ public class TEIFormater {
                 if (openFigure) {
                     if (headFigure && (!lastTag0.equals("<figure_head>")) &&
                             (currentTag0.equals("<figure_head>"))) {
-						if (generateImageReferences) {		
+						if (config.isGenerateImageReferences()) {
 							// we output the graphic object before closing the figure
 							List<NonTextObject> images = getGraphicObject(graphicObjects, startPosFigure, p);
 							for(NonTextObject image : images) {
@@ -1401,7 +1392,7 @@ public class TEIFormater {
                     testClosingTag(buffer, "", currentTag0, s1, bds, generateIDs);
                 }
                 if (openFigure) {
-					if (generateImageReferences) {
+					if (config.isGenerateImageReferences()) {
 						// we output the graphic object before closing the figure
 						List<NonTextObject> images = getGraphicObject(graphicObjects, startPosFigure, p);
 						for(NonTextObject image : images) {
@@ -1596,7 +1587,7 @@ public class TEIFormater {
 					String replacement = null;
 					
 					if (lastTag0.equals("<citation_marker>")) {
-						replacement = markReferencesTEI(chunkRefString, refTokens, bds, generateCoordinates).trim();
+						replacement = markReferencesTEI(chunkRefString, refTokens, bds, config.isGenerateTeiCoordinates()).trim();
 					}
 					else if (lastTag0.equals("<figure_marker>")) {
 						replacement = "<ref type=\"figure\">" + chunkRefString + "</ref>";
