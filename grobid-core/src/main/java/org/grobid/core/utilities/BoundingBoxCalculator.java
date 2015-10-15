@@ -28,7 +28,7 @@ public class BoundingBoxCalculator {
             BoundingBox b = BoundingBox.fromLayoutToken(tokens.get(i));
 
             if (near(lastBox, b)) {
-                result.get(result.size() - 1).boundBox(b);
+                result.set(result.size() - 1, result.get(result.size() - 1).boundBox(b));
             } else {
                 result.add(b);
             }
