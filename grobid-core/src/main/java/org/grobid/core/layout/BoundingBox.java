@@ -65,7 +65,7 @@ public class BoundingBox {
 
     public BoundingBox boundBox(BoundingBox o) {
         if (this.page != o.page) {
-            throw new IllegalStateException("Cannot computer a bounding box for different pages");
+            throw new IllegalStateException("Cannot compute a bounding box for different pages");
         }
         return fromTwoPoints(o.page, Math.min(this.x, o.x), Math.min(this.y, o.y), Math.max(this.x2, o.x2), Math.max(this.y2, o.y2));
     }
