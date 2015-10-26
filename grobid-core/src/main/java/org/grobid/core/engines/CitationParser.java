@@ -177,6 +177,7 @@ public class CitationParser extends AbstractParser {
                 bds.setRefSymbol(ref.getLabel());
                 bds.setResBib(bib);
                 bds.setRawBib(ref.getReferenceText());
+                bds.getResBib().setCoordinates(ref.getCoordinates());
                 results.add(bds);
             }
         }
