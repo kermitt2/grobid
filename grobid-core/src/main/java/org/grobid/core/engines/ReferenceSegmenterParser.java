@@ -1,23 +1,20 @@
 package org.grobid.core.engines;
 
 import org.grobid.core.GrobidModels;
+import org.grobid.core.document.Document;
+import org.grobid.core.document.DocumentPiece;
+import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
-import org.grobid.core.features.FeaturesVectorReferenceSegmenter;
-import org.grobid.core.utilities.Pair;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.document.Document;
-import org.grobid.core.engines.citations.LabeledReferenceResult;
-import org.grobid.core.engines.citations.ReferenceSegmenter;
-import org.grobid.core.engines.counters.CitationParserCounters;
-import org.grobid.core.document.DocumentPiece;
-import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.features.FeatureFactory;
+import org.grobid.core.features.FeaturesVectorReferenceSegmenter;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
-
+import org.grobid.core.utilities.BoundingBoxCalculator;
+import org.grobid.core.utilities.Pair;
+import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,9 +49,9 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 
     public List<LabeledReferenceResult> extract(Document doc, boolean training) {
 		SortedSet<DocumentPiece> referencesParts = doc.getDocumentPart(SegmentationLabel.REFERENCES);
-		Pair<String,List<String>> featSeg = getReferencesSectionFeatured(doc, referencesParts);
-		String res = null;
-		List<String> tokenizationsReferences = null;
+		Pair<String,List<LayoutToken>> featSeg = getReferencesSectionFeatured(doc, referencesParts);
+		String res;
+		List<LayoutToken> tokenizationsReferences;
 		if (featSeg == null) {
 			return null;
 		}
@@ -74,15 +71,17 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
 
 		// if we extract for generating training data, we also give back the used features
-		if (training)
+		if (training) {
 			return getExtractionResult(tokenizationsReferences, labeled, featureVector);
-		else
+		} else {
 			return getExtractionResult(tokenizationsReferences, labeled, null);
+		}
     }
 
-    private List<LabeledReferenceResult> getExtractionResult(List<String> tokenizations, List<Pair<String, String>> labeled, String featureVectors) {
+    private List<LabeledReferenceResult> getExtractionResult(List<LayoutToken> tokenizations, List<Pair<String, String>> labeled, String featureVectors) {
         List<LabeledReferenceResult> resultList = new ArrayList<LabeledReferenceResult>();
         StringBuilder reference = new StringBuilder();
+		List<LayoutToken> referenceTokens = new ArrayList<LayoutToken>();
         StringBuilder referenceLabel = new StringBuilder();
 		StringBuilder features = new StringBuilder();
 		String[] featureLines = null;
@@ -107,18 +106,20 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 					theFeatures = theFeatures.substring(0, ind);
 			}
             while(tokPtr < tokenizations.size()) {
-				while (tokenizations.get(tokPtr).equals(" ") ||
-					   tokenizations.get(tokPtr).equals("\n") ||
-					   tokenizations.get(tokPtr).equals("\r") ) {
-					if (tokenizations.get(tokPtr).equals(" "))
-                		addSpace = true;
-					else
+				while (tokenizations.get(tokPtr).t().equals(" ") ||
+					   tokenizations.get(tokPtr).t().equals("\n") ||
+					   tokenizations.get(tokPtr).t().equals("\r") ) {
+					if (tokenizations.get(tokPtr).t().equals(" ")) {
+						addSpace = true;
+					} else {
 						addLine = true;
+					}
                 	tokPtr++;
 				}
 				break;
             }
 
+			LayoutToken layoutToken = tokenizations.get(tokPtr);
             if (tokPtr >= tokenizations.size()) {
                 //throw new IllegalStateException("Implementation error: Reached the end of tokenizations, but current token is " + tok);
 				LOGGER.error("Implementation error: Reached the end of tokenizations, but current token is " + tok);
@@ -126,8 +127,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 				addSpace = true;
             }
             else {
-				String tokenizationToken = tokenizations.get(tokPtr);
-
+				String tokenizationToken = layoutToken.getText();
 				if ((tokPtr != tokenizations.size()) && !tokenizationToken.equals(tok)) {
 					// and we add a space by default to avoid concatenated text
 					addSpace = true;
@@ -136,19 +136,19 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 						// a shift in the tokenizations list and continue on the basis of the labeled token
 						// we check one ahead
 						tokPtr++;
-						tokenizationToken = tokenizations.get(tokPtr);
+						tokenizationToken = tokenizations.get(tokPtr).getText();
 						if (!tok.equals(tokenizationToken)) {
 							// we try another position forward (second hope!)
 							tokPtr++;
-							tokenizationToken = tokenizations.get(tokPtr);
+							tokenizationToken = tokenizations.get(tokPtr).getText();
 							if (!tok.equals(tokenizationToken)) {
 								// we try another position forward (last hope!)
 								tokPtr++;
-								tokenizationToken = tokenizations.get(tokPtr);
+								tokenizationToken = tokenizations.get(tokPtr).getText();
 								if (!tok.equals(tokenizationToken)) {
 									// we return to the initial position
 									tokPtr = tokPtr-3;
-									tokenizationToken = tokenizations.get(tokPtr);
+									tokenizationToken = tokenizations.get(tokPtr).getText();
 									LOGGER.error("Implementation error, tokens out of sync: " +
 										tokenizationToken + " != " + tok + ", at position " + tokPtr);
 								}
@@ -165,10 +165,11 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                 if (GenericTaggerUtils.isBeginningOfEntity(label)) {
                     if (reference.length() != 0) {
                         resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
-                                referenceLabel.toString().trim(), reference.toString().trim(), features.toString()));
+                                referenceLabel.toString().trim(), reference.toString().trim(), features.toString(), BoundingBoxCalculator.calculate(referenceTokens)));
                         reference.setLength(0);
                         referenceLabel.setLength(0);
 						features.setLength(0);
+						referenceTokens.clear();
                     }
                 }
                 if (addSpace || addLine) {
@@ -185,10 +186,11 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                     if (reference.length() != 0) {
                         resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ?
                                 null : referenceLabel.toString().trim(),
-									reference.toString().trim(), features.toString()));
+									reference.toString().trim(), features.toString(), BoundingBoxCalculator.calculate(referenceTokens)));
                         reference.setLength(0);
                         referenceLabel.setLength(0);
 						features.setLength(0);
+						referenceTokens.clear();
                     }
                 }
                 if (addSpace) {
@@ -201,6 +203,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                 }
 
                 reference.append(tok);
+				referenceTokens.add(layoutToken);
 				features.append(theFeatures);
 				features.append("\n");
             }
@@ -213,7 +216,9 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 
         if (reference.length() != 0) {
             resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
-                    referenceLabel.toString().trim(), reference.toString().trim(), features.toString()));
+                    referenceLabel.toString().trim(), reference.toString().trim(),
+					features.toString(),
+					BoundingBoxCalculator.calculate(referenceTokens)));
             reference.setLength(0);
             referenceLabel.setLength(0);
         }
@@ -226,9 +231,9 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 
 	public org.grobid.core.utilities.Pair<String,String> createTrainingData(Document doc, int id) {
 		SortedSet<DocumentPiece> referencesParts = doc.getDocumentPart(SegmentationLabel.REFERENCES);
-		Pair<String,List<String>> featSeg = getReferencesSectionFeatured(doc, referencesParts);
-		String res = null;
-		List<String> tokenizations = null;
+		Pair<String,List<LayoutToken>> featSeg = getReferencesSectionFeatured(doc, referencesParts);
+		String res;
+		List<LayoutToken> tokenizations;
 		if (featSeg == null) {
 			return null;
 		}
@@ -248,12 +253,13 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);		
         StringBuilder sb = new StringBuilder();
 
-        sb.append("<tei>\n" +
-                "    <teiHeader>\n" +
-                "        <fileDesc xml:id=\"_"+ id + "\"/>\n" +
-                "    </teiHeader>\n" +
-                "    <text xml:lang=\"en\">\n" +
-				"        <listBibl>\n"); 
+		//noinspection StringConcatenationInsideStringBufferAppend
+		sb.append("<tei>\n" +
+				"    <teiHeader>\n" +
+				"        <fileDesc xml:id=\"_" + id + "\"/>\n" +
+				"    </teiHeader>\n" +
+				"    <text xml:lang=\"en\">\n" +
+				"        <listBibl>\n");
 		
 		int tokPtr = 0;
 		boolean addSpace = false;
@@ -266,11 +272,11 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 
 			int tokPtr2 = tokPtr;
             for(; tokPtr2 < tokenizations.size(); tokPtr2++) {
-                if (tokenizations.get(tokPtr2).equals(" ")) {
+                if (tokenizations.get(tokPtr2).t().equals(" ")) {
 					addSpace = true;
 				}
-				else if (tokenizations.get(tokPtr2).equals("\n") ||
-					     tokenizations.get(tokPtr).equals("\r") ) {
+				else if (tokenizations.get(tokPtr2).t().equals("\n") ||
+					     tokenizations.get(tokPtr).t().equals("\r") ) {
 					addEOL = true;	
 				}
                 else {
@@ -285,7 +291,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 				addSpace = true;
             }
             else {
-				String tokenizationToken = tokenizations.get(tokPtr);
+				String tokenizationToken = tokenizations.get(tokPtr).getText();
 
 				if ((tokPtr != tokenizations.size()) && !tokenizationToken.equals(tok)) {
 					// and we add a space by default to avoid concatenated text
@@ -295,19 +301,19 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 						// a shift in the tokenizations list and continue on the basis of the labeled token
 						// we check one ahead
 						tokPtr++;
-						tokenizationToken = tokenizations.get(tokPtr);
+						tokenizationToken = tokenizations.get(tokPtr).getText();
 						if (!tok.equals(tokenizationToken)) {
 							// we try another position forward (second hope!)
 							tokPtr++;
-							tokenizationToken = tokenizations.get(tokPtr);
+							tokenizationToken = tokenizations.get(tokPtr).getText();
 							if (!tok.equals(tokenizationToken)) {
 								// we try another position forward (last hope!)
 								tokPtr++;
-								tokenizationToken = tokenizations.get(tokPtr);
+								tokenizationToken = tokenizations.get(tokPtr).getText();
 								if (!tok.equals(tokenizationToken)) {
 									// we return to the initial position
 									tokPtr = tokPtr-3;
-									tokenizationToken = tokenizations.get(tokPtr);
+									tokenizationToken = tokenizations.get(tokPtr).getText();
 									LOGGER.error("Implementation error, tokens out of sync: " +
 										tokenizationToken + " != " + tok + ", at position " + tokPtr);
 								}
@@ -330,8 +336,8 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 			if (tagClosed && lastTag.equals("<reference>")) {
 				refOpen = false;
 			}
-			String output = null;
-			String field = null;
+			String output;
+			String field;
 			if (refOpen) {
 				field = "<label>";
 			}
@@ -378,7 +384,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                 "    </text>\n" +
                 "</tei>\n");
 		
-		return new Pair(sb.toString(), featureVector);
+		return new Pair<String, String>(sb.toString(), featureVector);
     }
 
 
@@ -467,7 +473,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         return result;
     }
 
-	static public Pair<String,List<String>> getReferencesSectionFeatured(Document doc,
+	static public Pair<String,List<LayoutToken>> getReferencesSectionFeatured(Document doc,
 												SortedSet<DocumentPiece> referencesParts) {
 		if ((referencesParts == null) || (referencesParts.size() == 0)) {
 			return null;
@@ -478,15 +484,13 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 			return null;
 		}
 
-        String line;
-        StringBuilder citations = new StringBuilder();
-        boolean newline = true;
+		StringBuilder citations = new StringBuilder();
+        boolean newline;
 //        String currentFont = null;
 //        int currentFontSize = -1;
-        int n = 0; // overall token number 
+        int n; // overall token number
 
-        int sentenceNb = 0;
-        //int currentJournalPositions = 0;
+		//int currentJournalPositions = 0;
         //int currentAbbrevJournalPositions = 0;
         //int currentConferencePositions = 0;
         //int currentPublisherPositions = 0;
@@ -496,21 +500,17 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         //boolean isPublisherToken;
         //boolean skipTest;
 
-        String previousTag = null;
-        String previousText = null;
-        FeaturesVectorReferenceSegmenter features = null;
+		FeaturesVectorReferenceSegmenter features;
 		FeaturesVectorReferenceSegmenter previousFeatures = null;
-		boolean endblock = false;
-		boolean startblock = false;
+		boolean endblock;
+		boolean startblock;
         //int mm = 0; // token position in the sentence
-        int nn = 0; // token position in the line
-		int sentenceLenth = 0; // length of the current sentence
-		int documentLength = 0; // length of the whole reference section
+        int nn; // token position in the line
 		double lineStartX = Double.NaN;
 		boolean indented = false;
 
-		List<String> tokenizationsReferences = new ArrayList<String>();
-		List<String> tokenizations = doc.getTokenizations();
+		List<LayoutToken> tokenizationsReferences = new ArrayList<LayoutToken>();
+		List<LayoutToken> tokenizations = doc.getTokenizations();
 
 		int maxLineLength = 1;
 		//List<Integer> lineLengths = new ArrayList<Integer>();
@@ -526,8 +526,8 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
             int tokene = dp2.getTokenDocPos();
             for (int i = tokens; i <= tokene; i++) {
                 tokenizationsReferences.add(tokenizations.get(i));
-				currentLineLength += tokenizations.get(i).length();
-				if (tokenizations.get(i).equals("\n") || tokenizations.get(i).equals("\r") ) {
+				currentLineLength += tokenizations.get(i).getText().length();
+				if (tokenizations.get(i).t().equals("\n") || tokenizations.get(i).t().equals("\r") ) {
 					//lineLengths.add(currentLineLength);
 					if (currentLineLength > maxLineLength)
 						maxLineLength = currentLineLength;
@@ -550,12 +550,12 @@ System.out.println("");
 			int tokenIndex = 0;
 			int blockIndex = dp1.getBlockPtr();
 			Block block = null;
-			List<LayoutToken> tokens = null;
+			List<LayoutToken> tokens;
 			boolean previousNewline = true;
 			currentLineLength = 0;
 			String currentLineProfile = null;
 			for(n = dp1.getTokenDocPos(); n < dp2.getTokenDocPos(); n++) {
-				String text = tokenizations.get(n);
+				String text = tokenizations.get(n).getText();
 
 				if (text == null) {
 					continue;
@@ -565,8 +565,6 @@ System.out.println("");
 				if ( (block != null) && (n > block.getEndToken()) ) {
 					blockIndex++;
 					tokenIndex = 0;
-					startblock = true;
-					endblock = false;
 					currentLineLength = 0;
 					currentLineProfile = null;
 				}
@@ -598,8 +596,7 @@ System.out.println("");
 					tokens = null;
 
 				if (text.equals("\n") || text.equals("\r")) {
-                    newline = true;
-                    previousNewline = true;
+					previousNewline = true;
                     nn = 0;
 					currentLineLength = 0;
 					currentLineProfile = null;
@@ -653,8 +650,7 @@ System.out.println("");
 					}
                 }
 
-                boolean filter = false;
-                if (TextUtilities.filterLine(text)) {
+				if (TextUtilities.filterLine(text)) {
                     continue;
                 }
 
@@ -703,7 +699,7 @@ System.out.println("");
                     boolean endloop = false;
 					String accumulated = text;
                     while ((n + ii < tokenizations.size()) && (!endloop)) {
-                        String tok = tokenizations.get(n + ii);
+                        String tok = tokenizations.get(n + ii).getText();
                         if (tok != null) {
 							if (currentLineProfile == null)
 								accumulated += tok;
@@ -841,6 +837,6 @@ System.out.println("");
 		if (previousFeatures != null)
 	      	citations.append(previousFeatures.printVector());
 
-	   	return new Pair<String,List<String>>(citations.toString(), tokenizationsReferences);
+	   	return new Pair<String,List<LayoutToken>>(citations.toString(), tokenizationsReferences);
 	}
 }

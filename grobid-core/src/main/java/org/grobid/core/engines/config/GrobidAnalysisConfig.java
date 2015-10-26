@@ -5,6 +5,20 @@ import java.io.File;
 /**
  * Created by zholudev on 25/08/15.
  * A class representing configuration values needed in the analysis chain
+ * TODO: clean up the docs
+ * consolidateHeader    - the consolidation option allows GROBID to exploit Crossref
+ *                             web services for improving header information
+ * consolidateCitations - the consolidation option allows GROBID to exploit Crossref
+ *                             web services for improving citations information
+ * assetPath if not null, the PDF assets (embedded images) will be extracted and
+ * saved under the indicated repository path
+ * startPage give the starting page to consider in case of segmentation of the
+ * PDF, -1 for the first page (default)
+ * endPage give the end page to consider in case of segmentation of the
+ * PDF, -1 for the last page (default)
+ * generateIDs if true, generate random attribute id on the textual elements of
+ * the resulting TEI
+
  */
 public class GrobidAnalysisConfig {
     private GrobidAnalysisConfig() {

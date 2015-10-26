@@ -316,7 +316,7 @@ public class Engine implements Closeable {
      *
      * @param url     URL of the PDF to download
      * @param dirName directory where to store the downloaded PDF
-     * @param name
+     * @param name file name
      */
     public String downloadPDF(String url, String dirName, String name) {
         return Utilities.uploadFile(url, dirName, name);
@@ -396,7 +396,6 @@ public class Engine implements Closeable {
      * @param result      bib result
      * @return the TEI representation of the extracted bibliographical
      *         information
-     * @throws Exception if sth went wrong
      */
     public String processHeader(String inputFile, boolean consolidate, BiblioItem result) {
         return processHeader(inputFile, consolidate, 0, 2, result);
@@ -549,18 +548,7 @@ public class Engine implements Closeable {
      * the tei header data will be created.
      *
      * @param inputFile            - absolute path to the pdf to be processed
-     * @param consolidateHeader    - the consolidation option allows GROBID to exploit Crossref
-     *                             web services for improving header information
-     * @param consolidateCitations - the consolidation option allows GROBID to exploit Crossref
-     *                             web services for improving citations information
-     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and 
-	 * saved under the indicated repository path			
-   	 * @param startPage give the starting page to consider in case of segmentation of the 
-   	 * PDF, -1 for the first page (default) 
-   	 * @param endPage give the end page to consider in case of segmentation of the 
-   	 * PDF, -1 for the last page (default)
-	 * @param generateIDs if true, generate random attribute id on the textual elements of 
-	 * the resulting TEI 	
+     * @param config               - Grobid config
 	 * @return the resulting structured document as a TEI string.
      */
     public String fullTextToTEI(File inputFile,

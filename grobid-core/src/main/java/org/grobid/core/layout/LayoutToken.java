@@ -22,6 +22,10 @@ public class LayoutToken {
     public LayoutToken() {
     }
 
+    public LayoutToken(String text) {
+        this.text = text;
+    }
+
     public void setFont(String f) {
         font = f;
     }
@@ -44,6 +48,10 @@ public class LayoutToken {
     }
 
     public String getText() {
+        return text;
+    }
+
+    public String t() {
         return text;
     }
 
@@ -121,8 +129,30 @@ public class LayoutToken {
 
     @Override
     public String toString() {
-        return "LayoutToken{" +
-                "text='" + text + '\'' +
-                '}';
+        return text;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = text != null ? text.hashCode() : 0;
+        temp = Double.doubleToLongBits(y);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(x);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(width);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(height);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (font != null ? font.hashCode() : 0);
+        result = 31 * result + (bold ? 1 : 0);
+        result = 31 * result + (italic ? 1 : 0);
+        result = 31 * result + (colorFont != null ? colorFont.hashCode() : 0);
+        temp = Double.doubleToLongBits(fontSize);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (rotation ? 1 : 0);
+        result = 31 * result + page;
+        return result;
     }
 }

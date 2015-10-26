@@ -20,7 +20,6 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.engines.FullTextParser;
 import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.utilities.Pair;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -31,6 +30,7 @@ import java.util.regex.Pattern;
  *
  * @author Patrice Lopez
  */
+@SuppressWarnings("StringConcatenationInsideStringBufferAppend")
 public class TEIFormater {
     private Document doc = null;
 	
@@ -396,9 +396,9 @@ public class TEIFormater {
                             TextUtilities.HTMLEncode(biblio.getISSNe()) + "</idno>\n");
             }
 
-            if (biblio.getEvent() != null) {
-                // TBD	
-            }
+//            if (biblio.getEvent() != null) {
+//                // TODO:
+//            }
 
             // in case the booktitle corresponds to a proceedings, we can try to indicate the meeting title
             String meeting = biblio.getBookTitle();
@@ -988,7 +988,7 @@ public class TEIFormater {
 	
 	public StringBuffer toTEIAcknowledgementLight(StringBuffer buffer, 
 												String reseAcknowledgement, 
-												List<String> tokenizationsAcknowledgement,
+												List<LayoutToken> tokenizationsAcknowledgement,
 												List<BibDataSet> bds,
 												GrobidAnalysisConfig config) throws Exception {
 		if ( (reseAcknowledgement == null) || (tokenizationsAcknowledgement == null) ) {
@@ -999,7 +999,7 @@ public class TEIFormater {
 		StringBuffer buffer2 = new StringBuffer();
 		
 		buffer2 = toTEITextPieceLight(buffer2, reseAcknowledgement,  null,  bds, 
-			new LayoutTokenization(tokenizationsAcknowledgement, null), doc, config);
+			new LayoutTokenization(tokenizationsAcknowledgement), doc, config);
 		String acknowResult = buffer2.toString();
 		String[] acknowResultLines = acknowResult.split("\n");
 		boolean extraDiv = false;
@@ -1030,7 +1030,7 @@ public class TEIFormater {
                        			 	String result,
                                 	BiblioItem biblio,
                                 	List<BibDataSet> bds,
-                                	List<String> tokenizations,
+                                	List<LayoutToken> tokenizations,
                                 	Document doc,
 									GrobidAnalysisConfig config) throws Exception {
 		if ( (result == null) || (tokenizations == null) ) {
@@ -1038,7 +1038,7 @@ public class TEIFormater {
 		}
 		buffer.append("\t\t<div type=\"annex\">\n");
 		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, 
-			new LayoutTokenization(tokenizations, null), doc, config);
+			new LayoutTokenization(tokenizations), doc, config);
       	buffer.append("\t\t</div>\n");
 		
         return buffer;
@@ -1090,7 +1090,7 @@ public class TEIFormater {
 	                    String imag = bl.getText().substring(innd + 7, bl.getText().length());
 						int ind2 = imag.lastIndexOf("/");
 						imag = imag.substring(ind2+1, imag.length());
-	                    if (imag.indexOf(".vec") != -1) {
+	                    if (imag.contains(".vec")) {
 	                        nto.setType(NonTextObject.GraphicVectoriel);
 	                    } else {
 	                        nto.setType(NonTextObject.GraphicBitmap);
@@ -1098,7 +1098,7 @@ public class TEIFormater {
 	                    }
 						if ( (nto.getType() == NonTextObject.GraphicBitmap) 
 								&& (nto.getFile() != null) 
-								&& (nto.getFile().indexOf(".png") != -1) ) {
+								&& (nto.getFile().contains(".png")) ) {
 		                    nto.setFile(imag);
 		                    //graphicsPosition.add(new Integer(bl.getStartToken()));
 		                    nto.setStartPosition(bl.getStartToken());
@@ -1117,9 +1117,9 @@ public class TEIFormater {
 				System.out.println(nto.toString());
 			}*/
 		}
-		List<String> tokenizations = layoutTokenization.getTokenization();
-		List<LayoutToken> layoutTokensBody = layoutTokenization.getLayoutTokens();
-			
+		List<LayoutToken> tokenizations = layoutTokenization.getTokenization();
+//		List<LayoutToken> layoutTokensBody = layoutTokenization.getLayoutTokens();
+
         while (st.hasMoreTokens()) {
             boolean addSpace = false;
             String tok = st.nextToken().trim();
@@ -1137,7 +1137,7 @@ public class TEIFormater {
 					int p0 = p;
                     boolean strop = false;
                     while ((!strop) && (p < tokenizations.size())) {
-                        String tokOriginal = tokenizations.get(p);
+                        String tokOriginal = tokenizations.get(p).t();
                         if (tokOriginal.equals(" ") 							 
 						 || tokOriginal.equals("\u00A0")) {
                             addSpace = true;
@@ -1434,26 +1434,29 @@ public class TEIFormater {
 		int lastMatchPos = 0;
 		p = 0;
 		StringBuilder refString = new StringBuilder();
-		List<LayoutToken> refTokens = layoutTokensBody != null ? new ArrayList<LayoutToken>() : null;
-        Iterator<LayoutToken> layoutTokenIterator = layoutTokensBody != null ? layoutTokensBody.iterator() : null;
+		List<LayoutToken> refTokens = new ArrayList<LayoutToken>();
+        Iterator<LayoutToken> layoutTokenIterator = tokenizations.iterator();
         while (st.hasMoreTokens()) {
             boolean addSpace = false;
             String tok = st.nextToken().trim();
-            LayoutToken layoutToken = layoutTokenIterator != null ? layoutTokenIterator.next() : null;
+
             if (tok.length() == 0) {
                 continue;
             }
+
             StringTokenizer stt = new StringTokenizer(tok, " \t");
             int i = 0;
             boolean newLine = false;
             int ll = stt.countTokens();
+            LayoutToken layoutToken = null;
             while (stt.hasMoreTokens()) {
                 String s = stt.nextToken().trim();
                 if (i == 0) {
 					int p0 = p;
                     boolean strop = false;
                     while ((!strop) && (p < tokenizations.size())) {
-                        String tokOriginal = tokenizations.get(p);
+                        layoutToken = tokenizations.get(p);
+                        String tokOriginal = layoutToken.t();
                         if (tokOriginal.equals(" ") 							 
 						 	|| tokOriginal.equals("\u00A0") 
 							|| tokOriginal.equals("\n") ) {
@@ -1896,13 +1899,6 @@ public class TEIFormater {
     /**
      * TODO some documentation
      *
-     * @param buffer
-     * @param currentTag0
-     * @param lastTag0
-     * @param currentTag
-	 * @param bds
-	 * @param generateIDs	
-     * @return
      */
     private boolean testClosingTag(StringBuffer buffer,
                                    String currentTag0,
@@ -1918,7 +1914,7 @@ public class TEIFormater {
 			}*/
 			// we get the enclosed text
 			int ind = buffer.lastIndexOf(">");
-			String text = null;
+			String text;
 			boolean refEnd = false;
 			if (ind != -1) {
 				text = buffer.substring(ind+1, buffer.length()).trim();
@@ -2074,7 +2070,7 @@ public class TEIFormater {
                                     String rese,
                                     BiblioItem biblio,
                                     List<BibDataSet> bds,
-                                    List<String> tokenizations,
+                                    List<LayoutToken> tokenizations,
                                     Document doc) throws Exception {
 		if ( (rese == null) || (tokenizations == null) ) {
 			tei.append("\t\t<body/>\n");
@@ -2092,7 +2088,7 @@ public class TEIFormater {
                                     String rese,
                                     BiblioItem biblio,
                                     List<BibDataSet> bds,
-                                    List<String> tokenizations,
+                                    List<LayoutToken> tokenizations,
                                     Document doc) throws Exception {
 		if ( (rese == null) || (tokenizations == null) ) {
 			return tei;
@@ -2109,7 +2105,7 @@ public class TEIFormater {
                        			 	String rese,
                                 	BiblioItem biblio,
                                 	List<BibDataSet> bds,
-                                	List<String> tokenizations,
+                                	List<LayoutToken> tokenizations,
                                 	Document doc) throws Exception {
         elements = new ArrayList<String>();
         elements.add("body");
@@ -2175,7 +2171,7 @@ public class TEIFormater {
 
                     boolean strop = false;
                     while ((!strop) & (p < tokenizations.size())) {
-                        String tokOriginal = tokenizations.get(p);
+                        String tokOriginal = tokenizations.get(p).t();
                         if (tokOriginal.equals(" ")
                                 //| tokOriginal.equals("\n") 
                                 //| tokOriginal.equals("\r") 
@@ -2193,10 +2189,10 @@ public class TEIFormater {
                             p++;
                         } else if (tokOriginal.equals(s)) {
                             strop = true;
-                        } else if ((p + 1 < tokenizations.size()) && (tokenizations.get(p + 1).equals(s))) {
+                        } else if ((p + 1 < tokenizations.size()) && (tokenizations.get(p + 1).t().equals(s))) {
                             p++;
                             strop = true;
-                        } else if ((p + 2 < tokenizations.size()) && (tokenizations.get(p + 2).equals(s))) {
+                        } else if ((p + 2 < tokenizations.size()) && (tokenizations.get(p + 2).t().equals(s))) {
                             p = p + 2;
                             strop = true;
                         } else {
@@ -2240,7 +2236,6 @@ public class TEIFormater {
                         currentNode.label = currentSection.toString();
                         doc.getTop().addChild(currentNode);
                         currentSection = new StringBuffer();
-                        currentNode = null;
                     } else if (currentNode != null) {
                         if ((currentNode.label != null) && (currentNode.label.equals("header"))) {
                             doc.getTop().addChild(currentNode);
@@ -2461,7 +2456,7 @@ public class TEIFormater {
                     //graphics.add(new Integer(n));
                     nto.setBlockNumber(n);
                     String imag = bl.getText().substring(innd + 7, bl.getText().length());
-                    if (imag.indexOf(".vec") != -1) {
+                    if (imag.contains(".vec")) {
                         nto.setType(NonTextObject.GraphicVectoriel);
                     } else {
                         nto.setType(NonTextObject.GraphicBitmap);
@@ -2582,7 +2577,7 @@ public class TEIFormater {
 
                     boolean strop = false;
                     while ((!strop) & (p < tokenizations.size())) {
-                        String tokOriginal = tokenizations.get(p);
+                        String tokOriginal = tokenizations.get(p).t();
                         if (tokOriginal.equals(" ")
 								|| tokOriginal.equals("\u00A0")) {
                             if (p > 0) {
@@ -2598,10 +2593,10 @@ public class TEIFormater {
                             p++;
                         } else if (tokOriginal.equals(s)) {
                             strop = true;
-                        } else if ((p + 1 < tokenizations.size()) && (tokenizations.get(p + 1).equals(s))) {
+                        } else if ((p + 1 < tokenizations.size()) && (tokenizations.get(p + 1).t().equals(s))) {
                             p++;
                             strop = true;
-                        } else if ((p + 2 < tokenizations.size()) && (tokenizations.get(p + 2).equals(s))) {
+                        } else if ((p + 2 < tokenizations.size()) && (tokenizations.get(p + 2).t().equals(s))) {
                             p = p + 2;
                             strop = true;
                         } else {
@@ -3621,7 +3616,7 @@ public class TEIFormater {
 
     public StringBuffer toTEIReferences(StringBuffer tei, 
 										List<BibDataSet> bds, 
-										boolean generateIDs) throws Exception {
+										GrobidAnalysisConfig config) throws Exception {
  		tei.append("\t\t\t<div type=\"references\">\n\n");
 		
 		if ( (bds == null) || (bds.size() == 0) )
@@ -3630,11 +3625,11 @@ public class TEIFormater {
 	        tei.append("\t\t\t\t<listBibl>\n");
 
 	        int p = 0;
-			if ( (bds != null) && (bds.size() > 0)) {
+			if (bds.size() > 0) {
 	      	  for (BibDataSet bib : bds) {
 		            BiblioItem bit = bib.getResBib();
 		            if (bit != null) {
-		                tei.append("\n" + bit.toTEI(p, generateIDs));
+		                tei.append("\n" + bit.toTEI(p, 0, config));
 		            } else {
 		                tei.append("\n");
 		            }
@@ -3652,6 +3647,15 @@ public class TEIFormater {
     private String getCoordsString(List<LayoutToken> toks) {
         List<BoundingBox> res = BoundingBoxCalculator.calculate(toks);
         return Joiner.on(";").join(res);
+    }
+
+    //bounding boxes should have already been calculated when calling this method
+    public static String getCoordsAttribute(List<BoundingBox> boundingBoxes, boolean generateCoordinates) {
+        if (!generateCoordinates || boundingBoxes == null || boundingBoxes.isEmpty()) {
+            return "";
+        }
+        String coords = Joiner.on(";").join(boundingBoxes);
+        return  "coords=\"" + coords + "\"";
     }
 
     /**
@@ -3691,7 +3695,7 @@ public class TEIFormater {
 	        // with the replacements
 	        while (result) {
 	            String toto = m2.group(0);
-	            if (toto.indexOf("]") != -1) {
+	            if (toto.contains("]")) {
 	                toto = toto.replace(",", "] [");
 	                toto = toto.replace("[ ", "[");
 	                toto = toto.replace(" ]", "]");
@@ -3716,7 +3720,7 @@ public class TEIFormater {
 	        // with the replacements
 	        while (result2) {
 	            String toto = m3.group(0);
-	            if (toto.indexOf("]") != -1) {
+	            if (toto.contains("]")) {
 	                toto = toto.replace("]", "");
 	                toto = toto.replace("[", "");
 	                int ind = toto.indexOf('-');
@@ -3781,7 +3785,6 @@ public class TEIFormater {
 	        m3.appendTail(sb2);
 			text = sb2.toString();
 		}
-        String res = "";
         int p = 0;
 		if ( (bds != null) && (bds.size() > 0)) {
         	for (BibDataSet bib : bds) {
@@ -3807,7 +3810,7 @@ public class TEIFormater {
 	                // we check if we have an identifier with the year (e.g. 2010b)
 	                if (resBib.getPublicationDate() != null) {
 	                    String dat = resBib.getPublicationDate();
-	                    if ((dat != null) && (year != null)) {
+	                    if (year != null) {
 	                        int ind = dat.indexOf(year);
 	                        if (ind != -1) {
 	                            if (ind + year.length() < dat.length()) {
@@ -3845,8 +3848,8 @@ public class TEIFormater {
 
 					// try to match based on the author and year strings
 	                if ((author1 != null) && (year != null)) {
-	                    int indi1 = -1; // first author
-	                    int indi2 = -1; // year
+	                    int indi1; // first author
+	                    int indi2; // year
 	                    int indi3 = -1; // second author if only two authors in total
 	                    int i = 0;
 	                    boolean end = false;

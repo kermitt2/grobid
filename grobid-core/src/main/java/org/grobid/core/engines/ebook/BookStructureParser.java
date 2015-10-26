@@ -59,7 +59,7 @@ public class BookStructureParser extends AbstractParser {
             }
 
             String fulltext = getFulltextFeatured(doc);
-            List<String> tokenizations = doc.getTokenizationsFulltext();
+            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
 
             // we write the header untagged
             String outPathFulltext = pathFullText + "/" + PDFFileName.replace(".pdf", ".fulltext");
@@ -113,8 +113,8 @@ public class BookStructureParser extends AbstractParser {
         int documentLength = 0;
         int pageLength = 0; // length of the current page
 
-        List<String> tokenizationsBody = new ArrayList<String>();
-        List<String> tokenizations = doc.getTokenizations();
+        List<LayoutToken> tokenizationsBody = new ArrayList<LayoutToken>();
+        List<LayoutToken> tokenizations = doc.getTokenizations();
 
         // we calculate current document length and intialize the body tokenization structure
         for (Block block : blocks) {
@@ -451,7 +451,7 @@ public class BookStructureParser extends AbstractParser {
      * Extract results from a labelled header in the training format without any string modification.
      */
     private StringBuffer trainingExtraction(String result,
-                                            List<String> tokenizations) {
+                                            List<LayoutToken> tokenizations) {
         // this is the main buffer for the whole header
         StringBuffer buffer = new StringBuffer();
 
@@ -483,7 +483,7 @@ public class BookStructureParser extends AbstractParser {
 
                     boolean strop = false;
                     while ((!strop) & (p < tokenizations.size())) {
-                        String tokOriginal = tokenizations.get(p);
+                        String tokOriginal = tokenizations.get(p).t();
                         if (tokOriginal.equals(" ")) {
                             addSpace = true;
                         } else if (tokOriginal.equals(s)) {
