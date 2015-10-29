@@ -1866,6 +1866,11 @@ public class TEIFormater {
 
     private static void appendRefStrDataClean(StringBuilder refStr, List<LayoutToken> toks, String data, LayoutToken tok, boolean addSpace) {
         clearRefStrData(refStr, toks);
+
+        if (tok == null) {
+            return;
+        }
+
         refStr.append(addSpace ? " " :  "").append(data);
         if (toks != null) {
             toks.add(tok);
@@ -1873,6 +1878,10 @@ public class TEIFormater {
     }
 
     private static void appendRefStrData(StringBuilder refStr, List<LayoutToken> toks, String data, LayoutToken tok, boolean addSpace) {
+        if (tok == null) {
+            return;
+        }
+
         refStr.append(addSpace ? " " :  "").append(data);
         if (toks != null) {
             toks.add(tok);
