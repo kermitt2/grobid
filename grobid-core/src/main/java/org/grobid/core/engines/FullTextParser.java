@@ -141,7 +141,7 @@ public class FullTextParser extends AbstractParser {
 			documentBodyParts = doc.getDocumentPart(SegmentationLabel.ANNEX);
             featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String rese2 = null;
-			List<String> tokenizationsBody2 = null;
+			List<LayoutToken> tokenizationsBody2 = null;
 			if (featSeg != null) {
 				// if featSeg is null, it usually means that no body segment is found in the 
 				// document segmentation
@@ -191,9 +191,9 @@ public class FullTextParser extends AbstractParser {
         int documentLength = 0;
         int pageLength = 0; // length of the current page
 
-		List<String> tokenizationsBody = new ArrayList<String>();
+		List<LayoutToken> tokenizationsBody = new ArrayList<LayoutToken>();
 		List<LayoutToken> layoutTokens = new ArrayList<LayoutToken>();
-		List<String> tokenizations = doc.getTokenizations();
+		List<LayoutToken> tokenizations = doc.getTokenizations();
 
         // we calculate current document length and intialize the body tokenization structure
 		for(DocumentPiece docPiece : documentBodyParts) {
@@ -555,7 +555,7 @@ public class FullTextParser extends AbstractParser {
         }
 
         return new Pair<String,LayoutTokenization>(fulltext.toString(), 
-			new LayoutTokenization(tokenizationsBody, layoutTokens));
+			new LayoutTokenization(tokenizationsBody));
 	}
 
     /**
@@ -596,7 +596,7 @@ public class FullTextParser extends AbstractParser {
 				}
 				
 				String bodytext = featSeg.getA();
-				List<String> tokenizationsBody = featSeg.getB().getTokenization();
+				List<LayoutToken> tokenizationsBody = featSeg.getB().getTokenization();
 				
 				/*List<String> tokenizationsBody = new ArrayList<String>();
 				List<String> tokenizations = doc.getTokenizations();
@@ -755,7 +755,7 @@ public class FullTextParser extends AbstractParser {
      * @return extraction
      */
     private StringBuffer trainingExtraction(String result,
-                                            List<String> tokenizations) {
+                                            List<LayoutToken> tokenizations) {
         // this is the main buffer for the whole full text
         StringBuffer buffer = new StringBuffer();
         try {
@@ -793,7 +793,7 @@ public class FullTextParser extends AbstractParser {
 						int p0 = p;
                         boolean strop = false;
                         while ((!strop) && (p < tokenizations.size())) {
-                            String tokOriginal = tokenizations.get(p);
+                            String tokOriginal = tokenizations.get(p).t();
                             if (tokOriginal.equals(" ") 							 
 							 || tokOriginal.equals("\u00A0")) {
                                 addSpace = true;
@@ -1284,7 +1284,7 @@ public class FullTextParser extends AbstractParser {
                        String reseBody,
                        String reseAnnex,
 					   LayoutTokenization layoutTokenization,
-                       List<String> tokenizationsAnnex,
+                       List<LayoutToken> tokenizationsAnnex,
                        BiblioItem resHeader,
                        List<BibDataSet> resCitations,
                        GrobidAnalysisConfig config) {
@@ -1314,7 +1314,7 @@ public class FullTextParser extends AbstractParser {
 					doc.getDocumentPart(SegmentationLabel.ACKNOWLEDGEMENT);
 				Pair<String, LayoutTokenization> featSeg =
 					getBodyTextFeatured(doc, documentAcknowledgementParts);
-				List<String> tokenizationsAcknowledgement = null;
+				List<LayoutToken> tokenizationsAcknowledgement = null;
 				if (featSeg != null) {
 					// if featSeg is null, it usually means that no body segment is found in the 
 					// document segmentation
@@ -1334,7 +1334,7 @@ public class FullTextParser extends AbstractParser {
 				tei = teiFormater.toTEIAnnexML(tei, reseAnnex, resHeader, resCitations, 
 					tokenizationsAnnex, doc);
 			}
-			tei = teiFormater.toTEIReferences(tei, resCitations, config.isGenerateTeiIds());
+			tei = teiFormater.toTEIReferences(tei, resCitations, config);
             doc.calculateTeiIdToBibDataSets();
 
             tei.append("\t\t</back>\n");

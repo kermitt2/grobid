@@ -21,7 +21,7 @@ public class BoundingBox {
     }
 
     public static BoundingBox fromTwoPoints(int page, double x1, double y1, double x2, double y2) {
-        if (x1 >= x2 || y1 > y2) {
+        if (x1 > x2 || y1 > y2) {
             throw new IllegalArgumentException("Invalid points provided: (" + x1 + ";" + y1 + ")-(" + x2 + ";" + y2 + ")");
         }
         return new BoundingBox(page, x1, y1, x2 - x1, y2 - y1);

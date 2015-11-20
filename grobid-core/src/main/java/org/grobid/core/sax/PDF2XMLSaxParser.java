@@ -43,7 +43,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 	private List<String> images = null;
 
 	private StringBuffer blabla = null;
-	private List<String> tokenizations = null;
+	private List<LayoutToken> tokenizations = null;
 
 	private Document doc = null;
 
@@ -53,17 +53,17 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 	public PDF2XMLSaxParser() {
 		blabla = new StringBuffer();
-		tokenizations = new ArrayList<String>();
+		tokenizations = new ArrayList<LayoutToken>();
 	}
 
 	public PDF2XMLSaxParser(Document d, List<String> im) {
 		doc = d;
 		blabla = new StringBuffer();
 		images = im;
-		tokenizations = new ArrayList<String>();
+		tokenizations = new ArrayList<LayoutToken>();
 	}
 
-	public List<String> getTokenization() {
+	public List<LayoutToken> getTokenization() {
 		return tokenizations;
 	}
 
@@ -367,7 +367,8 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			block.addToken(token);
 			nbTokens++;
 			accumulator.setLength(0);
-			tokenizations.add("\n");
+//			tokenizations.add("\n");
+			tokenizations.add(token);
 		} else if (qName.equals("METADATA")) {
 			accumulator.setLength(0);
 		} else if (qName.equals("TOKEN")) {
@@ -469,7 +470,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 										blabla.append(updatedChar);
 										previousTok.setText(previousTok.getText()
 												+ updatedChar);
-										tokenizations.add(previousTok.getText());
+										tokenizations.add(new LayoutToken(previousTok.getText()));
 										//System.out.println("add token layout: " + previousTok.getText());
 										//System.out.println("add tokenizations: " + previousTok.getText());
 									}
@@ -493,7 +494,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 											//	tokenizations.get(tokenizations.size()-1));
 											tokenizations.remove(tokenizations.size()-1);
 										}
-										tokenizations.add(previousTok.getText());
+										tokenizations.add(new LayoutToken(previousTok.getText()));
 										//System.out.println("replaced by tokenizations: " + previousTok.getText());
 									}
 
@@ -525,7 +526,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 								blabla.append(tok);
 								token.setText(tok);
 
-								tokenizations.add(tok);
+								tokenizations.add(token);
 							} else {
 								tok = "";
 								//keepLast = true;
@@ -593,9 +594,9 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 				}
 				if (tokenizations.size() > 0) {
 					String justBefore = tokenizations
-							.get(tokenizations.size() - 1);
+							.get(tokenizations.size() - 1).t();
 					if (!justBefore.endsWith("-")) {
-						tokenizations.add(" ");
+						tokenizations.add(new LayoutToken(" "));
 						blabla.append(" ");
 					}
 				}
@@ -606,7 +607,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			// appearing on each page)
 			if (block != null) {
 				blabla.append("\n");
-				tokenizations.add("\n");
+				tokenizations.add(new LayoutToken("\n"));
 				block.setText(blabla.toString());
 				block.setNbTokens(nbTokens);
 				doc.addBlock(block);
@@ -622,7 +623,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			blabla = new StringBuffer();
 			nbTokens = 0;
 			// blabla.append("\n@block\n");
-			tokenizations.add("\n");
+			tokenizations.add(new LayoutToken("\n"));
 		} else if (qName.equals("IMAGE")) {
 			if (block != null) {
 				blabla.append("\n");
@@ -668,7 +669,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 		 */
 		else if (qName.equals("BLOCK")) {
 			blabla.append("\n");
-			tokenizations.add("\n");
+			tokenizations.add(new LayoutToken("\n"));
 			block.setText(blabla.toString());
 			
 			/*LayoutToken token = new LayoutToken();

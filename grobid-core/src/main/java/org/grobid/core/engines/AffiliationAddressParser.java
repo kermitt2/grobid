@@ -5,6 +5,7 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorAffiliationAddress;
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
@@ -80,7 +81,7 @@ public class AffiliationAddressParser extends AbstractParser {
      * We also need to keep the original tokenization information to recreate the exact
      * initial string.
      */
-    public ArrayList<Affiliation> processReflow(String result, List<String> tokenizations) {
+    public ArrayList<Affiliation> processReflow(String result, List<LayoutToken> tokenizations) {
         if ((result == null) || (result.length() == 0)) {
             return null;
         }
@@ -94,7 +95,7 @@ public class AffiliationAddressParser extends AbstractParser {
 
 
     private void filterAffiliationAddress(String result,
-                                          List<String> tokenizations,
+                                          List<LayoutToken> tokenizations,
                                           List<String> affiliationBlocks,
                                           List<String> subTokenizations) {
         StringTokenizer st = new StringTokenizer(result, "\n");
@@ -104,19 +105,19 @@ public class AffiliationAddressParser extends AbstractParser {
         int lineCount = 0;
         int p = 0;
         while (st.hasMoreTokens() && (p < tokenizations.size())) {
-            String toke = tokenizations.get(p);
+            String toke = tokenizations.get(p).getText();
             List<String> tokes = new ArrayList<String>();
             while ((toke.equals(" ") || toke.equals("\n") || (toke.length() == 0)) && ((p + 1) < tokenizations.size())) {
                 p++;
                 if (toke.length() == 0) {
-                    toke = tokenizations.get(p);
+                    toke = tokenizations.get(p).getText();
                     continue;
                 }
                 tokes.add(toke);
                 if (toke.equals("\n")) {
                     affiliationBlocks.add("@newline");
                 }
-                toke = tokenizations.get(p);
+                toke = tokenizations.get(p).getText();
             }
 
             String line = st.nextToken();
@@ -751,7 +752,7 @@ public class AffiliationAddressParser extends AbstractParser {
      * Extract results from a labelled header in the training format without any string modification.
      */
     public StringBuffer trainingExtraction(String result,
-                                           List<String> tokenizations) {
+                                           List<LayoutToken> tokenizations) {
         if ((result == null) || (result.length() == 0)) {
             return null;
         }
