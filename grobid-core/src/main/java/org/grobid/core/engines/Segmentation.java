@@ -125,7 +125,7 @@ public class Segmentation extends AbstractParser {
             documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage(), assets);
             Document doc = new Document(documentSource);
 
-            List<String> tokenizations = doc.addTokenizedDocument();
+            List<LayoutToken> tokenizations = doc.addTokenizedDocument();
 
             if (doc.getBlocks() == null) {
                 throw new GrobidException("PDF parsing resulted in empty content");
@@ -636,8 +636,8 @@ public class Segmentation extends AbstractParser {
         int documentLength = 0;
         int pageLength = 0; // length of the current page
 
-        List<String> tokenizationsBody = new ArrayList<String>();
-        List<String> tokenizations = doc.getTokenizations();
+        List<LayoutToken> tokenizationsBody = new ArrayList<LayoutToken>();
+        List<LayoutToken> tokenizations = doc.getTokenizations();
 
         // we calculate current document length and intialize the body tokenization structure
         for (Block block : blocks) {
@@ -959,7 +959,7 @@ public class Segmentation extends AbstractParser {
 
             String fulltext = //getAllTextFeatured(doc, false);
                     getAllLinesFeatured(doc);
-            List<String> tokenizations = doc.getTokenizationsFulltext();
+            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
 
             // we write the full text untagged (but featurized)
             String outPathFulltext = pathFullText + File.separator + 
@@ -970,8 +970,8 @@ public class Segmentation extends AbstractParser {
 
 			// also write the raw text as seen before segmentation
 			StringBuffer rawtxt = new StringBuffer();
-			for(String txtline : tokenizations) {
-				rawtxt.append(txtline);
+			for(LayoutToken txtline : tokenizations) {
+				rawtxt.append(txtline.getText());
 			}
 			String outPathRawtext = pathFullText + File.separator + 
 				PDFFileName.replace(".pdf", ".training.segmentation.rawtxt");
@@ -1010,7 +1010,7 @@ public class Segmentation extends AbstractParser {
      * @return extraction
      */
     private StringBuffer trainingExtraction(String result,
-                                            List<String> tokenizations,
+                                            List<LayoutToken> tokenizations,
                                             Document doc) {
         // this is the main buffer for the whole full text
         StringBuffer buffer = new StringBuffer();

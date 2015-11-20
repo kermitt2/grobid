@@ -73,7 +73,7 @@ public class BibDataSet {
         if (offsets == null) {
             offsets = new ArrayList<Integer>();
         }
-        offsets.add(new Integer(begin));
+        offsets.add(begin);
     }
 
     public void addOffset(Integer begin) {
@@ -95,16 +95,18 @@ public class BibDataSet {
 	}
     
 	public String toTEI() {
-		if (resBib != null)
-			return resBib.toTEI(-1);
-		else 
-			return "";
+		if (resBib != null) {
+            return resBib.toTEI(-1);
+        } else {
+            return "";
+        }
 	}
     
 	public String toTEI(int p) {
-		if (resBib != null)
-			return resBib.toTEI(p);
-		else 
-			return "";
+		if (resBib != null) {
+            return resBib.toTEI(p);
+        } else {
+            return "";
+        }
 	}
 }

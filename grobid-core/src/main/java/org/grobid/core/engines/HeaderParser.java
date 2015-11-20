@@ -100,7 +100,7 @@ public class HeaderParser extends AbstractParser {
         } else {
             header = doc.getHeaderFeatured(false, true);
         }
-        List<String> tokenizations = doc.getTokenizationsHeader();
+        List<LayoutToken> tokenizations = doc.getTokenizationsHeader();
 
         if ((header != null) && (header.trim().length() > 0)) {
             String res = label(header);
@@ -280,10 +280,10 @@ public class HeaderParser extends AbstractParser {
     public String processingHeaderSection(Document doc, boolean consolidate, BiblioItem resHeader) {
         try {
             SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabel.HEADER);
-            List<String> tokenizations = doc.getTokenizations();
+            List<LayoutToken> tokenizations = doc.getTokenizations();
 
             if (documentHeaderParts != null) {
-                List<String> tokenizationsHeader = new ArrayList<String>();
+                List<LayoutToken> tokenizationsHeader = new ArrayList<LayoutToken>();
 
                 for (DocumentPiece docPiece : documentHeaderParts) {
                     DocumentPointer dp1 = docPiece.a;
@@ -789,7 +789,7 @@ public class HeaderParser extends AbstractParser {
             }
 
             String header = doc.getHeaderFeatured(true, true);
-            List<String> tokenizations = doc.getTokenizationsHeader();
+            List<LayoutToken> tokenizations = doc.getTokenizationsHeader();
 
             // we write the header untagged
             String outPathHeader = pathHeader + File.separator + PDFFileName.replace(".pdf", ".header");
@@ -819,11 +819,11 @@ public class HeaderParser extends AbstractParser {
             StringTokenizer st = new StringTokenizer(rese, "\n");
             while (st.hasMoreTokens() && (q < tokenizations.size())) {
                 String line = st.nextToken();
-                String theTotalTok = tokenizations.get(q);
-                String theTok = tokenizations.get(q);
+                String theTotalTok = tokenizations.get(q).getText();
+                String theTok = tokenizations.get(q).getText();
                 while (theTok.equals(" ") || theTok.equals("\t") || theTok.equals("\n")) {
                     q++;
-                    theTok = tokenizations.get(q);
+                    theTok = tokenizations.get(q).getText();
                     theTotalTok += theTok;
                 }
                 if (line.endsWith("<date>")) {
@@ -845,11 +845,11 @@ public class HeaderParser extends AbstractParser {
             st = new StringTokenizer(rese, "\n");
             while (st.hasMoreTokens() && (q < tokenizations.size())) {
                 String line = st.nextToken();
-                String theTotalTok = tokenizations.get(q);
-                String theTok = tokenizations.get(q);
+                String theTotalTok = tokenizations.get(q).getText();
+                String theTok = tokenizations.get(q).getText();
                 while (theTok.equals(" ") || theTok.equals("\t") || theTok.equals("\n")) {
                     q++;
-                    theTok = tokenizations.get(q);
+                    theTok = tokenizations.get(q).getText();
                     theTotalTok += theTok;
                 }
                 if (line.endsWith("<author>")) {
@@ -871,11 +871,11 @@ public class HeaderParser extends AbstractParser {
             st = new StringTokenizer(rese, "\n");
             while (st.hasMoreTokens() && (q < tokenizations.size())) {
                 String line = st.nextToken();
-                String theTotalTok = tokenizations.get(q);
-                String theTok = tokenizations.get(q);
+                String theTotalTok = tokenizations.get(q).getText();
+                String theTok = tokenizations.get(q).getText();
                 while (theTok.equals(" ") || theTok.equals("\t") || theTok.equals("\n")) {
                     q++;
-                    theTok = tokenizations.get(q);
+                    theTok = tokenizations.get(q).getText();
                     theTotalTok += theTok;
                 }
                 if (line.endsWith("<reference>")) {
@@ -996,7 +996,7 @@ public class HeaderParser extends AbstractParser {
      * @param biblio        biblio item
      * @return a biblio item
      */
-    public BiblioItem resultExtraction(String result, boolean intro, List<String> tokenizations, BiblioItem biblio) {
+    public BiblioItem resultExtraction(String result, boolean intro, List<LayoutToken> tokenizations, BiblioItem biblio) {
         StringTokenizer st = new StringTokenizer(result, "\n");
         String s1 = null;
         String s2 = null;
@@ -1025,7 +1025,7 @@ public class HeaderParser extends AbstractParser {
                     int p0 = p;
                     boolean strop = false;
                     while ((!strop) && (p < tokenizations.size())) {
-                        String tokOriginal = tokenizations.get(p);
+                        String tokOriginal = tokenizations.get(p).getText();
                         if (tokOriginal.equals(" ")) {
                             addSpace = true;
                         } else if (tokOriginal.equals(s)) {
@@ -1306,7 +1306,7 @@ public class HeaderParser extends AbstractParser {
      * @param tokenizations list of tokens
      * @return a result
      */
-    private StringBuilder trainingExtraction(String result, boolean intro, List<String> tokenizations) {
+    private StringBuilder trainingExtraction(String result, boolean intro, List<LayoutToken> tokenizations) {
         // this is the main buffer for the whole header
         StringBuilder buffer = new StringBuilder();
 
@@ -1338,7 +1338,7 @@ public class HeaderParser extends AbstractParser {
 
                     boolean strop = false;
                     while ((!strop) && (p < tokenizations.size())) {
-                        String tokOriginal = tokenizations.get(p);
+                        String tokOriginal = tokenizations.get(p).t();
                         if (tokOriginal.equals(" ")
                                 || tokOriginal.equals("\u00A0")) {
                             addSpace = true;

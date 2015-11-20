@@ -11,41 +11,41 @@ import java.util.List;
  * @author Patrice Lopez
  */
 public class LayoutTokenization {
-	private List<LayoutToken> layoutTokenization = null;
-	private List<String> tokenization = null; // this should ultimately be removed
+//	private List<LayoutToken> layoutTokenization = null;
+	private List<LayoutToken> tokenization = null; // this should ultimately be removed
 	
-	public LayoutTokenization(List<String> tokens, List<LayoutToken> layoutTokens) {
-		layoutTokenization = layoutTokens;
+	public LayoutTokenization(List<LayoutToken> tokens) {
+//		layoutTokenization = layoutTokens;
 		tokenization = tokens;
 	}
 	
-	public List<LayoutToken> getLayoutTokens() {
-		return layoutTokenization;
-	}
+//	public List<LayoutToken> getLayoutTokens() {
+//		return layoutTokenization;
+//	}
 	
-	public List<String> getTokenization() {
+	public List<LayoutToken> getTokenization() {
 		return tokenization;
 	}
 	
-	public void addLayoutToken(LayoutToken token) {
-		if (layoutTokenization == null) 
-			layoutTokenization = new ArrayList<LayoutToken>();
-		else 
-			layoutTokenization.add(token);
-	}
+//	public void addLayoutToken(LayoutToken token) {
+//		if (layoutTokenization == null)
+//			layoutTokenization = new ArrayList<LayoutToken>();
+//		else
+//			layoutTokenization.add(token);
+//	}
 	
-	public void setLayoutTokens(List<LayoutToken> layoutTokens) {
-		this.layoutTokenization = layoutTokens;
-	}
+//	public void setLayoutTokens(List<LayoutToken> layoutTokens) {
+//		this.layoutTokenization = layoutTokens;
+//	}
 	
-	public void addToken(String token) {
+	public void addToken(LayoutToken token) {
 		if (tokenization == null) 
-			tokenization = new ArrayList<String>();
+			tokenization = new ArrayList<LayoutToken>();
 		else 
 			tokenization.add(token);
 	}
 	
-	public void setTokenization(List<String> tokens) {
+	public void setTokenization(List<LayoutToken> tokens) {
 		tokenization = tokens;
 	}
 }
