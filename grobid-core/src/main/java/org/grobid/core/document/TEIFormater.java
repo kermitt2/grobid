@@ -1579,7 +1579,7 @@ public class TEIFormater {
 				if (!currentTag0.equals(lastTag0) && lastTag0.endsWith("_marker>") ) {
 					String chunkRefString = refString.toString();
 					
-					if (chunkRefString.contains("<") && chunkRefString.contains(">")) {
+					if ((chunkRefString.contains("<") && chunkRefString.contains(">")) || chunkRefString.trim().isEmpty()) {
 						// normally never appear - inserting tags around this chunk could harm the
 						// XML hierarchical structure, so we skip this chunk
 //						refString = new StringBuilder();
@@ -1609,8 +1609,8 @@ public class TEIFormater {
 							teiPosition = buffer.indexOf(chunkRefString, teiPosition+1);
 							if (teiPosition != -1) {
 								nbMatch++;
-								matches.add(teiPosition);
-							}
+                                matches.add(teiPosition);
+                            }
 						}
 						if (nbMatch > 0) {
 							teiPosition = matches.get(0);

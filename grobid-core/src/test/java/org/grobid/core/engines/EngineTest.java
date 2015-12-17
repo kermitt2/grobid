@@ -849,7 +849,9 @@ public class EngineTest {
     @Test
     public void testFulltext() throws Exception {
         final Engine engine = GrobidFactory.getInstance().getEngine();
-        System.out.println(engine.fullTextToTEI(new File("/Work/temp/context/coords/2.pdf"), GrobidAnalysisConfig.defaultInstance()));
+//        System.out.println(engine.fullTextToTEI(new File("/Work/temp/context/coords/2.pdf"), GrobidAnalysisConfig.defaultInstance()));
+//        System.out.println(engine.fullTextToTEI(new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis-service/src/test/resources/net/researchgate/pdfanalysisservice/papers.bad.input/40th_Conf_unprotected.pdf"), GrobidAnalysisConfig.defaultInstance()));
+        System.out.println(engine.fullTextToTEI(new File("/var/folders/h4/np1lg7256q3c3s6b2lhm9w0r0000gn/T/habibi-pdf996586749219753040.pdf"), GrobidAnalysisConfig.defaultInstance()));
 //        System.out.println(engine.fullTextToTEI("/tmp/x1.pdf", true, true, null, -1, -1, true));
     }
 
@@ -857,7 +859,7 @@ public class EngineTest {
     public void testReferenceString() {
 //        String ref = "Agharahimi, M.R., LeBel, N.A., 1995. Synthesis of (–)-monoterpenylmagnolol and \n" +
 //                "magnolol. J. Org. Chem. 60, 1856–1863. ";
-        String ref = "30. Van der Veen, J. 1963. The role of adenoviruses in respiratory disease. Am. Rev. Respir. Dis. 88: 167–181.";
+        String ref = "Lipsitch M, 1997, ANTIMICROB AGENTS CH, V41, P363";
 
         final Engine engine = GrobidFactory.getInstance().getEngine();
         BiblioItem x = engine.processRawReference(ref, false);

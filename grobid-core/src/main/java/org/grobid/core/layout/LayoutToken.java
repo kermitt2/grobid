@@ -18,6 +18,7 @@ public class LayoutToken {
     public double fontSize = 0.0;
     private boolean rotation = false;
     private int page = -1;
+    private boolean newLineAfter;
 
     public LayoutToken() {
     }
@@ -125,6 +126,14 @@ public class LayoutToken {
 
     public void setPage(int page) {
         this.page = page;
+    }
+
+    public boolean isNewLineAfter() {
+        return newLineAfter;
+    }
+
+    public void setNewLineAfter(boolean newLineAfter) {
+        this.newLineAfter = newLineAfter;
     }
 
     @Override
