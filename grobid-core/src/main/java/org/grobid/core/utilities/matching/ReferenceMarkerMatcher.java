@@ -1,7 +1,6 @@
 package org.grobid.core.utilities.matching;
 
 import com.google.common.base.Function;
-import com.google.common.base.Joiner;
 import com.google.common.base.Predicate;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
@@ -25,7 +24,7 @@ import java.util.regex.Pattern;
 
 /**
  * Created by zholudev on 18/12/15.
- * Matching reference markers to extarcted citations
+ * Matching reference markers to extracted citations
  */
 public class ReferenceMarkerMatcher {
     private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceMarkerMatcher.class);
@@ -45,7 +44,10 @@ public class ReferenceMarkerMatcher {
         MANY_CANDIDATES,
         STYLE_AUTHORS,
         STYLE_NUMBERED,
-        MATCHED_REF_MARKERS_AFTER_POST_FILTERING, MANY_CANDIDATES_AFTER_POST_FILTERING, NO_CANDIDATES_AFTER_POST_FILTERING, STYLE_OTHER
+        MATCHED_REF_MARKERS_AFTER_POST_FILTERING,
+        MANY_CANDIDATES_AFTER_POST_FILTERING,
+        NO_CANDIDATES_AFTER_POST_FILTERING,
+        STYLE_OTHER
     }
 
 
@@ -219,7 +221,6 @@ public class ReferenceMarkerMatcher {
                             for (BibDataSet bds : matches) {
                                 System.out.println("  " + bds.getRawBib());
                             }
-
                         }
                     }
 //                    System.out.println("----------");
@@ -254,7 +255,6 @@ public class ReferenceMarkerMatcher {
                     result.add(s.substring(prev, m.end()));
                     prev = m.end();
                 }
-
             } else {
                 result.add(s);
             }
