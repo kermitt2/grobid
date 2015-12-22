@@ -31,6 +31,8 @@ public class BiblioItem {
     private AuthorEmailAssigner authorEmailAssigner = new ClassicAuthorEmailAssigner();
     private EmailSanitizer emailSanitizer = new EmailSanitizer();
     private String teiId;
+    //TODO: keep in sync with teiId - now teiId is generated in many different places
+    private Integer ordinal;
     private List<BoundingBox> coordinates = null;
 
     @Override
@@ -3756,6 +3758,14 @@ public class BiblioItem {
 
     public String getTeiId() {
         return teiId;
+    }
+
+    public int getOrdinal() {
+        return ordinal;
+    }
+
+    public void setOrdinal(int ordinal) {
+        this.ordinal = ordinal;
     }
 
     public void setCoordinates(List<BoundingBox> coordinates) {

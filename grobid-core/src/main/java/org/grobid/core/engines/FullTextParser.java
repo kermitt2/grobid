@@ -190,22 +190,28 @@ public class FullTextParser extends AbstractParser {
         int documentLength = 0;
         int pageLength = 0; // length of the current page
 
-		List<LayoutToken> tokenizationsBody = new ArrayList<LayoutToken>();
+//		List<LayoutToken> tokenizationsBody = new ArrayList<LayoutToken>();
 		List<LayoutToken> layoutTokens = new ArrayList<LayoutToken>();
-		List<LayoutToken> tokenizations = doc.getTokenizations();
+//		List<LayoutToken> tokenizations = doc.getTokenizations();
 
+
+		// CAN'T CALCULATE LIKE THIS SINCE BODY does not necessarily start with the beginning of the block,
+		// nor it end at the last token of the block
         // we calculate current document length and intialize the body tokenization structure
-		for(DocumentPiece docPiece : documentBodyParts) {
-			DocumentPointer dp1 = docPiece.a;
-			DocumentPointer dp2 = docPiece.b;
-
-            int tokens = dp1.getTokenDocPos();
-            int tokene = dp2.getTokenDocPos();
-            for (int i = tokens; i <= tokene; i++) {
-                tokenizationsBody.add(tokenizations.get(i));
-				documentLength++;
-            }
-		}
+//		for(DocumentPiece docPiece : documentBodyParts) {
+//			DocumentPointer dp1 = docPiece.a;
+//			DocumentPointer dp2 = docPiece.b;
+//
+//            int tokenStart = dp1.getTokenDocPos();
+//            int tokenEnd = dp2.getTokenDocPos();
+//            for (int i = tokenStart; i <= tokenEnd; i++) {
+//				if (tokenizations.get(i).t().equals("IEEE")) {
+//					int sfs = 0;
+//				}
+//                tokenizationsBody.add(tokenizations.get(i));
+//				documentLength++;
+//            }
+//		}
 
         // System.out.println("documentLength: " + documentLength);
 		for(DocumentPiece docPiece : documentBodyParts) {
@@ -274,12 +280,25 @@ public class FullTextParser extends AbstractParser {
 
 				int n = 0;// token position in current block
 				if (blockIndex == dp1.getBlockPtr()) {
-					n = dp1.getTokenDocPos() - block.getStartToken();
+//					n = dp1.getTokenDocPos() - block.getStartToken();
+
+					n = dp1.getTokenBlockPos();
+
 					/*if (n != 0) {
 						n = n - 1;
 					}*/
 				}
-	            while (n < tokens.size()) {
+				int lastPos = tokens.size();
+				// if it's a last block from a document piece, it may end earlier
+				if (blockIndex == dp2.getBlockPtr()) {
+					lastPos = dp2.getTokenBlockPos();
+					if (lastPos >= tokens.size()) {
+						LOGGER.error("DocumentPointer for block " + blockIndex + " points to " + dp2.getTokenBlockPos() + " token, but block token size is " + tokens.size());
+						lastPos = tokens.size();
+					}
+				}
+
+	            while (n < lastPos) {
 					if (blockIndex == dp2.getBlockPtr()) {
 						//if (n > block.getEndToken()) {
 						if (n > dp2.getTokenDocPos() - block.getStartToken()) {
@@ -287,8 +306,11 @@ public class FullTextParser extends AbstractParser {
 						}
 					}
 
-	                LayoutToken token = tokens.get(n);
-	                features = new FeaturesVectorFulltext();
+					LayoutToken token = null;
+					token = tokens.get(n);
+					layoutTokens.add(token);
+
+					features = new FeaturesVectorFulltext();
 	                features.token = token;
 
 	                String text = token.getText();
@@ -543,7 +565,6 @@ public class FullTextParser extends AbstractParser {
 	                mm++;
 	                nn++;
 	                previousFeatures = features;
-                    layoutTokens.add(token);
             	}
             	//blockPos++;
 			}
@@ -554,7 +575,7 @@ public class FullTextParser extends AbstractParser {
         }
 
         return new Pair<String,LayoutTokenization>(fulltext.toString(),
-			new LayoutTokenization(tokenizationsBody));
+			new LayoutTokenization(layoutTokens));
 	}
 
     /**
@@ -1302,7 +1323,7 @@ public class FullTextParser extends AbstractParser {
 					layoutTokenization, doc, config);
 			}
 			else if (mode == 1) {
-           		tei = teiFormater.toTEIBodyML(tei, reseBody, resHeader, resCitations,
+           		tei = teiFormater.toTEIBodyML(tei, reseBody, resHeader,
 					layoutTokenization.getTokenization(), doc);
 			}
 
