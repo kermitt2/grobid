@@ -6,6 +6,7 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
 import org.grobid.core.data.Keyword;
+import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
@@ -15,11 +16,14 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LanguageUtilities;
+import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.engines.FullTextParser;
 import org.grobid.core.utilities.KeyGen;
+import org.grobid.core.utilities.matching.EntityMatcherException;
+import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -1051,6 +1055,7 @@ public class TEIFormater {
 									LayoutTokenization layoutTokenization,	
                                     Document doc,
 									GrobidAnalysisConfig config) throws Exception {
+
         StringTokenizer st = new StringTokenizer(result, "\n");
         String s1 = null;
         String s2 = null;
@@ -1448,14 +1453,17 @@ public class TEIFormater {
             int i = 0;
             boolean newLine = false;
             int ll = stt.countTokens();
-            LayoutToken layoutToken = null;
+            LayoutToken layoutToken;
+            List<LayoutToken> layoutTokenBuffer = new ArrayList<LayoutToken>();
             while (stt.hasMoreTokens()) {
                 String s = stt.nextToken().trim();
                 if (i == 0) {
 					int p0 = p;
                     boolean strop = false;
+                    layoutTokenBuffer.clear();
                     while ((!strop) && (p < tokenizations.size())) {
                         layoutToken = tokenizations.get(p);
+                        layoutTokenBuffer.add(layoutToken);
                         String tokOriginal = layoutToken.t();
                         if (tokOriginal.equals(" ") 							 
 						 	|| tokOriginal.equals("\u00A0") 
@@ -1525,13 +1533,13 @@ public class TEIFormater {
 //                    refTokens.clear();
 
 //                    clearRefStrData(refString, refTokens);
-					appendRefStrDataClean(refString, refTokens, s2, layoutToken, false);
+					appendRefStrDataClean(refString, refTokens, s2, layoutTokenBuffer, false);
 
 //                    refString.append(s2);
 //                    refTokens.add(layoutToken);
 				}
 				else {
-                    appendRefStrData(refString, refTokens, s2, layoutToken, addSpace);
+                    appendRefStrData(refString, refTokens, s2, layoutTokenBuffer, addSpace);
 //					if (addSpace)
 //						refString.append(" " + s2);
 //					else
@@ -1543,12 +1551,12 @@ public class TEIFormater {
 			else if (currentTag0.equals("<figure_marker>")) {
 				if (!currentTag0.equals(lastTag0)) {
 					startRefPosition = teiPosition;
-                    appendRefStrDataClean(refString, refTokens, s2, layoutToken, false);
+                    appendRefStrDataClean(refString, refTokens, s2, layoutTokenBuffer, false);
 //					refString = new StringBuilder();
 //					refString.append(s2);
 				}
 				else {
-                    appendRefStrData(refString, refTokens, s2, layoutToken, addSpace);
+                    appendRefStrData(refString, refTokens, s2, layoutTokenBuffer, addSpace);
 //					if (addSpace)
 //						refString.append(" " + s2);
 //					else
@@ -1560,12 +1568,12 @@ public class TEIFormater {
 			else if (currentTag0.equals("<table_marker>")) {
 				if (!currentTag0.equals(lastTag0)) {
 					startRefPosition = teiPosition;
-                    appendRefStrDataClean(refString, refTokens, s2, layoutToken, false);
+                    appendRefStrDataClean(refString, refTokens, s2, layoutTokenBuffer, false);
 //					refString = new StringBuilder();
 //					refString.append(s2);
 				}
 				else {
-                    appendRefStrData(refString, refTokens, s2, layoutToken, addSpace);
+                    appendRefStrData(refString, refTokens, s2, layoutTokenBuffer, addSpace);
 //
 //                    if (addSpace)
 //						refString.append(" " + s2);
@@ -1590,7 +1598,7 @@ public class TEIFormater {
 					String replacement = null;
 					
 					if (lastTag0.equals("<citation_marker>")) {
-						replacement = markReferencesTEI(chunkRefString, refTokens, bds, config.isGenerateTeiCoordinates()).trim();
+						replacement = markReferencesTEI(chunkRefString, refTokens, bds, doc.getReferenceMarkerMatcher(), config.isGenerateTeiCoordinates()).trim();
 					}
 					else if (lastTag0.equals("<figure_marker>")) {
 						replacement = "<ref type=\"figure\">" + chunkRefString + "</ref>";
@@ -1864,27 +1872,27 @@ public class TEIFormater {
         }
     }
 
-    private static void appendRefStrDataClean(StringBuilder refStr, List<LayoutToken> toks, String data, LayoutToken tok, boolean addSpace) {
+    private static void appendRefStrDataClean(StringBuilder refStr, List<LayoutToken> toks, String data, List<LayoutToken> toAdd, boolean addSpace) {
         clearRefStrData(refStr, toks);
 
-        if (tok == null) {
+        if (toAdd == null || toAdd.isEmpty()) {
             return;
         }
 
         refStr.append(addSpace ? " " :  "").append(data);
         if (toks != null) {
-            toks.add(tok);
+            toks.addAll(toAdd);
         }
     }
 
-    private static void appendRefStrData(StringBuilder refStr, List<LayoutToken> toks, String data, LayoutToken tok, boolean addSpace) {
-        if (tok == null) {
+    private static void appendRefStrData(StringBuilder refStr, List<LayoutToken> toks, String data, List<LayoutToken> toAdd, boolean addSpace) {
+        if (toAdd == null || toAdd.isEmpty()) {
             return;
         }
 
         refStr.append(addSpace ? " " :  "").append(data);
         if (toks != null) {
-            toks.add(tok);
+            toks.addAll(toAdd);
         }
     }
 
@@ -2078,7 +2086,6 @@ public class TEIFormater {
     public StringBuffer toTEIBodyML(StringBuffer tei,
                                     String rese,
                                     BiblioItem biblio,
-                                    List<BibDataSet> bds,
                                     List<LayoutToken> tokenizations,
                                     Document doc) throws Exception {
 		if ( (rese == null) || (tokenizations == null) ) {
@@ -2087,7 +2094,7 @@ public class TEIFormater {
 		}
 		
 		tei.append("\t\t<body>\n");
-		toTEITextPieceML(tei, rese, biblio, bds, tokenizations, doc);
+		toTEITextPieceML(tei, rese, tokenizations, doc);
 		tei.append("\t\t</body>\n");
 		
 		return tei;
@@ -2104,7 +2111,7 @@ public class TEIFormater {
 		}
 		
 		tei.append("\t\t<div type=\"annex\"/>\n");
-		toTEITextPieceML(tei, rese, biblio, bds, tokenizations, doc);
+		toTEITextPieceML(tei, rese, tokenizations, doc);
 		tei.append("\t\t</div>\n");
 		
 		return tei;
@@ -2112,8 +2119,6 @@ public class TEIFormater {
 	
 	private StringBuffer toTEITextPieceML(StringBuffer tei,
                        			 	String rese,
-                                	BiblioItem biblio,
-                                	List<BibDataSet> bds,
                                 	List<LayoutToken> tokenizations,
                                 	Document doc) throws Exception {
         elements = new ArrayList<String>();
@@ -2661,7 +2666,7 @@ public class TEIFormater {
                 }
             }
 
-            boolean res = testClosingTag(tei, currentTag0, lastTag0, s1, bds, ntos);
+            boolean res = testClosingTag(tei, currentTag0, lastTag0, s1, doc.getBibDataSets(), ntos);
 
             if (!currentTag0.equals("<figure_head>") &&
                     !currentTag0.equals("<figDesc>") &&
@@ -3337,7 +3342,7 @@ public class TEIFormater {
                 lastTag0 = lastTag;
             }
         }
-        testClosingTag(tei, "", lastTag0, "", bds, ntos);
+        testClosingTag(tei, "", lastTag0, "", doc.getBibDataSets(), ntos);
 
         // do we still have a div opened? 
         while (divOpened > 0) {
@@ -3442,7 +3447,7 @@ public class TEIFormater {
                                    String lastTag0,
                                    String currentTag,
                                    List<BibDataSet> bds,
-                                   List<NonTextObject> ntos) {
+                                   List<NonTextObject> ntos) throws EntityMatcherException {
         boolean res = false;
 
         if (!currentTag0.equals(lastTag0)
@@ -3575,7 +3580,7 @@ public class TEIFormater {
             } 
 			else if (currentCitationMarker.length() > 0) {
                 String theRef = currentCitationMarker.toString();
-                theRef = markReferencesTEI(theRef, null, bds, false);
+                theRef = markReferencesTEI(theRef, null, bds, doc.getReferenceMarkerMatcher(), false);
                 tei.append(theRef);
                 currentCitationMarker = new StringBuffer();
             } 
@@ -3670,8 +3675,8 @@ public class TEIFormater {
     /**
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
      */
-    public String markReferencesTEI(String text, List<LayoutToken> refTokens, 
-	 								List<BibDataSet> bds, boolean generateCoordinates) {
+    public String markReferencesTEI(String text, List<LayoutToken> refTokens,
+	 								List<BibDataSet> bds, ReferenceMarkerMatcher markerMatcher, boolean generateCoordinates) throws EntityMatcherException {
         // safety tests
 		if (text == null)
             return null;
@@ -3680,17 +3685,36 @@ public class TEIFormater {
 		if (text.endsWith("</ref>") || text.startsWith("<ref")) 
 			return text;
 
-        text = TextUtilities.HTMLEncode(text);
-        boolean numerical = false;
 
         String coords = null;
-		if (generateCoordinates)
-			coords = getCoordsString(refTokens);
+        if (generateCoordinates)
+            coords = getCoordsString(refTokens);
         if (coords == null) {
             coords = "";
         } else {
             coords = "coords=\"" + coords + "\"";
         }
+
+        if (true) {
+//            ReferenceMarkerMatcher markerMatcher =
+            StringBuilder sb = new StringBuilder();
+            text = text.replace("&amp;", "&");
+            for (Pair<String, BibDataSet> e : markerMatcher.match(text, refTokens)) {
+                if (e.b != null) {
+                    sb.append("<ref type=\"bibr\" target=\"#b" + e.b.getResBib().getOrdinal() + "\" "  +
+                                    coords + ">" +
+                                    e.a + "</ref>");
+                } else {
+                    sb.append("<ref type=\"bibr\">" + e.a + "</ref>");
+                }
+            }
+            return sb.toString();
+        }
+
+        text = TextUtilities.HTMLEncode(text);
+
+        boolean numerical = false;
+
         // we check if we have numerical references
 
         // we re-write compact references, i.e [1,2] -> [1] [2] 
@@ -3919,15 +3943,16 @@ public class TEIFormater {
 	                                    }
 										if (previousText.length() > 2) {
 											previousText = 
-												markReferencesTEI(previousText, refTokens, bds, 
+												markReferencesTEI(previousText, refTokens, bds, markerMatcher,
 													generateCoordinates);
 										}
 										if (followingText.length() > 2) {
 											followingText = 
-												markReferencesTEI(followingText, refTokens, bds, 
+												markReferencesTEI(followingText, refTokens, bds, markerMatcher,
 													generateCoordinates);
 										}
-											
+
+                                        Engine.getCntManager().i("REFERENCES", "MATCHED_CITATION_MARKERS");
 										return previousText+text+followingText;
 	                                }
 	                                end = true;
@@ -3970,15 +3995,16 @@ public class TEIFormater {
 										}
 	                                  	if (previousText.length() > 2) {
 											previousText = 
-												markReferencesTEI(previousText, refTokens, bds, 
+												markReferencesTEI(previousText, refTokens, bds, markerMatcher,
 													generateCoordinates);
 										}
 										if (followingText.length() > 2) {
 											followingText = 
-												markReferencesTEI(followingText, refTokens, bds, 
+												markReferencesTEI(followingText, refTokens, bds, markerMatcher,
 													generateCoordinates);
 										}
-											
+
+                                        Engine.getCntManager().i("REFERENCES", "MATCHED_CITATION_MARKERS");
 										return previousText+text+followingText;    
 	                                }
 	                                end = true;
@@ -3997,8 +4023,12 @@ public class TEIFormater {
 		
 		// we have not been able to solve the bibliographical marker, but we still annotate it globally
 		// without pointer - just ignoring possible punctuation at the beginning and end of the string
-		if (!text.endsWith("</ref>") && !text.startsWith("<ref")) 
-			text = "<ref type=\"bibr\">" + text + "</ref>";
+		if (!text.endsWith("</ref>") && !text.startsWith("<ref")) {
+            text = "<ref type=\"bibr\">" + text + "</ref>";
+            Engine.getCntManager().i("REFERENCES", "UNMATCHED_CITATION_MARKERS");
+        } else {
+            Engine.getCntManager().i("REFERENCES", "MATCHED_CITATION_MARKERS");
+        }
         return text;
     }
 

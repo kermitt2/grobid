@@ -1,21 +1,13 @@
 package org.grobid.core.engines;
 
 
-import com.google.common.collect.Lists;
 import fr.limsi.wapiti.SWIGTYPE_p_mdl_t;
 import fr.limsi.wapiti.Wapiti;
-import org.apache.commons.lang3.tuple.Pair;
-import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
-import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
-import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.engines.counters.CitationParserCounters;
-import org.grobid.core.engines.tagging.WapitiTagger;
-import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.features.FeaturesVectorDate;
 import org.grobid.core.jni.WapitiModel;
@@ -26,8 +18,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -849,11 +841,38 @@ public class EngineTest {
     @Test
     public void testFulltext() throws Exception {
         final Engine engine = GrobidFactory.getInstance().getEngine();
-//        System.out.println(engine.fullTextToTEI(new File("/Work/temp/context/coords/2.pdf"), GrobidAnalysisConfig.defaultInstance()));
+//        engine.fullTextToTEI(new File("/Work/temp/context/coords/1.pdf"), GrobidAnalysisConfig.defaultInstance());
+//        engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/1996PRBAConfProc00507417Vos.pdf"), GrobidAnalysisConfig.defaultInstance());
+        System.out.println(engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/MullenJSSv18i03.pdf"), GrobidAnalysisConfig.defaultInstance()));
+//        engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/1994FEBSLett350_235Hadden.pdf"), GrobidAnalysisConfig.defaultInstance());
 //        System.out.println(engine.fullTextToTEI(new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis-service/src/test/resources/net/researchgate/pdfanalysisservice/papers.bad.input/40th_Conf_unprotected.pdf"), GrobidAnalysisConfig.defaultInstance()));
-        System.out.println(engine.fullTextToTEI(new File("/var/folders/h4/np1lg7256q3c3s6b2lhm9w0r0000gn/T/habibi-pdf996586749219753040.pdf"), GrobidAnalysisConfig.defaultInstance()));
+//        System.out.println(engine.fullTextToTEI(new File("/var/folders/h4/np1lg7256q3c3s6b2lhm9w0r0000gn/T/habibi-pdf996586749219753040.pdf"), GrobidAnalysisConfig.defaultInstance()));
 //        System.out.println(engine.fullTextToTEI("/tmp/x1.pdf", true, true, null, -1, -1, true));
+        System.out.println(Engine.getCntManager());
     }
+
+    @Test
+    public void testFulltexts() throws Exception {
+        final Engine engine = GrobidFactory.getInstance().getEngine();
+        GrobidAnalysisConfig config = GrobidAnalysisConfig.defaultInstance();
+
+        for (File f : new File("/Work/temp/pub_citation_styles").listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                return pathname.getName().endsWith(".pdf");
+            }
+        })) {
+            System.out.println("Processing: " + f);
+            String tei = engine.fullTextToTEI(f, config);
+            System.out.println(tei.length());
+        }
+
+//        System.out.println(engine.fullTextToTEI(new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis-service/src/test/resources/net/researchgate/pdfanalysisservice/papers.bad.input/40th_Conf_unprotected.pdf"), GrobidAnalysisConfig.defaultInstance()));
+//        System.out.println(engine.fullTextToTEI(new File("/var/folders/h4/np1lg7256q3c3s6b2lhm9w0r0000gn/T/habibi-pdf996586749219753040.pdf"), GrobidAnalysisConfig.defaultInstance()));
+//        System.out.println(engine.fullTextToTEI("/tmp/x1.pdf", true, true, null, -1, -1, true));
+        System.out.println(Engine.getCntManager());
+    }
+
 
     @Test
     public void testReferenceString() {

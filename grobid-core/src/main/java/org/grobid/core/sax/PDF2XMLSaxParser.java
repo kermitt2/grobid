@@ -63,6 +63,38 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 		tokenizations = new ArrayList<LayoutToken>();
 	}
 
+	private void addToken(LayoutToken layoutToken) {
+		tokenizations.add(layoutToken);
+		block.addToken(layoutToken);
+	}
+
+	private void substituteLastToken(LayoutToken tok) {
+		if (tokenizations.size()>0) {
+			//System.out.println("last tokenizations was: " +
+			//	tokenizations.get(tokenizations.size()-1));
+			tokenizations.remove(tokenizations.size()-1);
+		}
+		tokenizations.add(tok);
+
+		if (block.getTokens() != null && !block.getTokens().isEmpty()) {
+			block.getTokens().remove(block.getTokens().size() - 1);
+		}
+		block.addToken(tok);
+	}
+
+	private void removeLastTwoTokens() {
+		tokenizations.remove(tokenizations.size() - 1);
+		if (tokenizations.size() > 0) {
+			tokenizations
+					.remove(tokenizations.size() - 1);
+		}
+
+		block.getTokens().remove(block.getTokens().size() - 1);
+		if (!block.getTokens().isEmpty()) {
+			block.getTokens().remove(block.getTokens().size() - 1);
+		}
+	}
+
 	public List<LayoutToken> getTokenization() {
 		return tokenizations;
 	}
@@ -364,11 +396,12 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			blabla.append("\n");
 			LayoutToken token = new LayoutToken();
 			token.setText("\n");
-			block.addToken(token);
+//			block.addToken(token);
 			nbTokens++;
 			accumulator.setLength(0);
 //			tokenizations.add("\n");
-			tokenizations.add(token);
+//			tokenizations.add(token);
+			addToken(token);
 		} else if (qName.equals("METADATA")) {
 			accumulator.setLength(0);
 		} else if (qName.equals("TOKEN")) {
@@ -452,11 +485,13 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 										//System.out.println("\n");									
 										//}
 										//else {
-										tokenizations.remove(tokenizations.size() - 1);
-										if (tokenizations.size() > 0) {
-											tokenizations
-												.remove(tokenizations.size() - 1);
-										}
+//										tokenizations.remove(tokenizations.size() - 1);
+//										if (tokenizations.size() > 0) {
+//											tokenizations
+//												.remove(tokenizations.size() - 1);
+//										}
+
+										removeLastTwoTokens();
 
 										blabla.deleteCharAt(blabla.length() - 1);
 										if (blabla.length() > 0) {
@@ -470,7 +505,9 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 										blabla.append(updatedChar);
 										previousTok.setText(previousTok.getText()
 												+ updatedChar);
-										tokenizations.add(new LayoutToken(previousTok.getText()));
+										addToken(new LayoutToken(previousTok.getText()));
+
+//										tokenizations.add(new LayoutToken(previousTok.getText()));
 										//System.out.println("add token layout: " + previousTok.getText());
 										//System.out.println("add tokenizations: " + previousTok.getText());
 									}
@@ -489,12 +526,13 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 										}
 									
 										//System.out.println("add token layout: " + previousTok.getText());
-										if (tokenizations.size()>0) {
-											//System.out.println("last tokenizations was: " + 
-											//	tokenizations.get(tokenizations.size()-1));
-											tokenizations.remove(tokenizations.size()-1);
-										}
-										tokenizations.add(new LayoutToken(previousTok.getText()));
+										substituteLastToken(new LayoutToken(previousTok.getText()));
+//										if (tokenizations.size()>0) {
+//											//System.out.println("last tokenizations was: " +
+//											//	tokenizations.get(tokenizations.size()-1));
+//											tokenizations.remove(tokenizations.size()-1);
+//										}
+//										tokenizations.add(new LayoutToken(previousTok.getText()));
 										//System.out.println("replaced by tokenizations: " + previousTok.getText());
 									}
 
@@ -526,7 +564,8 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 								blabla.append(tok);
 								token.setText(tok);
 
-								tokenizations.add(token);
+								addToken(token);
+//								tokenizations.add(token);
 							} else {
 								tok = "";
 								//keepLast = true;
@@ -553,9 +592,10 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 							token.setHeight(currentHeight);
 							token.setFontSize(currentFontSize);
 
-							if (!diaresis && !accent) {
-								block.addToken(token);
-							}
+//							if (!diaresis && !accent) {
+//
+//								block.addToken(token);
+//							}
 
 							if (block.getFont() == null) {
 								if (currentFont != null)
@@ -596,7 +636,8 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 					String justBefore = tokenizations
 							.get(tokenizations.size() - 1).t();
 					if (!justBefore.endsWith("-")) {
-						tokenizations.add(new LayoutToken(" "));
+						addToken(new LayoutToken(" "));
+//						tokenizations.add(new LayoutToken(" "));
 						blabla.append(" ");
 					}
 				}
@@ -607,7 +648,8 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			// appearing on each page)
 			if (block != null) {
 				blabla.append("\n");
-				tokenizations.add(new LayoutToken("\n"));
+				addToken(new LayoutToken("\n"));
+//				tokenizations.add(new LayoutToken("\n"));
 				block.setText(blabla.toString());
 				block.setNbTokens(nbTokens);
 				doc.addBlock(block);
@@ -623,7 +665,8 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			blabla = new StringBuffer();
 			nbTokens = 0;
 			// blabla.append("\n@block\n");
-			tokenizations.add(new LayoutToken("\n"));
+			addToken(new LayoutToken("\n"));
+//			tokenizations.add(new LayoutToken("\n"));
 		} else if (qName.equals("IMAGE")) {
 			if (block != null) {
 				blabla.append("\n");
@@ -669,7 +712,8 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 		 */
 		else if (qName.equals("BLOCK")) {
 			blabla.append("\n");
-			tokenizations.add(new LayoutToken("\n"));
+			addToken(new LayoutToken("\n"));
+//			tokenizations.add(new LayoutToken("\n"));
 			block.setText(blabla.toString());
 			
 			/*LayoutToken token = new LayoutToken();
@@ -726,7 +770,6 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 				if ((name != null) && (value != null)) {
 					if (name.equals("id")) {
-						;
 					} else if (name.equals("number")) {
 
 					} else if (name.equals("width")) {
