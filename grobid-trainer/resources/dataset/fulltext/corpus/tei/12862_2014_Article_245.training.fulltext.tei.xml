@@ -24,12 +24,12 @@
 			
 			<p>The two consensus phylogenetic trees that we obtain<lb/> show an overall good support with only several recent<lb/> splits showing low posterior probabilities (<ref type="figure">Figure 1</ref>).<lb/> Major clades appear in both mitochondrial and nuclear<lb/> phylogenetic trees. Despite the fact that the two datasets<lb/> show well resolved topologies, the relative position of<lb/> the main clades is different between the two analyses<lb/> (<ref type="figure">Figure 1</ref>, see Additional files 1 and 2 for a complete il-<lb/>lustration of node support). The organisation of the per-<lb/>cula clade at the base of the clownfish tree and the<lb/> position of A. latezonatus is congruent between the two<lb/> datasets. However, the Australian group and A. chrysop-<lb/>terus intercalate between the polymnus and Indian<lb/> groups in the nuclear dataset. We identify two mito-<lb/>chondrial lineages in A. sandaracinos with a posterior<lb/> probability of 1, but both samples are clustered in the<lb/> nuclear phylogenetic tree. The ephippium clade, which is<lb/> the sister group of the clarkii clade in the nuclear<lb/></p> 
 			
-			<figure>
-				<head>Table 1 Clades of clownfishes used in this study<lb/></head> 
+			<figure type="table">
+				Table 1 Clades of clownfishes used in this study<lb/>
 
-				<table>Clade name<lb/> Species<lb/> percula<lb/> A. ocellaris, A. percula, P. biaculeatus<lb/> Australian<lb/> A. akindynos, A. mccullochi<lb/> akallopisos<lb/> A. akallopisos, A. perideraion,<lb/> A. pacificus, A. sandaracinos<lb/> ephippium<lb/> A. frenatus, A. ephippium,<lb/> A. rubrocinctus, A. melanopus, A. barberi<lb/> polymnus<lb/> A. sebae, A. polymnus<lb/> clarkii<lb/> A. clarkii, A. tricinctus<lb/> Indian<lb/> A. bicinctus, A. omanensis, A. chagosensis,<lb/> A. latifasciatus, A. nigripes, A. allardi,<lb/> A. chrysogaster, A. fuscocaudatus*<lb/></table>
+				Clade name<lb/> Species<lb/> percula<lb/> A. ocellaris, A. percula, P. biaculeatus<lb/> Australian<lb/> A. akindynos, A. mccullochi<lb/> akallopisos<lb/> A. akallopisos, A. perideraion,<lb/> A. pacificus, A. sandaracinos<lb/> ephippium<lb/> A. frenatus, A. ephippium,<lb/> A. rubrocinctus, A. melanopus, A. barberi<lb/> polymnus<lb/> A. sebae, A. polymnus<lb/> clarkii<lb/> A. clarkii, A. tricinctus<lb/> Indian<lb/> A. bicinctus, A. omanensis, A. chagosensis,<lb/> A. latifasciatus, A. nigripes, A. allardi,<lb/> A. chrysogaster, A. fuscocaudatus*<lb/>
 
-				<figDesc>The table gives the list of species included in each clade. A. stands for<lb/> Amphiprion, P. for Premnas. Not included are A. chrysopterus and A. latezonatus,<lb/> which are monospecific lineages and A. leucokranos and A. thiellei, which have<lb/> likely been described from hybrid specimens. *Exemplars of A. fuscocaudatus<lb/> have never been sequenced. We hypothetically placed this species in the Indian<lb/> clade because it is the most parsimonious solution regarding the biogeography<lb/> of clownfish species <ref type="biblio">[19]</ref>.<lb/></figDesc> 
+				The table gives the list of species included in each clade. A. stands for<lb/> Amphiprion, P. for Premnas. Not included are A. chrysopterus and A. latezonatus,<lb/> which are monospecific lineages and A. leucokranos and A. thiellei, which have<lb/> likely been described from hybrid specimens. *Exemplars of A. fuscocaudatus<lb/> have never been sequenced. We hypothetically placed this species in the Indian<lb/> clade because it is the most parsimonious solution regarding the biogeography<lb/> of clownfish species [19].<lb/>
 			</figure>
 				
 			<p>phylogenetic tree, becomes sister to the Australian clade<lb/> with the mitochondrial dataset. This suggest the exis-<lb/>tence of a hybridisation event at the time of node 8<lb/> (<ref type="figure">Figure 2</ref>). Other studies showed that a main upward shift<lb/> in speciation rate occurred at this specific node <ref type="biblio">[22,23]</ref>.<lb/></p>
@@ -47,19 +47,17 @@
 			<p>Our results show instances of cyto-nuclear incongruence<lb/> in the clownfish phylogenetic tree, which suggests several<lb/> hybridisation events. The most ancient of those events oc-<lb/>curred in the same time frame as a node that was identi-<lb/>fied twice independently as the highest increase in<lb/> diversification rate happening in the damselfish family<lb/> <ref type="biblio">[22,23]</ref>. This evidence suggests a relationship between this<lb/> ancient hybridisation event and the main burst of diversifi-<lb/>cation of the adaptive radiation of clownfishes. Moreover,<lb/> we identify nodes with an excess of homoplasy that can be<lb/> attributed to more recent hybridisation events. Finally, we<lb/> identify the parental lineages of four hybrid individuals,<lb/> showing that hybridisation still occurs within clownfishes.<lb/> This evidence suggests that the diversification of the<lb/> clownfishes has been likely fuelled by hybridisation events<lb/> that created novel phenotypes and eventually new species<lb/> in a manner similar to the well-known East African<lb/> cichlids.<lb/></p>
 
 			<figure>
-				<trash>(a)<lb/> (b)<lb/></trash> 
+				(a)<lb/> (b)<lb/>
 				
-				<head>Figure 3 Mitochondrial phylogeny of hybrid individuals.</head> 
-				
-				<figDesc>Majority-<lb/>rule consensus tree with all compatible groups for mitochondrial<lb/> sequences with the inclusion of hybrid specimens in the analysis.<lb/> Panel (a) shows a close-up on the topological position of hybrid<lb/> specimens 1 to 3 and panel (b) of A. leucokranos. The topology of<lb/> the rest of the phylogeny (not shown) is as in <ref type="figure">Figure 1</ref>.<lb/></figDesc>
+				Figure 3 Mitochondrial phylogeny of hybrid individuals. Majority-<lb/>rule consensus tree with all compatible groups for mitochondrial<lb/> sequences with the inclusion of hybrid specimens in the analysis.<lb/> Panel (a) shows a close-up on the topological position of hybrid<lb/> specimens 1 to 3 and panel (b) of A. leucokranos. The topology of<lb/> the rest of the phylogeny (not shown) is as in Figure 1.<lb/>
 			</figure>	
 				
 			<figure>
-				<trash>(a)<lb/> (b)<lb/></trash> 
+				(a)<lb/> (b)<lb/>
 				 
-				<head>Figure 2 Homoplasy excess test.</head> 
+				Figure 2 Homoplasy excess test.
 				
-				<figDesc>Panel (a) shows the distribution of the bootstrap support for each node which showed a homoplasy excess<lb/> during the removal analysis. Each boxplot shows the null distribution of bootstrap values for the node and the red dot shows the bootstrap<lb/> value of the node when the taxon of interest (name on the right) has been removed. Nodes names as given on the left correspond to that of<lb/> panel (b) which shows the consensus tree of the nuclear phylogeny. There, nodes and taxa which showed up as outliers in the analysis have<lb/> been coloured in orange. Species used as outgroup are shown in grey. The size of node labels has been altered to facilitate reading.<lb/></figDesc>
+				Panel (a) shows the distribution of the bootstrap support for each node which showed a homoplasy excess<lb/> during the removal analysis. Each boxplot shows the null distribution of bootstrap values for the node and the red dot shows the bootstrap<lb/> value of the node when the taxon of interest (name on the right) has been removed. Nodes names as given on the left correspond to that of<lb/> panel (b) which shows the consensus tree of the nuclear phylogeny. There, nodes and taxa which showed up as outliers in the analysis have<lb/> been coloured in orange. Species used as outgroup are shown in grey. The size of node labels has been altered to facilitate reading.<lb/>
 			</figure>
 
 			<head level="2">Past hybridisation<lb/></head>
@@ -67,17 +65,17 @@
 			<p>We reconstruct separately the phylogenetic trees of the<lb/> mitochondrial (three markers) and nuclear (seven markers)<lb/> genomes. Most nodes show high posterior probabilities,<lb/> yet, several shallow nodes of our mitochondrial and nuclear<lb/> trees are only weakly supported. This can originate from<lb/> the lack of phylogenetic informative sites between closely<lb/> related species. Previous studies of phylogenetic relation-<lb/>ships of the Pomacentridae inferred by mitochondrial or<lb/> nuclear markers, all support the monophyly of the clown-<lb/>fish as well as the existence of the main clownfish clades<lb/> <ref type="biblio">[18,23-25]</ref>. The topology obtained with the mitochondrial<lb/> data corresponds to these published phylogenetic trees.<lb/> We find several deep cytonuclear discordances in the<lb/> clownfish. The relative position of the ephippium clade<lb/> changes radically between the two datasets, which sug-<lb/>gests the occurrence of hybridisation in the timeframe of<lb/> node 8 (<ref type="figure">Figure 2</ref>). While this node is not basal to all<lb/></p>
 
 			<figure>
-				<trash>(a)<lb/> (b)<lb/></trash>  
+				(a)<lb/> (b)<lb/>
 			
-				<head>Figure 4 Nuclear phylogeny of hybrid cloned sequences.</head> 
+				Figure 4 Nuclear phylogeny of hybrid cloned sequences.
 			
-				<figDesc>Majority-rule consensus tree with all compatible groups for nuclear sequences with<lb/> the inclusion of hybrid specimens in the analysis. The two panels (a &amp; b) are close-ups on the topological position of the cloned sequences. The<lb/> topology of the rest of the phylogeny (not shown) is as in <ref type="figure">Figure 1</ref>.<lb/></figDesc>
-			</figure>	
+				Majority-rule consensus tree with all compatible groups for nuclear sequences with<lb/> the inclusion of hybrid specimens in the analysis. The two panels (a &amp; b) are close-ups on the topological position of the cloned sequences. The<lb/> topology of the rest of the phylogeny (not shown) is as in Figure 1.<lb/>
+			</figure>
 
 			<figure>	
-				 <head>Figure 5 Distribution of potentially hybridising species.</head> 
+				 Figure 5 Distribution of potentially hybridising species.
 				 
-				 <figDesc>Species distribution following <ref type="biblio">[17]</ref>, of species likely implicated in hybridisation events.<lb/> The localities of the sequenced hybrid individuals are shown by yellow dots or area when known. The precise geographical origin of the hybrid 2<lb/> individual is unknown, the question mark sign indicates the general area where it was collected.<lb/></figDesc> 
+				 Species distribution following [17], of species likely implicated in hybridisation events.<lb/> The localities of the sequenced hybrid individuals are shown by yellow dots or area when known. The precise geographical origin of the hybrid 2<lb/> individual is unknown, the question mark sign indicates the general area where it was collected.<lb/>
 			</figure>	
 			 
 			<p>clownfishes, it is ancestral to 24 of the 28 species (30 de-<lb/>scribed species minus A. leucokranos and A. thiellei<lb/> which were likely described from hybrid material <ref type="biblio">[20]</ref>).<lb/> This clade represents a major shift in diversification rate<lb/> with a 2.5-fold increase compared to the diversification<lb/> rate of Pomacentridae <ref type="biblio">[22,23]</ref>. The pattern of concurrent<lb/> increase in rate of diversification and occurrence of hy-<lb/>bridisation fits into the framework of the syngameon hy-<lb/>pothesis <ref type="biblio">[6]</ref>, where hybridisation events preludes an<lb/> acceleration of ecological differentiation and diversification<lb/> rate. Moreover, this result is robust regarding node support,<lb/> as the relationship between the clarkii and the ephippium<lb/> clade is itself highly supported (see Additional file 1).<lb/></p> 

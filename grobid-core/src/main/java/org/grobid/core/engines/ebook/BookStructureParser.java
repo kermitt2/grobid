@@ -59,7 +59,7 @@ public class BookStructureParser extends AbstractParser {
             }
 
             String fulltext = getFulltextFeatured(doc);
-            List<String> tokenizations = doc.getTokenizationsFulltext();
+            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
 
             // we write the header untagged
             String outPathFulltext = pathFullText + "/" + PDFFileName.replace(".pdf", ".fulltext");
@@ -113,8 +113,8 @@ public class BookStructureParser extends AbstractParser {
         int documentLength = 0;
         int pageLength = 0; // length of the current page
 
-        List<String> tokenizationsBody = new ArrayList<String>();
-        List<String> tokenizations = doc.getTokenizations();
+        List<LayoutToken> tokenizationsBody = new ArrayList<LayoutToken>();
+        List<LayoutToken> tokenizations = doc.getTokenizations();
 
         // we calculate current document length and intialize the body tokenization structure
         for (Block block : blocks) {
@@ -324,13 +324,14 @@ public class BookStructureParser extends AbstractParser {
                 }
 
                 if (newPage) {
-                    features.pageStatus = "PAGESTART";
+                    //features.pageStatus = "PAGESTART";
                     newPage = false;
                     endPage = false;
-                    if (previousFeatures != null)
-                        previousFeatures.pageStatus = "PAGEEND";
+                    if (previousFeatures != null) {
+                        //previousFeatures.pageStatus = "PAGEEND";
+					}
                 } else {
-                    features.pageStatus = "PAGEIN";
+                    //features.pageStatus = "PAGEIN";
                     newPage = false;
                     endPage = false;
                 }
@@ -351,7 +352,7 @@ public class BookStructureParser extends AbstractParser {
                     features.digit = "CONTAINSDIGITS";
                 }
 
-                if (featureFactory.test_common(text)) {
+                /*if (featureFactory.test_common(text)) {
                     features.commonName = true;
                 }
 
@@ -361,14 +362,14 @@ public class BookStructureParser extends AbstractParser {
 
                 if (featureFactory.test_month(text)) {
                     features.month = true;
-                }
+                }*/
 
                 Matcher m = featureFactory.isDigit.matcher(text);
                 if (m.find()) {
                     features.digit = "ALLDIGIT";
                 }
 
-                Matcher m2 = featureFactory.YEAR.matcher(text);
+                /*Matcher m2 = featureFactory.YEAR.matcher(text);
                 if (m2.find()) {
                     features.year = true;
                 }
@@ -381,7 +382,7 @@ public class BookStructureParser extends AbstractParser {
                 Matcher m4 = featureFactory.HTTP.matcher(text);
                 if (m4.find()) {
                     features.http = true;
-                }
+                }*/
 
                 if (currentFont == null) {
                     currentFont = token.getFont();
@@ -451,7 +452,7 @@ public class BookStructureParser extends AbstractParser {
      * Extract results from a labelled header in the training format without any string modification.
      */
     private StringBuffer trainingExtraction(String result,
-                                            List<String> tokenizations) {
+                                            List<LayoutToken> tokenizations) {
         // this is the main buffer for the whole header
         StringBuffer buffer = new StringBuffer();
 
@@ -483,7 +484,7 @@ public class BookStructureParser extends AbstractParser {
 
                     boolean strop = false;
                     while ((!strop) & (p < tokenizations.size())) {
-                        String tokOriginal = tokenizations.get(p);
+                        String tokOriginal = tokenizations.get(p).t();
                         if (tokOriginal.equals(" ")) {
                             addSpace = true;
                         } else if (tokOriginal.equals(s)) {

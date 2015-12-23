@@ -104,10 +104,9 @@
 			
 			<p>Quantification of colocalization of HaWLIM1 with tubulin was carried out on confocal<lb/> sections of double-labelled protoplasts. For each section two confocal images (one for<lb/> HaWLIM1 labelling, the other one for actin or tubulin labelling) were recorded in sequential<lb/> mode to avoid cross talking. Images were analysed with image processing software ImagePro<lb/> Plus (Media Cybernetics, Silver Spring, USA). After thresholding the images to eliminate<lb/> background fluorescence, a region of interest (ROI) was carefully hand-designed inside the<lb/> protoplast area, excluding chloroplasts and the nuclear region. Then, the colocalization<lb/> coefficients were calculated according to the method described by <ref type="biblio">Manders et al. (1992)</ref>.<lb/> Results presented are mean percentages calculated on 30 image pairs analysed in the same<lb/> conditions.<lb/></p>
 
-			<head>Acknowledgements<lb/> </head>
+			<!--head>Acknowledgements<lb/> </head>
 			
-			<p>The authors are grateful to Dr R. Ranjeva for helpful comments on the manuscript and to<lb/> Prof. Laurent Gentzbittel for his help in optimising RT-PCR experiments. We thank Annie<lb/> Perrault and Philippe Anson for their technical assistance. This work was supported by a<lb/> Bonus Qualité Recherche from INPT. A.C. Bordel was recipient of a predoctoral grant from<lb/> the Ministère de l&apos;Education Nationale, de la Recherche et de la Technologie.</p>
-
+			<p>The authors are grateful to Dr R. Ranjeva for helpful comments on the manuscript and to<lb/> Prof. Laurent Gentzbittel for his help in optimising RT-PCR experiments. We thank Annie<lb/> Perrault and Philippe Anson for their technical assistance. This work was supported by a<lb/> Bonus Qualité Recherche from INPT. A.C. Bordel was recipient of a predoctoral grant from<lb/> the Ministère de l&apos;Education Nationale, de la Recherche et de la Technologie.</p-->
 
 	</text>
 </tei>

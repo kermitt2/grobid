@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_91"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<p>We present a spectroscopy study of a 3 quantum wells -microcavity (3QW/MC) structure that can be<lb/> interpreted by electron tunneling induced by the interaction between exciton-polaritons and Fermi-edge<lb/> polaritons. The 3QW/MC consists of three GaAs QW&apos;s (<ref type="figure">Fig.1a</ref>) located at the electromagnetic field antinodes of<lb/> the 2λ-wide MC confined photon (energy range E c ~1.52–1.56eV). The middle QW is empty and the two side<lb/> QW&apos;s are one-side delta-doped, having a (measured) 2DEG density of n e =1.1x10 11 cm -2 .<lb/></p> 
+			
+			<p>Reflection (R) and photoluminescence (PL) spectra were measured for the 3QW/MC and for three<lb/> reference structures: 1. A mixed type I-type II QW embedded in a microcavity (MTQW/MC), in which n e is<lb/> varied with laser excitation intensity. 2. A modulation doped QW embedded in a microcavity (MDQW/MC)<lb/> with a 2DEG density of n e =1.1x10 11 cm -2 . 3. A bare 3QW structure with layer widths and n e value that are<lb/> identical to those of the 3QW/MC (but it does not have distributed Bragg reflectors).<lb/></p> 
+			
+			<p>The R spectra of the MTQW/MC show narrow polariton lines for n e &lt; 1x10 10 cm -2 . These polaritons<lb/> arise from the X hh1 , X lh1 and X hh1,2S excitons. In addition, a polariton line due to charged excitons (X hh1 -) appears<lb/> whose intensity increases with n e <ref type="biblio">[1]</ref>. When n e &gt;2x10 10 cm -2 all these exciton-polaritons disappear. The R<lb/> spectra of MDQW/MC show broad Fermi-edge polariton bands that are due to transitions at k F between the<lb/> filled e1 subband and the hh1 and lh1 subbands <ref type="biblio">[2]</ref>.<lb/></p> 
+			
+			<p>Comparing R and PL spectra of 3QW/MC with the reference samples, we observe two types of<lb/> polaritons in 3QW/MC: 1. Exciton-polaritons that result of the resonant interaction of the empty QW excitons<lb/> with the confined photon (narrow lines with widths ~0.5meV). 2. Fermi-edge polaritons resulting of the<lb/> resonant interaction between Fermi-edge transitions of the two doped QW&apos;s and the confined photon. These are<lb/> broader lines (widths reaching ~2meV). A few examples of R and PL spectra in the resonance range are shown<lb/> in <ref type="figure">Fig. 1b</ref>. The polariton peak energies vs. the detuning energy, δ = (E c – E(X hh1 )), are shown in <ref type="figure">Fig. 1c</ref> (heavy<lb/> dots mark exciton-polariton energies, dashed red lines – Fermi-edge polaritons).<lb/></p> 
+			
+			<p>A narrow polariton line that corresponds to charged excitons (X hh1 -) appears in the R and PL spectra of<lb/> 3QW/MC. The measured ratio of PL intensities, I(X hh1 -) / I(X hh1 ), varies with δ by a factor of ~30 (<ref type="figure">Fig. 1d</ref>), and<lb/> it has two peaks at the coincidence energies of the Fermi-edge polariton with the exciton-polariton. This ratio<lb/> provides an estimate of the electron density in the empty (middle) QW. Its variation and the fact that no X hh1 -<lb/>line is observed in the bare 3QW structure, can be interpreted in terms of electron tunneling, over a long range<lb/> (optical wavelength), from the two doped QW&apos;s into the empty QW of the 3QW/MC.<lb/></p>
+
+			<figure>
+				<head>1a<lb/></head>
+			</figure>
+
+			<figure>
+				<head>1b</head>
+			</figure>
+			
+			<figure>
+				<head>1c<lb/></head>
+			</figure>
+			
+			<figure>
+				<head>1d<lb/></head>
+			</figure>
+
+	</text>
+</tei>

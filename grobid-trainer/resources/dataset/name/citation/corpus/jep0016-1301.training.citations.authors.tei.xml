@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+
+						<author><surname>Virtanen</surname>, <forename>H</forename>., <surname>Leino-Kilpi</surname>, <forename>H</forename>. &amp; <surname>Salantera</surname>, <forename>S</forename>.</author>
+
+						<author><surname>Ouschan</surname>, <forename>R</forename>., <surname>Sweeney</surname>, <forename>J</forename>. <middlename>C</middlename>. &amp; <surname>Johnson</surname>, <forename>L</forename>. <middlename>W</middlename>.</author>
+
+						<author><surname>St-Cyr Tribble</surname>, <forename>D</forename>., <surname>Gallagher</surname>, <forename>F</forename>., <surname>Bell</surname>, <forename>L</forename>., et al.</author>
+
+						<author><surname>Aujoulat</surname>, <forename>I</forename>., <surname>D&apos;Hoore</surname>, <forename>W</forename>. &amp; <surname>Deccache</surname>, <forename>A</forename>.</author>
+
+						<author><surname>Stewart</surname>, <forename>M</forename>. <middlename>A</middlename>., <surname>Belle Brown</surname>, <forename>J</forename>. <middlename>B</middlename>., <surname>Weston</surname>, <forename>W</forename>. <middlename>W</middlename>., <surname>McWhinney</surname>, <forename>I</forename>. <middlename>R</middlename>., <surname>McWilliam</surname>, <forename>C</forename>. <middlename>L</middlename>. &amp; <surname>Freeman</surname>, <forename>T</forename>. <middlename>R</middlename>.</author>
+
+						<author><surname>Mead</surname>, <forename>N</forename>. &amp; <surname>Bower</surname>, <forename>P</forename>.</author>
+
+						<author><surname>Clay</surname>, <forename>T</forename>.</author>
+
+						<author><surname>Hawks</surname>, <forename>J</forename>. <middlename>H</middlename>.</author>
+
+						<author><surname>Rodwell</surname>, <forename>C</forename>. <middlename>M</middlename>.</author>
+
+						<author><surname>Ellis-Stoll</surname>, <forename>C</forename>.</author>
+
+						<author><surname>St-Cyr Tribble</surname>, <forename>D</forename>., <surname>Gallagher</surname>, <forename>F</forename>., <surname>Paul</surname>, <forename>D</forename>. &amp; <surname>Archambault</surname>, <forename>J</forename>.</author>
+
+						<author><surname>Loukanova</surname>, <forename>S</forename>., <surname>Molnar</surname>, <forename>R</forename>. &amp; <surname>Bridges</surname>, <forename>J</forename>. <middlename>F</middlename>. <middlename>P</middlename>.</author>
+
+						<author><surname>Bossuyt</surname>, <forename>P</forename>. <middlename>M</middlename>. &amp; <surname>Reitsma</surname>, <forename>J</forename>. <middlename>B</middlename>.</author>
+
+						<author><surname>Bossuyt</surname>, <forename>P</forename>. <middlename>M</middlename>., <surname>Reitsma</surname>, <forename>J</forename>. <middlename>B</middlename>., <surname>Bruns</surname>, <forename>D</forename>. <middlename>E</middlename>., et al.</author>
+
+						<author><surname>Meyer</surname>, <forename>G</forename>. <middlename>J</middlename>.</author>
+
+						<author><surname>Altman</surname>, <forename>D</forename>. <middlename>G</middlename>., <surname>Schilz</surname>, <forename>K</forename>. <middlename>F</middlename>., <surname>Moher</surname>, <forename>D</forename>., et al.</author>
+
+						<author><surname>Streiner</surname>, <forename>D</forename>. <middlename>L</middlename>. &amp; <surname>Norman</surname>, <forename>G</forename>. <middlename>R</middlename>.</author>
+
+						<author><surname>Légaré</surname>, <forename>F</forename>., <surname>Moher</surname>, <forename>D</forename>., <surname>Elwyn</surname>, <forename>G</forename>., <surname>LeBlanc</surname>, <forename>A</forename>. &amp; <surname>Gravel</surname>, <forename>K</forename>.</author>
+
+						<author><surname>McDowell</surname>, <forename>I</forename>.</author>
+
+						<author><surname>Howie</surname>, <forename>J</forename>. <middlename>G</middlename>., <surname>Heaney</surname>, <forename>D</forename>. <middlename>J</middlename>. &amp; <surname>Maxwell</surname>, <forename>M</forename>.</author>
+
+						<author><surname>Pawlikowska</surname>, <forename>T</forename>. <middlename>R</middlename>., <surname>Nowak</surname>, <forename>P</forename>. <middlename>R</middlename>., <surname>Szumilo-Grzesik</surname>, <forename>W</forename>. &amp; <surname>Walker</surname>, <forename>J</forename>. <middlename>J</middlename>.</author>
+
+						<author><surname>Kilian</surname>, <forename>R</forename>., <surname>Lindenbach</surname>, <forename>I</forename>., <surname>Löbig</surname>, <forename>U</forename>., <surname>Uhle</surname>, <forename>M</forename>., <surname>Petscheleit</surname>, <forename>A</forename>. &amp; <surname>Angermeyer</surname>, <forename>M</forename>. <middlename>C</middlename>.</author>
+
+						<author><surname>van Uden-Kraan</surname>, <forename>C</forename>. <middlename>F</middlename>., <surname>Drossaert</surname>, <forename>C</forename>. <middlename>H</middlename>., <surname>Taal</surname>, <forename>E</forename>., <surname>Seydel</surname>, <forename>E</forename>. <middlename>R</middlename>. &amp; <surname>van de Laar</surname>, <forename>M</forename>. <middlename>A</middlename>.</author>
+
+						<author>39. <surname>Klakovich</surname>, <forename>M</forename>.</author>
+
+						<author><surname>Rissel</surname>, <forename>C</forename>., <surname>Perry</surname>, <forename>C</forename>. &amp; <surname>Finnegan</surname>, <forename>J</forename>.</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

@@ -11,8 +11,8 @@ import java.util.List;
  * Utilities to calculate bounding boxes from coordinates
  */
 public class BoundingBoxCalculator {
-    private static final double EPS_X = 10;
-    private static final double EPS_Y = 3;
+    private static final double EPS_X = 15;
+    private static final double EPS_Y = 4;
 
     public static List<BoundingBox> calculate(List<LayoutToken> tokens) {
         List<BoundingBox> result = Lists.newArrayList();
@@ -26,9 +26,12 @@ public class BoundingBoxCalculator {
         BoundingBox lastBox = firstBox;
         for (int i = 1; i < tokens.size(); i++) {
             BoundingBox b = BoundingBox.fromLayoutToken(tokens.get(i));
+            if (Math.abs(b.getWidth()) <= Double.MIN_VALUE || Math.abs(b.getHeight()) <= Double.MIN_VALUE) {
+                continue;
+            }
 
             if (near(lastBox, b)) {
-                result.get(result.size() - 1).boundBox(b);
+                result.set(result.size() - 1, result.get(result.size() - 1).boundBox(b));
             } else {
                 result.add(b);
             }
@@ -37,8 +40,11 @@ public class BoundingBoxCalculator {
         return result;
     }
 
+    //same page, Y is more or less the same, b2 follows b1 on X, and b2 close to the end of b1
     private static boolean near(BoundingBox b1, BoundingBox b2) {
-        return Math.abs(b1.getY() - b2.getY()) < EPS_Y && Math.abs(b1.getY2() - b2.getY2()) < EPS_Y && b2.getX() - b1.getX2() < EPS_X;
+        return b1.getPage() == b2.getPage()
+                && Math.abs(b1.getY() - b2.getY()) < EPS_Y && Math.abs(b1.getY2() - b2.getY2()) < EPS_Y
+                && b2.getX() - b1.getX2() < EPS_X && b2.getX() >= b1.getX();
     }
 
 }

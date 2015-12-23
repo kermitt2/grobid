@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_107"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<figure>
+				<head>Figure <label>1</label>:</head>
+				<figDesc>Threshold characteristic: illustration of the<lb/> bistability and hysteresis. We pump at k p = 1.25 · 10 6 m −1 .<lb/> Blue: T = 0.1 K, red: T = 1 K, black: T = 5K.<lb/></figDesc>
+			</figure>
+
+
+			<figure>
+				<trash>−5 −2.5<lb/> 0 2.5<lb/> 5 0<lb/> 100<lb/> 200<lb/> 300<lb/> 400<lb/> 500<lb/> 600<lb/> Concentration (µm<lb/> −1<lb/> )<lb/> Coordinate (µm)<lb/> −5 −2.5<lb/> 0 2.5<lb/> 5 0<lb/> 200<lb/> 400<lb/> 600<lb/></trash>
+				<head>Figure <label>2</label>:</head>
+				<figDesc>Polaritonic droplet transport in 1D channel for<lb/> different temperatures. Backscattering is suppressed at<lb/> some temperature due to scattering on phonons.<lb/></figDesc>
+			</figure>
+
+	</text>
+</tei>

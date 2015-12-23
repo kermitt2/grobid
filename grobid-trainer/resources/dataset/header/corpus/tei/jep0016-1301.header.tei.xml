@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="jep0016-1301"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Assessing enablement in clinical practice: a systematic<lb/> review of available instruments</titlePart>
+	</docTitle>
+
+	<note type="other">j ep_1332 1301..1308<lb/></note>
+
+	<byline>
+	<docAuthor>Catherine Hudon MD MSc CMFC, 1 Denise St-Cyr Tribble RN PhD, 2 France Légaré MD PhD FCMF, 3<lb/> Gina Bravo PhD, 4 Martin Fortin MD MSc FCMF 5 and José Almirall MD PhD 6<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Associate Professor, Department of Family Medicine, Université de Sherbrooke,</affiliation>
+	</byline>
+
+	<address>Sherbrooke, Québec, Canada<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Full Professor, School of Nursing Science, Université de Sherbrooke,</affiliation>
+	</byline>
+
+	<address>Sherbrooke, Québec, Canada<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> Associate Professor, Department of Family Medicine, Université Laval,</affiliation>
+	</byline>
+
+	<address>Québec, Québec, Canada<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> Full Professor, Department of Community Health Sciences, Université de Sherbrooke,</affiliation>
+	</byline>
+
+	<address>Sherbrooke, Québec, Canada<lb/></address>
+
+	<byline>
+	<affiliation>5<lb/> Full Professor, Department of Family Medicine, Université de Sherbrooke,</affiliation>
+	</byline>
+
+	<address>Sherbrooke, Québec, Canada<lb/></address>
+
+	<byline>
+	<affiliation>6<lb/> Research Assistant, Centre de santé et de services sociaux de Chicoutimi,</affiliation>
+	</byline>
+
+	<address>Chicoutimi, Québec, Canada<lb/></address>
+
+	<keyword>Keywords<lb/> empowerment, enablement, instruments,<lb/> professional practice, questionnaires,<lb/> systematic review<lb/></keyword>
+
+	<note type="other">Correspondence<lb/> Catherine Hudon<lb/> 305 St-Vallier<lb/> Chicoutimi<lb/> Québec<lb/> Canada G7H 5H6<lb/></note>
+
+	<email>E-mail: catherine.hudon@usherbrooke.ca<lb/></email>
+
+	<note type="copyright">Re-use of this article is permitted in<lb/> accordance with the Terms and Conditions<lb/> set out at</note>
+
+	<ptr type="web">http://wileyonlinelibrary.com/<lb/> onlineopen#OnlineOpen_Terms<lb/></ptr>
+
+	<note type="submission">Accepted for publication: 10 August 2009<lb/></note>
+
+	<idno>doi:10.1111/j.1365-2753.2009.01332.x<lb/></idno>
+
+	<div type="abstract">Abstract<lb/> Rationale, aims and objectives Enablement is an intervention by which the health care<lb/> provider recognizes, promotes and enhances patients&apos; ability to control their health and life.<lb/> An abundant health literature suggests that enablement is associated with good outcomes.<lb/> In this review, we aimed at identifying and comparing instruments that assess enablement<lb/> in the health care context.<lb/> Method We conducted a systematic literature review using Medline, Embase, Cochrane,<lb/> Cinahl and PsycINFO databases, 1980 through March 2009, with specific search strategy<lb/> for each database. Citations were included if they reported: (1) development and/or vali-<lb/>dation of an instrument; (2) evaluation of enablement in a health care context; and (3)<lb/> quantitative results following administration of the instrument. The quality of each main<lb/> retained citation was assessed using a modified version of the Standards for Reporting of<lb/> Diagnostic Accuracy.<lb/> Results Of 3135 citations identified, 53 were retrieved for detailed evaluation. Four<lb/> articles were included. Two instruments were found: the Patient Empowerment Scale (PES)<lb/> and the Empowering Speech Practices Scale (ESPS). Both instruments assessed enable-<lb/>ment in hospital setting, one from the inpatient&apos;s perspective (PES) and the other from both<lb/> perspectives (ESPS).<lb/> Conclusion Two instruments assess enablement in hospital setting. No instrument is<lb/> currently available to assess enablement in an ambulatory care context.<lb/></div>
+
+		</front>
+	</text>
+</tei>

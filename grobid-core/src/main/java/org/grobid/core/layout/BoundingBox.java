@@ -21,7 +21,7 @@ public class BoundingBox {
     }
 
     public static BoundingBox fromTwoPoints(int page, double x1, double y1, double x2, double y2) {
-        if (x1 >= x2 || y1 > y2) {
+        if (x1 > x2 || y1 > y2) {
             throw new IllegalArgumentException("Invalid points provided: (" + x1 + ";" + y1 + ")-(" + x2 + ";" + y2 + ")");
         }
         return new BoundingBox(page, x1, y1, x2 - x1, y2 - y1);
@@ -65,7 +65,7 @@ public class BoundingBox {
 
     public BoundingBox boundBox(BoundingBox o) {
         if (this.page != o.page) {
-            throw new IllegalStateException("Cannot computer a bounding box for different pages");
+            throw new IllegalStateException("Cannot compute a bounding box for different pages");
         }
         return fromTwoPoints(o.page, Math.min(this.x, o.x), Math.min(this.y, o.y), Math.max(this.x2, o.x2), Math.max(this.y2, o.y2));
     }

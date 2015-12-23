@@ -1,0 +1,27 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_12985_2015_Article_447.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure type="table">
+
+            <head>Table <label>1</label> Summary of patient characteristics and virological<lb/> findings<lb/></head>
+ 
+            <table>HBeAg+<lb/> n = 16<lb/> HBeAg–<lb/> n = 68<lb/> P value<lb/> Age, years, median, (range) 27 (16–60)<lb/> 34 (18–59)<lb/> 0.02<lb/> Gender (M/F)<lb/> 11/5<lb/> 40/28<lb/> 0.57<lb/> Genotype (A/B/C/D)<lb/> 3/4/2/7<lb/> 15/7/3/43<lb/> –<lb/> Serum HBV DNA a<lb/> 8.30 ± 0.38<lb/> 4.30 ± 0.14<lb/> &lt;0.0001<lb/> Serum HBsAg b<lb/> 4.40 ± 0.18<lb/> 3.41 ± 0.11<lb/> &lt;0.0001<lb/> HBV DNA/HBsAg<lb/> 3.90 ± 0.29<lb/> 0.89 ± 0.14<lb/> &lt;0.0001<lb/> ALT/ULN, median, (range)<lb/> 1.37 (0.68–8.6) 0.72 (0.24–12.38) &lt;0.001<lb/> cccDNA c<lb/> −0.70 ± 0.20<lb/> −2.67 ± 0.10<lb/> &lt;0.0001<lb/> S RNA c /cccDNA c<lb/> 1.65 ± 0.20<lb/> 2.73 ± 0.11<lb/> &lt;0.0001<lb/> pgRNA c /cccDNA c<lb/> 2.04 ± 0.12<lb/> 1.50 ± 0.11<lb/> &lt;0.01<lb/> pgRNA c /S RNA c<lb/> 0.39 ± 0.23<lb/> −1.22 ± 0.07<lb/> &lt;0.0001<lb/> Virological values as mean ± SEM. P values by Mann-Whitney U test for age<lb/> and ALT, t test for virological parameters and Fisher&apos;s exact test for gender<lb/> a<lb/> log 10 cp/mL<lb/> b<lb/> log 10 IU/mL<lb/> c<lb/> log 10 copies/cEq (cell equivalent), ALT/Upper Limit of Normal</table>
+        </figure>
+
+
+        <figure type="table">
+
+            <head>Table <label>2 </label> Oligonucleotide sequences of primers and probes<lb/> </head>
+
+            <table>Target Oligo<lb/> Sequence a<lb/> Nucleotide<lb/> position b<lb/> S-RNA Forward<lb/> primer<lb/> TCCTCCAAYTTGTCCTGGTYATC<lb/> 350–372<lb/> Reverse<lb/> primer<lb/> AGATGAGGCATAGCAGCAGGAT<lb/> 432–410<lb/> Probe<lb/> (AS)<lb/> ATGATAAAACGCCGCAGACACATCCARC 400–373<lb/> pgRNA Forward<lb/> primer<lb/> GGTCCCCTAGAAGAAGAACTCCCT<lb/> 2367–2390<lb/> Reverse<lb/> primer<lb/> CATTGAGATTCCCGAGATTGAGAT<lb/> 2454–2431<lb/> Probe<lb/> TCTCAATCGCCGCGTCGCAGA<lb/> 2408–2428<lb/> cccDNA Forward<lb/> primer<lb/> CCGTGTGCACTTCGCTTCA<lb/> 1575–1593<lb/> Reverse<lb/> primer<lb/> GCACAGCTTGGAGGCTTGA<lb/> 1882–1864<lb/> Probe<lb/> CATGGAGACCACCGTGAACGCCC<lb/> 1607–1629<lb/> a<lb/> Y, T or C; R, A or G; AS, antisense<lb/> b<lb/> Position in genotype A genome<lb/> </table>
+        </figure>
+
+
+
+    </text>
+</tei>
+

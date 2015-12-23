@@ -1,0 +1,51 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_1512.00002.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure type="table">
+
+            <head>TABLE  <label>I</label>. DETECTOR DISPLACEMENT ε IN IACTS FOR FSOC OPERATION.<lb/> </head>
+            <lb/> 
+            <table>Telescope<lb/> Diameter<lb/> D (m)<lb/> f/D<lb/> Focal length<lb/> f (m)<lb/> ε (cm)<lb/> MAGIC<lb/> 17<lb/> 1<lb/> 17<lb/> 2.9<lb/> CTA-SST<lb/> 6<lb/> 0.5<lb/> 12<lb/> 1.4<lb/> CTA-MST<lb/> 12<lb/> 1 / 0.75<lb/> 16<lb/> 2.5<lb/> CTA-LST<lb/> 24<lb/> 1.25<lb/> 30<lb/> 9</table>
+        </figure>
+
+
+        <figure type="table">
+
+            <head>TABLE <label>III</label>. LINK BUDGET AND SNR FOR EACH SCENARIO ASSUMING WORST-CASE BACKGROUND-NOISE LEVELS. IN EACH CASE, THE SIMPLEST TELESCOPE<lb/> ALTERNATIVES WERE PREFERRED (INDICATED IN Gr BETWEEN BRACKETS, AS WELL AS THE NUMBER OF ELEMENTS WHEN USING AN ARRAY OPERATION).<lb/> </head>
+
+            <table>LEO<lb/> Moon<lb/> Lagrange L1<lb/> Lagrange L2<lb/> Mars opposition<lb/> Mars conjunction<lb/> Pt (dBm)<lb/> 26.99<lb/> 26.99<lb/> 30<lb/> 30<lb/> 36.02<lb/> 36.02<lb/> Lt (dB)<lb/> -3.01<lb/> -4.81<lb/> -4.56<lb/> -4.56<lb/> -5.19<lb/> -5.19<lb/> Gt (dB)<lb/> 104.20<lb/> 106.77<lb/> 108.74<lb/> 108.74<lb/> 112.98<lb/> 112.98<lb/> Lel (dB)<lb/> -260.46<lb/> -309.86<lb/> -324.2<lb/> -324.2<lb/> -354.91<lb/> -370.22<lb/> Latm (dB)<lb/> -2.64<lb/> -1.44<lb/> -2.64<lb/> -2.64<lb/> -0.42<lb/> -0.42<lb/> Gr (dB)<lb/> 135.29 (1×SST-DC) 135.29 (1×SST-DC) 147.36 (1×MST-DC) 135.29 (1×SST-DC) 147.36 (1×MST-DC) 147.36 (3×MST-SC)<lb/> Lr (dB)<lb/> -3.01<lb/> -3.34<lb/> -4.56<lb/> -4.56<lb/> -4.89<lb/> -4.89<lb/> Lrap (dB)<lb/> -0.11<lb/> -0.31<lb/> -0.08<lb/> -0.08<lb/> -0.05<lb/> -0.05<lb/> Pr (dBm)<lb/> -2.75<lb/> -50.72<lb/> -62<lb/> -62<lb/> -69.1<lb/> -78.7<lb/> SNR (dB)<lb/> 45.22<lb/> 3.27<lb/> 7.7<lb/> 25.3<lb/> 6.15<lb/> 3.74</table>
+        </figure>
+
+
+        <figure type="table">
+
+            <head>TABLE <label>II</label>. PARAMETERS USED IN THE LINK BUDGET CALCULATION.<lb/> </head>
+            <lb/> 
+            <table>LEO Moon<lb/> Lagrange<lb/> L1<lb/> Lagrange<lb/> L2<lb/> Mars<lb/> opposit.<lb/> Mars<lb/> conjunct.<lb/> Propagation<lb/> distance (km)<lb/> 1.3·10 3 384·10 3 2·10 6<lb/> 2·10 6 68.82·10 6 400·10 6<lb/> Mean tx power<lb/> (W)<lb/> 0.5<lb/> 0.5<lb/> 1<lb/> 1<lb/> 4<lb/> 4<lb/> Tx aperture<lb/> diameter (cm)<lb/> 8<lb/> 10.76<lb/> 13.5<lb/> 13.5<lb/> 22<lb/> 22<lb/> Tx transmission<lb/> (%)<lb/> 50<lb/> 33<lb/> 35<lb/> 35<lb/> 30.3<lb/> 30.3<lb/> Tx pointing<lb/> losses (dB)<lb/> 0.11<lb/> 0.31<lb/> 0.08<lb/> 0.08<lb/> 0.05<lb/> 0.05<lb/> Bit rate (bit/s) 10·10 9 622·10 6 120·10 6 700·10 6 260·10 6 764·10 3<lb/> Scintillation<lb/> losses (dB)<lb/> 2<lb/> 1<lb/> 2<lb/> 2<lb/> 0.2<lb/> 0.2<lb/> Atmospheric<lb/> losses (%)<lb/> 86.2<lb/> 90.3<lb/> 86.2<lb/> 86.2<lb/> 95<lb/> 95<lb/> PPM symbols (OOK) 16<lb/> 64<lb/> 16<lb/> 16<lb/> 128<lb/> Rx transmission<lb/> (%)<lb/> 50<lb/> 46.3<lb/> 35<lb/> 35<lb/> 32.4<lb/> 32.4<lb/> Operation<lb/> Night<lb/> and day<lb/> Night<lb/> and day<lb/> Day<lb/> Night<lb/> Night<lb/> Day</table>
+        </figure>
+
+
+        <figure type="table">
+
+            <head>TABLE <label>V</label>. APPROXIMATED GROUND STATIONS COSTS ACCORDING TO<lb/> THEIR TYPE (IACT, ASTRONOMICAL OR FSOC).<lb/> </head>
+
+            <table>Telescope<lb/> Type<lb/> Cost<lb/> CTA SST-SC<lb/> IACT<lb/> &lt;0.5 M€ [29]<lb/> CTA MST-DC<lb/> IACT<lb/> 1.6 M€ [30]<lb/> CTA LST<lb/> IACT<lb/> 7.4 M€ [30]<lb/> GTC / Keck<lb/> Astronomical<lb/> 100 M€ [34]<lb/> Hobby-Eberly / SALT<lb/> Astronomical<lb/> 50 M€ [31]<lb/> OLSG LEO<lb/> FSOC<lb/> 3.4 M€ [20]<lb/> OLSG Moon<lb/> FSOC<lb/> 15.3 M€ [20]<lb/> OLSG L1<lb/> FSOC<lb/> 12.5 M€ [20]<lb/> OLSG L2<lb/> FSOC<lb/> 10.9 M€ [20]<lb/> OLSG Mars<lb/> FSOC<lb/> 102.8 M€ [20]</table>
+        </figure>
+
+
+        <figure type="table">
+
+            <head>TABLE <label>IV</label>. SNR IN dB FOR EACH TELESCOPE AND SCENARIO, INCLUDING<lb/> BETWEEN BRACKETS THE NO. OF TELESCOPES PER ARRAY TO OVERCOME 3 dB.<lb/> </head>
+
+            <table>LEO<lb/> Moon<lb/> L1<lb/> L2<lb/> Mars<lb/> opp.<lb/> Mars<lb/> conj.<lb/> SST-<lb/>DC<lb/> 45.22<lb/> 3.27<lb/> -3.75<lb/> (5×) 3.2<lb/> 25.30<lb/> 6.15<lb/> -35.88<lb/> (7750×) 3<lb/> CTA-<lb/>LST<lb/> 56.52<lb/> 14.58<lb/> 7.55<lb/> 25.30<lb/> 6.15<lb/> -33.61<lb/> (4600×) 3<lb/> MST-<lb/>DC<lb/> 56.67<lb/> 14.73<lb/> 7.70<lb/> 25.30<lb/> 6.15<lb/> -24.43<lb/> (560×) 3<lb/> SST-SC<lb/> ASTRI<lb/> 67.35<lb/> 25.37<lb/> 18.35<lb/> 25.30<lb/> 6.15<lb/> -13.78<lb/> (48×) 3<lb/> SST-SC<lb/> GATE<lb/> 71.75<lb/> 29.80<lb/> 22.77<lb/> 25.30<lb/> 6.15<lb/> -9.35<lb/> (18×) 3.2<lb/> MST-<lb/>SC<lb/> 80.07<lb/> 50.03<lb/> 31.09<lb/> 25.30<lb/> 6.15<lb/> -1.04<lb/> (3×) 3.7</table>
+        </figure>
+
+
+
+    </text>
+</tei>
+

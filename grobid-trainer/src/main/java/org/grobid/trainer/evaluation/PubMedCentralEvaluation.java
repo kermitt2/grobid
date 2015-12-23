@@ -1,5 +1,6 @@
 package org.grobid.trainer.evaluation;
 
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.exceptions.*;
 import org.grobid.core.engines.Engine;
@@ -145,13 +146,14 @@ public class PubMedCentralEvaluation {
 				// run Grobid full text and write the TEI result in the directory
 				try {
 					System.out.println(n + " - " + pdfFile.getPath());
-					String tei = engine.fullTextToTEI(pdfFile.getPath(), false, false);
+					String tei = engine.fullTextToTEI(pdfFile, GrobidAnalysisConfig.defaultInstance());
 					// write the result in the same directory
 					File resultTEI = new File(dir.getPath() + File.separator
 						+ pdfFile.getName().replace(".pdf", ".tei.xml"));
 					FileUtils.writeStringToFile(resultTEI, tei, "UTF-8");
 				} 
 				catch (Exception e) {
+					System.out.println("Error when processing: " + pdfFile.getPath());
 					e.printStackTrace();
 				}
 				n++;

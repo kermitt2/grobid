@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_1471-2148-8-1"/>
+	</teiHeader>
+	<text xml:lang="en">
+			
+			<figure type="table">	
+				<head>Table <label>1</label>: Strain table<lb/></head>
+				
+				<table>Pairing<lb/> Known as<lb/> Strain<lb/> Species<lb/> Isolated From<lb/> Location<lb/> Ref.<lb/> 1<lb/> Sc1<lb/> Y55<lb/> S. cerevisiae<lb/> Wine Grape<lb/> France a<lb/>[14]<lb/> Sp1<lb/> N-17<lb/> S. paradoxus<lb/> Oak tree<lb/> Tatarstan, Russia b<lb/> [29]<lb/> 2<lb/> Sc2<lb/> SK1<lb/> S. cerevisiae<lb/> Soil (Lab strain)<lb/> USA (exact location unknown) c<lb/> [14]<lb/> Sp2<lb/> YPS138<lb/> S. paradoxus<lb/> Soil beneath oak tree<lb/> Tyler Arboretum Media, PA, USA d<lb/> [30]<lb/> 3<lb/> Sc3<lb/> YPS128<lb/> S. cerevisiae<lb/> Soil beneath oak tree<lb/> Tyler Arboretum Media, PA, USA d<lb/> [30]<lb/> Sp3<lb/> YPS145<lb/> S. paradoxus<lb/> Soil beneath oak tree<lb/> Tyler Arboretum Media, PA, USA d<lb/> [30]<lb/> 4<lb/> Sc4<lb/> YPS681<lb/> S. cerevisiae<lb/> Oak tree<lb/> Buck Hill Falls, PA, USA e<lb/> [15]<lb/> Sp4<lb/> YPS664<lb/> S. paradoxus<lb/> Oak tree<lb/> Buck Hill Falls, PA, USA e<lb/> [15]<lb/> 5<lb/> Sc5<lb/> YPS670<lb/> S. cerevisiae<lb/> Oak tree<lb/> Buck Hill Falls, PA, USA e<lb/> [15]<lb/> Sp5<lb/> YPS646<lb/> S. paradoxus<lb/> Oak tree<lb/> Buck Hill Falls, PA, USA e<lb/> [15]<lb/></table>
+ 
+  				<figDesc>Table showing the strains used in each of the 5 species pairs.<lb/> For the purpose of our analysis, we considered pairs 1 and 2 to be allopatric and pairs 3, 4, and 5 to be sympatric.<lb/> a – Exact time of isolation unknown but believed to be between 1930 and 1960.<lb/> b – Exact time of isolation unknown – first published reference is from 1988 [31]<lb/> c – Exact time of isolation unknown – first published reference from 1974 [32]<lb/> d – Isolated in July 1999<lb/> e – Isolated in 2000<lb/></figDesc> 
+			</figure>
+
+			<figure type="table">	
+				<head>Table <label>2</label>: Mate choice information table<lb/></head> 
+				
+				<table>Pair<lb/> &quot;chooser&quot;<lb/> strain<lb/> Total<lb/> trials as<lb/> &quot;chooser&quot;<lb/> Total<lb/> zygotes<lb/> formed<lb/> Observed<lb/> number of<lb/> hybrid<lb/> zygotes<lb/> Expected<lb/> number of<lb/> hybrid<lb/> zygotes a<lb/>Hybrid zygote<lb/> χ 2 (p value) b<lb/> Always own<lb/> species χ 2 (p<lb/> value) c<lb/> Mating<lb/> propensity d<lb/> Mating<lb/> Prospensity χ 2<lb/> (p value)<lb/> 1<lb/> Sc1<lb/> 300<lb/> 115<lb/> 49<lb/> 76.67<lb/> 28.89 (&lt;0.001) 4.882943 (0.0271)<lb/> 51.11<lb/> 1.035 (0.3089)<lb/> Sp1<lb/> 206<lb/> 69<lb/> 34<lb/> 46<lb/> 8.63 (0.0033)<lb/> 8.628882 (0.0033)<lb/> 44.66<lb/> 2<lb/> Sc2<lb/> 270<lb/> 88<lb/> 28<lb/> 58.67<lb/> 31.82 (&lt;0.001) 0.035264 (0.8510)<lb/> 43.46<lb/> 2.212 (0.1369)<lb/> Sp2<lb/> 220<lb/> 85<lb/> 47<lb/> 56.67<lb/> 4.45 (0.0349)<lb/> 19.4555 (&lt;0.0001)<lb/> 51.51<lb/> 3<lb/> Sc3<lb/> 250<lb/> 70<lb/> 22<lb/> 46.67<lb/> 31.42 (&lt;0.001) 0.044643 (0.8327)<lb/> 37.33<lb/> 0.164 (0.6857)<lb/> Sp3<lb/> 344<lb/> 90<lb/> 42<lb/> 60<lb/> 15.31 (&lt;0.001)<lb/> 7.8125 (0.0052)<lb/> 34.88<lb/> 4<lb/> Sc4<lb/> 210<lb/> 78<lb/> 25<lb/> 52<lb/> 40.51 (&lt;0.001) 0.014423 (0.9044)<lb/> 49.52<lb/> 0.0046 (0.9462)<lb/> Sp4<lb/> 220<lb/> 80<lb/> 38<lb/> 53.33<lb/> 12.38 (&lt;0.001)<lb/> 7.876563 (0.005)<lb/> 48.48<lb/> 5<lb/> Sc5<lb/> 240<lb/> 90<lb/> 26<lb/> 60<lb/> 56.13 (&lt;0.001) 0.877974 (0.3488)<lb/> 50.00<lb/> 2.229 (0.1355)<lb/> Sp5<lb/> 260<lb/> 80<lb/> 33<lb/> 53.33<lb/> 22.13 (&lt;0.001) 2.626563 (0.1051)<lb/> 41.03<lb/></table>
+
+				<figDesc>Table showing the raw data obtained from the mate choice trials as well as the hybrid zygote and mating propensity χ 2 values.<lb/> a – The expected number of hybrid zygotes if no mating preference exists between the two species (2/3 total – see Methods)<lb/> b – χ 2 test on the number of hybrid zygotes observed compared to the number expected if there is no mate preference (Yates corrected) (see also<lb/> Figure 2).<lb/> c – χ 2 test on the number of hybrid zygotes observed compared to the 1/3 expected under the &quot;always choose own species&quot; model. (see Figures 1<lb/> and Methods)<lb/> d – Percentage of mating trials producing zygotes after correcting for the 25% of trials that cannot form zygotes because all three spores are the<lb/> same mating type (see Methods).).<lb/> e – χ 2 test for the effect of species in pair on mating propensity (Yates corrected).<lb/></figDesc>
+			</figure>
+
+	</text>
+</tei>

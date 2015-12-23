@@ -3,8 +3,11 @@ package org.grobid.core.data;
 import org.grobid.core.data.util.AuthorEmailAssigner;
 import org.grobid.core.data.util.ClassicAuthorEmailAssigner;
 import org.grobid.core.data.util.EmailSanitizer;
+import org.grobid.core.document.TEIFormater;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
+import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
@@ -28,6 +31,7 @@ public class BiblioItem {
     private AuthorEmailAssigner authorEmailAssigner = new ClassicAuthorEmailAssigner();
     private EmailSanitizer emailSanitizer = new EmailSanitizer();
     private String teiId;
+    private List<BoundingBox> coordinates = null;
 
     @Override
     public String toString() {
@@ -1363,7 +1367,7 @@ public class BiblioItem {
     /**
      * Some little cleaning of the abstract field.
      */
-    final String[] ABSTRACT_PREFIXES = {"Abstract", "ABSTRACT", "Summary", "Résumé", "Abrégé", "a b s t r a c t"};
+    final String[] ABSTRACT_PREFIXES = {"abstract", "summary", "résumé", "abrégé", "a b s t r a c t"};
 
     public String cleanAbstract(String string) {
 
@@ -1372,9 +1376,10 @@ public class BiblioItem {
         if (string.length() == 0)
             return string;
         String res = string.trim();
+        String res0 = res.toLowerCase();
 
         for (String abstractPrefix : ABSTRACT_PREFIXES) {
-            if (res.startsWith(abstractPrefix)) {
+            if (res0.startsWith(abstractPrefix)) {
                 if (abstractPrefix.length() < res.length()) {
                     res = res.substring(abstractPrefix.length(), res.length());
                     res.trim();
@@ -1446,7 +1451,7 @@ public class BiblioItem {
         }
 		
         res = res.trim();
-        if (res.startsWith(":")) {
+        if (res.startsWith(":") || res.startsWith("—") || res.startsWith("-")) {
             res = res.substring(1);
         }
         if (res.endsWith(".")) {
@@ -1657,12 +1662,13 @@ public class BiblioItem {
      *
      * @param n - the index of the bibliographical record, the corresponding id will be b+n
      */
+
     public String toTEI(int n) {
-        return toTEI(n, 0, false);
+        return toTEI(n, 0, GrobidAnalysisConfig.defaultInstance());
     }
 
-    public String toTEI(int n, boolean generateIDs) {
-        return toTEI(n, 0, generateIDs);
+    public String toTEI(int n, int indent) {
+        return toTEI(n, indent, GrobidAnalysisConfig.defaultInstance());
     }
 
 
@@ -1672,14 +1678,17 @@ public class BiblioItem {
      * @param n      - the index of the bibliographical record, the corresponding id will be b+n
      * @param indent - the tabulation indentation for the output of the xml elements
      */
-    public String toTEI(int n, int indent, boolean generateIDs) {
+    public String toTEI(int n, int indent, GrobidAnalysisConfig config) {
         StringBuilder tei = new StringBuilder();
+        boolean generateIDs = config.isGenerateTeiIds();
+
         try {
             // we just produce here xml strings
             for (int i = 0; i < indent; i++) {
                 tei.append("\t");
             }
             tei.append("<biblStruct");
+            tei.append(" ").append(TEIFormater.getCoordsAttribute(coordinates, config.isGenerateTeiCoordinates())).append(" ");
             if (language != null) {
                 if (n == -1) {
                     if (pubnum != null) {
@@ -3596,20 +3605,28 @@ public class BiblioItem {
                     } catch (Exception e) {
                         beginPage = -1;
                     }
-                    pageRange = firstPage;
+					if (beginPage != -1)
+						pageRange = "" + beginPage;
+					else
+						pageRange = firstPage;
 
                     if (matcher.find()) {
                         if (matcher.groupCount() > 0) {
                             lastPage = matcher.group(0);
                         }
                         if (lastPage != null) {
-                            pageRange += "--" + lastPage;
-
                             try {
                                 endPage = Integer.parseInt(lastPage);
                             } catch (Exception e) {
                                 endPage = -1;
                             }
+							
+							if ( (endPage != -1) && (endPage < beginPage) && (endPage < 50) ) {
+								endPage = beginPage + endPage;
+								pageRange += "--" + endPage;
+							}
+							else 
+								pageRange += "--" + lastPage;
                         }
                     }
                 }
@@ -3748,5 +3765,13 @@ public class BiblioItem {
 
     public String getTeiId() {
         return teiId;
+    }
+
+    public void setCoordinates(List<BoundingBox> coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    public List<BoundingBox> getCoordinates() {
+        return coordinates;
     }
 }

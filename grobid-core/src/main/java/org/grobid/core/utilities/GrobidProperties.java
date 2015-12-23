@@ -932,4 +932,23 @@ public class GrobidProperties {
 		updatePropertyFile(getGrobidPropertiesPath(), pKey, pValue);
 	}
 
+	/**
+	 * Returns the current version of GROBID, given in the grobid-property
+	 * file, and set by maven.
+	 * 
+	 * @return GROBID version
+	 */
+	public static String getVersion() {
+		return getPropertyValue(GrobidPropertyKeys.PROP_VERSION);
+	}
+
+	/**
+	 * Sets the GROBID version.
+	 * 
+	 * @param version
+	 */
+	public static void setVersion(final String version) {
+		setPropertyValue(GrobidPropertyKeys.PROP_VERSION, version);
+	}
+
 }

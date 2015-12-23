@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_89"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<figure>
+				<head>Figure <label>1</label>.</head>
+				<figDesc>Low temperature PL spectra of<lb/> doped and undoped PQW with well<lb/> width of 1000Å. (Symbols are defined on<lb/> the text).<lb/> </figDesc>
+			</figure>
+
+
+			<figure>
+				<head>Figure <label>2</label>.</head>
+				<figDesc>PL spectra as a function of<lb/> temperature of the doped PQW sample.<lb/></figDesc>
+			</figure>
+			
+	</text>
+</tei>

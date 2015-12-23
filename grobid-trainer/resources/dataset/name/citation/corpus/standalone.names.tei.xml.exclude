@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	
+<!-- These are standalone names of authors which can be added to sequence of names -->
+	
+    <teiHeader xml:lang="en">
+            <fileDesc>
+                    <sourceDesc>
+                            <biblStruct>
+                                    <analytic>
+			
+		<author><forename>Paul</forename> <middlename>E</middlename>. <lastname>Bierly</lastname> <suffix>III</suffix></author>
+		<author><forename>Harina</forename> <middlename>Suk-Ching</middlename> <lastname>Tang</lastname></author>
+		<author><forename>Antonio</forename> <middlename>Carlos</middlename> <middlename>G</middlename>. <lastname>Bordeaux Rego</lastname></author>		
+		<author><forename>Marziyeh</forename> <middlename>Jalilvand</middlename> <middlename>Shirkhani</middlename> <lastname>Tabar</lastname></author>
+		<author><forename>Anne</forename> <middlename>Marie</middlename> <middlename>Jennifer</middlename> <middlename>E</middlename>. <lastname>Eligio</lastname></author>
+		<author><forename>José</forename> <middlename>Luis</middlename> <lastname>Gómez Barroso</lastname></author>	
+		<author><forename>C</forename>. <middlename>Samuel</middlename> <lastname>Gómez Barroso</lastname></author>	
+		<author><forename>Patrick</forename> <middlename>E</middlename>. <lastname>O'Neil</lastname></author>	
+		<author><forename>Zhongfei</forename> (<forename>Mark</forename>) <lastname>Zhang</lastname></author>
+		<author><forename>Hermann</forename> <middlename>K.-G</middlename>. <lastname>Walter</lastname></author>
+		<author><forename>Paul</forename> <middlename>Walton</middlename> <lastname>Hsieh</lastname> <suffix>Jr</suffix>.</author>
+        <author><forename>Francisco</forename> <lastname>de Borja Rodríguez Ortiz</lastname></author>
+		<author><forename>Maria</forename> <middlename>Rita</middlename> <lastname>Di Berardini</lastname></author>
+		<author><forename>Peter</forename> <middlename>R</middlename>. <middlename>J</middlename>. <lastname>Asveld</lastname></author>
+		<author><forename>Robert</forename> <middlename>J</middlename>. <lastname>Hammell</lastname> <suffix>II</suffix></author>
+		<author><forename>Williams</forename> <middlename>Ludwell</middlename> <lastname>Harrison</lastname> <suffix>III</suffix></author>
+        <author><forename>Jörg</forename> <middlename>H</middlename>. <lastname>Siekmann</lastname></author>
+		<author><forename>Jon</forename> <middlename>Louis</middlename> <lastname>Bentleyn</lastname></author>
+		<author><forename>Inman</forename> <middlename>P</middlename>. <lastname>de Guzmán</lastname></author>
+		<author><forename>José</forename> <middlename>M</middlename>. <lastname>Amigó</lastname></author>
+		<author><forename>Gerth</forename> <middlename>Stølting</middlename> <lastname>Brodal</lastname></author>
+		<author><forename>Wim</forename> <middlename>H</middlename>. <lastname>Hesselink</lastname></author>
+		<author><forename>Karel</forename> <lastname>Culik</lastname> <suffix>II</suffix></author>
+		<author><forename>Frank</forename> <middlename>Wm</middlename>. <lastname>Tompa</lastname></author>
+		<author><forename>J</forename>. <middlename>Ian</middlename> <lastname>Munro</lastname></author>
+		<author><forename>T</forename>. <middlename>C</middlename>. <middlename>Edwin</middlename> <lastname>Cheng</lastname></author>
+		<author><forename>Wenceslas</forename> <lastname>Fernandez de la Vega</lastname></author>
+        <author><forename>Vangelis</forename> <middlename>Th</middlename>. <lastname>Paschos</lastname></author>
+		<author><forename>Luiz</forename> <middlename>M</middlename>. <middlename>R</middlename>. <lastname>Gadelha</lastname> <suffix>Jr</suffix>.</author>
+		<author><forename>Wim</forename> <middlename>H</middlename>. <lastname>Hesselink</lastname></author>
+		<author><forename>Juliana</forename> <lastname>do Espírito Santo Carvalho</lastname></author>
+		<author><forename>Evandro</forename> <middlename>Leonardo</middlename> <middlename>Silva</middlename> <lastname>Teixeira</lastname></author>
+		<author><forename>Ivan</forename> <lastname>Hal Sudborough</lastname></author>
+		<author><forename>Md</forename>. <middlename>Enamul</middlename> <lastname>Kabir</lastname></author>
+		<author><forename>Flavio</forename> <lastname>D'Alessandro</lastname></author>
+		<author><forename>John-Jules</forename> <middlename>Ch</middlename>. <lastname>Meyer</lastname></author>
+		<author><forename>Amir</forename> <middlename>M</middlename>. <lastname>Ben-Amram</lastname></author>
+		<author><forename>Shou-Hsuan</forename> <middlename>Stephen</middlename> <lastname>Huang</lastname></author>
+		<author><forename>Md</forename>. <middlename>Sumon</middlename> <lastname>Shahriar</lastname></author>
+		<author><forename>Willem</forename> <lastname>de Jong</lastname></author>
+		<author><forename>Zh</forename>. <middlename>L</middlename>. <lastname>Zhang</lastname></author>
+		<author><forename>Matthew</forename> <middlename>E</middlename>. <lastname>St. Pierre</lastname></author>
+		<author><forename>Cheng-I</forename>. <lastname>Lin</lastname></author>
+		<author><forename>Truc</forename> <middlename>Viet</middlename> <lastname>Le</lastname></author>
+		<author><forename>Wei-Hua</forename> <middlename>A</middlename>. <lastname>Wang</lastname></author>
+		<author><forename>Víctor-M</forename>. <lastname>Sempere-Payá</lastname></author>
+		<author><forename>Kun-Jin</forename> <lastname>He</lastname></author>
+		<author><forename>S</forename>. <middlename>Q</middlename>. (<forename>Shane</forename>) <lastname>Xie</lastname></author>
+		<author><forename>Edsger</forename> <middlename>W</middlename>. <lastname>Dijkstra</lastname></author>
+		<author><forename>Bonaventura</forename> <middlename>H</middlename>. <middlename>W</middlename>. <lastname>Hadikusumo</lastname></author>
+		<author><forename>Toktam</forename> <lastname>Ghafarian</lastname></author>
+		<author>Fco. <forename>Javier</forename> <lastname>Meseguer Anastásio</lastname></author>
+		<author><forename>Robert</forename> <middlename>Ian</middlename> (<forename>Bob</forename>) <lastname>McKay</lastname></author>
+		<author><forename>François</forename> <lastname>D'Heygère</lastname></author>
+		<author><forename>Armel</forename> <lastname>de La Bourdonnaye</lastname></author>
+		<author><forename>Loo</forename> <middlename>Hay</middlename> <lastname>Lee</lastname></author>
+		<author><forename>Shen-Yee</forename> <lastname>Pang</lastname></author>
+		<author><forename>Baher</forename> <middlename>A</middlename>. <lastname>El-Geresy</lastname></author>
+		<author><forename>Pierpaolo</forename> <lastname>D'Urso</lastname></author>
+		<author><forename>R</forename>. <middlename>J</middlename>. <lastname>O'Hara Hines</lastname></author>
+		<author><forename>Francisco</forename> <middlename>José</middlename> <lastname>de A. Cysneiros</lastname></author>
+		<author><forename>Chung-I</forename>. <lastname>Li</lastname></author>
+		<author><forename>A</forename>. <middlename>J</middlename>. <middlename>J</middlename>. (<forename>Jan</forename>) <lastname>Braaksmas</lastname></author>
+		<author><forename>P</forename>. <middlename>W</middlename>. <middlename>H</middlename>. <middlename>M</middlename>. (<forename>Paul</forename>) <lastname>van Exel</lastname></author>
+		<author><forename>B</forename>. <middlename>Cristina</middlename> <lastname>Pelayo García-Bustelo</lastname></author>
+		<author><forename>S</forename>. <middlename>Q</middlename>. (<forename>Shane</forename>) <lastname>Xie</lastname></author>
+		<author><forename>Peter</forename> <lastname>O'Grady</lastname></author>
+		<author><forename>Lianfeng</forename> (<forename>Linda</forename>) <lastname>Zhang</lastname></author>
+		<author><forename>Robert</forename> <middlename>D</middlename>. <lastname>St. Louis</lastname></author>
+		<author><forename>Xinran</forename> (<forename>Ryan</forename>) <lastname>Wu</lastname></author>
+		<author><forename>Abdel</forename> <middlename>Monim</middlename> <middlename>M</middlename>. <lastname>Artoli</lastname></author>
+		<author><forename>Lúcia</forename> <middlename>Maria</middlename> <lastname>de A. Drummond</lastname></author>
+		<author><forename>Robert</forename> <middlename>Ian</middlename> (<forename>Bob</forename>) <lastname>McKay</lastname></author>
+		<author><forename>João</forename> <middlename>Carlos</middlename> <lastname>de A. R. Gonçalves</lastname></author>
+		<author><forename>Zouhaïer</forename> <lastname>M'Chirgui</lastname></author>
+		<author><forename>Gilberto</forename> <lastname>dos Santos Madeira</lastname></author>
+		<author><forename>Claudio</forename> <lastname>de A. Loural</lastname></author>
+		<author><forename>Conor</forename> <lastname>O'Kane</lastname></author>
+		<author><forename>Yasser</forename> <middlename>Abdel-Rady</middlename> <middlename>I</middlename>. <lastname>Mohamed</lastname></author>
+		<author><forename>Angelica</forename> <middlename>B</middlename>. <lastname>Ortiz de Gortari</lastname></author>
+		<author><forename>Sk</forename>. <lastname>Swanaz</lastname></author>
+		<author><forename>Wala'a</forename> <middlename>M</middlename>. <lastname>AlOmari</lastname></author>
+		<author><forename>Fiacre</forename> <lastname>Ó Cairbre</lastname></author>
+		<author><forename>A</forename>. <middlename>H</middlename>. <middlename>W</middlename>. (<forename>Ton</forename>) <lastname>Geerts</lastname></author>
+		<author><forename>Dj</forename>. <lastname>Petkovski</lastname></author>
+		<author><forename>Gearóid</forename> <lastname>Ó Laighin</lastname></author>
+		<author><forename>N</forename>. <middlename>I</middlename>. <lastname>Adams</lastname> <suffix>IV</suffix></author>
+		<author><forename>Robert</forename> <middlename>L</middlename>. (<forename>Scot</forename>) <lastname>Drysdale</lastname> <suffix>III</suffix></author>
+		<author><forename>Yung-Chun</forename> (<forename>Justin</forename>) <lastname>Wan</lastname></author>
+		<author><forename>Atlas</forename> <middlename>F</middlename>. <lastname>Cook</lastname> <suffix>IV</suffix></author>
+		<author><forename>Li</forename> (<forename>Erran</forename>) <lastname>Li</lastname></author>
+		<author><forename>Jun</forename> (<forename>Jim</forename>) <lastname>Li</lastname></author>
+		<author><forename>Wilkerson</forename> <lastname>de L. Andrade</lastname></author>
+		<author><forename>Siraphop</forename> (<forename>paiboon</forename>) <lastname>Tooprakai</lastname></author>
+		<author><forename>Hau</forename> <middlename>C</middlename>. <lastname>Yen</lastname></author>
+		<author><forename>K</forename>. <middlename>Rustan</middlename> <middlename>M</middlename>.  <lastname>Leino</lastname></author>
+		<author><forename>H</forename>. <middlename>M</middlename>. <middlename>W</middlename>. (<forename>Eric</forename>) <lastname>Verbeek</lastname></author>		
+		<author><forename>Xi</forename> (<forename>Ronald</forename>) <lastname>Chen</lastname></author>
+		<author><forename>Nathaniel</forename> <middlename>J</middlename>. <lastname>Davis</lastname> <suffix>IV</suffix></author>
+		<author><forename>Xuemin</forename> (<forename>Sherman</forename>) <lastname>Shen</lastname></author>
+		<author><forename>Charles</forename> <middlename>A</middlename>. <lastname>O'Reilly</lastname> <suffix>III</suffix></author>
+		<author><forename>Rudolph</forename> <middlename>Louis</middlename> <lastname>Mappus</lastname> <suffix>IV</suffix></author>
+		<author><forename>Alceu</forename> <lastname>de Souza Britto</lastname> <suffix>Jr</suffix>.</author>
+		<author><forename>José</forename> <middlename>Ricardo</middlename> <lastname>da S.</lastname> <suffix>Junior</suffix></author>
+		<author><forename>Nathaniel</forename> <middlename>J</middlename>. <lastname>Davis</lastname> <suffix>IV</suffix></author>
+		<author><forename>Eugene</forename> <middlename>W</middlename>. <lastname>Hodges</lastname> <suffix>IV</suffix></author>
+		<author><forename>Man</forename> (<forename>Mike</forename>) <lastname>Yuan</lastname></author>
+		<author><forename>Zhongfei</forename> (<forename>Mark</forename>) <lastname>Zhang</lastname></author>
+		<author><forename>Thajudin</forename> <lastname>Ahamed</lastname> <suffix>VI</suffix></author>
+		<author><forename>Fatemeh</forename> (<forename>Hoda</forename>) <lastname>Moghimi</lastname></author>
+		<author><forename>Robert</forename> <middlename>Ian</middlename> (<forename>Bob</forename>) <lastname>McKay</lastname></author>
+		<author><forename>Nan</forename> (<forename>Jonas</forename>) <lastname>Yang</lastname></author>
+		<author><forename>Yansong</forename> (<forename>Jennifer</forename>) <lastname>Ren</lastname></author>
+		<author><forename>Zixiang</forename> (<forename>Alex</forename>) <lastname>Tan</lastname></author>
+		<author><forename>Aodheen</forename> <lastname>O'Donnell</lastname></author>		
+		<author><forename>Jon</forename> <middlename>Louis</middlename> <lastname>Bentley</lastname></author>
+		<author><forename>Demetres</forename> <middlename>D</middlename>. <lastname>Kouvatsos</lastname></author>
+		<author><forename>Shyamal</forename> <middlename>K</middlename>. <lastname>Chowdhury</lastname></author>
+		<author><forename>Pradip</forename> <middlename>K</middlename>. <lastname>Srimani</lastname></author>
+		<author><forename>Piero</forename> <middlename>R</middlename>. <lastname>Torrigiani</lastname></author>
+		<author><forename>Paul</forename> <middlename>H</middlename>. <middlename>B</middlename>. <lastname>Gardiner</lastname></author>
+		<author><forename>Michiel</forename> <middlename>H</middlename>. <middlename>M</middlename>. <lastname>Smid</lastname></author>
+		<author><forename>Wil</forename> <middlename>M</middlename>. <middlename>P</middlename>. <lastname>van der Aalst</lastname></author>
+		<author><forename>Xuemin</forename> (<forename>Sherman</forename>) <lastname>Shen</lastname></author>
+		<author><forename>Jing</forename> (<forename>Selena</forename>) <lastname>He</lastname></author>
+		<author><forename>Christopher</forename> (<forename>Krzysztof</forename>) <lastname>Sikorski</lastname></author>
+		<author><forename>Horst</forename> <lastname>von Brand</lastname></author>
+		<author><forename>Volker</forename> <lastname>Claus</lastname></author>
+		<author><forename>Joakim</forename> <lastname>von Wright</lastname></author>
+		<author><forename>Volker</forename> <lastname>Strassen</lastname></author>
+		<author><forename>Fanchun</forename> <lastname>Jin</lastname></author>
+		<author><forename>Paulien</forename> <lastname>ten Pas</lastname></author>
+		<author><forename>Martin</forename> <lastname>Jourdan</lastname></author>
+		<author><forename>Christian</forename> <lastname>Ferdinand</lastname></author>
+		<author><forename>Bum-il</forename> <lastname>Lee</lastname></author>
+		<author><forename>Long</forename> <lastname>Wan</lastname></author>
+		<author><forename>Bo</forename> <lastname>Jin</lastname></author>
+		<author><forename>Guanghai</forename> <lastname>Jin</lastname></author>
+		<author><forename>Da</forename> <lastname>Ruan</lastname></author>
+		<author><forename>Kamel</forename> <lastname>Rouibah</lastname></author>
+		<author><forename>Mats</forename> <lastname>Jackson</lastname></author>
+		<author><forename>ennis</forename> <lastname>Jarvis</lastname></author>
+		<author><forename>Mark</forename> <lastname>Santcroos</lastname></author>
+		<author><forename>Hai</forename> <lastname>Jin</lastname></author>
+		<author><forename>Eugene</forename> <lastname>Santos</lastname> <suffix>Jr</suffix>.</author>
+		<author><forename>Sabah</forename> <lastname>al-Binali</lastname></author>
+		<author><forename>Za'er</forename> <middlename>Salim</middlename> <lastname>Abo-Hammour</lastname></author>
+		<author><forename>D</forename>. <lastname>Agrawal</lastname></author>
+		<author><forename>K</forename>. <lastname>Pal</lastname></author>
+		<author><forename>C</forename>. <middlename>S</middlename>. <middlename>George</middlename> <lastname>Lee</lastname></author>
+		<author><forename>Shi-ze</forename> <lastname>Guo</lastname></author>
+		<author><forename>M</forename>. <lastname>Dohnal</lastname></author>
+		<author><forename>S</forename>. <lastname>Selvaperumal</lastname></author>
+		<author><forename>D</forename>. <middlename>P</middlename>. <lastname>Agrawal</lastname></author>
+		<author><forename>A</forename>. <middlename>A</middlename>. <lastname>Arefijamaal</lastname></author>
+		<author><forename>D</forename>. <middlename>K</middlename>. <lastname>Lobiyal</lastname></author>
+		<author><forename>Ilyaa'</forename> <lastname>Salsa'</lastname></author>
+		<author><forename>Qing'an</forename> <lastname>Ren</lastname></author>
+		<author><forename>Lo'ai</forename> <middlename>Ali</middlename> <lastname>Tawalbeh</lastname></author>
+		<author><forename>M</forename>. <lastname>Hospital</lastname></author>
+		<author><forename>C</forename>. <lastname>Pradal</lastname></author>
+		<author><forename>C</forename>. <lastname>Vimal</lastname></author>
+		<author><forename>Günther</forename> <middlename>E</middlename>. <lastname>Pfaff</lastname></author>
+		<author><forename>Toktam</forename> <lastname>Ghafarian-M</lastname>.</author>
+		<author><forename>Hongwei</forename> "<forename>Chris</forename>" <lastname>Yang</lastname></author>
+		<author><forename>Lalinka</forename> <lastname>de C. T. Gomes</lastname></author>
+		<author><forename>Francisco</forename> <lastname>de A. T. de Carvalho</lastname></author>
+		<author><forename>Cha'o-Kuang</forename> <lastname>Chen</lastname></author>
+		<author><forename>F</forename>. <middlename>Xavier</middlename> <lastname>Roca</lastname></author>
+		<author><forename>F</forename>. <middlename>Javier</middlename> <lastname>Pérez-Fernández</lastname></author>
+		<author><forename>José</forename> <lastname>del R. Millán</lastname></author>
+		<author><forename>Zhiwei</forename> (<forename>Tony</forename>) <lastname>Qin</lastname></author>
+		<author><forename>Zuopeng</forename> (<forename>Justin</forename>) <lastname>Zhang</lastname></author>
+		<author><forename>Naiquan</forename> (<forename>Nigel</forename>) <lastname>Zheng</lastname></author>
+		<author><forename>Xuemin</forename> (<forename>Sherman</forename>) <lastname>Shen</lastname></author>
+		<author><forename>Jing</forename> (<forename>Selena</forename>) <lastname>He</lastname></author>
+		<author><forename>Y.-T</forename>. (<forename>Justin</forename>) <lastname>Wu</lastname></author>
+		<author><forename>Balder</forename> <lastname>ten Cate</lastname></author>
+		<author><forename>Zhe</forename> (<forename>Sage</forename>) <lastname>Chen</lastname></author>
+		<author><forename>Xin</forename> (<forename>Robert</forename>) <lastname>Luo</lastname></author>
+		<author><forename>Bongsug</forename> (<forename>Kevin</forename>) <lastname>Chae</lastname></author>
+		
+		<!--
+
+eva Kühn
+Bongsug (Kevin) Chae
+Xin (Robert) Luo
+Gangshu (George) Cai
+Selcen (Pamuk) Phelps
+Yinghui (Catherine) Yang
+			Gun-Yeob (Peter) Kim
+Kwang-Ting (Tim) Cheng
+F. Xavier Moncunill-Geniz
+			João Bosco A. London Jr.
+			Giuseppe (Joe) Labianca
+			Mark F. St. John
+							
+
+Bernardo A. León de la Barra S.
+Mario A. Fernández F.
+			
+C. S. George Lee
+Poornima Narayan R.
+Almaaf Bader Ali A
+
+			Y. Daniel Liang
+			Marisa Venturini Zilli
+			Ralf Hartmut Güting
+			Qui Hoon Choo
+			Pramod K. Varshney
+			Wim H. Hesselink
+			
+			Mohammad Mahdi Jaghoori
+			Mohammad Reza Mousavi
+			Paritosh K. Pandya
+			Friedhelm Meyer auf der Heide
+			
+			Sadek Crisóstomo Absi Alfaro
+			Appa Iyer Sivakumar
+			Chin Soon Chong
+			Jae Hyun Lee
+			Jae Yeol Lee
+			
+			Flávia Maria Santoro
+			Kwamiwi Bernardin Mawussi
+			Lianfeng (Linda) Zhang
+			Xinran (Ryan) Wu
+			Óscar Belmonte Fernández
+			Luiz M. R. Gadelha Jr.
+			Robert Ian (Bob) McKay
+			Philippe Olivier Alexandre Navaux
+			Gian Paolo Lorenzetto
+			S. Q. (Shane) Xie
+			A. J. J. (Jan) Braaksma
+			P. W. H. M. (Paul) van Exel
+			Patrick Chi-leung Hui
+			Pascale Vicat-Blanc Primet
+			Md. Zakirul Alam Bhuiyan
+			en Kwong-Kay Wong
+			Ulfur Ron Halldorsson
+			Garry Wei-Han Tan
+			Karien Hervé-Van Driessche -->
+		
+                                </analytic>
+                        </biblStruct>
+                </sourceDesc>
+        </fileDesc>
+	</teiHeader>
+</TEI>		
