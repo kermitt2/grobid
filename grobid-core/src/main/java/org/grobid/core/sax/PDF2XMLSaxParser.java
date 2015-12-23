@@ -609,6 +609,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 						LayoutToken localTok = new LayoutToken(" ");
 						localTok.setPage(currentPage);
 						tokenizations.add(localTok);
+
 						blabla.append(" ");
 					}
 				}
@@ -640,6 +641,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			LayoutToken localTok = new LayoutToken("\n");
 			localTok.setPage(currentPage);
 			tokenizations.add(localTok);
+
 		} else if (qName.equals("IMAGE")) {
 			// this is normally the bitmap graphics
 			if (block != null) {
@@ -700,6 +702,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			LayoutToken localTok = new LayoutToken("\n");
 			localTok.setPage(currentPage);
 			tokenizations.add(localTok);
+
 			block.setText(blabla.toString());
 			
 			/*LayoutToken token = new LayoutToken();

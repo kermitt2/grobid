@@ -32,9 +32,6 @@ public class GrobidAnalysisConfig {
     // PDF, -1 for the last page (default)
     private int endPage = -1;
 
-    // 0 for light re-structuring (more robust), 1 for full re-structuring
-    //private int fulltextProcessingMode = 0;
-
     // if consolidate citations
     private boolean consolidateCitations = false;
 
@@ -97,11 +94,6 @@ public class GrobidAnalysisConfig {
             return this;
         }
 
-        /*public GrobidAnalysisConfigBuilder fulltextProcessingMode(int m) {
-            config.fulltextProcessingMode = m;
-            return this;
-        }*/
-
         public GrobidAnalysisConfigBuilder generateTeiCoordinates(boolean b) {
             config.generateTeiCoordinates = b;
             return this;
@@ -144,10 +136,6 @@ public class GrobidAnalysisConfig {
     public int getEndPage() {
         return endPage;
     }
-
-    /*public int getFulltextProcessingMode() {
-        return fulltextProcessingMode;
-    }*/
 
     public boolean isConsolidateCitations() {
         return consolidateCitations;
