@@ -1,16 +1,6 @@
 <h1>Install GROBID</h1>>
 
-##Latest stable version
-
-The latest stable release version is ```0.3.9```. 
-
-Download the following [release file](https://github.com/kermitt2/grobid/archive/grobid-parent-0.3.9.zip) and unzip it:
-
-```bash
-> unzip grobid-parent-0.3.9.zip
-```
-
-##Developer version
+##Latest version
 
 The current working version is ```0.4.0-SNAPSHOT```, which can be downloaded from GitHub and built as follow: 
 
