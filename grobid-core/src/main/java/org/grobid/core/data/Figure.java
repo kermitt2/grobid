@@ -1,0 +1,195 @@
+package org.grobid.core.data;
+
+import java.net.URI;
+import java.lang.StringBuilder;
+import java.util.*;
+
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.layout.GraphicObject;
+import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.layout.LayoutToken;
+
+/**
+ * Class for representing a figure.
+ *
+ * @author Patrice Lopez
+ */
+public class Figure {
+	protected StringBuilder caption = null;
+	protected StringBuilder header = null;
+	protected StringBuilder content = null;
+	protected StringBuilder label = null;
+	protected String id = null;
+	protected URI uri = null;
+	protected int start = -1; // start position in the full text tokenization
+	protected int end = -1; // end position in the full text tokenization
+	protected LayoutToken startToken = null; // start layout token
+	protected LayoutToken endToken = null; // end layout token
+	
+	// coordinates
+	public int page = -1;
+	public double y = 0.0;
+    public double x = 0.0;
+    public double width = 0.0;
+    public double height = 0.0;
+
+    // list of graphic objects corresponding to the figure
+    protected List<GraphicObject> graphicObjects = null;
+
+    public Figure() {
+    	caption = new StringBuilder();
+    	header = new StringBuilder();
+    	content = new StringBuilder();
+    	label = new StringBuilder();
+    }
+
+	public void appendHeader(String head) {
+		header.append(head);
+	}
+
+	public String getHeader() {
+		return header.toString();
+	}
+	
+	public void appendCaption(String cap) {
+		caption.append(cap);
+	}
+
+	public String getCaption() {
+		return caption.toString();
+	}
+
+	public void appendLabel(String lab) {
+		label.append(lab);
+	}
+
+	public String getLabel() {
+		return label.toString();
+	}
+	
+	public void appendContent(String trash) {
+		content.append(trash);
+	}
+
+	public String getContent() {
+		return content.toString();
+	}
+	
+	public void setURI(URI theURI) {
+		uri = theURI;
+	}
+
+	public void setStart(int start) {
+    	this.start = start;
+    }
+
+    public int getStart() {
+    	return start;
+    }
+
+	public void setEnd(int end) {
+    	this.end = end;
+    }
+
+    public int getEnd() {
+    	return end;
+    }
+
+    public void setStartToken(LayoutToken start) {
+    	this.startToken = start;
+    }
+
+    public LayoutToken getStartToken() {
+    	return startToken;
+    }
+
+	public void setEndToken(LayoutToken end) {
+    	this.endToken = end;
+    }
+
+    public LayoutToken getEndToken() {
+    	return endToken;
+    }
+
+    public void setId() {
+    	id = TextUtilities.cleanField(label.toString(), false);
+    }
+
+    public void setId(String theId) {
+    	id = theId;
+    }
+	
+	public String getId() {
+		return id;
+	}
+
+    public List<GraphicObject> getGraphicObjects() {
+    	return graphicObjects;
+    }
+
+    public void addGraphicObject(GraphicObject obj) {
+    	if (graphicObjects == null)
+    		graphicObjects = new ArrayList<GraphicObject>();
+    	graphicObjects.add(obj);
+    }
+
+    public void setGraphicObjects(List<GraphicObject> objs) {
+    	graphicObjects = objs;
+    }
+
+    /**
+     * Simple block coordinates. TBD: generate bounding box. 
+     */
+    public String getCoordinates() {
+    	return String.format("%d,%.2f,%.2f,%.2f,%.2f", page, x, y, width, height);
+    }
+
+    public String toTEI(int indent, GrobidAnalysisConfig config) {
+    	if ( ((header == null) || (header.length() == 0)) && 
+    		 ((caption == null) || (caption.length() == 0)) //&& 
+    		 //((graphicObjects != null) && (graphicObjects.size() == 0)) 
+    		 )
+    		return null;
+        StringBuilder theFigure = new StringBuilder();
+        theFigure.append("\n");
+       	for(int i=0; i<indent; i++)
+			theFigure.append("\t");
+		theFigure.append("<figure");
+		if (id != null) {
+			theFigure.append(" xml:id=\"fig_" + id + "\"");
+		}
+		if (config.isGenerateTeiCoordinates())
+			theFigure.append(" coords=\"" + getCoordinates() + "\"");
+		theFigure.append(">\n");
+		if (header != null) {
+	       	for(int i=0; i<indent+1; i++)
+				theFigure.append("\t");
+			theFigure.append("<head>").append(cleanString(
+				TextUtilities.HTMLEncode(header.toString())))
+				.append("</head>\n");
+		}
+		if (caption != null) {
+			for(int i=0; i<indent+1; i++)
+				theFigure.append("\t");
+			theFigure.append("<figDesc>").append(cleanString(
+				TextUtilities.HTMLEncode(TextUtilities.dehyphenizeHard(caption.toString()))))
+				.append("</figDesc>\n");
+		}
+		if ((graphicObjects != null) && (graphicObjects.size() > 0)) {
+			for(GraphicObject graphicObject : graphicObjects) {
+		       	for(int i=0; i<indent+1; i++)
+					theFigure.append("\t");
+				theFigure.append("<graphic url=\"" + graphicObject.getURI() + "\" />\n");
+			}
+		}
+		for(int i=0; i<indent; i++)
+			theFigure.append("\t");
+		theFigure.append("</figure>\n");
+        return theFigure.toString();
+    }
+
+    private String cleanString(String input) {
+    	return input.replace("\n", " ").replace("  ", " ").trim();
+    }
+
+}

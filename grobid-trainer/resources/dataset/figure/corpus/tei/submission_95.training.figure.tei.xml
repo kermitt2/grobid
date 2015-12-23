@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_95"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<figure>
+				<head>Figure <label>1</label>:</head>
+				<figDesc>The ground-state energies E 0,l (B)&apos;s for AlGaAs<lb/> as functions of the magnetic field for different orbital<lb/> states l = 0, 1, 2, 3, 4. Numerous crossing points,<lb/> where various orbital states cross, reveal at particular<lb/> values of the magnetic field. Locations of some crossing<lb/> points are shown by arrows.<lb/></figDesc>
+			</figure>
+
+
+			<figure>
+				<head>Figure <label>2</label>:</head>
+				<figDesc>The optical intensity of the exciton as a function<lb/> of the magnetic field for the nanotube with ρ e = 636 Å<lb/> and ρ h = 600 Å<lb/>.<lb/></figDesc>
+			</figure>
+
+	</text>
+</tei>

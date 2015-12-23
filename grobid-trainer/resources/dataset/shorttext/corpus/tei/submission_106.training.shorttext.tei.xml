@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_106"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<p>Potential applications of semiconducting nanostructures in electronic and optoelectronic devices gain the interest<lb/> in the optical properties of quantum disks, quantum rods, quantum wires and the other low-dimensional structures.<lb/> The influence of excitonic effects on the oscillator strengths, absorption coefficient, susceptibility etc. in the presence<lb/> of external fields is of great importance from both experimental and theoretical points of view. Here we propose<lb/> the theoretical approach which enables to calculate the above optical functions for low-dimensional structures with<lb/> cylindrical symmetry exposed to the external magnetic field directed along the z-axis. We consider an interacting<lb/> electron-hole pair inside the semiconducting nanostructure with hard-wall potential of finite height (different for<lb/> an electron and a hole) at the boundaries. The anisotropic effective masses are assumed to be different inside and<lb/> outside the structure. In the first step we solve the eigenvalue problem to determine the magnetic field dependent<lb/> excitonic energies and wave functions. The novelty of our approach is that the six-dimensional eigenvalue problem<lb/> is transformed into the equivalent eigenvalue problem given by the system of the coupled two-dimensional second<lb/> order differential equations. The excitonic wave function is expressed in terms of the two dimensional functions<lb/> ψ<lb/> (e,h)<lb/> nm (ρ, φ ), which are the solutions of the problem of a charged particle in a circular well:<lb/></p>
+
+			<formula>Ψ (L) = ∑<lb/> n<lb/> f<lb/> (L)<lb/> n (z e , z h )ψ<lb/> (e)<lb/> n 1 m 1 (ρ e , φ e )ψ<lb/> (h)<lb/> n 2 m 2 (ρ h , φ h ).<lb/> <label>(1)</label><lb/></formula>
+
+			<p>The above expansion leads to eigenvalue problem given by the system of coupled equations in the following form:</p> 
+				
+			<formula>−µ<lb/> ∂ ∂ z e<lb/> 1 m ze<lb/> ∂ ∂ z e<lb/> − µ<lb/> ∂ ∂ z h<lb/> 1 m zh<lb/> ∂ ∂ z h<lb/> + ε<lb/> (e)<lb/> n 1 m 1 + ε<lb/> (h)<lb/> n 2 m 2 + υ ⊥c f<lb/> (L)<lb/> n + ∑<lb/> n<lb/> V n<lb/> n f<lb/> (L)<lb/> n = ε f<lb/> (L)<lb/> n ,<lb/> <label>(2)</label><lb/></formula>
+
+			<p>where ε is the total energy of the exciton and n stands for four indices (n 1 , m 1 , n 2 , m 2 ), L = m 1 + m 2 is the total<lb/> angular momentum, υ ⊥c is the confinement potential and V n<lb/> n are the Coulomb interaction matrix elements; ε<lb/> (e,h)<lb/> nm<lb/> are eigenenergies of the two-dimensional problem. The system of Eqs. (2) can be solved numerically. The material<lb/> microscopic parameters, typical for In 0.55 Al 0.45 As/Al 0.35 Ga 0.65 system, are chosen to be the same as in the paper<lb/> of Janssens et al. <ref type="biblio">[1]</ref>. We performed numerical computa-<lb/>tions for quantum disks and quantum rods with different<lb/> sizes. As a numerical example, we present in <ref type="figure">Fig. 1</ref> the<lb/> magnetic field dependent spectrum for the disk with the<lb/> radius R = 8.95 nm and the height d = 3.22 nm. The<lb/> anticrossing of all levels appears due to the electron-hole<lb/> Coulomb interaction. Having the energies and wave<lb/> functions, we apply the real density matrix approach <ref type="biblio">[2, 3]<lb/></ref> which gives the optical functions including magnetosuscep-<lb/>tibility and the magnetic field dependent dielectric tensor<lb/> for light-and heavy-hole excitons. Numerical computations<lb/> were performed for In 0.55 Al 0.45 As/Al 0.35 Ga 0.65 and CdSe<lb/> quantum disks and quantum rods. Our numerical results<lb/> are in a good agreement with experimental data.<lb/></p>
+
+			<figure>
+				<head>Figure 1:</head>
+				<figDesc>The relative positions of energy levels as<lb/> functions of the applied magnetic field for heavy-hole<lb/> exciton.<lb/></figDesc>
+			</figure>
+
+	</text>
+</tei>

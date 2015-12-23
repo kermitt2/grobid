@@ -1,0 +1,47 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_9911409.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+            <head>Fig. <label>1</label>.</head>
+            <figDesc>The seeing distribution.</figDesc>
+        </figure>
+
+
+        <figure>
+            <head>Fig. <label>2</label>.</head>
+            <figDesc>The distribution of the sky rms as a function of integra-<lb/>tion time. The solid line is the prediction by Hunt &amp; Mannucci<lb/> (1998).</figDesc>
+        </figure>
+
+
+        <figure>
+            <head>Fig. <label>3</label>.</head>
+            <figDesc>The comparison between the present photometric mea-<lb/>surements and those available from the literature as a function<lb/> of the normalized aperture.</figDesc>
+        </figure>
+
+
+        <figure>
+            <head>Fig. <label>4</label>.</head>
+            <figDesc>The distribution of the lowest surface brightness<lb/> reached in the outer light profiles, as a function of the exposure<lb/> time.</figDesc>
+        </figure>
+
+
+        <figure>
+            <head>Fig. <label>5</label>.</head>
+            <figDesc>The relation between the apparent major isophotal ra-<lb/>dius rH(20.5) as determined in the infrared (this work) and<lb/> in the optical rB(25.0). E+S0 are plotted as open circles,<lb/> S+Irr as filled circles. The solid line represents the relation<lb/> rH(20.5) = 0.7 rB(25.0).</figDesc>
+        </figure>
+
+
+        <figure>
+            <head>Fig. <label>6</label>.</head>
+            <figDesc>The dependence of the near–infrared concentration<lb/> index C31 on H band luminosity.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

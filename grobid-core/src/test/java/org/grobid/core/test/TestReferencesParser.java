@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
+import java.io.File;
 import java.util.List;
 
 import org.grobid.core.data.BibDataSet;
@@ -24,7 +25,7 @@ public class TestReferencesParser extends EngineTest {
         String testPath = getTestResourcePath();
 
         String pdfPath = testPath + "/Wang-paperAVE2008.pdf";
-        List<BibDataSet> resRefs = engine.processReferences(pdfPath, true);
+        List<BibDataSet> resRefs = engine.processReferences(new File(pdfPath), true);
 
         assertNotNull(resRefs);
         assertThat(resRefs.size(), is(12));

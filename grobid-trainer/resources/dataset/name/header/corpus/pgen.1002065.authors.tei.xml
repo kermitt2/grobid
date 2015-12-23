@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Yan</forename>
+								 <surname>Hao</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Ningyi</forename>
+								 <surname>Xu</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Andrew</forename>
+								 <middlename>C</middlename>.
+								 <surname>Box</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Laura</forename>
+								 <surname>Schaefer</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Kasthuri</forename>
+								 <surname>Kannan</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Ying</forename>
+								 <surname>Zhang</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Laurence</forename>
+							<lb/>
+								 <surname>Florens</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Christopher</forename>
+								 <surname>Seidel</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Michael</forename>
+								 <middlename>P</middlename> .
+								<surname>Washburn</surname>
+								 <marker>1 ,2</marker>,
+							</persName>
+							<persName>
+								 <forename>Winfried</forename>
+								 <surname>Wiegraebe</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Ho</forename>
+								 <middlename>Yi</middlename>
+								 <surname>Mak</surname>
+								 <marker>1 ,3*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

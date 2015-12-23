@@ -22,7 +22,9 @@ public class GrobidMainArgs {
 
 	private boolean isPdf;
 	
-	private boolean recursive; 
+	private boolean recursive = false; 
+
+	private boolean saveAssets = true;
 
 	/**
 	 * @return the path2grobidHome
@@ -134,6 +136,20 @@ public class GrobidMainArgs {
 	 */
 	public final boolean isRecursive() {
 		return recursive;
+	}
+
+	/**
+	 * @return true if the PDF assets (bitmaps, vector graphics) should be also extracted and saved
+	 */
+	public final boolean getSaveAssets() {
+		return saveAssets;
+	}
+
+	/**
+	 * @param pSaveAssets true if the PDF assets (bitmaps, vector graphics) should be also extracted and saved
+	 */
+	public final void setSaveAssets(boolean pSaveAssets) {
+		saveAssets = pSaveAssets;
 	}
 
 	/**

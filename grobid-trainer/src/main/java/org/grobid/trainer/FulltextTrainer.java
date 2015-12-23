@@ -51,7 +51,7 @@ public class FulltextTrainer extends AbstractTrainer{
 	}
 
     /**
-     * Add the selected features to the author model training for headers
+     * Add the selected features to the author model training for full texts
      * @param sourceTEIPathLabel path to TEI files
      * @param sourceFulltextsPathLabel path to fulltexts
      * @param outputPath output train file
@@ -94,7 +94,8 @@ public class FulltextTrainer extends AbstractTrainer{
                 System.out.println(name);
 
                 TEIFulltextSaxParser parser2 = new TEIFulltextSaxParser();
-
+				//parser2.setMode(TEIFulltextSaxParser.FULLTEXT);
+				
                 //get a new instance of parser
                 SAXParser p = spf.newSAXParser();
                 p.parse(tf, parser2);

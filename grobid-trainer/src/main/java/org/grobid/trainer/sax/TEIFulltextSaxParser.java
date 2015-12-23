@@ -27,6 +27,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 	private String currentTag = null;
 	
     private boolean figureBlock = false;
+	private boolean tableBlock = false;
 
     private ArrayList<String> labeled = null; // store line by line the labeled data
 
@@ -56,7 +57,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
-		if ((!qName.equals("lb")) && (!qName.equals("pb") && (!qName.equals("figure")))) {
+		if ( (!qName.equals("lb")) && (!qName.equals("pb")) ) {
             writeData(qName, true);
 			if (!currentTags.empty()) {
 				currentTag = currentTags.peek();
@@ -65,6 +66,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 
         if (qName.equals("figure")) {
             figureBlock = false;
+			tableBlock = false;
         }
     }
 
@@ -81,9 +83,6 @@ public class TEIFulltextSaxParser extends DefaultHandler {
         } 
 		else if (qName.equals("space")) {
             accumulator.append(" ");
-        } 
-		else if (qName.equals("figure")) {
-            figureBlock = true;
         } 
 		else {
             // we have to write first what has been accumulated yet with the upper-level tag
@@ -114,7 +113,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                     }
                 }
             } 
-			else if (qName.equals("p")) {
+			else if (qName.equals("p") ) {
                 currentTags.push("<paragraph>");
 				currentTag = "<paragraph>";
             } 
@@ -148,69 +147,102 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                     }
                 }
             } 
-			else if (qName.equals("formula")) {
+			else if (qName.equals("formula") || qName.equals("label")) {
                 currentTags.push("<equation>");
 				currentTag = "<equation>";
             } 
 			else if (qName.equals("head")) {
-                if (figureBlock) {
+                /*if (figureBlock) {
                     currentTags.push("<figure_head>");
 					currentTag = "<figure_head>";
-                } 
-				else {
+                }
+				else*/ 
+				{
                     currentTags.push("<section>");
 					currentTag = "<section>";
                 }
             } 
-			else if (qName.equals("figDesc")) {
+			/*else if (qName.equals("figDesc")) {
                 currentTags.push("<figDesc>");
 				currentTag = "<figDesc>";
-            }
+            }*/
             else if (qName.equals("table")) {
                 currentTags.push("<table>");
 				currentTag = "<table>";
             } 
 			else if (qName.equals("item")) {
-                currentTags.push("<item>");
-				currentTag = "<item>";
+                currentTags.push("<paragraph>");
+				currentTag = "<paragraph>";
             } 
 			/*else if (qName.equals("label")) {
                 currentTags.push("<label>");
 				currentTag = "<label>";
             } */
-			else if (qName.equals("trash")) {
+			/*else if (qName.equals("trash")) {
                 currentTags.push("<trash>");
 				currentTag = "<trash>";
-            }
+            }*/
+			else if (qName.equals("figure")) {
+	            figureBlock = true;
+	            int length = atts.getLength();
+
+	            // Process each attribute
+	            for (int i = 0; i < length; i++) {
+	                // Get names and values for each attribute
+	                String name = atts.getQName(i);
+	                String value = atts.getValue(i);
+
+	                if (name != null) {
+	                    if (name.equals("type")) {
+	                        if (value.equals("table")) {
+	                            tableBlock = true;
+	                        }
+	                    }
+	                }
+	            }
+				if (tableBlock) {
+					figureBlock = false;
+	                currentTags.push("<table>");
+					currentTag = "<table>";
+				}
+				else {
+	                currentTags.push("<figure>");
+					currentTag = "<figure>";
+				}
+	        } 
 			else {
                 currentTags.push("<other>");
 				currentTag = "<other>";
 			}
         }
+		
     }
 
     private void writeData(String qName, boolean pop) {
-        if ((qName.equals("other")) || 
-                (qName.equals("ref")) || (qName.equals("head")) || 
-                (qName.equals("figure_head")) ||
-                (qName.equals("p")) || (qName.equals("paragraph")) ||
-                (qName.equals("div")) || (qName.equals("figDesc")) ||
-                (qName.equals("table")) || (qName.equals("trash")) ||
-                (qName.equals("formula")) || (qName.equals("item")) //|| (qName.equals("label"))
+        if ( (qName.equals("other")) || 
+                (qName.equals("ref")) || (qName.equals("head")) || (qName.equals("figure")) || 
+                (qName.equals("paragraph")) ||
+                (qName.equals("div")) || //(qName.equals("figDesc")) ||
+                (qName.equals("table")) || //(qName.equals("trash")) ||
+                (qName.equals("formula")) || (qName.equals("item")) || (qName.equals("label"))
                 ) {
 			if (currentTag == null) {
 				return;
 			}
 	
-            //String currentTag = null;
             if (pop) {
-                //currentTag = currentTags.pop();
 				if (!currentTags.empty()) {
 					currentTags.pop();
 				}
-            } else {
-                //currentTag = currentTags.peek();
             }
+
+			// adjust tag (conservative)
+			if (tableBlock) {
+				currentTag = "<table>";
+			}
+			else if (figureBlock) {
+				currentTag = "<figure>";
+			}
 
             String text = getText();
             // we segment the text

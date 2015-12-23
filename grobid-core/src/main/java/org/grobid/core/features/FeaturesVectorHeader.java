@@ -18,6 +18,7 @@ public class FeaturesVectorHeader {
     public String label = null; // label if known
     public String blockStatus = null; // one of BLOCKSTART, BLOCKIN, BLOCKEND
     public String lineStatus = null; // one of LINESTART, LINEIN, LINEEND
+    public String alignmentStatus = null; // one of ALIGNEDLEFT, INDENTED, CENTERED - applied to the whole line
     public String fontStatus = null; // one of NEWFONT, SAMEFONT
     public String fontSize = null; // one of HIGHERFONT, SAMEFONTSIZE, LOWERFONT
     public boolean bold = false;
@@ -108,6 +109,9 @@ public class FeaturesVectorHeader {
 
         // line information (1)
         res.append(" " + lineStatus);
+		
+		// line position/identation
+		//res.append(" " + alignmentStatus);
 
         // font information (1)
         res.append(" " + fontStatus);

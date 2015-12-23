@@ -7,6 +7,7 @@ import java.util.List;
  * Class for representing and exchanging a document block. A block is defined here relatively to
  * some properties in the document layout.
  *
+ *
  * @author Patrice Lopez
  */
 public class Block {
@@ -22,8 +23,8 @@ public class Block {
     private String colorFont = null;
     public double fontSize = 0.0;
 
-    public LayoutToken firstToken = null;
-    public LayoutToken lastToken = null;
+    //public LayoutToken firstToken = null;
+    //public LayoutToken lastToken = null;
 
     public List<LayoutToken> tokens = null;
 
@@ -43,8 +44,9 @@ public class Block {
     }
 
     public void addToken(LayoutToken lt) {
-        if (tokens == null)
+        if (tokens == null) {
             tokens = new ArrayList<LayoutToken>();
+        }
         tokens.add(lt);
     }
 

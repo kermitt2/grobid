@@ -394,9 +394,9 @@ public class AuthorParser {
 	 * @param head - if true use the model for header's name, otherwise the model for names in citation
 	 * @return the pseudo-TEI training data
 	 */
-    public StringBuffer trainingExtraction(List<String> inputs,
+    public StringBuilder trainingExtraction(List<String> inputs,
                                            boolean head) {
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         try {
             if (inputs == null) {
                 return null;
@@ -675,7 +675,7 @@ public class AuthorParser {
         return result;
     }
 
-    private boolean testClosingTag(StringBuffer buffer,
+    private boolean testClosingTag(StringBuilder buffer,
                                    String currentTag0,
                                    String lastTag0,
 								   boolean head) {

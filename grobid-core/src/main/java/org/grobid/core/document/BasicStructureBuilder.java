@@ -687,7 +687,7 @@ public class BasicStructureBuilder {
 
     }	
 	
-    static public Document generalResultSegmentation(Document doc, String labeledResult, List<String> documentTokens) {
+    static public Document generalResultSegmentation(Document doc, String labeledResult, List<LayoutToken> documentTokens) {
         List<Pair<String, String>> labeledTokens = GenericTaggerUtils.getTokensAndLabels(labeledResult);
 
         SortedSetMultimap<String, DocumentPiece> labeledBlocks = TreeMultimap.create();
@@ -779,24 +779,24 @@ public class BasicStructureBuilder {
 					
 					// adjust the start token position in documentTokens to this non trivial line
 					// first skip possible space characters and tabs at the beginning of the line
-					while( (documentTokens.get(currentLineStartPos).equals(" ") ||
-							documentTokens.get(currentLineStartPos).equals("\t") )
+					while( (documentTokens.get(currentLineStartPos).t().equals(" ") ||
+							documentTokens.get(currentLineStartPos).t().equals("\t") )
 					 	&& (currentLineStartPos != lastTokenInd)) {
 					 	currentLineStartPos++;
 					}
-					if (!labeledTokenPair.a.startsWith(documentTokens.get(currentLineStartPos))) {
+					if (!labeledTokenPair.a.startsWith(documentTokens.get(currentLineStartPos).getText())) {
 						while(currentLineStartPos < block.getEndToken()) {
-							if (documentTokens.get(currentLineStartPos).equals("\n") 
-							 || documentTokens.get(currentLineStartPos).equals("\r")) {
+							if (documentTokens.get(currentLineStartPos).t().equals("\n")
+							 || documentTokens.get(currentLineStartPos).t().equals("\r")) {
 								 // move to the start of the next line, but ignore space characters and tabs
 								 currentLineStartPos++;
-								 while( (documentTokens.get(currentLineStartPos).equals(" ") ||
-									 	documentTokens.get(currentLineStartPos).equals("\t") )
+								 while( (documentTokens.get(currentLineStartPos).t().equals(" ") ||
+									 	documentTokens.get(currentLineStartPos).t().equals("\t") )
 								 	&& (currentLineStartPos != lastTokenInd)) {
 								 	currentLineStartPos++;
 								 }
 								 if ((currentLineStartPos != lastTokenInd) && 
-								 	labeledTokenPair.a.startsWith(documentTokens.get(currentLineStartPos))) {
+								 	labeledTokenPair.a.startsWith(documentTokens.get(currentLineStartPos).getText())) {
 									 break;
 								 }
 							 }
@@ -807,8 +807,8 @@ public class BasicStructureBuilder {
 					// what is then the position of the last token of this line?
 					currentLineEndPos = currentLineStartPos;
 					while(currentLineEndPos < block.getEndToken()) {
-						if (documentTokens.get(currentLineEndPos).equals("\n") 
-						 || documentTokens.get(currentLineEndPos).equals("\r")) {
+						if (documentTokens.get(currentLineEndPos).t().equals("\n")
+						 || documentTokens.get(currentLineEndPos).t().equals("\r")) {
 							currentLineEndPos--;
 							break;
 						}

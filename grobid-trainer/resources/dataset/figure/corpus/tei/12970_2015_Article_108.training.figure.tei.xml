@@ -1,0 +1,32 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_12970_2015_Article_108.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+            <head>Fig. <label>1</label> </head>
+ 
+            <figDesc>Study flowchart</figDesc>
+        </figure>
+
+
+        <figure>
+            <head>Fig. <label>2</label> </head>
+
+            <figDesc>Average percentage of the daily energy intake from CHO, fat and protein. ACSM guidelines for athletes recommend that CHO should<lb/> represent 50 to 70 % of the total daily energy intake, protein between 10 and 35 % and fat between 20 and 35 % [41]</figDesc>
+        </figure>
+
+
+        <figure>
+            <head>Fig. <label>3</label> </head>
+ 
+            <figDesc>Comparison recommendation-reality for energy and CHO<lb/> consumption. The entire column represents the recommendation<lb/> (100 %) and the black part the average declared intake for all 40<lb/> subjects (in percentage of the recommendation)</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

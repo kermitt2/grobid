@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Astrophysics</orgName>,
+							<orgName type="department">Department of Physics</orgName>,
+							<orgName type="institution">University of Oxford</orgName>,
+							<address>
+								<addrLine>Keble<lb/> Road</addrLine>,
+								<settlement>Oxford</settlement>
+								<postCode>OX1 3RH</postCode>,
+								<country>UK</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Physics and Astronomy</orgName>,
+							<orgName type="institution">University of Southampton</orgName>,
+							<address>
+								<addrLine>Highfield</addrLine>,
+							<lb/>
+								<settlement>Southampton</settlement>,
+								<postCode>SO17 1BJ</postCode>,
+								<country>UK</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="laboratory">ASTRON</orgName>, the
+							<orgName type="institution">Netherlands Institute for Radio Astronomy</orgName>,
+							<address>
+								<addrLine>Postbus<lb/> 2</addrLine>,
+								<postCode>7990 AA</postCode>
+								<settlement>Dwingeloo</settlement>,
+								<country>The Netherlands</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">Instituto de Astrofísica de Canarias</orgName>,
+							<address>
+								<addrLine>38200</addrLine>
+								<settlement>La Laguna</settlement>,
+								<region>Tenerife</region>,
+								<country>Spain</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Departamento de astrofísica</orgName>,
+							<orgName type="institution">Univ. de La Laguna</orgName>,
+							<address>
+								<addrLine>E-38206 La<lb/> Laguna</addrLine>,
+								<settlement>Tenerife</settlement>,
+								<country>Spain</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="institution">Anton Pannekoek Institute for Astronomy</orgName>,
+							<address>
+								<addrLine>Science Park 904</addrLine>,
+								<postCode>1098<lb/> XH</postCode>
+								<settlement>Amsterdam</settlement>,
+								<country>The Netherlands</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="department">Department of Astrophysical Sciences</orgName>,
+							<orgName type="institution">Princeton University</orgName>,
+							<lb/>
+							<address>
+								<settlement>Princeton</settlement>,
+								<region>NJ</region>
+								<postCode>08544</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>8</marker>
+							<orgName type="department">Department of Physics &amp; Electronics</orgName>,
+							<orgName type="institution">Rhodes University</orgName>,
+							<address>
+								<postBox>PO Box<lb/> 94</postBox>,
+								<settlement>Grahamstown</settlement>,
+								<postCode>6140</postCode>
+								<country>South Africa</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>9</marker>
+							<orgName type="institution">Centrum Wiskunde &amp; Informatica</orgName>,
+							<address>
+								<addrLine>Science Park 123</addrLine>,
+								<postCode>1098 XG</postCode>
+							<lb/>
+								<settlement>Amsterdam</settlement>,
+								<country>The Netherlands</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>10</marker>
+							<orgName type="institution">SKA South Africa</orgName>,
+							<address>
+								<addrLine>3rd Floor, The Park</addrLine>,
+								<addrLine>Park Road</addrLine>,
+								<addrLine>Pinelands</addrLine>,
+								<lb/>
+								<settlement>Cape Town </settlement>
+								<postCode>7405</postCode>,
+								<country>South Africa</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>11</marker>
+							<orgName type="institution">Kapteyn Astronomical Institute</orgName>,
+							<address>
+								<postBox>P.O. Box 800</postBox>,
+								<postCode>9700 AV</postCode>
+								<settlement>Gronin-<lb/>gen</settlement>,
+								<country>The Netherlands</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>12</marker>
+							<orgName type="institution">CSIRO Astronomy and Space Science</orgName>,
+							<address>
+								<postBox>PO Box 76</postBox>,
+								<settlement>Epping</settlement>,
+								<region>NSW</region>
+								<lb/>
+								<postCode>1710</postCode>,
+								<country>Australia</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>13</marker>
+							<orgName type="laboratory">ARC Centre of Excellence for All-sky Astrophysics (CAASTRO)</orgName>,
+							<lb/>
+							<orgName type="institution">The University of Sydney</orgName>,
+							<address>
+								<region>NSW</region>
+								<postCode>2006</postCode>,
+								<country>Australia</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>14</marker>
+							<orgName type="institution">Universität Hamburg</orgName>,
+							<address>
+								<addrLine>Hamburger Sternwarte</addrLine>,
+								<addrLine>Gojenbergsweg</addrLine>
+								<lb/>
+								<postCode>112</postCode>,
+								<postCode>21029</postCode>,
+								<settlement>Hamburg</settlement>,
+								<country>Germany</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>15</marker>
+							<orgName type="department">Jodrell Bank Center for Astrophysics</orgName>,
+							<orgName type="department">School of Physics and As-<lb/>tronomy</orgName>,
+							<orgName type="institution">The University of Manchester</orgName>,
+							<address>
+								<settlement>Manchester</settlement>
+								<postCode>M13 9PL</postCode>,
+								<country>UK</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>16</marker>
+							<orgName type="laboratory">Laboratoire AIM</orgName> (
+							<orgName type="institution">CEA/IRFU</orgName> -
+							<orgName type="institution">CNRS/INSU</orgName> -
+							<orgName type="institution">Université Paris<lb/> Diderot)</orgName>,
+							<orgName type="institution">CEA DSM/IRFU/SAp</orgName>,
+							<address>
+								<postCode>F-91191</postCode>
+								<settlement>Gif-sur-Yvette</settlement>,
+								<country>France</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>17</marker>
+							<orgName type="laboratory">Station de Radioastronomie de Nançay</orgName>,
+							<orgName type="institution">Observatoire de Paris</orgName>,
+							<lb/>
+							<orgName type="institution">PSL Research University</orgName>,
+							<orgName type="institution">CNRS</orgName>,
+							<orgName type="institution">Univ. Orléans</orgName>,
+							<orgName type="institution">OSUC</orgName>,
+							<address>
+								<postCode>18330</postCode>
+								<lb/>
+								<settlement>Nançay</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>18</marker>
+							<orgName type="institution">Thüringer Landessternwarte</orgName>,
+							<address>
+								<addrLine>Sternwarte 5</addrLine>,
+								<postCode>D-07778</postCode>
+								<settlement>Tauten-<lb/>burg</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>19</marker>
+							<orgName type="department">Department of Astrophysics/IMAPP</orgName>,
+							<orgName type="institution">Radboud University</orgName>
+							<lb/>
+							<address>
+								<settlement>Ni-<lb/> jmegen</settlement>,
+								<postBox>P.O. Box 9010</postBox>,
+								<postCode>6500 GL</postCode>
+								<settlement>Nijmegen</settlement>,
+								<country>The Netherlands</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>20</marker>
+							<orgName type="laboratory">Laboratoire Lagrange</orgName>,
+							<orgName type="laboratory">UMR 7293</orgName>,
+							<orgName type="institution">Université de Nice Sophia–<lb/> Antipolis</orgName>,
+							<orgName type="institution">CNRS</orgName>,
+							<orgName type="institution">Observatoire de la Côte dâ ˘<lb/> A ´<lb/> ZAzur</orgName>,
+							<address>
+								<postCode>06300</postCode>
+								<settlement>Nice</settlement>,
+								<country>France</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>21</marker>
+							<orgName type="institution">LPC2E -Universite d&apos;Orleans/CNRS</orgName>
+							<lb/>
+						</affiliation>
+						<affiliation>
+							<marker>22</marker>
+							<orgName type="department">School of Physics, Astronomy and Mathematics</orgName>,
+							<orgName type="institution">University of<lb/> Hertfordshire</orgName>,
+							<address>
+								<addrLine>College Lane</addrLine>,
+								<settlement>Hatfield</settlement>
+								<postCode>AL10 9AB</postCode>,
+								<country>UK</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>23</marker>
+							<orgName type="department">Max-Planck-Institut für Radioastronomie</orgName>,
+							<address>
+								<addrLine>Auf dem Hügel 69</addrLine>,
+								<lb/>
+								<postCode>53121</postCode>
+								<settlement>Bonn</settlement>,
+								<country>Germany</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>24</marker>
+							<orgName type="institution">SRON Netherlands Insitute for Space Research</orgName>,
+							<address>
+								<postBox>PO Box 800</postBox>,
+								<lb/>
+								<postCode>9700 AV</postCode>
+								<settlement>Groningen</settlement>,
+								<country>The Netherlands</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>25</marker>
+							<orgName type="institution">Astro Space Center of the Lebedev Physical Institute</orgName>,
+							<address>
+								<addrLine>Profsoyuz-<lb/>naya str. 84/32</addrLine>,
+								<settlement>Moscow</settlement>
+								<postCode>117997</postCode>,
+								<country>Russia</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>26</marker>
+							<orgName type="institution">NAOJ Chile Observatory</orgName>,
+							<orgName type="institution">National Astronomical Observatory of<lb/> Japan</orgName>,
+							<address>
+								<addrLine>2-21-1 Osawa</addrLine>,
+								<settlement>Mitaka</settlement>,
+								<region>Tokyo</region>
+								<postCode>181-8588</postCode>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>27</marker>
+							<orgName type="department">Department of Astronomy and Radio Astronomy Lab</orgName>,
+							<orgName type="institution">University<lb/> of California</orgName>,
+							<address>
+								<settlement>Berkeley</settlement>,
+								<region>CA</region>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>28</marker>
+							<orgName type="institution">International Centre for Radio Astronomy Research -Curtin<lb/> University</orgName>,
+							<address>
+								<addrLine>GPO Box U1987</addrLine>,
+								<settlement>Perth</settlement>,
+								<region>WA</region>
+								<postCode>6845</postCode>,
+								<country>Australia</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>29</marker>
+							<orgName type="department">Centre de Recherche Astrophysique de Lyon</orgName>,
+							<address>
+								<settlement>Observatoire de<lb/> Lyon</settlement>,
+								<addrLine>9 av Charles Andr Ì ˛<lb/> Ae</addrLine>,
+								<postCode>69561</postCode>
+								<settlement>Saint Genis Laval</settlement> Cedex,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>30</marker>
+							<orgName type="department">School of Chemical &amp; Physical Sciences</orgName>,
+							<orgName type="institution">Victoria University of<lb/> Wellington</orgName>,
+							<address>
+								<postBox>PO Box 600</postBox>,
+								<settlement>Wellington</settlement>
+								<postCode>6140</postCode>,
+								<country>New Zealand</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>31</marker>
+							<orgName type="department">School of Physics and Astronomy</orgName>,
+							<orgName type="institution">Monash University</orgName>,
+							<address>
+								<postBox>PO Box<lb/> 27</postBox>,
+								<settlement>Clayton</settlement>,
+								<region>Victoria</region>
+								<postCode>3800</postCode>,
+								<country>Australia</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>32</marker>
+							<orgName type="institution">Leiden Observatory</orgName>,
+							<orgName type="institution">Leiden University</orgName>,
+							<address>
+								<postBox>PO Box 9513</postBox>,
+								<postCode>2300 RA</postCode>
+								<lb/>
+								<settlement>Leiden</settlement>,
+								<country>The Netherlands</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>33</marker>
+							<orgName type="institution">GEPI</orgName>,
+							<orgName type="institution">Observatoire de Paris</orgName>,
+							<orgName type="institution">CNRS</orgName>,
+							<orgName type="institution">Université Paris Diderot</orgName>,
+							<lb/>
+							<address>
+								<addrLine>5 place Jules Janssen</addrLine>,
+								<postCode>92190</postCode>,
+								<settlement>Meudon</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>34</marker>
+							<orgName type="department">Department of Physics</orgName>,
+							<orgName type="institution">The George Washington University</orgName>,
+							<address>
+								<addrLine>725<lb/> 21st Street NW</addrLine>,
+								<settlement>Washington</settlement>,
+								<region>DC</region>
+								<postCode>20052</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>35</marker>
+							<orgName type="institution">Harvard-Smithsonian Center for Astrophysics</orgName>,
+							<address>
+								<addrLine>60 Garden Street</addrLine>,
+								<lb/>
+								<settlement>Cambridge</settlement>,
+								<region>MA</region>
+								<postCode>02138</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>36</marker>
+							<orgName type="institution">LESIA</orgName>,
+							<orgName type="institution">Observatoire de Paris</orgName>,
+							<orgName type="institution">CNRS</orgName>,
+							<orgName type="institution">UPMC</orgName>,
+							<orgName type="institution">Université Paris-<lb/>Diderot</orgName>,
+							<address>
+								<addrLine>5 place Jules Janssen</addrLine>,
+								<postCode>92195</postCode>
+								<settlement>Meudon</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>37</marker>
+							<orgName type="institution">Space Telescope Science Institute</orgName>,
+							<address>
+								<addrLine>3700 San Martin Drive</addrLine>,
+								<settlement>Bal-<lb/>timore</settlement>,
+								<region>MD</region>
+								<postCode>21218</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+							<orgName type="institution">Tele-<lb/>grafenberg</orgName>,
+							<address>
+								<addrLine>A17</addrLine>,
+								<postCode>14473</postCode>
+								<settlement>Potsdam</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>39</marker>
+							<orgName type="department">Shell Technology Center</orgName>,
+							<address>
+								<settlement>Bangalore</settlement>,
+								<country>India</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>40</marker>
+							<orgName type="institution">University of Twente</orgName>,
+							<address>
+								<country>The Netherlands</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>41</marker>
+							<orgName type="department">Institute for Astronomy</orgName>,
+							<orgName type="institution">University of Edinburgh</orgName>,
+							<orgName type="institution">Royal Obser-<lb/>vatory of Edinburgh</orgName>,
+							<address>
+								<addrLine>Blackford Hill</addrLine>,
+								<settlement>Edinburgh</settlement>
+								<postCode>EH9 3HJ</postCode>,
+								<country>UK</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>42</marker>
+							<orgName type="institution">Leibniz-Institut für Astrophysik Potsdam (AIP)</orgName>,
+							<address>
+								<addrLine>An der Stern-<lb/>warte 16</addrLine>,
+								<postCode>14482</postCode>
+								<settlement>Potsdam</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+							<orgName type="department">43 Research School of Astronomy and Astrophysics</orgName>,
+							<orgName type="institution">Australian Na-<lb/>tional University</orgName>,
+							<address>
+								<addrLine>Mt Stromlo Obs.</addrLine>,
+								<addrLine>via Cotter Road</addrLine>,
+								<settlement>Weston</settlement>,
+								<region>A.C.T.</region>
+								<lb/>
+								<postCode>2611</postCode>,
+								<country>Australia</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>44</marker>
+							<orgName type="department">Max Planck Institute for Astrophysics</orgName>,
+							<address>
+								<addrLine>Karl Schwarzschild Str.<lb/> 1</addrLine>,
+								<postCode>85741</postCode>
+								<settlement>Garching</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>45</marker>
+							<orgName type="institution">Onsala Space Observatory</orgName>,
+							<orgName type="department">Dept. of Earth and Space Sciences</orgName>,
+							<lb/>
+							<orgName type="institution">Chalmers University of Technology</orgName>,
+							<address>
+								<postCode>SE-43992</postCode>
+								<settlement>Onsala</settlement>,
+								<country>Sweden</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>46</marker>
+							<orgName type="institution">SmarterVision BV</orgName>,
+							<address>
+								<addrLine>Oostersingel 5</addrLine>,
+								<postCode>9401 JX</postCode> 
+								<settlement>Assen</settlement>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>47</marker> 
+							<orgName type="institution">Astronomisches Institut</orgName> der
+							<orgName type="institution">Ruhr-Universität Bochum</orgName>,
+							<address>
+								<addrLine>Univer-<lb/>sitaetsstrasse 150</addrLine>,
+								<postCode>44780</postCode>
+								<settlement>Bochum</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>48</marker>
+							<orgName type="department">Sodankylä Geophysical Observatory</orgName>,
+							<orgName type="institution">University of Oulu</orgName>,
+							<lb/>
+							<address>
+								<addrLine>Tähteläntie 62</addrLine>,
+								<postCode>99600</postCode>
+								<settlement>Sodankylä</settlement>,
+								<country>Finland</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>49</marker>
+							<orgName type="laboratory">STFC Rutherford Appleton Laboratory</orgName>,
+							<address>
+								<addrLine>Harwell Science and In-<lb/>novation Campus</addrLine>,
+								<settlement>Didcot</settlement>
+								<postCode>OX11 0QX</postCode>,
+								<country>UK</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>50</marker>
+							<orgName type="department">Center for Information Technology (CIT)</orgName>,
+							<orgName type="institution">University of Gronin-<lb/>gen</orgName>,
+							<address>
+								<country>The Netherlands</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>51</marker>
+							<orgName type="department">Fakultät für Physik</orgName>,
+							<orgName type="institution">Universität Bielefeld</orgName>,
+							<address>
+								<addrLine>Postfach 100131</addrLine>,
+								<postCode>D-<lb/>33501</postCode>,
+								<settlement>Bielefeld</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

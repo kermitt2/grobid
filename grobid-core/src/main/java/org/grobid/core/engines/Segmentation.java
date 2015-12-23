@@ -6,12 +6,14 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.document.BasicStructureBuilder;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorSegmentation;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
@@ -81,9 +83,9 @@ public class Segmentation extends AbstractParser {
      * @param input filename of pdf file
      * @return Document object with segmentation informations
      */
-    public Document processing(String input) {
-        return processing(input, null);
-    }
+//    public Document processing(File input) {
+//        return processing(input, null);
+//    }
 
     /**
      * Segment a PDF document into high level zones: cover page, document header,
@@ -94,48 +96,46 @@ public class Segmentation extends AbstractParser {
      *                  saved under the indicated repository path
      * @return Document object with segmentation informations
      */
-    public Document processing(String input, String assetPath) {
-        return processing(input, assetPath, -1, -1);
-    }
+//    public Document processing(String input, String assetPath) {
+//        return processing(input, assetPath, -1, -1);
+//    }
 
     /**
      * Segment a PDF document into high level zones: cover page, document header,
      * page footer, page header, body, page numbers, biblio section and annexes.
      *
      * @param input     filename of pdf file
-     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and
-     *                  saved under the indicated repository path
-     * @param startPage give the starting page to consider in case of segmentation of the
-     *                  PDF, -1 for the first page (default)
-     * @param endPage   give the end page to consider in case of segmentation of the
-     *                  PDF, -1 for the last page (default)
      * @return Document object with segmentation informations
      */
-    public Document processing(String input, String assetPath, int startPage, int endPage) {
+    public Document processing(File input, GrobidAnalysisConfig config) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
-        File inputFile = new File(input);
-        if (!inputFile.exists()) {
+        if (!input.exists()) {
             throw new GrobidResourceException("Cannot process pdf file, because input file '" +
-                    inputFile.getAbsolutePath() + "' does not exist.");
+                    input.getAbsolutePath() + "' does not exist.");
         }
 
         DocumentSource documentSource = null;
         try {
             boolean assets = false;
-            if (assetPath != null) {
+            if (config.getPdfAssetPath() != null) {
                 assets = true;
             }
 
-            documentSource = DocumentSource.fromPdf(new File(input), startPage, endPage, assets);
+            documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage(), assets);
             Document doc = new Document(documentSource);
 
-            List<String> tokenizations = doc.addTokenizedDocument();
+            List<LayoutToken> tokenizations = doc.addTokenizedDocument();
 
             if (doc.getBlocks() == null) {
                 throw new GrobidException("PDF parsing resulted in empty content");
             }
+
+//for(Block block : doc.getBlocks()) {
+//    System.out.println(block.getText() + block.getPage() 
+//        + " [ x:" + block.x + ", y:" + block.y + ", width:" + block.width + ", height:" + block.height + "]\n\n");
+//}
 
             String content = //getAllTextFeatured(doc, headerMode);
                     getAllLinesFeatured(doc);
@@ -147,10 +147,11 @@ public class Segmentation extends AbstractParser {
 
                 // if assets is true, the images are still there under directory pathXML+"_data"
                 // we copy them to the assetPath directory
-                if (assetPath != null) {
+                File assetFile = config.getPdfAssetPath();
+                if (assetFile != null) {
                     // copy the files under the directory pathXML+"_data"
                     // we copy the asset files into the path specified by assetPath
-                    File assetFile = new File(assetPath);
+
                     if (!assetFile.exists()) {
                         // we create it
                         if (assetFile.mkdir()) {
@@ -200,14 +201,30 @@ public class Segmentation extends AbstractParser {
                             }
                         }
                     }
+					// update the path of the image description stored in Document
+					List<GraphicObject> images = doc.getImages();
+					if (images != null) {
+						String subPath = assetFile.getPath();
+						int ind = subPath.lastIndexOf("/");
+						if (ind != -1)
+							subPath = subPath.substring(ind+1, subPath.length());
+						for(GraphicObject image : images) {
+							String fileImage = image.getFilePath();
+							fileImage = fileImage.replace(".ppm", ".png")
+											.replace(".jpg", ".png");
+							ind = fileImage.indexOf("/");
+							image.setFilePath(subPath + fileImage.substring(ind, fileImage.length()));
+						}
+					}
                 }
             }
             return doc;
         } finally {
             // keep it clean when leaving...
-            if (assetPath == null) {
+            if (config.getPdfAssetPath() == null) {
                 // remove the pdf2xml tmp file
-                DocumentSource.close(documentSource, false);
+                //DocumentSource.close(documentSource, false);
+                DocumentSource.close(documentSource, true);
             } else {
                 // remove the pdf2xml tmp files, including the sub-directories
                 DocumentSource.close(documentSource, true);
@@ -641,8 +658,8 @@ public class Segmentation extends AbstractParser {
         int documentLength = 0;
         int pageLength = 0; // length of the current page
 
-        List<String> tokenizationsBody = new ArrayList<String>();
-        List<String> tokenizations = doc.getTokenizations();
+        List<LayoutToken> tokenizationsBody = new ArrayList<LayoutToken>();
+        List<LayoutToken> tokenizations = doc.getTokenizations();
 
         // we calculate current document length and intialize the body tokenization structure
         for (Block block : blocks) {
@@ -653,6 +670,8 @@ public class Segmentation extends AbstractParser {
         }
 
 		double pageHeight = 0.0;
+        boolean graphicVector = false;
+        boolean graphicBitmap = false;
         for (int blockIndex = 0; blockIndex < blocks.size(); blockIndex++) {
             Block block = blocks.get(blockIndex);
 
@@ -715,6 +734,17 @@ public class Segmentation extends AbstractParser {
             if (endPage) {
                 newPage = true;
                 mm = 0;
+            }
+
+            // check if we have a graphical object connected to the current block
+            List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
+            if (localImages != null) {
+                for(GraphicObject localImage : localImages) {
+                    if (localImage.getType() == GraphicObject.BITMAP) 
+                        graphicVector = true;
+                    if (localImage.getType() == GraphicObject.VECTOR) 
+                        graphicBitmap = true;
+                }
             }
 
             String localText = block.getText();
@@ -788,6 +818,13 @@ public class Segmentation extends AbstractParser {
                         .relativeLocation(line.length(), maxLineLength, LINESCALE);
 				
                 features.punctuationProfile = TextUtilities.punctuationProfile(line);
+
+                if (graphicBitmap) {
+                	features.bitmapAround = true;
+                }
+                if (graphicVector) {
+                	features.vectorAround = true;
+                }
 
                 features.lineStatus = null;
                 features.punctType = null;
@@ -964,7 +1001,7 @@ public class Segmentation extends AbstractParser {
 
             String fulltext = //getAllTextFeatured(doc, false);
                     getAllLinesFeatured(doc);
-            List<String> tokenizations = doc.getTokenizationsFulltext();
+            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
 
             // we write the full text untagged (but featurized)
             String outPathFulltext = pathFullText + File.separator + 
@@ -975,8 +1012,8 @@ public class Segmentation extends AbstractParser {
 
 			// also write the raw text as seen before segmentation
 			StringBuffer rawtxt = new StringBuffer();
-			for(String txtline : tokenizations) {
-				rawtxt.append(txtline);
+			for(LayoutToken txtline : tokenizations) {
+				rawtxt.append(txtline.getText());
 			}
 			String outPathRawtext = pathFullText + File.separator + 
 				PDFFileName.replace(".pdf", ".training.segmentation.rawtxt");
@@ -1015,7 +1052,7 @@ public class Segmentation extends AbstractParser {
      * @return extraction
      */
     private StringBuffer trainingExtraction(String result,
-                                            List<String> tokenizations,
+                                            List<LayoutToken> tokenizations,
                                             Document doc) {
         // this is the main buffer for the whole full text
         StringBuffer buffer = new StringBuffer();

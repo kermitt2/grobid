@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">Stowers Institute for Medical Research</orgName>,
+							<address>
+								<settlement>Kansas City</settlement>,
+								<region>Missouri</region>,
+								<country>United States of America</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Pathology and Laboratory Medicine</orgName>,
+							<orgName type="institution">University of Kansas<lb/></orgName> 
+							<orgName type="department">Medical Center</orgName>,
+							<address>
+								<settlement>Kansas City</settlement>,
+								<region>Kansas</region>,
+								<country>United States of America</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Molecular and Integrative Physiology</orgName>,
+							<orgName type="institution">University of Kansas</orgName> 
+							<orgName type="department">Medical Center</orgName>,
+							<address>
+								<settlement>Kansas City</settlement>,
+								<lb/>
+								<region>Kansas</region>,
+								<country>United States of America</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

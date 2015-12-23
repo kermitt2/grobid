@@ -12,7 +12,7 @@ U09:%x[-1,0]/%x[0,0]
 U0A:%x[0,0]/%x[1,0]
 U0B:%x[1,0]/%x[2,0]
 U0C:%x[-2,0]/%x[-1,0]
-U0D:%x[0,0]/%x[-1,28]
+U0D:%x[0,0]/%x[-1,22]
 
 # Lowercase token 1
 U10:%x[-2,1]
@@ -43,7 +43,7 @@ U50:%x[-1,11]
 U51:%x[0,11]
 U52:%x[1,11]
 
-# page info (12)
+# Alignment status (1)
 U60:%x[-1,12]
 U61:%x[0,12]
 U62:%x[1,12]
@@ -86,47 +86,40 @@ UD0:%x[0,19]
 UD1:%x[-1,19]
 UD2:%x[1,19]
 
-# Dict info (20-26)
-UE0:%x[0,20]
-UE1:%x[0,21]
-UE2:%x[0,22]
-UE3:%x[0,23]
-UE4:%x[0,24]
-UE5:%x[0,25]
-UE6:%x[0,26]
-#UE9:%x[-1,20]
-#UEA:%x[-1,21]
-#UEB:%x[-1,22]
-#UEC:%x[-1,23]
-#UED:%x[-1,24]
-#UEE:%x[-1,25]
-#UEF:%x[-1,26]
-UEI:%x[1,20]
-UEJ:%x[1,21]
-UEK:%x[1,22]
-UEL:%x[1,23]
-UEM:%x[1,24]
-UEN:%x[1,25]
-UEO:%x[1,26]
+# Punctuation (20)
+UF0:%x[0,20]
+UF1:%x[-1,20]
+UF2:%x[-2,20]
+UF3:%x[1,20]
+UF4:%x[2,20]
+#UF5:%x[-1,20]/%x[0,20]
+#UF6:%x[0,20]/%x[1,20]
 
-# Punctuation (27)
-UF0:%x[0,27]
-UF1:%x[-1,27]
-UF2:%x[-2,27]
-UF3:%x[1,27]
-UF4:%x[2,27]
-#UF5:%x[-1,27]/%x[0,27]
-#UF6:%x[0,27]/%x[1,27]
+# relative document position (21)
+UG0:%x[-1,21]
+UG1:%x[0,21]
+UG2:%x[1,21]
 
-# relative document position (28)
-UG0:%x[-1,28]
-UG1:%x[0,28]
-UG2:%x[1,28]
+# relative page position (22)
+UH0:%x[-1,22]
+UH1:%x[0,22]
+UH2:%x[1,22]
 
-# relative page position (29)
-UH0:%x[-1,29]
-UH1:%x[0,29]
-UH2:%x[1,29]
+# bitmap connected to the current block (23)
+UG0:%x[-2,23]
+UG1:%x[-1,23]
+UG2:%x[0,23]
+UG3:%x[1,23]
+UG4:%x[2,23]
+UG5:%x[3,23]
+
+# vector graphic connected to the current block (24)
+UG0:%x[-2,24]
+UG1:%x[-1,24]
+UG2:%x[0,24]
+UG3:%x[1,24]
+UG4:%x[2,24]
+UG5:%x[3,24]
 
 # Output
 B

@@ -5,9 +5,11 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorAffiliationAddress;
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.engines.tagging.GenericTaggerUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +82,7 @@ public class AffiliationAddressParser extends AbstractParser {
      * We also need to keep the original tokenization information to recreate the exact
      * initial string.
      */
-    public ArrayList<Affiliation> processReflow(String result, List<String> tokenizations) {
+    public List<Affiliation> processReflow(String result, List<LayoutToken> tokenizations) {
         if ((result == null) || (result.length() == 0)) {
             return null;
         }
@@ -92,64 +94,67 @@ public class AffiliationAddressParser extends AbstractParser {
         return processingReflow(affiliationBlocks, subTokenizations);
     }
 
-
     private void filterAffiliationAddress(String result,
-                                          List<String> tokenizations,
+                                          List<LayoutToken> tokenizations,
                                           List<String> affiliationBlocks,
                                           List<String> subTokenizations) {
         StringTokenizer st = new StringTokenizer(result, "\n");
-        //System.out.println(result);
-        //System.out.println(tokenizations.toString());
+//System.out.println(result);
         String lastLabel = null;
-        int lineCount = 0;
         int p = 0;
+        List<LayoutToken> tokenizationsBuffer = null;
+        boolean open = false;
         while (st.hasMoreTokens() && (p < tokenizations.size())) {
-            String toke = tokenizations.get(p);
-            List<String> tokes = new ArrayList<String>();
-            while ((toke.equals(" ") || toke.equals("\n") || (toke.length() == 0)) && ((p + 1) < tokenizations.size())) {
-                p++;
-                if (toke.length() == 0) {
-                    toke = tokenizations.get(p);
-                    continue;
-                }
-                tokes.add(toke);
-                if (toke.equals("\n")) {
-                    affiliationBlocks.add("@newline");
-                }
-                toke = tokenizations.get(p);
-            }
-
             String line = st.nextToken();
-            if (line.length() == 0) {
-                continue;
-            }
-
+//System.out.println(line);
             if (line.trim().length() == 0) {
                 affiliationBlocks.add("\n");
-                //subTokenizations.add(" ");
                 lastLabel = null;
-            } else {
-                StringTokenizer st2 = new StringTokenizer(line, "\t ");
-                String label = null;
-                String token = null;
-
-                if (st2.hasMoreTokens()) {
-                    // token is the first "feature"
-                    token = st2.nextToken().trim();
-                }
-
-                while (st2.hasMoreTokens()) {
-                    // label is the last "feature"
-                    label = st2.nextToken();
-                }
-
-                if ((label.indexOf("affiliation") != -1) || (label.indexOf("address") != -1)) {
-                    affiliationBlocks.add(token + " " + label);
-                    for (String tok : tokes) {
-                        subTokenizations.add(tok);
+            }
+            else {
+                String[] s = line.split("\t");
+                String s0 = s[0].trim();
+                int p0 = p;
+                boolean strop = false;
+                tokenizationsBuffer = new ArrayList<LayoutToken>();
+                String tokOriginal = null;
+//System.out.println("s0 = " + s0);
+                while ((!strop) && (p < tokenizations.size())) {
+                    tokOriginal = tokenizations.get(p).getText().trim();
+                    if (open) {
+                        if (tokOriginal.equals("\n")) {
+                            affiliationBlocks.add("@newline");
+                        }
                     }
-                    subTokenizations.add(toke);
-                } else if (lastLabel != null) {
+                    tokenizationsBuffer.add(tokenizations.get(p));
+                    if (tokOriginal.equals(s0)) {
+                        strop = true;
+                    }
+                    p++;
+                }
+                if (p == tokenizations.size()) {
+                    // either we are at the end of the header, or we might have 
+                    // a problematic token in tokenization for some reasons
+                    if ((p - p0) > 2) {
+                        // we loose the synchronicity, so we reinit p for the next token
+                        p = p0;
+                        continue;
+                    }
+                }
+//System.out.println("tokOriginal = " + tokOriginal);
+                int ll = s.length;
+                String label = s[ll-1];
+                //String plainLabel = GenericTaggerUtils.getPlainLabel(label);
+//System.out.println(label);
+                if ((tokOriginal != null) && ( ((label.indexOf("affiliation") != -1) || (label.indexOf("address") != -1)) )) {
+                    affiliationBlocks.add(tokOriginal + " " + label);
+                    // add the content of tokenizationsBuffer
+                    for(LayoutToken tokk : tokenizationsBuffer) {
+                        subTokenizations.add(tokk.getText());
+                    }
+                    open = true;
+                }
+                else if (lastLabel != null) {
                     affiliationBlocks.add("\n");
                 }
 
@@ -159,9 +164,10 @@ public class AffiliationAddressParser extends AbstractParser {
                     lastLabel = null;
                 }
             }
-            lineCount++;
-            p++;
         }
+
+//System.out.println(subTokenizations.toString());
+//System.out.println(affiliationBlocks.toString());
     }
 
     private ArrayList<Affiliation> processingReflow(List<String> affiliationBlocks, List<String> tokenizations) {
@@ -750,8 +756,8 @@ public class AffiliationAddressParser extends AbstractParser {
     /**
      * Extract results from a labelled header in the training format without any string modification.
      */
-    public StringBuffer trainingExtraction(String result,
-                                           List<String> tokenizations) {
+    public StringBuilder trainingExtraction(String result,
+                                           List<LayoutToken> tokenizations) {
         if ((result == null) || (result.length() == 0)) {
             return null;
         }
@@ -762,7 +768,7 @@ public class AffiliationAddressParser extends AbstractParser {
         filterAffiliationAddress(result, tokenizations, affiliationBlocks, tokenizationsAffiliation);
         String resultAffiliation = runReflow(affiliationBlocks, tokenizationsAffiliation);
 
-        StringBuffer bufferAffiliation = new StringBuffer();
+        StringBuilder bufferAffiliation = new StringBuilder();
 
         if (resultAffiliation == null) {
             return bufferAffiliation;
@@ -1156,7 +1162,7 @@ public class AffiliationAddressParser extends AbstractParser {
         return result;
     }
 
-    private boolean testClosingTag(StringBuffer buffer,
+    private boolean testClosingTag(StringBuilder buffer,
                                    String currentTag0,
                                    String lastTag0) {
         boolean res = false;

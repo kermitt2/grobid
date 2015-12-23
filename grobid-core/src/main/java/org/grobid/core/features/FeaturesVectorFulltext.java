@@ -15,25 +15,27 @@ public class FeaturesVectorFulltext {
     public String lineStatus = null; // one of LINESTART, LINEIN, LINEEND
     public String fontStatus = null; // one of NEWFONT, SAMEFONT
     public String fontSize = null; // one of HIGHERFONT, SAMEFONTSIZE, LOWERFONT
-    public String pageStatus = null; // one of PAGESTART, PAGEIN, PAGEEND
-    public String alignmentStatus = null; // one of ALIGNEDLEFT, INDENT, CENTERED
+    public String alignmentStatus = null; // one of ALIGNEDLEFT, INDENTED, CENTERED - applied to the whole line
     public boolean bold = false;
     public boolean italic = false;
     public String capitalisation = null; // one of INITCAP, ALLCAPS, NOCAPS
     public String digit;  // one of ALLDIGIT, CONTAINDIGIT, NODIGIT
     public boolean singleChar = false;
-    public boolean properName = false;
-    public boolean commonName = false;
-    public boolean firstName = false;
-    public boolean locationName = false;
-    public boolean year = false;
-    public boolean month = false;
-    public boolean email = false;
-    public boolean http = false;
-    //public boolean acronym = false;
-    public String punctType = null; // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT (default)
-    public int relativeDocumentPosition = -1;
-    public int relativePagePosition = -1;
+
+    public String punctType = null; 
+    // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT (default)
+
+    public int relativeDocumentPosition = -1; 
+    public int relativePagePosition = -1; 
+
+	// graphic in closed proximity of the current block
+    public boolean bitmapAround = false;
+    public boolean vectorAround = false;
+	
+	// if a graphic is in close proximity of the current block, characteristics of this graphic 
+    public int closestGraphicHeight = -1; 
+    public int closestGraphicWidth = -1; 
+    public int closestGraphicSurface = -1; 
 
     public String printVector() {
         if (string == null) return null;
@@ -96,16 +98,12 @@ public class FeaturesVectorFulltext {
 
         // block information (1)
         res.append(" " + blockStatus);
-        //res.append(" 0");
 
         // line information (1)
         res.append(" " + lineStatus);
-
-        // page information (1)
-        res.append(" " + pageStatus);
-
-        // alignmet/horizontal position information (1)
-        //res.append(" " + alignmentStatus);
+		
+		// line position/identation (1)
+		res.append(" " + alignmentStatus);
 
         // font information (1)
         res.append(" " + fontStatus);
@@ -139,43 +137,7 @@ public class FeaturesVectorFulltext {
         else
             res.append(" 0");
 
-        // lexical information (9)
-        if (properName)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (commonName)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (firstName)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (year)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (month)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (email)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (http)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        // punctuation information (2)
+        // punctuation information (1)
         res.append(" " + punctType); // in case the token is a punctuation (NO otherwise)
 
         // relative document position (1)
@@ -183,6 +145,17 @@ public class FeaturesVectorFulltext {
 
         // relative page position (1)
         res.append(" " + relativePagePosition);
+
+		// proximity of a graphic to the current block (2)
+        if (bitmapAround)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
+        if (vectorAround)
+            res.append(" 1");
+        else
+            res.append(" 0");
 
         // label - for training data (1)
         /*if (label != null)

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.regex.*;
 
 /**
  * Class for holding static methods for text processing.
@@ -1093,7 +1094,6 @@ public class TextUtilities {
                 middle.append(ch);
             }
         }
-
         return finalShape.append(middle).append(suffix).toString();
 
     }
@@ -1209,12 +1209,13 @@ public class TextUtilities {
                 replaceAll("&apos\\s+;|&amp;apos\\s*;", "&apos;");
     }
 	
-	
     public static boolean filterLine(String line) {
         boolean filter = false;
         if (line.contains("@IMAGE")) {
             filter = true;
         } else if (line.contains(".pbm")) {
+            filter = true;
+        } else if (line.contains(".ppm")) {
             filter = true;
         } else if (line.contains(".vec")) {
             filter = true;
@@ -1223,4 +1224,18 @@ public class TextUtilities {
         }
         return filter;
     }
+	
+	/**
+	 * The equivalent of String.replaceAll() for StringBuilder
+	 */
+	public static StringBuilder replaceAll(StringBuilder sb, String regex, String replacement) {
+		Pattern pattern = Pattern.compile(regex);
+	    Matcher m = pattern.matcher(sb);
+	    int start = 0;
+	    while (m.find(start)) {
+	        sb.replace(m.start(), m.end(), replacement);
+	        start = m.start() + replacement.length();
+	    }
+		return sb;
+	}
 }

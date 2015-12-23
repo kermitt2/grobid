@@ -4,21 +4,21 @@
 	<parent>
 		<groupId>org.grobid</groupId>
 		<artifactId>grobid-parent</artifactId>
-		<version>0.3.9-SNAPSHOT</version>
+		<version>0.4.0-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<groupId>org.grobid</groupId>
 	<artifactId>grobid-service</artifactId>
 	<name>${project.artifactId}</name>
-	<version>0.3.9-SNAPSHOT</version>
+	<version>0.4.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.grobid</groupId>
 			<artifactId>grobid-core</artifactId>
-			<version>0.3.9-SNAPSHOT</version>
+			<version>0.4.0-SNAPSHOT</version>
 			<scope>compile</scope>
 			<exclusions>
 				<exclusion>
@@ -39,18 +39,31 @@
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-client</artifactId>
 			<version>1.9</version>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-server</artifactId>
 			<version>1.9</version>
-			<scope>compile</scope>
 		</dependency>
+		<!--dependency>
+			<groupId>com.sun.jersey</groupId>
+        	<artifactId>jersey-servlet</artifactId>
+        	<version>1.9</version>
+        </dependency-->
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-core</artifactId>
 			<version>1.9</version>
+		</dependency>
+		<dependency>
+		    <groupId>asm</groupId>
+		    <artifactId>asm</artifactId>
+		    <version>3.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jvnet</groupId>
+			<artifactId>mimepull</artifactId>
+			<version>1.6</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -62,7 +75,7 @@
 			<groupId>com.sun.jersey.contribs</groupId>
 			<artifactId>jersey-multipart</artifactId>
 			<version>1.9</version>
-			<scope>compile</scope>
+			<!--scope>compile</scope-->
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -143,8 +156,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 			<plugin>

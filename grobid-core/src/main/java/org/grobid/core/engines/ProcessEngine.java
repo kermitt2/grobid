@@ -16,9 +16,11 @@ import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.main.batch.GrobidMainArgs;
 import org.grobid.core.utilities.Utilities;
+import org.grobid.core.utilities.KeyGen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -141,7 +143,7 @@ public class ProcessEngine implements Closeable {
 			LOGGER.warn("No files in directory: " + pdfDirectory);
 		}
 		else {
-			processFullTextDirectory(files, pGbdArgs, pGbdArgs.getPath2Output());
+			processFullTextDirectory(files, pGbdArgs, pGbdArgs.getPath2Output(), pGbdArgs.getSaveAssets());
 		}
 	}
 		
@@ -152,14 +154,24 @@ public class ProcessEngine implements Closeable {
      * @param pGbdArgs The parameters.
      * @throws Exception
      */
-	private void processFullTextDirectory(File[] files, final GrobidMainArgs pGbdArgs, String outputPath) {	
+	private void processFullTextDirectory(File[] files, final GrobidMainArgs pGbdArgs, String outputPath, boolean saveAssets) {	
         if (files != null) {
 			boolean recurse = pGbdArgs.isRecursive();
 			String result;
             for (final File currPdf : files) {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
-                        result = getEngine().fullTextToTEI(currPdf.getAbsolutePath(), false, false);
+                        GrobidAnalysisConfig config = null;
+			            // path for saving assets
+                        if (saveAssets) {
+					        String assetPath = outputPath + File.separator + KeyGen.getKey();
+				            config = GrobidAnalysisConfig.builder()
+														.pdfAssetPath(new File(assetPath))
+														.build();
+                        }
+                        else
+                            config = GrobidAnalysisConfig.builder().build();;
+                        result = getEngine().fullTextToTEI(currPdf, config);
 						File outputPathFile = new File(outputPath);
 						if (!outputPathFile.exists()) {
 							outputPathFile.mkdir();
@@ -180,7 +192,7 @@ public class ProcessEngine implements Closeable {
 						if (newFiles != null) {
 							String newLevel = currPdf.getName();
 							processFullTextDirectory(newFiles, pGbdArgs, outputPath + 
-								File.separator + newLevel);
+								File.separator + newLevel, saveAssets);
 						}
                     }
                 } 
@@ -281,7 +293,6 @@ public class ProcessEngine implements Closeable {
      *
 	 * @param files list of files to be processed	
      * @param pGbdArgs The parameters.
-     * @throws Exception
      */
 	private void processReferencesDirectory(File[] files, final GrobidMainArgs pGbdArgs, String outputPath) {	
         if (files != null) {
@@ -291,13 +302,13 @@ public class ProcessEngine implements Closeable {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
                         final List<BibDataSet> results = 
-							getEngine().processReferences(currPdf.getAbsolutePath(), false);
+							getEngine().processReferences(currPdf, false);
 						File outputPathFile = new File(outputPath);
 						if (!outputPathFile.exists()) {
 							outputPathFile.mkdir();
 						}
 
-						StringBuffer result = new StringBuffer();
+						StringBuilder result = new StringBuilder();
 						// dummy header
 						result.append("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " + 	
 						"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
