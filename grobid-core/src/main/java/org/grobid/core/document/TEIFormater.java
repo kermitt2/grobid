@@ -964,7 +964,7 @@ public class TEIFormater {
 		
 		buffer.append("\n\t\t\t<div type=\"acknowledgement\">\n");
 		StringBuilder buffer2 = new StringBuilder();
-		
+
 		buffer2 = toTEITextPiece(buffer2, reseAcknowledgement,  null,  bds, 
 			new LayoutTokenization(tokenizationsAcknowledgement), null, null, doc, config);
 		String acknowResult = buffer2.toString();
@@ -1003,6 +1003,7 @@ public class TEIFormater {
 		if ( (result == null) || (tokenizations == null) ) {
 			return buffer;
 		}
+
 		buffer.append("\t\t\t<div type=\"annex\">\n");	
 		buffer = toTEITextPiece(buffer, result,  biblio,  bds, 
 			new LayoutTokenization(tokenizations), null, null, doc, config);
@@ -1701,7 +1702,6 @@ public class TEIFormater {
 				if (generateIDs) 
 					buffer.append(" xml:id=\"_" + divID + "\"");
                 buffer.append(">" + text + "</item>\n\n");
-
             } else {
                 res = false;
             }

@@ -230,7 +230,7 @@ public class FullTextParser extends AbstractParser {
 			for(int blockIndex = dp1.getBlockPtr(); blockIndex <= dp2.getBlockPtr(); blockIndex++) {
 				boolean graphicVector = false;
 	    		boolean graphicBitmap = false;
-            	Block block = blocks.get(blockIndex);				
+            	Block block = blocks.get(blockIndex);
 
            	 	// we estimate the length of the page where the current block is
 	            if (start || endPage) {
@@ -718,6 +718,7 @@ public class FullTextParser extends AbstractParser {
 
 				// output of header as training data
 				// ...
+				
 	            // output of the identified citations as traning data
 				StringBuilder allBufferReference = new StringBuilder();
 	            String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
