@@ -7,15 +7,15 @@ package org.grobid.core.engines;
 public enum SegmentationLabel {
     /**
      * 	cover page <cover>,
-     document header <header>,
-     page footer <footnote>,
-     page header <headnote>,
-     document body <body>,
-     bibliographical section <references>,
-     page number <page>,
-     annexes <annex>,
-	 acknowledgement <acknowledgement>,
-	 toc <toc> -> not yet used because not yet training data for this
+     * document header <header>,
+     * page footer <footnote>,
+     * page header <headnote>,
+     * document body <body>,
+     * bibliographical section <references>,
+     * page number <page>,
+     * annexes <annex>,
+	 * acknowledgement <acknowledgement>,
+	 * toc <toc> -> not yet used because not yet training data for this
      */
     COVER("<cover>"),
     HEADER("<header>"),

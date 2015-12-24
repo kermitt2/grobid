@@ -1,0 +1,61 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_1512.00014.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure type="table">
+
+            <head>Table <label>1</label>. </head>
+ 
+            <figDesc>Table listing the calibrators used for the NCP observations. It was<lb/> decided early in the MSSS programme that 3C 48 and 3C 147 might not<lb/> be adequate as calibrators for the LBA portion of the survey, and so these<lb/> were dropped 8 and 22 days after first use, respectively. Observations using<lb/> these calibrators displayed no disadvantages over those observed with other<lb/> calibrators when checked in this project, and hence they were kept as part<lb/> of the sample.<lb/> </figDesc>
+
+            <table>Calibrator Source % Use First Use Date Last Use Date<lb/> 3C 48<lb/> 2%<lb/> 2011 Dec 24<lb/> 2012 Jan 01<lb/> 3C 147<lb/> 6%<lb/> 2011 Dec 23<lb/> 2012 Jan 14<lb/> 3C 196<lb/> 43%<lb/> 2011 Dec 24<lb/> 2012 Apr 14<lb/> 3C 295<lb/> 40%<lb/> 2011 Dec 24<lb/> 2012 Apr 01<lb/> Cygnus A<lb/> 9%<lb/> 2012 Jan 28<lb/> 2012 Apr 16</table>
+        </figure>
+
+
+        <figure type="table">
+
+            <head>Table <label>2</label>. </head>
+ 
+            <figDesc>The average image sensitivity and number of epochs for each time-<lb/>scale at which a transient search was performed. The accepted epochs col-<lb/>umn defines how many of the total number of images passed the TRAP im-<lb/>age quality control.<lb/> </figDesc>
+
+            <table>Time<lb/> Average rms<lb/> Typical Resolution<lb/> Total #<lb/> Accepted #<lb/> (min) (mJy beam −1 )<lb/> (arcmin)<lb/> Epochs<lb/> Epochs<lb/> 0.5<lb/> 3610<lb/> 4.8 × 2.2<lb/> 47 970<lb/> 41 340<lb/> 2<lb/> 2110<lb/> 4.7 × 2.1<lb/> 10 739<lb/> 9 262<lb/> 11<lb/> 790<lb/> 5.4 × 2.3<lb/> 2 149<lb/> 1 897<lb/> 55<lb/> 550<lb/> 4.9 × 2.1<lb/> 371<lb/> 328<lb/> 297<lb/> 250<lb/> 3.1 × 1.4<lb/> 34<lb/> 32</table>
+        </figure>
+
+
+        <figure type="table">
+
+            <head>Table <label>3</label>. </head>
+ 
+            <figDesc>Details of the follow-up observations performed with the Liverpool<lb/> Telescope.<lb/> </figDesc>
+
+            <table>Obs. Date<lb/> # Epochs Epoch Exposure Time<lb/> (s)<lb/> 2013/11/28<lb/> 3<lb/> 100<lb/> 2013/12/21<lb/> 3<lb/> 100<lb/> 2013/12/30<lb/> 3<lb/> 100<lb/> 2014/01/12<lb/> 2<lb/> 300</table>
+        </figure>
+
+
+        <figure type="table">
+
+            <head>Table <label>4</label>. </head>
+ 
+            <figDesc>The observed width of the four bursts reported in Thornton et al.<lb/> (2013) along with the estimated width of the event at 60 MHz. To calculate<lb/> the estimated width we use the relation τsc(ν) ∝ ν γ where γ = −4.<lb/> Dispersion effects are ignored and we assume a scenario of the reported<lb/> widths being dominated by scattering. Of the four reported bursts, FRB<lb/> 110220 was the sole event to show any evidence of scattering.<lb/> </figDesc>
+
+            <table>Event<lb/> Observed width<lb/> Estimated width<lb/> at 1.3 GHz (ms)<lb/> at 60 MHz (s)<lb/> FRB 110220<lb/> 5.6<lb/> 1234<lb/> FRB 110627<lb/> &lt; 1.4<lb/> &lt; 309<lb/> FRB 110703<lb/> &lt; 4.3<lb/> &lt; 948<lb/> FRB 120127<lb/> &lt; 1.1<lb/> &lt; 242</table>
+        </figure>
+
+
+        <figure type="table">
+
+            <head>Table <label>5</label>. </head>
+
+            <figDesc>Summary of the transient surface densities and general information of the results of this work (top section) and other low-frequency ( 330 MHz)<lb/> transient surveys (bottom section). We follow a similar approach to Ofek et al. (2011) where δt is the time-scale of each individual epoch searched in the<lb/> survey, and ∆t is the cadence time-scales(s) of the epochs observed. The value denoted by &apos;-&apos; signifies that we were unsure of the correct value from the<lb/> literature. A time value of &apos;cont.&apos; means the observations were continuous. These values are those which are used in Figures 15 and 16.<lb/> </figDesc>
+
+            <table>Survey<lb/> Telescope<lb/> ν<lb/> Sensitivity<lb/> ρ<lb/> δt<lb/> ∆t<lb/> #<lb/> # Detected<lb/> (MHz)<lb/> (Jy)<lb/> (deg −2 )<lb/> Epochs<lb/> Transients<lb/> This work<lb/> LOFAR<lb/> 60<lb/> &gt; 36.1<lb/> 4.1 × 10 −7<lb/> 30 s<lb/> cont.–4 months<lb/> 41 350<lb/> 0<lb/> This work<lb/> LOFAR<lb/> 60<lb/> &gt; 21.1<lb/> 1.8 × 10 −6<lb/> 2 min<lb/> cont.–4 months<lb/> 9 262<lb/> 0<lb/> This work<lb/> LOFAR<lb/> 60<lb/> &gt; 7.9<lb/> 1.4 × 10 −5<lb/> 11 min<lb/> 4 min–4 months<lb/> 1 897<lb/> 1<lb/> This work<lb/> LOFAR<lb/> 60<lb/> &gt; 5.5<lb/> 5.2 × 10 −5<lb/> 55 min<lb/> 4 min–4 months<lb/> 328<lb/> 0<lb/> This work<lb/> LOFAR<lb/> 60<lb/> &gt; 2.5<lb/> 5.3 × 10 −4<lb/> 297 min<lb/> 4 min–4 months<lb/> 32<lb/> 0<lb/> Lazio et al. (2010)<lb/> LWDA<lb/> 74<lb/> &gt; 2 500<lb/> 9.5 × 10 −8<lb/> 5 min<lb/> 2 min–4 months<lb/> ∼1 272<lb/> 0<lb/> Obenberger et al. (2014a)<lb/> LWA1<lb/> 74<lb/> &gt; 1 440<lb/> 2.2 × 10 −9 a<lb/> 5 s<lb/> cont.–1 year<lb/> ∼43 056<lb/> 2<lb/> Bell et al. (2014)<lb/> MWA<lb/> 154<lb/> &gt; 5.5<lb/> 7.5 × 10 −5<lb/> 5 min<lb/> minutes–1 year<lb/> 51<lb/> 0<lb/> Carbone et al. (2015)<lb/> LOFAR<lb/> 150<lb/> &gt; 0.5<lb/> 10 −3<lb/> 11 min<lb/> minutes–months<lb/> 151<lb/> 0<lb/> Cendes et al. (2015)<lb/> LOFAR<lb/> 149<lb/> &gt; 0.5<lb/> 10 −2<lb/> 11 min<lb/> minutes–months<lb/> 26<lb/> 0<lb/> Hyman et al. (2009) b<lb/> VLA,GMRT 235,330<lb/> &gt; 30 × 10 −3<lb/> 0.034<lb/> ∼3 hr<lb/> days–months<lb/> -<lb/>3<lb/> Jaeger et al. (2012)<lb/> VLA<lb/> 325<lb/> &gt; 2.1 × 10 −3<lb/> 0.12<lb/> 12 hr<lb/> 1 day–1 month<lb/> 6<lb/> 1<lb/> a Reported as 1.4 × 10 −2 yr −1 deg −2 . Using the integration time of 5 s, this converts to 2.2 × 10 −9 deg −2 .<lb/> b Values for this survey are obtained from the calculations performed by Williams et al. (2013) which takes into account results from Hyman et al. (2005,<lb/> 2006, 2009).</table>
+        </figure>
+
+
+
+    </text>
+</tei>
+

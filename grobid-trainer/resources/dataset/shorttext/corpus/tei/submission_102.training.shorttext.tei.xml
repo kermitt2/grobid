@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_102"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<p>It was proposed lately that spontaneous emission rate for THz photons can be additionally increased by bosonic<lb/> stimulation when the radiative transition occurs into a condensed state <ref type="biblio">[1]</ref>, for example, a transition between upper<lb/> and lower polariton branches in semiconductor microcavity.<lb/></p>
+
+			<p>In the current work we use Lindblad master equation approach <ref type="biblio">[2]</ref> to describe time evolution of the system of cavity<lb/> polaritons in the regime of polariton lasing of THz emittion accounting for quantum nature of terahertz-to-polariton<lb/> coupling and demonstrate that quantum microcavities reveal rich variety of nonlinear phenomena, including bistability<lb/> and THz switching <ref type="biblio">[3]</ref>.<lb/> It is well known that strong polariton-polariton interactions in microcavities make it possible to observe the pronounced<lb/> nonlinear effects even for relatively weak intensities of pump (orders of magnitude smaller then in other optical<lb/> nonlinear systems). In this work we describe the formalism accounting for the following physical processes: coherent<lb/> polariton-THz photon interaction, polariton-polariton scattering leading to the blueshift of the polariton modes and<lb/> coupling of the polaritons with acoustic phonons (represented as a reservoir).<lb/></p> 
+			
+			<p>The main results are presented on <ref type="figure">Fig. 1-2</ref>. On <ref type="figure">Fig. 1</ref> the threshold characteristics is presented for different temperatures<lb/> where our approach predicts bistable behaviour with hysteresis. Also we worked-out a logical devise with switching<lb/> of signal by means of short THz impulse at t = t 0 (see <ref type="figure">Fig. 2</ref>): if the background pump corresponds to the bistability<lb/> region the signal can be switched from &quot;0&quot; to &quot;1&quot;.<lb/></p>
+
+			<figure>
+				<head>Figure 1:</head>
+				<figDesc>Occupancy of the THz mode versus pump<lb/> intensity in equilibrium state for different temperatures:<lb/> 1 K (red/solid), 10 K (green/dashed) and 20 K (blue/dash-<lb/>dotted). Illustration of the bistability and hysteresis. If T<lb/> being increased threshold current also increases.<lb/></figDesc>
+			</figure>
+
+			<figure>
+				<head>Figure 2:</head>
+				<figDesc>System response on a short single impuls<lb/> (FWHM= 20 ps) for different values of the background<lb/> pump: 4600 ps −1 (red), 5750 ps −1 (green) and 6500 ps −1<lb/> (blue). Switching occurs only when the background pump<lb/> corresponds to the bistable region (compare with <ref type="figure">Fig. 1</ref>).<lb/></figDesc>
+			</figure>
+
+	</text>
+</tei>

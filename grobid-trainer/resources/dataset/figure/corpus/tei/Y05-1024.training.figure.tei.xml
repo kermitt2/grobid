@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_Y05-1024"/>
+	</teiHeader>	
+	<text xml:lang="en">
+
+			<figure>
+				<trash>Telephone<lb/> Service<lb/> Module<lb/> Web<lb/> Service<lb/> Module<lb/> LVCSR<lb/> Module<lb/> Text<lb/> Retrieval<lb/> Module<lb/> User&apos;s<lb/> Manual<lb/> Index<lb/> Telephone<lb/> Network<lb/> The Internet<lb/> The Internet<lb/></trash>
+				<head>Figure <label>1</label>:</head>
+				<figDesc>The configuration of the prototype system.<lb/></figDesc>
+			</figure>
+
+
+			<figure>
+				<head>Figure <label>2</label>:</head>
+				<figDesc>The screen of the<lb/> cellular phone displaying the<lb/> search result.<lb/></figDesc>
+			</figure>
+
+			<figure>
+				<head>Figure <label>3</label>:</head>
+				<figDesc>The main page<lb/> of our system.<lb/></figDesc>
+			</figure>
+
+			<figure>
+				<head>Figure <label>4</label>:</head>
+				<figDesc>The result page<lb/> displaying the title list of<lb/> top ten results for the<lb/> query.<lb/></figDesc>
+			</figure>
+
+			<figure>
+				<head>Figure <label>5</label>:</head>
+				<figDesc>The body of<lb/> the passage displayed<lb/> when the user selects the<lb/> title in Figure 4.<lb/></figDesc>
+			</figure>
+
+
+	</text>
+</tei>

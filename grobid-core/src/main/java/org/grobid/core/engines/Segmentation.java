@@ -13,6 +13,7 @@ import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorSegmentation;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
@@ -131,6 +132,11 @@ public class Segmentation extends AbstractParser {
                 throw new GrobidException("PDF parsing resulted in empty content");
             }
 
+//for(Block block : doc.getBlocks()) {
+//    System.out.println(block.getText() + block.getPage() 
+//        + " [ x:" + block.x + ", y:" + block.y + ", width:" + block.width + ", height:" + block.height + "]\n\n");
+//}
+
             String content = //getAllTextFeatured(doc, headerMode);
                     getAllLinesFeatured(doc);
             if ((content != null) && (content.trim().length() > 0)) {
@@ -195,6 +201,21 @@ public class Segmentation extends AbstractParser {
                             }
                         }
                     }
+					// update the path of the image description stored in Document
+					List<GraphicObject> images = doc.getImages();
+					if (images != null) {
+						String subPath = assetFile.getPath();
+						int ind = subPath.lastIndexOf("/");
+						if (ind != -1)
+							subPath = subPath.substring(ind+1, subPath.length());
+						for(GraphicObject image : images) {
+							String fileImage = image.getFilePath();
+							fileImage = fileImage.replace(".ppm", ".png")
+											.replace(".jpg", ".png");
+							ind = fileImage.indexOf("/");
+							image.setFilePath(subPath + fileImage.substring(ind, fileImage.length()));
+						}
+					}
                 }
             }
             return doc;
@@ -202,7 +223,8 @@ public class Segmentation extends AbstractParser {
             // keep it clean when leaving...
             if (config.getPdfAssetPath() == null) {
                 // remove the pdf2xml tmp file
-                DocumentSource.close(documentSource, false);
+                //DocumentSource.close(documentSource, false);
+                DocumentSource.close(documentSource, true);
             } else {
                 // remove the pdf2xml tmp files, including the sub-directories
                 DocumentSource.close(documentSource, true);
@@ -648,6 +670,8 @@ public class Segmentation extends AbstractParser {
         }
 
 		double pageHeight = 0.0;
+        boolean graphicVector = false;
+        boolean graphicBitmap = false;
         for (int blockIndex = 0; blockIndex < blocks.size(); blockIndex++) {
             Block block = blocks.get(blockIndex);
 
@@ -710,6 +734,17 @@ public class Segmentation extends AbstractParser {
             if (endPage) {
                 newPage = true;
                 mm = 0;
+            }
+
+            // check if we have a graphical object connected to the current block
+            List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
+            if (localImages != null) {
+                for(GraphicObject localImage : localImages) {
+                    if (localImage.getType() == GraphicObject.BITMAP) 
+                        graphicVector = true;
+                    if (localImage.getType() == GraphicObject.VECTOR) 
+                        graphicBitmap = true;
+                }
             }
 
             String localText = block.getText();
@@ -783,6 +818,13 @@ public class Segmentation extends AbstractParser {
                         .relativeLocation(line.length(), maxLineLength, LINESCALE);
 				
                 features.punctuationProfile = TextUtilities.punctuationProfile(line);
+
+                if (graphicBitmap) {
+                	features.bitmapAround = true;
+                }
+                if (graphicVector) {
+                	features.vectorAround = true;
+                }
 
                 features.lineStatus = null;
                 features.punctType = null;

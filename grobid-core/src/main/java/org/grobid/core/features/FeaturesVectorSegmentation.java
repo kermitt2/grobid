@@ -42,6 +42,8 @@ public class FeaturesVectorSegmentation {
 	public boolean firstPageBlock = false; 
 	public boolean lastPageBlock = false;
 	public int lineLength = 0;
+    public boolean bitmapAround = false;
+    public boolean vectorAround = false;
 
     public String printVector() {
         if (string == null) return null;
@@ -117,12 +119,12 @@ public class FeaturesVectorSegmentation {
         // line information (1)
 		if (lineStatus != null)
 			res.append(" " + lineStatus);
+		
+        // line alignment/identation information (1)
+        //res.append(" " + alignmentStatus);
 
         // page information (1)
         res.append(" " + pageStatus);
-
-        // alignmet/horizontal position information (1)
-        //res.append(" " + alignmentStatus);
 
         // font information (1)
         res.append(" " + fontStatus);
@@ -221,6 +223,16 @@ public class FeaturesVectorSegmentation {
 
 		// current line length on a predefined scale and relative to the longest line of the current block
 		res.append(" " + lineLength);
+
+        if (bitmapAround)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
+        if (vectorAround)
+            res.append(" 1");
+        else
+            res.append(" 0");
 
         // label - for training data (1)
         /*if (label != null)

@@ -1369,7 +1369,7 @@ public class BiblioItem {
     /**
      * Some little cleaning of the abstract field.
      */
-    final String[] ABSTRACT_PREFIXES = {"Abstract", "ABSTRACT", "Summary", "Résumé", "Abrégé", "a b s t r a c t"};
+    final String[] ABSTRACT_PREFIXES = {"abstract", "summary", "résumé", "abrégé", "a b s t r a c t"};
 
     public String cleanAbstract(String string) {
 
@@ -1378,9 +1378,10 @@ public class BiblioItem {
         if (string.length() == 0)
             return string;
         String res = string.trim();
+        String res0 = res.toLowerCase();
 
         for (String abstractPrefix : ABSTRACT_PREFIXES) {
-            if (res.startsWith(abstractPrefix)) {
+            if (res0.startsWith(abstractPrefix)) {
                 if (abstractPrefix.length() < res.length()) {
                     res = res.substring(abstractPrefix.length(), res.length());
                     res.trim();
@@ -1452,7 +1453,7 @@ public class BiblioItem {
         }
 		
         res = res.trim();
-        if (res.startsWith(":")) {
+        if (res.startsWith(":") || res.startsWith("—") || res.startsWith("-")) {
             res = res.substring(1);
         }
         if (res.endsWith(".")) {
@@ -3606,20 +3607,28 @@ public class BiblioItem {
                     } catch (Exception e) {
                         beginPage = -1;
                     }
-                    pageRange = firstPage;
+					if (beginPage != -1)
+						pageRange = "" + beginPage;
+					else
+						pageRange = firstPage;
 
                     if (matcher.find()) {
                         if (matcher.groupCount() > 0) {
                             lastPage = matcher.group(0);
                         }
                         if (lastPage != null) {
-                            pageRange += "--" + lastPage;
-
                             try {
                                 endPage = Integer.parseInt(lastPage);
                             } catch (Exception e) {
                                 endPage = -1;
                             }
+							
+							if ( (endPage != -1) && (endPage < beginPage) && (endPage < 50) ) {
+								endPage = beginPage + endPage;
+								pageRange += "--" + endPage;
+							}
+							else 
+								pageRange += "--" + lastPage;
                         }
                     }
                 }

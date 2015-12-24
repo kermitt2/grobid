@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_83"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<figure>
+				<head>Figure <label>1</label>:</head>
+				<figDesc>(a) Simulated and (b) measured spectra for a coupled dot-cavity system in the strong-coupling<lb/> regime for different cavity wavelengths. The arrows indicates the magic frequency where the biexciton-to-<lb/>exciton transition is in resonance with two cavity photons and luminescence becomes quenched. Panel (c)<lb/> reports the level scheme under consideration.</figDesc>
+			</figure>
+
+
+	</text>
+</tei>

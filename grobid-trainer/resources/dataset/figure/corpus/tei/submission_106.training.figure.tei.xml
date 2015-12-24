@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_106"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<figure>
+				<head>Figure <label>1</label>:</head>
+				<figDesc>The relative positions of energy levels as<lb/> functions of the applied magnetic field for heavy-hole<lb/> exciton.<lb/></figDesc>
+			</figure>
+
+	</text>
+</tei>

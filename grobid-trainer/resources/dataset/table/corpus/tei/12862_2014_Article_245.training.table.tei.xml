@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_12862_2014_Article_245"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<figure type="table">
+				<head>Table <label>1</label> Clades of clownfishes used in this study<lb/></head> 
+
+				<table>Clade name<lb/> Species<lb/> percula<lb/> A. ocellaris, A. percula, P. biaculeatus<lb/> Australian<lb/> A. akindynos, A. mccullochi<lb/> akallopisos<lb/> A. akallopisos, A. perideraion,<lb/> A. pacificus, A. sandaracinos<lb/> ephippium<lb/> A. frenatus, A. ephippium,<lb/> A. rubrocinctus, A. melanopus, A. barberi<lb/> polymnus<lb/> A. sebae, A. polymnus<lb/> clarkii<lb/> A. clarkii, A. tricinctus<lb/> Indian<lb/> A. bicinctus, A. omanensis, A. chagosensis,<lb/> A. latifasciatus, A. nigripes, A. allardi,<lb/> A. chrysogaster, A. fuscocaudatus*<lb/></table>
+
+				<figDesc>The table gives the list of species included in each clade. A. stands for<lb/> Amphiprion, P. for Premnas. Not included are A. chrysopterus and A. latezonatus,<lb/> which are monospecific lineages and A. leucokranos and A. thiellei, which have<lb/> likely been described from hybrid specimens. *Exemplars of A. fuscocaudatus<lb/> have never been sequenced. We hypothetically placed this species in the Indian<lb/> clade because it is the most parsimonious solution regarding the biogeography<lb/> of clownfish species [19].<lb/></figDesc> 
+			</figure>
+
+	</text>
+</tei>

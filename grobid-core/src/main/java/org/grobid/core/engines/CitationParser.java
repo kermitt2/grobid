@@ -172,7 +172,7 @@ public class CitationParser extends AbstractParser {
 
         for (LabeledReferenceResult ref : references) {
             BiblioItem bib = processing(TextUtilities.dehyphenize(ref.getReferenceText()), consolidate);
-            if (!bib.rejectAsReference()) {
+            if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
                 bds.setResBib(bib);
@@ -642,7 +642,7 @@ public class CitationParser extends AbstractParser {
                     }
                     if (output == null) {
                         output = writeField(s1, lastTag0, s2, "<volume>",
-                                "<biblScope type=\"vol\">", addSpace, 0);
+                                "<biblScope unit=\"volume\">", addSpace, 0);
                     } else {
                         buffer.append(output);
                         lastTag = s1;
@@ -674,7 +674,7 @@ public class CitationParser extends AbstractParser {
                     }
                     if (output == null) {
                         output = writeField(s1, lastTag0, s2, "<pages>",
-                                "<biblScope type=\"pp\">", addSpace, 0);
+                                "<biblScope unit=\"page\">", addSpace, 0);
                     } else {
                         buffer.append(output);
                         lastTag = s1;
@@ -690,7 +690,7 @@ public class CitationParser extends AbstractParser {
                     }
                     if (output == null) {
                         output = writeField(s1, lastTag0, s2, "<issue>",
-                                "<biblScope type=\"issue\">", addSpace, 0);
+                                "<biblScope unit=\"issue\">", addSpace, 0);
                     } else {
                         buffer.append(output);
                         lastTag = s1;

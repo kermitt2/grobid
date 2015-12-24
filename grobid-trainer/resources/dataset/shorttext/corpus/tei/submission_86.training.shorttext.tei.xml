@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_86"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<p>Recently we have demonstrated that nonexponential long-time decay of exciton recombination appears<lb/> in ensembles of indirect band gap InAlAs/AlAs QDs with a type I band gap alignment as a result of summing a<lb/> lot of single-exponential curves <ref type="biblio">[1]</ref>. It takes place when the excitons with different recombination rates<lb/> (described by distribution function of exciton lifetimes G(τ R )), localized in the QDs of different size, shape and<lb/> composition emit at the same wavelength. Here we study the excitons recombination dynamics in such QDs.<lb/> Typical dynamics of exciton recombination is shown in figure. Taken into account that a nonexponential decay<lb/> curve is described by the following law:<lb/></p>
+
+			<formula>∫<lb/> ∞<lb/>  <lb/>  <lb/> <lb/>  =<lb/> 0<lb/> t -<lb/>exp )<lb/> ( )<lb/> (<lb/> R<lb/> R<lb/> R<lb/> d G<lb/> t I<lb/> τ τ<lb/> τ<lb/> ,<lb/></formula>
+
+			<p>we demonstrate that excellent description of the experimental data (see figure) during decay up to five orders of<lb/> magnitude occurs with the following distribution function (sown in the figure insert):<lb/></p>
+
+			<formula> <lb/>  <lb/> <lb/>  ⋅<lb/> =<lb/> R R<lb/> R<lb/> C G<lb/> τ<lb/> τ τ<lb/> τ<lb/> γ<lb/> 0<lb/> -exp<lb/> ) (<lb/> .<lb/></formula>
+
+			<p>Here C is a constant, and τ 0 characterizes a maximum of the distribution of the exciton lifetimes. γ is a<lb/> parameter, which characterizes the width of the G(τ R )<lb/> distribution. Momentum conservation law restricts radiative<lb/> recombination of the exciton in indirect band gap QDs, since a<lb/> difference in the momenta of indirect exciton and photon should<lb/> be scattered. As it has been recently shown the main channel of<lb/> the momentum loss at the exciton recombination in the<lb/> InAlAs/AlAs QDs is the scattering at heterointerface QD/matrix<lb/> <ref type="biblio">[2]</ref>. Recovery of the G(τ R ) distribution functions for the<lb/> ensembles of InAlAs/AlAs QDs with different sizes and<lb/> sharpness of the heterointerface allows us to demonstrate that<lb/> lifetime of indirect in the momentum space exciton in the QDs<lb/> depends mainly on the sharpness of heterointerface, while its<lb/> dependence from the QDs size is much smaller. In well<lb/> agreement with these experimental data the theoretical<lb/> estimation demonstrates that the lifetime of indirect in<lb/> momentum space exciton has exponential dependence from the<lb/> thickness d of the diffused interface InAlAs layer at<lb/> heterointerface QD/matrix:<lb/>  <lb/>   <lb/>  ∼<lb/> a<lb/> d<lb/> R<lb/> exp<lb/> τ<lb/> , where a is lattice<lb/> constant. This work was supported by Deutsche<lb/> Forschungsgemeinschaft, by DFG-RFBR (grant no. 436 RUS<lb/> 113/958/0-1), by RFBR (grant no. 10-02-00240). Research stays of T.S.S. in Dortmund have been financed by<lb/> DFG grants YA 65/12-1 and YA 65/14-1.<lb/></p>
+
+			<head>References<lb/></head>
+
+			<bibl> <label>[1]</label> T. S. Shamirzaev, A.V. Nenashev, K.S. Zhuravlev, Appl. Phys Lett. 92 (2008), pp. 213101.<lb/></bibl>
+
+			<bibl> <label>[2]</label> T. S. Shamirzaev, A. V. Nenashev, A. K. Gutakovskii, A. K. Kalagin, K. S. Zhuravlev, M. Larsson, P. O.<lb/> Holtz, Phys. Rev. B 78 (2008), pp. 085323.<lb/></bibl>
+
+			<note place="footnote">* corresponding author : sha_tim@mail.ru<lb/></note>
+
+			<figure>
+				<trash>10<lb/> 2<lb/> 10<lb/> 4<lb/> 10<lb/> 6<lb/> 10<lb/> -6<lb/> 10<lb/> -4<lb/> 10<lb/> -2<lb/> 10<lb/> 0<lb/> 10<lb/> 1<lb/> 10<lb/> 2<lb/> 10<lb/> 3<lb/> 10<lb/> 4<lb/> 10<lb/> 5<lb/> 10<lb/> 0<lb/> 10<lb/> 1<lb/> 10<lb/> 2<lb/> 10<lb/> 3<lb/> 10<lb/> 4<lb/> 10<lb/> 5<lb/> 10<lb/> 6<lb/> τ R (ns)<lb/> G(τ<lb/> R<lb/> )<lb/>PL intensity (arb.units)<lb/> t (ns)<lb/></trash>
+				<figDesc>Photoluminescence decay in ensembles of<lb/> InAlAs/AlAs QDs: experimental data are<lb/> shown by open circles, the solid line is<lb/> modeling of kinetics. Insert shows the<lb/> distribution function G(τ R ) with a set of<lb/> parameters: τ 0 =5.2 µs and γ=3.40.</figDesc>
+			</figure>
+
+	</text>
+</tei>

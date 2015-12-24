@@ -64,6 +64,7 @@
                         <cell role="nameAlt" xml:lang="de">Deutschland</cell>
 						<cell role="nameAlt" xml:lang="de">Bundesrepublik Deutschland</cell>
 						<cell role="nameAlt" xml:lang="de">Republik Deutschland</cell>
+						<cell role="nameAlt" xml:lang="en">Federal Republic of Germany</cell>
                     </row>
                     <row>
                         <cell role="a2code">AD</cell>
@@ -1695,7 +1696,6 @@
                         <cell role="name" xml:lang="en">EAST GERMANY</cell>
                         <cell role="nameAlt" xml:lang="en">East Germany</cell>
 						<cell role="nameAlt" xml:lang="en">German Democratic Republic</cell>
-						<cell role="nameAlt" xml:lang="en">Federal Republic of Germany</cell>
 						<cell role="nameAlt" xml:lang="de">Ostdeutschland</cell>
                         <cell role="nameAlt" xml:lang="de">DDR</cell>
 						<cell role="nameAlt" xml:lang="de">GDR</cell>

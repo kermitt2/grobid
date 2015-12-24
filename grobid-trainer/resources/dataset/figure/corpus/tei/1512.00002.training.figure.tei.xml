@@ -1,0 +1,88 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_1512.00002.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+
+            <head>Fig. <label>1</label>. </head>
+ 
+            <figDesc>Artistic illustration of the Cherenkov Telescope Array [3].</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Fig. <label>2</label>. </head>
+ 
+            <figDesc>Diagram of the three types of different<lb/> CTA telescopes [3].</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Fig. <label>3</label>. </head>
+ 
+            <figDesc>Measured reflectance of the mirrors types considered for CTA.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <trash>(a)<lb/> (b)<lb/> </trash>
+
+            <head>Fig. <label>6</label>. </head>
+ 
+            <figDesc>(a) Wavefront of a LST mirror computed with an ideal model.<lb/></figDesc> 
+            <figDesc>(b) Wavefront computed with a realistic distorted model.<lb/> </figDesc>
+
+            <trash>(a)<lb/> (b)</trash>
+        </figure>
+
+
+        <figure>
+
+            <head>Fig. <label>5</label>. </head>
+ 
+            <figDesc>(a) Spot diagram for non-optimized LST using ideal mirrors. (b) Spot<lb/> diagram of the optimized telescope model with realistic mirrors.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Fig. <label>4</label>. </head>
+ 
+            <figDesc>Model in OSLO of the CTA-LST telescope.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Fig. <label>8</label>. </head>
+ 
+            <figDesc>Sky radiance as a function of zenith angle for different SZA angles at<lb/> λ=1550 nm limited to observation zenith angle of 70º and SEP of 5º.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Fig. <label>7</label>. </head>
+ 
+            <figDesc>MODTRAN Sky radiance for a maritime aerosol at La Palma (Spain)<lb/> observatory. SZA 45º, azimuth 0º, observation zenith angles from 0º to 90º.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Fig. <label>9</label>. </head>
+ 
+            <figDesc>Downlink scenarios simulated in this work.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

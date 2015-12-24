@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_87"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<figure>
+				<head>Figure <label>1</label>:</head>
+				<figDesc>When the value of a multimode Bell type inequality drops below 1, the state of the system<lb/> is entangled. As a function of pump intensity, this is shown with full density matrix calculations (spots) and<lb/> Heisenberg equations (curve).The different curves show the effect of increasing pure dephasing from polariton-<lb/>phonon scattering.<lb/></figDesc>
+			</figure>
+
+	</text>
+</tei>

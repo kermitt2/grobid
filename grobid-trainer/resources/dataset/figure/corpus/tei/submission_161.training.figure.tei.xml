@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_161"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<figure>
+				<trash>
+					0.2<lb/> 0.4<lb/> 0.6<lb/> 0.8<lb/> SL QW 0<lb/> 1/3<lb/>  SL 1  D 1<lb/> 2/5<lb/> 3/7<lb/> 3/5<lb/> 2/3<lb/> 1<lb/> R xy<lb/> (h/e<lb/> 2<lb/> )<lb/> (a)<lb/> 0.0<lb/> 0.5<lb/> 1.0<lb/> 1.5<lb/> 2.0<lb/> 2.5<lb/>
+
+					0 2<lb/> 4 6<lb/> 8 10<lb/> 12 14<lb/> 16 18<lb/> -50<lb/> 0<lb/> 50<lb/> 100<lb/> Magnetic fieldB(T)<lb/> (c)<lb/> 1/2<lb/> P<lb/> (%)<lb/> 0<lb/> 100<lb/> 200<lb/> 300<lb/> QW 2<lb/> QW -1<lb/> QW
+
+					0<lb/> (b)<lb/> R xx<lb/> (h/e<lb/> 2<lb/> )<lb/> PL<lb/> intensity<lb/> (a.u.)<lb/>
+				</trash>
+				
+				<head>Figure. <label>1</label>:</head> 
+				
+				<figDesc>(a) R xx and R xy as a function of the<lb/> magnetic field, (b) integrated intensity of σ -<lb/>polarized PL from the central well QW 0 and<lb/> from the lateral wells QW -1 , QW 2 , (c) spin<lb/> polarization of the electrons in the central well<lb/> measured in disordered multi-wells at T ≈ 300<lb/> mK.<lb/></figDesc>
+			</figure>
+
+	</text>
+</tei>

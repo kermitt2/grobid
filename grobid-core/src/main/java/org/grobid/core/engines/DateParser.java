@@ -292,8 +292,8 @@ public class DateParser extends AbstractParser {
     /**
      * Extract results from a date string in the training format without any string modification.
      */
-    public StringBuffer trainingExtraction(List<String> inputs) {
-        StringBuffer buffer = new StringBuffer();
+    public StringBuilder trainingExtraction(List<String> inputs) {
+        StringBuilder buffer = new StringBuilder();
         try {
             if (inputs == null)
                 return null;
@@ -530,7 +530,7 @@ public class DateParser extends AbstractParser {
         return result;
     }
 
-    private boolean testClosingTag(StringBuffer buffer,
+    private boolean testClosingTag(StringBuilder buffer,
                                    String currentTag0,
                                    String lastTag0) {
         boolean res = false;

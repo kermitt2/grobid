@@ -35,35 +35,30 @@
 	<contributors>
 		<contributor>
 			<name>Patrice Lopez</name>
-			<url>https://sourceforge.net/users/kermitt2</url>
 			<roles>
 				<role>Project leader</role>
 			</roles>
 		</contributor>
 		<contributor>
 			<name>Florian Zipser</name>
-			<url>https://sourceforge.net/users/florianzipser</url>
 			<roles>
 				<role>Project developer</role>
 			</roles>
 		</contributor>
 		<contributor>
 			<name>Dmitry Katsubo</name>
-			<url>https://sourceforge.net/users/dma_k</url>
 			<roles>
 				<role>Project developer</role>
 			</roles>
 		</contributor>
 		<contributor>
 			<name>Vyacheslav Zholudev</name>
-			<url>https://sourceforge.net/users/detonator413</url>
 			<roles>
 				<role>Project developer</role>
 			</roles>
 		</contributor>
 		<contributor>
 			<name>Damien Ridereau</name>
-			<url>http://sourceforge.net/users/damien-sf</url>
 			<roles>
 				<role>Project developer</role>
 			</roles>
@@ -72,6 +67,7 @@
 
 	<reporting>
 		<plugins>
+			<!-- mvn javadoc:javadoc -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>

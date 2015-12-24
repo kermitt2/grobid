@@ -15,7 +15,7 @@ We suppose in the following that the archive is decompressed under `PATH_TO_PMC/
 
 ## Running and evaluating 
 
-The following command line is used to run and evaluate Grobid on the dataset:
+Under ```grobid-trainer/```, the following command line is used to run and evaluate Grobid on the dataset:
 ```bash
 > mvn compile exec:exec -PPubMedCentralEval -Dpmc=*PATH_TO_PMC/PMC_sample_1943* -Drun=1
 ```

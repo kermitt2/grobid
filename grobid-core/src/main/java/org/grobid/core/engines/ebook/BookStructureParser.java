@@ -324,13 +324,14 @@ public class BookStructureParser extends AbstractParser {
                 }
 
                 if (newPage) {
-                    features.pageStatus = "PAGESTART";
+                    //features.pageStatus = "PAGESTART";
                     newPage = false;
                     endPage = false;
-                    if (previousFeatures != null)
-                        previousFeatures.pageStatus = "PAGEEND";
+                    if (previousFeatures != null) {
+                        //previousFeatures.pageStatus = "PAGEEND";
+					}
                 } else {
-                    features.pageStatus = "PAGEIN";
+                    //features.pageStatus = "PAGEIN";
                     newPage = false;
                     endPage = false;
                 }
@@ -351,7 +352,7 @@ public class BookStructureParser extends AbstractParser {
                     features.digit = "CONTAINSDIGITS";
                 }
 
-                if (featureFactory.test_common(text)) {
+                /*if (featureFactory.test_common(text)) {
                     features.commonName = true;
                 }
 
@@ -361,14 +362,14 @@ public class BookStructureParser extends AbstractParser {
 
                 if (featureFactory.test_month(text)) {
                     features.month = true;
-                }
+                }*/
 
                 Matcher m = featureFactory.isDigit.matcher(text);
                 if (m.find()) {
                     features.digit = "ALLDIGIT";
                 }
 
-                Matcher m2 = featureFactory.YEAR.matcher(text);
+                /*Matcher m2 = featureFactory.YEAR.matcher(text);
                 if (m2.find()) {
                     features.year = true;
                 }
@@ -381,7 +382,7 @@ public class BookStructureParser extends AbstractParser {
                 Matcher m4 = featureFactory.HTTP.matcher(text);
                 if (m4.find()) {
                     features.http = true;
-                }
+                }*/
 
                 if (currentFont == null) {
                     currentFont = token.getFont();

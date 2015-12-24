@@ -659,7 +659,7 @@ System.out.println("");
                 features.string = text;
 
                 if (newline) {
-                    features.lineStatus = indented ? "LINEINDENT" : "LINESTART";
+                    features.lineStatus = "LINESTART";
                 }
                 Matcher m0 = featureFactory.isPunct.matcher(text);
                 if (m0.find()) {
@@ -686,11 +686,19 @@ System.out.println("");
                 }
 
                 if ( (n == 0) || (previousNewline) ) {
-                    features.lineStatus = indented ? "LINEINDENT" : "LINESTART";
+                    features.lineStatus = "LINESTART";
 					if (n == 0)
 						features.blockStatus = "BLOCKSTART";
 					nn = 0;
                 }
+
+                if (indented) {
+                	features.alignmentStatus = "LINEINDENT";
+                }
+                else {
+                	features.alignmentStatus = "ALIGNEDLEFT";
+                }
+
 				{
                     // look ahead...
                     boolean endline = true;
