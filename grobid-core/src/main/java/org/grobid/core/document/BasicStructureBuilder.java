@@ -711,7 +711,14 @@ public class BasicStructureBuilder {
 									 // tokenization of the first token of the current line
 		String line = null;
 		
-        DocumentPointer pointerA = DocumentPointer.START_DOCUMENT_POINTER;
+        //DocumentPointer pointerA = DocumentPointer.START_DOCUMENT_POINTER;
+        // the default first block might not contain tokens but only bitmap - in this case we move
+        // to the first block containing some LayoutToken objects
+        while(docBlocks.get(blockIndex).getTokens() == null) {
+            blockIndex++;
+        }
+        DocumentPointer pointerA = new DocumentPointer(doc, blockIndex, 0);
+
         DocumentPointer currentPointer = null;
         DocumentPointer lastPointer = null;
 
@@ -746,24 +753,25 @@ public class BasicStructureBuilder {
 			while( (line == null) && (blockIndex < docBlocks.size()) ) {
 				Block block = docBlocks.get(blockIndex);
 		        List<LayoutToken> tokens = block.getTokens();
+                currentLineStartPos = block.getStartToken();
 				String localText = block.getText();
-		        if ( (tokens == null) || (localText == null) || (localText.trim().length() == 0) ) {
+		        if ( (tokens == null) || (localText == null) || (block.getStartToken() == -1) || (localText.trim().length() == 0) ) {
 					blockIndex++;
 					indexLine = 0;
-					if (blockIndex < docBlocks.size()) {
+					/*if (blockIndex < docBlocks.size()) {
 						block = docBlocks.get(blockIndex);
 						currentLineStartPos = block.getStartToken();
-					}
+					}*/
 		            continue;
 		        }
 				String[] lines = localText.split("[\\n\\r]");
 				if ( (lines.length == 0) || (indexLine >= lines.length)) {
 					blockIndex++;
 					indexLine = 0;
-					if (blockIndex < docBlocks.size()) {
+					/*if (blockIndex < docBlocks.size()) {
 						block = docBlocks.get(blockIndex);
 						currentLineStartPos = block.getStartToken();
-					}
+					}*/
 					continue;
 				}
 				else {

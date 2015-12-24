@@ -72,7 +72,6 @@ public class TestFullTextParser extends EngineTest {
         getTestResourcePath();
 
         File pdfPath = new File(testPath, "/Wang-paperAVE2008.pdf");
-
         Document tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
         //System.out.println(tei);
@@ -84,7 +83,6 @@ public class TestFullTextParser extends EngineTest {
 
 
         pdfPath = new File(testPath + "/1001._0908.0054.pdf");
-
         tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
         //System.out.println(tei);
@@ -111,7 +109,7 @@ public class TestFullTextParser extends EngineTest {
     }
 
     private void assertTei(Document doc) {
-        //assertDocAndBlockTokenizationSync(doc);
+        assertDocAndBlockTokenizationSync(doc);
         assertNotNull(doc.getTei());
     }
 
@@ -144,6 +142,14 @@ public class TestFullTextParser extends EngineTest {
             for (DocumentPiece p : parts) {
                 DocumentPointer startPtr = p.a;
                 DocumentPointer endPtr = p.b;
+                /*if (doc.getBlocks().get(startPtr.getBlockPtr()).getTokens() == null) {
+                    System.out.println("block invalid: " + startPtr.getBlockPtr() + ", block size:" + doc.getBlocks().size());  
+                    if (doc.getBlocks().get(startPtr.getBlockPtr()).getTokens() == null) {
+                        System.out.println("token list is null in the block");
+                        System.out.println(doc.getBlocks().get(startPtr.getBlockPtr()).toString());
+                        System.out.println("while available start token in block is " + startPtr.getTokenBlockPos());
+                    }
+                }*/
                 assertEquals(doc.getTokenizations().get(startPtr.getTokenDocPos()), doc.getBlocks().get(startPtr.getBlockPtr()).getTokens().get(startPtr.getTokenBlockPos()));
                 assertEquals(doc.getTokenizations().get(endPtr.getTokenDocPos()), doc.getBlocks().get(endPtr.getBlockPtr()).getTokens().get(endPtr.getTokenBlockPos()));
 
