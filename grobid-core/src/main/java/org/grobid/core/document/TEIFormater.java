@@ -6,6 +6,7 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
 import org.grobid.core.data.Keyword;
+import org.grobid.core.engines.Engine;
 import org.grobid.core.data.Figure;
 import org.grobid.core.data.Table;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
@@ -18,11 +19,14 @@ import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LanguageUtilities;
+import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.engines.FullTextParser;
 import org.grobid.core.utilities.KeyGen;
+import org.grobid.core.utilities.matching.EntityMatcherException;
+import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 
 import java.util.*;
 import java.util.regex.Matcher; 
@@ -1021,6 +1025,7 @@ public class TEIFormater {
                        				List<Table> tables,	
                                     Document doc,
 									GrobidAnalysisConfig config) throws Exception {
+
         StringTokenizer st = new StringTokenizer(result, "\n");
         String s1 = null;
         String s2 = null;
@@ -1312,8 +1317,10 @@ public class TEIFormater {
 			String s = pieces[0]; // string token
 			int p0 = p;
             boolean strop = false;
+			List<LayoutToken> layoutTokenBuffer = new ArrayList<LayoutToken>();
             while ((!strop) && (p < tokenizations.size())) {
                 layoutToken = tokenizations.get(p);
+				layoutTokenBuffer.add(layoutToken);
                 String tokOriginal = layoutToken.t();
                 if (tokOriginal.equals(" ") 							 
 				 	|| tokOriginal.equals("\u00A0") 
@@ -1377,10 +1384,10 @@ public class TEIFormater {
 			if (currentTag0.equals("<citation_marker>")) {
 				if (!currentTag0.equals(lastTag0) || s1.startsWith("I-")) {
 					startRefPosition = teiPosition;
-					appendRefStrDataClean(refString, refTokens, s2, layoutToken, false);
+					appendRefStrDataClean(refString, refTokens, s2, layoutTokenBuffer, false);
 				}
 				else {
-                    appendRefStrData(refString, refTokens, s2, layoutToken, addSpace);
+                    appendRefStrData(refString, refTokens, s2, layoutTokenBuffer, addSpace);
 				}
 				endRefPosition = teiPosition + s2.length();
 				teiPosition = teiPosition + s2.length();
@@ -1388,10 +1395,10 @@ public class TEIFormater {
 			else if (currentTag0.equals("<figure_marker>")) {
 				if (!currentTag0.equals(lastTag0)) {
 					startRefPosition = teiPosition;
-                    appendRefStrDataClean(refString, refTokens, s2, layoutToken, false);
+                    appendRefStrDataClean(refString, refTokens, s2, layoutTokenBuffer, false);
 				}
 				else {
-                    appendRefStrData(refString, refTokens, s2, layoutToken, addSpace);
+                    appendRefStrData(refString, refTokens, s2, layoutTokenBuffer, addSpace);
 				}
 				endRefPosition = teiPosition + s2.length();
 				teiPosition = teiPosition + s2.length();
@@ -1399,10 +1406,10 @@ public class TEIFormater {
 			else if (currentTag0.equals("<table_marker>")) {
 				if (!currentTag0.equals(lastTag0)) {
 					startRefPosition = teiPosition;
-                    appendRefStrDataClean(refString, refTokens, s2, layoutToken, false);
+                    appendRefStrDataClean(refString, refTokens, s2, layoutTokenBuffer, false);
 				}
 				else {
-                    appendRefStrData(refString, refTokens, s2, layoutToken, addSpace);
+                    appendRefStrData(refString, refTokens, s2, layoutTokenBuffer, addSpace);
 				}
 				endRefPosition = teiPosition + s2.length();
 				teiPosition = teiPosition + s2.length();
@@ -1426,6 +1433,12 @@ public class TEIFormater {
 													refTokens, 
 													bds, 
 													config.isGenerateTeiCoordinates());
+					
+					/*replacement = markReferencesTEI2(chunkRefString, 
+													refTokens, 
+													bds, 
+													doc.getReferenceMarkerMatcher(),
+													config.isGenerateTeiCoordinates());*/
 				}
 				else if (lastTag0.equals("<figure_marker>")) {
 					replacement = markReferencesFigureTEI(chunkRefString, refTokens, figures, 
@@ -1520,27 +1533,27 @@ public class TEIFormater {
         }
     }
 
-    private static void appendRefStrDataClean(StringBuilder refStr, List<LayoutToken> toks, String data, LayoutToken tok, boolean addSpace) {
+    private static void appendRefStrDataClean(StringBuilder refStr, List<LayoutToken> toks, String data, List<LayoutToken> toAdd, boolean addSpace) {
         clearRefStrData(refStr, toks);
 
-        if (tok == null) {
+        if (toAdd == null || toAdd.isEmpty()) {
             return;
         }
 
         refStr.append(addSpace ? " " :  "").append(data);
         if (toks != null) {
-            toks.add(tok);
+            toks.addAll(toAdd);
         }
     }
 
-    private static void appendRefStrData(StringBuilder refStr, List<LayoutToken> toks, String data, LayoutToken tok, boolean addSpace) {
-        if (tok == null) {
+    private static void appendRefStrData(StringBuilder refStr, List<LayoutToken> toks, String data, List<LayoutToken> toAdd, boolean addSpace) {
+        if (toAdd == null || toAdd.isEmpty()) {
             return;
         }
 
         refStr.append(addSpace ? " " :  "").append(data);
         if (toks != null) {
-            toks.add(tok);
+            toks.addAll(toAdd);
         }
     }
 
@@ -1756,10 +1769,358 @@ public class TEIFormater {
     }
 
     /**
+      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
+      */
+     public String markReferencesTEI(String text, List<LayoutToken> refTokens, 
+ 	 								List<BibDataSet> bds, boolean generateCoordinates) {
+         // safety tests
+ 		if (text == null)
+             return null;
+         if (text.trim().length() == 0)
+             return text;
+ 		if (text.endsWith("</ref>") || text.startsWith("<ref")) 
+ 			return text;
+
+         text = TextUtilities.HTMLEncode(text);
+         boolean numerical = false;
+
+         String coords = null;
+ 		if (generateCoordinates)
+ 			coords = getCoordsString(refTokens);
+         if (coords == null) {
+             coords = "";
+         } else {
+             coords = "coords=\"" + coords + "\"";
+         }
+         // we check if we have numerical references
+
+         // we re-write compact references, i.e [1,2] -> [1] [2] 
+ 		// 
+ 		String relevantText = bracketReferenceSegment(text);
+ 		if (relevantText != null) {
+ 	        Matcher m2 = numberRefCompact.matcher(text);
+ 	        StringBuffer sb = new StringBuffer();
+ 	        boolean result = m2.find();
+ 	        // Loop through and create a new String 
+ 	        // with the replacements
+ 	        while (result) {
+ 	            String toto = m2.group(0);
+ 	            if (toto.contains("]")) {
+ 	                toto = toto.replace(",", "] [");
+ 	                toto = toto.replace("[ ", "[");
+ 	                toto = toto.replace(" ]", "]");
+ 	            } else {
+ 	                toto = toto.replace(",", ") (");
+ 	                toto = toto.replace("( ", "(");
+ 	                toto = toto.replace(" )", ")");
+ 	            }
+ 	            m2.appendReplacement(sb, toto);
+ 	            result = m2.find();
+ 	        }
+ 	        // Add the last segment of input to 
+ 	        // the new String
+ 	        m2.appendTail(sb);
+ 	        text = sb.toString();
+
+ 	        // we expend the references [1-3] -> [1] [2] [3]
+ 	        Matcher m3 = numberRefCompact2.matcher(text);
+ 	        StringBuffer sb2 = new StringBuffer();
+ 	        boolean result2 = m3.find();
+ 	        // Loop through and create a new String 
+ 	        // with the replacements
+ 	        while (result2) {
+ 	            String toto = m3.group(0);
+ 	            if (toto.contains("]")) {
+ 	                toto = toto.replace("]", "");
+ 	                toto = toto.replace("[", "");
+ 	                int ind = toto.indexOf('-');
+ 	                if (ind == -1)
+ 	                    ind = toto.indexOf('\u2013');
+ 	                if (ind != -1) {
+ 	                    try {
+ 	                        int firstIndex = Integer.parseInt(toto.substring(0, ind));
+ 	                        int secondIndex = Integer.parseInt(toto.substring(ind + 1, toto.length()));
+ 							// how much values can we expend? We use a ratio of the total number of references
+ 							// with a minimal value
+ 							int maxExpend = 10 + (bds.size() / 10);
+ 							if (secondIndex - firstIndex > maxExpend) {
+ 								break;
+ 							}
+ 							toto = "";
+ 	                        boolean first = true;
+ 	                        for (int j = firstIndex; j <= secondIndex; j++) {
+ 	                            if (first) {
+ 	                                toto += "[" + j + "]";
+ 	                                first = false;
+ 	                            } else
+ 	                                toto += " [" + j + "]";
+ 	                        }
+ 	                    } catch (Exception e) {
+ 	                        throw new GrobidException("An exception occurs.", e);
+ 	                    }
+ 	                }
+ 	            } 
+ 				else {
+ 	                toto = toto.replace(")", "");
+ 	                toto = toto.replace("(", "");
+ 	                int ind = toto.indexOf('-');
+ 	                if (ind == -1)
+ 	                    ind = toto.indexOf('\u2013');
+ 	                if (ind != -1) {
+ 	                    try {
+ 	                        int firstIndex = Integer.parseInt(toto.substring(0, ind));
+ 	                        int secondIndex = Integer.parseInt(toto.substring(ind + 1, toto.length()));
+ 							if (secondIndex - firstIndex > 9) {
+ 								break;
+ 							}
+ 	                        toto = "";
+ 	                        boolean first = true;
+ 	                        for (int j = firstIndex; j <= secondIndex; j++) {
+ 	                            if (first) {
+ 	                                toto += "(" + j + ")";
+ 	                                first = false;
+ 	                            } else
+ 	                                toto += " (" + j + ")";
+ 	                        }
+ 	                    } catch (Exception e) {
+ 	                        throw new GrobidException("An exception occurs.", e);
+ 	                    }
+ 	                }
+ 	            }
+ 	            m3.appendReplacement(sb2, toto);
+ 	            result2 = m3.find();
+ 	        }
+ 	        // Add the last segment of input to 
+ 	        // the new String
+ 	        m3.appendTail(sb2);
+ 			text = sb2.toString();
+ 		}
+         int p = 0;
+ 		if ( (bds != null) && (bds.size() > 0)) {
+         	for (BibDataSet bib : bds) {
+ 	            List<String> contexts = bib.getSourceBib();
+ 	            String marker = TextUtilities.HTMLEncode(bib.getRefSymbol());
+ 	            BiblioItem resBib = bib.getResBib();
+
+ 	            if (resBib != null) {
+ 					// try first to match the reference marker string with marker (label) present in the 
+ 					// bibliographical section
+ 	                if (marker != null) {       	
+ 	                    Matcher m = numberRef.matcher(marker);
+ 						int ind = -1;
+ 	                    if (m.find()) {
+ 							ind = text.indexOf(marker);    
+ 	                    }
+ 	                    else {
+ 	                    	// possibly the marker in the biblio section is simply a number, and used
+ 							// in the ref. with brackets - so we also try this case
+ 							m = numberRef.matcher("[" + marker + "]");
+ 							if (m.find()) {
+ 								ind = text.indexOf("[" + marker + "]");
+ 								if (ind != -1) {
+ 									marker = "[" + marker + "]";
+ 	                        	}
+ 	                        }
+
+ 	                    }
+ 	                    if (ind != -1) {
+ 	                        text = text.substring(0, ind) +
+ 	                            	"<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + marker
+ 	                                + "</ref>" + text.substring(ind + marker.length(), text.length());
+ 	                    }
+ 	                }
+					
+ 	                // search for first author, date and possibly second author
+ 	                String author1 = resBib.getFirstAuthorSurname();
+ 	                String author2 = null;
+ 	                if (author1 != null) {
+ 	                    author1 = author1.toLowerCase();
+ 	                }
+ 	                String year = null;
+ 	                Date datt = resBib.getNormalizedPublicationDate();
+ 	                if (datt != null) {
+ 	                    if (datt.getYear() != -1) {
+ 	                        year = "" + datt.getYear();
+ 	                    }
+ 	                }
+ 	                char extend1 = 0;
+ 	                // we check if we have an identifier with the year (e.g. 2010b)
+ 	                if (resBib.getPublicationDate() != null) {
+ 	                    String dat = resBib.getPublicationDate();
+ 	                    if (year != null) {
+ 	                        int ind = dat.indexOf(year);
+ 	                        if (ind != -1) {
+ 	                            if (ind + year.length() < dat.length()) {
+ 	                                extend1 = dat.charAt(ind + year.length());
+ 	                            }
+ 	                        }
+ 	                    }
+ 	                }
+
+ 	                List<Person> fullAuthors = resBib.getFullAuthors();
+ 	                if (fullAuthors != null) {
+ 	                    int nbAuthors = fullAuthors.size();
+ 	                    if (nbAuthors == 2) {
+ 	                        // we get the last name of the second author
+ 	                        author2 = fullAuthors.get(1).getLastName();
+ 	                    }
+ 	                }
+ 	                if (author2 != null) {
+ 	                    author2 = author2.toLowerCase();
+ 	                }					
+
+ 					// try to match based on the author and year strings
+ 	                if ((author1 != null) && (year != null)) {
+ 	                    int indi1; // first author
+ 	                    int indi2; // year
+ 	                    int indi3 = -1; // second author if only two authors in total
+ 	                    int i = 0;
+ 	                    boolean end = false;
+
+ 	                    while (!end) {
+ 	                        indi1 = text.toLowerCase().indexOf(author1, i); // first author matching
+ 	                        indi2 = text.indexOf(year, i); // year matching
+ 	                        int added = 1;
+ 	                        if (author2 != null) {
+ 	                            indi3 = text.toLowerCase().indexOf(author2, i); // second author matching
+ 	                        }
+ 	                        char extend2 = 0;
+ 	                        if (indi2 != -1) {
+ 	                            if (text.length() > indi2 + year.length()) {
+ 	                                extend2 = text.charAt(indi2 + year.length()); // (e.g. 2010b)
+ 	                            }
+ 	                        }
+	
+ 	                        if ((indi1 == -1) || (indi2 == -1)) {
+ 	                            end = true;
+ 								// no author has been found, we go on with the next biblio item
+ 							}
+ 	                        else if ((indi1 != -1) && (indi2 != -1) && (indi3 != -1) && (indi1 < indi2) &&
+ 	                                (indi1 < indi3) && (indi2 - indi1 > author1.length())) {
+ 								// this is the case with 2 authors in the marker
+		
+ 	                            if ((extend1 != 0) && (extend2 != 0) && (extend1 != extend2)) {
+ 	                                end = true;
+ 									// we have identifiers with the year, but they don't match
+ 									// e.g. 2010a != 2010b
+ 	                            } 
+ 								else {
+ 	                                // we check if we don't have another instance of the author between the two indices
+ 	                                int indi1bis = text.toLowerCase().indexOf(author1, indi1 + author1.length());
+ 	                                if (indi1bis == -1) {
+ 	                                    String reference = text.substring(indi1, indi2 + 4);
+ 	                                    boolean extended = false;
+ 	                                    if (text.length() > indi2 + 4) {
+ 	                                        if ((text.charAt(indi2 + 4) == ')') ||
+ 	                                                (text.charAt(indi2 + 4) == ']') ||
+ 	                                                ((extend1 != 0) && (extend2 != 0) && (extend1 == extend2))) {
+ 	                                            reference += text.charAt(indi2 + 4);
+ 	                                            extended = true;
+ 	                                        }
+ 	                                    }
+ 										String previousText = text.substring(0, indi1);
+ 										String followingText = "";
+ 	                                    if (extended) {
+ 											followingText = text.substring(indi2 + 5, text.length()); 
+ 																// 5 digits for the year + identifier character 
+ 	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
+ 	                                        added = 8;											
+ 	                                    } else {
+ 											followingText = text.substring(indi2 + 4, text.length());
+ 																// 4 digits for the year 
+ 	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
+ 	                                        added = 7;
+ 	                                    }
+ 										if (previousText.length() > 2) {
+ 											previousText = 
+ 												markReferencesTEI(previousText, refTokens, bds, 
+ 													generateCoordinates);
+ 										}
+ 										if (followingText.length() > 2) {
+ 											followingText = 
+ 												markReferencesTEI(followingText, refTokens, bds, 
+ 													generateCoordinates);
+ 										}
+											
+ 										return previousText+text+followingText;
+ 	                                }
+ 	                                end = true;
+ 	                            }
+ 	                        } 
+ 							else if ((indi1 != -1) && (indi2 != -1) && (indi1 < indi2) &&
+ 	                                (indi2 - indi1 > author1.length())) {
+ 								// this is the case with 1 author in the marker
+			
+ 	                            if ((extend1 != 0) && (extend2 != 0) && (extend1 != extend2)) {
+ 	                                end = true;
+ 	                            } 
+ 								else {
+ 	                                // we check if we don't have another instance of the author between the two indices
+ 	                                int indi1bis = text.toLowerCase().indexOf(author1, indi1 + author1.length());
+ 	                                if (indi1bis == -1) {
+ 	                                    String reference = text.substring(indi1, indi2 + 4);
+ 	                                    boolean extended = false;
+ 	                                    if (text.length() > indi2 + 4) {
+ 	                                        if ((text.charAt(indi2 + 4) == ')') ||
+ 	                                                (text.charAt(indi2 + 4) == ']') ||
+ 	                                                ((extend1 != 0) && (extend2 != 0) & (extend1 == extend2))) {
+ 	                                            reference += text.charAt(indi2 + 4);
+ 	                                            extended = true;
+ 	                                        }
+ 	                                    }
+ 										String previousText = text.substring(0, indi1);
+ 										String followingText = "";
+ 	                                    if (extended) {
+ 											followingText = text.substring(indi2 + 5, text.length()); 
+ 																// 5 digits for the year + identifier character
+ 	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" "  + coords + ">" + reference + "</ref>";
+ 	                                        added = 8;
+ 	                                    } 
+ 										else {
+ 											followingText = text.substring(indi2 + 4, text.length()); 
+ 																// 4 digits for the year 
+ 	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
+ 	                                        added = 7;
+ 										}
+ 	                                  	if (previousText.length() > 2) {
+ 											previousText = 
+ 												markReferencesTEI(previousText, refTokens, bds, 
+ 													generateCoordinates);
+ 										}
+ 										if (followingText.length() > 2) {
+ 											followingText = 
+ 												markReferencesTEI(followingText, refTokens, bds, 
+ 													generateCoordinates);
+ 										}
+											
+ 										return previousText+text+followingText;    
+ 	                                }
+ 	                                end = true;
+ 	                            }
+ 	                        }
+ 	                        i = indi2 + year.length() + added;
+ 	                        if (i >= text.length()) {
+ 	                            end = true;
+ 	                        }
+ 	                    }
+ 	                }
+ 	            }
+ 	            p++;
+ 	        }
+ 		}
+		
+ 		// we have not been able to solve the bibliographical marker, but we still annotate it globally
+ 		// without pointer - just ignoring possible punctuation at the beginning and end of the string
+ 		if (!text.endsWith("</ref>") && !text.startsWith("<ref")) 
+ 			text = "<ref type=\"bibr\">" + text + "</ref>";
+         return text;
+     }
+
+    /**
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
      */
-    public String markReferencesTEI(String text, List<LayoutToken> refTokens, 
-	 								List<BibDataSet> bds, boolean generateCoordinates) {
+    public String markReferencesTEI2(String text, List<LayoutToken> refTokens,
+	 								List<BibDataSet> bds, ReferenceMarkerMatcher markerMatcher, boolean generateCoordinates) throws EntityMatcherException {
         // safety tests
 		if (text == null)
             return null;
@@ -1768,339 +2129,33 @@ public class TEIFormater {
 		if (text.endsWith("</ref>") || text.startsWith("<ref")) 
 			return text;
 
-        text = TextUtilities.HTMLEncode(text);
-        boolean numerical = false;
 
         String coords = null;
-		if (generateCoordinates)
-			coords = getCoordsString(refTokens);
+        if (generateCoordinates)
+            coords = getCoordsString(refTokens);
         if (coords == null) {
             coords = "";
         } else {
             coords = "coords=\"" + coords + "\"";
         }
-        // we check if we have numerical references
 
-        // we re-write compact references, i.e [1,2] -> [1] [2] 
-		// 
-		String relevantText = bracketReferenceSegment(text);
-		if (relevantText != null) {
-	        Matcher m2 = numberRefCompact.matcher(text);
-	        StringBuffer sb = new StringBuffer();
-	        boolean result = m2.find();
-	        // Loop through and create a new String 
-	        // with the replacements
-	        while (result) {
-	            String toto = m2.group(0);
-	            if (toto.contains("]")) {
-	                toto = toto.replace(",", "] [");
-	                toto = toto.replace("[ ", "[");
-	                toto = toto.replace(" ]", "]");
-	            } else {
-	                toto = toto.replace(",", ") (");
-	                toto = toto.replace("( ", "(");
-	                toto = toto.replace(" )", ")");
-	            }
-	            m2.appendReplacement(sb, toto);
-	            result = m2.find();
-	        }
-	        // Add the last segment of input to 
-	        // the new String
-	        m2.appendTail(sb);
-	        text = sb.toString();
+//        if (true) {
+//            ReferenceMarkerMatcher markerMatcher =
+            StringBuilder sb = new StringBuilder();
 
-	        // we expend the references [1-3] -> [1] [2] [3]
-	        Matcher m3 = numberRefCompact2.matcher(text);
-	        StringBuffer sb2 = new StringBuffer();
-	        boolean result2 = m3.find();
-	        // Loop through and create a new String 
-	        // with the replacements
-	        while (result2) {
-	            String toto = m3.group(0);
-	            if (toto.contains("]")) {
-	                toto = toto.replace("]", "");
-	                toto = toto.replace("[", "");
-	                int ind = toto.indexOf('-');
-	                if (ind == -1)
-	                    ind = toto.indexOf('\u2013');
-	                if (ind != -1) {
-	                    try {
-	                        int firstIndex = Integer.parseInt(toto.substring(0, ind));
-	                        int secondIndex = Integer.parseInt(toto.substring(ind + 1, toto.length()));
-							// how much values can we expend? We use a ratio of the total number of references
-							// with a minimal value
-							int maxExpend = 10 + (bds.size() / 10);
-							if (secondIndex - firstIndex > maxExpend) {
-								break;
-							}
-							toto = "";
-	                        boolean first = true;
-	                        for (int j = firstIndex; j <= secondIndex; j++) {
-	                            if (first) {
-	                                toto += "[" + j + "]";
-	                                first = false;
-	                            } else
-	                                toto += " [" + j + "]";
-	                        }
-	                    } catch (Exception e) {
-	                        throw new GrobidException("An exception occurs.", e);
-	                    }
-	                }
-	            } 
-				else {
-	                toto = toto.replace(")", "");
-	                toto = toto.replace("(", "");
-	                int ind = toto.indexOf('-');
-	                if (ind == -1)
-	                    ind = toto.indexOf('\u2013');
-	                if (ind != -1) {
-	                    try {
-	                        int firstIndex = Integer.parseInt(toto.substring(0, ind));
-	                        int secondIndex = Integer.parseInt(toto.substring(ind + 1, toto.length()));
-							if (secondIndex - firstIndex > 9) {
-								break;
-							}
-	                        toto = "";
-	                        boolean first = true;
-	                        for (int j = firstIndex; j <= secondIndex; j++) {
-	                            if (first) {
-	                                toto += "(" + j + ")";
-	                                first = false;
-	                            } else
-	                                toto += " (" + j + ")";
-	                        }
-	                    } catch (Exception e) {
-	                        throw new GrobidException("An exception occurs.", e);
-	                    }
-	                }
-	            }
-	            m3.appendReplacement(sb2, toto);
-	            result2 = m3.find();
-	        }
-	        // Add the last segment of input to 
-	        // the new String
-	        m3.appendTail(sb2);
-			text = sb2.toString();
-		}
-        int p = 0;
-		if ( (bds != null) && (bds.size() > 0)) {
-        	for (BibDataSet bib : bds) {
-	            List<String> contexts = bib.getSourceBib();
-	            String marker = TextUtilities.HTMLEncode(bib.getRefSymbol());
-	            BiblioItem resBib = bib.getResBib();
-
-	            if (resBib != null) {
-					// try first to match the reference marker string with marker (label) present in the 
-					// bibliographical section
-	                if (marker != null) {       	
-	                    Matcher m = numberRef.matcher(marker);
-						int ind = -1;
-	                    if (m.find()) {
-							ind = text.indexOf(marker);    
-	                    }
-	                    else {
-	                    	// possibly the marker in the biblio section is simply a number, and used
-							// in the ref. with brackets - so we also try this case
-							m = numberRef.matcher("[" + marker + "]");
-							if (m.find()) {
-								ind = text.indexOf("[" + marker + "]");
-								if (ind != -1) {
-									marker = "[" + marker + "]";
-	                        	}
-	                        }
-
-	                    }
-	                    if (ind != -1) {
-	                        text = text.substring(0, ind) +
-	                            	"<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + marker
-	                                + "</ref>" + text.substring(ind + marker.length(), text.length());
-	                    }
-	                }
-					
-	                // search for first author, date and possibly second author
-	                String author1 = resBib.getFirstAuthorSurname();
-	                String author2 = null;
-	                if (author1 != null) {
-	                    author1 = author1.toLowerCase();
-	                }
-	                String year = null;
-	                Date datt = resBib.getNormalizedPublicationDate();
-	                if (datt != null) {
-	                    if (datt.getYear() != -1) {
-	                        year = "" + datt.getYear();
-	                    }
-	                }
-	                char extend1 = 0;
-	                // we check if we have an identifier with the year (e.g. 2010b)
-	                if (resBib.getPublicationDate() != null) {
-	                    String dat = resBib.getPublicationDate();
-	                    if (year != null) {
-	                        int ind = dat.indexOf(year);
-	                        if (ind != -1) {
-	                            if (ind + year.length() < dat.length()) {
-	                                extend1 = dat.charAt(ind + year.length());
-	                            }
-	                        }
-	                    }
-	                }
-
-	                List<Person> fullAuthors = resBib.getFullAuthors();
-	                if (fullAuthors != null) {
-	                    int nbAuthors = fullAuthors.size();
-	                    if (nbAuthors == 2) {
-	                        // we get the last name of the second author
-	                        author2 = fullAuthors.get(1).getLastName();
-	                    }
-	                }
-	                if (author2 != null) {
-	                    author2 = author2.toLowerCase();
-	                }					
-
-					// try to match based on the author and year strings
-	                if ((author1 != null) && (year != null)) {
-	                    int indi1; // first author
-	                    int indi2; // year
-	                    int indi3 = -1; // second author if only two authors in total
-	                    int i = 0;
-	                    boolean end = false;
-
-	                    while (!end) {
-	                        indi1 = text.toLowerCase().indexOf(author1, i); // first author matching
-	                        indi2 = text.indexOf(year, i); // year matching
-	                        int added = 1;
-	                        if (author2 != null) {
-	                            indi3 = text.toLowerCase().indexOf(author2, i); // second author matching
-	                        }
-	                        char extend2 = 0;
-	                        if (indi2 != -1) {
-	                            if (text.length() > indi2 + year.length()) {
-	                                extend2 = text.charAt(indi2 + year.length()); // (e.g. 2010b)
-	                            }
-	                        }
-	
-	                        if ((indi1 == -1) || (indi2 == -1)) {
-	                            end = true;
-								// no author has been found, we go on with the next biblio item
-							}
-	                        else if ((indi1 != -1) && (indi2 != -1) && (indi3 != -1) && (indi1 < indi2) &&
-	                                (indi1 < indi3) && (indi2 - indi1 > author1.length())) {
-								// this is the case with 2 authors in the marker
-		
-	                            if ((extend1 != 0) && (extend2 != 0) && (extend1 != extend2)) {
-	                                end = true;
-									// we have identifiers with the year, but they don't match
-									// e.g. 2010a != 2010b
-	                            } 
-								else {
-	                                // we check if we don't have another instance of the author between the two indices
-	                                int indi1bis = text.toLowerCase().indexOf(author1, indi1 + author1.length());
-	                                if (indi1bis == -1) {
-	                                    String reference = text.substring(indi1, indi2 + 4);
-	                                    boolean extended = false;
-	                                    if (text.length() > indi2 + 4) {
-	                                        if ((text.charAt(indi2 + 4) == ')') ||
-	                                                (text.charAt(indi2 + 4) == ']') ||
-	                                                ((extend1 != 0) && (extend2 != 0) && (extend1 == extend2))) {
-	                                            reference += text.charAt(indi2 + 4);
-	                                            extended = true;
-	                                        }
-	                                    }
-										String previousText = text.substring(0, indi1);
-										String followingText = "";
-	                                    if (extended) {
-											followingText = text.substring(indi2 + 5, text.length()); 
-																// 5 digits for the year + identifier character 
-	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
-	                                        added = 8;											
-	                                    } else {
-											followingText = text.substring(indi2 + 4, text.length());
-																// 4 digits for the year 
-	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
-	                                        added = 7;
-	                                    }
-										if (previousText.length() > 2) {
-											previousText = 
-												markReferencesTEI(previousText, refTokens, bds, 
-													generateCoordinates);
-										}
-										if (followingText.length() > 2) {
-											followingText = 
-												markReferencesTEI(followingText, refTokens, bds, 
-													generateCoordinates);
-										}
-											
-										return previousText+text+followingText;
-	                                }
-	                                end = true;
-	                            }
-	                        } 
-							else if ((indi1 != -1) && (indi2 != -1) && (indi1 < indi2) &&
-	                                (indi2 - indi1 > author1.length())) {
-								// this is the case with 1 author in the marker
-			
-	                            if ((extend1 != 0) && (extend2 != 0) && (extend1 != extend2)) {
-	                                end = true;
-	                            } 
-								else {
-	                                // we check if we don't have another instance of the author between the two indices
-	                                int indi1bis = text.toLowerCase().indexOf(author1, indi1 + author1.length());
-	                                if (indi1bis == -1) {
-	                                    String reference = text.substring(indi1, indi2 + 4);
-	                                    boolean extended = false;
-	                                    if (text.length() > indi2 + 4) {
-	                                        if ((text.charAt(indi2 + 4) == ')') ||
-	                                                (text.charAt(indi2 + 4) == ']') ||
-	                                                ((extend1 != 0) && (extend2 != 0) & (extend1 == extend2))) {
-	                                            reference += text.charAt(indi2 + 4);
-	                                            extended = true;
-	                                        }
-	                                    }
-										String previousText = text.substring(0, indi1);
-										String followingText = "";
-	                                    if (extended) {
-											followingText = text.substring(indi2 + 5, text.length()); 
-																// 5 digits for the year + identifier character
-	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" "  + coords + ">" + reference + "</ref>";
-	                                        added = 8;
-	                                    } 
-										else {
-											followingText = text.substring(indi2 + 4, text.length()); 
-																// 4 digits for the year 
-	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
-	                                        added = 7;
-										}
-	                                  	if (previousText.length() > 2) {
-											previousText = 
-												markReferencesTEI(previousText, refTokens, bds, 
-													generateCoordinates);
-										}
-										if (followingText.length() > 2) {
-											followingText = 
-												markReferencesTEI(followingText, refTokens, bds, 
-													generateCoordinates);
-										}
-											
-										return previousText+text+followingText;    
-	                                }
-	                                end = true;
-	                            }
-	                        }
-	                        i = indi2 + year.length() + added;
-	                        if (i >= text.length()) {
-	                            end = true;
-	                        }
-	                    }
-	                }
-	            }
-	            p++;
-	        }
-		}
-		
-		// we have not been able to solve the bibliographical marker, but we still annotate it globally
-		// without pointer - just ignoring possible punctuation at the beginning and end of the string
-		if (!text.endsWith("</ref>") && !text.startsWith("<ref")) 
-			text = "<ref type=\"bibr\">" + text + "</ref>";
-        return text;
+            //TODO: recheck. Now we should not care too much about text since we are getting info from LayoutTokens
+            text = text.replace("&amp;", "&");
+            for (Pair<String, BibDataSet> e : markerMatcher.match(text, refTokens)) {
+                if (e.b != null) {
+                    sb.append("<ref type=\"bibr\" target=\"#b" + e.b.getResBib().getOrdinal() + "\" "  +
+                                    coords + ">" +
+                                    e.a + "</ref>");
+                } else {
+                    sb.append("<ref type=\"bibr\">" + e.a + "</ref>");
+                }
+            }
+            return sb.toString();
+//        }
     }
 
 	/**

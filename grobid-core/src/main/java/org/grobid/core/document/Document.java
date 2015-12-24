@@ -19,7 +19,8 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.sax.PDF2XMLSaxParser;
 import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.utilities.XMLFilterFileInputStream;
+import org.grobid.core.utilities.matching.EntityMatcherException;
+import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,7 +29,13 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.SortedSet;
+import java.util.StringTokenizer;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -90,6 +97,7 @@ public class Document {
     private final BiblioItem resHeader = null;
 
     private String tei;
+    private ReferenceMarkerMatcher referenceMarkerMatcher;
 
     private List<GraphicObject> images = null;
 
@@ -1314,6 +1322,17 @@ public class Document {
 
     public void setBibDataSets(List<BibDataSet> bibDataSets) {
         this.bibDataSets = bibDataSets;
+        int cnt = 0;
+        for (BibDataSet bds: bibDataSets) {
+            bds.getResBib().setOrdinal(cnt++);
+        }
+    }
+
+    public synchronized ReferenceMarkerMatcher getReferenceMarkerMatcher() throws EntityMatcherException {
+        if (referenceMarkerMatcher == null) {
+            referenceMarkerMatcher = new ReferenceMarkerMatcher(bibDataSets, Engine.getCntManager());
+        }
+        return referenceMarkerMatcher;
     }
 
     // when calling this method, the tei ids already should be in BibDataSets.BiblioItem

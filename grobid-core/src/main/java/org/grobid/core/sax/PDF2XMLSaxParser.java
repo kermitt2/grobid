@@ -64,6 +64,42 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 		tokenizations = new ArrayList<LayoutToken>();
 	}
 
+	private void addToken(LayoutToken layoutToken) {
+		tokenizations.add(layoutToken);
+		block.addToken(layoutToken);
+	}
+
+	private void substituteLastToken(LayoutToken tok) {
+		if (tokenizations.size()>0) {
+			//System.out.println("last tokenizations was: " +
+			//	tokenizations.get(tokenizations.size()-1));
+			tokenizations.remove(tokenizations.size()-1);
+		}
+		tokenizations.add(tok);
+
+		if (block.getTokens() != null && !block.getTokens().isEmpty()) {
+			block.getTokens().remove(block.getTokens().size() - 1);
+		}
+		block.addToken(tok);
+	}
+
+	private void removeLastTwoTokens() {
+		if (tokenizations.size() > 0) {
+			tokenizations.remove(tokenizations.size() - 1);
+			if (tokenizations.size() > 0) {
+				tokenizations
+						.remove(tokenizations.size() - 1);
+			}
+		}
+
+		if ((block.getTokens() != null) && (!block.getTokens().isEmpty())) {
+			block.getTokens().remove(block.getTokens().size() - 1);
+			if (!block.getTokens().isEmpty()) {
+				block.getTokens().remove(block.getTokens().size() - 1);
+			}
+		}
+	}
+
 	public List<LayoutToken> getTokenization() {
 		return tokenizations;
 	}
@@ -370,11 +406,11 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			LayoutToken token = new LayoutToken();
 			token.setText("\n");
 			token.setPage(currentPage);
-			block.addToken(token);
 			nbTokens++;
 			accumulator.setLength(0);
 //			tokenizations.add("\n");
-			tokenizations.add(token);
+//			tokenizations.add(token);
+			addToken(token);
 		} else if (qName.equals("METADATA")) {
 			accumulator.setLength(0);
 		} else if (qName.equals("TOKEN")) {
@@ -458,11 +494,13 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 										//System.out.println("\n");									
 										//}
 										//else {
-										tokenizations.remove(tokenizations.size() - 1);
-										if (tokenizations.size() > 0) {
-											tokenizations
-												.remove(tokenizations.size() - 1);
-										}
+//										tokenizations.remove(tokenizations.size() - 1);
+//										if (tokenizations.size() > 0) {
+//											tokenizations
+//												.remove(tokenizations.size() - 1);
+//										}
+
+										removeLastTwoTokens();
 
 										blabla.deleteCharAt(blabla.length() - 1);
 										if (blabla.length() > 0) {
@@ -476,9 +514,11 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 										blabla.append(updatedChar);
 										previousTok.setText(previousTok.getText()
 												+ updatedChar);
+
 										LayoutToken localTok = new LayoutToken(previousTok.getText());
 										localTok.setPage(currentPage);
-										tokenizations.add(localTok);
+										addToken(localTok);
+
 										//System.out.println("add token layout: " + previousTok.getText());
 										//System.out.println("add tokenizations: " + previousTok.getText());
 									}
@@ -497,14 +537,9 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 										}
 									
 										//System.out.println("add token layout: " + previousTok.getText());
-										if (tokenizations.size()>0) {
-											//System.out.println("last tokenizations was: " + 
-											//	tokenizations.get(tokenizations.size()-1));
-											tokenizations.remove(tokenizations.size()-1);
-										}
 										LayoutToken localTok = new LayoutToken(previousTok.getText());
 										localTok.setPage(currentPage);
-										tokenizations.add(localTok);
+										substituteLastToken(localTok);
 										//System.out.println("replaced by tokenizations: " + previousTok.getText());
 									}
 
@@ -536,7 +571,8 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 								blabla.append(tok);
 								token.setText(tok);
 
-								tokenizations.add(token);
+								addToken(token);
+//								tokenizations.add(token);
 							} else {
 								tok = "";
 								//keepLast = true;
@@ -563,9 +599,10 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 							token.setHeight(currentHeight);
 							token.setFontSize(currentFontSize);
 
-							if (!diaresis && !accent) {
-								block.addToken(token);
-							}
+//							if (!diaresis && !accent) {
+//
+//								block.addToken(token);
+//							}
 
 							if (block.getFont() == null) {
 								if (currentFont != null)
@@ -608,8 +645,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 					if (!justBefore.endsWith("-")) {
 						LayoutToken localTok = new LayoutToken(" ");
 						localTok.setPage(currentPage);
-						tokenizations.add(localTok);
-
+						addToken(localTok);
 						blabla.append(" ");
 					}
 				}
@@ -622,7 +658,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 				blabla.append("\n");
 				LayoutToken localTok = new LayoutToken("\n");
 				localTok.setPage(currentPage);
-				tokenizations.add(localTok);
+				addToken(localTok);
 				block.setText(blabla.toString());
 				block.setNbTokens(nbTokens);
 				doc.addBlock(block);
@@ -637,11 +673,9 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			block.setPage(currentPage);
 			blabla = new StringBuffer();
 			nbTokens = 0;
-			// blabla.append("\n@block\n");
 			LayoutToken localTok = new LayoutToken("\n");
 			localTok.setPage(currentPage);
-			tokenizations.add(localTok);
-
+			addToken(localTok);
 		} else if (qName.equals("IMAGE")) {
 			// this is normally the bitmap graphics
 			if (block != null) {
@@ -701,8 +735,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			blabla.append("\n");
 			LayoutToken localTok = new LayoutToken("\n");
 			localTok.setPage(currentPage);
-			tokenizations.add(localTok);
-
+			addToken(localTok);
 			block.setText(blabla.toString());
 			
 			/*LayoutToken token = new LayoutToken();
