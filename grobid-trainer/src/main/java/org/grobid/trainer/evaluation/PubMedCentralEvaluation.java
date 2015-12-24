@@ -153,6 +153,7 @@ public class PubMedCentralEvaluation {
 					FileUtils.writeStringToFile(resultTEI, tei, "UTF-8");
 				} 
 				catch (Exception e) {
+					System.out.println("Error when processing: " + pdfFile.getPath());
 					e.printStackTrace();
 				}
 				n++;

@@ -24,9 +24,13 @@ Grobid uses different CRF models depending on the labeling task to be realized. 
 
 The following models are experimental and it is not advised to use them at this time:
 
-* chemical entities
-
 * fulltext
+
+* figure
+
+* table
+
+* chemical entities
 
 * ebook
 

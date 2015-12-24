@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_Y05-1024"/>
+	</teiHeader>	
+	<text xml:lang="en">
+			
+			<figure type="table">
+				<head>Table <label>1</label>:</head>
+				<figDesc>An example of a synonym dictionary<lb/></figDesc> 
+				<table>Standard Expression<lb/> Synonymous Expressions<lb/> saito<lb/> webu<lb/> hômupêji<lb/> (site)<lb/> (web)<lb/> (homepage)<lb/> chakushin&apos;on<lb/> chakushinmerodî<lb/> yobidashion<lb/> (ringtone)<lb/> (ring melody)<lb/> (phone beep)<lb/> ridaiaru<lb/> môichido  kakeru<lb/> (redial)<lb/> (again  call)<lb/></table>
+			</figure>
+			
+			<figure type="table">
+				<head>Table <label>2</label>:</head>
+				<figDesc>Examples of queries used for evaluation.<lb/></figDesc>
+			
+				<table>Shashin-o mêru-de okuritai<lb/> (I want to send a picture via email)<lb/> Aikon-o desukutoppu-ni tôroku shitai<lb/> (I want to register a new icon on the desktop)<lb/> Jushin-shita mêru-o mtablenagara henshin mêru-o sakusei-suru hôhô<lb/> (How to write a reply mail while looking at the incoming mail)<lb/></table> 
+			</figure>
+
+			<figure type="table">
+				<head>Table <label>3</label>:</head> 
+				<figDesc>The retrieval success rate for the transcriptions of queries.<lb/></figDesc>
+				<table>Retrieval Success Rate for Transcriptions<lb/> Number of<lb/> Result<lb/> Passages<lb/> BL<lb/> WP<lb/> WP+AUX<lb/> ALL<lb/> 1<lb/> 40.0%<lb/> 42.7%<lb/> 44.5%<lb/> 49.1%<lb/> 5<lb/> 65.5%<lb/> 69.1%<lb/> 70.0%<lb/> 77.3%<lb/> 10<lb/> 73.6%<lb/> 73.6%<lb/> 74.5%<lb/> 87.3%<lb/></table>
+			</figure>
+
+			<figure type="table">
+				<head>Table <label>4</label>:</head>  
+				<figDesc>The retrieval success rate for the utterances of queries.<lb/></figDesc>
+				<table>Number of<lb/> Result Passages<lb/> Retrieval Success Rate<lb/> for Utterances<lb/> 1<lb/> 44.3%<lb/> 5<lb/> 72.5%<lb/> 10<lb/> 81.4%<lb/></table>
+			</figure>
+
+	</text>
+</tei>

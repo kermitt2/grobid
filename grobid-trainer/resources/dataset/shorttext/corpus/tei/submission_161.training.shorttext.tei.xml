@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_161"/>
+	</teiHeader>
+	<text xml:lang="en">
+			
+			<p>A variety of quantum phases due to the strong interlayer electronic correlations were predicted in electron multi-<lb/>layers at the filling factor ν = 1<ref type="biblio">[1]</ref>. As was demonstrated, depending on the ratio d/l B , where d is the interlayer<lb/> separation and l B is the magnetic length, different ground states may be realized. Here we report on observation<lb/> of the magnetic field driven quantum phase transitions in<lb/> weakly coupled, intentionally disordered multiple<lb/> quantum wells. The structure studied here consists of a<lb/> 240 nm wide AlGaAs parabolic well modulated by a<lb/> sequence of ten quantum wells with random widths<lb/> separated by 4.2 nm barriers. The largest (34 nm) GaAs<lb/> well (QW 0 ) is in the center of the parabolic well. The<lb/> electron concentration in the parabolic well was 3.7x10 11<lb/> cm -2 and mobility 2x10 5 cm 2 /Vs. According to the<lb/> calculations eight wells are occupied. They emit eight<lb/> corresponding photoluminescence (PL) lines. At the<lb/> magnetic field B=1.5T these wells reveal the miniband<lb/> quantum Hall (QH) state with the total filling factor ν SL =<lb/> 1. At B=3T another QH state with the filling factor ν SL =<lb/> 0.5 emerges. The spin polarizations of both these QH<lb/> states, as determined by PL measurements, are almost<lb/> 100%. We attribute the state found at B=3T to the paired<lb/> dimer state with the total filling factor ν D = 1 suggested<lb/> in the QH multiple wells as the ground state with the<lb/> lowest energy <ref type="biblio">[2]</ref>. The peaks of the electron spin<lb/> polarization manifest to the skyrmion origin of the<lb/> respective quantum Hall states. With further increase of<lb/> the magnetic field, at B=6T the slope of the Hall<lb/> resistance increases. Our recent magnetoresistance<lb/> experiments on this sample have shown that in this case<lb/> the magnetic field induces a quantum transition<lb/> separating two phases with different distributions of the<lb/> electron density over the random wells Ref.<ref type="biblio">[3]</ref>. In the<lb/> high-field phase, the electrons in the lateral AlGaAs<lb/> wells which form a collective skyrmion state are pinned<lb/> at the random potential. While, the central GaAs well<lb/> completely determines the in-plane magneto-resistance<lb/> of the sample revealing well developed FQH states. The<lb/> integrated intensities of the PL lines from the central well<lb/> (QW 0 ) and from the neighboring wells (QW -1 and QW 2 ), associated with their occupations, directly demonstrate<lb/> the magnetic field driven re-distribution of the electrons: with increasing magnetic field the electrons move from<lb/> the neighboring wells to the central well. We show that the miniband and dimer QH states vanish with<lb/> increasing interlayer disorder. While, no significant effect of the disorder was observed on the single-layer high-<lb/>field QH states.<lb/></p>
+
+			<figure>
+				<trash>
+					0.2<lb/> 0.4<lb/> 0.6<lb/> 0.8<lb/> SL QW 0<lb/> 1/3<lb/>  SL 1  D 1<lb/> 2/5<lb/> 3/7<lb/> 3/5<lb/> 2/3<lb/> 1<lb/> R xy<lb/> (h/e<lb/> 2<lb/> )<lb/> (a)<lb/> 0.0<lb/> 0.5<lb/> 1.0<lb/> 1.5<lb/> 2.0<lb/> 2.5<lb/>
+
+					0 2<lb/> 4 6<lb/> 8 10<lb/> 12 14<lb/> 16 18<lb/> -50<lb/> 0<lb/> 50<lb/> 100<lb/> Magnetic fieldB(T)<lb/> (c)<lb/> 1/2<lb/> P<lb/> (%)<lb/> 0<lb/> 100<lb/> 200<lb/> 300<lb/> QW 2<lb/> QW -1<lb/> QW
+
+					0<lb/> (b)<lb/> R xx<lb/> (h/e<lb/> 2<lb/> )<lb/> PL<lb/> intensity<lb/> (a.u.)<lb/>
+				</trash>
+				
+				<head>Figure. 1:</head> 
+				
+				<figDesc>(a) R xx and R xy as a function of the<lb/> magnetic field, (b) integrated intensity of σ -<lb/>polarized PL from the central well QW 0 and<lb/> from the lateral wells QW -1 , QW 2 , (c) spin<lb/> polarization of the electrons in the central well<lb/> measured in disordered multi-wells at T ≈ 300<lb/> mK.<lb/></figDesc>
+			</figure>
+
+	</text>
+</tei>

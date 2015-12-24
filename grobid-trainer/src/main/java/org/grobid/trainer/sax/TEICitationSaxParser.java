@@ -175,13 +175,13 @@ public class TEICitationSaxParser extends DefaultHandler {
                 String value = atts.getValue(i);
 
                 if ((name != null) && (value != null)) {
-                    if (name.equals("type")) {
+                    if (name.equals("type") || name.equals("unit")) {
                         if ((value.equals("vol")) || (value.equals("volume"))) {
                             currentTag = "<volume>";
                         } else if ((value.equals("issue")) || (value.equals("number"))) {
                             currentTag = "<issue>";
                         }
-                        if (value.equals("pp")) {
+                        if (value.equals("pp") || value.equals("page")) {
                             currentTag = "<pages>";
                         }
                     }

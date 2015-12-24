@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_1678-7757-jaos-16-06-0380"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+
+			<figure>
+				<head>FIGURE <label>1</label>-</head>
+
+				<figDesc>Macroscopic aspects of teeth with different types<lb/> of hypercementosis. (A) Club shape hypercementosis: mild<lb/> (1), moderate (2) and severe (3). (B) Focal hypercementosis.<lb/> (C) Circular cementum hyperplasia hypercementosis<lb/></figDesc>
+			</figure>
+
+			<figure>
+				<head>FIGURE <label>2</label>-</head>
+				<figDesc>Moderate club shape hypercementosis. (A) Mesial and distal roots of a mandibular molar. (B) Greater magnification<lb/> of the apical foramen and foramina. Irregular root resorption areas are observed close to the apical foramen and foramina.<lb/> Original magnifications: (A) ×20, (B) ×50<lb/></figDesc> 	
+			</figure>
+			
+			<figure>
+				<head>FIGURE <label>3</label>-</head>
+				<figDesc>Severe club shape hypercementosis. Root apex<lb/> of a maxillary molar, showing the presence of 2 apical<lb/> foramina. Original magnification: ×1,000<lb/></figDesc> 
+			</figure>
+			
+			<figure>
+				<head>FIGURE <label>4</label>-</head>
+				<figDesc>Circular cementum hyperplasia<lb/> hypercementosis. Original magnification: ×15<lb/></figDesc>
+			</figure>
+			
+			<figure>
+				<head>FIGURE <label>5</label>-</head>
+				<figDesc>Focal hypercementosis. (A) Morphologic aspects of the foramina located in the distobuccal root of a maxillary<lb/> molar. (B) Openings of the foramina at the middle third at the mesiobuccal surface of a maxillary canine. Original magnifications:<lb/> (A) ×100, (B) ×50<lb/></figDesc>
+			</figure>
+
+
+	</text>
+</tei>

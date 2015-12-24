@@ -10,6 +10,8 @@ or
 
 Wapiti appears two time faster for decoding than CRF++ for the Grobid models. The sizes of the Wapiti models are five to ten times smaller in memory than CRF++ ones. Training time is also significantly reduced based on the Wapiti l-bfgs training algorithm with a similar accuracy. 
 
+NOTE: the usage of CRF++ is not supported anymore since GROBID version 0.4.
+
 ## Wapiti
 
 Wapiti is the default CRF library used by Grobid. It is integrated transparently to Grobid via JNI and there is normally nothing to be additionally done. This section explains how to rebuild and install the native library for integrating into Grobid a new versions of Wapiti.
@@ -67,6 +69,8 @@ If the Wapiti library version changes, the dependency version in grobid-core/pom
 
 
 ## CRF++
+
+NOTE: the usage of CRF++ is not supported anymore since GROBID version 0.4.
 
 The library CRF++ is a c++ library used by Grobid. The integration is done via JNI, so this library has to be built and embedded for the different architectures to be supported. When a new version is released or for supporting a new architecture, the sources have to be downloaded from the website [https://code.google.com/p/crfpp](https://code.google.com/p/crfpp), built and integrated into Grobid.
 

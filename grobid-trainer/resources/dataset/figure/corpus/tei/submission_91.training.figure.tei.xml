@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_91"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<figure>
+				<head><label>1a</label><lb/></head>
+			</figure>
+
+			<figure>
+				<head><label>1b</label></head>
+			</figure>
+			
+			<figure>
+				<head><label>1c</label><lb/></head>
+			</figure>
+			
+			<figure>
+				<head><label>1d</label><lb/></head>
+			</figure>
+
+	</text>
+</tei>

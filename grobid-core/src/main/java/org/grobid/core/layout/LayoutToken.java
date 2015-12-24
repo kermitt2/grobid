@@ -7,8 +7,8 @@ package org.grobid.core.layout;
  */
 public class LayoutToken {
     private String text = null;
-    public double y = 0.0;
-    public double x = 0.0;
+    public double y = -1.0;
+    public double x = -1.0;
     public double width = 0.0;
     public double height = 0.0;
     private String font = null;

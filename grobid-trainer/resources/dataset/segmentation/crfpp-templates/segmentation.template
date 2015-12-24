@@ -156,5 +156,21 @@ UI0:%x[-1,27]
 UI1:%x[0,27]
 UI2:%x[1,27]
 
+# bitmap connected to the current block (28)
+UG0:%x[-2,23]
+UG1:%x[-1,23]
+UG2:%x[0,23]
+UG3:%x[1,23]
+UG4:%x[2,23]
+UG5:%x[3,23]
+
+# vector graphic connected to the current block (29)
+UG0:%x[-2,24]
+UG1:%x[-1,24]
+UG2:%x[0,24]
+UG3:%x[1,24]
+UG4:%x[2,24]
+UG5:%x[3,24]
+
 # Output
 B

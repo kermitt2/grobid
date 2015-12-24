@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_1471-2148-8-1"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<figure>
+				<head>Mate choice pairing possibilities<lb/> Figure <label>1</label><lb/> Mate choice pairing possibilities.</head>
+
+				<figDesc>The eight possible<lb/> combinations when a spore of one species is placed against<lb/> two spores from another species. Grey and white circles<lb/> indicate species, arrows indicate cells with a choice of mates,<lb/> and a and α indicate the mating types of the spores.<lb/></figDesc>
+				
+				<trash>a<lb/> a<lb/> α<lb/> α<lb/> a<lb/> α<lb/> a<lb/> α<lb/> a<lb/> a<lb/> α<lb/> α<lb/> a<lb/> a<lb/> α<lb/> α<lb/> α<lb/> a<lb/> α<lb/> α<lb/> α<lb/> a<lb/> a<lb/> a<lb/> Uninformative<lb/> No Mating<lb/> Informative<lb/></trash> 
+			</figure>
+
+
+			<figure>
+				<head>Graphs of % hybrid matings for each pairing<lb/> Figure <label>2</label><lb/> Graphs of % hybrid matings for each pairing.</head>
+
+				<figDesc>Bar chart<lb/> showing the percentage of matings that resulted in hybrid<lb/> zygotes for the five species pairs. For each pair, the light grey<lb/> bar represents the result when S. cerevisiae (Sc) chose and the<lb/> dark grey bar represents the result when S. paradoxus (Sp)<lb/> chose. On each bar the numbers are the number of hybrid<lb/> zygotes formed over the total number analysed. Dashed lines<lb/> indicate the proportions of hybrids that would be expected if<lb/> the chooser always mated with its own species (33.33%), had<lb/> no preference (66.67%) and always mated with the other spe-<lb/>cies (100%). All strains formed significantly fewer hybrids than<lb/> would be expected by chance (*** = p &lt; 0.001, ** = p &lt; 0.01.<lb/> * = p &lt; 0.05). (For full dataset see Table 2.)<lb/></figDesc> 
+				
+				<trash>%<lb/> H<lb/> Y<lb/> B<lb/> R<lb/> I<lb/> D<lb/> S<lb/> 50<lb/> 100<lb/> Always<lb/> choose other<lb/> species<lb/> No<lb/> Preference<lb/> Always<lb/> choose own<lb/> species<lb/> Sc1<lb/> 49<lb/> 115<lb/> Sc2<lb/> 28<lb/> 88<lb/> Sp4<lb/> 38<lb/> 80<lb/> Sc4<lb/> 25<lb/> 78<lb/> Sp3<lb/> 42<lb/> 90<lb/> Sc3<lb/> 22<lb/> 70<lb/> Sp2<lb/> 47<lb/> 85<lb/> Sp5<lb/> 33<lb/> 80<lb/> Sc5<lb/> 26<lb/> 90<lb/> 1<lb/> 5<lb/> 4<lb/> 3<lb/> 2<lb/> Sp1<lb/> 34<lb/> 69<lb/> 100<lb/> 50<lb/>***<lb/> ***<lb/> ***<lb/> ***<lb/> ***<lb/> ***<lb/> **<lb/> *<lb/> ***<lb/> ***<lb/></trash>
+			</figure>
+
+	</text>
+</tei>

@@ -25,13 +25,13 @@
 
 			<p>Finally, the main approach is assisted by two backup strategies: one is called the Triple Similarity and the<lb/> other is called the BoW Similarity. Chief requirements for the backup strategy are robustness and simplicity.<lb/> Accordingly, we construct a similarity function, which operates on two triple (dependency structure represented<lb/> in the form of &lt;head, relation, modifier&gt;) sets and determines how many triples of H are contained in T. The<lb/> core assumption here is that the higher the number of matching triple elements, the more similar both sets are,<lb/> and the more likely it is that T entails H. The function uses an approximate matching function. Different cases<lb/> (i.e. ignoring either the parent node or the child node, or the relation between nodes) might provide different<lb/> indications for the similarity of T and H. We then sum them up using different weights and divide the result by<lb/> the cardinality of H for normalization. The BoW similarity score is calculated by dividing the number of<lb/> overlapping words between T and H by the total number of words in H after a simple tokenization according to<lb/> the space between words.<lb/></p>
 
-			<note place="footnote">1 The Root Node of T is not necessary to be a verb, instead, it could be a noun, a preposition, or even a dependency relation.<lb/></note>
+			<!--note place="footnote">1 The Root Node of T is not necessary to be a verb, instead, it could be a noun, a preposition, or even a dependency relation.<lb/></note-->
 
 			<head level="1">3<lb/> The AVE System<lb/></head>
 
 			<figure>
-				<head>Fig. 1.</head> 
-				<figDesc>Our AVE system uses the RTE system (Tera – Textual Entailment Recognition for Application) as a core component.<lb/> The preprocessing module mainly adapts questions, their corresponding answers, and supporting documents into Text (T)-<lb/>Hypothesis (H) pairs, assisted by some manually designed patterns. The post-processing module (i.e. the Answer Validation<lb/> in the picture) will validate each answer and select a most proper one based on the output of the RTE system. The new<lb/> modules added are the NE Recognition and Question Analysis. Thus, we will have extra information like NEs in the answers,<lb/> Expected Answer Types (EATs), etc.<lb/></figDesc>
+				Fig. 1.
+				Our AVE system uses the RTE system (Tera – Textual Entailment Recognition for Application) as a core component.<lb/> The preprocessing module mainly adapts questions, their corresponding answers, and supporting documents into Text (T)-<lb/>Hypothesis (H) pairs, assisted by some manually designed patterns. The post-processing module (i.e. the Answer Validation<lb/> in the picture) will validate each answer and select a most proper one based on the output of the RTE system. The new<lb/> modules added are the NE Recognition and Question Analysis. Thus, we will have extra information like NEs in the answers,<lb/> Expected Answer Types (EATs), etc.<lb/>
 			</figure>
 
 			<head level="2">3.1 Preprocessing and Post-processing<lb/></head>
@@ -50,7 +50,7 @@
 
 			<p>These T-H pairs can be the input for any generic RTE systems. In practice, after applying our RTE system, if<lb/> the T-H pairs are covered by our main approach, we will directly use the answers; if not, we will use a threshold<lb/></p>
 
-			<note place="footnote">2 The &quot;id&quot; comes from AVE 2008 test data, i.e. &quot;AVE2008-annotated-test-EN.xml&quot;.<lb/></note>
+			<!--note place="footnote">2 The &quot;id&quot; comes from AVE 2008 test data, i.e. &quot;AVE2008-annotated-test-EN.xml&quot;.<lb/></note-->
 
 			<p>to decide the answer based on the two similarity scores. Therefore, every T-H pair has a triple similarity score<lb/> and a BoW similarity score, and for some of the T-H pairs, we directly know whether the entailment holds. The<lb/> post-processing is straightforward, the &quot;YES&quot; entailment cases will be validated answers and the &quot;NO&quot;<lb/> entailment cases will be rejected answers. In addition, the selected answers (i.e. the best answers) will naturally<lb/> be the pairs covered by our main approach or (if not,) with the highest similarity scores.<lb/></p>
 
@@ -72,10 +72,10 @@
 
 			<p>We have submitted two runs for this year&apos;s AVE tasks, one for English and one for German. In the following, we<lb/> will first show the table of the results and then present an error analysis.<lb/></p>
 
-			<figure>
-				<head>Table 1. Results of our submissions compared with last year&apos;s<lb/></head>
+			<figure type="table">
+				Table 1. Results of our submissions compared with last year&apos;s<lb/>
 
-				<table>Submission Runs<lb/> Recall Precision<lb/> F-measure<lb/> Estimated QA<lb/> Performance<lb/> QA Accuracy<lb/> 100% VALIDATED (EN)<lb/> 1 0.08<lb/> 0.14<lb/> N/A<lb/> N/A<lb/> 50%VALIDATED (EN)<lb/> 0.5<lb/> 0.08<lb/> 0.13<lb/> N/A<lb/> N/A<lb/> Perfect Selection (EN)<lb/> N/A<lb/> N/A<lb/> N/A<lb/> 0.56<lb/> 0.34<lb/> Best QA System (EN)<lb/> N/A<lb/> N/A<lb/> N/A<lb/> 0.21<lb/> 0.21<lb/> dfki07-run1 (EN)<lb/> 0.62<lb/> 0.37<lb/> 0.46<lb/> N/A<lb/> 0.16<lb/> dfki07-run2 (EN)<lb/> 0.71<lb/> 0.44<lb/> 0.55<lb/> N/A<lb/> 0.21<lb/> dfki08run1 (EN)<lb/> 0.78<lb/> 0.54<lb/> 0.64<lb/> 0.34<lb/> 0.24<lb/> 100% VALIDATED(DE)<lb/> 1 0.12<lb/> 0.21<lb/> N/A<lb/> N/A<lb/> 50% VALIDATED (DE)<lb/> 0.5<lb/> 0.12<lb/> 0.19<lb/> N/A<lb/> N/A<lb/> Perfect Selection (DE)<lb/> N/A<lb/> N/A<lb/> N/A<lb/> 0.77<lb/> 0.52<lb/> Best QA System (DE)<lb/> N/A<lb/> N/A<lb/> N/A<lb/> 0.38<lb/> 0.38<lb/> dfki08run1 (DE)<lb/> 0.71<lb/> 0.54<lb/> 0.61<lb/> 0.52<lb/> 0.43<lb/></table>
+				Submission Runs<lb/> Recall Precision<lb/> F-measure<lb/> Estimated QA<lb/> Performance<lb/> QA Accuracy<lb/> 100% VALIDATED (EN)<lb/> 1 0.08<lb/> 0.14<lb/> N/A<lb/> N/A<lb/> 50%VALIDATED (EN)<lb/> 0.5<lb/> 0.08<lb/> 0.13<lb/> N/A<lb/> N/A<lb/> Perfect Selection (EN)<lb/> N/A<lb/> N/A<lb/> N/A<lb/> 0.56<lb/> 0.34<lb/> Best QA System (EN)<lb/> N/A<lb/> N/A<lb/> N/A<lb/> 0.21<lb/> 0.21<lb/> dfki07-run1 (EN)<lb/> 0.62<lb/> 0.37<lb/> 0.46<lb/> N/A<lb/> 0.16<lb/> dfki07-run2 (EN)<lb/> 0.71<lb/> 0.44<lb/> 0.55<lb/> N/A<lb/> 0.21<lb/> dfki08run1 (EN)<lb/> 0.78<lb/> 0.54<lb/> 0.64<lb/> 0.34<lb/> 0.24<lb/> 100% VALIDATED(DE)<lb/> 1 0.12<lb/> 0.21<lb/> N/A<lb/> N/A<lb/> 50% VALIDATED (DE)<lb/> 0.5<lb/> 0.12<lb/> 0.19<lb/> N/A<lb/> N/A<lb/> Perfect Selection (DE)<lb/> N/A<lb/> N/A<lb/> N/A<lb/> 0.77<lb/> 0.52<lb/> Best QA System (DE)<lb/> N/A<lb/> N/A<lb/> N/A<lb/> 0.38<lb/> 0.38<lb/> dfki08run1 (DE)<lb/> 0.71<lb/> 0.54<lb/> 0.61<lb/> 0.52<lb/> 0.43<lb/>
 			</figure>
 
 			<p>In the table, we notice that both for English and German, our validation system outperforms the best QA<lb/> systems, which suggests the necessity of the validation step. Although there is a gap between the system<lb/> performance and the perfect selection, the results are quite satisfactory. If we compare this year&apos;s results with<lb/> last year&apos;s, the additional information does improve the results significantly.<lb/></p>
@@ -94,7 +94,7 @@
 
 			<p>However, the problem has not been fully solved. Due to the noisy web data, filtering some documents in the<lb/> preprocessing step could be even more effective than working on the post-processing phase. Another direction<lb/> considered by us is to take a closer look at the different performances between different languages.<lb/></p>
 
-			<note place="footnote">3 This &quot;id&quot; comes from &quot;AVE2008-annotated-test-DE.xml&quot;.</note>
+			<!--note place="footnote">3 This &quot;id&quot; comes from &quot;AVE2008-annotated-test-DE.xml&quot;.</note-->
 
 	</text>
 </tei>

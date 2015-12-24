@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_submission_86"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+
+			<figure>
+				<trash>10<lb/> 2<lb/> 10<lb/> 4<lb/> 10<lb/> 6<lb/> 10<lb/> -6<lb/> 10<lb/> -4<lb/> 10<lb/> -2<lb/> 10<lb/> 0<lb/> 10<lb/> 1<lb/> 10<lb/> 2<lb/> 10<lb/> 3<lb/> 10<lb/> 4<lb/> 10<lb/> 5<lb/> 10<lb/> 0<lb/> 10<lb/> 1<lb/> 10<lb/> 2<lb/> 10<lb/> 3<lb/> 10<lb/> 4<lb/> 10<lb/> 5<lb/> 10<lb/> 6<lb/> τ R (ns)<lb/> G(τ<lb/> R<lb/> )<lb/>PL intensity (arb.units)<lb/> t (ns)<lb/></trash>
+				<figDesc>Photoluminescence decay in ensembles of<lb/> InAlAs/AlAs QDs: experimental data are<lb/> shown by open circles, the solid line is<lb/> modeling of kinetics. Insert shows the<lb/> distribution function G(τ R ) with a set of<lb/> parameters: τ 0 =5.2 µs and γ=3.40.</figDesc>
+			</figure>
+
+	</text>
+</tei>

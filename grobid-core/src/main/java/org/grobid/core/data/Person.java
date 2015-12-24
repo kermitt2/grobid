@@ -16,7 +16,7 @@ public class Person {
     private String lastName = null;
     private String title = null;
     private String suffix = null;
-    //private String displayName = null; // name exactly as displayed
+    private String rawName = null; // raw full name if relevant, e.g. name exactly as displayed
     private boolean corresp = false;
 
     private List<String> affiliationBlocks = null;
@@ -50,13 +50,13 @@ public class Person {
         lastName = normalizeName(f);
     }
 
-    /*public String getDisplayName() {
-         return displayName;
-     }*/
+    public String getRawName() {
+         return rawName;
+    }
 
-    /*public void setDisplayName(String name) {
-         displayName = name;
-     }*/
+    public void setRawName(String name) {
+         rawName = name;
+    }
 
     public String getTitle() {
         return title;

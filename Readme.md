@@ -1,14 +1,10 @@
 # GROBID
 
+[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 [![Build Status](https://travis-ci.org/kermitt2/grobid.svg?branch=master)](https://travis-ci.org/kermitt2/grobid)
 [![Coverage Status](https://coveralls.io/repos/kermitt2/grobid/badge.svg)](https://coveralls.io/r/kermitt2/grobid)
 [![Documentation Status](https://readthedocs.org/projects/grobid/badge/?version=latest)](https://readthedocs.org/projects/grobid/?badge=latest)
 
-## License
-
-GROBID is distributed under [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0). 
-
-Main author and contact: Patrice Lopez (<patrice.lopez@inria.fr>)
 
 ## Purpose
 
@@ -42,14 +38,19 @@ The key aspects of GROBID are the following ones:
 + "Automatic Generation" of pre-formatted training data based on new pdf documents, for supporting semi-automatic training data generation. 
 + Support for CJK and Arabic languages based on customized Lucene analyzers provided by WIPO.
 
-The default GROBID extraction and parsing algorithms uses the [Wapiti CRF library](http://wapiti.limsi.fr), but it is also possible to use the [CRF++ library](http://crfpp.googlecode.com/svn/trunk/doc/index.html). These two C++ libraries are transparently integrated as JNI with dynamic call based on the current OS. 
+The GROBID extraction and parsing algorithms uses the [Wapiti CRF library](http://wapiti.limsi.fr). [CRF++ library](http://crfpp.googlecode.com/svn/trunk/doc/index.html) is not supported since GROBID version 0.4. The C++ libraries are transparently integrated as JNI with dynamic call based on the current OS. 
 
-GROBID should run properly "out of the box" on MacOS X, Linux (64 bits). GROBID does currently not run on Windows environments because the required and up-to-date CRF native binaries are not yet compiled for this platform (contributors to work on Windows support are very welcome!).
+GROBID should run properly "out of the box" on MacOS X, Linux (32 and 64 bits). GROBID does currently not run on Windows environments because the required and up-to-date CRF native binaries are not yet compiled for this platform (contributors to work on Windows support are very welcome!).
 
 ## GROBID documentation
 
 Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detailed information.
 
+## License
+
+GROBID is distributed under [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0). 
+
+Main author and contact: Patrice Lopez (<patrice.lopez@science-miner.com>)
 
 ## References
 
@@ -57,4 +58,4 @@ Please simply refer to the github project:
 
 Grobid (2008-2015) <https://github.com/kermitt2/grobid>
 
-See the [GROBID documentation](http://grobid.readthedocs.org) for more related resources. 
+See the [GROBID documentation](http://grobid.readthedocs.org/en/latest/References) for more related resources. 

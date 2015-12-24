@@ -118,7 +118,11 @@ public class TrainerRunner {
 			trainer = new SegmentationTrainer();
 		} else if (model.equals("reference-segmenter")) {
             trainer = new ReferenceSegmenterTrainer();
-        } else {
+        } else if (model.equals("figure")) {
+		    trainer = new FigureTrainer();
+		} else if (model.equals("table")) {
+		    trainer = new TableTrainer();
+		} else {
 			throw new IllegalStateException("The model " + model + " is unknown.");
 		}
 

@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="9911409"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:astro-ph/9911409v1</idno>
+
+	<date>22 Nov 1999<lb/></date>
+
+	<note type="other">A&amp;A manuscript no.<lb/> (will be inserted by hand later)<lb/></note> 
+	
+	<keyword>Your thesaurus codes are:<lb/> 11.06.2; 11.16.1; 13.09.1<lb/></keyword> 
+	
+	<keyword>ASTRONOMY<lb/> AND<lb/> ASTROPHYSICS<lb/></keyword> 
+	
+	<date>25.7.2013<lb/></date> 
+	
+	<docTitle>
+	<titlePart>1.65 µm (H-band) surface photometry of galaxies. III:<lb/> observations of 558 galaxies with the TIRGO 1.5m<lb/> telescope. ⋆<lb/></titlePart>
+</docTitle>
+
+	<byline>
+	<docAuthor>G. Gavazzi 1 , P. Franzetti 1 , M. Scodeggio 2 , A. Boselli 3 , D. Pierini 4 , C. Baffa 5 , F. Lisi 5 , and L.K. Hunt 6<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Università degli Studi di Milano -Bicocca,</affiliation>
+	</byline>
+
+	<address>P.zza dell&apos;Ateneo Nuovo 1, 20126 Milano, Italy<lb/></address>
+
+	<byline>
+	<affiliation>2 European Southern Observatory,</affiliation>
+	</byline>
+
+	<address>Karl-Schwarzschild-Str. 2, D-85748 Garching bei München, Germany<lb/></address>
+
+	<byline>
+	<affiliation>3 Laboratoire d&apos;Astronomie Spatiale,</affiliation>
+	</byline>
+
+	<address>Traverse du Siphon, F-13376 Marseille Cedex 12, France<lb/></address>
+
+	<byline>
+	<affiliation>4 MPI für Kernphysik,</affiliation>
+	</byline>
+
+	<address>postfach 103980, D-69117 Heidelberg, Germany<lb/></address>
+
+	<byline>
+	<affiliation>5 Osservatorio Astrofisico di Arcetri,</affiliation>
+	</byline>
+
+	<address>L.go E. Fermi 5, 50125 Firenze, Italy<lb/></address>
+
+	<byline>
+	<affiliation>6 C.A.I.S.M.I.,</affiliation>
+	</byline>
+	
+	<address>L.go E.Fermi 5, 50125 Firenze, Italy<lb/> </address>
+
+	<note type="other">Received..........; accepted..........<lb/></note>
+
+	<div type="abstract">Abstract. We present near-infrared H-band (1.65 µm)<lb/> surface photometry of 558 galaxies in the Coma Super-<lb/>cluster and in the Virgo cluster. This data set, obtained<lb/> with the Arcetri NICMOS3 camera ARNICA mounted on<lb/> the Gornergrat Infrared Telescope, is aimed at comple-<lb/>menting, with observations of mostly early-type objects,<lb/> our NIR survey of spiral galaxies in these regions, pre-<lb/>sented in previous papers of this series. Magnitudes at the<lb/> optical radius, total magnitudes, isophotal radii and light<lb/> concentration indices are derived. We confirm the exis-<lb/>tence of a positive correlation between the near-infrared<lb/> concentration index and the galaxy H-band luminosity. 1<lb/></div>
+
+	<keyword>Key words: Galaxies: fundamental parameters; Galaxies:<lb/> photometry; Infrared: Galaxies<lb/></keyword>
+
+	<p type="introduction">1. Introduction</p>
+
+		</front>
+	</text>
+</tei>

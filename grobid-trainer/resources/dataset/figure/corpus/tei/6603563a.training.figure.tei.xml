@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_6603563a"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<figure>
+				<trash>Chromosome 1<lb/> Chromosome 2<lb/> Chromosome 3<lb/> Chromosome 4<lb/> Chromosome 5<lb/> Chromosome 6<lb/> Chromosome 8<lb/> Chromosome 9<lb/> Chromosome 10<lb/> Chromosome 11<lb/> Chromosome 12<lb/> Chromosome 13<lb/> Chromosome 14<lb/> Chromosome 15<lb/> Chromosome 16<lb/> Chromosome 17<lb/> Chromosome 19<lb/> Chromosome 7<lb/> Chromosome 18<lb/> Chromosome 20<lb/> Chromosome 21<lb/> Chromosome 22<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> Mean log<lb/> 2 ratio<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> Mean log<lb/> 2 ratio<lb/> Mean log<lb/> 2 ratio<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> Mean log<lb/> 2 ratio<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> Mean log<lb/> 2 ratio<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> Mean log<lb/> 2 ratio<lb/> RUNX3<lb/> MLH1<lb/> MYC<lb/> BRCA2<lb/> KRAS<lb/> CDH1<lb/> TP53<lb/> ERBB2<lb/> MAP2K4<lb/> NCOA3<lb/> SCAP2<lb/> BCMP11<lb/> EGFR<lb/> EGFR<lb/> DCC<lb/> ATP5A1<lb/> SEC11L3<lb/> SMAD4<lb/> MYB<lb/> MLH1<lb/> 0<lb/> 50<lb/> 100 150<lb/> 0<lb/> 50<lb/> 100<lb/> 150<lb/> 0<lb/> 0<lb/> 50<lb/> 20 40 60 80<lb/> 100<lb/> 100<lb/> 0 20 40 60 80 100<lb/> 120<lb/> 120<lb/> 0 20 40 60 80 100 120<lb/> 0 20 40 60 80<lb/> 0<lb/> 2 0<lb/> 4 0<lb/> 6 0<lb/> 60<lb/> 80<lb/> 0<lb/> 2 0<lb/> 4 0<lb/> 6 0<lb/> 8 0<lb/> 0<lb/> 2 0<lb/> 4 0<lb/> 6 0<lb/> 0<lb/> 2 0<lb/> 4 0<lb/> 0<lb/> 2 0<lb/> 10<lb/> 40<lb/> 30<lb/> 0<lb/> 2 0<lb/> 10<lb/> 40<lb/> 60<lb/> 30<lb/> 0<lb/> 2 0<lb/> 10<lb/> 50<lb/> 30 40<lb/> 60<lb/> 70<lb/> 0<lb/> 0<lb/> 20<lb/> 50<lb/> 100<lb/> 150<lb/> 10<lb/> 50<lb/> 30<lb/> 40<lb/> 0<lb/> 2 0<lb/> 10<lb/> 50<lb/> 30 40<lb/> 60<lb/> 80<lb/> 100<lb/> 100<lb/> 120<lb/> 140<lb/> 0 20 40 60 80<lb/> 0<lb/> 20<lb/> 40<lb/> 60<lb/> 80<lb/> 100<lb/> 100<lb/> 120 140<lb/> 150<lb/> 200<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0.4<lb/> 0.2<lb/> –0.2<lb/> –0.4<lb/> 0.0<lb/> 0<lb/> 50<lb/> 100 150 200<lb/> 50<lb/> 100<lb/> 150<lb/> 0<lb/> 50<lb/> 100<lb/> 150<lb/> 0<lb/></trash>
+
+ 		   		<head>Figure <label>1</label></head> 
+				
+				<figDesc>Summary of overall genome-wide alterations in a total of 23 microdissected PDAC tissues. Genetic gains are shown as green dots and losses as<lb/> red dots (Y axis) at each clone position along the chromosome (X axis). Several representative clones with no genetic changes are depicted as black dots.<lb/> Square-shaped dots indicate the clones validated by FISH, whereas triangle dots indicate previously identified genes in PDAC. Vertical dotted lines represent<lb/> chromosome centromeres.<lb/></figDesc> 
+ 			</figure>
+ 
+ 
+ 
+			<figure>		
+				<trash>A<lb/> B<lb/> C<lb/> D<lb/></trash>
+			
+				<head>Figure <label>2</label></head> 
+				
+				<figDesc>Four representative images in FISH analysis. Target BAC DNA<lb/> probes were labelled with Cy3-dCTP (red), while centromeric probes<lb/> were labelled with SpectrumGreen. DNA copy number was evaluated for<lb/> each probe by counting spots in at least 100 nuclei. (A) No copy number<lb/> change of BCMP11 in PC40. (B) Genetic loss of SEC11L3 in PC48. (C)<lb/> Genetic gains of BCMP11 in PC44 and (D) of SCAP2 in PC49.<lb/></figDesc> 
+			</figure>	
+
+
+			<figure>
+				<trash>A<lb/> B<lb/> C<lb/> D<lb/> E<lb/> F<lb/> G<lb/> H<lb/> I<lb/></trash>
+
+ 			   <head>Figure <label>3</label></head> 
+			   
+			   <figDesc>SEC11L3 mRNA expression in non-neoplastic epithelial cells and PDAC cells, as determined by ISH. (A) Strong expression (score 2) in both<lb/> ductal (white arrows) and acinar cells of non-neoplastic pancreas. (B) ISH conducted with a sense SEC11L3 riboprobe, used as a negative control. (C – E). No<lb/> expression (score 0) in PDAC cells (black arrows), but weak expression (score 1) in non-neoplastic islet cells (black arrow heads) (PC41 and 47) (F). Weak<lb/> expression (score 1) of PDAC cells in PC43 and (G) strong intensity of expression (score 2) of PDAC cells in PC44. (H) Lower level of expression (score 1;<lb/> PC53) and (I) similar intensity of expression (score 2; PC55) in metastatic PDAC cells (black arrows) compared to non-neoplastic hepatic cells (asterisk).<lb/></figDesc>
+		   </figure>
+
+
+		   <figure>
+				<trash>SEC11L3<lb/> 18s rRNA<lb/> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19<lb/></trash>
+
+ 			  	<head>Figure <label>4</label></head> 
+			   
+			   <figDesc>mRNA expression of SEC11L3 in normal pancreas and PDAC tissues, as determined by RT-PCR. 18S ribosomal RNA was used as an internal<lb/> standard. Samples were run in the following order: lane 1 – 2, normal pancreas; lane 3 – 18, PDACs; lane 19, negative control. SEC11L3 expression was found<lb/> to be present in normal pancreas, while it was decreased in 16 out of 16 PDAC tissues (100%).<lb/></figDesc>
+		   </figure>
+
+
+	</text>
+</tei>

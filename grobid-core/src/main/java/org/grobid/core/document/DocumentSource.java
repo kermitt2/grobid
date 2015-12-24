@@ -54,7 +54,7 @@ public class DocumentSource {
         }
 
         DocumentSource source = new DocumentSource();
-        source.xmlFile = source.pdf2xml(true, false, startPage, endPage, pdfFile, tmpPath, withImages);
+        source.xmlFile = source.pdf2xml(true, false, startPage, endPage, pdfFile, tmpPath, true);//withImages);
         source.cleanupXml = true;
         return source;
     }
@@ -154,7 +154,8 @@ public class DocumentSource {
 
             if (worker.getExitStatus() != 0) {
                 String errorStreamContents = worker.getErrorStreamContents();
-                throw new GrobidException("PDF to XML conversion failed " + (StringUtils.isEmpty(errorStreamContents) ? "" : ("due to: " + errorStreamContents)),
+                throw new GrobidException("PDF to XML conversion failed on pdf file " + pdfPath + " " + 
+                        (StringUtils.isEmpty(errorStreamContents) ? "" : ("due to: " + errorStreamContents)),
                         GrobidExceptionStatus.TIMEOUT);
             }
         } catch (InterruptedException ex) {

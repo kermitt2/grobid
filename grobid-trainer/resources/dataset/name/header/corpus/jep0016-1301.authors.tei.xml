@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Catherine</forename>
+								 <surname>Hudon</surname>
+								 <roleName>MD</roleName>
+								 <roleName>MSc</roleName>
+								 <roleName>CMFC</roleName>,
+								 <marker>1</marker>
+							</persName>
+							<persName>
+								 <forename>Denise</forename>
+								 <surname>St-Cyr Tribble</surname>
+								 <roleName>RN</roleName>
+								 <roleName>PhD</roleName>,
+								 <marker>2</marker>
+							</persName>
+							<persName>
+								 <forename>France</forename>
+								 <surname>Légaré</surname>
+								 <roleName>MD</roleName>
+								 <roleName>PhD</roleName>
+								 <roleName>FCMF</roleName>,
+								 <marker>3</marker>
+							<lb/>
+							</persName>
+							<persName>
+								 <forename>Gina</forename>
+								 <surname>Bravo</surname>
+								 <roleName>PhD</roleName> ,
+								 <marker>4</marker>
+							</persName>
+							<persName>
+								 <forename>Martin</forename>
+								 <surname>Fortin</surname>
+								 <roleName>MD</roleName>
+								 <roleName>MSc</roleName>
+								 <roleName>FCMF</roleName>
+								 <marker>5</marker> and
+							</persName>
+							<persName>
+								 <forename>José</forename>
+								 <surname>Almirall</surname>
+								 <roleName>MD</roleName>
+								 <roleName>PhD</roleName>
+								 <marker>6</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

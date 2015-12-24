@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_12862_2014_Article_245"/>
+	</teiHeader>
+	<text xml:lang="en">
+			
+			<figure>
+				<trash>(a)<lb/> (b)<lb/></trash> 
+				
+				<head>Figure <label>3</label> Mitochondrial phylogeny of hybrid individuals.</head> 
+				
+				<figDesc>Majority-<lb/>rule consensus tree with all compatible groups for mitochondrial<lb/> sequences with the inclusion of hybrid specimens in the analysis.<lb/> Panel (a) shows a close-up on the topological position of hybrid<lb/> specimens 1 to 3 and panel (b) of A. leucokranos. The topology of<lb/> the rest of the phylogeny (not shown) is as in Figure 1.<lb/></figDesc>
+			</figure>	
+
+
+			<figure>
+				<trash>(a)<lb/> (b)<lb/></trash> 
+				 
+				<head>Figure <label>2</label> Homoplasy excess test.</head> 
+				
+				<figDesc>Panel (a) shows the distribution of the bootstrap support for each node which showed a homoplasy excess<lb/> during the removal analysis. Each boxplot shows the null distribution of bootstrap values for the node and the red dot shows the bootstrap<lb/> value of the node when the taxon of interest (name on the right) has been removed. Nodes names as given on the left correspond to that of<lb/> panel (b) which shows the consensus tree of the nuclear phylogeny. There, nodes and taxa which showed up as outliers in the analysis have<lb/> been coloured in orange. Species used as outgroup are shown in grey. The size of node labels has been altered to facilitate reading.<lb/></figDesc>
+			</figure>
+
+
+			<figure>
+				<trash>(a)<lb/> (b)<lb/></trash>  
+			
+				<head>Figure <label>4</label> Nuclear phylogeny of hybrid cloned sequences.</head> 
+			
+				<figDesc>Majority-rule consensus tree with all compatible groups for nuclear sequences with<lb/> the inclusion of hybrid specimens in the analysis. The two panels (a &amp; b) are close-ups on the topological position of the cloned sequences. The<lb/> topology of the rest of the phylogeny (not shown) is as in Figure 1.<lb/></figDesc>
+			</figure>
+
+
+			<figure>
+				 <head>Figure <label>5</label> Distribution of potentially hybridising species.</head> 
+				 
+				 <figDesc>Species distribution following [17], of species likely implicated in hybridisation events.<lb/> The localities of the sequenced hybrid individuals are shown by yellow dots or area when known. The precise geographical origin of the hybrid 2<lb/> individual is unknown, the question mark sign indicates the general area where it was collected.<lb/></figDesc> 
+			</figure>	
+
+
+
+	</text>
+</tei>

@@ -6,9 +6,12 @@
 
 ## Papers on Grobid
 
+[GROBID: Combining Automatic Bibliographic Data Recognition and Term Extraction for Scholarship Publications](https://lekythos.library.ucy.ac.cy/bitstream/handle/10797/14013/ECDL069.pdf?sequence=1). P. Lopez. Proceedings of the 13th European Conference on Digital Library (ECDL), Corfu, Greece, 2009.
+
 Automatic Extraction and Resolution of Bibliographical References in Patent Documents. P. Lopez. First Information Retrieval Facility Conference (IRFC), Vienna, May 2010. LNCS 6107, pp. 120-135. Springer, Heidelberg (2010).
 
-[GROBID: Combining Automatic Bibliographic Data Recognition and Term Extraction for Scholarship Publications](https://lekythos.library.ucy.ac.cy/bitstream/handle/10797/14013/ECDL069.pdf?sequence=1). P. Lopez. Proceedings of the 13th European Conference on Digital Library (ECDL), Corfu, Greece, 2009.
+[Automatic Metadata Extraction The High Energy Physics Use Case](https://preprints.cern.ch/record/2039361/files/CERN-THESIS-2015-105.pdf). Joseph
+Boyd. Master Thesis, EPFL, Switzerland, 2015. 
 
 ## Project reference
 

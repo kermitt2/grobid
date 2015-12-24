@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_Wang-paperAVE2008"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<figure>
+				<head>Fig. <label>1</label>.</head> 
+				<figDesc>Our AVE system uses the RTE system (Tera – Textual Entailment Recognition for Application) as a core component.<lb/> The preprocessing module mainly adapts questions, their corresponding answers, and supporting documents into Text (T)-<lb/>Hypothesis (H) pairs, assisted by some manually designed patterns. The post-processing module (i.e. the Answer Validation<lb/> in the picture) will validate each answer and select a most proper one based on the output of the RTE system. The new<lb/> modules added are the NE Recognition and Question Analysis. Thus, we will have extra information like NEs in the answers,<lb/> Expected Answer Types (EATs), etc.<lb/></figDesc>
+			</figure>
+
+	</text>
+</tei>

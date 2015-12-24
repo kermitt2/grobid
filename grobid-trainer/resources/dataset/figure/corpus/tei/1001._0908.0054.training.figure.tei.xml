@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_1001._0908.0054"/>
+	</teiHeader>
+	<text xml:lang="en">
+
+			<figure>
+				<head>Figure <label>1</label>:</head> 
+				<figDesc>CMB spectrums for Ω F = Ω B = 0.2, x F = x B = 63109,<lb/> τ = 0.13. All the parameters are the same for both curves. The con-<lb/>tinuous line corresponds to bosons and the dashed line to fermions.<lb/></figDesc>
+			</figure>
+
+			<figure>
+				<head>Figure <label>2</label>:</head> 				
+				<figDesc>CMB spectrum for a Universe with Ω B = 0.2, Ω CDM =<lb/> 0.02, α 10 −26 .<lb/> </figDesc>
+			</figure>
+
+			<figure>
+				<head>Figure <label>3</label>:</head> 
+				<figDesc>Response of the CMB spectrum to the change in the mass-<lb/>to-temperature ratio of the SFDM. For the three curves Ω B = 0.2,<lb/> Ω CDM = 0.02, α ∝ 10 −27 .<lb/> </figDesc>
+			
+			</figure>
+			
+			<figure>	
+				<head>Figure <label>4</label>:</head> 
+				<figDesc>CMB spectrums for α in the interval (10 −26 , 10 −30 ). With<lb/> Ω B = 0.2, Ω CDM = 0.02, and no reionization.<lb/></figDesc>
+			</figure>
+			
+			<figure>	
+				<head>Figure <label>5</label>:</head> 
+				<figDesc>CMB power spectrums for diferent contents of ULBDM<lb/> and CDM. For the three curves shown α ∝ 10 −27 , no reionization.<lb/> </figDesc>
+			</figure>
+			
+			<figure>	
+				<head>Figure <label>6</label>:</head> 
+				<figDesc>CMB power spectrums for diferent optical depths of reion-<lb/>ization. The range shown is from τ = 0.05 to τ = 0.19. Ω Bos = 0.2,<lb/> Ω CDM = 0.02, α ∝ 10 −27 .<lb/></figDesc>
+			</figure>
+
+	</text>
+</tei>

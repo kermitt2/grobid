@@ -9,6 +9,7 @@ public interface GrobidPropertyKeys {
 
     public static final String PROP_GROBID_IS_CONTEXT_SERVER = "grobid.is.context.server";
 
+	public static final String PROP_VERSION = "grobid.version";
     public static final String PROP_TMP_PATH = "grobid.temp.path";
 //    public static final String PROP_BIN_PATH = "grobid.bin.path";
     public static final String PROP_NATIVE_LIB_PATH = "grobid.nativelibrary.path";
