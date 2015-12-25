@@ -124,8 +124,8 @@ public class FullTextParser extends AbstractParser {
 
             // header processing
 			BiblioItem resHeader = new BiblioItem();
-           	//parsers.getHeaderParser().processingHeaderBlock(config.isConsolidateHeader(), doc, resHeader);
-			parsers.getHeaderParser().processingHeaderSection(config.isConsolidateHeader(), doc, resHeader);
+           	parsers.getHeaderParser().processingHeaderBlock(config.isConsolidateHeader(), doc, resHeader);
+			//parsers.getHeaderParser().processingHeaderSection(config.isConsolidateHeader(), doc, resHeader);
 			// above, use the segmentation model result
 
             // citation processing
