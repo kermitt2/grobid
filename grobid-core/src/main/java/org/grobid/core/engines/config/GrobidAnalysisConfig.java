@@ -58,6 +58,11 @@ public class GrobidAnalysisConfig {
     // and saved under the indicated repository path
     private File pdfAssetPath = null;
 
+    // matching techniques for citations, figures and tables - this is used
+    // to associate a reference in the full text to the right entity
+    private int matchingMode = Default;
+    public static final int Default = 0;
+    public static final int LuceneBased = 1;
 
     // BUILDER
 
@@ -101,6 +106,11 @@ public class GrobidAnalysisConfig {
 
         public GrobidAnalysisConfigBuilder withXslStylesheet(boolean b) {
             config.withXslStylesheet = b;
+            return this;
+        }
+
+        public GrobidAnalysisConfigBuilder matchingMode(int m) {
+            config.matchingMode = m;
             return this;
         }
 
@@ -163,5 +173,9 @@ public class GrobidAnalysisConfig {
 
     public boolean isGenerateImageReferences() {
         return generateImageReferences;
+    }
+
+    public int getMatchingMode() {
+        return matchingMode;
     }
 }

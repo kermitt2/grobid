@@ -1594,6 +1594,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 			eval.fileRatio = fileRatio;
 			String report = eval.evaluationGrobid(runGrobidVal);
 			System.out.println(report);
+			System.out.println(Engine.getCntManager());
 			eval.close();
         } catch (Exception e) {
             e.printStackTrace();

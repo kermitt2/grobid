@@ -27,6 +27,8 @@ import org.grobid.core.engines.FullTextParser;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
+import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.utilities.counters.impl.CntManagerFactory;
 
 import java.util.*;
 import java.util.regex.Matcher; 
@@ -1429,16 +1431,20 @@ public class TEIFormater {
 				String replacement = null;
 				
 				if (lastTag0.equals("<citation_marker>")) {
-					replacement = markReferencesTEI(chunkRefString, 
-													refTokens, 
-													bds, 
-													config.isGenerateTeiCoordinates());
-					
-					/*replacement = markReferencesTEI2(chunkRefString, 
+					if (config.getMatchingMode() == GrobidAnalysisConfig.LuceneBased) {
+						replacement = markReferencesTEI2(chunkRefString, 
 													refTokens, 
 													bds, 
 													doc.getReferenceMarkerMatcher(),
-													config.isGenerateTeiCoordinates());*/
+													config.isGenerateTeiCoordinates());
+					}
+					else {
+						// default
+						replacement = markReferencesTEI(chunkRefString, 
+													refTokens, 
+													bds, 
+													config.isGenerateTeiCoordinates());
+					}
 				}
 				else if (lastTag0.equals("<figure_marker>")) {
 					replacement = markReferencesFigureTEI(chunkRefString, refTokens, figures, 
@@ -1781,10 +1787,12 @@ public class TEIFormater {
  		if (text.endsWith("</ref>") || text.startsWith("<ref")) 
  			return text;
 
-         text = TextUtilities.HTMLEncode(text);
-         boolean numerical = false;
+ 		CntManager cntManager = Engine.getCntManager();
 
-         String coords = null;
+        text = TextUtilities.HTMLEncode(text);
+        boolean numerical = false;
+
+        String coords = null;
  		if (generateCoordinates)
  			coords = getCoordsString(refTokens);
          if (coords == null) {
@@ -1927,6 +1935,7 @@ public class TEIFormater {
  	                        text = text.substring(0, ind) +
  	                            	"<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + marker
  	                                + "</ref>" + text.substring(ind + marker.length(), text.length());
+ 	                        cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
  	                    }
  	                }
 					
@@ -2024,11 +2033,14 @@ public class TEIFormater {
  											followingText = text.substring(indi2 + 5, text.length()); 
  																// 5 digits for the year + identifier character 
  	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
- 	                                        added = 8;											
+ 	                                        cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
+ 	                                        added = 8;	
+
  	                                    } else {
  											followingText = text.substring(indi2 + 4, text.length());
  																// 4 digits for the year 
  	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
+ 	                                        cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
  	                                        added = 7;
  	                                    }
  										if (previousText.length() > 2) {
@@ -2074,12 +2086,14 @@ public class TEIFormater {
  											followingText = text.substring(indi2 + 5, text.length()); 
  																// 5 digits for the year + identifier character
  	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" "  + coords + ">" + reference + "</ref>";
+ 	                                        cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
  	                                        added = 8;
  	                                    } 
  										else {
  											followingText = text.substring(indi2 + 4, text.length()); 
  																// 4 digits for the year 
  	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
+ 	                                        cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
  	                                        added = 7;
  										}
  	                                  	if (previousText.length() > 2) {
@@ -2113,7 +2127,8 @@ public class TEIFormater {
  		// without pointer - just ignoring possible punctuation at the beginning and end of the string
  		if (!text.endsWith("</ref>") && !text.startsWith("<ref")) 
  			text = "<ref type=\"bibr\">" + text + "</ref>";
-         return text;
+ 		cntManager.i(ReferenceMarkerMatcher.Counters.UNMATCHED_REF_MARKERS);
+        return text;
      }
 
     /**
