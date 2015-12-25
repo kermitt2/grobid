@@ -711,7 +711,12 @@ public class BasicStructureBuilder {
 									 // tokenization of the first token of the current line
 		String line = null;
 		
-        DocumentPointer pointerA = DocumentPointer.START_DOCUMENT_POINTER;
+        //DocumentPointer pointerA = DocumentPointer.START_DOCUMENT_POINTER;
+        while(docBlocks.get(blockIndex).getTokens() == null) {
+            blockIndex++;
+        }
+        DocumentPointer pointerA = new DocumentPointer(doc, blockIndex, 0);
+
         DocumentPointer currentPointer = null;
         DocumentPointer lastPointer = null;
 

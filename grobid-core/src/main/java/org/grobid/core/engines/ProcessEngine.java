@@ -144,6 +144,7 @@ public class ProcessEngine implements Closeable {
 		}
 		else {
 			processFullTextDirectory(files, pGbdArgs, pGbdArgs.getPath2Output(), pGbdArgs.getSaveAssets());
+            System.out.println(Engine.getCntManager());
 		}
 	}
 		

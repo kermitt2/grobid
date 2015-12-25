@@ -111,7 +111,7 @@ public class TestFullTextParser extends EngineTest {
     }
 
     private void assertTei(Document doc) {
-        //assertDocAndBlockTokenizationSync(doc);
+        assertDocAndBlockTokenizationSync(doc);
         assertNotNull(doc.getTei());
     }
 

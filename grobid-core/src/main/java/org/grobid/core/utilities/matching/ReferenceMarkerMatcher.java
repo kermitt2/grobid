@@ -37,7 +37,7 @@ public class ReferenceMarkerMatcher {
     public static final int MAX_RANGE = 20;
     public static final Pattern NUMBERED_CITATIONS_SPLIT_PATTERN = Pattern.compile("[,;]");
 
-    enum Counters {
+    public enum Counters {
         MATCHED_REF_MARKERS,
         UNMATCHED_REF_MARKERS,
         NO_CANDIDATES,

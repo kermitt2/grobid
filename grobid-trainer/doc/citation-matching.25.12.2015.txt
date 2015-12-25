@@ -1,0 +1,85 @@
+--------------------------
+100 PDF 
+--------------------------
+
+1) *****************default
+
+************************************************************************************
+COUNTER: org.grobid.core.utilities.matching.ReferenceMarkerMatcher$Counters
+************************************************************************************
+------------------------------------------------------------------------------------
+  UNMATCHED_REF_MARKERS:                    3267
+  MATCHED_REF_MARKERS_AFTER_POST_FILTERING: 0
+  STYLE_AUTHORS:                            0
+  STYLE_NUMBERED:                           0
+  MANY_CANDIDATES:                          0
+  MANY_CANDIDATES_AFTER_POST_FILTERING:     0
+  NO_CANDIDATES:                            0
+  MATCHED_REF_MARKERS:                      3534
+  NO_CANDIDATES_AFTER_POST_FILTERING:       0
+  STYLE_OTHER:                              0
+====================================================================================
+====================================================================================
+
+2) *****************luceneBased
+
+************************************************************************************
+COUNTER: org.grobid.core.utilities.matching.ReferenceMarkerMatcher$Counters
+************************************************************************************
+------------------------------------------------------------------------------------
+  UNMATCHED_REF_MARKERS:                    669
+  MATCHED_REF_MARKERS_AFTER_POST_FILTERING: 21
+  STYLE_AUTHORS:                            950
+  STYLE_NUMBERED:                           2264
+  MANY_CANDIDATES:                          104
+  MANY_CANDIDATES_AFTER_POST_FILTERING:     25
+  NO_CANDIDATES:                            764
+  MATCHED_REF_MARKERS:                      3446
+  NO_CANDIDATES_AFTER_POST_FILTERING:       50
+  STYLE_OTHER:                              681
+====================================================================================
+====================================================================================
+
+
+--------------------------
+PMC Sample 1943 PDF files
+--------------------------
+
+1) *****************default
+
+************************************************************************************
+COUNTER: org.grobid.core.utilities.matching.ReferenceMarkerMatcher$Counters
+************************************************************************************
+------------------------------------------------------------------------------------
+  UNMATCHED_REF_MARKERS:                    58217
+  MATCHED_REF_MARKERS_AFTER_POST_FILTERING: 0
+  STYLE_AUTHORS:                            0
+  STYLE_NUMBERED:                           0
+  MANY_CANDIDATES:                          0
+  MANY_CANDIDATES_AFTER_POST_FILTERING:     0
+  NO_CANDIDATES:                            0
+  MATCHED_REF_MARKERS:                      80472
+  NO_CANDIDATES_AFTER_POST_FILTERING:       0
+  STYLE_OTHER:                              0
+====================================================================================
+====================================================================================
+
+
+2) *****************luceneBased
+
+************************************************************************************
+COUNTER: org.grobid.core.utilities.matching.ReferenceMarkerMatcher$Counters
+************************************************************************************
+------------------------------------------------------------------------------------
+  UNMATCHED_REF_MARKERS:                    13377
+  MATCHED_REF_MARKERS_AFTER_POST_FILTERING: 2088
+  STYLE_AUTHORS:                            35705
+  STYLE_NUMBERED:                           38942
+  MANY_CANDIDATES:                          4482
+  MANY_CANDIDATES_AFTER_POST_FILTERING:     744
+  NO_CANDIDATES:                            22137
+  MATCHED_REF_MARKERS:                      83737
+  NO_CANDIDATES_AFTER_POST_FILTERING:       1599
+  STYLE_OTHER:                              5779
+====================================================================================
+====================================================================================
