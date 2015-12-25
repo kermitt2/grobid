@@ -711,7 +711,14 @@ public class BasicStructureBuilder {
 									 // tokenization of the first token of the current line
 		String line = null;
 		
-        DocumentPointer pointerA = DocumentPointer.START_DOCUMENT_POINTER;
+		//DocumentPointer pointerA = DocumentPointer.START_DOCUMENT_POINTER;
+		// the default first block might not contain tokens but only bitmap - in this case we move
+		// to the first block containing some LayoutToken objects
+		while(docBlocks.get(blockIndex).getTokens() == null) {
+			blockIndex++;
+		}
+		DocumentPointer pointerA = new DocumentPointer(doc, blockIndex, 0);
+		
         DocumentPointer currentPointer = null;
         DocumentPointer lastPointer = null;
 
