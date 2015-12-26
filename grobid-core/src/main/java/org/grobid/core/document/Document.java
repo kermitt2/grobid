@@ -14,6 +14,7 @@ import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.layout.Block;
+import org.grobid.core.layout.Page;
 import org.grobid.core.layout.Cluster;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.GraphicObject;
@@ -63,8 +64,9 @@ public class Document {
     private boolean titleMatchNum = false; // true if the section titles of the document are numbered
     private String lang = null;
 
-    private List<Block> blocks = null;
+    private List<Page> pages = null;    
     private List<Cluster> clusters = null;
+    private List<Block> blocks = null;
 
     private List<Integer> blockHeaders = null;
     private List<Integer> blockFooters = null;
@@ -1272,10 +1274,14 @@ public class Document {
         this.titleMatchNum = titleMatchNum;
     }
 
+    public List<Page> getPages() {
+        return pages;
+    }
+
     public List<Cluster> getClusters() {
         return clusters;
     }
-
+    
     public void setBlockHeaders(List<Integer> blockHeaders) {
         this.blockHeaders = blockHeaders;
     }
@@ -1319,6 +1325,16 @@ public class Document {
     public void setClusters(List<Cluster> clusters) {
         this.clusters = clusters;
     }
+    
+    public void setPages(List<Page> pages) {
+        this.pages = pages;
+    }
+
+    public void addPage(Page page) {
+        if (pages == null)
+            pages = new ArrayList<Page>();
+        pages.add(page);
+    }    
 
     public void setBibDataSets(List<BibDataSet> bibDataSets) {
         this.bibDataSets = bibDataSets;
@@ -1407,7 +1423,7 @@ public class Document {
     public static List<GraphicObject> getConnectedGraphics(Block block, Document doc) {
         List<GraphicObject> images = null;
         for(GraphicObject image : doc.getImages()) {
-            if (block.getPage() != image.getPage()) 
+            if (block.getPageNumber() != image.getPage()) 
                 continue;
             if ( ( (Math.abs((image.y+image.height) - block.y) < minDistance) ||
                    (Math.abs(image.y - (block.y+block.height)) < minDistance) ) //&&

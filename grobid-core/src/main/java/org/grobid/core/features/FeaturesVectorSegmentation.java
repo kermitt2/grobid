@@ -202,10 +202,10 @@ public class FeaturesVectorSegmentation {
         res.append(" " + relativeDocumentPosition);
 
         // relative page position coordinate (1)
-        //res.append(" " + relativePagePosition);
+        res.append(" " + relativePagePosition);
 		
         // relative page position characters (1)
-        res.append(" " + relativePagePositionChar);
+        //res.append(" " + relativePagePositionChar);
 		
 		// punctuation profile
 		if ( (punctuationProfile == null) || (punctuationProfile.length() == 0) ) {

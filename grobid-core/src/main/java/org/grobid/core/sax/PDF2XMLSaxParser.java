@@ -1,6 +1,7 @@
 package org.grobid.core.sax;
 
 import org.grobid.core.layout.Block;
+import org.grobid.core.layout.Page;
 import org.grobid.core.document.Document;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.GraphicObject;
@@ -50,6 +51,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
     //starting page count from 1 since most of the PDF-related software count pages from 1
 	private int currentPage = 0;
+	private Page page = null; // the current page object
 	private GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance(); 
 
 	public PDF2XMLSaxParser() {
@@ -67,6 +69,12 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 	private void addToken(LayoutToken layoutToken) {
 		tokenizations.add(layoutToken);
 		block.addToken(layoutToken);
+	}
+
+	private void addBlock(Block block) {
+		block.setPage(page);
+		doc.addBlock(block);
+		page.addBlock(block);
 	}
 
 	private void substituteLastToken(LayoutToken tok) {
@@ -661,31 +669,38 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 				addToken(localTok);
 				block.setText(blabla.toString());
 				block.setNbTokens(nbTokens);
-				doc.addBlock(block);
+				addBlock(block);
+				//doc.addBlock(block);
+				//page.addBlock(block);
 			}
 			Block block0 = new Block();
 			block0.setText("@PAGE\n");
 			block0.setNbTokens(0);
-			block0.setPage(currentPage);
+			//block0.setPage(currentPage);
 			block0.setY(currentY);
-			doc.addBlock(block0);
+			addBlock(block0);
+			//doc.addBlock(block0);
+			//page.addBlock(block0);
 			block = new Block();
-			block.setPage(currentPage);
+			//block.setPage(currentPage);
 			blabla = new StringBuffer();
 			nbTokens = 0;
 			LayoutToken localTok = new LayoutToken("\n");
 			localTok.setPage(currentPage);
 			addToken(localTok);
+			doc.addPage(page);
 		} else if (qName.equals("IMAGE")) {
 			// this is normally the bitmap graphics
 			if (block != null) {
 				blabla.append("\n");
 				block.setText(blabla.toString());
 				block.setNbTokens(nbTokens);
-				doc.addBlock(block);
+				addBlock(block);
+				//doc.addBlock(block);
+				//page.addBlock(block);
 			}
 			block = new Block();
-			block.setPage(currentPage);
+			//block.setPage(currentPage);
 			blabla = new StringBuffer();
 			if (images.size() > 0) {
 				blabla.append("@IMAGE " + images.get(images.size()-1).getFilePath() + "\n");
@@ -711,11 +726,13 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 				block.setWidth(currentWidth);
 			if (block.getHeight() == 0.0)
 				block.setHeight(currentHeight);
-			doc.addBlock(block);
+			addBlock(block);
+			//doc.addBlock(block);
+			//page.addBlock(block);
 			blabla = new StringBuffer();
 			nbTokens = 0;
 			block = new Block();
-			block.setPage(currentPage);
+			//block.setPage(currentPage);
 		}
 		/*
 		 * else if (qName.equals("VECTORIALIMAGES")) { if (block != null) {
@@ -747,7 +764,9 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			block.setWidth(currentX - block.getX() + currentWidth);
 			block.setHeight(currentY - block.getY() + currentHeight);
 
-			doc.addBlock(block);
+			addBlock(block);
+			//doc.addBlock(block);
+			//page.addBlock(block);
 			// blabla = new StringBuffer();
 			nbTokens = 0;
 			block = null;
@@ -759,10 +778,12 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 				blabla.append("\n");
 				block.setText(blabla.toString());
 				block.setNbTokens(nbTokens);
-				doc.addBlock(block);
+				addBlock(block);
+				//doc.addBlock(block);
+				//page.addBlock(block);
 			}
 			block = new Block();
-			block.setPage(currentPage);
+			//block.setPage(currentPage);
 			blabla = new StringBuffer();
 			blabla.append("@IMAGE " + images.get(images.size()-1).getFilePath() + "\n");
 			int imagePos = images.size()-1;
@@ -778,11 +799,13 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			images.get(imagePos).setEndPosition(endPos);
 			block.setText(blabla.toString());
 			block.setNbTokens(nbTokens);
-			doc.addBlock(block);
+			addBlock(block);
+			//doc.addBlock(block);
+			//page.addBlock(block);
 			blabla = new StringBuffer();
 			nbTokens = 0;
 			block = new Block();
-			block.setPage(currentPage);
+			//block.setPage(currentPage);
 		}
 
 		/*
@@ -797,38 +820,29 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 		if (qName.equals("PAGE")) {
 			int length = atts.getLength();
 			currentPage++;
+			page = new Page(currentPage);
 
 			// Process each attribute
-			/*for (int i = 0; i < length; i++) {
+			for (int i = 0; i < length; i++) {
 				// Get names and values for each attribute
 				String name = atts.getQName(i);
 				String value = atts.getValue(i);
 
 				if ((name != null) && (value != null)) {
-					if (name.equals("id")) {
-					} else if (name.equals("number")) {
-					} else if (name.equals("width")) {
+					if (name.equals("width")) {
+						double width = Double.parseDouble(value);
+						page.width = width;
 					} else if (name.equals("height")) {
+						double height = Double.parseDouble(value);
+						page.height = height;
 					}
 				}
-			}*/
-
-			/*
-			 * if (block != null) { blabla.append("\n");
-			 * tokenizations.add("\n"); block.setText(blabla.toString());
-			 * block.setNbTokens(nbTokens); doc.addBlock(block); } Block block0
-			 * = new Block(); block0.setText("@PAGE\n"); block0.setNbTokens(0);
-			 * doc.addBlock(block0);
-			 */
-			/*
-			 * block = new Block(); blabla = new StringBuffer(); nbTokens = 0;
-			 * //blabla.append("\n@block\n"); tokenizations.add("\n");
-			 */
+			}
 		} else if (qName.equals("BLOCK")) {
 			block = new Block();
 			blabla = new StringBuffer();
 			nbTokens = 0;
-			block.setPage(currentPage);
+			//block.setPage(currentPage);
 			// blabla.append("\n@block\n");
 		} else if (qName.equals("IMAGE")) {
 			int length = atts.getLength();

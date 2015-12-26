@@ -132,14 +132,14 @@ UG1:%x[0,23]
 UG2:%x[1,23]
 
 # relative page position coordinate (24)
-#UH0:%x[-1,24]
-#UH1:%x[0,24]
-#UH2:%x[1,24]
-
-# relative page position characters (24)
 UH0:%x[-1,24]
 UH1:%x[0,24]
 UH2:%x[1,24]
+
+# relative page position characters (24)
+#UH0:%x[-1,24]
+#UH1:%x[0,24]
+#UH2:%x[1,24]
 
 # punctuation profile (25)
 UI0:%x[-1,25]
