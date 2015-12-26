@@ -26,6 +26,7 @@ public class FeaturesVectorFulltext {
     // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT (default)
 
     public int relativeDocumentPosition = -1; 
+    public int relativePagePositionChar = -1; 
     public int relativePagePosition = -1; 
 
 	// graphic in closed proximity of the current block

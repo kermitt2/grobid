@@ -34,7 +34,7 @@ public class Block {
     private int endToken = -1;
 
     // the page in the document where the block is located
-    private int page = -1;
+    private Page page = null;
 
     public enum Type {BULLET, TABLE, REFERENCE}
 
@@ -170,11 +170,18 @@ public class Block {
         endToken = end;
     }
 
-    public int getPage() {
+    public Page getPage() {
         return page;
     }
 
-    public void setPage(int page) {
+    public int getPageNumber() {
+        if (page != null)
+            return page.number;
+        else
+            return -1;
+    }
+    
+    public void setPage(Page page) {
         this.page = page;
     }
 
