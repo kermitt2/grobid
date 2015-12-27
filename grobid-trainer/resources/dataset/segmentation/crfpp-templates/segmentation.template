@@ -172,5 +172,13 @@ UG3:%x[1,24]
 UG4:%x[2,24]
 UG5:%x[3,24]
 
+# pattern repeated on several pages
+UH0:%x[-2,25]
+UH1:%x[-1,25]
+UH2:%x[0,25]
+UH3:%x[1,25]
+UH4:%x[2,25]
+UH5:%x[3,25]
+
 # Output
 B

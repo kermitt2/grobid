@@ -12,6 +12,7 @@ import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorSegmentation;
 import org.grobid.core.layout.Block;
+import org.grobid.core.layout.Page;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.utilities.LanguageUtilities;
@@ -28,6 +29,8 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 
@@ -253,6 +256,8 @@ public class Segmentation extends AbstractParser {
             return null;
         }
 
+        List<Page> pages = doc.getPages();
+
         // vector for features
         FeaturesVectorSegmentation features;
         FeaturesVectorSegmentation previousFeatures = null;
@@ -279,299 +284,292 @@ public class Segmentation extends AbstractParser {
 		double pageHeight = 0.0;
         boolean graphicVector = false;
         boolean graphicBitmap = false;
-        for (int blockIndex = 0; blockIndex < blocks.size(); blockIndex++) {
-            Block block = blocks.get(blockIndex);
-            pageHeight = block.getPage().height;
 
-            // we estimate the length of the page where the current block is
-            // and initialise the punctuation profiles per line	
-            /*if (start || endPage) {
-                boolean stop = false;
-                pageLength = 0;
-				double pageMaxY = 0.0;
-				double pageMinY = 1000000.0;
-                for (int z = blockIndex; (z < blocks.size()) && !stop; z++) {
-                    String localText2 = blocks.get(z).getText();
-                    if (localText2 != null) {
-                        if (localText2.contains("@PAGE")) {
-                            if (pageLength > 0) {
-                                if (blocks.get(z).getTokens() != null) {
-                                    pageLength += blocks.get(z).getTokens().size();
-									if ((blocks.get(z).getY() != 0.0) && (blocks.get(z).getY() < pageMinY))
-										pageMinY = blocks.get(z).getY();
-									if ((blocks.get(z).getY() != 0.0) && (blocks.get(z).getY() > pageMaxY))
-										pageMaxY = blocks.get(z).getY();
+        // list of textual patterns at the head and foot of pages which can be re-occur on several pages
+        // (typically indicating a publisher foot or head notes)
+        Map<String, Integer> patterns = new TreeMap<String, Integer>();
+        for(Page page : pages) {
+            pageHeight = page.height;
+            // we just look at the two first and last blocks of the page
+            if ((page.getBlocks() != null) && (page.getBlocks().size() > 0)) {
+                for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
+                    if ( (blockIndex < 2) || (blockIndex > page.getBlocks().size()-2)) {
+                        Block block = page.getBlocks().get(blockIndex);
+                        String localText = block.getText();
+                        if ((localText != null) && (localText.length() > 0)) {
+                            String[] lines = localText.split("[\\n\\r]");
+                            if (lines.length > 0) {
+                                String line = lines[0];
+                                String pattern = FeatureFactory.getPattern(line);
+                                if (pattern.length() > 8) {
+                                    Integer nb = patterns.get(pattern);
+                                    if (nb == null)
+                                        patterns.put(pattern, new Integer(1));
+                                    else
+                                        patterns.replace(pattern, new Integer(nb+1));
                                 }
-                                stop = true;
-                                break;
-                            }
-							else {
-                                if (blocks.get(z).getTokens() != null) {
-									if ((blocks.get(z).getY() != 0.0) && (blocks.get(z).getY() < pageMinY))
-										pageMinY = blocks.get(z).getY();
-									if ((blocks.get(z).getY() != 0.0) && (blocks.get(z).getY() > pageMaxY))
-										pageMaxY = blocks.get(z).getY();
-                                }
-							}
-                        } else {
-                            if (blocks.get(z).getTokens() != null) {
-                                pageLength += blocks.get(z).getTokens().size();
-								LayoutToken firstToken = blocks.get(z).getTokens().get(0);
-								LayoutToken lastToken = blocks.get(z).getTokens()
-									.get(blocks.get(z).getTokens().size() -1);
-								if ((firstToken.getY() != 0.0) && (firstToken.getY() < pageMinY))
-									pageMinY = firstToken.getY();
-								if ((firstToken.getY() != 0.0) && (firstToken.getY() > pageMaxY))
-									pageMaxY = firstToken.getY();
-								if ((lastToken.getY() != 0.0) && (lastToken.getY() > pageMaxY))
-									pageMaxY = lastToken.getY();
                             }
                         }
                     }
                 }
-				pageHeight = pageMaxY - pageMinY;
-				//System.out.println(pageMaxY + " " + pageMinY);
-                // System.out.println("pageLength: " + pageLength);
-            }*/
-            if (start) {
-                newPage = true;
-                start = false;
             }
-            endblock = false;
-
-            if (endPage) {
-                newPage = true;
-                mm = 0;
-            }
-
-            // check if we have a graphical object connected to the current block
-            List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
-            if (localImages != null) {
-                for(GraphicObject localImage : localImages) {
-                    if (localImage.getType() == GraphicObject.BITMAP) 
-                        graphicVector = true;
-                    if (localImage.getType() == GraphicObject.VECTOR) 
-                        graphicBitmap = true;
+        }
+ 
+        for(Page page : pages) {
+            pageHeight = page.height;
+            newPage = true;
+            for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
+            //for(Block block : page.getBlocks()) {
+                Block block = page.getBlocks().get(blockIndex);
+                if (start) {
+                    newPage = true;
+                    start = false;
                 }
-            }
+                endblock = false;
 
-            String localText = block.getText();
-            if (localText != null) {
-                if (localText.contains("@PAGE")) {
+                if (endPage) {
+                    newPage = true;
                     mm = 0;
-                    endPage = true;
-                    newPage = false;
-                } else {
-                    endPage = false;
-                }
-            }
-
-            String[] lines = localText.split("[\\n\\r]");
-			// set the max length of the lines in the block, in number of characters
-			int maxLineLength = 0;
-			for(int p=0; p<lines.length; p++) {
-				if (lines[p].length() > maxLineLength) 
-					maxLineLength = lines[p].length();
-			}
-            List<LayoutToken> tokens = block.getTokens();
-            for (int li = 0; li < lines.length; li++) {
-                String line = lines[li];
-                boolean firstPageBlock = false;
-                boolean lastPageBlock = false;
-
-                if (newPage)
-                    firstPageBlock = true;
-                if (endPage)
-                    lastPageBlock = true;
-
-                if ((tokens == null) || (tokens.size() == 0)) {
-                    continue;
-                }
-                // for the layout information of the block, we take simply the first layout token
-				LayoutToken token = null;
-				if (tokens.size() > 0)
-					token = tokens.get(0);
-
-				double coordinateLineY = token.getY();
-
-                features = new FeaturesVectorSegmentation();
-                features.token = token;
-                features.line = line;
-
-                StringTokenizer st2 = new StringTokenizer(line, " \t");
-                String text = null;
-                String text2 = null;
-                if (st2.hasMoreTokens())
-                    text = st2.nextToken();
-                if (st2.hasMoreTokens())
-                    text2 = st2.nextToken();
-                if ((text == null) ||
-                        (text.trim().length() == 0) ||
-                        (text.trim().equals("\n")) ||
-                        (text.trim().equals("\r")) ||
-                        (text.trim().equals("\n\r")) ||
-                        (TextUtilities.filterLine(line))) {
-                    continue;
                 }
 
-                text = text.trim();
-
-                features.string = text;
-                features.secondString = text2;
-
-                features.firstPageBlock = firstPageBlock;
-                features.lastPageBlock = lastPageBlock;
-                //features.lineLength = line.length() / LINESCALE;
-                features.lineLength = featureFactory
-                        .relativeLocation(line.length(), maxLineLength, LINESCALE);
-				
-                features.punctuationProfile = TextUtilities.punctuationProfile(line);
-
-                if (graphicBitmap) {
-                	features.bitmapAround = true;
-                }
-                if (graphicVector) {
-                	features.vectorAround = true;
+                // check if we have a graphical object connected to the current block
+                List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
+                if (localImages != null) {
+                    for(GraphicObject localImage : localImages) {
+                        if (localImage.getType() == GraphicObject.BITMAP) 
+                            graphicVector = true;
+                        if (localImage.getType() == GraphicObject.VECTOR) 
+                            graphicBitmap = true;
+                    }
                 }
 
-                features.lineStatus = null;
-                features.punctType = null;
-
-                if ((li == 0) ||
-                        ((previousFeatures != null) && previousFeatures.blockStatus.equals("BLOCKEND"))) {
-                    features.blockStatus = "BLOCKSTART";
-                } else if (li == lines.length - 1) {
-                    features.blockStatus = "BLOCKEND";
-                    endblock = true;
-                } else if (features.blockStatus == null) {
-                    features.blockStatus = "BLOCKIN";
+                String localText = block.getText();
+                if (localText != null) {
+                    if (localText.contains("@PAGE")) {
+                        mm = 0;
+                        endPage = true;
+                        newPage = false;
+                    } else {
+                        endPage = false;
+                    }
                 }
 
-                if (newPage) {
-                    features.pageStatus = "PAGESTART";
-                    newPage = false;
-                    endPage = false;
-                    if (previousFeatures != null)
-                        previousFeatures.pageStatus = "PAGEEND";
-                } else {
-                    features.pageStatus = "PAGEIN";
-                    newPage = false;
-                    endPage = false;
+                String[] lines = localText.split("[\\n\\r]");
+    			// set the max length of the lines in the block, in number of characters
+    			int maxLineLength = 0;
+    			for(int p=0; p<lines.length; p++) {
+    				if (lines[p].length() > maxLineLength) 
+    					maxLineLength = lines[p].length();
+    			}
+                List<LayoutToken> tokens = block.getTokens();
+                for (int li = 0; li < lines.length; li++) {
+                    String line = lines[li];
+                    boolean firstPageBlock = false;
+                    boolean lastPageBlock = false;
+
+                    if (newPage)
+                        firstPageBlock = true;
+                    if (endPage)
+                        lastPageBlock = true;
+
+                    if ((tokens == null) || (tokens.size() == 0)) {
+                        continue;
+                    }
+                    // for the layout information of the block, we take simply the first layout token
+    				LayoutToken token = null;
+    				if (tokens.size() > 0)
+    					token = tokens.get(0);
+
+    				double coordinateLineY = token.getY();
+
+                    features = new FeaturesVectorSegmentation();
+                    features.token = token;
+                    features.line = line;
+
+                    if ( (blockIndex < 2) || (blockIndex > page.getBlocks().size()-2)) {
+                        String pattern = FeatureFactory.getPattern(line);
+                        Integer nb = patterns.get(pattern);
+                        if ((nb != null) && (nb > 1)) {
+                            features.repetitivePattern = true;
+                        }
+                    }
+
+                    StringTokenizer st2 = new StringTokenizer(line, " \t");
+                    String text = null;
+                    String text2 = null;
+                    if (st2.hasMoreTokens())
+                        text = st2.nextToken();
+                    if (st2.hasMoreTokens())
+                        text2 = st2.nextToken();
+                    if ((text == null) ||
+                            (text.trim().length() == 0) ||
+                            (text.trim().equals("\n")) ||
+                            (text.trim().equals("\r")) ||
+                            (text.trim().equals("\n\r")) ||
+                            (TextUtilities.filterLine(line))) {
+                        continue;
+                    }
+
+                    text = text.trim();
+
+                    features.string = text;
+                    features.secondString = text2;
+
+                    features.firstPageBlock = firstPageBlock;
+                    features.lastPageBlock = lastPageBlock;
+                    //features.lineLength = line.length() / LINESCALE;
+                    features.lineLength = featureFactory
+                            .relativeLocation(line.length(), maxLineLength, LINESCALE);
+    				
+                    features.punctuationProfile = TextUtilities.punctuationProfile(line);
+
+                    if (graphicBitmap) {
+                    	features.bitmapAround = true;
+                    }
+                    if (graphicVector) {
+                    	features.vectorAround = true;
+                    }
+
+                    features.lineStatus = null;
+                    features.punctType = null;
+
+                    if ((li == 0) ||
+                            ((previousFeatures != null) && previousFeatures.blockStatus.equals("BLOCKEND"))) {
+                        features.blockStatus = "BLOCKSTART";
+                    } else if (li == lines.length - 1) {
+                        features.blockStatus = "BLOCKEND";
+                        endblock = true;
+                    } else if (features.blockStatus == null) {
+                        features.blockStatus = "BLOCKIN";
+                    }
+
+                    if (newPage) {
+                        features.pageStatus = "PAGESTART";
+                        newPage = false;
+                        endPage = false;
+                        if (previousFeatures != null)
+                            previousFeatures.pageStatus = "PAGEEND";
+                    } else {
+                        features.pageStatus = "PAGEIN";
+                        newPage = false;
+                        endPage = false;
+                    }
+
+                    if (text.length() == 1) {
+                        features.singleChar = true;
+                    }
+
+                    if (Character.isUpperCase(text.charAt(0))) {
+                        features.capitalisation = "INITCAP";
+                    }
+
+                    if (featureFactory.test_all_capital(text)) {
+                        features.capitalisation = "ALLCAP";
+                    }
+
+                    if (featureFactory.test_digit(text)) {
+                        features.digit = "CONTAINSDIGITS";
+                    }
+
+                    if (featureFactory.test_common(text)) {
+                        features.commonName = true;
+                    }
+
+                    if (featureFactory.test_names(text)) {
+                        features.properName = true;
+                    }
+
+                    if (featureFactory.test_month(text)) {
+                        features.month = true;
+                    }
+
+                    Matcher m = featureFactory.isDigit.matcher(text);
+                    if (m.find()) {
+                        features.digit = "ALLDIGIT";
+                    }
+
+                    Matcher m2 = featureFactory.YEAR.matcher(text);
+                    if (m2.find()) {
+                        features.year = true;
+                    }
+
+                    Matcher m3 = featureFactory.EMAIL.matcher(text);
+                    if (m3.find()) {
+                        features.email = true;
+                    }
+
+                    Matcher m4 = featureFactory.HTTP.matcher(text);
+                    if (m4.find()) {
+                        features.http = true;
+                    }
+
+                    if (currentFont == null) {
+                        currentFont = token.getFont();
+                        features.fontStatus = "NEWFONT";
+                    } else if (!currentFont.equals(token.getFont())) {
+                        currentFont = token.getFont();
+                        features.fontStatus = "NEWFONT";
+                    } else
+                        features.fontStatus = "SAMEFONT";
+
+                    int newFontSize = (int) token.getFontSize();
+                    if (currentFontSize == -1) {
+                        currentFontSize = newFontSize;
+                        features.fontSize = "HIGHERFONT";
+                    } else if (currentFontSize == newFontSize) {
+                        features.fontSize = "SAMEFONTSIZE";
+                    } else if (currentFontSize < newFontSize) {
+                        features.fontSize = "HIGHERFONT";
+                        currentFontSize = newFontSize;
+                    } else if (currentFontSize > newFontSize) {
+                        features.fontSize = "LOWERFONT";
+                        currentFontSize = newFontSize;
+                    }
+
+                    if (token.getBold())
+                        features.bold = true;
+
+                    if (token.getItalic())
+                        features.italic = true;
+
+                    // HERE horizontal information
+                    // CENTERED
+                    // LEFTAJUSTED
+                    // CENTERED
+
+                    if (features.capitalisation == null)
+                        features.capitalisation = "NOCAPS";
+
+                    if (features.digit == null)
+                        features.digit = "NODIGIT";
+
+                    //if (features.punctType == null)
+                    //    features.punctType = "NOPUNCT";
+
+                    features.relativeDocumentPosition = featureFactory
+                            .relativeLocation(nn, documentLength, NBBINS);
+                    //features.relativePagePositionChar = featureFactory
+                    //        .relativeLocation(mm, pageLength, NBBINS);
+    				
+    				int pagePos = featureFactory
+                            .relativeLocation(coordinateLineY, pageHeight, NBBINS);
+    				if (pagePos > NBBINS)
+    					pagePos = NBBINS;
+                    features.relativePagePosition = pagePos;
+    //System.out.println(coordinateLineY + "\t" + pageHeight);
+
+                    if (previousFeatures != null) {
+                        String vector = previousFeatures.printVector();
+                        fulltext.append(vector);
+                    }
+                    previousFeatures = features;
                 }
 
-                if (text.length() == 1) {
-                    features.singleChar = true;
+                // update page-level and document-level positions
+                if (tokens != null) {
+                    mm += tokens.size();
+                    nn += tokens.size();
                 }
-
-                if (Character.isUpperCase(text.charAt(0))) {
-                    features.capitalisation = "INITCAP";
-                }
-
-                if (featureFactory.test_all_capital(text)) {
-                    features.capitalisation = "ALLCAP";
-                }
-
-                if (featureFactory.test_digit(text)) {
-                    features.digit = "CONTAINSDIGITS";
-                }
-
-                if (featureFactory.test_common(text)) {
-                    features.commonName = true;
-                }
-
-                if (featureFactory.test_names(text)) {
-                    features.properName = true;
-                }
-
-                if (featureFactory.test_month(text)) {
-                    features.month = true;
-                }
-
-                Matcher m = featureFactory.isDigit.matcher(text);
-                if (m.find()) {
-                    features.digit = "ALLDIGIT";
-                }
-
-                Matcher m2 = featureFactory.YEAR.matcher(text);
-                if (m2.find()) {
-                    features.year = true;
-                }
-
-                Matcher m3 = featureFactory.EMAIL.matcher(text);
-                if (m3.find()) {
-                    features.email = true;
-                }
-
-                Matcher m4 = featureFactory.HTTP.matcher(text);
-                if (m4.find()) {
-                    features.http = true;
-                }
-
-                if (currentFont == null) {
-                    currentFont = token.getFont();
-                    features.fontStatus = "NEWFONT";
-                } else if (!currentFont.equals(token.getFont())) {
-                    currentFont = token.getFont();
-                    features.fontStatus = "NEWFONT";
-                } else
-                    features.fontStatus = "SAMEFONT";
-
-                int newFontSize = (int) token.getFontSize();
-                if (currentFontSize == -1) {
-                    currentFontSize = newFontSize;
-                    features.fontSize = "HIGHERFONT";
-                } else if (currentFontSize == newFontSize) {
-                    features.fontSize = "SAMEFONTSIZE";
-                } else if (currentFontSize < newFontSize) {
-                    features.fontSize = "HIGHERFONT";
-                    currentFontSize = newFontSize;
-                } else if (currentFontSize > newFontSize) {
-                    features.fontSize = "LOWERFONT";
-                    currentFontSize = newFontSize;
-                }
-
-                if (token.getBold())
-                    features.bold = true;
-
-                if (token.getItalic())
-                    features.italic = true;
-
-                // HERE horizontal information
-                // CENTERED
-                // LEFTAJUSTED
-                // CENTERED
-
-                if (features.capitalisation == null)
-                    features.capitalisation = "NOCAPS";
-
-                if (features.digit == null)
-                    features.digit = "NODIGIT";
-
-                //if (features.punctType == null)
-                //    features.punctType = "NOPUNCT";
-
-                features.relativeDocumentPosition = featureFactory
-                        .relativeLocation(nn, documentLength, NBBINS);
-                features.relativePagePositionChar = featureFactory
-                        .relativeLocation(mm, pageLength, NBBINS);
-				
-				int pagePos = featureFactory
-                        .relativeLocation(coordinateLineY, pageHeight, NBBINS);
-				if (pagePos > NBBINS)
-					pagePos = NBBINS;
-                features.relativePagePosition = pagePos;
-//System.out.println(coordinateLineY + "\t" + pageHeight);
-
-                if (previousFeatures != null) {
-                    String vector = previousFeatures.printVector();
-                    fulltext.append(vector);
-                }
-                previousFeatures = features;
-            }
-            // update page-level and document-level positions
-            if (tokens != null) {
-                mm += tokens.size();
-                nn += tokens.size();
             }
         }
         if (previousFeatures != null)

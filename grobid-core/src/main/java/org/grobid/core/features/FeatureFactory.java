@@ -311,7 +311,7 @@ public class FeatureFactory {
     /**
      * Give the relative position base on charcater or token numbers discretized into nbBins
      */
-    public int relativeLocation(int pos, int total, int nbBins) {
+    public static int relativeLocation(int pos, int total, int nbBins) {
         float rel = (float) pos / total;
         float rel2 = (rel * nbBins) + 1;
         return ((int) rel2);
@@ -320,9 +320,19 @@ public class FeatureFactory {
     /**
      * Give the relative position based on layout coordinates discretized into nbBins
      */
-    public int relativeLocation(double pos, double total, int nbBins) {
+    public static int relativeLocation(double pos, double total, int nbBins) {
         double rel = pos / total;
         double rel2 = (rel * nbBins) + 1;
         return ((int) rel2);
+    }
+
+    /**
+     *  Transform a text in a text pattern where punctuations are ignored, number shadowed and
+     *  remaining text in lowercase
+     */
+    public static String getPattern(String text) {
+        String pattern = text.replaceAll("[^a-zA-Z ]", "").toLowerCase();
+        pattern = pattern.replaceAll("[0-9]", "X");
+        return pattern;
     }
 }
