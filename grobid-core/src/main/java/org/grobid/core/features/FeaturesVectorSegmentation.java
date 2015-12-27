@@ -37,13 +37,22 @@ public class FeaturesVectorSegmentation {
     public String punctType = null; // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT (default)
     public int relativeDocumentPosition = -1;
     public int relativePagePosition = -1;
-	public int relativePagePositionChar = -1;
+	public int relativePagePositionChar = -1; // not used
 	public String punctuationProfile = null; // the punctuations of the current line of the token
 	public boolean firstPageBlock = false; 
 	public boolean lastPageBlock = false;
 	public int lineLength = 0;
     public boolean bitmapAround = false;
     public boolean vectorAround = false;
+
+    public boolean repetitivePattern = false; // if true, the textual pattern is repeated at the same position on other pages
+    public boolean firstRepetitivePattern = false; // if true, this is a repetitive textual pattern and this is its first occurrence in the doc
+    
+    public int spacingWithPreviousBlock = -1; // discretized 
+    public int spacingWithNextBlock = -1; // discretized 
+
+    public int characterDensityPreviousBlock = -1; // discretized 
+    public int characterDensityNextBlock = -1; // discretized 
 
     public String printVector() {
         if (string == null) return null;
@@ -230,6 +239,11 @@ public class FeaturesVectorSegmentation {
             res.append(" 0");
 
         if (vectorAround)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
+        if (repetitivePattern)
             res.append(" 1");
         else
             res.append(" 0");
