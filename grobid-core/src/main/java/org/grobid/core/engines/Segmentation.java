@@ -306,7 +306,7 @@ public class Segmentation extends AbstractParser {
                                     if (nb == null)
                                         patterns.put(pattern, new Integer(1));
                                     else
-                                        patterns.replace(pattern, new Integer(nb+1));
+                                        patterns.put(pattern, new Integer(nb+1));
                                 }
                             }
                         }
