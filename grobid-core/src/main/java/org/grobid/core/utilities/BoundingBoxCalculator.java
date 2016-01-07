@@ -1,5 +1,7 @@
 package org.grobid.core.utilities;
 
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
@@ -16,6 +18,14 @@ public class BoundingBoxCalculator {
 
     public static List<BoundingBox> calculate(List<LayoutToken> tokens) {
         List<BoundingBox> result = Lists.newArrayList();
+        if (tokens != null) {
+            tokens = Lists.newArrayList(Iterables.filter(tokens, new Predicate<LayoutToken>() {
+                @Override
+                public boolean apply(LayoutToken layoutToken) {
+                    return !(Math.abs(layoutToken.getWidth()) <= Double.MIN_VALUE || Math.abs(layoutToken.getHeight()) <= Double.MIN_VALUE);
+                }
+            }));
+        }
 
         if (tokens == null || tokens.isEmpty()) {
             return result;
