@@ -442,11 +442,22 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 				boolean diaresis = false;
 				boolean accent = false;
 				//while (st.hasMoreTokens()) {
+				int cnt = -1;
 				if (subTokenizations.size() != 0) {
-				//{	
-					for(String tok : subTokenizations) {	
+				//{
+					// WARNING: ROUGH APPROXIMATION (but better then the same coords)
+					double s = subTokenizations.size();
+					double subTokWidth = (currentWidth / s);
+
+					for(String tok : subTokenizations) {
+						cnt++;
 						diaresis = false;
 						accent = false;
+
+						// WARNING: ROUGH APPROXIMATION (but better then the same coords)
+						double subTokX = currentX + (currentWidth / s) * cnt;
+
+
 
 						//String tok = st.nextToken();
 						if (tok.length() > 0) {
@@ -601,10 +612,14 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 							token.setRotation(currentRotation);
                             token.setPage(currentPage);
 							token.setColorFont(colorFont);
-							token.setX(currentX);
+							token.setX(subTokX);
 							token.setY(currentY);
-							token.setWidth(currentWidth);
+							token.setWidth(subTokWidth);
 							token.setHeight(currentHeight);
+//							token.setX(currentX);
+//							token.setY(currentY);
+//							token.setWidth(currentWidth);
+//							token.setHeight(currentHeight);
 							token.setFontSize(currentFontSize);
 
 //							if (!diaresis && !accent) {

@@ -38,8 +38,9 @@ public class CitationsVisualizer {
 
     public static void main(String args[]) {
         try {
-            File input = new File("/Work/temp/pub_citation_styles/1994FEBSLett350_235Hadden.pdf");
-//            File input = new File("/Work/temp/context/coords/2.pdf");
+//            File input = new File("/Work/temp/pub_citation_styles/1994FEBSLett350_235Hadden.pdf");
+//            File input = new File("/Work/temp/context/coords/3.pdf");
+            File input = new File("/Work/temp/context/coords/5.pdf");
 
             final PDDocument document = PDDocument.load(input);
             File outPdf = new File("/tmp/test.pdf");
@@ -71,7 +72,9 @@ public class CitationsVisualizer {
 
 
     private static PDDocument annotatePdfWithCitations(PDDocument document, Document teiDoc) throws IOException, COSVisitorException, XPathException {
-        Multimap<String, BibDataSetContext> contexts = BibDataSetContextExtractor.getCitationReferences(teiDoc.getTei());
+        String tei = teiDoc.getTei();
+        System.out.println(tei);
+        Multimap<String, BibDataSetContext> contexts = BibDataSetContextExtractor.getCitationReferences(tei);
         for (BibDataSet cit : teiDoc.getBibDataSets()) {
             for (BoundingBox b : cit.getResBib().getCoordinates()) {
                 String teiId = cit.getResBib().getTeiId();
@@ -79,11 +82,20 @@ public class CitationsVisualizer {
                 //annotating reference markers
                 for (BibDataSetContext c : contexts.get(teiId)) {
                     String mrect = c.getDocumentCoords();
-                    for (String coords : mrect.split(";")) {
-                        annotatePage(document, coords, teiId.hashCode(), 1.0f);
-                    }
+//                    if (!c.getTeiId().equals("b5")) {
+                        for (String coords : mrect.split(";")) {
+                            annotatePage(document, coords, teiId.hashCode(), 1.0f);
+                        }
+//                    }
                 }
 
+            }
+        }
+
+        for (BibDataSetContext c : contexts.get("")) {
+            String mrect = c.getDocumentCoords();
+            for (String coords : mrect.split(";")) {
+                annotatePage(document, coords, 0, 3.0f);
             }
         }
 

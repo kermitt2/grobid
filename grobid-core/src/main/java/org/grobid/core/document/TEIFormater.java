@@ -2149,21 +2149,22 @@ public class TEIFormater {
 
         for (ReferenceMarkerMatcher.MatchResult matchResult : markerMatcher.match(refTokens)) {
             String markerText = TextUtilities.HTMLEncode(matchResult.getText());
+            String coords = null;
+            if (generateCoordinates && matchResult.getTokens() != null) {
+                coords = getCoordsString(matchResult.getTokens());
+            }
+            if (coords == null) {
+                coords = "";
+            } else {
+                coords = "coords=\"" + coords + "\"";
+            }
+
             if (matchResult.getBibDataSet() != null) {
-                String coords = null;
-                if (generateCoordinates && matchResult.getTokens() != null) {
-                    coords = getCoordsString(matchResult.getTokens());
-                }
-                if (coords == null) {
-                    coords = "";
-                } else {
-                    coords = "coords=\"" + coords + "\"";
-                }
 
                 sb.append("<ref type=\"bibr\" target=\"#b" + matchResult.getBibDataSet().getResBib().getOrdinal() + "\" " +
                         coords + ">" + markerText + "</ref>");
             } else {
-                sb.append("<ref type=\"bibr\">" + markerText + "</ref>");
+                sb.append("<ref type=\"bibr\" " + coords + ">" + markerText + "</ref>");
             }
         }
         return sb.toString();

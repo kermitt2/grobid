@@ -8,7 +8,7 @@ declare function functx:follows-not-descendant
     $a >> $b and empty($b intersect $a/ancestor::node())
 } ;
 
-for $i in (//ref[@type = "bibr" and @target])
+for $i in (//ref[@type = "bibr"])
 return
     let $after := string-length(string-join (//*[functx:follows-not-descendant(., $i)]/text(), ''))
     let $all := string-length(string-join (//*/text(), ''))
