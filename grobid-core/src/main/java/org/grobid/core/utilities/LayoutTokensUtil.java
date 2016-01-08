@@ -39,7 +39,7 @@ public class LayoutTokensUtil {
     }
 
     public static String toText(List<LayoutToken> tokens) {
-        return Joiner.on("").join(Iterables.transform(tokens, TO_TEXT_FUNCTION)) ;
+        return Joiner.on("").join(Iterables.transform(tokens, TO_TEXT_FUNCTION));
     }
 
     public static String toTextDehyphenized(List<LayoutToken> tokens) {
@@ -99,6 +99,10 @@ public class LayoutTokensUtil {
 //    }
 
     public static List<List<LayoutToken>> split(List<LayoutToken> toks, Pattern p, boolean preserveSeparator) {
+        return split(toks, p, preserveSeparator, true);
+    }
+
+    public static List<List<LayoutToken>> split(List<LayoutToken> toks, Pattern p, boolean preserveSeparator, boolean preserveLeftOvers) {
         List<List<LayoutToken>> split = new ArrayList<>();
         List<LayoutToken> curToks = new ArrayList<>();
         for (LayoutToken tok : toks) {
@@ -112,8 +116,10 @@ public class LayoutTokensUtil {
                 curToks.add(tok);
             }
         }
-        if (!curToks.isEmpty()) {
-            split.add(curToks);
+        if (preserveLeftOvers) {
+            if (!curToks.isEmpty()) {
+                split.add(curToks);
+            }
         }
         return split;
     }

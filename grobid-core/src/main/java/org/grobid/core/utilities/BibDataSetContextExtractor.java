@@ -20,7 +20,7 @@ import java.util.regex.Pattern;
  */
 public class BibDataSetContextExtractor {
     public static final Pattern REF_PATTERN = Pattern.compile("<ref>(.*)</ref>", Pattern.DOTALL);
-    public static final int CUT_DEFAULT_LENGTH = 350;
+    public static final int CUT_DEFAULT_LENGTH = 50;
 
     static {
         InputStream is = BibDataSetContextExtractor.class.getResourceAsStream("/xq/get-citation-context-from-tei.xq");
@@ -72,6 +72,8 @@ public class BibDataSetContextExtractor {
 
             pcc.setContext(extractContextSentence(context));
             pcc.setDocumentCoords(coords);
+            pcc.setTeiId(citationTeiId);
+
             contexts.put(citationTeiId, pcc);
         }
         return contexts;
