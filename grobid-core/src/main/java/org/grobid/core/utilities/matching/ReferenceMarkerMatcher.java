@@ -47,7 +47,8 @@ public class ReferenceMarkerMatcher {
         MATCHED_REF_MARKERS_AFTER_POST_FILTERING,
         MANY_CANDIDATES_AFTER_POST_FILTERING,
         NO_CANDIDATES_AFTER_POST_FILTERING,
-        STYLE_OTHER
+        STYLE_OTHER,
+        INPUT_REF_STRINGS_CNT
     }
 
     public class MatchResult {
@@ -123,6 +124,7 @@ public class ReferenceMarkerMatcher {
     }
 
     public List<MatchResult> match(List<LayoutToken> refTokens) throws EntityMatcherException {
+        cntManager.i(Counters.INPUT_REF_STRINGS_CNT);
         String text = LayoutTokensUtil.toTextDehyphenized(LayoutTokensUtil.enrichWithNewLineInfo(refTokens));
 
         if (isAuthorCitationStyle(text)) {

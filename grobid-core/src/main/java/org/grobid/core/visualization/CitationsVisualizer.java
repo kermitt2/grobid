@@ -39,8 +39,9 @@ public class CitationsVisualizer {
     public static void main(String args[]) {
         try {
 //            File input = new File("/Work/temp/pub_citation_styles/1994FEBSLett350_235Hadden.pdf");
-//            File input = new File("/Work/temp/context/coords/3.pdf");
-            File input = new File("/Work/temp/context/coords/5.pdf");
+//            File input = new File("/Work/temp/context/coords/6.pdf");
+//            File input = new File("/Work/temp/context/coords/1.pdf");
+            File input = new File("/Work/temp/context/coords/3.pdf");
 
             final PDDocument document = PDDocument.load(input);
             File outPdf = new File("/tmp/test.pdf");
@@ -63,6 +64,7 @@ public class CitationsVisualizer {
                     Desktop.getDesktop().open(outPdf);
                 }
             }
+            System.out.println(Engine.getCntManager());
 
         } catch (Exception e) {
             e.printStackTrace();
