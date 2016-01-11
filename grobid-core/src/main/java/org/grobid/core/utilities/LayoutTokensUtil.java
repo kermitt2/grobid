@@ -73,6 +73,11 @@ public class LayoutTokensUtil {
         return sb.toString();
     }
 
+    public static boolean spaceyToken(String tok) {
+        return (tok.equals(" ")
+                || tok.equals("\u00A0")
+                || tok.equals("\n"));
+    }
 
     public static boolean containsToken(List<LayoutToken> toks, String text) {
         for (LayoutToken t : toks) {
