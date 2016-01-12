@@ -19,6 +19,7 @@ public enum TaggingLabel {
     FIGURE_MARKER(GrobidModels.FULLTEXT, "<figure_marker>"),
     PARAGRAPH(GrobidModels.FULLTEXT, "<paragraph>"),
     ITEM(GrobidModels.FULLTEXT, "<item>"),
+    OTHER(GrobidModels.FULLTEXT, "<other>"),
     SECTION(GrobidModels.FULLTEXT, "<section>"),
     FIGURE(GrobidModels.FULLTEXT, "<figure>"),
     TABLE(GrobidModels.FULLTEXT, "<table>"),

@@ -9,6 +9,7 @@ import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.document.TEIFormater;
+import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
@@ -1808,9 +1809,13 @@ public class FullTextParser extends AbstractParser {
             tei.append("</TEI>\n");
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
-        }	
-        doc.setTei(tei.toString());
-    }
+        }
+		doc.setTei(
+				XmlBuilderUtils.toPrettyXml(
+						XmlBuilderUtils.fromString(tei.toString())
+				)
+		);
+	}
 
     @Override
     public void close() throws IOException {

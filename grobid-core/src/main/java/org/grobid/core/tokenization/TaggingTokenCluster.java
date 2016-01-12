@@ -43,6 +43,14 @@ public class TaggingTokenCluster {
         return sb.toString();
     }
 
+    public LabeledTokensContainer getLastContainer() {
+        if (labeledTokensContainers.isEmpty()) {
+            return null;
+        }
+
+        return labeledTokensContainers.get(labeledTokensContainers.size() - 1);
+    }
+
     public List<LayoutToken> concatTokens() {
 
         Iterable<LayoutToken> it = Iterables.concat(Iterables.transform(labeledTokensContainers, new Function<LabeledTokensContainer, List<LayoutToken>>() {

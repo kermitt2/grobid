@@ -52,6 +52,7 @@ public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer
         boolean newLine = false;
         while ((!stop) && (tokenizationsIt.hasNext())) {
             LayoutToken layoutToken = tokenizationsIt.next();
+
             layoutTokenBuffer.add(layoutToken);
             String tokOriginal = layoutToken.t();
             if (LayoutTokensUtil.spaceyToken(tokOriginal)) {
@@ -67,6 +68,8 @@ public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer
             }
             tokenizationsPtr++;
         }
+
+        resultToken = LayoutTokensUtil.removeSpecialVariables(resultToken);
 
         tokensAndLabelsPtr++;
         LabeledTokensContainer labeledTokensContainer = new LabeledTokensContainer(layoutTokenBuffer, resultToken, TaggingLabel.getLabel(grobidModel, label),

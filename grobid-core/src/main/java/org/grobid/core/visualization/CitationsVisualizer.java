@@ -20,6 +20,7 @@ import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BibDataSetContext;
 import org.grobid.core.document.Document;
+import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
@@ -39,8 +40,8 @@ public class CitationsVisualizer {
     public static void main(String args[]) {
         try {
 //            File input = new File("/Work/temp/pub_citation_styles/1994FEBSLett350_235Hadden.pdf");
-//            File input = new File("/Work/temp/context/coords/6.pdf");
-            File input = new File("/Work/temp/context/coords/3.pdf");
+            File input = new File("/Work/temp/context/coords/1.pdf");
+//            File input = new File("/Work/temp/context/coords/3.pdf");
 //            File input = new File("/Work/temp/context/coords/3.pdf");
 //            File input = new File("/Work/temp/context/coords/2.pdf");
 
