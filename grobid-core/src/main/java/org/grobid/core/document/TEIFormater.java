@@ -2,6 +2,10 @@ package org.grobid.core.document;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Sets;
+import nu.xom.Attribute;
+import nu.xom.Element;
+import nu.xom.Node;
+import nu.xom.Text;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -10,6 +14,9 @@ import org.grobid.core.data.Figure;
 import org.grobid.core.data.Keyword;
 import org.grobid.core.data.Person;
 import org.grobid.core.data.Table;
+import org.grobid.core.document.xml.NodeChildrenIterator;
+import org.grobid.core.document.xml.NodesIterator;
+import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.FullTextParser;
 import org.grobid.core.engines.SegmentationLabel;
@@ -25,13 +32,11 @@ import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.tokenization.LabeledTokensContainer;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.tokenization.TaggingTokenSynchronizer;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.matching.EntityMatcherException;
@@ -40,6 +45,7 @@ import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
@@ -48,6 +54,7 @@ import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static org.grobid.core.document.xml.XmlBuilderUtils.*;
 /**
  * Class for generating a TEI representation of a document.
  *
@@ -1030,6 +1037,7 @@ public class TEIFormater {
         String encodedToken;
         String lastTag = null;
         String lastOriginalTag = "";
+        TaggingLabel lastClusterLabel = null;
 
         boolean start = true;
         boolean divOpen = false;
@@ -1044,21 +1052,51 @@ public class TEIFormater {
 
         String tokenLabel = null;
         List<TaggingTokenCluster> clusters = clusteror.cluster();
-        for (TaggingTokenCluster cluster : clusters) {
 
+        List<Element> divResults = new ArrayList<>();
+
+        Element curDiv = teiElement("div");
+        Element curParagraph = null;
+        divResults.add(curDiv);
+
+        for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
                 continue;
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
-            if (MARKER_LABELS.contains(clusterLabel)) {
-                String replacement;
+            String clusterContent = LayoutTokensUtil.toText(cluster.concatTokens()).trim();
+            if (clusterLabel  == TaggingLabel.SECTION) {
+                curDiv = teiElement("div");
+                Element head = teiElement("head");
+                head.appendChild(clusterContent);
+                curDiv.appendChild(head);
+                divResults.add(curDiv);
+            } else if (clusterLabel == TaggingLabel.EQUATION) {
+                curDiv.appendChild(teiElement("formula", clusterContent));
+            } else if (clusterLabel == TaggingLabel.ITEM) {
+                curDiv.appendChild(teiElement("item", clusterContent));
+            } else if (clusterLabel == TaggingLabel.OTHER) {
+                Element note = teiElement("note", clusterContent);
+                note.addAttribute(new Attribute("type", "other"));
+                curDiv.appendChild(note);
+            }
+            else if (clusterLabel == TaggingLabel.PARAGRAPH) {
+                if ((!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabel.FIGURE
+                        && lastClusterLabel != TaggingLabel.TABLE)|| curParagraph == null) {
+                    curParagraph = teiElement("p");
+                    curDiv.appendChild(curParagraph);
+                }
+                curParagraph.appendChild(clusterContent);
+            } else if (MARKER_LABELS.contains(clusterLabel)) {
+                String replacement = null;
                 List<LayoutToken> refTokens = cluster.concatTokens();
                 String chunkRefString = LayoutTokensUtil.toText(refTokens);
+                List<Node> refNodes = null;
                 switch (clusterLabel) {
                     case CITATION_MARKER:
                         if (config.getMatchingMode() == GrobidAnalysisConfig.LuceneBased) {
-                            replacement = markReferencesTEILuceneBased(chunkRefString,
+                            refNodes = markReferencesTEILuceneBased(chunkRefString,
                                     refTokens,
                                     doc.getReferenceMarkerMatcher(),
                                     config.isGenerateTeiCoordinates());
@@ -1082,149 +1120,157 @@ public class TEIFormater {
                         throw new IllegalStateException("Unsupported marker type: " + clusterLabel);
                 }
 
+                //TODO: get rid of dummy stuff and the 'replacement' var - it complicates things
                 if (replacement != null) {
-                    buffer.append(replacement);
+                    //TODO: hack for now to be able to parse - should return a list of nodes already
+                    Element dummyRepl = fromString("<dummy xmlns=\"http://www.tei-c.org/ns/1.0\">" + replacement + "</dummy>");
+                    for (Node n : NodeChildrenIterator.get(dummyRepl)) {
+                        Element parent = curParagraph != null ? curParagraph : curDiv;
+                        n.detach();
+                        parent.appendChild(n);
+                    }
+//                    buffer.append(replacement);
+                } else if (refNodes != null) {
+                    for (Node n : refNodes) {
+                        Element parent = curParagraph != null ? curParagraph : curDiv;
+                        parent.appendChild(n);
+                    }
                 }
                 lastOriginalTag = clusterLabel.getLabel();
-                continue;
+                lastTag = cluster.getLastContainer().getFullLabel();
+//                continue;
             }
 
-            for (LabeledTokensContainer cont : cluster.getLabeledTokensContainers()) {
-                tokenLabel = cont.getFullLabel();
-                boolean newLine = cont.isNewLinePreceding();
-                String plainToken = cont.getToken();
-
-                if (plainToken.equals("@BULLET")) {
-                    plainToken = "•";
-                }
-
-                if (plainToken.equals("LINESTART")) {
-                    newLine = true;
-                }
-
-
-                encodedToken = TextUtilities.HTMLEncode(plainToken); // lexical token
+            lastClusterLabel = cluster.getTaggingLabel();
+//            if (true) {
+//                continue;
+//            }
+//
+//            for (LabeledTokensContainer cont : cluster.getLabeledTokensContainers()) {
 //                tokenLabel = cont.getFullLabel();
-
-                if (newLine && !start) {
-                    buffer.append("\n");
-                }
-
-                if (cont.getTaggingLabel() == TaggingLabel.TABLE || cont.getTaggingLabel() == TaggingLabel.FIGURE) {
-//                        tokenLabel.endsWith("<figure>") || tokenLabel.endsWith("<table>")) {
-                    figureBlock = true;
-                    continue;
-                }
-
-                String lastTag0 = null;
-                if (lastTag != null) {
-                    if (lastTag.startsWith("I-")) {
-                        lastTag0 = lastTag.substring(2, lastTag.length());
-                    } else {
-                        lastTag0 = lastTag;
-                    }
-                }
-
-                String currentTag0 = cont.getPlainLabel();
-
-//                if (tokenLabel != null) {
-//                    if (tokenLabel.startsWith("I-")) {
-//                        currentTag0 = tokenLabel.substring(2, tokenLabel.length());
+//                boolean newLine = cont.isNewLinePreceding();
+//                String plainToken = cont.getToken();
+//
+//                if (plainToken.equals("@BULLET")) {
+//                    plainToken = "•";
+//                }
+//
+//                if (plainToken.equals("LINESTART")) {
+//                    newLine = true;
+//                }
+//
+//
+//                encodedToken = TextUtilities.HTMLEncode(plainToken); // lexical token
+//
+//                if (newLine && !start) {
+//                    buffer.append("\n");
+//                }
+//
+//                if (cont.getTaggingLabel() == TaggingLabel.TABLE || cont.getTaggingLabel() == TaggingLabel.FIGURE) {
+//                    figureBlock = true;
+//                    continue;
+//                }
+//
+//                String lastTag0 = null;
+//                if (lastTag != null) {
+//                    lastTag0 = GenericTaggerUtils.getPlainLabel(lastTag);
+//                }
+//
+//                String currentTag0 = cont.getPlainLabel();
+//
+//                // we avoid citation_marker and figure_marker tags because they introduce too much mess,
+//                // they will be injected later
+//
+//                // TODO: get rid of redundant vars
+//
+//                String currentOriginalTag = cont.getFullLabel();
+//
+//                if (currentTag0.equals("<citation_marker>") ||
+//                        currentTag0.equals("<figure_marker>") ||
+//                        currentTag0.equals("<table_marker>") ||
+//                        currentTag0.equals("<item>")) {
+//                    currentTag0 = lastTag0;
+//                    tokenLabel = lastTag0;
+//                }
+//                if ((tokenLabel != null) && tokenLabel.equals("I-<paragraph>") &&
+//                        (lastOriginalTag.endsWith("<citation_marker>") ||
+//                                lastOriginalTag.endsWith("<figure_marker>") ||
+//                                lastOriginalTag.endsWith("<table_marker>") ||
+//                                lastOriginalTag.endsWith("<item>"))) {
+//                    currentTag0 = "<paragraph>";
+//                    tokenLabel = "<paragraph>";
+//                }
+//                lastOriginalTag = currentOriginalTag;
+//                boolean closeParagraph = false;
+//                if (lastTag != null) {
+//                    closeParagraph =
+//                            testClosingTag(buffer, currentTag0, lastTag0, tokenLabel, bds, config.isGenerateTeiIds(), figureBlock);
+//                }
+//
+//                boolean addSpace = cont.isSpacePreceding();
+//                boolean output = FullTextParser.writeField(buffer, tokenLabel, lastTag0, encodedToken, "<other>",
+//                        "<note type=\"other\">", addSpace, 3, generateIDs);
+//
+//                // for paragraph we must distinguish starting and closing tags
+//                if (!output) {
+//                    if (closeParagraph) {
+//                        output = FullTextParser.writeFieldBeginEnd(buffer, tokenLabel, "", encodedToken,
+//                                "<paragraph>", "<p>", addSpace, 4, generateIDs);
 //                    } else {
-//                        currentTag0 = tokenLabel;
+//                        output = FullTextParser.writeFieldBeginEnd(buffer, tokenLabel, lastTag, encodedToken,
+//                                "<paragraph>", "<p>", addSpace, 4, generateIDs);
 //                    }
 //                }
-                // we avoid citation_marker and figure_marker tags because they introduce too much mess,
-                // they will be injected later
-
-                // TODO: get rid of redundant vars
-
-                String currentOriginalTag = cont.getFullLabel();
-
-                if (currentTag0.equals("<citation_marker>") ||
-                        currentTag0.equals("<figure_marker>") ||
-                        currentTag0.equals("<table_marker>") ||
-                        currentTag0.equals("<item>")) {
-                    currentTag0 = lastTag0;
-                    tokenLabel = lastTag0;
-                }
-                if ((tokenLabel != null) && tokenLabel.equals("I-<paragraph>") &&
-                        (lastOriginalTag.endsWith("<citation_marker>") ||
-                                lastOriginalTag.endsWith("<figure_marker>") ||
-                                lastOriginalTag.endsWith("<table_marker>") ||
-                                lastOriginalTag.endsWith("<item>"))) {
-                    currentTag0 = "<paragraph>";
-                    tokenLabel = "<paragraph>";
-                }
-                lastOriginalTag = currentOriginalTag;
-                boolean closeParagraph = false;
-                if (lastTag != null) {
-                    closeParagraph =
-                            testClosingTag(buffer, currentTag0, lastTag0, tokenLabel, bds, config.isGenerateTeiIds(), figureBlock);
-                }
-
-                boolean addSpace = cont.isSpacePreceding();
-                boolean output = FullTextParser.writeField(buffer, tokenLabel, lastTag0, encodedToken, "<other>",
-                        "<note type=\"other\">", addSpace, 3, generateIDs);
-
-                // for paragraph we must distinguish starting and closing tags
-                if (!output) {
-                    if (closeParagraph) {
-                        output = FullTextParser.writeFieldBeginEnd(buffer, tokenLabel, "", encodedToken,
-                                "<paragraph>", "<p>", addSpace, 4, generateIDs);
-                    } else {
-                        output = FullTextParser.writeFieldBeginEnd(buffer, tokenLabel, lastTag, encodedToken,
-                                "<paragraph>", "<p>", addSpace, 4, generateIDs);
-                    }
-                }
-
-                if (!output) {
-                    if (divOpen) {
-                        output = FullTextParser.writeField(buffer, tokenLabel, lastTag0, encodedToken, "<section>",
-                                "</div>\n\t\t\t<div>\n\t\t\t\t<head>", addSpace, 3, generateIDs);
-                    } else {
-                        output = FullTextParser.writeField(buffer, tokenLabel, lastTag0, encodedToken, "<section>",
-                                "<div>\n\t\t\t\t<head>", addSpace, 3, generateIDs);
-                    }
-                    if (output) {
-                        if (!tokenLabel.equals(lastTag0)) {
-                            divOpen = true;
-                        }
-                    }
-                }
-
-                if (!output) {
-                    output = FullTextParser.writeField(buffer, tokenLabel, lastTag0, encodedToken, "<equation>",
-                            "<formula>", addSpace, 4, generateIDs);
-                }
-
-                // for item we must distinguish starting and closing tags
-                if (!output) {
-                    output = FullTextParser.writeFieldBeginEnd(buffer, tokenLabel, lastTag, encodedToken, "<item>",
-                            "<item>", addSpace, 4, generateIDs);
-                }
-
-                lastTag = tokenLabel;
-                lastTag0 = currentTag0;
-
-                //TODO: bad check for the last item
-                if (cluster == clusters.get(clusters.size() - 1) &&
-                        cont == cluster.getLabeledTokensContainers().get(cluster.getLabeledTokensContainers().size() - 1)
-                        ) {
-//                        cnt == tokensAndLabels.size()) {
-                    if (lastTag != null) {
-                        testClosingTag(buffer, "", currentTag0, tokenLabel, bds, generateIDs, false);
-                    }
-                }
-                if (start) {
-                    start = false;
-                }
-
-                if (figureBlock) {
-                    figureBlock = false;
-                }
-            }
+//
+//                if (!output) {
+//                    if (divOpen) {
+//                        output = FullTextParser.writeField(buffer, tokenLabel, lastTag0, encodedToken, "<section>",
+//                                "</div>\n\t\t\t<div>\n\t\t\t\t<head>", addSpace, 3, generateIDs);
+//                    } else {
+//                        output = FullTextParser.writeField(buffer, tokenLabel, lastTag0, encodedToken, "<section>",
+//                                "<div>\n\t\t\t\t<head>", addSpace, 3, generateIDs);
+//                    }
+//                    if (output) {
+//                        if (!tokenLabel.equals(lastTag0)) {
+//                            divOpen = true;
+//                        }
+//                    }
+//                }
+//
+//                if (!output) {
+//                    output = FullTextParser.writeField(buffer, tokenLabel, lastTag0, encodedToken, "<equation>",
+//                            "<formula>", addSpace, 4, generateIDs);
+//                }
+//
+//                // for item we must distinguish starting and closing tags
+//                if (!output) {
+//                    output = FullTextParser.writeFieldBeginEnd(buffer, tokenLabel, lastTag, encodedToken, "<item>",
+//                            "<item>", addSpace, 4, generateIDs);
+//                }
+//
+//                lastTag = tokenLabel;
+//                lastTag0 = currentTag0;
+//
+//                //TODO: bad check for the last item
+//                if (cluster == clusters.get(clusters.size() - 1) &&
+//                        cont == cluster.getLabeledTokensContainers().get(cluster.getLabeledTokensContainers().size() - 1)
+//                        ) {
+////                        cnt == tokensAndLabels.size()) {
+//                    if (lastTag != null) {
+//                        testClosingTag(buffer, "", currentTag0, tokenLabel, bds, generateIDs, false);
+//                    }
+//                }
+//                if (start) {
+//                    start = false;
+//                }
+//
+//                if (figureBlock) {
+//                    figureBlock = false;
+//                }
+//            }
         }
+
+        buffer.append(XmlBuilderUtils.toXml(divResults));
 
         // we apply some overall cleaning and simplification
         buffer = TextUtilities.replaceAll(buffer, "</head><head",
@@ -1243,6 +1289,7 @@ public class TEIFormater {
             divOpen = false;
         }
 
+        //TODO: work on reconnection
         // we evaluate the need to reconnect paragraphs cut by a figure or a table
         int indP1 = buffer.indexOf("</p0>", startPosition - 1);
         while (indP1 != -1) {
@@ -2337,18 +2384,20 @@ public class TEIFormater {
     /**
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
      */
-    public String markReferencesTEILuceneBased(String text, List<LayoutToken> refTokens,
+    public List<Node> markReferencesTEILuceneBased(String text, List<LayoutToken> refTokens,
                                                ReferenceMarkerMatcher markerMatcher, boolean generateCoordinates) throws EntityMatcherException {
         // safety tests
         if (text == null)
             return null;
         if (text.trim().length() == 0)
-            return text;
-        if (text.endsWith("</ref>") || text.startsWith("<ref"))
-            return text;
+            return Collections.<Node>singletonList(new Text(text));
+        if (text.endsWith("</ref>") || text.startsWith("<ref")) {
+            return Collections.<Node>singletonList(new Text(text));
+        }
 
 
-        StringBuilder sb = new StringBuilder();
+//        StringBuilder sb = new StringBuilder();
+        List<Node> nodes = new ArrayList<>();
 
         for (ReferenceMarkerMatcher.MatchResult matchResult : markerMatcher.match(refTokens)) {
             String markerText = TextUtilities.HTMLEncode(matchResult.getText());
@@ -2356,21 +2405,51 @@ public class TEIFormater {
             if (generateCoordinates && matchResult.getTokens() != null) {
                 coords = getCoordsString(matchResult.getTokens());
             }
-            if (coords == null) {
-                coords = "";
-            } else {
-                coords = "coords=\"" + coords + "\"";
+//            if (coords == null) {
+//                coords = "";
+//            } else {
+//                coords = "coords=\"" + coords + "\"";
+//            }
+
+
+            Element ref = teiElement("ref");
+            ref.addAttribute(new Attribute("type", "bibr"));
+
+            if (coords != null) {
+                ref.addAttribute(new Attribute("coords", coords));
             }
+            ref.appendChild(markerText);
+
 
             if (matchResult.getBibDataSet() != null) {
-
-                sb.append("<ref type=\"bibr\" target=\"#b" + matchResult.getBibDataSet().getResBib().getOrdinal() + "\" " +
-                        coords + ">" + markerText + "</ref>");
-            } else {
-                sb.append("<ref type=\"bibr\" " + coords + ">" + markerText + "</ref>");
+                ref.addAttribute(new Attribute("target", "#b" + matchResult.getBibDataSet().getResBib().getOrdinal()));
+//                Element ref = teiElement("ref");
+//                ref.addAttribute(new Attribute("type", "bibr"));
+//
+//                if (coords != null) {
+//                    ref.addAttribute(new Attribute("coords", coords));
+//                }
+//                ref.appendChild(markerText);
+//
+//                nodes.add(ref);
+//                sb.append("<ref type=\"bibr\" target=\"#b" + matchResult.getBibDataSet().getResBib().getOrdinal() + "\" " +
+//                        coords + ">" + markerText + "</ref>");
             }
+//            else {
+//                Element ref = teiElement("ref");
+//                ref.addAttribute(new Attribute("type", "bibr"));
+//
+//                if (coords != null) {
+//                    ref.addAttribute(new Attribute("coords", coords));
+//                }
+//                ref.appendChild(markerText);
+
+//                sb.append("<ref type=\"bibr\" " + coords + ">" + markerText + "</ref>");
+//            }
+            nodes.add(ref);
         }
-        return sb.toString();
+//        return sb.toString();
+        return nodes;
     }
 
     /**

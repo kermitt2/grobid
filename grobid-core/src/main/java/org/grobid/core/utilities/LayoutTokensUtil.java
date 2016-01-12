@@ -83,6 +83,14 @@ public class LayoutTokensUtil {
         return (tok.equals("\n") || tok.equals("\r") || tok.equals("\n\r"));
     }
 
+    public static String removeSpecialVariables(String tok) {
+        if (tok.equals("@BULLET")) {
+            tok = "•";
+        }
+        return tok;
+    }
+
+
     public static boolean containsToken(List<LayoutToken> toks, String text) {
         for (LayoutToken t : toks) {
             if (text.equals(t.t())) {
