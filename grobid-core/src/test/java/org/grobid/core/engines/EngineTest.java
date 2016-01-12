@@ -872,9 +872,14 @@ public class EngineTest {
                 return pathname.getName().endsWith(".pdf");
             }
         })) {
-            System.out.println("Processing: " + f);
-            String tei = engine.fullTextToTEI(f, config);
-            System.out.println(tei.length());
+                try {
+                        System.out.println("Processing: " + f);
+                        String tei = engine.fullTextToTEI(f, config);
+                        System.out.println(tei.length());
+                } catch (Exception e) {
+                        e.printStackTrace();
+                        Engine.getCntManager().i("FAILED", e.getClass().getSimpleName());
+                }
         }
 
 //        System.out.println(engine.fullTextToTEI(new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis-service/src/test/resources/net/researchgate/pdfanalysisservice/papers.bad.input/40th_Conf_unprotected.pdf"), GrobidAnalysisConfig.defaultInstance()));
