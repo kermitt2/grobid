@@ -49,25 +49,33 @@ public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer
         List<LayoutToken> layoutTokenBuffer = new ArrayList<>();
         boolean stop = false;
         boolean addSpace = false;
+        boolean newLine = false;
         while ((!stop) && (tokenizationsIt.hasNext())) {
             LayoutToken layoutToken = tokenizationsIt.next();
             layoutTokenBuffer.add(layoutToken);
             String tokOriginal = layoutToken.t();
             if (LayoutTokensUtil.spaceyToken(tokOriginal)) {
                 addSpace = true;
+            } else if (LayoutTokensUtil.newLineToken(tokOriginal)) {
+                newLine = true;
             } else if (tokOriginal.equals(resultToken)) {
                 stop = true;
             } else {
                 throw new IllegalStateException("IMPLEMENTATION ERROR: " +
-                        "tokens (at pos: "  + tokensAndLabelsPtr + ")got dissynchronized with tokenizations (at pos: "
+                        "tokens (at pos: " + tokensAndLabelsPtr + ")got dissynchronized with tokenizations (at pos: "
                         + tokenizationsPtr + " )");
             }
             tokenizationsPtr++;
         }
 
         tokensAndLabelsPtr++;
-        return new LabeledTokensContainer(layoutTokenBuffer, resultToken, TaggingLabel.getLabel(grobidModel, label),
-                GenericTaggerUtils.isBeginningOfEntity(label), addSpace);
+        LabeledTokensContainer labeledTokensContainer = new LabeledTokensContainer(layoutTokenBuffer, resultToken, TaggingLabel.getLabel(grobidModel, label),
+                GenericTaggerUtils.isBeginningOfEntity(label));
+
+        labeledTokensContainer.setSpacePreceding(addSpace);
+        labeledTokensContainer.setNewLinePreceding(newLine);
+
+        return labeledTokensContainer;
     }
 
     @Override
