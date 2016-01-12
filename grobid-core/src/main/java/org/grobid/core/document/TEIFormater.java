@@ -15,21 +15,17 @@ import org.grobid.core.data.Keyword;
 import org.grobid.core.data.Person;
 import org.grobid.core.data.Table;
 import org.grobid.core.document.xml.NodeChildrenIterator;
-import org.grobid.core.document.xml.NodesIterator;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
-import org.grobid.core.engines.FullTextParser;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.engines.TaggingLabel;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.LayoutTokenization;
-import org.grobid.core.tokenization.LabeledTokensContainer;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.BoundingBoxCalculator;
@@ -54,7 +50,8 @@ import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.grobid.core.document.xml.XmlBuilderUtils.*;
+import static org.grobid.core.document.xml.XmlBuilderUtils.fromString;
+import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 /**
  * Class for generating a TEI representation of a document.
  *
@@ -1065,7 +1062,7 @@ public class TEIFormater {
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
-            String clusterContent = LayoutTokensUtil.toText(cluster.concatTokens()).trim();
+            String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
             if (clusterLabel  == TaggingLabel.SECTION) {
                 curDiv = teiElement("div");
                 Element head = teiElement("head");
@@ -2385,7 +2382,7 @@ public class TEIFormater {
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
      */
     public List<Node> markReferencesTEILuceneBased(String text, List<LayoutToken> refTokens,
-                                               ReferenceMarkerMatcher markerMatcher, boolean generateCoordinates) throws EntityMatcherException {
+                                                   ReferenceMarkerMatcher markerMatcher, boolean generateCoordinates) throws EntityMatcherException {
         // safety tests
         if (text == null)
             return null;
@@ -2395,8 +2392,6 @@ public class TEIFormater {
             return Collections.<Node>singletonList(new Text(text));
         }
 
-
-//        StringBuilder sb = new StringBuilder();
         List<Node> nodes = new ArrayList<>();
 
         for (ReferenceMarkerMatcher.MatchResult matchResult : markerMatcher.match(refTokens)) {
@@ -2405,12 +2400,6 @@ public class TEIFormater {
             if (generateCoordinates && matchResult.getTokens() != null) {
                 coords = getCoordsString(matchResult.getTokens());
             }
-//            if (coords == null) {
-//                coords = "";
-//            } else {
-//                coords = "coords=\"" + coords + "\"";
-//            }
-
 
             Element ref = teiElement("ref");
             ref.addAttribute(new Attribute("type", "bibr"));
@@ -2418,37 +2407,13 @@ public class TEIFormater {
             if (coords != null) {
                 ref.addAttribute(new Attribute("coords", coords));
             }
-            ref.appendChild(markerText);
-
+            ref.appendChild(LayoutTokensUtil.normalizeText(markerText));
 
             if (matchResult.getBibDataSet() != null) {
                 ref.addAttribute(new Attribute("target", "#b" + matchResult.getBibDataSet().getResBib().getOrdinal()));
-//                Element ref = teiElement("ref");
-//                ref.addAttribute(new Attribute("type", "bibr"));
-//
-//                if (coords != null) {
-//                    ref.addAttribute(new Attribute("coords", coords));
-//                }
-//                ref.appendChild(markerText);
-//
-//                nodes.add(ref);
-//                sb.append("<ref type=\"bibr\" target=\"#b" + matchResult.getBibDataSet().getResBib().getOrdinal() + "\" " +
-//                        coords + ">" + markerText + "</ref>");
             }
-//            else {
-//                Element ref = teiElement("ref");
-//                ref.addAttribute(new Attribute("type", "bibr"));
-//
-//                if (coords != null) {
-//                    ref.addAttribute(new Attribute("coords", coords));
-//                }
-//                ref.appendChild(markerText);
-
-//                sb.append("<ref type=\"bibr\" " + coords + ">" + markerText + "</ref>");
-//            }
             nodes.add(ref);
         }
-//        return sb.toString();
         return nodes;
     }
 
