@@ -17,14 +17,13 @@ public class LabeledTokensContainer {
     private TaggingLabel taggingLabel;
     private boolean beginning;
     private boolean spacePreceding;
+    private boolean newLinePreceding;
 
-    public LabeledTokensContainer(List<LayoutToken> layoutTokens, String token, TaggingLabel taggingLabel, boolean beginning,
-                                  boolean spacePreceding) {
+    public LabeledTokensContainer(List<LayoutToken> layoutTokens, String token, TaggingLabel taggingLabel, boolean beginning) {
         this.layoutTokens = layoutTokens;
         this.token = token;
         this.taggingLabel = taggingLabel;
         this.beginning = beginning;
-        this.spacePreceding = spacePreceding;
     }
 
     public List<LayoutToken> getLayoutTokens() {
@@ -54,5 +53,22 @@ public class LabeledTokensContainer {
 
     public boolean isSpacePreceding() {
         return spacePreceding;
+    }
+
+    public boolean isNewLinePreceding() {
+        return newLinePreceding;
+    }
+
+    public void setSpacePreceding(boolean spacePreceding) {
+        this.spacePreceding = spacePreceding;
+    }
+
+    public void setNewLinePreceding(boolean newLinePreceding) {
+        this.newLinePreceding = newLinePreceding;
+    }
+
+    @Override
+    public String toString() {
+        return token + " (" + getFullLabel() + ")";
     }
 }

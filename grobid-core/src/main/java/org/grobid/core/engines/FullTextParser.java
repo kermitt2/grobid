@@ -13,23 +13,19 @@ import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.CitationParserCounters;
+import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
 import org.grobid.core.layout.Block;
+import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.LayoutTokenization;
-import org.grobid.core.layout.GraphicObject; 
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.engines.citations.LabeledReferenceResult;
-import org.grobid.core.engines.citations.ReferenceSegmenter;
-import org.grobid.core.engines.counters.CitationParserCounters;
-import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -1528,7 +1524,7 @@ public class FullTextParser extends AbstractParser {
     		tei.append("\n    </text>\n" +
                 "</tei>\n");
     	}
-    	return new Pair(tei.toString(), featureVector.toString());
+    	return new Pair<>(tei.toString(), featureVector.toString());
     }
 
     /**
@@ -1594,7 +1590,7 @@ public class FullTextParser extends AbstractParser {
     			tableBlock.append(row.substring(0, ind)).append("\n");
     		}
     		else if (label.equals("I-<table>") || openTable) {
-    			// remove last token 
+    			// remove last token
     			if (tokenizationsTable.size() > 0) {
     				int nbToRemove = tokenizationsBuffer.size();
     				for(int q=0; q<nbToRemove; q++)
@@ -1602,19 +1598,19 @@ public class FullTextParser extends AbstractParser {
 	    		}
 
 	    		//adjustment
-	    		if ((p != tokenizations.size()) && (tokenizations.get(p).getText().equals("\n") || 
-	    											tokenizations.get(p).getText().equals("\r") || 
+	    		if ((p != tokenizations.size()) && (tokenizations.get(p).getText().equals("\n") ||
+	    											tokenizations.get(p).getText().equals("\r") ||
 	    											tokenizations.get(p).getText().equals(" ")) ) {
 	    			tokenizationsTable.add(tokenizations.get(p));
 	    			p++;
 	    		}
-    			while( (tokenizationsTable.size() > 0) && 
-    					(tokenizationsTable.get(0).getText().equals("\n") || 
+    			while( (tokenizationsTable.size() > 0) &&
+    					(tokenizationsTable.get(0).getText().equals("\n") ||
     					tokenizationsTable.get(0).getText().equals(" ")) )
     				tokenizationsTable.remove(0);
     			// parse the recognized table area
 //System.out.println(tokenizationsTable.toString());
-//System.out.println(tableBlock.toString()); 
+//System.out.println(tableBlock.toString());
 	    		if ( (i < tokenizations.size()) && (p < tokenizations.size()) ) {
 	    			Table result = parsers.getTableParser().processing(tokenizationsTable, tableBlock.toString());
 	    			result.setStart(i);
@@ -1623,17 +1619,15 @@ public class FullTextParser extends AbstractParser {
 	    			result.setEndToken(tokenizations.get(p));
 	    			result.page = tokenizations.get(i).getPage();
 	    			Document.setConnectedGraphics(result, tokenizations, doc);
-	//System.out.println(result.toString());     			
+	//System.out.println(result.toString());
 	    			tokenizationsTable = new ArrayList<LayoutToken>();
-	    			if (result != null) {
-	    				results.add(result);
-	    				result.setId(""+(results.size()-1));
-	    			}
-    			}
+					results.add(result);
+					result.setId(""+(results.size()-1));
+				}
     			tableBlock = new StringBuilder();
     			openTable = false;
     		}
-    		else 
+    		else
     			openTable = false;
     	}
     	return results;
@@ -1752,7 +1746,7 @@ public class FullTextParser extends AbstractParser {
     		tei.append("\n    </text>\n" +
                 "</tei>\n");
     	}
-    	return new Pair(tei.toString(), featureVector.toString());
+    	return new Pair<>(tei.toString(), featureVector.toString());
     }
 
     /**
@@ -1789,7 +1783,7 @@ public class FullTextParser extends AbstractParser {
 				doc.getDocumentPart(SegmentationLabel.ACKNOWLEDGEMENT);
 			Pair<String, LayoutTokenization> featSeg =
 				getBodyTextFeatured(doc, documentAcknowledgementParts);
-			List<LayoutToken> tokenizationsAcknowledgement = null;
+			List<LayoutToken> tokenizationsAcknowledgement;
 			if (featSeg != null) {
 				// if featSeg is null, it usually means that no body segment is found in the 
 				// document segmentation
