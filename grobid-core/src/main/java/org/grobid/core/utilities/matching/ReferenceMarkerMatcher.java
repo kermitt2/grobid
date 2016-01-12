@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
 public class ReferenceMarkerMatcher {
     private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceMarkerMatcher.class);
 
-    public static final Pattern YEAR_PATTERN = Pattern.compile("[12][0-9]{3,3}");
+    public static final Pattern YEAR_PATTERN = Pattern.compile("[12][0-9]{3,3}[a-d]?");
     public static final Pattern AUTHOR_NAME_PATTERN = Pattern.compile("[A-Z][A-Za-z]+");
     private static final Pattern NUMBERED_CITATION_PATTERN = Pattern.compile(" *[\\(\\[]? *(?:\\d+[-–]\\d+,|\\d+, *)*(?:\\d+[-–]\\d+|\\d+)[\\)\\]]? *");
     public static final Pattern AUTHOR_SEPARATOR_PATTERN = Pattern.compile(";");
