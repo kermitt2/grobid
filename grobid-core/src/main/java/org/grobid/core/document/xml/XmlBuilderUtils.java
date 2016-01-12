@@ -3,13 +3,13 @@ package org.grobid.core.document.xml;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
 import nu.xom.Builder;
 import nu.xom.Document;
 import nu.xom.Element;
 import nu.xom.ParsingException;
 import nu.xom.Serializer;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.StringReader;
@@ -30,7 +30,7 @@ public class XmlBuilderUtils {
 
     public static Element fromString(String xml) {
         Builder parser = new Builder();
-        Document doc = null;
+        Document doc;
         try {
             doc = parser.build(new StringReader(xml));
         } catch (ParsingException | IOException e) {
@@ -55,7 +55,7 @@ public class XmlBuilderUtils {
     }
 
     public static String toPrettyXml(Element element) {
-        OutputStream os = new ByteOutputStream();
+        OutputStream os = new ByteArrayOutputStream();
         try {
             Serializer serializer = new Serializer(os, "UTF-8");
             serializer.setIndent(4);
