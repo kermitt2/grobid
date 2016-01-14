@@ -1079,8 +1079,7 @@ public class TEIFormater {
                 curDiv.appendChild(note);
             }
             else if (clusterLabel == TaggingLabel.PARAGRAPH) {
-                if ((!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabel.FIGURE
-                        && lastClusterLabel != TaggingLabel.TABLE)|| curParagraph == null) {
+                if (isNewParagraph(lastClusterLabel, curParagraph)) {
                     curParagraph = teiElement("p");
                     curDiv.appendChild(curParagraph);
                 }
@@ -1308,6 +1307,11 @@ public class TEIFormater {
 //        buffer = injectMarkers(buffer, result, bds, figures, tables, doc, config, startPosition, tokenizations);
 
         return buffer;
+    }
+
+    private boolean isNewParagraph(TaggingLabel lastClusterLabel, Element curParagraph) {
+        return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabel.FIGURE
+                && lastClusterLabel != TaggingLabel.TABLE)|| curParagraph == null;
     }
 
 //    private StringBuilder toTEITextPieceOld(StringBuilder buffer,

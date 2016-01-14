@@ -186,7 +186,6 @@ public class ReferenceMarkerMatcher {
 
     private static List<Pair<String, List<LayoutToken>>> getNumberedLabels(List<LayoutToken> layoutTokens) {
         List<List<LayoutToken>> split = LayoutTokensUtil.split(layoutTokens, NUMBERED_CITATIONS_SPLIT_PATTERN, true);
-//                Splitter.on(NUMBERED_CITATIONS_SPLIT_PATTERN).omitEmptyStrings().splitToList(text);
         List<Pair<String, List<LayoutToken>>> res = new ArrayList<>();
         for (List<LayoutToken> s : split) {
             int minusPos = LayoutTokensUtil.tokenPos(s, DASH_PATTERN);
@@ -198,24 +197,11 @@ public class ReferenceMarkerMatcher {
                     List<LayoutToken> leftNumberToks = s.subList(0, minusPos);
                     List<LayoutToken> rightNumberToks = s.subList(minusPos + 1, s.size());
 
-
-//                    List<String> toks = LuceneUtil.tokenizeString(ANALYZER, s);
                     Integer a;
                     Integer b;
 
                     a = Integer.valueOf(LuceneUtil.tokenizeString(ANALYZER, LayoutTokensUtil.toText(leftNumberToks)).get(0), 10);
                     b = Integer.valueOf(LuceneUtil.tokenizeString(ANALYZER, LayoutTokensUtil.toText(rightNumberToks)).get(0), 10);
-
-//                    if (toks.size() == 1) {
-//                        String[] sp = toks.get(0).split("-");
-//                        a = Integer.valueOf(sp[0], 10);
-//                        b = Integer.valueOf(sp[1], 10);
-//                    } else if (toks.size() > 1) {
-//                        a = Integer.valueOf(toks.get(0), 10);
-//                        b = Integer.valueOf(toks.get(1), 10);
-//                    } else {
-//                        continue;
-//                    }
 
                     if (a < b && b - a < MAX_RANGE) {
                         for (int i = a; i <= b; i++) {
@@ -384,19 +370,4 @@ public class ReferenceMarkerMatcher {
         }
     }
 
-    public static void main(String[] args) {
-        Analyzer analyzer = ANALYZER;
-//
-        List<String> res = LuceneUtil.tokenizeString(analyzer, "Mark & van Gunsteren, 1992");
-        for (String r : res) {
-            System.out.println("Token: '" + r + "'");
-        }
-//        System.out.println(res);
-        System.out.println(res.size());
-
-//        List<String> res = splitAuthors("Van Kan et al., 1990, Van der Vos et al., 1992, Otte et al., 1992, Kwa et al., 1994b");
-//        for (String s : res) {
-//            System.out.println(s);
-//        }
-    }
 }
