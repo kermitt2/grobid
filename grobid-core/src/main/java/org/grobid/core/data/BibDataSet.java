@@ -8,6 +8,11 @@ import java.util.*;
  * @author Patrice Lopez
  */
 public class BibDataSet {
+    public enum Counters {
+        CITATIONS_CNT,
+        CITATIONS_WITH_CONTEXT_CNT,
+        CITATIONS_WITHOUT_CONTEXT_CNT
+    }
 
     private BiblioItem resBib = null; // identified parsed bibliographical item
     private List<String> sourceBib = null;

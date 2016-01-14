@@ -30,12 +30,13 @@ public class ReferenceMarkerMatcher {
 
     public static final Pattern YEAR_PATTERN = Pattern.compile("[12][0-9]{3,3}[a-d]?");
     public static final Pattern AUTHOR_NAME_PATTERN = Pattern.compile("[A-Z][A-Za-z]+");
-    private static final Pattern NUMBERED_CITATION_PATTERN = Pattern.compile(" *[\\(\\[]? *(?:\\d+[-–]\\d+,|\\d+, *)*(?:\\d+[-–]\\d+|\\d+)[\\)\\]]? *");
+    private static final Pattern NUMBERED_CITATION_PATTERN = Pattern.compile(" *[\\(\\[]? *(?:\\d+[-–]\\d+,|\\d+, *)*[ ]*(?:\\d+[-–]\\d+|\\d+)[\\)\\]]? *");
     public static final Pattern AUTHOR_SEPARATOR_PATTERN = Pattern.compile(";");
     public static final ClassicAnalyzer ANALYZER = new ClassicAnalyzer(Version.LUCENE_45);
     public static final int MAX_RANGE = 20;
     public static final Pattern NUMBERED_CITATIONS_SPLIT_PATTERN = Pattern.compile("[,;]");
     public static final Pattern AND_WORD_PATTERN = Pattern.compile("and");
+    public static final Pattern DASH_PATTERN = Pattern.compile("[–-]");
 
     public enum Counters {
         MATCHED_REF_MARKERS,
@@ -188,7 +189,7 @@ public class ReferenceMarkerMatcher {
 //                Splitter.on(NUMBERED_CITATIONS_SPLIT_PATTERN).omitEmptyStrings().splitToList(text);
         List<Pair<String, List<LayoutToken>>> res = new ArrayList<>();
         for (List<LayoutToken> s : split) {
-            int minusPos = LayoutTokensUtil.tokenPos(s, "-");
+            int minusPos = LayoutTokensUtil.tokenPos(s, DASH_PATTERN);
             if (minusPos < 0) {
                 res.add(new Pair<>(LayoutTokensUtil.toText(s), s));
             } else {
@@ -268,10 +269,12 @@ public class ReferenceMarkerMatcher {
                             cntManager.i(Counters.NO_CANDIDATES_AFTER_POST_FILTERING);
                         } else {
                             cntManager.i(Counters.MANY_CANDIDATES_AFTER_POST_FILTERING);
-                            System.out.println("MANY CANDIDATES: " + text + "\n" + c + "\n");
+                            System.out.println("MANY CANDIDATES: " + text + "\n-----\n" + c + "\n");
                             for (BibDataSet bds : matches) {
+                                System.out.println("+++++");
                                 System.out.println("  " + bds.getRawBib());
                             }
+                            System.out.println("===============");
                         }
                     }
                 } else {
@@ -348,14 +351,37 @@ public class ReferenceMarkerMatcher {
 
     //if we match more than 1 citation based on name, then we leave only those citations that have author name first
     private List<BibDataSet> postFilterMatches(String c, List<BibDataSet> matches) {
-        String[] sp = c.trim().split(" ");
-        final String author = sp[0].toLowerCase();
-        return Lists.newArrayList(Iterables.filter(matches, new Predicate<BibDataSet>() {
-            @Override
-            public boolean apply(BibDataSet bibDataSet) {
-                return bibDataSet.getRawBib().trim().toLowerCase().startsWith(author);
+        if (c.toLowerCase().contains("et al") || c.toLowerCase().contains(" and ")) {
+            String[] sp = c.trim().split(" ");
+            final String author = sp[0].toLowerCase();
+
+            ArrayList<BibDataSet> bibDataSets = Lists.newArrayList(Iterables.filter(matches, new Predicate<BibDataSet>() {
+                @Override
+                public boolean apply(BibDataSet bibDataSet) {
+                    return bibDataSet.getRawBib().trim().toLowerCase().startsWith(author);
+                }
+            }));
+
+            if (bibDataSets.size() <= 1) {
+                return bibDataSets;
             }
-        }));
+
+            //cases like c = "Smith et al, 2015" and Bds = <"Smith, Hoffmann, 2015", "Smith, 2015"> -- should prefer first one
+            return Lists.newArrayList(Iterables.filter(bibDataSets, new Predicate<BibDataSet>() {
+                @Override
+                public boolean apply(BibDataSet bibDataSet) {
+                    return (bibDataSet.getResBib().getFullAuthors() != null && bibDataSet.getResBib().getFullAuthors().size() > 1);
+                }
+            }));
+        } else {
+            //cases like c = "Smith, 2015" and Bds = <"Smith, Hoffmann, 2015", "Smith, 2015"> -- should prefer second one
+            return Lists.newArrayList(Iterables.filter(matches, new Predicate<BibDataSet>() {
+                @Override
+                public boolean apply(BibDataSet bibDataSet) {
+                    return bibDataSet.getResBib().getFullAuthors() != null && bibDataSet.getResBib().getFullAuthors().size() == 1;
+                }
+            }));
+        }
     }
 
     public static void main(String[] args) {

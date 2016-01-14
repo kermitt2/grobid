@@ -1810,11 +1810,14 @@ public class FullTextParser extends AbstractParser {
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
         }
-		doc.setTei(
-				XmlBuilderUtils.toPrettyXml(
-						XmlBuilderUtils.fromString(tei.toString())
-				)
-		);
+		doc.setTei(tei.toString());
+
+		//TODO: reevaluate
+//		doc.setTei(
+//				XmlBuilderUtils.toPrettyXml(
+//						XmlBuilderUtils.fromString(tei.toString())
+//				)
+//		);
 	}
 
     @Override

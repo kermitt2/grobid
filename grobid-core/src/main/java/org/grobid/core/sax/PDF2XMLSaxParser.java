@@ -455,6 +455,9 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 					for(String tok : subTokenizations) {
 
+						if (tok.contains("Minnich")) {
+							int f = 0;
+						}
 						diaresis = false;
 						accent = false;
 
@@ -542,6 +545,8 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 										LayoutToken localTok = new LayoutToken(previousTok.getText());
 										localTok.setPage(currentPage);
 										addToken(localTok);
+
+//										addToken(previousTok);
 
 										//System.out.println("add token layout: " + previousTok.getText());
 										//System.out.println("add tokenizations: " + previousTok.getText());
