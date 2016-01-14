@@ -115,6 +115,17 @@ public class LayoutTokensUtil {
         return -1;
     }
 
+    public static int tokenPos(List<LayoutToken> toks, Pattern p) {
+        int cnt = 0;
+        for (LayoutToken t : toks) {
+            if (p.matcher(t.t()).matches()) {
+                return cnt;
+            }
+            cnt++;
+        }
+        return -1;
+    }
+
 //    public static List<List<LayoutToken>> split(List<LayoutToken> toks, Pattern p) {
 //        return split(toks, p, false);
 //    }
