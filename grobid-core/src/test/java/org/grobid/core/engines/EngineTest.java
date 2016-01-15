@@ -866,15 +866,29 @@ public class EngineTest {
                 matchingMode(1)
                 .build();
 
-        for (File f : new File("/Work/temp/pub_citation_styles").listFiles(new FileFilter() {
+            int cnt = 0;
+//        for (File f : new File("/Work/temp/pub_citation_styles").listFiles(new FileFilter() {
+//            @Override
+//            public boolean accept(File pathname) {
+        for (File f : new File("/Work/temp/context/1000k").listFiles(new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 return pathname.getName().endsWith(".pdf");
             }
         })) {
-            System.out.println("Processing: " + f);
-            String tei = engine.fullTextToTEI(f, config);
-            System.out.println(tei.length());
+                try {
+                        Engine.getCntManager().i("PDFS", "INPUT_CNT");
+                        System.out.println("Processing: " + f);
+                        String tei = engine.fullTextToTEI(f, config);
+                        System.out.println(tei.length());
+                } catch (Exception e) {
+                        e.printStackTrace();
+                        Engine.getCntManager().i("FAILED", e.getClass().getSimpleName());
+                }
+                if (++cnt % 10 == 0) {
+                        System.out.println("Processed: " + cnt);
+                        System.out.println(Engine.getCntManager());
+                }
         }
 
 //        System.out.println(engine.fullTextToTEI(new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis-service/src/test/resources/net/researchgate/pdfanalysisservice/papers.bad.input/40th_Conf_unprotected.pdf"), GrobidAnalysisConfig.defaultInstance()));

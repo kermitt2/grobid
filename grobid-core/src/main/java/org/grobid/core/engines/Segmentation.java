@@ -338,12 +338,12 @@ public class Segmentation extends AbstractParser {
                     }
                 }
 
-                if (lowestPos >  block.y) {
+                if (lowestPos >  block.getY()) {
                     // we have a vertical shift, which can be due to a change of column or other particular layout formatting 
                     spacingPreviousBlock = doc.getMaxBlockSpacing() / 5.0; // default
                 }
                 else 
-                    spacingPreviousBlock = block.y - lowestPos;
+                    spacingPreviousBlock = block.getY() - lowestPos;
 
                 String localText = block.getText();
                 if (localText == null)
@@ -351,10 +351,10 @@ public class Segmentation extends AbstractParser {
 
                 // character density of the block
                 double density = 0.0;
-                if ( (block.height != 0.0) && (block.width != 0.0) && 
+                if ( (block.getHeight() != 0.0) && (block.getWidth() != 0.0) && 
                      (block.getText() != null) && (!block.getText().contains("@PAGE")) && 
                      (!block.getText().contains("@IMAGE")) )
-                    density = (double)block.getText().length() / (block.height * block.width);
+                    density = (double)block.getText().length() / (block.getHeight() * block.getWidth());
 
                 String[] lines = localText.split("[\\n\\r]");
     			// set the max length of the lines in the block, in number of characters
@@ -591,7 +591,7 @@ public class Segmentation extends AbstractParser {
 //    + featureFactory.linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE));    
 
                 // lowest position of the block
-                lowestPos = block.y + block.height;
+                lowestPos = block.getY() + block.getHeight();
 
                 // update page-level and document-level positions
                 if (tokens != null) {

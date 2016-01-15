@@ -14,11 +14,13 @@ import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.layout.Block;
+import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.Page;
 import org.grobid.core.layout.Cluster;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.sax.PDF2XMLSaxParser;
+import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
@@ -259,6 +261,15 @@ public class Document {
             SAXParser p = spf.newSAXParser();
             p.parse(in, parser);
             tokenizations = parser.getTokenization();
+            for (Block b : blocks) {
+                BoundingBox box = BoundingBoxCalculator.calculateOneBox(b.getTokens());
+                if (box != null) {
+                    b.setX(box.getX());
+                    b.setY(box.getY());
+                    b.setWidth(box.getWidth());
+                    b.setHeight(box.getHeight());
+                }
+            }
         } catch (Exception e) {
             throw new GrobidException("Cannot parse file: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
         } finally {
@@ -1219,8 +1230,8 @@ public class Document {
         for(GraphicObject image : doc.getImages()) {
             if (block.getPageNumber() != image.getPage()) 
                 continue;
-            if ( ( (Math.abs((image.y+image.height) - block.y) < minDistance) ||
-                   (Math.abs(image.y - (block.y+block.height)) < minDistance) ) //&&
+            if ( ( (Math.abs((image.y+image.height) - block.getY()) < minDistance) ||
+                   (Math.abs(image.y - (block.getY()+block.getHeight())) < minDistance) ) //&&
                  //( (Math.abs((image.x+image.width) - block.x) < minDistance) ||
                  //  (Math.abs(image.x - (block.x+block.width)) < minDistance) )
                  ) {
@@ -1330,15 +1341,15 @@ public class Document {
                 for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
                     Block block = page.getBlocks().get(blockIndex);
                     if ( (blockIndex != 0) && (previousBlockBottom > 0.0)) {
-                        double spacing = block.y - previousBlockBottom;
-                        if ( (spacing > 0.0) && (spacing < page.height) ) {
+                        double spacing = block.getY() - previousBlockBottom;
+                        if ( (spacing > 0.0) && (spacing < page.getHeight()) ) {
                             if (spacing > maxBlockSpacing)
                                 maxBlockSpacing = spacing;
                             else if (spacing < minBlockSpacing)
                                 minBlockSpacing = spacing;
                         }
                     }
-                    previousBlockBottom = block.y + block.height;
+                    previousBlockBottom = block.getY() + block.getHeight();
                     if (block.getTokens() != null)
                        pageLength += block.getTokens().size();
                 }
@@ -1350,11 +1361,11 @@ public class Document {
         maxCharacterDensity = 0.0;
         minCharacterDensity = 1000000.0;
         for(Block block : blocks) {
-            if ( (block.height == 0.0) || (block.width == 0.0))
+            if ( (block.getHeight() == 0.0) || (block.getWidth() == 0.0))
                 continue;
             String text = block.getText();
             if ( (text != null) && (!text.contains("@PAGE")) && (!text.contains("@IMAGE")) ) {
-                double surface = block.width * block.height;
+                double surface = block.getWidth() * block.getHeight();
                 
                 /*System.out.println("block.width: " + block.width);
                 System.out.println("block.height: " + block.height);

@@ -54,10 +54,10 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 	private Page page = null; // the current page object
 	private GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance(); 
 
-	public PDF2XMLSaxParser() {
-		blabla = new StringBuffer();
-		tokenizations = new ArrayList<LayoutToken>();
-	}
+//	public PDF2XMLSaxParser() {
+//		blabla = new StringBuffer();
+//		tokenizations = new ArrayList<LayoutToken>();
+//	}
 
 	public PDF2XMLSaxParser(Document d, List<GraphicObject> im) {
 		doc = d;
@@ -455,6 +455,9 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 					for(String tok : subTokenizations) {
 
+						if (tok.contains("Minnich")) {
+							int f = 0;
+						}
 						diaresis = false;
 						accent = false;
 
@@ -550,6 +553,8 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 										localTok.setBold(previousTok.getBold());
 										localTok.setRotation(previousTok.getRotation());
 										addToken(localTok);
+
+//										addToken(previousTok);
 
 										//System.out.println("add token layout: " + previousTok.getText());
 										//System.out.println("add tokenizations: " + previousTok.getText());

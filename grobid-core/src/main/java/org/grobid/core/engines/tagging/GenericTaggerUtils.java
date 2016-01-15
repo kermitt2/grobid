@@ -37,7 +37,7 @@ public class GenericTaggerUtils {
     // I-<citation> --> <citation>
     // <citation> --> <citation>
     public static String getPlainLabel(String label) {
-        return label.startsWith(START_ENTITY_LABEL_PREFIX) ? label.substring(2) : label;
+        return label == null ? null : label.startsWith(START_ENTITY_LABEL_PREFIX) ? label.substring(2) : label;
     }
 
     public static boolean isBeginningOfEntity(String label) {

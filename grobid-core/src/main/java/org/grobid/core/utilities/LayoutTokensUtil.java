@@ -38,8 +38,16 @@ public class LayoutTokensUtil {
         return toks;
     }
 
+    public static String normalizeText(String text) {
+        return TextUtilities.dehyphenize(text).replace("\n", " ").replaceAll("[ ]{2,}", " ").trim();
+    }
+
     public static String toText(List<LayoutToken> tokens) {
         return Joiner.on("").join(Iterables.transform(tokens, TO_TEXT_FUNCTION));
+    }
+
+    public static boolean noCoords(LayoutToken t) {
+        return t.getPage() == -1 || t.getWidth() <= 0;
     }
 
     public static String toTextDehyphenized(List<LayoutToken> tokens) {
@@ -73,6 +81,23 @@ public class LayoutTokensUtil {
         return sb.toString();
     }
 
+    public static boolean spaceyToken(String tok) {
+        return (tok.equals(" ")
+                || tok.equals("\u00A0")
+                || tok.equals("\n"));
+    }
+
+    public static boolean newLineToken(String tok) {
+        return (tok.equals("\n") || tok.equals("\r") || tok.equals("\n\r"));
+    }
+
+    public static String removeSpecialVariables(String tok) {
+        if (tok.equals("@BULLET")) {
+            tok = "•";
+        }
+        return tok;
+    }
+
 
     public static boolean containsToken(List<LayoutToken> toks, String text) {
         for (LayoutToken t : toks) {
@@ -87,6 +112,17 @@ public class LayoutTokensUtil {
         int cnt = 0;
         for (LayoutToken t : toks) {
             if (text.equals(t.t())) {
+                return cnt;
+            }
+            cnt++;
+        }
+        return -1;
+    }
+
+    public static int tokenPos(List<LayoutToken> toks, Pattern p) {
+        int cnt = 0;
+        for (LayoutToken t : toks) {
+            if (p.matcher(t.t()).matches()) {
                 return cnt;
             }
             cnt++;

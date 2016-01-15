@@ -20,6 +20,7 @@ import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BibDataSetContext;
 import org.grobid.core.document.Document;
+import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
@@ -38,9 +39,22 @@ public class CitationsVisualizer {
 
     public static void main(String args[]) {
         try {
+            // /Work/temp/context/1000k/AS_101465473421322_1401202662564.pdf
+
+            // /Work/temp/context/1000k/AS_104748833312772_1401985480367.pdf - invalid byte
+            //
 //            File input = new File("/Work/temp/pub_citation_styles/1994FEBSLett350_235Hadden.pdf");
+//            File input = new File("/Work/temp/context/1000k/AS_99223336914944_1400668095132.pdf");
+//            File input = new File("/tmp/AS_100005549445135_1400854589869.pdf"); // not all tokens
+            File input = new File("/Work/temp/context/coords/1.pdf");
+//            File input = new File("/Work/temp/context/tilo/4.pdf");
+
+//            File input = new File("/Work/temp/pub_citation_styles/1996ParPrecConfProc00507369.pdf");
+//            File input = new File("/Work/temp/pub_citation_styles/LaptenokJSSv18i08.pdf");
+//
+//  File input = new File("/Work/temp/context/coords/3.pdf");
 //            File input = new File("/Work/temp/context/coords/3.pdf");
-            File input = new File("/Work/temp/context/coords/5.pdf");
+//            File input = new File("/Work/temp/context/coords/2.pdf");
 
             final PDDocument document = PDDocument.load(input);
             File outPdf = new File("/tmp/test.pdf");
@@ -63,6 +77,7 @@ public class CitationsVisualizer {
                     Desktop.getDesktop().open(outPdf);
                 }
             }
+            System.out.println(Engine.getCntManager());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -208,7 +223,7 @@ public class CitationsVisualizer {
 
         // ADDING LINE TO THE REFERENCE
         PDPageContentStream stream = new PDPageContentStream(document, page, true, false);
-        Random r = new Random(seed);
+        Random r = new Random(seed + 1);
 
 
 //        stream.setStrokingColor(85, 177, 245);

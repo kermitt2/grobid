@@ -7,11 +7,14 @@ import net.sf.saxon.query.DynamicQueryContext;
 import net.sf.saxon.query.StaticQueryContext;
 import net.sf.saxon.query.XQueryExpression;
 import net.sf.saxon.trans.XPathException;
+import org.apache.commons.io.FileUtils;
 import org.xml.sax.InputSource;
 
 import javax.xml.transform.sax.SAXSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.util.Properties;
@@ -24,6 +27,10 @@ public class XQueryProcessor {
     private final StaticQueryContext sqc;
     private final DynamicQueryContext dqc;
 
+
+    public XQueryProcessor(File xmFile) throws XPathException, IOException {
+        this(FileUtils.readFileToString(xmFile));
+    }
     public XQueryProcessor(String xmlContent) throws XPathException {
         Configuration c = new Configuration();
 
