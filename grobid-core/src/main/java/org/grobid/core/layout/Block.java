@@ -13,10 +13,10 @@ import java.util.List;
 public class Block {
     private int nbTokens = 0;
     private String text = null;
-    public double y = 0.0;
-    public double x = 0.0;
-    public double width = 0.0;
-    public double height = 0.0;
+    private double y = 0.0;
+    private double x = 0.0;
+    private double width = 0.0;
+    private double height = 0.0;
     private String font = null;
     private boolean bold = false;
     private boolean italic = false;
