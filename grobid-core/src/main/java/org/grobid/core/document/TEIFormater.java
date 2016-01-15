@@ -393,7 +393,7 @@ public class TEIFormater {
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
 					tei.append(" xml:id=\"_" + divID + "\"");
-				}	
+				}
 				tei.append(">" + TextUtilities.HTMLEncode(biblio.getBookTitle()) + "</title>\n");
             }
 
@@ -1529,7 +1529,7 @@ public class TEIFormater {
            	}
         }
 
-		return buffer;								
+		return buffer;						
 	}
 
     private static void clearRefStrData(StringBuilder refStr, List<LayoutToken> toks) {

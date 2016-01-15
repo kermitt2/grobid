@@ -428,10 +428,10 @@ public class BookStructureParser extends AbstractParser {
                     features.punctType = "NOPUNCT";
 
                 features.relativeDocumentPosition = featureFactory
-                        .relativeLocation(nn, documentLength, NBBINS);
+                        .linearScaling(nn, documentLength, NBBINS);
                 // System.out.println(mm + " / " + pageLength);
                 features.relativePagePosition = featureFactory
-                        .relativeLocation(mm, pageLength, NBBINS);
+                        .linearScaling(mm, pageLength, NBBINS);
 
                 // fulltext.append(features.printVector());
                 if (previousFeatures != null)

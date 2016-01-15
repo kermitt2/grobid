@@ -12,6 +12,7 @@ public class Page {
     public double width = 0.0;
     public double height = 0.0;
     public int number = -1;
+    public int pageLengthChar = 0;
 
     public Page(int nb) {
         number = nb;
@@ -25,5 +26,29 @@ public class Page {
 
     public List<Block> getBlocks() {
         return blocks;
+    }
+
+    public void setHeight(double d) {
+        height = Math.abs(d);
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setWidth(double d) {
+        width = Math.abs(d);
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public void setPageLengthChar(int length) {
+        pageLengthChar = length;
+    }
+
+    public int getPageLengthChar() {
+        return pageLengthChar;
     }
 }	

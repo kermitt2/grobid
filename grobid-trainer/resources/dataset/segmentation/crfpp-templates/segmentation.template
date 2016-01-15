@@ -157,20 +157,43 @@ UI1:%x[0,27]
 UI2:%x[1,27]
 
 # bitmap connected to the current block (28)
-UG0:%x[-2,23]
-UG1:%x[-1,23]
-UG2:%x[0,23]
-UG3:%x[1,23]
-UG4:%x[2,23]
-UG5:%x[3,23]
+UG0:%x[-2,28]
+UG1:%x[-1,28]
+UG2:%x[0,28]
+UG3:%x[1,28]
+UG4:%x[2,28]
+UG5:%x[3,28]
 
 # vector graphic connected to the current block (29)
-UG0:%x[-2,24]
-UG1:%x[-1,24]
-UG2:%x[0,24]
-UG3:%x[1,24]
-UG4:%x[2,24]
-UG5:%x[3,24]
+UG0:%x[-2,29]
+UG1:%x[-1,29]
+UG2:%x[0,29]
+UG3:%x[1,29]
+UG4:%x[2,29]
+UG5:%x[3,29]
+
+# pattern repeated on several pages
+UH0:%x[-2,30]
+UH1:%x[-1,30]
+UH2:%x[0,30]
+UH3:%x[1,30]
+UH4:%x[2,30]
+UH5:%x[3,30]
+
+# if we have a repeated pattern, indicate the first 
+UI1:%x[-1,31]
+UI2:%x[0,31]
+UI3:%x[1,31]
+
+# space with previous block, discretised (1)
+UJ1:%x[-1,32]
+UJ2:%x[0,32]
+UJ3:%x[1,32]
+
+# character density of the previous block, discretised (1)
+#UK1:%x[-1,33]
+#UK2:%x[0,33]
+#UK3:%x[1,33]
 
 # Output
 B

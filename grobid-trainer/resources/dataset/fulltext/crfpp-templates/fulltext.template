@@ -12,7 +12,7 @@ U09:%x[-1,0]/%x[0,0]
 U0A:%x[0,0]/%x[1,0]
 U0B:%x[1,0]/%x[2,0]
 U0C:%x[-2,0]/%x[-1,0]
-U0D:%x[0,0]/%x[-1,22]
+#U0D:%x[0,0]/%x[-1,22]
 
 # Lowercase token 1
 U10:%x[-2,1]
@@ -39,9 +39,11 @@ U41:%x[0,10]
 U42:%x[1,10]
 
 # Line info (11)
-U50:%x[-1,11]
-U51:%x[0,11]
-U52:%x[1,11]
+U50:%x[-2,11]
+U51:%x[-1,11]
+U52:%x[0,11]
+U53:%x[1,11]
+U54:%x[2,11]
 
 # Alignment status (1)
 U60:%x[-1,12]
@@ -81,7 +83,7 @@ UC2:%x[1,18]
 #UC3:%x[0,18]/%x[1,18]
 #UC4:%x[-1,18]/%x[0,18]
 
-# Char (19)
+# Single char (19)
 UD0:%x[0,19]
 UD1:%x[-1,19]
 UD2:%x[1,19]
@@ -106,20 +108,30 @@ UH1:%x[0,22]
 UH2:%x[1,22]
 
 # bitmap connected to the current block (23)
-UG0:%x[-2,23]
-UG1:%x[-1,23]
-UG2:%x[0,23]
-UG3:%x[1,23]
-UG4:%x[2,23]
-UG5:%x[3,23]
+UI0:%x[-2,23]
+UI1:%x[-1,23]
+UI2:%x[0,23]
+UI3:%x[1,23]
+UI4:%x[2,23]
+UI5:%x[3,23]
 
 # vector graphic connected to the current block (24)
-UG0:%x[-2,24]
-UG1:%x[-1,24]
-UG2:%x[0,24]
-UG3:%x[1,24]
-UG4:%x[2,24]
-UG5:%x[3,24]
+UJ0:%x[-2,24]
+UJ1:%x[-1,24]
+UJ2:%x[0,24]
+UJ3:%x[1,24]
+UJ4:%x[2,24]
+UJ5:%x[3,24]
+
+# space with previous block, discretised (1)
+UK1:%x[-1,25]
+UK2:%x[0,25]
+UK3:%x[1,25]
+
+# character density of the previous block, discretised (1)
+UL1:%x[-1,26]
+UL2:%x[0,26]
+UL3:%x[1,26]
 
 # Output
 B

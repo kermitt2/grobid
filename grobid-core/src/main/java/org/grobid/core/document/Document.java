@@ -53,28 +53,22 @@ public class Document {
     /**
      * Exit code got when pdf2xml took too much time and has been killed by pdf2xml_server.
      */
-
-//    private String path = null; // path where the pdf file is stored
-
     private String pathXML = null; // XML representation of the current PDF file
 
-    private int beginBody = -1;
-    private int beginReferences = -1;
-
-    private boolean titleMatchNum = false; // true if the section titles of the document are numbered
     private String lang = null;
 
+    // layout structure of the document
     private List<Page> pages = null;    
     private List<Cluster> clusters = null;
     private List<Block> blocks = null;
 
+    // not used anymore
     private List<Integer> blockHeaders = null;
     private List<Integer> blockFooters = null;
     private List<Integer> blockSectionTitles = null;
     private List<Integer> acknowledgementBlocks = null;
     private List<Integer> blockDocumentHeaders = null;
     private SortedSet<DocumentPiece> blockReferences = null;
-
     private List<Integer> blockTables = null;
     private List<Integer> blockFigures = null;
     private List<Integer> blockHeadTables = null;
@@ -90,18 +84,39 @@ public class Document {
     private List<LayoutToken> tokenizations = null;
 
     // list of bibliographical references with context
-
     private Map<String, BibDataSet> teiIdToBibDataSets = null;
     private List<BibDataSet> bibDataSets = null;
 
+    // not used anymore
     private DocumentNode top = null;
 
+    // header of the document - if extracted and processed
     private final BiblioItem resHeader = null;
 
+    // full text as tructure TEI - if extracted and processed
     private String tei;
+
     private ReferenceMarkerMatcher referenceMarkerMatcher;
 
+    // list of bitmaps and vector graphics of the document
     private List<GraphicObject> images = null;
+
+    // some statistics regarding the document - useful for generating the features
+    private double maxCharacterDensity = 0.0;
+    private double minCharacterDensity = 0.0;
+    private double maxBlockSpacing = 0.0;
+    private double minBlockSpacing = 0.0;
+    private int documentLenghtChar = -1; // length here is expressed as number of characters
+
+    // not used
+    private int beginBody = -1;
+    private int beginReferences = -1;
+
+    private boolean titleMatchNum = false; // true if the section titles of the document are numbered
+
+    // the magic DOI regular expression...
+    static public final Pattern DOIPattern = Pattern
+            .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
 
     public Document(DocumentSource documentSource) {
         top = new DocumentNode("top", "0");
@@ -149,20 +164,51 @@ public class Document {
         return tokenizations;
     }
 
+    public int getDocumentLenghtChar() {
+        return documentLenghtChar;
+    }
+
+    public double getMaxCharacterDensity() {
+        return maxCharacterDensity;
+    }
+
+    public double getMinCharacterDensity() {
+        return minCharacterDensity;
+    }
+
+    public double getMaxBlockSpacing() {
+        return maxBlockSpacing;
+    }
+
+    public double getMinBlockSpacing() {
+        return minBlockSpacing;
+    }
+
+    // to be removed
     public List<LayoutToken> getTokenizationsHeader() {
         List<LayoutToken> tokenizationsHeader = new ArrayList<LayoutToken>();
         for (Integer blocknum : blockDocumentHeaders) {
             Block blo = blocks.get(blocknum);
-            int tokens = blo.getStartToken();
+            /*int tokens = blo.getStartToken();
             int tokene = blo.getEndToken();
             for (int i = tokens; i < tokene; i++) {
                 tokenizationsHeader.add(tokenizations.get(i));
+            }*/
+            List<LayoutToken> tokens = blo.getTokens();
+            if ( (tokens == null) || (tokens.size() == 0) ) {
+                continue;
+            }
+            else {
+                for(LayoutToken token : tokens) {
+                    tokenizationsHeader.add(token);
+                }
             }
         }
 
         return tokenizationsHeader;
     }
 
+    // to be removed
     public List<LayoutToken> getTokenizationsFulltext() {
         List<LayoutToken> tokenizationsFulltext = new ArrayList<LayoutToken>();
         for (Block blo : blocks) {
@@ -176,6 +222,7 @@ public class Document {
         return tokenizationsFulltext;
     }
 
+    // to be removed
     public List<LayoutToken> getTokenizationsReferences() {
         List<LayoutToken> tokenizationsReferences = new ArrayList<LayoutToken>();
 
@@ -236,7 +283,7 @@ public class Document {
 	 * -> not used anymore
 	 *
      */
-    public void reconnectBlocks() throws Exception {
+    /*public void reconnectBlocks() throws Exception {
         int i = 0;
         // List<Block> newBlocks = new ArrayList<Block>();
         boolean candidate = false;
@@ -339,7 +386,7 @@ public class Document {
             }
             i++;
         }
-    }
+    }*/
 
 	/**
 	 * Add features in the header section
@@ -351,11 +398,10 @@ public class Document {
         if (getHeader) {
             // String theHeader = getHeaderZFN(firstPass);
             String theHeader = getHeader();
-            if (theHeader == null) {
-                getHeaderLastHope();
-            } else if (theHeader.trim().length() == 1) {
-                getHeaderLastHope();
-            }
+            if ( (theHeader == null) || (theHeader.trim().length() <= 1) ) {
+                theHeader = getHeaderLastHope();
+            } 
+//System.out.println(theHeader);
         }
         featureFactory = FeatureFactory.getInstance();
         StringBuilder header = new StringBuilder();
@@ -384,13 +430,13 @@ public class Document {
                     continue;
                 }
                 //text = text.trim();
-				text = text.replace(" ","");
+				text = text.replace(" ","").replace("\t", "").replace("\u00A0","");
                 if (text.length() == 0) {
                     n++;
                     continue;
                 }
 
-                if (text.equals("\n")) {
+                if (text.equals("\n") || text.equals("\r")) {
                     newline = true;
                     previousNewline = true;
                     n++;
@@ -403,18 +449,7 @@ public class Document {
                     previousNewline = false;
                 }
 
-                boolean filter = false;
-                if (text.startsWith("@IMAGE")) {
-                    filter = true;
-                } else if (text.contains(".pbm")) {
-                    filter = true;
-                } else if (text.contains(".vec")) {
-                    filter = true;
-                } else if (text.contains(".jpg")) {
-                    filter = true;
-                }
-
-                if (filter) {
+				if (TextUtilities.filterLine(text)) {
                     n++;
                     continue;
                 }
@@ -444,7 +479,6 @@ public class Document {
 
                 } else if (text.equals("\"") || text.equals("\'") || text.equals("`")) {
                     features.punctType = "QUOTE";
-
                 }
 
                 if (n == 0) {
@@ -470,11 +504,15 @@ public class Document {
                                     endline = true;
                                     endloop = true;
                                 } else {
-                                    if ((toto.length() != 0)
-                                            && (!(toto.startsWith("@IMAGE")))
+                                    if ((toto.trim().length() != 0)
+											&& (!text.equals("\u00A0"))
+                                            && (!(toto.contains("@IMAGE")))
+											&& (!(toto.contains("@PAGE")))	
                                             && (!text.contains(".pbm"))
+                                            && (!text.contains(".ppm"))
                                             && (!text.contains(".vec"))
-                                            && (!text.contains(".jpg"))) {
+											&& (!text.contains(".png"))	
+                                            && (!text.contains(".jpg")) ) {
                                         endloop = true;
                                     }
                                 }
@@ -617,7 +655,7 @@ public class Document {
 	 */ 
     public String getHeader() {
         //if (firstPass)
-        BasicStructureBuilder.firstPass(this);
+        //BasicStructureBuilder.firstPass(this);
 
         // try first to find the introduction in a safe way
         String tmpRes = getHeaderByIntroduction();
@@ -636,6 +674,10 @@ public class Document {
         boolean abstractCandidate = false;
         for (Block block : blocks) {
             String localText = block.getText();
+            if ((localText == null) || (localText.startsWith("@"))) {
+                accumulated.append("\n");
+                continue;
+            }
             localText = localText.trim();
             localText = localText.replace("  ", " ");
 
@@ -650,6 +692,8 @@ public class Document {
                     beginBody = i;
                     for (int j = 0; j <= i + 1; j++) {
                         Integer inte = j;
+                        if (blockDocumentHeaders == null)
+                            blockDocumentHeaders = new ArrayList<Integer>();
                         if (!blockDocumentHeaders.contains(inte))
                             blockDocumentHeaders.add(inte);
                     }
@@ -670,6 +714,8 @@ public class Document {
                         beginBody = i;
                         for (int j = 0; j <= i; j++) {
                             Integer inte = j;
+                            if (blockDocumentHeaders == null)
+                                blockDocumentHeaders = new ArrayList<Integer>();
                             if (!blockDocumentHeaders.contains(inte)) {
                                 blockDocumentHeaders.add(inte);
                             }
@@ -680,6 +726,8 @@ public class Document {
                             beginBody = i;
                             for (int j = 0; j <= i; j++) {
                                 Integer inte = j;
+                                if (blockDocumentHeaders == null)
+                                blockDocumentHeaders = new ArrayList<Integer>();
                                 if (!blockDocumentHeaders.contains(inte))
                                     blockDocumentHeaders.add(inte);
                             }
@@ -693,6 +741,8 @@ public class Document {
                         beginBody = i;
                         for (int j = 0; j <= i; j++) {
                             Integer inte = j;
+                            if (blockDocumentHeaders == null)
+                                blockDocumentHeaders = new ArrayList<Integer>();
                             if (!blockDocumentHeaders.contains(inte))
                                 blockDocumentHeaders.add(inte);
                         }
@@ -725,35 +775,33 @@ public class Document {
         String res;
         StringBuilder accumulated = new StringBuilder();
         int i = 0;
-        for (Block block : blocks) {
-            String localText = block.getText();
-            localText = localText.trim();
-            localText = localText.replace("  ", " ");
-
-            if (localText.contains("@PAGE")) {
-                beginBody = i;
-                for (int j = 0; j < i + 1; j++) {
-                    Integer inte = j;
-                    if (!blockDocumentHeaders.contains(inte))
-                        blockDocumentHeaders.add(inte);
+        if ( (pages == null) || (pages.size() == 0) ) {
+            return null;
+        }
+        for(Page page : pages) {
+            if ( (page.getBlocks() == null) || (page.getBlocks().size() == 0) )
+                continue;
+            for (Block block : page.getBlocks()) {
+                String localText = block.getText();
+                if ((localText == null) || (localText.startsWith("@"))) {
+                    accumulated.append("\n");
+                    continue;
                 }
-                res = accumulated.toString();
-
-                return res;
+                localText = localText.trim();
+                localText = localText.replace("  ", " ");
+                accumulated.append(localText);
+                Integer inte = new Integer(i);
+                if (blockDocumentHeaders == null)
+                    blockDocumentHeaders = new ArrayList<Integer>();
+                if (!blockDocumentHeaders.contains(inte))
+                    blockDocumentHeaders.add(inte);
+                i++;
             }
-
-            accumulated.append(localText);
-            i++;
+            beginBody = i;
+            break;
         }
 
-		/*
-         * beginBody = i-1; for(int j = 0; j<i; j++) { Integer inte = new
-		 * Integer(j); if (!blockDocumentHeaders.contains(inte))
-		 * blockDocumentHeaders.add(inte); } res = accumulated.toString();
-		 * 
-		 * return res;
-		 */
-        return null;
+        return accumulated.toString();
     }
 
     /**
@@ -768,6 +816,10 @@ public class Document {
         int i = 0;
         for (Block block : blocks) {
             String localText = block.getText();
+            if ((localText == null) || (localText.startsWith("@"))) {
+                accumulated.append("\n");
+                continue;
+            }
             localText = localText.trim();
 
             Matcher m = BasicStructureBuilder.introductionStrict
@@ -777,6 +829,8 @@ public class Document {
                 beginBody = i;
                 for (int j = 0; j < i + 1; j++) {
                     Integer inte = j;
+                    if (blockDocumentHeaders == null)
+                        blockDocumentHeaders = new ArrayList<Integer>();
                     if (!blockDocumentHeaders.contains(inte))
                         blockDocumentHeaders.add(inte);
                 }
@@ -902,19 +956,6 @@ public class Document {
     }
 
     /**
-     * Return all blocks.
-     */
-    /*public String getAllBlocks() {
-        StringBuilder accumulated = new StringBuilder();
-        int i = 0;
-        for (Block block : blocks) {
-            accumulated.append("@block ").append(i).append("\n").append(block.getText()).append("\n");
-            i++;
-        }
-        return accumulated.toString();
-    }*/
-
-    /**
      * Return all blocks without markers.
      * <p/>
      * Ignore the toIgnore1 th blocks and the blocks after toIgnore2 (included)
@@ -934,253 +975,6 @@ public class Document {
         }
         return accumulated.toString();
     }
-
-    /**
-     * Return all textual content except metadata.
-     */
-    /*public String getAllBody(Engine engine, BiblioItem biblio,
-                             List<BibDataSet> bds, boolean withBookTitle) {
-        StringBuilder accumulated = new StringBuilder();
-        int i = 0;
-
-        if (biblio.getTitle() != null) {
-            accumulated.append(biblio.getTitle()).append("\n");
-        }
-
-        if (biblio.getJournal() != null) {
-            accumulated.append(biblio.getJournal()).append("\n");
-        }
-
-        if (biblio.getAbstract() != null) {
-            accumulated.append(biblio.getAbstract()).append("\n");
-        }
-
-        for (Block block : blocks) {
-            Integer ii = i;
-
-            if ((!blockDocumentHeaders.contains(ii))
-                    && (!blockReferences.contains(ii))) {
-                if ((!blockHeaders.contains(ii))
-                        && (!blockFooters.contains(ii))
-                        && (!blockFigures.contains(ii))
-                        && (!blockTables.contains(ii))) {
-                    String localText = block.getText();
-                    if (localText != null) {
-                        localText = localText.trim();
-                        // String originalLocalText = localText;
-                        localText = TextUtilities.dehyphenize(localText);
-                        localText = localText.replace("\n", " ");
-                        localText = localText.replace("\t", " ");
-                        localText = localText.replace("  ", " ");
-                        localText = localText.trim();
-
-                        if (localText.length() == 0) {
-                            i++;
-                            continue;
-                        }
-
-                        // section
-                        if (blockSectionTitles.contains(ii)) {
-                            // dehyphenization of section titles
-                            localText = TextUtilities
-                                    .dehyphenizeHard(localText);
-                            accumulated.append(localText).append("\n");
-                        } else if (blockHeadFigures.contains(ii)) {
-                            int innd = localText.indexOf("@IMAGE");
-                            if (innd == -1) {
-                                accumulated.append(localText).append("\n");
-                            }
-                        } else if (blockHeadTables.contains(ii)) {
-                            accumulated.append(localText).append("\n");
-                        } else if (localText.startsWith("@BULLET")) {
-                            localText = localText.replace("@BULLET", " • ");
-                            accumulated.append(localText).append("\n");
-                        } else {
-                            if ((!localText.startsWith("@IMAGE"))
-                                    && (!localText.startsWith("@PAGE")))
-                                accumulated.append(localText).append("\n");
-                        }
-                    }
-                }
-            }
-            i++;
-        }
-
-        for (BibDataSet bib : bds) {
-            BiblioItem bit = bib.getResBib();
-
-            if (bit.getTitle() != null) {
-                accumulated.append(bit.getTitle()).append("\n");
-            }
-
-            if (withBookTitle) {
-                if (bit.getJournal() != null) {
-                    accumulated.append(bit.getJournal()).append("\n");
-                }
-
-                if (bit.getBookTitle() != null) {
-                    accumulated.append(bit.getBookTitle()).append("\n");
-                }
-            }
-        }
-
-        return accumulated.toString();
-    }*/
-
-    /**
-     * Get the introduction, i.e. first section after header until next section
-     * title
-     */
-    /*public String getIntroduction(Engine engine) throws Exception {
-        StringBuilder introduction = new StringBuilder();
-
-        int i = 0;
-        int add = 0;
-        for (Block block : blocks) {
-            Integer ii = i;
-
-            if (!blockDocumentHeaders.contains(ii)) {
-                String localText = block.getText();
-                if (localText != null) {
-                    localText = localText.trim();
-                    localText = TextUtilities.dehyphenize(localText);
-                    localText = localText.replace("\n", " ");
-                    localText = localText.replace("\t", " ");
-                    localText = localText.replace("  ", " ");
-                    localText = localText.trim();
-
-                    if (localText.length() == 0) {
-                        i++;
-                        continue;
-                    }
-
-                    if (localText
-                            .startsWith("Permission to make digital or hard copies")) {
-                        i++;
-                        continue;
-                    }
-
-                    if ((blockSectionTitles.contains(ii)) && (add > 0)) {
-                        return introduction.toString();
-                    } else if (blockSectionTitles.contains(ii))
-                        add++;
-                    else {
-                        if ((!localText.startsWith("@IMAGE"))
-                                && (!localText.startsWith("@PAGE"))) {
-                            localText = localText.replace("@BULLET", " • ");
-                            introduction.append(localText).append("\n");
-                        }
-                    }
-                }
-            }
-            i++;
-        }
-
-        return introduction.toString();
-    }*/
-
-    /**
-     * Get the conclusion, i.e. section before the references or the
-     * acknowlegement
-     */
-    /*public String getConclusion(Engine engine) throws Exception {
-        String conclusion = "";
-        int add = 0;
-        for (int i = beginReferences - 1; i > 0; i--) {
-            Integer ii = i;
-            Block block = blocks.get(i);
-
-            if ((!blockDocumentHeaders.contains(ii))
-                    && (!blockReferences.contains(ii))
-                    && (!blockHeaders.contains(ii))
-                    && (!blockFooters.contains(ii))
-                    && (!blockFigures.contains(ii))
-                    && (!blockTables.contains(ii))) {
-
-                String localText = block.getText();
-                if (localText != null) {
-                    localText = localText.trim();
-                    localText = TextUtilities.dehyphenize(localText);
-                    localText = localText.replace("\n", " ");
-                    localText = localText.replace("\t", " ");
-                    localText = localText.replace("  ", " ");
-                    localText = localText.trim();
-
-                    if (localText.length() == 0) {
-                        continue;
-                    }
-
-                    if (localText.startsWith("Permission to make digital or hard copies")) {
-                        continue;
-                    }
-
-                    if (blockSectionTitles.contains(ii))
-                        return conclusion;
-                    else {
-                        if ((!localText.startsWith("@IMAGE"))
-                                && (!localText.startsWith("@PAGE"))) {
-                            localText = localText.replace("@BULLET", " • ");
-                            conclusion = localText + "\n" + conclusion;
-                            add++;
-                        }
-                    }
-
-                    if (add == 5)
-                        return conclusion;
-                }
-            }
-        }
-
-        return conclusion;
-    }*/
-
-    /**
-     * Get all section titles
-     */
-    /*public String getSectionTitles() throws Exception {
-        StringBuilder titles = new StringBuilder();
-
-        int i = 0;
-        for (Block block : blocks) {
-            Integer ii = i;
-
-            if (blockSectionTitles.contains(ii)) {
-                String localText = block.getText();
-                if (localText != null) {
-                    localText = localText.trim();
-                    localText = TextUtilities.dehyphenize(localText);
-                    localText = localText.replace("\n", " ");
-                    localText = localText.replace("\t", " ");
-                    localText = localText.replace("  ", " ");
-                    localText = localText.trim();
-
-                    if (localText.length() == 0) {
-                        i++;
-                        continue;
-                    }
-
-                    if (localText.startsWith("Permission to make digital or hard copies")) {
-                        i++;
-                        continue;
-                    }
-
-                    localText = TextUtilities.dehyphenizeHard(localText);
-                    titles.append(localText).append("\n");
-                }
-            }
-            i++;
-        }
-
-        return titles.toString();
-    }*/
-
-    /*public String getReferences() {
-        throw new IllegalStateException("Please use segmentation model for getting references");
-    }*/
-
-	// the magic DOI regular expression...
-    static public final Pattern DOIPattern = Pattern
-            .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
 
     /*
      * Try to match a DOI in the first page, independently from any preliminar
@@ -1514,5 +1308,72 @@ public class Document {
         catch(Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void produceStatistics() {
+        // document lenght in characters
+        // we calculate current document length and intialize the body tokenization structure
+        for (Block block : blocks) {
+            List<LayoutToken> tokens = block.getTokens();
+            if (tokens == null)
+                continue;
+            documentLenghtChar += tokens.size();
+        }
+
+        // block spacing
+        maxBlockSpacing = 0.0;
+        minBlockSpacing = 10000.0;
+        Double previousBlockBottom = 0.0;
+        for (Page page : pages) {
+            int pageLength = 0;
+            if ( (page.getBlocks() != null) && (page.getBlocks().size() > 0) ) {
+                for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
+                    Block block = page.getBlocks().get(blockIndex);
+                    if ( (blockIndex != 0) && (previousBlockBottom > 0.0)) {
+                        double spacing = block.y - previousBlockBottom;
+                        if ( (spacing > 0.0) && (spacing < page.height) ) {
+                            if (spacing > maxBlockSpacing)
+                                maxBlockSpacing = spacing;
+                            else if (spacing < minBlockSpacing)
+                                minBlockSpacing = spacing;
+                        }
+                    }
+                    previousBlockBottom = block.y + block.height;
+                    if (block.getTokens() != null)
+                       pageLength += block.getTokens().size();
+                }
+            }
+            page.setPageLengthChar(pageLength);
+        }
+
+        // character density is given by the number of characters in the block divided by the block's surface
+        maxCharacterDensity = 0.0;
+        minCharacterDensity = 1000000.0;
+        for(Block block : blocks) {
+            if ( (block.height == 0.0) || (block.width == 0.0))
+                continue;
+            String text = block.getText();
+            if ( (text != null) && (!text.contains("@PAGE")) && (!text.contains("@IMAGE")) ) {
+                double surface = block.width * block.height;
+                
+                /*System.out.println("block.width: " + block.width);
+                System.out.println("block.height: " + block.height);
+                System.out.println("surface: " + surface);
+                System.out.println("text length: " + text.length());
+                System.out.println("text: " + text + "\n");*/
+
+                double density = ((double) text.length()) / surface;
+                if (density < minCharacterDensity)
+                    minCharacterDensity = density;
+                if (density > maxCharacterDensity)
+                    maxCharacterDensity = density;
+            }
+        }
+
+        /*System.out.println("documentLenghtChar: " + documentLenghtChar);
+        System.out.println("maxBlockSpacing: " + maxBlockSpacing);
+        System.out.println("minBlockSpacing: " + minBlockSpacing);
+        System.out.println("maxCharacterDensity: " + maxCharacterDensity);
+        System.out.println("minCharacterDensity: " + minCharacterDensity);*/
     }
 }
