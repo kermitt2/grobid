@@ -179,6 +179,14 @@
 		            </rng:optional>
 		          </content>
 		        </elementSpec>
+
+		        <classSpec ident="att.global" type="atts" mode="change" module="tei">
+		        	<attList>
+		        		<attDef ident="coords" mode="change">
+		        			<desc>Coordinates of the logical element in the original PDF document. The logical element is described as a list of bounding boxes, each one being defined by a page number, X and Y pixel coordinates in the PDF page (as a convention from the top left point of the page), height and width of the bounding box. Each bounding box is separated by a semi-colon (;) and each coordinate elements by a coma (,).</desc><desc>Coordinates of the logical element in the original PDF document. The logical element is described as a list of bounding boxes, each one being defined by a page number, X and Y coordinates in the PDF page in millimeters (as a convention from the top left point of the page), height and width of the bounding box in millimeters. Each bounding box is separated by a semi-colon (;) and each coordinate elements by a coma (,).</desc>
+		        		</attDef>
+		        	</attList>
+				</classSpec>
 				
 				<!-- removing elements not used in Grobid results -->
 				<elementSpec ident="ab" mode="delete" module="linking"/>

@@ -222,7 +222,7 @@ public class FeaturesVectorChemicalEntity {
                 featuresVector.punctType = "NOPUNCT";
 
             featuresVector.relativeDocumentPosition =
-                    featureFactory.relativeLocation(position, totalLength, nbBins);
+                    featureFactory.linearScaling(position, totalLength, nbBins);
 
             if (isChemicalToken) {
                 featuresVector.isKnownChemicalToken = true;

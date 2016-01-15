@@ -48,11 +48,8 @@ public class FeaturesVectorSegmentation {
     public boolean repetitivePattern = false; // if true, the textual pattern is repeated at the same position on other pages
     public boolean firstRepetitivePattern = false; // if true, this is a repetitive textual pattern and this is its first occurrence in the doc
     
-    public int spacingWithPreviousBlock = -1; // discretized 
-    public int spacingWithNextBlock = -1; // discretized 
-
-    public int characterDensityPreviousBlock = -1; // discretized 
-    public int characterDensityNextBlock = -1; // discretized 
+    public int spacingWithPreviousBlock = 0; // discretized 
+    public int characterDensity = 0; // discretized 
 
     public String printVector() {
         if (string == null) return null;
@@ -211,10 +208,10 @@ public class FeaturesVectorSegmentation {
         res.append(" " + relativeDocumentPosition);
 
         // relative page position coordinate (1)
-        res.append(" " + relativePagePosition);
+        //res.append(" " + relativePagePosition);
 		
         // relative page position characters (1)
-        //res.append(" " + relativePagePositionChar);
+        res.append(" " + relativePagePositionChar);
 		
 		// punctuation profile
 		if ( (punctuationProfile == null) || (punctuationProfile.length() == 0) ) {
@@ -247,6 +244,19 @@ public class FeaturesVectorSegmentation {
             res.append(" 1");
         else
             res.append(" 0");
+
+        if (firstRepetitivePattern)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
+        // space with previous block, discretised (1)
+        res.append(" " + spacingWithPreviousBlock);
+        //res.append(" " + 0);
+
+        // character density of the previous block, discretised (1)
+        //res.append(" " + characterDensity);
+        //res.append(" " + 0);
 
         // label - for training data (1)
         /*if (label != null)

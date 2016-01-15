@@ -309,22 +309,47 @@ public class FeatureFactory {
     }
 
     /**
-     * Give the relative position base on charcater or token numbers discretized into nbBins
+     * Given an integer value between 0 and total, discretized into nbBins following a linear scale
      */
-    public static int relativeLocation(int pos, int total, int nbBins) {
+    public static int linearScaling(int pos, int total, int nbBins) {
+        if (pos >= total)
+            return nbBins;
+        if (pos <= 0)
+            return 0;
         float rel = (float) pos / total;
-        float rel2 = (rel * nbBins) + 1;
+        float rel2 = (rel * nbBins);// + 1;
         return ((int) rel2);
     }
 	
     /**
-     * Give the relative position based on layout coordinates discretized into nbBins
+     * Given an double value between 0.0 and total, discretized into nbBins following a linear scale
      */
-    public static int relativeLocation(double pos, double total, int nbBins) {
+    public static int linearScaling(double pos, double total, int nbBins) {
+        if (pos >= total)
+            return nbBins;
+        if (pos <= 0)
+            return 0;
         double rel = pos / total;
-        double rel2 = (rel * nbBins) + 1;
+        double rel2 = (rel * nbBins);// + 1;
         return ((int) rel2);
     }
+
+    /**
+     * Given an double value between 0.0 and total, discretized into nbBins following a log scale
+     */
+    public static int logScaling(double pos, double total, int nbBins) {
+//System.out.println("total: " + total + " / pos: " + pos);         
+        if (pos >= total)
+            return nbBins;
+        if (pos <= 0)
+            return 0;
+        double max = Math.log(total+1);
+        double val = Math.log(pos+1);
+//System.out.println("max: " + max + " / val: " + val);        
+        double rel = val / max;
+        double rel2 = (rel * nbBins);
+        return ((int) rel2);
+    }    
 
     /**
      *  Transform a text in a text pattern where punctuations are ignored, number shadowed and

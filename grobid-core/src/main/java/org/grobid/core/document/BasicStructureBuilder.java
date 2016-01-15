@@ -196,7 +196,7 @@ public class BasicStructureBuilder {
 	 * 
      * @param doc a document
      */
-    static public void firstPass(Document doc) {
+    /*static public void firstPass(Document doc) {
         if (doc == null) {
             throw new NullPointerException();
         }
@@ -634,7 +634,7 @@ public class BasicStructureBuilder {
             doc.setBlockHeadFigures(blockHeadFigures);
             doc.setBlockDocumentHeaders(blockDocumentHeaders);
         }
-    }
+    }*/
 
     /**
      * Cluster the blocks following the font, style and size aspects

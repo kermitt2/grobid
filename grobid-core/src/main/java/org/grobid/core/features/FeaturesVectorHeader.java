@@ -103,6 +103,8 @@ public class FeaturesVectorHeader {
         else
             res.append(" " + string.charAt(string.length() - 1));
 
+        // 10 first features written at this stage
+
         // block information (1)
         res.append(" " + blockStatus);
         //res.append(" 0");
@@ -153,6 +155,8 @@ public class FeaturesVectorHeader {
         else
             res.append(" 0");
 
+        // 20 first features written at this stage
+
         // lexical information (9)
         if (properName)
             res.append(" 1");
@@ -201,6 +205,8 @@ public class FeaturesVectorHeader {
 
         // punctuation information (2)
         res.append(" " + punctType); // in case the token is a punctuation (NO otherwise)
+
+        // 30 features written at this point
 
         if (containPunct)
             res.append(" 1");

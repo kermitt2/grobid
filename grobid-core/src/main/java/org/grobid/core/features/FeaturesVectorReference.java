@@ -296,7 +296,7 @@ public class FeaturesVectorReference {
                 featuresVector.isKindCode = true;
 
             featuresVector.relativeDocumentPosition =
-                    featureFactory.relativeLocation(position, totalLength, nbBins);
+                    featureFactory.linearScaling(position, totalLength, nbBins);
 
             if (isJournalToken) {
                 featuresVector.isKnownJournalTitle = true;

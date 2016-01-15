@@ -66,11 +66,16 @@ public class Segmentation extends AbstractParser {
     private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
     // default bins for relative position
-    private static final int NBBINS = 12;
+    private static final int NBBINS_POSITION = 12;
+
+    // default bins for inter-block spacing
+    private static final int NBBINS_SPACE = 5;
+
+    // default bins for block character density
+    private static final int NBBINS_DENSITY = 5;
 
     // projection scale for line length
     private static final int LINESCALE = 10;
-
 
     /**
      * TODO some documentation...
@@ -78,30 +83,6 @@ public class Segmentation extends AbstractParser {
     public Segmentation() {
         super(GrobidModels.SEGMENTATION);
     }
-
-    /**
-     * Segment a PDF document into high level zones: cover page, document header,
-     * page footer, page header, body, page numbers, biblio section and annexes.
-     *
-     * @param input filename of pdf file
-     * @return Document object with segmentation informations
-     */
-//    public Document processing(File input) {
-//        return processing(input, null);
-//    }
-
-    /**
-     * Segment a PDF document into high level zones: cover page, document header,
-     * page footer, page header, body, page numbers, biblio section and annexes.
-     *
-     * @param input     filename of pdf file
-     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and
-     *                  saved under the indicated repository path
-     * @return Document object with segmentation informations
-     */
-//    public Document processing(String input, String assetPath) {
-//        return processing(input, assetPath, -1, -1);
-//    }
 
     /**
      * Segment a PDF document into high level zones: cover page, document header,
@@ -140,6 +121,7 @@ public class Segmentation extends AbstractParser {
 //        + " [ x:" + block.x + ", y:" + block.y + ", width:" + block.width + ", height:" + block.height + "]\n\n");
 //}
 
+            doc.produceStatistics();
             String content = //getAllTextFeatured(doc, headerMode);
                     getAllLinesFeatured(doc);
             if ((content != null) && (content.trim().length() > 0)) {
@@ -261,25 +243,18 @@ public class Segmentation extends AbstractParser {
         // vector for features
         FeaturesVectorSegmentation features;
         FeaturesVectorSegmentation previousFeatures = null;
-        boolean endblock;
-        boolean endPage = true;
+        //boolean endblock = false;
+        //boolean endPage = true;
         boolean newPage = true;
         boolean start = true;
         int mm = 0; // page position
         int nn = 0; // document position
-        int documentLength = 0;
         int pageLength = 0; // length of the current page
 
         List<LayoutToken> tokenizationsBody = new ArrayList<LayoutToken>();
         List<LayoutToken> tokenizations = doc.getTokenizations();
 
-        // we calculate current document length and intialize the body tokenization structure
-        for (Block block : blocks) {
-            List<LayoutToken> tokens = block.getTokens();
-            if (tokens == null)
-                continue;
-            documentLength += tokens.size();
-        }
+        int documentLength = doc.getDocumentLenghtChar();
 
 		double pageHeight = 0.0;
         boolean graphicVector = false;
@@ -288,6 +263,7 @@ public class Segmentation extends AbstractParser {
         // list of textual patterns at the head and foot of pages which can be re-occur on several pages
         // (typically indicating a publisher foot or head notes)
         Map<String, Integer> patterns = new TreeMap<String, Integer>();
+        Map<String, Boolean> firstTimePattern = new TreeMap<String, Boolean>();
         for(Page page : pages) {
             pageHeight = page.height;
             // we just look at the two first and last blocks of the page
@@ -303,8 +279,10 @@ public class Segmentation extends AbstractParser {
                                 String pattern = FeatureFactory.getPattern(line);
                                 if (pattern.length() > 8) {
                                     Integer nb = patterns.get(pattern);
-                                    if (nb == null)
+                                    if (nb == null) {
                                         patterns.put(pattern, new Integer(1));
+                                        firstTimePattern.put(pattern, false);
+                                    }
                                     else
                                         patterns.put(pattern, new Integer(nb+1));
                                 }
@@ -318,19 +296,36 @@ public class Segmentation extends AbstractParser {
         for(Page page : pages) {
             pageHeight = page.height;
             newPage = true;
+            double spacingPreviousBlock = 0.0; // discretized
+            double lowestPos = 0.0;
+            pageLength = page.getPageLengthChar();
+
+            newPage = true;
+            mm = 0;
+            //endPage = true;
+            
             for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
-            //for(Block block : page.getBlocks()) {
                 Block block = page.getBlocks().get(blockIndex);
-                if (start) {
+                /*if (start) {
                     newPage = true;
                     start = false;
+                }*/
+                boolean lastPageBlock = false;
+                boolean firstPageBlock = false;
+                if (blockIndex == page.getBlocks().size()-1) {        
+                    lastPageBlock = true;
                 }
-                endblock = false;
+                    
+                if (blockIndex == 0) {
+                    firstPageBlock = true;
+                }
+                
+                //endblock = false;
 
-                if (endPage) {
+                /*if (endPage) {
                     newPage = true;
                     mm = 0;
-                }
+                }*/
 
                 // check if we have a graphical object connected to the current block
                 List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
@@ -343,16 +338,23 @@ public class Segmentation extends AbstractParser {
                     }
                 }
 
-                String localText = block.getText();
-                if (localText != null) {
-                    if (localText.contains("@PAGE")) {
-                        mm = 0;
-                        endPage = true;
-                        newPage = false;
-                    } else {
-                        endPage = false;
-                    }
+                if (lowestPos >  block.getY()) {
+                    // we have a vertical shift, which can be due to a change of column or other particular layout formatting 
+                    spacingPreviousBlock = doc.getMaxBlockSpacing() / 5.0; // default
                 }
+                else 
+                    spacingPreviousBlock = block.getY() - lowestPos;
+
+                String localText = block.getText();
+                if (localText == null)
+                    continue;
+
+                // character density of the block
+                double density = 0.0;
+                if ( (block.getHeight() != 0.0) && (block.getWidth() != 0.0) && 
+                     (block.getText() != null) && (!block.getText().contains("@PAGE")) && 
+                     (!block.getText().contains("@IMAGE")) )
+                    density = (double)block.getText().length() / (block.getHeight() * block.getWidth());
 
                 String[] lines = localText.split("[\\n\\r]");
     			// set the max length of the lines in the block, in number of characters
@@ -362,19 +364,20 @@ public class Segmentation extends AbstractParser {
     					maxLineLength = lines[p].length();
     			}
                 List<LayoutToken> tokens = block.getTokens();
+                if ((tokens == null) || (tokens.size() == 0)) {
+                    continue;
+                }
                 for (int li = 0; li < lines.length; li++) {
                     String line = lines[li];
-                    boolean firstPageBlock = false;
+                    /*boolean firstPageBlock = false;
                     boolean lastPageBlock = false;
 
                     if (newPage)
                         firstPageBlock = true;
                     if (endPage)
                         lastPageBlock = true;
-
-                    if ((tokens == null) || (tokens.size() == 0)) {
-                        continue;
-                    }
+                    */
+                    
                     // for the layout information of the block, we take simply the first layout token
     				LayoutToken token = null;
     				if (tokens.size() > 0)
@@ -391,6 +394,12 @@ public class Segmentation extends AbstractParser {
                         Integer nb = patterns.get(pattern);
                         if ((nb != null) && (nb > 1)) {
                             features.repetitivePattern = true;
+
+                            Boolean firstTimeDone = firstTimePattern.get(pattern);
+                            if ((firstTimeDone != null) && !firstTimeDone) {
+                                features.firstRepetitivePattern = true;
+                                firstTimePattern.put(pattern, true);
+                            }
                         }
                     }
 
@@ -419,7 +428,7 @@ public class Segmentation extends AbstractParser {
                     features.lastPageBlock = lastPageBlock;
                     //features.lineLength = line.length() / LINESCALE;
                     features.lineLength = featureFactory
-                            .relativeLocation(line.length(), maxLineLength, LINESCALE);
+                            .linearScaling(line.length(), maxLineLength, LINESCALE);
     				
                     features.punctuationProfile = TextUtilities.punctuationProfile(line);
 
@@ -438,7 +447,7 @@ public class Segmentation extends AbstractParser {
                         features.blockStatus = "BLOCKSTART";
                     } else if (li == lines.length - 1) {
                         features.blockStatus = "BLOCKEND";
-                        endblock = true;
+                        //endblock = true;
                     } else if (features.blockStatus == null) {
                         features.blockStatus = "BLOCKIN";
                     }
@@ -446,13 +455,13 @@ public class Segmentation extends AbstractParser {
                     if (newPage) {
                         features.pageStatus = "PAGESTART";
                         newPage = false;
-                        endPage = false;
+                        //endPage = false;
                         if (previousFeatures != null)
                             previousFeatures.pageStatus = "PAGEEND";
                     } else {
                         features.pageStatus = "PAGEIN";
                         newPage = false;
-                        endPage = false;
+                        //endPage = false;
                     }
 
                     if (text.length() == 1) {
@@ -547,16 +556,29 @@ public class Segmentation extends AbstractParser {
                     //    features.punctType = "NOPUNCT";
 
                     features.relativeDocumentPosition = featureFactory
-                            .relativeLocation(nn, documentLength, NBBINS);
-                    //features.relativePagePositionChar = featureFactory
-                    //        .relativeLocation(mm, pageLength, NBBINS);
-    				
+                            .linearScaling(nn, documentLength, NBBINS_POSITION);
+//System.out.println(nn + " " + documentLength + " " + NBBINS_POSITION + " " + features.relativeDocumentPosition); 
+                    features.relativePagePositionChar = featureFactory
+                            .linearScaling(mm, pageLength, NBBINS_POSITION); 
+//System.out.println(mm + " " + pageLength + " " + NBBINS_POSITION + " " + features.relativePagePositionChar);                     			
     				int pagePos = featureFactory
-                            .relativeLocation(coordinateLineY, pageHeight, NBBINS);
-    				if (pagePos > NBBINS)
-    					pagePos = NBBINS;
+                            .linearScaling(coordinateLineY, pageHeight, NBBINS_POSITION);
+//System.out.println(coordinateLineY + " " + pageHeight + " " + NBBINS_POSITION + " " + pagePos);  
+    				if (pagePos > NBBINS_POSITION)
+    					pagePos = NBBINS_POSITION;
                     features.relativePagePosition = pagePos;
-    //System.out.println(coordinateLineY + "\t" + pageHeight);
+//System.out.println(coordinateLineY + "\t" + pageHeight);
+
+                    if (spacingPreviousBlock != 0.0) {
+                        features.spacingWithPreviousBlock = featureFactory
+                            .linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE);                          
+                    }
+
+                    if (density != -1.0) {
+                        features.characterDensity = featureFactory
+                            .linearScaling(density-doc.getMinCharacterDensity(), doc.getMaxCharacterDensity()-doc.getMinCharacterDensity(), NBBINS_DENSITY);
+//System.out.println((density-doc.getMinCharacterDensity()) + " " + (doc.getMaxCharacterDensity()-doc.getMinCharacterDensity()) + " " + NBBINS_DENSITY + " " + features.characterDensity);             
+                    }
 
                     if (previousFeatures != null) {
                         String vector = previousFeatures.printVector();
@@ -564,6 +586,12 @@ public class Segmentation extends AbstractParser {
                     }
                     previousFeatures = features;
                 }
+
+//System.out.println((spacingPreviousBlock-doc.getMinBlockSpacing()) + " " + (doc.getMaxBlockSpacing()-doc.getMinBlockSpacing()) + " " + NBBINS_SPACE + " " 
+//    + featureFactory.linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE));    
+
+                // lowest position of the block
+                lowestPos = block.getY() + block.getHeight();
 
                 // update page-level and document-level positions
                 if (tokens != null) {
@@ -604,6 +632,7 @@ public class Segmentation extends AbstractParser {
             if (doc.getBlocks() == null) {
                 throw new Exception("PDF parsing resulted in empty content");
             }
+            doc.produceStatistics();
 
             String fulltext = //getAllTextFeatured(doc, false);
                     getAllLinesFeatured(doc);

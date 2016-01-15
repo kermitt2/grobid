@@ -36,7 +36,7 @@ public class Block {
     // the page in the document where the block is located
     private Page page = null;
 
-    public enum Type {BULLET, TABLE, REFERENCE}
+    public enum Type {DEFAULT, BULLET, FIGURE, TABLE, REFERENCE}
 
     private Type type;
 
@@ -75,7 +75,18 @@ public class Block {
     }
 
     public String getText() {
-        return text;
+        if (text.trim().startsWith("@"))
+            return text.trim();
+        else if (tokens == null) {
+            return null;
+        }
+        else {
+            StringBuilder localText = new StringBuilder();
+            for(LayoutToken token : tokens) {
+                localText.append(token.getText());
+            }
+            return localText.toString();
+        }
     }
 
     public int getNbTokens() {
@@ -123,7 +134,7 @@ public class Block {
     }
 
     public void setX(double d) {
-        x = d;
+        x = Math.abs(d);
     }
 
     public double getX() {
@@ -131,7 +142,7 @@ public class Block {
     }
 
     public void setY(double d) {
-        y = d;
+        y = Math.abs(d);
     }
 
     public double getY() {
@@ -139,7 +150,7 @@ public class Block {
     }
 
     public void setHeight(double d) {
-        height = d;
+        height = Math.abs(d);
     }
 
     public double getHeight() {
@@ -147,7 +158,7 @@ public class Block {
     }
 
     public void setWidth(double d) {
-        width = d;
+        width = Math.abs(d);
     }
 
     public double getWidth() {

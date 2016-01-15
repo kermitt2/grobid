@@ -618,6 +618,7 @@ public class TextUtilities {
             return null;
         if (string.length() == 0)
             return string;
+        string = string.replace("@BULLET", "•");
         StringBuffer sb = new StringBuffer(string.length());
         // true if last char was blank
         boolean lastWasBlankChar = false;
@@ -1211,16 +1212,14 @@ public class TextUtilities {
 	
     public static boolean filterLine(String line) {
         boolean filter = false;
-        if (line.contains("@IMAGE")) {
+		if ( (line == null) || (line.length() == 0) )
+			filter = true;
+        else if (line.contains("@IMAGE") || line.contains("@PAGE")) {
             filter = true;
-        } else if (line.contains(".pbm")) {
-            filter = true;
-        } else if (line.contains(".ppm")) {
-            filter = true;
-        } else if (line.contains(".vec")) {
-            filter = true;
-        } else if (line.contains(".jpg")) {
-            filter = true;
+        } else if (line.contains(".pbm") || line.contains(".ppm") || 
+				   line.contains(".vec") || line.contains(".jpg") ||
+				   line.contains(".png")) {
+		    filter = true;
         }
         return filter;
     }

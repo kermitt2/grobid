@@ -535,15 +535,23 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 										}
 
 										removeLastCharacterIfPresent(previousTok);
-									}
-
-									if (updatedChar != null) {
+									//}
+									//if (updatedChar != null) {
 										blabla.append(updatedChar);
 										previousTok.setText(previousTok.getText()
 												+ updatedChar);
 
 										LayoutToken localTok = new LayoutToken(previousTok.getText());
 										localTok.setPage(currentPage);
+										localTok.setX(previousTok.getX());
+										localTok.setY(previousTok.getY());
+										localTok.setHeight(previousTok.getHeight());
+										localTok.setWidth(previousTok.getWidth()); 
+										localTok.setFontSize(previousTok.getFontSize());
+										localTok.setColorFont(previousTok.getColorFont());
+										localTok.setItalic(previousTok.getItalic());
+										localTok.setBold(previousTok.getBold());
+										localTok.setRotation(previousTok.getRotation());
 										addToken(localTok);
 
 //										addToken(previousTok);
@@ -568,6 +576,17 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 										//System.out.println("add token layout: " + previousTok.getText());
 										LayoutToken localTok = new LayoutToken(previousTok.getText());
 										localTok.setPage(currentPage);
+										localTok.setX(previousTok.getX());
+										localTok.setY(previousTok.getY());
+										localTok.setHeight(previousTok.getHeight());
+										// the new token based on the concatenation of the previous token and 
+										// the updated diaresis character
+										localTok.setWidth(previousTok.getWidth());
+										localTok.setFontSize(previousTok.getFontSize());
+										localTok.setColorFont(previousTok.getColorFont());
+										localTok.setItalic(previousTok.getItalic());
+										localTok.setBold(previousTok.getBold());
+										localTok.setRotation(previousTok.getRotation());
 										substituteLastToken(localTok);
 										//System.out.println("replaced by tokenizations: " + previousTok.getText());
 									}
@@ -859,10 +878,10 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 				if ((name != null) && (value != null)) {
 					if (name.equals("width")) {
 						double width = Double.parseDouble(value);
-						page.width = width;
+						page.setWidth(width);
 					} else if (name.equals("height")) {
 						double height = Double.parseDouble(value);
-						page.height = height;
+						page.setHeight(height);
 					}
 				}
 			}
@@ -892,27 +911,27 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 					} else if (name.equals("x")) {
 						double x = Double.parseDouble(value);
 						if (x != currentX) {
-							currentX = x;
+							currentX = Math.abs(x);
 						}
-						image.x = x;
+						image.setX(x);
 					} else if (name.equals("y")) {
 						double y = Double.parseDouble(value);
 						if (y != currentY) {
-							currentY = y;
+							currentY = Math.abs(y);
 						}
-						image.y = y;
+						image.setY(y);
 					} else if (name.equals("width")) {
 						double width = Double.parseDouble(value);
 						if (width != currentWidth) {
-							currentWidth = width;
+							currentWidth = Math.abs(width);
 						}
-						image.width = width;
+						image.setWidth(width);
 					} else if (name.equals("height")) {
 						double height = Double.parseDouble(value);
 						if (height != currentHeight) {
-							currentHeight = height;
+							currentHeight = Math.abs(height);
 						}
-						image.height = height;
+						image.setHeight(height);
 					}
 				}
 			}
@@ -984,12 +1003,12 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 					} else if (name.equals("x")) {
 						double x = Double.parseDouble(value);
 						if (x != currentX) {
-							currentX = x;
+							currentX = Math.abs(x);
 						}
 					} else if (name.equals("y")) {
 						double y = Double.parseDouble(value);
 						if (y != currentY) {
-							currentY = y;
+							currentY = Math.abs(y);
 						}
 					} else if (name.equals("base")) {
 						double base = Double.parseDouble(value);
@@ -997,12 +1016,12 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 					} else if (name.equals("width")) {
 						double width = Double.parseDouble(value);
 						if (width != currentWidth) {
-							currentWidth = width;
+							currentWidth = Math.abs(width);
 						}
 					} else if (name.equals("height")) {
 						double height = Double.parseDouble(value);
 						if (height != currentHeight) {
-							currentHeight = height;
+							currentHeight = Math.abs(height);
 						}
 					}
 				}
