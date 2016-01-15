@@ -338,14 +338,14 @@ public class FeatureFactory {
      * Given an double value between 0.0 and total, discretized into nbBins following a log scale
      */
     public static int logScaling(double pos, double total, int nbBins) {
-System.out.println("total: " + total + " / pos: " + pos);         
+//System.out.println("total: " + total + " / pos: " + pos);         
         if (pos >= total)
             return nbBins;
         if (pos <= 0)
             return 0;
         double max = Math.log(total+1);
         double val = Math.log(pos+1);
-System.out.println("max: " + max + " / val: " + val);        
+//System.out.println("max: " + max + " / val: " + val);        
         double rel = val / max;
         double rel2 = (rel * nbBins);
         return ((int) rel2);
