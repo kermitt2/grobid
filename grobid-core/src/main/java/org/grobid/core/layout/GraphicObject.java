@@ -104,19 +104,19 @@ public class GraphicObject {
     }
 
     public void setX(double x1) {
-        this.x = x1;
+        this.x = Math.abs(x1);
     }
 
     public void setY(double y1) {
-        this.y = y1;
+        this.y = Math.abs(y1);
     }
 
     public void setWidth(double x2) {
-        this.width = x2;
+        this.width = Math.abs(x2);
     }
 
     public void setHeight(double y2) {
-        this.height = y2;
+        this.height = Math.abs(y2);
     }
 
     public int getPage() {

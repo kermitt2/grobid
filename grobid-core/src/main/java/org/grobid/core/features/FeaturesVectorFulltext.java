@@ -37,6 +37,9 @@ public class FeaturesVectorFulltext {
     public int closestGraphicHeight = -1; 
     public int closestGraphicWidth = -1; 
     public int closestGraphicSurface = -1; 
+	
+    public int spacingWithPreviousBlock = 0; // discretized 
+    public int characterDensity = 0; // discretized
 
     public String printVector() {
         if (string == null) return null;
@@ -97,6 +100,8 @@ public class FeaturesVectorFulltext {
         else
             res.append(" " + string.charAt(string.length() - 1));
 
+		// at this stage, we have written 10 features
+
         // block information (1)
         res.append(" " + blockStatus);
 
@@ -138,6 +143,8 @@ public class FeaturesVectorFulltext {
         else
             res.append(" 0");
 
+		// at this stage, we have written 20 features
+
         // punctuation information (1)
         res.append(" " + punctType); // in case the token is a punctuation (NO otherwise)
 
@@ -157,6 +164,14 @@ public class FeaturesVectorFulltext {
             res.append(" 1");
         else
             res.append(" 0");
+		
+        // space with previous block, discretised (1)
+        res.append(" " + spacingWithPreviousBlock);
+        //res.append(" " + 0);
+
+        // character density of the previous block, discretised (1)
+        res.append(" " + characterDensity);
+        //res.append(" " + 0);
 
         // label - for training data (1)
         /*if (label != null)

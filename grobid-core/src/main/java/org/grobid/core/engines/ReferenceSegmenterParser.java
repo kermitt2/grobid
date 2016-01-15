@@ -829,10 +829,10 @@ System.out.println("");
                     features.punctType = "NOPUNCT";
 //System.out.println(nn + "\t" + currentLineLength + "\t" + maxLineLength);
                 features.lineLength = featureFactory
-                        .relativeLocation(currentLineLength, maxLineLength, LINESCALE);
+                        .linearScaling(currentLineLength, maxLineLength, LINESCALE);
 
 				features.relativePosition = featureFactory
-                         .relativeLocation(nn, currentLineLength, LINESCALE);
+                         .linearScaling(nn, currentLineLength, LINESCALE);
 
 				features.punctuationProfile = currentLineProfile;
 
