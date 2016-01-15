@@ -54,10 +54,10 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 	private Page page = null; // the current page object
 	private GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance(); 
 
-	public PDF2XMLSaxParser() {
-		blabla = new StringBuffer();
-		tokenizations = new ArrayList<LayoutToken>();
-	}
+//	public PDF2XMLSaxParser() {
+//		blabla = new StringBuffer();
+//		tokenizations = new ArrayList<LayoutToken>();
+//	}
 
 	public PDF2XMLSaxParser(Document d, List<GraphicObject> im) {
 		doc = d;

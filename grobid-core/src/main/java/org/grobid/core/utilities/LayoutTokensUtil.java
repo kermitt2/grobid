@@ -46,6 +46,10 @@ public class LayoutTokensUtil {
         return Joiner.on("").join(Iterables.transform(tokens, TO_TEXT_FUNCTION));
     }
 
+    public static boolean noCoords(LayoutToken t) {
+        return t.getPage() == -1 || t.getWidth() <= 0;
+    }
+
     public static String toTextDehyphenized(List<LayoutToken> tokens) {
 
         PeekingIterator<LayoutToken> it = Iterators.peekingIterator(tokens.iterator());
