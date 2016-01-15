@@ -14,11 +14,13 @@ import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.layout.Block;
+import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.Page;
 import org.grobid.core.layout.Cluster;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.sax.PDF2XMLSaxParser;
+import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
@@ -212,6 +214,15 @@ public class Document {
             SAXParser p = spf.newSAXParser();
             p.parse(in, parser);
             tokenizations = parser.getTokenization();
+            for (Block b : blocks) {
+                BoundingBox box = BoundingBoxCalculator.calculateOneBox(b.getTokens());
+                if (box != null) {
+                    b.setX(box.getX());
+                    b.setY(box.getY());
+                    b.setWidth(box.getWidth());
+                    b.setHeight(box.getHeight());
+                }
+            }
         } catch (Exception e) {
             throw new GrobidException("Cannot parse file: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
         } finally {
@@ -1425,8 +1436,8 @@ public class Document {
         for(GraphicObject image : doc.getImages()) {
             if (block.getPageNumber() != image.getPage()) 
                 continue;
-            if ( ( (Math.abs((image.y+image.height) - block.y) < minDistance) ||
-                   (Math.abs(image.y - (block.y+block.height)) < minDistance) ) //&&
+            if ( ( (Math.abs((image.y+image.height) - block.getY()) < minDistance) ||
+                   (Math.abs(image.y - (block.getY()+block.getHeight())) < minDistance) ) //&&
                  //( (Math.abs((image.x+image.width) - block.x) < minDistance) ||
                  //  (Math.abs(image.x - (block.x+block.width)) < minDistance) )
                  ) {

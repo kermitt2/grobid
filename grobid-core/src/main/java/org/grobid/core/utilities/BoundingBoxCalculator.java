@@ -16,6 +16,26 @@ public class BoundingBoxCalculator {
     private static final double EPS_X = 15;
     private static final double EPS_Y = 4;
 
+    public static BoundingBox calculateOneBox(List<LayoutToken> tokens) {
+        if (tokens == null || tokens.isEmpty()) {
+            return null;
+        }
+
+
+        BoundingBox b = null;
+        for (LayoutToken t : tokens)  {
+            if (LayoutTokensUtil.noCoords(t)) {
+                continue;
+            }
+            if (b == null) {
+                b = BoundingBox.fromLayoutToken(t);
+            } else {
+                b = b.boundBox(BoundingBox.fromLayoutToken(t));
+            }
+        }
+        return b;
+    }
+
     public static List<BoundingBox> calculate(List<LayoutToken> tokens) {
         List<BoundingBox> result = Lists.newArrayList();
         if (tokens != null) {
