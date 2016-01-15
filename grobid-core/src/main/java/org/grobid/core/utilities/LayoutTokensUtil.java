@@ -1,16 +1,28 @@
 package org.grobid.core.utilities;
 
+import com.google.common.base.Function;
+import com.google.common.base.Joiner;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
 import org.grobid.core.layout.LayoutToken;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * Created by zholudev on 18/12/15.
  * Dealing with layout tokens
  */
 public class LayoutTokensUtil {
+
+    public static final Function<LayoutToken, String> TO_TEXT_FUNCTION = new Function<LayoutToken, String>() {
+        @Override
+        public String apply(LayoutToken layoutToken) {
+            return layoutToken.t();
+        }
+    };
 
     public static List<LayoutToken> enrichWithNewLineInfo(List<LayoutToken> toks) {
         PeekingIterator<LayoutToken> tokens = Iterators.peekingIterator(toks.iterator());
@@ -26,7 +38,11 @@ public class LayoutTokensUtil {
         return toks;
     }
 
-    public static String dehyphenize(List<LayoutToken> tokens) {
+    public static String toText(List<LayoutToken> tokens) {
+        return Joiner.on("").join(Iterables.transform(tokens, TO_TEXT_FUNCTION));
+    }
+
+    public static String toTextDehyphenized(List<LayoutToken> tokens) {
 
         PeekingIterator<LayoutToken> it = Iterators.peekingIterator(tokens.iterator());
         StringBuilder sb = new StringBuilder();
@@ -58,6 +74,55 @@ public class LayoutTokensUtil {
     }
 
 
+    public static boolean containsToken(List<LayoutToken> toks, String text) {
+        for (LayoutToken t : toks) {
+            if (text.equals(t.t())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static int tokenPos(List<LayoutToken> toks, String text) {
+        int cnt = 0;
+        for (LayoutToken t : toks) {
+            if (text.equals(t.t())) {
+                return cnt;
+            }
+            cnt++;
+        }
+        return -1;
+    }
+
+//    public static List<List<LayoutToken>> split(List<LayoutToken> toks, Pattern p) {
+//        return split(toks, p, false);
+//    }
+
+    public static List<List<LayoutToken>> split(List<LayoutToken> toks, Pattern p, boolean preserveSeparator) {
+        return split(toks, p, preserveSeparator, true);
+    }
+
+    public static List<List<LayoutToken>> split(List<LayoutToken> toks, Pattern p, boolean preserveSeparator, boolean preserveLeftOvers) {
+        List<List<LayoutToken>> split = new ArrayList<>();
+        List<LayoutToken> curToks = new ArrayList<>();
+        for (LayoutToken tok : toks) {
+            if (p.matcher(tok.t()).matches()) {
+                if (preserveSeparator) {
+                    curToks.add(tok);
+                }
+                split.add(curToks);
+                curToks = new ArrayList<>();
+            } else {
+                curToks.add(tok);
+            }
+        }
+        if (preserveLeftOvers) {
+            if (!curToks.isEmpty()) {
+                split.add(curToks);
+            }
+        }
+        return split;
+    }
 
 
 }
