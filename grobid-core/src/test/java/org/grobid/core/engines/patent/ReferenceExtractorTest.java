@@ -115,7 +115,7 @@ public class ReferenceExtractorTest {
 		LOGGER.info(articles.get(0).getOffsets().toString());
 	}
 
-	@Test
+	//@Test
 	public void extractAllReferencesStringPatents() {
 		ReferenceExtractor extractor = new ReferenceExtractor();
 		List<PatentItem> patents = new ArrayList<PatentItem>();

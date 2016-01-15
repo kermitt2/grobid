@@ -1,10 +1,17 @@
 <h1>Install GROBID</h1>>
 
-##Latest version
+##Getting GROBID
 
+###Latest stable release
+
+The latest stable release of GROBID is version ```0.3.9``` which can be downloaded as follow: 
+```bash
+> wget https://github.com/kermitt2/grobid/releases/download/grobid-parent-0.3.9/grobid-grobid-parent-0.3.9.zip
+> unzip grobid-grobid-parent-0.3.9.zip
+```
 The current working version is ```0.4.0-SNAPSHOT```, which can be downloaded from GitHub and built as follow: 
 
-###Download GROBID from GitHub
+###Current development version
 
 Clone source code from github:
 ```bash
@@ -16,6 +23,8 @@ Or download directly the zip file:
 > wget https://github.com/kermitt2/grobid/zipball/master
 > unzip master
 ```
+
+##Build GROBID
 
 ###Build GROBID with maven
 
@@ -33,7 +42,7 @@ or:
 ```
 
 ###Build GROBID with ant
-
+ 
 It is also possible to build the project with ant. This could be useful for integrating Grobid in an ant project, or when no internet connection is available in a secure development environment, or for people allergic to useless pain. Supported ant targets are `compile`, `clean`, `test` and `package`. So the following should work: 
 ```bash
 > ant package

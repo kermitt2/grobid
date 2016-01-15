@@ -116,7 +116,7 @@ public class CitationTrainer extends AbstractTrainer {
 			for (; n < refFiles.length; n++) {
 				final File teifile = refFiles[n];
 				String name = teifile.getName();
-				//System.out.println(name);
+				System.out.println(name);
 
 				final TEICitationSaxParser parser2 = new TEICitationSaxParser();
 

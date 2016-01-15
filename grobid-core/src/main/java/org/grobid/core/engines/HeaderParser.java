@@ -95,12 +95,13 @@ public class HeaderParser extends AbstractParser {
      */
     public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) {
         String header;
-        if (doc.getBlockDocumentHeaders() == null) {
+        //if (doc.getBlockDocumentHeaders() == null) {
             header = doc.getHeaderFeatured(true, true);
-        } else {
+        /*} else {
             header = doc.getHeaderFeatured(false, true);
-        }
+        }*/
         List<LayoutToken> tokenizations = doc.getTokenizationsHeader();
+//System.out.println(tokenizations.toString());
 
         if ((header != null) && (header.trim().length() > 0)) {
             String res = label(header);
@@ -213,7 +214,8 @@ public class HeaderParser extends AbstractParser {
 
                     if (resHeader.getReference() != null) {
                         BiblioItem refer = parsers.getCitationParser().processing(resHeader.getReference(), false);
-                        BiblioItem.correct(resHeader, refer);
+                        if (refer != null)
+                            BiblioItem.correct(resHeader, refer);
                     }
                 }
 
@@ -538,7 +540,7 @@ public class HeaderParser extends AbstractParser {
                         continue;
                     }
                     //text = text.trim();
-					text = text.replace(" ", "");
+					text = text.replace(" ", "").replace("\t", "").replace("\u00A0","");
                     if (text.length() == 0) {
                         n++;
                         continue;
@@ -557,21 +559,10 @@ public class HeaderParser extends AbstractParser {
                         previousNewline = false;
                     }
 
-                    boolean filter = false;
-                    if (text.startsWith("@IMAGE")) {
-                        filter = true;
-                    } else if (text.contains(".pbm")) {
-                        filter = true;
-                    } else if (text.contains(".vec")) {
-                        filter = true;
-                    } else if (text.contains(".jpg")) {
-                        filter = true;
-                    }
-
-                    if (filter) {
-                        n++;
-                        continue;
-                    }
+					if (TextUtilities.filterLine(text)) {
+	                    n++;
+	                    continue;
+	                }
 
                     features.string = text;
 
@@ -602,15 +593,17 @@ public class HeaderParser extends AbstractParser {
                     }
 
                     if (n == 0) {
+						// beginning of block
                         features.lineStatus = "LINESTART";
                         features.blockStatus = "BLOCKSTART";
                     } else if (n == tokens.size() - 1) {
+						// end of block
                         features.lineStatus = "LINEEND";
                         previousNewline = true;
                         features.blockStatus = "BLOCKEND";
                         endblock = true;
                     } else {
-                        // look ahead...
+                        // look ahead to see if we are at the end of a line within the block
                         boolean endline = false;
 
                         int ii = 1;
@@ -624,9 +617,13 @@ public class HeaderParser extends AbstractParser {
                                         endline = true;
                                         endloop = true;
                                     } else {
-                                        if ((toto.length() != 0)
-                                                && (!(toto.startsWith("@IMAGE")))
+                                        if ((toto.trim().length() != 0)
+												&& (!text.equals("\u00A0"))
+                                                && (!(toto.contains("@IMAGE")))
+												&& (!(toto.contains("@PAGE")))
                                                 && (!text.contains(".pbm"))
+                                                && (!text.contains(".ppm"))
+												&& (!text.contains(".png"))
                                                 && (!text.contains(".vec"))
                                                 && (!text.contains(".jpg"))) {
                                             endloop = true;

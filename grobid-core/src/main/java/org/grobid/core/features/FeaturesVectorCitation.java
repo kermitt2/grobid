@@ -447,7 +447,7 @@ public class FeaturesVectorCitation {
 
             features = new FeaturesVectorCitation();
             features.string = text;
-            features.relativePosition = featureFactory.relativeLocation(mm, sentenceLenth, nbBins);
+            features.relativePosition = featureFactory.linearScaling(mm, sentenceLenth, nbBins);
 
             if (newline) {
                 features.lineStatus = "LINESTART";

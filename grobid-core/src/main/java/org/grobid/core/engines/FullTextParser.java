@@ -59,7 +59,17 @@ public class FullTextParser extends AbstractParser {
 //	private BiblioItem resHeader = null;
 
 	// default bins for relative position
-    private static final int NBBINS = 12;
+	private static final int NBBINS_POSITION = 12;
+
+	// default bins for inter-block spacing
+	private static final int NBBINS_SPACE = 5;
+
+	// default bins for block character density
+	private static final int NBBINS_DENSITY = 5;
+
+	// projection scale for line length
+	private static final int LINESCALE = 10;
+
     private EngineParsers parsers;
 
     /**
@@ -125,8 +135,14 @@ public class FullTextParser extends AbstractParser {
             // header processing
 			BiblioItem resHeader = new BiblioItem();
            	parsers.getHeaderParser().processingHeaderBlock(config.isConsolidateHeader(), doc, resHeader);
-			//parsers.getHeaderParser().processingHeaderSection(config.isConsolidateHeader(), doc, resHeader);
-			// above, use the segmentation model result
+           	if ( (resHeader == null) || 
+           		 (resHeader.getTitle() == null) || (resHeader.getTitle().trim().length() == 0) || 
+           		 (resHeader.getAuthors() == null) || (resHeader.getFullAuthors() == null) || 
+				 (resHeader.getFullAuthors().size() == 0) ) {
+           		resHeader = new BiblioItem();
+				parsers.getHeaderParser().processingHeaderSection(config.isConsolidateHeader(), doc, resHeader);
+				// above, use the segmentation model result
+			}
 
             // citation processing
             List<BibDataSet> resCitations = parsers.getCitationParser().
@@ -142,8 +158,6 @@ public class FullTextParser extends AbstractParser {
                         marker = marker.replace(" ", "");
                         bds.setRefSymbol(marker);
                     }
-                    //BiblioItem bib = citationParser.processing(bds.getRawBib(), consolidateCitations);
-                    //bds.setResBib(bib);
                 }
             }
 
@@ -196,21 +210,20 @@ public class FullTextParser extends AbstractParser {
         boolean endblock;
         boolean endPage = true;
         boolean newPage = true;
-        boolean start = true;
+        //boolean start = true;
         int mm = 0; // page position
         int nn = 0; // document position
         double lineStartX = Double.NaN;
 		boolean indented = false;
-        int documentLength = 0;
+        int fulltextLength = 0;
         int pageLength = 0; // length of the current page
+		double lowestPos = 0.0;
+		double spacingPreviousBlock = 0.0; 
+		int currentPage = 0;
 
-		//List<LayoutToken> tokenizationsBody = new ArrayList<LayoutToken>();
 		List<LayoutToken> layoutTokens = new ArrayList<LayoutToken>();
-		//List<LayoutToken> tokenizations = doc.getTokenizations();
-
-		// CAN'T CALCULATE LIKE THIS SINCE BODY does not necessarily start with the beginning of the block,
-		// nor it end at the last token of the block
-        // we calculate current document length and intialize the body tokenization structure
+		
+		//evaluate the length of the fulltext
 		for(DocumentPiece docPiece : documentBodyParts) {
 			DocumentPointer dp1 = docPiece.a;
 			DocumentPointer dp2 = docPiece.b;
@@ -219,11 +232,12 @@ public class FullTextParser extends AbstractParser {
             int tokenEnd = dp2.getTokenDocPos();
             for (int i = tokenStart; i <= tokenEnd; i++) {
                 //tokenizationsBody.add(tokenizations.get(i));
-				documentLength++;
+				fulltextLength += doc.getTokenizations().get(i).getText().length();
             }
 		}
-
-        // System.out.println("documentLength: " + documentLength);
+		
+        // System.out.println("fulltextLength: " + fulltextLength);
+		
 		for(DocumentPiece docPiece : documentBodyParts) {
 			DocumentPointer dp1 = docPiece.a;
 			DocumentPointer dp2 = docPiece.b;
@@ -235,98 +249,42 @@ public class FullTextParser extends AbstractParser {
             	Block block = blocks.get(blockIndex);
             	// length of the page where the current block is
             	double pageHeight = block.getPage().height;
+				int localPage = block.getPage().number;
+				if (localPage != currentPage) {
+					newPage = true;
+					currentPage = localPage;
+	                mm = 0;
+					lowestPos = 0.0;
+					spacingPreviousBlock = 0.0;
+				}
 
-	            /*if (start || endPage) {
-	                boolean stop = false;
-	                pageLength = 0;
-					double pageMaxY = 0.0;
-					double pageMinY = 1000000.0;
-	                for (int z = blockIndex; (z < blocks.size()) && !stop; z++) {
-	                	int localPageNumber = blocks.get(z).getPageNumber();
-	                    //String localText2 = blocks.get(z).getText();
-	                    //if (localText2 != null) {
-                        if (localText2.contains("@PAGE")) {
-                            if (pageLength > 0) {
-                                if (blocks.get(z).getTokens() != null) {
-                                    pageLength += blocks.get(z).getTokens().size();
-									if ((blocks.get(z).getY() != 0.0) && (blocks.get(z).getY() < pageMinY))
-										pageMinY = blocks.get(z).getY();
-									if ((blocks.get(z).getY() != 0.0) && (blocks.get(z).getY() > pageMaxY))
-										pageMaxY = blocks.get(z).getY();
-                                }
-                                stop = true;
-                                break;
-                            }
-							else {
-                                if (blocks.get(z).getTokens() != null) {
-									if ((blocks.get(z).getY() != 0.0) && (blocks.get(z).getY() < pageMinY))
-										pageMinY = blocks.get(z).getY();
-									if ((blocks.get(z).getY() != 0.0) && (blocks.get(z).getY() > pageMaxY))
-										pageMaxY = blocks.get(z).getY();
-                                }
-							}
-                        } else {
-                            if (blocks.get(z).getTokens() != null) {
-                                pageLength += blocks.get(z).getTokens().size();
-								LayoutToken firstToken = blocks.get(z).getTokens().get(0);
-								LayoutToken lastToken = blocks.get(z).getTokens()
-									.get(blocks.get(z).getTokens().size() -1);
-								if ((firstToken.getY() != 0.0) && (firstToken.getY() < pageMinY))
-									pageMinY = firstToken.getY();
-								if ((firstToken.getY() != 0.0) && (firstToken.getY() > pageMaxY))
-									pageMaxY = firstToken.getY();
-								if ((lastToken.getY() != 0.0) && (lastToken.getY() > pageMaxY))
-									pageMaxY = lastToken.getY();
-                            }
-                        }
-	                    //}
-	                }
-					pageHeight = pageMaxY - pageMinY;
-					//System.out.println(pageMaxY + " " + pageMinY);
-	                // System.out.println("pageLength: " + pageLength);
-	            }*/
-
-
-	                /*boolean stop = false;
-	                pageLength = 0;
-	                for (int z = blockIndex; (z < blocks.size()) && !stop; z++) {
-	                    String localText2 = blocks.get(z).getText();
-	                    if (localText2 != null) {
-	                        if (localText2.contains("@PAGE")) {
-	                            if (pageLength > 0) {
-	                                if (blocks.get(z).getTokens() != null) {
-	                                    pageLength += blocks.get(z).getTokens().size();
-	                                }
-	                                stop = true;
-	                                break;
-	                            }
-	                        } else {
-	                            if (blocks.get(z).getTokens() != null) {
-	                                pageLength += blocks.get(z).getTokens().size();
-	                            }
-	                        }
-	                    }
-	                }
-	                // System.out.println("pageLength: " + pageLength);
-	            }*/
-
-
-	            if (start) {
+	            /*if (start) {
 	                newPage = true;
 	                start = false;
-	            }
+	            }*/
+				
 	            boolean newline;
 	            boolean previousNewline = false;
 	            endblock = false;
-	            
 
-	            if (endPage) {
+	            /*if (endPage) {
 	                newPage = true;
 	                mm = 0;
-	            }
+					lowestPos = 0.0;
+	            }*/
+				
+                if (lowestPos >  block.y) {
+                    // we have a vertical shift, which can be due to a change of column or other particular layout formatting 
+                    spacingPreviousBlock = doc.getMaxBlockSpacing() / 5.0; // default
+                }
+                else 
+                    spacingPreviousBlock = block.y - lowestPos;
 
 	            String localText = block.getText();
-	            if (localText != null) {
+                if (TextUtilities.filterLine(localText)) {
+                    continue;
+                }
+	            /*if (localText != null) {
 	                if (localText.contains("@PAGE")) {
 	                    mm = 0;
 	                    // pageLength = 0;
@@ -335,8 +293,15 @@ public class FullTextParser extends AbstractParser {
 	                } else {
 	                    endPage = false;
 	                }
-	            }
-	             
+	            }*/
+	            
+                // character density of the block
+                double density = 0.0;
+                if ( (block.height != 0.0) && (block.width != 0.0) && 
+                     (localText != null) && (!localText.contains("@PAGE")) && 
+                     (!localText.contains("@IMAGE")) )
+                    density = (double)localText.length() / (block.height * block.width);
+				
                 // check if we have a graphical object connected to the current block
                 List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
                 if (localImages != null) {
@@ -350,19 +315,13 @@ public class FullTextParser extends AbstractParser {
 
 	            List<LayoutToken> tokens = block.getTokens();
 	            if (tokens == null) {
-	                //blockPos++;
 	                continue;
 	            }
 
 				int n = 0;// token position in current block
 				if (blockIndex == dp1.getBlockPtr()) {
 //					n = dp1.getTokenDocPos() - block.getStartToken();
-
 					n = dp1.getTokenBlockPos();
-
-					/*if (n != 0) {
-						n = n - 1;
-					}*/
 				}
 				int lastPos = tokens.size();
 				// if it's a last block from a document piece, it may end earlier
@@ -384,8 +343,7 @@ public class FullTextParser extends AbstractParser {
 						}
 					}
 
-					LayoutToken token = null;
-					token = tokens.get(n);
+					LayoutToken token = tokens.get(n);
 					layoutTokens.add(token);
 
 					features = new FeaturesVectorFulltext();
@@ -394,10 +352,10 @@ public class FullTextParser extends AbstractParser {
 	                double coordinateLineY = token.getY();
 
 	                String text = token.getText();
-	                if (text == null) {
+	                if ( (text == null) || (text.length() == 0)) {
 	                    n++;
-	                    mm++;
-	                    nn++;
+	                    //mm++;
+	                    //nn++;
 	                    continue;
 	                }
 	                text = text.replace(" ", "");
@@ -419,6 +377,7 @@ public class FullTextParser extends AbstractParser {
 	                    newline = false;
 
 	                if (TextUtilities.filterLine(text)) {
+						n++;
 	                    continue;
 	                }
 
@@ -428,7 +387,7 @@ public class FullTextParser extends AbstractParser {
 						if ((token != null) && (previousFeatures != null)) {
 							double previousLineStartX = lineStartX;
 	                        lineStartX = token.getX();
-	                        double characterWidth = token.width / token.getText().length();
+	                        double characterWidth = token.width / text.length();
 							if (!Double.isNaN(previousLineStartX)) {
 								if (previousLineStartX - lineStartX > characterWidth)
 	                                indented = false;
@@ -513,6 +472,7 @@ public class FullTextParser extends AbstractParser {
 	                                } else {
 	                                    if ((toto.length() != 0)
 	                                            && (!(toto.startsWith("@IMAGE")))
+												&& (!(toto.startsWith("@PAGE")))
 	                                            && (!text.contains(".pbm"))
 	                                            && (!text.contains(".vec"))
 	                                            && (!text.contains(".jpg"))) {
@@ -542,21 +502,14 @@ public class FullTextParser extends AbstractParser {
 	                        features.blockStatus = "BLOCKIN";
 	                    else if (features.blockStatus == null) {
 	                        features.blockStatus = "BLOCKEND";
-	                        endblock = true;
+	                        //endblock = true;
 	                    }
 	                }
 
 	                if (newPage) {
-	                    //features.pageStatus = "PAGESTART";
 	                    newPage = false;
-	                    endPage = false;
-	                    if (previousFeatures != null) {
-	                        //previousFeatures.pageStatus = "PAGEEND";
-						}
 	                } else {
-	                    //features.pageStatus = "PAGEIN";
 	                    newPage = false;
-	                    endPage = false;
 	                }
 
 	                if (text.length() == 1) {
@@ -636,11 +589,6 @@ public class FullTextParser extends AbstractParser {
 	                if (token.getItalic())
 	                    features.italic = true;
 
-	                // HERE horizontal information
-	                // CENTERED
-	                // LEFTAJUSTED
-	                // CENTERED
-
 	                if (features.capitalisation == null)
 	                    features.capitalisation = "NOCAPS";
 
@@ -651,26 +599,49 @@ public class FullTextParser extends AbstractParser {
 	                    features.punctType = "NOPUNCT";
 
 	                features.relativeDocumentPosition = featureFactory
-	                        .relativeLocation(nn, documentLength, NBBINS);
+	                        .linearScaling(nn, fulltextLength, NBBINS_POSITION);
 	                // System.out.println(mm + " / " + pageLength);
 	                features.relativePagePositionChar = featureFactory
-	                        .relativeLocation(mm, pageLength, NBBINS);
+	                        .linearScaling(mm, pageLength, NBBINS_POSITION);
 
 	                int pagePos = featureFactory
-                        .relativeLocation(coordinateLineY, pageHeight, NBBINS);
-					if (pagePos > NBBINS)
-						pagePos = NBBINS;
+                        .linearScaling(coordinateLineY, pageHeight, NBBINS_POSITION);
+					if (pagePos > NBBINS_POSITION)
+						pagePos = NBBINS_POSITION;
 	                features.relativePagePosition = pagePos;
+//System.out.println((coordinateLineY) + " " + (pageHeight) + " " + NBBINS_POSITION + " " + pagePos); 
+
+                    if (spacingPreviousBlock != 0.0) {
+                        features.spacingWithPreviousBlock = featureFactory
+                            .linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), 
+							doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE);                          
+                    }
+
+                    if (density != -1.0) {
+                        features.characterDensity = featureFactory
+                            .linearScaling(density-doc.getMinCharacterDensity(), doc.getMaxCharacterDensity()-doc.getMinCharacterDensity(), NBBINS_DENSITY);
+//System.out.println((density-doc.getMinCharacterDensity()) + " " + (doc.getMaxCharacterDensity()-doc.getMinCharacterDensity()) + " " + NBBINS_DENSITY + " " + features.characterDensity);
+                    }
 
 	                // fulltext.append(features.printVector());
 	                if (previousFeatures != null) {
+						if (features.blockStatus.equals("BLOCKSTART") && 
+							previousFeatures.blockStatus.equals("BLOCKIN")) {
+							// this is a post-correction due to the fact that the last character of a block
+							// can be a space or EOL character
+							previousFeatures.blockStatus = "BLOCKEND";
+							previousFeatures.lineStatus = "LINEEND";
+						}
                         fulltext.append(previousFeatures.printVector());
                     }
 	                n++;
-	                mm++;
-	                nn++;
+	                mm += text.length();
+	                nn += text.length();
 	                previousFeatures = features;
             	}
+                // lowest position of the block
+                lowestPos = block.y + block.height;
+				
             	//blockPos++;
 			}
         }
