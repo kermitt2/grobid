@@ -1,12 +1,19 @@
 package org.grobid.core.visualization;
 
+import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Multimap;
+import com.google.common.collect.Multimaps;
 import net.sf.saxon.om.Item;
 import net.sf.saxon.om.SequenceIterator;
 import net.sf.saxon.trans.XPathException;
+import org.apache.commons.io.FileUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.grobid.core.document.Document;
+import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
@@ -20,6 +27,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -30,8 +38,8 @@ public class BlockVisualizer {
 
     public static void main(String[] args) {
         try {
-//            File input = new File("/Work/temp/context/coords/1.pdf");
-            File input = new File("/Work/temp/figureExtraction/2.pdf");
+//            File input = new File("/Work/temp/context/coords/4.pdf");
+            File input = new File("/Work/temp/figureExtraction/3.pdf");
 
             final PDDocument document = PDDocument.load(input);
             File outPdf = new File("/tmp/test.pdf");
@@ -45,11 +53,14 @@ public class BlockVisualizer {
                     .matchingMode(1)
                     .build();
 
+//            File tempFile = File.createTempFile("temp", ".xml", new File("/tmp"));
+            DocumentSource documentSource = DocumentSource.fromPdf(input);
 
-//            Document teiDoc = engine.fullTextToTEIDoc(input, config);
 
-//            PDDocument out = annotateBlocks(document, teiDoc);
-            PDDocument out = annotateBlocks(document, null);
+            Document teiDoc = engine.fullTextToTEIDoc(input, config);
+
+            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), teiDoc);
+//            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), null);
 
             if (out != null) {
                 out.save(outPdf);
@@ -66,12 +77,16 @@ public class BlockVisualizer {
 
     }
 
-    private static PDDocument annotateBlocks(PDDocument document, Document teiDoc) throws IOException, XPathException {
+    private static PDDocument annotateBlocks(PDDocument document, File xmlFile, Document teiDoc) throws IOException, XPathException {
 
-//        for (Block b : teiDoc.getBlocks()) {
-//            AnnotationUtil.annotatePage(document, b.getPageNumber() + "," + b.getX() + "," + b.getY() +
-//                    "," + b.getWidth() + "," + b.getHeight(), 0);
-//        }
+        Multimap<Integer, Block> blockMultimap = HashMultimap.create();
+        if (teiDoc != null) {
+            for (Block b : teiDoc.getBlocks()) {
+//                AnnotationUtil.annotatePage(document, b.getPageNumber() + "," + b.getX() + "," + b.getY() +
+//                        "," + b.getWidth() + "," + b.getHeight(), 0);
+                blockMultimap.put(b.getPageNumber(), b);
+            }
+        }
 
 
         for (int pageNum = 1; pageNum <= document.getNumberOfPages(); pageNum++) {
@@ -83,7 +98,8 @@ public class BlockVisualizer {
                     "  let $x2 := max(($g/*/@x, $g//*/@x1, $g//*/@x2, $g//*/@x3))\n" +
                     "  let $y2 := max(($g/*/@y, $g//*/@y1, $g//*/@y2, $g//*/@y3))\n" +
                     "  return concat($x1, \",\", $y1, \",\", $x2 - $x1, \",\", $y2 - $y1)";
-            XQueryProcessor pr = new XQueryProcessor(new File("/Work/temp/figureExtraction/xmldata_2/image-" + pageNum + ".vec"));
+//            XQueryProcessor pr = new XQueryProcessor(new File("/Work/temp/figureExtraction/xmldata_2/image-" + pageNum + ".vec"));
+            XQueryProcessor pr = new XQueryProcessor(new File(xmlFile.getAbsolutePath() + "_data", "image-" + pageNum + ".vec"));
             SequenceIterator it = pr.getSequenceIterator(q);
             Item item;
             List<BoundingBox> boxes = new ArrayList<>();
@@ -93,39 +109,70 @@ public class BlockVisualizer {
                 String coords = pageNum + "," + c;
                 BoundingBox e = BoundingBox.fromString(coords);
                 //TODO: detect borders
-                if (e.getX() == 0 && e.getY() == 0 || (e.getX() < 65 && e.getPage() % 2 == 0 || e.getX() < 50 && e.getPage() % 2 != 0) || e.getY() < 10) {
+                if (e.getX() == 0 && e.getY() == 0
+                        || (e.getX() < 65 && e.getPage() % 2 == 0 || e.getX() < 50 && e.getPage() % 2 != 0) || e.getY() < 10
+                        ) {
                     continue;
                 }
                 boxes.add(e);
 //                AnnotationUtil.annotatePage(document, coords, 1);
             }
 
-            boolean allMerged = false;
-            while (!allMerged) {
-                allMerged = true;
-                for (int i = 0; i < boxes.size(); i++) {
-                    BoundingBox a = boxes.get(i);
-                    if (a == null) continue;
-                    for (int j = i + 1; j < boxes.size(); j++) {
-                        BoundingBox b = boxes.get(j);
-                        if (b != null) {
-                            if (a.intersect(b)) {
-                                allMerged = false;
-                                a = a.boundBox(b);
-                                boxes.set(i, a);
-                                boxes.set(j, null);
-                            }
-                        }
+            List<BoundingBox> remainingBoxes = mergeBoxes(boxes);
+
+            for (int i = 0; i < remainingBoxes.size(); i++) {
+                Collection<Block> col = blockMultimap.get(pageNum);
+                for (Block bl : col) {
+                    BoundingBox b = BoundingBox.fromPointAndDimensions(pageNum, bl.getX(), bl.getY(), bl.getWidth(), bl.getHeight());
+                    if (remainingBoxes.get(i).intersect(b)) {
+                        remainingBoxes.set(i, remainingBoxes.get(i).boundBox(b));
                     }
                 }
             }
 
-            for (BoundingBox b : Iterables.filter(boxes, Predicates.notNull())) {
+            remainingBoxes = mergeBoxes(remainingBoxes);
+
+            for (BoundingBox b : remainingBoxes) {
                 AnnotationUtil.annotatePage(document, b.toString(), 1);
             }
         }
 
 
         return document;
+    }
+
+    private static List<BoundingBox> mergeBoxes(List<BoundingBox> boxes) {
+        boolean allMerged = false;
+        while (!allMerged) {
+            allMerged = true;
+            for (int i = 0; i < boxes.size(); i++) {
+                BoundingBox a = boxes.get(i);
+                if (a == null) continue;
+                for (int j = i + 1; j < boxes.size(); j++) {
+                    BoundingBox b = boxes.get(j);
+                    if (b != null) {
+                        if (a.intersect(b)) {
+                            allMerged = false;
+                            a = a.boundBox(b);
+                            boxes.set(i, a);
+                            boxes.set(j, null);
+                        }
+                    }
+                }
+            }
+        }
+
+        return Lists.newArrayList(Iterables.filter(boxes, new Predicate<BoundingBox>() {
+            @Override
+            public boolean apply(BoundingBox boundingBox) {
+                if (boundingBox == null) {
+                    return false;
+                }
+                if (boundingBox.getHeight() < 5 || boundingBox.getWidth() < 5) {
+                    return false;
+                }
+                return true;
+            }
+        }));
     }
 }
