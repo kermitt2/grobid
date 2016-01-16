@@ -65,8 +65,7 @@ public class CitationsVisualizer {
             LibraryLoader.load();
             final Engine engine = GrobidFactory.getInstance().getEngine();
             GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().
-                    matchingMode(1)
-                    .build();
+                    build();
 
             Document teiDoc = engine.fullTextToTEIDoc(input, config);
 
