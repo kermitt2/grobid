@@ -50,7 +50,6 @@ public class BlockVisualizer {
             final Engine engine = GrobidFactory.getInstance().getEngine();
             GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
                     .pdfAssetPath(new File("/tmp/x"))
-                    .matchingMode(1)
                     .build();
 
 //            File tempFile = File.createTempFile("temp", ".xml", new File("/tmp"));
