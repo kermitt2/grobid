@@ -68,7 +68,6 @@ public class AnnotationUtil {
         borderULine.setWidth(0);
 
 
-
         PDAnnotationLink txtLink = new PDAnnotationLink();
         txtLink.setBorderStyle(borderULine);
 
@@ -93,7 +92,7 @@ public class AnnotationUtil {
 
 
         // ADDING LINK TO THE REFERENCE
-        page.getAnnotations().add(txtLink);
+//        page.getAnnotations().add(txtLink);
 
         //draw a line
         PDBorderStyleDictionary borderThick = new PDBorderStyleDictionary();
@@ -122,7 +121,7 @@ public class AnnotationUtil {
 //
 ////        stream.setStrokingColor(85, 177, 245);
         stream.setStrokingColor(r.nextInt(255), r.nextInt(255), r.nextInt(255));
-        stream.setLineWidth(1);
+        stream.setLineWidth(2);
         stream.drawLine(annX, annY, annRightX, annY);
         stream.drawLine(annX, annTopY, annRightX, annTopY);
         stream.drawLine(annX, annY, annX, annTopY);
@@ -131,4 +130,9 @@ public class AnnotationUtil {
 //        }
 //        return 1;
     }
+
+    public static String getCoordString(int page, double x, double y, double w, double h) {
+        return page + "," + x + "," + y + "," + w + "," + h;
+    }
+
 }

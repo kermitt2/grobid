@@ -47,6 +47,7 @@ public class CitationsVisualizer {
 //            File input = new File("/Work/temp/context/1000k/AS_99223336914944_1400668095132.pdf");
 //            File input = new File("/tmp/AS_100005549445135_1400854589869.pdf"); // not all tokens
             File input = new File("/Work/temp/context/coords/1.pdf");
+//            File input = new File("/Work/temp/figureExtraction/3.pdf");
 //            File input = new File("/Work/temp/context/tilo/4.pdf");
 
 //            File input = new File("/Work/temp/pub_citation_styles/1996ParPrecConfProc00507369.pdf");

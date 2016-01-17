@@ -619,8 +619,9 @@ public class GrobidRestProcessFiles {
                     Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
                     if (type == GrobidRestUtils.Annotation.CITATION)
                         out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc);
-                    else if (type == GrobidRestUtils.Annotation.BLOCK)
+                    /*else if (type == GrobidRestUtils.Annotation.BLOCK) {
                         out = BlockVisualizer.annotateBlocks(document, teiDoc);
+					}*/
                     GrobidPoolingFactory.returnEngine(engine);
                     engine = null;
                 } else {
@@ -629,8 +630,8 @@ public class GrobidRestProcessFiles {
                         Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
                         if (type == GrobidRestUtils.Annotation.CITATION)
                             out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc);
-                        else if (type == GrobidRestUtils.Annotation.BLOCK)
-                            out = BlockVisualizer.annotateBlocks(document, teiDoc);
+                        /*else if (type == GrobidRestUtils.Annotation.BLOCK)
+                            out = BlockVisualizer.annotateBlocks(document, teiDoc);*/
                     } 
                 }
 
