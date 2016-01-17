@@ -102,7 +102,11 @@
         <servlet-name>grobid-service</servlet-name>
         <url-pattern>/processCitationPatentPDF</url-pattern>
     </servlet-mapping>
-    
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/annotatePDF</url-pattern>
+    </servlet-mapping>
+
 	<welcome-file-list>
     	<welcome-file>grobid/index.html</welcome-file>
 		<welcome-file>index.html</welcome-file>

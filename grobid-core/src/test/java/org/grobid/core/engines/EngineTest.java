@@ -841,9 +841,7 @@ public class EngineTest {
     @Test
     public void testFulltext() throws Exception {
         final Engine engine = GrobidFactory.getInstance().getEngine();
-        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().pdfAssetPath(new File("/tmp/figures")).
-                matchingMode(1)
-                .build();
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().pdfAssetPath(new File("/tmp/figures")).build();
 //        System.out.println(engine.fullTextToTEI(new File("/Work/temp/context/coords/2.pdf"), config));
 //        engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/1996PRBAConfProc00507417Vos.pdf"), GrobidAnalysisConfig.defaultInstance());
 //        System.out.println(engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/SicamSnellenburgPFRT_OptomVisSci84E915_923.pdf"), config)); //footnote citations
@@ -862,9 +860,7 @@ public class EngineTest {
     public void testFulltexts() throws Exception {
         final Engine engine = GrobidFactory.getInstance().getEngine();
 //        GrobidAnalysisConfig config = GrobidAnalysisConfig.defaultInstance();
-        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().
-                matchingMode(1)
-                .build();
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
 
             int cnt = 0;
 //        for (File f : new File("/Work/temp/pub_citation_styles").listFiles(new FileFilter() {

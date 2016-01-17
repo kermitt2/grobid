@@ -42,7 +42,6 @@ public class BlockVisualizer {
             final Engine engine = GrobidFactory.getInstance().getEngine();
             GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
                     .pdfAssetPath(new File("/tmp/x"))
-                    .matchingMode(1)
                     .build();
 
 
@@ -66,7 +65,7 @@ public class BlockVisualizer {
 
     }
 
-    private static PDDocument annotateBlocks(PDDocument document, Document teiDoc) throws IOException, XPathException {
+    public static PDDocument annotateBlocks(PDDocument document, Document teiDoc) throws IOException, XPathException {
 
 //        for (Block b : teiDoc.getBlocks()) {
 //            AnnotationUtil.annotatePage(document, b.getPageNumber() + "," + b.getX() + "," + b.getY() +

@@ -64,8 +64,7 @@ public class CitationsVisualizer {
             LibraryLoader.load();
             final Engine engine = GrobidFactory.getInstance().getEngine();
             GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().
-                    matchingMode(1)
-                    .build();
+                    build();
 
             Document teiDoc = engine.fullTextToTEIDoc(input, config);
 
@@ -86,7 +85,7 @@ public class CitationsVisualizer {
     }
 
 
-    private static PDDocument annotatePdfWithCitations(PDDocument document, Document teiDoc) throws IOException, COSVisitorException, XPathException {
+    public static PDDocument annotatePdfWithCitations(PDDocument document, Document teiDoc) throws IOException, COSVisitorException, XPathException {
         String tei = teiDoc.getTei();
         System.out.println(tei);
         Multimap<String, BibDataSetContext> contexts = BibDataSetContextExtractor.getCitationReferences(tei);

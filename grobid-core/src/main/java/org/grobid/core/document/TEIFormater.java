@@ -1092,18 +1092,10 @@ public class TEIFormater {
                 List<Node> refNodes = null;
                 switch (clusterLabel) {
                     case CITATION_MARKER:
-                        if (config.getMatchingMode() == GrobidAnalysisConfig.LuceneBased) {
-                            refNodes = markReferencesTEILuceneBased(chunkRefString,
-                                    refTokens,
-                                    doc.getReferenceMarkerMatcher(),
-                                    config.isGenerateTeiCoordinates());
-                        } else {
-                            // default
-                            replacement = markReferencesTEI(chunkRefString,
-                                    refTokens,
-                                    bds,
-                                    config.isGenerateTeiCoordinates());
-                        }
+                        refNodes = markReferencesTEILuceneBased(chunkRefString,
+                                refTokens,
+                                doc.getReferenceMarkerMatcher(),
+                                config.isGenerateTeiCoordinates());
                         break;
                     case FIGURE_MARKER:
                         replacement = markReferencesFigureTEI(chunkRefString, refTokens, figures,

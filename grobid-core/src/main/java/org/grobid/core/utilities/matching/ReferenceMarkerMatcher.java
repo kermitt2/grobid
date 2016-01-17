@@ -136,7 +136,7 @@ public class ReferenceMarkerMatcher {
             return matchNumberedCitation(text, refTokens);
         } else {
             cntManager.i(Counters.STYLE_OTHER);
-            System.out.println("Other style: " + text);
+            LOGGER.info("Other style: " + text);
             return Collections.singletonList(new MatchResult(text, refTokens, null));
         }
     }
@@ -167,16 +167,16 @@ public class ReferenceMarkerMatcher {
                 cntManager.i(Counters.UNMATCHED_REF_MARKERS);
                 if (matches.size() != 0) {
                     cntManager.i(Counters.MANY_CANDIDATES);
-                    System.out.println("MANY CANDIDATES: " + input + "\n" + text + "\n");
+                    LOGGER.info("MANY CANDIDATES: " + input + "\n" + text + "\n");
                     for (BibDataSet bds : matches) {
                         System.out.println("  " + bds.getRawBib());
                     }
 
-                    System.out.println("----------");
+                    LOGGER.info("----------");
                 } else {
                     cntManager.i(Counters.NO_CANDIDATES);
-                    System.out.println("NO CANDIDATES: " + text + "\n" + text);
-                    System.out.println("++++++++++++");
+                    LOGGER.info("NO CANDIDATES: " + text + "\n" + text);
+                    LOGGER.info("++++++++++++");
                 }
                 results.add(new MatchResult(text, labelToks, null));
             }
@@ -255,19 +255,19 @@ public class ReferenceMarkerMatcher {
                             cntManager.i(Counters.NO_CANDIDATES_AFTER_POST_FILTERING);
                         } else {
                             cntManager.i(Counters.MANY_CANDIDATES_AFTER_POST_FILTERING);
-                            System.out.println("MANY CANDIDATES: " + text + "\n-----\n" + c + "\n");
+                            LOGGER.info("MANY CANDIDATES: " + text + "\n-----\n" + c + "\n");
                             for (BibDataSet bds : matches) {
-                                System.out.println("+++++");
-                                System.out.println("  " + bds.getRawBib());
+                                LOGGER.info("+++++");
+                                LOGGER.info("  " + bds.getRawBib());
                             }
-                            System.out.println("===============");
+                            LOGGER.info("===============");
                         }
                     }
                 } else {
                     results.add(new MatchResult(c, splitItem, null));
                     cntManager.i(Counters.NO_CANDIDATES);
-                    System.out.println("NO CANDIDATES: " + text + "\n" + c);
-                    System.out.println("++++++++++++");
+                    LOGGER.info("NO CANDIDATES: " + text + "\n" + c);
+                    LOGGER.info("++++++++++++");
                 }
             }
         }

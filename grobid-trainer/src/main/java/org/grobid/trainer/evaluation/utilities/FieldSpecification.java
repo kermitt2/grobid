@@ -243,7 +243,7 @@ public class FieldSpecification {
 		//citationsLabels.add("publisher");
 
 		// full text structures
-		FieldSpecification sectionReferenceField = new FieldSpecification();
+		/*FieldSpecification sectionReferenceField = new FieldSpecification();
 		sectionReferenceField.fieldName = "references";
 		sectionReferenceField.isTextual = true;
 		sectionReferenceField.grobidPath.
@@ -251,7 +251,7 @@ public class FieldSpecification {
 		sectionReferenceField.nlmPath.
 			add("//ref-list/ref//text()");
 		fulltextFields.add(sectionReferenceField);
-		fulltextLabels.add("references");
+		fulltextLabels.add("references");*/
 
 		FieldSpecification sectionTitleField = new FieldSpecification();
 		sectionTitleField.fieldName = "section_title";
