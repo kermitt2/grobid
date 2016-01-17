@@ -9,18 +9,23 @@ import java.util.*;
  */
 public class Page {
     private List<Block> blocks = null;
-    public double width = 0.0;
-    public double height = 0.0;
-    public int number = -1;
-    public int pageLengthChar = 0;
+    private double width = 0.0;
+    private double height = 0.0;
+    private int number = -1;
+    private int pageLengthChar = 0;
+    private BoundingBox mainArea;
 
     public Page(int nb) {
         number = nb;
     }
 
+    public boolean isEven() {
+        return number % 2 == 0;
+    }
     public void addBlock(Block b) {
-        if (blocks == null)
-            blocks = new ArrayList<Block>();
+        if (blocks == null) {
+            blocks = new ArrayList<>();
+        }
         blocks.add(b);
     }
 
@@ -51,4 +56,20 @@ public class Page {
     public int getPageLengthChar() {
         return pageLengthChar;
     }
-}	
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public BoundingBox getMainArea() {
+        return mainArea;
+    }
+
+    public void setMainArea(BoundingBox mainArea) {
+        this.mainArea = mainArea;
+    }
+}

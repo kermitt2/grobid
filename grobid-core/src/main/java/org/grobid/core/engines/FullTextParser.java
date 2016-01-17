@@ -245,8 +245,8 @@ public class FullTextParser extends AbstractParser {
 	    		boolean graphicBitmap = false;
             	Block block = blocks.get(blockIndex);
             	// length of the page where the current block is
-            	double pageHeight = block.getPage().height;
-				int localPage = block.getPage().number;
+            	double pageHeight = block.getPage().getHeight();
+				int localPage = block.getPage().getNumber();
 				if (localPage != currentPage) {
 					newPage = true;
 					currentPage = localPage;

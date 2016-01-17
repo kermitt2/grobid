@@ -265,7 +265,7 @@ public class Segmentation extends AbstractParser {
         Map<String, Integer> patterns = new TreeMap<String, Integer>();
         Map<String, Boolean> firstTimePattern = new TreeMap<String, Boolean>();
         for(Page page : pages) {
-            pageHeight = page.height;
+            pageHeight = page.getHeight();
             // we just look at the two first and last blocks of the page
             if ((page.getBlocks() != null) && (page.getBlocks().size() > 0)) {
                 for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
@@ -294,7 +294,7 @@ public class Segmentation extends AbstractParser {
         }
  
         for(Page page : pages) {
-            pageHeight = page.height;
+            pageHeight = page.getHeight();
             newPage = true;
             double spacingPreviousBlock = 0.0; // discretized
             double lowestPos = 0.0;
