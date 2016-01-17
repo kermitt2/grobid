@@ -300,10 +300,11 @@ public class Document {
 
             int pageEvenX = getCoordItem(leftEven, true);
             int pageOddX = getCoordItem(leftOdd, true);
-            int pageEvenWidth = getCoordItem(rightEven, false) - pageEvenX;
-            int pageOddWidth = getCoordItem(rightOdd, false) - pageOddX;
+            // +1 due to rounding
+            int pageEvenWidth = getCoordItem(rightEven, false) - pageEvenX + 1;
+            int pageOddWidth = getCoordItem(rightOdd, false) - pageOddX + 1;
             int pageY = getCoordItem(top, true);
-            int pageHeight = getCoordItem(bottom, false) - pageY;
+            int pageHeight = getCoordItem(bottom, false) - pageY + 1;
             for (Page page : pages) {
                 if (page.isEven()) {
                     page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageEvenX, pageY, pageEvenWidth, pageHeight));
