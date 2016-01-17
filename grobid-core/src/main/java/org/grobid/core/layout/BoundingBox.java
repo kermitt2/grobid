@@ -105,7 +105,7 @@ public class BoundingBox {
     }
 
     public boolean contains(BoundingBox b) {
-        return x <= b.x && y <= b.y && x2 >= b.x2 && y2 >= b.x2;
+        return x <= b.x && y <= b.y && x2 >= b.x2 && y2 >= b.y2;
     }
 
     @Override

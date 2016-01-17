@@ -109,14 +109,7 @@ public class BlockVisualizer {
                 String coords = pageNum + "," + c;
                 BoundingBox e = BoundingBox.fromString(coords);
                 //TODO: detect borders
-                if (
-//                        e.getX() == 0 && e.getY() == 0
-//                        ||
-                                e.getX() < mainPageArea.getX() ||
-                                        e.getX() < mainPageArea.getX()
-                        || e.getY() < mainPageArea.getY() || e.getY() + e.getHeight() > mainPageArea.getY2()
-//                        || e.getX2() >= mainPageArea.getX2
-                        ) {
+                if (!mainPageArea.contains(e)) {
                     continue;
                 }
                 boxes.add(e);
