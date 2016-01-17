@@ -68,7 +68,6 @@ public class AnnotationUtil {
         borderULine.setWidth(0);
 
 
-
         PDAnnotationLink txtLink = new PDAnnotationLink();
         txtLink.setBorderStyle(borderULine);
 
@@ -131,4 +130,9 @@ public class AnnotationUtil {
 //        }
 //        return 1;
     }
+
+    public static String getCoordString(int page, double x, double y, double w, double h) {
+        return page + "," + x + "," + y + "," + w + "," + h;
+    }
+
 }
