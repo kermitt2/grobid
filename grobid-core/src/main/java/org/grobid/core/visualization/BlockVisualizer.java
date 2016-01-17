@@ -1,16 +1,13 @@
 package org.grobid.core.visualization;
 
 import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
-import com.google.common.collect.Multimaps;
 import net.sf.saxon.om.Item;
 import net.sf.saxon.om.SequenceIterator;
 import net.sf.saxon.trans.XPathException;
-import org.apache.commons.io.FileUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
@@ -20,6 +17,7 @@ import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.main.LibraryLoader;
+import org.grobid.core.utilities.ElementCounter;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.XQueryProcessor;
 
@@ -29,6 +27,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by zholudev on 15/01/16.
@@ -38,8 +37,8 @@ public class BlockVisualizer {
 
     public static void main(String[] args) {
         try {
-//            File input = new File("/Work/temp/context/coords/4.pdf");
-            File input = new File("/Work/temp/figureExtraction/3.pdf");
+            File input = new File("/Work/temp/context/coords/2.pdf");
+//            File input = new File("/Work/temp/figureExtraction/3.pdf");
 
             final PDDocument document = PDDocument.load(input);
             File outPdf = new File("/tmp/test.pdf");
@@ -79,16 +78,56 @@ public class BlockVisualizer {
     private static PDDocument annotateBlocks(PDDocument document, File xmlFile, Document teiDoc) throws IOException, XPathException {
 
         Multimap<Integer, Block> blockMultimap = HashMultimap.create();
+
+        ElementCounter<Integer> leftEven = new ElementCounter<>();
+        ElementCounter<Integer> rightEven = new ElementCounter<>();
+        ElementCounter<Integer> leftOdd = new ElementCounter<>();
+        ElementCounter<Integer> rightOdd = new ElementCounter<>();
+        ElementCounter<Integer> top = new ElementCounter<>();
+        ElementCounter<Integer> bottom = new ElementCounter<>();
+
+
         if (teiDoc != null) {
             for (Block b : teiDoc.getBlocks()) {
 //                AnnotationUtil.annotatePage(document, b.getPageNumber() + "," + b.getX() + "," + b.getY() +
 //                        "," + b.getWidth() + "," + b.getHeight(), 0);
                 blockMultimap.put(b.getPageNumber(), b);
+
+                if (b.getX() == 0 || b.getHeight() < 20) {
+
+                    continue;
+                }
+
+                if (b.getPageNumber() % 2 == 0) {
+                    leftEven.i((int) b.getX());
+                    rightEven.i((int) (b.getX() + b.getWidth()));
+                } else {
+                    leftOdd.i((int) b.getX());
+                    rightOdd.i((int) (b.getX() + b.getWidth()));
+                }
+
+                top.i((int) b.getY());
+                bottom.i((int) (b.getY() + b.getHeight()));
             }
         }
 
+        int evenX = getCoord(leftEven, true);
+        int oddX = getCoord(leftOdd, true);
+        int evenWidth = getCoord(rightEven, false) - evenX;
+        int oddWidth = getCoord(rightOdd, false) - oddX;
+        int Y = getCoord(top, true);
+        int height = getCoord(bottom, false) - Y;
+
 
         for (int pageNum = 1; pageNum <= document.getNumberOfPages(); pageNum++) {
+            if (pageNum % 2 == 0) {
+                AnnotationUtil.annotatePage(document,
+                        AnnotationUtil.getCoordString(pageNum, evenX, Y, evenWidth, height), 10);
+            } else {
+                AnnotationUtil.annotatePage(document,
+                        AnnotationUtil.getCoordString(pageNum, oddX, Y, oddWidth, height), 10);
+
+            }
             String q = "\n" +
                     "for $g  in //GROUP return\n" +
                     "\n" +
@@ -108,8 +147,11 @@ public class BlockVisualizer {
                 String coords = pageNum + "," + c;
                 BoundingBox e = BoundingBox.fromString(coords);
                 //TODO: detect borders
-                if (e.getX() == 0 && e.getY() == 0
-                        || (e.getX() < 65 && e.getPage() % 2 == 0 || e.getX() < 50 && e.getPage() % 2 != 0) || e.getY() < 10
+                if (
+//                        e.getX() == 0 && e.getY() == 0
+//                        ||
+                                (e.getX() < evenX && e.getPage() % 2 == 0 || e.getX() < oddX && e.getPage() % 2 != 0)
+                        || e.getY() < Y || e.getY() + e.getHeight() > Y + height
                         ) {
                     continue;
                 }
@@ -138,6 +180,30 @@ public class BlockVisualizer {
 
 
         return document;
+    }
+
+    private static int getCoord(ElementCounter<Integer> cnt, boolean getMin) {
+
+        List<Map.Entry<Integer, Integer>> counts = cnt.getSortedCounts();
+        int max = counts.get(0).getValue();
+
+        int res = counts.get(0).getKey();
+        for (Map.Entry<Integer, Integer> e : counts) {
+            if (e.getValue() < max * 0.7) {
+                break;
+            }
+
+            if (getMin) {
+                if (e.getKey() < res) {
+                    res = e.getKey();
+                }
+            } else {
+                if (e.getKey() > res) {
+                    res = e.getKey();
+                }
+            }
+        }
+        return res;
     }
 
     private static List<BoundingBox> mergeBoxes(List<BoundingBox> boxes) {
