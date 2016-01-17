@@ -455,9 +455,6 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 					for(String tok : subTokenizations) {
 
-						if (tok.contains("Minnich")) {
-							int f = 0;
-						}
 						diaresis = false;
 						accent = false;
 
@@ -581,7 +578,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 										localTok.setHeight(previousTok.getHeight());
 										// the new token based on the concatenation of the previous token and 
 										// the updated diaresis character
-										localTok.setWidth(previousTok.getWidth());
+										localTok.setWidth(previousTok.getWidth() + subTokWidth);
 										localTok.setFontSize(previousTok.getFontSize());
 										localTok.setColorFont(previousTok.getColorFont());
 										localTok.setItalic(previousTok.getItalic());

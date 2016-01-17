@@ -3,6 +3,7 @@ package org.grobid.service.process;
 import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
+import org.grobid.core.document.Document;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidPoolingFactory;
@@ -11,6 +12,9 @@ import org.grobid.core.utilities.KeyGen;
 import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.GrobidServiceProperties;
+import org.grobid.core.visualization.CitationsVisualizer;
+import org.grobid.core.visualization.BlockVisualizer;
+import org.apache.pdfbox.pdmodel.PDDocument;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
@@ -574,6 +578,98 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getCause().getMessage()).build();
         } finally {
             GrobidRestUtils.removeTempFile(originFile);
+            if (isparallelExec && engine != null) {
+                GrobidPoolingFactory.returnEngine(engine);
+            }
+        }
+        LOGGER.debug(methodLogOut());
+        return response;
+    }
+
+    /**
+     * Uploads the origin PDF, process it and return the PDF augmented with annotations.
+     *
+     * @param inputStream the data of origin PDF
+     * @param fileName the name of origin PDF
+     * @param type gives type of annotation
+     * @return a response object containing the annotated PDF
+     */
+    public static Response processPDFAnnotation(final InputStream inputStream,
+                                                final String fileName,
+                                                final GrobidRestUtils.Annotation type) {
+        LOGGER.debug(methodLogIn());
+        Response response = null;
+        boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+        File originFile = null;
+        Engine engine = null;
+        PDDocument out = null;
+        try {
+            originFile = GrobidRestUtils.writeInputFile(inputStream);
+
+            GrobidAnalysisConfig config = new GrobidAnalysisConfig.
+                GrobidAnalysisConfigBuilder().build();
+
+            if (originFile == null) {
+                response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+            } else {
+                // starts conversion process
+                final PDDocument document = PDDocument.load(originFile);
+                engine = GrobidRestUtils.getEngine(isparallelExec);
+                if (isparallelExec) {
+                    Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
+                    if (type == GrobidRestUtils.Annotation.CITATION)
+                        out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc);
+                    else if (type == GrobidRestUtils.Annotation.BLOCK)
+                        out = BlockVisualizer.annotateBlocks(document, teiDoc);
+                    GrobidPoolingFactory.returnEngine(engine);
+                    engine = null;
+                } else {
+                    synchronized (engine) {
+                        //TODO: VZ: sync on local var does not make sense
+                        Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
+                        if (type == GrobidRestUtils.Annotation.CITATION)
+                            out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc);
+                        else if (type == GrobidRestUtils.Annotation.BLOCK)
+                            out = BlockVisualizer.annotateBlocks(document, teiDoc);
+                    } 
+                }
+
+                GrobidRestUtils.removeTempFile(originFile);
+
+                if (out != null) {
+                    response = Response.status(Status.OK).type("application/pdf").build();
+                    ByteArrayOutputStream ouputStream = new ByteArrayOutputStream();
+                    out.save(ouputStream);
+                    response = Response
+                            .ok()
+                            .type("application/pdf")
+                            .entity(ouputStream.toByteArray())
+                            .header("Content-Disposition", "attachment; filename=\"" + fileName
+                                    //.replace(".pdf", ".annotated.pdf")
+                                    //.replace(".PDF", ".annotated.PDF") 
+                                    + "\"")
+                            .build();
+                }
+                else {
+                    response = Response.status(Status.NO_CONTENT).build();
+                }
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getCause().getMessage()).build();
+        } finally {
+            GrobidRestUtils.removeTempFile(originFile);
+            if (out != null) {
+                try {
+                    out.close();
+                }
+                catch(Exception exp) {
+                    LOGGER.error("Error when closing PDDocument. ", exp);
+                }
+            }
             if (isparallelExec && engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }

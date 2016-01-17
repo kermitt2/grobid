@@ -40,6 +40,7 @@ import org.grobid.service.process.GrobidRestProcessGeneric;
 import org.grobid.service.process.GrobidRestProcessString;
 import org.grobid.service.util.GrobidServiceProperties;
 import org.grobid.service.util.ZipUtils;
+import org.grobid.service.util.GrobidRestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -617,5 +618,24 @@ public class GrobidRestService implements GrobidPathes {
 		return GrobidRestProcessFiles.processStatelessReferencesDocument(inputStream, consol);
 	}
 	
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processPDFAnnotation(InputStream, GrobidRestUtils.Annotation)
+	 */
+	@Path(PATH_PDF_ANNOTATION)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces("application/pdf")
+	@POST
+	public Response processAnnotatePDF(@FormDataParam(INPUT) InputStream inputStream,
+		@FormDataParam("type") String fileName,
+	 	@FormDataParam("type") int type) {
+		GrobidRestUtils.Annotation annotType = null;
+		if (type == 1)
+			annotType = GrobidRestUtils.Annotation.BLOCK;
+		else 
+			annotType = GrobidRestUtils.Annotation.CITATION;
+
+		return GrobidRestProcessFiles.processPDFAnnotation(inputStream, fileName, annotType);
+	}
+
 
 }
