@@ -2,7 +2,9 @@ package org.grobid.core.document;
 
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -21,6 +23,7 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.sax.PDF2XMLSaxParser;
 import org.grobid.core.utilities.BoundingBoxCalculator;
+import org.grobid.core.utilities.ElementCounter;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
@@ -37,7 +40,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedSet;
-import java.util.StringTokenizer;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -261,6 +263,15 @@ public class Document {
             SAXParser p = spf.newSAXParser();
             p.parse(in, parser);
             tokenizations = parser.getTokenization();
+            Multimap<Integer, Block> blockMultimap = HashMultimap.create();
+
+            ElementCounter<Integer> leftEven = new ElementCounter<>();
+            ElementCounter<Integer> rightEven = new ElementCounter<>();
+            ElementCounter<Integer> leftOdd = new ElementCounter<>();
+            ElementCounter<Integer> rightOdd = new ElementCounter<>();
+            ElementCounter<Integer> top = new ElementCounter<>();
+            ElementCounter<Integer> bottom = new ElementCounter<>();
+
             for (Block b : blocks) {
                 BoundingBox box = BoundingBoxCalculator.calculateOneBox(b.getTokens());
                 if (box != null) {
@@ -269,7 +280,38 @@ public class Document {
                     b.setWidth(box.getWidth());
                     b.setHeight(box.getHeight());
                 }
+
+                //small blocks can indicate that it's page numbers, some journal header info, etc. No need in them
+                if (b.getX() == 0 || b.getHeight() < 20 || b.getWidth() < 20) {
+                    continue;
+                }
+
+                if (b.getPageNumber() % 2 == 0) {
+                    leftEven.i((int) b.getX());
+                    rightEven.i((int) (b.getX() + b.getWidth()));
+                } else {
+                    leftOdd.i((int) b.getX());
+                    rightOdd.i((int) (b.getX() + b.getWidth()));
+                }
+
+                top.i((int) b.getY());
+                bottom.i((int) (b.getY() + b.getHeight()));
             }
+
+            int pageEvenX = getCoordItem(leftEven, true);
+            int pageOddX = getCoordItem(leftOdd, true);
+            int pageEvenWidth = getCoordItem(rightEven, false) - pageEvenX;
+            int pageOddWidth = getCoordItem(rightOdd, false) - pageOddX;
+            int pageY = getCoordItem(top, true);
+            int pageHeight = getCoordItem(bottom, false) - pageY;
+            for (Page page : pages) {
+                if (page.isEven()) {
+                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageEvenX, pageY, pageEvenWidth, pageHeight));
+                } else {
+                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageOddX, pageY, pageOddWidth, pageHeight));
+                }
+            }
+
         } catch (Exception e) {
             throw new GrobidException("Cannot parse file: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
         } finally {
@@ -285,6 +327,29 @@ public class Document {
         // we filter out possible line numbering for review works
         // filterLineNumber();
         return tokenizations;
+    }
+
+    private static int getCoordItem(ElementCounter<Integer> cnt, boolean getMin) {
+        List<Map.Entry<Integer, Integer>> counts = cnt.getSortedCounts();
+        int max = counts.get(0).getValue();
+
+        int res = counts.get(0).getKey();
+        for (Map.Entry<Integer, Integer> e : counts) {
+            if (e.getValue() < max * 0.7) {
+                break;
+            }
+
+            if (getMin) {
+                if (e.getKey() < res) {
+                    res = e.getKey();
+                }
+            } else {
+                if (e.getKey() > res) {
+                    res = e.getKey();
+                }
+            }
+        }
+        return res;
     }
 
     /**
@@ -1081,6 +1146,11 @@ public class Document {
 
     public List<Page> getPages() {
         return pages;
+    }
+
+    // starting from 1
+    public Page getPage(int num) {
+        return pages.get(num - 1);
     }
 
     public List<Cluster> getClusters() {

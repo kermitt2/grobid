@@ -186,10 +186,11 @@ public class Block {
     }
 
     public int getPageNumber() {
-        if (page != null)
-            return page.number;
-        else
+        if (page != null) {
+            return page.getNumber();
+        } else {
             return -1;
+        }
     }
     
     public void setPage(Page page) {

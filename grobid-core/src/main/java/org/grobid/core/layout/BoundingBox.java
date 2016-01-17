@@ -104,6 +104,10 @@ public class BoundingBox {
         return fromTwoPoints(o.page, Math.min(this.x, o.x), Math.min(this.y, o.y), Math.max(this.x2, o.x2), Math.max(this.y2, o.y2));
     }
 
+    public boolean contains(BoundingBox b) {
+        return x <= b.x && y <= b.y && x2 >= b.x2 && y2 >= b.x2;
+    }
+
     @Override
     public String toString() {
         return String.format("%d,%.2f,%.2f,%.2f,%.2f", page, x, y, width, height);
