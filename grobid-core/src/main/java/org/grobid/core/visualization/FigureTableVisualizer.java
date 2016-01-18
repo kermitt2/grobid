@@ -74,6 +74,15 @@ public class FigureTableVisualizer {
             AnnotationUtil.annotatePage(document, coords, isFigure ? 1 : 2);
         }
 
+        q = XQueryProcessor.getQueryFromResources("figure-coords-pdf2xml.xq");
+
+        pr = new XQueryProcessor(xmlFile);
+        it = pr.getSequenceIterator(q);
+        while ((item = it.next()) != null) {
+            String coords = item.getStringValue();
+            AnnotationUtil.annotatePage(document, coords, 3);
+        }
+
         return document;
     }
 
