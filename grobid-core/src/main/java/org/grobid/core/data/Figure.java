@@ -8,6 +8,7 @@ import nu.xom.Attribute;
 import nu.xom.Element;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
@@ -29,13 +30,14 @@ public class Figure {
 	protected int end = -1; // end position in the full text tokenization
 	protected LayoutToken startToken = null; // start layout token
 	protected LayoutToken endToken = null; // end layout token
+	private BoundingBox textArea;
 	
 	// coordinates
-	public int page = -1;
-	public double y = 0.0;
-    public double x = 0.0;
-    public double width = 0.0;
-    public double height = 0.0;
+	private int page = -1;
+	private double y = 0.0;
+    private double x = 0.0;
+    private double width = 0.0;
+    private double height = 0.0;
 
     // list of graphic objects corresponding to the figure
     protected List<GraphicObject> graphicObjects = null;
@@ -215,4 +217,55 @@ public class Figure {
     	return input.replace("\n", " ").replace("  ", " ").trim();
     }
 
+	public int getPage() {
+		return page;
+	}
+
+	public double getHeight() {
+		return height;
+	}
+
+	public double getWidth() {
+		return width;
+	}
+
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public URI getUri() {
+		return uri;
+	}
+
+	public void setPage(int page) {
+		this.page = page;
+	}
+
+	public void setY(double y) {
+		this.y = y;
+	}
+
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	public void setWidth(double width) {
+		this.width = width;
+	}
+
+	public void setHeight(double height) {
+		this.height = height;
+	}
+
+	public BoundingBox getTextArea() {
+		return textArea;
+	}
+
+	public void setTextArea(BoundingBox textArea) {
+		this.textArea = textArea;
+	}
 }

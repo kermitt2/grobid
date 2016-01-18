@@ -1,10 +1,14 @@
 package org.grobid.core.layout;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Created by zholudev on 18/08/15.
  * Represents a bounding box (e.g. for a reference marker in PDF)
  */
 public class BoundingBox {
+    private static final Logger LOGGER = LoggerFactory.getLogger(BoundingBox.class);
     private int page;
     private double x, y, width, height;
 
@@ -104,8 +108,48 @@ public class BoundingBox {
         return fromTwoPoints(o.page, Math.min(this.x, o.x), Math.min(this.y, o.y), Math.max(this.x2, o.x2), Math.max(this.y2, o.y2));
     }
 
+    public BoundingBox boundBoxExcludingAnotherPage(BoundingBox o) {
+        if (this.page != o.page) {
+            LOGGER.warn("Cannot compute a bounding box for different pages: " + this  + " and " + o + "; skipping");
+            return this;
+        }
+        return fromTwoPoints(o.page, Math.min(this.x, o.x), Math.min(this.y, o.y), Math.max(this.x2, o.x2), Math.max(this.y2, o.y2));
+    }
+
+
     public boolean contains(BoundingBox b) {
         return x <= b.x && y <= b.y && x2 >= b.x2 && y2 >= b.y2;
+    }
+
+    private double dist(double x1, double y1, double x2, double y2) {
+        return Math.sqrt((x2 - x1) * (x2 - 1) + (y2 - y1) * (y2 - y1));
+    }
+
+    public double distanceTo(BoundingBox to) {
+        //the current box is completely "lefter"
+        boolean left = x2 < to.x;
+        boolean right = to.x2 < x;
+        boolean bottom = to.y2 < y;
+        boolean top = y2 < to.y;
+        if (top && left) {
+            return dist(x2, y2, to.x, y);
+        } else if (left && bottom) {
+            return dist(x2, y, to.x, to.y2);
+        } else if (bottom && right) {
+            return dist(x, y, to.x2, to.y2);
+        } else if (right && top) {
+            return dist(x, y2, to.x2, to.y);
+        } else if (left) {
+            return to.x - x2;
+        } else if (right) {
+            return x - to.x2;
+        } else if (bottom) {
+            return y - to.y2;
+        } else if (top) {
+            return to.y - to.y2;
+        } else {
+            return 0;
+        }
     }
 
     @Override
