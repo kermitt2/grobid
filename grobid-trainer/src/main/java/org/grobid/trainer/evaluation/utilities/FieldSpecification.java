@@ -259,18 +259,18 @@ public class FieldSpecification {
 		sectionTitleField.grobidPath.
 			add("//text/body/div/head/text()");
 		sectionTitleField.nlmPath.
-			add("//sec/title/text()");
+			add("//body//sec/title/text()");
 		fulltextFields.add(sectionTitleField);
 		fulltextLabels.add("section_title");
 
-		FieldSpecification referenceCitationField = new FieldSpecification();
-		referenceCitationField.fieldName = "reference_citation";
-		referenceCitationField.isTextual = true;
-		referenceCitationField.grobidPath.
+		FieldSpecification referenceMarkerField = new FieldSpecification();
+		referenceMarkerField.fieldName = "reference_citation";
+		referenceMarkerField.isTextual = true;
+		referenceMarkerField.grobidPath.
 			add("//ref[@type=\"bibr\"]/text()");
-		referenceCitationField.nlmPath.
+		referenceMarkerField.nlmPath.
 			add("//xref[@ref-type=\"bibr\"]/text()");
-		fulltextFields.add(referenceCitationField);
+		fulltextFields.add(referenceMarkerField);
 		fulltextLabels.add("reference_citation");
 
 		FieldSpecification referenceFigureField = new FieldSpecification();
@@ -292,6 +292,27 @@ public class FieldSpecification {
 			add("//xref[@ref-type=\"table\"]/text()");
 		fulltextFields.add(referenceTableField);
 		fulltextLabels.add("reference_table");
+
+		FieldSpecification figureTitleField = new FieldSpecification();
+		figureTitleField.fieldName = "figure_title";
+		figureTitleField.isTextual = true;
+		figureTitleField.grobidPath.
+			add("//figure[@type=\"figure\"]/head/text()");
+		figureTitleField.nlmPath.
+			add("//fig/label/text()");
+		fulltextFields.add(figureTitleField);
+		fulltextLabels.add("figure_title");
+		
+		FieldSpecification figureCaptionField = new FieldSpecification();
+		figureCaptionField.fieldName = "figure_caption";
+		figureCaptionField.isTextual = true;
+		figureCaptionField.grobidPath.
+			add("//figure[@type=\"figure\"]/description/text()");
+		figureCaptionField.nlmPath.
+			add("//fig/caption/p/text()");
+		fulltextFields.add(figureCaptionField);
+		fulltextLabels.add("figure_caption");
+		
 
 		//labels.add("section_title");
 		//labels.add("paragraph");

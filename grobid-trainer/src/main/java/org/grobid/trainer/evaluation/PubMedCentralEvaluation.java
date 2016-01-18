@@ -163,13 +163,13 @@ public class PubMedCentralEvaluation {
 		// evaluation of the run
 		
 		report.append("\n======= Header metadata ======= \n");
-		report.append(evaluationRun(this.GROBID, this.HEADER));
+		//report.append(evaluationRun(this.GROBID, this.HEADER));
 		
 		report.append("\n======= Citation metadata ======= \n");
-		report.append(evaluationRun(this.GROBID, this.CITATION));
+		//report.append(evaluationRun(this.GROBID, this.CITATION));
 		
 		report.append("\n======= Fulltext structures ======= \n");
-		//report.append(evaluationRun(this.GROBID, this.FULLTEXT));
+		report.append(evaluationRun(this.GROBID, this.FULLTEXT));
 		
 		return report.toString();
 	}
@@ -1185,19 +1185,21 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
 								nbGrobidResults = nodeList.getLength();
 								for (int i = 0; i < nodeList.getLength(); i++) {
-								    grobidResults.add(nodeList.item(i).getNodeValue());
+								    grobidResults.add(basicNormalizationFullText(nodeList.item(i).getNodeValue(), fieldName));
 								}
 							}						
 
-							/*boolean first = true;
+							boolean first = true;
+							System.out.print("\n"+fieldName+" - ");
+							System.out.print("\ngrobidResults:\t");
 							for(String res : grobidResults) {
 								if (!first)
-									System.out.print(", ");
+									System.out.print(" | ");
 								else 
 									first = false;
 								System.out.print(res);
 							}
-							System.out.println("");*/
+							System.out.println("");
 							
 							List<String> nlmResults = new ArrayList<String>();
 							int nbNlmResults = 0;
@@ -1207,19 +1209,20 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 								//System.out.println(path + ": " + nodeList.getLength() + " nodes");
 								nbNlmResults = nodeList.getLength();
 								for (int i = 0; i < nodeList.getLength(); i++) {
-									nlmResults.add(nodeList.item(i).getNodeValue());
+									nlmResults.add(basicNormalizationFullText(nodeList.item(i).getNodeValue(), fieldName));
 								}
 							}
 							
-							/*first = true;
+							first = true;
+							System.out.print("nlmResults:\t");
 							for(String res : nlmResults) {
 								if (!first)
-									System.out.print(", ");
+									System.out.print(" | ");
 								else 
 									first = false;
 								System.out.print(res);
 							}
-							System.out.println("");*/
+							System.out.println("");
 							
 							// we compare the two result sets
 							
@@ -1285,10 +1288,19 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									}
 								}
 						
+								/*StringBuilder nlmResultBuilder = new StringBuilder();
+								for (String nlmResult : nlmResults) {
+									nlmResultBuilder.append(nlmResult).append(" ");
+								}
+								String nlmResultString = nlmResultBuilder.toString();
+								StringBuilder grobidResultBuilder = new StringBuilder();
+								for (String grobidResult : grobidResults) {
+									grobidResultBuilder.append(grobidResult).append(" ");
+								}
+								String grobidResultString = grobidResultBuilder.toString();
 								// Levenshtein
-								/*if (field.isTextual) {
-									// find the closest Grobid result
-									int distance = TextUtilities.getLevenshteinDistance(nlmResult, grobidResult);
+								if (field.isTextual) {
+									int distance = TextUtilities.getLevenshteinDistance(nlmResultString, grobidResultString);
 									// Levenshtein distance is an integer value, not a percentage... however
 									// articles usually introduced it as a percentage... so we report it
 									// following the straightforward formula:
@@ -1306,16 +1318,16 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 										counterFalseNegativeLevenshtein.set(p, count+1);
 										allGoodLevenshtein = false;
 									}
-								}*/
+								}
 						
 								// RatcliffObershelp
-								/*Double similarity = 0.0;
+								Double similarity = 0.0;
 								if (nlmResult.trim().equals(grobidResult.trim()))
 									similarity = 1.0;
 								if (field.isTextual) {
 									if ( (nlmResult.length() > 0) && (grobidResult.length() > 0) ) {
 										Option<Object> similarityObject = 
-											RatcliffObershelpMetric.compare(nlmResult, grobidResult);
+											RatcliffObershelpMetric.compare(nlmResultString, grobidResultString);
 										if ( (similarityObject != null) && (similarityObject.get() != null) )
 											 similarity = (Double)similarityObject.get();
 									}
@@ -1383,18 +1395,20 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 		report.append(EvaluationUtilities.computeMetrics(labels, counterObservedSoft, 
 			counterExpectedSoft, counterFalsePositiveSoft, counterFalseNegativeSoft));
 
-		report.append("\n\n==== Levenshtein Matching ===== (Minimum Levenshtein distance at " + 
-			this.minLevenshteinDistance + ")\n");
-		report.append("\n===== Field-level results =====\n");
-		report.append(EvaluationUtilities.computeMetrics(labels, counterObservedLevenshtein, 
-			counterExpectedLevenshtein, counterFalsePositiveLevenshtein, counterFalseNegativeLevenshtein));
+		if (sectionType != this.FULLTEXT) {
+			report.append("\n\n==== Levenshtein Matching ===== (Minimum Levenshtein distance at " + 
+				this.minLevenshteinDistance + ")\n");
+			report.append("\n===== Field-level results =====\n");
+			report.append(EvaluationUtilities.computeMetrics(labels, counterObservedLevenshtein, 
+				counterExpectedLevenshtein, counterFalsePositiveLevenshtein, counterFalseNegativeLevenshtein));
 
-		report.append("\n\n= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at " +
-			minRatcliffObershelpSimilarity + ")\n");
-		report.append("\n===== Field-level results =====\n");
-		report.append(EvaluationUtilities.computeMetrics(labels, counterObservedRatcliffObershelp, 
-			counterExpectedRatcliffObershelp, counterFalsePositiveRatcliffObershelp, 
-			counterFalseNegativeRatcliffObershelp));
+			report.append("\n\n= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at " +
+				minRatcliffObershelpSimilarity + ")\n");
+			report.append("\n===== Field-level results =====\n");
+			report.append(EvaluationUtilities.computeMetrics(labels, counterObservedRatcliffObershelp, 
+				counterExpectedRatcliffObershelp, counterFalsePositiveRatcliffObershelp, 
+				counterFalseNegativeRatcliffObershelp));
+		}
 
 		if (sectionType == this.CITATION) {
 			report.append("\n===== Instance-level results =====\n\n");
@@ -1519,9 +1533,29 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 		string = string.replace("\n", " ");
 		string = string.replaceAll("\t", " ");
 		string = string.replaceAll(" ( )*", " ");
-		return string.trim();
+		return string.trim().toLowerCase();
 	}
 	
+	private static String basicNormalizationFullText(String string, String fieldName) {
+		string = string.trim();
+		string = string.replace("\n", " ");
+		string = string.replace("\t", " ");
+		string = string.replace("_", " ");
+		string = string.replace("\u00A0", " ");
+		if (fieldName.equals("reference_figure")) {
+			string = string.replace("figure", "").replace("Figure", "").replace("fig.", "").replace("Fig.", "").replace("fig", "").replace("Fig", "");
+		}
+		if (fieldName.equals("reference_table")) {
+			string = string.replace("table", "").replace("Table", "");
+		}
+		string = string.replaceAll(" ( )*", " ");
+		if (string.startsWith("[") || string.startsWith("("))
+			string = string.substring(1,string.length());
+		while (string.endsWith("]") || string.endsWith(")") || string.endsWith(","))
+			string = string.substring(0,string.length()-1);
+		return string.trim();
+	}
+
 	private static String removeFullPunct(String string) {
 		StringBuilder result = new StringBuilder();
 		string = string.toLowerCase();

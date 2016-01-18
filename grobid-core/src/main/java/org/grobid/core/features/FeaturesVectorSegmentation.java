@@ -44,6 +44,7 @@ public class FeaturesVectorSegmentation {
 	public int lineLength = 0;
     public boolean bitmapAround = false;
     public boolean vectorAround = false;
+    public boolean inMainArea = true;
 
     public boolean repetitivePattern = false; // if true, the textual pattern is repeated at the same position on other pages
     public boolean firstRepetitivePattern = false; // if true, this is a repetitive textual pattern and this is its first occurrence in the doc
@@ -250,8 +251,14 @@ public class FeaturesVectorSegmentation {
         else
             res.append(" 0");
 
+        // if the block is in the page main area (1)
+        if (inMainArea)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
         // space with previous block, discretised (1)
-        res.append(" " + spacingWithPreviousBlock);
+        //res.append(" " + spacingWithPreviousBlock);
         //res.append(" " + 0);
 
         // character density of the previous block, discretised (1)
