@@ -8,6 +8,7 @@ U05:%x[1,0]
 U06:%x[2,0]
 U07:%x[3,0]
 U08:%x[4,0]
+U08:%x[5,0]
 #U09:%x[-1,0]/%x[0,0]
 #U0A:%x[0,0]/%x[1,0]
 #U0B:%x[1,0]/%x[2,0]
@@ -185,23 +186,22 @@ UI1:%x[-1,31]
 UI2:%x[0,31]
 UI3:%x[1,31]
 
-# space with previous block, discretised (1)
+# if the block is in the page main area (1)
+UJ1:%x[-2,32]
 UJ1:%x[-1,32]
 UJ2:%x[0,32]
 UJ3:%x[1,32]
+UJ3:%x[1,32]
 
-# character density of the previous block, discretised (1)
+# discretize space with previous block (1)
 #UK1:%x[-1,33]
 #UK2:%x[0,33]
 #UK3:%x[1,33]
 
-# pattern repeated on several pages
-UH0:%x[-2,25]
-UH1:%x[-1,25]
-UH2:%x[0,25]
-UH3:%x[1,25]
-UH4:%x[2,25]
-UH5:%x[3,25]
+# character density of the previous block, discretised (1)
+#UL1:%x[-1,34]
+#UL2:%x[0,34]
+#UL3:%x[1,34]
 
 # Output
 B

@@ -14,6 +14,7 @@ import org.grobid.core.features.FeaturesVectorSegmentation;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.Page;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
@@ -299,7 +300,7 @@ public class Segmentation extends AbstractParser {
             double spacingPreviousBlock = 0.0; // discretized
             double lowestPos = 0.0;
             pageLength = page.getPageLengthChar();
-
+            BoundingBox pageBoundingBox = page.getMainArea();
             newPage = true;
             mm = 0;
             //endPage = true;
@@ -315,7 +316,7 @@ public class Segmentation extends AbstractParser {
                 if (blockIndex == page.getBlocks().size()-1) {        
                     lastPageBlock = true;
                 }
-                    
+                
                 if (blockIndex == 0) {
                     firstPageBlock = true;
                 }
@@ -355,6 +356,13 @@ public class Segmentation extends AbstractParser {
                      (block.getText() != null) && (!block.getText().contains("@PAGE")) && 
                      (!block.getText().contains("@IMAGE")) )
                     density = (double)block.getText().length() / (block.getHeight() * block.getWidth());
+
+                // is the current block in the main area of the page or not?
+                boolean inPageMainArea = true;
+                BoundingBox blockBoundingBox = BoundingBox.fromPointAndDimensions(page.getNumber(), 
+                    block.getX(), block.getY(), block.getWidth(), block.getHeight());
+                if (!pageBoundingBox.contains(blockBoundingBox) && !pageBoundingBox.intersect(blockBoundingBox))
+                    inPageMainArea = false;
 
                 String[] lines = localText.split("[\\n\\r]");
     			// set the max length of the lines in the block, in number of characters
@@ -573,6 +581,8 @@ public class Segmentation extends AbstractParser {
                         features.spacingWithPreviousBlock = featureFactory
                             .linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE);                          
                     }
+
+                    features.inMainArea = inPageMainArea;
 
                     if (density != -1.0) {
                         features.characterDensity = featureFactory
