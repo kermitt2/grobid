@@ -55,7 +55,7 @@ public class BlockVisualizer {
 
             Document teiDoc = engine.fullTextToTEIDoc(input, config);
 
-            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), teiDoc);
+            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), teiDoc, true, true, true);
 //            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), null);
 
             if (out != null) {
@@ -73,23 +73,29 @@ public class BlockVisualizer {
 
     }
 
-    public static PDDocument annotateBlocks(PDDocument document, File xmlFile, Document teiDoc) throws IOException, XPathException {
+    public static PDDocument annotateBlocks(PDDocument document, File xmlFile, Document teiDoc,
+                                            boolean visualizeBlocks,
+                                            boolean visualizePageMainArea,
+                                            boolean visualizeVectorGraphics) throws IOException, XPathException {
 
         Multimap<Integer, Block> blockMultimap = HashMultimap.create();
 
 
         for (Block b : teiDoc.getBlocks()) {
-            AnnotationUtil.annotatePage(document, b.getPageNumber() + "," + b.getX() + "," + b.getY() +
-                    "," + b.getWidth() + "," + b.getHeight(), 0);
-            blockMultimap.put(b.getPageNumber(), b);
+            if (visualizeBlocks) {
+                AnnotationUtil.annotatePage(document, b.getPageNumber() + "," + b.getX() + "," + b.getY() +
+                        "," + b.getWidth() + "," + b.getHeight(), 0);
+                blockMultimap.put(b.getPageNumber(), b);
+            }
         }
 
 
         for (int pageNum = 1; pageNum <= document.getNumberOfPages(); pageNum++) {
             BoundingBox mainPageArea = teiDoc.getPage(pageNum).getMainArea();
-            AnnotationUtil.annotatePage(document,
-                    mainPageArea.toString(), 10);
-
+            if (visualizePageMainArea) {
+                AnnotationUtil.annotatePage(document,
+                        mainPageArea.toString(), 10);
+            }
 
             String q = "\n" +
                     "for $g  in //GROUP return\n" +
@@ -99,6 +105,8 @@ public class BlockVisualizer {
                     "  let $x2 := max(($g/*/@x, $g//*/@x1, $g//*/@x2, $g//*/@x3))\n" +
                     "  let $y2 := max(($g/*/@y, $g//*/@y1, $g//*/@y2, $g//*/@y3))\n" +
                     "  return concat($x1, \",\", $y1, \",\", $x2 - $x1, \",\", $y2 - $y1)";
+
+            q = XQueryProcessor.getQueryFromResources("vector-coords.xq");
             XQueryProcessor pr = new XQueryProcessor(new File(xmlFile.getAbsolutePath() + "_data", "image-" + pageNum + ".vec"));
             SequenceIterator it = pr.getSequenceIterator(q);
             Item item;
@@ -108,34 +116,34 @@ public class BlockVisualizer {
                 String c = item.getStringValue();
                 String coords = pageNum + "," + c;
                 BoundingBox e = BoundingBox.fromString(coords);
-                //TODO: detect borders
                 if (!mainPageArea.contains(e)) {
                     continue;
                 }
                 boxes.add(e);
-//                AnnotationUtil.annotatePage(document, coords, 1);
             }
 
-            List<BoundingBox> remainingBoxes = mergeBoxes(boxes);
+            if (visualizeVectorGraphics) {
+                List<BoundingBox> remainingBoxes = mergeBoxes(boxes);
 
-            for (int i = 0; i < remainingBoxes.size(); i++) {
-                Collection<Block> col = blockMultimap.get(pageNum);
-                for (Block bl : col) {
+                for (int i = 0; i < remainingBoxes.size(); i++) {
+                    Collection<Block> col = blockMultimap.get(pageNum);
+                    for (Block bl : col) {
 //                    if (!bl.getPage().getMainArea().contains(b)) {
 //                        continue;
 //                    }
 
-                    BoundingBox b = BoundingBox.fromPointAndDimensions(pageNum, bl.getX(), bl.getY(), bl.getWidth(), bl.getHeight());
-                    if (remainingBoxes.get(i).intersect(b)) {
-                        remainingBoxes.set(i, remainingBoxes.get(i).boundBox(b));
+                        BoundingBox b = BoundingBox.fromPointAndDimensions(pageNum, bl.getX(), bl.getY(), bl.getWidth(), bl.getHeight());
+                        if (remainingBoxes.get(i).intersect(b)) {
+                            remainingBoxes.set(i, remainingBoxes.get(i).boundBox(b));
+                        }
                     }
                 }
-            }
 
-            remainingBoxes = mergeBoxes(remainingBoxes);
+                remainingBoxes = mergeBoxes(remainingBoxes);
 
-            for (BoundingBox b : remainingBoxes) {
-                AnnotationUtil.annotatePage(document, b.toString(), 1);
+                for (BoundingBox b : remainingBoxes) {
+                    AnnotationUtil.annotatePage(document, b.toString(), 1);
+                }
             }
         }
 

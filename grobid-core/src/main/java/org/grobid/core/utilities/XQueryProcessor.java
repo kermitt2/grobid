@@ -8,6 +8,7 @@ import net.sf.saxon.query.StaticQueryContext;
 import net.sf.saxon.query.XQueryExpression;
 import net.sf.saxon.trans.XPathException;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.xml.sax.InputSource;
 
 import javax.xml.transform.sax.SAXSource;
@@ -18,7 +19,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.util.Properties;
-
 /**
  * Created by zholudev on 15/04/15.
  * Running XQuery queries
@@ -27,6 +27,10 @@ public class XQueryProcessor {
     private final StaticQueryContext sqc;
     private final DynamicQueryContext dqc;
 
+
+    public static String getQueryFromResources(String name) throws IOException {
+        return IOUtils.toString(XQueryProcessor.class.getResourceAsStream("/xq/" + name));
+    }
 
     public XQueryProcessor(File xmFile) throws XPathException, IOException {
         this(FileUtils.readFileToString(xmFile));

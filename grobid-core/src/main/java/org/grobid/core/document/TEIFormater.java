@@ -1296,6 +1296,23 @@ public class TEIFormater {
         buffer = TextUtilities.replaceAll(buffer, "</p0>", "</p>");
         buffer = TextUtilities.replaceAll(buffer, "<q>", "<p>");
 
+        if (figures != null) {
+            for (Figure figure : figures) {
+                String figSeg = figure.toTEI(3, config);
+                if (figSeg != null) {
+                    buffer.append(figSeg);
+                }
+            }
+        }
+        if (tables != null) {
+            for (Table table : tables) {
+                String tabSeg = table.toTEI(3, config);
+                if (tabSeg != null) {
+                    buffer.append(tabSeg);
+                }
+            }
+        }
+
         // additional pass for inserting reference markers for citations, figures and table
 //        buffer = injectMarkers(buffer, result, bds, figures, tables, doc, config, startPosition, tokenizations);
 
