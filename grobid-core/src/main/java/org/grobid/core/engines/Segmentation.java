@@ -361,7 +361,7 @@ public class Segmentation extends AbstractParser {
                 boolean inPageMainArea = true;
                 BoundingBox blockBoundingBox = BoundingBox.fromPointAndDimensions(page.getNumber(), 
                     block.getX(), block.getY(), block.getWidth(), block.getHeight());
-                if (!pageBoundingBox.contains(blockBoundingBox) && !pageBoundingBox.intersect(blockBoundingBox))
+                if (pageBoundingBox == null || (!pageBoundingBox.contains(blockBoundingBox) && !pageBoundingBox.intersect(blockBoundingBox)))
                     inPageMainArea = false;
 
                 String[] lines = localText.split("[\\n\\r]");

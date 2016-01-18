@@ -1364,8 +1364,9 @@ public class FullTextParser extends AbstractParser {
 	    			result.setStartToken(tokenizations.get(i));
 	    			result.setEnd(p);
 	    			result.setEndToken(tokenizations.get(p));
-	    			result.page = tokenizations.get(i).getPage();
-	    			Document.setConnectedGraphics(result, tokenizations, doc);
+	    			result.setPage(tokenizations.get(i).getPage());
+	    			//doc.setConnectedGraphics2(result, tokenizations, doc);
+					Document.setConnectedGraphics(result, tokenizations, doc);
 	//System.out.println(result.toString());     			
 	    			tokenizationsFigure = new ArrayList<LayoutToken>();
 					results.add(result);
@@ -1588,10 +1589,10 @@ public class FullTextParser extends AbstractParser {
 	    			result.setStartToken(tokenizations.get(i));
 	    			result.setEnd(p);
 	    			result.setEndToken(tokenizations.get(p));
-	    			result.page = tokenizations.get(i).getPage();
-	    			Document.setConnectedGraphics(result, tokenizations, doc);
+	    			result.setPage(tokenizations.get(i).getPage());
+					Document.setConnectedGraphics(result, tokenizations, doc);
 	//System.out.println(result.toString());
-	    			tokenizationsTable = new ArrayList<LayoutToken>();
+	    			tokenizationsTable = new ArrayList<>();
 					results.add(result);
 					result.setId(""+(results.size()-1));
 				}

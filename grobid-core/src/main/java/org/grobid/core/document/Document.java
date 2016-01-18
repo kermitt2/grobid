@@ -2,8 +2,11 @@ package org.grobid.core.document;
 
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
+import com.google.common.base.Predicate;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.LinkedListMultimap;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
 import org.grobid.core.data.BibDataSet;
@@ -53,6 +56,7 @@ import java.util.regex.Pattern;
 public class Document {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Document.class);
+    public static final int MAX_FIG_BOX_DISTANCE = 70;
 
     /**
      * Exit code got when pdf2xml took too much time and has been killed by pdf2xml_server.
@@ -104,6 +108,8 @@ public class Document {
 
     // list of bitmaps and vector graphics of the document
     private List<GraphicObject> images = null;
+
+    private Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
 
     // some statistics regarding the document - useful for generating the features
     private double maxCharacterDensity = 0.0;
@@ -248,8 +254,9 @@ public class Document {
 		// which will result in a "fatal" parsing failure (the joy of XML!). The solution could be to prevent
 		// having those characters in the input XML by cleaning it first  
 
-        images = new ArrayList<GraphicObject>();
+        images = new ArrayList<>();
         PDF2XMLSaxParser parser = new PDF2XMLSaxParser(this, images);
+
 
         tokenizations = null;
 
@@ -264,8 +271,13 @@ public class Document {
             SAXParser p = spf.newSAXParser();
             p.parse(in, parser);
             tokenizations = parser.getTokenization();
-            Multimap<Integer, Block> blockMultimap = HashMultimap.create();
 
+            for (GraphicObject go : images) {
+                imagesPerPage.put(go.getPage(), go);
+            }
+
+
+            // calculating main area
             ElementCounter<Integer> leftEven = new ElementCounter<>();
             ElementCounter<Integer> rightEven = new ElementCounter<>();
             ElementCounter<Integer> leftOdd = new ElementCounter<>();
@@ -299,21 +311,22 @@ public class Document {
                 bottom.i((int) (b.getY() + b.getHeight()));
             }
 
-            int pageEvenX = getCoordItem(leftEven, true);
-            int pageOddX = getCoordItem(leftOdd, true);
-            // +1 due to rounding
-            int pageEvenWidth = getCoordItem(rightEven, false) - pageEvenX + 1;
-            int pageOddWidth = getCoordItem(rightOdd, false) - pageOddX + 1;
-            int pageY = getCoordItem(top, true);
-            int pageHeight = getCoordItem(bottom, false) - pageY + 1;
-            for (Page page : pages) {
-                if (page.isEven()) {
-                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageEvenX, pageY, pageEvenWidth, pageHeight));
-                } else {
-                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageOddX, pageY, pageOddWidth, pageHeight));
+            if (!leftEven.getCnts().isEmpty()) {
+                int pageEvenX = getCoordItem(leftEven, true);
+                int pageOddX = getCoordItem(leftOdd, true);
+                // +1 due to rounding
+                int pageEvenWidth = getCoordItem(rightEven, false) - pageEvenX + 1;
+                int pageOddWidth = getCoordItem(rightOdd, false) - pageOddX + 1;
+                int pageY = getCoordItem(top, true);
+                int pageHeight = getCoordItem(bottom, false) - pageY + 1;
+                for (Page page : pages) {
+                    if (page.isEven()) {
+                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageEvenX, pageY, pageEvenWidth, pageHeight));
+                    } else {
+                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageOddX, pageY, pageOddWidth, pageHeight));
+                    }
                 }
             }
-
         } catch (Exception e) {
             throw new GrobidException("Cannot parse file: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
         } finally {
@@ -1318,7 +1331,45 @@ public class Document {
         return images;
     }
 
-    public static void setConnectedGraphics(Figure figure, 
+    public void setConnectedGraphics2(Figure figure,
+                                            List<LayoutToken> tokenizations,
+                                            Document doc) {
+
+        //TODO: improve - make figures clustering on the page (take all images and captions into account)
+
+        final BoundingBox figureBox =
+                BoundingBoxCalculator.calculateOneBox(tokenizations.subList(figure.getStart(), figure.getEnd() + 1), true);
+
+        double minDist = MAX_FIG_BOX_DISTANCE * 100;
+        figure.setTextArea(figureBox);
+
+        GraphicObject bestGo = null;
+
+        for (GraphicObject go : imagesPerPage.get(figure.getPage())) {
+            if (go.getType() != GraphicObject.BITMAP) {
+                continue;
+
+            }
+
+            BoundingBox goBox =
+                    BoundingBox.fromPointAndDimensions(go.getPage(), go.getX(), go.getY(),
+                            go.getWidth(), go.getHeight());
+            double dist = figureBox.distanceTo(goBox);
+            if (dist > MAX_FIG_BOX_DISTANCE) {
+                continue;
+            }
+
+            if (dist < minDist) {
+                minDist = dist;
+                bestGo = go;
+            }
+        }
+
+        if (bestGo != null) {
+            figure.setGraphicObjects(Lists.newArrayList(bestGo ));
+        }
+    }
+    public static void setConnectedGraphics(Figure figure,
 											List<LayoutToken> tokenizations, 
 											Document doc) {
         try {
@@ -1335,8 +1386,8 @@ public class Document {
             double maxDown = 0.0; // bottom border of the figure
             for (int i = start; i <= end; i++) {
                 LayoutToken current = tokenizations.get(i);
-                if ((figure.page == -1) && (current.getPage() != -1))
-                    figure.page = current.getPage();
+                if ((figure.getPage() == -1) && (current.getPage() != -1))
+                    figure.setPage(current.getPage());
                 if ((current.x >= 0.0) && (current.x < maxLeft))
                     maxLeft = current.x;
                 if ((current.y >= 0.0) && (current.y < maxUp))
@@ -1347,20 +1398,20 @@ public class Document {
                     maxDown = current.y + current.height;
             }
 
-            figure.x = maxLeft;
-            figure.y = maxUp;
-            figure.width = maxRight - maxLeft;
-            figure.height = maxDown - maxUp;
+            figure.setX(maxLeft);
+            figure.setY(maxUp);
+            figure.setWidth(maxRight - maxLeft);
+            figure.setHeight(maxDown - maxUp);
 
             // attach connected graphics based on estimated figure area
             for (GraphicObject image : doc.getImages()) {
                 if (image.getType() == GraphicObject.VECTOR)
                     continue;
-                if (figure.page != image.getPage())
+                if (figure.getPage() != image.getPage())
                     continue;
 //System.out.println(image.toString());
-                if (((Math.abs((image.y + image.height) - figure.y) < minDistance) ||
-                        (Math.abs(image.y - (figure.y + figure.height)) < minDistance)) //&&
+                if (((Math.abs((image.y + image.height) - figure.getY()) < minDistance) ||
+                        (Math.abs(image.y - (figure.getY() + figure.getHeight())) < minDistance)) //&&
                     //( (Math.abs((image.x+image.width) - block.x) < minDistance) ||
                     //  (Math.abs(image.x - (block.x+block.width)) < minDistance) )
                         ) {

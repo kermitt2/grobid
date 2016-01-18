@@ -45,6 +45,10 @@ public class AnnotationUtil {
     }
 
     public static void annotatePage(PDDocument document, String coords, int seed) throws IOException {
+        annotatePage(document, coords, seed, 1);
+    }
+
+    public static void annotatePage(PDDocument document, String coords, int seed, int lineWidth) throws IOException {
         System.out.println("Annotating for coordinates: " + coords);
 
         BoundingBox box = getBoundingBoxForPdf(document, coords);
@@ -96,8 +100,7 @@ public class AnnotationUtil {
 
         //draw a line
         PDBorderStyleDictionary borderThick = new PDBorderStyleDictionary();
-        borderThick.setWidth(2);  // 12th inch
-
+        borderThick.setWidth(lineWidth);  // 12th inch
 
 //            PDAnnotationLine line = new PDAnnotationLine();
 //            line.setLine(new float[]{annX, annY, annRightX, annY});
@@ -121,7 +124,7 @@ public class AnnotationUtil {
 //
 ////        stream.setStrokingColor(85, 177, 245);
         stream.setStrokingColor(r.nextInt(255), r.nextInt(255), r.nextInt(255));
-        stream.setLineWidth(2);
+        stream.setLineWidth(lineWidth);
         stream.drawLine(annX, annY, annRightX, annY);
         stream.drawLine(annX, annTopY, annRightX, annTopY);
         stream.drawLine(annX, annY, annX, annTopY);

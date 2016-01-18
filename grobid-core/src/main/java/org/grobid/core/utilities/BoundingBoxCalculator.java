@@ -16,11 +16,14 @@ public class BoundingBoxCalculator {
     private static final double EPS_X = 15;
     private static final double EPS_Y = 4;
 
-    public static BoundingBox calculateOneBox(List<LayoutToken> tokens) {
-        if (tokens == null || tokens.isEmpty()) {
+    public static BoundingBox calculateOneBox(Iterable<LayoutToken> tokens) {
+        return calculateOneBox(tokens, false);
+    }
+
+    public static BoundingBox calculateOneBox(Iterable<LayoutToken> tokens, boolean ignoreDifferentPageTokens) {
+        if (tokens == null) {
             return null;
         }
-
 
         BoundingBox b = null;
         for (LayoutToken t : tokens)  {
@@ -30,7 +33,11 @@ public class BoundingBoxCalculator {
             if (b == null) {
                 b = BoundingBox.fromLayoutToken(t);
             } else {
-                b = b.boundBox(BoundingBox.fromLayoutToken(t));
+                if (ignoreDifferentPageTokens) {
+                    b = b.boundBoxExcludingAnotherPage(BoundingBox.fromLayoutToken(t));
+                } else {
+                    b = b.boundBox(BoundingBox.fromLayoutToken(t));
+                }
             }
         }
         return b;
