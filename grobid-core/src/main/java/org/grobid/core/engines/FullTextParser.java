@@ -1368,11 +1368,9 @@ public class FullTextParser extends AbstractParser {
 	    			Document.setConnectedGraphics(result, tokenizations, doc);
 	//System.out.println(result.toString());     			
 	    			tokenizationsFigure = new ArrayList<LayoutToken>();
-	    			if (result != null) {
-	    				results.add(result);
-	    				result.setId(""+(results.size()-1));
-	    			}
-	    		}
+					results.add(result);
+					result.setId(""+(results.size()-1));
+				}
     			figureBlock = new StringBuilder();
     			openFigure = false;
     		}
