@@ -4,11 +4,13 @@ import net.sf.saxon.om.Item;
 import net.sf.saxon.om.SequenceIterator;
 import net.sf.saxon.trans.XPathException;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.grobid.core.data.Figure;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
+import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.XQueryProcessor;
@@ -42,7 +44,9 @@ public class FigureTableVisualizer {
 
             Document teiDoc = engine.fullTextToTEIDoc(input, config);
 
-            PDDocument out = annotateFigureAndTables(document, documentSource.getXmlFile(), teiDoc);
+            PDDocument out = annotateFigureAndTables(
+                    document, documentSource.getXmlFile(), teiDoc,
+                    false, false, true);
 
             if (out != null) {
                 out.save(outPdf);
@@ -59,7 +63,12 @@ public class FigureTableVisualizer {
 
     }
 
-    private static PDDocument annotateFigureAndTables(PDDocument document, File xmlFile, Document teiDoc) throws IOException, XPathException {
+    private static PDDocument annotateFigureAndTables(
+            PDDocument document,
+            File xmlFile, Document teiDoc,
+            boolean visualizeTeiFigures,
+            boolean visualizePdf2xmlImages,
+            boolean visualizeGraphicObjects) throws IOException, XPathException {
         String q = XQueryProcessor.getQueryFromResources("figure-table-coords.xq");
         String tei = teiDoc.getTei();
         System.out.println(tei);
@@ -67,20 +76,42 @@ public class FigureTableVisualizer {
         SequenceIterator it = pr.getSequenceIterator(q);
         Item item;
 
-        while ((item = it.next()) != null) {
-            String coords = item.getStringValue();
-            String stringValue = it.next().getStringValue();
-            boolean isFigure = Boolean.parseBoolean(stringValue);
-            AnnotationUtil.annotatePage(document, coords, isFigure ? 1 : 2);
+        // visualizing TEI image coords
+        if (visualizeTeiFigures) {
+            while ((item = it.next()) != null) {
+                String coords = item.getStringValue();
+                String stringValue = it.next().getStringValue();
+                boolean isFigure = Boolean.parseBoolean(stringValue);
+                AnnotationUtil.annotatePage(document, coords, isFigure ? 1 : 2);
+            }
         }
 
-        q = XQueryProcessor.getQueryFromResources("figure-coords-pdf2xml.xq");
+        //VISUALIZING "IMAGE" elements from pdf2xml
+        if (visualizePdf2xmlImages) {
+            q = XQueryProcessor.getQueryFromResources("figure-coords-pdf2xml.xq");
 
-        pr = new XQueryProcessor(xmlFile);
-        it = pr.getSequenceIterator(q);
-        while ((item = it.next()) != null) {
-            String coords = item.getStringValue();
-            AnnotationUtil.annotatePage(document, coords, 3);
+            pr = new XQueryProcessor(xmlFile);
+            it = pr.getSequenceIterator(q);
+            while ((item = it.next()) != null) {
+                String coords = item.getStringValue();
+                AnnotationUtil.annotatePage(document, coords, 3);
+            }
+        }
+
+        if (visualizeGraphicObjects) {
+            // visualizing graphic objects
+            for (Figure f : teiDoc.getFigures()) {
+                if (f.getGraphicObjects() != null) {
+                    for (GraphicObject go : f.getGraphicObjects()) {
+                        if (go.getType() == GraphicObject.BITMAP) {
+                            AnnotationUtil.annotatePage(document,
+                                    AnnotationUtil.getCoordString(go.getPage(), go.getX(), go.getY(),
+                                            go.getWidth(), go.getHeight()), 4
+                            );
+                        }
+                    }
+                }
+            }
         }
 
         return document;

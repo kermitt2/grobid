@@ -17,10 +17,10 @@ import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.BoundingBox;
-import org.grobid.core.layout.Page;
 import org.grobid.core.layout.Cluster;
-import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.GraphicObject;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.Page;
 import org.grobid.core.sax.PDF2XMLSaxParser;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.ElementCounter;
@@ -121,6 +121,7 @@ public class Document {
     // the magic DOI regular expression...
     static public final Pattern DOIPattern = Pattern
             .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
+    private List<Figure> figures;
 
     public Document(DocumentSource documentSource) {
         top = new DocumentNode("top", "0");
@@ -1327,23 +1328,23 @@ public class Document {
             LayoutToken endToken = figure.getEndToken();
             int start = figure.getStart();
             int end = figure.getEnd();
-            
+
             double maxRight = 0.0; // right border of the figure
             double maxLeft = 10000.0; // left border of the figure
             double maxUp = 10000.0; // upper border of the figure
             double maxDown = 0.0; // bottom border of the figure
-            for(int i=start; i<=end; i++) {
+            for (int i = start; i <= end; i++) {
                 LayoutToken current = tokenizations.get(i);
-				if ( (figure.page == -1) && (current.getPage() != -1) )
-					figure.page = current.getPage();
-                if ( (current.x >= 0.0) && (current.x < maxLeft) )
+                if ((figure.page == -1) && (current.getPage() != -1))
+                    figure.page = current.getPage();
+                if ((current.x >= 0.0) && (current.x < maxLeft))
                     maxLeft = current.x;
-                if ( (current.y >= 0.0) && (current.y < maxUp) )
+                if ((current.y >= 0.0) && (current.y < maxUp))
                     maxUp = current.y;
-                if ( (current.x >= 0.0) && (current.x+current.width > maxRight) )
-                    maxRight = current.x+current.width;
-                if ( (current.y >= 0.0) && (current.y+current.height > maxDown) )
-                    maxDown = current.y+current.height;
+                if ((current.x >= 0.0) && (current.x + current.width > maxRight))
+                    maxRight = current.x + current.width;
+                if ((current.y >= 0.0) && (current.y + current.height > maxDown))
+                    maxDown = current.y + current.height;
             }
 
             figure.x = maxLeft;
@@ -1352,17 +1353,17 @@ public class Document {
             figure.height = maxDown - maxUp;
 
             // attach connected graphics based on estimated figure area
-            for(GraphicObject image : doc.getImages()) {
-                if (image.getType() == GraphicObject.VECTOR) 
+            for (GraphicObject image : doc.getImages()) {
+                if (image.getType() == GraphicObject.VECTOR)
                     continue;
-                if (figure.page != image.getPage()) 
+                if (figure.page != image.getPage())
                     continue;
 //System.out.println(image.toString());
-                if ( ( (Math.abs((image.y+image.height) - figure.y) < minDistance) ||
-                       (Math.abs(image.y - (figure.y+figure.height)) < minDistance) ) //&&
-                     //( (Math.abs((image.x+image.width) - block.x) < minDistance) ||
-                     //  (Math.abs(image.x - (block.x+block.width)) < minDistance) )
-                     ) {
+                if (((Math.abs((image.y + image.height) - figure.y) < minDistance) ||
+                        (Math.abs(image.y - (figure.y + figure.height)) < minDistance)) //&&
+                    //( (Math.abs((image.x+image.width) - block.x) < minDistance) ||
+                    //  (Math.abs(image.x - (block.x+block.width)) < minDistance) )
+                        ) {
                     // the image is at a distance of at least minDistance from one border 
                     // of the block on the vertical axis
                     if (localImages == null)
@@ -1373,21 +1374,20 @@ public class Document {
 
             // re-evaluate figure area with connected graphics
             if (localImages != null) {
-                for(GraphicObject image : localImages) {
+                for (GraphicObject image : localImages) {
                     if (image.x < maxLeft)
                         maxLeft = image.x;
                     if (image.y < maxUp)
                         maxUp = image.y;
-                    if (image.x+image.width > maxRight)
-                        maxRight = image.x+image.width;
-                    if (image.y+image.height > maxDown)
-                        maxDown = image.y+image.height;
+                    if (image.x + image.width > maxRight)
+                        maxRight = image.x + image.width;
+                    if (image.y + image.height > maxDown)
+                        maxDown = image.y + image.height;
                 }
             }
 
             figure.setGraphicObjects(localImages);
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -1457,5 +1457,13 @@ public class Document {
         System.out.println("minBlockSpacing: " + minBlockSpacing);
         System.out.println("maxCharacterDensity: " + maxCharacterDensity);
         System.out.println("minCharacterDensity: " + minCharacterDensity);*/
+    }
+
+    public void setFigures(List<Figure> figures) {
+        this.figures = figures;
+    }
+
+    public List<Figure> getFigures() {
+        return figures;
     }
 }

@@ -35,8 +35,8 @@ public class BlockVisualizer {
 
     public static void main(String[] args) {
         try {
-//            File input = new File("/Work/temp/context/coords/1.pdf");
-            File input = new File("/Work/temp/figureExtraction/3.pdf");
+            File input = new File("/Work/temp/context/coords/2.pdf");
+//            File input = new File("/Work/temp/figureExtraction/3.pdf");
 
             final PDDocument document = PDDocument.load(input);
             File outPdf = new File("/tmp/test.pdf");

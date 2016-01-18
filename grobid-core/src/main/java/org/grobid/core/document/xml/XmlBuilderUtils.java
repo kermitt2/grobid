@@ -3,6 +3,7 @@ package org.grobid.core.document.xml;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
+import nu.xom.Attribute;
 import nu.xom.Builder;
 import nu.xom.Document;
 import nu.xom.Element;
@@ -27,6 +28,7 @@ public class XmlBuilderUtils {
             return toXml(element);
         }
     };
+    public static final String XML_NS = "http://www.w3.org/XML/1998/namespace";
 
     public static Element fromString(String xml) {
         Builder parser = new Builder();
@@ -72,6 +74,14 @@ public class XmlBuilderUtils {
 
     public static Element teiElement(String name) {
         return new Element(name, TEI_NS);
+    }
+
+    public static void addCoords(Element el, String coords) {
+        el.addAttribute(new Attribute("coords", coords));
+    }
+
+    public static void addXmlId(Element el, String id) {
+        el.addAttribute(new Attribute("xml:id", XML_NS, id));
     }
 
     public static Element teiElement(String name, String content) {
