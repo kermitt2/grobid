@@ -1377,6 +1377,7 @@ public class FullTextParser extends AbstractParser {
     		else 
     			openFigure = false;
     	}
+		doc.setFigures(results);
     	return results;
     }
 
