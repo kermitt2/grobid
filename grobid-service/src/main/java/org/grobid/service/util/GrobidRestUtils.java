@@ -29,7 +29,7 @@ public class GrobidRestUtils {
 			.getLogger(GrobidRestUtils.class);
 
 	// type of PDF annotation for visualization purposes
-	public enum Annotation { CITATION, BLOCK};
+	public enum Annotation { CITATION, BLOCK, FIGURE};
 
 	/**
 	 * Check whether the result is null or empty.
