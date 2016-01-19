@@ -4,6 +4,7 @@ import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.document.Document;
+import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidPoolingFactory;
@@ -14,6 +15,7 @@ import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.GrobidServiceProperties;
 import org.grobid.core.visualization.CitationsVisualizer;
 import org.grobid.core.visualization.BlockVisualizer;
+import org.grobid.core.visualization.FigureTableVisualizer;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -615,23 +617,37 @@ public class GrobidRestProcessFiles {
                 // starts conversion process
                 final PDDocument document = PDDocument.load(originFile);
                 engine = GrobidRestUtils.getEngine(isparallelExec);
+				DocumentSource documentSource = DocumentSource.fromPdf(originFile);
                 if (isparallelExec) {
                     Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-                    if (type == GrobidRestUtils.Annotation.CITATION)
+                    if (type == GrobidRestUtils.Annotation.CITATION) {
                         out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc);
-                    /*else if (type == GrobidRestUtils.Annotation.BLOCK) {
-                        out = BlockVisualizer.annotateBlocks(document, teiDoc);
-					}*/
+					}
+                    else if (type == GrobidRestUtils.Annotation.BLOCK) {
+                        out = BlockVisualizer.annotateBlocks(document, documentSource.getXmlFile(), 
+								teiDoc, true, true, false);
+					}
+                    else if (type == GrobidRestUtils.Annotation.FIGURE) {
+                        out = FigureTableVisualizer.annotateFigureAndTables(document, documentSource.getXmlFile(), 
+								teiDoc, true, true, true);
+					}
                     GrobidPoolingFactory.returnEngine(engine);
                     engine = null;
                 } else {
                     synchronized (engine) {
                         //TODO: VZ: sync on local var does not make sense
                         Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-                        if (type == GrobidRestUtils.Annotation.CITATION)
+                        if (type == GrobidRestUtils.Annotation.CITATION) {
                             out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc);
-                        /*else if (type == GrobidRestUtils.Annotation.BLOCK)
-                            out = BlockVisualizer.annotateBlocks(document, teiDoc);*/
+						}
+                        else if (type == GrobidRestUtils.Annotation.BLOCK) {
+                            out = BlockVisualizer.annotateBlocks(document, documentSource.getXmlFile(), 
+								teiDoc, true, true, false);
+						}
+	                    else if (type == GrobidRestUtils.Annotation.FIGURE) {
+	                        out = FigureTableVisualizer.annotateFigureAndTables(document, documentSource.getXmlFile(), 
+									teiDoc, true, true, true);
+						}
                     } 
                 }
 

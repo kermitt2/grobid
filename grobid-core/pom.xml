@@ -186,12 +186,6 @@
 			<version>1.2.5</version>
 		</dependency>
 
-		<dependency>
-			<groupId>nz.ac.waikato.cms.moa</groupId>
-			<artifactId>moa</artifactId>
-			<version>2014.04</version>
-		</dependency>
-
 	</dependencies>
 
 	<profiles>

@@ -311,20 +311,23 @@ public class Document {
                 bottom.i((int) (b.getY() + b.getHeight()));
             }
 
-            if (!leftEven.getCnts().isEmpty()) {
-                int pageEvenX = getCoordItem(leftEven, true);
-                int pageOddX = getCoordItem(leftOdd, true);
+			int pageEvenX = 0;
+            int pageEvenWidth = 0;
+            if (pages.size() > 1) {
+                pageEvenX = getCoordItem(leftEven, true);
                 // +1 due to rounding
-                int pageEvenWidth = getCoordItem(rightEven, false) - pageEvenX + 1;
-                int pageOddWidth = getCoordItem(rightOdd, false) - pageOddX + 1;
-                int pageY = getCoordItem(top, true);
-                int pageHeight = getCoordItem(bottom, false) - pageY + 1;
-                for (Page page : pages) {
-                    if (page.isEven()) {
-                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageEvenX, pageY, pageEvenWidth, pageHeight));
-                    } else {
-                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageOddX, pageY, pageOddWidth, pageHeight));
-                    }
+                pageEvenWidth = getCoordItem(rightEven, false) - pageEvenX + 1;
+            }
+            int pageOddX = getCoordItem(leftOdd, true);
+            // +1 due to rounding                                                                                                                                                  
+            int pageOddWidth = getCoordItem(rightOdd, false) - pageOddX + 1;
+            int pageY = getCoordItem(top, true);
+            int pageHeight = getCoordItem(bottom, false) - pageY + 1;
+            for (Page page : pages) {
+                if (page.isEven()) {
+                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageEvenX, pageY, pageEvenWidth, pageHeight));
+                } else {
+                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageOddX, pageY, pageOddWidth, pageHeight));
                 }
             }
         } catch (Exception e) {

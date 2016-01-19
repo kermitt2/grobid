@@ -65,7 +65,7 @@ public class FigureTableVisualizer {
 
     }
 
-    private static PDDocument annotateFigureAndTables(
+    public static PDDocument annotateFigureAndTables(
             PDDocument document,
             File xmlFile, Document teiDoc,
             boolean visualizeTeiFigures,
