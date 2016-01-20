@@ -1,6 +1,7 @@
 package org.grobid.core.tokenization;
 
 import com.google.common.base.Function;
+import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import org.grobid.core.engines.TaggingLabel;
@@ -14,6 +15,20 @@ import java.util.List;
  * Cluster of related tokens
  */
 public class TaggingTokenCluster {
+    public static final Function<LabeledTokensContainer, String> CONTAINERS_TO_FEATURE_BLOCK = new Function<LabeledTokensContainer, String>() {
+        @Override
+        public String apply(LabeledTokensContainer labeledTokensContainer) {
+            if (labeledTokensContainer == null) {
+                return "\n";
+            }
+
+            if (labeledTokensContainer.getFeatureString() == null) {
+                throw new IllegalStateException("This method must be called when feature string is not empty for " +
+                        "LabeledTokenContainers");
+            }
+            return labeledTokensContainer.getFeatureString();
+        }
+    };
     private List<LabeledTokensContainer> labeledTokensContainers = new ArrayList<>();
     private TaggingLabel taggingLabel;
 
@@ -60,5 +75,9 @@ public class TaggingTokenCluster {
             }
         }));
         return Lists.newArrayList(it);
+    }
+
+    public String getFeatureBlock() {
+        return Joiner.on("\n").join(Iterables.transform(labeledTokensContainers, CONTAINERS_TO_FEATURE_BLOCK));
     }
 }

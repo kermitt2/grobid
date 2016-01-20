@@ -18,6 +18,7 @@ public class LabeledTokensContainer {
     private boolean beginning;
     private boolean spacePreceding;
     private boolean newLinePreceding;
+    private String featureString;
 
     public LabeledTokensContainer(List<LayoutToken> layoutTokens, String token, TaggingLabel taggingLabel, boolean beginning) {
         this.layoutTokens = layoutTokens;
@@ -65,6 +66,14 @@ public class LabeledTokensContainer {
 
     public void setNewLinePreceding(boolean newLinePreceding) {
         this.newLinePreceding = newLinePreceding;
+    }
+
+    public String getFeatureString() {
+        return featureString;
+    }
+
+    public void setFeatureString(String featureString) {
+        this.featureString = featureString;
     }
 
     @Override
