@@ -1339,32 +1339,35 @@ public class Document {
                                             Document doc) {
 
         //TODO: improve - make figures clustering on the page (take all images and captions into account)
+        List<LayoutToken> tokens = figure.getLayoutTokens();
 
         final BoundingBox figureBox =
-                BoundingBoxCalculator.calculateOneBox(tokenizations.subList(figure.getStart(), figure.getEnd() + 1), true);
+                BoundingBoxCalculator.calculateOneBox(tokens, true);
 
         double minDist = MAX_FIG_BOX_DISTANCE * 100;
-        figure.setTextArea(figureBox);
+        figure.setTextArea(BoundingBoxCalculator.calculate(tokens));
 
         GraphicObject bestGo = null;
 
-        for (GraphicObject go : imagesPerPage.get(figure.getPage())) {
-            if (go.getType() != GraphicObject.BITMAP) {
-                continue;
+        if (figureBox != null) {
+            for (GraphicObject go : imagesPerPage.get(figure.getPage())) {
+                if (go.getType() != GraphicObject.BITMAP) {
+                    continue;
 
-            }
+                }
 
-            BoundingBox goBox =
-                    BoundingBox.fromPointAndDimensions(go.getPage(), go.getX(), go.getY(),
-                            go.getWidth(), go.getHeight());
-            double dist = figureBox.distanceTo(goBox);
-            if (dist > MAX_FIG_BOX_DISTANCE) {
-                continue;
-            }
+                BoundingBox goBox =
+                        BoundingBox.fromPointAndDimensions(go.getPage(), go.getX(), go.getY(),
+                                go.getWidth(), go.getHeight());
+                double dist = figureBox.distanceTo(goBox);
+                if (dist > MAX_FIG_BOX_DISTANCE) {
+                    continue;
+                }
 
-            if (dist < minDist) {
-                minDist = dist;
-                bestGo = go;
+                if (dist < minDist) {
+                    minDist = dist;
+                    bestGo = go;
+                }
             }
         }
 

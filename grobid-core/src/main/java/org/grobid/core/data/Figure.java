@@ -4,6 +4,9 @@ import java.net.URI;
 import java.lang.StringBuilder;
 import java.util.*;
 
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import nu.xom.Attribute;
 import nu.xom.Element;
 import org.grobid.core.document.xml.XmlBuilderUtils;
@@ -30,24 +33,25 @@ public class Figure {
 	protected int end = -1; // end position in the full text tokenization
 	protected LayoutToken startToken = null; // start layout token
 	protected LayoutToken endToken = null; // end layout token
-	private BoundingBox textArea;
-	
+	private List<BoundingBox> textArea;
+	private List<LayoutToken> layoutTokens;
+
 	// coordinates
 	private int page = -1;
 	private double y = 0.0;
-    private double x = 0.0;
-    private double width = 0.0;
-    private double height = 0.0;
+	private double x = 0.0;
+	private double width = 0.0;
+	private double height = 0.0;
 
-    // list of graphic objects corresponding to the figure
-    protected List<GraphicObject> graphicObjects = null;
+	// list of graphic objects corresponding to the figure
+	protected List<GraphicObject> graphicObjects = null;
 
-    public Figure() {
-    	caption = new StringBuilder();
-    	header = new StringBuilder();
-    	content = new StringBuilder();
-    	label = new StringBuilder();
-    }
+	public Figure() {
+		caption = new StringBuilder();
+		header = new StringBuilder();
+		content = new StringBuilder();
+		label = new StringBuilder();
+	}
 
 	public void appendHeader(String head) {
 		header.append(head);
@@ -56,7 +60,7 @@ public class Figure {
 	public String getHeader() {
 		return header.toString();
 	}
-	
+
 	public void appendCaption(String cap) {
 		caption.append(cap);
 	}
@@ -72,7 +76,7 @@ public class Figure {
 	public String getLabel() {
 		return label.toString();
 	}
-	
+
 	public void appendContent(String trash) {
 		content.append(trash);
 	}
@@ -80,81 +84,97 @@ public class Figure {
 	public String getContent() {
 		return content.toString();
 	}
-	
+
 	public void setURI(URI theURI) {
 		uri = theURI;
 	}
 
 	public void setStart(int start) {
-    	this.start = start;
-    }
+		this.start = start;
+	}
 
-    public int getStart() {
-    	return start;
-    }
+	public int getStart() {
+		return start;
+	}
 
 	public void setEnd(int end) {
-    	this.end = end;
-    }
+		this.end = end;
+	}
 
-    public int getEnd() {
-    	return end;
-    }
+	public int getEnd() {
+		return end;
+	}
 
-    public void setStartToken(LayoutToken start) {
-    	this.startToken = start;
-    }
+	public void setStartToken(LayoutToken start) {
+		this.startToken = start;
+	}
 
-    public LayoutToken getStartToken() {
-    	return startToken;
-    }
+	public LayoutToken getStartToken() {
+		return startToken;
+	}
 
 	public void setEndToken(LayoutToken end) {
-    	this.endToken = end;
-    }
+		this.endToken = end;
+	}
 
-    public LayoutToken getEndToken() {
-    	return endToken;
-    }
+	public LayoutToken getEndToken() {
+		return endToken;
+	}
 
-    public void setId() {
-    	id = TextUtilities.cleanField(label.toString(), false);
-    }
+	public void setId() {
+		id = TextUtilities.cleanField(label.toString(), false);
+	}
 
-    public void setId(String theId) {
-    	id = theId;
-    }
-	
+	public void setId(String theId) {
+		id = theId;
+	}
+
 	public String getId() {
 		return id;
 	}
 
-    public List<GraphicObject> getGraphicObjects() {
-    	return graphicObjects;
-    }
+	public List<GraphicObject> getGraphicObjects() {
+		return graphicObjects;
+	}
 
-    public void addGraphicObject(GraphicObject obj) {
-    	if (graphicObjects == null)
-    		graphicObjects = new ArrayList<GraphicObject>();
-    	graphicObjects.add(obj);
-    }
+	public List<GraphicObject> getBitmapGraphicObjects() {
+		if (graphicObjects == null) {
+			return null;
+		}
+		ArrayList<GraphicObject> graphicObjects = Lists.newArrayList(Iterables.filter(this.graphicObjects, new Predicate<GraphicObject>() {
+			@Override
+			public boolean apply(GraphicObject graphicObject) {
+				return graphicObject.getType() == GraphicObject.BITMAP;
+			}
+		}));
+		if (graphicObjects.isEmpty()) {
+			return null;
+		}
+		return graphicObjects;
+	}
 
-    public void setGraphicObjects(List<GraphicObject> objs) {
-    	graphicObjects = objs;
-    }
+	public void addGraphicObject(GraphicObject obj) {
+		if (graphicObjects == null)
+			graphicObjects = new ArrayList<GraphicObject>();
+		graphicObjects.add(obj);
+	}
 
-    /**
-     * Simple block coordinates. TBD: generate bounding box. 
-     */
-    public String getCoordinates() {
-    	return String.format("%d,%.2f,%.2f,%.2f,%.2f", page, x, y, width, height);
-    }
+	public void setGraphicObjects(List<GraphicObject> objs) {
+		graphicObjects = objs;
+	}
 
-    public String toTEI(int indent, GrobidAnalysisConfig config) {
-    	if ( ((header == null) || (header.length() == 0)) && 
-    		 ((caption == null) || (caption.length() == 0)) //&& 
-    		 //((graphicObjects != null) && (graphicObjects.size() == 0)) 
-    		 ) {
+	/**
+	 * Simple block coordinates. TBD: generate bounding box.
+	 */
+	public String getCoordinates() {
+		return String.format("%d,%.2f,%.2f,%.2f,%.2f", page, x, y, width, height);
+	}
+
+	public String toTEI(int indent, GrobidAnalysisConfig config) {
+		if (((header == null) || (header.length() == 0)) &&
+				((caption == null) || (caption.length() == 0)) //&&
+			//((graphicObjects != null) && (graphicObjects.size() == 0))
+				) {
 			return null;
 		}
 //        StringBuilder theFigure = new StringBuilder();
@@ -197,7 +217,7 @@ public class Figure {
 			figureElement.appendChild(desc);
 		}
 		if ((graphicObjects != null) && (graphicObjects.size() > 0)) {
-			for(GraphicObject graphicObject : graphicObjects) {
+			for (GraphicObject graphicObject : graphicObjects) {
 //		       	for(int i=0; i<indent+1; i++)
 //					theFigure.append("\t");
 //				theFigure.append("<graphic url=\"" + graphicObject.getURI() + "\" />\n");
@@ -210,12 +230,12 @@ public class Figure {
 //		for(int i=0; i<indent; i++)
 //			theFigure.append("\t");
 //		theFigure.append("</figure>\n");
-        return figureElement.toXML();
-    }
+		return figureElement.toXML();
+	}
 
-    private String cleanString(String input) {
-    	return input.replace("\n", " ").replace("  ", " ").trim();
-    }
+	private String cleanString(String input) {
+		return input.replace("\n", " ").replace("  ", " ").trim();
+	}
 
 	public int getPage() {
 		return page;
@@ -261,11 +281,19 @@ public class Figure {
 		this.height = height;
 	}
 
-	public BoundingBox getTextArea() {
+	public List<BoundingBox> getTextArea() {
 		return textArea;
 	}
 
-	public void setTextArea(BoundingBox textArea) {
+	public void setTextArea(List<BoundingBox> textArea) {
 		this.textArea = textArea;
+	}
+
+	public List<LayoutToken> getLayoutTokens() {
+		return layoutTokens;
+	}
+
+	public void setLayoutTokens(List<LayoutToken> layoutTokens) {
+		this.layoutTokens = layoutTokens;
 	}
 }
