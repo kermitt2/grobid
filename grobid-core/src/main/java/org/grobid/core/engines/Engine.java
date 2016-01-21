@@ -15,6 +15,8 @@
 
 package org.grobid.core.engines;
 
+import com.google.common.io.Files;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.data.Affiliation;
@@ -568,6 +570,9 @@ public class Engine implements Closeable {
         resultDoc = fullTextParser.processing(inputFile, config);
         LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: "
 			+ (System.currentTimeMillis() - time) + "ms");
+        if (config.getPdfAssetPath() != null) {
+            FileUtils.write(new File(config.getPdfAssetPath(), Files.getNameWithoutExtension(inputFile.getName()) + ".xml"), resultDoc.getTei());
+        }
         return resultDoc;
     }
 

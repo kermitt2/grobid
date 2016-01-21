@@ -3,6 +3,7 @@ package org.grobid.core.visualization;
 import net.sf.saxon.om.Item;
 import net.sf.saxon.om.SequenceIterator;
 import net.sf.saxon.trans.XPathException;
+import org.apache.commons.io.FileUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.grobid.core.data.Figure;
 import org.grobid.core.document.Document;
@@ -29,8 +30,10 @@ import java.util.List;
 public class FigureTableVisualizer {
     public static void main(String[] args) {
         try {
-//            File input = new File("/Work/temp/context/coords/3.pdf");
-            File input = new File("/Work/temp/figureExtraction/7.pdf");
+//            File input = new File("/Work/temp/context/coords/6.pdf");
+//            File input = new File("/Work/temp/figureExtraction/newtest/1.pdf");
+            File input = new File("/Work/temp/figureExtraction/newtest/3.pdf");
+//            File input = new File("/Work/temp/figureExtraction/5.pdf");
 
             final PDDocument document = PDDocument.load(input);
             File outPdf = new File("/tmp/testFigures.pdf");
@@ -39,11 +42,28 @@ public class FigureTableVisualizer {
             GrobidProperties.setGrobidPropertiesPath("grobid-home/config/grobid.properties");
             LibraryLoader.load();
             final Engine engine = GrobidFactory.getInstance().getEngine();
+
+            File contentDir = new File("/tmp/contentDir");
+            FileUtils.deleteDirectory(contentDir);
+
+            File assetPath = new File(contentDir, "tei");
+
+
             GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
-                    .pdfAssetPath(new File("/tmp/x"))
+                    .pdfAssetPath(assetPath)
                     .build();
 
+
+
             DocumentSource documentSource = DocumentSource.fromPdf(input);
+
+            File pdf2xmlDirectory = new File(contentDir, "pdf2xml");
+            pdf2xmlDirectory.mkdirs();
+            FileUtils.copyFileToDirectory(input, contentDir);
+            FileUtils.copyFile(documentSource.getXmlFile(), new File(pdf2xmlDirectory, "input.xml"));
+            FileUtils.copyDirectory(new File(documentSource.getXmlFile().getAbsolutePath() + "_data"), new File(pdf2xmlDirectory, documentSource.getXmlFile().getName() + "_data"));
+            System.out.println(documentSource.getXmlFile());
+
 
             Document teiDoc = engine.fullTextToTEIDoc(input, config);
 

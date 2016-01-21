@@ -27,6 +27,7 @@ import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.KeyGen;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
@@ -1295,114 +1296,23 @@ public class FullTextParser extends AbstractParser {
                     cluster.getFeatureBlock()
             );
 
+
             result.setLayoutTokens(tokenizationFigure);
-//            result.setStart(i);
-//			result.setStartToken(tokenizations.get(i));
-//            result.setEnd(p);
-//			result.setEndToken(tokenizations.get(p));
-            result.setPage(tokenizationFigure.get(0).getPage());
-            //doc.setConnectedGraphics2(result, tokenizations, doc);
+
+			// the first token could be a space from previous page
+			for (LayoutToken lt : tokenizationFigure) {
+				if (!LayoutTokensUtil.spaceyToken(lt.t())) {
+					result.setPage(lt.getPage());
+					break;
+				}
+			}
+
             doc.setConnectedGraphics2(result, tokenizations, doc);
-            //System.out.println(result.toString());
+
             results.add(result);
             result.setId("" + (results.size() - 1));
-
         }
 
-//        if ((tokenizations == null) || (tokenizations.size() == 0))
-//            return results;
-//        // identify figure blocks
-//        StringTokenizer st1 = new StringTokenizer(rese, "\n");
-//        boolean openFigure = false;
-//        StringBuilder figureBlock = new StringBuilder();
-//        List<LayoutToken> tokenizationsFigure = new ArrayList<LayoutToken>();
-//        List<LayoutToken> tokenizationsBuffer = null;
-//        int p = 0; // position in tokenizations
-//        int i = 0;
-//        while (st1.hasMoreTokens()) {
-//            String row = st1.nextToken();
-//            String[] s = row.split("\t");
-//            String s0 = s[0].trim();
-//            int p0 = p;
-//            boolean strop = false;
-//            tokenizationsBuffer = new ArrayList<LayoutToken>();
-//            while ((!strop) && (p < tokenizations.size())) {
-//                String tokOriginal = tokenizations.get(p).getText().trim();
-//                if (openFigure)
-//                    tokenizationsFigure.add(tokenizations.get(p));
-//                tokenizationsBuffer.add(tokenizations.get(p));
-//                if (tokOriginal.equals(s0)) {
-//                    strop = true;
-//                }
-//                p++;
-//            }
-//            if (p == tokenizations.size()) {
-//                // either we are at the end of the header, or we might have
-//                // a problematic token in tokenization for some reasons
-//                if ((p - p0) > 2) {
-//                    // we loose the synchronicity, so we reinit p for the next token
-//                    p = p0;
-//                    continue;
-//                }
-//            }
-//
-//            int ll = s.length;
-//            String label = s[ll - 1];
-//            String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-//            if (label.equals("<figure>") || (label.equals("I-<figure>") && !openFigure)) {
-//                if (!openFigure) {
-//                    for (LayoutToken lTok : tokenizationsBuffer) {
-//                        tokenizationsFigure.add(lTok);
-//                    }
-//                    openFigure = true;
-//                    i = p;
-//                }
-//                // we remove the label in the CRF row
-//                int ind = row.lastIndexOf("\t");
-//                if (ind == -1)
-//                    ind = row.lastIndexOf(" ");
-//                figureBlock.append(row.substring(0, ind)).append("\n");
-//            } else if (label.equals("I-<figure>") || openFigure) {
-//                // remove last token
-//                if (tokenizationsFigure.size() > 0) {
-//                    int nbToRemove = tokenizationsBuffer.size();
-//                    for (int q = 0; q < nbToRemove; q++)
-//                        tokenizationsFigure.remove(tokenizationsFigure.size() - 1);
-//                }
-//                //adjustment
-//                if ((p != tokenizations.size()) && (tokenizations.get(p).getText().equals("\n") ||
-//                        tokenizations.get(p).getText().equals("\r") ||
-//                        tokenizations.get(p).getText().equals(" "))) {
-//                    tokenizationsFigure.add(tokenizations.get(p));
-//                    p++;
-//                }
-//                while ((tokenizationsFigure.size() > 0) &&
-//                        (tokenizationsFigure.get(0).getText().equals("\n") ||
-//                                tokenizationsFigure.get(0).getText().equals(" ")))
-//                    tokenizationsFigure.remove(0);
-//
-//                // parse the recognized figure area
-////System.out.println(tokenizationsFigure.toString());
-////System.out.println(figureBlock.toString());
-//                if ((i < tokenizations.size()) && (p < tokenizations.size())) {
-//                    Figure result = parsers.getFigureParser().processing(tokenizationsFigure, figureBlock.toString());
-//                    result.setStart(i);
-//                    result.setStartToken(tokenizations.get(i));
-//                    result.setEnd(p);
-//                    result.setEndToken(tokenizations.get(p));
-//                    result.setPage(tokenizations.get(i).getPage());
-//                    //doc.setConnectedGraphics2(result, tokenizations, doc);
-//                    doc.setConnectedGraphics2(result, tokenizations, doc);
-//                    //System.out.println(result.toString());
-//                    tokenizationsFigure = new ArrayList<LayoutToken>();
-//                    results.add(result);
-//                    result.setId("" + (results.size() - 1));
-//                }
-//                figureBlock = new StringBuilder();
-//                openFigure = false;
-//            } else
-//                openFigure = false;
-//        }
         doc.setFigures(results);
         return results;
     }

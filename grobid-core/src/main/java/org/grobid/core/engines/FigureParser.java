@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import com.google.common.base.Joiner;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
@@ -44,6 +45,7 @@ public class FigureParser extends AbstractParser {
 	 * the resulting Figure object. 
 	 */
     public Figure processing(List<LayoutToken> tokenizationFigure, String featureVector) {
+
 		String res = null;
 		try {
 			res = label(featureVector);
@@ -55,6 +57,10 @@ public class FigureParser extends AbstractParser {
 			return null;
 		}
         List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
+
+//		System.out.println(Joiner.on("\n").join(labeled));
+//		System.out.println("----------------------");
+//		System.out.println("----------------------");
 
 		return getExtractionResult(tokenizationFigure, labeled);
     }

@@ -1,5 +1,6 @@
 package org.grobid.core.layout;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -28,6 +29,7 @@ public class GraphicObject {
     public double y = 0.0;
     public double height = 0.0;
     public double width = 0.0;
+    public boolean used;
 
     /**
      * Return the full path of the file corresponding to the graphic object, useful
@@ -48,7 +50,8 @@ public class GraphicObject {
             if (ind2 != -1)
                 return filePath.substring(0, ind2);
         }
-        return filePath;
+//        return filePath;
+        return new File(filePath).getName();
     }
 
     public int getType() {
@@ -160,5 +163,13 @@ public class GraphicObject {
         res.append("(" + x + ", " + y + ")" + "\t" + "(" + width + ", " + height + ")" + "\t");
 
         return res.toString();
+    }
+
+    public boolean isUsed() {
+        return used;
+    }
+
+    public void setUsed(boolean used) {
+        this.used = used;
     }
 }
