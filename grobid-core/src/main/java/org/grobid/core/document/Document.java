@@ -27,6 +27,7 @@ import org.grobid.core.layout.Page;
 import org.grobid.core.sax.PDF2XMLSaxParser;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.ElementCounter;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
@@ -295,7 +296,7 @@ public class Document {
                 }
 
                 //small blocks can indicate that it's page numbers, some journal header info, etc. No need in them
-                if (b.getX() == 0 || b.getHeight() < 20 || b.getWidth() < 20) {
+                if (b.getX() == 0 || b.getHeight() < 20 || b.getWidth() < 20 || b.getHeight() * b.getWidth() < 3000) {
                     continue;
                 }
 
@@ -1347,24 +1348,34 @@ public class Document {
         //TODO: improve - make figures clustering on the page (take all images and captions into account)
         List<LayoutToken> tokens = figure.getLayoutTokens();
 
+        figure.setTextArea(BoundingBoxCalculator.calculate(tokens));
+
+//        if (LayoutTokensUtil.tooFarAwayVertically(figure.getTextArea(), 100)) {
+//            return;
+//        }
+
         final BoundingBox figureBox =
                 BoundingBoxCalculator.calculateOneBox(tokens, true);
 
         double minDist = MAX_FIG_BOX_DISTANCE * 100;
-        figure.setTextArea(BoundingBoxCalculator.calculate(tokens));
+
 
         GraphicObject bestGo = null;
 
         if (figureBox != null) {
             for (GraphicObject go : imagesPerPage.get(figure.getPage())) {
-                if (go.getType() != GraphicObject.BITMAP) {
+                if (go.getType() != GraphicObject.BITMAP || go.isUsed()) {
                     continue;
-
                 }
 
                 BoundingBox goBox =
                         BoundingBox.fromPointAndDimensions(go.getPage(), go.getX(), go.getY(),
                                 go.getWidth(), go.getHeight());
+
+                if (!getPage(goBox.getPage()).getMainArea().contains(goBox)) {
+                    continue;
+                }
+
                 double dist = figureBox.distanceTo(goBox);
                 if (dist > MAX_FIG_BOX_DISTANCE) {
                     continue;
@@ -1378,6 +1389,7 @@ public class Document {
         }
 
         if (bestGo != null) {
+            bestGo.setUsed(true);
             figure.setGraphicObjects(Lists.newArrayList(bestGo ));
         }
     }
