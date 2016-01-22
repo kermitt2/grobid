@@ -29,6 +29,7 @@ public class ReferenceMarkerMatcher {
     private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceMarkerMatcher.class);
 
     public static final Pattern YEAR_PATTERN = Pattern.compile("[12][0-9]{3,3}[a-d]?");
+    public static final Pattern YEAR_PATTERN_WITH_LOOK_AROUND = Pattern.compile("(?<!\\d)[12][0-9]{3,3}(?!\\d)[a-d]?");
     public static final Pattern AUTHOR_NAME_PATTERN = Pattern.compile("[A-Z][A-Za-z]+");
     private static final Pattern NUMBERED_CITATION_PATTERN = Pattern.compile(" *[\\(\\[]? *(?:\\d+[-–]\\d+,|\\d+, *)*[ ]*(?:\\d+[-–]\\d+|\\d+)[\\)\\]]? *");
     public static final Pattern AUTHOR_SEPARATOR_PATTERN = Pattern.compile(";");
@@ -284,7 +285,7 @@ public class ReferenceMarkerMatcher {
         for (List<LayoutToken> splitTokens : split) {
             //cases like: Khechinashvili et al. (1973) and Privalov (1979)
             String text = LayoutTokensUtil.toText(splitTokens);
-            int matchCount = matchCount(text, YEAR_PATTERN);
+            int matchCount = matchCount(text, YEAR_PATTERN_WITH_LOOK_AROUND);
             if (matchCount == 2 && text.contains(" and ")) {
                 for (List<LayoutToken> ys : LayoutTokensUtil.split(splitTokens, AND_WORD_PATTERN, true)) {
                     result.add(new Pair<>(LayoutTokensUtil.toTextDehyphenized(ys), ys));
@@ -299,7 +300,8 @@ public class ReferenceMarkerMatcher {
                     // 2) ("Grafton et al. 1998", tokens_of("1998"))
                     // this method will allow to mark two citations in a non-overlapping manner
 
-                    List<LayoutToken> firstYearSplitItem = yearSplit.get(0);
+                    List<LayoutToken> firstYearSplitItem = null;
+                    firstYearSplitItem = yearSplit.get(0);
                     result.add(new Pair<>(LayoutTokensUtil.toTextDehyphenized(firstYearSplitItem), firstYearSplitItem));
 
                     List<LayoutToken> excludedYearToks = firstYearSplitItem.subList(0, firstYearSplitItem.size() - 1);

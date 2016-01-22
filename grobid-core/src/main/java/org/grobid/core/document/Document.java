@@ -312,7 +312,7 @@ public class Document {
                 bottom.i((int) (b.getY() + b.getHeight()));
             }
 
-            if (!leftEven.getCnts().isEmpty() && !rightEven.getCnts().isEmpty()) {
+            if (!leftEven.getCnts().isEmpty() && !leftOdd.getCnts().isEmpty()) {
                 int pageEvenX = 0;
                 int pageEvenWidth = 0;
                 if (pages.size() > 1) {
