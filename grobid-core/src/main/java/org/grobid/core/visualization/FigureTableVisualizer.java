@@ -32,7 +32,8 @@ public class FigureTableVisualizer {
         try {
 //            File input = new File("/Work/temp/context/coords/6.pdf");
 //            File input = new File("/Work/temp/figureExtraction/newtest/1.pdf");
-            File input = new File("/Work/temp/figureExtraction/newtest/3.pdf");
+//            File input = new File("/Work/temp/figureExtraction/newtest/3.pdf");
+            File input = new File("/Users/zholudev/Downloads/AS-320644967796737@1453459125249_content_1.pdf");
 //            File input = new File("/Work/temp/figureExtraction/5.pdf");
 
             final PDDocument document = PDDocument.load(input);
