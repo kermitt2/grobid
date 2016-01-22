@@ -26,7 +26,7 @@ public class Block {
     //public LayoutToken firstToken = null;
     //public LayoutToken lastToken = null;
 
-    public List<LayoutToken> tokens = null;
+    private List<LayoutToken> tokens = null;
 
     // start position of the block in the original tokenization
     private int startToken = -1;

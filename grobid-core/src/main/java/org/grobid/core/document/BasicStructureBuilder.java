@@ -89,7 +89,7 @@ public class BasicStructureBuilder {
 //            Integer ii = i;
 
             String localText = block.getText();
-            List<LayoutToken> tokens = block.tokens;
+            List<LayoutToken> tokens = block.getTokens();
 
             if ((localText != null) && (tokens != null)) {
                 if (tokens.size() > 0) {
@@ -144,7 +144,7 @@ public class BasicStructureBuilder {
             for (Block block : doc.getBlocks()) {
 
                 String localText = block.getText();
-                List<LayoutToken> tokens = block.tokens;
+                List<LayoutToken> tokens = block.getTokens();
 
                 if ((localText != null) && (tokens.size() > 0)) {
 
