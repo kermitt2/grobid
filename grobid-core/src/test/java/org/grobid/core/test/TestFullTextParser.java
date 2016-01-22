@@ -3,6 +3,7 @@ package org.grobid.core.test;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
+import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
@@ -78,7 +79,11 @@ public class TestFullTextParser extends EngineTest {
         //System.out.println(tei);
 
         //TODO: fix the test
-//        pdfPath = new File(testPath + "/MullenJSSv18i03.pdf");
+        pdfPath = new File(testPath + "/MullenJSSv18i03.pdf");
+        tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+        assertTei(tei);
+
+//        pdfPath = new File(testPath + "/two_pages.pdf");
 //        tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
 //        assertTei(tei);
 
@@ -107,12 +112,17 @@ public class TestFullTextParser extends EngineTest {
         tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
 
+
+
         //System.out.println(tei);
     }
 
     private void assertTei(Document doc) {
         assertDocAndBlockTokenizationSync(doc);
         assertNotNull(doc.getTei());
+
+        //check that XML is valid
+        XmlBuilderUtils.fromString(doc.getTei());
     }
 
     private void assertDocAndBlockTokenizationSync(Document doc) {
@@ -144,8 +154,10 @@ public class TestFullTextParser extends EngineTest {
             for (DocumentPiece p : parts) {
                 DocumentPointer startPtr = p.a;
                 DocumentPointer endPtr = p.b;
-                assertEquals(doc.getTokenizations().get(startPtr.getTokenDocPos()), doc.getBlocks().get(startPtr.getBlockPtr()).getTokens().get(startPtr.getTokenBlockPos()));
-                assertEquals(doc.getTokenizations().get(endPtr.getTokenDocPos()), doc.getBlocks().get(endPtr.getBlockPtr()).getTokens().get(endPtr.getTokenBlockPos()));
+                assertEquals(doc.getTokenizations().get(startPtr.getTokenDocPos()),
+                        doc.getBlocks().get(startPtr.getBlockPtr()).getTokens().get(startPtr.getTokenBlockPos()));
+                assertEquals(doc.getTokenizations().get(endPtr.getTokenDocPos()),
+                        doc.getBlocks().get(endPtr.getBlockPtr()).getTokens().get(endPtr.getTokenBlockPos()));
 
                 Block endBlock = doc.getBlocks().get(endPtr.getBlockPtr());
                 assertTrue(endPtr.getTokenBlockPos() < endBlock.getTokens().size());

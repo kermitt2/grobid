@@ -49,7 +49,9 @@ public class CitationsVisualizer {
 //            File input = new File("/Work/temp/context/coords/1.pdf");
 //            File input = new File("/Users/zholudev/Downloads/AS-320635044073473@1453456759264_content_1.pdf"); // DISSYNC
 
-            File input = new File("/Users/zholudev/Downloads/AS-320647283052546@1453459677289_content_1.pdf"); //BAD BLOCK
+//            File input = new File("/Users/zholudev/Downloads/AS-320647283052546@1453459677289_content_1.pdf"); //BAD BLOCK
+            File input = new File("/Users/zholudev/Downloads/AS-320723103485961@1453477754582_content_1.pdf");
+//            File input = new File("/tmp/2.pdf");
 
 //            File input = new File("/Users/zholudev/Downloads/Curtoni 2009 Perspectivas Actuales.pdf");
 //            File input = new File("/Work/temp/figureExtraction/3.pdf");
