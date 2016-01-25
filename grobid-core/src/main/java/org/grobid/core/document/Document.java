@@ -288,14 +288,11 @@ public class Document {
             for (Block b : blocks) {
                 BoundingBox box = BoundingBoxCalculator.calculateOneBox(b.getTokens());
                 if (box != null) {
-                    b.setX(box.getX());
-                    b.setY(box.getY());
-                    b.setWidth(box.getWidth());
-                    b.setHeight(box.getHeight());
+                    b.setBoundingBox(box);
                 }
 
                 //small blocks can indicate that it's page numbers, some journal header info, etc. No need in them
-                if (b.getX() == 0 || b.getHeight() < 20 || b.getWidth() < 20) {
+                if (b.getX() == 0 || b.getHeight() < 20 || b.getWidth() < 20 || b.getHeight() * b.getWidth() < 3000) {
                     continue;
                 }
 
@@ -311,23 +308,29 @@ public class Document {
                 bottom.i((int) (b.getY() + b.getHeight()));
             }
 
-			int pageEvenX = 0;
-            int pageEvenWidth = 0;
-            if (pages.size() > 1) {
-                pageEvenX = getCoordItem(leftEven, true);
+            if (!leftEven.getCnts().isEmpty() && !rightEven.getCnts().isEmpty()) {
+                int pageEvenX = 0;
+                int pageEvenWidth = 0;
+                if (pages.size() > 1) {
+                    pageEvenX = getCoordItem(leftEven, true);
+                    // +1 due to rounding
+                    pageEvenWidth = getCoordItem(rightEven, false) - pageEvenX + 1;
+                }
+                int pageOddX = getCoordItem(leftOdd, true);
                 // +1 due to rounding
-                pageEvenWidth = getCoordItem(rightEven, false) - pageEvenX + 1;
-            }
-            int pageOddX = getCoordItem(leftOdd, true);
-            // +1 due to rounding                                                                                                                                                  
-            int pageOddWidth = getCoordItem(rightOdd, false) - pageOddX + 1;
-            int pageY = getCoordItem(top, true);
-            int pageHeight = getCoordItem(bottom, false) - pageY + 1;
-            for (Page page : pages) {
-                if (page.isEven()) {
-                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageEvenX, pageY, pageEvenWidth, pageHeight));
-                } else {
-                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageOddX, pageY, pageOddWidth, pageHeight));
+                int pageOddWidth = getCoordItem(rightOdd, false) - pageOddX + 1;
+                int pageY = getCoordItem(top, true);
+                int pageHeight = getCoordItem(bottom, false) - pageY + 1;
+                for (Page page : pages) {
+                    if (page.isEven()) {
+                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageEvenX, pageY, pageEvenWidth, pageHeight));
+                    } else {
+                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageOddX, pageY, pageOddWidth, pageHeight));
+                    }
+                }
+            } else {
+                for (Page page : pages) {
+                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), 0, 0, page.getWidth(), page.getHeight()));
                 }
             }
         } catch (Exception e) {
@@ -353,9 +356,9 @@ public class Document {
 
         int res = counts.get(0).getKey();
         for (Map.Entry<Integer, Integer> e : counts) {
-            if (e.getValue() < max * 0.7) {
+            /*if (e.getValue() < max * 0.7) {
                 break;
-            }
+            }*/
 
             if (getMin) {
                 if (e.getKey() < res) {
@@ -1308,7 +1311,7 @@ public class Document {
         return teiIdToBibDataSets.get(teiId);
     }
 
-    private static double minDistance = 50.0;
+    private static double MIN_DISTANCE = 100.0;
 
     /**
      * Return the list of graphical object touching the given block.
@@ -1318,13 +1321,39 @@ public class Document {
         for(GraphicObject image : doc.getImages()) {
             if (block.getPageNumber() != image.getPage()) 
                 continue;
-            if ( ( (Math.abs((image.y+image.height) - block.getY()) < minDistance) ||
-                   (Math.abs(image.y - (block.getY()+block.getHeight())) < minDistance) ) //&&
-                 //( (Math.abs((image.x+image.width) - block.x) < minDistance) ||
-                 //  (Math.abs(image.x - (block.x+block.width)) < minDistance) )
+            if ( ( (Math.abs((image.getY()+image.getHeight()) - block.getY()) < MIN_DISTANCE) ||
+                   (Math.abs(image.getY() - (block.getY()+block.getHeight())) < MIN_DISTANCE) ) //||
+                 //( (Math.abs((image.x+image.getWidth()) - block.getX()) < MIN_DISTANCE) ||
+                 //  (Math.abs(image.x - (block.getX()+block.getWidth())) < MIN_DISTANCE) )
                  ) {
-                // the image is at a distance of at least minDistance from one border 
-                // of the block on the vertical axis
+                // the image is at a distance of at least MIN_DISTANCE from one border 
+                // of the block on the vertical/horizontal axis
+                if (images == null)
+                    images = new ArrayList<GraphicObject>();
+                images.add(image);
+            }
+        }
+
+        return images;
+    }
+
+    /**
+     * Return the list of graphical object touching the given block.
+     */
+    public static List<GraphicObject> getConnectedGraphics2(Block block, Document doc) {
+        List<GraphicObject> images = null;
+        BoundingBox b1 = block.getBoundingBox();
+        if (b1 == null) {
+            LOGGER.error("Bounding box null for " + block.toString() + " \t " + block.getText());
+            return images;
+        }
+        for(GraphicObject image : doc.getImages()) {
+            if (block.getPageNumber() != image.getPage()) 
+                continue;
+            BoundingBox b2 = image.getBoundingBox();
+            if (b2 == null)
+                continue;
+            if (b1.distanceTo(b2) < MIN_DISTANCE) {
                 if (images == null)
                     images = new ArrayList<GraphicObject>();
                 images.add(image);
@@ -1413,13 +1442,13 @@ public class Document {
                 if (figure.getPage() != image.getPage())
                     continue;
 //System.out.println(image.toString());
-                if (((Math.abs((image.y + image.height) - figure.getY()) < minDistance) ||
-                        (Math.abs(image.y - (figure.getY() + figure.getHeight())) < minDistance)) //&&
-                    //( (Math.abs((image.x+image.width) - block.x) < minDistance) ||
-                    //  (Math.abs(image.x - (block.x+block.width)) < minDistance) )
+                if (((Math.abs((image.getY() + image.getHeight()) - figure.getY()) < MIN_DISTANCE) ||
+                        (Math.abs(image.getY() - (figure.getY() + figure.getHeight())) < MIN_DISTANCE)) //||
+                    //( (Math.abs((image.x+image.width) - figure.getX()) < MIN_DISTANCE) ||
+                    //(Math.abs(image.x - (figure.getX()+figure.getWidth())) < MIN_DISTANCE) )
                         ) {
-                    // the image is at a distance of at least minDistance from one border 
-                    // of the block on the vertical axis
+                    // the image is at a distance of at least MIN_DISTANCE from one border 
+                    // of the block on the vertical/horizontal axis
                     if (localImages == null)
                         localImages = new ArrayList<GraphicObject>();
                     localImages.add(image);
@@ -1429,14 +1458,14 @@ public class Document {
             // re-evaluate figure area with connected graphics
             if (localImages != null) {
                 for (GraphicObject image : localImages) {
-                    if (image.x < maxLeft)
-                        maxLeft = image.x;
-                    if (image.y < maxUp)
-                        maxUp = image.y;
-                    if (image.x + image.width > maxRight)
-                        maxRight = image.x + image.width;
-                    if (image.y + image.height > maxDown)
-                        maxDown = image.y + image.height;
+                    if (image.getX() < maxLeft)
+                        maxLeft = image.getX();
+                    if (image.getY() < maxUp)
+                        maxUp = image.getY();
+                    if (image.getX() + image.getWidth() > maxRight)
+                        maxRight = image.getX() + image.getWidth();
+                    if (image.getY() + image.getHeight() > maxDown)
+                        maxDown = image.getY() + image.getHeight();
                 }
             }
 

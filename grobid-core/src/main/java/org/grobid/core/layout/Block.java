@@ -13,18 +13,16 @@ import java.util.List;
 public class Block {
     private int nbTokens = 0;
     private String text = null;
-    private double y = 0.0;
+    private BoundingBox boundingBox = null;
+    /*private double y = 0.0;
     private double x = 0.0;
     private double width = 0.0;
-    private double height = 0.0;
+    private double height = 0.0;*/
     private String font = null;
     private boolean bold = false;
     private boolean italic = false;
     private String colorFont = null;
     public double fontSize = 0.0;
-
-    //public LayoutToken firstToken = null;
-    //public LayoutToken lastToken = null;
 
     public List<LayoutToken> tokens = null;
 
@@ -133,36 +131,56 @@ public class Block {
         return fontSize;
     }
 
-    public void setX(double d) {
-        x = Math.abs(d);
+    public BoundingBox getBoundingBox() {
+        return boundingBox;
     }
+
+    public void setBoundingBox(BoundingBox box) {
+        boundingBox = box;
+    }
+
+    /*public void setX(double d) {
+        x = Math.abs(d);
+    }*/
 
     public double getX() {
-        return x;
+        if (boundingBox != null)
+            return boundingBox.getX();
+        else 
+            return 0.0;
     }
 
-    public void setY(double d) {
+    /*public void setY(double d) {
         y = Math.abs(d);
-    }
+    }*/
 
     public double getY() {
-        return y;
+        if (boundingBox != null)
+            return boundingBox.getY();
+        else 
+            return 0.0;
     }
 
-    public void setHeight(double d) {
+    /*public void setHeight(double d) {
         height = Math.abs(d);
-    }
+    }*/
 
     public double getHeight() {
-        return height;
+        if (boundingBox != null)
+            return boundingBox.getHeight();
+        else 
+            return 0.0;
     }
 
-    public void setWidth(double d) {
+    /*public void setWidth(double d) {
         width = Math.abs(d);
-    }
+    }*/
 
     public double getWidth() {
-        return width;
+        if (boundingBox != null)
+            return boundingBox.getWidth();
+        else 
+            return 0.0;
     }
 
     public int getStartToken() {
@@ -197,13 +215,23 @@ public class Block {
         this.page = page;
     }
 
+    public boolean isNull() {
+        if ( (nbTokens == 0) && (startToken == -1) && (endToken == -1) && (type == null) ) {
+            return true;
+        }
+        else 
+            return false;
+    }
+
     @Override
     public String toString() {
-        return "Block{" +
+        String res = "Block{" +
                 "nbTokens=" + nbTokens +
                 ", startToken=" + startToken +
                 ", endToken=" + endToken +
-                ", type=" + type +
-                '}';
+                ", type=" + type;
+        if (boundingBox != null)
+            res += ", boundingBox=" + boundingBox.toString() + '}';
+        return res;
     }
 }
