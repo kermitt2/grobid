@@ -118,7 +118,7 @@ public class AnnotationUtil {
 //            page.getAnnotations().add(line);
 
         // ADDING LINE TO THE REFERENCE
-        PDPageContentStream stream = new PDPageContentStream(document, page, true, false);
+        PDPageContentStream stream = new PDPageContentStream(document, page, true, false, true);
 //        Random r = new Random(seed + 1);
 //
 //

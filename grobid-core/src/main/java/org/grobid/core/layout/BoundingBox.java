@@ -110,7 +110,7 @@ public class BoundingBox {
 
     public BoundingBox boundBoxExcludingAnotherPage(BoundingBox o) {
         if (this.page != o.page) {
-            LOGGER.warn("Cannot compute a bounding box for different pages: " + this  + " and " + o + "; skipping");
+            LOGGER.warn("Cannot compute a bounding box for different pages: " + this + " and " + o + "; skipping");
             return this;
         }
         return fromTwoPoints(o.page, Math.min(this.x, o.x), Math.min(this.y, o.y), Math.max(this.x2, o.x2), Math.max(this.y2, o.y2));
@@ -124,6 +124,21 @@ public class BoundingBox {
     private double dist(double x1, double y1, double x2, double y2) {
         return Math.sqrt((x2 - x1) * (x2 - 1) + (y2 - y1) * (y2 - y1));
     }
+
+    public double verticalDistanceTo(BoundingBox to) {
+        //the current box is completely "bottomer"
+        boolean bottom = to.y2 < y;
+        boolean top = y2 < to.y;
+
+        if (bottom) {
+            return y - to.y2;
+        } else if (top) {
+            return to.y - y2;
+        }
+
+        return 0;
+    }
+
 
     public double distanceTo(BoundingBox to) {
         //the current box is completely "lefter"

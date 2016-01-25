@@ -1,8 +1,10 @@
 package org.grobid.core.tokenization;
 
+import com.google.common.base.Predicate;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.TaggingLabel;
 import org.grobid.core.layout.LayoutToken;
 
 import java.util.ArrayList;
@@ -15,11 +17,29 @@ import java.util.List;
  */
 
 public class TaggingTokenClusteror {
-
     private final TaggingTokenSynchronizer taggingTokenSynchronizer;
+
+    public static class LabelTypePredicate implements Predicate<TaggingTokenCluster> {
+        private TaggingLabel label;
+
+        public LabelTypePredicate(TaggingLabel label) {
+            this.label = label;
+        }
+
+        @Override
+        public boolean apply(TaggingTokenCluster taggingTokenCluster) {
+            return taggingTokenCluster.getTaggingLabel() == label;
+        }
+    }
+
 
     public TaggingTokenClusteror(GrobidModels grobidModel, String result, List<LayoutToken> tokenizations) {
         taggingTokenSynchronizer = new TaggingTokenSynchronizer(grobidModel, result, tokenizations);
+    }
+
+    public TaggingTokenClusteror(GrobidModels grobidModel, String result, List<LayoutToken> tokenizations,
+                                 boolean computerFeatureBlock) {
+        taggingTokenSynchronizer = new TaggingTokenSynchronizer(grobidModel, result, tokenizations, computerFeatureBlock);
     }
 
     public List<TaggingTokenCluster> cluster() {

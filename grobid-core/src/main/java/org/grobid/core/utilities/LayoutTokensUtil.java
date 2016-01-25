@@ -5,6 +5,7 @@ import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
+import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
 
 import java.util.ArrayList;
@@ -161,4 +162,15 @@ public class LayoutTokensUtil {
     }
 
 
+    public static boolean tooFarAwayVertically(List<BoundingBox> boxes, double distance) {
+        if (boxes == null) {
+            return false;
+        }
+        for (int i = 0; i < boxes.size() - 1; i++) {
+            if (boxes.get(i).verticalDistanceTo(boxes.get(i+1)) > distance) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -27,6 +27,7 @@ import org.grobid.core.layout.Page;
 import org.grobid.core.sax.PDF2XMLSaxParser;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.ElementCounter;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
@@ -323,14 +324,17 @@ public class Document {
                 int pageHeight = getCoordItem(bottom, false) - pageY + 1;
                 for (Page page : pages) {
                     if (page.isEven()) {
-                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageEvenX, pageY, pageEvenWidth, pageHeight));
+                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), 
+							pageEvenX, pageY, pageEvenWidth, pageHeight));
                     } else {
-                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), pageOddX, pageY, pageOddWidth, pageHeight));
+                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), 
+							pageOddX, pageY, pageOddWidth, pageHeight));
                     }
                 }
             } else {
                 for (Page page : pages) {
-                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), 0, 0, page.getWidth(), page.getHeight()));
+                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), 
+						0, 0, page.getWidth(), page.getHeight()));
                 }
             }
         } catch (Exception e) {
@@ -1368,36 +1372,50 @@ public class Document {
                                             Document doc) {
 
         //TODO: improve - make figures clustering on the page (take all images and captions into account)
+        List<LayoutToken> tokens = figure.getLayoutTokens();
+
+        figure.setTextArea(BoundingBoxCalculator.calculate(tokens));
+
+//        if (LayoutTokensUtil.tooFarAwayVertically(figure.getTextArea(), 100)) {
+//            return;
+//        }
 
         final BoundingBox figureBox =
-                BoundingBoxCalculator.calculateOneBox(tokenizations.subList(figure.getStart(), figure.getEnd() + 1), true);
+                BoundingBoxCalculator.calculateOneBox(tokens, true);
 
         double minDist = MAX_FIG_BOX_DISTANCE * 100;
-        figure.setTextArea(figureBox);
+
 
         GraphicObject bestGo = null;
 
-        for (GraphicObject go : imagesPerPage.get(figure.getPage())) {
-            if (go.getType() != GraphicObject.BITMAP) {
-                continue;
+        if (figureBox != null) {
+            for (GraphicObject go : imagesPerPage.get(figure.getPage())) {
+                if (go.getType() != GraphicObject.BITMAP || go.isUsed()) {
+                    continue;
+                }
 
-            }
+                BoundingBox goBox =
+                        BoundingBox.fromPointAndDimensions(go.getPage(), go.getX(), go.getY(),
+                                go.getWidth(), go.getHeight());
 
-            BoundingBox goBox =
-                    BoundingBox.fromPointAndDimensions(go.getPage(), go.getX(), go.getY(),
-                            go.getWidth(), go.getHeight());
-            double dist = figureBox.distanceTo(goBox);
-            if (dist > MAX_FIG_BOX_DISTANCE) {
-                continue;
-            }
+                if (!getPage(goBox.getPage()).getMainArea().contains(goBox)) {
+                    continue;
+                }
 
-            if (dist < minDist) {
-                minDist = dist;
-                bestGo = go;
+                double dist = figureBox.distanceTo(goBox);
+                if (dist > MAX_FIG_BOX_DISTANCE) {
+                    continue;
+                }
+
+                if (dist < minDist) {
+                    minDist = dist;
+                    bestGo = go;
+                }
             }
         }
 
         if (bestGo != null) {
+            bestGo.setUsed(true);
             figure.setGraphicObjects(Lists.newArrayList(bestGo ));
         }
     }

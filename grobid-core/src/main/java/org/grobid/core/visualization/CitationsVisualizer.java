@@ -47,8 +47,17 @@ public class CitationsVisualizer {
 //            File input = new File("/Work/temp/context/1000k/AS_99223336914944_1400668095132.pdf");
 //            File input = new File("/tmp/AS_100005549445135_1400854589869.pdf"); // not all tokens
 //            File input = new File("/Work/temp/context/coords/1.pdf");
+//            File input = new File("/Users/zholudev/Downloads/AS-320635044073473@1453456759264_content_1.pdf"); // DISSYNC
+
+//            File input = new File("/Users/zholudev/Downloads/AS-320647283052546@1453459677289_content_1.pdf"); //BAD BLOCK
+            File input = new File("/Users/zholudev/Downloads/AS-320723103485961@1453477754582_content_1.pdf");
+//            File input = new File("/tmp/2.pdf");
+
+//            File input = new File("/Users/zholudev/Downloads/Curtoni 2009 Perspectivas Actuales.pdf");
 //            File input = new File("/Work/temp/figureExtraction/3.pdf");
-            File input = new File("/Work/temp/context/tilo/4.pdf");
+//            File input = new File("/Work/temp/context/tilo/4.pdf");
+//            File input = new File("/tmp/test2.pdf");
+//            File input = new File("/Work/workspace/habibi/habibi-worker/src/test/resources/data/pdfs/AS_319297254236160_1453137804981.pdf");
 
 //            File input = new File("/Work/temp/pub_citation_styles/1996ParPrecConfProc00507369.pdf");
 //            File input = new File("/Work/temp/pub_citation_styles/LaptenokJSSv18i08.pdf");
@@ -222,7 +231,7 @@ public class CitationsVisualizer {
 //            page.getAnnotations().add(line);
 
         // ADDING LINE TO THE REFERENCE
-        PDPageContentStream stream = new PDPageContentStream(document, page, true, false);
+        PDPageContentStream stream = new PDPageContentStream(document, page, true, false, true);
         Random r = new Random(seed + 1);
 
 

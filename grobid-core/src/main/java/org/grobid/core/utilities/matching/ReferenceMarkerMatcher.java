@@ -4,7 +4,6 @@ import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.ClassicAnalyzer;
 import org.apache.lucene.util.Version;
 import org.grobid.core.data.BibDataSet;
@@ -28,7 +27,8 @@ import java.util.regex.Pattern;
 public class ReferenceMarkerMatcher {
     private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceMarkerMatcher.class);
 
-    public static final Pattern YEAR_PATTERN = Pattern.compile("[12][0-9]{3,3}[a-d]?");
+    public static final Pattern YEAR_PATTERN = Pattern.compile("[12][0-9]{3}[a-d]?");
+    public static final Pattern YEAR_PATTERN_WITH_LOOK_AROUND = Pattern.compile("(?<!\\d)[12][0-9]{3}(?!\\d)[a-d]?");
     public static final Pattern AUTHOR_NAME_PATTERN = Pattern.compile("[A-Z][A-Za-z]+");
     private static final Pattern NUMBERED_CITATION_PATTERN = Pattern.compile(" *[\\(\\[]? *(?:\\d+[-–]\\d+,|\\d+, *)*[ ]*(?:\\d+[-–]\\d+|\\d+)[\\)\\]]? *");
     public static final Pattern AUTHOR_SEPARATOR_PATTERN = Pattern.compile(";");
@@ -284,35 +284,40 @@ public class ReferenceMarkerMatcher {
         for (List<LayoutToken> splitTokens : split) {
             //cases like: Khechinashvili et al. (1973) and Privalov (1979)
             String text = LayoutTokensUtil.toText(splitTokens);
-            int matchCount = matchCount(text, YEAR_PATTERN);
+            int matchCount = matchCount(text, YEAR_PATTERN_WITH_LOOK_AROUND);
             if (matchCount == 2 && text.contains(" and ")) {
                 for (List<LayoutToken> ys : LayoutTokensUtil.split(splitTokens, AND_WORD_PATTERN, true)) {
                     result.add(new Pair<>(LayoutTokensUtil.toTextDehyphenized(ys), ys));
                 }
             } else if (matchCount > 1) {
                 List<List<LayoutToken>> yearSplit = LayoutTokensUtil.split(splitTokens, YEAR_PATTERN, true, false);
-                if (matchCount(splitTokens, AUTHOR_NAME_PATTERN) == 1) {
-                    // cases like Grafton et al. 1995, 1998;
-                    // the idea is that we produce as many labels as we have year.
-                    //E.g. "Grafton et al. 1995, 1998;" will become two pairs:
-                    // 1) ("Grafton et al. 1995", tokens_of("Grafton et al. 1995"))
-                    // 2) ("Grafton et al. 1998", tokens_of("1998"))
-                    // this method will allow to mark two citations in a non-overlapping manner
-
-                    List<LayoutToken> firstYearSplitItem = yearSplit.get(0);
-                    result.add(new Pair<>(LayoutTokensUtil.toTextDehyphenized(firstYearSplitItem), firstYearSplitItem));
-
-                    List<LayoutToken> excludedYearToks = firstYearSplitItem.subList(0, firstYearSplitItem.size() - 1);
-                    String authorName = LayoutTokensUtil.toTextDehyphenized(excludedYearToks);
-
-                    for (int i = 1; i < yearSplit.size(); i++) {
-                        List<LayoutToken> toksI = yearSplit.get(i);
-                        result.add(new Pair<>(authorName + " " + LayoutTokensUtil.toTextDehyphenized(toksI), toksI.subList(toksI.size() - 1, toksI.size())));
-                    }
+                if (yearSplit.isEmpty()) {
+                    result.add(new Pair<>(LayoutTokensUtil.toTextDehyphenized(splitTokens), splitTokens));
                 } else {
-                    // case when two authors still appear
-                    for (List<LayoutToken> item : yearSplit) {
-                        result.add(new Pair<>(LayoutTokensUtil.toTextDehyphenized(item), item));
+                    if (matchCount(splitTokens, AUTHOR_NAME_PATTERN) == 1) {
+                        // cases like Grafton et al. 1995, 1998;
+                        // the idea is that we produce as many labels as we have year.
+                        //E.g. "Grafton et al. 1995, 1998;" will become two pairs:
+                        // 1) ("Grafton et al. 1995", tokens_of("Grafton et al. 1995"))
+                        // 2) ("Grafton et al. 1998", tokens_of("1998"))
+                        // this method will allow to mark two citations in a non-overlapping manner
+
+                        List<LayoutToken> firstYearSplitItem;
+                        firstYearSplitItem = yearSplit.get(0);
+                        result.add(new Pair<>(LayoutTokensUtil.toTextDehyphenized(firstYearSplitItem), firstYearSplitItem));
+
+                        List<LayoutToken> excludedYearToks = firstYearSplitItem.subList(0, firstYearSplitItem.size() - 1);
+                        String authorName = LayoutTokensUtil.toTextDehyphenized(excludedYearToks);
+
+                        for (int i = 1; i < yearSplit.size(); i++) {
+                            List<LayoutToken> toksI = yearSplit.get(i);
+                            result.add(new Pair<>(authorName + " " + LayoutTokensUtil.toTextDehyphenized(toksI), toksI.subList(toksI.size() - 1, toksI.size())));
+                        }
+                    } else {
+                        // case when two authors still appear
+                        for (List<LayoutToken> item : yearSplit) {
+                            result.add(new Pair<>(LayoutTokensUtil.toTextDehyphenized(item), item));
+                        }
                     }
                 }
             } else {

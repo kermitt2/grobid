@@ -1,22 +1,17 @@
 package org.grobid.core.document;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import org.apache.commons.io.FileUtils;
-import java.io.File;
-
 import com.google.common.collect.Iterables;
 import com.google.common.collect.SortedSetMultimap;
 import com.google.common.collect.TreeMultimap;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
-import org.grobid.core.engines.Segmentation;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.Cluster;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -94,7 +89,7 @@ public class BasicStructureBuilder {
 //            Integer ii = i;
 
             String localText = block.getText();
-            List<LayoutToken> tokens = block.tokens;
+            List<LayoutToken> tokens = block.getTokens();
 
             if ((localText != null) && (tokens != null)) {
                 if (tokens.size() > 0) {
@@ -149,7 +144,7 @@ public class BasicStructureBuilder {
             for (Block block : doc.getBlocks()) {
 
                 String localText = block.getText();
-                List<LayoutToken> tokens = block.tokens;
+                List<LayoutToken> tokens = block.getTokens();
 
                 if ((localText != null) && (tokens.size() > 0)) {
 
@@ -714,10 +709,13 @@ public class BasicStructureBuilder {
 		//DocumentPointer pointerA = DocumentPointer.START_DOCUMENT_POINTER;
 		// the default first block might not contain tokens but only bitmap - in this case we move
 		// to the first block containing some LayoutToken objects
-		while(docBlocks.get(blockIndex).getTokens() == null) {
-			blockIndex++;
-		}
-		DocumentPointer pointerA = new DocumentPointer(doc, blockIndex, 0);
+        while (docBlocks.get(blockIndex).getTokens() == null
+                //TODO: make things right
+//                || docBlocks.get(blockIndex).getStartToken() == -1
+                ) {
+            blockIndex++;
+        }
+        DocumentPointer pointerA = new DocumentPointer(doc, blockIndex, 0);
 		
         DocumentPointer currentPointer = null;
         DocumentPointer lastPointer = null;

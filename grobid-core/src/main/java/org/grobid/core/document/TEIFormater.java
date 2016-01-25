@@ -1057,6 +1057,8 @@ public class TEIFormater {
         Element curParagraph = null;
         //divResults.add(curDiv);
 
+      //  System.out.println(new TaggingTokenClusteror(GrobidModels.FULLTEXT, result, tokenizations).cluster());
+
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
                 continue;
@@ -1300,7 +1302,7 @@ public class TEIFormater {
             for (Figure figure : figures) {
                 String figSeg = figure.toTEI(3, config);
                 if (figSeg != null) {
-                    buffer.append(figSeg);
+                    buffer.append(figSeg).append("\n");
                 }
             }
         }
@@ -1308,7 +1310,7 @@ public class TEIFormater {
             for (Table table : tables) {
                 String tabSeg = table.toTEI(3, config);
                 if (tabSeg != null) {
-                    buffer.append(tabSeg);
+                    buffer.append(tabSeg).append("\n");
                 }
             }
         }
