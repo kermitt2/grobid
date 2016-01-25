@@ -301,10 +301,12 @@ public class Segmentation extends AbstractParser {
             double lowestPos = 0.0;
             pageLength = page.getPageLengthChar();
             BoundingBox pageBoundingBox = page.getMainArea();
-            newPage = true;
             mm = 0;
             //endPage = true;
             
+            if ((page.getBlocks() == null) || (page.getBlocks().size() == 0)) 
+                continue;
+
             for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
                 Block block = page.getBlocks().get(blockIndex);
                 /*if (start) {

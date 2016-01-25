@@ -39,7 +39,7 @@ public class LayoutTokensUtil {
     }
 
     public static String normalizeText(String text) {
-        return TextUtilities.dehyphenize(text).replace("\n", " ").replaceAll("[ ]{2,}", " ").trim();
+        return TextUtilities.dehyphenize(text).replace("\n", " ").replaceAll("[ ]{2,}", " ");//.trim();
     }
 
     public static String toText(List<LayoutToken> tokens) {

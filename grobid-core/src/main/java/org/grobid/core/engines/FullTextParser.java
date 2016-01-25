@@ -300,7 +300,7 @@ public class FullTextParser extends AbstractParser {
                     density = (double)localText.length() / (block.getHeight() * block.getWidth());
 				
                 // check if we have a graphical object connected to the current block
-                List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
+                List<GraphicObject> localImages = Document.getConnectedGraphics2(block, doc);
                 if (localImages != null) {
                 	for(GraphicObject localImage : localImages) {
                 		if (localImage.getType() == GraphicObject.BITMAP) 

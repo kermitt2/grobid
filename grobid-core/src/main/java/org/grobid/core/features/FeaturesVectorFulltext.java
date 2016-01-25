@@ -160,17 +160,17 @@ public class FeaturesVectorFulltext {
         else
             res.append(" 0");
 
-        if (vectorAround)
+        /*if (vectorAround)
             res.append(" 1");
         else
-            res.append(" 0");
+            res.append(" 0");*/
 		
         // space with previous block, discretised (1)
-        res.append(" " + spacingWithPreviousBlock);
+        //res.append(" " + spacingWithPreviousBlock);
         //res.append(" " + 0);
 
         // character density of the previous block, discretised (1)
-        res.append(" " + characterDensity);
+        //res.append(" " + characterDensity);
         //res.append(" " + 0);
 
         // label - for training data (1)
