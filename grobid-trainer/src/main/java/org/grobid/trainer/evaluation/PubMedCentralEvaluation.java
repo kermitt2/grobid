@@ -163,10 +163,10 @@ public class PubMedCentralEvaluation {
 		// evaluation of the run
 		
 		report.append("\n======= Header metadata ======= \n");
-		//report.append(evaluationRun(this.GROBID, this.HEADER));
+		report.append(evaluationRun(this.GROBID, this.HEADER));
 		
 		report.append("\n======= Citation metadata ======= \n");
-		//report.append(evaluationRun(this.GROBID, this.CITATION));
+		report.append(evaluationRun(this.GROBID, this.CITATION));
 		
 		report.append("\n======= Fulltext structures ======= \n");
 		report.append(evaluationRun(this.GROBID, this.FULLTEXT));
@@ -1189,7 +1189,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 								}
 							}						
 
-							boolean first = true;
+							/*boolean first = true;
 							System.out.print("\n"+fieldName+" - ");
 							System.out.print("\ngrobidResults:\t");
 							for(String res : grobidResults) {
@@ -1199,7 +1199,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									first = false;
 								System.out.print(res);
 							}
-							System.out.println("");
+							System.out.println("");*/
 							
 							List<String> nlmResults = new ArrayList<String>();
 							int nbNlmResults = 0;
@@ -1213,7 +1213,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 								}
 							}
 							
-							first = true;
+							/*first = true;
 							System.out.print("nlmResults:\t");
 							for(String res : nlmResults) {
 								if (!first)
@@ -1222,7 +1222,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									first = false;
 								System.out.print(res);
 							}
-							System.out.println("");
+							System.out.println("");*/
 							
 							// we compare the two result sets
 							

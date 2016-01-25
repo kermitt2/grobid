@@ -297,7 +297,7 @@ public class FieldSpecification {
 		figureTitleField.fieldName = "figure_title";
 		figureTitleField.isTextual = true;
 		figureTitleField.grobidPath.
-			add("//figure[@type=\"figure\"]/head/text()");
+			add("//figure[not(@type)]/head/text()");
 		figureTitleField.nlmPath.
 			add("//fig/label/text()");
 		fulltextFields.add(figureTitleField);
@@ -307,12 +307,31 @@ public class FieldSpecification {
 		figureCaptionField.fieldName = "figure_caption";
 		figureCaptionField.isTextual = true;
 		figureCaptionField.grobidPath.
-			add("//figure[@type=\"figure\"]/description/text()");
+			add("//figure[not(@type)]/description/text()");
 		figureCaptionField.nlmPath.
 			add("//fig/caption/p/text()");
 		fulltextFields.add(figureCaptionField);
 		fulltextLabels.add("figure_caption");
 		
+		FieldSpecification tableTitleField = new FieldSpecification();
+		tableTitleField.fieldName = "table_title";
+		tableTitleField.isTextual = true;
+		tableTitleField.grobidPath.
+			add("//figure[@type=\"table\"]/head/text()");
+		tableTitleField.nlmPath.
+			add("//table-wrap/label/text()");
+		fulltextFields.add(tableTitleField);
+		fulltextLabels.add("table_title");
+		
+		FieldSpecification tableCaptionField = new FieldSpecification();
+		tableCaptionField.fieldName = "table_caption";
+		tableCaptionField.isTextual = true;
+		tableCaptionField.grobidPath.
+			add("//figure[@type=\"table\"]/description/text()");
+		tableCaptionField.nlmPath.
+			add("//table-wrap/caption/p/text()");
+		fulltextFields.add(tableCaptionField);
+		fulltextLabels.add("figure_caption");
 
 		//labels.add("section_title");
 		//labels.add("paragraph");
