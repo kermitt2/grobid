@@ -23,12 +23,12 @@ public class GraphicObject {
     private int endPosition = -1;
 
     private int blockNumber = -1;
-    private int page = -1;
 
-    public double x = 0.0;
-    public double y = 0.0;
-    public double height = 0.0;
-    public double width = 0.0;
+    private BoundingBox boundingBox = null;
+    
+    // in case of vector image, we don't have a boundingBox from pdf2xml, simply the page information
+    private int page = -1;
+    
     public boolean used;
 
     /**
@@ -91,22 +91,41 @@ public class GraphicObject {
     }
 
     public double getX() {
-        return x;
+        if (boundingBox != null)
+            return boundingBox.getX();
+        else 
+            return 0.0;
     }
 
     public double getY() {
-        return y;
+        if (boundingBox != null)
+            return boundingBox.getY();
+        else 
+            return 0.0;
     }
 
     public double getWidth() {
-        return width;
+        if (boundingBox != null)
+            return boundingBox.getWidth();
+        else 
+            return 0.0;
     }
 
     public double getHeight() {
-        return height;
+        if (boundingBox != null)
+            return boundingBox.getHeight();
+        else 
+            return 0.0;
     }
 
-    public void setX(double x1) {
+    public int getPage() {
+        if (boundingBox != null)
+            return boundingBox.getPage();
+        else 
+            return page;
+    }
+
+    /*public void setX(double x1) {
         this.x = Math.abs(x1);
     }
 
@@ -120,14 +139,18 @@ public class GraphicObject {
 
     public void setHeight(double y2) {
         this.height = Math.abs(y2);
-    }
-
-    public int getPage() {
-        return page;
-    }
+    }*/
 
     public void setPage(int page) {
         this.page = page;
+    }
+
+    public BoundingBox getBoundingBox() {
+        return boundingBox;
+    }
+
+    public void setBoundingBox(BoundingBox box) {
+        boundingBox = box;
     }
 
     public String toString() {
@@ -138,12 +161,6 @@ public class GraphicObject {
             res.append("Vector Graphic [");
         } else {
             res.append("Unknown [");
-        }
-
-        if (page != -1) {
-            res.append(page + "\t");
-        } else {
-            res.append("\t");
         }
 
         if (startPosition != -1) {
@@ -160,7 +177,7 @@ public class GraphicObject {
            	res.append("\t");
         }
 
-        res.append("(" + x + ", " + y + ")" + "\t" + "(" + width + ", " + height + ")" + "\t");
+        res.append("(" + boundingBox.toString() + "\t");
 
         return res.toString();
     }

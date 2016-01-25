@@ -1,0 +1,1131 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] grobid-parent
+[INFO] grobid-home
+[INFO] grobid-core
+[INFO] grobid-trainer
+[INFO] grobid-service
+[INFO] 
+[INFO] Using the builder org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder with a thread count of 1
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building grobid-parent 0.4.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ grobid-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ grobid-parent ---
+[INFO] Installing /home/lopez/grobid/pom.xml to /home/lopez/.m2/repository/org/grobid/grobid-parent/0.4.0-SNAPSHOT/grobid-parent-0.4.0-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building grobid-home 0.4.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ grobid-home ---
+[INFO] Deleting /home/lopez/grobid/grobid-home/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ grobid-home ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/lopez/grobid/grobid-home/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ grobid-home ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ grobid-home ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/lopez/grobid/grobid-home/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ grobid-home ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ grobid-home ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ grobid-home ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /home/lopez/grobid/grobid-home/target/grobid-home-0.4.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.3:single (default) @ grobid-home ---
+[INFO] Reading assembly descriptor: /home/lopez/grobid/grobid-home/assembly/assembly.xml
+[INFO] Building zip: /home/lopez/grobid/grobid-home/target/grobid-home-0.4.0-SNAPSHOT.zip
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ grobid-home ---
+[INFO] Installing /home/lopez/grobid/grobid-home/target/grobid-home-0.4.0-SNAPSHOT.jar to /home/lopez/.m2/repository/org/grobid/grobid-home/0.4.0-SNAPSHOT/grobid-home-0.4.0-SNAPSHOT.jar
+[INFO] Installing /home/lopez/grobid/grobid-home/pom.xml to /home/lopez/.m2/repository/org/grobid/grobid-home/0.4.0-SNAPSHOT/grobid-home-0.4.0-SNAPSHOT.pom
+[INFO] Installing /home/lopez/grobid/grobid-home/target/grobid-home-0.4.0-SNAPSHOT.zip to /home/lopez/.m2/repository/org/grobid/grobid-home/0.4.0-SNAPSHOT/grobid-home-0.4.0-SNAPSHOT.zip
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building grobid-core 0.4.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ grobid-core ---
+[INFO] Deleting /home/lopez/grobid/grobid-core/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ grobid-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 18 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:compile (default-compile) @ grobid-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 175 source files to /home/lopez/grobid/grobid-core/target/classes
+[WARNING] /home/lopez/grobid/grobid-core/src/main/java/org/grobid/core/utilities/matching/LuceneIndexMatcher.java: /home/lopez/grobid/grobid-core/src/main/java/org/grobid/core/utilities/matching/LuceneIndexMatcher.java uses or overrides a deprecated API.
+[WARNING] /home/lopez/grobid/grobid-core/src/main/java/org/grobid/core/utilities/matching/LuceneIndexMatcher.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/lopez/grobid/grobid-core/src/main/java/org/grobid/core/lexicon/FastMatcher.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/lopez/grobid/grobid-core/src/main/java/org/grobid/core/lexicon/FastMatcher.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ grobid-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 41 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:testCompile (default-testCompile) @ grobid-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 33 source files to /home/lopez/grobid/grobid-core/target/test-classes
+[WARNING] /home/lopez/grobid/grobid-core/src/test/java/org/grobid/core/data/EmailSanitizerTest.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/lopez/grobid/grobid-core/src/test/java/org/grobid/core/data/EmailSanitizerTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ grobid-core ---
+[INFO] Surefire report directory: /home/lopez/grobid/grobid-core/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.grobid.core.annotations.AnnotationTest
+Loading external native CRF library
+Loading Wapiti native library...
+Library crfpp loaded
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+Could not get the offset from BibDataSet.
+Could not build a proper pointer with the input data. Paragraph=null, pointer=0, offset=0
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.492 sec
+Running org.grobid.core.annotations.DescriptionTest
+Could not get the offset from BibDataSet.
+Could not get the offset from BibDataSet.
+Could not get the offset from BibDataSet.
+Could not build a proper pointer with the input data. Paragraph=null, pointer=-1, offset=-1
+Could not build a proper pointer with the input data. Paragraph=null, pointer=10, offset=-10
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.126 sec
+Running org.grobid.core.annotations.TeiStAXParserTest
+Loading external native CRF library
+Loading Wapiti native library...
+Library crfpp loaded
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+Loading model: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti (size: 28374821)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/patent/all/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti
+TeiStAXParser processing time without ReferenceExtractor processing time: 168.0  (100.0% of total computing time)
+TeiStAXParser full processing time : 168.0
+Model has been already closed, reopening: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti (size: 28374821)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/patent/all/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti
+TeiStAXParser processing time without ReferenceExtractor processing time: 473.0  (14.864864864864865% of total computing time)
+TeiStAXParser full processing time : 3182.0
+Model has been already closed, reopening: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti (size: 28374821)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/patent/all/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti
+TeiStAXParser processing time without ReferenceExtractor processing time: 438.0  (17.754357519254153% of total computing time)
+TeiStAXParser full processing time : 2467.0
+TeiStAXParser processing time without ReferenceExtractor processing time: 0.0  (NaN% of total computing time)
+TeiStAXParser full processing time : 0.0
+Model has been already closed, reopening: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti (size: 28374821)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/patent/all/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti
+TeiStAXParser processing time without ReferenceExtractor processing time: 437.0  (17.778681855166802% of total computing time)
+TeiStAXParser full processing time : 2458.0
+TeiStAXParser processing time without ReferenceExtractor processing time: 1.0  (100.0% of total computing time)
+TeiStAXParser full processing time : 1.0
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xmlns:exch="http://www.epo.org/exchange" xmlns:ng="http://relaxng.org/ns/structure/1.0">
+	<teiHeader type="family">...</teiHeader>
+	<teiCorpus>
+		<teiHeader type="application">...</teiHeader>
+		<TEI>
+			<teiHeader type="publication">
+				<fileDesc>
+					<titleStmt>...</titleStmt>
+					<publicationStmt>...</publicationStmt>
+					<notesStmt>
+						<note type="exchange-document">
+							<idno type="country">US</idno>
+							<idno type="doc-number">4014076</idno>
+							<idno type="kind">A</idno>
+							<idno type="date-publ">19770329</idno>
+							<idno type="family-id">24514352</idno>
+							<idno type="is-representative">YES</idno>
+							<idno type="date-of-last-exchange">20120202</idno>
+							<idno type="date-added-docdb">20000501</idno>
+							<idno type="originating-office">EP</idno>
+						</note>
+						<note type="abstract-information">
+							<idno type="lang">en</idno>
+							<idno type="data-format">docdba</idno>
+							<idno type="abstract-source">translation</idno>
+						</note>
+						<note subtype="automatic" type="standoff-annotation">
+							<author>author</author>
+							<date>date</date>
+							<ptr>the pointer</ptr>
+							Some annotation
+						</note>
+					Model has been already closed, reopening: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti (size: 28374821)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/patent/all/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/citation/model.wapiti (size: 12972361)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/citation/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti (size: 2055704)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/header/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti (size: 339957)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/date/model.wapiti (size: 103543)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/date/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/date/model.wapiti
+<note type="standoff-annotation" subtype="automatic-annotation">
+   <list type="automatic-annotation">
+      <item>
+         <date when="2016-01-23"/>
+         <author type="softwareApplication">
+            <appInfo>
+               <application version="1.0" ident="GROBID">
+                  <label>GROBID Annotator</label>
+               </application>
+            </appInfo>
+         </author>
+         <biblStruct type="patent" status="publication">
+            <monogr>
+               <authority>
+                  <orgName type="national">US</orgName>
+               </authority>
+               <idno type="docNumber" subtype="epodoc">2011155847</idno>
+               <idno type="docNumber" subtype="original">20110155847</idno>
+               <imprint>
+                  <classCode scheme="kindCode">A1</classCode>
+               </imprint>
+            </monogr>
+         </biblStruct>
+         <ptr target="#string-range('1.2.2.2.1.1.5',8,14)"/>
+      </item>
+      <item>
+         <date when="2016-01-23"/>
+         <author type="softwareApplication">
+            <appInfo>
+               <application version="1.0" ident="GROBID">
+                  <label>GROBID Annotator</label>
+               </application>
+            </appInfo>
+         </author>
+         <biblStruct type="patent" status="publication">
+            <monogr>
+               <authority>
+                  <orgName type="national">US</orgName>
+               </authority>
+               <idno type="docNumber" subtype="epodoc">7930197</idno>
+               <idno type="docNumber" subtype="original">7930197</idno>
+            </monogr>
+         </biblStruct>
+         <ptr target="#string-range('ptId1',21,6)"/>
+      </item>
+      <item>
+         <date when="2016-01-23"/>
+         <author type="softwareApplication">
+            <appInfo>
+               <application version="1.0" ident="GROBID">
+                  <label>GROBID Annotator</label>
+               </application>
+            </appInfo>
+         </author>
+         <biblStruct>
+	           <analytic>
+		             <title/>
+	           </analytic>
+	           <monogr>
+		             <title level="j">Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences Chinese Academy of Sciences</title>
+		             <imprint>
+			               <publisher>Oxford University Press on</publisher>
+			               <publisher>Oxford University Press on</publisher>
+		             </imprint>
+	           </monogr>
+         </biblStruct>
+         <ptr target="#string-range('1.2.2.2.1.1.3',17,195)"/>
+      </item>
+      <item>
+         <date when="2016-01-23"/>
+         <author type="softwareApplication">
+            <appInfo>
+               <application version="1.0" ident="GROBID">
+                  <label>GROBID Annotator</label>
+               </application>
+            </appInfo>
+         </author>
+         <biblStruct>
+	           <monogr>
+		             <title level="m" type="main">That article refers to Economic Development Quarterly</title>
+		             <imprint>
+			               <date type="published" when="2011-11"/>
+			               <biblScope unit="page" from="353" to="365"/>
+		             </imprint>
+	           </monogr>
+         </biblStruct>
+         <ptr target="#string-range('ptId1',75,80)"/>
+      </item>
+      <item>
+         <date when="2016-01-23"/>
+         <author type="softwareApplication">
+            <appInfo>
+               <application version="1.0" ident="GROBID">
+                  <label>GROBID Annotator</label>
+               </application>
+            </appInfo>
+         </author>
+         <biblStruct>
+	           <analytic>
+		             <title/>
+	           </analytic>
+	           <monogr>
+		             <title level="j">Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences Chinese Academy of Sciences</title>
+		             <imprint>
+			               <publisher>Oxford University Press on</publisher>
+			               <publisher>Oxford University Press on</publisher>
+		             </imprint>
+	           </monogr>
+         </biblStruct>
+         <ptr target="#string-range('1.2.2.2.1.1.11',17,195)"/>
+      </item>
+   </list>
+</note></notesStmt>
+				</fileDesc>
+				<profileDesc>
+					<textClass type="classification-ipc">
+						<classCode scheme="ipc">
+							<term type="main-classification">D 01G 9/16 A</term>
+						</classCode>
+					</textClass>
+					<textClass type="classifications-ipcr">
+						<classCode scheme="ipcr" rend="1">
+							<idno type="text">D01G 9/06 20060101A I20051008RMEP</idno>
+						</classCode>
+					</textClass>
+					<textClass type="classification-national">
+						<classCode scheme="national">
+							<idno type="text">19 96</idno>
+						</classCode>
+					</textClass>
+				</profileDesc>
+			</teiHeader>
+			<text>
+				<bo
+
+
+
+dy xmlns="http://www.tei-c.org/ns/1.0" xmlns:exch="http://www.epo.org/exchange" xmlns:ng="http://relaxng.org/ns/structure/1.0" xmlns:xalan="http://xml.apache.org/xalan">
+					
+					
+<div xml:lang="en" type="description">
+  <p xml:lang="en">First description.</p>
+  <p xml:lang="en">This desciption was </p>
+  <p xml:lang="en" xml:id="1.2.2.2.1.1.3">published by ABBS Editorial Office in association with Oxford University Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences.</p>
+  <p xml:lang="en">Some other description. </p>
+  <p xml:lang="en" xml:id="1.2.2.2.1.1.5">ref. US 2011/0155847 A1 aerodynamic and applied physics. </p>
+  <p xml:lang="en" xml:id="ptId1">This patent, ref. US 7930197 says data mining of personal data is patented.</p>
+  <p xml:lang="en" xml:id="1">That article refers to Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011.</p>
+  <p xml:lang="en">Third description.</p>
+  <p xml:lang="en">First description.</p>
+  <p xml:lang="en">This desciption was </p>
+  <p xml:lang="en" xml:id="1.2.2.2.1.1.11">published by ABBS Editorial Office in association with Oxford University Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences.</p>
+  <p xml:lang="en">Some other description. </p>
+</div>
+					<div xml:lang="en" type="description2">
+					</div>
+					<div xml:lang="en" type="description3">
+						<p>Some description.</p>
+					</div>
+				</body>
+			</text>
+		</TEI>
+		<TEI>
+			<teiHeader type="publication">
+				<fileDesc>
+					<titleStmt>...</titleStmt>
+					<publicationStmt>...</publicationStmt>
+					<notesStmt>
+						<note type="exchange-document">
+							<idno type="country">US</idno>
+							<idno type="doc-number">5014076</idno>
+							<idno type="kind">A</idno>
+							<idno type="date-publ">19770329</idno>
+							<idno type="family-id">24514352</idno>
+							<idno type="is-representative">YES</idno>
+							<idno type="date-of-last-exchange">20120202</idno>
+							<idno type="date-added-docdb">20000501</idno>
+							<idno type="originating-office">EP</idno>
+						</note>
+						<note type="abstract-information">
+							<idno type="lang">en</idno>
+							<idno type="data-format">docdba</idno>
+							<idno type="abstract-source">translation</idno>
+						</note>
+					<note type="standoff-annotation" subtype="automatic-annotation">
+   <list type="automatic-annotation">
+      <item>
+         <date when="2016-01-23"/>
+         <author type="softwareApplication">
+            <appInfo>
+               <application version="1.0" ident="GROBID">
+                  <label>GROBID Annotator</label>
+               </application>
+            </appInfo>
+         </author>
+         <biblStruct>
+	           <analytic>
+		             <title/>
+	           </analytic>
+	           <monogr>
+		             <title level="j">Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences Chinese Academy of Sciences</title>
+		             <imprint>
+			               <publisher>Oxford University Press on</publisher>
+			               <publisher>Oxford University Press on</publisher>
+		             </imprint>
+	           </monogr>
+         </biblStruct>
+         <ptr target="#string-range('1.2.3.2.1.1.3',17,195)"/>
+      </item>
+   </list>
+</note></notesStmt>
+				</fileDesc>
+				<profileDesc>
+					<textClass type="classification-ipc">
+						<classCode scheme="ipc">
+							<term type="main-classification">D 01G 9/16 A</term>
+						</classCode>
+					</textClass>
+					<textClass type="classifications-ipcr">
+						<classCode scheme="ipcr" rend="1">
+							<idno type="text">D01G 9/06 20060101A I20051008RMEP</idno>
+						</classCode>
+					</textClass>
+					<textClass type="classification-national">
+						<classCode scheme="national">
+							<idno type="text">19 96</idno>
+						</classCode>
+					</textClass>
+				</profileDesc>
+			</teiHeader>
+			<text>
+				<body xmlns="http://www.tei-c.org/ns/1.0" xmlns:exch="http://www.epo.org/exchange" xmlns:ng="http://relaxng.org/ns/structure/1.0" xmlns:xalan="http://xml.apache.org/xalan">
+					
+<div xml:lang="en" type="description">
+  <p xml:lang="en">First description.</p>
+  <p xml:lang="en">This desciption was </p>
+  <p xml:lang="en" xml:id="1.2.3.2.1.1.3">published by ABBS Editorial Office in association with Oxford University Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences.</p>
+  <p xml:lang="en">Some other description. </p>
+</div>
+				</body>
+			</text>
+		</TEI>
+	</teiCorpus>
+
+	<teiCorpus>
+		<teiHeader type="application">...</teiHeader>
+		<TEI>
+			<teiHeader type="publication">
+				<fileDesc>
+					<titleStmt>...</titleStmt>
+					<publicationStmt>...</publicationStmt>
+					<notesStmt>
+						<note type="exchange-document">
+							<idno type="country">US</idno>
+							<idno type="doc-number">6664076</idno>
+							<idno type="kind">A</idno>
+							<idno type="date-publ">19770329</idno>
+							<idno type="family-id">24514352</idno>
+							<idno type="is-representative">YES</idno>
+							<idno type="date-of-last-exchange">20120202</idno>
+							<idno type="date-added-docdb">20000501</idno>
+							<idno type="originating-office">EP</idno>
+						</note>
+						<note type="abstract-information">
+							<idno type="lang">en</idno>
+							<idno type="data-format">docdba</idno>
+							<idno type="abstract-source">translation</idno>
+						</note>
+					<note type="standoff-annotation" subtype="automatic-annotation">
+   <list type="automatic-annotation">
+      <item>
+         <date when="2016-01-23"/>
+         <author type="softwareApplication">
+            <appInfo>
+               <application version="1.0" ident="GROBID">
+                  <label>GROBID Annotator</label>
+               </application>
+            </appInfo>
+         </author>
+         <biblStruct type="patent" status="publication">
+            <monogr>
+               <authority>
+                  <orgName type="national">US</orgName>
+               </authority>
+               <idno type="docNumber" subtype="epodoc">2011155847</idno>
+               <idno type="docNumber" subtype="original">20110155847</idno>
+               <imprint>
+                  <classCode scheme="kindCode">A1</classCode>
+               </imprint>
+            </monogr>
+         </biblStruct>
+         <ptr target="#string-range('1.3.2.2.1.1.1',8,14)"/>
+      </item>
+      <item>
+         <date when="2016-01-23"/>
+         <author type="softwareApplication">
+            <appInfo>
+               <application version="1.0" ident="GROBID">
+                  <label>GROBID Annotator</label>
+               </application>
+            </appInfo>
+         </author>
+         <biblStruct type="patent" status="publication">
+            <monogr>
+               <authority>
+                  <orgName type="national">US</orgName>
+               </authority>
+               <idno type="docNumber" subtype="epodoc">7930197</idno>
+               <idno type="docNumber" subtype="original">7930197</idno>
+            </monogr>
+         </biblStruct>
+         <ptr target="#string-range('ptId1',21,6)"/>
+      </item>
+      <item>
+         <date when="2016-01-23"/>
+         <author type="softwareApplication">
+            <appInfo>
+               <application version="1.0" ident="GROBID">
+                  <label>GROBID Annotator</label>
+               </application>
+            </appInfo>
+         </author>
+         <biblStruct>
+	           <monogr>
+		             <title level="m" type="main">That article refers to Economic Development Quarterly</title>
+		             <imprint>
+			               <date type="published" when="2011-08-25"/>
+			               <biblScope unit="page" from="353" to="365"/>
+		             </imprint>
+	           </monogr>
+         </biblStruct>
+         <ptr target="#string-range('ptId1',75,116)"/>
+      </item>
+      <item>
+         <date when="2016-01-23"/>
+         <author type="softwareApplication">
+            <appInfo>
+               <application version="1.0" ident="GROBID">
+                  <label>GROBID Annotator</label>
+               </application>
+            </appInfo>
+         </author>
+         <biblStruct>
+	           <analytic>
+		             <title level="a" type="main">Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences. Some other description. This desciption was published by ABBS Editorial Office in association with</title>
+	           </analytic>
+	           <monogr>
+		             <title level="m">Shanghai Institutes for Biological Sciences</title>
+		             <imprint>
+			               <publisher>Oxford University Press on</publisher>
+		             </imprint>
+	           </monogr>
+         </biblStruct>
+         <ptr target="#string-range('1.3.2.2.1.1.8',17,455)"/>
+      </item>
+   </list>
+</note></notesStmt>
+				</fileDesc>
+				<profileDesc>
+					<textClass type="classification-ipc">
+						<classCode scheme="ipc">
+							<term type="main-classification">D 01G 9/16 A</term>
+						</classCode>
+					</textClass>
+					<textClass type="classifications-ipcr">
+						<classCode scheme="ipcr" rend="1">
+							<idno type="text">D01G 9/06 20060101A I20051008RMEP</idno>
+						</classCode>
+					</textClass>
+					<textClass type="classification-national">
+						<classCode scheme="national">
+							<idno type="text">19 96</idno>
+						</classCode>
+					</textClass>
+				</profileDesc>
+			</teiHeader>
+			<text>
+				<body xmlns="http://www.tei-c.org/ns/1.0" xmlns:exch="http://www.epo.org/exchange" xmlns:ng="http://relaxng.org/ns/structure/1.0" xmlns:xalan="http://xml.apache.org/xalan">
+					
+<div xml:lang="en" type="description">
+  <p xml:lang="en" xml:id="1.3.2.2.1.1.1">ref. US 2011/0155847 A1 aerodynamic and applied physics. </p>
+  <p xml:lang="en" xml:id="ptId1">This patent, ref. US 7930197 says data mining of personal data is patented.</p>
+  <p xml:lang="en" xml:id="1">That article refers to Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011.</p>
+  <p xml:lang="en">Third description.</p>
+  <p xml:lang="en">First description.</p>
+  <p xml:lang="en">First description.</p>
+  <p xml:lang="en">This desciption was </p>
+  <p xml:lang="en" xml:id="1.3.2.2.1.1.8">published by ABBS Editorial Office in association with Oxford University Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences.</p>
+  <p xml:lang="en">Some other description. </p>
+  <p xml:lang="en">This desciption was </p>
+  <p xml:lang="en">published by ABBS Editorial Office in association with Oxford University Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences.</p>
+  <p xml:lang="en">Some other description. </p>
+</div>
+				</body>
+			</text>
+		</TEI>
+	</teiCorpus>
+
+</teiCorpus>TeiStAXParser processing time without ReferenceExtractor processing time: 21.0  (0.6698564593301436% of total computing time)
+TeiStAXParser full processing time : 3135.0
+TeiStAXParser processing time without ReferenceExtractor processing time: 1.0  (100.0% of total computing time)
+TeiStAXParser full processing time : 1.0
+TeiStAXParser processing time without ReferenceExtractor processing time: 453.0  (99.56043956043956% of total computing time)
+TeiStAXParser full processing time : 455.0
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.712 sec
+Running org.grobid.core.annotations.ParagraphTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec
+Running org.grobid.core.annotations.TeiStAXParsedInfoTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 sec
+Running org.grobid.core.test.TestAffiliationAddressParser
+Loading external native CRF library
+Loading Wapiti native library...
+Library crfpp loaded
+Loading model: /home/lopez/grobid/grobid-home/models/affiliation-address/model.wapiti (size: 2646298)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/affiliation-address/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/affiliation-address/model.wapiti
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.629 sec
+Running org.grobid.core.test.TestFastMatcher
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.525 sec
+Running org.grobid.core.test.TestHeaderParser
+Loading external native CRF library
+Loading Wapiti native library...
+Library crfpp loaded
+Loading model: /home/lopez/grobid/grobid-home/models/header/model.wapiti (size: 36094028)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/header/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/header/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/segmentation/model.wapiti (size: 10651442)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/segmentation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/segmentation/model.wapiti
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+Loading model: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti (size: 2055704)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/header/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti (size: 339957)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/affiliation-address/model.wapiti (size: 2646298)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/affiliation-address/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/affiliation-address/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/citation/model.wapiti (size: 12972361)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/citation/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/date/model.wapiti (size: 103543)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/date/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/date/model.wapiti
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.291 sec
+Running org.grobid.core.test.TestNameParser
+Loading external native CRF library
+Loading Wapiti native library...
+Library crfpp loaded
+Loading model: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti (size: 2055704)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/header/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti (size: 339957)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.52 sec
+Running org.grobid.core.test.TestFullTextParser
+Loading external native CRF library
+Loading Wapiti native library...
+Library crfpp loaded
+Loading model: /home/lopez/grobid/grobid-home/models/fulltext/model.wapiti (size: 6048887)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/fulltext/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/fulltext/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/segmentation/model.wapiti (size: 10651442)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/segmentation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/segmentation/model.wapiti
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+Loading model: /home/lopez/grobid/grobid-home/models/figure/model.wapiti (size: 696838)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/figure/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/figure/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/table/model.wapiti (size: 1102127)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/table/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/table/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/reference-segmenter/model.wapiti (size: 2002440)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/reference-segmenter/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/reference-segmenter/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/citation/model.wapiti (size: 12972361)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/citation/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti (size: 2055704)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/header/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti (size: 339957)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/date/model.wapiti (size: 103543)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/date/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/date/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/header/model.wapiti (size: 36094028)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/header/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/header/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/affiliation-address/model.wapiti (size: 2646298)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/affiliation-address/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/affiliation-address/model.wapiti
+NO CANDIDATES:   [19]
+  [19]
+++++++++++++
+NO CANDIDATES: [1]
+[1]
+++++++++++++
+NO CANDIDATES:  [2]
+ [2]
+++++++++++++
+NO CANDIDATES: [3]
+[3]
+++++++++++++
+Other style:  [l]
+Other style: Sri]
+Other style:  [2j.
+Other style:  [is]
+NO CANDIDATES:  [6]
+ [6]
+++++++++++++
+NO CANDIDATES:  [3]
+ [3]
+++++++++++++
+Other style:  (255,255,O)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.558 sec
+Running org.grobid.core.test.TextUtilitiesTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Running org.grobid.core.test.TestCitationParser
+Loading external native CRF library
+Loading Wapiti native library...
+Library crfpp loaded
+Loading model: /home/lopez/grobid/grobid-home/models/citation/model.wapiti (size: 12972361)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/citation/model.wapiti
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+Loading model: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti (size: 2055704)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/header/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti (size: 339957)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/date/model.wapiti (size: 103543)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/date/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/date/model.wapiti
+Sending: http://doi.crossref.org/servlet/query?usr=id&pwd=pw&type=a&format=unixref&qdata=A+%5Binsert+XML+Format%5D+Database+for+%5Binsert+cool+application%5D+%28extended+version%29|Vyacheslav||key|
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.354 sec
+Running org.grobid.core.test.TestReferencesParser
+Loading external native CRF library
+Loading Wapiti native library...
+Library crfpp loaded
+Loading model: /home/lopez/grobid/grobid-home/models/citation/model.wapiti (size: 12972361)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/citation/model.wapiti
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+Loading model: /home/lopez/grobid/grobid-home/models/reference-segmenter/model.wapiti (size: 2002440)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/reference-segmenter/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/reference-segmenter/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/segmentation/model.wapiti (size: 10651442)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/segmentation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/segmentation/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti (size: 2055704)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/header/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti (size: 339957)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/date/model.wapiti (size: 103543)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/date/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/date/model.wapiti
+Sending: http://doi.crossref.org/servlet/query?usr=id&pwd=pw&type=a&format=unixref&qdata=The+Second+PASCAL+Recognising+Textual+Entailment+Challenge|Bar-Haim||key|
+Sending: http://doi.crossref.org/servlet/query?usr=id&pwd=pw&type=a&format=unixref&qdata=Subsequence+Kernels+for+Relation+Extraction|Bunescu||key|
+Sending: http://doi.crossref.org/servlet/query?usr=id&pwd=pw&type=a&format=unixref&qdata=The+PASCAL+Recognising+Textual+Entailment+Challenge|Dagan||key|
+Sending: http://doi.crossref.org/servlet/query?usr=id&pwd=pw&type=a&format=unixref&qdata=Incorporating+Non-local+Information+into+Information+Extraction+Systems+by+Gibbs+Sampling|Finkel||key|
+Sending: http://doi.crossref.org/servlet/query?usr=id&pwd=pw&type=a&format=unixref&qdata=The+Third+PASCAL+Recognizing+Textual+Entailment+Challenge|Giampiccolo||key|
+Sending: http://doi.crossref.org/servlet/query?usr=id&pwd=pw&type=a&format=unixref&qdata=The+Necessity+of+Parsing+for+Predicate+Argument+Recognition|Gildea||key|
+Sending: http://doi.crossref.org/servlet/query?usr=id&pwd=pw&type=a&format=unixref&qdata=Dependency-based+Evaluation+of+MINIPAR|Lin||key|
+Sending: http://doi.crossref.org/servlet/query?usr=id&pwd=pw&type=a&format=unixref&qdata=A+Shallow+Text+Processing+Core+Engine|Neumann||key|
+Sending: http://doi.crossref.org/servlet/query?usr=id&pwd=pw&type=a&format=unixref&qdata=Overview+of+the+Answer+Validation+Exercise|Penas||key|
+Sending: http://doi.crossref.org/servlet/query?usr=id&pwd=pw&type=a&format=unixref&qdata=Recognizing+Textual+Entailment+Using+a+Subsequence+Kernel+Method|Wang||key|
+Sending: http://doi.crossref.org/servlet/query?usr=id&pwd=pw&type=a&format=unixref&qdata=Recognizing+Textual+Entailment+Using+Sentence+Similarity+based+on+Dependency+Tree+Skeletons|Wang||key|
+Sending: http://doi.crossref.org/servlet/query?usr=id&pwd=pw&type=a&format=unixref&qdata=DFKI%E2%80%93LT+at+AVE+2007%3A+Using+Recognizing+Textual+Entailment+for+Answer+Validation|Wang||key|
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.109 sec
+Running org.grobid.core.test.TestCitationPatentParser
+Loading external native CRF library
+Loading Wapiti native library...
+Library crfpp loaded
+text to parse: this patent refers to US-8303618, 	and filed in continuation of US patent 8153667 and  European Patent publications 1000000 and    1000001. 
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+Loading model: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti (size: 28374821)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/patent/all/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti
+context= US-8303618,  and filed in continuation
+offset start/end/raw=25/34/0
+corresponding span: 8303618, 	
+context= US patent 8153667
+offset start/end/raw=74/80/0
+corresponding span: 8153667
+context=  European Patent publications 1000000 and    1000001
+offset start/end/raw=116/123/0
+corresponding span: 1000000 
+context=  European Patent publications 1000000 and    1000001
+offset start/end/raw=131/137/0
+corresponding span: 1000001
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.17 sec
+Running org.grobid.core.test.TEIFormaterTest
+(\[|\()((\d)+(\w)?(\-\d+\w?)?,\s?)+(\d+\w?)(\-\d+\w?)?(\)|\])
+Done
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 sec
+Running org.grobid.core.test.TestDate
+Loading external native CRF library
+Loading Wapiti native library...
+Library crfpp loaded
+Loading model: /home/lopez/grobid/grobid-home/models/date/model.wapiti (size: 103543)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/date/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/date/model.wapiti
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+<date when="2001-1-10" />
+<date when="1999-11-19" />
+<date when="2007-8-15" />
+<date when="1999-11-14" />
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.395 sec
+Running org.grobid.core.features.TestFeatures
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+log (double) 12
+0
+1
+3
+7
+9
+12
+log (double) 8
+0
+1
+2
+4
+6
+8
+linear 10
+0
+1
+2
+5
+7
+10
+linear 7
+0
+1
+3
+4
+linear (double) 10
+1
+2
+5
+7
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.369 sec
+Running org.grobid.core.utilities.counters.GrobidTimerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Running org.grobid.core.utilities.SHA1Test
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 sec
+Running org.grobid.core.utilities.UtilitiesTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec
+Running org.grobid.core.utilities.GrobidPropertiesTest
+Cannot set grobid home path to the given one '/NotExistingPath', because it does not exist.
+Tests run: 39, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.11 sec
+Running org.grobid.core.utilities.TextUtilitiesTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec
+Running org.grobid.core.utilities.XMLWriterTest
+<someTag att1="val1" att2="val2" att3="val3">
+   <second>Some Content</second>
+   <second attr="val">bla bla</second>
+</someTag>
+<?xml version="1.0" encoding="UTF-8"?>
+<test>some test</test>
+<test>some test</test>
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 sec
+Running org.grobid.core.data.EmailSanitizerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec
+Running org.grobid.core.data.AuthorEmailAssignerTest
+[Jalal Al-Muhtadi  (email:almuhtad@uiuc.edu), Manish Anand  (email:manand@uiuc.edu), M. Dennis Mickunas, Roy Campbell]
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Running org.grobid.core.lexicon.FastMatcherTest
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+[2	2]
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.506 sec
+Running org.grobid.core.factory.GrobidPoolingFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Running org.grobid.core.engines.patent.ReferenceExtractorTest
+Loading external native CRF library
+Loading Wapiti native library...
+Library crfpp loaded
+Initiating dictionary
+End of Initialization of dictionary
+Initiating names
+End of initialization of names
+Initiating country codes
+End of initialization of country codes
+Loading model: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti (size: 28374821)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/patent/all/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/patent/all/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/citation/model.wapiti (size: 12972361)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/citation/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti (size: 2055704)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/header/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti (size: 339957)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti
+Loading model: /home/lopez/grobid/grobid-home/models/date/model.wapiti (size: 103543)
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/date/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/date/model.wapiti
+0 seconds 12 milliseconds
+BibDataSet: [BibDataSet [resBib=BiblioItem{submission_date='null', languageUtilities=org.grobid.core.utilities.LanguageUtilities@23fe1d71, item=-1, parentItem=null, ISBN13='null', ISBN10='null', title='That article refers to Economic Development Quarterly', publisher='null', nbPages=-1, edition='null', language='null', subtitle='null', publication_date='November 2011', normalized_publication_date=11-2011 / November-2011, editors='null', publisher_website='null', serie='null', ISSN='null', ISSNe='null', volume='null', number='null', month='null', support_type='null', version='null', smallImageURL='null', largeImageURL='null', publisherPlace='null', review='null', keywords=null, subjects=null, categories='null', type='null', typeDescription='null', book_type='null', DOI='null', inDOI='null', abstract_='null', authors='null', location='null', bookTitle='null', serieTitle='null', pageRange='353--365', journal='null', volumeBlock='25', institution='null', note='null', affiliation='null', address='null', country='null', town='null', email='null', pubnum='null', keyword='null', phone='null', degree='null', web='null', issue='null', journal_abbrev='null', event='null', abstractHeader='null', day='null', locationPublisher='null', dedication='null', submission='null', english_title='null', url='null', uri='null', confidence='null', conf=0.0, e_year='null', e_month='null', e_day='null', s_year='null', s_month='null', s_day='null', a_year='null', a_month='null', a_day='null', authorList=null, editorList=null, affiliationList=null, addressList=null, emailList=null, webList=null, phoneList=null, markers=null, fullAuthors=null, fullEditors=null, fullAffiliations=null, reference='null', copyright='null', grant='null', affiliationAddressBlock='null', articleTitle='null', beginPage=353, endPage=365, year='null', authorString='null', path='', postProcessEditors=false, crossrefError=true, normalized_submission_date=null, originalAffiliation='null', originalAbstract='null', originalTitle='null', originalAuthors='null', originalAddress='null', originalNote='null', originalKeyword='null', originalVolumeBlock='null', originalJournal='null'}, sourceBib=null, refSymbol=null, rawBib= That article refers to Economic Development Quarterly November 2011 25: 353-365, confidence=1.0, offsets=[167]]]
+[167]
+PatentItem: [PatentItem [authority=WO, number_wysiwyg=09937368, number_epodoc=9937368, kindCode=null, application=false, provisional=false, reissued=false, plant=false, design=false, conf=0.0, confidence=null, offset_begin=456, offset_end=463, offset_raw=0, context= WO 09937368], PatentItem [authority=US, number_wysiwyg=6083121, number_epodoc=6083121, kindCode=null, application=false, provisional=false, reissued=false, plant=false, design=false, conf=0.0, confidence=null, offset_begin=548, offset_end=554, offset_raw=0, context= US 6083121]]
+すなわち、相対的な頻度で、エポキシドをベースとする液体接着剤及び接着結合剤が、例えばＷＯ９８／２１２８７Ａ１。これらの主な使用分野は、硬質装置のみならず適度に柔軟な装置における縁部の結合である。硬化は、熱により又はＵＶ照射により行われる。
+PatentItem: [PatentItem [authority=WO, number_wysiwyg=21287, number_epodoc=21287, kindCode=A1, application=false, provisional=false, reissued=false, plant=false, design=false, conf=0.0, confidence=null, offset_begin=47, offset_end=53, offset_raw=0, context=WO98／21287A1]]
+미국의 애플사의 미국 출원 2012/012710.
+PatentItem: [PatentItem [authority=US, number_wysiwyg=2012012710, number_epodoc=2012012710, kindCode=null, application=false, provisional=false, reissued=false, plant=false, design=false, conf=0.0, confidence=null, offset_begin=15, offset_end=25, offset_raw=0, context=미국의 애플사의 미국 출원 2012/012710]]
+在本申请的申请人于2008年8月26日提交的申请号为US2008/001534的PCT国际申请中，揭示了一种等截面三角形定向棱镜圆形反光板及由其制成的圆板灯。该圆板灯包括：等截面三角形微棱镜圆形导光板；围绕导光板的散热框，该散热框与导光板之间形成间隙而构成环形灯槽；以及嵌装于环形灯槽内的环形灯组件，该环形灯组件由多个发光二极管(LED)贴片、电阻和线路板构成。该申请的全部内容，通过引用结合于此。
+PatentItem: [PatentItem [authority=US, number_wysiwyg=2008001534, number_epodoc=2008001534, kindCode=null, application=false, provisional=false, reissued=false, plant=false, design=false, conf=0.0, confidence=null, offset_begin=28, offset_end=38, offset_raw=0, context=US2008/001534]]
+BibDataSet: [BibDataSet [resBib=BiblioItem{submission_date='null', languageUtilities=org.grobid.core.utilities.LanguageUtilities@23fe1d71, item=-1, parentItem=null, ISBN13='null', ISBN10='null', title='That article It refers to Economic Development Quarterly', publisher='null', nbPages=-1, edition='null', language='null', subtitle='null', publication_date='November 2011', normalized_publication_date=11-2011 / November-2011, editors='null', publisher_website='null', serie='null', ISSN='null', ISSNe='null', volume='null', number='null', month='null', support_type='null', version='null', smallImageURL='null', largeImageURL='null', publisherPlace='null', review='null', keywords=null, subjects=null, categories='null', type='null', typeDescription='null', book_type='null', DOI='null', inDOI='null', abstract_='null', authors='null', location='null', bookTitle='null', serieTitle='null', pageRange='353--365', journal='null', volumeBlock='25', institution='null', note='null', affiliation='null', address='null', country='null', town='null', email='null', pubnum='null', keyword='null', phone='null', degree='null', web='null', issue='null', journal_abbrev='null', event='null', abstractHeader='null', day='null', locationPublisher='null', dedication='null', submission='null', english_title='null', url='null', uri='null', confidence='null', conf=0.0, e_year='null', e_month='null', e_day='null', s_year='null', s_month='null', s_day='null', a_year='null', a_month='null', a_day='null', authorList=null, editorList=null, affiliationList=null, addressList=null, emailList=null, webList=null, phoneList=null, markers=null, fullAuthors=null, fullEditors=null, fullAffiliations=null, reference='null', copyright='null', grant='null', affiliationAddressBlock='null', articleTitle='null', beginPage=353, endPage=365, year='null', authorString='null', path='', postProcessEditors=false, crossrefError=true, normalized_submission_date=null, originalAffiliation='null', originalAbstract='null', originalTitle='null', originalAuthors='null', originalAddress='null', originalNote='null', originalKeyword='null', originalVolumeBlock='null', originalJournal='null'}, sourceBib=null, refSymbol=null, rawBib=That article It refers to Economic Development Quarterly November 2011 25: 353-365, confidence=1.0, offsets=[0]]]
+RawBib=That article It refers to Economic Development Quarterly November 2011 25: 353-365
+Start=0   offset=15   end=15
+[0]
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.485 sec
+Running org.grobid.core.engines.EngineTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.011 sec
+
+Results :
+
+Tests run: 159, Failures: 0, Errors: 0, Skipped: 1
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ grobid-core ---
+[INFO] Building jar: /home/lopez/grobid/grobid-core/target/grobid-core-0.4.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- onejar-maven-plugin:1.4.4:one-jar (default) @ grobid-core ---
+[INFO] Using One-Jar to create a single-file distribution
+[INFO] Implementation Version: 0.4.0-SNAPSHOT
+[INFO] Using One-Jar version: 0.97
+[INFO] More info on One-Jar: http://one-jar.sourceforge.net/
+[INFO] License for One-Jar:  http://one-jar.sourceforge.net/one-jar-license.txt
+[INFO] One-Jar file: /home/lopez/grobid/grobid-core/target/grobid-core-0.4.0-SNAPSHOT.one-jar.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ grobid-core ---
+[INFO] Installing /home/lopez/grobid/grobid-core/target/grobid-core-0.4.0-SNAPSHOT.jar to /home/lopez/.m2/repository/org/grobid/grobid-core/0.4.0-SNAPSHOT/grobid-core-0.4.0-SNAPSHOT.jar
+[INFO] Installing /home/lopez/grobid/grobid-core/pom.xml to /home/lopez/.m2/repository/org/grobid/grobid-core/0.4.0-SNAPSHOT/grobid-core-0.4.0-SNAPSHOT.pom
+[INFO] Installing /home/lopez/grobid/grobid-core/target/grobid-core-0.4.0-SNAPSHOT.one-jar.jar to /home/lopez/.m2/repository/org/grobid/grobid-core/0.4.0-SNAPSHOT/grobid-core-0.4.0-SNAPSHOT-onejar.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building grobid-trainer 0.4.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ grobid-trainer ---
+[INFO] Deleting /home/lopez/grobid/grobid-trainer/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ grobid-trainer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/lopez/grobid/grobid-trainer/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ grobid-trainer ---
+[INFO] Compiling 50 source files to /home/lopez/grobid/grobid-trainer/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ grobid-trainer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/lopez/grobid/grobid-trainer/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ grobid-trainer ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ grobid-trainer ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ grobid-trainer ---
+[INFO] Building jar: /home/lopez/grobid/grobid-trainer/target/grobid-trainer-0.4.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- onejar-maven-plugin:1.4.4:one-jar (default) @ grobid-trainer ---
+[INFO] Using One-Jar to create a single-file distribution
+[INFO] Implementation Version: 0.4.0-SNAPSHOT
+[INFO] Using One-Jar version: 0.97
+[INFO] More info on One-Jar: http://one-jar.sourceforge.net/
+[INFO] License for One-Jar:  http://one-jar.sourceforge.net/one-jar-license.txt
+[INFO] One-Jar file: /home/lopez/grobid/grobid-trainer/target/grobid-trainer-0.4.0-SNAPSHOT.one-jar.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ grobid-trainer ---
+[INFO] Installing /home/lopez/grobid/grobid-trainer/target/grobid-trainer-0.4.0-SNAPSHOT.jar to /home/lopez/.m2/repository/org/grobid/grobid-trainer/0.4.0-SNAPSHOT/grobid-trainer-0.4.0-SNAPSHOT.jar
+[INFO] Installing /home/lopez/grobid/grobid-trainer/pom.xml to /home/lopez/.m2/repository/org/grobid/grobid-trainer/0.4.0-SNAPSHOT/grobid-trainer-0.4.0-SNAPSHOT.pom
+[INFO] Installing /home/lopez/grobid/grobid-trainer/target/grobid-trainer-0.4.0-SNAPSHOT.one-jar.jar to /home/lopez/.m2/repository/org/grobid/grobid-trainer/0.4.0-SNAPSHOT/grobid-trainer-0.4.0-SNAPSHOT-onejar.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building grobid-service 0.4.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for com.sun.jersey:jersey-client:jar:1.9 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] The POM for com.sun.jersey:jersey-server:jar:1.9 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] The POM for com.sun.jersey:jersey-core:jar:1.9 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] The POM for com.sun.jersey.contribs:jersey-multipart:jar:1.9 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ grobid-service ---
+[INFO] Deleting /home/lopez/grobid/grobid-service/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ grobid-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ grobid-service ---
+[INFO] Compiling 16 source files to /home/lopez/grobid/grobid-service/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ grobid-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ grobid-service ---
+[INFO] Compiling 1 source file to /home/lopez/grobid/grobid-service/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ grobid-service ---
+[INFO] Surefire report directory: /home/lopez/grobid/grobid-service/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.grobid.service.tests.GrobidRestServiceTest
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/header/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/header/model.wapiti
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/name/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/name/citation/model.wapiti
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/affiliation-address/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/affiliation-address/model.wapiti
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/header/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/header/model.wapiti
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/citation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/citation/model.wapiti
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/date/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/date/model.wapiti
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/fulltext/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/fulltext/model.wapiti
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/segmentation/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/segmentation/model.wapiti
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/figure/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/figure/model.wapiti
+[Wapiti] Loading model: "/home/lopez/grobid/grobid-home/models/reference-segmenter/model.wapiti"
+Model path: /home/lopez/grobid/grobid-home/models/reference-segmenter/model.wapiti
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.727 sec
+
+Results :
+
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-war-plugin:2.1.1:war (default-war) @ grobid-service ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [grobid-service] in [/home/lopez/grobid/grobid-service/target/grobid-service-0.4.0-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Copying webapp webResources [/home/lopez/grobid/grobid-service/src/main/webapp/WEB-INF/] to [/home/lopez/grobid/grobid-service/target/grobid-service-0.4.0-SNAPSHOT]
+[INFO] Copying webapp resources [/home/lopez/grobid/grobid-service/src/main/webapp]
+[INFO] Webapp assembled in [66 msecs]
+[INFO] Building war: /home/lopez/grobid/grobid-service/target/grobid-service-0.4.0-SNAPSHOT.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ grobid-service ---
+[INFO] Installing /home/lopez/grobid/grobid-service/target/grobid-service-0.4.0-SNAPSHOT.war to /home/lopez/.m2/repository/org/grobid/grobid-service/0.4.0-SNAPSHOT/grobid-service-0.4.0-SNAPSHOT.war
+[INFO] Installing /home/lopez/grobid/grobid-service/pom.xml to /home/lopez/.m2/repository/org/grobid/grobid-service/0.4.0-SNAPSHOT/grobid-service-0.4.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] grobid-parent ..................................... SUCCESS [  0.116 s]
+[INFO] grobid-home ....................................... SUCCESS [  8.023 s]
+[INFO] grobid-core ....................................... SUCCESS [01:12 min]
+[INFO] grobid-trainer .................................... SUCCESS [  2.169 s]
+[INFO] grobid-service .................................... SUCCESS [ 15.059 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:38 min
+[INFO] Finished at: 2016-01-23T06:28:44+01:00
+[INFO] Final Memory: 53M/864M
+[INFO] ------------------------------------------------------------------------

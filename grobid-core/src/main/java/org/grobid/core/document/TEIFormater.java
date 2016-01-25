@@ -91,7 +91,7 @@ public class TEIFormater {
     public StringBuilder toTEIHeader(BiblioItem biblio,
                                      String defaultPublicationStatement,
                                      GrobidAnalysisConfig config) {
-        return toTEIHeader(biblio, SchemaDeclaration.RNG,
+        return toTEIHeader(biblio, SchemaDeclaration.XSD,
                 defaultPublicationStatement, config);
     }
 
@@ -1055,7 +1055,7 @@ public class TEIFormater {
 
         Element curDiv = teiElement("div");
         Element curParagraph = null;
-        divResults.add(curDiv);
+        //divResults.add(curDiv);
 
       //  System.out.println(new TaggingTokenClusteror(GrobidModels.FULLTEXT, result, tokenizations).cluster());
 
@@ -2482,7 +2482,7 @@ public class TEIFormater {
             }
         }
 
-        text = TextUtilities.HTMLEncode(text);
+        text = TextUtilities.HTMLEncode(text).replace("\n", " ").trim();
         if (bestFigure != null) {
             text = "<ref type=\"figure\" target=\"#fig_" + bestFigure + "\" " + coords + ">" + text + "</ref>";
         } else {
@@ -2519,7 +2519,7 @@ public class TEIFormater {
             }
         }
 
-        text = TextUtilities.HTMLEncode(text);
+        text = TextUtilities.HTMLEncode(text).replace("\n", " ").trim();
         if (bestTable != null) {
             text = "<ref type=\"table\" target=\"#tab_" + bestTable + "\" " + coords + ">" + text + "</ref>";
         } else {

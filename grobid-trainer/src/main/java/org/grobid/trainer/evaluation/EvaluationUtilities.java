@@ -820,7 +820,7 @@ public class EvaluationUtilities {
 								List<Integer> counterFalsePositive,
 								List<Integer> counterFalseNegative) {
 		StringBuilder report = new StringBuilder();							
-		report.append("\nlabel\t\taccuracy\tprecision\trecall\t\tf1\n\n");
+		report.append("\nlabel\t\t\taccuracy\tprecision\trecall\t\tf1\n\n");
 
 		int cumulated_tp = 0;
 		int cumulated_fp = 0;
@@ -860,7 +860,10 @@ public class EvaluationUtilities {
 
 			report.append(label);
 
-			if (label.length() < 12) {
+			if (label.length() < 16) {
+				report.append("\t");
+			}
+			if (label.length() < 8) {
 				report.append("\t");
 			}
 			int tp = counterObserved.get(i); // true positives

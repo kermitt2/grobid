@@ -8,11 +8,12 @@ U05:%x[1,0]
 U06:%x[2,0]
 U07:%x[3,0]
 U08:%x[4,0]
-U09:%x[-1,0]/%x[0,0]
-U0A:%x[0,0]/%x[1,0]
-U0B:%x[1,0]/%x[2,0]
-U0C:%x[-2,0]/%x[-1,0]
-#U0D:%x[0,0]/%x[-1,22]
+U09:%x[5,0]
+U0A:%x[-1,0]/%x[0,0]
+U0B:%x[0,0]/%x[1,0]
+U0C:%x[1,0]/%x[2,0]
+U0D:%x[-2,0]/%x[-1,0]
+#U0E:%x[0,0]/%x[-1,22]
 
 # Lowercase token 1
 U10:%x[-2,1]
@@ -116,22 +117,22 @@ UI4:%x[2,23]
 UI5:%x[3,23]
 
 # vector graphic connected to the current block (24)
-UJ0:%x[-2,24]
-UJ1:%x[-1,24]
-UJ2:%x[0,24]
-UJ3:%x[1,24]
-UJ4:%x[2,24]
-UJ5:%x[3,24]
+#UJ0:%x[-2,24]
+#UJ1:%x[-1,24]
+#UJ2:%x[0,24]
+#UJ3:%x[1,24]
+#UJ4:%x[2,24]
+#UJ5:%x[3,24]
 
 # space with previous block, discretised (1)
-UK1:%x[-1,25]
-UK2:%x[0,25]
-UK3:%x[1,25]
+#UK1:%x[-1,25]
+#UK2:%x[0,25]
+#UK3:%x[1,25]
 
 # character density of the previous block, discretised (1)
-UL1:%x[-1,26]
-UL2:%x[0,26]
-UL3:%x[1,26]
+#UL1:%x[-1,26]
+#UL2:%x[0,26]
+#UL3:%x[1,26]
 
 # Output
 B
