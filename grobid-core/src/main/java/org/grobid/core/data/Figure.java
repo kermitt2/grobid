@@ -13,6 +13,7 @@ import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
+import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.layout.LayoutToken;
@@ -23,6 +24,12 @@ import org.grobid.core.layout.LayoutToken;
  * @author Patrice Lopez
  */
 public class Figure {
+	public static final Predicate<GraphicObject> GRAPHIC_OBJECT_PREDICATE = new Predicate<GraphicObject>() {
+		@Override
+		public boolean apply(GraphicObject graphicObject) {
+			return graphicObject.getType() == GraphicObject.BITMAP;
+		}
+	};
 	protected StringBuilder caption = null;
 	protected StringBuilder header = null;
 	protected StringBuilder content = null;
@@ -45,6 +52,7 @@ public class Figure {
 
 	// list of graphic objects corresponding to the figure
 	protected List<GraphicObject> graphicObjects = null;
+	private SortedSet<Integer> blockPtrs;
 
 	public Figure() {
 		caption = new StringBuilder();
@@ -141,12 +149,7 @@ public class Figure {
 		if (graphicObjects == null) {
 			return null;
 		}
-		ArrayList<GraphicObject> graphicObjects = Lists.newArrayList(Iterables.filter(this.graphicObjects, new Predicate<GraphicObject>() {
-			@Override
-			public boolean apply(GraphicObject graphicObject) {
-				return graphicObject.getType() == GraphicObject.BITMAP;
-			}
-		}));
+		ArrayList<GraphicObject> graphicObjects = Lists.newArrayList(Iterables.filter(this.graphicObjects, GRAPHIC_OBJECT_PREDICATE));
 		if (graphicObjects.isEmpty()) {
 			return null;
 		}
@@ -190,8 +193,18 @@ public class Figure {
 		}
 
 		if (config.isGenerateTeiCoordinates()) {
+			String coords;
+			if (getBitmapGraphicObjects() != null && !getBitmapGraphicObjects().isEmpty()) {
+				GraphicObject go = getBitmapGraphicObjects().get(0);
+				coords = BoundingBox.fromPointAndDimensions(go.getPage(), go.getX(), go.getY(), go.getWidth(), go.getHeight()).toString();
+			} else {
+				coords = LayoutTokensUtil.getCoordsString(getLayoutTokens());
+			}
+
 //			theFigure.append(" coords=\"" + getCoordinates() + "\"");
-			XmlBuilderUtils.addCoords(figureElement, getCoordinates());
+			if (coords != null) {
+				XmlBuilderUtils.addCoords(figureElement, coords);
+			}
 		}
 //		theFigure.append(">\n");
 		if (header != null) {
@@ -295,5 +308,34 @@ public class Figure {
 
 	public void setLayoutTokens(List<LayoutToken> layoutTokens) {
 		this.layoutTokens = layoutTokens;
+	}
+
+	public void setBlockPtrs(SortedSet<Integer> blockPtrs) {
+		this.blockPtrs = blockPtrs;
+	}
+
+	public SortedSet<Integer> getBlockPtrs() {
+		return blockPtrs;
+	}
+
+
+	public void setCaption(StringBuilder caption) {
+		this.caption = caption;
+	}
+
+	public void setHeader(StringBuilder header) {
+		this.header = header;
+	}
+
+	public void setContent(StringBuilder content) {
+		this.content = content;
+	}
+
+	public void setLabel(StringBuilder label) {
+		this.label = label;
+	}
+
+	public void setUri(URI uri) {
+		this.uri = uri;
 	}
 }

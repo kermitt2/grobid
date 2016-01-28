@@ -50,7 +50,9 @@ public class CitationsVisualizer {
 //            File input = new File("/Users/zholudev/Downloads/AS-320635044073473@1453456759264_content_1.pdf"); // DISSYNC
 
 //            File input = new File("/Users/zholudev/Downloads/AS-320647283052546@1453459677289_content_1.pdf"); //BAD BLOCK
-            File input = new File("/Users/zholudev/Downloads/AS-320723103485961@1453477754582_content_1.pdf");
+//            File input = new File("/Users/zholudev/Downloads/AS-99301753622543@1400686791996_content_1 (1).pdf"); //spaces
+            File input = new File("/Users/zholudev/Downloads/AS-321758798778369@1453724683241_content_1.pdf"); //spaces
+//            File input = new File("/Users/zholudev/Downloads/AS-317309489483776@1452663885159_content_1.pdf");
 //            File input = new File("/tmp/2.pdf");
 
 //            File input = new File("/Users/zholudev/Downloads/Curtoni 2009 Perspectivas Actuales.pdf");
@@ -105,6 +107,7 @@ public class CitationsVisualizer {
                 annotatePage(document, b.toString(), teiId.hashCode(), contexts.containsKey(teiId) ? 1.5f : 0.5f);
                 //annotating reference markers
                 for (BibDataSetContext c : contexts.get(teiId)) {
+                    System.out.println(c.getContext());
                     String mrect = c.getDocumentCoords();
 //                    if (!c.getTeiId().equals("b5")) {
                         for (String coords : mrect.split(";")) {

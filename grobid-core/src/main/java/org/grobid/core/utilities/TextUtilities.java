@@ -102,8 +102,13 @@ public class TextUtilities {
         boolean hyphen = false;
         boolean failure = false;
         String lastToken = null;
+        boolean isFirstToken = true;
+        String line = null;
         while (st.hasMoreTokens()) {
-            String line = st.nextToken().trim();
+            if (line != null) {
+                isFirstToken = false;
+            }
+            line = st.nextToken().trim();
 
             if (hyphen) {
                 // we get the first token
@@ -153,10 +158,10 @@ public class TextUtilities {
                         lastToken = line.substring(0, line.length() - 1);
                 } else {
                     if (failure) {
-                        res += line+"\n";
+                        res += line + (st.hasMoreTokens() ? "\n" : "");
                         failure = false;
                     } else
-                        res += SPACE + line+"\n";
+                        res += (isFirstToken ? "" : SPACE) + line + (st.hasMoreTokens() ? "\n" : "");
                 }
             }
         }

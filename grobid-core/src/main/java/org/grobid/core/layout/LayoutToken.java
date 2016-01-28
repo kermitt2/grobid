@@ -19,6 +19,7 @@ public class LayoutToken {
     private boolean rotation = false;
     private int page = -1;
     private boolean newLineAfter;
+    private int blockPtr;
 
     public LayoutToken() {
     }
@@ -134,6 +135,14 @@ public class LayoutToken {
 
     public void setNewLineAfter(boolean newLineAfter) {
         this.newLineAfter = newLineAfter;
+    }
+
+    public int getBlockPtr() {
+        return blockPtr;
+    }
+
+    public void setBlockPtr(int blockPtr) {
+        this.blockPtr = blockPtr;
     }
 
     @Override

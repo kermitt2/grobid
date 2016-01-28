@@ -9,6 +9,7 @@ import org.grobid.core.data.Table;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
+import org.grobid.core.document.DocumentSource;
 import org.grobid.core.document.TEIFormater;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
@@ -39,9 +40,12 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.SortedSet;
 import java.util.StringTokenizer;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 
 /**
@@ -81,22 +85,20 @@ public class FullTextParser extends AbstractParser {
         tmpPath = GrobidProperties.getTempPath();
     }
 
-    /**
-     * Machine-learning recognition of the complete full text structures.
-     *
-     * @param inputPdf filename of pdf file
-     * @param config config
-     * @return the document object with built TEI
-     */
-    public Document processing(File inputPdf,
+	public Document processing(File inputPdf,
+							   GrobidAnalysisConfig config) throws Exception {
+		DocumentSource documentSource = DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(), config.getPdfAssetPath() != null);
+		return processing(documentSource, config);
+	}
+		/**
+         * Machine-learning recognition of the complete full text structures.
+         *
+         * @param documentSource input
+         * @param config config
+         * @return the document object with built TEI
+         */
+    public Document processing(DocumentSource documentSource,
                                GrobidAnalysisConfig config) throws Exception {
-        if (inputPdf == null) {
-            throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
-        }
-        if (!inputPdf.exists()) {
-            throw new GrobidResourceException("Cannot process pdf file, because input file '" +
-                    inputPdf.getAbsolutePath() + "' does not exists.");
-        }
         if (tmpPath == null) {
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
         }
@@ -106,7 +108,7 @@ public class FullTextParser extends AbstractParser {
         }
         try {
 			// general segmentation
-            Document doc = parsers.getSegmentationParser().processing(inputPdf, config);
+			Document doc = parsers.getSegmentationParser().processing(documentSource, config);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
 
 			// full text processing
@@ -1289,15 +1291,23 @@ public class FullTextParser extends AbstractParser {
 
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
 
-        for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(), new TaggingTokenClusteror.LabelTypePredicate(TaggingLabel.FIGURE))) {
+        for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
+				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabel.FIGURE))) {
             List<LayoutToken> tokenizationFigure = cluster.concatTokens();
             Figure result = parsers.getFigureParser().processing(
                     tokenizationFigure,
                     cluster.getFeatureBlock()
             );
-
+			SortedSet<Integer> blockPtrs = new TreeSet<>();
+			for (LayoutToken lt : tokenizationFigure) {
+				if (!LayoutTokensUtil.spaceyToken(lt.t())) {
+					blockPtrs.add(lt.getBlockPtr());
+				}
+			}
+			result.setBlockPtrs(blockPtrs);
 
             result.setLayoutTokens(tokenizationFigure);
+
 
 			// the first token could be a space from previous page
 			for (LayoutToken lt : tokenizationFigure) {
@@ -1307,13 +1317,14 @@ public class FullTextParser extends AbstractParser {
 				}
 			}
 
-            doc.setConnectedGraphics2(result, tokenizations, doc);
+//            doc.setConnectedGraphics2(result);
 
             results.add(result);
             result.setId("" + (results.size() - 1));
         }
 
         doc.setFigures(results);
+		doc.assignGraphicObjectsToFigures();
         return results;
     }
     /**
@@ -1407,7 +1418,7 @@ public class FullTextParser extends AbstractParser {
 	    			result.setEndToken(tokenizations.get(p));
 	    			result.setPage(tokenizations.get(i).getPage());
 	    			//doc.setConnectedGraphics2(result, tokenizations, doc);
-					doc.setConnectedGraphics2(result, tokenizations, doc);
+					doc.setConnectedGraphics2(result);
 	//System.out.println(result.toString());
 	    			tokenizationsFigure = new ArrayList<LayoutToken>();
 					results.add(result);

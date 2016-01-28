@@ -167,10 +167,16 @@ public class LayoutTokensUtil {
             return false;
         }
         for (int i = 0; i < boxes.size() - 1; i++) {
-            if (boxes.get(i).verticalDistanceTo(boxes.get(i+1)) > distance) {
+            if (boxes.get(i).verticalDistanceTo(boxes.get(i + 1)) > distance) {
                 return true;
             }
         }
         return false;
     }
+
+    public static String getCoordsString(List<LayoutToken> toks) {
+        List<BoundingBox> res = BoundingBoxCalculator.calculate(toks);
+        return Joiner.on(";").join(res);
+    }
+
 }

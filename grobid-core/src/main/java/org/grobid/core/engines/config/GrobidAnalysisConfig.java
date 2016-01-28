@@ -58,6 +58,9 @@ public class GrobidAnalysisConfig {
     // and saved under the indicated repository path
     private File pdfAssetPath = null;
 
+    // transform images to PNGs
+    private boolean preprocessImages = true;
+
     // BUILDER
 
     public static class GrobidAnalysisConfigBuilder {
@@ -100,6 +103,11 @@ public class GrobidAnalysisConfig {
 
         public GrobidAnalysisConfigBuilder withXslStylesheet(boolean b) {
             config.withXslStylesheet = b;
+            return this;
+        }
+
+        public GrobidAnalysisConfigBuilder withPreprocessImages(boolean b) {
+            config.preprocessImages = b;
             return this;
         }
 
@@ -162,5 +170,9 @@ public class GrobidAnalysisConfig {
 
     public boolean isGenerateImageReferences() {
         return generateImageReferences;
+    }
+
+    public boolean isPreprocessImages() {
+        return preprocessImages;
     }
 }
