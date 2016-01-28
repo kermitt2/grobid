@@ -59,7 +59,8 @@ public class FigureTableVisualizer {
 //            File input = new File("/Work/temp/figureExtraction/5.pdf");
 
 
-            File input = new File("/Work/temp/context/1000k/AS_103424297275405_1401669682614.pdf");
+//            File input = new File("/Work/temp/context/1000k/AS_103424297275405_1401669682614.pdf");
+            File input = new File("/Work/temp/context/1000k/AS_103455624531988_1401677151824.pdf");
 
             processPdfFile(input, null);
 
@@ -75,13 +76,13 @@ public class FigureTableVisualizer {
 //            System.out.println("Processing " + allPaths.size());
 //            for (Path p : allPaths) {
 //                try {
-//                    processPdfFile(p.toFile(), new File("/Work/temp/figureExtraction/out1000k"));
+//                    processPdfFile(p.toFile(), new File("/Work/temp/figureExtraction/out1000k_2"));
 //                } catch (Exception e) {
 //                    Engine.getCntManager().i("EXCEPTIONS", e.getClass().getSimpleName());
 //                    e.printStackTrace();
 //                }
 //            }
-
+//
 
             System.out.println(Engine.getCntManager());
 

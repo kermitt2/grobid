@@ -841,18 +841,21 @@ public class EngineTest {
     @Test
     public void testFulltext() throws Exception {
         final Engine engine = GrobidFactory.getInstance().getEngine();
-        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().pdfAssetPath(new File("/tmp/figures")).build();
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
 //        System.out.println(engine.fullTextToTEI(new File("/Work/temp/context/coords/2.pdf"), config));
 //        engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/1996PRBAConfProc00507417Vos.pdf"), GrobidAnalysisConfig.defaultInstance());
 //        System.out.println(engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/SicamSnellenburgPFRT_OptomVisSci84E915_923.pdf"), config)); //footnote citations
 //        System.out.println(engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/MullenJSSv18i03.pdf"), config)); //long author style citations
 //        System.out.println(engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/1996ParPrecConfProc00507369.pdf"), config)); // simple numbered
-        System.out.println(engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/1994FEBSLett350_235Hadden.pdf"), config)); // numbered
+        System.out.println(engine.fullTextToTEI(new File("/Work/temp/context/1000k/AS_200548461617156_1424825887720.pdf"), config)); // numbered
 //        System.out.println(engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/MullenJSSv18i03.pdf"), GrobidAnalysisConfig.defaultInstance()));
 //        engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/1994FEBSLett350_235Hadden.pdf"), GrobidAnalysisConfig.defaultInstance());
 //        System.out.println(engine.fullTextToTEI(new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis-service/src/test/resources/net/researchgate/pdfanalysisservice/papers.bad.input/40th_Conf_unprotected.pdf"), GrobidAnalysisConfig.defaultInstance()));
 //        System.out.println(engine.fullTextToTEI(new File("/var/folders/h4/np1lg7256q3c3s6b2lhm9w0r0000gn/T/habibi-pdf996586749219753040.pdf"), GrobidAnalysisConfig.defaultInstance()));
 //        System.out.println(engine.fullTextToTEI("/tmp/x1.pdf", true, true, null, -1, -1, true));
+
+            // /Work/temp/context/1000k/AS_200548461617156_1424825887720.pdf
+            //
         System.out.println(Engine.getCntManager());
     }
 

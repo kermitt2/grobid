@@ -78,11 +78,12 @@ public class TestFullTextParser extends EngineTest {
         assertTei(tei);
         //System.out.println(tei);
 
-        //TODO: fix the test
+
         pdfPath = new File(testPath + "/MullenJSSv18i03.pdf");
         tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
 
+        //TODO: fix the test
 //        pdfPath = new File(testPath + "/two_pages.pdf");
 //        tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
 //        assertTei(tei);

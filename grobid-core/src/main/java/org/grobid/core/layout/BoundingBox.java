@@ -141,7 +141,12 @@ public class BoundingBox {
 
 
     public double distanceTo(BoundingBox to) {
+        if (this.page != to.page) {
+            return 1000 * Math.abs(this.page - to.page);
+        }
+
         //the current box is completely "lefter"
+
         boolean left = x2 < to.x;
         boolean right = to.x2 < x;
         boolean bottom = to.y2 < y;
