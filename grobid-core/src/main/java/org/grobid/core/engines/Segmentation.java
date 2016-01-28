@@ -108,11 +108,8 @@ public class Segmentation extends AbstractParser {
     public Document processing(DocumentSource documentSource, GrobidAnalysisConfig config) {
         try {
             Document doc = new Document(documentSource);
-            List<LayoutToken> tokenizations = doc.addTokenizedDocument();
 
-            if (doc.getBlocks() == null) {
-                throw new GrobidException("PDF parsing resulted in empty content");
-            }
+            List<LayoutToken> tokenizations = doc.addTokenizedDocument();
 
             doc.produceStatistics();
             String content = //getAllTextFeatured(doc, headerMode);
@@ -179,7 +176,7 @@ public class Segmentation extends AbstractParser {
                                 ) {
                             try {
                                 final BufferedImage bi = ImageIO.read(currFile);
-                                String outputfilePath = null;
+                                String outputfilePath;
                                 if (toLowerCaseName.endsWith(".jpg")) {
                                     outputfilePath = assetFile.getPath() + File.separator +
                                             toLowerCaseName.replace(".jpg", ".png");
@@ -254,7 +251,7 @@ public class Segmentation extends AbstractParser {
         FeaturesVectorSegmentation previousFeatures = null;
         //boolean endblock = false;
         //boolean endPage = true;
-        boolean newPage = true;
+        boolean newPage;
         boolean start = true;
         int mm = 0; // page position
         int nn = 0; // document position

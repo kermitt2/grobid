@@ -45,6 +45,11 @@ public class GrobidException extends RuntimeException {
         this.status = grobidExceptionStatus;
     }
 
+    @Override
+    public String getMessage() {
+        return status != null ? "[" + status + "] " + super.getMessage() : super.getMessage();
+    }
+
     public GrobidExceptionStatus getStatus() {
         return status;
     }

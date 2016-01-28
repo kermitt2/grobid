@@ -185,7 +185,9 @@ public class FullTextParser extends AbstractParser {
 				figures, tables,
 				config);
             return doc;
-        } catch (Exception e) {
+        } catch (GrobidException e) {
+			throw e;
+		} catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
         }
     }

@@ -1051,7 +1051,7 @@ public class TEIFormater {
         Element curParagraph = null;
         //divResults.add(curDiv);
 
-      //  System.out.println(new TaggingTokenClusteror(GrobidModels.FULLTEXT, result, tokenizations).cluster());
+//        System.out.println(new TaggingTokenClusteror(GrobidModels.FULLTEXT, result, tokenizations).cluster());
 
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {

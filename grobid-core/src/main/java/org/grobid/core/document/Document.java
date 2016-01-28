@@ -278,6 +278,10 @@ public class Document {
             }
 
 
+            if (getBlocks() == null) {
+                throw new GrobidException("PDF parsing resulted in empty content", GrobidExceptionStatus.NO_BLOCKS);
+            }
+
             // calculating main area
             ElementCounter<Integer> leftEven = new ElementCounter<>();
             ElementCounter<Integer> rightEven = new ElementCounter<>();
@@ -337,6 +341,8 @@ public class Document {
 						0, 0, page.getWidth(), page.getHeight()));
                 }
             }
+        } catch (GrobidException e) {
+            throw e;
         } catch (Exception e) {
             throw new GrobidException("Cannot parse file: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
         } finally {

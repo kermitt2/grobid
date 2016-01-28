@@ -10,5 +10,5 @@ public enum GrobidExceptionStatus {
     PARSING_ERROR,
     TIMEOUT,
     TOO_MANY_BLOCKS,
-    GENERAL
+    NO_BLOCKS, GENERAL
 }
