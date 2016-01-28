@@ -23,4 +23,17 @@ public class TextUtilitiesTest {
 		assertEquals("Not expected value", "Dé&amp;amps, C &amp;", result2);
 	}
 
+	@Test
+	public void testDephynization() {
+//		da("Test", "Test");
+		da("Testing", "Compa- \nrison");
+	}
+
+	public void da(String e, String s) {
+		String dehyphenize = TextUtilities.dehyphenize(s);
+		assertEquals("'" + e + "' vs. '" + dehyphenize + "'", e, dehyphenize);
+	}
+
+
+
 }

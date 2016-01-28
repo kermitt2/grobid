@@ -69,6 +69,11 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 	private void addToken(LayoutToken layoutToken) {
 		tokenizations.add(layoutToken);
+		if (doc.getBlocks() == null) {
+			layoutToken.setBlockPtr(0);
+		} else {
+			layoutToken.setBlockPtr(doc.getBlocks().size());
+		}
 		block.addToken(layoutToken);
 	}
 
@@ -90,6 +95,11 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 		if (block.getTokens() != null && !block.getTokens().isEmpty()) {
 			block.getTokens().remove(block.getTokens().size() - 1);
+		}
+		if (doc.getBlocks() == null) {
+			tok.setBlockPtr(0);
+		} else {
+			tok.setBlockPtr(doc.getBlocks().size());
 		}
 		block.addToken(tok);
 	}

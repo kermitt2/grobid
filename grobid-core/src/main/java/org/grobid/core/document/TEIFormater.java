@@ -1030,15 +1030,9 @@ public class TEIFormater {
                                          Document doc,
                                          GrobidAnalysisConfig config) throws Exception {
 
-        boolean generateIDs = config.isGenerateTeiIds();
 
-        String encodedToken;
-        String lastTag = null;
-        String lastOriginalTag = "";
         TaggingLabel lastClusterLabel = null;
 
-        boolean start = true;
-        boolean divOpen = false;
         int startPosition = buffer.length();
 
         boolean figureBlock = false; // indicate that a figure or table sequence was met
@@ -1120,145 +1114,15 @@ public class TEIFormater {
                         n.detach();
                         parent.appendChild(n);
                     }
-//                    buffer.append(replacement);
                 } else if (refNodes != null) {
                     for (Node n : refNodes) {
                         Element parent = curParagraph != null ? curParagraph : curDiv;
                         parent.appendChild(n);
                     }
                 }
-                lastOriginalTag = clusterLabel.getLabel();
-                lastTag = cluster.getLastContainer().getFullLabel();
-//                continue;
             }
 
             lastClusterLabel = cluster.getTaggingLabel();
-//            if (true) {
-//                continue;
-//            }
-//
-//            for (LabeledTokensContainer cont : cluster.getLabeledTokensContainers()) {
-//                tokenLabel = cont.getFullLabel();
-//                boolean newLine = cont.isNewLinePreceding();
-//                String plainToken = cont.getToken();
-//
-//                if (plainToken.equals("@BULLET")) {
-//                    plainToken = "•";
-//                }
-//
-//                if (plainToken.equals("LINESTART")) {
-//                    newLine = true;
-//                }
-//
-//
-//                encodedToken = TextUtilities.HTMLEncode(plainToken); // lexical token
-//
-//                if (newLine && !start) {
-//                    buffer.append("\n");
-//                }
-//
-//                if (cont.getTaggingLabel() == TaggingLabel.TABLE || cont.getTaggingLabel() == TaggingLabel.FIGURE) {
-//                    figureBlock = true;
-//                    continue;
-//                }
-//
-//                String lastTag0 = null;
-//                if (lastTag != null) {
-//                    lastTag0 = GenericTaggerUtils.getPlainLabel(lastTag);
-//                }
-//
-//                String currentTag0 = cont.getPlainLabel();
-//
-//                // we avoid citation_marker and figure_marker tags because they introduce too much mess,
-//                // they will be injected later
-//
-//                // TODO: get rid of redundant vars
-//
-//                String currentOriginalTag = cont.getFullLabel();
-//
-//                if (currentTag0.equals("<citation_marker>") ||
-//                        currentTag0.equals("<figure_marker>") ||
-//                        currentTag0.equals("<table_marker>") ||
-//                        currentTag0.equals("<item>")) {
-//                    currentTag0 = lastTag0;
-//                    tokenLabel = lastTag0;
-//                }
-//                if ((tokenLabel != null) && tokenLabel.equals("I-<paragraph>") &&
-//                        (lastOriginalTag.endsWith("<citation_marker>") ||
-//                                lastOriginalTag.endsWith("<figure_marker>") ||
-//                                lastOriginalTag.endsWith("<table_marker>") ||
-//                                lastOriginalTag.endsWith("<item>"))) {
-//                    currentTag0 = "<paragraph>";
-//                    tokenLabel = "<paragraph>";
-//                }
-//                lastOriginalTag = currentOriginalTag;
-//                boolean closeParagraph = false;
-//                if (lastTag != null) {
-//                    closeParagraph =
-//                            testClosingTag(buffer, currentTag0, lastTag0, tokenLabel, bds, config.isGenerateTeiIds(), figureBlock);
-//                }
-//
-//                boolean addSpace = cont.isSpacePreceding();
-//                boolean output = FullTextParser.writeField(buffer, tokenLabel, lastTag0, encodedToken, "<other>",
-//                        "<note type=\"other\">", addSpace, 3, generateIDs);
-//
-//                // for paragraph we must distinguish starting and closing tags
-//                if (!output) {
-//                    if (closeParagraph) {
-//                        output = FullTextParser.writeFieldBeginEnd(buffer, tokenLabel, "", encodedToken,
-//                                "<paragraph>", "<p>", addSpace, 4, generateIDs);
-//                    } else {
-//                        output = FullTextParser.writeFieldBeginEnd(buffer, tokenLabel, lastTag, encodedToken,
-//                                "<paragraph>", "<p>", addSpace, 4, generateIDs);
-//                    }
-//                }
-//
-//                if (!output) {
-//                    if (divOpen) {
-//                        output = FullTextParser.writeField(buffer, tokenLabel, lastTag0, encodedToken, "<section>",
-//                                "</div>\n\t\t\t<div>\n\t\t\t\t<head>", addSpace, 3, generateIDs);
-//                    } else {
-//                        output = FullTextParser.writeField(buffer, tokenLabel, lastTag0, encodedToken, "<section>",
-//                                "<div>\n\t\t\t\t<head>", addSpace, 3, generateIDs);
-//                    }
-//                    if (output) {
-//                        if (!tokenLabel.equals(lastTag0)) {
-//                            divOpen = true;
-//                        }
-//                    }
-//                }
-//
-//                if (!output) {
-//                    output = FullTextParser.writeField(buffer, tokenLabel, lastTag0, encodedToken, "<equation>",
-//                            "<formula>", addSpace, 4, generateIDs);
-//                }
-//
-//                // for item we must distinguish starting and closing tags
-//                if (!output) {
-//                    output = FullTextParser.writeFieldBeginEnd(buffer, tokenLabel, lastTag, encodedToken, "<item>",
-//                            "<item>", addSpace, 4, generateIDs);
-//                }
-//
-//                lastTag = tokenLabel;
-//                lastTag0 = currentTag0;
-//
-//                //TODO: bad check for the last item
-//                if (cluster == clusters.get(clusters.size() - 1) &&
-//                        cont == cluster.getLabeledTokensContainers().get(cluster.getLabeledTokensContainers().size() - 1)
-//                        ) {
-////                        cnt == tokensAndLabels.size()) {
-//                    if (lastTag != null) {
-//                        testClosingTag(buffer, "", currentTag0, tokenLabel, bds, generateIDs, false);
-//                    }
-//                }
-//                if (start) {
-//                    start = false;
-//                }
-//
-//                if (figureBlock) {
-//                    figureBlock = false;
-//                }
-//            }
         }
 
         buffer.append(XmlBuilderUtils.toXml(divResults));
@@ -2030,11 +1894,6 @@ public class TEIFormater {
     }
 
 
-    private String getCoordsString(List<LayoutToken> toks) {
-        List<BoundingBox> res = BoundingBoxCalculator.calculate(toks);
-        return Joiner.on(";").join(res);
-    }
-
     //bounding boxes should have already been calculated when calling this method
     public static String getCoordsAttribute(List<BoundingBox> boundingBoxes, boolean generateCoordinates) {
         if (!generateCoordinates || boundingBoxes == null || boundingBoxes.isEmpty()) {
@@ -2064,7 +1923,7 @@ public class TEIFormater {
 
         String coords = null;
         if (generateCoordinates)
-            coords = getCoordsString(refTokens);
+            coords = LayoutTokensUtil.getCoordsString(refTokens);
         if (coords == null) {
             coords = "";
         } else {
@@ -2414,7 +2273,7 @@ public class TEIFormater {
             String markerText = TextUtilities.HTMLEncode(matchResult.getText());
             String coords = null;
             if (generateCoordinates && matchResult.getTokens() != null) {
-                coords = getCoordsString(matchResult.getTokens());
+                coords = LayoutTokensUtil.getCoordsString(matchResult.getTokens());
             }
 
             Element ref = teiElement("ref");
@@ -2463,7 +2322,7 @@ public class TEIFormater {
             return text;
         String coords = null;
         if (generateCoordinates)
-            coords = getCoordsString(refTokens);
+            coords = LayoutTokensUtil.getCoordsString(refTokens);
         if (coords == null) {
             coords = "";
         } else {
@@ -2502,7 +2361,7 @@ public class TEIFormater {
             return text;
         String coords = null;
         if (generateCoordinates)
-            coords = getCoordsString(refTokens);
+            coords = LayoutTokensUtil.getCoordsString(refTokens);
         if (coords == null) {
             coords = "";
         } else {

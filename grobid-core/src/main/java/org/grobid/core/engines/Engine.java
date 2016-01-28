@@ -27,6 +27,7 @@ import org.grobid.core.data.ChemicalEntity;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
+import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
@@ -572,6 +573,23 @@ public class Engine implements Closeable {
 			+ (System.currentTimeMillis() - time) + "ms");
         if (config.getPdfAssetPath() != null) {
             FileUtils.write(new File(config.getPdfAssetPath(), Files.getNameWithoutExtension(inputFile.getName()) + ".xml"), resultDoc.getTei());
+        }
+        return resultDoc;
+    }
+
+    public Document fullTextToTEIDoc(DocumentSource documentSource,
+                                     GrobidAnalysisConfig config) throws Exception {
+        FullTextParser fullTextParser = parsers.getFullTextParser();
+
+        // replace by the commented version for the new full ML text parser
+        Document resultDoc;
+        LOGGER.debug("Starting processing fullTextToTEI on " + documentSource);
+        long time = System.currentTimeMillis();
+        resultDoc = fullTextParser.processing(documentSource, config);
+        LOGGER.debug("Ending processing fullTextToTEI on " + documentSource + ". Time to process: "
+                + (System.currentTimeMillis() - time) + "ms");
+        if (config.getPdfAssetPath() != null) {
+            FileUtils.write(new File(config.getPdfAssetPath(), Files.getNameWithoutExtension(documentSource.getPdfFile().getName()) + ".xml"), resultDoc.getTei());
         }
         return resultDoc;
     }

@@ -8,6 +8,7 @@ import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorSegmentation;
@@ -63,6 +64,7 @@ public class Segmentation extends AbstractParser {
 	*/
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Segmentation.class);
+    public static final int BLOCK_LIMIT = 10000;
 
     private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
@@ -85,13 +87,6 @@ public class Segmentation extends AbstractParser {
         super(GrobidModels.SEGMENTATION);
     }
 
-    /**
-     * Segment a PDF document into high level zones: cover page, document header,
-     * page footer, page header, body, page numbers, biblio section and annexes.
-     *
-     * @param input     filename of pdf file
-     * @return Document object with segmentation informations
-     */
     public Document processing(File input, GrobidAnalysisConfig config) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
@@ -100,27 +95,24 @@ public class Segmentation extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because input file '" +
                     input.getAbsolutePath() + "' does not exist.");
         }
-
-        DocumentSource documentSource = null;
+        DocumentSource documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage(), config.getPdfAssetPath() != null);
+        return processing(documentSource, config);
+    }
+    /**
+     * Segment a PDF document into high level zones: cover page, document header,
+     * page footer, page header, body, page numbers, biblio section and annexes.
+     *
+     * @param documentSource     document source
+     * @return Document object with segmentation information
+     */
+    public Document processing(DocumentSource documentSource, GrobidAnalysisConfig config) {
         try {
-            boolean assets = false;
-            if (config.getPdfAssetPath() != null) {
-                assets = true;
-            }
-
-            documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage(), assets);
             Document doc = new Document(documentSource);
-
             List<LayoutToken> tokenizations = doc.addTokenizedDocument();
 
             if (doc.getBlocks() == null) {
                 throw new GrobidException("PDF parsing resulted in empty content");
             }
-
-//for(Block block : doc.getBlocks()) {
-//    System.out.println(block.getText() + block.getPage() 
-//        + " [ x:" + block.x + ", y:" + block.y + ", width:" + block.width + ", height:" + block.height + "]\n\n");
-//}
 
             doc.produceStatistics();
             String content = //getAllTextFeatured(doc, headerMode);
@@ -134,75 +126,7 @@ public class Segmentation extends AbstractParser {
                 // if assets is true, the images are still there under directory pathXML+"_data"
                 // we copy them to the assetPath directory
                 File assetFile = config.getPdfAssetPath();
-                if (assetFile != null) {
-                    // copy the files under the directory pathXML+"_data"
-                    // we copy the asset files into the path specified by assetPath
-
-                    if (!assetFile.exists()) {
-                        // we create it
-                        if (assetFile.mkdir()) {
-                            LOGGER.debug("Directory created: " + assetFile.getPath());
-                        } else {
-                            LOGGER.error("Failed to create directory: " + assetFile.getPath());
-                        }
-                    }
-                    PNMRegistry.registerAllServicesProviders();
-
-                    // filter all .jpg and .png files
-                    File directoryPath = new File(documentSource.getXmlFile().getAbsolutePath() + "_data");
-                    if (directoryPath.exists()) {
-                        File[] files = directoryPath.listFiles();
-                        if (files != null) {
-                            for (final File currFile : files) {
-                                if (currFile.getName().toLowerCase().endsWith(".png")) {
-                                    try {
-                                        FileUtils.copyFileToDirectory(currFile, assetFile);
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
-                                    }
-                                } else if (currFile.getName().toLowerCase().endsWith(".jpg")
-                                        || currFile.getName().toLowerCase().endsWith(".ppm")
-                                    //	|| currFile.getName().toLowerCase().endsWith(".pbm")
-                                        ) {
-                                    try {
-                                        final BufferedImage bi = ImageIO.read(currFile);
-                                        String outputfilePath = null;
-                                        if (currFile.getName().toLowerCase().endsWith(".jpg")) {
-                                            outputfilePath = assetFile.getPath() + File.separator +
-                                                    currFile.getName().toLowerCase().replace(".jpg", ".png");
-                                        }
-										/*else if (currFile.getName().toLowerCase().endsWith(".pbm")) {
-											outputfilePath = assetFile.getPath() + File.separator +
-												 currFile.getName().toLowerCase().replace(".pbm",".png");
-										}*/
-                                        else {
-                                            outputfilePath = assetFile.getPath() + File.separator +
-                                                    currFile.getName().toLowerCase().replace(".ppm", ".png");
-                                        }
-                                        ImageIO.write(bi, "png", new File(outputfilePath));
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            }
-                        }
-                    }
-					// update the path of the image description stored in Document
-					List<GraphicObject> images = doc.getImages();
-					if (images != null) {
-						String subPath = assetFile.getPath();
-						int ind = subPath.lastIndexOf("/");
-						if (ind != -1)
-							subPath = subPath.substring(ind+1, subPath.length());
-						for(GraphicObject image : images) {
-							String fileImage = image.getFilePath();
-							fileImage = fileImage.replace(".ppm", ".png")
-											.replace(".jpg", ".png");
-							ind = fileImage.indexOf("/");
-							image.setFilePath(subPath + fileImage.substring(ind, fileImage.length()));
-						}
-					}
-                }
+                dealWithImages(documentSource, doc, assetFile, config);
             }
             return doc;
         } finally {
@@ -214,6 +138,85 @@ public class Segmentation extends AbstractParser {
             } else {
                 // remove the pdf2xml tmp files, including the sub-directories
                 DocumentSource.close(documentSource, true);
+            }
+        }
+    }
+
+    private void dealWithImages(DocumentSource documentSource, Document doc, File assetFile, GrobidAnalysisConfig config) {
+        if (assetFile != null) {
+            // copy the files under the directory pathXML+"_data"
+            // we copy the asset files into the path specified by assetPath
+
+            if (!assetFile.exists()) {
+                // we create it
+                if (assetFile.mkdir()) {
+                    LOGGER.debug("Directory created: " + assetFile.getPath());
+                } else {
+                    LOGGER.error("Failed to create directory: " + assetFile.getPath());
+                }
+            }
+            PNMRegistry.registerAllServicesProviders();
+
+            // filter all .jpg and .png files
+            File directoryPath = new File(documentSource.getXmlFile().getAbsolutePath() + "_data");
+            if (directoryPath.exists()) {
+                File[] files = directoryPath.listFiles();
+                if (files != null) {
+                    for (final File currFile : files) {
+                        String toLowerCaseName = currFile.getName().toLowerCase();
+                        if (toLowerCaseName.endsWith(".png") || !config.isPreprocessImages()) {
+                            try {
+                                if (toLowerCaseName.endsWith(".vec")) {
+                                    continue;
+                                }
+                                FileUtils.copyFileToDirectory(currFile, assetFile);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        } else if (toLowerCaseName.endsWith(".jpg")
+                                || toLowerCaseName.endsWith(".ppm")
+                            //	|| currFile.getName().toLowerCase().endsWith(".pbm")
+                                ) {
+                            try {
+                                final BufferedImage bi = ImageIO.read(currFile);
+                                String outputfilePath = null;
+                                if (toLowerCaseName.endsWith(".jpg")) {
+                                    outputfilePath = assetFile.getPath() + File.separator +
+                                            toLowerCaseName.replace(".jpg", ".png");
+                                }
+                                /*else if (currFile.getName().toLowerCase().endsWith(".pbm")) {
+                                    outputfilePath = assetFile.getPath() + File.separator +
+                                         currFile.getName().toLowerCase().replace(".pbm",".png");
+                                }*/
+                                else {
+                                    outputfilePath = assetFile.getPath() + File.separator +
+                                            toLowerCaseName.replace(".ppm", ".png");
+                                }
+                                ImageIO.write(bi, "png", new File(outputfilePath));
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
+            }
+            // update the path of the image description stored in Document
+
+            if (config.isPreprocessImages()) {
+                List<GraphicObject> images = doc.getImages();
+                if (images != null) {
+                    String subPath = assetFile.getPath();
+                    int ind = subPath.lastIndexOf("/");
+                    if (ind != -1)
+                        subPath = subPath.substring(ind + 1, subPath.length());
+                    for (GraphicObject image : images) {
+                        String fileImage = image.getFilePath();
+                        fileImage = fileImage.replace(".ppm", ".png")
+                                .replace(".jpg", ".png");
+                        ind = fileImage.indexOf("/");
+                        image.setFilePath(subPath + fileImage.substring(ind, fileImage.length()));
+                    }
+                }
             }
         }
     }
@@ -237,6 +240,11 @@ public class Segmentation extends AbstractParser {
         List<Block> blocks = doc.getBlocks();
         if ((blocks == null) || blocks.size() == 0) {
             return null;
+        }
+
+        //guaranteeing quality of service. Otherwise, there are some PDF that may contain 300k blocks and thousands of extracted "images" that ruins the performance
+        if (blocks.size() > BLOCK_LIMIT) {
+            throw new GrobidException("Postprocessed document is too big, contains: " + blocks.size(), GrobidExceptionStatus.TOO_MANY_BLOCKS);
         }
 
         List<Page> pages = doc.getPages();

@@ -22,11 +22,8 @@ import java.util.List;
  */
 public class DocumentSource {
     private static final Logger LOGGER = LoggerFactory.getLogger(DocumentSource.class);
-
     private static final int DEFAULT_TIMEOUT = 50000;
     private static final int KILLED_DUE_2_TIMEOUT = 143;
-    private static final int PDF2XML_MEM_LIMIT_KBYTES = GrobidProperties.getPdf2XMLMemoryLimitMb() * 1024;
-    private final static File tmpPath = GrobidProperties.getTempPath();
 
     private File pdfFile;
     private File xmlFile;
@@ -54,8 +51,9 @@ public class DocumentSource {
         }
 
         DocumentSource source = new DocumentSource();
-        source.xmlFile = source.pdf2xml(true, false, startPage, endPage, pdfFile, tmpPath, true);//withImages);
+        source.xmlFile = source.pdf2xml(true, false, startPage, endPage, pdfFile, GrobidProperties.getTempPath(), true);//withImages);
         source.cleanupXml = true;
+        source.pdfFile = pdfFile;
         return source;
     }
 
@@ -98,7 +96,7 @@ public class DocumentSource {
         File f = tmpPathXML;
 
         if ((!f.exists()) || force) {
-            List<String> cmd = new ArrayList<String>();
+            List<String> cmd = new ArrayList<>();
             String[] tokens = pdftoxml0.split(" ");
             for (String token : tokens) {
                 if (token.trim().length() > 0) {
@@ -110,8 +108,8 @@ public class DocumentSource {
             if (GrobidProperties.isContextExecutionServer()) {
                 tmpPathXML = processPdf2XmlServerMode(pdfPath, tmpPathXML, cmd);
             } else {
-                cmd = Arrays.asList("bash", "-c", "ulimit -Sv " + 
-					PDF2XML_MEM_LIMIT_KBYTES + " && " + pdftoxml0 + " '" + pdfPath + "' " + tmpPathXML);
+                cmd = Arrays.asList("bash", "-c", "ulimit -Sv " +
+                        GrobidProperties.getPdf2XMLMemoryLimitMb() * 1024 + " && " + pdftoxml0 + " '" + pdfPath + "' " + tmpPathXML);
 
                 LOGGER.debug("Executing command: " + cmd);
 

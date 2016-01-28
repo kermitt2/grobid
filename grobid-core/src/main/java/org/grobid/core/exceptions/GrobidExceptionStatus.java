@@ -9,5 +9,6 @@ public enum GrobidExceptionStatus {
     TAGGING_ERROR,
     PARSING_ERROR,
     TIMEOUT,
+    TOO_MANY_BLOCKS,
     GENERAL
 }

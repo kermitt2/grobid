@@ -21,7 +21,7 @@ public class WapitiWrapper {
 
         String result = Wapiti.labelFromModel(model, data);
         if (result == null) {
-            throw new GrobidException("Wapiti tagging failed (null data returned)", GrobidExceptionStatus.TAGGING_ERROR);
+            throw new GrobidException("Wapiti tagging failed (null data returned) - Possibly mismatch between grobid-home and grobid-core", GrobidExceptionStatus.TAGGING_ERROR);
         }
         return result;
     }

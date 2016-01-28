@@ -161,7 +161,7 @@ public class BoundingBox {
         } else if (bottom) {
             return y - to.y2;
         } else if (top) {
-            return to.y - to.y2;
+            return to.y - y2;
         } else {
             return 0;
         }
