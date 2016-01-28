@@ -309,7 +309,7 @@ public class Document {
                 bottom.i((int) (b.getY() + b.getHeight()));
             }
 
-            if (!leftEven.getCnts().isEmpty() && !rightEven.getCnts().isEmpty()) {
+            if (!leftEven.getCnts().isEmpty() && !leftOdd.getCnts().isEmpty()) {
                 int pageEvenX = 0;
                 int pageEvenWidth = 0;
                 if (pages.size() > 1) {
@@ -1457,9 +1457,7 @@ public class Document {
         return result;
     }
 
-    public void setConnectedGraphics2(Figure figure,
-                                            List<LayoutToken> tokenizations,
-                                            Document doc) {
+    public void setConnectedGraphics2(Figure figure) {
 
         //TODO: improve - make figures clustering on the page (take all images and captions into account)
         List<LayoutToken> tokens = figure.getLayoutTokens();
