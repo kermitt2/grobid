@@ -60,7 +60,8 @@ public class FigureTableVisualizer {
 
 
 //            File input = new File("/Work/temp/context/1000k/AS_103424297275405_1401669682614.pdf");
-            File input = new File("/Work/temp/context/1000k/AS_103455624531988_1401677151824.pdf");
+//            File input = new File("/Work/temp/context/1000k/AS_103455624531988_1401677151824.pdf");
+            File input = new File("/Users/zholudev/Downloads/journal.pone.0146695.pdf");
 
             processPdfFile(input, null);
 

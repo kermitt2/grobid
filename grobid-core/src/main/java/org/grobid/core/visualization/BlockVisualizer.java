@@ -41,7 +41,7 @@ public class BlockVisualizer {
 //            File input = new File("/Users/zholudev/Downloads/pone.0005635.pdf");
 //            File input = new File("/Work/temp/figureExtraction/newtest/1.pdf");
 //            File input = new File("/Users/zholudev/Downloads/AS-292844100177921@1446830882471_content_1.pdf");
-            File input = new File("/Work/temp/context/1000k/AS_103424297275405_1401669682614.pdf");
+            File input = new File("/Users/zholudev/Downloads/journal.pone.0146695.pdf");
 
             final PDDocument document = PDDocument.load(input);
             File outPdf = new File("/tmp/test.pdf");
@@ -60,7 +60,7 @@ public class BlockVisualizer {
 
             Document teiDoc = engine.fullTextToTEIDoc(input, config);
 
-            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), teiDoc, false, false, true);
+            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), teiDoc, false, true, true);
 //            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), null);
 
             if (out != null) {
