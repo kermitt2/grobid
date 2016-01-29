@@ -22,7 +22,8 @@ import java.util.List;
  */
 public class DocumentSource {
     private static final Logger LOGGER = LoggerFactory.getLogger(DocumentSource.class);
-    private static final int DEFAULT_TIMEOUT = 50000;
+    private static final int DEFAULT_TIMEOUT = 20000;
+//    private static final int DEFAULT_TIMEOUT = 50000;
     private static final int KILLED_DUE_2_TIMEOUT = 143;
 
     private File pdfFile;
@@ -51,8 +52,9 @@ public class DocumentSource {
         }
 
         DocumentSource source = new DocumentSource();
-        source.xmlFile = source.pdf2xml(true, false, startPage, endPage, pdfFile, GrobidProperties.getTempPath(), true);//withImages);
         source.cleanupXml = true;
+
+        source.xmlFile = source.pdf2xml(true, false, startPage, endPage, pdfFile, GrobidProperties.getTempPath(), true);//withImages);
         source.pdfFile = pdfFile;
         return source;
     }
@@ -125,6 +127,8 @@ public class DocumentSource {
      * Process the conversion of pdf to xml format using thread calling native
      * executable.
      *
+     * Executed NOT in the server mode
+     *
      * @param tout       timeout
      * @param pdfPath    path to pdf
      * @param tmpPathXML temporary path to save the converted file
@@ -147,14 +151,18 @@ public class DocumentSource {
             }
             if (worker.getExitStatus() == null) {
                 tmpPathXML = null;
+                //killing all child processes harshly
+                worker.killProcess();
+                close(true);
                 throw new GrobidException("PDF to XML conversion timed out", GrobidExceptionStatus.TIMEOUT);
             }
 
             if (worker.getExitStatus() != 0) {
                 String errorStreamContents = worker.getErrorStreamContents();
+                close(true);
                 throw new GrobidException("PDF to XML conversion failed on pdf file " + pdfPath + " " + 
                         (StringUtils.isEmpty(errorStreamContents) ? "" : ("due to: " + errorStreamContents)),
-                        GrobidExceptionStatus.TIMEOUT);
+                        GrobidExceptionStatus.PDF2XML_CONVERSION_FAILURE);
             }
         } catch (InterruptedException ex) {
             tmpPathXML = null;

@@ -2270,7 +2270,7 @@ public class TEIFormater {
         List<Node> nodes = new ArrayList<>();
 
         for (ReferenceMarkerMatcher.MatchResult matchResult : markerMatcher.match(refTokens)) {
-            String markerText = TextUtilities.HTMLEncode(matchResult.getText());
+            String markerText = LayoutTokensUtil.normalizeText(matchResult.getText());
             String coords = null;
             if (generateCoordinates && matchResult.getTokens() != null) {
                 coords = LayoutTokensUtil.getCoordsString(matchResult.getTokens());
@@ -2282,7 +2282,7 @@ public class TEIFormater {
             if (coords != null) {
                 ref.addAttribute(new Attribute("coords", coords));
             }
-            ref.appendChild(LayoutTokensUtil.normalizeText(markerText));
+            ref.appendChild(markerText);
 
             if (matchResult.getBibDataSet() != null) {
                 ref.addAttribute(new Attribute("target", "#b" + matchResult.getBibDataSet().getResBib().getOrdinal()));
