@@ -1,6 +1,7 @@
 package org.grobid.core.sax;
 
 import org.grobid.core.layout.Block;
+import org.grobid.core.layout.GraphicObjectType;
 import org.grobid.core.layout.Page;
 import org.grobid.core.document.Document;
 import org.grobid.core.layout.LayoutToken;
@@ -908,9 +909,9 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 					if (name.equals("href")) {
 						image.setFilePath(value);
 						if (value.indexOf(".vec") != -1)
-							image.setType(GraphicObject.VECTOR);
+							image.setType(GraphicObjectType.VECTOR);
 						else
-							image.setType(GraphicObject.BITMAP);
+							image.setType(GraphicObjectType.BITMAP);
 					} else if (name.equals("x")) {
 						double x = Double.parseDouble(value);
 						if (x != currentX) {
@@ -1047,9 +1048,9 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 						// images = new ArrayList<String>();
 						image.setFilePath(value);
 						if (value.indexOf(".vec") != -1)
-							image.setType(GraphicObject.VECTOR);
+							image.setType(GraphicObjectType.VECTOR);
 						else
-							image.setType(GraphicObject.BITMAP);
+							image.setType(GraphicObjectType.BITMAP);
 					}
 				}
 			}

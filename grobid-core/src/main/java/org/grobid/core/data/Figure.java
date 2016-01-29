@@ -13,6 +13,7 @@ import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
+import org.grobid.core.layout.GraphicObjectType;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
@@ -27,7 +28,7 @@ public class Figure {
 	public static final Predicate<GraphicObject> GRAPHIC_OBJECT_PREDICATE = new Predicate<GraphicObject>() {
 		@Override
 		public boolean apply(GraphicObject graphicObject) {
-			return graphicObject.getType() == GraphicObject.BITMAP;
+			return graphicObject.getType() == GraphicObjectType.BITMAP;
 		}
 	};
 	protected StringBuilder caption = null;

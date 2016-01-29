@@ -21,6 +21,7 @@ import org.grobid.core.layout.Block;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.Cluster;
 import org.grobid.core.layout.GraphicObject;
+import org.grobid.core.layout.GraphicObjectType;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.Page;
 import org.grobid.core.sax.PDF2XMLSaxParser;
@@ -1397,7 +1398,7 @@ public class Document {
                 GraphicObject bestGo = null;
                 if (figureBox != null) {
                     for (GraphicObject go : graphicObjects) {
-                        if (go.getType() != GraphicObject.BITMAP || go.isUsed()) {
+                        if (go.getType() != GraphicObjectType.BITMAP || go.isUsed()) {
                             continue;
                         }
 
@@ -1484,7 +1485,7 @@ public class Document {
 
         if (figureBox != null) {
             for (GraphicObject go : imagesPerPage.get(figure.getPage())) {
-                if (go.getType() != GraphicObject.BITMAP || go.isUsed()) {
+                if (go.getType() != GraphicObjectType.BITMAP || go.isUsed()) {
                     continue;
                 }
 
@@ -1550,7 +1551,7 @@ public class Document {
 
             // attach connected graphics based on estimated figure area
             for (GraphicObject image : doc.getImages()) {
-                if (image.getType() == GraphicObject.VECTOR)
+                if (image.getType() == GraphicObjectType.VECTOR)
                     continue;
                 if (figure.getPage() != image.getPage())
                     continue;

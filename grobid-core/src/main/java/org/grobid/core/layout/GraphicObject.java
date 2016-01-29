@@ -1,7 +1,6 @@
 package org.grobid.core.layout;
 
 import java.io.File;
-import java.util.ArrayList;
 
 /**
  * Class for representing graphical objects occurring within a document.
@@ -11,12 +10,7 @@ import java.util.ArrayList;
 public class GraphicObject {
     private String filePath = null;
 
-    // I am too lazy to do an enum type...
-    public static final int UNKNOWN = -1; // unknown object type
-    public static final int BITMAP = 2; // pure graphic object
-    public static final int VECTOR = 3; // pure graphic object
-
-    private int type = UNKNOWN;
+    private GraphicObjectType type = GraphicObjectType.UNKNOWN;
 
     // position in the global tokenization
     private int startPosition = -1;
@@ -54,7 +48,7 @@ public class GraphicObject {
         return new File(filePath).getName();
     }
 
-    public int getType() {
+    public GraphicObjectType getType() {
         return type;
     }
 
@@ -62,7 +56,7 @@ public class GraphicObject {
         this.filePath = path;
     }
 
-    public void setType(int type) {
+    public void setType(GraphicObjectType type) {
         this.type = type;
     }
 
@@ -154,10 +148,10 @@ public class GraphicObject {
     }
 
     public String toString() {
-        StringBuffer res = new StringBuffer();
-        if (type == this.BITMAP) {
+        StringBuilder res = new StringBuilder();
+        if (type == GraphicObjectType.BITMAP) {
             res.append("Graphic Bitmap [");
-        } else if (type == this.VECTOR) {
+        } else if (type == GraphicObjectType.VECTOR) {
             res.append("Vector Graphic [");
         } else {
             res.append("Unknown [");

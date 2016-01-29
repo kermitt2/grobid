@@ -13,6 +13,7 @@ import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorSegmentation;
 import org.grobid.core.layout.Block;
+import org.grobid.core.layout.GraphicObjectType;
 import org.grobid.core.layout.Page;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.BoundingBox;
@@ -339,9 +340,9 @@ public class Segmentation extends AbstractParser {
                 List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
                 if (localImages != null) {
                     for(GraphicObject localImage : localImages) {
-                        if (localImage.getType() == GraphicObject.BITMAP) 
+                        if (localImage.getType() == GraphicObjectType.BITMAP)
                             graphicVector = true;
-                        if (localImage.getType() == GraphicObject.VECTOR) 
+                        if (localImage.getType() == GraphicObjectType.VECTOR)
                             graphicBitmap = true;
                     }
                 }
