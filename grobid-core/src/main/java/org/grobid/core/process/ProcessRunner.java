@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -19,6 +20,7 @@ public class ProcessRunner extends Thread {
 
 	private List<String> cmd;
     private Integer exit;
+    private Process process;
 
     public String getErrorStreamContents() {
         return errorStreamContents;
@@ -36,8 +38,42 @@ public class ProcessRunner extends Thread {
         this.useStreamGobbler = useStreamGobbler;
     }
 
+    // since we are limiting by ulimit, pdftoxml is actually a child process, therefore Process.destroy() won't work
+    // killing harshly with pkill
+    public void killProcess() {
+        if (process != null) {
+            try {
+                Long pid = getPidOfProcess(process);
+                if (pid != null) {
+                    LOGGER.info("Killing pdf2xml with PID " + pid + " and its children");
+                    Runtime.getRuntime().exec(new String[]{"pkill", "-9", "-P", String.valueOf(pid)}).waitFor();
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+
+    //WARNING
+    public static Long getPidOfProcess(Process p) {
+        Long pid = null;
+
+        try {
+            if (p.getClass().getName().equals("java.lang.UNIXProcess")) {
+                Field f = p.getClass().getDeclaredField("pid");
+                f.setAccessible(true);
+                pid = f.getLong(p);
+                f.setAccessible(false);
+            }
+        } catch (Exception e) {
+            pid = null;
+        }
+        return pid;
+    }
+
     public void run() {
-        Process process = null;
+        process = null;
         try {
 			ProcessBuilder builder = new ProcessBuilder(cmd);
 			process = builder.start();
@@ -67,6 +103,7 @@ public class ProcessRunner extends Thread {
                 IOUtils.closeQuietly(process.getErrorStream());
 
                 process.destroy();
+
             }
 
             if (useStreamGobbler) {

@@ -869,12 +869,14 @@ public class EngineTest {
 //        for (File f : new File("/Work/temp/pub_citation_styles").listFiles(new FileFilter() {
 //            @Override
 //            public boolean accept(File pathname) {
-        for (File f : new File("/Work/temp/context/1000k").listFiles(new FileFilter() {
-            @Override
-            public boolean accept(File pathname) {
-                return pathname.getName().endsWith(".pdf");
-            }
-        })) {
+//        for (File f : new File("/Work/temp/context/1000k")
+        for (File f : new File("/Work/temp/timeout") // bad PDF that produces dozens of files
+                .listFiles(new FileFilter() {
+                        @Override
+                        public boolean accept(File pathname) {
+                                return pathname.getName().endsWith(".pdf");
+                        }
+                })) {
                 try {
                         Engine.getCntManager().i("PDFS", "INPUT_CNT");
                         System.out.println("Processing: " + f);
@@ -894,6 +896,9 @@ public class EngineTest {
 //        System.out.println(engine.fullTextToTEI(new File("/var/folders/h4/np1lg7256q3c3s6b2lhm9w0r0000gn/T/habibi-pdf996586749219753040.pdf"), GrobidAnalysisConfig.defaultInstance()));
 //        System.out.println(engine.fullTextToTEI("/tmp/x1.pdf", true, true, null, -1, -1, true));
         System.out.println(Engine.getCntManager());
+
+            Thread.sleep(100000);
+            System.out.println("DONE!");
     }
 
 

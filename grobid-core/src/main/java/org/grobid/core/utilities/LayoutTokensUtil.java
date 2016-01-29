@@ -43,6 +43,10 @@ public class LayoutTokensUtil {
         return TextUtilities.dehyphenize(text).replace("\n", " ").replaceAll("[ ]{2,}", " ");//.trim();
     }
 
+    public static String normalizeText(List<LayoutToken> tokens) {
+        return TextUtilities.dehyphenize(toText(tokens)).replace("\n", " ").replaceAll("[ ]{2,}", " ");//.trim();
+    }
+
     public static String toText(List<LayoutToken> tokens) {
         return Joiner.on("").join(Iterables.transform(tokens, TO_TEXT_FUNCTION));
     }
@@ -51,6 +55,8 @@ public class LayoutTokensUtil {
         return t.getPage() == -1 || t.getWidth() <= 0;
     }
 
+    @Deprecated
+    // the same method in TextUtilities should be used
     public static String toTextDehyphenized(List<LayoutToken> tokens) {
 
         PeekingIterator<LayoutToken> it = Iterators.peekingIterator(tokens.iterator());

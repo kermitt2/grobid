@@ -108,7 +108,7 @@ public class TextUtilities {
             if (line != null) {
                 isFirstToken = false;
             }
-            line = st.nextToken().trim();
+            line = st.nextToken();
 
             if (hyphen) {
                 // we get the first token

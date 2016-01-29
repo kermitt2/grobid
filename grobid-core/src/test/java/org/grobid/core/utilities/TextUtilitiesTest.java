@@ -26,7 +26,8 @@ public class TextUtilitiesTest {
 	@Test
 	public void testDephynization() {
 //		da("Test", "Test");
-		da("Testing", "Compa- \nrison");
+//		da("Testing", "Compa- \nrison");
+		//da(" Test", " Test");
 	}
 
 	public void da(String e, String s) {

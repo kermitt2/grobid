@@ -47,11 +47,12 @@ public class CitationsVisualizer {
 //            File input = new File("/Work/temp/context/1000k/AS_99223336914944_1400668095132.pdf");
 //            File input = new File("/tmp/AS_100005549445135_1400854589869.pdf"); // not all tokens
 //            File input = new File("/Work/temp/context/coords/1.pdf");
-            File input = new File("/Users/zholudev/Downloads/AS-322295069904896@1453852540043_content_1.pdf"); // NO BLOCKS
+//            File input = new File("/Users/zholudev/Downloads/AS-316773709090817@1452536145958_content_1.pdf"); // NO BLOCKS
 
 //            File input = new File("/Users/zholudev/Downloads/AS-320647283052546@1453459677289_content_1.pdf"); //BAD BLOCK
 //            File input = new File("/Users/zholudev/Downloads/AS-99301753622543@1400686791996_content_1 (1).pdf"); //spaces
 //            File input = new File("/Users/zholudev/Downloads/AS-321758798778369@1453724683241_content_1.pdf"); //spaces
+            File input = new File("/Users/zholudev/Downloads/AS-318367446650887@1452916122687_content_1.pdf");
 //            File input = new File("/Users/zholudev/Downloads/AS-317309489483776@1452663885159_content_1.pdf");
 //            File input = new File("/tmp/2.pdf");
 
