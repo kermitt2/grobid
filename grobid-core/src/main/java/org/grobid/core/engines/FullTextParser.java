@@ -22,6 +22,7 @@ import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.GraphicObject;
+import org.grobid.core.layout.GraphicObjectType;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.tokenization.TaggingTokenCluster;
@@ -310,9 +311,9 @@ public class FullTextParser extends AbstractParser {
                 List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
                 if (localImages != null) {
                 	for(GraphicObject localImage : localImages) {
-                		if (localImage.getType() == GraphicObject.BITMAP)
+                		if (localImage.getType() == GraphicObjectType.BITMAP)
                 			graphicVector = true;
-                		if (localImage.getType() == GraphicObject.VECTOR)
+                		if (localImage.getType() == GraphicObjectType.VECTOR)
                 			graphicBitmap = true;
                 	}
                 }
