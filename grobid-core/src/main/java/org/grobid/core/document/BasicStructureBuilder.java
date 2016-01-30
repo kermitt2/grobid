@@ -743,7 +743,7 @@ public class BasicStructureBuilder {
                 p++;
                 continue;
             }
-			
+
 			// as we process the document segmentation line by line, we don't use the usual 
 			// tokenization to rebuild the text flow, but we get each line again from the 
 			// text stored in the document blocks (similarly as when generating the features) 

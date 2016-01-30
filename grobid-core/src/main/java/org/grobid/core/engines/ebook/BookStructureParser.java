@@ -4,6 +4,7 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.AbstractParser;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
@@ -52,7 +53,7 @@ public class BookStructureParser extends AbstractParser {
             source = DocumentSource.fromPdf(file);
             Document doc = new Document(DocumentSource.fromPdf(file));
             String PDFFileName = file.getName();
-            doc.addTokenizedDocument();
+            doc.addTokenizedDocument(GrobidAnalysisConfig.defaultInstance());
 
             if (doc.getBlocks() == null) {
                 throw new Exception("PDF parsing resulted in empty content");

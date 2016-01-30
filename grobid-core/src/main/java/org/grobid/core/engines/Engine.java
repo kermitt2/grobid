@@ -401,7 +401,8 @@ public class Engine implements Closeable {
      *         information
      */
     public String processHeader(String inputFile, boolean consolidate, BiblioItem result) {
-        return processHeader(inputFile, consolidate, 0, 2, result);
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().startPage(0).endPage(2).build();
+        return processHeader(inputFile, consolidate, config, result);
     }
 
     /**
@@ -411,13 +412,11 @@ public class Engine implements Closeable {
      * @param inputFile   : the path of the PDF file to be processed
      * @param consolidate - the consolidation option allows GROBID to exploit Crossref
      *                    web services for improving header information
-     * @param startPage   : start page of range to use (0-based)
-     * @param endPage     : stop page of range to use (0-based)
      * @param result      bib result
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
-    public String processHeader(String inputFile, boolean consolidate, int startPage, int endPage, BiblioItem result) {
+    public String processHeader(String inputFile, boolean consolidate, GrobidAnalysisConfig config, BiblioItem result) {
         // normally the BiblioItem reference must not be null, but if it is the
         // case, we still continue
         // with a new instance, so that the resulting TEI string is still
@@ -427,7 +426,7 @@ public class Engine implements Closeable {
         }
 
         Pair<String, Document> resultTEI = parsers.getHeaderParser()
-			.processing2(inputFile, consolidate, result, startPage, endPage);
+			.processing2(inputFile, consolidate, result, config);
 		//Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, consolidate, result);
         Document doc = resultTEI.getRight();
         //close();
