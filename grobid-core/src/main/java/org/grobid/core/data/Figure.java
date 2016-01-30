@@ -1,9 +1,5 @@
 package org.grobid.core.data;
 
-import java.net.URI;
-import java.lang.StringBuilder;
-import java.util.*;
-
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -14,10 +10,14 @@ import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.GraphicObjectType;
-import org.grobid.core.utilities.BoundingBoxCalculator;
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.layout.LayoutToken;
+
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.SortedSet;
 
 /**
  * Class for representing a figure.
@@ -213,20 +213,12 @@ public class Figure {
 
 	public String toTEI(int indent, GrobidAnalysisConfig config) {
 		if (((header == null) || (header.length() == 0)) &&
-				((caption == null) || (caption.length() == 0)) //&&
-			//((graphicObjects != null) && (graphicObjects.size() == 0))
+				((caption == null) || (caption.length() == 0))
 				) {
 			return null;
 		}
-//        StringBuilder theFigure = new StringBuilder();
-
 		Element figureElement = XmlBuilderUtils.teiElement("figure");
-//        theFigure.append("\n");
-//       	for(int i=0; i<indent; i++)
-//			theFigure.append("\t");
-//		theFigure.append("<figure");
 		if (id != null) {
-//			theFigure.append(" xml:id=\"fig_" + id + "\"");
 			XmlBuilderUtils.addXmlId(figureElement, "fig_" + id);
 		}
 
@@ -234,56 +226,42 @@ public class Figure {
 			String coords;
 			if (getBitmapGraphicObjects() != null && !getBitmapGraphicObjects().isEmpty()) {
 				GraphicObject go = getBitmapGraphicObjects().get(0);
-				coords = BoundingBox.fromPointAndDimensions(go.getPage(), go.getX(), go.getY(), go.getWidth(), go.getHeight()).toString();
+				coords = go.getBoundingBox().toString();
 			} else {
 				coords = LayoutTokensUtil.getCoordsString(getLayoutTokens());
 			}
 
-//			theFigure.append(" coords=\"" + getCoordinates() + "\"");
 			if (coords != null) {
 				XmlBuilderUtils.addCoords(figureElement, coords);
 			}
 		}
-//		theFigure.append(">\n");
 		if (header != null) {
-//	       	for(int i=0; i<indent+1; i++)
-//				theFigure.append("\t");
-//			theFigure.append("<head>").append(cleanString(
-//				TextUtilities.HTMLEncode(header.toString())))
-//				.append("</head>\n");
 			Element head = XmlBuilderUtils.teiElement("head",
 					LayoutTokensUtil.normalizeText(header.toString()));
 			figureElement.appendChild(head);
 
 		}
 		if (caption != null) {
-//			for(int i=0; i<indent+1; i++)
-//				theFigure.append("\t");
-//			theFigure.append("<figDesc>").append(cleanString(
-//				TextUtilities.HTMLEncode(TextUtilities.dehyphenizeHard(caption.toString()))))
-//				.append("</figDesc>\n");
-
 			Element desc = XmlBuilderUtils.teiElement("figDesc",
 					LayoutTokensUtil.normalizeText(caption.toString()));
 			figureElement.appendChild(desc);
 		}
 		if ((graphicObjects != null) && (graphicObjects.size() > 0)) {
 			for (GraphicObject graphicObject : graphicObjects) {
-//		       	for(int i=0; i<indent+1; i++)
-//					theFigure.append("\t");
-//				theFigure.append("<graphic url=\"" + graphicObject.getURI() + "\" />\n");
-
 				Element go = XmlBuilderUtils.teiElement("graphic");
 				String uri = graphicObject.getURI();
 				if (uri != null) {
 					go.addAttribute(new Attribute("url", uri));
 				}
+
+				if (graphicObject.getBoundingBox() != null) {
+					go.addAttribute(new Attribute("coords", graphicObject.getBoundingBox().toString()));
+				}
+
+				go.addAttribute(new Attribute("type", graphicObject.getType().name().toLowerCase()));
 				figureElement.appendChild(go);
 			}
 		}
-//		for(int i=0; i<indent; i++)
-//			theFigure.append("\t");
-//		theFigure.append("</figure>\n");
 		return figureElement.toXML();
 	}
 
