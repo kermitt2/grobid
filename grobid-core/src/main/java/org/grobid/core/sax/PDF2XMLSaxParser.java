@@ -65,7 +65,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 		doc = d;
 		blabla = new StringBuffer();
 		images = im;
-		tokenizations = new ArrayList<LayoutToken>();
+		tokenizations = new ArrayList<>();
 	}
 
 	private void addToken(LayoutToken layoutToken) {
@@ -124,10 +124,6 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 	public List<LayoutToken> getTokenization() {
 		return tokenizations;
-	}
-
-	public List<GraphicObject> getGraphicObjects() {
-		return images;
 	}
 
 	public void characters(char[] ch, int start, int length) {
@@ -445,7 +441,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			if (tok0.length() > 0) {
 				//StringTokenizer st = new StringTokenizer(tok0,
 				//		TextUtilities.delimiters, true);
-				List<String> subTokenizations = new ArrayList<String>();
+				List<String> subTokenizations = new ArrayList<>();
 				try {
 					// TBD: pass a language object to the tokenize method call 
 					subTokenizations = analyzer.tokenize(tok0);		
@@ -453,8 +449,8 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 				catch(Exception e) {
 					LOGGER.debug("Sub-tokenization of pdf2xml token has failed.");
 				}
-				boolean diaresis = false;
-				boolean accent = false;
+				boolean diaresis;
+				boolean accent;
 				//while (st.hasMoreTokens()) {
 
 				if (subTokenizations.size() != 0) {
@@ -1047,7 +1043,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 						// if (images == null)
 						// images = new ArrayList<String>();
 						image.setFilePath(value);
-						if (value.indexOf(".vec") != -1)
+						if (value.contains(".vec"))
 							image.setType(GraphicObjectType.VECTOR);
 						else
 							image.setType(GraphicObjectType.BITMAP);

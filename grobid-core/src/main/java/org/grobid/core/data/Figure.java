@@ -31,6 +31,20 @@ public class Figure {
 			return graphicObject.getType() == GraphicObjectType.BITMAP;
 		}
 	};
+
+	public static final Predicate<GraphicObject> VECTOR_BOX_GRAPHIC_OBJECT_PREDICATE = new Predicate<GraphicObject>() {
+		@Override
+		public boolean apply(GraphicObject graphicObject) {
+			return graphicObject.getType() == GraphicObjectType.VECTOR_BOX;
+		}
+	};
+
+	public static final Predicate<GraphicObject> BOXED_GRAPHIC_OBJECT_PREDICATE = new Predicate<GraphicObject>() {
+		@Override
+		public boolean apply(GraphicObject graphicObject) {
+			return graphicObject.getType() == GraphicObjectType.BITMAP || graphicObject.getType() == GraphicObjectType.VECTOR_BOX;
+		}
+	};
 	protected StringBuilder caption = null;
 	protected StringBuilder header = null;
 	protected StringBuilder content = null;
@@ -157,6 +171,29 @@ public class Figure {
 		return graphicObjects;
 	}
 
+	public List<GraphicObject> getBoxedGraphicObjects() {
+		if (graphicObjects == null) {
+			return null;
+		}
+		ArrayList<GraphicObject> graphicObjects = Lists.newArrayList(Iterables.filter(this.graphicObjects, BOXED_GRAPHIC_OBJECT_PREDICATE));
+		if (graphicObjects.isEmpty()) {
+			return null;
+		}
+		return graphicObjects;
+	}
+
+	public List<GraphicObject> getVectorBoxGraphicObjects() {
+		if (graphicObjects == null) {
+			return null;
+		}
+		ArrayList<GraphicObject> graphicObjects = Lists.newArrayList(Iterables.filter(this.graphicObjects, VECTOR_BOX_GRAPHIC_OBJECT_PREDICATE));
+		if (graphicObjects.isEmpty()) {
+			return null;
+		}
+		return graphicObjects;
+	}
+
+
 	public void addGraphicObject(GraphicObject obj) {
 		if (graphicObjects == null)
 			graphicObjects = new ArrayList<GraphicObject>();
@@ -237,7 +274,10 @@ public class Figure {
 //				theFigure.append("<graphic url=\"" + graphicObject.getURI() + "\" />\n");
 
 				Element go = XmlBuilderUtils.teiElement("graphic");
-				go.addAttribute(new Attribute("url", graphicObject.getURI()));
+				String uri = graphicObject.getURI();
+				if (uri != null) {
+					go.addAttribute(new Attribute("url", uri));
+				}
 				figureElement.appendChild(go);
 			}
 		}

@@ -70,12 +70,12 @@ public class HeaderParser extends AbstractParser {
      * zone.
      */
     public Pair<String, Document> processing2(String pdfInput, boolean consolidate,
-                                              BiblioItem resHeader, int startPage, int endPage) {
+                                              BiblioItem resHeader, GrobidAnalysisConfig config) {
         DocumentSource documentSource = null;
         try {
-            documentSource = DocumentSource.fromPdf(new File(pdfInput), startPage, endPage);
+            documentSource = DocumentSource.fromPdf(new File(pdfInput), config.getStartPage(), config.getEndPage());
             Document doc = new Document(documentSource);
-            doc.addTokenizedDocument();
+            doc.addTokenizedDocument(config);
 
             if (doc.getBlocks() == null) {
                 throw new GrobidException("PDF parsing resulted in empty content");

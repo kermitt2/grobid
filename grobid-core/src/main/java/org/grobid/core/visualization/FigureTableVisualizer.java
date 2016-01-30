@@ -15,14 +15,11 @@ import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.PathUtil;
 import org.grobid.core.utilities.XQueryProcessor;
 
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -61,13 +58,18 @@ public class FigureTableVisualizer {
 
 //            File input = new File("/Work/temp/context/1000k/AS_103424297275405_1401669682614.pdf");
 //            File input = new File("/Work/temp/context/1000k/AS_103455624531988_1401677151824.pdf");
-            File input = new File("/Users/zholudev/Downloads/journal.pone.0146695.pdf");
+
+//            File input = new File("/Users/zholudev/Downloads/journal.pone.0146695.pdf");
+
+            // VECTOR
+//            File input = new File("/Work/temp/figureExtraction/7.pdf");
+//            File input = new File("//Users/zholudev/Downloads/0912f50a7e6ebb0a43000000pdf"); // only vector, but not graphic
+            File input = new File("//Users/zholudev/Downloads/TIA_2011_Partie8.pdf"); //
 
             processPdfFile(input, null);
 
             // "AS_97204878446614_1400186857444.pdf" //annotated twice
             //AS_103608674684939_1401713641754.pdf - vector graphics
-
 
 
 ////            List<Path> allPaths = PathUtil.getAllPaths(Paths.get("/Volumes/teams/common/Niall/habibi_pdfs"), "pdf");
@@ -95,6 +97,11 @@ public class FigureTableVisualizer {
     }
 
     private static Set<Integer> getVectorGraphicPages(File pdf2xmlDirectory) throws XPathException, IOException {
+        //TODO: temp
+
+        if (true) {
+            return new HashSet<>();
+        }
         XQueryProcessor xq = new XQueryProcessor(getOneFile(pdf2xmlDirectory, ".xml"));
         String query = XQueryProcessor.getQueryFromResources("self-contained-images.xq");
 
@@ -126,6 +133,7 @@ public class FigureTableVisualizer {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
                 .pdfAssetPath(assetPath)
                 .withPreprocessImages(false)
+                .withProcessVectorGraphics(true)
                 .build();
 
 
@@ -232,20 +240,21 @@ public class FigureTableVisualizer {
                     }
 
                     i++;
-                    List<GraphicObject> bitmapGraphicObjects = f.getBitmapGraphicObjects();
+                    List<GraphicObject> boxedGo = f.getBoxedGraphicObjects();
+
                     if (f.getTextArea() != null) {
                         for (BoundingBox b : f.getTextArea()) {
                             annotated = true;
                             AnnotationUtil.annotatePage(document, b.toString(),
 //                        AnnotationUtil.getCoordString(f.getPage(), f.getX(), f.getY(),
 //                                f.getWidth(), f.getHeight()),
-                                    i, bitmapGraphicObjects == null ? 1 : 2
+                                    i, boxedGo == null ? 1 : 2
                             );
                         }
                     }
 
-                    if (bitmapGraphicObjects != null) {
-                        for (GraphicObject go : bitmapGraphicObjects) {
+                    if (boxedGo != null) {
+                        for (GraphicObject go : boxedGo) {
                             annotatedFigure = true;
                             AnnotationUtil.annotatePage(document,
                                     AnnotationUtil.getCoordString(go.getPage(), go.getX(), go.getY(),

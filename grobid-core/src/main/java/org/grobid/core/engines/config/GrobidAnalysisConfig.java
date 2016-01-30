@@ -61,6 +61,8 @@ public class GrobidAnalysisConfig {
     // transform images to PNGs
     private boolean preprocessImages = true;
 
+    private boolean processVectorGraphics = false;
+
     // BUILDER
 
     public static class GrobidAnalysisConfigBuilder {
@@ -108,6 +110,11 @@ public class GrobidAnalysisConfig {
 
         public GrobidAnalysisConfigBuilder withPreprocessImages(boolean b) {
             config.preprocessImages = b;
+            return this;
+        }
+
+        public GrobidAnalysisConfigBuilder withProcessVectorGraphics(boolean b) {
+            config.processVectorGraphics = b;
             return this;
         }
 
@@ -174,5 +181,9 @@ public class GrobidAnalysisConfig {
 
     public boolean isPreprocessImages() {
         return preprocessImages;
+    }
+
+    public boolean isProcessVectorGraphics() {
+        return processVectorGraphics;
     }
 }

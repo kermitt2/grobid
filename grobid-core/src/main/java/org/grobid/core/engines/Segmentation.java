@@ -66,6 +66,7 @@ public class Segmentation extends AbstractParser {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Segmentation.class);
     public static final int BLOCK_LIMIT = 10000;
+    public static final int TOKEN_CNT_LIMIT = 100000;
 
     private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
@@ -110,7 +111,12 @@ public class Segmentation extends AbstractParser {
         try {
             Document doc = new Document(documentSource);
 
-            List<LayoutToken> tokenizations = doc.addTokenizedDocument();
+            List<LayoutToken> tokenizations = doc.addTokenizedDocument(config);
+
+            if (tokenizations.size() > TOKEN_CNT_LIMIT) {
+                throw new GrobidException("The document has " + tokenizations.size() + " tokens, but the limit is " + TOKEN_CNT_LIMIT,
+                        GrobidExceptionStatus.TOO_MANY_TOKENS);
+            }
 
             doc.produceStatistics();
             String content = //getAllTextFeatured(doc, headerMode);
@@ -645,7 +651,7 @@ public class Segmentation extends AbstractParser {
             Document doc = new Document(documentSource);
 
             String PDFFileName = file.getName();
-            doc.addTokenizedDocument();
+            doc.addTokenizedDocument(GrobidAnalysisConfig.defaultInstance());
 
             if (doc.getBlocks() == null) {
                 throw new Exception("PDF parsing resulted in empty content");

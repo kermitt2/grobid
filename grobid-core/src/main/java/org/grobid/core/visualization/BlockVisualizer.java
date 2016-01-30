@@ -36,12 +36,13 @@ public class BlockVisualizer {
     public static void main(String[] args) {
         try {
 //            File input = new File("/Work/temp/context/coords/2.pdf");
+//            File input = new File("/Work/temp/figureExtraction/vector/5.pdf");
 //            File input = new File("/Work/temp/figureExtraction/6.pdf");
 //            File input = new File("/Work/temp/figureExtraction/newtest/3.pdf");
 //            File input = new File("/Users/zholudev/Downloads/pone.0005635.pdf");
 //            File input = new File("/Work/temp/figureExtraction/newtest/1.pdf");
-//            File input = new File("/Users/zholudev/Downloads/AS-292844100177921@1446830882471_content_1.pdf");
-            File input = new File("/Users/zholudev/Downloads/journal.pone.0146695.pdf");
+            File input = new File("/Users/zholudev/Downloads/TIA_2011_Partie8.pdf");
+//            File input = new File("/Users/zholudev/Downloads/journal.pone.0146695.pdf");
 
             final PDDocument document = PDDocument.load(input);
             File outPdf = new File("/tmp/test.pdf");
@@ -60,7 +61,7 @@ public class BlockVisualizer {
 
             Document teiDoc = engine.fullTextToTEIDoc(input, config);
 
-            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), teiDoc, false, true, true);
+            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), teiDoc, true, true, true);
 //            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), null);
 
             if (out != null) {
@@ -102,16 +103,8 @@ public class BlockVisualizer {
                         mainPageArea.toString(), 10);
             }
 
-            String q = "\n" +
-                    "for $g  in //GROUP return\n" +
-                    "\n" +
-                    "  let $x1 := min(($g//*/@x, $g//*/@x1, $g//*/@x2, $g//*/@x3))\n" +
-                    "  let $y1 := min(($g/*/@y, $g//*/@y1, $g//*/@y2, $g//*/@y3))\n" +
-                    "  let $x2 := max(($g/*/@x, $g//*/@x1, $g//*/@x2, $g//*/@x3))\n" +
-                    "  let $y2 := max(($g/*/@y, $g//*/@y1, $g//*/@y2, $g//*/@y3))\n" +
-                    "  return concat($x1, \",\", $y1, \",\", $x2 - $x1, \",\", $y2 - $y1)";
 
-            q = XQueryProcessor.getQueryFromResources("vector-coords.xq");
+            String q = XQueryProcessor.getQueryFromResources("vector-coords.xq");
             XQueryProcessor pr = new XQueryProcessor(new File(xmlFile.getAbsolutePath() + "_data", "image-" + pageNum + ".vec"));
             SequenceIterator it = pr.getSequenceIterator(q);
             Item item;

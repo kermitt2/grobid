@@ -25,6 +25,14 @@ public class GraphicObject {
     
     public boolean used;
 
+    public GraphicObject() {
+    }
+
+    public GraphicObject(BoundingBox boundingBox, GraphicObjectType type) {
+        this.boundingBox = boundingBox;
+        this.type = type;
+    }
+
     /**
      * Return the full path of the file corresponding to the graphic object, useful
      * as internal implementation information only
@@ -38,6 +46,9 @@ public class GraphicObject {
      * portable relative path usable for data exchange
      */
     public String getURI() {
+        if (filePath == null) {
+            return null;
+        }
         int ind = filePath.lastIndexOf("/");
         if (ind != -1) {
             int ind2 = filePath.substring(0, ind-1).lastIndexOf("/");
@@ -153,6 +164,8 @@ public class GraphicObject {
             res.append("Graphic Bitmap [");
         } else if (type == GraphicObjectType.VECTOR) {
             res.append("Vector Graphic [");
+        } else if (type == GraphicObjectType.VECTOR_BOX) {
+            res.append("Vector Box: [");
         } else {
             res.append("Unknown [");
         }
@@ -171,7 +184,7 @@ public class GraphicObject {
            	res.append("\t");
         }
 
-        res.append("(" + boundingBox.toString() + "\t");
+        res.append("(" + boundingBox != null ? boundingBox.toString() : "no bounding box" + "\t");
 
         return res.toString();
     }
