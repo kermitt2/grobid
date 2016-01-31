@@ -1,0 +1,252 @@
+======= Header metadata ======= 
+
+Evaluation on 1943 random PDF files out of 1943 PDF (ratio 1.0).
+
+======= Strict Matching ======= (exact matches)
+
+===== Field-level results =====
+
+label			accuracy	precision	recall		f1
+
+title			94.73		69.62		66.65		68.1
+authors			94.12		64.81		62.8		63.79
+first_author		98.34		92.84		89.54		91.16
+abstract		86.71		16.07		14.81		15.41
+keywords		94.98		69.14		56.01		61.89
+
+all fields		93.78		62.51		58.23 		60.29	(micro average)
+			93.78		62.5		57.96		60.07	(macro average)
+
+
+======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
+
+===== Field-level results =====
+
+label			accuracy	precision	recall		f1
+
+title			95.48		76.56		73.29		74.89
+authors			93.98		66.45		64.4		65.41
+first_author		98.32		93.43		90.11		91.74
+abstract		90.69		48.21		44.43		46.24
+keywords		95.28		75.94		61.52		67.97
+
+all fields		94.75		72.08		67.15 		69.53	(micro average)
+			94.75		72.12		66.75		69.25	(macro average)
+
+
+==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
+
+===== Field-level results =====
+
+label			accuracy	precision	recall		f1
+
+title			96.36		84.14		80.55		82.3
+authors			95.5		78.36		75.94		77.13
+first_author		98.15		93.48		90.16		91.79
+abstract		95.34		81.43		75.04		78.1
+keywords		96.2		89.09		72.17		79.74
+
+all fields		96.31		85.01		79.19 		82	(micro average)
+			96.31		85.3		78.77		81.82	(macro average)
+
+
+= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
+
+===== Field-level results =====
+
+label			accuracy	precision	recall		f1
+
+title			95.74		79.78		76.38		78.04
+authors			94.24		70.23		68.06		69.13
+first_author		98.11		92.84		89.54		91.16
+abstract		94.65		76.15		70.17		73.04
+keywords		95.84		84.26		68.26		75.42
+
+all fields		95.72		80.38		74.88 		77.53	(micro average)
+			95.72		80.65		74.48		77.36	(macro average)
+
+===== Instance-level results =====
+
+Total expected instances: 	1943
+Total correct instances: 	142 (strict) 
+Total correct instances: 	400 (soft) 
+Total correct instances: 	805 (Levenshtein) 
+Total correct instances: 	648 (ObservedRatcliffObershelp) 
+
+Instance-level recall:	7.31	(strict) 
+Instance-level recall:	20.59	(soft) 
+Instance-level recall:	41.43	(Levenshtein) 
+Instance-level recall:	33.35	(RatcliffObershelp) 
+
+======= Citation metadata ======= 
+
+Evaluation on 1943 random PDF files out of 1943 PDF (ratio 1.0).
+
+======= Strict Matching ======= (exact matches)
+
+===== Field-level results =====
+
+label			accuracy	precision	recall		f1
+
+title			97.47		76.99		68.12		72.28
+authors			97.84		81.23		68.9		74.56
+first_author		98.62		88.52		74.96		81.18
+date			99.02		91.65		76.11		83.16
+inTitle			96.73		70.54		65.5		67.93
+volume			99.21		94.5		80.5		86.94
+issue			99.47		82.01		76.71		79.27
+page			98.76		91.46		77.44		83.87
+
+all fields		98.39		84.7		73.18 		78.52	(micro average)
+			98.39		84.61		73.53		78.65	(macro average)
+
+
+======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
+
+===== Field-level results =====
+
+label			accuracy	precision	recall		f1
+
+title			98.62		88.19		78.03		82.8
+authors			97.86		81.86		69.43		75.13
+first_author		98.6		88.68		75.09		81.32
+date			99		91.65		76.11		83.16
+inTitle			97.84		81.08		75.29		78.08
+volume			99.19		94.5		80.5		86.94
+issue			99.46		82.01		76.71		79.27
+page			98.73		91.46		77.44		83.87
+
+all fields		98.66		87.89		75.94 		81.48	(micro average)
+			98.66		87.43		76.07		81.32	(macro average)
+
+
+==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
+
+===== Field-level results =====
+
+label			accuracy	precision	recall		f1
+
+title			98.88		90.71		80.26		85.17
+authors			98.43		87.2		73.96		80.04
+first_author		98.61		88.87		75.25		81.5
+date			98.99		91.65		76.11		83.16
+inTitle			97.95		82.15		76.28		79.11
+volume			99.18		94.5		80.5		86.94
+issue			99.45		82.01		76.71		79.27
+page			98.72		91.46		77.44		83.87
+
+all fields		98.78		89.18		77.05 		82.67	(micro average)
+			98.78		88.57		77.06		82.38	(macro average)
+
+
+= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
+
+===== Field-level results =====
+
+label			accuracy	precision	recall		f1
+
+title			98.79		89.8		79.46		84.31
+authors			98.13		84.33		71.53		77.4
+first_author		98.59		88.55		74.99		81.21
+date			98.99		91.65		76.11		83.16
+inTitle			97.68		79.7		74.01		76.75
+volume			99.19		94.5		80.5		86.94
+issue			99.46		82.01		76.71		79.27
+page			98.73		91.46		77.44		83.87
+
+all fields		98.69		88.25		76.24 		81.81	(micro average)
+			98.69		87.75		76.34		81.61	(macro average)
+
+===== Instance-level results =====
+
+Total expected instances: 		90125
+Total extracted instances: 		87448
+Total correct instances: 		35073 (strict) 
+Total correct instances: 		45814 (soft) 
+Total correct instances: 		49696 (Levenshtein) 
+Total correct instances: 		46748 (RatcliffObershelp) 
+
+Instance-level precision:	40.11 (strict) 
+Instance-level precision:	52.39 (soft) 
+Instance-level precision:	56.83 (Levenshtein) 
+Instance-level precision:	53.46 (RatcliffObershelp) 
+
+Instance-level recall:	38.92	(strict) 
+Instance-level recall:	50.83	(soft) 
+Instance-level recall:	55.14	(Levenshtein) 
+Instance-level recall:	51.87	(RatcliffObershelp) 
+
+Instance-level f-score:	39.5 (strict) 
+Instance-level f-score:	51.6 (soft) 
+Instance-level f-score:	55.97 (Levenshtein) 
+Instance-level f-score:	52.65 (RatcliffObershelp) 
+
+Matching 1 :	61531
+
+Matching 2 :	3359
+
+Matching 3 :	2853
+
+Matching 4 :	636
+
+Total matches :	68379
+
+======= Fulltext structures ======= 
+
+Evaluation on 1943 random PDF files out of 1943 PDF (ratio 1.0).
+
+======= Strict Matching ======= (exact matches)
+
+===== Field-level results =====
+
+label			accuracy	precision	recall		f1
+
+section_title		92.66		59.14		55.84		57.44
+reference_citation	58.45		52.22		42.51		46.87
+reference_figure	95.35		63.2		60.25		61.69
+reference_table		99.23		87.03		79.09		82.87
+figure_title		97.22		35.85		28.75		31.91
+figure_caption		90.58		0		0		0
+table_title		97.63		4.03		4.18		4.1
+figure_caption		98.47		0		0		0
+
+all fields		91.2		54.18		39.46 		45.66	(micro average)
+			91.2		37.68		33.83		35.61	(macro average)
+
+
+======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
+
+===== Field-level results =====
+
+label			accuracy	precision	recall		f1
+
+section_title		93.18		63.07		59.54		61.26
+reference_citation	60		55.79		45.41		50.07
+reference_figure	95.34		64.02		61.03		62.49
+reference_table		99.23		87.34		79.38		83.17
+figure_title		98.59		74.5		59.73		66.3
+figure_caption		90.86		0		0		0
+table_title		97.64		6.99		7.24		7.11
+figure_caption		98.47		0		0		0
+
+all fields		91.66		58.53		42.63 		49.33	(micro average)
+			91.66		43.96		39.04		41.3	(macro average)
+
+
+************************************************************************************
+COUNTER: org.grobid.core.utilities.matching.ReferenceMarkerMatcher$Counters
+************************************************************************************
+------------------------------------------------------------------------------------
+  UNMATCHED_REF_MARKERS:                    12063
+  MATCHED_REF_MARKERS_AFTER_POST_FILTERING: 2405
+  STYLE_AUTHORS:                            33660
+  STYLE_NUMBERED:                           38102
+  MANY_CANDIDATES:                          3501
+  MANY_CANDIDATES_AFTER_POST_FILTERING:     480
+  NO_CANDIDATES:                            20211
+  MATCHED_REF_MARKERS:                      88509
+  INPUT_REF_STRINGS_CNT:                    76630
+  NO_CANDIDATES_AFTER_POST_FILTERING:       592
+  STYLE_OTHER:                              4868
+====================================================================================
+====================================================================================

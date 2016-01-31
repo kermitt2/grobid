@@ -82,9 +82,9 @@ public class LayoutTokensUtil {
             prev = cur;
         }
 
-        if (normalized) {
+        /*if (normalized) {
             System.out.println("NORMALIZED: " + sb.toString());
-        }
+        }*/
         return sb.toString();
     }
 
