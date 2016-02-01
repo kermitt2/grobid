@@ -1416,7 +1416,8 @@ public class Document {
                     GraphicObject bestGo = null;
                     if (figureBox != null) {
                         for (GraphicObject go : graphicObjects) {
-                            if (go.getType() != GraphicObjectType.BITMAP || go.isUsed()) {
+                            // if it's not a bitmap, if it was used or the caption in the figure view
+                            if (go.getType() != GraphicObjectType.BITMAP || go.isUsed() || go.getBoundingBox().contains(figureBox)) {
                                 continue;
                             }
 
@@ -1487,6 +1488,8 @@ public class Document {
 
                     if (bestGo != null) {
                         bestGo.setUsed(true);
+                        // when vector box overlaps the caption, we need to cut that piece from vector graphics
+                        recalculateVectorBoxCoords(figure, bestGo);
                         figure.setGraphicObjects(Lists.newArrayList(bestGo));
                     }
 
@@ -1494,6 +1497,18 @@ public class Document {
 
             }
 
+        }
+
+    }
+
+    private void recalculateVectorBoxCoords(Figure f, GraphicObject g) {
+
+        //TODO: make it robust - now super simplistic
+        BoundingBox fb = BoundingBoxCalculator.calculateOneBox(f.getLayoutTokens(), true);
+        BoundingBox gb = g.getBoundingBox();
+
+        if (fb.intersect(gb)) {
+            g.setBoundingBox(BoundingBox.fromTwoPoints(gb.getPage(), gb.getX(), gb.getY(), gb.getX2(), fb.getY() - 5));
         }
 
     }
