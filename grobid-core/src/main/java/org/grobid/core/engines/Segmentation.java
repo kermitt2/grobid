@@ -66,7 +66,7 @@ public class Segmentation extends AbstractParser {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Segmentation.class);
     public static final int BLOCK_LIMIT = 10000;
-    public static final int TOKEN_CNT_LIMIT = 100000;
+    public static final int TOKEN_CNT_LIMIT = 1000000;
 
     private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
