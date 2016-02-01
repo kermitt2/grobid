@@ -215,6 +215,9 @@ public class Segmentation extends AbstractParser {
                         subPath = subPath.substring(ind + 1, subPath.length());
                     for (GraphicObject image : images) {
                         String fileImage = image.getFilePath();
+                        if (fileImage == null) {
+                            continue;
+                        }
                         fileImage = fileImage.replace(".ppm", ".png")
                                 .replace(".jpg", ".png");
                         ind = fileImage.indexOf("/");
