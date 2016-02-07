@@ -4,6 +4,7 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.utilities.Pair;
 
 import java.util.*;
 import java.io.*;
@@ -15,6 +16,12 @@ import java.io.*;
  */
 public final class FastMatcher {
     private Map terms = null;
+
+    public FastMatcher() {
+      if (terms == null) {
+            terms = new HashMap();
+        }
+    }
 
     public FastMatcher(File file) {
         if (!file.exists()) {
@@ -46,11 +53,11 @@ public final class FastMatcher {
         }
         //Map t = terms;
         int nbTerms = 0;
-		//String token = null;
+		    //String token = null;
         while ((line = bufReader.readLine()) != null) {
-            if (line.length() == 0) continue;
-			line = line.toLowerCase();
-			nbTerms += loadTerm(line);
+          if (line.length() == 0) continue;
+			    line = line.toLowerCase();
+			    nbTerms += loadTerm(line);
         }
         bufReader.close();
         reader.close();
@@ -58,41 +65,41 @@ public final class FastMatcher {
         return nbTerms;
     }
 
-	/**
-	 * Load a term to the fast matcher
-	 */
-	public int loadTerm(String term) throws IOException, ClassNotFoundException,
-            InstantiationException, IllegalAccessException {
-		int nbTerms = 0;
-		if ( (term == null) || (term.length() == 0) )
-			return 0;
-		String token = null;
-		Map t = terms;	
-		StringTokenizer st = new StringTokenizer(term, " \n\t" + TextUtilities.fullPunctuations, false);
-      	while (st.hasMoreTokens()) {
-			token = st.nextToken();
-          	if (token.length() == 0) {
-              	continue;
-           	}
-          	Map t2 = (Map) t.get(token);
-           	if (t2 == null) {
-             	t2 = new HashMap();
-              	t.put(token, t2);
-           	}
-           	t = t2;
+  	/**
+  	 * Load a term to the fast matcher
+  	 */
+  	public int loadTerm(String term) throws IOException, ClassNotFoundException,
+              InstantiationException, IllegalAccessException {
+  		int nbTerms = 0;
+  		if ( (term == null) || (term.length() == 0) )
+  			return 0;
+  		String token = null;
+  		Map t = terms;	
+  		StringTokenizer st = new StringTokenizer(term, " \n\t" + TextUtilities.fullPunctuations, false);
+      while (st.hasMoreTokens()) {
+  			token = st.nextToken();
+      	if (token.length() == 0) {
+          	continue;
        	}
-       	// end of the term
-       	if (t != terms) {
-          	Map t2 = (Map) t.get("#");
-           	if (t2 == null) {
-              	t2 = new HashMap();
-               	t.put("#", t2);
-          	}
-           	nbTerms++;
-           	t = terms;
+      	Map t2 = (Map) t.get(token);
+       	if (t2 == null) {
+         	t2 = new HashMap();
+          	t.put(token, t2);
+       	}
+       	t = t2;
+      }
+      // end of the term
+      if (t != terms) {
+      	Map t2 = (Map) t.get("#");
+       	if (t2 == null) {
+          	t2 = new HashMap();
+           	t.put("#", t2);
       	}
-		return nbTerms;
-	}
+       	nbTerms++;
+       	t = terms;
+      }
+  		return nbTerms;
+  	}
 
     private static String delimiters = " \n\t" + TextUtilities.fullPunctuations;
 
@@ -187,25 +194,51 @@ public final class FastMatcher {
 
     /**
      * Identify terms in a piece of text and gives corresponding token positions.
-     * All the matches are returned.
+     * All the matches are returned. Here the input text is already tokenized.
      *
      * @param tokens: the text to be processed
      * @return the list of offset positions of the matches, an empty list if no match have been found
      */
     public List<OffsetPosition> matcher(List<String> tokens) {
-        String text = "";
+        StringBuilder text = new StringBuilder();
         for (String token : tokens) {
             if (!token.trim().equals("@newline")) {
-				int ind = token.indexOf(" ");
-				if (ind == -1)
-					ind = token.indexOf("\t");
-				if (ind == -1)
-                	text += " " + token;
-				else
-					text += " " + token.substring(0, ind);
+        				int ind = token.indexOf(" ");
+        				if (ind == -1)
+        			      ind = token.indexOf("\t");
+        				if (ind == -1)
+                    text.append(" ").append(token);
+        				else
+        					  text .append(" ").append(token.substring(0, ind));
             }
         }
-        return matcher(text);
+        return matcher(text.toString());
+    }
+
+
+    /**
+     * Identify terms in a piece of text and gives corresponding token positions.
+     * All the matches are returned. This case correspond to text from a trainer,
+     * where the text is already tokenized with some labeled that can be ignored.
+     *
+     * @param tokens: the text to be processed
+     * @return the list of offset positions of the matches, an empty list if no match have been found
+     */
+    public List<OffsetPosition> matcherPairs(List<Pair<String,String>> tokens) {
+        StringBuilder text = new StringBuilder();
+        for (Pair<String,String> tokenP : tokens) {
+            String token = tokenP.getA();
+            if (!token.trim().equals("@newline")) {
+                int ind = token.indexOf(" ");
+                if (ind == -1)
+                    ind = token.indexOf("\t");
+                if (ind == -1)
+                    text.append(" ").append(token);
+                else
+                    text .append(" ").append(token.substring(0, ind));
+            }
+        }
+        return matcher(text.toString());
     }
 }
 
