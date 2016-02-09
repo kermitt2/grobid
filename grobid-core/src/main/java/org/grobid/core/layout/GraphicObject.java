@@ -184,7 +184,7 @@ public class GraphicObject {
            	res.append("\t");
         }
 
-        res.append("(" + boundingBox != null ? boundingBox.toString() : "no bounding box" + "\t");
+        res.append("(" + (boundingBox != null ? boundingBox.toString() : "no bounding box") + "\t");
 
         return res.toString();
     }

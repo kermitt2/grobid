@@ -140,6 +140,9 @@ public class BoundingBox {
     }
 
 
+    public double area() {
+        return width * height;
+    }
     public double distanceTo(BoundingBox to) {
         if (this.page != to.page) {
             return 1000 * Math.abs(this.page - to.page);

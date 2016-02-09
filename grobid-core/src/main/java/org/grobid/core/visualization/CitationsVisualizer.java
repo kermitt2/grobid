@@ -52,7 +52,7 @@ public class CitationsVisualizer {
 //            File input = new File("/Users/zholudev/Downloads/AS-320647283052546@1453459677289_content_1.pdf"); //BAD BLOCK
 //            File input = new File("/Users/zholudev/Downloads/AS-99301753622543@1400686791996_content_1 (1).pdf"); //spaces
 //            File input = new File("/Users/zholudev/Downloads/AS-321758798778369@1453724683241_content_1.pdf"); //spaces
-            File input = new File("/Users/zholudev/Downloads/AS-306329153933312@1450045969679_content_1.pdf");
+            File input = new File("/Users/zholudev/Downloads/0046353194b29d3b66000000pdf");
 //            File input = new File("/Users/zholudev/Downloads/AS-317309489483776@1452663885159_content_1.pdf");
 //            File input = new File("/tmp/2.pdf");
 

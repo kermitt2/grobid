@@ -18,6 +18,7 @@ public class DocumentPointer implements Comparable<DocumentPointer>{
 
     public DocumentPointer(int blockPtr, int tokenDocPos, int tokenBlockPos) {
         Preconditions.checkArgument(tokenDocPos >= tokenBlockPos);
+        Preconditions.checkArgument(tokenBlockPos >= 0);
         this.tokenDocPos = tokenDocPos;
         this.tokenBlockPos = tokenBlockPos;
         this.blockPtr = blockPtr;

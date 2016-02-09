@@ -2,6 +2,7 @@ package org.grobid.core.document;
 
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
+import com.google.common.base.Predicates;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.LinkedListMultimap;
@@ -30,7 +31,9 @@ import org.grobid.core.sax.PDF2XMLSaxParser;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.ElementCounter;
 import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.Utilities;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.slf4j.Logger;
@@ -42,7 +45,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -331,29 +336,46 @@ public class Document {
                 int pageHeight = getCoordItem(bottom, false) - pageY + 1;
                 for (Page page : pages) {
                     if (page.isEven()) {
-                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), 
+                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(),
 							pageEvenX, pageY, pageEvenWidth, pageHeight));
                     } else {
-                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), 
+                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(),
 							pageOddX, pageY, pageOddWidth, pageHeight));
                     }
                 }
             } else {
                 for (Page page : pages) {
-                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(), 
+                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(),
 						0, 0, page.getWidth(), page.getHeight()));
                 }
             }
 
-
+            // calculating boxes for pages
             if (config.isProcessVectorGraphics()) {
                 for (GraphicObject o : VectorGraphicBoxCalculator.calculate(this).values()) {
                     images.add(o);
                 }
             }
 
+            // cache images per page
             for (GraphicObject go : images) {
                 imagesPerPage.put(go.getPage(), go);
+            }
+
+            HashSet<Integer> keys = new HashSet<>(imagesPerPage.keySet());
+            for (Integer pageNum : keys) {
+
+                Collection<GraphicObject> elements = imagesPerPage.get(pageNum);
+                if (elements.size() > 10) {
+                    imagesPerPage.removeAll(pageNum);
+                    Engine.getCntManager().i(Figure.Counters.TOO_MANY_FIGURES_PER_PAGE);
+                } else {
+                    ArrayList<GraphicObject> res = glueImagesIfNecessary(pageNum, Lists.newArrayList(elements));
+                    if (res != null) {
+                        imagesPerPage.removeAll(pageNum);
+                        imagesPerPage.putAll(pageNum, res);
+                    }
+                }
             }
 
 
@@ -374,6 +396,70 @@ public class Document {
         // we filter out possible line numbering for review works
         // filterLineNumber();
         return tokenizations;
+    }
+
+    private ArrayList<GraphicObject> glueImagesIfNecessary(Integer pageNum, List<GraphicObject> graphicObjects ) {
+
+        List<Pair<Integer, Integer>> toGlue = new ArrayList<>();
+//        List<GraphicObject> cur = new ArrayList<>();
+
+//        List<GraphicObject> graphicObjects = new ArrayList<>(objs);
+
+        int start =0 , end = 0;
+        for (int i = 1; i < graphicObjects.size(); i++) {
+            GraphicObject prev = graphicObjects.get(i - 1);
+            GraphicObject cur = graphicObjects.get(i);
+
+            if (prev.getType() != GraphicObjectType.BITMAP || cur.getType() != GraphicObjectType.BITMAP) {
+                if (start != end) {
+                    toGlue.add(new Pair<>(start, end + 1));
+                }
+                start = i;
+                end = start;
+
+                continue;
+            }
+
+            if (Utilities.doubleEquals(prev.getBoundingBox().getWidth(), cur.getBoundingBox().getWidth(), 0.0001)
+                    && Utilities.doubleEquals(prev.getBoundingBox().getY2(), cur.getBoundingBox().getY(), 0.0001)
+
+                    ) {
+                end++;
+            } else {
+                if (start != end) {
+                    toGlue.add(new Pair<>(start, end + 1));
+                }
+                start = i;
+                end = start;
+            }
+
+        }
+
+        if (start != end) {
+            toGlue.add(new Pair<>(start, end + 1));
+        }
+
+
+        if (toGlue.isEmpty()) {
+            return null;
+        }
+        for (Pair<Integer, Integer> p : toGlue) {
+            BoundingBox box = graphicObjects.get(p.a).getBoundingBox();
+            for (int i = p.a + 1; i < p.b; i++) {
+                box = box.boundBox(graphicObjects.get(i).getBoundingBox());
+            }
+
+            graphicObjects.set(p.a, new GraphicObject(box, GraphicObjectType.VECTOR_BOX));
+            for (int i = p.a + 1; i < p.b; i++) {
+                graphicObjects.set(i, null);
+            }
+
+        }
+
+
+        return Lists.newArrayList(Iterables.filter(graphicObjects, Predicates.notNull()));
+
+
     }
 
     private static int getCoordItem(ElementCounter<Integer> cnt, boolean getMin) {
@@ -1377,7 +1463,7 @@ public class Document {
 
 
                 List<LayoutToken> realCaptionTokens = getFigureLayoutTokens(f);
-                if (realCaptionTokens != null) {
+                if (realCaptionTokens != null && !realCaptionTokens.isEmpty()) {
                     f.setLayoutTokens(realCaptionTokens);
                     f.setCaption(new StringBuilder(TextUtilities.dehyphenize(LayoutTokensUtil.toText(realCaptionTokens))));
                     pageFigures.add(f);
@@ -1395,10 +1481,28 @@ public class Document {
 //                }
             }
 
-            List<GraphicObject> graphicObjects = Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.GRAPHIC_OBJECT_PREDICATE));
+
+            if (pageNum == 8) {
+                int sdf = 0;
+            }
+
+            ArrayList<GraphicObject> it = Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.GRAPHIC_OBJECT_PREDICATE));
 
             List<GraphicObject> vectorBoxGraphicObjects = Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.VECTOR_BOX_GRAPHIC_OBJECT_PREDICATE));
 
+            List<GraphicObject> graphicObjects = new ArrayList<>();
+
+            l:
+            for (GraphicObject bgo : it) {
+                for (GraphicObject vgo : vectorBoxGraphicObjects) {
+                    if (bgo.getBoundingBox().intersect(vgo.getBoundingBox())) {
+                        continue l;
+                    }
+                }
+                graphicObjects.add(bgo);
+            }
+
+            graphicObjects.addAll(vectorBoxGraphicObjects);
 
 //            if (graphicObjects.size() != pageFigures.size()) {
 //                continue;
@@ -1425,7 +1529,7 @@ public class Document {
                                     BoundingBox.fromPointAndDimensions(go.getPage(), go.getX(), go.getY(),
                                             go.getWidth(), go.getHeight());
 
-                            if (!getPage(goBox.getPage()).getMainArea().contains(goBox) && go.getWidth() * go.getHeight() < 10000) {
+                            if (!isValidBitmapGraphicObject(go, goBox)) {
                                 continue;
                             }
 
@@ -1448,7 +1552,8 @@ public class Document {
 
                 }
             } else {
-                if (pageFigures.size() != 1) {
+                if (pageFigures.size() != graphicObjects.size()) {
+                    Engine.getCntManager().i(Figure.Counters.SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS);
                     continue;
                 }
 
@@ -1463,14 +1568,18 @@ public class Document {
 
                     GraphicObject bestGo = null;
                     if (figureBox != null) {
-                        for (GraphicObject go : vectorBoxGraphicObjects) {
-                            if (go.getType() != GraphicObjectType.VECTOR_BOX|| go.isUsed()) {
+                        for (GraphicObject go : graphicObjects) {
+                            if (go.isUsed()) {
                                 continue;
                             }
 
                             BoundingBox goBox = go.getBoundingBox();
 
                             if (!getPage(goBox.getPage()).getMainArea().contains(goBox) && go.getWidth() * go.getHeight() < 10000) {
+                                continue;
+                            }
+
+                            if (go.getType() == GraphicObjectType.BITMAP && !isValidBitmapGraphicObject(go, goBox)) {
                                 continue;
                             }
 
@@ -1489,7 +1598,9 @@ public class Document {
                     if (bestGo != null) {
                         bestGo.setUsed(true);
                         // when vector box overlaps the caption, we need to cut that piece from vector graphics
-                        recalculateVectorBoxCoords(figure, bestGo);
+                        if (bestGo.getType() == GraphicObjectType.VECTOR_BOX) {
+                            recalculateVectorBoxCoords(figure, bestGo);
+                        }
                         figure.setGraphicObjects(Lists.newArrayList(bestGo));
                     }
 
@@ -1501,6 +1612,27 @@ public class Document {
 
     }
 
+    private boolean isValidBitmapGraphicObject(GraphicObject go, BoundingBox goBox) {
+        if (go.getWidth() * go.getHeight() < 1000) {
+            return false;
+        }
+
+        if (go.getWidth() < 50) {
+            return false;
+        }
+
+        if (go.getHeight() < 50) {
+            return false;
+        }
+
+        if (!getPage(goBox.getPage()).getMainArea().contains(goBox) && go.getWidth() * go.getHeight() < 10000) {
+            return false;
+        }
+
+        return true;
+    }
+
+    // graphic boxes could overlap captions, we need to cut this from a vector box
     private void recalculateVectorBoxCoords(Figure f, GraphicObject g) {
 
         //TODO: make it robust - now super simplistic

@@ -715,7 +715,7 @@ public class BasicStructureBuilder {
                 ) {
             blockIndex++;
         }
-        DocumentPointer pointerA = new DocumentPointer(doc, blockIndex, 0);
+        DocumentPointer pointerA = new DocumentPointer(doc, blockIndex, docBlocks.get(blockIndex).getStartToken());
 		
         DocumentPointer currentPointer = null;
         DocumentPointer lastPointer = null;

@@ -51,7 +51,7 @@ public class VectorGraphicBoxCalculator {
                 String c = item.getStringValue();
                 String coords = pageNum + "," + c;
                 BoundingBox e = BoundingBox.fromString(coords);
-                if (!mainPageArea.contains(e)) {
+                if (!mainPageArea.contains(e) || e.area() / mainPageArea.area() > 0.7) {
                     continue;
                 }
                 boxes.add(e);
