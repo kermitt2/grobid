@@ -25,6 +25,10 @@ import java.util.SortedSet;
  * @author Patrice Lopez
  */
 public class Figure {
+	public enum Counters {
+		TOO_MANY_FIGURES_PER_PAGE, SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS
+	}
+
 	public static final Predicate<GraphicObject> GRAPHIC_OBJECT_PREDICATE = new Predicate<GraphicObject>() {
 		@Override
 		public boolean apply(GraphicObject graphicObject) {

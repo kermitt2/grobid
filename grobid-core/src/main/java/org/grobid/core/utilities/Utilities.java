@@ -16,6 +16,7 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.google.common.primitives.Doubles;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.exceptions.GrobidException;
@@ -456,5 +457,15 @@ public class Utilities {
 		SimpleDateFormat dateFormat = new SimpleDateFormat(pFormat);
 		return dateFormat.format(pDate);
 	}
+
+
+	public static boolean doubleEquals(double d1, double d2) {
+		return Math.abs(d1 - d2) <= Double.MIN_VALUE;
+	}
+
+	public static boolean doubleEquals(double d1, double d2, double epsilon) {
+		return Math.abs(d1 - d2) <= epsilon;
+	}
+
 
 }

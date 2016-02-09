@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class DocumentSource {
     private static final Logger LOGGER = LoggerFactory.getLogger(DocumentSource.class);
-    private static final int DEFAULT_TIMEOUT = 20000;
+    private static final int DEFAULT_TIMEOUT = 30000;
 //    private static final int DEFAULT_TIMEOUT = 50000;
     private static final int KILLED_DUE_2_TIMEOUT = 143;
 

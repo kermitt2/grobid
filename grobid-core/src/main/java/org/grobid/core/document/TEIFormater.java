@@ -1059,6 +1059,8 @@ public class TEIFormater {
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            Engine.getCntManager().i(clusterLabel);
+
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
             if (clusterLabel  == TaggingLabel.SECTION) {
                 curDiv = teiElement("div");
