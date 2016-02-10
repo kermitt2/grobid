@@ -49,9 +49,9 @@ public class FigureTableVisualizer {
 //            File input = new File("/Work/temp/figureExtraction/newtest/2.pdf");
 //            File input = new File("/Work/temp/figureExtraction/5.pdf");
 //            File input = new File("/Work/temp/figureExtraction/vector/6.pdf");
-//            File input = new File("/Users/zholudev/Downloads/AS-320644967796737@1453459125249_content_1.pdf"); // PARTIAL CAPTIONS
+            File input = new File("/Users/zholudev/Downloads/AS-320644967796737@1453459125249_content_1.pdf"); // PARTIAL CAPTIONS
 //            File input = new File("/Users/zholudev/Downloads/AS-322050973995010@1453794344041_content_1.pdf"); //separate blocks for 1 caption
-//            File input = new File("/Users/zholudev/Downloads/Madisch et al._Adeno_Mol_Typing.pdf");
+//            File input = new File("/Users/zholudev/Downloads/AS-327630265044992@1455124550118_content_1.pdf");
 //            File input = new File("/Work/temp/images/pdf_image_extraction_results/Synaptotagmin 11 interacts with components of the RNA-induced (2)/Synaptotagmin 11 interacts with components of the RNA-induced (2).pdf"); //double caption attached
 
 //            File input = new File("/Work/temp/images/pdf_image_extraction_results/Synaptotagmin 11 interacts with components of the RNA-induced (2)/Synaptotagmin 11 interacts with components of the RNA-induced (2).pdf");
@@ -60,7 +60,7 @@ public class FigureTableVisualizer {
 //            File input = new File("/Work/temp/figureExtraction/7.pdf");
 
 
-            File input = new File("/Work/temp/context/1000k/AS_97568985976833_1400273667294.pdf");
+//            File input = new File("/Work/temp/context/1000k/AS_101478173773832_1401205691162.pdf");
 //            File input = new File("/Work/temp/context/1000k/AS_103455624531988_1401677151824.pdf");
 
 //            File input = new File("/Users/zholudev/Downloads/journal.pone.0146695.pdf");
@@ -93,7 +93,7 @@ public class FigureTableVisualizer {
             // AS_103436670472202_1401672632695.pdf interesting vector graphics
             // AS_199986580070402_1424691924638.pdf  different captions
             // AS_97502904717322_1400257912690.pdf - not annotated figure on page 5 and 8
-            // AS_97568985976833_1400273667294.pdf - too big cut
+            // AS_97568985976833_1400273667294.pdf - too big cut // FIXED
             // AS_98989504466949_1400612345795.pdf - wrong vector image cut
 
 //            List<Path> allPaths = PathUtil.getAllPaths(Paths.get("/Volumes/teams/common/Niall/habibi_pdfs"), "pdf");
@@ -103,13 +103,13 @@ public class FigureTableVisualizer {
 //            System.out.println("Processing " + allPaths.size());
 //            for (Path p : allPaths) {
 //                try {
-//                    processPdfFile(p.toFile(), new File("/Work/temp/figureExtraction/out1000k_4"));
+//                    processPdfFile(p.toFile(), new File("/Work/temp/figureExtraction/out1000k_5"));
 //                } catch (Exception e) {
 //                    Engine.getCntManager().i("EXCEPTIONS", e.getClass().getSimpleName());
 //                    e.printStackTrace();
 //                }
 //            }
-//
+
 
             System.out.println(Engine.getCntManager());
 
