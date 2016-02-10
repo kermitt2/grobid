@@ -1,10 +1,14 @@
 package org.grobid.core.engines;
 
 import org.grobid.core.GrobidModels;
+import org.grobid.core.data.Figure;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.features.FeaturesVectorReferenceSegmenter;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.TextUtilities;
@@ -52,11 +56,47 @@ public class TableParser extends AbstractParser {
 		if (res == null) {
 			return null;
 		}		
-        List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
-		return getExtractionResult(tokenizationTable, labeled);
+//        List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
+		return getExtractionResult(tokenizationTable, res);
     }
 
-    private Table getExtractionResult(List<LayoutToken> tokenizations, 
+	private Table getExtractionResult(List<LayoutToken> tokenizations, String result) {
+		Table table = new Table();
+		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.TABLE, result, tokenizations);
+		List<TaggingTokenCluster> clusters = clusteror.cluster();
+
+		for (TaggingTokenCluster cluster : clusters) {
+			if (cluster == null) {
+				continue;
+			}
+
+			TaggingLabel clusterLabel = cluster.getTaggingLabel();
+			Engine.getCntManager().i(clusterLabel);
+
+			String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+			switch (clusterLabel) {
+				case TBL_DESC:
+					table.appendCaption(clusterContent);
+					break;
+				case TBL_HEAD:
+					table.appendHeader(clusterContent);
+					break;
+				case TBL_LABEL:
+					table.appendLabel(clusterContent);
+					break;
+				case TBL_OTHER:
+					break;
+				case TBL_TRASH:
+					table.appendContent(clusterContent);
+					break;
+				default:
+					LOGGER.error("Warning: unexpected table model label - " + clusterLabel + " for " + clusterContent);
+			}
+		}
+		return table;
+	}
+
+	private Table getExtractionResult(List<LayoutToken> tokenizations,
 									  List<Pair<String, String>> labeled) {
 		Table table = new Table();
         int tokPtr = 0;

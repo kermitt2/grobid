@@ -647,7 +647,7 @@ public class TEIFormater {
         }
 
         if (biblio.getDOI() != null) {
-            String theDOI = biblio.getDOI();
+            String theDOI = TextUtilities.HTMLEncode(biblio.getDOI());
             if (theDOI.endsWith(".xml")) {
                 theDOI = theDOI.replace(".xml", "");
             }

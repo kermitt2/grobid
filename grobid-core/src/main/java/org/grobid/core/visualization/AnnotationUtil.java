@@ -27,7 +27,11 @@ public class AnnotationUtil {
         Long pageNum = Long.valueOf(split[0], 10) - 1;
         PDPage page = (PDPage) document.getDocumentCatalog().getAllPages().get(pageNum.intValue());
 
-        PDRectangle mediaBox = page.getMediaBox();
+        PDRectangle mediaBox = page.getMediaBox() != null ? page.getMediaBox() : page.getArtBox();
+        if (mediaBox == null) {
+            System.out.println("Null mediabox for page: " + (pageNum + 1));
+            return null;
+        }
         float height = mediaBox.getHeight();
         float lowerX = mediaBox.getLowerLeftX();
         float lowerY = mediaBox.getLowerLeftY();
@@ -52,6 +56,10 @@ public class AnnotationUtil {
         System.out.println("Annotating for coordinates: " + coords);
 
         BoundingBox box = getBoundingBoxForPdf(document, coords);
+        if (box == null) {
+            System.out.println("Null bounding box for coords: " + coords);
+            return;
+        }
 
         PDPage page = (PDPage) document.getDocumentCatalog().getAllPages().get(box.getPage());
         float annX = (float) box.getX();

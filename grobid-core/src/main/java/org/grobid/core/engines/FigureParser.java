@@ -1,33 +1,19 @@
 package org.grobid.core.engines;
 
-import com.google.common.base.Joiner;
 import org.grobid.core.GrobidModels;
-import org.grobid.core.engines.citations.LabeledReferenceResult;
-import org.grobid.core.engines.citations.ReferenceSegmenter;
-import org.grobid.core.engines.tagging.GenericTaggerUtils;
-import org.grobid.core.features.FeaturesVectorReferenceSegmenter;
-import org.grobid.core.utilities.Pair;
-import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.document.Document;
-import org.grobid.core.engines.citations.LabeledReferenceResult;
-import org.grobid.core.engines.citations.ReferenceSegmenter;
-import org.grobid.core.engines.counters.CitationParserCounters;
-import org.grobid.core.document.DocumentPiece;
-import org.grobid.core.document.DocumentPointer;
-import org.grobid.core.features.FeatureFactory;
-import org.grobid.core.layout.Block;
-import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.data.Figure;
-import org.grobid.core.engines.config.GrobidAnalysisConfig;
-
+import org.grobid.core.engines.tagging.GenericTaggerUtils;
+import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.Pair;
+import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.SortedSet;
-import java.util.regex.Matcher;
 
 /**
  * @author Patrice
@@ -44,28 +30,64 @@ public class FigureParser extends AbstractParser {
 	 * Start and end position in the higher level tokenization are indicated in 
 	 * the resulting Figure object. 
 	 */
-    public Figure processing(List<LayoutToken> tokenizationFigure, String featureVector) {
+	public Figure processing(List<LayoutToken> tokenizationFigure, String featureVector) {
 
-		String res = null;
+		String res;
 		try {
 			res = label(featureVector);
-		}
-		catch(Exception e) {
+		} catch (Exception e) {
 			throw new GrobidException("CRF labeling in ReferenceSegmenter fails.", e);
 		}
 		if (res == null) {
 			return null;
 		}
-        List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
+//        List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
 
 //		System.out.println(Joiner.on("\n").join(labeled));
 //		System.out.println("----------------------");
 //		System.out.println("----------------------");
 
-		return getExtractionResult(tokenizationFigure, labeled);
-    }
+//		return getExtractionResult(tokenizationFigure, labeled);
+		return getExtractionResult(tokenizationFigure, res);
+	}
 
-    private Figure getExtractionResult(List<LayoutToken> tokenizations, 
+    private Figure getExtractionResult(List<LayoutToken> tokenizations, String result) {
+		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FIGURE, result, tokenizations);
+		List<TaggingTokenCluster> clusters = clusteror.cluster();
+
+		Figure figure = new Figure();
+		for (TaggingTokenCluster cluster : clusters) {
+			if (cluster == null) {
+				continue;
+			}
+
+			TaggingLabel clusterLabel = cluster.getTaggingLabel();
+			Engine.getCntManager().i(clusterLabel);
+
+			String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+			switch (clusterLabel) {
+				case FIG_DESC:
+					figure.appendCaption(clusterContent);
+					break;
+				case FIG_HEAD:
+					figure.appendHeader(clusterContent);
+					break;
+				case FIG_LABEL:
+					figure.appendLabel(clusterContent);
+					break;
+				case FIG_OTHER:
+					break;
+				case FIG_TRASH:
+					figure.appendContent(clusterContent);
+					break;
+				default:
+					LOGGER.error("Warning: unexpected figure model label - " + clusterLabel + " for " + clusterContent);
+			}
+		}
+		return figure;
+	}
+
+    private Figure getExtractionResult(List<LayoutToken> tokenizations,
 		List<Pair<String, String>> labeled) {
 		Figure figure = new Figure();
         int tokPtr = 0;

@@ -2,7 +2,7 @@ package org.grobid.core.document;
 
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
-import com.google.common.base.Predicates;
+import com.google.common.base.Predicate;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.LinkedListMultimap;
@@ -138,6 +138,7 @@ public class Document {
     static public final Pattern DOIPattern = Pattern
             .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
     private List<Figure> figures;
+    private Predicate<GraphicObject> validGraphicObjectPredicate;
 
     public Document(DocumentSource documentSource) {
         top = new DocumentNode("top", "0");
@@ -359,6 +360,10 @@ public class Document {
 
             // cache images per page
             for (GraphicObject go : images) {
+                // filtering out small figures that are likely to be logos and stuff
+                if (go.getType() == GraphicObjectType.BITMAP && !isValidBitmapGraphicObject(go)) {
+                    continue;
+                }
                 imagesPerPage.put(go.getPage(), go);
             }
 
@@ -457,10 +462,17 @@ public class Document {
         }
 
 
-        return Lists.newArrayList(Iterables.filter(graphicObjects, Predicates.notNull()));
+        validGraphicObjectPredicate = new Predicate<GraphicObject>() {
+            @Override
+            public boolean apply(GraphicObject graphicObject) {
+                return graphicObject != null && isValidBitmapGraphicObject(graphicObject);
+            }
+        };
+        return Lists.newArrayList(Iterables.filter(graphicObjects, validGraphicObjectPredicate));
 
 
     }
+
 
     private static int getCoordItem(ElementCounter<Integer> cnt, boolean getMin) {
         List<Map.Entry<Integer, Integer>> counts = cnt.getSortedCounts();
@@ -1465,6 +1477,7 @@ public class Document {
                 List<LayoutToken> realCaptionTokens = getFigureLayoutTokens(f);
                 if (realCaptionTokens != null && !realCaptionTokens.isEmpty()) {
                     f.setLayoutTokens(realCaptionTokens);
+                    f.setTextArea(BoundingBoxCalculator.calculate(realCaptionTokens));
                     f.setCaption(new StringBuilder(TextUtilities.dehyphenize(LayoutTokensUtil.toText(realCaptionTokens))));
                     pageFigures.add(f);
                 }
@@ -1481,9 +1494,8 @@ public class Document {
 //                }
             }
 
-
-            if (pageNum == 8) {
-                int sdf = 0;
+            if (pageFigures.isEmpty()) {
+                continue;
             }
 
             ArrayList<GraphicObject> it = Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.GRAPHIC_OBJECT_PREDICATE));
@@ -1504,14 +1516,10 @@ public class Document {
 
             graphicObjects.addAll(vectorBoxGraphicObjects);
 
-//            if (graphicObjects.size() != pageFigures.size()) {
-//                continue;
-//            }
+
             if (vectorBoxGraphicObjects.isEmpty()) {
                 for (Figure figure : pageFigures) {
                     List<LayoutToken> tokens = figure.getLayoutTokens();
-                    figure.setTextArea(BoundingBoxCalculator.calculate(tokens));
-
                     final BoundingBox figureBox =
                             BoundingBoxCalculator.calculateOneBox(tokens, true);
 
@@ -1521,19 +1529,15 @@ public class Document {
                     if (figureBox != null) {
                         for (GraphicObject go : graphicObjects) {
                             // if it's not a bitmap, if it was used or the caption in the figure view
-                            if (go.getType() != GraphicObjectType.BITMAP || go.isUsed() || go.getBoundingBox().contains(figureBox)) {
+                            if (go.isUsed() || go.getBoundingBox().contains(figureBox)) {
                                 continue;
                             }
 
-                            BoundingBox goBox =
-                                    BoundingBox.fromPointAndDimensions(go.getPage(), go.getX(), go.getY(),
-                                            go.getWidth(), go.getHeight());
-
-                            if (!isValidBitmapGraphicObject(go, goBox)) {
+                            if (!isValidBitmapGraphicObject(go)) {
                                 continue;
                             }
 
-                            double dist = figureBox.distanceTo(goBox);
+                            double dist = figureBox.distanceTo(go.getBoundingBox());
                             if (dist > MAX_FIG_BOX_DISTANCE) {
                                 continue;
                             }
@@ -1559,8 +1563,6 @@ public class Document {
 
                 for (Figure figure : pageFigures) {
                     List<LayoutToken> tokens = figure.getLayoutTokens();
-                    figure.setTextArea(BoundingBoxCalculator.calculate(tokens));
-
                     final BoundingBox figureBox =
                             BoundingBoxCalculator.calculateOneBox(tokens, true);
 
@@ -1579,7 +1581,7 @@ public class Document {
                                 continue;
                             }
 
-                            if (go.getType() == GraphicObjectType.BITMAP && !isValidBitmapGraphicObject(go, goBox)) {
+                            if (go.getType() == GraphicObjectType.BITMAP && !isValidBitmapGraphicObject(go)) {
                                 continue;
                             }
 
@@ -1612,7 +1614,7 @@ public class Document {
 
     }
 
-    private boolean isValidBitmapGraphicObject(GraphicObject go, BoundingBox goBox) {
+    private boolean isValidBitmapGraphicObject(GraphicObject go) {
         if (go.getWidth() * go.getHeight() < 1000) {
             return false;
         }
@@ -1625,7 +1627,7 @@ public class Document {
             return false;
         }
 
-        if (!getPage(goBox.getPage()).getMainArea().contains(goBox) && go.getWidth() * go.getHeight() < 10000) {
+        if (!getPage(go.getBoundingBox().getPage()).getMainArea().contains(go.getBoundingBox()) && go.getWidth() * go.getHeight() < 10000) {
             return false;
         }
 
@@ -1640,7 +1642,9 @@ public class Document {
         BoundingBox gb = g.getBoundingBox();
 
         if (fb.intersect(gb)) {
-            g.setBoundingBox(BoundingBox.fromTwoPoints(gb.getPage(), gb.getX(), gb.getY(), gb.getX2(), fb.getY() - 5));
+            if (gb.getY() < fb.getY() - 5) {
+                g.setBoundingBox(BoundingBox.fromTwoPoints(gb.getPage(), gb.getX(), gb.getY(), gb.getX2(), fb.getY() - 5));
+            }
         }
 
     }

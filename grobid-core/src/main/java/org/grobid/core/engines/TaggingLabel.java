@@ -24,6 +24,21 @@ public enum TaggingLabel {
     FIGURE(GrobidModels.FULLTEXT, "<figure>"),
     TABLE(GrobidModels.FULLTEXT, "<table>"),
     EQUATION(GrobidModels.FULLTEXT, "<equation>"),
+
+    //figures
+    FIG_DESC(GrobidModels.FIGURE, "<figDesc>"),
+    FIG_HEAD(GrobidModels.FIGURE, "<figure_head>"),
+    FIG_TRASH(GrobidModels.FIGURE, "<trash>"),
+    FIG_LABEL(GrobidModels.FIGURE, "<label>"),
+    FIG_OTHER(GrobidModels.FIGURE, "<other>"),
+
+
+    // table
+    TBL_DESC(GrobidModels.TABLE, "<figDesc>"),
+    TBL_HEAD(GrobidModels.TABLE, "<figure_head>"),
+    TBL_TRASH(GrobidModels.TABLE, "<trash>"),
+    TBL_LABEL(GrobidModels.TABLE, "<label>"),
+    TBL_OTHER(GrobidModels.TABLE, "<other>"),
     ;
 
     private final GrobidModels grobidModel;
