@@ -50,14 +50,19 @@ public class TaggingTokenClusteror {
             return Collections.emptyList();
         }
 
+		// a boolean is introduced to indicate the start of the sequence in the case the label
+		// has no beginning indicator (e.g. I-)
+		boolean begin = true; 
         TaggingTokenCluster curCluster = new TaggingTokenCluster(it.peek().getTaggingLabel());
         while (it.hasNext()) {
             LabeledTokensContainer cont = it.next();
-            if (cont.isBeginning() || cont.getTaggingLabel() != curCluster.getTaggingLabel()) {
+            if (begin || cont.isBeginning() || cont.getTaggingLabel() != curCluster.getTaggingLabel()) {
                 curCluster = new TaggingTokenCluster(cont.getTaggingLabel());
                 result.add(curCluster);
             }
             curCluster.addLabeledTokensContainer(cont);
+			if (begin)
+				begin = false;
         }
 
         return result;
