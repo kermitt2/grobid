@@ -39,7 +39,16 @@ public enum TaggingLabel {
     TBL_TRASH(GrobidModels.TABLE, "<trash>"),
     TBL_LABEL(GrobidModels.TABLE, "<label>"),
     TBL_OTHER(GrobidModels.TABLE, "<other>"),
-    ;
+
+    // labels for quantities/measurements
+    QUANTITY_VALUE_ATOMIC(GrobidModels.QUANTITIES, "<valueAtomic>"),
+    QUANTITY_VALUE_LEAST(GrobidModels.QUANTITIES, "<valueLeast>"),
+    QUANTITY_VALUE_MOST(GrobidModels.QUANTITIES, "<valueMost>"),
+    QUANTITY_VALUE_LIST(GrobidModels.QUANTITIES, "<valueList>"),
+    QUANTITY_UNIT_LEFT(GrobidModels.QUANTITIES, "<unitLeft>"),
+    QUANTITY_UNIT_RIGHT(GrobidModels.QUANTITIES, "<unitRight>"),
+    QUANTITY_SUBSTANCE(GrobidModels.QUANTITIES, "<substance>"),
+    QUANTITY_OTHER(GrobidModels.QUANTITIES, "<other>");
 
     private final GrobidModels grobidModel;
     private final String label;
