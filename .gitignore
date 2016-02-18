@@ -46,3 +46,5 @@ grobid-trainer/maven-build.properties
 grobid-trainer/maven-build.xml
 
 maven-build.xml
+
+release.properties
