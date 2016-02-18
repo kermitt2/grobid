@@ -10,7 +10,7 @@
 
 GROBID (or Grobid) means GeneRation Of BIbliographic Data. 
 
-GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured TEI-encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on GROBID has been continous as side project since the beginning and is expected to continue until at least 2020 :)
+GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured TEI-encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on GROBID has been steady as side project since the beginning and is expected to continue until at least 2020 :)
 
 The following functionalities are available:
 
@@ -26,10 +26,13 @@ The following functionalities are available:
 
 GROBID includes batch processing, a comprehensive RESTful API, a JAVA API, a relatively generic evaluation framework (precision, recall, etc.) and the semi-automatic generation of training data. 
 
+GROBID can be considered as production ready. Deployment in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST, Mendeley, CERN, ... 
+
 The key aspects of GROBID are the following ones:
 
 + Written in Java, with JNI call to native CRF libraries. 
 + High performance - on a modern but low profile MacBook Pro: header extraction from 4000 PDF in 10 minutes (or from 3 PDF per second with the RESTful API), parsing of 3000 references in 18 seconds. [INIST](http://www.inist.fr/lang=en) recently scaled GROBID REST service for processing 1 million PDF in 1 day on a Xeon 10 CPU E5-2660 and 10 GB memory (3GB used in average) with 9 threads.
++ Lazy loading of models and resources. Depending on the selectd process, only the required data are loaded in memory. For instance, extracting only metadata header from a PDF requires less than 2 GB memory in a multithreading usage, extracting citations uses around 3GB and extracting all the PDF structure around 4GB.  
 + Robust and fast PDF processing based on Xpdf and dedicated post-processing.
 + Modular and reusable machine learning models. The extractions are based on Linear Chain Conditional Random Fields which is currently the state of the art in bibliographical information extraction and labeling. The specialized CRF models are cascaded to realize a complete document structure.  
 + Full encoding in [__TEI__](http://www.tei-c.org/Guidelines/P5), both for the training corpus and the parsed results.
