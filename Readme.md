@@ -26,7 +26,7 @@ The following functionalities are available:
 
 GROBID includes batch processing, a comprehensive RESTful API, a JAVA API, a relatively generic evaluation framework (precision, recall, etc.) and the semi-automatic generation of training data. 
 
-GROBID can be considered as production ready. Deployment in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST, Mendeley, CERN, ... 
+GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST, Mendeley, CERN, ... 
 
 The key aspects of GROBID are the following ones:
 
@@ -34,7 +34,7 @@ The key aspects of GROBID are the following ones:
 + High performance - on a modern but low profile MacBook Pro: header extraction from 4000 PDF in 10 minutes (or from 3 PDF per second with the RESTful API), parsing of 3000 references in 18 seconds. [INIST](http://www.inist.fr/lang=en) recently scaled GROBID REST service for processing 1 million PDF in 1 day on a Xeon 10 CPU E5-2660 and 10 GB memory (3GB used in average) with 9 threads.
 + Lazy loading of models and resources. Depending on the selectd process, only the required data are loaded in memory. For instance, extracting only metadata header from a PDF requires less than 2 GB memory in a multithreading usage, extracting citations uses around 3GB and extracting all the PDF structure around 4GB.  
 + Robust and fast PDF processing based on Xpdf and dedicated post-processing.
-+ Modular and reusable machine learning models. The extractions are based on Linear Chain Conditional Random Fields which is currently the state of the art in bibliographical information extraction and labeling. The specialized CRF models are cascaded to realize a complete document structure.  
++ Modular and reusable machine learning models. The extractions are based on Linear Chain Conditional Random Fields which is currently the state of the art in bibliographical information extraction and labeling. The specialized CRF models are cascaded to build a complete document structure.  
 + Full encoding in [__TEI__](http://www.tei-c.org/Guidelines/P5), both for the training corpus and the parsed results.
 + Reinforcement of extracted bibliographical data via online call to Crossref (optional), export in OpenURL, etc. for easier integration into Digital Library environments. 
 + Rich bibliographical processing: fine grained parsing of author names, dates, affiliations, addresses, etc. but also for instance quite reliable automatic attachment of affiliations and emails to authors. 
@@ -48,6 +48,15 @@ GROBID should run properly "out of the box" on MacOS X, Linux (32 and 64 bits). 
 ## GROBID documentation
 
 Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detailed information.
+
+## Latest version
+
+The latest stable release of GROBID is version ```0.4.0```. As compared to previous version 0.3.9, this version brings:
+
++ Improvement of the recognition of citations thanks to refinements of CRF features - +4% in f-score for the PubMed Central sample. 
++ Improvement of the full text model, with new features and the introduction of two additional models for figures and tables.
++ More robust synchronization of CRF sequence with PDF areas, resulting in improved bounding box calculations for locating annotations in the PDF documents.
++ Improved general robustness thanks to better token alignments. 
 
 ## License
 

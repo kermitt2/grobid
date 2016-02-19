@@ -4,12 +4,12 @@
 
 ###Latest stable release
 
-The latest stable release of GROBID is version ```0.3.9``` which can be downloaded as follow: 
+The latest stable release of GROBID is version ```0.4.0``` which can be downloaded as follow: 
 ```bash
-> wget https://github.com/kermitt2/grobid/releases/download/grobid-parent-0.3.9/grobid-grobid-parent-0.3.9.zip
-> unzip grobid-grobid-parent-0.3.9.zip
+> wget https://github.com/kermitt2/grobid/archive/grobid-parent-0.4.0.zip
+> unzip grobid-grobid-parent-0.4.0.zip
 ```
-The current working version is ```0.4.0-SNAPSHOT```, which can be downloaded from GitHub and built as follow: 
+The current working version is ```0.4.1-SNAPSHOT```, which can be downloaded from GitHub and built as follow: 
 
 ###Current development version
 
