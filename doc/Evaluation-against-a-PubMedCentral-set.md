@@ -30,8 +30,9 @@ It is also possible to set a ratio of evaluation data to be used expressed as a 
 
 ## Evaluation results
 
-The evaluation provides precision, recall and f-score for the different fields in the header and bibliographical references (structures of the body arriving soon!). In addition, the scores are also computed at *instance* level, which means at the level of a complete header or complete citation.
+The evaluation provides precision, recall and f-score for the different fields in the header and bibliographical references. In addition, the scores are also computed at *instance* level, which means at the level of a complete header or complete citation.
 
+An experimental evaluation for the structures of the full text body is also proposed. This is not reliable in the current state, because most of the annotations of the full texts in PudMed Central are not uniform. For instance, the numbering of the section header is sometime included in the section header annotation, sometime not. The PubMed Central annotations will need to be standardized as a pre-process for a meaningful evaluation, which is a task planned in the next releases. 
 
 ## Matching techniques
 
