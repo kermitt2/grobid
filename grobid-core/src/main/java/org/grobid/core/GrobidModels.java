@@ -18,11 +18,11 @@ public enum GrobidModels {
     DATE("date"),
     EBOOK("ebook"),
     ENTITIES_CHEMISTRY("entities/chemistry"),
-	//	ENTITIES_CHEMISTRY("chemistry"),
+    //	ENTITIES_CHEMISTRY("chemistry"),
     FULLTEXT("fulltext"),
-	SHORTTEXT("shorttext"),	
-	FIGURE("figure"),
-	TABLE("table"),	
+    SHORTTEXT("shorttext"),
+    FIGURE("figure"),
+    TABLE("table"),
     HEADER("header"),
     NAMES_CITATION("name/citation"),
     NAMES_HEADER("name/header"),
@@ -30,11 +30,12 @@ public enum GrobidModels {
     PATENT_NPL("patent/npl"),
     PATENT_ALL("patent/all"),
     PATENT_STRUCTURE("patent/structure"),
-    PATENT_EDIT("patent/edit"),    
+    PATENT_EDIT("patent/edit"),
     ENTITIES_NER("ner"),
-	ENTITIES_NERSense("nersense"),
+    ENTITIES_NERSense("nersense"),
     QUANTITIES("quantities"),
-	//	ENTITIES_BIOTECH("entities/biotech"),
+    UNITS("units"),
+    //	ENTITIES_BIOTECH("entities/biotech"),
     ENTITIES_BIOTECH("bio");
 
     /**
@@ -50,7 +51,7 @@ public enum GrobidModels {
         if (!path.exists()) {
             // to be reviewed
             /*System.err.println("Warning: The file path to the "
-					+ this.name() + " CRF model is invalid: "
+                    + this.name() + " CRF model is invalid: "
 					+ path.getAbsolutePath());*/
         }
         modelPath = path.getAbsolutePath();
