@@ -188,7 +188,7 @@ public class Consolidation {
 		if (StringUtils.isNotBlank(doi)) {
             // some cleaning of the doi
             if (doi.startsWith("doi:") | doi.startsWith("DOI:")) {
-                doi.substring(4, doi.length());
+                doi = doi.substring(4, doi.length());
                 doi = doi.trim();
             }
 
