@@ -2430,7 +2430,7 @@ public class BiblioItem {
                 for (int i = 0; i < indent + 1; i++) {
                     tei.append("\t");
                 }
-                tei.append("<idno type=\"doi\">" + DOI + "</idno>\n");
+                tei.append("<idno type=\"doi\">" + TextUtilities.HTMLEncode(DOI) + "</idno>\n");
             }
 
             if (uri != null) {
