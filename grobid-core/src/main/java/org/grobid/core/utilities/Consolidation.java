@@ -95,17 +95,26 @@ public class Consolidation {
             "SELECT Unixref FROM DOIRequest WHERE Request DOIRequest ?";
 
     /**
-     * Lookup by DOI
+     * Lookup by DOI - 3 parameters are id, password, doi.
      */
     private static final String DOI_BASE_QUERY =
             "openurl?url_ver=Z39.88-2004&pid=%s:%s&rft_id=info:doi/%s&noredirect=true&format=unixref";
 
     /**
-     * Lookup by journal title, volume and first page - 6 possible parameters are id, password, title, author, volume, firstPage.
+     * Lookup by journal title, volume and first page - 6 parameters are id, password, journal title, author, volume, firstPage.
      */
-    private static final String JOURNAL_BASE_QUERY =
+    private static final String JOURNAL_AUTHOR_BASE_QUERY =
             //"query?usr=%s&pwd=%s&type=a&format=unixref&qdata=|%s||%s||%s|||KEY|";
 		    "query?usr=%s&pwd=%s&type=a&format=unixref&qdata=|%s|%s|%s||%s|||KEY|";
+
+    // ISSN|TITLE/ABBREV|FIRST AUTHOR|VOLUME|ISSUE|START PAGE|YEAR|RESOURCE TYPE|KEY|DOI
+
+     /**
+     * Lookup by journal title, volume and first page - 6 parameters are id, password, journal title, volume, firstPage.
+     */       
+     private static final String JOURNAL_BASE_QUERY =
+            //"query?usr=%s&pwd=%s&type=a&format=unixref&qdata=|%s||%s||%s|||KEY|";
+            "query?usr=%s&pwd=%s&type=a&format=unixref&qdata=|%s||%s||%s|||KEY|";
 
     /**
      * Lookup first author surname and  article title - 4 parameters are id, password, title, author.
@@ -128,6 +137,8 @@ public class Consolidation {
         String title = bib.getTitle();
 		String journalTitle = bib.getJournal();
 		String volume = bib.getVolume();
+        if (StringUtils.isBlank(volume))
+            volume = bib.getVolumeBlock();
 		
         String firstPage = null;
         String pageRange = bib.getPageRange();
@@ -152,18 +163,33 @@ public class Consolidation {
 		try {
 			if (StringUtils.isNotBlank(doi)) {
 				// retrieval per DOI
+                //System.out.println("test retrieval per DOI");
 				valid = consolidateCrossrefGetByDOI(bib, additionalBiblioInformation);
 			}
-			else if (StringUtils.isNotBlank(journalTitle) 
+			if (!valid && StringUtils.isNotBlank(journalTitle) 
 						&& StringUtils.isNotBlank(volume)
+                        && StringUtils.isNotBlank(aut)
 						&& StringUtils.isNotBlank(firstPage)) {
-				// retrieval per journal title, volume, first page
+				// retrieval per journal title, author, volume, first page
+                //System.out.println("test retrieval per journal title, author, volume, first page");
+                additionalBiblioInformation.clear();
 				valid = consolidateCrossrefGetByJournalVolumeFirstPage(aut, firstPage, journalTitle, 
 					volume, bib, additionalBiblioInformation);
 			}
-			else if (StringUtils.isNotBlank(title)
+            if (!valid && StringUtils.isNotBlank(journalTitle) 
+                        && StringUtils.isNotBlank(volume)
+                        && StringUtils.isNotBlank(firstPage)) {
+                // retrieval per journal title, volume, first page
+                additionalBiblioInformation.clear();
+                //System.out.println("test retrieval per journal title, volume, first page");
+                valid = consolidateCrossrefGetByJournalVolumeFirstPage(null, firstPage, journalTitle, 
+                    volume, bib, additionalBiblioInformation);
+            }
+			if (!valid && StringUtils.isNotBlank(title)
 						&& StringUtils.isNotBlank(aut)) {
 				// retrieval per first author and article title
+                additionalBiblioInformation.clear();
+                //System.out.println("test retrieval per title, author");
 				valid = consolidateCrossrefGetByAuthorTitle(aut, title, bib, additionalBiblioInformation);
 			}
 		}
@@ -188,7 +214,7 @@ public class Consolidation {
 		if (StringUtils.isNotBlank(doi)) {
             // some cleaning of the doi
             if (doi.startsWith("doi:") | doi.startsWith("DOI:")) {
-                doi = doi.substring(4, doi.length());
+                doi.substring(4, doi.length());
                 doi = doi.trim();
             }
 
@@ -478,15 +504,24 @@ public class Consolidation {
 		boolean result = false;
 		// conservative check
 		if (StringUtils.isNotBlank(firstPage) &&
-		 		(StringUtils.isNotBlank(aut) || (StringUtils.isNotBlank(journal) && StringUtils.isNotBlank(volume)))
+		 		StringUtils.isNotBlank(journal) && StringUtils.isNotBlank(volume)
 		   ) {
-			String subpath = String.format(JOURNAL_BASE_QUERY, 
+			String subpath = null;
+            if (StringUtils.isNotBlank(aut))
+                subpath = String.format(JOURNAL_AUTHOR_BASE_QUERY, 
 					GrobidProperties.getInstance().getCrossrefId(), 
 					GrobidProperties.getInstance().getCrossrefPw(),
                     URLEncoder.encode(journal, "UTF-8"),
 					URLEncoder.encode(aut, "UTF-8"),
                     URLEncoder.encode(volume, "UTF-8"), 
 					firstPage);
+            else 
+                subpath = String.format(JOURNAL_BASE_QUERY, 
+                    GrobidProperties.getInstance().getCrossrefId(), 
+                    GrobidProperties.getInstance().getCrossrefPw(),
+                    URLEncoder.encode(journal, "UTF-8"),
+                    URLEncoder.encode(volume, "UTF-8"), 
+                    firstPage);
             URL url = new URL("http://" + GrobidProperties.getInstance().getCrossrefHost() + "/" + subpath);
             String urlmsg = url.toString();
             System.out.println(urlmsg);
