@@ -1693,10 +1693,10 @@ public class BiblioItem {
             tei.append(" ").append(TEIFormater.getCoordsAttribute(coordinates, config.isGenerateTeiCoordinates())).append(" ");
             if (language != null) {
                 if (n == -1) {
-                    if (pubnum != null) {
+                    /*if (pubnum != null) {
                         teiId = TextUtilities.HTMLEncode(pubnum);
                         tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + teiId + "\">\n");
-                    } else
+                    } else*/
                         tei.append(" xml:lang=\"" + language + ">\n");
                 } else {
                     teiId = "b" + n;
@@ -1705,10 +1705,10 @@ public class BiblioItem {
                 // TBD: the language should be normalized following xml lang attributes !
             } else {
                 if (n == -1) {
-                    if (pubnum != null) {
+                    /*if (pubnum != null) {
                         teiId = TextUtilities.HTMLEncode(pubnum);
                         tei.append(" xml:id=\"" + teiId + "\">\n");
-                    } else
+                    } else*/
                         tei.append(">\n");
                 } else {
                     teiId = "b" + n;
