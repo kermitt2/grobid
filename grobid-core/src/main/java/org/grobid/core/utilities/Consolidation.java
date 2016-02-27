@@ -62,6 +62,7 @@ public class Consolidation {
         } catch (Exception e) {
             System.err.println("The connection to the MySQL database could not be established. \n"
                     + "The call to Crossref service will not be cached.");
+            //e.printStackTrace();
         }
     }
 
@@ -166,6 +167,13 @@ public class Consolidation {
                 //System.out.println("test retrieval per DOI");
 				valid = consolidateCrossrefGetByDOI(bib, additionalBiblioInformation);
 			}
+            if (!valid && StringUtils.isNotBlank(title)
+                        && StringUtils.isNotBlank(aut)) {
+                // retrieval per first author and article title
+                additionalBiblioInformation.clear();
+                //System.out.println("test retrieval per title, author");
+                valid = consolidateCrossrefGetByAuthorTitle(aut, title, bib, additionalBiblioInformation);
+            }
 			if (!valid && StringUtils.isNotBlank(journalTitle) 
 						&& StringUtils.isNotBlank(volume)
                         && StringUtils.isNotBlank(aut)
@@ -176,7 +184,7 @@ public class Consolidation {
 				valid = consolidateCrossrefGetByJournalVolumeFirstPage(aut, firstPage, journalTitle, 
 					volume, bib, additionalBiblioInformation);
 			}
-            if (!valid && StringUtils.isNotBlank(journalTitle) 
+            /*if (!valid && StringUtils.isNotBlank(journalTitle) 
                         && StringUtils.isNotBlank(volume)
                         && StringUtils.isNotBlank(firstPage)) {
                 // retrieval per journal title, volume, first page
@@ -184,14 +192,7 @@ public class Consolidation {
                 //System.out.println("test retrieval per journal title, volume, first page");
                 valid = consolidateCrossrefGetByJournalVolumeFirstPage(null, firstPage, journalTitle, 
                     volume, bib, additionalBiblioInformation);
-            }
-			if (!valid && StringUtils.isNotBlank(title)
-						&& StringUtils.isNotBlank(aut)) {
-				// retrieval per first author and article title
-                additionalBiblioInformation.clear();
-                //System.out.println("test retrieval per title, author");
-				valid = consolidateCrossrefGetByAuthorTitle(aut, title, bib, additionalBiblioInformation);
-			}
+            }*/
 		}
 		catch(Exception e) {
 			throw new GrobidException("An exception occured while running Grobid consolidation.", e);
