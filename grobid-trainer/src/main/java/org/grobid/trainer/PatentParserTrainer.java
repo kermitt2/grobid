@@ -26,27 +26,27 @@ import org.grobid.trainer.evaluation.PatentEvaluation;
 /**
  * @author Patrice Lopez
  */
-public class PatentParserTrainer extends AbstractTrainer{
+public class PatentParserTrainer extends AbstractTrainer {
 
-	// adjusting CRF training parameters for this model (only with Wapiti)
-	private double epsilon = 0.0001;
-	private int window = 20;
-
-	// the window value indicate the right and left context of text to consider for an annotation when building
-	// the training or the test data - the value is experimentally set
-	// this window is used to maintain a certain level of occurence of the patent and NPL references, and avoid
-	// to have the citation annotation diluted because they are very rare (less than 1 token per 1000)
-	private static final int trainWindow = 200;
+    // the window value indicate the right and left context of text to consider for an annotation when building
+    // the training or the test data - the value is experimentally set
+    // this window is used to maintain a certain level of occurence of the patent and NPL references, and avoid
+    // to have the citation annotation diluted because they are very rare (less than 1 token per 1000)
+    private static final int trainWindow = 200;
 
     public PatentParserTrainer() {
         super(GrobidModels.PATENT_PATENT);
+
+        // adjusting CRF training parameters for this model (only with Wapiti)
+        epsilon = 0.0001;
+        window = 20;
     }
 
     public int createTrainingData(String trainingDataDir) {
         int nb = 0;
         try {
-            String path = new File(new File(getFilePath2Resources(), 
-				"dataset/patent/corpus/").getAbsolutePath()).getAbsolutePath();
+            String path = new File(new File(getFilePath2Resources(),
+                    "dataset/patent/corpus/").getAbsolutePath()).getAbsolutePath();
             createDataSet(null, null, path, trainingDataDir, 0);
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while training Grobid.", e);
@@ -55,17 +55,18 @@ public class PatentParserTrainer extends AbstractTrainer{
     }
 
     // we have our own train() method that trains several models at once, 
-	// therefore we don't need these methods which typically
+    // therefore we don't need these methods which typically
     // were executed from AbstractTrainer. 
     @Override
     public int createCRFPPData(File corpusPath, File outputFile) {
         return 0;
     }
-	@Override
-	public int createCRFPPData(File corpusPath, File outputTrainingFile, File outputEvalFile, double splitRatio) {
-		return 0;
-	}
-	
+
+    @Override
+    public int createCRFPPData(File corpusPath, File outputTrainingFile, File outputEvalFile, double splitRatio) {
+        return 0;
+    }
+
 
     public void train() {
         createTrainingData(GrobidProperties.getTempPath().getAbsolutePath());
@@ -77,18 +78,18 @@ public class PatentParserTrainer extends AbstractTrainer{
         //File trainingDataPath2 = new File(GrobidProperties.getTempPath() + "/patent.train");
         File trainingDataPath3 = new File(GrobidProperties.getTempPath() + "/all.train");
 
-       // File templatePath1 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.npl.references.template");
-       //File templatePath2 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.patent.references.template");
-        File templatePath3 = 
-			new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.references.template");
+        // File templatePath1 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.npl.references.template");
+        //File templatePath2 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.patent.references.template");
+        File templatePath3 =
+                new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.references.template");
 
         GenericTrainer trainer = TrainerFactory.getTrainer();
-		trainer.setEpsilon(epsilon);
-		trainer.setWindow(window);
+        trainer.setEpsilon(epsilon);
+        trainer.setWindow(window);
         //File modelPath1 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + NEW_MODEL_EXT);
         //File modelPath2 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + NEW_MODEL_EXT);
-        File modelPath3 = 
-			new File(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL).getAbsolutePath() + NEW_MODEL_EXT);
+        File modelPath3 =
+                new File(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL).getAbsolutePath() + NEW_MODEL_EXT);
 
         //trainer.train(templatePath1, trainingDataPath1, modelPath1, GrobidProperties.getNBThreads());
         //trainer.train(templatePath2, trainingDataPath2, modelPath2, GrobidProperties.getNBThreads());
@@ -101,16 +102,12 @@ public class PatentParserTrainer extends AbstractTrainer{
     }
 
 
-
     /**
      * Create the set of training and evaluation sets from the annotated examples with
      * extraction of citations in the patent description body.
-	 * 
-	 * @param rank
-   	 *            rank associated to the set for n-fold data generation 	
-   	 * @param type
-   	 *            type of data to be created, 0 is training data, 1 is evaluation data 
-	 *
+     *
+     * @param rank rank associated to the set for n-fold data generation
+     * @param type type of data to be created, 0 is training data, 1 is evaluation data
      */
     public void createDataSet(String setName, String rank, String corpusPath, String outputPath, int type) {
         int nbFiles = 0;
@@ -132,14 +129,13 @@ public class PatentParserTrainer extends AbstractTrainer{
             List<OffsetPosition> conferencesPositions = null;
             List<OffsetPosition> publishersPositions = null;
 
-			if (type == 0) {
-				// training set
-				sax.setN(trainWindow);
-			}
-            else {
-				// for the test set we enlarge the focus window to include all the document.
-             	sax.setN(-1);
-           	}
+            if (type == 0) {
+                // training set
+                sax.setN(trainWindow);
+            } else {
+                // for the test set we enlarge the focus window to include all the document.
+                sax.setN(-1);
+            }
             // get a factory
             /*SAXParserFactory spf = SAXParserFactory.newInstance();
             spf.setValidating(false);
@@ -313,14 +309,13 @@ public class PatentParserTrainer extends AbstractTrainer{
             sax.patentReferences = true;
             sax.nplReferences = true;
 
-			if (type == 0) {
-				// training set
-				sax.setN(trainWindow);
-			}
-            else {
-				// for the test set we enlarge the focus window to include all the document.
-             	sax.setN(-1);
-           	}
+            if (type == 0) {
+                // training set
+                sax.setN(trainWindow);
+            } else {
+                // for the test set we enlarge the focus window to include all the document.
+                sax.setN(-1);
+            }
             // get a factory
             SAXParserFactory spf = SAXParserFactory.newInstance();
             spf.setValidating(false);
@@ -335,8 +330,8 @@ public class PatentParserTrainer extends AbstractTrainer{
             } else {
                 fileList.add(new File(corpusPath + File.separator + setName + "ing" + rank + File.separator));
             }
-			
-			Writer writer = null;
+
+            Writer writer = null;
             if ((setName == null) || (setName.length() == 0)) {
                 writer = new OutputStreamWriter(new FileOutputStream(
                         new File(outputPath + File.separator + "all.train"), false), "UTF-8");
@@ -345,8 +340,8 @@ public class PatentParserTrainer extends AbstractTrainer{
                         new File(outputPath + File.separator + "all." + setName), false), "UTF-8");
             } else {
                 writer = new OutputStreamWriter(new FileOutputStream(
-                        new File(outputPath + File.separator + setName + "ing" + rank + File.separator + 
-							"all." + setName), false), "UTF-8");
+                        new File(outputPath + File.separator + setName + "ing" + rank + File.separator +
+                                "all." + setName), false), "UTF-8");
             }
             //int totalLength = 0;
             while (fileList.size() > 0) {
@@ -357,7 +352,7 @@ public class PatentParserTrainer extends AbstractTrainer{
                     }
                 } else {
                     if (file.getName().endsWith(".xml")) {
-						nbFiles++;
+                        nbFiles++;
                         try {
                             //get a new instance of parser
                             SAXParser p = spf.newSAXParser();
@@ -593,11 +588,11 @@ public class PatentParserTrainer extends AbstractTrainer{
      * Command line execution.
      *
      * @param args Command line arguments.
-     * @throws Exception 
+     * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-    	MockContext.setInitialContext();
-		GrobidProperties.getInstance();
+        MockContext.setInitialContext();
+        GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new PatentParserTrainer());
         MockContext.destroyInitialContext();
     }

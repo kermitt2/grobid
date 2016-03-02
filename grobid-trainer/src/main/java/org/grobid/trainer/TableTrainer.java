@@ -16,72 +16,65 @@ import java.util.StringTokenizer;
 /**
  * @author Patrice Lopez
  */
-public class TableTrainer extends AbstractTrainer{
+public class TableTrainer extends AbstractTrainer {
 
     public TableTrainer() {
         super(GrobidModels.TABLE);
-    }
 
-	// adjusting CRF training parameters for this model (only with Wapiti)
-	private double epsilon = 0.00001;
-	private int window = 20;
+        // adjusting CRF training parameters for this model (only with Wapiti)
+        epsilon = 0.00001;
+        window = 20;
+    }
 
     @Override
     public int createCRFPPData(File corpusPath, File outputFile) {
-        return addFeaturesTable(corpusPath.getAbsolutePath() + "/tei", 
-								 corpusPath.getAbsolutePath() + "/raw", 
-								 outputFile, null, 1.0);
+        return addFeaturesTable(corpusPath.getAbsolutePath() + "/tei",
+                corpusPath.getAbsolutePath() + "/raw",
+                outputFile, null, 1.0);
     }
-
-	/**
-	 * Add the selected features for the table model 
-	 * 
-	 * @param corpusDir
-	 *            path where corpus files are located
-	 * @param trainingOutputPath
-	 *            path where to store the temporary training data
-	 * @param evalOutputPath
-	 *            path where to store the temporary evaluation data
-	 * @param splitRatio
-	 *            ratio to consider for separating training and evaluation data, e.g. 0.8 for 80% 
-	 * @return the total number of used corpus items 
-	 */
-	@Override
-	public int createCRFPPData(final File corpusDir, 
-							final File trainingOutputPath, 
-							final File evalOutputPath, 
-							double splitRatio) {
-		return addFeaturesTable(corpusDir.getAbsolutePath() + "/tei", 
-								corpusDir.getAbsolutePath() + "/raw", 
-								trainingOutputPath, 
-								evalOutputPath, 
-								splitRatio);				
-	}
 
     /**
      * Add the selected features for the table model
-	 *
+     *
+     * @param corpusDir          path where corpus files are located
+     * @param trainingOutputPath path where to store the temporary training data
+     * @param evalOutputPath     path where to store the temporary evaluation data
+     * @param splitRatio         ratio to consider for separating training and evaluation data, e.g. 0.8 for 80%
+     * @return the total number of used corpus items
+     */
+    @Override
+    public int createCRFPPData(final File corpusDir,
+                               final File trainingOutputPath,
+                               final File evalOutputPath,
+                               double splitRatio) {
+        return addFeaturesTable(corpusDir.getAbsolutePath() + "/tei",
+                corpusDir.getAbsolutePath() + "/raw",
+                trainingOutputPath,
+                evalOutputPath,
+                splitRatio);
+    }
+
+    /**
+     * Add the selected features for the table model
+     *
      * @param sourceTEIPathLabel path to corpus TEI files
-     * @param sourceRawPathLabel path to corpus raw files	
-     * @param trainingOutputPath
-	 *            path where to store the temporary training data
-	 * @param evalOutputPath
-	 *            path where to store the temporary evaluation data
-	 * @param splitRatio
-	 *            ratio to consider for separating training and evaluation data, e.g. 0.8 for 80%
+     * @param sourceRawPathLabel path to corpus raw files
+     * @param trainingOutputPath path where to store the temporary training data
+     * @param evalOutputPath     path where to store the temporary evaluation data
+     * @param splitRatio         ratio to consider for separating training and evaluation data, e.g. 0.8 for 80%
      * @return number of examples
      */
     public int addFeaturesTable(String sourceTEIPathLabel,
-                               String sourceRawPathLabel,
-	   						   final File trainingOutputPath, 
-	   						   final File evalOutputPath, 
-							   double splitRatio) {
+                                String sourceRawPathLabel,
+                                final File trainingOutputPath,
+                                final File evalOutputPath,
+                                double splitRatio) {
         int totalExamples = 0;
         try {
             System.out.println("sourceTEIPathLabel: " + sourceTEIPathLabel);
             System.out.println("sourceRawPathLabel: " + sourceRawPathLabel);
             System.out.println("trainingOutputPath: " + trainingOutputPath);
-			System.out.println("evalOutputPath: " + evalOutputPath);
+            System.out.println("evalOutputPath: " + evalOutputPath);
 
             // we need first to generate the labeled files from the TEI annotated files
             File input = new File(sourceTEIPathLabel);
@@ -98,21 +91,21 @@ public class TableTrainer extends AbstractTrainer{
 
             System.out.println(refFiles.length + " tei files");
 
-			// the file for writing the training data
-			OutputStream os2 = null;
-			Writer writer2 = null;
-			if (trainingOutputPath != null) {
-				os2 = new FileOutputStream(trainingOutputPath);
-				writer2 = new OutputStreamWriter(os2, "UTF8");
-			}
-		
-			// the file for writing the evaluation data
-			OutputStream os3 = null;
-			Writer writer3 = null;
-			if (evalOutputPath != null) {
-				os3 = new FileOutputStream(evalOutputPath);
-				writer3 = new OutputStreamWriter(os3, "UTF8");
-			}
+            // the file for writing the training data
+            OutputStream os2 = null;
+            Writer writer2 = null;
+            if (trainingOutputPath != null) {
+                os2 = new FileOutputStream(trainingOutputPath);
+                writer2 = new OutputStreamWriter(os2, "UTF8");
+            }
+
+            // the file for writing the evaluation data
+            OutputStream os3 = null;
+            Writer writer3 = null;
+            if (evalOutputPath != null) {
+                os3 = new FileOutputStream(evalOutputPath);
+                writer3 = new OutputStreamWriter(os3, "UTF8");
+            }
 
             // get a factory for SAX parser
             SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -121,9 +114,9 @@ public class TableTrainer extends AbstractTrainer{
                 String name = tf.getName();
                 System.out.println(name);
 
-				// the full text SAX parser can be reused for the tables
+                // the full text SAX parser can be reused for the tables
                 TEIFigureSaxParser parser2 = new TEIFigureSaxParser();
-				//parser2.setMode(TEIFulltextSaxParser.TABLE);
+                //parser2.setMode(TEIFulltextSaxParser.TABLE);
 
                 //get a new instance of parser
                 SAXParser p = spf.newSAXParser();
@@ -131,16 +124,16 @@ public class TableTrainer extends AbstractTrainer{
 
                 List<String> labeled = parser2.getLabeledResult();
                 //totalExamples += parser2.n;
-                
-				// we can now add the features
+
+                // we can now add the features
                 // we open the featured file
-				File theRawFile = new File(sourceRawPathLabel + File.separator + name.replace(".tei.xml", ""));
-				if (!theRawFile.exists()) {
-	                System.out.println("Raw file " + theRawFile +
-	                        " does not exist. Please have a look!");
-					continue;
-				}
-				
+                File theRawFile = new File(sourceRawPathLabel + File.separator + name.replace(".tei.xml", ""));
+                if (!theRawFile.exists()) {
+                    System.out.println("Raw file " + theRawFile +
+                            " does not exist. Please have a look!");
+                    continue;
+                }
+
                 int q = 0;
                 BufferedReader bis = new BufferedReader(
                         new InputStreamReader(new FileInputStream(
@@ -173,7 +166,7 @@ public class TableTrainer extends AbstractTrainer{
                             if (localToken.equals(token)) {
                                 String tag = st.nextToken();
                                 line = line.replace("\t", " ").replace("  ", " ");
-                                table.append(line).append(" ").append(tag);     
+                                table.append(line).append(" ").append(tag);
                                 q = pp + 1;
                                 pp = q + 10;
                             }
@@ -184,28 +177,28 @@ public class TableTrainer extends AbstractTrainer{
                     }
                 }
                 bis.close();
-				
-				if ( (writer2 == null) && (writer3 != null) )
-					writer3.write(table.toString() + "\n");
-				if ( (writer2 != null) && (writer3 == null) )
-					writer2.write(table.toString() + "\n");
-				else {		
-					if (Math.random() <= splitRatio)
-						writer2.write(table.toString() + "\n");
-					else 
-						writer3.write(table.toString() + "\n");
-				}
+
+                if ((writer2 == null) && (writer3 != null))
+                    writer3.write(table.toString() + "\n");
+                if ((writer2 != null) && (writer3 == null))
+                    writer2.write(table.toString() + "\n");
+                else {
+                    if (Math.random() <= splitRatio)
+                        writer2.write(table.toString() + "\n");
+                    else
+                        writer3.write(table.toString() + "\n");
+                }
             }
 
             if (writer2 != null) {
-				writer2.close();
-				os2.close();
-			}
-			
-			if (writer3 != null) {
-				writer3.close();
-				os3.close();
-			}
+                writer2.close();
+                os2.close();
+            }
+
+            if (writer3 != null) {
+                writer3.close();
+                os3.close();
+            }
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running training for the table model.", e);
         }
@@ -216,11 +209,11 @@ public class TableTrainer extends AbstractTrainer{
      * Command line execution.
      *
      * @param args Command line arguments.
-     * @throws Exception 
+     * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-    	MockContext.setInitialContext();
-    	GrobidProperties.getInstance();
+        MockContext.setInitialContext();
+        GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new TableTrainer());
         AbstractTrainer.runEvaluation(new TableTrainer());
         MockContext.destroyInitialContext();
