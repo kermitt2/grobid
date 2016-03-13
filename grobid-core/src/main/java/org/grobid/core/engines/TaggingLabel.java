@@ -47,7 +47,8 @@ public enum TaggingLabel {
     QUANTITY_VALUE_LIST(GrobidModels.QUANTITIES, "<valueList>"),
     QUANTITY_UNIT_LEFT(GrobidModels.QUANTITIES, "<unitLeft>"),
     QUANTITY_UNIT_RIGHT(GrobidModels.QUANTITIES, "<unitRight>"),
-    QUANTITY_SUBSTANCE(GrobidModels.QUANTITIES, "<substance>"),
+    QUANTITY_VALUE_BASE(GrobidModels.QUANTITIES, "<valueBase>"),
+    QUANTITY_VALUE_RANGE(GrobidModels.QUANTITIES, "<valueRange>"),
     QUANTITY_OTHER(GrobidModels.QUANTITIES, "<other>"),
 
     // unit of measurements
