@@ -35,9 +35,10 @@ public class Utilities {
 	 */
 	public static boolean deleteDir(File dir) {
 		if (dir.isDirectory()) {
-			String[] children = dir.list();
+			//String[] children = dir.list();
+			File[] children = dir.listFiles();
 			for (int i = 0; i < children.length; i++) {
-				boolean success = deleteDir(new File(dir, children[i]));
+				boolean success = deleteDir(children[i]);
 				if (!success) {
 					return false;
 				}
@@ -45,6 +46,40 @@ public class Utilities {
 		}
 		// the directory is now empty so delete it
 		return dir.delete();
+	}
+
+	/**
+	 * Deletes all files and subdirectories under dir if they are older than a given 
+	 * amount of seconds. Returns true if all deletions were successful. If a deletion 
+	 * fails, the method stops attempting to delete and returns false.
+	 */
+	public static boolean deleteOldies(File dir, int maxLifeInSeconds) {
+		return deleteOldies(dir, maxLifeInSeconds, true);
+	}
+	public static boolean deleteOldies(File dir, int maxLifeInSeconds, boolean root) {
+		Date currentDate = new Date();
+		long currentDateMillisec = currentDate.getTime();
+		boolean empty = true;
+		boolean success = true;
+		long threasholdMillisec =  currentDateMillisec - (maxLifeInSeconds*1000);
+		if (dir.isDirectory()) {
+			File[] children = dir.listFiles();
+			for (int i = 0; i < children.length; i++) {
+				long millisec = children[i].lastModified();
+				if (millisec < threasholdMillisec) {
+					success = deleteOldies(children[i], maxLifeInSeconds, false);
+					if (!success) {
+						return false;
+					}
+				}
+				else 
+					empty = false;
+			}
+		}
+		// if the dir is a file or if the directory is empty and it is no the root dir, we delete it
+		if (!root && (empty || (!dir.isDirectory())))
+			success = dir.delete();
+		return success;
 	}
 
 	/**
