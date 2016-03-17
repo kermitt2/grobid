@@ -12,6 +12,7 @@ import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.exceptions.GrobidServiceException;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.Utilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -106,6 +107,8 @@ public class GrobidRestUtils {
 	 */
 	public static void removeTempFile(final File file) {
 		try {
+			// sanity cleaning
+			Utilities.deleteOldies(GrobidProperties.getTempPath(), 300);
 			LOGGER.debug("Removing " + file.getAbsolutePath());
 			file.delete();
 		} catch (Exception exp) {

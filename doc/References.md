@@ -1,3 +1,9 @@
+## Project reference
+
+You can simply refer to the github project:
+
+GROBID (2008-2016) <https://github.com/kermitt2/grobid>
+
 ## Presentations on Grobid
 
 [GROBID in 30 slides](grobid-04-2015.pdf) (2015).
@@ -13,11 +19,6 @@ Automatic Extraction and Resolution of Bibliographical References in Patent Docu
 [Automatic Metadata Extraction The High Energy Physics Use Case](https://preprints.cern.ch/record/2039361/files/CERN-THESIS-2015-105.pdf). Joseph
 Boyd. Master Thesis, EPFL, Switzerland, 2015. 
 
-## Project reference
-
-You can simply refer to the github project:
-
-GROBID (2008-2015) <https://github.com/kermitt2/grobid>
 
 ## Evalution
 

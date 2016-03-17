@@ -51,7 +51,7 @@ Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detaile
 
 ## Latest version
 
-The latest stable release of GROBID is version ```0.4.0```. As compared to previous version 0.3.9, this version brings:
+The latest stable release of GROBID is version ```0.4.0```. As compared to previous version ```0.3.9```, this version brings:
 
 + Improvement of the recognition of citations thanks to refinements of CRF features - +4% in f-score for the PubMed Central sample. 
 + Improvement of the full text model, with new features and the introduction of two additional models for figures and tables.
@@ -68,6 +68,6 @@ Main author and contact: Patrice Lopez (<patrice.lopez@science-miner.com>)
 
 Please simply refer to the github project:
 
-Grobid (2008-2015) <https://github.com/kermitt2/grobid>
+Grobid (2008-2016) <https://github.com/kermitt2/grobid>
 
 See the [GROBID documentation](http://grobid.readthedocs.org/en/latest/References) for more related resources. 
