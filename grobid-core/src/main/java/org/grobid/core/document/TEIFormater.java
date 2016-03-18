@@ -1110,7 +1110,7 @@ public class TEIFormater {
                 //TODO: get rid of dummy stuff and the 'replacement' var - it complicates things
                 if (replacement != null) {
                     //TODO: hack for now to be able to parse - should return a list of nodes already
-                    Element dummyRepl = fromString("<dummy xmlns=\"http://www.tei-c.org/ns/1.0\">" + replacement + "</dummy>");
+                    Element dummyRepl = fromString("<dummy xmlns=\"http://www.tei-c.org/ns/1.0\">" + TextUtilities.HTMLEncode(replacement) + "</dummy>");
                     for (Node n : NodeChildrenIterator.get(dummyRepl)) {
                         Element parent = curParagraph != null ? curParagraph : curDiv;
                         n.detach();
