@@ -1076,8 +1076,7 @@ public class TEIFormater {
                 Element note = teiElement("note", clusterContent);
                 note.addAttribute(new Attribute("type", "other"));
                 curDiv.appendChild(note);
-            }
-            else if (clusterLabel == TaggingLabel.PARAGRAPH) {
+            } else if (clusterLabel == TaggingLabel.PARAGRAPH) {
                 if (isNewParagraph(lastClusterLabel, curParagraph)) {
                     curParagraph = teiElement("p");
                     curDiv.appendChild(curParagraph);
@@ -1087,6 +1086,12 @@ public class TEIFormater {
                 String replacement = null;
                 List<LayoutToken> refTokens = cluster.concatTokens();
                 String chunkRefString = LayoutTokensUtil.toText(refTokens);
+				// in case the content start with a space, we move it as previous slibing text child 
+				if (chunkRefString.startsWith(" ")) {
+					Element parent = curParagraph != null ? curParagraph : curDiv;
+					parent.appendChild(" ");
+					chunkRefString = chunkRefString.substring(1, chunkRefString.length());
+				}
                 List<Node> refNodes = null;
                 switch (clusterLabel) {
                     case CITATION_MARKER:
@@ -1110,7 +1115,8 @@ public class TEIFormater {
                 //TODO: get rid of dummy stuff and the 'replacement' var - it complicates things
                 if (replacement != null) {
                     //TODO: hack for now to be able to parse - should return a list of nodes already
-                    Element dummyRepl = fromString("<dummy xmlns=\"http://www.tei-c.org/ns/1.0\">" + TextUtilities.HTMLEncode(replacement) + "</dummy>");
+                    Element dummyRepl = fromString("<dummy xmlns=\"http://www.tei-c.org/ns/1.0\">" + 
+						replacement + "</dummy>");
                     for (Node n : NodeChildrenIterator.get(dummyRepl)) {
                         Element parent = curParagraph != null ? curParagraph : curDiv;
                         n.detach();
@@ -2272,7 +2278,12 @@ public class TEIFormater {
         List<Node> nodes = new ArrayList<>();
 
         for (ReferenceMarkerMatcher.MatchResult matchResult : markerMatcher.match(refTokens)) {
-            String markerText = LayoutTokensUtil.normalizeText(matchResult.getText());
+            String markerText = TextUtilities.HTMLEncode(LayoutTokensUtil.normalizeText(matchResult.getText()));
+			if (markerText.startsWith(" ")) {
+				// if the marker starts with a space character, this character should have already been moved
+				// as previous slibing text child
+				markerText = markerText.substring(1,markerText.length());
+			}
             String coords = null;
             if (generateCoordinates && matchResult.getTokens() != null) {
                 coords = LayoutTokensUtil.getCoordsString(matchResult.getTokens());
