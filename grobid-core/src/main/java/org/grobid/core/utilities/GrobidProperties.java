@@ -635,6 +635,10 @@ public class GrobidProperties {
         return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDF2XML_MEMORY_LIMIT, "2048"), 10);
     }
 
+    public static Integer getPdf2XMLTimeoutMs() {
+        return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDF2XML_TIMEOUT_SEC, "60"), 10) * 1000;
+    }
+
 	/**
 	 * Sets the username for a connection to mysql, given in the grobid-property
 	 * file.
@@ -717,6 +721,14 @@ public class GrobidProperties {
 	}
 
 
+	// PDFs with more blocks will be skipped
+	public static Integer getPdfBlocksMax() {
+		return Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_PDF_BLOCKS_MAX, "100000"));
+	}
+
+	public static Integer getPdfTokensMax() {
+		return Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_PDF_TOKENS_MAX, "1000000"));
+	}
 
 	/**
 	 * Sets the number of threads, given in the grobid-property file.

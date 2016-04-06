@@ -1651,14 +1651,14 @@ public class Document {
 
     private List<LayoutToken> getFigureLayoutTokens(Figure f) {
         List<LayoutToken> result = new ArrayList<>();
-        int i = 0;
         Iterator<Integer> it = f.getBlockPtrs().iterator();
 
         while (it.hasNext()) {
             Integer blockPtr = it.next();
 
             Block figBlock = getBlocks().get(blockPtr);
-            if (LayoutTokensUtil.toText(figBlock.getTokens()).trim().toLowerCase().startsWith("fig")) {
+            String norm = LayoutTokensUtil.toText(figBlock.getTokens()).trim().toLowerCase();
+            if (norm.startsWith("fig") || norm.startsWith("abb")) {
                 result.addAll(figBlock.getTokens());
 
                 while (it.hasNext()) {
