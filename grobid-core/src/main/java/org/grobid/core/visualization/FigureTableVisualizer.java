@@ -44,20 +44,24 @@ public class FigureTableVisualizer {
 
     public static void main(String[] args) {
         try {
-//            File input = new File("/Work/temp/context/coords/6.pdf");
+//            File input = new File("/Work/temp/context/coords/1.pdf");
 //            File input = new File("/Work/temp/figureExtraction/newtest/1.pdf");
 //            File input = new File("/Work/temp/figureExtraction/newtest/2.pdf");
 //            File input = new File("/Work/temp/figureExtraction/5.pdf");
 //            File input = new File("/Work/temp/figureExtraction/vector/6.pdf");
-            File input = new File("/Users/zholudev/Downloads/AS-320644967796737@1453459125249_content_1.pdf"); // PARTIAL CAPTIONS
+//            File input = new File("/Users/zholudev/Downloads/AS-272126728994822@1441891476306_content_1.pdf"); // PARTIAL CAPTIONS
 //            File input = new File("/Users/zholudev/Downloads/AS-322050973995010@1453794344041_content_1.pdf"); //separate blocks for 1 caption
 //            File input = new File("/Users/zholudev/Downloads/AS-327630265044992@1455124550118_content_1.pdf");
 //            File input = new File("/Work/temp/images/pdf_image_extraction_results/Synaptotagmin 11 interacts with components of the RNA-induced (2)/Synaptotagmin 11 interacts with components of the RNA-induced (2).pdf"); //double caption attached
 
 //            File input = new File("/Work/temp/images/pdf_image_extraction_results/Synaptotagmin 11 interacts with components of the RNA-induced (2)/Synaptotagmin 11 interacts with components of the RNA-induced (2).pdf");
-//            File input = new File("/Users/zholudev/Downloads/pone.0005635.pdf");
-//            File input = new File("/Users/zholudev/Downloads/AS-296934284775426@1447806058782_content_1.pdf");
-//            File input = new File("/Work/temp/figureExtraction/7.pdf");
+
+
+//            File input = new File("/Users/zholudev/Downloads/AS-102952320634884@1401557154467_content_1.pdf");
+//            File input = new File("/Users/zholudev/Downloads/Losi_et_al-2015-Photochemistry_and_Photobiology.pdf"); //DOUBLE CAPTION
+//
+//
+            File input = new File("/Work/temp/figureExtraction/1.pdf");
 
 
 //            File input = new File("/Work/temp/context/1000k/AS_101478173773832_1401205691162.pdf");

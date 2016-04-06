@@ -43,7 +43,7 @@ public class BlockVisualizer {
 //            File input = new File("/Users/zholudev/Downloads/pone.0005635.pdf");
 //            File input = new File("/Work/temp/figureExtraction/newtest/1.pdf");
 //            File input = new File("/Users/zholudev/Downloads/TIA_2011_Partie8.pdf");
-            File input = new File("/Users/zholudev/Downloads/AS-177339946250240@1419292546444_content_1.pdf");
+            File input = new File("/Users/zholudev/Downloads/AS-304179470979072@1449533445461_content_1.pdf");
 //            File input = new File("/Users/zholudev/Downloads/journal.pone.0146695.pdf");
 
             final PDDocument document = PDDocument.load(input);
