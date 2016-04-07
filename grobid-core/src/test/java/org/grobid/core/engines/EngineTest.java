@@ -869,8 +869,8 @@ public class EngineTest {
 //        for (File f : new File("/Work/temp/pub_citation_styles").listFiles(new FileFilter() {
 //            @Override
 //            public boolean accept(File pathname) {
-//        for (File f : new File("/Work/temp/context/1000k")
-        for (File f : new File("/Work/temp/timeout") // bad PDF that produces dozens of files
+        for (File f : new File("/Work/temp/context/1000k")
+//        for (File f : new File("/Work/temp/timeout") // bad PDF that produces dozens of files
                 .listFiles(new FileFilter() {
                         @Override
                         public boolean accept(File pathname) {
