@@ -14,7 +14,6 @@ import org.grobid.core.data.Figure;
 import org.grobid.core.data.Keyword;
 import org.grobid.core.data.Person;
 import org.grobid.core.data.Table;
-import org.grobid.core.document.xml.NodeChildrenIterator;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.SegmentationLabel;
@@ -28,11 +27,11 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.matching.EntityMatcherException;
@@ -42,7 +41,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
@@ -51,7 +49,6 @@ import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.grobid.core.document.xml.XmlBuilderUtils.fromString;
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 /**
  * Class for generating a TEI representation of a document.
@@ -1065,7 +1062,14 @@ public class TEIFormater {
             if (clusterLabel  == TaggingLabel.SECTION) {
                 curDiv = teiElement("div");
                 Element head = teiElement("head");
-                head.appendChild(clusterContent);
+                // section numbers
+                Pair<String, String> numb = getSectionNumber(clusterContent);
+                if (numb != null) {
+                    head.addAttribute(new Attribute("n", numb.b));
+                    head.appendChild(numb.a);
+                } else {
+                    head.appendChild(clusterContent);
+                }
                 curDiv.appendChild(head);
                 divResults.add(curDiv);
             } else if (clusterLabel == TaggingLabel.EQUATION) {
@@ -1083,16 +1087,16 @@ public class TEIFormater {
                 }
                 curParagraph.appendChild(clusterContent);
             } else if (MARKER_LABELS.contains(clusterLabel)) {
-                String replacement = null;
                 List<LayoutToken> refTokens = cluster.concatTokens();
                 String chunkRefString = LayoutTokensUtil.toText(refTokens);
+                // WARNING: should be fixed automatically by improvements in syncronizer
 				// in case the content start with a space, we move it as previous slibing text child 
-				if (chunkRefString.startsWith(" ")) {
-					Element parent = curParagraph != null ? curParagraph : curDiv;
-					parent.appendChild(" ");
-					chunkRefString = chunkRefString.substring(1, chunkRefString.length());
-				}
-                List<Node> refNodes = null;
+//				if (chunkRefString.startsWith(" ")) {
+//					Element parent = curParagraph != null ? curParagraph : curDiv;
+//					parent.appendChild(" ");
+//					chunkRefString = chunkRefString.substring(1, chunkRefString.length());
+//				}
+                List<Node> refNodes;
                 switch (clusterLabel) {
                     case CITATION_MARKER:
                         refNodes = markReferencesTEILuceneBased(chunkRefString,
@@ -1101,28 +1105,18 @@ public class TEIFormater {
                                 config.isGenerateTeiCoordinates());
                         break;
                     case FIGURE_MARKER:
-                        replacement = markReferencesFigureTEI(chunkRefString, refTokens, figures,
+                        refNodes = markReferencesFigureTEI(chunkRefString, refTokens, figures,
                                 config.isGenerateTeiCoordinates());
                         break;
                     case TABLE_MARKER:
-                        replacement = markReferencesTableTEI(chunkRefString, refTokens, tables,
+                        refNodes = markReferencesTableTEI(chunkRefString, refTokens, tables,
                                 config.isGenerateTeiCoordinates());
                         break;
                     default:
                         throw new IllegalStateException("Unsupported marker type: " + clusterLabel);
                 }
 
-                //TODO: get rid of dummy stuff and the 'replacement' var - it complicates things
-                if (replacement != null) {
-                    //TODO: hack for now to be able to parse - should return a list of nodes already
-                    Element dummyRepl = fromString("<dummy xmlns=\"http://www.tei-c.org/ns/1.0\">" + 
-						replacement + "</dummy>");
-                    for (Node n : NodeChildrenIterator.get(dummyRepl)) {
-                        Element parent = curParagraph != null ? curParagraph : curDiv;
-                        n.detach();
-                        parent.appendChild(n);
-                    }
-                } else if (refNodes != null) {
+                if (refNodes != null) {
                     for (Node n : refNodes) {
                         Element parent = curParagraph != null ? curParagraph : curDiv;
                         parent.appendChild(n);
@@ -1727,6 +1721,31 @@ public class TEIFormater {
         return result;
     }
 
+    private Pair<String, String> getSectionNumber(String text) {
+        Matcher m1 = BasicStructureBuilder.headerNumbering1.matcher(text);
+        Matcher m2 = BasicStructureBuilder.headerNumbering2.matcher(text);
+        Matcher m3 = BasicStructureBuilder.headerNumbering3.matcher(text);
+        Matcher m = null;
+        String numb = null;
+        if (m1.find()) {
+            numb = m1.group(0);
+            m = m1;
+        } else if (m2.find()) {
+            numb = m2.group(0);
+            m = m2;
+        } else if (m3.find()) {
+            numb = m3.group(0);
+            m = m3;
+        }
+        if (numb != null) {
+            text = text.replace(numb, "").trim();
+            numb = numb.replace(" ", "");
+            return new Pair<>(text, numb);
+        } else {
+            return null;
+        }
+    }
+
     /**
      * TODO some documentation
      */
@@ -2262,28 +2281,37 @@ public class TEIFormater {
     }
 
     /**
+     * Identify in a reference string the part in bracket. Return null if no opening and closing bracket
+     * can be found.
+     */
+    public static String bracketReferenceSegment(String text) {
+        int ind1 = text.indexOf("(");
+        if (ind1 == -1)
+            ind1 = text.indexOf("[");
+        if (ind1 != -1) {
+            int ind2 = text.lastIndexOf(")");
+            if (ind2 == -1)
+                ind2 = text.lastIndexOf("]");
+            if ((ind2 != -1) && (ind1 < ind2)) {
+                return text.substring(ind1, ind2 + 1);
+            }
+        }
+        return null;
+    }
+
+    /**
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
      */
     public List<Node> markReferencesTEILuceneBased(String text, List<LayoutToken> refTokens,
                                                    ReferenceMarkerMatcher markerMatcher, boolean generateCoordinates) throws EntityMatcherException {
         // safety tests
-        if (text == null)
-            return null;
-        if (text.trim().length() == 0)
+        if (text == null || text.trim().length() == 0 || text.endsWith("</ref>") || text.startsWith("<ref"))
             return Collections.<Node>singletonList(new Text(text));
-        if (text.endsWith("</ref>") || text.startsWith("<ref")) {
-            return Collections.<Node>singletonList(new Text(text));
-        }
 
         List<Node> nodes = new ArrayList<>();
-
         for (ReferenceMarkerMatcher.MatchResult matchResult : markerMatcher.match(refTokens)) {
-            String markerText = TextUtilities.HTMLEncode(LayoutTokensUtil.normalizeText(matchResult.getText()));
-			if (markerText.startsWith(" ")) {
-				// if the marker starts with a space character, this character should have already been moved
-				// as previous slibing text child
-				markerText = markerText.substring(1,markerText.length());
-			}
+            // no need to HTMLEncode since XOM will take care about the correct escaping
+            String markerText = LayoutTokensUtil.normalizeText(matchResult.getText());
             String coords = null;
             if (generateCoordinates && matchResult.getTokens() != null) {
                 coords = LayoutTokensUtil.getCoordsString(matchResult.getTokens());
@@ -2305,99 +2333,97 @@ public class TEIFormater {
         return nodes;
     }
 
-    /**
-     * Identify in a reference string the part in bracket. Return null if no opening and closing bracket
-     * can be found.
-     */
-    public static String bracketReferenceSegment(String text) {
-        int ind1 = text.indexOf("(");
-        if (ind1 == -1)
-            ind1 = text.indexOf("[");
-        if (ind1 != -1) {
-            int ind2 = text.lastIndexOf(")");
-            if (ind2 == -1)
-                ind2 = text.lastIndexOf("]");
-            if ((ind2 != -1) && (ind1 < ind2)) {
-                return text.substring(ind1, ind2 + 1);
-            }
-        }
-        return null;
-    }
 
-    public String markReferencesFigureTEI(String text, List<LayoutToken> refTokens,
+    public List<Node> markReferencesFigureTEI(String text, List<LayoutToken> refTokens,
                                           List<Figure> figures,
                                           boolean generateCoordinates) {
-        if (text == null)
+        if (text == null || text.trim().isEmpty() || figures == null) {
             return null;
-        if (text.trim().length() == 0)
-            return text;
-        if (figures == null)
-            return text;
-        String coords = null;
-        if (generateCoordinates)
-            coords = LayoutTokensUtil.getCoordsString(refTokens);
-        if (coords == null) {
-            coords = "";
-        } else {
-            coords = "coords=\"" + coords + "\"";
         }
+
+        List<Node> nodes = new ArrayList<>();
+
         String textLow = text.toLowerCase();
         String bestFigure = null;
+
         for (Figure figure : figures) {
             if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
-                String label = TextUtilities.cleanField(figure.getLabel().toString(), false);
+                String label = TextUtilities.cleanField(figure.getLabel(), false);
                 if ((label.length() > 0) &&
-                        (textLow.indexOf(label.toLowerCase()) != -1)) {
+                        (textLow.contains(label.toLowerCase()))) {
                     bestFigure = figure.getId();
                     break;
                 }
             }
         }
 
-        text = TextUtilities.HTMLEncode(text).replace("\n", " ").trim();
-        if (bestFigure != null) {
-            text = "<ref type=\"figure\" target=\"#fig_" + bestFigure + "\" " + coords + ">" + text + "</ref>";
-        } else {
-            text = "<ref type=\"figure\">" + text + "</ref>";
+        text = text.replace("\n", " ").trim();
+        String coords = null;
+        if (generateCoordinates && refTokens != null) {
+            coords = LayoutTokensUtil.getCoordsString(refTokens);
         }
-        return text;
+
+        Element ref = teiElement("ref");
+        ref.addAttribute(new Attribute("type", "figure"));
+
+        if (coords != null) {
+            ref.addAttribute(new Attribute("coords", coords));
+        }
+        ref.appendChild(text);
+
+        if (bestFigure != null) {
+            ref.addAttribute(new Attribute("target", "#fig_" + bestFigure));
+        }
+        nodes.add(ref);
+        return nodes;
     }
 
-    public String markReferencesTableTEI(String text, List<LayoutToken> refTokens,
-                                         List<Table> tables,
-                                         boolean generateCoordinates) {
-        if (text == null)
+    public List<Node> markReferencesTableTEI(String text, List<LayoutToken> refTokens,
+                                             List<Table> tables,
+                                             boolean generateCoordinates) {
+        if (text == null || text.trim().isEmpty() || tables == null) {
             return null;
-        if (text.trim().length() == 0)
-            return text;
-        if (tables == null)
-            return text;
-        String coords = null;
-        if (generateCoordinates)
-            coords = LayoutTokensUtil.getCoordsString(refTokens);
-        if (coords == null) {
-            coords = "";
-        } else {
-            coords = "coords=\"" + coords + "\"";
         }
+
+        List<Node> nodes = new ArrayList<>();
+
         String textLow = text.toLowerCase();
         String bestTable = null;
         for (Table table : tables) {
             if ((table.getId() != null) &&
                     (table.getId().length() > 0) &&
-                    (textLow.indexOf(table.getId().toLowerCase()) != -1)) {
+                    (textLow.contains(table.getId().toLowerCase()))) {
                 bestTable = table.getId();
                 break;
             }
         }
 
-        text = TextUtilities.HTMLEncode(text).replace("\n", " ").trim();
-        if (bestTable != null) {
-            text = "<ref type=\"table\" target=\"#tab_" + bestTable + "\" " + coords + ">" + text + "</ref>";
-        } else {
-            text = "<ref type=\"table\">" + text + "</ref>";
+        text = text.replace("\n", " ").trim();
+
+        String coords = null;
+        if (generateCoordinates && refTokens != null) {
+            coords = LayoutTokensUtil.getCoordsString(refTokens);
         }
-        return text;
+
+        Element ref = teiElement("ref");
+        ref.addAttribute(new Attribute("type", "figure"));
+
+        if (coords != null) {
+            ref.addAttribute(new Attribute("coords", coords));
+        }
+        ref.appendChild(text);
+        if (bestTable != null) {
+            ref.addAttribute(new Attribute("target", "#tab_" + bestTable));
+        }
+        nodes.add(ref);
+        return nodes;
+
+//        if (bestTable != null) {
+//            text = "<ref type=\"table\" target=\"#tab_" + bestTable + "\" " + coords + ">" + text + "</ref>";
+//        } else {
+//            text = "<ref type=\"table\">" + text + "</ref>";
+//        }
+//        return text;
     }
 
     private String normalizeText(String localText) {
