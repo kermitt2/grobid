@@ -136,7 +136,7 @@ public class ReferenceMarkerMatcher {
             return matchNumberedCitation(text, refTokens);
         } else {
             cntManager.i(Counters.STYLE_OTHER);
-            LOGGER.info("Other style: " + text);
+//            LOGGER.info("Other style: " + text);
             return Collections.singletonList(new MatchResult(text, refTokens, null));
         }
     }
@@ -187,6 +187,8 @@ public class ReferenceMarkerMatcher {
     private static List<Pair<String, List<LayoutToken>>> getNumberedLabels(List<LayoutToken> layoutTokens) {
         List<List<LayoutToken>> split = LayoutTokensUtil.split(layoutTokens, NUMBERED_CITATIONS_SPLIT_PATTERN, true);
         List<Pair<String, List<LayoutToken>>> res = new ArrayList<>();
+        // return [ ] or () depending on (1 - 2) or [3-5])
+        Pair<Character, Character> wrappingSymbols = getWrappingSymbols(split.get(0));
         for (List<LayoutToken> s : split) {
             int minusPos = LayoutTokensUtil.tokenPos(s, DASH_PATTERN);
             if (minusPos < 0) {
@@ -214,7 +216,7 @@ public class ReferenceMarkerMatcher {
                                 tokPtr = Collections.singletonList(minusTok);
                             }
 
-                            res.add(new Pair<>(String.valueOf(i), tokPtr));
+                            res.add(new Pair<>(wrappingSymbols.a + String.valueOf(i) + wrappingSymbols.b, tokPtr));
                         }
                     }
                 } catch (Exception e) {
@@ -224,6 +226,21 @@ public class ReferenceMarkerMatcher {
             }
         }
         return res;
+    }
+
+    private static Pair<Character, Character> getWrappingSymbols(List<LayoutToken> layoutTokens) {
+        for (LayoutToken t : layoutTokens) {
+            if (LayoutTokensUtil.spaceyToken(t.t())) {
+                continue;
+            }
+            if (t.t().equals("(")) {
+                return new Pair<>('(', ')');
+            } else {
+                return new Pair<>('[', ']');
+            }
+        }
+
+        return new Pair<>('[', ']');
     }
 
     private List<MatchResult> matchAuthorCitation(String text, List<LayoutToken> refTokens) throws EntityMatcherException {
