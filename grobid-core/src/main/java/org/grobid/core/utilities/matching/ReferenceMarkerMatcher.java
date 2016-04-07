@@ -167,16 +167,16 @@ public class ReferenceMarkerMatcher {
                 cntManager.i(Counters.UNMATCHED_REF_MARKERS);
                 if (matches.size() != 0) {
                     cntManager.i(Counters.MANY_CANDIDATES);
-                    LOGGER.info("MANY CANDIDATES: " + input + "\n" + text + "\n");
+//                    LOGGER.info("MANY CANDIDATES: " + input + "\n" + text + "\n");
                     for (BibDataSet bds : matches) {
                         LOGGER.info("  " + bds.getRawBib());
                     }
 
-                    LOGGER.info("----------");
+//                    LOGGER.info("----------");
                 } else {
                     cntManager.i(Counters.NO_CANDIDATES);
-                    LOGGER.info("NO CANDIDATES: " + text + "\n" + text);
-                    LOGGER.info("++++++++++++");
+//                    LOGGER.info("NO CANDIDATES: " + text + "\n" + text);
+//                    LOGGER.info("++++++++++++");
                 }
                 results.add(new MatchResult(text, labelToks, null));
             }
@@ -255,19 +255,19 @@ public class ReferenceMarkerMatcher {
                             cntManager.i(Counters.NO_CANDIDATES_AFTER_POST_FILTERING);
                         } else {
                             cntManager.i(Counters.MANY_CANDIDATES_AFTER_POST_FILTERING);
-                            LOGGER.info("MANY CANDIDATES: " + text + "\n-----\n" + c + "\n");
+//                            LOGGER.info("MANY CANDIDATES: " + text + "\n-----\n" + c + "\n");
                             for (BibDataSet bds : matches) {
                                 LOGGER.info("+++++");
                                 LOGGER.info("  " + bds.getRawBib());
                             }
-                            LOGGER.info("===============");
+//                            LOGGER.info("===============");
                         }
                     }
                 } else {
                     results.add(new MatchResult(c, splitItem, null));
                     cntManager.i(Counters.NO_CANDIDATES);
-                    LOGGER.info("NO CANDIDATES: " + text + "\n" + c);
-                    LOGGER.info("++++++++++++");
+//                    LOGGER.info("NO CANDIDATES: " + text + "\n" + c);
+//                    LOGGER.info("++++++++++++");
                 }
             }
         }
