@@ -263,6 +263,9 @@ public class Figure {
 				}
 
 				go.addAttribute(new Attribute("type", graphicObject.getType().name().toLowerCase()));
+				if (graphicObject.isMask()) {
+					go.addAttribute(new Attribute("mask", "true"));
+				}
 				figureElement.appendChild(go);
 			}
 		}

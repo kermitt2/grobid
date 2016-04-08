@@ -19,7 +19,9 @@ public class GraphicObject {
     private int blockNumber = -1;
 
     private BoundingBox boundingBox = null;
-    
+
+    private boolean mask = false;
+
     // in case of vector image, we don't have a boundingBox from pdf2xml, simply the page information
     private int page = -1;
     
@@ -195,5 +197,13 @@ public class GraphicObject {
 
     public void setUsed(boolean used) {
         this.used = used;
+    }
+
+    public boolean isMask() {
+        return mask;
+    }
+
+    public void setMask(boolean mask) {
+        this.mask = mask;
     }
 }
