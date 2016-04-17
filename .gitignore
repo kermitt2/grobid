@@ -48,3 +48,8 @@ grobid-trainer/maven-build.xml
 maven-build.xml
 
 release.properties
+
+grobid-quantities
+grobid-ner
+grobid-home/models/quantities/
+grobid-home/models/units/
