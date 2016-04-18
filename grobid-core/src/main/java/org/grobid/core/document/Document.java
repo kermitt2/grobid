@@ -139,6 +139,7 @@ public class Document {
             .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
     private List<Figure> figures;
     private Predicate<GraphicObject> validGraphicObjectPredicate;
+    private int m;
 
     public Document(DocumentSource documentSource) {
         top = new DocumentNode("top", "0");
@@ -1638,14 +1639,71 @@ public class Document {
     private void recalculateVectorBoxCoords(Figure f, GraphicObject g) {
 
         //TODO: make it robust - now super simplistic
-        BoundingBox fb = BoundingBoxCalculator.calculateOneBox(f.getLayoutTokens(), true);
-        BoundingBox gb = g.getBoundingBox();
 
-        if (fb.intersect(gb)) {
-            if (gb.getY() < fb.getY() - 5) {
-                g.setBoundingBox(BoundingBox.fromTwoPoints(gb.getPage(), gb.getX(), gb.getY(), gb.getX2(), fb.getY() - 5));
+        BoundingBox captionBox = BoundingBoxCalculator.calculateOneBox(f.getLayoutTokens(), true);
+        BoundingBox originalGoBox = g.getBoundingBox();
+        if (captionBox.intersect(originalGoBox)) {
+            int p = originalGoBox.getPage();
+
+            double cx1 = captionBox.getX();
+            double cx2 = captionBox.getX2();
+            double cy1 = captionBox.getY();
+            double cy2 = captionBox.getY2();
+
+            double fx1 = originalGoBox.getX();
+            double fx2 = originalGoBox.getX2();
+            double fy1 = originalGoBox.getY();
+            double fy2 = originalGoBox.getY2();
+
+
+            m = 5;
+            BoundingBox bestBox = null;
+            try {
+                //if caption is on the bottom
+                BoundingBox bottomArea = BoundingBox.fromTwoPoints(p, fx1, fy1, fx2, cy1 - m);
+                bestBox = bottomArea;
+            } catch (Exception e) {
+                // no op
+            }
+
+            try {
+                // caption is on the right
+                BoundingBox rightArea = BoundingBox.fromTwoPoints(p, fx1, fy1, cx1 - m, fy2);
+                if (bestBox == null || rightArea.area() > bestBox.area()) {
+                    bestBox = rightArea;
+                }
+            } catch (Exception e) {
+                //no op
+            }
+
+            try {
+                BoundingBox topArea = BoundingBox.fromTwoPoints(p, fx1, cy2 + m, fx2, fy2);
+                if (bestBox == null || topArea.area() > bestBox.area()) {
+                    bestBox = topArea;
+                }
+            } catch (Exception e) {
+                //no op
+            }
+
+            try {
+                BoundingBox leftArea = BoundingBox.fromTwoPoints(p, cx2 + m, fy1, fx2, fy2);
+                if (bestBox == null || leftArea.area() > bestBox.area()) {
+                    bestBox = leftArea;
+                }
+            } catch (Exception e) {
+                //no op
+            }
+
+            if (bestBox != null && bestBox.area() > 600) {
+                g.setBoundingBox(bestBox);
             }
         }
+
+//        if (captionBox.intersect(originalGoBox)) {
+//            if (originalGoBox.getY() < captionBox.getY() - 5) {
+//                g.setBoundingBox(BoundingBox.fromTwoPoints(p, originalGoBox.getX(), originalGoBox.getY(), originalGoBox.getX2(), captionBox.getY() - 5));
+//            }
+//        }
 
     }
 
@@ -1658,7 +1716,7 @@ public class Document {
 
             Block figBlock = getBlocks().get(blockPtr);
             String norm = LayoutTokensUtil.toText(figBlock.getTokens()).trim().toLowerCase();
-            if (norm.startsWith("fig") || norm.startsWith("abb")) {
+            if (norm.startsWith("fig") || norm.startsWith("abb") || norm.startsWith("scheme")) {
                 result.addAll(figBlock.getTokens());
 
                 while (it.hasNext()) {

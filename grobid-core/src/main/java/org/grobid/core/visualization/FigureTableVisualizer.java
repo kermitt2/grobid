@@ -58,8 +58,12 @@ public class FigureTableVisualizer {
 
 
 //            File input = new File("/Users/zholudev/Downloads/AS-102952320634884@1401557154467_content_1.pdf");
-            File input = new File("/Users/zholudev/Downloads/AS-328608011833344@1455357663088_content_1.pdf");
-//            File input = new File("/Users/zholudev/Downloads/AS-334144056905730@1456677559953_content_1.pdf");
+
+//            File input = new File("/Users/zholudev/Downloads/AS-328608011833344@1455357663088_content_1.pdf");
+            File input = new File("/Users/zholudev/Downloads/AS-351355282706432@1460781035600_content_1.pdf");
+//
+//
+// File input = new File("/Users/zholudev/Downloads/AS-334144056905730@1456677559953_content_1.pdf");
 //
 //
 //            File input = new File("/Work/temp/figureExtraction/1.pdf");
