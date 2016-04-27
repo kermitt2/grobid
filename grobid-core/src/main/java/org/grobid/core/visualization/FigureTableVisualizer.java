@@ -60,7 +60,10 @@ public class FigureTableVisualizer {
 //            File input = new File("/Users/zholudev/Downloads/AS-102952320634884@1401557154467_content_1.pdf");
 
 //            File input = new File("/Users/zholudev/Downloads/AS-328608011833344@1455357663088_content_1.pdf");
-            File input = new File("/Users/zholudev/Downloads/AS-351355282706432@1460781035600_content_1.pdf");
+
+
+//            File input = new File("/Users/zholudev/Downloads/AS-355068814610434@1461666410721_content_1.pdf");
+            File input = new File("/Users/zholudev/Downloads/AS-301642189688834@1448928510544_content_1.pdf");
 //
 //
 // File input = new File("/Users/zholudev/Downloads/AS-334144056905730@1456677559953_content_1.pdf");
@@ -84,7 +87,7 @@ public class FigureTableVisualizer {
 
 //  File input = new File("//Users/zholudev/Downloads/TIA_2011_Partie8.pdf"); //
 
-            processPdfFile(input, null);
+//            processPdfFile(input, null);
 
             // "AS_97204878446614_1400186857444.pdf" //annotated twice
             //AS_103608674684939_1401713641754.pdf - vector graphics
@@ -106,18 +109,18 @@ public class FigureTableVisualizer {
             // AS_98989504466949_1400612345795.pdf - wrong vector image cut
 
 //            List<Path> allPaths = PathUtil.getAllPaths(Paths.get("/Volumes/teams/common/Niall/habibi_pdfs"), "pdf");
-//            List<Path> allPaths = PathUtil.getAllPaths(Paths.get("/Work/temp/context/1000k"), "pdf");
+            List<Path> allPaths = PathUtil.getAllPaths(Paths.get("/Work/temp/context/1000k"), "pdf");
 //
-//            singleFile = false;
-//            System.out.println("Processing " + allPaths.size());
-//            for (Path p : allPaths) {
-//                try {
-//                    processPdfFile(p.toFile(), new File("/Work/temp/figureExtraction/out1000k_5"));
-//                } catch (Exception e) {
-//                    Engine.getCntManager().i("EXCEPTIONS", e.getClass().getSimpleName());
-//                    e.printStackTrace();
-//                }
-//            }
+            singleFile = false;
+            System.out.println("Processing " + allPaths.size());
+            for (Path p : allPaths) {
+                try {
+                    processPdfFile(p.toFile(), new File("/Work/temp/figureExtraction/out1000k_6"));
+                } catch (Exception e) {
+                    Engine.getCntManager().i("EXCEPTIONS", e.getClass().getSimpleName());
+                    e.printStackTrace();
+                }
+            }
 
 
             System.out.println(Engine.getCntManager());
