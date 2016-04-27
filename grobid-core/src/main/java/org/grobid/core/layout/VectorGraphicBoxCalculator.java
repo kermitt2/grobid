@@ -24,6 +24,8 @@ import java.util.List;
  */
 public class VectorGraphicBoxCalculator {
 
+    public static final int MINIMUM_VECTOR_BOX_AREA = 1000;
+
     public static Multimap<Integer, GraphicObject> calculate(Document document) throws IOException, XPathException {
 
         Multimap<Integer, Block> blockMultimap = HashMultimap.create();
@@ -76,9 +78,18 @@ public class VectorGraphicBoxCalculator {
 
             remainingBoxes = mergeBoxes(remainingBoxes);
 
+            boolean hasSmallBoxes = false;
             for (BoundingBox b : remainingBoxes) {
-                result.put(pageNum, new GraphicObject(b, GraphicObjectType.VECTOR_BOX));
+                if (b.area() > MINIMUM_VECTOR_BOX_AREA) {
+                    result.put(pageNum, new GraphicObject(b, GraphicObjectType.VECTOR_BOX));
+                } else {
+                    hasSmallBoxes = true;
+                }
             }
+
+//            if (!hasSmallBoxes) {
+//                throw new IllegalStateException("Not interested");
+//            }
 //            result.putAll(pageNum, remainingBoxes);
 
 //            for (BoundingBox b : remainingBoxes) {
@@ -91,7 +102,7 @@ public class VectorGraphicBoxCalculator {
     }
 
 
-    private static List<BoundingBox> mergeBoxes(List<BoundingBox> boxes) {
+    public static List<BoundingBox> mergeBoxes(List<BoundingBox> boxes) {
         boolean allMerged = false;
         while (!allMerged) {
             allMerged = true;
