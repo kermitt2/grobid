@@ -142,6 +142,10 @@ public class AnnotationUtil {
 //        return 1;
     }
 
+    public static String getCoordString(BoundingBox b) {
+        return b.getPage() + "," + b.getX() + "," + b.getY() + "," + b.getWidth() + "," + b.getHeight();
+    }
+
     public static String getCoordString(int page, double x, double y, double w, double h) {
         return page + "," + x + "," + y + "," + w + "," + h;
     }

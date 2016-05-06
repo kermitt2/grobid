@@ -9,9 +9,11 @@ import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
+import javafx.scene.control.Tab;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Figure;
+import org.grobid.core.data.Table;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
@@ -140,6 +142,7 @@ public class Document {
     private List<Figure> figures;
     private Predicate<GraphicObject> validGraphicObjectPredicate;
     private int m;
+    private List<Table> tables;
 
     public Document(DocumentSource documentSource) {
         top = new DocumentNode("top", "0");
@@ -1462,9 +1465,61 @@ public class Document {
         return images;
     }
 
+    // deal with false positives, with footer stuff, etc.
+    public void postProcessTables() {
+        for (Table table : tables) {
+            if (!table.firstCheck()) {
+                continue;
+            }
+
+            // cleaning up tokens
+            List<LayoutToken> fullDescResult = new ArrayList<>();
+            BoundingBox curBox = BoundingBox.fromLayoutToken(table.getFullDescriptionTokens().get(0));
+            int distanceThreshold = 200;
+            for (LayoutToken fdt : table.getFullDescriptionTokens()) {
+                BoundingBox b = BoundingBox.fromLayoutToken(fdt);
+                if (b.getX() < 0) {
+                    fullDescResult.add(fdt);
+                    continue;
+                }
+                if (b.distanceTo(curBox) > distanceThreshold) {
+                    Engine.getCntManager().i(Table.TableRejectionCounters.HEADER_NOT_CONSECUTIVE);
+                    table.setGoodTable(false);
+                    break;
+                } else {
+                    curBox = curBox.boundBox(b);
+                    fullDescResult.add(fdt);
+                }
+            }
+            table.getFullDescriptionTokens().clear();
+            table.getFullDescriptionTokens().addAll(fullDescResult);
+
+            List<LayoutToken> contentResult = new ArrayList<>();
+
+            curBox = BoundingBox.fromLayoutToken(table.getContentTokens().get(0));
+            for (LayoutToken fdt : table.getContentTokens()) {
+                BoundingBox b = BoundingBox.fromLayoutToken(fdt);
+                if (b.getX() < 0) {
+                    contentResult.add(fdt);
+                    continue;
+                }
+
+                if (b.distanceTo(curBox) > distanceThreshold) {
+                    break;
+                } else {
+                    curBox = curBox.boundBox(b);
+                    contentResult.add(fdt);
+                }
+            }
+            table.getContentTokens().clear();
+            table.getContentTokens().addAll(contentResult);
+
+            table.secondCheck();
+        }
+    }
+
     public void assignGraphicObjectsToFigures() {
         Multimap<Integer, Figure> figureMap = HashMultimap.create();
-
 
         for (Figure f : figures) {
             figureMap.put(f.getPage(), f);
@@ -1473,8 +1528,6 @@ public class Document {
         for (Integer pageNum : figureMap.keySet()) {
             List<Figure> pageFigures = new ArrayList<>();
             for (Figure f : figureMap.get(pageNum)) {
-
-
                 List<LayoutToken> realCaptionTokens = getFigureLayoutTokens(f);
                 if (realCaptionTokens != null && !realCaptionTokens.isEmpty()) {
                     f.setLayoutTokens(realCaptionTokens);
@@ -1482,17 +1535,6 @@ public class Document {
                     f.setCaption(new StringBuilder(TextUtilities.dehyphenize(LayoutTokensUtil.toText(realCaptionTokens))));
                     pageFigures.add(f);
                 }
-
-                //too simplictic
-//                for (Integer blockPtr : f.getBlockPtrs()) {
-//                    Block figBlock = getBlocks().get(blockPtr);
-//                    if (LayoutTokensUtil.toText(figBlock.getTokens()).trim().toLowerCase().startsWith("fig")) {
-//                        f.setLayoutTokens(figBlock.getTokens());
-//                        f.setCaption(new StringBuilder(TextUtilities.dehyphenize(LayoutTokensUtil.toText(figBlock.getTokens()))));
-//                        pageFigures.add(f);
-//                        break;
-//                    }
-//                }
             }
 
             if (pageFigures.isEmpty()) {
@@ -1940,5 +1982,13 @@ public class Document {
 
     public List<Figure> getFigures() {
         return figures;
+    }
+
+    public void setTables(List<Table> tables) {
+        this.tables = tables;
+    }
+
+    public List<Table> getTables() {
+        return tables;
     }
 }
