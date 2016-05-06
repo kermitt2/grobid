@@ -9,7 +9,6 @@ import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
-import javafx.scene.control.Tab;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Figure;
