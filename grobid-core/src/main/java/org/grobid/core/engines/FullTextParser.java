@@ -41,9 +41,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
@@ -1330,112 +1328,113 @@ public class FullTextParser extends AbstractParser {
 		doc.assignGraphicObjectsToFigures();
         return results;
     }
+
     /**
      * Process figures identified by the full text model
      */
-    private List<Figure> processFiguresOld(String rese,
-										List<LayoutToken> tokenizations,
-										Document doc) {
-    	List<Figure> results = new ArrayList<Figure>();
-    	if ( (tokenizations == null) || (tokenizations.size() == 0) )
-    		return results;
-    	// identify figure blocks
-    	StringTokenizer st1 = new StringTokenizer(rese, "\n");
-    	boolean openFigure = false;
-    	StringBuilder figureBlock = new StringBuilder();
-    	List<LayoutToken> tokenizationsFigure = new ArrayList<LayoutToken>();
-    	List<LayoutToken> tokenizationsBuffer = null;
-    	int p = 0; // position in tokenizations
-    	int i = 0;
-    	while(st1.hasMoreTokens()) {
-    		String row = st1.nextToken();
-    		String[] s = row.split("\t");
-    		String s0 = s[0].trim();
-			int p0 = p;
-            boolean strop = false;
-            tokenizationsBuffer = new ArrayList<LayoutToken>();
-            while ((!strop) && (p < tokenizations.size())) {
-                String tokOriginal = tokenizations.get(p).getText().trim();
-                if (openFigure)
-                	tokenizationsFigure.add(tokenizations.get(p));
-                tokenizationsBuffer.add(tokenizations.get(p));
-                if (tokOriginal.equals(s0)) {
-                    strop = true;
-                }
-                p++;
-            }
-			if (p == tokenizations.size()) {
-				// either we are at the end of the header, or we might have
-				// a problematic token in tokenization for some reasons
-				if ((p - p0) > 2) {
-					// we loose the synchronicity, so we reinit p for the next token
-					p = p0;
-					continue;
-				}
-			}
-
-    		int ll = s.length;
-    		String label = s[ll-1];
-    		String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-    		if (label.equals("<figure>") || (label.equals("I-<figure>") && !openFigure)) {
-    			if (!openFigure) {
-    				for(LayoutToken lTok : tokenizationsBuffer) {
-    					tokenizationsFigure.add(lTok);
-    				}
-    				openFigure = true;
-    				i = p;
-    			}
-    			// we remove the label in the CRF row
-    			int ind = row.lastIndexOf("\t");
-    			if (ind == -1)
-    				ind = row.lastIndexOf(" ");
-    			figureBlock.append(row.substring(0, ind)).append("\n");
-    		}
-    		else if (label.equals("I-<figure>") || openFigure) {
-    			// remove last token
-    			if (tokenizationsFigure.size() > 0) {
-    				int nbToRemove = tokenizationsBuffer.size();
-    				for(int q=0; q<nbToRemove; q++)
-		    			tokenizationsFigure.remove(tokenizationsFigure.size()-1);
-	    		}
-	    		//adjustment
-	    		if ((p != tokenizations.size()) && (tokenizations.get(p).getText().equals("\n") ||
-	    											tokenizations.get(p).getText().equals("\r") ||
-	    											tokenizations.get(p).getText().equals(" ")) ) {
-	    			tokenizationsFigure.add(tokenizations.get(p));
-	    			p++;
-	    		}
-    			while((tokenizationsFigure.size() > 0) &&
-    				(tokenizationsFigure.get(0).getText().equals("\n") ||
-    					tokenizationsFigure.get(0).getText().equals(" ")) )
-    				tokenizationsFigure.remove(0);
-
-    			// parse the recognized figure area
-//System.out.println(tokenizationsFigure.toString());
-//System.out.println(figureBlock.toString()); 
-	    		if ( (i < tokenizations.size()) && (p < tokenizations.size()) ) {
-	    			Figure result = parsers.getFigureParser().processing(tokenizationsFigure, figureBlock.toString());
-	    			result.setStart(i);
-	    			result.setStartToken(tokenizations.get(i));
-	    			result.setEnd(p);
-	    			result.setEndToken(tokenizations.get(p));
-	    			result.setPage(tokenizations.get(i).getPage());
-	    			//doc.setConnectedGraphics2(result, tokenizations, doc);
-					doc.setConnectedGraphics2(result);
-	//System.out.println(result.toString());
-	    			tokenizationsFigure = new ArrayList<LayoutToken>();
-					results.add(result);
-					result.setId(""+(results.size()-1));
-				}
-    			figureBlock = new StringBuilder();
-    			openFigure = false;
-    		}
-    		else
-    			openFigure = false;
-    	}
-		doc.setFigures(results);
-    	return results;
-    }
+//    private List<Figure> processFiguresOld(String rese,
+//										List<LayoutToken> tokenizations,
+//										Document doc) {
+//    	List<Figure> results = new ArrayList<Figure>();
+//    	if ( (tokenizations == null) || (tokenizations.size() == 0) )
+//    		return results;
+//    	// identify figure blocks
+//    	StringTokenizer st1 = new StringTokenizer(rese, "\n");
+//    	boolean openFigure = false;
+//    	StringBuilder figureBlock = new StringBuilder();
+//    	List<LayoutToken> tokenizationsFigure = new ArrayList<LayoutToken>();
+//    	List<LayoutToken> tokenizationsBuffer = null;
+//    	int p = 0; // position in tokenizations
+//    	int i = 0;
+//    	while(st1.hasMoreTokens()) {
+//    		String row = st1.nextToken();
+//    		String[] s = row.split("\t");
+//    		String s0 = s[0].trim();
+//			int p0 = p;
+//            boolean strop = false;
+//            tokenizationsBuffer = new ArrayList<LayoutToken>();
+//            while ((!strop) && (p < tokenizations.size())) {
+//                String tokOriginal = tokenizations.get(p).getText().trim();
+//                if (openFigure)
+//                	tokenizationsFigure.add(tokenizations.get(p));
+//                tokenizationsBuffer.add(tokenizations.get(p));
+//                if (tokOriginal.equals(s0)) {
+//                    strop = true;
+//                }
+//                p++;
+//            }
+//			if (p == tokenizations.size()) {
+//				// either we are at the end of the header, or we might have
+//				// a problematic token in tokenization for some reasons
+//				if ((p - p0) > 2) {
+//					// we loose the synchronicity, so we reinit p for the next token
+//					p = p0;
+//					continue;
+//				}
+//			}
+//
+//    		int ll = s.length;
+//    		String label = s[ll-1];
+//    		String plainLabel = GenericTaggerUtils.getPlainLabel(label);
+//    		if (label.equals("<figure>") || (label.equals("I-<figure>") && !openFigure)) {
+//    			if (!openFigure) {
+//    				for(LayoutToken lTok : tokenizationsBuffer) {
+//    					tokenizationsFigure.add(lTok);
+//    				}
+//    				openFigure = true;
+//    				i = p;
+//    			}
+//    			// we remove the label in the CRF row
+//    			int ind = row.lastIndexOf("\t");
+//    			if (ind == -1)
+//    				ind = row.lastIndexOf(" ");
+//    			figureBlock.append(row.substring(0, ind)).append("\n");
+//    		}
+//    		else if (label.equals("I-<figure>") || openFigure) {
+//    			// remove last token
+//    			if (tokenizationsFigure.size() > 0) {
+//    				int nbToRemove = tokenizationsBuffer.size();
+//    				for(int q=0; q<nbToRemove; q++)
+//		    			tokenizationsFigure.remove(tokenizationsFigure.size()-1);
+//	    		}
+//	    		//adjustment
+//	    		if ((p != tokenizations.size()) && (tokenizations.get(p).getText().equals("\n") ||
+//	    											tokenizations.get(p).getText().equals("\r") ||
+//	    											tokenizations.get(p).getText().equals(" ")) ) {
+//	    			tokenizationsFigure.add(tokenizations.get(p));
+//	    			p++;
+//	    		}
+//    			while((tokenizationsFigure.size() > 0) &&
+//    				(tokenizationsFigure.get(0).getText().equals("\n") ||
+//    					tokenizationsFigure.get(0).getText().equals(" ")) )
+//    				tokenizationsFigure.remove(0);
+//
+//    			// parse the recognized figure area
+////System.out.println(tokenizationsFigure.toString());
+////System.out.println(figureBlock.toString());
+//	    		if ( (i < tokenizations.size()) && (p < tokenizations.size()) ) {
+//	    			Figure result = parsers.getFigureParser().processing(tokenizationsFigure, figureBlock.toString());
+//	    			result.setStart(i);
+//	    			result.setStartToken(tokenizations.get(i));
+//	    			result.setEnd(p);
+//	    			result.setEndToken(tokenizations.get(p));
+//	    			result.setPage(tokenizations.get(i).getPage());
+//	    			//doc.setConnectedGraphics2(result, tokenizations, doc);
+//					doc.setConnectedGraphics2(result);
+//	//System.out.println(result.toString());
+//	    			tokenizationsFigure = new ArrayList<LayoutToken>();
+//					results.add(result);
+//					result.setId(""+(results.size()-1));
+//				}
+//    			figureBlock = new StringBuilder();
+//    			openFigure = false;
+//    		}
+//    		else
+//    			openFigure = false;
+//    	}
+//		doc.setFigures(results);
+//    	return results;
+//    }
 
     /**
      * Create training data for the figures as identified by the full text model.
@@ -1560,105 +1559,143 @@ public class FullTextParser extends AbstractParser {
     private List<Table> processTables(String rese,
 									List<LayoutToken> tokenizations,
 									Document doc) {
-    	List<Table> results = new ArrayList<Table>();
-    	if ( (tokenizations == null) || (tokenizations.size() == 0) )
-    		return results;
-    	// identify table blocks
-    	StringTokenizer st1 = new StringTokenizer(rese, "\n");
-    	boolean openTable = false;
-    	StringBuilder tableBlock = new StringBuilder();
-    	List<LayoutToken> tokenizationsTable = new ArrayList<LayoutToken>();
-    	List<LayoutToken> tokenizationsBuffer = null;
-    	int p = 0; // position in tokenizations
-    	int i = 0;
-    	while(st1.hasMoreTokens()) {
-    		String row = st1.nextToken();
-    		String[] s = row.split("\t");
-    		String s0 = s[0].trim();
-//System.out.println(s0 + "\t" + tokenizations.get(p).getText().trim());
-			int p0 = p;
-            boolean strop = false;
-            tokenizationsBuffer = new ArrayList<LayoutToken>();
-            while ((!strop) && (p < tokenizations.size())) {
-                String tokOriginal = tokenizations.get(p).getText().trim();
-                if (openTable)
-                	tokenizationsTable.add(tokenizations.get(p));
-                tokenizationsBuffer.add(tokenizations.get(p));
-                if (tokOriginal.equals(s0)) {
-                    strop = true;
-                }
-                p++;
-            }
-			if (p == tokenizations.size()) {
-				// either we are at the end of the header, or we might have
-				// a problematic token in tokenization for some reasons
-				if ((p - p0) > 2) {
-					// we loose the synchronicity, so we reinit p for the next token
-					p = p0;
-					continue;
+		List<Table> results = new ArrayList<>();
+		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
+
+		for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
+				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabel.TABLE))) {
+			List<LayoutToken> tokenizationTable = cluster.concatTokens();
+			Table result = parsers.getTableParser().processing(
+					tokenizationTable,
+					cluster.getFeatureBlock()
+			);
+
+			SortedSet<Integer> blockPtrs = new TreeSet<>();
+			for (LayoutToken lt : tokenizationTable) {
+				if (!LayoutTokensUtil.spaceyToken(lt.t())) {
+					blockPtrs.add(lt.getBlockPtr());
 				}
 			}
+			result.setBlockPtrs(blockPtrs);
+			result.setLayoutTokens(tokenizationTable);
 
-    		int ll = s.length;
-    		String label = s[ll-1];
-    		String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-    		if (label.equals("<table>") || (label.equals("I-<table>") && !openTable)) {
-    			if (!openTable) {
-    				for(LayoutToken lTok : tokenizationsBuffer) {
-    					tokenizationsTable.add(lTok);
-    				}
-    				openTable = true;
-    				i = p;
-    			}
-    			// we remove the label in the CRF row
-    			int ind = row.lastIndexOf("\t");
-    			if (ind == -1)
-    				ind = row.lastIndexOf(" ");
-    			tableBlock.append(row.substring(0, ind)).append("\n");
-    		}
-    		else if (label.equals("I-<table>") || openTable) {
-    			// remove last token
-    			if (tokenizationsTable.size() > 0) {
-    				int nbToRemove = tokenizationsBuffer.size();
-    				for(int q=0; q<nbToRemove; q++)
-		    			tokenizationsTable.remove(tokenizationsTable.size()-1);
-	    		}
-
-	    		//adjustment
-	    		if ((p != tokenizations.size()) && (tokenizations.get(p).getText().equals("\n") ||
-	    											tokenizations.get(p).getText().equals("\r") ||
-	    											tokenizations.get(p).getText().equals(" ")) ) {
-	    			tokenizationsTable.add(tokenizations.get(p));
-	    			p++;
-	    		}
-    			while( (tokenizationsTable.size() > 0) &&
-    					(tokenizationsTable.get(0).getText().equals("\n") ||
-    					tokenizationsTable.get(0).getText().equals(" ")) )
-    				tokenizationsTable.remove(0);
-    			// parse the recognized table area
-//System.out.println(tokenizationsTable.toString());
-//System.out.println(tableBlock.toString());
-	    		if ( (i < tokenizations.size()) && (p < tokenizations.size()) ) {
-	    			Table result = parsers.getTableParser().processing(tokenizationsTable, tableBlock.toString());
-	    			result.setStart(i);
-	    			result.setStartToken(tokenizations.get(i));
-	    			result.setEnd(p);
-	    			result.setEndToken(tokenizations.get(p));
-	    			result.setPage(tokenizations.get(i).getPage());
-					Document.setConnectedGraphics(result, tokenizations, doc);
-	//System.out.println(result.toString());
-	    			tokenizationsTable = new ArrayList<>();
-					results.add(result);
-					result.setId(""+(results.size()-1));
+			// the first token could be a space from previous page
+			for (LayoutToken lt : tokenizationTable) {
+				if (!LayoutTokensUtil.spaceyToken(lt.t())) {
+					result.setPage(lt.getPage());
+					break;
 				}
-    			tableBlock = new StringBuilder();
-    			openTable = false;
-    		}
-    		else
-    			openTable = false;
-    	}
-    	return results;
-    }
+			}
+			results.add(result);
+			result.setId("" + (results.size() - 1));
+		}
+
+		doc.setTables(results);
+		doc.postProcessTables();
+
+		return results;
+
+
+//		List<Table> results = new ArrayList<Table>();
+//    	if ( (tokenizations == null) || (tokenizations.size() == 0) )
+//    		return results;
+//    	// identify table blocks
+//    	StringTokenizer st1 = new StringTokenizer(rese, "\n");
+//    	boolean openTable = false;
+//    	StringBuilder tableBlock = new StringBuilder();
+//    	List<LayoutToken> tokenizationsTable = new ArrayList<LayoutToken>();
+//    	List<LayoutToken> tokenizationsBuffer = null;
+//    	int p = 0; // position in tokenizations
+//    	int i = 0;
+//    	while(st1.hasMoreTokens()) {
+//    		String row = st1.nextToken();
+//    		String[] s = row.split("\t");
+//    		String s0 = s[0].trim();
+////System.out.println(s0 + "\t" + tokenizations.get(p).getText().trim());
+//			int p0 = p;
+//            boolean strop = false;
+//            tokenizationsBuffer = new ArrayList<LayoutToken>();
+//            while ((!strop) && (p < tokenizations.size())) {
+//                String tokOriginal = tokenizations.get(p).getText().trim();
+//                if (openTable)
+//                	tokenizationsTable.add(tokenizations.get(p));
+//                tokenizationsBuffer.add(tokenizations.get(p));
+//                if (tokOriginal.equals(s0)) {
+//                    strop = true;
+//                }
+//                p++;
+//            }
+//			if (p == tokenizations.size()) {
+//				// either we are at the end of the header, or we might have
+//				// a problematic token in tokenization for some reasons
+//				if ((p - p0) > 2) {
+//					// we loose the synchronicity, so we reinit p for the next token
+//					p = p0;
+//					continue;
+//				}
+//			}
+//
+//    		int ll = s.length;
+//    		String label = s[ll-1];
+//    		String plainLabel = GenericTaggerUtils.getPlainLabel(label);
+//    		if (label.equals("<table>") || (label.equals("I-<table>") && !openTable)) {
+//    			if (!openTable) {
+//    				for(LayoutToken lTok : tokenizationsBuffer) {
+//    					tokenizationsTable.add(lTok);
+//    				}
+//    				openTable = true;
+//    				i = p;
+//    			}
+//    			// we remove the label in the CRF row
+//    			int ind = row.lastIndexOf("\t");
+//    			if (ind == -1)
+//    				ind = row.lastIndexOf(" ");
+//    			tableBlock.append(row.substring(0, ind)).append("\n");
+//    		}
+//    		else if (label.equals("I-<table>") || openTable) {
+//    			// remove last token
+//    			if (tokenizationsTable.size() > 0) {
+//    				int nbToRemove = tokenizationsBuffer.size();
+//    				for(int q=0; q<nbToRemove; q++)
+//		    			tokenizationsTable.remove(tokenizationsTable.size()-1);
+//	    		}
+//
+//	    		//adjustment
+//	    		if ((p != tokenizations.size()) && (tokenizations.get(p).getText().equals("\n") ||
+//	    											tokenizations.get(p).getText().equals("\r") ||
+//	    											tokenizations.get(p).getText().equals(" ")) ) {
+//	    			tokenizationsTable.add(tokenizations.get(p));
+//	    			p++;
+//	    		}
+//    			while( (tokenizationsTable.size() > 0) &&
+//    					(tokenizationsTable.get(0).getText().equals("\n") ||
+//    					tokenizationsTable.get(0).getText().equals(" ")) )
+//    				tokenizationsTable.remove(0);
+//    			// parse the recognized table area
+////System.out.println(tokenizationsTable.toString());
+////System.out.println(tableBlock.toString());
+//	    		if ( (i < tokenizations.size()) && (p < tokenizations.size()) ) {
+//	    			Table result = parsers.getTableParser().processing(tokenizationsTable, tableBlock.toString());
+//	    			result.setStart(i);
+//	    			result.setStartToken(tokenizations.get(i));
+//	    			result.setEnd(p);
+//	    			result.setEndToken(tokenizations.get(p));
+//	    			result.setPage(tokenizations.get(i).getPage());
+//					Document.setConnectedGraphics(result, tokenizations, doc);
+//	//System.out.println(result.toString());
+//	    			tokenizationsTable = new ArrayList<>();
+//					results.add(result);
+//					result.setId(""+(results.size()-1));
+//				}
+//    			tableBlock = new StringBuilder();
+//    			openTable = false;
+//    		}
+//    		else
+//    			openTable = false;
+//    	}
+//		doc.setTables(results);
+//    	return results;
+	}
 
  	/**
      * Create training data for the table as identified by the full text model.

@@ -49,6 +49,7 @@ public class BlockVisualizer {
             //small vector things in text
 
 //            File input = new File("/Users/zholudev/Downloads/AS-355068814610434@1461666410721_content_1.pdf");
+//            File input = new File("/Users/zholudev/Downloads/AS-347805261549578@1459934645097_content_1.pdf");
             File input = new File("/Users/zholudev/Downloads/AS-301642189688834@1448928510544_content_1.pdf");
 
 //
@@ -73,7 +74,7 @@ public class BlockVisualizer {
 
             Document teiDoc = engine.fullTextToTEIDoc(input, config);
 
-            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), teiDoc, false, true, true);
+            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), teiDoc, false, false, true);
 //            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), null);
 
             if (out != null) {
@@ -132,7 +133,7 @@ public class BlockVisualizer {
                 }
 
 
-//                AnnotationUtil.annotatePage(document, e.toString(), 3);
+                AnnotationUtil.annotatePage(document, e.toString(), 3);
 
                 boxes.add(e);
             }

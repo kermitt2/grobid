@@ -630,7 +630,7 @@ public class GrobidRestProcessFiles {
 					}
                     else if (type == GrobidRestUtils.Annotation.FIGURE) {
                         out = FigureTableVisualizer.annotateFigureAndTables(document, documentSource.getXmlFile(), 
-								teiDoc, true, true, true);
+								teiDoc, true, true, true, false);
 					}
                     GrobidPoolingFactory.returnEngine(engine);
                     engine = null;
@@ -647,7 +647,7 @@ public class GrobidRestProcessFiles {
 						}
 	                    else if (type == GrobidRestUtils.Annotation.FIGURE) {
 	                        out = FigureTableVisualizer.annotateFigureAndTables(document, documentSource.getXmlFile(), 
-									teiDoc, true, true, true);
+									teiDoc, true, true, true, false);
 						}
                     } 
                 }

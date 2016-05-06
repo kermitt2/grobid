@@ -185,4 +185,12 @@ public class LayoutTokensUtil {
         return Joiner.on(";").join(res);
     }
 
+    public static String getCoordsStringForOneBox(List<LayoutToken> toks) {
+        BoundingBox res = BoundingBoxCalculator.calculateOneBox(toks, true);
+        if (res == null) {
+            return null;
+        }
+        return res.toString();
+    }
+
 }

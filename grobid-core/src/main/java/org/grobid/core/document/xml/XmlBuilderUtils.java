@@ -77,7 +77,9 @@ public class XmlBuilderUtils {
     }
 
     public static void addCoords(Element el, String coords) {
-        el.addAttribute(new Attribute("coords", coords));
+        if (coords != null) {
+            el.addAttribute(new Attribute("coords", coords));
+        }
     }
 
     public static void addXmlId(Element el, String id) {

@@ -6,6 +6,7 @@ import net.sf.saxon.trans.XPathException;
 import org.apache.commons.io.FileUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.grobid.core.data.Figure;
+import org.grobid.core.data.Table;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.Engine;
@@ -14,6 +15,7 @@ import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.main.LibraryLoader;
+import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.PathUtil;
 import org.grobid.core.utilities.XQueryProcessor;
@@ -62,8 +64,29 @@ public class FigureTableVisualizer {
 //            File input = new File("/Users/zholudev/Downloads/AS-328608011833344@1455357663088_content_1.pdf");
 
 
-//            File input = new File("/Users/zholudev/Downloads/AS-355068814610434@1461666410721_content_1.pdf");
-            File input = new File("/Users/zholudev/Downloads/AS-301642189688834@1448928510544_content_1.pdf");
+            File input = new File("/Users/zholudev/Downloads/AS-241028400328704@1434477056964_content_1.pdf");
+
+            // TABLES
+//            File input = new File("/Users/zholudev/Downloads/AS-301642189688834@1448928510544_content_1.pdf");
+//            File input = new File("/Users/zholudev/Downloads/710973.pdf"); //big fancy tables
+//            File input = new File("/Users/zholudev/Downloads/AS-345110018576384@1459292048595_content_1.pdf"); // lots of stuff annotatted
+//            File input = new File("/Users/zholudev/Downloads/AS-351355282706432@1460781035600_content_1.pdf"); // 5 tables
+//            File input = new File("/Users/zholudev/Downloads/ICCCI 2014 - SciRecSys (1).pdf"); //
+
+//            File input = new File("//Work/temp/context/1000k/AS_97456738013192_1400246905951.pdf"); // some captions take too much
+//            File input = new File("//Work/temp/context/1000k/AS_97469140570124_1400249863029.pdf"); // some incorrect distribution between captions and content
+//            File input = new File("//Work/temp/context/1000k/AS_97469983625226_1400250064243.pdf"); // one table takes too much
+//            File input = new File("//Work/temp/context/1000k/AS_97492947439622_1400255538259.pdf"); //
+
+
+            //-------------
+
+                    //new chunk
+            // AS_101470770827287_1401203928712.pdf - weird table caption
+
+
+
+            // END - TABLES
 //
 //
 // File input = new File("/Users/zholudev/Downloads/AS-334144056905730@1456677559953_content_1.pdf");
@@ -75,7 +98,7 @@ public class FigureTableVisualizer {
 //            File input = new File("/Work/temp/context/1000k/AS_101478173773832_1401205691162.pdf");
 //            File input = new File("/Work/temp/context/1000k/AS_103455624531988_1401677151824.pdf");
 
-//            File input = new File("/Users/zholudev/Downloads/journal.pone.0146695.pdf");
+//            File input = new File("/Users/zholudev/Downloads/1603.02478v1.pdf");
 
             // VECTOR
 //            File input = new File("/Work/temp/figureExtraction/vector/6.pdf");
@@ -85,9 +108,9 @@ public class FigureTableVisualizer {
 
 //
 
-//  File input = new File("//Users/zholudev/Downloads/TIA_2011_Partie8.pdf"); //
+//            File input = new File("//Work/temp/context/1000k/AS_103486037430289_1401684402827.pdf"); //
 
-//            processPdfFile(input, null);
+            processPdfFile(input, null);
 
             // "AS_97204878446614_1400186857444.pdf" //annotated twice
             //AS_103608674684939_1401713641754.pdf - vector graphics
@@ -109,19 +132,19 @@ public class FigureTableVisualizer {
             // AS_98989504466949_1400612345795.pdf - wrong vector image cut
 
 //            List<Path> allPaths = PathUtil.getAllPaths(Paths.get("/Volumes/teams/common/Niall/habibi_pdfs"), "pdf");
-            List<Path> allPaths = PathUtil.getAllPaths(Paths.get("/Work/temp/context/1000k"), "pdf");
+//            List<Path> allPaths = PathUtil.getAllPaths(Paths.get("/Work/temp/context/1000k"), "pdf");
 //
-            singleFile = false;
-            System.out.println("Processing " + allPaths.size());
-            for (Path p : allPaths) {
-                try {
-                    processPdfFile(p.toFile(), new File("/Work/temp/figureExtraction/out1000k_6"));
-                } catch (Exception e) {
-                    Engine.getCntManager().i("EXCEPTIONS", e.getClass().getSimpleName());
-                    e.printStackTrace();
-                }
-            }
-
+//            singleFile = false;
+//            System.out.println("Processing " + allPaths.size());
+//            for (Path p : allPaths) {
+//                try {
+//                    processPdfFile(p.toFile(), new File("/Work/temp/tableExtraction/out1000k_2"));
+//                } catch (Exception e) {
+//                    Engine.getCntManager().i("EXCEPTIONS", e.getClass().getSimpleName());
+//                    e.printStackTrace();
+//                }
+//            }
+//
 
             System.out.println(Engine.getCntManager());
 
@@ -188,7 +211,7 @@ public class FigureTableVisualizer {
 
         PDDocument out = annotateFigureAndTables(
                 document, documentSource.getXmlFile(), teiDoc,
-                false, false, true);
+                false, false, true, true);
 
         if (out != null) {
             out.save(outPdf);
@@ -200,9 +223,12 @@ public class FigureTableVisualizer {
         }
 
         if (outputFolder != null) {
-            FileUtils.copyFile(outPdf, new File(outputFolder, annotated ?
-                    (annotatedFigure ? input.getName() + "_annotatedFigure.pdf" : input.getName() + "_annotated.pdf")
-                    : input.getName()));
+            if (annotated) {
+                Engine.getCntManager().i("TABLES_TEST", "ANNOTATED_PDFS");
+                FileUtils.copyFile(outPdf, new File(outputFolder, annotated ?
+                        (annotatedFigure ? input.getName() + "_annotatedFigure.pdf" : input.getName() + "_annotated.pdf")
+                        : input.getName()));
+            }
         }
     }
 
@@ -218,10 +244,14 @@ public class FigureTableVisualizer {
             File xmlFile, Document teiDoc,
             boolean visualizeTeiFigures,
             boolean visualizePdf2xmlImages,
-            boolean visualizeGraphicObjects) throws IOException, XPathException {
+            boolean visualizeGraphicObjects,
+            boolean visualizeTables
+    ) throws IOException, XPathException {
         String q = XQueryProcessor.getQueryFromResources("figure-table-coords.xq");
         String tei = teiDoc.getTei();
-        System.out.println(tei);
+        if (singleFile) {
+            System.out.println(tei);
+        }
         XQueryProcessor pr = new XQueryProcessor(tei);
         SequenceIterator it = pr.getSequenceIterator(q);
         Item item;
@@ -251,18 +281,6 @@ public class FigureTableVisualizer {
         }
 
         if (visualizeGraphicObjects) {
-            // visualizing graphic objects
-//            if (teiDoc.getImages() != null) {
-//                for (GraphicObject go : teiDoc.getImages()) {
-//                    if (go.getType() == GraphicObject.BITMAP) {
-//                        AnnotationUtil.annotatePage(document,
-//                                AnnotationUtil.getCoordString(go.getPage(), go.getX(), go.getY(),
-//                                        go.getWidth(), go.getHeight()), 5, 1
-//                        );
-//                    }
-//                }
-//            }
-
             int i = 10;
             if (teiDoc.getFigures() != null) {
                 for (Figure f : teiDoc.getFigures()) {
@@ -300,6 +318,37 @@ public class FigureTableVisualizer {
                         }
                     }
                 }
+            }
+        }
+
+        if (visualizeTables) {
+            boolean hasSomeTables = false;
+            if (teiDoc.getTables() != null) {
+                for (Table t : teiDoc.getTables()) {
+                    hasSomeTables = true;
+                    if (!t.isGoodTable()) {
+                        System.out.println("Skipping bad table on page: " + t.getTextArea().get(0).getPage());
+                        Engine.getCntManager().i("TABLES_TEST", "BAD_TABLES");
+
+                        continue;
+                    }
+
+                    BoundingBox contentBox = BoundingBoxCalculator.calculateOneBox(t.getContentTokens());
+                    BoundingBox descBox = BoundingBoxCalculator.calculateOneBox(t.getFullDescriptionTokens());
+
+                    System.out.println("Annotating TABLE on page: " + contentBox.getPage());
+                    AnnotationUtil.annotatePage(document,
+                            AnnotationUtil.getCoordString(descBox), 100, 2);
+                    AnnotationUtil.annotatePage(document,
+                            AnnotationUtil.getCoordString(contentBox), 101, 2);
+                    annotatedFigure = true;
+                    annotated = true;
+                    Engine.getCntManager().i("TABLES_TEST", "ANNOTATED_TABLES");
+                }
+            }
+
+            if (hasSomeTables) {
+                Engine.getCntManager().i("TABLES_TEST", "PDF_HAS_SOME_TABLES");
             }
         }
 

@@ -215,7 +215,7 @@ public class Figure {
 		return String.format("%d,%.2f,%.2f,%.2f,%.2f", page, x, y, width, height);
 	}
 
-	public String toTEI(int indent, GrobidAnalysisConfig config) {
+	public String toTEI(GrobidAnalysisConfig config) {
 		if (((header == null) || (header.length() == 0)) &&
 				((caption == null) || (caption.length() == 0))
 				) {

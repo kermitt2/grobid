@@ -78,23 +78,11 @@ public class VectorGraphicBoxCalculator {
 
             remainingBoxes = mergeBoxes(remainingBoxes);
 
-            boolean hasSmallBoxes = false;
             for (BoundingBox b : remainingBoxes) {
                 if (b.area() > MINIMUM_VECTOR_BOX_AREA) {
                     result.put(pageNum, new GraphicObject(b, GraphicObjectType.VECTOR_BOX));
-                } else {
-                    hasSmallBoxes = true;
                 }
             }
-
-//            if (!hasSmallBoxes) {
-//                throw new IllegalStateException("Not interested");
-//            }
-//            result.putAll(pageNum, remainingBoxes);
-
-//            for (BoundingBox b : remainingBoxes) {
-//                AnnotationUtil.annotatePage(document, b.toString(), 1);
-//            }
 
         }
 
