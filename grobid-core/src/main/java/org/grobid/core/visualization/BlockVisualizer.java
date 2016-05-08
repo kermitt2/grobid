@@ -27,6 +27,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static org.grobid.core.layout.VectorGraphicBoxCalculator.mergeBoxes;
+
 /**
  * Created by zholudev on 15/01/16.
  * Visualizing blocks
@@ -43,8 +45,17 @@ public class BlockVisualizer {
 //            File input = new File("/Users/zholudev/Downloads/pone.0005635.pdf");
 //            File input = new File("/Work/temp/figureExtraction/newtest/1.pdf");
 //            File input = new File("/Users/zholudev/Downloads/TIA_2011_Partie8.pdf");
-            File input = new File("/Users/zholudev/Downloads/AS-177339946250240@1419292546444_content_1.pdf");
-//            File input = new File("/Users/zholudev/Downloads/journal.pone.0146695.pdf");
+
+            //small vector things in text
+
+//            File input = new File("/Users/zholudev/Downloads/AS-355068814610434@1461666410721_content_1.pdf");
+//            File input = new File("/Users/zholudev/Downloads/AS-347805261549578@1459934645097_content_1.pdf");
+            File input = new File("/Users/zholudev/Downloads/AS-301642189688834@1448928510544_content_1.pdf");
+
+//
+//
+//
+// File input = new File("/Users/zholudev/Downloads/journal.pone.0146695.pdf");
 
             final PDDocument document = PDDocument.load(input);
             File outPdf = new File("/tmp/test.pdf");
@@ -63,7 +74,7 @@ public class BlockVisualizer {
 
             Document teiDoc = engine.fullTextToTEIDoc(input, config);
 
-            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), teiDoc, false, true, true);
+            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), teiDoc, false, false, true);
 //            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), null);
 
             if (out != null) {
@@ -147,7 +158,9 @@ public class BlockVisualizer {
                 remainingBoxes = mergeBoxes(remainingBoxes);
 
                 for (BoundingBox b : remainingBoxes) {
-                    AnnotationUtil.annotatePage(document, b.toString(), 1);
+                    if (b.area() > 500) {
+                        AnnotationUtil.annotatePage(document, b.toString(), 1);
+                    }
                 }
             }
         }
@@ -156,38 +169,5 @@ public class BlockVisualizer {
         return document;
     }
 
-    private static List<BoundingBox> mergeBoxes(List<BoundingBox> boxes) {
-        boolean allMerged = false;
-        while (!allMerged) {
-            allMerged = true;
-            for (int i = 0; i < boxes.size(); i++) {
-                BoundingBox a = boxes.get(i);
-                if (a == null) continue;
-                for (int j = i + 1; j < boxes.size(); j++) {
-                    BoundingBox b = boxes.get(j);
-                    if (b != null) {
-                        if (a.intersect(b)) {
-                            allMerged = false;
-                            a = a.boundBox(b);
-                            boxes.set(i, a);
-                            boxes.set(j, null);
-                        }
-                    }
-                }
-            }
-        }
 
-        return Lists.newArrayList(Iterables.filter(boxes, new Predicate<BoundingBox>() {
-            @Override
-            public boolean apply(BoundingBox boundingBox) {
-                if (boundingBox == null) {
-                    return false;
-                }
-                if (boundingBox.getHeight() < 5 || boundingBox.getWidth() < 5) {
-                    return false;
-                }
-                return true;
-            }
-        }));
-    }
 }

@@ -18,10 +18,10 @@ import java.util.List;
 /**
  * @author Patrice
  */
-public class FigureParser extends AbstractParser {
+class FigureParser extends AbstractParser {
 	private static final Logger LOGGER = LoggerFactory.getLogger(FigureParser.class);
 
-    protected FigureParser() {
+    FigureParser() {
         super(GrobidModels.FIGURE);
     }
 
@@ -97,7 +97,7 @@ public class FigureParser extends AbstractParser {
         for (Pair<String, String> l : labeled) {
             String tok = l.a;
             String label = l.b;       
-			String currToken = null;
+			String currToken;
             while(tokPtr < tokenizations.size()) {
             	currToken = tokenizations.get(tokPtr).getText();
 				if (currToken.equals(" ") ||
@@ -153,58 +153,64 @@ public class FigureParser extends AbstractParser {
 	            }
 			}
 
-            String plainLabel = GenericTaggerUtils.getPlainLabel(label);            
-            if (plainLabel.equals("<figDesc>")) {
-                if (addSpace || addLine) {
-                    figure.appendCaption(" ");
-                    addSpace = false;
-                    addLine = false;
-                }
+            String plainLabel = GenericTaggerUtils.getPlainLabel(label);
+			switch (plainLabel) {
+				case "<figDesc>":
+					if (addSpace || addLine) {
+						figure.appendCaption(" ");
+						addSpace = false;
+						addLine = false;
+					}
 
-                figure.appendCaption(tok);
-            } else if (plainLabel.equals("<figure_head>")) {    	
-                if (addSpace) {
-                    figure.appendHeader(" ");
-                    addSpace = false;
-                }
-                if (addLine) {
-                    figure.appendHeader("\n");
-                    addLine = false;
-                }
+					figure.appendCaption(tok);
+					break;
+				case "<figure_head>":
+					if (addSpace) {
+						figure.appendHeader(" ");
+						addSpace = false;
+					}
+					if (addLine) {
+						figure.appendHeader("\n");
+						addLine = false;
+					}
 
-                figure.appendHeader(tok);               
-            } else if (plainLabel.equals("<trash>")) {
-                if (addSpace) {
-                    figure.appendContent(" ");
-                    addSpace = false;
-                }
-                if (addLine) {
-                    figure.appendContent("\n");
-                    addLine = false;
-                }
+					figure.appendHeader(tok);
+					break;
+				case "<trash>":
+					if (addSpace) {
+						figure.appendContent(" ");
+						addSpace = false;
+					}
+					if (addLine) {
+						figure.appendContent("\n");
+						addLine = false;
+					}
 
-                figure.appendContent(tok);
-            } else if (plainLabel.equals("<label>")) {
-                if (addSpace) {
-                    figure.appendLabel(" ");
-                    figure.appendHeader(" ");
-                    addSpace = false;
-                }
-                if (addLine) {
-                    figure.appendLabel("\n");
-                    figure.appendHeader("\n");
-                    addLine = false;
-                }
+					figure.appendContent(tok);
+					break;
+				case "<label>":
+					if (addSpace) {
+						figure.appendLabel(" ");
+						figure.appendHeader(" ");
+						addSpace = false;
+					}
+					if (addLine) {
+						figure.appendLabel("\n");
+						figure.appendHeader("\n");
+						addLine = false;
+					}
 
-                figure.appendLabel(tok);
-                figure.appendHeader(tok); 
-            } else if (plainLabel.equals("<other>")) {
-				//features.append(theFeatures);
-				//features.append("\n");
-			}
-			else {
-				LOGGER.info("Warning: unexpected figure model label - " + plainLabel + " for "
-								 + tok + ", at position " + tokPtr);
+					figure.appendLabel(tok);
+					figure.appendHeader(tok);
+					break;
+				case "<other>":
+					//features.append(theFeatures);
+					//features.append("\n");
+					break;
+				default:
+					LOGGER.info("Warning: unexpected figure model label - " + plainLabel + " for "
+							+ tok + ", at position " + tokPtr);
+					break;
 			}
             tokPtr++;
         }
@@ -215,7 +221,7 @@ public class FigureParser extends AbstractParser {
 	/**
 	 * The training data creation is called from the full text training creation in cascade.
 	 */
-	public org.grobid.core.utilities.Pair<String,String> createTrainingData(List<LayoutToken> tokenizations, 
+	public org.grobid.core.utilities.Pair<String,String> createTrainingData(List<LayoutToken> tokenizations,
 			String featureVector, String id) {
 //System.out.println(tokenizations.toString() + "\n" );
 		String res = null;
@@ -226,7 +232,7 @@ public class FigureParser extends AbstractParser {
 			LOGGER.error("CRF labeling in FigureParser fails.", e);
 		}	
 		if (res == null) {
-			return new Pair(null, featureVector);
+			return new Pair<>(null, featureVector);
 		}
 //System.out.println(res + "\n" );
         List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);		
@@ -298,7 +304,7 @@ public class FigureParser extends AbstractParser {
 			
 			String plainLabel = GenericTaggerUtils.getPlainLabel(label);
 
-			String output = null;
+			String output;
 			if (lastTag != null) {
                 testClosingTag(sb, plainLabel, lastTag, addSpace, addEOL);
             }
@@ -353,17 +359,15 @@ public class FigureParser extends AbstractParser {
 			sb.append("        </figure>\n");
 		}
 		
-		return new Pair(sb.toString(), featureVector);
+		return new Pair<>(sb.toString(), featureVector);
     }
 
     public String getTEIHeader(String id) {
-    	StringBuilder sb = new StringBuilder();
-    	sb.append("<tei>\n" +
-                "    <teiHeader>\n" +
-                "        <fileDesc xml:id=\"_"+ id + "\"/>\n" +
-                "    </teiHeader>\n" +
-                "    <text xml:lang=\"en\">\n"); 
-    	return sb.toString();
+		return "<tei>\n" +
+				"    <teiHeader>\n" +
+				"        <fileDesc xml:id=\"_" + id + "\"/>\n" +
+				"    </teiHeader>\n" +
+				"    <text xml:lang=\"en\">\n";
     }
 
 	private boolean testClosingTag(StringBuilder buffer,
@@ -375,39 +379,46 @@ public class FigureParser extends AbstractParser {
         if (!currentTag.equals(lastTag)) {
             res = true;
             // we close the current tag
-            if (lastTag.equals("<other>")) {
-				if (addEOL)
-                    buffer.append("<lb/>");
-				if (addSpace)
-                    buffer.append(" ");
-                buffer.append("\n");
-            } else if (lastTag.equals("<figure_head>")) {
-				if (addEOL)
-                    buffer.append("<lb/>");
-				if (addSpace)
-                    buffer.append(" ");
-				buffer.append("</head>\n");
-            } else if (lastTag.equals("<figDesc>")) {
-				if (addEOL)
-                    buffer.append("<lb/>");
-				if (addSpace)
-                    buffer.append(" ");
-                buffer.append("</figDesc>\n");
-            } else if (lastTag.equals("<label>")) {
-				if (addEOL)
-                    buffer.append("<lb/>");
-				if (addSpace)
-                    buffer.append(" ");
-                buffer.append("</label>\n");
-            } else if (lastTag.equals("<trash>")) {
-				if (addEOL)
-                    buffer.append("<lb/>");
-				if (addSpace)
-                    buffer.append(" ");
-                buffer.append("</trash>\n");
-            } else {
-                res = false;
-            }
+			switch (lastTag) {
+				case "<other>":
+					if (addEOL)
+						buffer.append("<lb/>");
+					if (addSpace)
+						buffer.append(" ");
+					buffer.append("\n");
+					break;
+				case "<figure_head>":
+					if (addEOL)
+						buffer.append("<lb/>");
+					if (addSpace)
+						buffer.append(" ");
+					buffer.append("</head>\n");
+					break;
+				case "<figDesc>":
+					if (addEOL)
+						buffer.append("<lb/>");
+					if (addSpace)
+						buffer.append(" ");
+					buffer.append("</figDesc>\n");
+					break;
+				case "<label>":
+					if (addEOL)
+						buffer.append("<lb/>");
+					if (addSpace)
+						buffer.append(" ");
+					buffer.append("</label>\n");
+					break;
+				case "<trash>":
+					if (addEOL)
+						buffer.append("<lb/>");
+					if (addSpace)
+						buffer.append(" ");
+					buffer.append("</trash>\n");
+					break;
+				default:
+					res = false;
+					break;
+			}
         }
         return res;
     }
