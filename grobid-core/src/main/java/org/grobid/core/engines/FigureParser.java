@@ -54,7 +54,7 @@ public class FigureParser extends AbstractParser {
     private Figure getExtractionResult(List<LayoutToken> tokenizations, String result) {
 		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FIGURE, result, tokenizations);
 		List<TaggingTokenCluster> clusters = clusteror.cluster();
-
+//System.out.println(result + "\n");
 		Figure figure = new Figure();
 		for (TaggingTokenCluster cluster : clusters) {
 			if (cluster == null) {
@@ -74,6 +74,7 @@ public class FigureParser extends AbstractParser {
 					break;
 				case FIG_LABEL:
 					figure.appendLabel(clusterContent);
+					figure.appendHeader(clusterContent);
 					break;
 				case FIG_OTHER:
 					break;
@@ -87,7 +88,7 @@ public class FigureParser extends AbstractParser {
 		return figure;
 	}
 
-    private Figure getExtractionResult(List<LayoutToken> tokenizations,
+    /*private Figure getExtractionResult(List<LayoutToken> tokenizations,
 		List<Pair<String, String>> labeled) {
 		Figure figure = new Figure();
         int tokPtr = 0;
@@ -209,7 +210,7 @@ public class FigureParser extends AbstractParser {
         }
         //figure.setId();
 		return figure;
-    }
+    }*/
 
 	/**
 	 * The training data creation is called from the full text training creation in cascade.

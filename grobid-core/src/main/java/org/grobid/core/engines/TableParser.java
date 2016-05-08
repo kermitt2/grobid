@@ -83,6 +83,7 @@ public class TableParser extends AbstractParser {
 					break;
 				case TBL_LABEL:
 					table.appendLabel(clusterContent);
+					table.appendHeader(clusterContent);
 					break;
 				case TBL_OTHER:
 					break;
