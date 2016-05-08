@@ -1,6 +1,7 @@
 package org.grobid.core.tokenization;
 
-import com.google.common.base.Joiner;
+import com.google.common.collect.Iterators;
+import com.google.common.collect.PeekingIterator;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.TaggingLabel;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
@@ -19,7 +20,7 @@ import java.util.List;
 public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer>, Iterable<LabeledTokensContainer> {
     private final GrobidModels grobidModel;
     private final Iterator<Triple<String, String, String>> tokensAndLabelsIt;
-    private final Iterator<LayoutToken> tokenizationsIt;
+    private final PeekingIterator<LayoutToken> tokenizationsIt;
     private int tokensAndLabelsPtr;
     private int tokenizationsPtr;
     private List<Triple<String, String, String>> tokensAndLabels;
@@ -35,7 +36,7 @@ public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer
         tokensAndLabels = GenericTaggerUtils.getTokensWithLabelsAndFeatures(result, addFeatureStrings);
         tokensAndLabelsIt = tokensAndLabels.iterator();
         this.tokenizations = tokenizations;
-        tokenizationsIt = this.tokenizations.iterator();
+        tokenizationsIt = Iterators.peekingIterator(this.tokenizations.iterator());
     }
 
     @Override
@@ -78,22 +79,18 @@ public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer
             } else {
                 int limit = 5;
                 StringBuilder sb = new StringBuilder();
-                for (int i = tokensAndLabelsPtr - limit; i < tokensAndLabelsPtr + limit; i++) {
+                for (int i = Math.max(0, tokensAndLabelsPtr - limit); i < Math.min(tokensAndLabelsPtr + limit, tokensAndLabels.size()); i++) {
                     Triple<String, String, String> s = tokensAndLabels.get(i);
                     String str = i == tokensAndLabelsPtr ? "-->\t'" + s.getA() + "'" : "\t'" + s.getA() + "'";
                     sb.append(str).append("\n");
                 }
 
                 StringBuilder sb2 = new StringBuilder();
-                for (int i = preTokenizationPtr - limit * 2; i < preTokenizationPtr + limit * 2; i++) {
+                for (int i = Math.max(0, preTokenizationPtr - limit * 2); i < Math.min(preTokenizationPtr + limit * 2, tokenizations.size()); i++) {
                     LayoutToken s = tokenizations.get(i);
                     String str = i == preTokenizationPtr ? "-->\t'" + s.t() + "'" : "\t'" + s.t() + "'";
                     sb2.append(str).append("\n");
                 }
-
-//                String s1 = p.getA();
-//                String s2 = tokenizations.get(preTokenizationPtr + 3).t();
-
 
                 throw new IllegalStateException("IMPLEMENTATION ERROR: " +
                         "tokens (at pos: " + tokensAndLabelsPtr + ") got dissynchronized with tokenizations (at pos: "
@@ -103,6 +100,17 @@ public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer
                 );
             }
             tokenizationsPtr++;
+        }
+
+
+        //filling spaces to the end, instead of appending spaces to the next container
+        while (tokenizationsIt.hasNext()) {
+            if (LayoutTokensUtil.spaceyToken(tokenizationsIt.peek().t())) {
+                layoutTokenBuffer.add(tokenizationsIt.next());
+                tokenizationsPtr++;
+            } else {
+                break;
+            }
         }
 
         resultToken = LayoutTokensUtil.removeSpecialVariables(resultToken);

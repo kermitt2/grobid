@@ -23,12 +23,10 @@ import java.util.List;
 public class DocumentSource {
     private static final Logger LOGGER = LoggerFactory.getLogger(DocumentSource.class);
 //    private static final int DEFAULT_TIMEOUT = 30000;
-    private static final int DEFAULT_TIMEOUT = 50000;
     private static final int KILLED_DUE_2_TIMEOUT = 143;
 
     private File pdfFile;
     private File xmlFile;
-    private int timeout = DEFAULT_TIMEOUT; // timeout 20 second for
     boolean cleanupXml = false;
 
 
@@ -39,14 +37,15 @@ public class DocumentSource {
         return fromPdf(pdfFile, -1, -1);
     }
 
-    public static DocumentSource fromPdfWithImages(File pdfFile, int startPage, int endPage) {
-        return fromPdf(pdfFile, startPage, endPage, true);
-    }
+//    public static DocumentSource fromPdfWithImages(File pdfFile, int startPage, int endPage) {
+//        return fromPdf(pdfFile, startPage, endPage, true);
+//    }
+//
+//    public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage) {
+//        return fromPdf(pdfFile, startPage, endPage, false);
+//    }
 
     public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage) {
-        return fromPdf(pdfFile, startPage, endPage, false);
-    }
-    public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage, boolean withImages) {
         if (!pdfFile.exists() || pdfFile.isDirectory()) {
             throw new GrobidException("Input PDF file " + pdfFile + " does not exist or a directory", GrobidExceptionStatus.BAD_INPUT_DATA);
         }
@@ -54,7 +53,7 @@ public class DocumentSource {
         DocumentSource source = new DocumentSource();
         source.cleanupXml = true;
 
-        source.xmlFile = source.pdf2xml(true, false, startPage, endPage, pdfFile, GrobidProperties.getTempPath(), true);//withImages);
+        source.xmlFile = source.pdf2xml(null, false, startPage, endPage, pdfFile, GrobidProperties.getTempPath(), true);//withImages);
         source.pdfFile = pdfFile;
         return source;
     }
@@ -78,7 +77,7 @@ public class DocumentSource {
      * runtime). If full is true, the extraction covers also images within the
      * pdf, which is relevant for fulltext extraction.
      */
-    public File pdf2xml(boolean tout, boolean force, int startPage,
+    public File pdf2xml(Integer timeout, boolean force, int startPage,
                         int endPage, File pdfPath, File tmpPath, boolean full) {
         LOGGER.debug("start pdf2xml");
         long time = System.currentTimeMillis();
@@ -115,7 +114,7 @@ public class DocumentSource {
 
                 LOGGER.debug("Executing command: " + cmd);
 
-                tmpPathXML = processPdf2XmlThreadMode(tout, pdfPath, tmpPathXML, cmd);
+                tmpPathXML = processPdf2XmlThreadMode(timeout, pdfPath, tmpPathXML, cmd);
             }
 
         }
@@ -129,13 +128,13 @@ public class DocumentSource {
      *
      * Executed NOT in the server mode
      *
-     * @param tout       timeout
+     * @param timeout    in ms.   null, if default
      * @param pdfPath    path to pdf
      * @param tmpPathXML temporary path to save the converted file
      * @param cmd        arguments to call the executable pdf2xml
      * @return the path the the converted file.
      */
-    private File processPdf2XmlThreadMode(boolean tout, File pdfPath,
+    private File processPdf2XmlThreadMode(Integer timeout, File pdfPath,
                                           File tmpPathXML, List<String> cmd) {
         LOGGER.debug("Executing: " + cmd.toString());
         ProcessRunner worker = new ProcessRunner(cmd, "pdf2xml[" + pdfPath + "]", true);
@@ -143,10 +142,10 @@ public class DocumentSource {
         worker.start();
 
         try {
-            if (tout) {
+            if (timeout != null) {
                 worker.join(timeout);
             } else {
-                worker.join(DEFAULT_TIMEOUT); // max 50 second even without predefined
+                worker.join(GrobidProperties.getPdf2XMLTimeoutMs()); // max 50 second even without predefined
                 // timeout
             }
             if (worker.getExitStatus() == null) {
@@ -196,10 +195,6 @@ public class DocumentSource {
         }
 
         return tmpPathXML;
-    }
-
-    public void setPdf2XmlTimeout(int timeout) {
-        this.timeout = timeout;
     }
 
     private boolean cleanXmlFile(File pathToXml, boolean cleanImages) {

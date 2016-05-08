@@ -902,36 +902,48 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 				String value = atts.getValue(i);
 
 				if ((name != null) && (value != null)) {
-					if (name.equals("href")) {
-						image.setFilePath(value);
-						if (value.indexOf(".vec") != -1)
-							image.setType(GraphicObjectType.VECTOR);
-						else
-							image.setType(GraphicObjectType.BITMAP);
-					} else if (name.equals("x")) {
-						double x = Double.parseDouble(value);
-						if (x != currentX) {
-							currentX = Math.abs(x);
-						}
-						//image.setX(x);
-					} else if (name.equals("y")) {
-						double y = Double.parseDouble(value);
-						if (y != currentY) {
-							currentY = Math.abs(y);
-						}
-						//image.setY(y);
-					} else if (name.equals("width")) {
-						double width = Double.parseDouble(value);
-						if (width != currentWidth) {
-							currentWidth = Math.abs(width);
-						}
-						//image.setWidth(width);
-					} else if (name.equals("height")) {
-						double height = Double.parseDouble(value);
-						if (height != currentHeight) {
-							currentHeight = Math.abs(height);
-						}
-						//image.setHeight(height);
+					switch (name) {
+						case "href":
+							image.setFilePath(value);
+							if (value.contains(".vec")) {
+								image.setType(GraphicObjectType.VECTOR);
+							} else {
+								image.setType(GraphicObjectType.BITMAP);
+							}
+							break;
+						case "x":
+							double x = Double.parseDouble(value);
+							if (x != currentX) {
+								currentX = Math.abs(x);
+							}
+							//image.setX(x);
+							break;
+						case "y":
+							double y = Double.parseDouble(value);
+							if (y != currentY) {
+								currentY = Math.abs(y);
+							}
+							//image.setY(y);
+							break;
+						case "width":
+							double width = Double.parseDouble(value);
+							if (width != currentWidth) {
+								currentWidth = Math.abs(width);
+							}
+							//image.setWidth(width);
+							break;
+						case "height":
+							double height = Double.parseDouble(value);
+							if (height != currentHeight) {
+								currentHeight = Math.abs(height);
+							}
+							//image.setHeight(height);
+							break;
+						case "mask":
+							if ("true".equals(value)) {
+								image.setMask(true);
+							}
+							break;
 					}
 				}
 			}

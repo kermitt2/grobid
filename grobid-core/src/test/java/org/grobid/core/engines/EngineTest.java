@@ -869,8 +869,8 @@ public class EngineTest {
 //        for (File f : new File("/Work/temp/pub_citation_styles").listFiles(new FileFilter() {
 //            @Override
 //            public boolean accept(File pathname) {
-//        for (File f : new File("/Work/temp/context/1000k")
-        for (File f : new File("/Work/temp/timeout") // bad PDF that produces dozens of files
+        for (File f : new File("/Work/temp/context/1000k")
+//        for (File f : new File("/Work/temp/timeout") // bad PDF that produces dozens of files
                 .listFiles(new FileFilter() {
                         @Override
                         public boolean accept(File pathname) {
@@ -902,7 +902,53 @@ public class EngineTest {
     }
 
 
-    @Test
+        @Test
+        public void testHeaders() throws Exception {
+                final Engine engine = GrobidFactory.getInstance().getEngine();
+//        GrobidAnalysisConfig config = GrobidAnalysisConfig.defaultInstance();
+                GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
+
+                int cnt = 0;
+//        for (File f : new File("/Work/temp/pub_citation_styles").listFiles(new FileFilter() {
+//            @Override
+//            public boolean accept(File pathname) {
+        for (File f : new File("/Work/temp/context/1000k")
+//                for (File f : new File("/Work/temp/timeout") // bad PDF that produces dozens of files
+                        .listFiles(new FileFilter() {
+                                @Override
+                                public boolean accept(File pathname) {
+                                        return pathname.getName().endsWith(".pdf");
+                                }
+                        })) {
+                        try {
+                                Engine.getCntManager().i("PDFS", "INPUT_CNT");
+                                System.out.println("Processing: " + f);
+                                BiblioItem item = new BiblioItem();
+                                String tei = engine.processHeader(f.getAbsolutePath(), false, item);
+
+                                Engine.getCntManager().i("LANGS", item.getLanguage());
+
+                                System.out.println(tei.length());
+                        } catch (Exception e) {
+                                e.printStackTrace();
+                                Engine.getCntManager().i("FAILED", e.getClass().getSimpleName());
+                        }
+                        if (++cnt % 10 == 0) {
+                                System.out.println("Processed: " + cnt);
+                                System.out.println(Engine.getCntManager());
+                        }
+                }
+
+//        System.out.println(engine.fullTextToTEI(new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis-service/src/test/resources/net/researchgate/pdfanalysisservice/papers.bad.input/40th_Conf_unprotected.pdf"), GrobidAnalysisConfig.defaultInstance()));
+//        System.out.println(engine.fullTextToTEI(new File("/var/folders/h4/np1lg7256q3c3s6b2lhm9w0r0000gn/T/habibi-pdf996586749219753040.pdf"), GrobidAnalysisConfig.defaultInstance()));
+//        System.out.println(engine.fullTextToTEI("/tmp/x1.pdf", true, true, null, -1, -1, true));
+                System.out.println(Engine.getCntManager());
+
+                Thread.sleep(100000);
+                System.out.println("DONE!");
+        }
+
+        @Test
     public void testReferenceString() {
 //        String ref = "Agharahimi, M.R., LeBel, N.A., 1995. Synthesis of (–)-monoterpenylmagnolol and \n" +
 //                "magnolol. J. Org. Chem. 60, 1856–1863. ";

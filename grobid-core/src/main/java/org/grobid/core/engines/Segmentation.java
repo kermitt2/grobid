@@ -18,6 +18,7 @@ import org.grobid.core.layout.Page;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
+import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
@@ -65,8 +66,6 @@ public class Segmentation extends AbstractParser {
 	*/
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Segmentation.class);
-    public static final int BLOCK_LIMIT = 100000;
-    public static final int TOKEN_CNT_LIMIT = 1000000;
 
     private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
@@ -97,7 +96,7 @@ public class Segmentation extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because input file '" +
                     input.getAbsolutePath() + "' does not exist.");
         }
-        DocumentSource documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage(), config.getPdfAssetPath() != null);
+        DocumentSource documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage());
         return processing(documentSource, config);
     }
     /**
@@ -113,8 +112,8 @@ public class Segmentation extends AbstractParser {
 
             List<LayoutToken> tokenizations = doc.addTokenizedDocument(config);
 
-            if (tokenizations.size() > TOKEN_CNT_LIMIT) {
-                throw new GrobidException("The document has " + tokenizations.size() + " tokens, but the limit is " + TOKEN_CNT_LIMIT,
+            if (tokenizations.size() > GrobidProperties.getPdfTokensMax()) {
+                throw new GrobidException("The document has " + tokenizations.size() + " tokens, but the limit is " + GrobidProperties.getPdfTokensMax(),
                         GrobidExceptionStatus.TOO_MANY_TOKENS);
             }
 
@@ -250,7 +249,7 @@ public class Segmentation extends AbstractParser {
         }
 
         //guaranteeing quality of service. Otherwise, there are some PDF that may contain 300k blocks and thousands of extracted "images" that ruins the performance
-        if (blocks.size() > BLOCK_LIMIT) {
+        if (blocks.size() > GrobidProperties.getPdfBlocksMax()) {
             throw new GrobidException("Postprocessed document is too big, contains: " + blocks.size(), GrobidExceptionStatus.TOO_MANY_BLOCKS);
         }
 
@@ -650,7 +649,7 @@ public class Segmentation extends AbstractParser {
         try {
             File file = new File(inputFile);
 
-            documentSource = DocumentSource.fromPdfWithImages(file, -1, -1);
+            documentSource = DocumentSource.fromPdf(file);
             Document doc = new Document(documentSource);
 
             String PDFFileName = file.getName();

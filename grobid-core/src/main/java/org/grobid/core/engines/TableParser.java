@@ -1,36 +1,21 @@
 package org.grobid.core.engines;
 
 import org.grobid.core.GrobidModels;
-import org.grobid.core.data.Figure;
-import org.grobid.core.engines.citations.LabeledReferenceResult;
-import org.grobid.core.engines.citations.ReferenceSegmenter;
+import org.grobid.core.data.Table;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
-import org.grobid.core.features.FeaturesVectorReferenceSegmenter;
+import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
-import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.document.Document;
-import org.grobid.core.engines.citations.LabeledReferenceResult;
-import org.grobid.core.engines.citations.ReferenceSegmenter;
-import org.grobid.core.engines.counters.CitationParserCounters;
-import org.grobid.core.document.DocumentPiece;
-import org.grobid.core.document.DocumentPointer;
-import org.grobid.core.features.FeatureFactory;
-import org.grobid.core.layout.Block;
-import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.data.Table;
-import org.grobid.core.engines.config.GrobidAnalysisConfig;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.SortedSet;
-import java.util.regex.Matcher;
 
 /**
  * @author Patrice
@@ -45,23 +30,26 @@ public class TableParser extends AbstractParser {
 	/**
 	 * The processing here is called from the full text parser in cascade.
 	 */
-    public Table processing(List<LayoutToken> tokenizationTable, String featureVector) {
-		String res = null;
+	public Table processing(List<LayoutToken> tokenizationTable, String featureVector) {
+		String res;
 		try {
 			res = label(featureVector);
-		}
-		catch(Exception e) {
+		} catch (Exception e) {
 			throw new GrobidException("CRF labeling in ReferenceSegmenter fails.", e);
 		}
 		if (res == null) {
 			return null;
-		}		
+		}
 //        List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
 		return getExtractionResult(tokenizationTable, res);
-    }
+	}
 
 	private Table getExtractionResult(List<LayoutToken> tokenizations, String result) {
+//		System.out.println("-----------------");
+//		System.out.println(result);
 		Table table = new Table();
+		table.setTextArea(Collections.singletonList(BoundingBoxCalculator.calculateOneBox(tokenizations, true)));
+
 		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.TABLE, result, tokenizations);
 		List<TaggingTokenCluster> clusters = clusteror.cluster();
 
@@ -73,22 +61,28 @@ public class TableParser extends AbstractParser {
 			TaggingLabel clusterLabel = cluster.getTaggingLabel();
 			Engine.getCntManager().i(clusterLabel);
 
-			String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+			List<LayoutToken> tokens = cluster.concatTokens();
+			String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));
 			switch (clusterLabel) {
 				case TBL_DESC:
 					table.appendCaption(clusterContent);
+					table.getFullDescriptionTokens().addAll(tokens);
 					break;
 				case TBL_HEAD:
 					table.appendHeader(clusterContent);
+					table.getFullDescriptionTokens().addAll(tokens);
 					break;
 				case TBL_LABEL:
-					table.appendLabel(clusterContent);
+					//label should also go to head
 					table.appendHeader(clusterContent);
+					table.appendLabel(clusterContent);
+					table.getFullDescriptionTokens().addAll(tokens);
 					break;
 				case TBL_OTHER:
 					break;
 				case TBL_TRASH:
 					table.appendContent(clusterContent);
+					table.getContentTokens().addAll(tokens);
 					break;
 				default:
 					LOGGER.error("Warning: unexpected table model label - " + clusterLabel + " for " + clusterContent);
@@ -97,124 +91,124 @@ public class TableParser extends AbstractParser {
 		return table;
 	}
 
-	private Table getExtractionResult(List<LayoutToken> tokenizations,
-									  List<Pair<String, String>> labeled) {
-		Table table = new Table();
-        int tokPtr = 0;
-        boolean addSpace = false;
-		boolean addLine = false;
-        for (Pair<String, String> l : labeled) {
-            String tok = l.a;
-            String label = l.b;
-			String currToken = null;
-            while(tokPtr < tokenizations.size()) {
-            	currToken = tokenizations.get(tokPtr).getText();
-				if (currToken.equals(" ") ||
-					   currToken.equals("\n") ||
-					   currToken.equals("\r") ) {
-					if (currToken.equals(" "))
-                		addSpace = true;
-					else
-						addLine = true;
-				}
-				else
-					break;
-				tokPtr++;
-            }
-            if (tokPtr >= tokenizations.size()) {
-                //throw new IllegalStateException("Implementation error: Reached the end of tokenizations, but current token is " + tok);
-				LOGGER.error("Implementation error: Reached the end of tokenizations, but current token is " + tok);
-				// we add a space to avoid concatenated text
-				addSpace = true;
-            }
-            else {
-				String tokenizationToken = tokenizations.get(tokPtr).getText();
-
-				if ((tokPtr != tokenizations.size()) && !tokenizationToken.equals(tok)) {
-					// and we add a space by default to avoid concatenated text
-					addSpace = true;
-					if (!tok.startsWith(tokenizationToken)) {
-						// this is a very exceptional case due to a sequence of accent/diacresis, in this case we skip
-						// a shift in the tokenizations list and continue on the basis of the labeled token
-						// we check one ahead
-						tokPtr++;
-						tokenizationToken = tokenizations.get(tokPtr).getText();
-						if (!tok.equals(tokenizationToken)) {
-							// we try another position forward (second hope!)
-							tokPtr++;
-							tokenizationToken = tokenizations.get(tokPtr).getText();
-							if (!tok.equals(tokenizationToken)) {
-								// we try another position forward (last hope!)
-								tokPtr++;
-								tokenizationToken = tokenizations.get(tokPtr).getText();
-								if (!tok.equals(tokenizationToken)) {
-									// we return to the initial position
-									tokPtr = tokPtr-3;
-									tokenizationToken = tokenizations.get(tokPtr).getText();
-									LOGGER.error("Implementation error, tokens out of sync: " +
-										tokenizationToken + " != " + tok + ", at position " + tokPtr);
-								}
-							}
-						}
-					}
-					// note: if the above condition is true, this is an exceptional case due to a
-					// sequence of accent/diacresis and we can go on as a full string match
-	            }
-			}
-
-            String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-            if (plainLabel.equals("<figDesc>")) {
-                if (addSpace || addLine) {
-                    table.appendCaption(" ");
-                    addSpace = false;
-                }
-
-                table.appendCaption(tok);
-            } else if (plainLabel.equals("<figure_head>")) {
-                if (addSpace) {
-                    table.appendHeader(" ");
-                    addSpace = false;
-                }
-                if (addLine) {
-                    table.appendHeader("\n");
-                    addLine = false;
-                }
-
-                table.appendHeader(tok);
-            } else if (plainLabel.equals("<trash>")) {
-                if (addSpace) {
-                    table.appendContent(" ");
-                    addSpace = false;
-                }
-                if (addLine) {
-                    table.appendContent("\n");
-                    addLine = false;
-                }
-
-                table.appendContent(tok);
-            } else if (plainLabel.equals("<label>")) {
-                if (addSpace) {
-                    table.appendLabel(" ");
-                    table.appendHeader(" ");
-                    addSpace = false;
-                }
-                if (addLine) {
-                    table.appendLabel("\n");
-                    table.appendHeader("\n");
-                    addLine = false;
-                }
-
-                table.appendLabel(tok);
-                table.appendHeader(tok);
-            } else if (plainLabel.equals("<other>")) {
-				//features.append(theFeatures);
-				//features.append("\n");
-			}
-            tokPtr++;
-        }
-        //table.setId();
-		return table;
-    }
+//	private Table getExtractionResult(List<LayoutToken> tokenizations,
+//									  List<Pair<String, String>> labeled) {
+//		Table table = new Table();
+//        int tokPtr = 0;
+//        boolean addSpace = false;
+//		boolean addLine = false;
+//        for (Pair<String, String> l : labeled) {
+//            String tok = l.a;
+//            String label = l.b;
+//			String currToken = null;
+//            while(tokPtr < tokenizations.size()) {
+//            	currToken = tokenizations.get(tokPtr).getText();
+//				if (currToken.equals(" ") ||
+//					   currToken.equals("\n") ||
+//					   currToken.equals("\r") ) {
+//					if (currToken.equals(" "))
+//                		addSpace = true;
+//					else
+//						addLine = true;
+//				}
+//				else
+//					break;
+//				tokPtr++;
+//            }
+//            if (tokPtr >= tokenizations.size()) {
+//                //throw new IllegalStateException("Implementation error: Reached the end of tokenizations, but current token is " + tok);
+//				LOGGER.error("Implementation error: Reached the end of tokenizations, but current token is " + tok);
+//				// we add a space to avoid concatenated text
+//				addSpace = true;
+//            }
+//            else {
+//				String tokenizationToken = tokenizations.get(tokPtr).getText();
+//
+//				if ((tokPtr != tokenizations.size()) && !tokenizationToken.equals(tok)) {
+//					// and we add a space by default to avoid concatenated text
+//					addSpace = true;
+//					if (!tok.startsWith(tokenizationToken)) {
+//						// this is a very exceptional case due to a sequence of accent/diacresis, in this case we skip
+//						// a shift in the tokenizations list and continue on the basis of the labeled token
+//						// we check one ahead
+//						tokPtr++;
+//						tokenizationToken = tokenizations.get(tokPtr).getText();
+//						if (!tok.equals(tokenizationToken)) {
+//							// we try another position forward (second hope!)
+//							tokPtr++;
+//							tokenizationToken = tokenizations.get(tokPtr).getText();
+//							if (!tok.equals(tokenizationToken)) {
+//								// we try another position forward (last hope!)
+//								tokPtr++;
+//								tokenizationToken = tokenizations.get(tokPtr).getText();
+//								if (!tok.equals(tokenizationToken)) {
+//									// we return to the initial position
+//									tokPtr = tokPtr-3;
+//									tokenizationToken = tokenizations.get(tokPtr).getText();
+//									LOGGER.error("Implementation error, tokens out of sync: " +
+//										tokenizationToken + " != " + tok + ", at position " + tokPtr);
+//								}
+//							}
+//						}
+//					}
+//					// note: if the above condition is true, this is an exceptional case due to a
+//					// sequence of accent/diacresis and we can go on as a full string match
+//	            }
+//			}
+//
+//            String plainLabel = GenericTaggerUtils.getPlainLabel(label);
+//            if (plainLabel.equals("<figDesc>")) {
+//                if (addSpace || addLine) {
+//                    table.appendCaption(" ");
+//                    addSpace = false;
+//                }
+//
+//                table.appendCaption(tok);
+//            } else if (plainLabel.equals("<figure_head>")) {
+//                if (addSpace) {
+//                    table.appendHeader(" ");
+//                    addSpace = false;
+//                }
+//                if (addLine) {
+//                    table.appendHeader("\n");
+//                    addLine = false;
+//                }
+//
+//                table.appendHeader(tok);
+//            } else if (plainLabel.equals("<trash>")) {
+//                if (addSpace) {
+//                    table.appendContent(" ");
+//                    addSpace = false;
+//                }
+//                if (addLine) {
+//                    table.appendContent("\n");
+//                    addLine = false;
+//                }
+//
+//                table.appendContent(tok);
+//            } else if (plainLabel.equals("<label>")) {
+//                if (addSpace) {
+//                    table.appendLabel(" ");
+//                    table.appendHeader(" ");
+//                    addSpace = false;
+//                }
+//                if (addLine) {
+//                    table.appendLabel("\n");
+//                    table.appendHeader("\n");
+//                    addLine = false;
+//                }
+//
+//                table.appendLabel(tok);
+//                table.appendHeader(tok);
+//            } else if (plainLabel.equals("<other>")) {
+//				//features.append(theFeatures);
+//				//features.append("\n");
+//			}
+//            tokPtr++;
+//        }
+//        //table.setId();
+//		return table;
+//    }
 
     /**
 	 * The training data creation is called from the full text training creation in cascade.
@@ -230,7 +224,7 @@ public class TableParser extends AbstractParser {
 			LOGGER.error("CRF labeling in TableParser fails.", e);
 		}	
 		if (res == null) {
-			return new Pair(null, featureVector);
+			return new Pair<>(null, featureVector);
 		}
 //System.out.println(res + "\n" );
         List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);		
