@@ -38,22 +38,22 @@
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-client</artifactId>
-			<version>1.9</version>
+			<version>1.8</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-server</artifactId>
-			<version>1.9</version>
+			<version>1.8</version>
 		</dependency>
 		<!--dependency>
 			<groupId>com.sun.jersey</groupId>
         	<artifactId>jersey-servlet</artifactId>
-        	<version>1.9</version>
+        	<version>1.8</version>
         </dependency-->
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-core</artifactId>
-			<version>1.9</version>
+			<version>1.8</version>
 		</dependency>
 		<dependency>
 		    <groupId>asm</groupId>
@@ -74,7 +74,7 @@
 		<dependency>
 			<groupId>com.sun.jersey.contribs</groupId>
 			<artifactId>jersey-multipart</artifactId>
-			<version>1.9</version>
+			<version>1.8</version>
 			<!--scope>compile</scope-->
 		</dependency>
 		<dependency>
@@ -182,7 +182,6 @@
 							<filtering>true</filtering>
 							<targetPath>WEB-INF</targetPath>
 						</resource>
-
 					</webResources>
 				</configuration>
 			</plugin>
@@ -202,7 +201,7 @@
 					<resourceBases>
 					    <resourceBase>${basedir}/src/main/webapp</resourceBase>   
 			        </resourceBases>
-                                        <systemProperties>
+        <systemProperties>
             <systemProperty>
                 <name>log4j.configuration</name>
                 <value>log4j-jetty.properties</value>
