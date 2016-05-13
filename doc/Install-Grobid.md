@@ -2,6 +2,12 @@
 
 ##Getting GROBID
 
+###Prerequisites
+**libxml2**: GROBID is currenly shipped with all the needed libraries (Mac and Linux 32/64 bit).
+libxml2 is required by pdf2xml, and is normally shipped by default on all standard installation (Ubuntu, Mac OSX, etc).
+For minimal or cloud based / container system like Linode, AWS, Docker, etc might not be installed by default.
+
+
 ###Latest stable release
 
 The latest stable release of GROBID is version ```0.4.0``` which can be downloaded as follow: 
@@ -25,6 +31,8 @@ Or download directly the zip file:
 ```
 
 ##Build GROBID
+
+**Please make sure that grobid is installed in a path with no parent directories containing spaces.**
 
 ###Build GROBID with maven
 
