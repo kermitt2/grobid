@@ -24,6 +24,8 @@ public class DocumentSource {
     private static final Logger LOGGER = LoggerFactory.getLogger(DocumentSource.class);
 //    private static final int DEFAULT_TIMEOUT = 30000;
     private static final int KILLED_DUE_2_TIMEOUT = 143;
+    private static final int MISSING_LIBXML2 = 127;
+    private static final int MISSING_PDF2XML = 126;
 
     private File pdfFile;
     private File xmlFile;
@@ -190,6 +192,10 @@ public class DocumentSource {
             throw new GrobidException("An error occurred while converting pdf " + pdfPath, GrobidExceptionStatus.BAD_INPUT_DATA);
         } else if (exitCode == KILLED_DUE_2_TIMEOUT) {
             throw new GrobidException("PDF to XML conversion timed out", GrobidExceptionStatus.TIMEOUT);
+        } else if(exitCode == MISSING_PDF2XML) {
+            throw new GrobidException("PDF to XML conversion failed. Cannot find pdf2xml executable", GrobidExceptionStatus.PDF2XML_CONVERSION_FAILURE);
+        } else if(exitCode == MISSING_LIBXML2) {
+            throw new GrobidException("PDF to XML conversion failed. Cannot find pdf2xml cannot be execute. Has libxml2 been installed in the system? More information in the logs. ", GrobidExceptionStatus.PDF2XML_CONVERSION_FAILURE);
         } else if (exitCode != 0) {
             throw new GrobidException("PDF to XML conversion failed with error code: " + exitCode, GrobidExceptionStatus.BAD_INPUT_DATA);
         }

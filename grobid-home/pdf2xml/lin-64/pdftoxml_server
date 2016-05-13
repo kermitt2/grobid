@@ -26,4 +26,4 @@ command=${0:0:${#0}-7}
     kill -s SIGKILL $$
 ) 2> /dev/null &
 
-exec $command $@ >& /dev/null
+exec $command $@
