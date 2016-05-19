@@ -35,6 +35,7 @@ public enum GrobidModels {
     ENTITIES_NERSense("nersense"),
     QUANTITIES("quantities"),
     UNITS("units"),
+	VALUE("value"),
     //	ENTITIES_BIOTECH("entities/biotech"),
     ENTITIES_BIOTECH("bio");
 
