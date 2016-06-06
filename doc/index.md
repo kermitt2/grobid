@@ -17,6 +17,8 @@
 
 * [Use GROBID in batch mode](Grobid-batch.md)
 
+* [Use GROBID with containers (Docker)](Grobid-docker.md)
+
 * [Use Grobid library in third party Java applications](Grobid-java-library.md)
 
 * [TEI encoding of results](TEI-encoding-of-results.md)

@@ -220,11 +220,18 @@
 			</activation>
 			<build>
 				<filters>
-					<filter>${basedir}/src/main/filters/filter.properties</filter>
+					<filter>profiles/default.properties</filter>
 				</filters>
 			</build>
 		</profile>
-
+		<profile>
+			<id>docker</id>
+			<build>
+				<filters>
+					<filter>profiles/docker.properties</filter>
+				</filters>
+			</build>
+		</profile>
 		<profile>
 			<id>genericBuild</id>
 		</profile>
