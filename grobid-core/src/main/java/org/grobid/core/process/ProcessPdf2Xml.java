@@ -28,7 +28,7 @@ public class ProcessPdf2Xml {
 
         } catch (InterruptedException ignore) {
             // Process needs to be destroyed -- it's done in the finally block
-            LOGGER.warn("pdf2xml process is going to be destroyed.");
+            LOGGER.warn("pdf2xml process is about to be killed.");
         } catch (IOException ioExp) {
             LOGGER.error("IOException while launching the command {} : {}",
                     cmd, ioExp.getMessage());
