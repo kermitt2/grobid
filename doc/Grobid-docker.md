@@ -3,10 +3,11 @@
 **NOTE**: the support to Docker is still experimental. 
 
 Docker is an open-source project that automates the deployment of applications inside software containers. 
-GROBID can be instantiated and run using Docker. 
-The image information can be found here: `https://hub.docker.com/r/lfoppiano/grobid/`
+The documentation on how to install it and start using it can be found [here](https://docs.docker.com/engine/understanding-docker/). 
 
-The process for fetching and running the image is:
+GROBID can be instantiated and run using Docker. The image information can be found [here](https://hub.docker.com/r/lfoppiano/grobid/).
+
+The process for fetching and running the image is (assuming docker is installed and working):
  
 ```bash
 > docker pull lfoppiano-grobid
