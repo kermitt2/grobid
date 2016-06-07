@@ -1,4 +1,8 @@
 language: java
 
 after_success:
-  - mvn clean cobertura:cobertura org.eluder.coveralls:coveralls-maven-plugin:report
+- mvn clean cobertura:cobertura org.eluder.coveralls:coveralls-maven-plugin:report
+
+notifications:
+  slack:
+    secure: 0Nf9Bk3lFW+35ifBhO25JnX23ZKUC+Eqo6YaRZ+6jQ8aKHHbPsf9DuaWX3+8C7pGzBTK0Ho7dNXVfNz4pYjrvv8b4rukKY6wEFSzMMJrCW0udRfHNEa3jj5VAm/BDXMypbzjkMm9XJ5aAPBUweb+oyHJBCWwNNCyHElQDp2TggE=
