@@ -10,7 +10,7 @@ GROBID can be instantiated and run using Docker. The image information can be fo
 The process for fetching and running the image is (assuming docker is installed and working):
  
 ```bash
-> docker pull lfoppiano-grobid
+> docker pull lfoppiano/grobid:0.1
 ```
  
 then
