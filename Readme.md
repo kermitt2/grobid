@@ -51,7 +51,7 @@ For testing purposes, a public GROBID demo server is available at the following 
 
 The Web service are documented in the [service manual](https://github.com/kermitt2/grobid/blob/master/grobid-service/src/main/doc/grobid-service-manual.pdf).
 
-_Warning_: Some quota and query limitation apply to the demo server! If you are interested in using such online GROBID service for your project without limitation (and with support), please [contact us](<patrice.lopez@science-miner.com>). 
+_Warning_: Some quota and query limitation apply to the demo server! If you are interested in using such online GROBID service for your project without limitation (and with support), please contact us (<patrice.lopez@science-miner.com>). 
 
 ## GROBID documentation
 
