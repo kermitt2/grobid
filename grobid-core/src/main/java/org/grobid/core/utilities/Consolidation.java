@@ -106,7 +106,7 @@ public class Consolidation {
      */
     private static final String JOURNAL_AUTHOR_BASE_QUERY =
             //"query?usr=%s&pwd=%s&type=a&format=unixref&qdata=|%s||%s||%s|||KEY|";
-		    "query?usr=%s&pwd=%s&type=a&format=unixref&qdata=|%s|%s|%s||%s|||KEY|";
+		    "servlet/query?usr=%s&pwd=%s&type=a&format=unixref&qdata=|%s|%s|%s||%s|||KEY|";
 
     // ISSN|TITLE/ABBREV|FIRST AUTHOR|VOLUME|ISSUE|START PAGE|YEAR|RESOURCE TYPE|KEY|DOI
 
@@ -115,13 +115,13 @@ public class Consolidation {
      */       
      private static final String JOURNAL_BASE_QUERY =
             //"query?usr=%s&pwd=%s&type=a&format=unixref&qdata=|%s||%s||%s|||KEY|";
-            "query?usr=%s&pwd=%s&type=a&format=unixref&qdata=|%s||%s||%s|||KEY|";
+            "servlet/query?usr=%s&pwd=%s&type=a&format=unixref&qdata=|%s||%s||%s|||KEY|";
 
     /**
      * Lookup first author surname and  article title - 4 parameters are id, password, title, author.
      */
     private static final String TITLE_BASE_QUERY =
-            "query?usr=%s&pwd=%s&type=a&format=unixref&qdata=%s|%s||key|";
+            "servlet/query?usr=%s&pwd=%s&type=a&format=unixref&qdata=%s|%s||key|";
 
 
 	/**
