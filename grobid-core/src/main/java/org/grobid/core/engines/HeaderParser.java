@@ -11,7 +11,7 @@ import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.document.DocumentSource;
-import org.grobid.core.document.TEIFormater;
+import org.grobid.core.document.TEIFormatter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeatureFactory;
@@ -268,8 +268,8 @@ public class HeaderParser extends AbstractParser {
             LOGGER.debug("WARNING: header is empty.");
         }
 
-        TEIFormater teiFormater = new TEIFormater(doc);
-        StringBuilder tei = teiFormater.toTEIHeader(resHeader, null, GrobidAnalysisConfig.builder().consolidateHeader(consolidate).build());
+        TEIFormatter teiFormatter = new TEIFormatter(doc);
+        StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, GrobidAnalysisConfig.builder().consolidateHeader(consolidate).build());
         tei.append("\t</text>\n");
         tei.append("</TEI>\n");
         //LOGGER.debug(tei.toString());
@@ -473,8 +473,8 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                TEIFormater teiFormater = new TEIFormater(doc);
-                StringBuilder tei = teiFormater.toTEIHeader(resHeader, null, GrobidAnalysisConfig.defaultInstance());
+                TEIFormatter teiFormatter = new TEIFormatter(doc);
+                StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, GrobidAnalysisConfig.defaultInstance());
                 tei.append("\t</text>\n");
                 tei.append("</TEI>\n");
                 //LOGGER.debug(tei);
