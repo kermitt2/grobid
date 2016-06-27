@@ -56,7 +56,7 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
  * @author Patrice Lopez
  */
 @SuppressWarnings("StringConcatenationInsideStringBuilderAppend")
-public class TEIFormater {
+public class TEIFormatter {
     private Document doc = null;
     public static final Set<TaggingLabel> MARKER_LABELS = Sets.newHashSet(TaggingLabel.CITATION_MARKER, TaggingLabel.FIGURE_MARKER, TaggingLabel.TABLE_MARKER);
 
@@ -81,7 +81,7 @@ public class TEIFormater {
 
     private static Pattern startNum = Pattern.compile("^(\\d+)(.*)");
 
-    public TEIFormater(Document document) {
+    public TEIFormatter(Document document) {
         doc = document;
     }
 
