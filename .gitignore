@@ -43,6 +43,7 @@ maven-build.xml
 release.properties
 
 grobid-quantities
+grobid-dictionaries
 grobid-ner
 grobid-bio
 grobid-istex
