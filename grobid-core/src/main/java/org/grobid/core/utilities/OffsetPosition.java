@@ -12,6 +12,10 @@ public class OffsetPosition {
         this.end = end;
     }
 
+	public boolean overlaps(OffsetPosition pos) {
+		return !((end <= pos.start) || (start >= pos.end)) ;
+	}
+
     public String toString() {
         return "" + start + "\t" + end;
     }

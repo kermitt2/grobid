@@ -1242,32 +1242,38 @@ public class Document {
         return accumulated.toString();
     }
 
-    /*
-     * Try to match a DOI in the first page, independently from any preliminar
-     * segmentation. This can be useful for improving the chance to find a DOI
-     * in headers or footnotes.
-     */
-    public List<String> getDOIMatches() {
-        List<String> results = new ArrayList<String>();
-        for (Block block : blocks) {
-            String localText = block.getText();
-            if (localText != null) {
-                localText = localText.trim();
-                if (localText.contains("@PAGE")) {
-                    break;
-                } else {
-                    Matcher DOIMatcher = DOIPattern.matcher(localText);
-                    while (DOIMatcher.find()) {
-                        String theDOI = DOIMatcher.group();
-                        if (!results.contains(theDOI)) {
-                            results.add(theDOI);
-                        }
-                    }
-                }
-            }
-        }
-        return results;
-    }
+	/*
+	 * Try to match a DOI in the first page, independently from any preliminar
+	 * segmentation. This can be useful for improving the chance to find a DOI
+	 * in headers or footnotes.
+	 */
+	public List<String> getDOIMatches() {
+	    List<String> results = new ArrayList<String>();
+		List<Page> pages = getPages();
+		int p = 0;
+	    for(Page page : pages) {
+            if ((page.getBlocks() != null) && (page.getBlocks().size() > 0)) {
+                for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
+                    Block block = page.getBlocks().get(blockIndex);
+                    String localText = block.getText();
+                    if ((localText != null) && (localText.length() > 0)) {
+			            localText = localText.trim();
+		                Matcher DOIMatcher = DOIPattern.matcher(localText);
+		                while (DOIMatcher.find()) {
+		                    String theDOI = DOIMatcher.group();
+		                    if (!results.contains(theDOI)) {
+		                        results.add(theDOI);
+		                    }
+		                }
+		            }
+				}
+	        }
+			if (p>1)
+				break;
+			p++;
+	    }
+	    return results;
+	}
 
     public String getTei() {
         return tei;

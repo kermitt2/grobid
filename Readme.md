@@ -45,6 +45,14 @@ The GROBID extraction and parsing algorithms uses the [Wapiti CRF library](http:
 
 GROBID should run properly "out of the box" on MacOS X, Linux (32 and 64 bits). GROBID does currently not run on Windows environments because the required and up-to-date CRF native binaries are not yet compiled for this platform (contributors to work on Windows support are very welcome!).
 
+## Demo
+
+For testing purposes, a public GROBID demo server is available at the following address: [http://grobid.science-miner.com](http://grobid.science-miner.com)
+
+The Web service are documented in the [service manual](https://github.com/kermitt2/grobid/blob/master/grobid-service/src/main/doc/grobid-service-manual.pdf).
+
+_Warning_: Some quota and query limitation apply to the demo server! If you are interested in using such online GROBID service for your project without limitation (and with support), please contact us (<patrice.lopez@science-miner.com>). 
+
 ## GROBID documentation
 
 Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detailed information.
