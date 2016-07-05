@@ -15,7 +15,7 @@ public interface GrobidPropertyKeys {
     public static final String PROP_NATIVE_LIB_PATH = "grobid.nativelibrary.path";
     public static final String PROP_3RD_PARTY_PDF2XML = "grobid.3rdparty.pdf2xml.path";
     public static final String PROP_3RD_PARTY_PDF2XML_MEMORY_LIMIT = "grobid.3rdparty.pdf2xml.memory.limit.mb";
-    public static final String PROP_3RD_PARTY_PDF2XML_TIMEOUT_SEC = "grobid.3rdparty.pdf2xml.memory.timeout.sec";
+    public static final String PROP_3RD_PARTY_PDF2XML_TIMEOUT_SEC = "grobid.3rdparty.pdf2xml.timeout.sec";
 
     public static final String PROP_GROBID_CRF_ENGINE = "grobid.crf.engine";
     public static final String PROP_USE_LANG_ID = "grobid.use_language_id";

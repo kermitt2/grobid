@@ -26,6 +26,7 @@ public class DocumentSource {
     private static final int KILLED_DUE_2_TIMEOUT = 143;
     private static final int MISSING_LIBXML2 = 127;
     private static final int MISSING_PDF2XML = 126;
+    public static final int PDF2XML_FILES_AMOUNT_LIMIT = 5000;
 
     private File pdfFile;
     private File xmlFile;
@@ -48,6 +49,10 @@ public class DocumentSource {
 //    }
 
     public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage) {
+        return fromPdf(pdfFile, startPage, endPage, true);
+    }
+
+    public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage, boolean withImages) {
         if (!pdfFile.exists() || pdfFile.isDirectory()) {
             throw new GrobidException("Input PDF file " + pdfFile + " does not exist or a directory", GrobidExceptionStatus.BAD_INPUT_DATA);
         }
@@ -55,7 +60,12 @@ public class DocumentSource {
         DocumentSource source = new DocumentSource();
         source.cleanupXml = true;
 
-        source.xmlFile = source.pdf2xml(null, false, startPage, endPage, pdfFile, GrobidProperties.getTempPath(), true);//withImages);
+        try {
+            source.xmlFile = source.pdf2xml(null, false, startPage, endPage, pdfFile, GrobidProperties.getTempPath(), withImages);
+        } catch (Exception e) {
+            source.close(true);
+            throw e;
+        }
         source.pdfFile = pdfFile;
         return source;
     }
@@ -96,6 +106,7 @@ public class DocumentSource {
         // conversion,
         // except if the force parameter is set to true
         File tmpPathXML = new File(tmpPath, KeyGen.getKey() + ".lxml");
+        xmlFile = tmpPathXML;
         File f = tmpPathXML;
 
         if ((!f.exists()) || force) {
@@ -119,6 +130,11 @@ public class DocumentSource {
                 tmpPathXML = processPdf2XmlThreadMode(timeout, pdfPath, tmpPathXML, cmd);
             }
 
+            File dataFolder = new File(tmpPathXML.getAbsolutePath() + "_data");
+            File[] files = dataFolder.listFiles();
+            if (files != null && files.length > PDF2XML_FILES_AMOUNT_LIMIT) {
+                throw new GrobidException("The temp folder " + dataFolder + " contains " + files.length + " files and exceeds the limit", GrobidExceptionStatus.PARSING_ERROR);
+            }
         }
         LOGGER.debug("pdf2xml process finished. Time to process:" + (System.currentTimeMillis() - time) + "ms");
         return tmpPathXML;

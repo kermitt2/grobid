@@ -109,28 +109,14 @@ public class Segmentation extends AbstractParser {
     public Document processing(DocumentSource documentSource, GrobidAnalysisConfig config) {
         try {
             Document doc = new Document(documentSource);
+            doc.addTokenizedDocument(config);
+            doc = prepareDocument(doc);
 
-            List<LayoutToken> tokenizations = doc.addTokenizedDocument(config);
+            // if assets is true, the images are still there under directory pathXML+"_data"
+            // we copy them to the assetPath directory
 
-            if (tokenizations.size() > GrobidProperties.getPdfTokensMax()) {
-                throw new GrobidException("The document has " + tokenizations.size() + " tokens, but the limit is " + GrobidProperties.getPdfTokensMax(),
-                        GrobidExceptionStatus.TOO_MANY_TOKENS);
-            }
-
-            doc.produceStatistics();
-            String content = //getAllTextFeatured(doc, headerMode);
-                    getAllLinesFeatured(doc);
-            if ((content != null) && (content.trim().length() > 0)) {
-                String labelledResult = label(content);
-                // set the different sections of the Document object
-                doc = BasicStructureBuilder.generalResultSegmentation(doc, labelledResult, tokenizations);
-
-
-                // if assets is true, the images are still there under directory pathXML+"_data"
-                // we copy them to the assetPath directory
-                File assetFile = config.getPdfAssetPath();
-                dealWithImages(documentSource, doc, assetFile, config);
-            }
+            File assetFile = config.getPdfAssetPath();
+            dealWithImages(documentSource, doc, assetFile, config);
             return doc;
         } finally {
             // keep it clean when leaving...
@@ -143,6 +129,30 @@ public class Segmentation extends AbstractParser {
                 DocumentSource.close(documentSource, true);
             }
         }
+    }
+
+    public Document processing(String text) {
+        Document doc = Document.createFromText(text);
+        return prepareDocument(doc);
+    }
+
+    public Document prepareDocument(Document doc) {
+
+        List<LayoutToken> tokenizations = doc.getTokenizations();
+        if (tokenizations.size() > GrobidProperties.getPdfTokensMax()) {
+            throw new GrobidException("The document has " + tokenizations.size() + " tokens, but the limit is " + GrobidProperties.getPdfTokensMax(),
+                    GrobidExceptionStatus.TOO_MANY_TOKENS);
+        }
+
+        doc.produceStatistics();
+        String content = //getAllTextFeatured(doc, headerMode);
+                getAllLinesFeatured(doc);
+        if ((content != null) && (content.trim().length() > 0)) {
+            String labelledResult = label(content);
+            // set the different sections of the Document object
+            doc = BasicStructureBuilder.generalResultSegmentation(doc, labelledResult, tokenizations);
+        }
+        return doc;
     }
 
     private void dealWithImages(DocumentSource documentSource, Document doc, File assetFile, GrobidAnalysisConfig config) {

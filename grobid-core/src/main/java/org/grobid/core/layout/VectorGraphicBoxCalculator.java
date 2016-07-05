@@ -10,6 +10,7 @@ import net.sf.saxon.om.Item;
 import net.sf.saxon.om.SequenceIterator;
 import net.sf.saxon.trans.XPathException;
 import org.grobid.core.document.Document;
+import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.XQueryProcessor;
 
 import java.io.File;
@@ -25,6 +26,7 @@ import java.util.List;
 public class VectorGraphicBoxCalculator {
 
     public static final int MINIMUM_VECTOR_BOX_AREA = 1000;
+    public static final int VEC_GRAPHICS_FILE_SIZE_LIMIT = 2 * 1024 * 1024;
 
     public static Multimap<Integer, GraphicObject> calculate(Document document) throws IOException, XPathException {
 
@@ -44,7 +46,13 @@ public class VectorGraphicBoxCalculator {
             BoundingBox mainPageArea = document.getPage(pageNum).getMainArea();
 
             String q = XQueryProcessor.getQueryFromResources("vector-coords.xq");
-            XQueryProcessor pr = new XQueryProcessor(new File(document.getDocumentSource().getXmlFile().getAbsolutePath() + "_data", "image-" + pageNum + ".vec"));
+            File vecFile = new File(document.getDocumentSource().getXmlFile().getAbsolutePath() + "_data", "image-" + pageNum + ".vec");
+
+            if (vecFile.length() > VEC_GRAPHICS_FILE_SIZE_LIMIT) {
+                throw new GrobidException("The vector file " + vecFile + " is too large to be processed, size: " + vecFile.length());
+            }
+            XQueryProcessor pr = new XQueryProcessor(vecFile);
+
             SequenceIterator it = pr.getSequenceIterator(q);
             Item item;
             List<BoundingBox> boxes = new ArrayList<>();
