@@ -10,7 +10,7 @@ import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.document.DocumentSource;
-import org.grobid.core.document.TEIFormater;
+import org.grobid.core.document.TEIFormatter;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
@@ -1830,14 +1830,14 @@ public class FullTextParser extends AbstractParser {
         if (doc.getBlocks() == null) {
             return;
         }
-        TEIFormater teiFormater = new TEIFormater(doc);
+        TEIFormatter teiFormatter = new TEIFormatter(doc);
         StringBuilder tei;
         try {
-            tei = teiFormater.toTEIHeader(resHeader, null, config);
+            tei = teiFormatter.toTEIHeader(resHeader, null, config);
 
 			//System.out.println(rese);
             //int mode = config.getFulltextProcessingMode();
-			tei = teiFormater.toTEIBody(tei, reseBody, resHeader, resCitations,
+			tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
 					layoutTokenization, figures, tables, doc, config);
 
 			tei.append("\t\t<back>\n");
@@ -1856,14 +1856,14 @@ public class FullTextParser extends AbstractParser {
 				String reseAcknowledgement = null;
 				if ( (acknowledgementText != null) && (acknowledgementText.length() >0) )
 					reseAcknowledgement = label(acknowledgementText);
-				tei = teiFormater.toTEIAcknowledgement(tei, reseAcknowledgement,
+				tei = teiFormatter.toTEIAcknowledgement(tei, reseAcknowledgement,
 					tokenizationsAcknowledgement, resCitations, config);
 			}
 
-			tei = teiFormater.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
+			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
 				tokenizationsAnnex, doc, config);
 
-			tei = teiFormater.toTEIReferences(tei, resCitations, config);
+			tei = teiFormatter.toTEIReferences(tei, resCitations, config);
             doc.calculateTeiIdToBibDataSets();
 
             tei.append("\t\t</back>\n");
