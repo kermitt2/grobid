@@ -16,6 +16,7 @@ public enum GrobidModels {
     CITATION("citation"),
     REFERENCE_SEGMENTER("reference-segmenter"),
     DATE("date"),
+    DICTIONARIES("dictionaries"),
     EBOOK("ebook"),
     ENTITIES_CHEMISTRY("entities/chemistry"),
     //	ENTITIES_CHEMISTRY("chemistry"),
