@@ -110,7 +110,7 @@ public class BoundingBox {
 
     public BoundingBox boundBoxExcludingAnotherPage(BoundingBox o) {
         if (this.page != o.page) {
-            LOGGER.warn("Cannot compute a bounding box for different pages: " + this + " and " + o + "; skipping");
+            LOGGER.debug("Cannot compute a bounding box for different pages: " + this + " and " + o + "; skipping");
             return this;
         }
         return fromTwoPoints(o.page, Math.min(this.x, o.x), Math.min(this.y, o.y), Math.max(this.x2, o.x2), Math.max(this.y2, o.y2));

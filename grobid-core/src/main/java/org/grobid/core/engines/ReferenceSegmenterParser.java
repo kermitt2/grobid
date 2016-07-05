@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import com.google.common.collect.Sets;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
@@ -19,6 +20,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.regex.Matcher;
@@ -37,7 +39,18 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         super(GrobidModels.REFERENCE_SEGMENTER);
     }
 
-    /**
+	@Override
+	public List<LabeledReferenceResult> extract(String referenceBlock) {
+		Document res = Document.createFromText(referenceBlock);
+
+		DocumentPiece piece = new DocumentPiece(
+				new DocumentPointer(0, 0, 0),
+				new DocumentPointer(0, res.getTokenizations().size() - 1, res.getTokenizations().size() - 1));
+
+		return extract(res, Sets.newTreeSet(Collections.singletonList(piece)), false);
+	}
+
+	/**
      *
      * @param doc Document object
      * @return <reference_label, reference_string>  Note, that label is null when no label was detected
@@ -47,8 +60,13 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 		return extract(doc, false);
 	}
 
-    public List<LabeledReferenceResult> extract(Document doc, boolean training) {
+	public List<LabeledReferenceResult> extract(Document doc, boolean training) {
 		SortedSet<DocumentPiece> referencesParts = doc.getDocumentPart(SegmentationLabel.REFERENCES);
+		return extract(doc, referencesParts, training);
+	}
+
+    public List<LabeledReferenceResult> extract(Document doc, SortedSet<DocumentPiece> referencesParts, boolean training) {
+
 		Pair<String,List<LayoutToken>> featSeg = getReferencesSectionFeatured(doc, referencesParts);
 		String res;
 		List<LayoutToken> tokenizationsReferences;

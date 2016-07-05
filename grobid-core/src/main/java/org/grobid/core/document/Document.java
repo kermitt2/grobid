@@ -9,6 +9,7 @@ import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
+import org.grobid.core.analyzers.GrobidDefaultAnalyzer;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Figure;
@@ -40,6 +41,7 @@ import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.print.Doc;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
@@ -147,6 +149,16 @@ public class Document {
         top = new DocumentNode("top", "0");
         this.documentSource = documentSource;
         setPathXML(documentSource.getXmlFile());
+    }
+
+    private Document() {
+        this.documentSource = null;
+    }
+
+    public static Document createFromText(String text) {
+        Document doc = new Document();
+        doc.fromText(text);
+        return doc;
     }
 
     public void setLanguage(String l) {
@@ -257,6 +269,36 @@ public class Document {
         }
 
         return tokenizationsReferences;
+    }
+
+    public List<LayoutToken> fromText(final String text) {
+
+        List<String> toks = GrobidDefaultAnalyzer.tokenize(text);
+        tokenizations = Lists.transform(toks, new Function<String, LayoutToken>() {
+            @Override
+            public LayoutToken apply(String s) {
+                return new LayoutToken(s);
+            }
+        });
+
+        blocks = new ArrayList<>();
+        Block b = new Block();
+        for (LayoutToken lt : tokenizations) {
+            b.addToken(lt);
+        }
+
+        Page p = new Page(1);
+        b.setPage(p);
+        b.setText(text);
+        pages = new ArrayList<>();
+        pages.add(p);
+        blocks.add(b);
+        p.addBlock(b);
+        b.setStartToken(0);
+        b.setEndToken(toks.size() - 1);
+
+        images = new ArrayList<>();
+        return tokenizations;
     }
 
     /**
