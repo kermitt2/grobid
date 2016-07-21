@@ -988,7 +988,8 @@ public class TEIFormater {
 					// we skip the last div
 				}
 				else {*/
-                buffer.append(acknowResultLines[i] + "\n");
+				buffer.append(TextUtilities.dehyphenize(acknowResultLines[i]) + "\n");	
+                //buffer.append(acknowResultLines[i] + "\n");
                 //}
             }
         }

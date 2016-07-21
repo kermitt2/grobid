@@ -3263,6 +3263,11 @@ public class BiblioItem {
                             continue;
                     }
 
+			        if ( (author.getFirstName() == null) && (author.getMiddleName() == null) &&
+			                (author.getLastName() == null) ) {
+						continue;
+					}
+
                     TextUtilities.appendN(tei, '\t', nbTag);
                     tei.append("<author");
 
