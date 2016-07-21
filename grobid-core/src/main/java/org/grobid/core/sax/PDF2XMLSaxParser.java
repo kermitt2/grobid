@@ -23,13 +23,10 @@ import java.util.*;
  * @author Patrice Lopez
  */
 public class PDF2XMLSaxParser extends DefaultHandler {
-	/**
-	 * The Logger.
-	 */
 	public static final Logger LOGGER = LoggerFactory.getLogger(PDF2XMLSaxParser.class);
 
-	private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed
-															// text
+    private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
+
 	private String currentFont = null;
 	private String colorFont = null;
 	private String previousToken = null;
@@ -75,10 +72,11 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 		} else {
 			layoutToken.setBlockPtr(doc.getBlocks().size());
 		}
-		if (block == null)
-			LOGGER.info("addToken called with null block object: " + layoutToken.toString());
-		else
-			block.addToken(layoutToken);
+		if (block == null) {
+            LOGGER.info("addToken called with null block object: " + layoutToken.toString());
+        } else {
+            block.addToken(layoutToken);
+        }
 	}
 
 	private void addBlock(Block block) {
