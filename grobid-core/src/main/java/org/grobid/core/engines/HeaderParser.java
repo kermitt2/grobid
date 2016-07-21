@@ -81,8 +81,7 @@ public class HeaderParser extends AbstractParser {
                                               BiblioItem resHeader, GrobidAnalysisConfig config) {
         DocumentSource documentSource = null;
         try {
-            documentSource = DocumentSource.fromPdf(new File(pdfInput), config.getStartPage(), config.getEndPage(),
-                    config.getPdfAssetPath() != null);
+            documentSource = DocumentSource.fromPdf(new File(pdfInput), config.getStartPage(), config.getEndPage());
             Document doc = new Document(documentSource);
             doc.addTokenizedDocument(config);
 
