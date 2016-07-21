@@ -88,7 +88,7 @@ public class Segmentation extends AbstractParser {
         super(GrobidModels.SEGMENTATION);
     }
 
-    public Document processing(File input, GrobidAnalysisConfig config) {
+    /*public Document processing(File input, GrobidAnalysisConfig config) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -100,7 +100,8 @@ public class Segmentation extends AbstractParser {
                 config.getPdfAssetPath() != null);
 
         return processing(documentSource, config);
-    }
+    }*/
+    
     /**
      * Segment a PDF document into high level zones: cover page, document header,
      * page footer, page header, body, page numbers, biblio section and annexes.
