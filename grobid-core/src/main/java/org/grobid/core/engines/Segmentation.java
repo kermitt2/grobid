@@ -12,7 +12,12 @@ import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorSegmentation;
-import org.grobid.core.layout.*;
+import org.grobid.core.layout.Block;
+import org.grobid.core.layout.GraphicObjectType;
+import org.grobid.core.layout.Page;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.BoundingBox;
+import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
@@ -21,8 +26,16 @@ import org.slf4j.LoggerFactory;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 
 // for image conversion we're using an ImageIO plugin for PPM format support
@@ -75,7 +88,7 @@ public class Segmentation extends AbstractParser {
         super(GrobidModels.SEGMENTATION);
     }
 
-    public Document processing(File input, GrobidAnalysisConfig config) {
+    /*public Document processing(File input, GrobidAnalysisConfig config) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -87,13 +100,13 @@ public class Segmentation extends AbstractParser {
                 config.getPdfAssetPath() != null);
 
         return processing(documentSource, config);
-    }
-
+    }*/
+    
     /**
      * Segment a PDF document into high level zones: cover page, document header,
      * page footer, page header, body, page numbers, biblio section and annexes.
      *
-     * @param documentSource document source
+     * @param documentSource     document source
      * @return Document object with segmentation information
      */
     public Document processing(DocumentSource documentSource, GrobidAnalysisConfig config) {
@@ -273,7 +286,7 @@ public class Segmentation extends AbstractParser {
 
         int documentLength = doc.getDocumentLenghtChar();
 
-        double pageHeight = 0.0;
+		double pageHeight = 0.0;
         boolean graphicVector = false;
         boolean graphicBitmap = false;
 
@@ -281,12 +294,12 @@ public class Segmentation extends AbstractParser {
         // (typically indicating a publisher foot or head notes)
         Map<String, Integer> patterns = new TreeMap<String, Integer>();
         Map<String, Boolean> firstTimePattern = new TreeMap<String, Boolean>();
-        for (Page page : pages) {
+        for(Page page : pages) {
             pageHeight = page.getHeight();
             // we just look at the two first and last blocks of the page
             if ((page.getBlocks() != null) && (page.getBlocks().size() > 0)) {
-                for (int blockIndex = 0; blockIndex < page.getBlocks().size(); blockIndex++) {
-                    if ((blockIndex < 2) || (blockIndex > page.getBlocks().size() - 2)) {
+                for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
+                    if ( (blockIndex < 2) || (blockIndex > page.getBlocks().size()-2)) {
                         Block block = page.getBlocks().get(blockIndex);
                         String localText = block.getText();
                         if ((localText != null) && (localText.length() > 0)) {
@@ -299,8 +312,9 @@ public class Segmentation extends AbstractParser {
                                     if (nb == null) {
                                         patterns.put(pattern, new Integer(1));
                                         firstTimePattern.put(pattern, false);
-                                    } else
-                                        patterns.put(pattern, new Integer(nb + 1));
+                                    }
+                                    else
+                                        patterns.put(pattern, new Integer(nb+1));
                                 }
                             }
                         }
@@ -308,8 +322,8 @@ public class Segmentation extends AbstractParser {
                 }
             }
         }
-
-        for (Page page : pages) {
+ 
+        for(Page page : pages) {
             pageHeight = page.getHeight();
             newPage = true;
             double spacingPreviousBlock = 0.0; // discretized
@@ -318,11 +332,11 @@ public class Segmentation extends AbstractParser {
             BoundingBox pageBoundingBox = page.getMainArea();
             mm = 0;
             //endPage = true;
-
-            if ((page.getBlocks() == null) || (page.getBlocks().size() == 0))
+            
+            if ((page.getBlocks() == null) || (page.getBlocks().size() == 0)) 
                 continue;
 
-            for (int blockIndex = 0; blockIndex < page.getBlocks().size(); blockIndex++) {
+            for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
                 Block block = page.getBlocks().get(blockIndex);
                 /*if (start) {
                     newPage = true;
@@ -330,14 +344,14 @@ public class Segmentation extends AbstractParser {
                 }*/
                 boolean lastPageBlock = false;
                 boolean firstPageBlock = false;
-                if (blockIndex == page.getBlocks().size() - 1) {
+                if (blockIndex == page.getBlocks().size()-1) {        
                     lastPageBlock = true;
                 }
-
+                
                 if (blockIndex == 0) {
                     firstPageBlock = true;
                 }
-
+                
                 //endblock = false;
 
                 /*if (endPage) {
@@ -348,7 +362,7 @@ public class Segmentation extends AbstractParser {
                 // check if we have a graphical object connected to the current block
                 List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
                 if (localImages != null) {
-                    for (GraphicObject localImage : localImages) {
+                    for(GraphicObject localImage : localImages) {
                         if (localImage.getType() == GraphicObjectType.BITMAP)
                             graphicVector = true;
                         if (localImage.getType() == GraphicObjectType.VECTOR)
@@ -356,10 +370,11 @@ public class Segmentation extends AbstractParser {
                     }
                 }
 
-                if (lowestPos > block.getY()) {
+                if (lowestPos >  block.getY()) {
                     // we have a vertical shift, which can be due to a change of column or other particular layout formatting 
                     spacingPreviousBlock = doc.getMaxBlockSpacing() / 5.0; // default
-                } else
+                }
+                else 
                     spacingPreviousBlock = block.getY() - lowestPos;
 
                 String localText = block.getText();
@@ -368,25 +383,25 @@ public class Segmentation extends AbstractParser {
 
                 // character density of the block
                 double density = 0.0;
-                if ((block.getHeight() != 0.0) && (block.getWidth() != 0.0) &&
-                        (block.getText() != null) && (!block.getText().contains("@PAGE")) &&
-                        (!block.getText().contains("@IMAGE")))
-                    density = (double) block.getText().length() / (block.getHeight() * block.getWidth());
+                if ( (block.getHeight() != 0.0) && (block.getWidth() != 0.0) && 
+                     (block.getText() != null) && (!block.getText().contains("@PAGE")) && 
+                     (!block.getText().contains("@IMAGE")) )
+                    density = (double)block.getText().length() / (block.getHeight() * block.getWidth());
 
                 // is the current block in the main area of the page or not?
                 boolean inPageMainArea = true;
-                BoundingBox blockBoundingBox = BoundingBox.fromPointAndDimensions(page.getNumber(),
-                        block.getX(), block.getY(), block.getWidth(), block.getHeight());
+                BoundingBox blockBoundingBox = BoundingBox.fromPointAndDimensions(page.getNumber(), 
+                    block.getX(), block.getY(), block.getWidth(), block.getHeight());
                 if (pageBoundingBox == null || (!pageBoundingBox.contains(blockBoundingBox) && !pageBoundingBox.intersect(blockBoundingBox)))
                     inPageMainArea = false;
 
                 String[] lines = localText.split("[\\n\\r]");
-                // set the max length of the lines in the block, in number of characters
-                int maxLineLength = 0;
-                for (int p = 0; p < lines.length; p++) {
-                    if (lines[p].length() > maxLineLength)
-                        maxLineLength = lines[p].length();
-                }
+    			// set the max length of the lines in the block, in number of characters
+    			int maxLineLength = 0;
+    			for(int p=0; p<lines.length; p++) {
+    				if (lines[p].length() > maxLineLength) 
+    					maxLineLength = lines[p].length();
+    			}
                 List<LayoutToken> tokens = block.getTokens();
                 if ((tokens == null) || (tokens.size() == 0)) {
                     continue;
@@ -401,19 +416,19 @@ public class Segmentation extends AbstractParser {
                     if (endPage)
                         lastPageBlock = true;
                     */
-
+                    
                     // for the layout information of the block, we take simply the first layout token
-                    LayoutToken token = null;
-                    if (tokens.size() > 0)
-                        token = tokens.get(0);
+    				LayoutToken token = null;
+    				if (tokens.size() > 0)
+    					token = tokens.get(0);
 
-                    double coordinateLineY = token.getY();
+    				double coordinateLineY = token.getY();
 
                     features = new FeaturesVectorSegmentation();
                     features.token = token;
                     features.line = line;
 
-                    if ((blockIndex < 2) || (blockIndex > page.getBlocks().size() - 2)) {
+                    if ( (blockIndex < 2) || (blockIndex > page.getBlocks().size()-2)) {
                         String pattern = FeatureFactory.getPattern(line);
                         Integer nb = patterns.get(pattern);
                         if ((nb != null) && (nb > 1)) {
@@ -453,14 +468,14 @@ public class Segmentation extends AbstractParser {
                     //features.lineLength = line.length() / LINESCALE;
                     features.lineLength = featureFactory
                             .linearScaling(line.length(), maxLineLength, LINESCALE);
-
+    				
                     features.punctuationProfile = TextUtilities.punctuationProfile(line);
 
                     if (graphicBitmap) {
-                        features.bitmapAround = true;
+                    	features.bitmapAround = true;
                     }
                     if (graphicVector) {
-                        features.vectorAround = true;
+                    	features.vectorAround = true;
                     }
 
                     features.lineStatus = null;
@@ -583,26 +598,26 @@ public class Segmentation extends AbstractParser {
                             .linearScaling(nn, documentLength, NBBINS_POSITION);
 //System.out.println(nn + " " + documentLength + " " + NBBINS_POSITION + " " + features.relativeDocumentPosition); 
                     features.relativePagePositionChar = featureFactory
-                            .linearScaling(mm, pageLength, NBBINS_POSITION);
+                            .linearScaling(mm, pageLength, NBBINS_POSITION); 
 //System.out.println(mm + " " + pageLength + " " + NBBINS_POSITION + " " + features.relativePagePositionChar);                     			
-                    int pagePos = featureFactory
+    				int pagePos = featureFactory
                             .linearScaling(coordinateLineY, pageHeight, NBBINS_POSITION);
 //System.out.println(coordinateLineY + " " + pageHeight + " " + NBBINS_POSITION + " " + pagePos);  
-                    if (pagePos > NBBINS_POSITION)
-                        pagePos = NBBINS_POSITION;
+    				if (pagePos > NBBINS_POSITION)
+    					pagePos = NBBINS_POSITION;
                     features.relativePagePosition = pagePos;
 //System.out.println(coordinateLineY + "\t" + pageHeight);
 
                     if (spacingPreviousBlock != 0.0) {
                         features.spacingWithPreviousBlock = featureFactory
-                                .linearScaling(spacingPreviousBlock - doc.getMinBlockSpacing(), doc.getMaxBlockSpacing() - doc.getMinBlockSpacing(), NBBINS_SPACE);
+                            .linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE);                          
                     }
 
                     features.inMainArea = inPageMainArea;
 
                     if (density != -1.0) {
                         features.characterDensity = featureFactory
-                                .linearScaling(density - doc.getMinCharacterDensity(), doc.getMaxCharacterDensity() - doc.getMinCharacterDensity(), NBBINS_DENSITY);
+                            .linearScaling(density-doc.getMinCharacterDensity(), doc.getMaxCharacterDensity()-doc.getMinCharacterDensity(), NBBINS_DENSITY);
 //System.out.println((density-doc.getMinCharacterDensity()) + " " + (doc.getMaxCharacterDensity()-doc.getMinCharacterDensity()) + " " + NBBINS_DENSITY + " " + features.characterDensity);             
                     }
 
@@ -665,20 +680,20 @@ public class Segmentation extends AbstractParser {
             List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
 
             // we write the full text untagged (but featurized)
-            String outPathFulltext = pathFullText + File.separator +
-                    PDFFileName.replace(".pdf", ".training.segmentation");
+            String outPathFulltext = pathFullText + File.separator + 
+				PDFFileName.replace(".pdf", ".training.segmentation");
             Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
             writer.write(fulltext + "\n");
             writer.close();
 
-            // also write the raw text as seen before segmentation
-            StringBuffer rawtxt = new StringBuffer();
-            for (LayoutToken txtline : tokenizations) {
-                rawtxt.append(txtline.getText());
-            }
-            String outPathRawtext = pathFullText + File.separator +
-                    PDFFileName.replace(".pdf", ".training.segmentation.rawtxt");
-            FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), "UTF-8");
+			// also write the raw text as seen before segmentation
+			StringBuffer rawtxt = new StringBuffer();
+			for(LayoutToken txtline : tokenizations) {
+				rawtxt.append(txtline.getText());
+			}
+			String outPathRawtext = pathFullText + File.separator + 
+				PDFFileName.replace(".pdf", ".training.segmentation.rawtxt");
+			FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), "UTF-8");
 
             if ((fulltext != null) && (fulltext.length() > 0)) {
                 String rese = label(fulltext);
@@ -686,8 +701,8 @@ public class Segmentation extends AbstractParser {
 
                 // write the TEI file to reflect the extact layout of the text as extracted from the pdf
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                        File.separator +
-                        PDFFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), "UTF-8");
+                        File.separator + 
+						PDFFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), "UTF-8");
                 writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
                         "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
 
@@ -697,7 +712,7 @@ public class Segmentation extends AbstractParser {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+			e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid training" +
                     " data generation for segmentation model.", e);
         } finally {
