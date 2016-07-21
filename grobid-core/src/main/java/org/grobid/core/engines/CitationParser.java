@@ -9,6 +9,7 @@ import org.grobid.core.data.Date;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
+import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
@@ -207,14 +208,19 @@ public class CitationParser extends AbstractParser {
         return results;
     }
 
-
     public List<BibDataSet> processingReferenceSection(File input,
+                                                       ReferenceSegmenter referenceSegmenter,
+                                                       boolean consolidate) {
+        DocumentSource documentSource = DocumentSource.fromPdf(input);
+        return processingReferenceSection(documentSource, referenceSegmenter, consolidate);
+    }
+
+    public List<BibDataSet> processingReferenceSection(DocumentSource documentSource,
                                                        ReferenceSegmenter referenceSegmenter,
                                                        boolean consolidate) {
         List<BibDataSet> results;
         try {
-
-            Document doc = parsers.getSegmentationParser().processing(input,
+            Document doc = parsers.getSegmentationParser().processing(documentSource,
                     GrobidAnalysisConfig.builder().consolidateCitations(consolidate).build());
             results = processingReferenceSection(doc, referenceSegmenter, consolidate);
         } catch (GrobidException e) {

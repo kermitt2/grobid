@@ -88,17 +88,6 @@ public class Segmentation extends AbstractParser {
         super(GrobidModels.SEGMENTATION);
     }
 
-    public Document processing(File input, GrobidAnalysisConfig config) {
-        if (input == null) {
-            throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
-        }
-        if (!input.exists()) {
-            throw new GrobidResourceException("Cannot process pdf file, because input file '" +
-                    input.getAbsolutePath() + "' does not exist.");
-        }
-        DocumentSource documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage());
-        return processing(documentSource, config);
-    }
     /**
      * Segment a PDF document into high level zones: cover page, document header,
      * page footer, page header, body, page numbers, biblio section and annexes.
@@ -116,7 +105,8 @@ public class Segmentation extends AbstractParser {
             // we copy them to the assetPath directory
 
             File assetFile = config.getPdfAssetPath();
-            dealWithImages(documentSource, doc, assetFile, config);
+            if (assetFile != null) 
+                dealWithImages(documentSource, doc, assetFile, config);
             return doc;
         } finally {
             // keep it clean when leaving...
@@ -130,6 +120,19 @@ public class Segmentation extends AbstractParser {
             }
         }
     }
+
+    /*
+    public Document processing(File input, GrobidAnalysisConfig config) {
+        if (input == null) {
+            throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
+        }
+        if (!input.exists()) {
+            throw new GrobidResourceException("Cannot process pdf file, because input file '" +
+                    input.getAbsolutePath() + "' does not exist.");
+        }
+        DocumentSource documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage(), config.getPdfAssetPath() != null);
+        return processing(documentSource, config);
+    }*/
 
     public Document processing(String text) {
         Document doc = Document.createFromText(text);
