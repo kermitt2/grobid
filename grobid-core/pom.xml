@@ -1,315 +1,310 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.grobid</groupId>
-		<artifactId>grobid-parent</artifactId>
-		<version>0.4.1-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>
-	</parent>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.grobid</groupId>
+        <artifactId>grobid-parent</artifactId>
+        <version>0.4.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
     <artifactId>grobid-core</artifactId>
-	<version>0.4.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
-	<name>${project.artifactId}</name>
+    <version>0.4.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>${project.artifactId}</name>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<assemblies.name>src/main/assembly/assembly.xml</assemblies.name>
-		<package.file>${project.groupId}.${project.artifactId}_${project.version}.war</package.file>
-		<license.file>${basedir}/LICENSE</license.file>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <assemblies.name>src/main/assembly/assembly.xml</assemblies.name>
+        <package.file>${project.groupId}.${project.artifactId}_${project.version}.war</package.file>
+        <license.file>${basedir}/LICENSE</license.file>
+    </properties>
 
-	<repositories>
-		<repository>
-			<id>3rd-party-local-repo</id>
-			<name>This is a local repository included in the grobid project, to access 3rd party libs.</name>
-			<url>file:///${basedir}/lib/</url>
-			<layout>default</layout>
-		</repository>
-		<repository>
-			<id>maven2-repository.dev.java.net</id>
-			<name>Java.net Repository for Maven</name>
-			<url>http://download.java.net/maven/2/</url>
-			<layout>default</layout>
-		</repository>
-		<repository>
-		    <id>com.springsource.repository.bundles.external</id>
-		    <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
-		    <url>http://repository.springsource.com/maven/bundles/external</url>
-		</repository>
+    <repositories>
+        <repository>
+            <id>3rd-party-local-repo</id>
+            <name>This is a local repository included in the grobid project, to access 3rd party libs.</name>
+            <url>file:///${basedir}/lib/</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net Repository for Maven</name>
+            <url>http://download.java.net/maven/2/</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>com.springsource.repository.bundles.external</id>
+            <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+            <url>http://repository.springsource.com/maven/bundles/external</url>
+        </repository>
     </repositories>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.chasen</groupId>
-			<artifactId>crfpp</artifactId>
-			<version>1.0.2</version>
-			<scope>compile</scope>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.chasen</groupId>
+            <artifactId>crfpp</artifactId>
+            <version>1.0.2</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>fr.limsi.wapiti</groupId>
             <artifactId>wapiti</artifactId>
             <version>1.5.0</version>
         </dependency>
         <dependency>
-			<groupId>com.cybozu.labs</groupId>
-			<artifactId>langdetect</artifactId>
-			<version>1.1-20120112</version>
-		</dependency>
+            <groupId>org.wipo.analysers</groupId>
+            <artifactId>wipo-analysers</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.cybozu.labs</groupId>
+            <artifactId>langdetect</artifactId>
+            <version>1.1-20120112</version>
+        </dependency>
         <!--dependency>
 			<groupId>com.cybozu</groupId>
 			<artifactId>language-detection</artifactId>
 			<version>09-13-2011</version>
 		</dependency-->
+
+        <!-- Apache commons -->
         <dependency>
-			<groupId>net.arnx</groupId>
-			<artifactId>jsonic</artifactId>
-			<version>1.3.5</version>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>commons-pool</groupId>
-			<artifactId>commons-pool</artifactId>
-			<version>1.6</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.7</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.7</version>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-		</dependency>
-		<dependency>
-		    <groupId>xerces</groupId>
-		    <artifactId>xercesImpl</artifactId>
-		    <version>2.11.0</version>
-		</dependency>
-		<dependency>
-			<groupId>directory-naming</groupId>
-			<artifactId>naming-java</artifactId>
-			<version>0.8</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.easymock</groupId>
-			<artifactId>easymock</artifactId>
-			<version>3.1</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.powermock</groupId>
-			<artifactId>powermock-api-easymock</artifactId>
-			<version>1.4.12</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.powermock</groupId>
-			<artifactId>powermock-module-junit4</artifactId>
-			<version>1.4.12</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>xmlunit</groupId>
-			<artifactId>xmlunit</artifactId>
-			<version>1.3</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-		    <groupId>com.google.guava</groupId>
-		    <artifactId>guava</artifactId>
-		    <version>16.0.1</version>
-		</dependency>
-
+            <groupId>commons-pool</groupId>
+            <artifactId>commons-pool</artifactId>
+            <version>1.6</version>
+        </dependency>
         <dependency>
-			<!-- this is an ImageIO plugin for PPM format support -->
-			<!-- see https://github.com/eug/imageio-pnm -->
-			<groupId>eugfc</groupId>
-			<artifactId>imageio-pnm</artifactId>
-			<version>1.0</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.wipo.analysers</groupId>
-			<artifactId>wipo-analysers</artifactId>
-			<version>0.0.1</version>
-		</dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.apache.pdfbox</groupId>
-			<artifactId>pdfbox</artifactId>
-			<version>1.8.9</version>
-		</dependency>
+        <!-- logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
 
-		<dependency>
-			<groupId>net.sourceforge.saxon</groupId>
-			<artifactId>saxon</artifactId>
-			<version>9.1.0.8</version>
-		</dependency>
 
-		<dependency>
-			<groupId>xom</groupId>
-			<artifactId>xom</artifactId>
-			<version>1.2.5</version>
-		</dependency>
+        <!-- Tests -->
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <version>3.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>xmlunit</groupId>
+            <artifactId>xmlunit</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.5</version>
+            <scope>test</scope>
+        </dependency>
 
-	</dependencies>
 
-	<profiles>
-		<profile>
-			<id>pdf2xml</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-dependency-plugin</artifactId>
-						<version>2.5</version>
-						<executions>
-							<execution>
-								<id>unpack</id>
-								<phase>validate</phase>
-								<goals>
-									<goal>unpack</goal>
-								</goals>
-								<configuration>
-									<artifactItems>
-										<artifactItem>
-											<groupId>org.grobid</groupId>
-											<artifactId>pdf2xml</artifactId>
-											<version>1.0</version>
-											<type>zip</type>
-											<overWrite>false</overWrite>
-											<outputDirectory>${basedir}/../grobid-home</outputDirectory>
-											<includes>**/*</includes>
-										</artifactItem>
-									</artifactItems>
-									<includes>**/*</includes>
-									<outputDirectory>${basedir}/../grobid-home</outputDirectory>
-									<overWriteReleases>true</overWriteReleases>
-									<overWriteSnapshots>true</overWriteSnapshots>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+        <!-- Utilities -->
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>directory-naming</groupId>
+            <artifactId>naming-java</artifactId>
+            <version>0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.arnx</groupId>
+            <artifactId>jsonic</artifactId>
+            <version>1.3.5</version>
+        </dependency>
+        <dependency>
+            <!-- this is an ImageIO plugin for PPM format support -->
+            <!-- see https://github.com/eug/imageio-pnm -->
+            <groupId>eugfc</groupId>
+            <artifactId>imageio-pnm</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>1.8.9</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.saxon</groupId>
+            <artifactId>saxon</artifactId>
+            <version>9.1.0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>xom</groupId>
+            <artifactId>xom</artifactId>
+            <version>1.2.5</version>
+        </dependency>
 
-	<build>
-		<!-- Not standard -->
-		<!-- finalName>${project.groupId}.${project.artifactId}_${project.version}</finalName -->
+    </dependencies>
 
-		<!--<resources> -->
-		<!--<resource> -->
-		<!--<directory>src/main/native</directory> -->
-		<!--</resource> -->
-		<!--</resources> -->
+    <profiles>
+        <profile>
+            <id>pdf2xml</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>2.5</version>
+                        <executions>
+                            <execution>
+                                <id>unpack</id>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>unpack</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>org.grobid</groupId>
+                                            <artifactId>pdf2xml</artifactId>
+                                            <version>1.0</version>
+                                            <type>zip</type>
+                                            <overWrite>false</overWrite>
+                                            <outputDirectory>${basedir}/../grobid-home</outputDirectory>
+                                            <includes>**/*</includes>
+                                        </artifactItem>
+                                    </artifactItems>
+                                    <includes>**/*</includes>
+                                    <outputDirectory>${basedir}/../grobid-home</outputDirectory>
+                                    <overWriteReleases>true</overWriteReleases>
+                                    <overWriteSnapshots>true</overWriteSnapshots>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
-		<!--pluginManagement -->
-		<plugins>
-			<!--plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> <configuration> <archive> <manifest> <mainClass>org.grobid.core.engines.Engine</mainClass> </manifest> 
-				</archive> </configuration> </plugin -->
-			<plugin>
-				<groupId>com.jolira</groupId>
-				<artifactId>onejar-maven-plugin</artifactId>
-				<version>1.4.4</version>
-				<executions>
-					<execution>
-						<configuration>
-							<mainClass>org.grobid.core.main.batch.GrobidMain</mainClass>
-							<!-- Optional -->
-							<onejarVersion>0.97</onejarVersion>
-							<!-- Optional, use only if you need to include native libraries (dll's) -->
-							<!--binlibs> <fileSet> <directory>${project.build.directory}/dllextract</directory> <includes> <include>test.dll</include> </includes> </fileSet> </binlibs -->
-							<!-- Optional, default is false -->
-							<attachToBuild>true</attachToBuild>
-							<!-- Optional, default is "onejar" -->
-							<classifier>onejar</classifier>
-						</configuration>
-						<goals>
-							<goal>one-jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+    <build>
+        <!-- Not standard -->
+        <!-- finalName>${project.groupId}.${project.artifactId}_${project.version}</finalName -->
 
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<descriptors>
-						<descriptor>${assemblies.name}</descriptor>
-					</descriptors>
-					<appendAssemblyId>false</appendAssemblyId>
-					<finalName>${project.groupId}.${project.artifactId}_${project.version}</finalName>
-					<outputDirectory>target/distribution</outputDirectory>
-					<workDirectory>target/assembly/work</workDirectory>
-				</configuration>
-			</plugin>
+        <!--<resources> -->
+        <!--<resource> -->
+        <!--<directory>src/main/native</directory> -->
+        <!--</resource> -->
+        <!--</resources> -->
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-			   	<artifactId>maven-compiler-plugin</artifactId>
-		    	<version>3.0</version>
-		    	<configuration>
-	        		<source>1.7</source>
-			       	<target>1.7</target>
-					<encoding>UTF-8</encoding>
-			    </configuration>
-			</plugin>
+        <!--pluginManagement -->
+        <plugins>
+            <!--plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> <configuration> <archive> <manifest> <mainClass>org.grobid.core.engines.Engine</mainClass> </manifest>
+                </archive> </configuration> </plugin -->
+            <plugin>
+                <groupId>com.jolira</groupId>
+                <artifactId>onejar-maven-plugin</artifactId>
+                <version>1.4.4</version>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <mainClass>org.grobid.core.main.batch.GrobidMain</mainClass>
+                            <!-- Optional -->
+                            <onejarVersion>0.97</onejarVersion>
+                            <!-- Optional, use only if you need to include native libraries (dll's) -->
+                            <!--binlibs> <fileSet> <directory>${project.build.directory}/dllextract</directory> <includes> <include>test.dll</include> </includes> </fileSet> </binlibs -->
+                            <!-- Optional, default is false -->
+                            <attachToBuild>true</attachToBuild>
+                            <!-- Optional, default is "onejar" -->
+                            <classifier>onejar</classifier>
+                        </configuration>
+                        <goals>
+                            <goal>one-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.12.4</version>
-				<configuration>
-					<forkMode>pertest</forkMode>
-					<argLine>-Xms256m -Xmx1024m</argLine>
-					<testFailureIgnore>false</testFailureIgnore>
-					<skip>false</skip>
-					<systemPropertyVariables>
-						<log4j.configuration>log4j-test.properties</log4j.configuration>
-					</systemPropertyVariables>
-					<!--argLine>-Djava.library.path=${basedir}/lib/</argLine> <systemProperties> <property> <name>java.library.path</name> <value>lib/</value> </property> </systemProperties -->
-				</configuration>
-			</plugin>
-			
-		</plugins>
-		<!--/pluginManagement -->
-	</build>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>${assemblies.name}</descriptor>
+                    </descriptors>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <finalName>${project.groupId}.${project.artifactId}_${project.version}</finalName>
+                    <outputDirectory>target/distribution</outputDirectory>
+                    <workDirectory>target/assembly/work</workDirectory>
+                </configuration>
+            </plugin>
 
-	<!-- pluginRepositories> <pluginRepository> <id>onejar-maven-plugin.googlecode.com</id> <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url> </pluginRepository> </pluginRepositories -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12.4</version>
+                <configuration>
+                    <forkMode>pertest</forkMode>
+                    <argLine>-Xms256m -Xmx1024m</argLine>
+                    <testFailureIgnore>false</testFailureIgnore>
+                    <skip>false</skip>
+                    <systemPropertyVariables>
+                        <log4j.configuration>log4j-test.properties</log4j.configuration>
+                    </systemPropertyVariables>
+                    <!--argLine>-Djava.library.path=${basedir}/lib/</argLine> <systemProperties> <property> <name>java.library.path</name> <value>lib/</value> </property> </systemProperties -->
+                </configuration>
+            </plugin>
+
+        </plugins>
+        <!--/pluginManagement -->
+    </build>
+
+    <!-- pluginRepositories> <pluginRepository> <id>onejar-maven-plugin.googlecode.com</id> <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url> </pluginRepository> </pluginRepositories -->
 
 </project>
