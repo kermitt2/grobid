@@ -626,7 +626,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces("application/pdf")
 	@POST
 	public Response processAnnotatePDF(@FormDataParam(INPUT) InputStream inputStream,
-		@FormDataParam("type") String fileName,
+		@FormDataParam("name") String fileName,
 	 	@FormDataParam("type") int type) {
 		GrobidRestUtils.Annotation annotType = null;
 		if (type == 0)

@@ -165,8 +165,8 @@ public class Person {
     }
 
     public String toTEI() {
-        if ((title == null) && (firstName == null) && (middleName == null) &&
-                (lastName == null) && (suffix == null)) {
+        if ( (firstName == null) && (middleName == null) &&
+                (lastName == null) ) {
             return null;
         }
         String res = "<persName>";
@@ -191,5 +191,16 @@ public class Person {
     static public String normalizeName(String inputName) {
 		return TextUtilities.capitalizeFully(inputName, NAME_DELIMITERS);
     }
+	
+	/**
+	 *  Return true if the person structure is a valid person name, in our case
+	 *  with at least a lastname or a raw name.
+	 */
+	public boolean isValid() {
+		if ( (lastName == null) && (rawName == null) )
+			return false;
+		else 
+			return true;
+	}
 
 }

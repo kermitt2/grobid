@@ -51,7 +51,7 @@ For testing purposes, a public GROBID demo server is available at the following 
 
 The Web service are documented in the [service manual](https://github.com/kermitt2/grobid/blob/master/grobid-service/src/main/doc/grobid-service-manual.pdf).
 
-_Warning_: Some quota and query limitation apply to the demo server! If you are interested in using such online GROBID service for your project without limitation (and with support), please contact us (<patrice.lopez@science-miner.com>). 
+_Warning_: Some quota and query limitation apply to the demo server! If you are interested in using such online GROBID service for your project without limitation (and with support), please contact us (<patrice.lopez@science-miner.com>).
 
 ## GROBID documentation
 
@@ -61,10 +61,10 @@ Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detaile
 
 The latest stable release of GROBID is version ```0.4.0```. As compared to previous version ```0.3.9```, this version brings:
 
-+ Improvement of the recognition of citations thanks to refinements of CRF features - +4% in f-score for the PubMed Central sample. 
++ Improvement of the recognition of citations thanks to refinements of CRF features - +4% in f-score for the PubMed Central sample.
 + Improvement of the full text model, with new features and the introduction of two additional models for figures and tables.
 + More robust synchronization of CRF sequence with PDF areas, resulting in improved bounding box calculations for locating annotations in the PDF documents.
-+ Improved general robustness thanks to better token alignments. 
++ Improved general robustness thanks to better token alignments.
 
 ## License
 
