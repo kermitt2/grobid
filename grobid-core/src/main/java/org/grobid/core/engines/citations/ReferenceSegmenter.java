@@ -8,6 +8,6 @@ import org.grobid.core.document.Document;
  * Date: 4/15/14
  */
 public interface ReferenceSegmenter {
-    //List<LabeledReferenceResult> extract(String referenceBlock);
+    List<LabeledReferenceResult> extract(String referenceBlock);
 	List<LabeledReferenceResult> extract(Document document);
 }
