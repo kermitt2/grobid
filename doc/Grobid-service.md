@@ -28,11 +28,11 @@ You can also test the RESTFul API with **curl** command lines:
 
 * header extraction of a PDF file in the current directory:
 ```bash
-> curl -v -include --form input=@./thefile.pdf localhost:8080/processHeaderDocument
+> curl -v --form input=@./thefile.pdf localhost:8080/processHeaderDocument
 ```
 * fulltext extraction (header, body and citations) of a PDF file in the current directory:
 ```bash
-> curl -v -include --form input=@./thefile.pdf localhost:8080/processFulltextDocument
+> curl -v --form input=@./thefile.pdf localhost:8080/processFulltextDocument
 ```
 * parsing of a raw reference string in isolation without consolidation (default value):
 ```bash
@@ -40,7 +40,7 @@ You can also test the RESTFul API with **curl** command lines:
 ```
 * extraction and parsing of all references in a PDF without consolidation (default value):
 ```bash
-> curl -v -include --form --form input=@./thefile.pdf localhost:8080/processReferences
+> curl -v --form --form input=@./thefile.pdf localhost:8080/processReferences
 ```
 
 ## Full documentation
