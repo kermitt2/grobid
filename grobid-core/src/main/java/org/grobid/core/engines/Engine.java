@@ -266,7 +266,8 @@ public class Engine implements Closeable {
 
         try {
             // general segmentation
-            Document doc = parsers.getSegmentationParser().processing(input, GrobidAnalysisConfig.defaultInstance());
+            DocumentSource documentSource = DocumentSource.fromPdf(input);
+            Document doc = parsers.getSegmentationParser().processing(documentSource, GrobidAnalysisConfig.defaultInstance());
 			String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
             if (!referencesStr.isEmpty()) {
 				//String tei = parsers.getReferenceSegmenterParser().createTrainingData2(referencesStr, id);

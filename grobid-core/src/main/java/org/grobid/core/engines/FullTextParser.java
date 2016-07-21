@@ -86,16 +86,17 @@ public class FullTextParser extends AbstractParser {
 
 	public Document processing(File inputPdf,
 							   GrobidAnalysisConfig config) throws Exception {
-		DocumentSource documentSource = DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage());
+		DocumentSource documentSource = DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(), config.getPdfAssetPath() != null);
 		return processing(documentSource, config);
 	}
-		/**
-         * Machine-learning recognition of the complete full text structures.
-         *
-         * @param documentSource input
-         * @param config config
-         * @return the document object with built TEI
-         */
+
+	/**
+     * Machine-learning recognition of the complete full text structures.
+     *
+     * @param documentSource input
+     * @param config config
+     * @return the document object with built TEI
+     */
     public Document processing(DocumentSource documentSource,
                                GrobidAnalysisConfig config) throws Exception {
         if (tmpPath == null) {
@@ -675,15 +676,18 @@ public class FullTextParser extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
-        Document doc;
+        //Document doc;
+        DocumentSource documentSource = null;
         try {
             if (!inputFile.exists()) {
                	throw new GrobidResourceException("Cannot train for fulltext, becuase file '" +
                        inputFile.getAbsolutePath() + "' does not exists.");
            	}
-           	String PDFFileName = inputFile.getName();
+           	String pdfFileName = inputFile.getName();
 
-            doc = parsers.getSegmentationParser().processing(inputFile, GrobidAnalysisConfig.defaultInstance());
+            //doc = parsers.getSegmentationParser().processing(inputFile, GrobidAnalysisConfig.defaultInstance());
+            documentSource = DocumentSource.fromPdf(inputFile);
+            Document doc = parsers.getSegmentationParser().processing(documentSource, GrobidAnalysisConfig.defaultInstance());
 
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
 			if (documentBodyParts != null) {
@@ -713,7 +717,7 @@ public class FullTextParser extends AbstractParser {
 
 	            // we write the full text untagged
 	            String outPathFulltext = pathFullText + File.separator
-					+ PDFFileName.replace(".pdf", ".training.fulltext");
+					+ pdfFileName.replace(".pdf", ".training.fulltext");
 	            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
 	            writer.write(bodytext + "\n");
 	            writer.close();
@@ -726,7 +730,7 @@ public class FullTextParser extends AbstractParser {
 	            // write the TEI file to reflect the extract layout of the text as extracted from the pdf
 	            writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
 	                    File.separator +
-						PDFFileName.replace(".pdf", ".training.fulltext.tei.xml")), false), "UTF-8");
+						pdfFileName.replace(".pdf", ".training.fulltext.tei.xml")), false), "UTF-8");
 				if (id == -1) {
 					writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader/>\n\t<text xml:lang=\"en\">\n");
 				}
@@ -742,13 +746,13 @@ public class FullTextParser extends AbstractParser {
 	            Pair<String,String> trainingFigure = processTrainingDataFigures(rese, tokenizationsBody, inputFile.getName());
 	            if (trainingFigure.getA().trim().length() > 0) {
 		            String outPathFigures = pathFullText + File.separator
-						+ PDFFileName.replace(".pdf", ".training.figure");
+						+ pdfFileName.replace(".pdf", ".training.figure");
 					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFigures), false), "UTF-8");
 		            writer.write(trainingFigure.getB() + "\n\n");
 		            writer.close();
 
 					String outPathFiguresTEI = pathTEI + File.separator
-						+ PDFFileName.replace(".pdf", ".training.figure.tei.xml");
+						+ pdfFileName.replace(".pdf", ".training.figure.tei.xml");
 					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFiguresTEI), false), "UTF-8");
 		            writer.write(trainingFigure.getA() + "\n");
 		            writer.close();
@@ -758,13 +762,13 @@ public class FullTextParser extends AbstractParser {
 		        Pair<String,String> trainingTable = processTrainingDataTables(rese, tokenizationsBody, inputFile.getName());
 	            if (trainingTable.getA().trim().length() > 0) {
 		            String outPathTables = pathFullText + File.separator
-						+ PDFFileName.replace(".pdf", ".training.table");
+						+ pdfFileName.replace(".pdf", ".training.table");
 					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTables), false), "UTF-8");
 		            writer.write(trainingTable.getB() + "\n\n");
 		            writer.close();
 
 					String outPathTablesTEI = pathTEI + File.separator
-						+ PDFFileName.replace(".pdf", ".training.table.tei.xml");
+						+ pdfFileName.replace(".pdf", ".training.table.tei.xml");
 					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTablesTEI), false), "UTF-8");
 		            writer.write(trainingTable.getA() + "\n");
 		            writer.close();
@@ -800,7 +804,7 @@ public class FullTextParser extends AbstractParser {
 
 	                Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
 	                        File.separator +
-							PDFFileName.replace(".pdf", ".training.references.tei.xml")), false), "UTF-8");
+							pdfFileName.replace(".pdf", ".training.references.tei.xml")), false), "UTF-8");
 
 					writerReference.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
 											"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
@@ -822,7 +826,7 @@ public class FullTextParser extends AbstractParser {
 					// output of citation author names
 	                Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
 	                        File.separator +
-							PDFFileName.replace(".pdf", ".training.citations.authors.tei.xml")), false), "UTF-8");
+							pdfFileName.replace(".pdf", ".training.citations.authors.tei.xml")), false), "UTF-8");
 
 					writerName.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
 											"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
@@ -860,6 +864,8 @@ public class FullTextParser extends AbstractParser {
 			e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid training" +
                     " data generation for full text.", e);
+        } finally {
+            DocumentSource.close(documentSource, true);
         }
     }
 

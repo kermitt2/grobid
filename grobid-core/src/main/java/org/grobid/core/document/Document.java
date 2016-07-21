@@ -223,6 +223,7 @@ public class Document {
     }
 
     // to be removed
+    @Deprecated
     public List<LayoutToken> getTokenizationsHeader() {
         List<LayoutToken> tokenizationsHeader = new ArrayList<LayoutToken>();
         for (Integer blocknum : blockDocumentHeaders) {
@@ -247,6 +248,7 @@ public class Document {
     }
 
     // to be removed
+    @Deprecated
     public List<LayoutToken> getTokenizationsFulltext() {
         List<LayoutToken> tokenizationsFulltext = new ArrayList<LayoutToken>();
         for (Block blo : blocks) {
@@ -261,6 +263,7 @@ public class Document {
     }
 
     // to be removed
+    @Deprecated
     public List<LayoutToken> getTokenizationsReferences() {
         List<LayoutToken> tokenizationsReferences = new ArrayList<LayoutToken>();
 

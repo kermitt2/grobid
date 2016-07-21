@@ -49,7 +49,7 @@ public class DocumentSource {
 //    }
 
     public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage) {
-        return fromPdf(pdfFile, startPage, endPage, true);
+        return fromPdf(pdfFile, startPage, endPage, false);
     }
 
     public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage, boolean withImages) {
