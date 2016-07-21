@@ -51,8 +51,13 @@ public class FigureTableVisualizer {
 //            File input = new File("/Work/temp/figureExtraction/newtest/2.pdf");
 //            File input = new File("/Work/temp/figureExtraction/5.pdf");
 //            File input = new File("/Work/temp/figureExtraction/vector/6.pdf");
-//            File input = new File("/Users/zholudev/Downloads/AS-272126728994822@1441891476306_content_1.pdf"); // PARTIAL CAPTIONS
-//            File input = new File("/Users/zholudev/Downloads/AS-322050973995010@1453794344041_content_1.pdf"); //separate blocks for 1 caption
+
+//            File input = new File("/Users/zholudev/Downloads/AS-134079286616064@1408978401811_content_1.pdf");
+            File input = new File("/Users/zholudev/Downloads/AS-220149891244043@1429499232904_content_1.pdf");
+
+//
+//
+// File input = new File("/Users/zholudev/Downloads/AS-322050973995010@1453794344041_content_1.pdf"); //separate blocks for 1 caption
 //            File input = new File("/Users/zholudev/Downloads/AS-327630265044992@1455124550118_content_1.pdf");
 //            File input = new File("/Work/temp/images/pdf_image_extraction_results/Synaptotagmin 11 interacts with components of the RNA-induced (2)/Synaptotagmin 11 interacts with components of the RNA-induced (2).pdf"); //double caption attached
 
@@ -64,7 +69,7 @@ public class FigureTableVisualizer {
 //            File input = new File("/Users/zholudev/Downloads/AS-328608011833344@1455357663088_content_1.pdf");
 
 
-            File input = new File("/Users/zholudev/Downloads/AS-241028400328704@1434477056964_content_1.pdf");
+//            File input = new File("/Users/zholudev/Downloads/fail.pdf");
 
             // TABLES
 //            File input = new File("/Users/zholudev/Downloads/AS-301642189688834@1448928510544_content_1.pdf");

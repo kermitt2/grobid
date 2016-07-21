@@ -3,7 +3,7 @@ package org.grobid.core.data;
 import org.grobid.core.data.util.AuthorEmailAssigner;
 import org.grobid.core.data.util.ClassicAuthorEmailAssigner;
 import org.grobid.core.data.util.EmailSanitizer;
-import org.grobid.core.document.TEIFormater;
+import org.grobid.core.document.TEIFormatter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
@@ -1690,7 +1690,7 @@ public class BiblioItem {
                 tei.append("\t");
             }
             tei.append("<biblStruct");
-            tei.append(" ").append(TEIFormater.getCoordsAttribute(coordinates, config.isGenerateTeiCoordinates())).append(" ");
+            tei.append(" ").append(TEIFormatter.getCoordsAttribute(coordinates, config.isGenerateTeiCoordinates())).append(" ");
             if (language != null) {
                 if (n == -1) {
                     /*if (pubnum != null) {

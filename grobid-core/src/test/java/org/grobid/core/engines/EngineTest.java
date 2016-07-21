@@ -1,12 +1,16 @@
 package org.grobid.core.engines;
 
 
+import com.google.common.collect.Sets;
 import fr.limsi.wapiti.SWIGTYPE_p_mdl_t;
 import fr.limsi.wapiti.Wapiti;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.document.Document;
+import org.grobid.core.document.DocumentPiece;
+import org.grobid.core.document.DocumentPointer;
+import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.features.FeaturesVectorDate;
@@ -17,10 +21,14 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import javax.print.Doc;
 import java.io.File;
 import java.io.FileFilter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.SortedSet;
 import java.util.StringTokenizer;
 
 @Ignore
@@ -854,8 +862,8 @@ public class EngineTest {
 //        System.out.println(engine.fullTextToTEI(new File("/var/folders/h4/np1lg7256q3c3s6b2lhm9w0r0000gn/T/habibi-pdf996586749219753040.pdf"), GrobidAnalysisConfig.defaultInstance()));
 //        System.out.println(engine.fullTextToTEI("/tmp/x1.pdf", true, true, null, -1, -1, true));
 
-            // /Work/temp/context/1000k/AS_200548461617156_1424825887720.pdf
-            //
+        // /Work/temp/context/1000k/AS_200548461617156_1424825887720.pdf
+        //
         System.out.println(Engine.getCntManager());
     }
 
@@ -865,31 +873,31 @@ public class EngineTest {
 //        GrobidAnalysisConfig config = GrobidAnalysisConfig.defaultInstance();
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
 
-            int cnt = 0;
+        int cnt = 0;
 //        for (File f : new File("/Work/temp/pub_citation_styles").listFiles(new FileFilter() {
 //            @Override
 //            public boolean accept(File pathname) {
         for (File f : new File("/Work/temp/context/1000k")
 //        for (File f : new File("/Work/temp/timeout") // bad PDF that produces dozens of files
                 .listFiles(new FileFilter() {
-                        @Override
-                        public boolean accept(File pathname) {
-                                return pathname.getName().endsWith(".pdf");
-                        }
+                    @Override
+                    public boolean accept(File pathname) {
+                        return pathname.getName().endsWith(".pdf");
+                    }
                 })) {
-                try {
-                        Engine.getCntManager().i("PDFS", "INPUT_CNT");
-                        System.out.println("Processing: " + f);
-                        String tei = engine.fullTextToTEI(f, config);
-                        System.out.println(tei.length());
-                } catch (Exception e) {
-                        e.printStackTrace();
-                        Engine.getCntManager().i("FAILED", e.getClass().getSimpleName());
-                }
-                if (++cnt % 10 == 0) {
-                        System.out.println("Processed: " + cnt);
-                        System.out.println(Engine.getCntManager());
-                }
+            try {
+                Engine.getCntManager().i("PDFS", "INPUT_CNT");
+                System.out.println("Processing: " + f);
+                String tei = engine.fullTextToTEI(f, config);
+                System.out.println(tei.length());
+            } catch (Exception e) {
+                e.printStackTrace();
+                Engine.getCntManager().i("FAILED", e.getClass().getSimpleName());
+            }
+            if (++cnt % 10 == 0) {
+                System.out.println("Processed: " + cnt);
+                System.out.println(Engine.getCntManager());
+            }
         }
 
 //        System.out.println(engine.fullTextToTEI(new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis-service/src/test/resources/net/researchgate/pdfanalysisservice/papers.bad.input/40th_Conf_unprotected.pdf"), GrobidAnalysisConfig.defaultInstance()));
@@ -897,69 +905,163 @@ public class EngineTest {
 //        System.out.println(engine.fullTextToTEI("/tmp/x1.pdf", true, true, null, -1, -1, true));
         System.out.println(Engine.getCntManager());
 
-            Thread.sleep(100000);
-            System.out.println("DONE!");
+        Thread.sleep(100000);
+        System.out.println("DONE!");
     }
 
 
-        @Test
-        public void testHeaders() throws Exception {
-                final Engine engine = GrobidFactory.getInstance().getEngine();
+    @Test
+    public void testHeaders() throws Exception {
+        final Engine engine = GrobidFactory.getInstance().getEngine();
 //        GrobidAnalysisConfig config = GrobidAnalysisConfig.defaultInstance();
-                GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
 
-                int cnt = 0;
+        int cnt = 0;
 //        for (File f : new File("/Work/temp/pub_citation_styles").listFiles(new FileFilter() {
 //            @Override
 //            public boolean accept(File pathname) {
         for (File f : new File("/Work/temp/context/1000k")
 //                for (File f : new File("/Work/temp/timeout") // bad PDF that produces dozens of files
-                        .listFiles(new FileFilter() {
-                                @Override
-                                public boolean accept(File pathname) {
-                                        return pathname.getName().endsWith(".pdf");
-                                }
-                        })) {
-                        try {
-                                Engine.getCntManager().i("PDFS", "INPUT_CNT");
-                                System.out.println("Processing: " + f);
-                                BiblioItem item = new BiblioItem();
-                                String tei = engine.processHeader(f.getAbsolutePath(), false, item);
+                .listFiles(new FileFilter() {
+                    @Override
+                    public boolean accept(File pathname) {
+                        return pathname.getName().endsWith(".pdf");
+                    }
+                })) {
+            try {
+                Engine.getCntManager().i("PDFS", "INPUT_CNT");
+                System.out.println("Processing: " + f);
+                BiblioItem item = new BiblioItem();
+                String tei = engine.processHeader(f.getAbsolutePath(), false, item);
 
-                                Engine.getCntManager().i("LANGS", item.getLanguage());
+                Engine.getCntManager().i("LANGS", item.getLanguage());
 
-                                System.out.println(tei.length());
-                        } catch (Exception e) {
-                                e.printStackTrace();
-                                Engine.getCntManager().i("FAILED", e.getClass().getSimpleName());
-                        }
-                        if (++cnt % 10 == 0) {
-                                System.out.println("Processed: " + cnt);
-                                System.out.println(Engine.getCntManager());
-                        }
-                }
+                System.out.println(tei.length());
+            } catch (Exception e) {
+                e.printStackTrace();
+                Engine.getCntManager().i("FAILED", e.getClass().getSimpleName());
+            }
+            if (++cnt % 10 == 0) {
+                System.out.println("Processed: " + cnt);
+                System.out.println(Engine.getCntManager());
+            }
+        }
 
 //        System.out.println(engine.fullTextToTEI(new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis-service/src/test/resources/net/researchgate/pdfanalysisservice/papers.bad.input/40th_Conf_unprotected.pdf"), GrobidAnalysisConfig.defaultInstance()));
 //        System.out.println(engine.fullTextToTEI(new File("/var/folders/h4/np1lg7256q3c3s6b2lhm9w0r0000gn/T/habibi-pdf996586749219753040.pdf"), GrobidAnalysisConfig.defaultInstance()));
 //        System.out.println(engine.fullTextToTEI("/tmp/x1.pdf", true, true, null, -1, -1, true));
-                System.out.println(Engine.getCntManager());
+        System.out.println(Engine.getCntManager());
 
-                Thread.sleep(100000);
-                System.out.println("DONE!");
-        }
+        Thread.sleep(100000);
+        System.out.println("DONE!");
+    }
 
-        @Test
+    @Test
     public void testReferenceString() {
 //        String ref = "Agharahimi, M.R., LeBel, N.A., 1995. Synthesis of (–)-monoterpenylmagnolol and \n" +
 //                "magnolol. J. Org. Chem. 60, 1856–1863. ";
-        String ref = "Lipsitch M, 1997, ANTIMICROB AGENTS CH, V41, P363";
+//        String ref = "Lipsitch M, 1997, ANTIMICROB AGENTS CH, V41, P363";
 
         final Engine engine = GrobidFactory.getInstance().getEngine();
-        BiblioItem x = engine.processRawReference(ref, false);
-        System.out.println(x.getTitle() + "; " + x.getAuthors());
-        System.out.println(x.getJournal());
-        System.out.println(x.getPublicationDate());
-        System.out.println(x);
+//        BiblioItem x = engine.processRawReference(ref, false);
+//        System.out.println(x.getTitle() + "; " + x.getAuthors());
+//        System.out.println(x.getJournal());
+//        System.out.println(x.getPublicationDate());
+//        System.out.println(x);
+
+
+        String text = "Below are the papers published within BIOMEX. They are organized by topic:\n" +
+                "\n" +
+                "I ñ Overview (Refs 1 and 2)\n" +
+                "II ñ Habitability of extraterrestrial environments, and lifeís limits (Refs 3-11)\n" +
+                "III ñ Biosignatures (Refs 12-20)\n" +
+                "IV - Water sorption (Refs 21-23)\n" +
+                "V - Astronaut support (Refs 24 and 25)\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "I - Overview\n" +
+                "\n" +
+                "1.\tde Vera, J.-P., et al.. (2012). Supporting Mars exploration: BIOMEX in Low Earth Orbit and further astrobiological studies on the Moon using Raman and PanCam technology. Planetary and Space Science 74 (1): 103-110.\n" +
+                "\n" +
+                "2.\tWagner, D., de Vera, J.-P, Joshi, J., Leya T., Schulze-Makuch, D., 2015. Astrobiologie ñ dem Leben im Universum auf der Spur. System Erde 5 (1), 40-47, | DOI: 10.2312/GFZ.syserde.05.01.7.\n" +
+                "\n" +
+                "\n" +
+                "II ñ Habitability of extraterrestrial environments, and lifeís limits\n" +
+                "\n" +
+                "3.\tBackhaus, T., de la Torre, R., Lyhme, K., de Vera, J.-P. and Meeﬂen, J. (2014). Desiccation and low temperature attenuate the effect of UVC254 nm in the photobiont of the astrobiologically relevant lichens Circinaria gyrosa and Buellia frigida. International Journal of Astrobiology, doi:10.1017/S1473550414000470.\n" +
+                "\n" +
+                "4.\tBaquÈ M., de Vera, J.-P., Rettberg, P., Billi, D., 2013. The BOSS and BIOMEX space experiments on the EXPOSE-R2 mission: Endurance of the desert cyanobacterium Chroococcidiopsis under simulated space vacuum, Martian atmosphere, UVC radiation and temperature extremes. Acta Astronautica 91 (2013) 180ñ186.\n" +
+                "\n" +
+                "5.\tKukharenko, O., Podolich, O., Rybitska, A., Reshetnyak, G., Burlak, L., Ovcharenko, L., Voznyuk, T., Moshynets, O., Rogutskyi, I., Zaets, I., Yaneva, O., Reva, O., Pidgorskiy, V., Rabbow, E., de Vera, J.P., Yatsenko, V., Kozyrovska, N. (2012). Robust symbiotic microbial communities in space research. Report to COSPAR, Space Research in Ukraine, National Academy of Science of Ukraine, State Agency of Ukraine.\n" +
+                "\n" +
+                "6.\tMeesen, J., Wuthenow, P., Schille, P., Rabbow, E., de Vera, J.-P.P. and Ott, S. (2015). Resistance of the lichen Buellia frigida to simulated space conditions during the pre-flight tests for BIOMEX ñ viability assay and morphological stability. Astrobiology 15 (8): 601-615.\n" +
+                "\n" +
+                "7.\tMeeﬂen, J., Backhaus, T., Sadowsky, A., Mrkalj, M., S·nchez, F.J., de la Torre, R. and Ott, S. (2014). Effects of UVC254 nm on the photosynthetic activity of photobionts from the astrobiologically relevant lichens Buellia frigida and Circinaria gyrosa. International Journal of Astrobiology 13 (4): 340ñ352, doi:10.1017/S1473550414000275\n" +
+                "\n" +
+                "8.\tMeeﬂen, J., S·nchez, F. J., Brandt, A., Balzer, E.-M., de la Torre, R., Sancho, L. G., de Vera, J.-P. and Ott , S., 2013. Extremotolerance and Resistance of Lichens: Comparative Studies on Five Species Used in Astrobiological Research I. Morphological and Anatomical Characteristics. Orig Life Evol Biosph 43: 283ñ303.\n" +
+                "\n" +
+                "9.\tMeeﬂen, J., S·nchez, F. J., Sadowsky, A., de la Torre, R., Ott, S., de Vera, J.-P. (2013). Extremotolerance and Resistance of Lichens: Comparative Studies on Five Species Used in Astrobiological Research II. Secondary Lichen Compounds. Orig Life Evol Biosph (2013) 43:501ñ526.\n" +
+                "\n" +
+                "10.\tPacelli, C., Selbmann, L., Zucconi, L., de Vera, J.-P., Rabbow, E., Horneck, G., de la Torre, R. and Onofri, S. (2016). BIOMEX Experiment: Ultrastructural Alterations, Molecular Damage and Survival of the Fungus Cryomyces antarcticus after the Experiment Verification Tests. Orig Life Evol Biosph, DOI 10.1007/s11084-016-9485-2.\n" +
+                "\n" +
+                "11.\tS·nchez, F.J., Mateo-MartÌ, E., Raggio, J., Meeﬂen, J., MartÌnez-FrÌas, J., Sancho, L. Ga., Ott, S., de la Torre, R., 2012. The resistance of the lichen Circinaria gyrosa (nom. provis.) towards simulated Mars conditionsóa model test for the survival capacity of an eukaryotic extremophile. Planetary and Space Science 72, 102ñ110.\n" +
+                "\n" +
+                "\n" +
+                "III ñ Biosignatures \n" +
+                "\n" +
+                "12.\tBaquÈ, M., Verseux, C., Rabbow, E., de Vera, J.P.P., Billi, D., 2014. Detection of macromolecules in desert cyanobacteria mixed with a lunar mineral analogue after space simulations. Orig Life Evol Biosph, DOI 10.007/s11084-014-9367-4.\n" +
+                "\n" +
+                "13.\tBaquÈ, M., Verseux, C., Bˆttger, U., Rabbow, E., de Vera, J.-P.P. and Billi, D. 2015. Biosignature preservation of cyanobacteria mixed with phyllosilicatic and sulfatic Martian regoliths under simulated Martian atmosphere and UV flux. Orig Life Evol Biosph, Volume 46 (2), 289-310, DOI 10.1007/s11084-015-9467-9.\n" +
+                "\n" +
+                "14.\tBˆttger, U., de Vera, J.-P., Fritz, J., Weber, I., H¸bers, H.-W., Schulze-Makuch, D., 2012. Optimizing the detection of carotene in cyanobacteria in a Martian regolith analogue with a Raman spectrometer for the ExoMars mission. Planetary and Space Science 60 (2012) 356ñ362.\n" +
+                "\n" +
+                "15.\tBˆttger, U., de la Torre, R., Frias, J.-M., Rull, F., Meessen, J., S·nchez ÕÒigo, F.J., H¸bers, H.-W., de Vera, J.P. (2014). Raman spectroscopic analysis of the oxalate producing extremophile Circinaria Gyrosa. International Journal of Astrobiology, 13 (1): 19ñ27.\n" +
+                "\n" +
+                "16.\tBˆttger, U., de Vera, J.P., Hermelink, A., Fritz, J., Weber, I., Schulze-Makuch, D., H¸bers, H.-W. (2013). Application of Raman spectroscopy, as in situ technology for the search for life. In de Vera, J.P. and Seckbach, J. (eds.), Cellular origins, life in extreme habitats and astrobiology 28: Habitability of other planets and satellitesì, 333-345.\n" +
+                "\n" +
+                "17.\tPodolich, O., et al. (2016). The First Space-Related Study of a Kombucha Multimicrobial Cellulose-Forming Community: Preparatory Laboratory Experiments. Orig Life Evol Biosph, DOI 10.1007/s11084-016-9483-4.\n" +
+                "\n" +
+                "18.\tSerrano, P., Hermelink, A., Boettger, U., de Vera, J.-P., Wagner, D., 2014. Biosignature detection of methanogenic archaea from Siberian permafrost using confocal Raman spectroscopy. Planetary and Space Science 98, 191ñ197.\n" +
+                "\n" +
+                "19.\tSerrano, P., Hermelink, A., Lasch, P., de Vera, J.-P., Kˆnig, N., Burckhardt, O. and Wagner, D. (2015). Confocal Raman microspectroscopy reveals a convergence of the chemical composition in methanogenic archaea from a Siberian permafrost-affected soil. FEMS Microbiology Ecology, 91, 2015, fiv126.\n" +
+                "\n" +
+                "20.\tZaets, I., Podolich, O., Kukharenko, O., Reshetnyak, G., Shpylova, S., Sosnin, M., Khirunenko, L., Kozyrovska, N., de Vera, J.-P. (2014). Bacterial cellulose may provide the microbial-life biosignature in the rock records. Advances in Space Research 53: 828ñ835.\n" +
+                "\n" +
+                "\n" +
+                "IV - Water sorption\n" +
+                "\n" +
+                "21.\tJ‰nchen, J., Bauermeister, A., Feyh, N., de Vera, J.-P., Rettberg, P., Flemming, H.-C., Szewzyk, U. (2014). Water retention of selected microorganisms and Martian soil simulants under close to Martian environmental conditions. Planetary and Space Science 98, 163-168.\n" +
+                "\n" +
+                "22.\tJ‰nchen, J., Meeﬂen, J., Herzog, T.H., Feist, M., de la Torre, R. and deVera, J.-P.P., 2015. Humidity interaction of lichens under astrobiological aspects: the impact of UVC exposure on their water retention properties. International Journal of Astrobiology, 14 (3): 445-456.\n" +
+                "\n" +
+                "23.\tJ‰nchen, J., Feyh, N., Szewzyk, U., and de Vera, J.-P.P. (2016). Provision of water by halite deliquescence for Nostoc commune biofilms under Mars relevant surface conditions. International Journal of Astrobiology 15 (2), 107ñ118.\n" +
+                "\n" +
+                "\n" +
+                "V - Astronaut support\n" +
+                "\n" +
+                "24.\tKozyrovska, N.O., Reva1, O.M., Goginyan, V., de Vera, J.P. (2012). Kombucha microbiome as a probiotic: a view from the perspective of post-genomics and synthetic ecology. Biopolymers and Cell, 28(2): 103-113.\n" +
+                "\n" +
+                "25.\tReva, O.N., Zaets, I.E., Ovcharenko, L.P., Kukharenko, O.E., Shpylova, S.P., Podolich, O.V., de Vera, J.-P. and Kozyrovska N.O. (2015). Metabarcoding of the kombucha microbial community grown in different microenvironments. AMB Expr 5:35, DOI 10.1186/s13568-015-0124-5.\n";
+
+
+//        text = "Lipsitch M, 1997, ANTIMICROB AGENTS CH, V41, P363";
+
+            Document res = engine.getParsers().getSegmentationParser().processing(text);
+//        SortedSet<DocumentPiece> part = res.getDocumentPart(SegmentationLabel.REFERENCES);
+
+        List<BibDataSet> citResults = engine.getParsers().getCitationParser().processingReferenceSection(text, engine.getParsers().getReferenceSegmenterParser());
+        for (BibDataSet bds: citResults) {
+            BiblioItem bib = bds.getResBib();
+            if ((bib != null) && !bib.rejectAsReference()) {
+                if (bib.getTitle() != null && bib.getFullAuthors() != null) {
+                    System.out.println("\n-------------\n"  + bib.getTitle() + "\n" + bib.getAuthors());
+                }
+            }
+        }
+
+
+        int i = 0;
 
 
     }

@@ -36,6 +36,11 @@ public class RegexReferenceSegmenter implements ReferenceSegmenter {
     };
 
     @Override
+    public List<LabeledReferenceResult> extract(String referenceBlock) {
+        return Lists.transform(segmentReferences(referenceBlock), LABELED_REFERENCE_RESULT_FUNCTION);
+    }
+
+    @Override
     //public List<LabeledReferenceResult> extract(String referenceBlock) {
 	public List<LabeledReferenceResult> extract(Document doc) {	
 		String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);

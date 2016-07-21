@@ -1,19 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>grobid-service - a RESTful service for grobid</display-name>
+    <display-name>grobid-service - a RESTful service for grobid</display-name>
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>/WEB-INF/classes/log4j.properties</param-value>
+    </context-param>
+
     <servlet>
         <servlet-name>grobid-service</servlet-name>
-		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
         <init-param>
-			<param-name>com.sun.jersey.config.property.resourceConfigClass</param-name>
-			<param-value>com.sun.jersey.api.core.PackagesResourceConfig</param-value>
+            <param-name>com.sun.jersey.config.property.resourceConfigClass</param-name>
+            <param-value>com.sun.jersey.api.core.PackagesResourceConfig</param-value>
         </init-param>
         <init-param>
-          <param-name>com.sun.jersey.config.property.packages</param-name>
-          <param-value>org.grobid.service</param-value>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>org.grobid.service</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -90,15 +96,15 @@
         <servlet-name>grobid-service</servlet-name>
         <url-pattern>/processCitationPatentTEI</url-pattern>
     </servlet-mapping>
-	<servlet-mapping>
+    <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
         <url-pattern>/processCitationPatentST36</url-pattern>
     </servlet-mapping>
-	<servlet-mapping>
+    <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
         <url-pattern>/processCitationPatentTXT</url-pattern>
     </servlet-mapping>
-	<servlet-mapping>
+    <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
         <url-pattern>/processCitationPatentPDF</url-pattern>
     </servlet-mapping>
@@ -107,33 +113,28 @@
         <url-pattern>/annotatePDF</url-pattern>
     </servlet-mapping>
 
-	<welcome-file-list>
-    	<welcome-file>grobid/index.html</welcome-file>
-		<welcome-file>index.html</welcome-file>
-	</welcome-file-list>
-	
-	<!-- Path to properties files and GROBID_HOME -->
-	<env-entry>
-	  <env-entry-name>org.grobid.property</env-entry-name>
-	  <env-entry-value>${_GROBID_PROPERTY}</env-entry-value>
-	  <env-entry-type>java.lang.String</env-entry-type>
-	</env-entry>
-	
-	<env-entry>
-	  <env-entry-name>org.grobid.property.service</env-entry-name>
-	  <env-entry-value>${_GROBID_SERVICE_PROPERTY}</env-entry-value>
-	  <env-entry-type>java.lang.String</env-entry-type>
-	</env-entry>
-	
-	<env-entry>
-	  <env-entry-name>org.grobid.home</env-entry-name>
-	  <env-entry-value>${_GROBID_HOME}</env-entry-value>
-	  <env-entry-type>java.lang.String</env-entry-type>
-	</env-entry>
+    <welcome-file-list>
+        <welcome-file>grobid/index.html</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
 
-	<context-param>
-        <param-name>log4jConfigLocation</param-name>
-        <param-value>/WEB-INF/classes/log4j.properties</param-value>
-    </context-param>
+    <!-- Path to properties files and GROBID_HOME -->
+    <env-entry>
+        <env-entry-name>org.grobid.property</env-entry-name>
+        <env-entry-value>${_GROBID_PROPERTY}</env-entry-value>
+        <env-entry-type>java.lang.String</env-entry-type>
+    </env-entry>
+
+    <env-entry>
+        <env-entry-name>org.grobid.property.service</env-entry-name>
+        <env-entry-value>${_GROBID_SERVICE_PROPERTY}</env-entry-value>
+        <env-entry-type>java.lang.String</env-entry-type>
+    </env-entry>
+
+    <env-entry>
+        <env-entry-name>org.grobid.home</env-entry-name>
+        <env-entry-value>${_GROBID_HOME}</env-entry-value>
+        <env-entry-type>java.lang.String</env-entry-type>
+    </env-entry>
 
 </web-app>
