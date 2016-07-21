@@ -1,19 +1,24 @@
 package org.grobid.core.utilities;
 
+import java.io.*;
+import java.util.Enumeration;
+import java.util.Properties;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.grobid.core.exceptions.GrobidResourceException;
+
+import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.utilities.counters.impl.CntManagerFactory;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import java.io.*;
-import java.util.Enumeration;
-import java.util.Properties;
 
 /**
  * This class loads contains all names of grobid-properties and provide methods
@@ -31,6 +36,8 @@ public class GrobidProperties {
 	 * The context of the application.
 	 */
 	protected static Context context;
+
+    private CntManager cntManager = CntManagerFactory.getCntManager();
 
 	/**
 	 * name of property which determines, if grobid runs in test mode.
