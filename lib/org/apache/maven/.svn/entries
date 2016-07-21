@@ -1,97 +1,0 @@
-10
-
-dir
-325
-https://www3.wipo.int/svn/GDS/Grobid/grobid/trunk/grobid/lib/org/apache/maven
-https://www3.wipo.int/svn/GDS
-
-
-
-2013-12-03T09:49:58.221266Z
-285
-lopezp
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-e3f51d81-c301-44a0-a9fc-f46e4be0dc36
-
-plugins
-dir
-
-maven-plugin-parameter-documenter
-dir
-
-surefire
-dir
-
-maven-toolchain
-dir
-
-maven-monitor
-dir
-
-plugin-tools
-dir
-
-maven-core
-dir
-
-maven-parent
-dir
-
-maven-artifact
-dir
-
-maven-repository-metadata
-dir
-
-maven-error-diagnostics
-dir
-
-maven-settings
-dir
-
-doxia
-dir
-
-maven-model
-dir
-
-maven-profile
-dir
-
-maven
-dir
-
-shared
-dir
-
-maven-plugin-registry
-dir
-
-maven-plugin-api
-dir
-
-maven-artifact-manager
-dir
-
-reporting
-dir
-
-maven-project
-dir
-
-maven-plugin-descriptor
-dir
-

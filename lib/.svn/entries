@@ -1,175 +1,0 @@
-10
-
-dir
-325
-https://www3.wipo.int/svn/GDS/Grobid/grobid/trunk/grobid/lib
-https://www3.wipo.int/svn/GDS
-
-
-
-2013-12-04T09:00:40.723954Z
-310
-lopezp
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-e3f51d81-c301-44a0-a9fc-f46e4be0dc36
-
-log4j
-dir
-
-asm
-dir
-
-cglib
-dir
-
-commons-cli
-dir
-
-commons-io
-dir
-
-one-jar-ant-task-0.97.jar
-file
-
-
-
-
-2013-12-03T10:18:01.000000Z
-8a9be52d61a82386772c22267125d2f3
-2013-12-03T09:49:58.221266Z
-285
-lopezp
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-90141
-
-commons-pool
-dir
-
-net
-dir
-
-ant-junit-1.7.1.jar
-file
-
-
-
-
-2013-12-04T09:00:10.000000Z
-c1b2bfa2389c405c7c07d23f368d6944
-2013-12-04T09:00:40.723954Z
-310
-lopezp
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-93518
-
-org
-dir
-
-junit
-dir
-
-ant-junit-1.8.4.jar
-file
-
-
-
-
-2013-12-04T08:35:40.000000Z
-f2f100e892408f2bbb66744455bf8611
-2013-12-04T08:38:26.197960Z
-308
-lopezp
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-108138
-
-commons-logging
-dir
-
-classworlds
-dir
-
-xmlunit
-dir
-
-javax
-dir
-
-directory-naming
-dir
-
-com
-dir
-
