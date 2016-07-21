@@ -71,9 +71,6 @@ public class Document {
     public static final int MAX_FIG_BOX_DISTANCE = 70;
     private final DocumentSource documentSource;
 
-    /**
-     * Exit code got when pdf2xml took too much time and has been killed by pdf2xml_server.
-     */
     private String pathXML = null; // XML representation of the current PDF file
 
     private String lang = null;
@@ -574,7 +571,6 @@ public class Document {
                     text = text.trim();
                     if (text.length() > 0) {
                         // specific test if we have a new column
-                        // TODO
                         // test if we have a special layout block
                         int innd = text.indexOf("@PAGE");
                         if (innd == -1)

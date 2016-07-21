@@ -81,7 +81,8 @@ public class HeaderParser extends AbstractParser {
                                               BiblioItem resHeader, GrobidAnalysisConfig config) {
         DocumentSource documentSource = null;
         try {
-            documentSource = DocumentSource.fromPdf(new File(pdfInput), config.getStartPage(), config.getEndPage());
+            documentSource = DocumentSource.fromPdf(new File(pdfInput), config.getStartPage(), config.getEndPage(),
+                    config.getPdfAssetPath() != null);
             Document doc = new Document(documentSource);
             doc.addTokenizedDocument(config);
 
@@ -922,7 +923,7 @@ public class HeaderParser extends AbstractParser {
                     // extracted from the pdf
                     writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + File.separator
                             + pdfFileName.replace(".pdf", GrobidProperties.FILE_ENDING_TEI_HEADER)), false), "UTF-8");
-                    writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" 
+                    writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\""
         					+ pdfFileName.replace(".pdf", "")
                             + "\"/>\n\t</teiHeader>\n\t<text");
 
