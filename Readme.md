@@ -72,6 +72,12 @@ GROBID is distributed under [Apache 2.0 license](http://www.apache.org/licenses/
 
 Main author and contact: Patrice Lopez (<patrice.lopez@science-miner.com>)
 
+## Sponsors
+
+ej-technologies provided us a free open-source license for its Java Profiler. Click the JProfiler logo below to learn more.
+
+[![JProfiler](doc/img/jprofiler_medium.png)](http://www.ej-technologies.com/products/jprofiler/overview.html)
+
 ## References
 
 Please simply refer to the github project:
