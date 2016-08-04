@@ -31,6 +31,8 @@ import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
+import org.grobid.core.factory.GrobidFactory;
+import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.core.lang.Language;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
@@ -219,7 +221,7 @@ public class Engine implements Closeable {
     public Engine() {
         /*
          * Runtime.getRuntime().addShutdownHook(new Thread() {
-		 * 
+		 *
 		 * @Override public void run() { try { close(); } catch (IOException e)
 		 * { LOGGER.error("Failed to close all resources: " + e); } } });
 		 */
@@ -241,11 +243,11 @@ public class Engine implements Closeable {
 
     /**
      * Create training data for the segmentation of a reference block based on a PDF file containing
-     * a reference section and the current reference segmentation model 
+     * a reference section and the current reference segmentation model
      *
      * @param input   : the path of the PDF file to be processed
      * @param pathTEI : the path of the training data will be written as TEI file
-	 * @param id : an optional ID to be used in the TEI file, -1 if not to be used 
+	 * @param id : an optional ID to be used in the TEI file, -1 if not to be used
      */
     public void createTrainingReferenceSegmentation(File input, String pathTEI, int id) throws Exception {
         if (input == null) {
@@ -259,7 +261,7 @@ public class Engine implements Closeable {
         if (!resultPathFile.exists()) {
             if (!resultPathFile.mkdirs()) {
                 throw new GrobidResourceException("Cannot start parsing, because cannot create "
-                        + "output path for tei files on location '" 
+                        + "output path for tei files on location '"
 						+ resultPathFile.getAbsolutePath() + "'.");
             }
         }
@@ -271,12 +273,12 @@ public class Engine implements Closeable {
 			String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
             if (!referencesStr.isEmpty()) {
 				//String tei = parsers.getReferenceSegmenterParser().createTrainingData2(referencesStr, id);
-				org.grobid.core.utilities.Pair<String,String> result = 
+				org.grobid.core.utilities.Pair<String,String> result =
 					parsers.getReferenceSegmenterParser().createTrainingData(doc, id);
 				String tei = result.getA();
-				String raw = result.getB();	
+				String raw = result.getB();
 				if (tei != null) {
-                    String outPath = pathTEI + "/" + 
+                    String outPath = pathTEI + "/" +
 						input.getName().replace(".pdf", ".training.referenceSegmenter.tei.xml");
                     Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
                     writer.write(tei + "\n");
@@ -304,12 +306,12 @@ public class Engine implements Closeable {
     }
 
 	/**
-     * Create training data for the segmentation of a reference block based on a repository of PDF files 
-	 * containing a reference section and the current reference segmentation model 
+     * Create training data for the segmentation of a reference block based on a repository of PDF files
+	 * containing a reference section and the current reference segmentation model
      *
      * @param directoryPath   : the path of the repository of PDF files to be processed
      * @param resultPath : the path to the repository where to write the training data as a TEI files
-	 * @param id : an optional ID to be used in the TEI file, -1 if not to be used 
+	 * @param id : an optional ID to be used in the TEI file, -1 if not to be used
      */
     public int batchCreateTrainingReferenceSegmentation(String directoryPath, String resultPath, int id) {
 		return batchCreateTraining(directoryPath, resultPath, id, 3);
@@ -518,12 +520,12 @@ public class Engine implements Closeable {
      *                             web services for improving citations information
 	 * @return the resulting structured document as a TEI string.
      */
+
 //    public String fullTextToTEI(File inputFile,
 //								GrobidAnalysisConfig config) throws Exception {
 //
 //		return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, null, -1, -1, false);
 //	}
-
     /**
      * Parse and convert the current article into TEI, this method performs the
      * whole parsing and conversion process. If onlyHeader is true, than only
@@ -534,15 +536,15 @@ public class Engine implements Closeable {
      *                             web services for improving header information
      * @param consolidateCitations - the consolidation option allows GROBID to exploit Crossref
      *                             web services for improving citations information
-     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and 
-	 * saved under the indicated repository path		
+     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and
+	 * saved under the indicated repository path
 	 * @return the resulting structured document as a TEI string.
      */
+
 //    public String fullTextToTEI(String inputFile,
 //								GrobidAnalysisConfig config) throws Exception {
 //		return fullTextToTEI(inputFile, config);
 //	}
-
     /**
      *
      * //TODO: remove invalid JavaDoc once refactoring is done and tested (left for easier reference)
@@ -684,7 +686,7 @@ public class Engine implements Closeable {
                         createTrainingReferenceSegmentation(pdfFile, resultPath, ind + n);
                     }
                 } catch (final Exception exp) {
-                    LOGGER.error("An error occured while processing the following pdf: " 
+                    LOGGER.error("An error occured while processing the following pdf: "
 						+ pdfFile.getPath() + ": " + exp);
                 }
 				if (ind != -1)
@@ -708,7 +710,7 @@ public class Engine implements Closeable {
      *                      web services for improving header information
      * @return the number of processed files.
      */
-    public int batchProcessHeader(String directoryPath, String resultPath, boolean consolidate) 
+    public int batchProcessHeader(String directoryPath, String resultPath, boolean consolidate)
 		throws Exception {
         return batchProcess(directoryPath, resultPath, consolidate, consolidate, 0);
     }
@@ -726,7 +728,7 @@ public class Engine implements Closeable {
      *                             web services for improving citations information
      * @return the number of processed files.
      */
-    public int batchProcessFulltext(String directoryPath, String resultPath, boolean consolidateHeader, 
+    public int batchProcessFulltext(String directoryPath, String resultPath, boolean consolidateHeader,
 		boolean consolidateCitations) {
         return batchProcess(directoryPath, resultPath, consolidateHeader, consolidateCitations, 1);
     }
@@ -740,7 +742,7 @@ public class Engine implements Closeable {
      * @param type                 type of the method
      * @return exit code
      */
-    private int batchProcess(String directoryPath, String resultPath, boolean consolidateHeader, 
+    private int batchProcess(String directoryPath, String resultPath, boolean consolidateHeader,
 		boolean consolidateCitations, int type) {
         if (directoryPath == null) {
             throw new GrobidResourceException("Cannot start parsing, because the input path, "
@@ -753,14 +755,14 @@ public class Engine implements Closeable {
         File path = new File(directoryPath);
         if (!path.exists()) {
             throw new GrobidResourceException("Cannot start parsing, because the input path, "
-                    + "where the pdf files are supposed to be located '" + path.getAbsolutePath() 
+                    + "where the pdf files are supposed to be located '" + path.getAbsolutePath()
 					+ "' does not exists.");
         }
         File resultPathFile = new File(resultPath);
         if (!resultPathFile.exists()) {
             if (!resultPathFile.mkdirs()) {
                 throw new GrobidResourceException("Cannot start parsing, because cannot create "
-                        + "output path for tei files on location '" + resultPathFile.getAbsolutePath() 
+                        + "output path for tei files on location '" + resultPathFile.getAbsolutePath()
 						+ "'.");
             }
         }
@@ -782,7 +784,7 @@ public class Engine implements Closeable {
             for (; n < refFiles.length; n++) {
                 File pdfFile = refFiles[n];
                 if (!pdfFile.exists()) {
-                    throw new GrobidResourceException("A problem occurs in reading pdf file '" 
+                    throw new GrobidResourceException("A problem occurs in reading pdf file '"
 						+ pdfFile.getAbsolutePath()
                         + "'. The file does not exists. ");
                 }
@@ -793,9 +795,9 @@ public class Engine implements Closeable {
                     String tei = processHeader(pdfFile.getPath(), consolidateHeader, res);
                     // if (res!= null) {
                     if (tei != null) {
-                        String outPath = resultPath + "/" + pdfFile.getName().replace(".pdf", 
+                        String outPath = resultPath + "/" + pdfFile.getName().replace(".pdf",
 							GrobidProperties.FILE_ENDING_TEI_HEADER);
-                        Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), 
+                        Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPath),
 							false), "UTF-8");
                         // writer.write(res.toTEI(0) + "\n");
                         writer.write(tei + "\n");
@@ -808,9 +810,9 @@ public class Engine implements Closeable {
                             .build();
                     String tei = fullTextToTEI(pdfFile, config);
                     if (tei != null) {
-                        String outPath = resultPath + "/" + pdfFile.getName().replace(".pdf", 
+                        String outPath = resultPath + "/" + pdfFile.getName().replace(".pdf",
 							GrobidProperties.FILE_ENDING_TEI_FULLTEXT);
-                        Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), 
+                        Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPath),
 							false), "UTF-8");
                         writer.write(tei + "\n");
                         writer.close();
@@ -951,6 +953,7 @@ public class Engine implements Closeable {
      * @return the list of extracted and parserd patent references as PatentItem
      *         object.
      */
+
     /*public List<PatentItem> processPatentCitationsInPatent(String text) throws Exception {
         List<PatentItem> patents = new ArrayList<PatentItem>();
         // we initialize the attribute individually for readability...
@@ -959,7 +962,6 @@ public class Engine implements Closeable {
         parsers.getReferenceExtractor().extractAllReferencesString(text, filterDuplicate, consolidate, patents, null);
         return patents;
     }*/
-
     /**
      * Extract and parse non patent references within a patent. Result are
      * provided as a BibDataSet with offset position instanciated relative to
@@ -971,6 +973,7 @@ public class Engine implements Closeable {
      * @return the list of extracted and parserd non patent references as
      *         BiblioItem object.
      */
+
     /*public List<BibDataSet> processNPLCitationsInPatent(String text, boolean consolidateCitations) throws Exception {
         List<BibDataSet> articles = new ArrayList<BibDataSet>();
         // we initialize the attribute individually for readability...
@@ -978,7 +981,6 @@ public class Engine implements Closeable {
         parsers.getReferenceExtractor().extractAllReferencesString(text, filterDuplicate, consolidateCitations, null, articles);
         return articles;
     }*/
-
     /**
      * Extract and parse both patent and non patent references within a patent
      * text. Result are provided as a BibDataSet with offset position
@@ -1007,7 +1009,7 @@ public class Engine implements Closeable {
         }
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
-        return parsers.getReferenceExtractor().extractAllReferencesString(text, filterDuplicate, 
+        return parsers.getReferenceExtractor().extractAllReferencesString(text, filterDuplicate,
 			consolidateCitations, patentResults, nplResults);
     }
 
@@ -1033,7 +1035,7 @@ public class Engine implements Closeable {
      *         encoded in TEI.
      * @throws Exception if sth. went wrong
      */
-    public String processAllCitationsInXMLPatent(String xmlPath, List<BibDataSet> nplResults, 
+    public String processAllCitationsInXMLPatent(String xmlPath, List<BibDataSet> nplResults,
 			List<PatentItem> patentResults,
             boolean consolidateCitations) throws Exception {
         if ((nplResults == null) && (patentResults == null)) {
@@ -1041,7 +1043,7 @@ public class Engine implements Closeable {
         }
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
-        return parsers.getReferenceExtractor().extractAllReferencesXMLFile(xmlPath, filterDuplicate, 
+        return parsers.getReferenceExtractor().extractAllReferencesXMLFile(xmlPath, filterDuplicate,
 			consolidateCitations, patentResults, nplResults);
     }
 
@@ -1084,7 +1086,7 @@ public class Engine implements Closeable {
         try {
             InputStream inputStream = new FileInputStream(new File(teiPath));
             OutputStream output = new FileOutputStream(new File(outTeiPath));
-            final TeiStAXParser parser = new TeiStAXParser(inputStream, output, false, 
+            final TeiStAXParser parser = new TeiStAXParser(inputStream, output, false,
 				consolidateCitations);
             parser.parse();
             inputStream.close();
@@ -1093,7 +1095,6 @@ public class Engine implements Closeable {
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
     }
-
 
     /**
      * Process an XML patent document with a patent citation extraction and
@@ -1105,10 +1106,11 @@ public class Engine implements Closeable {
      * @param resultPath - the path to the directory where the results as XML files
      *                   shall be written.
      */
-    public void createTrainingPatentCitations(String pathXML, String resultPath) 
+    public void createTrainingPatentCitations(String pathXML, String resultPath)
 		throws Exception {
         parsers.getReferenceExtractor().generateTrainingData(pathXML, resultPath);
     }
+
 
     /**
      * Process all the XML patent documents in a given directory with a patent
@@ -1122,7 +1124,7 @@ public class Engine implements Closeable {
      *                      shall be written.
      * @return the number of processed files.
      */
-    public int batchCreateTrainingPatentcitations(String directoryPath, String resultPath) 
+    public int batchCreateTrainingPatentcitations(String directoryPath, String resultPath)
 		throws Exception {
         try {
             File path = new File(directoryPath);
@@ -1201,5 +1203,14 @@ public class Engine implements Closeable {
 
     public EngineParsers getParsers() {
         return parsers;
+    }
+
+    /**
+     * @return a new engine from GrobidFactory if the execution is parallel,
+     *         else return the instance of engine.
+     */
+    public static Engine getEngine(boolean isparallelExec) {
+        return isparallelExec ? GrobidPoolingFactory.getEngineFromPool()
+                : GrobidFactory.getInstance().getEngine();
     }
 }
