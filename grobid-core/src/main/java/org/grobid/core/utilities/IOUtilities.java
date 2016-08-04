@@ -8,7 +8,7 @@ import java.io.*;
 
 /**
  * Utilities related to file and directory management.
- *
+ * <p>
  * Created by lfoppiano on 04/08/16.
  */
 public class IOUtilities {
@@ -57,7 +57,6 @@ public class IOUtilities {
     /**
      * Write an input stream in temp directory.
      */
-    @Deprecated
     public static File writeInputFile(InputStream inputStream) {
         LOGGER.debug(">> set origin document for stateless service'...");
 
@@ -96,7 +95,6 @@ public class IOUtilities {
     /**
      * Creates a new not used temporary file and returns it.
      */
-    @Deprecated
     public static File newTempFile(String fileName, String extension) {
         try {
             return File.createTempFile(fileName, extension, GrobidProperties.getTempPath());
@@ -110,7 +108,6 @@ public class IOUtilities {
     /**
      * Delete the temporary file.
      */
-    @Deprecated
     public static void removeTempFile(final File file) {
         try {
             // sanity cleaning
