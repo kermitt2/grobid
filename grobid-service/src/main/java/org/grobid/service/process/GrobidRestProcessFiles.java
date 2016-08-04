@@ -9,6 +9,7 @@ import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.IOUtilities;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
@@ -73,13 +74,13 @@ public class GrobidRestProcessFiles {
         File originFile = null;
         Engine engine = null;
         try {
-            originFile = GrobidRestUtils.writeInputFile(inputStream);
+            originFile = IOUtilities.writeInputFile(inputStream);
 
             if (originFile == null) {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
                 // starts conversion process
-                engine = GrobidRestUtils.getEngine(isparallelExec);
+                engine = Engine.getEngine(isparallelExec);
                 if (isparallelExec) {
                     retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
                     //retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
@@ -110,7 +111,7 @@ public class GrobidRestProcessFiles {
             LOGGER.error("An unexpected exception occured: " + exp);
             response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
-            GrobidRestUtils.removeTempFile(originFile);
+            IOUtilities.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
@@ -149,7 +150,7 @@ public class GrobidRestProcessFiles {
         Response response = null;
         LOGGER.debug(methodLogIn());
         try {
-            File originFile = GrobidRestUtils.writeInputFile(inputStream);
+            File originFile = IOUtilities.writeInputFile(inputStream);
             LOGGER.info("originFile=" + originFile);
         } catch (Exception e) {
             LOGGER.error("An unexpected exception occurs. ", e);
@@ -189,13 +190,13 @@ public class GrobidRestProcessFiles {
         File originFile = null;
         Engine engine = null;
         try {
-            originFile = GrobidRestUtils.writeInputFile(inputStream);
+            originFile = IOUtilities.writeInputFile(inputStream);
 
             if (originFile == null) {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
                 // starts conversion process
-                engine = GrobidRestUtils.getEngine(isparallelExec);
+                engine = Engine.getEngine(isparallelExec);
                 GrobidAnalysisConfig config =
                         GrobidAnalysisConfig.builder()
                                 .consolidateHeader(consolidate)
@@ -213,7 +214,7 @@ public class GrobidRestProcessFiles {
                     engine = null;
                 }
 
-                GrobidRestUtils.removeTempFile(originFile);
+                IOUtilities.removeTempFile(originFile);
 
                 if (!GrobidRestUtils.isResultOK(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
@@ -233,7 +234,7 @@ public class GrobidRestProcessFiles {
             LOGGER.error("An unexpected exception occurs. ", exp);
             response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
-            GrobidRestUtils.removeTempFile(originFile);
+            IOUtilities.removeTempFile(originFile);
             if (isparallelExec && (engine != null)) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
@@ -271,7 +272,7 @@ public class GrobidRestProcessFiles {
         Engine engine = null;
         String assetPath = null;
         try {
-            originFile = GrobidRestUtils.writeInputFile(inputStream);
+            originFile = IOUtilities.writeInputFile(inputStream);
 
             if (originFile == null) {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
@@ -280,7 +281,7 @@ public class GrobidRestProcessFiles {
                 assetPath = GrobidProperties.getTempPath().getPath() + File.separator + KeyGen.getKey();
 
                 // starts conversion process
-                engine = GrobidRestUtils.getEngine(isparallelExec);
+                engine = Engine.getEngine(isparallelExec);
                 GrobidAnalysisConfig config =
                         GrobidAnalysisConfig.builder()
                                 .consolidateHeader(consolidate)
@@ -298,7 +299,7 @@ public class GrobidRestProcessFiles {
                     engine = null;
                 }
 
-                GrobidRestUtils.removeTempFile(originFile);
+                IOUtilities.removeTempFile(originFile);
 
                 if (!GrobidRestUtils.isResultOK(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
@@ -354,9 +355,9 @@ public class GrobidRestProcessFiles {
             LOGGER.error("An unexpected exception occurs. ", exp);
             response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
-            GrobidRestUtils.removeTempFile(originFile);
+            IOUtilities.removeTempFile(originFile);
             if (assetPath != null) {
-                GrobidRestUtils.removeTempDirectory(assetPath);
+                IOUtilities.removeTempDirectory(assetPath);
             }
             if (isparallelExec && (engine != null)) {
                 GrobidPoolingFactory.returnEngine(engine);
@@ -405,13 +406,13 @@ public class GrobidRestProcessFiles {
         File originFile = null;
         Engine engine = null;
         try {
-            originFile = GrobidRestUtils.writeInputFile(inputStream);
+            originFile = IOUtilities.writeInputFile(inputStream);
 
             if (originFile == null) {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
                 // starts conversion process
-                engine = GrobidRestUtils.getEngine(isparallelExec);
+                engine = Engine.getEngine(isparallelExec);
                 List<PatentItem> patents = new ArrayList<PatentItem>();
                 List<BibDataSet> articles = new ArrayList<BibDataSet>();
                 if (isparallelExec) {
@@ -426,7 +427,7 @@ public class GrobidRestProcessFiles {
                     }
                 }
 
-                GrobidRestUtils.removeTempFile(originFile);
+                IOUtilities.removeTempFile(originFile);
 
                 if (!GrobidRestUtils.isResultOK(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
@@ -441,7 +442,7 @@ public class GrobidRestProcessFiles {
             LOGGER.error("An unexpected exception occurs. ", exp);
             response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
-            GrobidRestUtils.removeTempFile(originFile);
+            IOUtilities.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
@@ -466,13 +467,13 @@ public class GrobidRestProcessFiles {
         File originFile = null;
         Engine engine = null;
         try {
-            originFile = GrobidRestUtils.writeInputFile(inputStream);
+            originFile = IOUtilities.writeInputFile(inputStream);
 
             if (originFile == null) {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
                 // starts conversion process
-                engine = GrobidRestUtils.getEngine(isparallelExec);
+                engine = Engine.getEngine(isparallelExec);
                 List<PatentItem> patents = new ArrayList<PatentItem>();
                 List<BibDataSet> articles = new ArrayList<BibDataSet>();
                 if (isparallelExec) {
@@ -487,7 +488,7 @@ public class GrobidRestProcessFiles {
                     }
                 }
 
-                GrobidRestUtils.removeTempFile(originFile);
+                IOUtilities.removeTempFile(originFile);
 
                 if (!GrobidRestUtils.isResultOK(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
@@ -502,7 +503,7 @@ public class GrobidRestProcessFiles {
             LOGGER.error("An unexpected exception occurs. ", exp);
             response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
-            GrobidRestUtils.removeTempFile(originFile);
+            IOUtilities.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
@@ -529,13 +530,13 @@ public class GrobidRestProcessFiles {
         File originFile = null;
         Engine engine = null;
         try {
-            originFile = GrobidRestUtils.writeInputFile(inputStream);
+            originFile = IOUtilities.writeInputFile(inputStream);
 
             if (originFile == null) {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
                 // starts conversion process
-                engine = GrobidRestUtils.getEngine(isparallelExec);
+                engine = Engine.getEngine(isparallelExec);
                 List<BibDataSet> results = null;
                 if (isparallelExec) {
                     results = engine.processReferences(originFile, consolidate);
@@ -548,7 +549,7 @@ public class GrobidRestProcessFiles {
                     }
                 }
 
-                GrobidRestUtils.removeTempFile(originFile);
+                IOUtilities.removeTempFile(originFile);
 
                 StringBuilder result = new StringBuilder();
                 // dummy header
@@ -580,7 +581,7 @@ public class GrobidRestProcessFiles {
             LOGGER.error("An unexpected exception occurs. ", exp);
             response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
-            GrobidRestUtils.removeTempFile(originFile);
+            IOUtilities.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
@@ -607,7 +608,7 @@ public class GrobidRestProcessFiles {
         Engine engine = null;
         PDDocument out = null;
         try {
-            originFile = GrobidRestUtils.writeInputFile(inputStream);
+            originFile = IOUtilities.writeInputFile(inputStream);
 
             GrobidAnalysisConfig config = new GrobidAnalysisConfig.
                 GrobidAnalysisConfigBuilder().build();
@@ -617,7 +618,7 @@ public class GrobidRestProcessFiles {
             } else {
                 // starts conversion process
                 final PDDocument document = PDDocument.load(originFile);
-                engine = GrobidRestUtils.getEngine(isparallelExec);
+                engine = Engine.getEngine(isparallelExec);
 				DocumentSource documentSource = DocumentSource.fromPdf(originFile);
                 if (isparallelExec) {
                     Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
@@ -652,7 +653,7 @@ public class GrobidRestProcessFiles {
                     } 
                 }
 
-                GrobidRestUtils.removeTempFile(originFile);
+                IOUtilities.removeTempFile(originFile);
 
                 if (out != null) {
                     response = Response.status(Status.OK).type("application/pdf").build();
@@ -679,7 +680,7 @@ public class GrobidRestProcessFiles {
             LOGGER.error("An unexpected exception occurs. ", exp);
             response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
-            GrobidRestUtils.removeTempFile(originFile);
+            IOUtilities.removeTempFile(originFile);
             if (out != null) {
                 try {
                     out.close();

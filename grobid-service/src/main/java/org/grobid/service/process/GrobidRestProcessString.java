@@ -50,7 +50,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw date for stateless service'...");
 			
-			engine = GrobidRestUtils.getEngine(isparallelExec);
+			engine = Engine.getEngine(isparallelExec);
 			List<Date> dates;
 			date = date.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			if (isparallelExec) {
@@ -107,7 +107,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw header author sequence for stateless service'...");
 
-			engine = GrobidRestUtils.getEngine(isparallelExec);
+			engine = Engine.getEngine(isparallelExec);
 			List<Person> authors;
 			names = names.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			if (isparallelExec) {
@@ -165,7 +165,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw citation author sequence for stateless service'...");
 
-			engine = GrobidRestUtils.getEngine(isparallelExec);
+			engine = Engine.getEngine(isparallelExec);
 			List<Person> authors;
 			names = names.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			if (isparallelExec) {
@@ -222,7 +222,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw affiliation + address blocks for stateless service'...");
 
-			engine = GrobidRestUtils.getEngine(isparallelExec);
+			engine = Engine.getEngine(isparallelExec);
 			List<Affiliation> affiliationList;
 			//affiliation = affiliation.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			affiliation = affiliation.replaceAll("\\t", " ");
@@ -280,7 +280,7 @@ public class GrobidRestProcessString {
 		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
 		Engine engine = null;
 		try {
-			engine = GrobidRestUtils.getEngine(isparallelExec);
+			engine = Engine.getEngine(isparallelExec);
 			BiblioItem biblioItem;
 			citation = citation.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			if (isparallelExec) {
@@ -329,7 +329,7 @@ public class GrobidRestProcessString {
 		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
 		Engine engine = null;
 		try {
-			engine = GrobidRestUtils.getEngine(isparallelExec);
+			engine = Engine.getEngine(isparallelExec);
 			
 			List<PatentItem> patents = new ArrayList<PatentItem>();
 			List<BibDataSet> articles = new ArrayList<BibDataSet>();						
