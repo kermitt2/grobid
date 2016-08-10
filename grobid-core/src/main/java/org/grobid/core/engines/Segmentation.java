@@ -88,7 +88,7 @@ public class Segmentation extends AbstractParser {
         super(GrobidModels.SEGMENTATION);
     }
 
-    public Document processing(File input, GrobidAnalysisConfig config) {
+    /*public Document processing(File input, GrobidAnalysisConfig config) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -96,9 +96,12 @@ public class Segmentation extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because input file '" +
                     input.getAbsolutePath() + "' does not exist.");
         }
-        DocumentSource documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage());
+        DocumentSource documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage(),
+                config.getPdfAssetPath() != null);
+
         return processing(documentSource, config);
-    }
+    }*/
+    
     /**
      * Segment a PDF document into high level zones: cover page, document header,
      * page footer, page header, body, page numbers, biblio section and annexes.
@@ -116,14 +119,15 @@ public class Segmentation extends AbstractParser {
             // we copy them to the assetPath directory
 
             File assetFile = config.getPdfAssetPath();
-            dealWithImages(documentSource, doc, assetFile, config);
+            if (assetFile != null) {
+                dealWithImages(documentSource, doc, assetFile, config);
+            }
             return doc;
         } finally {
             // keep it clean when leaving...
             if (config.getPdfAssetPath() == null) {
                 // remove the pdf2xml tmp file
-                //DocumentSource.close(documentSource, false);
-                DocumentSource.close(documentSource, true);
+                DocumentSource.close(documentSource, false);
             } else {
                 // remove the pdf2xml tmp files, including the sub-directories
                 DocumentSource.close(documentSource, true);
@@ -707,7 +711,6 @@ public class Segmentation extends AbstractParser {
             }
 
         } catch (Exception e) {
-			e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid training" +
                     " data generation for segmentation model.", e);
         } finally {
