@@ -10,6 +10,7 @@ import org.grobid.core.data.Date;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
+import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
@@ -679,7 +680,9 @@ public class EngineTest {
 //        String input = "/Work/workspace/pdf-analysis/pdf-analysis-service/scripts/grobid/pdfs/grobid-input-2086711400313078388.pdf";
 //        String input = "/Work/workspace/pdf-analysis/pdf-analysis-service/scripts/grobid/AS_190528951947270_1422437050969.pdf";
         String input = "/Work/temp/1.pdf";
-        Document doc = engine.getParsers().getSegmentationParser().processing(new File(input), GrobidAnalysisConfig.defaultInstance());
+        DocumentSource documentSource = DocumentSource.fromPdf(new File(input));
+        Document doc = engine.getParsers().getSegmentationParser().processing(documentSource, GrobidAnalysisConfig.defaultInstance());
+        //Document doc = engine.getParsers().getSegmentationParser().processing(new File(input), GrobidAnalysisConfig.defaultInstance());
         System.out.println("Extracting citations");
         List<BibDataSet> cits = engine.getParsers().getCitationParser().processingReferenceSection(doc, engine.getParsers().getReferenceSegmenterParser(), false);
         for (BibDataSet c : cits) {
@@ -693,8 +696,10 @@ public class EngineTest {
     @Test
     public void testSegmentation() throws Exception {
         Engine engine = GrobidFactory.getInstance().getEngine();
-        Document result = engine.getParsers().getSegmentationParser().processing(new File("/Work/workspace/data/pdf2xmlreflow/1.pdf"),
-                GrobidAnalysisConfig.defaultInstance());
+        //Document result = engine.getParsers().getSegmentationParser().processing(new File("/Work/workspace/data/pdf2xmlreflow/1.pdf"),
+        //        GrobidAnalysisConfig.defaultInstance());
+        DocumentSource documentSource = DocumentSource.fromPdf(new File("/Work/workspace/data/pdf2xmlreflow/1.pdf"));
+        Document result = engine.getParsers().getSegmentationParser().processing(documentSource, GrobidAnalysisConfig.defaultInstance());
         System.out.println(result);
 
     }

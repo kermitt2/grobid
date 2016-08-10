@@ -1,5 +1,7 @@
 package org.grobid.service.util;
 
+import org.grobid.core.utilities.IOUtilities;
+
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -57,7 +59,7 @@ public class ZipUtils {
 
 			entries = zipFile.entries();
 
-			File tempDir = GrobidRestUtils.newTempFile("GROBID",
+			File tempDir = IOUtilities.newTempFile("GROBID",
 					Long.toString(System.nanoTime()));
 			if (!(tempDir.delete())) {
 				throw new IOException("Could not delete temp file: "

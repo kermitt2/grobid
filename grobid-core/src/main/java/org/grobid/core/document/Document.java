@@ -71,9 +71,6 @@ public class Document {
     public static final int MAX_FIG_BOX_DISTANCE = 70;
     private final DocumentSource documentSource;
 
-    /**
-     * Exit code got when pdf2xml took too much time and has been killed by pdf2xml_server.
-     */
     private String pathXML = null; // XML representation of the current PDF file
 
     private String lang = null;
@@ -223,6 +220,7 @@ public class Document {
     }
 
     // to be removed
+    @Deprecated
     public List<LayoutToken> getTokenizationsHeader() {
         List<LayoutToken> tokenizationsHeader = new ArrayList<LayoutToken>();
         for (Integer blocknum : blockDocumentHeaders) {
@@ -247,6 +245,7 @@ public class Document {
     }
 
     // to be removed
+    @Deprecated
     public List<LayoutToken> getTokenizationsFulltext() {
         List<LayoutToken> tokenizationsFulltext = new ArrayList<LayoutToken>();
         for (Block blo : blocks) {
@@ -261,6 +260,7 @@ public class Document {
     }
 
     // to be removed
+    @Deprecated
     public List<LayoutToken> getTokenizationsReferences() {
         List<LayoutToken> tokenizationsReferences = new ArrayList<LayoutToken>();
 
@@ -571,7 +571,6 @@ public class Document {
                     text = text.trim();
                     if (text.length() > 0) {
                         // specific test if we have a new column
-                        // TODO
                         // test if we have a special layout block
                         int innd = text.indexOf("@PAGE");
                         if (innd == -1)

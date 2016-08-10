@@ -23,13 +23,10 @@ import java.util.*;
  * @author Patrice Lopez
  */
 public class PDF2XMLSaxParser extends DefaultHandler {
-	/**
-	 * The Logger.
-	 */
 	public static final Logger LOGGER = LoggerFactory.getLogger(PDF2XMLSaxParser.class);
 
-	private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed
-															// text
+    private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
+
 	private String currentFont = null;
 	private String colorFont = null;
 	private String previousToken = null;
@@ -75,10 +72,16 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 		} else {
 			layoutToken.setBlockPtr(doc.getBlocks().size());
 		}
-		block.addToken(layoutToken);
+		if (block == null) {
+            LOGGER.info("addToken called with null block object: " + layoutToken.toString());
+        } else {
+            block.addToken(layoutToken);
+        }
 	}
 
 	private void addBlock(Block block) {
+		if (block == null)
+			LOGGER.info("addBlock called with null block object");
 		if (!block.isNull() && (block.getStartToken() != block.getEndToken())) {
 			block.setPage(page);
 			doc.addBlock(block);
@@ -93,6 +96,9 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 			tokenizations.remove(tokenizations.size()-1);
 		}
 		tokenizations.add(tok);
+
+		if (block == null)
+			LOGGER.info("substituteLastToken called with null block object: " + tok.toString());
 
 		if (block.getTokens() != null && !block.getTokens().isEmpty()) {
 			block.getTokens().remove(block.getTokens().size() - 1);
@@ -113,6 +119,9 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 						.remove(tokenizations.size() - 1);
 			}
 		}
+
+		if (block == null)
+			LOGGER.info("removeLastTwoTokens called with null block object");
 
 		if ((block.getTokens() != null) && (!block.getTokens().isEmpty())) {
 			block.getTokens().remove(block.getTokens().size() - 1);
@@ -728,18 +737,18 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 				//doc.addBlock(block);
 				//page.addBlock(block);
 			}
-			Block block0 = new Block();
+			/*Block block0 = new Block();
 			block0.setText("@PAGE\n");
 			block0.setNbTokens(0);
 			//block0.setY(currentY);
-			addBlock(block0);
+			addBlock(block0);*/
 			//block = new Block();
 			//block.setPage(currentPage);
-			blabla = new StringBuffer();
+			//blabla = new StringBuffer();
 			nbTokens = 0;
-			LayoutToken localTok = new LayoutToken("\n");
+			/*LayoutToken localTok = new LayoutToken("\n");
 			localTok.setPage(currentPage);
-			addToken(localTok);
+			addToken(localTok);*/
 			doc.addPage(page);
 		} else if (qName.equals("IMAGE")) {
 			// this is normally the bitmap graphics
