@@ -9,15 +9,9 @@ import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
-import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorSegmentation;
-import org.grobid.core.layout.Block;
-import org.grobid.core.layout.GraphicObjectType;
-import org.grobid.core.layout.Page;
-import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.layout.BoundingBox;
-import org.grobid.core.layout.GraphicObject;
+import org.grobid.core.layout.*;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
@@ -26,17 +20,11 @@ import org.slf4j.LoggerFactory;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 import java.util.regex.Matcher;
+
+import static org.apache.commons.lang3.StringUtils.*;
 
 // for image conversion we're using an ImageIO plugin for PPM format support
 // see https://github.com/eug/imageio-pnm
@@ -67,8 +55,6 @@ public class Segmentation extends AbstractParser {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Segmentation.class);
 
-    private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
-
     // default bins for relative position
     private static final int NBBINS_POSITION = 12;
 
@@ -80,6 +66,9 @@ public class Segmentation extends AbstractParser {
 
     // projection scale for line length
     private static final int LINESCALE = 10;
+
+    private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
+    private FeatureFactory featureFactory = FeatureFactory.getInstance();
 
     /**
      * TODO some documentation...
@@ -149,9 +138,8 @@ public class Segmentation extends AbstractParser {
         }
 
         doc.produceStatistics();
-        String content = //getAllTextFeatured(doc, headerMode);
-                getAllLinesFeatured(doc);
-        if ((content != null) && (content.trim().length() > 0)) {
+        String content = getAllLinesFeatured(doc);
+        if (isNotEmpty(trim(content))) {
             String labelledResult = label(content);
             // set the different sections of the Document object
             doc = BasicStructureBuilder.generalResultSegmentation(doc, labelledResult, tokenizations);
@@ -188,30 +176,32 @@ public class Segmentation extends AbstractParser {
                                 }
                                 FileUtils.copyFileToDirectory(currFile, assetFile);
                             } catch (IOException e) {
-                                e.printStackTrace();
+                                LOGGER.error("Cannot copy file " + currFile.getAbsolutePath() + " to " + assetFile.getAbsolutePath(), e);
                             }
                         } else if (toLowerCaseName.endsWith(".jpg")
                                 || toLowerCaseName.endsWith(".ppm")
                             //	|| currFile.getName().toLowerCase().endsWith(".pbm")
                                 ) {
+
+                            String outputFilePath = "";
                             try {
                                 final BufferedImage bi = ImageIO.read(currFile);
-                                String outputfilePath;
+
                                 if (toLowerCaseName.endsWith(".jpg")) {
-                                    outputfilePath = assetFile.getPath() + File.separator +
+                                    outputFilePath = assetFile.getPath() + File.separator +
                                             toLowerCaseName.replace(".jpg", ".png");
                                 }
                                 /*else if (currFile.getName().toLowerCase().endsWith(".pbm")) {
-                                    outputfilePath = assetFile.getPath() + File.separator +
+                                    outputFilePath = assetFile.getPath() + File.separator +
                                          currFile.getName().toLowerCase().replace(".pbm",".png");
                                 }*/
                                 else {
-                                    outputfilePath = assetFile.getPath() + File.separator +
+                                    outputFilePath = assetFile.getPath() + File.separator +
                                             toLowerCaseName.replace(".ppm", ".png");
                                 }
-                                ImageIO.write(bi, "png", new File(outputfilePath));
+                                ImageIO.write(bi, "png", new File(outputFilePath));
                             } catch (IOException e) {
-                                e.printStackTrace();
+                                LOGGER.error("Cannot convert file " + currFile.getAbsolutePath() + " to " + outputFilePath, e);
                             }
                         }
                     }
@@ -248,14 +238,10 @@ public class Segmentation extends AbstractParser {
      * processing and involving less features.
      * Lexical features becomes line prefix and suffix, the feature text unit is the first 10 characters of the
      * line without space.
-     * The dictionnary flags are at line level (i.e. the line contains a name mention, a place mention, a year, etc.)
+     * The dictionary flags are at line level (i.e. the line contains a name mention, a place mention, a year, etc.)
      * Regarding layout features: font, size and style are the one associated to the first token of the line.
      */
-    public static String getAllLinesFeatured(Document doc) {
-        FeatureFactory featureFactory = FeatureFactory.getInstance();
-        StringBuilder fulltext = new StringBuilder();
-        String currentFont = null;
-        int currentFontSize = -1;
+    public String getAllLinesFeatured(Document doc) {
 
         List<Block> blocks = doc.getBlocks();
         if ((blocks == null) || blocks.size() == 0) {
@@ -267,25 +253,6 @@ public class Segmentation extends AbstractParser {
             throw new GrobidException("Postprocessed document is too big, contains: " + blocks.size(), GrobidExceptionStatus.TOO_MANY_BLOCKS);
         }
 
-        List<Page> pages = doc.getPages();
-
-        // vector for features
-        FeaturesVectorSegmentation features;
-        FeaturesVectorSegmentation previousFeatures = null;
-        //boolean endblock = false;
-        //boolean endPage = true;
-        boolean newPage;
-        boolean start = true;
-        int mm = 0; // page position
-        int nn = 0; // document position
-        int pageLength = 0; // length of the current page
-
-        List<LayoutToken> tokenizationsBody = new ArrayList<LayoutToken>();
-        List<LayoutToken> tokenizations = doc.getTokenizations();
-
-        int documentLength = doc.getDocumentLenghtChar();
-
-		double pageHeight = 0.0;
         boolean graphicVector = false;
         boolean graphicBitmap = false;
 
@@ -293,8 +260,8 @@ public class Segmentation extends AbstractParser {
         // (typically indicating a publisher foot or head notes)
         Map<String, Integer> patterns = new TreeMap<String, Integer>();
         Map<String, Boolean> firstTimePattern = new TreeMap<String, Boolean>();
-        for(Page page : pages) {
-            pageHeight = page.getHeight();
+
+        for (Page page : doc.getPages()) {
             // we just look at the two first and last blocks of the page
             if ((page.getBlocks() != null) && (page.getBlocks().size() > 0)) {
                 for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
@@ -305,7 +272,7 @@ public class Segmentation extends AbstractParser {
                             String[] lines = localText.split("[\\n\\r]");
                             if (lines.length > 0) {
                                 String line = lines[0];
-                                String pattern = FeatureFactory.getPattern(line);
+                                String pattern = featureFactory.getPattern(line);
                                 if (pattern.length() > 8) {
                                     Integer nb = patterns.get(pattern);
                                     if (nb == null) {
@@ -321,8 +288,34 @@ public class Segmentation extends AbstractParser {
                 }
             }
         }
- 
-        for(Page page : pages) {
+
+        String featuresAsString = getFeatureVectorsAsString(doc,
+                graphicVector, graphicBitmap, patterns, firstTimePattern);
+
+        return featuresAsString;
+    }
+
+    private String getFeatureVectorsAsString(Document doc, boolean graphicVector,
+                                     boolean graphicBitmap, Map<String, Integer> patterns,
+                                     Map<String, Boolean> firstTimePattern) {
+        StringBuilder fulltext = new StringBuilder();
+        int documentLength = doc.getDocumentLenghtChar();
+
+        String currentFont = null;
+        int currentFontSize = -1;
+
+        boolean newPage;
+        boolean start = true;
+        int mm = 0; // page position
+        int nn = 0; // document position
+        int pageLength = 0; // length of the current page
+        double pageHeight = 0.0;
+
+        // vector for features
+        FeaturesVectorSegmentation features;
+        FeaturesVectorSegmentation previousFeatures = null;
+
+        for (Page page : doc.getPages()) {
             pageHeight = page.getHeight();
             newPage = true;
             double spacingPreviousBlock = 0.0; // discretized
@@ -372,8 +365,7 @@ public class Segmentation extends AbstractParser {
                 if (lowestPos >  block.getY()) {
                     // we have a vertical shift, which can be due to a change of column or other particular layout formatting 
                     spacingPreviousBlock = doc.getMaxBlockSpacing() / 5.0; // default
-                }
-                else 
+                } else
                     spacingPreviousBlock = block.getY() - lowestPos;
 
                 String localText = block.getText();
@@ -428,7 +420,7 @@ public class Segmentation extends AbstractParser {
                     features.line = line;
 
                     if ( (blockIndex < 2) || (blockIndex > page.getBlocks().size()-2)) {
-                        String pattern = FeatureFactory.getPattern(line);
+                        String pattern = featureFactory.getPattern(line);
                         Integer nb = patterns.get(pattern);
                         if ((nb != null) && (nb > 1)) {
                             features.repetitivePattern = true;
@@ -690,7 +682,7 @@ public class Segmentation extends AbstractParser {
 			for(LayoutToken txtline : tokenizations) {
 				rawtxt.append(txtline.getText());
 			}
-			String outPathRawtext = pathFullText + File.separator + 
+			String outPathRawtext = pathFullText + File.separator +
 				PDFFileName.replace(".pdf", ".training.segmentation.rawtxt");
 			FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), "UTF-8");
 
