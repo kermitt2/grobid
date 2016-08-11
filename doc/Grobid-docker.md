@@ -9,12 +9,12 @@ GROBID can be instantiated and run using Docker. The image information can be fo
 
 The process for fetching and running the image is (assuming docker is installed and working):
 
-1. Pull the image from docker HUB
+- Pull the image from docker HUB
 ```bash
 > docker pull lfoppiano/grobid:0.4.1-SNAPSHOT
 ```
  
-2. Run the container:
+- Run the container:
 
 ```bash
 > docker run -t --rm -p 8080:8080 lfoppiano/grobid:0.4.1-SNAPSHOT
@@ -26,21 +26,20 @@ The process for fetching and running the image is (assuming docker is installed 
 > docker run -t --rm -p 8080:8080 $image_id_from_previous_command
 ```
 
-3. Access the service: 
-    - get the ip address of the container 
+- Access the service: 
+  - get the ip address of the container 
 
 ```bash
 > docker-machine ip default
 ```
-
-    - open the browser at the address `http://{machine_id}:8080`
+  - open the browser at the address `http://{machine_id}:8080`
 
 
 <h4>Troubleshooting</h4>
 
 <h5>Out of memory while processing</h5>
 
-This might be due to insufficient memory on the docker container. Make sure your machine has enough: 
+This might be due to insufficient memory on the docker machine. Make sure your machine has enough: 
 
 ```
 > docker-machine inspect
@@ -92,8 +91,7 @@ You should see something like:
 }
 ```
 
-We recommend to have 4Gb, but 2Gb should work fine most of the cases (if you want to do some heavy processing, might not be enough). 
-See discussion [here](https://github.com/kermitt2/grobid/issues/113). 
+For more information see the [GROBID main page](https://github.com/kermitt2/grobid/blob/master/Readme.md).
 
 <h4>Build caveat</h4>
 **NOTE**: The following part is only for development purposes. We recommend you to use the official 
