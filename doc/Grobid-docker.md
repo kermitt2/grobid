@@ -1,6 +1,6 @@
 <h1>GROBID and containers (Docker)</h1>
 
-**NOTE**: the support to Docker is still experimental. 
+**NOTE**: the support to Docker is still experimental.  
 
 Docker is an open-source project that automates the deployment of applications inside software containers. 
 The documentation on how to install it and start using it can be found [here](https://docs.docker.com/engine/understanding-docker/). 
@@ -8,30 +8,92 @@ The documentation on how to install it and start using it can be found [here](ht
 GROBID can be instantiated and run using Docker. The image information can be found [here](https://hub.docker.com/r/lfoppiano/grobid/).
 
 The process for fetching and running the image is (assuming docker is installed and working):
- 
+
+1. Pull the image from docker HUB
 ```bash
 > docker pull lfoppiano/grobid:0.4.1-SNAPSHOT
 ```
  
-then
+2. Run the container:
 
 ```bash
 > docker run -t --rm -p 8080:8080 lfoppiano/grobid:0.4.1-SNAPSHOT
 ```
 
-or
+(alternatively you can also get the image ID)  
 ```bash
 > docker images | grep lfoppiano/grobid | grep 0.4.1-SNAPSHOT
 > docker run -t --rm -p 8080:8080 $image_id_from_previous_command
 ```
 
-To access the service, first get the ip address of the container, 
+3. Access the service: 
+    - get the ip address of the container 
 
 ```bash
 > docker-machine ip default
 ```
 
-and then you can use the browser at the address `http://{machine_id}:8080`
+    - open the browser at the address `http://{machine_id}:8080`
+
+
+<h4>Troubleshooting</h4>
+
+<h5>Out of memory while processing</h5>
+
+This might be due to insufficient memory on the docker container. Make sure your machine has enough: 
+
+```
+> docker-machine inspect
+```
+
+You should see something like: 
+
+```
+{
+    "ConfigVersion": 3,
+    "Driver": {
+        "IPAddress": "192.168.99.100",
+        "MachineName": "default",
+        "SSHUser": "docker",
+        "SSHPort": 55933,
+        "SSHKeyPath": "/Users/lfoppiano/.docker/machine/machines/default/id_rsa",
+        "StorePath": "/Users/lfoppiano/.docker/machine",
+        "SwarmMaster": false,
+        "SwarmHost": "tcp://0.0.0.0:3376",
+        "SwarmDiscovery": "",
+        "VBoxManager": {},
+        "HostInterfaces": {},
+        "CPU": 1,
+        "Memory": 2048,     #<---- Memory: 2Gb                   
+        "DiskSize": 204800,
+        "NatNicType": "82540EM",
+        "Boot2DockerURL": "",
+        "Boot2DockerImportVM": "",
+        "HostDNSResolver": false,
+        "HostOnlyCIDR": "192.168.99.1/24",
+        "HostOnlyNicType": "82540EM",
+        "HostOnlyPromiscMode": "deny",
+        "NoShare": false,
+        "DNSProxy": true,
+        "NoVTXCheck": false
+    },
+    "DriverName": "virtualbox",
+    "HostOptions": {
+      [...]
+        },
+        "SwarmOptions": {
+         [...]
+        },
+        "AuthOptions": {
+           [...]
+        }
+    },
+    "Name": "default"
+}
+```
+
+We recommend to have 4Gb, but 2Gb should work fine most of the cases (if you want to do some heavy processing, might not be enough). 
+See discussion [here](https://github.com/kermitt2/grobid/issues/113). 
 
 <h4>Build caveat</h4>
 **NOTE**: The following part is only for development purposes. We recommend you to use the official 
