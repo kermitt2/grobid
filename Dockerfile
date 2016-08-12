@@ -11,6 +11,7 @@
 # > docker exec -i -t {container_name} /bin/bash
 
 FROM jetty:9.3-jre8
+ENV JAVA_OPTS=-Xmx4g
 
 MAINTAINER Luca Foppiano <luca.foppiano@inria.fr>, Patrice Lopez <patrice.lopez@science-miner.org>
 LABEL Description="This image is used to generate a GROBID image" Version="0.4.1-SNAPSHOT"
