@@ -41,9 +41,9 @@ The very large majority of Grobid TEI results will validate against the provided
 
 ## Binding with JAXB 2.0
 
-Although we are ourselves not using Java bindings for XML, developers might be interested in generating them with [JAXB 2.0](<https://jaxb.java.net>) in order to avoid writing an XML parser for Grobid's results. It appears that the XSD schema for TEI in general is not compiling out-of-the-box with JAXB - unfortunately as many real world complex XML schemas such as MathML. 
+Developers might be interested in generating Java bindings for XML with [JAXB 2.0](<https://jaxb.java.net>) in order to avoid writing an XML parser for GROBID's results. It appears that the XSD schema for TEI in general is not compiling out-of-the-box with JAXB - unfortunately as many real world complex XML schemas such as MathML. 
 
-However, it is possible to generate the Java classes by using a better binding algorithm than the default one defined by the JAXB  specifications, as explained in the following [blog entry](<https://weblogs.java.net/blog/kohsuke/archive/2006/03/simple_and_bett.html>). Using the provided extension with JAXB version 2.0 minimum, the Java classes will be generated without conflicts. 
+However, it is possible to generate the Java classes by using a better binding algorithm than the default one defined by the JAXB specifications, as explained in the following [blog entry](<https://weblogs.java.net/blog/kohsuke/archive/2006/03/simple_and_bett.html>). Using the provided extension with JAXB version 2.0 minimum, the Java classes will be generated without conflicts. 
 
     > xjc -d generated -extension ~/grobid/grobid-home/schemas/xsd/simpleMode.xsd ~/grobid/grobid-home/schemas/xsd/Grobid.xsd
 	parsing a schema...
@@ -60,4 +60,4 @@ However, it is possible to generate the Java classes by using a better binding a
 	
 	etc.
 	
-As we have not used these generated Java classes, we cannot ensure anythings beyong that ;)
+These generated Java classes can be used to parse automatically TEI results produced by GROBID (successful usage of these Java bindings have been reported [here](<https://github.com/kermitt2/grobid/issues/113#issuecomment-239162316>)). 

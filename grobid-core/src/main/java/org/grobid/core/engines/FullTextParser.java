@@ -210,8 +210,8 @@ public class FullTextParser extends AbstractParser {
         // vector for features
         FeaturesVectorFulltext features;
         FeaturesVectorFulltext previousFeatures = null;
-//        LayoutToken layoutToken = null;
-        boolean endblock;
+
+		boolean endblock;
         boolean endPage = true;
         boolean newPage = true;
         //boolean start = true;
@@ -226,21 +226,9 @@ public class FullTextParser extends AbstractParser {
 		int currentPage = 0;
 
 		List<LayoutToken> layoutTokens = new ArrayList<LayoutToken>();
+		fulltextLength = getFulltextLength(doc, documentBodyParts, fulltextLength);
 
-		//evaluate the length of the fulltext
-		for(DocumentPiece docPiece : documentBodyParts) {
-			DocumentPointer dp1 = docPiece.a;
-			DocumentPointer dp2 = docPiece.b;
-
-            int tokenStart = dp1.getTokenDocPos();
-            int tokenEnd = dp2.getTokenDocPos();
-            for (int i = tokenStart; i <= tokenEnd; i++) {
-                //tokenizationsBody.add(tokenizations.get(i));
-				fulltextLength += doc.getTokenizations().get(i).getText().length();
-            }
-		}
-
-        // System.out.println("fulltextLength: " + fulltextLength);
+		// System.out.println("fulltextLength: " + fulltextLength);
 
 		for(DocumentPiece docPiece : documentBodyParts) {
 			DocumentPointer dp1 = docPiece.a;
@@ -439,7 +427,6 @@ public class FullTextParser extends AbstractParser {
 
                     } else if (text.equals("\"") || text.equals("\'") || text.equals("`")) {
                         features.punctType = "QUOTE";
-
                     }
 
                     if (indented) {
@@ -508,12 +495,6 @@ public class FullTextParser extends AbstractParser {
 	                        features.blockStatus = "BLOCKEND";
 	                        //endblock = true;
 	                    }
-	                }
-
-	                if (newPage) {
-	                    newPage = false;
-	                } else {
-	                    newPage = false;
 	                }
 
 	                if (text.length() == 1) {
@@ -658,7 +639,25 @@ public class FullTextParser extends AbstractParser {
 			new LayoutTokenization(layoutTokens));
 	}
 
-    /**
+	/**
+	 * Evaluate the length of the fulltext
+	 */
+	private static int getFulltextLength(Document doc, SortedSet<DocumentPiece> documentBodyParts, int fulltextLength) {
+		for(DocumentPiece docPiece : documentBodyParts) {
+			DocumentPointer dp1 = docPiece.a;
+			DocumentPointer dp2 = docPiece.b;
+
+            int tokenStart = dp1.getTokenDocPos();
+            int tokenEnd = dp2.getTokenDocPos();
+            for (int i = tokenStart; i <= tokenEnd; i++) {
+                //tokenizationsBody.add(tokenizations.get(i));
+				fulltextLength += doc.getTokenizations().get(i).getText().length();
+            }
+		}
+		return fulltextLength;
+	}
+
+	/**
      * Process the full text of the specified pdf and format the result as training data.
      *
      * @param inputFile input file

@@ -311,7 +311,7 @@ public class FeatureFactory {
     /**
      * Given an integer value between 0 and total, discretized into nbBins following a linear scale
      */
-    public static int linearScaling(int pos, int total, int nbBins) {
+    public int linearScaling(int pos, int total, int nbBins) {
         if (pos >= total)
             return nbBins;
         if (pos <= 0)
@@ -324,7 +324,7 @@ public class FeatureFactory {
     /**
      * Given an double value between 0.0 and total, discretized into nbBins following a linear scale
      */
-    public static int linearScaling(double pos, double total, int nbBins) {
+    public int linearScaling(double pos, double total, int nbBins) {
         if (pos >= total)
             return nbBins;
         if (pos <= 0)
@@ -337,7 +337,7 @@ public class FeatureFactory {
     /**
      * Given an double value between 0.0 and total, discretized into nbBins following a log scale
      */
-    public static int logScaling(double pos, double total, int nbBins) {
+    public int logScaling(double pos, double total, int nbBins) {
 //System.out.println("total: " + total + " / pos: " + pos);         
         if (pos >= total)
             return nbBins;
@@ -355,7 +355,7 @@ public class FeatureFactory {
      *  Transform a text in a text pattern where punctuations are ignored, number shadowed and
      *  remaining text in lowercase
      */
-    public static String getPattern(String text) {
+    public String getPattern(String text) {
         String pattern = text.replaceAll("[^a-zA-Z ]", "").toLowerCase();
         pattern = pattern.replaceAll("[0-9]", "X");
         return pattern;

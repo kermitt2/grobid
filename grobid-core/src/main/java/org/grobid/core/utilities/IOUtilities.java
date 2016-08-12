@@ -20,11 +20,10 @@ public class IOUtilities {
      *
      * @param file    The file to write in.
      * @param content the content to write
-     * @throws FileNotFoundException
      * @throws IOException
      */
     public static void writeInFile(String file, String content)
-            throws FileNotFoundException, IOException {
+            throws IOException {
         FileWriter filew = new FileWriter(new File(file));
         BufferedWriter buffw = new BufferedWriter(filew);
         buffw.write(content);
