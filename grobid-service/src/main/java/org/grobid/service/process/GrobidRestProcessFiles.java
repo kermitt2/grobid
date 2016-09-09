@@ -697,6 +697,74 @@ public class GrobidRestProcessFiles {
         return response;
     }
 
+    
+    /**
+     * Uploads the origin PDF, process it and return PDF annotations for references in JSON.
+     *
+     * @param inputStream the data of origin PDF
+     * @return a response object containing the JSON annotations
+     */
+    public static Response processPDFReferenceAnnotation(final InputStream inputStream) {
+        LOGGER.debug(methodLogIn()); 
+        Response response = null;
+        boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+        File originFile = null;
+        Engine engine = null;
+        try {
+            originFile = IOUtilities.writeInputFile(inputStream);
+            GrobidAnalysisConfig config = new GrobidAnalysisConfig.
+                GrobidAnalysisConfigBuilder().build();
+
+            String json = null;
+
+            if (originFile == null) {
+                response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+            } else {
+                engine = Engine.getEngine(isparallelExec);
+                DocumentSource documentSource = DocumentSource.fromPdf(originFile);
+                if (isparallelExec) {
+                    Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
+                    json = CitationsVisualizer.getJsonAnnotations(teiDoc);
+                    GrobidPoolingFactory.returnEngine(engine);
+                    engine = null;
+                } else {
+                    synchronized (engine) {
+                        //TODO: VZ: sync on local var does not make sense
+                        Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
+                        json = CitationsVisualizer.getJsonAnnotations(teiDoc);
+                    } 
+                }
+
+                IOUtilities.removeTempFile(originFile);
+
+                if (json != null) {
+                    response = Response
+                            .ok()
+                            .type("application/json")
+                            .entity(json)
+                            .build();
+                }
+                else {
+                    response = Response.status(Status.NO_CONTENT).build();
+                }
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
+        } finally {
+            IOUtilities.removeTempFile(originFile);
+            if (isparallelExec && engine != null) {
+                GrobidPoolingFactory.returnEngine(engine);
+            }
+        }
+        LOGGER.debug(methodLogOut());
+        return response;
+    }
+
+
     public static String methodLogIn() {
         return ">> " + GrobidRestProcessFiles.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
     }

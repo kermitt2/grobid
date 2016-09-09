@@ -1,5 +1,5 @@
   /**
-  	*  Ad hoc Modifications to Bootstrap 
+  	*  Ad hoc Modifications to Bootstrap & parameters 
     * 
     *  Author: Patrice Lopez        
   	*/
@@ -141,3 +141,7 @@ p {word-break:normal;}
 .uneditable-input {
   white-space: nowrap;
 }
+
+.popover{
+  max-width: none;
+} 

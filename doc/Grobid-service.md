@@ -40,7 +40,7 @@ You can also test the RESTFul API with **curl** command lines:
 ```
 * extraction and parsing of all references in a PDF without consolidation (default value):
 ```bash
-> curl -v --form --form input=@./thefile.pdf localhost:8080/processReferences
+> curl -v --form input=@./thefile.pdf localhost:8080/processReferences
 ```
 
 ## Full documentation
