@@ -6,8 +6,6 @@
 		<link rel="icon" type="image/x-icon" href="resources/img/favicon.ico"/> 
 		<link rel="shortcut icon" type="image/x-icon" href="resources/img/favicon.ico"/>
 
-        <!--script src="resources/js/jquery-1.8.1.min.js"></script--> 
-		<!--script src="brat/client/lib/jquery.min.js"></script--> 
 		<script type="text/javascript" src="resources/js/jquery-1.10.0.min.js"></script> 
         <script type="text/javascript" src="resources/js/jquery.form.js"></script>
         <script type="text/javascript" src="resources/bootstrap/js/bootstrap.min.js"></script>  
@@ -18,26 +16,17 @@
         <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" media="screen"/> 
 		<link rel="stylesheet" href="resources/bootstrap/css/prettify.css"/>		
 		
-        <!--link rel="stylesheet" type="text/css" href="brat/style-vis.css"/-->
         <link rel="stylesheet" href="resources/css/style.css"/>    
 		
 		<link rel="stylesheet" href="resources/font-awesome/css/font-awesome.min.css">
-		
-		<!-- for using brat -->
-		<!-- script src="brat/client/lib/jquery.svg.min.js"></script> 
-		<script src="brat/client/lib/jquery.svgdom.min.js"></script>  
-   	
-	    <script src="brat/client/src/configuration.js"></script>     
-	    <script src="brat/client/src/util.js"></script>   
-		<script src="brat/client/src/annotation_log.js"></script>   
-		<script src="brat/client/lib/webfont.js"></script>
-		
-       	<script src="brat/client/src/dispatcher.js"></script>     
-	    <script src="brat/client/src/url_monitor.js"></script>   
-		<script src="brat/client/src/visualizer.js"></script -->
-                   
-		<!-- our custum brat configuration -->  
-		<!-- script src="grobid/brat-configuration.js"></script -->
+
+		<!-- PDF.js stuff -->
+		<link type="text/css" href="resources/pdf.js/web/text_layer_builder.css" rel="stylesheet"/>
+    	<link type="text/css" href="resources/pdf.js/web/annotation_layer_builder.css" rel="stylesheet"/>
+    	<script type="text/javascript" src="resources/pdf.js/web/text_layer_builder.js"></script>
+    	<script type="text/javascript" src="resources/pdf.js/web/pdf_link_service.js"></script>
+    	<script type="text/javascript" src="resources/pdf.js/web/annotation_layer_builder.js"></script>
+    	<script type="text/javascript" src="resources/pdf.js/build/pdf.js"></script>
 
  		<!-- The Grobid Javascript library -->
         <script src="grobid/grobid.js"></script>    
@@ -54,13 +43,15 @@
 					 <span style="padding-left:40px;color:#AE0C0C;">		
 		<h2><small> 
 			<a class="section-active" id="about" href="#">About</a> 
+				<span style="padding-left:20px;">&nbsp;</span> 	
+			<a class="section-not-active" id="rest" href="#">TEI</a> 
 				<span style="padding-left:20px;">&nbsp;</span> 
-			<!--a class="section-active" id="demo" href="#">Demo</a> 
-				<span style="padding-left:20px;">&nbsp;</span-->		
-			<a class="section-not-active" id="rest" href="#">RESTfull services</a> 
-				<span style="padding-left:20px;">&nbsp;</span> 
+			<a class="section-not-active" id="pdf" href="#">PDF</a> 
+				<span style="padding-left:20px;">&nbsp;</span> 	
+			<a class="section-not-active" id="patent" href="#">Patent</a> 
+				<span style="padding-left:20px;">&nbsp;</span>
 			<a class="section-not-active" id="admin" href="#">Admin</a> 
-				<span style="padding-left:20px;">&nbsp;</span>  
+				<span style="padding-left:20px;">&nbsp;</span>
 			<a class="section-not-active" id="doc" href="#">Doc</a> 
 				<span style="padding-left:20px;">&nbsp;</span> 
 		</small></h2>
@@ -73,11 +64,11 @@
 	            <td style="align:left;vertical-align: top;">
 					<div id="divAbout"> 
 						<p><large><b>Grobid</b> Bibliographical Extraction</p>
-						<p>This is an open source project available on <a href="https://github.com/kermitt2/grobid">GitHub</a> under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2 License</a>. </p>  	
+						<p>This is an open source software available on <a href="https://github.com/kermitt2/grobid">GitHub</a> under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2 License</a>. </p>  	
 						<p>Contact: <a style="color:#70695C;" href="mailto:patrice.lopez@science-miner.com?subject=GROBID">Patrice Lopez</a>.</p> 
 					</div>
 					<div id="divDoc"> 
-						<p>This bibliographical analysis demo is based on the Grobid JSON REST services.</p>  
+						<p>This bibliographical analysis demo is based on the Grobid web services.</p>  
 						<p>For documentation and link to the Javadoc, please visit the <a href="http://grobid.readthedocs.org">Grobid Wiki pages</a>.</p>
 					</div>
 				</td> 
@@ -91,21 +82,18 @@
 							<td>Service to call &nbsp;</td>
 							<td>
 								<select id="selectedService">
-				                    <option value="processHeaderDocument" selected>Process
-				                        Header Document</option>
-				                    <option value="processFulltextDocument">Process Fulltext
-				                        Document</option>
-				                    <option value="processDate">Process Date</option>
-				                    <option value="processHeaderNames">Process Header Person Names</option>
-				                    <option value="processCitationNames">Process Citation Person
-				                        Names</option>
-				                    <option value="processAffiliations">Process Affiliations</option>
-				                    <option value="processCitation">Process Citation</option>
-									<option value="processReferences">Process all References</option>
-				                    <option value="processCitationPatentTEI">Process Citation patent TEI</option>
-									<option value="processCitationPatentST36">Process Citation patent ST.36</option>
-									<option value="processCitationPatentTXT">Process Citation patent text</option>
-									<option value="processCitationPatentPDF">Process Citation patent PDF</option>
+									<optgroup label="scholar PDF input">
+					                    <option value="processHeaderDocument" selected>Process Header Document</option>
+					                    <option value="processFulltextDocument" >Process Fulltext Document</option>
+					                    <option value="processReferences">Process all References</option>
+					                </optgroup>
+					                <optgroup label="raw text input">
+				                    	<option value="processDate">Process Date</option>
+				                    	<option value="processHeaderNames">Process Header Person Names</option>
+				                    	<option value="processCitationNames">Process Citation Person Names</option>
+				                    	<option value="processAffiliations">Process Affiliations</option>
+				                    	<option value="processCitation">Process Citation</option>
+									</optgroup>	
 								</select>
 							</td>
 						</tr>
@@ -153,6 +141,120 @@
 				</form>
 				<br>
 				<div id="requestResult"></div>
+			</div>
+
+			<div id="divRestII">      
+				<form class="form-horizontal" method="post" id="gbdForm2" target=_blank accept-charset="UTF-8">
+					<table border="0">
+						<tr>
+							<td>Service to call &nbsp;</td>
+							<td>
+								<select id="selectedService2">
+									<optgroup label="JSON-based dynamic layer">
+					                    <option value="referenceAnnotations" selected>PDF reference annotations</option>
+					                </optgroup>
+					                <optgroup label="augmented PDF">    
+				                    	<option value="annotatePDF">add layer to PDF</option>
+				                    </optgroup>	
+								</select>
+							</td>
+						</tr>
+						<tr><td>&nbsp;</td><td/></tr>
+						<tr>
+							<td><span id="label2">&nbsp;</span></td>
+							<td>
+								<div id="field2">
+									<label class="checkbox" id="consolidateBlock">
+										<input type="checkbox" id="consolidate2" name="consolidate" value="1">Consolidate</input>
+									</label>
+									<div class="fileupload fileupload-new" data-provides="fileupload" id="fileInputDiv2">
+									  <div class="input-append">
+									    <div class="uneditable-input span4" style="white-space:normal;">
+											<i class="icon-file fileupload-exists" style="white-space:normal;"></i>
+											<span class="fileupload-preview" style="white-space:normal;"></span>
+										</div>
+										<span class="">
+											
+										<span class="btn btn-file">
+											<span class="fileupload-new" id="labelFile2">Select file</span>
+											<span class="fileupload-exists">Change</span>
+											<input id="input2" name="input" type="file" />
+										</span>
+										<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+									  </div>
+									</div>				
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td><td colspan="2"><input id="submitRequest2" value="Submit" class="btn"/></td>
+						</tr>	
+			        </table>
+				</form>
+				<br>
+				<div id="requestResult2"></div>
+			</div>
+
+			<div id="divRestIII">      
+				<form class="form-horizontal" method="post" id="gbdForm3" target=_blank accept-charset="UTF-8">
+					<table border="0">
+						<tr>
+							<td>Service to call &nbsp;</td>
+							<td>
+								<select id="selectedService3">
+					                <optgroup label="Citations in patent">
+				                    	<option value="processCitationPatentTEI" selected>Process Citation patent TEI</option>
+										<option value="processCitationPatentST36">Process Citation patent ST.36</option>
+										<option value="processCitationPatentTXT">Process Citation patent text</option>
+										<option value="processCitationPatentPDF">Process Citation patent PDF</option>
+									</optgroup>	
+								</select>
+							</td>
+						</tr>
+						<tr><td>&nbsp;</td><td/></tr>
+						<tr>
+							<td><span id="label">&nbsp;</span></td>
+							<td>
+								<div id="field3">
+									<label class="checkbox" id="consolidateBlock3">
+										<input type="checkbox" id="consolidate3" name="consolidate" value="1">Consolidate</input>
+									</label>
+									<div class="fileupload fileupload-new" data-provides="fileupload" id="fileInputDiv3">
+									  <div class="input-append">
+									    <div class="uneditable-input span4" style="white-space:normal;">
+											<i class="icon-file fileupload-exists" style="white-space:normal;"></i>
+											<span class="fileupload-preview" style="white-space:normal;"></span>
+										</div>
+										<span class="">
+											
+										<span class="btn btn-file">
+											<span class="fileupload-new" id="labelFile3">Select file</span>
+											<span class="fileupload-exists">Change</span>
+											<input id="input3" name="input" type="file" />
+										</span>
+										<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+									  </div>
+									</div>
+									<div id="textInputDiv3">
+										<table>
+											<tr>
+												<td>
+							<textarea id="textInputArea3" class="span7" rows="5" name="input"></textarea>
+												</td>
+												<td><span style='padding-left:20px;'>&nbsp;</span></td>
+											</tr>
+										</table>
+									</div>					
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td><td colspan="2"><input id="submitRequest3" type="submit" value="Submit" class="btn"/></td>
+						</tr>	
+			        </table>
+				</form>
+				<br>
+				<div id="requestResult3"></div>
 			</div>
 	
 			<div id="divAdmin">

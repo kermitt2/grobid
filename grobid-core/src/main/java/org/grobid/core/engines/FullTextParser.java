@@ -248,7 +248,7 @@ public class FullTextParser extends AbstractParser {
 	                mm = 0;
 					lowestPos = 0.0;
 					spacingPreviousBlock = 0.0;
-				}
+				} 
 
 	            /*if (start) {
 	                newPage = true;
