@@ -2,6 +2,7 @@ package org.grobid.core.utilities;
 
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.grobid.core.exceptions.GrobidResourceException;
@@ -812,7 +813,7 @@ public class GrobidProperties {
         return grobidCRFEngine;
     }
 
-    public static File getModelPath(final GrobidModels model) {
+    public static File getModelPath(final GrobidModel model) {
         return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator 
 			+ model.getFolderName() + File.separator
             + FILE_NAME_MODEL + "." + grobidCRFEngine.getExt());
