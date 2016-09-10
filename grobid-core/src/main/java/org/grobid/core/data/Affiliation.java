@@ -33,6 +33,9 @@ public class Affiliation {
 
     private boolean failAffiliation = true; // tag for unresolved affiliation attachment
 
+    // an identifier for the affiliation independent from the marker, present in the TEI result
+    private String key = null;
+
     public Affiliation() {
     }
 
@@ -112,6 +115,10 @@ public class Affiliation {
 
     public List<String> getDepartments() {
         return departments;
+    }
+
+    public String getKey() {
+        return key;
     }
 
     public void setAcronym(String s) { 
@@ -280,6 +287,10 @@ public class Affiliation {
         return failAffiliation;
     }
 
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     public void clean() {
         if (departments != null) {
             List<String> newDepartments = new ArrayList<String>();
@@ -369,7 +380,10 @@ public class Affiliation {
         if (!notNull()) {
             return null;
         } else {
-            tei.append("<affiliation>");
+            tei.append("<affiliation");
+            if (key != null)
+                tei.append(" key=\"").append(key).append("\"");
+            tei.append(">");
 
             if (departments != null) {
                 if (departments.size() == 1) {
@@ -454,6 +468,7 @@ public class Affiliation {
         return "Affiliation{" +
                 "name='" + name + '\'' +
                 ", url='" + url + '\'' +
+                ", key='" + key + '\'' +
                 ", institutions=" + institutions +
                 ", departments=" + departments +
                 ", laboratories=" + laboratories +

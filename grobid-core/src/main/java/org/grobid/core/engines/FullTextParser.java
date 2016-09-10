@@ -137,6 +137,7 @@ public class FullTextParser extends AbstractParser {
             // header processing
 			BiblioItem resHeader = new BiblioItem();
            	parsers.getHeaderParser().processingHeaderBlock(config.isConsolidateHeader(), doc, resHeader);
+           	// above the old version of the header block identification, because more robust
            	if ( (resHeader == null) ||
            		 (resHeader.getTitle() == null) || (resHeader.getTitle().trim().length() == 0) ||
            		 (resHeader.getAuthors() == null) || (resHeader.getFullAuthors() == null) ||
