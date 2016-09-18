@@ -1242,4 +1242,34 @@ public class TextUtilities {
 	    }
 		return sb;
 	}
+
+    /**
+     * Return the prefix of a string.
+     */
+    public static String prefix(String s, int count) {
+        if (s == null) {
+            return null;
+        }
+
+        if (s.length() < count) {
+            return s;
+        }
+
+        return s.substring(0, count);
+    }
+
+    /**
+     * Return the suffix of a string.
+     */
+    public static String suffix(String s, int count) {
+        if (s == null) {
+            return null;
+        }
+
+        if (s.length() < count) {
+            return s;
+        }
+
+        return s.substring(s.length() - count);
+    }
 }
