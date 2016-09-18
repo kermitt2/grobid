@@ -33,14 +33,43 @@ public class TextUtilitiesTest {
     }
 
     @Test
-    public void testWordShapeTrimmed() {
+    public void testPrefix()
+    {
+        String word = "Grobid";
+        assertEquals("", TextUtilities.prefix(word, 0));
+        assertEquals("G", TextUtilities.prefix(word, 1));
+        assertEquals("Gr", TextUtilities.prefix(word, 2));
+        assertEquals("Gro", TextUtilities.prefix(word, 3));
+        assertEquals("Grob", TextUtilities.prefix(word, 4));
 
+        assertEquals("Grobid", TextUtilities.prefix(word, 6));
+
+        assertEquals("Grobid", TextUtilities.prefix(word, 100));
+
+        assertEquals(null, TextUtilities.prefix(null, 0));
+        assertEquals(null, TextUtilities.prefix(null, 1));
+    }
+
+    @Test
+    public void testSuffix()
+    {
+        String word = "Grobid";
+        assertEquals("", TextUtilities.suffix(word, 0));
+        assertEquals("d", TextUtilities.suffix(word, 1));
+        assertEquals("id", TextUtilities.suffix(word, 2));
+        assertEquals("bid", TextUtilities.suffix(word, 3));
+        assertEquals("obid", TextUtilities.suffix(word, 4));
+
+        assertEquals("Grobid", TextUtilities.suffix(word, 6));
+
+        assertEquals("Grobid", TextUtilities.suffix(word, 100));
+
+        assertEquals(null, TextUtilities.suffix(null, 0));
+        assertEquals(null, TextUtilities.suffix(null, 1));
     }
 
     private void testWordShape(String orig, String expected, String expectedTrimmed) {
         assertEquals(expected, TextUtilities.wordShape(orig));
         assertEquals(expectedTrimmed, TextUtilities.wordShapeTrimmed(orig));
     }
-
-
 }
