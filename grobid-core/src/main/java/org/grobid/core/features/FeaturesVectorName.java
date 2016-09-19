@@ -35,9 +35,6 @@ public class FeaturesVectorName {
         res.append(" " + string.toLowerCase());
 
         // prefix (4)
-        res.append(" " + string.substring(0, 1));
-
-        // prefix (4)
         res.append(" " + TextUtilities.prefix(string, 1));
         res.append(" " + TextUtilities.prefix(string, 2));
         res.append(" " + TextUtilities.prefix(string, 3));
