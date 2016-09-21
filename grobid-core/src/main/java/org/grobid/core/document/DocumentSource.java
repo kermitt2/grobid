@@ -75,7 +75,7 @@ public class DocumentSource {
 
     private String getPdf2xmlCommand(boolean full) {
         String pdf2xml = GrobidProperties.getPdf2XMLPath().getAbsolutePath();
-        pdf2xml += GrobidProperties.isContextExecutionServer() ? "/pdftoxml_server" : "/pdftoxml";
+        pdf2xml += GrobidProperties.isContextExecutionServer() ? File.separator + "pdftoxml_server" : File.separator + "pdftoxml";
 
         if (full) {
             pdf2xml += " -blocks -noImageInline -fullFontName ";
