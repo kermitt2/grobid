@@ -33,7 +33,10 @@ public class GrobidModelsTest {
         assertThat(model.getFolderName(), is("affiliation-address"));
         assertThat(model.getModelName(), is("affiliation-address"));
         assertThat(model.getTemplateName(), is("affiliation-address.template"));
-        assertThat(model.getModelPath(), endsWith("/grobid/grobid-home/models/affiliation-address/model.wapiti"));
+        String[] splittedPath = model.getModelPath().split("[/\\\\]");
+        assertThat(splittedPath[splittedPath.length-1], is("model.wapiti"));
+        assertThat(splittedPath[splittedPath.length-2], is("affiliation-address"));
+        assertThat(splittedPath[splittedPath.length-3], is("models"));
     }
 
     @Test
@@ -44,7 +47,10 @@ public class GrobidModelsTest {
         assertThat(model.getFolderName(), is("header"));
         assertThat(model.getModelName(), is("header"));
         assertThat(model.getTemplateName(), is("header.template"));
-        assertThat(model.getModelPath(), endsWith("/grobid/grobid-home/models/header/model.wapiti"));
+        String[] splittedPath = model.getModelPath().split("[/\\\\]");
+        assertThat(splittedPath[splittedPath.length-1], is("model.wapiti"));
+        assertThat(splittedPath[splittedPath.length-2], is("header"));
+        assertThat(splittedPath[splittedPath.length-4], is("grobid-home"));
     }
 
     @Test
@@ -54,7 +60,12 @@ public class GrobidModelsTest {
         assertThat(model.getFolderName(), is("dictionaries-senses"));
         assertThat(model.getModelName(), is("dictionaries-senses"));
         assertThat(model.getTemplateName(), is("dictionaries-senses.template"));
-        assertThat(model.getModelPath(), endsWith("/grobid/grobid-home/models/dictionaries-senses/model.wapiti"));
+
+        String[] splittedPath = model.getModelPath().split("[/\\\\]");
+        assertThat(splittedPath[splittedPath.length-1], is("model.wapiti"));
+        assertThat(splittedPath[splittedPath.length-2], is("dictionaries-senses"));
+        assertThat(splittedPath[splittedPath.length-3], is("models"));
+        assertThat(splittedPath[splittedPath.length-4], is("grobid-home"));
 
         GrobidModel model2 = GrobidModels.modelFor("dictionaries-lemma");
         assertFalse(model2.equals(model));
