@@ -1,6 +1,7 @@
 package org.grobid.core.document;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.SystemUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.exceptions.GrobidResourceException;
@@ -125,9 +126,10 @@ public class DocumentSource {
             if (GrobidProperties.isContextExecutionServer()) {
                 tmpPathXML = processPdf2XmlServerMode(pdfPath, tmpPathXML, cmd);
             } else {
-                cmd = Arrays.asList("bash", "-c", "ulimit -Sv " +
-                        GrobidProperties.getPdf2XMLMemoryLimitMb() * 1024 + " && " + pdftoxml0 + " '" + pdfPath + "' " + tmpPathXML);
-
+                if (!SystemUtils.IS_OS_WINDOWS) {
+                    cmd = Arrays.asList("bash", "-c", "ulimit -Sv " +
+                            GrobidProperties.getPdf2XMLMemoryLimitMb() * 1024 + " && " + pdftoxml0 + " '" + pdfPath + "' " + tmpPathXML);
+                }
                 LOGGER.debug("Executing command: " + cmd);
 
                 tmpPathXML = processPdf2XmlThreadMode(timeout, pdfPath, tmpPathXML, cmd);
