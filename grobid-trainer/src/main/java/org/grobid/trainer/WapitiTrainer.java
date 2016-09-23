@@ -1,5 +1,6 @@
 package org.grobid.trainer;
 
+import org.grobid.core.GrobidModel;
 import org.grobid.core.jni.WapitiModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.trainer.SegmentationTrainer;
@@ -20,7 +21,7 @@ public class WapitiTrainer implements GenericTrainer {
 	private int window = 20; // default similar to CRF++
 
     @Override
-    public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModels model) {
+    public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model) {
 		System.out.println("epsilon: " + epsilon);
 		System.out.println("window: " + window);
 		System.out.println("nb threads: " + numThreads);
