@@ -3,7 +3,7 @@ package org.grobid.core.engines.tagging;
 import com.google.common.base.Splitter;
 import org.chasen.crfpp.Model;
 import org.chasen.crfpp.Tagger;
-import org.grobid.core.GrobidModels;
+import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.ModelMap;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
@@ -20,7 +20,7 @@ public class CRFPPTagger implements GenericTagger {
     public static final Logger LOGGER = LoggerFactory.getLogger(CRFPPTagger.class);
     private final Model model;
 
-    public CRFPPTagger(GrobidModels model) {
+    public CRFPPTagger(GrobidModel model) {
         this.model = ModelMap.getModel(model);
     }
 
