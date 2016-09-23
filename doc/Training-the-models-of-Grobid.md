@@ -100,7 +100,7 @@ Several runs with different files to evaluate can be made to have a more reliabl
 
 ## Generation of training data
 	
-To generate some training datas from some input pdf, the batch grobid-core-`<current version>`.one-jar.jar can be used: [Grobid batch](Grobid-batch-quick-start) (createTrainingHeader, createTrainingFulltext, createTrainingPatentcitations, createTrainingSegmentation, createTrainingReferenceSegmentation).
+To generate some training datas from some input pdf, the batch grobid-core-`<current version>`.one-jar.jar can be used: [Grobid batch](Grobid-batch.md) (createTrainingHeader, createTrainingFulltext, createTrainingPatentcitations, createTrainingSegmentation, createTrainingReferenceSegmentation).
 
 In the case of `createTrainingHeader`, for each pdf in input directory GROBID generates 1 header file (`*.training.header`)  and a collection (one per model used) of TEI files (`*.training.[model_name].tei.xml`). Each model has separate training data, and thus uses separate files. So we have one file for header (`*.training.header.tei.xml`), one for dates (`*.training.date.tei.xml`), one for names, etc...
 
