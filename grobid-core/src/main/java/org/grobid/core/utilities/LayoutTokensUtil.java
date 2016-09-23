@@ -57,6 +57,7 @@ public class LayoutTokensUtil {
 
     @Deprecated
     // the same method in TextUtilities should be used
+    // TBD: use TextUtilities !
     public static String toTextDehyphenized(List<LayoutToken> tokens) {
 
         PeekingIterator<LayoutToken> it = Iterators.peekingIterator(tokens.iterator());
@@ -70,12 +71,14 @@ public class LayoutTokensUtil {
             if (cur.isNewLineAfter() && cur.getText().equals("-") && prev != null && !prev.getText().trim().isEmpty()) {
                 //skipping new line
                 it.next();
-                LayoutToken next = it.next();
-                if (next.getText().equals("conjugated") || prev.getText().equals("anti")) {
-                    sb.append("-");
+                if (it.hasNext()) {
+                    LayoutToken next = it.next();
+                    if (next.getText().equals("conjugated") || prev.getText().equals("anti")) {
+                        sb.append("-");
+                    }
+                    sb.append(next);
+                    normalized = true;
                 }
-                sb.append(next);
-                normalized = true;
             } else {
                 sb.append(cur.getText());
             }
