@@ -23,6 +23,9 @@ import java.util.regex.Pattern;
 /**
  * Created by zholudev on 18/12/15.
  * Matching reference markers to extracted citations
+ *   
+ * PL: TODO use TextUtilities dehyphenization method rather than toTextDehyphenized
+ *
  */
 public class ReferenceMarkerMatcher {
     private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceMarkerMatcher.class);
