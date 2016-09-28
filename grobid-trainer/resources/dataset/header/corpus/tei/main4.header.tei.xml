@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="main4"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Sponsored document from<lb/> Animal Behaviour<lb/></note>
+
+	<note type="other">Published as: </note>
+
+	<reference>Anim Behav. 2011 January ; 81(1): 177–184.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Threat-sensitive anti-intraguild predation behaviour: maternal<lb/> strategies to reduce offspring predation risk in mites<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andreas Walzer * and Peter Schausberger<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Applied Plant Sciences and Plant Biotechnology, Institute of Plant Protection,<lb/> University of Natural Resources and Applied Life Sciences, </affiliation>
+	</byline>
+
+	<address>Austria<lb/> </address>
+
+	<note type="other">Sponsored Document<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Predation is a major selective force for the evolution of behavioural characteristics of prey.<lb/> Predation among consumers competing for food is termed intraguild predation (IGP). From the<lb/> perspective of individual prey, IGP differs from classical predation in the likelihood of occurrence<lb/> because IG prey is usually more rarely encountered and less profitable because it is more difficult<lb/> to handle than classical prey. It is not known whether IGP is a sufficiently strong force to evolve<lb/> interspecific threat sensitivity in antipredation behaviours, as is known from classical predation,<lb/> and if so whether such behaviours are innate or learned. We examined interspecific threat<lb/> sensitivity in antipredation in a guild of predatory mite species differing in adaptation to the shared<lb/> spider mite prey (i.e. Phytoseiulus persimilis, Neoseiulus californicus and Amblyseius andersoni).<lb/> We first ranked the players in this guild according to the IGP risk posed to each other: A.<lb/> andersoni was the strongest IG predator; P. persimilis was the weakest. Then, we assessed the<lb/> influence of relative IGP risk and experience on maternal strategies to reduce offspring IGP risk:<lb/> A. andersoni was insensitive to IGP risk. Threat sensitivity in oviposition site selection was<lb/> induced by experience in P. persimilis but occurred independently of experience in N.<lb/> californicus. Irrespective of experience, P. persimilis laid fewer eggs in choice situations with the<lb/> high-rather than low-risk IG predator. Our study suggests that, similar to classical predation, IGP<lb/> may select for sophisticated innate and learned interspecific threat-sensitive antipredation<lb/> responses. We argue that such responses may promote the coexistence of IG predators and prey.<lb/> </div>
+
+	<note type="other">Sponsored Document<lb/></note>
+
+	<keyword>Keywords<lb/> Sponsored Document<lb/> Amblyseius andersoni; antipredation behaviour; innate predator recognition; learned predator<lb/> recognition; learning; Neoseiulus californicus; oviposition habitat selection; Phytoseiulus<lb/> persimilis; predator–predator interaction<lb/></keyword>
+
+	<p type="introduction">Predation risk is a major selective force for the evolution of behavioural characteristics of<lb/> prey (Lima &amp; Dill 1990; Kats &amp; Dill 1998). During their life, most prey species are faced<lb/> with multiple predator species posing different levels of predation risk (Sih et al. 1998).<lb/> Additionally, there can be large temporal and spatial variation in predator species<lb/> composition in a given predator–prey community (Lima &amp; Dill 1990; Lima &amp; Bednekoff<lb/> Â© 2011</p>
+
+	<byline>
+	<docAuthor>Elsevier Ltd. *<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Correspondence: </note>
+
+	<byline>
+	<docAuthor>A. Walzer, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Applied Plant Sciences and Plant Biotechnology, Institute of Plant Protection, University<lb/> of Natural Resources and Applied Life Sciences,</affiliation>
+	</byline>
+
+	<address>Peter Jordanstraße 82, Vienna 1190, Austria. </address>
+
+	<email>andreas.walzer@boku.ac.at.<lb/></email>
+
+	<note type="copyright">This document was posted here by permission of the publisher. At the time of deposit, it included all changes made during peer<lb/> review, copyediting, and publishing. The U.S. National Library of Medicine is responsible for all links within the document and for<lb/> incorporating any publisher-supplied amendments or retractions issued subsequently. The published journal article, guaranteed to be<lb/> such by Elsevier, is available for free, on ScienceDirect.<lb/> </note>
+
+	<note type="other">Walzer and Schausberger<lb/> Page 2</note>
+
+		</front>
+	</text>
+</tei>

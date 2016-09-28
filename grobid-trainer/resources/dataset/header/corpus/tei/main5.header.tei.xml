@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="main5"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Sponsored document from<lb/> Annals of Epidemiology<lb/></note>
+
+	<note type="other">Published as: </note>
+
+	<reference>Ann Epidemiol. 2011 May ; 21(5): 343–350.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Psychopathology and Physical Activity as Predictors of Chronic<lb/> Fatigue Syndrome in the 1958 British Birth Cohort: A Replication<lb/> Study of the 1946 and 1970 Birth Cohorts<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Laura Goodwin a, * , Peter D. White a , Matthew Hotopf b , Stephen A. Stansfeld a , and<lb/> Charlotte Clark a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Centre for Psychiatry, Barts and The London School of Medicine and Dentistry, Queen Mary<lb/> University of London,</affiliation>
+	</byline>
+
+	<address>London, UK<lb/></address>
+
+	<note type="other">Sponsored Document<lb/></note>
+
+	<byline>
+	<affiliation>b King&apos;s College London, Department of Psychological Medicine, Institute of Psychiatry,</affiliation>
+	</byline>
+
+	<address>London,<lb/> UK<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Purpose—In this study, we investigate whether prospective associations between<lb/> psychopathology, physical activity, and chronic fatigue syndrome/myalgic encephalomyelitis<lb/> (CFS/ME) observed in the 1946 and 1970 birth cohorts were replicable in the 1958 British birth<lb/> cohort.<lb/> Methods—Prospective study using the 1958 British birth cohort, which included 98.7% of births<lb/> from 1 week in March 1958 in England, Wales, and Scotland. The outcome was self-reported<lb/> CFS/ME by the age of 42 years, at which point 11,419 participants remained in the study.<lb/> Psychopathology was assessed by the Rutter scales in childhood and the Malaise Inventory in<lb/> adulthood. Physical activity was reported by the cohort member, mother and teacher in childhood<lb/> and adulthood.<lb/> Sponsored Document<lb/> Results—The prevalence of CFS/ME was 1.0% (95% confidence interval [CI] = 0.9–1.3) and<lb/> the median age of onset was 34 years. Premorbid psychopathology at 23 years (odds ratio [OR] =<lb/> 1.85, 95% CI = 1.06–3.22) and 33 years (OR = 2.81, 95% CI = 1.28–6.18) significantly increased<lb/> the odds of developing CFS/ME, supporting the 1946 cohort findings. Childhood<lb/> psychopathology, sedentary behavior in childhood, and persistent exercise in adulthood were not<lb/> associated with CFS/ME.<lb/> Sponsored Document<lb/> Conclusions—In cohort studies premorbid psychopathology in adulthood is a replicated risk<lb/> marker for CFS/ME, whereas premorbid extremes of physical activity are not.<lb/></div>
+
+	<keyword>Key Words<lb/> Chronic Fatigue Syndrome; 1958 British Birth Cohort; Psychopathology; Physical Activity;<lb/> Etiology; Prospective Cohort Study<lb/> Â© 2011 Elsevier Inc. *<lb/></keyword>
+
+	<note type="other">Address correspondence to: </note>
+
+	<byline>
+	<docAuthor>Dr. Laura Goodwin, PhD,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centre for Psychiatry, Barts and The London School of Medicine and<lb/> Dentistry, Queen Mary University of London, Wolfson Institute of Preventive Medicine,</affiliation>
+	</byline>
+
+	<address>Charterhouse Square, London, EC1M 6BQ,<lb/> UK.</address>
+
+	<phone>Tel.: +0044-207-848-5425; Fax: +0044-207-848-5408. </phone>
+
+	<email>l.goodwin@qmul.ac.uklaura.goodwin@kcl.ac.uk.<lb/></email>
+
+	<note type="copyright">This document was posted here by permission of the publisher. At the time of deposit, it included all changes made during peer<lb/> review, copyediting, and publishing. The U.S. National Library of Medicine is responsible for all links within the document and for<lb/> incorporating any publisher-supplied amendments or retractions issued subsequently. The published journal article, guaranteed to be<lb/> such by Elsevier, is available for free, on ScienceDirect.<lb/> </note>
+
+	<note type="other">Goodwin et al.<lb/> Page 2<lb/></note>
+
+	<keyword>Selected Abbreviations and Acronyms<lb/> CFS/ME, chronic fatigue syndrome/myalgic encephalomyelitis</keyword>
+
+		</front>
+	</text>
+</tei>

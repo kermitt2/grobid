@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="main6"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Sponsored document from<lb/> Applied Radiation and Isotopes<lb/></note>
+
+	<note type="other">Published as: </note>
+
+	<reference>Appl Radiat Isot. 2009 September ; 67(9): 1670–1675.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Automated synthesis of an 18 F-labelled pyridine-based alkylating<lb/> agent for high yield oligonucleotide conjugation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Elisabeth von Guggenberg 1 , Jayden A. Sader, John S. Wilson, Soraya Shahhosseini,<lb/> Ingrid Koslowsky, Frank Wuest, and John R. Mercer ⁎<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Edmonton PET Centre, Division of Oncologic Imaging, Department of Oncology, Cross Cancer<lb/> Institute,</affiliation>
+	</byline>
+
+	<address>11560 University Ave, Edmonton, AB Canada, T6G 1Z2<lb/></address>
+
+	<note type="other">Sponsored Document<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Alkylating agents have been shown to be very promising for the radiolabelling of oligonucleotides<lb/> with fluorine-18. In this report we describe the fully automated synthesis of 2-bromo-N-[3-(2-<lb/>[ 18 F]fluoropyridin-3-yloxy)propyl]acetamide ([ 18 F]FPyBrA) utilizing a modular synthesis unit.<lb/> Reaction conditions for the coupling of this pyridine-based alkylating agent at the 5′ end of a fully<lb/> phosphorothioated random 20-mer DNA sequence were optimized to achieve very high<lb/> radiochemical yields (&gt;90%) and a maximum specific activity of 5–6 GBq/μmoL. The potential<lb/> for rapid purification by solid phase extraction without need of chromatographic isolation of the<lb/> radiolabelled oligonucleotide presents an overall benefit for the application of oligonucleotides in<lb/> preclinical studies and potential clinical applications.<lb/></div>
+
+	<keyword>Keywords<lb/> Fluorine-18; Oligonucleotides; Alkylation; Automation; Prosthetic group; Modular synthesis unit<lb/></keyword>
+
+	<note type="other">Sponsored Document</note>
+
+		</front>
+	</text>
+</tei>

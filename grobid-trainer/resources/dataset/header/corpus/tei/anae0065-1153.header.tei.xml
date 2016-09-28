@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="anae0065-1153"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Anaesthesia, 2010, 65, pages 1153–1161<lb/></reference>
+
+	<idno>doi:10.1111/j.1365-2044.2010.06538.x<lb/></idno>
+
+	<note type="other">.....................................................................................................................................................................................................................<lb/></note>
+
+	<note type="other">G U I D E L I N E S<lb/></note>
+
+	<docTitle>
+	<titlePart>Blood transfusion and the anaesthetist: management of<lb/> massive haemorrhage<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Association of Anaesthetists of Great Britain and Ireland<lb/> </affiliation>
+	</byline>
+
+	<note type="other">Membership of the Working Party: </note>
+
+	<byline>
+	<docAuthor>D Thomas and M Wee, Joint Chairmen; P Clyburn; I Walker;<lb/> K Brohi; P Collins; H Doughty; J Isaac; PF Mahoney; L Shewry<lb/> </docAuthor>
+	</byline>
+
+	<note type="other">This is a consensus document produced by expert members of a Working Party established by the Association of<lb/> Anaesthetists of Great Britain and Ireland (AAGBI). It has been seen and approved by the Council of the<lb/> AAGBI.<lb/> The AAGBI acknowledges the contribution received from the British Committee for Standards in Haematology<lb/> Transfusion Task Force and the Appropriate Use of Blood Group.<lb/> Summary<lb/></note>
+
+	<note type="copyright">Ó 2010 The Authors<lb/> Anaesthesia Ó 2010 The Association of Anaesthetists of Great Britain and Ireland</note>
+
+		</front>
+	</text>
+</tei>

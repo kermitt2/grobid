@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="main3"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Sponsored document from<lb/> Analytical Biochemistry<lb/></note>
+
+	<note type="other">Published as: </note>
+
+	<reference>Anal Biochem. 2011 March 15; 410(2): 272–280.<lb/></reference>
+
+	<docTitle>
+	<titlePart>High-performance liquid chromatography separation and intact<lb/> mass analysis of detergent-solubilized integral membrane<lb/> proteins<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Georgina Berridge, Rod Chalk, Nazzareno D&apos;Avanzo 1 , Liang Dong, Declan Doyle 2 , Jung-In<lb/> Kim 3 , Xiaobing Xia, Nicola Burgess-Brown, Antonio deRiso 4 , Elisabeth Paula Carpenter,<lb/> and Opher Gileadi ⁎<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Structural Genomics Consortium, University of Oxford,</affiliation>
+	</byline>
+
+	<address>ORCRB, Roosevelt Drive, Oxford OX3<lb/> 7DQ, UK<lb/></address>
+
+	<note type="other">Sponsored Document<lb/></note>
+
+	<div type="abstract">Abstract<lb/> We have developed a method for intact mass analysis of detergent-solubilized and purified<lb/> integral membrane proteins using liquid chromatography–mass spectrometry (LC–MS) with<lb/> methanol as the organic mobile phase. Membrane proteins and detergents are separated<lb/> chromatographically during the isocratic stage of the gradient profile from a 150-mm C3 reversed-<lb/>phase column. The mass accuracy is comparable to standard methods employed for soluble<lb/> proteins; the sensitivity is 10-fold lower, requiring 0.2–5 μg of protein. The method is also<lb/> compatible with our standard LC–MS method used for intact mass analysis of soluble proteins and<lb/> may therefore be applied on a multiuser instrument or in a high-throughput environment.<lb/></div>
+
+	<keyword>Keywords<lb/> Sponsored Document<lb/> Integral membrane protein; HPLC; Electrospray ionization mass spectrometry; Methanol;<lb/> Detergent; Intact mass analysis; LC–MS; Isocratic elution<lb/></keyword>
+
+	<div type="introduction">Integral membrane proteins represent approximately 25% of the human proteome and are of<lb/> crucial biological importance in regulating the composition of the cell and the extracellular<lb/> environment, membrane potential, metabolism, cell structure, and signaling pathways. As a<lb/> result of their position as the gateway to cells, they are also the targets for many drugs, in<lb/> fact more than 50% of commercially available small molecule drugs target membrane<lb/> proteins such as G-protein-coupled receptors, ion channels, transporters, other receptors, and<lb/> enzymes [1]. Despite the importance of membrane proteins in biology and pharmacology, to<lb/> date only 246 crystal structures exist for membrane proteins [2] in comparison to over<lb/> 50,000 for soluble proteins, and only 14 of those structures are of human integral membrane<lb/> Sponsored Document<lb/> Â© 2011 Elsevier Inc.<lb/></div>
+
+	<note type="other">⁎ Corresponding author. </note>
+
+	<phone>Fax: +44 1865 617575. </phone>
+
+	<email>opher.gileadi@sgc.ox.ac.uk.<lb/></email>
+
+	<byline>
+	<affiliation>1 Present address: Department of Cell Biology and Physiology, Washington University School of Medicine,</affiliation>
+	</byline>
+
+	<address>660 S. Euclid Avenue, St.<lb/> Louis, MO 63110, USA.<lb/></address>
+
+	<byline>
+	<affiliation>2 Present address: School of Biochemistry and Immunology, Trinity College,</affiliation>
+	</byline>
+
+	<address>Dublin 2, Ireland.<lb/> 3 Present address:</address>
+
+	<byline>
+	<affiliation>Institute of Molecular Biology and Biophysics, ETH Zürich,</affiliation>
+	</byline>
+
+	<address>HPK D14.3, 8093 Zürich, Switzerland.<lb/></address>
+
+	<byline>
+	<affiliation>4 Present address: Department of Biochemistry, University of Oxford,</affiliation>
+	</byline>
+
+	<address>South Parks Road, Oxford OX1 3QU, UK.<lb/></address>
+
+	<note type="copyright">This document was posted here by permission of the publisher. At the time of deposit, it included all changes made during peer<lb/> review, copyediting, and publishing. The U.S. National Library of Medicine is responsible for all links within the document and for<lb/> incorporating any publisher-supplied amendments or retractions issued subsequently. The published journal article, guaranteed to be<lb/> such by Elsevier, is available for free, on ScienceDirect.<lb/></note>
+
+	<note type="other">Berridge et al.<lb/> Page 2</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1475-2832-3-10"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">BioMed Central<lb/></note>
+
+	<note type="other">Annals of General Hospital<lb/> Psychiatry<lb/></note>
+
+	<note type="copyright">Open Access<lb/></note>
+
+	<note type="other">Primary research<lb/></note>
+
+	<docTitle>
+	<titlePart>Report of three cases that received maintenance treatment with<lb/> risperidone as a mood stabilizer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Konstantinos N Fountoulakis*, Ioannis Nimatoudis, Apostolos Iacovides<lb/> and George Kaprinis<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Address: </note>
+
+	<byline>
+	<affiliation>3rd Department of Psychiatry, Aristotle University of Thessaloniki,</affiliation>
+	</byline>
+
+	<address>Greece<lb/></address>
+
+	<email>Email: Konstantinos N Fountoulakis* -kfount@med.auth.gr; Ioannis Nimatoudis -nimatoud@med.auth.gr;<lb/> Apostolos Iacovides -iacovid@med.auth.gr; George Kaprinis -kaprinis@med.auth.gr<lb/></email>
+
+	<note type="other">* Corresponding author<lb/></note>
+
+	<date>Published: 26 May 2004<lb/></date>
+
+	<reference>Annals of General Hospital Psychiatry 2004, 3:10<lb/> </reference>
+
+	<note type="submission">Received: 26 January 2004<lb/> Accepted: 26 May 2004<lb/></note>
+
+	<note type="other">This article is available from: </note>
+
+	<ptr type="web">http://www.general-hospital-psychiatry.com/content/3/1/10<lb/></ptr>
+
+	<note type="copyright">© 2004 Fountoulakis et al; licensee BioMed Central Ltd. This is an Open Access article: verbatim copying and redistribution of this article are permitted in<lb/> all media for any purpose, provided this notice is preserved along with the article&apos;s original URL.<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Introduction: The current study is a short report of 3 cases of bipolar patients.<lb/> Material and methods: Three bipolar patients were prospectively followed up. All were partial<lb/> responders to lithium therapy alone, and unresponsive to other therapies (anticonvulsants,<lb/> antidepressants, typical antipsychotics, various combinations).<lb/> Results: All manifested complete remission of symptoms after combination therapy with lithium<lb/> (plasma levels above 0.8 mEq/lt) plus 1–3 mg of risperidone daily. The two of them are still free of<lb/> symptomatology during the maintenance period for 28 and 38 months respectively. The third<lb/> patient, after several months during which she was free of symptomatology discontinued lithium<lb/> against the psychiatrist&apos;s advise and received only 3 mg of risperidone daily. For the next 15 months<lb/> the patient was under risperidone monotherapy and free of symptomatology. She discontinued<lb/> therapy to become pregnant, the illness recurred several times during pregnancy and after the<lb/> delivery the patient restarted risperidone therapy. She was free of symptoms for the following 9<lb/> months until her last follow-up.<lb/> Discussion: The current study provides preliminary evidence concerning the long term efficacy of<lb/> risperidone in the treatment of bipolar patients</div>
+
+		</front>
+	</text>
+</tei>

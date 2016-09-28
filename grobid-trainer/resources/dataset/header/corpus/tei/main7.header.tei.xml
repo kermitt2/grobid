@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="main7"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type ="other">Sponsored document from<lb/> Artificial Intelligence<lb/></note>
+
+	<note type ="other">Published as: </note>
+
+	<reference>Artif Intell. 2010 October ; 174(15): 1172–1221.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Updating action domain descriptions ☆<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Thomas Eiter a , Esra Erdem b , Michael Fink a,* , and Ján Senko a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Institute of Information Systems, Vienna University of Technology,</affiliation>
+	</byline>
+
+	<address>Vienna, Austria<lb/></address>
+
+	<byline>
+	<affiliation>b Faculty of Engineering and Natural Sciences, Sabancı University,</affiliation>
+	</byline>
+
+	<address>Istanbul, Turkey<lb/></address>
+
+	<div type="abstract">Abstract<lb/> </div>
+
+	<note type ="other">Sponsored Document<lb/> </note>
+
+	<div type="abstract">Incorporating new information into a knowledge base is an important problem which has been widely<lb/> investigated. In this paper, we study this problem in a formal framework for reasoning about actions<lb/> and change. In this framework, action domains are described in an action language whose semantics<lb/> is based on the notion of causality. Unlike the formalisms considered in the related work, this<lb/> language allows straightforward representation of non-deterministic effects and indirect effects of<lb/> (possibly concurrent) actions, as well as state constraints; therefore, the updates can be more general<lb/> than elementary statements. The expressivity of this formalism allows us to study the update of an<lb/> action domain description with a more general approach compared to related work. First of all, we<lb/> consider the update of an action description with respect to further criteria, for instance, by ensuring<lb/> that the updated description entails some observations, assertions, or general domain properties that<lb/> constitute further constraints that are not expressible in an action description in general. Moreover,<lb/> our framework allows us to discriminate amongst alternative updates of action domain descriptions<lb/> and to single out a most preferable one, based on a given preference relation possibly dependent on<lb/> the specified criteria. We study semantic and computational aspects of the update problem, and<lb/> establish basic properties of updates as well as a decomposition theorem that gives rise to a divide<lb/> and conquer approach to updating action descriptions under certain conditions. Furthermore, we<lb/> study the computational complexity of decision problems around computing solutions, both for the<lb/> generic setting and for two particular preference relations, viz. set-inclusion and weight-based<lb/> preference. While deciding the existence of solutions and recognizing solutions are PSPACE-<lb/>complete problems in general, the problems fall back into the polynomial hierarchy under restrictions<lb/> on the additional constraints. We finally discuss methods to compute solutions and approximate<lb/> solutions (which disregard preference). Our results provide a semantic and computational basis for<lb/> developing systems that incorporate new information into action domain descriptions in an action<lb/> language, in the presence of additional constraints.<lb/></div>
+
+	<note type="other">Sponsored Document<lb/> Sponsored Document<lb/></note>
+
+	<keyword>Keywords<lb/> Knowledge representation; Reasoning about actions and change; Theory change; Action languages;<lb/> Preference-based semantics<lb/></keyword>
+
+	<note type="other">☆ This paper is a revised and significantly extended version of a preliminary paper that appeared in:</note>
+
+	<reference>Proc. 19th International Joint<lb/> Conference on Artificial Intelligence (IJCAI 2005), pp. 418–423.<lb/></reference>
+
+	<note type="copyright">Â© 2010 Elsevier B.V.<lb/></note>
+
+	<note type="other">* Corresponding author. </note>
+
+	<email>michael@kr.tuwien.ac.at.<lb/></email>
+
+	<note type="copyright">This document was posted here by permission of the publisher. At the time of deposit, it included all changes made during peer review,<lb/> copyediting, and publishing. The U.S. National Library of Medicine is responsible for all links within the document and for incorporating<lb/> any publisher-supplied amendments or retractions issued subsequently. The published journal article, guaranteed to be such by Elsevier,<lb/> is available for free, on ScienceDirect.</note>
+
+		</front>
+	</text>
+</tei>
