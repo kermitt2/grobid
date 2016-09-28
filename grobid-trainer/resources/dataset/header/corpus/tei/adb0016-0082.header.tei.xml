@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="adb0016-0082"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Addiction Biology<lb/> PRECLINICAL STUDY<lb/></note>
+
+	<idno>doi:10.1111/j.1369-1600.2010.00231.x<lb/></idno>
+
+	<docTitle>
+	<titlePart>Glutamatergic regulation of ghrelin-induced activation<lb/> of the mesolimbic dopamine system<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Elisabet Jerlhag<lb/> 1<lb/> , Emil Egecioglu<lb/> 2<lb/> , Suzanne L. Dickson<lb/> 2 &amp; Jörgen A. Engel<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Section for Pharmacology<lb/> 1 and Section for Physiology/Endocrinology, Institute of Neuroscience and Physiology, The Sahlgrenska Academy at the University of<lb/> Gothenburg,</affiliation>
+	</byline>
+
+	<address>Gothenburg, Sweden<lb/>2<lb/> </address>
+
+	<div type="abstract">ABSTRACTa db_231 82..91<lb/> Recently, we demonstrated that the central ghrelin signalling system, involving the ghrelin receptor (GHS-R1A), is<lb/> important for alcohol reinforcement. Ghrelin targets a key mesolimbic circuit involved in natural as well as drug-<lb/>induced reinforcement, that includes a dopamine projection from the ventral tegmental area (VTA) to the nucleus<lb/> accumbens. The aim of the present study was to determine whether it is possible to suppress ghrelin&apos;s effects on this<lb/> mesolimbic dopaminergic pathway can be suppressed, by interrupting afferent inputs to the VTA dopaminergic cells,<lb/> as shown previously for cholinergic afferents. Thus, the effects of pharmacological suppression of glutamatergic,<lb/> orexin A and opioid neurotransmitter systems on ghrelin-induced activation of the mesolimbic dopamine system were<lb/> investigated. We found in the present study that ghrelin-induced locomotor stimulation was attenuated by VTA<lb/> administration of the N-methyl-D-aspartic acid receptor antagonist (AP5) but not by VTA administration of an orexin<lb/> A receptor antagonist (SB334867) or by peripheral administration of an opioid receptor antagonist (naltrexone).<lb/> Intra-VTA administration of AP5 also suppressed the ghrelin-induced dopamine release in the nucleus accumbens.<lb/> Finally the effects of peripheral ghrelin on locomotor stimulation and accumbal dopamine release were blocked by<lb/> intra-VTA administration of a GHS-R1A antagonist (BIM28163), indicating that GHS-R1A signalling within the VTA<lb/> is required for the ghrelin-induced activation of the mesolimbic dopamine system. Given the clinical knowledge that<lb/> hyperghrelinemia is associated with addictive behaviours (such as compulsive overeating and alcohol use disorder) our<lb/> finding highlights a potential therapeutic strategy involving glutamatergic control of ghrelin action at the level of the<lb/> mesolimbic dopamine system.<lb/></div>
+
+	<keyword>Keywords Dopamine, ghrelin, glutamate, opioid, orexin, reward.<lb/></keyword>
+
+	<note type="other">Correspondence to:</note>
+
+	<byline>
+	<docAuthor>Elisabet Jerlhag,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Section for Pharmacology, Institute of Neuroscience and Physiology, The Sahlgrenska Academy at the University of<lb/> Gothenburg,</affiliation>
+	</byline>
+
+	<address>SE-405 30 Gothenburg, Sweden.</address>
+
+	<email>E-mail: elisabet.jerlhag@pharm.gu.se<lb/></email>
+
+	<note type="copyright">Re-use of this article is permitted in accordance with the Terms and Conditions set out at</note>
+
+	<ptr type="web">http://wileyonlinelibrary.com/onlineopen#OnlineOpen_Terms</ptr>
+
+		</front>
+	</text>
+</tei>

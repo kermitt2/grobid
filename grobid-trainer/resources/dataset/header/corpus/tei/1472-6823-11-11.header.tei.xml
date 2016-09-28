@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1472-6823-11-11"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Stunes et al. BMC Endocrine Disorders 2011, 11:11<lb/></reference>
+
+	<ptr type="web">http://www.biomedcentral.com/1472-6823/11/11<lb/></ptr>
+
+	<note type="other">R E S E A R C H A R T I C L E<lb/> </note>
+
+	<note type="copyright">Open Access<lb/> </note>
+
+	<docTitle>
+	<titlePart>The peroxisome proliferator-activated receptor<lb/> (PPAR) alpha agonist fenofibrate maintains<lb/> bone mass, while the PPAR gamma agonist<lb/> pioglitazone exaggerates bone loss, in<lb/> ovariectomized rats<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Astrid K Stunes<lb/> 1* , Irene Westbroek<lb/> 2 , Björn I Gustafsson<lb/> 1,3 , Reidar Fossmark<lb/> 3 , Jan H Waarsing<lb/> 2 , Erik F Eriksen<lb/> 4 ,<lb/> Christiane Petzold<lb/> 5 , Janne E Reseland<lb/> 5 and Unni Syversen<lb/> 1,6<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Background: Activation of peroxisome proliferator-activated receptor (PPAR)gamma is associated with bone loss<lb/> and increased fracture risk, while PPARalpha activation seems to have positive skeletal effects. To further explore<lb/> these effects we have examined the effect of the PPARalpha agonists fenofibrate and Wyeth 14643, and the<lb/> PPARgamma agonist pioglitazone, on bone mineral density (BMD), bone architecture and biomechanical strength<lb/> in ovariectomized rats.<lb/> Methods: Fifty-five female Sprague-Dawley rats were assigned to five groups. One group was sham-operated and<lb/> given vehicle (methylcellulose), the other groups were ovariectomized and given vehicle, fenofibrate, Wyeth 14643<lb/> and pioglitazone, respectively, daily for four months. Whole body and femoral BMD were measured by dual X-ray<lb/> absorptiometry (DXA), and biomechanical testing of femurs, and micro-computed tomography (microCT) of the<lb/> femoral shaft and head, were performed.<lb/> Results: Whole body and femoral BMD were significantly higher in sham controls and ovariectomized animals given<lb/> fenofibrate, compared to ovariectomized controls. Ovariectomized rats given Wyeth 14643, maintained whole body<lb/> BMD at sham levels, while rats on pioglitazone had lower whole body and femoral BMD, impaired bone quality and<lb/> less mechanical strength compared to sham and ovariectomized controls. In contrast, cortical volume, trabecular<lb/> bone volume and thickness, and endocortical volume were maintained at sham levels in rats given fenofibrate.<lb/> Conclusions: The PPARalpha agonist fenofibrate, and to a lesser extent the PPARaplha agonist Wyeth 14643,<lb/> maintained BMD and bone architecture at sham levels, while the PPARgamma agonist pioglitazone exaggerated<lb/> bone loss and negatively affected bone architecture, in ovariectomized rats.<lb/></div>
+
+	<note type="other">* Correspondence:</note>
+
+	<email>kamilla.stunes@ntnu.no<lb/></email>
+
+	<byline>
+	<affiliation>1<lb/> Department of Cancer Research and Molecular Medicine, Norwegian<lb/> University of Science and Technology, NTNU,</affiliation>
+	</byline>
+
+	<address>Trondheim, Norway<lb/></address>
+
+	<note type="other">Full list of author information is available at the end of the article<lb/></note>
+
+	<note type="copyright">© 2011 Stunes et al; licensee BioMed Central Ltd. This is an Open Access article distributed under the terms of the Creative Commons<lb/> Attribution License (http://creativecommons.org/licenses/by/2.0), which permits unrestricted use, distribution, and reproduction in<lb/> any medium, provided the original work is properly cited.<lb/></note>
+
+	<reference>Stunes et al. BMC Endocrine Disorders 2011, 11:11<lb/></reference>
+
+	<ptr type="web">http://www.biomedcentral.com/1472-6823/11/11<lb/></ptr>
+
+	<note type="other">Page 2 of 13<lb/> Author details<lb/></note>
+
+	<byline>
+	<affiliation>1<lb/> Department of Cancer Research and Molecular Medicine, Norwegian<lb/> University of Science and Technology, NTNU,</affiliation>
+	</byline>
+
+	<address>Trondheim, Norway.<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Internal<lb/> Medicine and Orthopaedics, Erasmus MC,</affiliation>
+	</byline>
+
+	<address>Rotterdam, the Netherlands.<lb/></address>
+
+	<reference>Stunes et al. BMC Endocrine Disorders 2011, 11:11<lb/></reference>
+
+	<ptr type="web">http://www.biomedcentral.com/1472-6823/11/11<lb/></ptr>
+
+	<note type="other">Page 12 of 13<lb/></note>
+
+	<byline>
+	<affiliation>3<lb/> Department of Gastroenterology, St Olav&apos;s University Hospital HF,<lb/></affiliation>
+	</byline>
+
+	<address>Trondheim, Norway.<lb/></address>
+
+	<byline>
+	<affiliation>4 Hormone Laboratory, Aker University Hospital, Oslo,<lb/></affiliation>
+	</byline>
+
+	<address>Norway.<lb/></address>
+
+	<byline>
+	<affiliation>5<lb/> Department of Biomaterials, Institute for Clinical Dentistry,<lb/> University of Oslo,</affiliation>
+	</byline>
+
+	<address>Oslo, Norway.<lb/></address>
+
+	<byline>
+	<affiliation>6 Department of Endocrinology, St Olav&apos;s<lb/> University Hospital HF,</affiliation>
+	</byline>
+
+	<address>Trondheim, Norway.</address>
+
+		</front>
+	</text>
+</tei>

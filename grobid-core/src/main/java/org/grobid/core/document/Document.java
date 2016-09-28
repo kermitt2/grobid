@@ -80,7 +80,7 @@ public class Document {
     private List<Cluster> clusters = null;
     private List<Block> blocks = null;
 
-    // not used anymore
+    // these block lists should be removed at some point
     private List<Integer> blockHeaders = null;
     private List<Integer> blockFooters = null;
     private List<Integer> blockSectionTitles = null;
@@ -220,16 +220,11 @@ public class Document {
     }
 
     // to be removed
-    @Deprecated
+    //@Deprecated
     public List<LayoutToken> getTokenizationsHeader() {
         List<LayoutToken> tokenizationsHeader = new ArrayList<LayoutToken>();
         for (Integer blocknum : blockDocumentHeaders) {
             Block blo = blocks.get(blocknum);
-            /*int tokens = blo.getStartToken();
-            int tokene = blo.getEndToken();
-            for (int i = tokens; i < tokene; i++) {
-                tokenizationsHeader.add(tokenizations.get(i));
-            }*/
             List<LayoutToken> tokens = blo.getTokens();
             if ( (tokens == null) || (tokens.size() == 0) ) {
                 continue;
@@ -245,7 +240,7 @@ public class Document {
     }
 
     // to be removed
-    @Deprecated
+    //@Deprecated
     public List<LayoutToken> getTokenizationsFulltext() {
         List<LayoutToken> tokenizationsFulltext = new ArrayList<LayoutToken>();
         for (Block blo : blocks) {
@@ -257,18 +252,6 @@ public class Document {
         }
 
         return tokenizationsFulltext;
-    }
-
-    // to be removed
-    @Deprecated
-    public List<LayoutToken> getTokenizationsReferences() {
-        List<LayoutToken> tokenizationsReferences = new ArrayList<LayoutToken>();
-
-        for (DocumentPiece dp : blockReferences) {
-            tokenizationsReferences.addAll(tokenizations.subList(dp.a.getTokenDocPos(), dp.b.getTokenDocPos()));
-        }
-
-        return tokenizationsReferences;
     }
 
     public List<LayoutToken> fromText(final String text) {

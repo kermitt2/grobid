@@ -104,7 +104,10 @@ public class PubMedCentralEvaluation {
 			throw new GrobidResourceException("Path to PubMedCentral is not correctly set");
 		}
 		StringBuilder report = new StringBuilder();
-		
+		long time = System.currentTimeMillis();
+		int nbFails = 0;
+		int n = 0;
+
 		if (forceRun) {
 			// we run Grobid full text extraction on the PubMedCentral data
             File input = new File(pubMedCentralPath);
@@ -123,7 +126,6 @@ public class PubMedCentralEvaluation {
                 return report.toString();
             }
 			
-			int n = 0;
             for (File dir : refFiles) {
 				// get the PDF file in the directory
 	            File[] refFiles2 = dir.listFiles(new FilenameFilter() {
@@ -155,12 +157,22 @@ public class PubMedCentralEvaluation {
 				catch (Exception e) {
 					System.out.println("Error when processing: " + pdfFile.getPath());
 					e.printStackTrace();
+					nbFails++;
 				}
 				n++;
 			}
 		}
 		
+		// runtime of the run
+		long timeTaken = System.currentTimeMillis() - time;
+		System.out.println("GROBID took on the evaluation set: " + timeTaken + " ms");
+		System.out.println(n + " PDF files processed, ");
+		if ( (timeTaken != 0) && (n != 0) )
+			System.out.println( (((double)n*1000)/timeTaken) + " PDF/s, ");
+		System.out.println(nbFails + " failed PDF");
+
 		// evaluation of the run
+		System.out.println("Running evaluation...");
 		
 		report.append("\n======= Header metadata ======= \n");
 		report.append(evaluationRun(this.GROBID, this.HEADER));
@@ -1382,7 +1394,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 		}
 		
 		report.append("\nEvaluation on " + nbFile + " random PDF files out of " + 
-			(refFiles.length-2) + " PDF (ratio " + fileRatio + ").\n");
+			(refFiles.length-1) + " PDF (ratio " + fileRatio + ").\n");
 		
 		report.append("\n======= Strict Matching ======= (exact matches)\n");
 		report.append("\n===== Field-level results =====\n");

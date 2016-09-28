@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="paph24-188"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>APHASIOLOGY, 2010, 24 (2), 188–209<lb/> </reference>
+
+	<note type="other">PAPH 0268-7038 1464-5041 APHASIOLOGY, Vol. 1, No. 1, Jul 2009: pp. 0–0<lb/> APHASIOLOGY<lb/></note>
+
+	<docTitle>
+	<titlePart>Language control and parallel recovery of language<lb/> in individuals with aphasia<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Language Control and Recovery<lb/> Green et al.<lb/></note>
+
+	<byline>
+	<docAuthor>David W. Green, Alice Grogan, Jenny Crinion, Nilufa Ali,<lb/> Catherine Sutton, and Cathy J. Price<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University College</affiliation>
+	</byline>
+
+	<address>London, UK<lb/></address>
+
+	<div type="abstract">Background: The causal basis of the different patterns of language recovery following<lb/> stroke in bilingual speakers is not well understood. Our approach distinguishes the rep-<lb/>resentation of language from the mechanisms involved in its control. Previous studies<lb/> have suggested that difficulties in language control can explain selective aphasia in one<lb/> language as well as pathological switching between languages. Here we test the hypothe-<lb/>sis that difficulties in managing and resolving competition will also be observed in those<lb/> who are equally impaired in both their languages even in the absence of pathological<lb/> switching.<lb/> Aims: To examine difficulties in language control in bilingual individuals with parallel<lb/> recovery in aphasia and to compare their performance on different types of conflict<lb/> task.<lb/> Methods &amp; Procedures: Two right-handed, non-native English-speaking participants<lb/> who showed parallel recovery of two languages after stroke and a group of non-native<lb/> English-speaking, bilingual controls described a scene in English and in their first lan-<lb/>guage and completed three explicit conflict tasks. Two of these were verbal conflict<lb/> tasks: a lexical decision task in English, in which individuals distinguished English<lb/> words from non-words, and a Stroop task, in English and in their first language. The<lb/> third conflict task was a non-verbal flanker task.<lb/> Outcomes &amp; Results: Both participants with aphasia were impaired in the picture<lb/> description task in English and in their first language but showed different patterns of<lb/> impairment on the conflict tasks. For the participant with left subcortical damage, con-<lb/>flict was abnormally high during the verbal tasks (lexical decision and Stroop) but not<lb/> during the non-verbal flanker task. In contrast, for the participant with extensive left<lb/> parietal damage, conflict was less abnormal during the Stroop task than the flanker or<lb/> lexical decision task.<lb/> Conclusions: Our data reveal two distinct control impairments associated with parallel<lb/> recovery. We stress the need to explore the precise nature of control problems and how<lb/> control is implemented in order to develop fuller causal accounts of language recovery<lb/> patterns in bilingual aphasia.<lb/></div>
+
+	<keyword>Keywords: Language control; Bilingual aphasia.<lb/></keyword>
+
+	<note type="other">Address correspondence to: </note>
+
+	<byline>
+	<docAuthor>David W. Green,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Division of Psychology and Language Sciences,</affiliation>
+	</byline>
+
+	<address>26 Bedford<lb/> Way, London WC1H 0AP, UK.</address>
+
+	<email>E-mail: d.w.green@ucl.ac.uk<lb/></email>
+
+	<note type="other">We thank the Wellcome Trust for support and two anonymous reviewers for constructive comments<lb/> on a previous version of the paper.<lb/></note>
+
+	<note type="copyright">© 2009 Psychology Press, an imprint of the Taylor &amp; Francis Group, an Informa business<lb/> http://www.psypress.com/aphasiology<lb/></note>
+
+	<idno>DOI: 10.1080/02687030902958316</idno>
+
+		</front>
+	</text>
+</tei>

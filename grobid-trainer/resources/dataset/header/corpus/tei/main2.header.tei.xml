@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="main2"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Sponsored document from<lb/> American Journal of Obstetrics<lb/> and Gynecology<lb/></note>
+
+	<note type="other">Published as: </note>
+
+	<reference>Am J Obstet Gynecol. 2007 January ; 196(1): 62.e1–62.e5.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Risk factors for the development of striae gravidarum<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hibah Osman 1 , Nelly Rubeiz 2 , Hala Tamim 3 , and Anwar H. Nassar 4<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Health Behavior and Education, Faculty of Health Sciences, American University of Beirut<lb/> Medical Center,</affiliation>
+	</byline>
+
+	<address>Beirut, Lebanon.<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Dermatology, American University of Beirut Medical Center,</affiliation>
+	</byline>
+
+	<address>Beirut, Lebanon.<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Epidemiology and Biostatistics, American University of Beirut Medical Center,</affiliation>
+	</byline>
+
+	<address>Beirut,<lb/> Lebanon.<lb/></address>
+
+	<byline>
+	<affiliation>4 Faculty of Health Sciences, and Department of Obstetrics and Gynecology, American University of Beirut<lb/> Medical Center,</affiliation>
+	</byline>
+
+	<address>Beirut, Lebanon..<lb/></address>
+
+	<note type="other">Sponsored Document<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Objective—The purpose of this study was to identify risk factors associated with striae gravidarum<lb/> (SG).<lb/> Study design—A cross-sectional study of 112 primiparous women delivering at a private teaching<lb/> hospital was conducted. Participants were assessed during the immediate postpartum period for<lb/> evidence of SG. Presence and severity of SG were compared to characteristics of women using t tests<lb/> and Chi-square tests.<lb/> Results—Sixty percent of the study participants had developed SG. Women who developed SG<lb/> were significantly younger (26.5 ± 4.5 vs 30.5 ± 4.6; P &lt; .001) and had gained significantly more<lb/> weight during pregnancy (15.6 ± 3.9 vs 38.4 kg ± 2.7; P &lt; .001). Birthweight (BW), gestational age<lb/> at delivery, and family history of SG were associated with moderate/severe SG.<lb/> Conclusion—Maternal age and weight gain during pregnancy are associated with SG. BW, family<lb/> history of SG, and gestational age at delivery are associated with moderate/severe SG.<lb/> Sponsored Document<lb/></div>
+
+	<keyword>Key words<lb/> estrogen; pregnancy; relaxin; striae gravidarum<lb/></keyword>
+
+	<note type="other">Sponsored Document</note>
+
+		</front>
+	</text>
+</tei>

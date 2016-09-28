@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="main1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Sponsored document from<lb/> American Journal of Kidney<lb/> Diseases<lb/></note>
+
+	<note type="other">Published as: </note>
+
+	<reference>Am J Kidney Dis. 2010 June ; 55(6): 1088–1096.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Association of Left Atrial Volume With Mortality Among ESRD<lb/> Patients With Left Ventricular Hypertrophy Referred for Kidney<lb/>Transplantation<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Rajan K. Patel 1,2,⁎ , Alan G.M. Jardine 1 , Patrick B. Mark 1,2 , Anthony F. Cunningham 3 , Tracey<lb/> Steedman 3 , Joanna R. Powell 1,2 , Emily P. McQuarrie 1,2 , Kathryn K. Stevens 1,2 , Henry J.<lb/> Dargie 3 , and Alan G. Jardine 1,2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 BHF Glasgow Cardiovascular Research Centre, University of Glasgow,</affiliation>
+	</byline>
+
+	<address>UK.<lb/></address>
+
+	<note type="other">Sponsored Document<lb/></note>
+
+	<byline>
+	<affiliation>2 Department of Renal Medicine, Western Infirmary,</affiliation>
+	</byline>
+
+	<address>Glasgow, UK.<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Cardiology, Western Infirmary,</affiliation>
+	</byline>
+
+	<address>Glasgow, UK.<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Background—Left ventricular hypertrophy (LVH) is common in patients with end-stage renal<lb/> disease (ESRD) and an independent risk factor for premature cardiovascular death. Left atrial volume<lb/> (LAV), measured using echocardiography, predicts death in patients with ESRD. Cardiovascular<lb/> magnetic resonance (CMR) imaging is a volume-independent method of accurately assessing cardiac<lb/> structure and function in patients with ESRD.<lb/> Study Design—Single-center prospective observational study to assess the determinants of all-<lb/>cause mortality, particularly LAV, in a cohort of ESRD patients with LVH, defined using CMR<lb/> imaging.<lb/> Sponsored Document<lb/> Setting &amp; Participants—201 consecutive ESRD patients with LVH (72.1% men; mean age, 51.6<lb/> ± 11.7 years) who had undergone pretransplant cardiovascular assessment were identified using CMR<lb/> imaging between 2002-2008. LVH was defined as left ventricular mass index &gt;84.1 g/m 2 (men) or<lb/> &gt;74.6 g/m 2 (women) based on published normal left ventricle dimensions for CMR imaging.<lb/> Maximal LAV was calculated using the biplane area-length method at the end of left ventricle systole<lb/> and corrected for body surface area.<lb/> Sponsored Document<lb/> Predictors—CMR abnormalities, including LAV.<lb/> Outcome—All-cause mortality.<lb/> Results—54 patients died (11 after transplant) during a median follow-up of 3.62 years. Median<lb/> LAV was 30.4 mL/m 2 (interquartile range, 26.2-58.1). Patients were grouped into high (median or<lb/> higher) or low (less than median) LAV. There were no significant differences in heart rate and mitral<lb/> valve Doppler early to late atrial peak velocity ratio. Increased LAV was associated with higher<lb/> Â© 2010 Elsevier Inc.<lb/> This document may be redistributed and reused, subject to certain conditions.<lb/></div>
+
+	<note type="other">⁎ Address correspondence to </note>
+
+	<byline>
+	<docAuthor>Rajan K. Patel,</docAuthor>
+	</byline> 
+
+	<byline>
+	<affiliation>MBChB, BHF Glasgow Cardiovascular Research Centre, University of Glasgow, </affiliation>
+	</byline>
+
+	<address>126<lb/> University Pl, Glasgow, G12 8TA UK</address>
+
+	<email>r.patel@clinmed.gla.ac.uk.<lb/> </email>
+
+	<note type="copyright">This document was posted here by permission of the publisher. At the time of deposit, it included all changes made during peer review,<lb/> copyediting, and publishing. The U.S. National Library of Medicine is responsible for all links within the document and for incorporating<lb/> any publisher-supplied amendments or retractions issued subsequently. The published journal article, guaranteed to be such by Elsevier,<lb/> is available for free, on ScienceDirect.<lb/> Originally published online as</note>
+
+	<idno>doi:10.1053/j.ajkd.2009.12.033 on</idno>
+
+	<date>March 26, 2010.<lb/></date>
+
+	<note type="other">Patel et al.<lb/></note>
+
+	<note type="other">Page 2</note>
+
+		</front>
+	</text>
+</tei>

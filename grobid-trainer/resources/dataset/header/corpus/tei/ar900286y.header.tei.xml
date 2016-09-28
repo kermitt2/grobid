@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ar900286y"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Systems Analysis of Protein Modification and<lb/> Cellular Responses Induced by Electrophile Stress<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>AARON T. JACOBS<lb/> † AND LAWRENCE J. MARNETT*<lb/> A.B. Hancock Jr.</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Memorial Laboratory for Cancer Research, Departments of<lb/> Biochemistry, Chemistry, and Pharmacology, Vanderbilt Institute of Chemical<lb/> Biology, Center in Molecular Toxicology, Vanderbilt-Ingram Cancer Center,<lb/> Vanderbilt University School of Medicine,</affiliation>
+	</byline>
+
+	<address>Nashville Tennessee 37232-0146<lb/></address>
+
+	<note type="submission">RECEIVED ON DECEMBER 12, 2009<lb/></note>
+
+	<note type="other">C O N S P E C T U S<lb/></note>
+
+	<div type="abstract">B<lb/> iological electrophiles result from oxidative metabolism of exog-<lb/>enous compounds or endogenous cellular constituents, and they<lb/> contribute to pathophysiologies such as toxicity and carcinogenicity.<lb/> The chemical toxicology of electrophiles is dominated by covalent<lb/> addition to intracellular nucleophiles. Reaction with DNA leads to the<lb/> production of adducts that block replication or induce mutations. The<lb/> chemistry and biology of electrophile-DNA reactions have been<lb/> extensively studied, providing in many cases a detailed understand-<lb/>ing of the relation between adduct structure and mutational conse-<lb/>quences. By contrast, the linkage between protein modification and<lb/> cellular response is poorly understood.<lb/> In this Account, we describe our efforts to define the chemistry of<lb/> protein modification and its biological consequences using lipid-de-<lb/>rived R,-unsaturated aldehydes as model electrophiles. In our glo-<lb/>bal approach, two large data sets are analyzed: one represents the identity of proteins modified over a wide range of electrophile<lb/> concentrations, and the second comprises changes in gene expression observed under similar conditions. Informatics tools show theo-<lb/>retical connections based primarily on transcription factors hypothetically shared between the two data sets, downstream of adducted pro-<lb/>teins and upstream of affected genes. This method highlights potential electrophile-sensitive signaling pathways and transcriptional<lb/> processes for further evaluation.<lb/> Peroxidation of cellular phospholipids generates a complex mixture of both membrane-bound and diffusible electrophiles. The lat-<lb/>ter include reactive species such as malondialdehyde, 4-oxononenal, and 4-hydroxynonenal (HNE). Enriching HNE-adducted proteins for<lb/> proteomic analysis was a technical challenge, solved with click chemistry that generated biotin-tagged protein adducts. For this purpose,<lb/> HNE analogues bearing terminal azide or alkyne functionalities were synthesized. Cellular lysates were first exposed to a single type of<lb/> HNE analogue (azido-or alkynyl-HNE), and then click reactions were performed against the cognate alkynyl-and azido-biotin deriva-<lb/>tive. The resulting biotin-labeled proteins were captured and enriched over a streptavidin matrix for subsequent mass spectrometric anal-<lb/>ysis. We thereby identified a multitude of HNE targets. Simultaneous microarray analysis of changes in gene expression triggered by HNE<lb/> also produced an abundance of data. Functional analysis of both data sets generated the hypothesis that an important pathway of cel-<lb/>lular response derives from electrophile modification of protein chaperones, resulting in the release of transcription factors that are their<lb/> clients. Informatic analysis of the protein modification and microarray data sets identified several transcription factors as potential medi-<lb/>ators of the cellular response to HNE-adducted proteins. Among these, heat shock factor 1 (HSF1) was confirmed as a sensitive and robust<lb/> effector of HNE-induced changes in gene expression. Activation of HSF1 appears, in part, to be mediated by the electrophilic adduction<lb/> of Hsp70 and Hsp90, which normally maintain HSF1 in an inactive cytosolic complex.<lb/> The identification of HSF1 as a mediator of biological effects downstream of HSF1 has provided new opportunities for research, illus-<lb/>trating the potential of our systems-based approach. Accordingly, we characterized HSF1-mediated gene expression in protecting against<lb/> electrophile-induced toxicity. Among the genes induced by HSF1, Bcl-2-associated athanogene 3 (BAG3) is notable for its actions in pro-<lb/>moting cell survival through stabilization of antiapoptotic Bcl-2 proteins, appearing to have a critical role in mediating cellular protection<lb/> against electrophile-induced death.<lb/></div>
+
+	<reference>Vol. 43, No. 5 May 2010 673-683 ACCOUNTS OF CHEMICAL RESEARCH 673<lb/></reference>
+
+	<date>Published on the Web 03/10/2010</date>
+
+	<ptr type="web">www.pubs.acs.org/acr<lb/> </ptr>
+
+	<idno>10.1021/ar900286y<lb/></idno>
+
+	<note type="copyright">© 2010 American Chemical Society<lb/></note>
+
+	<note type="other">Cellular Responses to Electrophiles Jacobs and Marnett<lb/> </note>
+
+	<reference>Vol. 43, No. 5 May 2010 673-683 ACCOUNTS OF CHEMICAL RESEARCH 681<lb/></reference>
+
+	<note type="other">Cellular Responses to Electrophiles Jacobs and Marnett<lb/></note>
+
+	<note type="grant">The research summarized in this account is funded as part of<lb/> a program project from the National Institutes of Health<lb/> (ES13125) and a center grant from the National Foundation for<lb/> Cancer Research. We are deeply appreciative of the interac-<lb/>tions with and efforts of our coinvestigators and colleagues on<lb/> this program, specifically Ned Porter, Daniel Liebler, Jack Rob-<lb/>erts, Bing Zhang, Keri Tallman, Simona Codreanu, Colleen<lb/> McGrath, Jody Ullery, Rebecca Connor, and Mariana Boiani.<lb/> We also acknowledge the efforts of former members of the<lb/> Marnett laboratory, Chuan Ji, James West, and Andrew Vila,<lb/> who built the foundation for this program.<lb/> </note>
+
+	<note type="other">BIOGRAPHICAL INFORMATION<lb/> Aaron T. Jacobs received his B.S. degree in biology from UC Irv-<lb/>ine in 1993 and a Ph.D. in pharmacology from UCLA in 2003<lb/> under the guidance of Louis J. Ignarro. He then pursued postdoc-<lb/>toral studies with Lawrence J. Marnett at Vanderbilt University<lb/> until recently joining the faculty at the University of Hawaii, Hilo<lb/> College of Pharmacy.<lb/> Lawrence J. Marnett received a B.S. in Chemistry from Rock-<lb/>hurst College in 1969 and a Ph.D. in Chemistry from Duke Uni-<lb/>versity in 1973 under the direction of Ned Porter. After<lb/> postdoctoral research with Bengt Samuelsson at Karolinska Insti-<lb/>tute and A. Paul Schaap at Wayne State University, he joined the<lb/> faculty in Chemistry at Wayne in 1975. He moved to Vanderbilt<lb/> University in 1989 where he is currently University Professor,<lb/> Mary Geddes Stahlman Professor of Cancer Research, Professor<lb/> of Biochemistry, Chemistry, and Pharmacology, and Director of<lb/> the Vanderbilt Institute of Chemical Biology.<lb/> </note>
+
+	<note type="other">FOOTNOTES<lb/> * To whom correspondence should be addressed:</note>
+
+	<phone>Telephone: 615-343-7329. Fax: 615-<lb/>343-7534. </phone>
+
+	<email>E-mail: larry.marnett@vanderbilt.edu.<lb/></email>
+
+	<byline>
+	<affiliation>† Current address: Department of Pharmaceutical Sciences, University of Hawaii at Hilo,</affiliation>
+	</byline>
+
+	<address>Hilo,<lb/> Hawaii 96720-4091; </address>
+
+	<email>jacobsa@hawaii.edu.</email>
+
+		</front>
+	</text>
+</tei>

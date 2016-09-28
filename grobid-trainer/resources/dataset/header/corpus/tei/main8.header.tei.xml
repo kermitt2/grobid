@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="main8"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Sponsored document from<lb/> Autonomic Neuroscience<lb/></note>
+
+	<note type="other">Published as: </note>
+
+	<reference>Auton Neurosci. 2009 October 05; 150(1-2): 70–75.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Impact of lung inflation cycle frequency on rat muscle and skin<lb/> sympathetic activity recorded using suction electrodes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Chunhua Huang, Nephtali Marina, and Michael P. Gilbey ⁎<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Chunhua Huang: ; Nephtali Marina: ; Michael P. Gilbey:</note>
+
+	<email>m.gilbey@ucl.ac.uk<lb/></email>
+
+	<byline>
+	<affiliation>UCL Research Department of Neuroscience, Physiology and Pharmacology, University College<lb/></affiliation>
+	</byline>
+
+	<address>London, London WC1E 6BT, UK.<lb/></address>
+
+	<note type="other">Sponsored Document<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Microneurography has been used in humans to study sympathetic activity supplying targets within<lb/> skeletal muscle and skin. Comparable animal studies are relatively few, probably due to the technical<lb/> demands of traditional fibre picking techniques. Here we apply a simple suction electrode technique<lb/> to record cutaneous (CVC) and muscle (MVC) vasoconstrictor activities and describe and investigate<lb/> the basis of the frequency dependence of lung inflation related modulation. Hindlimb MVC and CVC<lb/> activities were recorded concurrently. The magnitude of MVC and CVC activities at the lung inflation<lb/> cycle frequency was significantly less at 2.0 Hz than at lung inflation cycle frequencies ≤ 1.0 Hz. As<lb/> lung inflation cycle frequency was increased the coherence between lung inflation cycle or BP and<lb/> MVC or CVC waveforms decreased. Consistent with the hypothesis that much of the coherence<lb/> between lung inflation cycle and nerve activity waveforms is secondary to oscillating baroreceptor<lb/> activity attributable to BP waves, partialization with the BP waveform significantly decreased the<lb/> coherence between lung inflation cycle and nerve waveforms, and there was an absence of coherence<lb/> between these waveforms following sinus and aortic denervation. Our data extend findings from<lb/> other laboratories and establish the value of a suction electrode technique for recording MVC and<lb/> CVC activities. Furthermore, our observations describe the rates of positive pressure ventilation that<lb/> avoid strong and regular gating of sympathetic activity.<lb/> </div>
+
+	<note type="other">Sponsored Document<lb/></note>
+
+	<keyword>Keywords<lb/> Muscle sympathetic activity; Skin sympathetic activity; Suction electrodes; Blood pressure waves;<lb/> Lung inflation related modulation<lb/></keyword>
+
+	<note type="other">Sponsored Document<lb/></note>
+
+	<note type="copyright">© 2009 Elsevier B.V.<lb/> This document may be redistributed and reused, subject to certain conditions.<lb/></note>
+
+	<note type="other">⁎Corresponding author.</note> 
+
+	<phone>Tel.: +44 20 7679 3211. </phone>
+
+	<email>m.gilbey@ucl.ac.uk.<lb/></email>
+
+	<note type="copyright">This document was posted here by permission of the publisher. At the time of deposit, it included all changes made during peer review,<lb/> copyediting, and publishing. The U.S. National Library of Medicine is responsible for all links within the document and for incorporating<lb/> any publisher-supplied amendments or retractions issued subsequently. The published journal article, guaranteed to be such by Elsevier,<lb/> is available for free, on ScienceDirect.</note>
+
+		</front>
+	</text>
+</tei>
