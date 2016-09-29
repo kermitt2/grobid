@@ -1,14 +1,11 @@
 package org.grobid.core;
 
-import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertFalse;
-import static org.hamcrest.CoreMatchers.endsWith;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
@@ -19,7 +16,7 @@ import static org.junit.Assert.assertTrue;
 public class GrobidModelsTest {
 
     @BeforeClass
-    public static void setInitialContext() throws Exception{
+    public static void setInitialContext() throws Exception {
         MockContext.setInitialContext();
         GrobidProperties.getInstance();
     }
@@ -34,9 +31,9 @@ public class GrobidModelsTest {
         assertThat(model.getModelName(), is("affiliation-address"));
         assertThat(model.getTemplateName(), is("affiliation-address.template"));
         String[] splittedPath = model.getModelPath().split("[/\\\\]");
-        assertThat(splittedPath[splittedPath.length-1], is("model.wapiti"));
-        assertThat(splittedPath[splittedPath.length-2], is("affiliation-address"));
-        assertThat(splittedPath[splittedPath.length-3], is("models"));
+        assertThat(splittedPath[splittedPath.length - 1], is("model.wapiti"));
+        assertThat(splittedPath[splittedPath.length - 2], is("affiliation-address"));
+        assertThat(splittedPath[splittedPath.length - 3], is("models"));
     }
 
     @Test
@@ -48,9 +45,9 @@ public class GrobidModelsTest {
         assertThat(model.getModelName(), is("header"));
         assertThat(model.getTemplateName(), is("header.template"));
         String[] splittedPath = model.getModelPath().split("[/\\\\]");
-        assertThat(splittedPath[splittedPath.length-1], is("model.wapiti"));
-        assertThat(splittedPath[splittedPath.length-2], is("header"));
-        assertThat(splittedPath[splittedPath.length-4], is("grobid-home"));
+        assertThat(splittedPath[splittedPath.length - 1], is("model.wapiti"));
+        assertThat(splittedPath[splittedPath.length - 2], is("header"));
+        assertThat(splittedPath[splittedPath.length - 4], is("grobid-home"));
     }
 
     @Test
@@ -62,10 +59,10 @@ public class GrobidModelsTest {
         assertThat(model.getTemplateName(), is("dictionaries-senses.template"));
 
         String[] splittedPath = model.getModelPath().split("[/\\\\]");
-        assertThat(splittedPath[splittedPath.length-1], is("model.wapiti"));
-        assertThat(splittedPath[splittedPath.length-2], is("dictionaries-senses"));
-        assertThat(splittedPath[splittedPath.length-3], is("models"));
-        assertThat(splittedPath[splittedPath.length-4], is("grobid-home"));
+        assertThat(splittedPath[splittedPath.length - 1], is("model.wapiti"));
+        assertThat(splittedPath[splittedPath.length - 2], is("dictionaries-senses"));
+        assertThat(splittedPath[splittedPath.length - 3], is("models"));
+        assertThat(splittedPath[splittedPath.length - 4], is("grobid-home"));
 
         GrobidModel model2 = GrobidModels.modelFor("dictionaries-lemma");
         assertFalse(model2.equals(model));

@@ -17,6 +17,8 @@ import org.slf4j.LoggerFactory;
 import java.util.Collections;
 import java.util.List;
 
+import static org.grobid.core.engines.TaggingLabels.*;
+
 /**
  * @author Patrice
  */
@@ -59,11 +61,11 @@ public class TableParser extends AbstractParser {
 			}
 
 			TaggingLabel clusterLabel = cluster.getTaggingLabel();
-			Engine.getCntManager().i(clusterLabel);
+			Engine.getCntManager().i((TaggingLabels) clusterLabel);
 
 			List<LayoutToken> tokens = cluster.concatTokens();
 			String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));
-			switch (clusterLabel) {
+			switch ((TaggingLabels) clusterLabel) {
 				case TBL_DESC:
 					table.appendCaption(clusterContent);
 					table.getFullDescriptionTokens().addAll(tokens);
@@ -213,23 +215,23 @@ public class TableParser extends AbstractParser {
     /**
 	 * The training data creation is called from the full text training creation in cascade.
 	 */
-	public org.grobid.core.utilities.Pair<String,String> createTrainingData(List<LayoutToken> tokenizations, 
+	public org.grobid.core.utilities.Pair<String,String> createTrainingData(List<LayoutToken> tokenizations,
 			String featureVector, String id) {
 //System.out.println(tokenizations.toString() + "\n" );
-		String res = null;		
+		String res = null;
 		try {
 			res = label(featureVector);
 		}
 		catch(Exception e) {
 			LOGGER.error("CRF labeling in TableParser fails.", e);
-		}	
+		}
 		if (res == null) {
 			return new Pair<>(null, featureVector);
 		}
 //System.out.println(res + "\n" );
-        List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);		
+        List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
         StringBuilder sb = new StringBuilder();
-		
+
 		int tokPtr = 0;
 		boolean addSpace = false;
 		boolean addEOL = false;
@@ -246,7 +248,7 @@ public class TableParser extends AbstractParser {
 				}
 				else if (tokenizations.get(tokPtr2).getText().equals("\n") ||
 					     tokenizations.get(tokPtr).getText().equals("\r") ) {
-					addEOL = true;	
+					addEOL = true;
 				}
                 else {
 					break;
@@ -293,7 +295,7 @@ public class TableParser extends AbstractParser {
 					// sequence of accent/diacresis and we can go on as a full string match
 	            }
 			}
-			
+
 			String plainLabel = GenericTaggerUtils.getPlainLabel(label);
 
 			String output = null;
@@ -350,7 +352,7 @@ public class TableParser extends AbstractParser {
 			testClosingTag(sb, "", lastTag, addSpace, addEOL);
 			sb.append("        </figure>\n");
 		}
-		
+
 		return new Pair(sb.toString(), featureVector);
     }
 
@@ -360,15 +362,15 @@ public class TableParser extends AbstractParser {
                 "    <teiHeader>\n" +
                 "        <fileDesc xml:id=\"_"+ id + "\"/>\n" +
                 "    </teiHeader>\n" +
-                "    <text xml:lang=\"en\">\n"); 
+                "    <text xml:lang=\"en\">\n");
     	return sb.toString();
     }
-	
+
     private boolean testClosingTag(StringBuilder buffer,
                                    String currentTag,
                                    String lastTag,
 								   boolean addSpace,
-								   boolean addEOL) {	
+								   boolean addEOL) {
         boolean res = false;
         if (!currentTag.equals(lastTag)) {
             res = true;
@@ -418,7 +420,7 @@ public class TableParser extends AbstractParser {
                               boolean addSpace,
 							  boolean addEOL,
 							  int nbIndent) {
-        String result = null;       
+        String result = null;
         if (currentTag.endsWith(field)) {
             /*if (currentTag.endsWith("<other>") || currentTag.endsWith("<trash>")) {
                 result = "";
@@ -456,7 +458,7 @@ public class TableParser extends AbstractParser {
                     	result += "    ";
                 	}
 				}
-				
+
             	result += outField + TextUtilities.HTMLEncode(token);
             }
         }
