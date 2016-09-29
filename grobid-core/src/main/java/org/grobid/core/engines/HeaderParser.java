@@ -19,6 +19,8 @@ import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.Page;
+import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
@@ -105,11 +107,10 @@ public class HeaderParser extends AbstractParser {
         String header;
         //if (doc.getBlockDocumentHeaders() == null) {
             header = doc.getHeaderFeatured(true, true);
-        /*} else {
-            header = doc.getHeaderFeatured(false, true);
-        }*/
+        //} else {
+        //    header = doc.getHeaderFeatured(false, true);
+        //}
         List<LayoutToken> tokenizations = doc.getTokenizationsHeader();
-//System.out.println(tokenizations.toString());
 
         if ((header != null) && (header.trim().length() > 0)) {
             String res = label(header);
@@ -280,7 +281,6 @@ public class HeaderParser extends AbstractParser {
         StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, GrobidAnalysisConfig.builder().consolidateHeader(consolidate).build());
         tei.append("\t</text>\n");
         tei.append("</TEI>\n");
-        //LOGGER.debug(tei.toString());
         return tei.toString();
     }
 
@@ -508,8 +508,12 @@ public class HeaderParser extends AbstractParser {
 
         // vector for features
         FeaturesVectorHeader features;
+        // the accumulated features for the current line 
+        List<FeaturesVectorHeader> previousFeatures = null;
         boolean endblock;
-        //for (Integer blocknum : blockDocumentHeaders) {
+        boolean indented = false;
+        boolean centered = false;
+        double lineStartX = Double.NaN;
         List<Block> blocks = doc.getBlocks();
         if ((blocks == null) || blocks.size() == 0) {
             return null;
@@ -562,9 +566,28 @@ public class HeaderParser extends AbstractParser {
                     } else
                         newline = false;
 
+                    /*if (previousNewline) {
+                        newline = true;
+                        previousNewline = false;
+                    }*/
+
                     if (previousNewline) {
                         newline = true;
                         previousNewline = false;
+                        if (token != null && (previousFeatures != null)) {
+                            double previousLineStartX = lineStartX;
+                            lineStartX = token.getX();
+                            double characterWidth = token.width / token.getText().length();
+                            if (!Double.isNaN(previousLineStartX)) {
+                                // Indentation if line start is > 1 character width to the right of previous line start
+                                if (lineStartX - previousLineStartX > characterWidth)
+                                    indented = true;
+                                // Indentation ends if line start is > 1 character width to the left of previous line start
+                                else if (previousLineStartX - lineStartX > characterWidth)
+                                    indented = false;
+                                // Otherwise indentation is unchanged
+                            }
+                        }
                     }
 
 					if (TextUtilities.filterLine(text)) {
@@ -662,6 +685,28 @@ public class HeaderParser extends AbstractParser {
 
                     }
 
+                    if (features.lineStatus.equals("LINEEND")) {
+                        if (indented && !Double.isNaN(lineStartX)) {
+                            // we check here if centered
+                            double lineEndX = token.getX() + token.getWidth();
+                            Page page = block.getPage();                            
+                            BoundingBox pageArea = page.getMainArea();
+                            double pageStartX = pageArea.getX();
+                            double pageWidth = pageArea.getWidth();
+                            double leftSpace = lineStartX - pageStartX;
+                            double rightSpace = pageStartX + pageWidth - lineEndX;
+                            if (rightSpace - leftSpace < 10) {
+                                centered = true;
+                            }
+
+                            // if centered, we need to update all the features of the tookens for this line
+                            if (centered) {
+                                for(FeaturesVectorHeader theFeatures : previousFeatures)
+                                    features.alignmentStatus = "CENTERED";
+                            }
+                        }
+                    }
+
                     if (text.length() == 1) {
                         features.singleChar = true;
                     }
@@ -748,6 +793,15 @@ public class HeaderParser extends AbstractParser {
 
                     // CENTERED
                     // LEFTAJUSTED
+                    if (indented) {
+                        if (centered)
+                            features.alignmentStatus = "CENTERED";
+                        else 
+                            features.alignmentStatus = "LINEINDENT";
+                    }
+                    else {
+                        features.alignmentStatus = "ALIGNEDLEFT";
+                    }
 
                     if (features.capitalisation == null)
                         features.capitalisation = "NOCAPS";
@@ -758,12 +812,29 @@ public class HeaderParser extends AbstractParser {
                     if (features.punctType == null)
                         features.punctType = "NOPUNCT";
 
-                    header.append(features.printVector(withRotation));
+                    if (previousFeatures == null) 
+                        previousFeatures= new ArrayList<FeaturesVectorHeader>();
+                    previousFeatures.add(features);
+                    
+
+                    if (features.lineStatus.equals("LINEEND")) {
+                        for(FeaturesVectorHeader theFeatures : previousFeatures)
+                            header.append(theFeatures.printVector(withRotation));
+                        previousFeatures = null;
+                    }
+                    //header.append(features.printVector(withRotation));
 
                     n++;
                 }
             }
         }
+
+        // features for last line to output
+        if (previousFeatures != null) {
+            for(FeaturesVectorHeader theFeatures : previousFeatures)
+                header.append(theFeatures.printVector(withRotation));
+        }
+
 
         return header.toString();
     }

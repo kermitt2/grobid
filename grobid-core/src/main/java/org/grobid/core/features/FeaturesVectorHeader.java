@@ -77,7 +77,7 @@ public class FeaturesVectorHeader {
         // line information (1)
         res.append(" " + lineStatus);
 		
-		// line position/identation
+		// line position/identation (1)
 		//res.append(" " + alignmentStatus);
 
         // font information (1)
@@ -191,7 +191,7 @@ public class FeaturesVectorHeader {
      * Add feature for header recognition to labeled data in a file. The boolean indicates
      * if the label set should be limited or not to only title and date.
      */
-    static public String addFeaturesHeader(File file, boolean restrict) throws Exception {
+    /*static public String addFeaturesHeader(File file, boolean restrict) throws Exception {
         BufferedReader bis = new BufferedReader(
                 new InputStreamReader(new FileInputStream(file), "UTF8"));
 
@@ -203,13 +203,13 @@ public class FeaturesVectorHeader {
         bis.close();
 
         return addFeaturesHeader(lines, restrict);
-    }
+    }*/
 
     /**
      * Add feature for header recognition. The boolean indicates if the label set
      * should be limited or not to only title and date.
      */
-    static public String addFeaturesHeader(List<String> lines, boolean restrict) throws Exception {
+    /*static public String addFeaturesHeader(List<String> lines, boolean restrict) throws Exception {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
 
         String line;
@@ -494,7 +494,7 @@ public class FeaturesVectorHeader {
         }
 
         return header.toString();
-    }
+    }*/
 
 
 }
