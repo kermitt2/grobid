@@ -52,7 +52,7 @@ public enum GrobidModels implements GrobidModel {
 
     private String folderName;
 
-    private static final ConcurrentMap<String, GrobidModel> models = new ConcurrentHashMap<String, GrobidModel>();
+    private static final ConcurrentMap<String, GrobidModel> models = new ConcurrentHashMap<>();
 
     GrobidModels(String folderName) {
         this.folderName = folderName;
