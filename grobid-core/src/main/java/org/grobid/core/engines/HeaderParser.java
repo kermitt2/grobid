@@ -513,7 +513,8 @@ public class HeaderParser extends AbstractParser {
         boolean endblock;
         boolean indented = false;
         boolean centered = false;
-        double lineStartX = Double.NaN;
+        //double lineStartX = Double.NaN;
+        double lineStartX = 0;
         List<Block> blocks = doc.getBlocks();
         if ((blocks == null) || blocks.size() == 0) {
             return null;
@@ -526,7 +527,8 @@ public class HeaderParser extends AbstractParser {
             for (int blockIndex = dp1.getBlockPtr(); blockIndex <= dp2.getBlockPtr(); blockIndex++) {
                 Block block = blocks.get(blockIndex);             
                 boolean newline;
-                boolean previousNewline = false;
+                //boolean previousNewline = false;
+                boolean previousNewline = true;
                 endblock = false;
                 List<LayoutToken> tokens = block.getTokens();
                 if (tokens == null)
@@ -571,10 +573,10 @@ public class HeaderParser extends AbstractParser {
                         previousNewline = false;
                     }*/
 
-                    if (previousNewline) {
+                    if (previousNewline) {         
                         newline = true;
                         previousNewline = false;
-                        if (token != null && (previousFeatures != null)) {
+                        if (token != null) {
                             double previousLineStartX = lineStartX;
                             lineStartX = token.getX();
                             double characterWidth = token.width / token.getText().length();
@@ -701,8 +703,10 @@ public class HeaderParser extends AbstractParser {
 
                             // if centered, we need to update all the features of the tookens for this line
                             if (centered) {
-                                for(FeaturesVectorHeader theFeatures : previousFeatures)
-                                    features.alignmentStatus = "CENTERED";
+                                if (previousFeatures != null) {
+                                    for(FeaturesVectorHeader theFeatures : previousFeatures)
+                                        theFeatures.alignmentStatus = "CENTERED";
+                                }
                             }
                         }
                     }
@@ -849,12 +853,12 @@ public class HeaderParser extends AbstractParser {
      * @param pathTEI    path to TEI
      */
     public Document createTrainingHeader(String inputFile, String pathHeader, String pathTEI) {
+        System.out.println(inputFile);
         DocumentSource documentSource = null;
         try {
             File file = new File(inputFile);
             String pdfFileName = file.getName();
 
-            //Document doc = parsers.getSegmentationParser().processing(file, GrobidAnalysisConfig.defaultInstance());
             documentSource = DocumentSource.fromPdf(file);
             Document doc = parsers.getSegmentationParser().processing(documentSource, GrobidAnalysisConfig.defaultInstance());
 

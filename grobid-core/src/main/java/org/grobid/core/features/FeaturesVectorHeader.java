@@ -19,7 +19,7 @@ public class FeaturesVectorHeader {
     public String label = null; // label if known
     public String blockStatus = null; // one of BLOCKSTART, BLOCKIN, BLOCKEND
     public String lineStatus = null; // one of LINESTART, LINEIN, LINEEND
-    public String alignmentStatus = null; // one of ALIGNEDLEFT, INDENTED, CENTERED - applied to the whole line
+    public String alignmentStatus = null; // one of ALIGNEDLEFT, LINEINDENT, CENTERED - applied to the whole line
     public String fontStatus = null; // one of NEWFONT, SAMEFONT
     public String fontSize = null; // one of HIGHERFONT, SAMEFONTSIZE, LOWERFONT
     public boolean bold = false;
@@ -78,7 +78,7 @@ public class FeaturesVectorHeader {
         res.append(" " + lineStatus);
 		
 		// line position/identation (1)
-		//res.append(" " + alignmentStatus);
+		res.append(" " + alignmentStatus);
 
         // font information (1)
         res.append(" " + fontStatus);
@@ -153,15 +153,15 @@ public class FeaturesVectorHeader {
         else
             res.append(" 0");
 
-        if (email)
+        /*if (email)
             res.append(" 1");
         else
-            res.append(" 0");
+            res.append(" 0");*/
 
-        if (http)
+        /*if (http)
             res.append(" 1");
         else
-            res.append(" 0");
+            res.append(" 0");*/
 
         if (containDash)
             res.append(" 1");
