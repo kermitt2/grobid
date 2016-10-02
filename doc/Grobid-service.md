@@ -1,6 +1,6 @@
 <h1>GROBID service</h1>
 
-The GROBID RESTful API provides a simple and efficient way to use the tool. A service console is available to test  GROBID in a human friendly manner.
+The GROBID RESTful API provides a simple and efficient way to use the tool. A service console is available to test GROBID in a human friendly manner. For production and benchmarking, we recommand to use this web service mode on a multi-core machine.  
 
 ## Start the server
 Go under the `grobid/grobid-service` directory:

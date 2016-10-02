@@ -1,5 +1,7 @@
 <h1>GROBID batch mode</h1>
 
+For the best performance, benchmarking and for exploiting multithreading, we recommand to use the service mode, see [Use GROBID as a service](Grobid-service.md), and not the batch mode.
+
 ## Using the batch
 Go under the `grobid/grobid-core/target` directory where the core library has been built:
 ```bash
