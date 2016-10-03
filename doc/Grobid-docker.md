@@ -11,18 +11,18 @@ The process for fetching and running the image is (assuming docker is installed 
 
 - Pull the image from docker HUB
 ```bash
-> docker pull lfoppiano/grobid:0.4.1-SNAPSHOT
+> docker pull lfoppiano/grobid:0.4.1
 ```
  
 - Run the container:
 
 ```bash
-> docker run -t --rm -p 8080:8080 lfoppiano/grobid:0.4.1-SNAPSHOT
+> docker run -t --rm -p 8080:8080 lfoppiano/grobid:0.4.1
 ```
 
 (alternatively you can also get the image ID)  
 ```bash
-> docker images | grep lfoppiano/grobid | grep 0.4.1-SNAPSHOT
+> docker images | grep lfoppiano/grobid | grep 0.4.1
 > docker run -t --rm -p 8080:8080 $image_id_from_previous_command
 ```
 
@@ -103,8 +103,11 @@ using the profile docker, in order to correctly set up the grobid-home in the we
 ```bash
 > mvn clean install -P docker
 ```
+
+make sure the Dockerfile points to the right jars (TODO: add placeholders based on the version), launch the build: 
+
 ```bash
-> docker build -t lfoppiano/grobid:0.4.1-SNAPSHOT .
+> docker build -t lfoppiano/grobid:0.4.1 .
 ```
 
 In order to run the container of the newly created image: 
