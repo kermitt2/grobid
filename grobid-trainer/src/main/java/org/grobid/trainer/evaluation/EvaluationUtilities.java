@@ -1,11 +1,9 @@
 package org.grobid.trainer.evaluation;
 
 import com.google.common.base.Function;
-import com.google.common.base.Joiner;
 import org.chasen.crfpp.Tagger;
 import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.jni.WapitiModel;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
@@ -13,18 +11,20 @@ import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import org.apache.commons.io.FileUtils;
+import org.grobid.trainer.LabelStat;
+import org.grobid.trainer.Stats;
 
 /**
  * Evaluation of the parsing of citation.
  * 
  * @author Patrice Lopez
  */
+
+
 public class EvaluationUtilities {
 	/**
 	 * Method for running a CRF tagger for evaluation purpose (i.e. with
@@ -109,28 +109,8 @@ public class EvaluationUtilities {
 
 	public static String evaluateStandard(String path, Function<List<String>, String> taggerFunction) {
 		StringBuilder report = new StringBuilder();
-
-		// word level
-		final ArrayList<String> labels = new ArrayList<String>();
-		// true positive
-		final ArrayList<Integer> counterObserved = new ArrayList<Integer>();
-		// all expected
-		final ArrayList<Integer> counterExpected = new ArrayList<Integer>();
-		// false positive
-		final ArrayList<Integer> counterFalsePositive = new ArrayList<Integer>();
-		// false negative
-		final ArrayList<Integer> counterFalseNegative = new ArrayList<Integer>();
-
-		// field level
-		final ArrayList<String> labels2 = new ArrayList<String>();
-		// true positive
-		final ArrayList<Integer> counterObserved2 = new ArrayList<Integer>();
-		// all expected
-		final ArrayList<Integer> counterExpected2 = new ArrayList<Integer>();
-		// false positive
-		final ArrayList<Integer> counterFalsePositive2 = new ArrayList<Integer>();
-		// false negative
-		final ArrayList<Integer> counterFalseNegative2 = new ArrayList<Integer>();
+		Stats wordStats = new Stats();
+		Stats fieldStats = new Stats();
 
 		try {
 			final BufferedReader bufReader = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8"));
@@ -185,88 +165,36 @@ public class EvaluationUtilities {
 				// expected label and, last, the resulting label -> for Wapiti
 				// for CRF++, we get the expected label from the dedicated vector
 				StringTokenizer st = new StringTokenizer(line, "\t ");
-				String currentToken = null;
-				String previousToken = null;
+				String obtainedToken = null;
+				String expectedToken = null;
 				while (st.hasMoreTokens()) {
-					currentToken = st.nextToken();
-					if (currentToken != null) {
-						if (currentToken.startsWith("I-") || currentToken.startsWith("E-") || currentToken.startsWith("B-")) {
-							currentToken = currentToken.substring(2, currentToken.length());
+					obtainedToken = st.nextToken();
+					if (obtainedToken != null) {
+						if (obtainedToken.startsWith("I-") || obtainedToken.startsWith("E-") || obtainedToken.startsWith("B-")) {
+							obtainedToken = obtainedToken.substring(2, obtainedToken.length());
 						}
 					}
 					if (st.hasMoreTokens()) {
-						previousToken = currentToken;
+						expectedToken = obtainedToken;
 					}
 				}
 
 				// it's quite bad to have something CRF engine dependent here, but hard to avoid
 				if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
-					previousToken = expected.get(e);
-					if (previousToken.startsWith("I-") || previousToken.startsWith("E-") || previousToken.startsWith("B-")) {
-						previousToken = previousToken.substring(2, previousToken.length());
+					expectedToken = expected.get(e);
+					if (expectedToken.startsWith("I-") || expectedToken.startsWith("E-") || expectedToken.startsWith("B-")) {
+						expectedToken = expectedToken.substring(2, expectedToken.length());
 					}
 					e++;
 				}
 				
-				// System.out.println(previousToken + " / " + currentToken);
+				 //System.out.println(expectedToken + " / " + obtainedToken);
 
-				if ((previousToken == null) || (currentToken == null)) {
+				if ((expectedToken == null) || (obtainedToken == null)) {
 					continue;
 				}
-				// previousToken : expected
-				// currentToken : obtained
-				int ind = labels.indexOf(previousToken);
-				if (ind != -1) {
-					if (previousToken.equals(currentToken)) {
-						Integer count = counterObserved.get(ind);
-						counterObserved.set(ind, count + 1);
-					} else {
-						int ind2 = labels.indexOf(currentToken);
 
-						if (ind2 != -1) {
-							Integer count = counterFalsePositive.get(ind2);
-							counterFalsePositive.set(ind2, count + 1);
-						} else {
-							labels.add(currentToken);
-							counterFalsePositive.add(1);
-							counterObserved.add(0);
-							counterExpected.add(0);
-							counterFalseNegative.add(0);
-						}
-
-						Integer count2 = counterFalseNegative.get(ind);
-						counterFalseNegative.set(ind, count2 + 1);
-					}
-					Integer count = counterExpected.get(ind);
-					counterExpected.set(ind, count + 1);
-				} else {
-					labels.add(previousToken);
-
-					if (previousToken.equals(currentToken)) {
-						counterObserved.add(1); // true positives
-						counterFalsePositive.add(0);
-						counterFalseNegative.add(0);
-					} else {
-						counterObserved.add(0);
-						counterFalsePositive.add(0);
-						counterFalseNegative.add(1);
-
-						int ind2 = labels.indexOf(currentToken);
-						if (ind2 != -1) {
-							Integer count = counterFalsePositive.get(ind2);
-							Integer newCount = count + 1;
-							counterFalsePositive.set(ind2, newCount);
-						} else {
-							labels.add(currentToken);
-							counterFalsePositive.add(1);
-							counterObserved.add(0);
-							counterExpected.add(0);
-							counterFalseNegative.add(0);
-						}
-					}
-
-					counterExpected.add(1);
-				}
+				processCounters(wordStats, obtainedToken, expectedToken);
 			}
 
 			bufReader.close();
@@ -275,9 +203,7 @@ public class EvaluationUtilities {
 
 			// word
 			report.append("\n===== Token-level results =====\n\n");
-			report.append(computeMetrics(labels, counterObserved, counterExpected, 
-				counterFalsePositive, counterFalseNegative));
-
+			report.append(computeMetrics(wordStats));
 
 			/*int cumulated_tp = 0;
 			int cumulated_fp = 0;
@@ -436,40 +362,19 @@ public class EvaluationUtilities {
 				line = stt.nextToken();
 				if ((line.trim().length() == 0) && (lastPreviousToken != null) && (lastCurrentToken != null)) {
 					// end of last field
-					int index = labels2.indexOf(lastPreviousToken);
-					if (index == -1) {
-						labels2.add(lastPreviousToken);
-						// init
-						counterObserved2.add(0);
-						counterExpected2.add(0);
-						counterFalsePositive2.add(0);
-						counterFalseNegative2.add(0);
-						index = labels2.indexOf(lastPreviousToken);
-					}
+					LabelStat previousLabelStat = fieldStats.getLabelStat(lastPreviousToken);
 
 					if (allGood) {
-						Integer val = counterObserved2.get(index);
-						counterObserved2.set(index, val + 1); // true positive
+						previousLabelStat.incrementObserved();
 					} else {
-						Integer val = counterFalseNegative2.get(index);
-						counterFalseNegative2.set(index, val + 1);
+						previousLabelStat.incrementFalseNegative();
 					}
-					Integer val = counterExpected2.get(index);
-					counterExpected2.set(index, val + 1); // all expected
 
-					index = labels2.indexOf(lastCurrentToken);
-					if (index == -1) {
-						labels2.add(lastCurrentToken);
-						// init
-						counterObserved2.add(0);
-						counterExpected2.add(0);
-						counterFalsePositive2.add(0);
-						counterFalseNegative2.add(0);
-						index = labels2.indexOf(lastCurrentToken);
-					}
+					previousLabelStat.incrementExpected();
+
+					LabelStat currentLabelStat = fieldStats.getLabelStat(lastCurrentToken);
 					if (!allGood) {
-						val = counterFalsePositive2.get(index);
-						counterFalsePositive2.set(index, val + 1);
+						currentLabelStat.incrementFalsePositive();
 						// erroneous observed field (false positive)
 					}
 					allGood = true;
@@ -513,40 +418,21 @@ public class EvaluationUtilities {
 				}
 				if ((lastPreviousToken != null) && (!previousToken.equals(lastPreviousToken))) {
 					// new field
-					if (!labels2.contains(lastPreviousToken)) {
-						labels2.add(lastPreviousToken);
-						// init
-						counterObserved2.add(0);
-						counterExpected2.add(0);
-						counterFalsePositive2.add(0);
-						counterFalseNegative2.add(0);
-					}
-					int index = labels2.indexOf(lastPreviousToken);
+					LabelStat previousLabelStat = fieldStats.getLabelStat(lastPreviousToken);
 					if (allGood) {
-						Integer val = counterObserved2.get(index);
-						counterObserved2.set(index, val + 1); // true positive
+						previousLabelStat.incrementObserved();
 					} else {
-						Integer val = counterFalseNegative2.get(index);
-						counterFalseNegative2.set(index, val + 1);
+						previousLabelStat.incrementFalseNegative();
 					}
-					Integer val = counterExpected2.get(index);
-					counterExpected2.set(index, val + 1); // all expected
+
+					previousLabelStat.incrementExpected();
 				}
 
 				if ((lastCurrentToken != null) && (!currentToken.equals(lastCurrentToken))) {
 					// new field
-					if (!labels2.contains(lastCurrentToken)) {
-						labels2.add(lastCurrentToken);
-						// init
-						counterObserved2.add(0);
-						counterExpected2.add(0);
-						counterFalsePositive2.add(0);
-						counterFalseNegative2.add(0);
-					}
-					int index = labels2.indexOf(lastCurrentToken);
+					LabelStat currentLabelStat = fieldStats.getLabelStat(lastCurrentToken);
 					if (!allGood) {
-						Integer val = counterFalsePositive2.get(index);
-						counterFalsePositive2.set(index, val + 1);
+						currentLabelStat.incrementFalsePositive();
 						// erroneous observed field (false positive)
 					}
 				}
@@ -568,47 +454,25 @@ public class EvaluationUtilities {
 			// this is new from 26.03.2014
 			if ((lastPreviousToken != null) && (lastCurrentToken != null)) {
 				// end of last field
-				int index = labels2.indexOf(lastPreviousToken);
-				if (index == -1) {
-					labels2.add(lastPreviousToken);
-					// init
-					counterObserved2.add(0);
-					counterExpected2.add(0);
-					counterFalsePositive2.add(0);
-					counterFalseNegative2.add(0);
-					index = labels2.indexOf(lastPreviousToken);
-				}
+				LabelStat previousLabelStat = fieldStats.getLabelStat(lastPreviousToken);
 
 				if (allGood) {
-					Integer val = counterObserved2.get(index);
-					counterObserved2.set(index, val + 1); // true positive
+					previousLabelStat.incrementObserved();
 				} else {
-					Integer val = counterFalseNegative2.get(index);
-					counterFalseNegative2.set(index, val + 1);
+					previousLabelStat.incrementFalseNegative();
 				}
-				Integer val = counterExpected2.get(index);
-				counterExpected2.set(index, val + 1); // all expected
 
-				index = labels2.indexOf(lastCurrentToken);
-				if (index == -1) {
-					labels2.add(lastCurrentToken);
-					// init
-					counterObserved2.add(0);
-					counterExpected2.add(0);
-					counterFalsePositive2.add(0);
-					counterFalseNegative2.add(0);
-					index = labels2.indexOf(lastCurrentToken);
-				}
+				previousLabelStat.incrementExpected();
+
+				LabelStat currentLabelStat = fieldStats.getLabelStat(lastCurrentToken);
 				if (!allGood) {
-					val = counterFalsePositive2.get(index);
-					counterFalsePositive2.set(index, val + 1);
+					currentLabelStat.incrementFalsePositive();
 					// erroneous observed field (false positive)
 				}
 			} 
 
 			report.append("\n===== Field-level results =====\n");
-			report.append(computeMetrics(labels2, counterObserved2, counterExpected2, 
-				counterFalsePositive2, counterFalseNegative2));
+			report.append(computeMetrics(fieldStats));
 			
 			/*report.append("\nlabel\t\taccuracy\tprecision\trecall\t\tf1\n\n");
 
@@ -795,32 +659,52 @@ public class EvaluationUtilities {
 					if (!currentToken.equals(previousToken)) {
 						allGood = false;
 					}
-
 				}
-
 			}
 
 			report.append("\n===== Instance-level results =====\n\n");
-			report.append("Total expected instances: \t\t").append(totalInstance).append("\n");
-			report.append("Correct instances: \t\t").append(correctInstance).append("\n");
+			report.append(String.format("%-27s %d\n", "Total expected instances:", totalInstance));
+			report.append(String.format("%-27s %d\n", "Correct instances:", correctInstance));
 			double accuracy = (double) correctInstance / (totalInstance);
-			report.append("Instance-level recall:\t").
-				append(TextUtilities.formatTwoDecimals(accuracy * 100)).append("\n\n");
-
+			report.append(String.format("%-27s %s\n",
+					"Instance-level recall:",
+					TextUtilities.formatTwoDecimals(accuracy * 100)));
 		} catch (Exception e) {
 			throw new GrobidException("An exception occurred while evaluating Grobid.", e);
 		}
 
 		return report.toString();
 	}
-	
-	public static String computeMetrics(List<String> labels,
-								List<Integer> counterObserved, 
-								List<Integer> counterExpected,
-								List<Integer> counterFalsePositive,
-								List<Integer> counterFalseNegative) {
-		StringBuilder report = new StringBuilder();							
-		report.append("\nlabel\t\t\taccuracy\tprecision\trecall\t\tf1\n\n");
+
+    private static void processCounters(Stats stats, String obtained, String expected) {
+        boolean isNewLabel = !stats.getLabels().contains(expected);
+
+        LabelStat expectedStat = stats.getLabelStat(expected);
+        LabelStat obtainedStat = stats.getLabelStat(obtained);
+
+        if (expected.equals(obtained)) {
+            expectedStat.incrementObserved();
+            expectedStat.incrementExpected();
+        } else {
+            expectedStat.incrementFalseNegative();
+
+            obtainedStat.incrementFalsePositive();
+            if (isNewLabel) {
+                obtainedStat.incrementExpected();
+            } else {
+                expectedStat.incrementExpected();
+            }
+        }
+    }
+
+	public static String computeMetrics(Stats stats) {
+		StringBuilder report = new StringBuilder();
+		report.append(String.format("\n%-20s %-12s %-12s %-12s %-7s\n\n",
+				"label",
+				"accuracy",
+				"precision",
+				"recall",
+				"f1"));
 
 		int cumulated_tp = 0;
 		int cumulated_fp = 0;
@@ -834,78 +718,57 @@ public class EvaluationUtilities {
 		int totalValidFields = 0;
 
 		int totalFields = 0;
-		int i = 0;
-		while (i < labels.size()) {
-			totalFields += counterExpected.get(i);
-			i++;
+		for (String label : stats.getLabels()) {
+			LabelStat labelStat = stats.getLabelStat(label);
+			totalFields += labelStat.getExpected();
+			totalFields += labelStat.getFalsePositive();
 		}
 
-		i = 0;
-		while (i < labels.size()) {
-			totalFields += counterFalsePositive.get(i);
-			i++;
-		}
-
-		double accuracy = 0.0;
-		double precision = 0.0;
-		double recall = 0.0;
-		double f0 = 0.0;
-		i = 0;
-		while (i < labels.size()) {
-			String label = labels.get(i).trim();
+		for (String label : stats.getLabels()) {
 			if (label.equals("<other>") || label.equals("base") || label.equals("O")) {
-				i++;
 				continue;
 			}
 
-			report.append(label);
-
-			if (label.length() < 16) {
-				report.append("\t");
-			}
-			if (label.length() < 8) {
-				report.append("\t");
-			}
-			int tp = counterObserved.get(i); // true positives
-			int fp = counterFalsePositive.get(i); // false positives
-			int fn = counterFalseNegative.get(i); // false negative
+			LabelStat labelStat = stats.getLabelStat(label);
+			int tp = labelStat.getObserved(); // true positives
+			int fp = labelStat.getFalsePositive(); // false positives
+			int fn = labelStat.getFalseNegative(); // false negative
 			int tn = totalFields - tp - (fp + fn); // true negatives
-			int all = counterExpected.get(i); // all expected
+			int all = labelStat.getExpected(); // all expected
 
 			if (all != 0) {
 				totalValidFields++;
 			}
 
-			accuracy = (double) (tp + tn) / (tp + fp + tn + fn);
-			report.append("\t").append(TextUtilities.formatTwoDecimals(accuracy * 100));
+			double accuracy = (double) (tp + tn) / (tp + fp + tn + fn);
 
-			// report.append("\t"+ "-");
-
-			precision = 0.0;
+			double precision;
 			if ((tp + fp) == 0) {
 				precision = 0.0;
 			} else {
 				precision = (double) (tp) / (tp + fp);
 			}
-			report.append("\t\t").append(TextUtilities.formatTwoDecimals(precision * 100));
 
-			recall = 0.0;
+			double recall;
 			if ((tp == 0) || (all == 0)) {
 				recall = 0.0;
 			} else {
 				recall = (double) (tp) / all;
 			}
-			report.append("\t\t").append(TextUtilities.formatTwoDecimals(recall * 100));
 
-			f0 = 0.0;
+			double f0;
 			if (precision + recall == 0) {
 				f0 = 0.0;
 			} else {
 				f0 = (2 * precision * recall) / (precision + recall);
 			}
-			report.append("\t\t").append(TextUtilities.formatTwoDecimals(f0 * 100));
 
-			report.append("\n");
+			report.append(String.format("%-20s %-12s %-12s %-12s %-7s\n",
+					label,
+					TextUtilities.formatTwoDecimals(accuracy * 100),
+					TextUtilities.formatTwoDecimals(precision * 100),
+					TextUtilities.formatTwoDecimals(recall * 100),
+					TextUtilities.formatTwoDecimals(f0 * 100)));
 
 			cumulated_tp += tp;
 			cumulated_fp += fp;
@@ -918,56 +781,42 @@ public class EvaluationUtilities {
 				cumulated_precision += precision;
 				cumulated_recall += recall;
 			}
-			i++;
 		}
 
 		report.append("\n");
-		report.append("all fields\t");
 
 		// micro average over measures
-		accuracy = (double) (cumulated_tp + cumulated_tn) / (cumulated_tp + cumulated_fp + cumulated_tn + cumulated_fn);
-		if (accuracy > 1)
-			accuracy = 1.0;
-		report.append("\t").append(TextUtilities.formatTwoDecimals(accuracy * 100));
+		double accuracy = (double) (cumulated_tp + cumulated_tn) / (cumulated_tp + cumulated_fp + cumulated_tn + cumulated_fn);
+		accuracy = Math.min(1.0, accuracy);
 
-		precision = (double) cumulated_tp / (cumulated_tp + cumulated_fp);
-		if (precision > 1)
-			precision = 1.0;
-		report.append("\t\t").append(TextUtilities.formatTwoDecimals(precision * 100));
+		double precision = (double) cumulated_tp / (cumulated_tp + cumulated_fp);
+		precision = Math.min(1.0, precision);
 
 		//recall = ((double) cumulated_tp) / (cumulated_tp + cumulated_fn);
-		recall = ((double) cumulated_tp) / (cumulated_all);
-		if (recall > 1)
-			recall = 1.0;
-		report.append("\t\t").append(TextUtilities.formatTwoDecimals(recall * 100)).append(" ");
+		double recall = ((double) cumulated_tp) / (cumulated_all);
+		recall = Math.min(1.0, recall);
 
-		f0 = (2 * precision * recall) / (precision + recall);
-		report.append("\t\t").append(TextUtilities.formatTwoDecimals(f0 * 100));
-		report.append("\t(micro average)");
-		report.append("\n");
+		double f0 = (2 * precision * recall) / (precision + recall);
+
+		report.append(String.format("%-20s %-12s %-12s %-12s %-7s (micro average)\n",
+				"all fields",
+				TextUtilities.formatTwoDecimals(accuracy * 100),
+				TextUtilities.formatTwoDecimals(precision * 100),
+				TextUtilities.formatTwoDecimals(recall * 100),
+				TextUtilities.formatTwoDecimals(f0 * 100)));
 
 		// macro average over measures
-		report.append("\t\t");
-		accuracy = cumulated_accuracy / (totalValidFields);
-		if (accuracy > 1)
-			accuracy = 1.0;
-		report.append("\t").append(TextUtilities.formatTwoDecimals(accuracy * 100));
+		accuracy = Math.min(1.0, cumulated_accuracy / (totalValidFields));
+		precision = Math.min(1.0, cumulated_precision / totalValidFields);
+		recall = Math.min(1.0, cumulated_recall / totalValidFields);
+		f0 = Math.min(1.0, cumulated_f0 / totalValidFields);
 
-		precision = cumulated_precision / totalValidFields;
-		if (precision > 1)
-			precision = 1.0;
-		report.append("\t\t").append(TextUtilities.formatTwoDecimals(precision * 100));
-
-		recall = cumulated_recall / totalValidFields;
-		if (recall > 1)
-			recall = 1.0;
-		report.append("\t\t").append(TextUtilities.formatTwoDecimals(recall * 100));
-
-		f0 = cumulated_f0 / totalValidFields;
-		report.append("\t\t").append(TextUtilities.formatTwoDecimals(f0 * 100));
-
-		report.append("\t(macro average)");
-		report.append("\n");
+		report.append(String.format("%-20s %-12s %-12s %-12s %-7s (macro average)\n",
+				"",
+				TextUtilities.formatTwoDecimals(accuracy * 100),
+				TextUtilities.formatTwoDecimals(precision * 100),
+				TextUtilities.formatTwoDecimals(recall * 100),
+				TextUtilities.formatTwoDecimals(f0 * 100)));
 
 		return report.toString();
 	}

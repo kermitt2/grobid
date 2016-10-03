@@ -10,19 +10,19 @@ import java.io.File;
  */
 public interface Trainer {
 
-    public int createCRFPPData(File corpusPath, File outputFile);
+    int createCRFPPData(File corpusPath, File outputFile);
 
-	public int createCRFPPData(File corpusPath, File outputTrainingFile, File outputEvalFile, double splitRatio);
+	int createCRFPPData(File corpusPath, File outputTrainingFile, File outputEvalFile, double splitRatio);
 
-    public void train();
+    void train();
 
     /**
      *
      * @return a report
      */
-    public String evaluate();
+    String evaluate();
 
-	public String splitTrainEvaluate(Double split);
+	String splitTrainEvaluate(Double split);
 
-    public GrobidModel getModel();
+    GrobidModel getModel();
 }
