@@ -2,6 +2,7 @@ package org.grobid.core.utilities;
 
 import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.layout.LayoutToken;
@@ -19,7 +20,7 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.grobid.core.features.FeatureFactory.test_digit;
+import static org.apache.commons.lang3.StringUtils.trim;
 
 /**
  * Class for holding static methods for text processing.
@@ -73,7 +74,7 @@ public class TextUtilities {
         return res;
     }
 
-    private int getLastPunctuationCharacter(String section) {
+    private static int getLastPunctuationCharacter(String section) {
         int res = -1;
         for (int i = section.length() - 1; i >= 0; i--) {
             if (fullPunctuations.contains("" + section.charAt(i))) {
@@ -93,14 +94,13 @@ public class TextUtilities {
             LayoutToken cur = it.next();
             //the current token is dash, next is new line, and previous one is some sort of word
             if (cur.isNewLineAfter() && cur.getText().equals("-") && prev != null && !prev.getText().trim().isEmpty()) {
-                //skipping new line
                 it.next();
                 if (it.hasNext()) {
                     LayoutToken next = it.next();
                     if (next.getText().equals("conjugated") || prev.getText().equals("anti")) {
                         sb.append("-");
                     }
-                    sb.append(next);
+                    sb.append(StringUtils.trim(next.getText()));
                     normalized = true;
                 }
             } else {
@@ -119,75 +119,59 @@ public class TextUtilities {
         if (text == null)
             return null;
         String res = "";
-        StringTokenizer st = new StringTokenizer(text, "\n");
-        boolean hyphen = false;
-        boolean failure = false;
-        String lastToken = null;
-        boolean isFirstToken = true;
-        String line = null;
+        StringTokenizer st = new StringTokenizer(text, "-");
+
+        boolean firstStep = true;
         while (st.hasMoreTokens()) {
-            if (line != null) {
-                isFirstToken = false;
-            }
-            line = st.nextToken();
+            String section = st.nextToken();
 
-            if (hyphen) {
-                // we get the first token
-                StringTokenizer st2 = new StringTokenizer(line, " ,.);!");
-                if (st2.countTokens() > 1) {
-                    String firstToken = st2.nextToken();
-
-                    // we check if the composed token is in the lexicon
-                    String hyphenToken = lastToken + firstToken;
-                    boolean dehyph = true;
-                    // if number, we do not dehyphenize!
-                    if (test_digit(hyphenToken))
-                        dehyph = false;
-                    else if (Character.isUpperCase(firstToken.charAt(0))) {
-                        // if capital letter at the begining of the first token, we do not dehyphenize!
-                        dehyph = false;
-                    }
-
-                    //if (lex.inDictionary(hyphenToken.toLowerCase())) {
-                    if (dehyph) {
-                        // if yes, it is hyphenization
-                        res += hyphenToken;
-                        line = line.substring(firstToken.length(), line.length());
-                    } else {
-                        // if not
-                        res += lastToken + "-\n";
-                        failure = true;
-                    }
-                } else
-                    res += lastToken + "-\n";
-                hyphen = false;
-            }
-
-            if (line.length() > 0) {
-                if (line.charAt(line.length() - 1) == '-') {
-                    // we get the last token
-                    hyphen = true;
-                    int ind0 = line.lastIndexOf(' ');
-                    int ind1 = line.lastIndexOf('(');
-                    if (ind1 > ind0)
-                        ind0 = ind1;
-                    if (ind0 != -1) {
-                        lastToken = line.substring(ind0 + 1, line.length() - 1);
-                        line = line.substring(0, ind0 + 1);
-                        res += SPACE + line;
-                    } else
-                        lastToken = line.substring(0, line.length() - 1);
+            if (firstStep) {
+                res += trim(section);
+                firstStep = false;
+            } else {
+                String firstToken = getFirstToken(section);
+                if (firstToken.contains("\n")) {
+                    res += trim(section);
                 } else {
-                    if (failure) {
-                        res += line + (st.hasMoreTokens() ? "\n" : "");
-                        failure = false;
-                    } else
-                        res += (isFirstToken ? "" : SPACE) + line + (st.hasMoreTokens() ? "\n" : "");
+                    res += "-" + trim(section);
                 }
             }
         }
+
+        res = res.replace(" . ", ". ");
         res = res.replace("  ", SPACE);
-        return res;
+
+        return res.trim();
+    }
+
+    public static String getLastToken(String section) {
+        String lastToken = section;
+        int lastSpaceIndex = section.lastIndexOf(' ');
+
+        //The last parenthesis cover the case 'this is a (special-one) case'
+        // where the lastToken before the hypen should be 'special' and not '(special'
+/*        int lastParenthesisIndex = section.lastIndexOf('(');
+        if (lastParenthesisIndex > lastSpaceIndex)
+            lastSpaceIndex = lastParenthesisIndex;*/
+
+        if (lastSpaceIndex != -1) {
+            lastToken = section.substring(lastSpaceIndex + 1, section.length());
+        } else {
+            lastToken = section.substring(0, section.length());
+        }
+        return lastToken;
+    }
+
+    public static String getFirstToken(String section) {
+        int firstSpaceIndex = section.indexOf(' ');
+
+        if (firstSpaceIndex == 0) {
+            return getFirstToken(section.substring(1, section.length()));
+        } else if (firstSpaceIndex != -1) {
+            return section.substring(0, firstSpaceIndex);
+        } else  {
+            return section.substring(0, section.length());
+        }
     }
 
 
@@ -199,7 +183,7 @@ public class TextUtilities {
      *
      * @param text the string to be processed without preserved end of lines.
      * @return Returns the dehyphenized string.
-     *
+     * <p>
      * Deprecated method, not needed anymore since the @newline are preserved thanks to the LayoutTokens
      * Use dehypenize
      */
@@ -230,9 +214,9 @@ public class TextUtilities {
                     /*if (lex == null)
                              featureFactory.loadLexicon();*/
                     Lexicon lex = Lexicon.getInstance();
-                    FeatureFactory featureFactory = FeatureFactory.getInstance();
+
                     if (lex.inDictionary(hyphenToken.toLowerCase()) &
-                            !(featureFactory.test_digit(hyphenToken))) {
+                            !(FeatureFactory.test_digit(hyphenToken))) {
                         // if yes, it is hyphenization
                         res += firstToken;
                         section = section.substring(firstToken.length(), section.length());
@@ -249,14 +233,7 @@ public class TextUtilities {
 
             // we get the last token
             hyphen = true;
-            int ind0 = section.lastIndexOf(' ');
-            int ind1 = section.lastIndexOf('(');
-            if (ind1 > ind0)
-                ind0 = ind1;
-            if (ind0 != -1) {
-                lastToken = section.substring(ind0 + 1, section.length());
-            } else
-                lastToken = section.substring(0, section.length());
+            lastToken = getLastToken(section);
 
             if (failure) {
                 res += section;
@@ -750,6 +727,7 @@ public class TextUtilities {
     }
 
     public static String normalizeRegex(String string) {
+        string = string.replace("&", "\\\\&");
         string = string.replace("&", "\\\\&");
         string = string.replace("+", "\\\\+");
         return string;
