@@ -638,5 +638,14 @@ public class GrobidRestService implements GrobidPathes {
 		return GrobidRestProcessFiles.processPDFAnnotation(inputStream, fileName, annotType);
 	}
 
-
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processPDFReferenceAnnotation(InputStream, bool)
+	 */
+	@Path(PATH_REFERENCES_PDF_ANNOTATION)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces("application/json")
+	@POST
+	public Response processPDFReferenceAnnotation(@FormDataParam(INPUT) InputStream inputStream) {
+		return GrobidRestProcessFiles.processPDFReferenceAnnotation(inputStream);
+	}
 }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>iPLay</title>
+  </head>
+  <body>
+    <link type="text/css" href="web/text_layer_builder.css" rel="stylesheet"/>
+    <link type="text/css" href="web/annotation_layer_builder.css" rel="stylesheet"/>
+    <script type="text/javascript" src="web/text_layer_builder.js"></script>
+    <script type="text/javascript" src="web/pdf_link_service.js"></script>
+    <script type="text/javascript" src="web/annotation_layer_builder.js"></script>
+
+    <script type="text/javascript" src="build/pdf.js"></script>
+    <script type="text/javascript">
+        // URL of PDF document
+        var url = "http://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf";
+
+        // Asynchronous download PDF
+        PDFJS.getDocument(url)
+          .then(function(pdf) {
+
+            // Get div#container and cache it for later use
+            var container = document.getElementById("container");
+            // enable hyperlinks within PDF files.
+            var pdfLinkService = new PDFLinkService();
+            pdfLinkService.setDocument(pdf, null);
+
+            // Loop from 1 to total_number_of_pages in PDF document
+            for (var i = 1; i <= pdf.numPages; i++) {
+
+                // Get desired page
+                pdf.getPage(i).then(function(page) {
+
+                  var pageInfo = document.createElement("p");
+                  var t = document.createTextNode("page " + (page.pageIndex + 1) + "/" + (pdf.numPages));
+                  pageInfo.appendChild(t);
+                  container.appendChild(pageInfo);
+
+                  var scale = 1.5;
+                  var viewport = page.getViewport(scale);
+                  var div = document.createElement("div");
+
+                  // Set id attribute with page-#{pdf_page_number} format
+                  div.setAttribute("id", "page-" + (page.pageIndex + 1));
+
+                  // This will keep positions of child elements as per our needs
+                  div.setAttribute("style", "position: relative");
+
+                  // Append div within div#container
+                  container.appendChild(div);
+
+                  // Create a new Canvas element
+                  var canvas = document.createElement("canvas");
+
+                  // Append Canvas within div#page-#{pdf_page_number}
+                  div.appendChild(canvas);
+
+                  var context = canvas.getContext('2d');
+                  canvas.height = viewport.height;
+                  canvas.width = viewport.width;
+
+                  var renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                  };
+
+                  // Render PDF page
+                  page.render(renderContext)
+                      .then(function() {
+                        // Get text-fragments
+                        return page.getTextContent();
+                      })
+                      .then(function(textContent) {
+                        // Create div which will hold text-fragments
+                        var textLayerDiv = document.createElement("div");
+
+                        // Set it's class to textLayer which have required CSS styles
+                        textLayerDiv.setAttribute("class", "textLayer");
+
+                        // Append newly created div in `div#page-#{pdf_page_number}`
+                        div.appendChild(textLayerDiv);
+
+                        // Create new instance of TextLayerBuilder class
+                        var textLayer = new TextLayerBuilder({
+                          textLayerDiv: textLayerDiv, 
+                          pageIndex: page.pageIndex,
+                          viewport: viewport
+                        });
+
+                        // Set text-fragments
+                        textLayer.setTextContent(textContent);
+
+                        // Render text-fragments
+                        textLayer.render();
+                      });
+                });
+            }
+        });
+
+    </script>
+    <div id="container"></div>
+  </body>
+</html>

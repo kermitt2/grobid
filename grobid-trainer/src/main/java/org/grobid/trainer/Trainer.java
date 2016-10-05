@@ -1,5 +1,6 @@
 package org.grobid.trainer;
 
+import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 
 import java.io.File;
@@ -23,5 +24,5 @@ public interface Trainer {
 
 	public String splitTrainEvaluate(Double split);
 
-    public GrobidModels getModel();
+    public GrobidModel getModel();
 }

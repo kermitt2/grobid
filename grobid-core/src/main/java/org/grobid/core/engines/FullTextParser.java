@@ -137,6 +137,7 @@ public class FullTextParser extends AbstractParser {
             // header processing
 			BiblioItem resHeader = new BiblioItem();
            	parsers.getHeaderParser().processingHeaderBlock(config.isConsolidateHeader(), doc, resHeader);
+           	// above the old version of the header block identification, because more robust
            	if ( (resHeader == null) ||
            		 (resHeader.getTitle() == null) || (resHeader.getTitle().trim().length() == 0) ||
            		 (resHeader.getAuthors() == null) || (resHeader.getFullAuthors() == null) ||
@@ -248,7 +249,7 @@ public class FullTextParser extends AbstractParser {
 	                mm = 0;
 					lowestPos = 0.0;
 					spacingPreviousBlock = 0.0;
-				}
+				} 
 
 	            /*if (start) {
 	                newPage = true;
@@ -1298,7 +1299,7 @@ public class FullTextParser extends AbstractParser {
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
 
         for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
-				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabel.FIGURE))) {
+				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.FIGURE))) {
             List<LayoutToken> tokenizationFigure = cluster.concatTokens();
             Figure result = parsers.getFigureParser().processing(
                     tokenizationFigure,
@@ -1568,7 +1569,7 @@ public class FullTextParser extends AbstractParser {
 		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
 
 		for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
-				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabel.TABLE))) {
+				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.TABLE))) {
 			List<LayoutToken> tokenizationTable = cluster.concatTokens();
 			Table result = parsers.getTableParser().processing(
 					tokenizationTable,
