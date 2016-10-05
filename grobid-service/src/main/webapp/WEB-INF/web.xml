@@ -112,6 +112,10 @@
         <servlet-name>grobid-service</servlet-name>
         <url-pattern>/annotatePDF</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/referenceAnnotations</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>grobid/index.html</welcome-file>

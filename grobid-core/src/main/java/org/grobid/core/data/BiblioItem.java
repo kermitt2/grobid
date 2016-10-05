@@ -913,6 +913,16 @@ public class BiblioItem {
 
     public void setFullAffiliations(List<org.grobid.core.data.Affiliation> full) {
         fullAffiliations = full;
+        // if no id is present in the affiliation objects, we add one
+        int num = 0;
+        if (fullAffiliations != null) {
+            for (Affiliation affiliation : fullAffiliations) {
+                if (affiliation.getKey() == null) {
+                    affiliation.setKey("aff"+num);
+                }
+                num++;
+            }
+        }
     }
 
     // temp
@@ -3317,7 +3327,10 @@ public class BiblioItem {
 
                         for (Affiliation aff : author.getAffiliations()) {
                             TextUtilities.appendN(tei, '\t', nbTag + 1);
-                            tei.append("<affiliation>\n");
+                            tei.append("<affiliation");
+                            if (aff.getKey() != null)
+                                tei.append(" key=\"").append(aff.getKey()).append("\"");
+                            tei.append(">\n");
 
                             if (aff.getDepartments() != null) {
                                 if (aff.getDepartments().size() == 1) {
@@ -3442,7 +3455,10 @@ public class BiblioItem {
                     TextUtilities.appendN(tei, '\t', nbTag);
                     tei.append("<author>\n");
                     TextUtilities.appendN(tei, '\t', nbTag+1);
-                    tei.append("<affiliation>\n");
+                    tei.append("<affiliation");
+                    if (aff.getKey() != null)
+                        tei.append(" key=\"").append(aff.getKey()).append("\"");
+                    tei.append(">\n");
 
                     if (aff.getDepartments() != null) {
                         if (aff.getDepartments().size() == 1) {

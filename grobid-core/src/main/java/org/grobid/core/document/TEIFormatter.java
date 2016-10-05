@@ -7,17 +7,13 @@ import nu.xom.Element;
 import nu.xom.Node;
 import nu.xom.Text;
 import org.grobid.core.GrobidModels;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
+import org.grobid.core.data.*;
 import org.grobid.core.data.Date;
-import org.grobid.core.data.Figure;
-import org.grobid.core.data.Keyword;
-import org.grobid.core.data.Person;
-import org.grobid.core.data.Table;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.engines.TaggingLabel;
+import org.grobid.core.engines.TaggingLabels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
@@ -27,29 +23,20 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.utilities.LanguageUtilities;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.Pair;
-import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
-import java.util.TimeZone;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
+import static org.grobid.core.engines.TaggingLabels.TABLE_MARKER;
+
 /**
  * Class for generating a TEI representation of a document.
  *
@@ -58,7 +45,7 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 @SuppressWarnings("StringConcatenationInsideStringBuilderAppend")
 public class TEIFormatter {
     private Document doc = null;
-    public static final Set<TaggingLabel> MARKER_LABELS = Sets.newHashSet(TaggingLabel.CITATION_MARKER, TaggingLabel.FIGURE_MARKER, TaggingLabel.TABLE_MARKER);
+    public static final Set<TaggingLabels> MARKER_LABELS = Sets.newHashSet(TaggingLabels.CITATION_MARKER, TaggingLabels.FIGURE_MARKER, TABLE_MARKER);
 
     // possible association to Grobid customised TEI schemas: DTD, XML schema, RelaxNG or compact RelaxNG
     // DEFAULT means no schema association in the generated XML documents
@@ -780,7 +767,7 @@ public class TEIFormatter {
         }
 
         if ((abstractText != null) && (abstractText.length() != 0)) {
-        	/*String abstractHeader = biblio.getAbstractHeader();
+            /*String abstractHeader = biblio.getAbstractHeader();
             if (abstractHeader == null)
                 abstractHeader = "Abstract";
             tei.append("\t\t\t\t<head");
@@ -988,7 +975,7 @@ public class TEIFormatter {
 					// we skip the last div
 				}
 				else {*/
-				buffer.append(TextUtilities.dehyphenize(acknowResultLines[i]) + "\n");	
+                buffer.append(TextUtilities.dehyphenize(acknowResultLines[i]) + "\n");
                 //buffer.append(acknowResultLines[i] + "\n");
                 //}
             }
@@ -1057,10 +1044,10 @@ public class TEIFormatter {
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
-            Engine.getCntManager().i(clusterLabel);
+            Engine.getCntManager().i((TaggingLabels) clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            if (clusterLabel  == TaggingLabel.SECTION) {
+            if (clusterLabel == TaggingLabels.SECTION) {
                 curDiv = teiElement("div");
                 Element head = teiElement("head");
                 // section numbers
@@ -1073,15 +1060,15 @@ public class TEIFormatter {
                 }
                 curDiv.appendChild(head);
                 divResults.add(curDiv);
-            } else if (clusterLabel == TaggingLabel.EQUATION) {
+            } else if (clusterLabel == TaggingLabels.EQUATION) {
                 curDiv.appendChild(teiElement("formula", clusterContent));
-            } else if (clusterLabel == TaggingLabel.ITEM) {
+            } else if (clusterLabel == TaggingLabels.ITEM) {
                 curDiv.appendChild(teiElement("item", clusterContent));
-            } else if (clusterLabel == TaggingLabel.OTHER) {
+            } else if (clusterLabel == TaggingLabels.OTHER) {
                 Element note = teiElement("note", clusterContent);
                 note.addAttribute(new Attribute("type", "other"));
                 curDiv.appendChild(note);
-            } else if (clusterLabel == TaggingLabel.PARAGRAPH) {
+            } else if (clusterLabel == TaggingLabels.PARAGRAPH) {
                 if (isNewParagraph(lastClusterLabel, curParagraph)) {
                     curParagraph = teiElement("p");
                     curDiv.appendChild(curParagraph);
@@ -1091,14 +1078,14 @@ public class TEIFormatter {
                 List<LayoutToken> refTokens = cluster.concatTokens();
                 String chunkRefString = LayoutTokensUtil.toText(refTokens);
                 // WARNING: should be fixed automatically by improvements in syncronizer
-				// in case the content start with a space, we move it as previous slibing text child 
+                // in case the content start with a space, we move it as previous slibing text child
 //				if (chunkRefString.startsWith(" ")) {
 //					Element parent = curParagraph != null ? curParagraph : curDiv;
 //					parent.appendChild(" ");
 //					chunkRefString = chunkRefString.substring(1, chunkRefString.length());
 //				}
                 List<Node> refNodes;
-                switch (clusterLabel) {
+                switch ((TaggingLabels) clusterLabel) {
                     case CITATION_MARKER:
                         refNodes = markReferencesTEILuceneBased(chunkRefString,
                                 refTokens,
@@ -1189,8 +1176,8 @@ public class TEIFormatter {
     }
 
     private boolean isNewParagraph(TaggingLabel lastClusterLabel, Element curParagraph) {
-        return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabel.FIGURE
-                && lastClusterLabel != TaggingLabel.TABLE)|| curParagraph == null;
+        return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabels.FIGURE
+                && lastClusterLabel != TaggingLabels.TABLE) || curParagraph == null;
     }
 
 //    private StringBuilder toTEITextPieceOld(StringBuilder buffer,
@@ -1891,7 +1878,6 @@ public class TEIFormatter {
 //
 //        return res;
 //    }
-
     public StringBuilder toTEIReferences(StringBuilder tei,
                                          List<BibDataSet> bds,
                                          GrobidAnalysisConfig config) throws Exception {
@@ -2336,8 +2322,8 @@ public class TEIFormatter {
 
 
     public List<Node> markReferencesFigureTEI(String text, List<LayoutToken> refTokens,
-                                          List<Figure> figures,
-                                          boolean generateCoordinates) {
+                                              List<Figure> figures,
+                                              boolean generateCoordinates) {
         if (text == null || text.trim().isEmpty() || figures == null) {
             return null;
         }

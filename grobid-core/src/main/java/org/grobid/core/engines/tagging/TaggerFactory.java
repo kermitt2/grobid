@@ -1,5 +1,6 @@
 package org.grobid.core.engines.tagging;
 
+import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.utilities.GrobidProperties;
 
@@ -11,9 +12,9 @@ import java.util.Map;
  * Date: 3/20/14
  */
 public class TaggerFactory {
-    private static Map<GrobidModels, GenericTagger> cache = new HashMap<GrobidModels, GenericTagger>();
+    private static Map<GrobidModel, GenericTagger> cache = new HashMap<GrobidModel, GenericTagger>();
 
-    public static synchronized GenericTagger getTagger(GrobidModels model) {
+    public static synchronized GenericTagger getTagger(GrobidModel model) {
         GenericTagger t = cache.get(model);
         if (t == null) {
             switch (GrobidProperties.getGrobidCRFEngine()) {

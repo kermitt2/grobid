@@ -2,6 +2,7 @@ package org.grobid.core.features;
 
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.utilities.TextUtilities;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -59,52 +60,16 @@ public class FeaturesVectorCitation {
         res.append(" ").append(string.toLowerCase());
 
         // prefix (4)
-        res.append(" ").append(string.substring(0, 1));
-
-        if (string.length() > 1)
-            res.append(" ").append(string.substring(0, 2));
-        else
-            res.append(" ").append(string.substring(0, 1));
-
-        if (string.length() > 2)
-            res.append(" ").append(string.substring(0, 3));
-        else if (string.length() > 1)
-            res.append(" ").append(string.substring(0, 2));
-        else
-            res.append(" ").append(string.substring(0, 1));
-
-        if (string.length() > 3)
-            res.append(" ").append(string.substring(0, 4));
-        else if (string.length() > 2)
-            res.append(" ").append(string.substring(0, 3));
-        else if (string.length() > 1)
-            res.append(" ").append(string.substring(0, 2));
-        else
-            res.append(" ").append(string.substring(0, 1));
+        res.append(" " + TextUtilities.prefix(string, 1));
+        res.append(" " + TextUtilities.prefix(string, 2));
+        res.append(" " + TextUtilities.prefix(string, 3));
+        res.append(" " + TextUtilities.prefix(string, 4));
 
         // suffix (4)
-        res.append(" ").append(string.charAt(string.length() - 1));
-
-        if (string.length() > 1)
-            res.append(" ").append(string.substring(string.length() - 2, string.length()));
-        else
-            res.append(" ").append(string.charAt(string.length() - 1));
-
-        if (string.length() > 2)
-            res.append(" ").append(string.substring(string.length() - 3, string.length()));
-        else if (string.length() > 1)
-            res.append(" ").append(string.substring(string.length() - 2, string.length()));
-        else
-            res.append(" ").append(string.charAt(string.length() - 1));
-
-        if (string.length() > 3)
-            res.append(" ").append(string.substring(string.length() - 4, string.length()));
-        else if (string.length() > 2)
-            res.append(" ").append(string.substring(string.length() - 3, string.length()));
-        else if (string.length() > 1)
-            res.append(" ").append(string.substring(string.length() - 2, string.length()));
-        else
-            res.append(" ").append(string.charAt(string.length() - 1));
+        res.append(" " + TextUtilities.suffix(string, 1));
+        res.append(" " + TextUtilities.suffix(string, 2));
+        res.append(" " + TextUtilities.suffix(string, 3));
+        res.append(" " + TextUtilities.suffix(string, 4));
 
         // line information (1)
         res.append(" ").append(lineStatus);

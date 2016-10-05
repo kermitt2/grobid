@@ -179,4 +179,14 @@ public class BoundingBox {
     public String toString() {
         return String.format("%d,%.2f,%.2f,%.2f,%.2f", page, x, y, width, height);
     }
+
+    public String toJson() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("\"p\":").append(page).append(", ");
+        builder.append("\"x\":").append(x).append(", ");
+        builder.append("\"y\":").append(y).append(", ");
+        builder.append("\"w\":").append(width).append(", ");
+        builder.append("\"h\":").append(height);
+        return builder.toString();
+    }
 }

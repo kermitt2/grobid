@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/kermitt2/grobid.svg?branch=master)](https://travis-ci.org/kermitt2/grobid)
 [![Coverage Status](https://coveralls.io/repos/kermitt2/grobid/badge.svg)](https://coveralls.io/r/kermitt2/grobid)
 [![Documentation Status](https://readthedocs.org/projects/grobid/badge/?version=latest)](https://readthedocs.org/projects/grobid/?badge=latest)
-
+[![Docker Status](https://images.microbadger.com/badges/version/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Latest Docker HUB image")
 
 ## Purpose
 
@@ -31,7 +31,7 @@ GROBID can be considered as production ready. Deployments in production includes
 The key aspects of GROBID are the following ones:
 
 + Written in Java, with JNI call to native CRF libraries. 
-+ High performance - on a modern but low profile MacBook Pro: header extraction from 4000 PDF in 10 minutes (or from 3 PDF per second with the RESTful API), parsing of 3000 references in 18 seconds. [INIST](http://www.inist.fr/lang=en) recently scaled GROBID REST service for processing 1 million PDF in 1 day on a Xeon 10 CPU E5-2660 and 10 GB memory (3GB used in average) with 9 threads.
++ High performance - on a 2011 low profile MacBook Pro: header extraction from 4000 PDF in 10 minutes (or from 3 PDF per second with the RESTful API), parsing of 3000 references in 18 seconds. [INIST](http://www.inist.fr/lang=en) recently scaled GROBID REST service for processing 1 million PDF in 1 day on a Xeon 10 CPU E5-2660 and 10 GB memory (3GB used in average) with 9 threads - so around 11,5 PDF per second.
 + Lazy loading of models and resources. Depending on the selectd process, only the required data are loaded in memory. For instance, extracting only metadata header from a PDF requires less than 2 GB memory in a multithreading usage, extracting citations uses around 3GB and extracting all the PDF structure around 4GB.  
 + Robust and fast PDF processing based on Xpdf and dedicated post-processing.
 + Modular and reusable machine learning models. The extractions are based on Linear Chain Conditional Random Fields which is currently the state of the art in bibliographical information extraction and labeling. The specialized CRF models are cascaded to build a complete document structure.  
@@ -43,13 +43,13 @@ The key aspects of GROBID are the following ones:
 
 The GROBID extraction and parsing algorithms uses the [Wapiti CRF library](http://wapiti.limsi.fr). [CRF++ library](http://crfpp.googlecode.com/svn/trunk/doc/index.html) is not supported since GROBID version 0.4. The C++ libraries are transparently integrated as JNI with dynamic call based on the current OS. 
 
-GROBID should run properly "out of the box" on MacOS X, Linux (32 and 64 bits). GROBID does currently not run on Windows environments because the required and up-to-date CRF native binaries are not yet compiled for this platform (contributors to work on Windows support are very welcome!).
+GROBID should run properly "out of the box" on MacOS X, Linux (32 and 64 bits) and Windows. 
 
 ## Demo
 
 For testing purposes, a public GROBID demo server is available at the following address: [http://grobid.science-miner.com](http://grobid.science-miner.com)
 
-The Web service are documented in the [service manual](https://github.com/kermitt2/grobid/blob/master/grobid-service/src/main/doc/grobid-service-manual.pdf).
+The Web services are documented in the [service manual](https://github.com/kermitt2/grobid/blob/master/grobid-service/src/main/doc/grobid-service-manual.pdf).
 
 _Warning_: Some quota and query limitation apply to the demo server! If you are interested in using such online GROBID service for your project without limitation (and with support), please contact us (<patrice.lopez@science-miner.com>).
 
@@ -59,7 +59,15 @@ Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detaile
 
 ## Latest version
 
-The latest stable release of GROBID is version ```0.4.0```. As compared to previous version ```0.3.9```, this version brings:
+The latest stable release of GROBID is version ```0.4.1```. As compared to previous version ```0.4.0```, this version brings:
+
++ Support for Windows thanks to the contributions of Christopher Boumenot!
++ Support to Docker.
++ Fixes and refactoring.
++ New web services for PDF annotation and updated web console application.
++ Some improvements on figure/table extraction - but still experimental at this stage (work in progress, as the whole full text model).
+
+New in previous release ```0.4.0```:
 
 + Improvement of the recognition of citations thanks to refinements of CRF features - +4% in f-score for the PubMed Central sample.
 + Improvement of the full text model, with new features and the introduction of two additional models for figures and tables.

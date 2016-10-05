@@ -1,6 +1,6 @@
 <h1>GROBID service</h1>
 
-The GROBID RESTful API provides a simple and efficient way to use the tool. A service console is available to test  GROBID in a human friendly manner.
+The GROBID RESTful API provides a simple and efficient way to use the tool. A service console is available to test GROBID in a human friendly manner. For production and benchmarking, we recommand to use this web service mode on a multi-core machine.  
 
 ## Start the server
 Go under the `grobid/grobid-service` directory:
@@ -40,7 +40,7 @@ You can also test the RESTFul API with **curl** command lines:
 ```
 * extraction and parsing of all references in a PDF without consolidation (default value):
 ```bash
-> curl -v --form --form input=@./thefile.pdf localhost:8080/processReferences
+> curl -v --form input=@./thefile.pdf localhost:8080/processReferences
 ```
 
 ## Full documentation
