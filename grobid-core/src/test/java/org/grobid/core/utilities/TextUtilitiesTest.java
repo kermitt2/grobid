@@ -1,15 +1,20 @@
 package org.grobid.core.utilities;
 
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.test.EngineTest;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 @Ignore
-public class TextUtilitiesTest extends EngineTest{
+public class TextUtilitiesTest extends EngineTest {
 
     @Test
     public void testHTMLEncode_complete() throws Exception {
@@ -79,6 +84,21 @@ public class TextUtilitiesTest extends EngineTest{
         assertThat(TextUtilities.dehyphenizeHard("Anonymous. Runtime process infection. Phrack, 11(59):ar-\n+ " +
                         "            ticle 8 of 18, December 2002."),
                 is("Anonymous. Runtime process infection. Phrack, 11(59):article 8 of 18, December 2002."));
+    }
+
+    @Test
+    public void testDehyphenizationWithLayoutTokens() throws Exception {
+        List<LayoutToken> tokens = new ArrayList<>();
+        tokens.add(new LayoutToken("This"));
+        tokens.add(new LayoutToken(" "));
+        tokens.add(new LayoutToken("is"));
+        tokens.add(new LayoutToken(" "));
+        tokens.add(new LayoutToken("hype-"));
+        tokens.add(new LayoutToken("\n"));
+        tokens.add(new LayoutToken("nized."));
+        String output = TextUtilities.dehyphenize(tokens);
+        assertNotNull(output);
+        assertThat(output, is("This is hypenized."));
     }
 
     @Test
