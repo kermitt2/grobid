@@ -1,7 +1,6 @@
 package org.grobid.core.tokenization;
 
 import org.grobid.core.engines.TaggingLabel;
-import org.grobid.core.engines.TaggingLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.layout.LayoutToken;
 
@@ -15,16 +14,16 @@ public class LabeledTokensContainer {
 
     private List<LayoutToken> layoutTokens;
     private String token;
-    private TaggingLabels taggingLabels;
+    private TaggingLabel taggingLabel;
     private boolean beginning;
     private boolean spacePreceding;
     private boolean newLinePreceding;
     private String featureString;
 
-    public LabeledTokensContainer(List<LayoutToken> layoutTokens, String token, TaggingLabels taggingLabels, boolean beginning) {
+    public LabeledTokensContainer(List<LayoutToken> layoutTokens, String token, TaggingLabel taggingLabel, boolean beginning) {
         this.layoutTokens = layoutTokens;
         this.token = token;
-        this.taggingLabels = taggingLabels;
+        this.taggingLabel = taggingLabel;
         this.beginning = beginning;
     }
 
@@ -36,8 +35,8 @@ public class LabeledTokensContainer {
         return token;
     }
 
-    public TaggingLabels getTaggingLabels() {
-        return taggingLabels;
+    public TaggingLabel getTaggingLabel() {
+        return taggingLabel;
     }
 
     public boolean isBeginning() {
@@ -45,12 +44,12 @@ public class LabeledTokensContainer {
     }
 
     public String getPlainLabel() {
-        return taggingLabels.getLabel();
+        return taggingLabel.getLabel();
     }
 
     public String getFullLabel() {
-        return isBeginning() ? GenericTaggerUtils.START_ENTITY_LABEL_PREFIX + taggingLabels.getLabel()
-                : taggingLabels.getLabel();
+        return isBeginning() ? GenericTaggerUtils.START_ENTITY_LABEL_PREFIX + taggingLabel.getLabel()
+                : taggingLabel.getLabel();
     }
 
     public boolean isSpacePreceding() {

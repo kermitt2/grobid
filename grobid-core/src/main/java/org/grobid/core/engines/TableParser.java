@@ -58,7 +58,7 @@ public class TableParser extends AbstractParser {
 				continue;
 			}
 
-			TaggingLabels clusterLabel = cluster.getTaggingLabels();
+			TaggingLabel clusterLabel = cluster.getTaggingLabel();
 			Engine.getCntManager().i(clusterLabel);
 
 			List<LayoutToken> tokens = cluster.concatTokens();

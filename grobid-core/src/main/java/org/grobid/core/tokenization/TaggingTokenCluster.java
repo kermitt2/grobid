@@ -4,7 +4,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import org.grobid.core.engines.TaggingLabels;
+import org.grobid.core.engines.TaggingLabel;
 import org.grobid.core.layout.LayoutToken;
 
 import java.util.ArrayList;
@@ -30,10 +30,10 @@ public class TaggingTokenCluster {
         }
     };
     private List<LabeledTokensContainer> labeledTokensContainers = new ArrayList<>();
-    private TaggingLabels taggingLabels;
+    private TaggingLabel taggingLabel;
 
-    public TaggingTokenCluster(TaggingLabels taggingLabels) {
-        this.taggingLabels = taggingLabels;
+    public TaggingTokenCluster(TaggingLabel taggingLabel) {
+        this.taggingLabel = taggingLabel;
     }
 
     public void addLabeledTokensContainer(LabeledTokensContainer cont) {
@@ -44,8 +44,8 @@ public class TaggingTokenCluster {
         return labeledTokensContainers;
     }
 
-    public TaggingLabels getTaggingLabels() {
-        return taggingLabels;
+    public TaggingLabel getTaggingLabel() {
+        return taggingLabel;
     }
 
     @Override
