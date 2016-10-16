@@ -4,7 +4,7 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
 import org.grobid.core.GrobidModels;
-import org.grobid.core.engines.TaggingLabels;
+import org.grobid.core.engines.TaggingLabel;
 import org.grobid.core.layout.LayoutToken;
 
 import java.util.ArrayList;
@@ -20,9 +20,9 @@ public class TaggingTokenClusteror {
     private final TaggingTokenSynchronizer taggingTokenSynchronizer;
 
     public static class LabelTypePredicate implements Predicate<TaggingTokenCluster> {
-        private TaggingLabels label;
+        private TaggingLabel label;
 
-        public LabelTypePredicate(TaggingLabels label) {
+        public LabelTypePredicate(TaggingLabel label) {
             this.label = label;
         }
 

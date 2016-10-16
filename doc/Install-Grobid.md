@@ -10,14 +10,16 @@ For minimal or cloud based / container system like Linode, AWS, Docker, etc migh
 
 ###Latest stable release
 
-The latest stable release of GROBID is version ```0.4.0``` which can be downloaded as follow: 
+The latest stable release of GROBID is version ```0.4.1``` which can be downloaded as follow: 
 ```bash
-> wget https://github.com/kermitt2/grobid/archive/grobid-parent-0.4.0.zip
-> unzip grobid-grobid-parent-0.4.0.zip
+> wget https://github.com/kermitt2/grobid/archive/grobid-parent-0.4.1.zip
+> unzip grobid-grobid-parent-0.4.1.zip
 ```
-The current working version is ```0.4.1-SNAPSHOT```, which can be downloaded from GitHub and built as follow: 
+
+or using the [docker](Grobid-docker.md) container. 
 
 ###Current development version
+The current development version is ```0.4.2-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
 
 Clone source code from github:
 ```bash

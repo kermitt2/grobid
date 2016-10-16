@@ -1299,7 +1299,7 @@ public class FullTextParser extends AbstractParser {
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
 
         for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
-				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.FIGURE))) {
+				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabel.FIGURE))) {
             List<LayoutToken> tokenizationFigure = cluster.concatTokens();
             Figure result = parsers.getFigureParser().processing(
                     tokenizationFigure,
@@ -1569,7 +1569,7 @@ public class FullTextParser extends AbstractParser {
 		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
 
 		for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
-				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.TABLE))) {
+				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabel.TABLE))) {
 			List<LayoutToken> tokenizationTable = cluster.concatTokens();
 			Table result = parsers.getTableParser().processing(
 					tokenizationTable,
