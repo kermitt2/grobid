@@ -43,7 +43,8 @@ public enum GrobidModels implements GrobidModel {
     UNITS("units"),
     VALUE("value"),
     //	ENTITIES_BIOTECH("entities/biotech"),
-    ENTITIES_BIOTECH("bio");
+    ENTITIES_BIOTECH("bio"),
+    ASTRO("astro");
 
     /**
      * Absolute path to the model.

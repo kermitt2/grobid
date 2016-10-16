@@ -55,7 +55,11 @@ public enum TaggingLabels implements TaggingLabel {
     UNIT_VALUE_BASE(GrobidModels.UNITS, "<base>"),
     UNIT_VALUE_POW(GrobidModels.UNITS, "<pow>"),
     UNIT_VALUE_PREFIX(GrobidModels.UNITS, "<prefix>"),
-    UNIT_VALUE_OTHER(GrobidModels.UNITS, "<other>");
+    UNIT_VALUE_OTHER(GrobidModels.UNITS, "<other>"),
+
+    // labels for astronomical entity recognition
+    ASTRO_OBJECT(GrobidModels.ASTRO, "<object>"),
+    ASTRO_OTHER(GrobidModels.ASTRO, "<other>");
 
     private final GrobidModel grobidModel;
     private final String label;
