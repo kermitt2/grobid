@@ -61,7 +61,7 @@ class FigureParser extends AbstractParser {
                 continue;
             }
 
-            TaggingLabels clusterLabel = cluster.getTaggingLabels();
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
             Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));

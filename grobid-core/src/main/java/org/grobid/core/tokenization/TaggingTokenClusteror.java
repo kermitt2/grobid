@@ -4,7 +4,7 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
 import org.grobid.core.GrobidModels;
-import org.grobid.core.engines.TaggingLabels;
+import org.grobid.core.engines.TaggingLabel;
 import org.grobid.core.layout.LayoutToken;
 
 import java.util.ArrayList;
@@ -20,15 +20,15 @@ public class TaggingTokenClusteror {
     private final TaggingTokenSynchronizer taggingTokenSynchronizer;
 
     public static class LabelTypePredicate implements Predicate<TaggingTokenCluster> {
-        private TaggingLabels label;
+        private TaggingLabel label;
 
-        public LabelTypePredicate(TaggingLabels label) {
+        public LabelTypePredicate(TaggingLabel label) {
             this.label = label;
         }
 
         @Override
         public boolean apply(TaggingTokenCluster taggingTokenCluster) {
-            return taggingTokenCluster.getTaggingLabels() == label;
+            return taggingTokenCluster.getTaggingLabel() == label;
         }
     }
 
@@ -53,11 +53,11 @@ public class TaggingTokenClusteror {
 		// a boolean is introduced to indicate the start of the sequence in the case the label
 		// has no beginning indicator (e.g. I-)
 		boolean begin = true; 
-        TaggingTokenCluster curCluster = new TaggingTokenCluster(it.peek().getTaggingLabels());
+        TaggingTokenCluster curCluster = new TaggingTokenCluster(it.peek().getTaggingLabel());
         while (it.hasNext()) {
             LabeledTokensContainer cont = it.next();
-            if (begin || cont.isBeginning() || cont.getTaggingLabels() != curCluster.getTaggingLabels()) {
-                curCluster = new TaggingTokenCluster(cont.getTaggingLabels());
+            if (begin || cont.isBeginning() || cont.getTaggingLabel() != curCluster.getTaggingLabel()) {
+                curCluster = new TaggingTokenCluster(cont.getTaggingLabel());
                 result.add(curCluster);
             }
             curCluster.addLabeledTokensContainer(cont);
