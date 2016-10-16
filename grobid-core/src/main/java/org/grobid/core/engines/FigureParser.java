@@ -62,10 +62,10 @@ class FigureParser extends AbstractParser {
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
-            Engine.getCntManager().i((TaggingLabels) clusterLabel);
+            Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            switch ((TaggingLabels) clusterLabel) {
+            switch (clusterLabel) {
                 case FIG_DESC:
                     figure.appendCaption(clusterContent);
                     break;
