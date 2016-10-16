@@ -1016,7 +1016,7 @@ public class TEIFormatter {
                                          GrobidAnalysisConfig config) throws Exception {
 
 
-        TaggingLabel lastClusterLabel = null;
+        TaggingLabels lastClusterLabel = null;
 
         int startPosition = buffer.length();
 
@@ -1043,8 +1043,8 @@ public class TEIFormatter {
                 continue;
             }
 
-            TaggingLabel clusterLabel = cluster.getTaggingLabel();
-            Engine.getCntManager().i((TaggingLabels) clusterLabel);
+            TaggingLabels clusterLabel = cluster.getTaggingLabels();
+            Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
             if (clusterLabel == TaggingLabels.SECTION) {
@@ -1085,7 +1085,7 @@ public class TEIFormatter {
 //					chunkRefString = chunkRefString.substring(1, chunkRefString.length());
 //				}
                 List<Node> refNodes;
-                switch ((TaggingLabels) clusterLabel) {
+                switch (clusterLabel) {
                     case CITATION_MARKER:
                         refNodes = markReferencesTEILuceneBased(chunkRefString,
                                 refTokens,
@@ -1112,7 +1112,7 @@ public class TEIFormatter {
                 }
             }
 
-            lastClusterLabel = cluster.getTaggingLabel();
+            lastClusterLabel = cluster.getTaggingLabels();
         }
 
         buffer.append(XmlBuilderUtils.toXml(divResults));
@@ -1175,7 +1175,7 @@ public class TEIFormatter {
         return buffer;
     }
 
-    private boolean isNewParagraph(TaggingLabel lastClusterLabel, Element curParagraph) {
+    private boolean isNewParagraph(TaggingLabels lastClusterLabel, Element curParagraph) {
         return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabels.FIGURE
                 && lastClusterLabel != TaggingLabels.TABLE) || curParagraph == null;
     }

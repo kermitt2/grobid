@@ -117,7 +117,7 @@ public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer
 
         tokensAndLabelsPtr++;
         LabeledTokensContainer labeledTokensContainer =
-                new LabeledTokensContainer(layoutTokenBuffer, resultToken, TaggingLabels.labelFor(grobidModel, label),
+                new LabeledTokensContainer(layoutTokenBuffer, resultToken, TaggingLabels.getLabel(grobidModel, label),
                 GenericTaggerUtils.isBeginningOfEntity(label));
 
         labeledTokensContainer.setFeatureString(featureString);
