@@ -17,8 +17,6 @@ import org.slf4j.LoggerFactory;
 import java.util.Collections;
 import java.util.List;
 
-import static org.grobid.core.engines.TaggingLabels.*;
-
 /**
  * @author Patrice
  */
@@ -61,11 +59,11 @@ public class TableParser extends AbstractParser {
 			}
 
 			TaggingLabel clusterLabel = cluster.getTaggingLabel();
-			Engine.getCntManager().i((TaggingLabels) clusterLabel);
+			Engine.getCntManager().i(clusterLabel);
 
 			List<LayoutToken> tokens = cluster.concatTokens();
 			String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));
-			switch ((TaggingLabels) clusterLabel) {
+			switch (clusterLabel) {
 				case TBL_DESC:
 					table.appendCaption(clusterContent);
 					table.getFullDescriptionTokens().addAll(tokens);

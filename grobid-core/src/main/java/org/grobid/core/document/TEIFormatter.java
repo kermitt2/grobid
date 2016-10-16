@@ -13,7 +13,6 @@ import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.engines.TaggingLabel;
-import org.grobid.core.engines.TaggingLabels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
@@ -35,7 +34,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
-import static org.grobid.core.engines.TaggingLabels.TABLE_MARKER;
+import static org.grobid.core.engines.TaggingLabel.TABLE_MARKER;
 
 /**
  * Class for generating a TEI representation of a document.
@@ -45,7 +44,7 @@ import static org.grobid.core.engines.TaggingLabels.TABLE_MARKER;
 @SuppressWarnings("StringConcatenationInsideStringBuilderAppend")
 public class TEIFormatter {
     private Document doc = null;
-    public static final Set<TaggingLabels> MARKER_LABELS = Sets.newHashSet(TaggingLabels.CITATION_MARKER, TaggingLabels.FIGURE_MARKER, TABLE_MARKER);
+    public static final Set<TaggingLabel> MARKER_LABELS = Sets.newHashSet(TaggingLabel.CITATION_MARKER, TaggingLabel.FIGURE_MARKER, TABLE_MARKER);
 
     // possible association to Grobid customised TEI schemas: DTD, XML schema, RelaxNG or compact RelaxNG
     // DEFAULT means no schema association in the generated XML documents
@@ -1044,10 +1043,10 @@ public class TEIFormatter {
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
-            Engine.getCntManager().i((TaggingLabels) clusterLabel);
+            Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            if (clusterLabel == TaggingLabels.SECTION) {
+            if (clusterLabel == TaggingLabel.SECTION) {
                 curDiv = teiElement("div");
                 Element head = teiElement("head");
                 // section numbers
@@ -1060,15 +1059,15 @@ public class TEIFormatter {
                 }
                 curDiv.appendChild(head);
                 divResults.add(curDiv);
-            } else if (clusterLabel == TaggingLabels.EQUATION) {
+            } else if (clusterLabel == TaggingLabel.EQUATION) {
                 curDiv.appendChild(teiElement("formula", clusterContent));
-            } else if (clusterLabel == TaggingLabels.ITEM) {
+            } else if (clusterLabel == TaggingLabel.ITEM) {
                 curDiv.appendChild(teiElement("item", clusterContent));
-            } else if (clusterLabel == TaggingLabels.OTHER) {
+            } else if (clusterLabel == TaggingLabel.OTHER) {
                 Element note = teiElement("note", clusterContent);
                 note.addAttribute(new Attribute("type", "other"));
                 curDiv.appendChild(note);
-            } else if (clusterLabel == TaggingLabels.PARAGRAPH) {
+            } else if (clusterLabel == TaggingLabel.PARAGRAPH) {
                 if (isNewParagraph(lastClusterLabel, curParagraph)) {
                     curParagraph = teiElement("p");
                     curDiv.appendChild(curParagraph);
@@ -1085,7 +1084,7 @@ public class TEIFormatter {
 //					chunkRefString = chunkRefString.substring(1, chunkRefString.length());
 //				}
                 List<Node> refNodes;
-                switch ((TaggingLabels) clusterLabel) {
+                switch (clusterLabel) {
                     case CITATION_MARKER:
                         refNodes = markReferencesTEILuceneBased(chunkRefString,
                                 refTokens,
@@ -1176,8 +1175,8 @@ public class TEIFormatter {
     }
 
     private boolean isNewParagraph(TaggingLabel lastClusterLabel, Element curParagraph) {
-        return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabels.FIGURE
-                && lastClusterLabel != TaggingLabels.TABLE) || curParagraph == null;
+        return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabel.FIGURE
+                && lastClusterLabel != TaggingLabel.TABLE) || curParagraph == null;
     }
 
 //    private StringBuilder toTEITextPieceOld(StringBuilder buffer,
