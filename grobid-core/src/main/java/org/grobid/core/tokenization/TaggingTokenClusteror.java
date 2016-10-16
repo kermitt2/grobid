@@ -28,7 +28,7 @@ public class TaggingTokenClusteror {
 
         @Override
         public boolean apply(TaggingTokenCluster taggingTokenCluster) {
-            return taggingTokenCluster.getTaggingLabel() == label;
+            return taggingTokenCluster.getTaggingLabels() == label;
         }
     }
 
@@ -53,11 +53,11 @@ public class TaggingTokenClusteror {
 		// a boolean is introduced to indicate the start of the sequence in the case the label
 		// has no beginning indicator (e.g. I-)
 		boolean begin = true; 
-        TaggingTokenCluster curCluster = new TaggingTokenCluster(it.peek().getTaggingLabel());
+        TaggingTokenCluster curCluster = new TaggingTokenCluster(it.peek().getTaggingLabels());
         while (it.hasNext()) {
             LabeledTokensContainer cont = it.next();
-            if (begin || cont.isBeginning() || cont.getTaggingLabel() != curCluster.getTaggingLabel()) {
-                curCluster = new TaggingTokenCluster(cont.getTaggingLabel());
+            if (begin || cont.isBeginning() || cont.getTaggingLabels() != curCluster.getTaggingLabels()) {
+                curCluster = new TaggingTokenCluster(cont.getTaggingLabels());
                 result.add(curCluster);
             }
             curCluster.addLabeledTokensContainer(cont);

@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentMap;
  * Created by zholudev on 11/01/16.
  * Representing label that can be tagged
  */
-public enum TaggingLabels implements TaggingLabel {
+public enum TaggingLabels {
 
     //fulltext
     CITATION_MARKER(GrobidModels.FULLTEXT, "<citation_marker>"),
@@ -40,6 +40,8 @@ public enum TaggingLabels implements TaggingLabel {
     TBL_LABEL(GrobidModels.TABLE, "<label>"),
     TBL_OTHER(GrobidModels.TABLE, "<other>"),
 
+    //TODO: move them in the underlying modules
+
     // labels for quantities/measurements
     QUANTITY_VALUE_ATOMIC(GrobidModels.QUANTITIES, "<valueAtomic>"),
     QUANTITY_VALUE_LEAST(GrobidModels.QUANTITIES, "<valueLeast>"),
@@ -61,27 +63,42 @@ public enum TaggingLabels implements TaggingLabel {
     ASTRO_OBJECT(GrobidModels.ASTRO, "<object>"),
     ASTRO_OTHER(GrobidModels.ASTRO, "<other>");
 
+
+
     private final GrobidModel grobidModel;
     private final String label;
 
-    private static final ConcurrentMap<Pair<GrobidModel, String>, TaggingLabel> cache = new ConcurrentHashMap<>();
+    private static final ConcurrentMap<Pair<GrobidModel, String>, TaggingLabels> cache = new ConcurrentHashMap<>();
+
+    static {
+        for (TaggingLabels l : values()) {
+            cache.put(new Pair<>(l.grobidModel, l.label), l);
+        }
+    }
 
     TaggingLabels(GrobidModel grobidModel, String label) {
         this.grobidModel = grobidModel;
         this.label = label;
     }
 
-    @Override
     public GrobidModel getGrobidModel() {
         return grobidModel;
     }
 
-    @Override
     public String getLabel() {
         return label;
     }
 
-    public static TaggingLabel labelFor(final GrobidModel model, final String label) {
+    public static TaggingLabels getLabel(GrobidModels model, String tag) {
+        String plainLabel = GenericTaggerUtils.getPlainLabel(tag);
+        TaggingLabels l = cache.get(new Pair<>(model, plainLabel));
+        if (l == null) {
+            throw new IllegalArgumentException("Label " + plainLabel + " not found for model " + model);
+        }
+        return l;
+    }
+
+    /*public static TaggingLabel labelFor(final GrobidModel model, final String label) {
         if (cache.isEmpty()) {
             for (TaggingLabels l : values()) {
                 cache.putIfAbsent(new Pair<GrobidModel, String>(l.getGrobidModel(), l.getLabel()), l);
@@ -90,7 +107,7 @@ public enum TaggingLabels implements TaggingLabel {
 
         final String plainLabel = GenericTaggerUtils.getPlainLabel(label);
 
-        cache.putIfAbsent(new Pair<GrobidModel, String>(model, plainLabel.toString(/* null-check */)),
+        cache.putIfAbsent(new Pair<GrobidModel, String>(model, plainLabel.toString(*//* null-check *//*)),
                 new TaggingLabel() {
                     @Override
                     public String getLabel() {
@@ -105,6 +122,6 @@ public enum TaggingLabels implements TaggingLabel {
         );
 
         return cache.get(new Pair(model, plainLabel));
-    }
+    }*/
 
 }
