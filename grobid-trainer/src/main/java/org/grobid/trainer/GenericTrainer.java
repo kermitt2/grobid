@@ -15,4 +15,6 @@ public interface GenericTrainer {
 	public void setWindow(int window);
 	public double getEpsilon();
 	public int getWindow();
+	public int getNbMaxIterations();
+	public void setNbMaxIterations(int iterations);
 }

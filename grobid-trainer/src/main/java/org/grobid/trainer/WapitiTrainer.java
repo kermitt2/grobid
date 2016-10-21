@@ -19,6 +19,7 @@ public class WapitiTrainer implements GenericTrainer {
 	// default training parameters (only exploited by Wapiti)
 	protected double epsilon = 0.00001; // default size of the interval for stopping criterion
 	protected int window = 20; // default similar to CRF++
+    protected int nbMaxIterations = 2000; // by default maximum of training iterations
 
     @Override
     public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model) {
@@ -29,7 +30,7 @@ public class WapitiTrainer implements GenericTrainer {
 //       		" --algo sgd-l1" +
 			" -e " + BigDecimal.valueOf(epsilon).toPlainString() +
 			" -w " + window +
-			""
+			" -i " + nbMaxIterations
         );
     }
 
@@ -56,5 +57,15 @@ public class WapitiTrainer implements GenericTrainer {
     @Override
     public int getWindow() {
         return window;
+    }
+
+    @Override
+    public void setNbMaxIterations(int interations) {
+        this.nbMaxIterations = interations;
+    }
+    
+    @Override
+    public int getNbMaxIterations() {
+        return nbMaxIterations;
     }
 }
