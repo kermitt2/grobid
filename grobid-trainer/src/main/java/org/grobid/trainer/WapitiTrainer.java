@@ -17,8 +17,8 @@ public class WapitiTrainer implements GenericTrainer {
     public static final String WAPITI = "wapiti";
 
 	// default training parameters (only exploited by Wapiti)
-	private double epsilon = 0.00001; // default size of the interval for stopping criterion
-	private int window = 20; // default similar to CRF++
+	protected double epsilon = 0.00001; // default size of the interval for stopping criterion
+	protected int window = 20; // default similar to CRF++
 
     @Override
     public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model) {
