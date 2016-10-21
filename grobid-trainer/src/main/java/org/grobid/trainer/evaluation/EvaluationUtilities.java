@@ -190,7 +190,7 @@ public class EvaluationUtilities {
 				while (st.hasMoreTokens()) {
 					currentToken = st.nextToken();
 					if (currentToken != null) {
-						if (currentToken.startsWith("I-") || currentToken.startsWith("E-")) {
+						if (currentToken.startsWith("I-") || currentToken.startsWith("E-") || currentToken.startsWith("B-")) {
 							currentToken = currentToken.substring(2, currentToken.length());
 						}
 					}
@@ -202,7 +202,7 @@ public class EvaluationUtilities {
 				// it's quite bad to have something CRF engine dependent here, but hard to avoid
 				if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
 					previousToken = expected.get(e);
-					if (previousToken.startsWith("I-") || previousToken.startsWith("E-")) {
+					if (previousToken.startsWith("I-") || previousToken.startsWith("E-") || previousToken.startsWith("B-")) {
 						previousToken = previousToken.substring(2, previousToken.length());
 					}
 					e++;
@@ -488,7 +488,7 @@ public class EvaluationUtilities {
 				while (st.hasMoreTokens()) {
 					currentToken = st.nextToken();
 					if (currentToken != null) {
-						if (currentToken.startsWith("I-") || currentToken.startsWith("E-")) {
+						if (currentToken.startsWith("I-") || currentToken.startsWith("E-") || currentToken.startsWith("B-")) {
 							currentToken = currentToken.substring(2, currentToken.length());
 						}
 					}
@@ -500,7 +500,7 @@ public class EvaluationUtilities {
 				// it's quite bad to have something CRF engine dependent here, but hard to avoid
 				if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
 					previousToken = expected.get(e);
-					if (previousToken.startsWith("I-") || previousToken.startsWith("E-")) {
+					if (previousToken.startsWith("I-") || previousToken.startsWith("E-") || previousToken.startsWith("B-")) {
 						previousToken = previousToken.substring(2, previousToken.length());
 					}
 					e++;
@@ -774,7 +774,7 @@ public class EvaluationUtilities {
 					while (st.hasMoreTokens()) {
 						currentToken = st.nextToken();
 						if (currentToken != null) {
-							if (currentToken.startsWith("I-") || currentToken.startsWith("E-")) {
+							if (currentToken.startsWith("I-") || currentToken.startsWith("E-") || currentToken.startsWith("B-")) {
 								currentToken = currentToken.substring(2, currentToken.length());
 							}
 						}
@@ -786,7 +786,7 @@ public class EvaluationUtilities {
 					// it's quite bad to have something CRF engine dependent here, but hard to avoid
 					if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
 						previousToken = expected.get(e);
-						if (previousToken.startsWith("I-") || previousToken.startsWith("E-")) {
+						if (previousToken.startsWith("I-") || previousToken.startsWith("E-") || previousToken.startsWith("B-")) {
 							previousToken = previousToken.substring(2, previousToken.length());
 						}
 						e++;
@@ -853,7 +853,7 @@ public class EvaluationUtilities {
 		i = 0;
 		while (i < labels.size()) {
 			String label = labels.get(i).trim();
-			if (label.equals("<other>") || label.equals("base") ) {
+			if (label.equals("<other>") || label.equals("base") || label.equals("O")) {
 				i++;
 				continue;
 			}
