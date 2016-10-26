@@ -116,10 +116,10 @@ public class Segmentation extends AbstractParser {
             // keep it clean when leaving...
             if (config.getPdfAssetPath() == null) {
                 // remove the pdf2xml tmp file
-                DocumentSource.close(documentSource, false);
+                DocumentSource.close(documentSource, false, true);
             } else {
                 // remove the pdf2xml tmp files, including the sub-directories
-                DocumentSource.close(documentSource, true);
+                DocumentSource.close(documentSource, true, true);
             }
         }
     }
@@ -706,7 +706,7 @@ public class Segmentation extends AbstractParser {
             throw new GrobidException("An exception occured while running Grobid training" +
                     " data generation for segmentation model.", e);
         } finally {
-            DocumentSource.close(documentSource, true);
+            DocumentSource.close(documentSource, true, true);
         }
     }
 

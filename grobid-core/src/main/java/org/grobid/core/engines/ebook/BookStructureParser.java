@@ -86,7 +86,7 @@ public class BookStructureParser extends AbstractParser {
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
             if (source != null) {
-                source.close(false);
+                source.close(false, true);
             }
         }
     }
