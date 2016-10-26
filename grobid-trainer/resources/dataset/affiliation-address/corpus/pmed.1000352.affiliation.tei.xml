@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">University of Queensland</orgName>,
+							<address>
+								<settlement>Brisbane</settlement>,
+								<region>Queensland</region>,
+								<country>Australia</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Healthy Skepticism</orgName>,
+							<address>
+								<settlement>Willunga</settlement>,
+								<region>South Australia</region>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">University of Adelaide</orgName>,
+							<address>
+								<settlement>Adelaide</settlement>,
+								<region>South Australia</region>,
+								<country>Australia</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">School of Primary, Aboriginal and Rural Health Care</orgName>,
+							<orgName type="institution">University of Western Australia</orgName>,
+							<address>
+								<settlement>Perth</settlement>,
+								<region>Western Australia</region>,
+								<country>Australia</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">School of Health Policy and Management</orgName>,
+							<orgName type="institution">York University</orgName>,
+							<address>
+								<settlement>Toronto</settlement>,
+								<region>Ontario</region>,
+								<country>Canada</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="department">Faculty of Health Sciences and Medicine</orgName>,
+							<orgName type="institution">Bond University</orgName>,
+							<address>
+								<addrLine>Gold Coast</addrLine>,
+								<region>Queensland</region>,
+								<country>Australia</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="department">Kulliyyah of Pharmacy</orgName>,
+							<orgName type="institution">International Islamic University Malaysia</orgName>,
+							<address>
+								<settlement>Kuantan</settlement>,
+								<settlement>Pahang</settlement>,
+								<country>Malaysia</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>8</marker>
+							<orgName type="department">Quality Use of Medicines and Pharmacy Research Centre</orgName>,
+							<orgName type="institution">Sansom Institute</orgName>,
+							<orgName type="department">School of Pharmacy and Medical Sciences</orgName>,
+							<orgName type="institution">University of South Australia</orgName>,
+							<address>
+								<settlement>Adelaide</settlement>,
+								<region>South Australia</region>,
+								<country>Australia</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

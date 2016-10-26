@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ar900093g"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Molecular Dynamics and Quantum Mechanics of<lb/> RNA: Conformational and Chemical Change We<lb/> Can Believe In<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>MARK A. DITZLER,<lb/> †, ‡ MICHAL OTYEPKA,<lb/> §,⊥ JIŘI`ˇJIˇJIŘIJIŘI`JIŘI`ˇ<lb/> SPONER,*<lb/> ,⊥<lb/> AND NILS G. WALTER*<lb/> , ‡ † Biophysics,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Michigan,</affiliation>
+	</byline>
+
+	<address>930 North University Avenue, Ann Arbor,<lb/> Michigan 48109-1055,<lb/></address>
+
+	<byline>
+	<affiliation>‡ Department of Chemistry, Single Molecule Analysis<lb/> Group, University of Michigan,</affiliation>
+	</byline>
+
+	<address>930 North University Avenue, Ann Arbor,<lb/> Michigan 48109-1055,<lb/></address>
+
+	<byline>
+	<affiliation>§ Department of Physical Chemistry, Faculty of Science,<lb/> Palacky University</affiliation>
+	</byline>
+
+	<address>Olomouc, tr. Svobody 26, 771 46 Olomouc, Czech Republic,<lb/></address>
+
+	<byline>
+	<affiliation>⊥ Institute of Biophysics, Academy of Sciences of the Czech Republic,<lb/></affiliation>
+	</byline>
+
+	<address>Kralovopolska 135, 612 65 Brno, Czech Republic<lb/></address>
+
+	<note type="submission">RECEIVED ON MARCH 18, 2009<lb/></note>
+
+	<note type="other">C O N S P E C T U S<lb/></note>
+
+	<div type="abstract">S<lb/> tructure and dynamics are both critical to RNA&apos;s vital<lb/> functions in biology. Numerous techniques can elucidate<lb/> the structural dynamics of RNA, but computational<lb/> approaches based on experimental data arguably hold the<lb/> promise of providing the most detail. In this Account, we<lb/> highlight areas wherein molecular dynamics (MD) and quan-<lb/>tum mechanical (QM) techniques are applied to RNA, partic-<lb/>ularly in relation to complementary experimental studies.<lb/> We have expanded on atomic-resolution crystal structures of<lb/> RNAs in functionally relevant states by applying explicit sol-<lb/>vent MD simulations to explore their dynamics and conforma-<lb/>tional changes on the submicrosecond time scale. MD relies on<lb/> simplified atomistic, pairwise additive interaction potentials<lb/> (force fields). Because of limited sampling, due to the finite<lb/> accessible simulation time scale and the approximated force<lb/> field, high-quality starting structures are required.<lb/> Despite their imperfection, we find that currently available<lb/> force fields empower MD to provide meaningful and predic-<lb/>tive information on RNA dynamics around a crystallographi-<lb/>cally defined energy minimum. The performance of force fields<lb/> can be estimated by precise QM calculations on small model sys-<lb/>tems. Such calculations agree reasonably well with the Cornell<lb/> et al. AMBER force field, particularly for stacking and hydrogen-<lb/>bonding interactions. A final verification of any force field is accomplished by simulations of complex nucleic acid structures.<lb/> The performance of the Cornell et al. AMBER force field generally corresponds well with and augments experimental<lb/> data, but one notable exception could be the capping loops of double-helical stems. In addition, the performance of pair-<lb/>wise additive force fields is obviously unsatisfactory for inclusion of divalent cations, because their interactions lead to major<lb/> polarization and charge-transfer effects neglected by the force field. Neglect of polarization also limits, albeit to a lesser extent,<lb/> the description accuracy of other contributions, such as interactions with monovalent ions, conformational flexibility of the<lb/> anionic sugar-phosphate backbone, hydrogen bonding, and solute polarization by solvent. Still, despite limitations, MD sim-<lb/>ulations are a valid tool for analyzing the structural dynamics of existing experimental structures. Careful analysis of MD<lb/> simulations can identify problematic aspects of an experimental RNA structure, unveil structural characteristics masked by<lb/> experimental constraints, reveal functionally significant stochastic fluctuations, evaluate the structural role of base ioniza-<lb/>tion, and predict structurally and potentially functionally important details of the solvent behavior, including the presence<lb/> of tightly bound water molecules. Moreover, combining classical MD simulations with QM calculations in hybrid QM/MM<lb/> approaches helps in the assessment of the plausibility of chemical mechanisms of catalytic RNAs (ribozymes).<lb/> In contrast, the reliable prediction of structure from sequence information is beyond the applicability of MD tools. The<lb/> ultimate utility of computational studies in understanding RNA function thus requires that the results are neither blindly<lb/> accepted nor flatly rejected, but rather considered in the context of all available experimental data, with great care given<lb/> to assessing limitations through the available starting structures, force field approximations, and sampling limitations. The<lb/> examples given in this Account showcase how the judicious use of basic MD simulations has already served as a powerful<lb/> tool to help evaluate the role of structural dynamics in biological function of RNA.<lb/></div>
+
+	<date>Published on the Web 09/16/2009</date>
+
+	<ptr type="web">www.pubs.acs.org/acr<lb/></ptr>
+
+	<idno>10.1021/ar900093g<lb/></idno>
+
+	<note type="copyright">© 2010 American Chemical Society<lb/></note>
+
+	<note type="other">FOOTNOTES<lb/> * To whom correspondence should be addressed. </note>
+	
+	<phone>Tel (N.G.W): +1-734-615-2060. </phone>
+
+	<email>E-mail<lb/> addresses: nwalter@umich.edu; sponer@ncbr.chemi.muni.cz.</email>
+
+		</front>
+	</text>
+</tei>

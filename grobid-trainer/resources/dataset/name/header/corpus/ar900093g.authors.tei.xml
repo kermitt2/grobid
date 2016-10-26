@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>MARK</forename>
+								 <middlename>A</middlename>.
+								 <surname>DITZLER</surname>,
+							<lb/>
+								 <marker>†</marker> ,
+								<marker>‡</marker>
+							</persName>
+							<persName>
+								 <forename>MICHAL</forename>
+								 <surname>OTYEPKA</surname> ,
+							<lb/>
+								<marker>§</marker> ,
+								<marker>⊥</marker> 
+								<lb/>, AND
+							</persName>
+							<persName>
+								 <forename>NILS</forename>
+								<middlename>G</middlename>.
+								<surname>WALTER</surname>
+								 <marker>*</marker>
+							<lb/>,
+								<marker>‡</marker> 
+								<lb/>
+								<marker>†</marker> 
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>
