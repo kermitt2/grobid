@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Division of Allergy and Immunology</orgName>,
+							<orgName type="department">Department of Pediatrics</orgName>,
+							<orgName type="institution">Duke University Medical Center</orgName>,
+							<address>
+								<settlement>Durham</settlement>,
+								<region>North Carolina</region>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="laboratory">Division of Allergy and Immunology</orgName>,
+							<orgName type="department">Department of Pediatrics</orgName>,
+							<orgName type="institution">University of Arkansas for Medical Sciences</orgName> and
+							<orgName type="institution">Arkansas Children&apos;s Hospital</orgName>,
+							<address>
+								<settlement>Little Rock</settlement>,
+								<region>Arkansas</region>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">Division of Rheumatology, Immunology and Allergy</orgName>,
+							<orgName type="department">Brigham and Women&apos;s Hospital</orgName> and 
+							<orgName type="department">Department of Medicine</orgName>,
+							<orgName type="institution">Harvard Medical School</orgName>,
+							<address>
+								<settlement>Boston</settlement>,
+								<region>Massachusetts</region>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="institution">Elliot and Roslyn Jaffe Food Allergy Institute</orgName>,
+							<orgName type="laboratory">Division of Allergy and Immunology</orgName>,
+							<orgName type="department">Department of Pediatrics</orgName>,
+							<orgName type="department">Mount Sinai School of Medicine</orgName>,
+							<address>
+								<settlement>New York</settlement>,
+								<region>New York</region>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>e</marker>
+							<orgName type="laboratory">Division of Allergy and Immunology</orgName>,
+							<orgName type="department">Department of Pediatrics</orgName>,
+							<orgName type="institution">Johns Hopkins University Medical Center</orgName>,
+							<address>
+								<settlement>Baltimore</settlement>,
+								<region>Maryland</region>; and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>f</marker>
+							<orgName type="laboratory">Division of Allergy and Immunology</orgName>,
+							<orgName type="department">Cincinnati Children&apos;s Hospital Medical Center</orgName>,
+							<orgName type="institution">University of Cincinnati</orgName>,
+							<address>
+								<settlement>Cincinnati</settlement>,
+								<region>Ohio</region>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Duke University</orgName>
+							<orgName type="department">Medical Center</orgName>,
+							<address>
+								<postBox>PO Box 2644 DUMC</postBox>,
+								<settlement>Durham</settlement>,
+								<region>NC</region>
+								<postCode>27710</postCode>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

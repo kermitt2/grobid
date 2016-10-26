@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="pmed.1000352"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Information from Pharmaceutical Companies and the<lb/> Quality, Quantity, and Cost of Physicians&apos; Prescribing: A<lb/> Systematic Review<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Geoffrey K. Spurling<lb/> 1 *, Peter R. Mansfield<lb/> 2,3 , Brett D. Montgomery<lb/> 4<lb/> , Joel Lexchin<lb/> 5 , Jenny Doust<lb/> 6<lb/> ,<lb/> Noordin Othman<lb/> 7 , Agnes I. Vitry<lb/> 8<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 University of Queensland,</affiliation>
+	</byline>
+
+	<address>Brisbane, Queensland, Australia,</address>
+
+	<byline>
+	<affiliation>2 Healthy Skepticism,</affiliation>
+	</byline>
+
+	<address>Willunga, South Australia,</address>
+
+	<byline>
+	<affiliation>3 University of Adelaide,</affiliation>
+	</byline>
+
+	<address>Adelaide, South Australia, Australia,<lb/></address>
+
+	<byline>
+	<affiliation>4 School of Primary, Aboriginal and Rural Health Care, University of Western Australia,</affiliation>
+	</byline>
+
+	<address>Perth, Western Australia, Australia,</address>
+
+	<byline>
+	<affiliation>5 School of Health Policy and Management, York<lb/> University,</affiliation>
+	</byline>
+
+	<address>Toronto, Ontario, Canada,</address>
+
+	<byline>
+	<affiliation>6 Faculty of Health Sciences and Medicine, Bond University,</affiliation>
+	</byline>
+
+	<address>Gold Coast, Queensland, Australia,</address>
+
+	<byline>
+	<affiliation>7 Kulliyyah of Pharmacy, International<lb/> Islamic University</affiliation>
+	</byline>
+
+	<address>Malaysia, Kuantan, Pahang, Malaysia,</address>
+
+	<byline>
+	<affiliation>8 Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical<lb/> Sciences, University of South Australia,</affiliation>
+	</byline>
+
+	<address>Adelaide, South Australia, Australia<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Background: Pharmaceutical companies spent $57.5 billion on pharmaceutical promotion in the United States in 2004. The<lb/> industry claims that promotion provides scientific and educational information to physicians. While some evidence indicates<lb/> that promotion may adversely influence prescribing, physicians hold a wide range of views about pharmaceutical<lb/> promotion. The objective of this review is to examine the relationship between exposure to information from<lb/> pharmaceutical companies and the quality, quantity, and cost of physicians&apos; prescribing.<lb/> Methods and Findings: We searched for studies of physicians with prescribing rights who were exposed to information from<lb/> pharmaceutical companies (promotional or otherwise). Exposures included pharmaceutical sales representative visits, journal<lb/> advertisements, attendance at pharmaceutical sponsored meetings, mailed information, prescribing software, and participation<lb/> in sponsored clinical trials. The outcomes measured were quality, quantity, and cost of physicians&apos; prescribing. We searched<lb/> Medline (1966 to February 2008), International Pharmaceutical Abstracts (1970 to February 2008), Embase (1997 to February<lb/> 2008), Current Contents (2001 to 2008), and Central (The Cochrane Library Issue 3, 2007) using the search terms developed with<lb/> an expert librarian. Additionally, we reviewed reference lists and contacted experts and pharmaceutical companies for<lb/> information. Randomized and observational studies evaluating information from pharmaceutical companies and measures of<lb/> physicians&apos; prescribing were independently appraised for methodological quality by two authors. Studies were excluded where<lb/> insufficient study information precluded appraisal. The full text of 255 articles was retrieved from electronic databases (7,185<lb/> studies) and other sources (138 studies). Articles were then excluded because they did not fulfil inclusion criteria (179) or quality<lb/> appraisal criteria (18), leaving 58 included studies with 87 distinct analyses. Data were extracted independently by two authors<lb/> and a narrative synthesis performed following the MOOSE guidelines. Of the set of studies examining prescribing quality<lb/> outcomes, five found associations between exposure to pharmaceutical company information and lower quality prescribing,<lb/> four did not detect an association, and one found associations with lower and higher quality prescribing. 38 included studies<lb/> found associations between exposure and higher frequency of prescribing and 13 did not detect an association. Five included<lb/> studies found evidence for association with higher costs, four found no association, and one found an association with lower<lb/> costs. The narrative synthesis finding of variable results was supported by a meta-analysis of studies of prescribing frequency<lb/> that found significant heterogeneity. The observational nature of most included studies is the main limitation of this review.<lb/> Conclusions: With rare exceptions, studies of exposure to information provided directly by pharmaceutical companies have<lb/> found associations with higher prescribing frequency, higher costs, or lower prescribing quality or have not found<lb/> significant associations. We did not find evidence of net improvements in prescribing, but the available literature does not<lb/> exclude the possibility that prescribing may sometimes be improved. Still, we recommend that practitioners follow the<lb/> precautionary principle and thus avoid exposure to information from pharmaceutical companies.<lb/></div>
+
+	<note type="other">Please see later in the article for the Editors&apos; Summary.<lb/></note>
+
+	<reference>Citation: Spurling GK, Mansfield PR, Montgomery BD, Lexchin J, Doust J, et al. (2010) Information from Pharmaceutical Companies and the Quality, Quantity, and<lb/> Cost of Physicians&apos; Prescribing: A Systematic Review. PLoS Med 7(10): e1000352.</reference>
+
+	<idno>doi:10.1371/journal.pmed.1000352<lb/></idno>
+
+	<note type="other">Academic Editor: David Henry, Institute for Clinical Evaluative Sciences, Canada<lb/></note>
+
+	<note type="submission">Received February 5, 2010; Accepted September 2, 2010;</note>
+
+	<date>Published October 19, 2010<lb/></date>
+
+	<note type="copyright">Copyright: ß 2010 Spurling et al. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits<lb/> unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.<lb/></note>
+
+	<note type="grant">Funding: No direct funding was received for this study. The authors were personally salaried by their institutions during the period of writing (although no<lb/> specific salary was set aside or given for the writing of this paper). No funding bodies had any role in the study design, data collection, analysis, decision to<lb/> publish, or preparation of the manuscript.<lb/></note>
+
+	<note type="other">Competing Interests: JL was paid for work with a Canadian generic company, Apotex Inc., in 2007. GS, PRM, BM, JL, NO, and AV are members of Healthy<lb/> Skepticism Inc. Healthy Skepticism is an international nonprofit research, education, and advocacy association with the main aim of reducing harm from<lb/> misleading health information. PRM is the director of Healthy Skepticism Inc., and is mostly unpaid. PRM&apos;s wife and two of his daughters are part-time employees<lb/> of Healthy Skepticism Inc. JL is a member of the management committee of Healthy Skepticism.<lb/> Abbreviations: CI, confidence interval; OR, odds ratio; PSR, pharmaceutical sales representative.<lb/> *</note>
+
+	<email>E-mail: g.spurling@uq.edu.au<lb/></email>
+
+	<note type="other">PLoS Medicine | www.plosmedicine.org<lb/> 1<lb/> October 2010 | Volume 7 | Issue 10 | e1000352</note>
+
+		</front>
+	</text>
+</tei>

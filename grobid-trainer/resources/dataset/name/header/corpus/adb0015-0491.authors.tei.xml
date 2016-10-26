@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Anna</forename>
+								 <middlename>E</middlename>.
+								 <surname>Goudriaan</surname>
+							<lb/>
+								 <marker>1,2</marker>
+							<lb/>,
+							</persName>
+							<persName>
+								<forename>Michiel</forename>
+								 <middlename>B</middlename>.
+								<surname>de Ruiter</surname>
+							<lb/>
+								 <marker>1, 3</marker>
+							<lb/> ,
+							</persName>
+							<persName>
+								 <forename>Wim</forename>
+								<surname>vandenBrink</surname>
+							<lb/>
+								<marker>1 ,2</marker>
+							<lb/>,
+							</persName>
+							<persName>
+								 <forename>Jaap</forename>
+								 <surname>Oosterlaan</surname>
+							<lb/>
+								 <marker>4</marker>
+								 &amp;
+							<lb/>
+							</persName>
+							<persName>
+								 <surname>Dick</surname>
+								<middlename>J</middlename>.
+								<surname>Veltman</surname>
+							<lb/>
+								<marker>1 ,3</marker>
+							</persName>
+							<persName>
+								<forename>Anna</forename>
+								 <middlename>E</middlename> .
+								 <surname>Goudriaan</surname>,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>
