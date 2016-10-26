@@ -335,8 +335,8 @@ var grobid = (function($) {
 				        // Get div#container and cache it for later use
 			            var container = document.getElementById("requestResult2");
 			            // enable hyperlinks within PDF files.
-			            var pdfLinkService = new PDFLinkService();
-			            pdfLinkService.setDocument(pdf, null);
+			            //var pdfLinkService = new PDFJS.PDFLinkService();
+			            //pdfLinkService.setDocument(pdf, null);
 
 						$('#requestResult2').html('');
 						nbPages = pdf.numPages;
