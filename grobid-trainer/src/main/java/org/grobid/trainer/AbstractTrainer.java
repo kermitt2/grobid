@@ -22,8 +22,9 @@ public abstract class AbstractTrainer implements Trainer {
     public static final String NEW_MODEL_EXT = ".new";
 
     // default training parameters (only exploited by Wapiti)
-    protected double epsilon = 0.0; // default size of the interval for stopping criterion
-    protected int window = 0; // default similar to CRF++
+    protected double epsilon = 0.0; // size of the interval for stopping criterion
+    protected int window = 0; // similar to CRF++
+    protected int nbMaxIterations = 0; // maximum number of iterations in training
 
     protected GrobidModels model;
     private File trainDataPath;
@@ -42,10 +43,14 @@ public abstract class AbstractTrainer implements Trainer {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath);
         GenericTrainer trainer = TrainerFactory.getTrainer();
-        if (epsilon != 0.0)
+
+        if (epsilon != 0.0) 
             trainer.setEpsilon(epsilon);
         if (window != 0)
             trainer.setWindow(window);
+        if (nbMaxIterations != 0)
+            trainer.setNbMaxIterations(nbMaxIterations);
+
         File dirModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath()).getParentFile();
         if (!dirModelPath.exists()) {
             LOGGER.warn("Cannot find the destination directory " + dirModelPath.getAbsolutePath() + " for the model " + model.toString() + ". Creating it.");
@@ -83,6 +88,14 @@ public abstract class AbstractTrainer implements Trainer {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath, evalDataPath, split);
         GenericTrainer trainer = TrainerFactory.getTrainer();
+
+        if (epsilon != 0.0) 
+            trainer.setEpsilon(epsilon);
+        if (window != 0)
+            trainer.setWindow(window);
+        if (nbMaxIterations != 0)
+            trainer.setNbMaxIterations(nbMaxIterations);
+        
         final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
         final File oldModelPath = GrobidProperties.getModelPath(model);
 

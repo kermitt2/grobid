@@ -191,6 +191,7 @@
                         <cell role="name" xml:lang="fr">BÉLARUS</cell>
                         <cell role="name" xml:lang="en">BELARUS</cell>
                         <cell role="nameAlt" xml:lang="en">Belarus</cell>
+                        <cell role="nameAlt" xml:lang="en">Byelarus</cell>
 						<cell role="nameAlt" xml:lang="en">Byelorussian SSR</cell>
                     </row>
                     <row>
@@ -335,6 +336,7 @@
                         <cell role="name" xml:lang="en">China</cell>
                         <cell role="nameAlt" xml:lang="en">People’s Republic of China</cell>
                         <cell role="nameAlt" xml:lang="en">People’s Republic China</cell>
+                        <cell role="nameAlt" xml:lang="en">Peoples R China</cell>
                         <cell role="nameAlt" xml:lang="en">P.R. China</cell>
 						<cell role="nameAlt" xml:lang="en">P.R.China</cell>
 						<cell role="nameAlt" xml:lang="en">P. R. China</cell>
@@ -420,6 +422,7 @@
                         <cell role="a3code">CIV</cell>
                         <cell role="name" xml:lang="fr">CÔTE D'IVOIRE</cell>
                         <cell role="name" xml:lang="en">CÔTE D'IVOIRE</cell>
+                        <cell role="nameAlt" xml:lang="en">Cote Ivoire</cell>
                         <cell role="nameAlt" xml:lang="en">CÔTE D'IVOIRE</cell>
                     </row>
                     <row>
@@ -479,6 +482,7 @@
                         <cell role="a3code">ARE</cell>
                         <cell role="name" xml:lang="fr">ÉMIRATS ARABES UNIS</cell>
                         <cell role="name" xml:lang="en">UNITED ARAB EMIRATES</cell>
+                        <cell role="nameAlt" xml:lang="en">U Arab Emirates</cell>
                         <cell role="nameAlt" xml:lang="en">UAE</cell>
                     </row>
                     <row>
@@ -1200,6 +1204,7 @@
                         <cell role="a3code">PNG</cell>
                         <cell role="name" xml:lang="fr">PAPOUASIE-NOUVELLE-GUINÉE</cell>
                         <cell role="name" xml:lang="en">PAPUA NEW GUINEA</cell>
+                        <cell role="nameAlt" xml:lang="en">Papua N Guinea</cell>
                     </row>
                     <row>
                         <cell role="a2code">PY</cell>
@@ -1278,6 +1283,7 @@
                         <cell role="a3code">REU</cell>
                         <cell role="name" xml:lang="fr">RÉUNION</cell>
                         <cell role="name" xml:lang="en">RÉUNION</cell>
+                        <cell role="nameAlt" xml:lang="en">Reunion</cell>
                     </row>
                     <row>
                         <cell role="a2code">RO</cell>
@@ -1294,6 +1300,7 @@
                         <cell role="nameAlt" xml:lang="en">United Kingdom</cell>
                         <cell role="nameAlt" xml:lang="en">Northern Ireland, UK</cell>
 						<cell role="nameAlt" xml:lang="en">Northern Ireland</cell>
+                        <cell role="nameAlt" xml:lang="en">North Ireland</cell>
                         <cell role="nameAlt" xml:lang="en">Scotland, UK</cell>
 						<cell role="nameAlt" xml:lang="en">Scotland</cell>
 						<cell role="nameAlt" xml:lang="en">England</cell>

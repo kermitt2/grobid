@@ -38,6 +38,7 @@ public enum GrobidModels implements GrobidModel {
     PATENT_STRUCTURE("patent/structure"),
     PATENT_EDIT("patent/edit"),
     ENTITIES_NER("ner"),
+    ENTITIES_NERFR("nerfr"),
     ENTITIES_NERSense("nersense"),
     QUANTITIES("quantities"),
     UNITS("units"),

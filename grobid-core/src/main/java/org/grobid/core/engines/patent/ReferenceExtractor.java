@@ -235,7 +235,7 @@ public class ReferenceExtractor implements Closeable {
         } catch (Exception e) {
             LOGGER.error("Error in extractAllReferencesPDFFile", e);
         } finally {
-            DocumentSource.close(documentSource, false);
+            DocumentSource.close(documentSource, true, true);
         }
         return null;
     }

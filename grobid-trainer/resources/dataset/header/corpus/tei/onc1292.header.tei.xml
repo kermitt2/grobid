@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="onc1292"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">The<lb/> Oncologist<lb/> ®<lb/> Lung Cancer<lb/></note>
+
+	<docTitle>
+	<titlePart>Outcomes of Research Biopsies in Phase I Clinical Trials:<lb/> The MD Anderson Cancer Center Experience<lb/></titlePart>
+	</docTitle>
+	
+	<byline>
+	<docAuthor>HAZEM EL-OSTA,<lb/> a DAVID HONG,<lb/> a JENNIFER WHELER,<lb/> a SIQING FU,<lb/> a AUNG NAING,<lb/> a GERALD FALCHOOK,<lb/> a<lb/> MARSHALL HICKS,<lb/> b SIJIN WEN,<lb/> c APOSTOLIA M. TSIMBERIDOU,<lb/> a RAZELLE KURZROCK<lb/> a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departments of<lb/> a<lb/> Investigational Cancer Therapeutics (Phase I Clinical Trials Program),<lb/> b<lb/> Diagnostic Imaging,<lb/> and<lb/> c<lb/> Biostatistics, The University of Texas MD Anderson Cancer Center,</affiliation>
+	</byline>
+
+	<address>Houston, Texas, USA<lb/></address>
+
+	<keyword>Key Words. Drug development • Mandatory biopsy • Optional biopsy • Phase I clinical trial • Research biopsy<lb/></keyword>
+
+	<note type="other">Disclosures: Hazem El-Osta: None; David Hong: None; Jennifer Wheler: None; Siqing Fu: None; Aung Naing: Research<lb/> funding/contracted research: National Institutes of Health; Gerald Falchook: None; Marshall Hicks: None; Sijin Wen: None;<lb/> Apostolia M. Tsimberidou: None; Razelle Kurzrock: None.<lb/> The content of this article has been reviewed by independent peer reviewers to ensure that it is balanced, objective, and free from<lb/> commercial bias. No financial relationships relevant to the content of this article have been disclosed by the independent peer<lb/> reviewers.<lb/></note>
+
+	<div type="abstract">ABSTRACT<lb/> Background. Research biopsies are crucial for exploring<lb/> the impact of novel agents on putative targets. The cur-<lb/>rent study assesses the safety and success rate associated<lb/> with performing such biopsies.<lb/> Methods. We reviewed the medical records of 155 con-<lb/>secutive patients who had one or more research biopsies as<lb/> part of a phase I trial from September 2004 to October 2009.<lb/> Results. Of 281 research biopsies performed, 118 were<lb/> paired before and after treatment biopsies (total ‫؍‬ 236 bi-<lb/>opsies). The most common sites of biopsy were superficial<lb/> lymph node (19.9%), followed by liver (16.4%), and then<lb/> soft tissue (15.7%). Ultrasound-guided biopsies were the<lb/> most frequent type (53.7%). Among 142 patients who con-<lb/>sented for mandatory biopsy, 86.6% had the biopsy per-<lb/>formed, compared with 4.4% of 911 patients offered a<lb/> biopsy on an optional basis (p &lt; .0001). Biopsy was ob-<lb/>tained most frequently on industry-sponsored trials; lack<lb/> of funding on nonindustry trials was the most common<lb/> reason that biopsies were not obtained. Of 281 single biop-<lb/>sies, only 4 (1.4%) had complications: pneumothorax re-<lb/>quiring chest tube placement (n ‫؍‬ 2), infection requiring<lb/> admission (n ‫؍‬ 1), and arrhythmia with hypotension (n ‫؍‬<lb/> 1). All but one biopsy was successful in obtaining tissue.<lb/> No deaths were attributable to biopsy.<lb/> Conclusions. Our experience demonstrates that re-<lb/>search biopsies in early phase clinical trials are safe<lb/> (1.4% risk of serious complications), and a higher per-<lb/>centage of patients underwent mandatory biopsies<lb/> (86.6%) compared with that of the patients with op-<lb/>tional biopsies (4.4%).</div>
+
+	<reference>The Oncologist 2011;16:1292–1298<lb/></reference>
+
+	<note type="other">Correspondence:</note>
+
+	<byline>
+	<docAuthor>David Hong, M.D.,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Investigational Therapeutics, (Phase 1 Program)-Unit 455, Division of Cancer Med-<lb/>icine, MD Anderson Cancer Center,</affiliation>
+	</byline>
+
+	<address>1515 Holcombe Boulevard, Houston, Texas 77030, USA.</address>
+
+	<phone>Telephone: 713-563-5844; Pager: 713-<lb/>606-3113; Fax: 713-792-0305;</phone> 
+	
+	<email>e-mail: dshong@mdanderson.org</email>
+
+	<note type="submission">Received February 21, 2011; accepted for publication June 16, 2011;<lb/></note>
+
+	<note type="other">first published online in The Oncologist Express on </note>
+		
+	<date>August 22, 2011. </date>
+
+	<note type="copyright">©AlphaMed Press 1083-7159/2011/$30.00/0</note> 
+	
+	<idno>http://dx.doi.org/<lb/>10.1634/theoncologist.2011-0043<lb/></idno>
+	
+	<note type="other">The Oncologist 2011;16:1292–1298 www.TheOncologist.com</note>
+
+		</front>
+	</text>
+</tei>

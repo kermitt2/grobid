@@ -44,4 +44,8 @@ public final class Language {
     public String toString() {
         return langId + ";" + confidence;
     }
+
+    public String toJSON() {
+        return "{\"lang\":\""+langId+"\", \"conf\": "+confidence+"}";
+    }
 }

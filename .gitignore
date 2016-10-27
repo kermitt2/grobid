@@ -49,9 +49,10 @@ grobid-bio
 grobid-istex
 grobid-astro
 grobid-home/models/quantities
-grobid-home/models/dictionaries
+grobid-home/models/dictionaries-lexical-entries
 grobid-home/models/units
 grobid-home/models/bio
 grobid-home/models/ner
+grobid-home/models/nerfr
 grobid-home/models/nersense
 grobid-home/models/astro

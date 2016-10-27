@@ -22,10 +22,10 @@ import java.util.*;
  * 
  * @author Patrice Lopez
  */
-public class PDF2XMLSaxParser extends DefaultHandler {
-	public static final Logger LOGGER = LoggerFactory.getLogger(PDF2XMLSaxParser.class);
+public class PDF2XMLSaxHandler extends DefaultHandler {
+	public static final Logger LOGGER = LoggerFactory.getLogger(PDF2XMLSaxHandler.class);
 
-    private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
+    private StringBuilder accumulator = new StringBuilder(); // Accumulate parsed text
 
 	private String currentFont = null;
 	private String colorFont = null;
@@ -53,12 +53,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 	private Page page = null; // the current page object
 	private GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance(); 
 
-//	public PDF2XMLSaxParser() {
-//		blabla = new StringBuffer();
-//		tokenizations = new ArrayList<LayoutToken>();
-//	}
-
-	public PDF2XMLSaxParser(Document d, List<GraphicObject> im) {
+	public PDF2XMLSaxHandler(Document d, List<GraphicObject> im) {
 		doc = d;
 		blabla = new StringBuffer();
 		images = im;

@@ -70,7 +70,7 @@ public class HeaderParser extends AbstractParser {
             return new ImmutablePair<String, Document>(tei, doc);
         } finally {
             if (documentSource != null) {
-                documentSource.close(true);
+                documentSource.close(true, true);
             }
         }
     }
@@ -95,7 +95,7 @@ public class HeaderParser extends AbstractParser {
             return Pair.of(tei, doc);
         } finally {
             if (documentSource != null) {
-                documentSource.close(true);
+                documentSource.close(true, true);
             }
         }
     }
@@ -1092,7 +1092,7 @@ public class HeaderParser extends AbstractParser {
             e.printStackTrace();
             throw new GrobidException("An exception occurred while running Grobid.", e);
         } finally {
-            DocumentSource.close(documentSource, true);
+            DocumentSource.close(documentSource, true, true);
         }
     }
 
