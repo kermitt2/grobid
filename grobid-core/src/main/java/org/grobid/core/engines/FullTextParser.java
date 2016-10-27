@@ -86,7 +86,9 @@ public class FullTextParser extends AbstractParser {
 
 	public Document processing(File inputPdf,
 							   GrobidAnalysisConfig config) throws Exception {
-		DocumentSource documentSource = DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(), config.getPdfAssetPath() != null);
+		DocumentSource documentSource = 
+			DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(), 
+				config.getPdfAssetPath() != null, true);
 		return processing(documentSource, config);
 	}
 
@@ -687,7 +689,8 @@ public class FullTextParser extends AbstractParser {
 
             //doc = parsers.getSegmentationParser().processing(inputFile, GrobidAnalysisConfig.defaultInstance());
             documentSource = DocumentSource.fromPdf(inputFile);
-            Document doc = parsers.getSegmentationParser().processing(documentSource, GrobidAnalysisConfig.defaultInstance());
+            Document doc = parsers.getSegmentationParser().processing(documentSource, 
+				GrobidAnalysisConfig.defaultInstance());
 
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
 			if (documentBodyParts != null) {
@@ -865,7 +868,7 @@ public class FullTextParser extends AbstractParser {
             throw new GrobidException("An exception occured while running Grobid training" +
                     " data generation for full text.", e);
         } finally {
-            DocumentSource.close(documentSource, true);
+            DocumentSource.close(documentSource, true, true);
         }
     }
 

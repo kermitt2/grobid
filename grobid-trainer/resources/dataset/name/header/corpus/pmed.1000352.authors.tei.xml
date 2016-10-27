@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Geoffrey</forename>
+								 <middlename>K</middlename>.
+								 <surname>Spurling</surname>
+							<lb/>
+								 <marker>1*</marker> ,
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								 <middlename>R</middlename> .
+								<surname>Mansfield</surname>
+							<lb/>
+								 <marker>2 ,3</marker>,
+							</persName>
+							<persName>
+								<forename>Brett</forename>
+								 <middlename>D</middlename> .
+								 <surname>Montgomery</surname>
+							<lb/>
+								<marker>4</marker>
+							<lb/> ,
+							</persName>
+							<persName>
+								 <forename>Joel</forename>
+								<surname>Lexchin</surname>
+							<lb/>
+								<marker>5</marker> ,
+							</persName>
+							<persName>
+								<forename>Jenny</forename>
+								<surname>Doust</surname>
+							<lb/>
+								 <marker>6</marker>
+							<lb/> ,
+							<lb/>
+							</persName>
+							<persName>
+								 <forename>Noordin</forename>
+								<surname>Othman</surname>
+							<lb/>
+								 <marker>7</marker> ,
+							</persName>
+							<persName>
+								 <forename>Agnes</forename>
+								 <middlename>I</middlename>.
+								<surname>Vitry</surname>
+							<lb/>
+								 <marker>8</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

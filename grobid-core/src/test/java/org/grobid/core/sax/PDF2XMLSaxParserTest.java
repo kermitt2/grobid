@@ -24,7 +24,7 @@ import static org.junit.Assert.assertTrue;
 public class PDF2XMLSaxParserTest {
     SAXParserFactory spf = SAXParserFactory.newInstance();
 
-    PDF2XMLSaxParser target;
+    PDF2XMLSaxHandler target;
     DocumentSource mockDocumentSource;
     Document document;
 
@@ -34,7 +34,7 @@ public class PDF2XMLSaxParserTest {
         mockDocumentSource = createMock(DocumentSource.class);
 
         document = Document.createFromText("");
-        target = new PDF2XMLSaxParser(document, new ArrayList<GraphicObject>());
+        target = new PDF2XMLSaxHandler(document, new ArrayList<GraphicObject>());
     }
 
     @Test

@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							Author manuscript;
+							<lb/>
+							<persName>
+								 <forename>Joanne</forename>
+								<middlename>M</middlename>.
+								 <surname>Murabito</surname>,
+								 <roleName>MD, ScM</roleName>
+								<marker>1 , 2,*</marker>,
+							</persName>
+							<persName>
+								<forename>Charles</forename>
+								 <middlename>C</middlename> .
+								 <surname>White</surname>,
+								 <roleName>MPH</roleName>
+								<marker>3 , *</marker>,
+							</persName>
+							<persName>
+								<forename>Maryam</forename>
+								 <surname>Kavousi</surname> ,
+								 <roleName>MD, MSc</roleName>
+								<marker>4 , 5,*</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Yan</forename>
+								 <middlename>V</middlename> .
+								<surname>Sun</surname> ,
+								<roleName>PhD</roleName>
+								 <marker>6, *</marker> ,
+							</persName>
+							<persName>
+								<forename>Mary</forename>
+								<middlename>F</middlename> .
+								 <surname>Feitosa</surname> ,
+								<roleName>PhD</roleName>
+								 <marker>7, *</marker> ,
+							</persName>
+							<persName>
+								<forename>Vijay</forename>
+								<surname>Nambi</surname> ,
+								 <roleName>MD</roleName>
+								 <marker>8, *</marker> ,
+							</persName>
+							<persName>
+								<forename>Claudia</forename>
+								<surname>Lamina</surname> ,
+								 <roleName>PhD</roleName>
+								 <marker>9, *</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Arne</forename>
+								<surname>Schillert</surname> ,
+								 <roleName>PhD</roleName>
+								<marker>1 ,*</marker> ,
+							</persName>
+							<persName>
+								 <forename>Stefan</forename>
+								<surname>Coassin</surname>,
+								 <roleName>PhD</roleName>
+								 <marker>9</marker> ,
+							</persName>
+							<persName>
+								<forename>Joshua</forename>
+								 <middlename>C</middlename> .
+								 <surname>Bis</surname> ,
+								 <roleName>PhD</roleName> 
+								 <marker>11</marker> ,
+							</persName>
+							<persName>
+								<forename>Linda</forename>
+								 <surname>Broer</surname> ,
+								 <roleName>MSc</roleName>
+								 <marker>4 ,5</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								 <forename>Dana</forename>
+								<middlename>C</middlename>.
+								 <surname>Crawford</surname> ,
+								<roleName>PhD</roleName> 
+								<marker>12</marker>,
+							</persName>
+							<persName>
+								 <forename>Nora</forename>
+								<surname>Franceschini</surname> ,
+								 <roleName>MD , MPH</roleName>
+								 <marker>13</marker>,
+							</persName>
+							<persName>
+								 <forename>Ruth</forename>
+								<surname>Frikke - Schmidt</surname> ,
+								 <roleName>MD, PhD</roleName>
+								<marker>14</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								 <forename>Margot</forename>
+								<surname>Haun</surname> ,
+								 <roleName>MSc</roleName>
+								 <marker>9</marker> ,
+							</persName>
+							<persName>
+								<forename>Suzanne</forename>
+								 <surname>Holewijn</surname>,
+								 <roleName>PhD</roleName>
+								 <marker>15</marker>,
+							</persName>
+							<persName>
+								 <forename>Jennifer</forename>
+								 <middlename>E</middlename>.
+								 <surname>Huffman</surname> ,
+								 <roleName>MSc</roleName>
+								 <marker>16</marker> ,
+							</persName>
+							<persName>
+								<forename>Shih -Jen</forename>
+							<lb/>
+								 <surname>Hwang</surname> ,
+								 <roleName>PhD</roleName>
+								 <marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Stefan</forename>
+								 <surname>Kiechl</surname>,
+								<roleName>MD</roleName>
+								<marker>17</marker>,
+							</persName>
+							<persName>
+								 <forename>Barbara</forename>
+								 <surname>Kollerits</surname> ,
+								<roleName>PhD , MPH</roleName>
+								 <marker>9</marker> ,
+							</persName>
+							<persName>
+								 <forename>May</forename>
+								<middlename>E</middlename> .
+								<surname>Montasser</surname> ,
+								<lb/>
+								 <roleName>PhD</roleName>
+								 <marker>18</marker> ,
+							</persName>
+							<persName>
+								 <forename>Ilja</forename>
+								<middlename>M</middlename> .
+								<surname>Nolte</surname> ,
+								<roleName>PhD</roleName>
+								<marker>19</marker>,
+							</persName>
+							<persName>
+								 <forename>Megan</forename>
+								 <middlename>E</middlename>.
+								 <surname>Rudock</surname>,
+								 <roleName>PhD</roleName>
+								 <marker>20</marker> ,
+							</persName>
+							<persName>
+								 <forename>Andrea</forename>
+								 <surname>Senft</surname>,
+								 <roleName>MSc</roleName>
+								 <marker>10</marker> ,
+							</persName>
+							<persName>
+								 <forename>Alexander</forename>
+								 <lb/>
+								 <surname>Teumer</surname> ,
+								 <roleName>PhD</roleName>
+								<marker>21</marker> ,
+							</persName>
+							<persName>
+								 <forename>Pim</forename>
+								 <surname>van der Harst</surname>,
+								 <roleName>MD, PhD</roleName>
+								 <marker>22 , 23</marker> ,
+							</persName>
+							<persName>
+								 <forename>Veronique</forename>
+								<surname>Vitart</surname> ,
+								<roleName>PhD</roleName>
+								 <marker>16</marker> ,
+							</persName>
+							<persName>
+								<forename>Lindsay</forename>
+								<middlename>L</middlename> .
+								<lb/>
+								 <surname>Waite</surname> ,
+								 <roleName>MS</roleName>
+								 <marker>24</marker> ,
+							</persName>
+							<persName>
+								 <forename>Andrew</forename>
+								 <middlename>R</middlename> .
+								<surname>Wood</surname> ,
+								<roleName>MRes</roleName>
+								<marker>25</marker> ,
+							</persName>
+							<persName>	
+								 <forename>Christina</forename>
+								 <middlename>L</middlename> .
+								 <surname>Wassel</surname>,
+								 <roleName>PhD</roleName>
+								<marker>26</marker> ,
+							</persName>
+							<persName>
+								 <forename>Devin</forename>
+								 <middlename>M</middlename> .
+								 <surname>Absher</surname>,
+								 <lb/>
+								 <roleName>PhD</roleName>
+								<marker>24</marker> ,
+							</persName>
+							<persName>	
+								 <forename>Matthew</forename>
+								 <middlename>A</middlename> .
+								 <surname>Allison</surname>,
+								 <roleName>MD, MPH</roleName>
+								<marker>26</marker> ,
+							</persName>
+							<persName>	
+								 <forename>Najaf</forename>
+								 <surname>Amin</surname> ,
+								<roleName>PhD</roleName>
+								 <marker>4</marker>,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Alice</forename>
+								<surname>Arnold</surname> ,
+								 <roleName>PhD</roleName>
+								 <marker>27</marker> ,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Folkert</forename>
+								<middlename>W</middlename> .
+							<lb/>
+								 <surname>Asselbergs</surname> ,
+								 <roleName>MD, PhD</roleName>
+								 <marker>28 , 29 , 30</marker>,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Yurii</forename>
+								<surname>Aulchenko</surname>,
+								 <roleName>PhD</roleName>
+								<marker>4</marker> ,
+							</persName>
+							<persName>	
+								 <forename>Stefania</forename>
+								<surname>Bandinelli</surname>,
+								<roleName>MD</roleName>
+								<marker>31</marker>,
+							</persName>
+							<persName>		
+								 <forename>Maja</forename>
+							<lb/>
+								 <surname>Barbalic</surname>,
+								 <roleName>PhD</roleName>
+								 <marker>32</marker> ,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Mladen</forename>
+								 <surname>Boban</surname>,
+								 <roleName>MD, PhD</roleName>
+								 <marker>33</marker>,
+ 							</persName>
+ 							<persName>	 
+								<forename>Kristin</forename>
+								<surname>Brown - Gentry</surname> ,
+								 <roleName>MS</roleName>
+								 <marker>34</marker>,
+  							</persName>
+  							<persName>		 
+								 <forename>David</forename>
+								<middlename>J</middlename> .
+								 <surname>Couper</surname> ,
+								 <lb/>
+								 <roleName>PhD</roleName>
+								 <marker>35</marker>,
+   							</persName>
+   							<persName>		 
+								<forename>Michael</forename>
+								<middlename>H</middlename> .
+								 <surname>Criqui</surname> ,
+								 <roleName>MD ,MPH</roleName>
+								 <marker>26</marker>,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Abbas</forename>
+								<surname>Dehghan</surname> ,
+								 <roleName>MD, PhD</roleName>
+								<marker>4 ,5</marker> ,
+							</persName>
+							<persName>	
+								<forename>Martin</forename>
+								 <surname>den Heijer</surname> ,
+								 <roleName>MD</roleName> ,
+								 <lb/>
+								<roleName>PhD</roleName>
+								 <marker>36</marker>,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Benjamin</forename>
+								 <surname>Dieplinger</surname>,
+								<roleName>MD</roleName>
+								 <marker>37</marker>,
+  							</persName>
+  							<persName>	 	 
+								 <forename>Jingzhong</forename>
+								 <surname>Ding</surname>,
+								 <roleName>PhD</roleName>
+								<marker>38</marker> ,
+ 							</persName>
+ 							<persName>	 	
+								<forename>Marcus</forename>
+								 <surname>Dörr</surname> ,
+								 <roleName>MD</roleName>,
+								 <marker>39</marker> ,
+  							</persName>
+  							<persName>	 	 
+								 <forename>Christine</forename>
+								 <lb/>
+								 <surname>Espinola - Klein</surname> ,
+								<roleName>MD</roleName>
+								<marker>40</marker> ,
+  							</persName>
+  							<persName>	 	
+								 <forename>Stephan</forename>
+								 <middlename>B</middlename> .
+								<surname>Felix</surname> ,
+								 <roleName>MD</roleName>
+								 <marker>39</marker>,
+   							</persName>
+   							<persName>	 	 
+								 <forename>Luigi</forename>
+								<surname>Ferrucci</surname>,
+								<roleName>MD, PhD</roleName>
+								 <marker>41</marker>,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Aaron</forename>
+								 <middlename>R</middlename>.
+								 <surname>Folsom</surname>,
+								 <lb/>
+								 <roleName>MD</roleName>
+								 <marker>42</marker> ,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Gustav</forename>
+								 <surname>Fraedrich</surname>,
+								 <roleName>MD</roleName>
+								 <marker>43</marker> ,
+  							</persName>
+  							<persName>		 
+								 <forename>Quince</forename>
+								 <surname>Gibson</surname> ,
+								 <roleName>MBA</roleName>
+								<marker>18</marker> ,
+  							</persName>
+  							<persName>		
+								<forename>Robert</forename>
+								 <surname>Goodloe</surname>,
+								 <roleName>MS</roleName>
+								 <marker>34</marker> ,
+   							</persName>
+   							<persName>		 
+								 <forename>Grgo</forename>
+								 <lb/>
+								<surname>Gunjaca</surname> ,
+								 <roleName>MD</roleName>
+								  <marker>34</marker> ,
+ 							</persName>
+ 							<persName>	  
+								 <forename>Meinhard</forename>
+								<surname>Haltmayer</surname> ,
+								 <roleName>MD</roleName>
+								 <marker>37</marker> ,
+  							</persName>
+  							<persName>	 	 
+								 <forename>Gerardo</forename>
+								<surname>Heiss</surname> ,
+								 <roleName>MD, PhD</roleName>
+								 <marker>13</marker>,
+  							</persName>
+  							<persName>	 	 
+								<forename>Albert</forename>
+								 <surname>Hofman</surname> ,
+								 <roleName>MD</roleName> ,
+								 <lb/>
+								 <roleName>PhD</roleName>
+								<marker>4 , 5</marker> ,
+ 							</persName>
+ 							<persName>	 	
+								 <forename>Arne</forename>
+								 <surname>Kieback</surname>,
+								 <roleName>MD</roleName>
+								 <marker>39</marker>,
+  							</persName>
+  							<persName>	 	 
+								 <forename>Lambertus</forename>
+								 <middlename>A</middlename> .
+								 <surname>Kiemeney</surname>,
+								 <roleName>PhD</roleName> 
+								 <marker>44</marker>,
+  							</persName>
+  							<persName>	 	 
+								<forename>Ivana</forename>
+								 <surname>Kolcic</surname>,
+								<roleName>MD</roleName> ,
+								 <roleName>PhD</roleName>
+								<marker>45</marker>,
+								<lb/> 
+  							</persName>
+  							<persName>		 
+								 <forename>Iftikhar</forename>
+								 <forename>J</forename> .
+								 <surname>Kullo</surname> ,
+								<roleName>MD</roleName>,
+								<marker>46</marker>,
+  							</persName>
+  							<persName>		
+								 <forename>Stephen</forename>
+								 <middlename>B</middlename> .
+								 <surname>Kritchevsky</surname> ,
+								<roleName>PhD</roleName>
+								<marker>38</marker>,
+  							</persName>
+  							<persName>	
+								 <forename>Karl</forename>
+								 <middlename>J</middlename> .
+								 <surname>Lackner</surname>,
+								 <roleName>MD</roleName> 
+								 <marker>40</marker>,
+   							</persName>
+   							<persName>		 
+								<forename>Xiaohui</forename>
+								 <surname>Li</surname> ,
+								 <lb/>
+								 <roleName>MD , MSc</roleName> ,
+								 <marker>47</marker>,
+    						</persName>
+    						<persName>		 
+								<forename>Wolfgang</forename>
+								 <surname>Lieb</surname> ,
+								 <roleName>MD , MSc</roleName>
+								 <marker>48</marker>,
+ 							</persName>
+ 							<persName>	 
+								<forename>Kurt</forename>
+								 <surname>Lohman</surname> ,
+								 <roleName>Mstat</roleName>
+								 <marker>49</marker> ,
+ 							</persName>
+ 							<persName>	 
+								<forename>Christa</forename>
+								 <surname>Meisinger</surname>,
+								<roleName>MD</roleName> ,<lb/> 
+								<roleName>MPH</roleName>
+								<marker>50</marker> ,
+ 							</persName>
+ 							<persName>	 	
+								 <forename>David</forename>
+								<surname>Melzer</surname> ,
+								<roleName>MD, PhD</roleName>
+								 <marker>50</marker> ,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Emile</forename>
+								<middlename>R</middlename>
+								 <surname>Mohler</surname>
+								 <roleName>III</roleName> ,
+								 <roleName>MD</roleName>
+								 <marker>52</marker> ,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Ivana</forename>
+								<surname>Mudnic</surname> ,
+								<roleName>MD</roleName>
+								<marker>33</marker>,
+							</persName>
+							<persName>	
+								 <forename>Thomas</forename>
+								 <lb/>
+								 <surname>Mueller</surname>,
+								 <roleName>MD</roleName>
+								 <marker>37</marker>,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Gerjan</forename>
+								 <surname>Navis</surname> ,
+								 <roleName>MD, PhD</roleName>
+								<marker>53</marker> ,
+							</persName>
+							<persName>
+								 <forename>Friedrich</forename>
+								 <surname>Oberhollenzer</surname> ,
+								 <roleName>MD</roleName>
+								 <marker>54</marker> ,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Jeffrey</forename>
+								 <middlename>W</middlename> .
+								 <surname>Olin</surname>,
+								 <lb/>
+								<roleName>MD</roleName>
+								 <marker>55</marker>,
+							</persName>
+							<persName>	
+								 <forename>Jeff</forename>
+								 <surname>O &apos;Connell</surname> ,
+								<roleName>PhD</roleName>
+								 <marker>18</marker> ,
+ 							</persName>
+ 							<persName>		 
+								 <forename>Christopher</forename>
+								 <middlename>J</middlename> .
+								<surname>O &apos; Donnell</surname> ,
+								 <roleName>MD ,MPH</roleName>
+								 <marker>1, 56</marker>,
+ 							</persName>
+ 							<persName>		 
+								 <forename>Walter</forename>
+								 <surname>Palmas</surname> ,
+								 <roleName>MD</roleName>,
+								 <lb/>
+								<roleName>MS</roleName> ,
+								<marker>57</marker>,
+ 							</persName>
+ 							<persName>			
+								 <forename>Brenda</forename>
+								 <middlename>W</middlename> .
+								 <surname>Penninx</surname>,
+								 <roleName>PhD</roleName>
+								<marker>58,59 ,60</marker> ,
+ 							</persName>
+ 							<persName>	
+								 <forename>Astrid</forename>
+								 <surname>Petersmann</surname>,
+								 <roleName>MD, PhD</roleName>
+								<marker>61</marker> ,
+ 							</persName>
+ 							<persName>		
+								<forename>Ozren</forename>
+								 <surname>Polasek</surname>,
+								 <roleName>MD</roleName> ,
+								 <lb/>
+								 <roleName>PhD</roleName>
+								 <marker>45</marker>,
+  							</persName>
+  							<persName>		 
+								 <forename>Bruce</forename>
+								<middlename>M</middlename> .
+								 <surname>Psaty</surname>,
+								<roleName>MD, PhD</roleName>
+								 <marker>62 , 63</marker>,
+  							</persName>
+  							<persName>		 
+								 <forename>Barbara</forename>
+								<surname>Rantner</surname> ,
+								 <roleName>MD, PhD</roleName>
+								 <marker>9, 43</marker>,
+  							</persName>
+  							<persName>		 
+								 <forename>Ken</forename>
+								<surname>Rice</surname> ,
+								 <roleName>PhD</roleName>
+								 <marker>27</marker> ,
+								 <lb/>
+							</persName>
+							<persName>	
+								<forename>Fernando</forename>
+								 <surname>Rivadeneira</surname>,
+								 <roleName>MD, PhD</roleName>
+								 <marker>4,5 , 64</marker> ,
+ 							</persName>
+ 							<persName>	 
+								<forename>Jerome</forename>
+								 <middlename>I</middlename>.
+								 <surname>Rotter</surname> ,
+								<roleName>MD</roleName>
+								<marker>65</marker>,
+							</persName>
+							<persName>	
+								 <forename>Adrie</forename>
+								 <surname>Seldenrijk</surname>,
+								 <roleName>PhD</roleName>
+								 <marker>58</marker>,
+								 <lb/>
+							</persName>
+							<persName>
+								 <forename>Marietta</forename>
+								<surname>Stadler</surname> ,
+								<roleName>MD</roleName>
+								<marker>66</marker>,
+							</persName>
+							<persName>	
+								 <forename>Monika</forename>
+								 <surname>Summerer</surname>,
+								<roleName>PhD</roleName>
+								<marker>9</marker>,
+							</persName>
+							<persName>	
+								 <forename>Toshiko</forename>
+								 <surname>Tanaka</surname> ,
+								<roleName>PhD</roleName>
+								<marker>67</marker>,
+							</persName>
+							<persName>	
+								 <forename>Anne</forename>
+								 <surname>Tybjaerg -<lb/> Hansen</surname> ,
+								<roleName>MD , DMSc</roleName>
+								 <marker>14</marker> ,
+ 							</persName>
+ 							<persName>	 
+								<forename>Andre</forename>
+								 <middlename>G</middlename>.
+								 <surname>Uitterlinden</surname> ,
+								 <roleName>PhD</roleName>
+								 <marker>4 ,5 , 64</marker> ,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Wiek</forename>
+								 <middlename>H</middlename>.
+								 <surname>van Gilst</surname> ,
+								 <roleName>PhD</roleName>
+								 <marker>22</marker>,
+ 							</persName>
+ 							<persName>	 
+								<forename>Sita</forename>
+								<middlename>H</middlename>.
+								<lb/>
+								 <surname>Vermeulen</surname>,
+								 <roleName>PhD</roleName>
+								 <marker>44</marker>,
+  							</persName>
+  							<persName>		 
+								 <forename>Sarah</forename>
+								 <middlename>H</middlename>.
+								 <surname>Wild</surname>,
+								 <roleName>MB ,BChir</roleName>,
+								<roleName>PhD</roleName>
+								<marker>68</marker> ,
+ 							</persName>
+ 							<persName>		
+								 <forename>Philipp</forename>
+								 <middlename>S</middlename>.
+								 <surname>Wild</surname> ,
+								<roleName>MD</roleName>
+								 <marker>40 , 69</marker> ,
+  							</persName>
+  							<persName>		 
+								 <forename>Johann</forename>
+								 <lb/>
+								<surname>Willeit</surname> ,
+								<roleName>MD</roleName>
+								<marker>27</marker> ,
+  							</persName>
+  							<persName>		
+								 <forename>Tanja</forename>
+								 <surname>Zeller</surname> ,
+								 <roleName>PhD</roleName>
+								<marker>70</marker> ,
+  							</persName>
+  							<persName>		
+								<forename>Tatijana</forename>
+								 <surname>Zemunik</surname>,
+								 <roleName>MD, PhD</roleName>
+								 <marker>71</marker> ,
+   							</persName>
+   							<persName>		 
+								 <forename>Lina</forename>
+								 <surname>Zgaga</surname>,
+								 <roleName>MD, PhD</roleName>
+								 <marker>68,72</marker> ,
+							<lb/>
+							</persName>
+							<persName>	
+								 <forename>Themistocles</forename>
+								 <middlename>L</middlename>.
+								<surname>Assimes</surname> ,
+								 <roleName>MD , PhD</roleName>
+								 <marker>73</marker> ,
+    						</persName>
+    						<persName>		 
+								 <forename>Stefan</forename>
+								 <surname>Blankenberg</surname> ,
+								 <roleName>MD</roleName>
+								 <marker>70</marker> ,
+     						</persName>
+     						<persName>			 
+								 <forename>Eric</forename>
+								<surname>Boerwinkle</surname> ,
+								 <roleName>PhD</roleName>
+								 <marker>32</marker> ,
+								 <lb/>
+	 						</persName>
+	 						<persName>	
+								 <forename>Harry</forename>
+								<surname>Campbell</surname> ,
+								<roleName>MD</roleName>
+								<marker>68</marker> ,
+     						</persName>
+     						<persName>		
+								<forename>John</forename>
+								<middlename>P</middlename> .
+								 <surname>Cooke</surname>,
+								 <roleName>MD, PhD</roleName>
+								<marker>73</marker> ,
+							</persName>
+							<persName>	 
+								<forename>Jacqueline</forename>
+								 <surname>de Graaf</surname> ,
+								 <roleName>MD, PhD</roleName>
+								 <marker>15</marker> ,
+ 							</persName>
+ 							<persName>	 
+								 <forename>David</forename>
+							<lb/>
+								 <surname>Herrington</surname> ,
+								<roleName>MD , MHS</roleName>
+								<marker>74</marker> ,
+							</persName>
+							<persName>	
+								<forename>Sharon</forename>
+								 <middlename>L</middlename>.
+								 <middlename>R</middlename> .
+								 <surname>Kardia</surname> ,
+								 <roleName>PhD</roleName>
+								<marker>75</marker> ,
+							</persName>
+							<persName>		
+								<forename>Braxton</forename>
+								 <middlename>D</middlename>.
+								 <surname>Mitchell</surname> ,
+								 <roleName>PhD</roleName>
+								 <marker>18</marker> ,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Anna</forename>
+								 <lb/>
+								<surname>Murray</surname> ,
+								<roleName>PhD</roleName>
+								 <marker>25</marker> ,
+ 							</persName>
+ 							<persName>
+								 <forename>Thomas</forename>
+								 <surname>Münzel</surname> ,
+								<roleName>MD</roleName>
+								<marker>40</marker> ,
+							</persName>
+							<persName>	
+								<forename>Anne</forename>
+								 <surname>Newman</surname> ,
+								 <roleName>MD , MPH</roleName> ,
+								 <marker>76</marker> ,
+ 							</persName>
+ 							<persName>	 
+								<forename>Ben</forename>
+								 <middlename>A</middlename>.
+								 <surname>Oostra</surname> ,
+								 <roleName>PhD</roleName> 
+								 <marker>77</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Igor</forename>
+								 <surname>Rudan</surname>,
+								 <roleName>MD</roleName> ,
+								 <roleName>PhD , MPH</roleName>
+								<marker>68, 72</marker> ,
+							</persName>
+							<persName>	
+								 <forename>Alan</forename>
+								 <middlename>R</middlename> .
+								<surname>Shuldiner</surname> ,
+								 <roleName>MD</roleName>
+								 <marker>18 , 78</marker>,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Harold</forename>
+								<surname>Snieder</surname> ,
+								 <roleName>PhD</roleName>
+								 <marker>19</marker> ,
+								 <lb/>
+							</persName>
+							<persName>
+								 <forename>Cornelia</forename>
+								<middlename>M</middlename> .
+								<surname>van Duijn</surname> ,
+								 <roleName>PhD</roleName>
+								 <marker>4, 5</marker>,
+ 							</persName>
+ 							<persName>	 
+								 <forename>Uwe</forename>
+								<surname>Völker</surname> ,
+								<roleName>PhD</roleName>
+								 <marker>21</marker> ,
+ 							</persName>
+ 							<persName>	 
+								<forename>Alan</forename>
+								<middlename>F</middlename> .
+								 <surname>Wright</surname> ,
+								<roleName>PhD</roleName>
+								 <marker>16</marker>,
+ 							</persName>
+ 							<persName>	 
+								 <forename>H .-Erich</forename> .
+								 <surname>Kronenberg</surname>,
+								 <roleName>MD</roleName>,
+								 <lb/> 
+ 							</persName>
+ 							Author Manuscript
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

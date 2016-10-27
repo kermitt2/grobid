@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Epidemiology</orgName>,
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Internal Medicine</orgName> and
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department Psychiatry</orgName>,
+							<orgName type="institution">Erasmus Medical Center</orgName>,
+							<address>
+								<settlement>Rotterdam</settlement>,
+								<region>CA</region>
+								<postCode>3000</postCode>,
+								<country>The Netherlands</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">Hebrew Senior Life Institute for Aging Research</orgName> 
+							and 
+							<orgName type="institution">Harvard Medical School</orgName>,
+							<address>
+								<settlement>Boston</settlement>,
+								<region>MA</region>
+								<postCode>02131</postCode>,
+								<country>USA</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Molecular and Integrative Physiological Sciences Program</orgName>,
+							<orgName type="institution">Harvard School of Public Health</orgName>,
+							<address>
+								<settlement>Boston</settlement>,
+								<region>MA</region>
+								<postCode>02115</postCode>,
+								<country>USA</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="department">Netherlands Genomics Initiative (NGI)</orgName>-sponsored 
+							<orgName type="consortium">Netherlands Consortium for Healthy Aging (NCHA)</orgName>,
+							<address>
+								<settlement>Leiden</settlement>,
+								<region>RC</region>
+								<postCode>2300</postCode>,
+								<addrLine>The Netherlands</addrLine>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="department">Department of Biostatistics</orgName>,
+							<orgName type="institution">Boston University</orgName> 
+							<orgName type="department">School of Public Health</orgName>,
+							<address>
+								<settlement>Boston</settlement>,
+								<region>MA</region>
+								<postCode>02118</postCode>,
+								<country>USA</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>8</marker>
+							<orgName type="department">Sections of General Internal Medicine, Preventive Medicine, Cardiology and Neurology</orgName>,
+							<orgName type="department">Department of Medicine</orgName>,
+							<orgName type="institution">Boston University School of Medicine</orgName>,
+							<address>
+								<settlement>Boston</settlement>,
+								<region>MA</region>
+								<postCode>02118</postCode>,
+								<country>USA</country> and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>9</marker>
+							<orgName type="institution">The National Heart Lung and Blood Institute&apos;s Framingham Heart Study</orgName>,
+							<address>
+								<settlement>Framingham</settlement>,
+								<region>MA</region>
+								<postCode>01702-5827</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

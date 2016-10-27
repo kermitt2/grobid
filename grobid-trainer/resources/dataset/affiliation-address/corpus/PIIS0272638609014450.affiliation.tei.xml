@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Nephrology</orgName>,
+							<orgName type="institution">University Hospi-tals Birmingham NHS Foundation Trust</orgName>;
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Pathology</orgName>,
+							<orgName type="institution">University College London</orgName>;
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Wellcome Trust Clinical Research Facility</orgName>,
+							<orgName type="institution">University Hospitals Birming-ham NHS Foundation Trust</orgName>; and
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">School of Immunity &amp; Infection</orgName>,
+							<orgName type="department">College of Medical and Dental Sciences</orgName>,
+							<orgName type="institution">Univer-sity of Birmingham</orgName>,
+							<address>
+								<settlement>Birmingham</settlement>,
+								<country>UK</country>.
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">University of Birmingham</orgName>,
+							<orgName type="laboratory">Division of Immunity and Infec-tion</orgName>, 
+							<orgName type="department">Medical School</orgName>,
+							<address>
+								<settlement>Birmingham</settlement>,
+								<region>West Midlands</region>
+								<postCode>B15 2 TT</postCode>,
+								<country>UK</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

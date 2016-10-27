@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Clara</forename>
+								 <middlename>J</middlename>.
+								 <surname>Day</surname>,
+								 <roleName>BMBCh</roleName>,
+								 <roleName>PhD</roleName>,
+							<lb/>
+								 <marker>1</marker>
+ 							</persName>
+ 							<persName>	 
+								<forename>Alec</forename>
+								 <middlename>J</middlename> .
+								<surname>Howie</surname> ,
+								<roleName>MD</roleName> ,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>	
+								 <forename>Peter</forename>
+								<surname>Nightingale</surname> ,
+								 <roleName>PhD</roleName>,
+							<lb/>
+								 <marker>3</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Shazia</forename>
+								 <surname>Shabir</surname>,
+								<roleName>MBChB</roleName> ,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>	
+								<forename>Dwomoa</forename>
+								 <surname>Adu</surname>,
+								 <roleName>MD</roleName>,
+							<lb/>
+								 <marker>1</marker>
+ 							</persName>
+ 							<persName>		 
+								<forename>Caroline</forename>
+								 <middlename>O</middlename> .
+								<surname>Savage</surname> ,
+								<roleName>FMedSci</roleName> ,
+								<lb/>
+								<marker>4</marker> and
+								<lb/>
+							</persName>
+							<persName>
+								 <forename>Peter</forename>
+								<surname>Hewins</surname> ,
+								<roleName>MBChB</roleName> ,
+								<roleName>PhD</roleName>
+							<lb/>
+								 <marker>1, 4</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

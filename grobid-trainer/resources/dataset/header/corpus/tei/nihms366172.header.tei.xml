@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="nihms366172"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">NIH Public Access<lb/> Author Manuscript<lb/></note>
+
+	<note type="other">Anaesthesia. Author manuscript;</note> 
+		
+	<date>available in PMC 2012 May 22.<lb/></date> 
+	
+	<note type="other">Published in final edited form as:<lb/></note>
+
+	<reference>Anaesthesia. 2011 December ; 66(12): 1093–1100.</reference>
+
+	<idno>doi:10.1111/j.1365-2044.2011.06863.x.<lb/></idno>
+
+	<docTitle>
+	<titlePart>The air-Q ® intubating laryngeal airway vs the LMA-ProSeal™: a<lb/> prospective, randomised trial of airway seal pressure *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R. E. Galgon 1 , K. M. Schroeder 2 , S. Han 3 , A. Andrei 4 , and A. M. Joffe 5<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Senior Resident, Department of Anesthesiology, University of Wisconsin School of Medicine and<lb/> Public Health,</affiliation>
+	</byline>
+
+	<address>Madison, WI, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Assistant Professor, Department of Anesthesiology, University of Wisconsin School of Medicine<lb/> and Public Health,</affiliation>
+	</byline>
+
+	<address>Madison, WI, USA<lb/></address>
+
+	<note type="other">NIH-PA Author Manuscript<lb/> </note>
+
+	<byline>
+	<affiliation>3 Research Professor, Department of Anesthesiology, University of Wisconsin School of Medicine<lb/> and Public Health,</affiliation>
+	</byline>
+
+	<address>Madison, WI, USA<lb/></address>
+
+	<byline>
+	<affiliation>4 Assistant Professor, Department of Anesthesiology, University of Wisconsin School of Medicine<lb/> and Public Health,</affiliation>
+	</byline>
+
+	<address>Madison, WI, USA<lb/></address>
+
+	<byline>
+	<affiliation>5 Assistant Professor, Department of Anesthesiology and Pain Medicine, University of<lb/> Washington-Harborview Medical Center,</affiliation>
+	</byline>
+
+	<address>Seattle, WA, USA<lb/></address>
+
+	<div type="abstract">Summary<lb/> We performed a prospective, open-label, randomised controlled trial comparing the air-Q ® against<lb/> the LMA-ProSeal™ in adults undergoing general anaesthesia. One hundred subjects (American<lb/> Society of Anesthesiologists physical status 1–3) presenting for elective, outpatient surgery were<lb/> randomly assigned to 52 air-Q ® and 48 ProSeal devices. The primary study endpoint was airway<lb/> seal pressure. Oropharyngolaryngeal morbidity was assessed secondarily. Mean (SD) airway seal<lb/> pressures for the air-Q ® and ProSeal were 30 (7) cmH 2 O and 30 (6) cmH 2 O, respectively (p =<lb/> 0.47). Postoperative sore throat was more common with the air-Q ® (46% vs 38%, p = 0.03) as was<lb/> pain on swallowing (30% vs 5%, p = 0.01). In conclusion, the air-Q ® performs well as a primary<lb/> airway during the maintenance of general anaesthesia with an airway seal pressure similar to that<lb/> of the ProSeal, but with a higher incidence of postoperative oropharyngolaryngeal complaints.<lb/> NIH-PA Author Manuscript<lb/> * Presented in part at the Society for Airway Management&apos;s Annual Meeting, Chicago, USA; September 2010.<lb/></div>
+
+	<note type="copyright">© 2011 The Authors Anaesthesia © 2011 The Association of Anaesthetists of Great Britain and Ireland<lb/></note>
+
+	<note type="other">Correspondence to:</note> 
+	
+	<byline>
+	<docAuthor>Aaron M. Joffe,</docAuthor>
+	</byline> 
+	
+	<email>joffea@uw.edu.<lb/> </email>
+	
+	<note type="other">Competing interests<lb/> None of the authors have any financial relationship with any of the device manufacturers with an interest in the subject matter of this<lb/> study. Further, none of these manufacturers were involved in the design of study, study conduct, data analysis and / or manuscript<lb/> preparation.</note>
+
+		</front>
+	</text>
+</tei>
