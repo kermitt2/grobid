@@ -411,7 +411,7 @@ var grobid = (function($) {
 			                        // Render text-fragments
 			                        textLayer.render();
 
-			                        setupAnnotations(page, viewport, canvas, $('.annotationLayer'));
+			                        //setupAnnotations(page, viewport, canvas, $('.annotationLayer'));
 			                    });
 			                });
 			            }
@@ -421,21 +421,102 @@ var grobid = (function($) {
 			}
 
 			xhr.onreadystatechange = function(e) {
-				if (xhr.readyState == 4 && xhr.status == 200) {
+				if (xhr.readyState == 4 && xhr.status == 200) { 
 				    var response = e.target.response;
-				    //console.log(response);
-				    setupAnnotations(response, nbPages);
+				    //var response = JSON.parse(xhr.responseText);
+				 	//console.log(response);
+				    setupAnnotations(response);
 				} else  if (xhr.status != 200) {
 					AjaxError(xhr);
 				}
 			}
-			xhr.send(formData); 
+			xhr.send(formData);
 		}
 	}
 
-	function setupAnnotations(response, nbPages) {
+	function setupAnnotations(response) {
+		// we must check/wait that the corresponding PDF page is rendered at this point
+
 		var json = response;
+		var pageInfo = json.pages;
 		
+		var page_height = 0.0;
+		var page_width = 0.0;
+
+		var refBibs = json.refBibs;
+		var mapRefBibs = {};
+		if (refBibs) {
+			for(var n in refBibs) {
+				var annotation = refBibs[n];
+				var theId = annotation.id;
+				var theUrl = annotation.url;
+				var pos = annotation.pos;
+				if (pos) 
+					mapRefBibs[theId] = annotation;
+				//for (var m in pos) {
+				pos.forEach(function(thePos, m) {
+					//var thePos = pos[m];
+					// get page information for the annotation
+					var pageNumber = thePos.p;
+					if (pageInfo[pageNumber-1]) {
+						page_height = pageInfo[pageNumber-1].page_height;
+						page_width = pageInfo[pageNumber-1].page_width;
+					}
+					annotateBib(true, theId, thePos, theUrl, page_height, page_width, null);
+				});
+			}
+		}
+
+		// we need the above mapRefBibs structure to be created to perform the ref. markers analysis
+		var refMarkers = json.refMarkers;
+		if (refMarkers) {
+			//for(var n in refMarkers) {
+			refMarkers.forEach(function(annotation, n) {
+				//var annotation = refMarkers[n];
+				var theId = annotation.id;
+				if (!theId)
+                    return;
+				// we take the first and last positions
+				var targetBib = mapRefBibs[theId];
+				if (targetBib) {
+					var theBibPos = {};
+					var pos = targetBib.pos;
+					//if (pos && (pos.length > 0)) {
+					var theFirstPos = pos[0];
+					var theLastPos = pos[pos.length-1];
+					theBibPos.p = theFirstPos.p;
+					theBibPos.w = Math.max(theFirstPos.w, theLastPos.w); 
+					theBibPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
+					theBibPos.x = Math.min(theFirstPos.x, theLastPos.x); 
+					theBibPos.y = Math.min(theFirstPos.y, theLastPos.y); 
+					var pageNumber = theBibPos.p;
+					if (pageInfo[pageNumber-1]) {
+						page_height = pageInfo[pageNumber-1].page_height;
+						page_width = pageInfo[pageNumber-1].page_width;
+					}
+					annotateBib(false, theId, annotation, null, page_height, page_width, theBibPos);
+					//}
+				} else {
+					var pageNumber = annotation.p;
+					if (pageInfo[pageNumber-1]) {
+						page_height = pageInfo[pageNumber-1].page_height;
+						page_width = pageInfo[pageNumber-1].page_width;
+					}
+					annotateBib(false, theId, annotation, null, page_height, page_width, null);
+				}
+			});
+		}
+	}
+
+	/*function setupAnnotations(response, nbPages) {
+		for(var pageNumber in response.pages) {
+			setupPageAnnotations(response.pages[pageNumber], pageNumber);
+		}
+	}
+
+	function setupPageAnnotations(json, pageNumber) {
+		
+		// we must check/wait that the corresponding PDF page is rendered ar this point
 		var page_height = json.page_height;
 		var page_width = json.page_width;
 
@@ -481,7 +562,7 @@ var grobid = (function($) {
 					annotateBib(false, theId, annotation, null, page_height, page_width, null);
 			}
 		}
-	}
+	}*/
 
 	function annotateBib(bib, theId, thePos, url, page_height, page_width, theBibPos) {
 		var page = thePos.p;
@@ -508,11 +589,14 @@ var grobid = (function($) {
 		if (bib) {
 			// this is a bibliographical reference
 			// we draw a line
-			element.setAttribute("style", attributes + "border:1px; border-style:none none solid none; border-color: blue;");
-			element.setAttribute("id", theId);
 			if (url) {
+				element.setAttribute("style", attributes + "border:2px; border-style:none none solid none; border-color: blue;");
 				element.setAttribute("href", url);
+				element.setAttribute("target", "_blank");
 			}
+			else
+				element.setAttribute("style", attributes + "border:1px; border-style:none none dotted none; border-color: gray;");
+			element.setAttribute("id", theId);
 		} else {
 			// this is a reference marker
 			// we draw a box

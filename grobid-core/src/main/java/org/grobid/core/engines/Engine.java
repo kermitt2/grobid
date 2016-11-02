@@ -18,6 +18,7 @@ package org.grobid.core.engines;
 import com.google.common.io.Files;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.tuple.Pair;
+
 import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BibDataSet;
@@ -39,6 +40,7 @@ import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.Utilities;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.counters.impl.CntManagerFactory;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
