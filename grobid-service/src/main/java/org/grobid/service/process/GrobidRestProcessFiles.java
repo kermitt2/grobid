@@ -623,7 +623,7 @@ public class GrobidRestProcessFiles {
                 if (isparallelExec) {
                     Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
                     if (type == GrobidRestUtils.Annotation.CITATION) {
-                        out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc);
+                        out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc, null);
 					}
                     else if (type == GrobidRestUtils.Annotation.BLOCK) {
                         out = BlockVisualizer.annotateBlocks(document, documentSource.getXmlFile(), 
@@ -640,7 +640,7 @@ public class GrobidRestProcessFiles {
                         //TODO: VZ: sync on local var does not make sense
                         Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
                         if (type == GrobidRestUtils.Annotation.CITATION) {
-                            out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc);
+                            out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc, null);
 						}
                         else if (type == GrobidRestUtils.Annotation.BLOCK) {
                             out = BlockVisualizer.annotateBlocks(document, documentSource.getXmlFile(), 
@@ -724,14 +724,14 @@ public class GrobidRestProcessFiles {
                 DocumentSource documentSource = DocumentSource.fromPdf(originFile);
                 if (isparallelExec) {
                     Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-                    json = CitationsVisualizer.getJsonAnnotations(teiDoc);
+                    json = CitationsVisualizer.getJsonAnnotations(teiDoc, null);
                     GrobidPoolingFactory.returnEngine(engine);
                     engine = null;
                 } else {
                     synchronized (engine) {
                         //TODO: VZ: sync on local var does not make sense
                         Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-                        json = CitationsVisualizer.getJsonAnnotations(teiDoc);
+                        json = CitationsVisualizer.getJsonAnnotations(teiDoc, null);
                     } 
                 }
 
