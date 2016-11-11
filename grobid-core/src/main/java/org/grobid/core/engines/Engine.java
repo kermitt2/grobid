@@ -18,6 +18,7 @@ package org.grobid.core.engines;
 import com.google.common.io.Files;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.tuple.Pair;
+
 import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BibDataSet;
@@ -39,6 +40,7 @@ import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.Utilities;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.counters.impl.CntManagerFactory;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -1078,6 +1080,29 @@ public class Engine implements Closeable {
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
         return parsers.getReferenceExtractor().extractAllReferencesPDFFile(pdfPath, filterDuplicate,
+                consolidateCitations, patentResults, nplResults);
+    }
+	
+    /**
+     * Extract and parse both patent and non patent references within a patent
+     * in PDF format. Results are provided as JSON annotations with coordinates
+	 * of the annotations in the orignal PDF and reference informations in DOCDB 
+	 * format (format according to WIPO and ISO standards).
+     *
+     * @param pdfPath              pdf path
+     * @param consolidateCitations - the consolidation option allows GROBID to exploit Crossref
+     *                             web services for improving citations information
+     * @return JSON annotations with extracted and parsed patent and non-patent references
+     *         together with coordinates in the original PDF.
+     * @throws Exception if sth. went wrong
+     */
+    public String annotateAllCitationsInPDFPatent(String pdfPath, 
+                                                  boolean consolidateCitations) throws Exception {
+		List<BibDataSet> nplResults = new ArrayList<BibDataSet>();
+		List<PatentItem> patentResults = new ArrayList<PatentItem>();
+        // we initialize the attribute individually for readability...
+        boolean filterDuplicate = false;
+        return parsers.getReferenceExtractor().annotateAllReferencesPDFFile(pdfPath, filterDuplicate,
                 consolidateCitations, patentResults, nplResults);
     }
 

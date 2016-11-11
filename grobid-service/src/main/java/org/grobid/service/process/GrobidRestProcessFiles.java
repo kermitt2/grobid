@@ -623,7 +623,7 @@ public class GrobidRestProcessFiles {
                 if (isparallelExec) {
                     Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
                     if (type == GrobidRestUtils.Annotation.CITATION) {
-                        out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc);
+                        out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc, null);
 					}
                     else if (type == GrobidRestUtils.Annotation.BLOCK) {
                         out = BlockVisualizer.annotateBlocks(document, documentSource.getXmlFile(), 
@@ -640,7 +640,7 @@ public class GrobidRestProcessFiles {
                         //TODO: VZ: sync on local var does not make sense
                         Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
                         if (type == GrobidRestUtils.Annotation.CITATION) {
-                            out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc);
+                            out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc, null);
 						}
                         else if (type == GrobidRestUtils.Annotation.BLOCK) {
                             out = BlockVisualizer.annotateBlocks(document, documentSource.getXmlFile(), 
@@ -724,14 +724,14 @@ public class GrobidRestProcessFiles {
                 DocumentSource documentSource = DocumentSource.fromPdf(originFile);
                 if (isparallelExec) {
                     Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-                    json = CitationsVisualizer.getJsonAnnotations(teiDoc);
+                    json = CitationsVisualizer.getJsonAnnotations(teiDoc, null);
                     GrobidPoolingFactory.returnEngine(engine);
                     engine = null;
                 } else {
                     synchronized (engine) {
                         //TODO: VZ: sync on local var does not make sense
                         Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-                        json = CitationsVisualizer.getJsonAnnotations(teiDoc);
+                        json = CitationsVisualizer.getJsonAnnotations(teiDoc, null);
                     } 
                 }
 
@@ -764,7 +764,67 @@ public class GrobidRestProcessFiles {
         return response;
     }
 
+    /**
+     * Annotate the citations in a PDF patent document with JSON annotations.
+     *
+     * @param inputStream the data of origin document
+     * @return a response object mainly containing the TEI representation of the
+     * citation
+     */
+    public static Response annotateCitationPatentPDF(final InputStream inputStream,
+                                                    final boolean consolidate) {
+        LOGGER.debug(methodLogIn());
+        Response response = null;
+        String retVal;
+        boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+        File originFile = null;
+        Engine engine = null;
+        try {
+            originFile = IOUtilities.writeInputFile(inputStream);
 
+            if (originFile == null) {
+                response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+            } else {
+                // starts conversion process
+                engine = Engine.getEngine(isparallelExec);
+                //List<PatentItem> patents = new ArrayList<PatentItem>();
+                //List<BibDataSet> articles = new ArrayList<BibDataSet>();
+                if (isparallelExec) {
+                    retVal = engine.annotateAllCitationsInPDFPatent(originFile.getAbsolutePath(),
+                             consolidate);
+                    GrobidPoolingFactory.returnEngine(engine);
+                    engine = null;
+                } else {
+                    synchronized (engine) {
+                        retVal = engine.annotateAllCitationsInPDFPatent(originFile.getAbsolutePath(),
+                                consolidate);
+                    }
+                }
+
+                IOUtilities.removeTempFile(originFile);
+
+                if (!GrobidRestUtils.isResultOK(retVal)) {
+                    response = Response.status(Status.NO_CONTENT).build();
+                } else {
+                    response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_JSON).build();
+                }
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
+        } finally {
+            IOUtilities.removeTempFile(originFile);
+            if (isparallelExec && engine != null) {
+                GrobidPoolingFactory.returnEngine(engine);
+            }
+        }
+        LOGGER.debug(methodLogOut());
+        return response;
+    }
+	
     public static String methodLogIn() {
         return ">> " + GrobidRestProcessFiles.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
     }

@@ -20,6 +20,7 @@ public class LayoutToken {
     private int page = -1;
     private boolean newLineAfter;
     private int blockPtr;
+	private int offset = 0;
 
     public LayoutToken() {
     }
@@ -144,6 +145,14 @@ public class LayoutToken {
     public void setBlockPtr(int blockPtr) {
         this.blockPtr = blockPtr;
     }
+
+	public int getOffset() {
+		return offset;
+	}
+	
+	public void setOffset(int offset) {
+		this.offset = offset;
+	}
 
     @Override
     public String toString() {
