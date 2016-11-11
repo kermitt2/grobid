@@ -1,12 +1,8 @@
 package org.grobid.core.visualization;
 
-/**
- * Created by zholudev on 07/01/16.
- * Visualize citation markers and references
- */
-
 import com.google.common.collect.Multimap;
 import net.sf.saxon.trans.XPathException;
+
 import org.apache.pdfbox.cos.COSArray;
 import org.apache.pdfbox.cos.COSDictionary;
 import org.apache.pdfbox.cos.COSBase;
@@ -24,6 +20,7 @@ import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDDestination;
 import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDNamedDestination;
 import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination;
+
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BibDataSetContext;
 import org.grobid.core.document.Document;
@@ -38,6 +35,9 @@ import org.grobid.core.utilities.BibDataSetContextExtractor;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Pair;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -46,9 +46,424 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ *  Utilities for visualizing citation markers and biblographical references, wither directly 
+ *  in the PDF using the PDF annotation layer or as annotations in JSON for supporting
+ *  web based rendering (e.g. with PDF.js) and interactive HTML layer.
+ *  See the web console/demo for actual examples of usage.   
+ */
 public class CitationsVisualizer {
+    private static final Logger LOGGER = LoggerFactory.getLogger(CitationsVisualizer.class);
 
-    public static void main(String args[]) {
+    /**
+     *  Augment a PDF with bibliographical annotation, for bib. ref. and bib markers.
+     *  The PDF annotation layer is used with "GoTo" and "URI" action links. 
+     *  The annotations of the bibliographical references can be associated to an URL in order
+     *  to have clickable references direclty in the PDF.
+     *  The Apache PDFBox library is used. 
+     * 
+     *  @param document PDDocument object resulting from the PDF parsing with PDFBox
+     *  @param teiDoc the Document object resulting from the full document structuring
+     *  @param resolvedBibRefUrl the list of URL to be added to the bibliographical reference
+     *  annotations, if null the bib. ref. annotations are not associated to external URL.
+     */
+    public static PDDocument annotatePdfWithCitations(PDDocument document, Document teiDoc, 
+            List<String> resolvedBibRefUrl) throws IOException, COSVisitorException, XPathException {
+        String tei = teiDoc.getTei();
+        //ystem.out.println(tei);
+        int totalBib = 0;
+        int totalMarkers1 = 0;
+        int totalMarkers2 = 0;
+        Multimap<String, BibDataSetContext> contexts = BibDataSetContextExtractor.getCitationReferences(tei);
+		Map<String, Pair<Integer, Integer>> dictionary = new HashMap<String, Pair<Integer, Integer>>();
+        int indexBib = 0;
+        for (BibDataSet cit : teiDoc.getBibDataSets()) {
+            String teiId = cit.getResBib().getTeiId();
+            totalBib++;
+            String theUrl = null;
+            if ( (resolvedBibRefUrl != null) && 
+                 (resolvedBibRefUrl.size() > indexBib) && 
+                 (resolvedBibRefUrl.get(indexBib) != null) )
+                theUrl = resolvedBibRefUrl.get(indexBib);
+            for (BoundingBox b : cit.getResBib().getCoordinates()) {
+                annotatePage(document, b.toString(), teiId, theUrl, 1.5f, false, dictionary);
+            }
+            //annotating reference markers
+            for (BibDataSetContext c : contexts.get(teiId)) {
+                //System.out.println(c.getContext());
+                String mrect = c.getDocumentCoords();
+                for (String coords : mrect.split(";")) {
+                    annotatePage(document, coords, teiId, null, 1.0f, true, dictionary);
+                    totalMarkers1++;
+                }
+            }
+            indexBib++;
+        }
+        for (BibDataSetContext c : contexts.get("")) {
+            String mrect = c.getDocumentCoords();
+            for (String coords : mrect.split(";")) {
+                annotatePage(document, coords, null, null, 1.0f, true, dictionary);
+                totalMarkers2++;
+            }
+        }
+        LOGGER.debug("totalBib: " + totalBib);
+        LOGGER.debug("totalMarkers1: " + totalMarkers1);
+        LOGGER.debug("totalMarkers2: " + totalMarkers2);
+        return document;
+    }
+
+
+    private static void annotatePage(PDDocument document, 
+									String coords, 
+									String teiId, 
+                                    String uri,
+									float lineWidth, 
+									boolean isMarker,
+									Map<String, Pair<Integer, Integer>> dictionary) throws IOException {
+        //System.out.println("Annotating for coordinates: " + coords);
+		/*long seed = 0L;
+		if (teiId != null)
+			seed = teiId.hashCode();*/
+		
+		String[] split = coords.split(",");
+
+        Long pageNum = Long.valueOf(split[0], 10) - 1;
+        PDPage page = (PDPage) document.getDocumentCatalog().getAllPages().get(pageNum.intValue());
+
+        PDRectangle mediaBox = page.getMediaBox();
+        float height = mediaBox.getHeight();
+        float lowerX = mediaBox.getLowerLeftX();
+        float lowerY = mediaBox.getLowerLeftY();
+
+        float x = Float.parseFloat(split[1]);
+        float y = Float.parseFloat(split[2]);
+        float w = Float.parseFloat(split[3]);
+        float h = Float.parseFloat(split[4]);
+
+        float annX = x + lowerX;
+        float annY = (height - (y + h)) + lowerY;
+        float annRightX = x + w + lowerX;
+        float annTopY = height - y + lowerY;
+
+        PDRectangle rect = new PDRectangle();
+
+        rect.setLowerLeftX(annX);
+        rect.setLowerLeftY(annY);
+        rect.setUpperRightX(annRightX);
+        rect.setUpperRightY(annTopY);
+
+        PDBorderStyleDictionary borderULine = new PDBorderStyleDictionary();
+        borderULine.setStyle(PDBorderStyleDictionary.STYLE_BEVELED);
+        // so that a border is not visible at all
+        borderULine.setWidth(0);
+
+        PDAnnotationLink txtLink = new PDAnnotationLink();
+        txtLink.setBorderStyle(borderULine);
+
+        //white rectangle border color (ideally, should be transparent)
+        COSArray white = new COSArray();
+        white.setFloatArray(new float[]{1f, 1f, 1f});
+        txtLink.setColour(new PDGamma(white));
+        txtLink.setReadOnly(true);
+        txtLink.setHighlightMode(PDAnnotationLink.HIGHLIGHT_MODE_PUSH);
+		
+		if (isMarker && (teiId != null)) {
+			Pair<Integer, Integer> thePlace = dictionary.get(teiId);
+			if (thePlace != null) {
+				PDPageFitWidthDestination destination = new PDPageFitWidthDestination();
+				destination.setPageNumber(thePlace.getA());
+				destination.setTop(thePlace.getB());
+                PDActionGoTo action = new PDActionGoTo();
+				action.setDestination(destination);	
+				txtLink.setAction(action);
+			}
+		} else {
+            if (teiId != null) {
+			    // register the object in the dictionary
+			    if (dictionary.get(teiId) == null) {
+				    Pair<Integer, Integer> thePlace = 
+					   new Pair<Integer, Integer>(new Integer(pageNum.intValue()), new Integer(Math.round(annTopY+h)));
+				    dictionary.put(teiId, thePlace);
+			    }
+            }
+            if (uri != null) {
+                PDActionURI action = new PDActionURI();
+                if (uri.endsWith("fulltext/original"))
+                    uri = uri.replace("fulltext/original", "fulltext/pdf");
+                action.setURI(uri);
+                txtLink.setAction(action);
+            } else
+                return;
+		}
+        txtLink.setRectangle(rect);
+
+        // adding link to the reference
+        page.getAnnotations().add(txtLink);
+
+        //draw a line
+        PDBorderStyleDictionary borderThick = new PDBorderStyleDictionary();
+        borderThick.setWidth(1);  // 12th inch
+
+        // adding line to the reference
+        PDPageContentStream stream = new PDPageContentStream(document, page, true, false, true);
+        //Random r = new Random(seed + 1);
+
+//        stream.setStrokingColor(85, 177, 245);
+        //stream.setStrokingColor(r.nextInt(255), r.nextInt(255), r.nextInt(255));
+        stream.setStrokingColor(0, 0, 255);
+        if (isMarker || (uri != null))
+            stream.setLineWidth(lineWidth);
+        else
+            stream.setLineWidth(0f);
+        stream.drawLine(annX, annY, annRightX, annY);
+        stream.close();
+    }
+
+
+    /**
+     *  Produce JSON annotations with PDF coordinates for web based PDF rendering. Annotations
+     *  are given for bib. ref. and bib markers separately, together with the dimension of the 
+     *  different pages for client resizing. 
+     *  The annotations of the bibliographical references can be associated to an URL in 
+     *  order to support "clickable" bib. ref. annotations.
+     * 
+     *  @param teiDoc the Document object resulting from the full document structuring
+     *  @param resolvedBibRefUrl the list of URL to be added to the bibliographical reference
+     *  annotations, if null the bib. ref. annotations are not associated to external URL.
+     */
+    public static String getJsonAnnotations(Document teiDoc, List<String> resolvedBibRefUrl) throws IOException, XPathException {
+        StringBuilder jsonRef = new StringBuilder();
+        jsonRef.append("{\"pages\" : [");
+
+        // page height and width
+        List<Page> pages = teiDoc.getPages();
+        int pageNumber = 1;
+        for(Page page : pages) {
+            if (pageNumber > 1)
+                jsonRef.append(", ");
+
+            jsonRef.append("{\"page_height\":" + page.getHeight());
+            jsonRef.append(", \"page_width\":" + page.getWidth() + "}");
+            pageNumber++;
+        }
+
+        jsonRef.append("], \"refBibs\":[");
+        StringBuilder jsonMark = new StringBuilder();
+        jsonMark.append("\"refMarkers\":[");
+
+        int totalMarkers1 = 0;
+        int totalMarkers2 = 0;
+        int totalBib = 0;
+
+        String tei = teiDoc.getTei();
+        Multimap<String, BibDataSetContext> contexts = 
+            BibDataSetContextExtractor.getCitationReferences(tei);
+        boolean begin = true;
+        boolean beginMark = true;
+        int bibIndex = 0;
+        for (BibDataSet cit : teiDoc.getBibDataSets()) {
+            if (begin)
+                begin = false;
+            else
+                jsonRef.append(", ");
+            String teiId = cit.getResBib().getTeiId();
+            totalBib++;
+            jsonRef.append("{ \"id\":\"").append(teiId).append("\", ");
+            // url if any - they are passed via the resolvedBibRefUrl vector provided as argument
+            if ( (resolvedBibRefUrl != null) && 
+                 (resolvedBibRefUrl.size()>bibIndex) && 
+                 (resolvedBibRefUrl.get(bibIndex) != null) ) {
+                jsonRef.append("\"url\": \"" + resolvedBibRefUrl.get(bibIndex) + "\", ");
+            }
+            jsonRef.append("\"pos\":[");
+            boolean begin2 = true;
+            for (BoundingBox b : cit.getResBib().getCoordinates()) {
+                // reference string
+                if (begin2)
+                    begin2 = false;
+                else
+                    jsonRef.append(", ");
+
+                jsonRef.append("{").append(b.toJson()).append("}");
+                //annotatePage(document, b.toString(), teiId.hashCode(), contexts.containsKey(teiId) ? 1.5f : 0.5f);
+            }
+            // reference markers for this reference
+            for (BibDataSetContext c : contexts.get(teiId)) {
+                //System.out.println(c.getContext());
+                String mrect = c.getDocumentCoords();
+                for (String coords : mrect.split(";")) {
+                    if (beginMark)
+                        beginMark = false;
+                    else
+                        jsonMark.append(", ");
+                    //annotatePage(document, coords, teiId.hashCode(), 1.0f);
+                    jsonMark.append("{ \"id\":\"").append(teiId).append("\", ");
+                    BoundingBox b2 = BoundingBox.fromString(coords);
+                    jsonMark.append(b2.toJson()).append(" }");
+                    totalMarkers1++;
+                }
+            }
+            jsonRef.append("] }");
+            bibIndex++;
+        }
+
+        for (BibDataSetContext c : contexts.get("")) {
+            String mrect = c.getDocumentCoords();
+            for (String coords : mrect.split(";")) {
+                if (coords.trim().length() == 0)
+                    continue;
+                if (beginMark)
+                    beginMark = false;
+                else
+                    jsonMark.append(", ");
+                //annotatePage(document, coords, 0, 1.0f);
+                BoundingBox b = BoundingBox.fromString(coords);
+                jsonMark.append("{").append(b.toJson()).append("}"); 
+                totalMarkers2++;
+            }
+        }
+
+        LOGGER.debug("totalBib: " + totalBib);
+        LOGGER.debug("totalMarkers1: " + totalMarkers1);
+        LOGGER.debug("totalMarkers2: " + totalMarkers2);
+
+        jsonRef.append("], ").append(jsonMark.toString()).append("] }");
+        return jsonRef.toString();
+    }
+
+    /* 
+     * A variant where annotations are provided page per page
+     */
+    public static String getJsonAnnotationsPerPage(Document teiDoc, List<String> resolvedBibRefUrl) throws IOException, XPathException {
+        StringBuilder jsonRef = new StringBuilder();
+        jsonRef.append("{\"pages\" : [");
+
+        int totalMarkers1 = 0;
+        int totalMarkers2 = 0;
+        int totalBib = 0;
+
+        List<Page> pages = teiDoc.getPages();
+        int pageNumber = 1;
+        for(Page page : pages) {
+            if (pageNumber > 1)
+                jsonRef.append(", ");
+
+            // page height and width
+            jsonRef.append("{\"page_height\":" + page.getHeight());
+            jsonRef.append(", \"page_width\":" + page.getWidth());
+
+            boolean refBibOutput = false;
+            StringBuilder jsonMark = new StringBuilder();
+            boolean refMarkOutput = false;
+
+            String tei = teiDoc.getTei();
+            Multimap<String, BibDataSetContext> contexts = BibDataSetContextExtractor.getCitationReferences(tei);
+            
+            boolean beginMark = true;
+            boolean begin = true;
+            for (BibDataSet cit : teiDoc.getBibDataSets()) {
+                /*if (begin)
+                    begin = false;
+                else
+                    jsonRef.append(", ");*/
+                String teiId = cit.getResBib().getTeiId();
+                boolean idOutput = false;
+                
+                boolean begin2 = true;
+                for (BoundingBox b : cit.getResBib().getCoordinates()) {
+                    if (b.getPage() == pageNumber) {
+                        if (!refBibOutput) {
+                            jsonRef.append(", \"refBibs\": [ ");
+                            refBibOutput = true;
+                        }
+                        if (!idOutput) {
+                            if (begin)
+                                begin = false;
+                            else    
+                                jsonRef.append(", ");
+                            jsonRef.append("{\"id\":\"").append(teiId).append("\", ");
+                            jsonRef.append("\"pos\":[");
+                            idOutput = true;
+                        }
+
+                        // reference string
+                        if (begin2)
+                            begin2 = false;
+                        else
+                            jsonRef.append(", ");
+
+                        jsonRef.append("{").append(b.toJson()).append("}");
+                        totalBib++;
+                    }
+                    //annotatePage(document, b.toString(), teiId.hashCode(), contexts.containsKey(teiId) ? 1.5f : 0.5f);
+                }
+                
+                // reference markers for this reference
+                for (BibDataSetContext c : contexts.get(teiId)) {
+                    //System.out.println(c.getContext());
+                    String mrect = c.getDocumentCoords();
+                    for (String coords : mrect.split(";")) {
+                        //annotatePage(document, coords, teiId.hashCode(), 1.0f);
+                        BoundingBox b2 = BoundingBox.fromString(coords);
+                        if (b2.getPage() == pageNumber) {
+                            if (!refMarkOutput) {
+                                jsonMark.append(", \"refMarkers\": [");
+                                refMarkOutput = true;
+                            }
+                            /*if (beginMark)
+                                beginMark = false;*/
+                            else
+                                jsonMark.append(", ");
+                            jsonMark.append("{ \"id\":\"").append(teiId).append("\", ");
+                            jsonMark.append(b2.toJson()).append(" }");
+                            totalMarkers1++;
+                        }
+                    }
+                }
+                 if (idOutput) {
+                    jsonRef.append("] }");
+                }
+            }
+
+            for (BibDataSetContext c : contexts.get("")) {
+                String mrect = c.getDocumentCoords();
+                for (String coords : mrect.split(";")) {        
+                    //annotatePage(document, coords, 0, 1.0f);
+                    BoundingBox b = BoundingBox.fromString(coords);
+                    if (b.getPage() == pageNumber) {
+                        if (!refMarkOutput) {
+                            jsonMark.append(", \"refMarkers\": [");
+                            refMarkOutput = true;
+                        }
+                        /*if (beginMark)
+                            beginMark = false;*/
+                        else
+                            jsonMark.append(", ");
+                        jsonMark.append("{").append(b.toJson()).append("}"); 
+                        totalMarkers2++;
+                    }
+                }
+            }
+            pageNumber++;
+            if (refBibOutput) {
+                jsonRef.append("]");
+                
+            }
+            if (refMarkOutput) {
+                jsonRef.append(jsonMark.toString()).append("]");
+            }
+            jsonRef.append("}");
+        }
+
+        LOGGER.debug("totalBib: " + totalBib);
+        LOGGER.debug("totalMarkers1: " + totalMarkers1);
+        LOGGER.debug("totalMarkers2: " + totalMarkers2);
+
+        jsonRef.append("]}");
+        return jsonRef.toString();
+    }
+
+    /*public static void main(String args[]) {
         try {
             // to be reviewed ;)
             File input = new File("/Users/zholudev/Downloads/AS-319651387510785@1453222237979_content_1.pdf");
@@ -79,233 +494,6 @@ public class CitationsVisualizer {
             e.printStackTrace();
             System.exit(1);
         }
-    }
+    }*/
 
-    public static PDDocument annotatePdfWithCitations(PDDocument document, Document teiDoc) throws IOException, COSVisitorException, XPathException {
-        String tei = teiDoc.getTei();
-        //ystem.out.println(tei);
-        int totalBib = 0;
-        int totalMarkers1 = 0;
-        int totalMarkers2 = 0;
-        Multimap<String, BibDataSetContext> contexts = BibDataSetContextExtractor.getCitationReferences(tei);
-		Map<String, Pair<Integer, Integer>> dictionary = new HashMap<String, Pair<Integer, Integer>>();
-        for (BibDataSet cit : teiDoc.getBibDataSets()) {
-            String teiId = cit.getResBib().getTeiId();
-            totalBib++;
-            for (BoundingBox b : cit.getResBib().getCoordinates()) {
-                annotatePage(document, b.toString(), teiId, 
-					contexts.containsKey(teiId) ? 1.5f : 0.5f, false, dictionary);
-            }
-            //annotating reference markers
-            for (BibDataSetContext c : contexts.get(teiId)) {
-                //System.out.println(c.getContext());
-                String mrect = c.getDocumentCoords();
-                for (String coords : mrect.split(";")) {
-                    annotatePage(document, coords, teiId, 1.0f, true, dictionary);
-                    totalMarkers1++;
-                }
-            }
-        }
-        for (BibDataSetContext c : contexts.get("")) {
-            String mrect = c.getDocumentCoords();
-            for (String coords : mrect.split(";")) {
-                annotatePage(document, coords, null, 3.0f, true, dictionary);
-                totalMarkers2++;
-            }
-        }
-        System.out.println("totalBib: " + totalBib);
-        System.out.println("totalMarkers1: " + totalMarkers1);
-        System.out.println("totalMarkers2: " + totalMarkers2);
-        return document;
-    }
-
-
-    private static void annotatePage(PDDocument document, 
-									String coords, 
-									String teiId, 
-									float lineWidth, 
-									boolean isMarker,
-									Map<String, Pair<Integer, Integer>> dictionary) throws IOException {
-        //System.out.println("Annotating for coordinates: " + coords);
-		long seed = 0L;
-		if (teiId != null)
-			seed = teiId.hashCode();
-		
-		String[] split = coords.split(",");
-
-        Long pageNum = Long.valueOf(split[0], 10) - 1;
-        PDPage page = (PDPage) document.getDocumentCatalog().getAllPages().get(pageNum.intValue());
-
-        PDRectangle mediaBox = page.getMediaBox();
-        float height = mediaBox.getHeight();
-        float lowerX = mediaBox.getLowerLeftX();
-        float lowerY = mediaBox.getLowerLeftY();
-
-        float x = Float.parseFloat(split[1]);
-        float y = Float.parseFloat(split[2]);
-        float w = Float.parseFloat(split[3]);
-        float h = Float.parseFloat(split[4]);
-
-        //most likely a big bounding box
-//            if (h > 15) {
-//                continue;
-//            }
-
-        float annX = x + lowerX;
-        float annY = (height - (y + h)) + lowerY;
-        float annRightX = x + w + lowerX;
-        float annTopY = height - y + lowerY;
-
-
-        PDRectangle rect = new PDRectangle();
-
-        rect.setLowerLeftX(annX);
-        rect.setLowerLeftY(annY);
-        rect.setUpperRightX(annRightX);
-        rect.setUpperRightY(annTopY);
-
-        PDBorderStyleDictionary borderULine = new PDBorderStyleDictionary();
-        borderULine.setStyle(PDBorderStyleDictionary.STYLE_BEVELED);
-        // so that a border is not visible at all
-        borderULine.setWidth(0);
-
-        PDAnnotationLink txtLink = new PDAnnotationLink();
-        txtLink.setBorderStyle(borderULine);
-
-        //white rectangle border color (ideally, should be transparent)
-        COSArray white = new COSArray();
-        white.setFloatArray(new float[]{1f, 1f, 1f});
-        txtLink.setColour(new PDGamma(white));
-        txtLink.setReadOnly(true);
-
-        //so that
-        txtLink.setHighlightMode(PDAnnotationLink.HIGHLIGHT_MODE_PUSH);
-		PDActionGoTo action = new PDActionGoTo();
-		
-		if (isMarker && (teiId != null)) {
-			Pair<Integer, Integer> thePlace = dictionary.get(teiId);
-			if (thePlace != null) {
-				PDPageFitWidthDestination destination = new PDPageFitWidthDestination();
-				destination.setPageNumber(thePlace.getA());
-				destination.setTop(thePlace.getB());
-				action.setDestination(destination);	
-				txtLink.setAction(action);
-			}
-		} else if (teiId != null) {
-			// register the object in the dictionary
-			if (dictionary.get(teiId) == null) {
-				Pair<Integer, Integer> thePlace = 
-					new Pair<Integer, Integer>(new Integer(pageNum.intValue()), new Integer(Math.round(annTopY+h)));
-				dictionary.put(teiId, thePlace);
-			}
-		}
-        txtLink.setRectangle(rect);
-
-        // ADDING LINK TO THE REFERENCE
-        page.getAnnotations().add(txtLink);
-
-        //draw a line
-        PDBorderStyleDictionary borderThick = new PDBorderStyleDictionary();
-        borderThick.setWidth(1);  // 12th inch
-
-        // ADDING LINE TO THE REFERENCE
-        PDPageContentStream stream = new PDPageContentStream(document, page, true, false, true);
-        Random r = new Random(seed + 1);
-
-//        stream.setStrokingColor(85, 177, 245);
-        stream.setStrokingColor(r.nextInt(255), r.nextInt(255), r.nextInt(255));
-        stream.setLineWidth(lineWidth);
-        stream.drawLine(annX, annY, annRightX, annY);
-        stream.close();
-    }
-
-
-    public static String getJsonAnnotations(Document teiDoc) throws IOException, XPathException {
-        StringBuilder jsonRef = new StringBuilder();
-        jsonRef.append("{ ");
-
-        // default page height and width
-        List<Page> pages = teiDoc.getPages();
-        Page page = null;
-        if (pages.size() > 1) {
-            // avoiding a possible cover page
-            page = pages.get(1);
-        } else {
-            page = pages.get(0);
-        }
-        jsonRef.append("\"page_height\":" + page.getHeight());
-        jsonRef.append(", \"page_width\":" + page.getWidth() + ", ");
-
-        jsonRef.append("\"refBibs\":[");
-        StringBuilder jsonMark = new StringBuilder();
-        jsonMark.append("\"refMarkers\":[");
-
-        int totalMarkers1 = 0;
-        int totalMarkers2 = 0;
-        int totalBib = 0;
-
-        String tei = teiDoc.getTei();
-        Multimap<String, BibDataSetContext> contexts = BibDataSetContextExtractor.getCitationReferences(tei);
-        boolean begin = true;
-        boolean beginMark = true;
-        for (BibDataSet cit : teiDoc.getBibDataSets()) {
-            if (begin)
-                begin = false;
-            else
-                jsonRef.append(", ");
-            String teiId = cit.getResBib().getTeiId();
-            totalBib++;
-            jsonRef.append("{ \"id\":\"").append(teiId).append("\", ");
-            jsonRef.append("\"pos\":[");
-            boolean begin2 = true;
-            for (BoundingBox b : cit.getResBib().getCoordinates()) {
-                // reference string
-                if (begin2)
-                    begin2 = false;
-                else
-                    jsonRef.append(", ");
-
-                jsonRef.append("{").append(b.toJson()).append("}");
-                //annotatePage(document, b.toString(), teiId.hashCode(), contexts.containsKey(teiId) ? 1.5f : 0.5f);
-            }
-            // reference markers for this reference
-            for (BibDataSetContext c : contexts.get(teiId)) {
-                //System.out.println(c.getContext());
-                String mrect = c.getDocumentCoords();
-                for (String coords : mrect.split(";")) {
-                    if (beginMark)
-                        beginMark = false;
-                    else
-                        jsonMark.append(", ");
-                    //annotatePage(document, coords, teiId.hashCode(), 1.0f);
-                    jsonMark.append("{ \"id\":\"").append(teiId).append("\", ");
-                    BoundingBox b2 = BoundingBox.fromString(coords);
-                    jsonMark.append(b2.toJson()).append(" }");
-                    totalMarkers1++;
-                }
-            }
-            jsonRef.append("] }");
-        }
-
-        for (BibDataSetContext c : contexts.get("")) {
-            String mrect = c.getDocumentCoords();
-            for (String coords : mrect.split(";")) {
-                if (beginMark)
-                    beginMark = false;
-                else
-                    jsonMark.append(", ");
-                //annotatePage(document, coords, 0, 1.0f);
-                BoundingBox b = BoundingBox.fromString(coords);
-                jsonMark.append("{").append(b.toJson()).append("}"); 
-                totalMarkers2++;
-            }
-        }
-
-        System.out.println("totalBib: " + totalBib);
-        System.out.println("totalMarkers1: " + totalMarkers1);
-        System.out.println("totalMarkers2: " + totalMarkers2);
-
-        jsonRef.append("], ").append(jsonMark.toString()).append("] }");
-        return jsonRef.toString();
-    }
 }

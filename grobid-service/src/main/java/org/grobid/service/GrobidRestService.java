@@ -648,4 +648,19 @@ public class GrobidRestService implements GrobidPathes {
 	public Response processPDFReferenceAnnotation(@FormDataParam(INPUT) InputStream inputStream) {
 		return GrobidRestProcessFiles.processPDFReferenceAnnotation(inputStream);
 	}
+	
+	/**
+	 */
+	@Path(PATH_CITATIONS_PATENT_PDF_ANNOTATION)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces("application/json")
+	@POST
+	public Response annotatePDFPatentCitation(@FormDataParam(INPUT) InputStream inputStream, 
+		@FormDataParam("consolidate") String consolidate) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.annotateCitationPatentPDF(inputStream, consol);
+	}
 }

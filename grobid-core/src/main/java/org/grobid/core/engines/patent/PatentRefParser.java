@@ -402,7 +402,7 @@ public class PatentRefParser {
 					number = number.substring(ind, number.length());
 				}
 				
-				if (!kindCodeFound) {
+				if (!kindCodeFound && (offsets_begin.get(i)-rawTextOffset >= lastPositionVisited)) {
 					// is there a kind code between the last position and position of this number?
 					String interChunk = rawText.substring(lastPositionVisited, (offsets_begin.get(i)-rawTextOffset));
 					fitKindCode = kindcode_pattern1.matcher(interChunk);
@@ -1270,10 +1270,12 @@ public class PatentRefParser {
             if ((toto.charAt(toto.length() - 2) == '.') && (Character.isDigit(toto.charAt(toto.length() - 1)))) {
                 toto = toto.substring(0, toto.length() - 2);
             }
-            if (((toto.charAt(toto.length() - 2) == 'A') ||
-                    (toto.charAt(toto.length() - 2) == 'B') ||
-                    (toto.charAt(toto.length() - 2) == 'C'))
-                    & (Character.isDigit(toto.charAt(toto.length() - 1)))) {
+            if ( (toto.length() > 2) &&
+				 ((toto.charAt(toto.length() - 2) == 'A') ||
+                  (toto.charAt(toto.length() - 2) == 'B') ||
+                  (toto.charAt(toto.length() - 2) == 'C')) &&
+                 (Character.isDigit(toto.charAt(toto.length() - 1)))
+			) {
                 toto = toto.substring(0, toto.length() - 2);
             }
         }

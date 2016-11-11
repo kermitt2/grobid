@@ -40,8 +40,8 @@
 			
 		    <div class="page-header">
 	             <h1><span style="color:#333;">Grobid<!--img src="resources/img/grobid_header_logo.png" /--> 
-					 <span style="padding-left:40px;color:#AE0C0C;">		
-		<h2><small> 
+					 <h2>
+						<small>
 			<a class="section-active" id="about" href="#">About</a> 
 				<span style="padding-left:20px;">&nbsp;</span> 	
 			<a class="section-not-active" id="rest" href="#">TEI</a> 
@@ -54,8 +54,9 @@
 				<span style="padding-left:20px;">&nbsp;</span>
 			<a class="section-not-active" id="doc" href="#">Doc</a> 
 				<span style="padding-left:20px;">&nbsp;</span> 
-		</small></h2>
-		</span></h1>
+						</small>
+					</h2>
+				</h1>
 	        </div>
 	
 			<table border="0">
@@ -202,12 +203,15 @@
 							<td>Service to call &nbsp;</td>
 							<td>
 								<select id="selectedService3">
-					                <optgroup label="Citations in patent">
-				                    	<option value="processCitationPatentTEI" selected>Process Citation patent TEI</option>
-										<option value="processCitationPatentST36">Process Citation patent ST.36</option>
-										<option value="processCitationPatentTXT">Process Citation patent text</option>
-										<option value="processCitationPatentPDF">Process Citation patent PDF</option>
+					                <optgroup label="Citations extraction in patent">
+				                    	<option value="processCitationPatentTEI" selected>Extract Citation patent TEI</option>
+										<option value="processCitationPatentST36">Extract Citation patent ST.36</option>
+										<option value="processCitationPatentTXT">Extract Citation patent text</option>
+										<option value="processCitationPatentPDF">Extract Citation patent PDF</option>
 									</optgroup>	
+									<optgroup label="Patent PDF annotation of citations">
+					                    <option value="citationPatentAnnotations">PDF reference annotations</option>
+					                </optgroup>
 								</select>
 							</td>
 						</tr>
@@ -249,7 +253,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>&nbsp;</td><td colspan="2"><input id="submitRequest3" type="submit" value="Submit" class="btn"/></td>
+							<td>&nbsp;</td><td colspan="2"><input id="submitRequest3" value="Submit" class="btn"/></td>
 						</tr>	
 			        </table>
 				</form>

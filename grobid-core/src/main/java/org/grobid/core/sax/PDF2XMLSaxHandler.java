@@ -53,6 +53,8 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 	private Page page = null; // the current page object
 	private GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance(); 
 
+	private int currentOffset = 0;
+
 	public PDF2XMLSaxHandler(Document d, List<GraphicObject> im) {
 		doc = d;
 		blabla = new StringBuffer();
@@ -61,6 +63,8 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 	}
 
 	private void addToken(LayoutToken layoutToken) {
+		layoutToken.setOffset(currentOffset);
+		currentOffset += layoutToken.getText().length();
 		tokenizations.add(layoutToken);
 		if (doc.getBlocks() == null) {
 			layoutToken.setBlockPtr(0);
