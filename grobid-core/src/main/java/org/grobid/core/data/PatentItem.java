@@ -1,5 +1,8 @@
 package org.grobid.core.data;
 
+import java.util.List;
+import org.grobid.core.layout.BoundingBox;
+
 /**
  * Class for managing patent bibliographical references.
  *
@@ -33,6 +36,9 @@ public class PatentItem implements Comparable<PatentItem> {
 
     // context of occurrence of the reference
     private String context = null;
+
+	// coordinates in the orignal layout (for PDF)
+	private List<BoundingBox> coordinates = null;
 
     public String getAuthority() {
         return authority;
@@ -242,12 +248,15 @@ public class PatentItem implements Comparable<PatentItem> {
 	public String toTEI() {
 		return toTEI(null, false, null);
 	}
+	
 	public String toTEI(boolean withPtr, String ptrVal) {
 		return toTEI(null, withPtr, ptrVal);
 	}
+	
 	public String toTEI(String date) {
 		return toTEI(date, false, null);
 	}
+	
 	public String toTEI(String date, boolean withPtr, String ptrVal) {
 		/* TEI for patent bilbiographical data is as follow (After the TEI guideline update of October 2012):
 		<biblStruct type="patent¦utilityModel¦designPatent¦plant" status="application¦publication">
@@ -333,11 +342,122 @@ public class PatentItem implements Comparable<PatentItem> {
 			biblStruct.append("<certainty degree=\"" + conf +"\" />");
 		}
 		biblStruct.append("</monogr>");
-		
-		
+
 		biblStruct.append("</biblStruct>");
 		
 		return biblStruct.toString();
 	}
-    
+	
+	public String toJson(String date, boolean withCoordinates) {
+		StringBuilder json = new StringBuilder();
+		json.append("{");
+		json.append("\"type\": ");
+		if (design) {
+			json.append("\"designPatent\"");
+		}
+		else if (plant) {
+			json.append("\"plant\"");
+		}
+		else if (utility) {
+			json.append("\"utilityModel\"");
+		}
+		else {
+			json.append("\"patent\"");
+		}
+		
+		json.append(", \"status\": ");				
+		if (application) {
+			json.append("\"application\"");
+		}
+		else if (provisional) {
+			json.append("\"provisional\"");
+		}
+		else if (reissued) {
+			json.append("\"reissued\"");
+		}
+		else {
+			json.append("\"publication\"");
+		}
+		
+		json.append(", \"authority\": { \"name\": \"").append(authority).append("\", \"type\": \"");
+		if (authority.equals("EP") || authority.equals("WO") || authority.equals("XN") 
+			|| authority.equals("XN") || authority.equals("GC") || authority.equals("EA") ) { 
+			// XN is the Nordic Patent Institute
+			// OA is the African Intellectual Property Organization (OAPI)
+			// GC is the Gulf Cooperation Council 
+			// EA Eurasian Patent Organization
+			json.append("regional");
+		}
+		else {
+			json.append("national");
+		}
+		json.append("\"}");
+		
+		json.append(", \"number\": {"); 
+		if (number_wysiwyg != null) {
+			json.append("\"original\" : \"").append(number_wysiwyg).append("\"");
+			if (number_epodoc != null)
+				json.append(", ");
+		}
+		if (number_epodoc != null)
+			json.append("\"epodoc\" : \"").append(number_epodoc).append("\"");
+		json.append("}"); 
+
+		if (kindCode != null) {
+			json.append(", \"kindCode\" : \"").append(kindCode).append("\"");
+		}
+
+		if (date != null) {
+			json.append(", \"date\" : \"").append(date).append("\"");
+		}
+
+		if ( withCoordinates && (coordinates != null) && (coordinates.size() > 0) ) {
+			json.append(", \"pos\": [");
+			boolean first = true;
+			for (BoundingBox b : coordinates) {
+				if (first)
+					first = false;
+				else
+					json.append(",");
+				json.append("{").append(b.toJson()).append("}");
+			}
+			json.append("]");
+		}
+
+		if ( (offset_begin != -1) && (offset_end != -1)) {
+			json.append(", \"offset\": {");
+			json.append("\"begin\" : ").append(offset_begin).append(", ");
+			json.append("\"end\" : ").append(offset_end);
+			json.append("}");
+		}
+		
+		String url1 = getEspacenetURL();
+		String url2 = null;
+		
+		if (authority.equals("EP"))
+			url2= getEpolineURL();
+
+		if (  (url1 != null) || (url2 != null) ) {
+			json.append(", \"url\": {");
+			if (url1 != null) {
+				json.append("\"espacenet\" : \"").append(url1).append("\"");
+				if (url2 != null)
+					json.append(", ");
+			}
+			if (url2 != null)
+				json.append("\"epoline\" : \"").append(url2).append("\"");
+			json.append("}");
+		}
+
+		json.append("}");
+		return json.toString();
+	}
+ 
+    public void setCoordinates(List<BoundingBox> coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    public List<BoundingBox> getCoordinates() {
+        return coordinates;
+    }
 }

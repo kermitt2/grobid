@@ -1082,6 +1082,29 @@ public class Engine implements Closeable {
         return parsers.getReferenceExtractor().extractAllReferencesPDFFile(pdfPath, filterDuplicate,
                 consolidateCitations, patentResults, nplResults);
     }
+	
+    /**
+     * Extract and parse both patent and non patent references within a patent
+     * in PDF format. Results are provided as JSON annotations with coordinates
+	 * of the annotations in the orignal PDF and reference informations in DOCDB 
+	 * format (format according to WIPO and ISO standards).
+     *
+     * @param pdfPath              pdf path
+     * @param consolidateCitations - the consolidation option allows GROBID to exploit Crossref
+     *                             web services for improving citations information
+     * @return JSON annotations with extracted and parsed patent and non-patent references
+     *         together with coordinates in the original PDF.
+     * @throws Exception if sth. went wrong
+     */
+    public String annotateAllCitationsInPDFPatent(String pdfPath, 
+                                                  boolean consolidateCitations) throws Exception {
+		List<BibDataSet> nplResults = new ArrayList<BibDataSet>();
+		List<PatentItem> patentResults = new ArrayList<PatentItem>();
+        // we initialize the attribute individually for readability...
+        boolean filterDuplicate = false;
+        return parsers.getReferenceExtractor().annotateAllReferencesPDFFile(pdfPath, filterDuplicate,
+                consolidateCitations, patentResults, nplResults);
+    }
 
     public void processCitationPatentTEI(String teiPath, String outTeiPath,
                                          boolean consolidateCitations) throws Exception {

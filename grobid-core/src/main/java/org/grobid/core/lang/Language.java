@@ -14,9 +14,11 @@ public final class Language {
     public static final String DE = "de";
     public static final String FR = "fr";
 
+    private String langId;
+    private double confidence;
 
-    private final String langId;
-    private final double confidence;
+	// default construction for jackson mapping
+	public Language() {}
 
     public Language(String langId, double confidence) {
         if (langId == null) {
@@ -34,11 +36,19 @@ public final class Language {
     public String getLangId() {
         return langId;
     }
+	
+    public void setLang(String lang) {
+        this.langId = langId;
+    }
 
     @SuppressWarnings({"UnusedDeclaration"})
     public double getConfidence() {
         return confidence;
     }
+
+	public void setConf(double conf) {
+		this.confidence = confidence;
+	}
 
     @Override
     public String toString() {

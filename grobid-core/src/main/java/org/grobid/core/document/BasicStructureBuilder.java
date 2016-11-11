@@ -682,6 +682,7 @@ public class BasicStructureBuilder {
 
     }	
 	
+
     static public Document generalResultSegmentation(Document doc, String labeledResult, List<LayoutToken> documentTokens) {
         List<Pair<String, String>> labeledTokens = GenericTaggerUtils.getTokensAndLabels(labeledResult);
 

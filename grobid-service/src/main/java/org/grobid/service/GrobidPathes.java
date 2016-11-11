@@ -137,6 +137,11 @@ public interface GrobidPathes {
 	public static final String PATH_REFERENCES_PDF_ANNOTATION = "referenceAnnotations";
 
 	/**
+	 * path extension for the JSON annotations of the citations in a patent PDF file.
+	 */
+	public static final String PATH_CITATIONS_PATENT_PDF_ANNOTATION = "citationPatentAnnotations";
+
+	/**
 	 * path extension for processing sha1.
 	 */
 	public static final String PATH_SHA1 = "sha1";
