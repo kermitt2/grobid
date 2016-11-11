@@ -68,26 +68,15 @@ var grobid = (function($) {
 		}); 
 
 		$('#gbdForm').ajaxForm({
-            beforeSubmit: ShowRequest,
+            beforeSubmit: ShowRequest1,
             success: SubmitSuccesful,
-            error: AjaxError,
+            error: AjaxError1,
             dataType: "text"
         });
 
 		$('#submitRequest2').bind('click', submitQuery2);
-        /*$('#gbdForm2').ajaxForm({
-            beforeSubmit: ShowRequest2,
-            success: SubmitSuccesful2,
-            error: AjaxError2,
-            dataType: "text"
-        });*/
 
-        $('#gbdForm3').ajaxForm({
-            beforeSubmit: ShowRequest3,
-            success: SubmitSuccesful3,
-            error: AjaxError3,
-            dataType: "text"
-        });
+		$('#submitRequest3').bind('click', submitQuery3);
 
 		$('#adminForm').attr("action",$(location).attr('href')+"allProperties");
 		$('#TabAdminProps').hide();
@@ -217,8 +206,6 @@ var grobid = (function($) {
 			setBaseUrl('processCitationPatentTEI');
 			$("#subTitle").hide(); 
 			processChange();
-			//$("#subTitle").html("PDF annotation services"); 
-			//$("#subTitle").show(); 
 			
 			$("#divDoc").hide();
 			$("#divAbout").hide();
@@ -230,25 +217,22 @@ var grobid = (function($) {
 		});
 	});
 
-	function ShowRequest(formData, jqForm, options) {
-	    //var queryString = $.param(formData);
+	function ShowRequest1(formData, jqForm, options) {
 	    $('#requestResult').html('<font color="grey">Requesting server...</font>');
 	    return true;
 	}
 
 	function ShowRequest2(formData, jqForm, options) {
-	    //var queryString = $.param(formData);
 	    $('#requestResult2').html('<font color="grey">Requesting server...</font>');
 	    return true;
 	}
 
 	function ShowRequest3(formData, jqForm, options) {
-	    //var queryString = $.param(formData);
 	    $('#requestResult3').html('<font color="grey">Requesting server...</font>');
 	    return true;
 	}
 	
-	function AjaxError(jqXHR, textStatus, errorThrown) {
+	function AjaxError1(jqXHR, textStatus, errorThrown) {
 		$('#requestResult').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");      
 		responseJson = null;
 	}
@@ -324,6 +308,7 @@ var grobid = (function($) {
 			var nbPages = -1;
 
 			// display the local PDF
+console.log(document.getElementById("input2").files[0].type);
             if (document.getElementById("input2").files[0].type == 'application/pdf') {
                 var reader = new FileReader();
                 reader.onloadend = function () {
@@ -410,8 +395,6 @@ var grobid = (function($) {
 
 			                        // Render text-fragments
 			                        textLayer.render();
-
-			                        //setupAnnotations(page, viewport, canvas, $('.annotationLayer'));
 			                    });
 			                });
 			            }
@@ -427,7 +410,183 @@ var grobid = (function($) {
 				 	//console.log(response);
 				    setupAnnotations(response);
 				} else  if (xhr.status != 200) {
-					AjaxError(xhr);
+					AjaxError2(xhr);
+				}
+			}
+			xhr.send(formData);
+		}
+	}
+	
+	function submitQuery3() {
+		var selected = $('#selectedService3 option:selected').attr('value');
+		if (selected == 'citationPatentPDFAnnotation') {
+			// we will have a PDF back
+			//PDFJS.disableWorker = true;
+			
+			var form = document.getElementById('gbdForm3');
+			var formData = new FormData(form);
+			var xhr = new XMLHttpRequest();
+			var url = $('#gbdForm3').attr('action');
+			xhr.responseType = 'arraybuffer';
+			xhr.open('POST', url, true);
+			ShowRequest3();
+			xhr.onreadystatechange = function(e) {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+				    var response = e.target.response;
+				    var pdfAsArray = new Uint8Array(response);
+					// Use PDFJS to render a pdfDocument from pdf array
+					var frame = '<iframe id="pdfViewer" src="resources/pdf.js/web/viewer.html?file=" style="width: 100%; height: 1000px;"></iframe>';
+					$('#requestResult3').html(frame);
+					var pdfjsframe = document.getElementById('pdfViewer');
+					pdfjsframe.onload = function() { 
+						pdfjsframe.contentWindow.PDFViewerApplication.open(pdfAsArray); 
+					};
+				} else  if (xhr.status != 200) {
+					AjaxError3(xhr);
+				}
+			};
+			xhr.send(formData);  // multipart/form-data 
+		} else if (selected == 'citationPatentAnnotations') {
+			// we will have JSON annotations to be layered on the PDF
+
+			// request for the annotation information
+			var form = document.getElementById('gbdForm3');
+			var formData = new FormData(form);
+			var xhr = new XMLHttpRequest();
+			var url = $('#gbdForm3').attr('action');
+			xhr.responseType = 'json';
+			xhr.open('POST', url, true);
+			ShowRequest3();
+			
+			var nbPages = -1;
+
+			// display the local PDF
+console.log('display PDF - before');
+console.log(document.getElementById("input3").files[0].type);	
+            if (document.getElementById("input3").files[0].type == 'application/pdf') {
+console.log('display PDF');				
+                var reader = new FileReader();
+                reader.onloadend = function () {
+					// to avoid cross origin issue
+					//PDFJS.disableWorker = true;
+				    var pdfAsArray = new Uint8Array(reader.result);
+					// Use PDFJS to render a pdfDocument from pdf array
+				    PDFJS.getDocument(pdfAsArray).then(function (pdf) {
+				        // Get div#container and cache it for later use
+			            var container = document.getElementById("requestResult3");
+			            // enable hyperlinks within PDF files.
+			            //var pdfLinkService = new PDFJS.PDFLinkService();
+			            //pdfLinkService.setDocument(pdf, null);
+
+						$('#requestResult3').html('');
+						nbPages = pdf.numPages;
+
+			            // Loop from 1 to total_number_of_pages in PDF document
+			            for (var i = 1; i <= nbPages; i++) {
+
+			                // Get desired page
+			                pdf.getPage(i).then(function(page) {
+
+							  	var div0 = document.createElement("div");
+							  	div0.setAttribute("style", "text-align: center; margin-top: 1cm;");
+			                  	var pageInfo = document.createElement("p");
+			                  	var t = document.createTextNode("page " + (page.pageIndex + 1) + "/" + (nbPages));
+							  	pageInfo.appendChild(t);
+							  	div0.appendChild(pageInfo);
+			                  	container.appendChild(div0);
+
+			                  	var scale = 1.5;
+			                 	var viewport = page.getViewport(scale);
+				                var div = document.createElement("div");
+
+			                  	// Set id attribute with page-#{pdf_page_number} format
+			                  	div.setAttribute("id", "page-" + (page.pageIndex + 1));
+
+			                  	// This will keep positions of child elements as per our needs, and add a light border
+			                  	div.setAttribute("style", "position: relative; border-style: solid; border-width: 1px; border-color: gray;");
+
+			                  	// Append div within div#container
+			                  	container.appendChild(div);
+
+			                  	// Create a new Canvas element
+			                  	var canvas = document.createElement("canvas");
+
+			                  	// Append Canvas within div#page-#{pdf_page_number}
+			                  	div.appendChild(canvas);
+
+			                  	var context = canvas.getContext('2d');
+			                  	canvas.height = viewport.height;
+			                  	canvas.width = viewport.width;
+
+			                  	var renderContext = {
+			                    	canvasContext: context,
+			                  		viewport: viewport
+			                  	};
+
+			                  	// Render PDF page
+			                  	page.render(renderContext).then(function() {
+			                        // Get text-fragments
+			                        return page.getTextContent();
+			                    })
+			                    .then(function(textContent) {
+			                        // Create div which will hold text-fragments
+			                        var textLayerDiv = document.createElement("div");
+
+			                        // Set it's class to textLayer which have required CSS styles
+			                        textLayerDiv.setAttribute("class", "textLayer");
+
+			                        // Append newly created div in `div#page-#{pdf_page_number}`
+			                        div.appendChild(textLayerDiv);
+
+			                        // Create new instance of TextLayerBuilder class
+			                        var textLayer = new TextLayerBuilder({
+			                          textLayerDiv: textLayerDiv, 
+			                          pageIndex: page.pageIndex,
+			                          viewport: viewport
+			                        });
+
+			                        // Set text-fragments
+			                        textLayer.setTextContent(textContent);
+
+			                        // Render text-fragments
+			                        textLayer.render();
+			                    });
+			                });
+			            }
+				    });
+				}
+				reader.readAsArrayBuffer(document.getElementById("input3").files[0]);
+			}
+
+			xhr.onreadystatechange = function(e) {
+				if (xhr.readyState == 4 && xhr.status == 200) { 
+				    var response = e.target.response;
+				    //var response = JSON.parse(xhr.responseText);
+				 	//console.log(response);
+				    setupPatentAnnotations(response);
+				} else  if (xhr.status != 200) {
+					AjaxError3(xhr);
+				}
+			}
+			xhr.send(formData);
+		} else {
+			// request for extraction, returning TEI result
+			var form = document.getElementById('gbdForm3');
+			var formData = new FormData(form);
+			var xhr = new XMLHttpRequest();
+			var url = $('#gbdForm3').attr('action');
+			xhr.responseType = 'text';
+			xhr.open('POST', url, true);
+			ShowRequest3();
+			
+			xhr.onreadystatechange = function(e) {
+				if (xhr.readyState == 4 && xhr.status == 200) { 
+				    var response = e.target.response;
+				    //var response = JSON.parse(xhr.responseText);
+				 	//console.log(response);
+				    SubmitSuccesful3(response);
+				} else  if (xhr.status != 200) {
+					AjaxError3(xhr);
 				}
 			}
 			xhr.send(formData);
@@ -669,6 +828,114 @@ var grobid = (function($) {
 		$('#requestResult3').show();
 	}
 	
+	function setupPatentAnnotations(response) {
+		// we must check/wait that the corresponding PDF page is rendered at this point
+
+		var json = response;
+		var pageInfo = json.pages;
+		
+		var page_height = 0.0;
+		var page_width = 0.0;
+
+		var patents = json.patents;
+		if (patents) {
+			for(var n in patents) {
+				var annotation = patents[n];
+				var pos = annotation.pos;
+				var theUrl = null;
+				pos.forEach(function(thePos, m) {
+					// get page information for the annotation
+					var pageNumber = thePos.p;
+					if (pageInfo[pageNumber-1]) {
+						page_height = pageInfo[pageNumber-1].page_height;
+						page_width = pageInfo[pageNumber-1].page_width;
+					}
+					annotatePatentBib(true, thePos, theUrl, page_height, page_width);
+				});
+			}
+		}
+
+		var refBibs = json.articles;
+		if (refBibs) {
+			for(var n in refBibs) {
+				var annotation = refBibs[n];
+				//var theId = annotation.id;
+				var theUrl = null;
+				var pos = annotation.pos;
+				//if (pos) 
+				//	mapRefBibs[theId] = annotation;
+				//for (var m in pos) {
+				pos.forEach(function(thePos, m) {
+					//var thePos = pos[m];
+					// get page information for the annotation
+					var pageNumber = thePos.p;
+					if (pageInfo[pageNumber-1]) {
+						page_height = pageInfo[pageNumber-1].page_height;
+						page_width = pageInfo[pageNumber-1].page_width;
+					}
+					annotatePatentBib(false, thePos, theUrl, page_height);
+				});
+			}
+		}
+	}
+
+	function annotatePatentBib(isPatent, thePos, url, page_height, page_width, theBibPos) {
+		var page = thePos.p;
+		var pageDiv = $('#page-'+page);
+		var canvas = pageDiv.children('canvas').eq(0);;
+
+		var canvasHeight = canvas.height();
+		var canvasWidth = canvas.width();
+		var scale_x = canvasHeight / page_height;
+		var scale_y = canvasWidth / page_width;
+
+		var x = thePos.x * scale_x;
+		var y = thePos.y * scale_y;
+		var width = thePos.w * scale_x;
+		var height = thePos.h * scale_y;
+		
+//console.log('annotate: ' + page + " " + x + " " + y + " " + width + " " + height);
+//console.log('location: ' + canvasHeight + " " + canvasWidth);
+//console.log('location: ' + page_height + " " + page_width);
+		//make clickable the area
+		var element = document.createElement("a");
+		var attributes = "display:block; width:"+width+"px; height:"+height+"px; position:absolute; top:"+y+"px; left:"+x+"px;";
+		
+		if (patent) {
+			// this is a patent reference
+			// we draw a line
+			if (url) {
+				element.setAttribute("style", attributes + "border:2px; border-style:none none solid none; border-color: blue;");
+				element.setAttribute("href", url);
+				element.setAttribute("target", "_blank");
+			}
+			else
+				element.setAttribute("style", attributes + "border:1px; border-style:none none dotted none; border-color: gray;");
+		} else {
+			// this is a NPL bibliographical reference 
+			// we draw a box
+			element.setAttribute("style", attributes + "border:1px solid; border-color: blue;");
+
+			/*element.setAttribute("data-toggle", "popover");
+			element.setAttribute("data-placement", "top");
+			element.setAttribute("data-content", "content");
+			element.setAttribute("data-trigger", "hover");
+
+			$(element).popover({ 
+				content:  'content', 
+				html: true,
+				container: 'body'
+				//width: newWidth + 'px',
+				//height: newHeight + 'px'
+//					container: canvas,
+				//width: '600px',
+				//height: '100px'
+			});*/
+	
+		}
+		pageDiv.append(element);
+	}
+	
 	$(document).ready(function() {
 	    $(document).on('shown', '#xmlCode', function(event) {
 	        prettyPrint();
@@ -751,6 +1018,11 @@ var grobid = (function($) {
 			createInputFile2(selected);
 			//$('#consolidateBlock2').show();
 			setBaseUrl('annotatePDF');
+		}
+		else if (selected == 'citationPatentAnnotations') {
+			createInputFile3(selected);
+			//$('#consolidateBlock2').show();
+			setBaseUrl('citationPatentAnnotations');
 		}
 	}
 
