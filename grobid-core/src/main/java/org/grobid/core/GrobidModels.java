@@ -47,7 +47,7 @@ public enum GrobidModels implements GrobidModel {
     ENTITIES_BIOTECH("bio"),
     ASTRO("astro"),
 	LEXICAL_ENTRY("lexical-entry"),
-	DICTIONARY_BODY_SEGMENTATION("dictionary-body-segementation"),
+	DICTIONARY_BODY_SEGMENTATION("dictionary-body-segmentation"),
 	DICTIONARY_SEGMENTATION("dictionary-segmentation");
 
     /**
