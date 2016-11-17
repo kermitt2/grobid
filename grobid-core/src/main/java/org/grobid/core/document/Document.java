@@ -75,83 +75,83 @@ import java.util.regex.Pattern;
 
 public class Document {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Document.class);
+    protected static final Logger LOGGER = LoggerFactory.getLogger(Document.class);
     public static final int MAX_FIG_BOX_DISTANCE = 70;
-    private final DocumentSource documentSource;
+    protected final DocumentSource documentSource;
 
-    private String pathXML = null; // XML representation of the current PDF file
+    protected String pathXML = null; // XML representation of the current PDF file
 
-    private String lang = null;
+    protected String lang = null;
 
     // layout structure of the document
-    private List<Page> pages = null;
-    private List<Cluster> clusters = null;
-    private List<Block> blocks = null;
+    protected List<Page> pages = null;
+    protected List<Cluster> clusters = null;
+    protected List<Block> blocks = null;
 
     // not used anymore
-    private List<Integer> blockHeaders = null;
-    private List<Integer> blockFooters = null;
-    private List<Integer> blockSectionTitles = null;
-    private List<Integer> acknowledgementBlocks = null;
-    private List<Integer> blockDocumentHeaders = null;
-    private SortedSet<DocumentPiece> blockReferences = null;
-    private List<Integer> blockTables = null;
-    private List<Integer> blockFigures = null;
-    private List<Integer> blockHeadTables = null;
-    private List<Integer> blockHeadFigures = null;
+    protected List<Integer> blockHeaders = null;
+    protected List<Integer> blockFooters = null;
+    protected List<Integer> blockSectionTitles = null;
+    protected List<Integer> acknowledgementBlocks = null;
+    protected List<Integer> blockDocumentHeaders = null;
+    protected SortedSet<DocumentPiece> blockReferences = null;
+    protected List<Integer> blockTables = null;
+    protected List<Integer> blockFigures = null;
+    protected List<Integer> blockHeadTables = null;
+    protected List<Integer> blockHeadFigures = null;
 
-    private FeatureFactory featureFactory = null;
+    protected FeatureFactory featureFactory = null;
 
     // map of tokens (e.g. <reference> or <footnote>) to document pieces
-    private SortedSetMultimap<String, DocumentPiece> labeledBlocks;
+    protected SortedSetMultimap<String, DocumentPiece> labeledBlocks;
 
     // original tokenization and tokens - in order to recreate the original
     // strings and spacing
-    private List<LayoutToken> tokenizations = null;
+    protected List<LayoutToken> tokenizations = null;
 
     // list of bibliographical references with context
-    private Map<String, BibDataSet> teiIdToBibDataSets = null;
-    private List<BibDataSet> bibDataSets = null;
+    protected Map<String, BibDataSet> teiIdToBibDataSets = null;
+    protected List<BibDataSet> bibDataSets = null;
 
     // not used anymore
-    private DocumentNode top = null;
+    protected DocumentNode top = null;
 
     // header of the document - if extracted and processed
-    private final BiblioItem resHeader = null;
+    protected final BiblioItem resHeader = null;
 
     // full text as tructure TEI - if extracted and processed
-    private String tei;
+    protected String tei;
 
-    private ReferenceMarkerMatcher referenceMarkerMatcher;
+    protected ReferenceMarkerMatcher referenceMarkerMatcher;
 
     // list of bitmaps and vector graphics of the document
-    private List<GraphicObject> images = null;
+    protected List<GraphicObject> images = null;
 	
 	// list of PDF annotations as present in the PDF source file
-    private List<PDFAnnotation> pdfAnnotations = null;
+    protected List<PDFAnnotation> pdfAnnotations = null;
 	
-    private Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
+    protected Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
 
     // some statistics regarding the document - useful for generating the features
-    private double maxCharacterDensity = 0.0;
-    private double minCharacterDensity = 0.0;
-    private double maxBlockSpacing = 0.0;
-    private double minBlockSpacing = 0.0;
-    private int documentLenghtChar = -1; // length here is expressed as number of characters
+    protected double maxCharacterDensity = 0.0;
+    protected double minCharacterDensity = 0.0;
+    protected double maxBlockSpacing = 0.0;
+    protected double minBlockSpacing = 0.0;
+    protected int documentLenghtChar = -1; // length here is expressed as number of characters
 
     // not used
-    private int beginBody = -1;
-    private int beginReferences = -1;
+    protected int beginBody = -1;
+    protected int beginReferences = -1;
 
-    private boolean titleMatchNum = false; // true if the section titles of the document are numbered
+    protected boolean titleMatchNum = false; // true if the section titles of the document are numbered
 
     // the magic DOI regular expression...
     static public final Pattern DOIPattern = Pattern
             .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
-    private List<Figure> figures;
-    private Predicate<GraphicObject> validGraphicObjectPredicate;
-    private int m;
-    private List<Table> tables;
+    protected List<Figure> figures;
+    protected Predicate<GraphicObject> validGraphicObjectPredicate;
+    protected int m;
+    protected List<Table> tables;
 
     public Document(DocumentSource documentSource) {
         top = new DocumentNode("top", "0");
@@ -159,7 +159,7 @@ public class Document {
         setPathXML(documentSource.getXmlFile());
     }
 
-    private Document() {
+    protected Document() {
         this.documentSource = null;
     }
 
@@ -206,7 +206,7 @@ public class Document {
     /**
      * Set the path to the XML file generated by xml2pdf
      */
-    private void setPathXML(File pathXML) {
+    protected void setPathXML(File pathXML) {
         this.pathXML = pathXML.getAbsolutePath();
     }
 
@@ -493,7 +493,7 @@ public class Document {
         return tokenizations;
     }
 
-    private ArrayList<GraphicObject> glueImagesIfNecessary(Integer pageNum, List<GraphicObject> graphicObjects ) {
+    protected ArrayList<GraphicObject> glueImagesIfNecessary(Integer pageNum, List<GraphicObject> graphicObjects ) {
 
         List<Pair<Integer, Integer>> toGlue = new ArrayList<>();
 //        List<GraphicObject> cur = new ArrayList<>();
@@ -564,7 +564,7 @@ public class Document {
     }
 
 
-    private static int getCoordItem(ElementCounter<Integer> cnt, boolean getMin) {
+    protected static int getCoordItem(ElementCounter<Integer> cnt, boolean getMin) {
         List<Map.Entry<Integer, Integer>> counts = cnt.getSortedCounts();
         int max = counts.get(0).getValue();
 
@@ -957,7 +957,7 @@ public class Document {
     }
 
     // default bins for relative position
-    private static final int nbBins = 12;
+    protected static final int nbBins = 12;
 
     /**
      * heuristics to get the header section...
@@ -1530,7 +1530,7 @@ public class Document {
         return teiIdToBibDataSets.get(teiId);
     }
 
-    private static double MIN_DISTANCE = 100.0;
+    protected static double MIN_DISTANCE = 100.0;
 
     /**
      * Return the list of graphical object touching the given block.
@@ -1748,7 +1748,7 @@ public class Document {
 
     }
 
-    private boolean isValidBitmapGraphicObject(GraphicObject go) {
+    protected boolean isValidBitmapGraphicObject(GraphicObject go) {
         if (go.getWidth() * go.getHeight() < 1000) {
             return false;
         }
@@ -1769,7 +1769,7 @@ public class Document {
     }
 
     // graphic boxes could overlap captions, we need to cut this from a vector box
-    private void recalculateVectorBoxCoords(Figure f, GraphicObject g) {
+    protected void recalculateVectorBoxCoords(Figure f, GraphicObject g) {
 
         //TODO: make it robust - now super simplistic
 
@@ -1840,7 +1840,7 @@ public class Document {
 
     }
 
-    private List<LayoutToken> getFigureLayoutTokens(Figure f) {
+    protected List<LayoutToken> getFigureLayoutTokens(Figure f) {
         List<LayoutToken> result = new ArrayList<>();
         Iterator<Integer> it = f.getBlockPtrs().iterator();
 
