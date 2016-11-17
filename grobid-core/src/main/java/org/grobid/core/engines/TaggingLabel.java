@@ -69,9 +69,11 @@ public enum TaggingLabel {
     DICTIONARY_LEXICAL_ENTRIES_FORM(GrobidModels.DICTIONARIES_LEXICAL_ENTRIES, "<form>"),
     DICTIONARY_LEXICAL_ENTRIES_RE(GrobidModels.DICTIONARIES_LEXICAL_ENTRIES, "<re>"),
     DICTIONARY_LEXICAL_ENTRIES_NOTE(GrobidModels.DICTIONARIES_LEXICAL_ENTRIES, "<note>"),
-    DICTIONARY_LEXICAL_ENTRIES_SENSE(GrobidModels.DICTIONARIES_LEXICAL_ENTRIES, "<sense>");
+    DICTIONARY_LEXICAL_ENTRIES_SENSE(GrobidModels.DICTIONARIES_LEXICAL_ENTRIES, "<sense>"),
 
-
+    HEADNOTE(GrobidModels.DICTIONARY_SEGMENTATION, "<headnote>"),
+    BODY(GrobidModels.DICTIONARY_SEGMENTATION, "<body>"),
+    FOOTNOTE(GrobidModels.DICTIONARY_SEGMENTATION, "<footnote>");
 
     private final GrobidModel grobidModel;
     private final String label;
