@@ -10,6 +10,7 @@ import org.grobid.core.engines.tagging.GrobidCRFEngine;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.File;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,8 @@ import java.util.StringTokenizer;
 
 import org.grobid.trainer.LabelStat;
 import org.grobid.trainer.Stats;
+
+import org.apache.commons.io.FileUtils;
 
 /**
  * Evaluation of the parsing of citation.
