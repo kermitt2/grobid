@@ -180,6 +180,7 @@ public class PDF2XMLAnnotationSaxHandler extends DefaultHandler {
 			x_points = new ArrayList<Double>();
 			y_points = new ArrayList<Double>();
 		} 
+		accumulator.setLength(0);
 	}
 	
 }
