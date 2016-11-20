@@ -102,4 +102,41 @@ public class PDFAnnotation {
             res += ", boundingBoxes=" + boundingBoxes.toString() + '}';
         return res;
     }
+	
+	/**
+	  * Return true if the annotation covers the given LayoutToken, based on their
+	  * respective coordinates.
+	  */
+	public boolean cover(LayoutToken token) {
+		if (token == null)
+			return false;
+		boolean res = false;
+		// do we have an astro entity annotation at this location?
+		// we need to check the coordinates
+		int pageToken = token.getPage();
+		if (pageToken == pageNumber) {
+			BoundingBox tokenBox = BoundingBox.fromLayoutToken(token);
+			for(BoundingBox box : boundingBoxes) {
+				if (box.intersect(tokenBox)) {
+					// bounding boxes are at least touching, but we need to further check if we 
+					// have also a significant surface covered 
+					if (box.contains(tokenBox)) {
+						res = true;
+						break;
+					}
+					double areaToken = tokenBox.area();
+					// the bounding box of the insection 
+					BoundingBox intersectionBox = box.boundingBoxIntersection(tokenBox);
+					if (intersectionBox != null) {
+						double intersectionArea = intersectionBox.area();
+						if (intersectionArea > (areaToken / 4)) {
+							res = true;
+							break;
+						}
+					}
+				}
+			}
+		}
+		return res;
+	}
 }

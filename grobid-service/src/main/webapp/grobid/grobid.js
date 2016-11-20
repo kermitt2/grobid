@@ -307,9 +307,10 @@ var grobid = (function($) {
 			
 			var nbPages = -1;
 
-			// display the local PDF
-console.log(document.getElementById("input2").files[0].type);
-            if (document.getElementById("input2").files[0].type == 'application/pdf') {
+			// display the local PDF	
+            if ( (document.getElementById("input2").files[0].type == 'application/pdf') ||
+			   	 (document.getElementById("input2").files[0].name.endsWith(".pdf")) || 
+			 	 (document.getElementById("input2").files[0].name.endsWith(".PDF")) )	
                 var reader = new FileReader();
                 reader.onloadend = function () {
 					// to avoid cross origin issue
@@ -461,10 +462,10 @@ console.log(document.getElementById("input2").files[0].type);
 			var nbPages = -1;
 
 			// display the local PDF
-console.log('display PDF - before');
-console.log(document.getElementById("input3").files[0].type);	
-            if (document.getElementById("input3").files[0].type == 'application/pdf') {
-console.log('display PDF');				
+
+			if ( (document.getElementById("input3").files[0].type == 'application/pdf') ||
+			   	 (document.getElementById("input3").files[0].name.endsWith(".pdf")) || 
+				 (document.getElementById("input3").files[0].name.endsWith(".PDF")) ) {
                 var reader = new FileReader();
                 reader.onloadend = function () {
 					// to avoid cross origin issue
