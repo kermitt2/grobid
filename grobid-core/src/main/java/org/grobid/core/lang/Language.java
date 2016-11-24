@@ -14,8 +14,8 @@ public final class Language {
     public static final String DE = "de";
     public static final String FR = "fr";
 
-    private String langId;
-    private double confidence;
+    private String lang;
+    private double conf;
 
 	// default construction for jackson mapping
 	public Language() {}
@@ -25,37 +25,39 @@ public final class Language {
             throw new GrobidException("Language id cannot be null");
         }
 
-        if ((langId.length() != 3 && langId.length() != 2 && (!langId.equals("sorb")) && (!langId.equals("zh-cn"))) || !(Character.isLetter(langId.charAt(0)) && Character.isLetter(langId.charAt(1)))) {
+        if ((langId.length() != 3 && langId.length() != 2 && (!langId.equals("sorb")) && 
+            (!langId.equals("zh-cn"))) || !(Character.isLetter(langId.charAt(0)) 
+            && Character.isLetter(langId.charAt(1)))) {
             throw new GrobidException("Language id should consist of two or three letters, but was: " + langId);
         }
 
-        this.langId = langId;
-        this.confidence = confidence;
+        this.lang = langId;
+        this.conf = confidence;
     }
 
-    public String getLangId() {
-        return langId;
+    public String getLang() {
+        return lang;
     }
 	
     public void setLang(String lang) {
-        this.langId = langId;
+        this.lang = lang;
     }
 
     @SuppressWarnings({"UnusedDeclaration"})
-    public double getConfidence() {
-        return confidence;
+    public double getConf() {
+        return conf;
     }
 
 	public void setConf(double conf) {
-		this.confidence = confidence;
+		this.conf = conf;
 	}
 
     @Override
     public String toString() {
-        return langId + ";" + confidence;
+        return lang + ";" + conf;
     }
 
     public String toJSON() {
-        return "{\"lang\":\""+langId+"\", \"conf\": "+confidence+"}";
+        return "{\"lang\":\""+lang+"\", \"conf\": "+conf+"}";
     }
 }
