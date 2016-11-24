@@ -1773,7 +1773,7 @@ public class BiblioItem {
                 Language resLang = languageUtilities.runLanguageId(english_title);
 
                 if (resLang != null) {
-                    String resL = resLang.getLangId();
+                    String resL = resLang.getLang();
                     if (resL.equals(Language.EN)) {
                         hasEnglishTitle = true;
                         for (int i = 0; i < indent + 2; i++) {
