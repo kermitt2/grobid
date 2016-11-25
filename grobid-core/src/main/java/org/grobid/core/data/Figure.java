@@ -6,6 +6,7 @@ import com.google.common.collect.Lists;
 import nu.xom.Attribute;
 import nu.xom.Element;
 import org.grobid.core.document.xml.XmlBuilderUtils;
+import org.grobid.core.engines.Countable;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
