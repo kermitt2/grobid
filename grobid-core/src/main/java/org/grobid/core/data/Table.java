@@ -7,12 +7,11 @@ import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.layout.BoundingBox;
-import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.engines.counters.TableRejectionCounters;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,14 +28,6 @@ public class Table extends Figure {
 
 	public void setGoodTable(boolean goodTable) {
 		this.goodTable = goodTable;
-	}
-
-	public enum TableRejectionCounters {
-		CANNOT_PARSE_LABEL_TO_INT, HEADER_NOT_STARTS_WITH_TABLE_WORD, HEADER_AND_CONTENT_INTERSECT,
-		HEADER_AREA_BIGGER_THAN_CONTENT, CONTENT_SIZE_TOO_SMALL, CONTENT_WIDTH_TOO_SMALL,
-		FEW_TOKENS_IN_HEADER, FEW_TOKENS_IN_CONTENT, EMPTY_LABEL_OR_HEADER_OR_CONTENT,
-		HEADER_AND_CONTENT_DIFFERENT_PAGES, HEADER_NOT_CONSECUTIVE
-
 	}
 
     public Table() {

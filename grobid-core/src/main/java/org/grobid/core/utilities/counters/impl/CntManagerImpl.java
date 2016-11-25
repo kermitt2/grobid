@@ -1,5 +1,6 @@
 package org.grobid.core.utilities.counters.impl;
 
+import org.grobid.core.engines.Countable;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.counters.CntsMetric;
 import org.grobid.core.utilities.counters.Counter;
@@ -12,8 +13,8 @@ import java.util.concurrent.ConcurrentMap;
 class CntManagerImpl implements CntManager {
     private static final long serialVersionUID = 2305126306757162275L;
 
-    private ConcurrentMap<String, ConcurrentMap<String, Counter>> enumCnts = new ConcurrentHashMap<String, ConcurrentMap<String, Counter>>();
-    private ConcurrentMap<String, ConcurrentMap<String, Counter>> strCnts = new ConcurrentHashMap<String, ConcurrentMap<String, Counter>>();
+    private ConcurrentMap<String, ConcurrentMap<String, Counter>> enumCnts = new ConcurrentHashMap<>();
+    private ConcurrentMap<String, ConcurrentMap<String, Counter>> strCnts = new ConcurrentHashMap<>();
     transient private ConcurrentMap<String, CntsMetric> metrics = null;
 
     private void checkGroupName(String groupName) {
@@ -29,18 +30,19 @@ class CntManagerImpl implements CntManager {
     }
 
     @Override
-    public void i(Enum<?> e) {
+    public void i(Countable e) {
         i(e, 1);
     }
 
     @Override
-    public void i(Enum<?> e, long val) {
-        checkEnumClass(e.getDeclaringClass().getName());
-        enumCnts.putIfAbsent(e.getDeclaringClass().getName(), new ConcurrentHashMap<String, Counter>());
+    public void i(Countable e, long val) {
+        checkEnumClass(e.getName());
 
-        ConcurrentMap<String, Counter> cntMap = enumCnts.get(e.getDeclaringClass().getName());
-        cntMap.putIfAbsent(e.name(), new CounterImpl());
-        Counter cnt = cntMap.get(e.name());
+        ConcurrentMap<String, Counter> cntMap = new ConcurrentHashMap<>();
+        enumCnts.putIfAbsent(e.getName(), cntMap);
+
+        Counter cnt = new CounterImpl();
+        cntMap.putIfAbsent(e.getName(), cnt);
         cnt.i(val);
     }
 
@@ -75,12 +77,12 @@ class CntManagerImpl implements CntManager {
     }
 
     @Override
-    public long cnt(Enum<?> e) {
-        Map<String, Counter> cntMap = enumCnts.get(e.getDeclaringClass().getName());
+    public long cnt(Countable e) {
+        Map<String, Counter> cntMap = enumCnts.get(e.getName());
         if (cntMap == null) {
             return 0;
         }
-        Counter cnt = cntMap.get(e.name());
+        Counter cnt = cntMap.get(e.getName());
         return cnt == null ? 0 : cnt.cnt();
     }
 
@@ -95,12 +97,12 @@ class CntManagerImpl implements CntManager {
     }
 
     @Override
-    public Counter getCounter(Enum<?> e) {
-        checkEnumClass(e.getDeclaringClass().getName());
-        enumCnts.putIfAbsent(e.getDeclaringClass().getName(), new ConcurrentHashMap<String, Counter>());
+    public Counter getCounter(Countable e) {
+        checkEnumClass(e.getName());
+        enumCnts.putIfAbsent(e.getName(), new ConcurrentHashMap<String, Counter>());
 
-        ConcurrentMap<String, Counter> cntMap = enumCnts.get(e.getDeclaringClass().getName());
-        cntMap.putIfAbsent(e.name(), new CounterImpl());
+        ConcurrentMap<String, Counter> cntMap = enumCnts.get(e.getName());
+        cntMap.putIfAbsent(e.getName(), new CounterImpl());
 
 //        if (cntMap == null) {
 //
@@ -115,7 +117,7 @@ class CntManagerImpl implements CntManager {
 //            cnt = new CounterImpl();
 //            cntMap.put(e.name(), cnt);
 //        }
-        return cntMap.get(e.name());
+        return cntMap.get(e.getName());
     }
 
     @Override
@@ -142,10 +144,10 @@ class CntManagerImpl implements CntManager {
     }
 
     @Override
-    public Map<String, Long> getCounters(Class<? extends Enum<?>> enumClass) {
+    public Map<String, Long> getCounters(Class<? extends Countable> countableClass) {
         Map<String, Long> toReturn = new ConcurrentHashMap<String, Long>();
-        for (Enum<?> e : enumClass.getEnumConstants()) {
-            toReturn.put(e.name(), getCounter(e).cnt());
+        for (Countable e : countableClass.getEnumConstants()) {
+            toReturn.put(e.getName(), getCounter(e).cnt());
         }
         return toReturn;
     }
@@ -167,7 +169,7 @@ class CntManagerImpl implements CntManager {
         Map<String, Map<String, Long>> map = new ConcurrentHashMap<String, Map<String, Long>>();
         for (String e : enumCnts.keySet()) {
             try {
-                map.put(e, getCounters((Class<? extends Enum<?>>) Class.forName(e)));
+                map.put(e, getCounters((Class<? extends Countable>) Class.forName(e)));
             } catch (ClassNotFoundException e1) {
                 throw new IllegalStateException(e1);
             }
@@ -194,7 +196,7 @@ class CntManagerImpl implements CntManager {
     @Override
     public synchronized void addMetric(String name, CntsMetric cntsMetric) {
         if (metrics == null) {
-            metrics = new ConcurrentHashMap<String, CntsMetric>();
+            metrics = new ConcurrentHashMap<>();
         }
         metrics.put(name, cntsMetric);
     }
@@ -202,7 +204,7 @@ class CntManagerImpl implements CntManager {
     @Override
     public synchronized void removeMetric(String name) {
         if (metrics == null) {
-            metrics = new ConcurrentHashMap<String, CntsMetric>();
+            metrics = new ConcurrentHashMap<>();
         }
         metrics.remove(name);
     }

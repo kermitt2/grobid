@@ -15,6 +15,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
+import static org.grobid.core.engines.TaggingLabels.*;
+
 /**
  * @author Patrice
  */
@@ -61,28 +63,23 @@ class FigureParser extends AbstractParser {
                 continue;
             }
 
-            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            ITaggingLabel clusterLabel = cluster.getTaggingLabel();
             Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            switch (clusterLabel) {
-                case FIG_DESC:
-                    figure.appendCaption(clusterContent);
-                    break;
-                case FIG_HEAD:
-                    figure.appendHeader(clusterContent);
-                    break;
-                case FIG_LABEL:
-                    figure.appendLabel(clusterContent);
-                    figure.appendHeader(clusterContent);
-                    break;
-                case FIG_OTHER:
-                    break;
-                case FIG_TRASH:
-                    figure.appendContent(clusterContent);
-                    break;
-                default:
-                    LOGGER.error("Warning: unexpected figure model label - " + clusterLabel + " for " + clusterContent);
+            if (clusterLabel == FIG_DESC) {
+                figure.appendCaption(clusterContent);
+            } else if (clusterLabel == FIG_HEAD) {
+                figure.appendHeader(clusterContent);
+            } else if (clusterLabel == FIG_LABEL) {
+                figure.appendLabel(clusterContent);
+                figure.appendHeader(clusterContent);
+            } else if (clusterLabel == FIG_OTHER) {
+
+            } else if (clusterLabel == FIG_TRASH) {
+                figure.appendContent(clusterContent);
+            } else {
+                LOGGER.error("Warning: unexpected figure model label - " + clusterLabel + " for " + clusterContent);
             }
         }
         return figure;
@@ -471,7 +468,7 @@ class FigureParser extends AbstractParser {
     }
 
     /*static public String getFigureFeatured(Document doc, List<LayoutToken> figureTokens) {	
-		FeatureFactory featureFactory = FeatureFactory.getInstance();
+        FeatureFactory featureFactory = FeatureFactory.getInstance();
         StringBuilder figure = new StringBuilder();
         String currentFont = null;
         int currentFontSize = -1;

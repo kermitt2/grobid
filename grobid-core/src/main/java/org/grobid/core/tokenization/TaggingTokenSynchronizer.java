@@ -4,6 +4,7 @@ import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.TaggingLabel;
+import org.grobid.core.engines.TaggingLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
@@ -117,7 +118,7 @@ public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer
 
         tokensAndLabelsPtr++;
         LabeledTokensContainer labeledTokensContainer =
-                new LabeledTokensContainer(layoutTokenBuffer, resultToken, TaggingLabel.getLabel(grobidModel, label),
+                new LabeledTokensContainer(layoutTokenBuffer, resultToken, TaggingLabels.labelFor(grobidModel, label),
                 GenericTaggerUtils.isBeginningOfEntity(label));
 
         labeledTokensContainer.setFeatureString(featureString);
