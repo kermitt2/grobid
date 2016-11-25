@@ -1,6 +1,6 @@
 /**
 *  Javascript functions for the front end.
-*        
+*
 *  Author: Patrice Lopez
 */
 
@@ -14,7 +14,7 @@ var grobid = (function($) {
 		var baseUrl = null;
 		if ( $(location).attr('href').indexOf("index.html") != -1)
 			baseUrl = $(location).attr('href').replace("index.html", ext);
-		else 
+		else
 			baseUrl = $(location).attr('href') + ext;
 		return baseUrl;
 	}
@@ -28,44 +28,44 @@ var grobid = (function($) {
 		else if (block == 2)
 			$('#gbdForm3').attr('action', baseUrl);
 	}
-	
+
 	$(document).ready(function() {
 		$("#subTitle").html("About");
 		$("#divAbout").show();
 		$("#divAdmin").hide();
 
 		// for TEI-based results
-        $("#divRestI").hide();  
-        
+        $("#divRestI").hide();
+
         // for PDF based results  
-        $("#divRestII").hide(); 
-        
+        $("#divRestII").hide();
+
         // for patent processing
         $("#divRestIII").hide();
-		
+
 		$("#divDoc").hide();
 		$('#consolidateBlock').show();
-		
+
 		createInputFile();
 		createInputFile2();
 		createInputFile3();
-		setBaseUrl('processHeaderDocument');             
+		setBaseUrl('processHeaderDocument');
 		block = 0;
 
 		$('#selectedService').change(function() {
 			processChange();
 			return true;
-		}); 
+		});
 
 		$('#selectedService2').change(function() {
 			processChange();
 			return true;
-		}); 
+		});
 
 		$('#selectedService3').change(function() {
 			processChange();
 			return true;
-		}); 
+		});
 
 		$('#gbdForm').ajaxForm({
             beforeSubmit: ShowRequest1,
@@ -86,7 +86,7 @@ var grobid = (function($) {
 	        error: adminAjaxError,
 	        dataType: "text"
 	        });
-		
+
 		$("#about").click(function() {
 			$("#about").attr('class', 'section-active');
 			$("#rest").attr('class', 'section-not-active');
@@ -94,10 +94,10 @@ var grobid = (function($) {
 			$("#admin").attr('class', 'section-not-active');
 			$("#doc").attr('class', 'section-not-active');
 			$("#patent").attr('class', 'section-not-active');
-			
-			$("#subTitle").html("About"); 
+
+			$("#subTitle").html("About");
 			$("#subTitle").show();
-			
+
 			$("#divAbout").show();
 			$("#divRestI").hide();
 			$("#divRestII").hide();
@@ -114,13 +114,13 @@ var grobid = (function($) {
 			$("#about").attr('class', 'section-not-active');
 			$("#admin").attr('class', 'section-not-active');
 			$("#patent").attr('class', 'section-not-active');
-			
-			$("#subTitle").hide(); 
+
+			$("#subTitle").hide();
 			block = 0;
-			//$("#subTitle").html("TEI output service"); 
+			//$("#subTitle").html("TEI output service");
 			//$("#subTitle").show();
 			processChange();
-			
+
 			$("#divRestI").show();
 			$("#divRestII").hide();
 			$("#divRestIII").hide();
@@ -141,14 +141,14 @@ var grobid = (function($) {
 			$("#subTitle").html("Admin");
 			$("#subTitle").show();
 			setBaseUrl('admin');
-			
+
 			$("#divRestI").hide();
 			$("#divRestII").hide();
 			$("#divRestIII").hide();
 			$("#divAbout").hide();
 			$("#divDoc").hide();
 			$("#divAdmin").show();
-			$("#divDemo").hide();			
+			$("#divDemo").hide();
 			return false;
 		});
 		$("#doc").click(function() {
@@ -158,10 +158,10 @@ var grobid = (function($) {
 			$("#patent").attr('class', 'section-not-active');
 			$("#about").attr('class', 'section-not-active');
 			$("#admin").attr('class', 'section-not-active');
-			
-			$("#subTitle").html("Doc"); 
-			$("#subTitle").show();        
-			
+
+			$("#subTitle").html("Doc");
+			$("#subTitle").show();
+
 			$("#divDoc").show();
 			$("#divAbout").hide();
 			$("#divRestI").hide();
@@ -178,14 +178,14 @@ var grobid = (function($) {
 			$("#about").attr('class', 'section-not-active');
 			$("#admin").attr('class', 'section-not-active');
 			$("#doc").attr('class', 'section-not-active');
-			
+
 			block = 1;
 			setBaseUrl('referenceAnnotations');
-			$("#subTitle").hide(); 
+			$("#subTitle").hide();
 			processChange();
-			//$("#subTitle").html("PDF annotation services"); 
-			//$("#subTitle").show(); 
-			
+			//$("#subTitle").html("PDF annotation services");
+			//$("#subTitle").show();
+
 			$("#divDoc").hide();
 			$("#divAbout").hide();
 			$("#divRestI").hide();
@@ -201,12 +201,12 @@ var grobid = (function($) {
 			$("#about").attr('class', 'section-not-active');
 			$("#admin").attr('class', 'section-not-active');
 			$("#doc").attr('class', 'section-not-active');
-			
+
 			block = 2;
 			setBaseUrl('processCitationPatentTEI');
-			$("#subTitle").hide(); 
+			$("#subTitle").hide();
 			processChange();
-			
+
 			$("#divDoc").hide();
 			$("#divAbout").hide();
 			$("#divRestI").hide();
@@ -231,31 +231,31 @@ var grobid = (function($) {
 	    $('#requestResult3').html('<font color="grey">Requesting server...</font>');
 	    return true;
 	}
-	
+
 	function AjaxError1(jqXHR, textStatus, errorThrown) {
-		$('#requestResult').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");      
+		$('#requestResult').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");
 		responseJson = null;
 	}
 
 	function AjaxError2(jqXHR, textStatus, errorThrown) {
-		$('#requestResult2').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");      
+		$('#requestResult2').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");
 		responseJson = null;
 	}
 
 	function AjaxError3(jqXHR, textStatus, errorThrown) {
-		$('#requestResult3').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");      
+		$('#requestResult3').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");
 		responseJson = null;
 	}
-	
+
 	function htmll(s) {
     	return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   	}
-	
+
 	function SubmitSuccesful(responseText, statusText, xhr) {
 		//var selected = $('#selectedService option:selected').attr('value');
-		var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";  
+		var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";
 		var testStr = vkbeautify.xml(responseText);
-		
+
 		display += htmll(testStr);
 
 		display += "</pre>";
@@ -269,7 +269,7 @@ var grobid = (function($) {
 		if (selected == 'annotatePDF') {
 			// we will have a PDF back
 			//PDFJS.disableWorker = true;
-			
+
 			var form = document.getElementById('gbdForm2');
 			var formData = new FormData(form);
 			var xhr = new XMLHttpRequest();
@@ -285,17 +285,17 @@ var grobid = (function($) {
 					var frame = '<iframe id="pdfViewer" src="resources/pdf.js/web/viewer.html?file=" style="width: 100%; height: 1000px;"></iframe>';
 					$('#requestResult2').html(frame);
 					var pdfjsframe = document.getElementById('pdfViewer');
-					pdfjsframe.onload = function() { 
-						pdfjsframe.contentWindow.PDFViewerApplication.open(pdfAsArray); 
+					pdfjsframe.onload = function() {
+						pdfjsframe.contentWindow.PDFViewerApplication.open(pdfAsArray);
 					};
 				} else  if (xhr.status != 200) {
 					AjaxError2(xhr);
 				}
 			};
-			xhr.send(formData);  // multipart/form-data 
+			xhr.send(formData);  // multipart/form-data
 		} else {
 			// we will have JSON annotations to be layered on the PDF
-			
+
 			// request for the annotation information
 			var form = document.getElementById('gbdForm2');
 			var formData = new FormData(form);
@@ -304,13 +304,13 @@ var grobid = (function($) {
 			xhr.responseType = 'json';
 			xhr.open('POST', url, true);
 			ShowRequest2();
-			
+
 			var nbPages = -1;
 
-			// display the local PDF	
+			// display the local PDF
             if ( (document.getElementById("input2").files[0].type == 'application/pdf') ||
-			   	 (document.getElementById("input2").files[0].name.endsWith(".pdf")) || 
-			 	 (document.getElementById("input2").files[0].name.endsWith(".PDF")) )	
+			   	 (document.getElementById("input2").files[0].name.endsWith(".pdf")) ||
+			 	 (document.getElementById("input2").files[0].name.endsWith(".PDF")) )
                 var reader = new FileReader();
                 reader.onloadend = function () {
 					// to avoid cross origin issue
@@ -386,7 +386,7 @@ var grobid = (function($) {
 
 			                        // Create new instance of TextLayerBuilder class
 			                        var textLayer = new TextLayerBuilder({
-			                          textLayerDiv: textLayerDiv, 
+			                          textLayerDiv: textLayerDiv,
 			                          pageIndex: page.pageIndex,
 			                          viewport: viewport
 			                        });
@@ -405,7 +405,7 @@ var grobid = (function($) {
 			}
 
 			xhr.onreadystatechange = function(e) {
-				if (xhr.readyState == 4 && xhr.status == 200) { 
+				if (xhr.readyState == 4 && xhr.status == 200) {
 				    var response = e.target.response;
 				    //var response = JSON.parse(xhr.responseText);
 				 	//console.log(response);
@@ -416,14 +416,14 @@ var grobid = (function($) {
 			}
 			xhr.send(formData);
 		}
-	}
-	
+
+
 	function submitQuery3() {
 		var selected = $('#selectedService3 option:selected').attr('value');
 		if (selected == 'citationPatentPDFAnnotation') {
 			// we will have a PDF back
 			//PDFJS.disableWorker = true;
-			
+
 			var form = document.getElementById('gbdForm3');
 			var formData = new FormData(form);
 			var xhr = new XMLHttpRequest();
@@ -439,14 +439,14 @@ var grobid = (function($) {
 					var frame = '<iframe id="pdfViewer" src="resources/pdf.js/web/viewer.html?file=" style="width: 100%; height: 1000px;"></iframe>';
 					$('#requestResult3').html(frame);
 					var pdfjsframe = document.getElementById('pdfViewer');
-					pdfjsframe.onload = function() { 
-						pdfjsframe.contentWindow.PDFViewerApplication.open(pdfAsArray); 
+					pdfjsframe.onload = function() {
+						pdfjsframe.contentWindow.PDFViewerApplication.open(pdfAsArray);
 					};
 				} else  if (xhr.status != 200) {
 					AjaxError3(xhr);
 				}
 			};
-			xhr.send(formData);  // multipart/form-data 
+			xhr.send(formData);  // multipart/form-data
 		} else if (selected == 'citationPatentAnnotations') {
 			// we will have JSON annotations to be layered on the PDF
 
@@ -458,13 +458,13 @@ var grobid = (function($) {
 			xhr.responseType = 'json';
 			xhr.open('POST', url, true);
 			ShowRequest3();
-			
+
 			var nbPages = -1;
 
 			// display the local PDF
 
 			if ( (document.getElementById("input3").files[0].type == 'application/pdf') ||
-			   	 (document.getElementById("input3").files[0].name.endsWith(".pdf")) || 
+			   	 (document.getElementById("input3").files[0].name.endsWith(".pdf")) ||
 				 (document.getElementById("input3").files[0].name.endsWith(".PDF")) ) {
                 var reader = new FileReader();
                 reader.onloadend = function () {
@@ -541,7 +541,7 @@ var grobid = (function($) {
 
 			                        // Create new instance of TextLayerBuilder class
 			                        var textLayer = new TextLayerBuilder({
-			                          textLayerDiv: textLayerDiv, 
+			                          textLayerDiv: textLayerDiv,
 			                          pageIndex: page.pageIndex,
 			                          viewport: viewport
 			                        });
@@ -560,7 +560,7 @@ var grobid = (function($) {
 			}
 
 			xhr.onreadystatechange = function(e) {
-				if (xhr.readyState == 4 && xhr.status == 200) { 
+				if (xhr.readyState == 4 && xhr.status == 200) {
 				    var response = e.target.response;
 				    //var response = JSON.parse(xhr.responseText);
 				 	//console.log(response);
@@ -579,9 +579,9 @@ var grobid = (function($) {
 			xhr.responseType = 'text';
 			xhr.open('POST', url, true);
 			ShowRequest3();
-			
+
 			xhr.onreadystatechange = function(e) {
-				if (xhr.readyState == 4 && xhr.status == 200) { 
+				if (xhr.readyState == 4 && xhr.status == 200) {
 				    var response = e.target.response;
 				    //var response = JSON.parse(xhr.responseText);
 				 	//console.log(response);
@@ -599,7 +599,7 @@ var grobid = (function($) {
 
 		var json = response;
 		var pageInfo = json.pages;
-		
+
 		var page_height = 0.0;
 		var page_width = 0.0;
 
@@ -611,7 +611,7 @@ var grobid = (function($) {
 				var theId = annotation.id;
 				var theUrl = annotation.url;
 				var pos = annotation.pos;
-				if (pos) 
+				if (pos)
 					mapRefBibs[theId] = annotation;
 				//for (var m in pos) {
 				pos.forEach(function(thePos, m) {
@@ -645,10 +645,10 @@ var grobid = (function($) {
 					var theFirstPos = pos[0];
 					var theLastPos = pos[pos.length-1];
 					theBibPos.p = theFirstPos.p;
-					theBibPos.w = Math.max(theFirstPos.w, theLastPos.w); 
+					theBibPos.w = Math.max(theFirstPos.w, theLastPos.w);
 					theBibPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
-					theBibPos.x = Math.min(theFirstPos.x, theLastPos.x); 
-					theBibPos.y = Math.min(theFirstPos.y, theLastPos.y); 
+					theBibPos.x = Math.min(theFirstPos.x, theLastPos.x);
+					theBibPos.y = Math.min(theFirstPos.y, theLastPos.y);
 					var pageNumber = theBibPos.p;
 					if (pageInfo[pageNumber-1]) {
 						page_height = pageInfo[pageNumber-1].page_height;
@@ -675,7 +675,7 @@ var grobid = (function($) {
 	}
 
 	function setupPageAnnotations(json, pageNumber) {
-		
+
 		// we must check/wait that the corresponding PDF page is rendered ar this point
 		var page_height = json.page_height;
 		var page_width = json.page_width;
@@ -687,7 +687,7 @@ var grobid = (function($) {
 				var annotation = refBibs[n];
 				var theId = annotation.id;
 				var pos = annotation.pos;
-				if (pos) 
+				if (pos)
 					mapRefBibs[theId] = annotation;
 				for (var m in pos) {
 					var thePos = pos[m];
@@ -707,15 +707,15 @@ var grobid = (function($) {
 				if (targetBib) {
 					var theBibPos = {};
 					var pos = targetBib.pos;
-					//if (pos && (pos.length > 0)) 
+					//if (pos && (pos.length > 0))
 					{
 						var theFirstPos = pos[0];
 						var theLastPos = pos[pos.length-1];
 						theBibPos.p = theFirstPos.p;
-						theBibPos.w = Math.max(theFirstPos.w, theLastPos.w); 
+						theBibPos.w = Math.max(theFirstPos.w, theLastPos.w);
 						theBibPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
-						theBibPos.x = Math.min(theFirstPos.x, theLastPos.x); 
-						theBibPos.y = Math.min(theFirstPos.y, theLastPos.y); 
+						theBibPos.x = Math.min(theFirstPos.x, theLastPos.x);
+						theBibPos.y = Math.min(theFirstPos.y, theLastPos.y);
 						annotateBib(false, theId, annotation, null, page_height, page_width, theBibPos);
 					}
 				} else
@@ -738,14 +738,14 @@ var grobid = (function($) {
 		var y = thePos.y * scale_y;
 		var width = thePos.w * scale_x;
 		var height = thePos.h * scale_y;
-		
+
 //console.log('annotate: ' + page + " " + x + " " + y + " " + width + " " + height);
 //console.log('location: ' + canvasHeight + " " + canvasWidth);
 //console.log('location: ' + page_height + " " + page_width);
 		//make clickable the area
 		var element = document.createElement("a");
 		var attributes = "display:block; width:"+width+"px; height:"+height+"px; position:absolute; top:"+y+"px; left:"+x+"px;";
-		
+
 		if (bib) {
 			// this is a bibliographical reference
 			// we draw a line
@@ -776,11 +776,11 @@ var grobid = (function($) {
 				var newWidth = theBibPos.w * scale_x;
 				var newHeight = theBibPos.h * scale_y;
 				var newImg = getImagePortion(theBibPos.p, newWidth, newHeight, theBibPos.x * scale_x, theBibPos.y * scale_y);
-				$(element).popover({ 
+				$(element).popover({
 					content:  function () {
 						return '<img src=\"'+ newImg + '\" style=\"width:100%\" />';
 						//return '<img src=\"'+ newImg + '\" />';
-					}, 
+					},
 					html: true,
 					container: 'body'
 					//width: newWidth + 'px',
@@ -790,7 +790,7 @@ var grobid = (function($) {
 					//height: '100px'
     			});
 			}
-		}	
+		}
 		pageDiv.append(element);
 	}
 
@@ -818,9 +818,9 @@ var grobid = (function($) {
 
 	function SubmitSuccesful3(responseText, statusText, xhr) {
 		//var selected = $('#selectedService3 option:selected').attr('value');
-		var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";  
+		var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";
 		var testStr = vkbeautify.xml(responseText);
-		
+
 		display += htmll(testStr);
 
 		display += "</pre>";
@@ -828,13 +828,13 @@ var grobid = (function($) {
 		window.prettyPrint && prettyPrint();
 		$('#requestResult3').show();
 	}
-	
+
 	function setupPatentAnnotations(response) {
 		// we must check/wait that the corresponding PDF page is rendered at this point
 
 		var json = response;
 		var pageInfo = json.pages;
-		
+
 		var page_height = 0.0;
 		var page_width = 0.0;
 
@@ -863,7 +863,7 @@ var grobid = (function($) {
 				//var theId = annotation.id;
 				var theUrl = null;
 				var pos = annotation.pos;
-				//if (pos) 
+				//if (pos)
 				//	mapRefBibs[theId] = annotation;
 				//for (var m in pos) {
 				pos.forEach(function(thePos, m) {
@@ -894,14 +894,14 @@ var grobid = (function($) {
 		var y = thePos.y * scale_y;
 		var width = thePos.w * scale_x;
 		var height = thePos.h * scale_y;
-		
+
 //console.log('annotate: ' + page + " " + x + " " + y + " " + width + " " + height);
 //console.log('location: ' + canvasHeight + " " + canvasWidth);
 //console.log('location: ' + page_height + " " + page_width);
 		//make clickable the area
 		var element = document.createElement("a");
 		var attributes = "display:block; width:"+width+"px; height:"+height+"px; position:absolute; top:"+y+"px; left:"+x+"px;";
-		
+
 		if (patent) {
 			// this is a patent reference
 			// we draw a line
@@ -913,7 +913,7 @@ var grobid = (function($) {
 			else
 				element.setAttribute("style", attributes + "border:1px; border-style:none none dotted none; border-color: gray;");
 		} else {
-			// this is a NPL bibliographical reference 
+			// this is a NPL bibliographical reference
 			// we draw a box
 			element.setAttribute("style", attributes + "border:1px solid; border-color: blue;");
 
@@ -922,8 +922,8 @@ var grobid = (function($) {
 			element.setAttribute("data-content", "content");
 			element.setAttribute("data-trigger", "hover");
 
-			$(element).popover({ 
-				content:  'content', 
+			$(element).popover({
+				content:  'content',
 				html: true,
 				container: 'body'
 				//width: newWidth + 'px',
@@ -932,17 +932,17 @@ var grobid = (function($) {
 				//width: '600px',
 				//height: '100px'
 			});*/
-	
+
 		}
 		pageDiv.append(element);
 	}
-	
+
 	$(document).ready(function() {
 	    $(document).on('shown', '#xmlCode', function(event) {
 	        prettyPrint();
 	    });
 	});
-	
+
 	function processChange() {
 		var selected = $('#selectedService option:selected').attr('value');
 		if (block == 1)
@@ -954,42 +954,42 @@ var grobid = (function($) {
 			createInputFile(selected);
 			$('#consolidateBlock').show();
 			setBaseUrl('processHeaderDocument');
-		} 
+		}
 		else if (selected == 'processFulltextDocument') {
 			createInputFile(selected);
 			$('#consolidateBlock').show();
 			setBaseUrl('processFulltextDocument');
-		} 
+		}
 		else if (selected == 'processDate') {
 			createInputTextArea('date');
 			$('#consolidateBlock').hide();
 			setBaseUrl('processDate');
-		} 
+		}
 		else if (selected == 'processHeaderNames') {
 			createInputTextArea('names');
 			$('#consolidateBlock').hide();
 			setBaseUrl('processHeaderNames');
-		} 
+		}
 		else if (selected == 'processCitationNames') {
 			createInputTextArea('names');
 			$('#consolidateBlock').hide();
 			setBaseUrl('processCitationNames');
-		} 
+		}
 		else if (selected == 'processReferences') {
 			createInputFile(selected);
 			$('#consolidateBlock').show();
 			setBaseUrl('processReferences');
-		} 
+		}
 		else if (selected == 'processAffiliations') {
 			createInputTextArea('affiliations');
 			$('#consolidateBlock').hide();
 			setBaseUrl('processAffiliations');
-		} 
+		}
 		else if (selected == 'processCitation') {
 			createInputTextArea('citations');
 			$('#consolidateBlock').show();
 			setBaseUrl('processCitation');
-		} 
+		}
 		else if (selected == 'processCitationPatentTEI') {
 			createInputFile3(selected);
 			$('#consolidateBlock3').show();
@@ -1028,61 +1028,61 @@ var grobid = (function($) {
 	}
 
 	function createInputFile(selected) {
-		//$('#label').html('&nbsp;'); 
+		//$('#label').html('&nbsp;');
 		$('#textInputDiv').hide();
 		$('#fileInputDiv').show();
-		
+
 		$('#gbdForm').attr('enctype', 'multipart/form-data');
-		$('#gbdForm').attr('method', 'post'); 
+		$('#gbdForm').attr('method', 'post');
 	}
 
 	function createInputFile2(selected) {
-		//$('#label').html('&nbsp;'); 
+		//$('#label').html('&nbsp;');
 		$('#textInputDiv2').hide();
 		$('#fileInputDiv2').show();
-		
+
 		$('#gbdForm2').attr('enctype', 'multipart/form-data');
-		$('#gbdForm2').attr('method', 'post'); 
+		$('#gbdForm2').attr('method', 'post');
 	}
 
 	function createInputFile3(selected) {
-		//$('#label').html('&nbsp;'); 
+		//$('#label').html('&nbsp;');
 		$('#textInputDiv3').hide();
 		$('#fileInputDiv3').show();
-		
+
 		$('#gbdForm3').attr('enctype', 'multipart/form-data');
-		$('#gbdForm3').attr('method', 'post'); 
+		$('#gbdForm3').attr('method', 'post');
 	}
 
 	function createInputTextArea(nameInput) {
-		//$('#label').html('&nbsp;'); 
+		//$('#label').html('&nbsp;');
 		$('#fileInputDiv').hide();
 		//$('#input').remove();
-		
+
 		//$('#field').html('<table><tr><td><textarea class="span7" rows="5" id="input" name="'+nameInput+'" /></td>'+
 		//"<td><span style='padding-left:20px;'>&nbsp;</span></td></tr></table>");
 		$('#textInputArea').attr('name', nameInput);
 		$('#textInputDiv').show();
-		
+
 		$('#gbdForm').attr('enctype', '');
 		$('#gbdForm').attr('method', 'post');
 	}
 
 	function createInputTextArea3(nameInput) {
-		//$('#label').html('&nbsp;'); 
+		//$('#label').html('&nbsp;');
 		$('#fileInputDiv3').hide();
-		
+
 		$('#textInputArea3').attr('name', nameInput);
 		$('#textInputDiv3').show();
-		
+
 		$('#gbdForm3').attr('enctype', '');
 		$('#gbdForm3').attr('method', 'post');
 	}
-	
+
 	/** admin functions */
-		
+
 	var selectedAdmKey="", selectedAdmValue, selectedAdmType;
-		
+
 	function adminShowRequest(formData, jqForm, options) {
 		$('#TabAdminProps').show();
 		$('#admMessage').html('<font color="grey">Requesting server...</font>');
@@ -1098,7 +1098,7 @@ var grobid = (function($) {
 		parseXml(responseText);
 		rowEvent();
 	}
-	
+
 	function parseXml(xml){
 		var out="<pre><table class='table-striped table-hover'><thead><tr align='left'><th>Property</th><th align='left'>value</th></tr></thead>";
 		$(xml).find("property").each(function(){
@@ -1111,7 +1111,7 @@ var grobid = (function($) {
 		out+="</table></pre>";
 		$('#TabAdminProps').html(out);
 	}
-	
+
 	function rowEvent(){
 		$('.admRow').click(function() {
 			$("#"+selectedAdmKey).find("div").html($("#val"+selectedAdmKey).attr("value"));
@@ -1121,16 +1121,16 @@ var grobid = (function($) {
 			$(this).find("div").html("<input type='text' id='val"+selectedAdmKey+"' size='80' value='"+selectedAdmValue+"' class='input-xxlarge'/>");
 			$("#val"+selectedAdmKey).focus();
 		});
-		
+
 		$('.admRow').keypress(function(event) {
 			var keycode = (event.keyCode ? event.keyCode : event.which);
 			selectedAdmKey=$(this).attr("id");
 			// Enter key
-			if(keycode == '13') {				
-				var newVal = $("#val"+selectedAdmKey).val();	
+			if(keycode == '13') {
+				var newVal = $("#val"+selectedAdmKey).val();
 				$("#"+selectedAdmKey).find("div").html(newVal);
 				selectedAdmValue=newVal;
-				selectedAdmType=$(this).find("input").attr("value");				
+				selectedAdmType=$(this).find("input").attr("value");
 				generateXmlRequest();
 			}
 			// Escape key
@@ -1139,7 +1139,7 @@ var grobid = (function($) {
 			}
 		});
 	}
-	
+
 	function generateXmlRequest(){
 		var xmlReq= "<changeProperty><password>"+$('#admPwd').val()+"</password>";
 		xmlReq+="<property><key>"+selectedAdmKey.split('-').join('.')+"</key><value>"+selectedAdmValue+"</value><type>"+selectedAdmType+"</type></property></changeProperty>";
@@ -1154,16 +1154,16 @@ var grobid = (function($) {
 			  error: changePropertyError
 			});
 	}
-	
+
 	function changePropertySuccesful(responseText, statusText) {
 		$("#"+selectedAdmKey).find("div").html(responseText);
 		$('#admMessage').html("<font color='green'>Property "+selectedAdmKey.split('-').join('.')+" updated with success</font>");
 	}
-	
+
 	function changePropertyError() {
 		$('#admMessage').html("<font color='red'>An error occured while updating property"+selectedAdmKey.split('-').join('.')+"</font>");
 	}
-		
+
 })(jQuery);
 
 
