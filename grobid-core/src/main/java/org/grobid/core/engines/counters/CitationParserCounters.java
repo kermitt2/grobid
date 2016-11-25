@@ -1,5 +1,7 @@
 package org.grobid.core.engines.counters;
 
+import org.grobid.core.engines.Countable;
+
 /**
  * User: zholudev
  * Date: 2/25/14
