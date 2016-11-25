@@ -11,13 +11,11 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
 
 import org.grobid.core.analyzers.GrobidDefaultAnalyzer;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.Figure;
-import org.grobid.core.data.Table;
+import org.grobid.core.data.*;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.counters.FigureCounters;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
@@ -42,14 +40,13 @@ import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.Utilities;
-import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.engines.counters.TableRejectionCounters;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.print.Doc;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
@@ -478,7 +475,7 @@ public class Document {
             Collection<GraphicObject> elements = imagesPerPage.get(pageNum);
             if (elements.size() > 10) {
                 imagesPerPage.removeAll(pageNum);
-                Engine.getCntManager().i(Figure.Counters.TOO_MANY_FIGURES_PER_PAGE);
+                Engine.getCntManager().i(FigureCounters.TOO_MANY_FIGURES_PER_PAGE);
             } else {
                 ArrayList<GraphicObject> res = glueImagesIfNecessary(pageNum, Lists.newArrayList(elements));
                 if (res != null) {
@@ -1574,7 +1571,7 @@ public class Document {
                     continue;
                 }
                 if (b.distanceTo(curBox) > distanceThreshold) {
-                    Engine.getCntManager().i(Table.TableRejectionCounters.HEADER_NOT_CONSECUTIVE);
+                    Engine.getCntManager().i(TableRejectionCounters.HEADER_NOT_CONSECUTIVE);
                     table.setGoodTable(false);
                     break;
                 } else {
@@ -1691,7 +1688,7 @@ public class Document {
                 }
             } else {
                 if (pageFigures.size() != graphicObjects.size()) {
-                    Engine.getCntManager().i(Figure.Counters.SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS);
+                    Engine.getCntManager().i(FigureCounters.SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS);
                     continue;
                 }
 
