@@ -2,6 +2,7 @@ package org.grobid.core.tokenization;
 
 import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
+import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.TaggingLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
@@ -18,7 +19,7 @@ import java.util.List;
  * Synchronize tagging result and layout tokens
  */
 public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer>, Iterable<LabeledTokensContainer> {
-    private final GrobidModels grobidModel;
+    private final GrobidModel grobidModel;
     private final Iterator<Triple<String, String, String>> tokensAndLabelsIt;
     private final PeekingIterator<LayoutToken> tokenizationsIt;
     private int tokensAndLabelsPtr;
@@ -26,11 +27,11 @@ public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer
     private List<Triple<String, String, String>> tokensAndLabels;
     private List<LayoutToken> tokenizations;
 
-    public TaggingTokenSynchronizer(GrobidModels grobidModel, String result, List<LayoutToken> tokenizations) {
+    public TaggingTokenSynchronizer(GrobidModel grobidModel, String result, List<LayoutToken> tokenizations) {
         this(grobidModel, result, tokenizations, false);
     }
 
-    public TaggingTokenSynchronizer(GrobidModels grobidModel, String result, List<LayoutToken> tokenizations,
+    public TaggingTokenSynchronizer(GrobidModel grobidModel, String result, List<LayoutToken> tokenizations,
                                     boolean addFeatureStrings) {
         this.grobidModel = grobidModel;
         tokensAndLabels = GenericTaggerUtils.getTokensWithLabelsAndFeatures(result, addFeatureStrings);
