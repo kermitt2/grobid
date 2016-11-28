@@ -88,11 +88,25 @@ public class CntManagerImplTest {
     }
 
     @Test
-    public void getCounter() throws Exception {
+    public void getCounter_shouldWork() throws Exception {
         target.i("figures", "element", 2);
         assertThat(target.getCounter("figures", "element").cnt(), is(2l));
 
         target.i(TaggingLabel.ASTRO_OBJECT, 20);
         assertThat(target.getCounter(TaggingLabel.ASTRO_OBJECT).cnt(), is(20l));
     }
+
+    @Test
+    public void getCounters_shouldWork() throws Exception {
+        target.i("figures", "element", 2);
+        target.i("table", "john", 2);
+        target.i("table", "miao", 2);
+        assertThat(target.getCounters("figures").size(), is(1));
+
+        target.i(TaggingLabel.ASTRO_OBJECT, 20);
+        assertThat(target.getCounters("table").size(), is(2));
+
+        assertThat(target.getCounters("table").keySet().toArray(new String[0]), is(new String[]{"miao", "john"}));
+    }
+
 }
