@@ -5,6 +5,7 @@ import org.grobid.core.engines.TaggingLabel;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Map;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -106,7 +107,9 @@ public class CntManagerImplTest {
         target.i(TaggingLabel.ASTRO_OBJECT, 20);
         assertThat(target.getCounters("table").size(), is(2));
 
-        assertThat(target.getCounters("table").keySet().toArray(new String[0]), is(new String[]{"miao", "john"}));
+        final String[] tables = target.getCounters("table").keySet().toArray(new String[0]);
+        Arrays.sort(tables);
+        assertThat(tables, is(new String[]{"john", "miao"}));
     }
 
 }
