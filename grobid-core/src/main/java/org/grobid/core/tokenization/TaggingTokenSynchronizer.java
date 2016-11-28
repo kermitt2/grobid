@@ -3,7 +3,6 @@ package org.grobid.core.tokenization;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
 import org.grobid.core.GrobidModels;
-import org.grobid.core.engines.TaggingLabel;
 import org.grobid.core.engines.TaggingLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.layout.LayoutToken;

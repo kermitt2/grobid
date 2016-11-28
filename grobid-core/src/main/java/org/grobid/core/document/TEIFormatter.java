@@ -10,8 +10,12 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
 import org.grobid.core.data.Date;
 import org.grobid.core.document.xml.XmlBuilderUtils;
-import org.grobid.core.engines.*;
+import org.grobid.core.engines.Engine;
+import org.grobid.core.engines.SegmentationLabel;
+import org.grobid.core.engines.TaggingLabel;
+import org.grobid.core.engines.TaggingLabels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.BoundingBox;
@@ -24,7 +28,6 @@ import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
-import org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -967,7 +970,7 @@ public class TEIFormatter {
             for (int i = 0; i < acknowResultLines.length; i++) {
                 if (acknowResultLines[i].trim().length() == 0)
                     continue;
-				/*if ( (i==0) && acknowResultLines[i].trim().startsWith("<div>") ) {
+                /*if ( (i==0) && acknowResultLines[i].trim().startsWith("<div>") ) {
 					extraDiv = true;
 					// we skip the first div (there is already a <div> just opened)
 				}
@@ -1017,7 +1020,7 @@ public class TEIFormatter {
                                          GrobidAnalysisConfig config) throws Exception {
 
 
-        ITaggingLabel lastClusterLabel = null;
+        TaggingLabel lastClusterLabel = null;
 
         int startPosition = buffer.length();
 
@@ -1044,7 +1047,7 @@ public class TEIFormatter {
                 continue;
             }
 
-            ITaggingLabel clusterLabel = cluster.getTaggingLabel();
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
             Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
@@ -1086,19 +1089,19 @@ public class TEIFormatter {
 //					chunkRefString = chunkRefString.substring(1, chunkRefString.length());
 //				}
                 List<Node> refNodes;
-                if(clusterLabel == TaggingLabels.CITATION_MARKER) {
+                if (clusterLabel == TaggingLabels.CITATION_MARKER) {
                     refNodes = markReferencesTEILuceneBased(chunkRefString,
                             refTokens,
                             doc.getReferenceMarkerMatcher(),
                             config.isGenerateTeiCoordinates());
 
-                }else if (clusterLabel== TaggingLabels.FIGURE_MARKER) {
+                } else if (clusterLabel == TaggingLabels.FIGURE_MARKER) {
                     refNodes = markReferencesFigureTEI(chunkRefString, refTokens, figures,
                             config.isGenerateTeiCoordinates());
-                }else if(clusterLabel == TABLE_MARKER) {
+                } else if (clusterLabel == TABLE_MARKER) {
                     refNodes = markReferencesTableTEI(chunkRefString, refTokens, tables,
                             config.isGenerateTeiCoordinates());
-                }else {
+                } else {
                     throw new IllegalStateException("Unsupported marker type: " + clusterLabel);
                 }
 
@@ -1173,7 +1176,7 @@ public class TEIFormatter {
         return buffer;
     }
 
-    private boolean isNewParagraph(ITaggingLabel lastClusterLabel, Element curParagraph) {
+    private boolean isNewParagraph(TaggingLabel lastClusterLabel, Element curParagraph) {
         return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabels.FIGURE
                 && lastClusterLabel != TaggingLabels.TABLE) || curParagraph == null;
     }

@@ -1,6 +1,6 @@
 package org.grobid.core.utilities.counters;
 
-import org.grobid.core.engines.Countable;
+import org.grobid.core.engines.counters.Countable;
 
 import java.io.Serializable;
 import java.util.Map;

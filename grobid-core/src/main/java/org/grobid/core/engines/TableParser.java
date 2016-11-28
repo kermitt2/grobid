@@ -60,24 +60,24 @@ public class TableParser extends AbstractParser {
                 continue;
             }
 
-            ITaggingLabel clusterLabel = cluster.getTaggingLabel();
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
             Engine.getCntManager().i(clusterLabel);
 
             List<LayoutToken> tokens = cluster.concatTokens();
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));
-            if (clusterLabel == TBL_DESC) {
+            if (clusterLabel.equals(TBL_DESC)) {
                 table.appendCaption(clusterContent);
                 table.getFullDescriptionTokens().addAll(tokens);
-            } else if (clusterLabel == TBL_HEAD) {
+            } else if (clusterLabel.equals(TBL_HEAD)) {
                 table.appendHeader(clusterContent);
                 table.getFullDescriptionTokens().addAll(tokens);
-            } else if (clusterLabel == TBL_LABEL) {
+            } else if (clusterLabel.equals(TBL_LABEL)) {
                 //label should also go to head
                 table.appendHeader(clusterContent);
                 table.appendLabel(clusterContent);
                 table.getFullDescriptionTokens().addAll(tokens);
-            } else if (clusterLabel == TBL_OTHER) {
-            } else if (clusterLabel == TBL_TRASH) {
+            } else if (clusterLabel.equals(TBL_OTHER)) {
+            } else if (clusterLabel.equals(TBL_TRASH)) {
                 table.appendContent(clusterContent);
                 table.getContentTokens().addAll(tokens);
             } else {
@@ -86,7 +86,7 @@ public class TableParser extends AbstractParser {
 
         }
         return table;
-}
+    }
 
 //	private Table getExtractionResult(List<LayoutToken> tokenizations,
 //									  List<Pair<String, String>> labeled) {
