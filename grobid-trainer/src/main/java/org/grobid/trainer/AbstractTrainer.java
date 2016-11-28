@@ -1,5 +1,6 @@
 package org.grobid.trainer;
 
+import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.engines.tagging.TaggerFactory;
@@ -26,12 +27,12 @@ public abstract class AbstractTrainer implements Trainer {
     protected int window = 0; // similar to CRF++
     protected int nbMaxIterations = 0; // maximum number of iterations in training
 
-    protected GrobidModels model;
+    protected GrobidModel model;
     private File trainDataPath;
     private File evalDataPath;
     private GenericTagger tagger;
 
-    public AbstractTrainer(final GrobidModels model) {
+    public AbstractTrainer(final GrobidModel model) {
         GrobidFactory.getInstance().createEngine();
         this.model = model;
         this.trainDataPath = getTempTrainingDataPath();
@@ -148,7 +149,7 @@ public abstract class AbstractTrainer implements Trainer {
         return getTemplatePath(model);
     }
 
-    protected static File getTemplatePath(final GrobidModels model) {
+    protected static File getTemplatePath(final GrobidModel model) {
         return GrobidProperties.getTemplatePath(getFilePath2Resources(), model);
     }
 
@@ -163,7 +164,7 @@ public abstract class AbstractTrainer implements Trainer {
     }
 
     @Override
-    public GrobidModels getModel() {
+    public GrobidModel getModel() {
         return model;
     }
 
