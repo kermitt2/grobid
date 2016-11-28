@@ -36,10 +36,11 @@ class CntManagerImpl implements CntManager {
 
     @Override
     public void i(Countable e, long val) {
-        checkClass(e.getClass().getName());
+        final String groupName = getCounterEnclosingName(e);
+        checkClass(groupName);
 
-        classCounters.putIfAbsent(e.getClass().getName(), new ConcurrentHashMap<String, Counter>());
-        ConcurrentMap<String, Counter> cntMap = classCounters.get(e.getClass().getName());
+        classCounters.putIfAbsent(groupName, new ConcurrentHashMap<String, Counter>());
+        ConcurrentMap<String, Counter> cntMap = classCounters.get(groupName);
 
         cntMap.putIfAbsent(e.getName(), new CounterImpl());
         Counter cnt = cntMap.get(e.getName());
@@ -66,7 +67,7 @@ class CntManagerImpl implements CntManager {
 
     @Override
     public long cnt(Countable e) {
-        Map<String, Counter> cntMap = classCounters.get(e.getClass().getName());
+        Map<String, Counter> cntMap = classCounters.get(getCounterEnclosingName(e));
         if (cntMap == null) {
             return 0;
         }
@@ -221,5 +222,13 @@ class CntManagerImpl implements CntManager {
         int result = classCounters != null ? classCounters.hashCode() : 0;
         result = 31 * result + (strCnts != null ? strCnts.hashCode() : 0);
         return result;
+    }
+
+    protected String getCounterEnclosingName(Countable e) {
+        if (e.getClass() != null && e.getClass().getEnclosingClass() != null) {
+            return e.getClass().getEnclosingClass().getName();
+        } else {
+            return e.getClass().getName();
+        }
     }
 }
