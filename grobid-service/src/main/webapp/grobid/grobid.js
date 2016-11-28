@@ -402,19 +402,19 @@ var grobid = (function($) {
 				    });
 				}
 				reader.readAsArrayBuffer(document.getElementById("input2").files[0]);
-			}
 
-			xhr.onreadystatechange = function(e) {
-				if (xhr.readyState == 4 && xhr.status == 200) {
-				    var response = e.target.response;
-				    //var response = JSON.parse(xhr.responseText);
-				 	//console.log(response);
-				    setupAnnotations(response);
-				} else  if (xhr.status != 200) {
-					AjaxError2(xhr);
-				}
+                xhr.onreadystatechange = function(e) {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var response = e.target.response;
+                        //var response = JSON.parse(xhr.responseText);
+                        //console.log(response);
+                        setupAnnotations(response);
+                    } else  if (xhr.status != 200) {
+                        AjaxError2(xhr);
+                    }
+                };
+                xhr.send(formData);
 			}
-			xhr.send(formData);
 		}
 
 
@@ -568,7 +568,7 @@ var grobid = (function($) {
 				} else  if (xhr.status != 200) {
 					AjaxError3(xhr);
 				}
-			}
+			};
 			xhr.send(formData);
 		} else {
 			// request for extraction, returning TEI result
@@ -589,7 +589,7 @@ var grobid = (function($) {
 				} else  if (xhr.status != 200) {
 					AjaxError3(xhr);
 				}
-			}
+			};
 			xhr.send(formData);
 		}
 	}
