@@ -1,4 +1,4 @@
-package org.grobid.core.engines;
+package org.grobid.core.engines.counters;
 
 /**
  * Created by lfoppiano on 25/11/16.
@@ -6,7 +6,5 @@ package org.grobid.core.engines;
 public interface Countable {
 
     String getName();
-
-
 
 }

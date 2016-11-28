@@ -1,6 +1,6 @@
 package org.grobid.core.utilities.counters.impl;
 
-import org.grobid.core.engines.Countable;
+import org.grobid.core.engines.counters.Countable;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.counters.CntsMetric;
 import org.grobid.core.utilities.counters.Counter;

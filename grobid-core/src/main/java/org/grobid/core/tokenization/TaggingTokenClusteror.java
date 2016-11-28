@@ -5,6 +5,7 @@ import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.TaggingLabel;
+import org.grobid.core.engines.TaggingLabelImpl;
 import org.grobid.core.layout.LayoutToken;
 
 import java.util.ArrayList;
@@ -15,7 +16,6 @@ import java.util.List;
  * Created by zholudev on 12/01/16.
  * Cluster tokens by label
  */
-
 public class TaggingTokenClusteror {
     private final TaggingTokenSynchronizer taggingTokenSynchronizer;
 

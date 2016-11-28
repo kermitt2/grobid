@@ -1,7 +1,7 @@
 package org.grobid.core.utilities.counters.impl;
 
-import org.grobid.core.data.Figure;
-import org.grobid.core.engines.TaggingLabel;
+import org.grobid.core.engines.TaggingLabels;
+import org.grobid.core.engines.counters.FigureCounters;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,49 +25,49 @@ public class CntManagerImplTest {
 
     @Test
     public void testCountSingleGroup() throws Exception {
-        target.i(TaggingLabel.ITEM);
+        target.i(TaggingLabels.EQUATION);
 
-        assertThat(target.getCounter(TaggingLabel.ITEM).cnt(), is(1l));
+        assertThat(target.getCounter(TaggingLabels.EQUATION).cnt(), is(1l));
     }
 
     @Test
     public void testGetAllCounters() throws Exception {
-        target.i(TaggingLabel.ITEM);
-        target.i(TaggingLabel.OTHER);
+        target.i(TaggingLabels.ITEM);
+        target.i(TaggingLabels.OTHER);
 
         final Map<String, Map<String, Long>> allCounters = target.getAllCounters();
         assertThat(allCounters.size(), is(1));
-        final Map<String, Long> stringLongMap = allCounters.get("org.grobid.core.engines.TaggingLabel");
-        assertThat(stringLongMap.size(), is(45));
+        final Map<String, Long> stringLongMap = allCounters.get("org.grobid.core.engines.TaggingLabelImpl");
+        assertThat(stringLongMap.size(), is(2));
 
-        assertThat(stringLongMap.get("OTHER"), is(1l));
-        assertThat(stringLongMap.get("ITEM"), is(1l));
+        assertThat(stringLongMap.get(TaggingLabels.OTHER.getName()), is(1l));
+        assertThat(stringLongMap.get(TaggingLabels.ITEM.getName()), is(1l));
     }
 
     @Test
     public void testGetAllCounters2() throws Exception {
-        target.i(TaggingLabel.ITEM);
-        target.i(Figure.Counters.SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS);
+        target.i(TaggingLabels.ITEM);
+        target.i(FigureCounters.SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS);
 
         final Map<String, Map<String, Long>> allCounters = target.getAllCounters();
         assertThat(allCounters.size(), is(2));
 
-        final Map<String, Long> taggingLabelMap = allCounters.get("org.grobid.core.engines.TaggingLabel");
-        assertThat(taggingLabelMap.size(), is(45));
+        final Map<String, Long> taggingLabelMap = allCounters.get("org.grobid.core.engines.TaggingLabelImpl");
+        assertThat(taggingLabelMap.size(), is(1));
 
-        final Map<String, Long> countersMap = allCounters.get("org.grobid.core.data.Figure$Counters");
-        assertThat(countersMap.size(), is(2));
+        final Map<String, Long> countersMap = allCounters.get("org.grobid.core.engines.counters.FigureCounters$2");
+        assertThat(countersMap.size(), is(1));
     }
 
     @Test
-    public void testCnt_withEnum() throws Exception {
-        assertThat(target.cnt(TaggingLabel.ITEM), is(0l));
-        target.i(TaggingLabel.ITEM);
-        assertThat(target.cnt(TaggingLabel.ITEM), is(1l));
-        assertThat(target.cnt(Figure.Counters.SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS), is(0l));
-        target.i(Figure.Counters.SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS);
-        assertThat(target.cnt(Figure.Counters.SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS), is(1l));
+    public void testCnt_withClass() throws Exception {
+        assertThat(target.cnt(TaggingLabels.ITEM), is(0l));
+        target.i(TaggingLabels.ITEM);
+        assertThat(target.cnt(TaggingLabels.ITEM), is(1l));
 
+        assertThat(target.cnt(FigureCounters.SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS), is(0l));
+        target.i(FigureCounters.SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS);
+        assertThat(target.cnt(FigureCounters.SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS), is(1l));
     }
 
     @Test
@@ -93,8 +93,8 @@ public class CntManagerImplTest {
         target.i("figures", "element", 2);
         assertThat(target.getCounter("figures", "element").cnt(), is(2l));
 
-        target.i(TaggingLabel.ASTRO_OBJECT, 20);
-        assertThat(target.getCounter(TaggingLabel.ASTRO_OBJECT).cnt(), is(20l));
+        target.i(TaggingLabels.CITATION_MARKER, 20);
+        assertThat(target.getCounter(TaggingLabels.CITATION_MARKER).cnt(), is(20l));
     }
 
     @Test
@@ -104,7 +104,7 @@ public class CntManagerImplTest {
         target.i("table", "miao", 2);
         assertThat(target.getCounters("figures").size(), is(1));
 
-        target.i(TaggingLabel.ASTRO_OBJECT, 20);
+        target.i(TaggingLabels.CITATION_MARKER, 20);
         assertThat(target.getCounters("table").size(), is(2));
 
         final String[] tables = target.getCounters("table").keySet().toArray(new String[0]);

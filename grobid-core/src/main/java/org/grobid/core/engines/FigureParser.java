@@ -63,20 +63,20 @@ class FigureParser extends AbstractParser {
                 continue;
             }
 
-            ITaggingLabel clusterLabel = cluster.getTaggingLabel();
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
             Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            if (clusterLabel == FIG_DESC) {
+            if (clusterLabel.equals(FIG_DESC)) {
                 figure.appendCaption(clusterContent);
-            } else if (clusterLabel == FIG_HEAD) {
+            } else if (clusterLabel.equals(FIG_HEAD)) {
                 figure.appendHeader(clusterContent);
-            } else if (clusterLabel == FIG_LABEL) {
+            } else if (clusterLabel.equals(FIG_LABEL)) {
                 figure.appendLabel(clusterContent);
                 figure.appendHeader(clusterContent);
-            } else if (clusterLabel == FIG_OTHER) {
+            } else if (clusterLabel.equals(FIG_OTHER)) {
 
-            } else if (clusterLabel == FIG_TRASH) {
+            } else if (clusterLabel.equals(FIG_TRASH)) {
                 figure.appendContent(clusterContent);
             } else {
                 LOGGER.error("Warning: unexpected figure model label - " + clusterLabel + " for " + clusterContent);
