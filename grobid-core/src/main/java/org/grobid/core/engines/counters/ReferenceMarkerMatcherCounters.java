@@ -71,7 +71,7 @@ public class ReferenceMarkerMatcherCounters {
     public static final Countable STYLE_OTHER = new Countable() {
         @Override
         public String getName() {
-            return "            return \"STYLE_OTHER\";\n";
+            return "STYLE_OTHER";
         }
     };
 
