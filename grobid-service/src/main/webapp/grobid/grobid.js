@@ -237,10 +237,12 @@ var grobid = (function($) {
 		responseJson = null;
 	}
 
-	function AjaxError2(jqXHR, textStatus, errorThrown) {
-		$('#requestResult2').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");
-		responseJson = null;
-	}
+    function AjaxError2(message) {
+        if(!message) message = "The document cannot be annotated. Please check whether the document is valid or the logs.";
+        $('#requestResult2').html("<font color='red'>Error encountered while requesting the server.<br/>" + message + "</font>");
+        responseJson = null;
+        return true;
+    }
 
 	function AjaxError3(jqXHR, textStatus, errorThrown) {
 		$('#requestResult3').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");
@@ -264,158 +266,160 @@ var grobid = (function($) {
 		$('#requestResult').show();
 	}
 
-	function submitQuery2() {
-		var selected = $('#selectedService2 option:selected').attr('value');
-		if (selected == 'annotatePDF') {
-			// we will have a PDF back
-			//PDFJS.disableWorker = true;
+    function submitQuery2() {
+        var selected = $('#selectedService2 option:selected').attr('value');
+        if (selected == 'annotatePDF') {
+            // we will have a PDF back
+            //PDFJS.disableWorker = true;
 
-			var form = document.getElementById('gbdForm2');
-			var formData = new FormData(form);
-			var xhr = new XMLHttpRequest();
-			var url = $('#gbdForm2').attr('action');
-			xhr.responseType = 'arraybuffer';
-			xhr.open('POST', url, true);
-			ShowRequest2();
-			xhr.onreadystatechange = function(e) {
-				if (xhr.readyState == 4 && xhr.status == 200) {
-				    var response = e.target.response;
-				    var pdfAsArray = new Uint8Array(response);
-					// Use PDFJS to render a pdfDocument from pdf array
-					var frame = '<iframe id="pdfViewer" src="resources/pdf.js/web/viewer.html?file=" style="width: 100%; height: 1000px;"></iframe>';
-					$('#requestResult2').html(frame);
-					var pdfjsframe = document.getElementById('pdfViewer');
-					pdfjsframe.onload = function() {
-						pdfjsframe.contentWindow.PDFViewerApplication.open(pdfAsArray);
-					};
-				} else  if (xhr.status != 200) {
-					AjaxError2(xhr);
-				}
-			};
-			xhr.send(formData);  // multipart/form-data
-		} else {
-			// we will have JSON annotations to be layered on the PDF
-
-			// request for the annotation information
-			var form = document.getElementById('gbdForm2');
-			var formData = new FormData(form);
-			var xhr = new XMLHttpRequest();
-			var url = $('#gbdForm2').attr('action');
-			xhr.responseType = 'json';
-			xhr.open('POST', url, true);
-			ShowRequest2();
-
-			var nbPages = -1;
-
-			// display the local PDF
-            if ( (document.getElementById("input2").files[0].type == 'application/pdf') ||
-			   	 (document.getElementById("input2").files[0].name.endsWith(".pdf")) ||
-			 	 (document.getElementById("input2").files[0].name.endsWith(".PDF")) )
-                var reader = new FileReader();
-                reader.onloadend = function () {
-					// to avoid cross origin issue
-					//PDFJS.disableWorker = true;
-				    var pdfAsArray = new Uint8Array(reader.result);
-					// Use PDFJS to render a pdfDocument from pdf array
-				    PDFJS.getDocument(pdfAsArray).then(function (pdf) {
-				        // Get div#container and cache it for later use
-			            var container = document.getElementById("requestResult2");
-			            // enable hyperlinks within PDF files.
-			            //var pdfLinkService = new PDFJS.PDFLinkService();
-			            //pdfLinkService.setDocument(pdf, null);
-
-						$('#requestResult2').html('');
-						nbPages = pdf.numPages;
-
-			            // Loop from 1 to total_number_of_pages in PDF document
-			            for (var i = 1; i <= nbPages; i++) {
-
-			                // Get desired page
-			                pdf.getPage(i).then(function(page) {
-
-							  	var div0 = document.createElement("div");
-							  	div0.setAttribute("style", "text-align: center; margin-top: 1cm;");
-			                  	var pageInfo = document.createElement("p");
-			                  	var t = document.createTextNode("page " + (page.pageIndex + 1) + "/" + (nbPages));
-							  	pageInfo.appendChild(t);
-							  	div0.appendChild(pageInfo);
-			                  	container.appendChild(div0);
-
-			                  	var scale = 1.5;
-			                 	var viewport = page.getViewport(scale);
-				                var div = document.createElement("div");
-
-			                  	// Set id attribute with page-#{pdf_page_number} format
-			                  	div.setAttribute("id", "page-" + (page.pageIndex + 1));
-
-			                  	// This will keep positions of child elements as per our needs, and add a light border
-			                  	div.setAttribute("style", "position: relative; border-style: solid; border-width: 1px; border-color: gray;");
-
-			                  	// Append div within div#container
-			                  	container.appendChild(div);
-
-			                  	// Create a new Canvas element
-			                  	var canvas = document.createElement("canvas");
-
-			                  	// Append Canvas within div#page-#{pdf_page_number}
-			                  	div.appendChild(canvas);
-
-			                  	var context = canvas.getContext('2d');
-			                  	canvas.height = viewport.height;
-			                  	canvas.width = viewport.width;
-
-			                  	var renderContext = {
-			                    	canvasContext: context,
-			                  		viewport: viewport
-			                  	};
-
-			                  	// Render PDF page
-			                  	page.render(renderContext).then(function() {
-			                        // Get text-fragments
-			                        return page.getTextContent();
-			                    })
-			                    .then(function(textContent) {
-			                        // Create div which will hold text-fragments
-			                        var textLayerDiv = document.createElement("div");
-
-			                        // Set it's class to textLayer which have required CSS styles
-			                        textLayerDiv.setAttribute("class", "textLayer");
-
-			                        // Append newly created div in `div#page-#{pdf_page_number}`
-			                        div.appendChild(textLayerDiv);
-
-			                        // Create new instance of TextLayerBuilder class
-			                        var textLayer = new TextLayerBuilder({
-			                          textLayerDiv: textLayerDiv,
-			                          pageIndex: page.pageIndex,
-			                          viewport: viewport
-			                        });
-
-			                        // Set text-fragments
-			                        textLayer.setTextContent(textContent);
-
-			                        // Render text-fragments
-			                        textLayer.render();
-			                    });
-			                });
-			            }
-				    });
-				}
-				reader.readAsArrayBuffer(document.getElementById("input2").files[0]);
-
-                xhr.onreadystatechange = function(e) {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
+            var form = document.getElementById('gbdForm2');
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            var url = $('#gbdForm2').attr('action');
+            xhr.responseType = 'arraybuffer';
+            xhr.open('POST', url, true);
+            ShowRequest2();
+            xhr.onreadystatechange = function (e) {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
                         var response = e.target.response;
-                        //var response = JSON.parse(xhr.responseText);
-                        //console.log(response);
-                        setupAnnotations(response);
-                    } else  if (xhr.status != 200) {
-                        AjaxError2(xhr);
+                        var pdfAsArray = new Uint8Array(response);
+                        // Use PDFJS to render a pdfDocument from pdf array
+                        var frame = '<iframe id="pdfViewer" src="resources/pdf.js/web/viewer.html?file=" style="width: 100%; height: 1000px;"></iframe>';
+                        $('#requestResult2').html(frame);
+                        var pdfjsframe = document.getElementById('pdfViewer');
+                        pdfjsframe.onload = function () {
+                            pdfjsframe.contentWindow.PDFViewerApplication.open(pdfAsArray);
+                        };
+                    } else if (xhr.status != 200) {
+                        AjaxError2("");
                     }
-                };
-                xhr.send(formData);
-			}
-		}
+                }
+            };
+            xhr.send(formData);  // multipart/form-data
+        } else {
+            // we will have JSON annotations to be layered on the PDF
+
+            // request for the annotation information
+            var form = document.getElementById('gbdForm2');
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            var url = $('#gbdForm2').attr('action');
+            xhr.responseType = 'json';
+            xhr.open('POST', url, true);
+            ShowRequest2();
+
+            var nbPages = -1;
+
+            // display the local PDF
+            if ((document.getElementById("input2").files[0].type == 'application/pdf') ||
+                (document.getElementById("input2").files[0].name.endsWith(".pdf")) ||
+                (document.getElementById("input2").files[0].name.endsWith(".PDF")))
+                var reader = new FileReader();
+            reader.onloadend = function () {
+                // to avoid cross origin issue
+                //PDFJS.disableWorker = true;
+                var pdfAsArray = new Uint8Array(reader.result);
+                // Use PDFJS to render a pdfDocument from pdf array
+                PDFJS.getDocument(pdfAsArray).then(function (pdf) {
+                    // Get div#container and cache it for later use
+                    var container = document.getElementById("requestResult2");
+                    // enable hyperlinks within PDF files.
+                    //var pdfLinkService = new PDFJS.PDFLinkService();
+                    //pdfLinkService.setDocument(pdf, null);
+
+                    $('#requestResult2').html('');
+                    nbPages = pdf.numPages;
+
+                    // Loop from 1 to total_number_of_pages in PDF document
+                    for (var i = 1; i <= nbPages; i++) {
+
+                        // Get desired page
+                        pdf.getPage(i).then(function (page) {
+
+                            var div0 = document.createElement("div");
+                            div0.setAttribute("style", "text-align: center; margin-top: 1cm;");
+                            var pageInfo = document.createElement("p");
+                            var t = document.createTextNode("page " + (page.pageIndex + 1) + "/" + (nbPages));
+                            pageInfo.appendChild(t);
+                            div0.appendChild(pageInfo);
+                            container.appendChild(div0);
+
+                            var scale = 1.5;
+                            var viewport = page.getViewport(scale);
+                            var div = document.createElement("div");
+
+                            // Set id attribute with page-#{pdf_page_number} format
+                            div.setAttribute("id", "page-" + (page.pageIndex + 1));
+
+                            // This will keep positions of child elements as per our needs, and add a light border
+                            div.setAttribute("style", "position: relative; border-style: solid; border-width: 1px; border-color: gray;");
+
+                            // Append div within div#container
+                            container.appendChild(div);
+
+                            // Create a new Canvas element
+                            var canvas = document.createElement("canvas");
+
+                            // Append Canvas within div#page-#{pdf_page_number}
+                            div.appendChild(canvas);
+
+                            var context = canvas.getContext('2d');
+                            canvas.height = viewport.height;
+                            canvas.width = viewport.width;
+
+                            var renderContext = {
+                                canvasContext: context,
+                                viewport: viewport
+                            };
+
+                            // Render PDF page
+                            page.render(renderContext).then(function () {
+                                // Get text-fragments
+                                return page.getTextContent();
+                            })
+                                .then(function (textContent) {
+                                    // Create div which will hold text-fragments
+                                    var textLayerDiv = document.createElement("div");
+
+                                    // Set it's class to textLayer which have required CSS styles
+                                    textLayerDiv.setAttribute("class", "textLayer");
+
+                                    // Append newly created div in `div#page-#{pdf_page_number}`
+                                    div.appendChild(textLayerDiv);
+
+                                    // Create new instance of TextLayerBuilder class
+                                    var textLayer = new TextLayerBuilder({
+                                        textLayerDiv: textLayerDiv,
+                                        pageIndex: page.pageIndex,
+                                        viewport: viewport
+                                    });
+
+                                    // Set text-fragments
+                                    textLayer.setTextContent(textContent);
+
+                                    // Render text-fragments
+                                    textLayer.render();
+                                });
+                        });
+                    }
+                });
+            }
+            reader.readAsArrayBuffer(document.getElementById("input2").files[0]);
+
+            xhr.onreadystatechange = function (e) {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var response = e.target.response;
+                    //var response = JSON.parse(xhr.responseText);
+                    //console.log(response);
+                    setupAnnotations(response);
+                } else if (xhr.status != 200) {
+                    AjaxError2("");
+                }
+            };
+            xhr.send(formData);
+        }
+    }
 
 
 	function submitQuery3() {
@@ -883,7 +887,7 @@ var grobid = (function($) {
 	function annotatePatentBib(isPatent, thePos, url, page_height, page_width, theBibPos) {
 		var page = thePos.p;
 		var pageDiv = $('#page-'+page);
-		var canvas = pageDiv.children('canvas').eq(0);;
+		var canvas = pageDiv.children('canvas').eq(0);
 
 		var canvasHeight = canvas.height();
 		var canvasWidth = canvas.width();
