@@ -628,14 +628,7 @@ public class GrobidRestService implements GrobidPathes {
 	public Response processAnnotatePDF(@FormDataParam(INPUT) InputStream inputStream,
 		@FormDataParam("name") String fileName,
 	 	@FormDataParam("type") int type) {
-		GrobidRestUtils.Annotation annotType = null;
-		if (type == 0)
-			annotType = GrobidRestUtils.Annotation.CITATION;
-		else if (type == 1)
-			annotType = GrobidRestUtils.Annotation.BLOCK;
-		else if (type == 2) 
-			annotType = GrobidRestUtils.Annotation.FIGURE;
-		return GrobidRestProcessFiles.processPDFAnnotation(inputStream, fileName, annotType);
+		return GrobidRestProcessFiles.processPDFAnnotation(inputStream, fileName, GrobidRestUtils.getAnnotationFor(type));
 	}
 
 	/**
