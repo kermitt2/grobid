@@ -1,6 +1,6 @@
 package org.grobid.core.utilities.counters.impl;
 
-import org.grobid.core.engines.TaggingLabels;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.counters.CitationParserCounters;
 import org.grobid.core.engines.counters.Countable;
 import org.grobid.core.engines.counters.FigureCounters;
@@ -40,7 +40,7 @@ public class CntManagerImplTest {
 
         final Map<String, Map<String, Long>> allCounters = target.getAllCounters();
         assertThat(allCounters.size(), is(1));
-        final Map<String, Long> stringLongMap = allCounters.get("org.grobid.core.engines.TaggingLabelImpl");
+        final Map<String, Long> stringLongMap = allCounters.get("org.grobid.core.engines.label.TaggingLabelImpl");
         assertThat(stringLongMap.size(), is(2));
 
         assertThat(stringLongMap.get(TaggingLabels.OTHER.getName()), is(1l));
@@ -55,7 +55,7 @@ public class CntManagerImplTest {
         final Map<String, Map<String, Long>> allCounters = target.getAllCounters();
         assertThat(allCounters.size(), is(2));
 
-        final Map<String, Long> taggingLabelMap = allCounters.get("org.grobid.core.engines.TaggingLabelImpl");
+        final Map<String, Long> taggingLabelMap = allCounters.get("org.grobid.core.engines.label.TaggingLabelImpl");
         assertThat(taggingLabelMap.size(), is(1));
 
         final Map<String, Long> countersMap = allCounters.get("org.grobid.core.engines.counters.FigureCounters");
@@ -75,7 +75,7 @@ public class CntManagerImplTest {
         final Map<String, Map<String, Long>> allCounters = target.getAllCounters();
         assertThat(allCounters.size(), is(2));
 
-        final Map<String, Long> taggingLabelMap = allCounters.get("org.grobid.core.engines.TaggingLabelImpl");
+        final Map<String, Long> taggingLabelMap = allCounters.get("org.grobid.core.engines.label.TaggingLabelImpl");
         assertNull(taggingLabelMap);
 
         final Map<String, Long> counterFigures = allCounters.get("org.grobid.core.engines.counters.FigureCounters");
@@ -146,7 +146,7 @@ public class CntManagerImplTest {
 
     @Test
     public void getCounterEnclosingClass_NoEnclosingClass_shouldWork() throws Exception {
-        assertThat(target.getCounterEnclosingName(TaggingLabels.CITATION_MARKER), is("org.grobid.core.engines.TaggingLabelImpl"));
+        assertThat(target.getCounterEnclosingName(TaggingLabels.CITATION_MARKER), is("org.grobid.core.engines.label.TaggingLabelImpl"));
     }
 
     @Test

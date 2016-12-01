@@ -1,4 +1,4 @@
-package org.grobid.core.engines;
+package org.grobid.core.engines.label;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;

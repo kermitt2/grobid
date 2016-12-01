@@ -2,6 +2,8 @@ package org.grobid.core.engines;
 
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
