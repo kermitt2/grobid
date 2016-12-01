@@ -65,29 +65,29 @@ public class GrobidAnalyzer {
 		if ( (text == null) || (text.length() == 0) ) {
 			return new ArrayList<String>();
 		}
-		if ( (lang == null) || (lang.getLangId() == null) ) {
+		if ( (lang == null) || (lang.getLang() == null) ) {
 			// default Indo-European languages
 			result = GrobidDefaultAnalyzer.tokenize(text);
 		}
-		else if (lang.getLangId().equals("ja")) {
+		else if (lang.getLang().equals("ja")) {
 			// Japanese analyser
 			if (jaAnalyzer == null)
 				jaAnalyzer = ReTokenizerFactory.create("ja_g");
 			result = jaAnalyzer.tokensAsList(text);
 		}
-		else if (lang.getLangId().equals("zh") || lang.getLangId().equals("zh-cn")) {
+		else if (lang.getLang().equals("zh") || lang.getLang().equals("zh-cn")) {
 			// Chinese analyser
 			if (zhAnalyzer == null)
 				zhAnalyzer = ReTokenizerFactory.create("zh_g");
 			result = zhAnalyzer.tokensAsList(text);
 		}
-		else if (lang.getLangId().equals("kr")) {
+		else if (lang.getLang().equals("kr")) {
 			// Korean analyser
 			if (krAnalyzer == null)
 				krAnalyzer = ReTokenizerFactory.create("kr_g");
 			result = krAnalyzer.tokensAsList(text);
 		}
-		else if (lang.getLangId().equals("ar")) {
+		else if (lang.getLang().equals("ar")) {
 			// Arabic analyser
 			result = GrobidDefaultAnalyzer.tokenize(text);
 			int p = 0;
@@ -120,20 +120,20 @@ public class GrobidAnalyzer {
 		if ( (textTokenized == null) || (textTokenized.size() == 0) ) {
 			return new ArrayList<String>();
 		}
-		if ( (lang == null) || (lang.getLangId() == null) ) {
+		if ( (lang == null) || (lang.getLang() == null) ) {
 			// default Indo-European languages
 			result = GrobidDefaultAnalyzer.retokenize(textTokenized);
 		}
-		else if (lang.getLangId().equals("ja")) {
+		else if (lang.getLang().equals("ja")) {
 			// Japanese analyser
 		}
-		else if (lang.getLangId().equals("zh")) {
+		else if (lang.getLang().equals("zh")) {
 			// Chinese analyser
 		}
-		else if (lang.getLangId().equals("kr")) {
+		else if (lang.getLang().equals("kr")) {
 			// Korean analyser
 		}
-		else if (lang.getLangId().equals("ar")) {
+		else if (lang.getLang().equals("ar")) {
 			// Arabic analyser
 		}
 		else {
