@@ -1,4 +1,4 @@
-package org.grobid.core.engines;
+package org.grobid.core.engines.label;
 
 import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.counters.Countable;

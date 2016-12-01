@@ -4,9 +4,7 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
 import org.grobid.core.GrobidModel;
-import org.grobid.core.GrobidModels;
-import org.grobid.core.engines.TaggingLabel;
-import org.grobid.core.engines.TaggingLabelImpl;
+import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.layout.LayoutToken;
 
 import java.util.ArrayList;

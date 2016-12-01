@@ -2,6 +2,7 @@ package org.grobid.core.engines;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Table;
+import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.layout.LayoutToken;
@@ -17,7 +18,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Collections;
 import java.util.List;
 
-import static org.grobid.core.engines.TaggingLabels.*;
+import static org.grobid.core.engines.label.TaggingLabels.*;
 
 /**
  * @author Patrice

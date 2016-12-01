@@ -1,6 +1,6 @@
 package org.grobid.core.tokenization;
 
-import org.grobid.core.engines.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.layout.LayoutToken;
 
