@@ -131,7 +131,7 @@ public class HeaderParser extends AbstractParser {
             }
             Language langu = languageUtilities.runLanguageId(contentSample);
             if (langu != null) {
-                String lang = langu.getLangId();
+                String lang = langu.getLang();
                 doc.setLanguage(lang);
                 resHeader.setLanguage(lang);
             }
@@ -339,7 +339,7 @@ public class HeaderParser extends AbstractParser {
                 }
                 Language langu = languageUtilities.runLanguageId(contentSample);
                 if (langu != null) {
-                    String lang = langu.getLangId();
+                    String lang = langu.getLang();
                     doc.setLanguage(lang);
                     resHeader.setLanguage(lang);
                 }
@@ -903,7 +903,7 @@ public class HeaderParser extends AbstractParser {
                     StringBuilder bufferHeader = trainingExtraction(rese, true, tokenizations);
                     Language lang = languageUtilities.runLanguageId(bufferHeader.toString());
                     if (lang != null) {
-                        doc.setLanguage(lang.getLangId());
+                        doc.setLanguage(lang.getLang());
                     }
 
                     // buffer for the affiliation+address block

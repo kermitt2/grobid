@@ -334,7 +334,7 @@ public class TEIFormatter {
             Language resLang = languageUtilities.runLanguageId(english_title);
 
             if (resLang != null) {
-                String resL = resLang.getLangId();
+                String resL = resLang.getLang();
                 if (resL.equals(Language.EN)) {
                     hasEnglishTitle = true;
                     tei.append("\t\t\t\t\t\t<title");
@@ -753,7 +753,7 @@ public class TEIFormatter {
             resLang = languageUtilities.runLanguageId(abstractText);
         }
         if (resLang != null) {
-            String resL = resLang.getLangId();
+            String resL = resLang.getLang();
             if (!resL.equals(doc.getLanguage())) {
                 tei.append("\t\t\t<abstract xml:lang=\"").append(resL).append("\">\n");
             } else {
