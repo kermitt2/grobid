@@ -19,6 +19,7 @@ import org.grobid.core.visualization.FigureTableVisualizer;
 import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.GrobidServiceProperties;
+import org.grobid.service.exceptions.GrobidServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
@@ -666,8 +667,13 @@ public class GrobidRestProcessFiles {
         Engine engine = null;
         try {
             originFile = IOUtilities.writeInputFile(inputStream);
-            GrobidAnalysisConfig config = new GrobidAnalysisConfig.
-                    GrobidAnalysisConfigBuilder().build();
+            List<String> elementWithCoords = new ArrayList();
+            elementWithCoords.add("ref");
+            elementWithCoords.add("biblStruct");
+            GrobidAnalysisConfig config = new GrobidAnalysisConfig
+                    .GrobidAnalysisConfigBuilder()
+                    .generateTeiCoordinates(elementWithCoords)
+                    .build();
 
             String json = null;
 
@@ -789,13 +795,20 @@ public class GrobidRestProcessFiles {
     protected static PDDocument annotate(File originFile, boolean isparallelExec,
                                        final GrobidRestUtils.Annotation type, Engine engine) throws Exception {
         // starts conversion process
-        GrobidAnalysisConfig config = new GrobidAnalysisConfig.
-                GrobidAnalysisConfigBuilder().build();
+        PDDocument outputDocument = null;
+        // list of TEI elements that should come with coordinates
+        List<String> elementWithCoords = new ArrayList();
+            elementWithCoords.add("ref");
+            elementWithCoords.add("biblStruct");
+
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig
+                .GrobidAnalysisConfigBuilder()
+                .generateTeiCoordinates(elementWithCoords)
+                .build();
 
         Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
 
         final PDDocument document = PDDocument.load(originFile);
-        PDDocument outputDocument;
         //If no pages, skip the document
         if (document.getNumberOfPages() > 0) {
             DocumentSource documentSource = DocumentSource.fromPdf(originFile);

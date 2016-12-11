@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007038926.HC.ligand-names" xmlns:nite="http://nite.sourceforge.net/">
+   <ligand-name nite:id="WO2007038926.HC.ligand-names.1" comment="" name="hydroxyl" relevant="false" chebi-id="CHEBI:29191" epochem-id="EPOCHEM:NEW:LIGAND:1">
+      <nite:child href="WO2007038926.words.xml#id(WO2007038926_w_2865)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038926.HC.ligand-names.2" comment="" name="carbonyl" relevant="true" chebi-id="CHEBI:23019" epochem-id="EPOCHEM:NEW:LIGAND:199">
+      <nite:child href="WO2007038926.words.xml#id(WO2007038926_w_2852)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038926.HC.ligand-names.3" comment="" name="fumaric" relevant="false" chebi-id="WO2007038926:477149" epochem-id="EPOCHEM:NEW:LIGAND:161">
+      <nite:child href="WO2007038926.words.xml#id(WO2007038926_w_8849)"/>
+   </ligand-name>
+</nite:root>

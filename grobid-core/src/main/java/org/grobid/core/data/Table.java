@@ -60,19 +60,19 @@ public class Table extends Figure {
 
 		tableElement.addAttribute(new Attribute("validated", String.valueOf(isGoodTable())));
 
-		if (config.isGenerateTeiCoordinates()) {
+		if ((config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("figure"))) {
 			XmlBuilderUtils.addCoords(tableElement, LayoutTokensUtil.getCoordsStringForOneBox(getLayoutTokens()));
 		}
 
 		Element descEl = XmlBuilderUtils.teiElement("figDesc");
 		descEl.appendChild(LayoutTokensUtil.normalizeText(getFullDescriptionTokens()).trim());
-		if (config.isGenerateTeiCoordinates()) {
+		if ((config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("figure"))) {
 			XmlBuilderUtils.addCoords(descEl, LayoutTokensUtil.getCoordsString(getFullDescriptionTokens()));
 		}
 
 		Element contentEl = XmlBuilderUtils.teiElement("table");
 		contentEl.appendChild(LayoutTokensUtil.toText(getContentTokens()));
-		if (config.isGenerateTeiCoordinates()) {
+		if ((config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("figure"))) {
 			XmlBuilderUtils.addCoords(contentEl, LayoutTokensUtil.getCoordsStringForOneBox(getContentTokens()));
 		}
 

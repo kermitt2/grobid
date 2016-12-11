@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007038122.HC.ligand-names" xmlns:nite="http://nite.sourceforge.net/">
+   <ligand-name nite:id="WO2007038122.HC.ligand-names.1" comment="" name="O- methyl phosphoramidite groups" relevant="false" chebi-id="WO2007038122:544396" epochem-id="EPOCHEM:NEW:LIGAND:600">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_5728)..id(WO2007038122_w_5729)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_5731)..id(WO2007038122_w_5732)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_5730)"/>
+   </ligand-name>
+</nite:root>

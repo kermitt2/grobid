@@ -12,7 +12,7 @@ import java.io.InputStream;
 import java.io.StringWriter;
 import java.nio.charset.Charset;
 
-public class JatsTransformer {
+public class JATSTransformer {
 
     public final static String xsltPath = "/xslt/grobid-jats.xsl";
 
@@ -27,7 +27,7 @@ public class JatsTransformer {
             }
         });
 
-        InputStream is = JatsTransformer.class.getResourceAsStream(xsltPath);
+        InputStream is = JATSTransformer.class.getResourceAsStream(xsltPath);
 
         try {
             t = tf.newTransformer(new StreamSource(is));

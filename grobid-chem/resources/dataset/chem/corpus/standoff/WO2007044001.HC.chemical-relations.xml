@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007044001.HC.chemical-relations" xmlns:nite="http://nite.sourceforge.net/">
+   <chem-relation nite:id="WO2007044001.HC.chemical-relations.1" source="EPOCHEM:NEW:COMPOUND:335" relation="synonyms" target="EPOCHEM:NEW:COMPOUND:334">
+      <nite:pointer role="source"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.94)"/>
+      <nite:pointer role="target"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.93)"/></chem-relation>
+   <chem-relation nite:id="WO2007044001.HC.chemical-relations.2" source="EPOCHEM:NEW:COMPOUND:503" relation="synonyms" target="EPOCHEM:NEW:COMPOUND:509">
+      <nite:pointer role="source"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.105)"/>
+      <nite:pointer role="target"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.121)"/></chem-relation>
+   <chem-relation nite:id="WO2007044001.HC.chemical-relations.4" source="EPOCHEM:NEW:COMPOUND:510" relation="synonyms" target="EPOCHEM:NEW:COMPOUND:507">
+      <nite:pointer role="source"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.123)"/>
+      <nite:pointer role="target"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.117)"/></chem-relation>
+   <chem-relation nite:id="WO2007044001.HC.chemical-relations.5" source="EPOCHEM:NEW:COMPOUND:511" relation="synonyms" target="EPOCHEM:NEW:COMPOUND:506">
+      <nite:pointer role="source"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.125)"/>
+      <nite:pointer role="target"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.116)"/></chem-relation>
+   <chem-relation nite:id="WO2007044001.HC.chemical-relations.6" source="EPOCHEM:NEW:FORMULA:127" relation="synonyms" target="EPOCHEM:COMPOUND:7142">
+      <nite:pointer role="source"  href="WO2007044001.HC.formula-names.xml#id(WO2007044001.HC.formula-names.20)"/>
+      <nite:pointer role="target"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.56)"/></chem-relation>
+   <chem-relation nite:id="WO2007044001.HC.chemical-relations.7" source="EPOCHEM:COMPOUND:7142" relation="synonyms" target="EPOCHEM:NEW:FORMULA:127">
+      <nite:pointer role="source"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.56)"/>
+      <nite:pointer role="target"  href="WO2007044001.HC.formula-names.xml#id(WO2007044001.HC.formula-names.20)"/></chem-relation>
+   <chem-relation nite:id="WO2007044001.HC.chemical-relations.8" source="EPOCHEM:NEW:COMPOUND:516" relation="synonyms" target="EPOCHEM:NEW:COMPOUND:1967">
+      <nite:pointer role="source"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.169)"/>
+      <nite:pointer role="target"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.186)"/></chem-relation>
+   <chem-relation nite:id="WO2007044001.HC.chemical-relations.9" source="EPOCHEM:NEW:COMPOUND:501" relation="is a" target="EPOCHEM:NEW:COMPOUND:2069">
+      <nite:pointer role="source"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.101)"/>
+      <nite:pointer role="target"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.194)"/>
+   </chem-relation>
+   <chem-relation nite:id="WO2007044001.HC.chemical-relations.10" source="EPOCHEM:NEW:COMPOUND:2110" relation="synonyms" target="EPOCHEM:NEW:COMPOUND:502">
+      <nite:pointer role="source"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.197)"/>
+      <nite:pointer role="target"  href="WO2007044001.HC.chemical-names.xml#id(WO2007044001.HC.chemical-names.102)"/>
+   </chem-relation>
+</nite:root>

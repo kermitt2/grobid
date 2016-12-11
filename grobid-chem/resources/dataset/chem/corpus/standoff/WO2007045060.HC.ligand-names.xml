@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007045060.HC.ligand-names" xmlns:nite="http://nite.sourceforge.net/">
+   <ligand-name nite:id="WO2007045060.HC.ligand-names.1" comment="" name="methoxyl" relevant="false" chebi-id="CHEBI:32772" epochem-id="EPOCHEM:NEW:LIGAND:71">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4229)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007045060.HC.ligand-names.2" comment="" name="methoxyl" relevant="false" chebi-id="CHEBI:32772" epochem-id="EPOCHEM:NEW:LIGAND:71">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5028)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007045060.HC.ligand-names.3" comment="" name="methoxyl" relevant="false" chebi-id="CHEBI:32772" epochem-id="EPOCHEM:NEW:LIGAND:71">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5242)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007045060.HC.ligand-names.4" comment="" name="methoxyl" relevant="false" chebi-id="CHEBI:32772" epochem-id="EPOCHEM:NEW:LIGAND:71">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5484)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007045060.HC.ligand-names.5" comment="" name="hydroxyl" relevant="false" chebi-id="CHEBI:29191" epochem-id="EPOCHEM:NEW:LIGAND:1">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5052)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007045060.HC.ligand-names.6" comment="" name="hydroxyl" relevant="false" chebi-id="CHEBI:29191" epochem-id="EPOCHEM:NEW:LIGAND:1">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5137)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007045060.HC.ligand-names.7" comment="" name="hydroxyl" relevant="false" chebi-id="CHEBI:29191" epochem-id="EPOCHEM:NEW:LIGAND:1">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5570)"/>
+   </ligand-name>
+</nite:root>

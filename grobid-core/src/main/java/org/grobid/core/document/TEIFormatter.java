@@ -1084,20 +1084,22 @@ public class TEIFormatter {
 //					chunkRefString = chunkRefString.substring(1, chunkRefString.length());
 //				}
                 List<Node> refNodes;
+                boolean generateCoords = (config.getGenerateTeiCoordinates() != null) && 
+                                 config.getGenerateTeiCoordinates().contains("ref");
                 switch (clusterLabel) {
                     case CITATION_MARKER:
                         refNodes = markReferencesTEILuceneBased(chunkRefString,
                                 refTokens,
                                 doc.getReferenceMarkerMatcher(),
-                                config.isGenerateTeiCoordinates());
+                                generateCoords);
                         break;
                     case FIGURE_MARKER:
                         refNodes = markReferencesFigureTEI(chunkRefString, refTokens, figures,
-                                config.isGenerateTeiCoordinates());
+                                generateCoords);
                         break;
                     case TABLE_MARKER:
                         refNodes = markReferencesTableTEI(chunkRefString, refTokens, tables,
-                                config.isGenerateTeiCoordinates());
+                                generateCoords);
                         break;
                     default:
                         throw new IllegalStateException("Unsupported marker type: " + clusterLabel);

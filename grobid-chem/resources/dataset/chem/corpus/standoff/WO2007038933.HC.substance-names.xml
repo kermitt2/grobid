@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007038933.HC.substance-names" xmlns:nite="http://nite.sourceforge.net/">
+   <substance-name nite:id="WO2007038933.HC.substance-names.33" comment="" name="myoglobin" relevant="false" chebi-id="CHEBI:7044" epochem-id="EPOCHEM:NEW:SUBSTANCE:198">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_5024)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038933.HC.substance-names.34" comment="" name="myoglobin" relevant="false" chebi-id="CHEBI:7044" epochem-id="EPOCHEM:NEW:SUBSTANCE:198">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_5503)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038933.HC.substance-names.35" comment="" name="myoglobin" relevant="false" chebi-id="CHEBI:7044" epochem-id="EPOCHEM:NEW:SUBSTANCE:198">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_5660)"/>
+   </substance-name>
+</nite:root>

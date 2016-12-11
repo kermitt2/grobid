@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007045405.HC.formula-names" xmlns:nite="http://nite.sourceforge.net/">
+   <formula-name nite:id="WO2007045405.HC.formula-names.1" comment="" name="NaH" relevant="false" chebi-id="WO2007045405:943979" epochem-id="EPOCHEM:NEW:FORMULA:46">
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_459)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045405.HC.formula-names.2" comment="" name="NaH" relevant="false" chebi-id="WO2007045405:943979" epochem-id="EPOCHEM:NEW:FORMULA:46">
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_521)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045405.HC.formula-names.3" comment="" name="NaH" relevant="false" chebi-id="WO2007045405:943979" epochem-id="EPOCHEM:NEW:FORMULA:46">
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_1199)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045405.HC.formula-names.4" comment="" name="NaH" relevant="false" chebi-id="WO2007045405:943979" epochem-id="EPOCHEM:NEW:FORMULA:46">
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_1587)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045405.HC.formula-names.5" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_1236)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045405.HC.formula-names.9" comment="" name="NaOH" relevant="false" chebi-id="CHEBI:32145" epochem-id="EPOCHEM:NEW:FORMULA:5">
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_1976)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045405.HC.formula-names.10" comment="" name="HCl" relevant="false" chebi-id="CHEBI:17883" epochem-id="EPOCHEM:NEW:FORMULA:106">
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_2119)"/>
+   </formula-name>
+</nite:root>

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007038855.HC.substance-names" xmlns:nite="http://nite.sourceforge.net/">
+   <substance-name nite:id="WO2007038855.HC.substance-names.1" comment="" name="polyvinylpyrrolidone" relevant="false" chebi-id="WO2007038855:360977" epochem-id="EPOCHEM:NEW:SUBSTANCE:71">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1497)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.2" comment="" name="polyvinylpyrrolidone" relevant="false" chebi-id="WO2007038855:360977" epochem-id="EPOCHEM:NEW:SUBSTANCE:71">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3998)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.3" comment="" name="polyvinylpyrrolidone" relevant="false" chebi-id="WO2007038855:360977" epochem-id="EPOCHEM:NEW:SUBSTANCE:71">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4010)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.4" comment="" name="polyvinylpyrrolidone" relevant="false" chebi-id="WO2007038855:360977" epochem-id="EPOCHEM:NEW:SUBSTANCE:71">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4039)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.5" comment="" name="polyvinylpyrrolidone" relevant="false" chebi-id="WO2007038855:360977" epochem-id="EPOCHEM:NEW:SUBSTANCE:71">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4481)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.6" comment="" name="hydroxyethyl cellulose" relevant="false" chebi-id="WO2007038855:266233" epochem-id="EPOCHEM:NEW:SUBSTANCE:57">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_607)..id(WO2007038855_w_608)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.7" comment="" name="hydroxyethyl cellulose" relevant="false" chebi-id="WO2007038855:266233" epochem-id="EPOCHEM:NEW:SUBSTANCE:57">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_928)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_927)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.8" comment="" name="hydroxyethyl cellulose" relevant="false" chebi-id="WO2007038855:266233" epochem-id="EPOCHEM:NEW:SUBSTANCE:57">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_960)..id(WO2007038855_w_961)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.9" comment="" name="hydroxyethyl cellulose" relevant="false" chebi-id="WO2007038855:266233" epochem-id="EPOCHEM:NEW:SUBSTANCE:57">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1002)..id(WO2007038855_w_1003)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.10" comment="" name="hydroxyethyl cellulose" relevant="false" chebi-id="WO2007038855:266233" epochem-id="EPOCHEM:NEW:SUBSTANCE:57">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1011)..id(WO2007038855_w_1012)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.11" comment="" name="hydroxyethyl cellulose" relevant="false" chebi-id="WO2007038855:266233" epochem-id="EPOCHEM:NEW:SUBSTANCE:57">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3609)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3608)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.12" comment="" name="hydroxyethyl cellulose" relevant="false" chebi-id="WO2007038855:266233" epochem-id="EPOCHEM:NEW:SUBSTANCE:57">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3632)..id(WO2007038855_w_3633)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.13" comment="" name="hydroxyethyl cellulose" relevant="false" chebi-id="WO2007038855:266233" epochem-id="EPOCHEM:NEW:SUBSTANCE:57">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3646)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3645)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.14" comment="" name="hydroxyethyl cellulose" relevant="false" chebi-id="WO2007038855:266233" epochem-id="EPOCHEM:NEW:SUBSTANCE:57">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3675)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3674)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.15" comment="" name="hydroxyethyl cellulose" relevant="false" chebi-id="WO2007038855:266233" epochem-id="EPOCHEM:NEW:SUBSTANCE:57">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3699)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3698)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.16" comment="" name="hydroxyethyl cellulose" relevant="false" chebi-id="WO2007038855:266233" epochem-id="EPOCHEM:NEW:SUBSTANCE:57">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4452)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4451)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.17" comment="" name="hydroxyethyl cellulose" relevant="false" chebi-id="WO2007038855:266233" epochem-id="EPOCHEM:NEW:SUBSTANCE:57">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4521)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4520)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.18" comment="" name="PEG 3350" relevant="false" chebi-id="WO2007038855:88069" epochem-id="EPOCHEM:NEW:SUBSTANCE:74">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1881)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1880)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.19" comment="" name="PEG 3350" relevant="false" chebi-id="WO2007038855:88069" epochem-id="EPOCHEM:NEW:SUBSTANCE:74">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1926)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1925)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.20" comment="" name="PEG 3350" relevant="false" chebi-id="WO2007038855:88069" epochem-id="EPOCHEM:NEW:SUBSTANCE:74">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1961)..id(WO2007038855_w_1962)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.21" comment="" name="PEG 3350" relevant="false" chebi-id="WO2007038855:88069" epochem-id="EPOCHEM:NEW:SUBSTANCE:74">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1991)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1990)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.22" comment="" name="PEG 3350" relevant="false" chebi-id="WO2007038855:88069" epochem-id="EPOCHEM:NEW:SUBSTANCE:74">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4343)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4342)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.23" comment="" name="PEG 3350" relevant="false" chebi-id="WO2007038855:88069" epochem-id="EPOCHEM:NEW:SUBSTANCE:74">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4355)..id(WO2007038855_w_4356)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.24" comment="" name="PEG 3350" relevant="false" chebi-id="WO2007038855:88069" epochem-id="EPOCHEM:NEW:SUBSTANCE:74">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4385)..id(WO2007038855_w_4386)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.25" comment="" name="PEG 3350" relevant="false" chebi-id="WO2007038855:88069" epochem-id="EPOCHEM:NEW:SUBSTANCE:74">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4413)..id(WO2007038855_w_4414)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.26" comment="" name="PEG 3350" relevant="false" chebi-id="WO2007038855:88069" epochem-id="EPOCHEM:NEW:SUBSTANCE:74">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4442)..id(WO2007038855_w_4443)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.27" comment="" name="PEG 3350" relevant="false" chebi-id="WO2007038855:88069" epochem-id="EPOCHEM:NEW:SUBSTANCE:74">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4509)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4508)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.28" comment="" name="carboxymethyl cellulose" relevant="false" chebi-id="WO2007038855:744133" epochem-id="EPOCHEM:NEW:SUBSTANCE:75">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_933)..id(WO2007038855_w_934)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.29" comment="" name="carboxymethyl cellulose" relevant="false" chebi-id="WO2007038855:744133" epochem-id="EPOCHEM:NEW:SUBSTANCE:75">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1059)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1058)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.30" comment="" name="carboxymethyl cellulose" relevant="false" chebi-id="WO2007038855:744133" epochem-id="EPOCHEM:NEW:SUBSTANCE:75">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1088)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1087)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.31" comment="" name="carboxymethyl cellulose" relevant="false" chebi-id="WO2007038855:744133" epochem-id="EPOCHEM:NEW:SUBSTANCE:75">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1555)..id(WO2007038855_w_1556)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.32" comment="" name="carboxymethyl cellulose" relevant="false" chebi-id="WO2007038855:744133" epochem-id="EPOCHEM:NEW:SUBSTANCE:75">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1581)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1580)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.33" comment="" name="carboxymethyl cellulose" relevant="false" chebi-id="WO2007038855:744133" epochem-id="EPOCHEM:NEW:SUBSTANCE:75">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1610)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1609)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.34" comment="" name="carboxymethyl cellulose" relevant="false" chebi-id="WO2007038855:744133" epochem-id="EPOCHEM:NEW:SUBSTANCE:75">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3616)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3615)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.35" comment="" name="carboxymethyl cellulose" relevant="false" chebi-id="WO2007038855:744133" epochem-id="EPOCHEM:NEW:SUBSTANCE:75">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3734)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3733)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.36" comment="" name="carboxymethyl cellulose" relevant="false" chebi-id="WO2007038855:744133" epochem-id="EPOCHEM:NEW:SUBSTANCE:75">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3764)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3763)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.37" comment="" name="carboxymethyl cellulose" relevant="false" chebi-id="WO2007038855:744133" epochem-id="EPOCHEM:NEW:SUBSTANCE:75">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4071)..id(WO2007038855_w_4072)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.38" comment="" name="carboxymethyl cellulose" relevant="false" chebi-id="WO2007038855:744133" epochem-id="EPOCHEM:NEW:SUBSTANCE:75">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4101)..id(WO2007038855_w_4102)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.39" comment="" name="carboxymethyl cellulose" relevant="false" chebi-id="WO2007038855:744133" epochem-id="EPOCHEM:NEW:SUBSTANCE:75">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4551)..id(WO2007038855_w_4552)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.43" comment="" name="polyethylene oxide" relevant="false" chebi-id="WO2007038855:935763" epochem-id="EPOCHEM:NEW:SUBSTANCE:77">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1745)..id(WO2007038855_w_1746)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.44" comment="" name="polyethylene oxide" relevant="false" chebi-id="WO2007038855:935763" epochem-id="EPOCHEM:NEW:SUBSTANCE:77">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4224)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4223)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.45" comment="" name="polyethylene oxide" relevant="false" chebi-id="WO2007038855:935763" epochem-id="EPOCHEM:NEW:SUBSTANCE:77">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4252)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4251)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.46" comment="" name="carbopol" relevant="false" chebi-id="WO2007038855:5738" epochem-id="EPOCHEM:NEW:SUBSTANCE:78">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_916)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.47" comment="" name="carbopol" relevant="false" chebi-id="WO2007038855:5738" epochem-id="EPOCHEM:NEW:SUBSTANCE:78">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3571)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.48" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_239)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.49" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_270)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.50" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_608)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.51" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_920)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.52" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_925)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.53" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_928)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.54" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_931)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.55" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_934)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.56" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_957)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.57" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_961)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.58" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1003)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.59" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1012)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.60" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1059)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.61" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1088)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.62" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1475)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.63" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1556)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.64" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1581)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.65" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1610)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.66" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3575)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.67" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3596)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.68" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3606)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.69" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3609)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.70" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3612)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.71" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3616)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.72" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3629)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.73" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3633)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.74" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3646)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.75" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3675)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.76" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3699)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.77" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3734)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.78" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3764)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.79" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3979)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.80" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4072)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.81" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4102)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.82" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4452)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.83" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4521)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.84" comment="" name="cellulose" relevant="false" chebi-id="WO2007038855:305648" epochem-id="EPOCHEM:NEW:SUBSTANCE:79">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4552)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.85" comment="tween 60" name="Tw een 60" relevant="false" chebi-id="WO2007038855:995849" epochem-id="EPOCHEM:NEW:SUBSTANCE:80">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2615)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2614)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2616)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.86" comment="polyvinyl pyrrolidones" name="polyvynil pirrolidones" relevant="false" chebi-id="WO2007038855:438986" epochem-id="EPOCHEM:NEW:SUBSTANCE:141">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3972)..id(WO2007038855_w_3973)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.87" comment="" name="polyacrylate" relevant="false" chebi-id="WO2007038855:341202" epochem-id="EPOCHEM:NEW:SUBSTANCE:142">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_914)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.88" comment="" name="polyacrylate" relevant="false" chebi-id="WO2007038855:341202" epochem-id="EPOCHEM:NEW:SUBSTANCE:142">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3569)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.89" comment="" name="Natrosol" relevant="false" chebi-id="WO2007038855:427523" epochem-id="EPOCHEM:NEW:SUBSTANCE:143">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1016)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.90" comment="" name="Natrosol" relevant="false" chebi-id="WO2007038855:427523" epochem-id="EPOCHEM:NEW:SUBSTANCE:143">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2054)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.91" comment="" name="Natrosol" relevant="false" chebi-id="WO2007038855:427523" epochem-id="EPOCHEM:NEW:SUBSTANCE:143">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2137)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.92" comment="" name="Natrosol" relevant="false" chebi-id="WO2007038855:427523" epochem-id="EPOCHEM:NEW:SUBSTANCE:143">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2347)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.93" comment="" name="Polyethylene Glycol" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:SUBSTANCE:2">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_364)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_363)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.94" comment="" name="Polyethylene Glycol" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:SUBSTANCE:2">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_632)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_631)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.95" comment="" name="Polyethylene Glycol" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:SUBSTANCE:2">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1877)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1876)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.96" comment="" name="Agar" relevant="false" chebi-id="WO2007038855:342804" epochem-id="EPOCHEM:NEW:SUBSTANCE:231">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2642)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.97" comment="" name="Agar" relevant="false" chebi-id="WO2007038855:342804" epochem-id="EPOCHEM:NEW:SUBSTANCE:231">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2650)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.98" comment="" name="Agar" relevant="false" chebi-id="WO2007038855:342804" epochem-id="EPOCHEM:NEW:SUBSTANCE:231">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2660)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.99" comment="" name="Agar" relevant="false" chebi-id="WO2007038855:342804" epochem-id="EPOCHEM:NEW:SUBSTANCE:231">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2668)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.100" comment="" name="Agar" relevant="false" chebi-id="WO2007038855:342804" epochem-id="EPOCHEM:NEW:SUBSTANCE:231">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2897)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.101" comment="" name="Agar" relevant="false" chebi-id="WO2007038855:342804" epochem-id="EPOCHEM:NEW:SUBSTANCE:231">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2901)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.102" comment="" name="Agar" relevant="false" chebi-id="WO2007038855:342804" epochem-id="EPOCHEM:NEW:SUBSTANCE:231">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2904)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.103" comment="" name="Agar" relevant="false" chebi-id="WO2007038855:342804" epochem-id="EPOCHEM:NEW:SUBSTANCE:231">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2908)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.104" comment="" name="Agar" relevant="false" chebi-id="WO2007038855:342804" epochem-id="EPOCHEM:NEW:SUBSTANCE:231">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3084)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.105" comment="" name="Agar" relevant="false" chebi-id="WO2007038855:342804" epochem-id="EPOCHEM:NEW:SUBSTANCE:231">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3092)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.106" comment="" name="Agar" relevant="false" chebi-id="WO2007038855:342804" epochem-id="EPOCHEM:NEW:SUBSTANCE:231">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3100)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.107" comment="" name="Agar" relevant="false" chebi-id="WO2007038855:342804" epochem-id="EPOCHEM:NEW:SUBSTANCE:231">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_3108)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.108" comment="" name="3350 PEG" relevant="false" chebi-id="WO2007038855:211633" epochem-id="EPOCHEM:NEW:SUBSTANCE:232">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2048)..id(WO2007038855_w_2049)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.109" comment="" name="3350 PEG" relevant="false" chebi-id="WO2007038855:211633" epochem-id="EPOCHEM:NEW:SUBSTANCE:232">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2129)"/>
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2128)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.110" comment="" name="3350 PEG" relevant="false" chebi-id="WO2007038855:211633" epochem-id="EPOCHEM:NEW:SUBSTANCE:232">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2389)..id(WO2007038855_w_2390)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.111" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1856)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.112" comment="" name="PEG" relevant="false" chebi-id="WO2007038855:527656" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1880)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.113" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1894)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.114" comment="" name="PEG" relevant="false" chebi-id="WO2007038855:527656" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1925)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.115" comment="" name="PEG" relevant="false" chebi-id="WO2007038855:527656" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1961)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.116" comment="" name="PEG" relevant="false" chebi-id="WO2007038855:527656" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_1990)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.117" comment="" name="PEG" relevant="false" chebi-id="WO2007038855:527656" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2049)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.118" comment="" name="PEG" relevant="false" chebi-id="WO2007038855:527656" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2129)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.119" comment="" name="PEG" relevant="false" chebi-id="WO2007038855:527656" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_2390)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.120" comment="" name="PEG" relevant="false" chebi-id="WO2007038855:527656" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4342)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.121" comment="" name="PEG" relevant="false" chebi-id="WO2007038855:527656" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4355)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.122" comment="" name="PEG" relevant="false" chebi-id="WO2007038855:527656" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4385)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.123" comment="" name="PEG" relevant="false" chebi-id="WO2007038855:527656" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4413)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.124" comment="" name="PEG" relevant="false" chebi-id="WO2007038855:527656" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4442)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038855.HC.substance-names.125" comment="" name="PEG" relevant="false" chebi-id="WO2007038855:527656" epochem-id="EPOCHEM:NEW:SUBSTANCE:103">
+      <nite:child href="WO2007038855.words.xml#id(WO2007038855_w_4508)"/>
+   </substance-name>
+</nite:root>

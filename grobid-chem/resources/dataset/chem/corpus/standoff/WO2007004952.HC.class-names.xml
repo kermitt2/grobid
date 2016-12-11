@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007004952.HC.class-names" xmlns:nite="http://nite.sourceforge.net/">
+   <class-name nite:id="WO2007004952.HC.class-names.1" comment="" name="terpenes" relevant="true" chebi-id="CHEBI:35186" epochem-id="EPOCHEM:NEW:CLASS:95">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_387)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.2" comment="" name="terpenes" relevant="true" chebi-id="CHEBI:35186" epochem-id="EPOCHEM:NEW:CLASS:95">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_400)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.3" comment="" name="terpenes" relevant="true" chebi-id="CHEBI:35186" epochem-id="EPOCHEM:NEW:CLASS:95">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_684)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.4" comment="" name="terpenes" relevant="true" chebi-id="CHEBI:35186" epochem-id="EPOCHEM:NEW:CLASS:95">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_2185)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.5" comment="" name="terpenes" relevant="true" chebi-id="CHEBI:35186" epochem-id="EPOCHEM:NEW:CLASS:95">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_3740)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.6" comment="" name="terpenes" relevant="true" chebi-id="CHEBI:35186" epochem-id="EPOCHEM:NEW:CLASS:95">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_4751)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.7" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_691)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.8" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_723)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.9" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_756)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.10" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_837)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.11" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_884)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.12" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_914)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.13" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_930)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.14" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_1288)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.15" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_1334)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.16" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_1380)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.17" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_1402)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.18" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_1421)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.19" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_1437)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.20" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_1440)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.21" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_2256)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.22" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_2299)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.23" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_2310)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.24" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_2598)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.25" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_2642)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.26" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_3829)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.27" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_3843)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.28" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_3846)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.29" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_3857)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.30" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_3874)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.31" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_4760)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.32" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_4776)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.33" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_6306)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.34" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_6423)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.35" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_6508)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.36" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_6603)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.37" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_6844)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.38" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_6902)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.39" comment="" name="flavonols" relevant="false" chebi-id="CHEBI:28802" epochem-id="EPOCHEM:NEW:CLASS:96">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_6944)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.40" comment="" name="flavonol" relevant="false" chebi-id="CHEBI:5078" epochem-id="EPOCHEM:NEW:CLASS:97">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_851)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.42" comment="" name="flavonol glycosides" relevant="false" chebi-id="WO2007004952:77730" epochem-id="EPOCHEM:NEW:CLASS:99">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_2243)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.43" comment="" name="flavonol" relevant="false" chebi-id="CHEBI:5078" epochem-id="EPOCHEM:NEW:CLASS:97">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_6369)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.44" comment="" name="flavonol" relevant="false" chebi-id="CHEBI:5078" epochem-id="EPOCHEM:NEW:CLASS:97">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_6383)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.45" comment="" name="terpene" relevant="false" chebi-id="CHEBI:35186" epochem-id="EPOCHEM:NEW:CLASS:98">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_308)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.46" comment="" name="terpene" relevant="false" chebi-id="CHEBI:35186" epochem-id="EPOCHEM:NEW:CLASS:98">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_411)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.47" comment="" name="terpene" relevant="false" chebi-id="CHEBI:35186" epochem-id="EPOCHEM:NEW:CLASS:98">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_1180)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.48" comment="" name="flavonol glycosides" relevant="false" chebi-id="WO2007004952:77730" epochem-id="EPOCHEM:NEW:CLASS:99">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_1447)..id(WO2007004952_w_1448)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.49" comment="" name="alcohol" relevant="false" chebi-id="CHEBI:30879" epochem-id="EPOCHEM:NEW:CLASS:100">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_2273)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.50" comment="" name="alcohol" relevant="false" chebi-id="CHEBI:30879" epochem-id="EPOCHEM:NEW:CLASS:100">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_2391)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.51" comment="" name="alcohol" relevant="false" chebi-id="CHEBI:30879" epochem-id="EPOCHEM:NEW:CLASS:100">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_2407)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.52" comment="" name="alcohol" relevant="false" chebi-id="CHEBI:30879" epochem-id="EPOCHEM:NEW:CLASS:100">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_2418)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.53" comment="" name="alcohol" relevant="false" chebi-id="CHEBI:30879" epochem-id="EPOCHEM:NEW:CLASS:100">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_4780)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.54" comment="" name="alcohol" relevant="false" chebi-id="CHEBI:30879" epochem-id="EPOCHEM:NEW:CLASS:100">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_5072)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.55" comment="" name="alcohol" relevant="false" chebi-id="CHEBI:30879" epochem-id="EPOCHEM:NEW:CLASS:100">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_5116)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.56" comment="" name="alcohol" relevant="false" chebi-id="CHEBI:30879" epochem-id="EPOCHEM:NEW:CLASS:100">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_5168)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.57" comment="" name="alcohol" relevant="false" chebi-id="CHEBI:30879" epochem-id="EPOCHEM:NEW:CLASS:100">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_5236)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.58" comment="" name="alcohol" relevant="false" chebi-id="CHEBI:30879" epochem-id="EPOCHEM:NEW:CLASS:100">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_5302)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.62" comment="" name="Cetearyl alcohol" relevant="false" chebi-id="WO2007004952:177976" epochem-id="EPOCHEM:NEW:CLASS:102">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_5836)..id(WO2007004952_w_5837)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.63" comment="" name="PEG-9 cocoglycerides" relevant="false" chebi-id="WO2007004952:952803" epochem-id="EPOCHEM:NEW:CLASS:103">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_6139)..id(WO2007004952_w_6142)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.64" comment="terpenes" name="tepenes" relevant="false" chebi-id="CHEBI:35186" epochem-id="EPOCHEM:NEW:CLASS:1101">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_813)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.65" comment="" name="terpenoids" relevant="false" chebi-id="CHEBI:26873" epochem-id="EPOCHEM:NEW:CLASS:1102">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_1192)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.66" comment="" name="coumarins" relevant="false" chebi-id="CHEBI:23403" epochem-id="EPOCHEM:NEW:CLASS:1103">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_1196)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.67" comment="" name="Acrylates" relevant="false" chebi-id="WO2007004952:433219" epochem-id="EPOCHEM:NEW:CLASS:39">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_5952)"/>
+   </class-name>
+   <class-name nite:id="WO2007004952.HC.class-names.68" comment="" name="glycerides" relevant="false" chebi-id="CHEBI:47778" epochem-id="EPOCHEM:NEW:CLASS:1168">
+      <nite:child href="WO2007004952.words.xml#id(WO2007004952_w_5783)"/>
+   </class-name>
+</nite:root>

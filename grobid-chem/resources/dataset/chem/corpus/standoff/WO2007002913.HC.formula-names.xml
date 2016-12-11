@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007002913.HC.formula-names" xmlns:nite="http://nite.sourceforge.net/">
+   <formula-name nite:id="WO2007002913.HC.formula-names.11" comment="" name="R1 - Q - (CH2)S (CH2)q - R2" relevant="false" chebi-id="WO2007002913:733043" epochem-id="EPOCHEM:NEW:FORMULA:268">
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1772)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1765)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1769)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1771)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1766)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1776)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1770)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1773)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1763)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1775)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1768)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1774)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1767)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1764)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007002913.HC.formula-names.12" comment="" name="R&lt;6&gt;-O-(CR&lt;7&gt;HCH2O)n-H" relevant="false" chebi-id="WO2007002913:670064" epochem-id="EPOCHEM:NEW:FORMULA:299">
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1273)..id(WO2007002913_w_1274)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1282)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1284)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1277)..id(WO2007002913_w_1278)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1272)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1276)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1281)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1279)..id(WO2007002913_w_1280)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1270)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1283)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1275)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1271)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1286)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_1285)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007002913.HC.formula-names.13" comment="" name="HOOC-R&lt;5&gt;-COOH" relevant="false" chebi-id="WO2007002913:129035" epochem-id="EPOCHEM:NEW:FORMULA:300">
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_476)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_474)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_472)..id(WO2007002913_w_473)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_471)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_475)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_470)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_469)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007002913.HC.formula-names.14" comment="" name="HOOC-R&lt;5&gt;-COOH" relevant="false" chebi-id="WO2007002913:129035" epochem-id="EPOCHEM:NEW:FORMULA:300">
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_2603)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_2610)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_2604)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_2607)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_2605)..id(WO2007002913_w_2606)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_2608)..id(WO2007002913_w_2609)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007002913.HC.formula-names.15" comment="" name="R&lt;6&gt;-COOH" relevant="false" chebi-id="WO2007002913:131570" epochem-id="EPOCHEM:NEW:FORMULA:301">
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_506)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_505)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_510)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_508)..id(WO2007002913_w_509)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_507)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007002913.HC.formula-names.16" comment="" name="R&lt;6&gt;-COOH" relevant="false" chebi-id="WO2007002913:131570" epochem-id="EPOCHEM:NEW:FORMULA:301">
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_2633)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_2638)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_2634)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_2637)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_2636)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_2635)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007002913.HC.formula-names.17" comment="" name="R&lt;1&gt; N R&lt;2&gt;" relevant="false" chebi-id="WO2007002913:764137" epochem-id="EPOCHEM:NEW:FORMULA:302">
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_303)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_305)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_302)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_307)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_304)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_308)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_300)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_306)"/>
+      <nite:child href="WO2007002913.words.xml#id(WO2007002913_w_301)"/>
+   </formula-name>
+</nite:root>

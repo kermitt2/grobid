@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007038869.HC.formula-names" xmlns:nite="http://nite.sourceforge.net/">
+   <formula-name nite:id="WO2007038869.HC.formula-names.1" comment="" name="Na2HPO4" relevant="false" chebi-id="CHEBI:34683" epochem-id="EPOCHEM:NEW:FORMULA:130">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_4905)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.2" comment="" name="Na2HPO4" relevant="false" chebi-id="CHEBI:34683" epochem-id="EPOCHEM:NEW:FORMULA:130">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_4986)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.3" comment="" name="Na2HPO4" relevant="false" chebi-id="CHEBI:34683" epochem-id="EPOCHEM:NEW:FORMULA:130">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_5095)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.4" comment="" name="Na2HPO4" relevant="false" chebi-id="CHEBI:34683" epochem-id="EPOCHEM:NEW:FORMULA:130">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9374)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.5" comment="" name="Na2HPO4" relevant="false" chebi-id="CHEBI:34683" epochem-id="EPOCHEM:NEW:FORMULA:130">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9741)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.6" comment="" name="Na2HPO4" relevant="false" chebi-id="CHEBI:34683" epochem-id="EPOCHEM:NEW:FORMULA:130">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_11492)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.7" comment="" name="Na2HPO4" relevant="false" chebi-id="CHEBI:34683" epochem-id="EPOCHEM:NEW:FORMULA:130">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_11606)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.8" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_4889)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.9" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_4970)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.10" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_5079)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.11" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_5170)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.12" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_5243)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.13" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_8945)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.14" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9068)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.15" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9358)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.16" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9416)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.17" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9725)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.18" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9786)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.19" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_11476)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.20" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_11544)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.21" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_11590)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.22" comment="" name="NaCl" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_11653)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.23" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_4583)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.24" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_4638)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.25" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_4676)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.26" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_4725)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.27" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_4895)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.28" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_4976)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.29" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_5085)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.30" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_7049)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.31" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_7705)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.32" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_8710)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.33" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_8948)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.34" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9071)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.35" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9364)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.36" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9731)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.37" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_10836)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.38" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_11482)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.39" comment="" name="KCl" relevant="false" chebi-id="CHEBI:32588" epochem-id="EPOCHEM:NEW:FORMULA:131">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_11596)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.40" comment="" name="KH2PO4" relevant="false" chebi-id="WO2007038869:547589" epochem-id="EPOCHEM:NEW:FORMULA:132">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_4901)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.41" comment="" name="KH2PO4" relevant="false" chebi-id="WO2007038869:547589" epochem-id="EPOCHEM:NEW:FORMULA:132">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_4982)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.42" comment="" name="KH2PO4" relevant="false" chebi-id="WO2007038869:547589" epochem-id="EPOCHEM:NEW:FORMULA:132">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_5091)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.43" comment="" name="KH2PO4" relevant="false" chebi-id="WO2007038869:547589" epochem-id="EPOCHEM:NEW:FORMULA:132">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9370)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.44" comment="" name="KH2PO4" relevant="false" chebi-id="WO2007038869:547589" epochem-id="EPOCHEM:NEW:FORMULA:132">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9737)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.45" comment="" name="KH2PO4" relevant="false" chebi-id="WO2007038869:547589" epochem-id="EPOCHEM:NEW:FORMULA:132">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_11488)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.46" comment="" name="KH2PO4" relevant="false" chebi-id="WO2007038869:547589" epochem-id="EPOCHEM:NEW:FORMULA:132">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_11602)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.47" comment="" name="MgCl2" relevant="false" chebi-id="CHEBI:6636" epochem-id="EPOCHEM:NEW:FORMULA:133">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_8666)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.48" comment="" name="MgCl2" relevant="false" chebi-id="CHEBI:6636" epochem-id="EPOCHEM:NEW:FORMULA:133">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_8954)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.49" comment="" name="MgCl2" relevant="false" chebi-id="CHEBI:6636" epochem-id="EPOCHEM:NEW:FORMULA:133">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9077)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.50" comment="" name="CaCl2" relevant="false" chebi-id="CHEBI:3312" epochem-id="EPOCHEM:NEW:FORMULA:134">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_8951)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.51" comment="" name="CaCl2" relevant="false" chebi-id="CHEBI:3312" epochem-id="EPOCHEM:NEW:FORMULA:134">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_9074)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.52" comment="" name="HCl" relevant="false" chebi-id="CHEBI:17883" epochem-id="EPOCHEM:NEW:FORMULA:106">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_8651)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007038869.HC.formula-names.53" comment="" name="HCl" relevant="false" chebi-id="CHEBI:17883" epochem-id="EPOCHEM:NEW:FORMULA:106">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_8702)"/>
+   </formula-name>
+</nite:root>
