@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
-<nite:root nite:id="WO2007038122.HC.formula-names" xmlns:nite="http://nite.sourceforge.net/">
-   <formula-name nite:id="WO2007038122.HC.formula-names.1" comment="D-GalNAc" name="D-GaINAc" relevant="false" chebi-id="WO2007038122:134163" epochem-id="EPOCHEM:NEW:FORMULA:249">
-      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_858)..id(WO2007038122_w_860)"/>
-   </formula-name>
-</nite:root>

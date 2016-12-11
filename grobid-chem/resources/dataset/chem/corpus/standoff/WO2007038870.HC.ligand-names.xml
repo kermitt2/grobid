@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
-<nite:root nite:id="WO2007038870.HC.ligand-names" xmlns:nite="http://nite.sourceforge.net/">
-   <ligand-name nite:id="WO2007038870.HC.ligand-names.1" comment="" name="disulphide" relevant="false" chebi-id="WO2007038870:629950" epochem-id="EPOCHEM:NEW:LIGAND:619">
-      <nite:child href="WO2007038870.words.xml#id(WO2007038870_w_2200)"/>
-   </ligand-name>
-</nite:root>

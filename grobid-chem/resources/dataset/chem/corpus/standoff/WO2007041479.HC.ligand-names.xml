@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
-<nite:root nite:id="WO2007041479.HC.ligand-names" xmlns:nite="http://nite.sourceforge.net/">
-   <ligand-name nite:id="WO2007041479.HC.ligand-names.2" comment="" name="methyl" relevant="false" chebi-id="CHEBI:29309" epochem-id="EPOCHEM:NEW:LIGAND:13">
-      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_4105)"/>
-   </ligand-name>
-</nite:root>
