@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
-<nite:root nite:id="WO2007042273.HC.substance-names" xmlns:nite="http://nite.sourceforge.net/">
-   <substance-name nite:id="WO2007042273.HC.substance-names.1" comment="" name="starch" relevant="false" chebi-id="CHEBI:28017" epochem-id="EPOCHEM:NEW:SUBSTANCE:127">
-      <nite:child href="WO2007042273.words.xml#id(WO2007042273_w_2978)"/>
-   </substance-name>
-</nite:root>

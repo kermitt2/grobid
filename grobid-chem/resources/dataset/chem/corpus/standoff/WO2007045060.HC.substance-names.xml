@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
-<nite:root nite:id="WO2007045060.HC.substance-names" xmlns:nite="http://nite.sourceforge.net/">
-   <substance-name nite:id="WO2007045060.HC.substance-names.1" comment="" name="Tween-80" relevant="false" chebi-id="WO2007045060:947008" epochem-id="EPOCHEM:NEW:SUBSTANCE:36">
-      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3546)..id(WO2007045060_w_3547)"/>
-      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3545)"/>
-   </substance-name>
-</nite:root>

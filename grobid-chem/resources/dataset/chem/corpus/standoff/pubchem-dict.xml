@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
-<nite:root nite:id="pc_0" xmlns:nite="http://nite.sourceforge.net/">
-   <pubchem nite:id="pc_1" name="formaldheide" refid="5D50000"/>
-   <pubchem nite:id="pc_2" name="buthane" refid="3A002344"/>
-   <pubchem nite:id="pc_3" name="water" refid="FF999999"/>
-   <pubchem nite:id="pc_4" name="propane" refid="3E010003"/>
-</nite:root>

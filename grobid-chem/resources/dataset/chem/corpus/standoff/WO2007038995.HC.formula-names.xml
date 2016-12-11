@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
-<nite:root nite:id="WO2007038995.HC.formula-names" xmlns:nite="http://nite.sourceforge.net/">
-   <formula-name nite:id="WO2007038995.HC.formula-names.1" comment="NaCl" name="NaCI" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:NEW:FORMULA:12">
-      <nite:child href="WO2007038995.words.xml#id(WO2007038995_w_5920)"/>
-   </formula-name>
-</nite:root>
