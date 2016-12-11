@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007000651.Diego.chemical-relations" xmlns:nite="http://nite.sourceforge.net/">
+   <chem-relation nite:id="WO2007000651.Diego.chemical-relations.1" source="pharmaceutical" relation="is a" target="molecular structure">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_49)"/>
+   </chem-relation>
+   <chem-relation nite:id="WO2007000651.Diego.chemical-relations.2" source="pharmaceutical" relation="is conjugate base of" target="biological role">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_49)"/>
+   </chem-relation>
+</nite:root>

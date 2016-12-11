@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007000651.HC.formula-names" xmlns:nite="http://nite.sourceforge.net/">
+   <formula-name nite:id="WO2007000651.HC.formula-names.1" comment="" name="ZnO" relevant="false" chebi-id="CHEBI:36560" epochem-id="EPOCHEM:NEW:FORMULA:1">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_912)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007000651.HC.formula-names.2" comment="" name="ZnO" relevant="false" chebi-id="CHEBI:36560" epochem-id="EPOCHEM:NEW:FORMULA:1">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_993)"/>
+   </formula-name>
+</nite:root>

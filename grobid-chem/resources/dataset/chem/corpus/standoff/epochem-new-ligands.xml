@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="epochem-new-ligands" xmlns:nite="http://nite.sourceforge.net/">
+   <new-ligand nite:id="epochem-new-ligands.1" name="hydroxyl" refid="EPOCHEM:NEW:LIGAND:1" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.4" name="ethoxy" refid="EPOCHEM:NEW:LIGAND:4" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.5" name="c2-c4-acyl" refid="EPOCHEM:NEW:LIGAND:5" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.8" name="oxo" refid="EPOCHEM:NEW:LIGAND:8" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.12" name="c4" refid="EPOCHEM:NEW:LIGAND:11" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.17" name="n-propyl" refid="EPOCHEM:NEW:LIGAND:15" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.18" name=",n-butyl" refid="EPOCHEM:NEW:LIGAND:16" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.19" name="c3-4-alkyl" refid="EPOCHEM:NEW:LIGAND:17" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.20" name="iso-propyl" refid="EPOCHEM:NEW:LIGAND:18" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.21" name="iso-butyl" refid="EPOCHEM:NEW:LIGAND:19" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.22" name="tert-butyl" refid="EPOCHEM:NEW:LIGAND:20" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.25" name="c^-alkyl" refid="EPOCHEM:NEW:LIGAND:23" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.26" name="ci-4-alkyl" refid="EPOCHEM:NEW:LIGAND:24" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.27" name="glycosyl" refid="EPOCHEM:NEW:LIGAND:25" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.28" name="n- acetyl" refid="EPOCHEM:NEW:LIGAND:26" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.30" name="amyl" refid="EPOCHEM:NEW:LIGAND:28" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.33" name="palmitoyl" refid="EPOCHEM:NEW:LIGAND:31" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.34" name="oleyl" refid="EPOCHEM:NEW:LIGAND:32" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.35" name="linoleyl" refid="EPOCHEM:NEW:LIGAND:33" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.36" name="cholesteryl" refid="EPOCHEM:NEW:LIGAND:34" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.37" name="penta" refid="EPOCHEM:NEW:LIGAND:35" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.38" name="hexa" refid="EPOCHEM:NEW:LIGAND:36" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.39" name="palmic" refid="EPOCHEM:NEW:LIGAND:37" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.43" name="c1o-3oalkyl" refid="EPOCHEM:NEW:LIGAND:41" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.44" name="cio-3o-alkyl" refid="EPOCHEM:NEW:LIGAND:42" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.46" name="caprylic" refid="EPOCHEM:NEW:LIGAND:44" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.47" name="capric" refid="EPOCHEM:NEW:LIGAND:45" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.48" name="caprylat" refid="EPOCHEM:NEW:LIGAND:46" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.49" name="caprat" refid="EPOCHEM:NEW:LIGAND:47" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.50" name="dipentaerythrityl" refid="EPOCHEM:NEW:LIGAND:48" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.51" name="hexacaprylat" refid="EPOCHEM:NEW:LIGAND:49" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.52" name="hexacaprate" refid="EPOCHEM:NEW:LIGAND:50" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.53" name="dicaprate" refid="EPOCHEM:NEW:LIGAND:51" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.54" name="stearic" refid="EPOCHEM:NEW:LIGAND:52" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.56" name="hexadecyl" refid="EPOCHEM:NEW:LIGAND:54" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.57" name="hydroxybenzoate" refid="EPOCHEM:NEW:LIGAND:55" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.58" name="c12-is" refid="EPOCHEM:NEW:LIGAND:56" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.59" name="c12.15" refid="EPOCHEM:NEW:LIGAND:57" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.60" name="ci2-i3" refid="EPOCHEM:NEW:LIGAND:58" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.61" name="c12.-3" refid="EPOCHEM:NEW:LIGAND:59" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.62" name="c12-i5" refid="EPOCHEM:NEW:LIGAND:60" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.63" name="c12-15" refid="EPOCHEM:NEW:LIGAND:61" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.67" name="monoethyl" refid="EPOCHEM:NEW:LIGAND:63" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.71" name="c13-14" refid="EPOCHEM:NEW:LIGAND:67" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.75" name="methoxyl" refid="EPOCHEM:NEW:LIGAND:71" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.76" name="methyloxamethyl" refid="EPOCHEM:NEW:LIGAND:72" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.77" name="methyl oxaaklyl" refid="EPOCHEM:NEW:LIGAND:73" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.78" name="salicylate" refid="EPOCHEM:NEW:LIGAND:74" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.79" name="6-methylene" refid="EPOCHEM:NEW:LIGAND:75" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.80" name="acetic" refid="EPOCHEM:NEW:LIGAND:76" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.81" name="lactic" refid="EPOCHEM:NEW:LIGAND:77" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.82" name="citric" refid="EPOCHEM:NEW:LIGAND:78" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.83" name="malic" refid="EPOCHEM:NEW:LIGAND:79" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.84" name="formaric" refid="EPOCHEM:NEW:LIGAND:80" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.85" name="tartaric" refid="EPOCHEM:NEW:LIGAND:81" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.86" name="ascorbic" refid="EPOCHEM:NEW:LIGAND:82" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.87" name="succinic" refid="EPOCHEM:NEW:LIGAND:83" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.88" name="benzoic" refid="EPOCHEM:NEW:LIGAND:84" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.89" name="methanesulfonic" refid="EPOCHEM:NEW:LIGAND:85" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.90" name="toluenesulfonic" refid="EPOCHEM:NEW:LIGAND:86" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.91" name="nitric" refid="EPOCHEM:NEW:LIGAND:87" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.92" name="diphosphoric" refid="EPOCHEM:NEW:LIGAND:88" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.93" name="sulphuric" refid="EPOCHEM:NEW:LIGAND:89" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.94" name="ether" refid="EPOCHEM:NEW:LIGAND:90" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.95" name="trimethoxyphenyl" refid="EPOCHEM:NEW:LIGAND:91" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.97" name="hydrocarbyl" refid="EPOCHEM:NEW:LIGAND:93" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.98" name="methoxy" refid="EPOCHEM:NEW:LIGAND:94" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.99" name="acyl" refid="EPOCHEM:NEW:LIGAND:95" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.100" name="methyl carbonyl" refid="EPOCHEM:NEW:LIGAND:96" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.101" name="c5-c10aryl" refid="EPOCHEM:NEW:LIGAND:97" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.102" name="c1-c4blkyi" refid="EPOCHEM:NEW:LIGAND:98" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.103" name="c5-c1oaiyi" refid="EPOCHEM:NEW:LIGAND:99" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.104" name="c1- c4alkylsulfonyl" refid="EPOCHEM:NEW:LIGAND:100" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.105" name="c1-c4alkylcarbonylamino" refid="EPOCHEM:NEW:LIGAND:101" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.106" name="c1-c4bikoxy" refid="EPOCHEM:NEW:LIGAND:102" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.107" name="crc7alkyl" refid="EPOCHEM:NEW:LIGAND:103" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.108" name="cyclopentyl" refid="EPOCHEM:NEW:LIGAND:104" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.109" name="cyclopropyl" refid="EPOCHEM:NEW:LIGAND:105" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.110" name="cyclohexyl" refid="EPOCHEM:NEW:LIGAND:106" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.111" name="c5-cioheteroaryl" refid="EPOCHEM:NEW:LIGAND:107" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.114" name="d^alkoxy" refid="EPOCHEM:NEW:LIGAND:110" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.115" name="ci-c4alkyl" refid="EPOCHEM:NEW:LIGAND:111" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.116" name="carboxyl" refid="EPOCHEM:NEW:LIGAND:112" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.117" name="1- methylprop-1en-1-yl" refid="EPOCHEM:NEW:LIGAND:113" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.118" name="2-methylprop-1-en-1-yl" refid="EPOCHEM:NEW:LIGAND:114" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.119" name="1-methylprop-2-en-1-yl" refid="EPOCHEM:NEW:LIGAND:115" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.120" name="2-methylprop-2-en- 1-yl" refid="EPOCHEM:NEW:LIGAND:116" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.121" name="penten-1-yl, penten-2-yl" refid="EPOCHEM:NEW:LIGAND:117" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.122" name="penten-3-yl" refid="EPOCHEM:NEW:LIGAND:118" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.123" name="penten-4-yl" refid="EPOCHEM:NEW:LIGAND:119" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.124" name="1-methylbut-1-en-1-yl" refid="EPOCHEM:NEW:LIGAND:120" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.125" name="2- methylbut-1-en-1-yl" refid="EPOCHEM:NEW:LIGAND:121" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.126" name="c4-i0alkenyl" refid="EPOCHEM:NEW:LIGAND:122" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.127" name="c4-10 alkynyl" refid="EPOCHEM:NEW:LIGAND:123" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.128" name="c4-i0 cycloalkyl" refid="EPOCHEM:NEW:LIGAND:124" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.130" name="isopropyl" refid="EPOCHEM:NEW:LIGAND:126" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.131" name="n-butyl" refid="EPOCHEM:NEW:LIGAND:127" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.132" name="sec-butyl" refid="EPOCHEM:NEW:LIGAND:128" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.133" name="pentyl" refid="EPOCHEM:NEW:LIGAND:129" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.134" name="hexyl" refid="EPOCHEM:NEW:LIGAND:130" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.139" name="c2-6 alkenyl" refid="EPOCHEM:NEW:LIGAND:134" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.140" name="c2-6 alkynyl" refid="EPOCHEM:NEW:LIGAND:135" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.141" name="c1-6 alkyl" refid="EPOCHEM:NEW:LIGAND:136" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.142" name="c4-10 alkenyl" refid="EPOCHEM:NEW:LIGAND:137" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.143" name="1-methy!prop-1-en-1-yl" refid="EPOCHEM:NEW:LIGAND:138" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.144" name="2-methylprop-1~en-1-yl" refid="EPOCHEM:NEW:LIGAND:139" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.145" name="naphthyl" refid="EPOCHEM:NEW:LIGAND:140" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.147" name="c4-20 hydrocarbyl" refid="EPOCHEM:NEW:LIGAND:141" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.148" name="c4-2ohydrocarbyl" refid="EPOCHEM:NEW:LIGAND:142" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.149" name="c4-i0 alkyl" refid="EPOCHEM:NEW:LIGAND:143" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.150" name="heptyl" refid="EPOCHEM:NEW:LIGAND:144" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.151" name="octyl" refid="EPOCHEM:NEW:LIGAND:145" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.152" name="nonyl" refid="EPOCHEM:NEW:LIGAND:146" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.153" name="decyl" refid="EPOCHEM:NEW:LIGAND:147" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.154" name="cyclobutyl" refid="EPOCHEM:NEW:LIGAND:148" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.155" name="cycloheptyl" refid="EPOCHEM:NEW:LIGAND:149" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.156" name="cyclooctyl" refid="EPOCHEM:NEW:LIGAND:150" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.157" name="cyclononyl" refid="EPOCHEM:NEW:LIGAND:151" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.158" name="cyclodecyl" refid="EPOCHEM:NEW:LIGAND:152" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.159" name="fluorenyl" refid="EPOCHEM:NEW:LIGAND:153" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.160" name="c4-10 hydrocarbyl" refid="EPOCHEM:NEW:LIGAND:154" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.161" name="c4-10 alkyl" refid="EPOCHEM:NEW:LIGAND:155" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.162" name="ci-6 alkyl" refid="EPOCHEM:NEW:LIGAND:156" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.163" name="c4--i0 alkenyl" refid="EPOCHEM:NEW:LIGAND:157" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.164" name="c4--i0 alkyl" refid="EPOCHEM:NEW:LIGAND:158" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.165" name="c4-10 alky!" refid="EPOCHEM:NEW:LIGAND:159" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.166" name="acetyl" refid="EPOCHEM:NEW:LIGAND:160" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.167" name="fumaric" refid="EPOCHEM:NEW:LIGAND:161" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.168" name="adipic" refid="EPOCHEM:NEW:LIGAND:162" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.169" name="glutamic" refid="EPOCHEM:NEW:LIGAND:163" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.170" name="sorbic" refid="EPOCHEM:NEW:LIGAND:164" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.171" name="c1-c4 alkoxy" refid="EPOCHEM:NEW:LIGAND:165" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.172" name="ci-c4 alkyl" refid="EPOCHEM:NEW:LIGAND:166" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.173" name="(ci-c4)-hydroxyalkyl" refid="EPOCHEM:NEW:LIGAND:167" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.174" name="c5-c7 cycloalkyl" refid="EPOCHEM:NEW:LIGAND:168" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.175" name="c1-c20 alkyl" refid="EPOCHEM:NEW:LIGAND:169" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.176" name="c2-c20 alkenyl" refid="EPOCHEM:NEW:LIGAND:170" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.177" name="c2-c4 acyl" refid="EPOCHEM:NEW:LIGAND:171" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.178" name="carbamoyl" refid="EPOCHEM:NEW:LIGAND:172" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.179" name="(ci-c4)-alkylene-phenyl" refid="EPOCHEM:NEW:LIGAND:173" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.180" name="c5-c30 cycloalkyl" refid="EPOCHEM:NEW:LIGAND:174" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.181" name="c2-c30 alkenyl" refid="EPOCHEM:NEW:LIGAND:175" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.182" name="c1-c30 alkyl" refid="EPOCHEM:NEW:LIGAND:176" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.183" name="c1-c4 alkyl" refid="EPOCHEM:NEW:LIGAND:177" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.184" name="c1-10 alkoxy" refid="EPOCHEM:NEW:LIGAND:178" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.185" name="cs-io-cycloalkyl" refid="EPOCHEM:NEW:LIGAND:179" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.186" name="ci-i0 alkyl" refid="EPOCHEM:NEW:LIGAND:180" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.187" name="ci-i0 alkoxy" refid="EPOCHEM:NEW:LIGAND:181" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.188" name="c5-io-cycloalkyl" refid="EPOCHEM:NEW:LIGAND:182" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.189" name="c5-i0-cycloalkyl" refid="EPOCHEM:NEW:LIGAND:183" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.190" name="ci-io alkyl" refid="EPOCHEM:NEW:LIGAND:184" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.191" name="c6-io aryl" refid="EPOCHEM:NEW:LIGAND:185" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.192" name="azo" refid="EPOCHEM:NEW:LIGAND:186" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.193" name="chloromethyl" refid="EPOCHEM:NEW:LIGAND:187" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.194" name="ci_io alkoxy" refid="EPOCHEM:NEW:LIGAND:188" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.195" name="c5-10-cycloalkyl" refid="EPOCHEM:NEW:LIGAND:189" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.196" name="cs-i0 cycloalkyl" refid="EPOCHEM:NEW:LIGAND:190" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.197" name="s-ce-io-aryl" refid="EPOCHEM:NEW:LIGAND:191" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.198" name="ce-io-aryl" refid="EPOCHEM:NEW:LIGAND:192" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.199" name="o- c[beta]-io-aiyl" refid="EPOCHEM:NEW:LIGAND:193" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.200" name="c2-c6 alkylene" refid="EPOCHEM:NEW:LIGAND:194" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.201" name="c5-c7 cycloalkylene" refid="EPOCHEM:NEW:LIGAND:195" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.202" name="cyano" refid="EPOCHEM:NEW:LIGAND:196" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.203" name="bromine" refid="EPOCHEM:NEW:LIGAND:197" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.204" name="chlorine" refid="EPOCHEM:NEW:LIGAND:198" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.205" name="carbonyl" refid="EPOCHEM:NEW:LIGAND:199" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.206" name="c1-c20 alkoxy" refid="EPOCHEM:NEW:LIGAND:200" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.207" name="ci-c8 alkyl" refid="EPOCHEM:NEW:LIGAND:201" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.208" name="nitro" refid="EPOCHEM:NEW:LIGAND:202" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.209" name="ci-io-alkyl" refid="EPOCHEM:NEW:LIGAND:203" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.210" name="dialkylmaleinimidyl" refid="EPOCHEM:NEW:LIGAND:204" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.211" name="dimethyl maleinimidyl" refid="EPOCHEM:NEW:LIGAND:205" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.212" name="(c1-c6) haloalkyl" refid="EPOCHEM:NEW:LIGAND:206" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.216" name="(crc6) haloalkyl" refid="EPOCHEM:NEW:LIGAND:210" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.217" name="(c1-c6) alkyl" refid="EPOCHEM:NEW:LIGAND:211" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.218" name="isobutyl" refid="EPOCHEM:NEW:LIGAND:212" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.219" name="t-butyl" refid="EPOCHEM:NEW:LIGAND:213" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.220" name="n-pentyl" refid="EPOCHEM:NEW:LIGAND:214" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.221" name="n-hexyl" refid="EPOCHEM:NEW:LIGAND:215" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.224" name="napthyl" refid="EPOCHEM:NEW:LIGAND:218" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.225" name="tetrahydronaphthyl" refid="EPOCHEM:NEW:LIGAND:219" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.226" name="indanyl" refid="EPOCHEM:NEW:LIGAND:220" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.227" name="thienyl" refid="EPOCHEM:NEW:LIGAND:221" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.228" name="benzthienyl" refid="EPOCHEM:NEW:LIGAND:222" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.229" name="furyl" refid="EPOCHEM:NEW:LIGAND:223" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.230" name="benzfuryl" refid="EPOCHEM:NEW:LIGAND:224" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.231" name="pyrrolyl" refid="EPOCHEM:NEW:LIGAND:225" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.232" name="imidazolyl" refid="EPOCHEM:NEW:LIGAND:226" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.233" name="benzimidazolyl" refid="EPOCHEM:NEW:LIGAND:227" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.234" name="thiazolyl" refid="EPOCHEM:NEW:LIGAND:228" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.235" name="benzthiazolyl" refid="EPOCHEM:NEW:LIGAND:229" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.236" name="isothiazolyl" refid="EPOCHEM:NEW:LIGAND:230" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.237" name="benzisothiazolyl" refid="EPOCHEM:NEW:LIGAND:231" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.238" name="pyrazolyl" refid="EPOCHEM:NEW:LIGAND:232" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.239" name="oxazolyl" refid="EPOCHEM:NEW:LIGAND:233" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.240" name="benzoxazolyl" refid="EPOCHEM:NEW:LIGAND:234" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.241" name="isoxazolyl" refid="EPOCHEM:NEW:LIGAND:235" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.242" name="benzisoxazolyl" refid="EPOCHEM:NEW:LIGAND:236" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.243" name="triazolyl" refid="EPOCHEM:NEW:LIGAND:237" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.244" name="benztriazolyl" refid="EPOCHEM:NEW:LIGAND:238" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.245" name="thiadiazolyl" refid="EPOCHEM:NEW:LIGAND:239" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.246" name="oxadiazolyl" refid="EPOCHEM:NEW:LIGAND:240" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.247" name="pyridinyl" refid="EPOCHEM:NEW:LIGAND:241" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.248" name="pyridazinyl" refid="EPOCHEM:NEW:LIGAND:242" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.249" name="pyrimidinyl" refid="EPOCHEM:NEW:LIGAND:243" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.250" name="triazinyl" refid="EPOCHEM:NEW:LIGAND:244" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.251" name="indolyl" refid="EPOCHEM:NEW:LIGAND:245" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.252" name="indazolyl" refid="EPOCHEM:NEW:LIGAND:246" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.253" name="furanyl" refid="EPOCHEM:NEW:LIGAND:247" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.254" name="piperidinyl" refid="EPOCHEM:NEW:LIGAND:248" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.255" name="pyrrolidinyl" refid="EPOCHEM:NEW:LIGAND:249" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.256" name="morpholinyl" refid="EPOCHEM:NEW:LIGAND:250" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.258" name="quinolyl" refid="EPOCHEM:NEW:LIGAND:252" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.259" name="benzfuranyl" refid="EPOCHEM:NEW:LIGAND:253" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.260" name="pyranyl" refid="EPOCHEM:NEW:LIGAND:254" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.261" name="methylenedioxyphenyl" refid="EPOCHEM:NEW:LIGAND:255" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.262" name="ethylenedioxyphenyl" refid="EPOCHEM:NEW:LIGAND:256" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.263" name="maleimido" refid="EPOCHEM:NEW:LIGAND:257" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.264" name="succinimido" refid="EPOCHEM:NEW:LIGAND:258" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.265" name="tetrahydroquinolinyl" refid="EPOCHEM:NEW:LIGAND:259" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.266" name="indolinyl" refid="EPOCHEM:NEW:LIGAND:260" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.267" name="benzodioxinyl" refid="EPOCHEM:NEW:LIGAND:261" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.268" name="benxodioxolyl" refid="EPOCHEM:NEW:LIGAND:262" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.269" name="dihydrobenzofuranyl" refid="EPOCHEM:NEW:LIGAND:263" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.270" name="isoindolonyl" refid="EPOCHEM:NEW:LIGAND:264" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.271" name="pyridyl" refid="EPOCHEM:NEW:LIGAND:265" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.272" name="dihydrodioxinopyridinyl" refid="EPOCHEM:NEW:LIGAND:266" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.273" name="dihydropyrrolopyridinyl" refid="EPOCHEM:NEW:LIGAND:267" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.274" name="dihydrofuranopyridinyl" refid="EPOCHEM:NEW:LIGAND:268" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.275" name="dioxolopyridinyl" refid="EPOCHEM:NEW:LIGAND:269" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.276" name="(c1-c6) alkoxy" refid="EPOCHEM:NEW:LIGAND:270" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.277" name="(ci-c6) alkyl" refid="EPOCHEM:NEW:LIGAND:271" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.278" name="(c1-c6) alkylthio" refid="EPOCHEM:NEW:LIGAND:272" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.279" name="mercapto" refid="EPOCHEM:NEW:LIGAND:273" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.280" name="mercapto(ci-c6) alkyl" refid="EPOCHEM:NEW:LIGAND:274" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.282" name="trifluoromethoxy" refid="EPOCHEM:NEW:LIGAND:276" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.283" name="nitrile" refid="EPOCHEM:NEW:LIGAND:277" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.284" name="morpholine-4-sulfonyl" refid="EPOCHEM:NEW:LIGAND:278" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.285" name="pyrrolidine-1-carbonyl" refid="EPOCHEM:NEW:LIGAND:279" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.286" name="methanesulfonyl" refid="EPOCHEM:NEW:LIGAND:280" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.287" name="4-ethanesulfonylphenyl" refid="EPOCHEM:NEW:LIGAND:281" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.288" name="cyclobutylcarbamoyl" refid="EPOCHEM:NEW:LIGAND:282" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.289" name="2-chlorophenyl" refid="EPOCHEM:NEW:LIGAND:283" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.290" name="4-(trifluoromethyl)phenyl" refid="EPOCHEM:NEW:LIGAND:284" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.291" name="4-(methylsulfonyl)phenyl" refid="EPOCHEM:NEW:LIGAND:285" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.292" name="2-naphthyl" refid="EPOCHEM:NEW:LIGAND:286" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.293" name="1 -naphthyl" refid="EPOCHEM:NEW:LIGAND:287" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.294" name="2,3-dichlorophenyl" refid="EPOCHEM:NEW:LIGAND:288" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.295" name="8-quinolinyl" refid="EPOCHEM:NEW:LIGAND:289" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.296" name="3,5- dichlorophenyl" refid="EPOCHEM:NEW:LIGAND:290" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.297" name="3,4-dichlorophenyl" refid="EPOCHEM:NEW:LIGAND:291" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.298" name="difluoromethyl" refid="EPOCHEM:NEW:LIGAND:292" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.299" name="4-chlorophenyl" refid="EPOCHEM:NEW:LIGAND:293" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.300" name="a- fluorophenyl" refid="EPOCHEM:NEW:LIGAND:294" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.301" name="a- chlorophenyl" refid="EPOCHEM:NEW:LIGAND:295" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.302" name="fluoro" refid="EPOCHEM:NEW:LIGAND:296" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.304" name="4-fluorophenyl" refid="EPOCHEM:NEW:LIGAND:298" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.305" name="z- naphthyl" refid="EPOCHEM:NEW:LIGAND:299" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.308" name="(ci-c6) haloalkyl" refid="EPOCHEM:NEW:LIGAND:302" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.309" name="cyclopropylmethyl" refid="EPOCHEM:NEW:LIGAND:303" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.310" name="cyclopentylmethyl" refid="EPOCHEM:NEW:LIGAND:304" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.311" name="cyclohexylmethyl" refid="EPOCHEM:NEW:LIGAND:305" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.312" name="cyclopropylethyl" refid="EPOCHEM:NEW:LIGAND:306" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.313" name="cyclopentylethyl" refid="EPOCHEM:NEW:LIGAND:307" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.314" name="cyclohexylethyl" refid="EPOCHEM:NEW:LIGAND:308" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.315" name="quinolinyl" refid="EPOCHEM:NEW:LIGAND:309" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.316" name="azolyl" refid="EPOCHEM:NEW:LIGAND:310" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.317" name="methanesulfonyloxy" refid="EPOCHEM:NEW:LIGAND:311" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.318" name="glucosaminylmuramyl" refid="EPOCHEM:NEW:LIGAND:312" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.321" name="isopropylidendioxy" refid="EPOCHEM:NEW:LIGAND:315" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.322" name="[gamma]-glutamyl" refid="EPOCHEM:NEW:LIGAND:316" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.327" name="c14" refid="EPOCHEM:NEW:LIGAND:321" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.328" name="c16" refid="EPOCHEM:NEW:LIGAND:322" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.329" name="c18 acyl" refid="EPOCHEM:NEW:LIGAND:323" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.330" name="tetradecanoyl" refid="EPOCHEM:NEW:LIGAND:324" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.331" name="n- (n&#39;-tetradecanoyl)-gammaglutamoyl" refid="EPOCHEM:NEW:LIGAND:325" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.332" name="retinyl" refid="EPOCHEM:NEW:LIGAND:326" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.334" name="phenylbutyrate" refid="EPOCHEM:NEW:LIGAND:328" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.335" name="propanoate" refid="EPOCHEM:NEW:LIGAND:329" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.336" name="laurate" refid="EPOCHEM:NEW:LIGAND:330" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.337" name="palmitate" refid="EPOCHEM:NEW:LIGAND:331" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.338" name="oleate" refid="EPOCHEM:NEW:LIGAND:332" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.339" name="linoleate" refid="EPOCHEM:NEW:LIGAND:333" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.340" name="cetyl" refid="EPOCHEM:NEW:LIGAND:334" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.341" name="peg-40" refid="EPOCHEM:NEW:LIGAND:335" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.342" name="thiophenetyl" refid="EPOCHEM:NEW:LIGAND:336" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.343" name="carbazolyl" refid="EPOCHEM:NEW:LIGAND:337" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.344" name="acridinyl" refid="EPOCHEM:NEW:LIGAND:338" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.345" name="purinyl" refid="EPOCHEM:NEW:LIGAND:339" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.346" name="cinnolinyl" refid="EPOCHEM:NEW:LIGAND:340" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.347" name="pterdinyl" refid="EPOCHEM:NEW:LIGAND:341" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.348" name="benzoimidazolyl" refid="EPOCHEM:NEW:LIGAND:342" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.349" name="pyrazinyl" refid="EPOCHEM:NEW:LIGAND:343" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.350" name="tetrazolyl" refid="EPOCHEM:NEW:LIGAND:344" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.351" name="thiolo" refid="EPOCHEM:NEW:LIGAND:345" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.355" name="carboxylic acid" refid="EPOCHEM:NEW:LIGAND:348" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.356" name="s- acetyl" refid="EPOCHEM:NEW:LIGAND:349" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.357" name="piperidyl" refid="EPOCHEM:NEW:LIGAND:350" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.358" name="tetrahydrofuranyl" refid="EPOCHEM:NEW:LIGAND:351" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.359" name="fluorine" refid="EPOCHEM:NEW:LIGAND:352" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.360" name="iodine" refid="EPOCHEM:NEW:LIGAND:353" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.361" name="silyl" refid="EPOCHEM:NEW:LIGAND:354" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.362" name="amine" refid="EPOCHEM:NEW:LIGAND:355" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.363" name="hydrochlorid" refid="EPOCHEM:NEW:LIGAND:356" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.364" name="hydrobromic" refid="EPOCHEM:NEW:LIGAND:357" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.365" name="phosphoric" refid="EPOCHEM:NEW:LIGAND:358" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.366" name="metaphosphoric" refid="EPOCHEM:NEW:LIGAND:359" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.367" name="glycolic" refid="EPOCHEM:NEW:LIGAND:360" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.368" name="gluconic" refid="EPOCHEM:NEW:LIGAND:361" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.369" name="c3-c7-cyclo alkyl" refid="EPOCHEM:NEW:LIGAND:362" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.370" name="benzoyl" refid="EPOCHEM:NEW:LIGAND:363" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.371" name="benzyl acetyl" refid="EPOCHEM:NEW:LIGAND:364" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.372" name="c1-c6- alkyloxy" refid="EPOCHEM:NEW:LIGAND:365" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.373" name="arylalkyl" refid="EPOCHEM:NEW:LIGAND:366" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.374" name="cl-c[beta]-alkyl" refid="EPOCHEM:NEW:LIGAND:367" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.375" name="cl- c6-alkyloxy" refid="EPOCHEM:NEW:LIGAND:368" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.376" name="methylthio" refid="EPOCHEM:NEW:LIGAND:369" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.378" name="trityl" refid="EPOCHEM:NEW:LIGAND:371" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.380" name="tolyl" refid="EPOCHEM:NEW:LIGAND:373" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.382" name="chloro" refid="EPOCHEM:NEW:LIGAND:375" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.383" name="diazolyl" refid="EPOCHEM:NEW:LIGAND:376" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.384" name="benzodioxolyl" refid="EPOCHEM:NEW:LIGAND:377" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.385" name="bromo" refid="EPOCHEM:NEW:LIGAND:378" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.386" name="te/f-butyl" refid="EPOCHEM:NEW:LIGAND:379" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.387" name="trifluoromethyl" refid="EPOCHEM:NEW:LIGAND:380" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.388" name="tetrahydroquinolyl" refid="EPOCHEM:NEW:LIGAND:381" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.390" name="(c1-c6) fluoroalkyl" refid="EPOCHEM:NEW:LIGAND:383" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.391" name="(crc6) fluoroalkyl" refid="EPOCHEM:NEW:LIGAND:384" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.392" name="hydrochloric" refid="EPOCHEM:NEW:LIGAND:385" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.393" name="maleic" refid="EPOCHEM:NEW:LIGAND:386" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.394" name="salicylic" refid="EPOCHEM:NEW:LIGAND:387" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.395" name="methanesulphonic" refid="EPOCHEM:NEW:LIGAND:388" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.396" name="p-toluenesulphonic" refid="EPOCHEM:NEW:LIGAND:389" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.397" name="benzenesunfonic" refid="EPOCHEM:NEW:LIGAND:390" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.398" name="4-methylpiperazinyl" refid="EPOCHEM:NEW:LIGAND:391" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.401" name="capryl" refid="EPOCHEM:NEW:LIGAND:394" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.402" name="17-hydroxy" refid="EPOCHEM:NEW:LIGAND:395" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.403" name="c4-6 hydrocarbyl" refid="EPOCHEM:NEW:LIGAND:396" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.405" name="gamma-glutamyl" refid="EPOCHEM:NEW:LIGAND:397" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.406" name="ch2sh" refid="EPOCHEM:NEW:LIGAND:398" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.407" name="ch2ch2sh" refid="EPOCHEM:NEW:LIGAND:399" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.408" name="ch2ch2ch2sh" refid="EPOCHEM:NEW:LIGAND:400" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.409" name="ch2sch3" refid="EPOCHEM:NEW:LIGAND:401" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.410" name="ch2ch2s ch3" refid="EPOCHEM:NEW:LIGAND:402" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.411" name="ch2ch2ch2sch3" refid="EPOCHEM:NEW:LIGAND:403" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.412" name="ch2-s-ch2ch(nh2)-cooh" refid="EPOCHEM:NEW:LIGAND:404" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.413" name="chrs-s-ch2ch(nh2)-cooh" refid="EPOCHEM:NEW:LIGAND:405" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.414" name="[gamma]-glu (-co-ch2-ch2-ch(nh2)-cooh)" refid="EPOCHEM:NEW:LIGAND:406" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.415" name="[beta]-asp (-co-ch2- ch(nh2)-cooh)" refid="EPOCHEM:NEW:LIGAND:407" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.416" name="co-ch2-ch2-ch(nh2)-cooh" refid="EPOCHEM:NEW:LIGAND:408" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.417" name="co-ch2-ch(nh2)-cooh" refid="EPOCHEM:NEW:LIGAND:409" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.418" name="ch2-s-s-ch2ch(nh2)-cooh" refid="EPOCHEM:NEW:LIGAND:410" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.419" name="ch2ch2ch2sh1" refid="EPOCHEM:NEW:LIGAND:411" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.422" name="c5-cs cycloalkyl" refid="EPOCHEM:NEW:LIGAND:414" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.423" name="c1-c10 alkyl" refid="EPOCHEM:NEW:LIGAND:415" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.424" name="c3-c30 cycloalkyl" refid="EPOCHEM:NEW:LIGAND:416" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.425" name="c6-ch aryl" refid="EPOCHEM:NEW:LIGAND:417" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.426" name="c7-c38 aralkyl" refid="EPOCHEM:NEW:LIGAND:418" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.427" name="ci-c6 alkyl" refid="EPOCHEM:NEW:LIGAND:419" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.428" name="2-phenylethyl" refid="EPOCHEM:NEW:LIGAND:420" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.429" name="och3" refid="EPOCHEM:NEW:LIGAND:421" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.430" name="ci-4 alkyl" refid="EPOCHEM:NEW:LIGAND:422" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.431" name="oh" refid="EPOCHEM:NEW:LIGAND:423" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.432" name="cn" refid="EPOCHEM:NEW:LIGAND:424" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.433" name="cf3" refid="EPOCHEM:NEW:LIGAND:425" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.434" name="no2" refid="EPOCHEM:NEW:LIGAND:426" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.435" name="c1-10 alkyl" refid="EPOCHEM:NEW:LIGAND:427" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.436" name="0-c6-io-aryl" refid="EPOCHEM:NEW:LIGAND:428" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.437" name="s- c[beta]-io-aiyl" refid="EPOCHEM:NEW:LIGAND:429" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.438" name="c6-c3o alkenyl" refid="EPOCHEM:NEW:LIGAND:430" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.439" name="n- (c1-c6 alkyl)piperazinyl" refid="EPOCHEM:NEW:LIGAND:431" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.440" name="piperazinyl" refid="EPOCHEM:NEW:LIGAND:432" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.441" name="c1-c12 alkylene" refid="EPOCHEM:NEW:LIGAND:433" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.442" name="cf2cf3" refid="EPOCHEM:NEW:LIGAND:434" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.443" name="cf2cf2cf3" refid="EPOCHEM:NEW:LIGAND:435" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.444" name="c6-c30 alkyl" refid="EPOCHEM:NEW:LIGAND:436" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.445" name="aralkyl" refid="EPOCHEM:NEW:LIGAND:437" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.446" name="benzyloxypropionic" refid="EPOCHEM:NEW:LIGAND:438" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.447" name="sulfhydryl" refid="EPOCHEM:NEW:LIGAND:439" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.448" name="imino" refid="EPOCHEM:NEW:LIGAND:440" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.450" name="[ph-(ch2)n-co]m" refid="EPOCHEM:NEW:LIGAND:441" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.451" name=",n- acetyl" refid="EPOCHEM:NEW:LIGAND:442" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.452" name="y-linoleyl" refid="EPOCHEM:NEW:LIGAND:443" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.453" name="c1-c6 alkyl" refid="EPOCHEM:NEW:LIGAND:444" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.454" name="c2-c6 alkenyloxy" refid="EPOCHEM:NEW:LIGAND:445" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.455" name="ci-c6 alkoxy" refid="EPOCHEM:NEW:LIGAND:446" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.456" name="c2-c6 alkenyl" refid="EPOCHEM:NEW:LIGAND:447" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.457" name="c1-c6 alkoxy" refid="EPOCHEM:NEW:LIGAND:448" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.458" name="isobenzofuranyl" refid="EPOCHEM:NEW:LIGAND:449" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.459" name="thiophenyl" refid="EPOCHEM:NEW:LIGAND:450" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.460" name="pyrrolo[2,3-b]pyridinyl" refid="EPOCHEM:NEW:LIGAND:451" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.461" name="dibenzothiophenyl" refid="EPOCHEM:NEW:LIGAND:452" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.462" name="dibenzofuranyl" refid="EPOCHEM:NEW:LIGAND:453" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.463" name="benzo[1 ,3]dioxolyl" refid="EPOCHEM:NEW:LIGAND:454" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.464" name="benzathiazolyl" refid="EPOCHEM:NEW:LIGAND:455" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.465" name="c5-c10 heteroaryl" refid="EPOCHEM:NEW:LIGAND:456" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.466" name="methyl" refid="EPOCHEM:NEW:LIGAND:457" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.468" name="c1-c4halogenalkoxy" refid="EPOCHEM:NEW:LIGAND:459" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.469" name="c5-ci0 heteroaryl" refid="EPOCHEM:NEW:LIGAND:460" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.470" name="d-c4alkylsulfonyl" refid="EPOCHEM:NEW:LIGAND:461" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.473" name="carboxy" refid="EPOCHEM:NEW:LIGAND:464" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.474" name="-n(ch3)2" refid="EPOCHEM:NEW:LIGAND:465" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.475" name="trimethoxybenzyl" refid="EPOCHEM:NEW:LIGAND:466" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.476" name="so3h" refid="EPOCHEM:NEW:LIGAND:467" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.477" name="so2nr&lt;2&gt;r&lt;3&gt;" refid="EPOCHEM:NEW:LIGAND:468" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.478" name="coor&lt;1&gt;" refid="EPOCHEM:NEW:LIGAND:469" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.479" name="-conr&lt;2&gt;r&lt;3&gt;" refid="EPOCHEM:NEW:LIGAND:470" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.481" name="sr" refid="EPOCHEM:NEW:LIGAND:472" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.483" name="-(s-ch2-ch2)" refid="EPOCHEM:NEW:LIGAND:474" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.484" name="(nr -ch2-ch2)p" refid="EPOCHEM:NEW:LIGAND:475" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.487" name="och2ch3" refid="EPOCHEM:NEW:LIGAND:478" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.488" name="methoxyethyl" refid="EPOCHEM:NEW:LIGAND:479" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.489" name="ethoxyethyl" refid="EPOCHEM:NEW:LIGAND:480" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.490" name="proproxy" refid="EPOCHEM:NEW:LIGAND:481" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.491" name="-o(ch2)q-r" refid="EPOCHEM:NEW:LIGAND:482" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.493" name="-0(ch2jq-r" refid="EPOCHEM:NEW:LIGAND:484" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.494" name="2,3,8a-trimethyl" refid="EPOCHEM:NEW:LIGAND:485" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.495" name="oso2ch3" refid="EPOCHEM:NEW:LIGAND:486" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.496" name="oso2c6h4ch3" refid="EPOCHEM:NEW:LIGAND:487" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.497" name="f" refid="EPOCHEM:NEW:LIGAND:488" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.498" name="br" refid="EPOCHEM:NEW:LIGAND:489" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.499" name="cl" refid="EPOCHEM:NEW:LIGAND:490" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.501" name="sh" refid="EPOCHEM:NEW:LIGAND:492" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.503" name="hydrogen atom" refid="EPOCHEM:NEW:LIGAND:494" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.504" name="amino group" refid="EPOCHEM:NEW:LIGAND:495" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.505" name="hydrocarbon groups" refid="EPOCHEM:NEW:LIGAND:496" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.506" name="pmc" refid="EPOCHEM:NEW:LIGAND:497" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.507" name="pentamethylchroman-6-sulfonyl" refid="EPOCHEM:NEW:LIGAND:498" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.508" name="t-butoxycarbonyl" refid="EPOCHEM:NEW:LIGAND:499" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.509" name="boc" refid="EPOCHEM:NEW:LIGAND:500" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.510" name="trt" refid="EPOCHEM:NEW:LIGAND:501" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.511" name="benzylgroup" refid="EPOCHEM:NEW:LIGAND:502" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.513" name="tetrazole group" refid="EPOCHEM:NEW:LIGAND:504" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.514" name="imine group" refid="EPOCHEM:NEW:LIGAND:505" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.515" name="-ch2ch3" refid="EPOCHEM:NEW:LIGAND:506" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.516" name="-chco2h" refid="EPOCHEM:NEW:LIGAND:507" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.517" name="-ch2co-" refid="EPOCHEM:NEW:LIGAND:508" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.518" name="- ch2ch2ch3" refid="EPOCHEM:NEW:LIGAND:509" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.519" name="- ch(ch3)2" refid="EPOCHEM:NEW:LIGAND:510" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.520" name="tetrazole" refid="EPOCHEM:NEW:LIGAND:511" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.521" name="hydroxy group" refid="EPOCHEM:NEW:LIGAND:512" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.522" name="methionine residue" refid="EPOCHEM:NEW:LIGAND:513" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.524" name="azido" refid="EPOCHEM:NEW:LIGAND:515" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.525" name="ethylamino" refid="EPOCHEM:NEW:LIGAND:516" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.526" name="propylamino" refid="EPOCHEM:NEW:LIGAND:517" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.527" name="butylamino" refid="EPOCHEM:NEW:LIGAND:518" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.528" name="butyl" refid="EPOCHEM:NEW:LIGAND:519" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.529" name="propyl" refid="EPOCHEM:NEW:LIGAND:520" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.530" name="(ca-cb)alkyl" refid="EPOCHEM:NEW:LIGAND:521" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.531" name="heteroaryl-fused-cycloalkyl" refid="EPOCHEM:NEW:LIGAND:522" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.532" name="aryl-fused-heterocycloalkyl" refid="EPOCHEM:NEW:LIGAND:523" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.533" name="heteroaryl-fused-heterocycloalkyl" refid="EPOCHEM:NEW:LIGAND:524" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.534" name="tetrahydrobenzofuranyl" refid="EPOCHEM:NEW:LIGAND:525" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.535" name="aryl-fused- cycloalkyl" refid="EPOCHEM:NEW:LIGAND:526" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.536" name="cycloalkyl" refid="EPOCHEM:NEW:LIGAND:527" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.537" name="aryl" refid="EPOCHEM:NEW:LIGAND:528" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.538" name="heteroaryl" refid="EPOCHEM:NEW:LIGAND:529" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.539" name="monocyclic heterocyclic group" refid="EPOCHEM:NEW:LIGAND:530" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.540" name="hydroxy(crc6) alkyl" refid="EPOCHEM:NEW:LIGAND:531" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.541" name="(ca-cb)fluoroalkyl" refid="EPOCHEM:NEW:LIGAND:532" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.542" name="monocyclic carbocyclic radical" refid="EPOCHEM:NEW:LIGAND:533" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.543" name="heterocyclic radical" refid="EPOCHEM:NEW:LIGAND:534" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.544" name="heterocycloalkyl" refid="EPOCHEM:NEW:LIGAND:535" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.545" name="halo" refid="EPOCHEM:NEW:LIGAND:536" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.546" name="4-biphenyl" refid="EPOCHEM:NEW:LIGAND:537" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.547" name="sulfamoyl" refid="EPOCHEM:NEW:LIGAND:538" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.549" name="phenoxy" refid="EPOCHEM:NEW:LIGAND:539" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.551" name="benzmalonate groups" refid="EPOCHEM:NEW:LIGAND:541" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.552" name="monomethyl" refid="EPOCHEM:NEW:LIGAND:542" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.554" name="lauryl" refid="EPOCHEM:NEW:LIGAND:544" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.555" name="glycerol-dipalmitate residue" refid="EPOCHEM:NEW:LIGAND:545" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.556" name="stearoyl" refid="EPOCHEM:NEW:LIGAND:546" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.557" name="ben2yl" refid="EPOCHEM:NEW:LIGAND:547" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.558" name="benzyloxycarbonyl" refid="EPOCHEM:NEW:LIGAND:548" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.559" name="benzyl" refid="EPOCHEM:NEW:LIGAND:549" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.560" name="hydrocarbyloxy" refid="EPOCHEM:NEW:LIGAND:550" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.561" name="alkenyl" refid="EPOCHEM:NEW:LIGAND:551" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.562" name="aliphatic hydrocarbon group" refid="EPOCHEM:NEW:LIGAND:552" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.563" name="cyclic hydrocarbon group" refid="EPOCHEM:NEW:LIGAND:553" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.564" name="nh-co-r" refid="EPOCHEM:NEW:LIGAND:554" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.565" name="nh-so2-r" refid="EPOCHEM:NEW:LIGAND:555" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.566" name="co-nr" refid="EPOCHEM:NEW:LIGAND:556" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.567" name="so2-nr" refid="EPOCHEM:NEW:LIGAND:557" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.568" name="so2r" refid="EPOCHEM:NEW:LIGAND:558" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.569" name="co-r" refid="EPOCHEM:NEW:LIGAND:559" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.570" name="c5-10-cyclo alkyl" refid="EPOCHEM:NEW:LIGAND:560" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.571" name="c6-10 aryl" refid="EPOCHEM:NEW:LIGAND:561" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.572" name="nr" refid="EPOCHEM:NEW:LIGAND:562" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.573" name="histidine residue" refid="EPOCHEM:NEW:LIGAND:563" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.574" name="o-t-butyl" refid="EPOCHEM:NEW:LIGAND:564" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.575" name="otbu" refid="EPOCHEM:NEW:LIGAND:565" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.576" name="giu" refid="EPOCHEM:NEW:LIGAND:566" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.577" name="leu" refid="EPOCHEM:NEW:LIGAND:567" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.578" name="ala" refid="EPOCHEM:NEW:LIGAND:568" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.579" name="ser" refid="EPOCHEM:NEW:LIGAND:569" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.580" name="thr" refid="EPOCHEM:NEW:LIGAND:570" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.581" name="tyr" refid="EPOCHEM:NEW:LIGAND:571" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.582" name="asn" refid="EPOCHEM:NEW:LIGAND:572" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.583" name="gin" refid="EPOCHEM:NEW:LIGAND:573" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.584" name="asp" refid="EPOCHEM:NEW:LIGAND:574" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.585" name="lys" refid="EPOCHEM:NEW:LIGAND:575" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.586" name="arg" refid="EPOCHEM:NEW:LIGAND:576" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.587" name="his" refid="EPOCHEM:NEW:LIGAND:577" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.588" name="met" refid="EPOCHEM:NEW:LIGAND:578" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.589" name="orn" refid="EPOCHEM:NEW:LIGAND:579" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.590" name="phenyl" refid="EPOCHEM:NEW:LIGAND:580" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.591" name="phenylmethyl" refid="EPOCHEM:NEW:LIGAND:581" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.592" name="pro" refid="EPOCHEM:NEW:LIGAND:582" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.593" name="vai" refid="EPOCHEM:NEW:LIGAND:583" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.594" name="lie" refid="EPOCHEM:NEW:LIGAND:584" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.595" name="trp" refid="EPOCHEM:NEW:LIGAND:585" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.596" name="cys" refid="EPOCHEM:NEW:LIGAND:586" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.597" name="giy" refid="EPOCHEM:NEW:LIGAND:587" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.598" name="fmoc" refid="EPOCHEM:NEW:LIGAND:588" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.599" name="ethyl" refid="EPOCHEM:NEW:LIGAND:589" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.600" name="amino" refid="EPOCHEM:NEW:LIGAND:590" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.601" name="carboxylic acid group" refid="EPOCHEM:NEW:LIGAND:591" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.602" name="carbonyl groups" refid="EPOCHEM:NEW:LIGAND:592" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.603" name="mercapto groups" refid="EPOCHEM:NEW:LIGAND:593" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.604" name="aromatic acid residues" refid="EPOCHEM:NEW:LIGAND:594" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.605" name="hydroxy groups" refid="EPOCHEM:NEW:LIGAND:595" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.606" name="gly" refid="EPOCHEM:NEW:LIGAND:596" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.607" name="phe" refid="EPOCHEM:NEW:LIGAND:597" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.608" name="aia" refid="EPOCHEM:NEW:LIGAND:598" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.609" name="ch(ch3)2" refid="EPOCHEM:NEW:LIGAND:599" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.610" name="o- methyl phosphoramidite groups" refid="EPOCHEM:NEW:LIGAND:600" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.611" name="hydrochloride" refid="EPOCHEM:NEW:LIGAND:601" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.612" name="hydroxyl groups" refid="EPOCHEM:NEW:LIGAND:602" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.613" name="biphenyl" refid="EPOCHEM:NEW:LIGAND:603" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.614" name="heterocyclyl" refid="EPOCHEM:NEW:LIGAND:604" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.615" name="naphthy" refid="EPOCHEM:NEW:LIGAND:605" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.616" name="propoxy" refid="EPOCHEM:NEW:LIGAND:606" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.617" name="c1-i0alkyl" refid="EPOCHEM:NEW:LIGAND:607" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.618" name="nh2" refid="EPOCHEM:NEW:LIGAND:608" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.619" name="triflate" refid="EPOCHEM:NEW:LIGAND:609" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.620" name="n-c=n-" refid="EPOCHEM:NEW:LIGAND:610" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.621" name="o-c6-i0-aryl" refid="EPOCHEM:NEW:LIGAND:611" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.622" name="so2 r" refid="EPOCHEM:NEW:LIGAND:612" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.623" name="s-ci-i0 alkyl" refid="EPOCHEM:NEW:LIGAND:613" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.624" name="ci-4 alkoxy" refid="EPOCHEM:NEW:LIGAND:614" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.625" name="d-4-alkyl" refid="EPOCHEM:NEW:LIGAND:615" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.626" name="ci-4-alkoxy" refid="EPOCHEM:NEW:LIGAND:616" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.627" name="hexafluoroantimonate" refid="EPOCHEM:NEW:LIGAND:617" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.628" name="perchlorate" refid="EPOCHEM:NEW:LIGAND:618" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.629" name="disulphide" refid="EPOCHEM:NEW:LIGAND:619" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.630" name="hydroxy" refid="EPOCHEM:NEW:LIGAND:620" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.631" name="methoxyphenyl" refid="EPOCHEM:NEW:LIGAND:621" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.632" name="c^-alkoxy" refid="EPOCHEM:NEW:LIGAND:622" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.633" name="benzylidene" refid="EPOCHEM:NEW:LIGAND:623" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.634" name="oleic" refid="EPOCHEM:NEW:LIGAND:624" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.635" name="isopropylidene" refid="EPOCHEM:NEW:LIGAND:625" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.636" name="n(ch3)2" refid="EPOCHEM:NEW:LIGAND:626" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.637" name="2,2,8a-trimethyl" refid="EPOCHEM:NEW:LIGAND:627" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.638" name="-ch2-r" refid="EPOCHEM:NEW:LIGAND:628" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.639" name="-ch2-o-r" refid="EPOCHEM:NEW:LIGAND:629" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.640" name="-ch2-s-r" refid="EPOCHEM:NEW:LIGAND:630" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.641" name="-ch2-nh-r" refid="EPOCHEM:NEW:LIGAND:631" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.642" name="-co-o-r" refid="EPOCHEM:NEW:LIGAND:632" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.643" name="-co-nh-r" refid="EPOCHEM:NEW:LIGAND:633" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.644" name="-ch2-nh-co-r" refid="EPOCHEM:NEW:LIGAND:634" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.645" name="-ch2-o-co-r" refid="EPOCHEM:NEW:LIGAND:635" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.646" name="-ch2-nh-co-nhr" refid="EPOCHEM:NEW:LIGAND:636" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.647" name="-ch2-nh-co-or" refid="EPOCHEM:NEW:LIGAND:637" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.648" name="-ch2-nh-cs-nhr" refid="EPOCHEM:NEW:LIGAND:638" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.649" name="-ch2-o-co-nhr" refid="EPOCHEM:NEW:LIGAND:639" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.650" name="-oco-" refid="EPOCHEM:NEW:LIGAND:640" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.651" name="-coo-" refid="EPOCHEM:NEW:LIGAND:641" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.652" name="-oh" refid="EPOCHEM:NEW:LIGAND:642" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.653" name="-r&lt;5&gt;-n-(r&lt;4&gt;)2" refid="EPOCHEM:NEW:LIGAND:643" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.654" name="-r&lt;5&gt;-n-(r&lt;8&gt;)2" refid="EPOCHEM:NEW:LIGAND:644" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.655" name="lauric" refid="EPOCHEM:NEW:LIGAND:645" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.656" name="palmetic" refid="EPOCHEM:NEW:LIGAND:646" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.657" name="sulfuric" refid="EPOCHEM:NEW:LIGAND:647" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.660" name="- (ch2) m-y- (ch2) m-" refid="EPOCHEM:NEW:LIGAND:649" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.661" name="-(ch2)m-" refid="EPOCHEM:NEW:LIGAND:650" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.662" name="-so3" refid="EPOCHEM:NEW:LIGAND:651" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.663" name="-cooh" refid="EPOCHEM:NEW:LIGAND:652" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.664" name="-nh2" refid="EPOCHEM:NEW:LIGAND:653" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.665" name="-conh2" refid="EPOCHEM:NEW:LIGAND:654" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.666" name="h" refid="EPOCHEM:NEW:LIGAND:655" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.667" name="nh" refid="EPOCHEM:NEW:LIGAND:656" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.669" name="s" refid="EPOCHEM:NEW:LIGAND:657" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.670" name="sulf^e" refid="EPOCHEM:NEW:LIGAND:658" source="HC"/>
+   <new-ligand nite:id="epochem-new-ligands.673" name="- (ch2) m-" refid="EPOCHEM:NEW:LIGAND:659" source="HC"/>
+</nite:root>

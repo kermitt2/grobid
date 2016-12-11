@@ -1,0 +1,1622 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007035143.HC.ligand-names" xmlns:nite="http://nite.sourceforge.net/">
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.1" comment="" name="isothiazolyl" relevant="false" chebi-id="WO2007035143:811233" epochem-id="EPOCHEM:NEW:LIGAND:230">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6321)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.2" comment="" name="imidazolyl" relevant="false" chebi-id="WO2007035143:369810" epochem-id="EPOCHEM:NEW:LIGAND:226">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6323)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.3" comment="" name="imidazolyl" relevant="false" chebi-id="WO2007035143:369810" epochem-id="EPOCHEM:NEW:LIGAND:226">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6468)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.4" comment="" name="pyrimidinyl" relevant="false" chebi-id="WO2007035143:683684" epochem-id="EPOCHEM:NEW:LIGAND:243">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6325)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.5" comment="" name="pyrimidinyl" relevant="false" chebi-id="WO2007035143:683684" epochem-id="EPOCHEM:NEW:LIGAND:243">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6333)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.6" comment="" name="pyrimidinyl" relevant="false" chebi-id="WO2007035143:683684" epochem-id="EPOCHEM:NEW:LIGAND:243">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6470)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.7" comment="" name="indolyl" relevant="false" chebi-id="WO2007035143:904549" epochem-id="EPOCHEM:NEW:LIGAND:245">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6327)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.8" comment="" name="indolyl" relevant="false" chebi-id="WO2007035143:904549" epochem-id="EPOCHEM:NEW:LIGAND:245">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6472)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.9" comment="" name="indazolyl" relevant="false" chebi-id="WO2007035143:793730" epochem-id="EPOCHEM:NEW:LIGAND:246">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6331)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.10" comment="" name="indazolyl" relevant="false" chebi-id="WO2007035143:793730" epochem-id="EPOCHEM:NEW:LIGAND:246">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6476)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.11" comment="" name="thiophenetyl" relevant="false" chebi-id="WO2007035143:788754" epochem-id="EPOCHEM:NEW:LIGAND:336">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6335)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.12" comment="" name="pyranyl" relevant="false" chebi-id="WO2007035143:849619" epochem-id="EPOCHEM:NEW:LIGAND:254">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6337)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.13" comment="" name="carbazolyl" relevant="false" chebi-id="WO2007035143:639772" epochem-id="EPOCHEM:NEW:LIGAND:337">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6339)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.14" comment="" name="acridinyl" relevant="false" chebi-id="WO2007035143:650617" epochem-id="EPOCHEM:NEW:LIGAND:338">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6341)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.15" comment="" name="purinyl" relevant="false" chebi-id="WO2007035143:883" epochem-id="EPOCHEM:NEW:LIGAND:339">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6349)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.16" comment="" name="cinnolinyl" relevant="false" chebi-id="WO2007035143:392863" epochem-id="EPOCHEM:NEW:LIGAND:340">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6351)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.17" comment="" name="pterdinyl" relevant="false" chebi-id="WO2007035143:159062" epochem-id="EPOCHEM:NEW:LIGAND:341">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6353)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.18" comment="" name="benzthiazolyl" relevant="false" chebi-id="WO2007035143:544300" epochem-id="EPOCHEM:NEW:LIGAND:229">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6347)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.19" comment="" name="benzoimidazolyl" relevant="false" chebi-id="WO2007035143:847759" epochem-id="EPOCHEM:NEW:LIGAND:342">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6345)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.20" comment="" name="quinolinyl" relevant="false" chebi-id="WO2007035143:778619" epochem-id="EPOCHEM:NEW:LIGAND:309">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6299)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.21" comment="" name="quinolinyl" relevant="false" chebi-id="WO2007035143:778619" epochem-id="EPOCHEM:NEW:LIGAND:309">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6343)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.22" comment="" name="quinolinyl" relevant="false" chebi-id="WO2007035143:778619" epochem-id="EPOCHEM:NEW:LIGAND:309">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6450)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.23" comment="" name="pyrazinyl" relevant="false" chebi-id="WO2007035143:616" epochem-id="EPOCHEM:NEW:LIGAND:343">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6329)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.24" comment="" name="pyrazinyl" relevant="false" chebi-id="WO2007035143:616" epochem-id="EPOCHEM:NEW:LIGAND:343">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6474)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.25" comment="" name="pyrazolyl" relevant="false" chebi-id="WO2007035143:979943" epochem-id="EPOCHEM:NEW:LIGAND:232">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6313)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.26" comment="" name="pyrazolyl" relevant="false" chebi-id="WO2007035143:979943" epochem-id="EPOCHEM:NEW:LIGAND:232">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6464)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.27" comment="" name="oxazolyl" relevant="false" chebi-id="WO2007035143:195054" epochem-id="EPOCHEM:NEW:LIGAND:233">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6311)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.28" comment="" name="oxazolyl" relevant="false" chebi-id="WO2007035143:195054" epochem-id="EPOCHEM:NEW:LIGAND:233">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6462)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.29" comment="" name="thiazolyl" relevant="false" chebi-id="WO2007035143:808743" epochem-id="EPOCHEM:NEW:LIGAND:228">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6309)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.30" comment="" name="thiazolyl" relevant="false" chebi-id="WO2007035143:808743" epochem-id="EPOCHEM:NEW:LIGAND:228">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6460)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.31" comment="" name="thiadiazolyl" relevant="false" chebi-id="WO2007035143:410317" epochem-id="EPOCHEM:NEW:LIGAND:239">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6307)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.32" comment="" name="thiadiazolyl" relevant="false" chebi-id="WO2007035143:410317" epochem-id="EPOCHEM:NEW:LIGAND:239">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6458)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.33" comment="" name="oxadiazolyl" relevant="false" chebi-id="WO2007035143:684665" epochem-id="EPOCHEM:NEW:LIGAND:240">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6305)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.34" comment="" name="oxadiazolyl" relevant="false" chebi-id="WO2007035143:684665" epochem-id="EPOCHEM:NEW:LIGAND:240">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6456)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.35" comment="" name="isoxazolyl" relevant="false" chebi-id="WO2007035143:381494" epochem-id="EPOCHEM:NEW:LIGAND:235">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6319)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.36" comment="" name="tetrazolyl" relevant="false" chebi-id="WO2007035143:813200" epochem-id="EPOCHEM:NEW:LIGAND:344">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6317)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.37" comment="" name="triazolyl" relevant="false" chebi-id="WO2007035143:842822" epochem-id="EPOCHEM:NEW:LIGAND:237">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6315)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.38" comment="" name="triazolyl" relevant="false" chebi-id="WO2007035143:842822" epochem-id="EPOCHEM:NEW:LIGAND:237">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6466)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.39" comment="" name="thienyl" relevant="false" chebi-id="CHEBI:37991" epochem-id="EPOCHEM:NEW:LIGAND:221">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6303)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.40" comment="" name="thienyl" relevant="false" chebi-id="CHEBI:37991" epochem-id="EPOCHEM:NEW:LIGAND:221">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6454)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.41" comment="" name="furanyl" relevant="false" chebi-id="CHEBI:24131" epochem-id="EPOCHEM:NEW:LIGAND:247">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6301)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.42" comment="" name="furanyl" relevant="false" chebi-id="CHEBI:24131" epochem-id="EPOCHEM:NEW:LIGAND:247">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6452)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.43" comment="" name="pyrrolyl" relevant="false" chebi-id="WO2007035143:414011" epochem-id="EPOCHEM:NEW:LIGAND:225">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6297)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.44" comment="" name="pyrrolyl" relevant="false" chebi-id="WO2007035143:414011" epochem-id="EPOCHEM:NEW:LIGAND:225">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6448)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.45" comment="" name="pyridyl" relevant="false" chebi-id="WO2007035143:171789" epochem-id="EPOCHEM:NEW:LIGAND:265">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6295)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.46" comment="" name="pyridyl" relevant="false" chebi-id="WO2007035143:171789" epochem-id="EPOCHEM:NEW:LIGAND:265">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6446)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.47" comment="" name="hydroxy" relevant="false" chebi-id="CHEBI:43176" epochem-id="EPOCHEM:NEW:LIGAND:68">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6376)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.48" comment="" name="thiolo" relevant="false" chebi-id="WO2007035143:261318" epochem-id="EPOCHEM:NEW:LIGAND:345">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6379)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.49" comment="" name="methyl" relevant="false" chebi-id="CHEBI:29309" epochem-id="EPOCHEM:NEW:LIGAND:346">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6215)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.50" comment="" name="methyl" relevant="false" chebi-id="CHEBI:29309" epochem-id="EPOCHEM:NEW:LIGAND:346">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6239)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.59" comment="" name="n-propyl" relevant="false" chebi-id="CHEBI:26308" epochem-id="EPOCHEM:NEW:LIGAND:15">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6223)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6222)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6221)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.60" comment="" name="isopropyl" relevant="false" chebi-id="CHEBI:30353" epochem-id="EPOCHEM:NEW:LIGAND:126">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6225)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.61" comment="" name="propyl" relevant="false" chebi-id="CHEBI:26308" epochem-id="EPOCHEM:NEW:LIGAND:347">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6219)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.62" comment="" name="propyl" relevant="false" chebi-id="WO2007035143:783616" epochem-id="EPOCHEM:NEW:LIGAND:347">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6223)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.63" comment="" name="butyl" relevant="false" chebi-id="CHEBI:41264" epochem-id="EPOCHEM:NEW:LIGAND:131">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6228)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.64" comment="" name="pentyl" relevant="false" chebi-id="CHEBI:25902" epochem-id="EPOCHEM:NEW:LIGAND:129">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6235)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.65" comment="" name="phenyl" relevant="false" chebi-id="CHEBI:30396" epochem-id="EPOCHEM:NEW:LIGAND:108">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6260)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.66" comment="" name="phenyl" relevant="false" chebi-id="CHEBI:30396" epochem-id="EPOCHEM:NEW:LIGAND:108">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6872)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.67" comment="" name="phenyl" relevant="false" chebi-id="CHEBI:30396" epochem-id="EPOCHEM:NEW:LIGAND:108">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7001)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.68" comment="" name="naphthyl" relevant="false" chebi-id="WO2007035143:560221" epochem-id="EPOCHEM:NEW:LIGAND:140">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6262)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.69" comment="" name="carboxylic acid" relevant="false" chebi-id="CHEBI:33575" epochem-id="EPOCHEM:NEW:LIGAND:348">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6385)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6384)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.70" comment="" name="carboxylic acid" relevant="false" chebi-id="CHEBI:33575" epochem-id="EPOCHEM:NEW:LIGAND:348">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6598)..id(WO2007035143_w_6599)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.71" comment="" name="S- acetyl" relevant="false" chebi-id="WO2007035143:382144" epochem-id="EPOCHEM:NEW:LIGAND:349">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6405)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6404)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6403)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.72" comment="" name="pyrrolidinyl" relevant="false" chebi-id="WO2007035143:217847" epochem-id="EPOCHEM:NEW:LIGAND:249">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6525)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.73" comment="" name="piperidyl" relevant="false" chebi-id="WO2007035143:294335" epochem-id="EPOCHEM:NEW:LIGAND:350">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6527)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.74" comment="" name="piperazinyl" relevant="false" chebi-id="WO2007035143:310072" epochem-id="EPOCHEM:NEW:LIGAND:251">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6529)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.75" comment="" name="morpholinyl" relevant="false" chebi-id="WO2007035143:444009" epochem-id="EPOCHEM:NEW:LIGAND:250">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6531)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.76" comment="" name="tetrahydrofuranyl" relevant="false" chebi-id="WO2007035143:126425" epochem-id="EPOCHEM:NEW:LIGAND:351">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6538)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.77" comment="" name="fluorine" relevant="false" chebi-id="CHEBI:24061" epochem-id="EPOCHEM:NEW:LIGAND:352">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6555)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.78" comment="" name="chlorine" relevant="false" chebi-id="CHEBI:23116" epochem-id="EPOCHEM:NEW:LIGAND:198">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6557)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.79" comment="" name="bromine" relevant="false" chebi-id="CHEBI:22927" epochem-id="EPOCHEM:NEW:LIGAND:197">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6559)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.80" comment="" name="iodine" relevant="false" chebi-id="CHEBI:24859" epochem-id="EPOCHEM:NEW:LIGAND:353">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6561)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.81" comment="" name="hydroxyl" relevant="false" chebi-id="CHEBI:29191" epochem-id="EPOCHEM:NEW:LIGAND:1">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1129)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.82" comment="" name="hydroxyl" relevant="false" chebi-id="CHEBI:29191" epochem-id="EPOCHEM:NEW:LIGAND:1">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6588)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.83" comment="" name="hydroxyl" relevant="false" chebi-id="CHEBI:29191" epochem-id="EPOCHEM:NEW:LIGAND:1">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6910)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.84" comment="" name="hydroxyl" relevant="false" chebi-id="CHEBI:29191" epochem-id="EPOCHEM:NEW:LIGAND:1">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7026)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.85" comment="" name="silyl" relevant="false" chebi-id="CHEBI:30560" epochem-id="EPOCHEM:NEW:LIGAND:354">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6596)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.86" comment="" name="amine" relevant="false" chebi-id="CHEBI:32952" epochem-id="EPOCHEM:NEW:LIGAND:355">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6590)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.87" comment="" name="hydrochlorid" relevant="false" chebi-id="CHEBI:36807" epochem-id="EPOCHEM:NEW:LIGAND:356">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6634)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.88" comment="" name="hydrobromic" relevant="false" chebi-id="WO2007035143:176346" epochem-id="EPOCHEM:NEW:LIGAND:357">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6636)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.89" comment="" name="phosphoric" relevant="false" chebi-id="WO2007035143:861371" epochem-id="EPOCHEM:NEW:LIGAND:358">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6638)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.90" comment="" name="metaphosphoric" relevant="false" chebi-id="WO2007035143:57505" epochem-id="EPOCHEM:NEW:LIGAND:359">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6640)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.91" comment="" name="nitric" relevant="false" chebi-id="WO2007035143:895011" epochem-id="EPOCHEM:NEW:LIGAND:87">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6642)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.92" comment="" name="tartaric" relevant="false" chebi-id="WO2007035143:680445" epochem-id="EPOCHEM:NEW:LIGAND:81">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6653)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.93" comment="" name="acetic" relevant="false" chebi-id="WO2007035143:867786" epochem-id="EPOCHEM:NEW:LIGAND:76">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6655)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.94" comment="" name="citric" relevant="false" chebi-id="WO2007035143:152210" epochem-id="EPOCHEM:NEW:LIGAND:78">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6657)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.95" comment="" name="malic" relevant="false" chebi-id="WO2007035143:159526" epochem-id="EPOCHEM:NEW:LIGAND:79">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6659)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.96" comment="" name="lactic" relevant="false" chebi-id="WO2007035143:521942" epochem-id="EPOCHEM:NEW:LIGAND:77">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6661)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.97" comment="" name="fumaric" relevant="false" chebi-id="WO2007035143:35421" epochem-id="EPOCHEM:NEW:LIGAND:161">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6663)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.98" comment="" name="benzoic" relevant="false" chebi-id="WO2007035143:429279" epochem-id="EPOCHEM:NEW:LIGAND:84">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6665)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.99" comment="" name="glycolic" relevant="false" chebi-id="WO2007035143:436546" epochem-id="EPOCHEM:NEW:LIGAND:360">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6667)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.100" comment="" name="gluconic" relevant="false" chebi-id="WO2007035143:949622" epochem-id="EPOCHEM:NEW:LIGAND:361">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6669)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.101" comment="" name="succinic" relevant="false" chebi-id="WO2007035143:693238" epochem-id="EPOCHEM:NEW:LIGAND:83">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6671)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.102" comment="" name="C3-C7-cyclo alkyl" relevant="false" chebi-id="WO2007035143:284966" epochem-id="EPOCHEM:NEW:LIGAND:362">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6869)..id(WO2007035143_w_6870)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6868)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6866)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6865)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6867)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.103" comment="" name="C3-C7-cyclo alkyl" relevant="false" chebi-id="WO2007035143:284966" epochem-id="EPOCHEM:NEW:LIGAND:362">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6924)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6923)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6921)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6926)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6925)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6922)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.104" comment="" name="C3-C7-cyclo alkyl" relevant="false" chebi-id="WO2007035143:284966" epochem-id="EPOCHEM:NEW:LIGAND:362">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6996)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6995)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6994)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6997)..id(WO2007035143_w_6999)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.105" comment="" name="C3-C7-cyclo alkyl" relevant="false" chebi-id="WO2007035143:284966" epochem-id="EPOCHEM:NEW:LIGAND:362">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7038)..id(WO2007035143_w_7041)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7037)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7042)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.106" comment="" name="benzoyl" relevant="false" chebi-id="CHEBI:22733" epochem-id="EPOCHEM:NEW:LIGAND:363">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6877)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.107" comment="" name="benzyl acetyl" relevant="false" chebi-id="WO2007035143:430725" epochem-id="EPOCHEM:NEW:LIGAND:364">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6874)..id(WO2007035143_w_6875)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.108" comment="" name="C1-C6- alkyloxy" relevant="false" chebi-id="WO2007035143:123751" epochem-id="EPOCHEM:NEW:LIGAND:365">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6928)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6931)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6929)..id(WO2007035143_w_6930)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6932)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.109" comment="" name="arylalkyl" relevant="false" chebi-id="WO2007035143:141388" epochem-id="EPOCHEM:NEW:LIGAND:366">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6953)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.110" comment="" name="acyl" relevant="false" chebi-id="WO2007035143:462336" epochem-id="EPOCHEM:NEW:LIGAND:95">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6955)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.111" comment="" name="Cl-C[beta]-alkyl" relevant="false" chebi-id="WO2007035143:9376" epochem-id="EPOCHEM:NEW:LIGAND:367">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6863)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6857)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6861)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6860)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6858)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6856)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6862)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6859)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.112" comment="" name="Cl-C[beta]-alkyl" relevant="false" chebi-id="WO2007035143:9376" epochem-id="EPOCHEM:NEW:LIGAND:367">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6915)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6914)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6917)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6919)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6913)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6916)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6918)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6912)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.113" comment="" name="Cl-C[beta]-alkyl" relevant="false" chebi-id="WO2007035143:9376" epochem-id="EPOCHEM:NEW:LIGAND:367">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6949)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6945)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6948)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6950)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6944)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6946)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6951)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6947)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.114" comment="" name="Cl-C[beta]-alkyl" relevant="false" chebi-id="WO2007035143:9376" epochem-id="EPOCHEM:NEW:LIGAND:367">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6985)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6988)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6992)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6989)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6987)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6990)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6986)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6991)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.115" comment="" name="Cl-C[beta]-alkyl" relevant="false" chebi-id="WO2007035143:9376" epochem-id="EPOCHEM:NEW:LIGAND:367">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7028)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7031)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7029)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7032)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7030)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7033)..id(WO2007035143_w_7035)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.116" comment="" name="Cl- C6-alkyloxy" relevant="false" chebi-id="WO2007035143:575242" epochem-id="EPOCHEM:NEW:LIGAND:368">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7045)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7044)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7046)..id(WO2007035143_w_7048)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.117" comment="" name="histidine residue" relevant="false" chebi-id="CHEBI:32535" epochem-id="EPOCHEM:NEW:LIGAND:563">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_90)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_89)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.118" comment="" name="ethyl" relevant="false" chebi-id="CHEBI:37807" epochem-id="EPOCHEM:NEW:LIGAND:589">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6217)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.119" comment="" name="benzyl" relevant="false" chebi-id="WO2007035143:287939" epochem-id="EPOCHEM:NEW:LIGAND:549">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6874)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.120" comment="" name="benzyl" relevant="false" chebi-id="CHEBI:22744" epochem-id="EPOCHEM:NEW:LIGAND:549">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7003)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.121" comment="" name="-CH2-R" relevant="false" chebi-id="WO2007035143:600381" epochem-id="EPOCHEM:NEW:LIGAND:628">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1494)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1496)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1495)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1493)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.122" comment="" name="-CH2-R" relevant="false" chebi-id="WO2007035143:600381" epochem-id="EPOCHEM:NEW:LIGAND:628">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2794)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2792)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2795)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2793)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.123" comment="" name="-CH2-R" relevant="false" chebi-id="WO2007035143:600381" epochem-id="EPOCHEM:NEW:LIGAND:628">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3033)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3035)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3034)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3036)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.124" comment="" name="-CH2-R" relevant="false" chebi-id="WO2007035143:600381" epochem-id="EPOCHEM:NEW:LIGAND:628">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4824)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4822)..id(WO2007035143_w_4823)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4821)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.125" comment="" name="-CH2-R" relevant="false" chebi-id="WO2007035143:600381" epochem-id="EPOCHEM:NEW:LIGAND:628">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5339)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5337)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5336)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5338)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.126" comment="" name="-CH2-R" relevant="false" chebi-id="WO2007035143:600381" epochem-id="EPOCHEM:NEW:LIGAND:628">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10505)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10507)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10506)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10508)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.127" comment="" name="-CH2-R" relevant="false" chebi-id="WO2007035143:600381" epochem-id="EPOCHEM:NEW:LIGAND:628">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11253)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11256)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11255)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11254)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.128" comment="" name="-CH2-R" relevant="false" chebi-id="WO2007035143:600381" epochem-id="EPOCHEM:NEW:LIGAND:628">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11488)..id(WO2007035143_w_11489)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11486)..id(WO2007035143_w_11487)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.129" comment="" name="-CH2-R" relevant="false" chebi-id="WO2007035143:600381" epochem-id="EPOCHEM:NEW:LIGAND:628">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12857)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12859)..id(WO2007035143_w_12860)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12858)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.130" comment="" name="-CH2-O-R" relevant="false" chebi-id="WO2007035143:247709" epochem-id="EPOCHEM:NEW:LIGAND:629">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1501)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1505)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1502)..id(WO2007035143_w_1503)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1506)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1504)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.131" comment="" name="-CH2-O-R" relevant="false" chebi-id="WO2007035143:247709" epochem-id="EPOCHEM:NEW:LIGAND:629">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4834)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4831)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4830)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4829)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4832)..id(WO2007035143_w_4833)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.132" comment="" name="-CH2-O-R" relevant="false" chebi-id="WO2007035143:247709" epochem-id="EPOCHEM:NEW:LIGAND:629">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5345)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5349)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5344)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5346)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5348)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5347)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.133" comment="" name="-CH2-O-R" relevant="false" chebi-id="WO2007035143:247709" epochem-id="EPOCHEM:NEW:LIGAND:629">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10513)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10517)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10516)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10514)..id(WO2007035143_w_10515)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10518)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.134" comment="" name="-CH2-O-R" relevant="false" chebi-id="WO2007035143:247709" epochem-id="EPOCHEM:NEW:LIGAND:629">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12866)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12868)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12870)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12867)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12865)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12869)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.135" comment="" name="-CH2-S-R" relevant="false" chebi-id="WO2007035143:859680" epochem-id="EPOCHEM:NEW:LIGAND:630">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1513)..id(WO2007035143_w_1514)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1516)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1511)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1515)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1512)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.136" comment="" name="-CH2-S-R" relevant="false" chebi-id="WO2007035143:859680" epochem-id="EPOCHEM:NEW:LIGAND:630">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4839)..id(WO2007035143_w_4840)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4844)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4842)..id(WO2007035143_w_4843)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4841)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.137" comment="" name="-CH2-S-R" relevant="false" chebi-id="WO2007035143:859680" epochem-id="EPOCHEM:NEW:LIGAND:630">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5355)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5359)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5354)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5356)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5358)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5357)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.138" comment="" name="-CH2-S-R" relevant="false" chebi-id="WO2007035143:859680" epochem-id="EPOCHEM:NEW:LIGAND:630">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10524)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10526)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10523)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10528)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10525)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10527)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.139" comment="" name="-CH2-S-R" relevant="false" chebi-id="WO2007035143:859680" epochem-id="EPOCHEM:NEW:LIGAND:630">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12876)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12878)..id(WO2007035143_w_12880)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12877)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12875)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.140" comment="" name="-CH2-NH-R" relevant="false" chebi-id="WO2007035143:131249" epochem-id="EPOCHEM:NEW:LIGAND:631">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1523)..id(WO2007035143_w_1524)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1521)..id(WO2007035143_w_1522)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1525)..id(WO2007035143_w_1526)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.141" comment="" name="-CH2-NH-R" relevant="false" chebi-id="WO2007035143:131249" epochem-id="EPOCHEM:NEW:LIGAND:631">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4852)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4850)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4849)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4851)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4854)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4853)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.142" comment="" name="-CH2-NH-R" relevant="false" chebi-id="WO2007035143:131249" epochem-id="EPOCHEM:NEW:LIGAND:631">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5368)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5365)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5364)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5369)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5366)..id(WO2007035143_w_5367)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.143" comment="" name="-CH2-NH-R" relevant="false" chebi-id="WO2007035143:131249" epochem-id="EPOCHEM:NEW:LIGAND:631">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10533)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10538)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10534)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10536)..id(WO2007035143_w_10537)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10535)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.144" comment="" name="-CH2-NH-R" relevant="false" chebi-id="WO2007035143:131249" epochem-id="EPOCHEM:NEW:LIGAND:631">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12885)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12889)..id(WO2007035143_w_12890)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12887)..id(WO2007035143_w_12888)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12886)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.145" comment="" name="-CO-O-R" relevant="false" chebi-id="WO2007035143:533462" epochem-id="EPOCHEM:NEW:LIGAND:632">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1535)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1534)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1532)..id(WO2007035143_w_1533)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1531)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1536)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.146" comment="" name="-CO-O-R" relevant="false" chebi-id="WO2007035143:533462" epochem-id="EPOCHEM:NEW:LIGAND:632">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4859)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4864)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4861)..id(WO2007035143_w_4863)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4860)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.147" comment="" name="-CO-O-R" relevant="false" chebi-id="WO2007035143:533462" epochem-id="EPOCHEM:NEW:LIGAND:632">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5377)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5375)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5379)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5374)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5378)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5376)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.148" comment="" name="-CO-O-R" relevant="false" chebi-id="WO2007035143:533462" epochem-id="EPOCHEM:NEW:LIGAND:632">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10545)..id(WO2007035143_w_10547)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10544)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10548)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10543)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.149" comment="" name="-CO-O-R" relevant="false" chebi-id="WO2007035143:533462" epochem-id="EPOCHEM:NEW:LIGAND:632">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12897)..id(WO2007035143_w_12900)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12895)..id(WO2007035143_w_12896)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.150" comment="" name="-CO-NH-R" relevant="false" chebi-id="WO2007035143:820300" epochem-id="EPOCHEM:NEW:LIGAND:633">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1546)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1544)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1542)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1545)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1541)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1543)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.151" comment="" name="-CO-NH-R" relevant="false" chebi-id="WO2007035143:820300" epochem-id="EPOCHEM:NEW:LIGAND:633">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4869)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4872)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4874)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4871)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4873)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4870)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.152" comment="" name="-CO-NH-R" relevant="false" chebi-id="WO2007035143:820300" epochem-id="EPOCHEM:NEW:LIGAND:633">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5389)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5387)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5386)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5384)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5388)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5385)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.153" comment="" name="-CO-NH-R" relevant="false" chebi-id="WO2007035143:820300" epochem-id="EPOCHEM:NEW:LIGAND:633">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10554)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10557)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10556)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10553)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10555)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10558)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.154" comment="" name="-CO-NH-R" relevant="false" chebi-id="WO2007035143:820300" epochem-id="EPOCHEM:NEW:LIGAND:633">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12907)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12906)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12910)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12905)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12908)..id(WO2007035143_w_12909)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.155" comment="" name="-CH2-NH-CO-R" relevant="false" chebi-id="WO2007035143:462612" epochem-id="EPOCHEM:NEW:LIGAND:634">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1551)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1555)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1554)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1557)..id(WO2007035143_w_1558)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1553)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1556)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1552)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.156" comment="" name="-CH2-NH-CO-R" relevant="false" chebi-id="WO2007035143:462612" epochem-id="EPOCHEM:NEW:LIGAND:634">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4886)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4881)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4884)..id(WO2007035143_w_4885)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4879)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4883)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4880)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4882)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.157" comment="" name="-CH2-NH-CO-R" relevant="false" chebi-id="WO2007035143:462612" epochem-id="EPOCHEM:NEW:LIGAND:634">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5394)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5399)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5397)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5395)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5398)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5400)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5396)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5401)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.158" comment="" name="-CH2-NH-CO-R" relevant="false" chebi-id="WO2007035143:462612" epochem-id="EPOCHEM:NEW:LIGAND:634">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10568)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10564)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10570)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10566)..id(WO2007035143_w_10567)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10565)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10563)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10569)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.159" comment="" name="-CH2-NH-CO-R" relevant="false" chebi-id="WO2007035143:462612" epochem-id="EPOCHEM:NEW:LIGAND:634">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12921)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12916)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12918)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12922)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12919)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12915)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12920)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12917)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.160" comment="" name="-CH2-O-CO-R" relevant="false" chebi-id="WO2007035143:337095" epochem-id="EPOCHEM:NEW:LIGAND:635">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1566)..id(WO2007035143_w_1567)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1569)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1568)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1564)..id(WO2007035143_w_1565)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1570)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1563)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.161" comment="" name="-CH2-O-CO-R" relevant="false" chebi-id="WO2007035143:337095" epochem-id="EPOCHEM:NEW:LIGAND:635">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4894)..id(WO2007035143_w_4895)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4892)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4898)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4891)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4893)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4897)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4896)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.162" comment="" name="-CH2-O-CO-R" relevant="false" chebi-id="WO2007035143:337095" epochem-id="EPOCHEM:NEW:LIGAND:635">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5412)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5406)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5411)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5410)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5407)..id(WO2007035143_w_5409)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5413)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.163" comment="" name="-CH2-O-CO-R" relevant="false" chebi-id="WO2007035143:337095" epochem-id="EPOCHEM:NEW:LIGAND:635">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10577)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10575)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10578)..id(WO2007035143_w_10580)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10576)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10581)..id(WO2007035143_w_10582)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.164" comment="" name="-CH2-O-CO-R" relevant="false" chebi-id="WO2007035143:337095" epochem-id="EPOCHEM:NEW:LIGAND:635">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12927)..id(WO2007035143_w_12928)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12931)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12929)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12932)..id(WO2007035143_w_12933)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12930)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12934)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.165" comment="" name="-CH2-NH-CO-NHR" relevant="false" chebi-id="WO2007035143:631578" epochem-id="EPOCHEM:NEW:LIGAND:636">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1582)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1576)..id(WO2007035143_w_1577)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1581)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1575)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1579)..id(WO2007035143_w_1580)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1578)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.166" comment="" name="-CH2-NH-CO-NHR" relevant="false" chebi-id="WO2007035143:631578" epochem-id="EPOCHEM:NEW:LIGAND:636">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4904)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4908)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4903)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4905)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4909)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4906)..id(WO2007035143_w_4907)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4910)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.167" comment="" name="-CH2-NH-CO-NHR" relevant="false" chebi-id="WO2007035143:631578" epochem-id="EPOCHEM:NEW:LIGAND:636">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5424)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5420)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5422)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5419)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5425)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5423)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5418)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5421)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.168" comment="" name="-CH2-NH-CO-NHR" relevant="false" chebi-id="WO2007035143:631578" epochem-id="EPOCHEM:NEW:LIGAND:636">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10591)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10590)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10592)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10588)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10594)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10593)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10587)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10589)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.169" comment="" name="-CH2-NH-CO-NHR" relevant="false" chebi-id="WO2007035143:631578" epochem-id="EPOCHEM:NEW:LIGAND:636">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12946)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12942)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12944)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12939)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12943)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12945)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12940)..id(WO2007035143_w_12941)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.170" comment="" name="-CH2-NH-CO-OR" relevant="false" chebi-id="WO2007035143:303072" epochem-id="EPOCHEM:NEW:LIGAND:637">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1587)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1589)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1592)..id(WO2007035143_w_1594)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1590)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1588)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1591)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.171" comment="" name="-CH2-NH-CO-OR" relevant="false" chebi-id="WO2007035143:303072" epochem-id="EPOCHEM:NEW:LIGAND:637">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4918)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4917)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4916)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4922)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4915)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4919)..id(WO2007035143_w_4921)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.172" comment="" name="-CH2-NH-CO-OR" relevant="false" chebi-id="WO2007035143:303072" epochem-id="EPOCHEM:NEW:LIGAND:637">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5435)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5433)..id(WO2007035143_w_5434)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5436)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5431)..id(WO2007035143_w_5432)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5430)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5437)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.173" comment="" name="-CH2-NH-CO-OR" relevant="false" chebi-id="WO2007035143:303072" epochem-id="EPOCHEM:NEW:LIGAND:637">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10604)..id(WO2007035143_w_10605)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10599)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10606)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10603)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10601)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10600)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10602)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.174" comment="" name="-CH2-NH-CO-OR" relevant="false" chebi-id="WO2007035143:303072" epochem-id="EPOCHEM:NEW:LIGAND:637">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12953)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12955)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12951)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12956)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12958)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12952)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12957)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12954)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.175" comment="" name="-CH2-NH-CS-NHR" relevant="false" chebi-id="WO2007035143:844110" epochem-id="EPOCHEM:NEW:LIGAND:638">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1603)..id(WO2007035143_w_1606)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1599)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1601)..id(WO2007035143_w_1602)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1600)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.176" comment="" name="-CH2-NH-CS-NHR" relevant="false" chebi-id="WO2007035143:844110" epochem-id="EPOCHEM:NEW:LIGAND:638">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4931)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4933)..id(WO2007035143_w_4934)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4930)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4928)..id(WO2007035143_w_4929)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4932)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4927)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.177" comment="" name="-CH2-NH-CS-NHR" relevant="false" chebi-id="WO2007035143:844110" epochem-id="EPOCHEM:NEW:LIGAND:638">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5445)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5442)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5446)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5449)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5444)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5443)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5448)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5447)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.178" comment="" name="-CH2-NH-CS-NHR" relevant="false" chebi-id="WO2007035143:844110" epochem-id="EPOCHEM:NEW:LIGAND:638">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10617)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10616)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10614)..id(WO2007035143_w_10615)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10618)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10613)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10611)..id(WO2007035143_w_10612)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.179" comment="" name="-CH2-NH-CS-NHR" relevant="false" chebi-id="WO2007035143:844110" epochem-id="EPOCHEM:NEW:LIGAND:638">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12966)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12969)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12967)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12970)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12963)..id(WO2007035143_w_12965)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12968)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.180" comment="" name="-CH2-O-CO-NHR" relevant="false" chebi-id="WO2007035143:388118" epochem-id="EPOCHEM:NEW:LIGAND:639">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1616)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1618)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1611)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1617)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1612)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1615)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1614)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1613)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.181" comment="" name="-CH2-O-CO-NHR" relevant="false" chebi-id="WO2007035143:388118" epochem-id="EPOCHEM:NEW:LIGAND:639">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4941)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4946)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4942)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4944)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4940)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4943)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4939)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4945)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.182" comment="" name="-CH2-O-CO-NHR" relevant="false" chebi-id="WO2007035143:388118" epochem-id="EPOCHEM:NEW:LIGAND:639">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5459)..id(WO2007035143_w_5461)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5457)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5455)..id(WO2007035143_w_5456)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5454)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5458)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.183" comment="" name="-CH2-O-CO-NHR" relevant="false" chebi-id="WO2007035143:388118" epochem-id="EPOCHEM:NEW:LIGAND:639">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10623)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10625)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10624)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10628)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10627)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10629)..id(WO2007035143_w_10630)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10626)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.184" comment="" name="-CH2-O-CO-NHR" relevant="false" chebi-id="WO2007035143:388118" epochem-id="EPOCHEM:NEW:LIGAND:639">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12978)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12976)..id(WO2007035143_w_12977)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12979)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12981)..id(WO2007035143_w_12982)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12975)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12980)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.217" comment="" name="- (CH2) m-Y- (CH2) m-" relevant="false" chebi-id="WO2007035143:985841" epochem-id="EPOCHEM:NEW:LIGAND:649">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4989)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4991)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4988)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4987)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4985)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4993)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4996)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4992)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4997)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4995)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4994)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4990)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4986)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.218" comment="" name="- (CH2) m-Y- (CH2) m-" relevant="false" chebi-id="WO2007035143:985841" epochem-id="EPOCHEM:NEW:LIGAND:649">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5500)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5507)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5505)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5509)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5511)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5506)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5504)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5512)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5502)..id(WO2007035143_w_5503)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5501)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5508)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5510)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.219" comment="" name="- (CH2) m-Y- (CH2) m-" relevant="false" chebi-id="WO2007035143:985841" epochem-id="EPOCHEM:NEW:LIGAND:649">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11297)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11299)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11295)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11294)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11303)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11296)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11298)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11301)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11300)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11302)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11305)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11293)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11304)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.220" comment="" name="- (CH2) m-Y- (CH2) m-" relevant="false" chebi-id="WO2007035143:985841" epochem-id="EPOCHEM:NEW:LIGAND:649">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11517)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11511)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11518)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11514)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11509)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11516)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11520)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11512)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11521)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11515)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11510)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11513)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11519)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.221" comment="" name="- (CH2) m-Y- (CH2) m-" relevant="false" chebi-id="WO2007035143:985841" epochem-id="EPOCHEM:NEW:LIGAND:649">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13021)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13019)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13022)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13024)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13029)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13028)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13031)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13030)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13020)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13027)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13026)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13023)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13025)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.248" comment="" name="-SO3" relevant="false" chebi-id="WO2007035143:308456" epochem-id="EPOCHEM:NEW:LIGAND:651">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1700)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1699)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.249" comment="" name="-SO3" relevant="false" chebi-id="WO2007035143:308456" epochem-id="EPOCHEM:NEW:LIGAND:651">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2874)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2873)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.250" comment="" name="-SO3" relevant="false" chebi-id="WO2007035143:308456" epochem-id="EPOCHEM:NEW:LIGAND:651">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3098)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3097)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.251" comment="" name="-SO3" relevant="false" chebi-id="WO2007035143:308456" epochem-id="EPOCHEM:NEW:LIGAND:651">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5023)..id(WO2007035143_w_5024)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.252" comment="" name="-SO3" relevant="false" chebi-id="WO2007035143:308456" epochem-id="EPOCHEM:NEW:LIGAND:651">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5539)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5538)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.253" comment="" name="-SO3" relevant="false" chebi-id="WO2007035143:308456" epochem-id="EPOCHEM:NEW:LIGAND:651">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10702)..id(WO2007035143_w_10703)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.254" comment="" name="-SO3" relevant="false" chebi-id="WO2007035143:308456" epochem-id="EPOCHEM:NEW:LIGAND:651">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11328)..id(WO2007035143_w_11329)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.255" comment="" name="-SO3" relevant="false" chebi-id="WO2007035143:308456" epochem-id="EPOCHEM:NEW:LIGAND:651">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11544)..id(WO2007035143_w_11545)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.256" comment="" name="-SO3" relevant="false" chebi-id="WO2007035143:308456" epochem-id="EPOCHEM:NEW:LIGAND:651">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13054)..id(WO2007035143_w_13055)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.257" comment="" name="-COOH" relevant="false" chebi-id="CHEBI:46883" epochem-id="EPOCHEM:NEW:LIGAND:652">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1702)..id(WO2007035143_w_1703)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.258" comment="" name="-COOH" relevant="false" chebi-id="CHEBI:46883" epochem-id="EPOCHEM:NEW:LIGAND:652">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2877)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2876)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.259" comment="" name="-COOH" relevant="false" chebi-id="CHEBI:46883" epochem-id="EPOCHEM:NEW:LIGAND:652">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3100)..id(WO2007035143_w_3101)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.260" comment="" name="-COOH" relevant="false" chebi-id="CHEBI:46883" epochem-id="EPOCHEM:NEW:LIGAND:652">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5027)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5026)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.261" comment="" name="-COOH" relevant="false" chebi-id="CHEBI:46883" epochem-id="EPOCHEM:NEW:LIGAND:652">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5542)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5541)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.262" comment="" name="-COOH" relevant="false" chebi-id="CHEBI:46883" epochem-id="EPOCHEM:NEW:LIGAND:652">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10705)..id(WO2007035143_w_10706)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.263" comment="" name="-COOH" relevant="false" chebi-id="CHEBI:46883" epochem-id="EPOCHEM:NEW:LIGAND:652">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11332)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11331)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.264" comment="" name="-COOH" relevant="false" chebi-id="CHEBI:46883" epochem-id="EPOCHEM:NEW:LIGAND:652">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11548)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11547)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.265" comment="" name="-COOH" relevant="false" chebi-id="CHEBI:46883" epochem-id="EPOCHEM:NEW:LIGAND:652">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13058)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13057)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.266" comment="" name="-NH2" relevant="false" chebi-id="CHEBI:46882" epochem-id="EPOCHEM:NEW:LIGAND:653">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1706)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1705)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.267" comment="" name="-NH2" relevant="false" chebi-id="CHEBI:46882" epochem-id="EPOCHEM:NEW:LIGAND:653">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2879)..id(WO2007035143_w_2880)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.268" comment="" name="-NH2" relevant="false" chebi-id="CHEBI:46882" epochem-id="EPOCHEM:NEW:LIGAND:653">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3104)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3103)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.269" comment="" name="-NH2" relevant="false" chebi-id="CHEBI:46882" epochem-id="EPOCHEM:NEW:LIGAND:653">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5030)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5029)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.270" comment="" name="-NH2" relevant="false" chebi-id="CHEBI:46882" epochem-id="EPOCHEM:NEW:LIGAND:653">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5545)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5544)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.271" comment="" name="-NH2" relevant="false" chebi-id="CHEBI:46882" epochem-id="EPOCHEM:NEW:LIGAND:653">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10708)..id(WO2007035143_w_10709)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.272" comment="" name="-NH2" relevant="false" chebi-id="CHEBI:46882" epochem-id="EPOCHEM:NEW:LIGAND:653">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11335)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11334)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.273" comment="" name="-NH2" relevant="false" chebi-id="CHEBI:46882" epochem-id="EPOCHEM:NEW:LIGAND:653">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11551)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11550)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.274" comment="" name="-NH2" relevant="false" chebi-id="CHEBI:46882" epochem-id="EPOCHEM:NEW:LIGAND:653">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13061)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13060)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.275" comment="" name="-OH" relevant="false" chebi-id="CHEBI:43176" epochem-id="EPOCHEM:NEW:LIGAND:642">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1708)..id(WO2007035143_w_1709)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.276" comment="" name="-OH" relevant="false" chebi-id="CHEBI:43176" epochem-id="EPOCHEM:NEW:LIGAND:642">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2882)..id(WO2007035143_w_2883)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.277" comment="" name="-OH" relevant="false" chebi-id="CHEBI:43176" epochem-id="EPOCHEM:NEW:LIGAND:642">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3106)..id(WO2007035143_w_3107)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.278" comment="" name="-OH" relevant="false" chebi-id="CHEBI:43176" epochem-id="EPOCHEM:NEW:LIGAND:642">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5033)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5032)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.279" comment="" name="-OH" relevant="false" chebi-id="CHEBI:43176" epochem-id="EPOCHEM:NEW:LIGAND:642">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5548)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5547)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.280" comment="" name="-OH" relevant="false" chebi-id="CHEBI:43176" epochem-id="EPOCHEM:NEW:LIGAND:642">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10711)..id(WO2007035143_w_10712)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.281" comment="" name="-OH" relevant="false" chebi-id="CHEBI:43176" epochem-id="EPOCHEM:NEW:LIGAND:642">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11337)..id(WO2007035143_w_11338)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.282" comment="" name="-OH" relevant="false" chebi-id="CHEBI:43176" epochem-id="EPOCHEM:NEW:LIGAND:642">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11554)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11553)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.283" comment="" name="-OH" relevant="false" chebi-id="CHEBI:43176" epochem-id="EPOCHEM:NEW:LIGAND:642">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13064)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13063)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.284" comment="" name="-CONH2" relevant="false" chebi-id="CHEBI:23004" epochem-id="EPOCHEM:NEW:LIGAND:654">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1711)..id(WO2007035143_w_1712)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.285" comment="" name="-CONH2" relevant="false" chebi-id="CHEBI:23004" epochem-id="EPOCHEM:NEW:LIGAND:654">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2885)..id(WO2007035143_w_2886)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.286" comment="" name="-CONH2" relevant="false" chebi-id="CHEBI:23004" epochem-id="EPOCHEM:NEW:LIGAND:654">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3110)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3109)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.287" comment="" name="-CONH2" relevant="false" chebi-id="CHEBI:23004" epochem-id="EPOCHEM:NEW:LIGAND:654">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5036)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5035)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.288" comment="" name="-CONH2" relevant="false" chebi-id="CHEBI:23004" epochem-id="EPOCHEM:NEW:LIGAND:654">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5551)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5550)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.289" comment="" name="-CONH2" relevant="false" chebi-id="CHEBI:23004" epochem-id="EPOCHEM:NEW:LIGAND:654">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10715)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10714)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.290" comment="" name="-CONH2" relevant="false" chebi-id="CHEBI:23004" epochem-id="EPOCHEM:NEW:LIGAND:654">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11341)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11340)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.291" comment="" name="-CONH2" relevant="false" chebi-id="CHEBI:23004" epochem-id="EPOCHEM:NEW:LIGAND:654">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11556)..id(WO2007035143_w_11557)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.292" comment="" name="-CONH2" relevant="false" chebi-id="CHEBI:23004" epochem-id="EPOCHEM:NEW:LIGAND:654">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13066)..id(WO2007035143_w_13067)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.293" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1491)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.294" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1697)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.295" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1723)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.296" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2790)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.297" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2871)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.298" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2897)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.299" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3095)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.300" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4819)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.301" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5021)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.302" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5047)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.303" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5334)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.304" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5536)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.305" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5562)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.306" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6854)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.307" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6906)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.308" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6942)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.309" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_7022)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.310" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10503)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.311" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10700)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.312" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10726)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.313" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11251)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.314" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11326)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.315" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11352)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.316" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11542)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.317" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12855)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.318" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13052)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.319" comment="" name="H" relevant="false" chebi-id="CHEBI:48237" epochem-id="EPOCHEM:NEW:LIGAND:655">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13078)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.320" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1524)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.321" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1544)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.322" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1554)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.323" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1578)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.324" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1590)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.325" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1602)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.326" comment="" name="NH" relevant="false" chebi-id="CHEBI:29339" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1686)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.327" comment="" name="NH" relevant="false" chebi-id="CHEBI:29339" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2860)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.328" comment="" name="NH" relevant="false" chebi-id="CHEBI:29339" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3084)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.329" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4852)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.330" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4872)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.331" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4882)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.332" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4906)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.333" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4918)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.334" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4930)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.335" comment="" name="NH" relevant="false" chebi-id="CHEBI:29339" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5010)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.336" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5367)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.337" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5387)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.338" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5397)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.339" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5421)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.340" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5433)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.341" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5445)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.342" comment="" name="NH" relevant="false" chebi-id="CHEBI:29339" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5525)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.343" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10536)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.344" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10556)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.345" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10566)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.346" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10590)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.347" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10602)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.348" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10614)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.349" comment="" name="NH" relevant="false" chebi-id="CHEBI:29339" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10692)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.350" comment="" name="NH" relevant="false" chebi-id="CHEBI:29339" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11318)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.351" comment="" name="NH" relevant="false" chebi-id="CHEBI:29339" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11534)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.352" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12888)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.353" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12908)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.354" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12918)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.355" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12942)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.356" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12954)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.357" comment="" name="NH" relevant="false" chebi-id="WO2007035143:274826" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12966)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.358" comment="" name="NH" relevant="false" chebi-id="CHEBI:29339" epochem-id="EPOCHEM:NEW:LIGAND:656">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13044)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.392" comment="" name="S" relevant="false" chebi-id="WO2007035143:722953" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1514)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.393" comment="" name="S" relevant="false" chebi-id="CHEBI:29830" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1688)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.395" comment="" name="S" relevant="false" chebi-id="CHEBI:29830" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2862)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.396" comment="" name="S" relevant="false" chebi-id="WO2007035143:722953" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2942)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.397" comment="" name="S" relevant="false" chebi-id="CHEBI:29830" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3086)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.398" comment="" name="S" relevant="false" chebi-id="WO2007035143:722953" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4842)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.399" comment="" name="S" relevant="false" chebi-id="CHEBI:29830" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5012)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.401" comment="" name="S" relevant="false" chebi-id="WO2007035143:722953" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5357)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.402" comment="" name="S" relevant="false" chebi-id="CHEBI:29830" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5527)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.406" comment="" name="S" relevant="false" chebi-id="CHEBI:29830" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6291)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.407" comment="" name="S" relevant="false" chebi-id="WO2007035143:722953" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6403)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.409" comment="" name="S" relevant="false" chebi-id="CHEBI:29830" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6442)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.411" comment="" name="S" relevant="false" chebi-id="CHEBI:29830" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6515)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.415" comment="" name="S" relevant="false" chebi-id="WO2007035143:722953" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10526)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.416" comment="" name="S" relevant="false" chebi-id="CHEBI:29830" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10694)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.418" comment="" name="S" relevant="false" chebi-id="CHEBI:29830" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11320)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.419" comment="" name="S" relevant="false" chebi-id="WO2007035143:722953" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11397)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.420" comment="" name="S" relevant="false" chebi-id="CHEBI:29830" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11536)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.422" comment="" name="S" relevant="false" chebi-id="WO2007035143:722953" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_12878)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.423" comment="" name="S" relevant="false" chebi-id="CHEBI:29830" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13046)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.424" comment="" name="S" relevant="false" chebi-id="WO2007035143:722953" epochem-id="EPOCHEM:NEW:LIGAND:657">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13123)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.425" comment="sulfite" name="sulf^e" relevant="false" chebi-id="WO2007035143:226333" epochem-id="EPOCHEM:NEW:LIGAND:658">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6593)..id(WO2007035143_w_6594)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_6592)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.447" comment="" name="- (CH2) m-Y- (CH2) m-" relevant="false" chebi-id="WO2007035143:985841" epochem-id="EPOCHEM:NEW:LIGAND:649">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1669)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1673)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1671)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1661)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1666)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1672)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1668)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1663)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1665)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1670)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1664)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1667)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1662)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.448" comment="" name="- (CH2) m-Y- (CH2) m-" relevant="false" chebi-id="WO2007035143:985841" epochem-id="EPOCHEM:NEW:LIGAND:649">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2839)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2846)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2841)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2837)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2845)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2843)..id(WO2007035143_w_2844)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2847)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2835)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2838)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2836)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2840)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2842)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.449" comment="" name="- (CH2) m-Y- (CH2) m-" relevant="false" chebi-id="WO2007035143:985841" epochem-id="EPOCHEM:NEW:LIGAND:649">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3062)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3061)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3070)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3063)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3071)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3065)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3068)..id(WO2007035143_w_3069)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3059)..id(WO2007035143_w_3060)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3064)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3066)..id(WO2007035143_w_3067)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.450" comment="" name="- (CH2) m-Y- (CH2) m-" relevant="false" chebi-id="WO2007035143:985841" epochem-id="EPOCHEM:NEW:LIGAND:649">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10677)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10667)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10669)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10676)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10673)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10679)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10672)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10671)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10668)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10675)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10678)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10674)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10670)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.451" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1665)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1661)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1666)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1663)..id(WO2007035143_w_1664)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1662)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.452" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1669)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1673)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1670)..id(WO2007035143_w_1672)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_1668)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.453" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2832)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2828)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2831)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2833)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2829)..id(WO2007035143_w_2830)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.454" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2839)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2835)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2837)..id(WO2007035143_w_2838)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2836)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2840)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.455" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2843)..id(WO2007035143_w_2844)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2847)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2846)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2845)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_2842)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.456" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3057)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3054)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3053)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3055)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3052)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3056)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.457" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3062)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3061)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3063)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3059)..id(WO2007035143_w_3060)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3064)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.458" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3071)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3068)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3070)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3069)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_3066)..id(WO2007035143_w_3067)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.459" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4983)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4978)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4980)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4982)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4981)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4979)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.460" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4985)..id(WO2007035143_w_4986)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4990)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4988)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4987)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4989)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.461" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4997)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4992)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4995)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4993)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4996)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_4994)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.462" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5494)..id(WO2007035143_w_5496)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5493)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5497)..id(WO2007035143_w_5498)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.463" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5503)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5500)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5504)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5501)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5505)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5502)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.464" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5508)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5512)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5507)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5510)..id(WO2007035143_w_5511)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_5509)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.465" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10664)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10661)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10665)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10662)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10660)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10663)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.466" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10667)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10671)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10668)..id(WO2007035143_w_10669)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10672)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10670)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.467" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10677)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10676)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10675)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10679)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10678)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_10674)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.468" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11288)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11286)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11290)..id(WO2007035143_w_11291)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11289)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11287)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.469" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11293)..id(WO2007035143_w_11294)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11298)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11295)..id(WO2007035143_w_11297)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.470" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11303)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11305)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11301)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11300)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11302)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11304)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.471" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11502)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11505)..id(WO2007035143_w_11506)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11503)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11507)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11504)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.472" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11514)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11511)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11513)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11510)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11512)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11509)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.473" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11517)..id(WO2007035143_w_11518)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11520)..id(WO2007035143_w_11521)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11516)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_11519)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.474" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13012)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13017)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13014)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13013)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13015)..id(WO2007035143_w_13016)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.475" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13019)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13022)..id(WO2007035143_w_13023)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13020)..id(WO2007035143_w_13021)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13024)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007035143.HC.ligand-names.476" comment="" name="- (CH2) m-" relevant="false" chebi-id="WO2007035143:445505" epochem-id="EPOCHEM:NEW:LIGAND:659">
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13027)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13026)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13028)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13030)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13029)"/>
+      <nite:child href="WO2007035143.words.xml#id(WO2007035143_w_13031)"/>
+   </ligand-name>
+</nite:root>

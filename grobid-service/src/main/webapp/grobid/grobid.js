@@ -223,7 +223,7 @@ var grobid = (function($) {
 	}
 
 	function ShowRequest2(formData, jqForm, options) {
-	    $('#requestResult2').html('<font color="grey">Requesting server...</font>');
+	    $('#infoResult2').html('<font color="grey">Requesting server...</font>');
 	    return true;
 	}
 
@@ -238,9 +238,11 @@ var grobid = (function($) {
 	}
 
     function AjaxError2(message) {
-        if(!message) message = "The document cannot be annotated. Please check whether the document is valid or the logs.";
-        $('#requestResult2').html("<font color='red'>Error encountered while requesting the server.<br/>" + message + "</font>");
-        responseJson = null;
+    	if (!message)
+    		message ="";
+    	message += " - The PDF document cannot be annotated. Please check the server logs.";
+    	$('#infoResult2').html("<font color='red'>Error encountered while requesting the server.<br/>"+message+"</font>");
+		responseJson = null;
         return true;
     }
 
@@ -292,7 +294,7 @@ var grobid = (function($) {
                             pdfjsframe.contentWindow.PDFViewerApplication.open(pdfAsArray);
                         };
                     } else if (xhr.status != 200) {
-                        AjaxError2("");
+                        AjaxError2("Response " + xhr.status + ": " + xhr.responseText);
                     }
                 }
             };
@@ -414,7 +416,7 @@ var grobid = (function($) {
                     //console.log(response);
                     setupAnnotations(response);
                 } else if (xhr.status != 200) {
-                    AjaxError2("");
+                    AjaxError2("Response " + xhr.status + ": ");
                 }
             };
             xhr.send(formData);
@@ -600,7 +602,7 @@ var grobid = (function($) {
 
 	function setupAnnotations(response) {
 		// we must check/wait that the corresponding PDF page is rendered at this point
-
+		$('#infoResult2').html('');
 		var json = response;
 		var pageInfo = json.pages;
 

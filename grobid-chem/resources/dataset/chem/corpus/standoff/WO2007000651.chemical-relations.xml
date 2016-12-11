@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007000651.chemical-relations" xmlns:nite="http://nite.sourceforge.net/">
+   <chem-relation nite:id="WO2007000651.chemical-relations.1" source="DESCRIPTION" relation="is a" target="molecular structure">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_205)"/>
+   </chem-relation>
+   <chem-relation nite:id="WO2007000651.chemical-relations.2" source="DESCRIPTION" relation="is conjugate acid of" target="monoatomic anions">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_205)"/>
+   </chem-relation>
+   <chem-relation nite:id="WO2007000651.chemical-relations.3" source="normalising" relation="is a" target="monoatomic ions">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_279)"/>
+   </chem-relation>
+   <chem-relation nite:id="WO2007000651.chemical-relations.4" source="normalising" relation="is a" target="atom test">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_279)"/>
+   </chem-relation>
+   <chem-relation nite:id="WO2007000651.chemical-relations.5" source="normalising" relation="is tautomer of" target="monoatomic anions">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_279)"/>
+   </chem-relation>
+   <chem-relation nite:id="WO2007000651.chemical-relations.6" source="is known to have" relation="is conjugate base of" target="groups">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_86)..id(WO2007000651_w_89)"/>
+   </chem-relation>
+   <chem-relation nite:id="WO2007000651.chemical-relations.7" source="rashes" relation="is conjugate base of" target="rashes">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_325)"/>
+   </chem-relation>
+</nite:root>

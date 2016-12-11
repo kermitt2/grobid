@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007031823.HC.formula-names" xmlns:nite="http://nite.sourceforge.net/">
+   <formula-name nite:id="WO2007031823.HC.formula-names.1" comment="" name="Pd" relevant="false" chebi-id="CHEBI:33363" epochem-id="EPOCHEM:NEW:FORMULA:141">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_639)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007031823.HC.formula-names.2" comment="HCl" name="HCI" relevant="false" chebi-id="WO2007031823:199253" epochem-id="EPOCHEM:NEW:FORMULA:48">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_387)"/>
+   </formula-name>
+</nite:root>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<pat-type nite:id="p_1" type="patent" xmlns:nite="http://nite.sourceforge.net/">
+   <pat-type nite:id="p_2" type="EP">
+      <pat-type nite:id="p_3" type="baton-like"/>
+      <pat-type nite:id="p_4" type="ideographic"/>
+   </pat-type>
+   <pat-type nite:id="p_5" type="WO">
+      <pat-type nite:id="p_6" type="IPC">
+         <pat-type nite:id="p_7" type="HA61K"/>
+         <pat-type nite:id="p_8" type="HC55D"/>
+      </pat-type>
+   </pat-type>
+</pat-type>

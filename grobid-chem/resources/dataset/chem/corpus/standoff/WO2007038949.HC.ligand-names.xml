@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007038949.HC.ligand-names" xmlns:nite="http://nite.sourceforge.net/">
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.1" comment="" name="acetic" relevant="false" chebi-id="WO2007038949:312421" epochem-id="EPOCHEM:NEW:LIGAND:76">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2408)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.2" comment="" name="lactic" relevant="false" chebi-id="WO2007038949:204425" epochem-id="EPOCHEM:NEW:LIGAND:77">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2410)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.3" comment="" name="citric" relevant="false" chebi-id="WO2007038949:187241" epochem-id="EPOCHEM:NEW:LIGAND:78">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2412)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.4" comment="" name="malic" relevant="false" chebi-id="WO2007038949:712782" epochem-id="EPOCHEM:NEW:LIGAND:79">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2414)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.5" comment="" name="formaric" relevant="false" chebi-id="WO2007038949:213823" epochem-id="EPOCHEM:NEW:LIGAND:80">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2416)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.6" comment="" name="tartaric" relevant="false" chebi-id="WO2007038949:588331" epochem-id="EPOCHEM:NEW:LIGAND:81">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2418)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.7" comment="" name="stearic" relevant="false" chebi-id="WO2007038949:586884" epochem-id="EPOCHEM:NEW:LIGAND:52">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2420)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.8" comment="" name="ascorbic" relevant="false" chebi-id="WO2007038949:223336" epochem-id="EPOCHEM:NEW:LIGAND:82">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2422)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.9" comment="" name="succinic" relevant="false" chebi-id="WO2007038949:322271" epochem-id="EPOCHEM:NEW:LIGAND:83">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2424)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.10" comment="" name="benzoic" relevant="false" chebi-id="WO2007038949:414242" epochem-id="EPOCHEM:NEW:LIGAND:84">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2426)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.11" comment="" name="methanesulfonic" relevant="false" chebi-id="WO2007038949:759243" epochem-id="EPOCHEM:NEW:LIGAND:85">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2428)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.12" comment="" name="toluenesulfonic" relevant="false" chebi-id="WO2007038949:361176" epochem-id="EPOCHEM:NEW:LIGAND:86">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2430)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.13" comment="" name="nitric" relevant="false" chebi-id="WO2007038949:171035" epochem-id="EPOCHEM:NEW:LIGAND:87">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2447)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.14" comment="" name="diphosphoric" relevant="false" chebi-id="WO2007038949:72646" epochem-id="EPOCHEM:NEW:LIGAND:88">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2449)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.15" comment="" name="sulphuric" relevant="false" chebi-id="WO2007038949:40244" epochem-id="EPOCHEM:NEW:LIGAND:89">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2451)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.16" comment="" name="ether" relevant="false" chebi-id="CHEBI:25698" epochem-id="EPOCHEM:NEW:LIGAND:90">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_3181)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.20" comment="" name="alkyl" relevant="false" chebi-id="CHEBI:22323" epochem-id="EPOCHEM:NEW:LIGAND:374">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_6411)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.21" comment="" name="phenyl" relevant="false" chebi-id="CHEBI:30396" epochem-id="EPOCHEM:NEW:LIGAND:108">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_6413)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.22" comment="hydrochloric" name="hydrochloride" relevant="false" chebi-id="CHEBI:36807" epochem-id="EPOCHEM:NEW:LIGAND:601">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_2445)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038949.HC.ligand-names.23" comment="" name="hydroxyl groups" relevant="false" chebi-id="WO2007038949:301673" epochem-id="EPOCHEM:NEW:LIGAND:602">
+      <nite:child href="WO2007038949.words.xml#id(WO2007038949_w_3856)..id(WO2007038949_w_3857)"/>
+   </ligand-name>
+</nite:root>

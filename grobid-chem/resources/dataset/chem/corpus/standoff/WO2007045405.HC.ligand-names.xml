@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007045405.HC.ligand-names" xmlns:nite="http://nite.sourceforge.net/">
+   <ligand-name nite:id="WO2007045405.HC.ligand-names.1" comment="" name="-N(CH3)2" relevant="false" chebi-id="WO2007045405:382681" epochem-id="EPOCHEM:NEW:LIGAND:465">
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_309)"/>
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_312)"/>
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_308)"/>
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_310)"/>
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_307)"/>
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_311)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007045405.HC.ligand-names.2" comment="" name="N(CH3)2" relevant="false" chebi-id="WO2007045405:489830" epochem-id="EPOCHEM:NEW:LIGAND:626">
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_208)"/>
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_205)"/>
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_207)"/>
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_206)"/>
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_209)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007045405.HC.ligand-names.3" comment="" name="N(CH3)2" relevant="false" chebi-id="WO2007045405:489830" epochem-id="EPOCHEM:NEW:LIGAND:626">
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_311)"/>
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_310)"/>
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_312)"/>
+      <nite:child href="WO2007045405.words.xml#id(WO2007045405_w_308)..id(WO2007045405_w_309)"/>
+   </ligand-name>
+</nite:root>

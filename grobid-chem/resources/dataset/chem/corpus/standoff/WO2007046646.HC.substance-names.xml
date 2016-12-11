@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007046646.HC.substance-names" xmlns:nite="http://nite.sourceforge.net/">
+   <substance-name nite:id="WO2007046646.HC.substance-names.1" comment="" name="acrylic resin" relevant="false" chebi-id="WO2007046646:273823" epochem-id="EPOCHEM:NEW:SUBSTANCE:235">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_1000)..id(WO2007046646_w_1001)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.2" comment="" name="acrylic resin" relevant="false" chebi-id="WO2007046646:273823" epochem-id="EPOCHEM:NEW:SUBSTANCE:235">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2274)..id(WO2007046646_w_2275)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.3" comment="" name="acrylic resin" relevant="false" chebi-id="WO2007046646:273823" epochem-id="EPOCHEM:NEW:SUBSTANCE:235">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2364)..id(WO2007046646_w_2365)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.4" comment="" name="acrylic resin" relevant="false" chebi-id="WO2007046646:273823" epochem-id="EPOCHEM:NEW:SUBSTANCE:235">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2390)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2389)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.5" comment="" name="acrylic resin" relevant="false" chebi-id="WO2007046646:273823" epochem-id="EPOCHEM:NEW:SUBSTANCE:235">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2479)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2478)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.6" comment="" name="acrylic resin" relevant="false" chebi-id="WO2007046646:273823" epochem-id="EPOCHEM:NEW:SUBSTANCE:235">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2528)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2527)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.7" comment="" name="acrylic resin" relevant="false" chebi-id="WO2007046646:273823" epochem-id="EPOCHEM:NEW:SUBSTANCE:235">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2589)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2588)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.8" comment="" name="acrylic resin" relevant="false" chebi-id="WO2007046646:273823" epochem-id="EPOCHEM:NEW:SUBSTANCE:235">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2623)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2622)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.9" comment="" name="acrylic resin" relevant="false" chebi-id="WO2007046646:273823" epochem-id="EPOCHEM:NEW:SUBSTANCE:235">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2657)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2656)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.10" comment="" name="acrylic resin" relevant="false" chebi-id="WO2007046646:273823" epochem-id="EPOCHEM:NEW:SUBSTANCE:235">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_2813)..id(WO2007046646_w_2814)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.11" comment="" name="acrylic resin" relevant="false" chebi-id="WO2007046646:273823" epochem-id="EPOCHEM:NEW:SUBSTANCE:235">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_3473)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_3472)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.12" comment="" name="acrylic matrix resin" relevant="false" chebi-id="WO2007046646:387898" epochem-id="EPOCHEM:NEW:SUBSTANCE:236">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_1059)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_1058)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_1060)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.13" comment="" name="acrylic matrix resin" relevant="false" chebi-id="WO2007046646:387898" epochem-id="EPOCHEM:NEW:SUBSTANCE:236">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_1088)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_1087)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_1089)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.14" comment="" name="acrylic matrix resin" relevant="false" chebi-id="WO2007046646:387898" epochem-id="EPOCHEM:NEW:SUBSTANCE:236">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_1308)..id(WO2007046646_w_1309)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_1307)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007046646.HC.substance-names.15" comment="" name="acrylic matrix resin" relevant="false" chebi-id="WO2007046646:387898" epochem-id="EPOCHEM:NEW:SUBSTANCE:236">
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_1403)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_1402)"/>
+      <nite:child href="WO2007046646.words.xml#id(WO2007046646_w_1401)"/>
+   </substance-name>
+</nite:root>

@@ -226,7 +226,8 @@ public class Figure {
 			XmlBuilderUtils.addXmlId(figureElement, "fig_" + id);
 		}
 
-		if (config.isGenerateTeiCoordinates()) {
+		if ((config.getGenerateTeiCoordinates() != null) && 
+			(config.getGenerateTeiCoordinates().contains("figure"))) {
 			String coords;
 			if (getBitmapGraphicObjects() != null && !getBitmapGraphicObjects().isEmpty()) {
 				GraphicObject go = getBitmapGraphicObjects().get(0);

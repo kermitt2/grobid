@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007039059.HC.substance-names" xmlns:nite="http://nite.sourceforge.net/">
+   <substance-name nite:id="WO2007039059.HC.substance-names.5" comment="" name="sodium cocoate" relevant="false" chebi-id="WO2007039059:297265" epochem-id="EPOCHEM:NEW:SUBSTANCE:148">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7096)"/>
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7095)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.6" comment="" name="sodium tallowate" relevant="false" chebi-id="WO2007039059:268822" epochem-id="EPOCHEM:NEW:SUBSTANCE:149">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7098)..id(WO2007039059_w_7099)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.7" comment="" name="potassium castorate" relevant="false" chebi-id="WO2007039059:236226" epochem-id="EPOCHEM:NEW:SUBSTANCE:150">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7102)"/>
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7101)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.8" comment="" name="cocoglyceride" relevant="false" chebi-id="WO2007039059:74766" epochem-id="EPOCHEM:NEW:SUBSTANCE:151">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7732)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.9" comment="" name="polydimethylsiloxane" relevant="false" chebi-id="CHEBI:48137" epochem-id="EPOCHEM:NEW:SUBSTANCE:26">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7848)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.11" comment="" name="poly(methylphenylsiloxane)" relevant="false" chebi-id="WO2007039059:625180" epochem-id="EPOCHEM:NEW:SUBSTANCE:27">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7852)..id(WO2007039059_w_7853)"/>
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7851)"/>
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7850)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.12" comment="" name="polyethylene glycol" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:SUBSTANCE:2">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_8316)..id(WO2007039059_w_8317)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.13" comment="" name="polypropylene glycol" relevant="false" chebi-id="WO2007039059:793448" epochem-id="EPOCHEM:NEW:SUBSTANCE:30">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_8307)..id(WO2007039059_w_8308)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.14" comment="" name="hyaluronic acid" relevant="false" chebi-id="CHEBI:16336" epochem-id="EPOCHEM:NEW:SUBSTANCE:7">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_8374)"/>
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_8373)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.15" comment="" name="polyglycerol esters" relevant="false" chebi-id="WO2007039059:655580" epochem-id="EPOCHEM:NEW:SUBSTANCE:172">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7043)..id(WO2007039059_w_7044)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.16" comment="" name="alginic acid" relevant="false" chebi-id="WO2007039059:170783" epochem-id="EPOCHEM:NEW:SUBSTANCE:39">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_9739)"/>
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_9738)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.17" comment="" name="polyvinylpyrolidone" relevant="false" chebi-id="WO2007039059:558045" epochem-id="EPOCHEM:NEW:SUBSTANCE:173">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_9744)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.18" comment="" name="polyethylene glycols" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:SUBSTANCE:73">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_9790)..id(WO2007039059_w_9791)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.19" comment="" name="steareth-20" relevant="false" chebi-id="WO2007039059:74090" epochem-id="EPOCHEM:NEW:SUBSTANCE:282">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7206)"/>
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7205)"/>
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7207)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.20" comment="" name="PEG- 22" relevant="false" chebi-id="WO2007039059:702140" epochem-id="EPOCHEM:NEW:SUBSTANCE:283">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7212)..id(WO2007039059_w_7213)"/>
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7211)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.21" comment="" name="PEG-45" relevant="false" chebi-id="WO2007039059:133673" epochem-id="EPOCHEM:NEW:SUBSTANCE:325">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7221)"/>
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7220)"/>
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_7219)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.22" comment="" name="chitosan" relevant="false" chebi-id="WO2007039059:866960" epochem-id="EPOCHEM:NEW:SUBSTANCE:11">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_8376)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007039059.HC.substance-names.23" comment="" name="hydroxypropyl cellulose" relevant="false" chebi-id="WO2007039059:880472" epochem-id="EPOCHEM:NEW:SUBSTANCE:32">
+      <nite:child href="WO2007039059.words.xml#id(WO2007039059_w_8596)..id(WO2007039059_w_8597)"/>
+   </substance-name>
+</nite:root>

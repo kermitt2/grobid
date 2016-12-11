@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007038995.HC.chemical-relations" xmlns:nite="http://nite.sourceforge.net/">
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.1" source="EPOCHEM:NEW:COMPOUND:999" relation="is a" target="EPOCHEM:NEW:CLASS:228">
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.2)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.2" source="EPOCHEM:NEW:COMPOUND:1000" relation="is a" target="EPOCHEM:NEW:CLASS:228">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.12)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.2)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.3" source="EPOCHEM:NEW:COMPOUND:1001" relation="is a" target="EPOCHEM:NEW:CLASS:229">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.14)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.3)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.4" source="EPOCHEM:NEW:COMPOUND:1002" relation="is a" target="EPOCHEM:NEW:CLASS:229">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.15)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.3)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.5" source="EPOCHEM:NEW:COMPOUND:1003" relation="is a" target="EPOCHEM:NEW:CLASS:230">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.16)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.4)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.6" source="EPOCHEM:NEW:COMPOUND:1004" relation="is a" target="EPOCHEM:NEW:CLASS:230">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.18)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.4)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.7" source="EPOCHEM:NEW:COMPOUND:1" relation="is a" target="EPOCHEM:NEW:CLASS:230">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.20)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.4)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.8" source="EPOCHEM:NEW:COMPOUND:1005" relation="is a" target="EPOCHEM:NEW:CLASS:230">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.21)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.4)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.9" source="EPOCHEM:NEW:COMPOUND:1006" relation="is a" target="EPOCHEM:NEW:CLASS:231">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.22)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.5)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.10" source="EPOCHEM:COMPOUND:1026" relation="is a" target="EPOCHEM:NEW:CLASS:231">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.10)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.5)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.11" source="EPOCHEM:NEW:COMPOUND:1007" relation="is a" target="EPOCHEM:NEW:CLASS:231">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.23)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.5)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.12" source="EPOCHEM:NEW:COMPOUND:1008" relation="is a" target="EPOCHEM:NEW:CLASS:232">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.24)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.6)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.14" source="EPOCHEM:NEW:COMPOUND:1011" relation="is a" target="EPOCHEM:NEW:CLASS:232">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.28)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.6)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.17" source="EPOCHEM:NEW:COMPOUND:1009" relation="is a" target="EPOCHEM:NEW:CLASS:232">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.25)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.6)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.18" source="EPOCHEM:NEW:COMPOUND:1010" relation="is a" target="EPOCHEM:NEW:CLASS:232">
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.6)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.19" source="EPOCHEM:NEW:COMPOUND:1012" relation="is a" target="EPOCHEM:NEW:CLASS:233">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.29)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.7)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.20" source="EPOCHEM:COMPOUND:1047" relation="is a" target="EPOCHEM:NEW:CLASS:233">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.8)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.7)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.21" source="EPOCHEM:NEW:COMPOUND:33" relation="is a" target="EPOCHEM:NEW:CLASS:233">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.30)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.class-names.xml#id(WO2007038995.HC.class-names.7)"/></chem-relation>
+   <chem-relation nite:id="WO2007038995.HC.chemical-relations.22" source="EPOCHEM:NEW:COMPOUND:1986" relation="synonyms" target="EPOCHEM:NEW:COMPOUND:1985">
+      <nite:pointer role="source"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.49)"/>
+      <nite:pointer role="target"  href="WO2007038995.HC.chemical-names.xml#id(WO2007038995.HC.chemical-names.48)"/>
+   </chem-relation>
+</nite:root>
