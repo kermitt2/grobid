@@ -171,6 +171,10 @@ public class GrobidAnalysisConfig {
         return generateTeiCoordinates;
     }
 
+    public boolean isGenerateTeiCoordinates(String type) {
+        return getGenerateTeiCoordinates() != null && getGenerateTeiCoordinates().contains(type);
+    }
+
     public File getPdfAssetPath() {
         return pdfAssetPath;
     }
