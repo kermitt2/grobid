@@ -12,10 +12,10 @@ import org.grobid.core.data.Date;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.SegmentationLabel;
-import org.grobid.core.engines.label.TaggingLabel;
-import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.BoundingBox;
@@ -971,7 +971,7 @@ public class TEIFormatter {
                 if (acknowResultLines[i].trim().length() == 0)
                     continue;
                 /*if ( (i==0) && acknowResultLines[i].trim().startsWith("<div>") ) {
-					extraDiv = true;
+                    extraDiv = true;
 					// we skip the first div (there is already a <div> just opened)
 				}
 				else if ( (i==acknowResultLines.length-1) && extraDiv) {
@@ -1051,7 +1051,7 @@ public class TEIFormatter {
             Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            if (clusterLabel == TaggingLabels.SECTION) {
+            if (clusterLabel.equals(TaggingLabels.SECTION)) {
                 curDiv = teiElement("div");
                 Element head = teiElement("head");
                 // section numbers
@@ -1064,15 +1064,15 @@ public class TEIFormatter {
                 }
                 curDiv.appendChild(head);
                 divResults.add(curDiv);
-            } else if (clusterLabel == TaggingLabels.EQUATION) {
+            } else if (clusterLabel.equals(TaggingLabels.EQUATION)) {
                 curDiv.appendChild(teiElement("formula", clusterContent));
-            } else if (clusterLabel == TaggingLabels.ITEM) {
+            } else if (clusterLabel.equals(TaggingLabels.ITEM)) {
                 curDiv.appendChild(teiElement("item", clusterContent));
-            } else if (clusterLabel == TaggingLabels.OTHER) {
+            } else if (clusterLabel.equals(TaggingLabels.OTHER)) {
                 Element note = teiElement("note", clusterContent);
                 note.addAttribute(new Attribute("type", "other"));
                 curDiv.appendChild(note);
-            } else if (clusterLabel == TaggingLabels.PARAGRAPH) {
+            } else if (clusterLabel.equals(TaggingLabels.PARAGRAPH)) {
                 if (isNewParagraph(lastClusterLabel, curParagraph)) {
                     curParagraph = teiElement("p");
                     curDiv.appendChild(curParagraph);
@@ -1089,18 +1089,18 @@ public class TEIFormatter {
 //					chunkRefString = chunkRefString.substring(1, chunkRefString.length());
 //				}
                 List<Node> refNodes;
-                if (clusterLabel == TaggingLabels.CITATION_MARKER) {
+                if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
                     refNodes = markReferencesTEILuceneBased(chunkRefString,
                             refTokens,
                             doc.getReferenceMarkerMatcher(),
-                            config.isGenerateTeiCoordinates());
+                            config.isGenerateTeiCoordinates("ref"));
 
-                } else if (clusterLabel == TaggingLabels.FIGURE_MARKER) {
+                } else if (clusterLabel.equals(TaggingLabels.FIGURE_MARKER)) {
                     refNodes = markReferencesFigureTEI(chunkRefString, refTokens, figures,
-                            config.isGenerateTeiCoordinates());
-                } else if (clusterLabel == TABLE_MARKER) {
+                            config.isGenerateTeiCoordinates("ref"));
+                } else if (clusterLabel.equals(TABLE_MARKER)) {
                     refNodes = markReferencesTableTEI(chunkRefString, refTokens, tables,
-                            config.isGenerateTeiCoordinates());
+                            config.isGenerateTeiCoordinates("ref"));
                 } else {
                     throw new IllegalStateException("Unsupported marker type: " + clusterLabel);
                 }
