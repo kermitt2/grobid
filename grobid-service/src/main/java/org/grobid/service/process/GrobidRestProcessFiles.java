@@ -1,5 +1,7 @@
 package org.grobid.service.process;
 
+import org.apache.commons.io.IOUtils;
+import org.apache.pdfbox.pdmodel.PDDocument;
 import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
@@ -11,13 +13,13 @@ import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.IOUtilities;
 import org.grobid.core.utilities.KeyGen;
+import org.grobid.core.visualization.BlockVisualizer;
+import org.grobid.core.visualization.CitationsVisualizer;
+import org.grobid.core.visualization.FigureTableVisualizer;
 import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.GrobidServiceProperties;
-import org.grobid.core.visualization.CitationsVisualizer;
-import org.grobid.core.visualization.BlockVisualizer;
-import org.grobid.core.visualization.FigureTableVisualizer;
-import org.apache.pdfbox.pdmodel.PDDocument;
+import org.grobid.service.exceptions.GrobidServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
@@ -30,13 +32,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.StreamingOutput;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -556,8 +552,8 @@ public class GrobidRestProcessFiles {
                 result.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
                         "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
                         "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
-                result.append("\t<teiHeader/>\n\t<text>\n\t\t<front/>\n\t\t"+
-					"<body/>\n\t\t<back>\n\t\t\t<div>\n\t\t\t\t<listBibl>\n");
+                result.append("\t<teiHeader/>\n\t<text>\n\t\t<front/>\n\t\t" +
+                        "<body/>\n\t\t<back>\n\t\t\t<div>\n\t\t\t\t<listBibl>\n");
                 int p = 0;
                 for (BibDataSet res : results) {
                     result.append(res.toTEI(p));
@@ -594,110 +590,69 @@ public class GrobidRestProcessFiles {
      * Uploads the origin PDF, process it and return the PDF augmented with annotations.
      *
      * @param inputStream the data of origin PDF
-     * @param fileName the name of origin PDF
-     * @param type gives type of annotation
+     * @param fileName    the name of origin PDF
+     * @param type        gives type of annotation
      * @return a response object containing the annotated PDF
      */
     public static Response processPDFAnnotation(final InputStream inputStream,
                                                 final String fileName,
                                                 final GrobidRestUtils.Annotation type) {
         LOGGER.debug(methodLogIn());
-        Response response = null;
-        boolean isparallelExec = GrobidServiceProperties.isParallelExec();
-        File originFile = null;
-        Engine engine = null;
+        Response response;
         PDDocument out = null;
+        File originFile = null;
+        boolean isParallelExec = GrobidServiceProperties.isParallelExec();
+        Engine engine = Engine.getEngine(isParallelExec);
+
         try {
             originFile = IOUtilities.writeInputFile(inputStream);
-
-            GrobidAnalysisConfig config = new GrobidAnalysisConfig.
-                GrobidAnalysisConfigBuilder().build();
 
             if (originFile == null) {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
-                // starts conversion process
-                final PDDocument document = PDDocument.load(originFile);
-                engine = Engine.getEngine(isparallelExec);
-				DocumentSource documentSource = DocumentSource.fromPdf(originFile);
-                if (isparallelExec) {
-                    Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-                    if (type == GrobidRestUtils.Annotation.CITATION) {
-                        out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc, null);
-					}
-                    else if (type == GrobidRestUtils.Annotation.BLOCK) {
-                        out = BlockVisualizer.annotateBlocks(document, documentSource.getXmlFile(), 
-								teiDoc, true, true, false);
-					}
-                    else if (type == GrobidRestUtils.Annotation.FIGURE) {
-                        out = FigureTableVisualizer.annotateFigureAndTables(document, documentSource.getXmlFile(), 
-								teiDoc, true, true, true, false);
-					}
-                    GrobidPoolingFactory.returnEngine(engine);
-                    engine = null;
-                } else {
-                    synchronized (engine) {
-                        //TODO: VZ: sync on local var does not make sense
-                        Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-                        if (type == GrobidRestUtils.Annotation.CITATION) {
-                            out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc, null);
-						}
-                        else if (type == GrobidRestUtils.Annotation.BLOCK) {
-                            out = BlockVisualizer.annotateBlocks(document, documentSource.getXmlFile(), 
-								teiDoc, true, true, false);
-						}
-	                    else if (type == GrobidRestUtils.Annotation.FIGURE) {
-	                        out = FigureTableVisualizer.annotateFigureAndTables(document, documentSource.getXmlFile(), 
-									teiDoc, true, true, true, false);
-						}
-                    } 
-                }
-
-                IOUtilities.removeTempFile(originFile);
+                out = annotate(originFile, isParallelExec, type, engine);
 
                 if (out != null) {
-                    response = Response.status(Status.OK).type("application/pdf").build();
-                    ByteArrayOutputStream ouputStream = new ByteArrayOutputStream();
-                    out.save(ouputStream);
+                    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                    out.save(outputStream);
                     response = Response
                             .ok()
                             .type("application/pdf")
-                            .entity(ouputStream.toByteArray())
+                            .entity(outputStream.toByteArray())
                             .header("Content-Disposition", "attachment; filename=\"" + fileName
                                     //.replace(".pdf", ".annotated.pdf")
                                     //.replace(".PDF", ".annotated.PDF") 
                                     + "\"")
                             .build();
-                }
-                else {
+                } else {
                     response = Response.status(Status.NO_CONTENT).build();
                 }
             }
         } catch (NoSuchElementException nseExp) {
             LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
-        } catch (Exception exp) {
+        } catch (RuntimeException exp) {
+            //Workaround in order to be able to read the message from Javascript
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            //Not the best workaround, as the client is expecting application/pdf
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).type(MediaType.TEXT_PLAIN).build();
+        }catch (Exception exp) {
             LOGGER.error("An unexpected exception occurs. ", exp);
             response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
             IOUtilities.removeTempFile(originFile);
-            if (out != null) {
-                try {
-                    out.close();
-                }
-                catch(Exception exp) {
-                    LOGGER.error("Error when closing PDDocument. ", exp);
-                }
-            }
-            if (isparallelExec && engine != null) {
+            IOUtils.closeQuietly(out);
+
+            if (isParallelExec && engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
+
         LOGGER.debug(methodLogOut());
         return response;
     }
 
-    
+
     /**
      * Uploads the origin PDF, process it and return PDF annotations for references in JSON.
      *
@@ -705,15 +660,20 @@ public class GrobidRestProcessFiles {
      * @return a response object containing the JSON annotations
      */
     public static Response processPDFReferenceAnnotation(final InputStream inputStream) {
-        LOGGER.debug(methodLogIn()); 
+        LOGGER.debug(methodLogIn());
         Response response = null;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
         try {
             originFile = IOUtilities.writeInputFile(inputStream);
-            GrobidAnalysisConfig config = new GrobidAnalysisConfig.
-                GrobidAnalysisConfigBuilder().build();
+            List<String> elementWithCoords = new ArrayList();
+            elementWithCoords.add("ref");
+            elementWithCoords.add("biblStruct");
+            GrobidAnalysisConfig config = new GrobidAnalysisConfig
+                    .GrobidAnalysisConfigBuilder()
+                    .generateTeiCoordinates(elementWithCoords)
+                    .build();
 
             String json = null;
 
@@ -732,7 +692,7 @@ public class GrobidRestProcessFiles {
                         //TODO: VZ: sync on local var does not make sense
                         Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
                         json = CitationsVisualizer.getJsonAnnotations(teiDoc, null);
-                    } 
+                    }
                 }
 
                 IOUtilities.removeTempFile(originFile);
@@ -743,8 +703,7 @@ public class GrobidRestProcessFiles {
                             .type("application/json")
                             .entity(json)
                             .build();
-                }
-                else {
+                } else {
                     response = Response.status(Status.NO_CONTENT).build();
                 }
             }
@@ -772,7 +731,7 @@ public class GrobidRestProcessFiles {
      * citation
      */
     public static Response annotateCitationPatentPDF(final InputStream inputStream,
-                                                    final boolean consolidate) {
+                                                     final boolean consolidate) {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal;
@@ -791,7 +750,7 @@ public class GrobidRestProcessFiles {
                 //List<BibDataSet> articles = new ArrayList<BibDataSet>();
                 if (isparallelExec) {
                     retVal = engine.annotateAllCitationsInPDFPatent(originFile.getAbsolutePath(),
-                             consolidate);
+                            consolidate);
                     GrobidPoolingFactory.returnEngine(engine);
                     engine = null;
                 } else {
@@ -824,13 +783,66 @@ public class GrobidRestProcessFiles {
         LOGGER.debug(methodLogOut());
         return response;
     }
-	
+
     public static String methodLogIn() {
         return ">> " + GrobidRestProcessFiles.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
     }
 
     public static String methodLogOut() {
         return "<< " + GrobidRestProcessFiles.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
+    }
+
+    protected static PDDocument annotate(File originFile, boolean isparallelExec,
+                                       final GrobidRestUtils.Annotation type, Engine engine) throws Exception {
+        // starts conversion process
+        PDDocument outputDocument = null;
+        // list of TEI elements that should come with coordinates
+        List<String> elementWithCoords = new ArrayList();
+            elementWithCoords.add("ref");
+            elementWithCoords.add("biblStruct");
+
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig
+                .GrobidAnalysisConfigBuilder()
+                .generateTeiCoordinates(elementWithCoords)
+                .build();
+
+        Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
+
+        final PDDocument document = PDDocument.load(originFile);
+        //If no pages, skip the document
+        if (document.getNumberOfPages() > 0) {
+            DocumentSource documentSource = DocumentSource.fromPdf(originFile);
+            if (isparallelExec) {
+                outputDocument = dispatchProcessing(type, document, documentSource, teiDoc);
+                GrobidPoolingFactory.returnEngine(engine);
+            } else {
+                synchronized (engine) {
+                    //TODO: VZ: sync on local var does not make sense
+                    outputDocument = dispatchProcessing(type, document, documentSource, teiDoc);
+                }
+            }
+        } else {
+            throw new RuntimeException("Cannot identify any pages in the input document. " +
+                    "The document cannot be annotated. Please check whether the document is valid or the logs.");
+        }
+
+        return outputDocument;
+    }
+
+    protected static PDDocument dispatchProcessing(GrobidRestUtils.Annotation type, PDDocument document,
+                                                   DocumentSource documentSource, Document teiDoc
+                                                ) throws Exception {
+        PDDocument out = null;
+        if (type == GrobidRestUtils.Annotation.CITATION) {
+            out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc, null);
+        } else if (type == GrobidRestUtils.Annotation.BLOCK) {
+            out = BlockVisualizer.annotateBlocks(document, documentSource.getXmlFile(),
+                    teiDoc, true, true, false);
+        } else if (type == GrobidRestUtils.Annotation.FIGURE) {
+            out = FigureTableVisualizer.annotateFigureAndTables(document, documentSource.getXmlFile(),
+                    teiDoc, true, true, true, false);
+        }
+        return out;
     }
 
 }

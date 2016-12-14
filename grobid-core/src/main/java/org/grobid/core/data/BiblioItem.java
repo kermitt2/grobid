@@ -1700,7 +1700,8 @@ public class BiblioItem {
                 tei.append("\t");
             }
             tei.append("<biblStruct");
-            tei.append(" ").append(TEIFormatter.getCoordsAttribute(coordinates, config.isGenerateTeiCoordinates())).append(" ");
+            boolean withCoords = (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("biblStruct"));
+            tei.append(" ").append(TEIFormatter.getCoordsAttribute(coordinates, withCoords)).append(" ");
             if (language != null) {
                 if (n == -1) {
                     /*if (pubnum != null) {

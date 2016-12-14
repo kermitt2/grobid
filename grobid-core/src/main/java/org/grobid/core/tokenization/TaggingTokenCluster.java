@@ -4,7 +4,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import org.grobid.core.engines.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.layout.LayoutToken;
 
 import java.util.ArrayList;

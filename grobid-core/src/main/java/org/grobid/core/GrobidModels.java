@@ -40,15 +40,12 @@ public enum GrobidModels implements GrobidModel {
     ENTITIES_NER("ner"),
     ENTITIES_NERFR("nerfr"),
     ENTITIES_NERSense("nersense"),
-    QUANTITIES("quantities"),
-    UNITS("units"),
-    VALUE("value"),
     //	ENTITIES_BIOTECH("entities/biotech"),
     ENTITIES_BIOTECH("bio"),
     ASTRO("astro"),
-	LEXICAL_ENTRY("lexical-entry"),
-	DICTIONARY_BODY_SEGMENTATION("dictionary-body-segmentation"),
-	DICTIONARY_SEGMENTATION("dictionary-segmentation");
+    LEXICAL_ENTRY("lexical-entry"),
+    DICTIONARY_BODY_SEGMENTATION("dictionary-body-segmentation"),
+    DICTIONARY_SEGMENTATION("dictionary-segmentation");
 
     /**
      * Absolute path to the model.
