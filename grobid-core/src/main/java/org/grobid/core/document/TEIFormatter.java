@@ -12,8 +12,10 @@ import org.grobid.core.data.Date;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.SegmentationLabel;
-import org.grobid.core.engines.TaggingLabel;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.BoundingBox;
@@ -34,7 +36,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
-import static org.grobid.core.engines.TaggingLabel.TABLE_MARKER;
+import static org.grobid.core.engines.label.TaggingLabels.TABLE_MARKER;
 
 /**
  * Class for generating a TEI representation of a document.
@@ -44,7 +46,10 @@ import static org.grobid.core.engines.TaggingLabel.TABLE_MARKER;
 @SuppressWarnings("StringConcatenationInsideStringBuilderAppend")
 public class TEIFormatter {
     private Document doc = null;
-    public static final Set<TaggingLabel> MARKER_LABELS = Sets.newHashSet(TaggingLabel.CITATION_MARKER, TaggingLabel.FIGURE_MARKER, TABLE_MARKER);
+    public static final Set<TaggingLabel> MARKER_LABELS = Sets.newHashSet(
+            TaggingLabels.CITATION_MARKER,
+            TaggingLabels.FIGURE_MARKER,
+            TaggingLabels.TABLE_MARKER);
 
     // possible association to Grobid customised TEI schemas: DTD, XML schema, RelaxNG or compact RelaxNG
     // DEFAULT means no schema association in the generated XML documents
@@ -838,7 +843,7 @@ public class TEIFormatter {
                     .append(TextUtilities.HTMLEncode(biblio.getSubmissionDate())).append("</date>\n");
 
             /*tei.append("\t\t\t<change when=\"");
-			tei.append(TextUtilities.HTMLEncode(biblio.getSubmissionDate()));
+            tei.append(TextUtilities.HTMLEncode(biblio.getSubmissionDate()));
 			tei.append("\">Submitted</change>\n");
 			*/
         }
@@ -965,8 +970,8 @@ public class TEIFormatter {
             for (int i = 0; i < acknowResultLines.length; i++) {
                 if (acknowResultLines[i].trim().length() == 0)
                     continue;
-				/*if ( (i==0) && acknowResultLines[i].trim().startsWith("<div>") ) {
-					extraDiv = true;
+                /*if ( (i==0) && acknowResultLines[i].trim().startsWith("<div>") ) {
+                    extraDiv = true;
 					// we skip the first div (there is already a <div> just opened)
 				}
 				else if ( (i==acknowResultLines.length-1) && extraDiv) {
@@ -1046,7 +1051,7 @@ public class TEIFormatter {
             Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            if (clusterLabel == TaggingLabel.SECTION) {
+            if (clusterLabel.equals(TaggingLabels.SECTION)) {
                 curDiv = teiElement("div");
                 Element head = teiElement("head");
                 // section numbers
@@ -1059,15 +1064,15 @@ public class TEIFormatter {
                 }
                 curDiv.appendChild(head);
                 divResults.add(curDiv);
-            } else if (clusterLabel == TaggingLabel.EQUATION) {
+            } else if (clusterLabel.equals(TaggingLabels.EQUATION)) {
                 curDiv.appendChild(teiElement("formula", clusterContent));
-            } else if (clusterLabel == TaggingLabel.ITEM) {
+            } else if (clusterLabel.equals(TaggingLabels.ITEM)) {
                 curDiv.appendChild(teiElement("item", clusterContent));
-            } else if (clusterLabel == TaggingLabel.OTHER) {
+            } else if (clusterLabel.equals(TaggingLabels.OTHER)) {
                 Element note = teiElement("note", clusterContent);
                 note.addAttribute(new Attribute("type", "other"));
                 curDiv.appendChild(note);
-            } else if (clusterLabel == TaggingLabel.PARAGRAPH) {
+            } else if (clusterLabel.equals(TaggingLabels.PARAGRAPH)) {
                 if (isNewParagraph(lastClusterLabel, curParagraph)) {
                     curParagraph = teiElement("p");
                     curDiv.appendChild(curParagraph);
@@ -1084,23 +1089,20 @@ public class TEIFormatter {
 //					chunkRefString = chunkRefString.substring(1, chunkRefString.length());
 //				}
                 List<Node> refNodes;
-                switch (clusterLabel) {
-                    case CITATION_MARKER:
-                        refNodes = markReferencesTEILuceneBased(chunkRefString,
-                                refTokens,
-                                doc.getReferenceMarkerMatcher(),
-                                config.isGenerateTeiCoordinates());
-                        break;
-                    case FIGURE_MARKER:
-                        refNodes = markReferencesFigureTEI(chunkRefString, refTokens, figures,
-                                config.isGenerateTeiCoordinates());
-                        break;
-                    case TABLE_MARKER:
-                        refNodes = markReferencesTableTEI(chunkRefString, refTokens, tables,
-                                config.isGenerateTeiCoordinates());
-                        break;
-                    default:
-                        throw new IllegalStateException("Unsupported marker type: " + clusterLabel);
+                if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
+                    refNodes = markReferencesTEILuceneBased(chunkRefString,
+                            refTokens,
+                            doc.getReferenceMarkerMatcher(),
+                            config.isGenerateTeiCoordinates("ref"));
+
+                } else if (clusterLabel.equals(TaggingLabels.FIGURE_MARKER)) {
+                    refNodes = markReferencesFigureTEI(chunkRefString, refTokens, figures,
+                            config.isGenerateTeiCoordinates("ref"));
+                } else if (clusterLabel.equals(TABLE_MARKER)) {
+                    refNodes = markReferencesTableTEI(chunkRefString, refTokens, tables,
+                            config.isGenerateTeiCoordinates("ref"));
+                } else {
+                    throw new IllegalStateException("Unsupported marker type: " + clusterLabel);
                 }
 
                 if (refNodes != null) {
@@ -1175,8 +1177,8 @@ public class TEIFormatter {
     }
 
     private boolean isNewParagraph(TaggingLabel lastClusterLabel, Element curParagraph) {
-        return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabel.FIGURE
-                && lastClusterLabel != TaggingLabel.TABLE) || curParagraph == null;
+        return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabels.FIGURE
+                && lastClusterLabel != TaggingLabels.TABLE) || curParagraph == null;
     }
 
 //    private StringBuilder toTEITextPieceOld(StringBuilder buffer,
@@ -2075,7 +2077,7 @@ public class TEIFormatter {
                             text = text.substring(0, ind) +
                                     "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + marker
                                     + "</ref>" + text.substring(ind + marker.length(), text.length());
-                            cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
+                            cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
                         }
                     }
 
@@ -2171,14 +2173,14 @@ public class TEIFormatter {
                                             followingText = text.substring(indi2 + 5, text.length());
                                             // 5 digits for the year + identifier character
                                             text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
-                                            cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
+                                            cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
                                             added = 8;
 
                                         } else {
                                             followingText = text.substring(indi2 + 4, text.length());
                                             // 4 digits for the year
                                             text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
-                                            cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
+                                            cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
                                             added = 7;
                                         }
                                         if (previousText.length() > 2) {
@@ -2222,13 +2224,13 @@ public class TEIFormatter {
                                             followingText = text.substring(indi2 + 5, text.length());
                                             // 5 digits for the year + identifier character
                                             text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
-                                            cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
+                                            cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
                                             added = 8;
                                         } else {
                                             followingText = text.substring(indi2 + 4, text.length());
                                             // 4 digits for the year
                                             text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
-                                            cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
+                                            cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
                                             added = 7;
                                         }
                                         if (previousText.length() > 2) {
@@ -2262,7 +2264,7 @@ public class TEIFormatter {
         // without pointer - just ignoring possible punctuation at the beginning and end of the string
         if (!text.endsWith("</ref>") && !text.startsWith("<ref"))
             text = "<ref type=\"bibr\">" + text + "</ref>";
-        cntManager.i(ReferenceMarkerMatcher.Counters.UNMATCHED_REF_MARKERS);
+        cntManager.i(ReferenceMarkerMatcherCounters.UNMATCHED_REF_MARKERS);
         return text;
     }
 

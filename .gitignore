@@ -48,6 +48,7 @@ grobid-ner
 grobid-bio
 grobid-istex
 grobid-astro
+grobid-chem
 grobid-home/models/quantities
 grobid-home/models/dictionaries-lexical-entries
 grobid-home/models/units
@@ -57,5 +58,5 @@ grobid-home/models/nerfr
 grobid-home/models/nersense
 grobid-home/models/astro
 grobid-home/models/lexical-entry
-grobid-home/models/dictionary-body-segmentation
-grobid-home/models/dictionary-segmentation
+grobid-home/models/dictionary*
+grobid-home/models/dictionaries*

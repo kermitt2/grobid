@@ -1,6 +1,7 @@
 package org.grobid.core.engines.config;
 
 import java.io.File;
+import java.util.List;
 
 /**
  * Created by zholudev on 25/08/15.
@@ -18,7 +19,9 @@ import java.io.File;
  * PDF, -1 for the last page (default)
  * generateIDs if true, generate random attribute id on the textual elements of
  * the resulting TEI
-
+ * generateTeiCoordinates give the list of TEI elements for which the coordinates
+ * of the corresponding element in the original PDF should be included in the 
+ * resulting TEI
  */
 public class GrobidAnalysisConfig {
     private GrobidAnalysisConfig() {
@@ -45,9 +48,10 @@ public class GrobidAnalysisConfig {
     // the resulting TEI
     private boolean generateTeiIds = false;
 
-    // if true, generates the coordinates in the PDF corresponding
+    // generates the coordinates in the PDF corresponding
     // to the TEI full text substructures (e.g. reference markers)
-    private boolean generateTeiCoordinates = true;
+    // for the given list of TEI elements
+    private List<String> generateTeiCoordinates = null;
 
     // if true, include image references into TEI
     private boolean generateImageReferences = false;
@@ -98,8 +102,8 @@ public class GrobidAnalysisConfig {
             return this;
         }
 
-        public GrobidAnalysisConfigBuilder generateTeiCoordinates(boolean b) {
-            config.generateTeiCoordinates = b;
+        public GrobidAnalysisConfigBuilder generateTeiCoordinates(List<String> elements) {
+            config.generateTeiCoordinates = elements;
             return this;
         }
 
@@ -163,8 +167,12 @@ public class GrobidAnalysisConfig {
         return generateTeiIds;
     }
 
-    public boolean isGenerateTeiCoordinates() {
+    public List<String> getGenerateTeiCoordinates() {
         return generateTeiCoordinates;
+    }
+
+    public boolean isGenerateTeiCoordinates(String type) {
+        return getGenerateTeiCoordinates() != null && getGenerateTeiCoordinates().contains(type);
     }
 
     public File getPdfAssetPath() {

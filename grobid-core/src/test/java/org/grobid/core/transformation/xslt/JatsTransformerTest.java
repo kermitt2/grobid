@@ -9,11 +9,11 @@ import org.junit.Test;
  * Created by lfoppiano on 11/08/16.
  */
 public class JatsTransformerTest {
-    JatsTransformer target;
+    JATSTransformer target;
 
     @Before
     public void setUp() throws Exception {
-        target = new JatsTransformer();
+        target = new JATSTransformer();
     }
 
     @Test

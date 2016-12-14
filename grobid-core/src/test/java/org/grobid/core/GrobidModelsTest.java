@@ -70,6 +70,4 @@ public class GrobidModelsTest {
         GrobidModel model3 = GrobidModels.modelFor("dictionaries-senses");
         assertTrue(model3.equals(model));
     }
-
-
 }

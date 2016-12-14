@@ -2,6 +2,7 @@ package org.grobid.core.engines;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Figure;
+import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.layout.LayoutToken;
@@ -14,6 +15,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+
+import static org.grobid.core.engines.label.TaggingLabels.*;
 
 /**
  * @author Patrice
@@ -65,24 +68,19 @@ class FigureParser extends AbstractParser {
             Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            switch (clusterLabel) {
-                case FIG_DESC:
-                    figure.appendCaption(clusterContent);
-                    break;
-                case FIG_HEAD:
-                    figure.appendHeader(clusterContent);
-                    break;
-                case FIG_LABEL:
-                    figure.appendLabel(clusterContent);
-                    figure.appendHeader(clusterContent);
-                    break;
-                case FIG_OTHER:
-                    break;
-                case FIG_TRASH:
-                    figure.appendContent(clusterContent);
-                    break;
-                default:
-                    LOGGER.error("Warning: unexpected figure model label - " + clusterLabel + " for " + clusterContent);
+            if (clusterLabel.equals(FIG_DESC)) {
+                figure.appendCaption(clusterContent);
+            } else if (clusterLabel.equals(FIG_HEAD)) {
+                figure.appendHeader(clusterContent);
+            } else if (clusterLabel.equals(FIG_LABEL)) {
+                figure.appendLabel(clusterContent);
+                figure.appendHeader(clusterContent);
+            } else if (clusterLabel.equals(FIG_OTHER)) {
+
+            } else if (clusterLabel.equals(FIG_TRASH)) {
+                figure.appendContent(clusterContent);
+            } else {
+                LOGGER.error("Warning: unexpected figure model label - " + clusterLabel + " for " + clusterContent);
             }
         }
         return figure;
@@ -471,7 +469,7 @@ class FigureParser extends AbstractParser {
     }
 
     /*static public String getFigureFeatured(Document doc, List<LayoutToken> figureTokens) {	
-		FeatureFactory featureFactory = FeatureFactory.getInstance();
+        FeatureFactory featureFactory = FeatureFactory.getInstance();
         StringBuilder figure = new StringBuilder();
         String currentFont = null;
         int currentFontSize = -1;
