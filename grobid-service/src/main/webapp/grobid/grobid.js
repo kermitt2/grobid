@@ -294,8 +294,9 @@ var grobid = (function($) {
                         pdfjsframe.onload = function () {
                             pdfjsframe.contentWindow.PDFViewerApplication.open(pdfAsArray);
                         };
-                    } else if (xhr.status != 200) {
-                        AjaxError2("Response " + xhr.status + ": " + xhr.responseText);
+                    } else {
+                        //AjaxError2("Response " + xhr.status + ": " + xhr.responseText);
+                        AjaxError2("Response " + xhr.status + ": " );
                     }
                 }
             };
