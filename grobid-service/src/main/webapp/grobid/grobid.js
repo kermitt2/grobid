@@ -289,6 +289,7 @@ var grobid = (function($) {
                         // Use PDFJS to render a pdfDocument from pdf array
                         var frame = '<iframe id="pdfViewer" src="resources/pdf.js/web/viewer.html?file=" style="width: 100%; height: 1000px;"></iframe>';
                         $('#requestResult2').html(frame);
+                        $('#infoResult2').html(frame);
                         var pdfjsframe = document.getElementById('pdfViewer');
                         pdfjsframe.onload = function () {
                             pdfjsframe.contentWindow.PDFViewerApplication.open(pdfAsArray);
