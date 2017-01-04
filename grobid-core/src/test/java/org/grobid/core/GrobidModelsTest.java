@@ -5,10 +5,8 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static junit.framework.Assert.assertFalse;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created by lfoppiano on 19/08/16.
@@ -65,9 +63,9 @@ public class GrobidModelsTest {
         assertThat(splittedPath[splittedPath.length - 4], is("grobid-home"));
 
         GrobidModel model2 = GrobidModels.modelFor("dictionaries-lemma");
-        assertFalse(model2.equals(model));
+        assertThat(model2.equals(model), is(false));
 
         GrobidModel model3 = GrobidModels.modelFor("dictionaries-senses");
-        assertTrue(model3.equals(model));
+        assertThat(model3.equals(model), is(true));
     }
 }
