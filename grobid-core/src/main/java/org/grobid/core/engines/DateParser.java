@@ -64,7 +64,7 @@ public class DateParser extends AbstractParser {
             while (st2.hasMoreTokens()) {
                 String line = st2.nextToken();
                 if ((line.trim().length() == 0)) {
-                    if (date.notNull()) {
+                    if (date.isNotNull()) {
                         if (dates == null)
                             dates = new ArrayList<Date>();
                         normalize(date);
@@ -104,7 +104,7 @@ public class DateParser extends AbstractParser {
                                     (!s1.equals(lastTag) && !lastTag.equals("I-<year>"))
                                     ) {
                                 // new date
-                                if (date.notNull()) {
+                                if (date.isNotNull()) {
                                     if (dates == null)
                                         dates = new ArrayList<Date>();
                                     normalize(date);
@@ -134,7 +134,7 @@ public class DateParser extends AbstractParser {
                                     (!s1.equals(lastTag) && !lastTag.equals("I-<month>"))
                                     ) {
                                 // new date
-                                if (date.notNull()) {
+                                if (date.isNotNull()) {
                                     if (dates == null)
                                         dates = new ArrayList<Date>();
                                     normalize(date);
@@ -164,7 +164,7 @@ public class DateParser extends AbstractParser {
                                     (!s1.equals(lastTag) && !lastTag.equals("I-<day>"))
                                     ) {
                                 // new date
-                                if (date.notNull()) {
+                                if (date.isNotNull()) {
                                     if (dates == null)
                                         dates = new ArrayList<Date>();
                                     normalize(date);
@@ -191,7 +191,7 @@ public class DateParser extends AbstractParser {
                 lastTag = s1;
                 lineCount++;
             }
-            if (date.notNull()) {
+            if (date.isNotNull()) {
                 if (dates == null)
                     dates = new ArrayList<Date>();
                 normalize(date);
