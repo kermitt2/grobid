@@ -316,7 +316,7 @@ public class ReferenceExtractor implements Closeable {
 			// which is enough normally for a very safe language prediction
 			// the text here is the patent description, so strictly monolingual
             Language lang = languageUtilities.runLanguageId(text, 500);
-			List<String> tokenizations = analyzer.tokenize(lang, text);
+			List<String> tokenizations = analyzer.tokenize(text, lang);
             int offset = 0;
 			if (tokenizations.size() == 0) {	
                 return null;

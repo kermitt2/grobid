@@ -30,6 +30,10 @@ public class TaggingLabels {
     public final static String HEADER_LABEL = "<figure_head>";
     public final static String TRASH_LABEL = "<trash>";
     public final static String LABEL_LABEL = "<label>";
+    public final static String DATE_LABEL = "<date>";
+    public final static String DATE_YEAR_LABEL = "<year>";
+    public final static String DATE_MONTH_LABEL = "<month>";
+    public final static String DATE_DAY_LABEL = "<day>";
 
     public static final TaggingLabel CITATION_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, CITATION_MARKER_LABEL);
     public static final TaggingLabel TABLE_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, TABLE_MARKER_LABEL);
@@ -41,6 +45,12 @@ public class TaggingLabels {
     public static final TaggingLabel FIGURE = new TaggingLabelImpl(GrobidModels.FULLTEXT, FIGURE_LABEL);
     public static final TaggingLabel TABLE = new TaggingLabelImpl(GrobidModels.FULLTEXT, TABLE_LABEL);
     public static final TaggingLabel EQUATION = new TaggingLabelImpl(GrobidModels.FULLTEXT, EQUATION_LABEL);
+
+    public static final TaggingLabel HEADER_DATE = new TaggingLabelImpl(GrobidModels.HEADER, DATE_LABEL);
+
+    public static final TaggingLabel DATE_YEAR = new TaggingLabelImpl(GrobidModels.DATE, DATE_YEAR_LABEL);
+    public static final TaggingLabel DATE_MONTH = new TaggingLabelImpl(GrobidModels.DATE, DATE_MONTH_LABEL);
+    public static final TaggingLabel DATE_DAY = new TaggingLabelImpl(GrobidModels.DATE, DATE_DAY_LABEL);
 
     public static final TaggingLabel FIG_DESC = new TaggingLabelImpl(GrobidModels.FIGURE, DESCRIPTION_LABEL);
     public static final TaggingLabel FIG_HEAD = new TaggingLabelImpl(GrobidModels.FIGURE, HEADER_LABEL);
@@ -70,6 +80,14 @@ public class TaggingLabels {
         register(FIGURE);
         register(TABLE);
         register(EQUATION);
+
+        //header
+        register(HEADER_DATE);
+
+        //date
+        register(DATE_YEAR);
+        register(DATE_MONTH);
+        register(DATE_DAY);
 
         //figures
         register(FIG_DESC);

@@ -3422,7 +3422,7 @@ public class BiblioItem {
                                             "</region>\n");
                                 }
                                 if (aff.getCountry() != null) {
-                                    String code = lexicon.getcountryCode(aff.getCountry());
+                                    String code = lexicon.getCountryCode(aff.getCountry());
                                     TextUtilities.appendN(tei, '\t', nbTag + 3);
                                     tei.append("<country");
                                     if (code != null)
@@ -3550,7 +3550,7 @@ public class BiblioItem {
 	                                "</region>\n");
 	                    }
 	                    if (aff.getCountry() != null) {
-	                        String code = lexicon.getcountryCode(aff.getCountry());
+	                        String code = lexicon.getCountryCode(aff.getCountry());
 	                        TextUtilities.appendN(tei, '\t', nbTag + 3);
 	                        tei.append("<country");
 	                        if (code != null)

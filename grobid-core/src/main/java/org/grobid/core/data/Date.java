@@ -1,7 +1,5 @@
 package org.grobid.core.data;
 
-//import java.util.Date;
-
 /**
  * Class for representing a date.
  * We use our own representation of dates for having a comparable which prioritize the most fully specified
@@ -133,7 +131,7 @@ public class Date implements Comparable {
         return compareTo(((Date) another));
     }
 
-    public boolean notNull() {
+    public boolean isNotNull() {
         if ((rawDate == null) &
                 (dayString == null) &
                 (monthString == null) &

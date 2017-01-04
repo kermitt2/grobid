@@ -5,6 +5,7 @@ import org.grobid.core.factory.AbstractEngineFactory;
 import org.grobid.core.mock.MockContext;
 import org.junit.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -199,9 +200,9 @@ public class DateParserTest {
         assertThat(date1.getMonth(), is(10));
         assertThat(date1.getYear(), is(2015));
 
-        assertThat(date1.getDayString(), is(""+date1.getDay()));
-        assertThat(date1.getMonthString(), is(""+date1.getMonth()));
-        assertThat(date1.getYearString(), is(""+date1.getYear()));
+        assertThat(date1.getDayString(), is("" + date1.getDay()));
+        assertThat(date1.getMonthString(), is("" + date1.getMonth()));
+        assertThat(date1.getYearString(), is("" + date1.getYear()));
 
     }
 
@@ -215,18 +216,54 @@ public class DateParserTest {
         assertThat(date1.getMonth(), is(10));
         assertThat(date1.getYear(), is(2015));
 
-        assertThat(date1.getDayString(), is(""+date1.getDay()));
-        assertThat(date1.getMonthString(), is(""+date1.getMonth()));
-        assertThat(date1.getYearString(), is(""+date1.getYear()));
+        assertThat(date1.getDayString(), is("" + date1.getDay()));
+        assertThat(date1.getMonthString(), is("" + date1.getMonth()));
+        assertThat(date1.getYearString(), is("" + date1.getYear()));
 
         final Date date2 = output.get(1);
         assertThat(date2.getDay(), is(10));
         assertThat(date2.getMonth(), is(12));
         assertThat(date2.getYear(), is(2016));
 
-        assertThat(date2.getDayString(), is(""+date2.getDay()));
-        assertThat(date2.getMonthString(), is(""+date2.getMonth()));
-        assertThat(date2.getYearString(), is(""+date2.getYear()));
+        assertThat(date2.getDayString(), is("" + date2.getDay()));
+        assertThat(date2.getMonthString(), is("" + date2.getMonth()));
+        assertThat(date2.getYearString(), is("" + date2.getYear()));
+    }
+
+    @Test
+    public void testTrainingExtraction_simpleDate1() throws Exception {
+        List<String> input = Arrays.asList("December 1943");
+
+        StringBuilder sb = target.trainingExtraction(input);
+        String output = sb.toString();
+
+        assertThat(output, is("\t<date><month>December</month> <year>1943</year></date>\n"));
+
+    }
+
+    @Test
+    public void testTrainingExtraction_simpleDate2() throws Exception {
+        List<String> input = Arrays.asList("15 March 1942");
+
+        StringBuilder sb = target.trainingExtraction(input);
+        String output = sb.toString();
+
+        assertThat(output, is("\t<date><day>15</day> <month>March</month> <year>1942</year></date>\n"));
+    }
+
+    @Test
+    public void testTrainingExtraction_simpleDate3() throws Exception {
+        List<String> input = Arrays.asList("1943-1944");
+
+        StringBuilder sb = target.trainingExtraction(input);
+        String output = sb.toString();
+
+        assertThat(output, is("\t<date><year>1943</year>-</date>\n\t<date><year>1944</year></date>\n"));
+    }
+
+    @Test
+    public void testTrainingExtraction_emptyInput() throws Exception {
+        assertThat(target.trainingExtraction(null), nullValue());
     }
 
 }

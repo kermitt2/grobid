@@ -57,10 +57,10 @@ public class GrobidAnalyzer {
 	 * Tokenizer entry point
 	 */
 	public List<String> tokenize(String text) throws Exception {
-		return tokenize(null, text);
+		return tokenize(text, null);
 	}
 	
-	public List<String> tokenize(Language lang, String text) throws Exception {
+	public List<String> tokenize(String text, Language lang) throws Exception {
 		List<String> result = null;
 		if ( (text == null) || (text.length() == 0) ) {
 			return new ArrayList<String>();
@@ -112,10 +112,10 @@ public class GrobidAnalyzer {
 	 * Re-tokenizer entry point to be applied to text already tokenized in the PDF representation
 	 */
 	public List<String> retokenize(List<String> textTokenized) throws Exception {
-		return retokenize(null, textTokenized);
+		return retokenize(textTokenized, null);
 	}
 	
-	public List<String> retokenize(Language lang, List<String> textTokenized) throws Exception {
+	public List<String> retokenize(List<String> textTokenized, Language lang) throws Exception {
 		List<String> result = null;
 		if ( (textTokenized == null) || (textTokenized.size() == 0) ) {
 			return new ArrayList<String>();
