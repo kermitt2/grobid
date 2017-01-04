@@ -25,10 +25,11 @@
             <artifactId>stringmetric-core_2.10</artifactId>
             <version>0.27.3</version>
         </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.10</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -57,7 +58,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
+                <version>3.2</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
@@ -74,7 +75,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>1.2.1</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -98,7 +99,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>1.2.1</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -122,7 +123,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>1.2.1</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -145,7 +146,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>1.2.1</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -168,7 +169,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>1.2.1</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -191,7 +192,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>${maven-exe-plugin.version}</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -214,7 +215,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>${maven-exe-plugin.version}</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -237,7 +238,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>${maven-exe-plugin.version}</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -260,7 +261,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>${maven-exe-plugin.version}</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -283,7 +284,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>${maven-exe-plugin.version}</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -306,7 +307,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>${maven-exe-plugin.version}</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -329,7 +330,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>${maven-exe-plugin.version}</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -352,7 +353,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>${maven-exe-plugin.version}</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -375,7 +376,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>${maven-exe-plugin.version}</version>
                         <executions>
                             <execution>
                                 <phase>generate-resources</phase>
@@ -428,6 +429,7 @@
         <pmc>.</pmc>
         <run>0</run>
         <fileRatio>1.0</fileRatio>
+        <maven-exe-plugin.version>1.2.1</maven-exe-plugin.version>
     </properties>
 
 </project>
