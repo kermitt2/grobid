@@ -4,16 +4,20 @@
 
 # > mvn clean install -P docker
 
-# > docker build -t lfoppiano/grobid:0.4.2-SNAPSHOT .
+# > docker build -t lfoppiano/grobid:GROBID_VERSION --build-arg GROBID_VERSION=1.0.0 .
+# Example: > docker build -t lfoppiano/grobid:1.0.0 --build-arg GROBID_VERSION=1.0.0 .
+
 # > docker run -t --rm -p 8080:8080 {image_name}
 
 # To connect to the container with a bash shell
 # > docker exec -i -t {container_name} /bin/bash
-
 FROM jetty:9.3-jre8
 
 MAINTAINER Luca Foppiano <luca.foppiano@inria.fr>, Patrice Lopez <patrice.lopez@science-miner.org>
-LABEL Description="This image is used to generate a GROBID image" Version="0.4.2-SNAPSHOT"
+
+ARG GROBID_VERSION
+
+LABEL Description="This image is used to generate a GROBID image" Version="${GROBID_VERSION}"
 
 ENV JAVA_OPTS=-Xmx4g
 
@@ -21,10 +25,10 @@ VOLUME /opt/grobid-home/tmp
 
 RUN apt-get update && apt-get -y --no-install-recommends install libxml2
 
-ADD ./grobid-home/target/grobid-home-0.4.2-SNAPSHOT.zip /opt
-RUN unzip /opt/grobid-home-0.4.2-SNAPSHOT.zip -d /opt && rm /opt/grobid-home-0.4.2-SNAPSHOT.zip
+ADD ./grobid-home/target/grobid-home-${GROBID_VERSION}.zip /opt
+RUN unzip /opt/grobid-home-${GROBID_VERSION}.zip -d /opt && rm /opt/grobid-home-${GROBID_VERSION}.zip
 
-COPY ./grobid-service/target/grobid-service-0.4.2-SNAPSHOT.war /var/lib/jetty/webapps/ROOT.war
+COPY ./grobid-service/target/grobid-service-${GROBID_VERSION}.war /var/lib/jetty/webapps/ROOT.war
 
 
 ## Docker tricks:
