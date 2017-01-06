@@ -372,10 +372,10 @@ public class GrobidRestServiceTest {
 	@Test
 	public void shouldReturnCurrentGrobidVersion() throws Exception {
 		String expectedVersion = "0.4.2-SNAPSHOT";
-		ClientResponse response;
 
-		WebResource service = Client.create().resource(getHost() + GrobidPathes.PATH_GET_VERSION);
-		response = service.get(ClientResponse.class);
+		Client client = Client.create();
+		WebResource service = client.resource(getHost() + GrobidPathes.PATH_GET_VERSION);
+		ClientResponse response = service.get(ClientResponse.class);
 
 		assertEquals(Status.OK.getStatusCode(), response.getStatus());
 		String responseEntity = response.getEntity(String.class);
