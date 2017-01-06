@@ -4,7 +4,7 @@
 
 # > mvn clean install -P docker
 
-# > docker build -t lfoppiano/grobid:GROBID_VERSION --build-arg GROBID_VERSION=1.0.0 .
+# > docker build -t lfoppiano/grobid:GROBID_VERSION --build-arg GROBID_VERSION=GROBID_VERSION .
 # Example: > docker build -t lfoppiano/grobid:1.0.0 --build-arg GROBID_VERSION=1.0.0 .
 
 # > docker run -t --rm -p 8080:8080 {image_name}
