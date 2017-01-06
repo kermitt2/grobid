@@ -107,7 +107,7 @@ using the profile docker, in order to correctly set up the grobid-home in the we
 make sure the Dockerfile points to the right jars (TODO: add placeholders based on the version), launch the build: 
 
 ```bash
-> docker build -t lfoppiano/grobid:0.4.1 .
+> docker build -t lfoppiano/grobid:0.4.2-SNAPSHOT --build-arg GROBID_VERSION=0.4.2-SNAPSHOT .
 ```
 
 In order to run the container of the newly created image: 
