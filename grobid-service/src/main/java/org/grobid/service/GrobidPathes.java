@@ -155,4 +155,9 @@ public interface GrobidPathes {
 	 * path extension to update property value.
 	 */
 	public static final String PATH_CHANGE_PROPERTY_VALUE = "changePropertyValue";
+
+	/**
+	 * path extension for getting version
+	 */
+	String PATH_GET_VERSION = "getVersion";
 }
