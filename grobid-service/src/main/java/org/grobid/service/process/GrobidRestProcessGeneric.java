@@ -5,6 +5,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.core.Response.Status;
 
+import org.grobid.core.utilities.GrobidProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +21,7 @@ public class GrobidRestProcessGeneric {
 	 */
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(GrobidRestProcessGeneric.class);
-	
+
 	/**
 	 * Returns a string containing true, if the service is alive.
 	 * 
@@ -74,4 +75,12 @@ public class GrobidRestProcessGeneric {
 		return response;
 	}
 
+	/**
+	 * Returns a string containing GROBID version.
+	 *
+	 * @return returns a response object containing version as string.
+	 */
+	public static Response getVersion() {
+		return Response.status(Status.OK).entity(GrobidProperties.getVersion()).build();
+	}
 }

@@ -34,6 +34,7 @@ import javax.ws.rs.core.StreamingOutput;
 import javax.ws.rs.core.UriInfo;
 
 import org.grobid.core.factory.AbstractEngineFactory;
+import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.service.process.GrobidRestProcessAdmin;
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
@@ -87,6 +88,16 @@ public class GrobidRestService implements GrobidPathes {
 	@GET
 	public Response isAlive() {
 		return GrobidRestProcessGeneric.isAlive();
+	}
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessGeneric#getVersion()
+	 */
+	@Path(GrobidPathes.PATH_GET_VERSION)
+	@Produces(MediaType.TEXT_PLAIN)
+	@GET
+	public Response getVersion() {
+		return GrobidRestProcessGeneric.getVersion();
 	}
 
 	/**
