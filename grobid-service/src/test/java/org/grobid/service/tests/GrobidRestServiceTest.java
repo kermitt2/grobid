@@ -374,8 +374,7 @@ public class GrobidRestServiceTest {
 		String expectedVersion = "0.4.2-SNAPSHOT";
 		ClientResponse response;
 
-		WebResource service = Client.create().resource(
-			getHost() + GrobidPathes.PATH_GET_VERSION);
+		WebResource service = Client.create().resource(getHost() + GrobidPathes.PATH_GET_VERSION);
 		response = service.get(ClientResponse.class);
 
 		assertEquals(Status.OK.getStatusCode(), response.getStatus());
@@ -383,6 +382,5 @@ public class GrobidRestServiceTest {
 		logger.debug(responseEntity);
 		assertEquals(expectedVersion, responseEntity);
 	}
-	
 
 }
