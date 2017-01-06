@@ -107,12 +107,12 @@ using the profile docker, in order to correctly set up the grobid-home in the we
 make sure the Dockerfile points to the right jars (TODO: add placeholders based on the version), launch the build: 
 
 ```bash
-> docker build -t lfoppiano/grobid:0.4.2-SNAPSHOT --build-arg GROBID_VERSION=0.4.2-SNAPSHOT .
+> docker build -t lfoppiano/grobid:0.4.2 --build-arg GROBID_VERSION=0.4.2-SNAPSHOT .
 ```
 
 In order to run the container of the newly created image: 
 ```bash
-> docker run -t --rm -p 8080:8080 lfoppiano/grobid:0.4.1-SNAPSHOT 
+> docker run -t --rm -p 8080:8080 lfoppiano/grobid:0.4.2 
 ```
 
 For testing or debugging purposes, you can connect to the container with a bash shell:
