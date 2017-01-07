@@ -120,6 +120,10 @@
         <servlet-name>grobid-service</servlet-name>
         <url-pattern>/citationPatentAnnotations</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+	    <url-pattern>/getVersion</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>grobid/index.html</welcome-file>
