@@ -23,6 +23,8 @@ public class MockContext {
 			+ File.separator + "config" + File.separator
 			+ "grobid_service.properties";
 
+	public static String GROBID_VERSION = "0.4.5-dummy";
+
 	/**
 	 * Set initial context with the given arguments.
 	 * 
@@ -46,6 +48,9 @@ public class MockContext {
 		ic.bind("java:comp/env/"
 				+ GrobidPropertyKeys.PROP_GROBID_SERVICE_PROPERTY,
 				GROBID_PROPERTY_SERVICE_PATH);
+		ic.bind("java:comp/env/"
+						+ GrobidPropertyKeys.PROP_GROBID_VERSION,
+				GROBID_VERSION);
 	}
 
 	/**
@@ -96,6 +101,16 @@ public class MockContext {
 		setInitialContext();
 	}
 
+	public static void setInitialContext(String pGrobidHome,
+										 String pGrobidProperties, String pGrobidServiceProperties, String grobidVersion) throws Exception {
+
+		GROBID_HOME_PATH = pGrobidHome;
+		GROBID_PROPERTY_PATH = pGrobidProperties;
+		GROBID_PROPERTY_SERVICE_PATH = pGrobidServiceProperties;
+		GROBID_VERSION = grobidVersion;
+		setInitialContext();
+	}
+
 	/**
 	 * Remove the initial context.
 	 * 
@@ -107,6 +122,8 @@ public class MockContext {
 		ic.unbind("java:comp/env/" + GrobidPropertyKeys.PROP_GROBID_PROPERTY);
 		ic.unbind("java:comp/env/"
 				+ GrobidPropertyKeys.PROP_GROBID_SERVICE_PROPERTY);
+		ic.unbind("java:comp/env/"
+				+ GrobidPropertyKeys.PROP_GROBID_VERSION);
 		ic.destroySubcontext("java:comp/env");
 		ic.destroySubcontext("java:comp");
 		ic.destroySubcontext("java:");
