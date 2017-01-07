@@ -16,6 +16,10 @@ To skip the tests:
 > mvn -Dmaven.test.skip=true jetty:run-war
 ```
 
+You can check whether the service is up and running by opening the following URL: 
+ - `http://yourhost:8080/version` will return you the current version
+ - `http://yourhose:8080/isalive` will return true/false whether the service is up and running
+
 ## Use GROBID
 
 On your browser, the welcome page of the Service console is available at the URL `http://localhost:8080`
