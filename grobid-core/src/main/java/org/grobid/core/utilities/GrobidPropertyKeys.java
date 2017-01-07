@@ -9,7 +9,7 @@ public interface GrobidPropertyKeys {
 
     String PROP_GROBID_IS_CONTEXT_SERVER = "grobid.is.context.server";
 
-    String PROP_VERSION = "grobid.version";
+    String PROP_GROBID_VERSION = "org.grobid.version";
     String PROP_TMP_PATH = "grobid.temp.path";
     //    public static final String PROP_BIN_PATH = "grobid.bin.path";
     String PROP_NATIVE_LIB_PATH = "grobid.nativelibrary.path";
