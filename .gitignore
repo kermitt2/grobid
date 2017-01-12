@@ -10,6 +10,8 @@ Thumbs.db
 *.log
 *.log.*
 *.old
+tei-alt
+raw-alt
 
 grobid-core/src/test/resources/org/grobid/core/annotations/resTeiStAXParser/out.tei.xml
 
