@@ -73,8 +73,9 @@ public class TEISegmentationSaxParser extends DefaultHandler {
         }
 		if (qName.equals("body") || 
 			qName.equals("cover") || 
-			qName.equals("header") || 
+			qName.equals("front") || 
 			qName.equals("div") || 
+            qName.equals("other") || 
 			qName.equals("listBibl")) {
 			currentTag = null;
 			upperTag = null;
@@ -106,7 +107,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                     writeData(upperQname, upperTag);
                 }
             }
-            accumulator.setLength(0);
+            //accumulator.setLength(0);
 
             if (qName.equals("front")) {
                 //currentTags.push("<header>");
@@ -125,10 +126,10 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 				//upperTag = currentTag;
 				//upperQname = "titlePage";
             }
-			/*else if (qName.equals("other")) {
+			else if (qName.equals("other")) {
                 //currentTags.push("<other>");
 				currentTag = "<other>";
-            } */
+            } 
 			/*else if (qName.equals("ref")) {
                 int length = atts.getLength();
 
@@ -202,17 +203,27 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 				currentTag = "<references>";
 				upperTag = currentTag;
 				upperQname = "listBibl";
+            } else if (qName.equals("text")) {
+                currentTag = "<other>";
+                upperTag = null;
+                upperQname = null;
             }
         }
     }
 
     private void writeData(String qName, String surfaceTag) {
+        if (qName == null) {
+            qName = "other";
+            surfaceTag = "<other>";
+        }
         if ((qName.equals("front")) || (qName.equals("titlePage")) || (qName.equals("note")) ||
                 (qName.equals("page")) || (qName.equals("pages")) || (qName.equals("body")) ||
-                (qName.equals("listBibl")) || 
-                (qName.equals("div")) 
+                (qName.equals("listBibl")) || (qName.equals("div")) ||
+                (qName.equals("other")) 
                 ) {
             String text = getText();
+            text = text.replace("\n", " ");
+            text = text.replace("  ", " ");
 			boolean begin = true;
 //System.out.println(text);			
             // we segment the text line by line first
@@ -223,9 +234,9 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 			for(int p=0; p<tokens.length; p++) {	
 				//String line = st.nextToken().trim();
 				String line = tokens[p].trim();
-				if (line.equals("\n"))
-					continue;
 				if (line.length() == 0) 
+                    continue;
+                if (line.equals("\n"))
 					continue;
 				if (line.indexOf("+PAGE+") != -1) {
                     // page break should be a distinct feature
@@ -254,7 +265,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 	                //} else 
 					
 	                    //if (tok.length() > 0) {
-	        	if (begin) {
+	        	if (begin && (!surfaceTag.equals("<other>"))) {
 	        		labeled.add(tok + " I-" + surfaceTag + "\n");
 	  			  	begin = false;
 	         	} else {

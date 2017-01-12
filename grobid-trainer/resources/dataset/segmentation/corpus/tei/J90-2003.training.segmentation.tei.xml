@@ -224,7 +224,13 @@
 
 			<note place="headnote">Manny Rayner and AmeHe Banks <lb/>An Implementable Semantics for Comparative Constructions <lb/> </note>
 			
-			<div type="annex">12: [fler, kvinnor,r~stade, fIr, f~rslaget, {n, emot] <lb/>more women voted for the-suggestion than against. <lb/>....... Syntactic form <lb/>......... <lb/>s (subject (np (det ( [art (many <lb/>deg (ccmp (more <lb/>role_~rker (against)) ) ) <lb/>undet <lb/>plur] ) <lb/>cn (woman <lb/>C]))) <lb/>vp (vote <lb/>finite <lb/>trace np (A) <lb/>[role (agent <lb/>trace_np (A)) <lb/>role (for <lb/>np(det ([ [] <lb/>det <lb/>sing] ) <lb/>cn (suggestion <lb/>C])))])) <lb/>....... Logical form <lb/>......... <lb/>quant(q(A <lb/> q1~nt(q(B,more(A,B)) <lb/> k(C, wc~an(C)) <lb/>k(D, quant(the <lb/>l(E, suggestion(E)) <lb/>A(F, evnt(k(G,[and <lb/>vote(G) <lb/>agent(G,D) <lb/>agalnst(G,F)]))))))) <lb/> ~(lt, w~man(S)) <lb/> k(1),(~/ant(the <lb/>k(I, suggestion(1)) <lb/>X(J, evnt(l(K,[and <lb/>vote(K) <lb/>agent (K,D) <lb/>for(K,J)])))))) <lb/> 112 <lb/>• r,  .~,..~ ~ .... ~ <lb/> Conputatioual Linguistics Volume 16, Number 2, June 1990 </div>
+			<div type="annex">12: [fler, kvinnor,r~stade, fIr, f~rslaget, {n, emot] <lb/>more women voted for the-suggestion than against. <lb/>....... Syntactic form <lb/>......... <lb/>s (subject (np (det ( [art (many <lb/>deg (ccmp (more <lb/>role_~rker (against)) ) ) <lb/>undet <lb/>plur] ) <lb/>cn (woman <lb/>C]))) <lb/>vp (vote <lb/>finite <lb/>trace np (A) <lb/>[role (agent <lb/>trace_np (A)) <lb/>role (for <lb/>np(det ([ [] <lb/>det <lb/>sing] ) <lb/>cn (suggestion <lb/>C])))])) <lb/>....... Logical form <lb/>......... <lb/>quant(q(A <lb/> q1~nt(q(B,more(A,B)) <lb/> k(C, wc~an(C)) <lb/>k(D, quant(the <lb/>l(E, suggestion(E)) <lb/>A(F, evnt(k(G,[and <lb/>vote(G) <lb/>agent(G,D) <lb/>agalnst(G,F)]))))))) <lb/> ~(lt, w~man(S)) <lb/> k(1),(~/ant(the <lb/>k(I, suggestion(1)) <lb/>X(J, evnt(l(K,[and <lb/>vote(K) <lb/>agent (K,D) <lb/>for(K,J)])))))) <lb/> </div>
+
+			<page>112 <lb/></page>
+
+			• r,  .~,..~ ~ .... ~ <lb/>
+
+			<note place="footnote"> Conputatioual Linguistics Volume 16, Number 2, June 1990</note>
 
 		</back>
 	</text>
