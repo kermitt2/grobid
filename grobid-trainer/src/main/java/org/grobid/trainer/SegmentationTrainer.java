@@ -22,7 +22,7 @@ public class SegmentationTrainer extends AbstractTrainer {
         super(GrobidModels.SEGMENTATION);
 
         // adjusting CRF training parameters for this model (only with Wapiti)
-        epsilon = 0.00001;
+        epsilon = 0.0001;
         window = 20;
     }
 

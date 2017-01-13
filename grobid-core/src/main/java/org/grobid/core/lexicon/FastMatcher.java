@@ -209,7 +209,7 @@ public final class FastMatcher {
         				if (ind == -1)
                     text.append(" ").append(token);
         				else
-        					  text .append(" ").append(token.substring(0, ind));
+        					  text.append(" ").append(token.substring(0, ind));
             }
         }
         return matcher(text.toString());
@@ -235,7 +235,7 @@ public final class FastMatcher {
                 if (ind == -1)
                     text.append(" ").append(token);
                 else
-                    text .append(" ").append(token.substring(0, ind));
+                    text.append(" ").append(token.substring(0, ind));
             }
         }
         return matcher(text.toString());
