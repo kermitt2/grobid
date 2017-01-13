@@ -433,7 +433,10 @@ public class Segmentation extends AbstractParser {
                         }
                     }
 
+                    // we consider the first token of the line as usual lexical CRF token
+                    // and the second token of the line as feature
                     StringTokenizer st2 = new StringTokenizer(line, " \t");
+                    // alternatively, use a grobid analyser
                     String text = null;
                     String text2 = null;
                     if (st2.hasMoreTokens())
