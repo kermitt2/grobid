@@ -27,13 +27,13 @@
 
 			ds 2 = a 2<lb/> −(1 + 2ψ)dτ 2 + (1 − 2φ )dx i dx i<lb/> . (1)<lb/>
 
-			Where τ is the proper time. In this gauge the tensor and vector<lb/> degrees of freedom are eliminated from the begining and it<lb/> just appear the scalar modes (ψ and φ ) of the perturbation.<lb/>
+			Where τ is the proper time. In this gauge the tensor and vector<lb/> degrees of freedom are eliminated from the begining and it<lb/> just appear the scalar modes (ψ and φ ) of the perturbation.<lb/></body>
 
 			<front>arXiv:0908.0054v1 [astro-ph.CO] 1 Aug 2009<lb/></front>
 
 			<page>2<lb/></page>
 
-			Following the same formalism developed for the fermionic<lb/> sector [15], it is useful to define the corrected proper mo-<lb/>mentum q i ≡ a p i , q j = q n j , where n j is its direction unit<lb/> vector and a is the scale factor. The proper momentum p i<lb/> was defined in terms of the canonical conjugate momentum<lb/> P i = a(1 − ψ)p i of the the comoving coordinate x i . The co-<lb/>movil proper energy is ε ≡ a(p 2 + m 2 ) 1/2 . We also know that<lb/> the linear metric perturbations induce linear statistical pertur-<lb/>bations in the distribution function.<lb/>
+			<body>Following the same formalism developed for the fermionic<lb/> sector [15], it is useful to define the corrected proper mo-<lb/>mentum q i ≡ a p i , q j = q n j , where n j is its direction unit<lb/> vector and a is the scale factor. The proper momentum p i<lb/> was defined in terms of the canonical conjugate momentum<lb/> P i = a(1 − ψ)p i of the the comoving coordinate x i . The co-<lb/>movil proper energy is ε ≡ a(p 2 + m 2 ) 1/2 . We also know that<lb/> the linear metric perturbations induce linear statistical pertur-<lb/>bations in the distribution function.<lb/>
 
 			f (x i , P j , τ) = f 0 (q)<lb/> 1 + Ψ(x i , q,<lb/> j , τ)<lb/> , (2)<lb/>
 

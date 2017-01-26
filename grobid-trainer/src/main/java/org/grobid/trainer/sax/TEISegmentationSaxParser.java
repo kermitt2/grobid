@@ -74,7 +74,8 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 		if (qName.equals("body") || 
 			qName.equals("cover") || 
 			qName.equals("front") || 
-			qName.equals("div") || 
+			qName.equals("div") ||
+            qName.equals("toc") || 
             qName.equals("other") || 
 			qName.equals("listBibl")) {
 			currentTag = null;
@@ -126,7 +127,8 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 				//upperTag = currentTag;
 				//upperQname = "titlePage";
             }
-			else if (qName.equals("other")) {
+			else if (qName.equals("other") || qName.equals("toc")) {
+                // for the moment the table of content mark-up is ignored
                 //currentTags.push("<other>");
 				currentTag = "<other>";
             } 
@@ -219,13 +221,13 @@ public class TEISegmentationSaxParser extends DefaultHandler {
         if ((qName.equals("front")) || (qName.equals("titlePage")) || (qName.equals("note")) ||
                 (qName.equals("page")) || (qName.equals("pages")) || (qName.equals("body")) ||
                 (qName.equals("listBibl")) || (qName.equals("div")) ||
-                (qName.equals("other")) 
+                (qName.equals("other")) || (qName.equals("toc")) 
                 ) {
             String text = getText();
             text = text.replace("\n", " ");
             text = text.replace("  ", " ");
 			boolean begin = true;
-//System.out.println(text);			
+//System.out.println(text);	
             // we segment the text line by line first
             //StringTokenizer st = new StringTokenizer(text, "\n", true);
 			String[] tokens = text.split("\\+L\\+");
@@ -265,6 +267,12 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 	                //} else 
 					
 	                    //if (tok.length() > 0) {
+                if (surfaceTag == null) {
+                    // this token belongs to a chunk to ignored
+                    System.out.println("\twarning: surfaceTag is null for token '"+tok+"' - it will be tagged with label <other>");
+                    surfaceTag = "<other>";
+                }
+
 	        	if (begin && (!surfaceTag.equals("<other>"))) {
 	        		labeled.add(tok + " I-" + surfaceTag + "\n");
 	  			  	begin = false;
