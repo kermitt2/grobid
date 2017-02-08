@@ -44,12 +44,14 @@ public class Segmentation extends AbstractParser {
 	 		cover page <cover>, 
 			document header <header>, 
 			page footer <footnote>, 
-			page header <headnote>, 
+			page header <headnote>,
+            note in margin <marginnote>, 
 			document body <body>, 
 			bibliographical section <references>, 
 			page number <page>,
 			annexes <annex>,
 		    acknowledgement <acknowledgement>,
+            other <other>,
 		    toc <toc> -> not yet used because not yet training data for this
 	*/
 
@@ -76,20 +78,6 @@ public class Segmentation extends AbstractParser {
     public Segmentation() {
         super(GrobidModels.SEGMENTATION);
     }
-
-    /*public Document processing(File input, GrobidAnalysisConfig config) {
-        if (input == null) {
-            throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
-        }
-        if (!input.exists()) {
-            throw new GrobidResourceException("Cannot process pdf file, because input file '" +
-                    input.getAbsolutePath() + "' does not exist.");
-        }
-        DocumentSource documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage(),
-                config.getPdfAssetPath() != null);
-
-        return processing(documentSource, config);
-    }*/
     
     /**
      * Segment a PDF document into high level zones: cover page, document header,
@@ -851,6 +839,10 @@ public class Segmentation extends AbstractParser {
                             addSpace, 3);
                 }
                 if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<marginnote>", "<note place=\"margin\">",
+                            addSpace, 3);
+                }
+                if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<page>", "<page>", addSpace, 3);
                 }
                 if (!output) {
@@ -1062,6 +1054,8 @@ public class Segmentation extends AbstractParser {
             } else if (lastTag0.equals("<headnote>")) {
                 buffer.append("</note>\n\n");
             } else if (lastTag0.equals("<footnote>")) {
+                buffer.append("</note>\n\n");
+            } else if (lastTag0.equals("<marginnote>")) {
                 buffer.append("</note>\n\n");
             } else if (lastTag0.equals("<references>")) {
                 buffer.append("</listBibl>\n\n");
