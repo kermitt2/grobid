@@ -25,6 +25,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 		document header (<header>): front, 
 		page footer (<footnote>): note type footnote, 
 		page header (<headnote>): note type headnote, 
+        margin note (<marginnote>): note type margin, 
 		document body (<body>): body, 
 		bibliographical section (<references>): listbibl, 
 		page number (<page>): page,
@@ -163,11 +164,12 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 
                     if (name != null) {
                         if (name.equals("place")) {
-                            if (value.equals("footnote")) {
+                            if (value.equals("footnote") || value.equals("foot") ) {
 								currentTag = "<footnote>";
-                            }
-                            if (value.equals("headnote")) {
+                            } else if (value.equals("headnote") || value.equals("head") ) {
 								currentTag = "<headnote>";
+                            } else if (value.equals("margin")) {
+                                currentTag = "<marginnote>";
                             }
                         }
                     }
