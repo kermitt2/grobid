@@ -1638,6 +1638,11 @@ public class BiblioItem {
 			if (issue != null) {
 				bibtex += ",\nnumber\t=\t\"" + issue + "\"";
 			}
+
+            // DOI
+            if (DOI != null) {
+                bibtex += ",\ndoi\t=\t\"" + DOI + "\"";
+            }
 			
             // abstract
             if (abstract_ != null) {
