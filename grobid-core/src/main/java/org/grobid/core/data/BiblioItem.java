@@ -3,23 +3,37 @@ package org.grobid.core.data;
 import org.grobid.core.data.util.AuthorEmailAssigner;
 import org.grobid.core.data.util.ClassicAuthorEmailAssigner;
 import org.grobid.core.data.util.EmailSanitizer;
-import org.grobid.core.document.TEIFormatter;
+import org.grobid.core.document.*;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.HeaderLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.BoundingBox;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
+import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.KeyGen;
+import org.grobid.core.utilities.Pair;
+import org.grobid.core.GrobidModels;
+
+/*import com.google.common.collect.Iterables;
+import com.google.common.collect.SortedSetMultimap;
+import com.google.common.collect.TreeMultimap;*/
 
 import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Class for representing and exchanging a bibliographical item.
@@ -27,6 +41,8 @@ import java.util.regex.Pattern;
  * @author Patrice Lopez
  */
 public class BiblioItem {
+    protected static final Logger LOGGER = LoggerFactory.getLogger(BiblioItem.class);
+
     LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
     private AuthorEmailAssigner authorEmailAssigner = new ClassicAuthorEmailAssigner();
     private EmailSanitizer emailSanitizer = new EmailSanitizer();
@@ -34,6 +50,9 @@ public class BiblioItem {
     //TODO: keep in sync with teiId - now teiId is generated in many different places
     private Integer ordinal;
     private List<BoundingBox> coordinates = null;
+
+    // map of labels (e.g. <title> or <abstract>) to LayoutToken
+    private Map<String, List<LayoutToken>> labeledTokens;
 
     @Override
     public String toString() {
@@ -1639,6 +1658,13 @@ public class BiblioItem {
 				bibtex += ",\nnumber\t=\t\"" + issue + "\"";
 			}
 			
+            // DOI
+            if (DOI != null) {
+                if (DOI.length() > 0) {
+                    bibtex += ",\ndoi\t=\t\"" + DOI + "\"";   
+                }
+            }
+
             // abstract
             if (abstract_ != null) {
                 if (abstract_.length() > 0) {
@@ -3805,5 +3831,47 @@ public class BiblioItem {
 
     public List<BoundingBox> getCoordinates() {
         return coordinates;
+    }
+
+    public Map<String, List<LayoutToken>> getLabeledTokens() {
+        return labeledTokens;
+    }
+
+    public void setLabeledTokens(Map<String, List<LayoutToken>> labeledTokens) {
+        this.labeledTokens = labeledTokens;
+    }
+
+    public List<LayoutToken> getLayoutTokens(TaggingLabel headerLabel) {
+        if (labeledTokens == null) {
+            LOGGER.debug("labeledTokens is null");
+            return null;
+        }
+        if (headerLabel.getLabel() == null) {
+            LOGGER.debug("headerLabel.getLabel() is null");
+            return null;
+        }
+        return labeledTokens.get(headerLabel.getLabel());
+    }
+
+    public void generalResultMapping(Document doc, String labeledResult, List<LayoutToken> tokenizations) {
+        if (labeledTokens == null)
+            labeledTokens = new TreeMap<String, List<LayoutToken>>();
+
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.HEADER, labeledResult, tokenizations);
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            List<LayoutToken> clusterTokens = cluster.concatTokens();
+            List<LayoutToken> theList = labeledTokens.get(clusterLabel.toString());
+            if (theList == null)
+                theList = new ArrayList<LayoutToken>();
+            for (LayoutToken token : clusterTokens)
+                theList.add(token);
+            labeledTokens.put(clusterLabel.getLabel(), theList);
+        }
     }
 }

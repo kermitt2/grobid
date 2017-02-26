@@ -5,7 +5,7 @@ package org.grobid.core.layout;
  *
  * @author Patrice Lopez
  */
-public class LayoutToken {
+public class LayoutToken implements Comparable<LayoutToken> {
     private String text = null;
     public double y = -1.0;
     public double x = -1.0;
@@ -181,5 +181,27 @@ public class LayoutToken {
         result = 31 * result + (rotation ? 1 : 0);
         result = 31 * result + page;
         return result;
+    }
+
+    @Override
+    public int compareTo(LayoutToken token2) {
+        if (y != token2.y) {
+            if (y < token2.y)
+                return -1;
+            else 
+                return 1;
+        }
+        else if (x != token2.x) {
+            if (x < token2.x)
+                return -1;
+            else 
+                return 1;
+        }
+        else {
+            double area1 = height*width;
+            double area2 = token2.height*token2.width;
+
+            return Double.compare(area1, area2);
+        }
     }
 }
