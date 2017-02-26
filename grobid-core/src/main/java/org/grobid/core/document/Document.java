@@ -99,7 +99,7 @@ public class Document {
 
     protected FeatureFactory featureFactory = null;
 
-    // map of tokens (e.g. <reference> or <footnote>) to document pieces
+    // map of labels (e.g. <reference> or <footnote>) to document pieces
     protected SortedSetMultimap<String, DocumentPiece> labeledBlocks;
 
     // original tokenization and tokens - in order to recreate the original
@@ -1521,6 +1521,29 @@ public class Document {
         } else {
             return getDocumentPieceText(getDocumentPart(segmentationLabel));
         }
+    }
+
+    /**
+     * Give the list of LayoutToken corresponding to some document parts and
+     * a global document tokenization.
+     */
+    public static List<LayoutToken> getTokenizationParts(SortedSet<DocumentPiece> documentParts,
+                                                        List<LayoutToken> tokenizations) {
+        if (documentParts == null) 
+            return null;
+
+        List<LayoutToken> tokenizationParts = new ArrayList<LayoutToken>();
+        for (DocumentPiece docPiece : documentParts) {
+            DocumentPointer dp1 = docPiece.a;
+            DocumentPointer dp2 = docPiece.b;
+
+            int tokens = dp1.getTokenDocPos();
+            int tokene = dp2.getTokenDocPos();
+            for (int i = tokens; i < tokene; i++) {
+                tokenizationParts.add(tokenizations.get(i));
+            }
+        }
+        return tokenizationParts;
     }
 
     public BibDataSet getBibDataSetByTeiId(String teiId) {

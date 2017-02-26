@@ -498,7 +498,7 @@ public class HeaderParser extends AbstractParser {
     /**
      * Return the header section with features to be processed by the CRF model
      */
-    private String getSectionHeaderFeatured(Document doc,
+    public String getSectionHeaderFeatured(Document doc,
                                             SortedSet<DocumentPiece> documentHeaderParts,
                                             boolean withRotation) {
         FeatureFactory featureFactory = FeatureFactory.getInstance();

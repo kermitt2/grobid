@@ -29,8 +29,8 @@ public enum SegmentationLabel {
     ANNEX("<annex>"),
     REFERENCES("<references>"),
 	ACKNOWLEDGEMENT("<acknowledgement>"),
-    OTHER("other"),
-	TOC("toc");
+    OTHER("<other>"),
+	TOC("<toc>");
 
     private String label;
     SegmentationLabel(String label) {
