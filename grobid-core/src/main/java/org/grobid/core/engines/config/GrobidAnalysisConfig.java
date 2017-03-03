@@ -3,6 +3,8 @@ package org.grobid.core.engines.config;
 import java.io.File;
 import java.util.List;
 
+import org.grobid.core.analyzers.Analyzer;
+
 /**
  * Created by zholudev on 25/08/15.
  * A class representing configuration values needed in the analysis chain
@@ -22,6 +24,8 @@ import java.util.List;
  * generateTeiCoordinates give the list of TEI elements for which the coordinates
  * of the corresponding element in the original PDF should be included in the 
  * resulting TEI
+ * analyzer in case a particular Grobid Analyzer to be used for 
+ * tokenizing/filtering text
  */
 public class GrobidAnalysisConfig {
     private GrobidAnalysisConfig() {
@@ -66,6 +70,9 @@ public class GrobidAnalysisConfig {
     private boolean preprocessImages = true;
 
     private boolean processVectorGraphics = false;
+
+    // a particular Grobid Analyzer to be used for tokenizing/filtering text
+    private Analyzer analyzer = null;
 
     // BUILDER
 
@@ -119,6 +126,11 @@ public class GrobidAnalysisConfig {
 
         public GrobidAnalysisConfigBuilder withProcessVectorGraphics(boolean b) {
             config.processVectorGraphics = b;
+            return this;
+        }
+
+        public GrobidAnalysisConfigBuilder analyzer(Analyzer a) {
+            config.analyzer = a;
             return this;
         }
 
@@ -193,5 +205,9 @@ public class GrobidAnalysisConfig {
 
     public boolean isProcessVectorGraphics() {
         return processVectorGraphics;
+    }
+
+    public Analyzer getAnalyzer() {
+        return analyzer;
     }
 }

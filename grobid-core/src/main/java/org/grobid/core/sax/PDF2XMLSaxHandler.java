@@ -9,6 +9,7 @@ import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.analyzers.Analyzer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.*;
@@ -51,7 +52,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
     //starting page count from 1 since most of the PDF-related software count pages from 1
 	private int currentPage = 0;
 	private Page page = null; // the current page object
-	private GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance(); 
+	private Analyzer analyzer = GrobidAnalyzer.getInstance(); // use the default one by default ;)
 
 	private int currentOffset = 0;
 
@@ -60,6 +61,14 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 		blabla = new StringBuffer();
 		images = im;
 		tokenizations = new ArrayList<>();
+	}
+
+	public void setAnalyzer(Analyzer analyzer) {
+		this.analyzer = analyzer;
+	}
+
+	public Analyzer getAnalyzer() {
+		return this.analyzer;
 	}
 
 	private void addToken(LayoutToken layoutToken) {

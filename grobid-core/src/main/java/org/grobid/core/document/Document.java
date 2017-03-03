@@ -11,6 +11,8 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
 
 import org.grobid.core.analyzers.GrobidDefaultAnalyzer;
+import org.grobid.core.analyzers.Analyzer;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.*;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.SegmentationLabel;
@@ -142,13 +144,16 @@ public class Document {
 
     protected boolean titleMatchNum = false; // true if the section titles of the document are numbered
 
-    // the magic DOI regular expression...
+    // the magical DOI regular expression...
     static public final Pattern DOIPattern = Pattern
             .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
     protected List<Figure> figures;
     protected Predicate<GraphicObject> validGraphicObjectPredicate;
     protected int m;
     protected List<Table> tables;
+
+    // the analyzer/tokenizer used for processing this document
+    Analyzer analyzer = GrobidAnalyzer.getInstance();
 
     public Document(DocumentSource documentSource) {
         top = new DocumentNode("top", "0");
@@ -231,6 +236,14 @@ public class Document {
         return minBlockSpacing;
     }
 
+    public void setAnalyzer(Analyzer analyzer) {
+        this.analyzer = analyzer;
+    }
+
+    public Analyzer getAnalyzer() {
+        return this.analyzer;
+    }
+
     // to be removed
     @Deprecated
     public List<LayoutToken> getTokenizationsHeader() {
@@ -284,8 +297,13 @@ public class Document {
     }
 
     public List<LayoutToken> fromText(final String text) {
+        List<String> toks = null;
+        try {
+            toks = GrobidAnalyzer.getInstance().tokenize(text);
+        } catch(Exception e) {
+            LOGGER.error("Fail tokenization for " + text, e);
+        }
 
-        List<String> toks = GrobidDefaultAnalyzer.tokenize(text);
         tokenizations = Lists.transform(toks, new Function<String, LayoutToken>() {
             @Override
             public LayoutToken apply(String s) {
@@ -325,6 +343,9 @@ public class Document {
 
         images = new ArrayList<>();
         PDF2XMLSaxHandler parser = new PDF2XMLSaxHandler(this, images);
+        // we set possibly the particular analyzer to be used for tokenization of the PDF elements 
+        if (config.getAnalyzer() != null)
+           parser.setAnalyzer(config.getAnalyzer());
 		pdfAnnotations = new ArrayList<PDFAnnotation>();
 		PDF2XMLAnnotationSaxHandler parserAnnot = new PDF2XMLAnnotationSaxHandler(this, pdfAnnotations);
 		
@@ -374,7 +395,7 @@ public class Document {
 		} catch (GrobidException e) {
             throw e;
         } catch (Exception e) {
-            throw new GrobidException("Cannot parse file: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
+            LOGGER.error("Cannot parse file: " + fileAnnot, e, GrobidExceptionStatus.PARSING_ERROR);
         } finally {
             if (in != null) {
                 try {

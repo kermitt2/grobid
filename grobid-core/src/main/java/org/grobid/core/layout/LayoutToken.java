@@ -29,6 +29,24 @@ public class LayoutToken implements Comparable<LayoutToken> {
         this.text = text;
     }
 
+    public LayoutToken(LayoutToken token) {
+        this.text = token.text;
+        this.y = token.y;
+        this.x = token.x;
+        this.width = token.width;
+        this.height = token.height;
+        this.font = token.font;
+        this.bold = token.bold;
+        this.italic = token.italic;
+        this.colorFont = token.colorFont;
+        this.fontSize = token.fontSize;
+        this.rotation = token.rotation;
+        this.page = token.page;
+        this.newLineAfter = token.newLineAfter;
+        this.blockPtr = token.blockPtr;
+        this.offset = token.offset;
+    }
+
     public void setFont(String f) {
         font = f;
     }
@@ -204,4 +222,5 @@ public class LayoutToken implements Comparable<LayoutToken> {
             return Double.compare(area1, area2);
         }
     }
+
 }
