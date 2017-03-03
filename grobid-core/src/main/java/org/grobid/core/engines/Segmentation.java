@@ -89,6 +89,8 @@ public class Segmentation extends AbstractParser {
     public Document processing(DocumentSource documentSource, GrobidAnalysisConfig config) {
         try {
             Document doc = new Document(documentSource);
+            if (config.getAnalyzer() != null)
+                doc.setAnalyzer(config.getAnalyzer());
             doc.addTokenizedDocument(config);
             doc = prepareDocument(doc);
 
