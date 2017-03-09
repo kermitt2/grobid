@@ -7,6 +7,7 @@ package org.grobid.core.visualization;
 
 import com.google.common.collect.Multimap;
 import net.sf.saxon.trans.XPathException;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.cos.COSArray;
 import org.apache.pdfbox.exceptions.COSVisitorException;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -19,8 +20,8 @@ import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BibDataSetContext;
+import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
-import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
@@ -28,6 +29,7 @@ import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.BibDataSetContextExtractor;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.LayoutTokensUtil;
 
 import java.awt.*;
 import java.io.File;
@@ -47,15 +49,19 @@ public class CitationsVisualizer {
 //            File input = new File("/Work/temp/context/1000k/AS_99223336914944_1400668095132.pdf");
 //            File input = new File("/tmp/AS_100005549445135_1400854589869.pdf"); // not all tokens
 //            File input = new File("/Work/temp/context/coords/1.pdf");
+//            File input = new File("/Work/temp/context/1000k/AS_101465473421322_1401202662564.pdf");
+//            File input = new File("/Work/temp/context/1000k/AS_104748833312772_1401985480367.pdf");
 //            File input = new File("/Work/temp/context/1000k/AS_101477532045313_1401205537270.pdf"); // NO BLOCKS
+            File input = new File("/Users/zholudev/Downloads/2010 Materials Science and Engineering B Vikas.pdf"); // NO BLOCKS
 //            File input = new File("/Users/zholudev/Downloads/AS-316773709090817@1452536145958_content_1.pdf"); // NO BLOCKS
 
-            File input = new File("/Users/zholudev/Downloads/AS-319651387510785@1453222237979_content_1.pdf");
+//            File input = new File("/Users/zholudev/Downloads/AS-231890204491776@1432298341550_content_1.pdfs");
+//            File input = new File("/Users/zholudev/Downloads/AS-101217116098573@1401143449634_content_1.pdf");
 //            File input = new File("/Users/zholudev/Downloads/AS-320647283052546@1453459677289_content_1.pdf"); //BAD BLOCK
 //            File input = new File("/Users/zholudev/Downloads/AS-99301753622543@1400686791996_content_1 (1).pdf"); //spaces
 //            File input = new File("/Users/zholudev/Downloads/AS-321758798778369@1453724683241_content_1.pdf"); //spaces
 
-//            File input = new File("/Users/zholudev/Downloads/AS-293000065372184@1446868067909_content_1.pdf");
+//            File input = new File("/Users/zholudev/Downloads/AS-100068715663376@1400869649962_content_1.pdf");
 //            File input = new File("/Users/zholudev/Downloads/Es0264448.pdf");
 
 
@@ -120,9 +126,9 @@ public class CitationsVisualizer {
                     System.out.println(c.getContext());
                     String mrect = c.getDocumentCoords();
 //                    if (!c.getTeiId().equals("b5")) {
-                        for (String coords : mrect.split(";")) {
-                            annotatePage(document, coords, teiId.hashCode(), 1.0f);
-                        }
+                    for (String coords : mrect.split(";")) {
+                        annotatePage(document, coords, teiId.hashCode(), 1.0f);
+                    }
 //                    }
                 }
 
@@ -136,6 +142,17 @@ public class CitationsVisualizer {
             }
         }
 
+        if (teiDoc.getResHeader() != null && teiDoc.getResHeader().getFullAuthors() != null) {
+            for (Person p : teiDoc.getResHeader().getFullAuthors()) {
+                if (p.getLayoutTokens() != null) {
+                    String coordsString = LayoutTokensUtil.getCoordsString(p.getLayoutTokens());
+                    for (String coords : coordsString.split(";")) {
+                        annotatePage(document, coords, p.getLastName() == null ? 1 : p.getLastName().hashCode(), 1.0f);
+                    }
+                }
+            }
+        }
+
         return document;
     }
 
@@ -143,6 +160,9 @@ public class CitationsVisualizer {
     private static void annotatePage(PDDocument document, String coords, long seed, float lineWidth) throws IOException {
         System.out.println("Annotating for coordinates: " + coords);
 
+        if (StringUtils.isEmpty(coords)) {
+            return;
+        }
         String[] split = coords.split(",");
 
         Long pageNum = Long.valueOf(split[0], 10) - 1;

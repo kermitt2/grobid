@@ -8,6 +8,7 @@ import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.BoundingBox;
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
@@ -210,6 +211,7 @@ public class BiblioItem {
 
     // for convenience GROBIDesque
     private String authors = null;
+    private List<LayoutToken> authorsTokens = new ArrayList<>();
     private String location = null;
     private String bookTitle = null;
     private String serieTitle = null;
@@ -918,6 +920,15 @@ public class BiblioItem {
     // temp
     public void setAuthors(String aut) {
         authors = aut;
+    }
+
+    public BiblioItem addAuthorsToken(LayoutToken lt) {
+        authorsTokens.add(lt);
+        return this;
+    }
+
+    public List<LayoutToken> getAuthorsTokens() {
+        return authorsTokens;
     }
 
     public void addAuthor(String aut) {
@@ -3272,36 +3283,37 @@ public class BiblioItem {
                         tei.append(">\n");
 
                     TextUtilities.appendN(tei, '\t', nbTag + 1);
-                    tei.append("<persName>\n");
-                    if (author.getFirstName() != null) {
-                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-                        tei.append("<forename type=\"first\">" +
-                                TextUtilities.HTMLEncode(author.getFirstName()) + "</forename>\n");
-                    }
-                    if (author.getMiddleName() != null) {
-                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-                        tei.append("<forename type=\"middle\">" +
-                                TextUtilities.HTMLEncode(author.getMiddleName()) + "</forename>\n");
-                    }
-                    if (author.getLastName() != null) {
-                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-                        tei.append("<surname>" +
-                                TextUtilities.HTMLEncode(author.getLastName()) + "</surname>\n");
-                        //author.getLastName() + "</surname>\n");
-                    }
-                    if (author.getTitle() != null) {
-                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-                        tei.append("<roleName>" +
-                                TextUtilities.HTMLEncode(author.getTitle()) + "</roleName>\n");
-                    }
-                    if (author.getSuffix() != null) {
-                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-                        tei.append("<genName>" +
-                                TextUtilities.HTMLEncode(author.getSuffix()) + "</genName>\n");
-                    }
-
-                    TextUtilities.appendN(tei, '\t', nbTag + 1);
-                    tei.append("</persName>\n");
+                    tei.append(author.toTEI()).append("\n");
+//                    tei.append("<persName>\n");
+//                    if (author.getFirstName() != null) {
+//                        TextUtilities.appendN(tei, '\t', nbTag + 2);
+//                        tei.append("<forename type=\"first\">" +
+//                                TextUtilities.HTMLEncode(author.getFirstName()) + "</forename>\n");
+//                    }
+//                    if (author.getMiddleName() != null) {
+//                        TextUtilities.appendN(tei, '\t', nbTag + 2);
+//                        tei.append("<forename type=\"middle\">" +
+//                                TextUtilities.HTMLEncode(author.getMiddleName()) + "</forename>\n");
+//                    }
+//                    if (author.getLastName() != null) {
+//                        TextUtilities.appendN(tei, '\t', nbTag + 2);
+//                        tei.append("<surname>" +
+//                                TextUtilities.HTMLEncode(author.getLastName()) + "</surname>\n");
+//                        //author.getLastName() + "</surname>\n");
+//                    }
+//                    if (author.getTitle() != null) {
+//                        TextUtilities.appendN(tei, '\t', nbTag + 2);
+//                        tei.append("<roleName>" +
+//                                TextUtilities.HTMLEncode(author.getTitle()) + "</roleName>\n");
+//                    }
+//                    if (author.getSuffix() != null) {
+//                        TextUtilities.appendN(tei, '\t', nbTag + 2);
+//                        tei.append("<genName>" +
+//                                TextUtilities.HTMLEncode(author.getSuffix()) + "</genName>\n");
+//                    }
+//
+//                    TextUtilities.appendN(tei, '\t', nbTag + 1);
+//                    tei.append("</persName>\n");
 
                     if (author.getEmail() != null) {
                         TextUtilities.appendN(tei, '\t', nbTag + 1);

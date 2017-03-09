@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import com.google.common.base.Splitter;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModels;
@@ -14,6 +15,7 @@ import org.grobid.core.document.DocumentSource;
 import org.grobid.core.document.TEIFormatter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.lang.Language;
@@ -22,6 +24,7 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,10 +35,12 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author Patrice Lopez
@@ -83,6 +88,8 @@ public class HeaderParser extends AbstractParser {
 
             String tei = processingHeaderBlock(consolidate, doc, resHeader);
             return Pair.of(tei, doc);
+        } catch (Exception e) {
+            throw new GrobidException(e, GrobidExceptionStatus.GENERAL);
         } finally {
             if (documentSource != null) {
                 documentSource.close(true);
@@ -93,7 +100,7 @@ public class HeaderParser extends AbstractParser {
     /**
      * Header processing after identification of the header blocks with heuristics (old approach)
      */
-    public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) {
+    public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) throws Exception {
         String header;
         //if (doc.getBlockDocumentHeaders() == null) {
             header = doc.getHeaderFeatured(true, true);
@@ -157,13 +164,15 @@ public class HeaderParser extends AbstractParser {
                 if (resHeader.getAuthors() != null) {
                     ArrayList<String> auts;
                     authorSegments = resHeader.getAuthors().split("\n");
+                    List<List<LayoutToken>> tokenAuthorSegments = LayoutTokensUtil.split(resHeader.getAuthorsTokens(), Pattern.compile("\n"), false);
                     if (authorSegments.length > 1) {
                         fragmentedAuthors = true;
                     }
                     for (int k = 0; k < authorSegments.length; k++) {
                         auts = new ArrayList<String>();
                         auts.add(authorSegments[k]);
-                        List<Person> localAuthors = parsers.getAuthorParser().processingHeader(auts);
+//                        List<Person> localAuthors = parsers.getAuthorParser().processingHeader(auts);
+                        List<Person> localAuthors = parsers.getAuthorParser().processingHeaderWithTokens(tokenAuthorSegments.get(k));
                         if (localAuthors != null) {
                             for (Person pers : localAuthors) {
                                 resHeader.addFullAuthor(pers);
@@ -205,10 +214,10 @@ public class HeaderParser extends AbstractParser {
                     }
 
                     if (resHeader.getEditors() != null) {
-                        ArrayList<String> edits = new ArrayList<String>();
-                        edits.add(resHeader.getEditors());
+//                        ArrayList<String> edits = new ArrayList<String>();
+//                        edits.add(resHeader.getEditors());
 
-                        resHeader.setFullEditors(parsers.getAuthorParser().processingHeader(edits));
+                        resHeader.setFullEditors(parsers.getAuthorParser().processingHeader(resHeader.getEditors()));
                         // resHeader.setFullEditors(authorParser.processingCitation(edits));
                     }
 
@@ -267,6 +276,8 @@ public class HeaderParser extends AbstractParser {
         } else {
             LOGGER.debug("WARNING: header is empty.");
         }
+
+        doc.setResHeader(resHeader);
 
         TEIFormatter teiFormatter = new TEIFormatter(doc);
         StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, GrobidAnalysisConfig.builder().consolidateHeader(consolidate).build());
@@ -364,15 +375,16 @@ public class HeaderParser extends AbstractParser {
                     List<Integer> authorsBlocks = new ArrayList<Integer>();
                     String[] authorSegments = null;
                     if (resHeader.getAuthors() != null) {
-                        List<String> auts;
+//                        List<String> auts;
                         authorSegments = resHeader.getAuthors().split("\n");
                         if (authorSegments.length > 1) {
                             fragmentedAuthors = true;
                         }
                         for (int k = 0; k < authorSegments.length; k++) {
-                            auts = new ArrayList<String>();
-                            auts.add(authorSegments[k]);
-                            List<Person> localAuthors = parsers.getAuthorParser().processingHeader(auts);
+//                            auts = new ArrayList<String>();
+//                            auts.add(authorSegments[k]);
+//                            List<Person> localAuthors = parsers.getAuthorParser().processingHeader(auts);
+                            List<Person> localAuthors = parsers.getAuthorParser().processingHeader(authorSegments[k]);
                             if (localAuthors != null) {
                                 for (Person pers : localAuthors) {
                                     resHeader.addFullAuthor(pers);
@@ -415,10 +427,10 @@ public class HeaderParser extends AbstractParser {
                     }
 
                     if (resHeader.getEditors() != null) {
-                        List<String> edits = new ArrayList<String>();
-                        edits.add(resHeader.getEditors());
-
-                        resHeader.setFullEditors(parsers.getAuthorParser().processingHeader(edits));
+//                        List<String> edits = new ArrayList<String>();
+//                        edits.add(resHeader.getEditors());
+                        resHeader.setFullEditors(parsers.getAuthorParser().processingHeader(resHeader.getEditors()));
+//                        resHeader.setFullEditors(parsers.getAuthorParser().processingHeader(edits));
                         // resHeader.setFullEditors(authorParser.processingCitation(edits));
                     }
 
@@ -1023,16 +1035,18 @@ public class HeaderParser extends AbstractParser {
      * @return a biblio item
      */
     public BiblioItem resultExtraction(String result, boolean intro, List<LayoutToken> tokenizations, BiblioItem biblio) {
-        StringTokenizer st = new StringTokenizer(result, "\n");
+//        StringTokenizer st = new StringTokenizer(result, "\n");
+        List<String> lines = Splitter.on("\n").splitToList(result);
         String s1 = null;
         String s2 = null;
         String lastTag = null;
 
         int p = 0;
 
-        while (st.hasMoreTokens()) {
+        Iterator<String> st = lines.iterator();
+        while (st.hasNext()) {
             boolean addSpace = false;
-            String tok = st.nextToken().trim();
+            String tok = st.next().trim();
 
             if (tok.length() == 0) {
                 continue;
@@ -1043,6 +1057,7 @@ public class HeaderParser extends AbstractParser {
 
             // boolean newLine = false;
             int ll = stt.countTokens();
+            LayoutToken layoutToken = null;
             while (stt.hasMoreTokens()) {
                 String s = stt.nextToken().trim();
                 if (i == 0) {
@@ -1051,7 +1066,8 @@ public class HeaderParser extends AbstractParser {
                     int p0 = p;
                     boolean strop = false;
                     while ((!strop) && (p < tokenizations.size())) {
-                        String tokOriginal = tokenizations.get(p).getText();
+                        layoutToken = tokenizations.get(p);
+                        String tokOriginal = layoutToken.getText();
                         if (tokOriginal.equals(" ")) {
                             addSpace = true;
                         } else if (tokOriginal.equals(s)) {
@@ -1092,19 +1108,27 @@ public class HeaderParser extends AbstractParser {
                     if (biblio.getAuthors() != null) {
                         if (addSpace) {
                             biblio.setAuthors(biblio.getAuthors() + " " + s2);
-                        } else
+                            biblio.addAuthorsToken(new LayoutToken(" "));
+                        } else {
                             biblio.setAuthors(biblio.getAuthors() + s2);
-                    } else
+                        }
+                    } else {
                         biblio.setAuthors(s2);
+                    }
                 } else {
                     if (biblio.getAuthors() != null) {
                         if (addSpace) {
                             biblio.setAuthors(biblio.getAuthors() + " \n" + s2);
-                        } else
+                            biblio.addAuthorsToken(new LayoutToken(" ")).addAuthorsToken(new LayoutToken("\n"));
+                        } else {
                             biblio.setAuthors(biblio.getAuthors() + "\n" + s2);
-                    } else
+                            biblio.addAuthorsToken(new LayoutToken("\n"));
+                        }
+                    } else {
                         biblio.setAuthors(s2);
+                    }
                 }
+                biblio.addAuthorsToken(layoutToken);
             } else if ((s1.equals("<tech>")) || (s1.equals("I-<tech>"))) {
                 biblio.setItem(BiblioItem.TechReport);
                 if (biblio.getBookType() != null) {
