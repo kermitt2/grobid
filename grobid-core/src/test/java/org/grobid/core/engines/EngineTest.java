@@ -10,6 +10,7 @@ import org.grobid.core.data.Date;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
+import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
@@ -604,6 +605,33 @@ public class EngineTest {
     }
 
 
+    @Test
+    public void testFromText() {
+//        String text = "David Green et al 2015 Nanoscale DOI:10.1039/C6NR05046H recenty demonstrated that gecko microspinules (hairs) and " +
+//                "their equivalent replicas, bearing nanoscale tips, can kill or impair surface associating oral pathogenic " +
+//                "bacteria with high efficiency even after 7 days of repeated attacks. " +
+//                "Scanning Electron Microscopy suggests that there is more than one mechanism contributing to " +
+//                "cell death which appears to be related to the scaling of the bacteria type with the hair arrays " +
+//                "and accessibility to the underlying nano-topography of the hierarchical surfaces.";
+//
+        final Engine engine = GrobidFactory.getInstance().getEngine();
+//        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
+//
+////        Document doc = Document.createFromText(text);
+//
+//        List<LabeledReferenceResult> segRes = engine.getParsers().getReferenceSegmenterParser().extract(text);
+
+
+        String text = "Physics and test";
+
+
+      engine.getParsers().getCitationParser().processingReferenceSection(text, engine.getParsers().getReferenceSegmenterParser());
+
+
+
+
+    }
+
     private void testWap(final String forTest, File modelFile) throws InterruptedException {
         final WapitiModel wm = new WapitiModel(modelFile);
         String res;
@@ -641,10 +669,18 @@ public class EngineTest {
     @Test
     public void testPDF() throws Exception {
         Engine engine = GrobidFactory.getInstance().getEngine();
-        BiblioItem resHeader = new BiblioItem();
-        engine.getParsers().getHeaderParser().processing(new File("//Work/temp/1.pdf"), resHeader, GrobidAnalysisConfig.defaultInstance());
-        System.out.println(resHeader);
-        System.out.println(engine.fullTextToTEI(new File("//Work/temp/1.pdf"), GrobidAnalysisConfig.defaultInstance()));
+//        BiblioItem resHeader = new BiblioItem();
+        File input = new File("/Users/zholudev/Downloads/AS-454757820178434@1485434121902_content_1.pdf");
+//        engine.getParsers().getHeaderParser().processing(input, resHeader, GrobidAnalysisConfig.defaultInstance());
+//        System.out.println(resHeader.getAbstract());
+//
+        Document d =
+                engine.fullTextToTEIDoc(input, GrobidAnalysisConfig.defaultInstance());
+
+        d.getBlocks();
+        System.out.println(d.getTei());
+//        System.out.println(d.getResHeader());
+//        System.out.println(engine.fullTextToTEI(new File("//Work/temp/1.pdf"), GrobidAnalysisConfig.defaultInstance()));
 
     }
 
@@ -855,7 +891,14 @@ public class EngineTest {
 //        System.out.println(engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/SicamSnellenburgPFRT_OptomVisSci84E915_923.pdf"), config)); //footnote citations
 //        System.out.println(engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/MullenJSSv18i03.pdf"), config)); //long author style citations
 //        System.out.println(engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/1996ParPrecConfProc00507369.pdf"), config)); // simple numbered
-        System.out.println(engine.fullTextToTEI(new File("/Work/temp/context/1000k/AS_200548461617156_1424825887720.pdf"), config)); // numbered
+//        System.out.println(engine.fullTextToTEI(new File("/Work/temp/context/1000k/AS_200548461617156_1424825887720.pdf"), config)); // numbered
+//        File pdf = new File("/Users/zholudev/Downloads/AS-454757820178434@1485434121902_content_1.pdf");
+//        File pdf = new File("/Users/zholudev/Downloads/AS-99907918630920@1400831312313_content_1.pdf");
+        File pdf = new File("/Users/zholudev/Downloads/9908107.pdf");
+        Document doc = engine.getParsers().getFullTextParser().processing(DocumentSource.fromPdf(pdf, -1, -1, false), config);
+        System.out.println(doc.getTei());
+
+//        System.out.println(engine.fullTextToTEI(inputFile, config)); // numbered
 //        System.out.println(engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/MullenJSSv18i03.pdf"), GrobidAnalysisConfig.defaultInstance()));
 //        engine.fullTextToTEI(new File("/Work/temp/pub_citation_styles/1994FEBSLett350_235Hadden.pdf"), GrobidAnalysisConfig.defaultInstance());
 //        System.out.println(engine.fullTextToTEI(new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis-service/src/test/resources/net/researchgate/pdfanalysisservice/papers.bad.input/40th_Conf_unprotected.pdf"), GrobidAnalysisConfig.defaultInstance()));
@@ -916,37 +959,18 @@ public class EngineTest {
 //        GrobidAnalysisConfig config = GrobidAnalysisConfig.defaultInstance();
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
 
+
+//        File f = new File("/Users/zholudev/Downloads/Publications sample/AS-292290007453702@1446698776063_content_1.pdf");
+        File f = new File("/Users/zholudev/Downloads/Publications sample/AS-395712329207812@1471356579731_content_1.pdf");
+
+        BiblioItem res = new BiblioItem();
+        System.out.println(engine.processHeader(f.getAbsolutePath(), false, config, res));
+
+
         int cnt = 0;
 //        for (File f : new File("/Work/temp/pub_citation_styles").listFiles(new FileFilter() {
 //            @Override
 //            public boolean accept(File pathname) {
-        for (File f : new File("/Work/temp/context/1000k")
-//                for (File f : new File("/Work/temp/timeout") // bad PDF that produces dozens of files
-                .listFiles(new FileFilter() {
-                    @Override
-                    public boolean accept(File pathname) {
-                        return pathname.getName().endsWith(".pdf");
-                    }
-                })) {
-            try {
-                Engine.getCntManager().i("PDFS", "INPUT_CNT");
-                System.out.println("Processing: " + f);
-                BiblioItem item = new BiblioItem();
-                String tei = engine.processHeader(f.getAbsolutePath(), false, item);
-
-                Engine.getCntManager().i("LANGS", item.getLanguage());
-
-                System.out.println(tei.length());
-            } catch (Exception e) {
-                e.printStackTrace();
-                Engine.getCntManager().i("FAILED", e.getClass().getSimpleName());
-            }
-            if (++cnt % 10 == 0) {
-                System.out.println("Processed: " + cnt);
-                System.out.println(Engine.getCntManager());
-            }
-        }
-
 //        System.out.println(engine.fullTextToTEI(new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis-service/src/test/resources/net/researchgate/pdfanalysisservice/papers.bad.input/40th_Conf_unprotected.pdf"), GrobidAnalysisConfig.defaultInstance()));
 //        System.out.println(engine.fullTextToTEI(new File("/var/folders/h4/np1lg7256q3c3s6b2lhm9w0r0000gn/T/habibi-pdf996586749219753040.pdf"), GrobidAnalysisConfig.defaultInstance()));
 //        System.out.println(engine.fullTextToTEI("/tmp/x1.pdf", true, true, null, -1, -1, true));

@@ -103,12 +103,13 @@ public class CitationParser extends AbstractParser {
 
                 resCitation.setOriginalAuthors(resCitation.getAuthors());
 
-                ArrayList<String> auts = new ArrayList<String>();
-                if (resCitation.getAuthors() != null) {
-                    auts.add(resCitation.getAuthors());
-                }
+//                ArrayList<String> auts = new ArrayList<String>();
+//                if (resCitation.getAuthors() != null) {
+//                    auts.add(resCitation.getAuthors());
+//                }
 
-                resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(auts));
+//                resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(auts));
+                resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(resCitation.getAuthors()));
                 if (resCitation.getPublicationDate() != null) {
                     List<Date> dates = parsers.getDateParser().processing(resCitation
                             .getPublicationDate());

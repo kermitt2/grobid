@@ -112,7 +112,7 @@ public class Document {
     private DocumentNode top = null;
 
     // header of the document - if extracted and processed
-    private final BiblioItem resHeader = null;
+    private BiblioItem resHeader = null;
 
     // full text as tructure TEI - if extracted and processed
     private String tei;
@@ -348,6 +348,7 @@ public class Document {
                 BoundingBox box = BoundingBoxCalculator.calculateOneBox(b.getTokens());
                 if (box != null) {
                     b.setBoundingBox(box);
+
                 }
 
                 //small blocks can indicate that it's page numbers, some journal header info, etc. No need in them
@@ -2037,5 +2038,9 @@ public class Document {
 
     public List<Table> getTables() {
         return tables;
+    }
+
+    public void setResHeader(BiblioItem resHeader) {
+        this.resHeader = resHeader;
     }
 }

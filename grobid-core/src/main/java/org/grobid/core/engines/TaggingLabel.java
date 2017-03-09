@@ -33,6 +33,23 @@ public enum TaggingLabel {
     FIG_OTHER(GrobidModels.FIGURE, "<other>"),
 
 
+    // names
+    NH_FORENAME(GrobidModels.NAMES_HEADER, "<forename>"),
+    NH_MIDDLENAME(GrobidModels.NAMES_HEADER, "<middlename>"),
+    NH_SURNAME(GrobidModels.NAMES_HEADER, "<surname>"),
+    NH_MARKER(GrobidModels.NAMES_HEADER, "<marker>"),
+    NH_TITLE(GrobidModels.NAMES_HEADER, "<title>"),
+    NH_SUFFIX(GrobidModels.NAMES_HEADER, "<suffix>"),
+    NH_OTHER(GrobidModels.NAMES_HEADER, "<other>"),
+
+    NC_FORENAME(GrobidModels.NAMES_CITATION, "<forename>"),
+    NC_MIDDLENAME(GrobidModels.NAMES_CITATION, "<middlename>"),
+    NC_SURNAME(GrobidModels.NAMES_CITATION, "<surname>"),
+    NC_MARKER(GrobidModels.NAMES_CITATION, "<marker>"),
+    NC_TITLE(GrobidModels.NAMES_CITATION, "<title>"),
+    NC_SUFFIX(GrobidModels.NAMES_CITATION, "<suffix>"),
+    NC_OTHER(GrobidModels.NAMES_CITATION, "<other>"),
+
     // table
     TBL_DESC(GrobidModels.TABLE, "<figDesc>"),
     TBL_HEAD(GrobidModels.TABLE, "<figure_head>"),
