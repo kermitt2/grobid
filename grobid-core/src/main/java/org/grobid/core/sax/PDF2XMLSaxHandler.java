@@ -20,7 +20,7 @@ import java.util.*;
 /**
  * SAX parser for XML representation of PDF files obtained via xpdf pdf2xml. All
  * typographical and layout information are defined token by token
- * 
+ *
  * @author Patrice Lopez
  */
 public class PDF2XMLSaxHandler extends DefaultHandler {
@@ -460,8 +460,8 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 				//		TextUtilities.delimiters, true);
 				List<String> subTokenizations = new ArrayList<>();
 				try {
-					// TBD: pass a language object to the tokenize method call 
-					subTokenizations = analyzer.tokenize(tok0);		
+					// TBD: pass a language object to the tokenize method call
+					subTokenizations = analyzer.tokenize(tok0);
 				}
 				catch(Exception e) {
 					LOGGER.debug("Sub-tokenization of pdf2xml token has failed.");
