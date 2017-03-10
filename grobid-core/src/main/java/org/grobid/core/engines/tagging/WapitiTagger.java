@@ -1,6 +1,7 @@
 package org.grobid.core.engines.tagging;
 
 import com.google.common.base.Joiner;
+import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.jni.WapitiModel;
 
@@ -14,7 +15,7 @@ public class WapitiTagger implements GenericTagger {
 
     private final WapitiModel wapitiModel;
 
-    public WapitiTagger(GrobidModels model) {
+    public WapitiTagger(GrobidModel model) {
         wapitiModel = new WapitiModel(model);
     }
 

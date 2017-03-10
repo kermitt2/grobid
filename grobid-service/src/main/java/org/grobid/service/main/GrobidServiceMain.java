@@ -80,34 +80,34 @@ public class GrobidServiceMain {
 	}
 	
 	/**
+	 * URI of localhost.
+	 */
+	public static final String LOCALHOST="http://localhost";
+
+	/**
 	 * Searches for a free unused port number and returns it.The port is in the range of 5000 .. 9999.
 	 * @return
 	 * @throws IOException
 	 */
-	public static Integer findPort() throws IOException 
+	public static Integer findPort() throws IOException
 	{
 		Integer retVal = null;
 		ServerSocket socket = null;
 		for (int portNumber= 5000; portNumber< 10000; portNumber++)
 		{
 			try {
-			    socket = new ServerSocket(portNumber);
-			    retVal= portNumber;
-			    break;
+				socket = new ServerSocket(portNumber);
+				retVal= portNumber;
+				break;
 			} catch (IOException e) {
-			} finally { 
-			    // Clean up
-			    if (socket != null) socket.close(); 
+			} finally {
+				// Clean up
+				if (socket != null) socket.close();
 			}
 		}
 		return(retVal);
 	}
-	
-	/**
-	 * URI of localhost.
-	 */
-	public static final String LOCALHOST="http://localhost";
-	
+
 	/**
 	 * command to stop grobid service
 	 */

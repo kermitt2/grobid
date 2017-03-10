@@ -3,6 +3,7 @@ package org.grobid.core.engines.patent;
 import java.util.*;
 import java.util.regex.*;
 
+import org.apache.commons.io.IOUtils;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.TextUtilities;
@@ -178,27 +179,14 @@ public class PatentRefParser {
 				}
 			}
 			catch (FileNotFoundException e) {
-	//	    	e.printStackTrace();
 	            throw new GrobidException("An exception occured while running Grobid.", e);
 	        } 
 			catch (IOException e) {
-	//	    	e.printStackTrace();
 	            throw new GrobidException("An exception occured while running Grobid.", e);
 	        } 
 			finally {
-	            try {
-	                if (ist != null)
-	                    ist.close();
-	                if (isr != null)
-	                    isr.close();
-	                if (dis != null)
-	                    dis.close();
-	            } 
-				catch (Exception e) {
-	                throw new GrobidResourceException("Cannot close all streams.", e);
-	            }
+                IOUtils.closeQuietly(ist, isr, dis);
 	        }
-
 		}
 	}
 
@@ -402,7 +390,7 @@ public class PatentRefParser {
 					number = number.substring(ind, number.length());
 				}
 				
-				if (!kindCodeFound) {
+				if (!kindCodeFound && (offsets_begin.get(i)-rawTextOffset >= lastPositionVisited)) {
 					// is there a kind code between the last position and position of this number?
 					String interChunk = rawText.substring(lastPositionVisited, (offsets_begin.get(i)-rawTextOffset));
 					fitKindCode = kindcode_pattern1.matcher(interChunk);
@@ -1270,10 +1258,12 @@ public class PatentRefParser {
             if ((toto.charAt(toto.length() - 2) == '.') && (Character.isDigit(toto.charAt(toto.length() - 1)))) {
                 toto = toto.substring(0, toto.length() - 2);
             }
-            if (((toto.charAt(toto.length() - 2) == 'A') ||
-                    (toto.charAt(toto.length() - 2) == 'B') ||
-                    (toto.charAt(toto.length() - 2) == 'C'))
-                    & (Character.isDigit(toto.charAt(toto.length() - 1)))) {
+            if ( (toto.length() > 2) &&
+				 ((toto.charAt(toto.length() - 2) == 'A') ||
+                  (toto.charAt(toto.length() - 2) == 'B') ||
+                  (toto.charAt(toto.length() - 2) == 'C')) &&
+                 (Character.isDigit(toto.charAt(toto.length() - 1)))
+			) {
                 toto = toto.substring(0, toto.length() - 2);
             }
         }

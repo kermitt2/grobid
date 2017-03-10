@@ -19,7 +19,7 @@ import org.grobid.core.data.Person;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.main.batch.GrobidMainArgs;
-import org.grobid.core.utilities.Utilities;
+import org.grobid.core.utilities.IOUtilities;
 import org.grobid.core.utilities.KeyGen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -101,12 +101,12 @@ public class ProcessEngine implements Closeable {
 							outputPathFile.mkdir();
 						}
 						if (currPdf.getName().endsWith(".pdf")) {
-                        	Utilities.writeInFile(outputPath + File.separator
+                        	IOUtilities.writeInFile(outputPath + File.separator
                                 + new File(currPdf.getAbsolutePath())
 									.getName().replace(".pdf", ".tei.xml"), result.toString());
 						}
 						else if (currPdf.getName().endsWith(".PDF")) {
-                        	Utilities.writeInFile(outputPath + File.separator
+                        	IOUtilities.writeInFile(outputPath + File.separator
                                 + new File(currPdf.getAbsolutePath())
 									.getName().replace(".PDF", ".tei.xml"), result.toString());
 						}
@@ -178,12 +178,12 @@ public class ProcessEngine implements Closeable {
 							outputPathFile.mkdir();
 						}
 						if (currPdf.getName().endsWith(".pdf")) {
-                        	Utilities.writeInFile(outputPath + File.separator
+                        	IOUtilities.writeInFile(outputPath + File.separator
                                 + new File(currPdf.getAbsolutePath())
 									.getName().replace(".pdf", ".tei.xml"), result.toString());
 						}
 						else if (currPdf.getName().endsWith(".PDF")) {
-                        	Utilities.writeInFile(outputPath + File.separator
+                        	IOUtilities.writeInFile(outputPath + File.separator
                                 + new File(currPdf.getAbsolutePath())
 									.getName().replace(".PDF", ".tei.xml"), result.toString());
 						}
@@ -214,7 +214,7 @@ public class ProcessEngine implements Closeable {
     public void processDate(final GrobidMainArgs pGbdArgs) throws Exception {
         inferOutputPath(pGbdArgs);
         final List<Date> result = getEngine().processDate(pGbdArgs.getInput());
-        Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
+        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
         LOGGER.info(result.get(0).toTEI());
     }
 
@@ -227,7 +227,7 @@ public class ProcessEngine implements Closeable {
     public void processAuthorsHeader(final GrobidMainArgs pGbdArgs) throws Exception {
         inferOutputPath(pGbdArgs);
         final List<Person> result = getEngine().processAuthorsHeader(pGbdArgs.getInput());
-        Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
+        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
         LOGGER.info(result.get(0).toTEI());
     }
 
@@ -240,7 +240,7 @@ public class ProcessEngine implements Closeable {
     public void processAuthorsCitation(final GrobidMainArgs pGbdArgs) throws Exception {
         inferOutputPath(pGbdArgs);
         final List<Person> result = getEngine().processAuthorsCitation(pGbdArgs.getInput());
-        Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
+        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
         LOGGER.info(result.get(0).toTEI());
     }
 	
@@ -253,7 +253,7 @@ public class ProcessEngine implements Closeable {
     public void processAffiliation(final GrobidMainArgs pGbdArgs) throws Exception {
         inferOutputPath(pGbdArgs);
         final List<Affiliation> result = getEngine().processAffiliation(pGbdArgs.getInput());
-        Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
+        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
         LOGGER.info(result.get(0).toTEI());
     }
 
@@ -266,7 +266,7 @@ public class ProcessEngine implements Closeable {
     public void processRawReference(final GrobidMainArgs pGbdArgs) throws Exception {
         inferOutputPath(pGbdArgs);
         final BiblioItem result = getEngine().processRawReference(pGbdArgs.getInput(), false);
-        Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.toTEI(-1));
+        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.toTEI(-1));
         LOGGER.info(result.toTEI(-1));
     }
 
@@ -326,12 +326,12 @@ public class ProcessEngine implements Closeable {
 						result.append("\t\t\t</listBibl>\n\t\t</back>\n\t</text>\n</TEI>\n");
 
 						if (currPdf.getName().endsWith(".pdf")) {
-                        	Utilities.writeInFile(outputPath + File.separator
+                        	IOUtilities.writeInFile(outputPath + File.separator
                                 + new File(currPdf.getAbsolutePath()).getName().replace(".pdf", ".references.tei.xml"), 
 									result.toString());
 						}
 						else if (currPdf.getName().endsWith(".PDF")) {
-                        	Utilities.writeInFile(outputPath + File.separator
+                        	IOUtilities.writeInFile(outputPath + File.separator
                                 + new File(currPdf.getAbsolutePath()).getName().replace(".PDF", ".references.tei.xml"), 
 									result.toString());
 						}
@@ -462,10 +462,10 @@ public class ProcessEngine implements Closeable {
                     result = getEngine().processAllCitationsInXMLPatent(pGbdArgs.getPath2Input() + File.separator + currXML.getName(),
                             articles, patents, false);
                     if (currXML.getName().endsWith(".gz")) {
-                        Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                                 + new File(currXML.getAbsolutePath()).getName().replace(".xml.gz", ".tei.xml"), result);
                     } else {
-                        Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                                 + new File(currXML.getAbsolutePath()).getName().replace(".xml", ".tei.xml"), result);
                     }
                 }
@@ -495,7 +495,7 @@ public class ProcessEngine implements Closeable {
                     List<BibDataSet> articles = new ArrayList<BibDataSet>();
                     List<PatentItem> patents = new ArrayList<PatentItem>();
                     result = getEngine().processAllCitationsInPatent(inputStr, articles, patents, false);
-                    Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                    IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                             + new File(currTXT.getAbsolutePath()).getName().replace(".txt", ".tei.xml"), result);
                 }
             } catch (final Exception exp) {
@@ -525,11 +525,11 @@ public class ProcessEngine implements Closeable {
                     result = getEngine().processAllCitationsInPDFPatent(pGbdArgs.getPath2Input() + 
 						File.separator + currPDF.getName(), articles, patents, false);
 					if (currPDF.getName().endsWith(".pdf")) {
-                    	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                    	IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                             + new File(currPDF.getAbsolutePath()).getName().replace(".pdf", ".tei.xml"), result);
 					}
 					else if (currPDF.getName().endsWith(".PDF")) {
-                    	Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                    	IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                             + new File(currPDF.getAbsolutePath()).getName().replace(".PDF", ".tei.xml"), result);
 					}
                 }

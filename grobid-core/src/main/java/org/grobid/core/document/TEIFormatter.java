@@ -7,18 +7,15 @@ import nu.xom.Element;
 import nu.xom.Node;
 import nu.xom.Text;
 import org.grobid.core.GrobidModels;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
+import org.grobid.core.data.*;
 import org.grobid.core.data.Date;
-import org.grobid.core.data.Figure;
-import org.grobid.core.data.Keyword;
-import org.grobid.core.data.Person;
-import org.grobid.core.data.Table;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.SegmentationLabel;
-import org.grobid.core.engines.TaggingLabel;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.BoundingBox;
@@ -27,29 +24,20 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.utilities.LanguageUtilities;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.Pair;
-import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
-import java.util.TimeZone;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
+import static org.grobid.core.engines.label.TaggingLabels.TABLE_MARKER;
+
 /**
  * Class for generating a TEI representation of a document.
  *
@@ -58,7 +46,10 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 @SuppressWarnings("StringConcatenationInsideStringBuilderAppend")
 public class TEIFormatter {
     private Document doc = null;
-    public static final Set<TaggingLabel> MARKER_LABELS = Sets.newHashSet(TaggingLabel.CITATION_MARKER, TaggingLabel.FIGURE_MARKER, TaggingLabel.TABLE_MARKER);
+    public static final Set<TaggingLabel> MARKER_LABELS = Sets.newHashSet(
+            TaggingLabels.CITATION_MARKER,
+            TaggingLabels.FIGURE_MARKER,
+            TaggingLabels.TABLE_MARKER);
 
     // possible association to Grobid customised TEI schemas: DTD, XML schema, RelaxNG or compact RelaxNG
     // DEFAULT means no schema association in the generated XML documents
@@ -348,7 +339,7 @@ public class TEIFormatter {
             Language resLang = languageUtilities.runLanguageId(english_title);
 
             if (resLang != null) {
-                String resL = resLang.getLangId();
+                String resL = resLang.getLang();
                 if (resL.equals(Language.EN)) {
                     hasEnglishTitle = true;
                     tei.append("\t\t\t\t\t\t<title");
@@ -767,7 +758,7 @@ public class TEIFormatter {
             resLang = languageUtilities.runLanguageId(abstractText);
         }
         if (resLang != null) {
-            String resL = resLang.getLangId();
+            String resL = resLang.getLang();
             if (!resL.equals(doc.getLanguage())) {
                 tei.append("\t\t\t<abstract xml:lang=\"").append(resL).append("\">\n");
             } else {
@@ -780,7 +771,7 @@ public class TEIFormatter {
         }
 
         if ((abstractText != null) && (abstractText.length() != 0)) {
-        	/*String abstractHeader = biblio.getAbstractHeader();
+            /*String abstractHeader = biblio.getAbstractHeader();
             if (abstractHeader == null)
                 abstractHeader = "Abstract";
             tei.append("\t\t\t\t<head");
@@ -852,7 +843,7 @@ public class TEIFormatter {
                     .append(TextUtilities.HTMLEncode(biblio.getSubmissionDate())).append("</date>\n");
 
             /*tei.append("\t\t\t<change when=\"");
-			tei.append(TextUtilities.HTMLEncode(biblio.getSubmissionDate()));
+            tei.append(TextUtilities.HTMLEncode(biblio.getSubmissionDate()));
 			tei.append("\">Submitted</change>\n");
 			*/
         }
@@ -899,60 +890,72 @@ public class TEIFormatter {
         buffer = toTEITextPiece(buffer, result, biblio, bds,
                 layoutTokenization, figures, tables, doc, config);
 
-        // footnotes are still in the body
-        buffer = toTEIFootNote(buffer, doc, config);
+        // notes are still in the body
+        buffer = toTEINote(buffer, doc, config);
 
         buffer.append("\t\t</body>\n");
 
         return buffer;
     }
 
-    public StringBuilder toTEIFootNote(StringBuilder tei,
-                                       Document doc,
-                                       GrobidAnalysisConfig config) throws Exception {
-        // write the footnotes
-        SortedSet<DocumentPiece> documentFootnoteParts = doc.getDocumentPart(SegmentationLabel.FOOTNOTE);
-        String footnotes = doc.getDocumentPartText(SegmentationLabel.FOOTNOTE);
-        if (documentFootnoteParts != null) {
-            List<String> allNotes = new ArrayList<String>();
-            for (DocumentPiece docPiece : documentFootnoteParts) {
-                String footText = doc.getDocumentPieceText(docPiece);
-                footText = TextUtilities.dehyphenize(footText);
-                footText = footText.replace("\n", " ");
-                footText = footText.replace("  ", " ").trim();
-                if (footText.length() < 6)
-                    continue;
-                if (allNotes.contains(footText)) {
-                    // basically we have here the "recurrent" headnote/footnote for each page,
-                    // no need to add them several times (in the future we could even use them
-                    // differently combined with the header)
-                    continue;
-                }
-                // pattern is <note n="1" place="foot" xml:id="no1">
-                tei.append("\n\t\t\t<note place=\"foot\"");
-                Matcher ma = startNum.matcher(footText);
-                int currentNumber = -1;
-                if (ma.find()) {
-                    String groupStr = ma.group(1);
-                    footText = ma.group(2);
-                    try {
-                        currentNumber = Integer.parseInt(groupStr);
-                    } catch (NumberFormatException e) {
-                        currentNumber = -1;
-                    }
-                }
-                if (currentNumber != -1) {
-                    tei.append(" n=\"" + currentNumber + "\"");
-                }
-                if (config.isGenerateTeiIds()) {
-                    String divID = KeyGen.getKey().substring(0, 7);
-                    tei.append(" xml:id=\"_" + divID + "\"");
-                }
-                tei.append(">");
-                tei.append(TextUtilities.HTMLEncode(footText));
-                allNotes.add(footText);
-                tei.append("</note>\n");
+    private StringBuilder toTEINote(StringBuilder tei,
+                                    Document doc,
+                                    GrobidAnalysisConfig config) throws Exception {
+        // write the notes
+        SortedSet<DocumentPiece> documentNoteParts = doc.getDocumentPart(SegmentationLabel.FOOTNOTE);
+        if (documentNoteParts != null) {
+            tei = toTEINote("foot", documentNoteParts, tei, doc, config);
+        }
+        documentNoteParts = doc.getDocumentPart(SegmentationLabel.MARGINNOTE);
+        if (documentNoteParts != null) {
+            tei = toTEINote("margin", documentNoteParts, tei, doc, config);
+        }
+        return tei;
+    }
+
+    private StringBuilder toTEINote(String noteType,
+                                    SortedSet<DocumentPiece> documentNoteParts,
+                                    StringBuilder tei,
+                                    Document doc,
+                                    GrobidAnalysisConfig config) throws Exception {
+        List<String> allNotes = new ArrayList<String>();
+        for (DocumentPiece docPiece : documentNoteParts) {
+            String footText = doc.getDocumentPieceText(docPiece);
+            footText = TextUtilities.dehyphenize(footText);
+            footText = footText.replace("\n", " ");
+            footText = footText.replace("  ", " ").trim();
+            if (footText.length() < 6)
+                continue;
+            if (allNotes.contains(footText)) {
+                // basically we have here the "recurrent" headnote/footnote for each page,
+                // no need to add them several times (in the future we could even use them
+                // differently combined with the header)
+                continue;
             }
+            // pattern is <note n="1" place="foot" xml:id="no1">
+            tei.append("\n\t\t\t<note place=\""+noteType+"\"");
+            Matcher ma = startNum.matcher(footText);
+            int currentNumber = -1;
+            if (ma.find()) {
+                String groupStr = ma.group(1);
+                footText = ma.group(2);
+                try {
+                    currentNumber = Integer.parseInt(groupStr);
+                } catch (NumberFormatException e) {
+                    currentNumber = -1;
+                }
+            }
+            if (currentNumber != -1) {
+                tei.append(" n=\"" + currentNumber + "\"");
+            }
+            if (config.isGenerateTeiIds()) {
+                String divID = KeyGen.getKey().substring(0, 7);
+                tei.append(" xml:id=\"_" + divID + "\"");
+            }
+            tei.append(">");
+            tei.append(TextUtilities.HTMLEncode(footText));
+            allNotes.add(footText);
+            tei.append("</note>\n");
         }
 
         return tei;
@@ -979,8 +982,8 @@ public class TEIFormatter {
             for (int i = 0; i < acknowResultLines.length; i++) {
                 if (acknowResultLines[i].trim().length() == 0)
                     continue;
-				/*if ( (i==0) && acknowResultLines[i].trim().startsWith("<div>") ) {
-					extraDiv = true;
+                /*if ( (i==0) && acknowResultLines[i].trim().startsWith("<div>") ) {
+                    extraDiv = true;
 					// we skip the first div (there is already a <div> just opened)
 				}
 				else if ( (i==acknowResultLines.length-1) && extraDiv) {
@@ -988,7 +991,8 @@ public class TEIFormatter {
 					// we skip the last div
 				}
 				else {*/
-                buffer.append(acknowResultLines[i] + "\n");
+                buffer.append(TextUtilities.dehyphenize(acknowResultLines[i]) + "\n");
+                //buffer.append(acknowResultLines[i] + "\n");
                 //}
             }
         }
@@ -1059,7 +1063,7 @@ public class TEIFormatter {
             Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            if (clusterLabel  == TaggingLabel.SECTION) {
+            if (clusterLabel.equals(TaggingLabels.SECTION)) {
                 curDiv = teiElement("div");
                 Element head = teiElement("head");
                 // section numbers
@@ -1072,15 +1076,15 @@ public class TEIFormatter {
                 }
                 curDiv.appendChild(head);
                 divResults.add(curDiv);
-            } else if (clusterLabel == TaggingLabel.EQUATION) {
+            } else if (clusterLabel.equals(TaggingLabels.EQUATION)) {
                 curDiv.appendChild(teiElement("formula", clusterContent));
-            } else if (clusterLabel == TaggingLabel.ITEM) {
+            } else if (clusterLabel.equals(TaggingLabels.ITEM)) {
                 curDiv.appendChild(teiElement("item", clusterContent));
-            } else if (clusterLabel == TaggingLabel.OTHER) {
+            } else if (clusterLabel.equals(TaggingLabels.OTHER)) {
                 Element note = teiElement("note", clusterContent);
                 note.addAttribute(new Attribute("type", "other"));
                 curDiv.appendChild(note);
-            } else if (clusterLabel == TaggingLabel.PARAGRAPH) {
+            } else if (clusterLabel.equals(TaggingLabels.PARAGRAPH)) {
                 if (isNewParagraph(lastClusterLabel, curParagraph)) {
                     curParagraph = teiElement("p");
                     curDiv.appendChild(curParagraph);
@@ -1090,30 +1094,27 @@ public class TEIFormatter {
                 List<LayoutToken> refTokens = cluster.concatTokens();
                 String chunkRefString = LayoutTokensUtil.toText(refTokens);
                 // WARNING: should be fixed automatically by improvements in syncronizer
-				// in case the content start with a space, we move it as previous slibing text child 
+                // in case the content start with a space, we move it as previous slibing text child
 //				if (chunkRefString.startsWith(" ")) {
 //					Element parent = curParagraph != null ? curParagraph : curDiv;
 //					parent.appendChild(" ");
 //					chunkRefString = chunkRefString.substring(1, chunkRefString.length());
 //				}
                 List<Node> refNodes;
-                switch (clusterLabel) {
-                    case CITATION_MARKER:
-                        refNodes = markReferencesTEILuceneBased(chunkRefString,
-                                refTokens,
-                                doc.getReferenceMarkerMatcher(),
-                                config.isGenerateTeiCoordinates());
-                        break;
-                    case FIGURE_MARKER:
-                        refNodes = markReferencesFigureTEI(chunkRefString, refTokens, figures,
-                                config.isGenerateTeiCoordinates());
-                        break;
-                    case TABLE_MARKER:
-                        refNodes = markReferencesTableTEI(chunkRefString, refTokens, tables,
-                                config.isGenerateTeiCoordinates());
-                        break;
-                    default:
-                        throw new IllegalStateException("Unsupported marker type: " + clusterLabel);
+                if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
+                    refNodes = markReferencesTEILuceneBased(chunkRefString,
+                            refTokens,
+                            doc.getReferenceMarkerMatcher(),
+                            config.isGenerateTeiCoordinates("ref"));
+
+                } else if (clusterLabel.equals(TaggingLabels.FIGURE_MARKER)) {
+                    refNodes = markReferencesFigureTEI(chunkRefString, refTokens, figures,
+                            config.isGenerateTeiCoordinates("ref"));
+                } else if (clusterLabel.equals(TABLE_MARKER)) {
+                    refNodes = markReferencesTableTEI(chunkRefString, refTokens, tables,
+                            config.isGenerateTeiCoordinates("ref"));
+                } else {
+                    throw new IllegalStateException("Unsupported marker type: " + clusterLabel);
                 }
 
                 if (refNodes != null) {
@@ -1188,8 +1189,8 @@ public class TEIFormatter {
     }
 
     private boolean isNewParagraph(TaggingLabel lastClusterLabel, Element curParagraph) {
-        return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabel.FIGURE
-                && lastClusterLabel != TaggingLabel.TABLE)|| curParagraph == null;
+        return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabels.FIGURE
+                && lastClusterLabel != TaggingLabels.TABLE) || curParagraph == null;
     }
 
 //    private StringBuilder toTEITextPieceOld(StringBuilder buffer,
@@ -1890,7 +1891,6 @@ public class TEIFormatter {
 //
 //        return res;
 //    }
-
     public StringBuilder toTEIReferences(StringBuilder tei,
                                          List<BibDataSet> bds,
                                          GrobidAnalysisConfig config) throws Exception {
@@ -2089,7 +2089,7 @@ public class TEIFormatter {
                             text = text.substring(0, ind) +
                                     "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + marker
                                     + "</ref>" + text.substring(ind + marker.length(), text.length());
-                            cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
+                            cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
                         }
                     }
 
@@ -2185,14 +2185,14 @@ public class TEIFormatter {
                                             followingText = text.substring(indi2 + 5, text.length());
                                             // 5 digits for the year + identifier character
                                             text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
-                                            cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
+                                            cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
                                             added = 8;
 
                                         } else {
                                             followingText = text.substring(indi2 + 4, text.length());
                                             // 4 digits for the year
                                             text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
-                                            cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
+                                            cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
                                             added = 7;
                                         }
                                         if (previousText.length() > 2) {
@@ -2236,13 +2236,13 @@ public class TEIFormatter {
                                             followingText = text.substring(indi2 + 5, text.length());
                                             // 5 digits for the year + identifier character
                                             text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
-                                            cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
+                                            cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
                                             added = 8;
                                         } else {
                                             followingText = text.substring(indi2 + 4, text.length());
                                             // 4 digits for the year
                                             text = "<ref type=\"bibr\" target=\"#b" + p + "\" " + coords + ">" + reference + "</ref>";
-                                            cntManager.i(ReferenceMarkerMatcher.Counters.MATCHED_REF_MARKERS);
+                                            cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
                                             added = 7;
                                         }
                                         if (previousText.length() > 2) {
@@ -2276,7 +2276,7 @@ public class TEIFormatter {
         // without pointer - just ignoring possible punctuation at the beginning and end of the string
         if (!text.endsWith("</ref>") && !text.startsWith("<ref"))
             text = "<ref type=\"bibr\">" + text + "</ref>";
-        cntManager.i(ReferenceMarkerMatcher.Counters.UNMATCHED_REF_MARKERS);
+        cntManager.i(ReferenceMarkerMatcherCounters.UNMATCHED_REF_MARKERS);
         return text;
     }
 
@@ -2335,8 +2335,8 @@ public class TEIFormatter {
 
 
     public List<Node> markReferencesFigureTEI(String text, List<LayoutToken> refTokens,
-                                          List<Figure> figures,
-                                          boolean generateCoordinates) {
+                                              List<Figure> figures,
+                                              boolean generateCoordinates) {
         if (text == null || text.trim().isEmpty() || figures == null) {
             return null;
         }

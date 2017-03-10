@@ -9,18 +9,20 @@ import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
+
 import org.grobid.core.analyzers.GrobidDefaultAnalyzer;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.Figure;
-import org.grobid.core.data.Table;
+import org.grobid.core.analyzers.Analyzer;
+import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.data.*;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.counters.FigureCounters;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorHeader;
+
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.Cluster;
@@ -28,20 +30,25 @@ import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.GraphicObjectType;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.Page;
+import org.grobid.core.layout.PDFAnnotation;
 import org.grobid.core.layout.VectorGraphicBoxCalculator;
-import org.grobid.core.sax.PDF2XMLSaxParser;
+
+import org.grobid.core.sax.PDF2XMLSaxHandler;
+import org.grobid.core.sax.PDF2XMLAnnotationSaxHandler;
+
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.ElementCounter;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.Utilities;
+import org.grobid.core.engines.counters.TableRejectionCounters;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.print.Doc;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
@@ -67,83 +74,86 @@ import java.util.regex.Pattern;
 
 public class Document {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Document.class);
+    protected static final Logger LOGGER = LoggerFactory.getLogger(Document.class);
     public static final int MAX_FIG_BOX_DISTANCE = 70;
-    private final DocumentSource documentSource;
+    protected final DocumentSource documentSource;
 
-    /**
-     * Exit code got when pdf2xml took too much time and has been killed by pdf2xml_server.
-     */
-    private String pathXML = null; // XML representation of the current PDF file
+    protected String pathXML = null; // XML representation of the current PDF file
 
-    private String lang = null;
+    protected String lang = null;
 
     // layout structure of the document
-    private List<Page> pages = null;
-    private List<Cluster> clusters = null;
-    private List<Block> blocks = null;
+    protected List<Page> pages = null;
+    protected List<Cluster> clusters = null;
+    protected List<Block> blocks = null;
 
     // not used anymore
-    private List<Integer> blockHeaders = null;
-    private List<Integer> blockFooters = null;
-    private List<Integer> blockSectionTitles = null;
-    private List<Integer> acknowledgementBlocks = null;
-    private List<Integer> blockDocumentHeaders = null;
-    private SortedSet<DocumentPiece> blockReferences = null;
-    private List<Integer> blockTables = null;
-    private List<Integer> blockFigures = null;
-    private List<Integer> blockHeadTables = null;
-    private List<Integer> blockHeadFigures = null;
+    protected List<Integer> blockHeaders = null;
+    protected List<Integer> blockFooters = null;
+    protected List<Integer> blockSectionTitles = null;
+    protected List<Integer> acknowledgementBlocks = null;
+    protected List<Integer> blockDocumentHeaders = null;
+    protected SortedSet<DocumentPiece> blockReferences = null;
+    protected List<Integer> blockTables = null;
+    protected List<Integer> blockFigures = null;
+    protected List<Integer> blockHeadTables = null;
+    protected List<Integer> blockHeadFigures = null;
 
-    private FeatureFactory featureFactory = null;
+    protected FeatureFactory featureFactory = null;
 
-    // map of tokens (e.g. <reference> or <footnote>) to document pieces
-    private SortedSetMultimap<String, DocumentPiece> labeledBlocks;
+    // map of labels (e.g. <reference> or <footnote>) to document pieces
+    protected SortedSetMultimap<String, DocumentPiece> labeledBlocks;
 
     // original tokenization and tokens - in order to recreate the original
     // strings and spacing
-    private List<LayoutToken> tokenizations = null;
+    protected List<LayoutToken> tokenizations = null;
 
     // list of bibliographical references with context
-    private Map<String, BibDataSet> teiIdToBibDataSets = null;
-    private List<BibDataSet> bibDataSets = null;
+    protected Map<String, BibDataSet> teiIdToBibDataSets = null;
+    protected List<BibDataSet> bibDataSets = null;
 
     // not used anymore
-    private DocumentNode top = null;
+    protected DocumentNode top = null;
 
     // header of the document - if extracted and processed
-    private BiblioItem resHeader = null;
+    protected final BiblioItem resHeader = null;
 
     // full text as tructure TEI - if extracted and processed
-    private String tei;
+    protected String tei;
 
-    private ReferenceMarkerMatcher referenceMarkerMatcher;
+    protected ReferenceMarkerMatcher referenceMarkerMatcher;
 
     // list of bitmaps and vector graphics of the document
-    private List<GraphicObject> images = null;
+    protected List<GraphicObject> images = null;
 
-    private Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
+	// list of PDF annotations as present in the PDF source file
+    protected List<PDFAnnotation> pdfAnnotations = null;
+
+    protected Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
 
     // some statistics regarding the document - useful for generating the features
-    private double maxCharacterDensity = 0.0;
-    private double minCharacterDensity = 0.0;
-    private double maxBlockSpacing = 0.0;
-    private double minBlockSpacing = 0.0;
-    private int documentLenghtChar = -1; // length here is expressed as number of characters
+    protected double maxCharacterDensity = 0.0;
+    protected double minCharacterDensity = 0.0;
+    protected double maxBlockSpacing = 0.0;
+    protected double minBlockSpacing = 0.0;
+    protected int documentLenghtChar = -1; // length here is expressed as number of characters
 
     // not used
-    private int beginBody = -1;
-    private int beginReferences = -1;
+    protected int beginBody = -1;
+    protected int beginReferences = -1;
 
-    private boolean titleMatchNum = false; // true if the section titles of the document are numbered
+    protected boolean titleMatchNum = false; // true if the section titles of the document are numbered
 
-    // the magic DOI regular expression...
+    // the magical DOI regular expression...
     static public final Pattern DOIPattern = Pattern
             .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
-    private List<Figure> figures;
-    private Predicate<GraphicObject> validGraphicObjectPredicate;
-    private int m;
-    private List<Table> tables;
+    protected List<Figure> figures;
+    protected Predicate<GraphicObject> validGraphicObjectPredicate;
+    protected int m;
+    protected List<Table> tables;
+
+    // the analyzer/tokenizer used for processing this document
+    Analyzer analyzer = GrobidAnalyzer.getInstance();
 
     public Document(DocumentSource documentSource) {
         top = new DocumentNode("top", "0");
@@ -151,7 +161,7 @@ public class Document {
         setPathXML(documentSource.getXmlFile());
     }
 
-    private Document() {
+    protected Document() {
         this.documentSource = null;
     }
 
@@ -191,10 +201,14 @@ public class Document {
         return images;
     }
 
+	public List<PDFAnnotation> getPDFAnnotations() {
+		return pdfAnnotations;
+	}
+
     /**
      * Set the path to the XML file generated by xml2pdf
      */
-    private void setPathXML(File pathXML) {
+    protected void setPathXML(File pathXML) {
         this.pathXML = pathXML.getAbsolutePath();
     }
 
@@ -222,7 +236,16 @@ public class Document {
         return minBlockSpacing;
     }
 
+    public void setAnalyzer(Analyzer analyzer) {
+        this.analyzer = analyzer;
+    }
+
+    public Analyzer getAnalyzer() {
+        return this.analyzer;
+    }
+
     // to be removed
+    @Deprecated
     public List<LayoutToken> getTokenizationsHeader() {
         List<LayoutToken> tokenizationsHeader = new ArrayList<LayoutToken>();
         for (Integer blocknum : blockDocumentHeaders) {
@@ -247,6 +270,7 @@ public class Document {
     }
 
     // to be removed
+    @Deprecated
     public List<LayoutToken> getTokenizationsFulltext() {
         List<LayoutToken> tokenizationsFulltext = new ArrayList<LayoutToken>();
         for (Block blo : blocks) {
@@ -261,6 +285,7 @@ public class Document {
     }
 
     // to be removed
+    @Deprecated
     public List<LayoutToken> getTokenizationsReferences() {
         List<LayoutToken> tokenizationsReferences = new ArrayList<LayoutToken>();
 
@@ -272,8 +297,13 @@ public class Document {
     }
 
     public List<LayoutToken> fromText(final String text) {
+        List<String> toks = null;
+        try {
+            toks = GrobidAnalyzer.getInstance().tokenize(text);
+        } catch(Exception e) {
+            LOGGER.error("Fail tokenization for " + text, e);
+        }
 
-        List<String> toks = GrobidDefaultAnalyzer.tokenize(text);
         tokenizations = Lists.transform(toks, new Function<String, LayoutToken>() {
             @Override
             public LayoutToken apply(String s) {
@@ -312,125 +342,38 @@ public class Document {
         // having those characters in the input XML by cleaning it first
 
         images = new ArrayList<>();
-        PDF2XMLSaxParser parser = new PDF2XMLSaxParser(this, images);
+        PDF2XMLSaxHandler parser = new PDF2XMLSaxHandler(this, images);
+        // we set possibly the particular analyzer to be used for tokenization of the PDF elements
+        if (config.getAnalyzer() != null)
+           parser.setAnalyzer(config.getAnalyzer());
+		pdfAnnotations = new ArrayList<PDFAnnotation>();
+		PDF2XMLAnnotationSaxHandler parserAnnot = new PDF2XMLAnnotationSaxHandler(this, pdfAnnotations);
 
+		// get a SAX parser factory
+		SAXParserFactory spf = SAXParserFactory.newInstance();
 
         tokenizations = null;
 
         File file = new File(pathXML);
+		File fileAnnot = new File(pathXML+"_annot.xml");
         FileInputStream in = null;
         try {
+			// parsing of the pdf2xml file
             in = new FileInputStream(file);
             // in = new XMLFilterFileInputStream(file); // -> to filter invalid XML characters
-            // get a factory
-            SAXParserFactory spf = SAXParserFactory.newInstance();
+
             // get a new instance of parser
             SAXParser p = spf.newSAXParser();
             p.parse(in, parser);
             tokenizations = parser.getTokenization();
-
-
-
-
-            if (getBlocks() == null) {
-                throw new GrobidException("PDF parsing resulted in empty content", GrobidExceptionStatus.NO_BLOCKS);
-            }
-
-            // calculating main area
-            ElementCounter<Integer> leftEven = new ElementCounter<>();
-            ElementCounter<Integer> rightEven = new ElementCounter<>();
-            ElementCounter<Integer> leftOdd = new ElementCounter<>();
-            ElementCounter<Integer> rightOdd = new ElementCounter<>();
-            ElementCounter<Integer> top = new ElementCounter<>();
-            ElementCounter<Integer> bottom = new ElementCounter<>();
-
-            for (Block b : blocks) {
-                BoundingBox box = BoundingBoxCalculator.calculateOneBox(b.getTokens());
-                if (box != null) {
-                    b.setBoundingBox(box);
-
-                }
-
-                //small blocks can indicate that it's page numbers, some journal header info, etc. No need in them
-                if (b.getX() == 0 || b.getHeight() < 20 || b.getWidth() < 20 || b.getHeight() * b.getWidth() < 3000) {
-                    continue;
-                }
-
-                if (b.getPageNumber() % 2 == 0) {
-                    leftEven.i((int) b.getX());
-                    rightEven.i((int) (b.getX() + b.getWidth()));
-                } else {
-                    leftOdd.i((int) b.getX());
-                    rightOdd.i((int) (b.getX() + b.getWidth()));
-                }
-
-                top.i((int) b.getY());
-                bottom.i((int) (b.getY() + b.getHeight()));
-            }
-
-            if (!leftEven.getCnts().isEmpty() && !leftOdd.getCnts().isEmpty()) {
-                int pageEvenX = 0;
-                int pageEvenWidth = 0;
-                if (pages.size() > 1) {
-                    pageEvenX = getCoordItem(leftEven, true);
-                    // +1 due to rounding
-                    pageEvenWidth = getCoordItem(rightEven, false) - pageEvenX + 1;
-                }
-                int pageOddX = getCoordItem(leftOdd, true);
-                // +1 due to rounding
-                int pageOddWidth = getCoordItem(rightOdd, false) - pageOddX + 1;
-                int pageY = getCoordItem(top, true);
-                int pageHeight = getCoordItem(bottom, false) - pageY + 1;
-                for (Page page : pages) {
-                    if (page.isEven()) {
-                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(),
-							pageEvenX, pageY, pageEvenWidth, pageHeight));
-                    } else {
-                        page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(),
-							pageOddX, pageY, pageOddWidth, pageHeight));
-                    }
-                }
-            } else {
-                for (Page page : pages) {
-                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(),
-						0, 0, page.getWidth(), page.getHeight()));
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    LOGGER.error("Cannot close input stream", e);
                 }
             }
-
-            // calculating boxes for pages
-            if (config.isProcessVectorGraphics()) {
-                for (GraphicObject o : VectorGraphicBoxCalculator.calculate(this).values()) {
-                    images.add(o);
-                }
-            }
-
-            // cache images per page
-            for (GraphicObject go : images) {
-                // filtering out small figures that are likely to be logos and stuff
-                if (go.getType() == GraphicObjectType.BITMAP && !isValidBitmapGraphicObject(go)) {
-                    continue;
-                }
-                imagesPerPage.put(go.getPage(), go);
-            }
-
-            HashSet<Integer> keys = new HashSet<>(imagesPerPage.keySet());
-            for (Integer pageNum : keys) {
-
-                Collection<GraphicObject> elements = imagesPerPage.get(pageNum);
-                if (elements.size() > 10) {
-                    imagesPerPage.removeAll(pageNum);
-                    Engine.getCntManager().i(Figure.Counters.TOO_MANY_FIGURES_PER_PAGE);
-                } else {
-                    ArrayList<GraphicObject> res = glueImagesIfNecessary(pageNum, Lists.newArrayList(elements));
-                    if (res != null) {
-                        imagesPerPage.removeAll(pageNum);
-                        imagesPerPage.putAll(pageNum, res);
-                    }
-                }
-            }
-
-
-        } catch (GrobidException e) {
+		} catch (GrobidException e) {
             throw e;
         } catch (Exception e) {
             throw new GrobidException("Cannot parse file: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
@@ -441,15 +384,134 @@ public class Document {
                 } catch (IOException e) {
                     LOGGER.error("Cannot close input stream", e);
                 }
-
             }
         }
+
+		try {
+			// parsing of the annotation XML file
+			in = new FileInputStream(fileAnnot);
+			SAXParser p = spf.newSAXParser();
+			p.parse(in, parserAnnot);
+		} catch (GrobidException e) {
+            throw e;
+        } catch (Exception e) {
+            LOGGER.error("Cannot parse file: " + fileAnnot, e, GrobidExceptionStatus.PARSING_ERROR);
+        } finally {
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    LOGGER.error("Cannot close input stream", e);
+                }
+            }
+        }
+
+        if (getBlocks() == null) {
+            throw new GrobidException("PDF parsing resulted in empty content", GrobidExceptionStatus.NO_BLOCKS);
+        }
+
+        // calculating main area
+        ElementCounter<Integer> leftEven = new ElementCounter<>();
+        ElementCounter<Integer> rightEven = new ElementCounter<>();
+        ElementCounter<Integer> leftOdd = new ElementCounter<>();
+        ElementCounter<Integer> rightOdd = new ElementCounter<>();
+        ElementCounter<Integer> top = new ElementCounter<>();
+        ElementCounter<Integer> bottom = new ElementCounter<>();
+
+        for (Block b : blocks) {
+            BoundingBox box = BoundingBoxCalculator.calculateOneBox(b.getTokens());
+            if (box != null) {
+                b.setBoundingBox(box);
+            }
+
+            //small blocks can indicate that it's page numbers, some journal header info, etc. No need in them
+            if (b.getX() == 0 || b.getHeight() < 20 || b.getWidth() < 20 || b.getHeight() * b.getWidth() < 3000) {
+                continue;
+            }
+
+            if (b.getPageNumber() % 2 == 0) {
+                leftEven.i((int) b.getX());
+                rightEven.i((int) (b.getX() + b.getWidth()));
+            } else {
+                leftOdd.i((int) b.getX());
+                rightOdd.i((int) (b.getX() + b.getWidth()));
+            }
+
+            top.i((int) b.getY());
+            bottom.i((int) (b.getY() + b.getHeight()));
+        }
+
+        if (!leftEven.getCnts().isEmpty() && !leftOdd.getCnts().isEmpty()) {
+            int pageEvenX = 0;
+            int pageEvenWidth = 0;
+            if (pages.size() > 1) {
+                pageEvenX = getCoordItem(leftEven, true);
+                // +1 due to rounding
+                pageEvenWidth = getCoordItem(rightEven, false) - pageEvenX + 1;
+            }
+            int pageOddX = getCoordItem(leftOdd, true);
+            // +1 due to rounding
+            int pageOddWidth = getCoordItem(rightOdd, false) - pageOddX + 1;
+            int pageY = getCoordItem(top, true);
+            int pageHeight = getCoordItem(bottom, false) - pageY + 1;
+            for (Page page : pages) {
+                if (page.isEven()) {
+                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(),
+						pageEvenX, pageY, pageEvenWidth, pageHeight));
+                } else {
+                    page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(),
+						pageOddX, pageY, pageOddWidth, pageHeight));
+                }
+            }
+        } else {
+            for (Page page : pages) {
+                page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(),
+					0, 0, page.getWidth(), page.getHeight()));
+            }
+        }
+
+        // calculating boxes for pages
+        if (config.isProcessVectorGraphics()) {
+			try {
+				for (GraphicObject o : VectorGraphicBoxCalculator.calculate(this).values()) {
+                	images.add(o);
+            	}
+			} catch(Exception e) {
+				throw new GrobidException("Cannot process vector graphics: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
+			}
+        }
+
+        // cache images per page
+        for (GraphicObject go : images) {
+            // filtering out small figures that are likely to be logos and stuff
+            if (go.getType() == GraphicObjectType.BITMAP && !isValidBitmapGraphicObject(go)) {
+                continue;
+            }
+            imagesPerPage.put(go.getPage(), go);
+        }
+
+        HashSet<Integer> keys = new HashSet<>(imagesPerPage.keySet());
+        for (Integer pageNum : keys) {
+
+            Collection<GraphicObject> elements = imagesPerPage.get(pageNum);
+            if (elements.size() > 10) {
+                imagesPerPage.removeAll(pageNum);
+                Engine.getCntManager().i(FigureCounters.TOO_MANY_FIGURES_PER_PAGE);
+            } else {
+                ArrayList<GraphicObject> res = glueImagesIfNecessary(pageNum, Lists.newArrayList(elements));
+                if (res != null) {
+                    imagesPerPage.removeAll(pageNum);
+                    imagesPerPage.putAll(pageNum, res);
+                }
+            }
+        }
+
         // we filter out possible line numbering for review works
         // filterLineNumber();
         return tokenizations;
     }
 
-    private ArrayList<GraphicObject> glueImagesIfNecessary(Integer pageNum, List<GraphicObject> graphicObjects ) {
+    protected ArrayList<GraphicObject> glueImagesIfNecessary(Integer pageNum, List<GraphicObject> graphicObjects ) {
 
         List<Pair<Integer, Integer>> toGlue = new ArrayList<>();
 //        List<GraphicObject> cur = new ArrayList<>();
@@ -520,7 +582,7 @@ public class Document {
     }
 
 
-    private static int getCoordItem(ElementCounter<Integer> cnt, boolean getMin) {
+    protected static int getCoordItem(ElementCounter<Integer> cnt, boolean getMin) {
         List<Map.Entry<Integer, Integer>> counts = cnt.getSortedCounts();
         int max = counts.get(0).getValue();
 
@@ -572,7 +634,6 @@ public class Document {
                     text = text.trim();
                     if (text.length() > 0) {
                         // specific test if we have a new column
-                        // TODO
                         // test if we have a special layout block
                         int innd = text.indexOf("@PAGE");
                         if (innd == -1)
@@ -914,7 +975,7 @@ public class Document {
     }
 
     // default bins for relative position
-    private static final int nbBins = 12;
+    protected static final int nbBins = 12;
 
     /**
      * heuristics to get the header section...
@@ -1483,11 +1544,34 @@ public class Document {
         }
     }
 
+    /**
+     * Give the list of LayoutToken corresponding to some document parts and
+     * a global document tokenization.
+     */
+    public static List<LayoutToken> getTokenizationParts(SortedSet<DocumentPiece> documentParts,
+                                                        List<LayoutToken> tokenizations) {
+        if (documentParts == null)
+            return null;
+
+        List<LayoutToken> tokenizationParts = new ArrayList<LayoutToken>();
+        for (DocumentPiece docPiece : documentParts) {
+            DocumentPointer dp1 = docPiece.a;
+            DocumentPointer dp2 = docPiece.b;
+
+            int tokens = dp1.getTokenDocPos();
+            int tokene = dp2.getTokenDocPos();
+            for (int i = tokens; i < tokene; i++) {
+                tokenizationParts.add(tokenizations.get(i));
+            }
+        }
+        return tokenizationParts;
+    }
+
     public BibDataSet getBibDataSetByTeiId(String teiId) {
         return teiIdToBibDataSets.get(teiId);
     }
 
-    private static double MIN_DISTANCE = 100.0;
+    protected static double MIN_DISTANCE = 100.0;
 
     /**
      * Return the list of graphical object touching the given block.
@@ -1531,7 +1615,7 @@ public class Document {
                     continue;
                 }
                 if (b.distanceTo(curBox) > distanceThreshold) {
-                    Engine.getCntManager().i(Table.TableRejectionCounters.HEADER_NOT_CONSECUTIVE);
+                    Engine.getCntManager().i(TableRejectionCounters.HEADER_NOT_CONSECUTIVE);
                     table.setGoodTable(false);
                     break;
                 } else {
@@ -1648,7 +1732,7 @@ public class Document {
                 }
             } else {
                 if (pageFigures.size() != graphicObjects.size()) {
-                    Engine.getCntManager().i(Figure.Counters.SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS);
+                    Engine.getCntManager().i(FigureCounters.SKIPPED_DUE_TO_MISMATCH_OF_CAPTIONS_AND_VECTOR_AND_BITMAP_GRAPHICS);
                     continue;
                 }
 
@@ -1705,7 +1789,7 @@ public class Document {
 
     }
 
-    private boolean isValidBitmapGraphicObject(GraphicObject go) {
+    protected boolean isValidBitmapGraphicObject(GraphicObject go) {
         if (go.getWidth() * go.getHeight() < 1000) {
             return false;
         }
@@ -1726,7 +1810,7 @@ public class Document {
     }
 
     // graphic boxes could overlap captions, we need to cut this from a vector box
-    private void recalculateVectorBoxCoords(Figure f, GraphicObject g) {
+    protected void recalculateVectorBoxCoords(Figure f, GraphicObject g) {
 
         //TODO: make it robust - now super simplistic
 
@@ -1797,7 +1881,7 @@ public class Document {
 
     }
 
-    private List<LayoutToken> getFigureLayoutTokens(Figure f) {
+    protected List<LayoutToken> getFigureLayoutTokens(Figure f) {
         List<LayoutToken> result = new ArrayList<>();
         Iterator<Integer> it = f.getBlockPtrs().iterator();
 

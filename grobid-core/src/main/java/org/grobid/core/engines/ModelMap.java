@@ -2,6 +2,7 @@ package org.grobid.core.engines;
 
 import org.chasen.crfpp.Model;
 import org.chasen.crfpp.Tagger;
+import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.slf4j.Logger;
@@ -38,7 +39,7 @@ public class ModelMap {
      *
 	 */
     @Deprecated
-	public static Tagger getTagger(GrobidModels grobidModel) {
+	public static Tagger getTagger(GrobidModel grobidModel) {
 		LOGGER.debug("start getTagger");
 		Tagger tagger;
 		try {
@@ -70,7 +71,7 @@ public class ModelMap {
 	}
 
 
-    public static Model getModel(GrobidModels grobidModel) {
+    public static Model getModel(GrobidModel grobidModel) {
         return getModel(grobidModel.getModelPath());
     }
 

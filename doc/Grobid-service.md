@@ -1,6 +1,6 @@
 <h1>GROBID service</h1>
 
-The GROBID RESTful API provides a simple and efficient way to use the tool. A service console is available to test  GROBID in a human friendly manner.
+The GROBID RESTful API provides a simple and efficient way to use the tool. A service console is available to test GROBID in a human friendly manner. For production and benchmarking, we recommand to use this web service mode on a multi-core machine.  
 
 ## Start the server
 Go under the `grobid/grobid-service` directory:
@@ -16,6 +16,10 @@ To skip the tests:
 > mvn -Dmaven.test.skip=true jetty:run-war
 ```
 
+You can check whether the service is up and running by opening the following URL: 
+ - `http://yourhost:8080/version` will return you the current version
+ - `http://yourhose:8080/isalive` will return true/false whether the service is up and running
+
 ## Use GROBID
 
 On your browser, the welcome page of the Service console is available at the URL `http://localhost:8080`
@@ -28,11 +32,11 @@ You can also test the RESTFul API with **curl** command lines:
 
 * header extraction of a PDF file in the current directory:
 ```bash
-> curl -v -include --form input=@./thefile.pdf localhost:8080/processHeaderDocument
+> curl -v --form input=@./thefile.pdf localhost:8080/processHeaderDocument
 ```
 * fulltext extraction (header, body and citations) of a PDF file in the current directory:
 ```bash
-> curl -v -include --form input=@./thefile.pdf localhost:8080/processFulltextDocument
+> curl -v --form input=@./thefile.pdf localhost:8080/processFulltextDocument
 ```
 * parsing of a raw reference string in isolation without consolidation (default value):
 ```bash
@@ -40,7 +44,7 @@ You can also test the RESTFul API with **curl** command lines:
 ```
 * extraction and parsing of all references in a PDF without consolidation (default value):
 ```bash
-> curl -v -include --form --form input=@./thefile.pdf localhost:8080/processReferences
+> curl -v --form input=@./thefile.pdf localhost:8080/processReferences
 ```
 
 ## Full documentation

@@ -6,6 +6,7 @@ import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.Triple;
+import org.wipo.analyzers.wipokr.utils.StringUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,10 +66,10 @@ public class GenericTaggerUtils {
     // I-<citation> --> <citation>
     // <citation> --> <citation>
     public static String getPlainLabel(String label) {
-        return label == null ? null : label.startsWith(START_ENTITY_LABEL_PREFIX) ? label.substring(2) : label;
+        return StringUtil.startsWith(label, START_ENTITY_LABEL_PREFIX) ? StringUtil.substring(label, 2) : label;
     }
 
     public static boolean isBeginningOfEntity(String label) {
-        return label.startsWith(START_ENTITY_LABEL_PREFIX);
+        return StringUtil.startsWith(label, START_ENTITY_LABEL_PREFIX);
     }
 }

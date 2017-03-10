@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+AUTHORS:
+								 <forename>A</forename>.
+								 <middlename>Wesley</middlename>
+								 <surname>Burks</surname>,
+								 <roleName>MD</roleName>,
+								 <marker>a</marker>
+							</persName>
+							<persName>
+								 <forename>Stacie</forename>
+								 <middlename>M</middlename>.
+								 <surname>Jones</surname>,
+								 <roleName>MD</roleName>,
+								 <marker>b</marker>
+							<lb/>
+							</persName>
+							<persName>
+								 <forename>Joshua</forename>
+								<middlename>A</middlename> .
+								<surname>Boyce</surname> ,
+								<roleName>MD</roleName> ,
+								<marker>c</marker>
+							</persName>
+							<persName>
+								 <forename>Scott</forename>
+								 <middlename>H</middlename> .
+								<surname>Sicherer</surname> ,
+								<roleName>MD</roleName> ,
+								<marker>d</marker>
+							</persName>
+							<persName>
+								 <forename>Robert</forename>
+								 <middlename>A</middlename> .
+							<lb/>
+								<surname>Wood</surname> ,
+								<roleName>MD</roleName>,
+								 <marker>e</marker>
+							</persName>
+							<persName>
+								<forename>Amal</forename>
+								 <surname>Assa &apos; ad</surname>,
+								<roleName>MD</roleName>,
+								 <marker>f</marker>and
+							</persName>
+							<persName>
+								 <forename>Hugh</forename>
+								 <middlename>A</middlename> .
+								 <surname>Sampson</surname>,
+							<lb/>
+								 <roleName>MD</roleName>
+								<marker>d</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

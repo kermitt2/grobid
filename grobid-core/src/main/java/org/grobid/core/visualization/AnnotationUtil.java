@@ -41,7 +41,10 @@ public class AnnotationUtil {
         float x = Float.parseFloat(split[1]);
         float y = Float.parseFloat(split[2]);
         float w = Float.parseFloat(split[3]);
-        float h = Float.parseFloat(split[4]);
+		String nextString = split[4];
+		if (nextString.indexOf(";") != -1)
+			nextString = nextString.substring(0, nextString.indexOf(";"));
+        float h = Float.parseFloat(nextString);
 
         float annX = x + lowerX;
         float annY = (height - (y + h)) + lowerY;

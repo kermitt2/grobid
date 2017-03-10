@@ -1,111 +1,121 @@
 package org.grobid.core.features;
 
+import org.grobid.core.lexicon.Lexicon;
+import org.grobid.core.mock.MockContext;
+import org.grobid.core.utilities.GrobidProperties;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import org.grobid.core.mock.MockContext;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.lexicon.Lexicon;
-
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class TestFeatures {
+    FeatureFactory target;
 
-	@BeforeClass
-	public static void setInitialContext() throws Exception{
-		MockContext.setInitialContext();
-		GrobidProperties.getInstance();
-		Lexicon.getInstance();
-	}
-	
-	@AfterClass
-	public static void destroyInitialContext() throws Exception {
-		MockContext.destroyInitialContext();
-	}
+    @BeforeClass
+    public static void setInitialContext() throws Exception {
+        MockContext.setInitialContext();
+        GrobidProperties.getInstance();
+        Lexicon.getInstance();
+    }
 
-	@Test
-	public void testDiscretizeLinearScale() {
-		FeatureFactory featureFactory = FeatureFactory.getInstance();
-		int val = 30;
-		int total = 100;
-		int nbBins = 10;
-System.out.println("linear " + nbBins);
-System.out.println(FeatureFactory.linearScaling(0, total, nbBins));
-System.out.println(FeatureFactory.linearScaling(10, total, nbBins));
-System.out.println(FeatureFactory.linearScaling(20, total, nbBins));
-System.out.println(FeatureFactory.linearScaling(50, total, nbBins));
-System.out.println(FeatureFactory.linearScaling(70, total, nbBins));
-System.out.println(FeatureFactory.linearScaling(100, total, nbBins));
+    @AfterClass
+    public static void destroyInitialContext() throws Exception {
+        MockContext.destroyInitialContext();
+    }
 
-		assertEquals("Discretized value is not the expected one",
-				3,
-				FeatureFactory.linearScaling(val, total, nbBins));
+    @Before
+    public void setUp() throws Exception {
+        target = FeatureFactory.getInstance();
+    }
 
-		nbBins = 7;
+    @Test
+    public void testDiscretizeLinearScale_10Nbins_100total_30val() {
 
-System.out.println("linear " + nbBins);
-System.out.println(FeatureFactory.linearScaling(10, total, nbBins));
-System.out.println(FeatureFactory.linearScaling(20, total, nbBins));
-System.out.println(FeatureFactory.linearScaling(50, total, nbBins));
-System.out.println(FeatureFactory.linearScaling(70, total, nbBins));
+        int val = 30;
+        int total = 100;
+        int nbBins = 10;
+//        System.out.println("linear " + nbBins);
+        assertThat(target.linearScaling(0, total, nbBins), is(0));
+        assertThat(target.linearScaling(10, total, nbBins), is(1));
+        assertThat(target.linearScaling(20, total, nbBins), is(2));
+        assertThat(target.linearScaling(50, total, nbBins), is(5));
+        assertThat(target.linearScaling(70, total, nbBins), is(7));
+        assertThat(target.linearScaling(100, total, nbBins), is(10));
 
-		assertEquals("Discretized value is not the expected one",
-				2,
-				FeatureFactory.linearScaling(val, total, nbBins));
+        assertEquals("Discretized value is not the expected one", 3, target.linearScaling(val, total, nbBins));
 
+    }
 
-		double valD = 0.3;
-		double totalD = 1.0;
-		nbBins = 10;
+    @Test
+    public void testDiscretizeLinearScale_7Nbins_100total_30val() {
+        int val = 30;
+        int total = 100;
+        int nbBins = 7;
 
-System.out.println("linear (double) " + nbBins);
-System.out.println(FeatureFactory.linearScaling(0.1, totalD, nbBins));
-System.out.println(FeatureFactory.linearScaling(0.2, totalD, nbBins));
-System.out.println(FeatureFactory.linearScaling(0.5, totalD, nbBins));
-System.out.println(FeatureFactory.linearScaling(0.7, totalD, nbBins));
+//        System.out.println("linear " + nbBins);
+        assertThat(target.linearScaling(10, total, nbBins), is(0));
+        assertThat(target.linearScaling(20, total, nbBins), is(1));
+        assertThat(target.linearScaling(50, total, nbBins), is(3));
+        assertThat(target.linearScaling(70, total, nbBins), is(4));
 
-		assertEquals("Discretized value is not the expected one",
-				3,
-				FeatureFactory.linearScaling(valD, totalD, nbBins));
-		nbBins = 8;
-		assertEquals("Discretized value is not the expected one",
-				2,
-				FeatureFactory.linearScaling(valD, totalD, nbBins));
-	}
-	
-	@Test
-	public void testDiscretizeLogScale() {
-		FeatureFactory featureFactory = FeatureFactory.getInstance();
-		double valD = 0.3;
-		double totalD = 1.0;
-		int nbBins = 12;
+        assertEquals("Discretized value is not the expected one", 2, target.linearScaling(val, total, nbBins));
+    }
 
-System.out.println("log (double) " + nbBins);
-System.out.println(FeatureFactory.logScaling(0.0, totalD, nbBins));
-System.out.println(FeatureFactory.logScaling(0.1, totalD, nbBins));
-System.out.println(FeatureFactory.logScaling(0.2, totalD, nbBins));
-System.out.println(FeatureFactory.logScaling(0.5, totalD, nbBins));
-System.out.println(FeatureFactory.logScaling(0.7, totalD, nbBins));
-System.out.println(FeatureFactory.logScaling(1.0, totalD, nbBins));
+    @Test
+    public void testDiscretizeLinearScale_10Nbins_1total_03val() {
+        double valD = 0.3;
+        double totalD = 1.0;
+        int nbBins = 10;
 
-		assertEquals("Discretized value is not the expected one",
-				4,
-				FeatureFactory.logScaling(valD, totalD, nbBins));
-		nbBins = 8;
+//        System.out.println("linear (double) " + nbBins);
+        assertThat(target.linearScaling(0.1, totalD, nbBins), is(1));
+        assertThat(target.linearScaling(0.2, totalD, nbBins), is(2));
+        assertThat(target.linearScaling(0.5, totalD, nbBins), is(5));
+        assertThat(target.linearScaling(0.7, totalD, nbBins), is(7));
 
-System.out.println("log (double) " + nbBins);
-System.out.println(FeatureFactory.logScaling(0.0, totalD, nbBins));
-System.out.println(FeatureFactory.logScaling(0.1, totalD, nbBins));
-System.out.println(FeatureFactory.logScaling(0.2, totalD, nbBins));
-System.out.println(FeatureFactory.logScaling(0.5, totalD, nbBins));
-System.out.println(FeatureFactory.logScaling(0.7, totalD, nbBins));
-System.out.println(FeatureFactory.logScaling(1.0, totalD, nbBins));
+        assertEquals("Discretized value is not the expected one", 3, target.linearScaling(valD, totalD, nbBins));
+        nbBins = 8;
+        assertEquals("Discretized value is not the expected one", 2, target.linearScaling(valD, totalD, nbBins));
+    }
 
-		assertEquals("Discretized value is not the expected one",
-				3,
-				FeatureFactory.logScaling(valD, totalD, nbBins));
-	}
-	
+    @Test
+    public void testDiscretizeLogScale_12Nbins_1total_03val() {
+        double valD = 0.3;
+        double totalD = 1.0;
+        int nbBins = 12;
+
+//        System.out.println("log (double) " + nbBins);
+        assertThat(target.logScaling(0.0, totalD, nbBins), is(0));
+        assertThat(target.logScaling(0.1, totalD, nbBins), is(1));
+        assertThat(target.logScaling(0.2, totalD, nbBins), is(3));
+        assertThat(target.logScaling(0.5, totalD, nbBins), is(7));
+        assertThat(target.logScaling(0.7, totalD, nbBins), is(9));
+        assertThat(target.logScaling(1.0, totalD, nbBins), is(12));
+
+        assertEquals("Discretized value is not the expected one", 4, target.logScaling(valD, totalD, nbBins));
+
+    }
+
+    @Test
+    public void testDiscretizeLogScale_8Nbins_1total_03val() {
+        double valD = 0.3;
+        double totalD = 1.0;
+        int nbBins = 8;
+
+//        System.out.println("log (double) " + nbBins);
+        assertThat(target.logScaling(0.0, totalD, nbBins), is(0));
+        assertThat(target.logScaling(0.1, totalD, nbBins), is(1));
+        assertThat(target.logScaling(0.2, totalD, nbBins), is(2));
+        assertThat(target.logScaling(0.5, totalD, nbBins), is(4));
+        assertThat(target.logScaling(0.7, totalD, nbBins), is(6));
+        assertThat(target.logScaling(1.0, totalD, nbBins), is(8));
+
+        assertEquals("Discretized value is not the expected one", 3, target.logScaling(valD, totalD, nbBins));
+    }
+
 
 }

@@ -60,8 +60,8 @@ public class UtilitiesTest {
 	@Test
 	public void testwriteInFileANDreadFile() throws IOException {
 		File file = File.createTempFile("temp", "test");
-		Utilities.writeInFile(file.getAbsolutePath(), getString());
-		assertEquals("Not expected value", getString(), Utilities.readFile(file.getAbsolutePath()));
+		IOUtilities.writeInFile(file.getAbsolutePath(), getString());
+		assertEquals("Not expected value", getString(), IOUtilities.readFile(file.getAbsolutePath()));
 	}
 
 	private static String getString() {

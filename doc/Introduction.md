@@ -32,7 +32,7 @@ GROBID can be considered as production ready. Deployments in production includes
 The key aspects of GROBID are the following ones:
 
 + Written in Java, with JNI call to native CRF libraries. 
-+ High performance - on a modern but low profile MacBook Pro: header extraction from 4000 PDF in 10 minutes (or from 3 PDF per second with the RESTful API), parsing of 3000 references in 18 seconds. [INIST](http://www.inist.fr/lang=en) recently scaled GROBID REST service for processing 1 million PDF in 1 day on a Xeon 10 CPU E5-2660 and 10 GB memory (3GB used in average) with 9 threads.
++ High performance - on a modern but low profile MacBook Pro: header extraction from 4000 PDF in 10 minutes (or from 3 PDF per second with the RESTful API), parsing of 3000 references in 18 seconds. [INIST](http://www.inist.fr/lang=en) recently scaled GROBID REST service for processing 1 million PDF in 1 day on a Xeon 10 CPU E5-2660 and 10 GB memory (3GB used in average) with 9 threads - so around 11,5 PDF per second.
 + Lazy loading of models and resources. Depending on the selectd process, only the required data are loaded in memory. For instance, extracting only metadata header from a PDF requires less than 2 GB memory in a multithreading usage, extracting citations uses around 3GB and extracting all the PDF structure around 4GB. 
 + Robust and fast PDF processing based on Xpdf and dedicated post-processing.
 + Modular and reusable machine learning models. The extractions are based on Linear Chain Conditional Random Fields which is currently the state of the art in bibliographical information extraction and labeling. The specialized CRF models are cascaded to build a complete document structure.  
@@ -53,14 +53,16 @@ The main author is Patrice Lopez (patrice.lopez@science-miner.com).
 
 Many thanks to:
 
-* Vyacheslav Zholudev (ResearchGate).
-* Laurent Romary (INRIA), as project promoter and TEI pope. 
-* Florian Zipser (Humboldt University) who developed the first version of the REST API in 2011.
-* the other contributors from ResearchGate: Michael Häusler and Kyryl Bilokurov.
-* Damien Ridereau (Infotel).
-* Bruno Pouliquen (WIPO) for the custom analyzers for Eastern languages.
-* Thomas Lavergne, Olivier Cappé and François Yvon for Wapiti.
+* Vyacheslav Zholudev (ResearchGate)
+* Luca Foppiano (Inria)
+* Christopher Boumenot (Microsoft) in particular for Windows support
+* Laurent Romary (Inria), as project promoter and TEI pope
+* Florian Zipser (Humboldt University) who developed the first version of the REST API in 2011
+* the other contributors from ResearchGate: Michael Häusler and Kyryl Bilokurov
+* Damien Ridereau (Infotel)
+* Bruno Pouliquen (WIPO) for the custom analyzers for Eastern languages
+* Thomas Lavergne, Olivier Cappé and François Yvon for Wapiti
 * Taku Kudo for CRF++
 * Hervé Déjean and his colleagues from Xerox Research Centre Europe, for xml2pdf
-* and the other contributors: Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, Chris Mattmann, Sujen Shah, Joseph Boyd, Guillaume Muller, ...
+* and the other contributors: Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, Chris Mattmann, Sujen Shah, Joseph Boyd, Guillaume Muller, Achraf Azhar, ...
 

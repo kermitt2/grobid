@@ -34,6 +34,7 @@ import javax.ws.rs.core.StreamingOutput;
 import javax.ws.rs.core.UriInfo;
 
 import org.grobid.core.factory.AbstractEngineFactory;
+import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.service.process.GrobidRestProcessAdmin;
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
@@ -87,6 +88,16 @@ public class GrobidRestService implements GrobidPathes {
 	@GET
 	public Response isAlive() {
 		return GrobidRestProcessGeneric.isAlive();
+	}
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessGeneric#getVersion()
+	 */
+	@Path(GrobidPathes.PATH_GET_VERSION)
+	@Produces(MediaType.TEXT_PLAIN)
+	@GET
+	public Response getVersion() {
+		return GrobidRestProcessGeneric.getVersion();
 	}
 
 	/**
@@ -626,17 +637,34 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces("application/pdf")
 	@POST
 	public Response processAnnotatePDF(@FormDataParam(INPUT) InputStream inputStream,
-		@FormDataParam("type") String fileName,
+		@FormDataParam("name") String fileName,
 	 	@FormDataParam("type") int type) {
-		GrobidRestUtils.Annotation annotType = null;
-		if (type == 0)
-			annotType = GrobidRestUtils.Annotation.CITATION;
-		else if (type == 1)
-			annotType = GrobidRestUtils.Annotation.BLOCK;
-		else if (type == 2) 
-			annotType = GrobidRestUtils.Annotation.FIGURE;
-		return GrobidRestProcessFiles.processPDFAnnotation(inputStream, fileName, annotType);
+		return GrobidRestProcessFiles.processPDFAnnotation(inputStream, fileName, GrobidRestUtils.getAnnotationFor(type));
 	}
 
-
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processPDFReferenceAnnotation(InputStream, bool)
+	 */
+	@Path(PATH_REFERENCES_PDF_ANNOTATION)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces("application/json")
+	@POST
+	public Response processPDFReferenceAnnotation(@FormDataParam(INPUT) InputStream inputStream) {
+		return GrobidRestProcessFiles.processPDFReferenceAnnotation(inputStream);
+	}
+	
+	/**
+	 */
+	@Path(PATH_CITATIONS_PATENT_PDF_ANNOTATION)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces("application/json")
+	@POST
+	public Response annotatePDFPatentCitation(@FormDataParam(INPUT) InputStream inputStream, 
+		@FormDataParam("consolidate") String consolidate) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.annotateCitationPatentPDF(inputStream, consol);
+	}
 }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>HAZEM</forename>
+								 <surname>EL-OSTA</surname>,
+							<lb/>
+								 <marker>a</marker>
+							</persName>
+							<persName>
+								<forename>DAVID</forename>
+								 <surname>HONG</surname> ,
+							<lb/>
+								<marker>a</marker>
+							</persName>
+							<persName>
+								 <forename>JENNIFER</forename>
+								<surname>WHELER</surname> ,
+							<lb/>
+								 <marker>a</marker>
+							</persName>
+							<persName>
+								<forename>SIQING</forename>
+								 <surname>FU</surname>,
+							<lb/>
+								 <marker>a</marker>
+							</persName>
+							<persName>
+								 <forename>AUNG</forename>
+								<surname>NAING</surname> ,
+							<lb/>
+								<marker>a</marker>
+							</persName>
+							<persName>
+								 <forename>GERALD</forename>
+								 <surname>FALCHOOK</surname>,
+							<lb/>
+								 <marker>a</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>MARSHALL</forename>
+								 <surname>HICKS</surname> ,
+							<lb/>
+								<marker>b</marker>
+							</persName>
+							<persName>
+								 <forename>SIJIN</forename>
+								<surname>WEN</surname>,
+							<lb/>
+								 <marker>c</marker>
+							</persName>
+							<persName>
+								<forename>APOSTOLIA</forename>
+								<middlename>M</middlename> .
+								<surname>TSIMBERIDOU</surname> ,
+							<lb/>
+								<marker>a</marker>
+							</persName>
+							<persName>
+								 <forename>RAZELLE</forename>
+								 <surname>KURZROCK</surname>
+							<lb/>
+								<marker>a</marker>
+							</persName>
+							<persName>
+								 <forename>David</forename>
+								<surname>Hong</surname> ,
+								 <roleName>M. D</roleName>. ,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

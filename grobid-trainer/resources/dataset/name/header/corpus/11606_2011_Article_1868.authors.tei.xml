@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Rachel</forename>
+								 <surname>Nardin</surname>,
+								 <roleName>MD</roleName>
+							<lb/>
+								 <marker>1,3</marker>
+							<lb/>,
+							</persName>
+							<persName>
+								<forename>Assaad</forename>
+								 <surname>Sayah</surname>,
+								<roleName>MD</roleName>
+							<lb/>
+								 <marker>2 ,3</marker>
+							<lb/> ,
+							</persName>
+							<persName>
+								 <forename>Hermione</forename>
+								<surname>Lokko</surname>,
+								<roleName>BSc</roleName>
+							<lb/>
+								<marker>3</marker>
+							<lb/> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Steffie</forename>
+								<surname>Woolhandler</surname> ,
+								 <roleName>MD, MPH</roleName>
+							<lb/>
+								 <marker>4</marker>
+							<lb/>,and
+							</persName>
+							<persName>
+								 <forename>Danny</forename>
+								<surname>McCormick</surname>,
+								 <roleName>MD, MPH</roleName>
+							<lb/>
+								<marker>1 ,3</marker>
+							</persName>
+							<persName>
+								 <forename>Rachel</forename>
+								 <surname>Nardin</surname>,
+								<roleName>MD</roleName>;
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

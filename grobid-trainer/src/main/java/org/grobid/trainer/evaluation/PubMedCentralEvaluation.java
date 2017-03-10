@@ -9,6 +9,7 @@ import org.grobid.core.data.BibDataSet;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.trainer.Stats;
 import org.grobid.trainer.sax.NLMHeaderSaxHandler;
 import org.grobid.trainer.sax.FieldExtractSaxHandler;
 import org.grobid.core.utilities.TextUtilities;
@@ -236,43 +237,12 @@ public class PubMedCentralEvaluation {
 		// - Ratcliff/Obershelp similarity
 		// These variants only apply to textual fields, not numerical and dates fields 
 		// (such as volume, issue, dates).
-		
-		// true positive
-		final List<Integer> counterObservedStrict = new ArrayList<Integer>();
-		// all expected
-		final List<Integer> counterExpectedStrict = new ArrayList<Integer>();
-		// false positive
-		final List<Integer> counterFalsePositiveStrict = new ArrayList<Integer>();
-		// false negative
-		final List<Integer> counterFalseNegativeStrict = new ArrayList<Integer>();
-		
-		// true positive
-		final List<Integer> counterObservedSoft = new ArrayList<Integer>();
-		// all expected
-		final List<Integer> counterExpectedSoft = new ArrayList<Integer>();
-		// false positive
-		final List<Integer> counterFalsePositiveSoft = new ArrayList<Integer>();
-		// false negative
-		final List<Integer> counterFalseNegativeSoft = new ArrayList<Integer>();
-		
-		// true positive
-		final List<Integer> counterObservedLevenshtein = new ArrayList<Integer>();
-		// all expected
-		final List<Integer> counterExpectedLevenshtein = new ArrayList<Integer>();
-		// false positive
-		final List<Integer> counterFalsePositiveLevenshtein = new ArrayList<Integer>();
-		// false negative
-		final List<Integer> counterFalseNegativeLevenshtein = new ArrayList<Integer>();
-		
-		// true positive
-		final List<Integer> counterObservedRatcliffObershelp = new ArrayList<Integer>();
-		// all expected
-		final List<Integer> counterExpectedRatcliffObershelp = new ArrayList<Integer>();
-		// false positive
-		final List<Integer> counterFalsePositiveRatcliffObershelp = new ArrayList<Integer>();
-		// false negative
-		final List<Integer> counterFalseNegativeRatcliffObershelp = new ArrayList<Integer>();
-		
+
+        Stats strictStats = new Stats();
+        Stats softStats = new Stats();
+        Stats levenshteinStats = new Stats();
+        Stats ratcliffObershelpStats = new Stats();
+
 		List<String> labels = null;
 		List<FieldSpecification> fields = null;
 		
@@ -295,20 +265,6 @@ public class PubMedCentralEvaluation {
 			fields = fulltextFields;
 			labels = fulltextLabels;
 		}
-		
-		// intialize all the counters
-		initFields(fields.size(),
-			counterExpectedStrict, counterObservedStrict, 
-			counterFalsePositiveStrict, counterFalseNegativeStrict);
-		initFields(fields.size(),
-			counterExpectedSoft, counterObservedSoft, 
-			counterFalsePositiveSoft, counterFalseNegativeSoft);
-		initFields(fields.size(),
-			counterExpectedLevenshtein, counterObservedLevenshtein, 
-			counterFalsePositiveLevenshtein, counterFalseNegativeLevenshtein);
-		initFields(fields.size(),
-			counterExpectedRatcliffObershelp, counterObservedRatcliffObershelp, 
-			counterFalsePositiveRatcliffObershelp, counterFalseNegativeRatcliffObershelp);
 		
 		// statics about citation matching
 		int match1 = 0;
@@ -476,18 +432,11 @@ public class PubMedCentralEvaluation {
 									
 									if (nlmResults.size() > 0) {
 										fieldsValues.put(fieldName, nlmResults);
-										
-										Integer count = counterExpectedStrict.get(p);
-										counterExpectedStrict.set(p, count+1);
 
-										count = counterExpectedSoft.get(p);
-										counterExpectedSoft.set(p, count+1);
-
-										count = counterExpectedLevenshtein.get(p);
-										counterExpectedLevenshtein.set(p, count+1);
-
-										count = counterExpectedRatcliffObershelp.get(p);
-										counterExpectedRatcliffObershelp.set(p, count+1);
+                                        strictStats.incrementExpected(fieldName);
+                                        softStats.incrementExpected(fieldName);
+                                        levenshteinStats.incrementExpected(fieldName);
+                                        ratcliffObershelpStats.incrementExpected(fieldName);
 									}
 								}
 								p++;
@@ -823,18 +772,15 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 //System.out.println(label + ": strict nlm\t-> " + nlmResult);
 										// strict
 										if ((nlmResult.length()>0) && (nlmResult.equals(grobidResult))) {
-											Integer count = counterObservedStrict.get(p);
-											counterObservedStrict.set(p, count+1);
+                                            strictStats.incrementObserved(label);
 										}
 										else {
 											if ( (grobidResult.length() > 0) ) {
-												Integer count = counterFalsePositiveStrict.get(p);
-												counterFalsePositiveStrict.set(p, count+1);
+                                                strictStats.incrementFalsePositive(label);
 												allGoodStrict = false;
 											}
 											else if (nlmResult.length()>0) {
-												Integer count = counterFalseNegativeStrict.get(p);
-												counterFalseNegativeStrict.set(p, count+1);
+                                                strictStats.incrementFalseNegative(label);
 												allGoodStrict = false;
 											}
 										}
@@ -848,18 +794,15 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 										}
 										if ((nlmResultSoft.length() > 0) && 
 											(nlmResultSoft.equals(grobidResultSoft)) ) {
-											Integer count = counterObservedSoft.get(p);
-											counterObservedSoft.set(p, count+1);
+                                            softStats.incrementObserved(label);
 										}
 										else {
 											if (grobidResultSoft.length() > 0) {
-												Integer count = counterFalsePositiveSoft.get(p);
-												counterFalsePositiveSoft.set(p, count+1);
+                                                softStats.incrementFalsePositive(label);
 												allGoodSoft = false;
 											}
 											else if (nlmResultSoft.length() > 0) {
-												Integer count = counterFalseNegativeSoft.get(p);
-												counterFalseNegativeSoft.set(p, count+1);
+                                                softStats.incrementFalseNegative(label);
 												allGoodSoft = false;
 											}
 										}
@@ -879,18 +822,15 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 											pct = (double)(bigger - distance) / bigger;
 										}
 										if ((nlmResultSoft.length() > 0) && (pct >= minLevenshteinDistance)) {
-											Integer count = counterObservedLevenshtein.get(p);
-											counterObservedLevenshtein.set(p, count+1);
+                                            levenshteinStats.incrementObserved(label);
 										}
 										else {
 											if (grobidResultSoft.length() > 0) {
-												Integer count = counterFalsePositiveLevenshtein.get(p);
-												counterFalsePositiveLevenshtein.set(p, count+1);
+                                                levenshteinStats.incrementFalsePositive(label);
 												allGoodLevenshtein = false;
 											}
 											else if (nlmResultSoft.length() > 0) {
-												Integer count = counterFalseNegativeLevenshtein.get(p);
-												counterFalseNegativeLevenshtein.set(p, count+1);
+                                                levenshteinStats.incrementFalseNegative(label);
 												allGoodLevenshtein = false;
 											}
 										}
@@ -909,18 +849,15 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 										}
 										if ((nlmResultSoft.length() > 0) && 
 											(similarity >= minRatcliffObershelpSimilarity)) {
-											Integer count = counterObservedRatcliffObershelp.get(p);
-											counterObservedRatcliffObershelp.set(p, count+1);
+                                            ratcliffObershelpStats.incrementObserved(label);
 										}
 										else {
 											if (grobidResultSoft.length() > 0) {
-												Integer count = counterFalsePositiveRatcliffObershelp.get(p);
-												counterFalsePositiveRatcliffObershelp.set(p, count+1);
+                                                ratcliffObershelpStats.incrementFalsePositive(label);
 												allGoodRatcliffObershelp = false;
 											}
 											else if (nlmResultSoft.length() > 0) {
-												Integer count = counterFalseNegativeRatcliffObershelp.get(p);
-												counterFalseNegativeRatcliffObershelp.set(p, count+1);
+                                                ratcliffObershelpStats.incrementFalseNegative(label);
 												allGoodRatcliffObershelp = false;
 											}
 										}
@@ -956,18 +893,12 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 											p++;
 											continue;
 										}
-									
-										Integer count = counterFalsePositiveStrict.get(p);
-										counterFalsePositiveStrict.set(p, count+1);
-									
-										count = counterFalsePositiveSoft.get(p);
-										counterFalsePositiveSoft.set(p, count+1);
-									
-										count = counterFalsePositiveLevenshtein.get(p);
-										counterFalsePositiveLevenshtein.set(p, count+1);
-									
-										count = counterFalsePositiveRatcliffObershelp.get(p);
-										counterFalsePositiveRatcliffObershelp.set(p, count+1);
+
+										strictStats.incrementFalsePositive(label);
+										softStats.incrementFalsePositive(label);
+										levenshteinStats.incrementFalsePositive(label);
+										ratcliffObershelpStats.incrementFalsePositive(label);
+
 										p++;
 									}
 								}
@@ -1038,33 +969,23 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									grobidResult = grobidResults.get(g);
 								// nb expected results
 								if (nlmResult.length() > 0) {
-									Integer count = counterExpectedStrict.get(p);
-									counterExpectedStrict.set(p, count+1);
-
-									count = counterExpectedSoft.get(p);
-									counterExpectedSoft.set(p, count+1);
-
-									count = counterExpectedLevenshtein.get(p);
-									counterExpectedLevenshtein.set(p, count+1);
-
-									count = counterExpectedRatcliffObershelp.get(p);
-									counterExpectedRatcliffObershelp.set(p, count+1);
+                                    strictStats.incrementExpected(fieldName);
+                                    softStats.incrementExpected(fieldName);
+                                    levenshteinStats.incrementExpected(fieldName);
+                                    ratcliffObershelpStats.incrementExpected(fieldName);
 								}
 							
 								// strict
 								if ((nlmResult.length() > 0) && nlmResult.equals(grobidResult)) {
-									Integer count = counterObservedStrict.get(p);
-									counterObservedStrict.set(p, count+1);
+                                    strictStats.incrementObserved(fieldName);
 								}
 								else {
 									if (grobidResult.length() > 0) {
-										Integer count = counterFalsePositiveStrict.get(p);
-										counterFalsePositiveStrict.set(p, count+1);
+                                        strictStats.incrementFalsePositive(fieldName);
 										allGoodStrict = false;
 									}
 									else if (nlmResult.length() > 0) {
-										Integer count = counterFalseNegativeStrict.get(p);
-										counterFalseNegativeStrict.set(p, count+1);
+                                        strictStats.incrementFalseNegative(fieldName);
 										allGoodStrict = false;
 									}
 								}
@@ -1077,18 +998,15 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									grobidResultSoft = removeFullPunct(grobidResult);
 								}
 								if ((nlmResult.length() > 0) && nlmResultSoft.equals(grobidResultSoft)) {
-									Integer count = counterObservedSoft.get(p);
-									counterObservedSoft.set(p, count+1);
+                                    softStats.incrementObserved(fieldName);
 								}
 								else {
 									if (grobidResultSoft.length() > 0) {
-										Integer count = counterFalsePositiveSoft.get(p);
-										counterFalsePositiveSoft.set(p, count+1);
+                                        softStats.incrementFalsePositive(fieldName);
 										allGoodSoft = false;
 									}
 									else if (nlmResultSoft.length() > 0){
-										Integer count = counterFalseNegativeSoft.get(p);
-										counterFalseNegativeSoft.set(p, count+1);
+                                        softStats.incrementFalseNegative(fieldName);
 										allGoodSoft = false;
 									}
 								}
@@ -1106,18 +1024,15 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									pct = (double)(bigger - distance) / bigger;
 								}
 								if ((nlmResult.length() > 0) && (pct >= minLevenshteinDistance)) {
-									Integer count = counterObservedLevenshtein.get(p);
-									counterObservedLevenshtein.set(p, count+1);
+                                    levenshteinStats.incrementObserved(fieldName);
 								}
 								else {
 									if (grobidResultSoft.length() > 0) {
-										Integer count = counterFalsePositiveLevenshtein.get(p);
-										counterFalsePositiveLevenshtein.set(p, count+1);
+                                        levenshteinStats.incrementFalsePositive(fieldName);
 										allGoodLevenshtein = false;
 									}
 									else if (nlmResultSoft.length() > 0){
-										Integer count = counterFalseNegativeLevenshtein.get(p);
-										counterFalseNegativeLevenshtein.set(p, count+1);
+                                        levenshteinStats.incrementFalseNegative(fieldName);
 										allGoodLevenshtein = false;
 									}
 								}
@@ -1135,18 +1050,15 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									}
 								}
 								if ((nlmResult.length() > 0) && (similarity >= minRatcliffObershelpSimilarity)) {
-									Integer count = counterObservedRatcliffObershelp.get(p);
-									counterObservedRatcliffObershelp.set(p, count+1);
+                                    ratcliffObershelpStats.incrementObserved(fieldName);
 								}
 								else {
 									if (grobidResultSoft.length() > 0) {
-										Integer count = counterFalsePositiveRatcliffObershelp.get(p);
-										counterFalsePositiveRatcliffObershelp.set(p, count+1);
+                                        ratcliffObershelpStats.incrementFalsePositive(fieldName);
 										allGoodRatcliffObershelp = false;
 									}
 									else if (nlmResultSoft.length() > 0){
-										Integer count = counterFalseNegativeRatcliffObershelp.get(p);
-										counterFalseNegativeRatcliffObershelp.set(p, count+1);
+                                        ratcliffObershelpStats.incrementFalseNegative(fieldName);
 										allGoodRatcliffObershelp = false;
 									}
 								}
@@ -1239,32 +1151,23 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 							for (String nlmResult : nlmResults) {
 								// nb expected results
 								if (nlmResult.length() > 0) {
-									Integer count = counterExpectedStrict.get(p);
-									counterExpectedStrict.set(p, count+1);
-
-									count = counterExpectedSoft.get(p);
-									counterExpectedSoft.set(p, count+1);
-
-									count = counterExpectedLevenshtein.get(p);
-									counterExpectedLevenshtein.set(p, count+1);
-
-									count = counterExpectedRatcliffObershelp.get(p);
-									counterExpectedRatcliffObershelp.set(p, count+1);
+                                    strictStats.incrementExpected(fieldName);
+                                    softStats.incrementExpected(fieldName);
+                                    levenshteinStats.incrementExpected(fieldName);
+                                    ratcliffObershelpStats.incrementExpected(fieldName);
 								}
 								
 								double pct = 0.0;
 								// strict
 								if ((nlmResult.length() > 0) && grobidResults.contains(nlmResult)) {
-									Integer count = counterObservedStrict.get(p);
-									counterObservedStrict.set(p, count+1);
+                                    strictStats.incrementObserved(fieldName);
 									nbMatchStrict++;
 									pct = 1.0;
 									grobidResults.remove(nlmResult);
 								}
 								else {
 									if (nlmResult.length() > 0) {
-										Integer count = counterFalseNegativeStrict.get(p);
-										counterFalseNegativeStrict.set(p, count+1);
+                                        strictStats.incrementFalseNegative(fieldName);
 										allGoodStrict = false;
 									}
 								}
@@ -1275,15 +1178,13 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									nlmResultSoft = removeFullPunct(nlmResult);
 								}
 								if ((nlmResult.length() > 0) && grobidSoftResults.contains(nlmResultSoft)) {
-									Integer count = counterObservedSoft.get(p);
-									counterObservedSoft.set(p, count+1);
+                                    softStats.incrementObserved(fieldName);
 									nbMatchSoft++;
 									grobidSoftResults.remove(nlmResultSoft);
 								}
 								else {
 									if (nlmResultSoft.length() > 0){
-										Integer count = counterFalseNegativeSoft.get(p);
-										counterFalseNegativeSoft.set(p, count+1);
+                                        softStats.incrementFalseNegative(fieldName);
 										allGoodSoft = false;
 									}
 								}
@@ -1352,14 +1253,12 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 							}
 							
 							if (nbMatchStrict < grobidResultsSize) {
-								Integer count = counterFalsePositiveStrict.get(p);
-								counterFalsePositiveStrict.set(p, count+(grobidResultsSize-nbMatchStrict));
+                                strictStats.incrementFalsePositive(fieldName, grobidResultsSize-nbMatchStrict);
 								allGoodStrict = false;
 							}
 							
 							if (nbMatchSoft < grobidResultsSize) {
-								Integer count = counterFalsePositiveSoft.get(p);
-								counterFalsePositiveSoft.set(p, count+(grobidResultsSize-nbMatchSoft));
+                                softStats.incrementFalsePositive(fieldName, grobidResultsSize-nbMatchSoft);
 								allGoodSoft = false;
 							}
 							p++;
@@ -1386,28 +1285,23 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 		
 		report.append("\n======= Strict Matching ======= (exact matches)\n");
 		report.append("\n===== Field-level results =====\n");
-		report.append(EvaluationUtilities.computeMetrics(labels, counterObservedStrict, 
-			counterExpectedStrict, counterFalsePositiveStrict, counterFalseNegativeStrict));
+		report.append(EvaluationUtilities.computeMetrics(strictStats));
 
 		report.append("\n\n======== Soft Matching ======== (ignoring punctuation, " + 
 			"case and space characters mismatches)\n");
 		report.append("\n===== Field-level results =====\n");
-		report.append(EvaluationUtilities.computeMetrics(labels, counterObservedSoft, 
-			counterExpectedSoft, counterFalsePositiveSoft, counterFalseNegativeSoft));
+		report.append(EvaluationUtilities.computeMetrics(softStats));
 
 		if (sectionType != this.FULLTEXT) {
 			report.append("\n\n==== Levenshtein Matching ===== (Minimum Levenshtein distance at " + 
 				this.minLevenshteinDistance + ")\n");
 			report.append("\n===== Field-level results =====\n");
-			report.append(EvaluationUtilities.computeMetrics(labels, counterObservedLevenshtein, 
-				counterExpectedLevenshtein, counterFalsePositiveLevenshtein, counterFalseNegativeLevenshtein));
+			report.append(EvaluationUtilities.computeMetrics(levenshteinStats));
 
 			report.append("\n\n= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at " +
 				minRatcliffObershelpSimilarity + ")\n");
 			report.append("\n===== Field-level results =====\n");
-			report.append(EvaluationUtilities.computeMetrics(labels, counterObservedRatcliffObershelp, 
-				counterExpectedRatcliffObershelp, counterFalsePositiveRatcliffObershelp, 
-				counterFalseNegativeRatcliffObershelp));
+			report.append(EvaluationUtilities.computeMetrics(ratcliffObershelpStats));
 		}
 
 		if (sectionType == this.CITATION) {
@@ -1514,18 +1408,6 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	private void initFields(int nbFields, final List<Integer> counterExpected, 
-										  final List<Integer> counterObserved, 
-										  final List<Integer> counterFalsePositive, 
-										  final List<Integer> counterFalseNegative) {
-		for(int p=0; p<nbFields; p++) {
-			counterExpected.add(0);
-			counterObserved.add(0);
-			counterFalsePositive.add(0);
-			counterFalseNegative.add(0);	
-		}							 
 	}
 	
 	private static String basicNormalization(String string) {
