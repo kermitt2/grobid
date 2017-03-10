@@ -1,8 +1,10 @@
 package org.grobid.core.engines;
 
 
+import com.google.common.collect.Lists;
 import fr.limsi.wapiti.SWIGTYPE_p_mdl_t;
 import fr.limsi.wapiti.Wapiti;
+import org.apache.pdfbox.pdmodel.PDDocument;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
@@ -13,19 +15,27 @@ import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.features.FeaturesVectorDate;
 import org.grobid.core.jni.WapitiModel;
 import org.grobid.core.main.LibraryLoader;
+import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.visualization.CitationsVisualizer;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileFilter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
 @Ignore
 public class EngineTest {
+
+    private static Engine engine;
 
     @BeforeClass
     public static void init() {
@@ -35,6 +45,16 @@ public class EngineTest {
     @Test
     public void testGetNewModel() {
         // assertEquals("Wrong value of getModel", "-m "+GrobidModels.CITATION.getModelPath()+" ", GrobidModels.CITATION.getModelPath());
+    }
+    @BeforeClass
+    public static void setUpClass() throws Exception {
+        MockContext.setInitialContext();
+        engine = GrobidFactory.getInstance().createEngine();
+    }
+
+    @AfterClass
+    public static void destroyInitialContext() throws Exception {
+        MockContext.destroyInitialContext();
     }
 
 
@@ -891,7 +911,7 @@ public class EngineTest {
 //        File pdf = new File("/Users/zholudev/Downloads/AS-454757820178434@1485434121902_content_1.pdf");
 //        File pdf = new File("/Users/zholudev/Downloads/AS-99907918630920@1400831312313_content_1.pdf");
         File pdf = new File("/Users/zholudev/Downloads/9908107.pdf");
-        Document doc = engine.getParsers().getFullTextParser().processing(DocumentSource.fromPdf(pdf, -1, -1, false), config);
+        Document doc = engine.getParsers().getFullTextParser().processing(DocumentSource.fromPdf(pdf, -1, -1, false, true), config);
         System.out.println(doc.getTei());
 
 //        System.out.println(engine.fullTextToTEI(inputFile, config)); // numbered
@@ -910,7 +930,7 @@ public class EngineTest {
     public void testFulltexts() throws Exception {
         final Engine engine = GrobidFactory.getInstance().getEngine();
 //        GrobidAnalysisConfig config = GrobidAnalysisConfig.defaultInstance();
-        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().generateTeiCoordinates(Lists.newArrayList("ref", "biblStruct")).build();
 
         int cnt = 0;
 //        for (File f : new File("/Work/temp/pub_citation_styles").listFiles(new FileFilter() {
@@ -946,6 +966,27 @@ public class EngineTest {
 
         Thread.sleep(100000);
         System.out.println("DONE!");
+    }
+
+    @Test
+    public void visualizeCitations() throws Exception {
+//        File f = new File("/Users/zholudev/Downloads/The_planetary_system_Web_30_active_documents_for_S.pdf");
+//        File f = new File("/Users/zholudev/Downloads/Lack_of_in_vitro_constitutive_activity_for_four_pr.pdf");
+        File f = new File("/Users/zholudev/Downloads/AS-432836994965504@1480207789262_content_1.pdf");
+//        File f = new File("/Work/temp/figureExtraction/5.pdf");
+
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().generateTeiCoordinates(Lists.newArrayList("ref", "biblStruct")).build();
+        Document doc = engine.getParsers().getFullTextParser().processing(DocumentSource.fromPdf(f, -1, -1, false, true), config);
+
+        PDDocument document = PDDocument.load(f);
+
+
+        document = CitationsVisualizer.annotatePdfWithCitations(document, doc, Collections.<String>emptyList());
+        File out = new File("/tmp/citAnn.pdf");
+        document.save(out);
+        if (Desktop.getDesktop().isSupported(Desktop.Action.OPEN)) {
+            Desktop.getDesktop().open(out);
+        }
     }
 
 
@@ -1065,10 +1106,15 @@ public class EngineTest {
                 "25.\tReva, O.N., Zaets, I.E., Ovcharenko, L.P., Kukharenko, O.E., Shpylova, S.P., Podolich, O.V., de Vera, J.-P. and Kozyrovska N.O. (2015). Metabarcoding of the kombucha microbial community grown in different microenvironments. AMB Expr 5:35, DOI 10.1186/s13568-015-0124-5.\n";
 
 
-//        text = "Lipsitch M, 1997, ANTIMICROB AGENTS CH, V41, P363";
+//        text = "Aaker, J. L. (1997). Dimensions of Brand Personality. Journal of Marketing Research, 34(3), 347. http://doi.org/10.2307/3151897";;
+//        text = "Meyer, F. et al. The metagenomics RAST server -a public resource for the automatic phylogenetic and functional analysis of   metagenomes. BMC bioinformatics 9, 386, doi: 10.1186/1471-2105-9-386 (2008).";
+        text = "Lowe, R. K. (2004). Interrogation of a dynamic visualization during learning.   Learning   and   Instruction, 14,   257e274.   http://dx.doi.org/10.1016/j.learninstruc.2004.06.003.";
 
             Document res = engine.getParsers().getSegmentationParser().processing(text);
 //        SortedSet<DocumentPiece> part = res.getDocumentPart(SegmentationLabel.REFERENCES);
+
+        BiblioItem item = engine.getParsers().getCitationParser().processing(text, false);
+
 
         List<BibDataSet> citResults = engine.getParsers().getCitationParser().processingReferenceSection(text, engine.getParsers().getReferenceSegmenterParser());
         for (BibDataSet bds: citResults) {

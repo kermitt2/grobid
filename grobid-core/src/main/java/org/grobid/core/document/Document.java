@@ -116,7 +116,7 @@ public class Document {
     protected DocumentNode top = null;
 
     // header of the document - if extracted and processed
-    protected final BiblioItem resHeader = null;
+    protected BiblioItem resHeader = null;
 
     // full text as tructure TEI - if extracted and processed
     protected String tei;
@@ -2127,4 +2127,28 @@ public class Document {
     public void setResHeader(BiblioItem resHeader) {
         this.resHeader = resHeader;
     }
+
+
+    static public List<LayoutToken> getTokens(List<LayoutToken> tokenizations, int offsetBegin, int offsetEnd) {
+        return getTokensFrom(tokenizations, offsetBegin, offsetEnd, 0);
+    }
+
+    static public List<LayoutToken> getTokensFrom(List<LayoutToken> tokenizations,
+                                                  int offsetBegin,
+                                                  int offsetEnd,
+                                                  int startTokenIndex) {
+        List<LayoutToken> result = new ArrayList<LayoutToken>();
+        for(int p = startTokenIndex; p<tokenizations.size(); p++) {
+            LayoutToken currentToken = tokenizations.get(p);
+            if ((currentToken == null) || (currentToken.getText() == null))
+                continue;
+            if (currentToken.getOffset() + currentToken.getText().length() < offsetBegin)
+                continue;
+            if (currentToken.getOffset() > offsetEnd)
+                return result;
+            result.add(currentToken);
+        }
+        return result;
+    }
+
 }
