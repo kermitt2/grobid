@@ -3,6 +3,7 @@ package org.grobid.core.visualization;
 import com.google.common.collect.Multimap;
 import net.sf.saxon.trans.XPathException;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.cos.COSArray;
 import org.apache.pdfbox.cos.COSDictionary;
 import org.apache.pdfbox.cos.COSBase;
@@ -23,6 +24,7 @@ import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPa
 
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BibDataSetContext;
+import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
@@ -32,6 +34,7 @@ import org.grobid.core.layout.Page;
 import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.BibDataSetContextExtractor;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
 
 import org.slf4j.Logger;
@@ -119,11 +122,15 @@ public class CitationsVisualizer {
                 if (p.getLayoutTokens() != null) {
                     String coordsString = LayoutTokensUtil.getCoordsString(p.getLayoutTokens());
                     for (String coords : coordsString.split(";")) {
-                        annotatePage(document, coords, p.getLastName() == null ? 1 : p.getLastName().hashCode(), 1.0f);
+                        annotatePage(document, coords, "123", null,
+//                                p.getLastName() == null ? 1 : p.getLastName().hashCode(),
+                                1.0f, true, dictionary);
                     }
                 }
             }
         }
+
+
         LOGGER.debug("totalBib: " + totalBib);
         LOGGER.debug("totalMarkers1: " + totalMarkers1);
         LOGGER.debug("totalMarkers2: " + totalMarkers2);
