@@ -10,7 +10,9 @@ import org.grobid.core.data.BibDataSet;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
+import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,27 +32,13 @@ public class ReferenceMarkerMatcher {
     public static final Pattern YEAR_PATTERN = Pattern.compile("[12][0-9]{3}[a-d]?");
     public static final Pattern YEAR_PATTERN_WITH_LOOK_AROUND = Pattern.compile("(?<!\\d)[12][0-9]{3}(?!\\d)[a-d]?");
     public static final Pattern AUTHOR_NAME_PATTERN = Pattern.compile("[A-Z][A-Za-z]+");
-    private static final Pattern NUMBERED_CITATION_PATTERN = Pattern.compile(" *[\\(\\[]? *(?:\\d+[-–]\\d+,|\\d+, *)*[ ]*(?:\\d+[-–]\\d+|\\d+)[\\)\\]]? *");
+    public static final Pattern NUMBERED_CITATION_PATTERN = Pattern.compile(" *[\\(\\[]? *(?:\\d+[-–]\\d+,|\\d+, *)*[ ]*(?:\\d+[-–]\\d+|\\d+)[\\)\\]]? *");
     public static final Pattern AUTHOR_SEPARATOR_PATTERN = Pattern.compile(";");
     public static final ClassicAnalyzer ANALYZER = new ClassicAnalyzer(Version.LUCENE_45);
     public static final int MAX_RANGE = 20;
     public static final Pattern NUMBERED_CITATIONS_SPLIT_PATTERN = Pattern.compile("[,;]");
     public static final Pattern AND_WORD_PATTERN = Pattern.compile("and");
     public static final Pattern DASH_PATTERN = Pattern.compile("[–-]");
-
-    public enum Counters {
-        MATCHED_REF_MARKERS,
-        UNMATCHED_REF_MARKERS,
-        NO_CANDIDATES,
-        MANY_CANDIDATES,
-        STYLE_AUTHORS,
-        STYLE_NUMBERED,
-        MATCHED_REF_MARKERS_AFTER_POST_FILTERING,
-        MANY_CANDIDATES_AFTER_POST_FILTERING,
-        NO_CANDIDATES_AFTER_POST_FILTERING,
-        STYLE_OTHER,
-        INPUT_REF_STRINGS_CNT
-    }
 
     public class MatchResult {
         private String text;
@@ -125,17 +113,17 @@ public class ReferenceMarkerMatcher {
     }
 
     public List<MatchResult> match(List<LayoutToken> refTokens) throws EntityMatcherException {
-        cntManager.i(Counters.INPUT_REF_STRINGS_CNT);
-        String text = LayoutTokensUtil.toTextDehyphenized(LayoutTokensUtil.enrichWithNewLineInfo(refTokens));
+        cntManager.i(ReferenceMarkerMatcherCounters.INPUT_REF_STRINGS_CNT);
+        String text = TextUtilities.dehyphenize(LayoutTokensUtil.enrichWithNewLineInfo(refTokens));
 
         if (isAuthorCitationStyle(text)) {
-            cntManager.i(Counters.STYLE_AUTHORS);
+            cntManager.i(ReferenceMarkerMatcherCounters.STYLE_AUTHORS);
             return matchAuthorCitation(text, refTokens);
         } else if (isNumberedCitationReference(text)) {
-            cntManager.i(Counters.STYLE_NUMBERED);
+            cntManager.i(ReferenceMarkerMatcherCounters.STYLE_NUMBERED);
             return matchNumberedCitation(text, refTokens);
         } else {
-            cntManager.i(Counters.STYLE_OTHER);
+            cntManager.i(ReferenceMarkerMatcherCounters.STYLE_OTHER);
 //            LOGGER.info("Other style: " + text);
             return Collections.singletonList(new MatchResult(text, refTokens, null));
         }
@@ -158,15 +146,15 @@ public class ReferenceMarkerMatcher {
             List<LayoutToken> labelToks = label.b;
             List<BibDataSet> matches = labelMatcher.match(text);
             if (matches.size() == 1) {
-                cntManager.i(Counters.MATCHED_REF_MARKERS);
+                cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
 //                System.out.println("MATCHED: " + text + "\n" + matches.get(0).getRefSymbol() + "\n" + matches.get(0).getRawBib());
 
 //                System.out.println("-----------");
                 results.add(new MatchResult(text, labelToks, matches.get(0)));
             } else {
-                cntManager.i(Counters.UNMATCHED_REF_MARKERS);
+                cntManager.i(ReferenceMarkerMatcherCounters.UNMATCHED_REF_MARKERS);
                 if (matches.size() != 0) {
-                    cntManager.i(Counters.MANY_CANDIDATES);
+                    cntManager.i(ReferenceMarkerMatcherCounters.MANY_CANDIDATES);
 //                    LOGGER.info("MANY CANDIDATES: " + input + "\n" + text + "\n");
                     for (BibDataSet bds : matches) {
 //                        LOGGER.info("  " + bds.getRawBib());
@@ -174,7 +162,7 @@ public class ReferenceMarkerMatcher {
 
 //                    LOGGER.info("----------");
                 } else {
-                    cntManager.i(Counters.NO_CANDIDATES);
+                    cntManager.i(ReferenceMarkerMatcherCounters.NO_CANDIDATES);
 //                    LOGGER.info("NO CANDIDATES: " + text + "\n" + text);
 //                    LOGGER.info("++++++++++++");
                 }
@@ -253,25 +241,25 @@ public class ReferenceMarkerMatcher {
 
             List<BibDataSet> matches = authorMatcher.match(c);
             if (matches.size() == 1) {
-                cntManager.i(Counters.MATCHED_REF_MARKERS);
+                cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
 //                System.out.println("MATCHED: " + text + "\n" + c + "\n" + matches.get(0).getRawBib());
 
 //                System.out.println("-----------");
                 results.add(new MatchResult(c, splitItem, matches.get(0)));
             } else {
                 if (matches.size() != 0) {
-                    cntManager.i(Counters.MANY_CANDIDATES);
+                    cntManager.i(ReferenceMarkerMatcherCounters.MANY_CANDIDATES);
                     List<BibDataSet> filtered = postFilterMatches(c, matches);
                     if (filtered.size() == 1) {
                         results.add(new MatchResult(c, splitItem, filtered.get(0)));
-                        cntManager.i(Counters.MATCHED_REF_MARKERS);
-                        cntManager.i(Counters.MATCHED_REF_MARKERS_AFTER_POST_FILTERING);
+                        cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
+                        cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS_AFTER_POST_FILTERING);
                     } else {
-                        cntManager.i(Counters.UNMATCHED_REF_MARKERS);
+                        cntManager.i(ReferenceMarkerMatcherCounters.UNMATCHED_REF_MARKERS);
                         if (filtered.size() == 0) {
-                            cntManager.i(Counters.NO_CANDIDATES_AFTER_POST_FILTERING);
+                            cntManager.i(ReferenceMarkerMatcherCounters.NO_CANDIDATES_AFTER_POST_FILTERING);
                         } else {
-                            cntManager.i(Counters.MANY_CANDIDATES_AFTER_POST_FILTERING);
+                            cntManager.i(ReferenceMarkerMatcherCounters.MANY_CANDIDATES_AFTER_POST_FILTERING);
 //                            LOGGER.info("MANY CANDIDATES: " + text + "\n-----\n" + c + "\n");
                             for (BibDataSet bds : matches) {
                                 LOGGER.info("+++++");
@@ -282,7 +270,7 @@ public class ReferenceMarkerMatcher {
                     }
                 } else {
                     results.add(new MatchResult(c, splitItem, null));
-                    cntManager.i(Counters.NO_CANDIDATES);
+                    cntManager.i(ReferenceMarkerMatcherCounters.NO_CANDIDATES);
 //                    LOGGER.info("NO CANDIDATES: " + text + "\n" + c);
 //                    LOGGER.info("++++++++++++");
                 }
@@ -304,12 +292,12 @@ public class ReferenceMarkerMatcher {
             int matchCount = matchCount(text, YEAR_PATTERN_WITH_LOOK_AROUND);
             if (matchCount == 2 && text.contains(" and ")) {
                 for (List<LayoutToken> ys : LayoutTokensUtil.split(splitTokens, AND_WORD_PATTERN, true)) {
-                    result.add(new Pair<>(LayoutTokensUtil.toTextDehyphenized(ys), ys));
+                    result.add(new Pair<>(TextUtilities.dehyphenize(ys), ys));
                 }
             } else if (matchCount > 1) {
                 List<List<LayoutToken>> yearSplit = LayoutTokensUtil.split(splitTokens, YEAR_PATTERN, true, false);
                 if (yearSplit.isEmpty()) {
-                    result.add(new Pair<>(LayoutTokensUtil.toTextDehyphenized(splitTokens), splitTokens));
+                    result.add(new Pair<>(TextUtilities.dehyphenize(splitTokens), splitTokens));
                 } else {
                     if (matchCount(splitTokens, AUTHOR_NAME_PATTERN) == 1) {
                         // cases like Grafton et al. 1995, 1998;
@@ -321,24 +309,24 @@ public class ReferenceMarkerMatcher {
 
                         List<LayoutToken> firstYearSplitItem;
                         firstYearSplitItem = yearSplit.get(0);
-                        result.add(new Pair<>(LayoutTokensUtil.toTextDehyphenized(firstYearSplitItem), firstYearSplitItem));
+                        result.add(new Pair<>(TextUtilities.dehyphenize(firstYearSplitItem), firstYearSplitItem));
 
                         List<LayoutToken> excludedYearToks = firstYearSplitItem.subList(0, firstYearSplitItem.size() - 1);
-                        String authorName = LayoutTokensUtil.toTextDehyphenized(excludedYearToks);
+                        String authorName = TextUtilities.dehyphenize(excludedYearToks);
 
                         for (int i = 1; i < yearSplit.size(); i++) {
                             List<LayoutToken> toksI = yearSplit.get(i);
-                            result.add(new Pair<>(authorName + " " + LayoutTokensUtil.toTextDehyphenized(toksI), toksI.subList(toksI.size() - 1, toksI.size())));
+                            result.add(new Pair<>(authorName + " " + TextUtilities.dehyphenize(toksI), toksI.subList(toksI.size() - 1, toksI.size())));
                         }
                     } else {
                         // case when two authors still appear
                         for (List<LayoutToken> item : yearSplit) {
-                            result.add(new Pair<>(LayoutTokensUtil.toTextDehyphenized(item), item));
+                            result.add(new Pair<>(TextUtilities.dehyphenize(item), item));
                         }
                     }
                 }
             } else {
-                result.add(new Pair<>(LayoutTokensUtil.toTextDehyphenized(splitTokens), splitTokens));
+                result.add(new Pair<>(TextUtilities.dehyphenize(splitTokens), splitTokens));
             }
         }
         return result;

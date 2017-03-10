@@ -17,7 +17,6 @@ public class DocumentPiece implements Comparable<DocumentPiece>{
         this.b = b;
     }
 
-
     @Override
     public String toString() {
         return "(" + a + " - " + b + ")";

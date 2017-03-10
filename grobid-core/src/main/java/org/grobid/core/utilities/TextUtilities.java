@@ -1,7 +1,11 @@
 package org.grobid.core.utilities;
 
+import com.google.common.collect.Iterators;
+import com.google.common.collect.PeekingIterator;
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeatureFactory;
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.lexicon.Lexicon;
 
 import java.io.BufferedReader;
@@ -13,7 +17,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static org.apache.commons.lang3.StringUtils.trim;
 
 /**
  * Class for holding static methods for text processing.
@@ -22,12 +29,12 @@ import java.util.regex.*;
  */
 public class TextUtilities {
 
-	public static final String punctuations = " ,:;?.!)-–\"“”‘’'`$]*\u2666\u2665\u2663\u2660";
+    public static final String punctuations = " ,:;?.!)-–\"“”‘’'`$]*\u2666\u2665\u2663\u2660";
     public static final String fullPunctuations = "([ ,:;?.!/)-–\"“”‘’'`$]*\u2666\u2665\u2663\u2660";
     public static String delimiters = " \n\t\u00A0" + fullPunctuations;
 
-	public static final String OR = "|";
-	public static final String NEW_LINE = "\n";
+    public static final String OR = "|";
+    public static final String NEW_LINE = "\n";
     public static final String SPACE = " ";
     public static final String COMMA = ",";
     public static final String QUOTE = "'";
@@ -35,15 +42,15 @@ public class TextUtilities {
     public static final String START_BRACKET = "(";
     public static final String SHARP = "#";
     public static final String COLON = ":";
-    public static final String DOUBLE_QUOTE="\"";
-    public static final String ESC_DOUBLE_QUOTE="&quot;";
-	public static final String LESS_THAN = "<";
-	public static final String ESC_LESS_THAN = "&lt;";
-	public static final String GREATER_THAN = ">";
-	public static final String ESC_GREATER_THAN = "&gt;";
-	public static final String AND = "&";
-	public static final String ESC_AND = "&amp;";
-	public static final String SLASH = "/";
+    public static final String DOUBLE_QUOTE = "\"";
+    public static final String ESC_DOUBLE_QUOTE = "&quot;";
+    public static final String LESS_THAN = "<";
+    public static final String ESC_LESS_THAN = "&lt;";
+    public static final String GREATER_THAN = ">";
+    public static final String ESC_GREATER_THAN = "&gt;";
+    public static final String AND = "&";
+    public static final String ESC_AND = "&amp;";
+    public static final String SLASH = "/";
 
     /**
      * Replace numbers in the string by a dummy character for string distance evaluations
@@ -67,106 +74,104 @@ public class TextUtilities {
         return res;
     }
 
-    /**
-     * Test for the current string contains at least one digit.
-     *
-     * @param tok the string to be processed.
-     * @return true if contains a digit
-     */
-    public static boolean test_digit(String tok) {
-        if (tok == null)
-            return false;
-        if (tok.length() == 0)
-            return false;
-        char a;
-        for (int i = 0; i < tok.length(); i++) {
-            a = tok.charAt(i);
-            if (Character.isDigit(a))
-                return true;
+    private static int getLastPunctuationCharacter(String section) {
+        int res = -1;
+        for (int i = section.length() - 1; i >= 0; i--) {
+            if (fullPunctuations.contains("" + section.charAt(i))) {
+                res = i;
+            }
         }
-        return false;
+        return res;
     }
 
-    /**
-     * Text extracted from a PDF is usually hyphenized, which is not desirable. This 
-	 * version supposes that the ends of line are preserved in the input text. 
-     *
-     * @param text the string to be processed with preserved end of lines.
-     * @return Returns the dehyphenized string.
-     */
+    public static String dehyphenize(List<LayoutToken> tokens) {
+        PeekingIterator<LayoutToken> it = Iterators.peekingIterator(tokens.iterator());
+        StringBuilder sb = new StringBuilder();
+        boolean normalized = false;
+
+        LayoutToken prev = null;
+        while (it.hasNext()) {
+            LayoutToken cur = it.next();
+            //the current token is dash, next is new line, and previous one is some sort of word
+            if (cur.isNewLineAfter() && cur.getText().equals("-") && prev != null && !prev.getText().trim().isEmpty()) {
+                it.next();
+                if (it.hasNext()) {
+                    LayoutToken next = it.next();
+                    if (next.getText().equals("conjugated") || prev.getText().equals("anti")) {
+                        sb.append("-");
+                    }
+                    sb.append(StringUtils.trim(next.getText()));
+                    normalized = true;
+                }
+            } else {
+                sb.append(cur.getText());
+            }
+            prev = cur;
+        }
+
+        /*if (normalized) {
+            System.out.println("NORMALIZED: " + sb.toString());
+        }*/
+        return sb.toString();
+    }
+
     public static String dehyphenize(String text) {
         if (text == null)
             return null;
         String res = "";
-        StringTokenizer st = new StringTokenizer(text, "\n");
-        boolean hyphen = false;
-        boolean failure = false;
-        String lastToken = null;
-        boolean isFirstToken = true;
-        String line = null;
+        StringTokenizer st = new StringTokenizer(text, "-");
+
+        boolean firstStep = true;
         while (st.hasMoreTokens()) {
-            if (line != null) {
-                isFirstToken = false;
-            }
-            line = st.nextToken();
+            String section = st.nextToken();
 
-            if (hyphen) {
-                // we get the first token
-                StringTokenizer st2 = new StringTokenizer(line, " ,.);!");
-                if (st2.countTokens() > 1) {
-                    String firstToken = st2.nextToken();
-
-                    // we check if the composed token is in the lexicon
-                    String hyphenToken = lastToken + firstToken;
-                    boolean dehyph = true;
-                    // if number, we do not dehyphenize!
-                    if (test_digit(hyphenToken))
-                        dehyph = false;
-                    else if (Character.isUpperCase(firstToken.charAt(0))) {
-                        // if capital letter at the begining of the first token, we do not dehyphenize!
-                        dehyph = false;
-                    }
-
-                    //if (lex.inDictionary(hyphenToken.toLowerCase())) {
-                    if (dehyph) {
-                        // if yes, it is hyphenization
-                        res += hyphenToken;
-                        line = line.substring(firstToken.length(), line.length());
-                    } else {
-                        // if not
-                        res += lastToken + "-\n";
-                        failure = true;
-                    }
-                } else
-                    res += lastToken + "-\n";
-                hyphen = false;
-            }
-
-            if (line.length() > 0) {
-                if (line.charAt(line.length() - 1) == '-') {
-                    // we get the last token
-                    hyphen = true;
-                    int ind0 = line.lastIndexOf(' ');
-                    int ind1 = line.lastIndexOf('(');
-                    if (ind1 > ind0)
-                        ind0 = ind1;
-                    if (ind0 != -1) {
-                        lastToken = line.substring(ind0 + 1, line.length() - 1);
-                        line = line.substring(0, ind0 + 1);
-                        res += SPACE + line;
-                    } else
-                        lastToken = line.substring(0, line.length() - 1);
+            if (firstStep) {
+                res += trim(section);
+                firstStep = false;
+            } else {
+                String firstToken = getFirstToken(section);
+                if (firstToken.contains("\n")) {
+                    res += trim(section);
                 } else {
-                    if (failure) {
-                        res += line + (st.hasMoreTokens() ? "\n" : "");
-                        failure = false;
-                    } else
-                        res += (isFirstToken ? "" : SPACE) + line + (st.hasMoreTokens() ? "\n" : "");
+                    res += "-" + trim(section);
                 }
             }
         }
+
+        res = res.replace(" . ", ". ");
         res = res.replace("  ", SPACE);
-        return res;
+
+        return res.trim();
+    }
+
+    public static String getLastToken(String section) {
+        String lastToken = section;
+        int lastSpaceIndex = section.lastIndexOf(' ');
+
+        //The last parenthesis cover the case 'this is a (special-one) case'
+        // where the lastToken before the hypen should be 'special' and not '(special'
+/*        int lastParenthesisIndex = section.lastIndexOf('(');
+        if (lastParenthesisIndex > lastSpaceIndex)
+            lastSpaceIndex = lastParenthesisIndex;*/
+
+        if (lastSpaceIndex != -1) {
+            lastToken = section.substring(lastSpaceIndex + 1, section.length());
+        } else {
+            lastToken = section.substring(0, section.length());
+        }
+        return lastToken;
+    }
+
+    public static String getFirstToken(String section) {
+        int firstSpaceIndex = section.indexOf(' ');
+
+        if (firstSpaceIndex == 0) {
+            return getFirstToken(section.substring(1, section.length()));
+        } else if (firstSpaceIndex != -1) {
+            return section.substring(0, firstSpaceIndex);
+        } else  {
+            return section.substring(0, section.length());
+        }
     }
 
 
@@ -174,16 +179,19 @@ public class TextUtilities {
      * Text extracted from a PDF is usually hyphenized, which is not desirable.
      * This version supposes that the end of line are lost and than hyphenation
      * could appear everywhere. So a dictionary is used to control the recognition
-     * of hyphen. 
+     * of hyphen.
      *
      * @param text the string to be processed without preserved end of lines.
      * @return Returns the dehyphenized string.
+     * <p>
+     * Deprecated method, not needed anymore since the @newline are preserved thanks to the LayoutTokens
+     * Use dehypenize
      */
+    @Deprecated
     public static String dehyphenizeHard(String text) {
         if (text == null)
             return null;
         String res = "";
-
 
         text.replaceAll("\n", SPACE);
 
@@ -206,9 +214,9 @@ public class TextUtilities {
                     /*if (lex == null)
                              featureFactory.loadLexicon();*/
                     Lexicon lex = Lexicon.getInstance();
-                    FeatureFactory featureFactory = FeatureFactory.getInstance();
+
                     if (lex.inDictionary(hyphenToken.toLowerCase()) &
-                            !(featureFactory.test_digit(hyphenToken))) {
+                            !(FeatureFactory.test_digit(hyphenToken))) {
                         // if yes, it is hyphenization
                         res += firstToken;
                         section = section.substring(firstToken.length(), section.length());
@@ -225,14 +233,7 @@ public class TextUtilities {
 
             // we get the last token
             hyphen = true;
-            int ind0 = section.lastIndexOf(' ');
-            int ind1 = section.lastIndexOf('(');
-            if (ind1 > ind0)
-                ind0 = ind1;
-            if (ind0 != -1) {
-                lastToken = section.substring(ind0 + 1, section.length());
-            } else
-                lastToken = section.substring(0, section.length());
+            lastToken = getLastToken(section);
 
             if (failure) {
                 res += section;
@@ -458,7 +459,7 @@ public class TextUtilities {
             Arrays.asList("the", "of", "and", "du", "de le", "de la", "des", "der", "an", "und");
 
     /**
-     * Remove useless punctuation at the end and begining of a metadata field.
+     * Remove useless punctuation at the end and beginning of a metadata field.
      * <p/>
      * Still experimental ! Use with care !
      */
@@ -678,7 +679,7 @@ public class TextUtilities {
                                         char c6 = string.charAt(i + 5);
                                         if (c5 == 't') {
                                             if (c6 == ';') {
-                                                    skip = true;
+                                                skip = true;
                                             }
                                         }
                                     }
@@ -726,6 +727,7 @@ public class TextUtilities {
     }
 
     public static String normalizeRegex(String string) {
+        string = string.replace("&", "\\\\&");
         string = string.replace("&", "\\\\&");
         string = string.replace("+", "\\\\+");
         return string;
@@ -1004,15 +1006,15 @@ public class TextUtilities {
                 variants.add(firstName + SPACE + lastName);
                 variants.add(lastName + SPACE + firstName);
 
-                if (firstName.length()>1) {
-                    String firstInitial = firstName.substring(0,1);
+                if (firstName.length() > 1) {
+                    String firstInitial = firstName.substring(0, 1);
 
                     variants.add(firstInitial + SPACE + lastName);
                     variants.add(lastName + SPACE + firstInitial);
                 }
 
-                if (lastName.length()>1) {
-                    String lastInitial = lastName.substring(0,1);
+                if (lastName.length() > 1) {
+                    String lastInitial = lastName.substring(0, 1);
 
                     variants.add(firstName + SPACE + lastInitial);
                 }
@@ -1139,74 +1141,70 @@ public class TextUtilities {
         return middle.toString();
 
     }
-	
-	/**
-	 * Give the punctuation profile of a line, i.e. the concatenation of all the punctuations 
-	 * occuring in the line. 
-	 * 
-	 * @param line
-	 *            the string corresponding to a line
-	 * @return the punctuation profile as a string, empty string is no punctuation
-	 * @throws Exception
-	 */
-	public static String punctuationProfile(String line) {
-		String profile = "";
-		if ((line == null) || (line.length() == 0)) {
-			return profile;
-		}
-		for (int i = 0; i < line.length(); i++) {
-			char c = line.charAt(i);
-			if (c == ' ') {
-				continue;
-			}
-			if (fullPunctuations.indexOf(c) != -1)
-				profile += c;
-		}
-		return profile;
-	}
-	
-	/**
-	 * Return the number of token in a line given an existing global tokenization and a current 
-	 * start position of the line in this global tokenization. 
-	 * 
-	 * @param line
-	 *            the string corresponding to a line
- 	 * @param currentLinePos
-	 *            position of the line in the tokenization	
- 	 * @param tokenization
-	 *            the global tokenization where the line appears			
-	 * @return the punctuation profile as a string, empty string is no punctuation
-	 * @throws Exception
-	 */
-	public static int getNbTokens(String line, int currentLinePos, List<String> tokenization) 
-	throws Exception {
-		if ( (line == null) || (line.length() == 0) )
-			return 0;
-		String currentToken = tokenization.get(currentLinePos);
-		while ( (currentLinePos <tokenization.size()) && 
-				(currentToken.equals(" ") || currentToken.equals("\n") ) ) {
-			currentLinePos++;
-			currentToken = tokenization.get(currentLinePos);
-		}
-		if (!line.trim().startsWith(currentToken)) {
-			System.out.println("out of sync. : " + currentToken);
-			throw new IllegalArgumentException("line start does not match given tokenization start");
-		}
-		int nbTokens = 0;
-		int posMatch = 0; // current position in line
-		for(int p = currentLinePos; p < tokenization.size(); p++) {
-			currentToken = tokenization.get(p);
-			posMatch = line.indexOf(currentToken, posMatch);
-			if (posMatch == -1)
-				break;
-			nbTokens++;
-		}
-		return nbTokens;
-	}
-	
-	/**
-	 * Ensure that special XML characters are correctly encoded.  
-	 */
+
+    /**
+     * Give the punctuation profile of a line, i.e. the concatenation of all the punctuations
+     * occuring in the line.
+     *
+     * @param line the string corresponding to a line
+     * @return the punctuation profile as a string, empty string is no punctuation
+     * @throws Exception
+     */
+    public static String punctuationProfile(String line) {
+        String profile = "";
+        if ((line == null) || (line.length() == 0)) {
+            return profile;
+        }
+        for (int i = 0; i < line.length(); i++) {
+            char c = line.charAt(i);
+            if (c == ' ') {
+                continue;
+            }
+            if (fullPunctuations.indexOf(c) != -1)
+                profile += c;
+        }
+        return profile;
+    }
+
+    /**
+     * Return the number of token in a line given an existing global tokenization and a current
+     * start position of the line in this global tokenization.
+     *
+     * @param line           the string corresponding to a line
+     * @param currentLinePos position of the line in the tokenization
+     * @param tokenization   the global tokenization where the line appears
+     * @return the punctuation profile as a string, empty string is no punctuation
+     * @throws Exception
+     */
+    public static int getNbTokens(String line, int currentLinePos, List<String> tokenization)
+            throws Exception {
+        if ((line == null) || (line.length() == 0))
+            return 0;
+        String currentToken = tokenization.get(currentLinePos);
+        while ((currentLinePos < tokenization.size()) &&
+                (currentToken.equals(" ") || currentToken.equals("\n"))) {
+            currentLinePos++;
+            currentToken = tokenization.get(currentLinePos);
+        }
+        if (!line.trim().startsWith(currentToken)) {
+            System.out.println("out of sync. : " + currentToken);
+            throw new IllegalArgumentException("line start does not match given tokenization start");
+        }
+        int nbTokens = 0;
+        int posMatch = 0; // current position in line
+        for (int p = currentLinePos; p < tokenization.size(); p++) {
+            currentToken = tokenization.get(p);
+            posMatch = line.indexOf(currentToken, posMatch);
+            if (posMatch == -1)
+                break;
+            nbTokens++;
+        }
+        return nbTokens;
+    }
+
+    /**
+     * Ensure that special XML characters are correctly encoded.
+     */
     public static String trimEncodedCharaters(String string) {
         return string.replaceAll("&amp\\s+;", "&amp;").
                 replaceAll("&quot\\s+;|&amp;quot\\s*;", "&quot;").
@@ -1214,32 +1212,62 @@ public class TextUtilities {
                 replaceAll("&gt\\s+;|&amp;gt\\s*;", "&gt;").
                 replaceAll("&apos\\s+;|&amp;apos\\s*;", "&apos;");
     }
-	
+
     public static boolean filterLine(String line) {
         boolean filter = false;
-		if ( (line == null) || (line.length() == 0) )
-			filter = true;
+        if ((line == null) || (line.length() == 0))
+            filter = true;
         else if (line.contains("@IMAGE") || line.contains("@PAGE")) {
             filter = true;
-        } else if (line.contains(".pbm") || line.contains(".ppm") || 
-				   line.contains(".vec") || line.contains(".jpg") ||
-				   line.contains(".png")) {
-		    filter = true;
+        } else if (line.contains(".pbm") || line.contains(".ppm") ||
+                line.contains(".vec") || line.contains(".jpg") ||
+                line.contains(".png")) {
+            filter = true;
         }
         return filter;
     }
-	
-	/**
-	 * The equivalent of String.replaceAll() for StringBuilder
-	 */
-	public static StringBuilder replaceAll(StringBuilder sb, String regex, String replacement) {
-		Pattern pattern = Pattern.compile(regex);
-	    Matcher m = pattern.matcher(sb);
-	    int start = 0;
-	    while (m.find(start)) {
-	        sb.replace(m.start(), m.end(), replacement);
-	        start = m.start() + replacement.length();
-	    }
-		return sb;
-	}
+
+    /**
+     * The equivalent of String.replaceAll() for StringBuilder
+     */
+    public static StringBuilder replaceAll(StringBuilder sb, String regex, String replacement) {
+        Pattern pattern = Pattern.compile(regex);
+        Matcher m = pattern.matcher(sb);
+        int start = 0;
+        while (m.find(start)) {
+            sb.replace(m.start(), m.end(), replacement);
+            start = m.start() + replacement.length();
+        }
+        return sb;
+    }
+
+    /**
+     * Return the prefix of a string.
+     */
+    public static String prefix(String s, int count) {
+        if (s == null) {
+            return null;
+        }
+
+        if (s.length() < count) {
+            return s;
+        }
+
+        return s.substring(0, count);
+    }
+
+    /**
+     * Return the suffix of a string.
+     */
+    public static String suffix(String s, int count) {
+        if (s == null) {
+            return null;
+        }
+
+        if (s.length() < count) {
+            return s;
+        }
+
+        return s.substring(s.length() - count);
+    }
 }

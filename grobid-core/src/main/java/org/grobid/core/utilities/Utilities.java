@@ -56,6 +56,7 @@ public class Utilities {
 	public static boolean deleteOldies(File dir, int maxLifeInSeconds) {
 		return deleteOldies(dir, maxLifeInSeconds, true);
 	}
+
 	public static boolean deleteOldies(File dir, int maxLifeInSeconds, boolean root) {
 		Date currentDate = new Date();
 		long currentDateMillisec = currentDate.getTime();
@@ -436,48 +437,6 @@ public class Utilities {
 		return method;
 	}
 
-	/**
-	 * Creates a file and writes some content in it.
-	 * 
-	 * @param file
-	 *            The file to write in.
-	 * @param content
-	 *            the content to write
-	 * @throws FileNotFoundException
-	 * @throws IOException
-	 */
-	public static void writeInFile(String file, String content)
-			throws FileNotFoundException, IOException {
-		FileWriter filew = new FileWriter(new File(file));
-		BufferedWriter buffw = new BufferedWriter(filew);
-		buffw.write(content);
-		buffw.close();
-	}
-
-	/**
-	 * Read a file and return the content.
-	 * 
-	 * @param pPathToFile
-	 *            path to file to read.
-	 * @return String contained in the document.
-	 * @throws IOException
-	 */
-	public static String readFile(String pPathToFile) throws IOException {
-		StringBuffer out = new StringBuffer();
-		FileInputStream inputStrem = new FileInputStream(new File(pPathToFile));
-		ByteArrayOutputStream outStream = new ByteArrayOutputStream();
-		byte buf[] = new byte[1024];
-		int len;
-		while ((len = inputStrem.read(buf)) > 0) {
-			outStream.write(buf, 0, len);
-			out.append(outStream.toString());
-		}
-		inputStrem.close();
-		outStream.close();
-
-		return out.toString();
-	}
-	
 	/**
 	 * Format a date in string using pFormat.
 	 * 

@@ -10,16 +10,8 @@ Thumbs.db
 *.log
 *.log.*
 *.old
-
-# *.log
-# grobid-core/log/debug.log
-# *.log
-# grobid-core/log/error.log
-# grobid-core/log/warn.log
-# grobid-core/log/debug.log
-# grobid-core/log/error.log
-# grobid-core/log/warn.log
-
+tei-alt
+raw-alt
 
 grobid-core/src/test/resources/org/grobid/core/annotations/resTeiStAXParser/out.tei.xml
 
@@ -47,8 +39,18 @@ grobid-dictionaries
 grobid-ner
 grobid-bio
 grobid-istex
-grobid-home/models/quantities/
-grobid-home/models/units/
-grobid-home/models/bio/
-grobid-home/models/ner/
-grobid-home/models/nersense/
+grobid-astro
+grobid-chem
+grobid-home/models/quantities
+grobid-home/models/dictionaries-lexical-entries
+grobid-home/models/units
+grobid-home/models/bio
+grobid-home/models/ner
+grobid-home/models/nerfr
+grobid-home/models/nersense
+grobid-home/models/astro
+grobid-home/models/lexical-entry/*
+grobid-home/models/*lexical-entry*
+grobid-home/models/lexical-entry/model.wapiti
+grobid-home/models/dictionary*
+grobid-home/models/dictionaries*

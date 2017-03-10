@@ -15,6 +15,7 @@ import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.CitationParserCounters;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
@@ -86,16 +87,19 @@ public class FullTextParser extends AbstractParser {
 
 	public Document processing(File inputPdf,
 							   GrobidAnalysisConfig config) throws Exception {
-		DocumentSource documentSource = DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage());
+		DocumentSource documentSource = 
+			DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(), 
+				config.getPdfAssetPath() != null, true);
 		return processing(documentSource, config);
 	}
-		/**
-         * Machine-learning recognition of the complete full text structures.
-         *
-         * @param documentSource input
-         * @param config config
-         * @return the document object with built TEI
-         */
+
+	/**
+     * Machine-learning recognition of the complete full text structures.
+     *
+     * @param documentSource input
+     * @param config config
+     * @return the document object with built TEI
+     */
     public Document processing(DocumentSource documentSource,
                                GrobidAnalysisConfig config) throws Exception {
         if (tmpPath == null) {
@@ -136,6 +140,7 @@ public class FullTextParser extends AbstractParser {
             // header processing
 			BiblioItem resHeader = new BiblioItem();
            	parsers.getHeaderParser().processingHeaderBlock(config.isConsolidateHeader(), doc, resHeader);
+           	// above the old version of the header block identification, because more robust
            	if ( (resHeader == null) ||
            		 (resHeader.getTitle() == null) || (resHeader.getTitle().trim().length() == 0) ||
            		 (resHeader.getAuthors() == null) || (resHeader.getFullAuthors() == null) ||
@@ -209,8 +214,8 @@ public class FullTextParser extends AbstractParser {
         // vector for features
         FeaturesVectorFulltext features;
         FeaturesVectorFulltext previousFeatures = null;
-//        LayoutToken layoutToken = null;
-        boolean endblock;
+
+		boolean endblock;
         boolean endPage = true;
         boolean newPage = true;
         //boolean start = true;
@@ -225,21 +230,9 @@ public class FullTextParser extends AbstractParser {
 		int currentPage = 0;
 
 		List<LayoutToken> layoutTokens = new ArrayList<LayoutToken>();
+		fulltextLength = getFulltextLength(doc, documentBodyParts, fulltextLength);
 
-		//evaluate the length of the fulltext
-		for(DocumentPiece docPiece : documentBodyParts) {
-			DocumentPointer dp1 = docPiece.a;
-			DocumentPointer dp2 = docPiece.b;
-
-            int tokenStart = dp1.getTokenDocPos();
-            int tokenEnd = dp2.getTokenDocPos();
-            for (int i = tokenStart; i <= tokenEnd; i++) {
-                //tokenizationsBody.add(tokenizations.get(i));
-				fulltextLength += doc.getTokenizations().get(i).getText().length();
-            }
-		}
-
-        // System.out.println("fulltextLength: " + fulltextLength);
+		// System.out.println("fulltextLength: " + fulltextLength);
 
 		for(DocumentPiece docPiece : documentBodyParts) {
 			DocumentPointer dp1 = docPiece.a;
@@ -259,7 +252,7 @@ public class FullTextParser extends AbstractParser {
 	                mm = 0;
 					lowestPos = 0.0;
 					spacingPreviousBlock = 0.0;
-				}
+				} 
 
 	            /*if (start) {
 	                newPage = true;
@@ -438,7 +431,6 @@ public class FullTextParser extends AbstractParser {
 
                     } else if (text.equals("\"") || text.equals("\'") || text.equals("`")) {
                         features.punctType = "QUOTE";
-
                     }
 
                     if (indented) {
@@ -507,12 +499,6 @@ public class FullTextParser extends AbstractParser {
 	                        features.blockStatus = "BLOCKEND";
 	                        //endblock = true;
 	                    }
-	                }
-
-	                if (newPage) {
-	                    newPage = false;
-	                } else {
-	                    newPage = false;
 	                }
 
 	                if (text.length() == 1) {
@@ -657,7 +643,25 @@ public class FullTextParser extends AbstractParser {
 			new LayoutTokenization(layoutTokens));
 	}
 
-    /**
+	/**
+	 * Evaluate the length of the fulltext
+	 */
+	private static int getFulltextLength(Document doc, SortedSet<DocumentPiece> documentBodyParts, int fulltextLength) {
+		for(DocumentPiece docPiece : documentBodyParts) {
+			DocumentPointer dp1 = docPiece.a;
+			DocumentPointer dp2 = docPiece.b;
+
+            int tokenStart = dp1.getTokenDocPos();
+            int tokenEnd = dp2.getTokenDocPos();
+            for (int i = tokenStart; i <= tokenEnd; i++) {
+                //tokenizationsBody.add(tokenizations.get(i));
+				fulltextLength += doc.getTokenizations().get(i).getText().length();
+            }
+		}
+		return fulltextLength;
+	}
+
+	/**
      * Process the full text of the specified pdf and format the result as training data.
      *
      * @param inputFile input file
@@ -675,15 +679,19 @@ public class FullTextParser extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
-        Document doc;
+        //Document doc;
+        DocumentSource documentSource = null;
         try {
             if (!inputFile.exists()) {
                	throw new GrobidResourceException("Cannot train for fulltext, becuase file '" +
                        inputFile.getAbsolutePath() + "' does not exists.");
            	}
-           	String PDFFileName = inputFile.getName();
+           	String pdfFileName = inputFile.getName();
 
-            doc = parsers.getSegmentationParser().processing(inputFile, GrobidAnalysisConfig.defaultInstance());
+            //doc = parsers.getSegmentationParser().processing(inputFile, GrobidAnalysisConfig.defaultInstance());
+            documentSource = DocumentSource.fromPdf(inputFile);
+            Document doc = parsers.getSegmentationParser().processing(documentSource, 
+				GrobidAnalysisConfig.defaultInstance());
 
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
 			if (documentBodyParts != null) {
@@ -713,7 +721,7 @@ public class FullTextParser extends AbstractParser {
 
 	            // we write the full text untagged
 	            String outPathFulltext = pathFullText + File.separator
-					+ PDFFileName.replace(".pdf", ".training.fulltext");
+					+ pdfFileName.replace(".pdf", ".training.fulltext");
 	            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
 	            writer.write(bodytext + "\n");
 	            writer.close();
@@ -726,7 +734,7 @@ public class FullTextParser extends AbstractParser {
 	            // write the TEI file to reflect the extract layout of the text as extracted from the pdf
 	            writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
 	                    File.separator +
-						PDFFileName.replace(".pdf", ".training.fulltext.tei.xml")), false), "UTF-8");
+						pdfFileName.replace(".pdf", ".training.fulltext.tei.xml")), false), "UTF-8");
 				if (id == -1) {
 					writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader/>\n\t<text xml:lang=\"en\">\n");
 				}
@@ -742,13 +750,13 @@ public class FullTextParser extends AbstractParser {
 	            Pair<String,String> trainingFigure = processTrainingDataFigures(rese, tokenizationsBody, inputFile.getName());
 	            if (trainingFigure.getA().trim().length() > 0) {
 		            String outPathFigures = pathFullText + File.separator
-						+ PDFFileName.replace(".pdf", ".training.figure");
+						+ pdfFileName.replace(".pdf", ".training.figure");
 					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFigures), false), "UTF-8");
 		            writer.write(trainingFigure.getB() + "\n\n");
 		            writer.close();
 
 					String outPathFiguresTEI = pathTEI + File.separator
-						+ PDFFileName.replace(".pdf", ".training.figure.tei.xml");
+						+ pdfFileName.replace(".pdf", ".training.figure.tei.xml");
 					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFiguresTEI), false), "UTF-8");
 		            writer.write(trainingFigure.getA() + "\n");
 		            writer.close();
@@ -758,13 +766,13 @@ public class FullTextParser extends AbstractParser {
 		        Pair<String,String> trainingTable = processTrainingDataTables(rese, tokenizationsBody, inputFile.getName());
 	            if (trainingTable.getA().trim().length() > 0) {
 		            String outPathTables = pathFullText + File.separator
-						+ PDFFileName.replace(".pdf", ".training.table");
+						+ pdfFileName.replace(".pdf", ".training.table");
 					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTables), false), "UTF-8");
 		            writer.write(trainingTable.getB() + "\n\n");
 		            writer.close();
 
 					String outPathTablesTEI = pathTEI + File.separator
-						+ PDFFileName.replace(".pdf", ".training.table.tei.xml");
+						+ pdfFileName.replace(".pdf", ".training.table.tei.xml");
 					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTablesTEI), false), "UTF-8");
 		            writer.write(trainingTable.getA() + "\n");
 		            writer.close();
@@ -800,7 +808,7 @@ public class FullTextParser extends AbstractParser {
 
 	                Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
 	                        File.separator +
-							PDFFileName.replace(".pdf", ".training.references.tei.xml")), false), "UTF-8");
+							pdfFileName.replace(".pdf", ".training.references.tei.xml")), false), "UTF-8");
 
 					writerReference.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
 											"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
@@ -822,7 +830,7 @@ public class FullTextParser extends AbstractParser {
 					// output of citation author names
 	                Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
 	                        File.separator +
-							PDFFileName.replace(".pdf", ".training.citations.authors.tei.xml")), false), "UTF-8");
+							pdfFileName.replace(".pdf", ".training.citations.authors.tei.xml")), false), "UTF-8");
 
 					writerName.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
 											"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
@@ -860,6 +868,8 @@ public class FullTextParser extends AbstractParser {
 			e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid training" +
                     " data generation for full text.", e);
+        } finally {
+            DocumentSource.close(documentSource, true, true);
         }
     }
 
@@ -1288,12 +1298,12 @@ public class FullTextParser extends AbstractParser {
                                                   List<LayoutToken> tokenizations,
                                                   Document doc) {
 
-        List<Figure> results = new ArrayList<Figure>();
+        List<Figure> results = new ArrayList<>();
 
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
 
         for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
-				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabel.FIGURE))) {
+				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.FIGURE))) {
             List<LayoutToken> tokenizationFigure = cluster.concatTokens();
             Figure result = parsers.getFigureParser().processing(
                     tokenizationFigure,
@@ -1563,7 +1573,7 @@ public class FullTextParser extends AbstractParser {
 		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
 
 		for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
-				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabel.TABLE))) {
+				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.TABLE))) {
 			List<LayoutToken> tokenizationTable = cluster.concatTokens();
 			Table result = parsers.getTableParser().processing(
 					tokenizationTable,

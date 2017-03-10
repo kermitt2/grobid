@@ -1,14 +1,12 @@
 package org.grobid.core.engines;
 
-import com.google.common.collect.Sets;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.document.Document;
-import org.grobid.core.document.DocumentPiece;
-import org.grobid.core.document.DocumentPointer;
+import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
@@ -24,7 +22,6 @@ import org.grobid.core.utilities.counters.CntManager;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -55,7 +52,7 @@ public class CitationParser extends AbstractParser {
         }
 
         try {
-            ArrayList<String> citationBlocks = new ArrayList<String>();
+            ArrayList<String> citationBlocks = new ArrayList<>();
 
             input = TextUtilities.dehyphenize(input);
             input = input.replace("\n", " ");
@@ -159,7 +156,7 @@ public class CitationParser extends AbstractParser {
 
         List<BibDataSet> results = new ArrayList<>();
         for (LabeledReferenceResult ref : segm) {
-            BiblioItem bib = processing(TextUtilities.dehyphenize(ref.getReferenceText()), false);
+            BiblioItem bib = processing(ref.getReferenceText(), false);
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
@@ -208,14 +205,19 @@ public class CitationParser extends AbstractParser {
         return results;
     }
 
-
     public List<BibDataSet> processingReferenceSection(File input,
+                                                       ReferenceSegmenter referenceSegmenter,
+                                                       boolean consolidate) {
+        DocumentSource documentSource = DocumentSource.fromPdf(input);
+        return processingReferenceSection(documentSource, referenceSegmenter, consolidate);
+    }
+
+    public List<BibDataSet> processingReferenceSection(DocumentSource documentSource,
                                                        ReferenceSegmenter referenceSegmenter,
                                                        boolean consolidate) {
         List<BibDataSet> results;
         try {
-
-            Document doc = parsers.getSegmentationParser().processing(input,
+            Document doc = parsers.getSegmentationParser().processing(documentSource,
                     GrobidAnalysisConfig.builder().consolidateCitations(consolidate).build());
             results = processingReferenceSection(doc, referenceSegmenter, consolidate);
         } catch (GrobidException e) {

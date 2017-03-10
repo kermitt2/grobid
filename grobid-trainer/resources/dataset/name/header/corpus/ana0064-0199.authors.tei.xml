@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>J</forename>
+								 <middlename>N</middlename>
+								 <surname>Harper</surname>,
+								 <roleName>Chairman</roleName>
+							</persName>
+							<persName>
+								<forename>A</forename>
+								 <middlename>S</middlename>
+								 <surname>Nasser</surname>
+							<lb/>
+								 <marker>1</marker>
+							<lb/> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>R</forename>
+								<middlename>K</middlename>
+								 <surname>Powell</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								 <forename>R</forename>
+								<surname>Mirakhur</surname>
+							<lb/>
+								 <marker>2</marker> ,
+							</persName>
+							<persName>
+								 <forename>J</forename>
+								<surname>Soar</surname>
+							<lb/>
+								 <marker>3</marker> ,
+								 <roleName>Executive Officers</roleName>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

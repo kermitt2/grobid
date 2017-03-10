@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="zdc1976"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">E p i d e m i o l o g y / H e a l t h S e r v i c e s R e s e a r c h<lb/> O R I G I N A L<lb/> A R T I C L E<lb/></note>
+
+	<docTitle>
+	<titlePart>Evolution of Percutaneous Coronary<lb/> Intervention in Patients with Diabetes<lb/></titlePart>
+	</docTitle> 
+	
+	<docTitle>
+	<titlePart>A report from the National Heart, Lung, and Blood Institute–sponsored<lb/> PTCA (1985–1986) and Dynamic (1997–2006) Registries<lb/></titlePart>
+	</docTitle> 
+
+	<byline>
+	<docAuthor>JAMAL S. RANA, MD, PHD<lb/> 1<lb/> VANKEEPURAM S. SRINIVAS, MBBS<lb/> 7<lb/> LAKSHMI VENKITACHALAM, PHD<lb/> 2<lb/> 8<lb/> FAITH SELZER, PHD<lb/> 3<lb/> KEVIN E. KIP, PHD<lb/> 3<lb/> SURESH R. MULUKUTLA, MD<lb/> 4<lb/> SHERYL F. KELSEY, PHD<lb/> 9<lb/> OSCAR C. MARROQUIN, MD<lb/> 4<lb/> RICHARD W. NESTO, MD<lb/> WARREN K. LASKEY, MD<lb/> 5<lb/> ELIZABETH M. HOLPER, MD<lb/> 6<lb/></docAuthor>
+	</byline>
+
+	<note type="other">FOR THE NHLBI-SPONSORED PTCA AND<lb/> DYNAMIC REGISTRIES INVESTIGATORS<lb/></note>
+
+	<div type="abstract">OBJECTIVE — To evaluate the association of successive percutaneous coronary intervention<lb/> (PCI) modalities with balloon angioplasty (BA), bare-metal stent (BMS), drug-eluting stents<lb/> (DES), and pharmacotherapy over the last 3 decades with outcomes among patients with dia-<lb/>betes in routine clinical practice.<lb/> RESEARCH DESIGN AND METHODS — We examined outcomes in 1,846 patients with<lb/> diabetes undergoing de novo PCI in the multicenter, National Heart, Lung, and Blood Institute–<lb/> sponsored 1985–1986 Percutaneous Transluminal Coronary Angioplasty (PTCA) Registry and<lb/> 1997–2006 Dynamic Registry. Multivariable Cox regression models were used to estimate the ad-<lb/>justed risk of events (death/myocardial infarction [MI], repeat revascularization) over 1 year.<lb/> RESULTS — Cumulative event rates for postdischarge (31–365 days) death/MI were 8% by<lb/> BA, 7% by BMS, and 7% by DES use (P ϭ 0.76) and for repeat revascularization were 19, 13, and<lb/> 9% (P Ͻ 0.001), respectively. Multivariable analysis showed a significantly lower risk of repeat<lb/> revascularization with DES use when compared with the use of BA (hazard ratio [HR] 0.41 [95%<lb/> CI 0.29 – 0.58]) and BMS (HR 0.55 [95% CI 0.39 – 0.76]). After further adjustment for discharge<lb/> medications, the lower risk for death/MI was not statistically significant for DES when compared<lb/> with BA.<lb/> CONCLUSIONS — In patients with diabetes undergoing PCI, the use of DES is associated<lb/> with a reduced need for repeat revascularization when compared with BA or BMS use. The<lb/> associated death/MI benefit observed with the DES versus the BA group may well be due to<lb/> greater use of pharmacotherapy.<lb/></div>
+
+	<reference>Diabetes Care 33:1976–1982, 2010<lb/></reference>
+
+	<note type="other">From the<lb/></note>
+
+	<byline>
+	<affiliation>1 Cedars-Sinai Heart Institute, Cedars-Sinai Medical Center, David Geffen School of Medicine,<lb/> University of California Los Angeles,</affiliation>
+	</byline>
+
+	<address>Los Angeles, California; </address>
+
+	<note type="other">the<lb/> </note>
+	
+	<byline>
+	<affiliation>2 Saint-Luke&apos;s Mid America Heart Insti-<lb/>tute, </affiliation>
+	</byline>
+
+	<address>Kansas City, Missouri; </address>
+
+	<note type="other">the<lb/></note>
+
+	<byline>
+	<affiliation>3 Department of Epidemiology, Graduate School of Public Health, Uni-<lb/>versity of Pittsburgh,</affiliation>
+	</byline>
+
+	<address>Pittsburgh, Pennsylvania; </address>
+
+	<note type="other">the<lb/></note>
+
+	<byline>
+	<affiliation>4 Cardiovascular Institute, Department of Medicine,<lb/> School of Medicine, University of Pittsburgh,</affiliation>
+	</byline>
+
+	<address>Pittsburgh, Pennsylvania; </address>
+
+	<note type="other">the<lb/></note>
+
+	<byline>
+	<affiliation>5 University of New Mexico,<lb/></affiliation>
+	</byline>
+
+	<address>Albuquerque, New Mexico; </address>
+
+	<note type="other">the<lb/></note>
+
+	<byline>
+	<affiliation>6 University of Texas at Southwestern,</affiliation>
+	</byline>
+
+	<address>Dallas, Texas; </address>
+
+	<note type="other">the<lb/></note>
+
+	<byline>
+	<affiliation>7 Montefiore<lb/> Medical Center,</affiliation>
+	</byline>
+
+	<address>Bronx, New York; </address>
+
+	<note type="other">the<lb/></note>
+
+	<byline>
+	<affiliation>8 College of Nursing, University of South Florida,</affiliation>
+	</byline>
+
+	<address>Tampa, Florida;<lb/> </address>
+
+	<note type="other">and the<lb/></note>
+
+	<byline>
+	<affiliation>9 Lahey Clinic Medical Center,</affiliation>
+	</byline>
+
+	<address>Burlington, Massachusetts.<lb/></address>
+
+	<note type="other">Corresponding author: </note>
+		
+	<byline>
+	<docAuthor>Faith Selzer, </docAuthor>
+	</byline>
+		
+	<email>selzer@edc.pitt.edu.<lb/></email>
+
+	<note type="submission">Received 6 February 2010 and accepted 26 May 2010.</note>
+
+	<note type="other">Published ahead of print at</note>
+
+	<ptr type="web">http://care.diabetesjournals.org<lb/> on</ptr>
+
+	<date>2 June 2010.</date>
+
+	<idno>DOI: 10.2337/dc10-0247.</idno>
+
+	<note type="other">Clinical trial reg. no. NCT00005677, clinicaltrials.gov.<lb/> J.S.R. and L.V. contributed equally to this article.<lb/></note>
+
+	<note type="copyright">© 2010 by the American Diabetes Association. Readers may use this article as long as the work is properly<lb/> cited, the use is educational and not for profit, and the work is not altered. See http://creativecommons.<lb/> org/licenses/by-nc-nd/3.0/ for details.<lb/></note>
+
+	<note type="other">The costs of publication of this article were defrayed in part by the payment of page charges. This article must therefore be hereby<lb/> marked &quot; advertisement &quot; in accordance with 18 U.S.C. Section 1734 solely to indicate this fact.</note>
+
+	<reference>DIABETES CARE, VOLUME 33, NUMBER 9, SEPTEMBER 2010<lb/></reference>
+
+	<ptr type="web">care.diabetesjournals.org</ptr>
+
+		</front>
+	</text>
+</tei>

@@ -3,24 +3,36 @@ package org.grobid.core.data;
 import org.grobid.core.data.util.AuthorEmailAssigner;
 import org.grobid.core.data.util.ClassicAuthorEmailAssigner;
 import org.grobid.core.data.util.EmailSanitizer;
-import org.grobid.core.document.TEIFormatter;
+import org.grobid.core.document.*;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
+import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.KeyGen;
+import org.grobid.core.utilities.Pair;
+import org.grobid.core.GrobidModels;
+
+/*import com.google.common.collect.Iterables;
+import com.google.common.collect.SortedSetMultimap;
+import com.google.common.collect.TreeMultimap;*/
 
 import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Class for representing and exchanging a bibliographical item.
@@ -28,6 +40,8 @@ import java.util.regex.Pattern;
  * @author Patrice Lopez
  */
 public class BiblioItem {
+    protected static final Logger LOGGER = LoggerFactory.getLogger(BiblioItem.class);
+
     LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
     private AuthorEmailAssigner authorEmailAssigner = new ClassicAuthorEmailAssigner();
     private EmailSanitizer emailSanitizer = new EmailSanitizer();
@@ -35,6 +49,9 @@ public class BiblioItem {
     //TODO: keep in sync with teiId - now teiId is generated in many different places
     private Integer ordinal;
     private List<BoundingBox> coordinates = null;
+
+    // map of labels (e.g. <title> or <abstract>) to LayoutToken
+    private Map<String, List<LayoutToken>> labeledTokens;
 
     @Override
     public String toString() {
@@ -915,6 +932,16 @@ public class BiblioItem {
 
     public void setFullAffiliations(List<org.grobid.core.data.Affiliation> full) {
         fullAffiliations = full;
+        // if no id is present in the affiliation objects, we add one
+        int num = 0;
+        if (fullAffiliations != null) {
+            for (Affiliation affiliation : fullAffiliations) {
+                if (affiliation.getKey() == null) {
+                    affiliation.setKey("aff"+num);
+                }
+                num++;
+            }
+        }
     }
 
     // temp
@@ -1639,7 +1666,19 @@ public class BiblioItem {
 			if (issue != null) {
 				bibtex += ",\nnumber\t=\t\"" + issue + "\"";
 			}
-			
+
+            // DOI
+            if (DOI != null) {
+                bibtex += ",\ndoi\t=\t\"" + DOI + "\"";
+            }
+
+            // DOI
+            if (DOI != null) {
+                if (DOI.length() > 0) {
+                    bibtex += ",\ndoi\t=\t\"" + DOI + "\"";
+                }
+            }
+
             // abstract
             if (abstract_ != null) {
                 if (abstract_.length() > 0) {
@@ -1701,7 +1740,8 @@ public class BiblioItem {
                 tei.append("\t");
             }
             tei.append("<biblStruct");
-            tei.append(" ").append(TEIFormatter.getCoordsAttribute(coordinates, config.isGenerateTeiCoordinates())).append(" ");
+            boolean withCoords = (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("biblStruct"));
+            tei.append(" ").append(TEIFormatter.getCoordsAttribute(coordinates, withCoords)).append(" ");
             if (language != null) {
                 if (n == -1) {
                     /*if (pubnum != null) {
@@ -1774,7 +1814,7 @@ public class BiblioItem {
                 Language resLang = languageUtilities.runLanguageId(english_title);
 
                 if (resLang != null) {
-                    String resL = resLang.getLangId();
+                    String resL = resLang.getLang();
                     if (resL.equals(Language.EN)) {
                         hasEnglishTitle = true;
                         for (int i = 0; i < indent + 2; i++) {
@@ -3274,6 +3314,11 @@ public class BiblioItem {
                             continue;
                     }
 
+			        if ( (author.getFirstName() == null) && (author.getMiddleName() == null) &&
+			                (author.getLastName() == null) ) {
+						continue;
+					}
+
                     TextUtilities.appendN(tei, '\t', nbTag);
                     tei.append("<author");
 
@@ -3324,7 +3369,10 @@ public class BiblioItem {
 
                         for (Affiliation aff : author.getAffiliations()) {
                             TextUtilities.appendN(tei, '\t', nbTag + 1);
-                            tei.append("<affiliation>\n");
+                            tei.append("<affiliation");
+                            if (aff.getKey() != null)
+                                tei.append(" key=\"").append(aff.getKey()).append("\"");
+                            tei.append(">\n");
 
                             if (aff.getDepartments() != null) {
                                 if (aff.getDepartments().size() == 1) {
@@ -3415,7 +3463,7 @@ public class BiblioItem {
                                             "</region>\n");
                                 }
                                 if (aff.getCountry() != null) {
-                                    String code = lexicon.getcountryCode(aff.getCountry());
+                                    String code = lexicon.getCountryCode(aff.getCountry());
                                     TextUtilities.appendN(tei, '\t', nbTag + 3);
                                     tei.append("<country");
                                     if (code != null)
@@ -3449,7 +3497,10 @@ public class BiblioItem {
                     TextUtilities.appendN(tei, '\t', nbTag);
                     tei.append("<author>\n");
                     TextUtilities.appendN(tei, '\t', nbTag+1);
-                    tei.append("<affiliation>\n");
+                    tei.append("<affiliation");
+                    if (aff.getKey() != null)
+                        tei.append(" key=\"").append(aff.getKey()).append("\"");
+                    tei.append(">\n");
 
                     if (aff.getDepartments() != null) {
                         if (aff.getDepartments().size() == 1) {
@@ -3540,7 +3591,7 @@ public class BiblioItem {
 	                                "</region>\n");
 	                    }
 	                    if (aff.getCountry() != null) {
-	                        String code = lexicon.getcountryCode(aff.getCountry());
+	                        String code = lexicon.getCountryCode(aff.getCountry());
 	                        TextUtilities.appendN(tei, '\t', nbTag + 3);
 	                        tei.append("<country");
 	                        if (code != null)
@@ -3795,5 +3846,47 @@ public class BiblioItem {
 
     public List<BoundingBox> getCoordinates() {
         return coordinates;
+    }
+
+    public Map<String, List<LayoutToken>> getLabeledTokens() {
+        return labeledTokens;
+    }
+
+    public void setLabeledTokens(Map<String, List<LayoutToken>> labeledTokens) {
+        this.labeledTokens = labeledTokens;
+    }
+
+    public List<LayoutToken> getLayoutTokens(TaggingLabel headerLabel) {
+        if (labeledTokens == null) {
+            LOGGER.debug("labeledTokens is null");
+            return null;
+        }
+        if (headerLabel.getLabel() == null) {
+            LOGGER.debug("headerLabel.getLabel() is null");
+            return null;
+        }
+        return labeledTokens.get(headerLabel.getLabel());
+    }
+
+    public void generalResultMapping(Document doc, String labeledResult, List<LayoutToken> tokenizations) {
+        if (labeledTokens == null)
+            labeledTokens = new TreeMap<String, List<LayoutToken>>();
+
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.HEADER, labeledResult, tokenizations);
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            List<LayoutToken> clusterTokens = cluster.concatTokens();
+            List<LayoutToken> theList = labeledTokens.get(clusterLabel.toString());
+            if (theList == null)
+                theList = new ArrayList<LayoutToken>();
+            for (LayoutToken token : clusterTokens)
+                theList.add(token);
+            labeledTokens.put(clusterLabel.getLabel(), theList);
+        }
     }
 }

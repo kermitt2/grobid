@@ -4,6 +4,7 @@ import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.OffsetPosition;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -16,10 +17,6 @@ public class FeatureFactory {
 
     private static FeatureFactory instance;
 
-    static {
-        instance = new FeatureFactory();
-    }
-
     public boolean newline = true;
     public Lexicon lexicon = Lexicon.getInstance();
 
@@ -31,18 +28,19 @@ public class FeatureFactory {
     public Pattern ACRONYM = Pattern.compile("[A-Z]\\.([A-Z]\\.)*");
     public Pattern isPunct = Pattern.compile("^[\\,\\:;\\?\\.]+$");
 
-    static public List<String> KEYWORDSPUB = new ArrayList<String>() {{
-        add("Journal");
-        add("journal");
-        add("Proceedings");
-        add("proceedings");
-        add("Conference");
-        add("conference");
-        add("Workshop");
-        add("workshop");
-        add("Symposium");
-        add("symposium");
-    }};
+    static public List<String> KEYWORDSPUB = Arrays.asList(
+            new String[]{
+                    "Journal",
+                    "journal",
+                    "Proceedings",
+                    "proceedings",
+                    "Conference",
+                    "conference",
+                    "Workshop",
+                    "workshop",
+                    "Symposium",
+                    "symposium"
+            });
 
     static public List<String> MONTHS = new ArrayList<String>() {{
         add("January");
@@ -132,6 +130,13 @@ public class FeatureFactory {
     }
 
     public static FeatureFactory getInstance() {
+        if (instance == null) {
+            synchronized (FeatureFactory.class) {
+                if (instance == null) {
+                    instance = new FeatureFactory();
+                }
+            }
+        }
         return instance;
     }
 
@@ -169,7 +174,7 @@ public class FeatureFactory {
     }
 
     /**
-     * Test for a given character occurence in the string
+     * Test for a given character occurrence in the string
      */
     public boolean test_char(String tok, char c) {
         if (tok == null)
@@ -186,7 +191,7 @@ public class FeatureFactory {
     /**
      * Test for the current string contains at least one digit
      */
-    public boolean test_digit(String tok) {
+    public static boolean test_digit(String tok) {
         if (tok == null)
             return false;
         if (tok.length() == 0)
@@ -297,21 +302,21 @@ public class FeatureFactory {
         return lexicon.isCountry(tok.toLowerCase());
     }
 
-	/**
+    /**
      * Test if the current string refers to a known city
      */
     public boolean test_city(String tok) {
         List<OffsetPosition> pos = lexicon.inCityNames(tok.toLowerCase());
-		if ((pos != null) && (pos.size() > 0) )
-			return true;
-		else 
-			return false;
+        if ((pos != null) && (pos.size() > 0))
+            return true;
+        else
+            return false;
     }
 
     /**
      * Given an integer value between 0 and total, discretized into nbBins following a linear scale
      */
-    public static int linearScaling(int pos, int total, int nbBins) {
+    public int linearScaling(int pos, int total, int nbBins) {
         if (pos >= total)
             return nbBins;
         if (pos <= 0)
@@ -320,11 +325,11 @@ public class FeatureFactory {
         float rel2 = (rel * nbBins);// + 1;
         return ((int) rel2);
     }
-	
+
     /**
      * Given an double value between 0.0 and total, discretized into nbBins following a linear scale
      */
-    public static int linearScaling(double pos, double total, int nbBins) {
+    public int linearScaling(double pos, double total, int nbBins) {
         if (pos >= total)
             return nbBins;
         if (pos <= 0)
@@ -337,25 +342,25 @@ public class FeatureFactory {
     /**
      * Given an double value between 0.0 and total, discretized into nbBins following a log scale
      */
-    public static int logScaling(double pos, double total, int nbBins) {
+    public int logScaling(double pos, double total, int nbBins) {
 //System.out.println("total: " + total + " / pos: " + pos);         
         if (pos >= total)
             return nbBins;
         if (pos <= 0)
             return 0;
-        double max = Math.log(total+1);
-        double val = Math.log(pos+1);
+        double max = Math.log(total + 1);
+        double val = Math.log(pos + 1);
 //System.out.println("max: " + max + " / val: " + val);        
         double rel = val / max;
         double rel2 = (rel * nbBins);
         return ((int) rel2);
-    }    
+    }
 
     /**
-     *  Transform a text in a text pattern where punctuations are ignored, number shadowed and
-     *  remaining text in lowercase
+     * Transform a text in a text pattern where punctuations are ignored, number shadowed and
+     * remaining text in lowercase
      */
-    public static String getPattern(String text) {
+    public String getPattern(String text) {
         String pattern = text.replaceAll("[^a-zA-Z ]", "").toLowerCase();
         pattern = pattern.replaceAll("[0-9]", "X");
         return pattern;

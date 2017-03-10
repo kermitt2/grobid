@@ -70,7 +70,6 @@ public class BoundingBox {
         else if (ay1 > by2) return false;
         else
             return true;
-
     }
 
     public int getPage() {
@@ -174,9 +173,60 @@ public class BoundingBox {
             return 0;
         }
     }
+	
+    public BoundingBox boundingBoxIntersection(BoundingBox b) {
+		if (!this.intersect(b))
+			return null;
+		
+        double ax1 = this.x;
+        double ax2 = this.x2;
+        double ay1 = this.y;
+        double ay2 = this.y2;
+
+        double bx1 = b.x;
+        double bx2 = b.x2;
+        double by1 = b.y;
+        double by2 = b.y2;
+
+		double ix1 = 0.0;
+		if (ax1 > bx1)
+			ix1 = ax1;
+		else 
+			ix1 = bx1;
+		
+		double iy1 = 0.0;
+		if (ay1 > by1)
+			iy1 = ay1;
+		else 
+			iy1 = by1;
+		
+		double ix2 = 0.0;
+		if (ax2 > bx2)
+			ix2 = bx2;
+		else 
+			ix2 = ax2;
+		
+		double iy2 = 0.0;
+		if (ay2 > by2)
+			iy2 = by2;
+		else 
+			iy2 = ay2;
+
+        return fromTwoPoints(page, ix1, iy1, ix2, iy2);
+    }
 
     @Override
     public String toString() {
         return String.format("%d,%.2f,%.2f,%.2f,%.2f", page, x, y, width, height);
+    }
+
+    public String toJson() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("\"p\":").append(page).append(", ");
+        builder.append("\"x\":").append(x).append(", ");
+        builder.append("\"y\":").append(y).append(", ");
+        builder.append("\"w\":").append(width).append(", ");
+        builder.append("\"h\":").append(height);
+        return builder.toString();
     }
 }

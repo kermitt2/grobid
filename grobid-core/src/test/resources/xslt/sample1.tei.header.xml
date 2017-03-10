@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /Users/lfoppiano/development/inria/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+>
+    <teiHeader xml:lang="en">
+        <encodingDesc>
+            <appInfo>
+                <application version="0.4.1" ident="GROBID" when="2016-08-11T21:06+0000">
+                    <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting
+                        information from scholarly documents
+                    </ref>
+                </application>
+            </appInfo>
+        </encodingDesc>
+        <fileDesc>
+            <titleStmt>
+                <title level="a" type="main">A Virtual Machine Introspection Based Architecture for Intrusion
+                    Detection
+                </title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher/>
+                <availability status="unknown">
+                    <licence/>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <author>
+                            <persName>
+                                <forename type="first">Tal</forename>
+                                <surname>Garfinkel</surname>
+                            </persName>
+                            <affiliation>
+                                <orgName type="department">Computer Science Department</orgName>
+                                <orgName type="institution">Stanford University</orgName>
+                            </affiliation>
+                        </author>
+                        <author>
+                            <persName>
+                                <forename type="first">Mendel</forename>
+                                <surname>Rosenblum</surname>
+                            </persName>
+                            <affiliation>
+                                <orgName type="department">Computer Science Department</orgName>
+                                <orgName type="institution">Stanford University</orgName>
+                            </affiliation>
+                        </author>
+                        <title level="a" type="main">A Virtual Machine Introspection Based Architecture for Intrusion
+                            Detection
+                        </title>
+                    </analytic>
+                    <monogr>
+                        <imprint>
+                            <date/>
+                        </imprint>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <abstract>
+                <p>Today's architectures for intrusion detection force the IDS designer to make a difficult choice. If
+                    the IDS resides on the host, it has an excellent view of what is happening in that host's software,
+                    but is highly susceptible to attack. On the other hand, if the IDS resides in the network , it is
+                    more resistant to attack, but has a poor view of what is happening inside the host, making it more
+                    susceptible to evasion. In this paper we present an architecture that retains the visibility of a
+                    host-based IDS, but pulls the IDS outside of the host for greater attack resistance. We achieve this
+                    through the use of a virtual machine monitor. Using this approach allows us to isolate the IDS from
+                    the monitored host but still retain excellent visibility into the host's state. The VMM also offers
+                    us the unique ability to completely mediate interactions between the host software and the
+                    underlying hardware. We present a detailed study of our architecture, including Livewire, a
+                    prototype implementation. We demonstrate Livewire by implementing a suite of simple intrusion
+                    detection policies and using them to detect real attacks.
+                </p>
+            </abstract>
+        </profileDesc>
+    </teiHeader>
+    <text xml:lang="en">
+    </text>
+</TEI>

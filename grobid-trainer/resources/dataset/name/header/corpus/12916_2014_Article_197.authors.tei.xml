@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Ana</forename>
+								 <surname>Marušić</surname>
+							<lb/>
+								 <marker>1*</marker>
+							<lb/>,
+							</persName>
+							<persName>
+								<forename>Darko</forename>
+								 <surname>Hren</surname>
+							<lb/>
+								<marker>2</marker>
+							<lb/>,
+							</persName>
+							<persName>
+								 <forename>Bernadette</forename>
+								 <surname>Mansi</surname>
+							<lb/>
+								 <marker>3,4</marker> ,
+							</persName>
+							<persName>
+								<forename>Neil</forename>
+								<surname>Lineberry</surname>
+							<lb/>
+								 <marker>4 , 5</marker>
+							<lb/>,
+							</persName>
+							<persName>
+								<forename>Ananya</forename>
+								<surname>Bhattacharya</surname>
+							<lb/>
+								 <marker>4 , 6</marker> ,
+							</persName>
+							<persName>
+								<forename>Maureen</forename>
+								<surname>Garrity</surname>
+							<lb/>
+								<marker>4, 7</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Juli</forename>
+								 <surname>Clark</surname>
+							<lb/>
+								 <marker>4 ,8</marker>
+							<lb/>,
+							</persName>
+							<persName>
+								<forename>Thomas</forename>
+								 <surname>Gesell</surname>
+							<lb/>
+								 <marker>4 , 9</marker>,
+							</persName>
+							<persName>
+								<forename>Susan</forename>
+								<surname>Glasser</surname>
+							<lb/>
+								 <marker>4 ,10</marker> ,
+							</persName>
+							<persName>
+								 <forename>John</forename>
+								<surname>Gonzalez</surname>
+							<lb/>
+								<marker>4,11</marker> ,
+							</persName>
+							<persName>
+								<forename>Carolyn</forename>
+								<surname>Hustad</surname>
+							<lb/>
+								 <marker>4 , 12</marker>,
+							</persName>
+							<persName>
+								<forename>Mary- Margaret</forename>
+								 <surname>Lannon</surname>
+							<lb/>
+								 <marker>4 ,13</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>LaVerne</forename>
+								 <middlename>A</middlename>
+								 <surname>Mooney</surname>
+							<lb/>
+								 <marker>4 ,14</marker>and
+							</persName>
+							<persName>
+								<forename>Teresa</forename>
+								 <surname>Peña</surname>
+							<lb/>
+								 <marker>4 , 15</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

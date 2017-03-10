@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Maris</forename>
+								 <surname>Kuningas</surname>
+								 <marker>1, *</marker> ,
+							</persName>
+							<persName>
+								 <forename>Karol</forename>
+								 <surname>Estrada</surname>
+								 <marker>2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Yi-Hsiang</forename>
+								 <surname>Hsu</surname>
+								 <marker>4,5</marker> ,
+							</persName>
+							<persName>
+								 <forename>Kannabiran</forename>
+								 <surname>Nandakumar</surname>
+								 <marker>4</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								 <forename>André</forename>
+								<middlename>G</middlename> .
+								<surname>Uitterlinden</surname>
+								 <marker>1 ,2,6</marker>,
+							</persName>
+							<persName>
+								 <forename>Kathryn</forename>
+								 <middlename>L</middlename> .
+								<surname>Lunetta</surname>
+								 <marker>7</marker> ,
+							</persName>
+							<persName>
+								 <forename>Cornelia</forename>
+								 <middlename>M</middlename> .
+								<surname>van Duijn</surname>
+								 <marker>1 ,6</marker>,
+							</persName>
+							<persName>
+								 <forename>David</forename>
+								 <surname>Karasik</surname>
+								 <marker>4</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								 <forename>Albert</forename>
+								 <surname>Hofman</surname>
+								<marker>1 , 6</marker>,
+							</persName>
+							<persName>
+								<forename>Joanne</forename>
+								 <surname>Murabito</surname>
+								 <marker>8 , 9</marker>,
+							</persName>
+							<persName>
+								<forename>Fernando</forename>
+								 <surname>Rivadeneira</surname>
+								 <marker>2 , 6</marker>,
+							</persName>
+							<persName>
+								<forename>Douglas</forename>
+								 <middlename>P</middlename> .
+								 <surname>Kiel</surname>
+								<marker>4</marker>
+							<lb/> and
+							</persName>
+							<persName>
+								 <forename>Henning</forename>
+								 <surname>Tiemeier</surname>
+								<marker>1 , 3 ,6</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

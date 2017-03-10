@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<address>
+								<settlement>Framingham</settlement>,
+								<region>MA</region>
+								<postCode>01701</postCode>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Division of Genetic Epidemiology</orgName>,
+							<orgName type="institution">Innsbruck Medical University</orgName>,
+							<address>
+								<addrLine>Schöpfstr. 41</addrLine>,
+								<postCode>6020</postCode>
+								<settlement>Innsbruck</settlement>,
+								<country>Austria</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">NHLBI&apos;s Framingham Heart Study</orgName>,
+							<address>
+								<settlement>Framingham</settlement>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Dept of Med</orgName>,
+							<orgName type="department">Section of Gen Internal Med</orgName>, 
+							<orgName type="institution">BU</orgName> 
+							<orgName type="department">School of Med</orgName>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Dept of Biostatistics</orgName>,
+							<orgName type="institution">BU</orgName>,
+							<address>
+								<settlement>Boston</settlement>,
+								<region>MA</region>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="department">Dept of Epidemiology</orgName>,
+							<orgName type="institution">Emory Univ</orgName> 
+							<orgName type="department">School of Public Hlth</orgName>,
+							<address>
+								<settlement>Atlanta</settlement>,
+								<region>GA</region>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="laboratory">Statistical Genomics</orgName>,
+							<orgName type="department">Dept of Genetics</orgName>,
+							<address>
+								<addrLine>Washington</addrLine>
+							</address>
+						</affiliation>						
+						<affiliation>
+							<marker>9</marker>
+							<orgName type="department">Genetic Epidemiology</orgName>,
+							<orgName type="department">Dept of Med Genetics, Molecular &amp; Clin Pharmacology</orgName>,
+							<orgName type="department">Innsbruck Med Univ</orgName>,
+							<address>
+								<settlement>Innsbruck</settlement>,
+								<country>Austria</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>10</marker>
+							<orgName type="department">Institut für Med Biometrie &amp; Statistik</orgName>,
+							<orgName type="institution">Univ zu Lübeck</orgName>,
+							<orgName type="institution">Universitätsklinikum Schleswig-Holstein</orgName>,
+							<address>
+								<settlement>Lübeck</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>11</marker>
+							<orgName type="laboratory">Cardiovascular Hlth Rsrch Unit</orgName>,
+							<orgName type="department">Dept of Med</orgName>,
+							<orgName type="institution">Univ of Washington</orgName>,
+							<address>
+								<settlement>Seattle</settlement>,
+								<region>WA</region>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>12</marker>
+							<orgName type="department">Dept of Molecular Physiology &amp; Biophysics</orgName>,
+							The
+							<orgName type="institution">Ctr for Human Genetics Rsrch</orgName>,
+							<address>
+								<addrLine>Vanderbilt Univ</addrLine>,
+								<settlement>Nashville</settlement>,
+								<region>TN</region>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>13</marker>
+							<orgName type="department">Dept of Epidemiology</orgName>, 
+							<orgName type="department">UNC Gillings School of Global Public Hlth</orgName>,
+							<orgName type="institution">The Univ of North Carolina</orgName>,
+							<address>
+								<addrLine>Chapel Hill</addrLine>,
+								<region>NC</region>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>14</marker>
+							<orgName type="department">Dept of Clin Biochemistry, Rigshospitalet</orgName>,
+							<orgName type="institution">Copenhagen Univ Hosp</orgName>,
+							<address>
+								<settlement>Copenhagen</settlement>,
+								<country>Denmark</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>15</marker>
+							<orgName type="department">Dept of Gen Internal Med, Vascular Med</orgName>,
+							<orgName type="institution">Radboud Univ</orgName>
+							<orgName type="department">Nijmegen Med Ctr</orgName>,
+							<address>
+								<settlement>Nijmegen</settlement>,
+								<country>The Netherlands</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>16</marker>
+							<orgName type="laboratory">MRC Human Genetics Unit</orgName>,
+							<orgName type="institution">Inst of Genetics &amp; Molecular Med</orgName>,
+							<address>
+								<addrLine>Western Gen Hosp</addrLine>,
+								<settlement>Edinburgh</settlement>,
+								<region>Scotland, UK</region>
+								<country>UK</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>17</marker>
+							<orgName type="department">Dept of Neurology</orgName>,
+							<orgName type="institution">Innsbruck Med Univ</orgName>,
+							<address>
+								<settlement>Innsbruck</settlement>,
+								<country>Austria</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>18</marker>
+							<orgName type="laboratory">Endocrinology</orgName>,
+							<orgName type="department">Dept of Med</orgName>,
+							<orgName type="institution">Univ of Maryland School of Med</orgName>,
+							<address>
+								<settlement>Baltimore</settlement>,
+								<region>MD</region>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>19</marker>
+							<orgName type="laboratory">Unit of Gen Epidemiology &amp; Bioinformatics</orgName>,
+							<orgName type="department">Dept of Epidemiology</orgName>,
+							<orgName type="department">Univ Med Ctr Groningen</orgName>,
+							<orgName type="institution">Univ of Groningen</orgName>,
+							<address>
+								<settlement>Groningen</settlement>,
+								<country>The Netherlands</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>80</marker>
+							<orgName type="department">Carolina Ctr for Genome Sciences</orgName>,
+							<orgName type="department">School of Public Hlth</orgName>, 
+							<orgName type="institution">UNC-CH</orgName>,
+							<address>
+								<settlement>Chapel Hill</settlement>,
+								<region>NC</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

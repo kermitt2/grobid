@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<address>
+								<settlement>Obergurgl</settlement>,
+								<country>Austria</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">School of Oral and Dental Sciences</orgName>,
+							<orgName type="institution">University of Bristol</orgName>,
+							<address>
+								<addrLine>Lower Maudlin Street</addrLine>,
+								<settlement>Bristol</settlement>
+								<postCode>BS1 2LY</postCode>,
+								<country>UK</country> and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="laboratory">MRC Toxicology Unit</orgName>,
+							<address>
+								<addrLine>Hodgkin Building</addrLine>,
+								<postBox>PO Box 138</postBox>,
+							</address>
+							<orgName type="institution">University of Leicester</orgName>,
+							<address>
+								<addrLine>Lancaster Road</addrLine>,
+								<settlement>Leicester</settlement>
+								<postCode>LE1 9HN</postCode>,
+								<country>UK</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">School of Oral and Dental Sciences</orgName>,
+							<orgName type="institution">University of Bristol</orgName>,
+							<address>
+								<addrLine>Lower Maudlin Street</addrLine>,
+								<settlement>Bristol</settlement>
+								<postCode>BS1 2LY</postCode>,
+								<country>UK</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

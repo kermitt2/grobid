@@ -1,5 +1,7 @@
 <h1>GROBID batch mode</h1>
 
+For the best performance, benchmarking and for exploiting multithreading, we recommand to use the service mode, see [Use GROBID as a service](Grobid-service.md), and not the batch mode.
+
 ## Using the batch
 Go under the `grobid/grobid-core/target` directory where the core library has been built:
 ```bash
@@ -25,7 +27,7 @@ Will extract and normalize the header of pdf files. The needed parameters for th
 
 * -r: recursive processing of files in the sub-directories (by default not recursive)
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -r -exe processHeader 
 ```
@@ -45,7 +47,7 @@ Will extract and normalize the full text of pdf files. The needed parameters for
 
 * -ignoreAssets: do not extract and save the PDF assets (bitmaps, vector graphics), by default the assets are extracted and saved
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processFullText 
 ```
@@ -59,7 +61,7 @@ Will process, extract and format the date given in input. The needed parameters 
 
 * -s: the input date to format
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processDate -s "some date to extract and format"
 ```
@@ -71,7 +73,7 @@ Will process, extract and format the authors given in input. The needed paramete
 
 * -s: the input
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processAuthorsHeader -s "some authors"
 ```
@@ -83,7 +85,7 @@ Will process, extract and format the authors given in input. The needed paramete
 
 * -s: the input
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processAuthorsCitation -s "some authors"
 ```
@@ -95,7 +97,7 @@ Will process, extract and format the affiliation given in input. The needed para
 
 * -s: the input
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processAffiliation -s "some affiliation"
 ```
@@ -107,7 +109,7 @@ Will process, extract and format the raw reference given in input. The needed pa
 
 * -s: the input
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processRawReference -s "a reference string"
 ```
@@ -123,7 +125,7 @@ Will process, extract and format all the references in the PDF files present in 
 
 * -r: recursive processing of files in the sub-directories (by default not recursive)
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processReferences
 ```
@@ -139,7 +141,7 @@ Will process, extract and format the citations in the patents encoded in TEI giv
 
 * -dOut: path to save the tei annotated data
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTEI
 ```
@@ -155,7 +157,7 @@ Will process, extract and format the citations in the patents encoded in ST.36 g
 
 * -dOut: path to save the tei results
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentST36
 ```
@@ -171,7 +173,7 @@ Will process, extract and format the citations in the patents encoded in UTF-8 t
 
 * -dOut: path to save the tei results
 
-Exemple:
+Example:
 ```
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTXT
 ```
@@ -187,7 +189,7 @@ Will process, extract and format the citations in the patents available in pdf g
 
 * -dOut: path to save the tei results
 
-Exemple:
+Example:
 ```
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentPDF
 ```
@@ -203,7 +205,7 @@ Will generate some training for patent citation data, taking as input ST.36 file
 
 * -dOut: path to save the trained data
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingCitationPatent
 ```
@@ -220,7 +222,7 @@ Will generate some training for header data from PDF files. The needed parameter
 
 * -dOut: path to save the trained data
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingHeader
 ```
@@ -237,7 +239,7 @@ Will generate some training for full text data from PDF files. The needed parame
 
 * -dOut: path to save the trained data
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingFulltext
 ```
@@ -254,7 +256,7 @@ Will generate some training data for the segmentation model from PDF files. The 
 
 * -dOut: path to save the trained data
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingSegmentation
 ```
@@ -271,7 +273,7 @@ Will generate some training data for the reference segmentation model from PDF f
 
 * -dOut: path to save the trained data
 
-Exemple:
+Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingReferenceSegmentation
 ```

@@ -5,7 +5,7 @@ package org.grobid.core.layout;
  *
  * @author Patrice Lopez
  */
-public class LayoutToken {
+public class LayoutToken implements Comparable<LayoutToken> {
     private String text = null;
     public double y = -1.0;
     public double x = -1.0;
@@ -20,12 +20,31 @@ public class LayoutToken {
     private int page = -1;
     private boolean newLineAfter;
     private int blockPtr;
+	private int offset = 0;
 
     public LayoutToken() {
     }
 
     public LayoutToken(String text) {
         this.text = text;
+    }
+
+    public LayoutToken(LayoutToken token) {
+        this.text = token.text;
+        this.y = token.y;
+        this.x = token.x;
+        this.width = token.width;
+        this.height = token.height;
+        this.font = token.font;
+        this.bold = token.bold;
+        this.italic = token.italic;
+        this.colorFont = token.colorFont;
+        this.fontSize = token.fontSize;
+        this.rotation = token.rotation;
+        this.page = token.page;
+        this.newLineAfter = token.newLineAfter;
+        this.blockPtr = token.blockPtr;
+        this.offset = token.offset;
     }
 
     public void setFont(String f) {
@@ -145,6 +164,14 @@ public class LayoutToken {
         this.blockPtr = blockPtr;
     }
 
+	public int getOffset() {
+		return offset;
+	}
+	
+	public void setOffset(int offset) {
+		this.offset = offset;
+	}
+
     @Override
     public String toString() {
         return text;
@@ -173,4 +200,27 @@ public class LayoutToken {
         result = 31 * result + page;
         return result;
     }
+
+    @Override
+    public int compareTo(LayoutToken token2) {
+        if (y != token2.y) {
+            if (y < token2.y)
+                return -1;
+            else 
+                return 1;
+        }
+        else if (x != token2.x) {
+            if (x < token2.x)
+                return -1;
+            else 
+                return 1;
+        }
+        else {
+            double area1 = height*width;
+            double area2 = token2.height*token2.width;
+
+            return Double.compare(area1, area2);
+        }
+    }
+
 }
