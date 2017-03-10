@@ -116,7 +116,7 @@ public class Document {
     protected DocumentNode top = null;
 
     // header of the document - if extracted and processed
-    protected final BiblioItem resHeader = null;
+    protected BiblioItem resHeader = null;
 
     // full text as tructure TEI - if extracted and processed
     protected String tei;
@@ -125,10 +125,10 @@ public class Document {
 
     // list of bitmaps and vector graphics of the document
     protected List<GraphicObject> images = null;
-	
+
 	// list of PDF annotations as present in the PDF source file
     protected List<PDFAnnotation> pdfAnnotations = null;
-	
+
     protected Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
 
     // some statistics regarding the document - useful for generating the features
@@ -343,15 +343,15 @@ public class Document {
 
         images = new ArrayList<>();
         PDF2XMLSaxHandler parser = new PDF2XMLSaxHandler(this, images);
-        // we set possibly the particular analyzer to be used for tokenization of the PDF elements 
+        // we set possibly the particular analyzer to be used for tokenization of the PDF elements
         if (config.getAnalyzer() != null)
            parser.setAnalyzer(config.getAnalyzer());
 		pdfAnnotations = new ArrayList<PDFAnnotation>();
 		PDF2XMLAnnotationSaxHandler parserAnnot = new PDF2XMLAnnotationSaxHandler(this, pdfAnnotations);
-		
+
 		// get a SAX parser factory
 		SAXParserFactory spf = SAXParserFactory.newInstance();
-		
+
         tokenizations = null;
 
         File file = new File(pathXML);
@@ -361,7 +361,7 @@ public class Document {
 			// parsing of the pdf2xml file
             in = new FileInputStream(file);
             // in = new XMLFilterFileInputStream(file); // -> to filter invalid XML characters
- 
+
             // get a new instance of parser
             SAXParser p = spf.newSAXParser();
             p.parse(in, parser);
@@ -385,8 +385,8 @@ public class Document {
                     LOGGER.error("Cannot close input stream", e);
                 }
             }
-        }	
-			
+        }
+
 		try {
 			// parsing of the annotation XML file
 			in = new FileInputStream(fileAnnot);
@@ -505,7 +505,7 @@ public class Document {
                 }
             }
         }
-		
+
         // we filter out possible line numbering for review works
         // filterLineNumber();
         return tokenizations;
@@ -1550,7 +1550,7 @@ public class Document {
      */
     public static List<LayoutToken> getTokenizationParts(SortedSet<DocumentPiece> documentParts,
                                                         List<LayoutToken> tokenizations) {
-        if (documentParts == null) 
+        if (documentParts == null)
             return null;
 
         List<LayoutToken> tokenizationParts = new ArrayList<LayoutToken>();
@@ -2123,26 +2123,32 @@ public class Document {
     public List<Table> getTables() {
         return tables;
     }
-	
-	static public List<LayoutToken> getTokens(List<LayoutToken> tokenizations, int offsetBegin, int offsetEnd) {
-		return getTokensFrom(tokenizations, offsetBegin, offsetEnd, 0);
-	}
-	
-	static public List<LayoutToken> getTokensFrom(List<LayoutToken> tokenizations, 
-									int offsetBegin, 
-									int offsetEnd, 
-									int startTokenIndex) {
-		List<LayoutToken> result = new ArrayList<LayoutToken>();
-		for(int p = startTokenIndex; p<tokenizations.size(); p++) {
-			LayoutToken currentToken = tokenizations.get(p);
-			if ((currentToken == null) || (currentToken.getText() == null))
-				continue;
-			if (currentToken.getOffset() + currentToken.getText().length() < offsetBegin) 
-				continue;
-			if (currentToken.getOffset() > offsetEnd) 
-				return result;
-			result.add(currentToken);
-		}
-		return result;
-	}
+
+    public void setResHeader(BiblioItem resHeader) {
+        this.resHeader = resHeader;
+    }
+
+
+    static public List<LayoutToken> getTokens(List<LayoutToken> tokenizations, int offsetBegin, int offsetEnd) {
+        return getTokensFrom(tokenizations, offsetBegin, offsetEnd, 0);
+    }
+
+    static public List<LayoutToken> getTokensFrom(List<LayoutToken> tokenizations,
+                                                  int offsetBegin,
+                                                  int offsetEnd,
+                                                  int startTokenIndex) {
+        List<LayoutToken> result = new ArrayList<LayoutToken>();
+        for(int p = startTokenIndex; p<tokenizations.size(); p++) {
+            LayoutToken currentToken = tokenizations.get(p);
+            if ((currentToken == null) || (currentToken.getText() == null))
+                continue;
+            if (currentToken.getOffset() + currentToken.getText().length() < offsetBegin)
+                continue;
+            if (currentToken.getOffset() > offsetEnd)
+                return result;
+            result.add(currentToken);
+        }
+        return result;
+    }
+
 }

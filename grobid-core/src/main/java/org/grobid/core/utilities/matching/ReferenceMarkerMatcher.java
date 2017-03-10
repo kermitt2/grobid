@@ -157,7 +157,7 @@ public class ReferenceMarkerMatcher {
                     cntManager.i(ReferenceMarkerMatcherCounters.MANY_CANDIDATES);
 //                    LOGGER.info("MANY CANDIDATES: " + input + "\n" + text + "\n");
                     for (BibDataSet bds : matches) {
-                        LOGGER.info("  " + bds.getRawBib());
+//                        LOGGER.info("  " + bds.getRawBib());
                     }
 
 //                    LOGGER.info("----------");

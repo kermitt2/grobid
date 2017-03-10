@@ -1,6 +1,7 @@
 package org.grobid.core.visualization;
 
 import org.apache.pdfbox.cos.COSArray;
+import org.apache.pdfbox.exceptions.COSVisitorException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
@@ -11,6 +12,7 @@ import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 import org.grobid.core.layout.BoundingBox;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 
@@ -151,6 +153,30 @@ public class AnnotationUtil {
 
     public static String getCoordString(int page, double x, double y, double w, double h) {
         return page + "," + x + "," + y + "," + w + "," + h;
+    }
+
+    public static void main(String[] args) throws IOException, COSVisitorException {
+
+        final PDDocument document = PDDocument.load("/Users/zholudev/Downloads/0711.4671.pdf");
+        String[] coords = new String[]{
+                "33,185.90,529.23,88.36,11.97",
+                "33,279.29,529.23,56.05,11.97",
+                "33,340.49,529.23,86.13,11.97",
+                "33,431.89,529.23,67.09,11.97",
+                "33,504.25,529.23,35.67,11.97",
+                "33,57.60,545.19,25.70,11.97",
+                "33,88.93,545.19,64.73,11.97",
+                "33,183.16,545.19,60.15,11.97",
+                "33,175.12,592.83,21.73,11.97",
+                "33,270.90,592.83,84.50,11.97",
+
+        };
+
+        for (String c : coords) {
+            annotatePage(document, c, 1);
+        }
+
+        document.save(new File("/tmp/x.pdf"));
     }
 
 }
