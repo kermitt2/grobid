@@ -41,6 +41,7 @@ grobid-bio
 grobid-istex
 grobid-astro
 grobid-chem
+grobid-smecta
 grobid-home/models/quantities
 grobid-home/models/dictionaries-lexical-entries
 grobid-home/models/units

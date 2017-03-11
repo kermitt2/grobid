@@ -45,7 +45,7 @@ public class TaggingTokenClusteror {
         List<TaggingTokenCluster> result = new ArrayList<>();
 
         PeekingIterator<LabeledTokensContainer> it = Iterators.peekingIterator(taggingTokenSynchronizer);
-        if (!it.hasNext()) {
+        if (!it.hasNext() || (it.peek() == null)) {
             return Collections.emptyList();
         }
 
