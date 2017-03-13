@@ -39,6 +39,12 @@ public abstract class AbstractTrainer implements Trainer {
         this.evalDataPath = getTempEvaluationDataPath();
     }
 
+    public void setParams(double epsilon, int window, int nbMaxIterations) {
+        this.epsilon = epsilon;
+        this.window = window;
+        this.nbMaxIterations = nbMaxIterations;
+    }
+
     @Override
     public void train() {
         final File dataPath = trainDataPath;
