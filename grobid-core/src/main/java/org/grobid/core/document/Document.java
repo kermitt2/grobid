@@ -11,6 +11,8 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
 
 import org.grobid.core.analyzers.GrobidDefaultAnalyzer;
+import org.grobid.core.analyzers.Analyzer;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.*;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.SegmentationLabel;
@@ -99,7 +101,7 @@ public class Document {
 
     protected FeatureFactory featureFactory = null;
 
-    // map of tokens (e.g. <reference> or <footnote>) to document pieces
+    // map of labels (e.g. <reference> or <footnote>) to document pieces
     protected SortedSetMultimap<String, DocumentPiece> labeledBlocks;
 
     // original tokenization and tokens - in order to recreate the original
@@ -114,7 +116,7 @@ public class Document {
     protected DocumentNode top = null;
 
     // header of the document - if extracted and processed
-    protected final BiblioItem resHeader = null;
+    protected BiblioItem resHeader = null;
 
     // full text as tructure TEI - if extracted and processed
     protected String tei;
@@ -123,10 +125,10 @@ public class Document {
 
     // list of bitmaps and vector graphics of the document
     protected List<GraphicObject> images = null;
-	
+
 	// list of PDF annotations as present in the PDF source file
     protected List<PDFAnnotation> pdfAnnotations = null;
-	
+
     protected Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
 
     // some statistics regarding the document - useful for generating the features
@@ -142,13 +144,16 @@ public class Document {
 
     protected boolean titleMatchNum = false; // true if the section titles of the document are numbered
 
-    // the magic DOI regular expression...
+    // the magical DOI regular expression...
     static public final Pattern DOIPattern = Pattern
             .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
     protected List<Figure> figures;
     protected Predicate<GraphicObject> validGraphicObjectPredicate;
     protected int m;
     protected List<Table> tables;
+
+    // the analyzer/tokenizer used for processing this document
+    Analyzer analyzer = GrobidAnalyzer.getInstance();
 
     public Document(DocumentSource documentSource) {
         top = new DocumentNode("top", "0");
@@ -231,6 +236,14 @@ public class Document {
         return minBlockSpacing;
     }
 
+    public void setAnalyzer(Analyzer analyzer) {
+        this.analyzer = analyzer;
+    }
+
+    public Analyzer getAnalyzer() {
+        return this.analyzer;
+    }
+
     // to be removed
     @Deprecated
     public List<LayoutToken> getTokenizationsHeader() {
@@ -284,8 +297,13 @@ public class Document {
     }
 
     public List<LayoutToken> fromText(final String text) {
+        List<String> toks = null;
+        try {
+            toks = GrobidAnalyzer.getInstance().tokenize(text);
+        } catch(Exception e) {
+            LOGGER.error("Fail tokenization for " + text, e);
+        }
 
-        List<String> toks = GrobidDefaultAnalyzer.tokenize(text);
         tokenizations = Lists.transform(toks, new Function<String, LayoutToken>() {
             @Override
             public LayoutToken apply(String s) {
@@ -325,12 +343,15 @@ public class Document {
 
         images = new ArrayList<>();
         PDF2XMLSaxHandler parser = new PDF2XMLSaxHandler(this, images);
+        // we set possibly the particular analyzer to be used for tokenization of the PDF elements
+        if (config.getAnalyzer() != null)
+           parser.setAnalyzer(config.getAnalyzer());
 		pdfAnnotations = new ArrayList<PDFAnnotation>();
 		PDF2XMLAnnotationSaxHandler parserAnnot = new PDF2XMLAnnotationSaxHandler(this, pdfAnnotations);
-		
+
 		// get a SAX parser factory
 		SAXParserFactory spf = SAXParserFactory.newInstance();
-		
+
         tokenizations = null;
 
         File file = new File(pathXML);
@@ -340,7 +361,7 @@ public class Document {
 			// parsing of the pdf2xml file
             in = new FileInputStream(file);
             // in = new XMLFilterFileInputStream(file); // -> to filter invalid XML characters
- 
+
             // get a new instance of parser
             SAXParser p = spf.newSAXParser();
             p.parse(in, parser);
@@ -364,8 +385,8 @@ public class Document {
                     LOGGER.error("Cannot close input stream", e);
                 }
             }
-        }	
-			
+        }
+
 		try {
 			// parsing of the annotation XML file
 			in = new FileInputStream(fileAnnot);
@@ -374,7 +395,7 @@ public class Document {
 		} catch (GrobidException e) {
             throw e;
         } catch (Exception e) {
-            throw new GrobidException("Cannot parse file: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
+            LOGGER.error("Cannot parse file: " + fileAnnot, e, GrobidExceptionStatus.PARSING_ERROR);
         } finally {
             if (in != null) {
                 try {
@@ -484,7 +505,7 @@ public class Document {
                 }
             }
         }
-		
+
         // we filter out possible line numbering for review works
         // filterLineNumber();
         return tokenizations;
@@ -1523,6 +1544,29 @@ public class Document {
         }
     }
 
+    /**
+     * Give the list of LayoutToken corresponding to some document parts and
+     * a global document tokenization.
+     */
+    public static List<LayoutToken> getTokenizationParts(SortedSet<DocumentPiece> documentParts,
+                                                        List<LayoutToken> tokenizations) {
+        if (documentParts == null)
+            return null;
+
+        List<LayoutToken> tokenizationParts = new ArrayList<LayoutToken>();
+        for (DocumentPiece docPiece : documentParts) {
+            DocumentPointer dp1 = docPiece.a;
+            DocumentPointer dp2 = docPiece.b;
+
+            int tokens = dp1.getTokenDocPos();
+            int tokene = dp2.getTokenDocPos();
+            for (int i = tokens; i < tokene; i++) {
+                tokenizationParts.add(tokenizations.get(i));
+            }
+        }
+        return tokenizationParts;
+    }
+
     public BibDataSet getBibDataSetByTeiId(String teiId) {
         return teiIdToBibDataSets.get(teiId);
     }
@@ -2079,26 +2123,32 @@ public class Document {
     public List<Table> getTables() {
         return tables;
     }
-	
-	static public List<LayoutToken> getTokens(List<LayoutToken> tokenizations, int offsetBegin, int offsetEnd) {
-		return getTokensFrom(tokenizations, offsetBegin, offsetEnd, 0);
-	}
-	
-	static public List<LayoutToken> getTokensFrom(List<LayoutToken> tokenizations, 
-									int offsetBegin, 
-									int offsetEnd, 
-									int startTokenIndex) {
-		List<LayoutToken> result = new ArrayList<LayoutToken>();
-		for(int p = startTokenIndex; p<tokenizations.size(); p++) {
-			LayoutToken currentToken = tokenizations.get(p);
-			if ((currentToken == null) || (currentToken.getText() == null))
-				continue;
-			if (currentToken.getOffset() + currentToken.getText().length() < offsetBegin) 
-				continue;
-			if (currentToken.getOffset() > offsetEnd) 
-				return result;
-			result.add(currentToken);
-		}
-		return result;
-	}
+
+    public void setResHeader(BiblioItem resHeader) {
+        this.resHeader = resHeader;
+    }
+
+
+    static public List<LayoutToken> getTokens(List<LayoutToken> tokenizations, int offsetBegin, int offsetEnd) {
+        return getTokensFrom(tokenizations, offsetBegin, offsetEnd, 0);
+    }
+
+    static public List<LayoutToken> getTokensFrom(List<LayoutToken> tokenizations,
+                                                  int offsetBegin,
+                                                  int offsetEnd,
+                                                  int startTokenIndex) {
+        List<LayoutToken> result = new ArrayList<LayoutToken>();
+        for(int p = startTokenIndex; p<tokenizations.size(); p++) {
+            LayoutToken currentToken = tokenizations.get(p);
+            if ((currentToken == null) || (currentToken.getText() == null))
+                continue;
+            if (currentToken.getOffset() + currentToken.getText().length() < offsetBegin)
+                continue;
+            if (currentToken.getOffset() > offsetEnd)
+                return result;
+            result.add(currentToken);
+        }
+        return result;
+    }
+
 }

@@ -890,60 +890,72 @@ public class TEIFormatter {
         buffer = toTEITextPiece(buffer, result, biblio, bds,
                 layoutTokenization, figures, tables, doc, config);
 
-        // footnotes are still in the body
-        buffer = toTEIFootNote(buffer, doc, config);
+        // notes are still in the body
+        buffer = toTEINote(buffer, doc, config);
 
         buffer.append("\t\t</body>\n");
 
         return buffer;
     }
 
-    public StringBuilder toTEIFootNote(StringBuilder tei,
-                                       Document doc,
-                                       GrobidAnalysisConfig config) throws Exception {
-        // write the footnotes
-        SortedSet<DocumentPiece> documentFootnoteParts = doc.getDocumentPart(SegmentationLabel.FOOTNOTE);
-        String footnotes = doc.getDocumentPartText(SegmentationLabel.FOOTNOTE);
-        if (documentFootnoteParts != null) {
-            List<String> allNotes = new ArrayList<String>();
-            for (DocumentPiece docPiece : documentFootnoteParts) {
-                String footText = doc.getDocumentPieceText(docPiece);
-                footText = TextUtilities.dehyphenize(footText);
-                footText = footText.replace("\n", " ");
-                footText = footText.replace("  ", " ").trim();
-                if (footText.length() < 6)
-                    continue;
-                if (allNotes.contains(footText)) {
-                    // basically we have here the "recurrent" headnote/footnote for each page,
-                    // no need to add them several times (in the future we could even use them
-                    // differently combined with the header)
-                    continue;
-                }
-                // pattern is <note n="1" place="foot" xml:id="no1">
-                tei.append("\n\t\t\t<note place=\"foot\"");
-                Matcher ma = startNum.matcher(footText);
-                int currentNumber = -1;
-                if (ma.find()) {
-                    String groupStr = ma.group(1);
-                    footText = ma.group(2);
-                    try {
-                        currentNumber = Integer.parseInt(groupStr);
-                    } catch (NumberFormatException e) {
-                        currentNumber = -1;
-                    }
-                }
-                if (currentNumber != -1) {
-                    tei.append(" n=\"" + currentNumber + "\"");
-                }
-                if (config.isGenerateTeiIds()) {
-                    String divID = KeyGen.getKey().substring(0, 7);
-                    tei.append(" xml:id=\"_" + divID + "\"");
-                }
-                tei.append(">");
-                tei.append(TextUtilities.HTMLEncode(footText));
-                allNotes.add(footText);
-                tei.append("</note>\n");
+    private StringBuilder toTEINote(StringBuilder tei,
+                                    Document doc,
+                                    GrobidAnalysisConfig config) throws Exception {
+        // write the notes
+        SortedSet<DocumentPiece> documentNoteParts = doc.getDocumentPart(SegmentationLabel.FOOTNOTE);
+        if (documentNoteParts != null) {
+            tei = toTEINote("foot", documentNoteParts, tei, doc, config);
+        }
+        documentNoteParts = doc.getDocumentPart(SegmentationLabel.MARGINNOTE);
+        if (documentNoteParts != null) {
+            tei = toTEINote("margin", documentNoteParts, tei, doc, config);
+        }
+        return tei;
+    }
+
+    private StringBuilder toTEINote(String noteType,
+                                    SortedSet<DocumentPiece> documentNoteParts,
+                                    StringBuilder tei,
+                                    Document doc,
+                                    GrobidAnalysisConfig config) throws Exception {
+        List<String> allNotes = new ArrayList<String>();
+        for (DocumentPiece docPiece : documentNoteParts) {
+            String footText = doc.getDocumentPieceText(docPiece);
+            footText = TextUtilities.dehyphenize(footText);
+            footText = footText.replace("\n", " ");
+            footText = footText.replace("  ", " ").trim();
+            if (footText.length() < 6)
+                continue;
+            if (allNotes.contains(footText)) {
+                // basically we have here the "recurrent" headnote/footnote for each page,
+                // no need to add them several times (in the future we could even use them
+                // differently combined with the header)
+                continue;
             }
+            // pattern is <note n="1" place="foot" xml:id="no1">
+            tei.append("\n\t\t\t<note place=\""+noteType+"\"");
+            Matcher ma = startNum.matcher(footText);
+            int currentNumber = -1;
+            if (ma.find()) {
+                String groupStr = ma.group(1);
+                footText = ma.group(2);
+                try {
+                    currentNumber = Integer.parseInt(groupStr);
+                } catch (NumberFormatException e) {
+                    currentNumber = -1;
+                }
+            }
+            if (currentNumber != -1) {
+                tei.append(" n=\"" + currentNumber + "\"");
+            }
+            if (config.isGenerateTeiIds()) {
+                String divID = KeyGen.getKey().substring(0, 7);
+                tei.append(" xml:id=\"_" + divID + "\"");
+            }
+            tei.append(">");
+            tei.append(TextUtilities.HTMLEncode(footText));
+            allNotes.add(footText);
+            tei.append("</note>\n");
         }
 
         return tei;

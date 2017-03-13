@@ -449,7 +449,7 @@ public class Affiliation {
                 }
                 if (getCountry() != null) {
                     Lexicon lexicon = Lexicon.getInstance();
-                    String code = lexicon.getcountryCode(getCountry());
+                    String code = lexicon.getCountryCode(getCountry());
                     tei.append("<country");
                     if (code != null)
                         tei.append(" key=\"").append(code).append("\"");

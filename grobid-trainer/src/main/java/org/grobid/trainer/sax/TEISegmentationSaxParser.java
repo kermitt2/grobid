@@ -25,6 +25,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 		document header (<header>): front, 
 		page footer (<footnote>): note type footnote, 
 		page header (<headnote>): note type headnote, 
+        margin note (<marginnote>): note type margin, 
 		document body (<body>): body, 
 		bibliographical section (<references>): listbibl, 
 		page number (<page>): page,
@@ -73,8 +74,10 @@ public class TEISegmentationSaxParser extends DefaultHandler {
         }
 		if (qName.equals("body") || 
 			qName.equals("cover") || 
-			qName.equals("header") || 
-			qName.equals("div") || 
+			qName.equals("front") || 
+			qName.equals("div") ||
+            qName.equals("toc") || 
+            qName.equals("other") || 
 			qName.equals("listBibl")) {
 			currentTag = null;
 			upperTag = null;
@@ -106,7 +109,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                     writeData(upperQname, upperTag);
                 }
             }
-            accumulator.setLength(0);
+            //accumulator.setLength(0);
 
             if (qName.equals("front")) {
                 //currentTags.push("<header>");
@@ -125,10 +128,11 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 				//upperTag = currentTag;
 				//upperQname = "titlePage";
             }
-			/*else if (qName.equals("other")) {
+			else if (qName.equals("other") || qName.equals("toc")) {
+                // for the moment the table of content mark-up is ignored
                 //currentTags.push("<other>");
 				currentTag = "<other>";
-            } */
+            } 
 			/*else if (qName.equals("ref")) {
                 int length = atts.getLength();
 
@@ -160,11 +164,12 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 
                     if (name != null) {
                         if (name.equals("place")) {
-                            if (value.equals("footnote")) {
+                            if (value.equals("footnote") || value.equals("foot") ) {
 								currentTag = "<footnote>";
-                            }
-                            if (value.equals("headnote")) {
+                            } else if (value.equals("headnote") || value.equals("head") ) {
 								currentTag = "<headnote>";
+                            } else if (value.equals("margin")) {
+                                currentTag = "<marginnote>";
                             }
                         }
                     }
@@ -202,19 +207,29 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 				currentTag = "<references>";
 				upperTag = currentTag;
 				upperQname = "listBibl";
+            } else if (qName.equals("text")) {
+                currentTag = "<other>";
+                upperTag = null;
+                upperQname = null;
             }
         }
     }
 
     private void writeData(String qName, String surfaceTag) {
+        if (qName == null) {
+            qName = "other";
+            surfaceTag = "<other>";
+        }
         if ((qName.equals("front")) || (qName.equals("titlePage")) || (qName.equals("note")) ||
                 (qName.equals("page")) || (qName.equals("pages")) || (qName.equals("body")) ||
-                (qName.equals("listBibl")) || 
-                (qName.equals("div")) 
+                (qName.equals("listBibl")) || (qName.equals("div")) ||
+                (qName.equals("other")) || (qName.equals("toc")) 
                 ) {
             String text = getText();
+            text = text.replace("\n", " ");
+            text = text.replace("  ", " ");
 			boolean begin = true;
-//System.out.println(text);			
+//System.out.println(text);	
             // we segment the text line by line first
             //StringTokenizer st = new StringTokenizer(text, "\n", true);
 			String[] tokens = text.split("\\+L\\+");
@@ -223,9 +238,9 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 			for(int p=0; p<tokens.length; p++) {	
 				//String line = st.nextToken().trim();
 				String line = tokens[p].trim();
-				if (line.equals("\n"))
-					continue;
 				if (line.length() == 0) 
+                    continue;
+                if (line.equals("\n"))
 					continue;
 				if (line.indexOf("+PAGE+") != -1) {
                     // page break should be a distinct feature
@@ -254,7 +269,13 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 	                //} else 
 					
 	                    //if (tok.length() > 0) {
-	        	if (begin) {
+                if (surfaceTag == null) {
+                    // this token belongs to a chunk to ignored
+                    System.out.println("\twarning: surfaceTag is null for token '"+tok+"' - it will be tagged with label <other>");
+                    surfaceTag = "<other>";
+                }
+
+	        	if (begin && (!surfaceTag.equals("<other>"))) {
 	        		labeled.add(tok + " I-" + surfaceTag + "\n");
 	  			  	begin = false;
 	         	} else {
