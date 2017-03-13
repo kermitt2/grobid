@@ -91,9 +91,9 @@ public class Engine implements Closeable {
      * @return the list of structured author object
      */
     public List<Person> processAuthorsHeader(String authorSequence) throws Exception {
-        List<String> inputs = new ArrayList<String>();
-        inputs.add(authorSequence);
-        List<Person> result = parsers.getAuthorParser().processingHeader(inputs);
+//        List<String> inputs = new ArrayList<String>();
+//        inputs.add(authorSequence);
+        List<Person> result = parsers.getAuthorParser().processingHeader(authorSequence);
         //close();
         return result;
     }
@@ -106,9 +106,9 @@ public class Engine implements Closeable {
      * @return the list of structured author object
      */
     public List<Person> processAuthorsCitation(String authorSequence) throws Exception {
-        List<String> inputs = new ArrayList<String>();
-        inputs.add(authorSequence);
-        List<Person> result = parsers.getAuthorParser().processingCitation(inputs);
+//        List<String> inputs = new ArrayList<String>();
+//        inputs.add(authorSequence);
+        List<Person> result = parsers.getAuthorParser().processingCitation(authorSequence);
         //close();
         return result;
     }

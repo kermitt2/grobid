@@ -9,6 +9,7 @@ import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.analyzers.Analyzer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.*;
@@ -19,7 +20,7 @@ import java.util.*;
 /**
  * SAX parser for XML representation of PDF files obtained via xpdf pdf2xml. All
  * typographical and layout information are defined token by token
- * 
+ *
  * @author Patrice Lopez
  */
 public class PDF2XMLSaxHandler extends DefaultHandler {
@@ -51,7 +52,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
     //starting page count from 1 since most of the PDF-related software count pages from 1
 	private int currentPage = 0;
 	private Page page = null; // the current page object
-	private GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance(); 
+	private Analyzer analyzer = GrobidAnalyzer.getInstance(); // use the default one by default ;)
 
 	private int currentOffset = 0;
 
@@ -60,6 +61,14 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 		blabla = new StringBuffer();
 		images = im;
 		tokenizations = new ArrayList<>();
+	}
+
+	public void setAnalyzer(Analyzer analyzer) {
+		this.analyzer = analyzer;
+	}
+
+	public Analyzer getAnalyzer() {
+		return this.analyzer;
 	}
 
 	private void addToken(LayoutToken layoutToken) {
@@ -451,8 +460,8 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 				//		TextUtilities.delimiters, true);
 				List<String> subTokenizations = new ArrayList<>();
 				try {
-					// TBD: pass a language object to the tokenize method call 
-					subTokenizations = analyzer.tokenize(tok0);		
+					// TBD: pass a language object to the tokenize method call
+					subTokenizations = analyzer.tokenize(tok0);
 				}
 				catch(Exception e) {
 					LOGGER.debug("Sub-tokenization of pdf2xml token has failed.");

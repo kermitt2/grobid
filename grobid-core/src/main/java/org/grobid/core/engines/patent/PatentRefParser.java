@@ -3,6 +3,7 @@ package org.grobid.core.engines.patent;
 import java.util.*;
 import java.util.regex.*;
 
+import org.apache.commons.io.IOUtils;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.TextUtilities;
@@ -178,27 +179,14 @@ public class PatentRefParser {
 				}
 			}
 			catch (FileNotFoundException e) {
-	//	    	e.printStackTrace();
 	            throw new GrobidException("An exception occured while running Grobid.", e);
 	        } 
 			catch (IOException e) {
-	//	    	e.printStackTrace();
 	            throw new GrobidException("An exception occured while running Grobid.", e);
 	        } 
 			finally {
-	            try {
-	                if (ist != null)
-	                    ist.close();
-	                if (isr != null)
-	                    isr.close();
-	                if (dis != null)
-	                    dis.close();
-	            } 
-				catch (Exception e) {
-	                throw new GrobidResourceException("Cannot close all streams.", e);
-	            }
+                IOUtils.closeQuietly(ist, isr, dis);
 	        }
-
 		}
 	}
 

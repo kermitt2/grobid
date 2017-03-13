@@ -240,7 +240,7 @@ public class Lexicon {
         }
     }
 
-    public String getcountryCode(String country) {
+    public String getCountryCode(String country) {
         String code = (String) countryCodes.get(country.toLowerCase());
         return code;
     }
