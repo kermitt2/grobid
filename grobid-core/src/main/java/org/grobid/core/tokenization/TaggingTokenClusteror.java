@@ -31,6 +31,24 @@ public class TaggingTokenClusteror {
         }
     }
 
+    public static class LabelTypeExcludePredicate implements Predicate<TaggingTokenCluster> {
+        private TaggingLabel[] labels;
+
+        public LabelTypeExcludePredicate(TaggingLabel... labels) {
+            this.labels = labels;
+        }
+
+        @Override
+        public boolean apply(TaggingTokenCluster taggingTokenCluster) {
+            for (TaggingLabel label : labels) {
+                if (taggingTokenCluster.getTaggingLabel() == label) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
 
     public TaggingTokenClusteror(GrobidModel grobidModel, String result, List<LayoutToken> tokenizations) {
         taggingTokenSynchronizer = new TaggingTokenSynchronizer(grobidModel, result, tokenizations);
@@ -49,9 +67,9 @@ public class TaggingTokenClusteror {
             return Collections.emptyList();
         }
 
-		// a boolean is introduced to indicate the start of the sequence in the case the label
-		// has no beginning indicator (e.g. I-)
-		boolean begin = true; 
+        // a boolean is introduced to indicate the start of the sequence in the case the label
+        // has no beginning indicator (e.g. I-)
+        boolean begin = true;
         TaggingTokenCluster curCluster = new TaggingTokenCluster(it.peek().getTaggingLabel());
         while (it.hasNext()) {
             LabeledTokensContainer cont = it.next();
@@ -60,8 +78,8 @@ public class TaggingTokenClusteror {
                 result.add(curCluster);
             }
             curCluster.addLabeledTokensContainer(cont);
-			if (begin)
-				begin = false;
+            if (begin)
+                begin = false;
         }
 
         return result;
