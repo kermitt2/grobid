@@ -24,6 +24,7 @@ public class TaggingLabels {
     public final static String OTHER_LABEL = "<other>";
     public final static String SECTION_LABEL = "<section>";
     public final static String FIGURE_LABEL = "<figure>";
+    public final static String FORMULA_LABEL = "<formula>";
     public final static String TABLE_LABEL = "<table>";
     public final static String EQUATION_LABEL = "<equation>";
     public final static String DESCRIPTION_LABEL = "<figDesc>";
@@ -71,6 +72,7 @@ public class TaggingLabels {
     public static final TaggingLabel FIGURE = new TaggingLabelImpl(GrobidModels.FULLTEXT, FIGURE_LABEL);
     public static final TaggingLabel TABLE = new TaggingLabelImpl(GrobidModels.FULLTEXT, TABLE_LABEL);
     public static final TaggingLabel EQUATION = new TaggingLabelImpl(GrobidModels.FULLTEXT, EQUATION_LABEL);
+    public static final TaggingLabel FORMULA = new TaggingLabelImpl(GrobidModels.FULLTEXT, FORMULA_LABEL);
 
     public static final TaggingLabel HEADER_DATE = new TaggingLabelImpl(GrobidModels.HEADER, DATE_LABEL);
     public static final TaggingLabel HEADER_TITLE = new TaggingLabelImpl(GrobidModels.HEADER, TITLE_LABEL);
@@ -132,6 +134,7 @@ public class TaggingLabels {
         register(FIGURE);
         register(TABLE);
         register(EQUATION);
+        register(FORMULA);
 
         //header
         register(HEADER_DATE);
