@@ -19,6 +19,7 @@ package org.grobid.core.analyzers;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.utilities.TextUtilities;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -58,7 +59,8 @@ public class GrobidDefaultAnalyzer implements org.grobid.core.analyzers.Analyzer
     private GrobidDefaultAnalyzer() {
 	}
 
-    public static final String delimiters = " \n\r\t([,:;?.!/)-–−\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
+    public static final String delimiters = TextUtilities.delimiters;
+    //" \n\r\t([,:;?.!/)-–−\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
 
     public String getName() {
 		return "DefaultGrobidAnalyzer";

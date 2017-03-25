@@ -8,6 +8,7 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.trainer.evaluation.EvaluationUtilities;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +19,7 @@ import java.io.IOException;
  * @author Zholudev, Lopez
  */
 public abstract class AbstractTrainer implements Trainer {
-    private static final Logger LOGGER = LoggerFactory.getLogger(AbstractTrainer.class);
+    protected static final Logger LOGGER = LoggerFactory.getLogger(AbstractTrainer.class);
     public static final String OLD_MODEL_EXT = ".old";
     public static final String NEW_MODEL_EXT = ".new";
 

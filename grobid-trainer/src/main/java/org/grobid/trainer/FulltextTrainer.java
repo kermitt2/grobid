@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import org.apache.commons.io.FileUtils;
 
 /**
  * @author Patrice Lopez
@@ -26,7 +27,7 @@ public class FulltextTrainer extends AbstractTrainer{
 
     @Override
     public int createCRFPPData(File corpusPath, File outputFile) {
-        return addFeaturesFulltext(corpusPath.getAbsolutePath() + "/tei", corpusPath + "/fulltexts", outputFile);
+        return addFeaturesFulltext(corpusPath.getAbsolutePath() + "/tei", corpusPath + "/raw", outputFile);
     }
 
 	/**
@@ -91,7 +92,7 @@ public class FulltextTrainer extends AbstractTrainer{
 //            int n = 0;
             for (File tf : refFiles) {
                 String name = tf.getName();
-                System.out.println(name);
+                LOGGER.info("Processing: " + name);
 
                 TEIFulltextSaxParser parser2 = new TEIFulltextSaxParser();
 				//parser2.setMode(TEIFulltextSaxParser.FULLTEXT);
@@ -103,64 +104,91 @@ public class FulltextTrainer extends AbstractTrainer{
                 List<String> labeled = parser2.getLabeledResult();
                 //totalExamples += parser2.n;
 
-                // we can now add the features
+// removing the @newline
+List<String> newLabeled = new ArrayList<String>();
+for(String label : labeled) {
+    if (!label.startsWith("@newline"))
+        newLabeled.add(label);
+} 
+labeled = newLabeled;
+
+StringBuilder temp = new StringBuilder();
+for(String label : labeled) {
+    temp.append(label);
+}
+FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toString());
+
+                // we can now (try to) add the features
                 // we open the featured file
-                int q = 0;
-                BufferedReader bis = new BufferedReader(
-                        new InputStreamReader(new FileInputStream(
-                                sourceFulltextsPathLabel + File.separator + 
-								name.replace(".tei.xml", "")), "UTF8"));
+                try {
+                    File rawFile = new File(sourceFulltextsPathLabel + File.separator + 
+                                    name.replace(".tei.xml", ""));
+                    if (!rawFile.exists()) {
+                        LOGGER.error("The raw file does not exist: " + rawFile.getPath());
+                        continue;
+                    }
 
-                StringBuilder fulltext = new StringBuilder();
+                    BufferedReader bis = new BufferedReader(
+                            new InputStreamReader(new FileInputStream(
+                            rawFile), "UTF8"));
+                    int q = 0; // current position in the TEI labeled list
+                    StringBuilder fulltext = new StringBuilder();
 
-                String line;
-//                String lastTag = null;
-                while ((line = bis.readLine()) != null) {
-                    //fulltext.append(line);
-                    int ii = line.indexOf(' ');
-                    String token = null;
-                    if (ii != -1)
-                        token = line.substring(0, ii);
-//                    boolean found = false;
-                    // we get the label in the labelled data file for the same token
-                    for (int pp = q; pp < labeled.size(); pp++) {
-                        String localLine = labeled.get(pp);
-                        StringTokenizer st = new StringTokenizer(localLine, " ");
-                        if (st.hasMoreTokens()) {
-                            String localToken = st.nextToken();
+                    String line;
+                    int l = 0;
+    //                String lastTag = null;
+                    while ((line = bis.readLine()) != null) {
+                        //fulltext.append(line);
+                        l++;
+                        int ii = line.indexOf(' ');
+                        String token = null;
+                        if (ii != -1)
+                            token = line.substring(0, ii);
+    //                    boolean found = false;
+                        // we get the label in the labelled data file for the same token
+                        for (int pp = q; pp < labeled.size(); pp++) {
+                            String localLine = labeled.get(pp);
+                            StringTokenizer st = new StringTokenizer(localLine, " ");
+                            if (st.hasMoreTokens()) {
+                                String localToken = st.nextToken();
 
-                            if (localToken.equals(token)) {
-                                String tag = st.nextToken();
-                                fulltext.append(line).append(" ").append(tag);
-//                                lastTag = tag;
-//                                found = true;
-                                q = pp + 1;
-                                pp = q + 10;
+                                if (localToken.equals(token)) {
+                                    String tag = st.nextToken();
+                                    fulltext.append(line).append(" ").append(tag);
+    //                                lastTag = tag;
+    //                                found = true;
+                                    q = pp + 1;
+                                    //pp = q + 10;
+                                    break;
+                                }
+                            }
+                            if (pp - q > 5) {
+                                LOGGER.warn(name + " / Fulltext trainer: TEI and raw file unsynchronized at raw line " + l + " : " + localLine);
+                                break;
                             }
                         }
-                        if (pp - q > 5) {
-                            break;
-                        }
+                        /*if (!found) {
+                                 if (lastTag != null)
+                                     header.append(lastTag);
+                             }*/
+                        //fulltext.append("\n");
                     }
-                    /*if (!found) {
-                             if (lastTag != null)
-                                 header.append(lastTag);
-                         }*/
-                    //fulltext.append("\n");
+                    bis.close();                
+
+                    //String fulltext = FeatureTrainerUtil.addFeaturesFulltext(labeled, false);
+                    //doc.getFulltextFeatured(boolean firstPass, boolean getHeader);
+
+                    // format with features for sequence tagging...
+                    writer2.write(fulltext.toString() + "\n");
+                } catch (Exception e) {
+                    LOGGER.error("Fail to open or process raw file", e);
                 }
-                bis.close();
-
-                //String fulltext = FeatureTrainerUtil.addFeaturesFulltext(labeled, false);
-                //doc.getFulltextFeatured(boolean firstPass, boolean getHeader);
-
-                // format with features for sequence tagging...
-                writer2.write(fulltext.toString() + "\n");
             }
 
             writer2.close();
             os2.close();
         } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            LOGGER.error("An exception occured while running Grobid.", e);
         }
         return totalExamples;
     }

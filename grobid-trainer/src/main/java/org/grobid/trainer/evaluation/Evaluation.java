@@ -20,7 +20,8 @@ import java.util.StringTokenizer;
 //import org.grobid.core.engines.HeaderParser;
 
 /**
- * Class for managing the extraction of bibliographical information from pdf documents.
+ * Class for evaluating the extraction of bibliographical information at header and citation levels.
+ * The generic evaluation in EvaluationUtilities should be preferably used.
  *
  * @author Patrice Lopez
  */

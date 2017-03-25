@@ -1261,9 +1261,9 @@ public class Document {
                 String localText = block.getText();
                 if (localText != null) {
                     localText = localText.trim();
-                    if (localText.startsWith("@BULLET")) {
+                    /*if (localText.startsWith("@BULLET")) {
                         localText = localText.replace("@BULLET", " • ");
-                    }
+                    }*/
                     if (localText.startsWith("@IMAGE")) {
                         localText = "";
                     }
