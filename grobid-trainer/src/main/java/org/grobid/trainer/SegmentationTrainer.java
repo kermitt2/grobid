@@ -113,7 +113,7 @@ public class SegmentationTrainer extends AbstractTrainer {
 //            int n = 0;
             for (File tf : refFiles) {
                 String name = tf.getName();
-                System.out.println(name);
+                LOGGER.info("Processing: " + name);
 
                 TEISegmentationSaxParser parser2 = new TEISegmentationSaxParser();
 
@@ -128,21 +128,21 @@ public class SegmentationTrainer extends AbstractTrainer {
                 // we open the featured file
                 File theRawFile = new File(sourceRawPathLabel + File.separator + name.replace(".tei.xml", ""));
                 if (!theRawFile.exists()) {
-                    System.out.println("Raw file " + theRawFile +
-                            " does not exist. Please have a look!");
+                    LOGGER.error("The raw file does not exist: " + theRawFile.getPath());
                     continue;
                 }
 
                 int q = 0;
                 BufferedReader bis = new BufferedReader(
-                        new InputStreamReader(new FileInputStream(
-                                sourceRawPathLabel + File.separator + name.replace(".tei.xml", "")), "UTF8"));
+                        new InputStreamReader(new FileInputStream(theRawFile), "UTF8"));
 
                 StringBuilder segmentation = new StringBuilder();
 
-                String line;
+                String line = null;
+                int l = 0;
 //                String lastTag = null;
                 while ((line = bis.readLine()) != null) {
+                    l++;
                     int ii = line.indexOf(' ');
                     String token = null;
                     if (ii != -1)
@@ -164,6 +164,7 @@ public class SegmentationTrainer extends AbstractTrainer {
                             }
                         }
                         if (pp - q > 5) {
+                            LOGGER.warn(name + " / Segmentation trainer: TEI and raw file unsynchronized at raw line " + l + " : " + localLine);
                             break;
                         }
                     }

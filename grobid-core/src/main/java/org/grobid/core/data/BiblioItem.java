@@ -1436,7 +1436,7 @@ public class BiblioItem {
             res = res.trim();
         }
 
-        res = res.replace("@BULLET", " • ");
+        //res = res.replace("@BULLET", " • ");
 
         res = res.replace("( ", "(");
         res = res.replace(" )", ")");

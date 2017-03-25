@@ -21,14 +21,17 @@ import org.grobid.trainer.Stats;
 
 import org.apache.commons.io.FileUtils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
- * Evaluation of the parsing of citation.
+ * Generic evaluation of a single-CRF model processing given an expected result. 
  * 
  * @author Patrice Lopez
  */
-
-
 public class EvaluationUtilities {
+	protected static final Logger logger = LoggerFactory.getLogger(EvaluationUtilities.class);
+
 	/**
 	 * Method for running a CRF tagger for evaluation purpose (i.e. with
 	 * expected and actual labels).
@@ -155,7 +158,8 @@ public class EvaluationUtilities {
 			bufReader.close();
 
             System.out.println("Labeling took: " + (System.currentTimeMillis() - time) + " ms");
-			//FileUtils.writeStringToFile(new File("/tmp/x.txt"), theResult);
+//System.out.println("Writing expected result file under /tmp/expected.txt");
+//FileUtils.writeStringToFile(new File("/tmp/expected.txt"), expected.toString());
 			StringTokenizer stt = new StringTokenizer(theResult, "\n");
 			int e = 0;
 			while (stt.hasMoreTokens()) {
@@ -198,6 +202,9 @@ public class EvaluationUtilities {
 				}
 
 				processCounters(wordStats, obtainedToken, expectedToken);
+				if (!obtainedToken.equals(expectedToken)) {
+					logger.warn("Disagreement / expected: " + expectedToken + " / obtained: " + obtainedToken);
+				}
 			}
 
 			bufReader.close();
