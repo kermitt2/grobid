@@ -10,8 +10,10 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import org.apache.commons.io.FileUtils;
 
 /**
  * @author Patrice Lopez
@@ -126,60 +128,77 @@ public class SegmentationTrainer extends AbstractTrainer {
 
                 // we can now add the features
                 // we open the featured file
-                File theRawFile = new File(sourceRawPathLabel + File.separator + name.replace(".tei.xml", ""));
-                if (!theRawFile.exists()) {
-                    LOGGER.error("The raw file does not exist: " + theRawFile.getPath());
-                    continue;
-                }
+                try {
+                    File theRawFile = new File(sourceRawPathLabel + File.separator + name.replace(".tei.xml", ""));
+                    if (!theRawFile.exists()) {
+                        LOGGER.error("The raw file does not exist: " + theRawFile.getPath());
+                        continue;
+                    }
 
-                int q = 0;
-                BufferedReader bis = new BufferedReader(
-                        new InputStreamReader(new FileInputStream(theRawFile), "UTF8"));
+// removing the @newline
+List<String> newLabeled = new ArrayList<String>();
+for(String label : labeled) {
+    if (!label.startsWith("@newline"))
+        newLabeled.add(label);
+} 
+labeled = newLabeled;
 
-                StringBuilder segmentation = new StringBuilder();
-
-                String line = null;
-                int l = 0;
-//                String lastTag = null;
-                while ((line = bis.readLine()) != null) {
-                    l++;
-                    int ii = line.indexOf(' ');
-                    String token = null;
-                    if (ii != -1)
-                        token = line.substring(0, ii);
-//                    boolean found = false;
-                    // we get the label in the labelled data file for the same token
-                    for (int pp = q; pp < labeled.size(); pp++) {
-                        String localLine = labeled.get(pp);
-                        StringTokenizer st = new StringTokenizer(localLine, " \t");
-                        if (st.hasMoreTokens()) {
-                            String localToken = st.nextToken();
-                            if (localToken.equals(token)) {
-                                String tag = st.nextToken();
-                                segmentation.append(line).append(" ").append(tag);
-//                                lastTag = tag;
-//                                found = true;
-                                q = pp + 1;
-                                pp = q + 10;
+StringBuilder temp = new StringBuilder();
+for(String label : labeled) {
+    temp.append(label);
+}
+FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toString());
+                
+                    int q = 0;
+                    BufferedReader bis = new BufferedReader(
+                            new InputStreamReader(new FileInputStream(theRawFile), "UTF8"));
+                    StringBuilder segmentation = new StringBuilder();
+                    String line = null;
+                    int l = 0;
+    //                String lastTag = null;
+                    while ((line = bis.readLine()) != null) {
+                        l++;
+                        int ii = line.indexOf(' ');
+                        String token = null;
+                        if (ii != -1)
+                            token = line.substring(0, ii);
+    //                    boolean found = false;
+                        // we get the label in the labelled data file for the same token
+                        for (int pp = q; pp < labeled.size(); pp++) {
+                            String localLine = labeled.get(pp);
+                            StringTokenizer st = new StringTokenizer(localLine, " \t");
+                            if (st.hasMoreTokens()) {
+                                String localToken = st.nextToken();
+                                if (localToken.equals(token)) {
+                                    String tag = st.nextToken();
+                                    segmentation.append(line).append(" ").append(tag);
+    //                                lastTag = tag;
+    //                                found = true;
+                                    q = pp + 1;
+                                    //pp = q + 10;
+                                    break;
+                                }
+                            }
+                            if (pp - q > 5) {
+                                LOGGER.warn(name + " / Segmentation trainer: TEI and raw file unsynchronized at raw line " + l + " : " + localLine);
+                                break;
                             }
                         }
-                        if (pp - q > 5) {
-                            LOGGER.warn(name + " / Segmentation trainer: TEI and raw file unsynchronized at raw line " + l + " : " + localLine);
-                            break;
-                        }
                     }
-                }
-                bis.close();
+                    bis.close();
 
-                if ((writer2 == null) && (writer3 != null))
-                    writer3.write(segmentation.toString() + "\n");
-                if ((writer2 != null) && (writer3 == null))
-                    writer2.write(segmentation.toString() + "\n");
-                else {
-                    if (Math.random() <= splitRatio)
-                        writer2.write(segmentation.toString() + "\n");
-                    else
+                    if ((writer2 == null) && (writer3 != null))
                         writer3.write(segmentation.toString() + "\n");
+                    if ((writer2 != null) && (writer3 == null))
+                        writer2.write(segmentation.toString() + "\n");
+                    else {
+                        if (Math.random() <= splitRatio)
+                            writer2.write(segmentation.toString() + "\n");
+                        else
+                            writer3.write(segmentation.toString() + "\n");
+                    }
+                } catch (Exception e) {
+                   LOGGER.error("Fail to open or process raw file", e);
                 }
             }
 
