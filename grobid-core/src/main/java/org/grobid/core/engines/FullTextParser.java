@@ -48,6 +48,8 @@ import java.util.StringTokenizer;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 
+import static org.apache.commons.lang3.StringUtils.*;
+
 /**
  * @author Patrice Lopez
  */
@@ -127,14 +129,18 @@ public class FullTextParser extends AbstractParser {
 				layoutTokenization = featSeg.getB();
 				//tokenizationsBody = featSeg.getB().getTokenization();
                 //layoutTokensBody = featSeg.getB().getLayoutTokens();
-				if ( (bodytext != null) && (bodytext.trim().length() > 0) ) {
+				if ( (bodytext != null) && (bodytext.trim().length() > 0) ) {				
 					rese = label(bodytext);
+				} else {
+					LOGGER.debug("Fulltext model: The input to the CRF processing is empty");
 				}
 				//LOGGER.info(rese);
 				//System.out.println(rese);
 				// we apply now the figure and table models based on the fulltext labeled output
 				figures = processFigures(rese, layoutTokenization.getTokenization(), doc);
 				tables = processTables(rese, layoutTokenization.getTokenization(), doc);
+			} else {
+				LOGGER.debug("Fulltext model: The featured body is empty");
 			}
 
             // header processing
@@ -177,7 +183,8 @@ public class FullTextParser extends AbstractParser {
 				// document segmentation
 				String bodytext = featSeg.getA();
 				tokenizationsBody2 = featSeg.getB().getTokenization();
-	            rese2 = label(bodytext);
+				if (isNotEmpty(trim(bodytext))) 
+	            	rese2 = label(bodytext);
 				//System.out.println(rese);
 			}
 
@@ -409,6 +416,11 @@ public class FullTextParser extends AbstractParser {
 	                    features.lineStatus = "LINESTART";
 	                    if (token != null)
 		                    lineStartX = token.getX();
+		                // be sure that previous token is closing a line, except if it's a starting line
+	                    if (previousFeatures != null) {
+	                    	if (!previousFeatures.lineStatus.equals("LINESTART"))
+		                    	previousFeatures.lineStatus = "LINEEND";
+	                    }
 	                }
 	                Matcher m0 = featureFactory.isPunct.matcher(text);
 	                if (m0.find()) {
@@ -442,6 +454,11 @@ public class FullTextParser extends AbstractParser {
 
 	                if (n == 0) {
 	                    features.lineStatus = "LINESTART";
+	                    // be sure that previous token is closing a line, except if it's a starting line
+	                    if (previousFeatures != null) {
+	                    	if (!previousFeatures.lineStatus.equals("LINESTART"))
+		                    	previousFeatures.lineStatus = "LINEEND";
+	                    }
 	                    if (token != null)
 		                    lineStartX = token.getX();
 	                    features.blockStatus = "BLOCKSTART";

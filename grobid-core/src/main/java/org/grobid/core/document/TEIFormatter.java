@@ -2406,7 +2406,7 @@ public class TEIFormatter {
         }
 
         Element ref = teiElement("ref");
-        ref.addAttribute(new Attribute("type", "figure"));
+        ref.addAttribute(new Attribute("type", "table"));
 
         if (coords != null) {
             ref.addAttribute(new Attribute("coords", coords));

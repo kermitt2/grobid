@@ -82,9 +82,6 @@ public class TEIFulltextSaxParser extends DefaultHandler {
         if (qName.equals("lb")) {
             accumulator.append(" +LINE+ ");
         } 
-		/*else if (qName.equals("pb")) {
-            accumulator.append(" +PAGE+ ");
-        }*/
 		else if (qName.equals("space")) {
             accumulator.append(" ");
         } 
@@ -169,20 +166,11 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 				currentTag = "<equation>";
             } 
 			else if (qName.equals("head")) {
-                /*if (figureBlock) {
-                    currentTags.push("<figure_head>");
-					currentTag = "<figure_head>";
-                }
-				else*/ 
 				{
                     currentTags.push("<section>");
 					currentTag = "<section>";
                 }
             } 
-			/*else if (qName.equals("figDesc")) {
-                currentTags.push("<figDesc>");
-				currentTag = "<figDesc>";
-            }*/
             else if (qName.equals("table")) {
                 currentTags.push("<table>");
 				currentTag = "<table>";
@@ -191,14 +179,6 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                 currentTags.push("<paragraph>");
 				currentTag = "<paragraph>";
             } 
-			/*else if (qName.equals("label")) {
-                currentTags.push("<label>");
-				currentTag = "<label>";
-            } */
-			/*else if (qName.equals("trash")) {
-                currentTags.push("<trash>");
-				currentTag = "<trash>";
-            }*/
 			else if (qName.equals("figure")) {
 	            figureBlock = true;
 	            int length = atts.getLength();
@@ -231,10 +211,19 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 					currentTag = "<figure>";
 				}
 	        } 
-			else {
+			else if (qName.equals("other")) {
                 currentTags.push("<other>");
 				currentTag = "<other>";
-			}
+			} else if (qName.equals("text")) {
+                currentTags.push("<other>");
+                currentTag = "<other>";
+            } else {
+                if (!qName.equals("tei") && !qName.equals("teiHeader") && !qName.equals("fileDesc") && !qName.equals("list")) {
+                    logger.error("Invalid element name: " + qName + " - it will be mapped to the label <other>");
+                    currentTags.push("<other>");
+                    currentTag = "<other>";
+                }
+            }
         }
 		
     }
@@ -267,7 +256,6 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 
             String text = getText();
             // we segment the text
-            //StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
             StringTokenizer st = new StringTokenizer(text, TextUtilities.delimiters, true);
             boolean begin = true;
             while (st.hasMoreTokens()) {
@@ -275,14 +263,9 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                 if (tok.length() == 0) 
 					continue;
 
-                if (tok.equals("+LINE+")) {
+                /*if (tok.equals("+LINE+")) {
                     labeled.add("@newline\n");
-                } 
-				/*else if (tok.equals("+PAGE+")) {
-                    // page break should be a distinct feature
-                    labeled.add("@newpage\n");
-                }*/
-				else {
+                } else*/ {
                     String content = tok;
                     int i = 0;
                     if (content.length() > 0) {

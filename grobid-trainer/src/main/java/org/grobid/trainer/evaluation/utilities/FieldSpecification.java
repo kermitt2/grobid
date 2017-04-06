@@ -307,7 +307,7 @@ public class FieldSpecification {
 		figureCaptionField.fieldName = "figure_caption";
 		figureCaptionField.isTextual = true;
 		figureCaptionField.grobidPath.
-			add("//figure[not(@type)]/description/text()");
+			add("//figure[not(@type)]/figDesc/text()");
 		figureCaptionField.nlmPath.
 			add("//fig/caption/p/text()");
 		fulltextFields.add(figureCaptionField);
@@ -327,7 +327,7 @@ public class FieldSpecification {
 		tableCaptionField.fieldName = "table_caption";
 		tableCaptionField.isTextual = true;
 		tableCaptionField.grobidPath.
-			add("//figure[@type=\"table\"]/description/text()");
+			add("//figure[@type=\"table\"]/figDesc/text()");
 		tableCaptionField.nlmPath.
 			add("//table-wrap/caption/p/text()");
 		fulltextFields.add(tableCaptionField);

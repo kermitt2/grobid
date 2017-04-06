@@ -273,11 +273,11 @@ class FigureParser extends AbstractParser {
                         // we check one ahead
                         tokPtr++;
                         tokenizationToken = tokenizations.get(tokPtr).getText();
-                        if (!tok.equals(tokenizationToken)) {
+                        if (!tok.equals(tokenizationToken) && (tokenizations.size() > tokPtr+1)) {
                             // we try another position forward (second hope!)
                             tokPtr++;
                             tokenizationToken = tokenizations.get(tokPtr).getText();
-                            if (!tok.equals(tokenizationToken)) {
+                            if (!tok.equals(tokenizationToken) && (tokenizations.size() > tokPtr+1)) {
                                 // we try another position forward (last hope!)
                                 tokPtr++;
                                 tokenizationToken = tokenizations.get(tokPtr).getText();
