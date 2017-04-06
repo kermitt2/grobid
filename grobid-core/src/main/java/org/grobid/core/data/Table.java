@@ -55,6 +55,9 @@ public class Table extends Figure {
 			XmlBuilderUtils.addCoords(tableElement, LayoutTokensUtil.getCoordsStringForOneBox(getLayoutTokens()));
 		}
 
+		Element headEl = XmlBuilderUtils.teiElement("head",
+        		LayoutTokensUtil.normalizeText(header.toString()));
+
 		Element descEl = XmlBuilderUtils.teiElement("figDesc");
 		descEl.appendChild(LayoutTokensUtil.normalizeText(getFullDescriptionTokens()).trim());
 		if ((config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("figure"))) {
@@ -67,6 +70,7 @@ public class Table extends Figure {
 			XmlBuilderUtils.addCoords(contentEl, LayoutTokensUtil.getCoordsStringForOneBox(getContentTokens()));
 		}
 
+		tableElement.appendChild(headEl);
 		tableElement.appendChild(descEl);
 		tableElement.appendChild(contentEl);
 

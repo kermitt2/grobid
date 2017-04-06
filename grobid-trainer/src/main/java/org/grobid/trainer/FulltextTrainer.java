@@ -89,34 +89,31 @@ public class FulltextTrainer extends AbstractTrainer{
             // get a factory for SAX parser
             SAXParserFactory spf = SAXParserFactory.newInstance();
 
-//            int n = 0;
             for (File tf : refFiles) {
                 String name = tf.getName();
                 LOGGER.info("Processing: " + name);
 
                 TEIFulltextSaxParser parser2 = new TEIFulltextSaxParser();
-				//parser2.setMode(TEIFulltextSaxParser.FULLTEXT);
-				
+			
                 //get a new instance of parser
                 SAXParser p = spf.newSAXParser();
                 p.parse(tf, parser2);
 
                 List<String> labeled = parser2.getLabeledResult();
-                //totalExamples += parser2.n;
 
-// removing the @newline
-List<String> newLabeled = new ArrayList<String>();
-for(String label : labeled) {
-    if (!label.startsWith("@newline"))
-        newLabeled.add(label);
-} 
-labeled = newLabeled;
+                // removing the @newline
+                /*List<String> newLabeled = new ArrayList<String>();
+                for(String label : labeled) {
+                    if (!label.startsWith("@newline"))
+                        newLabeled.add(label);
+                }
+                labeled = newLabeled;*/
 
-StringBuilder temp = new StringBuilder();
+/*StringBuilder temp = new StringBuilder();
 for(String label : labeled) {
     temp.append(label);
 }
-FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toString());
+FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toString());*/
 
                 // we can now (try to) add the features
                 // we open the featured file
@@ -136,8 +133,12 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
 
                     String line;
                     int l = 0;
-    //                String lastTag = null;
+                    String previousTag = null;
+                    int nbInvalid = 0;
                     while ((line = bis.readLine()) != null) {
+                        if (line.trim().length() == 0)
+                            continue;
+                        // we could apply here some more check on the wellformedness of the line
                         //fulltext.append(line);
                         l++;
                         int ii = line.indexOf(' ');
@@ -155,31 +156,36 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                                 if (localToken.equals(token)) {
                                     String tag = st.nextToken();
                                     fulltext.append(line).append(" ").append(tag);
-    //                                lastTag = tag;
-    //                                found = true;
+                                    previousTag = tag;
                                     q = pp + 1;
+                                    nbInvalid = 0;
                                     //pp = q + 10;
                                     break;
                                 }
                             }
                             if (pp - q > 5) {
                                 LOGGER.warn(name + " / Fulltext trainer: TEI and raw file unsynchronized at raw line " + l + " : " + localLine);
+                                nbInvalid++;
+                                // let's reuse the latest tag
+                                if (previousTag != null)
+                                   fulltext.append(line).append(" ").append(previousTag);
                                 break;
                             }
                         }
-                        /*if (!found) {
-                                 if (lastTag != null)
-                                     header.append(lastTag);
-                             }*/
-                        //fulltext.append("\n");
+                        if (nbInvalid > 20) {
+                            // too many consecutive synchronization issues
+                            break;
+                        }
                     }
-                    bis.close();                
-
-                    //String fulltext = FeatureTrainerUtil.addFeaturesFulltext(labeled, false);
-                    //doc.getFulltextFeatured(boolean firstPass, boolean getHeader);
+                    
+                    bis.close();   
 
                     // format with features for sequence tagging...
-                    writer2.write(fulltext.toString() + "\n");
+                    if (nbInvalid < 10) {
+                        writer2.write(fulltext.toString() + "\n");
+                    } else {
+                        LOGGER.warn(name + " / too many synchronization issues, file not used in training data and to be fixed!");
+                    }
                 } catch (Exception e) {
                     LOGGER.error("Fail to open or process raw file", e);
                 }

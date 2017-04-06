@@ -112,7 +112,6 @@ public class SegmentationTrainer extends AbstractTrainer {
             // get a factory for SAX parser
             SAXParserFactory spf = SAXParserFactory.newInstance();
 
-//            int n = 0;
             for (File tf : refFiles) {
                 String name = tf.getName();
                 LOGGER.info("Processing: " + name);
@@ -124,7 +123,6 @@ public class SegmentationTrainer extends AbstractTrainer {
                 p.parse(tf, parser2);
 
                 List<String> labeled = parser2.getLabeledResult();
-                //totalExamples += parser2.n;
 
                 // we can now add the features
                 // we open the featured file
@@ -135,19 +133,19 @@ public class SegmentationTrainer extends AbstractTrainer {
                         continue;
                     }
 
-// removing the @newline
-List<String> newLabeled = new ArrayList<String>();
-for(String label : labeled) {
-    if (!label.startsWith("@newline"))
-        newLabeled.add(label);
-} 
-labeled = newLabeled;
+                    // removing the @newline
+                    /*List<String> newLabeled = new ArrayList<String>();
+                    for(String label : labeled) {
+                        if (!label.startsWith("@newline"))
+                            newLabeled.add(label);
+                    } 
+                    labeled = newLabeled;*/
 
-StringBuilder temp = new StringBuilder();
+/*StringBuilder temp = new StringBuilder();
 for(String label : labeled) {
     temp.append(label);
 }
-FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toString());
+FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toString());*/
                 
                     int q = 0;
                     BufferedReader bis = new BufferedReader(
@@ -155,14 +153,14 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                     StringBuilder segmentation = new StringBuilder();
                     String line = null;
                     int l = 0;
-    //                String lastTag = null;
+                    String previousTag = null;
+                    int nbInvalid = 0;
                     while ((line = bis.readLine()) != null) {
                         l++;
                         int ii = line.indexOf(' ');
                         String token = null;
                         if (ii != -1)
                             token = line.substring(0, ii);
-    //                    boolean found = false;
                         // we get the label in the labelled data file for the same token
                         for (int pp = q; pp < labeled.size(); pp++) {
                             String localLine = labeled.get(pp);
@@ -172,30 +170,41 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                                 if (localToken.equals(token)) {
                                     String tag = st.nextToken();
                                     segmentation.append(line).append(" ").append(tag);
-    //                                lastTag = tag;
-    //                                found = true;
+                                    previousTag = tag;
                                     q = pp + 1;
+                                    nbInvalid = 0;
                                     //pp = q + 10;
                                     break;
                                 }
                             }
                             if (pp - q > 5) {
                                 LOGGER.warn(name + " / Segmentation trainer: TEI and raw file unsynchronized at raw line " + l + " : " + localLine);
+                                nbInvalid++;
+                                // let's reuse the latest tag
+                                if (previousTag != null)
+                                   segmentation.append(line).append(" ").append(previousTag);
                                 break;
                             }
                         }
+                        if (nbInvalid > 20) {
+                            // too many consecutive synchronization issues
+                            break;
+                        }
                     }
                     bis.close();
-
-                    if ((writer2 == null) && (writer3 != null))
-                        writer3.write(segmentation.toString() + "\n");
-                    if ((writer2 != null) && (writer3 == null))
-                        writer2.write(segmentation.toString() + "\n");
-                    else {
-                        if (Math.random() <= splitRatio)
-                            writer2.write(segmentation.toString() + "\n");
-                        else
+                    if (nbInvalid < 10) {
+                        if ((writer2 == null) && (writer3 != null))
                             writer3.write(segmentation.toString() + "\n");
+                        if ((writer2 != null) && (writer3 == null))
+                            writer2.write(segmentation.toString() + "\n");
+                        else {
+                            if (Math.random() <= splitRatio)
+                                writer2.write(segmentation.toString() + "\n");
+                            else
+                                writer3.write(segmentation.toString() + "\n");
+                        }
+                    } else {
+                        LOGGER.warn(name + " / too many synchronization issues, file not used in training data and to be fixed!");
                     }
                 } catch (Exception e) {
                    LOGGER.error("Fail to open or process raw file", e);
