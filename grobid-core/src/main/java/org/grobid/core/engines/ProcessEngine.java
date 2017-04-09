@@ -98,7 +98,7 @@ public class ProcessEngine implements Closeable {
                         result = getEngine().processHeader(currPdf.getAbsolutePath(), false, null);
 						File outputPathFile = new File(outputPath);
 						if (!outputPathFile.exists()) {
-							outputPathFile.mkdir();
+							outputPathFile.mkdirs();
 						}
 						if (currPdf.getName().endsWith(".pdf")) {
                         	IOUtilities.writeInFile(outputPath + File.separator
