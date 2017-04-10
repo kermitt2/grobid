@@ -2,12 +2,12 @@
 
 ### invalid model format
 
-Using OSX with a non-standard layout (for example the french layout) you get the following error: 
+Using OSX with a non-default locales (e.g. french) you get the following error: 
 ```
 error: invalid model format
 ```
 
-This is because Wapiti is not reading the binary files correctly. 
+This is because Wapiti is not reading the binary files correctly (possibly due to some incompatibles changes in OSX). 
 
 Workaround:
 ```
