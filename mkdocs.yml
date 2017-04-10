@@ -13,7 +13,7 @@ pages:
 - ['Install-Grobid.md', 'User manual', 'Install GROBID']
 - ['Grobid-service.md', 'User manual', 'GROBID service']
 - ['Grobid-batch.md', 'User manual', 'GROBID batch mode']
-- ['Troubleshooting.md', 'Troubleshooting', 'Troubleshooting and known issues']
+- ['Troubleshooting.md', 'User manual', 'Troubleshooting and known issues']
 - ['Grobid-docker.md', 'User manual', 'GROBID with containers']
 - ['Grobid-java-library.md', 'User manual', 'Java library']
 - ['TEI-encoding-of-results.md', 'User manual', 'TEI encoding of results']
