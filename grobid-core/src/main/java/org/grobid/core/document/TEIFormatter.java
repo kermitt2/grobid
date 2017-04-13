@@ -306,7 +306,11 @@ public class TEIFormatter {
         //biblio.createAuthorSet();
         //biblio.attachEmails();
         //biblio.attachAffiliations();
-        tei.append(biblio.toTEIAuthorBlock(6));
+
+        if ( (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("persName")) )
+            tei.append(biblio.toTEIAuthorBlock(6, true));
+        else
+            tei.append(biblio.toTEIAuthorBlock(6, false));
 
         // title
         String title = biblio.getTitle();

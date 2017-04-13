@@ -74,7 +74,7 @@ public class TableParser extends AbstractParser {
                 table.getFullDescriptionTokens().addAll(tokens);
             } else if (clusterLabel.equals(TBL_LABEL)) {
                 //label should also go to head
-                table.appendHeader(clusterContent);
+                table.appendHeader(" " + clusterContent + " ");
                 table.appendLabel(clusterContent);
                 table.getFullDescriptionTokens().addAll(tokens);
             } else if (clusterLabel.equals(TBL_OTHER)) {

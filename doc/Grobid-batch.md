@@ -47,6 +47,8 @@ Will extract and normalize the full text of pdf files. The needed parameters for
 
 * -ignoreAssets: do not extract and save the PDF assets (bitmaps, vector graphics), by default the assets are extracted and saved
 
+* -teiCoordinates: output a subset of the identified structures with coordinates in the original PDF, by default no coordinates are present
+
 Example:
 ```bash
 > java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processFullText 

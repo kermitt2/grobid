@@ -1,0 +1,71 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0807.3577.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>1</label>
+
+            <head>. </head>
+ 
+            <figDesc>The residual Hubble diagram for models 1–4. The black dashed line<lb/> presents Δm for the ΛCDM model.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>2</label>
+
+            <head>. </head>
+ 
+            <figDesc>The distance deceleration parameter (left panel) and the volume<lb/> deceleration parameter (right panel) for models 1–4.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure</head>
+
+            <label>3</label>
+
+            <head>. </head>
+ 
+            <figDesc>The current density distribution (left panel) and deceleration parameter<lb/> (right panel) for model 5.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>4</label>
+
+            <head>. </head>
+ 
+            <figDesc>The current density distribution (left panel) and volume deceleration<lb/> parameter (right panel) for models of cosmic structures (models 6, 7).</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>5</label>
+
+            <head>. </head>
+ 
+            <figDesc>The current density distribution (left panel) and deceleration parameter<lb/> (right panel) for model 8.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+
