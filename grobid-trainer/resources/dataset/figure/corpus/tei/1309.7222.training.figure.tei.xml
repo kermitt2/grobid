@@ -1,0 +1,155 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_1309.7222.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>1</label>
+
+            <head>: </head>
+ 
+            <figDesc>Continuous compliance framework.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>2</label>
+
+            <head>: </head>
+ 
+            <figDesc>Simplified monitoring framework: Illustration</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>3</label>
+
+            <head>: </head>
+ 
+            <figDesc>Economic transition &quot;0 → 0 + &quot;.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>4</label>
+
+            <head>: </head>
+ 
+            <figDesc>Calculation of an estimator of NAV 0 + (ε) using a Monte Carlo method.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>5</label>
+
+            <head>: </head>
+ 
+            <figDesc>Aggregate table.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>6</label>
+
+            <head>: </head>
+ 
+            <figDesc>Target used to monitor the evolution of the risk factors</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure</head>
+
+            <label>7</label>
+
+            <head>: </head>
+ 
+            <figDesc>Monitoring of the approximate SR and of the four underlying risk factors,<lb/> from 30/06/12 to 30/06/13.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>8</label>
+
+            <head>: </head>
+ 
+            <figDesc>Comparison of the standard approximate SR and of a smoothed approximate<lb/> SR -Monitoring from 30/06/12 to 30/06/13.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>9</label>
+
+            <head>: </head>
+ 
+            <figDesc>1D solvency ratio sensitivities.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure</head>
+
+            <label>10</label>
+
+            <head>: </head>
+ 
+            <figDesc>2D solvency ratio sensitivities.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>11</label>
+
+            <head>: </head>
+ 
+            <figDesc>Monitoring target after the ficticious evolution of the monitored risks.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure</head>
+
+            <label>12</label>
+
+            <head>: </head>
+ 
+            <figDesc>Marginal impact of the risks on the SR between the calibration date and a<lb/> virtual monitoring date.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

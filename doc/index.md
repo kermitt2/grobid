@@ -25,6 +25,8 @@
 
 * [TEI encoding of results](TEI-encoding-of-results.md)
 
+* [Coordinates of structures in the original PDF](Coordinates-in-PDF.md)
+
 * [Training and evaluating the GROBID models](Training-the-models-of-Grobid.md)
 
 * [Evaluating against PubMed Central gold data](Evaluation-against-a-PubMedCentral-set.md)

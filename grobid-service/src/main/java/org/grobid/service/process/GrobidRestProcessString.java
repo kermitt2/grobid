@@ -123,7 +123,7 @@ public class GrobidRestProcessString {
 					if (retVal == null) {
 						retVal = "";
 					}
-					retVal += person.toTEI();
+					retVal += person.toTEI(false);
 				}
 			}
 
@@ -181,7 +181,7 @@ public class GrobidRestProcessString {
 					if (retVal == null) {
 						retVal = "";
 					}
-					retVal += person.toTEI();
+					retVal += person.toTEI(false);
 				}
 			}
 
