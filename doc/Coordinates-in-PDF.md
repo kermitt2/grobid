@@ -6,10 +6,10 @@
 
 As of April 2017, GROBID version 0.4.2, coordinate areas can be obtained for the following document substructures: 
 
-* ```persName``` for a complete author name
-* ```figure``` for figure AND table
-* ```ref``` for bibliographical, figure, table and formula reference markers - for example (`Toto and al. 1999`), see `Fig. 1`, as shown by `formula (245)`, etc.
-* ```biblStruct``` for a bibliographical reference
+* ```persName``` for a complete author name,
+* ```figure``` for figure AND table,
+* ```ref``` for bibliographical, figure, table and formula reference markers - for example (_Toto and al. 1999_), see _Fig. 1_, as shown by _formula (245)_, etc.,
+* ```biblStruct``` for a bibliographical reference.
 
 However, there is normally no particular limitation to the type of structures which can have their coordinates in the results, the implementation is on-going, see [issue #69](https://github.com/kermitt2/grobid/issues/69), and it is expected that more or less any structures could be associated with their coordinates in the orginal PDF. 
 
@@ -23,12 +23,15 @@ Example with cURL:
 
 * add coordinates to the figures (and tables) only:
 
+```bash
 > curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=figure --form teiCoordinates=biblStruct localhost:8080/processFulltextDocument
+```
 
 * add coordinates for all the supported elements (sorry for the ugly cURL syntax on this):
 
+```bash
 > curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=persName --form teiCoordinates=figure --form teiCoordinates=ref --form teiCoordinates=biblStruct localhost:8080/processFulltextDocument
-
+```
 
 ### Batch processing
 
@@ -63,16 +66,16 @@ In addition, contrary to usage in computer science, the index associated to the 
 
 The processing of a PDF document by the GROBID result in JSON containing two specific structures for positioning entity annotations in the PDF :
 
-* the list of page size, introduced by the JSON attribute __pages__. The dimension of each page is given successively by two attributes page_height and page_height.
+* the list of page size, introduced by the JSON attribute `pages`. The dimension of each page is given successively by two attributes `page_height` and `page_height`.
 
 Example: 
 ```json
-	"pages": [ {"page_height":792.0, "page_width":612.0}, 
- 	{"page_height":792.0, "page_width":612.0}, 
-	{"page_height":792.0, "page_width":612.0}, 	
+	"pages": [  {"page_height":792.0, "page_width":612.0}, 
+ 				{"page_height":792.0, "page_width":612.0}, 
+				{"page_height":792.0, "page_width":612.0}  ]
 ```
 
-* for each entity, a json attribute __pos__ introduces a __list of bounding boxes__ to identify the area of the annotation corresponding to the entity. Several bounding boxes might be necessary because a textual mention does not need to be a rectangle, but the union of rectangles (a union of bounding boxes), for instance when a mention to be annotated is on several lines.
+* for each entity, a json attribute `pos` introduces a __list of bounding boxes__ to identify the area of the annotation corresponding to the entity. Several bounding boxes might be necessary because a textual mention does not need to be a rectangle, but the union of rectangles (a union of bounding boxes), for instance when a mention to be annotated is on several lines.
 
 Example: 
 ```json
@@ -90,30 +93,37 @@ Example:
 
 A __bounding box__ is defined by the following attributes: 
 
-- __p__: the number of the page (beware, in the PDF world the first page has index 1!), 
+- `p`: the number of the page (beware, in the PDF world the first page has index 1!), 
 
-- __x__: the x-axis coordinate of the upper-left point of the bounding box,
+- `x`: the x-axis coordinate of the upper-left point of the bounding box,
 
-- __y__: the y-axis coordinate of the upper-left point of the bounding box (beware, in the PDF world the y-axis extends downward!),
+- `y`: the y-axis coordinate of the upper-left point of the bounding box (beware, in the PDF world the y-axis extends downward!),
 
-- __h__: the height of the bounding box,
+- `h`: the height of the bounding box,
 
-- __w__: the width of the bounding box.
+- `w`: the width of the bounding box.
 
-As a PDF document expresses value in abstract PDF unit and do not have resolution, the coordinates have to be converted into the scale of the PDF layout used by the client (usually in pixels). This is why the dimension of the pages are necessary for the correct scaling, taking into account that, in a PDF document, pages can be of different size. 
+These JSON annotations target browser applications. As a PDF document expresses value in abstract PDF unit and does not have resolution, the coordinates have to be converted into the scale of the PDF layout used by the client/browser (usually in pixels). This is why the dimension of the pages are necessary for the correct scaling, taking into account that, in a PDF document, pages can be of different size. 
 
-The GROBID console offers a reference implementation with PDF.js for dynamically positioning entity annotations on a processed PDF. 
+The GROBID console offers a reference implementation with PDF.js for dynamically positioning structure annotations on a processed PDF rendered on a web browser:
+
+![PDF annotation service](img/Screenshot1.png)
+
 
 ### Coordinates in TEI/XML results
 
-Coordinates for a given structure appear as an extra attribute ```@coord```. This is part of the [customization to the TEI](TEI-encoding-of-results.md) used by GROBID.
+Coordinates for a given structure appear via an extra attribute ```@coord```. This is part of the [customization to the TEI](TEI-encoding-of-results.md) used by GROBID.
 
-Similarly as for JSON, the coordinates of a structure is provided as a list of bounding boxes, each one seprated by a semicolon ```;```, each bounding box being defined by 5 attributes separated by a comma ```,```:
+Similarly as for JSON, the coordinates of a structure is provided as a list of bounding boxes, each one separated by a semicolon ```;```, each bounding box being defined by 5 attributes separated by a comma ```,```:
 
 Example 1: 
 ```xml
 <author>
-	<persName coords="1,53.80,194.57,58.71,9.29"><forename type="first">Ron</forename><forename type="middle">J</forename><surname>Keizer</surname></persName>
+	<persName coords="1,53.80,194.57,58.71,9.29">
+		<forename type="first">Ron</forename>
+		<forename type="middle">J</forename>
+		<surname>Keizer</surname>
+	</persName>
 </author>
 ```
 
@@ -126,4 +136,4 @@ Example 2:
 
 The above ```@coords``` XML attributes introduces 4 bounding boxes to define the area of the bibliographical reference (typically because the reference is on several line).
 
-As side note, in traditionnal TEI an area should be expressed using SVG. However it would have make the TEI document quickly unreadable and extremely heavy and we are using this more compact notation. 
+As side note, in traditionnal TEI encoding an area should be expressed using SVG. However it would have make the TEI document quickly unreadable and extremely heavy and we are using this more compact notation. 
