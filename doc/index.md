@@ -25,7 +25,7 @@
 
 * [TEI encoding of results](TEI-encoding-of-results.md)
 
-* [Coordinates of structures in the PDF](Coordinates-in-PDF.md)
+* [Coordinates of structures in the original PDF](Coordinates-in-PDF.md)
 
 * [Training and evaluating the GROBID models](Training-the-models-of-Grobid.md)
 
