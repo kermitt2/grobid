@@ -18,6 +18,7 @@ public class TaggingLabels {
     public static final String CITATION_MARKER_LABEL = "<citation_marker>";
     public static final String TABLE_MARKER_LABEL = "<table_marker>";
     public static final String FIGURE_MARKER_LABEL = "<figure_marker>";
+    public static final String EQUATION_MARKER_LABEL = "<equation_marker>";
 
     public final static String PARAGRAPH_LABEL = "<paragraph>";
     public final static String ITEM_LABEL = "<item>";
@@ -64,6 +65,7 @@ public class TaggingLabels {
     public static final TaggingLabel CITATION_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, CITATION_MARKER_LABEL);
     public static final TaggingLabel TABLE_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, TABLE_MARKER_LABEL);
     public static final TaggingLabel FIGURE_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, FIGURE_MARKER_LABEL);
+    public static final TaggingLabel EQUATION_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, EQUATION_MARKER_LABEL);
     public static final TaggingLabel PARAGRAPH = new TaggingLabelImpl(GrobidModels.FULLTEXT, PARAGRAPH_LABEL);
     public static final TaggingLabel ITEM = new TaggingLabelImpl(GrobidModels.FULLTEXT, ITEM_LABEL);
     public static final TaggingLabel OTHER = new TaggingLabelImpl(GrobidModels.FULLTEXT, OTHER_LABEL);
