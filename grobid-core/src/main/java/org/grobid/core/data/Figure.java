@@ -346,7 +346,6 @@ public class Figure {
         return blockPtrs;
     }
 
-
     public void setCaption(StringBuilder caption) {
         this.caption = caption;
     }

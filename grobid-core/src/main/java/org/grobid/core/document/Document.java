@@ -151,7 +151,9 @@ public class Document {
     protected List<Figure> figures;
     protected Predicate<GraphicObject> validGraphicObjectPredicate;
     protected int m;
+    
     protected List<Table> tables;
+    protected List<Equation> equations;
 
     // the analyzer/tokenizer used for processing this document
     Analyzer analyzer = GrobidAnalyzer.getInstance();
@@ -2113,6 +2115,14 @@ public class Document {
 
     public List<Table> getTables() {
         return tables;
+    }
+
+    public void setEquations(List<Equation> equations) {
+        this.equations = equations;
+    }
+
+    public List<Equation> getEquations() {
+        return equations;
     }
 
     public void setResHeader(BiblioItem resHeader) {
