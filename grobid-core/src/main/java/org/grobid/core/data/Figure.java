@@ -246,7 +246,6 @@ public class Figure {
                 LayoutTokensUtil.normalizeText(label.toString()));
             figureElement.appendChild(labelEl);
         }
-
         if (caption != null) {
             Element desc = XmlBuilderUtils.teiElement("figDesc",
                     LayoutTokensUtil.normalizeText(caption.toString()));

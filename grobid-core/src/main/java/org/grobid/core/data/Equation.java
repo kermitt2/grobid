@@ -26,25 +26,25 @@ public class Equation {
 	protected StringBuilder content = null;
     protected StringBuilder label = null;
     protected String id = null;
-    protected int start = -1; // start position in the full text tokenization
-    protected int end = -1; // end position in the full text tokenization
-    protected LayoutToken startToken = null; // start layout token
-    protected LayoutToken endToken = null; // end layout token
+    //protected int start = -1; // start position in the full text tokenization
+    //protected int end = -1; // end position in the full text tokenization
+    //protected LayoutToken startToken = null; // start layout token
+    //protected LayoutToken endToken = null; // end layout token
     private List<BoundingBox> textArea;
     private List<LayoutToken> layoutTokens;
 
 	private List<LayoutToken> contentTokens = new ArrayList<>();
 	private List<LayoutToken> labelTokens = new ArrayList<>();
 
-	private SortedSet<Integer> blockPtrs;
+	//private SortedSet<Integer> blockPtrs;
 
     public Equation() {
     	content = new StringBuilder();
     	label = new StringBuilder();
     }
 
-    public String toTEI(GrobidAnalysisConfig config) {
-		if (StringUtils.isEmpty(content)) {
+    public Element toTEIElement(GrobidAnalysisConfig config) {
+    	if (StringUtils.isEmpty(content)) {
 			return null;
 		}
 
@@ -59,12 +59,21 @@ public class Equation {
 
 		formulaElement.appendChild(LayoutTokensUtil.normalizeText(content.toString()).trim());
 
-		Element labelEl = XmlBuilderUtils.teiElement("label",
-        		LayoutTokensUtil.normalizeText(label.toString()));
+		if ( (label != null) && (label.length()>0) ) {
+			Element labelEl = XmlBuilderUtils.teiElement("label",
+    	    		LayoutTokensUtil.normalizeText(label.toString()));
+			formulaElement.appendChild(labelEl);
+		}
+		
+		return formulaElement;
+    }
 
-		formulaElement.appendChild(labelEl);
-
-		return formulaElement.toXML();
+    public String toTEI(GrobidAnalysisConfig config) {
+		Element formulaElement = toTEIElement(config);
+		if (formulaElement != null)
+			return formulaElement.toXML();
+		else
+			return null;
     }
 
 	public List<LayoutToken> getContentTokens() {
@@ -91,23 +100,29 @@ public class Equation {
         return content.toString();
     }
 
-    public void setStart(int start) {
+    /*public void setStart(int start) {
         this.start = start;
-    }
+    }*/
 
     public int getStart() {
-        return start;
+    	if ( (layoutTokens != null) && (layoutTokens.size()>0) )
+	        return layoutTokens.get(0).getOffset();
+	    else 
+	    	return -1;
     }
 
-    public void setEnd(int end) {
+    /*public void setEnd(int end) {
         this.end = end;
-    }
+    }*/
 
     public int getEnd() {
-        return end;
+        if ( (layoutTokens != null) && (layoutTokens.size()>0) )
+	        return layoutTokens.get(layoutTokens.size()-1).getOffset();
+	    else 
+	    	return -1;
     }
 
-    public void setStartToken(LayoutToken start) {
+    /*public void setStartToken(LayoutToken start) {
         this.startToken = start;
     }
 
@@ -121,7 +136,7 @@ public class Equation {
 
     public LayoutToken getEndToken() {
         return endToken;
-    }
+    }*/
 
     public void setId() {
         id = TextUtilities.cleanField(label.toString(), false);
@@ -135,13 +150,13 @@ public class Equation {
         return id;
     }
 
-    public void setBlockPtrs(SortedSet<Integer> blockPtrs) {
+    /*public void setBlockPtrs(SortedSet<Integer> blockPtrs) {
         this.blockPtrs = blockPtrs;
     }
 
     public SortedSet<Integer> getBlockPtrs() {
         return blockPtrs;
-    }
+    }*/
 
     public List<LayoutToken> getLayoutTokens() {
         return layoutTokens;
@@ -149,5 +164,22 @@ public class Equation {
 
     public void setLayoutTokens(List<LayoutToken> layoutTokens) {
         this.layoutTokens = layoutTokens;
+    }
+
+    public void addLayoutToken(LayoutToken token) {
+    	if (token == null)
+    		return;
+    	if (layoutTokens == null)
+    		layoutTokens = new ArrayList<LayoutToken>();
+    	layoutTokens.add(token);
+    }
+
+    public void addLayoutTokens(List<LayoutToken> tokens) {
+    	if (tokens == null)
+    		return;
+    	if (layoutTokens == null)
+    		layoutTokens = new ArrayList<LayoutToken>();
+    	for(LayoutToken token : tokens)
+	    	layoutTokens.add(token);
     }
 }
