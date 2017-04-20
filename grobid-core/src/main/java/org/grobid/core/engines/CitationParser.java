@@ -15,6 +15,7 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorCitation;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.Consolidation;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.counters.CntManager;
@@ -72,7 +73,7 @@ public class CitationParser extends AbstractParser {
             //    final String tok = st.nextToken();
             for (String tok : tokenizations) {
                 //tokenizations.add(tok);
-                if (!tok.equals(" ")) {
+                if (!LayoutTokensUtil.spaceyToken(tok)) {
                     citationBlocks.add(tok + " <citation>");
                 }
             }

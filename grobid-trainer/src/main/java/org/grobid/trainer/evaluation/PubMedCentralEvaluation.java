@@ -33,7 +33,8 @@ import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
 import scala.Option;
 
 /**
- * Evaluation against PubMedCentral native XML documents.
+ * Evaluation against PubMedCentral native XML documents. This is an end-to-end evaluation involving
+ * complete document processing, and therefore a complete set of CRF models.
  *
  * @author Patrice Lopez
  */

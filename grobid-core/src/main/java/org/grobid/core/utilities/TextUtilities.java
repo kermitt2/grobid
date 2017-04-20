@@ -29,9 +29,9 @@ import static org.apache.commons.lang3.StringUtils.trim;
  */
 public class TextUtilities {
 
-    public static final String punctuations = " ,:;?.!)-–\"“”‘’'`$]*\u2666\u2665\u2663\u2660";
-    public static final String fullPunctuations = "([ ,:;?.!/)-–\"“”‘’'`$]*\u2666\u2665\u2663\u2660";
-    public static String delimiters = " \n\t\u00A0" + fullPunctuations;
+    public static final String punctuations = " •*,:;?.!)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
+    public static final String fullPunctuations = "([ •*,:;?.!/)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
+    public static String delimiters = "\n\r\t\u00A0" + fullPunctuations;
 
     public static final String OR = "|";
     public static final String NEW_LINE = "\n";
@@ -624,7 +624,7 @@ public class TextUtilities {
             return null;
         if (string.length() == 0)
             return string;
-        string = string.replace("@BULLET", "•");
+        //string = string.replace("@BULLET", "•");
         StringBuffer sb = new StringBuffer(string.length());
         // true if last char was blank
         boolean lastWasBlankChar = false;
@@ -838,19 +838,19 @@ public class TextUtilities {
                 }
                 // quote
                 case '\u201C': {
-                    res += " \" ";
+                    res += "\"";
                     break;
                 }
                 case '\u201D': {
-                    res += " \" ";
+                    res += "\"";
                     break;
                 }
                 case '\u201E': {
-                    res += " \" ";
+                    res += "\"";
                     break;
                 }
                 case '\u201F': {
-                    res += " \" ";
+                    res += "\"";
                     break;
                 }
                 case '\u2019': {
@@ -861,61 +861,61 @@ public class TextUtilities {
                     res += "'";
                     break;
                 }
-                // bullet
+                // bullet uniformity
                 case '\u2022': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 case '\u2023': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 case '\u2043': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 case '\u204C': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 case '\u204D': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 case '\u2219': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 case '\u25C9': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 case '\u25D8': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 case '\u25E6': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 case '\u2619': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 case '\u2765': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 case '\u2767': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 case '\u29BE': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 case '\u29BF': {
-                    res += "@BULLET";
+                    res += "•";
                     break;
                 }
                 // asterix

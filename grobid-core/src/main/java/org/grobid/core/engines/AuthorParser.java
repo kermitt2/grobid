@@ -145,8 +145,7 @@ public class AuthorParser {
                     continue;
                 }
 
-                LayoutToken layoutToken;
-                layoutToken = tokenizations.get(ptr++);
+                LayoutToken layoutToken = tokenizations.get(ptr++);
 
                 StringTokenizer st3 = new StringTokenizer(line, "\t");
                 int ll = st3.countTokens();
@@ -392,16 +391,11 @@ public class AuthorParser {
 
                 if (nameLabel(s1)) {
                     aut.getLayoutTokens().add(layoutToken);
-                    while (ptr < tokenizations.size() && (LayoutTokensUtil.spaceyToken(tokenizations.get(ptr).t()) || tokenizations.get(ptr).t().trim().isEmpty())) {
-                        aut.getLayoutTokens().add(tokenizations.get(ptr));
-                        ptr++;
-                    }
-                } else {
-                    while (ptr < tokenizations.size() && (LayoutTokensUtil.spaceyToken(tokenizations.get(ptr).t()) || tokenizations.get(ptr).t().trim().isEmpty())) {
-                        ptr++;
-                    }
                 }
-
+                while (ptr < tokenizations.size() && (LayoutTokensUtil.spaceyToken(tokenizations.get(ptr).t()) || tokenizations.get(ptr).t().trim().isEmpty())) {
+                    aut.getLayoutTokens().add(tokenizations.get(ptr));
+                    ptr++;
+                }
             }
             if (aut.notNull()) {
                 if (fullAuthors == null) {

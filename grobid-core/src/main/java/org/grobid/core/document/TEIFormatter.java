@@ -49,7 +49,8 @@ public class TEIFormatter {
     public static final Set<TaggingLabel> MARKER_LABELS = Sets.newHashSet(
             TaggingLabels.CITATION_MARKER,
             TaggingLabels.FIGURE_MARKER,
-            TaggingLabels.TABLE_MARKER);
+            TaggingLabels.TABLE_MARKER,
+            TaggingLabels.EQUATION_MARKER);
 
     // possible association to Grobid customised TEI schemas: DTD, XML schema, RelaxNG or compact RelaxNG
     // DEFAULT means no schema association in the generated XML documents
@@ -306,7 +307,11 @@ public class TEIFormatter {
         //biblio.createAuthorSet();
         //biblio.attachEmails();
         //biblio.attachAffiliations();
-        tei.append(biblio.toTEIAuthorBlock(6));
+
+        if ( (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("persName")) )
+            tei.append(biblio.toTEIAuthorBlock(6, true));
+        else
+            tei.append(biblio.toTEIAuthorBlock(6, false));
 
         // title
         String title = biblio.getTitle();
@@ -880,6 +885,7 @@ public class TEIFormatter {
                                    LayoutTokenization layoutTokenization,
                                    List<Figure> figures,
                                    List<Table> tables,
+                                   List<Equation> equations,
                                    Document doc,
                                    GrobidAnalysisConfig config) throws Exception {
         if ((result == null) || (layoutTokenization == null) || (layoutTokenization.getTokenization() == null)) {
@@ -888,7 +894,7 @@ public class TEIFormatter {
         }
         buffer.append("\t\t<body>\n");
         buffer = toTEITextPiece(buffer, result, biblio, bds,
-                layoutTokenization, figures, tables, doc, config);
+                layoutTokenization, figures, tables, equations, doc, config);
 
         // notes are still in the body
         buffer = toTEINote(buffer, doc, config);
@@ -974,7 +980,7 @@ public class TEIFormatter {
         StringBuilder buffer2 = new StringBuilder();
 
         buffer2 = toTEITextPiece(buffer2, reseAcknowledgement, null, bds,
-                new LayoutTokenization(tokenizationsAcknowledgement), null, null, doc, config);
+                new LayoutTokenization(tokenizationsAcknowledgement), null, null, null, doc, config);
         String acknowResult = buffer2.toString();
         String[] acknowResultLines = acknowResult.split("\n");
         boolean extraDiv = false;
@@ -1015,7 +1021,7 @@ public class TEIFormatter {
 
         buffer.append("\t\t\t<div type=\"annex\">\n");
         buffer = toTEITextPiece(buffer, result, biblio, bds,
-                new LayoutTokenization(tokenizations), null, null, doc, config);
+                new LayoutTokenization(tokenizations), null, null, null, doc, config);
         buffer.append("\t\t\t</div>\n");
 
         return buffer;
@@ -1028,12 +1034,11 @@ public class TEIFormatter {
                                          LayoutTokenization layoutTokenization,
                                          List<Figure> figures,
                                          List<Table> tables,
+                                         List<Equation> equations,
                                          Document doc,
                                          GrobidAnalysisConfig config) throws Exception {
-
-
         TaggingLabel lastClusterLabel = null;
-
+//System.out.println(result);
         int startPosition = buffer.length();
 
         boolean figureBlock = false; // indicate that a figure or table sequence was met
@@ -1110,9 +1115,12 @@ public class TEIFormatter {
                 } else if (clusterLabel.equals(TaggingLabels.FIGURE_MARKER)) {
                     refNodes = markReferencesFigureTEI(chunkRefString, refTokens, figures,
                             config.isGenerateTeiCoordinates("ref"));
-                } else if (clusterLabel.equals(TABLE_MARKER)) {
+                } else if (clusterLabel.equals(TaggingLabels.TABLE_MARKER)) {
                     refNodes = markReferencesTableTEI(chunkRefString, refTokens, tables,
                             config.isGenerateTeiCoordinates("ref"));
+                } else if (clusterLabel.equals(TaggingLabels.EQUATION_MARKER)) {
+                    refNodes = markReferencesEquationTEI(chunkRefString, refTokens, equations,
+                            config.isGenerateTeiCoordinates("ref"));                    
                 } else {
                     throw new IllegalStateException("Unsupported marker type: " + clusterLabel);
                 }
@@ -1931,6 +1939,7 @@ public class TEIFormatter {
     }
 
     /**
+     * DEPRECATED: use markReferencesTEILuceneBased instead
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
      */
     public String markReferencesTEI(String text, List<LayoutToken> refTokens,
@@ -2337,7 +2346,7 @@ public class TEIFormatter {
     public List<Node> markReferencesFigureTEI(String text, List<LayoutToken> refTokens,
                                               List<Figure> figures,
                                               boolean generateCoordinates) {
-        if (text == null || text.trim().isEmpty() || figures == null) {
+        if (text == null || text.trim().isEmpty()) {
             return null;
         }
 
@@ -2346,13 +2355,15 @@ public class TEIFormatter {
         String textLow = text.toLowerCase();
         String bestFigure = null;
 
-        for (Figure figure : figures) {
-            if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
-                String label = TextUtilities.cleanField(figure.getLabel(), false);
-                if ((label.length() > 0) &&
-                        (textLow.contains(label.toLowerCase()))) {
-                    bestFigure = figure.getId();
-                    break;
+        if (figures != null) {
+            for (Figure figure : figures) {
+                if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
+                    String label = TextUtilities.cleanField(figure.getLabel(), false);
+                    if ((label.length() > 0) &&
+                            (textLow.contains(label.toLowerCase()))) {
+                        bestFigure = figure.getId();
+                        break;
+                    }
                 }
             }
         }
@@ -2381,7 +2392,7 @@ public class TEIFormatter {
     public List<Node> markReferencesTableTEI(String text, List<LayoutToken> refTokens,
                                              List<Table> tables,
                                              boolean generateCoordinates) {
-        if (text == null || text.trim().isEmpty() || tables == null) {
+        if (text == null || text.trim().isEmpty()) {
             return null;
         }
 
@@ -2389,12 +2400,22 @@ public class TEIFormatter {
 
         String textLow = text.toLowerCase();
         String bestTable = null;
-        for (Table table : tables) {
-            if ((table.getId() != null) &&
-                    (table.getId().length() > 0) &&
-                    (textLow.contains(table.getId().toLowerCase()))) {
-                bestTable = table.getId();
-                break;
+        if (tables != null) {
+            for (Table table : tables) {
+                /*if ((table.getId() != null) &&
+                        (table.getId().length() > 0) &&
+                        (textLow.contains(table.getId().toLowerCase()))) {
+                    bestTable = table.getId();
+                    break;
+                }*/
+                if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
+                    String label = TextUtilities.cleanField(table.getLabel(), false);
+                    if ((label.length() > 0) &&
+                            (textLow.contains(label.toLowerCase()))) {
+                        bestTable = table.getId();
+                        break;
+                    }
+                }
             }
         }
 
@@ -2406,7 +2427,7 @@ public class TEIFormatter {
         }
 
         Element ref = teiElement("ref");
-        ref.addAttribute(new Attribute("type", "figure"));
+        ref.addAttribute(new Attribute("type", "table"));
 
         if (coords != null) {
             ref.addAttribute(new Attribute("coords", coords));
@@ -2417,13 +2438,50 @@ public class TEIFormatter {
         }
         nodes.add(ref);
         return nodes;
+    }
 
-//        if (bestTable != null) {
-//            text = "<ref type=\"table\" target=\"#tab_" + bestTable + "\" " + coords + ">" + text + "</ref>";
-//        } else {
-//            text = "<ref type=\"table\">" + text + "</ref>";
-//        }
-//        return text;
+    public List<Node> markReferencesEquationTEI(String text, List<LayoutToken> refTokens,
+                                             List<Equation> equations,
+                                             boolean generateCoordinates) {
+        if (text == null || text.trim().isEmpty()) {
+            return null;
+        }
+
+        List<Node> nodes = new ArrayList<>();
+
+        String textLow = text.toLowerCase();
+        String bestFormula = null;
+        if (equations != null) {
+            for (Equation equation : equations) {
+                if ((equation.getLabel() != null) && (equation.getLabel().length() > 0)) {
+                    String label = TextUtilities.cleanField(equation.getLabel(), false);
+                    if ((label.length() > 0) &&
+                            (textLow.contains(label.toLowerCase()))) {
+                        bestFormula = equation.getId();
+                        break;
+                    }
+                }
+            }
+        }
+        text = text.replace("\n", " ").trim();
+
+        String coords = null;
+        if (generateCoordinates && refTokens != null) {
+            coords = LayoutTokensUtil.getCoordsString(refTokens);
+        }
+
+        Element ref = teiElement("ref");
+        ref.addAttribute(new Attribute("type", "formula"));
+
+        if (coords != null) {
+            ref.addAttribute(new Attribute("coords", coords));
+        }
+        ref.appendChild(text);
+        if (bestFormula != null) {
+            ref.addAttribute(new Attribute("target", "#formula_" + bestFormula));
+        }
+        nodes.add(ref);
+        return nodes;
     }
 
     private String normalizeText(String localText) {

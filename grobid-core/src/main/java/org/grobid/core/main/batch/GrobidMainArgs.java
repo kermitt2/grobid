@@ -26,6 +26,8 @@ public class GrobidMainArgs {
 
 	private boolean saveAssets = true;
 
+	private boolean teiCoordinates = false;
+
 	/**
 	 * @return the path2grobidHome
 	 */
@@ -158,6 +160,21 @@ public class GrobidMainArgs {
 	 */
 	public final void setRecursive(final boolean pRecursive) {
 		recursive = pRecursive;
+	}
+
+	/**
+	 * @return true if output a subset of the identified structures with coordinates in the original PDF 
+	 */
+	public final boolean getTeiCoordinates() {
+		return teiCoordinates;
+	}
+
+	/**
+	 * @param pTeiCoordinates
+	 *            output a subset of the identified structures with coordinates in the original PDF 
+	 */
+	public final void setTeiCoordinates(final boolean pTeiCoordinates) {
+		teiCoordinates = pTeiCoordinates;
 	}
 
 }

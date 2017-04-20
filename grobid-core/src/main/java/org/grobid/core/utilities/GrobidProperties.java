@@ -378,7 +378,9 @@ public class GrobidProperties {
             try {
                 grobidVersion = (String) context.lookup("java:comp/env/" + GrobidPropertyKeys.PROP_GROBID_VERSION);
             } catch (final Exception exp) {
-                throw new GrobidPropertyException("Could not set GROBID VERSION", exp);
+                LOGGER.error("Could not set GROBID VERSION", exp);
+                grobidVersion = "unknown";
+//                throw new GrobidPropertyException("Could not set GROBID VERSION", exp);
             }
             GROBID_VERSION = grobidVersion;
         }

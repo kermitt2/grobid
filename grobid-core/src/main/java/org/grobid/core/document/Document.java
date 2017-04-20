@@ -10,6 +10,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
 
+import org.apache.commons.io.IOUtils;
 import org.grobid.core.analyzers.GrobidDefaultAnalyzer;
 import org.grobid.core.analyzers.Analyzer;
 import org.grobid.core.analyzers.GrobidAnalyzer;
@@ -150,7 +151,9 @@ public class Document {
     protected List<Figure> figures;
     protected Predicate<GraphicObject> validGraphicObjectPredicate;
     protected int m;
+    
     protected List<Table> tables;
+    protected List<Equation> equations;
 
     // the analyzer/tokenizer used for processing this document
     Analyzer analyzer = GrobidAnalyzer.getInstance();
@@ -378,31 +381,21 @@ public class Document {
         } catch (Exception e) {
             throw new GrobidException("Cannot parse file: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
         } finally {
-            if (in != null) {
-                try {
-                    in.close();
-                } catch (IOException e) {
-                    LOGGER.error("Cannot close input stream", e);
-                }
-            }
+            IOUtils.closeQuietly(in);
         }
 
-		try {
-			// parsing of the annotation XML file
-			in = new FileInputStream(fileAnnot);
-			SAXParser p = spf.newSAXParser();
-			p.parse(in, parserAnnot);
-		} catch (GrobidException e) {
-            throw e;
-        } catch (Exception e) {
-            LOGGER.error("Cannot parse file: " + fileAnnot, e, GrobidExceptionStatus.PARSING_ERROR);
-        } finally {
-            if (in != null) {
-                try {
-                    in.close();
-                } catch (IOException e) {
-                    LOGGER.error("Cannot close input stream", e);
-                }
+        if (fileAnnot.exists()) {
+            try {
+                // parsing of the annotation XML file
+                in = new FileInputStream(fileAnnot);
+                SAXParser p = spf.newSAXParser();
+                p.parse(in, parserAnnot);
+            } catch (GrobidException e) {
+                throw e;
+            } catch (Exception e) {
+                LOGGER.error("Cannot parse file: " + fileAnnot, e, GrobidExceptionStatus.PARSING_ERROR);
+            } finally {
+                IOUtils.closeQuietly(in);
             }
         }
 
@@ -1261,9 +1254,9 @@ public class Document {
                 String localText = block.getText();
                 if (localText != null) {
                     localText = localText.trim();
-                    if (localText.startsWith("@BULLET")) {
+                    /*if (localText.startsWith("@BULLET")) {
                         localText = localText.replace("@BULLET", " • ");
-                    }
+                    }*/
                     if (localText.startsWith("@IMAGE")) {
                         localText = "";
                     }
@@ -2122,6 +2115,14 @@ public class Document {
 
     public List<Table> getTables() {
         return tables;
+    }
+
+    public void setEquations(List<Equation> equations) {
+        this.equations = equations;
+    }
+
+    public List<Equation> getEquations() {
+        return equations;
     }
 
     public void setResHeader(BiblioItem resHeader) {
