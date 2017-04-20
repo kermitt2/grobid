@@ -6,6 +6,7 @@ import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Figure;
 import org.grobid.core.data.Table;
+import org.grobid.core.data.Equation;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
@@ -47,6 +48,8 @@ import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
+
+import static org.apache.commons.lang3.StringUtils.*;
 
 /**
  * @author Patrice Lopez
@@ -120,6 +123,7 @@ public class FullTextParser extends AbstractParser {
 			LayoutTokenization layoutTokenization = null;
 			List<Figure> figures = null;
 			List<Table> tables = null;
+			List<Equation> equations = null;
 			if (featSeg != null) {
 				// if featSeg is null, it usually means that no body segment is found in the
 				// document segmentation
@@ -127,14 +131,19 @@ public class FullTextParser extends AbstractParser {
 				layoutTokenization = featSeg.getB();
 				//tokenizationsBody = featSeg.getB().getTokenization();
                 //layoutTokensBody = featSeg.getB().getLayoutTokens();
-				if ( (bodytext != null) && (bodytext.trim().length() > 0) ) {
+				if ( (bodytext != null) && (bodytext.trim().length() > 0) ) {				
 					rese = label(bodytext);
+				} else {
+					LOGGER.debug("Fulltext model: The input to the CRF processing is empty");
 				}
 				//LOGGER.info(rese);
 				//System.out.println(rese);
 				// we apply now the figure and table models based on the fulltext labeled output
 				figures = processFigures(rese, layoutTokenization.getTokenization(), doc);
 				tables = processTables(rese, layoutTokenization.getTokenization(), doc);
+				equations = processEquations(rese, layoutTokenization.getTokenization(), doc);
+			} else {
+				LOGGER.debug("Fulltext model: The featured body is empty");
 			}
 
             // header processing
@@ -177,7 +186,8 @@ public class FullTextParser extends AbstractParser {
 				// document segmentation
 				String bodytext = featSeg.getA();
 				tokenizationsBody2 = featSeg.getB().getTokenization();
-	            rese2 = label(bodytext);
+				if (isNotEmpty(trim(bodytext))) 
+	            	rese2 = label(bodytext);
 				//System.out.println(rese);
 			}
 
@@ -186,7 +196,7 @@ public class FullTextParser extends AbstractParser {
 				rese, rese2, // labeled data for body and annex
 				layoutTokenization, tokenizationsBody2, // tokenization for body and annex
 				resHeader, resCitations, // header and bibliographical citations
-				figures, tables,
+				figures, tables, equations, 
 				config);
             return doc;
         } catch (GrobidException e) {
@@ -409,6 +419,11 @@ public class FullTextParser extends AbstractParser {
 	                    features.lineStatus = "LINESTART";
 	                    if (token != null)
 		                    lineStartX = token.getX();
+		                // be sure that previous token is closing a line, except if it's a starting line
+	                    if (previousFeatures != null) {
+	                    	if (!previousFeatures.lineStatus.equals("LINESTART"))
+		                    	previousFeatures.lineStatus = "LINEEND";
+	                    }
 	                }
 	                Matcher m0 = featureFactory.isPunct.matcher(text);
 	                if (m0.find()) {
@@ -442,6 +457,11 @@ public class FullTextParser extends AbstractParser {
 
 	                if (n == 0) {
 	                    features.lineStatus = "LINESTART";
+	                    // be sure that previous token is closing a line, except if it's a starting line
+	                    if (previousFeatures != null) {
+	                    	if (!previousFeatures.lineStatus.equals("LINESTART"))
+		                    	previousFeatures.lineStatus = "LINEEND";
+	                    }
 	                    if (token != null)
 		                    lineStartX = token.getX();
 	                    features.blockStatus = "BLOCKSTART";
@@ -1008,6 +1028,10 @@ public class FullTextParser extends AbstractParser {
                             addSpace, 3, false);
                 }
                 if (!output) {
+                    output = writeField(buffer, s1, lastTag0, s2, "<equation_marker>", "<ref type=\"formula\">",
+                            addSpace, 3, false);
+                }
+                if (!output) {
                     output = writeField(buffer, s1, lastTag0, s2, "<section>",
 						"<head>", addSpace, 3, false);
                 }
@@ -1121,6 +1145,11 @@ public class FullTextParser extends AbstractParser {
                     buffer.append(" ").append(outField).append(s2);
                 else
                     buffer.append(outField).append(s2);
+            } else if (field.equals("<equation_marker>")) {
+                if (addSpace)
+                    buffer.append(" ").append(outField).append(s2);
+                else
+                    buffer.append(outField).append(s2);
             } /*else if (field.equals("<label>")) {
                 if (addSpace)
                     buffer.append(" ").append(outField).append(s2);
@@ -1142,7 +1171,9 @@ public class FullTextParser extends AbstractParser {
                     buffer.append("\t");
                 }
                 buffer.append(outField).append(s2);
-            } else if (!lastTag0.equals("<citation_marker>") && !lastTag0.equals("<figure_marker>")
+            } else if (!lastTag0.equals("<citation_marker>") 
+            	&& !lastTag0.equals("<figure_marker>")
+            	&& !lastTag0.equals("<equation_marker>")
                     //&& !lastTag0.equals("<figure>")
                     ) {
                 for (int i = 0; i < nbIndent; i++) {
@@ -1207,7 +1238,7 @@ public class FullTextParser extends AbstractParser {
                 else
                     buffer.append(s2);
             } else if (!lastTag0.equals("<citation_marker>") && !lastTag0.equals("<figure_marker>")
-                    && !lastTag0.equals("<table_marker>") ) {
+                    && !lastTag0.equals("<table_marker>") && !lastTag0.equals("<equation_marker>")) {
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
@@ -1239,7 +1270,7 @@ public class FullTextParser extends AbstractParser {
         // reference_marker and citation_marker are two exceptions because they can be embedded
 
         if (!currentTag0.equals(lastTag0) || currentTag.equals("I-<paragraph>") || currentTag.equals("I-<item>")) {
-            if (currentTag0.equals("<citation_marker>") ||
+            if (currentTag0.equals("<citation_marker>") || currentTag0.equals("<equation_marker>") ||
 				currentTag0.equals("<figure_marker>") || currentTag0.equals("<table_marker>")) {
                 return res;
             }
@@ -1252,6 +1283,7 @@ public class FullTextParser extends AbstractParser {
             } else if (lastTag0.equals("<paragraph>") &&
 						!currentTag0.equals("<citation_marker>") &&
 						!currentTag0.equals("<table_marker>") &&
+						!currentTag0.equals("<equation_marker>") &&
 						!currentTag0.equals("<figure_marker>")
 				) {
                 buffer.append("</p>\n\n");
@@ -1282,6 +1314,8 @@ public class FullTextParser extends AbstractParser {
                 buffer.append("</ref>");
             } else if (lastTag0.equals("<table_marker>")) {
                 buffer.append("</ref>");
+            } else if (lastTag0.equals("<equation_marker>")) {
+                buffer.append("</ref>");
             } else {
                 res = false;
 
@@ -1294,13 +1328,11 @@ public class FullTextParser extends AbstractParser {
     /**
      * Process figures identified by the full text model
      */
-    private List<Figure> processFigures(String rese,
-                                                  List<LayoutToken> tokenizations,
-                                                  Document doc) {
+    private List<Figure> processFigures(String rese, List<LayoutToken> layoutTokens, Document doc) {
 
         List<Figure> results = new ArrayList<>();
 
-        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, layoutTokens, true);
 
         for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
 				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.FIGURE))) {
@@ -1707,6 +1739,50 @@ public class FullTextParser extends AbstractParser {
 //    	return results;
 	}
 
+	/**
+     * Process equations identified by the full text model
+     */
+    private List<Equation> processEquations(String rese,
+									List<LayoutToken> tokenizations,
+									Document doc) {
+		List<Equation> results = new ArrayList<>();
+		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
+
+		for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
+				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.EQUATION))) {
+			List<LayoutToken> tokenizationEquation = cluster.concatTokens();
+			Equation result = new Equation();
+			/*parsers.getEquationParser().processing(
+					tokenizationEquation,
+					cluster.getFeatureBlock()
+			);*/
+
+			SortedSet<Integer> blockPtrs = new TreeSet<>();
+			for (LayoutToken lt : tokenizationEquation) {
+				if (!LayoutTokensUtil.spaceyToken(lt.t())) {
+					blockPtrs.add(lt.getBlockPtr());
+				}
+				result.appendContent(lt.getText());
+			}
+			result.setBlockPtrs(blockPtrs);
+			result.setLayoutTokens(tokenizationEquation);
+
+			// the first token could be a space from previous page
+			for (LayoutToken lt : tokenizationEquation) {
+				if (!LayoutTokensUtil.spaceyToken(lt.t())) {
+					//result.setPage(lt.getPage());
+					break;
+				}
+			}
+			results.add(result);
+			//result.setId("" + (results.size() - 1));
+		}
+
+		doc.setEquations(results);
+
+		return results;
+	}
+
  	/**
      * Create training data for the table as identified by the full text model.
      * Return the pair (TEI fragment, CRF raw data).
@@ -1836,6 +1912,7 @@ public class FullTextParser extends AbstractParser {
                        List<BibDataSet> resCitations,
                        List<Figure> figures,
                        List<Table> tables,
+                       List<Equation> equations,
                        GrobidAnalysisConfig config) {
         if (doc.getBlocks() == null) {
             return;
@@ -1848,7 +1925,7 @@ public class FullTextParser extends AbstractParser {
 			//System.out.println(rese);
             //int mode = config.getFulltextProcessingMode();
 			tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
-					layoutTokenization, figures, tables, doc, config);
+					layoutTokenization, figures, tables, equations, doc, config);
 
 			tei.append("\t\t<back>\n");
 

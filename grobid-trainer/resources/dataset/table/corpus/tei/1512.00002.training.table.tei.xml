@@ -7,7 +7,7 @@
 
         <figure type="table">
 
-            <head>TABLE  <label>I</label>. DETECTOR DISPLACEMENT ε IN IACTS FOR FSOC OPERATION.<lb/> </head>
+            <head>TABLE <label>I</label>. DETECTOR DISPLACEMENT ε IN IACTS FOR FSOC OPERATION.<lb/> </head>
             <lb/> 
             <table>Telescope<lb/> Diameter<lb/> D (m)<lb/> f/D<lb/> Focal length<lb/> f (m)<lb/> ε (cm)<lb/> MAGIC<lb/> 17<lb/> 1<lb/> 17<lb/> 2.9<lb/> CTA-SST<lb/> 6<lb/> 0.5<lb/> 12<lb/> 1.4<lb/> CTA-MST<lb/> 12<lb/> 1 / 0.75<lb/> 16<lb/> 2.5<lb/> CTA-LST<lb/> 24<lb/> 1.25<lb/> 30<lb/> 9</table>
         </figure>

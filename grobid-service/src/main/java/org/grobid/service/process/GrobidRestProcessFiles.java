@@ -178,7 +178,8 @@ public class GrobidRestProcessFiles {
                                                             final boolean htmlFormat,
                                                             final int startPage,
                                                             final int endPage,
-                                                            final boolean generateIDs) {
+                                                            final boolean generateIDs,
+                                                            final List<String> teiCoordinates) {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal;
@@ -200,6 +201,7 @@ public class GrobidRestProcessFiles {
                                 .startPage(startPage)
                                 .endPage(endPage)
                                 .generateTeiIds(generateIDs)
+                                .generateTeiCoordinates(teiCoordinates)
                                 .build();
 
                 retVal = engine.fullTextToTEI(originFile,

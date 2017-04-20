@@ -29,7 +29,11 @@ public class GrobidException extends RuntimeException {
 
     public GrobidException(Throwable cause, GrobidExceptionStatus grobidExceptionStatus) {
         super(cause);
-        this.status = grobidExceptionStatus;
+        if (cause instanceof GrobidException) {
+            this.status = ((GrobidException) cause).getStatus();
+        } else {
+            this.status = grobidExceptionStatus;
+        }
     }
 
     public GrobidException(Throwable cause) {

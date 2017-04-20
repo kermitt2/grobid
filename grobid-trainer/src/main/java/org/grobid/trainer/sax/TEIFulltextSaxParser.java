@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * SAX parser for the TEI format for fulltext data encoded for training. Normally all training data should 
  * be in this unique format for the fulltext model.
@@ -19,6 +22,7 @@ import java.util.StringTokenizer;
  * @author Patrice Lopez
  */
 public class TEIFulltextSaxParser extends DefaultHandler {
+    private static final Logger logger = LoggerFactory.getLogger(TEIFulltextSaxParser.class);
 
     private StringBuffer accumulator = null; // current accumulated text
 
@@ -57,7 +61,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
-		if ( (!qName.equals("lb")) && (!qName.equals("pb")) ) {
+		if ( (!qName.equals("lb")) && (!qName.equals("pb")) && (!qName.equals("space")) ) {
             writeData(qName, true);
 			if (!currentTags.empty()) {
 				currentTag = currentTags.peek();
@@ -76,10 +80,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                              Attributes atts)
             throws SAXException {
         if (qName.equals("lb")) {
-            accumulator.append(" +L+ ");
-        } 
-		else if (qName.equals("pb")) {
-            accumulator.append(" +PAGE+ ");
+            accumulator.append(" +LINE+ ");
         } 
 		else if (qName.equals("space")) {
             accumulator.append(" ");
@@ -108,7 +109,11 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                             if (value.equals("paragraph")) {
                                 currentTags.push("<paragraph>");
 								currentTag = "<paragraph>";
+                            } else {
+                                logger.error("Invalid attribute value for element div: " + name + "=" + value);
                             }
+                        } else {
+                            logger.error("Invalid attribute name for element div: " + name);
                         }
                     }
                 }
@@ -138,11 +143,20 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                             } else if (value.equals("figure")) {
                                 currentTags.push("<figure_marker>");
 								currentTag = "<figure_marker>";
-                            }
-							else if (value.equals("table")) {
+                            } else if (value.equals("table")) {
 								currentTags.push("<table_marker>");
 								currentTag = "<table_marker>";
-							}
+							} else if (value.equals("formula") || value.equals("equation")) {
+                                currentTags.push("<equation_marker>");
+                                currentTag = "<equation_marker>";
+                            } else if (value.equals("section")) {
+                                currentTags.push("<section_marker>");
+                                currentTag = "<section_marker>";
+                            } else {
+                                logger.error("Invalid attribute value for element ref: " + name + "=" + value);
+                            }
+                        } else {
+                            logger.error("Invalid attribute name for element ref: " + name);
                         }
                     }
                 }
@@ -152,20 +166,11 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 				currentTag = "<equation>";
             } 
 			else if (qName.equals("head")) {
-                /*if (figureBlock) {
-                    currentTags.push("<figure_head>");
-					currentTag = "<figure_head>";
-                }
-				else*/ 
 				{
                     currentTags.push("<section>");
 					currentTag = "<section>";
                 }
             } 
-			/*else if (qName.equals("figDesc")) {
-                currentTags.push("<figDesc>");
-				currentTag = "<figDesc>";
-            }*/
             else if (qName.equals("table")) {
                 currentTags.push("<table>");
 				currentTag = "<table>";
@@ -174,14 +179,6 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                 currentTags.push("<paragraph>");
 				currentTag = "<paragraph>";
             } 
-			/*else if (qName.equals("label")) {
-                currentTags.push("<label>");
-				currentTag = "<label>";
-            } */
-			/*else if (qName.equals("trash")) {
-                currentTags.push("<trash>");
-				currentTag = "<trash>";
-            }*/
 			else if (qName.equals("figure")) {
 	            figureBlock = true;
 	            int length = atts.getLength();
@@ -196,8 +193,12 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 	                    if (name.equals("type")) {
 	                        if (value.equals("table")) {
 	                            tableBlock = true;
-	                        }
-	                    }
+	                        } else {
+                                logger.error("Invalid attribute value for element figure: " + name + "=" + value);
+                            }
+	                    } else {
+                            logger.error("Invalid attribute name for element figure: " + name);
+                        }
 	                }
 	            }
 				if (tableBlock) {
@@ -210,16 +211,25 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 					currentTag = "<figure>";
 				}
 	        } 
-			else {
+			else if (qName.equals("other")) {
                 currentTags.push("<other>");
 				currentTag = "<other>";
-			}
+			} else if (qName.equals("text")) {
+                currentTags.push("<other>");
+                currentTag = "<other>";
+            } else {
+                if (!qName.equals("tei") && !qName.equals("teiHeader") && !qName.equals("fileDesc") && !qName.equals("list")) {
+                    logger.error("Invalid element name: " + qName + " - it will be mapped to the label <other>");
+                    currentTags.push("<other>");
+                    currentTag = "<other>";
+                }
+            }
         }
 		
     }
 
     private void writeData(String qName, boolean pop) {
-        if ( (qName.equals("other")) || 
+        if ( (qName.equals("other")) || (qName.equals("p")) || 
                 (qName.equals("ref")) || (qName.equals("head")) || (qName.equals("figure")) || 
                 (qName.equals("paragraph")) ||
                 (qName.equals("div")) || //(qName.equals("figDesc")) ||
@@ -246,21 +256,16 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 
             String text = getText();
             // we segment the text
-            StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
+            StringTokenizer st = new StringTokenizer(text, TextUtilities.delimiters, true);
             boolean begin = true;
             while (st.hasMoreTokens()) {
                 String tok = st.nextToken().trim();
                 if (tok.length() == 0) 
 					continue;
 
-                if (tok.equals("+L+")) {
+                /*if (tok.equals("+LINE+")) {
                     labeled.add("@newline\n");
-                } 
-				else if (tok.equals("+PAGE+")) {
-                    // page break should be a distinct feature
-                    labeled.add("@newpage\n");
-                }
-				else {
+                } else*/ {
                     String content = tok;
                     int i = 0;
                     if (content.length() > 0) {

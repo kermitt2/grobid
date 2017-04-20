@@ -74,7 +74,8 @@ class FigureParser extends AbstractParser {
                 figure.appendHeader(clusterContent);
             } else if (clusterLabel.equals(FIG_LABEL)) {
                 figure.appendLabel(clusterContent);
-                figure.appendHeader(clusterContent);
+                //label should also go to head
+                figure.appendHeader(" " + clusterContent + " ");
             } else if (clusterLabel.equals(FIG_OTHER)) {
 
             } else if (clusterLabel.equals(FIG_TRASH)) {
@@ -273,11 +274,11 @@ class FigureParser extends AbstractParser {
                         // we check one ahead
                         tokPtr++;
                         tokenizationToken = tokenizations.get(tokPtr).getText();
-                        if (!tok.equals(tokenizationToken)) {
+                        if (!tok.equals(tokenizationToken) && (tokenizations.size() > tokPtr+1)) {
                             // we try another position forward (second hope!)
                             tokPtr++;
                             tokenizationToken = tokenizations.get(tokPtr).getText();
-                            if (!tok.equals(tokenizationToken)) {
+                            if (!tok.equals(tokenizationToken) && (tokenizations.size() > tokPtr+1)) {
                                 // we try another position forward (last hope!)
                                 tokPtr++;
                                 tokenizationToken = tokenizations.get(tokPtr).getText();

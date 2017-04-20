@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * SAX parser for the TEI format for the training data for the segmentation model.
  * Normally all training data should be in this unique format.
@@ -33,6 +36,8 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 		annexes (<annex>): div type="annex" (optionally under back)
 		acknowledgement (<acknowledgement>): div type="acknowledgement" (optionally under back)
  	*/
+
+    private static final Logger logger = LoggerFactory.getLogger(TEISegmentationSaxParser.class);
 
     private StringBuffer accumulator = null; // current accumulated text
 
@@ -121,39 +126,16 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 				currentTag = "<body>";
 				upperTag = currentTag;
 				upperQname = "body";
-	        }
-			else if (qName.equals("titlePage")) {
+	        } else if (qName.equals("titlePage")) {
                 //currentTags.push("<other>");
 				currentTag = "<cover>";
 				//upperTag = currentTag;
 				//upperQname = "titlePage";
-            }
-			else if (qName.equals("other") || qName.equals("toc")) {
+            } else if (qName.equals("other") || qName.equals("toc")) {
                 // for the moment the table of content mark-up is ignored
                 //currentTags.push("<other>");
 				currentTag = "<other>";
-            } 
-			/*else if (qName.equals("ref")) {
-                int length = atts.getLength();
-
-                // Process each attribute
-                for (int i = 0; i < length; i++) {
-                    // Get names and values for each attribute
-                    String name = atts.getQName(i);
-                    String value = atts.getValue(i);
-
-                    if (name != null) {
-                        if (name.equals("type")) {
-                            if (value.equals("biblio")) {
-                                currentTags.push("<citation_marker>");
-                            } else if (value.equals("figure")) {
-                                currentTags.push("<figure_marker>");
-                            }
-                        }
-                    }
-                }
-            } */
-			else if (qName.equals("note")) {
+            } else if (qName.equals("note")) {
                 int length = atts.getLength();
 
                 // Process each attribute
@@ -170,7 +152,11 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 								currentTag = "<headnote>";
                             } else if (value.equals("margin")) {
                                 currentTag = "<marginnote>";
+                            } else {
+                                logger.error("Invalid attribute value for element div: " + name + "=" + value);
                             }
+                        } else {
+                            logger.error("Invalid attribute name for element div: " + name);
                         }
                     }
                 }
@@ -195,7 +181,11 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 								currentTag = "<acknowledgement>";
 								upperTag = currentTag;
 								upperQname = "div";
+                            } else {
+                                logger.error("Invalid attribute value for element div: " + name + "=" + value);
                             }
+                        } else {
+                            logger.error("Invalid attribute name for element div: " + name);
                         }
                     }
                 }
@@ -211,6 +201,9 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                 currentTag = "<other>";
                 upperTag = null;
                 upperQname = null;
+            } else {
+                logger.error("Invalid element name: " + qName + " - it will be mapped to the label <other>");
+                currentTag = "<other>";
             }
         }
     }
@@ -254,21 +247,14 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 					continue;
 				String tok = st.nextToken();
 
-                //String tok = line.replace(" ", "").replace("\t", "");
-				//if (tok.length() > 10)
-				//	tok = tok.substring(0,10);
-				
-	            //StringTokenizer st2 = new StringTokenizer(text, " \t" + TextUtilities.fullPunctuations, true);
-	            
-	            //if (st2.hasMoreTokens()) {
-	                //String tok = st2.nextToken().trim();
-	            if (tok.length() == 0) continue;
+                /*StringTokenizer st = new StringTokenizer(line, TextUtilities.delimiters, true);
+                if (!st.hasMoreTokens()) 
+                    continue;
+                String tok = st.nextToken().trim();*/
 
-	                //if (tok.equals("+L+")) {
-	                //    labeled.add("@newline\n");
-	                //} else 
-					
-	                    //if (tok.length() > 0) {
+	            if (tok.length() == 0) 
+                    continue;
+
                 if (surfaceTag == null) {
                     // this token belongs to a chunk to ignored
                     System.out.println("\twarning: surfaceTag is null for token '"+tok+"' - it will be tagged with label <other>");
@@ -282,7 +268,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 	           	 	labeled.add(tok + " " + surfaceTag + "\n");
 	            }
 				if (page) {
-					labeled.add("@newpage\n");
+					//labeled.add("@newpage\n");
 					page = false;
 				}
 							//}
