@@ -1077,19 +1077,22 @@ public class TEIFormatter {
                 // get the corresponding equation
                 if (start != -1) {
                     Equation theEquation = null;
-                    for(int i=0; i<equations.size(); i++) {
-                        if (i < equationIndex) 
-                            continue;
-                        Equation equation = equations.get(i);
-                        if (equation.getStart() == start) {
-                            theEquation = equation;
-                            equationIndex = i;
-                            break;
+                    if (equations != null) {
+                        for(int i=0; i<equations.size(); i++) {
+                            if (i < equationIndex) 
+                                continue;
+                            Equation equation = equations.get(i);
+                            if (equation.getStart() == start) {
+                                theEquation = equation;
+                                equationIndex = i;
+                                break;
+                            }
                         }
-                    }
-                    if (theEquation != null) {
-                        Element element = theEquation.toTEIElement(config);
-                        curDiv.appendChild(element);
+                        if (theEquation != null) {
+                            Element element = theEquation.toTEIElement(config);
+                            if (element != null)
+                                curDiv.appendChild(element);
+                        }
                     }
                 }
                 /*if (clusterLabel.equals(TaggingLabels.EQUATION))
