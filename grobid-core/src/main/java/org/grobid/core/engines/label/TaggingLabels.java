@@ -129,6 +129,7 @@ public class TaggingLabels {
         register(CITATION_MARKER);
         register(TABLE_MARKER);
         register(FIGURE_MARKER);
+        register(EQUATION_MARKER);
         register(PARAGRAPH);
         register(ITEM);
         register(OTHER);
@@ -136,6 +137,7 @@ public class TaggingLabels {
         register(FIGURE);
         register(TABLE);
         register(EQUATION);
+        register(EQUATION_LABEL);
 
         //header
         register(HEADER_DATE);

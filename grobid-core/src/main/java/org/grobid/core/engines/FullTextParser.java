@@ -138,7 +138,6 @@ public class FullTextParser extends AbstractParser {
 					LOGGER.debug("Fulltext model: The input to the CRF processing is empty");
 				}
 				//LOGGER.info(rese);
-				//System.out.println(rese);
 				// we apply now the figure and table models based on the fulltext labeled output
 				figures = processFigures(rese, layoutTokenization.getTokenization(), doc);
 				tables = processTables(rese, layoutTokenization.getTokenization(), doc);
