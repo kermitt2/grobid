@@ -1054,6 +1054,12 @@ public class TEIFormatter {
             Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+            /*boolean spaceEnd = false;
+            boolean spaceStart = false;
+            if (clusterContent.endsWith(" "))
+                spaceEnd = true;
+            if (clusterContent.startsWith(" "))
+                spaceStart = true;*/
             if (clusterLabel.equals(TaggingLabels.SECTION)) {
                 curDiv = teiElement("div");
                 Element head = teiElement("head");
@@ -1111,17 +1117,17 @@ public class TEIFormatter {
                     curParagraph = teiElement("p");
                     curDiv.appendChild(curParagraph);
                 }
+                /*if (spaceStart)
+                    curParagraph.appendChild(new Text(" "));*/
                 curParagraph.appendChild(clusterContent);
+                /*if (spaceEnd)
+                    curParagraph.appendChild(new Text(" "));*/
             } else if (MARKER_LABELS.contains(clusterLabel)) {
                 List<LayoutToken> refTokens = cluster.concatTokens();
                 String chunkRefString = LayoutTokensUtil.toText(refTokens);
-                // WARNING: should be fixed automatically by improvements in syncronizer
-                // in case the content start with a space, we move it as previous slibing text child
-//				if (chunkRefString.startsWith(" ")) {
-//					Element parent = curParagraph != null ? curParagraph : curDiv;
-//					parent.appendChild(" ");
-//					chunkRefString = chunkRefString.substring(1, chunkRefString.length());
-//				}
+                Element parent = curParagraph != null ? curParagraph : curDiv;
+                parent.appendChild(new Text(" "));
+
                 List<Node> refNodes;
                 if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
                     refNodes = markReferencesTEILuceneBased(chunkRefString,
@@ -1144,7 +1150,6 @@ public class TEIFormatter {
 
                 if (refNodes != null) {
                     for (Node n : refNodes) {
-                        Element parent = curParagraph != null ? curParagraph : curDiv;
                         parent.appendChild(n);
                     }
                 }
