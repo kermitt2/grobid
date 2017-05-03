@@ -129,6 +129,7 @@ public class FullTextParser extends AbstractParser {
 				// if featSeg is null, it usually means that no body segment is found in the
 				// document segmentation
 				String bodytext = featSeg.getA();
+//System.out.println(bodytext);
 				layoutTokenization = featSeg.getB();
 				//tokenizationsBody = featSeg.getB().getTokenization();
                 //layoutTokensBody = featSeg.getB().getLayoutTokens();
@@ -1649,7 +1650,7 @@ public class FullTextParser extends AbstractParser {
     	return new Pair<>(tei.toString(), featureVector.toString());
     }
 
-    	/**
+    /**
      * Process equations identified by the full text model
      */
     private List<Equation> processEquations(String rese,
@@ -1658,9 +1659,6 @@ public class FullTextParser extends AbstractParser {
 		List<Equation> results = new ArrayList<>();
 		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
 		List<TaggingTokenCluster> clusters = clusteror.cluster();
-
-		//for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
-		//		new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.EQUATION))) {
 
 		Equation currentResult = null;
 		TaggingLabel lastLabel = null;		
@@ -1703,21 +1701,6 @@ public class FullTextParser extends AbstractParser {
                 currentResult.appendLabel(clusterContent);
 	            currentResult.addLayoutTokens(cluster.concatTokens());
             }
-
-			/*parsers.getEquationParser().processing(
-					tokenizationEquation,
-					cluster.getFeatureBlock()
-			);*/
-
-			/*SortedSet<Integer> blockPtrs = new TreeSet<>();
-			for (LayoutToken lt : tokenizationEquation) {
-				if (!LayoutTokensUtil.spaceyToken(lt.t())) {
-					blockPtrs.add(lt.getBlockPtr());
-				}
-				currentResult.appendContent(lt.getText());
-			}
-			currentResult.setBlockPtrs(blockPtrs);
-			currentResult.setLayoutTokens(tokenizationEquation);*/
 
 			lastLabel = clusterLabel;
 		}

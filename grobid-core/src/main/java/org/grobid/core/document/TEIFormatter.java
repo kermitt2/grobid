@@ -1030,7 +1030,7 @@ public class TEIFormatter {
 //System.out.println(result);
         int startPosition = buffer.length();
 
-        boolean figureBlock = false; // indicate that a figure or table sequence was met
+        //boolean figureBlock = false; // indicate that a figure or table sequence was met
         // used for reconnecting a paragraph that was cut by a figure/table
 
         List<LayoutToken> tokenizations = layoutTokenization.getTokenization();
@@ -1054,12 +1054,6 @@ public class TEIFormatter {
             Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            /*boolean spaceEnd = false;
-            boolean spaceStart = false;
-            if (clusterContent.endsWith(" "))
-                spaceEnd = true;
-            if (clusterContent.startsWith(" "))
-                spaceStart = true;*/
             if (clusterLabel.equals(TaggingLabels.SECTION)) {
                 curDiv = teiElement("div");
                 Element head = teiElement("head");
@@ -1101,11 +1095,6 @@ public class TEIFormatter {
                         }
                     }
                 }
-                /*if (clusterLabel.equals(TaggingLabels.EQUATION))
-                    curDiv.appendChild(teiElement("formula", clusterContent));
-                else
-                    curDiv.appendChild(teiElement("label", clusterContent));
-                    */
             } else if (clusterLabel.equals(TaggingLabels.ITEM)) {
                 curDiv.appendChild(teiElement("item", clusterContent));
             } else if (clusterLabel.equals(TaggingLabels.OTHER)) {
@@ -1117,11 +1106,7 @@ public class TEIFormatter {
                     curParagraph = teiElement("p");
                     curDiv.appendChild(curParagraph);
                 }
-                /*if (spaceStart)
-                    curParagraph.appendChild(new Text(" "));*/
                 curParagraph.appendChild(clusterContent);
-                /*if (spaceEnd)
-                    curParagraph.appendChild(new Text(" "));*/
             } else if (MARKER_LABELS.contains(clusterLabel)) {
                 List<LayoutToken> refTokens = cluster.concatTokens();
                 String chunkRefString = LayoutTokensUtil.toText(refTokens);
@@ -1153,6 +1138,10 @@ public class TEIFormatter {
                         parent.appendChild(n);
                     }
                 }
+            } else if (clusterLabel.equals(TaggingLabels.FIGURE) || clusterLabel.equals(TaggingLabels.TABLE)) {
+                //figureBlock = true;
+                if (curParagraph != null)
+                    curParagraph.appendChild(new Text(" "));
             }
 
             lastClusterLabel = cluster.getTaggingLabel();
@@ -1164,18 +1153,6 @@ public class TEIFormatter {
         buffer = TextUtilities.replaceAll(buffer, "</head><head",
                 "</head>\n\t\t\t</div>\n\t\t\t<div>\n\t\t\t\t<head");
         buffer = TextUtilities.replaceAll(buffer, "</p>\t\t\t\t<p>", " ");
-
-
-//        if (figureBlock) {
-//            if (lastTag != null) {
-//                testClosingTag(buffer, "", lastTag, tokenLabel, bds, generateIDs, false);
-//            }
-//        }
-//
-//        if (divOpen) {
-//            buffer.append("\t\t\t</div>\n");
-//            divOpen = false;
-//        }
 
         //TODO: work on reconnection
         // we evaluate the need to reconnect paragraphs cut by a figure or a table

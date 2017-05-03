@@ -1741,17 +1741,19 @@ public class BiblioItem {
             }
             tei.append("<biblStruct");
             boolean withCoords = (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("biblStruct"));
-            tei.append(" ").append(TEIFormatter.getCoordsAttribute(coordinates, withCoords)).append(" ");
+            tei.append(" ");
+            if (withCoords)
+                tei.append(TEIFormatter.getCoordsAttribute(coordinates, withCoords)).append(" ");
             if (language != null) {
                 if (n == -1) {
                     /*if (pubnum != null) {
                         teiId = TextUtilities.HTMLEncode(pubnum);
                         tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + teiId + "\">\n");
                     } else*/
-                        tei.append(" xml:lang=\"" + language + ">\n");
+                        tei.append("xml:lang=\"" + language + ">\n");
                 } else {
                     teiId = "b" + n;
-                    tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + teiId + "\">\n");
+                    tei.append("xml:lang=\"" + language + "\" xml:id=\"" + teiId + "\">\n");
                 }
                 // TBD: the language should be normalized following xml lang attributes !
             } else {
@@ -1763,7 +1765,7 @@ public class BiblioItem {
                         tei.append(">\n");
                 } else {
                     teiId = "b" + n;
-                    tei.append(" xml:id=\"" + teiId + "\">\n");
+                    tei.append("xml:id=\"" + teiId + "\">\n");
                 }
             }
 
