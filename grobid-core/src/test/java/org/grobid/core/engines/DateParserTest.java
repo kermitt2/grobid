@@ -12,6 +12,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by lfoppiano on 02/01/17.
@@ -266,4 +267,22 @@ public class DateParserTest {
         assertThat(target.trainingExtraction(null), nullValue());
     }
 
+    @Test
+    public void testMayAndMarchOverlap() throws Exception {
+        DateParser dateParser = new DateParser();
+        {
+            List<Date> dates = dateParser.processing("May 2003");
+            assertEquals(1, dates.size());
+            Date date = dates.get(0);
+            assertEquals(2003, date.getYear());
+            assertEquals(5, date.getMonth());
+        }
+        {
+            List<Date> dates = dateParser.processing("Mar 2003");
+            assertEquals(1, dates.size());
+            Date date = dates.get(0);
+            assertEquals(2003, date.getYear());
+            assertEquals(3, date.getMonth());
+        }
+    }
 }
