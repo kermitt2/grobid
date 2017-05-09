@@ -206,29 +206,29 @@ public class DateParser extends AbstractParser {
     }
 
     public static final Pattern jan =
-            Pattern.compile("(((J|j)an)|((J|j)anuary)|((J|j)anvier)|((J|j)annewaori)|((J|j)anuar)|((E|e)nero)|((J|j)anuaro)|((J|j)anuari)|((J|j)aneiro)|((G|g)ennaio)|((G|g)en)|((O|o)cak)|((J|j)a)|(^1$)|(^01$)|(1月))");
+            Pattern.compile("([Jj]an$|[Jj]anuary$|[Jj]anvier$|[Jj]annewaori$|[Jj]anuar$|[Ee]nero$|[Jj]anuaro$|[Jj]anuari$|[Jj]aneiro$|[Gg]ennaio$|[Gg]en$|[Oo]cak$|[Jj]a$|(^1$)|(^01$)|(1月))");
     public static final Pattern feb =
-            Pattern.compile("((F|f)eb|February|(F|f)(e|é)vrier|(F|f)ebruar|(F|f)ebrewaori|(F|f)ebrero|(F|f)evereiro|(F|f)ebbraio|(L|l)uty|(S|s)tyczeń|Ş|ubat|(F|f)e|^2$|^02$|2月)");
+            Pattern.compile("([Ff]eb$|[Ff]ebruary$|[Ff][eé]vrier$|[Ff]ebruar$|[Ff]ebrewaori$|[Ff]ebrero$|[Ff]evereiro$|[Ff]ebbraio$|[Ll]uty$|[Ss]tyczeń$|Ş$|ubat$|[Ff]e$|^2$|^02$|2月)");
     public static final Pattern mar =
-            Pattern.compile("((M|m)ar|(M|m)arch|(M|m)ars|(M|m)eert|(M|m)ärz|(M|m)arzo|(M|m)arço|(M|m)art|(M|m)a|(M|m)a|^3$|^03$|3月)");
+            Pattern.compile("([Mm]ar$|[Mm]arch$|[Mm]ars$|[Mm]eert$|[Mm]ärz$|[Mm]arzo$|[Mm]arço$|[Mm]art$|[Mm]a$|[Mm]a$|^3$|^03$|3月)");
     public static final Pattern apr =
-            Pattern.compile("((A|a)pr|(A|a)br|(A|a)vr|(A|a)pril|(A|a)vril|(A|a)pril|(A|a)prile|(A|a)bril|(N|n)isan|(A|a)p|^4$|^04$|4月)");
+            Pattern.compile("([Aa]pr$|[Aa]br$|[Aa]vr$|[Aa]pril$|[Aa]vril$|[Aa]pril$|[Aa]prile$|[Aa]bril$|[Nn]isan$|[Aa]p$|^4$|^04$|4月)");
     public static final Pattern may =
-            Pattern.compile("((M|m)ay|(M|m)ai|(M|m)ay|(M|m)ayıs|(M|m)ei|(M|m)aio|(M|m)aggio|(M|m)eie|(M|m)a|^5$|^05$|5月)");
+            Pattern.compile("([Mm]ay$|[Mm]ai$|[Mm]ay$|[Mm]ayıs$|[Mm]ei$|[Mm]aio$|[Mm]aggio$|[Mm]eie$|[Mm]a$|^5$|^05$|5月)");
     public static final Pattern jun =
-            Pattern.compile("((J|j)un|(J|j)une|(J|j)uin|(J|j)uni|(J|j)unho|(G|g)iugno|(H|h)aziran|^6$|^06$|6月)");
+            Pattern.compile("([Jj]un$|[Jj]une$|[Jj]uin$|[Jj]uni$|[Jj]unho$|[Gg]iugno$|[Hh]aziran$|^6$|^06$|6月)");
     public static final Pattern jul =
-            Pattern.compile("((J|j)ul|(J|j)uly|(J|j)uillet|(J|j)uli|(T|t)emmuz|(L|l)uglio|(J|j)ulho|^7$|^07$|7月)");
+            Pattern.compile("([Jj]ul$|[Jj]uly$|[Jj]uillet$|[Jj]uli$|[Tt]emmuz$|[Ll]uglio$|[Jj]ulho$|^7$|^07$|7月)");
     public static final Pattern aug =
-            Pattern.compile("((A|a)ug|(A|a)ugust|(A|a)o(u|û)t|(A|a)ugust|(A|a)gosto|(A|a)ugustus|(A|a)ğustos|^8$|^08$|8月)");
+            Pattern.compile("([Aa]ug$|[Aa]ugust$|[Aa]o[uû]t$|[Aa]ugust$|[Aa]gosto$|[Aa]ugustus$|[Aa]ğustos$|^8$|^08$|8月)");
     public static final Pattern sep =
-            Pattern.compile("((S|s)ep|(S|s)ept|(S|s)eptember|(S|s)eptembre|(S|s)eptember|(S|s)ettembre|(S|s)etembro|(E|e)ylül|^9$|^09$|9月)");
+            Pattern.compile("([Ss]ep$|[Ss]ept$|[Ss]eptember$|[Ss]eptembre$|[Ss]eptember$|[Ss]ettembre$|[Ss]etembro$|[Ee]ylül$|^9$|^09$|9月)");
     public static final Pattern oct =
-            Pattern.compile("((O|o)ct|(O|o)cto|(O|o)ctober|(O|o)ctobre|(E|e)kim|(O|o)ktober|(O|o)ttobre|(O|o)utubro|^10$|10月)");
+            Pattern.compile("([Oo]ct$|[Oo]cto$|[Oo]ctober$|[Oo]ctobre$|[Ee]kim$|[Oo]ktober$|[Oo]ttobre$|[Oo]utubro$|^10$|10月)");
     public static final Pattern nov =
-            Pattern.compile("((N|n)ov|(N|n)ovember|(N|n)ovembre|(K|k)asım|(N|n)oviembre|(D|d)icembre|(N|n)ovembro|^11$|11月)");
+            Pattern.compile("([Nn]ov$|[Nn]ovember$|[Nn]ovembre$|[Kk]asım$|[Nn]oviembre$|[Dd]icembre$|[Nn]ovembro$|^11$|11月)");
     public static final Pattern dec =
-            Pattern.compile("((D|d)ec|(D|d)ecember|(D|d)(e|é)cembre|(D|d)iciembre|(A|a)ralık|^12$|12月)");
+            Pattern.compile("([Dd]ec$|[Dd]ecember$|[Dd][eé]cembre$|[Dd]iciembre$|[Aa]ralık$|^12$|12月)");
 
     public static final Pattern[] months = {jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec};
 
