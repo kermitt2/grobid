@@ -90,6 +90,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 	private void addBlock(Block block) {
 		if (block == null)
 			LOGGER.info("addBlock called with null block object");
+
 		if (!block.isNull() && (block.getStartToken() != block.getEndToken())) {
 			block.setPage(page);
 			doc.addBlock(block);
@@ -206,7 +207,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 			return null;
 		}
 	}
-	
+
     private String addAcuteAccentToChar(Character c) {
         switch (c) {
             case 'a':
@@ -498,7 +499,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 							token.setPage(currentPage);
 							if ( (previousToken != null) && (tok != null)
 									&& (previousToken.length() > 0)
-									&& (tok.length() > 0) 
+									&& (tok.length() > 0)
 									&& (blabla.length() > 0)
 							        && (previousTok.getText() != null)
 									&& (previousTok.getText().length() > 1)	) {
@@ -538,11 +539,11 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 									String updatedChar = modifyCharacter(baseChar,
 											modifierChar);
 
-									//System.out.println("\t"+"baseChar: " + baseChar + ", modifierChar: " 
+									//System.out.println("\t"+"baseChar: " + baseChar + ", modifierChar: "
 									//	+ modifierChar +", updatedChar is " + updatedChar);
 
 									if (updatedChar != null) {
-										//System.out.println("\n");									
+										//System.out.println("\n");
 										//}
 										//else {
 //										tokenizations.remove(tokenizations.size() - 1);
@@ -570,7 +571,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 										localTok.setX(previousTok.getX());
 										localTok.setY(previousTok.getY());
 										localTok.setHeight(previousTok.getHeight());
-										localTok.setWidth(previousTok.getWidth()); 
+										localTok.setWidth(previousTok.getWidth());
 										localTok.setFontSize(previousTok.getFontSize());
 										localTok.setColorFont(previousTok.getColorFont());
 										localTok.setItalic(previousTok.getItalic());
@@ -584,26 +585,26 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 										//System.out.println("add tokenizations: " + previousTok.getText());
 									}
 									{
-										// PL 
+										// PL
 										blabla.append(tok.substring(1, tok.length()));
 										if (updatedChar != null) {
 											previousTok.setText(previousTok.getText()
 												+ tok.substring(1, tok.length()));
 										}
 										else {
-											// in this case, the diaresis/accent might be before the charcater 
-											// to be modified and not after as incorrectly considered first 
+											// in this case, the diaresis/accent might be before the charcater
+											// to be modified and not after as incorrectly considered first
 											// see issue #47
 											previousTok.setText(previousTok.getText() + tok);
 										}
-									
+
 										//System.out.println("add token layout: " + previousTok.getText());
 										LayoutToken localTok = new LayoutToken(previousTok.getText());
 										localTok.setPage(currentPage);
 										localTok.setX(previousTok.getX());
 										localTok.setY(previousTok.getY());
 										localTok.setHeight(previousTok.getHeight());
-										// the new token based on the concatenation of the previous token and 
+										// the new token based on the concatenation of the previous token and
 										// the updated diaresis character
 										localTok.setWidth(previousTok.getWidth() + subTokWidth);
 										localTok.setFontSize(previousTok.getFontSize());
@@ -618,11 +619,11 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 									diaresis = (modifierClass == ModifierClass.DIAERESIS
 											|| modifierClass == ModifierClass.NORDIC_RING
 											|| modifierClass == ModifierClass.CZECH_CARON
-											|| modifierClass == ModifierClass.TILDE 
+											|| modifierClass == ModifierClass.TILDE
 											|| modifierClass == ModifierClass.CEDILLA);
 
 									accent = (modifierClass == ModifierClass.ACUTE_ACCENT
-											|| modifierClass == ModifierClass.CIRCUMFLEX 
+											|| modifierClass == ModifierClass.CIRCUMFLEX
 											|| modifierClass == ModifierClass.GRAVE_ACCENT);
 
 									if (rightClass != ModifierClass.NOT_A_MODIFIER) {
@@ -633,7 +634,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 							}
 
 							if (tok != null) {
-								// actually in certain cases, the extracted string under token can be a chunk of text 
+								// actually in certain cases, the extracted string under token can be a chunk of text
 								// with separators that need to be preserved
 								//tok = tok.replace(" ", "");
 							}
@@ -649,7 +650,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 								tok = "";
 								//keepLast = true;
 							}
-						
+
 							if (currentRotation) {
 								// if the text is rotated, it appears that the font size is multiplied
 								// by 2? we should have a look at pdf2xml for this
@@ -825,7 +826,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 			localTok.setPage(currentPage);
 			addToken(localTok);
 			block.setText(blabla.toString());
-			
+
 			//PL
 			//block.setWidth(currentX - block.getX() + currentWidth);
 			//block.setHeight(currentY - block.getY() + currentHeight);
@@ -835,7 +836,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 			block = null;
 		} else if (qName.equals("xi:include")) {
 			// this is normally the vector graphics
-			// such vector graphics are appliedto the whole page, so there is no x,y coordinates available 
+			// such vector graphics are appliedto the whole page, so there is no x,y coordinates available
 			// in the xml - to get them we will need to parse the .vec files
 			if (block != null) {
 				blabla.append("\n");
@@ -879,8 +880,15 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 
 	}
 
+	public void endDocument(){
+//		if(CollectionUtils.isEmpty(images)) {
+			doc.setImages(images);
+//		}
+	}
+
 	public void startElement(String namespaceURI, String localName,
 			String qName, Attributes atts) throws SAXException {
+
 		if (qName.equals("PAGE")) {
 			int length = atts.getLength();
 			currentPage++;
@@ -1055,7 +1063,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 					}
 				}
 			}
-		} 
+		}
 		else if (qName.equals("xi:include")) {
 			// normally this introduces vector graphics
 			int length = atts.getLength();
