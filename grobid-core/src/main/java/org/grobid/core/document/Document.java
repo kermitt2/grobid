@@ -124,6 +124,10 @@ public class Document {
 
     protected ReferenceMarkerMatcher referenceMarkerMatcher;
 
+    public void setImages(List<GraphicObject> images) {
+        this.images = images;
+    }
+
     // list of bitmaps and vector graphics of the document
     protected List<GraphicObject> images = null;
 
