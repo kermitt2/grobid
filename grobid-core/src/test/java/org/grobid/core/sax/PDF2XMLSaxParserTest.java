@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.easymock.EasyMock.createMock;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -27,6 +28,7 @@ public class PDF2XMLSaxParserTest {
     PDF2XMLSaxHandler target;
     DocumentSource mockDocumentSource;
     Document document;
+    private List<GraphicObject> images;
 
     @Before
     public void setUp() throws Exception {
@@ -34,7 +36,8 @@ public class PDF2XMLSaxParserTest {
         mockDocumentSource = createMock(DocumentSource.class);
 
         document = Document.createFromText("");
-        target = new PDF2XMLSaxHandler(document, new ArrayList<GraphicObject>());
+        images = new ArrayList<>();
+        target = new PDF2XMLSaxHandler(document, images);
     }
 
     @Test
@@ -48,29 +51,25 @@ public class PDF2XMLSaxParserTest {
 
         assertTrue(tokenList.size() > 0);
         assertTrue(document.getImages().size() == 0);
+        assertTrue(images.size() == 0);
         assertTrue(document.getPages().size() == 4);
         assertTrue(document.getBlocks().size() == 26);
-
-
     }
 
     @Test
     public void testParsing_pdf2XMLwithIMages_ShouldWork() throws Exception {
-        InputStream is = this.getClass().getResourceAsStream("pdf2xml_Images.xml");
+        InputStream inputStream = this.getClass().getResourceAsStream("pdf2xml_Images.xml");
 
         SAXParser p = spf.newSAXParser();
-        p.parse(is, target);
+        p.parse(inputStream, target);
 
         List<LayoutToken> tokenList = target.getTokenization();
 
         assertTrue(tokenList.size() > 0);
-        //TODO: check this.
-        //assertTrue(document.getImages().size() == 17);
+        assertThat(images.size(), is(17));
+        assertThat(document.getImages().size(), is(17));
         assertTrue(document.getPages().size() == 4);
         assertTrue(document.getBlocks().size() == 26);
-
-
-
     }
 
 }
