@@ -32,6 +32,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
 @Ignore
 public class EngineTest {
 
@@ -672,10 +675,13 @@ public class EngineTest {
 
     @Test
     public void testDateParser() throws Exception {
-
         String d = "12 August, 1985";
-        List<Date> processing = new DateParser().processing(d);
-        System.out.println(processing);
+        List<Date> processedDates = new DateParser().processing(d);
+
+        assertThat(processedDates.size(), is(1));
+        assertThat(processedDates.get(0).getDayString(), is("12"));
+        assertThat(processedDates.get(0).getMonthString(), is("August"));
+        assertThat(processedDates.get(0).getYearString(), is("1985"));
     }
 
     @Test
