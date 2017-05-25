@@ -33,6 +33,7 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.Page;
 import org.grobid.core.layout.PDFAnnotation;
 import org.grobid.core.layout.VectorGraphicBoxCalculator;
+import org.grobid.core.layout.LayoutTokenization;
 
 import org.grobid.core.sax.PDF2XMLSaxHandler;
 import org.grobid.core.sax.PDF2XMLAnnotationSaxHandler;
@@ -43,9 +44,15 @@ import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.Utilities;
-import org.grobid.core.engines.counters.TableRejectionCounters;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
+
+import org.grobid.core.engines.counters.TableRejectionCounters;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.GrobidModels;
+
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.tokenization.TaggingTokenCluster;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,6 +65,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.TreeMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -161,6 +169,9 @@ public class Document {
 
     // the analyzer/tokenizer used for processing this document
     Analyzer analyzer = GrobidAnalyzer.getInstance();
+
+    // map of sequence of LayoutTokens for the fulltext model labels
+    //Map<String, List<LayoutTokenization>> labeledTokenSequences = null;
 
     public Document(DocumentSource documentSource) {
         top = new DocumentNode("top", "0");
@@ -2155,5 +2166,33 @@ public class Document {
         }
         return result;
     }
+
+    /**
+     * Initialize the mapping between sequences of LayoutToken and 
+     * fulltext model labels. 
+     * @param labeledResult labeled sequence as produced by the CRF model
+     * @param tokenization List of LayoutToken for the body parts
+     */
+    /*public void generalFullTextResultMapping(String labeledResult, List<LayoutToken> tokenizations) {
+        if (labeledTokenSequences == null)
+            labeledTokenSequences = new TreeMap<String, List<LayoutTokenization>>();
+
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledResult, tokenizations);
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            List<LayoutToken> clusterTokens = cluster.concatTokens();
+            List<LayoutTokenization> theList = labeledTokenSequences.get(clusterLabel.toString());
+            if (theList == null)
+                theList = new ArrayList<LayoutTokenization>();
+            LayoutTokenization newTokenization = new LayoutTokenization(clusterTokens);
+            theList.add(newTokenization);
+            labeledTokenSequences.put(clusterLabel.getLabel(), theList);
+        }
+    }*/
 
 }
