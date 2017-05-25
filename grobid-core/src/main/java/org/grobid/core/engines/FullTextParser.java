@@ -43,6 +43,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.SortedSet;
@@ -1786,6 +1787,47 @@ public class FullTextParser extends AbstractParser {
 //				)
 //		);
 	}
+
+	private static List<TaggingLabel> inlineFullTextLabels = Arrays.asList(TaggingLabels.CITATION_MARKER, TaggingLabels.TABLE_MARKER, 
+                                TaggingLabels.FIGURE_MARKER, TaggingLabels.EQUATION_LABEL);
+
+    public static List<LayoutTokenization> getDocumentFullTextTokens(List<TaggingLabel> labels, String labeledResult, List<LayoutToken> tokenizations) {
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledResult, tokenizations);
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+        List<LayoutTokenization> labeledTokenSequences = new ArrayList<LayoutTokenization>();
+        LayoutTokenization currentTokenization = null;
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            List<LayoutToken> clusterTokens = cluster.concatTokens();
+
+            if (inlineFullTextLabels.contains(clusterLabel)) {
+                // sequence is not interrupted
+                if (currentTokenization == null)
+	                currentTokenization = new LayoutTokenization();
+
+            } else {
+                // we have an independent sequence
+                if ( (currentTokenization != null) && (currentTokenization.size() > 0) ) {
+	                labeledTokenSequences.add(currentTokenization);
+					currentTokenization = new LayoutTokenization(); 
+				}
+            }
+			if (labels.contains(clusterLabel)) {
+				if (currentTokenization == null)
+	                currentTokenization = new LayoutTokenization();
+				currentTokenization.addTokens(clusterTokens);
+            }
+        }
+        
+        if ( (currentTokenization != null) && (currentTokenization.size() > 0) )
+			labeledTokenSequences.add(currentTokenization);
+
+        return labeledTokenSequences;
+    }
 
     @Override
     public void close() throws IOException {

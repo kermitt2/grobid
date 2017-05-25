@@ -14,6 +14,11 @@ public class LayoutTokenization {
 //	private List<LayoutToken> layoutTokenization = null;
 	private List<LayoutToken> tokenization = null; // this should ultimately be removed
 	
+	public LayoutTokenization() {
+//		layoutTokenization = layoutTokens;
+		tokenization = new ArrayList<LayoutToken>();
+	}
+
 	public LayoutTokenization(List<LayoutToken> tokens) {
 //		layoutTokenization = layoutTokens;
 		tokenization = tokens;
@@ -44,8 +49,23 @@ public class LayoutTokenization {
 		else 
 			tokenization.add(token);
 	}
+
+	public void addTokens(List<LayoutToken> tokens) {
+		if (tokenization == null) 
+			tokenization = new ArrayList<LayoutToken>();
+		else {
+			tokenization.addAll(tokens);
+		}
+	}
 	
 	public void setTokenization(List<LayoutToken> tokens) {
 		tokenization = tokens;
+	}
+
+	public int size() {
+		if (tokenization == null)
+			return 0;
+		else
+			return tokenization.size();
 	}
 }
