@@ -45,6 +45,7 @@ public class CrossrefUnixrefSaxParser extends DefaultHandler {
     public boolean eventMetadataBlock = false;
     public boolean bookMetadataBlock = false;
     public boolean serieMetadataBlock = false;
+    public boolean doiDataBlock = false;
     public boolean online = false;
 
     public boolean authorBlock = false;
@@ -69,7 +70,7 @@ public class CrossrefUnixrefSaxParser extends DefaultHandler {
         } else if (qName.equals("journal_article")) {
             journalArticleBlock = false;
             biblio.setItem(BiblioItem.Article);
-            biblio.setItem(BiblioItem.Periodical);
+//            biblio.setItem(BiblioItem.Periodical);
         } else if (qName.equals("proceedings_metadata")) {
             proceedingsMetadataBlock = false;
             biblio.setItem(BiblioItem.InProceedings);
@@ -80,6 +81,8 @@ public class CrossrefUnixrefSaxParser extends DefaultHandler {
         } else if (qName.equals("conference_paper")) {
             conferencePaperBlock = false;
             biblio.setItem(BiblioItem.InProceedings);
+        } else if (qName.equals("doi_data")){
+        	doiDataBlock = false;
         } else if (qName.equals("title")) {
             if (journalArticleBlock || contentItemBlock || conferencePaperBlock) {
                 biblio.setArticleTitle(getText());
@@ -168,8 +171,8 @@ public class CrossrefUnixrefSaxParser extends DefaultHandler {
            }
         } else if (qName.equals("doi")) {
             String doi = getText();
-            //if (journalArticleBlock)
-            biblio.setDOI(doi);
+            if (doiDataBlock)
+            	biblio.setDOI(doi);
             biblio.setError(false);
         } else if (qName.equals("given_name")) {
             author = getText();
@@ -266,6 +269,8 @@ public class CrossrefUnixrefSaxParser extends DefaultHandler {
         } else if (qName.equals("journal_article")) {
             journalArticleBlock = true;
             biblio.setItem(BiblioItem.Periodical);
+        } else if (qName.equals("doi_data")){
+        	doiDataBlock = true;
         } else if (qName.equals("contributors")) {
             authors = new ArrayList<>(0);
             editors = new ArrayList<>(0);
