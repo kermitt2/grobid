@@ -267,8 +267,8 @@ public class CrossrefUnixrefSaxParser extends DefaultHandler {
             journalArticleBlock = true;
             biblio.setItem(BiblioItem.Periodical);
         } else if (qName.equals("contributors")) {
-            authors = new ArrayList<String>(0);
-            editors = new ArrayList<String>(0);
+            authors = new ArrayList<>(0);
+            editors = new ArrayList<>(0);
         } else if (qName.equals("error")) {
             biblio.setError(true);
         } else if (qName.equals("person_name")) {

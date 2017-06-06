@@ -46,4 +46,14 @@ public class CrossrefUnixrefSaxParserTest {
         assertThat(item.getDOI(), is("10.1007/s00005-009-0056-3"));
     }
 
+    @Test
+    public void testParseCrossrefDoi_References() throws Exception {
+        InputStream inputStream = this.getClass().getResourceAsStream("crossref_response.doi.2.xml");
+
+        SAXParser p = spf.newSAXParser();
+        p.parse(inputStream, target);
+
+        assertThat(item.getDOI(), is("10.1111/j.1467-8659.2007.01100.x"));
+    }
+
 }
