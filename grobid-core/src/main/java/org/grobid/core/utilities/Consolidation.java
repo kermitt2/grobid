@@ -564,9 +564,10 @@ public class Consolidation {
                     urlConn.setRequestMethod("GET");
 
                     urlConn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-
-                    InputStream in = urlConn.getInputStream();
+                    InputStream in = null;
                     try {
+                        in = urlConn.getInputStream();
+
                         xml = TextUtilities.convertStreamToString(in);
 
                         InputSource is = new InputSource();
