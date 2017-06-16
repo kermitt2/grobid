@@ -17,6 +17,7 @@ import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.CitationParserCounters;
 import org.grobid.core.engines.label.TaggingLabels;
+import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
@@ -42,6 +43,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.SortedSet;
@@ -128,6 +130,7 @@ public class FullTextParser extends AbstractParser {
 				// if featSeg is null, it usually means that no body segment is found in the
 				// document segmentation
 				String bodytext = featSeg.getA();
+//System.out.println(bodytext);
 				layoutTokenization = featSeg.getB();
 				//tokenizationsBody = featSeg.getB().getTokenization();
                 //layoutTokensBody = featSeg.getB().getLayoutTokens();
@@ -137,7 +140,6 @@ public class FullTextParser extends AbstractParser {
 					LOGGER.debug("Fulltext model: The input to the CRF processing is empty");
 				}
 				//LOGGER.info(rese);
-				//System.out.println(rese);
 				// we apply now the figure and table models based on the fulltext labeled output
 				figures = processFigures(rese, layoutTokenization.getTokenization(), doc);
 				tables = processTables(rese, layoutTokenization.getTokenization(), doc);
@@ -1043,10 +1045,10 @@ public class FullTextParser extends AbstractParser {
                     output = writeField(buffer, s1, lastTag0, s2, "<equation>",
 						"<formula>", addSpace, 4, false);
                 }
-                /*if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<label>", 
+                if (!output) {
+                    output = writeField(buffer, s1, lastTag0, s2, "<equation_label>", 
 						"<label>", addSpace, 4, false);
-                }*/
+                }
                 if (!output) {
                     output = writeField(buffer, s1, lastTag0, s2, "<figure_marker>",
 						"<ref type=\"figure\">", addSpace, 3, false);
@@ -1295,6 +1297,8 @@ public class FullTextParser extends AbstractParser {
                 buffer.append("</head>\n\n");
             } else if (lastTag0.equals("<equation>")) {
                 buffer.append("</formula>\n\n");
+            } else if (lastTag0.equals("<equation_label>")) {
+                buffer.append("</label>\n\n");
             } else if (lastTag0.equals("<table>")) {
                 buffer.append("</table>\n\n");
             } else if (lastTag0.equals("<figure>")) {
@@ -1360,8 +1364,6 @@ public class FullTextParser extends AbstractParser {
 				}
 			}
 
-//            doc.setConnectedGraphics2(result);
-
             results.add(result);
             result.setId("" + (results.size() - 1));
         }
@@ -1371,112 +1373,6 @@ public class FullTextParser extends AbstractParser {
         return results;
     }
 
-    /**
-     * Process figures identified by the full text model
-     */
-//    private List<Figure> processFiguresOld(String rese,
-//										List<LayoutToken> tokenizations,
-//										Document doc) {
-//    	List<Figure> results = new ArrayList<Figure>();
-//    	if ( (tokenizations == null) || (tokenizations.size() == 0) )
-//    		return results;
-//    	// identify figure blocks
-//    	StringTokenizer st1 = new StringTokenizer(rese, "\n");
-//    	boolean openFigure = false;
-//    	StringBuilder figureBlock = new StringBuilder();
-//    	List<LayoutToken> tokenizationsFigure = new ArrayList<LayoutToken>();
-//    	List<LayoutToken> tokenizationsBuffer = null;
-//    	int p = 0; // position in tokenizations
-//    	int i = 0;
-//    	while(st1.hasMoreTokens()) {
-//    		String row = st1.nextToken();
-//    		String[] s = row.split("\t");
-//    		String s0 = s[0].trim();
-//			int p0 = p;
-//            boolean strop = false;
-//            tokenizationsBuffer = new ArrayList<LayoutToken>();
-//            while ((!strop) && (p < tokenizations.size())) {
-//                String tokOriginal = tokenizations.get(p).getText().trim();
-//                if (openFigure)
-//                	tokenizationsFigure.add(tokenizations.get(p));
-//                tokenizationsBuffer.add(tokenizations.get(p));
-//                if (tokOriginal.equals(s0)) {
-//                    strop = true;
-//                }
-//                p++;
-//            }
-//			if (p == tokenizations.size()) {
-//				// either we are at the end of the header, or we might have
-//				// a problematic token in tokenization for some reasons
-//				if ((p - p0) > 2) {
-//					// we loose the synchronicity, so we reinit p for the next token
-//					p = p0;
-//					continue;
-//				}
-//			}
-//
-//    		int ll = s.length;
-//    		String label = s[ll-1];
-//    		String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-//    		if (label.equals("<figure>") || (label.equals("I-<figure>") && !openFigure)) {
-//    			if (!openFigure) {
-//    				for(LayoutToken lTok : tokenizationsBuffer) {
-//    					tokenizationsFigure.add(lTok);
-//    				}
-//    				openFigure = true;
-//    				i = p;
-//    			}
-//    			// we remove the label in the CRF row
-//    			int ind = row.lastIndexOf("\t");
-//    			if (ind == -1)
-//    				ind = row.lastIndexOf(" ");
-//    			figureBlock.append(row.substring(0, ind)).append("\n");
-//    		}
-//    		else if (label.equals("I-<figure>") || openFigure) {
-//    			// remove last token
-//    			if (tokenizationsFigure.size() > 0) {
-//    				int nbToRemove = tokenizationsBuffer.size();
-//    				for(int q=0; q<nbToRemove; q++)
-//		    			tokenizationsFigure.remove(tokenizationsFigure.size()-1);
-//	    		}
-//	    		//adjustment
-//	    		if ((p != tokenizations.size()) && (tokenizations.get(p).getText().equals("\n") ||
-//	    											tokenizations.get(p).getText().equals("\r") ||
-//	    											tokenizations.get(p).getText().equals(" ")) ) {
-//	    			tokenizationsFigure.add(tokenizations.get(p));
-//	    			p++;
-//	    		}
-//    			while((tokenizationsFigure.size() > 0) &&
-//    				(tokenizationsFigure.get(0).getText().equals("\n") ||
-//    					tokenizationsFigure.get(0).getText().equals(" ")) )
-//    				tokenizationsFigure.remove(0);
-//
-//    			// parse the recognized figure area
-////System.out.println(tokenizationsFigure.toString());
-////System.out.println(figureBlock.toString());
-//	    		if ( (i < tokenizations.size()) && (p < tokenizations.size()) ) {
-//	    			Figure result = parsers.getFigureParser().processing(tokenizationsFigure, figureBlock.toString());
-//	    			result.setStart(i);
-//	    			result.setStartToken(tokenizations.get(i));
-//	    			result.setEnd(p);
-//	    			result.setEndToken(tokenizations.get(p));
-//	    			result.setPage(tokenizations.get(i).getPage());
-//	    			//doc.setConnectedGraphics2(result, tokenizations, doc);
-//					doc.setConnectedGraphics2(result);
-//	//System.out.println(result.toString());
-//	    			tokenizationsFigure = new ArrayList<LayoutToken>();
-//					results.add(result);
-//					result.setId(""+(results.size()-1));
-//				}
-//    			figureBlock = new StringBuilder();
-//    			openFigure = false;
-//    		}
-//    		else
-//    			openFigure = false;
-//    	}
-//		doc.setFigures(results);
-//    	return results;
-//    }
 
     /**
      * Create training data for the figures as identified by the full text model.
@@ -1636,152 +1532,8 @@ public class FullTextParser extends AbstractParser {
 		doc.postProcessTables();
 
 		return results;
-
-
-//		List<Table> results = new ArrayList<Table>();
-//    	if ( (tokenizations == null) || (tokenizations.size() == 0) )
-//    		return results;
-//    	// identify table blocks
-//    	StringTokenizer st1 = new StringTokenizer(rese, "\n");
-//    	boolean openTable = false;
-//    	StringBuilder tableBlock = new StringBuilder();
-//    	List<LayoutToken> tokenizationsTable = new ArrayList<LayoutToken>();
-//    	List<LayoutToken> tokenizationsBuffer = null;
-//    	int p = 0; // position in tokenizations
-//    	int i = 0;
-//    	while(st1.hasMoreTokens()) {
-//    		String row = st1.nextToken();
-//    		String[] s = row.split("\t");
-//    		String s0 = s[0].trim();
-////System.out.println(s0 + "\t" + tokenizations.get(p).getText().trim());
-//			int p0 = p;
-//            boolean strop = false;
-//            tokenizationsBuffer = new ArrayList<LayoutToken>();
-//            while ((!strop) && (p < tokenizations.size())) {
-//                String tokOriginal = tokenizations.get(p).getText().trim();
-//                if (openTable)
-//                	tokenizationsTable.add(tokenizations.get(p));
-//                tokenizationsBuffer.add(tokenizations.get(p));
-//                if (tokOriginal.equals(s0)) {
-//                    strop = true;
-//                }
-//                p++;
-//            }
-//			if (p == tokenizations.size()) {
-//				// either we are at the end of the header, or we might have
-//				// a problematic token in tokenization for some reasons
-//				if ((p - p0) > 2) {
-//					// we loose the synchronicity, so we reinit p for the next token
-//					p = p0;
-//					continue;
-//				}
-//			}
-//
-//    		int ll = s.length;
-//    		String label = s[ll-1];
-//    		String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-//    		if (label.equals("<table>") || (label.equals("I-<table>") && !openTable)) {
-//    			if (!openTable) {
-//    				for(LayoutToken lTok : tokenizationsBuffer) {
-//    					tokenizationsTable.add(lTok);
-//    				}
-//    				openTable = true;
-//    				i = p;
-//    			}
-//    			// we remove the label in the CRF row
-//    			int ind = row.lastIndexOf("\t");
-//    			if (ind == -1)
-//    				ind = row.lastIndexOf(" ");
-//    			tableBlock.append(row.substring(0, ind)).append("\n");
-//    		}
-//    		else if (label.equals("I-<table>") || openTable) {
-//    			// remove last token
-//    			if (tokenizationsTable.size() > 0) {
-//    				int nbToRemove = tokenizationsBuffer.size();
-//    				for(int q=0; q<nbToRemove; q++)
-//		    			tokenizationsTable.remove(tokenizationsTable.size()-1);
-//	    		}
-//
-//	    		//adjustment
-//	    		if ((p != tokenizations.size()) && (tokenizations.get(p).getText().equals("\n") ||
-//	    											tokenizations.get(p).getText().equals("\r") ||
-//	    											tokenizations.get(p).getText().equals(" ")) ) {
-//	    			tokenizationsTable.add(tokenizations.get(p));
-//	    			p++;
-//	    		}
-//    			while( (tokenizationsTable.size() > 0) &&
-//    					(tokenizationsTable.get(0).getText().equals("\n") ||
-//    					tokenizationsTable.get(0).getText().equals(" ")) )
-//    				tokenizationsTable.remove(0);
-//    			// parse the recognized table area
-////System.out.println(tokenizationsTable.toString());
-////System.out.println(tableBlock.toString());
-//	    		if ( (i < tokenizations.size()) && (p < tokenizations.size()) ) {
-//	    			Table result = parsers.getTableParser().processing(tokenizationsTable, tableBlock.toString());
-//	    			result.setStart(i);
-//	    			result.setStartToken(tokenizations.get(i));
-//	    			result.setEnd(p);
-//	    			result.setEndToken(tokenizations.get(p));
-//	    			result.setPage(tokenizations.get(i).getPage());
-//					Document.setConnectedGraphics(result, tokenizations, doc);
-//	//System.out.println(result.toString());
-//	    			tokenizationsTable = new ArrayList<>();
-//					results.add(result);
-//					result.setId(""+(results.size()-1));
-//				}
-//    			tableBlock = new StringBuilder();
-//    			openTable = false;
-//    		}
-//    		else
-//    			openTable = false;
-//    	}
-//		doc.setTables(results);
-//    	return results;
 	}
 
-	/**
-     * Process equations identified by the full text model
-     */
-    private List<Equation> processEquations(String rese,
-									List<LayoutToken> tokenizations,
-									Document doc) {
-		List<Equation> results = new ArrayList<>();
-		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
-
-		for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
-				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.EQUATION))) {
-			List<LayoutToken> tokenizationEquation = cluster.concatTokens();
-			Equation result = new Equation();
-			/*parsers.getEquationParser().processing(
-					tokenizationEquation,
-					cluster.getFeatureBlock()
-			);*/
-
-			SortedSet<Integer> blockPtrs = new TreeSet<>();
-			for (LayoutToken lt : tokenizationEquation) {
-				if (!LayoutTokensUtil.spaceyToken(lt.t())) {
-					blockPtrs.add(lt.getBlockPtr());
-				}
-				result.appendContent(lt.getText());
-			}
-			result.setBlockPtrs(blockPtrs);
-			result.setLayoutTokens(tokenizationEquation);
-
-			// the first token could be a space from previous page
-			for (LayoutToken lt : tokenizationEquation) {
-				if (!LayoutTokensUtil.spaceyToken(lt.t())) {
-					//result.setPage(lt.getPage());
-					break;
-				}
-			}
-			results.add(result);
-			//result.setId("" + (results.size() - 1));
-		}
-
-		doc.setEquations(results);
-
-		return results;
-	}
 
  	/**
      * Create training data for the table as identified by the full text model.
@@ -1900,6 +1652,72 @@ public class FullTextParser extends AbstractParser {
     }
 
     /**
+     * Process equations identified by the full text model
+     */
+    private List<Equation> processEquations(String rese,
+									List<LayoutToken> tokenizations,
+									Document doc) {
+		List<Equation> results = new ArrayList<>();
+		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
+		List<TaggingTokenCluster> clusters = clusteror.cluster();
+
+		Equation currentResult = null;
+		TaggingLabel lastLabel = null;		
+		for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            Engine.getCntManager().i(clusterLabel);
+			if ( (clusterLabel != TaggingLabels.EQUATION) && (clusterLabel != TaggingLabels.EQUATION_LABEL) ) {
+				lastLabel = clusterLabel;
+				if (currentResult != null) {
+					results.add(currentResult);
+					currentResult.setId("" + (results.size() - 1));
+					currentResult = null;
+				}
+				continue;
+			}
+
+			List<LayoutToken> tokenizationEquation = cluster.concatTokens();
+			String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+			
+			if (currentResult == null) 
+				currentResult = new Equation();
+			if ( (!currentResult.getContent().isEmpty()) && (!currentResult.getLabel().isEmpty()) ) {
+				results.add(currentResult);
+				currentResult.setId("" + (results.size() - 1));
+				currentResult = new Equation();
+			}
+			if (clusterLabel.equals(TaggingLabels.EQUATION)) {
+				if (!currentResult.getContent().isEmpty()) {
+					results.add(currentResult);
+					currentResult.setId("" + (results.size() - 1));
+					currentResult = new Equation();
+				}
+	            currentResult.appendContent(clusterContent);
+            	currentResult.addLayoutTokens(cluster.concatTokens());
+            } else if (clusterLabel.equals(TaggingLabels.EQUATION_LABEL)) {
+                currentResult.appendLabel(clusterContent);
+	            currentResult.addLayoutTokens(cluster.concatTokens());
+            }
+
+			lastLabel = clusterLabel;
+		}
+
+		// add last open result
+		if (currentResult != null) {
+			results.add(currentResult);
+			currentResult.setId("" + (results.size() - 1));
+		}
+
+		doc.setEquations(results);
+
+		return results;
+	}
+
+    /**
      * Create the TEI representation for a document based on the parsed header, references
      * and body sections.
      */
@@ -1969,6 +1787,47 @@ public class FullTextParser extends AbstractParser {
 //				)
 //		);
 	}
+
+	private static List<TaggingLabel> inlineFullTextLabels = Arrays.asList(TaggingLabels.CITATION_MARKER, TaggingLabels.TABLE_MARKER, 
+                                TaggingLabels.FIGURE_MARKER, TaggingLabels.EQUATION_LABEL);
+
+    public static List<LayoutTokenization> getDocumentFullTextTokens(List<TaggingLabel> labels, String labeledResult, List<LayoutToken> tokenizations) {
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledResult, tokenizations);
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+        List<LayoutTokenization> labeledTokenSequences = new ArrayList<LayoutTokenization>();
+        LayoutTokenization currentTokenization = null;
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            List<LayoutToken> clusterTokens = cluster.concatTokens();
+
+            if (inlineFullTextLabels.contains(clusterLabel)) {
+                // sequence is not interrupted
+                if (currentTokenization == null)
+	                currentTokenization = new LayoutTokenization();
+
+            } else {
+                // we have an independent sequence
+                if ( (currentTokenization != null) && (currentTokenization.size() > 0) ) {
+	                labeledTokenSequences.add(currentTokenization);
+					currentTokenization = new LayoutTokenization(); 
+				}
+            }
+			if (labels.contains(clusterLabel)) {
+				if (currentTokenization == null)
+	                currentTokenization = new LayoutTokenization();
+				currentTokenization.addTokens(clusterTokens);
+            }
+        }
+        
+        if ( (currentTokenization != null) && (currentTokenization.size() > 0) )
+			labeledTokenSequences.add(currentTokenization);
+
+        return labeledTokenSequences;
+    }
 
     @Override
     public void close() throws IOException {
