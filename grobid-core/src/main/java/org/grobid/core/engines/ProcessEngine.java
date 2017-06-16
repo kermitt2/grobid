@@ -99,7 +99,7 @@ public class ProcessEngine implements Closeable {
                         result = getEngine().processHeader(currPdf.getAbsolutePath(), false, null);
 						File outputPathFile = new File(outputPath);
 						if (!outputPathFile.exists()) {
-							outputPathFile.mkdir();
+							outputPathFile.mkdirs();
 						}
 						if (currPdf.getName().endsWith(".pdf")) {
                         	IOUtilities.writeInFile(outputPath + File.separator
@@ -146,7 +146,7 @@ public class ProcessEngine implements Closeable {
 		else {
             List<String> elementCoordinates = null;
             if (pGbdArgs.getTeiCoordinates()) {
-                elementCoordinates = Arrays.asList("figure", "persName", "ref", "biblStruct");
+                elementCoordinates = Arrays.asList("figure", "persName", "ref", "biblStruct", "formula");
             }
 			processFullTextDirectory(files, pGbdArgs, pGbdArgs.getPath2Output(), pGbdArgs.getSaveAssets(), elementCoordinates);
             System.out.println(Engine.getCntManager());
