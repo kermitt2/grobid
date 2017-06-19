@@ -132,21 +132,56 @@ public class Test {
 	    		String doi = DOIs[i];
 	    		final int id = i;
 	    		
-	    		client.<BiblioItem>pushRequest("works", doi, null, workDeserializer, new CrossrefRequestListener<BiblioItem>() {
+	    		// ASYNCHRONOUS TEST (50 first requests)
+	    		if (i < 50) {
+	    		
+		    		client.<BiblioItem>pushRequest("works", doi, null, workDeserializer, new CrossrefRequestListener<BiblioItem>() {
+		    			
+		    			@Override
+		    			public void onSuccess(List<BiblioItem> results) {
+		    				System.out.println("Success request "+id);
+		    				for (BiblioItem biblio : results) {
+		    					System.out.println(" -> res title: "+biblio.getTitle());
+		    				}
+		    			}
+	
+						@Override
+						public void onError(int status, String message, Exception exception) {
+							System.out.println("ERROR ("+status+") : "+message);
+						}
+		    		});
+	    		
+	    		}
+	    		// SYNCHRONOUS TEST (50 last requests)
+	    		else {
 	    			
-	    			@Override
-	    			public void onSuccess(List<BiblioItem> results) {
-	    				System.out.println("Request "+id);
-	    				for (BiblioItem biblio : results) {
+	    			CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
+	    			client.<BiblioItem>pushRequest("works", doi, null, workDeserializer, requestListener);
+	    			
+	    			synchronized (requestListener) {
+				        try {
+				        	requestListener.wait(6000); // timeout after 6 seconds
+				        } catch (InterruptedException e) {
+				        	e.printStackTrace();
+				        }
+	    			}
+	    			
+			        CrossrefRequestListener.Response<BiblioItem> response = requestListener.getResponse();
+		        	
+		        	if (response == null)
+		        		System.out.println("ERROR : No response ! Maybe timeout.");
+		        	
+		        	else if (response.hasError() || !response.hasResults())
+		        		System.out.println("ERROR ("+response.status+") : "+response.errorMessage);
+		        	
+		        	else { // success
+		        		System.out.println("Success request "+id);
+		        		for (BiblioItem biblio : response.results) {
 	    					System.out.println(" -> res title: "+biblio.getTitle());
 	    				}
-	    			}
-
-					@Override
-					public void onError(int status, String message, Exception exception) {
-						System.out.println("ERROR ("+status+") : "+message);
-					}
-	    		});
+		        	}
+	    			
+	    		}
 	    	}
 	    	
     	} catch (Exception e) {
