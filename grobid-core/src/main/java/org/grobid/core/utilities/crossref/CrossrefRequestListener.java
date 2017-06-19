@@ -84,7 +84,6 @@ public class CrossrefRequestListener<T extends Object> {
 		
 		currentResponse = response;
 		synchronized (this) {
-			System.out.println("synchronized in listener ..");
 			this.notifyAll();
 		}
 	}
