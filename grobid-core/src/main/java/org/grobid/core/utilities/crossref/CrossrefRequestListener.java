@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @author Vincent Kaestle
  */
-public abstract class CrossrefRequestListener<T extends Object> {
+public class CrossrefRequestListener<T extends Object> {
 	
 	
 	public static class Response<T> {
@@ -47,6 +47,14 @@ public abstract class CrossrefRequestListener<T extends Object> {
 		public String toSring() {
 			return "Response (status:"+status+" timeLimit:"+interval+"/"+limitIterations+", results:"+results.size();
 		}
+		
+		public boolean hasError() {
+			return (errorMessage != null) || (errorException != null);
+		}
+		
+		public boolean hasResults() {
+			return (results != null) && (results.size() > 0);
+		}
 	}
 	
 	/**
@@ -57,12 +65,12 @@ public abstract class CrossrefRequestListener<T extends Object> {
 	/**
 	 * Called when request succeed and response format is as expected
 	 */
-	public abstract void onSuccess(List<T> results);
+	public void onSuccess(List<T> results) {}
 	
 	/**
 	 * Called when request gives an error
 	 */
-	public abstract void onError(int status, String message, Exception exception);
+	public void onError(int status, String message, Exception exception) {}
 
 	public void notify(Response<T> response) {
 		
@@ -71,7 +79,21 @@ public abstract class CrossrefRequestListener<T extends Object> {
 		if (response.results != null && response.results.size() > 0)
 			onSuccess(response.results);
 		
-		if (response.errorMessage != null || response.errorException != null)
+		if (response.hasError())
 			onError(response.status, response.errorMessage, response.errorException);
+		
+		currentResponse = response;
+		synchronized (this) {
+			System.out.println("synchronized in listener ..");
+			this.notifyAll();
+		}
+	}
+	
+	protected Response<T> currentResponse = null;
+	/**
+	 * Get response after waiting listener, usefull for synchronous call
+	 */
+	public Response<T> getResponse() {
+		return currentResponse;
 	}
 }
