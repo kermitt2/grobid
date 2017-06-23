@@ -1,6 +1,6 @@
 package org.grobid.core.utilities.crossref;
 
-import java.time.Duration;
+import org.joda.time.Duration;
 import java.util.List;
 
 /**
@@ -31,7 +31,7 @@ public class CrossrefRequestListener<T extends Object> {
 		}
 		
 		public void setTimeLimit(String limitInterval, String limitLimit) {
-			this.interval = (int)Duration.parse("PT"+limitInterval.toUpperCase()).toMillis();
+			this.interval = (int)Duration.parse("PT"+limitInterval.toUpperCase()).getMillis();
 			this.limitIterations = Integer.parseInt(limitLimit);
 		}
 		
