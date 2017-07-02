@@ -72,10 +72,19 @@ public final class LabelStat {
     }
 
     public double getPrecision() {
+        if (observed == 0.0) {
+            return 0.0;
+        }
+        if ((falsePositive + falseNegative) >= observed)
+            return 0.0;
         return (double) (observed - (falsePositive + falseNegative) ) / (observed);
     }
 
     public double getRecall() {
+        if (expected == 0.0)
+            return 0.0;
+        if ((falsePositive + falseNegative) >= observed)
+            return 0.0;
         return (double) (observed - (falsePositive + falseNegative) ) / (expected);
     }
 
@@ -83,6 +92,20 @@ public final class LabelStat {
         double precision = getPrecision();
         double recall = getRecall();
 
-        return (2 * precision * recall) / (precision + recall);
+        if ( (precision == 0) && (recall == 0.0) )
+            return 0.0;
+
+        return (2.0 * precision * recall) / (precision + recall);
+    }
+
+    @Override 
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder
+            .append("falsePositive: ").append(falsePositive)
+            .append("; falseNegative: ").append(falseNegative)
+            .append("; observed: ").append(observed)
+            .append("; expected: ").append(expected);
+        return builder.toString();
     }
 }
