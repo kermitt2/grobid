@@ -1,4 +1,4 @@
-package org.grobid.core.engines;
+package org.grobid.core.engines.label;
 
 /**
  * @author Slava
@@ -6,7 +6,7 @@ package org.grobid.core.engines;
  */
 public enum SegmentationLabel {
     /**
-     * 	cover page <cover>,
+     * cover page <cover>,
      * document header <header>,
      * page footer <footnote>,
      * page header <headnote>,

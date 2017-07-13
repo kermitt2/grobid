@@ -14,6 +14,7 @@ import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.document.TEIFormatter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.label.SegmentationLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;

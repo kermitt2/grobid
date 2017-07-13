@@ -30,6 +30,7 @@ import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.label.SegmentationLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.factory.GrobidFactory;
