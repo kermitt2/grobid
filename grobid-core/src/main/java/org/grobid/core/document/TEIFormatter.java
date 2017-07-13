@@ -11,7 +11,7 @@ import org.grobid.core.data.*;
 import org.grobid.core.data.Date;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
-import org.grobid.core.engines.SegmentationLabel;
+import org.grobid.core.engines.label.SegmentationLabel;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters;
 import org.grobid.core.engines.label.TaggingLabel;
@@ -36,7 +36,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
-import static org.grobid.core.engines.label.TaggingLabels.TABLE_MARKER;
 
 /**
  * Class for generating a TEI representation of a document.

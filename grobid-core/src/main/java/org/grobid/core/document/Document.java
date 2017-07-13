@@ -11,12 +11,11 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
 
 import org.apache.commons.io.IOUtils;
-import org.grobid.core.analyzers.GrobidDefaultAnalyzer;
 import org.grobid.core.analyzers.Analyzer;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.*;
 import org.grobid.core.engines.Engine;
-import org.grobid.core.engines.SegmentationLabel;
+import org.grobid.core.engines.label.SegmentationLabel;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.FigureCounters;
 import org.grobid.core.exceptions.GrobidException;
@@ -33,7 +32,6 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.Page;
 import org.grobid.core.layout.PDFAnnotation;
 import org.grobid.core.layout.VectorGraphicBoxCalculator;
-import org.grobid.core.layout.LayoutTokenization;
 
 import org.grobid.core.sax.PDF2XMLSaxHandler;
 import org.grobid.core.sax.PDF2XMLAnnotationSaxHandler;
@@ -48,11 +46,6 @@ import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 
 import org.grobid.core.engines.counters.TableRejectionCounters;
-import org.grobid.core.engines.label.TaggingLabel;
-import org.grobid.core.GrobidModels;
-
-import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.tokenization.TaggingTokenCluster;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -65,7 +58,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.TreeMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
