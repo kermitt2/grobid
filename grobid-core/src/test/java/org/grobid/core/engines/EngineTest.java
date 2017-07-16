@@ -1000,14 +1000,14 @@ public class EngineTest {
     public void testHeaders() throws Exception {
         final Engine engine = GrobidFactory.getInstance().getEngine();
 //        GrobidAnalysisConfig config = GrobidAnalysisConfig.defaultInstance();
-        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().consolidateHeader(false).build();
 
 
 //        File f = new File("/Users/zholudev/Downloads/Publications sample/AS-292290007453702@1446698776063_content_1.pdf");
         File f = new File("/Users/zholudev/Downloads/Publications sample/AS-395712329207812@1471356579731_content_1.pdf");
 
         BiblioItem res = new BiblioItem();
-        System.out.println(engine.processHeader(f.getAbsolutePath(), false, config, res));
+        System.out.println(engine.processHeader(f.getAbsolutePath(), config, res));
 
 
         int cnt = 0;

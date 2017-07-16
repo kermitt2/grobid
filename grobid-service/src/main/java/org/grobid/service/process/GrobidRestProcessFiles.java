@@ -79,14 +79,14 @@ public class GrobidRestProcessFiles {
                 engine = Engine.getEngine(isparallelExec);
                 if (isparallelExec) {
                     retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
-                    //retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
+                    //retVal = engine.segmentAndProcessHeader(originFile, consolidate, null);
                     GrobidPoolingFactory.returnEngine(engine);
                     engine = null;
                 } else {
                     //TODO: sync does not make sense
                     synchronized (engine) {
                         retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
-                        //retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
+                        //retVal = engine.segmentAndProcessHeader(originFile, consolidate, null);
                     }
                 }
 

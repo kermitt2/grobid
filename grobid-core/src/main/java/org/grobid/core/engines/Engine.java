@@ -407,8 +407,12 @@ public class Engine implements Closeable {
      *         information
      */
     public String processHeader(String inputFile, boolean consolidate, BiblioItem result) {
-        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().startPage(0).endPage(2).build();
-        return processHeader(inputFile, consolidate, config, result);
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .startPage(0)
+            .endPage(2)
+            .consolidateHeader(consolidate)
+            .build();
+        return processHeader(inputFile, config, result);
     }
 
     /**
@@ -422,7 +426,7 @@ public class Engine implements Closeable {
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
-    public String processHeader(String inputFile, boolean consolidate, GrobidAnalysisConfig config, BiblioItem result) {
+    public String processHeader(String inputFile, GrobidAnalysisConfig config, BiblioItem result) {
         // normally the BiblioItem reference must not be null, but if it is the
         // case, we still continue
         // with a new instance, so that the resulting TEI string is still
@@ -431,9 +435,8 @@ public class Engine implements Closeable {
             result = new BiblioItem();
         }
 
-        Pair<String, Document> resultTEI = parsers.getHeaderParser()
-			.processing2(inputFile, consolidate, result, config);
-		//Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, consolidate, result);
+        Pair<String, Document> resultTEI = parsers.getHeaderParser().processing2(inputFile, result, config);
+		//Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, result, config);
         Document doc = resultTEI.getRight();
         //close();
         return resultTEI.getLeft();
