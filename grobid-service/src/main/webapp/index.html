@@ -114,7 +114,7 @@
 										</div>
 										<span class="">
 											
-										<span class="btn btn-file">
+										<span class="btn btn-file" onclick="downloadVisibilty()">
 											<span class="fileupload-new" id="labelFile">Select file</span>
 											<span class="fileupload-exists">Change</span>
 											<input id="input" name="input" type="file" />
@@ -136,7 +136,8 @@
 							</td>
 						</tr>
 						<tr>
-							<td>&nbsp;</td><td colspan="2"><input id="submitRequest" type="submit" value="Submit" class="btn"/></td>
+							<td>&nbsp;</td><td colspan="2"><input id="submitRequest" type="submit" value="Submit" class="btn"/>
+							<input id="btn_download" class="btn" onclick="download()" value="Download TEI Result"/></td>
 						</tr>	
 			        </table>
 				</form>
@@ -232,7 +233,7 @@
 										</div>
 										<span class="">
 											
-										<span class="btn btn-file">
+										<span class="btn btn-file" onclick="downloadVisibilty3()">
 											<span class="fileupload-new" id="labelFile3">Select file</span>
 											<span class="fileupload-exists">Change</span>
 											<input id="input3" name="input" type="file" />
@@ -254,7 +255,8 @@
 							</td>
 						</tr>
 						<tr>
-							<td>&nbsp;</td><td colspan="2"><input id="submitRequest3" value="Submit" class="btn"/></td>
+							<td>&nbsp;</td><td colspan="2"><input id="submitRequest3" value="Submit" class="btn"/>
+							<input id="btn_download3" class="btn" onclick="downloadPatent()" value="Download TEI Result"/></td>
 						</tr>	
 			        </table>
 				</form>

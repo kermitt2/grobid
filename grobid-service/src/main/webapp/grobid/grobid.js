@@ -5,7 +5,7 @@
 */
 
 jQuery.fn.prettify = function () { this.html(prettyPrintOne(this.html(),'xml')); };
-
+var teiToDownload;
 var grobid = (function($) {
 
 	var block = 0;
@@ -45,6 +45,8 @@ var grobid = (function($) {
 
 		$("#divDoc").hide();
 		$('#consolidateBlock').show();
+        $("#btn_download").hide();
+        $("#btn_download3").hide();
 
 		createInputFile();
 		createInputFile2();
@@ -259,13 +261,14 @@ var grobid = (function($) {
 		//var selected = $('#selectedService option:selected').attr('value');
 		var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";
 		var testStr = vkbeautify.xml(responseText);
-
+        teiToDownload = testStr;
 		display += htmll(testStr);
 
 		display += "</pre>";
 		$('#requestResult').html(display);
 		window.prettyPrint && prettyPrint();
 		$('#requestResult').show();
+        $("#btn_download").show();
 	}
 
     function submitQuery2() {
@@ -828,13 +831,14 @@ var grobid = (function($) {
 		//var selected = $('#selectedService3 option:selected').attr('value');
 		var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";
 		var testStr = vkbeautify.xml(responseText);
-
+        teiPatentToDownload = testStr;
 		display += htmll(testStr);
 
 		display += "</pre>";
 		$('#requestResult3').html(display);
 		window.prettyPrint && prettyPrint();
 		$('#requestResult3').show();
+        $("#btn_download3").show();
 	}
 
 	function setupPatentAnnotations(response) {
@@ -1174,5 +1178,41 @@ var grobid = (function($) {
 
 })(jQuery);
 
+function download(){
+    var a = document.body.appendChild(
+        document.createElement("a")
+    );
+    a.download = "export.xml";
+    var xmlData = $.parseXML(teiToDownload);
 
+    if (window.ActiveXObject){
+        var xmlString = xmlData.xml;
+    } else {
+        var xmlString = (new XMLSerializer()).serializeToString(xmlData);
+    }
+    a.href = "data:text/xml," + xmlString; // Grab the HTML
+    a.click(); // Trigger a click on the element
+}
+function downloadPatent(){
+    var a = document.body.appendChild(
+        document.createElement("a")
+    );
+    a.download = "export.xml";
+    var xmlData = $.parseXML(teiPatentToDownload);
+
+    if (window.ActiveXObject){
+        var xmlString = xmlData.xml;
+    } else {
+        var xmlString = (new XMLSerializer()).serializeToString(xmlData);
+    }
+    a.href = "data:text/xml," + xmlString; // Grab the HTML
+    a.click(); // Trigger a click on the element
+}
+
+function downloadVisibilty(){
+    $("#btn_download").hide();
+}
+function downloadVisibilty3(){
+    $("#btn_download3").hide();
+}
 
