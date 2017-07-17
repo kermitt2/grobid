@@ -35,11 +35,14 @@ import org.slf4j.LoggerFactory;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedHashMap;
+import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import java.io.File;
 import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -99,128 +102,52 @@ public class GrobidRestServiceTest {
      */
     @Test
     public void testFullyRestLessHeaderDocument() throws Exception {
-        File pdfFile = new File(getResourceDir().getAbsoluteFile() + "/sample4/sample.pdf");
-        assertTrue("Cannot run the test, because the sample file '" + pdfFile + "' does not exists.", pdfFile.exists());
-
-        FormDataMultiPart form = new FormDataMultiPart();
-        form.field("input", pdfFile, MediaType.MULTIPART_FORM_DATA_TYPE);
-        form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
-
-        Response response = getClient().target(baseUrl() + GrobidPathes.PATH_HEADER)
-                .request()
-                .post(Entity.entity(form, MediaType.MULTIPART_FORM_DATA));
-
-        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-
-        String tei = response.readEntity(String.class);
+        String tei = getStrResponse(sample4(), GrobidPathes.PATH_HEADER);
         LOGGER.debug(tei);
     }
+
 
     /*
      * Test the synchronous fully state less rest call
      */
-//    @Test
-//    public void testFullyRestLessFulltextDocument() throws Exception {
-//        File pdfFile = new File(getResourceDir().getAbsoluteFile()
-//                + "/sample4/sample.pdf");
-//        Client create = Client.create();
-//        WebResource service = create.resource(getHost());
-//        ClientResponse response;
-//
-//        assertTrue("Cannot run the test, because the sample file '" + pdfFile
-//                + "' does not exists.", pdfFile.exists());
-//        FormDataMultiPart form = new FormDataMultiPart();
-//        form.field("input", pdfFile, MediaType.MULTIPART_FORM_DATA_TYPE);
-//        form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
-//        LOGGER.debug("calling " + getHost() + GrobidPathes.PATH_GROBID
-//                + "/" + GrobidPathes.PATH_FULL_TEXT);
-//
-//        service = Client.create().resource(
-//                getHost() + GrobidPathes.PATH_GROBID + "/"
-//                        + GrobidPathes.PATH_FULL_TEXT);
-//        response = service.type(MediaType.MULTIPART_FORM_DATA)
-//                .accept(MediaType.APPLICATION_XML)
-//                .post(ClientResponse.class, form);
-//        assertEquals(Status.OK.getStatusCode(), response.getStatus());
-//
-//        InputStream inputStream = response.getEntity(InputStream.class);
-//        String tei = TextUtilities.convertStreamToString(inputStream);
-//        LOGGER.debug(tei);
-//    }
-//
-//    /**
-//     * Test the synchronous state less rest call for dates
-//     */
-//    @Test
-//    public void testRestDate() throws Exception {
-//        String date = "November 14 1999";
-//        Client create = Client.create();
-//        WebResource service = create.resource(getHost());
-//        ClientResponse response = null;
-//
-//        MultivaluedMap<String, String> formData = new MultivaluedMapImpl();
-//        formData.add("date", date);
-//
-//        service = Client.create().resource(
-//                this.getHost() + GrobidPathes.PATH_GROBID + "/"
-//                        + GrobidPathes.PATH_DATE);
-//        response = service.post(ClientResponse.class, formData);
-//
-//        assertEquals(Status.OK.getStatusCode(), response.getStatus());
-//        String postResp = response.getEntity(String.class);
-//
-//        LOGGER.debug(postResp);
-//    }
-//
-//    /**
-//     * Test the synchronous state less rest call for author sequences in headers
-//     */
-//    @Test
-//    public void testRestNamesHeader() throws Exception {
-//        String names = "Ahmed Abu-Rayyan *,a, Qutaiba Abu-Salem b, Norbert Kuhn * ,b, Cäcilia Maichle-Mößmer b";
-//        Client create = Client.create();
-//        WebResource service = create.resource(getHost());
-//        ClientResponse response;
-//
-//        MultivaluedMap<String, String> formData = new MultivaluedMapImpl();
-//        formData.add("names", names);
-//
-//        service = Client.create().resource(
-//                getHost() + GrobidPathes.PATH_GROBID + "/"
-//                        + GrobidPathes.PATH_HEADER_NAMES);
-//        response = service.post(ClientResponse.class, formData);
-//
-//        assertEquals(Status.OK.getStatusCode(), response.getStatus());
-//        String postResp = response.getEntity(String.class);
-//
-//        LOGGER.debug(postResp);
-//    }
-//
-//    /**
-//     * Test the synchronous state less rest call for author sequences in
-//     * citations
-//     */
-//    @Test
-//    public void testRestNamesCitations() throws Exception {
-//        String names = "Marc Shapiro and Susan Horwitz";
-//        Client create = Client.create();
-//        WebResource service = create.resource(getHost());
-//        ClientResponse response;
-//
-//        MultivaluedMap<String, String> formData = new MultivaluedMapImpl();
-//        formData.add("names", names);
-//
-//        service = Client.create().resource(
-//                getHost() + GrobidPathes.PATH_GROBID + "/"
-//                        + GrobidPathes.PATH_CITE_NAMES);
-//        response = service.post(ClientResponse.class, formData);
-//
-//        assertEquals(Status.OK.getStatusCode(), response.getStatus());
-//        String postResp = response.getEntity(String.class);
-//
-//        LOGGER.debug(postResp);
-//    }
-//
+    @Test
+    public void testFullyRestLessFulltextDocument() throws Exception {
+        String tei = getStrResponse(sample4(), GrobidPathes.PATH_FULL_TEXT);
+        LOGGER.debug(tei);
+    }
+
+    /**
+     * Test the synchronous state less rest call for dates
+     */
+    @Test
+    public void testRestDate() throws Exception {
+        String resp = getStrResponse("date", "November 14 1999", GrobidPathes.PATH_DATE);
+        LOGGER.debug(resp);
+    }
+
+    /**
+     * Test the synchronous state less rest call for author sequences in headers
+     */
+    @Test
+    public void testRestNamesHeader() throws Exception {
+        String names = "Ahmed Abu-Rayyan *,a, Qutaiba Abu-Salem b, Norbert Kuhn * ,b, Cäcilia Maichle-Mößmer b";
+
+        String resp = getStrResponse("names", names, GrobidPathes.PATH_HEADER_NAMES);
+        LOGGER.debug(resp);
+    }
+
+    /**
+     * Test the synchronous state less rest call for author sequences in
+     * citations
+     */
+    @Test
+    public void testRestNamesCitations() throws Exception {
+        String names = "Marc Shapiro and Susan Horwitz";
+        String resp = getStrResponse("names", names, GrobidPathes.PATH_CITE_NAMES);
+        LOGGER.debug(resp);
+    }
+
+    //
 //    /**
 //     * Test the synchronous state less rest call for affiliation + address
 //     * blocks
@@ -308,5 +235,43 @@ public class GrobidRestServiceTest {
 //        assertThat(Status.OK.getStatusCode(), is(response.getStatus()));
 //        assertThat(expectedVersion, is(response.getEntity(String.class)));
 //    }
+
+    private String getStrResponse(File pdf, String method) {
+
+        assertTrue("Cannot run the test, because the sample file '" + pdf + "' does not exists.", pdf.exists());
+
+        FormDataMultiPart form = new FormDataMultiPart();
+        form.field("input", pdf, MediaType.MULTIPART_FORM_DATA_TYPE);
+        form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
+
+        Response response = getClient().target(baseUrl() + method)
+                .request()
+                .post(Entity.entity(form, MediaType.MULTIPART_FORM_DATA));
+
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+
+        String cont = response.readEntity(String.class);
+        LOGGER.debug(cont);
+        return cont;
+    }
+
+    private String getStrResponse(String key, String val, String method) {
+        MultivaluedMap<String, String> formData = new MultivaluedHashMap<>();
+        formData.add(key, val);
+
+        Response response = getClient().target(baseUrl() +  method)
+                .request()
+                .post(Entity.entity(formData, MediaType.APPLICATION_FORM_URLENCODED));
+
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+
+        String postResp = response.readEntity(String.class);
+        assertNotNull(postResp);
+        return postResp;
+    }
+
+    private static File sample4() {
+        return new File(getResourceDir().getAbsoluteFile() + "/sample4/sample.pdf");
+    }
 
 }
