@@ -74,7 +74,7 @@ public class TableParser extends AbstractParser {
                 table.getFullDescriptionTokens().addAll(tokens);
             } else if (clusterLabel.equals(TBL_LABEL)) {
                 //label should also go to head
-                table.appendHeader(clusterContent);
+                table.appendHeader(" " + clusterContent + " ");
                 table.appendLabel(clusterContent);
                 table.getFullDescriptionTokens().addAll(tokens);
             } else if (clusterLabel.equals(TBL_OTHER)) {
@@ -88,125 +88,6 @@ public class TableParser extends AbstractParser {
         }
         return table;
     }
-
-//	private Table getExtractionResult(List<LayoutToken> tokenizations,
-//									  List<Pair<String, String>> labeled) {
-//		Table table = new Table();
-//        int tokPtr = 0;
-//        boolean addSpace = false;
-//		boolean addLine = false;
-//        for (Pair<String, String> l : labeled) {
-//            String tok = l.a;
-//            String label = l.b;
-//			String currToken = null;
-//            while(tokPtr < tokenizations.size()) {
-//            	currToken = tokenizations.get(tokPtr).getText();
-//				if (currToken.equals(" ") ||
-//					   currToken.equals("\n") ||
-//					   currToken.equals("\r") ) {
-//					if (currToken.equals(" "))
-//                		addSpace = true;
-//					else
-//						addLine = true;
-//				}
-//				else
-//					break;
-//				tokPtr++;
-//            }
-//            if (tokPtr >= tokenizations.size()) {
-//                //throw new IllegalStateException("Implementation error: Reached the end of tokenizations, but current token is " + tok);
-//				LOGGER.error("Implementation error: Reached the end of tokenizations, but current token is " + tok);
-//				// we add a space to avoid concatenated text
-//				addSpace = true;
-//            }
-//            else {
-//				String tokenizationToken = tokenizations.get(tokPtr).getText();
-//
-//				if ((tokPtr != tokenizations.size()) && !tokenizationToken.equals(tok)) {
-//					// and we add a space by default to avoid concatenated text
-//					addSpace = true;
-//					if (!tok.startsWith(tokenizationToken)) {
-//						// this is a very exceptional case due to a sequence of accent/diacresis, in this case we skip
-//						// a shift in the tokenizations list and continue on the basis of the labeled token
-//						// we check one ahead
-//						tokPtr++;
-//						tokenizationToken = tokenizations.get(tokPtr).getText();
-//						if (!tok.equals(tokenizationToken)) {
-//							// we try another position forward (second hope!)
-//							tokPtr++;
-//							tokenizationToken = tokenizations.get(tokPtr).getText();
-//							if (!tok.equals(tokenizationToken)) {
-//								// we try another position forward (last hope!)
-//								tokPtr++;
-//								tokenizationToken = tokenizations.get(tokPtr).getText();
-//								if (!tok.equals(tokenizationToken)) {
-//									// we return to the initial position
-//									tokPtr = tokPtr-3;
-//									tokenizationToken = tokenizations.get(tokPtr).getText();
-//									LOGGER.error("Implementation error, tokens out of sync: " +
-//										tokenizationToken + " != " + tok + ", at position " + tokPtr);
-//								}
-//							}
-//						}
-//					}
-//					// note: if the above condition is true, this is an exceptional case due to a
-//					// sequence of accent/diacresis and we can go on as a full string match
-//	            }
-//			}
-//
-//            String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-//            if (plainLabel.equals("<figDesc>")) {
-//                if (addSpace || addLine) {
-//                    table.appendCaption(" ");
-//                    addSpace = false;
-//                }
-//
-//                table.appendCaption(tok);
-//            } else if (plainLabel.equals("<figure_head>")) {
-//                if (addSpace) {
-//                    table.appendHeader(" ");
-//                    addSpace = false;
-//                }
-//                if (addLine) {
-//                    table.appendHeader("\n");
-//                    addLine = false;
-//                }
-//
-//                table.appendHeader(tok);
-//            } else if (plainLabel.equals("<trash>")) {
-//                if (addSpace) {
-//                    table.appendContent(" ");
-//                    addSpace = false;
-//                }
-//                if (addLine) {
-//                    table.appendContent("\n");
-//                    addLine = false;
-//                }
-//
-//                table.appendContent(tok);
-//            } else if (plainLabel.equals("<label>")) {
-//                if (addSpace) {
-//                    table.appendLabel(" ");
-//                    table.appendHeader(" ");
-//                    addSpace = false;
-//                }
-//                if (addLine) {
-//                    table.appendLabel("\n");
-//                    table.appendHeader("\n");
-//                    addLine = false;
-//                }
-//
-//                table.appendLabel(tok);
-//                table.appendHeader(tok);
-//            } else if (plainLabel.equals("<other>")) {
-//				//features.append(theFeatures);
-//				//features.append("\n");
-//			}
-//            tokPtr++;
-//        }
-//        //table.setId();
-//		return table;
-//    }
 
     /**
      * The training data creation is called from the full text training creation in cascade.
@@ -296,7 +177,7 @@ public class TableParser extends AbstractParser {
             }
 
             output = writeField(label, lastTag, tok, "<figure_head>", "<head>", addSpace, addEOL, 3);
-            String tableOpening = "        <figure type=\"table\">\n";
+            String tableOpening = "\t\t<figure type=\"table\">\n";
             if (output != null) {
                 if (!figOpen) {
                     sb.append(tableOpening);
@@ -342,7 +223,7 @@ public class TableParser extends AbstractParser {
 
         if (figOpen) {
             testClosingTag(sb, "", lastTag, addSpace, addEOL);
-            sb.append("        </figure>\n");
+            sb.append("\t\t</figure>\n");
         }
 
         return new Pair(sb.toString(), featureVector);

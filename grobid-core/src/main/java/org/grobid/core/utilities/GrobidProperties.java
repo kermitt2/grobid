@@ -728,7 +728,7 @@ public class GrobidProperties {
      * @param nbThreads umber of threads
      */
     public static void setNBThreads(final String nbThreads) {
-        setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PORT, nbThreads);
+        setPropertyValue(GrobidPropertyKeys.PROP_NB_THREADS, nbThreads);
     }
 
     /**

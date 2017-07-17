@@ -2,11 +2,6 @@
 
 ##Getting GROBID
 
-###Prerequisites
-**libxml2**: GROBID is currenly shipped with all the needed libraries (Mac and Linux 32/64 bit).
-libxml2 is required by pdf2xml, and is normally shipped by default on all standard installation (Ubuntu, Mac OSX, etc).
-For minimal or cloud based / container system like Linode, AWS, Docker, etc might not be installed by default.
-
 
 ###Latest stable release
 

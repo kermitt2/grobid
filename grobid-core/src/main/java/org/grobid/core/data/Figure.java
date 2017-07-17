@@ -241,6 +241,11 @@ public class Figure {
             figureElement.appendChild(head);
 
         }
+        if (label != null) {
+            Element labelEl = XmlBuilderUtils.teiElement("label",
+                LayoutTokensUtil.normalizeText(label.toString()));
+            figureElement.appendChild(labelEl);
+        }
         if (caption != null) {
             Element desc = XmlBuilderUtils.teiElement("figDesc",
                     LayoutTokensUtil.normalizeText(caption.toString()));
@@ -339,7 +344,6 @@ public class Figure {
     public SortedSet<Integer> getBlockPtrs() {
         return blockPtrs;
     }
-
 
     public void setCaption(StringBuilder caption) {
         this.caption = caption;

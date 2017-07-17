@@ -5,6 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/kermitt2/grobid/badge.svg)](https://coveralls.io/r/kermitt2/grobid)
 [![Documentation Status](https://readthedocs.org/projects/grobid/badge/?version=latest)](https://readthedocs.org/projects/grobid/?badge=latest)
 [![Docker Status](https://images.microbadger.com/badges/version/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Latest Docker HUB image")
+<!--[![Dependency Status](https://www.versioneye.com/user/projects/5942f4990fb24f005a2a6136/badge.svg)](https://www.versioneye.com/user/projects/5942f4990fb24f005a2a6136)-->
 
 ## Purpose
 

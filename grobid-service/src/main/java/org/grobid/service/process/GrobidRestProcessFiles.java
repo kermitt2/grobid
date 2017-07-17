@@ -79,14 +79,14 @@ public class GrobidRestProcessFiles {
                 engine = Engine.getEngine(isparallelExec);
                 if (isparallelExec) {
                     retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
-                    //retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
+                    //retVal = engine.segmentAndProcessHeader(originFile, consolidate, null);
                     GrobidPoolingFactory.returnEngine(engine);
                     engine = null;
                 } else {
                     //TODO: sync does not make sense
                     synchronized (engine) {
                         retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
-                        //retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
+                        //retVal = engine.segmentAndProcessHeader(originFile, consolidate, null);
                     }
                 }
 
@@ -178,7 +178,8 @@ public class GrobidRestProcessFiles {
                                                             final boolean htmlFormat,
                                                             final int startPage,
                                                             final int endPage,
-                                                            final boolean generateIDs) {
+                                                            final boolean generateIDs,
+                                                            final List<String> teiCoordinates) {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal;
@@ -200,6 +201,7 @@ public class GrobidRestProcessFiles {
                                 .startPage(startPage)
                                 .endPage(endPage)
                                 .generateTeiIds(generateIDs)
+                                .generateTeiCoordinates(teiCoordinates)
                                 .build();
 
                 retVal = engine.fullTextToTEI(originFile,

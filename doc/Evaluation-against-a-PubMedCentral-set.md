@@ -6,7 +6,7 @@ For an end-to-end evaluation, covering the whole extraction process from the par
 
 ## Getting PubMedCentral gold-standard data 
 
-We are currently evaluating GROBID using the `PMC_sample_1943` dataset compiled by Alexandru Constantin. The dataset is available at this [url](http://pdfx.cs.man.ac.uk/serve/PMC_sample_1943.zip) (1.5GB in size). The sample dataset contains 1943 articles from 1943 different journals corresponding to the latest publications from a 2011 snapshot. 
+We are currently evaluating GROBID using the `PMC_sample_1943` dataset compiled by Alexandru Constantin. The dataset is available at this [url](https://grobid.s3.amazonaws.com/PMC_sample_1943.zip) (around 1.5GB in size). The sample dataset contains 1943 articles from 1943 different journals corresponding to the latest publications from a 2011 snapshot. 
 
 Any similar PubMed Central set of articles could normally be used, as long they follow the same directory structure: one directory per article containing at least the corresponding PDF file and the reference NLM file. 
 

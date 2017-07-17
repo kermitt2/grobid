@@ -74,7 +74,8 @@ class FigureParser extends AbstractParser {
                 figure.appendHeader(clusterContent);
             } else if (clusterLabel.equals(FIG_LABEL)) {
                 figure.appendLabel(clusterContent);
-                figure.appendHeader(clusterContent);
+                //label should also go to head
+                figure.appendHeader(" " + clusterContent + " ");
             } else if (clusterLabel.equals(FIG_OTHER)) {
 
             } else if (clusterLabel.equals(FIG_TRASH)) {
@@ -85,136 +86,6 @@ class FigureParser extends AbstractParser {
         }
         return figure;
     }
-
-    /*private Figure getExtractionResult(List<LayoutToken> tokenizations,
-        List<Pair<String, String>> labeled) {
-		Figure figure = new Figure();
-        int tokPtr = 0;
-        boolean addSpace = false;
-		boolean addLine = false;
-        for (Pair<String, String> l : labeled) {
-            String tok = l.a;
-            String label = l.b;       
-			String currToken;
-            while(tokPtr < tokenizations.size()) {
-            	currToken = tokenizations.get(tokPtr).getText();
-				if (currToken.equals(" ") ||
-					   currToken.equals("\n") ||
-					   currToken.equals("\r") ) {
-					if (currToken.equals(" "))
-                		addSpace = true;
-					else
-						addLine = true;
-				}
-				else
-					break;
-				tokPtr++;
-            } 
-            if (tokPtr >= tokenizations.size()) {
-                //throw new IllegalStateException("Implementation error: Reached the end of tokenizations, but current token is " + tok);
-				LOGGER.error("Implementation error: Reached the end of tokenizations, but current token is " + tok);
-				// we add a space to avoid concatenated text
-				addSpace = true;
-            }
-            else {
-				String tokenizationToken = tokenizations.get(tokPtr).getText();
-
-				if ((tokPtr != tokenizations.size()) && !tokenizationToken.equals(tok)) {
-					// and we add a space by default to avoid concatenated text
-					addSpace = true;
-					if (!tok.startsWith(tokenizationToken)) {
-						// this is a very exceptional case due to a sequence of accent/diacresis, in this case we skip
-						// a shift in the tokenizations list and continue on the basis of the labeled token
-						// we check one ahead
-						tokPtr++;
-						tokenizationToken = tokenizations.get(tokPtr).getText();
-						if (!tok.equals(tokenizationToken)) {
-							// we try another position forward (second hope!)
-							tokPtr++;
-							tokenizationToken = tokenizations.get(tokPtr).getText();
-							if (!tok.equals(tokenizationToken)) {
-								// we try another position forward (last hope!)
-								tokPtr++;
-								tokenizationToken = tokenizations.get(tokPtr).getText();
-								if (!tok.equals(tokenizationToken)) {
-									// we return to the initial position
-									tokPtr = tokPtr-3;
-									tokenizationToken = tokenizations.get(tokPtr).getText();
-									LOGGER.error("Implementation error, tokens out of sync: " +
-										tokenizationToken + " != " + tok + ", at position " + tokPtr);
-								}
-							}
-						}
-					}
-					// note: if the above condition is true, this is an exceptional case due to a
-					// sequence of accent/diacresis and we can go on as a full string match
-	            }
-			}
-
-            String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-			switch (plainLabel) {
-				case "<figDesc>":
-					if (addSpace || addLine) {
-						figure.appendCaption(" ");
-						addSpace = false;
-						addLine = false;
-					}
-
-					figure.appendCaption(tok);
-					break;
-				case "<figure_head>":
-					if (addSpace) {
-						figure.appendHeader(" ");
-						addSpace = false;
-					}
-					if (addLine) {
-						figure.appendHeader("\n");
-						addLine = false;
-					}
-
-					figure.appendHeader(tok);
-					break;
-				case "<trash>":
-					if (addSpace) {
-						figure.appendContent(" ");
-						addSpace = false;
-					}
-					if (addLine) {
-						figure.appendContent("\n");
-						addLine = false;
-					}
-
-					figure.appendContent(tok);
-					break;
-				case "<label>":
-					if (addSpace) {
-						figure.appendLabel(" ");
-						figure.appendHeader(" ");
-						addSpace = false;
-					}
-					if (addLine) {
-						figure.appendLabel("\n");
-						figure.appendHeader("\n");
-						addLine = false;
-					}
-
-					figure.appendLabel(tok);
-					figure.appendHeader(tok);
-					break;
-				case "<other>":
-					//features.append(theFeatures);
-					//features.append("\n");
-					break;
-				default:
-					LOGGER.info("Warning: unexpected figure model label - " + plainLabel + " for "
-							+ tok + ", at position " + tokPtr);
-					break;
-			}
-            tokPtr++;
-        }
-        //figure.setId();
-		return figure;
-    }*/
 
     /**
      * The training data creation is called from the full text training creation in cascade.

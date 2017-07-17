@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doi_records>
+  <doi_record owner="10.1007" timestamp="2013-03-16 17:19:43">
+    <crossref>
+      <journal>
+        <journal_metadata language="en">
+          <full_title>Archivum Immunologiae et Therapiae Experimentalis</full_title>
+          <abbrev_title>Arch. Immunol. Ther. Exp.</abbrev_title>
+          <issn media_type="print">0004-069X</issn>
+          <issn media_type="electronic">1661-4917</issn>
+        </journal_metadata>
+        <journal_issue>
+          <publication_date media_type="print">
+            <month>2</month>
+            <year>2010</year>
+          </publication_date>
+          <journal_volume>
+            <volume>58</volume>
+          </journal_volume>
+          <issue>1</issue>
+        </journal_issue>
+        <journal_article publication_type="full_text">
+          <titles>
+            <title>The Enzymatic Activity of Type 1 Iodothyronine Deiodinase (D1) is Low in Liver Hemangioma: A Preliminary Study</title>
+          </titles>
+          <contributors>
+            <person_name contributor_role="author" sequence="first">
+              <given_name>Oskar</given_name>
+              <surname>Kornasiewicz</surname>
+            </person_name>
+            <person_name contributor_role="author" sequence="additional">
+              <given_name>Marcin</given_name>
+              <surname>Debski</surname>
+            </person_name>
+            <person_name contributor_role="author" sequence="additional">
+              <given_name>Marta</given_name>
+              <surname>Stepnowska</surname>
+            </person_name>
+            <person_name contributor_role="author" sequence="additional">
+              <given_name>Anna</given_name>
+              <surname>Szałas</surname>
+            </person_name>
+            <person_name contributor_role="author" sequence="additional">
+              <given_name>Ewa</given_name>
+              <surname>Bar-Andziak</surname>
+            </person_name>
+            <person_name contributor_role="author" sequence="additional">
+              <given_name>Marek</given_name>
+              <surname>Krawczyk</surname>
+            </person_name>
+          </contributors>
+          <publication_date media_type="online">
+            <month>1</month>
+            <day>5</day>
+            <year>2010</year>
+          </publication_date>
+          <publication_date media_type="print">
+            <month>2</month>
+            <year>2010</year>
+          </publication_date>
+          <pages>
+            <first_page>77</first_page>
+            <last_page>80</last_page>
+          </pages>
+          <publisher_item>
+            <identifier id_type="pii">56</identifier>
+          </publisher_item>
+          <doi_data>
+            <doi>10.1007/s00005-009-0056-3</doi>
+            <timestamp>20100203115346</timestamp>
+            <resource>http://link.springer.com/10.1007/s00005-009-0056-3</resource>
+            <collection property="crawler-based" setbyID="springer">
+              <item crawler="iParadigms">
+                <resource>http://www.springerlink.com/index/pdf/10.1007/s00005-009-0056-3</resource>
+              </item>
+            </collection>
+          </doi_data>
+          <citation_list>
+            <citation key="56_CR1">
+              <journal_title>Thyroid</journal_title>
+              <author>M Ambroziak</author>
+              <volume>15</volume>
+              <first_page>1137</first_page>
+              <cYear>2005</cYear>
+              <unstructured_citation>Ambroziak M, Pachucki J, Stachlewska-Nasfeter E et al (2005) Disturbed expression of type 1 and type 2 iodothyronine deiodinase as well as titf1/nkx2-1 and pax-8 transcription factor genes in papillary thyroid cancer. Thyroid 15:1137–1146</unstructured_citation>
+            </citation>
+            <citation key="56_CR2">
+              <journal_title>Thyroid</journal_title>
+              <author>LA Arnaldi</author>
+              <volume>15</volume>
+              <first_page>210</first_page>
+              <cYear>2005</cYear>
+              <unstructured_citation>Arnaldi LA, Borra RC, Maciel RM et al (2005) Gene expression profiles reveal that DCN, DIO1, and DIO2 are underexpressed in benign and malignant thyroid tumors. Thyroid 15:210–221</unstructured_citation>
+            </citation>
+            <citation key="56_CR3">
+              <journal_title>Eur J Endocrinol</journal_title>
+              <author>A Baur</author>
+              <volume>147</volume>
+              <first_page>263</first_page>
+              <cYear>2002</cYear>
+              <unstructured_citation>Baur A, Buchfelder M, Köhrle J (2002) Expression of 5′-deiodinase enzymes in normal pituitaries and in various human pituitary adenomas. Eur J Endocrinol 147:263–268</unstructured_citation>
+            </citation>
+            <citation key="56_CR4">
+              <journal_title>Endocr Rev</journal_title>
+              <author>AC Bianco</author>
+              <volume>23</volume>
+              <first_page>38</first_page>
+              <cYear>2002</cYear>
+              <unstructured_citation>Bianco AC, Salvatore D, Gereben B et al (2002) Biochemistry, cellular and molecular biology, and physiological role of the iodothyronine selenodeiodinases. Endocr Rev 23:38–89</unstructured_citation>
+            </citation>
+            <citation key="56_CR5">
+              <journal_title>Clin Endocrinol</journal_title>
+              <author>EL Souza Meyer De</author>
+              <volume>62</volume>
+              <first_page>672</first_page>
+              <cYear>2005</cYear>
+              <unstructured_citation>De Souza Meyer EL, Dora JM, Wagner MS et al (2005) Decreased type 1 iodothyronine deiodinase expression might be an early and discrete event in thyroid cell dedifferentation towards papillary carcinoma. Clin Endocrinol 62:672–678</unstructured_citation>
+            </citation>
+            <citation key="56_CR6">
+              <journal_title>Thyroid</journal_title>
+              <author>MG Debski</author>
+              <volume>17</volume>
+              <first_page>3</first_page>
+              <cYear>2007</cYear>
+              <unstructured_citation>Debski MG, Pachucki J, Ambroziak M et al (2007) Human breast cancer tissue expresses high level of type 1 5′-deiodinase. Thyroid 17:3–10</unstructured_citation>
+            </citation>
+            <citation key="56_CR7">
+              <journal_title>Mol Cell Endocrinol</journal_title>
+              <author>P García-Solís</author>
+              <volume>201</volume>
+              <first_page>25</first_page>
+              <cYear>2003</cYear>
+              <unstructured_citation>García-Solís P, Aceves C (2003) 5′Deiodinase in two breast cancer cell lines: effect of triiodothyronine, isoproterenol and retinoids. Mol Cell Endocrinol 201:25–31</unstructured_citation>
+            </citation>
+            <citation key="56_CR8">
+              <journal_title>Cancer Lett</journal_title>
+              <author>JM Gonzalez-Sancho</author>
+              <volume>192</volume>
+              <first_page>121</first_page>
+              <cYear>2003</cYear>
+              <unstructured_citation>Gonzalez-Sancho JM, Garcia V, Bonilla F et al (2003) Thyroid hormone receptors/THR genes in human cancer. Cancer Lett 192:121–132</unstructured_citation>
+            </citation>
+            <citation key="56_CR9">
+              <journal_title>J Pediatr Endocrinol Metab</journal_title>
+              <author>J Ho</author>
+              <volume>18</volume>
+              <first_page>511</first_page>
+              <cYear>2005</cYear>
+              <unstructured_citation>Ho J, Kendrick V, Dewey D et al (2005) New insight into the pathophysiology of severe hypothyroidism in an infant with multiple hepatic hemangiomas. J Pediatr Endocrinol Metab 18:511–514</unstructured_citation>
+            </citation>
+            <citation key="56_CR10">
+              <journal_title>Thyroid</journal_title>
+              <author>SA Huang</author>
+              <volume>15</volume>
+              <first_page>875</first_page>
+              <cYear>2005</cYear>
+              <unstructured_citation>Huang SA (2005) Physiology and pathophysiology of type 3 deiodinase in humans. Thyroid 15:875–881</unstructured_citation>
+            </citation>
+            <citation key="56_CR11">
+              <journal_title>J Clin Endocrinol Metab</journal_title>
+              <author>SA Huang</author>
+              <volume>88</volume>
+              <first_page>1384</first_page>
+              <cYear>2003</cYear>
+              <unstructured_citation>Huang SA, Dorfman DM, Genest DR (2003) Type 3 iodothyronine deiodinase is highly expressed in the human uteroplacental unit and in fetal epithelium. J Clin Endocrinol Metab 88:1384–1388</unstructured_citation>
+            </citation>
+            <citation key="56_CR12">
+              <journal_title>Mol Endocrinol</journal_title>
+              <author>SA Huang</author>
+              <volume>19</volume>
+              <first_page>3126</first_page>
+              <cYear>2005</cYear>
+              <unstructured_citation>Huang SA, Mulcahey MA, Crescenzi A et al (2005) Transforming growth factor-beta promotes inactivation of extracellular thyroid hormones via transcriptional stimulation of type 3 iodothyronine deiodinase. Mol Endocrinol 19:3126–3136</unstructured_citation>
+            </citation>
+            <citation key="56_CR13">
+              <journal_title>Eur J Endocrinol</journal_title>
+              <author>TC Jakobs</author>
+              <volume>146</volume>
+              <first_page>559</first_page>
+              <cYear>2002</cYear>
+              <unstructured_citation>Jakobs TC, Mentrup B, Schmutzler C et al (2002) Proinflammatory cytokines inhibit the expression and function of human type I 5′deiodinase in HepG2 hepatocarcinoma cells. Eur J Endocrinol 146:559–566</unstructured_citation>
+            </citation>
+            <citation key="56_CR14">
+              <journal_title>Pediatrics</journal_title>
+              <author>D Konrad</author>
+              <volume>112</volume>
+              <issue>6 Pt 1</issue>
+              <first_page>1424</first_page>
+              <cYear>2003</cYear>
+              <unstructured_citation>Konrad D, Ellis G, Perlman K (2003) Spontaneous regression of severe acquired infantile hypothyroidism associated with multiple liver hemangiomas. Pediatrics 112(6 Pt 1):1424–1426</unstructured_citation>
+            </citation>
+            <citation key="56_CR15">
+              <journal_title>Endokrynol Pol</journal_title>
+              <author>A Macke-Nauman</author>
+              <volume>41</volume>
+              <first_page>4</first_page>
+              <cYear>1990</cYear>
+              <unstructured_citation>Macke-Nauman A (1990) Monodejodynacja tyroksyny do trijodotyroniny – specyficzność tkankowa. Regulacyjny wpływ katecholamin. Endokrynol Pol 41:4–54</unstructured_citation>
+            </citation>
+            <citation key="56_CR16">
+              <journal_title>J Clin Invest</journal_title>
+              <author>AL Maia</author>
+              <volume>115</volume>
+              <first_page>2524</first_page>
+              <cYear>2005</cYear>
+              <unstructured_citation>Maia AL, Kim BW, Huang SA et al (2005) Type 2 iodotyronine deiodinase is the major source of plasma T3 in euthyroid humans. J Clin Invest 115:2524–2533</unstructured_citation>
+            </citation>
+            <citation key="56_CR17">
+              <journal_title>J Endocrinol Invest</journal_title>
+              <author>J Pachucki</author>
+              <volume>24</volume>
+              <first_page>253</first_page>
+              <cYear>2001</cYear>
+              <unstructured_citation>Pachucki J, Ambroziak M, Tański Z et al (2001) Type 1 5′-iodothyronine deiodinase activity and mRNA are remarkably reduced in renal clear cell carcinoma. J Endocrinol Invest 24:253–261</unstructured_citation>
+            </citation>
+            <citation key="56_CR18">
+              <journal_title>Endocrinology</journal_title>
+              <author>D Salvatore</author>
+              <volume>137</volume>
+              <first_page>3308</first_page>
+              <cYear>1996</cYear>
+              <unstructured_citation>Salvatore D, Bartha T, Harney JW et al (1996) Molecular biological and biochemical characterization of the human type 2 selenodeiodinase. Endocrinology 137:3308–3315</unstructured_citation>
+            </citation>
+            <citation key="56_CR19">
+              <journal_title>J Clin Endocrinol Metab</journal_title>
+              <author>R Schreck</author>
+              <volume>79</volume>
+              <first_page>791</first_page>
+              <cYear>1994</cYear>
+              <unstructured_citation>Schreck R, Schnieders F, Schmutzler C et al (1994) Retinoids stimulate type I iodothyronine 5′-deiodinase activity in human follicular thyroid carcinoma cell lines. J Clin Endocrinol Metab 79:791–798</unstructured_citation>
+            </citation>
+            <citation key="56_CR20">
+              <journal_title>Clin Endocrinol</journal_title>
+              <author>LA Tannahill</author>
+              <volume>56</volume>
+              <first_page>735</first_page>
+              <cYear>2002</cYear>
+              <unstructured_citation>Tannahill LA, Visser TJ, McCabe CJ et al (2002) Dysregulation of iodothyronine deiodinase enzyme expression and function in human pituitary tumours. Clin Endocrinol 56:735–743</unstructured_citation>
+            </citation>
+            <citation key="56_CR21">
+              <journal_title>Monaldi Arch Chest Dis</journal_title>
+              <author>L Wawrzynska</author>
+              <volume>59</volume>
+              <first_page>140</first_page>
+              <cYear>2003</cYear>
+              <unstructured_citation>Wawrzynska L, Sakowicz A, Rudzinski P et al (2003) The conversion of thyroxine to triiodothyronine in the lung: comparison of activity of type I iodothyronine 5′ deiodinase in lung cancer with peripheral lung tissues. Monaldi Arch Chest Dis 59:140–145</unstructured_citation>
+            </citation>
+            <citation key="56_CR22">
+              <journal_title>J Vasc Res</journal_title>
+              <author>WJ Zhang</author>
+              <volume>43</volume>
+              <first_page>522</first_page>
+              <cYear>2006</cYear>
+              <unstructured_citation>Zhang WJ, Ye LY, Wu LQ et al (2006) Morphologic, phenotypic and functional characteristics of endothelial cells derived from human hepatic cavernous hemangioma. J Vasc Res 43:522–532</unstructured_citation>
+            </citation>
+          </citation_list>
+        </journal_article>
+      </journal>
+    </crossref>
+  </doi_record>
+</doi_records>

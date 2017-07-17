@@ -71,6 +71,7 @@ public class GrobidMain {
 		help.append("-s: is the parameter used for process using string as input and not file.\n");
 		help.append("-r: recursive directory processing, default processing is not recursive.\n");
 		help.append("-ignoreAssets: do not extract and save the PDF assets (bitmaps, vector graphics), by default the assets are extracted and saved.\n");
+		help.append("-teiCoordinates: output a subset of the identified structures with coordinates in the original PDF, by default no coordinates are present.\n");
 		help.append("-exe: gives the command to execute. The value should be one of these:\n");
 		help.append("\t" + availableCommands + "\n");
 		return help.toString();
@@ -143,6 +144,10 @@ public class GrobidMain {
 				}
 				if (currArg.equals("-ignoreAssets")) {
 					gbdArgs.setSaveAssets(false);
+					continue;
+				}
+				if (currArg.equals("-teiCoordinates")) {
+					gbdArgs.setTeiCoordinates(true);
 					continue;
 				}
 				if (currArg.equals("-r")) {

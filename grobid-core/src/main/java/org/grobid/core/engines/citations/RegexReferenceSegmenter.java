@@ -6,7 +6,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.document.Document;
-import org.grobid.core.engines.SegmentationLabel;
+import org.grobid.core.engines.label.SegmentationLabel;
 
 import java.util.ArrayList;
 import java.util.List;
