@@ -10,7 +10,6 @@ import io.dropwizard.configuration.DefaultConfigurationFactoryFactory;
 import io.dropwizard.configuration.FileConfigurationSourceProvider;
 import io.dropwizard.jackson.Jackson;
 import io.dropwizard.setup.Environment;
-import io.dropwizard.validation.valuehandling.OptionalValidatedValueUnwrapper;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.modules.GrobidServiceModule;
 import org.hibernate.validator.HibernateValidator;
@@ -41,7 +40,7 @@ public class TestGrobidServiceModule extends GrobidServiceModule {
         ValidatorFactory validatorFactory = Validation
                 .byProvider(HibernateValidator.class)
                 .configure()
-                .addValidatedValueHandler(new OptionalValidatedValueUnwrapper())
+//                .addValidatedValueHandler(new OptionalValidatedValueUnwrapper())
                 .buildValidatorFactory();
 
 
