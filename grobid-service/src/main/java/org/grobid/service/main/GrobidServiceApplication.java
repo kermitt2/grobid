@@ -16,12 +16,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 
 
 public final class GrobidServiceApplication extends Application<GrobidServiceConfiguration> {
     private static final Logger LOGGER = LoggerFactory.getLogger(GrobidServiceApplication.class);
-    private static final String DEFAULT_CONF_LOCATION = "grobid-service/config/config.yaml";
+    private static final String[] DEFAULT_CONF_LOCATIONS = {"grobid-service/config/config.yaml", "config/config.yaml"};
     private static final String RESOURCES = "/api";
 
 
@@ -56,9 +57,24 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
     // ========== static ==========
     public static void main(String... args) throws Exception {
         if (ArrayUtils.getLength(args) < 2) {
-            LOGGER.error("Expected 2 arguments: [0]-server, [1]-<path to config.yaml>");
-            LOGGER.warn("Running with default arguments: \"server\" \"" + DEFAULT_CONF_LOCATION + "\"");
-            args = new String[]{"server", DEFAULT_CONF_LOCATION};
+            LOGGER.warn("Expected 2 arguments: [0]-server, [1]-<path to config.yaml>");
+
+            String foundConf = null;
+            for (String p : DEFAULT_CONF_LOCATIONS) {
+                File confLocation = new File(p).getAbsoluteFile();
+                if (confLocation.exists()) {
+                    foundConf = confLocation.getAbsolutePath();
+                    break;
+                }
+            }
+
+            if (foundConf != null) {
+                LOGGER.warn("Running with default arguments: \"server\" \"" + foundConf + "\"");
+                args = new String[]{"server", foundConf};
+            } else {
+                throw new RuntimeException("No explicit config provided and cannot find in one of the default locations: "
+                        + Arrays.toString(DEFAULT_CONF_LOCATIONS));
+            }
         }
 
         LOGGER.info("Configuration file: {}", new File(args[1]).getAbsolutePath());

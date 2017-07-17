@@ -44,6 +44,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.StreamingOutput;
 import javax.ws.rs.core.UriInfo;
+import java.io.File;
 import java.io.InputStream;
 
 
@@ -76,12 +77,11 @@ public class GrobidRestService implements GrobidPathes {
     @Inject
     public GrobidRestService(GrobidServiceConfiguration configuration, GrobidRestProcessAdmin grobidRestProcessAdmin) {
         this.grobidRestProcessAdmin = grobidRestProcessAdmin;
-
-        GrobidProperties.set_GROBID_HOME_PATH(configuration.getGrobid().getGrobidHome());
+        GrobidProperties.set_GROBID_HOME_PATH(new File(configuration.getGrobid().getGrobidHome()).getAbsolutePath());
         if (configuration.getGrobid().getGrobidProperties() != null) {
-            GrobidProperties.setGrobidPropertiesPath(configuration.getGrobid().getGrobidProperties());
+            GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidProperties()).getAbsolutePath());
         } else {
-            GrobidProperties.setGrobidPropertiesPath(configuration.getGrobid().getGrobidHome() + "/config/grobid.properties");
+            GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidHome(), "/config/grobid.properties").getAbsolutePath());
         }
 
         LOGGER.info("Initiating Servlet GrobidRestService");

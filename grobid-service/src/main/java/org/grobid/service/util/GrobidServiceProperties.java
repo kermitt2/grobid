@@ -162,10 +162,10 @@ public class GrobidServiceProperties {
 //					"Could not load the path to grobid_service.properties from the context",
 //					exp);
 //		}
-        File grobidServicePropFile = new File(configuration.getGrobid().getGrobidServiceProperties());
+        File grobidServicePropFile = new File(configuration.getGrobid().getGrobidServiceProperties()).getAbsoluteFile();
 
         // exception if prop file does not exist
-        if (grobidServicePropFile == null || !grobidServicePropFile.exists()) {
+        if (!grobidServicePropFile.exists()) {
             throw new GrobidServicePropertyException(
                     "Could not read grobid_service.properties, the file '"
                             + grobidServicePropFile + "' does not exist.");
