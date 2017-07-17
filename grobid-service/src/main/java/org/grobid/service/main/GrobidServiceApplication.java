@@ -64,6 +64,7 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
                 File confLocation = new File(p).getAbsoluteFile();
                 if (confLocation.exists()) {
                     foundConf = confLocation.getAbsolutePath();
+                    LOGGER.info("Found conf path: " + foundConf);
                     break;
                 }
             }
