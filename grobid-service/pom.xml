@@ -156,13 +156,22 @@
                 <version>2.6</version>
                 <configuration>
                     <descriptors>
-                        <descriptor>${assemblies.name}</descriptor>
+                        <descriptor>src/assembly/assembly.xml</descriptor>
                     </descriptors>
                     <appendAssemblyId>false</appendAssemblyId>
-                    <finalName>${project.groupId}.${project.artifactId}_${project.version}</finalName>
+                    <finalName>${project.artifactId}-${project.version}-dist</finalName>
                     <outputDirectory>target/distribution</outputDirectory>
-                    <workDirectory>target/assembly/work</workDirectory>
+                    <!--<workDirectory>target/assembly/work</workDirectory>-->
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>create-archive</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -188,6 +197,7 @@
                         </goals>
                         <configuration>
                             <!--<shadedClassifierName>shaded</shadedClassifierName>-->
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
                             <outputFile>target/${project.artifactId}-${version}-shaded.jar</outputFile>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
