@@ -12,7 +12,7 @@
     <artifactId>grobid-service</artifactId>
     <name>${project.artifactId}</name>
     <version>0.4.2-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <!--<packaging>war</packaging>-->
 
     <dependencies>
         <!-- Testing -->
@@ -239,54 +239,55 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.6</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
                 <configuration>
-                    <webResources>
-                        <resource>
-                            <directory>${basedir}/src/main/webapp/WEB-INF/</directory>
-                            <excludes>
-                                <exclude>${basedir}/src/main/resources/*.xml</exclude>
-                            </excludes>
-                            <includes>
-                                <include>web.xml</include>
-                            </includes>
-                            <filtering>true</filtering>
-                            <targetPath>WEB-INF</targetPath>
-                        </resource>
-                    </webResources>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.3.14.v20161028</version>
 
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <scanIntervalSeconds>0</scanIntervalSeconds>
-                    <stopKey/>
-                    <stopPort/>
+                    <!--<executable>java</executable>-->
+                    <mainClass>org.grobid.service.main.GrobidServiceApplication</mainClass>
+                    <workingDirectory>/Work/workspace/grobid-rg/</workingDirectory>
                     <systemProperties>
-                        <!-- enable easy JMX connection to JConsole -->
-                        <systemProperty>
-                            <name>com.sun.management.jmxremote</name>
-                            <value/>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>jetty.port</name>
-                            <value>8080</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>maxIdleTime</name>
-                            <value>60000</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>log4j.configuration</name>
-                            <value>log4j-jetty.properties</value>
-                        </systemProperty>
+                        <system.property>
+                            <key>user.dir</key>
+                            <value>/Work/workspace/grobid-rg/</value>
+                        </system.property>
                     </systemProperties>
+                    <arguments>
+                        <!--<argument>-Duser.dir=../.</argument>-->
+                        <!--<argument>bar</argument>-->
+                    </arguments>
                 </configuration>
+
+                <!--<configuration>-->
+                    <!--<executable>java</executable>-->
+                    <!--<outputFile>exec.log</outputFile>-->
+                    <!--<longClasspath>true</longClasspath>-->
+                    <!--<arguments>-->
+                        <!--<argument>-classpath</argument>-->
+                        <!--<classpath/>-->
+                        <!--<argument>org.grobid.service.main.GrobidServiceApplication</argument>-->
+                        <!--<argument>server</argument>-->
+                        <!--<argument>/Work/workspace/grobid-rg/grobid-service/config/config.yaml</argument>-->
+                    <!--</arguments>-->
+                <!--</configuration>-->
             </plugin>
+
         </plugins>
     </build>
 
