@@ -161,11 +161,13 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                     }
                 }
             } 
-			else if (qName.equals("formula") || qName.equals("label")) {
+			else if (qName.equals("formula")) {
                 currentTags.push("<equation>");
 				currentTag = "<equation>";
-            } 
-			else if (qName.equals("head")) {
+            } else if (qName.equals("label")) {
+                currentTags.push("<equation_label>");
+                currentTag = "<equation_label>";
+            } else if (qName.equals("head")) {
 				{
                     currentTags.push("<section>");
 					currentTag = "<section>";

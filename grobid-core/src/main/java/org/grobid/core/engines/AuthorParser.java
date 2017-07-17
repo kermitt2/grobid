@@ -125,7 +125,6 @@ public class AuthorParser {
 //            TaggingTokenClusteror clusteror = new TaggingTokenClusteror(head ? GrobidModels.NAMES_HEADER : GrobidModels.NAMES_CITATION, res, tokenizations);
 //            List<TaggingTokenCluster> clusters = clusteror.cluster();
 
-
             // extract results from the processed file
             StringTokenizer st2 = new StringTokenizer(res, "\n");
             String lastTag = null;
@@ -345,7 +344,7 @@ public class AuthorParser {
                     }
                 } else if (s1.equals("<suffix>") || s1.equals("I-<suffix>")) {
                     //System.out.println("<suffix> ! " + "lastTag: " + lastTag);
-                    if (s3.equals("<suffix>")) {
+                    if (s3.equals("<author>")) {
                         if (newMarker) {
                             aut.setSuffix(s2);
                             newMarker = false;
@@ -403,8 +402,6 @@ public class AuthorParser {
                 }
                 fullAuthors.add(aut);
             }
-
-
 
         } catch (Exception e) {
 //			e.printStackTrace();

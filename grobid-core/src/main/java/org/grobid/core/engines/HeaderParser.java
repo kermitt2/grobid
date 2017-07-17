@@ -14,6 +14,7 @@ import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.document.TEIFormatter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.label.SegmentationLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
@@ -82,8 +83,7 @@ public class HeaderParser extends AbstractParser {
      * Processing without application of the segmentation model, regex are used to identify the header
      * zone.
      */
-    public Pair<String, Document> processing2(String pdfInput, boolean consolidate,
-                                              BiblioItem resHeader, GrobidAnalysisConfig config) {
+    public Pair<String, Document> processing2(String pdfInput, BiblioItem resHeader, GrobidAnalysisConfig config) {
         DocumentSource documentSource = null;
         try {
             documentSource = DocumentSource.fromPdf(new File(pdfInput), config.getStartPage(), config.getEndPage());
@@ -94,7 +94,7 @@ public class HeaderParser extends AbstractParser {
                 throw new GrobidException("PDF parsing resulted in empty content");
             }
 
-            String tei = processingHeaderBlock(consolidate, doc, resHeader);
+            String tei = processingHeaderBlock(config.isConsolidateHeader(), doc, resHeader);
             return Pair.of(tei, doc);
         } catch (Exception e) {
             throw new GrobidException(e, GrobidExceptionStatus.GENERAL);

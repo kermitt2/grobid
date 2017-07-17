@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
@@ -98,7 +99,7 @@ public class ProcessEngine implements Closeable {
                         result = getEngine().processHeader(currPdf.getAbsolutePath(), false, null);
 						File outputPathFile = new File(outputPath);
 						if (!outputPathFile.exists()) {
-							outputPathFile.mkdir();
+							outputPathFile.mkdirs();
 						}
 						if (currPdf.getName().endsWith(".pdf")) {
                         	IOUtilities.writeInFile(outputPath + File.separator
@@ -143,7 +144,11 @@ public class ProcessEngine implements Closeable {
 			LOGGER.warn("No files in directory: " + pdfDirectory);
 		}
 		else {
-			processFullTextDirectory(files, pGbdArgs, pGbdArgs.getPath2Output(), pGbdArgs.getSaveAssets());
+            List<String> elementCoordinates = null;
+            if (pGbdArgs.getTeiCoordinates()) {
+                elementCoordinates = Arrays.asList("figure", "persName", "ref", "biblStruct", "formula");
+            }
+			processFullTextDirectory(files, pGbdArgs, pGbdArgs.getPath2Output(), pGbdArgs.getSaveAssets(), elementCoordinates);
             System.out.println(Engine.getCntManager());
 		}
 	}
@@ -155,7 +160,11 @@ public class ProcessEngine implements Closeable {
      * @param pGbdArgs The parameters.
      * @throws Exception
      */
-	private void processFullTextDirectory(File[] files, final GrobidMainArgs pGbdArgs, String outputPath, boolean saveAssets) {	
+	private void processFullTextDirectory(File[] files, 
+                                        final GrobidMainArgs pGbdArgs, 
+                                        String outputPath, 
+                                        boolean saveAssets, 
+                                        List<String> elementCoordinates) {	
         if (files != null) {
 			boolean recurse = pGbdArgs.isRecursive();
 			String result;
@@ -168,10 +177,11 @@ public class ProcessEngine implements Closeable {
 					        String assetPath = outputPath + File.separator + KeyGen.getKey();
 				            config = GrobidAnalysisConfig.builder()
 														.pdfAssetPath(new File(assetPath))
+                                                        .generateTeiCoordinates(elementCoordinates)
 														.build();
                         }
                         else
-                            config = GrobidAnalysisConfig.builder().build();;
+                            config = GrobidAnalysisConfig.builder().generateTeiCoordinates(elementCoordinates).build();
                         result = getEngine().fullTextToTEI(currPdf, config);
 						File outputPathFile = new File(outputPath);
 						if (!outputPathFile.exists()) {
@@ -193,7 +203,7 @@ public class ProcessEngine implements Closeable {
 						if (newFiles != null) {
 							String newLevel = currPdf.getName();
 							processFullTextDirectory(newFiles, pGbdArgs, outputPath + 
-								File.separator + newLevel, saveAssets);
+								File.separator + newLevel, saveAssets, elementCoordinates);
 						}
                     }
                 } 
@@ -227,8 +237,8 @@ public class ProcessEngine implements Closeable {
     public void processAuthorsHeader(final GrobidMainArgs pGbdArgs) throws Exception {
         inferOutputPath(pGbdArgs);
         final List<Person> result = getEngine().processAuthorsHeader(pGbdArgs.getInput());
-        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
-        LOGGER.info(result.get(0).toTEI());
+        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI(false));
+        LOGGER.info(result.get(0).toTEI(false));
     }
 
     /**
@@ -240,8 +250,8 @@ public class ProcessEngine implements Closeable {
     public void processAuthorsCitation(final GrobidMainArgs pGbdArgs) throws Exception {
         inferOutputPath(pGbdArgs);
         final List<Person> result = getEngine().processAuthorsCitation(pGbdArgs.getInput());
-        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
-        LOGGER.info(result.get(0).toTEI());
+        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI(false));
+        LOGGER.info(result.get(0).toTEI(false));
     }
 	
     /**
