@@ -10,7 +10,6 @@ import io.dropwizard.forms.MultiPartBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.apache.commons.lang3.ArrayUtils;
-import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.modules.GrobidServiceModule;
 import org.slf4j.Logger;
@@ -42,8 +41,6 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
         bootstrap.addBundle(guiceBundle);
         bootstrap.addBundle(new MultiPartBundle());
         bootstrap.addBundle(new AssetsBundle("/web", "/", "index.html", "grobidAssets"));
-;
-
     }
 
     private List<? extends Module> getGuiceModules() {

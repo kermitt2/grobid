@@ -78,7 +78,11 @@ public class GrobidRestService implements GrobidPathes {
         this.grobidRestProcessAdmin = grobidRestProcessAdmin;
 
         GrobidProperties.set_GROBID_HOME_PATH(configuration.getGrobid().getGrobidHome());
-        GrobidProperties.setGrobidPropertiesPath(configuration.getGrobid().getGrobidHome() + "/config/grobid.properties");
+        if (configuration.getGrobid().getGrobidProperties() != null) {
+            GrobidProperties.setGrobidPropertiesPath(configuration.getGrobid().getGrobidProperties());
+        } else {
+            GrobidProperties.setGrobidPropertiesPath(configuration.getGrobid().getGrobidHome() + "/config/grobid.properties");
+        }
 
         LOGGER.info("Initiating Servlet GrobidRestService");
         AbstractEngineFactory.fullInit();
