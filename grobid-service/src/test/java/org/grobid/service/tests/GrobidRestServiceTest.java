@@ -16,6 +16,7 @@ package org.grobid.service.tests;
 import com.google.inject.Guice;
 import com.squarespace.jersey2.guice.JerseyGuiceUtils;
 import io.dropwizard.testing.junit.DropwizardAppRule;
+import org.apache.commons.io.FileUtils;
 import org.glassfish.jersey.client.JerseyClientBuilder;
 import org.glassfish.jersey.media.multipart.FormDataMultiPart;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
@@ -28,6 +29,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -147,94 +149,79 @@ public class GrobidRestServiceTest {
         LOGGER.debug(resp);
     }
 
-    //
-//    /**
-//     * Test the synchronous state less rest call for affiliation + address
-//     * blocks
-//     */
-//    @Test
-//    public void testRestAffiliations() throws Exception {
-//        String affiliations = "Atomic Physics Division, Department of Atomic Physics and Luminescence, "
-//                + "Faculty of Applied Physics and Mathematics, Gdansk University of "
-//                + "Technology, Narutowicza 11/12, 80-233 Gdansk, Poland";
-//        Client create = Client.create();
-//        WebResource service = create.resource(getHost());
-//        ClientResponse response;
-//
-//        MultivaluedMap<String, String> formData = new MultivaluedMapImpl();
-//        formData.add("affiliations", affiliations);
-//
-//        service = Client.create().resource(
-//                getHost() + GrobidPathes.PATH_GROBID + "/"
-//                        + GrobidPathes.PATH_AFFILIATION);
-//        response = service.post(ClientResponse.class, formData);
-//
-//        assertEquals(Status.OK.getStatusCode(), response.getStatus());
-//        String postResp = response.getEntity(String.class);
-//
-//        LOGGER.debug(postResp);
-//    }
-//
-//    /**
-//     * Test the synchronous state less rest call for patent citation extraction.
-//     * Send all xml and xml.gz ST36 files found in a given folder test/resources/patent
-//     * to the web service and write back the results in the test/sample
-//     */
-//    //@Test
-//    public void testRestPatentCitation() throws Exception {
-//        Client create = Client.create();
-//        WebResource service = create.resource(getHost());
-//        ClientResponse response;
-//
-//        File xmlDirectory = new File(getResourceDir().getAbsoluteFile() + "/patent");
-//        for (final File currXML : xmlDirectory.listFiles()) {
-//            try {
-//                if (currXML.getName().toLowerCase().endsWith(".xml") ||
-//                        currXML.getName().toLowerCase().endsWith(".xml.gz")) {
-//
-//                    assertTrue("Cannot run the test, because the sample file '" + currXML
-//                            + "' does not exists.", currXML.exists());
-//                    FormDataMultiPart form = new FormDataMultiPart();
-//                    form.field("input", currXML, MediaType.MULTIPART_FORM_DATA_TYPE);
-//                    form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
-//                    LOGGER.debug("calling " + getHost() + GrobidPathes.PATH_GROBID
-//                            + "/" + GrobidPathes.PATH_CITATION_PATENT_ST36);
-//
-//                    service = Client.create().resource(
-//                            getHost() + GrobidPathes.PATH_GROBID + "/"
-//                                    + GrobidPathes.PATH_CITATION_PATENT_ST36);
-//                    response = service.type(MediaType.MULTIPART_FORM_DATA)
-//                            .accept(MediaType.APPLICATION_XML + ";charset=utf-8")
-//                            .post(ClientResponse.class, form);
-//                    assertEquals(Status.OK.getStatusCode(), response.getStatus());
-//
-//                    InputStream inputStream = response.getEntity(InputStream.class);
-//                    String tei = TextUtilities.convertStreamToString(inputStream);
-//                    //LOGGER.debug(tei);
-//
-//                    File outputFile = new File(getResourceDir().getAbsoluteFile() +
-//                            "/../sample/" + currXML.getName().replace(".xml", ".tei.xml").replace(".gz", ""));
-//                    // writing the result in the sample directory
-//                    FileUtils.writeStringToFile(outputFile, tei, "UTF-8");
-//                }
-//            } catch (final Exception exp) {
-//                LOGGER.error("An error occured while processing the file " + currXML.getAbsolutePath()
-//                        + ". Continuing the process for the other files");
-//            }
-//        }
-//    }
-//
-//    @Test
-//    public void testGetVersion_shouldReturnCurrentGrobidVersion() throws Exception {
-//        String expectedVersion = "0.4.5-dummy";
-//
-//        Client client = Client.create();
-//        WebResource service = client.resource(getHost() + GrobidPathes.PATH_GET_VERSION);
-//        ClientResponse response = service.get(ClientResponse.class);
-//
-//        assertThat(Status.OK.getStatusCode(), is(response.getStatus()));
-//        assertThat(expectedVersion, is(response.getEntity(String.class)));
-//    }
+
+    /**
+     * Test the synchronous state less rest call for affiliation + address
+     * blocks
+     */
+    @Test
+    public void testRestAffiliations() throws Exception {
+        String affiliations = "Atomic Physics Division, Department of Atomic Physics and Luminescence, "
+                + "Faculty of Applied Physics and Mathematics, Gdansk University of "
+                + "Technology, Narutowicza 11/12, 80-233 Gdansk, Poland";
+        String resp = getStrResponse("affiliations", affiliations, GrobidPathes.PATH_AFFILIATION);
+        LOGGER.debug(resp);
+    }
+
+    /**
+     * Test the synchronous state less rest call for patent citation extraction.
+     * Send all xml and xml.gz ST36 files found in a given folder test/resources/patent
+     * to the web service and write back the results in the test/sample
+     */
+    //@Test
+    public void testRestPatentCitation() throws Exception {
+        Client client = getClient();
+
+        File xmlDirectory = new File(getResourceDir().getAbsoluteFile() + "/patent");
+        File[] files = xmlDirectory.listFiles();
+        assertNotNull(files);
+
+        for (final File currXML : files) {
+            try {
+                if (currXML.getName().toLowerCase().endsWith(".xml") ||
+                        currXML.getName().toLowerCase().endsWith(".xml.gz")) {
+
+                    assertTrue("Cannot run the test, because the sample file '" + currXML
+                            + "' does not exists.", currXML.exists());
+                    FormDataMultiPart form = new FormDataMultiPart();
+                    form.field("input", currXML, MediaType.MULTIPART_FORM_DATA_TYPE);
+                    form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
+
+                    Response response = client.target(
+                            baseUrl() + GrobidPathes.PATH_CITATION_PATENT_ST36)
+                            .request()
+                            .accept(MediaType.APPLICATION_XML + ";charset=utf-8")
+                            .post(Entity.entity(form, MediaType.MULTIPART_FORM_DATA_TYPE));
+
+                    assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+
+                    String tei = response.readEntity(String.class);
+
+                    File outputFile = new File(getResourceDir().getAbsoluteFile() +
+                            "/../sample/" + currXML.getName().replace(".xml", ".tei.xml").replace(".gz", ""));
+
+                    // writing the result in the sample directory
+                    FileUtils.writeStringToFile(outputFile, tei, "UTF-8");
+                }
+            } catch (final Exception exp) {
+                LOGGER.error("An error occured while processing the file "
+                        + currXML.getAbsolutePath() + ". Continuing the process for the other files");
+            }
+        }
+    }
+
+    @Test
+    @Ignore
+    //TODO: fix returning a correct version
+    public void testGetVersion_shouldReturnCurrentGrobidVersion() throws Exception {
+        String expectedVersion = "0.4.5-dummy";
+        Response resp = getClient().target(baseUrl() + GrobidPathes.PATH_GET_VERSION)
+                .request()
+                .get();
+
+        assertEquals(Response.Status.OK.getStatusCode(), resp.getStatus());
+        assertEquals("Grobid version mismatch: ", expectedVersion, resp.readEntity(String.class));
+    }
 
     private String getStrResponse(File pdf, String method) {
 
@@ -259,7 +246,7 @@ public class GrobidRestServiceTest {
         MultivaluedMap<String, String> formData = new MultivaluedHashMap<>();
         formData.add(key, val);
 
-        Response response = getClient().target(baseUrl() +  method)
+        Response response = getClient().target(baseUrl() + method)
                 .request()
                 .post(Entity.entity(formData, MediaType.APPLICATION_FORM_URLENCODED));
 
