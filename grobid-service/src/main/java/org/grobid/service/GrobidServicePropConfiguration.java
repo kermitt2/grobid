@@ -12,6 +12,9 @@ public class GrobidServicePropConfiguration {
     @JsonProperty
     private String grobidServiceProperties;
 
+    @JsonProperty
+    private String grobidProperties;
+
     public String getGrobidHome() {
         return grobidHome;
     }
@@ -26,5 +29,13 @@ public class GrobidServicePropConfiguration {
 
     public void setGrobidServiceProperties(String grobidServiceProperties) {
         this.grobidServiceProperties = grobidServiceProperties;
+    }
+
+    public String getGrobidProperties() {
+        return grobidProperties;
+    }
+
+    public void setGrobidProperties(String grobidProperties) {
+        this.grobidProperties = grobidProperties;
     }
 }
