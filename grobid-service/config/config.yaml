@@ -1,9 +1,7 @@
 grobid:
-  grobidHome: "/Work/workspace/grobid-rg/grobid-home"
-  grobidServiceProperties: "/Work/workspace/grobid-rg/grobid-service/src/main/conf/grobid_service.properties"
-
-grobidAdmin:
-  password: "123"
+ # NOTE: change these values to absolute paths when running on production
+  grobidHome: "grobid-home"
+  grobidServiceProperties: "grobid-service/src/main/conf/grobid_service.properties"
 
 server:
     type: custom
