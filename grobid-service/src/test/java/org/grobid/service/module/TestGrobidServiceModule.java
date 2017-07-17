@@ -19,7 +19,7 @@ import javax.validation.ValidatorFactory;
 
 public class TestGrobidServiceModule extends GrobidServiceModule {
 
-    public static final String TEST_CONFIG_FILE = "src/test/resources/config/test-config.yaml";
+    public static final String TEST_CONFIG_FILE = "src/test/resources/setup/config/test-config.yaml";
 
     public TestGrobidServiceModule() {
         super();

@@ -1,153 +1,124 @@
-///**
-// * Licensed under the Apache License, Version 2.0 (the "License");
-// * you may not use this file except in compliance with the License.
-// * You may obtain a copy of the License at
-// * <p>
-// * http://www.apache.org/licenses/LICENSE-2.0
-// * <p>
-// * Unless required by applicable law or agreed to in writing, software
-// * distributed under the License is distributed on an "AS IS" BASIS,
-// * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// * See the License for the specific language governing permissions and
-// * limitations under the License.
-// */
-//package org.grobid.service.tests;
-//
-//import com.sun.net.httpserver.HttpServer;
-//import org.apache.commons.io.FileUtils;
-//import org.grobid.core.mock.MockContext;
-//import org.grobid.core.utilities.TextUtilities;
-//import org.grobid.service.GrobidPathes;
-//import org.junit.*;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-//
-//import javax.ws.rs.core.MediaType;
-//import javax.ws.rs.core.MultivaluedMap;
-//import java.io.File;
-//import java.io.IOException;
-//import java.io.InputStream;
-//import java.net.ServerSocket;
-//
-//import static org.hamcrest.CoreMatchers.is;
-//import static org.junit.Assert.assertEquals;
-//import static org.junit.Assert.assertThat;
-//import static org.junit.Assert.assertTrue;
-//
-///**
-// * Tests the RESTful service of the grobid-service project. This class can also
-// * tests a remote system, when setting system property
-// * org.grobid.service.test.uri to host to test.
-// *
-// * @author Florian Zipser
-// *
-// */
-//public class GrobidRestServiceTest {
-//    private static final Logger logger = LoggerFactory
-//            .getLogger(GrobidRestServiceTest.class);
-//
-//    @BeforeClass
-//    public static void setInitialContext() throws Exception {
-//        MockContext.setInitialContext();
-//    }
-//
-//    @AfterClass
-//    public static void destroyInitialContext() throws Exception {
-//        MockContext.destroyInitialContext();
-//    }
-//
-//    private static HttpServer server = null;
-//    private static String host = null;
-//
-//    public static String getHost() {
-//        return host;
-//        // return("http://localhost:8080/grobid-service-0.0.3-SNAPSHOT/grobid");
-//    }
-//
-//    public void setHost(String host) {
-//        GrobidRestServiceTest.host = host;
-//    }
-//
-//    public static final String PROP_TEST_HOST = "org.grobid.service.test.uri";
-//
-//
-//    public static final String LOCALHOST = "http://localhost";
-//
-//    @Before
-//    public void setUp() throws Exception {
-//        if (server == null) {
-//            String host = null;
-//            if (System.getProperty(PROP_TEST_HOST) != null) {
-//                host = System.getProperty(PROP_TEST_HOST);
-//                this.setHost(host);
-//                if (host == null)
-//                    logger.warn("Cannot read value of system property '"
-//                            + PROP_TEST_HOST + "', because it is null.");
-//            }
-//
-//            if (host == null) {
-//                int port = findPort();
-//                host = LOCALHOST + ":" + port + "/";
-//                this.setHost(host);
-//                logger.debug("started grobid-service for test on: " + getHost());
-//                server = HttpServerFactory.create(getHost());
-//                server.start();
-//            }
-//        }
-//    }
-//
-//    @After
-//    public void tearDown() throws Exception {
-//        if (server != null) {
-//            try {
-//                server.stop(0);
-//                server = null;
-//            } catch (Exception e) {
-//                logger.error(e.getMessage());
-//                throw e;
-//            }
-//        }
-//    }
-//
-//    public static File getResourceDir() {
-//        return (new File("./src/test/resources/"));
-//    }
-//
-//    /**
-//     * test the synchronous fully state less rest call
-//     */
-//    @Test
-//    public void testFullyRestLessHeaderDocument() throws Exception {
-//        File pdfFile = new File(getResourceDir().getAbsoluteFile()
-//                + "/sample4/sample.pdf");
-//        Client create = Client.create();
-//        WebResource service = create.resource(getHost());
-//        ClientResponse response;
-//
-//        assertTrue("Cannot run the test, because the sample file '" + pdfFile
-//                + "' does not exists.", pdfFile.exists());
-//        FormDataMultiPart form = new FormDataMultiPart();
-//        form.field("input", pdfFile, MediaType.MULTIPART_FORM_DATA_TYPE);
-//        form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
-//        logger.debug("calling " + getHost() + GrobidPathes.PATH_GROBID
-//                + "/" + GrobidPathes.PATH_HEADER);
-//
-//        service = Client.create().resource(
-//                getHost() + GrobidPathes.PATH_GROBID + "/"
-//                        + GrobidPathes.PATH_HEADER);
-//        response = service.type(MediaType.MULTIPART_FORM_DATA)
-//                .accept(MediaType.APPLICATION_XML)
-//                .post(ClientResponse.class, form);
-//        assertEquals(Status.OK.getStatusCode(), response.getStatus());
-//
-//        InputStream inputStream = response.getEntity(InputStream.class);
-//        String tei = TextUtilities.convertStreamToString(inputStream);
-//        logger.debug(tei);
-//    }
-//
-//    /**
-//     * Test the synchronous fully state less rest call
-//     */
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.grobid.service.tests;
+
+import com.google.inject.Guice;
+import com.squarespace.jersey2.guice.JerseyGuiceUtils;
+import io.dropwizard.testing.junit.DropwizardAppRule;
+import org.glassfish.jersey.client.JerseyClientBuilder;
+import org.glassfish.jersey.media.multipart.FormDataMultiPart;
+import org.glassfish.jersey.media.multipart.MultiPartFeature;
+import org.grobid.core.mock.MockContext;
+import org.grobid.service.GrobidPathes;
+import org.grobid.service.GrobidServiceConfiguration;
+import org.grobid.service.main.GrobidServiceApplication;
+import org.grobid.service.module.TestGrobidServiceModule;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.ClassRule;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.io.File;
+import java.io.IOException;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+/**
+ * Tests the RESTful service of the grobid-service project. This class can also
+ * tests a remote system, when setting system property
+ * org.grobid.service.test.uri to host to test.
+ *
+ * @author Florian Zipser
+ */
+public class GrobidRestServiceTest {
+    private static final Logger LOGGER = LoggerFactory.getLogger(GrobidRestServiceTest.class);
+
+    @BeforeClass
+    public static void setInitialContext() throws Exception {
+        MockContext.setInitialContext();
+    }
+
+    @AfterClass
+    public static void destroyInitialContext() throws Exception {
+        MockContext.destroyInitialContext();
+    }
+
+    @ClassRule
+    public static DropwizardAppRule<GrobidServiceConfiguration> APP =
+            new DropwizardAppRule<>(GrobidServiceApplication.class, TestGrobidServiceModule.TEST_CONFIG_FILE);
+
+
+    private String baseUrl() {
+        return String.format("http://localhost:%d%s" + "api/", APP.getLocalPort(), APP.getEnvironment().getApplicationContext().getContextPath());
+    }
+
+    @Before
+    public void setUp() throws IOException {
+        JerseyGuiceUtils.reset();
+
+        TestGrobidServiceModule testWorkerModule = new TestGrobidServiceModule() {
+            // redefine methods that are needed:
+        };
+
+        Guice.createInjector(testWorkerModule).injectMembers(this);
+    }
+
+
+    private static File getResourceDir() {
+        return (new File("./src/test/resources/"));
+    }
+
+    private static Client getClient() {
+        Client client = new JerseyClientBuilder().build();
+        client.register(MultiPartFeature.class);
+        return client;
+    }
+
+
+    /**
+     * test the synchronous fully state less rest call
+     */
+    @Test
+    public void testFullyRestLessHeaderDocument() throws Exception {
+        File pdfFile = new File(getResourceDir().getAbsoluteFile() + "/sample4/sample.pdf");
+        assertTrue("Cannot run the test, because the sample file '" + pdfFile + "' does not exists.", pdfFile.exists());
+
+        FormDataMultiPart form = new FormDataMultiPart();
+        form.field("input", pdfFile, MediaType.MULTIPART_FORM_DATA_TYPE);
+        form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
+
+        Response response = getClient().target(baseUrl() + GrobidPathes.PATH_HEADER)
+                .request()
+                .post(Entity.entity(form, MediaType.MULTIPART_FORM_DATA));
+
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+
+        String tei = response.readEntity(String.class);
+        LOGGER.debug(tei);
+    }
+
+    /*
+     * Test the synchronous fully state less rest call
+     */
 //    @Test
 //    public void testFullyRestLessFulltextDocument() throws Exception {
 //        File pdfFile = new File(getResourceDir().getAbsoluteFile()
@@ -161,7 +132,7 @@
 //        FormDataMultiPart form = new FormDataMultiPart();
 //        form.field("input", pdfFile, MediaType.MULTIPART_FORM_DATA_TYPE);
 //        form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
-//        logger.debug("calling " + getHost() + GrobidPathes.PATH_GROBID
+//        LOGGER.debug("calling " + getHost() + GrobidPathes.PATH_GROBID
 //                + "/" + GrobidPathes.PATH_FULL_TEXT);
 //
 //        service = Client.create().resource(
@@ -174,7 +145,7 @@
 //
 //        InputStream inputStream = response.getEntity(InputStream.class);
 //        String tei = TextUtilities.convertStreamToString(inputStream);
-//        logger.debug(tei);
+//        LOGGER.debug(tei);
 //    }
 //
 //    /**
@@ -198,7 +169,7 @@
 //        assertEquals(Status.OK.getStatusCode(), response.getStatus());
 //        String postResp = response.getEntity(String.class);
 //
-//        logger.debug(postResp);
+//        LOGGER.debug(postResp);
 //    }
 //
 //    /**
@@ -222,7 +193,7 @@
 //        assertEquals(Status.OK.getStatusCode(), response.getStatus());
 //        String postResp = response.getEntity(String.class);
 //
-//        logger.debug(postResp);
+//        LOGGER.debug(postResp);
 //    }
 //
 //    /**
@@ -247,7 +218,7 @@
 //        assertEquals(Status.OK.getStatusCode(), response.getStatus());
 //        String postResp = response.getEntity(String.class);
 //
-//        logger.debug(postResp);
+//        LOGGER.debug(postResp);
 //    }
 //
 //    /**
@@ -274,13 +245,13 @@
 //        assertEquals(Status.OK.getStatusCode(), response.getStatus());
 //        String postResp = response.getEntity(String.class);
 //
-//        logger.debug(postResp);
+//        LOGGER.debug(postResp);
 //    }
 //
 //    /**
-//     *  Test the synchronous state less rest call for patent citation extraction.
-//     *  Send all xml and xml.gz ST36 files found in a given folder test/resources/patent
-//     *  to the web service and write back the results in the test/sample
+//     * Test the synchronous state less rest call for patent citation extraction.
+//     * Send all xml and xml.gz ST36 files found in a given folder test/resources/patent
+//     * to the web service and write back the results in the test/sample
 //     */
 //    //@Test
 //    public void testRestPatentCitation() throws Exception {
@@ -299,7 +270,7 @@
 //                    FormDataMultiPart form = new FormDataMultiPart();
 //                    form.field("input", currXML, MediaType.MULTIPART_FORM_DATA_TYPE);
 //                    form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
-//                    logger.debug("calling " + getHost() + GrobidPathes.PATH_GROBID
+//                    LOGGER.debug("calling " + getHost() + GrobidPathes.PATH_GROBID
 //                            + "/" + GrobidPathes.PATH_CITATION_PATENT_ST36);
 //
 //                    service = Client.create().resource(
@@ -312,7 +283,7 @@
 //
 //                    InputStream inputStream = response.getEntity(InputStream.class);
 //                    String tei = TextUtilities.convertStreamToString(inputStream);
-//                    //logger.debug(tei);
+//                    //LOGGER.debug(tei);
 //
 //                    File outputFile = new File(getResourceDir().getAbsoluteFile() +
 //                            "/../sample/" + currXML.getName().replace(".xml", ".tei.xml").replace(".gz", ""));
@@ -320,7 +291,7 @@
 //                    FileUtils.writeStringToFile(outputFile, tei, "UTF-8");
 //                }
 //            } catch (final Exception exp) {
-//                logger.error("An error occured while processing the file " + currXML.getAbsolutePath()
+//                LOGGER.error("An error occured while processing the file " + currXML.getAbsolutePath()
 //                        + ". Continuing the process for the other files");
 //            }
 //        }
@@ -337,5 +308,5 @@
 //        assertThat(Status.OK.getStatusCode(), is(response.getStatus()));
 //        assertThat(expectedVersion, is(response.getEntity(String.class)));
 //    }
-//
-//}
+
+}

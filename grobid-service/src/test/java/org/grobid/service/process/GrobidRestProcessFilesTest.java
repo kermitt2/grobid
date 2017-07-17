@@ -20,9 +20,6 @@ import java.util.List;
 
 import static org.easymock.EasyMock.*;
 
-/**
- * Created by lfoppiano on 01/12/16.
- */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({CitationsVisualizer.class, BlockVisualizer.class, FigureTableVisualizer.class})
 public class GrobidRestProcessFilesTest {
