@@ -18,6 +18,7 @@ import java.util.regex.PatternSyntaxException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import org.apache.commons.io.IOUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.lang.Language;
@@ -33,8 +34,7 @@ import org.slf4j.LoggerFactory;
  * @author Patrice Lopez
  */
 public class Lexicon {
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(Lexicon.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(Lexicon.class);
     // private static volatile Boolean instanceController = false;
     private static volatile Lexicon instance;
 
@@ -103,8 +103,8 @@ public class Lexicon {
 
     private void initDictionary() {
     	LOGGER.info("Initiating dictionary");
-        dictionary_en = new HashSet<String>();
-        dictionary_de = new HashSet<String>();
+        dictionary_en = new HashSet<>();
+        dictionary_de = new HashSet<>();
         LOGGER.info("End of Initialization of dictionary");
     }
 
@@ -158,23 +158,10 @@ public class Lexicon {
                     }
                 }
             }
-        } catch (FileNotFoundException e) {
-//	    	e.printStackTrace();
-            throw new GrobidException("An exception occured while running Grobid.", e);
         } catch (IOException e) {
-//	    	e.printStackTrace();
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception occurred while running Grobid.", e);
         } finally {
-            try {
-                if (ist != null)
-                    ist.close();
-                if (isr != null)
-                    isr.close();
-                if (dis != null)
-                    dis.close();
-            } catch (Exception e) {
-                throw new GrobidResourceException("Cannot close all streams.", e);
-            }
+            IOUtils.closeQuietly(ist, isr, dis);
         }
     }
 
@@ -224,9 +211,9 @@ public class Lexicon {
             SAXParser p = spf.newSAXParser();
             p.parse(ist, parser);
         } catch (Exception e) {
-//			e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
+
             try {
                 if (ist != null)
                     ist.close();
@@ -628,6 +615,8 @@ public class Lexicon {
         return results;
     }
 
+    /** Organisation names **/
+
 	/**
      * Soft look-up in organisation name gazetteer for a given string
      */
@@ -649,6 +638,41 @@ public class Lexicon {
         List<OffsetPosition> results = organisationPattern.matcher(s);
         return results;
     }
+
+    /**
+     * Variant Soft look-up in organisation names gazetteer for a string.
+     * It return a list of positions referring to the character positions within the string.
+     * @see Lexicon#getPositionsInLocationNames(String)
+     *
+     * @param s the input string
+     * @return a list of positions referring to the character position in the input string
+     */
+    public List<OffsetPosition> getPositionsInOrganisationNames(String s) {
+        if (organisationPattern == null) {
+            initOrganisations();
+        }
+        List<OffsetPosition> results = organisationPattern.match(s);
+        return results;
+    }
+
+    /**
+     * Variant Soft look-up in organisation names gazetteer for a string already tokenised.
+     * Return list of positions referring as the index value in the input list.
+     * @see Lexicon#getPositionsInLocationNames(List)
+     *
+     * @param s the input string
+     * @return a list of positions referring as the index value in the input list
+     */
+    public List<OffsetPosition> getPositionsInOrganisationNames(List<String> s) {
+        if (organisationPattern == null) {
+            initOrganisations();
+        }
+        List<OffsetPosition> results = organisationPattern.match(s);
+        return results;
+    }
+
+
+    /** Org form names **/
 
 	/**
      * Soft look-up in organisation form name gazetteer for a given string
@@ -672,7 +696,41 @@ public class Lexicon {
         return results;
     }
 
-	/**
+    /**
+     * Variant Soft look-up in person org form names gazetteer for a string already tokenised.
+     * Return list of positions referring as the index value in the input list.
+     * @see Lexicon#getPositionsInLocationNames(List)
+     *
+     * @param s the input string
+     * @return a list of positions referring as the index value in the input list
+     */
+    public List<OffsetPosition> getPositionsInOrgFormNames(List<String> s) {
+        if (orgFormPattern == null) {
+            initOrgForms();
+        }
+        List<OffsetPosition> results = orgFormPattern.match(s);
+        return results;
+    }
+
+    /**
+     * Variant Soft look-up in org form names gazetteer for a string.
+     * It return a list of positions referring to the character positions within the string.
+     * @see Lexicon#getPositionsInLocationNames(String)
+     *
+     * @param s the input string
+     * @return a list of positions referring to the character position in the input string
+     */
+    public List<OffsetPosition> getPositionsInOrgFormNames(String s) {
+        if (orgFormPattern == null) {
+            initOrgForms();
+        }
+        List<OffsetPosition> results = orgFormPattern.match(s);
+        return results;
+    }
+
+    /** Location names **/
+
+    /**
      * Soft look-up in location name gazetteer for a given string
      */
     public List<OffsetPosition> inLocationNames(String s) {
@@ -694,6 +752,43 @@ public class Lexicon {
         return results;
     }
 
+    /**
+     * Variant Soft look-up in location name gazetteer for a string, return a list of positions referring to the character
+     * positions within the string.
+     *
+     * For example "The car is in Milan" as Milan is a location, would return OffsetPosition(14,19)
+     *
+     * @param s the input string
+     * @return a list of positions referring to the character position in the input string
+     */
+    public List<OffsetPosition> getPositionsInLocationNames(String s) {
+        if (locationPattern == null) {
+            initLocations();
+        }
+        List<OffsetPosition> results = locationPattern.match(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in location name gazetteer for a tokenized string, return list of positions referring as the index
+     * value in the input list.
+     *
+     * For example ["The", "car", "is", "in", "Milan"], as Milan is a location, would return OffsetPosition(4,4)
+     *
+     * @param s the input string
+     * @return a list of positions referring to the character position in the input string
+     */
+    public List<OffsetPosition> getPositionsInLocationNames(List<String> s) {
+        if (locationPattern == null) {
+            initLocations();
+        }
+        List<OffsetPosition> results = locationPattern.match(s);
+        return results;
+    }
+
+
+    /** Person title lexicon **/
+
 	/**
      * Soft look-up in person title gazetteer for a given string
      */
@@ -713,6 +808,39 @@ public class Lexicon {
             initPersonTitles();
         }
         List<OffsetPosition> results = personTitlePattern.matcher(s);
+        return results;
+    }
+
+
+    /**
+     * Variant Soft look-up in person title name gazetteer for a string already tokenised.
+     * Return list of positions referring as the index value in the input list.
+     * @see Lexicon#getPositionsInLocationNames(List)
+     *
+     * @param s the input string
+     * @return a list of positions referring as the index value in the input list
+     */
+    public List<OffsetPosition> getPositionsInPersonTitleNames(List<String> s) {
+        if (personTitlePattern == null) {
+            initPersonTitles();
+        }
+        List<OffsetPosition> results = personTitlePattern.match(s);
+        return results;
+    }
+
+    /**
+     * Variant Soft look-up in person title name gazetteer for a string.
+     * It return a list of positions referring to the character positions within the string.
+     * @see Lexicon#getPositionsInLocationNames(String)
+     *
+     * @param s the input string
+     * @return a list of positions referring to the character position in the input string
+     */
+    public List<OffsetPosition> getPositionsInPersonTitleNames(String s) {
+        if (personTitlePattern == null) {
+            initPersonTitles();
+        }
+        List<OffsetPosition> results = personTitlePattern.match(s);
         return results;
     }
 }
