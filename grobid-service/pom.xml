@@ -176,9 +176,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>2.4.3</version>
                 <configuration>
-                    <!-- put your configurations here -->
+
                 </configuration>
                 <executions>
                     <execution>
@@ -187,6 +187,8 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <!--<shadedClassifierName>shaded</shadedClassifierName>-->
+                            <outputFile>target/${project.artifactId}-${version}-shaded.jar</outputFile>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
