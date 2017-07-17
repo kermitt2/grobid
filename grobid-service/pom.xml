@@ -259,33 +259,17 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <!--<executable>java</executable>-->
                     <mainClass>org.grobid.service.main.GrobidServiceApplication</mainClass>
                     <workingDirectory>/Work/workspace/grobid-rg/</workingDirectory>
                     <systemProperties>
                         <system.property>
                             <key>user.dir</key>
-                            <value>/Work/workspace/grobid-rg/</value>
+                            <value>${project.basedir}/../</value>
                         </system.property>
                     </systemProperties>
                     <arguments>
-                        <!--<argument>-Duser.dir=../.</argument>-->
-                        <!--<argument>bar</argument>-->
                     </arguments>
                 </configuration>
-
-                <!--<configuration>-->
-                    <!--<executable>java</executable>-->
-                    <!--<outputFile>exec.log</outputFile>-->
-                    <!--<longClasspath>true</longClasspath>-->
-                    <!--<arguments>-->
-                        <!--<argument>-classpath</argument>-->
-                        <!--<classpath/>-->
-                        <!--<argument>org.grobid.service.main.GrobidServiceApplication</argument>-->
-                        <!--<argument>server</argument>-->
-                        <!--<argument>/Work/workspace/grobid-rg/grobid-service/config/config.yaml</argument>-->
-                    <!--</arguments>-->
-                <!--</configuration>-->
             </plugin>
 
         </plugins>
