@@ -2,6 +2,7 @@ package org.grobid.service.process;
 
 import java.util.Properties;
 
+import javax.inject.Inject;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -9,6 +10,7 @@ import javax.ws.rs.core.Response.Status;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.SHA1;
+import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.parser.ChangePropertyParser;
 import org.grobid.service.util.GrobidPropertiesUtil;
 import org.grobid.service.util.GrobidProperty;
@@ -29,8 +31,14 @@ public class GrobidRestProcessAdmin {
 	 */
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(GrobidRestProcessAdmin.class);
+    private GrobidServiceConfiguration configuration;
 
-	/**
+    @Inject
+    public GrobidRestProcessAdmin(GrobidServiceConfiguration configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
 	 * Returns the admin view of all properties used for running grobid.
 	 * 
 	 * @param sha1
@@ -40,13 +48,13 @@ public class GrobidRestProcessAdmin {
 	 *         syntax.
 	 */
 	public static Response getAdminParams(String sha1) {
-		Response response = null;
+		Response response;
 		try {
 			LOGGER.debug("called getDescription_html()...");
 			String pass = GrobidServiceProperties.getAdminPw();
 			if (StringUtils.isNotBlank(pass) && StringUtils.isNotBlank(sha1)
 					&& pass.equals(SHA1.getSHA1(sha1))) {
-				StringBuffer htmlCode = new StringBuffer();
+				StringBuilder htmlCode = new StringBuilder();
 
 				htmlCode.append("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">");
 				htmlCode.append("<html>");
@@ -57,25 +65,18 @@ public class GrobidRestProcessAdmin {
 				htmlCode.append("<table border=\"1\">");
 				htmlCode.append("<tr><td>property</td><td>value</td></tr>");
 				htmlCode.append("<th><td colspan=\"2\">java properties</td></th>");
-				htmlCode.append("<tr><td>os name</td><td>"
-						+ System.getProperty("os.name") + "</td></tr>");
-				htmlCode.append("<tr><td>os version</td><td>"
-						+ System.getProperty("sun.arch.data.model")
-						+ "</td></tr>");
+				htmlCode.append("<tr><td>os name</td><td>").append(System.getProperty("os.name")).append("</td></tr>");
+				htmlCode.append("<tr><td>os version</td><td>").append(System.getProperty("sun.arch.data.model")).append("</td></tr>");
 				htmlCode.append("<th><td colspan=\"2\">grobid_service.properties</td></th>");
 
 				Properties props = GrobidServiceProperties.getProps();
 				for (Object property : props.keySet()) {
-					htmlCode.append("<tr><td>" + property + "</td><td>"
-							+ props.getProperty((String) property)
-							+ "</td></tr>");
+					htmlCode.append("<tr><td>").append(property).append("</td><td>").append(props.getProperty((String) property)).append("</td></tr>");
 				}
 				htmlCode.append("<th><td colspan=\"2\">grobid.properties</td></th>");
 				props = GrobidProperties.getProps();
 				for (Object property : props.keySet()) {
-					htmlCode.append("<tr><td>" + property + "</td><td>"
-							+ props.getProperty((String) property)
-							+ "</td></tr>");
+					htmlCode.append("<tr><td>").append(property).append("</td><td>").append(props.getProperty((String) property)).append("</td></tr>");
 				}
 
 				htmlCode.append("</table>");
@@ -105,8 +106,8 @@ public class GrobidRestProcessAdmin {
 	 */
 	public static Response processSHA1(String sha1) {
 		LOGGER.debug(">> processSHA1");
-		Response response = null;
-		String retVal = null;
+		Response response;
+		String retVal;
 		try {
 			retVal = SHA1.getSHA1(sha1);
 			if (GrobidRestUtils.isResultOK(retVal)) {
@@ -127,17 +128,17 @@ public class GrobidRestProcessAdmin {
 	/**
 	 * Return all properties key/value/type in xml format.
 	 * 
-	 * @param sha1
+	 * @param passwordPlain
 	 *            password
 	 * @return Response containing the properties.
 	 */
-	public static Response getAllPropertiesValues(String sha1) {
+	public static Response getAllPropertiesValues(String passwordPlain) {
 		LOGGER.debug(">> getAllPropertiesValues");
-		Response response = null;
-		String retVal = null;
+		Response response;
+		String retVal;
 		try {
 			if (StringUtils.equals(GrobidServiceProperties.getAdminPw(),
-					SHA1.getSHA1(sha1))) {
+					SHA1.getSHA1(passwordPlain))) {
 				retVal = GrobidPropertiesUtil.getAllPropertiesListXml();
 				response = Response.status(Status.OK).entity(retVal)
 						.type(MediaType.TEXT_PLAIN).build();
@@ -171,11 +172,11 @@ public class GrobidRestProcessAdmin {
 	 * @return the changed value if processing was a success. HTTP error code
 	 *         else.
 	 */
-	public static Response changePropertyValue(String pXml) {
+	public Response changePropertyValue(String pXml) {
 		LOGGER.debug(">> changePropertyValue");
-		Response response = null;
+		Response response;
 		try {
-			String result = StringUtils.EMPTY;
+			String result;
 			ChangePropertyParser parser = new ChangePropertyParser(pXml);
 			if (StringUtils.equals(GrobidServiceProperties.getAdminPw(),
 					SHA1.getSHA1(parser.getPassword()))) {
@@ -186,12 +187,12 @@ public class GrobidRestProcessAdmin {
 						String newPwd = SHA1.getSHA1(parser.getValue());
 						GrobidServiceProperties.updatePropertyFile(
 								parser.getKey(), newPwd);
-						GrobidServiceProperties.reload();
+						GrobidServiceProperties.reload(configuration);
 						result = newPwd;
 					} else {
 						GrobidServiceProperties.updatePropertyFile(
 								parser.getKey(), parser.getValue());
-						GrobidServiceProperties.reload();
+						GrobidServiceProperties.reload(configuration);
 						result = GrobidServiceProperties.getProps().getProperty(parser.getKey(), StringUtils.EMPTY);
 					}
 					

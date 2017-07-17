@@ -12,10 +12,12 @@ var grobid = (function($) {
 
 	function defineBaseURL(ext) {
 		var baseUrl = null;
-		if ( $(location).attr('href').indexOf("index.html") != -1)
-			baseUrl = $(location).attr('href').replace("index.html", ext);
-		else
-			baseUrl = $(location).attr('href') + ext;
+		if ( $(location).attr('href').indexOf("index.html") != -1) {
+            baseUrl = $(location).attr('href').replace("index.html", "api/" + ext);
+        } else {
+			baseUrl = $(location).attr('href') + "api/" + ext;
+		}
+		console.log("BaseURL: " + baseUrl);
 		return baseUrl;
 	}
 
@@ -37,7 +39,7 @@ var grobid = (function($) {
 		// for TEI-based results
         $("#divRestI").hide();
 
-        // for PDF based results  
+        // for PDF based results
         $("#divRestII").hide();
 
         // for patent processing
@@ -78,7 +80,7 @@ var grobid = (function($) {
 
 		$('#submitRequest3').bind('click', submitQuery3);
 
-		$('#adminForm').attr("action",$(location).attr('href')+"allProperties");
+		$('#adminForm').attr("action", defineBaseURL("allProperties"));
 		$('#TabAdminProps').hide();
 		$('#adminForm').ajaxForm({
 	        beforeSubmit: adminShowRequest,
@@ -1156,7 +1158,7 @@ var grobid = (function($) {
 		}
 		$.ajax({
 			  type: 'POST',
-			  url: $(location).attr('href')+"changePropertyValue",
+			  url: defineBaseURL("changePropertyValue"),
 			  data: {xml: xmlReq},
 			  success: changePropertySuccesful,
 			  error: changePropertyError
