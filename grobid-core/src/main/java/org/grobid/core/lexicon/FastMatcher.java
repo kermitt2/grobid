@@ -231,8 +231,8 @@ public final class FastMatcher {
      * Ideally by iterating over the OffsetPosition and applying substring would be possible to retrieve all
      * the matches.
      * <p>
-     * When an item is composed by two tokens, e.g. The Bronx, it will match 'The Bronx' but also 'Bronx'
-     * (this behaviour has been inherited by the previous implementation)
+     * The method will match all the tokens present in the lexicon, e.g. if both 'The Bronx' and 'Bronx' are present they will be
+     * both identified (even if they overlap)
      *
      * @param text: the text to be processed
      * @return the list of offset positions of the matches referred to the input string, an empty
@@ -326,8 +326,8 @@ public final class FastMatcher {
      *
      * When given a tokenized text it returns the index position within the liset where the match occur.
      * <p>
-     * When an item is composed by two tokens, e.g. The Bronx, it will match 'The Bronx' but also 'Bronx'
-     * (this behaviour has been inherited by the previous implementation)
+     * The method will match all the tokens present in the lexicon, e.g. if both 'The Bronx' and 'Bronx' are present they will be
+     * both identified (even if they overlap)
      *
      * @param tokens: the tokenized text to be processed
      * @return the list of index positions of the matches referred to the input list, an empty

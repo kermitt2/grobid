@@ -89,16 +89,18 @@ public class LexiconIntegrationTest {
     }
 
     @Test
-    public void testInJournalNames() throws Exception{
+    public void testInJournalNames() throws Exception {
         List<OffsetPosition> inJournalNames = target.inJournalNames("abc <p> Economics </p>");
-        
+
         assertNotNull(inJournalNames);
         assertThat(inJournalNames, hasSize(1));
         assertThat(inJournalNames.get(0).start, is(2));
         assertThat(inJournalNames.get(0).end, is(2));
     }
 
-    /** Locations **/
+    /**
+     * Locations
+     **/
 
     @Test
     public void testGetPositionInLocation_case1() throws Exception {
@@ -116,7 +118,7 @@ public class LexiconIntegrationTest {
         List<String> tokenisedInput = GrobidAnalyzer.getInstance().tokenize(input);
 
         final List<OffsetPosition> positions = target.getPositionsInLocationNames(tokenisedInput);
-        
+
         assertThat(positions, hasSize(15));
         assertThat(positions.get(0).start, is(0));
         assertThat(positions.get(0).end, is(0));
@@ -147,7 +149,9 @@ public class LexiconIntegrationTest {
     }
 
 
-    /** ORG Form **/
+    /**
+     * ORG Form
+     **/
     @Test
     public void testGetPositionInOrgForm() throws Exception {
         final String input = "Matusa Inc. was bought by Bayer";
@@ -170,7 +174,9 @@ public class LexiconIntegrationTest {
         assertThat(positions.get(0).end, is(2));
     }
 
-    /** Organisation names */
+    /**
+     * Organisation names
+     */
     @Test
     public void testGetPositionInOrganisationNames() throws Exception {
         final String input = "Matusa Inc. was bought by Bayer";
@@ -193,7 +199,9 @@ public class LexiconIntegrationTest {
         assertThat(positions.get(0).end, is(11));
     }
 
-    /** Person title **/
+    /**
+     * Person title
+     **/
     @Test
     public void testGetPositionInPersonTitleNames() throws Exception {
         final String input = "The president had a meeting with the vice president, duke and cto of the company.";
