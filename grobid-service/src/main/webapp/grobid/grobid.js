@@ -6,6 +6,7 @@
 
 jQuery.fn.prettify = function () { this.html(prettyPrintOne(this.html(),'xml')); };
 var teiToDownload;
+var teiPatentToDownload;
 var grobid = (function($) {
 
 	var block = 0;
