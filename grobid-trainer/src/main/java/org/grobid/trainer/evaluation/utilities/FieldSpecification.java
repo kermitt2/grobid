@@ -205,7 +205,7 @@ public class FieldSpecification {
 		FieldSpecification volumeField = new FieldSpecification();
 		volumeField.fieldName = "volume";
 		volumeField.grobidPath.
-			add("monogr/imprint/biblScope[@unit=\"volume\"]/text()");
+			add("monogr/imprint/biblScope[@unit=\"volume\" or @unit=\"vol\"]/text()");
 		volumeField.nlmPath.
 			add("*/volume/text()");
 		citationsFields.add(volumeField);

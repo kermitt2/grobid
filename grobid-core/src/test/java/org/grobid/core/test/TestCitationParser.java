@@ -39,7 +39,7 @@ public class TestCitationParser extends EngineTest {
 
     }
 
-    @Test
+    //@Test
     public void testCitationParser3_withConsolidation() throws Exception {
 
         String citation3 = "Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113";
@@ -50,7 +50,7 @@ public class TestCitationParser extends EngineTest {
                 is(2002));
     }
 
-    @Test
+    //@Test
     public void testCitationParser4_withConsolidation() throws Exception {
         String citation4 = "Zholudev Vyacheslav, Kohlhase Michael, Rabe Florian. A [insert XML Format] " +
                 "Database for [insert cool application] (extended version); Technical Report , Jacobs " +
