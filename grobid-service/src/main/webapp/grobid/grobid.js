@@ -4,10 +4,12 @@
 *  Author: Patrice Lopez
 */
 
-jQuery.fn.prettify = function () { this.html(prettyPrintOne(this.html(),'xml')); };
-var teiToDownload;
-var teiPatentToDownload;
+//jQuery.fn.prettify = function () { this.html(prettyPrintOne(this.html(),'xml')); };
+
 var grobid = (function($) {
+
+	var teiToDownload;
+	var teiPatentToDownload;
 
 	var block = 0;
 
@@ -78,8 +80,13 @@ var grobid = (function($) {
         });
 
 		$('#submitRequest2').bind('click', submitQuery2);
-
 		$('#submitRequest3').bind('click', submitQuery3);
+
+		// bind download buttons with download methods
+		$('#btn_download').bind('click', download);
+		$("#btn_download").hide();
+		$('#btn_download3').bind('click', downloadPatent);
+		$("#btn_download3").hide();
 
 		$('#adminForm').attr("action",$(location).attr('href')+"allProperties");
 		$('#TabAdminProps').hide();
@@ -262,7 +269,7 @@ var grobid = (function($) {
 		//var selected = $('#selectedService option:selected').attr('value');
 		var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";
 		var testStr = vkbeautify.xml(responseText);
-        teiToDownload = testStr;
+        teiToDownload = responseText;
 		display += htmll(testStr);
 
 		display += "</pre>";
@@ -1177,43 +1184,56 @@ var grobid = (function($) {
 		$('#admMessage').html("<font color='red'>An error occured while updating property"+selectedAdmKey.split('-').join('.')+"</font>");
 	}
 
+	function download(){
+		var fileName = "export.xml";
+	    var a = document.createElement("a");
+	    
+
+	    var file = new Blob([teiToDownload], {type: 'application/xml'});
+	    var fileURL = URL.createObjectURL(file);
+	    a.href = fileURL;
+	    a.download = fileName;
+
+	    document.body.appendChild(a);
+
+	    $(a).ready(function() {
+			a.click();
+			return true;
+		});
+
+
+
+	    /*var a = document.body.appendChild(
+	        document.createElement("a")
+	    );
+	    a.download = "export.xml";
+	    var xmlData = $.parseXML(teiToDownload);
+
+	    if (window.ActiveXObject){
+	        var xmlString = xmlData.xml;
+	    } else {
+	        var xmlString = (new XMLSerializer()).serializeToString(xmlData);
+	    }
+	    a.href = "data:text/xml," + xmlString; // Grab the HTML
+	    a.click(); // Trigger a click on the element*/
+	}
+
+	function downloadPatent(){
+	    var a = document.body.appendChild(
+	        document.createElement("a")
+	    );
+	    a.download = "export.xml";
+	    var xmlData = $.parseXML(teiPatentToDownload);
+
+	    if (window.ActiveXObject){
+	        var xmlString = xmlData.xml;
+	    } else {
+	        var xmlString = (new XMLSerializer()).serializeToString(xmlData);
+	    }
+	    a.href = "data:text/xml," + xmlString; // Grab the HTML
+	    a.click(); // Trigger a click on the element
+	}
+
 })(jQuery);
 
-function download(){
-    var a = document.body.appendChild(
-        document.createElement("a")
-    );
-    a.download = "export.xml";
-    var xmlData = $.parseXML(teiToDownload);
-
-    if (window.ActiveXObject){
-        var xmlString = xmlData.xml;
-    } else {
-        var xmlString = (new XMLSerializer()).serializeToString(xmlData);
-    }
-    a.href = "data:text/xml," + xmlString; // Grab the HTML
-    a.click(); // Trigger a click on the element
-}
-function downloadPatent(){
-    var a = document.body.appendChild(
-        document.createElement("a")
-    );
-    a.download = "export.xml";
-    var xmlData = $.parseXML(teiPatentToDownload);
-
-    if (window.ActiveXObject){
-        var xmlString = xmlData.xml;
-    } else {
-        var xmlString = (new XMLSerializer()).serializeToString(xmlData);
-    }
-    a.href = "data:text/xml," + xmlString; // Grab the HTML
-    a.click(); // Trigger a click on the element
-}
-
-function downloadVisibilty(){
-    $("#btn_download").hide();
-}
-function downloadVisibilty3(){
-    $("#btn_download3").hide();
-}
 
