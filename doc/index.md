@@ -29,7 +29,7 @@
 
 * [Training and evaluating the GROBID models](Training-the-models-of-Grobid.md)
 
-* [Evaluating against PubMed Central gold data](Evaluation-against-a-PubMedCentral-set.md)
+* [End to end evaluation](End-to-end-evaluation.md)
 
 <h3>Developer notes</h3>
 
