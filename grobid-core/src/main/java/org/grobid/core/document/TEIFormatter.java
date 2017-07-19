@@ -11,7 +11,7 @@ import org.grobid.core.data.*;
 import org.grobid.core.data.Date;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
-import org.grobid.core.engines.label.SegmentationLabel;
+import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters;
 import org.grobid.core.engines.label.TaggingLabel;
@@ -907,11 +907,11 @@ public class TEIFormatter {
                                     Document doc,
                                     GrobidAnalysisConfig config) throws Exception {
         // write the notes
-        SortedSet<DocumentPiece> documentNoteParts = doc.getDocumentPart(SegmentationLabel.FOOTNOTE);
+        SortedSet<DocumentPiece> documentNoteParts = doc.getDocumentPart(SegmentationLabels.FOOTNOTE);
         if (documentNoteParts != null) {
             tei = toTEINote("foot", documentNoteParts, tei, doc, config);
         }
-        documentNoteParts = doc.getDocumentPart(SegmentationLabel.MARGINNOTE);
+        documentNoteParts = doc.getDocumentPart(SegmentationLabels.MARGINNOTE);
         if (documentNoteParts != null) {
             tei = toTEINote("margin", documentNoteParts, tei, doc, config);
         }

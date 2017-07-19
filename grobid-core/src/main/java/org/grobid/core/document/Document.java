@@ -15,9 +15,10 @@ import org.grobid.core.analyzers.Analyzer;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.*;
 import org.grobid.core.engines.Engine;
-import org.grobid.core.engines.label.SegmentationLabel;
+import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.FigureCounters;
+import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
@@ -1524,7 +1525,7 @@ public class Document {
         }));
     }
 
-    public SortedSet<DocumentPiece> getDocumentPart(SegmentationLabel segmentationLabel) {
+    public SortedSet<DocumentPiece> getDocumentPart(TaggingLabel segmentationLabel) {
         if (labeledBlocks == null) {
             LOGGER.debug("labeledBlocks is null");
             return null;
@@ -1535,7 +1536,7 @@ public class Document {
         return labeledBlocks.get(segmentationLabel.getLabel());
     }
 
-    public String getDocumentPartText(SegmentationLabel segmentationLabel) {
+    public String getDocumentPartText(TaggingLabel segmentationLabel) {
         SortedSet<DocumentPiece> pieces = getDocumentPart(segmentationLabel);
         if (pieces == null) {
             return null;

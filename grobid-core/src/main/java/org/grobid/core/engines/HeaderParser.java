@@ -14,7 +14,7 @@ import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.document.TEIFormatter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.engines.label.SegmentationLabel;
+import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
@@ -300,7 +300,7 @@ public class HeaderParser extends AbstractParser {
      */
     public String processingHeaderSection(boolean consolidate, Document doc, BiblioItem resHeader) {
         try {
-            SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabel.HEADER);
+            SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
             List<LayoutToken> tokenizations = doc.getTokenizations();
 
             if (documentHeaderParts != null) {
@@ -333,7 +333,7 @@ public class HeaderParser extends AbstractParser {
                 if (contentSample.length() < 200) {
                     // we need more textual content to ensure that the language identification will be
                     // correct
-                    SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
+                    SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
                     StringBuilder contentBuffer = new StringBuilder();
                     for (DocumentPiece docPiece : documentBodyParts) {
                         DocumentPointer dp1 = docPiece.a;
@@ -807,7 +807,7 @@ public class HeaderParser extends AbstractParser {
                 throw new GrobidException("PDF parsing resulted in empty content");
             }*/
 
-            SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabel.HEADER);
+            SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
             List<LayoutToken> tokenizationsFull = doc.getTokenizations();
 
             if (documentHeaderParts != null) {
