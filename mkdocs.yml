@@ -19,5 +19,5 @@ pages:
 - ['TEI-encoding-of-results.md', 'User manual', 'TEI encoding of results']
 - ['Coordinates-in-PDF.md', 'User manual', 'Coordinates of structures in the PDF']
 - ['Training-the-models-of-Grobid.md', 'User manual', 'Training the GROBID models']
-- ['Evaluation-against-a-PubMedCentral-set.md', 'User manual', 'Evaluation against PubMed Central']
+- ['End-to-end-evaluation.md', 'User manual', 'End-to-end evaluation']
 - ['Recompiling-and-integrating-CRF-libraries.md', 'Developer notes', 'Recompiling CRF libraries']
