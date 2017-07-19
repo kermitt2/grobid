@@ -15,7 +15,6 @@ import javax.xml.parsers.SAXParserFactory;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorReference;
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.sax.MarecSaxParser;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
@@ -591,10 +590,8 @@ public class PatentParserTrainer extends AbstractTrainer {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        MockContext.setInitialContext();
         GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new PatentParserTrainer());
-        MockContext.destroyInitialContext();
     }
 
 }

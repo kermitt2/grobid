@@ -1,6 +1,5 @@
 package org.grobid.core;
 
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -15,7 +14,6 @@ public class GrobidModelsTest {
 
     @BeforeClass
     public static void setInitialContext() throws Exception {
-        MockContext.setInitialContext();
         GrobidProperties.getInstance();
     }
 

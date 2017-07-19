@@ -4,7 +4,6 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorReferenceSegmenter;
 import org.grobid.trainer.sax.TEIReferenceSegmenterSaxParser;
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -206,10 +205,8 @@ public class ReferenceSegmenterTrainer extends AbstractTrainer {
      * @throws Exception 
      */
     public static void main(String[] args) throws Exception {
-    	MockContext.setInitialContext();
     	GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new ReferenceSegmenterTrainer());
         AbstractTrainer.runEvaluation(new ReferenceSegmenterTrainer());
-        MockContext.destroyInitialContext();
     }
 }

@@ -8,7 +8,7 @@ import javax.naming.InitialContext;
 
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.mock.MockContext;
+//import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.GrobidPropertyKeys;
 import org.grobid.core.utilities.Utilities;
@@ -24,12 +24,12 @@ public class LibraryLoader {
 
     private static boolean loaded = false;
 
-    private static boolean isContextMocked = false;
+//    private static boolean isContextMocked = false;
 
     public static void load() {
         if (!loaded) {
             LOGGER.info("Loading external native CRF library");
-            mockContextIfNotSet();
+//            mockContextIfNotSet();
             LOGGER.debug(getLibraryFolder());
             File libraryFolder = new File(getLibraryFolder());
             if (!libraryFolder.exists() || !libraryFolder.isDirectory()) {
@@ -99,42 +99,42 @@ public class LibraryLoader {
             }
             loaded = true;
 
-            if (isContextMocked) {
-                try {
-                    MockContext.destroyInitialContext();
-                } catch (Exception exp) {
-                    LOGGER.error("Could not unmock the context." + exp);
-                    throw new GrobidException("Could not unmock the context.", exp);
-                }
-                isContextMocked = false;
-            }
+//            if (isContextMocked) {
+//                try {
+//                    MockContext.destroyInitialContext();
+//                } catch (Exception exp) {
+//                    LOGGER.error("Could not unmock the context." + exp);
+//                    throw new GrobidException("Could not unmock the context.", exp);
+//                }
+//                isContextMocked = false;
+//            }
             LOGGER.info("Library crfpp loaded");
         }
     }
 
-    /**
-     * Initialize the context with mock parameters if they doesn't already
-     * exist.
-     */
-    protected static void mockContextIfNotSet() {
-        try {
-            new InitialContext().lookup("java:comp/env/"
-                    + GrobidPropertyKeys.PROP_GROBID_HOME);
-            LOGGER.debug("The property " + GrobidPropertyKeys.PROP_GROBID_HOME
-                    + " already exists. No mocking of context made.");
-        } catch (Exception exp) {
-            LOGGER.debug("The property " + GrobidPropertyKeys.PROP_GROBID_HOME
-                    + " does not exist. Mocking the context.");
-            try {
-                MockContext.setInitialContext();
-                isContextMocked = true;
-            } catch (Exception mexp) {
-                LOGGER.error("Could not mock the context." + mexp);
-                throw new GrobidException("Could not mock the context.",  mexp);
-            }
-        }
-    }
-
+//    /**
+//     * Initialize the context with mock parameters if they doesn't already
+//     * exist.
+//     */
+//    protected static void mockContextIfNotSet() {
+//        try {
+//            new InitialContext().lookup("java:comp/env/"
+//                    + GrobidPropertyKeys.PROP_GROBID_HOME);
+//            LOGGER.debug("The property " + GrobidPropertyKeys.PROP_GROBID_HOME
+//                    + " already exists. No mocking of context made.");
+//        } catch (Exception exp) {
+//            LOGGER.debug("The property " + GrobidPropertyKeys.PROP_GROBID_HOME
+//                    + " does not exist. Mocking the context.");
+////            try {
+////                MockContext.setInitialContext();
+////                isContextMocked = true;
+////            } catch (Exception mexp) {
+////                LOGGER.error("Could not mock the context." + mexp);
+////                throw new GrobidException("Could not mock the context.",  mexp);
+////            }
+//        }
+//    }
+//
     private static String getLibraryFolder() {
         GrobidProperties.getInstance();
         // TODO: change to fetching the basic dir from GrobidProperties object

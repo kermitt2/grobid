@@ -7,7 +7,6 @@ import org.grobid.core.engines.Engine;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.factory.GrobidFactory;
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.trainer.Stats;
 import org.grobid.trainer.sax.NLMHeaderSaxHandler;
@@ -77,7 +76,6 @@ public class PubMedCentralEvaluation {
 		String pGrobidProperties = "../grobid-home/config/grobid.properties";
 
 		try {
-			MockContext.setInitialContext(pGrobidHome, pGrobidProperties);		
 			GrobidProperties.getInstance();
 			System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
 
@@ -88,7 +86,7 @@ public class PubMedCentralEvaluation {
 		}
 		
 		// initialize the field specifications and label list
-		headerFields = new ArrayList<FieldSpecification>();	
+		headerFields = new ArrayList<>();
 		fulltextFields = new ArrayList<FieldSpecification>();	
 		citationsFields = new ArrayList<FieldSpecification>();
 		
@@ -1402,12 +1400,6 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 	}
 	
 	public void close() {
-		try {
-			MockContext.destroyInitialContext();
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 	
 	private static String basicNormalization(String string) {

@@ -3,7 +3,6 @@ package org.grobid.trainer;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorCitation;
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.trainer.sax.TEICitationSaxParser;
@@ -180,11 +179,9 @@ public class CitationTrainer extends AbstractTrainer {
      * @throws Exception 
      */
     public static void main(String[] args) throws Exception {
-    	MockContext.setInitialContext();
     	GrobidProperties.getInstance();
         Trainer trainer = new CitationTrainer();
         AbstractTrainer.runTraining(trainer);
         AbstractTrainer.runEvaluation(trainer);
-        MockContext.destroyInitialContext();
     }
 }

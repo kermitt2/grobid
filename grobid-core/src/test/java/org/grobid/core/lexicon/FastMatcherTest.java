@@ -3,7 +3,6 @@ package org.grobid.core.lexicon;
 import java.io.File;
 import java.util.List;
 
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
 import org.junit.AfterClass;
@@ -16,14 +15,12 @@ public class FastMatcherTest {
 	
 	@BeforeClass
 	public static void setInitialContext() throws Exception{
-		MockContext.setInitialContext();
 		GrobidProperties.getInstance();
 		lexicon = Lexicon.getInstance();
 	}
 	
 	@AfterClass
 	public static void destroyInitialContext() throws Exception {
-		MockContext.destroyInitialContext();
 	}
 
 	@Test
