@@ -1,5 +1,6 @@
 package org.grobid.core.utilities;
 
+import com.google.common.annotations.VisibleForTesting;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModel;
@@ -29,26 +30,15 @@ import java.util.Properties;
  * @version 1.2
  */
 public class GrobidProperties {
-
     public static final Logger LOGGER = LoggerFactory.getLogger(GrobidProperties.class);
-
-    /**
-     * The context of the application.
-     */
-//    protected static Context context;
-
-    /**
-     * name of property which determines, if grobid runs in test mode.
-     */
-    public static final String PROP_TEST_MODE = "grobid.testMode";
 
     public static final String FILE_ENDING_TEI_HEADER = ".header.tei.xml";
     public static final String FILE_ENDING_TEI_FULLTEXT = ".fulltext.tei.xml";
 
-    public static final String FOLDER_NAME_MODELS = "models";
-    public static final String FILE_NAME_MODEL = "model";
-    public static final String GROBID_VERSION_FILE = "/grobid-version.txt";
-    public static final String UNKNOWN_VERSION_STR = "unknown";
+    static final String FOLDER_NAME_MODELS = "models";
+    static final String FILE_NAME_MODEL = "model";
+    private static final String GROBID_VERSION_FILE = "/grobid-version.txt";
+    static final String UNKNOWN_VERSION_STR = "unknown";
 
     /**
      * A static {@link GrobidProperties} object containing all properties used
@@ -73,19 +63,19 @@ public class GrobidProperties {
      * path. When it is reset, old object refer to the old path whereas objects
      * created after reset will refer to the new path.
      */
-    protected static File GROBID_HOME_PATH = null;
+    static File GROBID_HOME_PATH = null;
 
-    protected static String GROBID_VERSION = null;
+    private static String GROBID_VERSION = null;
 
     /**
      * Path to grobid.property.
      */
-    protected static File GROBID_PROPERTY_PATH = null;
+    static File GROBID_PROPERTY_PATH = null;
 
     /**
      * Internal property object, where all properties are defined.
      */
-    protected static Properties props = null;
+    private static Properties props = null;
 
     /**
      * Resets this class and all its static fields. For instance sets the
@@ -143,32 +133,15 @@ public class GrobidProperties {
     /**
      * @param pProps the props to set
      */
-    protected static void setProps(final Properties pProps) {
+    private static void setProps(final Properties pProps) {
         props = pProps;
     }
 
-    /**
-     * Return the context.
-     *
-     * @return the context.
-     */
-//    public static Context getContext() {
-//        return context;
-//    }
-
-    /**
-     * Set the context.
-     *
-     * @param pContext the context.
-     */
-//    public static void setContext(final Context pContext) {
-//        context = pContext;
-//    }
 
     /**
      * Load the path to GROBID_HOME from the env-entry set in web.xml.
      */
-    public static void load_GROBID_HOME_PATH() {
+    private static void assignGrobidHomePath() {
         if (GROBID_HOME_PATH == null) {
             synchronized (GrobidProperties.class) {
                 if (GROBID_HOME_PATH == null) {
@@ -176,34 +149,6 @@ public class GrobidProperties {
                 }
             }
         }
-
-//        if (GROBID_HOME_PATH == null) {
-//            String grobidHomePath;
-//            try {
-//                grobidHomePath = (String) context.lookup("java:comp/env/" + GrobidPropertyKeys.PROP_GROBID_HOME);
-//            } catch (final Exception exp) {
-//                throw new GrobidPropertyException("Could not set GROBID_HOME", exp);
-//            }
-//            File pathToGrobidHome = new File(grobidHomePath);
-//
-//            try {
-//                if (!pathToGrobidHome.exists()) {
-//                    LOGGER.error("Cannot set grobid home path to the given one '{}', because it does not exist.", grobidHomePath);
-//                    throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + grobidHomePath
-//                            + "', because it does not exist.");
-//                }
-//
-//            } catch (final SecurityException scExp) {
-//                throw new GrobidPropertyException("Cannot access the set grobid home path '" + grobidHomePath
-//                        + "', because of an access permission.", scExp);
-//            }
-//            try {
-//                GROBID_HOME_PATH = pathToGrobidHome.getCanonicalFile();
-//            } catch (final IOException ioExp) {
-//                throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + grobidHomePath
-//                        + "', because it does not exist.");
-//            }
-//        }
     }
 
     /**
@@ -243,57 +188,16 @@ public class GrobidProperties {
     /**
      * Load the path to grobid.properties from the env-entry set in web.xml.
      */
-    public static void loadGrobidPropertiesPath() {
+    @VisibleForTesting
+    static void loadGrobidPropertiesPath() {
         LOGGER.debug("loading grobid.properties");
         if (GROBID_PROPERTY_PATH == null) {
             synchronized (GrobidProperties.class) {
                 if (GROBID_PROPERTY_PATH == null) {
                     GROBID_PROPERTY_PATH = new GrobidHomeFinder().findGrobidPropertiesOrFail(GROBID_HOME_PATH);
-//
-//
-//                    String grobidPropertyPath;
-//                    try {
-//                        grobidPropertyPath = (String) context.lookup("java:comp/env/" + GrobidPropertyKeys.PROP_GROBID_PROPERTY);
-//                    } catch (Exception exp) {
-//                        throw new GrobidPropertyException("Could not load the path to grobid.properties from the context", exp);
-//                    }
-//                    File grobidPropertyFile = new File(grobidPropertyPath);
-//
-//                    // exception if prop file does not exist
-//                    if (!grobidPropertyFile.exists()) {
-//                        throw new GrobidPropertyException("Could not read grobid.properties, the file '" + grobidPropertyPath + "' does not exist.");
-//                    }
-//
-//                    try {
-//                        GROBID_PROPERTY_PATH = grobidPropertyFile.getCanonicalFile();
-//                    } catch (IOException e) {
-//                        throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + grobidPropertyPath
-//                                + "', because it does not exist.");
-//                    }
-//
                 }
             }
         }
-//            String grobidPropertyPath;
-//            try {
-//                grobidPropertyPath = (String) context.lookup("java:comp/env/" + GrobidPropertyKeys.PROP_GROBID_PROPERTY);
-//            } catch (Exception exp) {
-//                throw new GrobidPropertyException("Could not load the path to grobid.properties from the context", exp);
-//            }
-//            File grobidPropertyFile = new File(grobidPropertyPath);
-//
-//            // exception if prop file does not exist
-//            if (!grobidPropertyFile.exists()) {
-//                throw new GrobidPropertyException("Could not read grobid.properties, the file '" + grobidPropertyPath + "' does not exist.");
-//            }
-//
-//            try {
-//                GROBID_PROPERTY_PATH = grobidPropertyFile.getCanonicalFile();
-//            } catch (IOException e) {
-//                throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + grobidPropertyPath
-//                        + "', because it does not exist.");
-//            }
-//        }
     }
 
     /**
@@ -384,7 +288,7 @@ public class GrobidProperties {
 
         setProps(new Properties());
 
-        load_GROBID_HOME_PATH();
+        assignGrobidHomePath();
         loadGrobidPropertiesPath();
         setContextExecutionServer(false);
 
@@ -430,35 +334,9 @@ public class GrobidProperties {
                     GROBID_VERSION = grobidVersion;
                 }
             }
-//            LOGGER.debug("loading GROBID_HOME path");
-//            String grobidVersion;
-//            try {
-//                grobidVersion = (String) context.lookup("java:comp/env/" + GrobidPropertyKeys.PROP_GROBID_VERSION);
-//            } catch (final Exception exp) {
-//                LOGGER.error("Could not set GROBID VERSION", exp);
-//                grobidVersion = "unknown";
-////                throw new GrobidPropertyException("Could not set GROBID VERSION", exp);
-//            }
-//            GROBID_VERSION = grobidVersion;
         }
         return GROBID_VERSION;
     }
-
-
-    /**
-     * Loads all properties given in property file {@link #GROBID_HOME_PATH}.
-     */
-//    protected static void init() {
-//        LOGGER.debug("Initiating property loading");
-//
-//        Context ctxt;
-//        try {
-//            ctxt = new InitialContext();
-//        } catch (NamingException nexp) {
-//            throw new GrobidPropertyException("Could not get the initial context", nexp);
-//        }
-//        init(ctxt);
-//    }
 
     /**
      * Initialize the different paths set in the configuration file
@@ -952,7 +830,6 @@ public class GrobidProperties {
      * @param pPropertyFile file to update.
      * @param pKey          key to replace
      * @param pValue        value to replace
-     * @throws IOException
      */
     public static void updatePropertyFile(File pPropertyFile, String pKey, String pValue) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(pPropertyFile));
@@ -978,7 +855,6 @@ public class GrobidProperties {
      *
      * @param pKey   key to replace
      * @param pValue value to replace
-     * @throws IOException
      */
     public static void updatePropertyFile(String pKey, String pValue) throws IOException {
         updatePropertyFile(getGrobidPropertiesPath(), pKey, pValue);
@@ -986,8 +862,6 @@ public class GrobidProperties {
 
     /**
      * Sets the GROBID version.
-     *
-     * @param version
      */
     public static void setVersion(final String version) {
         setPropertyValue(GrobidPropertyKeys.PROP_GROBID_VERSION, version);
