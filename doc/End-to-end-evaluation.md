@@ -30,17 +30,17 @@ For running the evaluation, the tool assumes that the files are organised in a s
 
 * each article sub-directory containing at least the PDF version and a gold XML structured version of the article (in NLM format for PubMedCentral evaluation or in TEI format for the Pub2TEI-based evaluation). See the diagram bellow - the name of the sub-directory and the files is free.  
 
-* extension for files generated with [Pub2TEI](http://github.com/kermitt2/Pub2TEI) is `.bib2tei.tei.xml`. Extension for GROBID-generated TEI is `.fulltext.tei.xml`. Extension for NLM files is `.nxlm`. 
+* extension for files generated with [Pub2TEI](http://github.com/kermitt2/Pub2TEI) is `.pub2tei.tei.xml`. Extension for NLM files is `.nxlm`. GROBID will generate additional TEI files with extension `.fulltext.tei.xml`. 
 
 ```
 ├── article1
 │   ├── article1.pdf
-│   └── article1.bib2tei.tei.xml
+│   └── article1.pub2tei.tei.xml
 │   └── article1.nxml
 │  
 └── articles2
 │   ├── article2.pdf
-│   └── article2.bib2tei.tei.xml
+│   └── article2.pub2tei.tei.xml
 │   └── article2.nxml
 ...
 ```
