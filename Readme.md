@@ -7,6 +7,10 @@
 [![Docker Status](https://images.microbadger.com/badges/version/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Latest Docker HUB image")
 <!--[![Dependency Status](https://www.versioneye.com/user/projects/5942f4990fb24f005a2a6136/badge.svg)](https://www.versioneye.com/user/projects/5942f4990fb24f005a2a6136)-->
 
+## GROBID documentation
+
+Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detailed information.
+
 ## Purpose
 
 GROBID (or Grobid) means GeneRation Of BIbliographic Data. 
@@ -54,9 +58,6 @@ The Web services are documented in the [service manual](https://github.com/kermi
 
 _Warning_: Some quota and query limitation apply to the demo server! If you are interested in using such online GROBID service for your project without limitation (and with support), please contact us (<patrice.lopez@science-miner.com>).
 
-## GROBID documentation
-
-Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detailed information.
 
 ## Latest version
 
@@ -91,6 +92,6 @@ ej-technologies provided us a free open-source license for its Java Profiler. Cl
 
 Please simply refer to the github project:
 
-Grobid (2008-2016) <https://github.com/kermitt2/grobid>
+Grobid (2008-2017) <https://github.com/kermitt2/grobid>
 
 See the [GROBID documentation](http://grobid.readthedocs.org/en/latest/References) for more related resources. 
