@@ -4,13 +4,7 @@ Individual models can be evaluated as explained in [Training the different model
 
 For an end-to-end evaluation, covering the whole extraction process from the parsing of PDF to the end result of the cascading of several CRF models, GROBID includes two possible evaluation progresses:
 
-* ├── files
-│   ├── image.png
-│   └── more-files
-│       ├── file1.txt
-│       ├── file2.txt
-│       └── file3.txt
-└── some-file.mdagainst a set of [PubMed Central](http://www.ncbi.nlm.nih.gov/pmc) articles. For its publications, PubMed Central provides both PDF and fulltext XML files in the [NLM](http://www.ncbi.nlm.nih.gov/pmc/pmcdoc/tagging-guidelines/article/style.html) format. Keeping in mind some limits described bellow, it is possible to estimate the ability of Grobid to extract and normalize the content of the PDF documents for matching the quality of the NLM file. 
+* against a set of [PubMed Central](http://www.ncbi.nlm.nih.gov/pmc) articles. For its publications, PubMed Central provides both PDF and fulltext XML files in the [NLM](http://www.ncbi.nlm.nih.gov/pmc/pmcdoc/tagging-guidelines/article/style.html) format. Keeping in mind some limits described bellow, it is possible to estimate the ability of Grobid to extract and normalize the content of the PDF documents for matching the quality of the NLM file. 
 
 * against TEI documents produced by [Pub2TEI](http://github.com/kermitt2/Pub2TEI). Pub2TEI is a set of XSLT that permit to tranform various _native_ XML publishers (including Elsevier, Wiley, Springer, etc. XML formats) into a common TEI format. This TEI format can be used as groundtruth structure information for evaluating GROBID output, keeping in mind some limits described bellow. 
 
