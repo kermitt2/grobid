@@ -1,4 +1,4 @@
-<h1>End to end evaluation</h1>
+<h1>End-to-end evaluation</h1>
 
 Individual models can be evaluated as explained in [Training the different models of Grobid](Training-the-models-of-Grobid.md).
 
