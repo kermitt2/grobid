@@ -24,11 +24,11 @@ import java.util.Properties;
  * project. it is directly extended by the {@link GrobidProperties} class and
  * therefore also contains all properties neccessary for the grobid-core
  * project. A file defining properties for grobid-service must have the name '
- * {@value #FILE_GROBID_SERVICE_PROPERTIES}' and can be contained in path either
- * located by the system property {@value GrobidProperties#PROP_GROBID_HOME} or
- * the system property {@value #PROP_GROBID_HOME} or given by context property
+ * FILE_GROBID_SERVICE_PROPERTIES' and can be contained in path either
+ * located by the system property {@value GrobidPropertyKeys#PROP_GROBID_HOME} or
+ * the system property {@value GrobidPropertyKeys#PROP_GROBID_HOME} or given by context property
  * (retrieved via InitialContext().lookup(...)). If both are set this class will
- * try to load the file in {@value GrobidProperties#PROP_GROBID_HOME} first.
+ * try to load the file in {@value GrobidPropertyKeys#PROP_GROBID_HOME} first.
  *
  * @author Florian Zipser
  */
@@ -50,10 +50,6 @@ public class GrobidServiceProperties {
      */
     protected static File GROBID_SERIVCE_PROPERTY_PATH = null;
 
-    /**
-     * The context of the application.
-     */
-    protected static Context context;
 
     /**
      * A static {@link GrobidProperties} object containing all properties used
@@ -92,12 +88,7 @@ public class GrobidServiceProperties {
      */
     protected static synchronized GrobidServiceProperties getNewInstance(GrobidServiceConfiguration configuration) {
         LOGGER.debug("Start GrobidServiceProperties.getNewInstance");
-        try {
-            grobidServiceProperties = new GrobidServiceProperties(configuration);
-        } catch (NamingException nexp) {
-            throw new GrobidPropertyException(
-                    "Could not get the initial context", nexp);
-        }
+        grobidServiceProperties = new GrobidServiceProperties(configuration);
         return grobidServiceProperties;
     }
 
@@ -114,41 +105,15 @@ public class GrobidServiceProperties {
         props = pProps;
     }
 
-    /**
-     * Return the context.
-     *
-     * @return the context.
-     */
-    public static Context getContext() {
-        return context;
-    }
-
-    /**
-     * Set the context.
-     *
-     * @param pContext the context.
-     */
-    public static void setContext(Context pContext) {
-        context = pContext;
-    }
 
     protected static void init() {
-        LOGGER.debug("Initiating property loading");
-        try {
-            setContext(new InitialContext());
-        } catch (NamingException nexp) {
-            throw new GrobidPropertyException(
-                    "Could not get the initial context", nexp);
-        }
     }
 
     /**
      * Initializes a {@link GrobidServiceProperties} object by reading the
      * property file.
-     *
-     * @throws NamingException
      */
-    public GrobidServiceProperties(GrobidServiceConfiguration configuration) throws NamingException {
+    public GrobidServiceProperties(GrobidServiceConfiguration configuration) {
         this.configuration = configuration;
         LOGGER.debug("Instantiating GrobidServiceProperties");
         init();

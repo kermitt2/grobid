@@ -154,11 +154,11 @@
             <artifactId>xercesImpl</artifactId>
             <version>2.11.0</version>
         </dependency>
-        <dependency>
-            <groupId>directory-naming</groupId>
-            <artifactId>naming-java</artifactId>
-            <version>0.8</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>directory-naming</groupId>-->
+            <!--<artifactId>naming-java</artifactId>-->
+            <!--<version>0.8</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
@@ -291,8 +291,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>

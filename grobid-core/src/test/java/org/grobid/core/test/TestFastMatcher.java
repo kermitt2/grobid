@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotNull;
 import java.util.List;
 
 import org.grobid.core.lexicon.Lexicon;
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.OffsetPosition;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -21,12 +20,10 @@ public class TestFastMatcher {
 	
 	@BeforeClass
 	public static void setInitialContext() throws Exception {
-		MockContext.setInitialContext();
 	}
 	
 	@AfterClass
 	public static void destroyInitialContext() throws Exception {
-		MockContext.destroyInitialContext();
 	}
 	
 	@Before

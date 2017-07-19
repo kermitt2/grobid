@@ -3,7 +3,6 @@ package org.grobid.trainer;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorName;
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.trainer.sax.TEIAuthorSaxParser;
 
@@ -27,9 +26,7 @@ public class NameCitationTrainer extends AbstractTrainer {
 	 * 
 	 * @param corpusDir
 	 *            a path where corpus files are located
-	 * @param trainingOutputPath
-	 *            path where to store the temporary training data
-	 * @return the total number of used corpus items 
+	 * @return the total number of used corpus items
 	 */
 	@Override
 	public int createCRFPPData(final File corpusDir, final File modelOutputPath) {
@@ -157,12 +154,10 @@ public class NameCitationTrainer extends AbstractTrainer {
      * @throws Exception 
      */
     public static void main(String[] args) throws Exception {
-    	MockContext.setInitialContext();
     	GrobidProperties.getInstance();
         Trainer trainer = new NameCitationTrainer();
         AbstractTrainer.runTraining(trainer);
         AbstractTrainer.runEvaluation(trainer);
-        MockContext.destroyInitialContext();
 
     }
 }

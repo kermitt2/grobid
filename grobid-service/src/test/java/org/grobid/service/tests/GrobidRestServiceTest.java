@@ -20,7 +20,6 @@ import org.apache.commons.io.FileUtils;
 import org.glassfish.jersey.client.JerseyClientBuilder;
 import org.glassfish.jersey.media.multipart.FormDataMultiPart;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
-import org.grobid.core.mock.MockContext;
 import org.grobid.service.GrobidPathes;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.main.GrobidServiceApplication;
@@ -59,12 +58,10 @@ public class GrobidRestServiceTest {
 
     @BeforeClass
     public static void setInitialContext() throws Exception {
-        MockContext.setInitialContext();
     }
 
     @AfterClass
     public static void destroyInitialContext() throws Exception {
-        MockContext.destroyInitialContext();
     }
 
     @ClassRule
