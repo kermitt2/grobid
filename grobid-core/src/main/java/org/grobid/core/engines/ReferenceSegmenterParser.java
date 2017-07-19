@@ -7,7 +7,7 @@ import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
-import org.grobid.core.engines.label.SegmentationLabel;
+import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeatureFactory;
@@ -62,7 +62,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 	}
 
 	public List<LabeledReferenceResult> extract(Document doc, boolean training) {
-		SortedSet<DocumentPiece> referencesParts = doc.getDocumentPart(SegmentationLabel.REFERENCES);
+		SortedSet<DocumentPiece> referencesParts = doc.getDocumentPart(SegmentationLabels.REFERENCES);
 		return extract(doc, referencesParts, training);
 	}
 
@@ -249,7 +249,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
     }
 
 	public org.grobid.core.utilities.Pair<String,String> createTrainingData(Document doc, int id) {
-		SortedSet<DocumentPiece> referencesParts = doc.getDocumentPart(SegmentationLabel.REFERENCES);
+		SortedSet<DocumentPiece> referencesParts = doc.getDocumentPart(SegmentationLabels.REFERENCES);
 		Pair<String,List<LayoutToken>> featSeg = getReferencesSectionFeatured(doc, referencesParts);
 		String res;
 		List<LayoutToken> tokenizations;

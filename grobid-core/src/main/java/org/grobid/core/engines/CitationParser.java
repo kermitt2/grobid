@@ -11,7 +11,7 @@ import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.CitationParserCounters;
-import org.grobid.core.engines.label.SegmentationLabel;
+import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorCitation;
 import org.grobid.core.lexicon.Lexicon;
@@ -175,7 +175,7 @@ public class CitationParser extends AbstractParser {
     public List<BibDataSet> processingReferenceSection(Document doc, ReferenceSegmenter referenceSegmenter, boolean consolidate) {
         List<BibDataSet> results = new ArrayList<BibDataSet>();
 
-        String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
+        String referencesStr = doc.getDocumentPartText(SegmentationLabels.REFERENCES);
 
         if (StringUtils.isEmpty(referencesStr)) {
             cntManager.i(CitationParserCounters.EMPTY_REFERENCES_BLOCKS);

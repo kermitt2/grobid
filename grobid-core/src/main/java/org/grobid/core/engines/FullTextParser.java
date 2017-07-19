@@ -16,7 +16,7 @@ import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.CitationParserCounters;
-import org.grobid.core.engines.label.SegmentationLabel;
+import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
@@ -118,7 +118,7 @@ public class FullTextParser extends AbstractParser {
         try {
 			// general segmentation
 			Document doc = parsers.getSegmentationParser().processing(documentSource, config);
-			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
+			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 
 			// full text processing
 			Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentBodyParts);
@@ -180,7 +180,7 @@ public class FullTextParser extends AbstractParser {
             }
 
 			// possible annexes (view as a piece of full text similar to the body)
-			documentBodyParts = doc.getDocumentPart(SegmentationLabel.ANNEX);
+			documentBodyParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
             featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String rese2 = null;
 			List<LayoutToken> tokenizationsBody2 = null;
@@ -716,7 +716,7 @@ public class FullTextParser extends AbstractParser {
             Document doc = parsers.getSegmentationParser().processing(documentSource, 
 				GrobidAnalysisConfig.defaultInstance());
 
-			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
+			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 			if (documentBodyParts != null) {
 				Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentBodyParts);
 				if (featSeg == null) {
@@ -806,7 +806,7 @@ public class FullTextParser extends AbstractParser {
 
 	            // output of the identified citations as traning data
 				StringBuilder allBufferReference = new StringBuilder();
-	            String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
+	            String referencesStr = doc.getDocumentPartText(SegmentationLabels.REFERENCES);
 	            if (!referencesStr.isEmpty()) {
 	                cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
 	            }
@@ -1750,7 +1750,7 @@ public class FullTextParser extends AbstractParser {
 
 			// acknowledgement is in the back
 			SortedSet<DocumentPiece> documentAcknowledgementParts =
-				doc.getDocumentPart(SegmentationLabel.ACKNOWLEDGEMENT);
+				doc.getDocumentPart(SegmentationLabels.ACKNOWLEDGEMENT);
 			Pair<String, LayoutTokenization> featSeg =
 				getBodyTextFeatured(doc, documentAcknowledgementParts);
 			List<LayoutToken> tokenizationsAcknowledgement;
