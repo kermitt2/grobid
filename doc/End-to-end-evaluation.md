@@ -4,7 +4,13 @@ Individual models can be evaluated as explained in [Training the different model
 
 For an end-to-end evaluation, covering the whole extraction process from the parsing of PDF to the end result of the cascading of several CRF models, GROBID includes two possible evaluation progresses:
 
-* against a set of [PubMed Central](http://www.ncbi.nlm.nih.gov/pmc) articles. For its publications, PubMed Central provides both PDF and fulltext XML files in the [NLM](http://www.ncbi.nlm.nih.gov/pmc/pmcdoc/tagging-guidelines/article/style.html) format. Keeping in mind some limits described bellow, it is possible to estimate the ability of Grobid to extract and normalize the content of the PDF documents for matching the quality of the NLM file. 
+* ├── files
+│   ├── image.png
+│   └── more-files
+│       ├── file1.txt
+│       ├── file2.txt
+│       └── file3.txt
+└── some-file.mdagainst a set of [PubMed Central](http://www.ncbi.nlm.nih.gov/pmc) articles. For its publications, PubMed Central provides both PDF and fulltext XML files in the [NLM](http://www.ncbi.nlm.nih.gov/pmc/pmcdoc/tagging-guidelines/article/style.html) format. Keeping in mind some limits described bellow, it is possible to estimate the ability of Grobid to extract and normalize the content of the PDF documents for matching the quality of the NLM file. 
 
 * against TEI documents produced by [Pub2TEI](http://github.com/kermitt2/Pub2TEI). Pub2TEI is a set of XSLT that permit to tranform various _native_ XML publishers (including Elsevier, Wiley, Springer, etc. XML formats) into a common TEI format. This TEI format can be used as groundtruth structure information for evaluating GROBID output, keeping in mind some limits described bellow. 
 
@@ -24,11 +30,26 @@ See [Pub2TEI](http://github.com/kermitt2/Pub2TEI) for converting native publishe
 
 ## Directory structure
 
-For running the evalution, the tool assumes that the files are organised in a set of directory in the following way: 
+For running the evaluation, the tool assumes that the files are organised in a set of directory in the following way: 
 
 * a root directory containing one sub-directory per article
-* each article sub-directory containing at least the PDF version and a gold XML structured version of the article (in NLM format for PubMedCentral evaluation or in TEI format for the Pub2TEI-based evaluation)  
 
+* each article sub-directory containing at least the PDF version and a gold XML structured version of the article (in NLM format for PubMedCentral evaluation or in TEI format for the Pub2TEI-based evaluation). See the diagram bellow - the name of the sub-directory and the files is free.  
+
+* extension for files generated with [Pub2TEI](http://github.com/kermitt2/Pub2TEI) is `.bib2tei.tei.xml`. Extension for GROBID-generated TEI is `.fulltext.tei.xml`. Extension for NLM files is `.nxlm`. 
+
+```
+├── article1
+│   ├── article1.pdf
+│   └── article1.bib2tei.tei.xml
+│   └── article1.nxml
+│  
+└── articles2
+│   ├── article2.pdf
+│   └── article2.bib2tei.tei.xml
+│   └── article2.nxml
+...
+```
 
 ## Running and evaluating 
 
