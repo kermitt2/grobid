@@ -379,7 +379,7 @@ public class GrobidProperties {
 //        init(pContext);
 //    }
 
-    protected static void init(/*final Context pContext*/) {
+    private static void init(/*final Context pContext*/) {
 //        setContext(pContext);
 
         setProps(new Properties());

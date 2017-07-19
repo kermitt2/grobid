@@ -298,7 +298,7 @@ public class GrobidPropertiesTest {
     @Test(expected = GrobidPropertyException.class)
     public void testinitException2_shouldThrowException() {
         GrobidProperties.GROBID_PROPERTY_PATH = new File(StringUtils.EMPTY);
-        GrobidProperties.init();
+        GrobidProperties.getNewInstance();
     }
 
 
