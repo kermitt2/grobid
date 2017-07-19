@@ -19,6 +19,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.util.Properties;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 /**
  * Created by zholudev on 15/04/15.
  * Running XQuery queries
@@ -29,11 +32,11 @@ public class XQueryProcessor {
 
 
     public static String getQueryFromResources(String name) throws IOException {
-        return IOUtils.toString(XQueryProcessor.class.getResourceAsStream("/xq/" + name));
+        return IOUtils.toString(XQueryProcessor.class.getResourceAsStream("/xq/" + name),UTF_8);
     }
 
     public XQueryProcessor(File xmFile) throws XPathException, IOException {
-        this(FileUtils.readFileToString(xmFile));
+        this(FileUtils.readFileToString(xmFile,UTF_8));
     }
     public XQueryProcessor(String xmlContent) throws XPathException {
         Configuration c = new Configuration();
@@ -41,7 +44,7 @@ public class XQueryProcessor {
         sqc = new StaticQueryContext(c);
         dqc = new DynamicQueryContext(c);
 
-        InputStream is = new ByteArrayInputStream(xmlContent.getBytes());
+        InputStream is = new ByteArrayInputStream(xmlContent.getBytes(UTF_8));
         InputSource XMLSource = new InputSource(is);
 
         SAXSource SAXs = new SAXSource(XMLSource);
