@@ -303,25 +303,11 @@ public class GrobidPropertiesTest {
 
 
     @Test
-    public void testload_GROBID_HOME_PATH() throws Exception {
-        GrobidProperties.GROBID_HOME_PATH = null;
-        GrobidProperties.load_GROBID_HOME_PATH();
-        assertNotNull("The property has not the value expected", GrobidProperties.get_GROBID_HOME_PATH().getAbsolutePath());
-    }
-
-    @Test
-    public void testload_GROBID_HOME_PATH2_shouldNotThrowException() throws Exception {
-        GrobidProperties.GROBID_HOME_PATH = null;
-        GrobidProperties.load_GROBID_HOME_PATH();
-    }
-
-    @Test
-    public void testloadGrobidPropertiesPath() throws Exception {
+    public void testLoadGrobidPropertiesPath() throws Exception {
         GrobidProperties.GROBID_PROPERTY_PATH = null;
         GrobidProperties.loadGrobidPropertiesPath();
         assertNotNull("The property has not the value expected",
-                GrobidProperties.getGrobidPropertiesPath()
-                        .getAbsolutePath());
+                GrobidProperties.getGrobidPropertiesPath().getAbsolutePath());
     }
 
 
