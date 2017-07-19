@@ -87,7 +87,8 @@ var grobid = (function($) {
 		$("#btn_download").hide();
 		$('#btn_download3').bind('click', downloadPatent);
 		$("#btn_download3").hide();
-
+        $('#btn_block_1').bind('click', downloadVisibilty);
+        $('#btn_block_3').bind('click', downloadVisibilty3);
 		$('#adminForm').attr("action",$(location).attr('href')+"allProperties");
 		$('#TabAdminProps').hide();
 		$('#adminForm').ajaxForm({
@@ -839,7 +840,7 @@ var grobid = (function($) {
 		//var selected = $('#selectedService3 option:selected').attr('value');
 		var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";
 		var testStr = vkbeautify.xml(responseText);
-        teiPatentToDownload = testStr;
+        teiPatentToDownload = responseText;
 		display += htmll(testStr);
 
 		display += "</pre>";
@@ -1185,7 +1186,13 @@ var grobid = (function($) {
 	}
 
 	function download(){
-		var fileName = "export.xml";
+        var name ="export";
+		if ((document.getElementById("input").files[0].type == 'application/pdf') ||
+            (document.getElementById("input").files[0].name.endsWith(".pdf")) ||
+            (document.getElementById("input").files[0].name.endsWith(".PDF"))) {
+             name = document.getElementById("input").files[0].name;
+        }
+		var fileName = name + ".tei.xml";
 	    var a = document.createElement("a");
 	    
 
@@ -1202,7 +1209,7 @@ var grobid = (function($) {
 		});
 
 
-
+// old method to download but with well formed xm but not beautified
 	    /*var a = document.body.appendChild(
 	        document.createElement("a")
 	    );
@@ -1218,22 +1225,36 @@ var grobid = (function($) {
 	    a.click(); // Trigger a click on the element*/
 	}
 
-	function downloadPatent(){
-	    var a = document.body.appendChild(
-	        document.createElement("a")
-	    );
-	    a.download = "export.xml";
-	    var xmlData = $.parseXML(teiPatentToDownload);
-
-	    if (window.ActiveXObject){
-	        var xmlString = xmlData.xml;
-	    } else {
-	        var xmlString = (new XMLSerializer()).serializeToString(xmlData);
-	    }
-	    a.href = "data:text/xml," + xmlString; // Grab the HTML
-	    a.click(); // Trigger a click on the element
-	}
-
-})(jQuery);
+	function downloadPatent() {
+        var name = "export";
+        if ((document.getElementById("input3").files[0].type == 'application/pdf') ||
+            (document.getElementById("input3").files[0].name.endsWith(".pdf")) ||
+            (document.getElementById("input3").files[0].name.endsWith(".PDF"))) {
+            name = document.getElementById("input3").files[0].name;
+        }
+        var fileName = name + ".tei.xml";
+        var a = document.createElement("a");
 
 
+        var file = new Blob([teiPatentToDownload], {type: 'application/xml'});
+        var fileURL = URL.createObjectURL(file);
+        a.href = fileURL;
+        a.download = fileName;
+
+        document.body.appendChild(a);
+
+        $(a).ready(function () {
+            a.click();
+            return true;
+        });
+
+    }
+    })(jQuery);
+
+
+function downloadVisibilty(){
+    $("#btn_download").hide();
+}
+function downloadVisibilty3(){
+    $("#btn_download3").hide();
+}
