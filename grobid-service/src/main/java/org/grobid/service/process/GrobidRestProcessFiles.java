@@ -1,5 +1,6 @@
 package org.grobid.service.process;
 
+import net.sf.saxon.trans.XPathException;
 import org.apache.commons.io.IOUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.grobid.core.annotations.TeiStAXParser;
@@ -16,10 +17,10 @@ import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.visualization.BlockVisualizer;
 import org.grobid.core.visualization.CitationsVisualizer;
 import org.grobid.core.visualization.FigureTableVisualizer;
+import org.grobid.service.exceptions.GrobidServiceException;
 import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.GrobidServiceProperties;
-import org.grobid.service.exceptions.GrobidServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
@@ -32,7 +33,14 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.StreamingOutput;
-import java.io.*;
+import javax.xml.stream.XMLStreamException;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +70,7 @@ public class GrobidRestProcessFiles {
      */
     public static Response processStatelessHeaderDocument(final InputStream inputStream,
                                                           final boolean consolidate,
-                                                          final boolean htmlFormat) {
+                                                          final boolean htmlFormat) throws IOException, SAXException {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -100,12 +108,6 @@ public class GrobidRestProcessFiles {
                     }
                 }
             }
-        } catch (NoSuchElementException nseExp) {
-            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
-            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
-        } catch (Exception exp) {
-            LOGGER.error("An unexpected exception occured: " + exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
             IOUtilities.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
@@ -134,28 +136,28 @@ public class GrobidRestProcessFiles {
         return parser.getHTML();
     }
 
-    /**
-     * Uploads the zip file, extract pdf files and extract them into TEI. Only
-     * the header data is extracted.
-     *
-     * @param inputStream zip containing the datas of origin document.
-     * @return Response containing the TEI files representing the header part.
-     */
-    public static Response processStatelessBulkHeaderDocument(final InputStream inputStream) {
-        LOGGER.debug(methodLogIn());
-        Response response = null;
-        LOGGER.debug(methodLogIn());
-        try {
-            File originFile = IOUtilities.writeInputFile(inputStream);
-            LOGGER.info("originFile=" + originFile);
-        } catch (Exception e) {
-            LOGGER.error("An unexpected exception occurs. ", e);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
-        }
-        LOGGER.debug(methodLogOut());
-
-        return response;
-    }
+//    /**
+//     * Uploads the zip file, extract pdf files and extract them into TEI. Only
+//     * the header data is extracted.
+//     *
+//     * @param inputStream zip containing the datas of origin document.
+//     * @return Response containing the TEI files representing the header part.
+//     */
+//    public static Response processStatelessBulkHeaderDocument(final InputStream inputStream) {
+//        LOGGER.debug(methodLogIn());
+//        Response response = null;
+//        LOGGER.debug(methodLogIn());
+//        try {
+//            File originFile = IOUtilities.writeInputFile(inputStream);
+//            LOGGER.info("originFile=" + originFile);
+//        } catch (Exception e) {
+//            LOGGER.error("An unexpected exception occurs. ", e);
+//            response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+//        }
+//        LOGGER.debug(methodLogOut());
+//
+//        return response;
+//    }
 
     /**
      * Uploads the origin document which shall be extracted into TEI.
@@ -178,7 +180,7 @@ public class GrobidRestProcessFiles {
                                                             final boolean htmlFormat,
                                                             final int startPage,
                                                             final int endPage,
-                                                            final boolean generateIDs) {
+                                                            final boolean generateIDs) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal;
@@ -223,12 +225,6 @@ public class GrobidRestProcessFiles {
                     }
                 }
             }
-        } catch (NoSuchElementException nseExp) {
-            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
-            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
-        } catch (Exception exp) {
-            LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
             IOUtilities.removeTempFile(originFile);
             if (isparallelExec && (engine != null)) {
@@ -259,7 +255,7 @@ public class GrobidRestProcessFiles {
                                                                  final boolean consolidate,
                                                                  final int startPage,
                                                                  final int endPage,
-                                                                 final boolean generateIDs) {
+                                                                 final boolean generateIDs) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal;
@@ -327,7 +323,7 @@ public class GrobidRestProcessFiles {
                                         in.close();
                                         out.closeEntry();
                                     } catch (IOException e) {
-                                        e.printStackTrace();
+                                        throw new GrobidServiceException("IO Exception when zipping", e, Status.INTERNAL_SERVER_ERROR);
                                     }
                                 }
                             }
@@ -344,12 +340,6 @@ public class GrobidRestProcessFiles {
                     out.close();
                 }
             }
-        } catch (NoSuchElementException nseExp) {
-            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
-            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
-        } catch (Exception exp) {
-            LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
             IOUtilities.removeTempFile(originFile);
             if (assetPath != null) {
@@ -376,11 +366,11 @@ public class GrobidRestProcessFiles {
         LOGGER.debug(methodLogIn());
         return new StreamingOutput() {
             public void write(OutputStream output) throws IOException, WebApplicationException {
+                final TeiStAXParser parser = new TeiStAXParser(pInputStream, output, false, consolidate);
                 try {
-                    final TeiStAXParser parser = new TeiStAXParser(pInputStream, output, false, consolidate);
                     parser.parse();
-                } catch (Exception exp) {
-                    throw new WebApplicationException(exp);
+                } catch (XMLStreamException e) {
+                    throw new GrobidServiceException("Cannot parse input stream", e, Status.BAD_REQUEST);
                 }
             }
         };
@@ -394,7 +384,7 @@ public class GrobidRestProcessFiles {
      * citation
      */
     public static Response processCitationPatentPDF(final InputStream inputStream,
-                                                    final boolean consolidate) {
+                                                    final boolean consolidate) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal;
@@ -409,8 +399,8 @@ public class GrobidRestProcessFiles {
             } else {
                 // starts conversion process
                 engine = Engine.getEngine(isparallelExec);
-                List<PatentItem> patents = new ArrayList<PatentItem>();
-                List<BibDataSet> articles = new ArrayList<BibDataSet>();
+                List<PatentItem> patents = new ArrayList<>();
+                List<BibDataSet> articles = new ArrayList<>();
                 if (isparallelExec) {
                     retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(),
                             articles, patents, consolidate);
@@ -431,12 +421,6 @@ public class GrobidRestProcessFiles {
                     response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
                 }
             }
-        } catch (NoSuchElementException nseExp) {
-            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
-            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
-        } catch (Exception exp) {
-            LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
             IOUtilities.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
@@ -455,7 +439,7 @@ public class GrobidRestProcessFiles {
      * citation
      */
     public static Response processCitationPatentST36(final InputStream inputStream,
-                                                     final boolean consolidate) {
+                                                     final boolean consolidate) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal;
@@ -470,8 +454,8 @@ public class GrobidRestProcessFiles {
             } else {
                 // starts conversion process
                 engine = Engine.getEngine(isparallelExec);
-                List<PatentItem> patents = new ArrayList<PatentItem>();
-                List<BibDataSet> articles = new ArrayList<BibDataSet>();
+                List<PatentItem> patents = new ArrayList<>();
+                List<BibDataSet> articles = new ArrayList<>();
                 if (isparallelExec) {
                     retVal = engine.processAllCitationsInXMLPatent(originFile.getAbsolutePath(),
                             articles, patents, consolidate);
@@ -492,12 +476,6 @@ public class GrobidRestProcessFiles {
                     response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
                 }
             }
-        } catch (NoSuchElementException nseExp) {
-            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
-            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
-        } catch (Exception exp) {
-            LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
             IOUtilities.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
@@ -533,7 +511,7 @@ public class GrobidRestProcessFiles {
             } else {
                 // starts conversion process
                 engine = Engine.getEngine(isparallelExec);
-                List<BibDataSet> results = null;
+                List<BibDataSet> results;
                 if (isparallelExec) {
                     results = engine.processReferences(originFile, consolidate);
                     GrobidPoolingFactory.returnEngine(engine);
@@ -570,12 +548,6 @@ public class GrobidRestProcessFiles {
                     response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
                 }
             }
-        } catch (NoSuchElementException nseExp) {
-            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
-            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
-        } catch (Exception exp) {
-            LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
             IOUtilities.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
@@ -596,7 +568,7 @@ public class GrobidRestProcessFiles {
      */
     public static Response processPDFAnnotation(final InputStream inputStream,
                                                 final String fileName,
-                                                final GrobidRestUtils.Annotation type) {
+                                                final GrobidRestUtils.Annotation type) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response;
         PDDocument out = null;
@@ -628,17 +600,6 @@ public class GrobidRestProcessFiles {
                     response = Response.status(Status.NO_CONTENT).build();
                 }
             }
-        } catch (NoSuchElementException nseExp) {
-            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
-            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
-        } catch (RuntimeException exp) {
-            //Workaround in order to be able to read the message from Javascript
-            LOGGER.error("An unexpected exception occurs. ", exp);
-            //Not the best workaround, as the client is expecting application/pdf
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).type(MediaType.TEXT_PLAIN).build();
-        }catch (Exception exp) {
-            LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
             IOUtilities.removeTempFile(originFile);
             IOUtils.closeQuietly(out);
@@ -659,7 +620,7 @@ public class GrobidRestProcessFiles {
      * @param inputStream the data of origin PDF
      * @return a response object containing the JSON annotations
      */
-    public static Response processPDFReferenceAnnotation(final InputStream inputStream) {
+    public static Response processPDFReferenceAnnotation(final InputStream inputStream) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
@@ -667,7 +628,7 @@ public class GrobidRestProcessFiles {
         Engine engine = null;
         try {
             originFile = IOUtilities.writeInputFile(inputStream);
-            List<String> elementWithCoords = new ArrayList();
+            List<String> elementWithCoords = new ArrayList<>();
             elementWithCoords.add("ref");
             elementWithCoords.add("biblStruct");
             GrobidAnalysisConfig config = new GrobidAnalysisConfig
@@ -675,7 +636,7 @@ public class GrobidRestProcessFiles {
                     .generateTeiCoordinates(elementWithCoords)
                     .build();
 
-            String json = null;
+            String json;
 
             if (originFile == null) {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
@@ -707,12 +668,6 @@ public class GrobidRestProcessFiles {
                     response = Response.status(Status.NO_CONTENT).build();
                 }
             }
-        } catch (NoSuchElementException nseExp) {
-            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
-            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
-        } catch (Exception exp) {
-            LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
             IOUtilities.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
@@ -731,7 +686,7 @@ public class GrobidRestProcessFiles {
      * citation
      */
     public static Response annotateCitationPatentPDF(final InputStream inputStream,
-                                                     final boolean consolidate) {
+                                                     final boolean consolidate) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal;
@@ -768,12 +723,6 @@ public class GrobidRestProcessFiles {
                     response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_JSON).build();
                 }
             }
-        } catch (NoSuchElementException nseExp) {
-            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
-            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
-        } catch (Exception exp) {
-            LOGGER.error("An unexpected exception occurs. ", exp);
-            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
             IOUtilities.removeTempFile(originFile);
             if (isparallelExec && engine != null) {
@@ -797,7 +746,7 @@ public class GrobidRestProcessFiles {
         // starts conversion process
         PDDocument outputDocument = null;
         // list of TEI elements that should come with coordinates
-        List<String> elementWithCoords = new ArrayList();
+        List<String> elementWithCoords = new ArrayList<>();
             elementWithCoords.add("ref");
             elementWithCoords.add("biblStruct");
 

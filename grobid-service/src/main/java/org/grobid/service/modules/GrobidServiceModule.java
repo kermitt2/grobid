@@ -7,6 +7,7 @@ import com.google.inject.Provides;
 import com.hubspot.dropwizard.guicier.DropwizardAwareModule;
 import org.grobid.service.GrobidRestService;
 import org.grobid.service.GrobidServiceConfiguration;
+import org.grobid.service.exceptions.GrobidServiceExceptionMapper;
 import org.grobid.service.process.GrobidRestProcessAdmin;
 import org.grobid.service.resources.HealthResource;
 
@@ -21,6 +22,8 @@ public class GrobidServiceModule extends DropwizardAwareModule<GrobidServiceConf
         binder.bind(HealthResource.class);
         binder.bind(GrobidRestService.class);
         binder.bind(GrobidRestProcessAdmin.class);
+
+        binder.bind(GrobidServiceExceptionMapper.class);
     }
 
     @Provides
