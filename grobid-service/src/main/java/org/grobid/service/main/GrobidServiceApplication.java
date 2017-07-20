@@ -30,7 +30,7 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
 
     @Override
     public String getName() {
-        return "pmi-service";
+        return "grobid-service";
     }
 
 

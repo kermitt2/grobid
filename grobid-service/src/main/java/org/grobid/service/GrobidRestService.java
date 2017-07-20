@@ -27,6 +27,7 @@ import org.grobid.service.util.GrobidServiceProperties;
 import org.grobid.service.util.ZipUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.xml.sax.SAXException;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -44,7 +45,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.StreamingOutput;
 import javax.ws.rs.core.UriInfo;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 
 
@@ -163,7 +166,7 @@ public class GrobidRestService implements GrobidPathes {
     @PUT
     public Response processStatelessHeaderDocument(@FormDataParam(INPUT) InputStream inputStream,
                                                    @FormDataParam("consolidate") String consolidate
-    ) {
+    ) throws IOException, SAXException {
         boolean consol = false;
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
@@ -176,7 +179,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processHeaderDocument_postHTML(@FormDataParam(INPUT) InputStream inputStream,
-                                                   @FormDataParam("consolidate") String consolidate) {
+                                                   @FormDataParam("consolidate") String consolidate) throws IOException, SAXException {
         boolean consol = false;
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
@@ -189,7 +192,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.APPLICATION_XML)
     @PUT
     public Response processStatelessHeaderDocumentHTML(@FormDataParam(INPUT) InputStream inputStream,
-                                                       @FormDataParam("consolidate") String consolidate) {
+                                                       @FormDataParam("consolidate") String consolidate) throws IOException, SAXException {
         boolean consol = false;
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
@@ -205,7 +208,7 @@ public class GrobidRestService implements GrobidPathes {
                                                  @FormDataParam("consolidate") String consolidate,
                                                  @DefaultValue("-1") @FormDataParam("start") int startPage,
                                                  @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                                 @FormDataParam("generateIDs") String generateIDs) {
+                                                 @FormDataParam("generateIDs") String generateIDs) throws Exception {
         return processSatelessFulltextHelper(inputStream, consolidate, startPage, endPage, generateIDs);
     }
 
@@ -217,7 +220,7 @@ public class GrobidRestService implements GrobidPathes {
                                                      @FormDataParam("consolidate") String consolidate,
                                                      @DefaultValue("-1") @FormDataParam("start") int startPage,
                                                      @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                                     @FormDataParam("generateIDs") String generateIDs) {
+                                                     @FormDataParam("generateIDs") String generateIDs) throws Exception {
         return processSatelessFulltextHelper(inputStream, consolidate, startPage, endPage, generateIDs);
     }
 
@@ -225,7 +228,7 @@ public class GrobidRestService implements GrobidPathes {
                                                    String consolidate,
                                                    int startPage,
                                                    int endPage,
-                                                   String generateIDs) {
+                                                   String generateIDs) throws Exception {
         boolean consol = false;
         boolean generate = false;
         if ((consolidate != null) && (consolidate.equals("1"))) {
@@ -246,7 +249,7 @@ public class GrobidRestService implements GrobidPathes {
                                                       @FormDataParam("consolidate") String consolidate,
                                                       @DefaultValue("-1") @FormDataParam("start") int startPage,
                                                       @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                                      @FormDataParam("generateIDs") String generateIDs) {
+                                                      @FormDataParam("generateIDs") String generateIDs) throws Exception {
         return processStatelessFulltextAssetHelper(inputStream, consolidate, startPage, endPage, generateIDs);
     }
 
@@ -258,11 +261,11 @@ public class GrobidRestService implements GrobidPathes {
                                                           @FormDataParam("consolidate") String consolidate,
                                                           @DefaultValue("-1") @FormDataParam("start") int startPage,
                                                           @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                                          @FormDataParam("generateIDs") String generateIDs) {
+                                                          @FormDataParam("generateIDs") String generateIDs) throws Exception {
         return processStatelessFulltextAsset(inputStream, consolidate, startPage, endPage, generateIDs);
     }
 
-    private Response processStatelessFulltextAsset(@FormDataParam(INPUT) InputStream inputStream, @FormDataParam("consolidate") String consolidate, @DefaultValue("-1") @FormDataParam("start") int startPage, @DefaultValue("-1") @FormDataParam("end") int endPage, @FormDataParam("generateIDs") String generateIDs) {
+    private Response processStatelessFulltextAsset(@FormDataParam(INPUT) InputStream inputStream, @FormDataParam("consolidate") String consolidate, @DefaultValue("-1") @FormDataParam("start") int startPage, @DefaultValue("-1") @FormDataParam("end") int endPage, @FormDataParam("generateIDs") String generateIDs) throws Exception {
         return processStatelessFulltextAssetHelper(inputStream, consolidate, startPage, endPage, generateIDs);
     }
 
@@ -270,7 +273,7 @@ public class GrobidRestService implements GrobidPathes {
                                                          String consolidate,
                                                          int startPage,
                                                          int endPage,
-                                                         String generateIDs) {
+                                                         String generateIDs) throws Exception {
         boolean consol = false;
         boolean generate = false;
         if ((consolidate != null) && (consolidate.equals("1"))) {
@@ -292,7 +295,7 @@ public class GrobidRestService implements GrobidPathes {
                                                      @FormDataParam("consolidate") String consolidate,
                                                      @DefaultValue("-1") @FormDataParam("start") int startPage,
                                                      @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                                     @FormDataParam("generateIDs") String generateIDs) {
+                                                     @FormDataParam("generateIDs") String generateIDs) throws Exception {
         boolean consol = false;
         boolean generate = false;
         if ((consolidate != null) && (consolidate.equals("1"))) {
@@ -313,7 +316,7 @@ public class GrobidRestService implements GrobidPathes {
                                                          @FormDataParam("consolidate") String consolidate,
                                                          @DefaultValue("-1") @FormDataParam("start") int startPage,
                                                          @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                                         @FormDataParam("generateIDs") String generateIDs) {
+                                                         @FormDataParam("generateIDs") String generateIDs) throws Exception {
         boolean consol = false;
         boolean generate = false;
         if ((consolidate != null) && (consolidate.equals("1"))) {
@@ -546,7 +549,7 @@ public class GrobidRestService implements GrobidPathes {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
     @POST
-    public Response changePropertyValuePost(@FormParam(XML) String xml) {
+    public Response changePropertyValuePost(@FormParam(XML) String xml) throws ParserConfigurationException, SAXException, IOException {
         return grobidRestProcessAdmin.changePropertyValue(xml);
     }
 
@@ -557,7 +560,7 @@ public class GrobidRestService implements GrobidPathes {
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     @GET
-    public Response changePropertyValueGet(@QueryParam(XML) String xml) {
+    public Response changePropertyValueGet(@QueryParam(XML) String xml) throws ParserConfigurationException, SAXException, IOException {
         return grobidRestProcessAdmin.changePropertyValue(xml);
     }
 
@@ -593,7 +596,7 @@ public class GrobidRestService implements GrobidPathes {
     @POST
     public Response processAnnotatePDF(@FormDataParam(INPUT) InputStream inputStream,
                                        @FormDataParam("name") String fileName,
-                                       @FormDataParam("type") int type) {
+                                       @FormDataParam("type") int type) throws Exception {
         return GrobidRestProcessFiles.processPDFAnnotation(inputStream, fileName, GrobidRestUtils.getAnnotationFor(type));
     }
 
@@ -601,7 +604,7 @@ public class GrobidRestService implements GrobidPathes {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces("application/json")
     @POST
-    public Response processPDFReferenceAnnotation(@FormDataParam(INPUT) InputStream inputStream) {
+    public Response processPDFReferenceAnnotation(@FormDataParam(INPUT) InputStream inputStream) throws Exception {
         return GrobidRestProcessFiles.processPDFReferenceAnnotation(inputStream);
     }
 
@@ -612,7 +615,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces("application/json")
     @POST
     public Response annotatePDFPatentCitation(@FormDataParam(INPUT) InputStream inputStream,
-                                              @FormDataParam("consolidate") String consolidate) {
+                                              @FormDataParam("consolidate") String consolidate) throws Exception {
         boolean consol = false;
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;

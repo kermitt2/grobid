@@ -220,7 +220,6 @@
                 </executions>
                 <configuration>
                     <mainClass>org.grobid.service.main.GrobidServiceApplication</mainClass>
-                    <workingDirectory>/Work/workspace/grobid-rg/</workingDirectory>
                     <systemProperties>
                         <system.property>
                             <key>user.dir</key>
