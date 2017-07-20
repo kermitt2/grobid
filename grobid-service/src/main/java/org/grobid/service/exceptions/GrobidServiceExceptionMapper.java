@@ -41,11 +41,10 @@ public class GrobidServiceExceptionMapper implements ExceptionMapper<Throwable> 
 
     protected Status getStatus(Throwable exception) {
         Response.Status status = Response.Status.INTERNAL_SERVER_ERROR;
-
-        if (exception instanceof GrobidException && ((GrobidException) exception).getStatus() != null) {
-            status = GrobidStatusToHttpStatusMapper.getStatusCode(((GrobidException) exception).getStatus());
-        } else if (exception instanceof GrobidServiceException) {
+        if (exception instanceof GrobidServiceException) {
             status = ((GrobidServiceException) exception).getResponseCode();
+        } else if (exception instanceof GrobidException && ((GrobidException) exception).getStatus() != null) {
+            status = GrobidStatusToHttpStatusMapper.getStatusCode(((GrobidException) exception).getStatus());
         } else if (exception instanceof WebApplicationException) {
             Response.Status exceptionStatus =
                     Response.Status.fromStatusCode(((WebApplicationException) exception).getResponse().getStatus());
