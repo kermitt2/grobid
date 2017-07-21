@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <citations>
-	<bibl><title level="j">J. P. COLLMAN.</title> <title level="j">Acc. Chem. Res.</title> <biblScope type="vol">10</biblScope>, <biblScope type="pp">265</biblScope> (<date>1977</date>);</bibl>
+	<bibl><author>J. P. COLLMAN.</author> <title level="j">Acc. Chem. Res.</title> <biblScope type="vol">10</biblScope>, <biblScope type="pp">265</biblScope> (<date>1977</date>);</bibl>
 	<bibl><author>J. P. COLLMAN, J. P. BRAUMAN, T. J. COLLINS, B. IVERSON et J. L. SESSLER.</author> <title level="j">J. Am. Chem. Soc.</title> <biblScope type="vol">103</biblScope>, <biblScope type="pp">2450</biblScope> (<date>1981</date>);</bibl>
 	<bibl><author>G. B. JAMESON, F. S. MOLINARO, J. A. IBERS, J. P. COLLMAN, J. I. BRAUMAN, E. ROSE et K. S. SUSLICK.</author> <title level="j"> J. Am. Chem. Soc.</title> <biblScope type="vol">102</biblScope>, <biblScope type="pp">3224</biblScope> (<date>1980</date>).</bibl>
 	<bibl><author>A. R. BATTERSBY, S. G. HARTLEY et M. D. TURNBULL.</author> <title level="j">Tetrahedron Lett.</title> <biblScope type="pp">3169</biblScope> (<date>1978</date>);</bibl>
@@ -10,24 +10,24 @@
 	<bibl><author>J. E. BALDWIN, T. KLOSE et M. PETERS.</author> <title level="j">J. Chem. Soc. Chem. Commun.</title> <biblScope type="pp">881</biblScope> (<date>1976</date>);</bibl>
 	<bibl>(/) <author>J. R. BUDGE, P. E. ELLIS, JR., R. D. JONES, I. E. LINARD, T. SZYNANSKI, F. BASOLO, J. E. BALDWIN et R. H. DYER.</author> <title level="j">J. Am. Chem. Soc.</title> <biblScope type="vol">101</biblScope>, <biblScope type="pp">4762</biblScope> (<date>1979</date>);</bibl>
 	<bibl><author>A. R. BATTERSBY, S. A. J. BARTHOLOMEW et T. NITTA.</author> <title level="j">J. Chem. Soc. Chem. Commun.</title> <biblScope type="pp">1291</biblScope> (<date>1983</date>);</bibl>
-	<bibl><author>(H) J. E. BALDWIN et P. PERL-MUTTER.</author> <title level="j"> Top. Curr. Chem.</title> <biblScope type="vol">121</biblScope>, <biblScope type="pp">181</biblScope> (<date>1984</date>), <title level="m">et références citées</title>;</bibl>
+	<bibl><author>(H) J. E. BALDWIN et P. PERL-MUTTER.</author> <title level="j"> Top. Curr. Chem.</title> <biblScope type="vol">121</biblScope>, <biblScope type="pp">181</biblScope> (<date>1984</date>), <note>et références citées</note>;</bibl>
 	<bibl>(/&apos;) <author>T. G. TRAYLOR, M. J. MITCHELL, S. TSUCHIYA, S. CAMP-BELL, D. H. STYNES et D. V. KOGA.</author> <title level="j">J. Am. Chem. Soc.</title> <biblScope type="vol">103</biblScope>, <biblScope type="pp">5234</biblScope> (<date>1981</date>);</bibl>
 	<bibl><author>C. K. CHANG.</author> <title level="j">J. Am. Chem. Soc.</title> <biblScope type="vol">99</biblScope>, <biblScope type="pp">2819</biblScope> (<date>1977</date>).</bibl>
 	<bibl><author>A. LECAS, J. LEVISALLES, Z. RENKO et E. ROSE.</author>  <title level="j">Tetrahedron Lett.</title> <biblScope type="vol">25</biblScope>, <biblScope type="pp">1563</biblScope> (<date>1984</date>).</bibl>
 	<bibl><author>G. M. BADGER, R. A. JONES et R. L. LASLETT.</author> <title level="j">Aust. J. Chem.</title> <biblScope type="vol">17</biblScope>, <biblScope type="pp">1157</biblScope> (<date>1964</date>);</bibl>
-	<bibl><author>E. R. SCHMITTOU.</author> <title level="m">Thèse</title> <date>1979</date>, <orgName>Université de Stanford</orgName>, <pubPlace>U.S.A.</pubPlace> </bibl>
+	<bibl><author>E. R. SCHMITTOU.</author> <note>Thèse</note> <date>1979</date>, <orgName>Université de Stanford</orgName>, <pubPlace>U.S.A.</pubPlace> </bibl>
 	<bibl><author>G. G. KLEINSPEHN</author>. <title level="j">J. Am. Chem. Soc.</title> <biblScope type="vol">77</biblScope>, <biblScope type="pp">1546</biblScope> (<date>1955</date>).</bibl>
 	<bibl><author>A. J. ZAMBITO et E. E. HOWE.</author> <title level="j">Org. Synth. Coll.</title> Vol. <biblScope type="vol">5</biblScope>, <biblScope type="pp">373</biblScope> (<date>1973</date>).</bibl>
 	<bibl><author>A. W. JOHNSON, E. MARHAM et A. PRICE.</author> <title level="j">Org. Synth.</title> <biblScope type="vol">42</biblScope>, <biblScope type="pp">75</biblScope> (<date>1962</date>).</bibl>
 	<bibl><author>J. L. ARCHIBALD, D. M. WALKER, K. B. SHAW, A. MARKOVAC et J. F. MCDONALD.</author> <title level="j"> Can. J. Chem.</title> <biblScope type="vol">44</biblScope>, <biblScope type="pp">345</biblScope> (<date>1966</date>).</bibl>
 	<bibl><author>A. R. BATTERSBY, E. HUNT, E. MCDONALD, J. B. PAINE et J. SAUNDERS</author>. <title level="j">J. Chem. Soc. Perkin Trans. 1</title>, <biblScope type="pp">1008</biblScope> (<date>1976</date>).</bibl>
-	<bibl><author>F. DOLPHIN</author>. <title level="a">The porphyrins</title>. Vol. <biblScope type="vol">I</biblScope>. <publisher>Academic Press</publisher>, <pubPlace>New York</pubPlace>. <date>1978</date>.</bibl>
+	<bibl><author>F. DOLPHIN</author>. <title level="m">The porphyrins</title>. Vol. <biblScope type="vol">I</biblScope>. <publisher>Academic Press</publisher>, <pubPlace>New York</pubPlace>. <date>1978</date>.</bibl>
 	<bibl><author>A. LECAS, J. LEVISALLES, C. MARIACHER et E. ROSE.</author> <title level="j">Can. J. Chem.</title> <biblScope type="vol">62</biblScope>, <biblScope type="pp">2059</biblScope> (<date>1984</date>).</bibl>
 	<bibl><author>B. D. ANDREWS et 1. D. RAE.</author> <title level="j"> Aust. J. Chem.</title> <biblScope type="vol">24</biblScope>, <biblScope type="pp">413</biblScope> (<date>1971</date>).</bibl>
 	<bibl><author>M. J. GUNTER et L. N. MANDER.</author> <title level="j">J. Org. Chem.</title> <biblScope type="vol">46</biblScope>, <biblScope type="pp">4792</biblScope> (<date>1981</date>).</bibl>
 	<bibl><author>R. W. RATCLIFFE et B. G. CHRISTENSEN.</author> <title level="j">Tetrahedron Lett.</title> <biblScope type="pp">4645</biblScope> (<date>1973</date>).</bibl>
 	<bibl><author>A. DEHNELETG. LAVIELLE.</author> <title level="j">Bull. Soc. Chim. Fr. Il</title>, <biblScope type="pp">95</biblScope> (<date>1978</date>).</bibl>
-	<bibl><author>A. DEHNEL.</author> <title level="m">Thèse</title>, <orgName>Université d&apos;Orléans</orgName>, <pubPlace>Orléans, France</pubPlace>. <date>1983</date>. </bibl>
+	<bibl><author>A. DEHNEL.</author> <note>Thèse</note>, <orgName>Université d&apos;Orléans</orgName>, <pubPlace>Orléans, France</pubPlace>. <date>1983</date>. </bibl>
 	<bibl><author>A. DEHNEL, J. P. FINET et G. LAVIELLE.</author> <title level="j">Synthesis</title>, <biblScope type="pp">474</biblScope> (<date>1977</date>).</bibl>
 	<bibl><author>A. DEHNEL et G. LAVIELLE.</author>  <title level="j">Tetrahedron Lett.</title> <biblScope type="vol">21</biblScope>, <biblScope type="pp">1315</biblScope> (<date>1980</date>);</bibl>
 	<bibl><author>C. RABILLER, A. DEHNEL et G. LAVIELLE.</author> <title level="j">Can. J. Chem.</title> <biblScope type="vol">60</biblScope>, <biblScope type="pp">926</biblScope> (<date>1982</date>).</bibl>
