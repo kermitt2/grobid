@@ -106,7 +106,7 @@ public class GrobidRestProcessAdmin {
         String retVal;
 
         retVal = SHA1.getSHA1(sha1);
-        if (GrobidRestUtils.isResultOK(retVal)) {
+        if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
             response = Response.status(Status.OK).entity(retVal)
                     .type(MediaType.TEXT_PLAIN).build();
         } else {
@@ -132,7 +132,7 @@ public class GrobidRestProcessAdmin {
             response = Response.status(Status.OK).entity(retVal)
                     .type(MediaType.TEXT_PLAIN).build();
         } else {
-            throw new GrobidServiceException("Invalid credentials", Status.FORBIDDEN);
+            throw new GrobidServiceException("Invalid credentials. ", Status.FORBIDDEN);
         }
         LOGGER.debug("<< getAllPropertiesValues");
         return response;
@@ -191,7 +191,7 @@ public class GrobidRestProcessAdmin {
                     .type(MediaType.TEXT_PLAIN).build();
 
         } else {
-            throw new GrobidServiceException("Invalid credentials", Status.FORBIDDEN);
+            throw new GrobidServiceException("Invalid credentials. ", Status.FORBIDDEN);
         }
         LOGGER.debug("<< changePropertyValue");
         return response;

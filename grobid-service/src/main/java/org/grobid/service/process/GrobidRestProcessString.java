@@ -24,9 +24,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 
  * @author Damien, Patrice
- * 
  */
 @Singleton
 public class GrobidRestProcessString {
@@ -73,7 +71,7 @@ public class GrobidRestProcessString {
 				}
 			}
 
-			if (!GrobidRestUtils.isResultOK(retVal)) {
+			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
 				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
@@ -130,7 +128,7 @@ public class GrobidRestProcessString {
 				}
 			}
 
-			if (!GrobidRestUtils.isResultOK(retVal)) {
+			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
 				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
@@ -187,7 +185,7 @@ public class GrobidRestProcessString {
 				}
 			}
 
-			if (!GrobidRestUtils.isResultOK(retVal)) {
+			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
 				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
@@ -211,7 +209,7 @@ public class GrobidRestProcessString {
 	 * Parse a raw sequence of affiliations and return the corresponding
 	 * normalized affiliations with address.
 	 * 
-	 * @param string of the raw sequence of affiliation+address
+	 * @param affiliation of the raw sequence of affiliation+address
 	 * @return a response object containing the structured xml representation of
 	 *         the affiliation
 	 */
@@ -244,7 +242,7 @@ public class GrobidRestProcessString {
 					retVal += affi.toTEI();
 				}	
 			}
-			if (!GrobidRestUtils.isResultOK(retVal)) {
+			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
 				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
