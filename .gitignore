@@ -43,7 +43,6 @@ grobid-astro
 grobid-chem
 grobid-books
 grobid-smecta
-grobid-books
 grobid-home/models/quantities
 grobid-home/models/dictionaries-lexical-entries
 grobid-home/models/units
