@@ -1,89 +1,75 @@
 package org.grobid.service.process;
 
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.core.Response.Status;
-
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.grobid.core.utilities.GrobidProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
+import javax.ws.rs.core.UriInfo;
+
 /**
- * 
  * @author Damien, Patrice
- *
  */
 @Singleton
 public class GrobidRestProcessGeneric {
 
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(GrobidRestProcessGeneric.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(GrobidRestProcessGeneric.class);
 
-	@Inject
-	public GrobidRestProcessGeneric() {
+    @Inject
+    public GrobidRestProcessGeneric() {
 
-	}
+    }
 
-	/**
-	 * Returns a string containing true, if the service is alive.
-	 * 
-	 * @return returns a response object containing the string true if service
-	 *         is alive.
-	 */
-	public Response isAlive() {
-		Response response = null;
-		try {
-			LOGGER.debug("called isAlive()...");
+    /**
+     * Returns a string containing true, if the service is alive.
+     *
+     * @return a response object containing the string true if service
+     * is alive.
+     */
+    public String isAlive() {
+        LOGGER.debug("called isAlive()...");
 
-			String retVal = null;
-			try {
-				retVal = Boolean.valueOf(true).toString();
-			} catch (Exception e) {
-				LOGGER.error("GROBID Service is not alive, because of: ", e);
-				retVal = Boolean.valueOf(false).toString();
-			}
-			response = Response.status(Status.OK).entity(retVal).build();
-		} catch (Exception e) {
-			LOGGER.error("" + e);
-			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
-		}
-		return response;
-	}
-	
-	/**
-	 * Returns the description of how to use the grobid-service in a human
-	 * readable way (html).
-	 * 
-	 * @return returns a response object containing a html description
-	 */
-	public Response getDescription_html(UriInfo uriInfo) {
-		Response response = null;
-		try {
-			LOGGER.debug("called getDescription_html()...");
+        String retVal = null;
+        try {
+            retVal = Boolean.valueOf(true).toString();
+        } catch (Exception e) {
+            LOGGER.error("GROBID Service is not alive, because of: ", e);
+            retVal = Boolean.valueOf(false).toString();
+        }
+        return retVal;
+    }
 
-			String htmlCode = "<h4>grobid-service documentation</h4>" +
-					"This service provides a RESTful interface for using the grobid system. grobid extracts data from pdf files. For more information see: " +
-					"<a href=\"http://grobid.readthedocs.org/\">http://grobid.readthedocs.org/</a>";
+    /**
+     * Returns the description of how to use the grobid-service in a human
+     * readable way (html).
+     *
+     * @return a response object containing a html description
+     */
+    public Response getDescription_html(UriInfo uriInfo) {
+        Response response = null;
 
-			response = Response.status(Status.OK).entity(htmlCode)
-					.type(MediaType.TEXT_HTML).build();
-		} catch (Exception e) {
-			LOGGER.error(
-					"Cannot response the description for grobid-service. ", e);
-			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
-		}
-		return response;
-	}
+        LOGGER.debug("called getDescription_html()...");
 
-	/**
-	 * Returns a string containing GROBID version.
-	 *
-	 * @return returns a response object containing version as string.
-	 */
-	public Response getVersion() {
-		return Response.status(Status.OK).entity(GrobidProperties.getVersion()).build();
-	}
+        String htmlCode = "<h4>grobid-service documentation</h4>" +
+                "This service provides a RESTful interface for using the grobid system. grobid extracts data from pdf files. For more information see: " +
+                "<a href=\"http://grobid.readthedocs.org/\">http://grobid.readthedocs.org/</a>";
+
+        response = Response.status(Status.OK).entity(htmlCode)
+                .type(MediaType.TEXT_HTML).build();
+
+        return response;
+    }
+
+    /**
+     * Returns a string containing GROBID version.
+     *
+     * @return a response object containing version as string.
+     */
+    public Response getVersion() {
+        return Response.status(Status.OK).entity(GrobidProperties.getVersion()).build();
+    }
 }

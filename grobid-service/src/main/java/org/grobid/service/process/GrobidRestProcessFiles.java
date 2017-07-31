@@ -62,14 +62,13 @@ public class GrobidRestProcessFiles {
      * @param inputStream the data of origin document
      * @param consolidate consolidation parameter for the header extraction
      * @param htmlFormat  if the result has to be formatted to be displayed as html
-     * @return a response object which contains a TEI representation of the
-     * header part
+     *                    
+     * @return a response object which contains a TEI representation of the header part
      */
-    public Response processStatelessHeaderDocument(final InputStream inputStream,
+    public String processStatelessHeaderDocument(final InputStream inputStream,
                                                           final boolean consolidate,
-                                                          final boolean htmlFormat) throws IOException, SAXException {
+                                                          final boolean htmlFormat) {
         LOGGER.debug(methodLogIn());
-        Response response = null;
         String retVal = null;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
@@ -78,32 +77,12 @@ public class GrobidRestProcessFiles {
             originFile = IOUtilities.writeInputFile(inputStream);
 
             if (originFile == null) {
-                response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+                throw new GrobidServiceException(
+                        "The input file cannot be written. ", Status.INTERNAL_SERVER_ERROR);
             } else {
                 // starts conversion process
                 engine = Engine.getEngine(isparallelExec);
-                if (isparallelExec) {
-                    retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
-                    //retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
-                    GrobidPoolingFactory.returnEngine(engine);
-                    engine = null;
-                } else {
-                    //TODO: sync does not make sense
-                    synchronized (engine) {
-                        retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
-                        //retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
-                    }
-                }
-
-                if ((retVal == null) || (retVal.isEmpty())) {
-                    response = Response.status(Status.NO_CONTENT).build();
-                } else {
-                    if (htmlFormat) {
-                        response = Response.status(Status.OK).entity(formatAsHTML(retVal)).type(MediaType.APPLICATION_XML).build();
-                    } else {
-                        response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
-                    }
-                }
+                retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
             }
         } finally {
             IOUtilities.removeTempFile(originFile);
@@ -112,7 +91,7 @@ public class GrobidRestProcessFiles {
             }
         }
         LOGGER.debug(methodLogOut());
-        return response;
+        return retVal;
     }
 
     /**
@@ -133,29 +112,6 @@ public class GrobidRestProcessFiles {
         return parser.getHTML();
     }
 
-//    /**
-//     * Uploads the zip file, extract pdf files and extract them into TEI. Only
-//     * the header data is extracted.
-//     *
-//     * @param inputStream zip containing the datas of origin document.
-//     * @return Response containing the TEI files representing the header part.
-//     */
-//    public Response processStatelessBulkHeaderDocument(final InputStream inputStream) {
-//        LOGGER.debug(methodLogIn());
-//        Response response = null;
-//        LOGGER.debug(methodLogIn());
-//        try {
-//            File originFile = IOUtilities.writeInputFile(inputStream);
-//            LOGGER.info("originFile=" + originFile);
-//        } catch (Exception e) {
-//            LOGGER.error("An unexpected exception occurs. ", e);
-//            response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
-//        }
-//        LOGGER.debug(methodLogOut());
-//
-//        return response;
-//    }
-
     /**
      * Uploads the origin document which shall be extracted into TEI.
      *
@@ -172,12 +128,12 @@ public class GrobidRestProcessFiles {
      * @return a response object mainly contain the TEI representation of the
      * full text
      */
-    public Response processStatelessFulltextDocument(final InputStream inputStream,
-                                                            final boolean consolidate,
-                                                            final boolean htmlFormat,
-                                                            final int startPage,
-                                                            final int endPage,
-                                                            final boolean generateIDs) throws Exception {
+    public String processFulltextDocument(final InputStream inputStream,
+                                            final boolean consolidate,
+                                            final boolean htmlFormat,
+                                            final int startPage,
+                                            final int endPage,
+                                            final boolean generateIDs) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal;
@@ -188,7 +144,9 @@ public class GrobidRestProcessFiles {
             originFile = IOUtilities.writeInputFile(inputStream);
 
             if (originFile == null) {
-                response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+                throw new GrobidServiceException(
+                        "The input file cannot be written. ",
+                        Status.INTERNAL_SERVER_ERROR);
             } else {
                 // starts conversion process
                 engine = Engine.getEngine(isparallelExec);
@@ -201,35 +159,17 @@ public class GrobidRestProcessFiles {
                                 .generateTeiIds(generateIDs)
                                 .build();
 
-                retVal = engine.fullTextToTEI(originFile,
-                        config);
-
-                if (isparallelExec) {
-                    GrobidPoolingFactory.returnEngine(engine);
-                    engine = null;
-                }
-
-                IOUtilities.removeTempFile(originFile);
-
-                if (!GrobidRestUtils.isResultOK(retVal)) {
-                    response = Response.status(Status.NO_CONTENT).build();
-                } else {
-                    if (htmlFormat) {
-                        response = Response.status(Status.OK).entity(formatAsHTML(retVal)).
-                                type(MediaType.APPLICATION_XML).build();
-                    } else {
-                        response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
-                    }
-                }
+                retVal =  engine.fullTextToTEI(originFile, config);
             }
         } finally {
-            IOUtilities.removeTempFile(originFile);
             if (isparallelExec && (engine != null)) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
+            
+            IOUtilities.removeTempFile(originFile);
         }
         LOGGER.debug(methodLogOut());
-        return response;
+        return retVal;
     }
 
     /**
@@ -290,7 +230,7 @@ public class GrobidRestProcessFiles {
 
                 IOUtilities.removeTempFile(originFile);
 
-                if (!GrobidRestUtils.isResultOK(retVal)) {
+                if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
 
@@ -412,7 +352,7 @@ public class GrobidRestProcessFiles {
 
                 IOUtilities.removeTempFile(originFile);
 
-                if (!GrobidRestUtils.isResultOK(retVal)) {
+                if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
                     response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
@@ -467,7 +407,7 @@ public class GrobidRestProcessFiles {
 
                 IOUtilities.removeTempFile(originFile);
 
-                if (!GrobidRestUtils.isResultOK(retVal)) {
+                if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
                     response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
@@ -539,7 +479,7 @@ public class GrobidRestProcessFiles {
 
                 retVal = result.toString();
 
-                if (!GrobidRestUtils.isResultOK(retVal)) {
+                if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
                     response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
@@ -714,7 +654,7 @@ public class GrobidRestProcessFiles {
 
                 IOUtilities.removeTempFile(originFile);
 
-                if (!GrobidRestUtils.isResultOK(retVal)) {
+                if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
                     response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_JSON).build();

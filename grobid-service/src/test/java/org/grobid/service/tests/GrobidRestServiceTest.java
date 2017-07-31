@@ -42,8 +42,9 @@ import javax.ws.rs.core.Response;
 import java.io.File;
 import java.io.IOException;
 
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
+import static org.mockito.Matchers.isNotNull;
 import static org.mockito.Matchers.notNull;
 
 /**
@@ -102,7 +103,7 @@ public class GrobidRestServiceTest {
     @Test
     public void testFullyRestLessHeaderDocument() throws Exception {
         String resp = getStrResponse(sample4(), GrobidPaths.PATH_HEADER);
-        assertThat(resp, is(notNull()));
+        assertNotNull(resp);
     }
 
 
@@ -112,7 +113,7 @@ public class GrobidRestServiceTest {
     @Test
     public void testFullyRestLessFulltextDocument() throws Exception {
         String resp = getStrResponse(sample4(), GrobidPaths.PATH_FULL_TEXT);
-        assertThat(resp, is(notNull()));
+        assertNotNull(resp);
     }
 
     /**
@@ -121,7 +122,7 @@ public class GrobidRestServiceTest {
     @Test
     public void testRestDate() throws Exception {
         String resp = getStrResponse("date", "November 14 1999", GrobidPaths.PATH_DATE);
-        assertThat(resp, is(notNull()));
+        assertNotNull(resp);
     }
 
     /**
@@ -132,7 +133,7 @@ public class GrobidRestServiceTest {
         String names = "Ahmed Abu-Rayyan *,a, Qutaiba Abu-Salem b, Norbert Kuhn * ,b, Cäcilia Maichle-Mößmer b";
 
         String resp = getStrResponse("names", names, GrobidPaths.PATH_HEADER_NAMES);
-        assertThat(resp, is(notNull()));
+        assertNotNull(resp);
     }
 
     /**
@@ -143,7 +144,7 @@ public class GrobidRestServiceTest {
     public void testRestNamesCitations() throws Exception {
         String names = "Marc Shapiro and Susan Horwitz";
         String resp = getStrResponse("names", names, GrobidPaths.PATH_CITE_NAMES);
-        assertThat(resp, is(notNull()));
+        assertNotNull(resp);
     }
 
 
@@ -157,7 +158,7 @@ public class GrobidRestServiceTest {
                 + "Faculty of Applied Physics and Mathematics, Gdansk University of "
                 + "Technology, Narutowicza 11/12, 80-233 Gdansk, Poland";
         String resp = getStrResponse("affiliations", affiliations, GrobidPaths.PATH_AFFILIATION);
-        assertThat(resp, is(notNull()));
+        assertNotNull(resp);
     }
 
     /**

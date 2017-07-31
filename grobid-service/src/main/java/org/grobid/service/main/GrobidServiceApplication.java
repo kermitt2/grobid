@@ -11,6 +11,9 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.apache.commons.lang3.ArrayUtils;
 import org.grobid.service.GrobidServiceConfiguration;
+import org.grobid.service.exceptions.mapper.GrobidExceptionMapper;
+import org.grobid.service.exceptions.mapper.GrobidServiceExceptionMapper;
+import org.grobid.service.exceptions.mapper.WebApplicationExceptionMapper;
 import org.grobid.service.modules.GrobidServiceModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,6 +55,11 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
     public void run(GrobidServiceConfiguration configuration, Environment environment) {
         LOGGER.info("Service config={}", configuration);
         environment.jersey().setUrlPattern(RESOURCES + "/*");
+
+        //Error handling
+        environment.jersey().register(new GrobidExceptionMapper());
+        environment.jersey().register(new GrobidServiceExceptionMapper());
+        environment.jersey().register(new WebApplicationExceptionMapper());
     }
 
     // ========== static ==========

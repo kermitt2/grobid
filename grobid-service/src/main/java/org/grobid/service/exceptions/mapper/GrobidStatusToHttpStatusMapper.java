@@ -1,4 +1,4 @@
-package org.grobid.service.exceptions;
+package org.grobid.service.exceptions.mapper;
 
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 
