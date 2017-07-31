@@ -43,6 +43,7 @@ grobid-bio
 grobid-istex
 grobid-astro
 grobid-chem
+grobid-books
 grobid-smecta
 grobid-home/models/quantities
 grobid-home/models/dictionaries-lexical-entries
