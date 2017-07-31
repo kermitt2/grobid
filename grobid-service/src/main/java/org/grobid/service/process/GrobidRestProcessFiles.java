@@ -62,7 +62,7 @@ public class GrobidRestProcessFiles {
      * @param inputStream the data of origin document
      * @param consolidate consolidation parameter for the header extraction
      * @param htmlFormat  if the result has to be formatted to be displayed as html
-     *                    
+     *
      * @return a response object which contains a TEI representation of the header part
      */
     public String processStatelessHeaderDocument(final InputStream inputStream,
@@ -133,7 +133,8 @@ public class GrobidRestProcessFiles {
                                             final boolean htmlFormat,
                                             final int startPage,
                                             final int endPage,
-                                            final boolean generateIDs) throws Exception {
+                                            final boolean generateIDs,
+                                                            final List<String> teiCoordinates) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal;
@@ -157,6 +158,7 @@ public class GrobidRestProcessFiles {
                                 .startPage(startPage)
                                 .endPage(endPage)
                                 .generateTeiIds(generateIDs)
+                                .generateTeiCoordinates(teiCoordinates)
                                 .build();
 
                 retVal =  engine.fullTextToTEI(originFile, config);
@@ -165,7 +167,7 @@ public class GrobidRestProcessFiles {
             if (isparallelExec && (engine != null)) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
-            
+
             IOUtilities.removeTempFile(originFile);
         }
         LOGGER.debug(methodLogOut());

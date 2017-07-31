@@ -1436,7 +1436,7 @@ public class BiblioItem {
             res = res.trim();
         }
 
-        res = res.replace("@BULLET", " • ");
+        //res = res.replace("@BULLET", " • ");
 
         res = res.replace("( ", "(");
         res = res.replace(" )", ")");
@@ -1741,17 +1741,19 @@ public class BiblioItem {
             }
             tei.append("<biblStruct");
             boolean withCoords = (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("biblStruct"));
-            tei.append(" ").append(TEIFormatter.getCoordsAttribute(coordinates, withCoords)).append(" ");
+            tei.append(" ");
+            if (withCoords)
+                tei.append(TEIFormatter.getCoordsAttribute(coordinates, withCoords)).append(" ");
             if (language != null) {
                 if (n == -1) {
                     /*if (pubnum != null) {
                         teiId = TextUtilities.HTMLEncode(pubnum);
                         tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + teiId + "\">\n");
                     } else*/
-                        tei.append(" xml:lang=\"" + language + ">\n");
+                        tei.append("xml:lang=\"" + language + ">\n");
                 } else {
                     teiId = "b" + n;
-                    tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + teiId + "\">\n");
+                    tei.append("xml:lang=\"" + language + "\" xml:id=\"" + teiId + "\">\n");
                 }
                 // TBD: the language should be normalized following xml lang attributes !
             } else {
@@ -1763,7 +1765,7 @@ public class BiblioItem {
                         tei.append(">\n");
                 } else {
                     teiId = "b" + n;
-                    tei.append(" xml:id=\"" + teiId + "\">\n");
+                    tei.append("xml:id=\"" + teiId + "\">\n");
                 }
             }
 
@@ -1837,7 +1839,10 @@ public class BiblioItem {
                 // if it's not something in English, we will write it anyway as note without type at the end
             }
 
-            tei.append(toTEIAuthorBlock(2));
+            if ( (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("persName")) )
+                tei.append(toTEIAuthorBlock(2, true));
+            else
+                tei.append(toTEIAuthorBlock(2, false));
 
             if ((bookTitle != null) || (journal != null)) {
                 for (int i = 0; i < indent + 1; i++) {
@@ -3264,7 +3269,7 @@ public class BiblioItem {
     /**
      * Create the TEI encoding for the author+affiliation block for the current biblio object.
      */
-    public String toTEIAuthorBlock(int nbTag) {
+    public String toTEIAuthorBlock(int nbTag, boolean withCoordinates) {
         StringBuffer tei = new StringBuffer();
         int nbAuthors = 0;
         int nbAffiliations = 0;
@@ -3328,7 +3333,7 @@ public class BiblioItem {
                         tei.append(">\n");
 
                     TextUtilities.appendN(tei, '\t', nbTag + 1);
-                    tei.append(author.toTEI()).append("\n");
+                    tei.append(author.toTEI(withCoordinates)).append("\n");
 //                    tei.append("<persName>\n");
 //                    if (author.getFirstName() != null) {
 //                        TextUtilities.appendN(tei, '\t', nbTag + 2);

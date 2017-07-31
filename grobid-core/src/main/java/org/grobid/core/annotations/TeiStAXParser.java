@@ -46,10 +46,7 @@ import org.slf4j.LoggerFactory;
  * @author Damien
  */
 public class TeiStAXParser {
-
-	/**
-	 * The class LOGGER.
-	 */
+	
 	private static final Logger LOGGER = LoggerFactory.getLogger(TeiStAXParser.class);
 
 	/**

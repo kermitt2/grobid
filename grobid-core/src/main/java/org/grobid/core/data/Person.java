@@ -174,7 +174,7 @@ public class Person {
         return layoutTokens;
     }
 
-    public String toTEI() {
+    public String toTEI(boolean withCoordinates) {
         if ( (firstName == null) && (middleName == null) &&
                 (lastName == null) ) {
             return null;
@@ -182,7 +182,7 @@ public class Person {
 
         Element persElement = XmlBuilderUtils.teiElement("persName");
 
-        if (getLayoutTokens() != null && !getLayoutTokens().isEmpty()) {
+        if (withCoordinates && (getLayoutTokens() != null) && (!getLayoutTokens().isEmpty())) {
             XmlBuilderUtils.addCoords(persElement, LayoutTokensUtil.getCoordsString(getLayoutTokens()));
         }
         if (title != null) {

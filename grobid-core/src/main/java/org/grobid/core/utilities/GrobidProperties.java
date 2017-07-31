@@ -11,13 +11,7 @@ import org.grobid.core.main.GrobidHomeFinder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Enumeration;
 import java.util.Properties;
 
@@ -663,7 +657,7 @@ public class GrobidProperties {
      * @param nbThreads umber of threads
      */
     public static void setNBThreads(final String nbThreads) {
-        setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PORT, nbThreads);
+        setPropertyValue(GrobidPropertyKeys.PROP_NB_THREADS, nbThreads);
     }
 
     /**
@@ -831,15 +825,18 @@ public class GrobidProperties {
      * @param pKey          key to replace
      * @param pValue        value to replace
      */
-    public static void updatePropertyFile(File pPropertyFile, String pKey, String pValue) throws IOException {
+    public static void updatePropertyFile(File pPropertyFile, String pKey, String pValue)  {
+        try {
         BufferedReader reader = new BufferedReader(new FileReader(pPropertyFile));
         String line, content = StringUtils.EMPTY, lineToReplace = StringUtils.EMPTY;
-        while ((line = reader.readLine()) != null) {
-            if (line.contains(pKey)) {
-                lineToReplace = line;
+
+            while ((line = reader.readLine()) != null) {
+                if (line.contains(pKey)) {
+                    lineToReplace = line;
+                }
+                content += line + "\r\n";
             }
-            content += line + "\r\n";
-        }
+
         reader.close();
 
         if (!StringUtils.EMPTY.equals(lineToReplace)) {
@@ -847,6 +844,9 @@ public class GrobidProperties {
             FileWriter writer = new FileWriter(pPropertyFile.getAbsoluteFile());
             writer.write(newContent);
             writer.close();
+        }
+        } catch (IOException e) {
+            throw new GrobidPropertyException("Error while manipulating the Grobid properties", e);
         }
     }
 
@@ -856,7 +856,7 @@ public class GrobidProperties {
      * @param pKey   key to replace
      * @param pValue value to replace
      */
-    public static void updatePropertyFile(String pKey, String pValue) throws IOException {
+    public static void updatePropertyFile(String pKey, String pValue) {
         updatePropertyFile(getGrobidPropertiesPath(), pKey, pValue);
     }
 

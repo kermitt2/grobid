@@ -11,12 +11,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
 package org.grobid.service;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.grobid.core.factory.AbstractEngineFactory;
 import org.grobid.core.utilities.GrobidProperties;
@@ -29,15 +28,13 @@ import org.grobid.service.util.GrobidServiceProperties;
 import org.grobid.service.util.ZipUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.xml.sax.SAXException;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
-
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * RESTful service for the GROBID system.
@@ -80,7 +77,6 @@ public class GrobidRestService implements GrobidPaths {
         } else {
             GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidHome(), "/config/grobid.properties").getAbsolutePath());
         }
-
         LOGGER.info("Initiating Servlet GrobidRestService");
         AbstractEngineFactory.fullInit();
         GrobidServiceProperties.getInstance(configuration);
@@ -149,14 +145,12 @@ public class GrobidRestService implements GrobidPaths {
         boolean consol = validateConsolidationParam(consolidate);
 
         String retVal = restProcessFiles.processStatelessHeaderDocument(inputStream, consol, false);
-
         Response response;
         if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
             response = Response.status(Response.Status.NO_CONTENT).build();
         } else {
             response = Response.status(Response.Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
         }
-
         return response;
     }
 
@@ -175,18 +169,15 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processHeaderDocument_postHTML(@FormDataParam(INPUT) InputStream inputStream,
-                                                   @FormDataParam("consolidate") String consolidate) throws IOException, SAXException {
+                                                   @FormDataParam("consolidate") String consolidate) {
         boolean consol = validateConsolidationParam(consolidate);
-
         String retVal = restProcessFiles.processStatelessHeaderDocument(inputStream, consol, true);
-
         Response response;
         if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
             response = Response.status(Response.Status.NO_CONTENT).build();
         } else {
             response = Response.status(Response.Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
         }
-
         return response;
     }
 
@@ -195,7 +186,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @PUT
     public Response processStatelessHeaderDocumentHTML(@FormDataParam(INPUT) InputStream inputStream,
-                                                       @FormDataParam("consolidate") String consolidate) throws IOException, SAXException {
+                                                       @FormDataParam("consolidate") String consolidate) {
         return processHeaderDocument_postHTML(inputStream, consolidate);
     }
 
@@ -207,8 +198,10 @@ public class GrobidRestService implements GrobidPaths {
                                                  @FormDataParam("consolidate") String consolidate,
                                                  @DefaultValue("-1") @FormDataParam("start") int startPage,
                                                  @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                                 @FormDataParam("generateIDs") String generateIDs) throws Exception {
-        return processFulltext(inputStream, consolidate, startPage, endPage, generateIDs);
+                                                 @FormDataParam("generateIDs") String generateIDs,
+                                                 @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates
+    ) throws Exception {
+        return processFulltext(inputStream, consolidate, startPage, endPage, generateIDs, coordinates);
     }
 
     @Path(PATH_FULL_TEXT)
@@ -219,20 +212,26 @@ public class GrobidRestService implements GrobidPaths {
                                             @FormDataParam("consolidate") String consolidate,
                                             @DefaultValue("-1") @FormDataParam("start") int startPage,
                                             @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                            @FormDataParam("generateIDs") String generateIDs) throws Exception {
-        return processFulltext(inputStream, consolidate, startPage, endPage, generateIDs);
+                                            @FormDataParam("generateIDs") String generateIDs,
+                                            @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates
+    ) throws Exception {
+        return processFulltext(inputStream, consolidate, startPage, endPage, generateIDs, coordinates);
     }
 
     private Response processFulltext(InputStream inputStream,
                                      String consolidate,
                                      int startPage,
                                      int endPage,
-                                     String generateIDs) throws Exception {
+                                     String generateIDs,
+                                     List<FormDataBodyPart> coordinates
+    ) throws Exception {
         boolean consol = validateConsolidationParam(consolidate);
         boolean generate = validateGenerateIdParam(generateIDs);
 
+        List<String> teiCoordinates = collectCoordinates(coordinates);
+
         String retVal = restProcessFiles.processFulltextDocument(inputStream,
-                consol, false, startPage, endPage, generate);
+                consol, false, startPage, endPage, generate, teiCoordinates);
 
         Response response;
         if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
@@ -247,6 +246,17 @@ public class GrobidRestService implements GrobidPaths {
 
     }
 
+    private List<String> collectCoordinates(List<FormDataBodyPart> coordinates) {
+        List<String> teiCoordinates = new ArrayList<>();
+        if (coordinates != null) {
+            for (FormDataBodyPart coordinate : coordinates) {
+                String v = coordinate.getValueAs(String.class);
+                teiCoordinates.add(v);
+            }
+        }
+        return teiCoordinates;
+    }
+
     private boolean validateGenerateIdParam(String generateIDs) {
         boolean generate = false;
         if ((generateIDs != null) && (generateIDs.equals("1"))) {
@@ -257,7 +267,6 @@ public class GrobidRestService implements GrobidPaths {
 
     private boolean validateConsolidationParam(String consolidate) {
         boolean consol = false;
-
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
         }
@@ -318,12 +327,15 @@ public class GrobidRestService implements GrobidPaths {
                                                      @FormDataParam("consolidate") String consolidate,
                                                      @DefaultValue("-1") @FormDataParam("start") int startPage,
                                                      @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                                     @FormDataParam("generateIDs") String generateIDs) throws Exception {
+                                                     @FormDataParam("generateIDs") String generateIDs,
+                                                     @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates
+    ) throws Exception {
         boolean consol = validateConsolidationParam(consolidate);
         boolean generate = validateGenerateIdParam(generateIDs);
+        List<String> teiCoordinates = collectCoordinates(coordinates);
 
-        String retVal = restProcessFiles.processFulltextDocument(inputStream,
-                consol, true, startPage, endPage, generate);
+        String retVal = restProcessFiles.processFulltextDocument(inputStream, consol, true,
+                startPage, endPage, generate, teiCoordinates);
 
         Response response;
         if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
@@ -333,7 +345,6 @@ public class GrobidRestService implements GrobidPaths {
                     .entity(retVal)
                     .type(MediaType.APPLICATION_XML).build();
         }
-
         return response;
     }
 
@@ -345,8 +356,10 @@ public class GrobidRestService implements GrobidPaths {
                                                          @FormDataParam("consolidate") String consolidate,
                                                          @DefaultValue("-1") @FormDataParam("start") int startPage,
                                                          @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                                         @FormDataParam("generateIDs") String generateIDs) throws Exception {
-        return processFulltextDocument_postHTML(inputStream,consolidate, startPage, endPage, generateIDs);
+                                                         @FormDataParam("generateIDs") String generateIDs,
+                                                         @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates
+    ) throws Exception {
+        return processFulltextDocument_postHTML(inputStream, consolidate, startPage, endPage, generateIDs, coordinates);
     }
 
     @Path(PATH_CITATION_PATENT_TEI)
@@ -551,7 +564,7 @@ public class GrobidRestService implements GrobidPaths {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
     @POST
-    public Response changePropertyValuePost(@FormParam(XML) String xml) throws ParserConfigurationException, SAXException, IOException {
+    public Response changePropertyValuePost(@FormParam(XML) String xml) {
         return restProcessAdmin.changePropertyValue(xml);
     }
 
@@ -562,7 +575,7 @@ public class GrobidRestService implements GrobidPaths {
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     @GET
-    public Response changePropertyValueGet(@QueryParam(XML) String xml) throws ParserConfigurationException, SAXException, IOException {
+    public Response changePropertyValueGet(@QueryParam(XML) String xml) {
         return restProcessAdmin.changePropertyValue(xml);
     }
 

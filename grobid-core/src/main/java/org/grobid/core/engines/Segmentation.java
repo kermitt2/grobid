@@ -679,7 +679,7 @@ public class Segmentation extends AbstractParser {
 				PDFFileName.replace(".pdf", ".training.segmentation.rawtxt");
 			FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), "UTF-8");
 
-            if ((fulltext != null) && (fulltext.length() > 0)) {
+            if (isNotBlank(fulltext)) {
                 String rese = label(fulltext);
                 StringBuffer bufferFulltext = trainingExtraction(rese, tokenizations, doc);
 

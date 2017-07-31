@@ -3,6 +3,8 @@ package org.grobid.trainer;
 import java.util.Set;
 import java.util.TreeMap;
 
+import org.grobid.core.exceptions.*;
+
 public final class Stats {
     private final TreeMap<String, LabelStat> labelStats;
 
@@ -20,6 +22,8 @@ public final class Stats {
 
     public void incrementFalsePositive(String label, int count) {
         LabelStat labelStat = this.getLabelStat(label);
+        if (labelStat == null)
+            throw new GrobidException("Unknown label: " + label);
         labelStat.incrementFalsePositive(count);
     }
 
@@ -29,6 +33,8 @@ public final class Stats {
 
     public void incrementFalseNegative(String label, int count) {
         LabelStat labelStat = this.getLabelStat(label);
+        if (labelStat == null)
+            throw new GrobidException("Unknown label: " + label);
         labelStat.incrementFalseNegative(count);
     }
 
@@ -38,6 +44,8 @@ public final class Stats {
 
     public void incrementObserved(String label, int count) {
         LabelStat labelStat = this.getLabelStat(label);
+        if (labelStat == null)
+            throw new GrobidException("Unknown label: " + label);
         labelStat.incrementObserved(count);
     }
 
@@ -47,6 +55,8 @@ public final class Stats {
 
     public void incrementExpected(String label, int count) {
         LabelStat labelStat = this.getLabelStat(label);
+        if (labelStat == null)
+            throw new GrobidException("Unknown label: " + label);
         labelStat.incrementExpected(count);
     }
 
@@ -61,5 +71,29 @@ public final class Stats {
         return labelStat;
     }
 
-    public int size() { return this.labelStats.size(); }
+    public int size() { 
+        return this.labelStats.size(); 
+    }
+
+    public double getPrecision(String label) {
+        LabelStat labelStat = this.getLabelStat(label);
+        if (labelStat == null)
+            throw new GrobidException("Unknown label: " + label);
+        return labelStat.getPrecision();
+    }
+
+    public double getRecall(String label) {
+        LabelStat labelStat = this.getLabelStat(label);
+        if (labelStat == null)
+            throw new GrobidException("Unknown label: " + label);
+        return labelStat.getRecall();
+    }
+
+    public double getF1Score(String label) {
+        LabelStat labelStat = this.getLabelStat(label);
+        if (labelStat == null)
+            throw new GrobidException("Unknown label: " + label);
+        return labelStat.getF1Score();
+    }
 }
+

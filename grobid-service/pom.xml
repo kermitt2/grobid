@@ -16,12 +16,6 @@
 
     <dependencies>
         <!-- Testing -->
-        <!--<dependency>-->
-            <!--<groupId>directory-naming</groupId>-->
-            <!--<artifactId>naming-java</artifactId>-->
-            <!--<version>0.8</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -52,7 +46,7 @@
             <version>1.0.2</version>
             <scope>test</scope>
         </dependency>
-        
+
         <dependency>
             <groupId>org.grobid</groupId>
             <artifactId>grobid-core</artifactId>

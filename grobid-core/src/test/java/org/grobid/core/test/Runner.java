@@ -2,6 +2,7 @@ package org.grobid.core.test;
 
 
 import org.grobid.core.factory.GrobidFactory;
+import org.grobid.core.lexicon.LexiconIntegrationTest;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
@@ -49,7 +50,7 @@ public class Runner {
 		
 		// test lexicon fast matcher
 		
-		result = JUnitCore.runClasses(TestFastMatcher.class);
+		result = JUnitCore.runClasses(LexiconIntegrationTest.class);
 		totalTestRuns++;
 		System.out.print("test Lexicon Fast Matcher: ");
 		

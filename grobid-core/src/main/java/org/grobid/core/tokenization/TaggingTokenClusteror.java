@@ -49,7 +49,6 @@ public class TaggingTokenClusteror {
         }
     }
 
-
     public TaggingTokenClusteror(GrobidModel grobidModel, String result, List<LayoutToken> tokenizations) {
         taggingTokenSynchronizer = new TaggingTokenSynchronizer(grobidModel, result, tokenizations);
     }
