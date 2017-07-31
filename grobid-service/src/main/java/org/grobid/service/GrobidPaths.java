@@ -21,7 +21,7 @@ package org.grobid.service;
  * @author Florian, Damien, Patrice
  *
  */
-public interface GrobidPathes {
+public interface GrobidPaths {
 	/**
 	 * path extension for grobid service.
 	 */
@@ -50,12 +50,7 @@ public interface GrobidPathes {
 	 * path extension for processing document headers HTML.
 	 */
 	String PATH_HEADER_HTML = "processHeaderDocumentHTML";
-
-	/**
-	 * path extension for processing bulck document headers.
-	 */
-	String PATH_BULCK_HEADER = "processBulckHeaderDocument";
-
+	
 	/**
 	 * path extension for processing full text of documents.
 	 */

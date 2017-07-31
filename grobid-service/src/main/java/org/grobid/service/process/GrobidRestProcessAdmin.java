@@ -29,11 +29,9 @@ import java.util.Properties;
 @Singleton
 public class GrobidRestProcessAdmin {
 
-    /**
-     * The class Logger.
-     */
-    private static final Logger LOGGER = LoggerFactory
-            .getLogger(GrobidRestProcessAdmin.class);
+
+	private static final Logger LOGGER = LoggerFactory
+			.getLogger(GrobidRestProcessAdmin.class);
     private GrobidServiceConfiguration configuration;
 
     @Inject
@@ -48,7 +46,7 @@ public class GrobidRestProcessAdmin {
      * @return returns a response object containing the admin infos in html
      * syntax.
      */
-    public static Response getAdminParams(String sha1) {
+    public Response getAdminParams(String sha1) {
         Response response;
         try {
             LOGGER.debug("called getDescription_html()...");
@@ -102,7 +100,7 @@ public class GrobidRestProcessAdmin {
      * @param sha1 string to hash
      * @return Response containing the value hashed.
      */
-    public static Response processSHA1(String sha1) {
+    public Response processSHA1(String sha1) {
         LOGGER.debug(">> processSHA1");
         Response response;
         String retVal;
@@ -124,7 +122,7 @@ public class GrobidRestProcessAdmin {
      * @param passwordPlain password
      * @return Response containing the properties.
      */
-    public static Response getAllPropertiesValues(String passwordPlain) {
+    public Response getAllPropertiesValues(String passwordPlain) {
         LOGGER.debug(">> getAllPropertiesValues");
         Response response;
         String retVal;

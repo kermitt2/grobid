@@ -19,9 +19,7 @@ package org.grobid.service.exceptions;
 import javax.ws.rs.core.Response;
 
 public class GrobidServicePropertyException extends GrobidServiceException {
-    /**
-     * The serial.
-     */
+
     private static final long serialVersionUID = -756080338090769910L;
 
     public GrobidServicePropertyException() {

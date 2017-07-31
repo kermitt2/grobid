@@ -5,6 +5,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.core.Response.Status;
 
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
 import org.grobid.core.utilities.GrobidProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,13 +16,16 @@ import org.slf4j.LoggerFactory;
  * @author Damien, Patrice
  *
  */
+@Singleton
 public class GrobidRestProcessGeneric {
-	
-	/**
-	 * The class Logger.
-	 */
+
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(GrobidRestProcessGeneric.class);
+
+	@Inject
+	public GrobidRestProcessGeneric() {
+
+	}
 
 	/**
 	 * Returns a string containing true, if the service is alive.
@@ -28,7 +33,7 @@ public class GrobidRestProcessGeneric {
 	 * @return returns a response object containing the string true if service
 	 *         is alive.
 	 */
-	public static Response isAlive() {
+	public Response isAlive() {
 		Response response = null;
 		try {
 			LOGGER.debug("called isAlive()...");
@@ -54,7 +59,7 @@ public class GrobidRestProcessGeneric {
 	 * 
 	 * @return returns a response object containing a html description
 	 */
-	public static Response getDescription_html(UriInfo uriInfo) {
+	public Response getDescription_html(UriInfo uriInfo) {
 		Response response = null;
 		try {
 			LOGGER.debug("called getDescription_html()...");
@@ -78,7 +83,7 @@ public class GrobidRestProcessGeneric {
 	 *
 	 * @return returns a response object containing version as string.
 	 */
-	public static Response getVersion() {
+	public Response getVersion() {
 		return Response.status(Status.OK).entity(GrobidProperties.getVersion()).build();
 	}
 }
