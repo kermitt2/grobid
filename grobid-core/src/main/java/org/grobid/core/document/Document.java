@@ -11,14 +11,14 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
 
 import org.apache.commons.io.IOUtils;
-import org.grobid.core.analyzers.GrobidDefaultAnalyzer;
 import org.grobid.core.analyzers.Analyzer;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.*;
 import org.grobid.core.engines.Engine;
-import org.grobid.core.engines.SegmentationLabel;
+import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.FigureCounters;
+import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
@@ -43,9 +43,10 @@ import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.Utilities;
-import org.grobid.core.engines.counters.TableRejectionCounters;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
+
+import org.grobid.core.engines.counters.TableRejectionCounters;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -124,6 +125,10 @@ public class Document {
 
     protected ReferenceMarkerMatcher referenceMarkerMatcher;
 
+    public void setImages(List<GraphicObject> images) {
+        this.images = images;
+    }
+
     // list of bitmaps and vector graphics of the document
     protected List<GraphicObject> images = null;
 
@@ -151,10 +156,15 @@ public class Document {
     protected List<Figure> figures;
     protected Predicate<GraphicObject> validGraphicObjectPredicate;
     protected int m;
+    
     protected List<Table> tables;
+    protected List<Equation> equations;
 
     // the analyzer/tokenizer used for processing this document
     Analyzer analyzer = GrobidAnalyzer.getInstance();
+
+    // map of sequence of LayoutTokens for the fulltext model labels
+    //Map<String, List<LayoutTokenization>> labeledTokenSequences = null;
 
     public Document(DocumentSource documentSource) {
         top = new DocumentNode("top", "0");
@@ -1252,9 +1262,9 @@ public class Document {
                 String localText = block.getText();
                 if (localText != null) {
                     localText = localText.trim();
-                    if (localText.startsWith("@BULLET")) {
+                    /*if (localText.startsWith("@BULLET")) {
                         localText = localText.replace("@BULLET", " • ");
-                    }
+                    }*/
                     if (localText.startsWith("@IMAGE")) {
                         localText = "";
                     }
@@ -1515,7 +1525,7 @@ public class Document {
         }));
     }
 
-    public SortedSet<DocumentPiece> getDocumentPart(SegmentationLabel segmentationLabel) {
+    public SortedSet<DocumentPiece> getDocumentPart(TaggingLabel segmentationLabel) {
         if (labeledBlocks == null) {
             LOGGER.debug("labeledBlocks is null");
             return null;
@@ -1526,7 +1536,7 @@ public class Document {
         return labeledBlocks.get(segmentationLabel.getLabel());
     }
 
-    public String getDocumentPartText(SegmentationLabel segmentationLabel) {
+    public String getDocumentPartText(TaggingLabel segmentationLabel) {
         SortedSet<DocumentPiece> pieces = getDocumentPart(segmentationLabel);
         if (pieces == null) {
             return null;
@@ -2115,6 +2125,14 @@ public class Document {
         return tables;
     }
 
+    public void setEquations(List<Equation> equations) {
+        this.equations = equations;
+    }
+
+    public List<Equation> getEquations() {
+        return equations;
+    }
+
     public void setResHeader(BiblioItem resHeader) {
         this.resHeader = resHeader;
     }
@@ -2141,5 +2159,33 @@ public class Document {
         }
         return result;
     }
+
+    /**
+     * Initialize the mapping between sequences of LayoutToken and 
+     * fulltext model labels. 
+     * @param labeledResult labeled sequence as produced by the CRF model
+     * @param tokenization List of LayoutToken for the body parts
+     */
+    /*public void generalFullTextResultMapping(String labeledResult, List<LayoutToken> tokenizations) {
+        if (labeledTokenSequences == null)
+            labeledTokenSequences = new TreeMap<String, List<LayoutTokenization>>();
+
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledResult, tokenizations);
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            List<LayoutToken> clusterTokens = cluster.concatTokens();
+            List<LayoutTokenization> theList = labeledTokenSequences.get(clusterLabel.toString());
+            if (theList == null)
+                theList = new ArrayList<LayoutTokenization>();
+            LayoutTokenization newTokenization = new LayoutTokenization(clusterTokens);
+            theList.add(newTokenization);
+            labeledTokenSequences.put(clusterLabel.getLabel(), theList);
+        }
+    }*/
 
 }

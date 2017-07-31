@@ -2,7 +2,9 @@
 
 You can simply refer to the github project:
 
-GROBID (2008-2016) <https://github.com/kermitt2/grobid>
+GROBID (2008-2017) <https://github.com/kermitt2/grobid>
+
+(please do not include a particular person name to emphasize the project and tool!)
 
 ## Presentations on Grobid
 
@@ -43,3 +45,5 @@ CiteSeerX page on [Scholarly Information Extraction](http://csxstatic.ist.psu.ed
 [CERMINE](https://github.com/CeON/CERMINE)
 
 [Metatagger](https://github.com/iesl/rexa1-metatagger)
+
+[BILBO](https://github.com/OpenEdition/bilbo)

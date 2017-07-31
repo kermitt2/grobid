@@ -1,0 +1,242 @@
+<doi_records>
+    <doi_record owner="10.1111" timestamp="2017-03-31 00:15:03">
+        <crossref>
+            <journal>
+                <journal_metadata language="en">
+                    <full_title>Computer Graphics Forum</full_title>
+                    <abbrev_title>Computer Graphics Forum</abbrev_title>
+                    <issn media_type="print">0167-7055</issn>
+                    <issn media_type="electronic">1467-8659</issn>
+                </journal_metadata>
+                <journal_issue>
+                    <publication_date media_type="print">
+                        <month>03</month>
+                        <year>2008</year>
+                    </publication_date>
+                    <journal_volume>
+                        <volume>27</volume>
+                    </journal_volume>
+                    <issue>1</issue>
+                </journal_issue>
+                <journal_article publication_type="full_text">
+                    <titles>
+                        <title>
+                            A Comparison of Methods for Generating Poisson Disk Distributions
+                        </title>
+                    </titles>
+                    <contributors>
+                        <person_name sequence="first" contributor_role="author">
+                            <given_name>Ares</given_name>
+                            <surname>Lagae</surname>
+                        </person_name>
+                        <person_name sequence="additional" contributor_role="author">
+                            <given_name>Philip</given_name>
+                            <surname>Dutré</surname>
+                        </person_name>
+                    </contributors>
+                    <publication_date media_type="print">
+                        <month>03</month>
+                        <year>2008</year>
+                    </publication_date>
+                    <pages>
+                        <first_page>114</first_page>
+                        <last_page>129</last_page>
+                    </pages>
+                    <publisher_item>
+                        <identifier id_type="doi">10.1111/j.1467-8659.2007.01100.x</identifier>
+                    </publisher_item>
+                    <program name="AccessIndicators">
+                        <license_ref applies_to="tdm" start_date="2015-09-01">http://doi.wiley.com/10.1002/tdm_license_1.1</license_ref>
+                    </program>
+                    <doi_data>
+                        <doi>10.1111/j.1467-8659.2007.01100.x</doi>
+                        <timestamp>20080424011832452</timestamp>
+                        <resource>
+                            http://doi.wiley.com/10.1111/j.1467-8659.2007.01100.x
+                        </resource>
+                        <collection property="text-mining">
+                            <item>
+                                <resource content_version="vor">
+                                    https://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1111%2Fj.1467-8659.2007.01100.x
+                                </resource>
+                            </item>
+                        </collection>
+                    </doi_data>
+                    <citation_list>
+                        <citation key="b1_293">
+                            <volume_title>
+                                An introduction to stochastic processes with special reference to methods and applications
+                            </volume_title>
+                            <author>Bartlett M.</author>
+                            <cYear>1955</cYear>
+                        </citation>
+                        <citation key="b2_294">
+                            <journal_title>
+                                Computer Graphics (Proceedings of ACM SIGGRAPH 86) 5
+                            </journal_title>
+                            <author>Cook R. L.</author>
+                            <first_page>51</first_page>
+                            <volume>1</volume>
+                            <cYear>1986</cYear>
+                        </citation>
+                        <citation key="b3_295">
+                            <doi>10.1145/359863.359869</doi>
+                        </citation>
+                        <citation key="b4_296">
+                            <doi>10.1145/882262.882265</doi>
+                        </citation>
+                        <citation key="b5_297">
+                            <doi>10.1145/1141911.1141915</doi>
+                        </citation>
+                        <citation key="b6_298">
+                            <journal_title>Proceedings of ACM SIGGRAPH 1998</journal_title>
+                            <author>Deussen O.</author>
+                            <first_page>275</first_page>
+                            <cYear>1998</cYear>
+                        </citation>
+                        <citation key="b7_299">
+                            <journal_title>
+                                Computer Graphics (Proceedings of ACM SIGGRAPH 85) 19
+                            </journal_title>
+                            <author>Dippe M. A. Z.</author>
+                            <first_page>69</first_page>
+                            <volume>3</volume>
+                            <cYear>1985</cYear>
+                        </citation>
+                        <citation key="b8_300">
+                            <volume_title>Tilings and Patterns</volume_title>
+                            <author>Grunbaum B.</author>
+                            <cYear>1986</cYear>
+                        </citation>
+                        <citation key="b9_301">
+                            <volume_title>Proceedings of Vision Modeling Visualization 2001</volume_title>
+                            <author>Hiller S.</author>
+                            <first_page>265</first_page>
+                            <cYear>2001</cYear>
+                        </citation>
+                        <citation key="b10_302">
+                            <journal_title>Journal of Graphics Tools 11</journal_title>
+                            <author>Jones T. R.</author>
+                            <first_page>27</first_page>
+                            <volume>2</volume>
+                            <cYear>2006</cYear>
+                        </citation>
+                        <citation key="b11_303">
+                            <doi>10.1145/1141911.1141916</doi>
+                        </citation>
+                        <citation key="b12_304">
+                            <doi>10.1111/1467-8659.00459</doi>
+                        </citation>
+                        <citation key="b13_305">
+                            <journal_title>ACM Transactions on Graphics 24</journal_title>
+                            <author>Lagae A.</author>
+                            <volume>4</volume>
+                            <cYear>2005</cYear>
+                        </citation>
+                        <citation key="b14_306">
+                            <volume_title>Template Poisson Disk Tiles</volume_title>
+                            <author>Lagae A.</author>
+                            <cYear>2005</cYear>
+                        </citation>
+                        <citation key="b15_307">
+                            <volume_title>ACM Transactions on Graphics</volume_title>
+                            <author>Lagae A.</author>
+                            <cYear>2006</cYear>
+                        </citation>
+                        <citation key="b16_308">
+                            <volume_title>
+                                Generating Well-Distributed Point Sets with a Self-Similar Hierarchical Tile
+                            </volume_title>
+                            <author>Lagae A.</author>
+                            <cYear>2006</cYear>
+                        </citation>
+                        <citation key="b17_309">
+                            <doi>10.1109/TIT.1982.1056489</doi>
+                        </citation>
+                        <citation key="b18_310">
+                            <volume_title>Graphics interface '92</volume_title>
+                            <author>McCool M.</author>
+                            <first_page>94</first_page>
+                            <cYear>1992</cYear>
+                        </citation>
+                        <citation key="b19_311">
+                            <journal_title>
+                                Computer Graphics (Proceedings of ACM SIGGRAPH 87) 21
+                            </journal_title>
+                            <author>Mitchell D. P.</author>
+                            <first_page>65</first_page>
+                            <volume>4</volume>
+                            <cYear>1987</cYear>
+                        </citation>
+                        <citation key="b20_312">
+                            <journal_title>
+                                Computer Graphics (Proceedings of ACM SIGGRAPH 91) 25
+                            </journal_title>
+                            <author>Mitchell D. P.</author>
+                            <first_page>157</first_page>
+                            <volume>4</volume>
+                            <cYear>1991</cYear>
+                        </citation>
+                        <citation key="b21_313">
+                            <doi>10.1145/1015706.1015750</doi>
+                        </citation>
+                        <citation key="b22_314">
+                            <journal_title>Bull. Inst. Math. Applications 10</journal_title>
+                            <author>Penrose R.</author>
+                            <first_page>266</first_page>
+                            <cYear>1974</cYear>
+                        </citation>
+                        <citation key="b23_315">
+                            <volume_title>Tiling Layered Depth Images</volume_title>
+                            <author>Shade J.</author>
+                            <cYear>2000</cYear>
+                        </citation>
+                        <citation key="b24_316">
+                            <volume_title>
+                                EGRW '02: Proceedings of the 13th Eurographics workshop on Rendering
+                            </volume_title>
+                            <author>Secord A.</author>
+                            <first_page>215</first_page>
+                            <cYear>2002</cYear>
+                        </citation>
+                        <citation key="b25_317">
+                            <volume_title>Mathematical Snapshots</volume_title>
+                            <author>Steinhaus H.</author>
+                            <cYear>1999</cYear>
+                        </citation>
+                        <citation key="atypb1_318">
+                            <volume_title>Digital halftoning</volume_title>
+                            <author>Ulichney R.</author>
+                            <cYear>1987</cYear>
+                        </citation>
+                        <citation key="b27_319">
+                            <volume_title>Bell Systems Technical Journal 40</volume_title>
+                            <author>Wang H.</author>
+                            <first_page>1</first_page>
+                            <cYear>1961</cYear>
+                        </citation>
+                        <citation key="b28_320">
+                            <journal_title>Scientific American 213</journal_title>
+                            <author>Wang H.</author>
+                            <first_page>98</first_page>
+                            <volume>5</volume>
+                            <cYear>1965</cYear>
+                        </citation>
+                        <citation key="b29_321">
+                            <volume_title>Vision Research 22</volume_title>
+                            <author>Yellot J. I.</author>
+                            <first_page>1205</first_page>
+                            <cYear>1982</cYear>
+                        </citation>
+                        <citation key="b30_322">
+                            <volume_title>Science 221</volume_title>
+                            <author>Yellot J. I.</author>
+                            <first_page>382</first_page>
+                            <cYear>1983</cYear>
+                        </citation>
+                    </citation_list>
+                </journal_article>
+            </journal>
+        </crossref>
+    </doi_record>
+</doi_records>

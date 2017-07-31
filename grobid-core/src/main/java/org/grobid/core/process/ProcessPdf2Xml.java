@@ -34,10 +34,7 @@ public class ProcessPdf2Xml {
                     cmd, ioExp.getMessage());
         } finally {
             if (process != null) {
-                IOUtils.closeQuietly(process.getInputStream());
-                IOUtils.closeQuietly(process.getOutputStream());
-
-                IOUtils.closeQuietly(process.getErrorStream());
+                IOUtils.closeQuietly(process.getInputStream(), process.getOutputStream(), process.getErrorStream());
 
                 process.destroy();
 

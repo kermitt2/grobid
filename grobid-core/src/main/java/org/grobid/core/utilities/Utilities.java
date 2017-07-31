@@ -215,7 +215,7 @@ public class Utilities {
 			if ((note.startsWith(",")) | (note.startsWith("."))) {
 				note = note.substring(1, note.length()).trim();
 			}
-			note = note.replace("@BULLET", " • ");
+			//note = note.replace("@BULLET", " • ");
 			item.setNote(note);
 		}
 
@@ -236,7 +236,7 @@ public class Utilities {
 				submission = submission.substring(1, submission.length())
 						.trim();
 			}
-			submission = submission.replace("@BULLET", " • ");
+			//submission = submission.replace("@BULLET", " • ");
 			item.setSubmission(submission);
 		}
 
@@ -257,7 +257,7 @@ public class Utilities {
 				dedication = dedication.substring(1, dedication.length())
 						.trim();
 			}
-			dedication = dedication.replace("@BULLET", " • ");
+			//dedication = dedication.replace("@BULLET", " • ");
 			item.setDedication(dedication);
 		}
 
@@ -267,7 +267,7 @@ public class Utilities {
 			if (title.endsWith("'")) {
 				title = title.substring(0, title.length() - 1).trim();
 			}
-			title = title.replace("@BULLET", " • ");
+			//title = title.replace("@BULLET", " • ");
 			item.setTitle(title);
 		}
 
@@ -278,7 +278,7 @@ public class Utilities {
 				english_title = english_title.substring(0,
 						english_title.length() - 1).trim();
 			}
-			english_title = english_title.replace("@BULLET", " • ");
+			//english_title = english_title.replace("@BULLET", " • ");
 			item.setEnglishTitle(english_title);
 		}
 
@@ -288,7 +288,7 @@ public class Utilities {
 			if (abstract_.startsWith(") ")) {
 				abstract_ = abstract_.substring(1, abstract_.length()).trim();
 			}
-			abstract_ = abstract_.replace("@BULLET", " • ");
+			//abstract_ = abstract_.replace("@BULLET", " • ");
 			item.setAbstract(abstract_);
 		}
 

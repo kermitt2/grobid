@@ -159,10 +159,13 @@ public class GrobidAnalyzer implements org.grobid.core.analyzers.Analyzer {
 	public List<LayoutToken> tokenizeWithLayoutToken(String text, Language lang) {
         List<LayoutToken> result = new ArrayList<>();
         List<String> tokens = tokenize(text, lang);
+        int pos = 0;
         for(String tok : tokens) {
         	LayoutToken layoutToken = new LayoutToken();
             layoutToken.setText(tok);
+            layoutToken.setOffset(pos);
             result.add(layoutToken);
+            pos += tok.length();
         }
         return result;
     }

@@ -156,7 +156,7 @@ public class GrobidRestProcessAdmin {
      * @return the changed value if processing was a success. HTTP error code
      * else.
      */
-    public Response changePropertyValue(String pXml) throws IOException, ParserConfigurationException, SAXException {
+    public Response changePropertyValue(String pXml) {
         LOGGER.debug(">> changePropertyValue");
         Response response;
         String result;

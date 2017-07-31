@@ -64,6 +64,10 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
 
@@ -413,8 +417,41 @@
                                 <argument>-Xmx3072m</argument>
                                 <argument>-classpath</argument>
                                 <classpath />
-                                <argument>org.grobid.trainer.evaluation.PubMedCentralEvaluation</argument>
+                                <argument>org.grobid.trainer.evaluation.EndToEndEvaluation</argument>
+                                <argument>nlm</argument>
                                 <argument>${pmc}</argument>
+                                <argument>${run}</argument>
+                                <argument>${fileRatio}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <!-- mvn compile exec:exec -PPubMedCentralEval -Dpmc=/Users/lopez/biblio/PMC_sample_1943 -Drun=1 -->
+            <!-- mvn compile exec:exec -PPubMedCentralEval -Dpmc=/Users/lopez/biblio/PMC_sample_1943 -Drun=1 -DfileRatio=0.1-->
+            <id>Pub2TeiEval</id>
+            <activation>
+                <property>
+                    <name>Pub2TeiEval</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <configuration>
+                            <executable>java</executable>
+                            <arguments>
+                                <argument>-Xms512m</argument>
+                                <argument>-Xmx3072m</argument>
+                                <argument>-classpath</argument>
+                                <classpath />
+                                <argument>org.grobid.trainer.evaluation.EndToEndEvaluation</argument>
+                                <argument>tei</argument>
+                                <argument>${p2t}</argument>
                                 <argument>${run}</argument>
                                 <argument>${fileRatio}</argument>
                             </arguments>
@@ -427,6 +464,7 @@
 
     <properties>
         <pmc>.</pmc>
+        <p2t>.</p2t>
         <run>0</run>
         <fileRatio>1.0</fileRatio>
         <maven-exe-plugin.version>1.2.1</maven-exe-plugin.version>

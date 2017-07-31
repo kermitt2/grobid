@@ -30,6 +30,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
 @Ignore
 public class EngineTest {
 
@@ -113,10 +116,13 @@ public class EngineTest {
 
     @Test
     public void testDateParser() throws Exception {
-
         String d = "12 August, 1985";
-        List<Date> processing = new DateParser().processing(d);
-        System.out.println(processing);
+        List<Date> processedDates = new DateParser().processing(d);
+
+        assertThat(processedDates.size(), is(1));
+        assertThat(processedDates.get(0).getDayString(), is("12"));
+        assertThat(processedDates.get(0).getMonthString(), is("August"));
+        assertThat(processedDates.get(0).getYearString(), is("1985"));
     }
 
     @Test
@@ -352,7 +358,7 @@ public class EngineTest {
 //        File pdf = new File("/Users/zholudev/Downloads/AS-454757820178434@1485434121902_content_1.pdf");
         File pdf = new File("/Users/zholudev/Downloads/AS-99907918630920@1400831312313_content_1.pdf");
 //        File pdf = new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis-core/src/test/resources/pdfs/invalid.pdf");
-        engine.processHeader(pdf.getAbsolutePath(), false, config, new BiblioItem());
+        engine.processHeader(pdf.getAbsolutePath(), config, new BiblioItem());
         Document doc = engine.getParsers().getFullTextParser().processing(DocumentSource.fromPdf(pdf, -1, -1, false, false), config);
         System.out.println(doc.getTei());
 
@@ -437,14 +443,14 @@ public class EngineTest {
     public void testHeaders() throws Exception {
         final Engine engine = GrobidFactory.getInstance().getEngine();
 //        GrobidAnalysisConfig config = GrobidAnalysisConfig.defaultInstance();
-        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().consolidateHeader(false).build();
 
 
 //        File f = new File("/Users/zholudev/Downloads/Publications sample/AS-292290007453702@1446698776063_content_1.pdf");
         File f = new File("/Users/zholudev/Downloads/Publications sample/AS-395712329207812@1471356579731_content_1.pdf");
 
         BiblioItem res = new BiblioItem();
-        System.out.println(engine.processHeader(f.getAbsolutePath(), false, config, res));
+        System.out.println(engine.processHeader(f.getAbsolutePath(), config, res));
 
 
         int cnt = 0;

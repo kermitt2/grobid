@@ -221,10 +221,12 @@ public class TextUtilitiesTest extends EngineTest {
         testWordShape("AbA", "XxX", "XxX");
         testWordShape("uü", "xx", "x");
         testWordShape("Üwe", "Xxx", "Xx");
+
+        testWordShape(" ", " ", "");
     }
 
     private void testWordShape(String orig, String expected, String expectedTrimmed) {
-        assertEquals(expected, TextUtilities.wordShape(orig));
-        assertEquals(expectedTrimmed, TextUtilities.wordShapeTrimmed(orig));
+        assertThat(TextUtilities.wordShape(orig), is(expected));
+        assertThat(TextUtilities.wordShapeTrimmed(orig), is(expectedTrimmed));
     }
 }

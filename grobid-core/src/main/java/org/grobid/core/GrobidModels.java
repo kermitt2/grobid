@@ -42,10 +42,7 @@ public enum GrobidModels implements GrobidModel {
     ENTITIES_NERSense("nersense"),
     //	ENTITIES_BIOTECH("entities/biotech"),
     ENTITIES_BIOTECH("bio"),
-    ASTRO("astro"),
-    LEXICAL_ENTRY("lexical-entry"),
-    DICTIONARY_BODY_SEGMENTATION("dictionary-body-segmentation"),
-    DICTIONARY_SEGMENTATION("dictionary-segmentation");
+    ASTRO("astro");
 
     /**
      * Absolute path to the model.

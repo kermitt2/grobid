@@ -21,11 +21,15 @@
 
 * [Use Grobid library in third party Java applications](Grobid-java-library.md)
 
+* [Troubleshooting and known issues](Troubleshooting.md)
+
 * [TEI encoding of results](TEI-encoding-of-results.md)
+
+* [Coordinates of structures in the original PDF](Coordinates-in-PDF.md)
 
 * [Training and evaluating the GROBID models](Training-the-models-of-Grobid.md)
 
-* [Evaluating against PubMed Central gold data](Evaluation-against-a-PubMedCentral-set.md)
+* [End to end evaluation](End-to-end-evaluation.md)
 
 <h3>Developer notes</h3>
 
