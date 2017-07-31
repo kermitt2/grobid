@@ -33,30 +33,18 @@ public class ChangePropertyParser {
 		doc.getDocumentElement().normalize();
 	}
 
-	/**
-	 * @return the password.
-	 */
 	public String getPassword() {
 		return getValue("password");
 	}
-	
-	/**
-	 * @return the key.
-	 */
+
 	public String getKey(){
 		return getValue("key");
 	}
-	
-	/**
-	 * @return the value.
-	 */
+
 	public String getValue(){
 		return getValue("value");
 	}
-	
-	/**
-	 * @return the type.
-	 */
+
 	public String getType(){
 		return getValue("type");
 	}

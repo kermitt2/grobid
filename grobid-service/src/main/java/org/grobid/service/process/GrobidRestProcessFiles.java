@@ -1,6 +1,5 @@
 package org.grobid.service.process;
 
-import net.sf.saxon.trans.XPathException;
 import org.apache.commons.io.IOUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.grobid.core.annotations.TeiStAXParser;
@@ -28,35 +27,33 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.StreamingOutput;
 import javax.xml.stream.XMLStreamException;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
  * @author Damien, Patrice
  */
+@Singleton
 public class GrobidRestProcessFiles {
 
-    /**
-     * The class Logger.
-     */
     private static final Logger LOGGER = LoggerFactory.getLogger(GrobidRestProcessFiles.class);
+
+    @Inject
+    public GrobidRestProcessFiles() {
+
+    }
 
     /**
      * Uploads the origin document which shall be extracted into TEI and
@@ -68,7 +65,7 @@ public class GrobidRestProcessFiles {
      * @return a response object which contains a TEI representation of the
      * header part
      */
-    public static Response processStatelessHeaderDocument(final InputStream inputStream,
+    public Response processStatelessHeaderDocument(final InputStream inputStream,
                                                           final boolean consolidate,
                                                           final boolean htmlFormat) throws IOException, SAXException {
         LOGGER.debug(methodLogIn());
@@ -143,7 +140,7 @@ public class GrobidRestProcessFiles {
 //     * @param inputStream zip containing the datas of origin document.
 //     * @return Response containing the TEI files representing the header part.
 //     */
-//    public static Response processStatelessBulkHeaderDocument(final InputStream inputStream) {
+//    public Response processStatelessBulkHeaderDocument(final InputStream inputStream) {
 //        LOGGER.debug(methodLogIn());
 //        Response response = null;
 //        LOGGER.debug(methodLogIn());
@@ -175,7 +172,7 @@ public class GrobidRestProcessFiles {
      * @return a response object mainly contain the TEI representation of the
      * full text
      */
-    public static Response processStatelessFulltextDocument(final InputStream inputStream,
+    public Response processStatelessFulltextDocument(final InputStream inputStream,
                                                             final boolean consolidate,
                                                             final boolean htmlFormat,
                                                             final int startPage,
@@ -251,7 +248,7 @@ public class GrobidRestProcessFiles {
      * @return a response object mainly contain the TEI representation of the
      * full text
      */
-    public static Response processStatelessFulltextAssetDocument(final InputStream inputStream,
+    public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
                                                                  final boolean consolidate,
                                                                  final int startPage,
                                                                  final int endPage,
@@ -361,7 +358,7 @@ public class GrobidRestProcessFiles {
      * @return StreamingOutput wrapping the response in streaming while parsing
      * the input.
      */
-    public static StreamingOutput processCitationPatentTEI(final InputStream pInputStream,
+    public StreamingOutput processCitationPatentTEI(final InputStream pInputStream,
                                                            final boolean consolidate) {
         LOGGER.debug(methodLogIn());
         return new StreamingOutput() {
@@ -383,7 +380,7 @@ public class GrobidRestProcessFiles {
      * @return a response object mainly containing the TEI representation of the
      * citation
      */
-    public static Response processCitationPatentPDF(final InputStream inputStream,
+    public Response processCitationPatentPDF(final InputStream inputStream,
                                                     final boolean consolidate) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
@@ -438,7 +435,7 @@ public class GrobidRestProcessFiles {
      * @return a response object mainly containing the TEI representation of the
      * citation
      */
-    public static Response processCitationPatentST36(final InputStream inputStream,
+    public Response processCitationPatentST36(final InputStream inputStream,
                                                      final boolean consolidate) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
@@ -495,7 +492,7 @@ public class GrobidRestProcessFiles {
      * @return a response object mainly contain the TEI representation of the
      * full text
      */
-    public static Response processStatelessReferencesDocument(final InputStream inputStream,
+    public Response processStatelessReferencesDocument(final InputStream inputStream,
                                                               final boolean consolidate) {
         LOGGER.debug(methodLogIn());
         Response response = null;
@@ -566,7 +563,7 @@ public class GrobidRestProcessFiles {
      * @param type        gives type of annotation
      * @return a response object containing the annotated PDF
      */
-    public static Response processPDFAnnotation(final InputStream inputStream,
+    public Response processPDFAnnotation(final InputStream inputStream,
                                                 final String fileName,
                                                 final GrobidRestUtils.Annotation type) throws Exception {
         LOGGER.debug(methodLogIn());
@@ -620,7 +617,7 @@ public class GrobidRestProcessFiles {
      * @param inputStream the data of origin PDF
      * @return a response object containing the JSON annotations
      */
-    public static Response processPDFReferenceAnnotation(final InputStream inputStream) throws Exception {
+    public Response processPDFReferenceAnnotation(final InputStream inputStream) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
@@ -685,7 +682,7 @@ public class GrobidRestProcessFiles {
      * @return a response object mainly containing the TEI representation of the
      * citation
      */
-    public static Response annotateCitationPatentPDF(final InputStream inputStream,
+    public Response annotateCitationPatentPDF(final InputStream inputStream,
                                                      final boolean consolidate) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
@@ -733,15 +730,15 @@ public class GrobidRestProcessFiles {
         return response;
     }
 
-    public static String methodLogIn() {
+    public String methodLogIn() {
         return ">> " + GrobidRestProcessFiles.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
     }
 
-    public static String methodLogOut() {
+    public String methodLogOut() {
         return "<< " + GrobidRestProcessFiles.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
     }
 
-    protected static PDDocument annotate(File originFile, boolean isparallelExec,
+    protected PDDocument annotate(File originFile, boolean isparallelExec,
                                        final GrobidRestUtils.Annotation type, Engine engine) throws Exception {
         // starts conversion process
         PDDocument outputDocument = null;
@@ -778,7 +775,7 @@ public class GrobidRestProcessFiles {
         return outputDocument;
     }
 
-    protected static PDDocument dispatchProcessing(GrobidRestUtils.Annotation type, PDDocument document,
+    protected PDDocument dispatchProcessing(GrobidRestUtils.Annotation type, PDDocument document,
                                                    DocumentSource documentSource, Document teiDoc
                                                 ) throws Exception {
         PDDocument out = null;

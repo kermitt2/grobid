@@ -38,7 +38,7 @@ public class GrobidServiceExceptionMapper implements ExceptionMapper<Throwable> 
     @Inject
     public GrobidServiceExceptionMapper() {
     }
-
+    
     protected Status getStatus(Throwable exception) {
         Response.Status status = Response.Status.INTERNAL_SERVER_ERROR;
         if (exception instanceof GrobidServiceException) {

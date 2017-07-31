@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
+import javax.inject.Inject;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import com.google.inject.Singleton;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.PatentItem;
@@ -26,22 +28,24 @@ import org.slf4j.LoggerFactory;
  * @author Damien, Patrice
  * 
  */
+@Singleton
 public class GrobidRestProcessString {
 
-	/**
-	 * The class Logger.
-	 */
 	private static final Logger LOGGER = LoggerFactory.getLogger(GrobidRestProcessString.class);
+
+	@Inject
+	public GrobidRestProcessString() {
+
+	}
 
 	/**
 	 * Parse a raw date and return the corresponding normalized date.
 	 * 
-	 * @param the
-	 *            raw date string
+	 * @param date raw date string
 	 * @return a response object containing the structured xml representation of
 	 *         the date
 	 */
-	public static Response processDate(String date) {
+	public Response processDate(String date) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
@@ -93,12 +97,11 @@ public class GrobidRestProcessString {
 	 * Parse a raw sequence of names from a header section and return the
 	 * corresponding normalized authors.
 	 * 
-	 * @param the
-	 *            string of the raw sequence of header authors
+	 * @param names string of the raw sequence of header authors
 	 * @return a response object containing the structured xml representation of
 	 *         the authors
 	 */
-	public static Response processNamesHeader(String names) {
+	public Response processNamesHeader(String names) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
@@ -151,12 +154,11 @@ public class GrobidRestProcessString {
 	 * Parse a raw sequence of names from a header section and return the
 	 * corresponding normalized authors.
 	 * 
-	 * @param the
-	 *            string of the raw sequence of header authors.
+	 * @param names string of the raw sequence of header authors.
 	 * @return a response object containing the structured xml representation of
 	 *         the authors
 	 */
-	public static Response processNamesCitation(String names) {
+	public Response processNamesCitation(String names) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
@@ -213,7 +215,7 @@ public class GrobidRestProcessString {
 	 * @return a response object containing the structured xml representation of
 	 *         the affiliation
 	 */
-	public static Response processAffiliations(String affiliation) {
+	public Response processAffiliations(String affiliation) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
@@ -273,7 +275,7 @@ public class GrobidRestProcessString {
 	 * @return a response object containing the structured xml representation of
 	 *         the affiliation
 	 */
-	public static Response processCitation(String citation, boolean consolidate) {
+	public Response processCitation(String citation, boolean consolidate) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 
@@ -322,7 +324,7 @@ public class GrobidRestProcessString {
 	 * @return a response object containing the structured xml representation of
 	 *         the affiliation
 	 */
-	public static Response processCitationPatentTXT(String text, boolean consolidate) {
+	public Response processCitationPatentTXT(String text, boolean consolidate) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 
@@ -364,17 +366,11 @@ public class GrobidRestProcessString {
 		return response;
 	}
 
-	/**
-	 * @return
-	 */
-	public static String methodLogIn() {
+	public String methodLogIn() {
 		return ">> " + GrobidRestProcessString.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
 	}
-
-	/**
-	 * @return
-	 */
-	public static String methodLogOut() {
+	
+	public String methodLogOut() {
 		return "<< " + GrobidRestProcessString.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
 	}
 

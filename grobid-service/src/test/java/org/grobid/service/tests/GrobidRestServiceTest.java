@@ -20,7 +20,7 @@ import org.apache.commons.io.FileUtils;
 import org.glassfish.jersey.client.JerseyClientBuilder;
 import org.glassfish.jersey.media.multipart.FormDataMultiPart;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
-import org.grobid.service.GrobidPathes;
+import org.grobid.service.GrobidPaths;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.main.GrobidServiceApplication;
 import org.grobid.service.module.TestGrobidServiceModule;
@@ -42,9 +42,9 @@ import javax.ws.rs.core.Response;
 import java.io.File;
 import java.io.IOException;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.*;
+import static org.mockito.Matchers.notNull;
 
 /**
  * Tests the RESTful service of the grobid-service project. This class can also
@@ -101,8 +101,8 @@ public class GrobidRestServiceTest {
      */
     @Test
     public void testFullyRestLessHeaderDocument() throws Exception {
-        String tei = getStrResponse(sample4(), GrobidPathes.PATH_HEADER);
-        LOGGER.debug(tei);
+        String resp = getStrResponse(sample4(), GrobidPaths.PATH_HEADER);
+        assertThat(resp, is(notNull()));
     }
 
 
@@ -111,8 +111,8 @@ public class GrobidRestServiceTest {
      */
     @Test
     public void testFullyRestLessFulltextDocument() throws Exception {
-        String tei = getStrResponse(sample4(), GrobidPathes.PATH_FULL_TEXT);
-        LOGGER.debug(tei);
+        String resp = getStrResponse(sample4(), GrobidPaths.PATH_FULL_TEXT);
+        assertThat(resp, is(notNull()));
     }
 
     /**
@@ -120,8 +120,8 @@ public class GrobidRestServiceTest {
      */
     @Test
     public void testRestDate() throws Exception {
-        String resp = getStrResponse("date", "November 14 1999", GrobidPathes.PATH_DATE);
-        LOGGER.debug(resp);
+        String resp = getStrResponse("date", "November 14 1999", GrobidPaths.PATH_DATE);
+        assertThat(resp, is(notNull()));
     }
 
     /**
@@ -131,8 +131,8 @@ public class GrobidRestServiceTest {
     public void testRestNamesHeader() throws Exception {
         String names = "Ahmed Abu-Rayyan *,a, Qutaiba Abu-Salem b, Norbert Kuhn * ,b, Cäcilia Maichle-Mößmer b";
 
-        String resp = getStrResponse("names", names, GrobidPathes.PATH_HEADER_NAMES);
-        LOGGER.debug(resp);
+        String resp = getStrResponse("names", names, GrobidPaths.PATH_HEADER_NAMES);
+        assertThat(resp, is(notNull()));
     }
 
     /**
@@ -142,8 +142,8 @@ public class GrobidRestServiceTest {
     @Test
     public void testRestNamesCitations() throws Exception {
         String names = "Marc Shapiro and Susan Horwitz";
-        String resp = getStrResponse("names", names, GrobidPathes.PATH_CITE_NAMES);
-        LOGGER.debug(resp);
+        String resp = getStrResponse("names", names, GrobidPaths.PATH_CITE_NAMES);
+        assertThat(resp, is(notNull()));
     }
 
 
@@ -156,8 +156,8 @@ public class GrobidRestServiceTest {
         String affiliations = "Atomic Physics Division, Department of Atomic Physics and Luminescence, "
                 + "Faculty of Applied Physics and Mathematics, Gdansk University of "
                 + "Technology, Narutowicza 11/12, 80-233 Gdansk, Poland";
-        String resp = getStrResponse("affiliations", affiliations, GrobidPathes.PATH_AFFILIATION);
-        LOGGER.debug(resp);
+        String resp = getStrResponse("affiliations", affiliations, GrobidPaths.PATH_AFFILIATION);
+        assertThat(resp, is(notNull()));
     }
 
     /**
@@ -168,7 +168,7 @@ public class GrobidRestServiceTest {
     //@Test
     public void testRestPatentCitation() throws Exception {
         Client client = getClient();
-
+        
         File xmlDirectory = new File(getResourceDir().getAbsoluteFile() + "/patent");
         File[] files = xmlDirectory.listFiles();
         assertNotNull(files);
@@ -185,7 +185,7 @@ public class GrobidRestServiceTest {
                     form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
 
                     Response response = client.target(
-                            baseUrl() + GrobidPathes.PATH_CITATION_PATENT_ST36)
+                            baseUrl() + GrobidPaths.PATH_CITATION_PATENT_ST36)
                             .request()
                             .accept(MediaType.APPLICATION_XML + ";charset=utf-8")
                             .post(Entity.entity(form, MediaType.MULTIPART_FORM_DATA_TYPE));
@@ -212,7 +212,7 @@ public class GrobidRestServiceTest {
     //TODO: fix returning a correct version
     public void testGetVersion_shouldReturnCurrentGrobidVersion() throws Exception {
         String expectedVersion = "0.4.5-dummy";
-        Response resp = getClient().target(baseUrl() + GrobidPathes.PATH_GET_VERSION)
+        Response resp = getClient().target(baseUrl() + GrobidPaths.PATH_GET_VERSION)
                 .request()
                 .get();
 
@@ -235,7 +235,7 @@ public class GrobidRestServiceTest {
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 
         String cont = response.readEntity(String.class);
-        LOGGER.debug(cont);
+        
         return cont;
     }
 

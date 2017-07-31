@@ -29,22 +29,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DefaultValue;
-import javax.ws.rs.FormParam;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.StreamingOutput;
-import javax.ws.rs.core.UriInfo;
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
+import javax.ws.rs.*;
+import javax.ws.rs.core.*;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
@@ -59,12 +47,9 @@ import java.io.InputStream;
  */
 
 @Singleton
-@Path(GrobidPathes.PATH_GROBID)
-public class GrobidRestService implements GrobidPathes {
+@Path(GrobidPaths.PATH_GROBID)
+public class GrobidRestService implements GrobidPaths {
 
-    /**
-     * The class Logger.
-     */
     private static final Logger LOGGER = LoggerFactory.getLogger(GrobidRestService.class);
 
     private static final String NAMES = "names";
@@ -75,11 +60,15 @@ public class GrobidRestService implements GrobidPathes {
     private static final String SHA1 = "sha1";
     private static final String XML = "xml";
     private static final String INPUT = "input";
-    private final GrobidRestProcessAdmin grobidRestProcessAdmin;
+
+    private final GrobidRestProcessAdmin restProcessAdmin;
+    private GrobidRestProcessFiles restProcessFiles;
+    private GrobidRestProcessGeneric restProcessGeneric;
+    private GrobidRestProcessString restProcessString;
 
     @Inject
     public GrobidRestService(GrobidServiceConfiguration configuration, GrobidRestProcessAdmin grobidRestProcessAdmin) {
-        this.grobidRestProcessAdmin = grobidRestProcessAdmin;
+        this.restProcessAdmin = grobidRestProcessAdmin;
         GrobidProperties.set_GROBID_HOME_PATH(new File(configuration.getGrobid().getGrobidHome()).getAbsolutePath());
         if (configuration.getGrobid().getGrobidProperties() != null) {
             GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidProperties()).getAbsolutePath());
@@ -96,21 +85,21 @@ public class GrobidRestService implements GrobidPathes {
     /**
      * @see org.grobid.service.process.GrobidRestProcessGeneric#isAlive()
      */
-    @Path(GrobidPathes.PATH_IS_ALIVE)
+    @Path(GrobidPaths.PATH_IS_ALIVE)
     @Produces(MediaType.TEXT_PLAIN)
     @GET
     public Response isAlive() {
-        return GrobidRestProcessGeneric.isAlive();
+        return restProcessGeneric.isAlive();
     }
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessGeneric#getVersion()
      */
-    @Path(GrobidPathes.PATH_GET_VERSION)
+    @Path(GrobidPaths.PATH_GET_VERSION)
     @Produces(MediaType.TEXT_PLAIN)
     @GET
     public Response getVersion() {
-        return GrobidRestProcessGeneric.getVersion();
+        return restProcessGeneric.getVersion();
     }
 
     /**
@@ -121,7 +110,7 @@ public class GrobidRestService implements GrobidPathes {
     @GET
     @Path("grobid")
     public Response getDescription_html(@Context UriInfo uriInfo) {
-        return GrobidRestProcessGeneric.getDescription_html(uriInfo);
+        return restProcessGeneric.getDescription_html(uriInfo);
     }
 
     /**
@@ -132,7 +121,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_HTML)
     @POST
     public Response getAdmin_htmlPost(@FormParam(SHA1) String sha1) {
-        return GrobidRestProcessAdmin.getAdminParams(sha1);
+        return restProcessAdmin.getAdminParams(sha1);
     }
 
     /**
@@ -143,7 +132,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_HTML)
     @GET
     public Response getAdmin_htmlGet(@QueryParam(SHA1) String sha1) {
-        return GrobidRestProcessAdmin.getAdminParams(sha1);
+        return restProcessAdmin.getAdminParams(sha1);
     }
 
     @Path(PATH_HEADER)
@@ -157,7 +146,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
         }
-        return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, false);
+        return restProcessFiles.processStatelessHeaderDocument(inputStream, consol, false);
     }
 
     @Path(PATH_HEADER)
@@ -171,7 +160,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
         }
-        return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, false);
+        return restProcessFiles.processStatelessHeaderDocument(inputStream, consol, false);
     }
 
     @Path(PATH_HEADER_HTML)
@@ -184,7 +173,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
         }
-        return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, true);
+        return restProcessFiles.processStatelessHeaderDocument(inputStream, consol, true);
     }
 
     @Path(PATH_HEADER_HTML)
@@ -197,7 +186,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
         }
-        return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, true);
+        return restProcessFiles.processStatelessHeaderDocument(inputStream, consol, true);
     }
 
     @Path(PATH_FULL_TEXT)
@@ -237,7 +226,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((generateIDs != null) && (generateIDs.equals("1"))) {
             generate = true;
         }
-        return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream,
+        return restProcessFiles.processStatelessFulltextDocument(inputStream,
                 consol, false, startPage, endPage, generate);
     }
 
@@ -282,7 +271,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((generateIDs != null) && (generateIDs.equals("1"))) {
             generate = true;
         }
-        return GrobidRestProcessFiles.processStatelessFulltextAssetDocument(inputStream,
+        return restProcessFiles.processStatelessFulltextAssetDocument(inputStream,
                 consol, startPage, endPage, generate);
     }
 
@@ -304,7 +293,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((generateIDs != null) && (generateIDs.equals("1"))) {
             generate = true;
         }
-        return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream,
+        return restProcessFiles.processStatelessFulltextDocument(inputStream,
                 consol, true, startPage, endPage, generate);
     }
 
@@ -325,7 +314,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((generateIDs != null) && (generateIDs.equals("1"))) {
             generate = true;
         }
-        return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream,
+        return restProcessFiles.processStatelessFulltextDocument(inputStream,
                 consol, true, startPage, endPage, generate);
     }
 
@@ -339,7 +328,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
         }
-        return GrobidRestProcessFiles.processCitationPatentTEI(pInputStream, consol);
+        return restProcessFiles.processCitationPatentTEI(pInputStream, consol);
     }
 
     @Path(PATH_CITATION_PATENT_ST36)
@@ -355,7 +344,7 @@ public class GrobidRestService implements GrobidPathes {
 
         pInputStream = ZipUtils.decompressStream(pInputStream);
 
-        return GrobidRestProcessFiles.processCitationPatentST36(pInputStream, consol);
+        return restProcessFiles.processCitationPatentST36(pInputStream, consol);
     }
 
     @Path(PATH_CITATION_PATENT_PDF)
@@ -368,7 +357,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
         }
-        return GrobidRestProcessFiles.processCitationPatentPDF(pInputStream, consol);
+        return restProcessFiles.processCitationPatentPDF(pInputStream, consol);
     }
 
     @Path(PATH_CITATION_PATENT_TXT)
@@ -381,7 +370,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
         }
-        return GrobidRestProcessString.processCitationPatentTXT(text, consol);
+        return restProcessString.processCitationPatentTXT(text, consol);
     }
 
     /**
@@ -392,7 +381,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response processDate_post(@FormParam(DATE) String date) {
-        return GrobidRestProcessString.processDate(date);
+        return restProcessString.processDate(date);
     }
 
     /**
@@ -403,7 +392,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @PUT
     public Response processDate(@FormParam(DATE) String date) {
-        return GrobidRestProcessString.processDate(date);
+        return restProcessString.processDate(date);
     }
 
     /**
@@ -414,7 +403,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response processNamesHeader_post(@FormParam(NAMES) String names) {
-        return GrobidRestProcessString.processNamesHeader(names);
+        return restProcessString.processNamesHeader(names);
     }
 
     /**
@@ -425,7 +414,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @PUT
     public Response processNamesHeader(@FormParam(NAMES) String names) {
-        return GrobidRestProcessString.processNamesHeader(names);
+        return restProcessString.processNamesHeader(names);
     }
 
     /**
@@ -436,7 +425,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response processNamesCitation_post(@FormParam(NAMES) String names) {
-        return GrobidRestProcessString.processNamesCitation(names);
+        return restProcessString.processNamesCitation(names);
     }
 
     /**
@@ -447,7 +436,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @PUT
     public Response processNamesCitation(@FormParam(NAMES) String names) {
-        return GrobidRestProcessString.processNamesCitation(names);
+        return restProcessString.processNamesCitation(names);
     }
 
     /**
@@ -458,7 +447,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response processAffiliations_post(@FormParam(AFFILIATIONS) String affiliations) {
-        return GrobidRestProcessString.processAffiliations(affiliations);
+        return restProcessString.processAffiliations(affiliations);
     }
 
     /**
@@ -469,7 +458,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @PUT
     public Response processAffiliations(@FormParam(AFFILIATIONS) String affiliation) {
-        return GrobidRestProcessString.processAffiliations(affiliation);
+        return restProcessString.processAffiliations(affiliation);
     }
 
     @Path(PATH_CITATION)
@@ -482,7 +471,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
         }
-        return GrobidRestProcessString.processCitation(citation, consol);
+        return restProcessString.processCitation(citation, consol);
     }
 
     @Path(PATH_CITATION)
@@ -495,7 +484,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
         }
-        return GrobidRestProcessString.processCitation(citation, consol);
+        return restProcessString.processCitation(citation, consol);
     }
 
     /**
@@ -506,7 +495,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response processSHA1Post(@FormParam(SHA1) String sha1) {
-        return GrobidRestProcessAdmin.processSHA1(sha1);
+        return restProcessAdmin.processSHA1(sha1);
     }
 
     /**
@@ -517,7 +506,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @GET
     public Response processSHA1Get(@QueryParam(SHA1) String sha1) {
-        return GrobidRestProcessAdmin.processSHA1(sha1);
+        return restProcessAdmin.processSHA1(sha1);
     }
 
     /**
@@ -528,7 +517,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response getAllPropertiesValuesPost(@FormParam(SHA1) String sha1) {
-        return GrobidRestProcessAdmin.getAllPropertiesValues(sha1);
+        return restProcessAdmin.getAllPropertiesValues(sha1);
     }
 
     /**
@@ -539,7 +528,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @GET
     public Response getAllPropertiesValuesGet(@QueryParam(SHA1) String sha1) {
-        return GrobidRestProcessAdmin.getAllPropertiesValues(sha1);
+        return restProcessAdmin.getAllPropertiesValues(sha1);
     }
 
     /**
@@ -550,7 +539,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response changePropertyValuePost(@FormParam(XML) String xml) throws ParserConfigurationException, SAXException, IOException {
-        return grobidRestProcessAdmin.changePropertyValue(xml);
+        return restProcessAdmin.changePropertyValue(xml);
     }
 
     /**
@@ -561,7 +550,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces(MediaType.TEXT_PLAIN)
     @GET
     public Response changePropertyValueGet(@QueryParam(XML) String xml) throws ParserConfigurationException, SAXException, IOException {
-        return grobidRestProcessAdmin.changePropertyValue(xml);
+        return restProcessAdmin.changePropertyValue(xml);
     }
 
     @Path(PATH_REFERENCES)
@@ -574,7 +563,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
         }
-        return GrobidRestProcessFiles.processStatelessReferencesDocument(inputStream, consol);
+        return restProcessFiles.processStatelessReferencesDocument(inputStream, consol);
     }
 
     @Path(PATH_REFERENCES)
@@ -587,7 +576,7 @@ public class GrobidRestService implements GrobidPathes {
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
         }
-        return GrobidRestProcessFiles.processStatelessReferencesDocument(inputStream, consol);
+        return restProcessFiles.processStatelessReferencesDocument(inputStream, consol);
     }
 
     @Path(PATH_PDF_ANNOTATION)
@@ -597,7 +586,7 @@ public class GrobidRestService implements GrobidPathes {
     public Response processAnnotatePDF(@FormDataParam(INPUT) InputStream inputStream,
                                        @FormDataParam("name") String fileName,
                                        @FormDataParam("type") int type) throws Exception {
-        return GrobidRestProcessFiles.processPDFAnnotation(inputStream, fileName, GrobidRestUtils.getAnnotationFor(type));
+        return restProcessFiles.processPDFAnnotation(inputStream, fileName, GrobidRestUtils.getAnnotationFor(type));
     }
 
     @Path(PATH_REFERENCES_PDF_ANNOTATION)
@@ -605,7 +594,7 @@ public class GrobidRestService implements GrobidPathes {
     @Produces("application/json")
     @POST
     public Response processPDFReferenceAnnotation(@FormDataParam(INPUT) InputStream inputStream) throws Exception {
-        return GrobidRestProcessFiles.processPDFReferenceAnnotation(inputStream);
+        return restProcessFiles.processPDFReferenceAnnotation(inputStream);
     }
 
     /**
@@ -620,6 +609,18 @@ public class GrobidRestService implements GrobidPathes {
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
         }
-        return GrobidRestProcessFiles.annotateCitationPatentPDF(inputStream, consol);
+        return restProcessFiles.annotateCitationPatentPDF(inputStream, consol);
+    }
+
+    public void setRestProcessFiles(GrobidRestProcessFiles restProcessFiles) {
+        this.restProcessFiles = restProcessFiles;
+    }
+
+    public void setRestProcessGeneric(GrobidRestProcessGeneric restProcessGeneric) {
+        this.restProcessGeneric = restProcessGeneric;
+    }
+
+    public void setRestProcessString(GrobidRestProcessString restProcessString) {
+        this.restProcessString = restProcessString;
     }
 }

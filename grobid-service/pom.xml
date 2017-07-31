@@ -52,22 +52,13 @@
             <version>1.0.2</version>
             <scope>test</scope>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>directory-naming</groupId>-->
-            <!--<artifactId>naming-java</artifactId>-->
-            <!--<version>0.8</version>-->
-        <!--</dependency>-->
+        
         <dependency>
             <groupId>org.grobid</groupId>
             <artifactId>grobid-core</artifactId>
             <version>0.4.2-SNAPSHOT</version>
             <scope>compile</scope>
             <exclusions>
-                <!--<exclusion>-->
-                    <!--<groupId>directory-naming</groupId>-->
-                    <!--<artifactId>naming-java</artifactId>-->
-                <!--</exclusion>-->
                 <exclusion>
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-jdk14</artifactId>
