@@ -35,6 +35,22 @@ public final class Language {
         this.conf = confidence;
     }
 
+    public boolean isChinese() {
+        return "zh".equals(lang) || "zh-cn".equals(lang) || "zh-tw".equals(lang);
+    }
+
+    public boolean isJapaneses() {
+        return "ja".equals(lang);
+    }
+
+    public boolean isKorean() {
+        return "kr".equals(lang);
+    }
+
+    public boolean isArabic() {
+        return "ar".equals(lang);
+    }
+
     public String getLang() {
         return lang;
     }
