@@ -138,7 +138,7 @@ public class EndToEndEvaluation {
 	                }
 	            });
 
-	            if (refFiles2 == null) {
+	            if (refFiles2 == null || refFiles2.length == 0) {
 	            	System.out.println("warning: no PDF found under " + dir.getPath());
 				    continue;
 				}
@@ -311,7 +311,7 @@ public class EndToEndEvaluation {
                 }
             });
 
-            if (refFiles2 == null) {
+			if (refFiles2 == null || refFiles2.length == 0) {
             	System.out.println("warning: no evaluation (gold) XML data file found under " + dir.getPath());
 			    continue;
 			}
