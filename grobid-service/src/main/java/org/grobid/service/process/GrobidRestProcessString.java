@@ -266,7 +266,7 @@ public class GrobidRestProcessString {
 	 * Parse a raw sequence of affiliations and return the corresponding
 	 * normalized affiliations with address.
 	 * 
-	 * @param text 
+	 * @param citation
 	 *			string of the raw sequence of affiliation+address
 	 * @param consolidate
 	 *            consolidation parameter for the parsed citation

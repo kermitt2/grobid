@@ -57,9 +57,9 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
         environment.jersey().setUrlPattern(RESOURCES + "/*");
 
         //Error handling
-        environment.jersey().register(new GrobidExceptionMapper());
-        environment.jersey().register(new GrobidServiceExceptionMapper());
-        environment.jersey().register(new WebApplicationExceptionMapper());
+//        environment.jersey().register(new GrobidExceptionMapper());
+//        environment.jersey().register(new GrobidServiceExceptionMapper());
+//        environment.jersey().register(new WebApplicationExceptionMapper());
     }
 
     // ========== static ==========
