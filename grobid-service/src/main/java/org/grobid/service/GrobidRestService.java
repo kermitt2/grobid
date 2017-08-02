@@ -144,7 +144,7 @@ public class GrobidRestService implements GrobidPaths {
     ) {
         boolean consol = validateConsolidationParam(consolidate);
 
-        String retVal = restProcessFiles.processStatelessHeaderDocument(inputStream, consol, false);
+        String retVal = restProcessFiles.processStatelessHeaderDocument(inputStream, consol);
         Response response;
         if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
             response = Response.status(Response.Status.NO_CONTENT).build();
@@ -162,32 +162,6 @@ public class GrobidRestService implements GrobidPaths {
                                                    @FormDataParam("consolidate") String consolidate
     ) {
         return processHeaderDocument_post(inputStream, consolidate);
-    }
-
-    @Path(PATH_HEADER_HTML)
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Produces(MediaType.APPLICATION_XML)
-    @POST
-    public Response processHeaderDocument_postHTML(@FormDataParam(INPUT) InputStream inputStream,
-                                                   @FormDataParam("consolidate") String consolidate) {
-        boolean consol = validateConsolidationParam(consolidate);
-        String retVal = restProcessFiles.processStatelessHeaderDocument(inputStream, consol, true);
-        Response response;
-        if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
-            response = Response.status(Response.Status.NO_CONTENT).build();
-        } else {
-            response = Response.status(Response.Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
-        }
-        return response;
-    }
-
-    @Path(PATH_HEADER_HTML)
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Produces(MediaType.APPLICATION_XML)
-    @PUT
-    public Response processStatelessHeaderDocumentHTML(@FormDataParam(INPUT) InputStream inputStream,
-                                                       @FormDataParam("consolidate") String consolidate) {
-        return processHeaderDocument_postHTML(inputStream, consolidate);
     }
 
     @Path(PATH_FULL_TEXT)
@@ -231,7 +205,7 @@ public class GrobidRestService implements GrobidPaths {
         List<String> teiCoordinates = collectCoordinates(coordinates);
 
         String retVal = restProcessFiles.processFulltextDocument(inputStream,
-                consol, false, startPage, endPage, generate, teiCoordinates);
+                consol, startPage, endPage, generate, teiCoordinates);
 
         Response response;
         if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
@@ -316,50 +290,6 @@ public class GrobidRestService implements GrobidPaths {
         }
         return restProcessFiles.processStatelessFulltextAssetDocument(inputStream,
                 consol, startPage, endPage, generate);
-    }
-
-
-    @Path(PATH_FULL_TEXT_HTML)
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Produces(MediaType.APPLICATION_XML)
-    @POST
-    public Response processFulltextDocument_postHTML(@FormDataParam(INPUT) InputStream inputStream,
-                                                     @FormDataParam("consolidate") String consolidate,
-                                                     @DefaultValue("-1") @FormDataParam("start") int startPage,
-                                                     @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                                     @FormDataParam("generateIDs") String generateIDs,
-                                                     @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates
-    ) throws Exception {
-        boolean consol = validateConsolidationParam(consolidate);
-        boolean generate = validateGenerateIdParam(generateIDs);
-        List<String> teiCoordinates = collectCoordinates(coordinates);
-
-        String retVal = restProcessFiles.processFulltextDocument(inputStream, consol, true,
-                startPage, endPage, generate, teiCoordinates);
-
-        Response response;
-        if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
-            response = Response.status(Response.Status.NO_CONTENT).build();
-        } else {
-            response = Response.status(Response.Status.OK)
-                    .entity(retVal)
-                    .type(MediaType.APPLICATION_XML).build();
-        }
-        return response;
-    }
-
-    @Path(PATH_FULL_TEXT_HTML)
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Produces(MediaType.APPLICATION_XML)
-    @PUT
-    public Response processStatelessFulltextDocumentHTML(@FormDataParam(INPUT) InputStream inputStream,
-                                                         @FormDataParam("consolidate") String consolidate,
-                                                         @DefaultValue("-1") @FormDataParam("start") int startPage,
-                                                         @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                                         @FormDataParam("generateIDs") String generateIDs,
-                                                         @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates
-    ) throws Exception {
-        return processFulltextDocument_postHTML(inputStream, consolidate, startPage, endPage, generateIDs, coordinates);
     }
 
     @Path(PATH_CITATION_PATENT_TEI)
