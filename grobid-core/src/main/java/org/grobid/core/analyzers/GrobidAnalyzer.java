@@ -75,25 +75,25 @@ public class GrobidAnalyzer implements org.grobid.core.analyzers.Analyzer {
 				// default Indo-European languages
 				result = GrobidDefaultAnalyzer.getInstance().tokenize(text);
 			}
-			else if (lang.getLang().equals("ja")) {
+			else if (lang.isJapaneses()) {
 				// Japanese analyser
 				if (jaAnalyzer == null)
 					jaAnalyzer = ReTokenizerFactory.create("ja_g");
 				result = jaAnalyzer.tokensAsList(text);
 			}
-			else if (lang.getLang().equals("zh") || lang.getLang().equals("zh-cn")) {
+			else if (lang.isChinese()) {
 				// Chinese analyser
 				if (zhAnalyzer == null)
 					zhAnalyzer = ReTokenizerFactory.create("zh_g");
 				result = zhAnalyzer.tokensAsList(text);
 			}
-			else if (lang.getLang().equals("kr")) {
+			else if (lang.isKorean()) {
 				// Korean analyser
 				if (krAnalyzer == null)
 					krAnalyzer = ReTokenizerFactory.create("kr_g");
 				result = krAnalyzer.tokensAsList(text);
 			}
-			else if (lang.getLang().equals("ar")) {
+			else if (lang.isArabic()) {
 				// Arabic analyser
 				result = GrobidDefaultAnalyzer.getInstance().tokenize(text);
 				int p = 0;
@@ -133,16 +133,16 @@ public class GrobidAnalyzer implements org.grobid.core.analyzers.Analyzer {
 			// default Indo-European languages
 			result = GrobidDefaultAnalyzer.getInstance().retokenize(textTokenized);
 		}
-		else if (lang.getLang().equals("ja")) {
+		else if (lang.isJapaneses()) {
 			// Japanese analyser
 		}
-		else if (lang.getLang().equals("zh")) {
+		else if (lang.isChinese()) {
 			// Chinese analyser
 		}
-		else if (lang.getLang().equals("kr")) {
+		else if (lang.isKorean()) {
 			// Korean analyser
 		}
-		else if (lang.getLang().equals("ar")) {
+		else if (lang.isArabic()) {
 			// Arabic analyser
 		}
 		else {
