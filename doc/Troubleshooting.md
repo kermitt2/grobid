@@ -16,7 +16,7 @@ export LC_ALL=C
 
 See [here](https://github.com/kermitt2/grobid/issues/142#issuecomment-253497513) the open issue. 
 
-### Mising libxml2 library
+### Missing libxml2 library
 
 **libxml2**: GROBID is currenly shipped with all the needed libraries (Mac and Linux 32/64 bit).
 
