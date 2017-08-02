@@ -1522,7 +1522,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 
 		String inputType = args[0];
 		if ( (inputType == null) || (inputType.length() == 0) || (!inputType.equals("nlm") && !inputType.equals("tei")) ) {
-			System.err.println("Input type is not correctly set, should be [tei|gold]");
+			System.err.println("Input type is not correctly set, should be [tei|nlm]");
 		}
 
 		boolean runGrobidVal = true;
