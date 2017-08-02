@@ -8,7 +8,7 @@
 
 		<bibl><author>E. Cancellieri, et al.</author>, <title level="j">Phys. Rev. B</title> <biblScope type="vol">82</biblScope>, <biblScope type="pp">224512</biblScope> (<date>2010</date>).</bibl>
 
-		<bibl><author>E. Cancellieri, et al.</author>, <idno>arXiv:1101.1783</idno>.</bibl>
+		<bibl><author>E. Cancellieri, et al.</author>, <idno type="arxiv">arXiv:1101.1783</idno>.</bibl>
 		
 </listBibl>
 </tei>

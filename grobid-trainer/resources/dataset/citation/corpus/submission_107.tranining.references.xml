@@ -6,7 +6,7 @@
 
 		<bibl><author>K.V. Kavokin et al.</author>, <title level="j">Phys. Rev. Lett.</title>, <biblScope type="vol">92</biblScope> (<date>2004</date>), pp. <biblScope type="pp">017401</biblScope></bibl>
 
-		<bibl><author>I.G. Savenko, E.B. Magnusson and I.A. Shelykh</author>, <idno>arXiv:1101.3711v1</idno>[cond-mat.mes-hall] (<date>2010</date>)</bibl>
+		<bibl><author>I.G. Savenko, E.B. Magnusson and I.A. Shelykh</author>, <idno type="arxiv">arXiv:1101.3711v1[cond-mat.mes-hall]</idno> (<date>2010</date>)</bibl>
 		
 </listBibl>
 </tei>
