@@ -61,13 +61,11 @@ public class GrobidRestProcessFiles {
      *
      * @param inputStream the data of origin document
      * @param consolidate consolidation parameter for the header extraction
-     * @param htmlFormat  if the result has to be formatted to be displayed as html
      *
      * @return a response object which contains a TEI representation of the header part
      */
     public String processStatelessHeaderDocument(final InputStream inputStream,
-                                                          final boolean consolidate,
-                                                          final boolean htmlFormat) {
+                                                          final boolean consolidate) {
         LOGGER.debug(methodLogIn());
         String retVal = null;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
@@ -118,7 +116,6 @@ public class GrobidRestProcessFiles {
      * @param inputStream the data of origin document
      * @param consolidate the consolidation option allows GROBID to exploit Crossref
      *                    web services for improving header information
-     * @param htmlFormat  if the result has to be formatted to be displayed as html.
      * @param startPage   give the starting page to consider in case of segmentation of the
      *                    PDF, -1 for the first page (default)
      * @param endPage     give the end page to consider in case of segmentation of the
@@ -130,13 +127,11 @@ public class GrobidRestProcessFiles {
      */
     public String processFulltextDocument(final InputStream inputStream,
                                             final boolean consolidate,
-                                            final boolean htmlFormat,
                                             final int startPage,
                                             final int endPage,
                                             final boolean generateIDs,
-                                                            final List<String> teiCoordinates) throws Exception {
+                                            final List<String> teiCoordinates) throws Exception {
         LOGGER.debug(methodLogIn());
-        Response response = null;
         String retVal;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
