@@ -21,6 +21,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.rockymadden.stringmetric</groupId>
             <artifactId>stringmetric-core_2.10</artifactId>
             <version>0.27.3</version>
