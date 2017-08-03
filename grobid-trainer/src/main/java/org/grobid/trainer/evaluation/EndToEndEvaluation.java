@@ -1518,17 +1518,20 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
     public static void main(String[] args) {
 		if ( (args.length >4) || (args.length == 0) ) {
 			System.err.println("usage: command [path to the (gold) evaluation XML dataset] Run[0|1] fileRatio[0.0-1.0]");
+			return;
 		}
 
 		String inputType = args[0];
 		if ( (inputType == null) || (inputType.length() == 0) || (!inputType.equals("nlm") && !inputType.equals("tei")) ) {
 			System.err.println("Input type is not correctly set, should be [tei|nlm]");
+			return;
 		}
 
 		boolean runGrobidVal = true;
 		String xmlInputPath = args[1];
 		if ( (xmlInputPath == null) || (xmlInputPath.length() == 0) ) {
 			System.err.println("Path to evaluation (gold) XML data is not correctly set");
+			return;
 		}
 		
 		String runGrobid = args[2];
@@ -1540,6 +1543,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 		}
 		else {
 			System.err.println("Invalid value for last argument (run): [0|1]");
+			return;
 		}
 		
 		// optional file ratio for applying the evaluation
@@ -1552,6 +1556,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 				}
 				catch(Exception e) {
 					System.err.println("Invalid argument fileRatio, must be a double, e.g. 0.1");
+					return;
 				}
 			}
 		}
