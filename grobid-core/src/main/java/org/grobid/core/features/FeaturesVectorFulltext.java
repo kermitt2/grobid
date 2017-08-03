@@ -23,30 +23,28 @@ public class FeaturesVectorFulltext {
     public String digit;  // one of ALLDIGIT, CONTAINDIGIT, NODIGIT
     public boolean singleChar = false;
 
-    public String punctType = null; 
+    public String punctType = null;
     // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT (default)
 
-    public int relativeDocumentPosition = -1; 
-    public int relativePagePositionChar = -1; 
-    public int relativePagePosition = -1; 
+    public int relativeDocumentPosition = -1;
+    public int relativePagePositionChar = -1;
+    public int relativePagePosition = -1;
 
 	// graphic in closed proximity of the current block
     public boolean bitmapAround = false;
     public boolean vectorAround = false;
-	
-	// if a graphic is in close proximity of the current block, characteristics of this graphic 
-    public int closestGraphicHeight = -1; 
-    public int closestGraphicWidth = -1; 
-    public int closestGraphicSurface = -1; 
-	
+
+	// if a graphic is in close proximity of the current block, characteristics of this graphic
+    public int closestGraphicHeight = -1;
+    public int closestGraphicWidth = -1;
+    public int closestGraphicSurface = -1;
+
     public int spacingWithPreviousBlock = 0; // discretized 
     public int characterDensity = 0; // discretized
 
     public String printVector() {
-        if (string == null) return null;
-
-        // All the characters which are treated as space in C++: http://en.cppreference.com/w/cpp/string/byte/isspace
-        final String wapitiSanitizedString = string.replaceAll("[\f\n\r\t ]", "");
+        final String wapitiSanitizedString = FeaturesUtils.sanitizeTokenForWapiti(string);
+        if (wapitiSanitizedString == null) return null;
 
         if (wapitiSanitizedString.length() == 0) return null;
         StringBuilder res = new StringBuilder();
@@ -76,7 +74,7 @@ public class FeaturesVectorFulltext {
 
         // line information (1)
         res.append(" " + lineStatus);
-		
+
 		// line position/identation (1)
 		res.append(" " + alignmentStatus);
 
@@ -133,7 +131,7 @@ public class FeaturesVectorFulltext {
             res.append(" 1");
         else
             res.append(" 0");*/
-		
+
         // space with previous block, discretised (1)
         //res.append(" " + spacingWithPreviousBlock);
         //res.append(" " + 0);

@@ -1,32 +1,15 @@
 package org.grobid.core.features;
 
-import com.google.common.collect.Lists;
 import org.junit.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
 public class FeaturesVectorFulltextTest {
 
     @Test
-    public void testSanitizationInWapitiSerializationTokens() {
-        ArrayList<String> tokens = Lists.newArrayList(
-            "½ºº´\r",
-            "½ºº´\n",
-            "½ºº´\t",
-            "½ºº´\f",
-            "½ºº´ ",
-            "½ºº´\f\n",
-            "½ºº´\r\t");
-        for (String token : tokens) {
-            testSanitizationInWapitiSerializationToken(token);
-        }
-    }
-
-    private void testSanitizationInWapitiSerializationToken(String token) {
+    public void testSanitizationInWapitiSerializationToken() {
         FeaturesVectorFulltext fulltext = new FeaturesVectorFulltext();
-        fulltext.string = token;
+        fulltext.string = "½ºº´\r";
         fulltext.blockStatus = "BLOCKIN";
         fulltext.lineStatus = "LINESTART";
         fulltext.alignmentStatus = "ALIGNEDLEFT";

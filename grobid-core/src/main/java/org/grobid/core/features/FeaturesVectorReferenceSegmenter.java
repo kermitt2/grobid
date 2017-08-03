@@ -1,7 +1,5 @@
 package org.grobid.core.features;
 
-import java.util.List;
-import java.util.regex.Matcher;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.TextUtilities;
 
@@ -47,27 +45,29 @@ public class FeaturesVectorReferenceSegmenter {
 
     // true if the token is part of a predefinied name (single or multi-token)
     public String printVector() {
-        if (string == null) return null;
-        if (string.length() == 0) return null;
+        final String wapitiSanitizedString = FeaturesUtils.sanitizeTokenForWapiti(string);
+        if (wapitiSanitizedString == null) return null;
+
+        if (wapitiSanitizedString.length() == 0) return null;
         StringBuilder res = new StringBuilder();
 
         // token string (1)
-        res.append(string);
+        res.append(wapitiSanitizedString);
 
         // lowercase string (1)
-        res.append(" ").append(string.toLowerCase());
+        res.append(" ").append(wapitiSanitizedString.toLowerCase());
 
         // prefix (4)
-        res.append(" " + TextUtilities.prefix(string, 1));
-        res.append(" " + TextUtilities.prefix(string, 2));
-        res.append(" " + TextUtilities.prefix(string, 3));
-        res.append(" " + TextUtilities.prefix(string, 4));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 1));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 2));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 3));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 4));
 
         // suffix (4)
-        res.append(" " + TextUtilities.suffix(string, 1));
-        res.append(" " + TextUtilities.suffix(string, 2));
-        res.append(" " + TextUtilities.suffix(string, 3));
-        res.append(" " + TextUtilities.suffix(string, 4));
+        res.append(" " + TextUtilities.suffix(wapitiSanitizedString, 1));
+        res.append(" " + TextUtilities.suffix(wapitiSanitizedString, 2));
+        res.append(" " + TextUtilities.suffix(wapitiSanitizedString, 3));
+        res.append(" " + TextUtilities.suffix(wapitiSanitizedString, 4));
 
         // line information (1)
         res.append(" ").append(lineStatus);

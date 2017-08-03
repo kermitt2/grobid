@@ -54,27 +54,30 @@ public class FeaturesVectorSegmentation {
     public int characterDensity = 0; // discretized 
 
     public String printVector() {
-        if (string == null) return null;
-        if (string.length() == 0) return null;
-        StringBuffer res = new StringBuffer();
+        final String wapitiSanitizedString = FeaturesUtils.sanitizeTokenForWapiti(string);
+        final String wapitiSanitizedSecondString = FeaturesUtils.sanitizeTokenForWapiti(secondString);
+        if (wapitiSanitizedString == null) return null;
+
+        if (wapitiSanitizedString.length() == 0) return null;
+        StringBuilder res = new StringBuilder();
 
         // token string (1)
-        res.append(string);
+        res.append(wapitiSanitizedString);
 		
 		// second token string
-		if (secondString != null)
-			res.append(" " + secondString);
+		if (wapitiSanitizedSecondString != null)
+			res.append(" " + wapitiSanitizedSecondString);
 		else
-			res.append(" " + string);
+			res.append(" " + wapitiSanitizedString);
 		
         // lowercase string
-        res.append(" " + string.toLowerCase());
+        res.append(" " + wapitiSanitizedString.toLowerCase());
 
         // prefix (4)
-        res.append(" " + TextUtilities.prefix(string, 1));
-        res.append(" " + TextUtilities.prefix(string, 2));
-        res.append(" " + TextUtilities.prefix(string, 3));
-        res.append(" " + TextUtilities.prefix(string, 4));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 1));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 2));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 3));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 4));
 
         // block information (1)
 		if (blockStatus != null)
