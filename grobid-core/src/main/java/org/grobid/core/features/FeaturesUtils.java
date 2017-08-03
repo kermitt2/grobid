@@ -14,4 +14,11 @@ public class FeaturesUtils {
             return null;
         return token.replaceAll("[\f\n\r\t ]", "");
     }
+
+    public static boolean isEmptyAfterSanitization(String token) {
+        if (token == null) {
+            return true;
+        }
+        return token.replaceAll("[\f\n\r\t ]", "").isEmpty();
+    }
 }
