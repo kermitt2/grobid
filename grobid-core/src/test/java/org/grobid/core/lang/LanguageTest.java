@@ -1,6 +1,9 @@
 package org.grobid.core.lang;
 
+import org.grobid.core.exceptions.GrobidException;
 import org.junit.Test;
+
+import static org.junit.Assert.assertNotNull;
 
 public class LanguageTest {
 
@@ -61,9 +64,31 @@ public class LanguageTest {
             "zh-cn",
             "zh-tw"
         };
+
         // Should not throw an exception
         for (String lang : langList) {
-            new Language(lang, 1d);
+            assertNotNull(new Language(lang, 1d));
         }
     }
+
+    @Test(expected = GrobidException.class)
+    public void testLanguagesWithInvalidLang_shouldThrowException() {
+        new Language("baomiao", 1d);
+    }
+
+    @Test(expected = GrobidException.class)
+    public void testLanguagesWithInvalidLang_2chars_shouldThrowException() {
+        new Language("bao", 1d);
+    }
+
+    @Test(expected = GrobidException.class)
+    public void testLanguagesWithInvalidLang_3chars_shouldThrowException() {
+        new Language("aa", 1d);
+    }
+
+    @Test(expected = GrobidException.class)
+    public void testLanguagesWithNullLang_shouldThrowException() {
+        new Language(null, 1d);
+    }
+
 }
