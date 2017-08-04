@@ -56,7 +56,7 @@
         <dependency>
             <groupId>org.wipo.analysers</groupId>
             <artifactId>wipo-analysers</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
         </dependency>
         <dependency>
             <groupId>com.cybozu.labs</groupId>
@@ -110,19 +110,8 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
+            <version>${slf4j.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.25</version>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
-
 
         <!-- Tests -->
         <dependency>
@@ -161,7 +150,18 @@
             <version>1.7.0</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+            <scope>test</scope>
+        </dependency>
 
         <!-- Utilities -->
         <dependency>
@@ -221,6 +221,11 @@
 			<artifactId>joda-time</artifactId>
 			<version>2.9.9</version>
 		</dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-common</artifactId>
+            <version>4.5.1</version>
+        </dependency>
 
     </dependencies>
 
@@ -266,54 +271,28 @@
     </profiles>
 
     <build>
-        <!-- Not standard -->
-        <!-- finalName>${project.groupId}.${project.artifactId}_${project.version}</finalName -->
-
-        <!--<resources> -->
-        <!--<resource> -->
-        <!--<directory>src/main/native</directory> -->
-        <!--</resource> -->
-        <!--</resources> -->
-
-        <!--pluginManagement -->
         <plugins>
-            <!--plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> <configuration> <archive> <manifest> <mainClass>org.grobid.core.engines.Engine</mainClass> </manifest>
-                </archive> </configuration> </plugin -->
-            <plugin>
-                <groupId>com.jolira</groupId>
-                <artifactId>onejar-maven-plugin</artifactId>
-                <version>1.4.4</version>
-                <executions>
-                    <execution>
-                        <configuration>
-                            <mainClass>org.grobid.core.main.batch.GrobidMain</mainClass>
-                            <!-- Optional -->
-                            <onejarVersion>0.97</onejarVersion>
-                            <!-- Optional, use only if you need to include native libraries (dll's) -->
-                            <!--binlibs> <fileSet> <directory>${project.build.directory}/dllextract</directory> <includes> <include>test.dll</include> </includes> </fileSet> </binlibs -->
-                            <!-- Optional, default is false -->
-                            <attachToBuild>true</attachToBuild>
-                            <!-- Optional, default is "onejar" -->
-                            <classifier>onejar</classifier>
-                        </configuration>
-                        <goals>
-                            <goal>one-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
-                    <descriptors>
-                        <descriptor>${assemblies.name}</descriptor>
-                    </descriptors>
-                    <appendAssemblyId>false</appendAssemblyId>
-                    <finalName>${project.groupId}.${project.artifactId}_${project.version}</finalName>
-                    <outputDirectory>target/distribution</outputDirectory>
-                    <workDirectory>target/assembly/work</workDirectory>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.grobid.core.main.batch.GrobidMain</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                        <phase>package</phase> <!-- bind to the packaging phase -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
@@ -346,10 +325,34 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
             </plugin>
+
+            <plugin>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <relocations>
+                                <relocation>
+                                    <pattern>org.apache.lucene</pattern>
+                                    <shadedPattern>shadedgrobid.org.apache.lucene</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.tartarus.snowball</pattern>
+                                    <shadedPattern>shadedgrobid.org.tartarus.snowball</shadedPattern>
+                                </relocation>
+                            </relocations>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
-        <!--/pluginManagement -->
     </build>
-
-    <!-- pluginRepositories> <pluginRepository> <id>onejar-maven-plugin.googlecode.com</id> <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url> </pluginRepository> </pluginRepositories -->
-
 </project>
