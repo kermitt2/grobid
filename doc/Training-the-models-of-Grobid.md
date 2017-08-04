@@ -72,25 +72,25 @@ Go in grobid-trainer/target and run the class TrainerRunner:
 
 Train (genarate the new model):
 ```bash
-> java -Xmx1024m -jar grobid-trainer-`<current version>`.one-jar.jar 0 `<name of the model>` -gH /path/to/grobid-home
+> java -Xmx1024m -jar grobid-trainer-`<current version>`-jar-with-dependencies.jar 0 `<name of the model>` -gH /path/to/grobid-home
 ```
 The training files considered are located under `grobid-trainer/resources/dataset/*MODEL*/corpus`
 
 Evaluate:
 ```bash
-> java -Xmx1024m -jar grobid-trainer-`<current version>`.one-jar.jar 1 `<name of the model>` -gH /path/to/grobid-home
+> java -Xmx1024m -jar grobid-trainer-`<current version>`-jar-with-dependencies.jar 1 `<name of the model>` -gH /path/to/grobid-home
 ```
 
 The considered evaluation files are located under `grobid-trainer/resources/dataset/*MODEL*/evaluation`
 
 Automatically split data, train and evaluate:
 ```bash
-> java -Xmx1024m -jar grobid-trainer-`<current version>`.one-jar.jar 2 `<name of the model>` -gH /path/to/grobid-home -s `<segmentation ratio as a number between 0 and 1, e.g. 0.8 for 80%>`
+> java -Xmx1024m -jar grobid-trainer-`<current version>`-jar-with-dependencies.jar 2 `<name of the model>` -gH /path/to/grobid-home -s `<segmentation ratio as a number between 0 and 1, e.g. 0.8 for 80%>`
 ```
 
 For instance, training the date model with a ratio of 75% for training and 25% for evaluation:
 ```bash
-> java -Xmx1024m -jar grobid-trainer-`<current version>`.one-jar.jar 2 date -gH /path/to/grobid-home -s 0.75
+> java -Xmx1024m -jar grobid-trainer-`<current version>`-jar-with-dependencies.jar 2 date -gH /path/to/grobid-home -s 0.75
 ```
 
 A ratio of 1.0 means that all the data available under `grobid-trainer/resources/dataset/*MODEL*/corpus/` will be used for training the model, and the evaluation will be empty. *Automatic split data, train and evaluate* is for the moment only available for the following models: header, citation, date, name-citation, name-header and affiliation-address.
@@ -100,7 +100,7 @@ Several runs with different files to evaluate can be made to have a more reliabl
 
 ## Generation of training data
 	
-To generate some training datas from some input pdf, the batch grobid-core-`<current version>`.one-jar.jar can be used: [Grobid batch](Grobid-batch.md) (createTrainingHeader, createTrainingFulltext, createTrainingPatentcitations, createTrainingSegmentation, createTrainingReferenceSegmentation).
+To generate some training datas from some input pdf, the batch grobid-core-`<current version>`-jar-with-dependencies.jar can be used: [Grobid batch](Grobid-batch.md) (createTrainingHeader, createTrainingFulltext, createTrainingPatentcitations, createTrainingSegmentation, createTrainingReferenceSegmentation).
 
 In the case of `createTrainingHeader`, for each pdf in input directory GROBID generates 1 header file (`*.training.header`)  and a collection (one per model used) of TEI files (`*.training.[model_name].tei.xml`). Each model has separate training data, and thus uses separate files. So we have one file for header (`*.training.header.tei.xml`), one for dates (`*.training.date.tei.xml`), one for names, etc...
 
