@@ -10,7 +10,7 @@ Go under the `grobid/grobid-core/target` directory where the core library has be
 
 The following command display an help for the batch commands:
 ```bash
-> java -jar grobid-core-`<current version>`.one-jar.jar -h
+> java -jar grobid-core-`<current version>`-jar-with-dependencies.jar -h
 ```
 
 The available batch commands are listed bellow. For all the commands, -Xmx1024m is used to set the JVM memory to avoid *OutOfMemoryException* given into the current size of the Grobid models.
@@ -29,7 +29,7 @@ Will extract and normalize the header of pdf files. The needed parameters for th
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -r -exe processHeader 
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -r -exe processHeader 
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
@@ -51,7 +51,7 @@ Will extract and normalize the full text of pdf files. The needed parameters for
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processFullText 
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processFullText 
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
@@ -65,7 +65,7 @@ Will process, extract and format the date given in input. The needed parameters 
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processDate -s "some date to extract and format"
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processDate -s "some date to extract and format"
 ```
 
 ### processAuthorsHeader
@@ -77,7 +77,7 @@ Will process, extract and format the authors given in input. The needed paramete
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processAuthorsHeader -s "some authors"
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processAuthorsHeader -s "some authors"
 ```
 
 ### processAuthorsCitation
@@ -89,7 +89,7 @@ Will process, extract and format the authors given in input. The needed paramete
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processAuthorsCitation -s "some authors"
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processAuthorsCitation -s "some authors"
 ```
 
 ### processAffiliation
@@ -101,7 +101,7 @@ Will process, extract and format the affiliation given in input. The needed para
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processAffiliation -s "some affiliation"
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processAffiliation -s "some affiliation"
 ```
 
 ### processRawReference
@@ -113,7 +113,7 @@ Will process, extract and format the raw reference given in input. The needed pa
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processRawReference -s "a reference string"
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processRawReference -s "a reference string"
 ```
 
 ### processReferences
@@ -129,7 +129,7 @@ Will process, extract and format all the references in the PDF files present in 
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processReferences
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processReferences
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
@@ -145,7 +145,7 @@ Will process, extract and format the citations in the patents encoded in TEI giv
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTEI
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTEI
 ```
 
 WARNING: extension of the TEI files to be processed must be .tei or .tei.xml
@@ -161,7 +161,7 @@ Will process, extract and format the citations in the patents encoded in ST.36 g
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentST36
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentST36
 ```
 
 WARNING: extension of the ST.36 files to be processed must be .xml
@@ -177,7 +177,7 @@ Will process, extract and format the citations in the patents encoded in UTF-8 t
 
 Example:
 ```
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTXT
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTXT
 ```
 
 WARNING: extension of the text files to be processed must be .txt, and expected encoding is UTF-8
@@ -193,7 +193,7 @@ Will process, extract and format the citations in the patents available in pdf g
 
 Example:
 ```
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentPDF
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentPDF
 ```
 
 WARNING: extension of the text files to be processed must be .pdf 
@@ -209,7 +209,7 @@ Will generate some training for patent citation data, taking as input ST.36 file
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingCitationPatent
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingCitationPatent
 ```
 
 WARNING: extension of the ST.36 files to be processed must be .xml
@@ -226,7 +226,7 @@ Will generate some training for header data from PDF files. The needed parameter
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingHeader
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingHeader
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
@@ -243,7 +243,7 @@ Will generate some training for full text data from PDF files. The needed parame
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingFulltext
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingFulltext
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
@@ -260,7 +260,7 @@ Will generate some training data for the segmentation model from PDF files. The 
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingSegmentation
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingSegmentation
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
@@ -277,7 +277,7 @@ Will generate some training data for the reference segmentation model from PDF f
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingReferenceSegmentation
+> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingReferenceSegmentation
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf

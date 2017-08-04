@@ -1,6 +1,6 @@
 The [RESTful API](Grobid-service.md) provides a simple and efficient way to use and deploy GROBID. As an alternative, the present page explains how to embed Grobid directly in your Java application. 
 
-After [building the project](Install-Grobid.md), two core jar files are created: grobid-core-`<current version>`.one-jar.jar and grobid-core-`<current version>`.jar
+After [building the project](Install-Grobid.md), two core jar files are created: grobid-core-`<current version>`-jar-with-dependencies.jar and grobid-core-`<current version>`.jar
 	
 A complete working project example of usage of GROBID Java API can be found here: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTex format. 
 
