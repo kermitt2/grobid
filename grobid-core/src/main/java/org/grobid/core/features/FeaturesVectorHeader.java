@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.TextUtilities;
 
@@ -47,9 +48,8 @@ public class FeaturesVectorHeader {
 
     public String printVector(boolean withRotation) {
         final String wapitiSanitizedString = FeaturesUtils.sanitizeTokenForWapiti(string);
-        if (wapitiSanitizedString == null) return null;
+        if (StringUtils.isBlank(wapitiSanitizedString)) return null;
 
-        if (wapitiSanitizedString.length() == 0) return null;
         StringBuilder res = new StringBuilder();
 
         // token string (1)

@@ -1,5 +1,6 @@
 package org.grobid.core.features;
 
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.TextUtilities;
 
@@ -56,9 +57,8 @@ public class FeaturesVectorSegmentation {
     public String printVector() {
         final String wapitiSanitizedString = FeaturesUtils.sanitizeTokenForWapiti(string);
         final String wapitiSanitizedSecondString = FeaturesUtils.sanitizeTokenForWapiti(secondString);
-        if (wapitiSanitizedString == null) return null;
+        if (StringUtils.isBlank(wapitiSanitizedString)) return null;
 
-        if (wapitiSanitizedString.length() == 0) return null;
         StringBuilder res = new StringBuilder();
 
         // token string (1)

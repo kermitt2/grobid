@@ -1,5 +1,6 @@
 package org.grobid.core.features;
 
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.utilities.TextUtilities;
 
 import java.util.List;
@@ -25,9 +26,8 @@ public class FeaturesVectorName {
 
     public String printVector() {
         final String wapitiSanitizedString = FeaturesUtils.sanitizeTokenForWapiti(string);
-        if (wapitiSanitizedString == null) return null;
+        if (StringUtils.isBlank(wapitiSanitizedString)) return null;
 
-        if (wapitiSanitizedString.length() == 0) return null;
         StringBuilder res = new StringBuilder();
 
         // token string (1)
