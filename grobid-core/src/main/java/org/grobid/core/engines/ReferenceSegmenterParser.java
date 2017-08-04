@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import com.google.common.base.Function;
 import com.google.common.collect.Sets;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.document.Document;
@@ -14,14 +15,18 @@ import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorReferenceSegmenter;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.tokenization.LabeledTokensContainer;
+import org.grobid.core.tokenization.TaggingTokenSynchronizer;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.Triple;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.regex.Matcher;
@@ -87,164 +92,78 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 		if (res == null) {
 			return null;
 		}
-        List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
+        // if we extract for generating training data, we also give back the used features
+        List<Triple<String, String, String>> labeled = GenericTaggerUtils.getTokensWithLabelsAndFeatures(res, training);
 
-		// if we extract for generating training data, we also give back the used features
-		if (training) {
-			return getExtractionResult(tokenizationsReferences, labeled, featureVector);
-		} else {
-			return getExtractionResult(tokenizationsReferences, labeled, null);
-		}
+        return getExtractionResult(tokenizationsReferences, labeled);
     }
 
-    private List<LabeledReferenceResult> getExtractionResult(List<LayoutToken> tokenizations, List<Pair<String, String>> labeled, String featureVectors) {
-        List<LabeledReferenceResult> resultList = new ArrayList<LabeledReferenceResult>();
-        StringBuilder reference = new StringBuilder();
-		List<LayoutToken> referenceTokens = new ArrayList<LayoutToken>();
-        StringBuilder referenceLabel = new StringBuilder();
-		StringBuilder features = new StringBuilder();
-		String[] featureLines = null;
+    private List<LabeledReferenceResult> getExtractionResult(List<LayoutToken> tokenizations, List<Triple<String, String, String>> labeled) {
+        final List<LabeledReferenceResult> resultList = new ArrayList<>();
+        final StringBuilder reference = new StringBuilder();
+        final List<LayoutToken> referenceTokens = new ArrayList<>();
+        final StringBuilder features = new StringBuilder();
+        final StringBuilder referenceLabel = new StringBuilder();
 
-		if (featureVectors != null)
-			featureLines = featureVectors.split("\n");
+        TaggingTokenSynchronizer synchronizer = new TaggingTokenSynchronizer(null, labeled, tokenizations);
 
-        int tokPtr = 0;
-		int featureLineIndex = 0;
-        boolean addSpace = false;
-		boolean addLine = false;
-        for (Pair<String, String> l : labeled) {
-            String tok = l.a;
-            String label = l.b;
-			String theFeatures = null;
-			if ((featureLines != null) && (featureLines.length > 0)) {
-				theFeatures = featureLines[featureLineIndex];
-				featureLineIndex++;
-				// we need to remove the final label at the end of the feature line
-				int ind = theFeatures.lastIndexOf(" ");
-				if (ind != -1)
-					theFeatures = theFeatures.substring(0, ind);
-			}
-            while(tokPtr < tokenizations.size()) {
-				while (tokenizations.get(tokPtr).t().equals(" ") ||
-					   tokenizations.get(tokPtr).t().equals("\n") ||
-					   tokenizations.get(tokPtr).t().equals("\r") ) {
-					if (tokenizations.get(tokPtr).t().equals(" ")) {
-						addSpace = true;
-					} else {
-						addLine = true;
-					}
-                	tokPtr++;
-				}
-				break;
-            }
-
-			LayoutToken layoutToken = tokenizations.get(tokPtr);
-            if (tokPtr >= tokenizations.size()) {
-                //throw new IllegalStateException("Implementation error: Reached the end of tokenizations, but current token is " + tok);
-				LOGGER.error("Implementation error: Reached the end of tokenizations, but current token is " + tok);
-				// we add a space to avoid concatenated text
-				addSpace = true;
-            }
-            else {
-				String tokenizationToken = layoutToken.getText();
-				if ((tokPtr != tokenizations.size()) && !tokenizationToken.equals(tok)) {
-					// and we add a space by default to avoid concatenated text
-					addSpace = true;
-					if (!tok.startsWith(tokenizationToken)) {
-						// this is a very exceptional case due to a sequence of accent/diacresis, in this case we skip
-						// a shift in the tokenizations list and continue on the basis of the labeled token
-						// we check one ahead
-						tokPtr++;
-						tokenizationToken = tokenizations.get(tokPtr).getText();
-						if (!tok.equals(tokenizationToken)) {
-							// we try another position forward (second hope!)
-							tokPtr++;
-							tokenizationToken = tokenizations.get(tokPtr).getText();
-							if (!tok.equals(tokenizationToken)) {
-								// we try another position forward (last hope!)
-								tokPtr++;
-								tokenizationToken = tokenizations.get(tokPtr).getText();
-								if (!tok.equals(tokenizationToken)) {
-									// we return to the initial position
-									tokPtr = tokPtr-3;
-									tokenizationToken = tokenizations.get(tokPtr).getText();
-									LOGGER.error("Implementation error, tokens out of sync: " +
-										tokenizationToken + " != " + tok + ", at position " + tokPtr);
-								}
-							}
-						}
-					}
-					// note: if the above condition is true, this is an exceptional case due to a
-					// sequence of accent/diacresis and we can go on as a full string match
-	            }
-			}
-
-            String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-            if (plainLabel.equals("<label>")) {
-                if (GenericTaggerUtils.isBeginningOfEntity(label)) {
+        Function<LabeledTokensContainer, Void> function = new Function<LabeledTokensContainer, Void>() {
+            @Override public Void apply(LabeledTokensContainer container) {
+                features.append(container.getFeatureString());
+                features.append('\n');
+                if (container.isBeginning()) {
                     if (reference.length() != 0) {
                         resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
-                                referenceLabel.toString().trim(), reference.toString().trim(), features.toString(), BoundingBoxCalculator.calculate(referenceTokens)));
+                            referenceLabel.toString().trim(), reference.toString().trim(), features.toString(), BoundingBoxCalculator.calculate(referenceTokens)));
                         reference.setLength(0);
                         referenceLabel.setLength(0);
-						features.setLength(0);
-						referenceTokens.clear();
+                        features.setLength(0);
+                        referenceTokens.clear();
                     }
                 }
-                if (addSpace || addLine) {
-                    referenceLabel.append(' ');
-                    addSpace = false;
-                }
-
-                referenceLabel.append(tok);
-				features.append(theFeatures);
-				features.append("\n");
-
-            } else if (plainLabel.equals("<reference>")) {
-                if (GenericTaggerUtils.isBeginningOfEntity(label)) {
-                    if (reference.length() != 0) {
-                        resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ?
-                                null : referenceLabel.toString().trim(),
-									reference.toString().trim(), features.toString(), BoundingBoxCalculator.calculate(referenceTokens)));
-                        reference.setLength(0);
-                        referenceLabel.setLength(0);
-						features.setLength(0);
-						referenceTokens.clear();
-                    }
-                }
-                if (addSpace) {
-                    reference.append(' ');
-                    addSpace = false;
-                }
-                if (addLine) {
-                    reference.append('\n');
-                    addLine = false;
-                }
-
-                reference.append(tok);
-				referenceTokens.add(layoutToken);
-				features.append(theFeatures);
-				features.append("\n");
+                return null;
             }
-			else if (plainLabel.equals("<other>")) {
-				features.append(theFeatures);
-				features.append("\n");
-			}
-            tokPtr++;
-        }
+        };
 
-        if (reference.length() != 0) {
-            resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
+        Iterator<LabeledTokensContainer> iterator = synchronizer.iterator();
+        while (iterator.hasNext()) {
+            LabeledTokensContainer container = iterator.next();
+            String tok = container.getToken();
+            String plainLabel = container.getPlainLabel();
+            if ("<label>".equals(plainLabel)) {
+                function.apply(container);
+                referenceLabel.append(tok);
+
+                if (container.isTrailingSpace() || container.isTrailingNewLine()) {
+                    referenceLabel.append(' ');
+                }
+            } else if (plainLabel.equals("<reference>")) {
+                function.apply(container);
+                reference.append(tok);
+
+                if (container.isTrailingSpace()) {
+                    reference.append(' ');
+                }
+                if (container.isTrailingNewLine()) {
+                    reference.append('\n');
+                }
+
+                referenceTokens.addAll(container.getLayoutTokens());
+            } else if (plainLabel.equals("<other>")) {
+                // NOP
+            }
+
+            // Handle last one.
+            if (!iterator.hasNext()) {
+                resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
                     referenceLabel.toString().trim(), reference.toString().trim(),
-					features.toString(),
-					BoundingBoxCalculator.calculate(referenceTokens)));
-            reference.setLength(0);
-            referenceLabel.setLength(0);
+                    features.toString(),
+                    BoundingBoxCalculator.calculate(referenceTokens)));
+                reference.setLength(0);
+                referenceLabel.setLength(0);
+            }
         }
 
-//        for (LabeledReferenceResult r : resultList) {
-//            System.out.println(r);
-//        }
         return resultList;
     }
 
@@ -269,7 +188,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 		if (res == null) {
 			return null;
 		}
-        List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);		
+        List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
         StringBuilder sb = new StringBuilder();
 
 		//noinspection StringConcatenationInsideStringBufferAppend
@@ -279,7 +198,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 				"    </teiHeader>\n" +
 				"    <text xml:lang=\"en\">\n" +
 				"        <listBibl>\n");
-		
+
 		int tokPtr = 0;
 		boolean addSpace = false;
 		boolean addEOL = false;
@@ -296,7 +215,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 				}
 				else if (tokenizations.get(tokPtr2).t().equals("\n") ||
 					     tokenizations.get(tokPtr).t().equals("\r") ) {
-					addEOL = true;	
+					addEOL = true;
 				}
                 else {
 					break;
@@ -342,12 +261,12 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 					// note: if the above condition is true, this is an exceptional case due to a
 					// sequence of accent/diacresis and we can go on as a full string match
 	            }
-			}	
-			
+			}
+
 			String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-			
+
 			boolean tagClosed = (lastTag != null) && testClosingTag(sb, label, lastTag, addSpace, addEOL);
-			
+
 			if (tagClosed) {
 				addSpace = false;
 				addEOL = false;
@@ -388,7 +307,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 					}
 				}
 			}
-			
+
 			lastTag = plainLabel;
 			addSpace = false;
 			addEOL = false;
@@ -402,7 +321,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         sb.append("\n        </listBibl>\n" +
                 "    </text>\n" +
                 "</tei>\n");
-		
+
 		return new Pair<String, String>(sb.toString(), featureVector);
     }
 
@@ -558,7 +477,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 		for(DocumentPiece docPiece : referencesParts) {
 			DocumentPointer dp1 = docPiece.a;
 			DocumentPointer dp2 = docPiece.b;
-			
+
 /*for(int i=dp1.getTokenDocPos(); i<dp2.getTokenDocPos(); i++) {
 	System.out.print(tokenizations.get(i));
 }	

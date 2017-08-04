@@ -16,6 +16,8 @@ public class LabeledTokensContainer {
     private String token;
     private TaggingLabel taggingLabel;
     private boolean beginning;
+    private boolean trailingSpace;
+    private boolean trailingNewLine;
     private String featureString;
 
     public LabeledTokensContainer(List<LayoutToken> layoutTokens, String token, TaggingLabel taggingLabel, boolean beginning) {
@@ -48,6 +50,22 @@ public class LabeledTokensContainer {
     public String getFullLabel() {
         return isBeginning() ? GenericTaggerUtils.START_ENTITY_LABEL_PREFIX + taggingLabel.getLabel()
                 : taggingLabel.getLabel();
+    }
+
+    public boolean isTrailingSpace() {
+        return trailingSpace;
+    }
+
+    public boolean isTrailingNewLine() {
+        return trailingNewLine;
+    }
+
+    public void setTrailingSpace(boolean trailingSpace) {
+        this.trailingSpace = trailingSpace;
+    }
+
+    public void setTrailingNewLine(boolean trailingNewLine) {
+        this.trailingNewLine = trailingNewLine;
     }
 
     public String getFeatureString() {
