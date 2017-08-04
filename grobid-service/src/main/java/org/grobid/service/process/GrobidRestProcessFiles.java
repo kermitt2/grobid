@@ -691,22 +691,23 @@ public class GrobidRestProcessFiles {
 
         Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
 
-        final PDDocument document = PDDocument.load(originFile);
-        //If no pages, skip the document
-        if (document.getNumberOfPages() > 0) {
-            DocumentSource documentSource = DocumentSource.fromPdf(originFile);
-            if (isparallelExec) {
-                outputDocument = dispatchProcessing(type, document, documentSource, teiDoc);
-                GrobidPoolingFactory.returnEngine(engine);
-            } else {
-                synchronized (engine) {
-                    //TODO: VZ: sync on local var does not make sense
+        try (PDDocument document = PDDocument.load(originFile)) {
+            //If no pages, skip the document
+            if (document.getNumberOfPages() > 0) {
+                DocumentSource documentSource = DocumentSource.fromPdf(originFile);
+                if (isparallelExec) {
                     outputDocument = dispatchProcessing(type, document, documentSource, teiDoc);
+                    GrobidPoolingFactory.returnEngine(engine);
+                } else {
+                    synchronized (engine) {
+                        //TODO: VZ: sync on local var does not make sense
+                        outputDocument = dispatchProcessing(type, document, documentSource, teiDoc);
+                    }
                 }
-            }
-        } else {
-            throw new RuntimeException("Cannot identify any pages in the input document. " +
+            } else {
+                throw new RuntimeException("Cannot identify any pages in the input document. " +
                     "The document cannot be annotated. Please check whether the document is valid or the logs.");
+            }
         }
 
         return outputDocument;
