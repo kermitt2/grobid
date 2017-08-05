@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * SAX parser for the TEI format for the training data for the segmentation model.
  * Normally all training data should be in this unique format.
@@ -25,6 +28,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 		document header (<header>): front, 
 		page footer (<footnote>): note type footnote, 
 		page header (<headnote>): note type headnote, 
+        margin note (<marginnote>): note type margin, 
 		document body (<body>): body, 
 		bibliographical section (<references>): listbibl, 
 		page number (<page>): page,
@@ -32,6 +36,8 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 		annexes (<annex>): div type="annex" (optionally under back)
 		acknowledgement (<acknowledgement>): div type="acknowledgement" (optionally under back)
  	*/
+
+    private static final Logger logger = LoggerFactory.getLogger(TEISegmentationSaxParser.class);
 
     private StringBuffer accumulator = null; // current accumulated text
 
@@ -73,8 +79,10 @@ public class TEISegmentationSaxParser extends DefaultHandler {
         }
 		if (qName.equals("body") || 
 			qName.equals("cover") || 
-			qName.equals("header") || 
-			qName.equals("div") || 
+			qName.equals("front") || 
+			qName.equals("div") ||
+            qName.equals("toc") || 
+            qName.equals("other") || 
 			qName.equals("listBibl")) {
 			currentTag = null;
 			upperTag = null;
@@ -106,7 +114,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                     writeData(upperQname, upperTag);
                 }
             }
-            accumulator.setLength(0);
+            //accumulator.setLength(0);
 
             if (qName.equals("front")) {
                 //currentTags.push("<header>");
@@ -118,38 +126,16 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 				currentTag = "<body>";
 				upperTag = currentTag;
 				upperQname = "body";
-	        }
-			else if (qName.equals("titlePage")) {
+	        } else if (qName.equals("titlePage")) {
                 //currentTags.push("<other>");
 				currentTag = "<cover>";
 				//upperTag = currentTag;
 				//upperQname = "titlePage";
-            }
-			/*else if (qName.equals("other")) {
+            } else if (qName.equals("other") || qName.equals("toc")) {
+                // for the moment the table of content mark-up is ignored
                 //currentTags.push("<other>");
 				currentTag = "<other>";
-            } */
-			/*else if (qName.equals("ref")) {
-                int length = atts.getLength();
-
-                // Process each attribute
-                for (int i = 0; i < length; i++) {
-                    // Get names and values for each attribute
-                    String name = atts.getQName(i);
-                    String value = atts.getValue(i);
-
-                    if (name != null) {
-                        if (name.equals("type")) {
-                            if (value.equals("biblio")) {
-                                currentTags.push("<citation_marker>");
-                            } else if (value.equals("figure")) {
-                                currentTags.push("<figure_marker>");
-                            }
-                        }
-                    }
-                }
-            } */
-			else if (qName.equals("note")) {
+            } else if (qName.equals("note")) {
                 int length = atts.getLength();
 
                 // Process each attribute
@@ -160,12 +146,17 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 
                     if (name != null) {
                         if (name.equals("place")) {
-                            if (value.equals("footnote")) {
+                            if (value.equals("footnote") || value.equals("foot") ) {
 								currentTag = "<footnote>";
-                            }
-                            if (value.equals("headnote")) {
+                            } else if (value.equals("headnote") || value.equals("head") ) {
 								currentTag = "<headnote>";
+                            } else if (value.equals("margin")) {
+                                currentTag = "<marginnote>";
+                            } else {
+                                logger.error("Invalid attribute value for element div: " + name + "=" + value);
                             }
+                        } else {
+                            logger.error("Invalid attribute name for element div: " + name);
                         }
                     }
                 }
@@ -190,7 +181,11 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 								currentTag = "<acknowledgement>";
 								upperTag = currentTag;
 								upperQname = "div";
+                            } else {
+                                logger.error("Invalid attribute value for element div: " + name + "=" + value);
                             }
+                        } else {
+                            logger.error("Invalid attribute name for element div: " + name);
                         }
                     }
                 }
@@ -202,19 +197,32 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 				currentTag = "<references>";
 				upperTag = currentTag;
 				upperQname = "listBibl";
+            } else if (qName.equals("text")) {
+                currentTag = "<other>";
+                upperTag = null;
+                upperQname = null;
+            } else {
+                logger.error("Invalid element name: " + qName + " - it will be mapped to the label <other>");
+                currentTag = "<other>";
             }
         }
     }
 
     private void writeData(String qName, String surfaceTag) {
+        if (qName == null) {
+            qName = "other";
+            surfaceTag = "<other>";
+        }
         if ((qName.equals("front")) || (qName.equals("titlePage")) || (qName.equals("note")) ||
                 (qName.equals("page")) || (qName.equals("pages")) || (qName.equals("body")) ||
-                (qName.equals("listBibl")) || 
-                (qName.equals("div")) 
+                (qName.equals("listBibl")) || (qName.equals("div")) ||
+                (qName.equals("other")) || (qName.equals("toc")) 
                 ) {
             String text = getText();
+            text = text.replace("\n", " ");
+            text = text.replace("  ", " ");
 			boolean begin = true;
-//System.out.println(text);			
+//System.out.println(text);	
             // we segment the text line by line first
             //StringTokenizer st = new StringTokenizer(text, "\n", true);
 			String[] tokens = text.split("\\+L\\+");
@@ -223,9 +231,9 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 			for(int p=0; p<tokens.length; p++) {	
 				//String line = st.nextToken().trim();
 				String line = tokens[p].trim();
-				if (line.equals("\n"))
-					continue;
 				if (line.length() == 0) 
+                    continue;
+                if (line.equals("\n"))
 					continue;
 				if (line.indexOf("+PAGE+") != -1) {
                     // page break should be a distinct feature
@@ -239,29 +247,28 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 					continue;
 				String tok = st.nextToken();
 
-                //String tok = line.replace(" ", "").replace("\t", "");
-				//if (tok.length() > 10)
-				//	tok = tok.substring(0,10);
-				
-	            //StringTokenizer st2 = new StringTokenizer(text, " \t" + TextUtilities.fullPunctuations, true);
-	            
-	            //if (st2.hasMoreTokens()) {
-	                //String tok = st2.nextToken().trim();
-	            if (tok.length() == 0) continue;
+                /*StringTokenizer st = new StringTokenizer(line, TextUtilities.delimiters, true);
+                if (!st.hasMoreTokens()) 
+                    continue;
+                String tok = st.nextToken().trim();*/
 
-	                //if (tok.equals("+L+")) {
-	                //    labeled.add("@newline\n");
-	                //} else 
-					
-	                    //if (tok.length() > 0) {
-	        	if (begin) {
+	            if (tok.length() == 0) 
+                    continue;
+
+                if (surfaceTag == null) {
+                    // this token belongs to a chunk to ignored
+                    System.out.println("\twarning: surfaceTag is null for token '"+tok+"' - it will be tagged with label <other>");
+                    surfaceTag = "<other>";
+                }
+
+	        	if (begin && (!surfaceTag.equals("<other>"))) {
 	        		labeled.add(tok + " I-" + surfaceTag + "\n");
 	  			  	begin = false;
 	         	} else {
 	           	 	labeled.add(tok + " " + surfaceTag + "\n");
 	            }
 				if (page) {
-					labeled.add("@newpage\n");
+					//labeled.add("@newpage\n");
 					page = false;
 				}
 							//}

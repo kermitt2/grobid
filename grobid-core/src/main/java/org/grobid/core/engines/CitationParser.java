@@ -11,10 +11,12 @@ import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.CitationParserCounters;
+import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorCitation;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.Consolidation;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.counters.CntManager;
@@ -72,7 +74,7 @@ public class CitationParser extends AbstractParser {
             //    final String tok = st.nextToken();
             for (String tok : tokenizations) {
                 //tokenizations.add(tok);
-                if (!tok.equals(" ")) {
+                if (!LayoutTokensUtil.spaceyToken(tok)) {
                     citationBlocks.add(tok + " <citation>");
                 }
             }
@@ -100,12 +102,13 @@ public class CitationParser extends AbstractParser {
 
                 resCitation.setOriginalAuthors(resCitation.getAuthors());
 
-                ArrayList<String> auts = new ArrayList<String>();
-                if (resCitation.getAuthors() != null) {
-                    auts.add(resCitation.getAuthors());
-                }
+//                ArrayList<String> auts = new ArrayList<String>();
+//                if (resCitation.getAuthors() != null) {
+//                    auts.add(resCitation.getAuthors());
+//                }
 
-                resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(auts));
+//                resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(auts));
+                resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(resCitation.getAuthors()));
                 if (resCitation.getPublicationDate() != null) {
                     List<Date> dates = parsers.getDateParser().processing(resCitation
                             .getPublicationDate());
@@ -172,7 +175,7 @@ public class CitationParser extends AbstractParser {
     public List<BibDataSet> processingReferenceSection(Document doc, ReferenceSegmenter referenceSegmenter, boolean consolidate) {
         List<BibDataSet> results = new ArrayList<BibDataSet>();
 
-        String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
+        String referencesStr = doc.getDocumentPartText(SegmentationLabels.REFERENCES);
 
         if (StringUtils.isEmpty(referencesStr)) {
             cntManager.i(CitationParserCounters.EMPTY_REFERENCES_BLOCKS);

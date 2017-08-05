@@ -10,12 +10,15 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
 
-import org.grobid.core.analyzers.GrobidDefaultAnalyzer;
+import org.apache.commons.io.IOUtils;
+import org.grobid.core.analyzers.Analyzer;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.*;
 import org.grobid.core.engines.Engine;
-import org.grobid.core.engines.SegmentationLabel;
+import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.FigureCounters;
+import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
@@ -40,9 +43,10 @@ import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.Utilities;
-import org.grobid.core.engines.counters.TableRejectionCounters;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
+
+import org.grobid.core.engines.counters.TableRejectionCounters;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -99,7 +103,7 @@ public class Document {
 
     private FeatureFactory featureFactory = null;
 
-    // map of tokens (e.g. <reference> or <footnote>) to document pieces
+    // map of labels (e.g. <reference> or <footnote>) to document pieces
     protected SortedSetMultimap<String, DocumentPiece> labeledBlocks;
 
     // original tokenization and tokens - in order to recreate the original
@@ -114,19 +118,23 @@ public class Document {
     protected DocumentNode top = null;
 
     // header of the document - if extracted and processed
-    protected final BiblioItem resHeader = null;
+    protected BiblioItem resHeader = null;
 
     // full text as tructure TEI - if extracted and processed
     protected String tei;
 
     protected ReferenceMarkerMatcher referenceMarkerMatcher;
 
+    public void setImages(List<GraphicObject> images) {
+        this.images = images;
+    }
+
     // list of bitmaps and vector graphics of the document
     protected List<GraphicObject> images = null;
-	
+
 	// list of PDF annotations as present in the PDF source file
     protected List<PDFAnnotation> pdfAnnotations = null;
-	
+
     protected Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
 
     // some statistics regarding the document - useful for generating the features
@@ -142,13 +150,21 @@ public class Document {
 
     protected boolean titleMatchNum = false; // true if the section titles of the document are numbered
 
-    // the magic DOI regular expression...
+    // the magical DOI regular expression...
     static public final Pattern DOIPattern = Pattern
             .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
     protected List<Figure> figures;
     protected Predicate<GraphicObject> validGraphicObjectPredicate;
     protected int m;
+    
     protected List<Table> tables;
+    protected List<Equation> equations;
+
+    // the analyzer/tokenizer used for processing this document
+    Analyzer analyzer = GrobidAnalyzer.getInstance();
+
+    // map of sequence of LayoutTokens for the fulltext model labels
+    //Map<String, List<LayoutTokenization>> labeledTokenSequences = null;
 
     public Document(DocumentSource documentSource) {
         top = new DocumentNode("top", "0");
@@ -231,6 +247,14 @@ public class Document {
         return minBlockSpacing;
     }
 
+    public void setAnalyzer(Analyzer analyzer) {
+        this.analyzer = analyzer;
+    }
+
+    public Analyzer getAnalyzer() {
+        return this.analyzer;
+    }
+
     // to be removed
     //@Deprecated
     public List<LayoutToken> getTokenizationsHeader() {
@@ -267,8 +291,13 @@ public class Document {
     }
 
     public List<LayoutToken> fromText(final String text) {
+        List<String> toks = null;
+        try {
+            toks = GrobidAnalyzer.getInstance().tokenize(text);
+        } catch(Exception e) {
+            LOGGER.error("Fail tokenization for " + text, e);
+        }
 
-        List<String> toks = GrobidDefaultAnalyzer.tokenize(text);
         tokenizations = Lists.transform(toks, new Function<String, LayoutToken>() {
             @Override
             public LayoutToken apply(String s) {
@@ -308,12 +337,15 @@ public class Document {
 
         images = new ArrayList<>();
         PDF2XMLSaxHandler parser = new PDF2XMLSaxHandler(this, images);
+        // we set possibly the particular analyzer to be used for tokenization of the PDF elements
+        if (config.getAnalyzer() != null)
+           parser.setAnalyzer(config.getAnalyzer());
 		pdfAnnotations = new ArrayList<PDFAnnotation>();
 		PDF2XMLAnnotationSaxHandler parserAnnot = new PDF2XMLAnnotationSaxHandler(this, pdfAnnotations);
-		
+
 		// get a SAX parser factory
 		SAXParserFactory spf = SAXParserFactory.newInstance();
-		
+
         tokenizations = null;
 
         File file = new File(pathXML);
@@ -323,7 +355,7 @@ public class Document {
 			// parsing of the pdf2xml file
             in = new FileInputStream(file);
             // in = new XMLFilterFileInputStream(file); // -> to filter invalid XML characters
- 
+
             // get a new instance of parser
             SAXParser p = spf.newSAXParser();
             p.parse(in, parser);
@@ -340,31 +372,21 @@ public class Document {
         } catch (Exception e) {
             throw new GrobidException("Cannot parse file: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
         } finally {
-            if (in != null) {
-                try {
-                    in.close();
-                } catch (IOException e) {
-                    LOGGER.error("Cannot close input stream", e);
-                }
-            }
-        }	
-			
-		try {
-			// parsing of the annotation XML file
-			in = new FileInputStream(fileAnnot);
-			SAXParser p = spf.newSAXParser();
-			p.parse(in, parserAnnot);
-		} catch (GrobidException e) {
-            throw e;
-        } catch (Exception e) {
-            throw new GrobidException("Cannot parse file: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
-        } finally {
-            if (in != null) {
-                try {
-                    in.close();
-                } catch (IOException e) {
-                    LOGGER.error("Cannot close input stream", e);
-                }
+            IOUtils.closeQuietly(in);
+        }
+
+        if (fileAnnot.exists()) {
+            try {
+                // parsing of the annotation XML file
+                in = new FileInputStream(fileAnnot);
+                SAXParser p = spf.newSAXParser();
+                p.parse(in, parserAnnot);
+            } catch (GrobidException e) {
+                throw e;
+            } catch (Exception e) {
+                LOGGER.error("Cannot parse file: " + fileAnnot, e, GrobidExceptionStatus.PARSING_ERROR);
+            } finally {
+                IOUtils.closeQuietly(in);
             }
         }
 
@@ -467,7 +489,7 @@ public class Document {
                 }
             }
         }
-		
+
         // we filter out possible line numbering for review works
         // filterLineNumber();
         return tokenizations;
@@ -1223,9 +1245,9 @@ public class Document {
                 String localText = block.getText();
                 if (localText != null) {
                     localText = localText.trim();
-                    if (localText.startsWith("@BULLET")) {
+                    /*if (localText.startsWith("@BULLET")) {
                         localText = localText.replace("@BULLET", " • ");
-                    }
+                    }*/
                     if (localText.startsWith("@IMAGE")) {
                         localText = "";
                     }
@@ -1486,7 +1508,7 @@ public class Document {
         }));
     }
 
-    public SortedSet<DocumentPiece> getDocumentPart(SegmentationLabel segmentationLabel) {
+    public SortedSet<DocumentPiece> getDocumentPart(TaggingLabel segmentationLabel) {
         if (labeledBlocks == null) {
             LOGGER.debug("labeledBlocks is null");
             return null;
@@ -1497,13 +1519,36 @@ public class Document {
         return labeledBlocks.get(segmentationLabel.getLabel());
     }
 
-    public String getDocumentPartText(SegmentationLabel segmentationLabel) {
+    public String getDocumentPartText(TaggingLabel segmentationLabel) {
         SortedSet<DocumentPiece> pieces = getDocumentPart(segmentationLabel);
         if (pieces == null) {
             return null;
         } else {
             return getDocumentPieceText(getDocumentPart(segmentationLabel));
         }
+    }
+
+    /**
+     * Give the list of LayoutToken corresponding to some document parts and
+     * a global document tokenization.
+     */
+    public static List<LayoutToken> getTokenizationParts(SortedSet<DocumentPiece> documentParts,
+                                                        List<LayoutToken> tokenizations) {
+        if (documentParts == null)
+            return null;
+
+        List<LayoutToken> tokenizationParts = new ArrayList<LayoutToken>();
+        for (DocumentPiece docPiece : documentParts) {
+            DocumentPointer dp1 = docPiece.a;
+            DocumentPointer dp2 = docPiece.b;
+
+            int tokens = dp1.getTokenDocPos();
+            int tokene = dp2.getTokenDocPos();
+            for (int i = tokens; i < tokene; i++) {
+                tokenizationParts.add(tokenizations.get(i));
+            }
+        }
+        return tokenizationParts;
     }
 
     public BibDataSet getBibDataSetByTeiId(String teiId) {
@@ -2062,26 +2107,68 @@ public class Document {
     public List<Table> getTables() {
         return tables;
     }
-	
-	static public List<LayoutToken> getTokens(List<LayoutToken> tokenizations, int offsetBegin, int offsetEnd) {
-		return getTokensFrom(tokenizations, offsetBegin, offsetEnd, 0);
-	}
-	
-	static public List<LayoutToken> getTokensFrom(List<LayoutToken> tokenizations, 
-									int offsetBegin, 
-									int offsetEnd, 
-									int startTokenIndex) {
-		List<LayoutToken> result = new ArrayList<LayoutToken>();
-		for(int p = startTokenIndex; p<tokenizations.size(); p++) {
-			LayoutToken currentToken = tokenizations.get(p);
-			if ((currentToken == null) || (currentToken.getText() == null))
-				continue;
-			if (currentToken.getOffset() + currentToken.getText().length() < offsetBegin) 
-				continue;
-			if (currentToken.getOffset() > offsetEnd) 
-				return result;
-			result.add(currentToken);
-		}
-		return result;
-	}
+
+    public void setEquations(List<Equation> equations) {
+        this.equations = equations;
+    }
+
+    public List<Equation> getEquations() {
+        return equations;
+    }
+
+    public void setResHeader(BiblioItem resHeader) {
+        this.resHeader = resHeader;
+    }
+
+
+    static public List<LayoutToken> getTokens(List<LayoutToken> tokenizations, int offsetBegin, int offsetEnd) {
+        return getTokensFrom(tokenizations, offsetBegin, offsetEnd, 0);
+    }
+
+    static public List<LayoutToken> getTokensFrom(List<LayoutToken> tokenizations,
+                                                  int offsetBegin,
+                                                  int offsetEnd,
+                                                  int startTokenIndex) {
+        List<LayoutToken> result = new ArrayList<LayoutToken>();
+        for(int p = startTokenIndex; p<tokenizations.size(); p++) {
+            LayoutToken currentToken = tokenizations.get(p);
+            if ((currentToken == null) || (currentToken.getText() == null))
+                continue;
+            if (currentToken.getOffset() + currentToken.getText().length() < offsetBegin)
+                continue;
+            if (currentToken.getOffset() > offsetEnd)
+                return result;
+            result.add(currentToken);
+        }
+        return result;
+    }
+
+    /**
+     * Initialize the mapping between sequences of LayoutToken and 
+     * fulltext model labels. 
+     * @param labeledResult labeled sequence as produced by the CRF model
+     * @param tokenization List of LayoutToken for the body parts
+     */
+    /*public void generalFullTextResultMapping(String labeledResult, List<LayoutToken> tokenizations) {
+        if (labeledTokenSequences == null)
+            labeledTokenSequences = new TreeMap<String, List<LayoutTokenization>>();
+
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledResult, tokenizations);
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            List<LayoutToken> clusterTokens = cluster.concatTokens();
+            List<LayoutTokenization> theList = labeledTokenSequences.get(clusterLabel.toString());
+            if (theList == null)
+                theList = new ArrayList<LayoutTokenization>();
+            LayoutTokenization newTokenization = new LayoutTokenization(clusterTokens);
+            theList.add(newTokenization);
+            labeledTokenSequences.put(clusterLabel.getLabel(), theList);
+        }
+    }*/
+
 }

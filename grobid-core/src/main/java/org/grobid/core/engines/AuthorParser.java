@@ -1,19 +1,26 @@
 package org.grobid.core.engines;
 
+import com.google.common.base.Function;
+import com.google.common.collect.Lists;
+import org.apache.lucene.util.CollectionUtil;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Person;
 import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.engines.tagging.TaggerFactory;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorName;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -34,85 +41,89 @@ public class AuthorParser {
         namesCitationParser = TaggerFactory.getTagger(GrobidModels.NAMES_CITATION);
     }
 
-    /**
-     * Processing of authors in header or citation
-	 *
-	 * @param inputs - list of sequence of author names to be processed.
-	 * @param head - if true use the model for header's name, otherwise the model for names in citation
-	 * @return List of Person entites as POJO.
-     */
-    public List<Person> processing(List<String> inputs,
-                                   boolean head) {
-        if (inputs == null)
+
+    public ArrayList<String> getAuthorBlocks(String input) {
+        if (input == null || input.isEmpty())
             return null;
 
-        if (inputs.size() == 0)
-            return null;
-
-        if (inputs.get(inputs.size() - 1) != null) {
-            String last = inputs.get(inputs.size() - 1).trim();
-            inputs.set(inputs.size() - 1, last.replaceAll("et\\.? al\\.?.*$", ""));
-        }
-
-        List<Person> fullAuthors = null;
+        input = input.trim().replaceAll("et\\.? al\\.?.*$", "");
+//        if (inputs.get(inputs.size() - 1) != null) {
+//            String last = inputs.get(inputs.size() - 1).trim();
+//            inputs.set(inputs.size() - 1, last.replaceAll("et\\.? al\\.?.*$", ""));
+//        }
 
         ArrayList<String> authorBlocks = new ArrayList<String>();
         try {
-            for (String input : inputs) {
-                if (input == null)
-                    continue;
-                //System.out.println(input);
+//            for (String input : inputs) {
+//                if (input == null) {
+//                    continue;
+//                }
+                List<String> tokenizations = analyzer.tokenize(input);
 
-                //StringTokenizer st = new StringTokenizer(input, TextUtilities.fullPunctuations, true);
-				// TBD: add the language object in the tokenizer call
-				List<String> tokenizations = analyzer.tokenize(input);
-
-                //if (st.countTokens() == 0)
-				if (tokenizations.size() == 0)
+                if (tokenizations.size() == 0) {
                     return null;
-                //while (st.hasMoreTokens()) {
-                //    String tok = st.nextToken();
-				for(String tok : tokenizations) {
+                }
+                for(String tok : tokenizations) {
                     if (!tok.equals(" ")) {
                         authorBlocks.add(tok + " <author>");
                     }
                 }
                 authorBlocks.add("\n");
-                //System.out.println(authorBlocks);
-            }
+//            }
+            return authorBlocks;
+        } catch (Exception e) {
+            throw new GrobidException("An exception occured while running Grobid.", e);
+        }
+    }
 
+    public ArrayList<String> getAuthorBlocksFromTokens(List<LayoutToken> inputs) {
+        if (inputs == null || inputs.isEmpty())
+            return null;
+
+        if (inputs.get(inputs.size() - 1) != null) {
+            LayoutToken last = inputs.get(inputs.size() - 1);
+            last.setText(last.t().trim().replaceAll("et\\.? al\\.?.*$", ""));
+        }
+
+        ArrayList<String> authorBlocks = new ArrayList<String>();
+        try {
+            for (LayoutToken layoutToken : inputs) {
+                String tok = layoutToken.t();
+                if (!LayoutTokensUtil.spaceyToken(tok) && !tok.trim().isEmpty()) {
+                    authorBlocks.add(tok + " <author>");
+                }
+            }
+            authorBlocks.add("\n");
+            return authorBlocks;
+        } catch (Exception e) {
+            throw new GrobidException("An exception occured while running Grobid.", e);
+        }
+    }
+
+    /**
+     * Processing of authors in header or citation
+	 *
+	 * @param authorBlocks - preprocessed for tagging
+     * @param tokenizations
+	 * @param head - if true use the model for header's name, otherwise the model for names in citation
+	 * @return List of Person entites as POJO.
+     */
+    public List<Person> processing(ArrayList<String> authorBlocks, List<LayoutToken> tokenizations, boolean head) {
+        if (authorBlocks == null || authorBlocks.isEmpty()) {
+            return null;
+        }
+        List<Person> fullAuthors = null;
+
+        try {
             String header = FeaturesVectorName.addFeaturesName(authorBlocks);
             // clear internal context
 //            Tagger tagger = head ? taggerHeader : taggerCitation;
             GenericTagger tagger = head ? namesHeaderParser : namesCitationParser;
-
             String res = tagger.label(header);
-//            StringTokenizer st = new StringTokenizer(header, "\n");
-//            AbstractParser.feedTaggerAndParse(tagger, st);
 
-//            StringBuilder res = new StringBuilder();
-//            for (int i = 0; i < tagger.size(); i++) {
-//                for (int j = 0; j < tagger.xsize(); j++) {
-//                    //System.out.print(tagger.x(i, j) + "\t");
-//                    res.append(tagger.x(i, j)).append("\t");
-//                }
-//
-//                res.append("<author>" + "\t");
-//                res.append(tagger.y2(i));
-//                /*if (line.length() == 0)
-//                        res.append(" ");*/
-//                res.append("\n");
-//
-//                /*System.out.print("Details");
-//                for (int j = 0; j < tagger.ysize(); ++j) {
-//                      System.out.print("\t" + tagger.yname(j) + "/prob=" + tagger.prob(i,j)
-//                               + "/alpha=" + tagger.alpha(i, j)
-//                               + "/beta=" + tagger.beta(i, j));
-//                }
-//                System.out.print("\n");*/
-//            }
-//
-//            tagger.delete();
+            // TODO:switch to more robust clustering
+//            TaggingTokenClusteror clusteror = new TaggingTokenClusteror(head ? GrobidModels.NAMES_HEADER : GrobidModels.NAMES_CITATION, res, tokenizations);
+//            List<TaggingTokenCluster> clusters = clusteror.cluster();
 
             // extract results from the processed file
             StringTokenizer st2 = new StringTokenizer(res, "\n");
@@ -120,6 +131,7 @@ public class AuthorParser {
             org.grobid.core.data.Person aut = new Person();
             boolean newMarker = false;
             String currentMarker = null;
+            int ptr = 0;
             while (st2.hasMoreTokens()) {
                 String line = st2.nextToken();
                 if ((line.trim().length() == 0)) {
@@ -131,6 +143,9 @@ public class AuthorParser {
                     aut = new Person();
                     continue;
                 }
+
+                LayoutToken layoutToken = tokenizations.get(ptr++);
+
                 StringTokenizer st3 = new StringTokenizer(line, "\t");
                 int ll = st3.countTokens();
                 int i = 0;
@@ -329,7 +344,7 @@ public class AuthorParser {
                     }
                 } else if (s1.equals("<suffix>") || s1.equals("I-<suffix>")) {
                     //System.out.println("<suffix> ! " + "lastTag: " + lastTag);
-                    if (s3.equals("<suffix>")) {
+                    if (s3.equals("<author>")) {
                         if (newMarker) {
                             aut.setSuffix(s2);
                             newMarker = false;
@@ -372,6 +387,14 @@ public class AuthorParser {
                 }
 
                 lastTag = s1;
+
+                if (nameLabel(s1)) {
+                    aut.getLayoutTokens().add(layoutToken);
+                }
+                while (ptr < tokenizations.size() && (LayoutTokensUtil.spaceyToken(tokenizations.get(ptr).t()) || tokenizations.get(ptr).t().trim().isEmpty())) {
+                    aut.getLayoutTokens().add(tokenizations.get(ptr));
+                    ptr++;
+                }
             }
             if (aut.notNull()) {
                 if (fullAuthors == null) {
@@ -382,9 +405,13 @@ public class AuthorParser {
 
         } catch (Exception e) {
 //			e.printStackTrace();
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception occurred while running Grobid.", e);
         }
         return fullAuthors;
+    }
+
+    private boolean nameLabel(String label) {
+        return label.endsWith("<surname>") || label.endsWith("<forename>") || label.endsWith("<middlename>");
     }
 
     /**
@@ -721,14 +748,35 @@ public class AuthorParser {
     /**
      * Processing of authors in citations
      */
-    public List<Person> processingCitation(List<String> inputs) {
-        return processing(inputs, false);
+    public List<Person> processingCitation(String inputs) throws Exception {
+        if (inputs == null) {
+            return null;
+        }
+        return processing(getAuthorBlocks(inputs), Lists.newArrayList(Lists.transform(analyzer.tokenize(inputs), new Function<String, LayoutToken>() {
+            @Override
+            public LayoutToken apply(String s) {
+                return new LayoutToken(s);
+            }
+        })), false);
     }
 
-    public List<Person> processingHeader(List<String> inputs) {
-        return processing(inputs, true);
+    public List<Person> processingHeader(String inputs) throws Exception {
+        if (inputs == null) {
+            return null;
+        }
+        return processing(getAuthorBlocks(inputs),
+                Lists.newArrayList(Lists.transform(analyzer.tokenize(inputs), new Function<String, LayoutToken>() {
+            @Override
+            public LayoutToken apply(String s) {
+                return new LayoutToken(s);
+            }
+        })), true);
     }
-	
+
+    public List<Person> processingHeaderWithTokens(List<LayoutToken> inputs) {
+        return processing(getAuthorBlocksFromTokens(inputs), inputs, true);
+    }
+
     public void close() throws IOException {
     }
 }

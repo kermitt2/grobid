@@ -10,8 +10,10 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import org.apache.commons.io.FileUtils;
 
 /**
  * @author Patrice Lopez
@@ -22,7 +24,7 @@ public class SegmentationTrainer extends AbstractTrainer {
         super(GrobidModels.SEGMENTATION);
 
         // adjusting CRF training parameters for this model (only with Wapiti)
-        epsilon = 0.00001;
+        epsilon = 0.0001;
         window = 20;
     }
 
@@ -110,10 +112,9 @@ public class SegmentationTrainer extends AbstractTrainer {
             // get a factory for SAX parser
             SAXParserFactory spf = SAXParserFactory.newInstance();
 
-//            int n = 0;
             for (File tf : refFiles) {
                 String name = tf.getName();
-                System.out.println(name);
+                LOGGER.info("Processing: " + name);
 
                 TEISegmentationSaxParser parser2 = new TEISegmentationSaxParser();
 
@@ -122,63 +123,91 @@ public class SegmentationTrainer extends AbstractTrainer {
                 p.parse(tf, parser2);
 
                 List<String> labeled = parser2.getLabeledResult();
-                //totalExamples += parser2.n;
 
                 // we can now add the features
                 // we open the featured file
-                File theRawFile = new File(sourceRawPathLabel + File.separator + name.replace(".tei.xml", ""));
-                if (!theRawFile.exists()) {
-                    System.out.println("Raw file " + theRawFile +
-                            " does not exist. Please have a look!");
-                    continue;
-                }
+                try {
+                    File theRawFile = new File(sourceRawPathLabel + File.separator + name.replace(".tei.xml", ""));
+                    if (!theRawFile.exists()) {
+                        LOGGER.error("The raw file does not exist: " + theRawFile.getPath());
+                        continue;
+                    }
 
-                int q = 0;
-                BufferedReader bis = new BufferedReader(
-                        new InputStreamReader(new FileInputStream(
-                                sourceRawPathLabel + File.separator + name.replace(".tei.xml", "")), "UTF8"));
+                    // removing the @newline
+                    /*List<String> newLabeled = new ArrayList<String>();
+                    for(String label : labeled) {
+                        if (!label.startsWith("@newline"))
+                            newLabeled.add(label);
+                    } 
+                    labeled = newLabeled;*/
 
-                StringBuilder segmentation = new StringBuilder();
-
-                String line;
-//                String lastTag = null;
-                while ((line = bis.readLine()) != null) {
-                    int ii = line.indexOf(' ');
-                    String token = null;
-                    if (ii != -1)
-                        token = line.substring(0, ii);
-//                    boolean found = false;
-                    // we get the label in the labelled data file for the same token
-                    for (int pp = q; pp < labeled.size(); pp++) {
-                        String localLine = labeled.get(pp);
-                        StringTokenizer st = new StringTokenizer(localLine, " \t");
-                        if (st.hasMoreTokens()) {
-                            String localToken = st.nextToken();
-                            if (localToken.equals(token)) {
-                                String tag = st.nextToken();
-                                segmentation.append(line).append(" ").append(tag);
-//                                lastTag = tag;
-//                                found = true;
-                                q = pp + 1;
-                                pp = q + 10;
+/*StringBuilder temp = new StringBuilder();
+for(String label : labeled) {
+    temp.append(label);
+}
+FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toString());*/
+                
+                    int q = 0;
+                    BufferedReader bis = new BufferedReader(
+                            new InputStreamReader(new FileInputStream(theRawFile), "UTF8"));
+                    StringBuilder segmentation = new StringBuilder();
+                    String line = null;
+                    int l = 0;
+                    String previousTag = null;
+                    int nbInvalid = 0;
+                    while ((line = bis.readLine()) != null) {
+                        l++;
+                        int ii = line.indexOf(' ');
+                        String token = null;
+                        if (ii != -1)
+                            token = line.substring(0, ii);
+                        // we get the label in the labelled data file for the same token
+                        for (int pp = q; pp < labeled.size(); pp++) {
+                            String localLine = labeled.get(pp);
+                            StringTokenizer st = new StringTokenizer(localLine, " \t");
+                            if (st.hasMoreTokens()) {
+                                String localToken = st.nextToken();
+                                if (localToken.equals(token)) {
+                                    String tag = st.nextToken();
+                                    segmentation.append(line).append(" ").append(tag);
+                                    previousTag = tag;
+                                    q = pp + 1;
+                                    nbInvalid = 0;
+                                    //pp = q + 10;
+                                    break;
+                                }
+                            }
+                            if (pp - q > 5) {
+                                LOGGER.warn(name + " / Segmentation trainer: TEI and raw file unsynchronized at raw line " + l + " : " + localLine);
+                                nbInvalid++;
+                                // let's reuse the latest tag
+                                if (previousTag != null)
+                                   segmentation.append(line).append(" ").append(previousTag);
+                                break;
                             }
                         }
-                        if (pp - q > 5) {
+                        if (nbInvalid > 20) {
+                            // too many consecutive synchronization issues
                             break;
                         }
                     }
-                }
-                bis.close();
-
-                if ((writer2 == null) && (writer3 != null))
-                    writer3.write(segmentation.toString() + "\n");
-                if ((writer2 != null) && (writer3 == null))
-                    writer2.write(segmentation.toString() + "\n");
-                else {
-                    if (Math.random() <= splitRatio)
-                        writer2.write(segmentation.toString() + "\n");
-                    else
-                        writer3.write(segmentation.toString() + "\n");
+                    bis.close();
+                    if (nbInvalid < 10) {
+                        if ((writer2 == null) && (writer3 != null))
+                            writer3.write(segmentation.toString() + "\n");
+                        if ((writer2 != null) && (writer3 == null))
+                            writer2.write(segmentation.toString() + "\n");
+                        else {
+                            if (Math.random() <= splitRatio)
+                                writer2.write(segmentation.toString() + "\n");
+                            else
+                                writer3.write(segmentation.toString() + "\n");
+                        }
+                    } else {
+                        LOGGER.warn(name + " / too many synchronization issues, file not used in training data and to be fixed!");
+                    }
+                } catch (Exception e) {
+                   LOGGER.error("Fail to open or process raw file", e);
                 }
             }
 

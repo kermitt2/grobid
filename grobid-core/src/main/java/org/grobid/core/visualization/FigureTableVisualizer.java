@@ -53,7 +53,7 @@ public class FigureTableVisualizer {
 //            File input = new File("/Work/temp/figureExtraction/vector/6.pdf");
 
 //            File input = new File("/Users/zholudev/Downloads/AS-134079286616064@1408978401811_content_1.pdf");
-            File input = new File("/Users/zholudev/Downloads/AS-220149891244043@1429499232904_content_1.pdf");
+            File input = new File("/Users/zholudev/Downloads/AS-411011216625664@1475004118387_content_1.pdf");
 
 //
 //

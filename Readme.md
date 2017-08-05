@@ -5,6 +5,11 @@
 [![Coverage Status](https://coveralls.io/repos/kermitt2/grobid/badge.svg)](https://coveralls.io/r/kermitt2/grobid)
 [![Documentation Status](https://readthedocs.org/projects/grobid/badge/?version=latest)](https://readthedocs.org/projects/grobid/?badge=latest)
 [![Docker Status](https://images.microbadger.com/badges/version/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Latest Docker HUB image")
+<!--[![Dependency Status](https://www.versioneye.com/user/projects/5942f4990fb24f005a2a6136/badge.svg)](https://www.versioneye.com/user/projects/5942f4990fb24f005a2a6136)-->
+
+## GROBID documentation
+
+Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detailed information.
 
 ## Purpose
 
@@ -31,8 +36,9 @@ GROBID can be considered as production ready. Deployments in production includes
 The key aspects of GROBID are the following ones:
 
 + Written in Java, with JNI call to native CRF libraries. 
-+ High performance - on a 2011 low profile MacBook Pro: header extraction from 4000 PDF in 10 minutes (or from 3 PDF per second with the RESTful API), parsing of 3000 references in 18 seconds. [INIST](http://www.inist.fr/lang=en) recently scaled GROBID REST service for processing 1 million PDF in 1 day on a Xeon 10 CPU E5-2660 and 10 GB memory (3GB used in average) with 9 threads - so around 11,5 PDF per second.
-+ Lazy loading of models and resources. Depending on the selectd process, only the required data are loaded in memory. For instance, extracting only metadata header from a PDF requires less than 2 GB memory in a multithreading usage, extracting citations uses around 3GB and extracting all the PDF structure around 4GB.  
++ Speed - on a modern but low profile MacBook Pro: header extraction from 4000 PDF in 10 minutes (or from 3 PDF per second with the RESTful API), parsing of 3000 references in 18 seconds. 
++ Speed and Scalability: [INIST](http://www.inist.fr/lang=en) recently scaled GROBID REST service for extracting bibliographical references of 1 million PDF in 1 day on a Xeon 10 CPU E5-2660 and 10 GB memory (3GB used in average) with 9 threads - so around 11.5 PDF per second. The complete processing of 395,000 PDF (IOP) with full text structuring was performed in 12h46mn with 16 threads, 0.11s per PDF (~1,72s per PDF with single thread).
++ Lazy loading of models and resources. Depending on the selected process, only the required data are loaded in memory. For instance, extracting only metadata header from a PDF requires less than 2 GB memory in a multithreading usage, extracting citations uses around 3GB and extracting all the PDF structure around 4GB.  
 + Robust and fast PDF processing based on Xpdf and dedicated post-processing.
 + Modular and reusable machine learning models. The extractions are based on Linear Chain Conditional Random Fields which is currently the state of the art in bibliographical information extraction and labeling. The specialized CRF models are cascaded to build a complete document structure.  
 + Full encoding in [__TEI__](http://www.tei-c.org/Guidelines/P5), both for the training corpus and the parsed results.
@@ -53,13 +59,18 @@ The Web services are documented in the [service manual](https://github.com/kermi
 
 _Warning_: Some quota and query limitation apply to the demo server! If you are interested in using such online GROBID service for your project without limitation (and with support), please contact us (<patrice.lopez@science-miner.com>).
 
-## GROBID documentation
-
-Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detailed information.
 
 ## Latest version
 
-The latest stable release of GROBID is version ```0.4.1```. As compared to previous version ```0.4.0```, this version brings:
+The latest stable release of GROBID is version ```0.4.2```. As compared to previous version ```0.4.1```, this version brings:
+
++ f-score improvement for the PubMed Central sample: fulltext +10-14%, header +0.5%, citations +0.5%
++ More robust PDF parsing
++ Identification of equations (with PDF coordinates)
++ End-to-end evaluation with Pub2TEI conversions
++ many fixes and refactoring
+
+New in previous release ```0.4.1```:
 
 + Support for Windows thanks to the contributions of Christopher Boumenot!
 + Support to Docker.
@@ -90,6 +101,6 @@ ej-technologies provided us a free open-source license for its Java Profiler. Cl
 
 Please simply refer to the github project:
 
-Grobid (2008-2016) <https://github.com/kermitt2/grobid>
+Grobid (2008-2017) <https://github.com/kermitt2/grobid>
 
 See the [GROBID documentation](http://grobid.readthedocs.org/en/latest/References) for more related resources. 

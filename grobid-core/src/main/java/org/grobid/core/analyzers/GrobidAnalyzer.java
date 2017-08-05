@@ -1,6 +1,7 @@
 package org.grobid.core.analyzers;
 
 import org.grobid.core.lang.Language;
+import org.grobid.core.layout.LayoutToken;
 
 import org.wipo.nlp.textboundaries.ReTokenizer;
 import org.wipo.nlp.textboundaries.ReTokenizerFactory;
@@ -12,14 +13,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Class dispatching text to be tokenized to the adequate analyzer given a specified language.
+ * An Analyzer able to dispatch text to be tokenized to the adequate analyzer given a specified language.
  *
  * The language might be preliminary set by the language recognizer or manually if it is already 
  * known by the context of usage of the text. 
  *
  * @author Patrice Lopez
  */
-public class GrobidAnalyzer {
+public class GrobidAnalyzer implements org.grobid.core.analyzers.Analyzer {
 	private static final Logger LOGGER = LoggerFactory.getLogger(GrobidAnalyzer.class);
 	
 	private static volatile GrobidAnalyzer instance;
@@ -53,57 +54,65 @@ public class GrobidAnalyzer {
     private GrobidAnalyzer() {
 	}
 	
+	public String getName() {
+		return "GrobidAnalyzer";
+	} 
+
 	/**
 	 * Tokenizer entry point
 	 */
-	public List<String> tokenize(String text) throws Exception {
-		return tokenize(null, text);
+	public List<String> tokenize(String text) {
+		return tokenize(text, null);
 	}
 	
-	public List<String> tokenize(Language lang, String text) throws Exception {
-		List<String> result = null;
+	public List<String> tokenize(String text, Language lang) {
+		List<String> result = new ArrayList<String>();
 		if ( (text == null) || (text.length() == 0) ) {
-			return new ArrayList<String>();
+			return result;
 		}
-		if ( (lang == null) || (lang.getLang() == null) ) {
-			// default Indo-European languages
-			result = GrobidDefaultAnalyzer.tokenize(text);
-		}
-		else if (lang.getLang().equals("ja")) {
-			// Japanese analyser
-			if (jaAnalyzer == null)
-				jaAnalyzer = ReTokenizerFactory.create("ja_g");
-			result = jaAnalyzer.tokensAsList(text);
-		}
-		else if (lang.getLang().equals("zh") || lang.getLang().equals("zh-cn")) {
-			// Chinese analyser
-			if (zhAnalyzer == null)
-				zhAnalyzer = ReTokenizerFactory.create("zh_g");
-			result = zhAnalyzer.tokensAsList(text);
-		}
-		else if (lang.getLang().equals("kr")) {
-			// Korean analyser
-			if (krAnalyzer == null)
-				krAnalyzer = ReTokenizerFactory.create("kr_g");
-			result = krAnalyzer.tokensAsList(text);
-		}
-		else if (lang.getLang().equals("ar")) {
-			// Arabic analyser
-			result = GrobidDefaultAnalyzer.tokenize(text);
-			int p = 0;
-			for(String token : result) {
-				// string being immutable in Java, I think we can't do better that this:
-				StringBuilder newToken = new StringBuilder();
-				for(int i=0; i<token.length(); i++) {
-					newToken.append(ArabicChars.arabicCharacters(token.charAt(i)));
-				}
-				result.set(p, newToken.toString());
-				p++;
+		try {
+			if ( (lang == null) || (lang.getLang() == null) ) {
+				// default Indo-European languages
+				result = GrobidDefaultAnalyzer.getInstance().tokenize(text);
 			}
-		}
-		else {
-			// default Indo-European languages
-			result = GrobidDefaultAnalyzer.tokenize(text);
+			else if (lang.isJapaneses()) {
+				// Japanese analyser
+				if (jaAnalyzer == null)
+					jaAnalyzer = ReTokenizerFactory.create("ja_g");
+				result = jaAnalyzer.tokensAsList(text);
+			}
+			else if (lang.isChinese()) {
+				// Chinese analyser
+				if (zhAnalyzer == null)
+					zhAnalyzer = ReTokenizerFactory.create("zh_g");
+				result = zhAnalyzer.tokensAsList(text);
+			}
+			else if (lang.isKorean()) {
+				// Korean analyser
+				if (krAnalyzer == null)
+					krAnalyzer = ReTokenizerFactory.create("kr_g");
+				result = krAnalyzer.tokensAsList(text);
+			}
+			else if (lang.isArabic()) {
+				// Arabic analyser
+				result = GrobidDefaultAnalyzer.getInstance().tokenize(text);
+				int p = 0;
+				for(String token : result) {
+					// string being immutable in Java, I think we can't do better that this:
+					StringBuilder newToken = new StringBuilder();
+					for(int i=0; i<token.length(); i++) {
+						newToken.append(ArabicChars.arabicCharacters(token.charAt(i)));
+					}
+					result.set(p, newToken.toString());
+					p++;
+				}
+			}
+			else {
+				// default Indo-European languages
+				result = GrobidDefaultAnalyzer.getInstance().tokenize(text);
+			}
+		} catch(Exception e) {
+			LOGGER.error("Invalid tokenizer", e);
 		}
 		return result;
 	}
@@ -111,35 +120,53 @@ public class GrobidAnalyzer {
 	/**
 	 * Re-tokenizer entry point to be applied to text already tokenized in the PDF representation
 	 */
-	public List<String> retokenize(List<String> textTokenized) throws Exception {
-		return retokenize(null, textTokenized);
+	public List<String> retokenize(List<String> textTokenized) {
+		return retokenize(textTokenized, null);
 	}
 	
-	public List<String> retokenize(Language lang, List<String> textTokenized) throws Exception {
+	public List<String> retokenize(List<String> textTokenized, Language lang) {
 		List<String> result = null;
 		if ( (textTokenized == null) || (textTokenized.size() == 0) ) {
 			return new ArrayList<String>();
 		}
 		if ( (lang == null) || (lang.getLang() == null) ) {
 			// default Indo-European languages
-			result = GrobidDefaultAnalyzer.retokenize(textTokenized);
+			result = GrobidDefaultAnalyzer.getInstance().retokenize(textTokenized);
 		}
-		else if (lang.getLang().equals("ja")) {
+		else if (lang.isJapaneses()) {
 			// Japanese analyser
 		}
-		else if (lang.getLang().equals("zh")) {
+		else if (lang.isChinese()) {
 			// Chinese analyser
 		}
-		else if (lang.getLang().equals("kr")) {
+		else if (lang.isKorean()) {
 			// Korean analyser
 		}
-		else if (lang.getLang().equals("ar")) {
+		else if (lang.isArabic()) {
 			// Arabic analyser
 		}
 		else {
 			// default Indo-European languages
-			result = GrobidDefaultAnalyzer.retokenize(textTokenized);
+			result = GrobidDefaultAnalyzer.getInstance().retokenize(textTokenized);
 		}
 		return result;
 	}
+
+	public List<LayoutToken> tokenizeWithLayoutToken(String text) {
+		return tokenizeWithLayoutToken(text, null);
+	}
+
+	public List<LayoutToken> tokenizeWithLayoutToken(String text, Language lang) {
+        List<LayoutToken> result = new ArrayList<>();
+        List<String> tokens = tokenize(text, lang);
+        int pos = 0;
+        for(String tok : tokens) {
+        	LayoutToken layoutToken = new LayoutToken();
+            layoutToken.setText(tok);
+            layoutToken.setOffset(pos);
+            result.add(layoutToken);
+            pos += tok.length();
+        }
+        return result;
+    }
 }

@@ -26,13 +26,29 @@ public final class Language {
         }
 
         if ((langId.length() != 3 && langId.length() != 2 && (!langId.equals("sorb")) && 
-            (!langId.equals("zh-cn"))) || !(Character.isLetter(langId.charAt(0)) 
+            (!langId.equals("zh-cn")) && (!langId.equals("zh-tw"))) || !(Character.isLetter(langId.charAt(0))
             && Character.isLetter(langId.charAt(1)))) {
             throw new GrobidException("Language id should consist of two or three letters, but was: " + langId);
         }
 
         this.lang = langId;
         this.conf = confidence;
+    }
+
+    public boolean isChinese() {
+        return "zh".equals(lang) || "zh-cn".equals(lang) || "zh-tw".equals(lang);
+    }
+
+    public boolean isJapaneses() {
+        return "ja".equals(lang);
+    }
+
+    public boolean isKorean() {
+        return "kr".equals(lang);
+    }
+
+    public boolean isArabic() {
+        return "ar".equals(lang);
     }
 
     public String getLang() {

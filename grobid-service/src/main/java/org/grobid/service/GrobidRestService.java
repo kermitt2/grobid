@@ -34,6 +34,7 @@ import javax.ws.rs.core.StreamingOutput;
 import javax.ws.rs.core.UriInfo;
 
 import org.grobid.core.factory.AbstractEngineFactory;
+import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.service.process.GrobidRestProcessAdmin;
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
@@ -45,7 +46,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.sun.jersey.multipart.FormDataParam;
+import com.sun.jersey.multipart.FormDataBodyPart;
 import com.sun.jersey.spi.resource.Singleton;
+
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * RESTful service for the GROBID system.
@@ -87,6 +92,16 @@ public class GrobidRestService implements GrobidPathes {
 	@GET
 	public Response isAlive() {
 		return GrobidRestProcessGeneric.isAlive();
+	}
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessGeneric#getVersion()
+	 */
+	@Path(GrobidPathes.PATH_GET_VERSION)
+	@Produces(MediaType.TEXT_PLAIN)
+	@GET
+	public Response getVersion() {
+		return GrobidRestProcessGeneric.getVersion();
 	}
 
 	/**
@@ -199,7 +214,9 @@ public class GrobidRestService implements GrobidPathes {
 	 	@FormDataParam("consolidate") String consolidate, 
 		@DefaultValue("-1") @FormDataParam("start") int startPage,
 		@DefaultValue("-1") @FormDataParam("end") int endPage,
-		@FormDataParam("generateIDs") String generateIDs) {
+		@FormDataParam("generateIDs") String generateIDs,
+		@FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) 
+		{
 		boolean consol = false;
 		boolean generate = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
@@ -208,8 +225,17 @@ public class GrobidRestService implements GrobidPathes {
 		if ( (generateIDs != null) && (generateIDs.equals("1")) ) {
 			generate = true;
 		}
+		List<String> teiCoordinates = new ArrayList<String>();
+		if (coordinates != null) {
+			// note: null default value is a bug in Jersey https://java.net/jira/browse/JERSEY-291
+			// it should be fixed in a more recent version of jersey 
+			for (FormDataBodyPart coordinate : coordinates) {
+			    String v = coordinate.getValueAs(String.class);
+			    teiCoordinates.add(v);
+			}
+		}
 		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
-			consol, false, startPage, endPage, generate);
+			consol, false, startPage, endPage, generate, teiCoordinates);
 	}
 
 	/**
@@ -223,7 +249,9 @@ public class GrobidRestService implements GrobidPathes {
 	 	@FormDataParam("consolidate") String consolidate, 
 		@DefaultValue("-1") @FormDataParam("start") int startPage,
 		@DefaultValue("-1") @FormDataParam("end") int endPage,
-		@FormDataParam("generateIDs") String generateIDs) {
+		@FormDataParam("generateIDs") String generateIDs,
+		@FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) 
+	{
 		boolean consol = false;
 		boolean generate = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
@@ -232,8 +260,15 @@ public class GrobidRestService implements GrobidPathes {
 		if ( (generateIDs != null) && (generateIDs.equals("1")) ) {
 			generate = true;
 		}
+		List<String> teiCoordinates = new ArrayList<String>();
+		if (coordinates != null) {
+			for (FormDataBodyPart coordinate : coordinates) {
+			    String v = coordinate.getValueAs(String.class);
+			    teiCoordinates.add(v);
+			}
+		}
 		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
-			consol, false, startPage, endPage, generate);
+			consol, false, startPage, endPage, generate, teiCoordinates);
 	}
 
 	/**
@@ -296,7 +331,8 @@ public class GrobidRestService implements GrobidPathes {
 	 	@FormDataParam("consolidate") String consolidate, 
 		@DefaultValue("-1") @FormDataParam("start") int startPage,
 		@DefaultValue("-1") @FormDataParam("end") int endPage,
-		@FormDataParam("generateIDs") String generateIDs) {
+		@FormDataParam("generateIDs") String generateIDs,
+		@FormDataParam("teiCoordinates") List<String> teiCoordinates) {
 		boolean consol = false;
 		boolean generate = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
@@ -306,7 +342,7 @@ public class GrobidRestService implements GrobidPathes {
 			generate = true;
 		}
 		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
-			consol, true, startPage, endPage, generate);
+			consol, true, startPage, endPage, generate, teiCoordinates);
 	}
 
 	/**
@@ -320,7 +356,8 @@ public class GrobidRestService implements GrobidPathes {
 	 	@FormDataParam("consolidate") String consolidate, 
 		@DefaultValue("-1") @FormDataParam("start") int startPage,
 		@DefaultValue("-1") @FormDataParam("end") int endPage,
-		@FormDataParam("generateIDs") String generateIDs) {
+		@FormDataParam("generateIDs") String generateIDs,
+		@FormDataParam("teiCoordinates") List<String> teiCoordinates) {
 		boolean consol = false;
 		boolean generate = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
@@ -330,7 +367,7 @@ public class GrobidRestService implements GrobidPathes {
 			generate = true;
 		}
 		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
-			consol, true, startPage, endPage, generate);
+			consol, true, startPage, endPage, generate, teiCoordinates);
 	}
 
 	/**

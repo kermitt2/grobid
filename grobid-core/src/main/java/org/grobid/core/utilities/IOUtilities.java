@@ -1,5 +1,6 @@
 package org.grobid.core.utilities;
 
+import org.apache.commons.io.IOUtils;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,8 +48,8 @@ public class IOUtilities {
             outStream.write(buf, 0, len);
             out.append(outStream.toString());
         }
-        inputStrem.close();
-        outStream.close();
+        IOUtils.closeQuietly(inputStrem);
+        IOUtils.closeQuietly(outStream);
 
         return out.toString();
     }

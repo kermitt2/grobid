@@ -6,7 +6,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.document.Document;
-import org.grobid.core.engines.SegmentationLabel;
+import org.grobid.core.engines.label.SegmentationLabels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +43,7 @@ public class RegexReferenceSegmenter implements ReferenceSegmenter {
     @Override
     //public List<LabeledReferenceResult> extract(String referenceBlock) {
 	public List<LabeledReferenceResult> extract(Document doc) {	
-		String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
+		String referencesStr = doc.getDocumentPartText(SegmentationLabels.REFERENCES);
         return Lists.transform(segmentReferences(referencesStr), LABELED_REFERENCE_RESULT_FUNCTION);
     }
 
