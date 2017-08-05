@@ -367,7 +367,7 @@ public class FullTextParser extends AbstractParser {
 	                    //nn++;
 	                    continue;
 	                }
-	                text = text.replace(" ", "");
+	                text = text.replaceAll("\\s+", "");
 	                if (text.length() == 0) {
 	                    n++;
 	                    mm++;
@@ -375,7 +375,7 @@ public class FullTextParser extends AbstractParser {
 	                    continue;
 	                }
 
-	                if (text.equals("\n") || text.equals("\r")) {
+	                if (text.equals("\n") || text.equals("\r") || text.equals("\t") ) {
 	                    newline = true;
 	                    previousNewline = true;
 	                    n++;
