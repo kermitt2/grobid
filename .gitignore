@@ -13,6 +13,8 @@ Thumbs.db
 tei-alt
 raw-alt
 
+grobid-core/dependency-reduced-pom.xml
+
 grobid-core/src/test/resources/org/grobid/core/annotations/resTeiStAXParser/out.tei.xml
 
 grobid-home/models/affiliation-address/model.crf.old
