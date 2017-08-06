@@ -252,7 +252,7 @@ public class Engine implements Closeable {
      * @param pathTEI : the path of the training data will be written as TEI file
 	 * @param id : an optional ID to be used in the TEI file, -1 if not to be used
      */
-    public void createTrainingReferenceSegmentation(File input, String pathTEI, int id) throws Exception {
+    /*public void createTrainingReferenceSegmentation(File input, String pathTEI, int id) throws Exception {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -306,7 +306,7 @@ public class Engine implements Closeable {
 		catch (IOException e) {
             throw new GrobidException("An IO exception occurred while running Grobid.", e);
         }
-    }
+    }*/
 
 	/**
      * Create training data for the segmentation of a reference block based on a repository of PDF files
@@ -316,9 +316,9 @@ public class Engine implements Closeable {
      * @param resultPath : the path to the repository where to write the training data as a TEI files
 	 * @param id : an optional ID to be used in the TEI file, -1 if not to be used
      */
-    public int batchCreateTrainingReferenceSegmentation(String directoryPath, String resultPath, int id) {
+    /*public int batchCreateTrainingReferenceSegmentation(String directoryPath, String resultPath, int id) {
 		return batchCreateTraining(directoryPath, resultPath, id, 3);
-    }
+    }*/
 
     /**
      * Download a PDF file.
@@ -480,9 +480,9 @@ public class Engine implements Closeable {
      * @param id         : an optional ID to be used in the TEI file and the header
      *                   file
      */
-    public void createTrainingHeader(String inputFile, String pathHeader, String pathTEI, int id) {
+    /*public void createTrainingHeader(String inputFile, String pathHeader, String pathTEI, int id) {
         Document doc = parsers.getHeaderParser().createTrainingHeader(inputFile, pathHeader, pathTEI);
-    }
+    }*/
 
     /**
      * Create training data for the full text model based on the application of
@@ -495,8 +495,23 @@ public class Engine implements Closeable {
      * @param id           : an optional ID to be used in the TEI file and the full text
      *                     file, -1 if not used
      */
-    public void createTrainingFullText(File inputFile, String pathFullText, String pathTEI, int id) {
+    /*public void createTrainingFullText(File inputFile, String pathFullText, String pathTEI, int id) {
         Document doc = parsers.getFullTextParser().createTrainingFullText(inputFile, pathFullText, pathTEI, id);
+    }*/
+
+    /**
+     * Create training data for all models based on the application of
+     * the current full text model on a new PDF
+     *
+     * @param inputFile    : the path of the PDF file to be processed
+     * @param pathFullText : the path where to put the full text with layout features
+     * @param pathTEI      : the path where to put the annotated TEI representation (the
+     *                     file to be corrected for gold-level training data)
+     * @param id           : an optional ID to be used in the TEI file and the full text
+     *                     file, -1 if not used
+     */
+    public void createTraining(File inputFile, String pathFullText, String pathTEI, int id) {
+        Document doc = parsers.getFullTextParser().createTraining(inputFile, pathFullText, pathTEI, id);
     }
 
     /**
@@ -510,9 +525,9 @@ public class Engine implements Closeable {
      * @param id               : an optional ID to be used in the TEI file and the segmentation text
      *                         file, -1 if not used
      */
-    public void createTrainingSegmentation(String inputFile, String pathSegmentation, String pathTEI, int id) {
+    /*public void createTrainingSegmentation(String inputFile, String pathSegmentation, String pathTEI, int id) {
         parsers.getSegmentationParser().createTrainingSegmentation(inputFile, pathSegmentation, pathTEI, id);
-    }
+    }*/
 
     /**
      * Parse and convert the current article into TEI, this method performs the
@@ -616,9 +631,9 @@ public class Engine implements Closeable {
      *                      will be included if ind = -1
      * @return the number of processed files.
      */
-    public int batchCreateTrainingHeader(String directoryPath, String resultPath, int ind) {
+    /*public int batchCreateTrainingHeader(String directoryPath, String resultPath, int ind) {
         return batchCreateTraining(directoryPath, resultPath, ind, 0);
-    }
+    }*/
 
     /**
      * Process all the PDF in a given directory with a fulltext extraction and
@@ -634,8 +649,25 @@ public class Engine implements Closeable {
      *                      will be included if ind = -1
      * @return the number of processed files.
      */
-    public int batchCreateTrainingFulltext(String directoryPath, String resultPath, int ind) {
+    /*public int batchCreateTrainingFulltext(String directoryPath, String resultPath, int ind) {
         return batchCreateTraining(directoryPath, resultPath, ind, 1);
+    }*/
+
+    /**
+     * Process all the PDF in a given directory and produce the corresponding training 
+     * data format files for all models, ready for manual correction. The goal of this 
+     * method is to help to produce additional training data based on an existing model.
+     *
+     * @param directoryPath - the path to the directory containing PDF to be processed.
+     * @param resultPath    - the path to the directory where the results as XML files
+     *                      shall be written.
+     * @param ind           - identifier integer to be included in the resulting files to
+     *                      identify the training case. This is optional: no identifier
+     *                      will be included if ind = -1
+     * @return the number of processed files.
+     */
+    public int batchCreateTraining(String directoryPath, String resultPath, int ind) {
+        return batchCreateTraining(directoryPath, resultPath, ind, 4);
     }
 
     /**
@@ -652,9 +684,9 @@ public class Engine implements Closeable {
      *                      will be included if ind = -1
      * @return the number of processed files.
      */
-    public int batchCreateTrainingSegmentation(String directoryPath, String resultPath, int ind) {
+    /*public int batchCreateTrainingSegmentation(String directoryPath, String resultPath, int ind) {
         return batchCreateTraining(directoryPath, resultPath, ind, 2);
-    }
+    }*/
 
     private int batchCreateTraining(String directoryPath, String resultPath, int ind, int type) {
         try {
@@ -682,7 +714,7 @@ public class Engine implements Closeable {
                 try {
                     // File pdfFile = refFiles[n];
                     // if (pdfFile.getAbsolutePath().endsWith(".pdf")) {
-                    if (type == 0) {
+                    /*if (type == 0) {
                         createTrainingHeader(pdfFile.getPath(), resultPath, resultPath, ind + n);
                     } else if (type == 1) {
                         createTrainingFullText(pdfFile, resultPath, resultPath, ind + n);
@@ -690,6 +722,9 @@ public class Engine implements Closeable {
                         createTrainingSegmentation(pdfFile.getPath(), resultPath, resultPath, ind + n);
                     } else if (type == 3) {
                         createTrainingReferenceSegmentation(pdfFile, resultPath, ind + n);
+                    } else */
+                    if (type == 4) {
+                        createTraining(pdfFile, resultPath, resultPath, ind + n);
                     }
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "

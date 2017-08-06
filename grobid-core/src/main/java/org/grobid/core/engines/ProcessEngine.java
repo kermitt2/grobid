@@ -366,22 +366,34 @@ public class ProcessEngine implements Closeable {
      *
      * @param pGbdArgs The parameters.
      */
-    public void createTrainingHeader(final GrobidMainArgs pGbdArgs) {
+    /*public void createTrainingHeader(final GrobidMainArgs pGbdArgs) {
         inferPdfInputPath(pGbdArgs);
         inferOutputPath(pGbdArgs);
         int result = getEngine().batchCreateTrainingHeader(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
         LOGGER.info(result + " files processed.");
-    }
+    }*/
 
     /**
      * Generate training data for the full text model.
      *
      * @param pGbdArgs The parameters.
      */
-    public void createTrainingFulltext(final GrobidMainArgs pGbdArgs) {
+    /*public void createTrainingFulltext(final GrobidMainArgs pGbdArgs) {
         inferPdfInputPath(pGbdArgs);
         inferOutputPath(pGbdArgs);
         int result = getEngine().batchCreateTrainingFulltext(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
+        LOGGER.info(result + " files processed.");
+    }*/
+
+    /**
+     * Generate training data for all models
+     *
+     * @param pGbdArgs The parameters.
+     */
+    public void createTraining(final GrobidMainArgs pGbdArgs) {
+        inferPdfInputPath(pGbdArgs);
+        inferOutputPath(pGbdArgs);
+        int result = getEngine().batchCreateTraining(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
         LOGGER.info(result + " files processed.");
     }
 
@@ -390,24 +402,24 @@ public class ProcessEngine implements Closeable {
      *
      * @param pGbdArgs The parameters.
      */
-    public void createTrainingSegmentation(final GrobidMainArgs pGbdArgs) {
+    /*public void createTrainingSegmentation(final GrobidMainArgs pGbdArgs) {
         inferPdfInputPath(pGbdArgs);
         inferOutputPath(pGbdArgs);
         int result = getEngine().batchCreateTrainingSegmentation(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
         LOGGER.info(result + " files processed.");
-    }
+    }*/
 
     /**
      * Generate training data for the reference segmentation model.
      *
      * @param pGbdArgs The parameters.
      */
-    public void createTrainingReferenceSegmentation(final GrobidMainArgs pGbdArgs) {
+    /*public void createTrainingReferenceSegmentation(final GrobidMainArgs pGbdArgs) {
         inferPdfInputPath(pGbdArgs);
         inferOutputPath(pGbdArgs);
         int result = getEngine().batchCreateTrainingReferenceSegmentation(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
         LOGGER.info(result + " files processed.");
-    }
+    }*/
 
     /**
      * Generate training data for citation extraction from patent documents.

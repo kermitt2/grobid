@@ -710,7 +710,7 @@ public class Segmentation extends AbstractParser {
      * @param tokenizations toks
      * @return extraction
      */
-    private StringBuffer trainingExtraction(String result,
+    public StringBuffer trainingExtraction(String result,
                                             List<LayoutToken> tokenizations,
                                             Document doc) {
         // this is the main buffer for the whole full text
