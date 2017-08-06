@@ -22,6 +22,6 @@ See [here](https://github.com/kermitt2/grobid/issues/142#issuecomment-253497513)
 
 libxml2 is required by pdf2xml, and is normally shipped by default on all standard installation (Ubuntu, Mac OSX, etc).
 
-For minimal or cloud based / container system like Linode, AWS, Docker, etc might not be installed by default and should thus be installed as prerequisite.
+For minimal or cloud based / container system like Linode, AWS, Docker, etc. _libxml2_ might not be installed by default and should thus be installed as prerequisite.
 
 See [here](https://github.com/kermitt2/grobid/issues/101) the open issue. 

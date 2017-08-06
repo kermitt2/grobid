@@ -2,7 +2,7 @@
 
 ## Models
 
-Grobid uses different CRF models depending on the labeling task to be realized. For a complex extraction and parsing tasks (for instance header extraction and parsing), several models are used in cascade. The current models are the following:
+Grobid uses different CRF models depending on the labeling task to be realized. For a complex extraction and parsing tasks (for instance header extraction and parsing), several models are used in cascade. The current models are the following ones:
 
 * affiliation-address
 
@@ -22,17 +22,11 @@ Grobid uses different CRF models depending on the labeling task to be realized. 
 
 * reference-segmentation
 
-The following models are experimental and it is not advised to use them at this time:
-
 * fulltext
 
 * figure
 
 * table
-
-* chemical entities
-
-* ebook
 
 The models are located under `grobid-home/models`. Each of these models can be retrained using amended or additional training data. For production, a model is trained with all the available training data to maximize the performance. For development purposes, it is also possible to evaluate a model with part of the training data. 
 
@@ -100,9 +94,11 @@ Several runs with different files to evaluate can be made to have a more reliabl
 
 ## Generation of training data
 	
-To generate some training datas from some input pdf, the batch grobid-core-`<current version>`.one-jar.jar can be used: [Grobid batch](Grobid-batch.md) (createTrainingHeader, createTrainingFulltext, createTrainingPatentcitations, createTrainingSegmentation, createTrainingReferenceSegmentation).
+To generate some training datas from some input pdf, the batch grobid-core-`<current version>`.one-jar.jar can be used: [Grobid batch](Grobid-batch.md) (`createTraining`).
 
-In the case of `createTrainingHeader`, for each pdf in input directory GROBID generates 1 header file (`*.training.header`)  and a collection (one per model used) of TEI files (`*.training.[model_name].tei.xml`). Each model has separate training data, and thus uses separate files. So we have one file for header (`*.training.header.tei.xml`), one for dates (`*.training.date.tei.xml`), one for names, etc...
+For each pdf in input directory, GROBID generates different files because each model has separate training data, and thus uses separate files. So we have one file for header (`*.training.header.tei.xml`), one for dates (`*.training.date.tei.xml`), one for names, etc...
+
+When a model uses PDF layout features, an additional feature file (for example `*.training.header` for the header model) is generated without `.tei.xml` extension. 
 
 If you wish to maintain the training corpus as gold standard, these automatically generated data have to be checked and corrected manually before being moved to the training/evaluation folder of the corresponding model. For correcting/checking these data, the guidelines presented in the next section must be followed to ensure the consistency of the whole training sets. 
 
