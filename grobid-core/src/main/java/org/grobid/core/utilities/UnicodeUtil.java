@@ -10,7 +10,8 @@ public class UnicodeUtil {
 	// As java \s doesn’t support the Unicode white space property (\s matches
 	// [ \t\n\x0B\f\r]), here are the 26 code points of the "official" stable 
 	// p{White_Space} unicode property
-	private static String whitespace_chars = "\\u0009" // CHARACTER TABULATION \t
+	private static String whitespace_chars = "[" 
+										+ "\\u0009" // CHARACTER TABULATION \t
 			                        	+ "\\u000A"  // LINE FEED (LF) \n -> new line 
 			                        	+ "\\u000B"  // LINE TABULATION \v -> new line 
 			                        	+ "\\u000C"  // FORM FEED (FF) -> break page 
@@ -35,11 +36,13 @@ public class UnicodeUtil {
 				                        + "\\u2029"  // PARAGRAPH SEPARATOR
 				                        + "\\u202F"  // NARROW NO-BREAK SPACE
 				                        + "\\u205F"  // MEDIUM MATHEMATICAL SPACE
-				                        + "\\u3000"; // IDEOGRAPHIC SPACE
+				                        + "\\u3000"  // IDEOGRAPHIC SPACE
+				                        + "]";
 
 	// a more restrictive selection of horizontal white space characters than the 
 	// Unicode p{White_Space} property (which includes new line and vertical spaces)		                     
-	private static String my_whitespace_chars = "\\u0009" // CHARACTER TABULATION \t
+	private static String my_whitespace_chars = "[" 
+										+"\\u0009" // CHARACTER TABULATION \t
 			                        	+ "\\u0020"  // SPACE
 				                        + "\\u00A0"  // NO-BREAK SPACE
 				                        + "\\u1680"  // OGHAM SPACE MARK
@@ -59,10 +62,12 @@ public class UnicodeUtil {
 				                        + "\\u2029"  // PARAGRAPH SEPARATOR
 				                        + "\\u202F"  // NARROW NO-BREAK SPACE
 				                        + "\\u205F"  // MEDIUM MATHEMATICAL SPACE
-				                        + "\\u3000"; // IDEOGRAPHIC SPACE			                    
+				                        + "\\u3000"  // IDEOGRAPHIC SPACE			                    
+				                        + "]";
 
     // all the horizontal low lines
-    private static String horizontal_low_lines_chars = "\\u005F" // low Line
+    private static String horizontal_low_lines_chars = "["
+    											  + "\\u005F" // low Line
 			    								  + "\\u203F" 	 // undertie
 			    								  + "\\u2040" 	 // character tie
 			    								  + "\\u2054"  	 // inverted undertie
@@ -71,15 +76,17 @@ public class UnicodeUtil {
 			    								  + "\\uFE4F" 	 // wavy low line
 			    								  + "\\uFF3F" 	 // fullwidth low line 
 			    								  + "\\uFE33" 	 // Presentation Form For Vertical Low Line
-			    								  + "\\uFE34";   // Presentation Form For Vertical Wavy Low Line
-
+			    								  + "\\uFE34"    // Presentation Form For Vertical Wavy Low Line
+			    								  + "]";
     // all the vertical lines
-    private static String vertical_lines_chars = "\\u007C" 	// vertical line
+    private static String vertical_lines_chars = "[" 
+    										+ "\\u007C" 	// vertical line
 			    							+ "\\u01C0" 	// Latin Letter Dental
 			    							+ "\\u05C0" 	// Hebrew Punctuation Paseq
 			    							+ "\\u2223" 	// Divides
-			    							+ "\\u2758"; 	// Light Vertical Bar		
-
+			    							+ "\\u2758"  	// Light Vertical Bar		
+			    							+ "]";
+			    							
     // all new lines 
     private static String new_line_chars =  "\\u000C"  // form feed \f - normally a page break
     									 + "\\u000A"  // line feed \n
@@ -88,7 +95,8 @@ public class UnicodeUtil {
     									 + "\\u0085"; // next line (NEL)
 
     // all bullets
-    private static String bullet_chars = "\\u2022"  // bullet
+    private static String bullet_chars = "["
+    									+ "\\u2022"  // bullet
  									    + "\\u2023"  // triangular bullet 
     									+ "\\u25E6"  // white bullet
 										+ "\\u2043"  // hyphen bullet
@@ -101,7 +109,8 @@ public class UnicodeUtil {
 										+ "\\u23FA"  // black circle for record
 										+ "\\u25CF"  // black circle
 										+ "\\u26AB"  // medium black circle
-										+ "\\u2B24"; // black large circle
+										+ "\\u2B24"  // black large circle
+										+ "]";
 
 	private UnicodeUtil() {}
 
@@ -125,7 +134,7 @@ public class UnicodeUtil {
         // for Unicode character properties supported by Java
 
         // normalise all horizontal space separator characters 
-        token = token.replaceAll("["+my_whitespace_chars+"]", " ");   
+        token = token.replaceAll(my_whitespace_chars, " ");   
 
         // normalise all EOL - special handling of "\r\n" as one single newline
         token = token.replace("\r\n", "\n").replaceAll("["+new_line_chars+"\\p{Zl}\\p{Zp}]", "\n");
@@ -135,13 +144,13 @@ public class UnicodeUtil {
         token = token.replaceAll("\\p{Pd}", "-");
 
         // normalize horizontal low lines
-		token = token.replaceAll('['+horizontal_low_lines_chars+']', "_");
+		token = token.replaceAll(horizontal_low_lines_chars, "_");
 
         // normalize vertical lines
-		token = token.replaceAll('['+vertical_lines_chars+']', "|");
+		token = token.replaceAll(vertical_lines_chars, "|");
 
 		// bullet normalisation
-		token = token.replaceAll('['+bullet_chars+']', "|");		
+		token = token.replaceAll(bullet_chars, "|");		
 
         return token;
     }
