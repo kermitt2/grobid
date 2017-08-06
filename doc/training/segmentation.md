@@ -8,13 +8,13 @@ The following TEI elements are used by the segmentation model:
 
 * `titlePage` for the cover page
 * `front` for the document header
-* `note place='headnote'` for the page header
-* `note place='footnote'` for the page footer
+* `note place="headnote"` for the page header
+* `note place="footnote"` for the page footer
 * `body` for the document body
 * `listBibl` for the bibliographical section
 * `page` to indicate page numbers
-* `div type='annex'` for annexes
-* `div type='acknowledgment'` for acknowledgments
+* `div type="annex"` for annexes
+* `div type="acknowledgment"` for acknowledgments
 
 It is necessary to identify these substructures inside the `body`. Figures and tables (including their potential titles, legends and notes) are considered part of the container, here the `body` element.
 
@@ -72,7 +72,7 @@ Any information appearing in the page header needs to be surrounded by a `note p
 
 The contents of the grey band in the screenshot above should be surrounded by a `note place="headnote"` except on the first page where this type of information would be inside the `front` element.
 
-Any information appearing in the page footer needs to be put inside a `note place='footnote'`, as is shown in the following example:
+Any information appearing in the page footer needs to be put inside a `note place="footnote"`, as is shown in the following example:
 
 ![example of a footnote - 0C4AA21E271A7FF288AE13895EAED540ED582A83](img/note-place-footnote.png)
 
@@ -90,33 +90,31 @@ Any notes to the left of the main body text are to be encoded as `note`s if they
 
 ![example of different not types](img/different-note-examples.png)
 
-The following example shows a case where we have an acknowledgement (in the red frame) that gets encoded as a `div type="acknowledgment"` whereas the title reference underneath (in the orange frame) is encoded using a `front` element.
+The following example shows a case where we have an acknowledgment (in the red frame) that gets encoded as a `div type="acknowledgment"` whereas the title reference underneath (in the orange frame) is encoded using a `front` element.
 
-![acknowledgment and front](img/acknowledgement-placement.png)
+![acknowledgment and front](img/acknowledgment-placement.png)
 
-![acknowledgment and front](img/acknowledgement-placement-xml.png)
+![acknowledgment and front](img/acknowledgment-placement-xml.png)
 
 ### Tables and Figures
 
 Figures and tables belong to the main body structure: they are not to be encoded specifically.
 
-If a figure or table appears inside an annex of an article, it should remain inside the `div type='annex'` element.
+If a figure or table appears inside an annex of an article, it should remain inside the `div type="annex"` element.
 
 If a figure or table appears in an abstract (which is rare but it happens), this item should remain within the `front` element.
 
 
 ### Hidden characters
 
-It happens that Grobid picks up hidden text that is not visible on the PDF's page for the reader (see the orange text in the example below); this content should not be surrounded by any element.
-
-![an example of hidden characters](img/hidden-characters.png)
-
-And an extract of the corresponding TEI XML file:
+It happens that Grobid picks up hidden text that is not visible on the PDF's page for the reader (compare the XML below with the screenshot of the PDF page, the context being highlighted by red boxes); such content should not be surrounded by any element as to indicate to Grobid to ignore it.
 
 ```xml
 visible in lane 10 (longer exposure), where anti-rabbit secondary antibodies<lb/> were used. <lb/></body>
 
 print ncb1110 17/3/04 2:58 PM Page 309 <lb/>
 
-<note place "footnote">© 2004 Nature Publishing Group <lb/></note>
+<note place="footnote">© 2004 Nature Publishing Group <lb/></note>
 ```
+
+![an example of hidden characters](img/hidden-characters.png)
