@@ -1365,7 +1365,7 @@ public class HeaderParser extends AbstractParser {
      * @param tokenizations list of tokens
      * @return a result
      */
-    private StringBuilder trainingExtraction(String result, boolean intro, List<LayoutToken> tokenizations) {
+    public StringBuilder trainingExtraction(String result, boolean intro, List<LayoutToken> tokenizations) {
         // this is the main buffer for the whole header
         StringBuilder buffer = new StringBuilder();
 
