@@ -87,46 +87,4 @@ public class TestHeaderParser extends EngineTest {
                 is("Answer Validation, Recognizing Textual Entailment, Information Synthesis"));
         assertNotNull(resHeader.getFullAuthors());
     }
-
-    @Test
-    public void testTrainingHeader() throws Exception {
-        getTestResourcePath();
-
-        String pdfPath = testPath + File.separator + "Wang-paperAVE2008.pdf";
-        engine.createTrainingHeader(pdfPath, newTrainingPath, newTrainingPath, 0);
-
-        pdfPath = testPath + File.separator + "1060._fulltext3.pdf";
-        engine.createTrainingHeader(pdfPath, newTrainingPath, newTrainingPath, 0);
-
-        pdfPath = testPath + File.separator + "ZFN-A-054-0304-0272.pdf";
-        engine.createTrainingHeader(pdfPath, newTrainingPath, newTrainingPath, 0);
-
-        pdfPath = testPath + File.separator + "1001._0908.0054.pdf";
-        engine.createTrainingHeader(pdfPath, newTrainingPath, newTrainingPath, 0);
-
-		/*engine.batchCreateTrainingHeader("/Users/lopez/repository/ZFN/regensburg3", 
-                                     "/Users/lopez/repository/ZFN/regensburg3/training",
-								  0);*/
-
-    }
-
-    @Test
-    public void testBatchHeader() throws Exception {
-
-        getTestResourcePath();
-				
-		/*engine.batchCreateTrainingHeader("/Users/lopez/repository/CiteNPL/set4", 
-							   	     	 "/Users/lopez/repository/CiteNPL/set4", 
-									 	 0);*/
-		/*engine.batchProcessHeader("/Users/lopez/repository/CiteNPL/set1", 
-						   	      "/Users/lopez/repository/CiteNPL/set1", 
-								  false);	*/	
-								
-		/*engine.batchProcessHeader(testPath, 
-						   	      testPath, 
-								  false);	*/
-
-    }
-
-
 }
