@@ -45,26 +45,6 @@ public class TestFullTextParser extends EngineTest {
     private void getTestResourcePath() {
         testPath = GrobidConstants.TEST_RESOURCES_PATH;
     }
-    
-    @Test
-    public void testFullTextTrainingParser() throws Exception {
-        getTestResourcePath();
-
-        String pdfPath = testPath + "/Wang-paperAVE2008.pdf";
-        //engine.createTrainingFullText(pdfPath, newTrainingPath, newTrainingPath, 0);
-
-        pdfPath = testPath + File.separator + "1001._0908.0054.pdf";
-        //engine.createTrainingFullText(pdfPath, newTrainingPath, newTrainingPath, 1);
-
-        pdfPath = testPath + File.separator + "submission_161.pdf";
-        //engine.createTrainingFullText(pdfPath, newTrainingPath, newTrainingPath, 2);
-
-        pdfPath = testPath + File.separator + "submission_363.pdf";
-        //engine.createTrainingFullText(pdfPath, newTrainingPath, newTrainingPath, 3);
-
-        pdfPath = testPath + File.separator + "ApplPhysLett_98_082505.pdf";
-        engine.createTrainingFullText(new File(pdfPath), newTrainingPath, newTrainingPath, 4);
-    }
 
     @Test
     public void testFullTextParser() throws Exception {
