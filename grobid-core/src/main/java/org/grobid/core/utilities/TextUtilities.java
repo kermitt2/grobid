@@ -31,7 +31,7 @@ public class TextUtilities {
 
     public static final String punctuations = " •*,:;?.!)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
     public static final String fullPunctuations = "([ •*,:;?.!/)-−–‐\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
-    public static String delimiters = "\n\r\t\u00A0" + fullPunctuations;
+    public static String delimiters = "\n\r\t\f\u00A0" + fullPunctuations;
 
     public static final String OR = "|";
     public static final String NEW_LINE = "\n";

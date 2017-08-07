@@ -560,13 +560,15 @@ public class HeaderParser extends AbstractParser {
                         continue;
                     }
                     //text = text.trim();
-                    text = text.replace(" ", "").replace("\t", "").replace("\u00A0", "");
+                    //text = text.replace(" ", "").replace("\t", "").replace("\u00A0", "");
+                    text = text.replace(" ", "");
                     if (text.length() == 0) {
                         n++;
                         continue;
                     }
 
-                    if (text.equals("\n") || text.equals("\r")) {
+                    //if (text.equals("\n") || text.equals("\r")) {
+                    if (text.equals("\n")) {
                         newline = true;
                         previousNewline = true;
                         n++;
@@ -579,6 +581,8 @@ public class HeaderParser extends AbstractParser {
                         previousNewline = false;
                     }
 
+                    // final sanitisation and filtering
+                    text = text.replaceAll("[ \n]", "");
                     if (TextUtilities.filterLine(text)) {
                         n++;
                         continue;

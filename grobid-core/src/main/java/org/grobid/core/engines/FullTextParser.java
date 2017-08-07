@@ -373,7 +373,8 @@ public class FullTextParser extends AbstractParser {
 	                    //nn++;
 	                    continue;
 	                }
-	                text = text.replaceAll("\\s+", "");
+	                //text = text.replaceAll("\\s+", "");
+	                text = text.replace(" ", "");
 	                if (text.length() == 0) {
 	                    n++;
 	                    mm++;
@@ -381,7 +382,8 @@ public class FullTextParser extends AbstractParser {
 	                    continue;
 	                }
 
-	                if (text.equals("\n") || text.equals("\r") || text.equals("\t") ) {
+	                //if (text.equals("\n") || text.equals("\r") ) {
+	                if (text.equals("\n")) {
 	                    newline = true;
 	                    previousNewline = true;
 	                    n++;
@@ -391,6 +393,8 @@ public class FullTextParser extends AbstractParser {
 	                } else
 	                    newline = false;
 
+	                // final sanitisation and filtering
+	                text = text.replaceAll("[ \n]", "");
 	                if (TextUtilities.filterLine(text)) {
 						n++;
 	                    continue;
@@ -698,7 +702,7 @@ public class FullTextParser extends AbstractParser {
      * @param pathTEI path to TEI
      * @param id id
      */
-    public Document createTrainingFullText(File inputFile,
+    /*public Document createTrainingFullText(File inputFile,
                                        String pathFullText,
                                        String pathTEI,
                                        int id) {
@@ -732,21 +736,6 @@ public class FullTextParser extends AbstractParser {
 
 				String bodytext = featSeg.getA();
 				List<LayoutToken> tokenizationsBody = featSeg.getB().getTokenization();
-				
-				/*List<String> tokenizationsBody = new ArrayList<String>();
-				List<String> tokenizations = doc.getTokenizations();
-				
-				for(DocumentPiece docPiece : documentBodyParts) {
-					DocumentPointer dp1 = docPiece.a;
-					DocumentPointer dp2 = docPiece.b;
-					
-		            int tokens = dp1.getTokenDocPos();
-		            int tokene = dp2.getTokenDocPos();
-		            for (int i = tokens; i < tokene; i++) {
-		                tokenizationsBody.add(tokenizations.get(i)); 
-		            }
-				}
-				*/
 
 	            // we write the full text untagged
 	            String outPathFulltext = pathFullText + File.separator
@@ -900,7 +889,7 @@ public class FullTextParser extends AbstractParser {
         } finally {
             DocumentSource.close(documentSource, true, true);
         }
-    }
+    }*/
 
     /**
      * Process the specified pdf and format the result as training data for all the models.
@@ -920,7 +909,6 @@ public class FullTextParser extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
-        //Document doc;
         DocumentSource documentSource = null;
         try {
             if (!inputFile.exists()) {
@@ -960,7 +948,7 @@ public class FullTextParser extends AbstractParser {
 			FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), "UTF-8");
 
             if (isNotBlank(fulltext)) {
-                String rese = label(fulltext);
+                String rese = parsers.getSegmentationParser().label(fulltext);
                 StringBuffer bufferFulltext = parsers.getSegmentationParser().trainingExtraction(rese, tokenizations, doc);
 
                 // write the TEI file to reflect the extact layout of the text as extracted from the pdf
