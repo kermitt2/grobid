@@ -11,18 +11,18 @@ The process for fetching and running the image is (assuming docker is installed 
 
 - Pull the image from docker HUB
 ```bash
-> docker pull lfoppiano/grobid:0.4.1
+> docker pull lfoppiano/grobid:0.4.2
 ```
  
 - Run the container:
 
 ```bash
-> docker run -t --rm -p 8080:8080 lfoppiano/grobid:0.4.1
+> docker run -t --rm -p 8080:8080 lfoppiano/grobid:0.4.2
 ```
 
 (alternatively you can also get the image ID)  
 ```bash
-> docker images | grep lfoppiano/grobid | grep 0.4.1
+> docker images | grep lfoppiano/grobid | grep 0.4.2
 > docker run -t --rm -p 8080:8080 $image_id_from_previous_command
 ```
 
