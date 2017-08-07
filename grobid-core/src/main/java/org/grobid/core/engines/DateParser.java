@@ -40,7 +40,9 @@ public class DateParser extends AbstractParser {
             //while (st.hasMoreTokens()) {
             //    String tok = st.nextToken();
 			for(String tok : tokenizations) {
-                if (!tok.equals(" ")) {
+                if (!tok.equals(" ") && !tok.equals("\n")) {
+                    // parano final sanitisation
+                    tok = tok.replaceAll("[ \n]", "");
                     dateBlocks.add(tok + " <date>");
                 }
             }

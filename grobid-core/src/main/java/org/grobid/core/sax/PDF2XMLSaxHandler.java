@@ -8,6 +8,7 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.analyzers.Analyzer;
 import org.slf4j.Logger;
@@ -152,10 +153,12 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 		String res = accumulator.toString().trim();
 		//res = res.replace("\u00A0", " "); // stdandard NO-BREAK SPACE are viewed
 											// as space
-		res = res.replaceAll("\\p{javaSpaceChar}", " "); // replace all unicode space separators
+		//res = res.replaceAll("\\p{javaSpaceChar}", " "); // replace all unicode space separators
 		 												 // by a usual SPACE
-		res = res.replace("\t"," "); // case where tabulation are used as separator
+		//res = res.replace("\t"," "); // case where tabulation are used as separator
 									 // -> replace tabulation with a usual space
+
+		res = UnicodeUtil.normaliseText(res);
 		return res.trim();
 	}
 
@@ -450,6 +453,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 		} else if (qName.equals("METADATA")) {
 			accumulator.setLength(0);
 		} else if (qName.equals("TOKEN")) {
+			// process ligatures
 			String tok0 = TextUtilities.clean(getText());
 
 			if (block.getStartToken() == -1) {
@@ -473,7 +477,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 
 				if (subTokenizations.size() != 0) {
 				//{
-					// WARNING: ROUGH APPROXIMATION (but better then the same coords)
+					// WARNING: ROUGH APPROXIMATION (but better than the same coords)
 
 					double totalLength = 0;
 					for (String t : subTokenizations) {
@@ -486,7 +490,7 @@ public class PDF2XMLSaxHandler extends DefaultHandler {
 						diaresis = false;
 						accent = false;
 
-						// WARNING: ROUGH APPROXIMATION (but better then the same coords)
+						// WARNING: ROUGH APPROXIMATION (but better than the same coords)
 						double subTokWidth = (currentWidth * (tok.length() / totalLength));
 
 						double subTokX = currentX + prevSubWidth;

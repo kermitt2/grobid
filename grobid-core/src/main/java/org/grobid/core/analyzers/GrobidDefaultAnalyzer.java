@@ -20,6 +20,7 @@ package org.grobid.core.analyzers;
 import org.apache.lucene.analysis.Analyzer;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -68,6 +69,7 @@ public class GrobidDefaultAnalyzer implements org.grobid.core.analyzers.Analyzer
 
 	public List<String> tokenize(String text) {
 		List<String> result = new ArrayList<String>();
+		text = UnicodeUtil.normaliseText(text);
 		StringTokenizer st = new StringTokenizer(text, delimiters, true);
 		while(st.hasMoreTokens()) {
 			result.add(st.nextToken());
@@ -79,6 +81,7 @@ public class GrobidDefaultAnalyzer implements org.grobid.core.analyzers.Analyzer
 		StringTokenizer st = null;
 		List<String> result = new ArrayList<String>();
 		for(String chunk : chunks) {
+			chunk = UnicodeUtil.normaliseText(chunk);
 			st = new StringTokenizer(chunk, delimiters, true);
 			while(st.hasMoreTokens()) {
 				result.add(st.nextToken());
@@ -89,6 +92,7 @@ public class GrobidDefaultAnalyzer implements org.grobid.core.analyzers.Analyzer
 
 	public List<LayoutToken> tokenizeWithLayoutToken(String text) {
         List<LayoutToken> result = new ArrayList<>();
+        text = UnicodeUtil.normaliseText(text);
         List<String> tokens = tokenize(text);
         int pos = 0;
         for(String tok : tokens) {
