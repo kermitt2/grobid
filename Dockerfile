@@ -9,6 +9,9 @@
 
 # > docker run -t --rm -p 8080:8080 {image_name}
 
+# To find out the docker machine ip
+# > docker-machine ip
+
 # To connect to the container with a bash shell
 # > docker exec -i -t {container_name} /bin/bash
 
