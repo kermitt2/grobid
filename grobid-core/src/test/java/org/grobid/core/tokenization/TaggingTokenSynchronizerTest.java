@@ -9,10 +9,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.*;
 
 /**
  * Created by zholudev on 07/04/16.
@@ -36,30 +34,22 @@ public class TaggingTokenSynchronizerTest {
             if (text.contains(" ")) {
                 spacesPresent = true;
             }
-            System.out.println("\"" + text + "\"");
             cnt++;
         }
 
-        assertEquals(2, cnt);
-        assertTrue(spacesPresent);
+        assertThat(cnt, is(2));
+        assertThat(spacesPresent, is(true));
     }
 
-    @Test
+    @Test(expected = IllegalStateException.class)
     public void testFailure() {
         TaggingTokenSynchronizer synchronizer = new TaggingTokenSynchronizer(GrobidModels.FULLTEXT,
                 generateResult(p("This", P), p("Figure", F)), toks("This", " ", "Fig")
         );
 
-        try {
-            for (LabeledTokensContainer el : synchronizer) {
-                String text = LayoutTokensUtil.toText(el.getLayoutTokens());
-                System.out.println("\"" + text + "\"");
-            }
-            fail();
-        } catch (IllegalStateException e) {
-            //no op
+        for (LabeledTokensContainer el : synchronizer) {
+            LayoutTokensUtil.toText(el.getLayoutTokens());
         }
-
     }
 
     private static String generateResult(Pair<String, String>... tokens) {
