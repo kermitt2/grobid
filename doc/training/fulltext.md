@@ -9,7 +9,7 @@ As mentioned elsewhere (TODO:link), there are several models that are used to an
 The 'Fulltext' model attempts to recognize the following objects:
 
 * paragraphs
-* titles
+* titles (of sections, not the actual article or publication)
 * figures
 * tables (which, for Grobid, are actual special figures)
 * formulas
@@ -20,9 +20,45 @@ The following sections will give examples for each of the objects above and how 
 
 ## Analysis
 
-### Title sections
+### Section titles
+
+To indicate sub parts of an article, authors may have used section titles that subdivide the flow of the content into smaller chunks. These titles should appear on the same level as the Paragraphs, formulas, etc.  Here are some examples:
+
+```xml
+<head>CERAMIDE AND S1P BOTH TRIGGER AUTOPHAGY<lb/></head>
+```
+
+```xml
+<head>1. Introduction<lb/></head>
+<head>2 Background<lb/></head>
+```
+
+```xml
+<head>B. Focusing an IACT<lb/></head>
+```
+
+```xml
+<head>II. PROBLEM AND SOLUTION PROCEDURE<lb/></head>
+```
+
+```xml
+<head>4 RESULTS<lb/></head>
+<head>4.1 Image quality<lb/></head>
+```
+
+```xml
+<head>Results<lb/></head>
+<head>Patient characteristics<lb/></head>
+```
+
+```xml
+<head>MATERIALS AND METHODS<lb/></head>
+<head>Tissue samples<lb/></head>
+```
 
 ### Paragraphs
+
+Paragraphs constitute the main bulk of most typical articles or publications and contain text which in turn may contain inline elements such as references (see below) or line breaks.
 
 ```xml
 <p>Our group has investigated the correlation between sphingolipid metabolism, the
