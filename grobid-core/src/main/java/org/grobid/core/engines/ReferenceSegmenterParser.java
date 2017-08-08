@@ -492,8 +492,8 @@ System.out.println("");
 			boolean previousNewline = true;
 			currentLineLength = 0;
 			String currentLineProfile = null;
-			for(n = dp1.getTokenDocPos(); n < dp2.getTokenDocPos(); n++) {
-				String text = tokenizations.get(n).getText();
+            for (n = dp1.getTokenDocPos(); n <= dp2.getTokenDocPos(); n++) {
+                String text = tokenizations.get(n).getText();
 
 				if (text == null) {
 					continue;
@@ -783,6 +783,6 @@ System.out.println("");
 		if (previousFeatures != null)
 	      	citations.append(previousFeatures.printVector());
 
-	   	return new Pair<String,List<LayoutToken>>(citations.toString(), tokenizationsReferences);
+	   	return new Pair<>(citations.toString(), tokenizationsReferences);
 	}
 }
