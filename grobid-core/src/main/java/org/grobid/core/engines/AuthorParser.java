@@ -391,7 +391,8 @@ public class AuthorParser {
                 if (nameLabel(s1)) {
                     aut.getLayoutTokens().add(layoutToken);
                 }
-                while (ptr < tokenizations.size() && (LayoutTokensUtil.spaceyToken(tokenizations.get(ptr).t()) || tokenizations.get(ptr).t().trim().isEmpty())) {
+                while (ptr < tokenizations.size() && 
+                        (LayoutTokensUtil.spaceyToken(tokenizations.get(ptr).t()) || tokenizations.get(ptr).t().trim().isEmpty())) {
                     aut.getLayoutTokens().add(tokenizations.get(ptr));
                     ptr++;
                 }

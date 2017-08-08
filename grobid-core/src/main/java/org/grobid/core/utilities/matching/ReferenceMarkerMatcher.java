@@ -218,7 +218,7 @@ public class ReferenceMarkerMatcher {
 
     private static Pair<Character, Character> getWrappingSymbols(List<LayoutToken> layoutTokens) {
         for (LayoutToken t : layoutTokens) {
-            if (LayoutTokensUtil.spaceyToken(t.t())) {
+            if (LayoutTokensUtil.spaceyToken(t.t()) || LayoutTokensUtil.newLineToken(t.t())) {
                 continue;
             }
             if (t.t().equals("(")) {

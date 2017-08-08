@@ -16,8 +16,8 @@ public class LabeledTokensContainer {
     private String token;
     private TaggingLabel taggingLabel;
     private boolean beginning;
-    private boolean spacePreceding;
-    private boolean newLinePreceding;
+    private boolean trailingSpace;
+    private boolean trailingNewLine;
     private String featureString;
 
     public LabeledTokensContainer(List<LayoutToken> layoutTokens, String token, TaggingLabel taggingLabel, boolean beginning) {
@@ -52,20 +52,20 @@ public class LabeledTokensContainer {
                 : taggingLabel.getLabel();
     }
 
-    public boolean isSpacePreceding() {
-        return spacePreceding;
+    public boolean isTrailingSpace() {
+        return trailingSpace;
     }
 
-    public boolean isNewLinePreceding() {
-        return newLinePreceding;
+    public boolean isTrailingNewLine() {
+        return trailingNewLine;
     }
 
-    public void setSpacePreceding(boolean spacePreceding) {
-        this.spacePreceding = spacePreceding;
+    public void setTrailingSpace(boolean trailingSpace) {
+        this.trailingSpace = trailingSpace;
     }
 
-    public void setNewLinePreceding(boolean newLinePreceding) {
-        this.newLinePreceding = newLinePreceding;
+    public void setTrailingNewLine(boolean trailingNewLine) {
+        this.trailingNewLine = trailingNewLine;
     }
 
     public String getFeatureString() {
