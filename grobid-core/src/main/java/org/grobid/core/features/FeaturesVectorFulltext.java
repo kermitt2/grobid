@@ -1,5 +1,6 @@
 package org.grobid.core.features;
 
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.TextUtilities;
 
@@ -23,47 +24,48 @@ public class FeaturesVectorFulltext {
     public String digit;  // one of ALLDIGIT, CONTAINDIGIT, NODIGIT
     public boolean singleChar = false;
 
-    public String punctType = null; 
+    public String punctType = null;
     // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT (default)
 
-    public int relativeDocumentPosition = -1; 
-    public int relativePagePositionChar = -1; 
-    public int relativePagePosition = -1; 
+    public int relativeDocumentPosition = -1;
+    public int relativePagePositionChar = -1;
+    public int relativePagePosition = -1;
 
 	// graphic in closed proximity of the current block
     public boolean bitmapAround = false;
     public boolean vectorAround = false;
-	
-	// if a graphic is in close proximity of the current block, characteristics of this graphic 
-    public int closestGraphicHeight = -1; 
-    public int closestGraphicWidth = -1; 
-    public int closestGraphicSurface = -1; 
-	
+
+	// if a graphic is in close proximity of the current block, characteristics of this graphic
+    public int closestGraphicHeight = -1;
+    public int closestGraphicWidth = -1;
+    public int closestGraphicSurface = -1;
+
     public int spacingWithPreviousBlock = 0; // discretized 
     public int characterDensity = 0; // discretized
 
     public String printVector() {
-        if (string == null) return null;
-        if (string.length() == 0) return null;
-        StringBuffer res = new StringBuffer();
+        final String wapitiSanitizedString = FeaturesUtils.sanitizeTokenForWapiti(string);
+        if (StringUtils.isBlank(wapitiSanitizedString)) return null;
+
+        StringBuilder res = new StringBuilder();
 
         // token string (1)
-        res.append(string);
+        res.append(wapitiSanitizedString);
 
         // lowercase string
-        res.append(" " + string.toLowerCase());
+        res.append(" " + wapitiSanitizedString.toLowerCase());
 
         // prefix (4)
-        res.append(" " + TextUtilities.prefix(string, 1));
-        res.append(" " + TextUtilities.prefix(string, 2));
-        res.append(" " + TextUtilities.prefix(string, 3));
-        res.append(" " + TextUtilities.prefix(string, 4));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 1));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 2));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 3));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 4));
 
         // suffix (4)
-        res.append(" " + TextUtilities.suffix(string, 1));
-        res.append(" " + TextUtilities.suffix(string, 2));
-        res.append(" " + TextUtilities.suffix(string, 3));
-        res.append(" " + TextUtilities.suffix(string, 4));
+        res.append(" " + TextUtilities.suffix(wapitiSanitizedString, 1));
+        res.append(" " + TextUtilities.suffix(wapitiSanitizedString, 2));
+        res.append(" " + TextUtilities.suffix(wapitiSanitizedString, 3));
+        res.append(" " + TextUtilities.suffix(wapitiSanitizedString, 4));
 
 		// at this stage, we have written 10 features
 
@@ -72,7 +74,7 @@ public class FeaturesVectorFulltext {
 
         // line information (1)
         res.append(" " + lineStatus);
-		
+
 		// line position/identation (1)
 		res.append(" " + alignmentStatus);
 
@@ -129,7 +131,7 @@ public class FeaturesVectorFulltext {
             res.append(" 1");
         else
             res.append(" 0");*/
-		
+
         // space with previous block, discretised (1)
         //res.append(" " + spacingWithPreviousBlock);
         //res.append(" " + 0);

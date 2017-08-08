@@ -1,5 +1,6 @@
 package org.grobid.core.features;
 
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.utilities.TextUtilities;
 
 import java.util.List;
@@ -25,27 +26,28 @@ public class FeaturesVectorDate {
     public boolean containPunct = false;
 
     public String printVector() {
-        if (string == null) return null;
-        if (string.length() == 0) return null;
-        StringBuffer res = new StringBuffer();
+        final String wapitiSanitizedString = FeaturesUtils.sanitizeTokenForWapiti(string);
+        if (StringUtils.isBlank(wapitiSanitizedString)) return null;
+
+        StringBuilder res = new StringBuilder();
 
         // token string (1)
-        res.append(string);
+        res.append(wapitiSanitizedString);
 
         // lowercase string
-        res.append(" " + string.toLowerCase());
+        res.append(" " + wapitiSanitizedString.toLowerCase());
 
         // prefix (4)
-        res.append(" " + TextUtilities.prefix(string, 1));
-        res.append(" " + TextUtilities.prefix(string, 2));
-        res.append(" " + TextUtilities.prefix(string, 3));
-        res.append(" " + TextUtilities.prefix(string, 4));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 1));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 2));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 3));
+        res.append(" " + TextUtilities.prefix(wapitiSanitizedString, 4));
 
         // suffix (4)
-        res.append(" " + TextUtilities.suffix(string, 1));
-        res.append(" " + TextUtilities.suffix(string, 2));
-        res.append(" " + TextUtilities.suffix(string, 3));
-        res.append(" " + TextUtilities.suffix(string, 4));
+        res.append(" " + TextUtilities.suffix(wapitiSanitizedString, 1));
+        res.append(" " + TextUtilities.suffix(wapitiSanitizedString, 2));
+        res.append(" " + TextUtilities.suffix(wapitiSanitizedString, 3));
+        res.append(" " + TextUtilities.suffix(wapitiSanitizedString, 4));
 
         // line information (1)
         res.append(" " + lineStatus);
