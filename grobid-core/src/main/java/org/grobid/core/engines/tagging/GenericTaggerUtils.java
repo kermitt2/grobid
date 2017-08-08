@@ -1,9 +1,8 @@
 package org.grobid.core.engines.tagging;
 
-
+import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
-import com.google.common.collect.Lists;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.Triple;
 import org.wipo.analyzers.wipokr.utils.StringUtil;
@@ -19,7 +18,7 @@ import java.util.regex.Pattern;
 public class GenericTaggerUtils {
 
     public static final String START_ENTITY_LABEL_PREFIX = "I-";
-    public static final Pattern SEPARATOR_PATTERN = Pattern.compile("\t| ");
+    public static final Pattern SEPARATOR_PATTERN = Pattern.compile("[\t ]");
 
     /**
      * @param labeledResult labeled result from a tagger
@@ -27,38 +26,47 @@ public class GenericTaggerUtils {
      * Note an empty line in the result will be transformed to a 'null' pointer of a pair
      */
     public static List<Pair<String, String>> getTokensAndLabels(String labeledResult) {
-        String[] lines = labeledResult.split("\n");
-        List<Pair<String, String>> res = new ArrayList<>(lines.length);
-        for (String line : lines) {
-            line = line.trim();
-            if (line.isEmpty()) {
-                res.add(null);
-                continue;
+        Function<List<String>, Pair<String, String>> fromSplits = new Function<List<String>, Pair<String, String>>() {
+            @Override public Pair<String, String> apply(List<String> splits) {
+                return new Pair<>(splits.get(0), splits.get(splits.size() - 1));
             }
-            String[] splits = line.split("\t| ");
-            res.add(new Pair<>(splits[0], splits[splits.length - 1]));
-        }
-        return res;
+        };
+
+        return processLabeledResult(labeledResult, fromSplits);
     }
 
-    // <token, label, feature_string>
+    /**
+     * @param labeledResult labeled result from a tagger
+     * @return a list of triples - first element in a pair is a token itself, the second is a label (e.g. <footnote> or I-<footnote>) 
+     * and the third element is a string with the features
+     * Note an empty line in the result will be transformed to a 'null' pointer of a pair
+     */
     public static List<Triple<String, String, String>> getTokensWithLabelsAndFeatures(String labeledResult,
-                                                                                      boolean addFeatureString) {
+                                                                                      final boolean addFeatureString) {
+        Function<List<String>, Triple<String, String, String>> fromSplits = new Function<List<String>, Triple<String, String, String>>() {
+            @Override public Triple<String, String, String> apply(List<String> splits) {
+                String featureString = addFeatureString ? Joiner.on("\t").join(splits.subList(0, splits.size() - 1)) : null;
+                return new Triple<>(
+                    splits.get(0),
+                    splits.get(splits.size() - 1),
+                    featureString);
+            }
+        };
+
+        return processLabeledResult(labeledResult, fromSplits);
+    }
+
+    private static <T> List<T> processLabeledResult(String labeledResult, Function<List<String>, T> fromSplits) {
         String[] lines = labeledResult.split("\n");
-        List<Triple<String, String, String>> res = new ArrayList<>(lines.length);
+        List<T> res = new ArrayList<>(lines.length);
         for (String line : lines) {
             line = line.trim();
             if (line.isEmpty()) {
                 res.add(null);
                 continue;
             }
-            List<String> splitList = Lists.newArrayList(Splitter.on(SEPARATOR_PATTERN).split(line));
-//            String[] splits = line.split("\t| ");
-            String featureString = addFeatureString ? Joiner.on("\t").join(splitList.subList(0, splitList.size() - 1)) : null;
-            res.add(new Triple<>(
-                    splitList.get(0),
-                    splitList.get(splitList.size() - 1),
-                    featureString));
+            List<String> splits = Splitter.on(SEPARATOR_PATTERN).splitToList(line);
+            res.add(fromSplits.apply(splits));
         }
         return res;
     }

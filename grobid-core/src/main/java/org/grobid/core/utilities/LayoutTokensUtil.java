@@ -91,22 +91,25 @@ public class LayoutTokensUtil {
     }
 
     public static boolean spaceyToken(String tok) {
-        return (tok.equals(" ")
+        /*return (tok.equals(" ")
                 || tok.equals("\u00A0")
-                || tok.equals("\n"));
+                || tok.equals("\n"));*/
+        // all space characters are normalised into simple space character        
+        return tok.equals(" ");
     }
 
     public static boolean newLineToken(String tok) {
-        return (tok.equals("\n") || tok.equals("\r") || tok.equals("\n\r"));
+        //return (tok.equals("\n") || tok.equals("\r") || tok.equals("\n\r"));
+        // all new line characters are normalised into simple \n character  
+        return tok.equals("\n");
     }
 
-    public static String removeSpecialVariables(String tok) {
+    /*public static String removeSpecialVariables(String tok) {
         if (tok.equals("@BULLET")) {
             tok = "•";
         }
         return tok;
-    }
-
+    }*/
 
     public static boolean containsToken(List<LayoutToken> toks, String text) {
         for (LayoutToken t : toks) {
