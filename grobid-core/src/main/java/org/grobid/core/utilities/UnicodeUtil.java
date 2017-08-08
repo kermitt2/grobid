@@ -152,7 +152,7 @@ public class UnicodeUtil {
 		text = text.replaceAll(vertical_lines_chars, "|");
 
 		// bullet normalisation
-		text = text.replaceAll(bullet_chars, "|");		
+		text = text.replaceAll(bullet_chars, "•");		
 
 		// remove all control charcaters?
 		//text = text.replaceAll("\\p{Cntrl}", " ");
