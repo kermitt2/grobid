@@ -216,6 +216,11 @@
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.9.0</version>
 		</dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-afterburner</artifactId>
+            <version>2.9.0</version>
+        </dependency>
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
@@ -310,12 +315,11 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.20</version>
                 <configuration>
-                    <forkMode>pertest</forkMode>
                     <argLine>-Xms256m -Xmx1024m</argLine>
                     <testFailureIgnore>false</testFailureIgnore>
                     <skip>false</skip>
                     <systemPropertyVariables>
-                        <log4j.configuration>log4j-test.properties</log4j.configuration>
+                        <log4j.configuration>log4j-test.xml</log4j.configuration>
                     </systemPropertyVariables>
                     <!--argLine>-Djava.library.path=${basedir}/lib/</argLine> <systemProperties> <property> <name>java.library.path</name> <value>lib/</value> </property> </systemProperties -->
                 </configuration>
