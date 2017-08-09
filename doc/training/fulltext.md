@@ -1,8 +1,8 @@
-# Training Grobid's 'Fulltext' model
+# Training Grobid's 'fulltext' model
 
 ## Introduction
 
-As mentioned elsewhere (TODO:link), there are several models that are used to analyze the contents of a PDF file. One of them is the 'Fulltext' model which attempts to recognize items appearing in the body text of an article or a publication.  This is different from for example the 'Segmentation' model which tries to recognize the general sections (title page, front, body, bibliography).
+As mentioned elsewhere (TODO:link), there are several models that are used to analyze the contents of a PDF file. One of them is the 'fulltext' model which attempts to recognize and struture items appearing in the body text of an article or a publication.  This is different from for example the 'segmentation' model which tries to recognize the general sections (title page, front, body, bibliography).
 
 > Note: Whitespace is not important in the XML that Grobid uses. You can add newline characters and spaces to make the XML document more legible.
 
@@ -14,7 +14,7 @@ The 'Fulltext' model attempts to recognize the following objects:
 * tables (which, for Grobid, are actual special figures)
 * formulas
 * list items
-* callouts to figures ('see Fig. 1'), bibliographical references ('Austin 2008(b)'), etc.
+* callouts to figures ('see Fig. 1'), to tables, to formulas amd to bibliographical references ('Austin 2008(b)'), etc.
 
 The following sections will give examples for each of the objects above and how they should be marked up.
 

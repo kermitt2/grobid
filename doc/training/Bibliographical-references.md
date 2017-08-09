@@ -1,8 +1,13 @@
- <h1>Annotation guidelines for bibliographical references</h1>
+# Annotation guidelines for bibliographical references
+
+## Introduction
 
 This section describes how to annotate training data for the __citation__ model. This model parses a bibliographical reference in isolation (as typically present in the bibliographical section at the end of an article).
 
-In the model cascading sequence, a bibliographical reference in isolation is obtained from the model _reference segmenter_ which aims at segmenting a bibliographical section into a list of individual bibliographical references. 
+In the model cascading sequence, a bibliographical reference in isolation is obtained from the model _reference segmenter_ which aims at segmenting a 
+bibliographical section into a list of individual bibliographical references. 
+
+## Analysis
 
 The complete bibliographical reference is enclosed in a `<bibl>` element. One <bibl> structure must match with exactly one bibliographical reference.
 Then the following tags are used for structuring the bibliographical references:
