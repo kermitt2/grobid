@@ -3,6 +3,7 @@ package org.grobid.trainer;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.trainer.sax.TEIFigureSaxParser;
 
 import javax.xml.parsers.SAXParser;
@@ -149,8 +150,12 @@ public class TableTrainer extends AbstractTrainer {
                         ii = line.indexOf(' ');
                     }
                     String token = null;
-                    if (ii != -1)
+                    if (ii != -1) {
                         token = line.substring(0, ii);
+                        // unicode normalisation of the token - it should not be necessary if the training data
+                        // has been gnerated by a recent version of grobid
+                        token = UnicodeUtil.normaliseTextAndRemoveSpaces(token);
+                    }
 //                    boolean found = false;
                     // we get the label in the labelled data file for the same token
                     for (int pp = q; pp < labeled.size(); pp++) {
@@ -162,6 +167,9 @@ public class TableTrainer extends AbstractTrainer {
                         StringTokenizer st = new StringTokenizer(localLine, " \t");
                         if (st.hasMoreTokens()) {
                             String localToken = st.nextToken();
+                            // unicode normalisation of the token - it should not be necessary if the training data
+                            // has been gnerated by a recent version of grobid
+                            localToken = UnicodeUtil.normaliseTextAndRemoveSpaces(localToken);
                             if (localToken.equals(token)) {
                                 String tag = st.nextToken();
                                 line = line.replace("\t", " ").replace("  ", " ");

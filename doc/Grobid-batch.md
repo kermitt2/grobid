@@ -198,8 +198,8 @@ Example:
 
 WARNING: extension of the text files to be processed must be .pdf 
 
-### createTrainingCitationPatent
-Will generate some training for patent citation data, taking as input ST.36 files. The needed parameters for that command are:
+### createTraining
+Will generate the training data file for all the models from PDF files. The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
@@ -209,75 +209,8 @@ Will generate some training for patent citation data, taking as input ST.36 file
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingCitationPatent
-```
-
-WARNING: extension of the ST.36 files to be processed must be .xml
-
-
-### createTrainingHeader
-Will generate some training for header data from PDF files. The needed parameters for that command are:
-
-* -gH: path to grobid-home directory
-
-* -dIn: path to the directory of input pdf files
-
-* -dOut: path to save the trained data
-
-Example:
-```bash
-> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingHeader
+> java -Xmx1024m -jar target/grobid-core-0.4.2-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTraining
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
 
-
-### createTrainingFulltext
-Will generate some training for full text data from PDF files. The needed parameters for that command are:
-
-* -gH: path to grobid-home directory
-
-* -dIn: path to the directory of input pdf files
-
-* -dOut: path to save the trained data
-
-Example:
-```bash
-> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingFulltext
-```
-
-WARNING: the expected extension of the PDF files to be processed is .pdf
-
-
-### createTrainingSegmentation
-Will generate some training data for the segmentation model from PDF files. The needed parameters for that command are:
-
-* -gH: path to grobid-home directory
-
-* -dIn: path to the directory of input pdf files
-
-* -dOut: path to save the trained data
-
-Example:
-```bash
-> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingSegmentation
-```
-
-WARNING: the expected extension of the PDF files to be processed is .pdf
-
-
-### createTrainingReferenceSegmentation
-Will generate some training data for the reference segmentation model from PDF files. The needed parameters for that command are:
-
-* -gH: path to grobid-home directory
-
-* -dIn: path to the directory of input pdf files
-
-* -dOut: path to save the trained data
-
-Example:
-```bash
-> java -Xmx1024m -jar grobid-core-0.3.0-jar-with-dependencies.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingReferenceSegmentation
-```
-
-WARNING: the expected extension of the PDF files to be processed is .pdf

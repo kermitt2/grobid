@@ -9,6 +9,7 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class AffiliationAddressParser extends AbstractParser {
             }
 
             ArrayList<String> affiliationBlocks = new ArrayList<String>();
+            input = UnicodeUtil.normaliseText(input);
             input = input.trim();
 
             input = TextUtilities.dehyphenize(input);
@@ -47,9 +49,7 @@ public class AffiliationAddressParser extends AbstractParser {
                 if (tok.equals("\n")) {
                     //tokenizations.add(" ");
 					tokenizations.set(p, " ");
-                } /*else {
-                    tokenizations.add(tok);
-                }*/
+                } 
                 if (!tok.equals(" ")) {
                     if (tok.equals("\n")) {
                         affiliationBlocks.add("@newline");

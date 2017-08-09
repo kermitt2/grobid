@@ -1,5 +1,7 @@
 package org.grobid.core.layout;
 
+import org.grobid.core.utilities.UnicodeUtil;
+
 /**
  * Class for representing the layout information associated to a PDF object.
  *

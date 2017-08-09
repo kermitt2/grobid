@@ -38,23 +38,21 @@ public class BasicStructureBuilder {
     static public Pattern introductionStrict =
             Pattern.compile("^\\b*(1\\.\\sPROBLEMS?|1\\.(\\n)?\\sIntroduction?|1\\.(\\n)?\\sContent?|1\\.\\sINTRODUCTION|I\\.(\\s)+Introduction|1\\.\\sProblems?|I\\.\\sEinleitung?|1\\.\\sEinleitung?|1\\sEinleitung?|1\\sIntroduction?)",
                     Pattern.CASE_INSENSITIVE);
-
     static public Pattern abstract_ = Pattern.compile("^\\b*\\.?(abstract?|résumé?|summary?|zusammenfassung?)",
             Pattern.CASE_INSENSITIVE);
-    static public Pattern keywords = Pattern.compile("^\\b*\\.?(keyword?|key\\s*word?|mots\\s*clefs?)",
-            Pattern.CASE_INSENSITIVE);
-
-    static public Pattern references =
+    /*static public Pattern keywords = Pattern.compile("^\\b*\\.?(keyword?|key\\s*word?|mots\\s*clefs?)",
+            Pattern.CASE_INSENSITIVE);*/
+    /*static public Pattern references =
             Pattern.compile("^\\b*(References?|REFERENCES?|Bibliography|BIBLIOGRAPHY|" +
                     "References?\\s+and\\s+Notes?|References?\\s+Cited|REFERENCE?\\s+CITED|REFERENCES?\\s+AND\\s+NOTES?|Références|Literatur|" +
-                    "LITERATURA|Literatur|Referências|BIBLIOGRAFIA|Literaturverzeichnis|Referencias|LITERATURE CITED|References and Notes)", Pattern.CASE_INSENSITIVE);
-    static public Pattern header = Pattern.compile("^((\\d\\d?)|([A-Z](I|V|X)*))(\\.(\\d)*)*\\s(\\D+)");
+                    "LITERATURA|Literatur|Referências|BIBLIOGRAFIA|Literaturverzeichnis|Referencias|LITERATURE CITED|References and Notes)", Pattern.CASE_INSENSITIVE);*/
+    /*static public Pattern header = Pattern.compile("^((\\d\\d?)|([A-Z](I|V|X)*))(\\.(\\d)*)*\\s(\\D+)");*/
     //    static public Pattern header2 = Pattern.compile("^\\d\\s\\D+");
-    static public Pattern figure = Pattern.compile("(figure\\s|fig\\.|sch?ma)", Pattern.CASE_INSENSITIVE);
+    /*static public Pattern figure = Pattern.compile("(figure\\s|fig\\.|sch?ma)", Pattern.CASE_INSENSITIVE);
     static public Pattern table = Pattern.compile("^(T|t)able\\s|tab|tableau", Pattern.CASE_INSENSITIVE);
     static public Pattern equation = Pattern.compile("^(E|e)quation\\s");
     private static Pattern acknowledgement = Pattern.compile("(acknowledge?ments?|acknowledge?ment?)",
-            Pattern.CASE_INSENSITIVE);
+            Pattern.CASE_INSENSITIVE);*/
     static public Pattern headerNumbering1 = Pattern.compile("^(\\d+)\\.?\\s");
     static public Pattern headerNumbering2 = Pattern.compile("^((\\d+)\\.)+(\\d+)\\s");
     static public Pattern headerNumbering3 = Pattern.compile("^((\\d+)\\.)+\\s");

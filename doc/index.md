@@ -31,6 +31,14 @@
 
 * [End to end evaluation](End-to-end-evaluation.md)
 
+<h3>Annotation guidelines</h3>
+
+* [General principles](training/General-principles.md)
+* [Segmentation model](training/segmentation.md)
+* [Fulltext model](training/fulltext.md)
+* [Bibliographical reference](training/Bibliographical-references.md)
+* [Date model](training/date.md)
+
 <h3>Developer notes</h3>
 
 * [Recompiling and integrating CRF libraries into GROBID](Recompiling-and-integrating-CRF-libraries.md)

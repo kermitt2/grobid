@@ -5,6 +5,7 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorReferenceSegmenter;
 import org.grobid.trainer.sax.TEIReferenceSegmenterSaxParser;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.UnicodeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -128,15 +129,21 @@ public class ReferenceSegmenterTrainer extends AbstractTrainer {
                 while ((line = bis.readLine()) != null) {
                     int ii = line.indexOf(' ');
                     String token = null;
-                    if (ii != -1)
+                    if (ii != -1) {
                         token = line.substring(0, ii);
-//                    boolean found = false;
+                        // unicode normalisation of the token - it should not be necessary if the training data
+                        // has been gnerated by a recent version of grobid
+                        token = UnicodeUtil.normaliseTextAndRemoveSpaces(token);
+                    }
                     // we get the label in the labelled data file for the same token
                     for (int pp = q; pp < labeled.size(); pp++) {
                         String localLine = labeled.get(pp);
                         StringTokenizer st = new StringTokenizer(localLine, " ");
                         if (st.hasMoreTokens()) {
                             String localToken = st.nextToken();
+                            // unicode normalisation of the token - it should not be necessary if the training data
+                            // has been gnerated by a recent version of grobid
+                            localToken = UnicodeUtil.normaliseTextAndRemoveSpaces(localToken);
 
                             if (localToken.equals(token)) {
                                 String tag = st.nextToken();

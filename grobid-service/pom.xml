@@ -4,14 +4,14 @@
     <parent>
         <groupId>org.grobid</groupId>
         <artifactId>grobid-parent</artifactId>
-        <version>0.4.2-SNAPSHOT</version>
+        <version>0.4.3-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>org.grobid</groupId>
     <artifactId>grobid-service</artifactId>
     <name>${project.artifactId}</name>
-    <version>0.4.2-SNAPSHOT</version>
+    <version>0.4.3-SNAPSHOT</version>
     <!--<packaging>war</packaging>-->
 
     <dependencies>
@@ -50,7 +50,7 @@
         <dependency>
             <groupId>org.grobid</groupId>
             <artifactId>grobid-core</artifactId>
-            <version>0.4.2-SNAPSHOT</version>
+            <version>0.4.3-SNAPSHOT</version>
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
@@ -207,8 +207,9 @@
                     <mainClass>org.grobid.service.main.GrobidServiceApplication</mainClass>
                     <systemProperties>
                         <system.property>
-                            <key>user.dir</key>
-                            <value>${project.basedir}/../</value>
+                        <key>user.dir</key>
+                            <value>
+                        ${project.basedir}/../</value>
                         </system.property>
                     </systemProperties>
                     <arguments>
