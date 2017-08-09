@@ -3,6 +3,7 @@ package org.grobid.core.features;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -390,6 +391,11 @@ public class FeaturesVectorCitation {
             String tag = null;
             if (ind != -1) {
                 text = line.substring(0, ind);
+                // unicode normalisation of the token - it should not be necessary if the training data
+                // has been gnerated by a recent version of grobid
+                text = UnicodeUtil.normaliseText(text);
+                // parano sanitising 
+                text = text.replaceAll("[ \n]", "");
                 tag = line.substring(ind + 1, line.length());
             }
 

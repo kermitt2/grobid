@@ -31,6 +31,10 @@
 
 * [End to end evaluation](End-to-end-evaluation.md)
 
+<h3>Annotation guidelines</h3>
+
+* [Bibliographical references](Bibliographical-references.md)
+
 <h3>Developer notes</h3>
 
 * [Recompiling and integrating CRF libraries into GROBID](Recompiling-and-integrating-CRF-libraries.md)
