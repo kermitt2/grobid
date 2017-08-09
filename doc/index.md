@@ -33,6 +33,7 @@
 
 <h3>Annotation guidelines</h3>
 
+* [General principles](training/General-principles.md)
 * [Segmentation model](training/segmentation.md)
 * [Fulltext model](training/fulltext.md)
 * [Bibliographical reference](training/Bibliographical-references.md)
