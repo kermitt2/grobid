@@ -391,11 +391,7 @@ public class FeaturesVectorCitation {
             String tag = null;
             if (ind != -1) {
                 text = line.substring(0, ind);
-                // unicode normalisation of the token - it should not be necessary if the training data
-                // has been gnerated by a recent version of grobid
-                text = UnicodeUtil.normaliseText(text);
-                // parano sanitising 
-                text = text.replaceAll("[ \n]", "");
+                text = UnicodeUtil.normaliseTextAndRemoveSpaces(text);
                 tag = line.substring(ind + 1, line.length());
             }
 
