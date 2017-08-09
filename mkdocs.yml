@@ -20,4 +20,5 @@ pages:
 - ['Coordinates-in-PDF.md', 'User manual', 'Coordinates of structures in the PDF']
 - ['Training-the-models-of-Grobid.md', 'User manual', 'Training the GROBID models']
 - ['End-to-end-evaluation.md', 'User manual', 'End-to-end evaluation']
+- ['Bibliographical-references.md', 'Annotation guidelines', 'Bibliographical references']
 - ['Recompiling-and-integrating-CRF-libraries.md', 'Developer notes', 'Recompiling CRF libraries']
