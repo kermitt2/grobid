@@ -1,6 +1,8 @@
 package org.grobid.core.engines;
 
 import com.google.common.collect.Iterables;
+import org.apache.commons.io.FileUtils;
+
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -24,6 +26,7 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
+import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.GraphicObjectType;
@@ -35,7 +38,9 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
+import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -44,6 +49,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
@@ -367,6 +373,7 @@ public class FullTextParser extends AbstractParser {
 	                    //nn++;
 	                    continue;
 	                }
+	                //text = text.replaceAll("\\s+", "");
 	                text = text.replace(" ", "");
 	                if (text.length() == 0) {
 	                    n++;
@@ -375,7 +382,8 @@ public class FullTextParser extends AbstractParser {
 	                    continue;
 	                }
 
-	                if (text.equals("\n") || text.equals("\r")) {
+	                //if (text.equals("\n") || text.equals("\r") ) {
+	                if (text.equals("\n")) {
 	                    newline = true;
 	                    previousNewline = true;
 	                    n++;
@@ -385,6 +393,8 @@ public class FullTextParser extends AbstractParser {
 	                } else
 	                    newline = false;
 
+	                // final sanitisation and filtering
+	                text = text.replaceAll("[ \n]", "");
 	                if (TextUtilities.filterLine(text)) {
 						n++;
 	                    continue;
@@ -540,38 +550,11 @@ public class FullTextParser extends AbstractParser {
 	                    features.digit = "CONTAINSDIGITS";
 	                }
 
-	                /*if (featureFactory.test_common(text)) {
-	                    features.commonName = true;
-	                }
-
-	                if (featureFactory.test_names(text)) {
-	                    features.properName = true;
-	                }
-
-	                if (featureFactory.test_month(text)) {
-	                    features.month = true;
-	                }*/
-
 	                Matcher m = featureFactory.isDigit.matcher(text);
 	                if (m.find()) {
 	                    features.digit = "ALLDIGIT";
 	                }
 
-	                /*Matcher m2 = featureFactory.YEAR.matcher(text);
-	                if (m2.find()) {
-	                    features.year = true;
-	                }
-
-	                Matcher m3 = featureFactory.EMAIL.matcher(text);
-	                if (m3.find()) {
-	                    features.email = true;
-	                }
-
-	                Matcher m4 = featureFactory.HTTP.matcher(text);
-	                if (m4.find()) {
-	                    features.http = true;
-	                }
-					*/
 	                if (currentFont == null) {
 	                    currentFont = token.getFont();
 	                    features.fontStatus = "NEWFONT";
@@ -684,25 +667,24 @@ public class FullTextParser extends AbstractParser {
 		return fulltextLength;
 	}
 
-	/**
-     * Process the full text of the specified pdf and format the result as training data.
+    /**
+     * Process the specified pdf and format the result as training data for all the models.
      *
      * @param inputFile input file
      * @param pathFullText path to fulltext
      * @param pathTEI path to TEI
      * @param id id
      */
-    public Document createTrainingFullText(File inputFile,
-                                       String pathFullText,
-                                       String pathTEI,
-                                       int id) {
+    public Document createTraining(File inputFile,
+                                   String pathFullText,
+                                   String pathTEI,
+                                   int id) {
         if (tmpPath == null)
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
         if (!tmpPath.exists()) {
             throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
-        //Document doc;
         DocumentSource documentSource = null;
         try {
             if (!inputFile.exists()) {
@@ -711,9 +693,54 @@ public class FullTextParser extends AbstractParser {
            	}
            	String pdfFileName = inputFile.getName();
 
-            //doc = parsers.getSegmentationParser().processing(inputFile, GrobidAnalysisConfig.defaultInstance());
+           	// SEGMENTATION MODEL
             documentSource = DocumentSource.fromPdf(inputFile);
-            Document doc = parsers.getSegmentationParser().processing(documentSource, 
+            Document doc = new Document(documentSource);
+            doc.addTokenizedDocument(GrobidAnalysisConfig.defaultInstance());
+
+            if (doc.getBlocks() == null) {
+                throw new Exception("PDF parsing resulted in empty content");
+            }
+            doc.produceStatistics();
+
+            String fulltext = //getAllTextFeatured(doc, false);
+                    parsers.getSegmentationParser().getAllLinesFeatured(doc);
+            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+
+            // we write first the full text untagged (but featurized with segmentation features)
+            String outPathFulltext = pathFullText + File.separator + 
+				pdfFileName.replace(".pdf", ".training.segmentation");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
+            writer.write(fulltext + "\n");
+            writer.close();
+
+			// also write the raw text as seen before segmentation
+			StringBuffer rawtxt = new StringBuffer();
+			for(LayoutToken txtline : tokenizations) {
+				rawtxt.append(txtline.getText());
+			}
+			String outPathRawtext = pathFullText + File.separator +
+				pdfFileName.replace(".pdf", ".training.segmentation.rawtxt");
+			FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), "UTF-8");
+
+            if (isNotBlank(fulltext)) {
+                String rese = parsers.getSegmentationParser().label(fulltext);
+                StringBuffer bufferFulltext = parsers.getSegmentationParser().trainingExtraction(rese, tokenizations, doc);
+
+                // write the TEI file to reflect the extact layout of the text as extracted from the pdf
+                writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+                        File.separator + 
+						pdfFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), "UTF-8");
+                writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+                        "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
+
+                writer.write(bufferFulltext.toString());
+                writer.write("\n\t</text>\n</tei>\n");
+                writer.close();
+            }
+
+            // FULLTEXT MODEL (body)
+            doc = parsers.getSegmentationParser().processing(documentSource, 
 				GrobidAnalysisConfig.defaultInstance());
 
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
@@ -726,26 +753,11 @@ public class FullTextParser extends AbstractParser {
 
 				String bodytext = featSeg.getA();
 				List<LayoutToken> tokenizationsBody = featSeg.getB().getTokenization();
-				
-				/*List<String> tokenizationsBody = new ArrayList<String>();
-				List<String> tokenizations = doc.getTokenizations();
-				
-				for(DocumentPiece docPiece : documentBodyParts) {
-					DocumentPointer dp1 = docPiece.a;
-					DocumentPointer dp2 = docPiece.b;
-					
-		            int tokens = dp1.getTokenDocPos();
-		            int tokene = dp2.getTokenDocPos();
-		            for (int i = tokens; i < tokene; i++) {
-		                tokenizationsBody.add(tokenizations.get(i)); 
-		            }
-				}
-				*/
 
 	            // we write the full text untagged
-	            String outPathFulltext = pathFullText + File.separator
+	            outPathFulltext = pathFullText + File.separator
 					+ pdfFileName.replace(".pdf", ".training.fulltext");
-	            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
+	            writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
 	            writer.write(bodytext + "\n");
 	            writer.close();
 
@@ -769,7 +781,7 @@ public class FullTextParser extends AbstractParser {
 	            writer.write("\n\t</text>\n</tei>\n");
 	            writer.close();
 
-	            // training data for figures
+	            // training data for FIGURES
 	            Pair<String,String> trainingFigure = processTrainingDataFigures(rese, tokenizationsBody, inputFile.getName());
 	            if (trainingFigure.getA().trim().length() > 0) {
 		            String outPathFigures = pathFullText + File.separator
@@ -785,7 +797,7 @@ public class FullTextParser extends AbstractParser {
 		            writer.close();
 		        }
 
-	            // training data for tables
+	            // training data for TABLES
 		        Pair<String,String> trainingTable = processTrainingDataTables(rese, tokenizationsBody, inputFile.getName());
 	            if (trainingTable.getA().trim().length() > 0) {
 		            String outPathTables = pathFullText + File.separator
@@ -801,18 +813,261 @@ public class FullTextParser extends AbstractParser {
 		            writer.close();
 		        }
 
-				// output of header as training data
-				// ...
+				// HEADER MODEL
+		        SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
+	            List<LayoutToken> tokenizationsFull = doc.getTokenizations();
+	            if (documentHeaderParts != null) {
+	                List<LayoutToken> headerTokenizations = new ArrayList<LayoutToken>();
 
-	            // output of the identified citations as traning data
-				StringBuilder allBufferReference = new StringBuilder();
+	                for (DocumentPiece docPiece : documentHeaderParts) {
+	                    DocumentPointer dp1 = docPiece.a;
+	                    DocumentPointer dp2 = docPiece.b;
+
+	                    int tokens = dp1.getTokenDocPos();
+	                    int tokene = dp2.getTokenDocPos();
+	                    for (int i = tokens; i < tokene; i++) {
+	                        headerTokenizations.add(tokenizationsFull.get(i));
+	                    }
+	                }
+	                String header = parsers.getHeaderParser().getSectionHeaderFeatured(doc, documentHeaderParts, true);
+	                if ((header != null) && (header.trim().length() > 0)) {
+	                    rese = parsers.getHeaderParser().label(header);
+	                    //String header = doc.getHeaderFeatured(true, true);
+	                    //List<LayoutToken> tokenizations = doc.getTokenizationsHeader();
+
+	                    // we write the header untagged
+	                    String outPathHeader = pathTEI + File.separator + pdfFileName.replace(".pdf", ".training.header");
+	                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), "UTF-8");
+	                    writer.write(header + "\n");
+	                    writer.close();
+
+	                    // buffer for the header block
+	                    StringBuilder bufferHeader = parsers.getHeaderParser().trainingExtraction(rese, true, headerTokenizations);
+	                    Language lang = LanguageUtilities.getInstance().runLanguageId(bufferHeader.toString());
+	                    if (lang != null) {
+	                        doc.setLanguage(lang.getLang());
+	                    }
+
+	                    // buffer for the affiliation+address block
+	                    StringBuilder bufferAffiliation =
+	                            parsers.getAffiliationAddressParser().trainingExtraction(rese, headerTokenizations);
+	                    
+	                    // buffer for the date block
+	                    StringBuilder bufferDate = null;
+	                    // we need to rebuild the found date string as it appears
+	                    String input = "";
+	                    int q = 0;
+	                    StringTokenizer st = new StringTokenizer(rese, "\n");
+	                    while (st.hasMoreTokens() && (q < headerTokenizations.size())) {
+	                        String line = st.nextToken();
+	                        String theTotalTok = headerTokenizations.get(q).getText();
+	                        String theTok = headerTokenizations.get(q).getText();
+	                        while (theTok.equals(" ") || theTok.equals("\t") || theTok.equals("\n") || theTok.equals("\r")) {
+	                            q++;
+	                            if ((q > 0) && (q < headerTokenizations.size())) {
+	                                theTok = headerTokenizations.get(q).getText();
+	                                theTotalTok += theTok;
+	                            }
+	                        }
+	                        if (line.endsWith("<date>")) {
+	                            input += theTotalTok;
+	                        }
+	                        q++;
+	                    }
+	                    if (input.trim().length() > 1) {
+	                        List<String> inputs = new ArrayList<String>();
+	                        inputs.add(input.trim());
+	                        bufferDate = parsers.getDateParser().trainingExtraction(inputs);
+	                    }
+
+	                    // buffer for the name block
+	                    StringBuilder bufferName = null;
+	                    // we need to rebuild the found author string as it appears
+	                    input = "";
+	                    q = 0;
+	                    st = new StringTokenizer(rese, "\n");
+	                    while (st.hasMoreTokens() && (q < headerTokenizations.size())) {
+	                        String line = st.nextToken();
+	                        String theTotalTok = headerTokenizations.get(q).getText();
+	                        String theTok = headerTokenizations.get(q).getText();
+	                        while (theTok.equals(" ") || theTok.equals("\t") || theTok.equals("\n") || theTok.equals("\r")) {
+	                            q++;
+	                            if ((q > 0) && (q < headerTokenizations.size())) {
+	                                theTok = headerTokenizations.get(q).getText();
+	                                theTotalTok += theTok;
+	                            }
+	                        }
+	                        if (line.endsWith("<author>")) {
+	                            input += theTotalTok;
+	                        }
+	                        q++;
+	                    }
+	                    if (input.length() > 1) {
+	                        List<String> inputs = new ArrayList<String>();
+	                        inputs.add(input.trim());
+	                        bufferName = parsers.getAuthorParser().trainingExtraction(inputs, true);
+	                    }
+
+	                    // buffer for the reference block
+	                    StringBuilder bufferReference = null;
+	                    // we need to rebuild the found citation string as it appears
+	                    input = "";
+	                    q = 0;
+	                    st = new StringTokenizer(rese, "\n");
+	                    while (st.hasMoreTokens() && (q < headerTokenizations.size())) {
+	                        String line = st.nextToken();
+	                        String theTotalTok = headerTokenizations.get(q).getText();
+	                        String theTok = headerTokenizations.get(q).getText();
+	                        while (theTok.equals(" ") || theTok.equals("\t") || theTok.equals("\n") || theTok.equals("\r")) {
+	                            q++;
+	                            if ((q > 0) && (q < headerTokenizations.size())) {
+	                                theTok = headerTokenizations.get(q).getText();
+	                                theTotalTok += theTok;
+	                            }
+	                        }
+	                        if (line.endsWith("<reference>")) {
+	                            input += theTotalTok;
+	                        }
+	                        q++;
+	                    }
+	                    if (input.length() > 1) {
+	                        List<String> inputs = new ArrayList<String>();
+	                        inputs.add(input.trim());
+	                        bufferReference = parsers.getCitationParser().trainingExtraction(inputs);
+	                    }
+
+	                    // write the training TEI file for header which reflects the extract layout of the text as
+	                    // extracted from the pdf
+	                    writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + File.separator
+	                            + pdfFileName.replace(".pdf", ".training.header.tei.xml")), false), "UTF-8");
+	                    writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\""
+	                            + pdfFileName.replace(".pdf", "")
+	                            + "\"/>\n\t</teiHeader>\n\t<text");
+
+	                    if (lang != null) {
+	                        writer.write(" xml:lang=\"" + lang.getLang() + "\"");
+	                    }
+	                    writer.write(">\n\t\t<front>\n");
+
+	                    writer.write(bufferHeader.toString());
+	                    writer.write("\n\t\t</front>\n\t</text>\n</tei>\n");
+	                    writer.close();
+
+	                    // AFFILIATION-ADDRESS model
+	                    if (bufferAffiliation != null) {
+	                        if (bufferAffiliation.length() > 0) {
+	                            Writer writerAffiliation = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+	                                    File.separator
+	                                    + pdfFileName.replace(".pdf", ".training.header.affiliation.tei.xml")), false), "UTF-8");
+	                            writerAffiliation.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+	                            writerAffiliation.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\""
+	                                    + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" " + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
+	                            writerAffiliation.write("\n\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>");
+	                            writerAffiliation.write("\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\t\t\t\t\t\t<author>\n\n");
+
+	                            writerAffiliation.write(bufferAffiliation.toString());
+
+	                            writerAffiliation.write("\n\t\t\t\t\t\t</author>\n\t\t\t\t\t</analytic>");
+	                            writerAffiliation.write("\n\t\t\t\t</biblStruct>\n\t\t\t</sourceDesc>\n\t\t</fileDesc>");
+	                            writerAffiliation.write("\n\t</teiHeader>\n</tei>\n");
+	                            writerAffiliation.close();
+	                        }
+	                    }
+
+	                    // DATE MODEL (for dates in header)
+	                    if (bufferDate != null) {
+	                        if (bufferDate.length() > 0) {
+	                            Writer writerDate = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+	                                    File.separator
+	                                    + pdfFileName.replace(".pdf", ".training.header.date.xml")), false), "UTF-8");
+	                            writerDate.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+	                            writerDate.write("<dates>\n");
+
+	                            writerDate.write(bufferDate.toString());
+
+	                            writerDate.write("</dates>\n");
+	                            writerDate.close();
+	                        }
+	                    }
+
+	                    // HEADER AUTHOR NAME model
+	                    if (bufferName != null) {
+	                        if (bufferName.length() > 0) {
+	                            Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+	                                    File.separator
+	                                    + pdfFileName.replace(".pdf", ".training.header.authors.tei.xml")), false), "UTF-8");
+	                            writerName.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+	                            writerName.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\"" + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" "
+	                                    + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
+	                            writerName.write("\n\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>");
+	                            writerName.write("\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\n\t\t\t\t\t\t<author>");
+	                            writerName.write("\n\t\t\t\t\t\t\t<persName>\n");
+
+	                            writerName.write(bufferName.toString());
+
+	                            writerName.write("\t\t\t\t\t\t\t</persName>\n");
+	                            writerName.write("\t\t\t\t\t\t</author>\n\n\t\t\t\t\t</analytic>");
+	                            writerName.write("\n\t\t\t\t</biblStruct>\n\t\t\t</sourceDesc>\n\t\t</fileDesc>");
+	                            writerName.write("\n\t</teiHeader>\n</tei>\n");
+	                            writerName.close();
+	                        }
+	                    }
+
+	                    // CITATION MODEL (for bibliographical reference in header)
+	                    if (bufferReference != null) {
+	                        if (bufferReference.length() > 0) {
+	                            Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+	                                    File.separator
+	                                    + pdfFileName.replace(".pdf", ".training.header.reference.xml")), false), "UTF-8");
+	                            writerReference.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+	                            writerReference.write("<citations>\n");
+
+	                            writerReference.write(bufferReference.toString());
+
+	                            writerReference.write("</citations>\n");
+	                            writerReference.close();
+	                        }
+	                    }
+	                }	
+	            }
+
+	            // REFERENCE SEGEMENTER MODEL
 	            String referencesStr = doc.getDocumentPartText(SegmentationLabels.REFERENCES);
+	            if (!referencesStr.isEmpty()) {
+					//String tei = parsers.getReferenceSegmenterParser().createTrainingData2(referencesStr, id);
+					org.grobid.core.utilities.Pair<String,String> result =
+						parsers.getReferenceSegmenterParser().createTrainingData(doc, id);
+					String tei = result.getA();
+					String raw = result.getB();
+					if (tei != null) {
+	                    String outPath = pathTEI + "/" +
+							pdfFileName.replace(".pdf", ".training.references.referenceSegmenter.tei.xml");
+	                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
+	                    writer.write(tei + "\n");
+	                    writer.close();
+
+						// generate also the raw vector file with the features
+						outPath = pathTEI + "/" + pdfFileName.replace(".pdf", ".training.references.referenceSegmenter");
+	                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
+	                    writer.write(raw + "\n");
+	                    writer.close();
+
+						// also write the raw text as it is before reference segmentation
+						outPathRawtext = pathTEI + "/" + pdfFileName
+							.replace(".pdf", ".training.references.referenceSegmenter.rawtxt");
+						Writer strWriter = new OutputStreamWriter(
+							new FileOutputStream(new File(outPathRawtext), false), "UTF-8");
+						strWriter.write(referencesStr + "\n");
+						strWriter.close();
+	                }
+				}
+
+	            // BIBLIO REFERENCE MODEL
+				StringBuilder allBufferReference = new StringBuilder();
 	            if (!referencesStr.isEmpty()) {
 	                cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
 	            }
-	//			List<String> tokenizations = doc.getTokenizationsReferences();
 				ReferenceSegmenter referenceSegmenter = parsers.getReferenceSegmenterParser();
-	            //List<LabeledReferenceResult> references = referenceSegmenter.extract(referencesStr);
 				List<LabeledReferenceResult> references = referenceSegmenter.extract(doc);
 
 	            if (references == null) {
@@ -850,10 +1105,10 @@ public class FullTextParser extends AbstractParser {
 					writerReference.write("\t\t</listBibl>\n\t</back>\n\t</text>\n</TEI>\n");
 	                writerReference.close();
 
-					// output of citation author names
+					// BIBLIO REFERENCE AUTHOR NAMES
 	                Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
 	                        File.separator +
-							pdfFileName.replace(".pdf", ".training.citations.authors.tei.xml")), false), "UTF-8");
+							pdfFileName.replace(".pdf", ".training.references.authors.tei.xml")), false), "UTF-8");
 
 					writerName.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
 											"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
@@ -1348,7 +1603,7 @@ public class FullTextParser extends AbstractParser {
             );
 			SortedSet<Integer> blockPtrs = new TreeSet<>();
 			for (LayoutToken lt : tokenizationFigure) {
-				if (!LayoutTokensUtil.spaceyToken(lt.t())) {
+				if (!LayoutTokensUtil.spaceyToken(lt.t()) && !LayoutTokensUtil.newLineToken(lt.t())) {
 					blockPtrs.add(lt.getBlockPtr());
 				}
 			}
@@ -1359,7 +1614,7 @@ public class FullTextParser extends AbstractParser {
 
 			// the first token could be a space from previous page
 			for (LayoutToken lt : tokenizationFigure) {
-				if (!LayoutTokensUtil.spaceyToken(lt.t())) {
+				if (!LayoutTokensUtil.spaceyToken(lt.t()) && !LayoutTokensUtil.newLineToken(lt.t())) {
 					result.setPage(lt.getPage());
 					break;
 				}
@@ -1511,7 +1766,7 @@ public class FullTextParser extends AbstractParser {
 
 			SortedSet<Integer> blockPtrs = new TreeSet<>();
 			for (LayoutToken lt : tokenizationTable) {
-				if (!LayoutTokensUtil.spaceyToken(lt.t())) {
+				if (!LayoutTokensUtil.spaceyToken(lt.t()) && !LayoutTokensUtil.newLineToken(lt.t())) {
 					blockPtrs.add(lt.getBlockPtr());
 				}
 			}
@@ -1520,7 +1775,7 @@ public class FullTextParser extends AbstractParser {
 
 			// the first token could be a space from previous page
 			for (LayoutToken lt : tokenizationTable) {
-				if (!LayoutTokensUtil.spaceyToken(lt.t())) {
+				if (!LayoutTokensUtil.spaceyToken(lt.t()) && !LayoutTokensUtil.newLineToken(lt.t())) {
 					result.setPage(lt.getPage());
 					break;
 				}

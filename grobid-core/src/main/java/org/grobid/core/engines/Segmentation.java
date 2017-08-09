@@ -433,16 +433,21 @@ public class Segmentation extends AbstractParser {
                         text = st2.nextToken();
                     if (st2.hasMoreTokens())
                         text2 = st2.nextToken();
-                    if ((text == null) ||
-                            (text.trim().length() == 0) ||
-                            (text.trim().equals("\n")) ||
-                            (text.trim().equals("\r")) ||
-                            (text.trim().equals("\n\r")) ||
+
+                    if (text == null)
+                        continue;
+
+                    // final sanitisation and filtering
+                    text = text.replaceAll("[ \n]", "");
+                    text = text.trim();
+
+                    if ( (text.length() == 0) ||
+//                            (text.equals("\n")) ||
+//                            (text.equals("\r")) ||
+//                            (text.equals("\n\r")) ||
                             (TextUtilities.filterLine(line))) {
                         continue;
                     }
-
-                    text = text.trim();
 
                     features.string = text;
                     features.secondString = text2;
@@ -710,7 +715,7 @@ public class Segmentation extends AbstractParser {
      * @param tokenizations toks
      * @return extraction
      */
-    private StringBuffer trainingExtraction(String result,
+    public StringBuffer trainingExtraction(String result,
                                             List<LayoutToken> tokenizations,
                                             Document doc) {
         // this is the main buffer for the whole full text

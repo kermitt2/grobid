@@ -13,10 +13,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.text.NumberFormat;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -31,7 +29,8 @@ public class TextUtilities {
 
     public static final String punctuations = " •*,:;?.!)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
     public static final String fullPunctuations = "([ •*,:;?.!/)-−–‐\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
-    public static String delimiters = "\n\r\t\u00A0" + fullPunctuations;
+    public static final String restrictedPunctuations = ",:;?.!/-–«»„\"“”‘’'`*\u2666\u2665\u2663\u2660";
+    public static String delimiters = "\n\r\t\f\u00A0" + fullPunctuations;
 
     public static final String OR = "|";
     public static final String NEW_LINE = "\n";
@@ -216,7 +215,7 @@ public class TextUtilities {
                     Lexicon lex = Lexicon.getInstance();
 
                     if (lex.inDictionary(hyphenToken.toLowerCase()) &
-                            !(FeatureFactory.test_digit(hyphenToken))) {
+                            !(test_digit(hyphenToken))) {
                         // if yes, it is hyphenization
                         res += firstToken;
                         section = section.substring(firstToken.length(), section.length());
@@ -960,13 +959,17 @@ public class TextUtilities {
     }
 
     public static String formatTwoDecimals(double d) {
-        DecimalFormat twoDForm = new DecimalFormat("#.##");
-        return twoDForm.format(d);
+        NumberFormat nf = NumberFormat.getNumberInstance(Locale.US);
+        DecimalFormat df = (DecimalFormat)nf;
+        df.applyPattern("#.##");
+        return df.format(d);
     }
 
     public static String formatFourDecimals(double d) {
-        DecimalFormat fourDForm = new DecimalFormat("#.####");
-        return fourDForm.format(d);
+        NumberFormat nf = NumberFormat.getNumberInstance(Locale.US);
+        DecimalFormat df = (DecimalFormat)nf;
+        df.applyPattern("#.####");
+        return df.format(d);
     }
 
     public static boolean isAllUpperCase(String text) {
@@ -1269,5 +1272,55 @@ public class TextUtilities {
         }
 
         return s.substring(s.length() - count);
+    }
+
+    public static String JSONEncode(String json) {
+        // we assume all json string will be bounded by double quotes
+        return json.replaceAll("\"", "\\\"").replaceAll("\n", "\\\n");
+    }
+
+    public static String strrep(char c, int times) {
+        StringBuilder builder = new StringBuilder();
+        for(int i=0; i<times; i++) {
+            builder.append(c);
+        }
+        return builder.toString();
+    }
+
+    public static int getOccCount(String term, String string) {
+        return StringUtils.countMatches(term, string);
+    }
+
+    /**
+     * Test for the current string contains at least one digit.
+     *
+     * @param tok the string to be processed.
+     * @return true if contains a digit
+     */
+    public static boolean test_digit(String tok) {
+        if (tok == null)
+            return false;
+        if (tok.length() == 0)
+            return false;
+        char a;
+        for (int i = 0; i < tok.length(); i++) {
+            a = tok.charAt(i);
+            if (Character.isDigit(a))
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * Useful for recognising an acronym candidate: check if a text is only 
+     * composed of upper case, dot and digit characters
+     */
+    public static boolean isAllUpperCaseOrDigitOrDot(String text) {
+        for (int i = 0; i < text.length(); i++) {
+            if (!Character.isUpperCase(text.charAt(i)) && !Character.isDigit(text.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 }

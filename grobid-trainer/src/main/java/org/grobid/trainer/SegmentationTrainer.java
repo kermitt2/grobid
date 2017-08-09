@@ -3,6 +3,7 @@ package org.grobid.trainer;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.trainer.sax.TEISegmentationSaxParser;
 
 import javax.xml.parsers.SAXParser;
@@ -158,14 +159,21 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                         l++;
                         int ii = line.indexOf(' ');
                         String token = null;
-                        if (ii != -1)
+                        if (ii != -1) {
                             token = line.substring(0, ii);
+                            // unicode normalisation of the token - it should not be necessary if the training data
+                            // has been gnerated by a recent version of grobid
+                            token = UnicodeUtil.normaliseTextAndRemoveSpaces(token);
+                        }
                         // we get the label in the labelled data file for the same token
                         for (int pp = q; pp < labeled.size(); pp++) {
                             String localLine = labeled.get(pp);
                             StringTokenizer st = new StringTokenizer(localLine, " \t");
                             if (st.hasMoreTokens()) {
                                 String localToken = st.nextToken();
+                                // unicode normalisation of the token - it should not be necessary if the training data
+                                // has been gnerated by a recent version of grobid
+                                localToken = UnicodeUtil.normaliseTextAndRemoveSpaces(localToken);
                                 if (localToken.equals(token)) {
                                     String tag = st.nextToken();
                                     segmentation.append(line).append(" ").append(tag);
@@ -233,7 +241,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
      * @param outputPath         output train file
      * @return number of examples
      */
-    public int addFeaturesSegmentation2(String sourceTEIPathLabel,
+    /*public int addFeaturesSegmentation2(String sourceTEIPathLabel,
                                         String sourceRawPathLabel,
                                         File outputPath) {
         int totalExamples = 0;
@@ -328,7 +336,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
         return totalExamples;
-    }
+    }*/
 
     /**
      * Command line execution.

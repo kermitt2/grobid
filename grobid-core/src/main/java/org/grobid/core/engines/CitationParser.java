@@ -19,6 +19,7 @@ import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.utilities.counters.CntManager;
 
 import java.io.File;
@@ -56,6 +57,7 @@ public class CitationParser extends AbstractParser {
         try {
             ArrayList<String> citationBlocks = new ArrayList<>();
 
+            input = UnicodeUtil.normaliseText(input);
             input = TextUtilities.dehyphenize(input);
             input = input.replace("\n", " ");
             input = input.replaceAll("\\p{Cntrl}", " ").trim();
@@ -75,6 +77,8 @@ public class CitationParser extends AbstractParser {
             for (String tok : tokenizations) {
                 //tokenizations.add(tok);
                 if (!LayoutTokensUtil.spaceyToken(tok)) {
+                    // parano final sanitisation
+                    tok = tok.replaceAll("[ \n]", "");
                     citationBlocks.add(tok + " <citation>");
                 }
             }
