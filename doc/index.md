@@ -33,7 +33,9 @@
 
 <h3>Annotation guidelines</h3>
 
-* [Bibliographical references](Bibliographical-references.md)
+* [Segmentation model](training/segmentation.md)
+* [Fulltext model](training/fulltext.md)
+* [Bibliographical reference](training/Bibliographical-references.md)
 
 <h3>Developer notes</h3>
 

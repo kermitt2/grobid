@@ -2,7 +2,7 @@
 
 ## Introduction
 
-For the following guidelines, it is expected that training data has been generated as explained here TODO:link.
+For the following guidelines, it is expected that training data has been generated as explained [here](../Training-the-models-of-Grobid/#generation-of-training-data).
 
 The following TEI elements are used by the segmentation model:
 
@@ -18,7 +18,7 @@ The following TEI elements are used by the segmentation model:
 
 It is necessary to identify these substructures inside the `body`. Figures and tables (including their potential titles, legends and notes) are considered part of the container, here the `body` element.
 
-For the segmentation model, there aren't any `title` or `author` elements as they are handled in the header model.
+For the segmentation model, there aren't any `title` or `author` elements as they are handled in the `header` model.
 
 > Note: It is recommended to study the existing training documents for the segmentation model first to see some examples of how these elements should be used.
 
