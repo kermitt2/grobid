@@ -55,7 +55,8 @@ Example:
 
 	<listBibl>
 		<bibl>
-			<title level="j">Biostatistics</title> (<date>2008</date>), <biblScope type="vol">9</biblScope>, <biblScope type="issue">2</biblScope>, pp. <biblScope type="pp">234–248</biblScope>
+			<title level="j">Biostatistics</title> (<date>2008</date>), <biblScope type="vol">9</biblScope>, 
+			<biblScope type="issue">2</biblScope>, pp. <biblScope type="pp">234–248</biblScope>
     	</bibl>
 	</listBibl>
 
