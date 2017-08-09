@@ -36,6 +36,7 @@
 * [Segmentation model](training/segmentation.md)
 * [Fulltext model](training/fulltext.md)
 * [Bibliographical reference](training/Bibliographical-references.md)
+* [Date model](training/date.md)
 
 <h3>Developer notes</h3>
 
