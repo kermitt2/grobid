@@ -164,9 +164,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                             token = line.substring(0, ii);
                             // unicode normalisation of the token - it should not be necessary if the training data
                             // has been gnerated by a recent version of grobid
-                            token = UnicodeUtil.normaliseText(token);
-                            // parano sanitising 
-                            token = token.replaceAll("[ \n]", "");
+                            token = UnicodeUtil.normaliseTextAndRemoveSpaces(token);
                         }
     //                    boolean found = false;
                         // we get the label in the labelled data file for the same token
@@ -177,9 +175,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                                 String localToken = st.nextToken();
                                 // unicode normalisation of the token - it should not be necessary if the training data
                                 // has been gnerated by a recent version of grobid
-                                localToken = UnicodeUtil.normaliseText(localToken);
-                                // parano sanitising 
-                                localToken = localToken.replaceAll("[ \n]", "");
+                                localToken = UnicodeUtil.normaliseTextAndRemoveSpaces(localToken);
 
                                 if (localToken.equals(token)) {
                                     String tag = st.nextToken();
