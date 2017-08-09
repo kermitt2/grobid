@@ -1,4 +1,4 @@
-# Training Grobid's 'Segmentation' model
+# Annotation guidelines for the 'segmentation' model
 
 ## Introduction
 

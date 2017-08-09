@@ -1,4 +1,4 @@
-# Training Grobid's 'fulltext' model
+# Annotation guidelines for the 'fulltext' model
 
 ## Introduction
 

@@ -23,4 +23,5 @@ pages:
 - ['training/segmentation.md', 'Annotation guidelines', 'Segmentation model']
 - ['training/fulltext.md', 'Annotation guidelines', 'Fulltext model']
 - ['training/Bibliographical-references.md', 'Annotation guidelines', 'Bibliographical references']
+- ['training/date.md', 'Annotation guidelines', 'Date model']
 - ['Recompiling-and-integrating-CRF-libraries.md', 'Developer notes', 'Recompiling CRF libraries']
