@@ -60,7 +60,7 @@ public class HeaderTrainer extends AbstractTrainer{
      * Add the selected features to the header model training
      * @param sourceFile source path
      * @param headerPath header path
-     * @param outputPath output training file
+     * @param trainingOutputPath output training file
      * @return number of corpus files
      */
     public int addFeaturesHeaders(String sourceFile,
@@ -168,9 +168,7 @@ public class HeaderTrainer extends AbstractTrainer{
                         token = line.substring(0, ii);
                         // unicode normalisation of the token - it should not be necessary if the training data
                         // has been gnerated by a recent version of grobid
-                        token = UnicodeUtil.normaliseText(token);
-                        // parano sanitising 
-                        token = token.replaceAll("[ \n]", "");
+                        token = UnicodeUtil.normaliseTextAndRemoveSpaces(token);
                     }
 //                    boolean found = false;
                     // we get the label in the labelled data file for the same token
@@ -181,9 +179,7 @@ public class HeaderTrainer extends AbstractTrainer{
                             String localToken = st.nextToken();
                             // unicode normalisation of the token - it should not be necessary if the training data
                             // has been gnerated by a recent version of grobid
-                            localToken = UnicodeUtil.normaliseText(localToken);
-                            // parano sanitising 
-                            localToken = localToken.replaceAll("[ \n]", "");
+                            localToken = UnicodeUtil.normaliseTextAndRemoveSpaces(localToken);
 
                             if (localToken.equals(token)) {
                                 String tag = st.nextToken();
