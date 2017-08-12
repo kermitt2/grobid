@@ -13,7 +13,7 @@ The 'Fulltext' model attempts to recognize the following objects:
 * figures
 * tables (which, for Grobid, are actual special figures)
 * formulas
-* list items
+* list items inside lists
 * callouts to figures ('see Fig. 1'), to tables, to formulas amd to bibliographical references ('Austin 2008(b)'), etc.
 
 The following sections will give examples for each of the objects above and how they should be marked up.
@@ -106,9 +106,7 @@ match.
 </p>
 ```
 
-**FIXME: `items` not inside `list`?!?!**
-
-The next example shows, again, that list items should be on the same hierarchical level as paragraphs and other block-level elements.
+The next example shows, again, that list items should contained inside `list` elements which in turn are on the same hierarchical level as paragraphs and other block-level elements.
 
 ```xml
 <p>The estimation of the eligible own funds and the SCR requires to carry out
@@ -119,15 +117,17 @@ The next example shows, again, that list items should be on the same hierarchica
   <lb/>
 </p>
 
-<item>• updating the assets and liabilities model points;
-  <lb/>
-</item>
+<list>
+  <item>• updating the assets and liabilities model points;
+    <lb/>
+  </item>
 
-<item>• constructing a set of economic scenarios under the risk-neutral probability and
-  <lb/>
-	checking its market-consistency;
-  <lb/>
-</item>
+  <item>• constructing a set of economic scenarios under the risk-neutral probability and
+    <lb/>
+	  checking its market-consistency;
+    <lb/>
+  </item>
+</list>
 
 <p>The wild-type strain was Bristol N2. All animals were raised at
   <lb/> 20uC. The following
@@ -246,7 +246,7 @@ The corrected XML (note the `figure type="table"` element):
 
 ### List items
 
-As one would expect, list items (`item` elements) should be contained within a `list` element and not occur within `p` elements. At this stage no difference is made between ordered and unordered lists.
+As one would expect, list items (`item` elements) should be contained in a `list` element and must not occur within `p` elements. At this stage no difference is made between ordered and unordered lists.
 
 List item markers such as hyphens, bullet points (for unordered lists) or numbers and letters (for ordered lists) should be contained within the `item` element.
 
