@@ -36,6 +36,28 @@ These files must be reviewed and corrected manually before being added to the tr
 
 The most important principle when correcting the pre-annotated training data is to __keep the stream of text untouched__. Only the tags can be moved, the text itself shall not be modified or corrected. The stream of text present in the training file after extraction of the content of the PDF, is similar to the stream of text GROBID will have to processed once the models created. It is thus important to have GROBID trained on these realistic input, even if they contain OCR errors, noise, unknown unicode characters, etc.   
 
+There are two exceptions to this main rule :
+
+* actual __end-of-lines__ from the PDF files are indicated by element `<lb/>`. These tags `<lb/>` should be considered as part of the stream of text are should not be moved or removed with respect to the overall text stream. 
+
+* in the TEI/XML files, end-of-line is equivalent to a space character - it is thus possible to add or remove end-of-line characters as long the spacing is preserved.
+For instance for GROBID:
+
+```xml
+ 	<title level="a">In XML training files, end-of-line and space are the same</title> <lb/> <author>Kermitt Jr</author> <lb/> <date>2017</date> 
+```
+
+is equivalent to 
+
+```xml
+<title level="a">In XML training files, end-of-line and space are 
+	the same</title> <lb/> 
+	<author>Kermitt Jr</author> 
+	<lb/> 
+	
+	<date>2017</date> 
+```
+
 In the standard Grobid installation, examples of existing annotations can be found under `grobid-trainer/resources/` for each model.
 
 In the current correction process, no xml file shall be added: 
