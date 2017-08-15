@@ -30,15 +30,14 @@ Ex.:
 
 We have selected four level of organizations, which correspond for the three first of them to the three-tiered system of WoS. Each one appear as value of the attribute `@type` of the element `<orgName>`:
 
-* __institution__: corresponds to the global structure that hosts the author (can be a university or an institute (e.g. MIT, INRIA)) – the largest scale of organization type.
+* __institution__: corresponds to the global structure that hosts the author (can be a university or an institute, e.g. MIT, INRIA) - the largest scale of organization type.
 
 * __department__: corresponds to a specialized division of the institution mentioned above - intermediate structure of organization type (department, faculty, institute)
 if there is one.
 
-* __laboratory__: corresponds to the research team or group, which the author belongs to (e.g. Joint Research Laboratory Nanomaterials) – the smallest scale of
+* __laboratory__: corresponds to the research team or group, which the author belongs to (e.g. Joint Research Laboratory Nanomaterials) - the smallest scale of
 organization type.
 
-* __collaboration__: a collaboration is a project-based grouping of authors from different affiliations limited in time. Some examples: In high energy particules the ATLAS, CMS and [DELPHI](http://delphiwww.cern.ch/) collaborations (the current world record holder for number of authorship [arXiv:1503.07589](http://arxiv.org/abs/1503.07589) combines the two CERN collaborations ATLAS and CMS), or the [LUNA](https://luna.lngs.infn.it/) collaboration in astrophysics. The particularity of collaborations is to be used both as _authorship_ and _affiliation_ component.
 
 ### Address components
 
