@@ -16,7 +16,7 @@ The `fulltext` model attempts to recognize the following objects:
 * list items inside lists
 * markers: callouts to figures ("see Fig. 1"), tables, formulas and to bibliographical references (e.g. "Austin 2008(b)").
 
-The following sections will give examples for each of the objects above and how they should be marked up. Note that the mark-up follows overall the [TEI](http://www.tei-c.org). 
+The following sections will give examples for each of the objects above and how they should be marked up. Note that the mark-up follows overall the [TEI](http://www.tei-c.org).
 
 ## Analysis
 
@@ -111,7 +111,7 @@ The next example illustrates similarly that in TEI list items should contained i
 	  checking its market-consistency;<lb/></item>
 </list>
 
-<p>The wild-type strain was Bristol N2. All animals were raised at<lb/> 
+<p>The wild-type strain was Bristol N2. All animals were raised at<lb/>
   20uC. The following alleles and transgenes were used:<lb/>
 </p>
 
@@ -138,11 +138,11 @@ The following XML sample shows one figure (`<figure>`) followed by two tables wh
   promotes cell survival by inhibiting the induction of apoptosis.<lb/>
 </figure>
 
-<figure type="table"> Table 1 Clades of clownfishes used in this study<lb/> 
+<figure type="table"> Table 1 Clades of clownfishes used in this study<lb/>
   Clade name<lb/>
-	Species<lb/> 
-  percula<lb/> 
-  A. ocellaris, A. percula, P. biaculeatus<lb/> 
+	Species<lb/>
+  percula<lb/>
+  A. ocellaris, A. percula, P. biaculeatus<lb/>
   Australian<lb/>
 	A. akindynos, A. mccullochi<lb/>
   ...
@@ -150,20 +150,20 @@ The following XML sample shows one figure (`<figure>`) followed by two tables wh
 </figure>
 
 <figure type="table"> Table 1 The clinicopathological data of PDAC tissue samples<lb/>
-  Sample<lb/> 
-  Age<lb/> 
-  Sex<lb/> 
-  Location a<lb/> 
-  Histology b<lb/> 
-  T<lb/> 
-  N<lb/> 
+  Sample<lb/>
+  Age<lb/>
+  Sex<lb/>
+  Location a<lb/>
+  Histology b<lb/>
+  T<lb/>
+  N<lb/>
   ...
-  1<lb/> 
-  1<lb/> 
-  IVb<lb/> 
-  a<lb/> 
+  1<lb/>
+  1<lb/>
+  IVb<lb/>
+  a<lb/>
   P ¼ primary lesion; Ph ¼ head; Pb ¼ body; Pt ¼ tail of the pancreas; LM ¼ liver metastatic lesion. b
-	mod ¼ moderately; poor ¼ poorly differentiated tubular adenocarcinoma.<lb/> 
+	mod ¼ moderately; poor ¼ poorly differentiated tubular adenocarcinoma.<lb/>
   PDAC ¼ pancreatic ductal adenocarcinoma; FISH ¼ fluorescence in situ hybridisation; ISH ¼ in
 	situ RNA hybridisation.<lb/>
 </figure>
@@ -171,7 +171,7 @@ The following XML sample shows one figure (`<figure>`) followed by two tables wh
 
 Boxed content, i.e. a box with additional content __outside__ the flow of the general content, are tagged similarly with the element `<figure type="box">`.
 
-<!-- NOTE: the problem bellow is fixed and <table> in the generated training data should not appear anymore! 
+<!-- NOTE: the problem below is fixed and <table> in the generated training data should not appear anymore!
 
 Finally, an example where GROBID has recognized a table but used the `<table>` element to mark it up; this needs to be corrected to `<figure type="table">`.
 
@@ -185,7 +185,7 @@ The corrected XML (note the `<figure type="table">` element):
 
 ![the corrected XML](img/table-fulltext-corrected-xml.png)
 
---> 
+-->
 
 
 ### Formulas
@@ -194,15 +194,15 @@ The label of the formula (usually its number) is tagged with the element `<label
 
 ```xml
 <formula>
-  σ α β =<lb/> 
-  1<lb/> 
-  3<lb/> 
-  ˙<lb/> 
-  R<lb/> 
-  R −<lb/> 
-  ˙<lb/> 
-  R<lb/> 
-  R<lb/> 
+  σ α β =<lb/>
+  1<lb/>
+  3<lb/>
+  ˙<lb/>
+  R<lb/>
+  R −<lb/>
+  ˙<lb/>
+  R<lb/>
+  R<lb/>
   diag(0, 2, −1, −1),<lb/>
 	<label>(10)</label>
   <lb/>
@@ -216,12 +216,12 @@ Following the TEI, list items (`<item>` elements) should be contained in a `<lis
 List item markers such as hyphens, bullet points (for unordered lists) or numbers and letters (for ordered lists) should be contained within the `<item>` element.
 
 ```xml
-<p>Introducing ballot identifiers has the appeal that it provides voters with a<lb/> 
+<p>Introducing ballot identifiers has the appeal that it provides voters with a<lb/>
   very simple, direct and easy to understand way to confirm that their vote is<lb/>
   ...
-  this observation that we exploit to counter this threat: we arrange for the voters<lb/> 
-  to learn their tracker numbers only after the information has been posted to the<lb/> 
-  WBB.<lb/> 
+  this observation that we exploit to counter this threat: we arrange for the voters<lb/>
+  to learn their tracker numbers only after the information has been posted to the<lb/>
+  WBB.<lb/>
   This paper presents a scheme that addresses both of these shortcomings by:<lb/>
 </p>
 
@@ -235,10 +235,10 @@ List item markers such as hyphens, bullet points (for unordered lists) or number
 <list>
 	<item>1) The difficulty of identifying passages in a user&apos;s manual based on an individual word.<lb/></item>
 
-  <item>2) The difficulty of distinguishing affirmative and negative sentences which mean	two different<lb/> 
+  <item>2) The difficulty of distinguishing affirmative and negative sentences which mean	two different<lb/>
   features in the manual.<lb/></item>
 
-  <item>3) The difficulty of retrieving appropriate passages for a query using words not appearing in the<lb/> 
+  <item>3) The difficulty of retrieving appropriate passages for a query using words not appearing in the<lb/>
   manual.<lb/></item>
 </list>
 ```
@@ -265,22 +265,22 @@ Harbaugh and Harbaugh <ref type="biblio">[7]</ref>
 in Lolle et al. <ref type="biblio">1</ref>
 ```
 
-Note that the bracket/parenthesis symbols are included in the tagged content. 
+Note that the bracket/parenthesis symbols are included in the tagged content.
 
 Bellow, as the label within the brackets fully qualifies the reference, we don't further annotate the callout with the author names:
 
 ```xml
 <p>The clinical entity of cervical flexion myelopa-<lb/>
-  thy proposed in the 1960s by Reid <ref type="biblio">[16,17]</ref> and<lb/> 
+  thy proposed in the 1960s by Reid <ref type="biblio">[16,17]</ref> and<lb/>
   Breig et al <ref type="biblio">[2,3]</ref> has been neglected for a long time.<lb/>
   ...
   groups of males and females controls.<lb/>
 </p>
 ```
 
-Note that when a group of references is introduced, the whole set of references callouts is tagged by one element. 
+It is important to note that whenever there is an enumeration of several references, they should not be marked up as several references, using specific `ref` elements for each one, but just one element surrounding the whole group. Grobid's `referenceSegmenter` model will in a second step analyse these groups in more detail.
 
-To highlight the diversity of bibliographical references introduced by author names and year, here are some more examples:
+To highlight the diversity of bibliographical references, here are some more examples:
 
 ```xml
 by <ref type="biblio">Greve et al. [1994]</ref> and <ref type="biblio">Koch et al.<lb/> [1994]</ref>
@@ -303,7 +303,7 @@ by <ref type="biblio">Greve et al. [1994]</ref> and <ref type="biblio">Koch et a
 ```
 
 ```xml
-(e.g., <ref type="biblio">Bryant<lb/> &amp; Goswami, 1987</ref>) by<lb/> 
+(e.g., <ref type="biblio">Bryant<lb/> &amp; Goswami, 1987</ref>) by<lb/>
 <ref type="biblio">Smith and Matsoukas [1998]</ref> and <ref type="biblio">Khelifa and Hill [2006b]<lb/></ref>
 ```
 
@@ -330,9 +330,9 @@ such as receptors for IL-1β <ref type="biblio">(REFS 64,65)</ref>,<lb/> TNF <re
 The next example shows markers (callouts) to a table and a figure (as noted earlier, whitespace is not of importance for GROBID and can therefore be used liberally, like here to better show the tagging):
 
 ```xml
-<p>The patient group comprised all six patients with<lb/> 
+<p>The patient group comprised all six patients with<lb/>
   juvenile cervical
-	flexion myelopathy admitted to<lb/> 
+	flexion myelopathy admitted to<lb/>
   our hospital
 
   <ref type="table"> (Table 1) </ref>.
@@ -341,9 +341,9 @@ The next example shows markers (callouts) to a table and a figure (as noted earl
   ...
   alignment in the extended neck position
 
-  <ref type="figure"> (Figure 3) </ref>.<lb/> 
+  <ref type="figure"> (Figure 3) </ref>.<lb/>
 
-  Cervical MR imaging in the neutral neck position of<lb/> 
+  Cervical MR imaging in the neutral neck position of<lb/>
   five of the six patients showed a straight cervical<lb/>
 </p>
 ```
@@ -351,7 +351,7 @@ The next example shows markers (callouts) to a table and a figure (as noted earl
 An example of callouts to two formulas (and a bibliographical entry):
 
 ```xml
-<p>Here, Θ(y) denotes ...<lb/> 
+<p>Here, Θ(y) denotes ...<lb/>
 the semi-cylindrical drum. The dynamics of the avalanches of eqs.
 
   <ref type="formula">(1)</ref>
@@ -360,10 +360,10 @@ the semi-cylindrical drum. The dynamics of the avalanches of eqs.
 
   <ref type="formula">(2)</ref>
 
-  is centered<lb/> 
+  is centered<lb/>
   around the angle ϕ d = tan b 0
 
-  <ref type="biblio">[7]</ref>.<lb/> 
+  <ref type="biblio">[7]</ref>.<lb/>
 
   ...
   stochastic extension of the DMM:<lb/>
