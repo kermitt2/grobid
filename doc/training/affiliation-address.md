@@ -1,12 +1,10 @@
-#Annotation guidelines for dates
+# Annotation guidelines for affiliation and address
 
 ## Introduction
 
 The affiliation-address structure contains an informal description of an author’s present or past affiliation with one organization, for example an employer or a sponsor. It can group up to three elements: the name of the organization (`<orgName>`), its address (`<address>`) and an indice (`<marker>`).
 
-As usually for GROBID models, text that do not belong to one of the left elements, in particular such as punctuations, syntactic sugar, etc. has to be be left untagged. Line break are indicated with `<lb>`. 
-
-Ex.:
+As usually for GROBID models, text that do not belong to one of the left elements, in particular such as punctuations, syntactic sugar, etc. has to be be left untagged. Line break are indicated with `<lb>`. For example:
 
 ```xml
 <affiliation>
@@ -14,6 +12,7 @@ Ex.:
 	of the 
 	<orgName type="institution">Technische Universität Darmstadt</orgName>,
 	address:
+	<lb/>
 	<address>
 		<addrLine>Petersenstraße 23</addrLine>,
 		<postCode>D-64287</postCode>
@@ -23,12 +22,13 @@ Ex.:
 </affiliation>
 ```
 
+Note that this mark-up follows overall the [TEI](http://www.tei-c.org), which the addition of the custom element `<marker>`. 
+
 ## Analysis
 
 ### Affiliation components
 
-
-We have selected four level of organizations, which correspond for the three first of them to the three-tiered system of WoS. Each one appear as value of the attribute `@type` of the element `<orgName>`:
+We have selected three levels of organisations, which correspond to the three-tiered system of woS (Web of Science). Each one appear as value of the attribute `@type` of the element `<orgName>`:
 
 * __institution__: corresponds to the global structure that hosts the author (can be a university or an institute, e.g. MIT, INRIA) - the largest scale of organization type.
 

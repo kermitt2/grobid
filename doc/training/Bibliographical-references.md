@@ -7,6 +7,8 @@ This section describes how to annotate training data for the __citation__ model.
 In the model cascading sequence, a bibliographical reference in isolation is obtained from the model _reference segmenter_ which aims at segmenting a 
 bibliographical section into a list of individual bibliographical references. 
 
+Note that this mark-up for training data for bibliographical references follows overall the [TEI](http://www.tei-c.org). 
+
 ## Analysis
 
 The complete bibliographical reference is enclosed in a `<bibl>` element. One <bibl> structure must match with exactly one bibliographical reference.
