@@ -1315,7 +1315,7 @@ public class FullTextParser extends AbstractParser {
                 }
 				if (!output) {
                     output = writeField(buffer, s1, lastTag0, s2, "<table>",
-						"<table>", addSpace, 3, false);
+						"<figure type=\"table\">", addSpace, 3, false);
                 }
                 // for item we must distinguish starting and closing tags
                 if (!output) {
