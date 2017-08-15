@@ -26,11 +26,11 @@ Then the following tags are used for structuring the bibliographical references:
 
 * `<date>` the date sequence (including parenthesis, etc.)
 
-* `<biblScope type="pp">` the full range of pages or the article ID
+* `<biblScope unit="page">` the full range of pages or the article 
 
-* `<biblScope type="vol">` the block for volume (e.g. `<biblScope type="vol"> vol. 7,</biblScope>`)
+* `<biblScope unit="volume">` the value of the volume (e.g. `vol. <biblScope unit="volume">7</biblScope>,`)
 
-* `<biblScope type="issue">` the block for the issue, also known as number, (e.g. no. `<biblScope type="issue">3</biblScope>`,)
+* `<biblScope unit="issue">` the value of the issue, also known as number, (e.g. no. `(<biblScope type="issue">3</biblScope>)`,)
 
 * `<orgName>` the institution for thesis or technical reports
 
@@ -44,7 +44,9 @@ Then the following tags are used for structuring the bibliographical references:
 
 * `<idno>` for the document-specific identifier, in particular DOI and arXiv identifiers, optionally the type of identifier can be given by the attribute `@type`, for instance, `<idno type="doi">...</idno>`
 
-* `<note>` for any indications related to the reference and not covered by one of the previous tags. In the case of technical report, the indication of the document kind is encoded with the following attribute value <note type="report">
+* `<note type="report">` in the case of technical report, encode the indication of the kind of report
+
+* `<note>` for any indications related to the reference and not covered by one of the previous tags
 
 Additional text/characters that do not belong to one of these elements (punctuations, syntactic sugar, etc.) has to be be left untagged under the `<bibl>` elements. This is the case for instance for the tag `<date>`, the caracters such as parenthesis have to be put outside this element (see the example bellow).
 
