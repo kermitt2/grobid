@@ -46,7 +46,7 @@ Then the following tags are used for structuring the bibliographical references:
 
 Additional text/characters that do not belong to one of these elements (punctuations, syntactic sugar, etc.) has to be be left untagged under the `<bibl>` elements. This is the case for instance for the tag `<date>`, the caracters such as parenthesis have to be put outside this element (see the example bellow).
 
-Example: 
+Example: _Biostatistics (2008), 9(2), pp. 234–248_
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -56,8 +56,9 @@ Example:
 
 	<listBibl>
 		<bibl>
-			<title level="j">Biostatistics</title> (<date>2008</date>), <biblScope type="vol">9</biblScope>, 
-			<biblScope type="issue">2</biblScope>, pp. <biblScope type="pp">234–248</biblScope>
+			<title level="j">Biostatistics</title> (<date>2008</date>), 
+			<biblScope type="vol">9</biblScope>(<biblScope type="issue">2</biblScope>), 
+			pp. <biblScope type="pp">234–248</biblScope>
     	</bibl>
 	</listBibl>
 
@@ -89,11 +90,9 @@ The year with letter are tagged together:
 
 In example likethe following one:
 
->  _D. Foo, P. Bar, Phys. Rev. D95, 34(2017)_
+>  _D. Foo, P. Bar, Phys. Rev. __D95__, 34(2017)_
 
-there is no spacing between the title of the journal `Phys. Rev. D` and the volume `95`.
-
-For annotating this case, we tag the two fields without separation (not introducing a space or end-of-line between *D* and *95*): 
+there is no spacing between the title of the journal `Phys. Rev. D` and the volume `95`. For annotating this case, we tag these two fields without separation (not introducing a space or end-of-line between *D* and *95*): 
 
 ```xml
 <bibl>
