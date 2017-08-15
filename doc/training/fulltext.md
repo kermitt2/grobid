@@ -278,7 +278,7 @@ Bellow, as the label within the brackets fully qualifies the reference, we don't
 </p>
 ```
 
-It is important to note that whenever there is an enumeration of several references, they should not be marked up as several references, using specific `ref` elements for each one, but just one element surrounding the whole group. Grobid's `referenceSegmenter` model will in a second step analyse these groups in more detail.
+It is important to note that whenever there is an enumeration of several references, they should not be marked up as several references, using specific `ref` elements for each one, but just one element surrounding the whole group. 
 
 To highlight the diversity of bibliographical references, here are some more examples:
 

@@ -53,7 +53,7 @@ public class TaggingLabels {
     public final static String AFFILIATION_LABEL = "<affiliation>";
     public final static String ADDRESS_LABEL = "<address>";
     public final static String EMAIL_LABEL = "<email>";
-    public final static String PUBMUN_LABEL = "<pubnum>";
+    public final static String PUBNUM_LABEL = "<pubnum>";
     public final static String KEYWORD_LABEL = "<keyword>";
     public final static String PHONE_LABEL = "<phone>";
     public final static String DEGREE_LABEL = "<degree>";
@@ -62,6 +62,14 @@ public class TaggingLabels {
     public final static String SUBMISSION_LABEL = "<submission>";
     public final static String ENTITLE_LABEL = "<entitle>";
     public final static String INTRO_LABEL = "<intro>";
+
+    public final static String COLLABORATION_LABEL = "<collaboration>";
+    public final static String JOURNAL_LABEL = "<journal>";
+    public final static String BOOKTITLE_LABEL = "<booktitle>";
+    public final static String VOLUME_LABEL = "<volume>";
+    public final static String ISSUE_LABEL = "<issue>";
+    public final static String PAGES_LABEL = "<pages>";
+    public final static String PUBLISHER_LABEL = "<publisher>";
 
     public static final TaggingLabel CITATION_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, CITATION_MARKER_LABEL);
     public static final TaggingLabel TABLE_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, TABLE_MARKER_LABEL);
@@ -94,7 +102,7 @@ public class TaggingLabels {
     public static final TaggingLabel HEADER_AFFILIATION = new TaggingLabelImpl(GrobidModels.HEADER, AFFILIATION_LABEL);
     public static final TaggingLabel HEADER_ADDRESS = new TaggingLabelImpl(GrobidModels.HEADER, ADDRESS_LABEL);
     public static final TaggingLabel HEADER_EMAIL = new TaggingLabelImpl(GrobidModels.HEADER, EMAIL_LABEL);
-    public static final TaggingLabel HEADER_PUBNUM = new TaggingLabelImpl(GrobidModels.HEADER, PUBMUN_LABEL);
+    public static final TaggingLabel HEADER_PUBNUM = new TaggingLabelImpl(GrobidModels.HEADER, PUBNUM_LABEL);
     public static final TaggingLabel HEADER_KEYWORD = new TaggingLabelImpl(GrobidModels.HEADER, KEYWORD_LABEL);
     public static final TaggingLabel HEADER_PHONE = new TaggingLabelImpl(GrobidModels.HEADER, PHONE_LABEL);
     public static final TaggingLabel HEADER_DEGREE = new TaggingLabelImpl(GrobidModels.HEADER, DEGREE_LABEL);
@@ -103,6 +111,7 @@ public class TaggingLabels {
     public static final TaggingLabel HEADER_SUBMISSION = new TaggingLabelImpl(GrobidModels.HEADER, SUBMISSION_LABEL);
     public static final TaggingLabel HEADER_ENTITLE = new TaggingLabelImpl(GrobidModels.HEADER, ENTITLE_LABEL);
     public static final TaggingLabel HEADER_INTRO = new TaggingLabelImpl(GrobidModels.HEADER, INTRO_LABEL);
+    public static final TaggingLabel HEADER_COLLABORATION = new TaggingLabelImpl(GrobidModels.HEADER, COLLABORATION_LABEL);
 
     public static final TaggingLabel DATE_YEAR = new TaggingLabelImpl(GrobidModels.DATE, DATE_YEAR_LABEL);
     public static final TaggingLabel DATE_MONTH = new TaggingLabelImpl(GrobidModels.DATE, DATE_MONTH_LABEL);
@@ -119,6 +128,25 @@ public class TaggingLabels {
     public static final TaggingLabel TBL_TRASH = new TaggingLabelImpl(GrobidModels.TABLE, TRASH_LABEL);
     public static final TaggingLabel TBL_LABEL = new TaggingLabelImpl(GrobidModels.TABLE, LABEL_LABEL);
     public static final TaggingLabel TBL_OTHER = new TaggingLabelImpl(GrobidModels.TABLE, OTHER_LABEL);
+
+    public static final TaggingLabel CITATION_TITLE = new TaggingLabelImpl(GrobidModels.CITATION, TITLE_LABEL);
+    public static final TaggingLabel CITATION_JOURNAL = new TaggingLabelImpl(GrobidModels.CITATION, JOURNAL_LABEL);
+    public static final TaggingLabel CITATION_BOOKTITLE = new TaggingLabelImpl(GrobidModels.CITATION, BOOKTITLE_LABEL);
+    public static final TaggingLabel CITATION_COLLABORATION = new TaggingLabelImpl(GrobidModels.CITATION, COLLABORATION_LABEL);
+    public static final TaggingLabel CITATION_AUTHOR = new TaggingLabelImpl(GrobidModels.CITATION, AUTHOR_LABEL);
+    public static final TaggingLabel CITATION_EDITOR = new TaggingLabelImpl(GrobidModels.CITATION, EDITOR_LABEL);
+    public static final TaggingLabel CITATION_DATE = new TaggingLabelImpl(GrobidModels.CITATION, DATE_LABEL);
+    public static final TaggingLabel CITATION_KEYWORD = new TaggingLabelImpl(GrobidModels.CITATION, KEYWORD_LABEL);
+    public static final TaggingLabel CITATION_INSTITUTION = new TaggingLabelImpl(GrobidModels.CITATION, INSTITUTION_LABEL);
+    public static final TaggingLabel CITATION_NOTE = new TaggingLabelImpl(GrobidModels.CITATION, NOTE_LABEL);
+    public static final TaggingLabel CITATION_TECH = new TaggingLabelImpl(GrobidModels.CITATION, TECH_LABEL);
+    public static final TaggingLabel CITATION_VOLUME = new TaggingLabelImpl(GrobidModels.CITATION, VOLUME_LABEL);
+    public static final TaggingLabel CITATION_ISSUE = new TaggingLabelImpl(GrobidModels.CITATION, ISSUE_LABEL);
+    public static final TaggingLabel CITATION_PAGES = new TaggingLabelImpl(GrobidModels.CITATION, PAGES_LABEL);
+    public static final TaggingLabel CITATION_LOCATION = new TaggingLabelImpl(GrobidModels.CITATION, LOCATION_LABEL);
+    public static final TaggingLabel CITATION_PUBLISHER = new TaggingLabelImpl(GrobidModels.CITATION, PUBLISHER_LABEL);
+    public static final TaggingLabel CITATION_WEB = new TaggingLabelImpl(GrobidModels.CITATION, WEB_LABEL);
+    public static final TaggingLabel CITATION_PUBNUM = new TaggingLabelImpl(GrobidModels.CITATION, PUBNUM_LABEL);
 
     protected static void register(TaggingLabel label) {
         cache.putIfAbsent(new Pair<>(label.getGrobidModel(), label.getLabel()), label);
@@ -165,6 +193,7 @@ public class TaggingLabels {
         register(HEADER_SUBMISSION);
         register(HEADER_ENTITLE);
         register(HEADER_INTRO);
+        register(HEADER_COLLABORATION);
 
         //date
         register(DATE_YEAR);
@@ -184,6 +213,26 @@ public class TaggingLabels {
         register(TBL_TRASH);
         register(TBL_LABEL);
         register(TBL_OTHER);
+
+        // citation 
+        register(CITATION_TITLE);
+        register(CITATION_JOURNAL);
+        register(CITATION_BOOKTITLE);
+        register(CITATION_COLLABORATION);
+        register(CITATION_AUTHOR);
+        register(CITATION_EDITOR);
+        register(CITATION_DATE);
+        register(CITATION_KEYWORD);
+        register(CITATION_INSTITUTION);
+        register(CITATION_NOTE);
+        register(CITATION_TECH);
+        register(CITATION_VOLUME);
+        register(CITATION_ISSUE);
+        register(CITATION_PAGES);
+        register(CITATION_LOCATION);
+        register(CITATION_PUBLISHER);
+        register(CITATION_WEB);
+        register(CITATION_PUBNUM);
     }
 
 
