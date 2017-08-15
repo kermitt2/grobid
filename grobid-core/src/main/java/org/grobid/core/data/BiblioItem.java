@@ -155,6 +155,7 @@ public class BiblioItem {
                 ", year='" + year + '\'' +
                 ", authorString='" + authorString + '\'' +
                 ", path='" + path + '\'' +
+                ", collaboration='" + collaboration + '\'' +
                 ", postProcessEditors=" + postProcessEditors +
                 ", crossrefError=" + crossrefError +
                 ", normalized_submission_date=" + normalized_submission_date +
@@ -225,6 +226,7 @@ public class BiblioItem {
     private String DOI = null;
     private String inDOI = null;
     private String abstract_ = null;
+    private String collaboration = null;
 
     // for convenience GROBIDesque
     private String authors = null;
@@ -496,6 +498,10 @@ public class BiblioItem {
 
     public String getPubnum() {
         return pubnum;
+    }
+
+    public String getCollaboration() {
+        return collaboration;
     }
 
     public String getSerieTitle() {
@@ -1093,6 +1099,10 @@ public class BiblioItem {
         web = w;
     }
 
+    public void setCollaboration(String collab) {
+        collaboration = collab;
+    }
+
     public void setIssue(String i) {
         issue = i;
     }
@@ -1581,7 +1591,9 @@ public class BiblioItem {
 
             // author 
             // fullAuthors has to be used instead
-            if (fullAuthors != null) {
+            if (collaboration != null) {
+                bibtex += "author\t=\t\"" + collaboration;
+            } else if (fullAuthors != null) {
                 if (fullAuthors.size() > 0) {
                     boolean begin = true;
                     for (Person person : fullAuthors) {
@@ -3274,9 +3286,24 @@ public class BiblioItem {
         int nbAuthors = 0;
         int nbAffiliations = 0;
         int nbAddresses = 0;
-        // int nbEmails = 0;
-        // int nbPhones = 0;
-        //int nbWebs = 0;
+
+        if (collaboration != null) {
+            // collaboration plays at the same time the role of author and affiliation
+            TextUtilities.appendN(tei, '\t', nbTag);
+            tei.append("<author>").append("\n");
+            TextUtilities.appendN(tei, '\t', nbTag+1);
+            tei.append("<orgName type=\"collaboration\"");
+            if (withCoordinates) {
+                List<LayoutToken> collabTokens = labeledTokens.get("<collaboration>");
+                if (withCoordinates && (collabTokens != null) && (!collabTokens.isEmpty())) {                
+                   tei.append(" coords=\"" + LayoutTokensUtil.getCoordsString(collabTokens) + "\"");
+               }
+            }
+            tei.append(">").append(collaboration).append("</orgName>").append("\n");
+            TextUtilities.appendN(tei, '\t', nbTag);
+            tei.append("</author>").append("\n");
+            return tei.toString();
+        }
 
         List<Person> auts = fullAuthors;
 
@@ -3334,37 +3361,6 @@ public class BiblioItem {
 
                     TextUtilities.appendN(tei, '\t', nbTag + 1);
                     tei.append(author.toTEI(withCoordinates)).append("\n");
-//                    tei.append("<persName>\n");
-//                    if (author.getFirstName() != null) {
-//                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-//                        tei.append("<forename type=\"first\">" +
-//                                TextUtilities.HTMLEncode(author.getFirstName()) + "</forename>\n");
-//                    }
-//                    if (author.getMiddleName() != null) {
-//                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-//                        tei.append("<forename type=\"middle\">" +
-//                                TextUtilities.HTMLEncode(author.getMiddleName()) + "</forename>\n");
-//                    }
-//                    if (author.getLastName() != null) {
-//                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-//                        tei.append("<surname>" +
-//                                TextUtilities.HTMLEncode(author.getLastName()) + "</surname>\n");
-//                        //author.getLastName() + "</surname>\n");
-//                    }
-//                    if (author.getTitle() != null) {
-//                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-//                        tei.append("<roleName>" +
-//                                TextUtilities.HTMLEncode(author.getTitle()) + "</roleName>\n");
-//                    }
-//                    if (author.getSuffix() != null) {
-//                        TextUtilities.appendN(tei, '\t', nbTag + 2);
-//                        tei.append("<genName>" +
-//                                TextUtilities.HTMLEncode(author.getSuffix()) + "</genName>\n");
-//                    }
-//
-//                    TextUtilities.appendN(tei, '\t', nbTag + 1);
-//                    tei.append("</persName>\n");
-
                     if (author.getEmail() != null) {
                         TextUtilities.appendN(tei, '\t', nbTag + 1);
                         tei.append("<email>" + TextUtilities.HTMLEncode(author.getEmail()) + "</email>\n");
