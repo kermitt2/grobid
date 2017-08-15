@@ -30,7 +30,7 @@ Then the following tags are used for structuring the bibliographical references:
 
 * `<biblScope unit="volume">` the value of the volume (e.g. `vol. <biblScope unit="volume">7</biblScope>,`)
 
-* `<biblScope unit="issue">` the value of the issue, also known as number, (e.g. no. `(<biblScope type="issue">3</biblScope>)`,)
+* `<biblScope unit="issue">` the value of the issue, also known as number, (e.g. `no. <biblScope type="issue">3</biblScope>,`)
 
 * `<orgName>` the institution for thesis or technical reports
 

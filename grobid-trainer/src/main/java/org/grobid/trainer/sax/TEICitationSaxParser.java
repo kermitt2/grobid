@@ -63,14 +63,14 @@ public class TEICitationSaxParser extends DefaultHandler {
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
 
-        if ((qName.equals("author")) || (qName.equals("authors")) || (qName.equals("orgName")) ||
+        if ((qName.toLowerCase().equals("author")) || (qName.equals("authors")) || (qName.equals("orgname")) ||
                 (qName.equals("title")) || (qName.equals("editor")) || (qName.equals("editors")) ||
                 (qName.equals("booktitle")) || (qName.equals("date")) || (qName.equals("journal")) ||
                 (qName.equals("institution")) || (qName.equals("tech")) || (qName.equals("volume")) ||
-                (qName.equals("pages")) || (qName.equals("page")) || (qName.equals("pubPlace")) ||
+                (qName.equals("pages")) || (qName.equals("page")) || (qName.equals("pubplace")) ||
                 (qName.equals("note")) || (qName.equals("web")) || (qName.equals("pages")) ||
                 (qName.equals("publisher")) || (qName.equals("idno") || qName.equals("issue")) ||
-                (qName.equals("pubnum")) || (qName.equals("biblScope")) || (qName.equals("ptr")) ||
+                (qName.equals("pubnum")) || (qName.equals("biblscope")) || (qName.equals("ptr")) ||
                 (qName.equals("keyword")) || (qName.equals("keywords"))
                 ) {
             String text = getText();
@@ -113,6 +113,7 @@ public class TEICitationSaxParser extends DefaultHandler {
         }
         accumulator.setLength(0);
 
+        qName = qName.toLowerCase();
         if (qName.equals("title")) {
             int length = atts.getLength();
 
@@ -142,8 +143,27 @@ public class TEICitationSaxParser extends DefaultHandler {
             currentTag = "<date>";
         } else if ((qName.equals("keywords")) || (qName.equals("keyword"))) {
             currentTag = "<keyword>";
-        } else if (qName.equals("orgName")) {
-            currentTag = "<institution>";
+        } else if (qName.equals("orgname")) {
+            // check if we have a collaboration
+            boolean found = false;
+            int length = atts.getLength();
+            for (int i = 0; i < length; i++) {
+                // Get names and values for each attribute
+                String name = atts.getQName(i);
+                String value = atts.getValue(i);
+
+                if ((name != null) && (value != null)) {
+                    if (name.equals("type")) {
+                        if (value.equals("collaboration")) {
+                            currentTag = "<collaboration>";
+                            found = true;
+                        }
+                    }
+                }
+            }
+
+            if (!found)
+                currentTag = "<institution>";
         } else if (qName.equals("note")) {
             int length = atts.getLength();
 
@@ -165,7 +185,7 @@ public class TEICitationSaxParser extends DefaultHandler {
                     }
                 }
             }
-        } else if (qName.equals("biblScope")) {
+        } else if (qName.equals("biblscope")) {
             int length = atts.getLength();
 
             // Process each attribute
@@ -187,7 +207,7 @@ public class TEICitationSaxParser extends DefaultHandler {
                     }
                 }
             }
-        } else if (qName.equals("pubPlace")) {
+        } else if (qName.equals("pubplace")) {
             currentTag = "<location>";
         } else if (qName.equals("publisher")) {
             currentTag = "<publisher>";
@@ -210,6 +230,22 @@ public class TEICitationSaxParser extends DefaultHandler {
             }
         } else if (qName.equals("idno") || qName.equals("pubnum")) {
             currentTag = "<pubnum>";
+            String idnoType = null;
+            int length = atts.getLength();
+
+            // Process each attribute
+            for (int i = 0; i < length; i++) {
+                // Get names and values for each attribute
+                String name = atts.getQName(i);
+                String value = atts.getValue(i);
+
+                if ((name != null) && (value != null)) {
+                    if (name.equals("type")) {
+                        idnoType = value.toLowerCase();
+                    }
+                }
+            }
+            // TBD: keep the idno type for further exploitation
         } else if (qName.equals("bibl")) {
             accumulator = new StringBuffer();
             allContent = new StringBuffer();
