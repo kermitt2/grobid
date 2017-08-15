@@ -14,6 +14,8 @@ Then the following tags are used for structuring the bibliographical references:
 
 * `<author>` for the complete sequence of authors
 
+* `<orgname type="collaboration">` a collaboration is a project-based grouping of authors from different affiliations limited in time. Some examples: In high energy particules the [ATLAS](https://atlas.cern/), [CMS](http://cms.web.cern.ch/content/cms-collaboration) and [DELPHI](http://delphiwww.cern.ch/) collaborations (the current world record holder for number of authorship [arXiv:1503.07589](http://arxiv.org/abs/1503.07589) combines the two CERN collaborations ATLAS and CMS), or the [LUNA](https://luna.lngs.infn.it/) collaboration in astrophysics. The particularity of collaborations is to be used both as _authorship_ and _affiliation_ component.
+
 * `<title level="a">` for article title and chapter title. Here "a" stands for analytics (a part of a monograph)
 
 * `<title level="j">` for journal title
@@ -38,7 +40,7 @@ Then the following tags are used for structuring the bibliographical references:
 
 * `<ptr>` for web url
 
-* `<idno>` for the document-specific identifier, in particular DOI and arXiv identifiers
+* `<idno>` for the document-specific identifier, in particular DOI and arXiv identifiers, optionally the type of identifier can be given by the attribute `@type`, for instance, `<idno type="doi">...</idno>`
 
 * `<note>` for any indications related to the reference and not covered by one of the previous tags. In the case of technical report, the indication of the document kind is encoded with the following attribute value <note type="report">
 
@@ -47,7 +49,6 @@ Additional text/characters that do not belong to one of these elements (punctuat
 Example: 
 
 ```xml
-
 <?xml version="1.0" encoding="UTF-8"?>
 <tei xmlns="http://www.tei-c.org/ns/1.0" 
 	  xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -63,3 +64,42 @@ Example:
 </tei>
 
 ```
+
+### Special case with years
+
+In case a letter is added to year, for instance following the _Harvard_ bibliographical reference style: 
+
+> Gavazzi G., Piertini D., Boselli A., Tuffs R., __1996c__, A&AS, 120, 489(Paper I) 
+
+with _(Gavazzi et al, 1996c)_ used to reference the citation in the full text. 
+
+The year with letter are tagged together: 
+
+```xml
+<listBibl>
+	<bibl>
+		<author>Gavazzi G., Piertini D., Boselli A., Tuffs R.</author>, <date>1996c</date>, 
+		<title level="j">A&amp;AS</title>, <biblScope unit="volume">120</biblScope>, 
+		<biblScope unit="page">489</biblScope>(<note>Paper I</note>) 
+	</bibl>
+</listBibl>
+```
+
+### No segmentation between fields
+
+In example likethe following one:
+
+>  _D. Foo, P. Bar, Phys. Rev. D95, 34(2017)_
+
+there is no spacing between the title of the journal `Phys. Rev. D` and the volume `95`.
+
+For annotating this case, we tag the two fields without separation (not introducing a space or end-of-line between *D* and *95*): 
+
+```xml
+<bibl>
+	<author>D. Foo, P. Bar</author>, 
+	<title level="j">Phys. Rev. D</title><biblScope unit="volume">95</biblScope>, 
+	<biblScope unit="page">34</biblScope>(<date>2017</date>)
+</bibl>
+```
+
