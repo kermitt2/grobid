@@ -14,15 +14,15 @@ The `fulltext` model attempts to recognize the following objects:
 * tables
 * formulas
 * list items inside lists
-* markers: callouts to figures ('see Fig. 1'), tables, formulas and to bibliographical references (e.g. `Austin 2008(b)`).
+* markers: callouts to figures ("see Fig. 1"), tables, formulas and to bibliographical references (e.g. "Austin 2008(b)").
 
-The following sections will give examples for each of the objects above and how they should be marked up.
+The following sections will give examples for each of the objects above and how they should be marked up. Note that the mark-up follows overall the [TEI](http://www.tei-c.org). 
 
 ## Analysis
 
 ### Section titles
 
-To indicate sub parts of an article, authors may have used section titles that subdivide the flow of the content into smaller chunks. These titles should appear on the same level as the Paragraphs, formulas, etc.  Here are some examples:
+To indicate sub parts of an article, authors may have used section titles that subdivide the flow of the content into smaller chunks. These titles should appear on the same level as the paragraphs, formulas, etc.  Here are some examples:
 
 ```xml
 <head>CERAMIDE AND S1P BOTH TRIGGER AUTOPHAGY<lb/></head>
@@ -61,17 +61,15 @@ To indicate sub parts of an article, authors may have used section titles that s
 Paragraphs constitute the main bulk of most typical articles or publications and contain text which in turn may contain inline elements such as references (see below) or line breaks.
 
 ```xml
-<p>Our group has investigated the correlation between sphingolipid metabolism, the
-  <lb/>
-  …
-  <lb/> are able to induce autophagy in a breast cancer cell line. 3,4
-  <lb/>
+<p>Our group has investigated the correlation between sphingolipid metabolism, the<lb/>
+  ...
+  are able to induce autophagy in a breast cancer cell line. 3,4<lb/>
 </p>
 ```
 
-> Note: The `<lb/>` (line break) elements are there because they have been recognized as such in the PDF in the text flow. However the fact that they are located within or outside a tagged paragraph or section title has no impact. Just be sure not to modify the order of the text flow and `<lb/>` as mentionned [here](General-principles/#correcting-pre-annotated-files).
+> Note: The `<lb/>` (line break) elements are there because they have been recognized as such in the PDF in the text flow. However the fact that they are located within or outside a tagged paragraph or section title has no impact. Just be sure NOT to modify the order of the text flow and `<lb/>` as mentionned [here](General-principles/#correcting-pre-annotated-files).
 
-The following example is interesting because it demonstrates that formulas should be on the same hierarchical level as paragraphs, and not be contained inside paragraphs.
+Following the TEI, formulas should be on the same hierarchical level as paragraphs, and not be contained inside paragraphs:
 
 ```xml
 <p>Exponentiation mixes. Our protocol will benefit from the exponentiation mix<lb/>
@@ -98,7 +96,7 @@ The following example is interesting because it demonstrates that formulas shoul
 </p>
 ```
 
-The next example shows, again, that list items should contained inside `list` elements which in turn are on the same hierarchical level as paragraphs and other block-level elements.
+The next example illustrates similarly that in TEI list items should contained inside `<list>` elements which in turn are on the same hierarchical level as paragraphs and other block-level elements.
 
 ```xml
 <p>The estimation of the eligible own funds and the SCR requires to carry out calculations <lb/>
@@ -124,13 +122,13 @@ The next example shows, again, that list items should contained inside `list` el
 </p>
 ```
 
-### Figures and tables
+### Figures, tables and box
 
-A photo, picture or other graphical representation (this could be a chart or another figure) are to be marked up using the `<figure>` element. This element surrounds the title, the figure itself, any legend or notes it may have.
+A photo, picture or other graphical representation (this could be a chart or another figure) and boxes, are to be marked up using the `<figure>` element. This element contains the title, the figure/table/boxed content/photo itself, captions, any legend or notes it may have.
 
-Following the TEI, a table is considered to be a figure of type "table" (the actual `<table>` element appears in the `table` model applied in cascade).
+Note that following the TEI, a table is maked as figure of type "table" (the actual `<table>` element appears in the `table` model applied in cascade) and a boxed content is marked as a figure of type "box".
 
-The following XML sample shows one figure in the literal sense followed by two tables. Note that they are marked up as `<figure type="table">` elements.
+The following XML sample shows one figure (`<figure>`) followed by two tables which are marked up as `<figure type="table">` elements.
 
 ```xml
 <figure>Figure 1. Hypothetical model for ceramide and S1P-induced autophagy and thei	consequences on cell fate. An<lb/>
@@ -171,7 +169,9 @@ The following XML sample shows one figure in the literal sense followed by two t
 </figure>
 ```
 
-<!-- NOTE: this is fixed and should not be the case anymore! 
+Boxed content, i.e. a box with additional content __outside__ the flow of the general content, are tagged similarly with the element `<figure type="box">`.
+
+<!-- NOTE: the problem bellow is fixed and <table> in the generated training data should not appear anymore! 
 
 Finally, an example where GROBID has recognized a table but used the `<table>` element to mark it up; this needs to be corrected to `<figure type="table">`.
 
@@ -265,7 +265,9 @@ Harbaugh and Harbaugh <ref type="biblio">[7]</ref>
 in Lolle et al. <ref type="biblio">1</ref>
 ```
 
-Bellow, as the label within the brackets fully qualify the reference, we don't further annotate the callout with the author names:
+Note that the bracket/parenthesis symbols are included in the tagged content. 
+
+Bellow, as the label within the brackets fully qualifies the reference, we don't further annotate the callout with the author names:
 
 ```xml
 <p>The clinical entity of cervical flexion myelopa-<lb/>
@@ -276,7 +278,9 @@ Bellow, as the label within the brackets fully qualify the reference, we don't f
 </p>
 ```
 
-Note that when a group of references is introduced, the whole set of references callouts is tagged by one element. To highlight the diversity of bibliographical references introduced by author names and year, here are some more examples:
+Note that when a group of references is introduced, the whole set of references callouts is tagged by one element. 
+
+To highlight the diversity of bibliographical references introduced by author names and year, here are some more examples:
 
 ```xml
 by <ref type="biblio">Greve et al. [1994]</ref> and <ref type="biblio">Koch et al.<lb/> [1994]</ref>

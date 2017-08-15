@@ -18,7 +18,7 @@ The following TEI elements are used by the segmentation model:
 
 It is necessary to identify these above substructures when interrupting the `<body>`. Figures and tables (including their potential titles, captions and notes) are considered part of the body, so contained by the `<body>` element.
 
-For the segmentation model, there aren't any `<title>` or `<author>` elements as they are handled in the `header` model.
+Note that the mark-up follows overall the [TEI](http://www.tei-c.org). 
 
 > Note: It is recommended to study the existing training documents for the segmentation model first to see some examples of how these elements should be used.
 
@@ -32,7 +32,7 @@ A cover page - usually added by the publish to summerize the bibligraphical and 
 
 The header section typically contains document's title, its author(s) with affiliations, an abstract and some keywords. All this material should contained within the `<front>` element, as well as any footnotes that are referenced from within the header (such as author affiliations and addresses). Furthermore, the footer including the first page number should go in there.  In general we expect as part of the header of the document to find all the bibliographical information for the article.  This should be followed in order to ensure homogeneity across the training data.
 
-There should be as many `<front>` elements as necessary that contain all the contents identified as 'front contents'.
+There should be as many `<front>` elements as necessary that contain all the contents identified as 'front contents'. Note that for the segmentation model, there aren't any `<title>` or `<author>` elements as they are handled in the `header` model which is applied in cascaded in a next stage.
 
 Any footnotes referenced from within the `<body>` should remain there.
 

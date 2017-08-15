@@ -91,9 +91,7 @@ _Markers_ are indice to relate an affiliation to one or several authors. They ar
 	</affiliation>
 ```
 
-### Gallery
-
-#### Multiple institutions or multiple departments
+### Multiple institutions or multiple departments
 
 This case typically corresponds to the affiliation of a joint laboratory. Use the “key” attribute to identify the different institutions (or departments), which the
 joint laboratory belongs to.
@@ -115,7 +113,7 @@ Example: Joint Research Laboratory Nanomaterials, which is a joint laboratory of
 </affiliation>
 ```
 
-#### Laboratory with several names
+### Laboratory with several names
 
 In the case of a laboratory described by several names (that's often the case for the UMR of French CNRS), we use a procedure similar to above.
 
@@ -138,6 +136,4 @@ Example: _GREMI_, also named _UMR 6606_, a joint laboratory of CNRS and Universi
 	</address>
 </affiliation>
 ```
-
-#### Example of collaboration
 
