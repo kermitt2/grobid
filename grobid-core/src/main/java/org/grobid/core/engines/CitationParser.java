@@ -383,6 +383,15 @@ public class CitationParser extends AbstractParser {
                         biblio.setPublisher(biblio.getPublisher() + s2);
                 } else
                     biblio.setPublisher(s2);
+            } else if ((s1.equals("<collaboration>"))
+                    || (s1.equals("I-<collaboration>"))) {
+                if (biblio.getCollaboration() != null) {
+                    if (addSpace)
+                        biblio.setCollaboration(biblio.getCollaboration() + " " + s2);
+                    else
+                        biblio.setCollaboration(biblio.getCollaboration() + s2);
+                } else
+                    biblio.setCollaboration(s2);
             } else if ((s1.equals("<journal>")) || (s1.equals("I-<journal>"))) {
                 if (biblio.getJournal() != null) {
                     if (localFeatures.contains("LINESTART")) {
