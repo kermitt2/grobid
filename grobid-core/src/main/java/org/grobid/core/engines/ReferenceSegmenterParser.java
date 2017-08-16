@@ -114,7 +114,8 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                 if (container.isBeginning()) {
                     if (reference.length() != 0) {
                         resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
-                            referenceLabel.toString().trim(), reference.toString().trim(), features.toString(), BoundingBoxCalculator.calculate(referenceTokens)));
+                            referenceLabel.toString().trim(), reference.toString().trim(), referenceTokens, 
+                            	features.toString(), BoundingBoxCalculator.calculate(referenceTokens)));
                         reference.setLength(0);
                         referenceLabel.setLength(0);
                         features.setLength(0);
@@ -157,7 +158,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
             if (!iterator.hasNext()) {
                 resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
                     referenceLabel.toString().trim(), reference.toString().trim(),
-                    features.toString(),
+                    referenceTokens, features.toString(),
                     BoundingBoxCalculator.calculate(referenceTokens)));
                 reference.setLength(0);
                 referenceLabel.setLength(0);
