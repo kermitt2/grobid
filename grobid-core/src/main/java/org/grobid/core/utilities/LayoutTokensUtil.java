@@ -1,10 +1,13 @@
 package org.grobid.core.utilities;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
+
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
 
@@ -40,11 +43,13 @@ public class LayoutTokensUtil {
     }
 
     public static String normalizeText(String text) {
-        return TextUtilities.dehyphenize(text).replace("\n", " ").replaceAll("[ ]{2,}", " ");//.trim();
+        //return TextUtilities.dehyphenize(text).replace("\n", " ").replaceAll("[ ]{2,}", " ");//.trim();
+        return StringUtils.normalizeSpace(text.replace("\n", " "));
     }
 
     public static String normalizeText(List<LayoutToken> tokens) {
-        return TextUtilities.dehyphenize(toText(tokens)).replace("\n", " ").replaceAll("[ ]{2,}", " ");//.trim();
+        //return TextUtilities.dehyphenize(toText(tokens)).replace("\n", " ").replaceAll("[ ]{2,}", " ");//.trim();
+        return StringUtils.normalizeSpace(toText(tokens).replace("\n", " "));
     }
 
     public static String toText(List<LayoutToken> tokens) {
@@ -196,6 +201,37 @@ public class LayoutTokensUtil {
             return null;
         }
         return res.toString();
+    }
+
+    public static List<LayoutToken> dehyphenize(List<LayoutToken> tokens) {
+        PeekingIterator<LayoutToken> it = Iterators.peekingIterator(tokens.iterator());
+        List<LayoutToken> result = new ArrayList<LayoutToken>();
+        boolean normalized = false;
+
+        LayoutToken prev = null;
+        while (it.hasNext()) {
+            LayoutToken cur = it.next();
+            //the current token is dash, next is new line, and previous one is some sort of word
+            if (cur.isNewLineAfter() && cur.getText().equals("-") && (prev != null) && (!prev.getText().trim().isEmpty())) {
+                it.next();
+                if (it.hasNext()) {
+                    LayoutToken next = it.next();
+                    if (next.getText().equals("conjugated") || prev.getText().equals("anti")) {
+                        result.add(cur);
+                    }
+                    result.add(next);
+                    normalized = true;
+                }
+            } else {
+                result.add(cur);
+            }
+            prev = cur;
+        }
+
+        /*if (normalized) {
+            System.out.println("NORMALIZED: " + sb.toString());
+        }*/
+        return result;
     }
 
 }

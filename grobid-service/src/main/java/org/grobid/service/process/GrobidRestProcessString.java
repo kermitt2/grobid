@@ -282,7 +282,7 @@ public class GrobidRestProcessString {
 		try {
 			engine = Engine.getEngine(isparallelExec);
 			BiblioItem biblioItem;
-			citation = citation.replaceAll("\\n", " ").replaceAll("\\t", " ");
+			//citation = citation.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			if (isparallelExec) {
 				biblioItem = engine.processRawReference(citation, consolidate);
 			} else {

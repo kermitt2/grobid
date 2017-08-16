@@ -1,10 +1,14 @@
 package org.grobid.core.lexicon;
 
+import org.apache.commons.collections4.CollectionUtils;
+
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.LayoutTokensUtil;
 
 import java.io.*;
 import java.util.*;
@@ -224,6 +228,20 @@ public final class FastMatcher {
     }
 
     /**
+     * Identify terms in a piece of text and gives corresponding token positions.
+     * All the matches are returned. Here the input is a list of LayoutToken object.
+     *
+     * @param tokens the text to be processed as a list of LayoutToken objects
+     * @return the list of offset positions of the matches, an empty list if no match have been found
+     */
+    public List<OffsetPosition> matcherLayoutToken(List<LayoutToken> tokens) {
+        if (CollectionUtils.isEmpty(tokens)) {
+            return new ArrayList<OffsetPosition>();
+        }
+        return matcher(LayoutTokensUtil.toText(tokens));
+    }
+
+    /**
      * This is a modified version of matcher().
      *
      * When given a text it returns the position within the text where the match occur.
@@ -324,7 +342,7 @@ public final class FastMatcher {
     /**
      * This is a modified version of matcher().
      *
-     * When given a tokenized text it returns the index position within the liset where the match occur.
+     * When given a tokenized text it returns the index position within the list where the match occur.
      * <p>
      * The method will match all the tokens present in the lexicon, e.g. if both 'The Bronx' and 'Bronx' are present they will be
      * both identified (even if they overlap)

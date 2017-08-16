@@ -22,6 +22,7 @@ import org.apache.commons.io.IOUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.lang.Language;
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.sax.CountryCodeSaxParser;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
@@ -561,6 +562,28 @@ public class Lexicon {
     }
 
     /**
+     * Soft look-up in journal name gazetteer for a given string already tokenized
+     */
+    public List<OffsetPosition> inJournalNames(List<String> s) {
+        if (journalPattern == null) {
+            initJournals();
+        }
+        List<OffsetPosition> results = journalPattern.matcher(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in journal name gazetteer for a given list of LayoutToken objects
+     */
+    public List<OffsetPosition> inJournalNamesLayoutToken(List<LayoutToken> s) {
+        if (journalPattern == null) {
+            initJournals();
+        }
+        List<OffsetPosition> results = journalPattern.matcherLayoutToken(s);
+        return results;
+    }
+
+    /**
      * Soft look-up in journal abbreviated name gazetteer
      */
     public List<OffsetPosition> inAbbrevJournalNames(String s) {
@@ -568,6 +591,28 @@ public class Lexicon {
             initJournals();
         }
         List<OffsetPosition> results = abbrevJournalPattern.matcher(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in journal abbreviated name gazetteer for a given string already tokenized
+     */
+    public List<OffsetPosition> inAbbrevJournalNames(List<String> s) {
+        if (abbrevJournalPattern == null) {
+            initJournals();
+        }
+        List<OffsetPosition> results = abbrevJournalPattern.matcher(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in journal abbreviated name gazetteer for a given list of LayoutToken objects
+     */
+    public List<OffsetPosition> inAbbrevJournalNamesLayoutToken(List<LayoutToken> s) {
+        if (abbrevJournalPattern == null) {
+            initJournals();
+        }
+        List<OffsetPosition> results = abbrevJournalPattern.matcherLayoutToken(s);
         return results;
     }
 
@@ -583,6 +628,28 @@ public class Lexicon {
     }
 
     /**
+     * Soft look-up in conference/proceedings name gazetteer for a given string already tokenized
+     */
+    public List<OffsetPosition> inConferenceNames(List<String> s) {
+        if (conferencePattern == null) {
+            initConferences();
+        }
+        List<OffsetPosition> results = conferencePattern.matcher(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in conference/proceedings name gazetteer for a given list of LayoutToken objects
+     */
+    public List<OffsetPosition> inConferenceNamesLayoutToken(List<LayoutToken> s) {
+        if (conferencePattern == null) {
+            initConferences();
+        }
+        List<OffsetPosition> results = conferencePattern.matcherLayoutToken(s);
+        return results;
+    }
+
+    /**
      * Soft look-up in conference/proceedings name gazetteer
      */
     public List<OffsetPosition> inPublisherNames(String s) {
@@ -590,6 +657,28 @@ public class Lexicon {
             initPublishers();
         }
         List<OffsetPosition> results = publisherPattern.matcher(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in conference/proceedings name gazetteer for a given string already tokenized
+     */
+    public List<OffsetPosition> inPublisherNames(List<String> s) {
+        if (publisherPattern == null) {
+            initPublishers();
+        }
+        List<OffsetPosition> results = publisherPattern.matcher(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in conference/proceedings name gazetteer for a given list of LayoutToken objects
+     */
+    public List<OffsetPosition> inPublisherNamesLayoutToken(List<LayoutToken> s) {
+        if (publisherPattern == null) {
+            initPublishers();
+        }
+        List<OffsetPosition> results = publisherPattern.matcherLayoutToken(s);
         return results;
     }
 
@@ -615,6 +704,17 @@ public class Lexicon {
         return results;
     }
 
+    /**
+     * Soft look-up in city name gazetteer for a given list of LayoutToken objects
+     */
+    public List<OffsetPosition> inCityNamesLayoutToken(List<LayoutToken> s) {
+        if (cityPattern == null) {
+            initCities();
+        }
+        List<OffsetPosition> results = cityPattern.matcherLayoutToken(s);
+        return results;
+    }
+
     /** Organisation names **/
 
 	/**
@@ -636,6 +736,17 @@ public class Lexicon {
             initOrganisations();
         }
         List<OffsetPosition> results = organisationPattern.matcher(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in organisation name gazetteer for a given list of LayoutToken objects
+     */
+    public List<OffsetPosition> inOrganisationNamesLayoutToken(List<LayoutToken> s) {
+        if (organisationPattern == null) {
+            initOrganisations();
+        }
+        List<OffsetPosition> results = organisationPattern.matcherLayoutToken(s);
         return results;
     }
 
@@ -697,6 +808,17 @@ public class Lexicon {
     }
 
     /**
+     * Soft look-up in organisation form name gazetteer for a given list of LayoutToken objects
+     */
+    public List<OffsetPosition> inOrgFormNamesLayoutToken(List<LayoutToken> s) {
+        if (orgFormPattern == null) {
+            initOrgForms();
+        }
+        List<OffsetPosition> results = orgFormPattern.matcherLayoutToken(s);
+        return results;
+    }
+
+    /**
      * Variant Soft look-up in person org form names gazetteer for a string already tokenised.
      * Return list of positions referring as the index value in the input list.
      * @see Lexicon#getPositionsInLocationNames(List)
@@ -749,6 +871,17 @@ public class Lexicon {
             initLocations();
         }
         List<OffsetPosition> results = locationPattern.matcher(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in location name gazetteer for a given list of LayoutToken objects
+     */
+    public List<OffsetPosition> inLocationNamesLayoutToken(List<LayoutToken> s) {
+        if (locationPattern == null) {
+            initLocations();
+        }
+        List<OffsetPosition> results = locationPattern.matcherLayoutToken(s);
         return results;
     }
 
@@ -808,6 +941,17 @@ public class Lexicon {
             initPersonTitles();
         }
         List<OffsetPosition> results = personTitlePattern.matcher(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in person title gazetteer for a given list of LayoutToken objects
+     */
+    public List<OffsetPosition> inPersonTitleNamesLayoutToken(List<LayoutToken> s) {
+        if (personTitlePattern == null) {
+            initPersonTitles();
+        }
+        List<OffsetPosition> results = personTitlePattern.matcherLayoutToken(s);
         return results;
     }
 

@@ -1,6 +1,8 @@
 package org.grobid.core.engines;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.collections4.CollectionUtils;
+
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -22,6 +24,10 @@ import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 
 import java.io.File;
 import java.io.IOException;
@@ -46,41 +52,41 @@ public class CitationParser extends AbstractParser {
     public CitationParser(EngineParsers parsers) {
         super(GrobidModels.CITATION);
         this.parsers = parsers;
-//        tmpPath = GrobidProperties.getTempPath();
     }
 
     public BiblioItem processing(String input, boolean consolidate) {
-        BiblioItem resCitation;
         if (StringUtils.isBlank(input)) {
             return null;
         }
 
+        // some cleaning
+        input = UnicodeUtil.normaliseText(input);
+        input = TextUtilities.dehyphenize(input);
+        input = input.replace("\n", " ");
+        input = input.replaceAll("\\p{Cntrl}", " ").trim();
+
+        List<LayoutToken> tokens = analyzer.tokenizeWithLayoutToken(input);
+        return processing(tokens, consolidate);
+    }
+
+    public BiblioItem processing(List<LayoutToken> tokens, boolean consolidate) {
+        BiblioItem resCitation;
+        if (CollectionUtils.isEmpty(tokens)) {
+            return null;
+        }
+
         try {
-            ArrayList<String> citationBlocks = new ArrayList<>();
+            List<String> citationBlocks = new ArrayList<>();
 
-            input = UnicodeUtil.normaliseText(input);
-            input = TextUtilities.dehyphenize(input);
-            input = input.replace("\n", " ");
-            input = input.replaceAll("\\p{Cntrl}", " ").trim();
-            //StringTokenizer st = new StringTokenizer(input,
-            //        TextUtilities.fullPunctuations, true);
-
-            // TBD: add the language object in the tokenizer call
-            List<String> tokenizations = analyzer.tokenize(input);
-
-            //if (st.countTokens() == 0)
-            if (tokenizations.size() == 0)
-                return null;
-
-            //List<String> tokenizations = new ArrayList<String>();
-            //while (st.hasMoreTokens()) {
-            //    final String tok = st.nextToken();
-            for (String tok : tokenizations) {
+            tokens = LayoutTokensUtil.dehyphenize(tokens);
+            for (LayoutToken token : tokens) {
                 //tokenizations.add(tok);
+                String tok = token.getText();
                 if (!LayoutTokensUtil.spaceyToken(tok)) {
                     // parano final sanitisation
                     tok = tok.replaceAll("[ \n]", "");
-                    citationBlocks.add(tok + " <citation>");
+                    if (tok.trim().length() > 0)
+                        citationBlocks.add(tok + " <citation>");
                 }
             }
             citationBlocks.add("\n");
@@ -90,29 +96,22 @@ public class CitationParser extends AbstractParser {
             List<List<OffsetPosition>> conferencesPositions = new ArrayList<List<OffsetPosition>>();
             List<List<OffsetPosition>> publishersPositions = new ArrayList<List<OffsetPosition>>();
 
-            journalsPositions.add(lexicon.inJournalNames(input));
-            abbrevJournalsPositions.add(lexicon.inAbbrevJournalNames(input));
-            conferencesPositions.add(lexicon.inConferenceNames(input));
-            publishersPositions.add(lexicon.inPublisherNames(input));
+            journalsPositions.add(lexicon.inJournalNamesLayoutToken(tokens));
+            abbrevJournalsPositions.add(lexicon.inAbbrevJournalNamesLayoutToken(tokens));
+            conferencesPositions.add(lexicon.inConferenceNamesLayoutToken(tokens));
+            publishersPositions.add(lexicon.inPublisherNamesLayoutToken(tokens));
 
             String ress = FeaturesVectorCitation.addFeaturesCitation(
                     citationBlocks, journalsPositions, abbrevJournalsPositions,
                     conferencesPositions, publishersPositions);
             String res = label(ress);
 
-            resCitation = resultExtraction(res, true, tokenizations);
+            resCitation = resultExtractionLayoutTokens(res, true, tokens);
             // post-processing (additional field parsing and cleaning)
             if (resCitation != null) {
                 BiblioItem.cleanTitles(resCitation);
 
                 resCitation.setOriginalAuthors(resCitation.getAuthors());
-
-//                ArrayList<String> auts = new ArrayList<String>();
-//                if (resCitation.getAuthors() != null) {
-//                    auts.add(resCitation.getAuthors());
-//                }
-
-//                resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(auts));
                 resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(resCitation.getAuthors()));
                 if (resCitation.getPublicationDate() != null) {
                     List<Date> dates = parsers.getDateParser().processing(resCitation
@@ -163,7 +162,8 @@ public class CitationParser extends AbstractParser {
 
         List<BibDataSet> results = new ArrayList<>();
         for (LabeledReferenceResult ref : segm) {
-            BiblioItem bib = processing(ref.getReferenceText(), false);
+            //BiblioItem bib = processing(ref.getReferenceText(), false);
+            BiblioItem bib = processing(ref.getTokens(), false);
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
@@ -200,6 +200,7 @@ public class CitationParser extends AbstractParser {
 
         for (LabeledReferenceResult ref : references) {
             BiblioItem bib = processing(TextUtilities.dehyphenize(ref.getReferenceText()), consolidate);
+            //BiblioItem bib = processing(ref.getTokens(), consolidate);
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
@@ -245,7 +246,87 @@ public class CitationParser extends AbstractParser {
      * @param tokenizations     list of tokens
      * @return bibilio item
      */
-    public BiblioItem resultExtraction(String result,
+    public BiblioItem resultExtractionLayoutTokens(String result,
+                                       boolean volumePostProcess,
+                                       List<LayoutToken> tokenizations) {
+        BiblioItem biblio = new BiblioItem();
+
+        TaggingLabel lastClusterLabel = null;
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.CITATION, result, tokenizations);
+
+        String tokenLabel = null;
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            Engine.getCntManager().i(clusterLabel);
+
+            //String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+            String clusterContent = LayoutTokensUtil.toText(cluster.concatTokens());
+            if (clusterLabel.equals(TaggingLabels.CITATION_TITLE)) {
+                biblio.setTitle(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_AUTHOR)) {
+                biblio.setAuthors(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_TECH)) {
+                biblio.setBookType(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_LOCATION)) {
+                if (biblio.getLocation() != null)
+                    biblio.setLocation(biblio.getLocation() + "; " + clusterContent);
+                else
+                    biblio.setLocation(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_DATE)) {
+                if (biblio.getPublicationDate() != null)
+                    biblio.setPublicationDate(biblio.getPublicationDate() + ". " + clusterContent);
+                else
+                    biblio.setPublicationDate(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_BOOKTITLE)) {
+                biblio.setBookTitle(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_PAGES)) {
+                biblio.setPageRange(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_PUBLISHER)) {
+                biblio.setPublisher(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_COLLABORATION)) {
+                biblio.setCollaboration(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_JOURNAL)) {
+                biblio.setJournal(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_VOLUME)) {
+                biblio.setVolumeBlock(clusterContent, volumePostProcess);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_ISSUE)) {
+                biblio.setIssue(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_EDITOR)) {
+                biblio.setEditors(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_INSTITUTION)) {
+                if (biblio.getInstitution() != null)
+                    biblio.setInstitution(biblio.getInstitution() + "; " + clusterContent);
+                else
+                   biblio.setInstitution(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_NOTE)) {
+                if (biblio.getNote() != null)
+                    biblio.setNote(biblio.getNote()+ ". " + clusterContent);
+                else    
+                   biblio.setNote(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_PUBNUM)) {
+                biblio.setPubnum(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_WEB)) {
+                biblio.setWeb(clusterContent);
+            }
+        }
+
+        return biblio;
+    }
+
+    /**
+     * Extract results from a labelled header.
+     *
+     * @param result            result
+     * @param volumePostProcess whether post process volume
+     * @param tokenizations     list of tokens
+     * @return bibilio item
+     */
+    /*public BiblioItem resultExtraction(String result,
                                        boolean volumePostProcess,
                                        List<String> tokenizations) {
         BiblioItem biblio = new BiblioItem();
@@ -477,7 +558,7 @@ public class CitationParser extends AbstractParser {
         }
 
         return biblio;
-    }
+    }*/
 
     /**
      * Consolidate an existing list of recognized citations based on access to
@@ -595,20 +676,11 @@ public class CitationParser extends AbstractParser {
                     int i = 0;
                     String s1 = null;
                     String s2 = null;
-//					String s3 = null;
-                    // boolean newLine = false;
-                    // ArrayList<String> localFeatures = new
-                    // ArrayList<String>();
                     while (st3.hasMoreTokens()) {
                         String s = st3.nextToken().trim();
                         if (i == 0) {
                             s2 = TextUtilities.HTMLEncode(s); // string
-                        }
-//                        else if (i == ll - 2) {
-////							s3 = s; // pre-label, in this case it should always
-//									// be <author>
-//						}
-                        else if (i == ll - 1) {
+                        } else if (i == ll - 1) {
                             s1 = s; // label
                         }
                         i++;
@@ -770,6 +842,14 @@ public class CitationParser extends AbstractParser {
                         lastTag = s1;
                         continue;
                     }
+                    if (output == null) {
+                        output = writeField(s1, lastTag0, s2, "<collaboration>",
+                                "<orgName type=\"collaboration\">", addSpace, 0);
+                    } else {
+                        buffer.append(output);
+                        lastTag = s1;
+                        continue;
+                    }
                     if (output != null) {
                         buffer.append(output);
                         lastTag = s1;
@@ -860,6 +940,8 @@ public class CitationParser extends AbstractParser {
             } else if (lastTag0.equals("<note>")) {
                 buffer.append("</note>");
             } else if (lastTag0.equals("<institution>")) {
+                buffer.append("</orgName>");
+            } else if (lastTag0.equals("<collaboration>")) {
                 buffer.append("</orgName>");
             } else {
                 res = false;
