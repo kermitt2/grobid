@@ -1,5 +1,7 @@
 package org.grobid.core.data;
 
+import org.apache.commons.lang3.StringUtils;
+
 import org.grobid.core.data.util.AuthorEmailAssigner;
 import org.grobid.core.data.util.ClassicAuthorEmailAssigner;
 import org.grobid.core.data.util.EmailSanitizer;
@@ -21,10 +23,6 @@ import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.GrobidModels;
-
-/*import com.google.common.collect.Iterables;
-import com.google.common.collect.SortedSetMultimap;
-import com.google.common.collect.TreeMultimap;*/
 
 import java.net.URLEncoder;
 import java.util.*;
@@ -748,20 +746,20 @@ public class BiblioItem {
 
     public void setISBN13(String isbn) {
         /* some cleaning... */
-        this.ISBN13 = cleanSQLString(cleanISBNString(isbn));
+        this.ISBN13 = StringUtils.normalizeSpace(cleanISBNString(isbn));
     }
 
     public void setISBN10(String isbn) {
         /* some cleaning... */
-        this.ISBN10 = cleanISBNString(isbn);
+        this.ISBN10 = StringUtils.normalizeSpace(isbn);
     }
 
     public void setTitle(String theTitle) {
-        this.title = theTitle;
+        this.title = StringUtils.normalizeSpace(theTitle);
     }
 
     public void setPublisher(String thePublisher) {
-        this.publisher = thePublisher;
+        this.publisher = StringUtils.normalizeSpace(thePublisher);
     }
 
     public void setEdition(String theEdition) {
@@ -770,19 +768,19 @@ public class BiblioItem {
                 theEdition = theEdition.substring(0, 9);
             }
         }
-        this.edition = cleanSQLString(theEdition);
+        this.edition = StringUtils.normalizeSpace(theEdition);
     }
 
     public void setLanguage(String theLanguage) {
-        this.language = cleanSQLString(theLanguage);
+        this.language = StringUtils.normalizeSpace(theLanguage);
     }
 
     public void setSubtitle(String theSubtitle) {
-        this.subtitle = theSubtitle;
+        this.subtitle = StringUtils.normalizeSpace(theSubtitle);
     }
 
     public void setPublicationDate(String theDate) {
-        this.publication_date = cleanSQLString(theDate);
+        this.publication_date = StringUtils.normalizeSpace(theDate);
     }
 
     public void setNormalizedPublicationDate(Date theDate) {
@@ -790,43 +788,43 @@ public class BiblioItem {
     }
 
     public void setEditors(String theEditors) {
-        this.editors = theEditors;
+        this.editors = StringUtils.normalizeSpace(theEditors);
     }
 
     public void setPublisherWebsite(String theWebsite) {
-        this.publisher_website = theWebsite;
+        this.publisher_website = StringUtils.normalizeSpace(theWebsite);
     }
 
     public void setSerie(String theSerie) {
-        this.serie = cleanSQLString(theSerie);
+        this.serie = StringUtils.normalizeSpace(theSerie);
     }
 
     public void setISSN(String theISSN) {
-        this.ISSN = cleanSQLString(theISSN);
+        this.ISSN = StringUtils.normalizeSpace(theISSN);
     }
 
     public void setISSNe(String theISSN) {
-        this.ISSNe = cleanSQLString(theISSN);
+        this.ISSNe = StringUtils.normalizeSpace(theISSN);
     }
 
     public void setVolume(String theVolume) {
-        this.volume = theVolume;
+        this.volume = StringUtils.normalizeSpace(theVolume);
     }
 
     public void setNumber(String theNumber) {
-        this.number = theNumber;
+        this.number = StringUtils.normalizeSpace(theNumber);
     }
 
     public void setMonth(String theMonth) {
-        this.month = cleanSQLString(theMonth);
+        this.month = StringUtils.normalizeSpace(theMonth);
     }
 
     public void setSupportType(String theType) {
-        this.support_type = cleanSQLString(theType);
+        this.support_type = StringUtils.normalizeSpace(theType);
     }
 
     public void setVersion(String theVersion) {
-        this.version = cleanSQLString(theVersion);
+        this.version = StringUtils.normalizeSpace(theVersion);
     }
 
     public void setSmallImageURL(String url) {
@@ -838,7 +836,7 @@ public class BiblioItem {
     }
 
     public void setPublisherPlace(String p) {
-        this.publisherPlace = p;
+        this.publisherPlace = StringUtils.normalizeSpace(p);
     }
 
     public void setCategories(List<String> cat) {
@@ -869,19 +867,19 @@ public class BiblioItem {
     }
 
     public void setBookType(String bt) {
-        this.book_type = bt;
+        this.book_type = StringUtils.normalizeSpace(bt);
     }
 
     public void setDOI(String id) {
-        DOI = id;
+        DOI = StringUtils.normalizeSpace(id);
     } //{ DOI = cleanDOI(id); } 
 
     public void setInDOI(String id) {
-        inDOI = id;
+        inDOI = StringUtils.normalizeSpace(id);
     }
 
     public void setArticleTitle(String ti) {
-        articleTitle = ti;
+        articleTitle = StringUtils.normalizeSpace(ti);
     }
 
     public void setBeginPage(int p) {
@@ -893,7 +891,7 @@ public class BiblioItem {
     }
 
     public void setYear(String y) {
-        year = y;
+        year = StringUtils.normalizeSpace(y);
     }
 
     public void setAbstract(String a) {
@@ -901,11 +899,11 @@ public class BiblioItem {
     }
 
     public void setLocationPublisher(String s) {
-        locationPublisher = s;
+        locationPublisher = StringUtils.normalizeSpace(s);
     }
 
     public void setSerieTitle(String s) {
-        serieTitle = s;
+        serieTitle = StringUtils.normalizeSpace(s);
     }
 
     public void setAuthorString(String s) {
@@ -913,11 +911,11 @@ public class BiblioItem {
     }
 
     public void setURL(String s) {
-        url = s;
+        url = StringUtils.normalizeSpace(s);
     }
 
     public void setURI(String s) {
-        uri = s;
+        uri = StringUtils.normalizeSpace(s);
     }
 
     public void setConfidence(String s) {
@@ -1003,33 +1001,33 @@ public class BiblioItem {
     }
 
     public void setLocation(String loc) {
-        location = loc;
+        location = StringUtils.normalizeSpace(loc);
     }
 
     public void setBookTitle(String book) {
-        bookTitle = book;
+        bookTitle = StringUtils.normalizeSpace(book);
     }
 
     public void setPageRange(String pages) {
-        pageRange = pages;
+        pageRange = StringUtils.normalizeSpace(pages);
     }
 
     public void setJournal(String jour) {
-        journal = jour;
+        journal = StringUtils.normalizeSpace(jour);
     }
 
     public void setVolumeBlock(String vol, boolean postProcess) {
-        volumeBlock = vol;
+        volumeBlock = StringUtils.normalizeSpace(vol);
         if (postProcess)
             volumeBlock = postProcessVolumeBlock();
     }
 
     public void setInstitution(String inst) {
-        institution = inst;
+        institution = StringUtils.normalizeSpace(inst);
     }
 
     public void setNote(String not) {
-        note = not;
+        note = StringUtils.normalizeSpace(not);
     }
 
     public void setAffiliation(String a) {
@@ -1053,7 +1051,7 @@ public class BiblioItem {
     }
 
     public void setPubnum(String p) {
-        pubnum = p;
+        pubnum = StringUtils.normalizeSpace(p);
     }
 
     public void setKeyword(String k) {
@@ -1092,27 +1090,27 @@ public class BiblioItem {
     }
 
     public void setDegree(String d) {
-        degree = d;
+        degree = StringUtils.normalizeSpace(d);
     }
 
     public void setWeb(String w) {
-        web = w;
+        web = StringUtils.normalizeSpace(w);
     }
 
     public void setCollaboration(String collab) {
-        collaboration = collab;
+        collaboration = StringUtils.normalizeSpace(collab);
     }
 
     public void setIssue(String i) {
-        issue = i;
+        issue = StringUtils.normalizeSpace(i);
     }
 
     public void setJournalAbbrev(String j) {
-        journal_abbrev = j;
+        journal_abbrev = StringUtils.normalizeSpace(j);
     }
 
     public void setEvent(String e) {
-        event = e;
+        event = StringUtils.normalizeSpace(e);
     }
 
     public void setError(boolean e) {
@@ -1120,7 +1118,7 @@ public class BiblioItem {
     }
 
     public void setAbstractHeader(String a) {
-        abstractHeader = a;
+        abstractHeader = StringUtils.normalizeSpace(a);
     }
 
     public void setPath(String p) {
@@ -1168,19 +1166,19 @@ public class BiblioItem {
     }
 
     public void setDedication(String d) {
-        dedication = d;
+        dedication = StringUtils.normalizeSpace(d);
     }
 
     public void setSubmission(String s) {
-        submission = s;
+        submission = StringUtils.normalizeSpace(s);
     }
 
     public void setEnglishTitle(String d) {
-        english_title = d;
+        english_title = StringUtils.normalizeSpace(d);
     }
 
     public void setSubmissionDate(String d) {
-        submission_date = d;
+        submission_date = StringUtils.normalizeSpace(d);
     }
 
     public void setNormalizedSubmissionDate(Date d) {
@@ -1228,11 +1226,11 @@ public class BiblioItem {
     }
 
     public void setCopyright(String cop) {
-        copyright = cop;
+        copyright = StringUtils.normalizeSpace(cop);
     }
 
     public void setGrant(String gra) {
-        grant = gra;
+        grant = StringUtils.normalizeSpace(gra);
     }
 
     /**
@@ -1269,7 +1267,7 @@ public class BiblioItem {
                 cleanedString += currentCharacter;
         }
 
-        return cleanedString;
+        return StringUtils.normalizeSpace(cleanedString);
     }
 
     /**
@@ -1354,7 +1352,7 @@ public class BiblioItem {
         if (volumeBlock.length() == 0) {
             return volumeBlock;
         }
-        volumeBlock = volumeBlock.trim();
+        volumeBlock = StringUtils.normalizeSpace(volumeBlock);
 
         // the volume is always the first full number sequence of the block
         // first we remove the possible non digit character prefix
@@ -1425,7 +1423,7 @@ public class BiblioItem {
             return null;
         if (string.length() == 0)
             return string;
-        String res = string.trim();
+        String res = StringUtils.normalizeSpace(string);
         String res0 = res.toLowerCase();
 
         for (String abstractPrefix : ABSTRACT_PREFIXES) {
@@ -1490,7 +1488,7 @@ public class BiblioItem {
             return null;
         if (string.length() == 0)
             return string;
-        String res = string.trim();
+        String res = StringUtils.normalizeSpace(string);
         String resLow = res.toLowerCase();
         if (resLow.startsWith("keywords")) {
             res = res.substring(8);
@@ -3776,6 +3774,9 @@ public class BiblioItem {
 
         if (bibo.getItem() != -1) {
             bib.setItem(bibo.getItem());
+        }
+        if (bibo.getCollaboration() != null) {
+            bib.setCollaboration(bibo.getCollaboration());
         }
 
         // authors present in fullAuthors list should be in the existing resources 
