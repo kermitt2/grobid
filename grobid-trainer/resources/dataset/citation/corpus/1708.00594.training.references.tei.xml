@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Abel T., Bryan G. L., Norman M. L.</author>, <date>2000</date>, <title level="j">ApJ</title>, <biblScope unit="volume">540</biblScope>, <biblScope unit="page">39</biblScope> —,</bibl>
+	<bibl><date>2002</date> ,<title level="j">Science</title> ,<biblScope unit="volume">295</biblScope> ,<biblScope unit="page">93</biblScope></bibl>
+	<bibl><author>Bromm V., Coppi P. S., Larson R. B.</author>, <date>2002</date>, <title level="j">ApJ</title>, <biblScope unit="volume">564</biblScope>, <biblScope unit="page">23</biblScope></bibl>
+	<bibl><author>Bromm V., Kudritzki R. P., Loeb A.</author>, <date>2001</date>, <title level="j">ApJ</title>, <biblScope unit="volume">552</biblScope>, <biblScope unit="page">464</biblScope></bibl>
+	<bibl><author>Bromm V., Yoshida N., Hernquist L., McKee C. F.</author>, <date>2009</date>, <title level="j">Nature</title>,<biblScope unit="volume">459</biblScope> ,<biblScope unit="page">49</biblScope></bibl>
+	<bibl><author>Clark P. C., Glover S. C. O., Smith R. J., Greif T. H., KlessenR .S .,Bromm V</author> .,<date>2011</date> ,Science ,<biblScope unit="volume">331</biblScope> ,<biblScope unit="page">1040</biblScope></bibl>
+	<bibl><author>Couchman H. M. P., Rees M. J.</author>, <date>1986</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">221</biblScope>, <biblScope unit="page">53</biblScope></bibl>
+	<bibl><author>Glatzel W.</author>, <date>1998</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">339</biblScope>, <biblScope unit="page">L5</biblScope></bibl>
+	<bibl><author>Grevesse N., Sauval A. J.</author>, <date>1998</date>, <title level="j">Space Sci. Rev.</title>, <biblScope unit="volume">85</biblScope>, <biblScope unit="page">161</biblScope></bibl>
+	<bibl><author>Haiman Z.</author>, <date>2013</date>, in <title level="s">Astrophysics and Space Science Li-brary</title>,Vol .<biblScope unit="volume">396</biblScope> ,<title level="m">The First Galaxies</title> ,<editor>Wiklind T .,Mobasher B .,BrommV .</editor> ,eds. ,p. <biblScope unit="page">293</biblScope></bibl>
+	<bibl><author>Haiman Z., Loeb A</author>., <date>1997</date>, <title level="j">ApJ</title>, <biblScope unit="volume">483</biblScope>, <biblScope unit="page">21</biblScope></bibl>
+	<bibl><author>Hawley J. F., Gammie C. F., Balbus S. A.</author>, <date>1996</date>, <title level="j">ApJ</title>, <biblScope unit="volume">464</biblScope>, <biblScope unit="page">690</biblScope></bibl>
+	<bibl><author>Heger A., Woosley S. E.</author>, <date>2002</date>, <title level="j">ApJ</title>, <biblScope unit="volume">567</biblScope>, <biblScope unit="page">532</biblScope></bibl>
+	<bibl><author>Hirano S., Hosokawa T., Yoshida N., Omukai K., Yorke H.W .</author>,<date>2015</date> ,<title level="j">MNRAS</title> ,<biblScope unit="volume">448</biblScope> ,<biblScope unit="page">568</biblScope></bibl>
+	<bibl><author>Hirano S., Hosokawa T., Yoshida N., Umeda H., Omukai K.,Chiaki G .,Yorke H .W .</author>,<date>2014</date> ,<title level="j">ApJ</title> ,<biblScope unit="volume">781</biblScope> ,<biblScope unit="page">60</biblScope></bibl>
+	<bibl><author>Hosokawa T., Hirano S., Kuiper R., Yorke H. W., Omukai K.,Yoshida N .</author>,<date>2016</date> ,<title level="j">ApJ</title> ,<biblScope unit="volume">824</biblScope> ,<biblScope unit="page">119</biblScope></bibl>
+	<bibl><author>Hosokawa T., Omukai K., Yorke H. W.</author>, <date>2012</date>, <title level="j">ApJ</title>, <biblScope unit="volume">756</biblScope>, <biblScope unit="page">93</biblScope></bibl>
+	<bibl><author>Hosokawa T., Omukai K., Yoshida N., Yorke H. W.</author>, <date>2011</date>, <title level="j">Science</title>,<biblScope unit="volume">334</biblScope> ,<biblScope unit="page">1250</biblScope></bibl>
+	<bibl><author>Hubeny I.</author>, <date>1990</date>, <title level="j">ApJ</title>, <biblScope unit="volume">351</biblScope>, <biblScope unit="page">632</biblScope></bibl>
+	<bibl><author>Karlsson T., Bromm V., Bland-Hawthorn J.</author>, <date>2013</date>, <title level="j">Reviews ofModern Physics</title> ,<biblScope unit="volume">85</biblScope> ,<biblScope unit="page">809</biblScope></bibl>
+	<bibl><author>Kato S., Fukue J., Mineshige S.</author>, <date>2008</date>, <title level="m">Black-Hole Accre-tionDisks — Towards a New Paradigm —</title></bibl>
+	<bibl><author>Langer N.</author>, <date>1997</date>, in <title level="s">Astronomical Society of the Pacific ConferenceSeries</title> ,Vol .<biblScope unit="volume">120</biblScope> ,<title level="m">Luminous Blue Variables :Massive Starsin Transition</title> , <editor>NotaA . ,LamersH .</editor> ,eds. ,p. <biblScope unit="page">83</biblScope>—,</bibl>
+	<bibl><date>1998</date> ,<title level="j">A&amp;A</title>, <biblScope unit="volume">329</biblScope>, <biblScope unit="page">551</biblScope></bibl>
+	<bibl><author>Lee H., Yoon S.-C.</author>, <date>2016</date>, <title level="j">ApJ</title>, <biblScope unit="volume">820</biblScope>, <biblScope unit="page">135</biblScope></bibl>
+	<bibl><author>Machida M. N., Omukai K., Matsumoto T., Inutsuka S.-i.</author>, <date>2008</date>,<title level="j">ApJ</title> ,<biblScope unit="volume">677</biblScope> ,<biblScope unit="page">813</biblScope></bibl>
+	<bibl><author>Maeder A., Meynet G</author>., <date>2000</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">361</biblScope>, <biblScope unit="page">159</biblScope></bibl>
+	<bibl><author>Mayer M., Duschl W. J.</author>, <date>2005</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">358</biblScope>, <biblScope unit="page">614</biblScope></bibl>
+	<bibl><author>McKee C. F., Tan J. C.</author>, <date>2008</date>, <title level="j">ApJ</title>, <biblScope unit="volume">681</biblScope>, <biblScope unit="page">771</biblScope></bibl>
+	<bibl><author>Omukai K., Nishi R.</author>, <date>1998</date>, <title level="j">ApJ</title>, <biblScope unit="volume">508</biblScope>, <biblScope unit="page">141</biblScope></bibl>
+	<bibl><author>Omukai K., Palla F.</author>, <date>2001</date>, <title level="j">ApJ</title>, <biblScope unit="volume">561</biblScope>, <biblScope unit="page">L55</biblScope> —,</bibl>
+	<bibl><date>2003</date> ,<title level="j">ApJ</title> ,<biblScope unit="volume">589</biblScope> ,<biblScope unit="page">677</biblScope></bibl>
+	<bibl><author>Paczynski B.</author>, <date>1991</date>, <title level="j">ApJ</title>, <biblScope unit="volume">370</biblScope>, <biblScope unit="page">597</biblScope></bibl>
+	<bibl><author>Popham R.</author>, <date>1996</date>, <title level="j">ApJ</title>, <biblScope unit="volume">467</biblScope>, <biblScope unit="page">749</biblScope></bibl>
+	<bibl><author>Popham R., Narayan R.</author>, <date>1991</date>, <title level="j">ApJ</title>, <biblScope unit="volume">370</biblScope>, <biblScope unit="page">604</biblScope></bibl>
+	<bibl><author>Popham R., Narayan R., Hartmann L., Kenyon S.</author>, <date>1993</date>, <title level="j">ApJ</title>,<biblScope unit="volume">415</biblScope> ,<biblScope unit="page">L127</biblScope></bibl> 
+	<bibl><author>Sano T. ,InutsukaS . ,TurnerN . J. ,StoneJ . M.</author> ,<date>2004</date>, <title level="j">ApJ</title>, <biblScope unit="page">605</biblScope>, <biblScope unit="page">321</biblScope></bibl>
+	<bibl><author>Schaerer D.</author>, <date>2002</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">382</biblScope>, <biblScope unit="page">28</biblScope></bibl>
+	<bibl><author>Seaton M. J., Yan Y., Mihalas D., Pradhan A. K.</author>, <date>1994</date>, <title level="j">MNRAS</title>,<biblScope unit="volume">266</biblScope> ,<biblScope unit="page">805</biblScope></bibl>
+	<bibl><author>Shakura N. I., Sunyaev R. A.</author>, <date>1973</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">24</biblScope>, <biblScope unit="page">337</biblScope></bibl>
+	<bibl><author>Smith R. J., Hosokawa T., Omukai K., Glover S. C. O., KlessenR .S .</author>,<date>2012</date> ,<title level="j">MNRAS</title> ,<biblScope unit="volume">424</biblScope> ,<biblScope unit="page">457</biblScope></bibl>
+	<bibl><author>Stacy A., Bromm V., Lee A. T.</author>, <date>2016</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">462</biblScope>, <biblScope unit="page">1307</biblScope></bibl>
+	<bibl><author>Stacy A., Bromm V., Loeb A.</author>, <date>2011</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">413</biblScope>, <biblScope unit="page">543</biblScope></bibl>
+	<bibl><author>Stacy A., Greif T. H., Bromm V.</author>, <date>2010</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">403</biblScope>, <biblScope unit="page">45</biblScope></bibl>
+	<bibl><author>Susa H., Hasegawa K., Tominaga N.</author>, <date>2014</date>, <title level="j">ApJ</title>, <biblScope unit="volume">792</biblScope>, <biblScope unit="page">32</biblScope></bibl>
+	<bibl><author>Tegmark M., Silk J., Rees M. J., Blanchard A., Abel T., PallaF .</author>,<date>1997</date> ,<title level="j">ApJ</title> ,<biblScope unit="volume">474</biblScope> ,<biblScope unit="page">1</biblScope></bibl>
+	<bibl><author>Tumlinson J., Shull J. M.</author>, <date>2000</date>, <title level="j">ApJ</title>, <biblScope unit="volume">528</biblScope>, <biblScope unit="page">L65</biblScope></bibl>
+	<bibl><author>UmedaH .,Nomoto K .</author>,<date>2002</date> ,<title level="j">ApJ</title> ,<biblScope unit="volume">565</biblScope> ,<biblScope unit="page">385</biblScope></bibl>
+	<bibl><author>Volonteri M.</author>, <date>2010</date>, <title level="j">A&amp;A Rev.</title>, <biblScope unit="volume">18</biblScope>, <biblScope unit="page">279</biblScope></bibl>
+	<bibl><author>Yoshida N., Omukai K., Hernquist L.</author>, <date>2008</date>, <title level="j">Science</title>, <biblScope unit="volume">321</biblScope>, <biblScope unit="page">669</biblScope></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>
