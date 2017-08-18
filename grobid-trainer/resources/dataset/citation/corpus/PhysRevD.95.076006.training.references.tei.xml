@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>D. Diakonov</author>, <title level="j">Nucl. Phys. B, Proc. Suppl. B</title><biblScope unit="volume">195</biblScope>, <biblScope unit="page">5</biblScope> (<date>2009</date>).</bibl>
+	<bibl><author>D. Diakonov and V. Petrov</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">76</biblScope>, <biblScope unit="page">056001</biblScope> (<date>2007</date>).</bibl>
+	<bibl><author>D. Diakonov, N. Gromov, V. Petrov, and S. Slizovskiy</author>, <title level="j">Phys.Rev .D</title> <biblScope unit="volume">70</biblScope> ,<biblScope unit="page">036003</biblScope> ( <date>2004</date>).</bibl>
+	<bibl><author>F. Bruckmann, S. Dinter, E.-M. Ilgenfritz, M. Muller-Preussker,and M .Wagner</author> ,<title level="j">Phys .Rev .D</title> <biblScope unit="volume">79</biblScope> ,<biblScope unit="page">116007</biblScope> ( <date>2009</date>).</bibl>
+	<bibl><author>F. Bruckmann, S. Dinter, E.-M. Ilgenfritz, B. Maier, M. Muller-Preussker,and M .Wagner</author> ,<title level="j">Phys .Rev .D</title> <biblScope unit="volume">85</biblScope> ( <date>2012</date>)<biblScope unit="page">034502</biblScope> .</bibl>
+	<bibl><author>P. Ewald</author>, <title level="j">Ann. Phys.</title> <biblScope unit="volume">369</biblScope>, <biblScope unit="page">253</biblScope> (<date>1921</date>).</bibl>
+	<bibl><author>M. Kiamari and S. Deldar</author>, <idno type="arxiv">arXiv:1611.05348</idno>.</bibl> <bibl>[8]<author>T .C .Kraan and P .van Baal</author> ,<title level="j">Nucl .Phys .B</title><biblScope unit="volume">533</biblScope> ,<biblScope unit="page">627</biblScope> ( <date>1998</date>);</bibl>
+	<bibl><title level="j">Phys. Lett. B</title> <biblScope unit="volume">435</biblScope>, <biblScope unit="page">389</biblScope> (<date>1998</date>).</bibl>
+	<bibl><author>K.-M. Lee and C.-H. Lu</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">58</biblScope>, <biblScope unit="page">025011</biblScope> (<date>1998</date>).</bibl>
+	<bibl><author>B. Maier</author>, <note type="report">B.Sc. thesis</note>, <orgName>Humboldt University of Berlin</orgName>, <date>2011</date>.</bibl>
+	<bibl><author>U. Essmann, L. Perera, M. L. Berkowitz, T. Darden, H. Lee, andG .Pedersen</author> ,<title level="j">J .Chem .Phys .</title><biblScope unit="volume">103</biblScope> ,<biblScope unit="page">8577</biblScope> ( <date>1995</date>).</bibl>
+	<bibl><author>R. W. Hockney and J. W. Eastwood</author>, <title level="m">Computer Simulation UsingParticles</title> ( <publisher>McGraw-Hill</publisher>,<pubPlace>New York</pubPlace> ,<date>1981</date> ).</bibl>
+	FIG. 5. Our results fitted to the results of lattice gauge theory [Eq.( 54)].
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>
