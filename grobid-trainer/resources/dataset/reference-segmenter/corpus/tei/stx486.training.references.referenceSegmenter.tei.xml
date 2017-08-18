@@ -1,0 +1,55 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        R E F E R E N C E S<lb/> 
+        <bibl>Burkert A., 1995, ApJ, 447, L25<lb/> </bibl>
+<bibl>Chabrier G., 2003, PASP, 115, 763<lb/> </bibl>
+<bibl>de Blok W. J. G., McGaugh S. S., Bosma A., Rubin V. C., 2001, ApJ, 552,<lb/> L23<lb/> </bibl>
+<bibl>Dehnen W., 1993, MNRAS, 265, 250<lb/> </bibl>
+<bibl>Di Cintio A., Brook C. B., Dutton A. A.,Maccì o A. V., Stinson G. S., Knebe<lb/> A., 2014, MNRAS, 441, 2986<lb/> </bibl>
+<bibl>Diemer B., Kravtsov A. V., 2014, ApJ, 789, 1<lb/> </bibl>
+<bibl>Duffy A. R., Schaye J., Kay S. T., Dalla Vecchia C., 2008, MNRAS, 390,<lb/> L64<lb/> </bibl>
+<bibl>Dutton A. A.,Maccì o A. V., 2014, MNRAS, 441, 3359<lb/> </bibl>
+<bibl>Dutton A. A. et al., 2016a, MNRAS, 461, 2658<lb/> </bibl>
+<bibl>Dutton A. A.,Maccì o A. V., Frings J., Wang L., Stinson G. S., Penzo C.,<lb/> Kang X., 2016b, MNRAS, 457, L74<lb/> </bibl>
+<bibl>Einasto J., 1965, Trudy Astrofizicheskogo Instituta Alma-Ata, 5, 87<lb/> </bibl>
+<bibl>Evans N. W., 1994, MNRAS, 267, 333<lb/> </bibl>
+<bibl>Gao L., Navarro J. F., Cole S., Frenk C. S., White S. D. M., Springel V.,<lb/> Jenkins A., Neto A. F., 2008, MNRAS, 387, 536<lb/> </bibl>
+<bibl>Gill S. P. D., Knebe A., Gibson B. K., 2004, MNRAS, 351, 399<lb/> </bibl>
+<bibl>Goerdt T., Moore B., Read J. I., Stadel J., Zemp M., 2006, MNRAS, 368,<lb/> 1073<lb/> </bibl>
+<bibl>Graham A. W., Merritt D., Moore B., Diemand J., Terzi´cTerzi´c B., 2006, AJ, 132,<lb/> 2701<lb/> </bibl>
+<bibl>Gutcke T. A., Stinson G. S.,Maccì o A. V., Wang L., Dutton A. A., 2017,<lb/> MNRAS, 464, 2796<lb/> </bibl>
+<bibl>Hernquist L., 1990, ApJ, 356, 359<lb/> </bibl>
+<bibl>Jaffe W., 1983, MNRAS, 202, 995<lb/> </bibl>
+<bibl>Jing Y. P., Suto Y., 2000, ApJ, 529, L69<lb/> </bibl>
+<bibl>Keller B. W., Wadsley J., Benincasa S. M., Couchman H. M. P., 2014,<lb/> MNRAS, 442, 3013<lb/> </bibl>
+<bibl>Knollmann S. R., Knebe A., 2009, ApJS, 182, 608<lb/> </bibl>
+<bibl>Levenberg K., 1944, Q. Appl. Math., 2, 164<lb/> </bibl>
+<bibl>Marquardt D., 1963, SIAM J. Appl. Math., 11, 431<lb/> </bibl>
+<bibl>Merritt D., Graham A. W., Moore B., Diemand J., Terzi´cTerzi´c B., 2006, AJ, 132,<lb/> 2685<lb/> </bibl>
+<bibl>More S., Diemer B., Kravtsov A. V., 2015, ApJ, 810, 36<lb/> </bibl>
+<bibl>Navarro J. F., Frenk C. S., White S. D. M., 1997, ApJ, 490, 493<lb/> </bibl>
+<bibl>Navarro J. F. et al., 2004, MNRAS, 349, 1039<lb/> </bibl>
+<bibl>Obreja A., Stinson G. S., Dutton A. A.,Maccì o A. V., Wang L., Kang X.,<lb/> 2016, MNRAS, 459, 467<lb/> </bibl>
+<bibl>Oh S.-H., Brook C., Governato F., Brinks E., Mayer L., de Blok W. J. G.,<lb/> Brooks A., Walter F., 2011, AJ, 142, 24<lb/> </bibl>
+<bibl>Oldham L. J., Auger M. W., 2016, MNRAS, 457, 421<lb/> </bibl>
+<bibl>Planck Collaboration XIII, 2014, A&amp;A, 561, A97<lb/> </bibl>
+<bibl>Savitzky A., Golay M. J. E., 1964, Analytical Chem., 36, 1627<lb/> </bibl>
+<bibl>Schaller M. et al., 2015, MNRAS, 451, 1247<lb/> </bibl>
+<bibl>Shen S., Wadsley J., Stinson G., 2010, MNRAS, 407, 1581<lb/> </bibl>
+<bibl>Stinson G., Seth A., Katz N., Wadsley J., Governato F., Quinn T., 2006,<lb/> MNRAS, 373, 1074<lb/> </bibl>
+<bibl>Stoehr F., 2006, MNRAS, 365, 147<lb/> </bibl>
+<bibl>Swaters R. A., Madore B. F., van den Bosch F. C., Balcells M., 2003, ApJ,<lb/> 583, 732<lb/> </bibl>
+<bibl>Tollet E. et al., 2016, MNRAS, 456, 3542<lb/> </bibl>
+<bibl>Tremaine S., Richstone D. O., Byun Y.-I., Dressler A., Faber<lb/> S. M., Grillmair C., Kormendy J., Lauer T. R., 1994, AJ,<lb/> 107, 634<lb/> </bibl>
+<bibl>Wadsley J. W., Stadel J., Quinn T., 2004, Nature, 9, 137<lb/> </bibl>
+<bibl>Walker M. G., Peñarrubia J., 2011, ApJ, 742, 20<lb/> </bibl>
+<bibl>Wang L., Dutton A. A., Stinson G. S.,Maccì o A. V., Penzo C., Kang X.,<lb/> Keller B. W., Wadsley J., 2015, MNRAS, 454, 83</bibl>
+        </listBibl>
+    </text>
+</tei>
+
