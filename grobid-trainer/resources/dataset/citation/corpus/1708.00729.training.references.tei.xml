@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>H. B. G. Casimir, and D. Polder</author>, <title level="j">Physical Review</title>, <biblScope unit="volume">73</biblScope>, <biblScope unit="page">360</biblScope> (<date>1948</date>).</bibl>
+	<bibl><author>J. Bernabéu and R. Tarrachi</author>, <title level="j">Ann. Phys. (NY)</title>, <biblScope unit="volume">102</biblScope>, <biblScope unit="page">323</biblScope> (<date>1976</date>).</bibl>
+	<bibl><author>J. F. Babb</author>, <title level="j">Advances in Atomic, Molecular, and Optical Physics</title> <biblScope unit="volume">59</biblScope>, <biblScope unit="page">1</biblScope> ( <date>2010</date>).</bibl>
+	<bibl><author>James F. Babb, Renato Higa, Mahir S. Hussein, Eur.</author> <title level="j">Phys. J. A</title> <biblScope unit="volume">53</biblScope>, <biblScope unit="page">126</biblScope> (<date>2017</date>).</bibl>
+	<bibl><author>G. Feinberg and J. Sucher</author>, <title level="j">Phys. Rev. A</title> <biblScope unit="volume">2</biblScope>, <biblScope unit="page">2395</biblScope> (<date>1970</date>).</bibl>
+	<bibl><author>F. Hagelstein, R. Miskimen, and V. Pascalutsa</author>, <title level="j">Prog. Part. Nucl. Phys.</title> <biblScope unit="volume">88</biblScope>, <biblScope unit="page">29</biblScope>( <date>2016</date>).</bibl>
+	<bibl><author>R. P. Hildebrandt, H. W. Griesshammer, T. R. Hemmert, and B. Pasquini</author>, <title level="j">Eur.Phys .J .A</title><biblScope unit="volume">20</biblScope> ,<biblScope unit="page">293</biblScope> ( <date>2004</date>).</bibl>
+	<bibl><author>R. P. Hildebrandt</author>, <note>Ph.D. thesis</note>, <orgName>Tec. Univ. München</orgName>, <date>2005</date>.</bibl>
+	<bibl><author>H. W. Griesshammer, J. A. McGovern, D. R. Phillips, and G. Feldman</author>, <title level="j">Prog. Part.Nucl .Phys .</title><biblScope unit="volume">67</biblScope> ,<biblScope unit="page">841</biblScope> ( <date>2012</date>),<idno type="arxiv">arXiv :1203 .6834</idno>.</bibl>
+	<bibl><author>V. Lensky, J. McGovern, and V. Pascalutsa</author>, <title level="j">Eur. Phys. J. C</title><biblScope unit="volume">75</biblScope>, <biblScope unit="page">604</biblScope> (<date>2015</date>).</bibl>
+	<bibl><author>M. O&apos;Carroll and J. Sucher</author>, <title level="j">Phys. Rev.</title> <biblScope unit="volume">187</biblScope>, <biblScope unit="page">85</biblScope> (<date>1969</date>).</bibl>
+	<bibl><author>H. Friedrich, G. Jacoby, and C. G. Meister</author>, <title level="j">Phys. Rev. A</title> <biblScope unit="volume">65</biblScope>, <biblScope unit="page">032902</biblScope> (<date>2002</date>).</bibl>
+	<bibl><author>L. G. Arnold</author>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">44</biblScope>, <biblScope unit="page">401</biblScope> (<date>1973</date>).</bibl>
+	<bibl><author>E. A. Power and T. Thirunamachandran</author>, <title level="m">Proc. R. Soc. Lond. A</title> <biblScope unit="volume">401</biblScope>, <biblScope unit="page">207</biblScope> (<date>1985</date>).</bibl>
+	<bibl><author>P. E. Argan and E. Pizzaroli</author>, <title level="j">Phys. Lett.</title> <biblScope unit="volume">4</biblScope>, <biblScope unit="page">350</biblScope> (<date>1963</date>)</bibl>
+	<bibl><author>P. E. Argan and E. Pizzaroli</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">9</biblScope>, <biblScope unit="page">405</biblScope> (<date>1963</date>)</bibl>
+	<bibl><author>J.P. Schiffer and R. Vandenbosch</author>, <title level="j">Phys. Lett.</title> <biblScope unit="volume">5</biblScope>, <biblScope unit="page">292</biblScope> (<date>1963</date>)</bibl>
+	<bibl><author>F. M. Marqués et al.</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">65</biblScope>, <biblScope unit="page">044006</biblScope> (<date>2002</date>)</bibl>
+	<bibl><author>Steven C. Pieper</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">90</biblScope>, <biblScope unit="page">252501</biblScope> (<date>2003</date>)</bibl>
+	<bibl><author>K. Kisamori et al.</author> <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">116</biblScope>, <biblScope unit="page">052501</biblScope> (<date>2016</date>).</bibl>
+	<bibl><author>E. Hiyama, R. Lazauskas, J. Carbonell, M. Kamimura</author>, <title level="j">Phys.Rev. C</title> <biblScope unit="volume">93</biblScope>, <biblScope unit="page">044004</biblScope>( <date>2016</date>)</bibl>
+	<bibl><author>J. Carbonell, R, Lazauskas, E. Hiyama, M. Kamimura</author>, <title level="j">Few-Body Syst.</title>, <biblScope unit="volume">58</biblScope>, <biblScope unit="page">67</biblScope>( <date>2017</date>)</bibl>
+	<bibl><author>Rimantas Lazauskas, Emiko Hiyama, Jaume Carbonell</author>, <idno type="arxiv">arXiv:1705.07927</idno> (<date>2017</date>)</bibl>
+	<bibl><author>K. Fossez, J. Rotureau, N. Michel, and M. Ploszajczak</author>, <title level="j">Phys. Rev. Lett.</title>, <biblScope unit="volume">119</biblScope>, <biblScope unit="page">032501</biblScope>( <date>2017</date>)</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

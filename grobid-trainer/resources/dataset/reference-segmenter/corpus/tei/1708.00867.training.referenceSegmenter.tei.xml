@@ -1,0 +1,63 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>[1]</label> A. Abdesselam et al., Eur. Phys. J. C71, 1661 (2011),<lb/> arXiv:1012.5412 [hep-ph].<lb/> </bibl>
+        <bibl><label>[2]</label> A. Altheimer et al., J. Phys. G39, 063001 (2012),<lb/> arXiv:1201.0008 [hep-ph].<lb/> </bibl>
+        <bibl><label>[3]</label> A. Altheimer et al., Eur. Phys. J. C74, 2792 (2014),<lb/> arXiv:1311.2708 [hep-ex].<lb/> </bibl>
+        <bibl><label>[4]</label> D. Adams et al., Eur. Phys. J. C75, 409 (2015),<lb/> arXiv:1504.00679 [hep-ph].<lb/> </bibl>
+        <bibl><label>[5]</label> J. Gallicchio and M. D. Schwartz, Phys. Rev. Lett. 107,<lb/> 172001 (2011), arXiv:1106.3076 [hep-ph].<lb/> </bibl>
+        <bibl><label>[6]</label> J. Gallicchio and M. D. Schwartz, JHEP 04, 090 (2013),<lb/> arXiv:1211.7038 [hep-ph].<lb/> </bibl>
+        <bibl><label>[7]</label> A. J. Larkoski, G. P. Salam, and J. Thaler, JHEP 06,<lb/> 108 (2013), arXiv:1305.0007 [hep-ph].<lb/> </bibl>
+        <bibl><label>[8]</label> A. J. Larkoski, J. Thaler, and W. J. Waalewijn, JHEP<lb/> 11, 129 (2014), arXiv:1408.3122 [hep-ph].<lb/> </bibl>
+        <bibl><label>[9]</label> B. Bhattacherjee, S. Mukhopadhyay, M. M. Nojiri,<lb/> Y. Sakaki, and B. R. Webber, JHEP 04, 131 (2015),<lb/> arXiv:1501.04794 [hep-ph].<lb/> </bibl>
+        <bibl><label>[10]</label> J. R. Andersen et al., in 9th Les Houches Workshop on<lb/> Physics at TeV Colliders (PhysTeV 2015) Les Houches,<lb/> France, June 1-19, 2015 (2016) arXiv:1605.04692 [hep-<lb/>ph].<lb/> </bibl>
+        <bibl><label>[11]</label> D. Ferreira de Lima, P. Petrov, D. Soper,<lb/> and<lb/> M. Spannowsky, Phys. Rev. D95, 034001 (2017),<lb/> arXiv:1607.06031 [hep-ph].<lb/> </bibl>
+        <bibl><label>[12]</label> P. T. Komiske, E. M. Metodiev, and M. D. Schwartz,<lb/> JHEP 01, 110 (2017), arXiv:1612.01551 [hep-ph].<lb/> </bibl>
+        <bibl><label>[13]</label> J. Davighi and P. Harris, (2017), arXiv:1703.00914 [hep-<lb/>ph].<lb/> </bibl>
+        <bibl><label>[14]</label> P. Gras, S. Hoeche, D. Kar, A. Larkoski, L. Lnnblad,<lb/> S. Pltzer, A. Sidmok, P. Skands, G. Soyez, and J. Thaler,<lb/> (2017), arXiv:1704.03878 [hep-ph].<lb/> </bibl>
+        <bibl><label>[15]</label> T. Sjöstrand, S. Ask, J. R. Christiansen, R. Corke, N. De-<lb/>sai, P. Ilten, S. Mrenna, S. Prestel, C. O. Rasmussen, and<lb/> P. Z. Skands, Comput. Phys. Commun. 191, 159 (2015),<lb/> arXiv:1410.3012 [hep-ph].<lb/> </bibl>
+        <bibl><label>[16]</label> J. Bellm et al., (2017), arXiv:1705.06919 [hep-ph].<lb/> </bibl>
+        <bibl><label>[17]</label> T. Becher and M. D. Schwartz, JHEP 07, 034 (2008),<lb/> arXiv:0803.0342 [hep-ph].<lb/> </bibl>
+        <bibl><label>[18]</label> R. Abbate, M. Fickinger, A. H. Hoang, V. Mateu,<lb/> and I. W. Stewart, Phys. Rev. D83, 074021 (2011),<lb/> arXiv:1006.3080 [hep-ph].<lb/> </bibl>
+        <bibl><label>[19]</label> G. P. Korchemsky and G. F. Sterman, Nucl. Phys. B555,<lb/> 335 (1999), arXiv:hep-ph/9902341.<lb/> </bibl>
+        <bibl><label>[20]</label> G. P. Korchemsky and S. Tafat, JHEP 10, 010 (2000),<lb/> arXiv:hep-ph/0007005.<lb/> </bibl>
+        <bibl><label>[21]</label> A. H. Hoang and I. W. Stewart, Phys. Lett. B660, 483<lb/> (2008), arXiv:0709.3519 [hep-ph].<lb/> </bibl>
+<bibl>[22] Z. Ligeti, I. W. Stewart, and F. J. Tackmann, Phys. Rev.<lb/> D78, 114014 (2008), arXiv:0807.1926 [hep-ph].<lb/> </bibl>
+        <bibl><label>[23]</label> P. Richardson, private communication.<lb/> </bibl>
+        <bibl><label>[24]</label> S. Catani, L. Trentadue, G. Turnock, and B. R. Webber,<lb/> Nucl. Phys. B407, 3 (1993).<lb/> </bibl>
+        <bibl><label>[25]</label> S. Fleming, A. H. Hoang, S. Mantry, and I. W. Stewart,<lb/> Phys. Rev. D77, 074010 (2008), arXiv:hep-ph/0703207.<lb/> </bibl>
+        <bibl><label>[26]</label> M. D. Schwartz, Phys. Rev. D77, 014026 (2008),<lb/> arXiv:0709.2709 [hep-ph].<lb/> </bibl>
+        <bibl><label>[27]</label> G. P. Korchemsky and A. V. Radyushkin, Nucl. Phys. B<lb/> 283, 342 (1987).<lb/> </bibl>
+        <bibl><label>[28]</label> I. Moult, I. W. Stewart, F. J. Tackmann,<lb/> and<lb/> W. J. Waalewijn, Phys. Rev. D93, 094003 (2016),<lb/> arXiv:1508.02397 [hep-ph].<lb/> </bibl>
+        <bibl><label>[29]</label> C. Balzereit, T. Mannel, and W. Kilian, Phys. Rev. D58,<lb/> 114029 (1998), arXiv:hep-ph/9805297.<lb/> </bibl>
+        <bibl><label>[30]</label> M. Neubert, Eur. Phys. J. C40, 165 (2005), arXiv:hep-<lb/>ph/0408179.<lb/> </bibl>
+        <bibl><label>[31]</label> S. Fleming, A. H. Hoang, S. Mantry, and I. W. Stewart,<lb/> Phys. Rev. D77, 114003 (2008), arXiv:0711.2079 [hep-<lb/>ph].<lb/> </bibl>
+        <bibl><label>[32]</label> G. Kramer and B. Lampe, Z. Phys. C34, 497 (1987),<lb/> [Erratum: Z. Phys.C42,504(1989)].<lb/> </bibl>
+        <bibl><label>[33]</label> T. Matsuura and W. L. van Neerven, Z. Phys. C38, 623<lb/> (1988).<lb/> </bibl>
+        <bibl><label>[34]</label> T. Matsuura, S. C. van der Marck, and W. L. van Neer-<lb/>ven, Nucl. Phys. B319, 570 (1989).<lb/> </bibl>
+        <bibl><label>[35]</label> T. Becher, M. Neubert, and B. D. Pecjak, JHEP 01, 076<lb/> (2007), arXiv:hep-ph/0607228.<lb/> </bibl>
+        <bibl><label>[36]</label> A. Idilbi, X.-d. Ji, and F. Yuan, Nucl. Phys. B753, 42<lb/> (2006), arXiv:hep-ph/0605068.<lb/> </bibl>
+        <bibl><label>[37]</label> R. V. Harlander and K. J. Ozeren, Phys. Lett. B679,<lb/> 467 (2009), arXiv:0907.2997 [hep-ph].<lb/> </bibl>
+        <bibl><label>[38]</label> A. Pak, M. Rogal, and M. Steinhauser, Phys. Lett.<lb/> B679, 473 (2009), arXiv:0907.2998 [hep-ph].<lb/> </bibl>
+        <bibl><label>[39]</label> C. F. Berger, C. Marcantonini, I. W. Stewart, F. J. Tack-<lb/>mann, and W. J. Waalewijn, JHEP 04, 092 (2011),<lb/> arXiv:1012.4480 [hep-ph].<lb/> </bibl>
+        <bibl><label>[40]</label> T. Becher and M. Neubert, Phys. Lett. B637, 251 (2006),<lb/> arXiv:hep-ph/0603140.<lb/> </bibl>
+        <bibl><label>[41]</label> T. Becher and G. Bell, Phys. Lett. B695, 252 (2011),<lb/> arXiv:1008.1936 [hep-ph].<lb/> </bibl>
+        <bibl><label>[42]</label> R. Kelley, M. D. Schwartz, R. M. Schabinger, and H. X.<lb/> Zhu, Phys. Rev. D84, 045022 (2011), arXiv:1105.3676<lb/> [hep-ph].<lb/> </bibl>
+        <bibl><label>[43]</label> A. Hornig, C. Lee, I. W. Stewart, J. R. Walsh, and<lb/> S. Zuberi, JHEP 08, 054 (2011), arXiv:1105.4628 [hep-<lb/>ph].<lb/> </bibl>
+        <bibl><label>[44]</label> O. V. Tarasov, A. A. Vladimirov, and A. Yu. Zharkov,<lb/> Phys. Lett. B93, 429 (1980).<lb/> </bibl>
+        <bibl><label>[45]</label> S. A. Larin and J. A. M. Vermaseren, Phys. Lett. B303,<lb/> 334 (1993), arXiv:hep-ph/9302208.<lb/> </bibl>
+        <bibl><label>[46]</label> S. Moch, J. A. M. Vermaseren, and A. Vogt, Nucl. Phys.<lb/> B688, 101 (2004), arXiv:hep-ph/0403192.<lb/> </bibl>
+        <bibl><label>[47]</label> T. Becher and M. D. Schwartz, JHEP 02, 040 (2010),<lb/> arXiv:0911.0681 [hep-ph].<lb/> </bibl>
+        <bibl><label>[48]</label> R. K. Ellis, D. A. Ross, and A. E. Terrano, Nucl. Phys.<lb/> B178, 421 (1981).<lb/> </bibl>
+        <bibl><label>[49]</label> C. R. Schmidt, Phys. Lett. B413, 391 (1997), arXiv:hep-<lb/>ph/9707448.<lb/> </bibl>
+        <bibl><label>[50]</label> F. U. Bernlochner, H. Lacker, Z. Ligeti, I. W. Stew-<lb/>art, F. J. Tackmann, and K. Tackmann (SIMBA), 7th<lb/> International Workshop on the CKM Unitarity Trian-<lb/>gle (CKM 2012) Cincinnati, Ohio, USA, September 28-<lb/>October 2, 2012, (2013), [PoSICHEP2012,370(2013)],<lb/> arXiv:1303.0958 [hep-ph].<lb/> </bibl>
+        <bibl><label>[51]</label> I. W. Stewart, F. J. Tackmann, and W. J. Waalewijn,<lb/> Phys. Rev. Lett. 114, 092001 (2015), arXiv:1405.6722<lb/> [hep-ph].<lb/> </bibl>
+        <bibl><label>[52]</label> I. W. Stewart, F. J. Tackmann, J. R. Walsh, and S. Zu-<lb/>beri, Phys. Rev. D89, 054001 (2014), arXiv:1307.1808<lb/> [hep-ph].<lb/> </bibl>
+        <bibl><label>[53]</label> S. Gangal, M. Stahlhofen, and F. J. Tackmann, Phys.<lb/> Rev. D91, 054023 (2015), arXiv:1412.4792 [hep-ph].</bibl>
+        </listBibl>
+    </text>
+</tei>
+

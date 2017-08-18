@@ -4,9 +4,9 @@
 
 		<bibl><author>K. V. Kavokin et al</author>, <title level="j">Appl. Phys. Lett</title> <date>2010</date>, <biblScope type="vol">97</biblScope>, pp. <biblScope type="pp">201111</biblScope></bibl>
 
-		<bibl><author>I. G. Savenko, E. B. Magnusson and I. A. Shelykh</author>, <idno>arXiv:1101.3711</idno>, <date>2010</date>.</bibl>
+		<bibl><author>I. G. Savenko, E. B. Magnusson and I. A. Shelykh</author>, <idno type="arxiv">arXiv:1101.3711</idno>, <date>2010</date>.</bibl>
 
-		<bibl><author>I. G. Savenko, I. A. Shelykh and M. A. Kaliteevski</author> <idno>arXiv:1103.1336</idno>, <date>2011</date>.</bibl>
+		<bibl><author>I. G. Savenko, I. A. Shelykh and M. A. Kaliteevski</author> <idno type="arxiv">arXiv:1103.1336</idno>, <date>2011</date>.</bibl>
 
 </listBibl>
 </tei>
