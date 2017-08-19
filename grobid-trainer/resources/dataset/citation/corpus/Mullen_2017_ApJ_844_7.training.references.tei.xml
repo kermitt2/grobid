@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Ali, R., Neill, P. A., Beiersdorfer, P., et al.</author> <date>2005</date>, <title level="j">ApJL</title>, <biblScope unit="volume">629</biblScope>, <biblScope unit="page">L125</biblScope></bibl>
+	<bibl><author>Arnaud, K. A.</author> <date>1996</date>, in <title level="s">ASP Conf. Ser.</title> <biblScope unit="volume">101</biblScope>, <title level="m">Astronomical Data Analysis Software &amp;Systems V</title> ,ed .<editor>G .Jacoby &amp; J .Barnes</editor> ( <pubPlace>SanFrancisco ,CA</pubPlace> :<publisher>ASP</publisher> ),<biblScope unit="page">17</biblScope></bibl>
+	<bibl><author>Beiersdorfer, P., Chen, H., Boyce, K. R., et al.</author> <date>2005</date>, <title level="j">NIMPB</title>, <biblScope unit="volume">235</biblScope>, <biblScope unit="page">116</biblScope></bibl>
+	<bibl><author>Bhardwaj, A., Elsner, R. F., Gladstone, G. R., et al.</author> <date>2007</date>, <title level="j">P&amp;SS</title>, <biblScope unit="volume">55</biblScope>, <biblScope unit="page">1135</biblScope></bibl>
+	<bibl><author>Bodewits, D., Christian, D. J., Torney, M., et al.</author> <date>2007</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">469</biblScope>, <biblScope unit="page">1183</biblScope></bibl>
+	<bibl><author>Bodewits, D., Hoekstra, R., Seredyuk, B., et al.</author> <date>2006</date>, <title level="j">ApJ</title>, <biblScope unit="volume">642</biblScope>, <biblScope unit="page">593</biblScope></bibl>
+	<bibl><author>Butler, S. E., &amp; Dalgarno, A.</author> <date>1980</date>, <title level="j">ApJ</title>, <biblScope unit="page">241</biblScope>, <biblScope unit="page">838</biblScope></bibl>
+	<bibl><author>Cravens, T. E.</author> <date>2000</date>, <title level="j">ApJL</title>, <biblScope unit="volume">532</biblScope>, <biblScope unit="page">L153</biblScope></bibl>
+	<bibl><author>Cumbee, R. S., Henley, D. B., Stancil, P. C., et al.</author> <date>2014</date>, <title level="j">ApJL</title>, <biblScope unit="volume">787</biblScope>, <biblScope unit="page">L31</biblScope></bibl> 
+	<bibl><author>Eissa,F .</author><date>2002</date> ,<note type="report">MS thesis</note> ,<orgName>Univ .Nevada</orgName></bibl> 
+	<bibl><author>Greenwood ,J. B. ,Williams, I. D. ,Smith, S. J. ,&amp;Chutjian , A.</author> <date>2000</date>, <title level="j">ApJL</title>, <biblScope unit="volume">533</biblScope>, <biblScope unit="page">L175</biblScope></bibl>
+	<bibl><author>Gu, L., Kaastra, J., Raassen, A. J. J., et al.</author> <date>2015</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">584</biblScope>, <biblScope unit="page">L11</biblScope></bibl> 
+	<bibl><author>Gu,L .,Kaastra ,J .,&amp; Raassen ,A .J .J .</author><date>2016</date> ,<title level="j">A&amp;A</title> ,<biblScope unit="volume">588</biblScope> ,<biblScope unit="page">A52</biblScope></bibl> 
+	<bibl><author>Gutsev ,G. L. ,Jena, P. ,&amp;Bartlett , R. J.</author> <date>1998</date>, <title level="j">CPL</title>, <biblScope unit="volume">291</biblScope>, <biblScope unit="page">547</biblScope></bibl>
+	<bibl><author>Herzberg, G.</author> <date>1950</date>, <title level="m">Spectra of Diatomic Molecules</title> (<note>2nd ed.</note>; <pubPlace>New York</pubPlace>: <publisher>Van NostrandReinhold</publisher> )</bibl>
+	<bibl><author>Janev, R. K., Belić, D. S., &amp; Bransden, B. H.</author> <date>1983</date>, <title level="j">PhRvA</title>, <biblScope unit="volume">28</biblScope>, <biblScope unit="page">1293</biblScope></bibl>
+	<bibl><author>Jansen, F., Lumb, D., Altieri, B., et al.</author> <date>2001</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">365</biblScope>, <biblScope unit="page">L1</biblScope></bibl> 
+	<bibl><author>Katsonis,K .,Maynard ,G .,&amp; Janev ,R .K .</author><date>1991</date> ,<title level="j">PhyS</title> ,<biblScope unit="volume">T37</biblScope> ,<biblScope unit="page">80</biblScope></bibl>
+	<bibl><author>Katsuda, S., Tsunemi, H., Mori, K., et al.</author> <date>2011</date>, <title level="j">ApJ</title>, <biblScope unit="volume">730</biblScope>, <biblScope unit="page">24</biblScope></bibl>
+	<bibl><author>Kramida, A., Ralchenko, Y., Reader, J.</author> &amp; <orgName type="collaboration">NIST ASD Team</orgName> <date>2014</date>, <title level="m">NIST AtomicSpectra Database ( ver.5 .2)</title>( <pubPlace>Gaithersburg,MD</pubPlace> :<orgName>National Institute of Standards andTechnology</orgName> ) Available: <ptr type="web">http://physics.nist.gov/asdt</ptr></bibl>
+	<bibl><author>Krasnopolsky, V.A ., Greenwood,J .B ., &amp;Stancil, P .C</author> .<date>2004</date> ,<title level="j">SSRv</title> ,<biblScope unit="volume">113</biblScope> <biblScope unit="page">271</biblScope></bibl>
+	<bibl><author>Lisse, C. M., Dennerl, K., Englhauser, J., et al.</author> <date>1996</date>, <title level="j">Sci</title>, <biblScope unit="volume">274</biblScope>, <biblScope unit="page">205</biblScope></bibl>
+	<bibl><author>Lisse, C. M., McNutt, R. L., Bagenal, F., et al.</author> <date>2016</date>, in <title level="m">Lunar and Planetary ScienceConf .,47 ,47th Lunar and Planetary Science Conference</title> ( <pubPlace>Houston,TX</pubPlace> :<publisher>LPI</publisher>) ,<biblScope unit="page">2449</biblScope></bibl>
+	<bibl><author>Lyons, D., Cumbee, R. S., &amp; Stancil, P. C. 2017</author>, <title level="j">ApJS</title>, <note>submitted</note></bibl> 
+	<bibl><author>Mullen,P .D .,Cumbee ,R .S .,Lyons ,D .,&amp; Stancil ,P .C .</author><date>2016</date> ,<title level="j">ApJS</title> ,<biblScope unit="volume">224</biblScope> ,<biblScope unit="page">31</biblScope></bibl> 
+	<bibl><orgName>NIST</orgName> <title level="m">ComputationalChemistry Comparison and Benchmark Database</title> <date>2016</date> , <title level="s">NISTStandard ReferenceDatabase</title> Number <biblScope unit="volume">101</biblScope> Release , <date>2016 October18</date> , ed .<editor>R .D. Johnson, III</editor>, <ptr type="web">http: // cccbdb.nist.gov/</ptr></bibl>
+	<bibl><author>Nolte, J. L., Stancil, P. C., Liebermann, H. P., et al.</author> <date>2012</date>, <title level="j">JPhB</title>, <biblScope unit="volume">45</biblScope>, <biblScope unit="page">24</biblScope></bibl>
+	<bibl><author>Porquet, D., Dubau, J., &amp; Grosso, N.</author> <date>2010</date>, <title level="j">SSRv</title>, <biblScope unit="volume">157</biblScope>, <biblScope unit="page">103</biblScope></bibl>
+	<bibl><author>Porter, R. L., &amp; Ferland, G. J.</author> <date>2007</date>, <title level="j">ApJ</title>, <biblScope unit="volume">664</biblScope>, <biblScope unit="page">586</biblScope></bibl>
+	<bibl><author>Rigazio, M., Kharchenko, V., &amp; Dalgarno, A.</author> <date>2002</date>, <title level="j">PhRvA</title>, <biblScope unit="volume">66</biblScope>, <biblScope unit="page">064701</biblScope></bibl>
+	<bibl><author>Schultz, D. R., Meng, L., Reinhold, C. O., &amp; Olson, R. E.</author> <date>1991</date>, <title level="j">PhyS</title>, <biblScope unit="volume">T37</biblScope>, <biblScope unit="page">89</biblScope></bibl>
+	<bibl><author>Shah, C., Dobrodey, S., Bernitt, S., et al.</author> <date>2016</date>, <title level="j">ApJ</title>, <biblScope unit="volume">833</biblScope>, <biblScope unit="page">52</biblScope></bibl>
+	<bibl><author>Smith, R. K., Foster, A. R., Edgar, R. J., &amp; Brickhouse, N. S.</author> <date>2014</date>, <title level="j">ApJ</title>, <biblScope unit="volume">787</biblScope>,<biblScope unit="page">77</biblScope></bibl>
+	<bibl><author>Wargelin, B. J., Beiersdorfer, P., &amp; Brown, G. V.</author> <date>2007</date>, <title level="j">CaJPh</title>, <biblScope unit="volume">86</biblScope>, <biblScope unit="page">151</biblScope></bibl>
+	<bibl><author>Wargelin, B. J., Beiersdorfer, P., Neill, P. A., Olson, R. E., &amp; Scofield, J. H.</author> <date>2005</date>,<title level="j">ApJ</title> ,<biblScope unit="volume">643</biblScope> ,<biblScope unit="page">687</biblScope></bibl>
+	<bibl><author>Wigner, E., &amp; Witmer, E.</author> <date>1928</date>, <title level="j">ZPhy</title>, <biblScope unit="volume">51</biblScope>, <biblScope unit="page">859</biblScope></bibl>
+	<bibl><author>Wu, Y., Stancil, P. C., Liebermann, H. P., et al.</author> <date>2011</date>, <title level="j">PhRvA</title>, <biblScope unit="volume">84</biblScope>, <biblScope unit="page">022711</biblScope></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

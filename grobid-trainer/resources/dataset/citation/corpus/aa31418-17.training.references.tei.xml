@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Anders, E., &amp; Grevesse, N.</author> <date>1989</date>, <title level="j">Geochim. Cosmochim. Acta</title>, <biblScope unit="volume">53</biblScope>, <biblScope unit="page">197</biblScope></bibl>
+	<bibl><author>Arnaud, K. A.</author> <date>1996</date>, <title level="j">ASP Conf. Ser.</title>, <biblScope unit="volume">101</biblScope>, <biblScope unit="page">17</biblScope></bibl>
+	<bibl><author>Aschenbach, B., Egger, R., &amp; Trümper, J.</author> <date>1995</date>, <title level="j">Nature</title>, <biblScope unit="volume">373</biblScope>, <biblScope unit="page">587</biblScope></bibl>
+	<bibl><author>Balucinska-Church, M., &amp; McCammon, D.</author> <date>1992</date>, <title level="j">ApJ</title>, <biblScope unit="volume">400</biblScope>, <biblScope unit="page">699</biblScope></bibl>
+	<bibl><author>Bocchino, F., Maggio, A., &amp; Sciortino, S.</author> <date>1999</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">342</biblScope>, <biblScope unit="page">839</biblScope></bibl>
+	<bibl><author>Cha, A. N., Sembach, K. R., &amp; Danks, A. C.</author> <date>1999</date>, <title level="j">ApJ</title>, <biblScope unit="volume">515</biblScope>, <biblScope unit="page">L25</biblScope></bibl> 
+	<bibl><author>DeLaney,T .,Rudnick ,L .,Stage ,M .D .,et al .</author><date>2010</date> ,<title level="j">ApJ</title> ,<biblScope unit="volume">725</biblScope> ,<biblScope unit="page">2038</biblScope></bibl>
+	<bibl><author>Hammell, M. C., &amp; Fesen, R. A.</author> <date>2008</date>, <title level="j">ApJS</title>, <biblScope unit="volume">179</biblScope>, <biblScope unit="page">195</biblScope></bibl>
+	<bibl><author>Grichener, A., &amp; Soker, N</author>. <date>2017</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">468</biblScope>, <biblScope unit="page">1226</biblScope></bibl>
+	<bibl><author>Gvaramadze, V.</author> <date>1999</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">352</biblScope>, <biblScope unit="page">712</biblScope></bibl>
+	<bibl><author>Hwang, U., Laming, J. M., Badenes, C., et al.</author> <date>2004</date>, <title level="j">ApJ</title>, <biblScope unit="volume">615</biblScope>, <biblScope unit="page">L117</biblScope></bibl> 
+	<bibl><author>Katsuda,S .,Mori ,K .,Tsunemi ,H .,et al .</author><date>2008</date> ,<title level="j">ApJ</title> ,<biblScope unit="volume">678</biblScope> ,<biblScope unit="page">297</biblScope></bibl>
+	<bibl><author>Katsuda, S., &amp; Tsunemi, H.</author> <date>2005</date>, <title level="j">PASJ</title>, <biblScope unit="volume">57</biblScope>, <biblScope unit="page">621</biblScope></bibl>
+	<bibl><author>Katsuda, S., &amp; Tsunemi, H.</author> <date>2006</date>, <title level="j">ApJ</title>, <biblScope unit="volume">642</biblScope>, <biblScope unit="page">917</biblScope></bibl>
+	<bibl><author>LaMassa, S. M., Slane, P. O., &amp; de Jager, O. C.</author> <date>2008</date>, <title level="j">ApJ</title>, <biblScope unit="volume">689</biblScope>, <biblScope unit="page">L121</biblScope></bibl> 
+	<bibl><author>Laming,J .M .,Hwang ,U .,Radics ,B .,et al .</author><date>2006</date> ,<title level="j">ApJ</title> ,<biblScope unit="volume">644</biblScope> ,<biblScope unit="page">260</biblScope></bibl>
+	<bibl><author>Merloni, A., Predehl, P., Becker, W., et al.</author> <date>2012</date>, ArXiv e-prints [<idno type="arxiv">arXiv:1209.3114</idno>]</bibl>
+	<bibl><author>Miceli, M., Bocchino, F., &amp; Reale, F.</author> <date>2008</date>, <title level="j">ApJ</title>, <biblScope unit="volume">676</biblScope>, <biblScope unit="page">1064</biblScope></bibl>
+	<bibl><author>Miceli, M., Orlando, S., Reale, F., et al.</author> <date>2013</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">430</biblScope>, <biblScope unit="page">2864</biblScope></bibl>
+	<bibl><author>Miceli, M., Bamba, A., Orlando, S., et al.</author> <date>2017</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">599</biblScope>, <biblScope unit="page">A45</biblScope></bibl> 
+	<bibl><author>Miyata,E .,Tsunemi ,H .,Aschenbach ,B .,&amp; Mori ,K .</author><date>2001</date> ,<title level="j">ApJ</title> ,<biblScope unit="volume">559</biblScope> ,<biblScope unit="page">L45</biblScope></bibl>
+	<bibl><author>Orlando ,S. ,Miceli, M. ,Pumo, M. L. ,&amp;Bocchino , F</author>. <date>2016</date>, <title level="j">ApJ</title>, <biblScope unit="volume">822</biblScope>, <biblScope unit="page">22</biblScope></bibl>
+	<bibl><author>Park, S., Hughes, J. P., Slane, P. O., et al.</author> <date>2004</date>, <title level="j">ApJ</title>, <biblScope unit="volume">602</biblScope>, <biblScope unit="page">L33</biblScope></bibl> 
+	<bibl><author>Strüder,L .,Briel ,U .,Dennerl ,K .,et al .</author><date>2001</date> ,<title level="j">A&amp;A</title> ,<biblScope unit="volume">365</biblScope> ,<biblScope unit="page">L18</biblScope></bibl> 
+	<bibl><author>Taylor ,J. H. ,Manchester, R. N. ,&amp;Lyne</author> , A. G. <date>1993</date>, <title level="j">ApJS</title>, <biblScope unit="volume">88</biblScope>, <biblScope unit="page">529</biblScope></bibl>
+	<bibl><author>Tsunemi, H., Miyata, E., &amp; Aschenbach, B.</author> <date>1999</date>, <title level="j">PASJ</title>, <biblScope unit="volume">51</biblScope>, <biblScope unit="page">711</biblScope></bibl>
+	<bibl><author>Tsunemi, H., &amp; Katsuda, S.</author> <date>2006</date>, <title level="j">New Astron.</title>, <biblScope unit="volume">50</biblScope>, <biblScope unit="page">521</biblScope></bibl>
+	<bibl><author>Turner, M. J. L., Abbey, A., Arnaud, M., et al.</author> <date>2001</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">365</biblScope>, <biblScope unit="page">L27</biblScope></bibl> 
+	<bibl><author>Yamaguchi,H .,&amp; Katsuda ,S</author> .<date>2009</date> ,<title level="j">ApJ</title> ,<biblScope unit="volume">696</biblScope> ,<biblScope unit="page">1548</biblScope></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

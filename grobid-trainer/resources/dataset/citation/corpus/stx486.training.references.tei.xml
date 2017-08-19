@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Burkert A.</author>, <date>1995</date>, <title level="j">ApJ</title>, <biblScope unit="volume">447</biblScope>, <biblScope unit="page">L25</biblScope></bibl> <bibl><author>ChabrierG .</author>,<date>2003</date> ,<title level="j">PASP</title> ,<biblScope unit="volume">115</biblScope> ,<biblScope unit="page">763</biblScope></bibl>
+	<bibl><author>de Blok W. J. G., McGaugh S. S., Bosma A., Rubin V. C.</author>, <date>2001</date>, <title level="j">ApJ</title>, <biblScope unit="page">552</biblScope>, <biblScope unit="page">L23</biblScope></bibl>
+	<bibl><author>Dehnen W.</author>, <date>1993</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">265</biblScope>, <biblScope unit="page">250</biblScope></bibl>
+	<bibl><author>Di Cintio A., Brook C. B., Dutton A. A.,Maccì o A. V., Stinson G. S., Knebe A.</author>,<date>2014</date> ,<title level="j">MNRAS</title> ,<biblScope unit="volume">441</biblScope> ,<biblScope unit="page">2986</biblScope></bibl>
+	<bibl><author>Diemer B., Kravtsov A. V.</author>, <date>2014</date>, <title level="j">ApJ</title>, <biblScope unit="volume">789</biblScope>, <biblScope unit="page">1</biblScope></bibl>
+	<bibl><author>Duffy A. R., Schaye J., Kay S. T., Dalla Vecchia C.</author>, <date>2008</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">390</biblScope>, <biblScope unit="page">L64</biblScope></bibl>
+	<bibl><author>Dutton A. A. ,MaccìoA . V.</author> ,<date>2014</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">441</biblScope>, <biblScope unit="page">3359</biblScope></bibl>
+	<bibl><author>Dutton A. A. et al.</author>, <date>2016a</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">461</biblScope>, <biblScope unit="page">2658</biblScope></bibl>
+	<bibl><author>Dutton A. A.,Maccì o A. V., Frings J., Wang L., Stinson G. S., Penzo C., KangX .</author>,<date>2016b</date> ,<title level="j">MNRAS</title> ,<biblScope unit="volume">457</biblScope> ,<biblScope unit="page">L74</biblScope></bibl>
+	<bibl><author>Einasto J.</author>, <date>1965</date>, <title level="j">Trudy Astrofizicheskogo Instituta Alma-Ata</title>, <biblScope unit="volume">5</biblScope>, <biblScope unit="page">87</biblScope></bibl>
+	<bibl><author>Evans N. W.</author>, <date>1994</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">267</biblScope>, <biblScope unit="page">333</biblScope></bibl>
+	<bibl><author>Gao L., Navarro J. F., Cole S., Frenk C. S., White S. D. M., Springel V., JenkinsA .,Neto A .F .</author>,<date>2008</date> ,<title level="j">MNRAS</title> ,<biblScope unit="volume">387</biblScope> ,<biblScope unit="page">536</biblScope></bibl>
+	<bibl><author>Gill S. P. D., Knebe A., Gibson B. K.</author>, <date>2004</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">351</biblScope>, <biblScope unit="page">399</biblScope></bibl>
+	<bibl><author>Goerdt T., Moore B., Read J. I., Stadel J., Zemp M</author>., <date>2006</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">368</biblScope>, <biblScope unit="page">1073</biblScope></bibl>
+	<bibl><author>Graham A. W., Merritt D., Moore B., Diemand J., Terzi´cTerzi´c B</author>., <date>2006</date>, <title level="j">AJ</title>, <biblScope unit="volume">132</biblScope>, <biblScope unit="page">2701</biblScope></bibl>
+	<bibl><author>Gutcke T. A., Stinson G. S.,Maccì o A. V., Wang L., Dutton A. A.</author>, <date>2017</date>, <title level="j">MNRAS</title>,<biblScope unit="volume">464</biblScope> ,<biblScope unit="page">2796</biblScope></bibl>
+	<bibl><author>Hernquist L.</author>, <date>1990</date>, <title level="j">ApJ</title>, <biblScope unit="volume">356</biblScope>, <biblScope unit="page">359</biblScope></bibl>
+	<bibl><author>Jaffe W.</author>, <date>1983</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">202</biblScope>, <biblScope unit="page">995</biblScope></bibl>
+	<bibl><author>Jing Y. P., Suto Y.</author>, <date>2000</date>, <title level="j">ApJ</title>, <biblScope unit="volume">529</biblScope>, <biblScope unit="page">L69</biblScope></bibl>
+	<bibl><author>Keller B. W., Wadsley J., Benincasa S. M., Couchman H. M. P.</author>, <date>2014</date>, <title level="j">MNRAS</title>,<biblScope unit="page">442</biblScope> ,<biblScope unit="page">3013</biblScope></bibl>
+	<bibl><author>Knollmann S. R., Knebe A.</author>, <date>2009</date>, <title level="j">ApJS</title>, <biblScope unit="volume">182</biblScope>, <biblScope unit="page">608</biblScope></bibl>
+	<bibl><author>Levenberg K.</author>, <date>1944</date>, <title level="j">Q. Appl. Math.</title>, <biblScope unit="volume">2</biblScope>, <biblScope unit="page">164</biblScope></bibl>
+	<bibl><author>Marquardt D.</author>, <date>1963</date>, <title level="j">SIAM J. Appl. Math.</title>, <biblScope unit="volume">11</biblScope>, <biblScope unit="page">431</biblScope></bibl>
+	<bibl><author>Merritt D., Graham A. W., Moore B., Diemand J., Terzi´cTerzi´c B</author>., <date>2006</date>, <title level="j">AJ</title>, <biblScope unit="volume">132</biblScope>, <biblScope unit="page">2685</biblScope></bibl>
+	<bibl><author>More S., Diemer B., Kravtsov A. V.</author>, <date>2015</date>, <title level="j">ApJ</title>, <biblScope unit="volume">810</biblScope>, <biblScope unit="page">36</biblScope></bibl>
+	<bibl><author>Navarro J. F., Frenk C. S., White S. D. M.</author>, <date>1997</date>, <title level="j">ApJ</title>, <biblScope unit="volume">490</biblScope>, <biblScope unit="page">493</biblScope></bibl>
+	<bibl><author>Navarro J. F. et al.</author>, <date>2004</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">349</biblScope>, <biblScope unit="page">1039</biblScope></bibl>
+	<bibl><author>Obreja A., Stinson G. S., Dutton A. A.,Maccì o A. V., Wang L., Kang X.</author>, <date>2016</date>,<title level="j">MNRAS</title> ,<biblScope unit="volume">459</biblScope> ,<biblScope unit="page">467</biblScope></bibl>
+	<bibl><author>Oh S.-H., Brook C., Governato F., Brinks E., Mayer L., de Blok W. J. G., BrooksA .,Walter F .</author>,<date>2011</date> ,<title level="j">AJ</title> ,<biblScope unit="volume">142</biblScope> ,<biblScope unit="page">24</biblScope></bibl>
+	<bibl><author>Oldham L. J., Auger M. W.</author>, <date>2016</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">457</biblScope>, <biblScope unit="page">421</biblScope></bibl>
+	<bibl><orgName type="collaboration">Planck Collaboration XIII</orgName>, <date>2014</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">561</biblScope>, <biblScope unit="volume">A97</biblScope></bibl> 
+	<bibl><author>SavitzkyA .,Golay M .J .E .</author>,<date>1964</date> ,<title level="j">Analytical Chem .</title>,<biblScope unit="volume">36</biblScope> ,<biblScope unit="page">1627</biblScope></bibl>
+	<bibl><author>Schaller M. et al.</author>, <date>2015</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">451</biblScope>, <biblScope unit="page">1247</biblScope></bibl>
+	<bibl><author>Shen S., Wadsley J., Stinson G.</author>, <date>2010</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">407</biblScope>, <biblScope unit="page">1581</biblScope></bibl>
+	<bibl><author>Stinson G., Seth A., Katz N., Wadsley J., Governato F., Quinn T</author>., <date>2006</date>, <title level="j">MNRAS</title>,<biblScope unit="volume">373</biblScope> ,<biblScope unit="page">1074</biblScope></bibl>
+	<bibl><author>Stoehr F.</author>, <date>2006</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">365</biblScope>, <biblScope unit="page">147</biblScope></bibl>
+	<bibl><author>Swaters R. A., Madore B. F., van den Bosch F. C., Balcells M</author>., <date>2003</date>, <title level="j">ApJ</title>, <biblScope unit="volume">583</biblScope>,<biblScope unit="page">732</biblScope></bibl>
+	<bibl><author>Tollet E. et al.</author>, <date>2016</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">456</biblScope>, <biblScope unit="page">3542</biblScope></bibl>
+	<bibl><author>Tremaine S., Richstone D. O., Byun Y.-I., Dressler A., Faber S.M .,Grillmair C .,Kormendy J .,Lauer T .R .</author>,<date>1994</date> ,<title level="j">AJ</title> ,<biblScope unit="volume">107</biblScope> ,<biblScope unit="page">634</biblScope></bibl>
+	<bibl><author>Wadsley J. W., Stadel J., Quinn T</author>., <date>2004</date>, <title level="j">Nature</title>, <biblScope unit="volume">9</biblScope>, <biblScope unit="page">137</biblScope></bibl>
+	<bibl><author>Walker M. G., Peñarrubia J.</author>, <date>2011</date>, <title level="j">ApJ</title>, <biblScope unit="volume">742</biblScope>, <biblScope unit="page">20</biblScope></bibl>
+	<bibl><author>Wang L., Dutton A. A., Stinson G. S.,Maccì o A. V., Penzo C., Kang X., KellerB .W .,Wadsley J .</author>,<date>2015</date> ,<title level="j">MNRAS</title> ,<biblScope unit="page">454</biblScope> ,<biblScope unit="page">83</biblScope></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

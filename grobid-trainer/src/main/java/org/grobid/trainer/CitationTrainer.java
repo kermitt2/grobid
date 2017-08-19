@@ -7,6 +7,9 @@ import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.trainer.sax.TEICitationSaxParser;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.lexicon.Lexicon;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -66,6 +69,7 @@ public class CitationTrainer extends AbstractTrainer {
 							final File evalOutputPath, 
 							double splitRatio) {
 		int totalExamples = 0;
+		Lexicon lexicon = Lexicon.getInstance();
 		try {
 			System.out.println("sourcePathLabel: " + corpusDir);
 			if (trainingOutputPath != null)
@@ -107,10 +111,11 @@ public class CitationTrainer extends AbstractTrainer {
 			// get a factory for SAX parser
 			SAXParserFactory spf = SAXParserFactory.newInstance();
 
-			List<List<OffsetPosition>> journalsPositions;
-	        List<List<OffsetPosition>> abbrevJournalsPositions;
-	        List<List<OffsetPosition>> conferencesPositions;
-	        List<List<OffsetPosition>> publishersPositions;
+			List<OffsetPosition> journalsPositions;
+	        List<OffsetPosition> abbrevJournalsPositions;
+	        List<OffsetPosition> conferencesPositions;
+	        List<OffsetPosition> publishersPositions;
+	        List<OffsetPosition> locationsPositions;
 
 			int n = 0;
 			for (; n < refFiles.length; n++) {
@@ -124,35 +129,31 @@ public class CitationTrainer extends AbstractTrainer {
 				final SAXParser p = spf.newSAXParser();
 				p.parse(teifile, parser2);
 
-				final List<String> labeled = parser2.getLabeledResult();
+				final List<List<String>> allLabeled = parser2.getLabeledResult();
+				final List<List<LayoutToken>> allTokens = parser2.getTokensResult();
 				totalExamples += parser2.nbCitations;
-				
-				journalsPositions = parser2.journalsPositions;
-                abbrevJournalsPositions = parser2.abbrevJournalsPositions;
-                conferencesPositions = parser2.conferencesPositions;
-                publishersPositions = parser2.publishersPositions;
 
 				// we can now add the features
-				String citation = FeaturesVectorCitation.addFeaturesCitation(labeled,
-                        journalsPositions,
-                        abbrevJournalsPositions,
-                        conferencesPositions,
-                        publishersPositions);
-//System.out.println("["+citation+"]");
+				for(int i=0; i<allTokens.size(); i++) {
+					journalsPositions = lexicon.inJournalNamesLayoutToken(allTokens.get(i));
+	                abbrevJournalsPositions = lexicon.inAbbrevJournalNamesLayoutToken(allTokens.get(i));
+	                conferencesPositions = lexicon.inConferenceNamesLayoutToken(allTokens.get(i));
+	                publishersPositions = lexicon.inPublisherNamesLayoutToken(allTokens.get(i));
+	                locationsPositions = lexicon.inLocationNamesLayoutToken(allTokens.get(i));
 
-				String[] chunks = citation.split("\n \n");
-				
-				for(int i=0; i<chunks.length; i++) {
-					String chunk = chunks[i];
+					String citation = FeaturesVectorCitation.addFeaturesCitation(allTokens.get(i), 
+							allLabeled.get(i), journalsPositions, abbrevJournalsPositions, 
+							conferencesPositions, publishersPositions, locationsPositions);
+
 					if ( (writer2 == null) && (writer3 != null) )
-						writer3.write(chunk + "\n \n");
+						writer3.write(citation + "\n \n");
 					if ( (writer2 != null) && (writer3 == null) )
-						writer2.write(chunk + "\n \n");
+						writer2.write(citation + "\n \n");
 					else {		
 						if (Math.random() <= splitRatio)
-							writer2.write(chunk + "\n \n");
+							writer2.write(citation + "\n \n");
 						else 
-							writer3.write(chunk + "\n \n");
+							writer3.write(citation + "\n \n");
 					}
 				}
 			}

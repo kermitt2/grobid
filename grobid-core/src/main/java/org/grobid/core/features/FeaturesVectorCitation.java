@@ -4,6 +4,8 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.layout.LayoutToken;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -31,8 +33,7 @@ public class FeaturesVectorCitation {
     public boolean properName = false;
     public boolean commonName = false;
     public boolean firstName = false;
-
-    public boolean locationName = false;
+    public boolean lastName = false;
 
     public boolean year = false;
     public boolean month = false;
@@ -48,6 +49,7 @@ public class FeaturesVectorCitation {
     public boolean isKnownAbbrevJournalTitle = false;
     public boolean isKnownConferenceTitle = false;
     public boolean isKnownPublisher = false;
+    public boolean isKnownLocation = false;
 
     public String printVector() {
         if (string == null) return null;
@@ -90,7 +92,7 @@ public class FeaturesVectorCitation {
         else
             res.append(" 0");
 
-        // lexical information (8)
+        // lexical information (9)
         if (properName)
             res.append(" 1");
         else
@@ -106,7 +108,12 @@ public class FeaturesVectorCitation {
         else
             res.append(" 0");
 
-        if (locationName)
+        if (lastName)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
+        if (isKnownLocation)
             res.append(" 1");
         else
             res.append(" 0");
@@ -131,7 +138,7 @@ public class FeaturesVectorCitation {
         else
             res.append(" 0");
 
-        // bibliographical information(4)
+        // bibliographical information(3)
         if (isKnownJournalTitle || isKnownAbbrevJournalTitle)
             res.append(" 1");
         else
@@ -166,149 +173,86 @@ public class FeaturesVectorCitation {
     /**
      * Add feature for citation parsing.
      */
-    static public String addFeaturesCitation(List<String> lines,
-                                             List<List<OffsetPosition>> allJournalPositions,
-                                             List<List<OffsetPosition>> allAbbrevJournalPositions,
-                                             List<List<OffsetPosition>> allConferencePositions,
-                                             List<List<OffsetPosition>> allPublisherPositions) throws Exception {
-        if ((allJournalPositions == null) ||
-                (allAbbrevJournalPositions == null) ||
-                (allConferencePositions == null) ||
-                (allPublisherPositions == null)) {
+    static public String addFeaturesCitation(List<LayoutToken> tokens,
+                                             List<String> labels,
+                                             List<OffsetPosition> journalPositions,
+                                             List<OffsetPosition> abbrevJournalPositions,
+                                             List<OffsetPosition> conferencePositions,
+                                             List<OffsetPosition> publisherPositions,
+                                             List<OffsetPosition> locationPositions) throws Exception {
+        if ((journalPositions == null) ||
+                (abbrevJournalPositions == null) ||
+                (conferencePositions == null) ||
+                (publisherPositions == null)) {
             throw new GrobidException("At least one list of gazetter matches positions is null.");
-        }
-
-        if ((allJournalPositions.size() == 0) ||
-                (allAbbrevJournalPositions.size() == 0) ||
-                (allConferencePositions.size() == 0) ||
-                (allPublisherPositions.size() == 0)) {
-            throw new GrobidException("At least one list of gazetter matches positions is empty.");
         }
 
         FeatureFactory featureFactory = FeatureFactory.getInstance();
 
-        String line;
         StringBuilder citation = new StringBuilder();
-        boolean newline = true;
-//        String currentFont = null;
-//        int currentFontSize = -1;
-        int n = 0; // overall token number - we have one token per line
 
-        int sentenceNb = 0;
         int currentJournalPositions = 0;
         int currentAbbrevJournalPositions = 0;
         int currentConferencePositions = 0;
         int currentPublisherPositions = 0;
+        int currentLocationPositions = 0;
+
         boolean isJournalToken;
         boolean isAbbrevJournalToken;
         boolean isConferenceToken;
         boolean isPublisherToken;
+        boolean isLocationToken;
         boolean skipTest;
-
-        List<OffsetPosition> journalPositions = allJournalPositions.get(0);
-        List<OffsetPosition> abbrevJournalPositions = allAbbrevJournalPositions.get(0);
-        List<OffsetPosition> conferencePositions = allConferencePositions.get(0);
-        List<OffsetPosition> publisherPositions = allPublisherPositions.get(0);
 
         String previousTag = null;
         String previousText = null;
         FeaturesVectorCitation features = null;
-        int mm = 0; // token position in the sentence
-        int sentenceLenth = 0; // length of the current sentence
-        while (n < lines.size()) {
+        int sentenceLenth = tokens.size(); // length of the current sentence
+        for (int n=0; n < tokens.size(); n++) {
+            LayoutToken token = tokens.get(n);
+            String tag = null;
+            if ( (labels != null) && (labels.size() > 0) && (n < labels.size()) )
+                tag = labels.get(n);
+
             boolean outputLineStatus = false;
             isJournalToken = false;
             isAbbrevJournalToken = false;
             isConferenceToken = false;
             isPublisherToken = false;
+            isLocationToken = false;
             skipTest = false;
-            if (mm == 0) {
-                // check the length of the current sentence
-                sentenceLenth = 0;
-                int q = 0;
-                while ((sentenceLenth == 0) & (n + q < lines.size())) {
-                    String truc = lines.get(n + q);
-                    if (truc != null) {
-                        if (truc.trim().length() == 0) {
-                            sentenceLenth = q;
-                        }
-                    }
-                    q++;
-                }
-            }
 
-            line = lines.get(n);
-
-            if (line == null) {
-                n++;
-                newline = true;
-                continue;
-            }
-            line = line.trim();
-            if (line.length() == 0) {
-                // we start a new sentence in the sense of CRF++
-                citation.append("\n \n");
-                n++;
-                mm = 0;
-                sentenceLenth = 0;
-                newline = true;
-                sentenceNb++;
-                currentJournalPositions = 0;
-                currentAbbrevJournalPositions = 0;
-                currentConferencePositions = 0;
-                currentPublisherPositions = 0;
-                if (allJournalPositions.size() > sentenceNb) {
-                    journalPositions = allJournalPositions.get(sentenceNb);
-                }
-                /*else {
-                        System.out.println("WARNING: no journal position for sentence number " + sentenceNb);
-                    }*/
-
-                if (allAbbrevJournalPositions.size() > sentenceNb) {
-                    abbrevJournalPositions = allAbbrevJournalPositions.get(sentenceNb);
-                }
-                /*else {
-                        System.out.println("WARNING: no abbrev. journal position for sentence number " + sentenceNb);
-                    }*/
-
-                if (allConferencePositions.size() > sentenceNb) {
-                    conferencePositions = allConferencePositions.get(sentenceNb);
-                }
-                /*else {
-                        System.out.println("WARNING: no conference position for sentence number " + sentenceNb);
-                    }*/
-
-                if (allPublisherPositions.size() > sentenceNb) {
-                    publisherPositions = allPublisherPositions.get(sentenceNb);
-                }
-                /*else {
-                        System.out.println("WARNING: no publisher position for sentence number " + sentenceNb);
-                    }*/
-
+            String text = token.getText();
+            if (text.equals(" ")) {
                 continue;
             }
 
-            if (line.equals("@newline")) {
-                newline = true;
-                n++;
+            if (text.equals("\n")) {
+                // should not be the case for citation model
+                continue;
+            }
+
+            // parano normalisation
+            text = UnicodeUtil.normaliseTextAndRemoveSpaces(text);
+            if (text.trim().length() == 0 ) {
                 continue;
             }
 
             // check the position of matches for journals
             if ((journalPositions != null) && (journalPositions.size() > 0)) {
                 if (currentJournalPositions == journalPositions.size() - 1) {
-                    if (journalPositions.get(currentJournalPositions).end < mm) {
+                    if (journalPositions.get(currentJournalPositions).end < n) {
                         skipTest = true;
                     }
                 }
                 if (!skipTest) {
                     for (int i = currentJournalPositions; i < journalPositions.size(); i++) {
-                        if ((journalPositions.get(i).start <= mm) &&
-                                (journalPositions.get(i).end >= mm)) {
+                        if ((journalPositions.get(i).start <= n) &&
+                                (journalPositions.get(i).end >= n)) {
                             isJournalToken = true;
                             currentJournalPositions = i;
                             break;
-                        } else if (journalPositions.get(i).start > mm) {
+                        } else if (journalPositions.get(i).start > n) {
                             isJournalToken = false;
                             currentJournalPositions = i;
                             break;
@@ -320,18 +264,18 @@ public class FeaturesVectorCitation {
             skipTest = false;
             if (abbrevJournalPositions != null) {
                 if (currentAbbrevJournalPositions == abbrevJournalPositions.size() - 1) {
-                    if (abbrevJournalPositions.get(currentAbbrevJournalPositions).end < mm) {
+                    if (abbrevJournalPositions.get(currentAbbrevJournalPositions).end < n) {
                         skipTest = true;
                     }
                 }
                 if (!skipTest) {
                     for (int i = currentAbbrevJournalPositions; i < abbrevJournalPositions.size(); i++) {
-                        if ((abbrevJournalPositions.get(i).start <= mm) &&
-                                (abbrevJournalPositions.get(i).end >= mm)) {
+                        if ((abbrevJournalPositions.get(i).start <= n) &&
+                                (abbrevJournalPositions.get(i).end >= n)) {
                             isAbbrevJournalToken = true;
                             currentAbbrevJournalPositions = i;
                             break;
-                        } else if (abbrevJournalPositions.get(i).start > mm) {
+                        } else if (abbrevJournalPositions.get(i).start > n) {
                             isAbbrevJournalToken = false;
                             currentAbbrevJournalPositions = i;
                             break;
@@ -343,18 +287,18 @@ public class FeaturesVectorCitation {
             skipTest = false;
             if (conferencePositions != null) {
                 if (currentConferencePositions == conferencePositions.size() - 1) {
-                    if (conferencePositions.get(currentConferencePositions).end < mm) {
+                    if (conferencePositions.get(currentConferencePositions).end < n) {
                         skipTest = true;
                     }
                 }
                 if (!skipTest) {
                     for (int i = currentConferencePositions; i < conferencePositions.size(); i++) {
-                        if ((conferencePositions.get(i).start <= mm) &&
-                                (conferencePositions.get(i).end >= mm)) {
+                        if ((conferencePositions.get(i).start <= n) &&
+                                (conferencePositions.get(i).end >= n)) {
                             isConferenceToken = true;
                             currentConferencePositions = i;
                             break;
-                        } else if (conferencePositions.get(i).start > mm) {
+                        } else if (conferencePositions.get(i).start > n) {
                             isConferenceToken = false;
                             currentConferencePositions = i;
                             break;
@@ -366,18 +310,18 @@ public class FeaturesVectorCitation {
             skipTest = false;
             if (publisherPositions != null) {
                 if (currentPublisherPositions == publisherPositions.size() - 1) {
-                    if (publisherPositions.get(currentPublisherPositions).end < mm) {
+                    if (publisherPositions.get(currentPublisherPositions).end < n) {
                         skipTest = true;
                     }
                 }
                 if (!skipTest) {
                     for (int i = currentPublisherPositions; i < publisherPositions.size(); i++) {
-                        if ((publisherPositions.get(i).start <= mm) &&
-                                (publisherPositions.get(i).end >= mm)) {
+                        if ((publisherPositions.get(i).start <= n) &&
+                                (publisherPositions.get(i).end >= n)) {
                             isPublisherToken = true;
                             currentPublisherPositions = i;
                             break;
-                        } else if (publisherPositions.get(i).start > mm) {
+                        } else if (publisherPositions.get(i).start > n) {
                             isPublisherToken = false;
                             currentPublisherPositions = i;
                             break;
@@ -385,41 +329,41 @@ public class FeaturesVectorCitation {
                     }
                 }
             }
-
-            int ind = line.indexOf(" ");
-            String text = null;
-            String tag = null;
-            if (ind != -1) {
-                text = line.substring(0, ind);
-                text = UnicodeUtil.normaliseTextAndRemoveSpaces(text);
-                tag = line.substring(ind + 1, line.length());
+            // check the position of matches for locations
+            skipTest = false;
+            if (locationPositions != null) {
+                if (currentLocationPositions == locationPositions.size() - 1) {
+                    if (locationPositions.get(currentLocationPositions).end < n) {
+                        skipTest = true;
+                    }
+                }
+                if (!skipTest) {
+                    for (int i = currentLocationPositions; i < locationPositions.size(); i++) {
+                        if ((locationPositions.get(i).start <= n) &&
+                                (locationPositions.get(i).end >= n)) {
+                            isLocationToken = true;
+                            currentLocationPositions = i;
+                            break;
+                        } else if (locationPositions.get(i).start > n) {
+                            isLocationToken = false;
+                            currentLocationPositions = i;
+                            break;
+                        }
+                    }
+                }
             }
 
-            boolean filter = false;
-            if (text == null) {
-                filter = true;
-            } else if (text.length() == 0) {
-                filter = true;
-            } else if (text.startsWith("@IMAGE")) {
-                filter = true;
-            } else if (text.contains(".pbm")) {
-                filter = true;
-            } else if (text.contains(".vec")) {
-                filter = true;
-            } else if (text.contains(".jpg")) {
-                filter = true;
+            if (TextUtilities.filterLine(text)) {
+                continue;
             }
-
-            if (filter) continue;
 
             features = new FeaturesVectorCitation();
             features.string = text;
-            features.relativePosition = featureFactory.linearScaling(mm, sentenceLenth, nbBins);
+            features.relativePosition = featureFactory.linearScaling(n, sentenceLenth, nbBins);
 
-            if (newline) {
+            if (n == 0) {
                 features.lineStatus = "LINESTART";
                 outputLineStatus = true;
-                newline = false;
             }
             Matcher m0 = featureFactory.isPunct.matcher(text);
             if (m0.find()) {
@@ -445,43 +389,12 @@ public class FeaturesVectorCitation {
                     features.lineStatus = "LINESTART";
                     outputLineStatus = true;
                 }
-            } else if (lines.size() == n + 1) {
+            } else if (tokens.size() == n+1) {
                 if (!outputLineStatus) {
                     features.lineStatus = "LINEEND";
                     outputLineStatus = true;
                 }
-            } else {
-                // look ahead...
-                boolean endline = false;
-                int i = 1;
-                boolean endloop = false;
-                while ((lines.size() > n + i) & (!endloop)) {
-                    String newLine = lines.get(n + i);
-
-                    if (newLine != null) {
-                        if (newLine.equals("@newline")) {
-                            endline = true;
-                        } else if (newLine.trim().length() == 0) {
-                            endline = true;
-                        } else {
-                            /*int indd = newLine.indexOf(" ");
-                                   if (indd != -1) {
-                                       String nextText = newLine.substring(0,indd);
-                                       String nextTag = newLine.substring(indd+1,newLine.length());
-                                   }*/
-                            endloop = true;
-                        }
-                    }
-
-                    if ((endline) & (!outputLineStatus)) {
-                        features.lineStatus = "LINEEND";
-                        outputLineStatus = true;
-                    }
-                    i++;
-                }
-            }
-
-            newline = false;
+            } 
 
             if (!outputLineStatus) {
                 features.lineStatus = "LINEIN";
@@ -516,8 +429,12 @@ public class FeaturesVectorCitation {
                 features.month = true;
             }
 
-			if (featureFactory.test_city(text)) {
-                features.locationName = true;
+            if (featureFactory.test_last_names(text)) {
+                features.lastName = true;
+            }
+
+            if (featureFactory.test_first_names(text)) {
+                features.firstName = true;
             }
 
             Matcher m = featureFactory.isDigit.matcher(text);
@@ -570,14 +487,16 @@ public class FeaturesVectorCitation {
                 features.isKnownPublisher = true;
             }
 
+            if (isLocationToken) {
+                features.isKnownLocation = true;
+            }
+
             features.label = tag;
 
             citation.append(features.printVector());
 
             previousTag = tag;
             previousText = text;
-            n++;
-            mm++;
         }
 
         return citation.toString();

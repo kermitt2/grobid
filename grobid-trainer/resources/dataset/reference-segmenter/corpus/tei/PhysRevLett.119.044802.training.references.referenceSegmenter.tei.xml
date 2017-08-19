@@ -1,0 +1,68 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        <bibl><label>[1]</label> T. Tajima and J. M. Dawson, Phys. Rev. Lett. 43, 267<lb/> (1979).<lb/> </bibl>
+        <bibl><label>[2]</label> V. Malka, J. Faure, Y. A. Gauduel, E. Lefebvre, A. Rousse,<lb/> and K. T. Phuoc, Nat. Phys. 4, 447 (2008).<lb/> </bibl>
+        <bibl><label>[3]</label> E. Esarey, C. B. Schroeder, and W. P. Leemans, Rev. Mod.<lb/> Phys. 81, 1229 (2009).<lb/> </bibl>
+        <bibl><label>[4]</label> P. A. Norreys, Nat. Photonics 3, 423 (2009).<lb/> </bibl>
+        <bibl><label>[5]</label> P. Chen, J. M. Dawson, R. W. Huff, and T. Katsouleas, Phys.<lb/> Rev. Lett. 54, 693 (1985).<lb/> </bibl>
+        <bibl><label>[6]</label> P. Muggli and M. J. Hogan, C.R. Phys. 10, 116 (2009).<lb/> </bibl>
+        <bibl><label>[7]</label> S. M. Hooker, Nat. Photonics 7, 775 (2013).<lb/> </bibl>
+        <bibl><label>[8]</label> W. P. Leemans, B. Nagler, A. J. Gonsalves, C. Toth, K.<lb/> Nakamura, C. G. R. Geddes, E. Esarey, C. B. Schroeder, and<lb/> S. M. Hooker, Nat. Phys. 2, 696 (2006).<lb/> </bibl>
+        <bibl><label>[9]</label> S. Kneip et al.P. Rajeev, J. Schreiber, M. Streeter, D. Urner,<lb/> J. Vieira, L. Silva, and Z. Najmudin, Phys. Rev. Lett. 103,<lb/> 035002 (2009).<lb/> </bibl>
+        <bibl><label>[10]</label> X. Wang et al., Nat. Commun. 4, 2988 (2013).<lb/> </bibl>
+        <bibl><label>[11]</label> A. Buck, M. Nicolai, K. Schmid, C. M. S. Sears, A. Sävert,<lb/> J. M. Mikhailova, F. Krausz, M. C. Kaluza, and L. Veisz,<lb/> Nat. Phys. 7, 543 (2011).<lb/> </bibl>
+        <bibl><label>[12]</label> O. Lundh, J. Lim, C. Rechatin, L. Ammoura, A. Ben-Ismail,<lb/> X. Davoine, G. Gallot, J.-P. Goddet, E. Lefebvre, V. Malka,<lb/> and J. Faure, Nat. Phys. 7, 219 (2011).<lb/> </bibl>
+        <bibl><label>[13]</label> M. Heigoldt, A. Popp, K. Khrennikov, J. Wenz, S.-W. Chou,<lb/> S. Karsch, S. I. Bajlekov, S. M. Hooker, and B. Schmidt,<lb/> Phys. Rev. ST Accel. Beams 18, 121302 (2015).<lb/> </bibl>
+        <bibl><label>[14]</label> H.-P. Schlenvoigt, K. Haupt, A. Debus, F. Budde, O. Jackel,<lb/> S. Pfotenhauer, H. Schwoerer, E. Rohwer, J. G. Gallacher,<lb/> E. Brunetti, R. P. Shanks, S. M. Wiggins, and D. A.<lb/> Jaroszynski, Nat. Phys. 4, 130 (2008).<lb/> </bibl>
+        <bibl><label>[15]</label> M. Fuchs, R. Weingartner, A. Popp, Z. Major, S. Becker, J.<lb/> Osterhoff, I. Cortrie, B. Zeitler, R. Hoerlein, G. D. Tsakiris,<lb/> U. Schramm, T. P. Rowlands-Rees, S. M. Hooker, D. Habs,<lb/> F. Krausz, S. Karsch, and F. Gruener, Nat. Phys. 5, 826<lb/> (2009).<lb/> </bibl>
+        <bibl><label>[16]</label> S. Kneip et al., Nat. Phys. 6, 980 (2010).<lb/> </bibl>
+        <bibl><label>[17]</label> S. Cipiccia et al., Nat. Phys. 7, 867 (2011).<lb/> </bibl>
+        <bibl><label>[18]</label> K. T. Phuoc, S. Corde, C. Thaury, V. Malka, A. Tafzi, J.-P.<lb/> Goddet, R. C. Shah, S. Sebban, and A. Rousse, Nat.<lb/> Photonics 6, 308 (2012).<lb/> </bibl>
+        <bibl><label>[19]</label> N. D. Powers, I. Ghebregziabher, G. Golovin, C. Liu, S.<lb/> Chen, S. Banerjee, J. Zhang, and D. P. Umstadter, Nat.<lb/> Photonics 8, 28 (2013).<lb/> </bibl>
+        <bibl><label>[20]</label> K. Khrennikov, J. Wenz, A. Buck, J. Xu, M. Heigoldt, L.<lb/> Veisz, and S. Karsch, Phys. Rev. Lett. 114, 195003 (2015).<lb/> </bibl>
+        <bibl><label>[21]</label> S. M. Hooker, R. Bartolini, S. P. D. Mangles, A. Tuennermann,<lb/> L. Corner, J. Limpert, A. Seryi, and R. Walczek, J. Phys. B<lb/> 47, 234003 (2014).<lb/> </bibl>
+        <bibl><label>[22]</label> C. Benedetti, C. B. Schroeder, E. Esarey, and W. P.<lb/> Leemans, Phys. Plasmas 21, 056706 (2014).<lb/> </bibl>
+        <bibl><label>[23]</label> A. Klenke, S. Hädrich, T. Eidam, J. Rothhardt, M. Kienel,<lb/> S. Demmler, T. Gottschall, J. Limpert, and A. Tünnermann,<lb/> Opt. Lett. 39, 6875 (2014).<lb/> </bibl>
+        <bibl><label>[24]</label> N. H. Matlis, A. Maksimchuk, V. Yanovsky, W. P. Leemans,<lb/> and M. C. Downer, Opt. Lett. 41, 5503 (2016).<lb/> </bibl>
+        <bibl><label>[25]</label> See Supplemental Material http://link.aps.org/supplemental/<lb/> 10.1103/PhysRevLett.119.044802 for further details of the<lb/> experimental arrangement and analysis methods.<lb/> </bibl>
+        <bibl><label>[26]</label> A. S. Weling and D. H. Auston, J. Opt. Soc. Am. B 13, 2783<lb/> (1996).<lb/> </bibl>
+        <bibl><label>[27]</label> R. J. Shalloo, L. Corner, C. Arran, J. Cowley, G. Cheung, C.<lb/> Thornton, R. walczak, and S. M. Hooker, Nucl. Instrum.<lb/> Methods Phys. Res., Sect. A 829, 383 (2016).<lb/> </bibl>
+        <bibl><label>[28]</label> N. H. Matlis, S. Reed, S. S. Bulanov, V. Chvykov, G.<lb/> Kalintchenko, T. Matsuoka, P. Rousseau, V. Yanovsky, A.<lb/> Maksimchuk, S. Kalmykov, G. Shvets, and M. C. Downer,<lb/> Nat. Phys. 2, 749 (2006).<lb/> </bibl>
+        <bibl><label>[29]</label> C. A. Arran, N. H. Matlis, L. Corner, J. Cowley, G. Cheung,<lb/> C. D. Gregory, R. J. Shalloo, D. R. Symes, C. Thornton, R.<lb/> Walczak, and S. M. Hooker (to be published).<lb/> </bibl>
+        <bibl><label>[30]</label> L. J. Spitzer, Physics of Fully Ionized Gases (John Wiley &amp;<lb/> Sons, New York, 1962).<lb/> </bibl>
+        <bibl><label>[31]</label> F. Dorchies, F. Amiranoff, V. Malka, J. R. Marques, A.<lb/> Modena, D. Bernard, F. Jacquet, P. Mine, B. Cros, G.<lb/> Matthieussent, P. Mora, A. Solodov, J. Morillo, and Z.<lb/> Najmudin, Phys. Plasmas 6, 2903 (1999).<lb/> </bibl>
+        <bibl><label>[32]</label> C. D. Murphy et al., Phys. Plasmas 13, 033108 (2006).<lb/> </bibl>
+        <bibl><label>[33]</label> J. M. Dias, L. OliveiraeSilva, and J. T. Mendonca, Phys.<lb/> Rev. ST Accel. Beams 1, 031301 (1998).<lb/> </bibl>
+        <bibl><label>[34]</label> C. Joshi, W. B. Mori, T. Katsouleas, J. M. Dawson, and<lb/> J. M. Kindel, Nature (London) 311, 525 (1984).<lb/> </bibl>
+        <bibl><label>[35]</label> A. E. Dangor, A. Dymoke-Bradshaw, and A. E. Dyson,<lb/> Phys. Scr. T30, 107 (1990).<lb/> </bibl>
+        <bibl><label>[36]</label> C. E. Clayton, C. Joshi, C. B. C. Darrow, and D. Umstadter,<lb/> Phys. Rev. Lett. 54, 2343 (1985).<lb/> </bibl>
+        <bibl><label>[37]</label> F. Amiranoff, M. Laberge, J. R. Marques, F. Moulin, E.<lb/> Fabre, B. Cros, G. Matthieussent, P. Benkheiri, F. Jacquet,<lb/> J. Meyer, P. Mine, C. Stenz, and P. Mora, Phys. Rev. Lett.<lb/> 68, 3710 (1992).<lb/> </bibl>
+        <bibl><label>[38]</label> C. E. Clayton, K. A. Marsh, A. Dyson, M. Everett, A. LAL,<lb/> W. P. Leemans, R. Williams, and C. Joshi, Phys. Rev. Lett.<lb/> 70, 37 (1993).<lb/> </bibl>
+        <bibl><label>[39]</label> S. Y. Tochitsky, R. Narang, C. V. Filip, P. Musumeci, C. E.<lb/> Clayton, R. B. Yoder, K. A. Marsh, J. B. Rosenzweig,<lb/> C. Pellegrini, and C. Joshi, Phys. Rev. Lett. 92, 095004<lb/> (2004).<lb/> </bibl>
+        <bibl><label>[40]</label> M. N. Rosenbluth and C. S. Liu, Phys. Rev. Lett. 29, 701<lb/> (1972).<lb/> </bibl>
+        <bibl><label>[41]</label> K. Nakajima, Phys. Rev. A 45, 1149 (1992).<lb/> </bibl>
+        <bibl><label>[42]</label> V. I. Berezhiani and I. G. Murusidze, Phys. Scr. 45, 87<lb/> (1992).<lb/> </bibl>
+        <bibl><label>[43]</label> D. Umstadter, E. Esarey, and J. Kim, Phys. Rev. Lett. 72,<lb/> 1224 (1994).<lb/> </bibl>
+        <bibl><label>[44]</label> D. A. Johnson, R. A. Cairns, R. Bingham, and U. De<lb/> Angelis, Phys. Scr. T52, 77 (1994).<lb/> </bibl>
+        <bibl><label>[45]</label> S. Dalla and M. Lontano, Phys. Rev. E 49, R1819 (1994).<lb/> </bibl>
+        <bibl><label>[46]</label> G. Bonnaud, D. Teychenné, and J.-L. Bobin, Phys. Rev. E<lb/> 50, R36 (1994).<lb/> </bibl>
+        <bibl><label>[47]</label> R. A. Cairns, D. Johnson, and R. Bingham, Laser Part.<lb/> Beams 13, 451 (1995).<lb/> </bibl>
+        <bibl><label>[48]</label> D. Umstadter, J. Kim, E. Esarey, E. Dodd, and T. Neubert,<lb/> Phys. Rev. E 51, 3484 (1995).<lb/> </bibl>
+        <bibl><label>[49]</label> E. I. Kalinnikova and V. D. Levchenko, Plasma Phys. Rep.<lb/> 34, 290 (2008).<lb/> </bibl>
+        <bibl><label>[50]</label> M. Deutsch, B. Meerson, and J. E. Golub, Phys. Fluids B 3,<lb/> 1773 (1991).<lb/> </bibl>
+        <bibl><label>[51]</label> F. Verluise, V. Laude, Z. Cheng, C. Spielmann, and P.<lb/> Tournois, Opt. Lett. 25, 575 (2000).<lb/> </bibl>
+        <bibl><label>[52]</label> T. Nubbemeyer, M. Kaumanns, M. Ueffing, M. Gorjan, A.<lb/> Alismail, H. Fattahi, J. Brons, O. Pronin, H. G. Barros, Z.<lb/> Major, T. Metzger, D. Sutter, and F. Krausz, Opt. Lett. 42,<lb/> 1381 (2017).<lb/> </bibl>
+        <bibl><label>[53]</label> C. Jauregui, J. Limpert, and A. Tünnermann, Nat. Photonics<lb/> 7, 861 (2013).<lb/> </bibl>
+        <bibl><label>[54]</label> P. Muggli, V. Yakimenko, M. Babzien, E. Kallos, and K. P.<lb/> Kusche, Phys. Rev. Lett. 101, 054801 (2008).<lb/> </bibl>
+        <bibl><label>[55]</label> E. Kallos, T. Katsouleas, W. D. Kimura, K. Kusche, P.<lb/> Muggli, I. Pavlishin, I. Pogorelsky, D. Stolyarov, and V.<lb/> Yakimenko, Phys. Rev. Lett. 100, 074802 (2008).<lb/> </bibl>
+        <bibl><label>[56]</label> A. Caldwell, K. Lotov, A. Pukhov, and F. Simon, Nat. Phys.<lb/> 5, 363 (2009).<lb/> </bibl>
+        <bibl><label>[57]</label> A. Caldwell and K. V. Lotov, Phys. Plasmas 18, 103101<lb/> (2011).</bibl>
+        </listBibl>
+    </text>
+</tei>
+
