@@ -80,23 +80,19 @@ public class CitationParser extends AbstractParser {
 
             tokens = LayoutTokensUtil.dehyphenize(tokens);
 
-            List<OffsetPosition> journalsPositions = new ArrayList<OffsetPosition>();
-            List<OffsetPosition> abbrevJournalsPositions = new ArrayList<OffsetPosition>();
-            List<OffsetPosition> conferencesPositions = new ArrayList<OffsetPosition>();
-            List<OffsetPosition> publishersPositions = new ArrayList<OffsetPosition>();
-            List<OffsetPosition> locationsPositions = new ArrayList<OffsetPosition>();
-
-            journalsPositions = lexicon.inJournalNamesLayoutToken(tokens);
-            abbrevJournalsPositions = lexicon.inAbbrevJournalNamesLayoutToken(tokens);
-            conferencesPositions = lexicon.inConferenceNamesLayoutToken(tokens);
-            publishersPositions = lexicon.inPublisherNamesLayoutToken(tokens);
-            locationsPositions = lexicon.inLocationNamesLayoutToken(tokens);
+            List<OffsetPosition> journalsPositions = lexicon.inJournalNamesLayoutToken(tokens);
+            List<OffsetPosition> abbrevJournalsPositions = lexicon.inAbbrevJournalNamesLayoutToken(tokens);
+            List<OffsetPosition> conferencesPositions = lexicon.inConferenceNamesLayoutToken(tokens);
+            List<OffsetPosition> publishersPositions = lexicon.inPublisherNamesLayoutToken(tokens);
+            List<OffsetPosition> locationsPositions = lexicon.inLocationNamesLayoutToken(tokens);
+            List<OffsetPosition> collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(tokens);
 
             String ress = FeaturesVectorCitation.addFeaturesCitation(tokens, null, journalsPositions, 
-                abbrevJournalsPositions, conferencesPositions, publishersPositions, locationsPositions);
+                abbrevJournalsPositions, conferencesPositions, publishersPositions, locationsPositions,
+                collaborationsPositions);
 
             String res = label(ress);
-
+System.out.println(res);
             resCitation = resultExtractionLayoutTokens(res, true, tokens);
             // post-processing (additional field parsing and cleaning)
             if (resCitation != null) {
@@ -284,9 +280,11 @@ public class CitationParser extends AbstractParser {
                 if (biblio.getJournal() == null)
                     biblio.setJournal(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_VOLUME)) {
-                biblio.setVolumeBlock(clusterContent, volumePostProcess);
+                if (biblio.getVolumeBlock() == null)
+                   biblio.setVolumeBlock(clusterContent, volumePostProcess);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_ISSUE)) {
-                biblio.setIssue(clusterContent);
+                if (biblio.getIssue() == null)
+                    biblio.setIssue(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_EDITOR)) {
                 biblio.setEditors(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_INSTITUTION)) {
@@ -353,11 +351,12 @@ public class CitationParser extends AbstractParser {
             if (inputs.size() == 0)
                 return null;
 
-            List<OffsetPosition> journalsPositions = new ArrayList<OffsetPosition>();
-            List<OffsetPosition> abbrevJournalsPositions = new ArrayList<OffsetPosition>();
-            List<OffsetPosition> conferencesPositions = new ArrayList<OffsetPosition>();
-            List<OffsetPosition> publishersPositions = new ArrayList<OffsetPosition>();
-            List<OffsetPosition> locationsPositions = new ArrayList<OffsetPosition>();
+            List<OffsetPosition> journalsPositions = null;
+            List<OffsetPosition> abbrevJournalsPositions = null;
+            List<OffsetPosition> conferencesPositions = null;
+            List<OffsetPosition> publishersPositions = null;
+            List<OffsetPosition> locationsPositions = null;
+            List<OffsetPosition> collaborationsPositions = null;
             for (String input : inputs) {
                 //List<String> citationBlocks = new ArrayList<String>();
                 if (input == null)
@@ -375,10 +374,11 @@ public class CitationParser extends AbstractParser {
                 conferencesPositions = lexicon.inConferenceNamesLayoutToken(tokenizations);
                 publishersPositions = lexicon.inPublisherNamesLayoutToken(tokenizations);
                 locationsPositions = lexicon.inLocationNamesLayoutToken(tokenizations);
+                collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(tokenizations);
 
                 String ress = FeaturesVectorCitation.addFeaturesCitation(tokenizations,
                         null, journalsPositions, abbrevJournalsPositions, 
-                        conferencesPositions, publishersPositions, locationsPositions);
+                        conferencesPositions, publishersPositions, locationsPositions, collaborationsPositions);
                 String res = label(ress);
 
                 // extract results from the processed file

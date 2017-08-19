@@ -29,6 +29,10 @@ public class CitationTrainer extends AbstractTrainer {
 
     public CitationTrainer() {
         super(GrobidModels.CITATION);
+        
+        // adjusting CRF training parameters for this model (only with Wapiti)
+        epsilon = 0.00001;
+        window = 20;
     }
 
 	/**
@@ -42,13 +46,6 @@ public class CitationTrainer extends AbstractTrainer {
 	public int createCRFPPData(final File corpusDir, final File evalDataPath) {
 		return createCRFPPData(corpusDir, evalDataPath, null, 1.0);
 	}
-
-
-//    @Override
-//    public String evaluate() {
-//        createCRFPPData(getEvalCorpusPath(), getEvalDataPath());
-//        return EvaluationUtilities.evaluateStandardWapiti(getEvalDataPath().getAbsolutePath(), new WapitiModel(GrobidModels.CITATION));
-//    }
 
     /**
 	 * Add the selected features to the citations model example set
@@ -116,6 +113,7 @@ public class CitationTrainer extends AbstractTrainer {
 	        List<OffsetPosition> conferencesPositions;
 	        List<OffsetPosition> publishersPositions;
 	        List<OffsetPosition> locationsPositions;
+	        List<OffsetPosition> collaborationsPositions;
 
 			int n = 0;
 			for (; n < refFiles.length; n++) {
@@ -140,10 +138,11 @@ public class CitationTrainer extends AbstractTrainer {
 	                conferencesPositions = lexicon.inConferenceNamesLayoutToken(allTokens.get(i));
 	                publishersPositions = lexicon.inPublisherNamesLayoutToken(allTokens.get(i));
 	                locationsPositions = lexicon.inLocationNamesLayoutToken(allTokens.get(i));
+	                collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(allTokens.get(i));
 
 					String citation = FeaturesVectorCitation.addFeaturesCitation(allTokens.get(i), 
 							allLabeled.get(i), journalsPositions, abbrevJournalsPositions, 
-							conferencesPositions, publishersPositions, locationsPositions);
+							conferencesPositions, publishersPositions, locationsPositions, collaborationsPositions);
 
 					if ( (writer2 == null) && (writer3 != null) )
 						writer3.write(citation + "\n \n");
