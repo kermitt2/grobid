@@ -1,0 +1,48 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Ali, R., Neill, P. A., Beiersdorfer, P., et al. 2005, ApJL, 629, L125<lb/> </bibl>
+<bibl>Arnaud, K. A. 1996, in ASP Conf. Ser. 101, Astronomical Data Analysis Software<lb/> &amp; Systems V, ed. G. Jacoby &amp; J. Barnes (San Francisco, CA: ASP), 17<lb/> </bibl>
+<bibl>Beiersdorfer, P., Chen, H., Boyce, K. R., et al. 2005, NIMPB, 235, 116<lb/> </bibl>
+<bibl>Bhardwaj, A., Elsner, R. F., Gladstone, G. R., et al. 2007, P&amp;SS, 55, 1135<lb/> </bibl>
+<bibl>Bodewits, D., Christian, D. J., Torney, M., et al. 2007, A&amp;A, 469, 1183<lb/> </bibl>
+<bibl>Bodewits, D., Hoekstra, R., Seredyuk, B., et al. 2006, ApJ, 642, 593<lb/> </bibl>
+<bibl>Butler, S. E., &amp; Dalgarno, A. 1980, ApJ, 241, 838<lb/> </bibl>
+<bibl>Cravens, T. E. 2000, ApJL, 532, L153<lb/> </bibl>
+<bibl>Cumbee, R. S., Henley, D. B., Stancil, P. C., et al. 2014, ApJL, 787, L31<lb/> </bibl>
+<bibl>Eissa, F. 2002, MS thesis, Univ. Nevada<lb/> </bibl>
+<bibl>Greenwood, J. B., Williams, I. D., Smith, S. J., &amp; Chutjian, A. 2000, ApJL,<lb/> 533, L175<lb/> </bibl>
+<bibl>Gu, L., Kaastra, J., Raassen, A. J. J., et al. 2015, A&amp;A, 584, L11<lb/> </bibl>
+<bibl>Gu, L., Kaastra, J., &amp; Raassen, A. J. J. 2016, A&amp;A, 588, A52<lb/> </bibl>
+<bibl>Gutsev, G. L., Jena, P., &amp; Bartlett, R. J. 1998, CPL, 291, 547<lb/> </bibl>
+<bibl>Herzberg, G. 1950, Spectra of Diatomic Molecules (2nd ed.; New York: Van<lb/> Nostrand Reinhold)<lb/> </bibl>
+<bibl>Janev, R. K., Belić, D. S., &amp; Bransden, B. H. 1983, PhRvA, 28, 1293<lb/> </bibl>
+<bibl>Jansen, F., Lumb, D., Altieri, B., et al. 2001, A&amp;A, 365, L1<lb/> </bibl>
+<bibl>Katsonis, K., Maynard, G., &amp; Janev, R. K. 1991, PhyS, T37, 80<lb/> </bibl>
+<bibl>Katsuda, S., Tsunemi, H., Mori, K., et al. 2011, ApJ, 730, 24<lb/> </bibl>
+<bibl>Kramida, A., Ralchenko, Y., Reader, J. &amp; NIST ASD Team 2014, NIST<lb/> Atomic Spectra Database (ver. 5.2) (Gaithersburg, MD: National Institute of<lb/> Standards and Technology) Available:http://physics.nist.gov/asdt<lb/> </bibl>
+<bibl>Krasnopolsky, V. A., Greenwood, J. B., &amp; Stancil, P. C. 2004, SSRv, 113<lb/> 271<lb/> </bibl>
+<bibl>Lisse, C. M., Dennerl, K., Englhauser, J., et al. 1996, Sci, 274, 205<lb/> </bibl>
+<bibl>Lisse, C. M., McNutt, R. L., Bagenal, F., et al. 2016, in Lunar and Planetary<lb/> Science Conf., 47, 47th Lunar and Planetary Science Conference (Houston,<lb/> TX: LPI), 2449<lb/> </bibl>
+<bibl>Lyons, D., Cumbee, R. S., &amp; Stancil, P. C. 2017, ApJS, submitted<lb/> </bibl>
+<bibl>Mullen, P. D., Cumbee, R. S., Lyons, D., &amp; Stancil, P. C. 2016, ApJS, 224, 31<lb/> NIST Computational Chemistry Comparison and Benchmark Database 2016,<lb/> NIST Standard Reference Database Number 101 Release, 2016 October 18,<lb/> ed. R. D. Johnson, III, http://cccbdb.nist.gov/<lb/> </bibl>
+<bibl>Nolte, J. L., Stancil, P. C., Liebermann, H. P., et al. 2012, JPhB, 45, 24<lb/> </bibl>
+<bibl>Porquet, D., Dubau, J., &amp; Grosso, N. 2010, SSRv, 157, 103<lb/> </bibl>
+<bibl>Porter, R. L., &amp; Ferland, G. J. 2007, ApJ, 664, 586<lb/> </bibl>
+<bibl>Rigazio, M., Kharchenko, V., &amp; Dalgarno, A. 2002, PhRvA, 66, 064701<lb/> </bibl>
+<bibl>Schultz, D. R., Meng, L., Reinhold, C. O., &amp; Olson, R. E. 1991, PhyS, T37, 89<lb/> </bibl>
+<bibl>Shah, C., Dobrodey, S., Bernitt, S., et al. 2016, ApJ, 833, 52<lb/> </bibl>
+<bibl>Smith, R. K., Foster, A. R., Edgar, R. J., &amp; Brickhouse, N. S. 2014, ApJ,<lb/> 787, 77<lb/> </bibl>
+<bibl>Wargelin, B. J., Beiersdorfer, P., &amp; Brown, G. V. 2007, CaJPh, 86, 151<lb/> </bibl>
+<bibl>Wargelin, B. J., Beiersdorfer, P., Neill, P. A., Olson, R. E., &amp; Scofield, J. H.<lb/> 2005, ApJ, 643, 687<lb/> </bibl>
+<bibl>Wigner, E., &amp; Witmer, E. 1928, ZPhy, 51, 859<lb/> </bibl>
+<bibl>Wu, Y., Stancil, P. C., Liebermann, H. P., et al. 2011, PhRvA, 84, 022711</bibl>
+        </listBibl>
+    </text>
+</tei>
+

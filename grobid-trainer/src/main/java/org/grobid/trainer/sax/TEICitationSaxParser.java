@@ -3,6 +3,12 @@ package org.grobid.trainer.sax;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.core.lang.Language;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.analyzers.*;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -27,21 +33,15 @@ public class TEICitationSaxParser extends DefaultHandler {
     private String output = null;
     private String currentTag = null;
 
-    private ArrayList<String> labeled = null; // store line by line the labeled data
+    private List<String> labeled = null; // store line by line the labeled data
+    private List<List<String>> allLabeled = null; // list of labeled examples
+    private List<LayoutToken> tokens = null;
+    private List<List<LayoutToken>> allTokens = null; // list of LayoutToken segmentation
     public int nbCitations = 0;
-    public Lexicon lexicon = Lexicon.getInstance();
-
-    public List<List<OffsetPosition>> journalsPositions = null;
-    public List<List<OffsetPosition>> abbrevJournalsPositions = null;
-    public List<List<OffsetPosition>> conferencesPositions = null;
-    public List<List<OffsetPosition>> publishersPositions = null;
 
     public TEICitationSaxParser() {
-        labeled = new ArrayList<String>();
-        journalsPositions = new ArrayList<List<OffsetPosition>>();
-        abbrevJournalsPositions = new ArrayList<List<OffsetPosition>>();
-        conferencesPositions = new ArrayList<List<OffsetPosition>>();
-        publishersPositions = new ArrayList<List<OffsetPosition>>();
+        allTokens = new ArrayList<List<LayoutToken>>();
+        allLabeled = new ArrayList<List<String>>();
     }
 
     public void characters(char[] buffer, int start, int length) {
@@ -55,15 +55,20 @@ public class TEICitationSaxParser extends DefaultHandler {
         return accumulator.toString().trim();
     }
 
-    public ArrayList<String> getLabeledResult() {
-        return labeled;
+    public List<List<String>> getLabeledResult() {
+        return allLabeled;
+    }
+
+    public List<List<LayoutToken>> getTokensResult() {
+        return allTokens;
     }
 
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
+        qName = qName.toLowerCase();
 
-        if ((qName.toLowerCase().equals("author")) || (qName.equals("authors")) || (qName.equals("orgname")) ||
+        if ((qName.equals("author")) || (qName.equals("authors")) || (qName.equals("orgname")) ||
                 (qName.equals("title")) || (qName.equals("editor")) || (qName.equals("editors")) ||
                 (qName.equals("booktitle")) || (qName.equals("date")) || (qName.equals("journal")) ||
                 (qName.equals("institution")) || (qName.equals("tech")) || (qName.equals("volume")) ||
@@ -86,16 +91,10 @@ public class TEICitationSaxParser extends DefaultHandler {
                 currentTag = "<other>";
                 writeField(text);
             }
-            labeled.add("\n \n");
             nbCitations++;
-
-            String allString = allContent.toString();
-            journalsPositions.add(lexicon.inJournalNames(allString));
-            abbrevJournalsPositions.add(lexicon.inAbbrevJournalNames(allString));
-            conferencesPositions.add(lexicon.inConferenceNames(allString));
-            publishersPositions.add(lexicon.inPublisherNames(allString));
+            allLabeled.add(labeled);
+            allTokens.add(tokens);
             allContent = null;
-            allString = null;
         }
 
         accumulator.setLength(0);
@@ -127,7 +126,7 @@ public class TEICitationSaxParser extends DefaultHandler {
                     if (name.equals("level")) {
                         if (value.equals("a")) {
                             currentTag = "<title>";
-                        } else if (value.equals("j")) {
+                        } else if (value.equals("j") || value.equals("s")) {
                             currentTag = "<journal>";
                         } else if (value.equals("m")) {
                             currentTag = "<booktitle>";
@@ -249,96 +248,42 @@ public class TEICitationSaxParser extends DefaultHandler {
         } else if (qName.equals("bibl")) {
             accumulator = new StringBuffer();
             allContent = new StringBuffer();
+            labeled = new ArrayList<String>();
+            tokens = new ArrayList<LayoutToken>();
         }
         accumulator.setLength(0);
     }
 
     private void writeField(String text) {
         // we segment the text
-        List<String> tokens = TextUtilities.segment(text, "[(" + TextUtilities.punctuations);
-
+        List<LayoutToken> localTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+        if ( (localTokens == null) || (localTokens.size() == 0) )
+            localTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text, new Language("en", 1.0));
+        if  ( (localTokens == null) || (localTokens.size() == 0) )
+            return;
         boolean begin = true;
-        //while(st.hasMoreTokens()) {
-        for (String tok : tokens) {
-            //String tok = st.nextToken().trim();
-            tok = tok.trim();
-            if (tok.length() == 0) continue;
-            boolean punct1 = false;
-
-            if (tok.equals("+L+")) {
-                labeled.add("@newline\n");
-            } else if (tok.equals("+PAGE+")) {
-                // page break not relevant for authors
-                labeled.add("@newline\n");
-            } else {
-                String content = tok;
-                int i = 0;
-                for (; i < TextUtilities.punctuations.length(); i++) {
-                    if (tok.length() > 0) {
-                        if (tok.charAt(tok.length() - 1) == TextUtilities.punctuations.charAt(i)) {
-                            punct1 = true;
-                            content = tok.substring(0, tok.length() - 1);
-                            break;
-                        }
-                    }
-                }
-                if (tok.length() > 0) {
-                    if ((tok.startsWith("(")) & (tok.length() > 1)) {
-                        if (punct1)
-                            content = tok.substring(1, tok.length() - 1);
-                        else
-                            content = tok.substring(1, tok.length());
-                        if (begin) {
-                            labeled.add("(" + " I-" + currentTag + "\n");
-                            begin = false;
-                        } else {
-                            labeled.add("(" + " " + currentTag + "\n");
-                        }
-                    } else if ((tok.startsWith("[")) & (tok.length() > 1)) {
-                        if (punct1)
-                            content = tok.substring(1, tok.length() - 1);
-                        else
-                            content = tok.substring(1, tok.length());
-                        if (begin) {
-                            labeled.add("[" + " I-" + currentTag + "\n");
-                            begin = false;
-                        } else {
-                            labeled.add("[" + " " + currentTag + "\n");
-                        }
-                    } else if ((tok.startsWith("\"")) & (tok.length() > 1)) {
-                        if (punct1)
-                            content = tok.substring(1, tok.length() - 1);
-                        else
-                            content = tok.substring(1, tok.length());
-                        if (begin) {
-                            labeled.add("\"" + " I-" + currentTag + "\n");
-                            begin = false;
-                        } else {
-                            labeled.add("\"" + " " + currentTag + "\n");
-                        }
-                    }
-                }
-
-                if (content.length() > 0) {
-                    if (begin) {
-                        labeled.add(content + " I-" + currentTag + "\n");
-                        begin = false;
-                    } else {
-                        labeled.add(content + " " + currentTag + "\n");
-                    }
-                }
-
-                if (punct1) {
-                    if (begin) {
-                        labeled.add(tok.charAt(tok.length() - 1) + " I-" + currentTag + "\n");
-                        begin = false;
-                    } else {
-                        labeled.add(tok.charAt(tok.length() - 1) + " " + currentTag + "\n");
-                    }
-                }
+        for (LayoutToken token : localTokens) {
+            tokens.add(token);
+            String content = token.getText();
+            if (content.equals(" ") || content.equals("\n")) {
+                labeled.add(null);
+                continue;
             }
 
-            begin = false;
+            content = UnicodeUtil.normaliseTextAndRemoveSpaces(content);
+            if (content.trim().length() == 0) { 
+                labeled.add(null);
+                continue;
+            }
+            
+            if (content.length() > 0) {
+                if (begin) {
+                    labeled.add("I-" + currentTag);
+                    begin = false;
+                } else {
+                    labeled.add(currentTag);
+                }
+            }
         }
     }
 

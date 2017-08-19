@@ -22,11 +22,13 @@ Then the following tags are used for structuring the bibliographical references:
 
 * `<title level="j">` for journal title
 
-* `<title level="m">` for non journal bibliographical item holding the cited article. Note if a book is cited, the title of the book is annotated with `<title level="m">`. If a thesis is cited, the title of the thesis is annotated with `<title level="m">`, and the type of thesis as `<note>`. Here `m` stands for monograph.
+* `<title level="s">` for serie title (e.g. "Lecture Notes in Computer Science")
 
-* `<date>` the date sequence (including parenthesis, etc.)
+* `<title level="m">` for non journal bibliographical item holding the cited article, e.g. _conference proceedings_ title. Note if a book is cited, the title of the book is annotated with `<title level="m">`. If a thesis is cited, the title of the thesis is annotated with `<title level="m">`, and the type of thesis as `<note type="report">`. Here `m` stands for monograph.
 
-* `<biblScope unit="page">` the full range of pages or the article 
+* `<date>` the date sequence (exclusing parenthesis, etc.)
+
+* `<biblScope unit="page">` the full range of pages of the article 
 
 * `<biblScope unit="volume">` the value of the volume (e.g. `vol. <biblScope unit="volume">7</biblScope>,`)
 
@@ -44,9 +46,9 @@ Then the following tags are used for structuring the bibliographical references:
 
 * `<idno>` for the document-specific identifier, in particular DOI and arXiv identifiers, optionally the type of identifier can be given by the attribute `@type`, for instance, `<idno type="doi">...</idno>`
 
-* `<note type="report">` in the case of technical report, encode the indication of the kind of report
+* `<note type="report">` in the case of technical report at large, encode the indication of the kind of report, this includes "technical report" from an institution, but also the kind of thesis ("Ph.D. thesis", "M.Sc. thesis", etc.)
 
-* `<note>` for any indications related to the reference and not covered by one of the previous tags
+* `<note>` for any indications related to the reference and not covered by one of the previous tags (for instance "personal communication")
 
 Additional text/characters that do not belong to one of these elements (punctuations, syntactic sugar, etc.) has to be be left untagged under the `<bibl>` elements. This is the case for instance for the tag `<date>`, the caracters such as parenthesis have to be put outside this element (see the example bellow).
 

@@ -1,6 +1,7 @@
 package org.grobid.core.lexicon;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.exceptions.GrobidException;
@@ -9,6 +10,9 @@ import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.core.lang.Language;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 
 import java.io.*;
 import java.util.*;
@@ -77,8 +81,10 @@ public final class FastMatcher {
         //String token = null;
         while ((line = bufReader.readLine()) != null) {
             if (line.length() == 0) continue;
+            line = UnicodeUtil.normaliseText(line); 
+            line = StringUtils.normalizeSpace(line);
             line = line.toLowerCase();
-            nbTerms += loadTerm(line);
+            nbTerms += loadTerm(line, true);
         }
         bufReader.close();
         reader.close();
@@ -89,16 +95,23 @@ public final class FastMatcher {
     /**
      * Load a term to the fast matcher
      */
-    public int loadTerm(String term) {
+    public int loadTerm(String term, boolean ignoreDelimiters) {
         int nbTerms = 0;
         if (isBlank(term))
             return 0;
-        String token = null;
         Map t = terms;
-        StringTokenizer st = new StringTokenizer(term, " \n\t" + TextUtilities.fullPunctuations, false);
-        while (st.hasMoreTokens()) {
-            token = st.nextToken();
+        //StringTokenizer st = new StringTokenizer(term, " \n\t" + TextUtilities.fullPunctuations, false);
+        //while (st.hasMoreTokens()) {
+        List<String> tokens = GrobidAnalyzer.getInstance().tokenize(term, new Language("en", 1.0));
+        for(String token : tokens) {
+            //token = st.nextToken();
             if (token.length() == 0) {
+                continue;
+            }
+            if (token.equals(" ") || token.equals("\n")) {
+                continue;
+            }
+            if ( ignoreDelimiters && (delimiters.indexOf(token) != -1) ) {
                 continue;
             }
             Map t2 = (Map) t.get(token);
@@ -121,7 +134,7 @@ public final class FastMatcher {
         return nbTerms;
     }
 
-    private static String delimiters = " \n\t" + TextUtilities.fullPunctuations;
+    private static String delimiters = TextUtilities.delimiters;
 
     /**
      * Identify terms in a piece of text and gives corresponding token positions.
@@ -139,17 +152,18 @@ public final class FastMatcher {
         StringTokenizer st = new StringTokenizer(text, delimiters, true);
         while (st.hasMoreTokens()) {
             String token = st.nextToken();
-            if (token.equals(" ")) {
+            if (token.equals(" ") || token.equals("\n")) {
                 continue;
             }
             if (delimiters.indexOf(token) != -1) {
                 currentPos++;
                 continue;
             }
-            if ((token.charAt(0) == '<') && (token.charAt(token.length() - 1) == '>')) {
+            /*if ((token.charAt(0) == '<') && (token.charAt(token.length() - 1) == '>')) {
                 currentPos++;
                 continue;
-            }
+            }*/
+
             token = token.toLowerCase();
 
             // we try to complete opened matching
@@ -235,10 +249,96 @@ public final class FastMatcher {
      * @return the list of offset positions of the matches, an empty list if no match have been found
      */
     public List<OffsetPosition> matcherLayoutToken(List<LayoutToken> tokens) {
+        return matcherLayoutToken(tokens, true);
+    }
+
+    /**
+     * Identify terms in a piece of text and gives corresponding token positions.
+     * All the matches are returned. Here the input is a list of LayoutToken object.
+     *
+     * @param tokens the text to be processed as a list of LayoutToken objects
+     * @param ignoreDelimiters if true, ignore the delimiters in the matching process
+     * @return the list of offset positions of the matches, an empty list if no match have been found
+     */
+    public List<OffsetPosition> matcherLayoutToken(List<LayoutToken> tokens, boolean ignoreDelimiters) {    
         if (CollectionUtils.isEmpty(tokens)) {
             return new ArrayList<OffsetPosition>();
         }
-        return matcher(LayoutTokensUtil.toText(tokens));
+
+        List<OffsetPosition> results = new ArrayList<>();
+        List<Integer> startPosition = new ArrayList<>();
+        List<Integer> lastNonSeparatorPos = new ArrayList<>();
+        List<Map> currentMatches = new ArrayList<>();
+        int currentPos = 0;
+        for(LayoutToken token : tokens) {
+            if (token.getText().equals(" ") || token.getText().equals("\n")) {
+                currentPos++;
+                continue;
+            }
+
+            if ( ignoreDelimiters && (delimiters.indexOf(token.getText()) != -1)) {
+                currentPos++;
+                continue;
+            }
+
+            String tokenText = UnicodeUtil.normaliseText(token.getText()); 
+            tokenText = tokenText.toLowerCase();
+
+            // we try to complete opened matching
+            int i = 0;
+            List<Map> matchesTreeList = new ArrayList<>();
+            List<Integer> matchesPosition = new ArrayList<>();
+            List<Integer> new_lastNonSeparatorPos = new ArrayList<>();
+
+            // we check whether the current token matches as continuation of a previous match.
+            for (Map currentMatch : currentMatches) {
+                Map childMatches = (Map) currentMatch.get(tokenText);
+                if (childMatches != null) {
+                    matchesTreeList.add(childMatches);
+                    matchesPosition.add(startPosition.get(i));
+                    new_lastNonSeparatorPos.add(currentPos);
+                }
+
+                //check if the token itself is present, I add the match in the list of results
+                childMatches = (Map) currentMatch.get("#");
+                if (childMatches != null) {
+                    // end of the current term, matching successful
+                    OffsetPosition ofp = new OffsetPosition(startPosition.get(i), lastNonSeparatorPos.get(i));
+                    results.add(ofp);
+                }
+
+                i++;
+            }
+
+            // we start new matching starting at the current token
+            Map match = (Map) terms.get(tokenText);
+            if (match != null) {
+                matchesTreeList.add(match);
+                matchesPosition.add(currentPos);
+                new_lastNonSeparatorPos.add(currentPos);
+            }
+
+            currentMatches = matchesTreeList;
+            startPosition = matchesPosition;
+            lastNonSeparatorPos = new_lastNonSeparatorPos;
+            currentPos++;
+        }
+
+        // test if the end of the string correspond to the end of a term
+        int i = 0;
+        if (currentMatches != null) {
+            for (Map tt : currentMatches) {
+                Map t2 = (Map) tt.get("#");
+                if (t2 != null) {
+                    // end of the current term, matching successful
+                    OffsetPosition ofp = new OffsetPosition(startPosition.get(i), lastNonSeparatorPos.get(i));
+                    results.add(ofp);
+                }
+                i++;
+            }
+        }
+
+        return results;
     }
 
     /**

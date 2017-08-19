@@ -79,31 +79,22 @@ public class CitationParser extends AbstractParser {
             List<String> citationBlocks = new ArrayList<>();
 
             tokens = LayoutTokensUtil.dehyphenize(tokens);
-            for (LayoutToken token : tokens) {
-                //tokenizations.add(tok);
-                String tok = token.getText();
-                if (!LayoutTokensUtil.spaceyToken(tok)) {
-                    // parano final sanitisation
-                    tok = tok.replaceAll("[ \n]", "");
-                    if (tok.trim().length() > 0)
-                        citationBlocks.add(tok + " <citation>");
-                }
-            }
-            citationBlocks.add("\n");
 
-            List<List<OffsetPosition>> journalsPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> abbrevJournalsPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> conferencesPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> publishersPositions = new ArrayList<List<OffsetPosition>>();
+            List<OffsetPosition> journalsPositions = new ArrayList<OffsetPosition>();
+            List<OffsetPosition> abbrevJournalsPositions = new ArrayList<OffsetPosition>();
+            List<OffsetPosition> conferencesPositions = new ArrayList<OffsetPosition>();
+            List<OffsetPosition> publishersPositions = new ArrayList<OffsetPosition>();
+            List<OffsetPosition> locationsPositions = new ArrayList<OffsetPosition>();
 
-            journalsPositions.add(lexicon.inJournalNamesLayoutToken(tokens));
-            abbrevJournalsPositions.add(lexicon.inAbbrevJournalNamesLayoutToken(tokens));
-            conferencesPositions.add(lexicon.inConferenceNamesLayoutToken(tokens));
-            publishersPositions.add(lexicon.inPublisherNamesLayoutToken(tokens));
+            journalsPositions = lexicon.inJournalNamesLayoutToken(tokens);
+            abbrevJournalsPositions = lexicon.inAbbrevJournalNamesLayoutToken(tokens);
+            conferencesPositions = lexicon.inConferenceNamesLayoutToken(tokens);
+            publishersPositions = lexicon.inPublisherNamesLayoutToken(tokens);
+            locationsPositions = lexicon.inLocationNamesLayoutToken(tokens);
 
-            String ress = FeaturesVectorCitation.addFeaturesCitation(
-                    citationBlocks, journalsPositions, abbrevJournalsPositions,
-                    conferencesPositions, publishersPositions);
+            String ress = FeaturesVectorCitation.addFeaturesCitation(tokens, null, journalsPositions, 
+                abbrevJournalsPositions, conferencesPositions, publishersPositions, locationsPositions);
+
             String res = label(ress);
 
             resCitation = resultExtractionLayoutTokens(res, true, tokens);
@@ -162,7 +153,6 @@ public class CitationParser extends AbstractParser {
 
         List<BibDataSet> results = new ArrayList<>();
         for (LabeledReferenceResult ref : segm) {
-            //BiblioItem bib = processing(ref.getReferenceText(), false);
             BiblioItem bib = processing(ref.getTokens(), false);
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
@@ -200,7 +190,6 @@ public class CitationParser extends AbstractParser {
 
         for (LabeledReferenceResult ref : references) {
             BiblioItem bib = processing(TextUtilities.dehyphenize(ref.getReferenceText()), consolidate);
-            //BiblioItem bib = processing(ref.getTokens(), consolidate);
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
@@ -267,7 +256,8 @@ public class CitationParser extends AbstractParser {
             //String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
             String clusterContent = LayoutTokensUtil.toText(cluster.concatTokens());
             if (clusterLabel.equals(TaggingLabels.CITATION_TITLE)) {
-                biblio.setTitle(clusterContent);
+                if (biblio.getTitle() == null)
+                    biblio.setTitle(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_AUTHOR)) {
                 biblio.setAuthors(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_TECH)) {
@@ -291,7 +281,8 @@ public class CitationParser extends AbstractParser {
             } else if (clusterLabel.equals(TaggingLabels.CITATION_COLLABORATION)) {
                 biblio.setCollaboration(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_JOURNAL)) {
-                biblio.setJournal(clusterContent);
+                if (biblio.getJournal() == null)
+                    biblio.setJournal(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_VOLUME)) {
                 biblio.setVolumeBlock(clusterContent, volumePostProcess);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_ISSUE)) {
@@ -317,248 +308,6 @@ public class CitationParser extends AbstractParser {
 
         return biblio;
     }
-
-    /**
-     * Extract results from a labelled header.
-     *
-     * @param result            result
-     * @param volumePostProcess whether post process volume
-     * @param tokenizations     list of tokens
-     * @return bibilio item
-     */
-    /*public BiblioItem resultExtraction(String result,
-                                       boolean volumePostProcess,
-                                       List<String> tokenizations) {
-        BiblioItem biblio = new BiblioItem();
-
-        StringTokenizer st = new StringTokenizer(result, "\n");
-        String s1 = null;
-        String s2 = null;
-        String lastTag = null;
-
-        int p = 0;
-        // iterator for the tokenizations for restauring the original
-        // tokenization with
-        // respect to spaces
-
-        while (st.hasMoreTokens()) {
-            boolean addSpace = false;
-            String tok = st.nextToken().trim();
-
-            if (tok.length() == 0) {
-                continue;
-            }
-            StringTokenizer stt = new StringTokenizer(tok, "\t");
-            ArrayList<String> localFeatures = new ArrayList<String>();
-            int i = 0;
-
-            int ll = stt.countTokens();
-            while (stt.hasMoreTokens()) {
-                String s = stt.nextToken().trim();
-                if (i == 0) {
-                    s2 = s;
-                    boolean strop = false;
-                    while ((!strop) && (p < tokenizations.size())) {
-                        String tokOriginal = tokenizations.get(p);
-                        if (tokOriginal.equals(" ")) {
-                            addSpace = true;
-                        } else if (tokOriginal.equals(s)) {
-                            strop = true;
-                        }
-                        p++;
-                    }
-                } else if (i == ll - 1) {
-                    s1 = s;
-                } else {
-                    localFeatures.add(s);
-                }
-                i++;
-            }
-
-            if ((s1.equals("<title>")) || (s1.equals("I-<title>"))) {
-                if (biblio.getTitle() != null) {
-                    if (addSpace)
-                        biblio.setTitle(biblio.getTitle() + " " + s2);
-                    else
-                        biblio.setTitle(biblio.getTitle() + s2);
-                } else
-                    biblio.setTitle(s2);
-            } else if ((s1.equals("<author>")) || (s1.equals("I-<author>"))) {
-
-                if (biblio.getAuthors() != null) {
-                    if (addSpace)
-                        biblio.setAuthors(biblio.getAuthors() + " " + s2);
-                    else
-                        biblio.setAuthors(biblio.getAuthors() + s2);
-                } else
-                    biblio.setAuthors(s2);
-            } else if ((s1.equals("<tech>")) || (s1.equals("I-<tech>"))) {
-                biblio.setType("book");
-                if (biblio.getBookType() != null) {
-                    if (addSpace)
-                        biblio.setBookType(biblio.getBookType() + " " + s2);
-                    else
-                        biblio.setBookType(biblio.getBookType() + s2);
-                } else
-                    biblio.setBookType(s2);
-            } else if ((s1.equals("<location>")) || (s1.equals("I-<location>"))) {
-                if (biblio.getLocation() != null) {
-                    if (s1.equals(lastTag) || lastTag.equals("I-<location>")) {
-                        if (addSpace)
-                            biblio.setLocation(biblio.getLocation() + " " + s2);
-                        else
-                            biblio.setLocation(biblio.getLocation() + s2);
-                    } else
-                        biblio.setLocation(biblio.getLocation() + " ; " + s2);
-                } else
-                    biblio.setLocation(s2);
-            } else if ((s1.equals("<date>")) || (s1.equals("I-<date>"))) {
-                // it appears that the same date is quite often repeated,
-                // we should check, before adding a new date segment, if it is
-                // not already present
-
-                if (biblio.getPublicationDate() != null) {
-                    if (s1.equals(lastTag) || lastTag.equals("I-<date>")) {
-                        if (addSpace)
-                            biblio.setPublicationDate(biblio
-                                    .getPublicationDate() + " " + s2);
-                        else
-                            biblio.setPublicationDate(biblio
-                                    .getPublicationDate() + s2);
-                    } else
-                        biblio.setPublicationDate(biblio.getPublicationDate()
-                                + " . " + s2);
-                } else
-                    biblio.setPublicationDate(s2);
-            } else if ((s1.equals("<booktitle>"))
-                    || (s1.equals("I-<booktitle>"))) {
-                if (biblio.getBookTitle() != null) {
-                    if (localFeatures.contains("LINESTART")) {
-                        biblio.setBookTitle(biblio.getBookTitle() + " " + s2);
-                        // biblio.setBookTitle(biblio.getBookTitle() + "\n" +
-                        // s2);
-                    } else {
-                        if (addSpace)
-                            biblio.setBookTitle(biblio.getBookTitle() + " "
-                                    + s2);
-                        else
-                            biblio.setBookTitle(biblio.getBookTitle() + s2);
-                    }
-                } else
-                    biblio.setBookTitle(s2);
-            } else if ((s1.equals("<pages>")) || (s1.equals("<page>"))
-                    | (s1.equals("I-<pages>")) || (s1.equals("I-<page>"))) {
-                if (biblio.getPageRange() != null) {
-                    if (addSpace)
-                        biblio.setPageRange(biblio.getPageRange() + " " + s2);
-                    else
-                        biblio.setPageRange(biblio.getPageRange() + s2);
-                } else
-                    biblio.setPageRange(s2);
-            } else if ((s1.equals("<publisher>"))
-                    || (s1.equals("I-<publisher>"))) {
-                if (biblio.getPublisher() != null) {
-                    if (addSpace)
-                        biblio.setPublisher(biblio.getPublisher() + " " + s2);
-                    else
-                        biblio.setPublisher(biblio.getPublisher() + s2);
-                } else
-                    biblio.setPublisher(s2);
-            } else if ((s1.equals("<collaboration>"))
-                    || (s1.equals("I-<collaboration>"))) {
-                if (biblio.getCollaboration() != null) {
-                    if (addSpace)
-                        biblio.setCollaboration(biblio.getCollaboration() + " " + s2);
-                    else
-                        biblio.setCollaboration(biblio.getCollaboration() + s2);
-                } else
-                    biblio.setCollaboration(s2);
-            } else if ((s1.equals("<journal>")) || (s1.equals("I-<journal>"))) {
-                if (biblio.getJournal() != null) {
-                    if (localFeatures.contains("LINESTART")) {
-                        biblio.setJournal(biblio.getJournal() + " " + s2);
-                        // biblio.setJournal(biblio.getJournal() + "\n" + s2);
-                    } else {
-                        if (addSpace)
-                            biblio.setJournal(biblio.getJournal() + " " + s2);
-                        else
-                            biblio.setJournal(biblio.getJournal() + s2);
-                    }
-                } else
-                    biblio.setJournal(s2);
-            } else if ((s1.equals("<volume>")) || (s1.equals("I-<volume>"))) {
-                if (biblio.getVolumeBlock() != null) {
-                    if (addSpace)
-                        biblio.setVolumeBlock(biblio.getVolumeBlock() + " "
-                                + s2, volumePostProcess);
-                    else
-                        biblio.setVolumeBlock(biblio.getVolumeBlock() + s2,
-                                volumePostProcess);
-                } else
-                    biblio.setVolumeBlock(s2, volumePostProcess);
-            } else if ((s1.equals("<issue>")) || (s1.equals("I-<issue>"))) {
-                if (biblio.getIssue() != null) {
-                    if (addSpace)
-                        biblio.setIssue(biblio.getIssue() + " " + s2);
-                    else
-                        biblio.setIssue(biblio.getIssue() + s2);
-                } else
-                    biblio.setIssue(s2);
-            } else if ((s1.equals("<editor>")) || (s1.equals("I-<editor>"))) {
-                if (biblio.getEditors() != null) {
-                    if (addSpace)
-                        biblio.setEditors(biblio.getEditors() + " " + s2);
-                    else
-                        biblio.setEditors(biblio.getEditors() + s2);
-                } else
-                    biblio.setEditors(s2);
-            } else if ((s1.equals("<institution>"))
-                    || (s1.equals("I-<institution>"))) {
-                if (biblio.getInstitution() != null) {
-                    if (localFeatures.contains("LINESTART")) {
-                        biblio.setInstitution(biblio.getInstitution() + "; "
-                                + s2);
-                        // biblio.setInstitution(biblio.getInstitution() + "\n"
-                        // + s2);
-                    } else {
-                        if (addSpace)
-                            biblio.setInstitution(biblio.getInstitution() + " "
-                                    + s2);
-                        else
-                            biblio.setInstitution(biblio.getInstitution() + s2);
-                    }
-                } else
-                    biblio.setInstitution(s2);
-            } else if ((s1.equals("<note>")) || (s1.equals("I-<note>"))) {
-                if (biblio.getNote() != null) {
-                    if (s1.equals(lastTag)) {
-                        if (addSpace)
-                            biblio.setNote(biblio.getNote() + " " + s2);
-                        else
-                            biblio.setNote(biblio.getNote() + s2);
-                    } else
-                        biblio.setNote(biblio.getNote() + ". " + s2);
-                } else
-                    biblio.setNote(s2);
-            } else if ((s1.equals("<pubnum>")) || (s1.equals("I-<pubnum>"))) {
-                if (biblio.getPubnum() != null)
-                    biblio.setPubnum(biblio.getPubnum() + " " + s2);
-                else
-                    biblio.setPubnum(s2);
-            } else if ((s1.equals("<web>")) || (s1.equals("I-<web>"))) {
-                if (biblio.getWeb() != null) {
-                    if (addSpace)
-                        biblio.setWeb(biblio.getWeb() + " " + s2);
-                    else
-                        biblio.setWeb(biblio.getWeb() + s2);
-                } else
-                    biblio.setWeb(s2);
-            }
-            lastTag = s1;
-        }
-
-        return biblio;
-    }*/
 
     /**
      * Consolidate an existing list of recognized citations based on access to
@@ -604,45 +353,32 @@ public class CitationParser extends AbstractParser {
             if (inputs.size() == 0)
                 return null;
 
-            List<List<OffsetPosition>> journalsPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> abbrevJournalsPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> conferencesPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> publishersPositions = new ArrayList<List<OffsetPosition>>();
-
+            List<OffsetPosition> journalsPositions = new ArrayList<OffsetPosition>();
+            List<OffsetPosition> abbrevJournalsPositions = new ArrayList<OffsetPosition>();
+            List<OffsetPosition> conferencesPositions = new ArrayList<OffsetPosition>();
+            List<OffsetPosition> publishersPositions = new ArrayList<OffsetPosition>();
+            List<OffsetPosition> locationsPositions = new ArrayList<OffsetPosition>();
             for (String input : inputs) {
-                List<String> citationBlocks = new ArrayList<String>();
+                //List<String> citationBlocks = new ArrayList<String>();
                 if (input == null)
                     continue;
                 // System.out.println("Input: "+input);
                 //StringTokenizer st = new StringTokenizer(input, " \t\n"
                 //        + TextUtilities.fullPunctuations, true);
 
-                List<String> tokenizations = analyzer.tokenize(input);
-                //if (st.countTokens() == 0)
+                List<LayoutToken> tokenizations = analyzer.tokenizeWithLayoutToken(input);
                 if (tokenizations.size() == 0)
                     return null;
-                //while (st.hasMoreTokens()) {
-                //    String tok = st.nextToken();
-                for (String tok : tokenizations) {
-                    if (tok.equals("\n")) {
-                        citationBlocks.add("@newline");
-                    } else if (!tok.equals(" ")) {
-                        citationBlocks.add(tok + " <bibl>");
-                    }
-                    //tokenizations.add(tok);
-                }
-                citationBlocks.add("\n");
 
-                journalsPositions.add(lexicon.inJournalNames(input));
-                abbrevJournalsPositions
-                        .add(lexicon.inAbbrevJournalNames(input));
-                conferencesPositions.add(lexicon.inConferenceNames(input));
-                publishersPositions.add(lexicon.inPublisherNames(input));
+                journalsPositions = lexicon.inJournalNamesLayoutToken(tokenizations);
+                abbrevJournalsPositions = lexicon.inAbbrevJournalNamesLayoutToken(tokenizations);
+                conferencesPositions = lexicon.inConferenceNamesLayoutToken(tokenizations);
+                publishersPositions = lexicon.inPublisherNamesLayoutToken(tokenizations);
+                locationsPositions = lexicon.inLocationNamesLayoutToken(tokenizations);
 
-                String ress = FeaturesVectorCitation.addFeaturesCitation(
-                        citationBlocks, journalsPositions,
-                        abbrevJournalsPositions, conferencesPositions,
-                        publishersPositions);
+                String ress = FeaturesVectorCitation.addFeaturesCitation(tokenizations,
+                        null, journalsPositions, abbrevJournalsPositions, 
+                        conferencesPositions, publishersPositions, locationsPositions);
                 String res = label(ress);
 
                 // extract results from the processed file
@@ -662,11 +398,11 @@ public class CitationParser extends AbstractParser {
                         buffer.append("/t<bibl>\n");
                         continue;
                     } else {
-                        String theTok = tokenizations.get(q);
+                        String theTok = tokenizations.get(q).getText();
                         while (theTok.equals(" ")) {
                             addSpace = true;
                             q++;
-                            theTok = tokenizations.get(q);
+                            theTok = tokenizations.get(q).getText();
                         }
                         q++;
                     }

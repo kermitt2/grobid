@@ -1,0 +1,57 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> R.K. Gupta, in: R.K. Gupta (Ed.), Physics of Particles, Nuclei and Materials-Recent Trends, Narosa Publishing<lb/> House, New Delhi, 2002, p. 118.<lb/> </bibl>
+        <bibl><label>[2]</label> Niyti, G. Sawhney, M.K. Sharma, R.K. Gupta, Phys. Rev. C 91 (2015) 054606.<lb/> </bibl>
+        <bibl><label>[3]</label> A. Parihari, S. Santra, A. Pal, N.L. Singh, K. Mahata, B.K. Nayak, R. Tripathi, K. Ramachandran, P.K. Rath, R.<lb/> Chakrabarti, S. Kailas, Phys. Rev. C 90 (2014) 014603.<lb/> </bibl>
+        <bibl><label>[4]</label> H. Freiesleben, G.T. Rizzo, Z.R. Huizenga, Phys. Rev. C 12 (1975) 42.<lb/> </bibl>
+        <bibl><label>[5]</label> A.M. Vinodkumar, et al., Phys. Rev. C 87 (2013) 044603.<lb/> </bibl>
+        <bibl><label>[6]</label> A.M. Vinodkumar, et al., Phys. Rev. C 80 (2009) 054609.<lb/> </bibl>
+        <bibl><label>[7]</label> W. Loveland, et al., Phys. Rev. C 74 (2006) 064609.<lb/> </bibl>
+        <bibl><label>[8]</label> D. Peterson, J.J. Kolata, P. Santi, J. von Schwarzenberg, D. Bazin, B.M. Sherrill, Phys. Rev. C 67 (2003) 014601.<lb/> </bibl>
+        <bibl><label>[9]</label> B. Blank, et al., Nucl. Phys. A 555 (1993) 408.<lb/> </bibl>
+        <bibl><label>[10]</label> M. Petrascu, et al., Phys. Lett. B 405 (1997) 224.<lb/> </bibl>
+        <bibl><label>[11]</label> A. Yoshida, et al., in: A.M. Stefanini, G. Nebbia, S. Lunardi, G. Montagnoli (Eds.), Heavy Ion Fusion: Exploring<lb/> the Variety of Nuclear Properties, World Scientific, Singapore, 1994, p. 311.<lb/> </bibl>
+        <bibl><label>[12]</label> R.K. Gupta, in: C. Beck (Ed.), Clusters in Nuclei, in: Lecture Notes in Physics 818, vol. I, Springer Verlag, 2010,<lb/> p. 223; and earlier references there in it.<lb/> </bibl>
+        <bibl><label>[13]</label> W. Reisdorf, Z. Phys. A 300 (1981) 227.<lb/> </bibl>
+        <bibl><label>[14]</label> N. Takigawa, M. Kuratani, H. Sagawa, Phys. Rev. C 47 (1993) R2470.<lb/> </bibl>
+        <bibl><label>[15]</label> C.Y. Wong, Phys. Rev. Lett. 31 (1973) 766.<lb/> </bibl>
+        <bibl><label>[16]</label> J. Zhang, C. Wang, Z. Ren, Nucl. Phys. A 864 (2011) 128.<lb/> </bibl>
+        <bibl><label>[17]</label> V.V. Sargsyan, G.G. Adamian, N.V. Antonenko, W. Scheid, H.Q. Zhang, Phys. Rev. C 86 (2012) 054610.<lb/> </bibl>
+        <bibl><label>[18]</label> M. Dasgupta, et al., Phys. Rev. C 70 (2004) 024606.<lb/> </bibl>
+        <bibl><label>[19]</label> R.K. Gupta, N. Singh, M. Manhas, Phys. Rev. C 70 (2004) 034608.<lb/> </bibl>
+        <bibl><label>[20]</label> R.K. Gupta, M. Balasubramaniam, R. Kumar, N. Singh, M. Manhas, W. Greiner, J. Phys. G, Nucl. Part. Phys. 31<lb/> (2005) 631.<lb/> </bibl>
+        <bibl><label>[21]</label> N.J. Davidson, S.S. Hsiao, J. Markram, H.G. Miller, Y. Tzeng, Nucl. Phys. A 570 (1994) 61c.<lb/> </bibl>
+        <bibl><label>[22]</label> R.K. Gupta, R. Kumar, N.K. Dhiman, M. Balasubramaniam, W. Scheid, C. Beck, Phys. Rev. C 68 (2003) 014610.<lb/> </bibl>
+        <bibl><label>[23]</label> M. Balasubramaniam, R. Kumar, R.K. Gupta, C. Beck, W. Scheid, J. Phys. G, Nucl. Part. Phys. 29 (2003) 2703.<lb/> </bibl>
+        <bibl><label>[24]</label> B.B. Singh, M.K. Sharma, R.K. Gupta, Phys. Rev. C 77 (2008) 054613.<lb/> </bibl>
+        <bibl><label>[25]</label> G. Audi, A.H. Wapstra, C. Thiboult, Nucl. Phys. A 729 (2003) 337.<lb/> </bibl>
+        <bibl><label>[26]</label> W. Myers, W.J. Swiatecki, Nucl. Phys. 81 (1966) 1.<lb/> </bibl>
+        <bibl><label>[27]</label> A.S. Jensen, J. Damgaard, Nucl. Phys. A 203 (1973) 578.<lb/> </bibl>
+        <bibl><label>[28]</label> R.K. Gupta, S. Kumar, M. Balasubramaniam, G. Münzenberg, W. Scheid, J. Phys. G, Nucl. Part. Phys. 28 (2002)<lb/> 699.<lb/> </bibl>
+        <bibl><label>[29]</label> R.K. Gupta, M. Balasubramaniam, S. Kumar, S.K. Patra, G. Münzenberg, W. Greiner, J. Phys. G, Nucl. Part. Phys.<lb/> 32 (2006) 565.<lb/> </bibl>
+        <bibl><label>[30]</label> H. Kröger, W. Scheid, J. Phys. G 6 (1980) L85.<lb/> </bibl>
+        <bibl><label>[31]</label> R.K. Gupta, M. Balasubramaniam, C. Mazzocchi, M. La Commara, W. Scheid, Phys. Rev. C 65 (2002) 024601.<lb/> </bibl>
+        <bibl><label>[32]</label> H.S. Khosla, S.S. Malik, R.K. Gupta, Nucl. Phys. A 513 (1990) 115.<lb/> </bibl>
+        <bibl><label>[33]</label> S. Kumar, R.K. Gupta, Phys. Rev. C 55 (1997) 218.<lb/> </bibl>
+        <bibl><label>[34]</label> R.K. Gupta, S. Kumar, W. Scheid, Int. J Mod. Phys. E 6 (1997) 259.<lb/> </bibl>
+        <bibl><label>[35]</label> T. Matsuse, C. Beck, R. Nouicer, D. Mahboub, Phys. Rev. C 55 (1997) 1380.<lb/> </bibl>
+        <bibl><label>[36]</label> S.J. Sanders, Phys. Rev. C 44 (1991) 2676.<lb/> </bibl>
+        <bibl><label>[37]</label> S.J. Sanders, D.G. Kovar, B.B. Back, C. Beck, D.J. Henderson, R.V.F. Janssens, T.F. Wang, B.D. Wilkins, Phys.<lb/> Rev. C 40 (1989) 2091.<lb/> </bibl>
+        <bibl><label>[38]</label> G. Royer, J. Mignen, J. Phys. G, Nucl. Part. Phys. 18 (1992) 1781.<lb/> </bibl>
+        <bibl><label>[39]</label> R.K. Gupta, in: E. Gadioli (Ed.), Proceedings of the 5th International Conference on Nuclear Reaction Mechanisms,<lb/> Ricerca Scientifica Educazione Permanente, Milano, Italy, 1988, p. 416.<lb/> </bibl>
+        <bibl><label>[40]</label> S.S. Malik, R.K. Gupta, Phys. Rev. C 39 (1989) 1992.<lb/> </bibl>
+        <bibl><label>[41]</label> A. Kaur, S. Chopra, R.K. Gupta, Phys. Rev. C 90 (2014) 024619.<lb/> </bibl>
+        <bibl><label>[42]</label> S. Chopra, A. Kaur, R.K. Gupta, Phys. Rev. C 91 (2015) 034613.<lb/> </bibl>
+        <bibl><label>[43]</label> M. Kaur, B. Singh, M.K. Sharma, R.K. Gupta, Phys. Rev. C 92 (2015) 024623.<lb/> </bibl>
+        <bibl><label>[44]</label> S. Chopra, M. Bansal, M.K. Sharma, R.K. Gupta, Phys. Rev. C 88 (2013) 014615.<lb/> </bibl>
+        <bibl><label>[45]</label> Niyti, R.K. Gupta, W. Greiner, J. Phys. G, Nucl. Part. Phys. 37 (2010) 115103.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

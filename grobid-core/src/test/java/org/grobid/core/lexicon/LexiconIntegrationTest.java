@@ -3,6 +3,7 @@ package org.grobid.core.lexicon;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.layout.LayoutToken;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -234,4 +235,63 @@ public class LexiconIntegrationTest {
         assertThat(positions.get(3).start, is(19));
         assertThat(positions.get(3).end, is(19));
     }
+
+    @Test
+    public void testInJournalNamesLayoutToken() {
+        String piece = "Greaves M, Lawlor F. Angioedema:  manifestations and management. J Am Acad Dermatol. 1991;25(1 Pt 2):155-161;";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
+        List<OffsetPosition> positions = target.inJournalNamesLayoutToken(tokens);
+        
+        assertThat(positions, hasSize(1));
+        assertThat(positions.get(0).start, is(18));
+        assertThat(positions.get(0).end, is(18));
+    }
+
+    @Test
+    public void testInAbbrevJournalNamesLayoutToken() {
+        String piece = "Greaves M, Lawlor F. Angioedema:  manifestations and management. J Am Acad Dermatol. 1991;25(1 Pt 2):155-161;";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
+        List<OffsetPosition> positions = target.inAbbrevJournalNamesLayoutToken(tokens);
+        
+        assertThat(positions, hasSize(2));
+        /*for(OffsetPosition position :  positions) {
+            System.out.print(position.start + " / " + position.end + ": ");
+            for(int j = position.start; j <= position.end; j++)
+                System.out.print(tokens.get(j));
+            System.out.println(""); 
+        }*/
+        assertThat(positions.get(0).start, is(18));
+        assertThat(positions.get(0).end, is(18));
+        assertThat(positions.get(1).start, is(21));
+        assertThat(positions.get(1).end, is(27));
+    }
+
+    @Test
+    public void testInLocationNamesLayoutToken() {
+        String piece = "Academic Press, New York. 1987. Near Porosły-Kolonia.";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
+        List<OffsetPosition> positions = target.inLocationNamesLayoutToken(tokens);
+        
+        assertThat(positions, hasSize(4));
+        assertThat(positions.get(0).start, is(5));
+        assertThat(positions.get(0).end, is(7));
+        assertThat(positions.get(1).end, is(7));
+        assertThat(positions.get(1).end, is(7));
+        assertThat(positions.get(2).end, is(15));
+        assertThat(positions.get(2).end, is(15));
+        assertThat(positions.get(3).end, is(17));
+        assertThat(positions.get(3).end, is(17));
+    }
+
+    @Test
+    public void testInPublisherNamesLayoutToken() {
+        String piece = "Academic Press, New York. 1987. Near Porosły-Kolonia.";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
+        List<OffsetPosition> positions = target.inPublisherNamesLayoutToken(tokens);
+
+        assertThat(positions, hasSize(1));
+        assertThat(positions.get(0).start, is(0));
+        assertThat(positions.get(0).end, is(2));
+    }
+
 }
