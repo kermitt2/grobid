@@ -1854,6 +1854,13 @@ public class BiblioItem {
             else
                 tei.append(toTEIAuthorBlock(2, false));
 
+            if (pubnum != null) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno>").append(TextUtilities.HTMLEncode(pubnum)).append("</idno>\n");
+            }
+
             if ((bookTitle != null) || (journal != null)) {
                 for (int i = 0; i < indent + 1; i++) {
                     tei.append("\t");

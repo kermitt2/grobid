@@ -38,7 +38,7 @@ public class FeaturesVectorCitation {
     public boolean year = false;
     public boolean month = false;
     public boolean email = false;
-    public boolean http = false;
+    //public boolean http = false;
     //public boolean acronym = false;
     public String punctType = null; // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT (default)
     public boolean containPunct = false;
@@ -50,6 +50,7 @@ public class FeaturesVectorCitation {
     public boolean isKnownConferenceTitle = false;
     public boolean isKnownPublisher = false;
     public boolean isKnownLocation = false;
+    public boolean isKnownCollaboration = false;
 
     public String printVector() {
         if (string == null) return null;
@@ -133,7 +134,7 @@ public class FeaturesVectorCitation {
         else
             res.append(" 0");
 
-        if (http)
+        if (isKnownCollaboration)
             res.append(" 1");
         else
             res.append(" 0");
@@ -179,11 +180,14 @@ public class FeaturesVectorCitation {
                                              List<OffsetPosition> abbrevJournalPositions,
                                              List<OffsetPosition> conferencePositions,
                                              List<OffsetPosition> publisherPositions,
-                                             List<OffsetPosition> locationPositions) throws Exception {
+                                             List<OffsetPosition> locationPositions,
+                                             List<OffsetPosition> collaborationPositions) throws Exception {
         if ((journalPositions == null) ||
                 (abbrevJournalPositions == null) ||
                 (conferencePositions == null) ||
-                (publisherPositions == null)) {
+                (publisherPositions == null) ||
+                (locationPositions == null) ||
+                (collaborationPositions == null)) {
             throw new GrobidException("At least one list of gazetter matches positions is null.");
         }
 
@@ -196,12 +200,14 @@ public class FeaturesVectorCitation {
         int currentConferencePositions = 0;
         int currentPublisherPositions = 0;
         int currentLocationPositions = 0;
+        int currentCollaborationPositions = 0;
 
         boolean isJournalToken;
         boolean isAbbrevJournalToken;
         boolean isConferenceToken;
         boolean isPublisherToken;
         boolean isLocationToken;
+        boolean isCollaborationToken;
         boolean skipTest;
 
         String previousTag = null;
@@ -220,6 +226,7 @@ public class FeaturesVectorCitation {
             isConferenceToken = false;
             isPublisherToken = false;
             isLocationToken = false;
+            isCollaborationToken = false;
             skipTest = false;
 
             String text = token.getText();
@@ -353,6 +360,30 @@ public class FeaturesVectorCitation {
                 }
             }
 
+            // check the position of matches for collaboration
+            skipTest = false;
+            if (collaborationPositions != null) {
+                if (currentCollaborationPositions == collaborationPositions.size() - 1) {
+                    if (collaborationPositions.get(currentCollaborationPositions).end < n) {
+                        skipTest = true;
+                    }
+                }
+                if (!skipTest) {
+                    for (int i = currentCollaborationPositions; i < collaborationPositions.size(); i++) {
+                        if ((collaborationPositions.get(i).start <= n) &&
+                                (collaborationPositions.get(i).end >= n)) {
+                            isCollaborationToken = true;
+                            currentCollaborationPositions = i;
+                            break;
+                        } else if (collaborationPositions.get(i).start > n) {
+                            isCollaborationToken = false;
+                            currentCollaborationPositions = i;
+                            break;
+                        }
+                    }
+                }
+            }
+
             if (TextUtilities.filterLine(text)) {
                 continue;
             }
@@ -452,11 +483,13 @@ public class FeaturesVectorCitation {
                 features.email = true;
             }
 
-            Matcher m4 = featureFactory.HTTP.matcher(text);
+            /*Matcher m4 = featureFactory.HTTP.matcher(text);
             if (m4.find()) {
                 features.http = true;
-            }
+            }*/
 
+            if (isCollaborationToken)
+                features.isKnownCollaboration = true;
             /*Matcher m5 = featureFactory.ACRONYM.matcher(text);
                if (m5.find()) {
                    features.acronym = true;

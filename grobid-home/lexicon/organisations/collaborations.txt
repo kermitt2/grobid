@@ -1,0 +1,20 @@
+ATLAS
+ATLAS collaboration
+ALICE
+ALICE collaboration
+CMS
+CMS collaboration
+LUNA
+LUNA collaboration
+Planck Collaboration XIII
+NIST ASD Team
+LCTPC
+DELPHI
+DLPHI collaboration
+OPAL
+LHCb
+TOTEM
+LHCf
+LHC
+MoEDAL
+COMPASS
