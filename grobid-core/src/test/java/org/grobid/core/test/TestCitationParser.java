@@ -29,7 +29,7 @@ public class TestCitationParser extends EngineTest {
     @Test
     public void testCitationParser2_withoutConsolidation() throws Exception {
         String citation2 = "Sanda M. Harabagiu, Steven J. Maiorano and Marius A. Pasca. Open-Domain Textual " +
-                "Question Answering Techniques. Natural Language Engineering 9 (3):1-38, 2003.";
+                "Question Answering Techniques. Natural Language Engineering, 9 (3):1-38, 2003.";
         BiblioItem resCitation = engine.processRawReference(citation2, false);
         assertNotNull(resCitation);
 

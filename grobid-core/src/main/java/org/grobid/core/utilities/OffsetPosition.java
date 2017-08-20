@@ -1,6 +1,6 @@
 package org.grobid.core.utilities;
 
-public class OffsetPosition {
+public class OffsetPosition implements Comparable<OffsetPosition> {
     public int start = -1;
     public int end = -1;
 
@@ -18,5 +18,20 @@ public class OffsetPosition {
 
     public String toString() {
         return "" + start + "\t" + end;
+    }
+
+    @Override
+    public int compareTo(OffsetPosition pos) {
+        if (pos.start < start)
+            return 1;
+        else if (pos.start == start) {
+            if (pos.end < end)
+                return 1;
+            else if (pos.end == end)
+                return 0;
+            else 
+                return -1;
+        } else 
+            return -1;
     }
 }

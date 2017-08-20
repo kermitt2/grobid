@@ -29,10 +29,11 @@ public class CitationTrainer extends AbstractTrainer {
 
     public CitationTrainer() {
         super(GrobidModels.CITATION);
-        
+
         // adjusting CRF training parameters for this model (only with Wapiti)
         epsilon = 0.00001;
         window = 20;
+        nbMaxIterations = 3000;
     }
 
 	/**
@@ -114,6 +115,7 @@ public class CitationTrainer extends AbstractTrainer {
 	        List<OffsetPosition> publishersPositions;
 	        List<OffsetPosition> locationsPositions;
 	        List<OffsetPosition> collaborationsPositions;
+	        List<OffsetPosition> identifiersPositions;
 
 			int n = 0;
 			for (; n < refFiles.length; n++) {
@@ -133,16 +135,25 @@ public class CitationTrainer extends AbstractTrainer {
 
 				// we can now add the features
 				for(int i=0; i<allTokens.size(); i++) {
+					// fix the offsets 
+					int pos = 0;
+					for(LayoutToken token : allTokens.get(i)) {
+						token.setOffset(pos);
+						pos += token.getText().length();
+					}
+
 					journalsPositions = lexicon.inJournalNamesLayoutToken(allTokens.get(i));
 	                abbrevJournalsPositions = lexicon.inAbbrevJournalNamesLayoutToken(allTokens.get(i));
 	                conferencesPositions = lexicon.inConferenceNamesLayoutToken(allTokens.get(i));
 	                publishersPositions = lexicon.inPublisherNamesLayoutToken(allTokens.get(i));
 	                locationsPositions = lexicon.inLocationNamesLayoutToken(allTokens.get(i));
 	                collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(allTokens.get(i));
+	                identifiersPositions = lexicon.inIdentifierPatternLayoutToken(allTokens.get(i));
 
 					String citation = FeaturesVectorCitation.addFeaturesCitation(allTokens.get(i), 
 							allLabeled.get(i), journalsPositions, abbrevJournalsPositions, 
-							conferencesPositions, publishersPositions, locationsPositions, collaborationsPositions);
+							conferencesPositions, publishersPositions, locationsPositions, 
+							collaborationsPositions, identifiersPositions);
 
 					if ( (writer2 == null) && (writer3 != null) )
 						writer3.write(citation + "\n \n");

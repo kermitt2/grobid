@@ -86,13 +86,14 @@ public class CitationParser extends AbstractParser {
             List<OffsetPosition> publishersPositions = lexicon.inPublisherNamesLayoutToken(tokens);
             List<OffsetPosition> locationsPositions = lexicon.inLocationNamesLayoutToken(tokens);
             List<OffsetPosition> collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(tokens);
+            List<OffsetPosition> identifiersPositions = lexicon.inIdentifierPatternLayoutToken(tokens);
 
             String ress = FeaturesVectorCitation.addFeaturesCitation(tokens, null, journalsPositions, 
                 abbrevJournalsPositions, conferencesPositions, publishersPositions, locationsPositions,
-                collaborationsPositions);
+                collaborationsPositions, identifiersPositions);
 
             String res = label(ress);
-System.out.println(res);
+//System.out.println(res);
             resCitation = resultExtractionLayoutTokens(res, true, tokens);
             // post-processing (additional field parsing and cleaning)
             if (resCitation != null) {
@@ -299,6 +300,7 @@ System.out.println(res);
                    biblio.setNote(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_PUBNUM)) {
                 biblio.setPubnum(clusterContent);
+                biblio.checkIdentifier();
             } else if (clusterLabel.equals(TaggingLabels.CITATION_WEB)) {
                 biblio.setWeb(clusterContent);
             }
@@ -357,6 +359,7 @@ System.out.println(res);
             List<OffsetPosition> publishersPositions = null;
             List<OffsetPosition> locationsPositions = null;
             List<OffsetPosition> collaborationsPositions = null;
+            List<OffsetPosition> identifiersPositions = null;
             for (String input : inputs) {
                 //List<String> citationBlocks = new ArrayList<String>();
                 if (input == null)
@@ -375,10 +378,12 @@ System.out.println(res);
                 publishersPositions = lexicon.inPublisherNamesLayoutToken(tokenizations);
                 locationsPositions = lexicon.inLocationNamesLayoutToken(tokenizations);
                 collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(tokenizations);
+                identifiersPositions = lexicon.inIdentifierPatternLayoutToken(tokenizations);
 
                 String ress = FeaturesVectorCitation.addFeaturesCitation(tokenizations,
                         null, journalsPositions, abbrevJournalsPositions, 
-                        conferencesPositions, publishersPositions, locationsPositions, collaborationsPositions);
+                        conferencesPositions, publishersPositions, locationsPositions, 
+                        collaborationsPositions, identifiersPositions);
                 String res = label(ress);
 
                 // extract results from the processed file

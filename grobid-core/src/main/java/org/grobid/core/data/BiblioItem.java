@@ -88,7 +88,8 @@ public class BiblioItem {
                 ", type='" + type + '\'' +
                 ", typeDescription='" + typeDescription + '\'' +
                 ", book_type='" + book_type + '\'' +
-                ", DOI='" + DOI + '\'' +
+                ", DOI='" + doi + '\'' +
+                ", arXivId='" + arXivId + '\'' +
                 ", inDOI='" + inDOI + '\'' +
                 ", abstract_='" + abstract_ + '\'' +
                 ", authors='" + authors + '\'' +
@@ -221,8 +222,9 @@ public class BiblioItem {
     private String type = null; // book, journal, proceedings, in book, etc
     private String typeDescription = null;
     private String book_type = null;
-    private String DOI = null;
+    private String doi = null;
     private String inDOI = null;
+    private String arXivId = null;
     private String abstract_ = null;
     private String collaboration = null;
 
@@ -463,11 +465,15 @@ public class BiblioItem {
     }
 
     public String getDOI() {
-        return DOI;
+        return doi;
     }
 
     public String getInDOI() {
         return inDOI;
+    }
+
+    public String getArXivId() {
+        return arXivId;
     }
 
     public String getArticleTitle() {
@@ -871,11 +877,18 @@ public class BiblioItem {
     }
 
     public void setDOI(String id) {
-        DOI = StringUtils.normalizeSpace(id);
-    } //{ DOI = cleanDOI(id); } 
+        doi = StringUtils.normalizeSpace(id);
+        doi = doi.replace(" ", "");
+    } //{ doi = cleanDOI(id); } 
 
     public void setInDOI(String id) {
         inDOI = StringUtils.normalizeSpace(id);
+        inDOI = inDOI.replace(" ", "");
+    }
+
+    public void setArXivId(String id) {
+        arXivId = StringUtils.normalizeSpace(id);
+        arXivId = arXivId.replace(" ", "");
     }
 
     public void setArticleTitle(String ti) {
@@ -1301,7 +1314,9 @@ public class BiblioItem {
         nbPages = -1;
         type = null;
         book_type = null;
-        DOI = null;
+        doi = null;
+        inDOI = null;
+        arXivId = null;
         abstract_ = null;
 
         authors = null;
@@ -1414,6 +1429,8 @@ public class BiblioItem {
 
     /**
      * Some little cleaning of the abstract field.
+     * 
+     * To be done: use a short text model to structure abstract
      */
     final String[] ABSTRACT_PREFIXES = {"abstract", "summary", "résumé", "abrégé", "a b s t r a c t"};
 
@@ -1453,7 +1470,7 @@ public class BiblioItem {
         return res;
     }
 
-    static public void cleanTitles(BiblioItem bibl) {
+    public static void cleanTitles(BiblioItem bibl) {
         if (bibl.getTitle() != null) {
             String localTitle = TextUtilities.cleanField(bibl.getTitle(), false);
             if (localTitle.endsWith(" y")) {
@@ -1468,12 +1485,12 @@ public class BiblioItem {
         }
     }
 
-    private String cleanDOI(String bibl) {
+    private static String cleanDOI(String bibl) {
         if (bibl != null) {
             bibl = bibl.replace(" ", "");
-            if (bibl.startsWith("DOI:") || bibl.startsWith("DOI/")) {
+            if (bibl.startsWith("DOI:") || bibl.startsWith("DOI/") || bibl.startsWith("doi:") || bibl.startsWith("doi/")) {
                 bibl = bibl.substring(0, 4);
-            } else if (bibl.startsWith("DOI")) {
+            } else if (bibl.startsWith("DOI") || bibl.startsWith("doi")) {
                 bibl = bibl.substring(0, 3);
             }
         }
@@ -1511,6 +1528,9 @@ public class BiblioItem {
 
     /**
      * Keyword field segmentation.
+     * 
+     * TBD: create a dedicated model to analyse the keyword field, segmenting them and 
+     * identifying the possible scheme
      */
     public static List<Keyword> segmentKeywords(String string) {
         if (string == null)
@@ -1678,22 +1698,25 @@ public class BiblioItem {
 			}
 
             // DOI
-            if (DOI != null) {
-                bibtex += ",\ndoi\t=\t\"" + DOI + "\"";
+            if (!StringUtils.isEmpty(doi)) {
+                bibtex += ",\ndoi\t=\t\"" + doi + "\"";
             }
 
-            // DOI
-            if (DOI != null) {
-                if (DOI.length() > 0) {
-                    bibtex += ",\ndoi\t=\t\"" + DOI + "\"";
-                }
+            // arXiv identifier
+            if (!StringUtils.isEmpty(arXivId)) {
+                bibtex += ",\neprint\t=\t\"" + arXivId + "\"";
             }
+            /* note that the following is now recommended for arXiv citations: 
+                    archivePrefix = "arXiv",
+                    eprint        = "0707.3168",
+                    primaryClass  = "hep-th",
+                (here old identifier :( ))
+                see https://arxiv.org/hypertex/bibstyles/
+            */
 
             // abstract
-            if (abstract_ != null) {
-                if (abstract_.length() > 0) {
-                    bibtex += ",\nabstract\t=\t\"" + abstract_ + "\"";
-                }
+            if (!StringUtils.isEmpty(abstract_)) {
+                bibtex += ",\nabstract\t=\t\"" + abstract_ + "\"";
             }
 
             // keywords
@@ -1717,6 +1740,27 @@ public class BiblioItem {
             throw new GrobidException("Cannot export BibTex format, because of nested exception.", e);
         }
         return bibtex;
+    }
+
+    /** 
+     * Check if the identifier pubnum is a DOI or an arXiv identifier. If yes, instanciate 
+     * the corresponding field and reset the generic pubnum field.
+     */
+    public void checkIdentifier() {
+        if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(doi)) {
+            Matcher doiMatcher = TextUtilities.DOIPattern.matcher(pubnum);
+            if (doiMatcher.find()) { 
+                setDOI(pubnum);
+                setPubnum(null);
+            }
+        } 
+        if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(arXivId)) {
+            Matcher doiMatcher = TextUtilities.arXivPattern.matcher(pubnum);
+            if (doiMatcher.find()) { 
+                setArXivId(pubnum);
+                setPubnum(null);
+            }
+        } 
     }
 
     /**
@@ -1754,33 +1798,21 @@ public class BiblioItem {
             tei.append(" ");
             if (withCoords)
                 tei.append(TEIFormatter.getCoordsAttribute(coordinates, withCoords)).append(" ");
-            if (language != null) {
+            if (!StringUtils.isEmpty(language)) {
                 if (n == -1) {
-                    /*if (pubnum != null) {
-                        teiId = TextUtilities.HTMLEncode(pubnum);
-                        tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + teiId + "\">\n");
-                    } else*/
-                        tei.append("xml:lang=\"" + language + ">\n");
+                    tei.append("xml:lang=\"" + language + ">\n");
                 } else {
                     teiId = "b" + n;
                     tei.append("xml:lang=\"" + language + "\" xml:id=\"" + teiId + "\">\n");
                 }
-                // TBD: the language should be normalized following xml lang attributes !
+                // TBD: we need to ensure that the language is normalized following xml lang attributes !
             } else {
                 if (n == -1) {
-                    /*if (pubnum != null) {
-                        teiId = TextUtilities.HTMLEncode(pubnum);
-                        tei.append(" xml:id=\"" + teiId + "\">\n");
-                    } else*/
-                        tei.append(">\n");
+                    tei.append(">\n");
                 } else {
                     teiId = "b" + n;
                     tei.append("xml:id=\"" + teiId + "\">\n");
                 }
-            }
-
-            if (teiId != null) {
-
             }
 
             if ((bookTitle == null) && (journal == null)) {
@@ -1810,7 +1842,7 @@ public class BiblioItem {
 					tei.append(" xml:id=\"_" + divID + "\"");
 				}
                 // here check the language ?
-                if (english_title == null) {
+                if (StringUtils.isEmpty(english_title)) {
                     tei.append(">").append(TextUtilities.HTMLEncode(title)).append("</title>\n");
                 } else {
                     tei.append(" xml:lang=\"").append(language)
@@ -1824,7 +1856,6 @@ public class BiblioItem {
             if (english_title != null) {
                 // here do check the language !
                 Language resLang = languageUtilities.runLanguageId(english_title);
-
                 if (resLang != null) {
                     String resL = resLang.getLang();
                     if (resL.equals(Language.EN)) {
@@ -1854,14 +1885,14 @@ public class BiblioItem {
             else
                 tei.append(toTEIAuthorBlock(2, false));
 
-            if (pubnum != null) {
+            if (!StringUtils.isEmpty(pubnum)) {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
                 tei.append("<idno>").append(TextUtilities.HTMLEncode(pubnum)).append("</idno>\n");
             }
 
-            if ((bookTitle != null) || (journal != null)) {
+            if (!StringUtils.isEmpty(bookTitle) || !StringUtils.isEmpty(journal)) {
                 for (int i = 0; i < indent + 1; i++) {
                     tei.append("\t");
                 }
@@ -1883,7 +1914,7 @@ public class BiblioItem {
 				}
 				tei.append(">" + TextUtilities.HTMLEncode(bookTitle) + "</title>\n");
 
-                if (editors != null) {
+                if (!StringUtils.isEmpty(editors)) {
                     //postProcessingEditors();
 
                     StringTokenizer st = new StringTokenizer(editors, ";");
@@ -1917,6 +1948,7 @@ public class BiblioItem {
                         if (meeting.startsWith(prefix)) {
                             meeting = meeting.replace(prefix, "");
                             meeting = meeting.trim();
+                            meeting = TextUtilities.cleanField(meeting, false);
                             for (int i = 0; i < indent + 2; i++) {
                                 tei.append("\t");
                             }
@@ -2054,7 +2086,7 @@ public class BiblioItem {
                     tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
                 }
 
-                if (pageRange != null) {
+                if (!StringUtils.isEmpty(pageRange)) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
                     if (st.countTokens() == 2) {
                         for (int i = 0; i < indent + 3; i++) {
@@ -2075,7 +2107,7 @@ public class BiblioItem {
 	                }
                     tei.append("</imprint>\n");
                 }
-            } else if (journal != null) {
+            } else if (!StringUtils.isEmpty(journal)) {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
@@ -2086,7 +2118,7 @@ public class BiblioItem {
 				}	
 				tei.append(">" + TextUtilities.HTMLEncode(journal) + "</title>\n");
 
-                if (getJournalAbbrev() != null) {
+                if (!StringUtils.isEmpty(getJournalAbbrev())) {
                     for (int i = 0; i < indent + 2; i++) {
                         tei.append("\t");
                     }
@@ -2094,7 +2126,7 @@ public class BiblioItem {
                             + TextUtilities.HTMLEncode(getJournalAbbrev()) + "</title>\n");
                 }
 
-                if (editors != null) {
+                if (!StringUtils.isEmpty(editors)) {
                     //postProcessingEditors();
 
                     StringTokenizer st = new StringTokenizer(editors, ";");
@@ -2110,7 +2142,7 @@ public class BiblioItem {
                             }
                         }
                     } else {
-                        if (editors != null) {
+                        if (!StringUtils.isEmpty(editors)) {
                             for (int i = 0; i < indent + 2; i++) {
                                 tei.append("\t");
                             }
@@ -2119,14 +2151,14 @@ public class BiblioItem {
                     }
                 }
 
-                if (getISSN() != null) {
+                if (!StringUtils.isEmpty(getISSN())) {
                     for (int i = 0; i < indent + 2; i++) {
                         tei.append("\t");
                     }
                     tei.append("<idno type=\"ISSN\">" + getISSN() + "</idno>\n");
                 }
 
-                if (getISSNe() != null) {
+                if (!StringUtils.isEmpty(getISSNe())) {
                     if (!getISSNe().equals(getISSN())) {
                         for (int i = 0; i < indent + 2; i++) {
                             tei.append("\t");
@@ -2471,7 +2503,7 @@ public class BiblioItem {
             }
 
             // keywords here !!
-            if (getKeyword() != null) {
+            if (!StringUtils.isEmpty(getKeyword())) {
                 String keywords = getKeyword();
                 if (keywords.startsWith("Categories and Subject Descriptors")) {
                     int start = keywords.indexOf("Keywords");
@@ -2499,11 +2531,18 @@ public class BiblioItem {
                 tei.append("<keywords>" + TextUtilities.HTMLEncode(getKeyword()) + "</keywords>\n");
             }
 
-            if (DOI != null) {
+            if (!StringUtils.isEmpty(doi)) {
                 for (int i = 0; i < indent + 1; i++) {
                     tei.append("\t");
                 }
-                tei.append("<idno type=\"doi\">" + TextUtilities.HTMLEncode(DOI) + "</idno>\n");
+                tei.append("<idno type=\"doi\">" + TextUtilities.HTMLEncode(doi) + "</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(arXivId)) {
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"arXiv\">" + TextUtilities.HTMLEncode(arXivId) + "</idno>\n");
             }
 
             if (uri != null) {
@@ -2922,9 +2961,9 @@ public class BiblioItem {
             //openurl += "url_ver=Z39.88-2004";
             openurl += "ctx_ver=Z39.88-2004";
 
-            if (DOI != null) {
+            if (doi != null) {
                 //openurl += "&rft.doi=" + HTMLEncode(DOI);
-                openurl += "&rft_id=info:doi/" + URLEncoder.encode(DOI, "UTF-8");
+                openurl += "&rft_id=info:doi/" + URLEncoder.encode(doi, "UTF-8");
                 //openurl += "&rft.doi=" + URLEncoder.encode(DOI,"UTF-8");
                 // we can finish here
                 openurl += "&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&rft.genre=article ";
@@ -3053,43 +3092,6 @@ public class BiblioItem {
         }
         return null;
     }
-
-    public static String punctuationsAll = "([,:;?.!)-\"']";
-    public static String punctuationsSub = "([,;])";
-
-    /**
-     * Create author set
-     */
-    /*public void createAuthorSet() {
-      	  if (authors == null)
-      	  	  return;
-      	  StringTokenizer st = new StringTokenizer(authors, ";");
-      	  while(st.hasMoreTokens()) {
-      	  	  String token = st.nextToken().trim();
-      	  	  Person aut = new Person();
-      	  	  aut.setDisplayName(token);
-			
-      	  	  int ind = token.lastIndexOf(" ");
-      	  	  if (ind != -1) {
-      	  	  	  aut.setLastName(token.substring(ind+1).trim());
-      	  	  	  String first = token.substring(0, ind).trim();
-      	  	  	  
-      	  	  	  int ind2 = first.lastIndexOf(" ");
-      	  	  	  if (ind2 != -1) {
-      	  	  	  	  aut.setMiddleName(first.substring(ind2+1).trim());
-      	  	  	  	  aut.setFirstName(first.substring(0, ind2).trim());
-      	  	  	  }
-      	  	  	  else {
-      	  	  	  	  aut.setFirstName(first);
-      	  	  	  }
-      	  	  	  
-      	  	  }
-      	  	  
-      	  	  if (fullAuthors == null)
-      	  	  	  fullAuthors = new ArrayList<Person>();
-      	  	  fullAuthors.add(aut); 			
-      	  }
-      }*/
 
     /**
      * Attach existing recognized emails to authors
@@ -3831,7 +3833,7 @@ public class BiblioItem {
 		if (fullAuthors == null) 
 			authorSet = false;
 		// normally properties authors and authorList are null in the current Grobid version
-		if (!titleSet && !authorSet && (url == null) && (DOI == null))
+		if (!titleSet && !authorSet && (url == null) && (doi == null))
 			return true;
 		else 
 			return false;
