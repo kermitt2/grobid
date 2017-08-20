@@ -10,10 +10,11 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
-import java.util.regex.PatternSyntaxException;
+import java.util.regex.*;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -26,6 +27,9 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.sax.CountryCodeSaxParser;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.Utilities;
+import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -1008,4 +1012,72 @@ public class Lexicon {
         List<OffsetPosition> results = personTitlePattern.match(s);
         return results;
     }
+
+    /**
+     * Identify in tokenized input the positions of identifier patterns
+     */
+    public List<OffsetPosition> inIdentifierPatternLayoutToken(List<LayoutToken> tokens) {
+        List<OffsetPosition> result = new ArrayList<OffsetPosition>();
+        String text = LayoutTokensUtil.toText(tokens);
+        
+        // DOI positions
+        result = inDOIPatternLayoutToken(tokens, text);
+
+        // arXiv 
+        List<OffsetPosition> positions = inArXivPatternLayoutToken(tokens, text);
+        result = Utilities.mergePositions(result, positions);
+
+        // ISSN and ISBN
+        /*positions = inISSNPatternLayoutToken(tokens);
+        result = Utilities.mergePositions(result, positions);
+        positions = inISBNPatternLayoutToken(tokens);
+        result = Utilities.mergePositions(result, positions);*/
+
+        return result;
+    }
+
+    /**
+     * Identify in tokenized input the positions of the DOI patterns
+     */
+    public List<OffsetPosition> inDOIPatternLayoutToken(List<LayoutToken> tokens, String text) {
+        List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();
+        Matcher doiMatcher = TextUtilities.DOIPattern.matcher(text);
+        while (doiMatcher.find()) {            
+            textResult.add(new OffsetPosition(doiMatcher.start(), doiMatcher.end()));
+        }
+        return Utilities.convertStringOffsetToTokenOffset(textResult, tokens);
+    }
+
+    /**
+     * Identify in tokenized input the positions of the arXiv identifier patterns
+     */
+    public List<OffsetPosition> inArXivPatternLayoutToken(List<LayoutToken> tokens, String text) {
+        List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();
+        Matcher arXivMatcher = TextUtilities.arXivPattern.matcher(text);
+        while (arXivMatcher.find()) {  
+            //System.out.println(arXivMatcher.start() + " / " + arXivMatcher.end() + " / " + text.substring(arXivMatcher.start(), arXivMatcher.end()));                 
+            textResult.add(new OffsetPosition(arXivMatcher.start(), arXivMatcher.end()));
+        }
+        return Utilities.convertStringOffsetToTokenOffset(textResult, tokens);
+    }
+
+
+    /**
+     * Identify in tokenized input the positions of ISSN patterns
+     */
+    public List<OffsetPosition> inISSNPatternLayoutToken(List<LayoutToken> tokens) {
+        List<OffsetPosition> result = new ArrayList<OffsetPosition>();
+
+        return result;
+    }
+
+    /**
+     * Identify in tokenized input the positions of ISBN patterns
+     */
+    public List<OffsetPosition> inISBNPatternLayoutToken(List<LayoutToken> tokens) {
+        List<OffsetPosition> result = new ArrayList<OffsetPosition>();
+
+        return result;
+    }
+
 }

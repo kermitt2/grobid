@@ -51,6 +51,15 @@ public class TextUtilities {
     public static final String ESC_AND = "&amp;";
     public static final String SLASH = "/";
 
+    // the magical DOI regular expression...
+    static public final Pattern DOIPattern = Pattern
+            .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
+
+    // a regular expression for arXiv identifiers
+    // see https://arxiv.org/help/arxiv_identifier and https://arxiv.org/help/arxiv_identifier_for_services
+    static public final Pattern arXivPattern = Pattern
+            .compile("(arXiv\\:\\s?\\d{4}\\.\\d{4,5}(v\\d+)?)");
+
     /**
      * Replace numbers in the string by a dummy character for string distance evaluations
      *

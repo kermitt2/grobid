@@ -3496,6 +3496,13 @@
 		<bibl><author>Kauffmann-Zeh et al.</author> <title level="j">Nature</title> <biblScope type="vol">385</biblScope>:<biblScope type="pp">544-548</biblScope> (<date>1997</date>)</bibl>
 		<bibl><title level="j">Phys. Stat. Sol. (a)</title> <biblScope type="vol">101</biblScope>, <biblScope type="issue">223</biblScope> (<date>1989</date>)</bibl>
 		<bibl><author>C.Y. Hu, A. Young, J.L. O'Brien, W.J. Munro, and J.G. Rarity</author>, <title level="j">Phys. Rev. B</title> <biblScope type="vol">78</biblScope>,<biblScope type="pp">085307</biblScope> (<date>2008</date>).</bibl>
+		<bibl><author>Greaves M, Lawlor F.</author> <title level="a">Angioedema: manifestations and management</title>. <title level="j">J Am Acad Dermatol</title>. <date>1991</date>;<biblScope type="vol">25</biblScope>(<biblScope type="issue">1</biblScope> <note>Pt 2</note>):<biblScope type="pp">155-161</biblScope>;</bibl>
+		<bibl><author>F. Wu, H. Zhang, Y. Zhuang</author>, "<title level="a">Learning semantic correlations for cross-media retrieval</title>", <title level="m">2006 IEEE International Conference on Image Processing</title>, <date>2006</date>.</bibl>
+		<bibl><author>Q. Zhang, J. Kang, J. Qian, X. Huang</author>, "<title level="a">Continuous word embed-dings for detecting local text reuses at the semantic level</title>", <title level="m">Proceedings of the 37th internationalACM SIGIR conference on Research &amp; development in information retrieval</title>, pp. <biblScope type="pp">797-806</biblScope>, <date>2014</date>.</bibl>
+		<bibl><author>D. G. Lowe</author>, "<title level="a">Object recognition from local scale-invariant features</title>", <title level="m">Proceedings of ICCV'99</title>, <date>1999</date>.</bibl>
+		<bibl><author>R. Socher, E. H. Huang, J. Pennin, C. D. Manning, A. Ng</author>, "<title level="a">Dynamic pooling and unfolding recursive autoencoders for paraphrase detection</title>", <title level="m">Advances in Neural Information Processing Systems</title>, <date>2011</date>.</bibl>
+		<bibl><author>T.-S. Chua, J. Tang, R. Hong, H. Li, Z. Luo, Y.-T. Zheng</author>, "<title level="a">Nus-wide: A real-world web image database from national university of singapore</title>", <title level="m">Proc. of ACM Conf. on Image and Video Retrieval (CIVR'09)</title>, pp. <biblScope type="pp">48:1-48:9</biblScope>.</bibl>
+		<bibl><author>A. Oliva, A. Torralba</author>, "<title level="a">Modeling the shape of the scene: A holistic representation of the spatial envelope</title>", <title level="j">International journal of computer vision</title>, <date>2001</date>.</bibl>
 
 </listBibl>
 </tei>

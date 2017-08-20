@@ -150,9 +150,6 @@ public class Document {
 
     protected boolean titleMatchNum = false; // true if the section titles of the document are numbered
 
-    // the magical DOI regular expression...
-    static public final Pattern DOIPattern = Pattern
-            .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
     protected List<Figure> figures;
     protected Predicate<GraphicObject> validGraphicObjectPredicate;
     protected int m;
@@ -1324,7 +1321,7 @@ public class Document {
                     String localText = block.getText();
                     if ((localText != null) && (localText.length() > 0)) {
 			            localText = localText.trim();
-		                Matcher DOIMatcher = DOIPattern.matcher(localText);
+		                Matcher DOIMatcher = TextUtilities.DOIPattern.matcher(localText);
 		                while (DOIMatcher.find()) {
 		                    String theDOI = DOIMatcher.group();
 		                    if (!results.contains(theDOI)) {

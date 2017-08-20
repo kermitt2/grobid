@@ -3,6 +3,7 @@ package org.grobid.core.lexicon;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.layout.LayoutToken;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -294,4 +295,68 @@ public class LexiconIntegrationTest {
         assertThat(positions.get(0).end, is(2));
     }
 
+    @Test
+    public void testInDOIPatternLayoutToken1() {
+        String piece = "Garza, K., Goble, C., Brooke, J., & Jay, C. (2015). Framing the community data system interface. "+
+        "In Proceedings of the 2015 British HCI Conference on - British HCI ’15. ACM Press. 10.1145/2783446.2783605";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
+        String text = LayoutTokensUtil.toText(tokens);
+        List<OffsetPosition> positions = target.inDOIPatternLayoutToken(tokens, text);
+
+        assertThat(positions, hasSize(1));
+        assertThat(positions.get(0).start, is(80));
+        assertThat(positions.get(0).end, is(86));
+    }
+
+    @Test
+    public void testInDOIPatternLayoutToken2() {
+        String piece = "Morey, C. C., Cong, Y., Zheng, Y., Price, M., & Morey, R. D. (2015). The color-sharing bonus: Roles of "+
+        "perceptual organization and attentive processes in visual working memory. Archives of Scientific Psychology, 3, 18–29. https://doi.org/10.1037/arc0000014";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
+        String text = LayoutTokensUtil.toText(tokens);
+        List<OffsetPosition> positions = target.inDOIPatternLayoutToken(tokens, text);
+
+        assertThat(positions, hasSize(1));
+        assertThat(positions.get(0).start, is(104));
+        assertThat(positions.get(0).end, is(108));
+    }   
+
+    //@Test
+    public void testInArXivPatternLayoutToken() {
+        String piece = "ATLAS collaboration, Measurements of the Nuclear Modification Factor for Jets in Pb+Pb Collisionsat √ "+
+        "sNN = 2 . 76TeVwith the ATLAS Detector, Phys. Rev. Lett. 114(2015) 072302 [ arXiv: 1411.2357][INSPIRE] .";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
+        String text = LayoutTokensUtil.toText(tokens);
+        List<OffsetPosition> positions = target.inArXivPatternLayoutToken(tokens, text);
+
+        /*for(OffsetPosition position :  positions) {
+            System.out.print(position.start + " / " + position.end + ": ");
+            for(int j = position.start; j <= position.end; j++)
+                System.out.print(tokens.get(j));
+            System.out.println(""); 
+        }*/
+
+        assertThat(positions, hasSize(1));
+        assertThat(positions.get(0).start, is(64));
+        assertThat(positions.get(0).end, is(69));
+    }
+
+    @Test
+    public void testInIdentifierPatternLayoutToken() {
+        String piece = "ATLAS collaboration, Measurements of the Nuclear Modification Factor for Jets in Pb+Pb Collisionsat √ "+
+        "sNN = 2 . 76TeVwith the ATLAS Detector, Phys. Rev. Lett. 114(2015) 072302 [ arXiv: 1411.2357][INSPIRE] .";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
+        List<OffsetPosition> positions = target.inIdentifierPatternLayoutToken(tokens);
+
+        /*for(OffsetPosition position :  positions) {
+            System.out.print(position.start + " / " + position.end + ": ");
+            for(int j = position.start; j <= position.end; j++)
+                System.out.print(tokens.get(j));
+            System.out.println(""); 
+        }*/
+
+        assertThat(positions, hasSize(1));
+        assertThat(positions.get(0).start, is(64));
+        assertThat(positions.get(0).end, is(69));
+    }
 }
