@@ -1108,6 +1108,14 @@ public class BiblioItem {
 
     public void setWeb(String w) {
         web = StringUtils.normalizeSpace(w);
+        web = web.replace(" ", "");
+
+        if (StringUtils.isEmpty(doi)) {
+            Matcher doiMatcher = TextUtilities.DOIPattern.matcher(web);
+            if (doiMatcher.find()) { 
+                setDOI(doiMatcher.group());
+            }
+        } 
     }
 
     public void setCollaboration(String collab) {
@@ -1885,11 +1893,32 @@ public class BiblioItem {
             else
                 tei.append(toTEIAuthorBlock(2, false));
 
+            if (!StringUtils.isEmpty(doi)) {
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"doi\">" + TextUtilities.HTMLEncode(doi) + "</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(arXivId)) {
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"arXiv\">" + TextUtilities.HTMLEncode(arXivId) + "</idno>\n");
+            }
+
             if (!StringUtils.isEmpty(pubnum)) {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
                 tei.append("<idno>").append(TextUtilities.HTMLEncode(pubnum)).append("</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(web)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<ptr target=\"").append(TextUtilities.HTMLEncode(web)).append("\" />\n");
             }
 
             if (!StringUtils.isEmpty(bookTitle) || !StringUtils.isEmpty(journal)) {
@@ -2529,20 +2558,6 @@ public class BiblioItem {
                         tei.append("\t");
                     }
                 tei.append("<keywords>" + TextUtilities.HTMLEncode(getKeyword()) + "</keywords>\n");
-            }
-
-            if (!StringUtils.isEmpty(doi)) {
-                for (int i = 0; i < indent + 1; i++) {
-                    tei.append("\t");
-                }
-                tei.append("<idno type=\"doi\">" + TextUtilities.HTMLEncode(doi) + "</idno>\n");
-            }
-
-            if (!StringUtils.isEmpty(arXivId)) {
-                for (int i = 0; i < indent + 1; i++) {
-                    tei.append("\t");
-                }
-                tei.append("<idno type=\"arXiv\">" + TextUtilities.HTMLEncode(arXivId) + "</idno>\n");
             }
 
             if (uri != null) {

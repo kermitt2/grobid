@@ -23,10 +23,10 @@ public class WapitiTrainer implements GenericTrainer {
 
     @Override
     public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model) {
-		System.out.println("epsilon:\t\t" + epsilon);
-		System.out.println("window:\t\t" + window);
-        System.out.println("nb max iterations:\t" + nbMaxIterations);
-		System.out.println("nb threads:\t\t" + numThreads);
+		System.out.println("\tepsilon: " + epsilon);
+		System.out.println("\twindow: " + window);
+        System.out.println("\tnb max iterations: " + nbMaxIterations);
+		System.out.println("\tnb threads: " + numThreads);
         WapitiModel.train(template, trainingData, outputModel, "--nthread " + numThreads +
 //       		" --algo sgd-l1" +
 			" -e " + BigDecimal.valueOf(epsilon).toPlainString() +

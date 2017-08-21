@@ -1,9 +1,14 @@
 package org.grobid.trainer.sax;
 
-import org.grobid.core.utilities.TextUtilities;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+
+import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.analyzers.*;
+import org.grobid.core.lang.Language;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +27,10 @@ public class TEIAuthorSaxParser extends DefaultHandler {
     private String output = null;
     private String currentTag = null;
 
-    private ArrayList<String> labeled = null; // store line by line the labeled data
+    private List<String> labeled = null; // store token by token the labels
+    private List<List<String>> allLabeled = null; // list of labels
+    private List<LayoutToken> tokens = null;
+    private List<List<LayoutToken>> allTokens = null; // list of LayoutToken segmentation
 
     private String title = null;
     private String affiliation = null;
@@ -33,7 +41,8 @@ public class TEIAuthorSaxParser extends DefaultHandler {
     public int n = 0;
 
     public TEIAuthorSaxParser() {
-        labeled = new ArrayList<String>();
+        allTokens = new ArrayList<List<LayoutToken>>();
+        allLabeled = new ArrayList<List<String>>();
     }
 
     public void characters(char[] buffer, int start, int length) {
@@ -44,8 +53,12 @@ public class TEIAuthorSaxParser extends DefaultHandler {
         return accumulator.toString().trim();
     }
 
-    public ArrayList<String> getLabeledResult() {
-        return labeled;
+    public List<List<String>> getLabeledResult() {
+        return allLabeled;
+    }
+
+    public List<List<LayoutToken>> getTokensResult() {
+        return allTokens;
     }
 
     public void endElement(java.lang.String uri,
@@ -70,7 +83,8 @@ public class TEIAuthorSaxParser extends DefaultHandler {
                 currentTag = "<other>";
                 writeField(text);
             }
-            labeled.add("\n \n");
+            allLabeled.add(labeled);
+            allTokens.add(tokens);
             n++;
         }
         accumulator.setLength(0);
@@ -97,13 +111,17 @@ public class TEIAuthorSaxParser extends DefaultHandler {
             currentTag = "<surname>";
         } else if (qName.equals("middlename")) {
             currentTag = "<middlename>";
-        } else if (qName.equals("forename")) {
+        } else if (qName.equals("forename") || qName.equals("firstname")) {
             currentTag = "<forename>";
         } else if (qName.equals("suffix")) {
             currentTag = "<suffix>";
         }
-        /*else if (qName.equals("author")) {
-              int length = atts.getLength();
+        else if (qName.equals("author")) {
+            accumulator = new StringBuffer();
+            labeled = new ArrayList<String>();
+            tokens = new ArrayList<LayoutToken>();
+        
+              /*int length = atts.getLength();
 
               // Process each attribute
               for (int i=0; i<length; i++) {
@@ -116,98 +134,52 @@ public class TEIAuthorSaxParser extends DefaultHandler {
                              System.out.println(value);
                          }
                   }
-              }
-
-          }*/
+              }*/
+          }
     }
 
     private void writeField(String text) {
         // we segment the text
-        //StringTokenizer st = new StringTokenizer(text, " \n\t");
-        List<String> tokens = TextUtilities.segment(text, TextUtilities.punctuations);
+        //List<String> tokens = TextUtilities.segment(text, TextUtilities.punctuations);
+        List<LayoutToken> localTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+        if ( (localTokens == null) || (localTokens.size() == 0) )
+            localTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text, new Language("en", 1.0));
+        if  ( (localTokens == null) || (localTokens.size() == 0) )
+            return;
 
         boolean begin = true;
-        //while(st.hasMoreTokens()) {
-        for (String tok : tokens) {
-            //String tok = st.nextToken().trim();
-            tok = tok.trim();
-            if (tok.length() == 0) continue;
-            boolean punct1 = false;
-
-            if (tok.equals("+L+")) {
-                labeled.add("@newline\n");
-            } else if (tok.equals("+PAGE+")) {
-                // page break not relevant for authors
-                labeled.add("@newline\n");
-            } else {
-                String content = tok;
-                int i = 0;
-                for (; i < TextUtilities.punctuations.length(); i++) {
-                    if (tok.length() > 0) {
-                        if (tok.charAt(tok.length() - 1) == TextUtilities.punctuations.charAt(i)) {
-                            punct1 = true;
-                            content = tok.substring(0, tok.length() - 1);
-                            break;
-                        }
-                    }
-                }
-                if (tok.length() > 0) {
-                    if ((tok.startsWith("(")) & (tok.length() > 1)) {
-                        if (punct1)
-                            content = tok.substring(1, tok.length() - 1);
-                        else
-                            content = tok.substring(1, tok.length());
-                        if (begin) {
-                            labeled.add("(" + " I-" + currentTag + "\n");
-                            begin = false;
-                        } else {
-                            labeled.add("(" + " " + currentTag + "\n");
-                        }
-                    } else if ((tok.startsWith("[")) & (tok.length() > 1)) {
-                        if (punct1)
-                            content = tok.substring(1, tok.length() - 1);
-                        else
-                            content = tok.substring(1, tok.length());
-                        if (begin) {
-                            labeled.add("[" + " I-" + currentTag + "\n");
-                            begin = false;
-                        } else {
-                            labeled.add("[" + " " + currentTag + "\n");
-                        }
-                    } else if ((tok.startsWith("\"")) & (tok.length() > 1)) {
-                        if (punct1)
-                            content = tok.substring(1, tok.length() - 1);
-                        else
-                            content = tok.substring(1, tok.length());
-                        if (begin) {
-                            labeled.add("\"" + " I-" + currentTag + "\n");
-                            begin = false;
-                        } else {
-                            labeled.add("\"" + " " + currentTag + "\n");
-                        }
-                    }
-                }
-
-                if (content.length() > 0) {
-                    if (begin) {
-                        labeled.add(content + " I-" + currentTag + "\n");
-                        begin = false;
-                    } else {
-                        labeled.add(content + " " + currentTag + "\n");
-                    }
-                }
-
-                if (punct1) {
-                    if (begin) {
-                        labeled.add(tok.charAt(tok.length() - 1) + " I-" + currentTag + "\n");
-                        begin = false;
-                    } else {
-                        labeled.add(tok.charAt(tok.length() - 1) + " " + currentTag + "\n");
-                    }
-                }
+        for (LayoutToken token : localTokens) {
+            if (tokens == null) {
+                // should not be the case, it can indicate a structure problem in the training XML file
+                tokens = new ArrayList<LayoutToken>();
+                System.out.println("Warning: list of LayoutToken not initialized properly, parsing continue... ");
+            }
+            if (labeled == null) {
+                // should not be the case, it can indicate a structure problem in the training XML file
+                labeled = new ArrayList<String>();
+                System.out.println("Warning: list of labels not initialized properly, parsing continue... ");
+            }
+            tokens.add(token);
+            String content = token.getText();
+            if (content.equals(" ") || content.equals("\n")) {
+                labeled.add(null);
+                continue;
             }
 
-            begin = false;
+            content = UnicodeUtil.normaliseTextAndRemoveSpaces(content);
+            if (content.trim().length() == 0) { 
+                labeled.add(null);
+                continue;
+            }
+
+            if (content.length() > 0) {
+                if (begin) {
+                    labeled.add("I-" + currentTag);
+                    begin = false;
+                } else {
+                    labeled.add(currentTag);
+                }
+            }
         }
     }
 

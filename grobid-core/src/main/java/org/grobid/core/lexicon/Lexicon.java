@@ -49,7 +49,7 @@ public class Lexicon {
     private Set<String> firstNames = null;
     private Map<String, String> countryCodes = null;
     private Set<String> countries = null;
-    //private Set journals = null;
+
     private FastMatcher abbrevJournalPattern = null;
     private FastMatcher conferencePattern = null;
     private FastMatcher publisherPattern = null;
@@ -57,10 +57,13 @@ public class Lexicon {
     private FastMatcher cityPattern = null;
 	private FastMatcher organisationPattern = null;
 	private FastMatcher locationPattern = null;
-	private FastMatcher personTitlePattern = null;
+	
 	private FastMatcher orgFormPattern = null;
     private FastMatcher collaborationPattern = null;
-	
+
+    private FastMatcher personTitlePattern = null;
+	private FastMatcher personSuffixPattern = null;
+
     public static Lexicon getInstance() {
         if (instance == null) {
             //double check idiom
@@ -262,9 +265,9 @@ public class Lexicon {
             while ((l = dis.readLine()) != null) {
                 // read the line
                 // the first token, separated by a tabulation, gives the word form
-                StringTokenizer st = new StringTokenizer(l, "\t\n");
+                StringTokenizer st = new StringTokenizer(l, "\t\n-");
                 if (st.hasMoreTokens()) {
-                    String word = st.nextToken().toLowerCase();
+                    String word = st.nextToken().toLowerCase().trim();
                     if (!firstNames.contains(word)) {
                         firstNames.add(word);
                     }
@@ -312,9 +315,9 @@ public class Lexicon {
             while ((l = dis.readLine()) != null) {
                 // read the line
                 // the first token, separated by a tabulation, gives the word form
-                StringTokenizer st = new StringTokenizer(l, "\t\n");
+                StringTokenizer st = new StringTokenizer(l, "\t\n-");
                 if (st.hasMoreTokens()) {
-                    String word = st.nextToken().toLowerCase();
+                    String word = st.nextToken().toLowerCase().trim();
                     if (!lastNames.contains(word)) {
                         lastNames.add(word);
                     }
@@ -487,7 +490,16 @@ public class Lexicon {
             personTitlePattern = new FastMatcher(new
                     File(GrobidProperties.getGrobidHomePath() + "/lexicon/names/VincentNgPeopleTitles.txt"));
         } catch (PatternSyntaxException e) {
-            throw new GrobidResourceException("Error when compiling lexicon matcher for locations.", e);
+            throw new GrobidResourceException("Error when compiling lexicon matcher for person titles.", e);
+        }
+    }
+
+    public void initPersonSuffix() {
+        try {
+            personSuffixPattern = new FastMatcher(new
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/names/suffix.txt"));
+        } catch (PatternSyntaxException e) {
+            throw new GrobidResourceException("Error when compiling lexicon matcher for person name suffix.", e);
         }
     }
 
@@ -972,7 +984,7 @@ public class Lexicon {
     /**
      * Soft look-up in person title gazetteer for a given list of LayoutToken objects
      */
-    public List<OffsetPosition> inPersonTitleNamesLayoutToken(List<LayoutToken> s) {
+    public List<OffsetPosition> inPersonTitleLayoutToken(List<LayoutToken> s) {
         if (personTitlePattern == null) {
             initPersonTitles();
         }
@@ -980,6 +992,16 @@ public class Lexicon {
         return results;
     }
 
+    /**
+     * Soft look-up in person name suffix gazetteer for a given list of LayoutToken objects
+     */
+    public List<OffsetPosition> inPersonSuffixLayoutToken(List<LayoutToken> s) {
+        if (personSuffixPattern == null) {
+            initPersonSuffix();
+        }
+        List<OffsetPosition> results = personSuffixPattern.matcherLayoutToken(s);
+        return results;
+    }
 
     /**
      * Variant Soft look-up in person title name gazetteer for a string already tokenised.
