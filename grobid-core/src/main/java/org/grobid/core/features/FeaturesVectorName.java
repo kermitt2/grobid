@@ -1,6 +1,14 @@
 package org.grobid.core.features;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.collections4.CollectionUtils;
+
+import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.core.utilities.TextUtilities;
+
+import org.grobid.core.layout.LayoutToken;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -22,6 +30,9 @@ public class FeaturesVectorName {
     public boolean lastName = false;
     public String punctType = null;
     // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT (default)
+
+    public boolean isKnownTitle = false;
+    public boolean isKnownSuffix = false;
 
     public String printVector() {
         if (string == null) return null;
@@ -80,6 +91,16 @@ public class FeaturesVectorName {
         else
             res.append(" 0");
 
+        if (isKnownTitle)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
+        if (isKnownSuffix)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
         // punctuation information (1)
         res.append(" " + punctType); // in case the token is a punctuation (NO otherwise)
 
@@ -93,31 +114,35 @@ public class FeaturesVectorName {
     }
 
     /**
-     * Add feature for name parsing. The boolean indicates if the label set
-     * should be limited or not to only title and date.
+     * Add feature for name parsing. 
      */
-    static public String addFeaturesName(List<String> lines) throws Exception {
+    static public String addFeaturesName(List<LayoutToken> tokens, List<String> labels,
+            List<OffsetPosition> titlePosition, List<OffsetPosition> suffixPosition) throws Exception {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
 
-        String line;
         StringBuffer header = new StringBuffer();
         boolean newline = true;
-        boolean newBlock = true;
-        String currentFont = null;
-        int currentFontSize = -1;
-        int n = 0;
-
-        boolean endblock = false;
         String previousTag = null;
         String previousText = null;
         FeaturesVectorName features = null;
-        while (n < lines.size()) {
+        LayoutToken token = null;
+
+        int currentTitlePosition = 0;
+        int currentSuffixPosition = 0;
+
+        boolean isTitleToken;
+        boolean isSuffixToken;
+        boolean skipTest;
+
+        for(int n=0; n<tokens.size(); n++) {
             boolean outputLineStatus = false;
-            boolean outputBlockStatus = false;
+            isTitleToken = false;
+            isSuffixToken = false;
+            skipTest = false;
 
-            line = lines.get(n);
+            token = tokens.get(n);
 
-            if (line == null) {
+            /*if (line == null) {
                 header.append("\n \n");
                 newBlock = true;
                 newline = true;
@@ -140,32 +165,78 @@ public class FeaturesVectorName {
                 newline = true;
                 n++;
                 continue;
+            }*/
+
+            //int ind = line.indexOf(" ");
+            String text = token.getText();
+            if (text.equals(" ")) {
+                continue;
             }
 
-            int ind = line.indexOf(" ");
-            String text = null;
+            newline = false;
+            if (text.equals("\n")) {
+                newline = true;
+                continue;
+            }
+
+            // parano normalisation
+            text = UnicodeUtil.normaliseTextAndRemoveSpaces(text);
+            if (text.trim().length() == 0 ) {
+                continue;
+            }
+
+            // check the position of matches for journals
+            if ((titlePosition != null) && (titlePosition.size() > 0)) {
+                if (currentTitlePosition == titlePosition.size() - 1) {
+                    if (titlePosition.get(currentTitlePosition).end < n) {
+                        skipTest = true;
+                    }
+                }
+                if (!skipTest) {
+                    for (int i = currentTitlePosition; i < titlePosition.size(); i++) {
+                        if ((titlePosition.get(i).start <= n) &&
+                                (titlePosition.get(i).end >= n)) {
+                            isTitleToken = true;
+                            currentTitlePosition = i;
+                            break;
+                        } else if (titlePosition.get(i).start > n) {
+                            isTitleToken = false;
+                            currentTitlePosition = i;
+                            break;
+                        }
+                    }
+                }
+            }
+            // check the position of matches for abbreviated journals
+            skipTest = false;
+            if (suffixPosition != null) {
+                if (currentSuffixPosition == suffixPosition.size() - 1) {
+                    if (suffixPosition.get(currentSuffixPosition).end < n) {
+                        skipTest = true;
+                    }
+                }
+                if (!skipTest) {
+                    for (int i = currentSuffixPosition; i < suffixPosition.size(); i++) {
+                        if ((suffixPosition.get(i).start <= n) &&
+                                (suffixPosition.get(i).end >= n)) {
+                            isSuffixToken = true;
+                            currentSuffixPosition = i;
+                            break;
+                        } else if (suffixPosition.get(i).start > n) {
+                            isSuffixToken = false;
+                            currentSuffixPosition = i;
+                            break;
+                        }
+                    }
+                }
+            }
+
             String tag = null;
-            if (ind != -1) {
-                text = line.substring(0, ind);
-                tag = line.substring(ind + 1, line.length());
+            if (!CollectionUtils.isEmpty(labels) && (labels.size() > n)) {
+                tag = labels.get(n);
             }
 
-            boolean filter = false;
-            if (text == null) {
-                filter = true;
-            } else if (text.length() == 0) {
-                filter = true;
-            } else if (text.startsWith("@IMAGE")) {
-                filter = true;
-            } else if (text.indexOf(".pbm") != -1) {
-                filter = true;
-            } else if (text.indexOf(".vec") != -1) {
-                filter = true;
-            } else if (text.indexOf(".jpg") != -1) {
-                filter = true;
-            }
-
-            if (filter) {
+            if (TextUtilities.filterLine(text)) {
                 continue;
             }
 
@@ -201,7 +272,7 @@ public class FeaturesVectorName {
                     features.lineStatus = "LINESTART";
                     outputLineStatus = true;
                 }
-            } else if (lines.size() == n + 1) {
+            } else if (tokens.size() == n + 1) {
                 if (!outputLineStatus) {
                     features.lineStatus = "LINEEND";
                     outputLineStatus = true;
@@ -211,38 +282,28 @@ public class FeaturesVectorName {
                 boolean endline = false;
                 int i = 1;
                 boolean endloop = false;
-                while ((lines.size() > n + i) & (!endloop)) {
-                    String newLine = lines.get(n + i);
-
+                while ((tokens.size() > n + i) & (!endloop)) {
+                    String newLine = tokens.get(n + i).getText();
                     if (newLine != null) {
-                        if (newLine.trim().length() == 0) {
-                            endline = true;
-                            endblock = true;
-                            if (!outputLineStatus) {
-                                features.lineStatus = "LINEEND";
-                                outputLineStatus = true;
-                            }
-                        } else if (newLine.equals("@newline")) {
+                        if (newLine.equals("\n")) {
                             endline = true;
                             if (!outputLineStatus) {
                                 features.lineStatus = "LINEEND";
                                 outputLineStatus = true;
                             }
-                        } else {
+                            endloop = true;
+                        } else if (!newLine.equals(" ")) {
                             endloop = true;
                         }
                     }
 
-                    if ((endline) & (!outputLineStatus)) {
+                    /*if ((endline) & (!outputLineStatus)) {
                         features.lineStatus = "LINEEND";
                         outputLineStatus = true;
-                    }
+                    }*/
                     i++;
                 }
             }
-
-            newline = false;
-            newBlock = false;
 
             if (!outputLineStatus) {
                 features.lineStatus = "LINEIN";
@@ -251,7 +312,6 @@ public class FeaturesVectorName {
 
             if (text.length() == 1) {
                 features.singleChar = true;
-                ;
             }
 
             if (Character.isUpperCase(text.charAt(0))) {
@@ -292,13 +352,20 @@ public class FeaturesVectorName {
             if (features.punctType == null)
                 features.punctType = "NOPUNCT";
 
+            if (isTitleToken) {
+                features.isKnownTitle = true;
+            }
+
+            if (isSuffixToken) {
+                features.isKnownSuffix = true;
+            }
+
             features.label = tag;
 
             header.append(features.printVector());
 
             previousTag = tag;
             previousText = text;
-            n++;
         }
 
         return header.toString();

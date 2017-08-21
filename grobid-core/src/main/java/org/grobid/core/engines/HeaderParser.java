@@ -180,7 +180,7 @@ public class HeaderParser extends AbstractParser {
                         auts = new ArrayList<String>();
                         auts.add(authorSegments[k]);
 //                        List<Person> localAuthors = parsers.getAuthorParser().processingHeader(auts);
-                        List<Person> localAuthors = parsers.getAuthorParser().processingHeaderWithTokens(tokenAuthorSegments.get(k));
+                        List<Person> localAuthors = parsers.getAuthorParser().processingHeaderWithLayoutTokens(tokenAuthorSegments.get(k));
                         if (localAuthors != null) {
                             for (Person pers : localAuthors) {
                                 resHeader.addFullAuthor(pers);
@@ -201,14 +201,17 @@ public class HeaderParser extends AbstractParser {
                             if (authorSegments != null) {
                                 if (resHeader.getFullAffiliations().size() == authorSegments.length) {
                                     int k = 0;
-                                    for (Person pers : resHeader.getFullAuthors()) {
-                                        if (k < authorsBlocks.size()) {
-                                            int indd = authorsBlocks.get(k);
-                                            if (indd < resHeader.getFullAffiliations().size()) {
-                                                pers.addAffiliation(resHeader.getFullAffiliations().get(indd));
+                                    List<Person> persons = resHeader.getFullAuthors();
+                                    if (persons != null) {
+                                        for (Person pers : persons) {
+                                            if (k < authorsBlocks.size()) {
+                                                int indd = authorsBlocks.get(k);
+                                                if (indd < resHeader.getFullAffiliations().size()) {
+                                                    pers.addAffiliation(resHeader.getFullAffiliations().get(indd));
+                                                }
                                             }
+                                            k++;
                                         }
-                                        k++;
                                     }
                                     attached = true;
                                     resHeader.setFullAffiliations(null);
@@ -414,7 +417,8 @@ public class HeaderParser extends AbstractParser {
                             if (authorSegments != null) {
                                 if (resHeader.getFullAffiliations().size() == authorSegments.length) {
                                     int k = 0;
-                                    for (Person pers : resHeader.getFullAuthors()) {
+                                    List<Person> persons = resHeader.getFullAuthors();
+                                    for (Person pers : persons) {
                                         if (k < authorsBlocks.size()) {
                                             int indd = authorsBlocks.get(k);
                                             if (indd < resHeader.getFullAffiliations().size()) {
@@ -901,9 +905,9 @@ public class HeaderParser extends AbstractParser {
                         q++;
                     }
                     if (input.length() > 1) {
-                        List<String> inputs = new ArrayList<String>();
-                        inputs.add(input.trim());
-                        bufferName = parsers.getAuthorParser().trainingExtraction(inputs, true);
+                        //List<String> inputs = new ArrayList<String>();
+                        //inputs.add(input.trim());
+                        bufferName = parsers.getAuthorParser().trainingExtraction(input.trim(), true);
                     }
 
                     // buffer for the reference block

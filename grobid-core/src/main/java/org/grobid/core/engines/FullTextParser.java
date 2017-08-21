@@ -903,9 +903,9 @@ public class FullTextParser extends AbstractParser {
 	                        q++;
 	                    }
 	                    if (input.length() > 1) {
-	                        List<String> inputs = new ArrayList<String>();
-	                        inputs.add(input.trim());
-	                        bufferName = parsers.getAuthorParser().trainingExtraction(inputs, true);
+	                        /*List<String> inputs = new ArrayList<String>();
+	                        inputs.add(input.trim());*/
+	                        bufferName = parsers.getAuthorParser().trainingExtraction(input, true);
 	                    }
 
 	                    // buffer for the reference block
@@ -1121,9 +1121,9 @@ public class FullTextParser extends AbstractParser {
 			                BiblioItem bib = parsers.getCitationParser().processing(ref.getReferenceText(), false);
 			                String authorSequence = bib.getAuthors();
 							if ((authorSequence != null) && (authorSequence.trim().length() > 0) ) {
-								List<String> inputs = new ArrayList<String>();
-								inputs.add(authorSequence);
-								StringBuilder bufferName = parsers.getAuthorParser().trainingExtraction(inputs, false);
+								/*List<String> inputs = new ArrayList<String>();
+								inputs.add(authorSequence);*/
+								StringBuilder bufferName = parsers.getAuthorParser().trainingExtraction(authorSequence, false);
 								if ( (bufferName != null) && (bufferName.length()>0) ) {
 									writerName.write("\n\t\t\t\t\t\t<author>");
 									writerName.write(bufferName.toString());

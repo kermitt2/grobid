@@ -33,8 +33,8 @@ public class TEICitationSaxParser extends DefaultHandler {
     private String output = null;
     private String currentTag = null;
 
-    private List<String> labeled = null; // store line by line the labeled data
-    private List<List<String>> allLabeled = null; // list of labeled examples
+    private List<String> labeled = null; // store token by token the labels
+    private List<List<String>> allLabeled = null; // list of labels
     private List<LayoutToken> tokens = null;
     private List<List<LayoutToken>> allTokens = null; // list of LayoutToken segmentation
     public int nbCitations = 0;
