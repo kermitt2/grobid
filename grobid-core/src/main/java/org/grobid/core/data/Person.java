@@ -1,7 +1,10 @@
 package org.grobid.core.data;
 
+import org.apache.commons.lang3.StringUtils;
+
 import nu.xom.Attribute;
 import nu.xom.Element;
+
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
@@ -21,7 +24,7 @@ public class Person {
     private String lastName = null;
     private String title = null;
     private String suffix = null;
-    private String rawName = null; // raw full name if relevant, e.g. name exactly as displayed
+    private String rawName = null; // raw full name if relevant/available, e.g. name exactly as displayed
     private boolean corresp = false;
     private List<LayoutToken> layoutTokens = new ArrayList<>();
 
@@ -37,7 +40,7 @@ public class Person {
     }
 
     public void setFirstName(String f) {
-        firstName = normalizeName(f);
+        firstName = f;
     }
 
     public String getMiddleName() {
@@ -45,7 +48,7 @@ public class Person {
     }
 
     public void setMiddleName(String f) {
-        middleName = normalizeName(f);
+        middleName = f;
     }
 
     public String getLastName() {
@@ -53,7 +56,7 @@ public class Person {
     }
 
     public void setLastName(String f) {
-        lastName = normalizeName(f);
+        lastName = f;
     }
 
     public String getRawName() {
@@ -69,7 +72,7 @@ public class Person {
     }
 
     public void setTitle(String f) {
-        title = normalizeName(f);
+        title = f;
     }
 
     public String getSuffix() {
@@ -77,7 +80,7 @@ public class Person {
     }
 
     public void setSuffix(String s) {
-        suffix = normalizeName(s);
+        suffix = s;
     }
 
     public boolean getCorresp() {
@@ -228,8 +231,20 @@ public class Person {
     // list of character delimiters for capitalising names
  	private static final String NAME_DELIMITERS = "-.,;:/_ ";
 
-    static public String normalizeName(String inputName) {
+    /*static public String normalizeName(String inputName) {
 		return TextUtilities.capitalizeFully(inputName, NAME_DELIMITERS);
+    }*/
+
+    public void normalizeName() {
+        if (StringUtils.isEmpty(middleName) && !StringUtils.isEmpty(firstName) && 
+            (firstName.length() == 2) && (TextUtilities.isAllUpperCase(firstName)) ) {
+            middleName = firstName.substring(1,2);
+            firstName = firstName.substring(0,1);
+        } 
+
+        firstName = TextUtilities.capitalizeFully(firstName, NAME_DELIMITERS);
+        middleName = TextUtilities.capitalizeFully(middleName, NAME_DELIMITERS);
+        lastName = TextUtilities.capitalizeFully(lastName, NAME_DELIMITERS);
     }
 	
 	/**

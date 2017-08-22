@@ -71,6 +71,12 @@ public class TaggingLabels {
     public final static String PAGES_LABEL = "<pages>";
     public final static String PUBLISHER_LABEL = "<publisher>";
 
+    public final static String MARKER_LABEL = "<marker>";
+    public final static String FORENAME_LABEL = "<forename>";
+    public final static String MIDDLENAME_LABEL = "<middlename>";
+    public final static String SURNAME_LABEL = "<surname>";
+    public final static String SUFFIX_LABEL = "<suffix>";
+
     public static final TaggingLabel CITATION_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, CITATION_MARKER_LABEL);
     public static final TaggingLabel TABLE_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, TABLE_MARKER_LABEL);
     public static final TaggingLabel FIGURE_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, FIGURE_MARKER_LABEL);
@@ -147,6 +153,19 @@ public class TaggingLabels {
     public static final TaggingLabel CITATION_PUBLISHER = new TaggingLabelImpl(GrobidModels.CITATION, PUBLISHER_LABEL);
     public static final TaggingLabel CITATION_WEB = new TaggingLabelImpl(GrobidModels.CITATION, WEB_LABEL);
     public static final TaggingLabel CITATION_PUBNUM = new TaggingLabelImpl(GrobidModels.CITATION, PUBNUM_LABEL);
+
+    public static final TaggingLabel NAMES_HEADER_MARKER = new TaggingLabelImpl(GrobidModels.NAMES_HEADER, MARKER_LABEL);
+    public static final TaggingLabel NAMES_HEADER_TITLE = new TaggingLabelImpl(GrobidModels.NAMES_HEADER, TITLE_LABEL);
+    public static final TaggingLabel NAMES_HEADER_FORENAME = new TaggingLabelImpl(GrobidModels.NAMES_HEADER, FORENAME_LABEL);
+    public static final TaggingLabel NAMES_HEADER_MIDDLENAME = new TaggingLabelImpl(GrobidModels.NAMES_HEADER, MIDDLENAME_LABEL);
+    public static final TaggingLabel NAMES_HEADER_SURNAME = new TaggingLabelImpl(GrobidModels.NAMES_HEADER, SURNAME_LABEL);
+    public static final TaggingLabel NAMES_HEADER_SUFFIX = new TaggingLabelImpl(GrobidModels.NAMES_HEADER, SUFFIX_LABEL);
+
+    public static final TaggingLabel NAMES_CITATION_TITLE = new TaggingLabelImpl(GrobidModels.NAMES_CITATION, TITLE_LABEL);
+    public static final TaggingLabel NAMES_CITATION_FORENAME = new TaggingLabelImpl(GrobidModels.NAMES_CITATION, FORENAME_LABEL);
+    public static final TaggingLabel NAMES_CITATION_MIDDLENAME = new TaggingLabelImpl(GrobidModels.NAMES_CITATION, MIDDLENAME_LABEL);
+    public static final TaggingLabel NAMES_CITATION_SURNAME = new TaggingLabelImpl(GrobidModels.NAMES_CITATION, SURNAME_LABEL);
+    public static final TaggingLabel NAMES_CITATION_SUFFIX = new TaggingLabelImpl(GrobidModels.NAMES_CITATION, SUFFIX_LABEL);
 
     protected static void register(TaggingLabel label) {
         cache.putIfAbsent(new Pair<>(label.getGrobidModel(), label.getLabel()), label);
@@ -233,6 +252,20 @@ public class TaggingLabels {
         register(CITATION_PUBLISHER);
         register(CITATION_WEB);
         register(CITATION_PUBNUM);
+
+        // person names
+        register(NAMES_HEADER_MARKER);
+        register(NAMES_HEADER_TITLE);
+        register(NAMES_HEADER_FORENAME);
+        register(NAMES_HEADER_MIDDLENAME);
+        register(NAMES_HEADER_SURNAME);
+        register(NAMES_HEADER_SUFFIX);
+
+        register(NAMES_CITATION_TITLE);
+        register(NAMES_CITATION_FORENAME);
+        register(NAMES_CITATION_MIDDLENAME);
+        register(NAMES_CITATION_SURNAME);
+        register(NAMES_CITATION_SUFFIX);
     }
 
 
