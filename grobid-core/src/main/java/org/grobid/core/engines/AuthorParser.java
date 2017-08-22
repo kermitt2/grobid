@@ -21,6 +21,12 @@ import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.lang.Language;
+import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,60 +91,12 @@ public class AuthorParser {
         return processing(inputs, true);
     }
 
-    /*public ArrayList<String> getAuthorBlocks(String input) {
-        if (input == null || input.isEmpty())
-            return null;
-
-        input = input.trim().replaceAll("et\\.? al\\.?.*$", "");
-        ArrayList<String> authorBlocks = new ArrayList<String>();
-        try {
-            // force analyser language to avoid any surprise
-            List<LayoutToken> tokenizations = analyzer.tokenizeWithLayoutToken(input, mew Language("en", 1.0));
-            if (tokenizations.size() == 0) {
-                return null;
-            }
-            for(String tok : tokenizations) {
-                if (!tok.equals(" ")) {
-                    authorBlocks.add(tok + " <author>");
-                }
-            }
-            authorBlocks.add("\n");
-        } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
-        }
-        return authorBlocks;
-    }*/
-
-    /*public ArrayList<String> getAuthorBlocksFromTokens(List<LayoutToken> inputs) {
-        if (inputs == null || inputs.isEmpty())
-            return null;
-
-        if (inputs.get(inputs.size() - 1) != null) {
-            LayoutToken last = inputs.get(inputs.size() - 1);
-            last.setText(last.t().trim().replaceAll("et\\.? al\\.?.*$", ""));
-        }
-
-        ArrayList<String> authorBlocks = new ArrayList<String>();
-        try {
-            for (LayoutToken layoutToken : inputs) {
-                String tok = layoutToken.t();
-                if (!LayoutTokensUtil.spaceyToken(tok) && !tok.trim().isEmpty()) {
-                    authorBlocks.add(tok + " <author>");
-                }
-            }
-            authorBlocks.add("\n");
-            return authorBlocks;
-        } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
-        }
-    }*/
-
     /**
      * Common processing of authors in header or citation
-	 *
+     *
      * @param tokens list of LayoutToken object to process
-	 * @param head - if true use the model for header's name, otherwise the model for names in citation
-	 * @return List of identified Person entites as POJO.
+     * @param head - if true use the model for header's name, otherwise the model for names in citation
+     * @return List of identified Person entites as POJO.
      */
     public List<Person> processing(List<LayoutToken> tokens, boolean head) {
         if (CollectionUtils.isEmpty(tokens)) {
@@ -155,289 +113,131 @@ public class AuthorParser {
                 return null;
             GenericTagger tagger = head ? namesHeaderParser : namesCitationParser;
             String res = tagger.label(sequence);
-
-            // TODO:switch to more robust clustering
-//            TaggingTokenClusteror clusteror = new TaggingTokenClusteror(head ? GrobidModels.NAMES_HEADER : GrobidModels.NAMES_CITATION, res, tokens);
-//            List<TaggingTokenCluster> clusters = clusteror.cluster();
-
-            // extract results from the processed file
-            StringTokenizer st2 = new StringTokenizer(res, "\n");
-            String lastTag = null;
+//System.out.println(res);
+            TaggingTokenClusteror clusteror = new TaggingTokenClusteror(head ? GrobidModels.NAMES_HEADER : GrobidModels.NAMES_CITATION, res, tokens);
             org.grobid.core.data.Person aut = new Person();
             boolean newMarker = false;
             String currentMarker = null;
-            int ptr = 0;
-            while (st2.hasMoreTokens()) {
-                String line = st2.nextToken();
-                if ((line.trim().length() == 0)) {
-                    if (aut.notNull()) {
-                        if (fullAuthors == null)
-                            fullAuthors = new ArrayList<Person>();
-                        fullAuthors.add(aut);
-                    }
-                    aut = new Person();
+            List<TaggingTokenCluster> clusters = clusteror.cluster();
+            for (TaggingTokenCluster cluster : clusters) {
+                if (cluster == null) {
                     continue;
                 }
 
-                LayoutToken layoutToken = tokens.get(ptr++);
-
-                StringTokenizer st3 = new StringTokenizer(line, "\t");
-                int ll = st3.countTokens();
-                int i = 0;
-                String s1 = null;
-                String s2 = null;
-                String s3 = "<author>";
-                List<String> localFeatures = new ArrayList<String>();
-                while (st3.hasMoreTokens()) {
-                    String s = st3.nextToken().trim();
-                    if (i == 0) {
-                        s2 = s; // string
-                        //System.out.println("s2 is " + s2);
-                    } else if (i == ll - 2) {
-                        //s3 = s; // pre-label, in this case it should always be <author>
-                        //System.out.println("s3 is " + s3);
-                    } else if (i == ll - 1) {
-                        s1 = s; // label
-                        //System.out.println("s1 is " + s1);
-                    } else {
-                        localFeatures.add(s);
-                    }
-                    i++;
-                }
-
-                if (s1.equals("<marker>")) {
+                TaggingLabel clusterLabel = cluster.getTaggingLabel();
+                Engine.getCntManager().i(clusterLabel);
+                //String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+                String clusterContent = StringUtils.normalizeSpace(LayoutTokensUtil.toText(cluster.concatTokens()));
+                if (clusterContent.trim().length() == 0)
+                    continue;
+                
+                if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_MARKER)) {
+                    // a marker introduces a new author, and the marker could be attached to the previous (usual) 
+                    // or following author (rare)
+                    currentMarker = clusterContent;
+                    newMarker = true;
+                    boolean markerAssigned = false;
                     if (aut.notNull()) {
                         if (fullAuthors == null) {
                             fullAuthors = new ArrayList<Person>();
-                            fullAuthors.add(aut);
-                            aut = new Person();
-                        } else if (!fullAuthors.contains(aut)) {
+                        } 
+                        aut.addMarker(currentMarker);
+                        markerAssigned = true;
+                        
+                        if (!fullAuthors.contains(aut)) {
                             fullAuthors.add(aut);
                             aut = new Person();
                         }
+                    } 
+                    if (!markerAssigned) {
+                        aut.addMarker(currentMarker);
                     }
-
-                    if (currentMarker == null)
-                        currentMarker = s2;
-                    else
-                        currentMarker += " " + s2;
-                    newMarker = true;
-                } else if (s1.equals("I-<marker>")) {
-                    if (aut.notNull()) {
-                        if (fullAuthors == null)
-                            fullAuthors = new ArrayList<Person>();
-                        fullAuthors.add(aut);
+                } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_TITLE) || 
+                            clusterLabel.equals(TaggingLabels.NAMES_CITATION_TITLE)) {
+                    if (newMarker) {
+                        aut.setTitle(clusterContent);
+                        newMarker = false;
+                    } else if (aut.getTitle() != null) {
+                        if (aut.notNull()) {
+                            if (fullAuthors == null)
+                                fullAuthors = new ArrayList<Person>();
+                            fullAuthors.add(aut);
+                        }
                         aut = new Person();
+                        aut.setTitle(clusterContent);
+                    } else {
+                        aut.setTitle(clusterContent);
                     }
-                    currentMarker = s2;
-                    newMarker = true;
-                } else if (s1.equals("<forename>") || s1.equals("I-<forename>")) {
-                    //System.out.println("forename !");
-                    if (s3.equals("<author>")) {
-                        if (newMarker) {
-                            aut.setFirstName(s2);
-                            newMarker = false;
-                        } else if (aut.getFirstName() != null) {
-                            if (s1.equals("I-<forename>")) {
-                                // new author
-                                if (aut.notNull()) {
-                                    if (fullAuthors == null)
-                                        fullAuthors = new ArrayList<Person>();
-                                    fullAuthors.add(aut);
-                                }
-
-                                aut = new Person();
-                                aut.setFirstName(s2);
-                            } else if (!s1.equals(lastTag) && !lastTag.equals("I-<forename>")) {
-                                // new author
-                                if (aut.notNull()) {
-                                    if (fullAuthors == null)
-                                        fullAuthors = new ArrayList<Person>();
-                                    fullAuthors.add(aut);
-                                }
-                                aut = new Person();
-                                aut.setFirstName(s2);
-                            } else if ((s2.equals("-")) || (s2.equals(".")) || (s2.equals(",")) || (s2.equals(":")))
-                                aut.setFirstName(aut.getFirstName() + s2);
-                            else {
-                                if (aut.getFirstName().length() == 0)
-                                    aut.setFirstName(aut.getFirstName() + s2);
-                                else if ((aut.getFirstName().charAt(aut.getFirstName().length() - 1) == '-')
-                                        | (aut.getFirstName().charAt(aut.getFirstName().length() - 1) == '\''))
-                                    aut.setFirstName(aut.getFirstName() + s2);
-                                else
-                                    aut.setFirstName(aut.getFirstName() + " " + s2);
-                            }
-                        } else {
-                            aut.setFirstName(s2);
+                } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_FORENAME) || 
+                            clusterLabel.equals(TaggingLabels.NAMES_CITATION_FORENAME)) {
+                    if (newMarker) {
+                        aut.setFirstName(clusterContent);
+                        newMarker = false;
+                    } else if (aut.getFirstName() != null) {
+                        // new author
+                        if (aut.notNull()) {
+                            if (fullAuthors == null)
+                                fullAuthors = new ArrayList<Person>();
+                            fullAuthors.add(aut);
                         }
+                        aut = new Person();
+                        aut.setFirstName(clusterContent);
+                    } else {
+                        aut.setFirstName(clusterContent);
                     }
-                } else if (s1.equals("<middlename>") || s1.equals("I-<middlename>")) {
-                    //System.out.println("middlename !");
-                    if (s3.equals("<author>")) {
-                        if (newMarker) {
-                            aut.setMiddleName(s2);
-                            newMarker = false;
-                        } else if (aut.getMiddleName() != null) {
-                            if ((s2.equals("-")) || (s2.equals(".")) || (s2.equals(",")) || (s2.equals(":")))
-                                aut.setMiddleName(aut.getMiddleName() + s2);
-                            else {
-                                if (aut.getMiddleName().length() == 0)
-                                    aut.setMiddleName(aut.getMiddleName() + s2);
-                                else if (
-                                        (aut.getMiddleName().charAt(aut.getMiddleName().length() - 1) == '-') |
-                                                (aut.getMiddleName().charAt(aut.getMiddleName().length() - 1) == '\''))
-                                    aut.setMiddleName(aut.getMiddleName() + s2);
-                                else
-                                    aut.setMiddleName(aut.getMiddleName() + " " + s2);
-                            }
-                        } else {
-                            aut.setMiddleName(s2);
+                } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_MIDDLENAME) || 
+                            clusterLabel.equals(TaggingLabels.NAMES_CITATION_MIDDLENAME)) {
+                    if (newMarker) {
+                        aut.setMiddleName(clusterContent);
+                        newMarker = false;
+                    } else if (aut.getMiddleName() != null) {
+                        aut.setMiddleName(aut.getMiddleName() + " " + clusterContent);
+                    } else {
+                        aut.setMiddleName(clusterContent);
+                    }
+                } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_SURNAME) || 
+                            clusterLabel.equals(TaggingLabels.NAMES_CITATION_SURNAME)) {
+                    if (newMarker) {
+                        aut.setLastName(clusterContent);
+                        newMarker = false;
+                    } else if (aut.getLastName() != null) {
+                        // new author
+                        if (aut.notNull()) {
+                            if (fullAuthors == null)
+                                fullAuthors = new ArrayList<Person>();
+                            fullAuthors.add(aut);
                         }
+                        aut = new Person();
+                        aut.setLastName(clusterContent);
+                    } else {
+                        aut.setLastName(clusterContent);
                     }
-                } else if (s1.equals("<surname>") || s1.equals("I-<surname>")) {
-                    if (s3.equals("<author>")) {
-                        if (newMarker) {
-                            aut.setLastName(s2);
-                            newMarker = false;
-                        } else if (aut.getLastName() != null) {
-                            if (s1.equals("I-<surname>")) {
-                                // new author
-                                if (aut.notNull()) {
-                                    if (fullAuthors == null)
-                                        fullAuthors = new ArrayList<Person>();
-                                    fullAuthors.add(aut);
-                                }
-                                aut = new Person();
-                                aut.setLastName(s2);
-                            } else if ((!s1.equals(lastTag)) && (!lastTag.equals("I-<surname>"))) {
-                                // new author
-                                if (aut.notNull()) {
-                                    if (fullAuthors == null)
-                                        fullAuthors = new ArrayList<Person>();
-                                    fullAuthors.add(aut);
-                                }
-                                aut = new Person();
-                                aut.setLastName(s2);
-                            } else if ((s2.equals("-")) || (s2.equals(".")) || (s2.equals(",")) || (s2.equals(":"))) {
-                                aut.setLastName(aut.getLastName() + s2);
-                            } else {
-                                if (aut.getLastName().length() == 0)
-                                    aut.setLastName(s2);
-                                else if (
-                                        (aut.getLastName().charAt(aut.getLastName().length() - 1) == '-') |
-                                                (aut.getLastName().charAt(aut.getLastName().length() - 1) == '\''))
-                                    aut.setLastName(aut.getLastName() + s2);
-                                else
-                                    aut.setLastName(aut.getLastName() + " " + s2);
-                            }
-                        } else {
-                            aut.setLastName(s2);
-                        }
+                } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_SUFFIX) || 
+                            clusterLabel.equals(TaggingLabels.NAMES_CITATION_SUFFIX)) {
+                    /*if (newMarker) {
+                        aut.setSuffix(clusterContent);
+                        newMarker = false;
+                    } else*/ 
+                    if (aut.getSuffix() != null) {
+                        aut.setSuffix(aut.getSuffix() + " " + clusterContent);
+                    } else {
+                        aut.setSuffix(clusterContent);
                     }
-                } else if (s1.equals("<title>") || s1.equals("I-<title>")) {
-                    //System.out.println("<title> ! " + "lastTag: " + lastTag);
-                    if (s3.equals("<author>")) {
-                        if (newMarker) {
-                            aut.setTitle(s2);
-                            newMarker = false;
-                        } else if (aut.getTitle() != null) {
-                            if (s1.equals("I-<title>")) {
-                                // new author
-                                if (aut.notNull()) {
-                                    if (fullAuthors == null)
-                                        fullAuthors = new ArrayList<Person>();
-                                    fullAuthors.add(aut);
-                                }
-                                aut = new Person();
-                                aut.setTitle(s2);
-                            } else if ((!s1.equals(lastTag)) && (!lastTag.equals("I-<title>"))) {
-                                // new author
-                                if (aut.notNull()) {
-                                    if (fullAuthors == null)
-                                        fullAuthors = new ArrayList<Person>();
-                                    fullAuthors.add(aut);
-                                }
-                                aut = new Person();
-                                aut.setTitle(s2);
-                            } else if ((s2.equals("-")) || (s2.equals(".")) || (s2.equals(",")) || (s2.equals(":"))) {
-                                aut.setTitle(aut.getTitle() + s2);
-                            } else {
-                                if (aut.getTitle().length() == 0) {
-                                    aut.setTitle(aut.getTitle() + s2);
-                                } else if (
-                                        (aut.getTitle().charAt(aut.getTitle().length() - 1) == '-') |
-                                                (aut.getTitle().charAt(aut.getTitle().length() - 1) == '\'')) {
-                                    aut.setTitle(aut.getTitle() + s2);
-                                } else {
-                                    aut.setTitle(aut.getTitle() + " " + s2);
-                                }
-                            }
-                        } else {
-                            aut.setTitle(s2);
-                        }
-                    }
-                } else if (s1.equals("<suffix>") || s1.equals("I-<suffix>")) {
-                    //System.out.println("<suffix> ! " + "lastTag: " + lastTag);
-                    if (s3.equals("<author>")) {
-                        if (newMarker) {
-                            aut.setSuffix(s2);
-                            newMarker = false;
-                        } else if (aut.getSuffix() != null) {
-                            if (s1.equals("I-<suffix>")) {
-                                // new author
-                                if (aut.notNull()) {
-                                    if (fullAuthors == null)
-                                        fullAuthors = new ArrayList<Person>();
-                                    fullAuthors.add(aut);
-                                }
-                                aut = new Person();
-                                aut.setSuffix(s2);
-                            } else if ((!s1.equals(lastTag)) && (!lastTag.equals("I-<suffix>"))) {
-                                // new author
-                                if (aut.notNull()) {
-                                    if (fullAuthors == null)
-                                        fullAuthors = new ArrayList<Person>();
-                                    fullAuthors.add(aut);
-                                }
-                                aut = new Person();
-                                aut.setSuffix(s2);
-                            } else if ((s2.equals("-")) || (s2.equals(".")) || (s2.equals(",")) || (s2.equals(":"))) {
-                                aut.setSuffix(aut.getSuffix() + s2);
-                            } else {
-                                if (aut.getSuffix().length() == 0) {
-                                    aut.setSuffix(aut.getSuffix() + s2);
-                                } else if (
-                                        (aut.getSuffix().charAt(aut.getSuffix().length() - 1) == '-') |
-                                                (aut.getSuffix().charAt(aut.getSuffix().length() - 1) == '\'')) {
-                                    aut.setSuffix(aut.getSuffix() + s2);
-                                } else {
-                                    aut.setSuffix(aut.getSuffix() + " " + s2);
-                                }
-                            }
-                        } else {
-                            aut.setSuffix(s2);
-                        }
-                    }
-                }
-
-                lastTag = s1;
-
-                if (nameLabel(s1)) {
-                    aut.getLayoutTokens().add(layoutToken);
-                }
-                while (ptr < tokens.size() && 
-                        (LayoutTokensUtil.spaceyToken(tokens.get(ptr).t()) || tokens.get(ptr).t().trim().isEmpty())) {
-                    aut.getLayoutTokens().add(tokens.get(ptr));
-                    ptr++;
                 }
             }
+
+            // add last built author
             if (aut.notNull()) {
                 if (fullAuthors == null) {
                     fullAuthors = new ArrayList<Person>();
                 }
                 fullAuthors.add(aut);
             }
+
+            // some more person name normalisation
+            for(Person author : fullAuthors) {
+                author.normalizeName();
+            } 
 
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
@@ -467,29 +267,6 @@ public class AuthorParser {
             if (CollectionUtils.isEmpty(tokens)) {
                 return null;
             }
-
-            /*List<String> authorBlocks = new ArrayList<String>();
-            for (String input : inputs) {
-                if (input == null)
-                    continue;
-                //System.out.println("Input: "+input);
-                //StringTokenizer st = new StringTokenizer(input, " \t\n" + TextUtilities.fullPunctuations, true);
-				tokenizations = GrobidAnalyzer.getInstance().tokenize(input);
-                //if (st.countTokens() == 0)
-				if (tokenizations.size() == 0)
-                    return null;
-                //while (st.hasMoreTokens()) {
-                //    String tok = st.nextToken();
-				for(String tok : tokenizations) {
-                    if (tok.equals("\n")) {
-                        authorBlocks.add("@newline");
-                    } else if (!tok.equals(" ")) {
-                        authorBlocks.add(tok + " <author>");
-                    }
-                    //tokenizations.add(tok);
-                }
-                authorBlocks.add("\n");
-            }*/
 
             List<OffsetPosition> titlePositions = Lexicon.getInstance().inPersonTitleLayoutToken(tokens);
             List<OffsetPosition> suffixPositions = Lexicon.getInstance().inPersonSuffixLayoutToken(tokens);

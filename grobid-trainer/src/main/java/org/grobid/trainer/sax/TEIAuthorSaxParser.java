@@ -115,27 +115,15 @@ public class TEIAuthorSaxParser extends DefaultHandler {
             currentTag = "<forename>";
         } else if (qName.equals("suffix")) {
             currentTag = "<suffix>";
-        }
-        else if (qName.equals("author")) {
+        } else if (qName.equals("author")) {
             accumulator = new StringBuffer();
             labeled = new ArrayList<String>();
             tokens = new ArrayList<LayoutToken>();
-        
-              /*int length = atts.getLength();
-
-              // Process each attribute
-              for (int i=0; i<length; i++) {
-                  // Get names and values for each attribute
-                  String name = atts.getQName(i);
-                  String value = atts.getValue(i);
-
-                  if (name != null) {
-                      if (name.equals("file")) {
-                             System.out.println(value);
-                         }
-                  }
-              }*/
-          }
+        } else if (!qName.equals("analytic") && !qName.equals("biblStruct") && 
+            !qName.equals("sourceDesc") && !qName.equals("fileDesc") && 
+            !qName.equals("teiHeader")&& !qName.equals("TEI")) {
+            System.out.println("Warning, invalid tag: <" + qName + ">");
+        }
     }
 
     private void writeField(String text) {
