@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>R. Pohl et al.</author>, <title level="j">Nature</title> <biblScope unit="volume">466</biblScope> (<date>2010</date>) <biblScope unit="page">2013</biblScope>.</bibl>
+	<bibl><author>A. Adamczak et al.</author>, <title level="j">J. of Inst.</title> <biblScope unit="volume">11</biblScope> (<date>2016</date>) <biblScope unit="page">P05007</biblScope>.</bibl>
+	<bibl><author>A. Werthmüller et al.</author>, <title level="j">Hyp. Interact.</title> <biblScope unit="volume">103</biblScope> (<date>1996</date>) <biblScope unit="page">147</biblScope>.</bibl>
+	<bibl><author>T. Matsuzaki et al.</author>, <title level="j">Nucl. Instr. Meth. A</title> <biblScope unit="volume">465</biblScope> (<date>2001</date>) <biblScope unit="page">365</biblScope>.</bibl>
+	<bibl><author>M. Bonesini et al.</author>, <title level="j">J. of Inst.</title> <biblScope unit="volume">12</biblScope> (<date>2017</date>) <biblScope unit="page">C03035</biblScope>.</bibl>
+	<bibl><author>N. C. Mukhopadhyay</author>, <title level="j">Phys. Rep.</title> <biblScope unit="volume">30</biblScope> (<date>1977</date>) <biblScope unit="page">1</biblScope>.</bibl>
+	<bibl><author>D. Bakalov et al.</author>, <title level="j">Phys. Lett. A</title> <biblScope unit="volume">379</biblScope> (<date>2015</date>) <biblScope unit="page">151</biblScope>.</bibl>
+	<bibl><author>A. Werthmüller et al.</author>, <title level="j">Hyp. Interact.</title> <biblScope unit="volume">116</biblScope> (<date>1998</date>) <biblScope unit="page">1</biblScope>.</bibl>
+	<bibl><author>S. Agostinelli et al.</author>, <title level="j">Nucl. Instr. Meth. A</title> <biblScope unit="volume">506</biblScope> (<date>2003</date>) <biblScope unit="page">250</biblScope>.</bibl>
+	<bibl><author>Y.A. Thalmann et al.</author>, <title level="j">Phys. Rev. A</title> <biblScope unit="volume">57</biblScope> (<date>1998</date>) <biblScope unit="page">1713</biblScope>.</bibl>
+	<bibl><author>S. G. Basiladze et al.</author>, <title level="j">Eksp. Teor. Fiz.</title> <biblScope unit="volume">49</biblScope> (<date>1965</date>) <biblScope unit="page">1042</biblScope> [<title level="j">Sov.Phys .JETP</title> <biblScope unit="volume">22</biblScope> ( <date>1966</date>)<biblScope unit="volume">725</biblScope> ].</bibl>
+	<bibl><author>A. Dupays</author>, <title level="j">Phys. Rev. A</title> <biblScope unit="volume">72</biblScope> (<date>2005</date>) <biblScope unit="page">054501</biblScope>.</bibl>
+	<bibl><author>L. Schellenberg et al.</author>, <title level="m">Muon Transfer with a New High PressureGastarget ,Muonic Atoms and Molecules</title> ,edited by <editor>L. A. Schallerand C . Petitjean</editor>( <publisher>Birkhauser -Verlag</publisher>,<pubPlace>Basel</pubPlace>) (<date>1993</date>) <biblScope unit="page">187</biblScope>.</bibl>
+	<bibl><author>C. Boschi and I. Baneschi</author>, <note type="report">CNR Internal report</note> (<date>2016</date>), (<note>unpublished)</note>.</bibl>
+	<bibl><author>V. A. Andreev et al.</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">91</biblScope> (<date>2015</date>) <biblScope unit="page">055502</biblScope>.</bibl>
+	<bibl><author>C. Chiccoli et al.</author>, <title level="j">Muon Catal. Fusion</title> <biblScope unit="volume">7</biblScope> (<date>1992</date>) <biblScope unit="page">87</biblScope>.</bibl>
+	<bibl><author>T. Suzuki, D. F. Measday, J. P. Roalsvig</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="page">35</biblScope>( <date>1987</date>).</bibl>
+	<bibl><author>Anh-Thu Le and C. D. Lin</author>, <title level="j">Phys. Rev. A</title> <biblScope unit="volume">71</biblScope> (<date>2005</date>) <biblScope unit="page">022507</biblScope>.</bibl>
+	<bibl><author>A. Dupays et al.</author>, <title level="j">Phys. Rev. A</title> <biblScope unit="volume">69</biblScope> (<date>2004</date>) <biblScope unit="page">062501</biblScope>.</bibl>
+	<bibl><author>R. Jacot-Guillarmod et al.</author>, <title level="j">Phys. Rev. A</title> <biblScope unit="volume">55</biblScope> (<date>1997</date>) <biblScope unit="page">3447</biblScope>.</bibl>
+	<bibl><author>G. Fiorentini and G. Torelli</author>, <title level="j">Il Nuovo Cimento 36 A</title> (<date>1976</date>) <biblScope unit="page">317</biblScope>.</bibl>
+	<bibl><author>R. Brun and F. Rademakers</author>, <title level="j">Nucl. Inst. &amp; Meth. in Phys. Res.A</title> ,<biblScope unit="volume">389</biblScope> ( <date>1997</date>)<biblScope unit="volume">81</biblScope> .See also <ptr type="web">http ://root.cern.ch/</ptr>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

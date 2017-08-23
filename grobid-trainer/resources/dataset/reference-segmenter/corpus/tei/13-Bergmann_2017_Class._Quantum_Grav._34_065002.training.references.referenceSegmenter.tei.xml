@@ -1,0 +1,35 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> Goßler S et al 2010 The AEI 10 m prototype interferometer Class. Quantum Grav. 27 084023<lb/> </bibl>
+        <bibl><label>[2]</label> Buonanno A and Chen Y 2001 Optical noise correlations and beating the standard quantum limit<lb/> in advanced gravitational-wave detectors Class. Quantum Grav. 18 L95<lb/> </bibl>
+        <bibl><label>[3]</label> Aasi J et al 2015 Advanced LIGO Class. Quantum Grav. 32 074001<lb/> </bibl>
+        <bibl><label>[4]</label> Acernese F et al 2015 Advanced Virgo: a second-generation interferometric gravitational wave<lb/> detector Class. Quantum Grav. 32 024001<lb/> </bibl>
+        <bibl><label>[5]</label> Aso Y, Michimura Y, Somiya K, Ando M, Miyakawa O, Sekiguchi T, Tatsumi D and Yamamoto H<lb/> 2013 Interferometer design of the kagra gravitational wave detector Phys. Rev. D 88 043007<lb/> </bibl>
+        <bibl><label>[6]</label> Punturo M et al 2010 The Einstein telescope: a third-generation gravitational wave observatory<lb/> Class. Quantum Grav. 27 194002<lb/> </bibl>
+        <bibl><label>[7]</label> Westphal T 2016 A coating thermal noise interferometer for the AEI 10 m prototype facility<lb/> PhD Thesis Technische Informationsbibliothek und Universitätsbibliothek Hannover (TIB)<lb/> </bibl>
+        <bibl><label>[8]</label> Blom M R, Beker M G, Bertolini A, van den Brand J F J, Bulten H J, Doets M, Hennes E, Mul F A,<lb/> Rabeling D S and Schimmel A 2015 Vertical and horizontal seismic isolation performance of the<lb/> advanced Virgo external injection bench seismic attenuation system Phys. Proc. 61 641-7<lb/> </bibl>
+        <bibl><label>[9]</label> Matichard F et al 2015 Seismic isolation of advanced LIGO: review of strategy, instrumentation<lb/> and performance Class. Quantum Grav. 32 185003<lb/> </bibl>
+        <bibl><label>[10]</label> Wanner A, Bergmann G, Bertolini A, Fricke T, Lück H, Mow-Lowry C M, Strain K A, Goßler S<lb/> and Danzmann K 2012 Seismic attenuation system for the AEI 10 m prototype Class. Quantum<lb/> Grav. 29 245007<lb/> </bibl>
+        <bibl><label>[11]</label> Bertolini A, DeSalvo R, Fidecaro F, Francesconi M, Marka S, Sannibale V, Simonetti D, Takamori A<lb/> and Tariq H 2006 Mechanical design of a single-axis monolithic accelerometer for advanced<lb/> seismic attenuation systems Nucl. Instrum. Methods Phys. Res. A 556 616-23<lb/> </bibl>
+        <bibl><label>[12]</label> Stochino A, DeSalvo R, Huang Y and Sannibale V 2007 Improvement of the seismic noise<lb/> attenuation performance of the monolithic geometric anti-spring filters for gravitational wave<lb/> interferometric detectors Nucl. Instrum. Methods Phys. Res. A 580 1559-64<lb/> </bibl>
+        <bibl><label>[13]</label> Bertolini A, Cella G, DeSalvo R and Sannibale V 1999 Seismic noise filters, vertical resonance<lb/> frequency reduction with geometric anti-springs: a feasibility study Nucl. Instrum. Methods<lb/> Phys. Res. A 435 475-83<lb/> </bibl>
+        <bibl><label>[14]</label> Cella G, Sannibale V, DeSalvo R, Marka S and Takamori A 2005 Monolithic geometric anti-spring<lb/> blades Nucl. Instrum. Methods Phys. Res. A 540 502-19<lb/> </bibl>
+        <bibl><label>[15]</label> www.sercel.com/<lb/> </bibl>
+        <bibl><label>[16]</label> Tariq H et al 2002 The linear variable differential transformer (LVDT) position sensor for<lb/> gravitational wave interferometer low-frequency controls Nucl. Instrum. Methods Phys. Res. A<lb/> 489 570-6<lb/> </bibl>
+        <bibl><label>[17]</label> Wanner A 2013 Seismic attenuation system (AEI-SAS) for the AEI 10 m prototype PhD Thesis<lb/> Technische Informationsbibliothek und Universitätsbibliothek Hannover (TIB)<lb/> </bibl>
+        <bibl><label>[18]</label> Losurdo G et al 1999 An inverted pendulum preisolator stage for the virgo suspension system<lb/> Rev. Sci. Instrum. 70 2507-15<lb/> </bibl>
+        <bibl><label>[19]</label> Matichard F and Evans M 2015 Review: tilt-free low-noise seismometry Bull. Seismol. Soc. Am.<lb/> 105 497-510<lb/> </bibl>
+        <bibl><label>[20]</label> Beccaria M et al 1998 The creep problem in the Virgo suspensions: a possible solution using<lb/> maraging steel Nucl. Instrum. Methods Phys. Res. A 404 455-69<lb/> </bibl>
+        <bibl><label>[21]</label> http://asm.matweb.com/<lb/> </bibl>
+        <bibl><label>[22]</label> www.imoa.info/<lb/> </bibl>
+        <bibl><label>[23]</label> Blom M R, Bertolini A, Hennes E, Schimmel A, Bulten H J, Beker M G, Mul F, Doets M and<lb/> van den Brand J F J 2013 Performance of the advanced Virgo external injection bench seismic<lb/> attenuation system LVC Meeting Hannover</bibl>
+        </listBibl>
+    </text>
+</tei>
+
