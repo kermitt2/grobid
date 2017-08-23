@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>L. Bianchi</author>, <title level="m">Lezioni di Geometria Differentiale</title>, <note>2nd ed.</note> (<publisher>Spoerri</publisher>, <pubPlace>Pisa</pubPlace>, <date>1902</date>).</bibl>
+	<bibl><author>M. Spivak</author>, <title level="m">A Comprehensive Introduction to Differential Geometry</title> (<publisher>Publish or PerishInc</publisher> .,<pubPlace>Houston</pubPlace> ,<date>1979</date> ).</bibl>
+	<bibl><author>H. Lamb</author>, <title level="m">Hydrodynamics</title> (<publisher>Cambridge Univ. Press</publisher>, <pubPlace>Cambridge</pubPlace>, <date>1993</date>).</bibl>
+	<bibl><author>B. Rozdestvenskii and N. Janenko</author>, <title level="m">Systems of Quasilinear Equations and TheirApplications to Gas Dynamics</title> ( <publisher>AMS</publisher>,<pubPlace>Providence</pubPlace> ,<date>1983</date> ).</bibl>
+	<bibl><author>S. Chandrasekhar</author>, <title level="m">Hydrodynamic and Hydromagnetic Stability</title> (<publisher>Dover</publisher>, <pubPlace>New York</pubPlace>,<date>1981</date> ).</bibl>
+	<bibl><author>R. Hill</author>, <title level="m">The Mathematical Theory of Plasticity</title> (<publisher>Oxford Univ. Press</publisher>, <pubPlace>Oxford</pubPlace>, <date>1998</date>).</bibl>
+	<bibl><author>G. Boilat</author>, <title level="m">La Propagation des Ondes</title> (<publisher>Gauthier-Villars</publisher>, <pubPlace>Paris</pubPlace>, <date>1965</date>).</bibl>
+	<bibl><author>D. Nelson, T. Piran and S. Weinberg</author>, <title level="m">Statistical Mechanics of Membranes andSurfaces</title> ( <publisher>WorldScientific</publisher> ,<pubPlace>Singapore</pubPlace> ,<date>1992</date> ).</bibl>
+	<bibl><author>F. David, P. Ginsparg and Y. Zinn-Justin</author>, <title level="m">Fluctuating Geometries in Statis-ticalMechanics and Field Theory</title> ( <publisher>Elsevier</publisher>,<pubPlace>Amsterdam</pubPlace> ,<date>1996</date> ).</bibl>
+	<bibl><author>M. Luban</author>, in <title level="m">Phase Transitions and Critical Phenomena</title>, Vol. <biblScope unit="volume">5A</biblScope>, Eds. <editor>C. Domb andM .S.Green</editor> ( <publisher>AcademicPress</publisher> ,<pubPlace>London</pubPlace> ,<date>1976</date> ).</bibl>
+	<bibl><author>R. Jackiw</author>, <title level="m">A Particle Theorist&apos;s Lectures on Supersymmetric Non-Abelian Fluid Mechanicsand d -Branes</title>( <publisher>Springer</publisher>,<pubPlace>New York</pubPlace> ,<date>2002</date> ).</bibl>
+	<bibl><author>F. Chen</author>, <title level="m">Introduction to Plasma Physics and Controlled Fusion, Vol. 1: Plasma Physics</title>( <publisher>PlenumPress</publisher> ,<pubPlace>New York</pubPlace> ,<date>1983</date> ).</bibl>
+	<bibl><author>A. Sommerfeld</author>, <title level="s">Lectures on Theoretical Physics</title>, Vol. <biblScope unit="volume">1-3</biblScope> (<publisher>Academic Press</publisher>, <pubPlace>New York</pubPlace>,<date>1952</date> ).</bibl>
+	<bibl><author>R. K. Luneburg</author>, <title level="m">Mathematical Theory of Optics</title> (<publisher>Univ. California Press</publisher>, <pubPlace>Berke-ley</pubPlace>,<date>1964</date> ).</bibl>
+	<bibl><author>A. Davidov</author>, <title level="m">Solitons in Molecular Systems</title> (<publisher>Kluwer</publisher>, <pubPlace>New York</pubPlace>, <date>1991</date>).</bibl>
+	<bibl><author>Z. Ou-Yang, J. Liu and Y. Xie</author>, <title level="m">Geometric Methods in the Elastic Theory of Membranesin Liquid Crystal Phases</title> ( <publisher>WorldScientific</publisher> ,<pubPlace>Singapore</pubPlace> ,<date>1999</date> ).</bibl>
+	<bibl><author>S. A. Safran</author>, <title level="m">Statistical Thermodynamics of Surfaces, Interfaces and Membranes</title> (<publisher>Addison-Wesley</publisher>,<pubPlace>New York</pubPlace> ,<date>1994</date> ).</bibl>
+	<bibl><author>M. Arik, F. Neyzi, Y. Nutku, P. J. Olver and J. M. Verosky</author>, <title level="a">Multi-Hamiltonianstructure of the Born -Infeldequation</title> ,<title level="j">J .Math .Phys .</title><biblScope unit="volume">30</biblScope> (<biblScope unit="issue">6</biblScope>):<biblScope unit="page">1338-1344</biblScope>(<date>1989</date> ).</bibl>
+	<bibl><author>G. B. Whitham</author>, <title level="m">Linear and Nonlinear Waves</title> (<publisher>John Wiley Pub.</publisher>, <pubPlace>New York</pubPlace>, <date>1974</date>).</bibl>
+	<bibl><author>J. Moser and A. P. Veselov</author>, <title level="a">Two-dimensional discrete hydrodynamics and Monge-Ampèreequations</title> ,<title level="j">Ergod .Th .and Dynam .Sys .</title><biblScope unit="volume">22</biblScope> :<biblScope unit="page">1575-1583</biblScope>( <date>2002</date>).</bibl>
+	<bibl><author>A. J. Hariton</author>, <title level="a">Supersymmetric extension of the scalar Born-Infeld equation</title>, <title level="j">J. Phys.A :Math .Gen .</title><biblScope unit="volume">39</biblScope> :<biblScope unit="page">7105-7114</biblScope>( <date>2006</date>).</bibl>
+	<bibl><author>S. Bertrand, A. M. Grundland and A. J. Hariton</author>, <title level="a">Supersymmetric versions ofthe equations of conformally parametrized surfaces</title> ,<title level="j">J .Phys .A :Math .Theor .</title><biblScope unit="volume">48</biblScope> :<biblScope unit="page">175208</biblScope>(<biblScope unit="page">37pp</biblScope> )(<date>2015</date> ).</bibl>
+	<bibl><author>D. S. Freed</author>, <title level="m">Five Lectures on Supersymmetry</title> (<publisher>AMS</publisher>, <pubPlace>New York</pubPlace>, <date>1999</date>).</bibl>
+	<bibl><author>V. S. Varadarajan</author>, <title level="m">Reflections on Quanta, Symmetries and Supersymmetries</title> (<publisher>Springer</publisher>,<pubPlace>New York</pubPlace> ,<date>2011</date> ).</bibl>
+	<bibl><author>P. J. Olver</author>, <title level="m">Applications of Lie Groups to Differential Equations</title> (<publisher>Springer</publisher>, <pubPlace>New York</pubPlace>,<date>1986</date> ).</bibl>
+	<bibl><author>P. Winternitz</author>, <title level="a">Lie Groups and Solutions of Nonlinear Partial Differential Equa-tions</title>,in <title level="m">Integrable Systems ,Quantum Groups and Quantum Field Theories</title> ,Eds .<editor>L .A.Ibortand M . A.Rodriguez</editor>( <publisher>Kluwer</publisher> ,<pubPlace>Dordrech</pubPlace>, <date>1993</date>) ,<biblScope unit="page">429</biblScope>.</bibl>
+	<bibl><author>E. Goursat</author>, <title level="a">Sur les substitutions orthogonales et les divisionsrégulì eres de l&apos;espace</title>,<title level="j">Ann .Sci .Ec .Norm .Sup .</title><biblScope unit="volume">6</biblScope> (<biblScope unit="issue">3</biblScope>):<biblScope unit="page">9-102</biblScope>( <date>1880</date>).</bibl>
+	<bibl><author>P. DuVal</author>, <title level="m">Homographies, Quaternions and Rotations</title> (<publisher>Clarendon Press</publisher>, <pubPlace>Oxford</pubPlace>, <date>1964</date>).</bibl>
+	<bibl><author>J. Patera, P. Winternitz and H. Zassenhaus</author>, <title level="a">Continuous subgroups of the fundamentalgroups of physics .I .General method and the Poincaré group</title> ,<title level="j">J .Math .Phys.</title> <biblScope unit="volume">16</biblScope>: <biblScope unit="page">1597-1614</biblScope>(<date>1975</date> ).</bibl>
+	<bibl><author>J. Patera, P. Winternitz and H. Zassenhaus</author>, <title level="a">Continuous subgroups of the fundamentalgroups of physics .II .The similitude group</title> ,<title level="j">J .Math .Phys .</title><biblScope unit="volume">16</biblScope> :<biblScope unit="page">1615-1624</biblScope>(<date>1975</date> ).</bibl>
+	<bibl><author>A. M. Grundland and A. J. Hariton</author>, <title level="a">Supersymmetric formulation of poly-tropicgas dynamics and its invariant solutions</title> ,<title level="j">J .Math .Phys .</title><biblScope unit="volume">52</biblScope> :<biblScope unit="page">043501</biblScope>( <date>2011</date>).</bibl>
+	<bibl><author>P. F. Byrd and M. D. Friedman</author>, <title level="a">Handbook of Elliptic Integrals for Engineers andScientists</title> ( <publisher>Springer</publisher>,<pubPlace>Berlin</pubPlace> ,<date>1971</date> ).</bibl>
+	<bibl><author>P. Mathieu</author>, <title level="a">Supersymmetric extension of the Korteweg-de Vries equation</title>, <title level="j">J. Math.Phys .</title><biblScope unit="volume">29</biblScope> :<biblScope unit="page">2499-2506</biblScope>( <date>1988</date>).</bibl>
+	<bibl><author>P. Labelle and P. Mathieu</author>, <title level="a">A new N=2 supersymmetric Korteweg-de Vries equation</title>,<title level="j">J .Math .Phys .</title><biblScope unit="volume">32</biblScope> :<biblScope unit="page">923-927</biblScope>( <date>1991</date>).</bibl>
+	<bibl><author>Y. Bergner and R. Jackiw</author>, <title level="a">Integrable supersymmetric fluid mechanics from superstrings</title>,<title level="j">Phys .Lett .A</title> <biblScope unit="volume">284</biblScope> :<biblScope unit="page">146-151</biblScope>( <date>2001</date>).</bibl>
+	<bibl><author>R. Jackiw and A. P. Polychronakos</author>, <title level="a">Supersymmetric fluid mechanics</title>, <title level="j">Phys. Rev.D</title> <biblScope unit="volume">62</biblScope> :<biblScope unit="page">085019</biblScope>( <date>2000</date>).</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

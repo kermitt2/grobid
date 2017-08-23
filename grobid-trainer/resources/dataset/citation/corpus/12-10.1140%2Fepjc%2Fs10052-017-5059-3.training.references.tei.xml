@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>S. Weinberg</author>, <title level="m">Gravitation and Cosmology</title> (<publisher>Wiley</publisher>, <pubPlace>New York</pubPlace>, <date>1972</date>)</bibl>
+	<bibl><author>N.D. Birrell, P.C.W. Davies</author>, <title level="m">Quantum Fields in Curved Space</title> (<publisher>CambridgeUniversity Press</publisher> ,<pubPlace>Cambridge</pubPlace> ,<date>1982</date> )</bibl>
+	<bibl><author>R.M. Wald</author>, <title level="m">General Relativity</title> (<publisher>University of Chicago Press</publisher>, <pubPlace>Chicago</pubPlace>,<date>1984</date> )</bibl>
+	<bibl><author>M. Ibison</author>, <title level="j">J. Math. Phys.</title> <biblScope unit="volume">48</biblScope>, <biblScope unit="page">122501</biblScope> (<date>2007</date>)</bibl>
+	<bibl><author>O. Gron, S. Johannesen</author>, <title level="j">Eur. Phys. J. Plus</title> <biblScope unit="volume">126</biblScope>, <biblScope unit="page">28</biblScope> (<date>2011</date>)</bibl>
+	<bibl><author>O. Gron, S. Johannesen</author>, <title level="j">Eur. Phys. J. Plus</title> <biblScope unit="volume">126</biblScope>, <biblScope unit="page">29</biblScope> (<date>2011</date>)</bibl>
+	<bibl><author>O. Gron, S. Johannesen</author>, <title level="j">Eur. Phys. J. Plus</title> <biblScope unit="volume">126</biblScope>, <biblScope unit="page">30</biblScope> (<date>2011</date>)</bibl>
+	<bibl><author>M. Gurses, Y. Gursey</author>, <title level="j">Nuovo Cimento B</title> <biblScope unit="volume">25</biblScope>, <biblScope unit="page">786</biblScope> (<date>1975</date>)</bibl>
+	<bibl><author>P.D. Mannheim</author>, <title level="j">Prog. Part. Nucl. Phys.</title> <biblScope unit="volume">56</biblScope>, <biblScope unit="page">340</biblScope> (<date>2006</date>)</bibl>
+	<bibl><author>T. Levi-Civita</author>, <title level="j">Rend. R. Accad. Lincei</title> <biblScope unit="volume">26</biblScope>, <biblScope unit="page">519</biblScope> (<date>1917</date>)</bibl>
+	<bibl><author>B. Bertotti</author>, <title level="j">Phys. Rev.</title> <biblScope unit="volume">116</biblScope>, <biblScope unit="page">1331</biblScope> (<date>1959</date>)</bibl>
+	<bibl><author>I. Robinson</author>, <title level="j">Bull. Acad. Pol. Sci. Ser. Sci. Math. Astr. Phys.</title> <biblScope unit="volume">7</biblScope>, <biblScope unit="page">351</biblScope> (<date>1959</date>)</bibl>
+	<bibl><author>T. Levi-Civita</author>, <title level="j">Gen. Relativ. Gravit.</title> <biblScope unit="volume">43</biblScope>, <biblScope unit="page">2307</biblScope> (<date>2011</date>)</bibl>
+	<bibl><author>D. Lovelock</author>, <title level="j">Commun. Math. Phys.</title> <biblScope unit="volume">5</biblScope>, <biblScope unit="page">205</biblScope> (<date>1967</date>)</bibl>
+	<bibl><author>O. Gron, S. Johannesen</author>, <title level="j">Eur. Phys. J. Plus</title> <biblScope unit="volume">126</biblScope>, <biblScope unit="page">89</biblScope> (<date>2011</date>)</bibl>
+	<bibl><author>P. Dolan</author>, <title level="j">Commun. Math. Phys.</title> <biblScope unit="volume">9</biblScope>, <biblScope unit="page">161</biblScope> (<date>1968</date>)</bibl>
+	<bibl><author>O. Gron, S. Johannesen</author>, <title level="j">Eur. Phys. J. Plus</title> <biblScope unit="volume">129</biblScope>, <biblScope unit="page">230</biblScope> (<date>2014</date>)</bibl>
+	<bibl><author>O. Gron, S. Johannesen</author>, <title level="j">Eur. Phys. J. Plus</title> <biblScope unit="volume">128</biblScope>, <biblScope unit="page">43</biblScope> (<date>2013</date>)</bibl>
+	<bibl><author>J.P. Pereira, J.G. Coelho, J.A. Rueda</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">90</biblScope>, <biblScope unit="page">123011</biblScope> (<date>2014</date>)</bibl>
+	<bibl><author>J.P.S. Lemos, G.M. Quinta</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">88</biblScope>, <biblScope unit="page">067501</biblScope> (<date>2013</date>)</bibl>
+	<bibl><author>E.F. Eiroa, C. Simeone</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">83</biblScope>, <biblScope unit="page">104009</biblScope> (<date>2011</date>)</bibl>
+	<bibl><author>E.I. Guendelman, I. Shilon</author>, <title level="j">Class. Quant. Grav.</title> <biblScope unit="volume">26</biblScope>, <biblScope unit="page">045007</biblScope> (<date>2009</date>)</bibl>
+	<bibl><author>F.S.N. Lobo, P. Crawford</author>, <title level="j">Class. Quant. Grav.</title> <biblScope unit="volume">22</biblScope>, <biblScope unit="page">4869</biblScope> (<date>2005</date>)</bibl>
+	<bibl><author>M. Ishak, K. Lake</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">65</biblScope>, <biblScope unit="page">044011</biblScope> (<date>2002</date>)</bibl>
+	<bibl><author>D. Grumiller</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">105</biblScope>, <biblScope unit="page">211303</biblScope> (<date>2010</date>)</bibl>
+	<bibl><author>D. Grumiller</author> <title level="j">Phys. Rev. Lett.</title>, <biblScope unit="volume">105</biblScope>, <biblScope unit="page">039901</biblScope> (<date>2011</date>)E</bibl>
+	<bibl><author>M. Halilsoy, O. Gurtug, S.H. Mazharimousavi</author>, <title level="j">Astroparticle Phys.</title> <biblScope unit="volume">68</biblScope>,<biblScope unit="page">1</biblScope> ( <date>2015</date>)</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

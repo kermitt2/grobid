@@ -1,0 +1,70 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> I. Belolaptikov et al. Astropart. Phys. 7 (1997) 263.<lb/> </bibl>
+        <bibl><label>[2]</label> V. Aynutdinov et al. Nucl. Phys. (Proc. Suppl.) B143<lb/> (2005) 335.<lb/> </bibl>
+        <bibl><label>[3]</label> V. Aynutdinov et al. Astropart. Phys. 25 (2006) 140.<lb/> </bibl>
+        <bibl><label>[4]</label> V. Aynutdinov et al. Physics of Atomic Nuclei , V69,<lb/> 11 (2006) p1914.<lb/> </bibl>
+        <bibl><label>[5]</label> V. Aynutdinov et al. NIM A567 (2006) 433.<lb/> </bibl>
+        <bibl><label>[6]</label> V. Aynutdinov et al., Proc. 30th ICRC (icrc1084),<lb/> Merida (Mexico) 2007; arXiv.org: astro-ph/0710.3063.<lb/> </bibl>
+        <bibl><label>[7]</label> V. Aynutdinov et al., &quot;The prototype string for<lb/> the km3-scale Baikal neutrino telescope&quot;, these<lb/> proceedings.<lb/> </bibl>
+        <bibl><label>[8]</label> V. Balkanov et al. Astropart. Phys. 12 (1999) 75.<lb/> </bibl>
+        <bibl><label>[9]</label> V. Aynutdinov et al. Int. J. Mod. Phys. A20 (2005)<lb/> 6932.<lb/> </bibl>
+        <bibl><label>[10]</label> V. Balkanov et al. Nucl.Phys. (Proc.Suppl.) B91 (2001)<lb/> 438.<lb/> </bibl>
+        <bibl><label>[11]</label> V. Agrawal, T. Gaisser, P. Lipari &amp; T. Stanev Phys.<lb/> Rev. D53 (1996) 1314.<lb/> </bibl>
+        <bibl><label>[12]</label> K. Antipin et al., Proc. of the First Workshop on Exotic<lb/> Physics with Neutrino Telescopes, Uppsala (Sweden)<lb/> 2006 34.<lb/> </bibl>
+        <bibl><label>[13]</label> V. Aynutdinov et al. NIM A588 (2008) 99<lb/> </bibl>
+        <bibl><label>[14]</label> M. Boliev et al. Nucl. Phys. (Proc. Suppl.) 48 (1996)<lb/> 83;</bibl>
+        <bibl>O. Suvorova arXiv.org: hep-ph/9911415 (1999).<lb/> </bibl>
+        <bibl><label>[15]</label> M. Ambrosio et al. Phys. Rev. D60 (1999) 082002.<lb/> </bibl>
+        <bibl><label>[16]</label> S. Desai et al. Phys. Rev. D70 (2004) 083523; erratum<lb/> ibid D70 (2004) 109901.<lb/> </bibl>
+        <bibl><label>[17]</label> J. Ahrens et al. arXiv.org: astro-ph/0509330 (2005).<lb/> </bibl>
+        <bibl><label>[18]</label> V. Aynutdinov et al. Astropart. Phys. 29 (2008) 366.<lb/> </bibl>
+        <bibl><label>[19]</label> S. Orito et. al. Phys.Rev.Lett. 66 (1991) 1951.<lb/> </bibl>
+        <bibl><label>[20]</label> M. Ambrosio et. al. Astropart. Phys. 19 (2003) 313.<lb/> </bibl>
+        <bibl><label>[21]</label> P. Niessen, C. Spiering et al. Proc. 27th ICRC,<lb/> Hamburg, V.4 (2001) 1496.<lb/> </bibl>
+        <bibl><label>[22]</label> H. Wissing et al. Proc. 30th ICRC, Merida, 2007.<lb/> </bibl>
+        <bibl><label>[23]</label> M. Ackermann et al. Astropart. Phys. 22 (2005) 127;<lb/> </bibl>
+        <bibl>Astropart. Phys. 22 (2005) 339.<lb/> </bibl>
+        <bibl><label>[24]</label> M. Ackermann et al. Astropart. Phys. 22 (2005) 339.<lb/> </bibl>
+        <bibl><label>[25]</label> M. Ackermann et al. Phys. Rev. D76 (2007) 042008.<lb/> </bibl>
+        <bibl><label>[26]</label> F. Stecker and M. Salamon Space Sci. Rev. 75 (1996)<lb/> 341.<lb/> </bibl>
+        <bibl><label>[27]</label> F. Stecker Phys. Rev. D72 (2005) 107301.<lb/> </bibl>
+        <bibl><label>[28]</label> A. Szabo and R. Protheroe, Proc. High Energy<lb/> Neutrino Astrophysics, Honolulu, Hawaii (1992).<lb/> </bibl>
+        <bibl><label>[29]</label> R. Protheroe arXiv.org:astro-ph /9612213.<lb/> </bibl>
+        <bibl><label>[30]</label> K. Mannheim Astropart. Phys. 3 (1995) 295.<lb/> </bibl>
+        <bibl><label>[31]</label> K. Mannheim, R. Protheroe and J. Rachen Phys. Rev.<lb/> D63 (2001) 023003.<lb/> </bibl>
+        <bibl><label>[32]</label> D. Semikoz and G. Sigl, arXiv.org:hep-ph/0309328.<lb/> </bibl>
+        <bibl><label>[33]</label> V. Aynutdinov et al. Proc. 29th ICRC, Pune (India)<lb/> 2005; arXiv.org: astro-ph /0507715.<lb/> </bibl>
+        <bibl><label>[34]</label> M. Ambrosio et al. Nucl. Phys. (Proc. Suppl.) B110<lb/> (2002) 519.<lb/> </bibl>
+        <bibl><label>[35]</label> V. Berezinsky et al. in: Astrophysics of Cosmic Rays,<lb/> Elsevier Science, North-Holland 1990.<lb/> </bibl>
+        <bibl><label>[36]</label> V. Berezinsky arXiv.org: astro-ph/0505220 (2005).<lb/> </bibl>
+        <bibl><label>[37]</label> E. Waxman and J. Bahcall Phys. Rev. D59 (1999)<lb/> 023002.<lb/> </bibl>
+        <bibl><label>[38]</label> L. Nellen, K. Mannheim and P. Biermann Phys. Rev.<lb/> D47 (1993) 5270.<lb/> </bibl>
+        <bibl><label>[39]</label> L. Volkova Yad. Fiz. 31 (1980) 1510.<lb/> </bibl>
+        <bibl><label>[40]</label> L. Volkova and G. Zatsepin Phys. Lett. B462 (1999)<lb/> 211.<lb/> </bibl>
+        <bibl><label>[41]</label> E. Bugaev, V. Naumov, S. Sinegovsky, E. Zaslavskaya,<lb/> Nuovo Cim. C12, 41 (1989).<lb/> </bibl>
+        <bibl><label>[42]</label> V. Aynutdinov et al., Izvestia RAN / Ser. Fiz. 3 69<lb/> (2005) 406<lb/> </bibl>
+        <bibl><label>[43]</label> J. Hörandel, Int.J.Mod.Phys. A20 (2005) 6753.<lb/> </bibl>
+        <bibl><label>[44]</label> V. Aynutdinov et al., Int.J.Mod.Phys. A21S1 (2006)<lb/> 117; </bibl>
+        <bibl>V. Aynutdinov et al. Acoust. Phys. 52 N5 (2006)<lb/> 495.<lb/> </bibl>
+        <bibl><label>[45]</label> V. Aynutdinov et al., Proc. 30th ICRC (icrc0639),<lb/> Merida (Mexico) 2007; arXiv.org: astro-ph/0710.3113.<lb/> </bibl>
+        <bibl><label>[46]</label> C. S. Clay and H. Medwin. Acoustical Oceanography<lb/> (Wiley, New York), 1977.<lb/> </bibl>
+        <bibl><label>[47]</label> V. Aynutdinov et al., Proc. Int. ARENA2008<lb/> Workshop, Rome, 2008; to be publ. NIM-A, 2008.<lb/> </bibl>
+        <bibl><label>[48]</label> Chen C.T. and Millero F.J. Limnol.Oceanogr. 31, 1986,<lb/> P. 657–682.<lb/> </bibl>
+        <bibl><label>[49]</label> Weiss R.F., Carmac E.C., Koropalov V.M., Nature,<lb/> 1991 V349 665.<lb/> </bibl>
+        <bibl><label>[50]</label> V. Balkanov et al. Applied Optics 38(33) 6818 (1999).<lb/> </bibl>
+        <bibl><label>[51]</label> V. Balkanov et al., Prog.Part.Nucl.Phys. 40 (1998) 391;<lb/> astro-ph/9801044<lb/> </bibl>
+        <bibl><label>[52]</label> I. Belolaptikov et al., Proc. 3rd Nestor Int. Workshop,<lb/> Pylos (Greece) 1993; DESY-94-049<lb/> </bibl>
+        <bibl><label>[53]</label> K. Kebkal et al., these proceedings.<lb/> </bibl>
+        <bibl><label>[54]</label> M. Schmid, N.M. Budnev, N.G. Granin et al.,<lb/> Geophysical Research Letters Vol. 35, L09605 (2008);<lb/> doi:10.1029/2008GL033223, 2008.<lb/> </bibl>
+        <bibl><label>[55]</label> V. Aynutdinov et al., Proc. 10th Int.Conf.Instr.Coll.<lb/> Beam Phys., Novosibirsk (Russia) 2008; NIM-A in<lb/> press</bibl>
+        </listBibl>
+    </text>
+</tei>
+
