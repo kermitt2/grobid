@@ -1,0 +1,73 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> D. Sexty, PoS LATTICE 2014 (2015) [arXiv:1410.8813 [hep-lat]]. </bibl>
+            <bibl>C. Gattringer, PoS LAT-<lb/>TICE 2013 (2014) 002 [arXiv:1401.7788 [hep-lat]]. </bibl>
+            <bibl>G. Aarts, PoS LATTICE 2012 (2012)<lb/> 017 [arXiv:1302.3028 [hep-lat]]. </bibl>
+            <bibl>L. Levkova, PoS LATTICE 2011 (2011) 011 [arXiv:1201.1516<lb/> [hep-lat]]. </bibl>
+            <bibl>S. Gupta, PoS LATTICE 2010 (2010) 007 [arXiv:1101.0109 [hep-lat]]. </bibl>
+            <bibl>U. Wolff,<lb/> PoS LATTICE 2010 (2010) 020 [arXiv:1009.0657 [hep-lat]]. </bibl>
+            <bibl>P. de Forcrand, PoS LAT 2009<lb/> (2009) 010 [arXiv:1005.0539 [hep-lat]]. </bibl>
+            <bibl>A. Li, PoS LAT 2009 (2009) 011 [arXiv:1002.4459<lb/> [hep-lat]]. </bibl>
+            <bibl>S. Chandrasekharan, PoS LATTICE 2008 (2008) 003 [arXiv:0810.2419 [hep-lat]].<lb/> </bibl>
+            <bibl>S. Ejiri, PoS LATTICE 2008 (2008) 002 [arXiv:0812.1534 [hep-lat]].<lb/> </bibl>
+        <bibl><label>[2]</label> T. Sterling, J. Greensite, Nucl. Phys. B 220 (1983) 327. </bibl>
+            <bibl>M. Panero, JHEP 0505 (2005) 066<lb/> [hep-lat/0503024]. </bibl>
+            <bibl>M.G. Endres, Phys. Rev. D 75 (2007) 065012 [hep-lat/0610029]; </bibl>
+            <bibl>PoS<lb/> LAT06 (2006) 133 [hep-lat/0609037]. </bibl>
+            <bibl>V. Azcoiti, E. Follana, A. Vaquero, G. Di Carlo, JHEP<lb/> 0908 (2009) 008 [arXiv:0905.0639 [hep-lat]]. </bibl>
+            <bibl>T. Korzec, U. Wolff, PoS LATTICE 2010<lb/> (2010) 029 [arXiv:1011.1359 [hep-lat]]; </bibl>
+            <bibl>PoS LATTICE 2013 (2014) 039 [arXiv:1309.1331<lb/> [hep-lat]]; </bibl>
+            <bibl>T. Korzec, U. Wolff, Nucl. Phys. B 871 (2013) 145 [arXiv:1212.2875 [hep-lat]].<lb/> </bibl>
+            <bibl>P.N. Meisinger, M.C. Ogilvie, arXiv:1306.1495 [hep-lat]. </bibl>
+            <bibl>C. Gattringer, A. Schmidt, Phys. Rev.<lb/> D 86 (2012) 094506 [arXiv:1208.6472 [hep-lat]]. </bibl>
+            <bibl>Y.D. Mercado, C. Gattringer, A. Schmidt,<lb/> Phys. Rev. Lett. 111 (2013) 14, 141601 [arXiv:1307.6120 [hep-lat]]; </bibl>
+            <bibl>Comput. Phys. Commun.<lb/> 184 (2013) 1535 [arXiv:1211.3436 [hep-lat]]. </bibl>
+            <bibl>A. Schmidt, P. de Forcrand, C. Gattringer, PoS<lb/> Lattice 2014 (2015) 209 [arXiv:1501.06472 [hep-lat]].<lb/> </bibl>
+        <bibl><label>[3]</label> C. Gattringer, T. Kloiber, M. Müller-Preussker, Phys. Rev. D 92 (2015) no.11, 114508<lb/> [arXiv:1508.00681 [hep-lat]]. </bibl>
+            <bibl>T. Kloiber, C. Gattringer, PoS Lattice 2014 (2015) 345<lb/> [arXiv:1410.3216 [hep-lat]].<lb/> </bibl>
+        <bibl><label>[4]</label> S. Chandrasekharan, Phys. Rev. D 86 (2012) 021701 [arXiv:1205.0084 [hep-lat]]. </bibl>
+            <bibl>D.J. Cecile,<lb/> S. Chandrasekharan, Phys. Rev. D 77 (2008) 054502 [arXiv:0801.1857 [hep-lat]]. </bibl>
+            <bibl>S. Chan-<lb/>drasekharan, F.J. Jiang, Phys. Rev. D 74 (2006) 014506 [hep-lat/0602031]. </bibl>
+            <bibl>S. Chandrasekha-<lb/>ran, C.G. Strouthos, Phys. Rev. D 69 (2004) 091502 [hep-lat/0401002]. </bibl>
+            <bibl>S. Chandrasekharan,<lb/> F.J. Jiang, Phys. Rev. D 68 (2003) 091501 [hep-lat/0309025]. </bibl>
+            <bibl>D.H. Adams, S. Chandrasekha-<lb/>ran, Nucl. Phys. B 662 (2003) 220 [hep-lat/0303003]. </bibl>
+            <bibl>S. Chandrasekharan, C.G. Strouthos,<lb/> Phys. Rev. D 68 (2003) 091502 [hep-lat/0306034]. </bibl>
+            <bibl>S. Chandrasekharan, Phys. Lett. B 536<lb/> (2002) 72 [hep-lat/0203020]. </bibl>
+            <bibl>H. Vairinhos, P. de Forcrand, PoS LATTICE 2015 (2016) 170.<lb/> </bibl>
+            <bibl>W. Unger, P. de Forcrand, J. Phys. G 38 (2011) 124190 [arXiv:1107.1553 [hep-lat]]. </bibl>
+            <bibl>O. Bär,<lb/> W. Rath, U. Wolff, Nucl. Phys. B 822 (2009) 408 [arXiv:0905.4417 [hep-lat]]. </bibl>
+            <bibl>U. Wolff, Nucl.<lb/> Phys. B 789 (2008) 258 [arXiv:0707.2872 [hep-lat]].<lb/> </bibl>
+        <bibl><label>[5]</label> M. Salmhofer, Nucl. Phys. B 362 (1991) 641. </bibl>
+            <bibl>H. Gausterer, C.B. Lang, M. Salmhofer,<lb/> Nucl. Phys. B 388 (1992) 275. </bibl>
+            <bibl>H. Gausterer, C.B. Lang, Nucl. Phys. B 455 (1995) 785<lb/> [hep-lat/9506028]. </bibl>
+            <bibl>F. Karsch, E. Meggiolaro, L. Turko, Phys. Rev. D 51 (1995) 6417 [hep-<lb/>lat/9411019]. </bibl>
+            <bibl>K. Scharnhorst, Phys. Rev. D 56 (1997) 3650 [hep-lat/9505001].<lb/> </bibl>
+        <bibl><label>[6]</label> C. Gattringer, Nucl. Phys. B 559 (1999) 539 [hep-lat/9903021]; </bibl>
+            <bibl>Nucl. Phys. B 543 (1999)<lb/> 533 [hep-lat/9811014].<lb/> </bibl>
+        <bibl><label>[7]</label> D. Baumgartner, U. Wenger, Nucl. Phys. B 894 (2015) 223 [arXiv:1412.5393 [hep-lat]];<lb/> </bibl>
+            <bibl>Nucl. Phys. B 897 (2015) 39 [arXiv:1503.05232 [hep-lat]]; </bibl>
+            <bibl>Nucl. Phys. B 899 (2015) 375<lb/> [arXiv:1505.07397 [hep-lat]]. </bibl>
+            <bibl>U. Wenger, Phys. Rev. D 80 (2009) 071503 [arXiv:0812.3565<lb/> [hep-lat]].<lb/> </bibl>
+        <bibl><label>[8]</label> C. Gattringer, T. Kloiber, V. Sazonov, Nucl. Phys. B 897 (2015) 732 [arXiv:1502.05479].<lb/> </bibl>
+        <bibl><label>[9]</label> L. Scorzato, PoS LATTICE 2015 (2016) 016 [arXiv:1512.08039 [hep-lat]]. G. Aarts, PoS<lb/> LATTICE 2012 (2012) 017 [arXiv:1302.3028 [hep-lat]].<lb/> </bibl>
+        <bibl><label>[10]</label> E. Follana, V. Azcoiti, G. Di Carlo, A. Vaquero Aviles-Casco, PoS LATTICE 2014 (2014)<lb/> 342.<lb/> </bibl>
+        <bibl><label>[11]</label> R. Lohmayer, R. Narayanan, Phys. Rev. D 88 (2013) 10, 105030 [arXiv:1307.4969 [hep-th]].<lb/> </bibl>
+        <bibl><label>[12]</label> P.W. Kasteleyn, Physica 27 (1961) 1209.<lb/> </bibl>
+        <bibl><label>[13]</label> H. Fukaya , T. Onogi, Phys. Rev. D 68 (2003) 074503 [hep-lat/0305004]; </bibl>
+            <bibl>Phys. Rev. D 70<lb/> (2004) 054508 [hep-lat/0403024].<lb/> </bibl>
+        <bibl><label>[14]</label> S. Dürr, Phys. Rev. D 85 (2012) 114503 [arXiv:1203.2560 [hep-lat]]; </bibl>
+            <bibl>PoS LAT 2005<lb/> (2006) 021 [hep-lat/0509026]. </bibl>
+            <bibl>S. Dürr, C. Hölbling, Phys. Rev. D 69 (2004) 034503 [hep-<lb/>lat/0311002]; </bibl>
+            <bibl>Phys. Rev. D 69 (2004) 034503 [hep-lat/0311002].<lb/> </bibl>
+        <bibl><label>[15]</label> C. Gattringer, O. Orasch, work in preparation.<lb/> </bibl>
+        <bibl><label>[16]</label> NIST Handbook of Mathematical Functions, Cambridge University Press, 2010.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

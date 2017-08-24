@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Risken H</author> <date>1989</date> <title level="m">The Fokker-Planck Equation</title> (<title level="s">Springer Series in Synergetics</title> vol <biblScope unit="volume">18</biblScope>) (<pubPlace>Berlin,Heidelberg</pubPlace> :<publisher>Springer- Verlag</publisher>)<idno type="ISBN">ISBN978- 3- 540-61530-9978-3-642 -61544-3</idno>URL<ptr type="web">http://link .springer .com/10.1007/978-3-642-61544-3</ptr></bibl>
+	<bibl><author>Nicolis C and Nicolis G</author> <date>1998</date> <title level="j">Physical Review E</title> <biblScope unit="volume">58</biblScope> <biblScope unit="page">4391-4400</biblScope> ISSN <idno type="ISSN">1063-651X</idno>, <idno type="ISSN">1095-3787</idno> URL <ptr type="web">http://link.aps.org/doi/10.1103/PhysRevE.58.4391</ptr></bibl>
+	<bibl><author>Tranchida J, Thibaudeau P and Nicolis S</author> <date>2016</date> <title level="j">Physica B: Condensed Matter</title> <biblScope unit="volume">486</biblScope> <biblScope unit="page">57-59</biblScope> ISSN <idno type="ISSN">0921-4526</idno> URL<ptr type="web">http ://www.sciencedirect.com/science/article/pii/S0921452615302787</ptr></bibl>
+	<bibl><author>Nelson E</author> <date>1966</date> <title level="j">Phys. Rev.</title> <biblScope unit="volume">150</biblScope>(<biblScope unit="issue">4</biblScope>) <biblScope unit="page">1079-1085</biblScope> URL <ptr type="web">http://link.aps.org/doi/10.1103/PhysRev.150.1079</ptr></bibl>
+	<bibl><author>Tranchida J, Thibaudeau P and Nicolis S</author> <date>2016</date> <title level="j">IEEE Transactions on Magnetics</title> 1-1 ISSN <idno type="ISSN">0018-9464</idno>, <idno type="ISSN">1941-0069</idno>URL <ptr type="web">http ://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=7401053</ptr></bibl>
+	<bibl><author>Thibaudeau P, Tranchida J and Nicolis S</author> <date>2016</date> <title level="j">IEEE Transactions on Magnetics</title> 1-1 ISSN <idno type="ISSN">0018-9464</idno>, <idno type="ISSN">1941-0069</idno>URL <ptr type="web">http ://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=7393845</ptr></bibl>
+	<bibl><author>Pérez L M, Bragard J, Mancini H, Gallas J A, Cabanas A M, Suarez O J and Laroze D</author> <date>2015</date> <title level="j">Networks and HeterogeneousMedia</title> <biblScope unit="volume">10</biblScope> <biblScope unit="page">209 -221</biblScope></bibl><bibl>[ 8]<author>RomáF , CugliandoloLF andLozano GS</author> <date>2014</date>( Preprint<idno type="arxiv">1403 .4822</idno> )URL <ptr type="web">http: // arxiv.org /abs/1403. 4822</ptr></bibl>
+	<bibl><author>Fox R F</author> <date>1986</date> <title level="j">Physical Review A</title> <biblScope unit="volume">33</biblScope> <biblScope unit="page">467-476</biblScope> URL <ptr type="web">http://link.aps.org/doi/10.1103/PhysRevA.33.467</ptr></bibl>
+	<bibl><author>Aron C, Barci D G, Cugliandolo L F, Arenas Z G and Lozano G S</author> <date>2014</date> (Preprint <idno type="arxiv">1402.1200</idno>) URL <ptr type="web">http://arxiv.org/abs/1402.1200</ptr></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

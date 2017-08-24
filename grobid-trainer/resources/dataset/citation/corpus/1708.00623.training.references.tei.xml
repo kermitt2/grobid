@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Blandford R., Rees M.J.</author>, <date>1974</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">169</biblScope>, <biblScope unit="page">395</biblScope></bibl>
+	<bibl><orgName type="collaboration">H.E.S.S. collaboration</orgName>, <author>Abramowski A., et al.,</author> <date>2010</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">520</biblScope>, <biblScope unit="page">A83</biblScope></bibl>
+	<bibl><orgName type="collaboration">H.E.S.S. collaboration</orgName>, <author>Abramowski A., et al.</author>, <date>2014</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">571</biblScope>, <biblScope unit="page">A39</biblScope></bibl>
+	<bibl><orgName type="collaboration">H.E.S.S. collaboration</orgName>, <author>Abdalla H., et al.</author>, <date>2017</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">598</biblScope>, <biblScope unit="page">A39</biblScope></bibl>
+	<bibl><orgName type="collaboration">H.E.S.S. collaboration</orgName>, <author>Abramowski A., et al.</author>, <date>2013</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">554</biblScope>, <biblScope unit="page">A107</biblScope></bibl>
+	<bibl><author>Aharonian F.A., et al.</author> (<orgName type="collaboration">HESS collaboration)</orgName>, <date>2006</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">457</biblScope>, <biblScope unit="page">899</biblScope></bibl>
+	<bibl><author>de Naurois M. &amp; Rolland L.</author>, <date>2009</date>, <title level="j">Astropar. Phys.</title>, <biblScope unit="volume">32</biblScope>, <biblScope unit="page">231</biblScope></bibl>
+	<bibl><author>Parsons R.D., Hinton J.A.</author>, <date>2014</date>, <title level="j">Astropar.Phys.</title> <biblScope unit="volume">56</biblScope>, <biblScope unit="page">26</biblScope></bibl>
+	<bibl><author>Holler M., Balzer A., Chalme-Calvet R., et al.</author>, <date>2015</date>, in <title level="m">Proc. 34th Int. Cosmic Ray Conference (ICRC2015)</title>,<idno type="arxiv">arXiv :1509.02896</idno></bibl>
+	<bibl><author>Parsons R.D., Murach T., Gajdos M</author>., <date>2015</date>, in <title level="m">Proc. 34th Int. Cosmic Ray Conference (ICRC 2015)</title>, <idno type="arxiv">arXiv:1509.06322</idno></bibl>
+	<bibl><author>Atwood W. B., Abdo A. A., Ackermann M., et al.</author>, <date>2009</date>, <title level="j">ApJ</title>, <biblScope unit="volume">697</biblScope>, <biblScope unit="page">1071</biblScope></bibl>
+	<bibl><author>Acero F., Ackermann M., Ajello M., et al.</author>, <date>2016</date>, <title level="j">ApJS</title>, <biblScope unit="volume">223</biblScope>, <biblScope unit="page">26</biblScope></bibl>
+	<bibl><author>Burrows D.N., et al.</author>, <date>2005</date>, <title level="j">Space Sci. Rev.</title>, <biblScope unit="volume">120</biblScope>, <biblScope unit="page">165</biblScope></bibl>
+	<bibl><author>Kalberla P.M.W., Burton W.B., Hartmann D., Arnal E.M., et al.</author>, <date>2005</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">440</biblScope>, <biblScope unit="page">775</biblScope></bibl>
+	<bibl><author>Hauser M., Möllenhoff C., Pühlhofer G., Wagner S.J., Hagen H.-J., Knoll M</author>., <date>2004</date>, <title level="j">AN</title>, <biblScope unit="volume">325</biblScope>, <biblScope unit="page">659</biblScope></bibl>
+	<bibl><author>Edelson R., Turner T.J., Pounds K., et al.</author>, <date>2002</date>, <title level="j">ApJ</title>, <biblScope unit="volume">568</biblScope>, <biblScope unit="page">610</biblScope></bibl>
+	<bibl><author>Wagner S.J., Witzel A.</author>, <date>1995</date>, <title level="j">ARA&amp;A</title>, <biblScope unit="volume">33</biblScope>, <biblScope unit="page">163</biblScope></bibl>
+	<bibl><author>Edelson R., Krolik J.</author>, <date>1988</date>, <title level="j">ApJ</title>, <biblScope unit="volume">333</biblScope>, <biblScope unit="page">646</biblScope></bibl>
+	<bibl><author>Barnacka A., Moderski R., Behera B., Brun P., Wagner S.J.</author>, <date>2014</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">567</biblScope>, <biblScope unit="page">A113</biblScope></bibl>
+	<bibl><author>Brown A .M.</author>,<date>2013</date> ,<title level="j">MNRAS</title> ,<biblScope unit="volume">431</biblScope> ,<biblScope unit="page">824</biblScope></bibl>
+	<bibl><author>Saito S., Stawarz L., Tanaka Y.T., Takahashi T., Madejski G., D&apos;Ammando F.</author>, <date>2013</date>, <title level="j">ApJL</title>, <biblScope unit="volume">766</biblScope>, <biblScope unit="page">L11</biblScope></bibl>
+	<bibl><author>Saito S., Stawarz L., Tanaka Y.T., Takahashi T., Sikora M., Moderski R.</author>, <date>2015</date>, <title level="j">ApJ</title>, <biblScope unit="volume">809</biblScope>, <biblScope unit="page">171</biblScope></bibl>
+	<bibl><author>Zacharias M., Sitarek J., Dominis Prester D., Jankowsky F., Lindfors E., Mohamed M., Sanchez D., TerzicT</author> .,<date>2017</date> ,in <title level="m">Proc .35th Int .Cosmic Ray Conference</title> ,<title level="j">PoS</title> (<biblScope unit="volume">ICRC2017</biblScope> )<biblScope unit="page">655</biblScope></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>
