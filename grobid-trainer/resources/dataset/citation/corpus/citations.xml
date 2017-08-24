@@ -3503,6 +3503,7 @@
 		<bibl><author>R. Socher, E. H. Huang, J. Pennin, C. D. Manning, A. Ng</author>, "<title level="a">Dynamic pooling and unfolding recursive autoencoders for paraphrase detection</title>", <title level="m">Advances in Neural Information Processing Systems</title>, <date>2011</date>.</bibl>
 		<bibl><author>T.-S. Chua, J. Tang, R. Hong, H. Li, Z. Luo, Y.-T. Zheng</author>, "<title level="a">Nus-wide: A real-world web image database from national university of singapore</title>", <title level="m">Proc. of ACM Conf. on Image and Video Retrieval (CIVR'09)</title>, pp. <biblScope type="pp">48:1-48:9</biblScope>.</bibl>
 		<bibl><author>A. Oliva, A. Torralba</author>, "<title level="a">Modeling the shape of the scene: A holistic representation of the spatial envelope</title>", <title level="j">International journal of computer vision</title>, <date>2001</date>.</bibl>
-
+		<bibl><author>Boubakri, Narjess, Ghoul, Sadok El, and Saffar, Walid</author>, <date>2012</date>, <title level="a">Cash Holdings of Politically Connected Firms</title>, <note type="report">Working Paper</note>, <orgName>Hong Kong Polytechnic University</orgName>.</bibl>
+		<bibl><author>Jensen, M.C., Meckling, W.H.</author>, <date>1978</date>. <title level="a">Can the corporation survive?</title> <title level="j">Financial Analysts Journal</title>, <biblScope type="vol">34</biblScope>: <biblScope type="pp">31-37</biblScope>.</bibl>
 </listBibl>
 </tei>

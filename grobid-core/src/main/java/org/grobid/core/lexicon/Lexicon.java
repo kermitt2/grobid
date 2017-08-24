@@ -438,8 +438,10 @@ public class Lexicon {
 
     public void initCollaborations() {
         try {
+            //collaborationPattern = new FastMatcher(new
+            //        File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/collaborations.txt"));
             collaborationPattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/collaborations.txt"));
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/inspire_collaborations.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for collaborations.", e);
         }

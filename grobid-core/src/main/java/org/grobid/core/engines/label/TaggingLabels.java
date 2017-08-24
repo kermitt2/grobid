@@ -46,7 +46,7 @@ public class TaggingLabels {
     public final static String PAGE_LABEL = "<page>";
     public final static String EDITOR_LABEL = "<editor>";
     public final static String INSTITUTION_LABEL = "<institution>";
-    public final static String NOTE_LABEL = "note";
+    public final static String NOTE_LABEL = "<note>";
     public final static String REFERENCE_LABEL = "<reference>";
     public final static String GRANT_LABEL = "<grant>";
     public final static String COPYRIGHT_LABEL = "<copyright>";

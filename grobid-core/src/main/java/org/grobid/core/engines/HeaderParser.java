@@ -719,17 +719,17 @@ public class HeaderParser extends AbstractParser {
                         features.digit = "ALLDIGIT";
                     }
 
-                    Matcher m2 = featureFactory.YEAR.matcher(text);
+                    Matcher m2 = featureFactory.year.matcher(text);
                     if (m2.find()) {
                         features.year = true;
                     }
 
-                    Matcher m3 = featureFactory.EMAIL.matcher(text);
+                    Matcher m3 = featureFactory.email.matcher(text);
                     if (m3.find()) {
                         features.email = true;
                     }
 
-                    Matcher m4 = featureFactory.HTTP.matcher(text);
+                    Matcher m4 = featureFactory.http.matcher(text);
                     if (m4.find()) {
                         features.http = true;
                     }
