@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>C. G. Bollini and J. J. Giambiagi</author>: <title level="j">Phys. Lett. B</title> <biblScope unit="volume">40</biblScope>, <biblScope unit="page">566</biblScope> (<date>1972</date>).</bibl>
+	<bibl><author>C. G. Bollini and J. J. Giambiagi</author>:<title level="j">Il Nuovo Cim. B</title> <biblScope unit="volume">12</biblScope>, <biblScope unit="page">20</biblScope> (<date>1972</date>).</bibl>
+	<bibl><author>C. G. Bollini and J.J Giambiagi</author> : <title level="j">Phys. Rev. D</title> <biblScope unit="volume">53</biblScope>, <biblScope unit="page">5761</biblScope> (<date>1996</date>).</bibl>
+	<bibl><author>L. Schwartz</author> : &quot;<title level="a">Théorie des distributions</title>&quot;. <publisher>Hermann</publisher>, <pubPlace>Paris</pubPlace> (<date>1966</date>)</bibl>
+	<bibl><author>J. Sebastiao e Silva</author> : <title level="j">Math. Ann.</title> <biblScope unit="volume">136</biblScope>, <biblScope unit="volume">38</biblScope> (<date>1958</date>).</bibl>
+	<bibl><author>C. G. Bollini, T. Escobar and M. C. Rocca</author> : <title level="j">Int. J. of Theor. Phys.</title> <biblScope unit="volume">38</biblScope>, <biblScope unit="page">2315</biblScope>( <date>1999</date>).</bibl>
+	<bibl><author>C. G. Bollini and M. C. Rocca</author> : <title level="j">Int. J. of Theor. Phys.</title> <biblScope unit="volume">43</biblScope>, <biblScope unit="page">1019</biblScope> (<date>2004</date>).</bibl>
+	<bibl><author>C. G. Bollini and M. C. Rocca</author> : <title level="j">Int. J. of Theor. Phys.</title> <biblScope unit="volume">43</biblScope>, <biblScope unit="page">59</biblScope> (<date>2004</date>).</bibl>
+	<bibl><author>C. G. Bollini, P. Marchiano and M. C. Rocca</author> : <title level="j">Int. J. of Theor. Phys</title>. <biblScope unit="volume">46</biblScope>,<biblScope unit="page">3030</biblScope> ( <date>2007</date>).</bibl>
+	<bibl><author>I. M. Gel&apos;fand and G. E. Shilov</author> : &quot;<title level="j">Generalized Functions</title>&quot; Vol. <biblScope unit="volume">1</biblScope>. <publisher>AcademicPress</publisher> ( <date>1964</date>).</bibl>
+	<bibl><author>S. Bochner</author>:&quot;<title level="m">Lectures on Fourier Integrals</title>&quot;.<publisher>Princeton University Press</publisher>, <pubPlace>Princeton,NJ</pubPlace> ,<date>1959</date> .</bibl>
+	<bibl><author>I. S. Gradshteyn and I. M. Ryzhik</author> : &quot;<title level="m">Table of Integrals, Series and Products</title>&quot;.<publisher>Academic Press ,Inc</publisher> ( <date>1980</date>).</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

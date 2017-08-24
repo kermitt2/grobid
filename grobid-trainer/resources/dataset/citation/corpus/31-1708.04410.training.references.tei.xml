@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	* Electronic address: hepszjzj@hotmail.com
+	<bibl><author>H. B. G. Casimir</author>, <title level="a">On the attraction between two per-fectlyconducting plates</title> ,<title level="j">Proc .K .Ned .Akad .Wet .</title><biblScope unit="volume">51</biblScope> ,<biblScope unit="page">793</biblScope> (<date>1948</date> ).</bibl>
+	<bibl><author>Y. N. Zhang, X. W. Luo, and Z. W. Zhou</author>, <title level="a">Dynamical Casimireffect in dissipative superconducting circuit sys -tem</title>,<title level="j">SciChina - PhysMechAstron</title> , <biblScope unit="volume">57</biblScope>, <biblScope unit="page">2251- 2258</biblScope>(<date>2014</date> ).</bibl>
+	<bibl><author>W. J. Nie, Y. H. Lan, Y. Li, and S. Y. Zhu</author>, <title level="a">Generating largesteady -stateoptomechanical entanglement by the action ofCasimir force</title> , <title level="j">SciChina - PhysMechAstron</title> , <biblScope unit="volume">57</biblScope>, <biblScope unit="page">2276-2284</biblScope> (<date>2014</date>) .</bibl>
+	<bibl><author>M. Gao, F. C. Lei, C. G. Du, and G. L. Long</author>, <title level="a">Dynamics andentanglement of a membrane -in-the-middleoptome -chanicalsystemin the extremely - large-amplituderegime</title>, <title level="j">Sci. China-Phys .Mech.Astron .</title><biblScope unit="volume">59</biblScope> ,<biblScope unit="page">610301</biblScope> (<date>2016</date> ) .</bibl>
+	<bibl><author>X. L. Yu, R. Qi, Z. B. Li and W. M. Liu</author>, <title level="a">Casimir forces ina quasi -one-dimensionaltrapped dilute Bose gas</title> ,<title level="j">Eu -rophys.Lett.</title> <biblScope unit="volume">85</biblScope>, <biblScope unit="page">10005</biblScope>( <date>2009</date> ).</bibl>
+	<bibl><author>G. E. Astrakharchik and L. P. Pitaevskii</author>, <title level="a">Motion of aheavy impurity through a Bose -Einsteincondensate</title> ,<title level="j">Phys .Rev. A</title><biblScope unit="volume">70</biblScope> , <biblScope unit="page">013608</biblScope>( <date>2004</date> ).</bibl>
+	<bibl><author>P. S. He, Y. H. Zhu and W. M. Liu</author>, <title level="a">Drag force on a movingimpurity in a spin -orbit-coupledBose -Einsteincondensate</title> ,<title level="j">Phys. Rev. A</title><biblScope unit="volume">89</biblScope> , <biblScope unit="page">053615</biblScope>(<date>2014</date> ).</bibl>
+	<bibl><author>S. Biswas, S. Bhattacharyya, and A. Agarwal</author>, <title level="a">Casimir effectfor a Bose -Einsteincondensate inside a cylindrical tube</title> ,<title level="j">Physics</title>, <biblScope unit="volume">49</biblScope>,<biblScope unit="page">015301</biblScope>( <date>2015</date> )</bibl>
+	<bibl><author>A. Reati, J. N. Fuhs, C. S. Peca, and W. Zwerger</author>, <title level="a">Casimir forcesbetween defects in one -dimensionalquantum liq -uids</title>,<title level="j">Phys. Rev. A</title><biblScope unit="volume">72</biblScope> , <biblScope unit="page">023616</biblScope>( <date>2005</date> ).</bibl>
+	<bibl><author>J. N. Fuchs, A. Recati and W. Zwerger</author>, <title level="a">Oscillating Casimirforce between impurities in one -dimensionalFermi liquids</title>, <title level="j">Phys. Rev. A</title><biblScope unit="volume">75</biblScope> , <biblScope unit="page">043615</biblScope>( <date>2007</date> ).</bibl>
+	<bibl><author>M. Antezza, L. P. Pitaevskii and S. Stringari</author>, <title level="a">Effect of theCasimir -Polderforce on the collective oscillations of a trappedBose - Einsteincondensate</title>, <title level="j">Phys. Rev. A</title><biblScope unit="volume">70</biblScope> , <biblScope unit="page">053619</biblScope>( <date>2004</date>) .</bibl>
+	<bibl><author>D. C. Roberts and Y. Pomeau</author>, <title level="a">Casimir-Like Force Aris-ingfrom Quantum Fluctuations in a Slowly Moving Dilute Bose- EinsteinCondensate</title>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">95</biblScope>, <biblScope unit="page">145303</biblScope>( <date>2005</date>) .</bibl>
+	<bibl><author>P. A. Martin and V. A. Zagrebnov</author>, <title level="a">The Casimir effect forthe Bose -gasin slabs</title> ,<title level="j">Europhys .Lett .</title><biblScope unit="volume">73</biblScope> ,<biblScope unit="page">15</biblScope> ( <date>2006</date>).</bibl>
+	<bibl><author>A. Edery</author>, <title level="a">Casimir forces in Bose-Einstein condensates: finite-sizeeffects in three -dimensionalrectangular cavi -ties</title>,<title level="j">J. Stat. Mech.</title> <biblScope unit="page">P06007</biblScope>( <date>2006</date> ).</bibl>
+	<bibl><author>S. Biswas</author>, <title level="a">Bose-Einstein condensation and Casimir effect oftrapped ideal Bose gas in between two slabs</title> ,<title level="j">Eur .Phys .J .D</title><biblScope unit="volume">42</biblScope> , <biblScope unit="volume">109</biblScope>, (<date>2007</date> ).</bibl>
+	<bibl><author>M. Napiórkowski and J. Piasecki</author>, <title level="a">The Bulk Correlation Lengthand the Range of Thermodynamic Casimir Forces at Bose- EinsteinCondensation</title>, <title level="j">J. Stat. Phys.</title> <biblScope unit="volume">147</biblScope>, <biblScope unit="page">1145- 1155</biblScope>(<date>2012</date>) .</bibl>
+	<bibl><author>M. Schecter and A. Kamenev</author>, <title level="a">Phonon-Mediated CasimirInteraction between Mobile Impurities in One -DimensionalQuantumLiquids</title> , <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">112</biblScope>, <biblScope unit="page">155301</biblScope>( <date>2014</date>) .</bibl>
+	<bibl><author>S. Biswas, S. Bhattacharyya and A. Agarwal</author>, <title level="a">Casimir effectfor a Bose -Einsteincondensate inside a cylindrical tube</title> ,<title level="j">J. Phys. B: At. Mol. Opt. Phys.</title> <biblScope unit="volume">49</biblScope>, <biblScope unit="page">015301</biblScope>( <date>2016</date> ).</bibl>
+	<bibl><author>J. W. Hu and H. W. Yu</author>, <title level="a">Gravitational Casimir-Polder effect</title>,<title level="j">Phys .Lett .B</title> <biblScope unit="volume">767</biblScope> ,<biblScope unit="page">16 -19</biblScope>( <date>2017</date>).</bibl>
+	<bibl><author>N. V. Thu and L. T. Theu</author>, <title level="a">Casimir Force of Two-ComponentBose -EinsteinCondensates Confined by a Parallel PlateGeometry</title> , <title level="j">J. Stat. Phys.</title> <biblScope unit="volume">168</biblScope>, <biblScope unit="page">1- 10</biblScope>(<date>2017</date> ).</bibl>
+	<bibl><author>J. Marino, A. Recati and I. Carusotto</author>, <title level="a">Casimir Forces andQuantum Friction from Ginzburg Radiation in Atomic Bose- EinsteinCondensates</title>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">118</biblScope>, <biblScope unit="page">045301</biblScope>(<date>2017</date> ) .</bibl>
+	<bibl><author>F. Grusdt and E. Demler</author>, <title level="m">New theoretical approaches to Bosepolarons</title> ,<idno type="arxiv">arxiv :1510 .04934</idno> ( <date>2015</date>).</bibl>
+	<bibl><author>PeskinME and Schroeder D. V.</author> <date>1995</date> <title level="a">An Introduction to QuantumField Theory</title> ( <pubPlace>Boulder,CO</pubPlace> :<publisher>Westview Press</publisher> ).</bibl>
+	<bibl><author>M. J. Bijlsma, B. A. Heringa, and H. T. C. Stoof</author>, <title level="a">Phonon exchangein dilute Fermi -Bosemixtures :Tailoring the Fermi -Fermiinteraction</title>, <title level="j">Phys. Rev. A</title><biblScope unit="volume">61</biblScope> , <biblScope unit="page">053601</biblScope>( <date>2000</date> ).</bibl>
+	<bibl><author>L. Viverit, C. J. Pethick, and H. Smith</author>, <title level="a">Zero-temperature phasediagram of binary boson -fermionmixtures</title> ,<title level="j">Phys .Rev .A</title><biblScope unit="volume">61</biblScope> , <biblScope unit="page">053605</biblScope>( <date>2000</date> ).</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

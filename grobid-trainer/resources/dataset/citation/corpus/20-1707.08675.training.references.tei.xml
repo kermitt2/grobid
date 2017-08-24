@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Antia, H. M., Chitre, S. M., &amp; Gough, D. O.</author> <date>2008</date>, <title level="j">A&amp;A</title>,<biblScope unit="volume">477</biblScope> ,<biblScope unit="page">657</biblScope></bibl>
+	<bibl><author>Bertotti, B., Iess, L., &amp; Tortora, P.</author> <date>2003</date>, <title level="j">nature</title>, <biblScope unit="volume">425</biblScope>,<biblScope unit="page">374</biblScope></bibl>
+	<bibl><author>Bierman, G. J.</author> <date>1977</date>, <title level="m">Factorization Methods for DiscreteSequential Estimation</title> ( volume<biblScope unit="volume">128</biblScope> ,<biblScope unit="pages">241</biblScope> pages <publisher>AcademicPress</publisher> , <pubPlace>NewYork , NY</pubPlace>, <date>1977</date>)</bibl>
+	<bibl><author>Bottke, Jr., W. F., Vokrouhlick´yVokrouhlick´y, D., Rubincam, D.P .,&amp; Nesvorn´yNesvorn´y ,D .</author><date>2006</date> ,<title level="j">Annual Review of Earth andPlanetary Sciences</title> , <biblScope unit="volume">34</biblScope>, <biblScope unit="page">157</biblScope></bibl>
+	<bibl><author>Evans, S., Taber, W., Drain, T., et al.</author> <date>2016</date>, in <title level="m">The 6thInternational Conference on Astrodynamics Tools andTechniques ( ICATT ),InternationalConference on AstrodynamicsTools and Techniques</title> , <pubPlace>Darmstadt ,Germany</pubPlace>. <ptr type="web">https: // indico.esa. int/indico/event/111/session/30/contribution/177 /material/paper/0.pdf</ptr></bibl><bibl><author>Farnocchia,D.,Chesley ,S. R., Chamberlin, A. B., &amp;Tholen ,D .J.</author> <date>2015</date>, <title level="j">Icarus</title>, <biblScope unit="volume">245</biblScope>, <biblScope unit="page">94</biblScope></bibl>
+	<bibl><author>Farnocchia, D., Chesley, S. R., Vokrouhlick´yVokrouhlick´y, D., etal .</author><date>2013</date> ,<title level="j">Icarus</title> ,<biblScope unit="volume">224</biblScope> ,<biblScope unit="page">1</biblScope></bibl>
+	<bibl><author>Fienga, A., Laskar, J., Kuchynka, P., et al.</author> <date>2011</date>, <title level="j">CelestialMechanics and Dynamical Astronomy</title> ,<biblScope unit="volume">111</biblScope> ,<biblScope unit="page">363</biblScope></bibl>
+	<bibl><author>Fienga, A., Manche, H., Laskar, J., &amp; Gastineau, M.</author><date>2015</date> ,<title level="j">Celest Mech Dyn Astr</title> ,<biblScope unit="volume">123</biblScope> :<biblScope unit="page">325</biblScope></bibl>
+	<bibl><author>Folkner, W. M.</author> <date>2009</date>, in <title level="m">IAU Symposium</title>, Vol. <biblScope unit="volume">261</biblScope>,<title level="s">IAU Symposium</title> ,ed .<editor>S .A .Klioner ,P .K. Seidelmann, &amp;M . H. Soffel</editor>, <biblScope unit="page">155- 158</biblScope></bibl>
+	<bibl><author>Greenberg, A. H., Margot, J. L., Verma, A. K., etal .</author><date>2016</date> ,<title level="j">The Astronomical Journal</title> ,<idno type="arxiv">arXiv :1612.07434</idno></bibl>
+	<bibl><author>Kaula, W. M.</author> <date>2000</date>, <title level="m">Theory of Satellite Geodesy: Applicationsof Satellites to Geodesy</title> ( <publisher>DoverPublications</publisher> ,<pubPlace>Mineola, NY</pubPlace>) ,<idno type="DOI">doi: 10.1063/1.3033941</idno></bibl>
+	<bibl><author>Konopliv, A. S., Asmar, S. W., Folkner, W. M., etal .</author><date>2011</date> ,<title level="j">Icarus</title> ,<biblScope unit="volume">211</biblScope> ,<biblScope unit="page">401</biblScope></bibl>
+	<bibl><author>Lambert, S. B., &amp; Le Poncin-Lafitte, C.</author> <date>2009</date>, <title level="j">A&amp;A</title>,<biblScope unit="volume">499</biblScope> ,<biblScope unit="page">331</biblScope></bibl>
+	<bibl><author>Margot, J. L.</author> <date>2003</date>, <title level="j">Bulletin of the American AstronomicalSociety</title> ,<biblScope unit="volume">34</biblScope></bibl>
+	<bibl><author>Margot, J. L., &amp; Giorgini, J. D.</author> <date>2009</date>, in <title level="m">IAU Symposium</title>,Vol .<biblScope unit="volume">261</biblScope> ,<editor>IAU Symposium ,ed .S .A. Klioner, P. K. Seidelmann, &amp;M . H. Soffel</editor>, <biblScope unit="page">183- 188</biblScope></bibl>
+	<bibl><author>Mecheri, R., Abdelatif, T., Irbah, A., Provost, J., &amp;Berthomieu ,G .</author><date>2004</date> ,<title level="j">solphys</title>,<biblScope unit="volume">222</biblScope> ,<biblScope unit="page">191</biblScope></bibl>
+	<bibl><author>Minor Planet Center</author>. <date>2017</date>, <title level="j">MPC database</title>, <ptr type="web">http://www.minorplanetcenter.net/iau/mpc.html</ptr>,,</bibl>
+	<bibl><author>Misner, C. W., Thorne, K. S., &amp; Wheeler, J. A.</author> <date>1973</date>,<title level="m">Gravitation</title> ( <publisher>Freeman</publisher>)</bibl>
+	<bibl><author>Naidu, S. P., Benner, L. A. M., Margot, J. L., Busch,M .W .,&amp; Taylor ,P .A .</author><date>2016</date> ,<title level="j">AJ</title> ,<biblScope unit="volume">152</biblScope> ,<biblScope unit="page">99</biblScope></bibl>
+	<bibl><author>Nugent, C. R., Margot, J. L., Chesley, S. R., &amp; Vokrouhlick´yVokrouhlick´y,D .</author><date>2012</date> ,<title level="j">Astronomical Journal</title> ,<biblScope unit="volume">144</biblScope> ,<biblScope unit="page">60</biblScope></bibl>
+	<bibl><author>Ostro, S. J., &amp; Giorgini, J. D.</author> <date>2004</date>, in <title level="m">Mitigation ofHazardous Comets and Asteroids</title> ( <publisher>CambridgeUniversity Press</publisher>)</bibl>
+	<bibl><author>Park, R. S., Folkner, W. M., Konopliv, A. S., etal .</author><date>2017</date> ,<title level="j">AJ</title> ,<biblScope unit="volume">153</biblScope> ,<biblScope unit="page">121</biblScope></bibl>
+	<bibl><author>Pitjeva, E. V., &amp; Pitjev, N. P.</author> <date>2014</date>, <title level="j">Celestial Mechanicsand Dynamical Astronomy</title> ,<biblScope unit="volume">119</biblScope> ,<biblScope unit="page">237</biblScope></bibl>
+	<bibl><author>Solomon, S. C., et al.</author> <date>2001</date>, <title level="j">Planet. Space Sci.</title>, <biblScope unit="volume">49</biblScope>, <biblScope unit="page">1445</biblScope></bibl>
+	<bibl><author>Verma, A. K., Fienga, A., Laskar, J., Manche, H., &amp;Gastineau ,M .</author><date>2014</date> ,<title level="j">A&amp;A</title> ,<biblScope unit="volume">561</biblScope> ,<biblScope unit="page">A115</biblScope></bibl> <bibl><author>Verma ,A. K. ,&amp;Margot , J. L.</author> <date>2016</date>, <title level="j">Journalof Geophysical Research (Planets )</title> ,<biblScope unit="volume">121</biblScope>,<biblScope unit="page">1627</biblScope></bibl>
+	<bibl><author>Will, C. M.</author> <date>2014</date>, <title level="j">Living Reviews in Relativity</title>, <biblScope unit="volume">17</biblScope>, <biblScope unit="page">4</biblScope></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

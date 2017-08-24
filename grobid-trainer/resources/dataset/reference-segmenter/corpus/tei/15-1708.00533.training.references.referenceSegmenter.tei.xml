@@ -1,0 +1,81 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> Bahcall, J.N., Flynn, C., Gould, A., 1992, ApJ, 389, 234<lb/> </bibl>
+        <bibl><label>[2]</label> Beck, R., et al., 1996, Ann. Rev. Astron. Astrophys., 34, 155<lb/> </bibl>
+        <bibl><label>[3]</label> Beckman, J.E., et al., 2002, Rev. Mex. A.A., 12, 213<lb/> </bibl>
+        <bibl><label>[4]</label> Berkhuijsen, E.M., Beck, R., Walterbos, R.A.M., eds., 2000, The Interstellar<lb/> Medium in M31 and M51, Shaker Verlag, Aachen.<lb/> </bibl>
+        <bibl><label>[5]</label> Bertini, G., Romeo, A.B., 1988, A&amp;A, 195, 105<lb/> </bibl>
+        <bibl><label>[6]</label> Binney, J., Tremaine, S., 2008, Galactic Dynamics, 2nd ed., Princeton Uni. Press<lb/> </bibl>
+        <bibl><label>[7]</label> Binney, J., Merrifield, M., 1998, Galactic Astronomy, Princeton University Press<lb/> </bibl>
+        <bibl><label>[8]</label> Bosma, A., 1999 (a), Celestial Mechanics and Dynamical Astronomy, 72, 69<lb/> </bibl>
+        <bibl><label>[9]</label> Bosma, A., 1999 (b), ASP Conference Series, Vol. 182, 339<lb/> </bibl>
+        <bibl><label>[10]</label> Bovy, J., Tremaine, S., 2012, ApJ, 756:89<lb/> </bibl>
+        <bibl><label>[11]</label> Carignan, C., Freeman, K.C., 1985, ApJ, 294, 494<lb/> </bibl>
+        <bibl><label>[12]</label> Chamcham, K., Pitts, E., Tayler, R.J., 1993, MNRAS, 263, 967<lb/> </bibl>
+        <bibl><label>[13]</label> Chamcham, K., Tayler, R.J., 1995, MNRAS, 273, 484<lb/> </bibl>
+        <bibl><label>[14]</label> Dehnen, W., Binney, J., Mon. Not. R. Astron. Soc. 294, 429-438 (1998)<lb/> </bibl>
+        <bibl><label>[15]</label> Elmegreen, B.G., 1987, ApJ, 312, 626<lb/> </bibl>
+        <bibl><label>[16]</label> Elmegreen, B.G., 1991, ApJ, 378, 139<lb/> </bibl>
+        <bibl><label>[17]</label> Elmegreen, B.G., 1994, ApJ, 433, 39<lb/> </bibl>
+        <bibl><label>[18]</label> Elmegreen, B.G., 1995, MNRAS, 275, 944<lb/> </bibl>
+        <bibl><label>[19]</label> Elmegreen, B.G., Scalo, J., 2004, ARA&amp;A, 42, 211<lb/> </bibl>
+        <bibl><label>[20]</label> Elmegreen, B.G., Hunter, D. A., 2006, ApJ, 636, 712<lb/> </bibl>
+        <bibl><label>[21]</label> Elmegreen, B.G., 2011, arXiv:1106.1580<lb/> </bibl>
+        <bibl><label>[22]</label> Elmegreen, B.G., Hunter, D.A., 2016, arXiv:1612.05615<lb/> </bibl>
+        <bibl><label>[23]</label> Federrath, C., 2016, arXiv:1606.03121<lb/> </bibl>
+        <bibl><label>[24]</label> Ferguson, A.M.N., et al., 1998, ApJ, 506, L19<lb/> </bibl>
+        <bibl><label>[25]</label> Ferguson, A.M.N., Wyse, R.F.G., Gallagher, J.S., 1999, ASP Conf Series, 170, 196<lb/> </bibl>
+        <bibl><label>[26]</label> Fragione, G., Loeb, A., 2017, New Astronomy, 55, 32-38<lb/> </bibl>
+        <bibl><label>[27]</label> Goldbaum, N.J., Krumholz, M.R., Forbes, J.C., 2015, ApJ, 814, 131<lb/> </bibl>
+        <bibl><label>[28]</label> Hooper, D., 2017, Physics of the Dark Universe, 15, 53, Elsevier<lb/> </bibl>
+        <bibl><label>[29]</label> Hunter, D.A., Plummer, J.D., 1996, ApJ, 462, 732<lb/> </bibl>
+        <bibl><label>[30]</label> Hunter, D.A., Elmegreen, B.G., Baker, A.L., 1998, ApJ, 493, 595<lb/> </bibl>
+        <bibl><label>[31]</label> Hunter, D.A., et al., 2016, AJ, 151:136<lb/> </bibl>
+        <bibl><label>[32]</label> Jog, C.J., Solomon, P.M., 1984, ApJ, 276, 114<lb/> </bibl>
+        <bibl><label>[33]</label> Kennicutt, R.C., 1989, ApJ, 344, 685<lb/> </bibl>
+        <bibl><label>[34]</label> Kimm, T., et al., 2015, MNRAS, 451, 2900<lb/> </bibl>
+        <bibl><label>[35]</label> Kuijken, K., Gilmore, G., 1989, MNRAS, 239, 571 (Part I); 605 (II); 651 (III)<lb/> </bibl>
+        <bibl><label>[36]</label> Kuijken, K., Gilmore, G., 1991, ApJL, 367, L9-L13<lb/> </bibl>
+        <bibl><label>[37]</label>Lelì evre, M., Roy, J.-R., 2000 (a), AJ, 120, 1306<lb/> </bibl>
+        <bibl><label>[38]</label>Lelì evre, M., Roy, J.-R., 2000 (b), ASP Conference Series, Vol 221, 129<lb/> </bibl>
+        <bibl><label>[39]</label> Leroy, A.K., et al., 2008, AJ, 136, 2782<lb/> </bibl>
+        <bibl><label>[40]</label> Lewis, J.R., Freeman, K.C., 1989, AJ, 97, 139<lb/> </bibl>
+        <bibl><label>[41]</label> Martin, C.L., Kennicutt, R.C., 2001, ApJ, 555, 301<lb/> </bibl>
+        <bibl><label>[42]</label> McKee, et al., 2015, ApJ, 814:13<lb/> </bibl>
+        <bibl><label>[43]</label> Mestel, L., 1999, Stellar Magnetism, Clarendon Press. Oxford<lb/> </bibl>
+        <bibl><label>[44]</label> Moss, D., Shukurov, A., Sokoloff, D.D., Berkhuijsen E.M., Beck R., 1998, Astron.<lb/> &amp; Astrophys., 335, 500<lb/> </bibl>
+        <bibl><label>[45]</label> Neininger, N., Horellou, C., 1996, ASP Confernce Series, 97, 592<lb/> </bibl>
+        <bibl><label>[46]</label> Norman, C., Silk, J., 1980, ApJ, 238, 158<lb/> </bibl>
+        <bibl><label>[47]</label> Parker, E.N., 1966, ApJ, 145, 811<lb/> </bibl>
+        <bibl><label>[48]</label> Perret, V., et al., 2015, IAU GA, Meeting 29<lb/> </bibl>
+        <bibl><label>[49]</label> Pfenniger, D., Combes, F., 1994, A&amp;A, 285, 94<lb/> </bibl>
+        <bibl><label>[50]</label> Pisano et al., 2000, AJ, 120, 763<lb/> </bibl>
+        <bibl><label>[51]</label> Read, J.I., 2014, J. Phys. G: Nucl. Part. Phys., 41<lb/> </bibl>
+        <bibl><label>[52]</label> Romeo, A.B., 1992, MNRAS, 256, 307<lb/> </bibl>
+        <bibl><label>[53]</label> Romeo, A.B., Wiegert, J., 2011, MNRAS, 416, 1191<lb/> </bibl>
+        <bibl><label>[54]</label> Ruzmaikin, A.A., Shukurov, A.M., Sokoloff, D.D., 1988, Magnetic Fields of Galax-<lb/>ies, Kluwer Academic Publishers<lb/> </bibl>
+        <bibl><label>[55]</label> Ruzmaikin, Sokoloff, D.D., A.A., Shukurov, A.M., Beck, R., 1990, A&amp;A, 230, 284<lb/> </bibl>
+        <bibl><label>[56]</label> Scalo J., Elmegreen B.G., 2004, ARA&amp;A, 42, 275<lb/> </bibl>
+        <bibl><label>[57]</label> Sellwood, J.A., Balbus, S.A., 1999, ApJ, 511, 660<lb/> </bibl>
+        <bibl><label>[58]</label> Schaye, J., 2004, ApJ, 609, 667<lb/> </bibl>
+        <bibl><label>[59]</label> Silk, J., 1997, ApJ, 481, 703<lb/> </bibl>
+        <bibl><label>[60]</label> Silk, J., 2000, PASP, 112, 1003<lb/> </bibl>
+        <bibl><label>[61]</label> Silk, J., 2001, MNRAS, 324, 313<lb/> </bibl>
+        <bibl><label>[62]</label> Slyz, A., et al., 2005, MNRAS, 356, 737<lb/> </bibl>
+        <bibl><label>[63]</label> Thacker, R.J., Couchman, H.M.P., 2001, ApJ, 555, L17<lb/> </bibl>
+        <bibl><label>[64]</label> Thilker, D.A., et al., 2005, ApJ, 619, L79<lb/> </bibl>
+        <bibl><label>[65]</label> Thornley, M.D., Wilson, C.D., 1995, ApJ, 447, 616<lb/> </bibl>
+        <bibl><label>[66]</label> Toomre, A., 1964, ApJ, 139, 1217<lb/> </bibl>
+        <bibl><label>[67]</label> van der Hulst, J.M., et al., 1993, AJ, 106, 548<lb/> </bibl>
+        <bibl><label>[68]</label> Wang, B., Silk, J., 1994, ApJ, 427, 759<lb/> </bibl>
+        <bibl><label>[69]</label> Zasov, A.V., Simakov, S.G., 1988, Astrophysics, 29, 518</bibl>
+        </listBibl>
+    </text>
+</tei>
+
