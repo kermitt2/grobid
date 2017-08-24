@@ -232,12 +232,12 @@ public class FeaturesVectorReference {
                 featuresVector.punctType = "QUOTE";
             }
 
-            Matcher m2 = featureFactory.YEAR.matcher(word);
+            Matcher m2 = featureFactory.year.matcher(word);
             if (m2.find()) {
                 featuresVector.year = true;
             }
 
-            Matcher m4 = featureFactory.HTTP.matcher(word);
+            Matcher m4 = featureFactory.http.matcher(word);
             if (m4.find()) {
                 featuresVector.http = true;
             }

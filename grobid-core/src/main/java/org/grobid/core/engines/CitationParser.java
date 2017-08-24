@@ -293,7 +293,7 @@ public class CitationParser extends AbstractParser {
                     biblio.setInstitution(biblio.getInstitution() + "; " + clusterContent);
                 else
                    biblio.setInstitution(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.CITATION_NOTE)) {
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_NOTE)) {             
                 if (biblio.getNote() != null)
                     biblio.setNote(biblio.getNote()+ ". " + clusterContent);
                 else    

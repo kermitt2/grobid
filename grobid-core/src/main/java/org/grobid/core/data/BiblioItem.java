@@ -2025,7 +2025,7 @@ public class BiblioItem {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
-                if ((publication_date != null) || (pageRange != null) || (publisher != null)) {   
+                if ((publication_date != null) || (pageRange != null) || (publisher != null) || (volumeBlock != null)) {   
                     tei.append("<imprint>\n");
                 }
 				else 
@@ -2113,6 +2113,13 @@ public class BiblioItem {
                         tei.append("\t");
                     }
                     tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
+                }
+
+                if (volumeBlock != null) {
+                    for (int i = 0; i < indent + 3; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<biblScope unit=\"volume\">" + TextUtilities.HTMLEncode(volumeBlock) + "</biblScope>\n");
                 }
 
                 if (!StringUtils.isEmpty(pageRange)) {
@@ -2359,7 +2366,7 @@ public class BiblioItem {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
-                if ((publication_date != null) || (pageRange != null) || (location != null) || (publisher != null)) {
+                if ((publication_date != null) || (pageRange != null) || (location != null) || (publisher != null) || (volumeBlock != null)) {
                     tei.append("<imprint>\n");
                 }
 				else {
@@ -2449,6 +2456,12 @@ public class BiblioItem {
                     }
                     tei.append("<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>\n");
                 }
+                if (volumeBlock != null) {
+                    for (int i = 0; i < indent + 3; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<biblScope unit=\"volume\">" + TextUtilities.HTMLEncode(volumeBlock) + "</biblScope>\n");
+                }
                 if (pageRange != null) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
                     if (st.countTokens() == 2) {
@@ -2479,6 +2492,22 @@ public class BiblioItem {
                     tei.append("</imprint>\n");
                 }
             }
+
+            if (!StringUtils.isEmpty(institution)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<respStmt>\n");
+                for (int i = 0; i < indent + 3; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<orgName>" + TextUtilities.HTMLEncode(institution) + "</orgName>\n");
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("</respStmt>\n");
+            }
+
             for (int i = 0; i < indent + 1; i++) {
                 tei.append("\t");
             }
@@ -2501,7 +2530,7 @@ public class BiblioItem {
                 tei.append("<note type=\"dedication\">" + TextUtilities.HTMLEncode(dedication) + "</note>\n");
             }
 
-            if (note != null) {
+            if (note != null) {      
                 for (int i = 0; i < indent + 1; i++) {
                     tei.append("\t");
                 }
