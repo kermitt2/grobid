@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>M. Aganagic, C. Vafa</author>, <title level="m">Mirror Symmetry and Supermanifolds</title>, <title level="j">Adv. Theor. Math. Phys.</title>, <biblScope unit="volume">8</biblScope> (<date>2004</date>) no. <biblScope unit="issue">6</biblScope> <biblScope unit="page">939-954</biblScope></bibl>
+	<bibl><author>Bei Jia</author>, <title level="a">Topological Sigma Model of Supermanifolds</title>, <title level="j">Nucl. Phys. B</title>, <biblScope unit="volume">915</biblScope> (<date>2017</date>), <biblScope unit="page">84</biblScope></bibl>
+	<bibl><author>S.L. Cacciatori, S. Noja, R. Re</author>, <title level="m">Non Projected Calabi-Yau Supermanifolds over P 2</title> , <idno type="arxiv">arXiv:1706.01354</idno></bibl>
+	<bibl><author>R. Catenacci, M. Debernardi, P.A. Grassi, D.</author> <title level="a">Matessi Balanced Superprojective Varieties</title>, <title level="j">J. Geom. Phys.</title>, <biblScope unit="volume">59</biblScope>, (<date>2009</date>)<biblScope unit="page">1363 -1378</biblScope></bibl>
+	<bibl><author>R. Catenacci, M. Debernardi, P.A. Grassi, D. Matessi</author>, <title level="a">Čech and de Rham Cohomology of Integral Forms</title>, <title level="j">J. Geom.Phys .</title>,<biblScope unit="volume">62</biblScope> ,( <date>2012</date>)<biblScope unit="page">890 -902</biblScope></bibl>
+	<bibl><author>J. Distler, P. Nelson, Semirigid Supergravity</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">66</biblScope> (<date>1991</date>), <biblScope unit="page">1955</biblScope></bibl>
+	<bibl><author>R. Hartshorne</author>, <title level="a">Algebraic Geometry</title>, <publisher>Springer</publisher> (<date>1977</date>)</bibl>
+	<bibl><author>Yu.I Manin</author>, <title level="a">Gauge Fields and Complex Geometry</title>, <publisher>Springer-Verlag</publisher>, (<date>1988</date>)</bibl>
+	<bibl><author>Yu.I. Manin</author>, <title level="m">Topics in Non Commutative Geometry</title>, <publisher>Princeton University Press</publisher>, (<date>1991</date>)</bibl>
+	<bibl><author>S. Noja, S.L. Cacciatori, F. Dalla Piazza, A. Marrani, R. Re</author>, <title level="a">One-dimensional super Calabi-Yau manifolds andtheir mirrors</title> ,<title level="j">JHEP</title> <biblScope unit="issue">04</biblScope> ( <date>2017</date>)<biblScope unit="page">094</biblScope></bibl>
+	<bibl><author>S. Noja</author>, <title level="m">Supergeometry of Π-Projective Spaces</title>, <idno type="arxiv">arXiv:1706.01359</idno></bibl>
+	<bibl><author>Y. Shimizu, K.Ueno</author>, <title level="m">Advances in Moduli Theory</title>, <publisher>AMS</publisher>, (<date>2002</date>)</bibl>
+	<bibl><author>A. Yu</author>. <title level="a">Vaintrob, Deformations of Complex Superspaces and Coherent Sheaves on them</title>, (<note>translated from</note>) <title level="j">Itogi Naukii Tekhniki</title> <biblScope unit="volume">32</biblScope> ( <date>1988</date>)</bibl>
+	<bibl><author>A.A. Voronov, Yu.I Manin and I.B. Penkov</author>, <title level="a">Elements of Supergeometry</title>, <title level="j">J. Soviet Mathematics</title>, <biblScope unit="date">august</biblScope> (<date>1990</date>)</bibl>
+	<bibl><author>E. Witten</author>, <title level="a">Perturbative Gauge Theory as a String Theory in Twistor Space</title>, <title level="j">Commun. Math. Phys.</title> <biblScope unit="volume">252</biblScope> (<date>2004</date>), <biblScope unit="page">189-258</biblScope></bibl>
+	<bibl><author>E. Witten</author>, <title level="m">Notes on Supermanifolds and Integration</title>, <idno type="arxiv">arXiv:1209.2199</idno></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

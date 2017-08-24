@@ -1,0 +1,51 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+        <bibl><label>1.</label> B. Pontecorvo, Zh. ´<lb/> Eksp. Teor. Fiz. 34, 247 (1958)<lb/> [Sov. Phys. JETP 7, 172 (1958)].<lb/> </bibl>
+        <bibl><label>2.</label> Z. Maki, M. Nakagawa, and S. Sakata, Prog. Theor.<lb/> Phys. 28, 870 (1962).<lb/> </bibl>
+        <bibl><label>3.</label> A. Strumia and F. Vissani, hep-ph/0606054;<lb/> </bibl>
+        <bibl>M. C. Gonzalez-Garcia and M. Maltoni, Phys. Rep.<lb/> 460, 1 (2008) [arXiv:0704.1800 [hep-ph]].<lb/> </bibl>
+        <bibl><label>4.</label> E. Kh. Akhmedov, J. Kopp, and M. Lindner, J. High<lb/> Energy Phys. 0805, 005 (2008) [arXiv:0802.2513<lb/> [hep-ph]].<lb/> </bibl>
+        <bibl><label>5.</label> S. M. Bilenky, F. von Feilitzsch, and W. Potzel,<lb/> arXiv:0804.3409 [hep-ph].<lb/> </bibl>
+        <bibl><label>6.</label> E. Kh. Akhmedov, J. Kopp, and M. Lindner,<lb/> arXiv:0803.1424 [hep-ph].<lb/> </bibl>
+        <bibl><label>7.</label> E. Kh. Akhmedov, J. High Energy Phys. 0709, 116<lb/> (2007) arXiv:0706.1216 [hep-ph].<lb/> </bibl>
+        <bibl><label>8.</label> S. Eliezer and A. R. Swift, Nucl. Phys. B 105, 45<lb/> (1976).<lb/> </bibl>
+        <bibl><label>9.</label> H. Fritzsch and P. Minkowski, Phys. Lett. B 62, 72<lb/> (1976).<lb/> </bibl>
+        <bibl><label>10.</label> S. M. Bilenky and B. Pontecorvo, Lett. Nuovo Ci-<lb/>mento. 17, 569 (1976).<lb/> </bibl>
+        <bibl><label>11.</label> S. M. Bilenky and B. Pontecorvo, Phys. Rep. 41, 225<lb/> (1978).<lb/> </bibl>
+        <bibl><label>12.</label> H. J. Lipkin, Phys. Lett. B 348, 604 (1995) [hep-<lb/>ph/9501269].<lb/> </bibl>
+        <bibl><label>13.</label> Y. Grossman and H. J. Lipkin, Phys. Rev. D 55, 2760<lb/> (1997) [hep-ph/9607201].<lb/> </bibl>
+        <bibl><label>14.</label> L. Stodolsky, Phys. Rev. D 58, 036006 (1998) [hep-<lb/>ph/9802387].<lb/> </bibl>
+        <bibl><label>15.</label> H. J. Lipkin, Phys. Lett. B 477, 195 (2000).<lb/> </bibl>
+        <bibl><label>16.</label> R. G. Winter, Lett. Nuovo Cimento 30, 101 (1981).<lb/> </bibl>
+        <bibl><label>17.</label> C. Giunti, Mod. Phys. Lett. A 16, 2363 (2001) [hep-<lb/>ph/0104148].<lb/> </bibl>
+        <bibl><label>18.</label> A. G. Cohen, S. L. Glashow, and Z. Ligeti,<lb/> arXiv:0810.4602 [hep-ph].<lb/> </bibl>
+        <bibl><label>19.</label> M. E. Peskin and D. V. Schroeder, An Introduction<lb/> to Quantum Field Theory (Westview, New York,<lb/> 1995), Ch. 4.<lb/> </bibl>
+        <bibl><label>20.</label> S. Nussinov, Phys. Lett. B 63, 201 (1976).<lb/> </bibl>
+        <bibl><label>21.</label> B. Kayser, Phys. Rev. D 24, 110 (1981).<lb/> </bibl>
+        <bibl><label>22.</label> C. Giunti, C. W. Kim, and U. W. Lee, Phys. Rev. D 44,<lb/> 3635 (1991).<lb/> </bibl>
+        <bibl><label>23.</label> J. Rich, Phys. Rev. D 48, 4318 (1993).<lb/> </bibl>
+        <bibl><label>24.</label> A. D. Dolgov, A. Yu. Morozov, L. B. Okun, and<lb/> M. G. Shchepkin, Nucl. Phys. B 502, 3 (1997) [hep-<lb/>ph/9703241].<lb/> </bibl>
+        <bibl><label>25.</label> C. Giunti and C. W. Kim, Phys. Rev. D 58, 017301<lb/> (1998) [hep-ph/9711363].<lb/> </bibl>
+        <bibl><label>26.</label> C. Y. Cardall, Phys. Rev. D 61, 073006 (2000) [hep-<lb/>ph/9909332].<lb/> </bibl>
+        <bibl><label>27.</label> C. Giunti, J. High Energy Phys. 0211, 017 (2002)<lb/> [hep-ph/0205014].<lb/> </bibl>
+        <bibl><label>28.</label> Y. Farzan and A. Yu. Smirnov, Nucl. Phys. B 805, 356<lb/> (2008) arXiv:0803.0495 [hep-ph].<lb/> </bibl>
+        <bibl><label>29.</label> L. Visinelli and P. Gondolo, arXiv:0810.4132 [hep-<lb/>ph].<lb/> </bibl>
+        <bibl><label>30.</label> M. Zralek, Acta Phys. Pol. B 29, 3925 (1998) [hep-<lb/>ph/9810543];</bibl> <bibl>M. Beuthe, Phys. Rep. 375, 105 (2003)<lb/> [hep-ph/0109119].<lb/> </bibl>
+        <bibl><label>31.</label> A. Yu. Smirnov, in Proc. of the 8th Rencontres de<lb/> Blois: Neutrinos, Dark Matter and the Universe,<lb/> Ed. by T. Stolarczyk et al. (Editions Frontiers, Gif-<lb/>sur-Yvette, 1997), p. 41.<lb/> </bibl>
+        <bibl><label>32.</label> A. Yu. Smirnov, in Proc. of IPM School and Conf.<lb/> on Lepton and Hadron Physics (IPM-LHP06),<lb/> Tehran, Iran, 15-20 May 2006, Ed. by Y. Farzan,<lb/> p. 0003 [hep-ph/0702061].<lb/> </bibl>
+        <bibl><label>33.</label> K. Kiers, S. Nussinov, and N. Weiss, Phys. Rev. D 53,<lb/> 537 (1996) [hep-ph/9506271].<lb/> </bibl>
+        <bibl><label>34.</label> M. Beuthe, Phys. Rev. D 66, 013003 (2002) [hep-<lb/>ph/0202068].<lb/> </bibl>
+        <bibl><label>35.</label> W. Grimus and P. Stockinger, Phys. Rev. D 54, 3414<lb/> (1996) [hep-ph/9603430].<lb/> </bibl>
+        <bibl><label>36.</label> I. Yu. Kobzarev, B. V. Martemyanov, L. B. Okun, and<lb/> M. G. Shchepkin, Sov. J. Nucl. Phys. 35, 708 (1982).<lb/> </bibl>
+        <bibl><label>37.</label> C. Giunti, C. W. Kim, J. A. Lee, and U. W. Lee, Phys.<lb/> Rev. D 48, 4310 (1993) [hep-ph/9305276].<lb/> </bibl>
+        <bibl><label>38.</label> W. Grimus, P. Stockinger, and S. Mohanty, Phys. Rev.<lb/> D 59, 013011 (1999) [hep-ph/9807442].</bibl>
+        </listBibl>
+    </text>
+</tei>
+

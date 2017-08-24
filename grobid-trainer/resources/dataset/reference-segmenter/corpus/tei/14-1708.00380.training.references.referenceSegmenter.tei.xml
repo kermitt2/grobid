@@ -1,0 +1,83 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> G. Parisi, Phys. Rept. 103, 203 (1984)<lb/> </bibl>
+        <bibl><label>[2]</label> G.P. Lepage, The Analysis of Algorithms for Lattice Field Theory, in Boulder ASI 1989:97-120<lb/> (1989), pp. 97-120, http://alice.cern.ch/format/showfull?sysnb=0117836<lb/> </bibl>
+        <bibl><label>[3]</label> M. Lüscher, Nucl. Phys. B364, 237 (1991)<lb/> </bibl>
+        <bibl><label>[4]</label> K.I. Ishikawa, N. Ishizuka, Y. Kuramashi, Y. Nakamura, Y. Namekawa, Y. Taniguchi, N. Ukita,<lb/> T. Yamazaki, T. Yoshie (PACS), PoS LATTICE2015, 075 (2016), 1511.09222<lb/> </bibl>
+        <bibl><label>[5]</label> Y. Kuramashi, A large scale simulation of 2+1 flavor lattice QCD, talk at this conference,<lb/> https://makondo.ugr.es/event/0/session/94/contribution/175<lb/> </bibl>
+        <bibl><label>[6]</label> C. Patrignani et al. (Particle Data Group), Chin. Phys. C40, 100001 (2016)<lb/> </bibl>
+        <bibl><label>[7]</label> T. Bhattacharya, V. Cirigliano, S.D. Cohen, A. Filipuzzi, M. Gonzalez-Alonso, M.L. Graesser,<lb/> R. Gupta, H.W. Lin, Phys. Rev. D85, 054512 (2012), 1110.6448<lb/> </bibl>
+        <bibl><label>[8]</label> S. Alekhin, J. Blümlein, S. Moch, Phys. Rev. D86, 054009 (2012), 1202.2281<lb/> </bibl>
+        <bibl><label>[9]</label> C. Bouchard, C.C. Chang, T. Kurth, K. Orginos, A. Walker-Loud, Phys. Rev. D96, 014504<lb/> (2017), 1612.06963<lb/> </bibl>
+        <bibl><label>[10]</label> O. Bär, Phys. Rev. D92, 074504 (2015), 1503.03649<lb/> </bibl>
+        <bibl><label>[11]</label> O. Bär, Phys. Rev. D94, 054505 (2016), 1606.09385<lb/> </bibl>
+        <bibl><label>[12]</label> O. Bär, Phys. Rev. D95, 034506 (2017), 1612.08336<lb/> </bibl>
+        <bibl><label>[13]</label> O. Bär, Int. J. Mod. Phys. A32, 1730011 (2017), 1705.02806<lb/> </bibl>
+        <bibl><label>[14]</label> B.C. Tiburzi, Phys. Rev. D80, 014002 (2009), 0901.0657<lb/> </bibl>
+        <bibl><label>[15]</label> O. Bär, M. Golterman, Phys. Rev. D87, 014505 (2013), 1209.2258<lb/> </bibl>
+        <bibl><label>[16]</label> M. Lüscher, PoS LATTICE2013, 016 (2014), 1308.5598<lb/> </bibl>
+        <bibl><label>[17]</label> O. Bär, M. Golterman, Phys.Rev. D89, 034505 (2014), 1312.4999<lb/> </bibl>
+        <bibl><label>[18]</label> S. Weinberg, Physica A96, 327 (1979)<lb/> </bibl>
+        <bibl><label>[19]</label> J. Gasser, H. Leutwyler, Ann. Phys. 158, 142 (1984)<lb/> </bibl>
+        <bibl><label>[20]</label> J. Gasser, H. Leutwyler, Nucl. Phys. B250, 465 (1985)<lb/> </bibl>
+        <bibl><label>[21]</label> G. Colangelo, G. Isidori, An Introduction to ChPT, in Nuclear, subnuclear and astroparticle<lb/> physics. Proceedings, 5th LNF Spring School, Frascati, Italy, May 15-20, 2000 (2000), pp. 333-<lb/>376, hep-ph/0101264, http://weblib.cern.ch/abstract?CERN-TH-2001-019<lb/> </bibl>
+        <bibl><label>[22]</label> J. Gasser, Lect. Notes Phys. 629, 1 (2004), hep-ph/0312367<lb/> </bibl>
+        <bibl><label>[23]</label> B. Kubis, An Introduction to chiral perturbation theory, in Workshop on Physics and Astro-<lb/>physics of Hadrons and Hadronic Matter Shantiniketan, India, November 6-10, 2006 (2007),<lb/> hep-ph/0703274<lb/> </bibl>
+        <bibl><label>[24]</label> S. Scherer, Prog. Part. Nucl. Phys. 64, 1 (2010), 0908.3425<lb/> </bibl>
+        <bibl><label>[25]</label> M. Golterman, Applications of chiral perturbation theory to lattice QCD, in Modern perspec-<lb/>tives in lattice QCD: Quantum field theory and high performance computing. Proceedings, In-<lb/>ternational School, 93rd Session, Les Houches, France, August 3-28, 2009 (2009), pp. 423-515,<lb/> 0912.4042,<lb/> </bibl>
+        <bibl><label>[26]</label> S. Scherer, M.R. Schindler, Lect.Notes Phys. 830, pp.1 (2012)<lb/> </bibl>
+        <bibl><label>[27]</label> G. Ecker, Nucl. Phys. Proc. Suppl. 245, 1 (2013), 1310.2084<lb/> </bibl>
+        <bibl><label>[28]</label> V. Bernard, Prog. Part. Nucl. Phys. 60, 82 (2008), 0706.0312<lb/> </bibl>
+        <bibl><label>[29]</label> J. Gasser, M. Sainio, A. Svarc, Nucl.Phys. B307, 779 (1988)<lb/> </bibl>
+        <bibl><label>[30]</label> T. Becher, H. Leutwyler, Eur.Phys.J. C9, 643 (1999), hep-ph/9901384<lb/> </bibl>
+        <bibl><label>[31]</label> N. Fettes, U.G. Meissner, M. Mojzis, S. Steininger, Annals Phys. 283, 273 (2000),<lb/> hep-ph/0001308<lb/> </bibl>
+        <bibl><label>[32]</label> M. Dorati, T.A. Gail, T.R. Hemmert, Nucl. Phys. A798, 96 (2008), nucl-th/0703073<lb/> </bibl>
+        <bibl><label>[33]</label> P. Wein, P.C. Bruns, A. Schäfer, Phys. Rev. D89, 116002 (2014), 1402.4979<lb/> </bibl>
+        <bibl><label>[34]</label> K. Nagata, A. Hosaka, V. Dmitrasinovic, Eur.Phys.J. C57, 557 (2008)<lb/> </bibl>
+        <bibl><label>[35]</label> B. Ioffe, Nucl.Phys. B188, 317 (1981)<lb/> </bibl>
+        <bibl><label>[36]</label> D. Espriu, P. Pascual, R. Tarrach, Nucl.Phys. B214, 285 (1983)<lb/> </bibl>
+        <bibl><label>[37]</label> P. Wein, P.C. Bruns, T.R. Hemmert, A. Schäfer, Eur.Phys.J. A47, 149 (2011), 1106.3440<lb/> </bibl>
+        <bibl><label>[38]</label> S. Güsken, U. Low, K. Mutter, R. Sommer, A. Patel et al., Phys.Lett. B227, 266 (1989)<lb/> </bibl>
+        <bibl><label>[39]</label> S. Güsken, Nucl.Phys.Proc.Suppl. 17, 361 (1990)<lb/> </bibl>
+        <bibl><label>[40]</label> C. Alexandrou, F. Jegerlehner, S. Güsken, K. Schilling, R. Sommer, Phys.Lett. B256, 60 (1991)<lb/> </bibl>
+        <bibl><label>[41]</label> M. Lüscher, JHEP 1304, 123 (2013), 1302.5246<lb/> </bibl>
+        <bibl><label>[42]</label> J. Blümlein, H. Böttcher, Nucl. Phys. B841, 205 (2010), 1005.3113<lb/> </bibl>
+        <bibl><label>[43]</label> S. Syritsyn, PoS LATTICE2013, 009 (2014), 1403.4686<lb/> </bibl>
+        <bibl><label>[44]</label> J. Green, AIP Conf. Proc. 1701, 040007 (2016), 1412.4637<lb/> </bibl>
+        <bibl><label>[45]</label> M. Constantinou, PoS CD15, 009 (2015), 1511.00214<lb/> </bibl>
+        <bibl><label>[46]</label> C. Alexandrou, EPJ Web Conf. 137, 01004 (2017), 1612.04644<lb/> </bibl>
+        <bibl><label>[47]</label> S. Collins, Hadron Structure, plenary talk given at 34th International Symposium on Lattice<lb/> Field Theory (Lattice2016), Southampton, UK, 26th July 2016,<lb/> https://conference.ippp.dur.ac.uk/event/470/session/1/contribution/118<lb/> </bibl>
+        <bibl><label>[48]</label> G.S. Bali, S. Collins, B. Glässle, M. Göckeler, J. Najjar, R.H. Rödl, A. Schäfer, R.W. Schiel,<lb/> W. Söldner, A. Sternbeck, Phys. Rev. D91, 054501 (2015), 1412.7336<lb/> </bibl>
+        <bibl><label>[49]</label> A. Abdel-Rehim et al., Phys. Rev. D92, 114513 (2015), [Erratum:<lb/> Phys.<lb/> Rev.D93,no.3,039904(2016)], 1507.04936<lb/> </bibl>
+        <bibl><label>[50]</label> T. Bhattacharya, V. Cirigliano, S. Cohen, R. Gupta, H.W. Lin, B. Yoon (2016),<lb/> arXiv:1606.07049 [hep-lat]<lb/> </bibl>
+        <bibl><label>[51]</label> G. von Hippel, T.D. Rae, E. Shintani, H. Wittig, Nucl. Phys. B914, 138 (2017), 1605.00564<lb/> </bibl>
+        <bibl><label>[52]</label> J.R. Green, M. Engelhardt, S. Krieg, J.W. Negele, A.V. Pochinsky, S.N. Syritsyn, Phys. Lett.<lb/> B734, 290 (2014), 1209.1687<lb/> </bibl>
+        <bibl><label>[53]</label> G.S. Bali, S. Collins, B. Gläßle, M. Göckeler, J. Najjar, R.H. Rödl, A. Schäfer, R.W. Schiel,<lb/> A. Sternbeck, W. Söldner, Phys. Rev. D90, 074510 (2014), 1408.6850<lb/> </bibl>
+        <bibl><label>[54]</label> E. Berkowitz et al. (2017), 1704.01114<lb/> </bibl>
+        <bibl><label>[55]</label> C. Alexandrou and C. Kallidonis, private communication, June 2017<lb/> </bibl>
+        <bibl><label>[56]</label> B. Yoon et al., Phys. Rev. D95, 074508 (2017), 1611.07452<lb/> </bibl>
+        <bibl><label>[57]</label> R. Gupta, Isovector and isoscalar charges of the nucleon, talk at this conference,<lb/> https://makondo.ugr.es/event/0/session/95/contribution/370<lb/> </bibl>
+        <bibl><label>[58]</label> M.T. Hansen, H.B. Meyer (2016), arXiv:1610.03843[hep-lat]<lb/> </bibl>
+        <bibl><label>[59]</label> L. Maiani, G. Martinelli, M.L. Paciello, B. Taglienti, Nucl. Phys. B293, 420 (1987)<lb/> </bibl>
+        <bibl><label>[60]</label> S. Capitani, M. Della Morte, G. von Hippel, B. Jager, A. Jüttner, B. Knippschild, H.B. Meyer,<lb/> H. Wittig, Phys. Rev. D86, 074502 (2012), 1205.0180<lb/> </bibl>
+        <bibl><label>[61]</label> M. Cè, L. Giusti, S. Schaefer, Phys. Rev. D93, 094507 (2016), 1601.04587<lb/> </bibl>
+        <bibl><label>[62]</label> M. Cè, L. Giusti, S. Schaefer, Phys. Rev. D95, 034503 (2017), 1609.02419<lb/> </bibl>
+        <bibl><label>[63]</label> M.L. Wagman, M.J. Savage (2017), arXiv:1704.07356 [hep-lat]<lb/> </bibl>
+        <bibl><label>[64]</label> L. Giusti, Multi-boson block factorization of fermions, plenary talk at this conference,<lb/> https://makondo.ugr.es/event/0/session/4/contribution/220<lb/> </bibl>
+        <bibl><label>[65]</label> M. Wagman, Life Outside the Golden Window: Statistical Angles on the Signal-to-Noise Prob-<lb/>lem, talk at this conference,<lb/> https://makondo.ugr.es/event/0/session/94/contribution/19<lb/> </bibl>
+        <bibl><label>[66]</label> M. Lüscher, U. Wolff, Nucl.Phys. B339, 222 (1990)<lb/> </bibl>
+        <bibl><label>[67]</label> B. Blossier, M. Della Morte, G. von Hippel, T. Mendes, R. Sommer, JHEP 0904, 094 (2009),<lb/> 0902.1265<lb/> </bibl>
+        <bibl><label>[68]</label> C. Lang, V. Verduci, Phys.Rev. D87, 054502 (2013), 1212.5055<lb/> </bibl>
+        <bibl><label>[69]</label> A.L. Kiratidis, W. Kamleh, D.B. Leinweber, B.J. Owen, Phys. Rev. D91, 094509 (2015),<lb/> 1501.07667<lb/> </bibl>
+        <bibl><label>[70]</label> C.B. Lang, L. Leskovec, M. Padmanath, S. Prelovsek, Phys. Rev. D95, 014510 (2017),<lb/> 1610.01422<lb/> </bibl>
+        <bibl><label>[71]</label> A.L. Kiratidis, W. Kamleh, D.B. Leinweber, Z.W. Liu, F.M. Stokes, A.W. Thomas, Phys. Rev.<lb/> D95, 074507 (2017), 1608.03051</bibl>
+        </listBibl>
+    </text>
+</tei>
+
