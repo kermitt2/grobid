@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>R. C. Jaeger and T. N. Blalock</author>, <title level="m">Microelectronic circuit design</title>,vol .<biblScope unit="">97</biblScope> ( <publisher>McGraw-Hill</publisher><pubPlace>New York</pubPlace> ,<date>1997</date> ).</bibl>
+	<bibl><author>W.-K. Chen</author>, <title level="m">Active Network Analysis: Feedback Ampli-fierTheory</title> ,vol .<biblScope unit="volume">15</biblScope> ( <publisher>WorldScientific</publisher> ,<date>2016</date> ).</bibl>
+	<bibl><author>L. d. F. Costa, F. N. Silva, and C. H. Comin</author>, <title level="m">Electrical Engineering</title>pp .<biblScope unit="page">1 -23</biblScope>( <date>2017</date>).</bibl>
+	<bibl><author>D. A. Bell</author>, <title level="a">Electronic Instrumentation and measurements</title> (<publisher>PrenticeHall</publisher> ,<date>1994</date> ).</bibl>
+	<bibl><author>A. V. Oppenheim and R. W. Schafer</author>, <title level="m">Discrete-time sig-nalprocessing</title> ( <publisher>PearsonHigher Education</publisher> ,<date>2010</date> ).</bibl>
+	<bibl><author>J. G. Proakis and D. K. Manolakis</author>, <title level="j">Digital Signal Pro-cessing</title>( <publisher>Pearson</publisher>,<date>2006</date> ).</bibl>
+	<bibl><author>I. Joliffe and B. Morgan</author>, <title level="j">Statistical methods in medical research</title><biblScope unit="volume">1</biblScope> ,<biblScope unit="page">69</biblScope> ( <date>1992</date>).</bibl>
+	<bibl><author>R. A. Johnson, D. W. Wichern, et al.</author>, <title level="a">Applied multivari-atestatistical analysis</title> ,vol .<biblScope unit="volume">5</biblScope> ( <publisher>Prenticehall</publisher> <pubPlace>Upper Saddle River ,NJ</pubPlace>, <date>2002</date>) .</bibl>
+	<bibl><author>C. M. Bishop</author>, <title level="m">Pattern Recognition and Machine Learning</title> (<publisher>Springer</publisher>,<date>2006</date> ).</bibl>
+	<bibl><author>I. H. Witten and E. Frank</author>, <title level="m">Data Mining: Practical ma-chinelearning tools and techniques</title> ( <publisher>MorganKaufmann</publisher> ,<date>2005</date> ).</bibl>
+	<bibl><author>R. L. Boylestad, L. Nashelsky, and L. Li</author>, <title level="m">Electronic de-vicesand circuit theory</title> ,vol .<biblScope unit="volume">11</biblScope> ( <publisher>PrenticeHall</publisher> <pubPlace>Englewood Cliffs ,NJ</pubPlace>, <date>2002</date>) .</bibl>
+	<bibl><author>B. Cordell</author>, <title level="a">Designing audio power amplifiers</title> (<publisher>McGraw-Hill</publisher>,<date>2011</date> ).</bibl>
+	<bibl><author>R. O. Duda, P. E. Hart, and D. G. Stork</author>, <title level="m">Pattern clas-sification</title>( <publisher>JohnWiley &amp; Sons</publisher> ,<date>2012</date> ).</bibl>
+	<bibl><author>N. R. Draper, H. Smith, and E. Pownell</author>, <title level="m">Applied regres-</title></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

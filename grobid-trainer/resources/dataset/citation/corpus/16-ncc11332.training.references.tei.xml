@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Adriani O. et al.</author>, <title level="j">JINST</title>, <biblScope unit="volume">3</biblScope> (<date>2008</date>) <biblScope unit="page">S08006</biblScope>.</bibl>
+	<bibl><author>Mase T. et al.</author>, <title level="j">Nucl. Instrum. Methods A</title>, <biblScope unit="volume">671</biblScope> (<date>2012</date>) <biblScope unit="page">29</biblScope>.</bibl>
+	<bibl><author>Kawade K. et al.</author>, <title level="j">JINST</title>, <biblScope unit="volume">9</biblScope> (<date>2014</date>) <biblScope unit="page">P03016</biblScope>.</bibl>
+	<bibl><author>Adriani O. et al.</author>, <title level="j">Phys. Lett. B</title>, <biblScope unit="volume">2</biblScope> (<date>2011</date>) <biblScope unit="page">128</biblScope>.</bibl>
+	<bibl><author>Adriani O. et al.</author>, <title level="j">Phys. Rev. D</title>, <biblScope unit="volume">9</biblScope> (<date>2012</date>) <biblScope unit="page">092001</biblScope>.</bibl>
+	<bibl><author>Adriani O. et al.</author>, <title level="j">Phys. Lett. B</title>, <biblScope unit="volume">750</biblScope> (<date>2015</date>) <biblScope unit="page">360</biblScope>.</bibl>
+	<bibl><author>D&apos;Agostini G.</author>, <title level="j">Nucl. Instrum. Methods A</title>, <biblScope unit="volume">362</biblScope> (<date>1995</date>) <biblScope unit="page">487</biblScope>.</bibl>
+	<bibl><author>Ostapchenko S.</author>, <title level="j">Phys. Rev. D</title>, <biblScope unit="volume">83</biblScope> (<date>2011</date>) <biblScope unit="page">014018</biblScope>.</bibl>
+	<bibl><author>Amati D., Stanghellini A. and Fubini S.</author>, <title level="j">Il Nuovo Cimento</title>, <biblScope unit="volume">26</biblScope> (<date>1962</date>) <biblScope unit="page">896</biblScope>.</bibl>
+	<bibl><author>Feynman R.</author>, <title level="j">Phys. Rev. Lett.</title>, <biblScope unit="volume">23</biblScope> (<date>1969</date>) <biblScope unit="page">1415</biblScope>.</bibl>
+	<bibl><author>Adriani O. et al.</author>, <title level="j">Phys. Rev. C</title>, <biblScope unit="volume">89</biblScope> (<date>2014</date>) <biblScope unit="page">065209</biblScope>.</bibl>
+	<bibl><author>Harrison M., Ludlam T. and Ozaki S.</author>, <title level="j">Nucl. Instrum. Methods A</title>, <biblScope unit="volume">499</biblScope> (<date>2003</date>) <biblScope unit="page">235</biblScope>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>
