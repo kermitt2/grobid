@@ -16,6 +16,8 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.apache.commons.collections4.CollectionUtils.isEmpty;
+
 /**
  * SAX parser for the XML format for citation data. Normally all training data should be in this unique format which
  * replaces the ugly CORA format. Segmentation of tokens must be identical as the one from pdf2xml files to that
@@ -245,11 +247,11 @@ public class TEICitationSaxParser extends DefaultHandler {
                 }
             }
             // TBD: keep the idno type for further exploitation
-        } else if (qName.equals("bibl")) {
+        } else if (qName.equals("bibl") || qName.equals("listbibl")) {
             accumulator = new StringBuffer();
             allContent = new StringBuffer();
-            labeled = new ArrayList<String>();
-            tokens = new ArrayList<LayoutToken>();
+            labeled = new ArrayList<>();
+            tokens = new ArrayList<>();
         }
         accumulator.setLength(0);
     }
@@ -257,10 +259,15 @@ public class TEICitationSaxParser extends DefaultHandler {
     private void writeField(String text) {
         // we segment the text
         List<LayoutToken> localTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
-        if ( (localTokens == null) || (localTokens.size() == 0) )
+
+        if (isEmpty(localTokens)) {
             localTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text, new Language("en", 1.0));
-        if  ( (localTokens == null) || (localTokens.size() == 0) )
+        }
+
+        if (isEmpty(localTokens)) {
             return;
+        }
+        
         boolean begin = true;
         for (LayoutToken token : localTokens) {
             tokens.add(token);
