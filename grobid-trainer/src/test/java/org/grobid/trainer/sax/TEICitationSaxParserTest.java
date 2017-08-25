@@ -8,8 +8,9 @@ import javax.xml.parsers.SAXParserFactory;
 
 import java.io.InputStream;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class TEICitationSaxParserTest {
 
@@ -31,6 +32,12 @@ public class TEICitationSaxParserTest {
         p.parse(is, target);
 
         assertThat(target.getLabeledResult(), hasSize(25));
+        assertThat(target.getLabeledResult().get(0), hasSize(49));
+        assertThat(target.getLabeledResult().get(0).get(0).toString(), is("I-<author>"));
+        assertThat(target.getTokensResult().get(0).get(0).toString(), is("H"));
+        assertThat(target.getLabeledResult().get(0).get(1).toString(), is("<author>"));
+        assertThat(target.getTokensResult().get(0).get(1).toString(), is("."));
+
     }
 
 }
