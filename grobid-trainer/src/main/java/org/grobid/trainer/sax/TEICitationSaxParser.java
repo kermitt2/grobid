@@ -247,11 +247,11 @@ public class TEICitationSaxParser extends DefaultHandler {
                 }
             }
             // TBD: keep the idno type for further exploitation
-        } else if (qName.equals("bibl") || qName.equals("listbibl")) {
+        } else if (qName.equals("bibl")) {
             accumulator = new StringBuffer();
             allContent = new StringBuffer();
-            labeled = new ArrayList<>();
-            tokens = new ArrayList<>();
+            labeled = new ArrayList<String>();
+            tokens = new ArrayList<LayoutToken>();
         }
         accumulator.setLength(0);
     }
