@@ -116,6 +116,7 @@ public class CitationTrainer extends AbstractTrainer {
 	        List<OffsetPosition> locationsPositions;
 	        List<OffsetPosition> collaborationsPositions;
 	        List<OffsetPosition> identifiersPositions;
+	        List<OffsetPosition> urlPositions;
 
 			int n = 0;
 			for (; n < refFiles.length; n++) {
@@ -149,11 +150,12 @@ public class CitationTrainer extends AbstractTrainer {
 	                locationsPositions = lexicon.inLocationNamesLayoutToken(allTokens.get(i));
 	                collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(allTokens.get(i));
 	                identifiersPositions = lexicon.inIdentifierPatternLayoutToken(allTokens.get(i));
+	                urlPositions = lexicon.inUrlPatternLayoutToken(allTokens.get(i));
 
 					String citation = FeaturesVectorCitation.addFeaturesCitation(allTokens.get(i), 
 							allLabeled.get(i), journalsPositions, abbrevJournalsPositions, 
 							conferencesPositions, publishersPositions, locationsPositions, 
-							collaborationsPositions, identifiersPositions);
+							collaborationsPositions, identifiersPositions, urlPositions);
 
 					if ( (writer2 == null) && (writer3 != null) )
 						writer3.write(citation + "\n \n");

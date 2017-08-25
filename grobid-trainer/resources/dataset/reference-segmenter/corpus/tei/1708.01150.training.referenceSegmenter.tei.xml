@@ -19,9 +19,9 @@
         <bibl><label>[11]</label> V. A. Rubakov, The Null Energy Condition and its violation, arXiv:1401.<lb/> 4024v2.<lb/> </bibl>
         <bibl><label>[12]</label> Planck Collaboration, Planck 2015 results. XIII. Cosmological parameters,<lb/> arXiv:1502.01589.<lb/> </bibl>
         <bibl><label>[13]</label> Planck Collaboration, Planck 2015 results. XX. Constraints on inflations,<lb/> arXiv:1502.02114.<lb/> </bibl>
-<bibl><label>[14]</label> C. W. Misner, K. S. Thorne, J. A. Wheeler, Gravitation, W.H. Freeman (1973).<lb/> </bibl>
-<bibl><label>[15]</label> R. M. Wald, General Relativity, University of Chicago Press (1984).<lb/> </bibl>
-<bibl><label>[16]</label> S. Winitzki, Selected topics in Advanced General Relativity, https://sites.<lb/> google.com/site/winitzki/index/topics-in-general-relativity.<lb/> </bibl>
+        <bibl><label>[14]</label> C. W. Misner, K. S. Thorne, J. A. Wheeler, Gravitation, W.H. Freeman (1973).<lb/> </bibl>
+        <bibl><label>[15]</label> R. M. Wald, General Relativity, University of Chicago Press (1984).<lb/> </bibl>
+        <bibl><label>[16]</label> S. Winitzki, Selected topics in Advanced General Relativity, https://sites.<lb/> google.com/site/winitzki/index/topics-in-general-relativity.<lb/> </bibl>
         <bibl><label>[17]</label> S. W. Hawking, G. F. R. Ellis, The Large Scale Structure of Space-Time, Cam-<lb/>bridge University press (1973).<lb/> </bibl>
         <bibl><label>[18]</label> J. Earman, Bangs, Crunches, Whimpers and Shrieks: Singularities and<lb/> Acausalities in Relativistic Spacetimes, Oxford University press (1995).<lb/> </bibl>
         <bibl><label>[19]</label> R. M. Wald, Gravitational Collapse and Cosmic Censorship, arXiv:gr-qc/<lb/> 9710068.<lb/> </bibl>
@@ -37,7 +37,7 @@
         <bibl><label>[29]</label> N. A. Chernikov, E. A. Tagirov, Quantum theory of scalar field in de Sitter<lb/> space-time, Annales de l&apos;I.H.P. Physique thÃľorique, Vol. IX (1968).<lb/> </bibl>
         <bibl><label>[30]</label> A. A. Starobinsky, A New Type of Isotropic Cosmological Models Without Sin-<lb/>gularity, Phys.Lett., B91, (1980).<lb/> </bibl>
         <bibl><label>[31]</label> A. D. Linde, Chaotic Inflation, Phys.Lett., B129, (1983).<lb/> </bibl>
-            <bibl><label>[32]</label> P. J. Steinhardt, The inflation debate: Is the theory at heart of modern cos-<lb/>mology deeply flawed?, Scientific American, April (2011); </bibl><bibl>A. Ijjas, P. J. Stein-<lb/>hardt, A. Loeb, Inflationary schism after Planck2013, Phys.Lett. B736 (2014).<lb/> arXiv:1402.6980<lb/> </bibl>
+        <bibl><label>[32]</label> P. J. Steinhardt, The inflation debate: Is the theory at heart of modern cos-<lb/>mology deeply flawed?, Scientific American, April (2011); </bibl><bibl>A. Ijjas, P. J. Stein-<lb/>hardt, A. Loeb, Inflationary schism after Planck2013, Phys.Lett. B736 (2014).<lb/> arXiv:1402.6980<lb/> </bibl>
         <bibl><label>[33]</label> M. Gasperini, Elements of string cosmology, Cambridge University Press<lb/> (2007).<lb/> </bibl>
         <bibl><label>[34]</label> I. Antoniadis, E. Gava, K. S. Narain Moduli Corrections to Gravitational<lb/> Couplings from String loops, Phys.Lett.B283:209-212 (1992). arXiv:hep-th/<lb/> 9203071<lb/> </bibl>
         <bibl><label>[35]</label> B. Zwiebach, Curvature squared terms and string theories, Phys. Lett. B 156 ,<lb/> 315 (1985).<lb/> </bibl>
@@ -80,7 +80,7 @@
         <bibl><label>[72]</label> I. P. Neupane, B. M.N. Carter Dynamical Relaxation of Dark Energy: A So-<lb/>lution to Early Inflation, Late-time Acceleration and the Cosmological Constant<lb/> Problem, Phys.Lett. B638 (2006) arXiv:hep-th/0510109.<lb/> </bibl>
         <bibl><label>[73]</label> M. Satoh, S. Kanno, J. Soda Circular Polarization of Primordial Gravitational<lb/> Waves in String-inspired Inflationary Cosmology, Phys.Rev. D77 (2008) arXiv:<lb/> 0706.3585.<lb/> </bibl>
         <bibl><label>[74]</label> Z. Guo, N. Ohta, and S. Tsujikawa Realizing scale-invariant density pertur-<lb/>bations in low-energy effective string theory, Phys. Rev. D 75 (2007) arXiv:<lb/> hep-th/0610336<lb/> </bibl>
-            <bibl><label>[75]</label> C.Cartier, E.J.Copeland, M.Gasperini, Gravitational waves in nonsingular<lb/> string cosmologies, Nucl.Phys. B607 (2001) arXiv:gr-qc/0101019</bibl>;<bibl>M. Gasperini<lb/> Tensor perturbations in high-curvature string backgrounds, Phys.Rev. D56<lb/> (1997) arXiv:gr-qc/9704045<lb/> </bibl>
+        <bibl><label>[75]</label> C.Cartier, E.J.Copeland, M.Gasperini, Gravitational waves in nonsingular<lb/> string cosmologies, Nucl.Phys. B607 (2001) arXiv:gr-qc/0101019</bibl>;<bibl>M. Gasperini<lb/> Tensor perturbations in high-curvature string backgrounds, Phys.Rev. D56<lb/> (1997) arXiv:gr-qc/9704045<lb/> </bibl>
         <bibl><label>[76]</label> Advanced Numerical Differential Equation Solving in the Wolfram Language,<lb/> http://reference.wolfram.com/language/tutorial/NDSolveOverview.<lb/> html.<lb/> </bibl>
         <bibl><label>[77]</label> A. Ijjas, P. J. Steinhardt, Classically stable non-singular cosmological bounces,<lb/> arXiv:1606.08880</bibl>
         </listBibl>

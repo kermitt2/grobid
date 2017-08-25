@@ -186,14 +186,16 @@ public class FeaturesVectorCitation {
                                              List<OffsetPosition> publisherPositions,
                                              List<OffsetPosition> locationPositions,
                                              List<OffsetPosition> collaborationPositions,
-                                             List<OffsetPosition> identifierPositions) throws Exception {
+                                             List<OffsetPosition> identifierPositions, 
+                                             List<OffsetPosition> urlPositions) throws Exception {
         if ((journalPositions == null) ||
                 (abbrevJournalPositions == null) ||
                 (conferencePositions == null) ||
                 (publisherPositions == null) ||
                 (locationPositions == null) ||
                 (collaborationPositions == null) ||
-                (identifierPositions == null)) {
+                (identifierPositions == null) ||
+                (urlPositions == null)) {
             throw new GrobidException("At least one list of gazetter matches positions is null.");
         }
 
@@ -208,6 +210,7 @@ public class FeaturesVectorCitation {
         int currentLocationPositions = 0;
         int currentCollaborationPositions = 0;
         int currentIdentifierPositions = 0;
+        int currentUrlPositions = 0;
 
         boolean isJournalToken;
         boolean isAbbrevJournalToken;
@@ -216,6 +219,7 @@ public class FeaturesVectorCitation {
         boolean isLocationToken;
         boolean isCollaborationToken;
         boolean isIdentifierToken;
+        boolean isUrlToken;
         boolean skipTest;
 
         String previousTag = null;
@@ -236,6 +240,7 @@ public class FeaturesVectorCitation {
             isLocationToken = false;
             isCollaborationToken = false;
             isIdentifierToken = false;
+            isUrlToken = false;
             skipTest = false;
 
             String text = token.getText();
@@ -368,7 +373,6 @@ public class FeaturesVectorCitation {
                     }
                 }
             }
-
             // check the position of matches for collaboration
             skipTest = false;
             if (collaborationPositions != null) {
@@ -410,6 +414,29 @@ public class FeaturesVectorCitation {
                         } else if (identifierPositions.get(i).start > n) {
                             isIdentifierToken = false;
                             currentIdentifierPositions = i;
+                            break;
+                        }
+                    }
+                }
+            }
+            // check the position of matches for url
+            skipTest = false;
+            if (urlPositions != null) {
+                if (currentUrlPositions == urlPositions.size() - 1) {
+                    if (urlPositions.get(currentUrlPositions).end < n) {
+                        skipTest = true;
+                    }
+                }
+                if (!skipTest) {
+                    for (int i = currentUrlPositions; i < urlPositions.size(); i++) {
+                        if ((urlPositions.get(i).start <= n) &&
+                                (urlPositions.get(i).end >= n)) {
+                            isUrlToken = true;
+                            currentUrlPositions = i;
+                            break;
+                        } else if (urlPositions.get(i).start > n) {
+                            isUrlToken = false;
+                            currentUrlPositions = i;
                             break;
                         }
                     }
@@ -510,13 +537,9 @@ public class FeaturesVectorCitation {
                 features.year = true;
             }
 
-            Matcher m4 = featureFactory.http.matcher(text);
-            if (m4.find()) {
-                features.http = true;
-            }
-
             if (isCollaborationToken)
                 features.isKnownCollaboration = true;
+            
             /*Matcher m5 = featureFactory.ACRONYM.matcher(text);
                if (m5.find()) {
                    features.acronym = true;
@@ -553,6 +576,10 @@ public class FeaturesVectorCitation {
 
             if (isIdentifierToken) {
                 features.isKnownIdentifier = true;
+            }
+
+            if (isUrlToken) {
+                features.http = true;
             }
 
             features.label = tag;

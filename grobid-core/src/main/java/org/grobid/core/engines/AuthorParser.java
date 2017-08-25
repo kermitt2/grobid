@@ -235,8 +235,10 @@ public class AuthorParser {
             }
 
             // some more person name normalisation
-            for(Person author : fullAuthors) {
-                author.normalizeName();
+            if (fullAuthors != null) {
+                for(Person author : fullAuthors) {
+                    author.normalizeName();
+                }
             } 
 
         } catch (Exception e) {

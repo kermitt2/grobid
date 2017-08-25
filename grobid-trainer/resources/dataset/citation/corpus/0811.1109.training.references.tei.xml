@@ -62,8 +62,8 @@
 	<bibl><author>Chen C.T. and Millero F.</author><title level="j">J. Limnol.Oceanogr.</title> <biblScope unit="volume">31</biblScope>, <date>1986</date>, P.<biblScope unit="page">657 –682</biblScope>.</bibl>
 	<bibl><author>Weiss R.F., Carmac E.C., Koropalov V.M.</author>, <title level="j"> Nature</title>, <date>1991</date>V<biblScope unit="volume">349</biblScope> <biblScope unit="page">665</biblScope> .</bibl>
 	<bibl><author>V. Balkanov et al.</author> <title level="j">Applied Optics</title> <biblScope unit="volume">38</biblScope>(<biblScope unit="issue">33</biblScope>) <biblScope unit="page">6818</biblScope> (<date>1999</date>).</bibl>
-	<bibl><author>V. Balkanov et al.</author>, <title level="j">Prog.Part.Nucl.Phys.</title> <biblScope unit="volume">40</biblScope> (<date>1998</date>) <biblScope unit="page">391</biblScope>; <idno>astro-ph/9801044</idno></bibl>
-	<bibl><author>I. Belolaptikov et al.</author>, <title level="m">Proc. 3rd Nestor Int. Workshop</title>, <pubPlace>Pylos( Greece)</pubPlace><date>1993</date> ;<note type="report">DESY -94-049</note></bibl>
+	<bibl><author>V. Balkanov et al.</author>, <title level="j">Prog.Part.Nucl.Phys.</title> <biblScope unit="volume">40</biblScope> (<date>1998</date>) <biblScope unit="page">391</biblScope>; <idno type="arxiv">astro-ph/9801044</idno></bibl>
+	<bibl><author>I. Belolaptikov et al.</author>, <title level="m">Proc. 3rd Nestor Int. Workshop</title>, <pubPlace>Pylos( Greece)</pubPlace><date>1993</date> ;<idno type="report">DESY -94-049</idno></bibl>
 	<bibl><author>K. Kebkal et al.</author>, <note>these proceedings</note>.</bibl>
 	<bibl><author>M. Schmid, N.M. Budnev, N.G. Granin et al.</author>, <title level="j">GeophysicalResearch Letters</title> Vol .<biblScope unit="volume">35</biblScope> ,<biblScope unit="page">L09605</biblScope> ( <date>2008</date>);<idno type="DOI">doi:10.1029/2008GL033223</idno>, <date>2008</date>.</bibl>
 	<bibl><author>V. Aynutdinov et al.</author>, <title level="m">Proc. 10th Int.Conf.Instr.Coll. BeamPhys .</title>,<pubPlace>Novosibirsk ( Russia)</pubPlace><date>2008</date> ;<publisher>NIM -Ain press</publisher></bibl>

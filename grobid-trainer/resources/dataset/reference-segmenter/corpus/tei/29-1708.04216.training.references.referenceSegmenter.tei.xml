@@ -13,8 +13,7 @@
         <bibl><label>[5]</label> J. F. Donges, Y. Zou, N. Marwan, J. Kurths, Complex networks in climate<lb/> dynamics, The European Physical Journal Special Topics 174 (1) (2009)<lb/> 157-179. doi:10.1140/epjst/e2009-01098-2.<lb/> </bibl>
         <bibl><label>[6]</label> A. Gozolchiani, K. Yamasaki, O. Gazit, S. Havlin, Pattern of climate<lb/> network blinking links follows el Niño events, EPL (Europhysics Letters)<lb/> 83 (2) (2008) 28005.<lb/> </bibl>
         <bibl><label>[7]</label> A. Tsonis, P. Roebber, The architecture of the climate network, Physica A:<lb/> Statistical Mechanics and its Applications 333 (2004) 497 -504.<lb/> </bibl>
-        <bibl><label>[8]</label> K. Yamasaki, A. Gozolchiani, S. Havlin, Climate networks around the globe<lb/> are significantly affected by el Niño, Phys. Rev. Lett. 100 (2008) 228501.<lb/> </bibl>
-<bibl>doi:10.1103/PhysRevLett.100.228501.<lb/> </bibl>
+        <bibl><label>[8]</label> K. Yamasaki, A. Gozolchiani, S. Havlin, Climate networks around the globe<lb/> are significantly affected by el Niño, Phys. Rev. Lett. 100 (2008) 228501.<lb/> doi:10.1103/PhysRevLett.100.228501.<lb/> </bibl>
         <bibl><label>[9]</label> K. Steinhaeuser, N. V. Chawla, A. R. Ganguly, An exploration of climate<lb/> data using complex networks, in: Proceedings of the Third International<lb/> Workshop on Knowledge Discovery from Sensor Data, ACM, 2009, pp.<lb/> 23-31. doi:10.1145/1601966.1601973.<lb/> </bibl>
         <bibl><label>[10]</label> S. Rehman, A. Ahmad, I. El-Amin, L. M. Al-Hadhrami, Assessment of wind<lb/> power, wind exponent, local air density and air turbulence intensity for<lb/> an isolated site, International Journal of Sustainable Energy 28 (4) (2009)<lb/> 217-230. doi:10.1080/14786450903221511.<lb/> </bibl>
         <bibl><label>[11]</label> U. Desideri, J. Yan, Clean energy technologies and systems for a sustainable<lb/> world, Applied Energy 97 (2012) 1 -4, energy Solutions for a Sustainable<lb/> World -Proceedings of the Third International Conference on Applied<lb/> Energy, May 16-18, 2011 -Perugia, Italy.<lb/> </bibl>
@@ -47,18 +46,21 @@
         <bibl><label>[38]</label> D. Schertzer, S. Lovejoy, Physical modeling and analysis of rain and clouds by<lb/> anisotropic scaling multiplicative processes, Journal of Geophysical Research:<lb/> Atmospheres 92 (D8) (1987) 9693-9714. doi:10.1029/JD092iD08p09693.<lb/> </bibl>
         <bibl><label>[39]</label> A. Marshak, A. Davis, R. Cahalan, W. Wiscombe, Bounded cascade models<lb/> as nonstationary multifractals, Phys. Rev. E 49 (1994) 55-69. doi:10.<lb/> 1103/PhysRevE.49.55.<lb/> </bibl>
         <bibl><label>[40]</label> R. Calif, F. G. Schmitt, Multiscaling and joint multiscaling description<lb/> of the atmospheric wind speed and the aggregate power output from a<lb/> wind farm, Nonlinear Processes in Geophysics 21 (2) (2014) 379-392. doi:<lb/> 10.5194/npg-21-379-2014.<lb/> (a)<lb/> 2012<lb/> </bibl>
+
         2013<lb/> 2014<lb/> 2015<lb/> 2016<lb/> 2017<lb/> 0.000<lb/> 
-0.010<lb/> 
-0.020<lb/> 
-Seasonal<lb/> (b)<lb/> 2012<lb/> 
+        0.010<lb/> 
+        0.020<lb/> 
+        Seasonal<lb/> (b)<lb/> 2012<lb/> 
         2013<lb/> 2014<lb/> 2015<lb/> 2016<lb/> 2017<lb/> −0.05 0.00<lb/> 
-0.05<lb/> 
-0.10<lb/> 
-Trend<lb/> (c)<lb/> 2012<lb/> 
-        2013<lb/> 2014</label><lb/> 2015<lb/> 2016<lb/> 2017<lb/> 0.040 0.045 0.050<lb/> 
+        0.05<lb/> 
+        0.10<lb/> 
+        Trend<lb/> (c)<lb/> 2012<lb/> 
+        2013<lb/> 2014<lb/> 2015<lb/> 2016<lb/> 2017<lb/> 0.040 0.045 0.050<lb/> 
         Residuals<lb/> (d)<lb/> 2012<lb/> 
-        <label>2013<lb/> 2014</label><lb/> <label>2015<lb/> 2016</label><lb/> <label>2017<lb/> −</label>0.10 0.00 0.10<lb/> 
+        2013<lb/> 2014<lb/> 2015<lb/> 2016<lb/> 2017<lb/> −0.10 0.00 0.10<lb/> 
         Figure 6: STL decomposition for ρ T = 0.7.
+
+
         </listBibl>
     </text>
 </tei>
