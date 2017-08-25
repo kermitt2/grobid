@@ -255,6 +255,11 @@ public class TEICitationSaxParser extends DefaultHandler {
     }
 
     private void writeField(String text) {
+        if (tokens == null) {
+            // nothing to do, text must be ignored
+            return;
+        }
+
         // we segment the text
         List<LayoutToken> localTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
         if ( (localTokens == null) || (localTokens.size() == 0) )

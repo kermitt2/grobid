@@ -2137,7 +2137,7 @@ public class BiblioItem {
                         tei.append("<biblScope unit=\"page\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
                     }
                 }
-                if ((publication_date != null) || (pageRange != null) || (publisher != null)) {
+                if ((publication_date != null) || (pageRange != null) || (publisher != null) || (volumeBlock != null)) {
 	                for (int i = 0; i < indent + 2; i++) {
 	                    tei.append("\t");
 	                }
@@ -2485,7 +2485,7 @@ public class BiblioItem {
                     tei.append("<pubPlace>" + TextUtilities.HTMLEncode(location) + "</pubPlace>\n");
                 }
 
-                if ((publication_date != null) || (pageRange != null) || (location != null) || (publisher != null)) {
+                if ((publication_date != null) || (pageRange != null) || (location != null) || (publisher != null) || (volumeBlock != null)) {
                     for (int i = 0; i < indent + 2; i++) {
                         tei.append("\t");
                     }
@@ -3338,7 +3338,8 @@ public class BiblioItem {
         int nbAffiliations = 0;
         int nbAddresses = 0;
 
-        if (collaboration != null) {
+        if ( (collaboration != null) && 
+            ( (fullAuthors == null) || (fullAuthors.size() == 0) ) ) {
             // collaboration plays at the same time the role of author and affiliation
             TextUtilities.appendN(tei, '\t', nbTag);
             tei.append("<author>").append("\n");
@@ -3531,6 +3532,15 @@ public class BiblioItem {
                             TextUtilities.appendN(tei, '\t', nbTag + 1);
                             tei.append("</affiliation>\n");
                         }
+                    } else if (collaboration != null) {
+                        TextUtilities.appendN(tei, '\t', nbTag + 1);
+                        tei.append("<affiliation>\n");
+
+                        TextUtilities.appendN(tei, '\t', nbTag + 2);
+                        tei.append("<orgName type=\"collaboration\">" +
+                                            TextUtilities.HTMLEncode(collaboration) + "</orgName>\n");
+                        TextUtilities.appendN(tei, '\t', nbTag + 1);
+                        tei.append("</affiliation>\n");
                     }
 
                     TextUtilities.appendN(tei, '\t', nbTag);

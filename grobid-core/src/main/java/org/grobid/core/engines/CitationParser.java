@@ -87,10 +87,11 @@ public class CitationParser extends AbstractParser {
             List<OffsetPosition> locationsPositions = lexicon.inLocationNamesLayoutToken(tokens);
             List<OffsetPosition> collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(tokens);
             List<OffsetPosition> identifiersPositions = lexicon.inIdentifierPatternLayoutToken(tokens);
+            List<OffsetPosition> urlPositions = lexicon.inUrlPatternLayoutToken(tokens);
 
             String ress = FeaturesVectorCitation.addFeaturesCitation(tokens, null, journalsPositions, 
                 abbrevJournalsPositions, conferencesPositions, publishersPositions, locationsPositions,
-                collaborationsPositions, identifiersPositions);
+                collaborationsPositions, identifiersPositions, urlPositions);
 
             String res = label(ress);
 //System.out.println(res);
@@ -255,8 +256,17 @@ public class CitationParser extends AbstractParser {
             if (clusterLabel.equals(TaggingLabels.CITATION_TITLE)) {
                 if (biblio.getTitle() == null)
                     biblio.setTitle(clusterContent);
+                else if (biblio.getTitle().length() >= clusterContent.length())
+                    biblio.setNote(clusterContent);
+                else {
+                    biblio.setNote(biblio.getTitle());
+                    biblio.setTitle(clusterContent);
+                }
             } else if (clusterLabel.equals(TaggingLabels.CITATION_AUTHOR)) {
-                biblio.setAuthors(clusterContent);
+                if (biblio.getAuthors() == null)
+                    biblio.setAuthors(clusterContent);
+                else
+                    biblio.setAuthors(biblio.getAuthors() + " ; " + clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_TECH)) {
                 biblio.setBookType(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_LOCATION)) {
@@ -270,16 +280,32 @@ public class CitationParser extends AbstractParser {
                 else
                     biblio.setPublicationDate(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_BOOKTITLE)) {
-                biblio.setBookTitle(clusterContent);
+                if (biblio.getBookTitle() == null)
+                    biblio.setBookTitle(clusterContent);
+                else if (biblio.getBookTitle().length() >= clusterContent.length())
+                    biblio.setNote(clusterContent);
+                else {
+                    biblio.setNote(biblio.getBookTitle());
+                    biblio.setBookTitle(clusterContent);
+                }
             } else if (clusterLabel.equals(TaggingLabels.CITATION_PAGES)) {
                 biblio.setPageRange(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_PUBLISHER)) {
                 biblio.setPublisher(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_COLLABORATION)) {
-                biblio.setCollaboration(clusterContent);
+                if (biblio.getCollaboration() != null)
+                    biblio.setCollaboration(biblio.getCollaboration() + " ; " + clusterContent);
+                else
+                    biblio.setCollaboration(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_JOURNAL)) {
                 if (biblio.getJournal() == null)
                     biblio.setJournal(clusterContent);
+                else if (biblio.getJournal().length() >= clusterContent.length())
+                    biblio.setNote(clusterContent);
+                else {
+                    biblio.setNote(biblio.getJournal());
+                    biblio.setJournal(clusterContent);
+                }
             } else if (clusterLabel.equals(TaggingLabels.CITATION_VOLUME)) {
                 if (biblio.getVolumeBlock() == null)
                    biblio.setVolumeBlock(clusterContent, volumePostProcess);
@@ -290,7 +316,7 @@ public class CitationParser extends AbstractParser {
                 biblio.setEditors(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_INSTITUTION)) {
                 if (biblio.getInstitution() != null)
-                    biblio.setInstitution(biblio.getInstitution() + "; " + clusterContent);
+                    biblio.setInstitution(biblio.getInstitution() + " ; " + clusterContent);
                 else
                    biblio.setInstitution(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_NOTE)) {             
@@ -360,6 +386,7 @@ public class CitationParser extends AbstractParser {
             List<OffsetPosition> locationsPositions = null;
             List<OffsetPosition> collaborationsPositions = null;
             List<OffsetPosition> identifiersPositions = null;
+            List<OffsetPosition> urlPositions = null;
             for (String input : inputs) {
                 //List<String> citationBlocks = new ArrayList<String>();
                 if (input == null)
@@ -379,11 +406,12 @@ public class CitationParser extends AbstractParser {
                 locationsPositions = lexicon.inLocationNamesLayoutToken(tokenizations);
                 collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(tokenizations);
                 identifiersPositions = lexicon.inIdentifierPatternLayoutToken(tokenizations);
+                urlPositions = lexicon.inUrlPatternLayoutToken(tokenizations);
 
                 String ress = FeaturesVectorCitation.addFeaturesCitation(tokenizations,
                         null, journalsPositions, abbrevJournalsPositions, 
                         conferencesPositions, publishersPositions, locationsPositions, 
-                        collaborationsPositions, identifiersPositions);
+                        collaborationsPositions, identifiersPositions, urlPositions);
                 String res = label(ress);
 
                 // extract results from the processed file

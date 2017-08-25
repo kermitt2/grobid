@@ -45,7 +45,7 @@
 	<bibl><author>M. Beuthe</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">66</biblScope>, <biblScope unit="page">013003</biblScope> (<date>2002</date>) [<idno type="arxiv">hep-ph/0202068</idno>].</bibl>
 	<bibl><author>W. Grimus and P. Stockinger</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">54</biblScope>, <biblScope unit="page">3414</biblScope> (<date>1996</date>)[ <idno type="arxiv">hep-ph/9603430</idno>].</bibl>
 	<bibl><author>I. Yu. Kobzarev, B. V. Martemyanov, L. B. Okun, and M.G .Shchepkin</author> ,<title level="j">Sov .J .Nucl .Phys .</title><biblScope unit="volume">35</biblScope> ,<biblScope unit="page">708</biblScope> ( <date>1982</date>).</bibl>
-	<bibl><author>C. Giunti, C. W. Kim, J. A. Lee, and U. W. Lee</author>, <title level="j">Phys. Rev.D</title> <biblScope unit="volume">48</biblScope> ,<biblScope unit="page">4310</biblScope> ( <date>1993</date>)[ <note type="arxiv">hep-ph/9305276]</note>.</bibl>
+	<bibl><author>C. Giunti, C. W. Kim, J. A. Lee, and U. W. Lee</author>, <title level="j">Phys. Rev.D</title> <biblScope unit="volume">48</biblScope> ,<biblScope unit="page">4310</biblScope> ( <date>1993</date>)[ <idno type="arxiv">hep-ph/9305276</idno>].</bibl>
 	<bibl><author>W. Grimus, P. Stockinger, and S. Mohanty</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">59</biblScope> ,<biblScope unit="page">013011</biblScope> ( <date>1999</date>)[ <idno type="arxiv">hep-ph/9807442</idno>].</bibl>
 
 		</listBibl>

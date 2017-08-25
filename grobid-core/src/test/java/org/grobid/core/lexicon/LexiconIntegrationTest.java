@@ -321,8 +321,8 @@ public class LexiconIntegrationTest {
         assertThat(positions.get(0).end, is(108));
     }   
 
-    //@Test
-    public void testInArXivPatternLayoutToken() {
+    @Test
+    public void testInArXivPatternLayoutToken1() {
         String piece = "ATLAS collaboration, Measurements of the Nuclear Modification Factor for Jets in Pb+Pb Collisionsat √ "+
         "sNN = 2 . 76TeVwith the ATLAS Detector, Phys. Rev. Lett. 114(2015) 072302 [ arXiv: 1411.2357][INSPIRE] .";
         List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
@@ -342,6 +342,25 @@ public class LexiconIntegrationTest {
     }
 
     @Test
+    public void testInArXivPatternLayoutToken2() {
+        String piece = "O .Suvorova arXiv .org:hep -ph/9911415( 1999).";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
+        String text = LayoutTokensUtil.toText(tokens);
+        List<OffsetPosition> positions = target.inArXivPatternLayoutToken(tokens, text);
+
+        /*for(OffsetPosition position :  positions) {
+            System.out.print(position.start + " / " + position.end + ": ");
+            for(int j = position.start; j <= position.end; j++)
+                System.out.print(tokens.get(j));
+            System.out.println(""); 
+        }*/
+
+        assertThat(positions, hasSize(1));
+        assertThat(positions.get(0).start, is(5));
+        assertThat(positions.get(0).end, is(15));
+    }
+
+    @Test
     public void testInIdentifierPatternLayoutToken() {
         String piece = "ATLAS collaboration, Measurements of the Nuclear Modification Factor for Jets in Pb+Pb Collisionsat √ "+
         "sNN = 2 . 76TeVwith the ATLAS Detector, Phys. Rev. Lett. 114(2015) 072302 [ arXiv: 1411.2357][INSPIRE] .";
@@ -358,5 +377,25 @@ public class LexiconIntegrationTest {
         assertThat(positions, hasSize(1));
         assertThat(positions.get(0).start, is(64));
         assertThat(positions.get(0).end, is(69));
+    }
+
+    @Test
+    public void testInUrlPatternLayoutToken() {
+        String piece = "ATLAS collaboration, . https://doi.org/10.1145/2783446.2783605, https://inria.fr/index.html, http://inria.fr/index.html. " +
+            "wikipedia: httpS://en.wikipedia.org/wiki/Reich_(disambiguation), Ftp://pubmed.truc.edu";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
+        List<OffsetPosition> positions = target.inUrlPatternLayoutToken(tokens);
+
+        assertThat(positions, hasSize(5));
+        assertThat(positions.get(0).start, is(7));
+        assertThat(positions.get(0).end, is(21));
+        assertThat(positions.get(1).start, is(24));
+        assertThat(positions.get(1).end, is(34));
+        assertThat(positions.get(2).start, is(37));
+        assertThat(positions.get(2).end, is(47));
+        assertThat(positions.get(3).start, is(53));
+        assertThat(positions.get(3).end, is(68));
+        assertThat(positions.get(4).start, is(71));
+        assertThat(positions.get(4).end, is(79));
     }
 }

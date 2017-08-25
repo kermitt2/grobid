@@ -4,7 +4,11 @@
     </teiHeader>
     <text xml:lang="en">
         <listBibl>
-            • We have˜ehave˜ have˜e ± (z) = (T ±<lb/> 11 (z)) −1 T ±<lb/> 12 (z). Hence,<lb/> References<lb/>
+
+        • We have˜ehave˜ have˜e ± (z) = (T ±<lb/> 11 (z)) −1 T ±<lb/> 12 (z). Hence,<lb/> 
+        
+        References<lb/>
+        
         <bibl><label>[AH]</label> M. Atiyah, N. Hitchin, The geometry and dynamics of magnetic monopoles, Princeton University Press<lb/> (1988), viii+134pp.<lb/> </bibl>
         <bibl><label>[AMM]</label> A. Alekseev, A. Malkin, E. Meinrenken, Lie group valued moment maps, J. Differential Geom. 48<lb/> (1998), no. 3, 445-495.<lb/> </bibl>
         <bibl><label>[B]</label> A. Beilinson, Coherent sheaves on P n and problems in linear algebra, Funct. Anal. Appl. 12 (1978), no. 3,<lb/> 214-216.<lb/> </bibl>
@@ -62,7 +66,9 @@ Phys. 156 (1993), no. 2, 277-300.<lb/> </bibl>
         <bibl><label>[T2]</label> A. Tsymbaliuk, The affine Yangian of gl 1 revisited, Adv. Math. 304 (2017), no. 2, 583-645.<lb/> </bibl>
         <bibl><label>[VV1]</label> M. Varagnolo, E. Vasserot, Double affine Hecke algebras and affine flag manifolds, I. Affine flag mani-<lb/>folds and principal bundles, Trends in Mathematics, Birkhäuser/Springer, Basel (2010), 233-289.<lb/> </bibl>
         <bibl><label>[VV2]</label> M. Varagnolo, E. Vasserot, Double affine Hecke algebras at roots of unity, Representation Theory 14<lb/> (2010), 510-600.<lb/> </bibl>
+
 M.F.: National Research University Higher School of Economics, Russian Federation, De-<lb/>partment of Mathematics, 6 Usacheva st., Moscow 119048; Institute for Information Transmis-<lb/>sion Problems<lb/> E-mail address: fnklberg@gmail.com
+        
         </listBibl>
     </text>
 </tei>

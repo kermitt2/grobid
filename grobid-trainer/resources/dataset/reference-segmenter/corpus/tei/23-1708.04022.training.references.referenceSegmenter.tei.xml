@@ -5,7 +5,8 @@
     <text xml:lang="en">
         <listBibl>
                 * h.tu@lmu.de<lb/> † wanglei@iphy.ac.cn<lb/> 
-                <bibl><label>1</label> A. Altland and B. D. Simons, Condensed matter field theory<lb/> (Cambridge University Press, 2010).<lb/> 
+
+        <bibl><label>1</label> A. Altland and B. D. Simons, Condensed matter field theory<lb/> (Cambridge University Press, 2010).<lb/> </bibl>
         <bibl><label>2</label> P. Francesco, P. Mathieu, and D. Sénéchal, Conformal field theory<lb/> (Springer, 2012).<lb/> </bibl>
         <bibl><label>3</label> E. Fradkin, Field theories of condensed matter physics (Cam-<lb/>bridge University Press, 2013).<lb/> </bibl>
         <bibl><label>4</label> J. L. Cardy, Nucl. Phys. B 240, 514 (1984).<lb/> </bibl>
@@ -51,12 +52,13 @@
         <bibl><label>44</label> R. Dijkgraaf, C. Vafa, E. Verlinde, and H. Verlinde, Commun.<lb/> Math. Phys. 123, 485 (1989).<lb/> </bibl>
         <bibl><label>45</label> M. Barkeshli, P. Bonderson, M. Cheng,<lb/> and Z. Wang,<lb/> arXiv:1410.4540 (2014).<lb/> </bibl>
         <bibl><label>46</label> W. Li et al., (2017), in preparation.<lb/> </bibl>
-        <bibl><label>47<label> M. Suzuki, Prog. Theor. Phys. 56, 1454 (1976).<lb/> </bibl>
+        <bibl><label>47</label> M. Suzuki, Prog. Theor. Phys. 56, 1454 (1976).<lb/> </bibl>
         <bibl><label>48</label> R. H. Swendsen and J.-S. Wang, Phys. Rev. Lett. 58, 86 (1987).<lb/> </bibl>
         <bibl><label>49</label> H. Rieger and N. Kawashima, Euro. Phys. J. B 9, 233 (1999).<lb/> </bibl>
         <bibl><label>50</label> F. Y. Wu, Rev. Mod. Phys. 54, 235 (1982).<lb/> </bibl>
         <bibl><label>51</label> J. Gubernatis, N. Kawashima, and P. Werner, Quantum Monte<lb/> Carlo Methods: Algorithms for Lattice Models, 1st ed. (Cam-<lb/>bridge University Press, Cambridge, 2016).<lb/> </bibl>
-<bibl><label>52</label> In the literature, the symmetric boundary condition is often re-<lb/>ferred to as the &quot;new&quot; boundary condition. We call it &quot;symmetric&quot;<lb/> since this boundary condition favours the Z 3 symmetric state.<lb/></bibl> <bibl><label>53</label> For the mixed boundary condition, the additional coefficient e −2βh b<lb/> cannot make the transition bound to be accepted when the bound-<lb/>ary spins satisfy the corresponding mixed boundary condition. But<lb/> it still helps improve the efficiency of the simulation.</bibl>
+        <bibl><label>52</label> In the literature, the symmetric boundary condition is often re-<lb/>ferred to as the &quot;new&quot; boundary condition. We call it &quot;symmetric&quot;<lb/> since this boundary condition favours the Z 3 symmetric state.<lb/></bibl> 
+        <bibl><label>53</label> For the mixed boundary condition, the additional coefficient e −2βh b<lb/> cannot make the transition bound to be accepted when the bound-<lb/>ary spins satisfy the corresponding mixed boundary condition. But<lb/> it still helps improve the efficiency of the simulation.</bibl>
         </listBibl>
     </text>
 </tei>

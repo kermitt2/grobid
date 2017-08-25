@@ -58,7 +58,12 @@ public class TextUtilities {
     // a regular expression for arXiv identifiers
     // see https://arxiv.org/help/arxiv_identifier and https://arxiv.org/help/arxiv_identifier_for_services
     static public final Pattern arXivPattern = Pattern
-            .compile("(arXiv\\:\\s?\\d{4}\\.\\d{4,5}(v\\d+)?)|(arXiv\\:\\s?[a-zA-Z\\-\\.]*/\\d{7}(v\\d+)?)");
+            .compile("(arXiv\\s?(\\.org)?\\s?\\:\\s?\\d{4}\\s?\\.\\s?\\d{4,5}(v\\d+)?)|(arXiv\\s?(\\.org)\\s?\\:\\s?[ a-zA-Z\\-\\.]*\\s?/\\s?\\d{7}(v\\d+)?)");
+
+    // a regular expression for identifying url pattern in text
+    // TODO: maybe find a better regex 
+    static public final Pattern urlPattern = Pattern
+            .compile("(?i)(https?|ftp)\\s?:\\s?//\\s?[-A-Z0-9+&@#/%?=~_()|!:,.;]*[-A-Z0-9+&@#/%=~_()|]");
 
     /**
      * Replace numbers in the string by a dummy character for string distance evaluations

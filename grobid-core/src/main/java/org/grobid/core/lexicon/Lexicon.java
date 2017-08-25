@@ -1104,4 +1104,21 @@ public class Lexicon {
         return result;
     }
 
+    /**
+     * Identify in tokenized input the positions of an URL pattern
+     */
+    public List<OffsetPosition> inUrlPatternLayoutToken(List<LayoutToken> tokens) {
+        List<OffsetPosition> result = new ArrayList<OffsetPosition>();
+        String text = LayoutTokensUtil.toText(tokens);
+        List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();
+        Matcher urlMatcher = TextUtilities.urlPattern.matcher(text);
+        while (urlMatcher.find()) {  
+            //System.out.println(urlMatcher.start() + " / " + urlMatcher.end() + " / " + text.substring(urlMatcher.start(), urlMatcher.end()));                 
+            textResult.add(new OffsetPosition(urlMatcher.start(), urlMatcher.end()));
+        }
+        return Utilities.convertStringOffsetToTokenOffset(textResult, tokens);
+
+
+    }
+
 }
