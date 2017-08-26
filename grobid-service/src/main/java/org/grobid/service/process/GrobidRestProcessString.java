@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -23,7 +24,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 
- * @author Damien, Patrice
+ * Web services consuming String
  * 
  */
 public class GrobidRestProcessString {
@@ -72,7 +73,12 @@ public class GrobidRestProcessString {
 			if (!GrobidRestUtils.isResultOK(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
-				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
+				//response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
+				response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -130,7 +136,12 @@ public class GrobidRestProcessString {
 			if (!GrobidRestUtils.isResultOK(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
-				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
+				//response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
+				response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -188,7 +199,12 @@ public class GrobidRestProcessString {
 			if (!GrobidRestUtils.isResultOK(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
-				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
+				//response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
+				response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -245,7 +261,12 @@ public class GrobidRestProcessString {
 			if (!GrobidRestUtils.isResultOK(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
-				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
+				//response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
+				response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -294,7 +315,12 @@ public class GrobidRestProcessString {
 			if (biblioItem == null) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
-				response = Response.status(Status.OK).entity(biblioItem.toTEI(-1)).type(MediaType.APPLICATION_XML).build();
+				//response = Response.status(Status.OK).entity(biblioItem.toTEI(-1)).type(MediaType.APPLICATION_XML).build();
+				response = Response.status(Status.OK)
+                            .entity(biblioItem.toTEI(-1))
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -347,7 +373,12 @@ public class GrobidRestProcessString {
 			if (result == null) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
-				response = Response.status(Status.OK).entity(result).type(MediaType.APPLICATION_XML).build();
+				//response = Response.status(Status.OK).entity(result).type(MediaType.APPLICATION_XML).build();
+				response = Response.status(Status.OK)
+                            .entity(result)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");

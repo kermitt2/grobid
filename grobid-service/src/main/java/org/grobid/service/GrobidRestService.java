@@ -151,7 +151,7 @@ public class GrobidRestService implements GrobidPathes {
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
 		}
-		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, false);
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol);
 	}
 
 	/**
@@ -168,13 +168,13 @@ public class GrobidRestService implements GrobidPathes {
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
 		}
-		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, false);
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol);
 	}
 
 	/**
 	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream, String)
 	 */
-	@Path(PATH_HEADER_HTML)
+	/*@Path(PATH_HEADER_HTML)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
@@ -185,12 +185,12 @@ public class GrobidRestService implements GrobidPathes {
 			consol = true;
 		}
 		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, true);
-	}
+	}*/
 
 	/**
 	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream, String)
 	 */
-	@Path(PATH_HEADER_HTML)
+	/*@Path(PATH_HEADER_HTML)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
@@ -201,7 +201,7 @@ public class GrobidRestService implements GrobidPathes {
 			consol = true;
 		}
 		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, true);
-	}
+	}*/
 
 	/**
 	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream, String)
@@ -235,7 +235,7 @@ public class GrobidRestService implements GrobidPathes {
 			}
 		}
 		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
-			consol, false, startPage, endPage, generate, teiCoordinates);
+			consol, startPage, endPage, generate, teiCoordinates);
 	}
 
 	/**
@@ -268,7 +268,7 @@ public class GrobidRestService implements GrobidPathes {
 			}
 		}
 		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
-			consol, false, startPage, endPage, generate, teiCoordinates);
+			consol, startPage, endPage, generate, teiCoordinates);
 	}
 
 	/**
@@ -323,7 +323,7 @@ public class GrobidRestService implements GrobidPathes {
 	/**
 	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream, String)
 	 */
-	@Path(PATH_FULL_TEXT_HTML)
+	/*@Path(PATH_FULL_TEXT_HTML)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
@@ -343,12 +343,12 @@ public class GrobidRestService implements GrobidPathes {
 		}
 		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
 			consol, true, startPage, endPage, generate, teiCoordinates);
-	}
+	}*/
 
 	/**
 	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream, String)
 	 */
-	@Path(PATH_FULL_TEXT_HTML)
+	/*@Path(PATH_FULL_TEXT_HTML)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
@@ -368,7 +368,7 @@ public class GrobidRestService implements GrobidPathes {
 		}
 		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
 			consol, true, startPage, endPage, generate, teiCoordinates);
-	}
+	}*/
 
 	/**
 	 * @see org.grobid.service.process.GrobidRestProcessFiles#processCitationPatentTEI(InputStream, String)
