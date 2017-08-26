@@ -114,308 +114,267 @@ public class EvaluationUtilities {
     }
 
 	public static String evaluateStandard(String path, Function<List<String>, String> taggerFunction) {
-		StringBuilder report = new StringBuilder();
-		Stats wordStats = new Stats();
-		Stats fieldStats = new Stats();
+		String theResult = null;
 
 		try {
 			final BufferedReader bufReader = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8"));
 
-			String theResult = null;
 			String line = null;
-			long time = 0;
 			List<String> citationBlocks = new ArrayList<String>();
-			List<String> expected = new ArrayList<String>();
-			// it's quite bad to have something CRF engine dependent here, but hard to avoid
-			// the expected vector is used only with CRF++
-			if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
-				StringBuffer buffer = new StringBuffer();
-				time = System.currentTimeMillis();
-				while ((line = bufReader.readLine()) != null) {
-					if (line.trim().length() == 0) {
-						buffer.append(taggerFunction.apply(citationBlocks));
-						buffer.append("\n");
-						citationBlocks = new ArrayList<String>();
-					}
-					else {
-						citationBlocks.add(line);
-						int ind = line.lastIndexOf(" ");
-						if (ind == -1) 
-							ind = line.lastIndexOf("\t");
-						if (ind != -1)
-							expected.add(line.substring(ind+1, line.length()));
-					}
-				}
-				theResult = buffer.toString();
+			while ((line = bufReader.readLine()) != null) {
+				citationBlocks.add(line);
 			}
-			else {
-				while ((line = bufReader.readLine()) != null) {
-					citationBlocks.add(line);
-				}
-				time = System.currentTimeMillis();
-				theResult = taggerFunction.apply(citationBlocks);
-			}
+			long time = System.currentTimeMillis();
+			theResult = taggerFunction.apply(citationBlocks);
 			bufReader.close();
 
             System.out.println("Labeling took: " + (System.currentTimeMillis() - time) + " ms");
-//System.out.println("Writing expected result file under /tmp/expected.txt");
-//FileUtils.writeStringToFile(new File("/tmp/expected.txt"), expected.toString());
-			StringTokenizer stt = new StringTokenizer(theResult, "\n");
-			int e = 0;
-			while (stt.hasMoreTokens()) {
-				line = stt.nextToken();
+        } catch (Exception e) {
+			throw new GrobidException("An exception occurred while evaluating Grobid.", e);
+		}
 
-				if (line.trim().length() == 0) {
-					continue;
+		return reportMetrics(theResult);
+	}
+
+	public static String reportMetrics(String theResult) {
+        StringBuilder report = new StringBuilder();
+        
+		Stats wordStats = tokenLevelStats(theResult);
+
+		// report token-level results
+		report.append("\n===== Token-level results =====\n\n");
+		report.append(computeMetrics(wordStats));
+
+		Stats fieldStats = fieldLevelStats(theResult);
+
+		report.append("\n===== Field-level results =====\n");
+		report.append(computeMetrics(fieldStats));
+		
+		// instance-level: instances are separated by a new line in the result file
+		// third pass
+		theResult = theResult.replace("\n\n", "\n \n");
+		StringTokenizer stt = new StringTokenizer(theResult, "\n");
+		boolean allGood = true;
+		int correctInstance = 0;
+		int totalInstance = 0;
+		String line = null;
+		while (stt.hasMoreTokens()) {
+			line = stt.nextToken();
+			if ((line.trim().length() == 0) || (!stt.hasMoreTokens())) {
+				// we reinit for a new instance
+				totalInstance++;
+				if (allGood) {
+					correctInstance++;
 				}
-				// the two last tokens, separated by a tabulation, gives the
-				// expected label and, last, the resulting label -> for Wapiti
-				// for CRF++, we get the expected label from the dedicated vector
+				allGood = true;
+			} else {
 				StringTokenizer st = new StringTokenizer(line, "\t ");
-				String obtainedToken = null;
-				String expectedToken = null;
+				String obtainedLabel = null;
+				String expectedLabel = null;
 				while (st.hasMoreTokens()) {
-					obtainedToken = st.nextToken();
-					if (obtainedToken != null) {
-						if (obtainedToken.startsWith("I-") || obtainedToken.startsWith("E-") || obtainedToken.startsWith("B-")) {
-							obtainedToken = obtainedToken.substring(2, obtainedToken.length());
-						}
-					}
+					obtainedLabel = getPlainLabel(st.nextToken());
 					if (st.hasMoreTokens()) {
-						expectedToken = obtainedToken;
+						expectedLabel = obtainedLabel;
 					}
 				}
 
-				// it's quite bad to have something CRF engine dependent here, but hard to avoid
-				if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
-					expectedToken = expected.get(e);
-					if (expectedToken.startsWith("I-") || expectedToken.startsWith("E-") || expectedToken.startsWith("B-")) {
-						expectedToken = expectedToken.substring(2, expectedToken.length());
-					}
-					e++;
-				}
-				
-				 //System.out.println(expectedToken + " / " + obtainedToken);
-
-				if ((expectedToken == null) || (obtainedToken == null)) {
-					continue;
-				}
-
-				processCounters(wordStats, obtainedToken, expectedToken);
-				if (!obtainedToken.equals(expectedToken)) {
-					logger.warn("Disagreement / expected: " + expectedToken + " / obtained: " + obtainedToken);
-				}
-			}
-
-			bufReader.close();
-			// print report
-			int i = 0;
-
-			// word
-			report.append("\n===== Token-level results =====\n\n");
-			report.append(computeMetrics(wordStats));
-
-			// field: a field is simply a sequence of word...
-			// we do a second pass...
-			boolean allGood = true;
-			String lastPreviousToken = null;
-			String lastCurrentToken = null;
-			stt = new StringTokenizer(theResult, "\n");
-			e = 0;
-			while (stt.hasMoreTokens()) {
-				line = stt.nextToken();
-				if ((line.trim().length() == 0) && (lastPreviousToken != null) && (lastCurrentToken != null)) {
-					// end of last field
-					LabelStat previousLabelStat = fieldStats.getLabelStat(lastPreviousToken);
-
-					if (allGood) {
-						previousLabelStat.incrementObserved();
-					} else {
-						previousLabelStat.incrementFalseNegative();
-					}
-
-					previousLabelStat.incrementExpected();
-
-					LabelStat currentLabelStat = fieldStats.getLabelStat(lastCurrentToken);
-					if (!allGood) {
-						currentLabelStat.incrementFalsePositive();
-						// erroneous observed field (false positive)
-					}
-					allGood = true;
-
-					lastPreviousToken = null;
-					lastCurrentToken = null;
-
-					continue;
-				}
-				// the two last tokens, separated by a tabulation, gives the
-				// expected label and, last,
-				// the resulting label
-				StringTokenizer st = new StringTokenizer(line, "\t ");
-				String currentToken = null;
-				String previousToken = null;
-				while (st.hasMoreTokens()) {
-					currentToken = st.nextToken();
-					if (currentToken != null) {
-						if (currentToken.startsWith("I-") || currentToken.startsWith("E-") || currentToken.startsWith("B-")) {
-							currentToken = currentToken.substring(2, currentToken.length());
-						}
-					}
-					if (st.hasMoreTokens()) {
-						previousToken = currentToken;
-					}
-				}
-
-				// it's quite bad to have something CRF engine dependent here, but hard to avoid
-				if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
-					previousToken = expected.get(e);
-					if (previousToken.startsWith("I-") || previousToken.startsWith("E-") || previousToken.startsWith("B-")) {
-						previousToken = previousToken.substring(2, previousToken.length());
-					}
-					e++;
-				}
-
-				if ((previousToken == null) || (currentToken == null)) {
-					lastPreviousToken = null;
-					lastCurrentToken = null;
-					continue;
-				}
-				if ((lastPreviousToken != null) && (!previousToken.equals(lastPreviousToken))) {
-					// new field
-					LabelStat previousLabelStat = fieldStats.getLabelStat(lastPreviousToken);
-					if (allGood) {
-						previousLabelStat.incrementObserved();
-					} else {
-						previousLabelStat.incrementFalseNegative();
-					}
-
-					previousLabelStat.incrementExpected();
-				}
-
-				if ((lastCurrentToken != null) && (!currentToken.equals(lastCurrentToken))) {
-					// new field
-					LabelStat currentLabelStat = fieldStats.getLabelStat(lastCurrentToken);
-					if (!allGood) {
-						currentLabelStat.incrementFalsePositive();
-						// erroneous observed field (false positive)
-					}
-				}
-
-				if (((lastPreviousToken != null) && (!previousToken.equals(lastPreviousToken)))
-						|| ((lastCurrentToken != null) && (!currentToken.equals(lastCurrentToken)))) {
-					allGood = true;
-				}
-
-				if (!currentToken.equals(previousToken)) {
+				if (!obtainedLabel.equals(expectedLabel)) {
+					// one error is enough to have the whole instance false, damn!
 					allGood = false;
 				}
+			}
+		}
 
-				lastPreviousToken = previousToken;
-				lastCurrentToken = currentToken;
+		report.append("\n===== Instance-level results =====\n\n");
+		report.append(String.format("%-27s %d\n", "Total expected instances:", totalInstance));
+		report.append(String.format("%-27s %d\n", "Correct instances:", correctInstance));
+		double accuracy = (double) correctInstance / (totalInstance);
+		report.append(String.format("%-27s %s\n",
+				"Instance-level recall:",
+				TextUtilities.formatTwoDecimals(accuracy * 100)));
+	
+		return report.toString();
+	}
+
+	public static Stats tokenLevelStats(String theResult) {
+		Stats wordStats = new Stats();
+		String line = null;
+		StringTokenizer stt = new StringTokenizer(theResult, "\n");
+		while (stt.hasMoreTokens()) {
+			line = stt.nextToken();
+
+			if (line.trim().length() == 0) {
+				continue;
+			}
+			// the two last tokens, separated by a tabulation, gives the
+			// expected label and, last, the resulting label -> for Wapiti
+			StringTokenizer st = new StringTokenizer(line, "\t ");
+			String obtainedLabel = null;
+			String expectedLabel = null;
+
+			while (st.hasMoreTokens()) {
+				obtainedLabel = getPlainLabel(st.nextToken());
+				if (st.hasMoreTokens()) {
+					expectedLabel = obtainedLabel;
+				}
 			}
 			
-			// and finally this is for the last field which is closing with the end of the sequence labelling
-			// this is new from 26.03.2014
-			if ((lastPreviousToken != null) && (lastCurrentToken != null)) {
-				// end of last field
-				LabelStat previousLabelStat = fieldStats.getLabelStat(lastPreviousToken);
+			if ((expectedLabel == null) || (obtainedLabel == null)) {
+				continue;
+			}
 
+			processCounters(wordStats, obtainedLabel, expectedLabel);
+			if (!obtainedLabel.equals(expectedLabel)) {
+				logger.warn("Disagreement / expected: " + expectedLabel + " / obtained: " + obtainedLabel);
+			}
+		}
+		return wordStats;
+	}
+
+	public static Stats fieldLevelStats(String theResult) {
+		Stats fieldStats = new Stats();
+
+		// field: a field is simply a sequence of token with the same label...
+		// so instead of incrementing stats for each token, we increment when 
+		// a sequence of tokens with the same label ends
+		// second pass  
+		boolean allGood = true;
+		String previousExpectedLabel = null;
+		String previousObtainedLabel = null;
+		StringTokenizer stt = new StringTokenizer(theResult, "\n");
+		boolean lastFieldProcessed = false;
+		String line = null;
+		while (stt.hasMoreTokens()) {
+			line = stt.nextToken();
+			if ((line.trim().length() == 0) && (previousExpectedLabel != null) && (previousObtainedLabel != null)) {
+				// end of instance, so end of last field
+				LabelStat previousLabelStat = fieldStats.getLabelStat(previousExpectedLabel);
 				if (allGood) {
-					previousLabelStat.incrementObserved();
+					previousLabelStat.incrementObserved(); // TP
+				} else {
+					previousLabelStat.incrementFalseNegative();
+				}
+
+				previousLabelStat.incrementExpected(); 
+
+				previousLabelStat = fieldStats.getLabelStat(previousObtainedLabel);
+				if (!allGood) {
+					previousLabelStat.incrementFalsePositive();
+					// erroneous observed field (false positive)
+				}
+				allGood = true;
+
+				previousExpectedLabel = null;
+				previousObtainedLabel = null;
+
+				lastFieldProcessed = true;
+				continue;
+			}
+			lastFieldProcessed = false;
+
+			// the two last tokens, separated by a tabulation, gives the
+			// expected label and, last,
+			// the resulting label
+			StringTokenizer st = new StringTokenizer(line, "\t ");
+			String obtainedLabel = null;
+			String expectedLabel = null;
+			while (st.hasMoreTokens()) {
+				obtainedLabel = getPlainLabel(st.nextToken());
+				if (st.hasMoreTokens()) {
+					expectedLabel = obtainedLabel;
+				}
+			}
+
+			if ((expectedLabel == null) || (obtainedLabel == null)) {
+				previousExpectedLabel = null;
+				previousObtainedLabel = null;
+				continue;
+			}
+			if ((previousExpectedLabel != null) && (!expectedLabel.equals(previousExpectedLabel))) {
+				// new field starts in the reference data, so we finalize the stats for the previous field
+				LabelStat previousLabelStat = fieldStats.getLabelStat(previousExpectedLabel);
+				if (allGood) {
+					previousLabelStat.incrementObserved(); // TP
 				} else {
 					previousLabelStat.incrementFalseNegative();
 				}
 
 				previousLabelStat.incrementExpected();
 
-				LabelStat currentLabelStat = fieldStats.getLabelStat(lastCurrentToken);
+				previousLabelStat = fieldStats.getLabelStat(previousObtainedLabel);
 				if (!allGood) {
-					currentLabelStat.incrementFalsePositive();
+					previousLabelStat.incrementFalsePositive();
 					// erroneous observed field (false positive)
-				}
-			} 
+				} 
 
-			report.append("\n===== Field-level results =====\n");
-			report.append(computeMetrics(fieldStats));
-			
-			// instance: separated by a new line in the result file
-			theResult = theResult.replace("\n\n", "\n \n");
-			stt = new StringTokenizer(theResult, "\n");
-			allGood = true;
-			int correctInstance = 0;
-			int totalInstance = 0;
-			e = 0;
-			while (stt.hasMoreTokens()) {
-				line = stt.nextToken();
-				if ((line.trim().length() == 0) || (!stt.hasMoreTokens())) {
-					totalInstance++;
-					if (allGood) {
-						correctInstance++;
-					}
-					allGood = true;
-				} else {
-					StringTokenizer st = new StringTokenizer(line, "\t ");
-					String currentToken = null;
-					String previousToken = null;
-					while (st.hasMoreTokens()) {
-						currentToken = st.nextToken();
-						if (currentToken != null) {
-							if (currentToken.startsWith("I-") || currentToken.startsWith("E-") || currentToken.startsWith("B-")) {
-								currentToken = currentToken.substring(2, currentToken.length());
-							}
-						}
-						if (st.hasMoreTokens()) {
-							previousToken = currentToken;
-						}
-					}
-
-					// it's quite bad to have something CRF engine dependent here, but hard to avoid
-					if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
-						previousToken = expected.get(e);
-						if (previousToken.startsWith("I-") || previousToken.startsWith("E-") || previousToken.startsWith("B-")) {
-							previousToken = previousToken.substring(2, previousToken.length());
-						}
-						e++;
-					}
-
-					if (!currentToken.equals(previousToken)) {
-						allGood = false;
-					}
-				}
+				// reinit the legendary allGood variable for next field
+				allGood = true;
 			}
 
-			report.append("\n===== Instance-level results =====\n\n");
-			report.append(String.format("%-27s %d\n", "Total expected instances:", totalInstance));
-			report.append(String.format("%-27s %d\n", "Correct instances:", correctInstance));
-			double accuracy = (double) correctInstance / (totalInstance);
-			report.append(String.format("%-27s %s\n",
-					"Instance-level recall:",
-					TextUtilities.formatTwoDecimals(accuracy * 100)));
-		} catch (Exception e) {
-			throw new GrobidException("An exception occurred while evaluating Grobid.", e);
-		}
+			if ((previousObtainedLabel != null) && (!obtainedLabel.equals(previousObtainedLabel))) {
+				// new field starts (maybe wrongly) in the obtained labelling, so we finalize the stats for the previous field
+				LabelStat previousLabelStat = fieldStats.getLabelStat(previousObtainedLabel);
+				if (!allGood) {
+					previousLabelStat.incrementFalsePositive();
+					// erroneous observed field (false positive)
+				} 
+			}
 
-		return report.toString();
+			if (!obtainedLabel.equals(expectedLabel)) {
+				// the observed field will be wrong
+				allGood = false;
+			}
+
+			previousExpectedLabel = expectedLabel;
+			previousObtainedLabel = obtainedLabel;
+		}
+		
+		// and finally this is for the last field which is closing with the end of the sequence labelling
+		// only in case we don't have a final empty line
+		// this is new from 26.03.2014 
+		if ((previousExpectedLabel != null) && (previousObtainedLabel != null) && !lastFieldProcessed) {
+
+			// end of last field for the expected fields
+			LabelStat previousLabelStat = fieldStats.getLabelStat(previousExpectedLabel);
+			if (allGood) {
+				previousLabelStat.incrementObserved(); // TP
+			} else {
+				previousLabelStat.incrementFalseNegative();
+			}
+
+			previousLabelStat.incrementExpected();
+
+			// end of last field for the observed fields
+			previousLabelStat = fieldStats.getLabelStat(previousObtainedLabel);
+			if (!allGood) {
+				previousLabelStat.incrementFalsePositive();
+				// erroneous observed field (false positive)
+			} 
+		} 
+
+		return fieldStats;
 	}
 
-    private static void processCounters(Stats stats, String obtained, String expected) {
-        boolean isNewLabel = !stats.getLabels().contains(expected);
+	private static String getPlainLabel(String label) {
+		if (label == null)
+			return null;
+		if (label.startsWith("I-") || label.startsWith("E-") || label.startsWith("B-")) {
+			return label.substring(2, label.length());
+		} else 
+			return label;
+    }
 
+    private static void processCounters(Stats stats, String obtained, String expected) {
         LabelStat expectedStat = stats.getLabelStat(expected);
         LabelStat obtainedStat = stats.getLabelStat(obtained);
 
+        expectedStat.incrementExpected();
+
         if (expected.equals(obtained)) {
             expectedStat.incrementObserved();
-            expectedStat.incrementExpected();
         } else {
             expectedStat.incrementFalseNegative();
-
             obtainedStat.incrementFalsePositive();
-            if (isNewLabel) {
-                obtainedStat.incrementExpected();
-            } else {
-                expectedStat.incrementExpected();
-            }
         }
     }
 
@@ -442,7 +401,7 @@ public class EvaluationUtilities {
 		int totalFields = 0;
 		for (String label : stats.getLabels()) {
 			LabelStat labelStat = stats.getLabelStat(label);
-			totalFields += labelStat.getExpected();
+			totalFields += labelStat.getObserved();
 			totalFields += labelStat.getFalsePositive();
 		}
 
