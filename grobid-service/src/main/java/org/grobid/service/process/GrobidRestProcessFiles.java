@@ -27,6 +27,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -41,7 +42,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
- * @author Damien, Patrice
+ * Web services consuming a file
  */
 public class GrobidRestProcessFiles {
 
@@ -56,13 +57,11 @@ public class GrobidRestProcessFiles {
      *
      * @param inputStream the data of origin document
      * @param consolidate consolidation parameter for the header extraction
-     * @param htmlFormat  if the result has to be formatted to be displayed as html
      * @return a response object which contains a TEI representation of the
      * header part
      */
     public static Response processStatelessHeaderDocument(final InputStream inputStream,
-                                                          final boolean consolidate,
-                                                          final boolean htmlFormat) {
+                                                          final boolean consolidate) {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -93,11 +92,12 @@ public class GrobidRestProcessFiles {
                 if ((retVal == null) || (retVal.isEmpty())) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
-                    if (htmlFormat) {
-                        response = Response.status(Status.OK).entity(formatAsHTML(retVal)).type(MediaType.APPLICATION_XML).build();
-                    } else {
-                        response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
-                    }
+                    response = Response.status(Status.OK)
+                        .entity(retVal)
+                        //.type(MediaType.APPLICATION_XML)
+                        .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                        .header("Access-Control-Allow-Origin", "*")
+                        .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
                 }
             }
         } catch (NoSuchElementException nseExp) {
@@ -124,7 +124,7 @@ public class GrobidRestProcessFiles {
      * @throws SAXException
      * @throws IOException
      */
-    protected static String formatAsHTML(final String tei) throws SAXException, IOException {
+    /*protected static String formatAsHTML(final String tei) throws SAXException, IOException {
         XMLReader xmlr = XMLReaderFactory.createXMLReader();
         Xml2HtmlParser parser = new Xml2HtmlParser();
         xmlr.setContentHandler(parser);
@@ -132,7 +132,7 @@ public class GrobidRestProcessFiles {
         InputStream xmlStream = new ByteArrayInputStream(tei.getBytes("UTF-8"));
         xmlr.parse(new InputSource(xmlStream));
         return parser.getHTML();
-    }
+    }*/
 
     /**
      * Uploads the zip file, extract pdf files and extract them into TEI. Only
@@ -163,7 +163,6 @@ public class GrobidRestProcessFiles {
      * @param inputStream the data of origin document
      * @param consolidate the consolidation option allows GROBID to exploit Crossref
      *                    web services for improving header information
-     * @param htmlFormat  if the result has to be formatted to be displayed as html.
      * @param startPage   give the starting page to consider in case of segmentation of the
      *                    PDF, -1 for the first page (default)
      * @param endPage     give the end page to consider in case of segmentation of the
@@ -175,7 +174,6 @@ public class GrobidRestProcessFiles {
      */
     public static Response processStatelessFulltextDocument(final InputStream inputStream,
                                                             final boolean consolidate,
-                                                            final boolean htmlFormat,
                                                             final int startPage,
                                                             final int endPage,
                                                             final boolean generateIDs,
@@ -217,12 +215,12 @@ public class GrobidRestProcessFiles {
                 if (!GrobidRestUtils.isResultOK(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
-                    if (htmlFormat) {
-                        response = Response.status(Status.OK).entity(formatAsHTML(retVal)).
-                                type(MediaType.APPLICATION_XML).build();
-                    } else {
-                        response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
-                    }
+                    //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                    response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
                 }
             }
         } catch (NoSuchElementException nseExp) {
@@ -430,7 +428,12 @@ public class GrobidRestProcessFiles {
                 if (!GrobidRestUtils.isResultOK(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
-                    response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                    //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                    response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
                 }
             }
         } catch (NoSuchElementException nseExp) {
@@ -491,7 +494,12 @@ public class GrobidRestProcessFiles {
                 if (!GrobidRestUtils.isResultOK(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
-                    response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                    //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                    response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
                 }
             }
         } catch (NoSuchElementException nseExp) {
@@ -569,7 +577,12 @@ public class GrobidRestProcessFiles {
                 if (!GrobidRestUtils.isResultOK(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
-                    response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                    //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                    response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
                 }
             }
         } catch (NoSuchElementException nseExp) {
@@ -621,10 +634,9 @@ public class GrobidRestProcessFiles {
                             .ok()
                             .type("application/pdf")
                             .entity(outputStream.toByteArray())
-                            .header("Content-Disposition", "attachment; filename=\"" + fileName
-                                    //.replace(".pdf", ".annotated.pdf")
-                                    //.replace(".PDF", ".annotated.PDF") 
-                                    + "\"")
+                            .header("Content-Disposition", "attachment; filename=\"" + fileName + "\"")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
                             .build();
                 } else {
                     response = Response.status(Status.NO_CONTENT).build();
@@ -702,8 +714,11 @@ public class GrobidRestProcessFiles {
                 if (json != null) {
                     response = Response
                             .ok()
-                            .type("application/json")
+                            //.type("application/json")
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
                             .entity(json)
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
                             .build();
                 } else {
                     response = Response.status(Status.NO_CONTENT).build();
@@ -767,7 +782,12 @@ public class GrobidRestProcessFiles {
                 if (!GrobidRestUtils.isResultOK(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
-                    response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_JSON).build();
+                    //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_JSON).build();
+                    response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
                 }
             }
         } catch (NoSuchElementException nseExp) {

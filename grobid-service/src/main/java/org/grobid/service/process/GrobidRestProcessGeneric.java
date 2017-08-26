@@ -62,7 +62,7 @@ public class GrobidRestProcessGeneric {
 			StringBuffer htmlCode = new StringBuffer();
 
 			htmlCode.append("<h4>grobid-service documentation</h4>");
-			htmlCode.append("This service provides a RESTful interface for using the grobid system. grobid extracts data from pdf files. For more information see: ");
+			htmlCode.append("This service provides a RESTful interface for using the Grobid system. Grobid extracts data from pdf files. For more information see: ");
 			htmlCode.append("<a href=\"http://grobid.readthedocs.org/\">http://grobid.readthedocs.org/</a>");
 			
 			response = Response.status(Status.OK).entity(htmlCode.toString())
