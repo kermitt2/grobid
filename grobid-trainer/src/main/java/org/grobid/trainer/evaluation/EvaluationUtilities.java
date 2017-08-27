@@ -234,7 +234,7 @@ public class EvaluationUtilities {
 		return wordStats;
 	}
 
-	public static Stats fieldLevelStatsOld(String theResult) {
+	/*public static Stats fieldLevelStatsOld(String theResult) {
 		Stats fieldStats = new Stats();
 
 		// field: a field is simply a sequence of token with the same label...
@@ -361,7 +361,7 @@ public class EvaluationUtilities {
 		} 
 
 		return fieldStats;
-	}
+	}*/
 
 	public static Stats fieldLevelStats(String theResult) {
 		Stats fieldStats = new Stats();
@@ -411,7 +411,7 @@ public class EvaluationUtilities {
 
 			if ((previousExpectedLabel != null) && 
 				(!expectedLabel.equals(getPlainLabel(previousExpectedLabel)))) {
-				// new obtained field
+				// new expected field
 				currentExpectedPosition.end = pos - 1;
 				Pair theField = new Pair<String,OffsetPosition>(getPlainLabel(previousExpectedLabel), 
 					currentExpectedPosition);
@@ -426,7 +426,6 @@ public class EvaluationUtilities {
 		}
 		// last fields of the sequence
 		if ((previousObtainedLabel != null)) {
-			// new obtained field
 			currentObtainedPosition.end = pos - 1;
 			Pair theField = new Pair<String,OffsetPosition>(getPlainLabel(previousObtainedLabel), 
 				currentObtainedPosition);
@@ -434,15 +433,11 @@ public class EvaluationUtilities {
 		}
 
 		if ((previousExpectedLabel != null)) {
-			// new obtained field
 			currentExpectedPosition.end = pos - 1;
 			Pair theField = new Pair<String,OffsetPosition>(getPlainLabel(previousExpectedLabel), 
 				currentExpectedPosition);
 			expectedFields.add(theField);
 		}
-
-//System.out.println("expected: " + expectedFields.size() + " fields");
-//System.out.println("obtained: " + obtainedFields.size() + " fields");
 
 		// we then simply compared the positions and labels of the two fields and update 
 		// statistics
@@ -481,7 +476,7 @@ public class EvaluationUtilities {
 			}
 		}
 
-		// all the obtained fields without match in the obtained fields are false positive
+		// all the obtained fields without match in the expected fields are false positive
 		for(Pair<String,OffsetPosition> obtainedField :obtainedFields) {
 			if (!matchedObtainedFields.contains(obtainedField)) {
 				obtainedLabel = obtainedField.getA();
