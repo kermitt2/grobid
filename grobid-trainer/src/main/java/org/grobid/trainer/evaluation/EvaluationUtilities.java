@@ -6,6 +6,8 @@ import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.utilities.Pair;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 
 import java.io.BufferedReader;
@@ -150,6 +152,7 @@ public class EvaluationUtilities {
 		report.append("\n===== Field-level results =====\n");
 		report.append(computeMetrics(fieldStats));
 		
+		report.append("\n===== Instance-level results =====\n\n");
 		// instance-level: instances are separated by a new line in the result file
 		// third pass
 		theResult = theResult.replace("\n\n", "\n \n");
@@ -161,11 +164,12 @@ public class EvaluationUtilities {
 		while (stt.hasMoreTokens()) {
 			line = stt.nextToken();
 			if ((line.trim().length() == 0) || (!stt.hasMoreTokens())) {
-				// we reinit for a new instance
+				// instance done
 				totalInstance++;
 				if (allGood) {
 					correctInstance++;
 				}
+				// we reinit for a new instance
 				allGood = true;
 			} else {
 				StringTokenizer st = new StringTokenizer(line, "\t ");
@@ -185,7 +189,6 @@ public class EvaluationUtilities {
 			}
 		}
 
-		report.append("\n===== Instance-level results =====\n\n");
 		report.append(String.format("%-27s %d\n", "Total expected instances:", totalInstance));
 		report.append(String.format("%-27s %d\n", "Correct instances:", correctInstance));
 		double accuracy = (double) correctInstance / (totalInstance);
@@ -231,7 +234,7 @@ public class EvaluationUtilities {
 		return wordStats;
 	}
 
-	public static Stats fieldLevelStats(String theResult) {
+	public static Stats fieldLevelStatsOld(String theResult) {
 		Stats fieldStats = new Stats();
 
 		// field: a field is simply a sequence of token with the same label...
@@ -248,8 +251,9 @@ public class EvaluationUtilities {
 			line = stt.nextToken();
 			if ((line.trim().length() == 0) && (previousExpectedLabel != null) && (previousObtainedLabel != null)) {
 				// end of instance, so end of last field
-				LabelStat previousLabelStat = fieldStats.getLabelStat(previousExpectedLabel);
+				LabelStat previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousExpectedLabel));
 				if (allGood) {
+					// we're sure that the obtained field stops here
 					previousLabelStat.incrementObserved(); // TP
 				} else {
 					previousLabelStat.incrementFalseNegative();
@@ -257,7 +261,7 @@ public class EvaluationUtilities {
 
 				previousLabelStat.incrementExpected(); 
 
-				previousLabelStat = fieldStats.getLabelStat(previousObtainedLabel);
+				previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousObtainedLabel));
 				if (!allGood) {
 					previousLabelStat.incrementFalsePositive();
 					// erroneous observed field (false positive)
@@ -279,7 +283,7 @@ public class EvaluationUtilities {
 			String obtainedLabel = null;
 			String expectedLabel = null;
 			while (st.hasMoreTokens()) {
-				obtainedLabel = getPlainLabel(st.nextToken());
+				obtainedLabel = st.nextToken();
 				if (st.hasMoreTokens()) {
 					expectedLabel = obtainedLabel;
 				}
@@ -290,18 +294,21 @@ public class EvaluationUtilities {
 				previousObtainedLabel = null;
 				continue;
 			}
-			if ((previousExpectedLabel != null) && (!expectedLabel.equals(previousExpectedLabel))) {
+			if ((previousExpectedLabel != null) && (!expectedLabel.equals(getPlainLabel(previousExpectedLabel)))) {
 				// new field starts in the reference data, so we finalize the stats for the previous field
-				LabelStat previousLabelStat = fieldStats.getLabelStat(previousExpectedLabel);
+				LabelStat previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousExpectedLabel));
 				if (allGood) {
-					previousLabelStat.incrementObserved(); // TP
+					// it's all good until last token, but it also requires that the obtained field
+					// ends at current token
+					if (!obtainedLabel.equals(previousObtainedLabel) || (obtainedLabel.startsWith("I-")))
+						previousLabelStat.incrementObserved(); // TP
 				} else {
 					previousLabelStat.incrementFalseNegative();
 				}
 
 				previousLabelStat.incrementExpected();
 
-				previousLabelStat = fieldStats.getLabelStat(previousObtainedLabel);
+				previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousObtainedLabel));
 				if (!allGood) {
 					previousLabelStat.incrementFalsePositive();
 					// erroneous observed field (false positive)
@@ -313,7 +320,7 @@ public class EvaluationUtilities {
 
 			if ((previousObtainedLabel != null) && (!obtainedLabel.equals(previousObtainedLabel))) {
 				// new field starts (maybe wrongly) in the obtained labelling, so we finalize the stats for the previous field
-				LabelStat previousLabelStat = fieldStats.getLabelStat(previousObtainedLabel);
+				LabelStat previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousObtainedLabel));
 				if (!allGood) {
 					previousLabelStat.incrementFalsePositive();
 					// erroneous observed field (false positive)
@@ -335,8 +342,9 @@ public class EvaluationUtilities {
 		if ((previousExpectedLabel != null) && (previousObtainedLabel != null) && !lastFieldProcessed) {
 
 			// end of last field for the expected fields
-			LabelStat previousLabelStat = fieldStats.getLabelStat(previousExpectedLabel);
+			LabelStat previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousExpectedLabel));
 			if (allGood) {
+				// we're sure that the obtained field stops here
 				previousLabelStat.incrementObserved(); // TP
 			} else {
 				previousLabelStat.incrementFalseNegative();
@@ -345,7 +353,7 @@ public class EvaluationUtilities {
 			previousLabelStat.incrementExpected();
 
 			// end of last field for the observed fields
-			previousLabelStat = fieldStats.getLabelStat(previousObtainedLabel);
+			previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousObtainedLabel));
 			if (!allGood) {
 				previousLabelStat.incrementFalsePositive();
 				// erroneous observed field (false positive)
@@ -354,6 +362,137 @@ public class EvaluationUtilities {
 
 		return fieldStats;
 	}
+
+	public static Stats fieldLevelStats(String theResult) {
+		Stats fieldStats = new Stats();
+
+		// field: a field is simply a sequence of token with the same label
+		
+		// we build first the list of fields in expected and obtained result
+		// with offset positions
+		List<Pair<String,OffsetPosition>> expectedFields = new ArrayList<Pair<String,OffsetPosition>>(); 
+		List<Pair<String,OffsetPosition>> obtainedFields = new ArrayList<Pair<String,OffsetPosition>>(); 
+		StringTokenizer stt = new StringTokenizer(theResult, "\n");
+		String line = null;
+		String previousExpectedLabel = null;
+		String previousObtainedLabel = null;
+		int pos = 0; // current token index
+		OffsetPosition currentObtainedPosition = new OffsetPosition();
+		currentObtainedPosition.start = 0;
+		OffsetPosition currentExpectedPosition = new OffsetPosition();
+		currentExpectedPosition.start = 0;
+		String obtainedLabel = null;
+		String expectedLabel = null;
+		while (stt.hasMoreTokens()) {
+			line = stt.nextToken();
+			obtainedLabel = null;
+			expectedLabel = null;
+			StringTokenizer st = new StringTokenizer(line, "\t ");	
+			while (st.hasMoreTokens()) {
+				obtainedLabel = st.nextToken();
+				if (st.hasMoreTokens()) {
+					expectedLabel = obtainedLabel;
+				}
+			}
+
+			if ( (obtainedLabel == null) || (expectedLabel == null) )
+				continue;
+
+			if ((previousObtainedLabel != null) && 
+				(!obtainedLabel.equals(getPlainLabel(previousObtainedLabel)))) {
+				// new obtained field
+				currentObtainedPosition.end = pos - 1;
+				Pair theField = new Pair<String,OffsetPosition>(getPlainLabel(previousObtainedLabel), 
+					currentObtainedPosition);
+				currentObtainedPosition = new OffsetPosition();
+				currentObtainedPosition.start = pos;
+				obtainedFields.add(theField);
+			}
+
+			if ((previousExpectedLabel != null) && 
+				(!expectedLabel.equals(getPlainLabel(previousExpectedLabel)))) {
+				// new obtained field
+				currentExpectedPosition.end = pos - 1;
+				Pair theField = new Pair<String,OffsetPosition>(getPlainLabel(previousExpectedLabel), 
+					currentExpectedPosition);
+				currentExpectedPosition = new OffsetPosition();
+				currentExpectedPosition.start = pos;
+				expectedFields.add(theField);
+			}
+
+			previousExpectedLabel = expectedLabel;
+			previousObtainedLabel = obtainedLabel;
+			pos++;
+		}
+		// last fields of the sequence
+		if ((previousObtainedLabel != null)) {
+			// new obtained field
+			currentObtainedPosition.end = pos - 1;
+			Pair theField = new Pair<String,OffsetPosition>(getPlainLabel(previousObtainedLabel), 
+				currentObtainedPosition);
+			obtainedFields.add(theField);
+		}
+
+		if ((previousExpectedLabel != null)) {
+			// new obtained field
+			currentExpectedPosition.end = pos - 1;
+			Pair theField = new Pair<String,OffsetPosition>(getPlainLabel(previousExpectedLabel), 
+				currentExpectedPosition);
+			expectedFields.add(theField);
+		}
+
+//System.out.println("expected: " + expectedFields.size() + " fields");
+//System.out.println("obtained: " + obtainedFields.size() + " fields");
+
+		// we then simply compared the positions and labels of the two fields and update 
+		// statistics
+		int obtainedFieldIndex = 0;
+		List<Pair<String,OffsetPosition>> matchedObtainedFields = new ArrayList<Pair<String,OffsetPosition>>(); 
+		for(Pair<String,OffsetPosition> expectedField : expectedFields) {
+			expectedLabel = expectedField.getA();
+			int expectedStart = expectedField.getB().start;
+			int expectedEnd = expectedField.getB().end;
+
+			LabelStat labelStat = fieldStats.getLabelStat(getPlainLabel(expectedLabel));
+			labelStat.incrementExpected(); 
+
+			// try to find a match in the obtained fields
+			boolean found = false;
+			for(int i=obtainedFieldIndex; i<obtainedFields.size(); i++) {
+				obtainedLabel = obtainedFields.get(i).getA();
+				if (!expectedLabel.equals(obtainedLabel)) 
+					continue;
+				if ( (expectedStart == obtainedFields.get(i).getB().start) &&
+					 (expectedEnd == obtainedFields.get(i).getB().end) ) {
+					// we have a match
+					labelStat.incrementObserved(); // TP
+					found = true;
+					obtainedFieldIndex = i;
+					matchedObtainedFields.add(obtainedFields.get(i));
+					break;
+				}
+				// if we went too far, we can stop the pain
+				if (expectedEnd < obtainedFields.get(i).getB().start) {
+					break;
+				}
+			}
+			if (!found) {
+				labelStat.incrementFalseNegative();
+			}
+		}
+
+		// all the obtained fields without match in the obtained fields are false positive
+		for(Pair<String,OffsetPosition> obtainedField :obtainedFields) {
+			if (!matchedObtainedFields.contains(obtainedField)) {
+				obtainedLabel = obtainedField.getA();
+				LabelStat labelStat = fieldStats.getLabelStat(getPlainLabel(obtainedLabel));
+				labelStat.incrementFalsePositive();
+			}
+		}
+
+		return fieldStats;
+	}
+
 
 	private static String getPlainLabel(String label) {
 		if (label == null)
@@ -402,6 +541,7 @@ public class EvaluationUtilities {
 		for (String label : stats.getLabels()) {
 			LabelStat labelStat = stats.getLabelStat(label);
 			totalFields += labelStat.getObserved();
+			totalFields += labelStat.getFalseNegative();
 			totalFields += labelStat.getFalsePositive();
 		}
 
@@ -422,6 +562,8 @@ public class EvaluationUtilities {
 			}
 
 			double accuracy = (double) (tp + tn) / (tp + fp + tn + fn);
+			if (accuracy < 0.0)
+				accuracy = 0.0;
 
 			double precision;
 			if ((tp + fp) == 0) {
@@ -467,17 +609,25 @@ public class EvaluationUtilities {
 		report.append("\n");
 
 		// micro average over measures
-		double accuracy = (double) (cumulated_tp + cumulated_tn) / (cumulated_tp + cumulated_fp + cumulated_tn + cumulated_fn);
+		double accuracy = 0.0;
+		if (cumulated_tp + cumulated_fp + cumulated_tn + cumulated_fn != 0.0)
+			accuracy = (double) (cumulated_tp + cumulated_tn) / (cumulated_tp + cumulated_fp + cumulated_tn + cumulated_fn);
 		accuracy = Math.min(1.0, accuracy);
 
-		double precision = (double) cumulated_tp / (cumulated_tp + cumulated_fp);
+		double precision = 0.0;
+		if (cumulated_tp + cumulated_fp != 0)
+			precision = (double) cumulated_tp / (cumulated_tp + cumulated_fp);
 		precision = Math.min(1.0, precision);
 
 		//recall = ((double) cumulated_tp) / (cumulated_tp + cumulated_fn);
-		double recall = ((double) cumulated_tp) / (cumulated_all);
+		double recall = 0.0;
+		if (cumulated_all != 0.0)
+			recall = ((double) cumulated_tp) / (cumulated_all);
 		recall = Math.min(1.0, recall);
 
-		double f0 = (2 * precision * recall) / (precision + recall);
+		double f0 = 0.0;
+		if (precision + recall != 0.0)
+			f0 = (2 * precision * recall) / (precision + recall);
 
 		report.append(String.format("%-20s %-12s %-12s %-12s %-7s (micro average)\n",
 				"all fields",
@@ -487,10 +637,25 @@ public class EvaluationUtilities {
 				TextUtilities.formatTwoDecimals(f0 * 100)));
 
 		// macro average over measures
-		accuracy = Math.min(1.0, cumulated_accuracy / (totalValidFields));
-		precision = Math.min(1.0, cumulated_precision / totalValidFields);
-		recall = Math.min(1.0, cumulated_recall / totalValidFields);
-		f0 = Math.min(1.0, cumulated_f0 / totalValidFields);
+		if (totalValidFields == 0)
+			accuracy = 0.0;
+		else
+			accuracy = Math.min(1.0, cumulated_accuracy / (totalValidFields));
+		
+		if (totalValidFields == 0)
+			precision = 0.0;
+		else
+			precision = Math.min(1.0, cumulated_precision / totalValidFields);
+	
+		if (totalValidFields == 0)
+			recall = 0.0;
+		else
+			recall = Math.min(1.0, cumulated_recall / totalValidFields);
+		
+		if (totalValidFields == 0)
+			f0 = 0.0;
+		else
+			f0 = Math.min(1.0, cumulated_f0 / totalValidFields);
 
 		report.append(String.format("%-20s %-12s %-12s %-12s %-7s (macro average)\n",
 				"",
