@@ -24,7 +24,7 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 
 		if (item.isObject()) {
 			biblio = new BiblioItem();
-			System.out.println(item.toString());			
+			//System.out.println(item.toString());			
 			
 			biblio.setDOI(item.get("DOI").asText());
 
@@ -170,7 +170,7 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 				}
 			}
 
-           	System.out.println(biblio.toTEI(0));
+           	//System.out.println(biblio.toTEI(0));
 		}
 		
 		return biblio;

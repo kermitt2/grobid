@@ -225,7 +225,7 @@ public class EvaluationUtilitiesTest {
 		if (!textFile.exists()) {
 			throw new GrobidException("Cannot start test, because test resource folder is not correctly set.");
 		}
-        String result = FileUtils.readFileToString(textFile);
+        String result = FileUtils.readFileToString(textFile, "UTF-8");
         result = result.replace(System.lineSeparator(), "\n");
 
         Stats wordStats = EvaluationUtilities.tokenLevelStats(result);
