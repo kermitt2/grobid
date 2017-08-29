@@ -32,7 +32,6 @@ public class CrossrefClient {
 		REGULARLY
 	}
 	
-	
 	protected ExecutorService executorService;
 	
 	public Response<?> lastResponse;
@@ -55,7 +54,7 @@ public class CrossrefClient {
 	}
 	
 	/**
-	 * Push a request in pool to be executed soon as possible, then wait a response through the listener.
+	 * Push a request in pool to be executed as soon as possible, then wait a response through the listener.
 	 * API Documentation : https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md
 	 */
 	public <T extends Object> void pushRequest(CrossrefRequest<T> request, CrossrefRequestListener<T> listener) throws URISyntaxException, ClientProtocolException, IOException {
@@ -87,5 +86,11 @@ public class CrossrefClient {
 		this.<T>pushRequest(request, listener);
 	}
 
+	/**
+	 * Ensure that all Executors are shut down to avoid JVM not exiting 
+	 */
+	public void close() {
+		executorService.shutdownNow();
+	}
 	
 }

@@ -1,16 +1,21 @@
 package org.grobid.core.utilities;
 
-import org.apache.commons.dbutils.DbUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.exception.ExceptionUtils;
+
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.sax.CrossrefUnixrefSaxParser;
+import org.grobid.core.utilities.crossref.*;
+import org.grobid.core.utilities.crossref.CrossrefClient.RequestMode;
+import org.grobid.core.utilities.counters.CntManager;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.xml.sax.InputSource;
 import org.xml.sax.helpers.DefaultHandler;
-
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.InputStream;
@@ -18,79 +23,37 @@ import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.sql.*;
 import java.util.List;
 import java.util.StringTokenizer;
 
 /**
  * Class for managing the extraction of bibliographical information from pdf documents.
+ * When consolidation operations are realized, be sure to call the close() method
+ * to ensure that all Executors are terminated.
  *
  * @author Patrice Lopez
  */
 public class Consolidation {
     private static final Logger LOGGER = LoggerFactory.getLogger(Consolidation.class);
 
-    // Cache crossref BD (allowed by the user crossref service agreement)
-    private Connection cCon = null;
+    private CrossrefClient client = null;
+    private WorkDeserializer workDeserializer = null;
+    private CntManager cntManager = null;
 
-    public Consolidation() {
+    public Consolidation(CntManager cntManager) {
+        this.cntManager = cntManager;
+        client = new CrossrefClient(RequestMode.MUCHTHENSTOP);
+        workDeserializer = new WorkDeserializer();
     }
 
     /**
-     * Open database connection
+     * After consolidation operations, this need to be called to ensure that all
+     * involved Executors are shut down immediatly, otherwise non terminated thread
+     * could prevent the JVM from exiting
      */
-    public void openDb() throws ClassNotFoundException,
-            InstantiationException,
-            IllegalAccessException,
-            SQLException {
-        // compose database url: jdbc:mysql://<hostname>:<port>/<database>
-        String dbUrl2 = "jdbc:mysql://"
-                + GrobidProperties.getInstance().getMySQLHost()
-                + ":"
-                + GrobidProperties.getInstance().getMySQLPort()
-                + "/" + GrobidProperties.getInstance().getMySQLDBName() + "?useUnicode=true&characterEncoding=utf8";
-
-        // instantiate mysql driver manager, get database connection
-        try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            cCon = DriverManager.getConnection(dbUrl2, GrobidProperties.getInstance().getMySQLUsername(), GrobidProperties.getInstance().getMySQLPw());
-            if (cCon != null) {
-                cCon.createStatement().execute("SET NAMES utf8");
-            }
-        } catch (Exception e) {
-            LOGGER.error("The connection to the MySQL database could not be established. \n"
-                    + "The call to Crossref service will not be cached.");
-        }
+    public void close() {
+        client.close();
     }
-
-    /**
-     * Close database connection
-     */
-    public void closeDb() {
-        try {
-            if (cCon != null) {
-                cCon.close();
-            }
-        } catch (SQLException se) {
-        }
-    }
-
-    /**
-     * SQL queries for the DOI cache
-     */
-    static final String INSERT_CROSSREF_SQL =
-            "INSERT INTO AuthorTitle (Author, Title, Unixref) VALUES (?,?,?)";
-    static final String INSERT_CROSSREF_SQL2 =
-            "INSERT INTO AllSubFields (Request, Unixref) VALUES (?,?)";
-    static final String INSERT_CROSSREF_SQL3 =
-            "INSERT INTO DOIRequest (Request, Unixref) VALUES (?,?)";
-
-    static final String QUERY_CROSSREF_SQL =
-            "SELECT Unixref FROM AuthorTitle WHERE Author LIKE ? AND Title LIKE ?";
-    static final String QUERY_CROSSREF_SQL2 =
-            "SELECT Unixref FROM AllSubFields WHERE Request LIKE ?";
-    static final String QUERY_CROSSREF_SQL3 =
-            "SELECT Unixref FROM DOIRequest WHERE Request DOIRequest ?";
 
     /**
      * Lookup by DOI - 3 parameters are id, password, doi.
@@ -157,6 +120,8 @@ public class Consolidation {
         if (title != null) {
             title = TextUtilities.removeAccents(title);
         }
+        if (cntManager != null)
+            cntManager.i(ConsolidationCounters.CONSOLIDATION);
 
         try {
             if (StringUtils.isNotBlank(doi)) {
@@ -193,6 +158,9 @@ public class Consolidation {
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid consolidation.", e);
         }
+
+        if (valid && (cntManager != null))
+            cntManager.i(ConsolidationCounters.CONSOLIDATION_SUCCESS);
         return valid;
     }
 
@@ -209,9 +177,15 @@ public class Consolidation {
         boolean result = false;
         String doi = biblio.getDOI();
 
+        if (bib2 == null)
+            return false;
+
         if (StringUtils.isNotBlank(doi)) {
             // some cleaning of the doi
-            if (doi.startsWith("doi:") || doi.startsWith("DOI:")) {
+            doi = doi.replace("\"", "");
+            doi = doi.replace("\n", "");
+            if (doi.startsWith("doi:") || doi.startsWith("DOI:") || 
+                doi.startsWith("doi/") || doi.startsWith("DOI/") ) {
                 doi.substring(4, doi.length());
                 doi = doi.trim();
             }
@@ -219,109 +193,34 @@ public class Consolidation {
             doi = doi.replace(" ", "");
             String xml = null;
 
-            // we check if the entry is not already in the DB
-            if (cCon != null) {
-                PreparedStatement pstmt = null;
+            CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
+            client.<BiblioItem>pushRequest("works", doi, null, workDeserializer, requestListener);
+            if (cntManager != null)
+                cntManager.i(ConsolidationCounters.CONSOLIDATION_PER_DOI);
+
+            synchronized (requestListener) {
                 try {
-                    pstmt = cCon.prepareStatement(QUERY_CROSSREF_SQL3);
-                    pstmt.setString(1, doi);
-
-                    ResultSet res = pstmt.executeQuery();
-                    if (res.next()) {
-                        xml = res.getString(1);
-                    }
-                    res.close();
-                } catch (SQLException se) {
-                    throw new GrobidException("EXCEPTION HANDLING CROSSREF CACHE.", se);
-                } finally {
-                    DbUtils.closeQuietly(pstmt);
-                }
-
-                if (xml != null) {
-                    InputSource is = new InputSource();
-                    is.setCharacterStream(new StringReader(xml));
-
-                    DefaultHandler crossref = new CrossrefUnixrefSaxParser(bib2);
-
-                    // get a factory
-                    SAXParserFactory spf = SAXParserFactory.newInstance();
-                    //get a new instance of parser
-                    SAXParser parser = spf.newSAXParser();
-                    parser.parse(is, crossref);
-
-                    if (bib2.size() > 0) {
-                        if (!bib2.get(0).getError())
-                            result = true;
-                    }
+                    requestListener.wait(5000); // timeout after 5 seconds
+                } catch (InterruptedException e) {
+                    LOGGER.error("Timeout error - " + ExceptionUtils.getStackTrace(e));
                 }
             }
-
-            if (xml == null) {
-                String subpath = String.format(DOI_BASE_QUERY,
-                        GrobidProperties.getInstance().getCrossrefId(),
-                        GrobidProperties.getInstance().getCrossrefPw(),
-                        doi);
-                URL url = new URL("http://" + GrobidProperties.getInstance().getCrossrefHost() + "/" + subpath);
-
-                System.out.println("Sending: " + url.toString());
-                HttpURLConnection urlConn = null;
-                try {
-                    urlConn = (HttpURLConnection) url.openConnection();
-                } catch (Exception e) {
-                    try {
-                        urlConn = (HttpURLConnection) url.openConnection();
-                    } catch (Exception e2) {
-                        urlConn = null;
-                        throw new GrobidException("An exception occured while running Grobid.", e2);
-                    }
-                }
-                if (urlConn != null) {
-                    try {
-                        urlConn.setDoOutput(true);
-                        urlConn.setDoInput(true);
-                        urlConn.setRequestMethod("GET");
-
-                        urlConn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-
-                        InputStream in = urlConn.getInputStream();
-                        xml = TextUtilities.convertStreamToString(in);
-
-                        InputSource is = new InputSource();
-                        is.setCharacterStream(new StringReader(xml));
-
-                        DefaultHandler crossref = new CrossrefUnixrefSaxParser(bib2);
-
-                        // get a factory
-                        SAXParserFactory spf = SAXParserFactory.newInstance();
-                        //get a new instance of parser
-                        SAXParser parser = spf.newSAXParser();
-                        parser.parse(is, crossref);
-
-                        if (bib2.size() > 0) {
-                            if (!bib2.get(0).getError())
-                                result = true;
-                        }
-
-                        urlConn.disconnect();
-                    } catch (Exception e) {
-                        LOGGER.error("Warning: Consolidation set true, " +
-                                "but the online connection to Crossref fails.");
-                    }
-
-                    if (cCon != null) {
-                        // we put the answer (even in case of failure) un the DB
-                        PreparedStatement pstmt2 = null;
-                        try {
-                            pstmt2 = cCon.prepareStatement(INSERT_CROSSREF_SQL3);
-                            pstmt2.setString(1, doi);
-                            pstmt2.setString(2, xml);
-                            pstmt2.executeUpdate();
-                        } catch (SQLException se) {
-                            LOGGER.error("EXCEPTION HANDLING CROSSREF UPDATE");
-                        } finally {
-                            DbUtils.closeQuietly(pstmt2);
-                        }
-                    }
+            
+            CrossrefRequestListener.Response<BiblioItem> response = requestListener.getResponse();
+            
+            if (response == null)
+                LOGGER.error("No response ! Maybe timeout.");
+            
+            else if (response.hasError() || !response.hasResults())
+                LOGGER.error("error: ("+response.status+") : "+response.errorMessage);
+            
+            else { // success
+                LOGGER.info("Success request "+ doi);
+                if (cntManager != null)
+                    cntManager.i(ConsolidationCounters.CONSOLIDATION_PER_DOI_SUCCESS);
+                for (BiblioItem bib : response.results) {
+                    bib2.add(bib);
+                    result = true;
                 }
             }
         }
@@ -344,7 +243,7 @@ public class Consolidation {
         if (StringUtils.isNotBlank(title) && StringUtils.isNotBlank(aut)) {
             String xml = null;
             // we check if the entry is not already in the DB
-            if (cCon != null) {
+            /*if (cCon != null) {
                 PreparedStatement pstmt = null;
 
                 try {
@@ -381,7 +280,8 @@ public class Consolidation {
                             result = true;
                     }
                 }
-            }
+            }*/
+
             if (xml == null) {
                 String subpath = String.format(TITLE_BASE_QUERY,
                         GrobidProperties.getInstance().getCrossrefId(),
@@ -435,7 +335,7 @@ public class Consolidation {
                         urlConn.disconnect();
                     }
 
-                    if (cCon != null) {
+                    /*if (cCon != null) {
                         // we put the answer (even in case of failure) un the DB
                         PreparedStatement pstmt2 = null;
                         try {
@@ -449,7 +349,7 @@ public class Consolidation {
                         } finally {
                             DbUtils.closeQuietly(pstmt2);
                         }
-                    }
+                    }*/
                 }
             }
         }
@@ -500,7 +400,7 @@ public class Consolidation {
 
             String xml = null;
 
-            if (cCon != null) {
+            /*if (cCon != null) {
                 // we check if the query/entry is not already in the DB
                 PreparedStatement pstmt = null;
 
@@ -542,7 +442,7 @@ public class Consolidation {
                             result = true;
                     }
                 }
-            }
+            }*/
 
             if (xml == null) {
                 System.out.println("Sending: " + urlmsg);
@@ -591,7 +491,7 @@ public class Consolidation {
                         urlConn.disconnect();
                     }
 
-                    if (cCon != null) {
+                    /*if (cCon != null) {
                         // we put the answer (even in case of failure) un the DB
                         PreparedStatement pstmt2 = null;
                         try {
@@ -609,7 +509,7 @@ public class Consolidation {
                             } catch (SQLException se) {
                             }
                         }
-                    }
+                    }*/
                 }
             }
         }

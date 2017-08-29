@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.grobid.core.utilities.crossref.CrossrefClient.RequestMode;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Task to execute its request at the right time.
  *
@@ -11,9 +14,12 @@ import org.grobid.core.utilities.crossref.CrossrefClient.RequestMode;
  */
 public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListener<T> implements Runnable {
 	
+	public static final Logger logger = LoggerFactory
+			.getLogger(CrossrefRequestTask.class);
+
+
 	public static void printLog(CrossrefRequest<?> request, String message) {
-		if (CrossrefClient.DEBUG)
-			System.out.println((request != null ? request+": " : "")+message);
+		logger.info((request != null ? request+": " : "")+message);
 	}
 	
 	

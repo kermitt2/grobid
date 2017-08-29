@@ -99,9 +99,9 @@ public class EvaluationUtilities {
 			}
 			res.append(pretags.get(i)).append("\t");
 			res.append(tagger.y2(i));
-			res.append("\n");
+			res.append(System.lineSeparator());
 		}
-		res.append("\n");
+		res.append(System.lineSeparator());
 
 		return res.toString();
 	}
@@ -202,7 +202,7 @@ public class EvaluationUtilities {
 	public static Stats tokenLevelStats(String theResult) {
 		Stats wordStats = new Stats();
 		String line = null;
-		StringTokenizer stt = new StringTokenizer(theResult, "\n");
+		StringTokenizer stt = new StringTokenizer(theResult, System.lineSeparator());
 		while (stt.hasMoreTokens()) {
 			line = stt.nextToken();
 
@@ -234,135 +234,6 @@ public class EvaluationUtilities {
 		return wordStats;
 	}
 
-	/*public static Stats fieldLevelStatsOld(String theResult) {
-		Stats fieldStats = new Stats();
-
-		// field: a field is simply a sequence of token with the same label...
-		// so instead of incrementing stats for each token, we increment when 
-		// a sequence of tokens with the same label ends
-		// second pass  
-		boolean allGood = true;
-		String previousExpectedLabel = null;
-		String previousObtainedLabel = null;
-		StringTokenizer stt = new StringTokenizer(theResult, "\n");
-		boolean lastFieldProcessed = false;
-		String line = null;
-		while (stt.hasMoreTokens()) {
-			line = stt.nextToken();
-			if ((line.trim().length() == 0) && (previousExpectedLabel != null) && (previousObtainedLabel != null)) {
-				// end of instance, so end of last field
-				LabelStat previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousExpectedLabel));
-				if (allGood) {
-					// we're sure that the obtained field stops here
-					previousLabelStat.incrementObserved(); // TP
-				} else {
-					previousLabelStat.incrementFalseNegative();
-				}
-
-				previousLabelStat.incrementExpected(); 
-
-				previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousObtainedLabel));
-				if (!allGood) {
-					previousLabelStat.incrementFalsePositive();
-					// erroneous observed field (false positive)
-				}
-				allGood = true;
-
-				previousExpectedLabel = null;
-				previousObtainedLabel = null;
-
-				lastFieldProcessed = true;
-				continue;
-			}
-			lastFieldProcessed = false;
-
-			// the two last tokens, separated by a tabulation, gives the
-			// expected label and, last,
-			// the resulting label
-			StringTokenizer st = new StringTokenizer(line, "\t ");
-			String obtainedLabel = null;
-			String expectedLabel = null;
-			while (st.hasMoreTokens()) {
-				obtainedLabel = st.nextToken();
-				if (st.hasMoreTokens()) {
-					expectedLabel = obtainedLabel;
-				}
-			}
-
-			if ((expectedLabel == null) || (obtainedLabel == null)) {
-				previousExpectedLabel = null;
-				previousObtainedLabel = null;
-				continue;
-			}
-			if ((previousExpectedLabel != null) && (!expectedLabel.equals(getPlainLabel(previousExpectedLabel)))) {
-				// new field starts in the reference data, so we finalize the stats for the previous field
-				LabelStat previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousExpectedLabel));
-				if (allGood) {
-					// it's all good until last token, but it also requires that the obtained field
-					// ends at current token
-					if (!obtainedLabel.equals(previousObtainedLabel) || (obtainedLabel.startsWith("I-")))
-						previousLabelStat.incrementObserved(); // TP
-				} else {
-					previousLabelStat.incrementFalseNegative();
-				}
-
-				previousLabelStat.incrementExpected();
-
-				previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousObtainedLabel));
-				if (!allGood) {
-					previousLabelStat.incrementFalsePositive();
-					// erroneous observed field (false positive)
-				} 
-
-				// reinit the legendary allGood variable for next field
-				allGood = true;
-			}
-
-			if ((previousObtainedLabel != null) && (!obtainedLabel.equals(previousObtainedLabel))) {
-				// new field starts (maybe wrongly) in the obtained labelling, so we finalize the stats for the previous field
-				LabelStat previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousObtainedLabel));
-				if (!allGood) {
-					previousLabelStat.incrementFalsePositive();
-					// erroneous observed field (false positive)
-				} 
-			}
-
-			if (!obtainedLabel.equals(expectedLabel)) {
-				// the observed field will be wrong
-				allGood = false;
-			}
-
-			previousExpectedLabel = expectedLabel;
-			previousObtainedLabel = obtainedLabel;
-		}
-		
-		// and finally this is for the last field which is closing with the end of the sequence labelling
-		// only in case we don't have a final empty line
-		// this is new from 26.03.2014 
-		if ((previousExpectedLabel != null) && (previousObtainedLabel != null) && !lastFieldProcessed) {
-
-			// end of last field for the expected fields
-			LabelStat previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousExpectedLabel));
-			if (allGood) {
-				// we're sure that the obtained field stops here
-				previousLabelStat.incrementObserved(); // TP
-			} else {
-				previousLabelStat.incrementFalseNegative();
-			}
-
-			previousLabelStat.incrementExpected();
-
-			// end of last field for the observed fields
-			previousLabelStat = fieldStats.getLabelStat(getPlainLabel(previousObtainedLabel));
-			if (!allGood) {
-				previousLabelStat.incrementFalsePositive();
-				// erroneous observed field (false positive)
-			} 
-		} 
-
-		return fieldStats;
-	}*/
-
 	public static Stats fieldLevelStats(String theResult) {
 		Stats fieldStats = new Stats();
 
@@ -372,7 +243,7 @@ public class EvaluationUtilities {
 		// with offset positions
 		List<Pair<String,OffsetPosition>> expectedFields = new ArrayList<Pair<String,OffsetPosition>>(); 
 		List<Pair<String,OffsetPosition>> obtainedFields = new ArrayList<Pair<String,OffsetPosition>>(); 
-		StringTokenizer stt = new StringTokenizer(theResult, "\n");
+		StringTokenizer stt = new StringTokenizer(theResult, System.lineSeparator());
 		String line = null;
 		String previousExpectedLabel = null;
 		String previousObtainedLabel = null;
