@@ -130,6 +130,8 @@ public class EndToEndEvaluation {
             }
 			
 			int n = 0;
+			long start = System.currentTimeMillis();
+			int fails = 0;
             for (File dir : refFiles) {
 				// get the PDF file in the directory
 	            File[] refFiles2 = dir.listFiles(new FilenameFilter() {
@@ -161,13 +163,21 @@ public class EndToEndEvaluation {
 				catch (Exception e) {
 					System.out.println("Error when processing: " + pdfFile.getPath());
 					e.printStackTrace();
+					fails++;
 				}
 				n++;
 			}
+
+			System.out.println("GROBID failed on " + fails + " PDF");
+			double processTime = ((double)System.currentTimeMillis() - start) / 1000.0;
+
+			System.out.println(n + " PDF files processed in " + 
+				 processTime + " seconds, " + ((double)processTime)/n + " seconds per PDF file.");
 		}
 		
 		// evaluation of the run
-		
+		long start = System.currentTimeMillis();
+
 		report.append("\n======= Header metadata ======= \n");
 		report.append(evaluationRun(this.GROBID, this.HEADER));
 		
@@ -177,6 +187,9 @@ public class EndToEndEvaluation {
 		report.append("\n======= Fulltext structures ======= \n");
 		report.append(evaluationRun(this.GROBID, this.FULLTEXT));
 		
+		System.out.println("Evaluation metrics produced in " + 
+				(System.currentTimeMillis() - start) / (1000.00) + " seconds");
+
 		return report.toString();
 	}
 	

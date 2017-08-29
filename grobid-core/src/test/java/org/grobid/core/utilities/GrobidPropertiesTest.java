@@ -169,7 +169,7 @@ public class GrobidPropertiesTest {
                 GrobidProperties.getProxyPort().toString());
     }
 
-    @Test
+    /*@Test
     public void testsetgetMySQLDBName() {
         String value = "dbName";
         GrobidProperties.setMySQLDBName(value);
@@ -207,7 +207,7 @@ public class GrobidPropertiesTest {
         GrobidProperties.setMySQLPort(value);
         assertEquals("The property has not the value expected", value,
                 GrobidProperties.getMySQLPort().toString());
-    }
+    }*/
 
     @Test
     public void testsetgetNBThreads() {

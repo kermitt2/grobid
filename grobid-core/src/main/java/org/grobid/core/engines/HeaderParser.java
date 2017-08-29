@@ -27,6 +27,8 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.counters.CntManager;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -51,9 +53,13 @@ public class HeaderParser extends AbstractParser {
 
     private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
-    private Consolidation consolidator = null;
-
     private EngineParsers parsers;
+
+    public HeaderParser(EngineParsers parsers, CntManager cntManager) {
+        super(GrobidModels.HEADER, cntManager);
+        this.parsers = parsers;
+        GrobidProperties.getInstance();
+    }
 
     public HeaderParser(EngineParsers parsers) {
         super(GrobidModels.HEADER);
@@ -257,7 +263,7 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                if (consolidate) {
+                if (consolidate || (resHeader.getDOI() != null)) {
                     resHeader = consolidateHeader(resHeader);
                 }
 
@@ -470,7 +476,7 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                if (consolidate) {
+                if (consolidate || (resHeader.getDOI() != null)) {
                     resHeader = consolidateHeader(resHeader);
                 }
 
@@ -501,7 +507,6 @@ public class HeaderParser extends AbstractParser {
                 StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, GrobidAnalysisConfig.defaultInstance());
                 tei.append("\t</text>\n");
                 tei.append("</TEI>\n");
-                //LOGGER.debug(tei);
                 return tei.toString();
             }
         } catch (Exception e) {
@@ -1635,11 +1640,9 @@ public class HeaderParser extends AbstractParser {
      * @return consolidated biblio item
      */
     public BiblioItem consolidateHeader(BiblioItem resHeader) {
+        Consolidation consolidator = null;
         try {
-            if (consolidator == null) {
-                consolidator = new Consolidation();
-            }
-            consolidator.openDb();
+            consolidator = new Consolidation(cntManager);
             List<BiblioItem> bibis = new ArrayList<BiblioItem>();
             boolean valid = consolidator.consolidate(resHeader, bibis);
             if ((valid) && (bibis.size() > 0)) {
@@ -1648,10 +1651,12 @@ public class HeaderParser extends AbstractParser {
                     BiblioItem.correct(resHeader, bibo);
                 }
             }
-            consolidator.closeDb();
         } catch (Exception e) {
             // e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid.", e);
+        } finally {
+            if (consolidator != null)
+                consolidator.close();
         }
         return resHeader;
     }

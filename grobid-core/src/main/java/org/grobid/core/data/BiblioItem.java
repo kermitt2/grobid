@@ -1894,14 +1894,14 @@ public class BiblioItem {
                 tei.append(toTEIAuthorBlock(2, false));
 
             if (!StringUtils.isEmpty(doi)) {
-                for (int i = 0; i < indent + 1; i++) {
+                for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
                 tei.append("<idno type=\"doi\">" + TextUtilities.HTMLEncode(doi) + "</idno>\n");
             }
 
             if (!StringUtils.isEmpty(arXivId)) {
-                for (int i = 0; i < indent + 1; i++) {
+                for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
                 tei.append("<idno type=\"arXiv\">" + TextUtilities.HTMLEncode(arXivId) + "</idno>\n");
@@ -2209,12 +2209,6 @@ public class BiblioItem {
                 if ((volumeBlock != null) | (issue != null) || (pageRange != null) || (publication_date != null)
                         || (publisher != null)) {
 					tei.append("<imprint>\n");
-                    if (publisher != null) {
-                        for (int i = 0; i < indent + 3; i++) {
-                            tei.append("\t");
-                        }
-                        tei.append("<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>\n");
-                    }
                     if (volumeBlock != null) {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
@@ -3787,12 +3781,16 @@ public class BiblioItem {
             bib.setBeginPage(bibo.getBeginPage());
         if (bibo.getEndPage() != -1)
             bib.setEndPage(bibo.getEndPage());
+        if (bibo.getPageRange() != null)
+            bib.setPageRange(bibo.getPageRange());
         if (bibo.getPublicationDate() != null)
             bib.setPublicationDate(bibo.getPublicationDate());
         if (bibo.getSubmissionDate() != null)
             bib.setSubmissionDate(bibo.getSubmissionDate());
         if (bibo.getYear() != null)
             bib.setYear(bibo.getYear());
+        if (bibo.getNormalizedPublicationDate() != null)
+            bib.setNormalizedPublicationDate(bibo.getNormalizedPublicationDate());
         if (bibo.getMonth() != null)
             bib.setMonth(bibo.getMonth());
         if (bibo.getDay() != null)
@@ -3819,9 +3817,11 @@ public class BiblioItem {
             bib.setLocation(bibo.getLocation());
         if (bibo.getPublisher() != null)
             bib.setPublisher(bibo.getPublisher());
+        if (bibo.getTitle() != null) {
+            bib.setTitle(bibo.getTitle());
+        }
         if (bibo.getArticleTitle() != null) {
             bib.setArticleTitle(bibo.getArticleTitle());
-            bib.setTitle(bibo.getArticleTitle());
         }
         if (bibo.getJournalAbbrev() != null) {
             bib.setJournalAbbrev(bibo.getJournalAbbrev());

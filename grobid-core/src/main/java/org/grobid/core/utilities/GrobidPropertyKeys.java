@@ -26,11 +26,11 @@ public interface GrobidPropertyKeys {
     String PROP_CROSSREF_HOST = "grobid.crossref_host";
     String PROP_CROSSREF_PORT = "grobid.crossref_port";
 
-    String PROP_MYSQL_HOST = "grobid.mysql_host";
+    /*String PROP_MYSQL_HOST = "grobid.mysql_host";
     String PROP_MYSQL_PORT = "grobid.mysql_port";
     String PROP_MYSQL_USERNAME = "grobid.mysql_username";
     String PROP_MYSQL_PW = "grobid.mysql_passwd";
-    String PROP_MYSQL_DB_NAME = "grobid.mysql_db_name";
+    String PROP_MYSQL_DB_NAME = "grobid.mysql_db_name";*/
 
     String PROP_PROXY_HOST = "grobid.proxy_host";
     String PROP_PROXY_PORT = "grobid.proxy_port";

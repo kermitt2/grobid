@@ -39,8 +39,6 @@ import java.util.StringTokenizer;
  * @author Patrice Lopez
  */
 public class CitationParser extends AbstractParser {
-    private Consolidation consolidator = null;
-
     public Lexicon lexicon = Lexicon.getInstance();
     private EngineParsers parsers;
 
@@ -343,22 +341,21 @@ public class CitationParser extends AbstractParser {
      * @return consolidated biblio item
      */
     public BiblioItem consolidateCitation(BiblioItem resCitation) {
-        try {
-            if (consolidator == null) {
-                consolidator = new Consolidation();
-            }
-            consolidator.openDb();
+        Consolidation consolidator = null;
+        try {                
+            consolidator = new Consolidation(cntManager);
             ArrayList<BiblioItem> bibis = new ArrayList<BiblioItem>();
             boolean valid = consolidator.consolidate(resCitation, bibis);
             if ((valid) && (bibis.size() > 0)) {
                 BiblioItem bibo = bibis.get(0);
                 BiblioItem.correct(resCitation, bibo);
             }
-            consolidator.closeDb();
         } catch (Exception e) {
             // e.printStackTrace();
             throw new GrobidException(
                     "An exception occured while running Grobid.", e);
+        } finally {
+            consolidator.close();
         }
         return resCitation;
     }

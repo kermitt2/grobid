@@ -576,6 +576,7 @@ public class GrobidProperties {
      */
     public static void setProxyHost(final String host) {
         setPropertyValue(GrobidPropertyKeys.PROP_PROXY_HOST, host);
+        System.setProperty("http.proxyHost", "host");
     }
 
     /**
@@ -595,6 +596,7 @@ public class GrobidProperties {
      */
     public static void setProxyPort(final String port) {
         setPropertyValue(GrobidPropertyKeys.PROP_PROXY_PORT, port);
+        System.setProperty("http.proxyPort", "port_number");
     }
 
     /**
@@ -603,9 +605,9 @@ public class GrobidProperties {
      *
      * @return database name for connecting mysql
      */
-    public static String getMySQLDBName() {
+    /*public static String getMySQLDBName() {
         return getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_DB_NAME);
-    }
+    }*/
 
     /**
      * Sets the database name for a connection to mysql, given in the
@@ -613,9 +615,9 @@ public class GrobidProperties {
      *
      * @param dbName for connecting mysql
      */
-    public static void setMySQLDBName(final String dbName) {
+    /*public static void setMySQLDBName(final String dbName) {
         setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_DB_NAME, dbName);
-    }
+    }*/
 
     /**
      * Returns the id for a connection to mysql, given in the grobid-property
@@ -623,9 +625,9 @@ public class GrobidProperties {
      *
      * @return username for connecting mysql
      */
-    public static String getMySQLUsername() {
+    /*public static String getMySQLUsername() {
         return getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_USERNAME);
-    }
+    }*/
 
     public static Integer getPdf2XMLMemoryLimitMb() {
         return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDF2XML_MEMORY_LIMIT, "2048"), 10);
@@ -641,9 +643,9 @@ public class GrobidProperties {
      *
      * @param username for connecting mysql
      */
-    public static void setMySQLUsername(final String username) {
+    /*public static void setMySQLUsername(final String username) {
         setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_USERNAME, username);
-    }
+    }*/
 
     /**
      * Returns the password for a connection to mysql, given in the
@@ -651,18 +653,18 @@ public class GrobidProperties {
      *
      * @return password for connecting mysql
      */
-    public static String getMySQLPw() {
+    /*public static String getMySQLPw() {
         return getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PW);
-    }
+    }*/
 
     /**
      * Sets the id for a connection to mysql, given in the grobid-property file.
      *
      * @param password for connecting mysql
      */
-    public static void setMySQLPw(final String password) {
+    /*public static void setMySQLPw(final String password) {
         setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PW, password);
-    }
+    }*/
 
     /**
      * Returns the host for a connection to mysql, given in the grobid-property
@@ -670,18 +672,18 @@ public class GrobidProperties {
      *
      * @return host for connecting mysql
      */
-    public static String getMySQLHost() {
+    /*public static String getMySQLHost() {
         return getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_HOST);
-    }
+    }*/
 
     /**
      * Sets the id for a connection to mysql, given in the grobid-property file.
      *
      * @param host for connecting mysql
      */
-    public static void setMySQLHost(final String host) {
+    /*public static void setMySQLHost(final String host) {
         setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_HOST, host);
-    }
+    }*/
 
     /**
      * Returns the port for a connection to mysql, given in the grobid-property
@@ -689,9 +691,9 @@ public class GrobidProperties {
      *
      * @return port for connecting mysql
      */
-    public static Integer getMySQLPort() {
+    /*public static Integer getMySQLPort() {
         return Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PORT));
-    }
+    }*/
 
     /**
      * Sets the port for a connection to mysql, given in the grobid-property
@@ -699,9 +701,9 @@ public class GrobidProperties {
      *
      * @param port for connecting mysql
      */
-    public static void setMySQLPort(String port) {
+    /*public static void setMySQLPort(String port) {
         setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PORT, port);
-    }
+    }*/
 
     /**
      * Returns the number of threads, given in the grobid-property file.
