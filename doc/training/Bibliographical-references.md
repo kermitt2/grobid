@@ -11,7 +11,7 @@ Note that this mark-up for training data for bibliographical references follows 
 
 ## Analysis
 
-The complete bibliographical reference is enclosed in a `<bibl>` element. One <bibl> structure must match with exactly one bibliographical reference.
+The complete bibliographical reference is enclosed in a `<bibl>` element. One `<bibl>` structure must match with exactly one bibliographical reference.
 Then the following tags are used for structuring the bibliographical references:
 
 * `<author>` for the complete sequence of authors
@@ -22,11 +22,11 @@ Then the following tags are used for structuring the bibliographical references:
 
 * `<title level="j">` for journal title
 
-* `<title level="s">` for serie title (e.g. "Lecture Notes in Computer Science")
+* `<title level="s">` for series title (e.g. "Lecture Notes in Computer Science")
 
 * `<title level="m">` for non journal bibliographical item holding the cited article, e.g. _conference proceedings_ title. Note if a book is cited, the title of the book is annotated with `<title level="m">`. If a thesis is cited, the title of the thesis is annotated with `<title level="m">`, and the type of thesis as `<note type="report">`. Here `m` stands for monograph.
 
-* `<date>` the date sequence (exclusing parenthesis, etc.)
+* `<date>` the date sequence (excluding parenthesis, etc.)
 
 * `<biblScope unit="page">` the full range of pages of the article 
 
@@ -34,7 +34,7 @@ Then the following tags are used for structuring the bibliographical references:
 
 * `<biblScope unit="issue">` the value of the issue, also known as number, (e.g. `no. <biblScope type="issue">3</biblScope>,`)
 
-* `<orgName>` the institution for thesis or technical reports
+* `<orgName>` the institution for theses or technical reports
 
 * `<publisher>` the name of the publisher
 
@@ -42,9 +42,9 @@ Then the following tags are used for structuring the bibliographical references:
 
 * `<editor>` for all the sequence of editors
 
-* `<ptr>` for web url
+* `<ptr type="web">` for web URL
 
-* `<idno>` for the document-specific identifier, in particular DOI and arXiv identifiers, optionally the type of identifier can be given by the attribute `@type`, for instance, `<idno type="doi">...</idno>`
+* `<idno>` for the document-specific identifier, in particular DOI and arXiv identifiers, optionally the type of identifier can be given by the attribute `@type`, for instance, `<idno type="doi">...</idno>`, for report identifiers `<idno type="report">...</idno>` is used 
 
 * `<note type="report">` in the case of technical report at large, encode the indication of the kind of report, this includes "technical report" from an institution, but also the kind of thesis ("Ph.D. thesis", "M.Sc. thesis", etc.)
 
@@ -94,7 +94,7 @@ The year with letter are tagged together:
 
 ### No segmentation between fields
 
-In example likethe following one:
+In examples like the following one:
 
 >  _D. Foo, P. Bar, Phys. Rev. __D95__, 34(2017)_
 
