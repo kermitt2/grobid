@@ -1,0 +1,32 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1</label> I. Yamada, J. Matsuo, N. Toyoda et al, Mater Sci. Eng. R, 34:<lb/> 231 (2001)<lb/> </bibl>
+        <bibl><label>2</label> T. Yamaguchi, J. Matsuo, M. Akizuki et al, Nucl. Instr. Meth.<lb/> B, 99: 237 (1995)<lb/> </bibl>
+        <bibl><label>3</label> N. Toyoda, H. Kitani, N. Hagiwara et al, Mater. Chem. Phys.,<lb/> 54: 262 (1998)<lb/> </bibl>
+        <bibl><label>4</label> A. Kirkpatrick, Nucl. Instr. Meth. B, 206: 830 (2003)<lb/> </bibl>
+        <bibl><label>5</label> H. Chen, F. Chen, X. M. Wang et al, Appl. Phys. Lett., 87:<lb/> 103504 (2005)<lb/> </bibl>
+        <bibl><label>6</label> J.-H. Song, D.-K. Choi, W.-K. Choi, Nucl. Instr. Meth. B, 196:<lb/> 275 (2002)<lb/> </bibl>
+        <bibl><label>7</label> K. Ichiki, S. Ninomiya, Y. Nakata et al, Appl. Surf. Sci., 255:<lb/> 1148 (2008)<lb/> </bibl>
+        <bibl><label>8</label> T. Kitagawa, I. Yamada, N. Toyoda et al, Nucl. Instr. Meth.<lb/> B, 201: 405 (2003)<lb/> </bibl>
+        <bibl><label>9</label> N. Toyoda, I. Yamada, Surf. Coat. Tech., 201: 8620 (2007)<lb/> </bibl>
+        <bibl><label>10</label> T. Seki, J. Matsuo, Nucl. Instr. Meth. B, 237: 455 (2005)<lb/> </bibl>
+        <bibl><label>11</label> E. W. Becker, K. Bier, and W. Henkes, Z. Physik, 146: 333<lb/> (1956)<lb/> </bibl>
+        <bibl><label>12</label> O. F. Hagena, W. Obert, Chem. Phys., 56: 1793 (1972)<lb/> </bibl>
+        <bibl><label>13</label> J. Matsuo, H. Abe, G. H. Takaoka et al, Nucl. Instr. Meth. B,<lb/> 99: 244 (1995)<lb/> </bibl>
+        <bibl><label>14</label> A. Kirkpatrick and J. Greer, AIP Conf. Proc., 475: 405 (1999)<lb/> </bibl>
+        <bibl><label>15</label> M.E. Mack, AIP Conf. Proc., 576: 991 (2001)<lb/> </bibl>
+        <bibl><label>16</label> N. Toyoda, J. Matsuo, I. Yamada, Nucl. Instr. Meth. B, 216:<lb/> 379 (2004)<lb/> </bibl>
+        <bibl><label>17</label> A. A. Andreev, V. S. Chernysh, Y. A. Ermakov et al, Vacuum,<lb/> 91: 47 (2013)<lb/> </bibl>
+        <bibl><label>18</label> G. Tejeda, B. Mate, J. M. Fernandez-Sanchez et al, Phys. Rev.<lb/> Lett., 76: 34 (1996)<lb/> </bibl>
+        <bibl><label>19</label> N. G. Korobeishchikov, V. V. Kalyada, P. A. Skovorodko et al,<lb/> Vacuum, 119: 256 (2015)<lb/> </bibl>
+        <bibl><label>20</label> A. Ieshkin, Y. Ermakov, V. Chernysh et al, Nucl. Instr. Meth.<lb/> A, 795: 395 (2015)<lb/> </bibl>087003-4
+        </listBibl>
+    </text>
+</tei>
+

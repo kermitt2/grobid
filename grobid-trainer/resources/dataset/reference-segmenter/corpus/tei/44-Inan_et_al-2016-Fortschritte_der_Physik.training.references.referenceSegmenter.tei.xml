@@ -1,0 +1,28 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> S. Minter, K. Wegter-McNelly, and R. Chiao, &quot;Do mir-<lb/>rors for gravitational waves exist?&quot;, Physica E 42, 234<lb/> (2010); arXiv:0903.0661.<lb/> </bibl>
+        <bibl><label>[2]</label> Q. Quach, &quot;Gravitational Casimir Effect,&quot; Phys. Rev.<lb/> Lett. 114, (2015).<lb/> </bibl>
+        <bibl><label>[3]</label> C. Misner, K. Thorne, and J. Wheeler, Gravitation<lb/> (Freeman, San Francisco, 1972).<lb/> </bibl>
+        <bibl><label>[4]</label> ´<lb/> E. Flanagan and S. Hughes, &quot;The basics of gravita-<lb/>tional wave theory,&quot; New J. Phys. 7, 204 (2005). We are<lb/> primarily concerned with Section 2.2, &quot;Global space-<lb/>times with matter sources,&quot; pp. 9-15.<lb/> </bibl>
+        <bibl><label>[5]</label> W. Press, &quot;On Gravitational Conductors, Waveguides,<lb/> and Circuits,&quot; General Relativity and Gravitation<lb/> 11(2), (1979).<lb/> </bibl>
+        <bibl><label>[6]</label> H. A. Chan, M. V. Moody, and H. J. Paik, &quot;Super-<lb/>conducting gravity gradiometer for sensitive gravity<lb/> measurements. II. Experiment,&quot; Phys. Rev. D 35, 3572<lb/> (1987).<lb/> </bibl>
+        <bibl><label>[7]</label> M. Tinkham, Introduction to Superconductivity, 2nd<lb/> edition (McGraw Hill, Inc., 1976).<lb/> </bibl>
+        <bibl><label>[8]</label> D. Bertrand, &quot;A Relativistic BCS Theory of Supercon-<lb/>ductivity,&quot; Dissertation, Université catholique de Lou-<lb/>vain, (2005).<lb/> </bibl>
+        <bibl><label>[9]</label> O. Dinariev and B. Mosolov, &quot;Relativistic Gener-<lb/>alization of the Ginzburg-Landau Theory,&quot; UDC<lb/> 530.12+537.312.62 (1986), translated from Izvestiya<lb/> Vysshikh Uchebnykh Zavedenii, Fizika, No. 4, pp. 98-<lb/>102 (1989).<lb/> </bibl>
+        <bibl><label>[10]</label> T. Rothman and S. Boughn, &quot;Aspects of Graviton De-<lb/>tection: Graviton Emission and Absorption by Atomic<lb/> Hydrogen,&quot; Found. Phys. 36, 1801 (2006).<lb/> </bibl>
+        <bibl><label>[11]</label> B. DeWitt, &quot;Superconductors and gravitational drag,&quot;<lb/> Phys. Rev. Lett. 16, 1092 (1966). </bibl>
+        <bibl>G. Cognola, et al.,<lb/> &quot;Relativistic wave mechanics of spinless particles in<lb/> a curved space-time,&quot; Gen. Reltiv. Gravit., 18, 971<lb/> (1986).<lb/> </bibl>
+        <bibl><label>[12]</label> Y. Zel&apos;dovich, &quot;The Quasienergy of a Quantum-<lb/>Mechanical System Subjected to a Periodic Action,&quot;<lb/> Soviet Physics JETP 24(5), (1967).<lb/> </bibl>
+        <bibl><label>[13]</label> H. Sambe, &quot;Steady States and Quasienergies of a<lb/> Quantum-Mechanical System in an Oscillating Field,&quot;<lb/> Phys. Rev. A 7(6), 2203-2213 (1973).<lb/> </bibl>
+        <bibl><label>[14]</label> W. Kohn, &quot;Periodic Thermodynamics,&quot; Journal of Sta-<lb/>tistical Physics 103(3-4), 417-423 (2001).<lb/> </bibl>
+        <bibl><label>[15]</label> M. Langemeyer and M. Holthaus, &quot;Energy flow<lb/> in periodic thermodynamics,&quot; Phys. Rev. E 89,<lb/> (2014).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

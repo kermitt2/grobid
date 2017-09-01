@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Bars, I., Terning, J.</author>: <title level="m">Extra Dimensions in Space and Time</title>, p. <biblScope unit="page">27</biblScope>. <publisher>Springer</publisher>,<pubPlace>Berlin</pubPlace> ( <date>2009</date>)</bibl>
+	<bibl><author>Davies, P.C.W.</author>: <title level="j">J. Phys. A</title> <biblScope unit="volume">8</biblScope>, <biblScope unit="page">609</biblScope> (<date>1975</date>)</bibl>
+	<bibl><author>Fulling,S .A.</author>:<title level="j">Phys .Rev .D</title> <biblScope unit="volume">7</biblScope> ,<biblScope unit="page">2850</biblScope> ( <date>1973</date>)</bibl>
+	<bibl><author>Genzel, R., et al.</author>: <title level="a">Strongly baryon-dominated disk galaxies at the peak ofgalaxy formation ten billion years ago</title> .<title level="j">Nature</title> <biblScope unit="volume">543</biblScope> ,<biblScope unit="page">397 -401</biblScope>( <date>2017</date>)</bibl>
+	<bibl><author>Gine, J., McCulloch, M.E.</author>: <title level="a">Inertial mass from Unruh temperatures</title>. <title level="j">Mod.Phys .Lett .A</title> <biblScope unit="volume">31</biblScope> ,<biblScope unit="page">1650107</biblScope> ( <date>2016</date>)</bibl>
+	<bibl><author>Hawking ,S.</author> :<title level="j">Nature</title><biblScope unit="volume">248</biblScope> , <biblScope unit="volume">30</biblScope>( <date>1974</date> )</bibl>
+	<bibl><author>Lelli, F., McGaugh, S.S., Schombert, J.M., Pawlowsky, M.S.</author>: <title level="a">One law torule them all :the radial acceleration relation of galaxies</title> .<title level="j">Astro -phys.J.</title> <biblScope unit="volume">836</biblScope>, <biblScope unit="page">152</biblScope>( <date>2017</date> )</bibl>
+	<bibl><author>McCulloch, M.E.</author>: <title level="a">Modelling the Pioneer anomaly as modified inertia</title>. <title level="j">Mon.Not .R .Astron .Soc .</title><biblScope unit="volume">376</biblScope> ,<biblScope unit="page">338 -342</biblScope>( <date>2007</date>)</bibl>
+	<bibl><author>McCulloch, M.E.</author>: <title level="a">Minimum accelerations from quantised inertia</title>. <title level="j">Eu-rophys.Lett .</title><biblScope unit="volume">90</biblScope> ,<biblScope unit="page">29001</biblScope> ( <date>2010</date>)</bibl>
+	<bibl><author>McCulloch, M.E.</author>: <title level="a">Testing quantised inertia on galactic scales</title>. <title level="j">Astro-phys.Space Sci .</title><biblScope unit="volume">342</biblScope> ,<biblScope unit="page">575 -578</biblScope>( <date>2012</date>)</bibl>
+	<bibl><author>McCulloch, M.E.</author>: <title level="a">Inertia from an asymmetric Casimir effect</title>. <title level="j">Euro-phys.Lett .</title><biblScope unit="volume">101</biblScope> ,<biblScope unit="page">59001</biblScope> ( <date>2013</date>)</bibl>
+	<bibl><author>McCulloch, M.E.</author>: <title level="a">Testing quantised inertia on the emdrive</title>. <title level="j">Europhys. Lett.</title><biblScope unit="volume">111</biblScope> ,<biblScope unit="page">60005</biblScope> ( <date>2015</date>)</bibl>
+	<bibl><author>McCulloch, M.E.</author>: <title level="a">Low-acceleration dwarf galaxies as tests of quan-tisedinertia</title> .<title level="j">Astrophys .Space Sci .</title><biblScope unit="volume">362</biblScope> ,<biblScope unit="page">57</biblScope> ( <date>2017</date>)</bibl>
+	<bibl><author>McGaugh, S., Lelli, F., Schombert, J.</author>: <title level="a">The radial acceleration relation inrotationally supported galaxies</title> .<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">117</biblScope> ,<biblScope unit="page">201101</biblScope> ( <date>2016</date>)</bibl>
+	<bibl><author>Milgrom, M.</author>: <title level="a">A modification of the Newtonian dynamics as a possible alternativeto the hidden mass hypothesis</title> .<title level="j">Astrophys .J .</title><biblScope unit="volume">270</biblScope> ,<biblScope unit="page">365</biblScope> ( <date>1983</date>)</bibl>
+	<bibl><author>Oort, J.H.</author>: <title level="a">The force exerted by the stellar system in the direction per-pendicularto the galactic plane and some related problems</title> .<title level="j">Bull .Astron .Inst. Neth.</title> <biblScope unit="volume">6</biblScope>, <biblScope unit="page">249- 287</biblScope>(<date>1932</date> )</bibl>
+	<bibl><author>Rubin, V., Thonnard, N., Ford, W.K. Jr.</author>: <title level="a">Rotational properties of 21 SCgalaxies with a large angle of luminosities and radiifrom NGC 4605 (R =4 kpc ) toUGC 2885 ( R =122 kpc )</title> .<title level="j">Astrophys. J.</title> <biblScope unit="volume">238</biblScope>, <biblScope unit="page">471</biblScope>( <date>1980</date>)</bibl>
+	<bibl><author>Smolyaninov, I.I.</author>: <title level="a">Photoluminescence from a gold nanotip in an accel-eratedreference frame</title> .<title level="j">Phys .Lett .A</title> <biblScope unit="volume">372</biblScope> ,<biblScope unit="page">7043 -7045</biblScope>( <date>2008</date>)</bibl>
+	<bibl><author>Thomas, D., et al.</author>: <title level="a">Stellar velocity dispersions and emission line prop-ertieso SDSS -III/BOSSgalaxies</title> .<title level="j">Mon .Not .R .Astron .Soc .</title><biblScope unit="volume">431</biblScope> (<biblScope unit="issue">2</biblScope>),<biblScope unit="page">1383- 1397</biblScope>(<date>2013</date> )</bibl>
+	<bibl><author>Uebler, H., et al.</author>: <title level="a">The evolution of the Tully-Fisher relation between z∼ 2 .3and z ∼ 0 .9with KMOS</title> .<title level="j">Astrophys .J .</title><biblScope unit="volume">842</biblScope> (<biblScope unit="issue">2</biblScope>),<biblScope unit="page">121</biblScope> ( <date>2017</date>)</bibl>
+	<bibl><author>Unruh, W.G .</author>:<title level="j">Phys.Rev .D</title> <biblScope unit="volume">14</biblScope>, <biblScope unit="page">870</biblScope> (<date>1976</date> )</bibl>
+	<bibl><author>Zwicky,F .</author>:<title level="a">Der Rotverschiebungvonextragalaktischen Nebeln</title> . <title level="j">Phys . Acta</title><biblScope unit="volume">6</biblScope> ,<biblScope unit="page">110</biblScope> (<date>1933</date> )</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

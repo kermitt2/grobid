@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Albeverio, S., Kondratiev, Y., Kozitsky, Y., Röckner, M.</author>: <title level="a">The Statistical Mechanics of Quantum Lattice Systems:A Path Integral Approach</title> .<title level="s">EMS Tracts Math</title> <biblScope unit="volume">8</biblScope> ( <date>2009</date>)</bibl>
+	<bibl><author>Araki, H.</author>: <title level="a">Relative Hamiltonian for faithful normal states of a von Neumann algebra</title>. <title level="j">Pub. RIMS Kyoto Univ.</title><biblScope unit="volume">9</biblScope> ,<biblScope unit="page">165 -209</biblScope>( <date>1973</date>)</bibl>
+	<bibl><author>Bakhrakh, V.L., Vetchinkin, S.I., Khristenko, S.V.</author>: <title level="a">Green&apos;s function of a multidimensional isotropic harmonicoscillator</title> .<title level="j">Theor .Math .Phys .</title><biblScope unit="volume">12</biblScope> ,<biblScope unit="page">776 -778</biblScope>( <date>1972</date>)</bibl>
+	<bibl><author>Bratteli, O., Robinson, D.W.</author>: <title level="m">Operator Algebras and Quantum Statistical Mechanics II</title>. <publisher>Springer</publisher>, <pubPlace>Berlin</pubPlace>( <date>1981</date>)</bibl>
+	<bibl><author>Buchholz, D.</author>: <title level="a">The resolvent algebra: Ideals and dimension</title>. <title level="j">J. Funct. Anal.</title> <biblScope unit="volume">266</biblScope>, <biblScope unit="page">3286-3302</biblScope> (<date>2014</date>)</bibl>
+	<bibl><author>Buchholz, D., Grundling, H.</author>: <title level="a">Algebraic supersymmetry: a case study</title>. <title level="j">Commun. Math. Phys.</title> <biblScope unit="volume">272</biblScope>, <biblScope unit="page">699-750</biblScope>( <date>2007</date>)</bibl>
+	<bibl><author>Buchholz, D., Grundling, H.</author>: <title level="a">The resolvent algebra: A new approach to canonical quantum systems</title>. <title level="j">J. Funct.Anal .</title><biblScope unit="volume">254</biblScope> ,<biblScope unit="page">2725 -2779</biblScope>( <date>2008</date>)</bibl>
+	<bibl><author>Buchholz, D., Grundling, H.</author>: <title level="a">Quantum systems and resolvent algebras</title>. In: <editor>Blanchard, P., Fröhlich, J.,</editor> (eds.)<title level="m">The Message of Quantum Science :Attempts Towards a Synthesis</title> .<title level="s">Lect .Notes Phys .</title><biblScope unit="volume">899</biblScope> ,pp .<biblScope unit="page">33 -45</biblScope>.<publisher>Springer</publisher>, <pubPlace>Berlin</pubPlace>( <date>2015</date> )</bibl>
+	<bibl><author>Derezi´nskiDerezi´nski, J., Jaksi´cJaksi´c, V., Pillet, C.-A.</author>: <title level="a">Perturbation theory of W-*-dynamics: Liouvilleans and KMS-states</title>.<title level="j">Rev .Math .Phys .</title><biblScope unit="volume">15</biblScope> ,<biblScope unit="page">447 -489</biblScope>( <date>2003</date>)</bibl>
+	<bibl><author>Kanda, T., Matsui, T.</author>: <title level="m">KMS states of weakly coupled anharmonic crystals and the resolvent CCR algebra</title>. <note type="report">e-print</note><idno type="arxiv">arXiv :1601.04809</idno></bibl>
+	<bibl><author>Minlos, R.A., Verbeure, A., Zagrebnov, V.A.</author>: <title level="a">A quantum crystal model in the light-mass limit: Gibbs states</title>.<title level="j">Rev .Math .Phys .</title><biblScope unit="volume">12</biblScope> ,<biblScope unit="page">981 -1032</biblScope>( <date>2000</date>)</bibl>
+	<bibl><author>Nachtergaele, B., Raz, H., Schlein, B., Sims, R.</author>: <title level="a">Lieb-Robinson bounds for harmonic and anharmonic latticesystems</title> .<title level="j">Commun .Math .Phys .</title><biblScope unit="volume">286</biblScope> ,<biblScope unit="page">1073 -1098</biblScope>( <date>2009</date>)</bibl>
+	<bibl><author>Nachtergaele, B., Schlein, B., Sims, R., Starr, S., Zagrebnov, V.A.</author>: <title level="a">On the existence of the dynamics for anharmonicquantum oscillator systems</title> .<title level="j">Rev .Math .Phys .</title><biblScope unit="volume">22</biblScope> ,<biblScope unit="page">207 -231</biblScope>( <date>2010</date>)</bibl>
+	<bibl><author>Nachtergaele, B., Sims, R.</author>: <title level="m">On the dynamics of lattice systems with unbounded on-site terms in the Hamiltonian</title>.<note type="report">e -print</note><idno type="arxiv">arXiv :1410.8174v1</idno></bibl>
+	<bibl><author>Reed, M., Simon, B.</author>: <title level="m">Methods of Modern Mathematical Physics IV: Analysis of Operators</title>. <publisher>Acacemic Press</publisher>,<pubPlace>New York</pubPlace> ( <date>1978</date>)</bibl>
+	<bibl><author>Ruelle, D.</author>: <title level="a">Natural nonequilibrium states in quantum statistical mechanics</title>. <title level="j">J. Stat. Mech.</title> <biblScope unit="volume">98</biblScope>, <biblScope unit="page">57-75</biblScope> (<date>2000</date>)</bibl>
+	<bibl>17.<author>Møller ,J .S.</author>:<title level="a">Fully coupled Pauli -Fierzsystems at zero and positive temperature</title> .<title level="j">J .Math .Phys .</title><biblScope unit="volume">55</biblScope>, <biblScope unit="page">075203</biblScope>( <date>2014</date> )</bibl>
+	<bibl><author>Takesaki, M.</author>: <title level="a">Disjointness of the KMS-states of different temperatures</title>. <title level="j">Commun. Math. Phys.</title> <biblScope unit="volume">17</biblScope>, <biblScope unit="page">33-41</biblScope>( <date>1970</date>)</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>
