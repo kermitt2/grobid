@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>P. Bizon and A. Rostworowski</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">107</biblScope> (<date>2011</date>)<biblScope unit="page">031102</biblScope> ,<idno type="arxiv">arXiv :1104.3702</idno>[<note>gr-qc</note>].</bibl>
+	<bibl><author>M. Maliborski and A. Rostworowski</author>, <title level="m">Proceedings, Spring Schoolon Numerical Relativity and High Energy Physics ( NR/HEP2)</title>,<title level="j">Int. J. Mod. Phys. A</title><biblScope unit="volume">28</biblScope> ( <date>2013</date> )<biblScope unit="page">1340020</biblScope>, <idno type="arxiv">arXiv: 1308.1235</idno>[<note>gr-qc</note>].</bibl>
+	<bibl><author>A. Buchel, L. Lehner, and S.L. Liebling</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">86</biblScope> (<date>2012</date>)<biblScope unit="page">123011</biblScope> ,<idno type="arxiv">arXiv :1210.0890</idno>[<note>gr-qc</note>].</bibl>
+	<bibl><author>O.J.C. Dias, G.T. Horowitz, and J.E. Santos</author>, <title level="j">Class. Quant.Grav .</title><biblScope unit="volume">29</biblScope> ( <date>2012</date>)<biblScope unit="page">194002</biblScope> ,<idno type="arxiv">arXiv :1109.1825</idno>[<note>hepth</note>].</bibl>
+	<bibl><author>A. Buchel, S.L. Liebling, and L. Lehner</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">87</biblScope> (<date>2013</date>)<biblScope unit="page">123006</biblScope> ,<idno type="arxiv">arXiv :1304.4166</idno>[<note>gr-qc</note>].</bibl>
+	<bibl><author>M. Maliborski and A. Rostworowski</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">111</biblScope> (<date>2013</date>)<biblScope unit="page">051102</biblScope> ,<idno type="arxiv">arXiv :1303.3186</idno>[<note>gr-qc</note>].</bibl>
+	<bibl><author>N. Kim</author>, <title level="j">Phys.Lett .B</title> <biblScope unit="volume">742</biblScope> ( <date>2015</date>)<biblScope unit="page">274</biblScope> ,<idno type="arxiv">arXiv :1411.1633</idno>[<note>hep-th</note>].</bibl>
+	<bibl><author>H. Okawa, J.C. Lopes, and V. Cardoso</author>, (<date>2015</date>), <idno type="arxiv">arXiv:1504.05203</idno>[<note>gr-qc</note>].</bibl>
+	<bibl><author>N. Deppe and A.R. Frey</author>, <title level="j">J. High Energy Phys.</title> <biblScope unit="volume">12</biblScope> (<date>2015</date>) <biblScope unit="page">004</biblScope>.</bibl>
+	<bibl><author>V. Balasubramanian, A. Buchel, S.R. Green, L. Lehner, andS .L.Liebling</author> ,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">113</biblScope> ( <date>2014</date>)<biblScope unit="page">071601</biblScope> ,<idno type="arxiv">arXiv :1403.6471</idno>[<note>hep-th</note>].</bibl>
+	<bibl><author>B. Craps, O. Evnin, and J. Vanhoof</author>, <title level="j">J. High Energy Phys.</title> <biblScope unit="volume">10</biblScope>( <date>2014</date>)<biblScope unit="page">48</biblScope> ,<idno type="arxiv">arXiv :1407.6273</idno>[<note>gr-qc</note>].</bibl>
+	<bibl><author>B. Craps, O. Evnin, and J. Vanhoof</author>, <title level="j">J. High Energy Phys.</title> <biblScope unit="volume">01</biblScope>( <date>2015</date>)<biblScope unit="page">108</biblScope> ,<idno type="arxiv">arXiv :1412.3249</idno>[<note>gr-qc</note>].</bibl>
+	<bibl><author>N. Deppe, A. Kolly, A. Frey, and G. Kunstatter</author>, <title level="j">Phys. Rev.Lett .</title><biblScope unit="volume">114</biblScope> ( <date>2015</date>)<biblScope unit="page">071102</biblScope> ,<idno type="arxiv">arXiv :1410.1869</idno>[<note>hep-th</note>].</bibl>
+	<bibl><author>H. Okawa, V. Cardoso, and P. Pani</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">89</biblScope> (<date>2014</date>)<biblScope unit="page">041502</biblScope> ,<idno type="arxiv">arXiv :1311.1235</idno>[<note>gr-qc</note>].</bibl>
+	<bibl><author>P. Basu, C. Krishnan, and A. Saurabh</author>, <title level="j">Int. J. Mod. Phys. A</title><biblScope unit="volume">30</biblScope> ( <date>2015</date>)<biblScope unit="page">1550128</biblScope> ,<idno type="arxiv">arXiv :1408.0624</idno>[<note>hep-th</note>].</bibl>
+	<bibl><author>P. Basu, C. Krishnan, and P.N. Bala Subramanian</author>, <title level="j">Phys. Lett.B</title> <biblScope unit="volume">746</biblScope> ( <date>2015</date>)<biblScope unit="page">261</biblScope> ,<idno type="arxiv">arXiv :1501.07499</idno>[<note>hep-th</note>].</bibl>
+	<bibl><author>D. Christodoulou</author>, <title level="j">Ann. Math. Second Series</title> <biblScope unit="volume">149</biblScope> (<date>1999</date>) <biblScope unit="page">183</biblScope>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

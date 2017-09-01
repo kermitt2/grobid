@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><orgName type="collaboration">Virgo</orgName> and <orgName type="collaboration">LIGO Scientific</orgName> collaborations, <author>B.P. Abbott et al.</author>, <title level="a">Observation of Gravitational Wavesfrom a Binary Black Hole Merger</title> ,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">116</biblScope> ( <date>2016</date>)<biblScope unit="page">061102</biblScope> [ <idno type="arxiv">arXiv:1602.03837</idno>][<note>INSPIRE</note> ].</bibl>
+	<bibl><author>P. Naselsky, A.D. Jackson and H. Liu</author>, <title level="a">Understanding the LIGO GW150914 event</title>, <title level="j">JCAP</title> <biblScope unit="volume">08</biblScope> (<date>2016</date>)<biblScope unit="page">029</biblScope> [ <idno type="arxiv">arXiv:1604.06211</idno>][ <note>INSPIRE</note>].</bibl>
+	<bibl><author>H. Liu and A.D. Jackson</author>, <title level="a">Possible associated signal with GW150914 in the LIGO data</title>, <title level="j">JCAP</title> <biblScope unit="volume">10</biblScope>( <date>2016</date>)<biblScope unit="page">014</biblScope> [ <idno type="arxiv">arXiv:1609.08346</idno>][ <note>INSPIRE</note>].</bibl>
+	<bibl><orgName type="collaboration">Virgo</orgName> and <orgName type="collaboration">LIGO Scientific</orgName> collaborations, <author>B.P. Abbott et al.</author>, <title level="a">GW151226: Observation of GravitationalWaves from a 22 -Solar-MassBinary Black Hole Coalescence</title> ,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">116</biblScope> (<date>2016</date> )<biblScope unit="page">241103</biblScope>[ <idno type="arxiv">arXiv :1606.04855</idno>][<note>INSPIRE</note> ].</bibl>
+	<bibl><orgName type="collaboration">Virgo</orgName> and <orgName type="collaboration">LIGO Scientific</orgName> collaborations, <author>B.P. Abbott et al.</author>, <title level="a">GW170104: Observation of a 50-Solar-MassBinary Black Hole Coalescence at Redshift 0 .2</title>,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">118</biblScope> ( <date>2017</date>)<biblScope unit="page">221101</biblScope> [<idno type="arxiv">arXiv :1706.01812</idno>][<note>INSPIRE</note> ].</bibl>
+	<bibl><ptr type="web">https://losc.ligo.org/data/#yellow box</ptr>.</bibl>
+	<bibl><orgName type="collaboration">Virgo</orgName> and <orgName type="collaboration">LIGO Scientific</orgName> collaborations, <author>B.P. Abbott et al.</author>, <title level="a">Characterization of transient noisein Advanced LIGO relevant to gravitational wave signal GW150914</title> ,<title level="j">Class .Quant .Grav .</title><biblScope unit="volume">33</biblScope> (<date>2016</date> )<biblScope unit="page">134001</biblScope>[ <idno type="arxiv">arXiv :1602.03844</idno>][<note>INSPIRE</note> ].</bibl>
+	<bibl><author>S. Bose, S. Dhurandhar, A. Gupta and A. Lundgren</author>, <title level="a">Towards mitigating the effect of sine-Gaussiannoise transients on searches for gravitational waves from compact binary coalescences</title> ,<title level="j">Phys. Rev. D</title><biblScope unit="volume">94</biblScope> ( <date>2016</date> )<biblScope unit="page">122004</biblScope>[ <idno type="arxiv">arXiv :1606.06096</idno>][<note>INSPIRE</note> ].</bibl>
+	<bibl><author>S. Bose, B. Hall, N. Mazumder, S. Dhurandhar, A. Gupta and A. Lundgren</author>, <title level="a">Tackling excess noisefrom bilinear and nonlinear couplings in gravitational -waveinterferometers</title> ,<title level="j">J .Phys .Conf .Ser.</title> <biblScope unit="volume">716</biblScope>( <date>2016</date> )<biblScope unit="page">012007</biblScope>[ <idno type="arxiv">arXiv :1602.02621</idno>][<note>INSPIRE</note> ].</bibl>
+	<bibl><ptr type="web">https://losc.ligo.org/s/events/GW150914/GW150914 tutorial.html</ptr>.</bibl>
+	<bibl><author>P. Coles and L.-Y. Chiang</author>, <title level="a">Characterizing the nonlinear growth of large scale structure in the universe</title>,<title level="j">Nature</title> <biblScope unit="volume">406</biblScope> ( <date>2000</date>)<biblScope unit="page">376</biblScope> [ <idno type="arxiv">astro-ph/0006017</idno>][ <note>INSPIRE</note>].</bibl>
+	<bibl><author>L.-Y. Chiang and P. Coles</author>, <title level="a">Phase information and the evolution of cosmological density perturbations</title>,<title level="j">Mon .Not .R .Astron .Soc .</title><biblScope unit="volume">311</biblScope> ( <date>2000</date>)<biblScope unit="page">809</biblScope> .</bibl>
+	<bibl><author>L.-Y. Chiang, P. Coles, P. and P. Naselsky</author>, <title level="a">Return mapping of phases and the analysis of the gravitationalclustering hierarchy</title> ,<title level="j">Mon .Not .R .Astron .Soc .</title><biblScope unit="volume">337</biblScope> ( <date>2002</date>)<biblScope unit="page">488</biblScope> .</bibl>
+	<bibl><ptr type="web">https://losc.ligo.org/tutorials/</ptr>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

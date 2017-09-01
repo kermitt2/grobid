@@ -1,0 +1,35 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>[1]</label> J. Slim, R. Gebel, D. Heberling, F. Hinder,<lb/> D. Hölscher, A. Lehrach, B. Lorentz, S. Mey,<lb/> A. Nass, F. Rathmann, L. Reifferscheidt, H. Solt-<lb/>ner, H. Straatmann, F. Trinkel,<lb/> and J. Wolters,<lb/> Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment 8<lb/> </bibl>
+        <bibl><label>[2]</label> A. Saleev, N. N. Nikolaev, F. Rathmann, W. Augusty-<lb/>niak, Z. Bagdasarian, M. Bai, L. Barion, M. Berz,<lb/> S. Chekmenev, G. Ciullo, S. Dymov, D. Eversmann,<lb/> M. Gaisser, R. Gebel, K. Grigoryev, D. Grzonka,<lb/> G. Guidoboni, D. Heberling, V. Hejny, N. Hempelmann,<lb/> J. Hetzel, F. Hinder, A. Kacharava, V. Kamerdzhiev,<lb/> I. Keshelashvili, I. Koop, A. Kulikov, A. Lehrach,<lb/> P. Lenisa, N. Lomidze, B. Lorentz, P. Maanen,<lb/> G. Macharashvili, A. Magiera, D. Mchedlishvili, S. Mey,<lb/> F. Müller, A. Nass, A. Pesce, D. Prasuhn, J. Pretz,<lb/> M. Rosenthal, V. Schmidt, Y. Semertzidis, Y. Senichev,<lb/> V. Shmakova, A. Silenko, J. Slim, H. Soltner, A. Stahl,<lb/> R. Stassen, E. Stephenson, H. Stockhorst, H. Ströher,<lb/> M. Tabidze, G. Tagliente, R. Talman, P. T. Eng-<lb/>blom, F. Trinkel, Y. Uzikov, Y. Valdau, E. Valetov,<lb/> A. Vassiliev, C. Weidemann, A. Wrońska, P. Wüst-<lb/>ner, P. Zuprański, and M. Zurek (JEDI collaboration),<lb/> Phys. Rev. Accel. Beams 20, 072801 (2017).<lb/> </bibl>
+        <bibl><label>[3]</label> J. Slim,<lb/> F. Rathmann, A. Nass,<lb/> H. Solt-<lb/>ner, R. Gebel, J. Pretz,<lb/> and D. Heberling,<lb/> Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment 8<lb/> </bibl>
+        <bibl><label>[4]</label> D.<lb/> Xiu<lb/> and<lb/> G.<lb/> E.<lb/> Karniadakis,<lb/> SIAM Journal on Scientific Computing 24, 619 (2002).<lb/> </bibl>
+        <bibl><label>[5]</label> P.<lb/> Parthasarathy<lb/> and<lb/> R.<lb/> Sudhesh,<lb/> Applied Mathematics Letters 19, 1083 (2006).<lb/> </bibl>
+        <bibl><label>[6]</label> G. Blatman and B. Sudret, Probabilistic Engineering Me-<lb/>chanics 25, 183 (2010).<lb/> </bibl>
+        <bibl><label>[7]</label> W. Yu, W. Li, A. Elsherbeni, and Y. Rahmat-Samii, Ad-<lb/>vanced Computational Electromagnetic Methods, Artech<lb/> House antennas and electromagnetics analysis library<lb/> (Artech House Publishers, 2015).<lb/> </bibl>
+        <bibl><label>[8]</label> M. Abramowitz, Handbook of Mathematical Functions,<lb/> With Formulas, Graphs, and Mathematical Tables,<lb/> (Dover Publications, Incorporated, 1974).<lb/> </bibl>
+        <bibl><label>[9]</label> O.<lb/> P.<lb/> Le<lb/> Maître<lb/> and<lb/> O.<lb/> M.<lb/> Knio,<lb/> Spectral Methods for Uncertainty Quantification: With Applications to Computational Fluid Dynamics,<lb/> Scientific Computation (Springer, Dordrecht, 2010).<lb/> </bibl>
+        <bibl><label>[10]</label> P.<lb/> Offermann,<lb/> H.<lb/> Mac,<lb/> T.<lb/> T.<lb/> Nguyen,<lb/> S. Clénet, H. D. Gersem,<lb/> and K. Hameyer,<lb/> IEEE Transactions on Magnetics 51, 1 (2015).<lb/> </bibl>
+        <bibl><label>[11]</label> O. Zienkiewicz, R. Taylor, and J. Zhu, The Finite Ele-<lb/>ment Method: Its Basis and Fundamentals (Elsevier Sci-<lb/>ence, 2013).<lb/> </bibl>
+        <bibl><label>[12]</label> J. Jin, The Finite Element Method in Electromagnetics,<lb/> 3rd ed. (Wiley-IEEE Press, 2014).<lb/> </bibl>
+        <bibl><label>[13]</label> D. Xiu, Numerical methods for stochastic computations:<lb/> a spectral method approach (Princeton University Press,<lb/> 2010).<lb/> </bibl>
+        <bibl><label>[14]</label> T. Sullivan, Introduction to Uncertainty Quantification,<lb/> Texts in Applied Mathematics (Springer International<lb/> Publishing, 2015).<lb/> </bibl>
+        <bibl><label>[15]</label> P. Pettersson, G. Iaccarino,<lb/> and J. Nordström,<lb/> Journal of Computational Physics 257, 481 (2014).<lb/> </bibl>
+        12 Even this number can be further reduced using a sparse version<lb/> of PCE [3].<lb/> 
+        <bibl><label>[16]</label> V. Bargmann, L. Michel,<lb/> and V. L. Telegdi,<lb/> Phys. Rev. Lett. 2, 435 (1959).<lb/> </bibl>
+        <bibl><label>[17]</label> T.<lb/> Fukuyama<lb/> and<lb/> A.<lb/> J.<lb/> Silenko,<lb/> International Journal of Modern Physics A 28, 1350147 (2013).<lb/> </bibl>
+        <bibl><label>[18]</label> J. Hurtado, Structural Reliability: Statistical Learning<lb/> Perspectives, Lecture Notes in Applied and Computa-<lb/>tional Mechanics (Springer Berlin Heidelberg, 2013).<lb/> </bibl>
+        <bibl><label>[19]</label> Z. Kotulski and W. Szczepinski, Error Analysis with Ap-<lb/>plications in Engineering, Solid Mechanics and Its Appli-<lb/>cations (Springer Netherlands, 2009).<lb/> </bibl>
+        <bibl><label>[20]</label> R.<lb/> Lebrun<lb/> and<lb/> A.<lb/> Dutfoy,<lb/> Probabilistic Engineering Mechanics 24, 172 (2009).<lb/> </bibl>
+        <bibl><label>[21]</label> G. Cottrill and F. Harmon (American Institute of Aero-<lb/>nautics and Astronautics, 2011) Chap. Hybrid Gauss<lb/> Pseudospectral and Generalized Polynomial Chaos Algo-<lb/>rithm to Solve Stochastic Trajectory Optimization Prob-<lb/>lems.<lb/> </bibl>
+        <bibl><label>[22]</label> M.<lb/> Gerritsma,<lb/> J.-B.<lb/> van<lb/> der<lb/> Steen,<lb/> P.<lb/> Vos,<lb/> and<lb/> G.<lb/> Karniadakis,<lb/> Journal of Computational Physics 229, 8333 (2010).<lb/> </bibl>
+        <bibl><label>[23]</label> F. Rathmann, A. Saleev, N. N. Nikolaev,<lb/> and<lb/> on behalf of the JEDI and srEdm collaborations,<lb/> Journal of Physics: Conference Series 447, 012011 (2013).<lb/> </bibl>
+        <bibl><label>[24]</label> C. Weidemann, F. Rathmann, H. J. Stein, B. Lorentz,<lb/> Z. Bagdasarian, L. Barion, S. Barsov, U. Bechst-<lb/>edt, S. Bertelli, D. Chiladze, G. Ciullo, M. Contal-<lb/>brigo, S. Dymov, R. Engels, M. Gaisser, R. Gebel,<lb/> P. Goslawski, K. Grigoriev, G. Guidoboni, A. Kacharava,<lb/> V. Kamerdzhiev, A. Khoukaz, A. Kulikov, A. Lehrach,<lb/> P. Lenisa, N. Lomidze, G. Macharashvili, R. Maier,<lb/> S. Martin, D. Mchedlishvili, H. O. Meyer, S. Merzliakov,<lb/> M. Mielke, M. Mikirtychiants, S. Mikirtychiants, A. Nass,<lb/> N. N. Nikolaev, D. Oellers, M. Papenbrock, A. Pesce,<lb/> D. Prasuhn, M. Retzlaff, R. Schleichert, D. Schröer,<lb/> H. Seyfarth, H. Soltner, M. Statera, E. Steffens, H. Stock-<lb/>horst, H. Ströher, M. Tabidze, G. Tagliente, P. T. Eng-<lb/>blom, S. Trusov, Y. Valdau, A. Vasiliev, and P. Wüstner,<lb/> Phys. Rev. ST Accel. Beams 18, 020101 (2015).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

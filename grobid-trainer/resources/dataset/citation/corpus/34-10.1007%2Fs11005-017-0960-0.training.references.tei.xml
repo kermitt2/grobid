@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Affleck, I.</author>: <title level="a">Exact results on the dimerisation transition in su(n) antiferromagnetic chains</title>. <title level="j">J. Phys. Condens.Matter</title> <biblScope unit="volume">2</biblScope> ,<biblScope unit="page">405 -415</biblScope>( <date>1990</date>)</bibl>
+	<bibl><author>Affleck, I., Haldane, F.D.M.</author>: <title level="a">Critical theory of quantum spin chains</title>. <title level="j">Phys. Rev. B</title> <biblScope unit="volume">36</biblScope>, <biblScope unit="page">5291-5300</biblScope> (<date>1987</date>)</bibl>
+	<bibl><author>Affleck, I., Lieb, E.H.</author>: <title level="a">A proof of part of Haldane&apos;s conjecture on spin chains</title>. <title level="j">Lett. Math. Phys.</title> <biblScope unit="volume">12</biblScope>, <biblScope unit="page">57-69</biblScope>( <date>1986</date>)</bibl>
+	<bibl><author>Aizenman, M., Nachtergaele, B.</author>: <title level="a">Geometric aspects of quantum spin states</title>. <title level="j">Comm. Math. Phys.</title> <biblScope unit="volume">164</biblScope>, <biblScope unit="page">17-63</biblScope>( <date>1994</date>)</bibl>
+	<bibl><author>Barber, M.N., Batchelor, M.T.</author>: <title level="a">Spectrum of the biquadratic spin-1 antiferromagnetic chain</title>. <title level="j">Phys. Rev. B</title><biblScope unit="volume">40</biblScope> ,<biblScope unit="page">4621 -4626</biblScope>( <date>1989</date>)</bibl>
+	<bibl><author>Baxter, R.J.</author>: <title level="a">Potts model at the critical temperature</title>. <title level="j">J. Phys. C</title> <biblScope unit="volume">6</biblScope>, <biblScope unit="page">L445-L448</biblScope> (<date>1973</date>)</bibl>
+	<bibl><author>Björnberg, J.E., Ueltschi, D.</author>: <title level="a">Decay of transverse correlations in quantum Heisenberg models</title>. <title level="j">J. Math. Phys.</title><biblScope unit="volume">56</biblScope> ,<biblScope unit="page">043303</biblScope> ( <date>2015</date>)</bibl>
+	<bibl><author>Crawford, N., Ng, S., Starr, S.</author>: <title level="a">Emptiness formation probability</title>. <title level="j">Commun. Math. Phys.</title> <biblScope unit="volume">345</biblScope>, <biblScope unit="page">881-922</biblScope> (<date>2016</date>)</bibl>
+	<bibl><author>Cross, M.C., Fisher, D.S.</author>: <title level="a">A new theory of the spin-Peierls transition with special relevance to the experimentson TTFCuBDT</title> .<title level="j">Phys .Rev .B</title> <biblScope unit="volume">19</biblScope> ,<biblScope unit="page">402 -419</biblScope>( <date>1979</date>)</bibl>
+	<bibl><author>Datta, N., Kennedy, T.</author>: <title level="a">Expansions for one quasiparticle states in spin 1/2 systems</title>. <title level="j">J. Stat. Phys.</title> <biblScope unit="volume">108</biblScope>, <biblScope unit="page">373-399</biblScope>( <date>2002</date>)</bibl>
+	<bibl><author>Dyson, F.J., Lieb, E.H., Simon, B.</author>: <title level="a">Phase transitions in quantum spin systems with isotropic and nonisotropicinteractions</title> .<title level="j">J .Stat .Phys .</title><biblScope unit="volume">18</biblScope> ,<biblScope unit="page">335 -383</biblScope>( <date>1978</date>)</bibl>
+	<bibl><author>Frank, R.L., Lieb, E.H.</author>: <title level="a">Possible lattice distortions in the Hubbard model for graphene</title>. <title level="j">Phys. Rev. Lett.</title><biblScope unit="volume">107</biblScope> ,<biblScope unit="page">066801</biblScope> ( <date>2011</date>)</bibl>
+	<bibl><author>Giuliani, A., Lieb, E.H.</author>: <title level="a">Columnar phase in quantum dimer models</title>. <title level="j">J. Phys. A Math. Theor.</title> <biblScope unit="volume">48</biblScope>, <biblScope unit="page">235203</biblScope> (<date>2015</date>)</bibl>
+	<bibl><author>Giuliani, A., Seiringer, R.</author>: <title level="a">Periodic striped ground states in Ising models with competing interactions</title>. <title level="j">Commun.Math .Phys .</title><biblScope unit="volume">347</biblScope> ,<biblScope unit="page">983 -1007</biblScope>( <date>2016</date>)</bibl>
+	<bibl><author>Kennedy, T., Tasaki, H.</author>: <title level="a">Hidden symmetry breaking and the Haldane phase in s = 1 quantum spin chains</title>.<title level="j">Commun .Math .Phys .</title><biblScope unit="volume">147</biblScope> ,<biblScope unit="page">431 -484</biblScope>( <date>1992</date>)</bibl>
+	<bibl><author>Klümper, A.</author>: <title level="a">The spectra of q-state vertex models and related antiferromagnetic quantum spin chains thespectra of q -statevertex models and related antiferromagnetic quantum spin chains</title> .<title level="j">J .Phys .A Math .Gen.</title> <biblScope unit="volume">23</biblScope>, <biblScope unit="page">809- 823</biblScope>(<date>1990</date> )</bibl>
+	<bibl><author>Korepin, V.E., Bogoliubov, N.M., Izergin, A.G.</author>: <title level="m">Quantum inverse scattering method and correlation functions</title>.<publisher>Cambridge University Press</publisher> ,<pubPlace>Cambridge</pubPlace> ( <date>1993</date>)</bibl>
+	<bibl><author>Kotecký, R., Shlosman, S.B.</author>: <title level="a">First-order phase transitions in large entropy lattice models</title>. <title level="j">Commun. Math.Phys .</title><biblScope unit="volume">83</biblScope> ,<biblScope unit="page">493 -515</biblScope>( <date>1982</date>)</bibl>
+	<bibl><author>Lees, B.</author>: <title level="a">Existence of Néel order in the S=1 bilinear-biquadratic Heisenberg model via random loops</title>. <title level="j">Commun.Math .Phys .</title><biblScope unit="volume">347</biblScope> ,<biblScope unit="page">83 -101</biblScope>( <date>2016</date>)</bibl>
+	<bibl><author>Michalakis, S., Zwolak, J.P.</author>: <title level="a">Stability of frustration-free Hamiltonians</title>. <title level="j">Commun. Math. Phys.</title> <biblScope unit="volume">322</biblScope>, <biblScope unit="page">277-302</biblScope>( <date>2013</date>)</bibl>
+	<bibl><author>Nachtergaele, B.</author>: <title level="a">Quasi-state decompositions for quantum spin systems, Probability theory and mathe-maticalstatistics</title> .In :<editor>Grigelionis ,B .et al .</editor>( eds.)<title level="m">Proceedings of the 6th Vilnius Conference , VSP /TEV</title>,<pubPlace>Utrecht -Tokyo-Vilnius</pubPlace>,pp. <biblScope unit="page">565- 590</biblScope>(<date>1994</date> )</bibl>
+	<bibl><author>Nepomechie, R.I., Pimenta, R.A.</author>: <title level="a">Universal Bethe ansatz solution for the temperley-lieb spin chain</title>. <title level="j">Nucl.Phys .B</title> <biblScope unit="volume">910</biblScope> ,<biblScope unit="page">910 -928</biblScope>( <date>2016</date>)</bibl>
+	<bibl><author>Ralko, A., Poilblanc, D., Moessner, R.</author>: <title level="a">Generic mixed columnar-plaquette phases in Rokhsar-Kivelson models</title>.<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">100</biblScope> ,<biblScope unit="page">037201</biblScope> ( <date>2008</date>)</bibl>
+	<bibl><author>Sirker, J., Klümper, A., Hamacher, K.</author>: <title level="a">Ground-state properties of two-dimensional dimerized Heisen-bergmodels</title> .<title level="j">Phys .Rev .B</title> <biblScope unit="volume">65</biblScope> ,<biblScope unit="page">134409</biblScope> ( <date>2002</date>)</bibl>
+	<bibl><author>Ueltschi, D.</author>: <title level="a">Random loop representations for quantum spin systems</title>. <title level="j">J. Math. Phys.</title> <biblScope unit="volume">54</biblScope>, <biblScope unit="page">083301</biblScope> (<date>2013</date>)</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl>1. <ptr type="web">https://council.web.cern.ch/council/en/basicdocuments/CONVENTION.pdf</ptr>.</bibl>
+	<bibl>2.<ptr type="web">http ://home.cern/</ptr>.</bibl>
+	<bibl><ptr type="web">http ://library.web.cern.ch/archives/history_CERN/internal_organisation</ptr>.</bibl>
+	<bibl><author>H. A. Simon</author>, <title level="a">Rational decision-making in business organizations</title>, <title level="j">Nobel Memorial Lecture</title> (<date>1978</date>).</bibl>
+	<bibl><ptr type="web">http://www.iter.org/FAQ#collapsible_5</ptr>.</bibl>
+	<bibl><title level="j">The Economist</title>, <date>20 January 2016</date>, <title level="a">The collaboration curse</title>, p. <biblScope unit="page">99</biblScope> (<date>2016</date>).</bibl>
+	<bibl><author>M. Bajko et al.</author>, <title level="m">Report of the task force on the incident of 19th September 2008 at the LHC</title>, <idno type="report">CERN-LHC-PROJECT-Report-1168</idno>( <date>2009</date>).</bibl>
+	<bibl><editor>H. Schmied</editor> (ed.), <title level="m">A study of the economic utility resulting from CERN contracts</title>, <idno type="report">CERN-1975-005</idno>( <orgName>CERN</orgName>,<pubPlace>Geneva</pubPlace> ,<date>1975</date> ).<ptr type="web">http ://dx.doi.org/10.5170/CERN-1975-005</ptr>.</bibl>
+	<bibl><editor>M. Bianchi-Streit et al.</editor> (eds.), <title level="m">Economic utility resulting from CERN contracts</title>, <idno type="report">CERN-1984-014</idno>( <date>1984</date>).<ptr type="web">http ://dx.doi.org/10.5170/CERN-1984-014</ptr>.</bibl>
+	<bibl><orgName>OECD</orgName>, <title level="m">The impacts of large research infrastructures on economic innovation and on society: casestudies at CERN</title> ,<publisher>OECD</publisher> <date>2014</date> .</bibl>
+	<bibl><title level="j">The Economist</title>, <date>8 August 2015</date>, <title level="a">Time to fix patents</title>, p. <biblScope unit="page">9</biblScope>, and <title level="a">A question of utility</title>, pp. <biblScope unit="page">43-45</biblScope> (<date>2015</date>).</bibl>
+	<bibl><author>J. Engelen</author>, <title level="a">The Large Hadron Collider project: organizational and financial matters (of physics atthe terascale )</title>,<title level="j">Phil .Trans .R .Soc .A</title> <biblScope unit="volume">370</biblScope> ,<biblScope unit="page">978 -985</biblScope>( <date>2012</date>);<idno type="DOI">doi :10 .1098/rsta.2011.0466</idno>.</bibl>
+	<bibl><author>P. Lebrun</author>, <title level="a">Industrial technology for unprecedented energy and luminosity: the Large Hadron Collider</title>,<title level="m">Proc .EPAC04 Lucerne</title> ,<publisher>JACoW</publisher> ( <date>2004</date>)pp .<biblScope unit="page">6 -10</biblScope>.</bibl>
+	<bibl><author>A. Unnervik</author>, <title level="a">The construction of the LHC: lessons in big science management and contracting</title>, pp.<biblScope unit="page">39 -55</biblScope>in <editor>L .Evans</editor> ( ed.)<title level="m">The Large Hadron Collider</title> ( <publisher>EPFLpress</publisher> ,<pubPlace>Lausanne</pubPlace> ,<date>2009</date> ).</bibl>
+	<bibl><editor>B. Foster</editor> (ed.), <title level="a">Revised ILC Project Implementation Planning, Rev. C</title> (<date>July 2015</date>), and <ptr type="web">http://ilc-edmsdirect.desy.de/ilc-edmsdirect/document.jsp?edmsid=*1115765</ptr>.</bibl>
+	<bibl><author>G. Apollinari et al.</author>, <title level="m">High Luminosity LHC project description</title>, <idno type="report">CERN-ACC-2014-0321</idno> (<date>2014</date>).</bibl>
+	<bibl><author>J. Axensalva et al.</author>, <title level="a">Cryogenic infrastructure for testing of LHC series superconducting magnets</title>,<title level="m">Proc .ICEC20 Beijing</title> ,( <publisher>Elsevier</publisher>,<date>2005</date> )pp .<biblScope unit="page">1015 -1018</biblScope>.</bibl>
+	<bibl><author>A. Poncet et al.</author>, <title level="a">Assembly and quality control of the LHC cryostats at CERN: motivations, means,results and lessons learned</title> ,<title level="m">Proc .PAC07</title> <pubPlace>Albuquerque</pubPlace> ,<publisher>JACoW</publisher> ( <date>2007</date>)pp .<biblScope unit="page">338 -340</biblScope>.</bibl>
+	<bibl><author>P. Fessia et al.</author>, <title level="a">The LHC continuous cryostat interconnections: the organization of a logistically complexworksite requiring strict quality standards and high output</title> ,<title level="m">Proc .EPAC08</title> <pubPlace>Genoa</pubPlace> ,<publisher>JACoW</publisher> (<date>2008</date> )pp. <biblScope unit="page">2428- 2430</biblScope>.</bibl>
+	<bibl><author>R. Perin</author>, <title level="a">Superconducting magnets for the LHC, a report of CERN&apos;s collaboration with industry</title>,<title level="j">Europhysics News</title> ,<biblScope unit="volume">21</biblScope> ,<biblScope unit="page">2 -4</biblScope>(<date>1990</date>).</bibl>
+	<bibl><editor>M. Boisot et al.</editor> (eds.), <title level="m">Collisions and Collaborations</title> (<publisher>Oxford University Press</publisher>, <date>2011</date>).</bibl>
+	<bibl><author>H. Gordon</author>, <title level="m">Project management in the Atlas international collaboration</title>, <ptr type="web">http://sites.apam.columbia.edu/fusion/BP_PAC_FNL/Gordon_Atlas_Management.pdf</ptr>.</bibl>
+	
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

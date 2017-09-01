@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>V. E. Fortov et al.</author>, <title level="j">Phys. Rep.</title> <biblScope unit="volume">421</biblScope>, <biblScope unit="page">1</biblScope> (<date>2005</date>).</bibl>
+	<bibl><author>M. Horanyi et al.</author>, <title level="j">Rev. Geophys.</title> <biblScope unit="volume">42</biblScope>, <biblScope unit="page">RG4002</biblScope> (<date>2004</date>).</bibl>
+	<bibl><author>B. A. Klumov, S. I. Popel, and G. E. Morfill</author>, <title level="j">JETP</title> <biblScope unit="volume">100</biblScope>, <biblScope unit="page">152</biblScope>( <date>2005</date>).</bibl>
+	<bibl><author>B. A. Klumov, S. V. Vladimirov, and G. E. Morfill</author>, <title level="j">JETPLett .</title><biblScope unit="volume">82</biblScope> ,<biblScope unit="page">632</biblScope> ( <date>2005</date>).</bibl>
+	<bibl><author>G. E. Morfill et al.</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">92</biblScope>, <biblScope unit="page">175004</biblScope> (<date>2004</date>).</bibl>
+	<bibl><author>U. Konopka, G. E. Morfill, and L. Ratke</author>, <title level="j">Phys. Rev. Lett.</title><biblScope unit="volume">84</biblScope> ,<biblScope unit="page">891</biblScope> ( <date>2000</date>).</bibl>
+	<bibl><author>W. Shommers</author>, <title level="j">Phys. Rev. A</title> <biblScope unit="volume">28</biblScope>, <biblScope unit="page">3599</biblScope> (<date>1983</date>).</bibl>
+	<bibl><author>L. Reatto, D. Levesque, and J. J. Weis</author>, <title level="j">Phys. Rev. A</title> <biblScope unit="volume">33</biblScope>, <biblScope unit="page">3451</biblScope>( <date>1986</date>).</bibl>
+	<bibl><author>A. Lyubartsev and A. Laaksonen</author>, <title level="j">Phys. Rev. E</title> <biblScope unit="volume">52</biblScope>, <biblScope unit="page">3730</biblScope> (<date>1995</date>).</bibl>
+	<bibl><author>Y. Rosenfeld and G. Kahl</author>, <title level="j">J. Phys.: Cond. Matter</title> <biblScope unit="volume">9</biblScope>, <biblScope unit="page">L89</biblScope>( <date>1997</date>).</bibl>
+	<bibl><author>S. Munejiri, F. Shimojo, K. Hoshino, and M. Watabe</author>, <title level="j">J.Phys .:Cond .Matter</title> <biblScope unit="volume">9</biblScope> ,<biblScope unit="page">3303</biblScope> ( <date>1997</date>).</bibl>
+	<bibl><author>D. K. Belashchenko</author>, <title level="m">Computer Simulation of Liquid andAmorphous Substances</title> ( <publisher>Nauka</publisher>,<pubPlace>Moscow</pubPlace> ,<date>2005</date> )[ <note>inRussian</note> ].</bibl>
+	<bibl><author>R. Balesku</author>, <title level="m">Equilibrium and Nonequilibrium Statistical Mechanics</title>( <publisher>Wiley</publisher>,<pubPlace>New York</pubPlace> ,<date>1975</date> ;<publisher>Mir</publisher> ,<pubPlace>Moscow</pubPlace> ,<date>1978</date> ),Vol. <biblScope unit="volume">1</biblScope>.</bibl>
+	<bibl><author>B. A. Klumov and G. E. Morfill</author>, <title level="j">JETP Lett.</title> <biblScope unit="volume">85</biblScope>, <biblScope unit="page">498</biblScope> (<date>2007</date>).</bibl>
+	<bibl><author>G. N. Sarkisov</author>, <title level="j">Usp. Fiz. Nauk</title> <biblScope unit="volume">169</biblScope>, <biblScope unit="volume">625</biblScope> (<date>1999</date>) [<title level="j">Phys. Usp.</title><biblScope unit="volume">42</biblScope> ,<biblScope unit="volume">545</biblScope> ( <date>1999</date>)].</bibl>
+	<bibl><author>M. D. Johnson, P. Hutchinson, and N. H. March</author>, <title level="j">Proc.R .Soc .A</title> <biblScope unit="volume">282</biblScope> ,<biblScope unit="page">283</biblScope> ( <date>1964</date>).</bibl>
+	<bibl><author>E. M. Apfelbaum</author>, <title level="j">J. Phys. A: Math. Theor.</title> <biblScope unit="volume">42</biblScope>, <biblScope unit="page">214024</biblScope> (<date>2009</date>).</bibl>
+	<bibl><author>D. K. Belashchenko</author>, <title level="j">Zh. Fiz. Khim.</title> <biblScope unit="volume">78</biblScope>, <biblScope unit="page">1621</biblScope> (<date>2004</date>) [<title level="j">Russ.J .Phys .Chem .A</title> <biblScope unit="volume">78</biblScope> ,<biblScope unit="page">1423</biblScope> ( <date>2004</date>)].</bibl>
+	<bibl><author>D. K. Belashchenko and B. R. Gelchinski</author>, <title level="j">J. Nonn Cryst.Solids</title> <biblScope unit="volume">353</biblScope> ,<biblScope unit="page">3515</biblScope> ( <date>2007</date>).</bibl>
+	<bibl><author>E. M. Apfelbaum</author>, <title level="j">Phys. Plasmas</title> <biblScope unit="volume">14</biblScope>, <biblScope unit="page">123703</biblScope> (<date>2007</date>).</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

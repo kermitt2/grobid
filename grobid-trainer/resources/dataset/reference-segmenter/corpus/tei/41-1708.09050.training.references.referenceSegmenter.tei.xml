@@ -1,0 +1,30 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> ATLAS Collaboration, JINST 3, S08003 (2008).<lb/> </bibl>
+        <bibl><label>[2]</label> CMS Collaboration, JINST 3, S08004 (2008).<lb/> </bibl>
+        <bibl><label>[3]</label> ATLAS Collaboration, Phys. Rev. Lett. 114, 142001 (2015).<lb/> </bibl>
+        <bibl><label>[4]</label> CMS Collaboration, Phys. Rev. D 93, 052007 (2016).<lb/> </bibl>
+        <bibl><label>[5]</label> ATLAS Collaboration, JHEP 1703, 113 (2017).<lb/> </bibl>
+        <bibl><label>[6]</label> D0 Collaboration, Phys. Rev. Lett. 80, 2063 (1998).<lb/> </bibl>
+        <bibl><label>[7]</label> ATLAS Collaboration, Eur. Phys. J. C 77, 264 (2017).<lb/> </bibl>
+        <bibl><label>[8]</label> CMS Collaboration, Phys. Lett. B 762, 512 (2016).<lb/> </bibl>
+        <bibl><label>[9]</label> CMS Collaboration, JHEP 1703, 101 (2017).<lb/> </bibl>
+        <bibl><label>[10]</label> ATLAS Collaboration, JHEP 1702, 071 (2017).<lb/> </bibl>
+        <bibl><label>[11]</label> ATLAS Collaboration, arXiv:1702.07546 [hep-ex].<lb/> </bibl>
+        <bibl><label>[12]</label> CMS Collaboration, Eur. Phys. J. C 77, no. 7, 467 (2017).<lb/> </bibl>
+        <bibl><label>[13]</label> CMS Collaboration, arXiv:1704.06142 [hep-ex].<lb/> </bibl>
+        <bibl><label>[14]</label> A. J. Barr and C. G. Lester, J. Phys. G 37, 123001 (2010).<lb/> </bibl>
+        <bibl><label>[15]</label> W. S. Cho, K. Choi, Y. G. Kim and C. B. Park, Phys. Rev. D 79, 031701 (2009).<lb/> </bibl>
+        <bibl><label>[16]</label> CMS Collaboration, Eur. Phys. J. C 77, 354 (2017)<lb/> </bibl>
+        <bibl><label>[17]</label> CMS Collaboration, CMS-PAS-TOP-16-022.<lb/> </bibl>
+        <bibl><label>[18]</label> CMS Collaboration, Phys. Rev. D 93, 072004 (2016).</bibl>
+        </listBibl>
+    </text>
+</tei>
+
