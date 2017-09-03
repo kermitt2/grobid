@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>D. Schardt, T. Elsässer and D. Schulz-Ertner</author>, <title level="a">Heavy-ion tumor therapy: physical and radiobiological benefits</title>,<title level="j">Rev .Mod .Phys .</title><biblScope unit="volume">82</biblScope> ( <date>2010</date>)<biblScope unit="page">383</biblScope> .</bibl>
+	<bibl><author>F. Tommasino and M. Durante</author>, <title level="m">Proton radiobiolgy</title>, <title level="j">Cancers</title> <biblScope unit="volume">7</biblScope> (<date>2015</date>) <biblScope unit="page">353</biblScope>.</bibl>
+	<bibl><author>T. Ohno</author>, <title level="a">Particle radiotherapy with carbon ion beams</title>, <title level="j">EPMA J.</title> <biblScope unit="volume">4</biblScope> (<date>2013</date>) <biblScope unit="page">9</biblScope>.</bibl>
+	<bibl><author>R. Faccini and V. Patera</author>, <title level="a">Dose monitoring in particle therapy</title>, <title level="j">Mod. Phys. Lett. A</title> <biblScope unit="volume">30</biblScope> (<date>2015</date>) <biblScope unit="page">1540023</biblScope>.</bibl>
+	<bibl><author>W. Enghardt et al.</author>, <title level="a">Charged hadron tumor therapy monitoring by means of PET</title>, <title level="j">Nucl.Instrum .Meth .A</title> <biblScope unit="volume">525</biblScope> ( <date>2004</date>)<biblScope unit="page">284</biblScope> .</bibl>
+	<bibl><author>M. De Napoli et al.</author>, <title level="a">Carbon fragmentation measurements and validation of the GEANT4 nuclear reactionmodels for hadrontherapy</title> ,<title level="j">Phys .Med .Biol .</title><biblScope unit="volume">57</biblScope> ( <date>2012</date>)<biblScope unit="page">7651</biblScope> .</bibl>
+	<bibl><author>G. De Lellis et al.</author>, <title level="a">Measurement of the fragmentation of carbon nuclei used in hadron-therapy</title>, <title level="j">Nucl.Phys .A</title> <biblScope unit="volume">853</biblScope> ( <date>2011</date>)<biblScope unit="page">124</biblScope> .</bibl>
+	<bibl><author>K. Gwosch et al.</author>, <title level="a">Non-invasive monitoring of therapeutic carbon ion beams in a homogeneous phantomby tracking of secondary ions</title> ,<title level="j">Phys .Med .Biol .</title><biblScope unit="volume">58</biblScope> ( <date>2013</date>)<biblScope unit="page">3755</biblScope> .</bibl>
+	<bibl><author>C. Agodi et al.</author>, <title level="a">Charged particle&apos;s flux measurement from PMMA irradiated by 80 MeV/u carbon ion beam</title>,<title level="j">Phys .Med .Biol .</title><biblScope unit="volume">57</biblScope> ( <date>2012</date>)<biblScope unit="page">5667</biblScope> [ <idno type="arxiv">arXiv:123.472</idno>].</bibl>
+	<bibl><author>P. Henriquet et al.</author>, <title level="a">Interaction vertex imaging (IVI) for carbon ion therapy monitoring: a feasibility study</title>,<title level="j">Phys .Med .Biol .</title><biblScope unit="volume">57</biblScope> ( <date>2012</date>)<biblScope unit="page">4655</biblScope> .</bibl>
+	<bibl><author>S. Buontempo et al.</author>, <title level="a">Emulsion Cloud Chamber technique to measure the fragmentation of a high-energycarbon beam</title> ,<date>2007</date> <title level="j">JINST</title> <biblScope unit="volume">2</biblScope> <biblScope unit="page">P06004</biblScope> [ <idno type="arxiv">physics/7377</idno>].</bibl>
+	<bibl><author>A. Alexandrov et al.</author>, <title level="a">Measurement of large angle fragments induced by 400 MeV n −1 carbon ion beams</title>,<title level="j">Meas .Sci .Technol .</title><biblScope unit="volume">26</biblScope> ( <date>2015</date>)<biblScope unit="page">094001</biblScope> .</bibl>
+	<bibl><author>A. Alexandrov et al.</author>, <title level="a">A new fast scanning system for the measurement of large angle tracks in nuclear emulsions</title>,<date>2015</date> <title level="j">JINST</title> <biblScope unit="volume">10</biblScope> <biblScope unit="page">P11006</biblScope> .</bibl>
+	<bibl><author>A. Alexandrov et al.</author>, <title level="a">A new generation scanning system for the high-speed analysis of nuclear emulsions</title>,<date>2016</date> <title level="j">JINST</title> <biblScope unit="volume">11</biblScope> <biblScope unit="page">P06002</biblScope> .</bibl>
+	<bibl><author>C. Agodi et al.</author>, <title level="a">FIRST experiment: fragmentation of ions relevant for space and therapy</title>, <title level="j">J.Phys .Conf .Ser .</title><biblScope unit="volume">420</biblScope> ( <date>2013</date>)<biblScope unit="page">012061</biblScope> .</bibl>
+	<bibl><author>R. Acquafredda et al.</author>, <title level="a">The OPERA experiment in the CERN to Gran Sasso neutrino beam</title>, <date>2009</date><title level="j">JINST</title> <biblScope unit="volume">4</biblScope> <biblScope unit="page">P04018</biblScope> .</bibl>
+	<bibl><author>L. Arrabito et al.</author>, <title level="a">Track reconstruction in the emulsion-lead target of the OPERA experiment using theESS microscope</title> ,<date>2007</date> <title level="j">JINST</title> <biblScope unit="volume">2</biblScope> <biblScope unit="page">P05004</biblScope> [ <idno type="arxiv">arXiv:75.312</idno>].</bibl>
+	<bibl><author>M. De Serio et al.</author>, <title level="a">High precision measurements with nuclear emulsions using fast automated microscopes</title>,<title level="j">Nucl .Instrum .Meth .A</title> <biblScope unit="volume">554</biblScope> ( <date>2005</date>)<biblScope unit="page">247</biblScope> .</bibl>
+	<bibl><author>A. Alexandrov et al.</author>, <title level="a">Improving the detection efficiency in nuclear emulsion trackers</title>, <title level="j">Nucl.Instrum .Meth .A</title> <biblScope unit="volume">776</biblScope> ( <date>2015</date>)<biblScope unit="page">45</biblScope> .</bibl>
+	<bibl><title level="m">PSTAR -stopping power and range tables for protons in various material webpage</title>, <ptr type="web">https://physics.nist.gov/PhysRefData/Star/Text/PSTAR.html</ptr>.</bibl>
+	<bibl><author>K. Gunzert-Marx et al.</author>, <title level="a">Secondary beam fragments produced by 100 MeV u −1 12 C ions in water and theirdose contributions in carbon ion radiotherapy</title> ,<title level="j">New J .Phys .</title><biblScope unit="volume">10</biblScope> ( <date>2008</date>)<biblScope unit="page">075003</biblScope> .</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

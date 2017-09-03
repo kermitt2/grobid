@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Lee, T.D., Yang, C.N.</author>: <title level="j">Phys. Rev.</title> <biblScope unit="volume">104</biblScope>, <biblScope unit="page">254</biblScope> (<date>1956</date>)</bibl>
+	<bibl><author>Wu, C.S., et al.</author>: <title level="j">Phys. Rev.</title> <biblScope unit="volume">105</biblScope>, <biblScope unit="page">1413</biblScope> (<date>1957</date>) </bibl>
+	<bibl>3.<author>Zeldovich ,Y .B.</author>:<title level="j">Zh .Eksp .Teor .Fiz .</title><biblScope unit="volume">9</biblScope> ,<biblScope unit="page">682</biblScope> ( <date>1959</date>)</bibl>
+	<bibl><author>Glashow, S.L.</author>: <title level="j">Nucl. Phys.</title> <biblScope unit="volume">22</biblScope>, <biblScope unit="page">579</biblScope> (<date>1961</date>)</bibl>
+	<bibl><author>Weinberg, S.</author>: <title level="j">Rev. Lett.</title> <biblScope unit="volume">19</biblScope>, <biblScope unit="page">1264</biblScope> (<date>1967</date>)</bibl>
+	<bibl><author>Salam, A.</author>: In: <editor>Svartholm, N.</editor> (ed.) <title level="m">Elementary Particle Theory</title>, vol. <biblScope unit="volume">367</biblScope>. <publisher>Almquist and Wiksells</publisher>, <pubPlace>Stockholm</pubPlace>( <date>1969</date>)</bibl>
+	<bibl><author>Bouchiat, M.A., Bouchiat, C.C.</author>: <title level="j">Phys. Lett. B</title> <biblScope unit="volume">48</biblScope>, <biblScope unit="page">111</biblScope> (<date>1974</date>)</bibl>
+	<bibl><author>Prescott, C.Y., et al.</author>: <orgName type="collaboration">SLAC-e122 Collaboration</orgName>. <title level="j">Phys. Lett. B</title> <biblScope unit="volume">77</biblScope>, <biblScope unit="page">347</biblScope> (<date>1978</date>)</bibl>
+	<bibl><author>Prescott, C.Y., et al.</author>: <orgName type="collaboration">SLAC-e122 Collaboration</orgName>. <title level="j">Phys. Lett. B</title> <biblScope unit="volume">84</biblScope>, <biblScope unit="page">524</biblScope> (<date>1979</date>)</bibl>
+	<bibl><author>Abrahamyan, S., et al.</author>: <orgName type="collaboration">PREX Collaboration</orgName>. <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">108</biblScope>, <biblScope unit="page">112502</biblScope> (<date>2012</date>)</bibl>
+	<bibl>11.<author>Benesch ,J .,et al .</author>:( <orgName type="collaboration">MOLLERCollaboration</orgName> ),<idno type="arxiv">arXiv :1411.4088</idno>[ <note>nucl-ex</note>]</bibl>
+	<bibl><author>Takahashi, Y., Umezawa, H.</author>: <title level="j">Coll. Phenomena</title> <biblScope unit="volume">2</biblScope>, <biblScope unit="page">55</biblScope> (<date>1975</date>)</bibl>
+	<bibl><author>Takahashi, Y., Umezawa, H.</author>: <title level="j">Int. J. Mod. Phys. B</title> <biblScope unit="volume">10</biblScope>, <biblScope unit="page">1755</biblScope> (<date>1996</date>)</bibl>
+	<bibl><author>Takahashi, Y., Umezawa, H., Matsumoto, H.</author>: <title level="m">Thermofield Dynamics and Condensed States</title>. <pubPlace>North-Holland</pubPlace>( <date>1982</date>)</bibl>
+	<bibl><author>Khanna, F.C., Malbouisson, A.P.C., Malboiusson, J.M.C., Santana, A.E.</author>: <title level="m">Themal Quantum Field Theory:Algebraic Aspects and Applications</title> .<publisher>World Scientific</publisher> ,<pubPlace>Singapore</pubPlace> ( <date>2009</date>)</bibl>
+	<bibl><author>Umezawa, H.</author>: <title level="m">Advanced Field Theory: Micro, Macro and Thermal Physics</title>. <publisher>AIP</publisher>, <pubPlace>New York</pubPlace> (<date>1993</date>)</bibl>
+	<bibl><author>Santana, A.E., Khanna, F.C.</author>: <title level="j">Phys. Lett. A</title> <biblScope unit="volume">203</biblScope>, <biblScope unit="page">68</biblScope> (<date>1995</date>)</bibl>
+	<bibl><author>Santana, A.E., Khanna, F.C., Chu, H., Chang, C.</author>: <title level="j">Ann. Phys.</title> <biblScope unit="volume">249</biblScope>, <biblScope unit="page">481</biblScope> (<date>1996</date>)</bibl>
+	<bibl><author>Das, A.</author>: <title level="m">Finite Temperature Field Theory</title>. <publisher>W. Scientific</publisher>, <pubPlace>Singapour</pubPlace> (<date>1977</date>)</bibl>
+	<bibl><author>Rakhimov, A., Khanna, F.C.</author>: <title level="j">Phys. Rev. C</title> <biblScope unit="volume">64</biblScope>, <biblScope unit="page">064907</biblScope> (<date>2001</date>)</bibl>
+	<bibl><author>Wu, T.Y., Pauchy Hwang, W.Y.</author>: <title level="m">Relativistic Quantum Mechanics and Quantum Fields</title>. <publisher>World Scientific Publishing</publisher>( <date>1991</date>)</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

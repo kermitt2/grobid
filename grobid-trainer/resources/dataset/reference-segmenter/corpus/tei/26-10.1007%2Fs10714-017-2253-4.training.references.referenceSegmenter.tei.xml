@@ -1,0 +1,36 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1.</label> Jamal, S., Kara, A.H., Bokhari, A.H.: Symmetries, conservation laws, reductions, and exact solutions<lb/> for the Klein-Gordon equation in de Sitter spacetimes. Can. J. Phys. 90, 667 (2012)<lb/> </bibl>
+        <bibl><label>2.</label> Paliathanasis, A., Tsamparlis, M., Mustafa, M.T.: Symmetry analysis of the Klein-Gordon equation<lb/> in Bianchi I spacetimes. Int. J. Geom. Methods Mod. Phys. 12, 1550033 (2015)<lb/> </bibl>
+        <bibl><label>3.</label> Jamal, S., Shabbir, G.: Geometric properties of the Kantowski-Sachs and Bianchi-type Killing algebra<lb/> in relation to a Klein-Gordon equation. Eur. Phys. J. Plus 132(70), 1 (2017)<lb/> </bibl>
+        S. Jamal<lb/> 
+        <bibl><label>4.</label> Jamal, S.: Potentials and point symmetries of Klein-Gordon equations in space-time homogenous<lb/> Gödel-type metrics. Int. J. Geom. Methods Mod. Phys. 0, 1750070 (2017)<lb/> </bibl>
+        <bibl><label>5.</label> Jamal, S., Paliathanasis, A.: Group invariant transformations for the Klein-Gordon equation in three<lb/> dimensional flat spaces. J. Geom. Phys. 117, 50-59 (2017). (In press)<lb/> </bibl>
+        <bibl><label>6.</label> Bozhkov, Y., Freire, I.L.: Special conformal groups of a Riemannian manifold and Lie point symmetries<lb/> of the nonlinear Poisson equation. J. Differ. Equ. 249, 872 (2010)<lb/> </bibl>
+        <bibl><label>7.</label> Yagdijian, K., Galstian, A.: Fundamental solutions for the Klein-Gordon equation in de Sitter space-<lb/>time. Commun. Math. Phys. 285, 293 (2009)<lb/> </bibl>
+        <bibl><label>8.</label> de Sitter, W.: On the curvature of space. Proc. Kon. Ned. Akad. Wet. 20, 229 (1917)<lb/> </bibl>
+        <bibl><label>9.</label> Straumann, N.: On the cosmological constant problems and the astronomical evidence for a homoge-<lb/>neous energy density with negative pressure. In: Duplantier, B., Rivasseau, V. (eds.) Vacuum energy,<lb/> renormalization. Birkhauser, Basel (2003)<lb/> </bibl>
+        <bibl><label>10.</label> Moschella, U.: The de Sitter and anti-de Sitter sightseeing tour. Sémin. Poincaré 1, 1 (2005)<lb/> </bibl>
+        <bibl><label>11.</label> Patera, J., Winternitz, P., Zassenhaus, H.: Quantum numbers for particles in de Sitter space. J. Math.<lb/> Phys. 17, 717 (1976)<lb/> </bibl>
+        <bibl><label>12.</label> Maartens, R., Maharaj, S.D., Tupper, B.O.J.: General solution and classification of conformal motions<lb/> in static spherical spacetimes. Class. Quantum Grav. 12, 2577 (1995)<lb/> </bibl>
+        <bibl><label>13.</label> Maartens, R., Maharaj, S.D., Tupper, B.O.J.: Conformal motions in static spherical spacetimes. Class.<lb/> Quantum Grav. 13, 317 (1996)<lb/> </bibl>
+        <bibl><label>14.</label> Moopanar, S., Maharaj, S.D.: Conformal symmetries of spherical spacetimes. Int. J. Theor. Phys. 34,<lb/> 2285 (1995)<lb/> </bibl>
+        <bibl><label>15.</label> Manjonjo, A.M., Maharaj, S.D., Moopanar, S.: Conformal vectors and stellar models. Eur. Phys. J.<lb/> Plus 132, 62 (2017)<lb/> </bibl>
+        <bibl><label>16.</label> Einstein, A.: Kosmologische Betrachtungen zur allgemeinen Relativittstheorie Sitzungsber, Preuβ.<lb/> Akad. Wiss., Berlin (1917)<lb/> </bibl>
+        <bibl><label>17.</label> Møller, C.: The Theory of Relativity. Clarendon Press, Oxford (1952)<lb/> </bibl>
+        <bibl><label>18.</label> Noether, E.: Invariante Variationsprobleme, Nachrichten der Akademie der Wissenschaften<lb/> Mathematisch-Physikalische Klasse, 2, Göttingen (1918). (English translation in Transport Theory<lb/> and Statistical Physics 1(3) (1971))<lb/> </bibl>
+        <bibl><label>19.</label> Katzin, G.H., Levine, J., Davis, W.R.: Curvature collineations: a fundamental symmetry property of<lb/> the space-times of general relativity defined by the vanishing Lie derivative of the Riemann curvature<lb/> tensor. J. Math. Phys. 10, 617 (1969)<lb/> </bibl>
+        <bibl><label>20.</label> Paliathanasis, A., Tsamparlis, M.: The geometric origin of Lie point symmetries of the Schrödinger<lb/> and the Klein-Gordon equations. Int. J. Geom. Methods Mod. Phys. 11, 14500376 (2014)<lb/> </bibl>
+        <bibl><label>21.</label> Tsamparlis, M., Paliathanasis, A.: The geometric nature of Lie and Noether symmetries. Gen. Relativ.<lb/> Gravit. 43, 1861 (2011)<lb/> </bibl>
+        <bibl><label>22.</label> Olver, P.: Application of Lie Groups to Differential Equations. Springer, New York (1993)<lb/> </bibl>
+        <bibl><label>23.</label> Stephani, H.: Differential Equations: Their Solution Using Symmetries. Cambridge University Press,<lb/> Cambridge (1989)</bibl>
+        </listBibl>
+    </text>
+</tei>
+

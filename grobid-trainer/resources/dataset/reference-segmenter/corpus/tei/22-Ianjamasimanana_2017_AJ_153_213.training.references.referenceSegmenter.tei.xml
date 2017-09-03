@@ -1,0 +1,30 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Braun, R. 1997, ApJ, 484, 637<lb/> </bibl>
+		<bibl>Briggs, D. S. 1995, AAS Meeting 187 Abstracts, #112.02<lb/> </bibl>
+		<bibl>Cannon, J. M., Giovanelli, R., Haynes, M. P., et al. 2011, ApJL, 739, L22<lb/> </bibl>
+		<bibl>Cornwell, T. J. 2008, ISTSP, 2, 793<lb/> </bibl>
+		<bibl>Högbom, J. A. 1974, A&amp;AS, 15, 417<lb/> </bibl>
+		<bibl>Hunter, D. A., Ficut-Vicas, D., Ashley, T., et al. 2012, AJ, 144, 134<lb/> </bibl>
+		<bibl>Ianjamasimanana, R., de Blok, W. J. G., Walter, F., et al. 2012, AJ, 144, 96<lb/> </bibl>
+		<bibl>Jorsater, S., &amp; van Moorsel, G. A. 1995, AJ, 110, 2037<lb/> </bibl>
+		<bibl>O&apos;Brien, J. C., Freeman, K. C., &amp; van der Kruit, P. C. 2010, A&amp;A, 515, 62<lb/> </bibl>
+		<bibl>Ott, J., Stilp, A. M., Warren, S. R., et al. 2012, AJ, 144, 123<lb/> </bibl>
+		<bibl>Petric, A. O., &amp; Rupen, M. P. 2007, AJ, 134, 1952<lb/> </bibl>
+		<bibl>Rich, J. W., de Blok, W. J. G., Cornwell, T. J., et al. 2008, AJ, 136, 2897<lb/> </bibl>
+		<bibl>Schaye, J. 2004, ApJ, 609, 667<lb/> </bibl>
+		<bibl>Stilp, A. M., Dalcanton, J. J., Warren, S. R., et al. 2013, ApJ, 765, 136<lb/> </bibl>
+		<bibl>Tamburro, D., Rix, H.-W., Leroy, A. K., et al. 2009, AJ, 137, 4424<lb/> </bibl>
+		<bibl>Walter, F., Brinks, E., de Blok, W. J. G., et al. 2008, AJ, 136, 2563<lb/> </bibl>
+		<bibl>Yatawatta, S. 2014, MNRAS, 444, 790<lb/> </bibl>
+		<bibl>Young, L. M., van Zee, L., Lo, K. Y., et al. 2003, ApJ, 592, 111</bibl>
+        </listBibl>
+    </text>
+</tei>
+

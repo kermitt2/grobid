@@ -1,0 +1,35 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+        <bibl><label>[1]</label> Bertanza L. et al., Phys. Rev. Lett., 9 (1962) 180.<lb/> </bibl>
+        <bibl><label>[2]</label> Rafelski J. and Muller B., Phys. Rev. Lett., 48 (1982)<lb/> 1066; </bibl>
+        <bibl>Rafelski J., Nucl. Phys. A, 418 (1984) 215c;<lb/> </bibl>
+        <bibl>Jacob M. and Tran Thanh Van J., Phys. Rep., 88<lb/> (1982) 321; </bibl>
+        <bibl>Koch P. and Rafelski J., Nucl. Phys. A,<lb/> 444 (1985) 678; </bibl>
+        <bibl>Baltz A. J. and Dover C., Phys.<lb/> Rev. C, 53 (1996) 362; </bibl>
+        <bibl>Sorge H. et al., Phys. Lett. B,<lb/> 289 (1992) 6.<lb/> </bibl>
+        <bibl><label>[3]</label> Lévai P. and Müller B., Phys. Rev. Lett., 67 (1991)<lb/> 1519; </bibl>
+        <bibl>Stöcker H., Nucl. Phys. A, 750 (2005) 121.<lb/> </bibl>
+        <bibl><label>[4]</label> Gorenstein M. I., Tsai M. S. and Yang Shin Nan,<lb/> Phys. Rev. C, 51 (1995) 1465.<lb/> </bibl>
+        <bibl><label>[5]</label> Haglin K., Nucl. Phys. A, 584 (1995) 719; </bibl>
+        <bibl>Smith W.<lb/> and Haglin K. L., Phys. Rev. C, 57 (1998) 1449.<lb/> </bibl>
+        <bibl><label>[6]</label> Uddin S. et al., Nucl. Phys. A, 934 (2015) 121.<lb/> </bibl>
+        <bibl><label>[7]</label> Uddin S. et al., Adv. High Energy Phys., 2015 (2015)<lb/> 154853.<lb/> </bibl>
+        <bibl><label>[8]</label> Uddin S. et al., J. Phys. G, 39 (2012) 015012.<lb/> </bibl>
+        <bibl><label>[9]</label> Cleymans J., J. Phys. G: Nucl. Part. Phys., 35 (2008)<lb/> 044017; </bibl>
+        <bibl>Becattini F. et al., POS(CPOD07) (2007) 012.<lb/> </bibl>
+        <bibl><label>[10]</label> Becattini F. and Cleymans J., J. Phys. G: Nucl. Part.<lb/> Phys., 34 (2007) S959.<lb/> </bibl>
+        <bibl><label>[11]</label> Bhat Riyaz Ahmed et al., Nucl. Phys. A, 935 (2015) 43;<lb/> </bibl>
+        <bibl>Bashir Inam-ul et al., Zh. Eksp. Teor. Fiz., 148 (2015)<lb/> 241.<lb/> </bibl>
+        <bibl><label>[12]</label> Huovinen P. and Ruuskanen P. V., Annu. Rev. Nucl.<lb/> Part. Sci., 56 (2006) 163.<lb/> </bibl>
+        <bibl><label>[13]</label> STAR Collaboration (Abelev B. I. et al.), Phys.<lb/> Lett. B, 673 (2009) 183.<lb/> </bibl>
+        <bibl><label>[14]</label> STAR Collaboration (Abelev B. I. et al.), Phys. Rev.<lb/> C, 79 (2009) 064903.</bibl>
+        </listBibl>
+    </text>
+</tei>
+
