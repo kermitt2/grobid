@@ -47,6 +47,7 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 					
 					Person person = new Person();
 					person.setFirstName(authorNode.get("given").asText());
+					person.normalizeCrossRefFirstName();
 					person.setLastName(authorNode.get("family").asText());
 					biblio.addFullAuthor(person);
 				}

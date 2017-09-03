@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.http.client.ClientProtocolException;
 import org.grobid.core.utilities.crossref.CrossrefRequestListener.Response;
@@ -12,12 +13,10 @@ import org.grobid.core.utilities.crossref.CrossrefRequestListener.Response;
 /**
  * Request pool to get data from api.crossref.org without exceeding limits.
  *
- * @author Vincent Kaestle
+ * @author Vincent Kaestle, Patrice
  */
 public class CrossrefClient {
-	
-	public static final boolean DEBUG = true;
-	
+		
 	/**
 	 * Request distribution during time
 	 */
@@ -40,9 +39,9 @@ public class CrossrefClient {
 	public long firstItTime;
 	
 	public CrossrefClient(RequestMode requestMode) {
-		this.executorService = Executors.newSingleThreadExecutor();
-		/*if (requestMode == RequestMode.MUCHTHENSTOP)
-			this.executorService = Executors.newCachedThreadPool();*/
+		//this.executorService = Executors.newSingleThreadExecutor();
+		//if (requestMode == RequestMode.MUCHTHENSTOP)*/
+		this.executorService = Executors.newCachedThreadPool();
 		this.lastResponse = null;
 		this.requestMode = requestMode;
 		this.itFromLastInterval = 0;
@@ -93,4 +92,17 @@ public class CrossrefClient {
 		executorService.shutdownNow();
 	}
 	
+	/**
+	 * Wait for all request to be completed
+	 */
+	public void finish() {
+		try {
+			executorService.shutdown();
+			executorService.awaitTermination(5, TimeUnit.SECONDS);
+		} catch (InterruptedException ie) {
+		 	//pool.shutdownNow(); // will be explicitely called by close()
+		 	// Preserve interrupt status
+		 	Thread.currentThread().interrupt();
+		}
+	} 
 }

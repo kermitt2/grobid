@@ -154,7 +154,13 @@ public class EndToEndEvaluation {
 				// run Grobid full text and write the TEI result in the directory
 				try {
 					System.out.println(n + " - " + pdfFile.getPath());
-					String tei = engine.fullTextToTEI(pdfFile, GrobidAnalysisConfig.defaultInstance());
+					GrobidAnalysisConfig config =
+                        GrobidAnalysisConfig.builder()
+                                .consolidateHeader(true)
+                                .consolidateCitations(false)
+                                .withPreprocessImages(false)
+                                .build();
+					String tei = engine.fullTextToTEI(pdfFile, config);
 					// write the result in the same directory
 					File resultTEI = new File(dir.getPath() + File.separator
 						+ pdfFile.getName().replace(".pdf", ".fulltext.tei.xml"));

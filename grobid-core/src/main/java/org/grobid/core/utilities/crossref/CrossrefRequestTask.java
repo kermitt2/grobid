@@ -35,7 +35,7 @@ public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListen
 	
 	@Override
 	public void run() {
-			
+		
 		int stepElapsedTime =  client.lastResponse != null ? (int)(System.currentTimeMillis() - client.lastResponse.time) : 0;
 		printLog(request, "Trying at "+stepElapsedTime+"ms from last reponse");
 		

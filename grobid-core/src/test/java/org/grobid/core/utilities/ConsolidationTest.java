@@ -15,6 +15,7 @@ import org.junit.After;
 import org.junit.Before;
 
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 public class ConsolidationTest {
 
@@ -42,6 +43,7 @@ public class ConsolidationTest {
 		List<BiblioItem> bib2 = new ArrayList<BiblioItem>();
 		try {
 			boolean found = target.consolidateCrossrefGetByDOI(biblio, bib2);
+			assertEquals("The consolidation has not the expected outcome", true, found);
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -49,9 +51,27 @@ public class ConsolidationTest {
 		}
 	}
 
-	@Test
+	//@Test
 	public void testConsolidationDOIMultiple() {
-		
+		List<BiblioItem> biblios = new ArrayList<BiblioItem>();
+		for(int i=0; i<DOIs.length; i++) {
+			BiblioItem biblio = new BiblioItem();
+			biblio.setDOI(DOIs[i]);
+			biblios.add(biblio);
+		}
+		for(BiblioItem biblio : biblios) {
+			List<BiblioItem> bib2 = null;
+			try {
+				boolean found = target.consolidateCrossrefGetByDOI(biblio, bib2);
+				assertEquals("The consolidation has not the expected outcome", true, found);
+				assertNotNull(bib2);
+				assertThat(bib2.size(), is(1));
+			} catch(Exception e) {
+				e.printStackTrace();
+			} finally {
+				target.close();
+			}
+		}
 	}
 
 

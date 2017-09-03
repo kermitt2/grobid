@@ -35,6 +35,7 @@ import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
@@ -53,6 +54,8 @@ import java.io.Writer;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
@@ -169,9 +172,30 @@ public class FullTextParser extends AbstractParser {
 			}
 
             // citation processing
+            // consolidation, if selected, is not done individually for each citation but 
+            // in a second stage for all citations
             List<BibDataSet> resCitations = parsers.getCitationParser().
-				processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), config.isConsolidateCitations());
+				processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), false);
 
+			// consolidate the set
+			if (config.isConsolidateCitations()) {
+				Consolidation consolidator = new Consolidation(cntManager);
+				try {
+					Map<Integer,BiblioItem> resConsolidation = consolidator.consolidate(resCitations);
+					for(int i=0; i<resCitations.size(); i++) {
+						BiblioItem resCitation = resCitations.get(i).getResBib();
+						BiblioItem bibo = resConsolidation.get(new Integer(i));
+						if (bibo != null) {
+			                BiblioItem.correct(resCitation, bibo);
+						}
+					}
+				} catch(Exception e) {
+					throw new GrobidException(
+                    "An exception occured while running consolidation on bibliographical references.", e);
+				} finally {
+					consolidator.close();
+				}
+			}
             doc.setBibDataSets(resCitations);
 
             if (resCitations != null) {
