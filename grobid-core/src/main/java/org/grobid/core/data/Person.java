@@ -235,6 +235,12 @@ public class Person {
 		return TextUtilities.capitalizeFully(inputName, NAME_DELIMITERS);
     }*/
 
+    /**
+     * This normalisation takes care of uniform case for name components and for 
+     * transforming agglutinated initials (like "JM" in JM Smith)
+     * which are put into the firstname into separate initials in first and middle names. 
+     * 
+     */
     public void normalizeName() {
         if (StringUtils.isEmpty(middleName) && !StringUtils.isEmpty(firstName) && 
             (firstName.length() == 2) && (TextUtilities.isAllUpperCase(firstName)) ) {
@@ -247,6 +253,133 @@ public class Person {
         lastName = TextUtilities.capitalizeFully(lastName, NAME_DELIMITERS);
     }
 	
+    // assume never more than 3 initials
+    //private Pattern initials = Pattern.compile("([A-Z])(?:\\.)\\s?(?:([A-Z])(?:\\.))?\\s?(?:([A-Z])(?:\\.))?");
+
+    /**
+     * First names coming from CrossRef are clearly heavily impacted by the original puslisher 
+     * formats and a large variety of forms can be seen, with some information lost apparently.
+     */ 
+    public void normalizeCrossRefFirstName() {
+        // first name can be initial with a dot, e.g. "M." or without a dot
+        // <forename type="first">H</forename>
+
+        // fistname can be intials with appended middlename also as initials, 
+        // with or without space, e.g. "M. L." or
+        // <forename type="first">L.S.</forename>
+
+        // normal full first name can be appended with middlename initials with dots but 
+        // no space e.g. "Nicholas J.", "John W.S."
+
+        // we have sldo destructive case normalization done at CrossRef or by publishers 
+        // like "Zs. Biró" 
+
+        String first = null;
+        String middle = null;
+
+        /*Matcher m = initials.matcher(firstName);
+        while(m.find()) {
+            count++;
+            System.out.println("Match number "+count);
+            System.out.println("start(): "+m.start());
+            System.out.println("end(): "+m.end());
+            if (count != 0) {
+
+            }
+        }*/
+
+        firstName = firstName.replace(".", ". ");
+        firstName = StringUtils.normalizeSpace(firstName);
+
+        // check first the specific case "Zs. Biró" - given the we've never observed three 
+        // letters first name like "Zsv. Biró"
+        if ( firstName.endsWith(".") && (firstName.length() == 3) &&
+            Character.isUpperCase(firstName.charAt(0)) && Character.isLowerCase(firstName.charAt(1)) ) {
+            middleName = firstName.substring(1,2);
+            firstName = firstName.substring(0,1);
+        }
+        String tokens[] = firstName.split(" ");
+        for(int i=tokens.length-1; i>=0; i--) {
+            if (i != 0) {
+                if (first != null) {
+                    if (tokens[i].endsWith(".") && (tokens[i].length() == 2)) {
+                        // (case "G. Arjen")
+                        first = tokens[i].charAt(0) + " " + first;
+                    } else {
+                        // multiple token first name
+                        first = tokens[i] + " " + first;
+                    }
+                } else if ( (tokens[i].endsWith(".") && (tokens[i].length() == 2)) || 
+                    (tokens[i].length() == 1) ) {
+                    // we have an initials in secondary position, this is a middle name
+                    if (middle == null)
+                        middle = ""+tokens[i].charAt(0);
+                    else
+                       middle = tokens[i].charAt(0) + " " + middle;
+                } else {
+                    if (middle == null)
+                        middle = tokens[i];
+                    else
+                       middle = tokens[i] + " " + middle;
+                }
+            } else {                
+                // we check if we have an initial at the beginning (case "G. Arjen")
+                if (tokens[i].endsWith(".") && (tokens[i].length() == 2)) {
+                    if (first == null)
+                        first = ""+tokens[i].charAt(0);
+                    else
+                        first = tokens[i] + " " + first;
+                } else {
+                    if (first == null)
+                        first = tokens[i];
+                    else
+                        first = tokens[i] + " " + first;
+                }
+            }
+        }
+
+        if (first != null)
+            firstName = first;
+        if (middle != null)
+            middleName = middle;
+
+        // dirty case <forename type="first">HermanHG</forename><surname>Teerink</surname>
+        if ( (firstName != null) && (middleName == null) && (firstName.length()>2) && 
+             Character.isUpperCase(firstName.charAt(firstName.length()-1)) && 
+             Character.isLowerCase(firstName.charAt(1)) ) {
+            int i = firstName.length()-1;
+            while(i>1) {
+                if (Character.isUpperCase(firstName.charAt(i))) {
+                    if (middleName == null)
+                        middleName = ""+firstName.charAt(i);
+                    else
+                        middleName = firstName.charAt(i) + " " + middleName;
+                } else 
+                    break;
+                i--;
+            }
+            firstName = firstName.substring(0, i+1);
+        } 
+
+
+        // for cases like JM Smith and for case normalisation
+        normalizeName();
+
+        // cleaning for CrossRef middlenames
+        if (middleName != null) {
+            middleName = middleName.replace(".", ". ");
+            middleName = middleName.replace("  ", " ");
+        }
+        
+        // other weird stuff: <forename type="first">G. Arjen</forename><surname>de Groot</surname>
+
+        // composed forenames seem lost most of the time, e.g. we don't see 
+        // J.-M. Pierrel but J. M. Pierrel
+
+        // also note that language specific case practice are usually not rexpected
+        // e.g. H Von Allmen, J De  
+    }
+
 	/**
 	 *  Return true if the person structure is a valid person name, in our case
 	 *  with at least a lastname or a raw name.
