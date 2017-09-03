@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>A. Altland and B. D. Simons</author>, <title level="m">Condensed matter field theory</title> (<publisher>CambridgeUniversity Press</publisher> ,<date>2010</date> ).</bibl>
+	<bibl><author>P. Francesco, P. Mathieu, and D. Sénéchal</author>, <title level="m">Conformal field theory</title> (<publisher>Springer</publisher>,<date>2012</date> ).</bibl>
+	<bibl><author>E. Fradkin</author>, <title level="m">Field theories of condensed matter physics</title> (<publisher>Cam-bridgeUniversity Press</publisher> ,<date>2013</date> ).</bibl>
+	<bibl><author>J. L. Cardy</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">240</biblScope>, <biblScope unit="page">514</biblScope> (<date>1984</date>).</bibl>
+	<bibl><author>J. Cardy</author>, <idno type="arxiv">arXiv:hep-th/0411189</idno> (<date>2004</date>), <idno type="arxiv">arXiv: hep-th/0411189</idno>.</bibl>
+	<bibl><author>I. Affleck and A. W. W. Ludwig</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">67</biblScope>, <biblScope unit="page">161</biblScope> (<date>1991</date>).</bibl>
+	<bibl><author>D. Friedan and A. Konechny</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">93</biblScope>, <biblScope unit="page">030402</biblScope> (<date>2004</date>).</bibl>
+	<bibl><author>I. Affleck</author>, <idno type="arxiv">arXiv:cond-mat/9512099</idno> (<date>1995</date>), <idno type="arxiv">arXiv: cond-mat/9512099</idno>.</bibl>
+	<bibl><author>I. Affleck, N. Laflorencie, and E. S. Sφrensen</author>, <title level="j">J. Phys. A: Math. Theor.</title><biblScope unit="volume">42</biblScope> ,<biblScope unit="page">504009</biblScope> ( <date>2009</date>).</bibl>
+	<bibl><author>A. Altland, B. Béri, R. Egger, and A. Tsvelik</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">113</biblScope>,<biblScope unit="page">076401</biblScope> ( <date>2014</date>).</bibl>
+	<bibl><author>J. C. Y. Teo and C. L. Kane</author>, <title level="j">Phys. Rev. B</title> <biblScope unit="volume">79</biblScope>, <biblScope unit="page">235321</biblScope> (<date>2009</date>).</bibl>
+	<bibl><author>P. Calabrese and J. Cardy</author>, <title level="j">J. Stat. Mech.</title> <date>2004</date>, <biblScope unit="page">P06002</biblScope> (<date>2004</date>).</bibl>
+	<bibl><author>N. Laflorencie, E. S. Sφrensen, M.-S. Chang, and I. Affleck</author>, <title level="j">Phys.Rev .Lett .</title><biblScope unit="volume">96</biblScope> ,<biblScope unit="page">100603</biblScope> ( <date>2006</date>).</bibl>
+	<bibl><author>H.-Q. Zhou, T. Barthel, J. O. Fjaerestad, and U. Schollwöck</author>, <title level="j">Phys. Rev.A</title> <biblScope unit="volume">74</biblScope> ,<biblScope unit="page">050305</biblScope> ( <date>2006</date>).</bibl>
+	<bibl><author>P. Calabrese and J. Cardy</author>, <title level="j">J. Phys. A: Math. Theor.</title> <biblScope unit="volume">42</biblScope>, <biblScope unit="page">504005</biblScope> (<date>2009</date>),<idno type="arxiv">arXiv :0905 .4013</idno>.</bibl>
+	<bibl><author>E. Fradkin</author>, <title level="j">J. Phys. A: Math. Theor.</title> <biblScope unit="volume">42</biblScope>, <biblScope unit="page">504011</biblScope> (<date>2009</date>).</bibl>
+	<bibl><author>B. Hsu, M. Mulligan, E. Fradkin, and E.-A. Kim</author>, <title level="j">Phys. Rev. B</title> <biblScope unit="volume">79</biblScope>,<biblScope unit="page">115421</biblScope> ( <date>2009</date>).</bibl>
+	<bibl><author>A. Kitaev and J. Preskill</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">96</biblScope>, <biblScope unit="page">110404</biblScope> (<date>2006</date>).</bibl>
+	<bibl><author>M. Levin and X.-G. Wen</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">96</biblScope>, <biblScope unit="page">110405</biblScope> (<date>2006</date>).</bibl>
+	<bibl><author>P. Fendley, M. P. Fisher, and C. Nayak</author>, <title level="j">J. Stat. Phys.</title> <biblScope unit="volume">126</biblScope>, <biblScope unit="page">1111</biblScope> (<date>2007</date>).</bibl>
+	<bibl><author>Q.-Q. Shi, R. Orús, J. O. Fjaerestad, and H.-Q. Zhou</author>, <title level="j">New J. Phys.</title> <biblScope unit="volume">12</biblScope>,<biblScope unit="page">025008</biblScope> ( <date>2010</date>).</bibl>
+	<bibl><author>J.-M. Stéphan, G. Misguich, and F. Alet</author>, <title level="j">Phys. Rev. B</title> <biblScope unit="volume">82</biblScope>, <biblScope unit="page">180406</biblScope> (<date>2010</date>).</bibl>
+	<bibl><author>B.-Q. Hu, X.-J. Liu, J.-H. Liu, and H.-Q. Zhou</author>, <title level="j">New J. Phys.</title> <biblScope unit="volume">13</biblScope>, <biblScope unit="page">093041</biblScope>( <date>2011</date>).</bibl>
+	<bibl><author>J.-H. Liu, H.-T. Wang, Q.-Q. Shi, and H.-Q. Zhou</author>, <title level="j">Phys. Lett. A</title> <biblScope unit="volume">376</biblScope>,<biblScope unit="page">2677</biblScope> ( <date>2012</date>).</bibl>
+	<bibl><author>H.-H. Tu</author>, <idno type="arxiv">arXiv:1707.05812</idno> (<date>2017</date>).</bibl>
+	<bibl><author>L. Chen, H.-X. Wang, L. Wang, and W. Li</author>, <idno type="arxiv">arXiv:XXX</idno> (<date>2017</date>).</bibl>
+	<bibl><author>I. Affleck</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">56</biblScope>, <biblScope unit="page">746</biblScope> (<date>1986</date>).</bibl>
+	<bibl><author>H. W. J. Blöte, J. L. Cardy, and M. P. Nightingale</author>, <title level="j">Phys. Rev. Lett.</title><biblScope unit="volume">56</biblScope> ,<biblScope unit="page">742</biblScope> ( <date>1986</date>).</bibl>
+	<bibl><note>In order to obtain the universal AL entropy, here the boundary conditionsshould be chosen to be conformal boundary conditions .</note></bibl>
+	<bibl><author>R. Blumenhagen and E. Plauschinn</author>, <title level="m">Introduction to Conformal FieldTheory - WithApplications to String Theory</title> ( <publisher>Springer</publisher>,<date>2009</date> ).</bibl>
+	<bibl><note>A caveat of the calculation is that the lattice reflection operatorˆPoperatorˆ operatorˆP maynot play exactly the same role as the CFT 25 , thus the com -putedratiomay deviate from the CFT prediction</note> .</bibl>
+	<bibl><author>J. Sólyom and P. Pfeuty</author>, <title level="j">Phys. Rev. B</title> <biblScope unit="volume">24</biblScope>, <biblScope unit="page">218</biblScope> (<date>1981</date>).</bibl>
+	<bibl><author>C. Ding, Y. Wang, Y. Deng, and H. Shao</author>, <idno type="arxiv">arXiv:1702.02675</idno> (<date>2017</date>),<idno type="arxiv">arXiv :1702 .02675</idno>.</bibl>
+	<bibl><author>C. H. Bennett</author>, <title level="j">J. Comput. Phys.</title> <biblScope unit="volume">22</biblScope>, <biblScope unit="page">245</biblScope> (<date>1976</date>).</bibl>
+	<bibl><author>J. L. Cardy</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">324</biblScope>, <biblScope unit="page">581</biblScope> (<date>1989</date>).</bibl>
+	<bibl><author>H. Saleur and M. Bauer</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">320</biblScope>, <biblScope unit="page">591</biblScope> (<date>1989</date>).</bibl>
+	<bibl><author>I. Affleck, M. Oshikawa, and H. Saleur</author>, <title level="j">J. Phys. A: Math. Gen.</title> <biblScope unit="volume">31</biblScope>,<biblScope unit="page">5827</biblScope> ( <date>1998</date>).</bibl>
+	<bibl><author>J. Fuchs and C. Schweigert</author>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">441</biblScope>, <biblScope unit="page">141</biblScope> (<date>1998</date>).</bibl>
+	<bibl><author>M. T. Batchelor and C. J. Hamer</author>, <title level="j">J. Phys. A: Math. Gen.</title> <biblScope unit="volume">23</biblScope>, <biblScope unit="page">761</biblScope> (<date>1990</date>).</bibl>
+	<bibl><author>F. C. Alcaraz, M. N. Barber, and M. T. Batchelor</author>, <title level="j">Ann. Phys.</title> <biblScope unit="volume">182</biblScope>, <biblScope unit="page">280</biblScope>( <date>1988</date>).</bibl>
+	<bibl><author>W. Li, S. Yang, H.-H. Tu, and M. Cheng</author>, <title level="j">Phys. Rev. B</title> <biblScope unit="volume">91</biblScope>, <biblScope unit="page">115133</biblScope> (<date>2015</date>).</bibl>
+	<bibl><author>V. Fateev and A. Zamolodchikov</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">280</biblScope>, <biblScope unit="page">644</biblScope> (<date>1987</date>).</bibl>
+	<bibl><author>P. Ginsparg</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">295</biblScope>, <biblScope unit="page">153</biblScope> (<date>1988</date>).</bibl>
+	<bibl><author>R. Dijkgraaf, C. Vafa, E. Verlinde, and H. Verlinde</author>, <title level="j">Commun. Math.Phys .</title><biblScope unit="volume">123</biblScope> ,<biblScope unit="page">485</biblScope> ( <date>1989</date>).</bibl>
+	<bibl><author>M. Barkeshli, P. Bonderson, M. Cheng, andZ .Wang</author> ,<idno type="arxiv">arXiv :1410.4540</idno>(<date>2014</date> ).</bibl>
+	<bibl><author>W. Li et al.</author>, (<date>2017</date>), <note>in preparation</note>.</bibl>
+	<bibl><author>M. Suzuki</author>, <title level="j">Prog. Theor. Phys.</title> <biblScope unit="volume">56</biblScope>, <biblScope unit="page">1454</biblScope> (<date>1976</date>).</bibl>
+	<bibl><author>R. H. Swendsen and J.-S. Wang</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">58</biblScope>, <biblScope unit="page">86</biblScope> (<date>1987</date>).</bibl>
+	<bibl><author>H. Rieger and N. Kawashima</author>, <title level="j">Euro. Phys. J. B</title> <biblScope unit="volume">9</biblScope>, <biblScope unit="page">233</biblScope> (<date>1999</date>).</bibl>
+	<bibl><author>F. Y. Wu</author>, <title level="j">Rev. Mod. Phys.</title> <biblScope unit="volume">54</biblScope>, <biblScope unit="page">235</biblScope> (<date>1982</date>).</bibl>
+	<bibl><author>J. Gubernatis, N. Kawashima, and P. Werner</author>, <title level="m">Quantum Monte CarloMethods :Algorithms for Lattice Models</title> ,<note>1st ed .</note>( <publisher>Cam-bridgeUniversityPress</publisher> , <pubPlace>Cambridge</pubPlace>, <date>2016</date>) .</bibl>
+	<bibl><note>In the literature, the symmetric boundary condition is often re-ferredto as the &quot; new&quot;boundary condition .We call it &quot; symmetric&quot;since thisboundary condition favours the Z 3 symmetric state</note> .</bibl>
+	<bibl><note>For the mixed boundary condition, the additional coefficient e −2βh b cannotmake the transition bound to be accepted when the bound -aryspinssatisfy the corresponding mixed boundary condition . Butit still helpsimprove the efficiency of the simulation</note> .</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Braun, R.</author> <date>1997</date>, <title level="j">ApJ</title>, <biblScope unit="volume">484</biblScope>, <biblScope unit="page">637</biblScope></bibl>
+	<bibl><author>Briggs, D. S.</author> <date>1995</date>, <title level="m">AAS Meeting 187 Abstracts</title>, <idno>#112.02</idno></bibl>
+	<bibl><author>Cannon, J. M., Giovanelli, R., Haynes, M. P., et al.</author> <date>2011</date>, <title level="j">ApJL</title>, <biblScope unit="volume">739</biblScope>, <biblScope unit="page">L22</biblScope></bibl>
+	<bibl><author>Cornwell,T .J .</author><date>2008</date> ,<title level="j">ISTSP</title> ,<biblScope unit="volume">2</biblScope> ,<biblScope unit="page">793</biblScope></bibl>
+	<bibl><author>Högbom, J. A.</author> <date>1974</date>, <title level="j">A&amp;AS</title>, <biblScope unit="volume">15</biblScope>, <biblScope unit="page">417</biblScope></bibl>
+	<bibl><author>Hunter, D. A., Ficut-Vicas, D., Ashley, T., et al.</author> <date>2012</date>, <title level="j">AJ</title>, <biblScope unit="volume">144</biblScope>, <biblScope unit="page">134</biblScope></bibl>
+	<bibl><author>Ianjamasimanana, R., de Blok, W. J. G., Walter, F., et al.</author> <date>2012</date>, <title level="j">AJ</title>, <biblScope unit="volume">144</biblScope>, <biblScope unit="page">96</biblScope></bibl>
+	<bibl><author>Jorsater, S., &amp; van Moorsel, G. A.</author> <date>1995</date>, <title level="j">AJ</title>, <biblScope unit="volume">110</biblScope>, <biblScope unit="page">2037</biblScope></bibl>
+	<bibl><author>O&apos;Brien, J. C., Freeman, K. C., &amp; van der Kruit, P. C.</author> <date>2010</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">515</biblScope>, <biblScope unit="page">62</biblScope></bibl>
+	<bibl><author>Ott, J., Stilp, A. M., Warren, S. R., et al.</author> <date>2012</date>, <title level="j">AJ</title>, <biblScope unit="volume">144</biblScope>, <biblScope unit="page">123</biblScope></bibl>
+	<bibl><author>Petric, A. O., &amp; Rupen, M. P.</author> <date>2007</date>, <title level="j">AJ</title>, <biblScope unit="volume">134</biblScope>, <biblScope unit="page">1952</biblScope></bibl>
+	<bibl><author>Rich, J. W., de Blok, W. J. G., Cornwell, T. J., et al.</author> <date>2008</date>, <title level="j">AJ</title>, <biblScope unit="volume">136</biblScope>, <biblScope unit="page">2897</biblScope></bibl>
+	<bibl><author>Schaye, J.</author> <date>2004</date>, <title level="j">ApJ</title>, <biblScope unit="volume">609</biblScope>, <biblScope unit="page">667</biblScope></bibl>
+	<bibl><author>Stilp, A. M., Dalcanton, J. J., Warren, S. R., et al.</author> <date>2013</date>, <title level="j">ApJ</title>, <biblScope unit="volume">765</biblScope>, <biblScope unit="page">136</biblScope></bibl>
+	<bibl><author>Tamburro, D., Rix, H.-W., Leroy, A. K., et al.</author> <date>2009</date>, <title level="j">AJ</title>, <biblScope unit="volume">137</biblScope>, <biblScope unit="page">4424</biblScope></bibl>
+	<bibl><author>Walter, F., Brinks, E., de Blok, W. J. G., et al.</author> <date>2008</date>, <title level="j">AJ</title>, <biblScope unit="volume">136</biblScope>, <biblScope unit="page">2563</biblScope></bibl>
+	<bibl><author>Yatawatta, S.</author> <date>2014</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">444</biblScope>, <biblScope unit="page">790</biblScope></bibl>
+	<bibl><author>Young, L. M., van Zee, L., Lo, K. Y., et al.</author> <date>2003</date>, <title level="j">ApJ</title>, <biblScope unit="volume">592</biblScope>, <biblScope unit="page">111</biblScope></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

@@ -1,0 +1,32 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1.</label> Lee, T.D., Yang, C.N.: Phys. Rev. 104, 254 (1956)<lb/> </bibl>
+        <bibl><label>2.</label> Wu, C.S., et al.: Phys. Rev. 105, 1413 (1957)<lb/> </bibl>
+        <bibl><label>3.</label> Zeldovich, Y.B.: Zh. Eksp. Teor. Fiz. 9, 682 (1959)<lb/> </bibl>
+        <bibl><label>4.</label> Glashow, S.L.: Nucl. Phys. 22, 579 (1961)<lb/> </bibl>
+        <bibl><label>5.</label> Weinberg, S.: Rev. Lett. 19, 1264 (1967)<lb/> </bibl>
+        <bibl><label>6.</label> Salam, A.: In: Svartholm, N. (ed.) Elementary Particle Theory, vol. 367. Almquist and Wiksells,<lb/> Stockholm (1969)<lb/> </bibl>
+        <bibl><label>7.</label> Bouchiat, M.A., Bouchiat, C.C.: Phys. Lett. B 48, 111 (1974)<lb/> </bibl>
+        <bibl><label>8.</label> Prescott, C.Y., et al.: SLAC-e122 Collaboration. Phys. Lett. B 77, 347 (1978)<lb/> </bibl>
+        <bibl><label>9.</label> Prescott, C.Y., et al.: SLAC-e122 Collaboration. Phys. Lett. B 84, 524 (1979)<lb/> </bibl>
+        <bibl><label>10.</label> Abrahamyan, S., et al.: PREX Collaboration. Phys. Rev. Lett. 108, 112502 (2012)<lb/> 11. Benesch, J., et al.: (MOLLER Collaboration), arXiv:1411.4088 [nucl-ex]<lb/> </bibl>
+        <bibl><label>12.</label> Takahashi, Y., Umezawa, H.: Coll. Phenomena 2, 55 (1975)<lb/> </bibl>
+        <bibl><label>13.</label> Takahashi, Y., Umezawa, H.: Int. J. Mod. Phys. B 10, 1755 (1996)<lb/> </bibl>
+        <bibl><label>14.</label> Takahashi, Y., Umezawa, H., Matsumoto, H.: Thermofield Dynamics and Condensed States. North-<lb/>Holland (1982)<lb/> </bibl>
+        <bibl><label>15.</label> Khanna, F.C., Malbouisson, A.P.C., Malboiusson, J.M.C., Santana, A.E.: Themal Quantum Field<lb/> Theory: Algebraic Aspects and Applications. World Scientific, Singapore (2009)<lb/> </bibl>
+        <bibl><label>16.</label> Umezawa, H.: Advanced Field Theory: Micro, Macro and Thermal Physics. AIP, New York (1993)<lb/> </bibl>
+        <bibl><label>17.</label> Santana, A.E., Khanna, F.C.: Phys. Lett. A 203, 68 (1995)<lb/> </bibl>
+        <bibl><label>18.</label> Santana, A.E., Khanna, F.C., Chu, H., Chang, C.: Ann. Phys. 249, 481 (1996)<lb/> </bibl>
+        <bibl><label>19.</label> Das, A.: Finite Temperature Field Theory. W. Scientific, Singapour (1977)<lb/> </bibl>
+        <bibl><label>20.</label> Rakhimov, A., Khanna, F.C.: Phys. Rev. C 64, 064907 (2001)<lb/> </bibl>
+        <bibl><label>21.</label> Wu, T.Y., Pauchy Hwang, W.Y.: Relativistic Quantum Mechanics and Quantum Fields. World Scientific<lb/> Publishing (1991)</bibl>
+        </listBibl>
+    </text>
+</tei>
+

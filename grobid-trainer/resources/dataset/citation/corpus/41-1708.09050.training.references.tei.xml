@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><orgName type="collaboration">ATLAS Collaboration</orgName>, <title level="j">JINST</title> <biblScope unit="volume">3</biblScope>, <biblScope unit="page">S08003</biblScope> (<date>2008</date>).</bibl>
+	<bibl><orgName type="collaboration">CMS Collaboration</orgName>, <title level="j">JINST</title> <biblScope unit="volume">3</biblScope>, <biblScope unit="page">S08004</biblScope> (<date>2008</date>).</bibl>
+	<bibl><orgName type="collaboration">ATLAS Collaboration</orgName>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">114</biblScope>, <biblScope unit="page">142001</biblScope> (<date>2015</date>).</bibl>
+	<bibl><orgName type="collaboration">CMS Collaboration</orgName>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">93</biblScope>, <biblScope unit="page">052007</biblScope> (<date>2016</date>).</bibl>
+	<bibl><orgName type="collaboration">ATLAS Collaboration</orgName>, <title level="j">JHEP</title> <biblScope unit="volume">1703</biblScope>, <biblScope unit="page">113</biblScope> (<date>2017</date>).</bibl>
+	<bibl><orgName type="collaboration">D0 Collaboration</orgName>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">80</biblScope>, <biblScope unit="page">2063</biblScope> (<date>1998</date>).</bibl>
+	<bibl><orgName type="collaboration">ATLAS Collaboration</orgName>, <title level="j">Eur. Phys. J. C</title> <biblScope unit="volume">77</biblScope>, <biblScope unit="page">264</biblScope> (<date>2017</date>).</bibl>
+	<bibl><orgName type="collaboration">CMS Collaboration</orgName>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">762</biblScope>, <biblScope unit="page">512</biblScope> (<date>2016</date>).</bibl>
+	<bibl><orgName type="collaboration">CMS Collaboration</orgName>, <title level="j">JHEP</title> <biblScope unit="volume">1703</biblScope>, <biblScope unit="page">101</biblScope> (<date>2017</date>).</bibl>
+	<bibl><orgName type="collaboration">ATLAS Collaboration</orgName>, <title level="j">JHEP</title> <biblScope unit="volume">1702</biblScope>, <biblScope unit="page">071</biblScope> (<date>2017</date>).</bibl>
+	<bibl><orgName type="collaboration">ATLAS Collaboration</orgName>, <idno type="arxiv">arXiv:1702.07546</idno> [<note>hep-ex</note>].</bibl>
+	<bibl><orgName type="collaboration">CMS Collaboration</orgName>, <title level="j">Eur. Phys. J. C</title> <biblScope unit="volume">77</biblScope>, no. <biblScope unit="issue">7</biblScope>, <biblScope unit="page">467</biblScope> (<date>2017</date>).</bibl>
+	<bibl><orgName type="collaboration">CMS Collaboration</orgName>, <idno type="arxiv">arXiv:1704.06142</idno> [<note>hep-ex</note>].</bibl>
+	<bibl><author>A. J. Barr and C. G. Lester</author>, <title level="j">J. Phys. G</title> <biblScope unit="volume">37</biblScope>, <biblScope unit="page">123001</biblScope> (<date>2010</date>).</bibl>
+	<bibl><author>W. S. Cho, K. Choi, Y. G. Kim and C. B. Park</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">79</biblScope>, <biblScope unit="page">031701</biblScope> (<date>2009</date>).</bibl>
+	<bibl><orgName type="collaboration">CMS Collaboration</orgName>, <title level="j">Eur. Phys. J. C</title> <biblScope unit="volume">77</biblScope>, <biblScope unit="page">354</biblScope> (<date>2017</date>)</bibl>
+	<bibl><orgName type="collaboration">CMS Collaboration</orgName>, <idno type="report">CMS-PAS-TOP-16-022</idno>.</bibl>
+	<bibl><orgName type="collaboration">CMS Collaboration</orgName>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">93</biblScope>, <biblScope unit="page">072004</biblScope> (<date>2016</date>).</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>
