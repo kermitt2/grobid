@@ -393,16 +393,16 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
      * @return Returns a boolean indicating whether at least one bibliographical object has been retrieved.
      */
     public boolean consolidateCrossrefGetByAuthorTitle(String aut, String title,
-                                                       BiblioItem biblio, List<BiblioItem> bib2) throws Exception {
+                                                       final BiblioItem biblio, final List<BiblioItem> bib2) throws Exception {
         boolean result = false;
 
         if (bib2 == null)
             return false;
+        int originalSize = bib2.size();
 
         // conservative check
         if (StringUtils.isNotBlank(title) && StringUtils.isNotBlank(aut)) {
             
-            CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
             Map<String, String> arguments = new HashMap<String,String>();
             arguments.put("query.title", title);
             arguments.put("query.author", aut);
@@ -413,15 +413,13 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                 
                 @Override
                 public void onSuccess(List<BiblioItem> res) {
-                    System.out.println("Success request "+id);
                     System.out.println("size of results: " + res.size());
                     if ((res != null) && (res.size() > 0) ) {
                         // we need here to post-check that the found item corresponds
                         // correctly to the one requested in order to avoid false positive
                         for(BiblioItem oneRes : res) {
-                            if (postValidation(theBiblio, oneRes)) {
+                            if (postValidation(biblio, oneRes)) {
                                 bib2.add(oneRes);
-                                result = true;
                             }
                         }
                     } 
@@ -521,7 +519,10 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                 }
             }*/
         }
-        return result;
+        if (bib2.size() > originalSize)
+            return true;
+        else
+            return false;
     }
 
     public boolean consolidateCrossrefGetByAuthorTitleLibrary(String aut, String title,
