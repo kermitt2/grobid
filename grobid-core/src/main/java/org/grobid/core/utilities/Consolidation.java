@@ -128,6 +128,9 @@ public class Consolidation {
         if (title != null) {
             title = TextUtilities.removeAccents(title);
         }
+        if (journalTitle != null) {
+            journalTitle = TextUtilities.removeAccents(journalTitle);
+        }
         if (cntManager != null)
             cntManager.i(ConsolidationCounters.CONSOLIDATION);
 
@@ -201,6 +204,16 @@ public class Consolidation {
             String title = theBiblio.getTitle();
             String journalTitle = theBiblio.getJournal();
            
+            if (aut != null) {
+                aut = TextUtilities.removeAccents(aut);
+            }
+            if (title != null) {
+                title = TextUtilities.removeAccents(title);
+            }
+            if (journalTitle != null) {
+                journalTitle = TextUtilities.removeAccents(journalTitle);
+            }
+
             Map<String, String> arguments = null;
 
             // request id
@@ -381,7 +394,6 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
      */
     public boolean consolidateCrossrefGetByAuthorTitle(String aut, String title,
                                                        BiblioItem biblio, List<BiblioItem> bib2) throws Exception {
-
         boolean result = false;
 
         if (bib2 == null)
@@ -395,7 +407,33 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
             arguments.put("query.title", title);
             arguments.put("query.author", aut);
             arguments.put("rows", "5"); // we just request the top-one result
-            client.<BiblioItem>pushRequest("works", null, arguments, workDeserializer, requestListener);
+            
+            CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
+            client.<BiblioItem>pushRequest("works", null, arguments, workDeserializer, new CrossrefRequestListener<BiblioItem>() {
+                
+                @Override
+                public void onSuccess(List<BiblioItem> res) {
+                    System.out.println("Success request "+id);
+                    System.out.println("size of results: " + res.size());
+                    if ((res != null) && (res.size() > 0) ) {
+                        // we need here to post-check that the found item corresponds
+                        // correctly to the one requested in order to avoid false positive
+                        for(BiblioItem oneRes : res) {
+                            if (postValidation(theBiblio, oneRes)) {
+                                bib2.add(oneRes);
+                                result = true;
+                            }
+                        }
+                    } 
+                }
+
+                @Override
+                public void onError(int status, String message, Exception exception) {
+                    LOGGER.info("ERROR ("+status+") : "+message);
+                }
+            });
+
+            /*client.<BiblioItem>pushRequest("works", null, arguments, workDeserializer, requestListener);
             if (cntManager != null)
                 cntManager.i(ConsolidationCounters.CONSOLIDATION_PER_DOI);
 
@@ -424,7 +462,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                         bib2.add(bib);
                     result = true;
                 }
-            }
+            }*/
 
             for(BiblioItem bib : bib2) {
                 //System.out.println(bib.toTEI(0));

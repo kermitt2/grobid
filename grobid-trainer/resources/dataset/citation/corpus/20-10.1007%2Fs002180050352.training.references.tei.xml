@@ -22,7 +22,7 @@
 	<bibl><author>V.G.J. Stoks, R.A.M. Klomp, C.P.F. Terheggen, and J.J. de Swart</author>, <title level="j">Phys. Rev.C</title> <biblScope unit="volume">49</biblScope> ,<biblScope unit="page">2950</biblScope> ( <date>1994</date>)</bibl>
 	<bibl><author>M. Lacombe, B. Loiseau, R. Vinh Mau, J. Côté, P. Pirès, and R. de Tourreil</author>,<title level="j">Phys .Lett .</title><biblScope unit="volume">101B</biblScope> ,<biblScope unit="page">139</biblScope> ( <date>1981</date>)</bibl>
 	<bibl><author>R. Machleidt, K. Holinde and Ch. Elster</author>, <title level="j">Phys. Rep.</title> <biblScope unit="volume">149</biblScope>, <biblScope unit="page">1</biblScope> (<date>1987</date>)</bibl>
-	<bibl><author>See e.g. C.J.</author> <title level="a">Joachin : Quantum collision theory</title>, Chapters 3 and <biblScope unit="volume">4</biblScope>, <publisher>El-sevierScience Publishers B .V.</publisher>,<date>1975</date></bibl>
+	<bibl>See e.g. <author>C.J. Joachin</author> : <title level="a">Quantum collision theory</title>, Chapters <biblScope unit="volume">3 and 4</biblScope>, <publisher>El-sevierScience Publishers B .V.</publisher>,<date>1975</date></bibl>
 	<bibl><author>W.N. Cottingham, M. Lacombe, B. Loiseau, J.M. Richard, and R. Vinh Mau</author>,<title level="j">Phys .Rev .</title><biblScope unit="volume">D8</biblScope> ,<biblScope unit="page">800</biblScope> ( <date>1973</date>)</bibl>
 	<bibl><author>B. Loiseau, L. Mathelitsch, and W. Plessas</author>, <title level="j">Nuovo Cim.97A</title>, <biblScope unit="page">77</biblScope> (<date>1987</date>);</bibl>
 	<bibl><author>B. Loiseau, L. Mathelitsch, W. Plessas, and K. Schwarz</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">32</biblScope>,<biblScope unit="page">2165</biblScope> ( <date>1985</date>)</bibl>
@@ -31,7 +31,7 @@
 	<bibl><author>J.M. Blatt and L.C. Biedenharn</author>, <title level="j">Phys. Rev.</title> <biblScope unit="volume">86</biblScope>, <biblScope unit="page">399</biblScope> (<date>1952</date>);</bibl>
 	<bibl><title level="j">Rev . Mod. Phys.</title><biblScope unit="volume">24</biblScope> ,<biblScope unit="page">258</biblScope> ( <date>1952</date>)</bibl>
 	<bibl><author>L. Mathelitsch and B.J. VerWest</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">29</biblScope>, <biblScope unit="page">739</biblScope> (<date>1984</date>)</bibl>
-	<bibl><author>H.P. Stapp, T.J. Ypsilantis and N. Metropolis</author>, <title level="j">Phys. Rev.</title> <biblScope unit="volume">105</biblScope>, <biblScope unit="volume">302</biblScope> (<date>1957</date>) </bibl> 
+	<bibl><author>H.P. Stapp, T.J. Ypsilantis and N. Metropolis</author>, <title level="j">Phys. Rev.</title> <biblScope unit="volume">105</biblScope>, <biblScope unit="page">302</biblScope> (<date>1957</date>) </bibl> 
 
 		</listBibl>
 	</back>

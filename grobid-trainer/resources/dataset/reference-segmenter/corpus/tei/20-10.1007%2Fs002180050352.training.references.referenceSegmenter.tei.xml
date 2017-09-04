@@ -28,8 +28,10 @@
         <bibl><label>16.</label> J.M. Blatt and L.C. Biedenharn, Phys. Rev. 86, 399 (1952); </bibl>
         <bibl>Rev . Mod.<lb/> Phys. 24, 258 (1952)<lb/> </bibl>
         <bibl><label>17.</label> L. Mathelitsch and B.J. VerWest, Phys. Rev. C 29, 739 (1984)<lb/> </bibl>
-        <bibl><label>18.</label> H.P. Stapp, T.J. Ypsilantis and N. Metropolis, Phys. Rev. 105, 302 (1957)<lb/> </bibl>This article was processed by the author using the L a T E X style file pljour2<lb/> from Springer-Verlag.
-        </listBibl>
+        <bibl><label>18.</label> H.P. Stapp, T.J. Ypsilantis and N. Metropolis, Phys. Rev. 105, 302 (1957)<lb/> </bibl>
+
+        This article was processed by the author using the L a T E X style file pljour2<lb/> from Springer-Verlag.
+       </listBibl>
     </text>
 </tei>
 
