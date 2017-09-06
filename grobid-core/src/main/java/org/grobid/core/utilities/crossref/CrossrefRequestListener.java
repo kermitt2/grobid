@@ -44,7 +44,7 @@ public class CrossrefRequestListener<T extends Object> {
 			return interval/limitIterations;
 		}
 		
-		public String toSring() {
+		public String toString() {
 			return "Response (status:"+status+" timeLimit:"+interval+"/"+limitIterations+", results:"+results.size();
 		}
 		

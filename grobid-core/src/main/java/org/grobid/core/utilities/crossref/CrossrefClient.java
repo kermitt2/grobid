@@ -37,7 +37,7 @@ public class CrossrefClient {
 	public RequestMode requestMode;
 	public int itFromLastInterval;
 	public long firstItTime;
-	
+		
 	public CrossrefClient(RequestMode requestMode) {
 		//this.executorService = Executors.newSingleThreadExecutor();
 		//if (requestMode == RequestMode.MUCHTHENSTOP)*/
@@ -45,11 +45,12 @@ public class CrossrefClient {
 		this.lastResponse = null;
 		this.requestMode = requestMode;
 		this.itFromLastInterval = 0;
-		this.firstItTime = 0;
+		this.firstItTime = System.currentTimeMillis();
 	}
 	
 	public CrossrefClient() {
 		this(RequestMode.MUCHTHENSTOP);
+		//this(RequestMode.REGULARLY);
 	}
 	
 	/**
@@ -98,7 +99,7 @@ public class CrossrefClient {
 	public void finish() {
 		try {
 			executorService.shutdown();
-			executorService.awaitTermination(5, TimeUnit.SECONDS);
+			executorService.awaitTermination(10, TimeUnit.SECONDS);
 		} catch (InterruptedException ie) {
 		 	//pool.shutdownNow(); // will be explicitely called by close()
 		 	// Preserve interrupt status
