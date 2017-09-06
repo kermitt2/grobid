@@ -1764,8 +1764,8 @@ public class BiblioItem {
             }
         } 
         if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(arXivId)) {
-            Matcher doiMatcher = TextUtilities.arXivPattern.matcher(pubnum);
-            if (doiMatcher.find()) { 
+            Matcher arxivMatcher = TextUtilities.arXivPattern.matcher(pubnum);
+            if (arxivMatcher.find()) { 
                 setArXivId(pubnum);
                 setPubnum(null);
             }

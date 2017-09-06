@@ -620,9 +620,9 @@ public class EngineTest {
     }
 
 
-    @Test
+    /*@Test
     public void testFromText() {
-//        String text = "David Green et al 2015 Nanoscale DOI:10.1039/C6NR05046H recenty demonstrated that gecko microspinules (hairs) and " +
+//      String text = "David Green et al 2015 Nanoscale DOI:10.1039/C6NR05046H recenty demonstrated that gecko microspinules (hairs) and " +
 //                "their equivalent replicas, bearing nanoscale tips, can kill or impair surface associating oral pathogenic " +
 //                "bacteria with high efficiency even after 7 days of repeated attacks. " +
 //                "Scanning Electron Microscopy suggests that there is more than one mechanism contributing to " +
@@ -630,22 +630,15 @@ public class EngineTest {
 //                "and accessibility to the underlying nano-topography of the hierarchical surfaces.";
 //
         final Engine engine = GrobidFactory.getInstance().getEngine();
-//        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
+//      GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
 //
-////        Document doc = Document.createFromText(text);
+////    Document doc = Document.createFromText(text);
 //
-//        List<LabeledReferenceResult> segRes = engine.getParsers().getReferenceSegmenterParser().extract(text);
-
+//      List<LabeledReferenceResult> segRes = engine.getParsers().getReferenceSegmenterParser().extract(text);
 
         String text = "Physics and test";
-
-
-      engine.getParsers().getCitationParser().processingReferenceSection(text, engine.getParsers().getReferenceSegmenterParser());
-
-
-
-
-    }
+        engine.getParsers().getCitationParser().processingReferenceSection(text, engine.getParsers().getReferenceSegmenterParser());
+    }*/
 
     private void testWap(final String forTest, File modelFile) throws InterruptedException {
         final WapitiModel wm = new WapitiModel(modelFile);
@@ -1023,7 +1016,7 @@ public class EngineTest {
         System.out.println("DONE!");
     }
 
-    @Test
+    /*@Test
     public void testReferenceString() {
 //        String ref = "Agharahimi, M.R., LeBel, N.A., 1995. Synthesis of (–)-monoterpenylmagnolol and \n" +
 //                "magnolol. J. Org. Chem. 60, 1856–1863. ";
@@ -1116,12 +1109,10 @@ public class EngineTest {
 //        text = "Meyer, F. et al. The metagenomics RAST server -a public resource for the automatic phylogenetic and functional analysis of   metagenomes. BMC bioinformatics 9, 386, doi: 10.1186/1471-2105-9-386 (2008).";
         text = "Lowe, R. K. (2004). Interrogation of a dynamic visualization during learning.   Learning   and   Instruction, 14,   257e274.   http://dx.doi.org/10.1016/j.learninstruc.2004.06.003.";
 
-            Document res = engine.getParsers().getSegmentationParser().processing(text);
-//        SortedSet<DocumentPiece> part = res.getDocumentPart(SegmentationLabel.REFERENCES);
+        Document res = engine.getParsers().getSegmentationParser().processing(text);
+//      SortedSet<DocumentPiece> part = res.getDocumentPart(SegmentationLabel.REFERENCES);
 
         BiblioItem item = engine.getParsers().getCitationParser().processing(text, false);
-
-
         List<BibDataSet> citResults = engine.getParsers().getCitationParser().processingReferenceSection(text, engine.getParsers().getReferenceSegmenterParser());
         for (BibDataSet bds: citResults) {
             BiblioItem bib = bds.getResBib();
@@ -1132,11 +1123,8 @@ public class EngineTest {
             }
         }
 
-
         int i = 0;
-
-
-    }
+    }*/
 
     @Test
     public void testMultiThreading() throws Exception {

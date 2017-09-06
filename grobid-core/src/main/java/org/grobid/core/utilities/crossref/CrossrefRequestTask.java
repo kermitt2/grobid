@@ -20,6 +20,7 @@ public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListen
 
 	public static void printLog(CrossrefRequest<?> request, String message) {
 		logger.info((request != null ? request+": " : "")+message);
+		System.out.println((request != null ? request+": " : "")+message);
 	}
 	
 	
@@ -46,7 +47,7 @@ public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListen
 					int sleepTime = (int)(client.lastResponse.getOneStepTime()-stepElapsedTime);
 					printLog(request, ".. but sleep for "+sleepTime+"ms");
 					Thread.sleep(sleepTime);
-				}
+				} 
 				
 				printLog(request, ".. executing at "+(client.lastResponse != null ? (int)(System.currentTimeMillis() - client.lastResponse.time) : 0)+"ms from last reponse");
 			}
@@ -62,7 +63,7 @@ public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListen
 				
 				printLog(request, ".. executing at "+(System.currentTimeMillis() - client.firstItTime)+"ms from last interval ("+client.itFromLastInterval+"it)");
 			}
-			
+						
 			request.addListener(this);
 			request.execute();
 			

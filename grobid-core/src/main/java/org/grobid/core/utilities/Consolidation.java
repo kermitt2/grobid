@@ -139,16 +139,17 @@ public class Consolidation {
                 // retrieval per DOI
                 //System.out.println("test retrieval per DOI");
                 valid = consolidateCrossrefGetByDOI(bib, additionalBiblioInformation);
-            } /*else if (StringUtils.isNotBlank(title)
+            }  
+            if (!valid && StringUtils.isNotBlank(title)
                     && StringUtils.isNotBlank(aut)) {
                 // retrieval per first author and article title
                 //additionalBiblioInformation.clear();
                 //System.out.println("test retrieval per title, author");
                 valid = consolidateCrossrefGetByAuthorTitle(aut, title, bib, additionalBiblioInformation);
-                if (!valid) {
+                /*if (!valid) {
                     valid = consolidateCrossrefGetByAuthorTitleLibrary(aut, title, bib, additionalBiblioInformation);
-                }
-            } */
+                }*/
+            }
 
 
 
@@ -232,7 +233,7 @@ public class Consolidation {
                 if (StringUtils.isNotBlank(journalTitle))
                      arguments.put("query.container-title", journalTitle);
 
-                arguments.put("rows", "5"); // we just request the top-one result
+                arguments.put("rows", "1"); // we just request the top-one result
             } 
 
             if ((doi == null) && (arguments == null)) {
@@ -247,13 +248,12 @@ public class Consolidation {
                     @Override
                     public void onSuccess(List<BiblioItem> res) {
                         System.out.println("Success request "+id);
-                        System.out.println("size of results: " + res.size());
+                        //System.out.println("size of results: " + res.size());
                         if ((res != null) && (res.size() > 0) ) {
                             // we need here to post-check that the found item corresponds
                             // correctly to the one requested in order to avoid false positive
                             for(BiblioItem oneRes : res) {
-                                if (postValidation(theBiblio, oneRes)) 
-                                {
+                                if (postValidation(theBiblio, oneRes)) {
                                     results.put(new Integer(id), oneRes);
                                     break;
                                 }
@@ -264,6 +264,7 @@ public class Consolidation {
                     @Override
                     public void onError(int status, String message, Exception exception) {
                         LOGGER.info("ERROR ("+status+") : "+message);
+                        System.out.println("ERROR ("+status+") : "+message);
                     }
                 });
 
@@ -303,14 +304,14 @@ public class Consolidation {
                 }*/
             } catch(Exception e) {
                 LOGGER.error("Consolidation error - " + ExceptionUtils.getStackTrace(e));
-                results.put(new Integer(id), null);
+                //results.put(new Integer(id), null);
             } 
             n++;
         }
 //System.out.println("before finish, result size is " + results.size());
         client.finish();
 //System.out.println("after finish, result size is " + results.size());
-int consolidated = 0;
+/*int consolidated = 0;
 for (Entry<Integer, BiblioItem> cursor : results.entrySet()) {
 System.out.println("item: " + cursor.getKey());
 if (cursor.getValue() != null) {
@@ -319,7 +320,7 @@ consolidated++;
 } 
 
 }
-System.out.println("total (CrossRef JSON search API): " + consolidated + " / " + results.size());
+System.out.println("total (CrossRef JSON search API): " + consolidated + " / " + results.size());*/
 
 // fallback with CrossRef metadata look-up web service
 
@@ -422,7 +423,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                                 bib2.add(oneRes);
                             }
                         }
-                    } 
+                    }
                 }
 
                 @Override
@@ -711,15 +712,15 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
 
         // check main metadata available in source with fuzzy matching
         if (!StringUtils.isBlank(source.getTitle()) && !StringUtils.isBlank(source.getTitle())) {
-System.out.println(source.getTitle() + " / " + result.getTitle() + " = " + ratcliffObershelpDistance(source.getTitle(), result.getTitle(), false));      
+//System.out.println(source.getTitle() + " / " + result.getTitle() + " = " + ratcliffObershelpDistance(source.getTitle(), result.getTitle(), false));      
             if (ratcliffObershelpDistance(source.getTitle(), result.getTitle(), false) < 0.8)
                 return false;
         }
 
         if (!StringUtils.isBlank(source.getFirstAuthorSurname()) && 
             !StringUtils.isBlank(result.getFirstAuthorSurname())) {
-System.out.println(source.getFirstAuthorSurname() + " / " + result.getFirstAuthorSurname() + " = " + 
-    ratcliffObershelpDistance(source.getFirstAuthorSurname(), result.getFirstAuthorSurname(), false)); 
+//System.out.println(source.getFirstAuthorSurname() + " / " + result.getFirstAuthorSurname() + " = " + 
+//    ratcliffObershelpDistance(source.getFirstAuthorSurname(), result.getFirstAuthorSurname(), false)); 
             if (ratcliffObershelpDistance(source.getFirstAuthorSurname(),result.getFirstAuthorSurname(), false) < 0.8)
                 return false;
         }

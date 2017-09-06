@@ -33,7 +33,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author Patrice Lopez
@@ -144,7 +148,7 @@ public class CitationParser extends AbstractParser {
         }
     }
 
-    public List<BibDataSet> processingReferenceSection(String referenceTextBlock, ReferenceSegmenter referenceSegmenter) {
+    /*public List<BibDataSet> processingReferenceSection(String referenceTextBlock, ReferenceSegmenter referenceSegmenter) {
         List<LabeledReferenceResult> segm = referenceSegmenter.extract(referenceTextBlock);
 
         List<BibDataSet> results = new ArrayList<>();
@@ -160,8 +164,7 @@ public class CitationParser extends AbstractParser {
             }
         }
         return results;
-    }
-
+    }*/
 
     public List<BibDataSet> processingReferenceSection(Document doc, ReferenceSegmenter referenceSegmenter, boolean consolidate) {
         List<BibDataSet> results = new ArrayList<BibDataSet>();
@@ -184,8 +187,10 @@ public class CitationParser extends AbstractParser {
             cntManager.i(CitationParserCounters.SEGMENTED_REFERENCES, references.size());
         }
 
+        // consolidation: if selected, is not done individually for each citation but 
+        // in a second stage for all citations
         for (LabeledReferenceResult ref : references) {
-            BiblioItem bib = processing(TextUtilities.dehyphenize(ref.getReferenceText()), consolidate);
+            BiblioItem bib = processing(TextUtilities.dehyphenize(ref.getReferenceText()), false);
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
@@ -195,6 +200,43 @@ public class CitationParser extends AbstractParser {
                 results.add(bds);
             }
         }
+
+        // consolidate the set
+        if (consolidate) {
+            Consolidation consolidator = new Consolidation(cntManager);
+            Map<Integer,BiblioItem> resConsolidation = null;
+            try {
+                resConsolidation = consolidator.consolidate(results);
+            } catch(Exception e) {
+                throw new GrobidException(
+                "An exception occured while running consolidation on bibliographical references.", e);
+            } finally {
+                consolidator.close();
+            }
+            if (resConsolidation != null) {
+
+int consolidated = 0;
+for (Entry<Integer, BiblioItem> cursor : resConsolidation.entrySet()) {
+//System.out.println("item: " + cursor.getKey());
+if (cursor.getValue() != null) {
+//System.out.println(cursor.getValue().toTEI(1));
+consolidated++;
+} 
+}
+System.out.println("total (CrossRef JSON search API): " + consolidated + " / " + resConsolidation.size());
+
+                for(int i=0; i<results.size(); i++) {
+                    BiblioItem resCitation = results.get(i).getResBib();
+                    BiblioItem bibo = resConsolidation.get(new Integer(i));
+                    if (bibo != null) {
+                        BiblioItem.correct(resCitation, bibo);
+                    }
+                }
+            }
+        }
+
+        doc.setBibDataSets(results);
+
         return results;
     }
 
@@ -577,8 +619,18 @@ public class CitationParser extends AbstractParser {
                         continue;
                     }
                     if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<pubnum>",
-                                "<idno>", addSpace, 0);
+                        String localTag = "<idno>";
+                        String cleanS2 = StringUtils.normalizeSpace(s2);
+                        cleanS2 = cleanS2.replace(" ", "");
+                        Matcher arxivMatcher = TextUtilities.arXivPattern.matcher(cleanS2);
+                        if (arxivMatcher.find())
+                            localTag = "<idno type=\"arXiv\">";
+                        else {
+                            Matcher doiMatcher = TextUtilities.DOIPattern.matcher(cleanS2);
+                            if (doiMatcher.find())
+                                localTag = "<idno type=\"doi\">";
+                        }
+                        output = writeField(s1, lastTag0, s2, "<pubnum>", localTag, addSpace, 0);
                     } else {
                         buffer.append(output);
                         lastTag = s1;
