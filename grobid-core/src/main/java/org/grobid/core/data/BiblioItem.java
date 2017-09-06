@@ -1796,7 +1796,6 @@ public class BiblioItem {
     public String toTEI(int n, int indent, GrobidAnalysisConfig config) {
         StringBuilder tei = new StringBuilder();
         boolean generateIDs = config.isGenerateTeiIds();
-
         try {
             // we just produce here xml strings
             for (int i = 0; i < indent; i++) {
@@ -1825,6 +1824,11 @@ public class BiblioItem {
             }
 
             if ((bookTitle == null) && (journal == null)) {
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<monogr>\n");
+            } else if ((bookTitle != null) && (journal == null) && (title == null) && (articleTitle == null)) {
                 for (int i = 0; i < indent + 1; i++) {
                     tei.append("\t");
                 }
@@ -1858,7 +1862,7 @@ public class BiblioItem {
 						.append("\">").append(TextUtilities.HTMLEncode(title)).append("</title>\n");
                 }
             }
-			else {
+			else if (bookTitle == null) {
                 tei.append("<title/>\n");
 			}
             boolean hasEnglishTitle = false;
@@ -1922,7 +1926,8 @@ public class BiblioItem {
                 tei.append("<ptr target=\"").append(TextUtilities.HTMLEncode(web)).append("\" />\n");
             }
 
-            if (!StringUtils.isEmpty(bookTitle) || !StringUtils.isEmpty(journal)) {
+            if ((!StringUtils.isEmpty(bookTitle) && ((title != null) || (articleTitle != null))) || 
+                !StringUtils.isEmpty(journal)) {
                 for (int i = 0; i < indent + 1; i++) {
                     tei.append("\t");
                 }
@@ -2523,6 +2528,10 @@ public class BiblioItem {
 
             if (dedication != null) {
                 tei.append("<note type=\"dedication\">" + TextUtilities.HTMLEncode(dedication) + "</note>\n");
+            }
+
+            if (book_type != null) {
+                tei.append("<note type=\"report_type\">" + TextUtilities.HTMLEncode(book_type) + "</note>\n");
             }
 
             if (note != null) {      
