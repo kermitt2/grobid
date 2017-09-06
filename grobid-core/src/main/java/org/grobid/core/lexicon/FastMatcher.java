@@ -81,7 +81,7 @@ public final class FastMatcher {
         //String token = null;
         while ((line = bufReader.readLine()) != null) {
             if (line.length() == 0) continue;
-            line = UnicodeUtil.normaliseText(line); 
+            line = UnicodeUtil.normaliseText(line);
             line = StringUtils.normalizeSpace(line);
             line = line.toLowerCase();
             nbTerms += loadTerm(line, true);
@@ -90,6 +90,13 @@ public final class FastMatcher {
         reader.close();
 
         return nbTerms;
+    }
+
+    /**
+     * Load a term to the fast matcher, ignore the delimiters 
+     */
+    public int loadTerm(String term) {
+        return loadTerm(term, true);
     }
 
     /**
@@ -260,7 +267,7 @@ public final class FastMatcher {
      * @param ignoreDelimiters if true, ignore the delimiters in the matching process
      * @return the list of offset positions of the matches, an empty list if no match have been found
      */
-    public List<OffsetPosition> matcherLayoutToken(List<LayoutToken> tokens, boolean ignoreDelimiters) {    
+    public List<OffsetPosition> matcherLayoutToken(List<LayoutToken> tokens, boolean ignoreDelimiters) {
         if (CollectionUtils.isEmpty(tokens)) {
             return new ArrayList<OffsetPosition>();
         }
@@ -281,7 +288,7 @@ public final class FastMatcher {
                 continue;
             }
 
-            String tokenText = UnicodeUtil.normaliseText(token.getText()); 
+            String tokenText = UnicodeUtil.normaliseText(token.getText());
             tokenText = tokenText.toLowerCase();
 
             // we try to complete opened matching
