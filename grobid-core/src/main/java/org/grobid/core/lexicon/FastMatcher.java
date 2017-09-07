@@ -81,7 +81,7 @@ public final class FastMatcher {
         //String token = null;
         while ((line = bufReader.readLine()) != null) {
             if (line.length() == 0) continue;
-            line = UnicodeUtil.normaliseText(line); 
+            line = UnicodeUtil.normaliseText(line);
             line = StringUtils.normalizeSpace(line);
             line = line.toLowerCase();
             nbTerms += loadTerm(line, true);
@@ -94,11 +94,12 @@ public final class FastMatcher {
 
 
     /**
-     * Load a term to the fast matcher
+     * Load a term to the fast matcher, by default the standard delimiters will be ignored
      */
     public int loadTerm(String term) {
         return loadTerm(term, true);
     }
+
 
     /**
      * Load a term to the fast matcher
@@ -289,7 +290,7 @@ public final class FastMatcher {
                 continue;
             }
 
-            String tokenText = UnicodeUtil.normaliseText(token.getText()); 
+            String tokenText = UnicodeUtil.normaliseText(token.getText());
             tokenText = tokenText.toLowerCase();
 
             // we try to complete opened matching
