@@ -10,7 +10,6 @@ import org.grobid.core.data.BibDataSet;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.sax.CrossrefUnixrefSaxParser;
 import org.grobid.core.utilities.crossref.*;
-import org.grobid.core.utilities.crossref.CrossrefClient.RequestMode;
 import org.grobid.core.utilities.counters.CntManager;
 
 import org.slf4j.Logger;
@@ -51,7 +50,7 @@ public class Consolidation {
 
     public Consolidation(CntManager cntManager) {
         this.cntManager = cntManager;
-        client = new CrossrefClient(RequestMode.MUCHTHENSTOP);
+        client = new CrossrefClient();
         workDeserializer = new WorkDeserializer();
     }
 
