@@ -6,8 +6,6 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.GrobidProperties;
 
-import org.grobid.core.utilities.crossref.CrossrefClient.RequestMode;
-
 /**
  * Test class with 100 requests (works/doi)
  *
@@ -122,7 +120,7 @@ public class Test {
 		LibraryLoader.load();
         GrobidProperties.getInstance();
 		
-    	CrossrefClient client = new CrossrefClient(RequestMode.MUCHTHENSTOP);
+    	CrossrefClient client = new CrossrefClient();
     	WorkDeserializer workDeserializer = new WorkDeserializer();
     	
     	try {
@@ -132,7 +130,7 @@ public class Test {
 	    		final int id = i;
 	    		
 	    		// ASYNCHRONOUS TEST (50 first requests)
-	    		if (i < 50) {
+	    		if (i < 90) {
 	    		
 		    		client.<BiblioItem>pushRequest("works", doi, null, workDeserializer, new CrossrefRequestListener<BiblioItem>() {
 		    			
@@ -151,7 +149,7 @@ public class Test {
 		    		});
 	    		
 	    		}
-	    		// SYNCHRONOUS TEST (50 last requests)
+	    		// SYNCHRONOUS TEST (10 last requests)
 	    		else {
 	    			
 	    			CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
