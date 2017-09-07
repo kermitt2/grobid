@@ -104,8 +104,8 @@ public class AuthorParser {
         }
         List<Person> fullAuthors = null;
         try {
-            List<OffsetPosition> titlePositions = Lexicon.getInstance().inPersonTitleLayoutToken(tokens);
-            List<OffsetPosition> suffixPositions = Lexicon.getInstance().inPersonSuffixLayoutToken(tokens);
+            List<OffsetPosition> titlePositions = Lexicon.getInstance().tokenPositionsPersonTitle(tokens);
+            List<OffsetPosition> suffixPositions = Lexicon.getInstance().tokenPositionsPersonSuffix(tokens);
 
             String sequence = FeaturesVectorName.addFeaturesName(tokens, null, 
                 titlePositions, suffixPositions);
@@ -270,8 +270,8 @@ public class AuthorParser {
                 return null;
             }
 
-            List<OffsetPosition> titlePositions = Lexicon.getInstance().inPersonTitleLayoutToken(tokens);
-            List<OffsetPosition> suffixPositions = Lexicon.getInstance().inPersonSuffixLayoutToken(tokens);
+            List<OffsetPosition> titlePositions = Lexicon.getInstance().tokenPositionsPersonTitle(tokens);
+            List<OffsetPosition> suffixPositions = Lexicon.getInstance().tokenPositionsPersonSuffix(tokens);
 
             String sequence = FeaturesVectorName.addFeaturesName(tokens, null, titlePositions, suffixPositions);
             if (StringUtils.isEmpty(sequence))

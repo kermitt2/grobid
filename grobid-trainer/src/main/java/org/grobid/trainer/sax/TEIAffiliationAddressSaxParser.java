@@ -114,7 +114,7 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
 
             String allString = allContent.toString().trim();
             allString = allString.replace("@newline", "");
-            List<OffsetPosition> toto = lexicon.inCityNames(allString);
+            List<OffsetPosition> toto = lexicon.tokenPositionsCityNames(allString);
             placesPositions.add(toto);
             allContent = null;
             allString = null;
