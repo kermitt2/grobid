@@ -25,7 +25,7 @@ public class CrossrefClient {
 	
 	public static void printLog(CrossrefRequest<?> request, String message) {
 		logger.info((request != null ? request+": " : "")+message);
-		System.out.println((request != null ? request+": " : "")+message);
+		//System.out.println((request != null ? request+": " : "")+message);
 	}
 	
 	
@@ -144,7 +144,7 @@ public class CrossrefClient {
 	public void finish() {
 		try {
 			executorService.shutdown();
-			executorService.awaitTermination(5, TimeUnit.SECONDS);
+			executorService.awaitTermination(20, TimeUnit.SECONDS);
 		} catch (InterruptedException ie) {
 		 	//pool.shutdownNow(); // will be explicitely called by close()
 		 	// Preserve interrupt status

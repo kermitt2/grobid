@@ -298,42 +298,59 @@ public class Person {
             middleName = firstName.substring(1,2);
             firstName = firstName.substring(0,1);
         }
-        String tokens[] = firstName.split(" ");
-        for(int i=tokens.length-1; i>=0; i--) {
-            if (i != 0) {
-                if (first != null) {
-                    if (tokens[i].endsWith(".") && (tokens[i].length() == 2)) {
-                        // (case "G. Arjen")
-                        first = tokens[i].charAt(0) + " " + first;
+
+        // check the specific case of composed forenames which are often but not always lost  
+        // ex: "J.-L. Arsuag"
+        if ( (firstName.indexOf("-") != -1) ) {
+            String tokens[] = firstName.replace(" ", "").split("-");
+            if (tokens.length == 2) {
+                if (tokens[0].endsWith(".") && (tokens[0].length() == 2))
+                    first = ""+tokens[0].charAt(0);
+                else if (tokens[0].length() == 1)
+                    first = tokens[0];
+                if (tokens[1].endsWith(".") && (tokens[1].length() == 2))
+                    first += "-" + tokens[1].charAt(0);
+                else if (tokens[1].length() == 1)
+                    first += "-" + tokens[1];
+            }
+        } else { 
+            String tokens[] = firstName.split(" ");
+            for(int i=tokens.length-1; i>=0; i--) {
+                if (i != 0) {
+                    if (first != null) {
+                        if (tokens[i].endsWith(".") && (tokens[i].length() == 2)) {
+                            // (case "G. Arjen")
+                            first = tokens[i].charAt(0) + " " + first;
+                        } else {
+                            // multiple token first name
+                            first = tokens[i] + " " + first;
+                        }
+                    } else if ( (tokens[i].endsWith(".") && (tokens[i].length() == 2)) || 
+                        (tokens[i].length() == 1) ) {
+                        // we have an initials in secondary position, this is a middle name
+                        if (middle == null)
+                            middle = ""+tokens[i].charAt(0);
+                        else
+                           middle = tokens[i].charAt(0) + " " + middle;
                     } else {
-                        // multiple token first name
-                        first = tokens[i] + " " + first;
+                        if (middle == null)
+                            middle = tokens[i];
+                        else
+                           middle = tokens[i] + " " + middle;
                     }
-                } else if ( (tokens[i].endsWith(".") && (tokens[i].length() == 2)) || 
-                    (tokens[i].length() == 1) ) {
-                    // we have an initials in secondary position, this is a middle name
-                    if (middle == null)
-                        middle = ""+tokens[i].charAt(0);
-                    else
-                       middle = tokens[i].charAt(0) + " " + middle;
-                } else {
-                    if (middle == null)
-                        middle = tokens[i];
-                    else
-                       middle = tokens[i] + " " + middle;
-                }
-            } else {                
-                // we check if we have an initial at the beginning (case "G. Arjen")
-                if (tokens[i].endsWith(".") && (tokens[i].length() == 2)) {
-                    if (first == null)
-                        first = ""+tokens[i].charAt(0);
-                    else
-                        first = tokens[i] + " " + first;
-                } else {
-                    if (first == null)
-                        first = tokens[i];
-                    else
-                        first = tokens[i] + " " + first;
+                } else {                
+                    // we check if we have an initial at the beginning (case "G. Arjen")
+                    if (tokens[i].endsWith(".") && (tokens[i].length() == 2)) {
+                        if (first == null)
+                            first = ""+tokens[i].charAt(0);
+                        else
+                            first = tokens[i] + " " + first;
+                    } else {
+                        if (first == null)
+                            first = tokens[i];
+                        else
+                            first = tokens[i] + " " + first;
+                    }
                 }
             }
         }
@@ -372,9 +389,6 @@ public class Person {
         }
         
         // other weird stuff: <forename type="first">G. Arjen</forename><surname>de Groot</surname>
-
-        // composed forenames seem lost most of the time, e.g. we don't see 
-        // J.-M. Pierrel but J. M. Pierrel
 
         // also note that language specific case practice are usually not rexpected
         // e.g. H Von Allmen, J De  
