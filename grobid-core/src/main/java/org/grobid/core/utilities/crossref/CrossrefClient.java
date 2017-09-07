@@ -3,12 +3,16 @@ package org.grobid.core.utilities.crossref;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Map;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang3.concurrent.TimedSemaphore;
 import org.apache.http.client.ClientProtocolException;
 import org.grobid.core.utilities.crossref.CrossrefRequestListener.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Request pool to get data from api.crossref.org without exceeding limits.
@@ -16,41 +20,82 @@ import org.grobid.core.utilities.crossref.CrossrefRequestListener.Response;
  * @author Vincent Kaestle, Patrice
  */
 public class CrossrefClient {
-		
-	/**
-	 * Request distribution during time
-	 */
-	public static enum RequestMode {
-		/**
-		 * Send requests much as limit accepts in one interval, then stop until interval finished, then restart 
-		 */
-		MUCHTHENSTOP,
-		/**
-		 * Send requests regularly as limit accepts 
-		 */
-		REGULARLY
+	
+	public static final Logger logger = LoggerFactory.getLogger(CrossrefRequestTask.class);
+	
+	public static void printLog(CrossrefRequest<?> request, String message) {
+		logger.info((request != null ? request+": " : "")+message);
+		System.out.println((request != null ? request+": " : "")+message);
 	}
+	
 	
 	protected ExecutorService executorService;
 	
 	public Response<?> lastResponse;
-	public RequestMode requestMode;
-	public int itFromLastInterval;
-	public long firstItTime;
-		
-	public CrossrefClient(RequestMode requestMode) {
-		//this.executorService = Executors.newSingleThreadExecutor();
-		//if (requestMode == RequestMode.MUCHTHENSTOP)*/
-		this.executorService = Executors.newCachedThreadPool();
-		this.lastResponse = null;
-		this.requestMode = requestMode;
-		this.itFromLastInterval = 0;
-		this.firstItTime = System.currentTimeMillis();
-	}
+	
+	private boolean limitAuto;
+	private int iterationsOffset;
+	private TimedSemaphore timedSemaphore;
+	private CountDownLatch firstDoneSignal = null;
+	
 	
 	public CrossrefClient() {
-		this(RequestMode.MUCHTHENSTOP);
-		//this(RequestMode.REGULARLY);
+		this.executorService = Executors.newCachedThreadPool();
+		this.lastResponse = null;
+		this.limitAuto = true;
+		this.timedSemaphore = null;
+		this.iterationsOffset = -12;
+	}
+	
+	public CrossrefClient(int iterations, int interval) {
+		this();
+		this.limitAuto = false;
+		this.iterationsOffset = 0;
+		this.setLimits(iterations, interval);
+	}
+	
+	public void setIterationsOffset(int iterationsOffset) {
+		this.iterationsOffset = iterationsOffset;
+	}
+	
+	public void setLimits(int iterations, int interval) {
+		if ((this.timedSemaphore == null)
+			|| (this.timedSemaphore.getLimit() != iterations)
+			|| (this.timedSemaphore.getPeriod() != interval)) {
+			
+			this.timedSemaphore = new TimedSemaphore(interval, TimeUnit.MILLISECONDS, iterations);
+		}
+	}
+	
+	public void updateLimits(int iterations, int interval) {
+		if (this.limitAuto) {
+			//printLog(null, "Updating limits..");
+			this.setLimits(iterations + this.iterationsOffset, interval);
+		}
+	}
+	
+	public void checkLimits() throws InterruptedException {
+		if (this.limitAuto && (firstDoneSignal.getCount() == 0))
+			this.timedSemaphore.acquire();
+	}
+	
+	
+	public void checkFirstDone() throws InterruptedException {
+		if (this.limitAuto) {
+			synchronized(this) {
+				if (firstDoneSignal == null)
+					firstDoneSignal = new CountDownLatch(1);
+				else
+					firstDoneSignal.await();
+			}
+		}
+	}
+	
+	public void emitFirstDoneSignal() {
+		if (this.limitAuto && (firstDoneSignal.getCount() > 0)) {
+			//printLog(null, "Emit firstDoneSignal !");
+			firstDoneSignal.countDown();
+		}
 	}
 	
 	/**
