@@ -579,491 +579,391 @@ public class Lexicon {
     }
 
     /**
-     * Soft look-up in journal name gazetteer
+     * Soft look-up in journal name gazetteer with token positions
      */
-    public List<OffsetPosition> inJournalNames(String s) {
+    public List<OffsetPosition> tokenPositionsJournalNames(String s) {
         if (journalPattern == null) {
             initJournals();
         }
-        List<OffsetPosition> results = journalPattern.matcher(s);
-        return results;
-    }
-
-    /**
-     * Soft look-up in journal name gazetteer for a given string already tokenized
-     */
-    public List<OffsetPosition> inJournalNames(List<String> s) {
-        if (journalPattern == null) {
-            initJournals();
-        }
-        List<OffsetPosition> results = journalPattern.matcher(s);
+        List<OffsetPosition> results = journalPattern.matchToken(s);
         return results;
     }
 
     /**
      * Soft look-up in journal name gazetteer for a given list of LayoutToken objects
+     * with token positions
      */
-    public List<OffsetPosition> inJournalNamesLayoutToken(List<LayoutToken> s) {
+    public List<OffsetPosition> tokenPositionsJournalNames(List<LayoutToken> s) {
         if (journalPattern == null) {
             initJournals();
         }
-        List<OffsetPosition> results = journalPattern.matcherLayoutToken(s);
+        List<OffsetPosition> results = journalPattern.matchLayoutToken(s);
         return results;
     }
 
     /**
-     * Soft look-up in journal abbreviated name gazetteer
+     * Soft look-up in journal abbreviated name gazetteer with token positions
      */
-    public List<OffsetPosition> inAbbrevJournalNames(String s) {
+    public List<OffsetPosition> tokenPositionsAbbrevJournalNames(String s) {
         if (abbrevJournalPattern == null) {
             initJournals();
         }
-        List<OffsetPosition> results = abbrevJournalPattern.matcher(s);
-        return results;
-    }
-
-    /**
-     * Soft look-up in journal abbreviated name gazetteer for a given string already tokenized
-     */
-    public List<OffsetPosition> inAbbrevJournalNames(List<String> s) {
-        if (abbrevJournalPattern == null) {
-            initJournals();
-        }
-        List<OffsetPosition> results = abbrevJournalPattern.matcher(s);
+        List<OffsetPosition> results = abbrevJournalPattern.matchToken(s);
         return results;
     }
 
     /**
      * Soft look-up in journal abbreviated name gazetteer for a given list of LayoutToken objects
+     * with token positions
      */
-    public List<OffsetPosition> inAbbrevJournalNamesLayoutToken(List<LayoutToken> s) {
+    public List<OffsetPosition> tokenPositionsAbbrevJournalNames(List<LayoutToken> s) {
         if (abbrevJournalPattern == null) {
             initJournals();
         }
-        List<OffsetPosition> results = abbrevJournalPattern.matcherLayoutToken(s);
+        List<OffsetPosition> results = abbrevJournalPattern.matchLayoutToken(s);
         return results;
     }
 
     /**
-     * Soft look-up in conference/proceedings name gazetteer
+     * Soft look-up in conference/proceedings name gazetteer with token positions
      */
-    public List<OffsetPosition> inConferenceNames(String s) {
+    public List<OffsetPosition> tokenPositionsConferenceNames(String s) {
         if (conferencePattern == null) {
             initConferences();
         }
-        List<OffsetPosition> results = conferencePattern.matcher(s);
-        return results;
-    }
-
-    /**
-     * Soft look-up in conference/proceedings name gazetteer for a given string already tokenized
-     */
-    public List<OffsetPosition> inConferenceNames(List<String> s) {
-        if (conferencePattern == null) {
-            initConferences();
-        }
-        List<OffsetPosition> results = conferencePattern.matcher(s);
+        List<OffsetPosition> results = conferencePattern.matchToken(s);
         return results;
     }
 
     /**
      * Soft look-up in conference/proceedings name gazetteer for a given list of LayoutToken objects
+     * with token positions
      */
-    public List<OffsetPosition> inConferenceNamesLayoutToken(List<LayoutToken> s) {
+    public List<OffsetPosition> tokenPositionsConferenceNames(List<LayoutToken> s) {
         if (conferencePattern == null) {
             initConferences();
         }
-        List<OffsetPosition> results = conferencePattern.matcherLayoutToken(s);
+        List<OffsetPosition> results = conferencePattern.matchLayoutToken(s);
         return results;
     }
 
     /**
-     * Soft look-up in conference/proceedings name gazetteer
+     * Soft look-up in conference/proceedings name gazetteer with token positions
      */
-    public List<OffsetPosition> inPublisherNames(String s) {
+    public List<OffsetPosition> tokenPositionsPublisherNames(String s) {
         if (publisherPattern == null) {
             initPublishers();
         }
-        List<OffsetPosition> results = publisherPattern.matcher(s);
-        return results;
-    }
-
-    /**
-     * Soft look-up in conference/proceedings name gazetteer for a given string already tokenized
-     */
-    public List<OffsetPosition> inPublisherNames(List<String> s) {
-        if (publisherPattern == null) {
-            initPublishers();
-        }
-        List<OffsetPosition> results = publisherPattern.matcher(s);
+        List<OffsetPosition> results = publisherPattern.matchToken(s);
         return results;
     }
 
     /**
      * Soft look-up in publisher name gazetteer for a given list of LayoutToken objects
+     * with token positions
      */
-    public List<OffsetPosition> inPublisherNamesLayoutToken(List<LayoutToken> s) {
+    public List<OffsetPosition> tokenPositionsPublisherNames(List<LayoutToken> s) {
         if (publisherPattern == null) {
             initPublishers();
         }
-        List<OffsetPosition> results = publisherPattern.matcherLayoutToken(s);
+        List<OffsetPosition> results = publisherPattern.matchLayoutToken(s);
         return results;
     }
 
     /**
      * Soft look-up in collaboration name gazetteer for a given list of LayoutToken objects
+     * with token positions
      */
-    public List<OffsetPosition> inCollaborationNamesLayoutToken(List<LayoutToken> s) {
+    public List<OffsetPosition> tokenPositionsCollaborationNames(List<LayoutToken> s) {
         if (collaborationPattern == null) {
             initCollaborations();
         }
-        List<OffsetPosition> results = collaborationPattern.matcherLayoutToken(s);
+        List<OffsetPosition> results = collaborationPattern.matchLayoutToken(s);
         return results;
     }
 
     /**
-     * Soft look-up in city name gazetteer for a given string
+     * Soft look-up in city name gazetteer for a given string with token positions
      */
-    public List<OffsetPosition> inCityNames(String s) {
+    public List<OffsetPosition> tokenPositionsCityNames(String s) {
         if (cityPattern == null) {
             initCities();
         }
-        List<OffsetPosition> results = cityPattern.matcher(s);
-        return results;
-    }
-
-    /**
-     * Soft look-up in city name gazetteer for a given string already tokenized
-     */
-    public List<OffsetPosition> inCityNames(List<String> s) {
-        if (cityPattern == null) {
-            initCities();
-        }
-        List<OffsetPosition> results = cityPattern.matcher(s);
+        List<OffsetPosition> results = cityPattern.matchToken(s);
         return results;
     }
 
     /**
      * Soft look-up in city name gazetteer for a given list of LayoutToken objects
+     * with token positions
      */
-    public List<OffsetPosition> inCityNamesLayoutToken(List<LayoutToken> s) {
+    public List<OffsetPosition> tokenPositionsCityNames(List<LayoutToken> s) {
         if (cityPattern == null) {
             initCities();
         }
-        List<OffsetPosition> results = cityPattern.matcherLayoutToken(s);
+        List<OffsetPosition> results = cityPattern.matchLayoutToken(s);
         return results;
     }
 
     /** Organisation names **/
 
 	/**
-     * Soft look-up in organisation name gazetteer for a given string
+     * Soft look-up in organisation name gazetteer for a given string with token positions
      */
-    public List<OffsetPosition> inOrganisationNames(String s) {
+    public List<OffsetPosition> tokenPositionsOrganisationNames(String s) {
         if (organisationPattern == null) {
             initOrganisations();
         }
-        List<OffsetPosition> results = organisationPattern.matcher(s);
-        return results;
-    }
-
-    /**
-     * Soft look-up in organisation name gazetteer for a given string already tokenized
-     */
-    public List<OffsetPosition> inOrganisationNames(List<String> s) {
-        if (organisationPattern == null) {
-            initOrganisations();
-        }
-        List<OffsetPosition> results = organisationPattern.matcher(s);
+        List<OffsetPosition> results = organisationPattern.matchToken(s);
         return results;
     }
 
     /**
      * Soft look-up in organisation name gazetteer for a given list of LayoutToken objects
+     * with token positions
      */
-    public List<OffsetPosition> inOrganisationNamesLayoutToken(List<LayoutToken> s) {
+    public List<OffsetPosition> tokenPositionsOrganisationNames(List<LayoutToken> s) {
         if (organisationPattern == null) {
             initOrganisations();
         }
-        List<OffsetPosition> results = organisationPattern.matcherLayoutToken(s);
+        List<OffsetPosition> results = organisationPattern.matchLayoutToken(s);
         return results;
     }
 
     /**
-     * Variant Soft look-up in organisation names gazetteer for a string.
+     * Soft look-up in organisation names gazetteer for a string.
      * It return a list of positions referring to the character positions within the string.
-     * @see Lexicon#getPositionsInLocationNames(String)
      *
      * @param s the input string
      * @return a list of positions referring to the character position in the input string
      */
-    public List<OffsetPosition> getPositionsInOrganisationNames(String s) {
+    public List<OffsetPosition> charPositionsOrganisationNames(String s) {
         if (organisationPattern == null) {
             initOrganisations();
         }
-        List<OffsetPosition> results = organisationPattern.match(s);
+        List<OffsetPosition> results = organisationPattern.matchCharacter(s);
         return results;
     }
 
     /**
-     * Variant Soft look-up in organisation names gazetteer for a string already tokenised.
-     * Return list of positions referring as the index value in the input list.
-     * @see Lexicon#getPositionsInLocationNames(List)
+     * Soft look-up in organisation names gazetteer for a tokenize sequence.
+     * It return a list of positions referring to the character positions within the input 
+     * sequence.
      *
-     * @param s the input string
-     * @return a list of positions referring as the index value in the input list
+     * @param s the input list of LayoutToken
+     * @return a list of positions referring to the character position in the input sequence
      */
-    public List<OffsetPosition> getPositionsInOrganisationNames(List<String> s) {
+    public List<OffsetPosition> charPositionsOrganisationNames(List<LayoutToken> s) {
         if (organisationPattern == null) {
             initOrganisations();
         }
-        List<OffsetPosition> results = organisationPattern.match(s);
+        List<OffsetPosition> results = organisationPattern.matchCharacterLayoutToken(s);
         return results;
     }
-
-
-    /** Org form names **/
 
 	/**
-     * Soft look-up in organisation form name gazetteer for a given string
+     * Soft look-up in organisation form name gazetteer for a given string with token positions
      */
-    public List<OffsetPosition> inOrgFormNames(String s) {
+    public List<OffsetPosition> tokenPositionsOrgFormNames(String s) {
         if (orgFormPattern == null) {
             initOrgForms();
         }
-        List<OffsetPosition> results = orgFormPattern.matcher(s);
-        return results;
-    }
-
-    /**
-     * Soft look-up in organisation form name gazetteer for a given string already tokenized
-     */
-    public List<OffsetPosition> inOrgFormNames(List<String> s) {
-        if (orgFormPattern == null) {
-            initOrgForms();
-        }
-        List<OffsetPosition> results = orgFormPattern.matcher(s);
+        List<OffsetPosition> results = orgFormPattern.matchToken(s);
         return results;
     }
 
     /**
      * Soft look-up in organisation form name gazetteer for a given list of LayoutToken objects
+     * with token positions
      */
-    public List<OffsetPosition> inOrgFormNamesLayoutToken(List<LayoutToken> s) {
+    public List<OffsetPosition> tokenPositionsOrgFormNames(List<LayoutToken> s) {
         if (orgFormPattern == null) {
             initOrgForms();
         }
-        List<OffsetPosition> results = orgFormPattern.matcherLayoutToken(s);
+        List<OffsetPosition> results = orgFormPattern.matchLayoutToken(s);
         return results;
     }
 
     /**
-     * Variant Soft look-up in person org form names gazetteer for a string already tokenised.
-     * Return list of positions referring as the index value in the input list.
-     * @see Lexicon#getPositionsInLocationNames(List)
-     *
-     * @param s the input string
-     * @return a list of positions referring as the index value in the input list
-     */
-    public List<OffsetPosition> getPositionsInOrgFormNames(List<String> s) {
-        if (orgFormPattern == null) {
-            initOrgForms();
-        }
-        List<OffsetPosition> results = orgFormPattern.match(s);
-        return results;
-    }
-
-    /**
-     * Variant Soft look-up in org form names gazetteer for a string.
+     * Soft look-up in org form names gazetteer for a string.
      * It return a list of positions referring to the character positions within the string.
-     * @see Lexicon#getPositionsInLocationNames(String)
      *
      * @param s the input string
      * @return a list of positions referring to the character position in the input string
      */
-    public List<OffsetPosition> getPositionsInOrgFormNames(String s) {
+    public List<OffsetPosition> charPositionsOrgFormNames(String s) {
         if (orgFormPattern == null) {
             initOrgForms();
         }
-        List<OffsetPosition> results = orgFormPattern.match(s);
-        return results;
-    }
-
-    /** Location names **/
-
-    /**
-     * Soft look-up in location name gazetteer for a given string
-     */
-    public List<OffsetPosition> inLocationNames(String s) {
-        if (locationPattern == null) {
-            initLocations();
-        }
-        List<OffsetPosition> results = locationPattern.matcher(s);
+        List<OffsetPosition> results = orgFormPattern.matchCharacter(s);
         return results;
     }
 
     /**
-     * Soft look-up in location name gazetteer for a given string already tokenized
+     * Soft look-up in org form names gazetteer for a tokenized string.
+     * It return a list of positions referring to the character positions within the sequence.
+     *
+     * @param s the input list of LayoutToken
+     * @return a list of positions referring to the character position in the input sequence
      */
-    public List<OffsetPosition> inLocationNames(List<String> s) {
+    public List<OffsetPosition> charPositionsOrgFormNames(List<LayoutToken> s) {
+        if (orgFormPattern == null) {
+            initOrgForms();
+        }
+        List<OffsetPosition> results = orgFormPattern.matchCharacterLayoutToken(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in location name gazetteer for a given string with token positions
+     */
+    public List<OffsetPosition> tokenPositionsLocationNames(String s) {
         if (locationPattern == null) {
             initLocations();
         }
-        List<OffsetPosition> results = locationPattern.matcher(s);
+        List<OffsetPosition> results = locationPattern.matchToken(s);
         return results;
     }
 
     /**
      * Soft look-up in location name gazetteer for a given list of LayoutToken objects
+     * with token positions
      */
-    public List<OffsetPosition> inLocationNamesLayoutToken(List<LayoutToken> s) {
+    public List<OffsetPosition> tokenPositionsLocationNames(List<LayoutToken> s) {
         if (locationPattern == null) {
             initLocations();
         }
-        List<OffsetPosition> results = locationPattern.matcherLayoutToken(s);
+        List<OffsetPosition> results = locationPattern.matchLayoutToken(s);
         return results;
     }
 
     /**
-     * Variant Soft look-up in location name gazetteer for a string, return a list of positions referring to the character
-     * positions within the string.
+     * Soft look-up in location name gazetteer for a string, return a list of positions referring 
+     * to the character positions within the string.
      *
      * For example "The car is in Milan" as Milan is a location, would return OffsetPosition(14,19)
      *
      * @param s the input string
      * @return a list of positions referring to the character position in the input string
      */
-    public List<OffsetPosition> getPositionsInLocationNames(String s) {
+    public List<OffsetPosition> charPositionsLocationNames(String s) {
         if (locationPattern == null) {
             initLocations();
         }
-        List<OffsetPosition> results = locationPattern.match(s);
+        List<OffsetPosition> results = locationPattern.matchCharacter(s);
         return results;
     }
 
     /**
-     * Soft look-up in location name gazetteer for a tokenized string, return list of positions referring as the index
-     * value in the input list.
+     * Soft look-up in location name gazetteer for a list of LayoutToken, return a list of 
+     * positions referring to the character positions in the input sequence.
      *
-     * For example ["The", "car", "is", "in", "Milan"], as Milan is a location, would return OffsetPosition(4,4)
+     * For example "The car is in Milan" as Milan is a location, would return OffsetPosition(14,19)
      *
-     * @param s the input string
-     * @return a list of positions referring to the character position in the input string
+     * @param s the input list of LayoutToken
+     * @return a list of positions referring to the character position in the input sequence
      */
-    public List<OffsetPosition> getPositionsInLocationNames(List<String> s) {
+    public List<OffsetPosition> charPositionsLocationNames(List<LayoutToken> s) {
         if (locationPattern == null) {
             initLocations();
         }
-        List<OffsetPosition> results = locationPattern.match(s);
+        List<OffsetPosition> results = locationPattern.matchCharacterLayoutToken(s);
         return results;
     }
-
-
-    /** Person title lexicon **/
 
 	/**
-     * Soft look-up in person title gazetteer for a given string
+     * Soft look-up in person title gazetteer for a given string with token positions
      */
-    public List<OffsetPosition> inPersonTitleNames(String s) {
+    public List<OffsetPosition> tokenPositionsPersonTitleNames(String s) {
         if (personTitlePattern == null) {
             initPersonTitles();
         }
-        List<OffsetPosition> results = personTitlePattern.matcher(s);
-        return results;
-    }
-
-    /**
-     * Soft look-up in person title gazetteer for a given string already tokenized
-     */
-    public List<OffsetPosition> inPersonTitleNames(List<String> s) {
-        if (personTitlePattern == null) {
-            initPersonTitles();
-        }
-        List<OffsetPosition> results = personTitlePattern.matcher(s);
+        List<OffsetPosition> results = personTitlePattern.matchToken(s);
         return results;
     }
 
     /**
      * Soft look-up in person title gazetteer for a given list of LayoutToken objects
+     * with token positions
      */
-    public List<OffsetPosition> inPersonTitleLayoutToken(List<LayoutToken> s) {
+    public List<OffsetPosition> tokenPositionsPersonTitle(List<LayoutToken> s) {
         if (personTitlePattern == null) {
             initPersonTitles();
         }
-        List<OffsetPosition> results = personTitlePattern.matcherLayoutToken(s);
+        List<OffsetPosition> results = personTitlePattern.matchLayoutToken(s);
         return results;
     }
 
     /**
      * Soft look-up in person name suffix gazetteer for a given list of LayoutToken objects
+     * with token positions
      */
-    public List<OffsetPosition> inPersonSuffixLayoutToken(List<LayoutToken> s) {
+    public List<OffsetPosition> tokenPositionsPersonSuffix(List<LayoutToken> s) {
         if (personSuffixPattern == null) {
             initPersonSuffix();
         }
-        List<OffsetPosition> results = personSuffixPattern.matcherLayoutToken(s);
+        List<OffsetPosition> results = personSuffixPattern.matchLayoutToken(s);
         return results;
     }
 
     /**
-     * Variant Soft look-up in person title name gazetteer for a string already tokenised.
-     * Return list of positions referring as the index value in the input list.
-     * @see Lexicon#getPositionsInLocationNames(List)
-     *
-     * @param s the input string
-     * @return a list of positions referring as the index value in the input list
-     */
-    public List<OffsetPosition> getPositionsInPersonTitleNames(List<String> s) {
-        if (personTitlePattern == null) {
-            initPersonTitles();
-        }
-        List<OffsetPosition> results = personTitlePattern.match(s);
-        return results;
-    }
-
-    /**
-     * Variant Soft look-up in person title name gazetteer for a string.
+     * Soft look-up in person title name gazetteer for a string.
      * It return a list of positions referring to the character positions within the string.
-     * @see Lexicon#getPositionsInLocationNames(String)
      *
      * @param s the input string
      * @return a list of positions referring to the character position in the input string
      */
-    public List<OffsetPosition> getPositionsInPersonTitleNames(String s) {
+    public List<OffsetPosition> charPositionsPersonTitleNames(String s) {
         if (personTitlePattern == null) {
             initPersonTitles();
         }
-        List<OffsetPosition> results = personTitlePattern.match(s);
+        List<OffsetPosition> results = personTitlePattern.matchCharacter(s);
         return results;
     }
 
     /**
-     * Identify in tokenized input the positions of identifier patterns
+     * Soft look-up in person title name gazetteer for a list of LayoutToken.
+     * It return a list of positions referring to the character positions in the input
+     * sequence.
+     *
+     * @param s the input list of LayoutToken
+     * @return a list of positions referring to the character position in the input sequence
      */
-    public List<OffsetPosition> inIdentifierPatternLayoutToken(List<LayoutToken> tokens) {
+    public List<OffsetPosition> charPositionsPersonTitleNames(List<LayoutToken> s) {
+        if (personTitlePattern == null) {
+            initPersonTitles();
+        }
+        List<OffsetPosition> results = personTitlePattern.matchCharacterLayoutToken(s);
+        return results;
+    }
+
+    /**
+     * Identify in tokenized input the positions of identifier patterns with token positions
+     */
+    public List<OffsetPosition> tokenPositionsIdentifierPattern(List<LayoutToken> tokens) {
         List<OffsetPosition> result = new ArrayList<OffsetPosition>();
         String text = LayoutTokensUtil.toText(tokens);
         
         // DOI positions
-        result = inDOIPatternLayoutToken(tokens, text);
+        result = tokenPositionsDOIPattern(tokens, text);
 
         // arXiv 
-        List<OffsetPosition> positions = inArXivPatternLayoutToken(tokens, text);
+        List<OffsetPosition> positions = tokenPositionsArXivPattern(tokens, text);
         result = Utilities.mergePositions(result, positions);
 
         // ISSN and ISBN
-        /*positions = inISSNPatternLayoutToken(tokens);
+        /*positions = tokenPositionsISSNPattern(tokens);
         result = Utilities.mergePositions(result, positions);
-        positions = inISBNPatternLayoutToken(tokens);
+        positions = tokenPositionsISBNPattern(tokens);
         result = Utilities.mergePositions(result, positions);*/
 
         return result;
     }
 
     /**
-     * Identify in tokenized input the positions of the DOI patterns
+     * Identify in tokenized input the positions of the DOI patterns with token positons
      */
-    public List<OffsetPosition> inDOIPatternLayoutToken(List<LayoutToken> tokens, String text) {
+    public List<OffsetPosition> tokenPositionsDOIPattern(List<LayoutToken> tokens, String text) {
         List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();
         Matcher doiMatcher = TextUtilities.DOIPattern.matcher(text);
         while (doiMatcher.find()) {            
@@ -1074,8 +974,9 @@ public class Lexicon {
 
     /**
      * Identify in tokenized input the positions of the arXiv identifier patterns
+     * with token positions
      */
-    public List<OffsetPosition> inArXivPatternLayoutToken(List<LayoutToken> tokens, String text) {
+    public List<OffsetPosition> tokenPositionsArXivPattern(List<LayoutToken> tokens, String text) {
         List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();
         Matcher arXivMatcher = TextUtilities.arXivPattern.matcher(text);
         while (arXivMatcher.find()) {  
@@ -1087,27 +988,31 @@ public class Lexicon {
 
 
     /**
-     * Identify in tokenized input the positions of ISSN patterns
+     * Identify in tokenized input the positions of ISSN patterns with token positions
      */
-    public List<OffsetPosition> inISSNPatternLayoutToken(List<LayoutToken> tokens) {
+    public List<OffsetPosition> tokenPositionsISSNPattern(List<LayoutToken> tokens) {
         List<OffsetPosition> result = new ArrayList<OffsetPosition>();
+        
+        // TBD !
 
         return result;
     }
 
     /**
-     * Identify in tokenized input the positions of ISBN patterns
+     * Identify in tokenized input the positions of ISBN patterns with token positions
      */
-    public List<OffsetPosition> inISBNPatternLayoutToken(List<LayoutToken> tokens) {
+    public List<OffsetPosition> tokenPositionsISBNPattern(List<LayoutToken> tokens) {
         List<OffsetPosition> result = new ArrayList<OffsetPosition>();
+
+        // TBD !!
 
         return result;
     }
 
     /**
-     * Identify in tokenized input the positions of an URL pattern
+     * Identify in tokenized input the positions of an URL pattern with token positions
      */
-    public List<OffsetPosition> inUrlPatternLayoutToken(List<LayoutToken> tokens) {
+    public List<OffsetPosition> tokenPositionsUrlPattern(List<LayoutToken> tokens) {
         List<OffsetPosition> result = new ArrayList<OffsetPosition>();
         String text = LayoutTokensUtil.toText(tokens);
         List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();

@@ -305,10 +305,10 @@ public class MarecSaxParser extends DefaultHandler {
             accumulator.setLength(0);
         } else if (qName.equals("patent-document") || qName.equals("fulltext-document")) {
             String allString = allContent.toString();
-            journalsPositions = lexicon.inJournalNames(allString);
-            abbrevJournalsPositions = lexicon.inAbbrevJournalNames(allString);
-            conferencesPositions = lexicon.inConferenceNames(allString);
-            publishersPositions = lexicon.inPublisherNames(allString);
+            journalsPositions = lexicon.tokenPositionsJournalNames(allString);
+            abbrevJournalsPositions = lexicon.tokenPositionsAbbrevJournalNames(allString);
+            conferencesPositions = lexicon.tokenPositionsConferenceNames(allString);
+            publishersPositions = lexicon.tokenPositionsPublisherNames(allString);
             allContent = null;
             allString = null;
         } else if (qName.equals("row")) {

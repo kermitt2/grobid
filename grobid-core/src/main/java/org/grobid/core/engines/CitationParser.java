@@ -82,14 +82,14 @@ public class CitationParser extends AbstractParser {
 
             tokens = LayoutTokensUtil.dehyphenize(tokens);
 
-            List<OffsetPosition> journalsPositions = lexicon.inJournalNamesLayoutToken(tokens);
-            List<OffsetPosition> abbrevJournalsPositions = lexicon.inAbbrevJournalNamesLayoutToken(tokens);
-            List<OffsetPosition> conferencesPositions = lexicon.inConferenceNamesLayoutToken(tokens);
-            List<OffsetPosition> publishersPositions = lexicon.inPublisherNamesLayoutToken(tokens);
-            List<OffsetPosition> locationsPositions = lexicon.inLocationNamesLayoutToken(tokens);
-            List<OffsetPosition> collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(tokens);
-            List<OffsetPosition> identifiersPositions = lexicon.inIdentifierPatternLayoutToken(tokens);
-            List<OffsetPosition> urlPositions = lexicon.inUrlPatternLayoutToken(tokens);
+            List<OffsetPosition> journalsPositions = lexicon.tokenPositionsJournalNames(tokens);
+            List<OffsetPosition> abbrevJournalsPositions = lexicon.tokenPositionsAbbrevJournalNames(tokens);
+            List<OffsetPosition> conferencesPositions = lexicon.tokenPositionsConferenceNames(tokens);
+            List<OffsetPosition> publishersPositions = lexicon.tokenPositionsPublisherNames(tokens);
+            List<OffsetPosition> locationsPositions = lexicon.tokenPositionsLocationNames(tokens);
+            List<OffsetPosition> collaborationsPositions = lexicon.tokenPositionsCollaborationNames(tokens);
+            List<OffsetPosition> identifiersPositions = lexicon.tokenPositionsIdentifierPattern(tokens);
+            List<OffsetPosition> urlPositions = lexicon.tokenPositionsUrlPattern(tokens);
 
             String ress = FeaturesVectorCitation.addFeaturesCitation(tokens, null, journalsPositions, 
                 abbrevJournalsPositions, conferencesPositions, publishersPositions, locationsPositions,
@@ -438,14 +438,14 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                 if (tokenizations.size() == 0)
                     return null;
 
-                journalsPositions = lexicon.inJournalNamesLayoutToken(tokenizations);
-                abbrevJournalsPositions = lexicon.inAbbrevJournalNamesLayoutToken(tokenizations);
-                conferencesPositions = lexicon.inConferenceNamesLayoutToken(tokenizations);
-                publishersPositions = lexicon.inPublisherNamesLayoutToken(tokenizations);
-                locationsPositions = lexicon.inLocationNamesLayoutToken(tokenizations);
-                collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(tokenizations);
-                identifiersPositions = lexicon.inIdentifierPatternLayoutToken(tokenizations);
-                urlPositions = lexicon.inUrlPatternLayoutToken(tokenizations);
+                journalsPositions = lexicon.tokenPositionsJournalNames(tokenizations);
+                abbrevJournalsPositions = lexicon.tokenPositionsAbbrevJournalNames(tokenizations);
+                conferencesPositions = lexicon.tokenPositionsConferenceNames(tokenizations);
+                publishersPositions = lexicon.tokenPositionsPublisherNames(tokenizations);
+                locationsPositions = lexicon.tokenPositionsLocationNames(tokenizations);
+                collaborationsPositions = lexicon.tokenPositionsCollaborationNames(tokenizations);
+                identifiersPositions = lexicon.tokenPositionsIdentifierPattern(tokenizations);
+                urlPositions = lexicon.tokenPositionsUrlPattern(tokenizations);
 
                 String ress = FeaturesVectorCitation.addFeaturesCitation(tokenizations,
                         null, journalsPositions, abbrevJournalsPositions, 

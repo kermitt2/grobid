@@ -143,14 +143,14 @@ public class CitationTrainer extends AbstractTrainer {
 						pos += token.getText().length();
 					}
 
-					journalsPositions = lexicon.inJournalNamesLayoutToken(allTokens.get(i));
-	                abbrevJournalsPositions = lexicon.inAbbrevJournalNamesLayoutToken(allTokens.get(i));
-	                conferencesPositions = lexicon.inConferenceNamesLayoutToken(allTokens.get(i));
-	                publishersPositions = lexicon.inPublisherNamesLayoutToken(allTokens.get(i));
-	                locationsPositions = lexicon.inLocationNamesLayoutToken(allTokens.get(i));
-	                collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(allTokens.get(i));
-	                identifiersPositions = lexicon.inIdentifierPatternLayoutToken(allTokens.get(i));
-	                urlPositions = lexicon.inUrlPatternLayoutToken(allTokens.get(i));
+					journalsPositions = lexicon.tokenPositionsJournalNames(allTokens.get(i));
+	                abbrevJournalsPositions = lexicon.tokenPositionsAbbrevJournalNames(allTokens.get(i));
+	                conferencesPositions = lexicon.tokenPositionsConferenceNames(allTokens.get(i));
+	                publishersPositions = lexicon.tokenPositionsPublisherNames(allTokens.get(i));
+	                locationsPositions = lexicon.tokenPositionsLocationNames(allTokens.get(i));
+	                collaborationsPositions = lexicon.tokenPositionsCollaborationNames(allTokens.get(i));
+	                identifiersPositions = lexicon.tokenPositionsIdentifierPattern(allTokens.get(i));
+	                urlPositions = lexicon.tokenPositionsUrlPattern(allTokens.get(i));
 
 					String citation = FeaturesVectorCitation.addFeaturesCitation(allTokens.get(i), 
 							allLabeled.get(i), journalsPositions, abbrevJournalsPositions, 
