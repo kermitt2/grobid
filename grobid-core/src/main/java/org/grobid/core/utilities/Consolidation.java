@@ -50,7 +50,8 @@ public class Consolidation {
 
     public Consolidation(CntManager cntManager) {
         this.cntManager = cntManager;
-        client = new CrossrefClient();
+        //client = new CrossrefClient();
+        client = CrossrefClient.getInstance();
         workDeserializer = new WorkDeserializer();
     }
 
@@ -60,7 +61,7 @@ public class Consolidation {
      * could prevent the JVM from exiting
      */
     public void close() {
-        client.close();
+        //client.close();
     }
 
     /**
@@ -195,6 +196,7 @@ public class Consolidation {
             results.put(new Integer(n), null);
         }
         n = 0;
+        long threadId = Thread.currentThread().getId();
         for(BibDataSet bibDataSet : biblios) {
             final BiblioItem theBiblio = bibDataSet.getResBib();
 
@@ -242,11 +244,12 @@ public class Consolidation {
 
             try {
                 CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
-                client.<BiblioItem>pushRequest("works", doi, arguments, workDeserializer, new CrossrefRequestListener<BiblioItem>() {
+
+                client.<BiblioItem>pushRequest("works", doi, arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>() {
                     
                     @Override
                     public void onSuccess(List<BiblioItem> res) {
-                        System.out.println("Success request "+id);
+                        //System.out.println("Success request "+id);
                         //System.out.println("size of results: " + res.size());
                         if ((res != null) && (res.size() > 0) ) {
                             // we need here to post-check that the found item corresponds
@@ -264,43 +267,9 @@ public class Consolidation {
                     public void onError(int status, String message, Exception exception) {
                         LOGGER.info("ERROR ("+status+") : "+message);
                         System.out.println("ERROR ("+status+") : "+message);
+                        exception.printStackTrace();
                     }
                 });
-
-                /*client.<BiblioItem>pushRequest("works", doi, arguments, workDeserializer, requestListener);
-                if (cntManager != null)
-                    cntManager.i(ConsolidationCounters.CONSOLIDATION_PER_DOI);
-
-                synchronized (requestListener) {
-                    try {
-                        requestListener.wait(5000); // timeout after 5 seconds
-                    } catch (InterruptedException e) {
-                        LOGGER.error("Timeout error - " + ExceptionUtils.getStackTrace(e));
-                    }
-                }
-                
-                CrossrefRequestListener.Response<BiblioItem> response = requestListener.getResponse();
-                if (response == null) {
-                    LOGGER.error("No response ! Maybe timeout.");
-                    results.add(null);
-                } else if (response.hasError() || !response.hasResults()) {
-                    LOGGER.error("error: ("+response.status+") : "+response.errorMessage);
-                    results.add(null);
-                } else { // success
-                    if (StringUtils.isNotBlank(doi))
-                        LOGGER.info("Success request "+ doi);
-                    else if (StringUtils.isNotBlank(title) && StringUtils.isNotBlank(aut)) {
-                        LOGGER.info("Success request "+ title + " / " + aut);
-                    }
-                    if (cntManager != null)
-                        cntManager.i(ConsolidationCounters.CONSOLIDATION_PER_DOI_SUCCESS);
-                    List<BiblioItem> res = response.results;
-                    if ((res != null) && (res.size() > 0) ) {
-                        results.add(res.get(0));
-                    } else {
-                        results.add(null);
-                    }
-                }*/
             } catch(Exception e) {
                 LOGGER.error("Consolidation error - " + ExceptionUtils.getStackTrace(e));
                 //results.put(new Integer(id), null);
@@ -308,7 +277,7 @@ public class Consolidation {
             n++;
         }
 //System.out.println("before finish, result size is " + results.size());
-        client.finish();
+        client.finish(threadId);
 //System.out.println("after finish, result size is " + results.size());
 /*int consolidated = 0;
 for (Entry<Integer, BiblioItem> cursor : results.entrySet()) {
@@ -350,8 +319,9 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
             // some cleaning of the doi
             doi = cleanDoi(doi);
 
+            long threadId = Thread.currentThread().getId();
             CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
-            client.<BiblioItem>pushRequest("works", doi, null, workDeserializer, requestListener);
+            client.<BiblioItem>pushRequest("works", doi, null, workDeserializer, threadId, requestListener);
             if (cntManager != null)
                 cntManager.i(ConsolidationCounters.CONSOLIDATION_PER_DOI);
 
@@ -408,8 +378,9 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
             arguments.put("query.author", aut);
             arguments.put("rows", "5"); // we just request the top-one result
             
+            long threadId = Thread.currentThread().getId();
             CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
-            client.<BiblioItem>pushRequest("works", null, arguments, workDeserializer, new CrossrefRequestListener<BiblioItem>() {
+            client.<BiblioItem>pushRequest("works", null, arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>() {
                 
                 @Override
                 public void onSuccess(List<BiblioItem> res) {
