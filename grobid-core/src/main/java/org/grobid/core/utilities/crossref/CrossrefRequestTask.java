@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListener<T> implements Runnable {
 	
-	
 	protected CrossrefClient client;
 	protected CrossrefRequest<T> request;
 	
@@ -22,10 +21,7 @@ public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListen
 	
 	@Override
 	public void run() {
-		
-		try {
-				
-			client.checkFirstDone();
+		try {	
 			client.checkLimits();
 			
 			CrossrefClient.printLog(request, ".. executing");
@@ -43,12 +39,8 @@ public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListen
 	
 	@Override
 	public void onResponse(Response<T> response) {
-		client.lastResponse = response;
-			
 		if (!response.hasError())
 			client.updateLimits(response.limitIterations, response.interval);
-		
-		client.emitFirstDoneSignal();
 	}
 
 	@Override

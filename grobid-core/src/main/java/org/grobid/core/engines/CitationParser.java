@@ -223,7 +223,7 @@ if (cursor.getValue() != null) {
 consolidated++;
 } 
 }
-System.out.println("total (CrossRef JSON search API): " + consolidated + " / " + resConsolidation.size());
+System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON search API): " + consolidated + " / " + resConsolidation.size());
 
                 for(int i=0; i<results.size(); i++) {
                     BiblioItem resCitation = results.get(i).getResBib();
