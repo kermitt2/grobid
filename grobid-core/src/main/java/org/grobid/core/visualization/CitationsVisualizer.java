@@ -23,6 +23,7 @@ import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDNa
 import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination;
 
 import org.grobid.core.data.BibDataSet;
+import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.BibDataSetContext;
 import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
@@ -72,7 +73,7 @@ public class CitationsVisualizer {
     public static PDDocument annotatePdfWithCitations(PDDocument document, Document teiDoc,
             List<String> resolvedBibRefUrl) throws IOException, COSVisitorException, XPathException {
         String tei = teiDoc.getTei();
-        //ystem.out.println(tei);
+        //System.out.println(tei);
         int totalBib = 0;
         int totalMarkers1 = 0;
         int totalMarkers2 = 0;
@@ -87,8 +88,21 @@ public class CitationsVisualizer {
                  (resolvedBibRefUrl.size() > indexBib) &&
                  (resolvedBibRefUrl.get(indexBib) != null) )
                 theUrl = resolvedBibRefUrl.get(indexBib);
-            for (BoundingBox b : cit.getResBib().getCoordinates()) {
-                annotatePage(document, b.toString(), teiId, theUrl, 1.5f, false, dictionary);
+            else {
+                // by default we put the existing url, doi or arXiv link
+                BiblioItem biblio = cit.getResBib();
+                if (!StringUtils.isEmpty(biblio.getDOI())) {
+                    theUrl = "http://dx.doi.org/" + biblio.getDOI();
+                } else if (!StringUtils.isEmpty(biblio.getArXivId())) {
+                    theUrl = "http://arxiv.org/" + biblio.getArXivId();
+                } else if (!StringUtils.isEmpty(biblio.getWeb())) {
+                    theUrl = biblio.getWeb();
+                }
+            }
+            if (cit.getResBib().getCoordinates() != null) {
+                for (BoundingBox b : cit.getResBib().getCoordinates()) {
+                    annotatePage(document, b.toString(), teiId, theUrl, 1.5f, false, dictionary);
+                }
             }
             //annotating reference markers
             for (BibDataSetContext c : contexts.get(teiId)) {
@@ -130,7 +144,6 @@ public class CitationsVisualizer {
             }
         }
 
-
         LOGGER.debug("totalBib: " + totalBib);
         LOGGER.debug("totalMarkers1: " + totalMarkers1);
         LOGGER.debug("totalMarkers2: " + totalMarkers2);
@@ -156,8 +169,17 @@ public class CitationsVisualizer {
 
         Long pageNum = Long.valueOf(split[0], 10) - 1;
         PDPage page = (PDPage) document.getDocumentCatalog().getAllPages().get(pageNum.intValue());
-
         PDRectangle mediaBox = page.getMediaBox();
+        if (mediaBox == null) {
+            mediaBox = page.findMediaBox();
+            // this will look for the main media box of the page up in the PDF element hierarchy
+            if (mediaBox == null) {
+                // we tried our best given PDFBox
+                LOGGER.warn("Media box for page " + pageNum.intValue() + " not found.");
+                return;
+            }
+        }
+ 
         float height = mediaBox.getHeight();
         float lowerX = mediaBox.getLowerLeftX();
         float lowerY = mediaBox.getLowerLeftY();
@@ -301,6 +323,19 @@ public class CitationsVisualizer {
                  (resolvedBibRefUrl.size()>bibIndex) &&
                  (resolvedBibRefUrl.get(bibIndex) != null) ) {
                 jsonRef.append("\"url\": \"" + resolvedBibRefUrl.get(bibIndex) + "\", ");
+            } else {
+                // by default we put the existing url, doi or arXiv link
+                BiblioItem biblio = cit.getResBib();
+                String theUrl = null;
+                if (!StringUtils.isEmpty(biblio.getDOI())) {
+                    theUrl = "http://dx.doi.org/" + biblio.getDOI();
+                } else if (!StringUtils.isEmpty(biblio.getArXivId())) {
+                    theUrl = "http://arxiv.org/" + biblio.getArXivId();
+                } else if (!StringUtils.isEmpty(biblio.getWeb())) {
+                    theUrl = biblio.getWeb();
+                }
+                if (theUrl != null)
+                    jsonRef.append("\"url\": \"" + theUrl + "\", ");
             }
             jsonRef.append("\"pos\":[");
             boolean begin2 = true;

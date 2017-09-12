@@ -47,7 +47,7 @@ public class ConsolidationTest {
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
-			target.close();
+			//target.close();
 		}
 	}
 
@@ -69,7 +69,7 @@ public class ConsolidationTest {
 			} catch(Exception e) {
 				e.printStackTrace();
 			} finally {
-				target.close();
+				//target.close();
 			}
 		}
 	}

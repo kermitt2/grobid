@@ -1605,6 +1605,9 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        // to be sure jvm stops
+        System.exit(0);
     }
 	
 }

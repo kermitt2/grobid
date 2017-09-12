@@ -3355,7 +3355,7 @@ public class BiblioItem {
                    tei.append(" coords=\"" + LayoutTokensUtil.getCoordsString(collabTokens) + "\"");
                }
             }
-            tei.append(">").append(collaboration).append("</orgName>").append("\n");
+            tei.append(">").append(TextUtilities.HTMLEncode(collaboration)).append("</orgName>").append("\n");
             TextUtilities.appendN(tei, '\t', nbTag);
             tei.append("</author>").append("\n");
             return tei.toString();
@@ -3882,7 +3882,7 @@ public class BiblioItem {
                     // try to find the author in the first item (we know it's not empty)
                     for (Person aut2 : bib.getFullAuthors()) {
                         if (StringUtils.isNotBlank(aut2.getLastName())) {
-                            if (aut.getLastName().equals(aut2.getLastName())) {
+                            if (StringUtils.isNotBlank(aut.getLastName()) && aut.getLastName().equals(aut2.getLastName())) {
                                 // check also first name if present - at least for the initial
                                 if ( StringUtils.isNotBlank(aut2.getFirstName()) && StringUtils.isNotBlank(aut.getFirstName()) ) {
                                     // we have a match (full first name)

@@ -103,9 +103,18 @@
 							<td><span id="label">&nbsp;</span></td>
 							<td>
 								<div id="field">
-									<label class="checkbox" id="consolidateBlock">
-										<input type="checkbox" id="consolidate" name="consolidate" value="1">Consolidate</input>
-									</label>
+									<div id="checkboxes">
+										<table>
+											<tr>
+											<td><label class="checkbox" id="consolidateBlock1" style="display: inherit;">	
+												<input type="checkbox" id="consolidateHeader" name="consolidateHeader" value="1" checked="">Consolidate header</input>
+											</label></td>
+											<td><label class="checkbox" id="consolidateBlock2" style="display: none;">	
+												<input type="checkbox" id="consolidateCitations" name="consolidateCitations" value="1">Consolidate citations</input>
+											</label></td>
+											</tr>
+										</table>
+									</div>
 									<div class="fileupload fileupload-new" data-provides="fileupload" id="fileInputDiv">
 									  <div class="input-append">
 									    <div class="uneditable-input span4" style="white-space:normal;">
@@ -167,7 +176,7 @@
 							<td>
 								<div id="field2">
 									<label class="checkbox" id="consolidateBlock">
-										<input type="checkbox" id="consolidate2" name="consolidate" value="1">Consolidate</input>
+										<input type="checkbox" id="consolidate2" name="consolidateCitations" value="1">Consolidate</input>
 									</label>
 									<div class="fileupload fileupload-new" data-provides="fileupload" id="fileInputDiv2">
 									  <div class="input-append">
@@ -223,7 +232,7 @@
 							<td>
 								<div id="field3">
 									<label class="checkbox" id="consolidateBlock3">
-										<input type="checkbox" id="consolidate3" name="consolidate" value="1">Consolidate</input>
+										<input type="checkbox" id="consolidate3" name="consolidateCitations" value="1">Consolidate</input>
 									</label>
 									<div class="fileupload fileupload-new" data-provides="fileupload" id="fileInputDiv3">
 									  <div class="input-append">
@@ -232,7 +241,7 @@
 											<span class="fileupload-preview" style="white-space:normal;"></span>
 										</div>
 										<span class="">
-											
+										
 										<span class="btn btn-file" id="btn_block_3">
 											<span class="fileupload-new" id="labelFile3">Select file</span>
 											<span class="fileupload-exists">Change</span>

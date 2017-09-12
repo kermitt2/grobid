@@ -122,6 +122,7 @@ public class CrossrefClient {
 	 * @param id 			model identifier, can be null, ex: doi for a work
 	 * @param params		query parameters, can be null, ex: ?query.title=[title]&query.author=[author]
 	 * @param deserializer	json response deserializer, ex: WorkDeserializer to convert Work to BiblioItem
+	 * @param threadId		the java identifier of the thread providing the request (e.g. via Thread.currentThread().getId())
 	 * @param listener		catch response from request
 	 */
 	public <T extends Object> void pushRequest(String model, String id, Map<String, String> params, CrossrefDeserializer<T> deserializer, 
@@ -155,4 +156,5 @@ public class CrossrefClient {
 			}
 		}
 	} 
+	
 }

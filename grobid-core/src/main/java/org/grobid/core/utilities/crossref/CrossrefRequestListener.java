@@ -10,7 +10,13 @@ import java.util.List;
  */
 public class CrossrefRequestListener<T extends Object> {
 	
-	
+	public CrossrefRequestListener() {
+	}
+
+	public CrossrefRequestListener(int rank) {
+		this.rank = rank;
+	}
+
 	public static class Response<T> {
 		public int status = -1;
 		public List<T> results = null;
@@ -38,6 +44,7 @@ public class CrossrefRequestListener<T extends Object> {
 		public void setException(Exception e, CrossrefRequest<T> request) {
 			errorException = e;
 			errorMessage = e.getClass().getName()+" thrown during request execution : "+request.toString()+"\n"+e.getMessage();
+			//e.printStackTrace();	
 		}
 		
 		public int getOneStepTime() {
@@ -75,12 +82,16 @@ public class CrossrefRequestListener<T extends Object> {
 	public void notify(Response<T> response) {
 		
 		onResponse(response);
+
+		if (response == null) 
+			System.out.println("Response is null ! ");
 		
-		if (response.results != null && response.results.size() > 0)
+		if (response != null && response.results != null && response.results.size() > 0)
 			onSuccess(response.results);
 		
-		if (response.hasError())
+		if (response.hasError()) {
 			onError(response.status, response.errorMessage, response.errorException);
+		}
 		
 		currentResponse = response;
 		synchronized (this) {
@@ -94,5 +105,13 @@ public class CrossrefRequestListener<T extends Object> {
 	 */
 	public Response<T> getResponse() {
 		return currentResponse;
+	}
+
+	private int rank = -1;
+	/**
+	 * Associate the listener to a rank for identifying the response
+	 */
+	public int getRank() {
+		return rank;
 	}
 }

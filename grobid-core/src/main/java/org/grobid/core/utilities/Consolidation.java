@@ -219,7 +219,7 @@ public class Consolidation {
             Map<String, String> arguments = null;
 
             // request id
-            final int id = n;
+            //final int id = n;
 
             if (StringUtils.isNotBlank(doi)) {
                 // call based on the identified DOI
@@ -238,14 +238,14 @@ public class Consolidation {
             } 
 
             if ((doi == null) && (arguments == null)) {
-                results.put(new Integer(id), null);
+                //results.put(new Integer(n), null);
+                n++;
                 continue;
             }
 
             try {
-                CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
-
-                client.<BiblioItem>pushRequest("works", doi, arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>() {
+                //CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
+                client.<BiblioItem>pushRequest("works", doi, arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(n) {
                     
                     @Override
                     public void onSuccess(List<BiblioItem> res) {
@@ -256,7 +256,7 @@ public class Consolidation {
                             // correctly to the one requested in order to avoid false positive
                             for(BiblioItem oneRes : res) {
                                 if (postValidation(theBiblio, oneRes)) {
-                                    results.put(new Integer(id), oneRes);
+                                    results.put(new Integer(getRank()), oneRes);
                                     break;
                                 }
                             }
@@ -267,7 +267,7 @@ public class Consolidation {
                     public void onError(int status, String message, Exception exception) {
                         LOGGER.info("ERROR ("+status+") : "+message);
                         System.out.println("ERROR ("+status+") : "+message);
-                        exception.printStackTrace();
+                        //exception.printStackTrace();
                     }
                 });
             } catch(Exception e) {
@@ -384,7 +384,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                 
                 @Override
                 public void onSuccess(List<BiblioItem> res) {
-                    System.out.println("size of results: " + res.size());
+                    //System.out.println("size of results: " + res.size());
                     if ((res != null) && (res.size() > 0) ) {
                         // we need here to post-check that the found item corresponds
                         // correctly to the one requested in order to avoid false positive

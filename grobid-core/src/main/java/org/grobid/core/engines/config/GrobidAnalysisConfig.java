@@ -43,7 +43,7 @@ public class GrobidAnalysisConfig {
     private boolean consolidateCitations = false;
 
     // if consolidate header
-    private boolean consolidateHeader = false;
+    private boolean consolidateHeader = true;
 
 
     /// === TEI-specific settings ==
