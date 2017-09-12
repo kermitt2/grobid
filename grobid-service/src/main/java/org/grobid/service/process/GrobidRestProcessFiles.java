@@ -173,7 +173,8 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public static Response processStatelessFulltextDocument(final InputStream inputStream,
-                                                            final boolean consolidate,
+                                                            final boolean consolidateHeader,
+                                                            final boolean consolidateCitations,
                                                             final int startPage,
                                                             final int endPage,
                                                             final boolean generateIDs,
@@ -194,8 +195,8 @@ public class GrobidRestProcessFiles {
                 engine = Engine.getEngine(isparallelExec);
                 GrobidAnalysisConfig config =
                         GrobidAnalysisConfig.builder()
-                                .consolidateHeader(consolidate)
-                                .consolidateCitations(false)
+                                .consolidateHeader(consolidateHeader)
+                                .consolidateCitations(consolidateCitations)
                                 .startPage(startPage)
                                 .endPage(endPage)
                                 .generateTeiIds(generateIDs)
@@ -256,7 +257,8 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public static Response processStatelessFulltextAssetDocument(final InputStream inputStream,
-                                                                 final boolean consolidate,
+                                                                 final boolean consolidateHeader,
+                                                                 final boolean consolidateCitations,
                                                                  final int startPage,
                                                                  final int endPage,
                                                                  final boolean generateIDs) {
@@ -280,8 +282,8 @@ public class GrobidRestProcessFiles {
                 engine = Engine.getEngine(isparallelExec);
                 GrobidAnalysisConfig config =
                         GrobidAnalysisConfig.builder()
-                                .consolidateHeader(consolidate)
-                                .consolidateCitations(false)
+                                .consolidateHeader(consolidateHeader)
+                                .consolidateCitations(consolidateCitations)
                                 .startPage(startPage)
                                 .endPage(endPage)
                                 .generateTeiIds(generateIDs)
@@ -611,6 +613,8 @@ public class GrobidRestProcessFiles {
      */
     public static Response processPDFAnnotation(final InputStream inputStream,
                                                 final String fileName,
+                                                final boolean consolidateHeader,
+                                                final boolean consolidateCitations,
                                                 final GrobidRestUtils.Annotation type) {
         LOGGER.debug(methodLogIn());
         Response response;
@@ -625,7 +629,7 @@ public class GrobidRestProcessFiles {
             if (originFile == null) {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
-                out = annotate(originFile, isParallelExec, type, engine);
+                out = annotate(originFile, isParallelExec, type, engine, consolidateHeader, consolidateCitations);
 
                 if (out != null) {
                     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -655,7 +659,13 @@ public class GrobidRestProcessFiles {
             response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
             IOUtilities.removeTempFile(originFile);
-            IOUtils.closeQuietly(out);
+            //IOUtils.closeQuietly(out);
+            try {
+                out.close();
+            } catch(IOException e) {
+                LOGGER.error("An unexpected exception occurs. ", e);
+                response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+            }
 
             if (isParallelExec && engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
@@ -673,7 +683,9 @@ public class GrobidRestProcessFiles {
      * @param inputStream the data of origin PDF
      * @return a response object containing the JSON annotations
      */
-    public static Response processPDFReferenceAnnotation(final InputStream inputStream) {
+    public static Response processPDFReferenceAnnotation(final InputStream inputStream, 
+                                                final boolean consolidateHeader,
+                                                final boolean consolidateCitations) {
         LOGGER.debug(methodLogIn());
         Response response = null;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
@@ -686,6 +698,8 @@ public class GrobidRestProcessFiles {
             elementWithCoords.add("biblStruct");
             GrobidAnalysisConfig config = new GrobidAnalysisConfig
                     .GrobidAnalysisConfigBuilder()
+                    .generateTeiCoordinates(elementWithCoords)
+                    .consolidateCitations(consolidateCitations)
                     .generateTeiCoordinates(elementWithCoords)
                     .build();
 
@@ -815,7 +829,9 @@ public class GrobidRestProcessFiles {
     }
 
     protected static PDDocument annotate(File originFile, boolean isparallelExec,
-                                       final GrobidRestUtils.Annotation type, Engine engine) throws Exception {
+                                       final GrobidRestUtils.Annotation type, Engine engine,
+                                       final boolean consolidateHeader,
+                                       final boolean consolidateCitations) throws Exception {
         // starts conversion process
         PDDocument outputDocument = null;
         // list of TEI elements that should come with coordinates
@@ -825,15 +841,19 @@ public class GrobidRestProcessFiles {
 
         GrobidAnalysisConfig config = new GrobidAnalysisConfig
                 .GrobidAnalysisConfigBuilder()
+                .consolidateHeader(consolidateHeader)
+                .consolidateCitations(consolidateCitations)
                 .generateTeiCoordinates(elementWithCoords)
                 .build();
 
         Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-
-        try (PDDocument document = PDDocument.load(originFile)) {
+        //try 
+        {
+            PDDocument document = PDDocument.load(originFile);
             //If no pages, skip the document
             if (document.getNumberOfPages() > 0) {
-                DocumentSource documentSource = DocumentSource.fromPdf(originFile);
+                //DocumentSource documentSource = DocumentSource.fromPdf(originFile);
+                DocumentSource documentSource = teiDoc.getDocumentSource();
                 if (isparallelExec) {
                     outputDocument = dispatchProcessing(type, document, documentSource, teiDoc);
                     GrobidPoolingFactory.returnEngine(engine);

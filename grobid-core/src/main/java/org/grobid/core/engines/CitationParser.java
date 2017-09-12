@@ -63,9 +63,9 @@ public class CitationParser extends AbstractParser {
 
         // some cleaning
         input = UnicodeUtil.normaliseText(input);
-        input = TextUtilities.dehyphenize(input);
-        input = input.replace("\n", " ");
-        input = input.replaceAll("\\p{Cntrl}", " ").trim();
+        //input = TextUtilities.dehyphenize(input);
+        //input = input.replace("\n", " ");
+        //input = input.replaceAll("\\p{Cntrl}", " ").trim();
 
         List<LayoutToken> tokens = analyzer.tokenizeWithLayoutToken(input);
         return processing(tokens, consolidate);
@@ -80,7 +80,7 @@ public class CitationParser extends AbstractParser {
         try {
             List<String> citationBlocks = new ArrayList<>();
 
-            tokens = LayoutTokensUtil.dehyphenize(tokens);
+            //tokens = LayoutTokensUtil.dehyphenize(tokens);
 
             List<OffsetPosition> journalsPositions = lexicon.tokenPositionsJournalNames(tokens);
             List<OffsetPosition> abbrevJournalsPositions = lexicon.tokenPositionsAbbrevJournalNames(tokens);
@@ -190,7 +190,7 @@ public class CitationParser extends AbstractParser {
         // consolidation: if selected, is not done individually for each citation but 
         // in a second stage for all citations
         for (LabeledReferenceResult ref : references) {
-            BiblioItem bib = processing(TextUtilities.dehyphenize(ref.getReferenceText()), false);
+            BiblioItem bib = processing(ref.getReferenceText(), false);
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
@@ -211,15 +211,13 @@ public class CitationParser extends AbstractParser {
                 throw new GrobidException(
                 "An exception occured while running consolidation on bibliographical references.", e);
             } finally {
-                consolidator.close();
+                //consolidator.close();
             }
             if (resConsolidation != null) {
 
 int consolidated = 0;
 for (Entry<Integer, BiblioItem> cursor : resConsolidation.entrySet()) {
-//System.out.println("item: " + cursor.getKey());
 if (cursor.getValue() != null) {
-//System.out.println(cursor.getValue().toTEI(1));
 consolidated++;
 } 
 }
@@ -266,7 +264,7 @@ System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON 
 
 
     /**
-     * Extract results from a labelled header.
+     * Extract results from a labeled sequence.
      *
      * @param result            result
      * @param volumePostProcess whether post process volume
@@ -292,7 +290,9 @@ System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON 
             Engine.getCntManager().i(clusterLabel);
 
             //String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            String clusterContent = LayoutTokensUtil.toText(cluster.concatTokens());
+            //String clusterContent = LayoutTokensUtil.toText(cluster.concatTokens());
+            String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+            //String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
             if (clusterLabel.equals(TaggingLabels.CITATION_TITLE)) {
                 if (biblio.getTitle() == null)
                     biblio.setTitle(clusterContent);
@@ -329,7 +329,8 @@ System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON 
                     biblio.setBookTitle(clusterContent);
                 }
             } else if (clusterLabel.equals(TaggingLabels.CITATION_PAGES)) {
-                biblio.setPageRange(clusterContent);
+                String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
+                biblio.setPageRange(clusterNonDehypenizedContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_PUBLISHER)) {
                 biblio.setPublisher(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_COLLABORATION)) {
@@ -365,10 +366,12 @@ System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON 
                 else    
                    biblio.setNote(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_PUBNUM)) {
-                biblio.setPubnum(clusterContent);
+                String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
+                biblio.setPubnum(clusterNonDehypenizedContent);
                 biblio.checkIdentifier();
             } else if (clusterLabel.equals(TaggingLabels.CITATION_WEB)) {
-                biblio.setWeb(clusterContent);
+                String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
+                biblio.setWeb(clusterNonDehypenizedContent);
             }
         }
 
@@ -397,7 +400,7 @@ System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON 
             throw new GrobidException(
                     "An exception occured while running Grobid.", e);
         } finally {
-            consolidator.close();
+            //consolidator.close();
         }
         return resCitation;
     }

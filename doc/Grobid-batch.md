@@ -3,25 +3,28 @@
 For the best performance, benchmarking and for exploiting multithreading, we recommand to use the service mode, see [Use GROBID as a service](Grobid-service.md), and not the batch mode.
 
 ## Using the batch
-Go under the `grobid/grobid-core/target` directory where the core library has been built:
+
+Go under the `grobid/grobid-core/` directory where the core library has been built:
 ```bash
-> cd grobid-core/target
+> cd grobid/grobid-core/
 ```
 
-The following command display an help for the batch commands:
+The following command display some help for the batch commands:
 ```bash
-> java -jar grobid-core-`<current version>`.one-jar.jar -h
+> java -jar target/grobid-core-`<current version>`.one-jar.jar -h
 ```
 
-The available batch commands are listed bellow. For all the commands, -Xmx1024m is used to set the JVM memory to avoid *OutOfMemoryException* given into the current size of the Grobid models.
+Be sure to replace `<current version>` with the current version of GROBID that you have installed and built.
 
+The available batch commands are listed bellow. For those commands, at least `-Xmx1G` is used to set the JVM memory to avoid *OutOfMemoryException* given the current size of the Grobid models and the crazyness of some PDF. For complete fulltext processing, which involve all the GROBID models, `-Xmx4G` is recommended (although allocating less memory is usually fine). 
 
 ### processHeader
-Will extract and normalize the header of pdf files. The needed parameters for that command are:
+'processHeader' batch command will extract, structure and normalise in TEI the header of pdf files. The output is a TEI file corresponding to the structured article header.
+The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
-* -dIn: path to the directory of input pdf files
+* -dIn: path to the directory of input PDF files
 
 * -dOut: path to the output directory (if omitted the current directory)
 
@@ -29,17 +32,17 @@ Will extract and normalize the header of pdf files. The needed parameters for th
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -r -exe processHeader 
+> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH ../grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -r -exe processHeader 
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
 
 ### processFullText
-Will extract and normalize the full text of pdf files. The needed parameters for that command are:
+`processFullText` batch command will extract, structure and normalize in TEI the full text of pdf files. The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
-* -dIn: path to the directory of input pdf files
+* -dIn: path to the directory of input PDF files
 
 * -dOut: path to the output directory (if omitted the current directory)
 
@@ -51,77 +54,77 @@ Will extract and normalize the full text of pdf files. The needed parameters for
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processFullText 
+> java -Xmx4G -jar target/grobid-core-0.4.2.one-jar.jar -gH ../grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processFullText 
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
 
 ### processDate
-Will process, extract and format the date given in input. The needed parameters for that command are:
+`processDate` batch command will parse and format in XML/TEI the date given as string input. The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
-* -s: the input date to format
+* -s: the input date to format as raw string
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processDate -s "some date to extract and format"
+> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -exe processDate -s "some date to extract and format"
 ```
 
 ### processAuthorsHeader
-Will process, extract and format the authors given in input. The needed parameters for that command are:
+`processAuthorsHeader` batch command will parse and format in TEI the authors given in input. The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
-* -s: the input
+* -s: the input header author sequence as raw string
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processAuthorsHeader -s "some authors"
+> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -exe processAuthorsHeader -s "some authors"
 ```
 
 ### processAuthorsCitation
-Will process, extract and format the authors given in input. The needed parameters for that command are:
+`processAuthorsCitation` batch command will parse and format in TEI the authors given in input. The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
-* -s: the input
+* -s: the input citation author sequence as raw string 
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processAuthorsCitation -s "some authors"
+> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -exe processAuthorsCitation -s "some authors"
 ```
 
 ### processAffiliation
-Will process, extract and format the affiliation given in input. The needed parameters for that command are:
+`processAffiliation` batch command will parse and format in TEI the affiliation/address given in input. The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
-* -s: the input
+* -s: the input affiliation/address as raw string
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processAffiliation -s "some affiliation"
+> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -exe processAffiliation -s "some affiliation"
 ```
 
 ### processRawReference
-Will process, extract and format the raw reference given in input. The needed parameters for that command are:
+`processRawReference` batch command will parse and format in TEI the raw bibliographical reference given in input. The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
-* -s: the input
+* -s: the input bibliographical reference in raw text
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -exe processRawReference -s "a reference string"
+> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -exe processRawReference -s "a reference string"
 ```
 
 ### processReferences
-Will process, extract and format all the references in the PDF files present in the directory given in input. The needed parameters for that command are:
+`processRawReference` batch command will process, extract and format in TEI all the references in the PDF files present in the directory given in input. The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
-* -dIn: path to the directory of input pdf files
+* -dIn: path to the directory of input PDF files
 
 * -dOut: path to the output directory (if omitted the current directory)
 
@@ -129,13 +132,13 @@ Will process, extract and format all the references in the PDF files present in 
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processReferences
+> java -Xmx2G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processReferences
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
 
 ### processCitationPatentTEI
-Will process, extract and format the citations in the patents encoded in TEI given in input. The needed parameters for that command are:
+`processCitationPatentTEI` batch command will process, extract and format the citations in the patents encoded in TEI given in input (we assume here the TEI PDM format for patent "fulltexts"). The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
@@ -145,13 +148,13 @@ Will process, extract and format the citations in the patents encoded in TEI giv
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTEI
+> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTEI
 ```
 
 WARNING: extension of the TEI files to be processed must be .tei or .tei.xml
 
 ### processCitationPatentST36
-Will process, extract and format the citations in the patents encoded in ST.36 given in input. The needed parameters for that command are:
+`processCitationPatentST36` batch command will process, extract and format the citations in the patents encoded in ST.36 given in input. The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
@@ -161,13 +164,13 @@ Will process, extract and format the citations in the patents encoded in ST.36 g
 
 Example:
 ```bash
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentST36
+> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentST36
 ```
 
 WARNING: extension of the ST.36 files to be processed must be .xml
 
 ### processCitationPatentTXT
-Will process, extract and format the citations in the patents encoded in UTF-8 text given in input. The needed parameters for that command are:
+`processCitationPatentTXT` batch command will process, extract and format the citations in the patents encoded in UTF-8 text given in input. The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
@@ -177,13 +180,13 @@ Will process, extract and format the citations in the patents encoded in UTF-8 t
 
 Example:
 ```
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTXT
+> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTXT
 ```
 
 WARNING: extension of the text files to be processed must be .txt, and expected encoding is UTF-8
 
 ### processCitationPatentPDF
-Will process, extract and format the citations in the patents available in pdf given in input. The needed parameters for that command are:
+`processCitationPatentPDF` batch command will process, extract and format the citations in the patents available in pdf given in input. The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
@@ -193,13 +196,13 @@ Will process, extract and format the citations in the patents available in pdf g
 
 Example:
 ```
-> java -Xmx1024m -jar grobid-core-0.3.0.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentPDF
+> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentPDF
 ```
 
 WARNING: extension of the text files to be processed must be .pdf 
 
 ### createTraining
-Will generate the training data file for all the models from PDF files. The needed parameters for that command are:
+`createTraining` batch command will generate the GROBID training data file for all the models from PDF files. The needed parameters for that command are:
 
 * -gH: path to grobid-home directory
 
@@ -209,8 +212,26 @@ Will generate the training data file for all the models from PDF files. The need
 
 Example:
 ```bash
-> java -Xmx1024m -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTraining
+> java -Xmx4G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTraining
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
 
+
+### processPDFAnnotation
+The batch command `processPDFAnnotation` will annotations add to the PDF. These annotations correspond to the citation information, more precisely PDF "goto" annotations for reference callout in the article text and URL link annotations for the bibliographical section (by default to the DOI registry when the DOI is recognized, to the arXiv articles when the arXiv id is recognised or to the indicated URL if present in the reference). 
+
+The needed parameters for that command are:
+
+* -gH: path to grobid-home directory
+
+* -dIn: path to the directory of input PDF files
+
+* -dOut: path to save the PDF result files
+
+Example:
+```
+>  java -Xmx2G -jar target/grobid-core-0.4.2.one-jar.jar -gH ../grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -r -exe processPDFAnnotation
+```
+
+WARNING: extension of the text files to be processed must be .pdf 
