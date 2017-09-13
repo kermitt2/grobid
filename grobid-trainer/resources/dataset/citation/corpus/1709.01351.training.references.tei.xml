@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><orgName type="collaboration">ATLAS Collaboration</orgName>, <title level="a">The ATLAS Experiment at the CERN Large Hadron Collider</title>, <title level="j">JINST</title> <biblScope unit="volume">3</biblScope> (<date>2008</date>) <biblScope unit="page">S08003</biblScope></bibl>
+	<bibl><orgName type="collaboration">CMS Collaboration</orgName>, <title level="a">The CMS experiment at the CERN LHC</title>, <title level="j">JINST</title> <biblScope unit="volume">3</biblScope> (<date>2008</date>) <biblScope unit="page">S08004</biblScope></bibl>
+	<bibl><orgName type="collaboration">ATLAS Collaboration</orgName>, <title level="m">Reconstruction, Energy Calibration, and Identification of Hadronically De-cayingTau Leptons in the ATLAS Experiment for Run -2of the LHC</title> ,<idno type="report">ATL -PHYS-PUB-2015-045</idno>[ <ptr type="web">http://cds.cern.ch/record/2064383</ptr>].</bibl>
+	<bibl><orgName type="collaboration">ATLAS Collaboration</orgName>, <title level="m">Measurement of the tau lepton reconstruction and identification perfor-mancein the ATLAS experiment using pp collisions at √ s= 13TeV</title> , <idno type="report">ATLAS -CONF -2017-029</idno>[<ptr type="web">http: //cds.cern.ch/record/2261772</ptr>].</bibl>
+	<bibl><orgName type="collaboration">CMS Collaboration</orgName>, <title level="a">Performance of reconstruction and identification of tau leptons in their decays to hadronsand tau neutrino in LHC Run -2</title>,<idno type="report">CMS -PAS-TAU-16-002</idno>[ <ptr type="web">http://cds.cern.ch/record/2196972</ptr>].</bibl>
+	<bibl><orgName type="collaboration">ATLAS Collaboration</orgName>, <title level="a">Reconstruction of hadronic decay products of tau leptons with the ATLAS experiment</title>,<title level="j">Eur .Phys .J .C</title> <biblScope unit="volume">76</biblScope> ( <date>2016</date>)<biblScope unit="page">295</biblScope> [ <idno type="arxiv">arXiv:1512.05955</idno>].</bibl>
+	<bibl><orgName type="collaboration">CMS Collaboration</orgName>, <title level="a">Reconstruction and identification of τ lepton decays to hadrons and ν τ at CMS</title>, <title level="j">JINST</title><biblScope unit="volume">11</biblScope> ( <date>2016</date>)<biblScope unit="page">P01019</biblScope> [ <idno type="arxiv">arXiv:1510.07488</idno>].</bibl>
+	<bibl><orgName type="collaboration">CMS Collaboration</orgName>, <title level="m">Tau-Id performance with full 2016 dataset using Z → τ µ τ h events</title>, <idno type="report">CMS-DP-2017-002</idno>[ <ptr type="web">http://cds.cern.ch/record/2243476</ptr>].</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>
