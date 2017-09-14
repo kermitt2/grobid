@@ -9,6 +9,7 @@ import org.grobid.core.data.BibDataSet;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.trainer.Stats;
 import org.grobid.trainer.sax.NLMHeaderSaxHandler;
 import org.grobid.trainer.sax.FieldExtractSaxHandler;
@@ -1499,9 +1500,10 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 	
 	private static String basicNormalizationFullText(String string, String fieldName) {
 		string = string.trim();
+		string = UnicodeUtil.normaliseText(string);
 		string = string.replace("\n", " ");
 		string = string.replace("\t", " ");
-		string = string.replace("_", " ");
+		string = string.replaceAll("_", " ");
 		string = string.replace("\u00A0", " ");
 		if (fieldName.equals("reference_figure")) {
 			string = string.replace("figure", "").replace("Figure", "").replace("fig.", "").replace("Fig.", "").replace("fig", "").replace("Fig", "");
