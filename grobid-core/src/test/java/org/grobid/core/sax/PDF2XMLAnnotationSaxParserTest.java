@@ -15,12 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.easymock.EasyMock.createMock;
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-/**
- * 
- */
 public class PDF2XMLAnnotationSaxParserTest {
     SAXParserFactory spf = SAXParserFactory.newInstance();
 
@@ -45,9 +43,10 @@ public class PDF2XMLAnnotationSaxParserTest {
         p.parse(is, target);
 
         List<PDFAnnotation> pdfAnnotations = target.getPDFAnnotations();
-		System.out.println(pdfAnnotations.size());
+//		System.out.println(pdfAnnotations.size());
         assertTrue(pdfAnnotations.size() > 0);
-		
+        assertThat(pdfAnnotations, hasSize(520));
+
 		
     }
 
