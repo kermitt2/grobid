@@ -874,7 +874,7 @@ public class Lexicon {
 	/**
      * Soft look-up in person title gazetteer for a given string with token positions
      */
-    public List<OffsetPosition> tokenPositionsPersonTitleNames(String s) {
+    public List<OffsetPosition> tokenPositionsPersonTitle(String s) {
         if (personTitlePattern == null) {
             initPersonTitles();
         }
@@ -886,7 +886,7 @@ public class Lexicon {
      * Soft look-up in person title gazetteer for a given list of LayoutToken objects
      * with token positions
      */
-    public List<OffsetPosition> tokenPositionsPersonTitleNames(List<LayoutToken> s) {
+    public List<OffsetPosition> tokenPositionsPersonTitle(List<LayoutToken> s) {
         if (personTitlePattern == null) {
             initPersonTitles();
         }

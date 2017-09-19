@@ -129,7 +129,7 @@ public class NameHeaderTrainer extends AbstractTrainer {
 						pos += token.getText().length();
 					}
 
-					titlePositions = Lexicon.getInstance().tokenPositionsPersonTitleNames(allTokens.get(i));
+					titlePositions = Lexicon.getInstance().tokenPositionsPersonTitle(allTokens.get(i));
             		suffixPositions = Lexicon.getInstance().tokenPositionsPersonSuffix(allTokens.get(i));
 
 					final String names = FeaturesVectorName.addFeaturesName(allTokens.get(i), 
