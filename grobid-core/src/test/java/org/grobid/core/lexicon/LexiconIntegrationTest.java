@@ -157,7 +157,7 @@ public class LexiconIntegrationTest {
     @Test
     public void testGetPositionInOrgForm() throws Exception {
         final String input = "Matusa Inc. was bought by Bayer";
-        final List<OffsetPosition> positions = target.charPositionsOrgFormNames(input);
+        final List<OffsetPosition> positions = target.charPositionsOrgForm(input);
 
         assertThat(positions, hasSize(1));
         assertThat(positions.get(0).start, is(7));
@@ -169,7 +169,7 @@ public class LexiconIntegrationTest {
         final String input = "Matusa Inc. was bought by Bayer";
         List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
 
-        final List<OffsetPosition> positions = target.charPositionsOrgFormNames(tokenisedInput);
+        final List<OffsetPosition> positions = target.charPositionsOrgForm(tokenisedInput);
 
         assertThat(positions, hasSize(1));
         assertThat(positions.get(0).start, is(2));
@@ -207,7 +207,7 @@ public class LexiconIntegrationTest {
     @Test
     public void testGetPositionInPersonTitleNames() throws Exception {
         final String input = "The president had a meeting with the vice president, duke and cto of the company.";
-        final List<OffsetPosition> positions = target.charPositionsPersonTitleNames(input);
+        final List<OffsetPosition> positions = target.charPositionsPersonTitle(input);
 
         assertThat(positions, hasSize(4));
         assertThat(positions.get(0).start, is(4));
@@ -224,7 +224,7 @@ public class LexiconIntegrationTest {
     public void testGetPositionInPersonTitleNames_tokenised() throws Exception {
         final String input = "The president had a meeting with the vice president, duke and cto of the company.";
         List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
-        final List<OffsetPosition> positions = target.charPositionsPersonTitleNames(tokenisedInput);
+        final List<OffsetPosition> positions = target.charPositionsPersonTitle(tokenisedInput);
 
         assertThat(positions, hasSize(4));
         assertThat(positions.get(0).start, is(2));

@@ -764,7 +764,7 @@ public class Lexicon {
 	/**
      * Soft look-up in organisation form name gazetteer for a given string with token positions
      */
-    public List<OffsetPosition> tokenPositionsOrgFormNames(String s) {
+    public List<OffsetPosition> tokenPositionsOrgForm(String s) {
         if (orgFormPattern == null) {
             initOrgForms();
         }
@@ -776,7 +776,7 @@ public class Lexicon {
      * Soft look-up in organisation form name gazetteer for a given list of LayoutToken objects
      * with token positions
      */
-    public List<OffsetPosition> tokenPositionsOrgFormNames(List<LayoutToken> s) {
+    public List<OffsetPosition> tokenPositionsOrgForm(List<LayoutToken> s) {
         if (orgFormPattern == null) {
             initOrgForms();
         }
@@ -791,7 +791,7 @@ public class Lexicon {
      * @param s the input string
      * @return a list of positions referring to the character position in the input string
      */
-    public List<OffsetPosition> charPositionsOrgFormNames(String s) {
+    public List<OffsetPosition> charPositionsOrgForm(String s) {
         if (orgFormPattern == null) {
             initOrgForms();
         }
@@ -806,7 +806,7 @@ public class Lexicon {
      * @param s the input list of LayoutToken
      * @return a list of positions referring to the character position in the input sequence
      */
-    public List<OffsetPosition> charPositionsOrgFormNames(List<LayoutToken> s) {
+    public List<OffsetPosition> charPositionsOrgForm(List<LayoutToken> s) {
         if (orgFormPattern == null) {
             initOrgForms();
         }
@@ -913,7 +913,7 @@ public class Lexicon {
      * @param s the input string
      * @return a list of positions referring to the character position in the input string
      */
-    public List<OffsetPosition> charPositionsPersonTitleNames(String s) {
+    public List<OffsetPosition> charPositionsPersonTitle(String s) {
         if (personTitlePattern == null) {
             initPersonTitles();
         }
@@ -929,7 +929,7 @@ public class Lexicon {
      * @param s the input list of LayoutToken
      * @return a list of positions referring to the character position in the input sequence
      */
-    public List<OffsetPosition> charPositionsPersonTitleNames(List<LayoutToken> s) {
+    public List<OffsetPosition> charPositionsPersonTitle(List<LayoutToken> s) {
         if (personTitlePattern == null) {
             initPersonTitles();
         }
