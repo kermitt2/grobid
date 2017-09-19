@@ -15,6 +15,7 @@ import org.grobid.core.document.DocumentSource;
 import org.grobid.core.document.TEIFormatter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.SegmentationLabels;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
@@ -1130,7 +1131,7 @@ public class HeaderParser extends AbstractParser {
                     if (biblio.getAuthors() != null) {
                         if (addSpace) {
                             biblio.setAuthors(biblio.getAuthors() + " " + s2);
-                            biblio.addAuthorsToken(new LayoutToken(" "));
+                            biblio.addAuthorsToken(new LayoutToken(" ", TaggingLabels.HEADER_AUTHOR));
                         } else {
                             biblio.setAuthors(biblio.getAuthors() + s2);
                         }
@@ -1141,10 +1142,10 @@ public class HeaderParser extends AbstractParser {
                     if (biblio.getAuthors() != null) {
                         if (addSpace) {
                             biblio.setAuthors(biblio.getAuthors() + " \n" + s2);
-                            biblio.addAuthorsToken(new LayoutToken(" ")).addAuthorsToken(new LayoutToken("\n"));
+                            biblio.addAuthorsToken(new LayoutToken(" ", TaggingLabels.HEADER_AUTHOR)).addAuthorsToken(new LayoutToken("\n", TaggingLabels.HEADER_AUTHOR));
                         } else {
                             biblio.setAuthors(biblio.getAuthors() + "\n" + s2);
-                            biblio.addAuthorsToken(new LayoutToken("\n"));
+                            biblio.addAuthorsToken(new LayoutToken("\n", TaggingLabels.HEADER_AUTHOR));
                         }
                     } else {
                         biblio.setAuthors(s2);
