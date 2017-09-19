@@ -17,13 +17,12 @@
 
 package org.grobid.core.analyzers;
 
-import org.apache.lucene.analysis.Analyzer;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.UnicodeUtil;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 	
 /**
@@ -31,8 +30,7 @@ import java.util.StringTokenizer;
  *
  * @author Patrice Lopez
  */
-
-public class GrobidDefaultAnalyzer implements org.grobid.core.analyzers.Analyzer {
+public class GrobidDefaultAnalyzer implements Analyzer {
 
 	private static volatile GrobidDefaultAnalyzer instance;
 
