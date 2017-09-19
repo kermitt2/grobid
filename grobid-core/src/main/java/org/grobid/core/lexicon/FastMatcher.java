@@ -92,12 +92,14 @@ public final class FastMatcher {
         return nbTerms;
     }
 
+
     /**
-     * Load a term to the fast matcher, ignore the delimiters 
+     * Load a term to the fast matcher, by default the standard delimiters will be ignored
      */
     public int loadTerm(String term) {
         return loadTerm(term, true);
     }
+
 
     /**
      * Load a term to the fast matcher
@@ -150,7 +152,7 @@ public final class FastMatcher {
      * @param text: the text to be processed
      * @return the list of offset positions of the matches, an empty list if no match have been found
      */
-    public List<OffsetPosition> matcher(String text) {
+    public List<OffsetPosition> matchToken(String text) {
         List<OffsetPosition> results = new ArrayList<OffsetPosition>();
         List<Integer> startPos = new ArrayList<Integer>();
         List<Integer> lastNonSeparatorPos = new ArrayList<Integer>();
@@ -240,13 +242,13 @@ public final class FastMatcher {
      * @param tokens: the text to be processed
      * @return the list of offset positions of the matches, an empty list if no match have been found
      */
-    public List<OffsetPosition> matcher(List<String> tokens) {
+    /*public List<OffsetPosition> matcher(List<String> tokens) {
         StringBuilder text = new StringBuilder();
         for (String token : tokens) {
             text.append(processToken(token));
         }
         return matcher(text.toString());
-    }
+    }*/
 
     /**
      * Identify terms in a piece of text and gives corresponding token positions.
@@ -255,8 +257,8 @@ public final class FastMatcher {
      * @param tokens the text to be processed as a list of LayoutToken objects
      * @return the list of offset positions of the matches, an empty list if no match have been found
      */
-    public List<OffsetPosition> matcherLayoutToken(List<LayoutToken> tokens) {
-        return matcherLayoutToken(tokens, true);
+    public List<OffsetPosition> matchLayoutToken(List<LayoutToken> tokens) {
+        return matchLayoutToken(tokens, true);
     }
 
     /**
@@ -267,7 +269,7 @@ public final class FastMatcher {
      * @param ignoreDelimiters if true, ignore the delimiters in the matching process
      * @return the list of offset positions of the matches, an empty list if no match have been found
      */
-    public List<OffsetPosition> matcherLayoutToken(List<LayoutToken> tokens, boolean ignoreDelimiters) {
+    public List<OffsetPosition> matchLayoutToken(List<LayoutToken> tokens, boolean ignoreDelimiters) {    
         if (CollectionUtils.isEmpty(tokens)) {
             return new ArrayList<OffsetPosition>();
         }
@@ -349,21 +351,18 @@ public final class FastMatcher {
     }
 
     /**
-     * This is a modified version of matcher().
      *
-     * When given a text it returns the position within the text where the match occur.
+     * Gives the character positions within a text where matches occur.
      * <p>
-     * Ideally by iterating over the OffsetPosition and applying substring would be possible to retrieve all
-     * the matches.
+     * By iterating over the OffsetPosition and applying substring, we get all the matches.
      * <p>
-     * The method will match all the tokens present in the lexicon, e.g. if both 'The Bronx' and 'Bronx' are present they will be
-     * both identified (even if they overlap)
+     * All the matches are returned.
      *
      * @param text: the text to be processed
      * @return the list of offset positions of the matches referred to the input string, an empty
      * list if no match have been found
      */
-    public List<OffsetPosition> match(String text) {
+    public List<OffsetPosition> matchCharacter(String text) {
         List<OffsetPosition> results = new ArrayList<>();
         List<Integer> startPosition = new ArrayList<>();
         List<Integer> lastNonSeparatorPos = new ArrayList<>();
@@ -381,10 +380,10 @@ public final class FastMatcher {
                 continue;
             }
             //ignore tags
-            if ((token.charAt(0) == '<') && (token.charAt(token.length() - 1) == '>')) {
+            /*if ((token.charAt(0) == '<') && (token.charAt(token.length() - 1) == '>')) {
                 currentPos += token.length();
                 continue;
-            }
+            }*/
             token = token.toLowerCase();
 
             // we try to complete opened matching
@@ -446,19 +445,17 @@ public final class FastMatcher {
         return results;
     }
 
-    /**
-     * This is a modified version of matcher().
+   /**
      *
-     * When given a tokenized text it returns the index position within the list where the match occur.
+     * Gives the character positions within a tokenized text where matches occur.
      * <p>
-     * The method will match all the tokens present in the lexicon, e.g. if both 'The Bronx' and 'Bronx' are present they will be
-     * both identified (even if they overlap)
+     * All the matches are returned.
      *
-     * @param tokens: the tokenized text to be processed
-     * @return the list of index positions of the matches referred to the input list, an empty
+     * @param tokens the text to be processed as a list of LayoutToken objects
+     * @return the list of offset positions of the matches referred to the input string, an empty
      * list if no match have been found
      */
-    public List<OffsetPosition> match(List<String> tokens) {
+    public List<OffsetPosition> matchCharacterLayoutToken(List<LayoutToken> tokens) {
         List<OffsetPosition> results = new ArrayList<>();
         List<Integer> startPosition = new ArrayList<>();
         List<Integer> lastNonSeparatorPos = new ArrayList<>();
@@ -466,21 +463,21 @@ public final class FastMatcher {
 
         int currentPos = 0;
 
-        for (String token : tokens) {
-            if (token.equals(" ")) {
+        for (LayoutToken token : tokens) {
+            if (token.getText().equals(" ")) {
                 currentPos++;
                 continue;
             }
-            if (delimiters.indexOf(token) != -1) {
+            if (delimiters.indexOf(token.getText()) != -1) {
                 currentPos++;
                 continue;
             }
             //ignore tags
-            if ((token.charAt(0) == '<') && (token.charAt(token.length() - 1) == '>')) {
+            /*if ((token.charAt(0) == '<') && (token.charAt(token.length() - 1) == '>')) {
                 currentPos++;
                 continue;
-            }
-            token = token.toLowerCase();
+            }*/
+            String tokenString = token.getText().toLowerCase();
 
             // we try to complete opened matching
             int i = 0;
@@ -490,7 +487,7 @@ public final class FastMatcher {
 
             // we check whether the current token matches as continuation of a previous match.
             for (Map currentMatch : currentMatches) {
-                Map childMatches = (Map) currentMatch.get(token);
+                Map childMatches = (Map) currentMatch.get(tokenString);
                 if (childMatches != null) {
                     matchesTreeList.add(childMatches);
                     matchesPosition.add(startPosition.get(i));
@@ -509,7 +506,7 @@ public final class FastMatcher {
             }
 
             // we start new matching starting at the current token
-            Map match = (Map) terms.get(token);
+            Map match = (Map) terms.get(tokenString);
             if (match != null) {
                 matchesTreeList.add(match);
                 matchesPosition.add(currentPos);
@@ -554,7 +551,7 @@ public final class FastMatcher {
             String token = tokenP.getA();
             text.append(processToken(token));
         }
-        return matcher(text.toString());
+        return matchToken(text.toString());
     }
 
     /**

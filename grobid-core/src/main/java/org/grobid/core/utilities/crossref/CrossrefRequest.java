@@ -123,8 +123,7 @@ public class CrossrefRequest<T extends Object> extends Observable {
 					}
 					
 					notifyListeners(message);
-					
-					
+
 					return null;
 				}
             	
@@ -137,15 +136,10 @@ public class CrossrefRequest<T extends Object> extends Observable {
 			CrossrefRequestListener.Response<T> message = new CrossrefRequestListener.Response<T>();
 			message.setException(e, this);
 			notifyListeners(message);
-			
         } finally {
-        	
             try {
-            	
 				httpclient.close();
-				
-			} catch (IOException e) {
-				
+			} catch (IOException e) {			
 				CrossrefRequestListener.Response<T> message = new CrossrefRequestListener.Response<T>();
 				message.setException(e, this);
 				notifyListeners(message);

@@ -306,7 +306,7 @@ public class FeatureFactory {
      * Test if the current string refers to a known city
      */
     public boolean test_city(String tok) {
-        List<OffsetPosition> pos = lexicon.inCityNames(tok.toLowerCase());
+        List<OffsetPosition> pos = lexicon.tokenPositionsCityNames(tok.toLowerCase());
         if ((pos != null) && (pos.size() > 0))
             return true;
         else

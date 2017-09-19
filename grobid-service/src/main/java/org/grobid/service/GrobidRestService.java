@@ -145,7 +145,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processHeaderDocument_post(@FormDataParam(INPUT) InputStream inputStream, 
-	 	@FormDataParam("consolidate") String consolidate
+	 	@FormDataParam("consolidateHeader") String consolidate
 		) throws Exception {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
@@ -162,7 +162,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processStatelessHeaderDocument(@FormDataParam(INPUT) InputStream inputStream, 
-	 	@FormDataParam("consolidate") String consolidate
+	 	@FormDataParam("consolidateHeader") String consolidate
 		) {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
@@ -172,38 +172,6 @@ public class GrobidRestService implements GrobidPathes {
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream, String)
-	 */
-	/*@Path(PATH_HEADER_HTML)
-	@Consumes(MediaType.MULTIPART_FORM_DATA)
-	@Produces(MediaType.APPLICATION_XML)
-	@POST
-	public Response processHeaderDocument_postHTML(@FormDataParam(INPUT) InputStream inputStream, 
-	 	@FormDataParam("consolidate") String consolidate) {
-		boolean consol = false;
-		if ( (consolidate != null) && (consolidate.equals("1")) ) {
-			consol = true;
-		}
-		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, true);
-	}*/
-
-	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream, String)
-	 */
-	/*@Path(PATH_HEADER_HTML)
-	@Consumes(MediaType.MULTIPART_FORM_DATA)
-	@Produces(MediaType.APPLICATION_XML)
-	@PUT
-	public Response processStatelessHeaderDocumentHTML(@FormDataParam(INPUT) InputStream inputStream,
-	 	@FormDataParam("consolidate") String consolidate) {
-		boolean consol = false;
-		if ( (consolidate != null) && (consolidate.equals("1")) ) {
-			consol = true;
-		}
-		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, true);
-	}*/
-
-	/**
 	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream, String)
 	 */
 	@Path(PATH_FULL_TEXT)
@@ -211,16 +179,21 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processFulltextDocument_post(@FormDataParam(INPUT) InputStream inputStream,
-	 	@FormDataParam("consolidate") String consolidate, 
+	 	@FormDataParam("consolidateHeader") String consolidateHeader, 
+	 	@FormDataParam("consolidateCitations") String consolidateCitations, 
 		@DefaultValue("-1") @FormDataParam("start") int startPage,
 		@DefaultValue("-1") @FormDataParam("end") int endPage,
 		@FormDataParam("generateIDs") String generateIDs,
 		@FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) 
 		{
-		boolean consol = false;
+		boolean consolHeader = false;
+		boolean consolCitations = false;
 		boolean generate = false;
-		if ( (consolidate != null) && (consolidate.equals("1")) ) {
-			consol = true;
+		if ( (consolidateHeader != null) && (consolidateHeader.equals("1")) ) {
+			consolHeader = true;
+		}
+		if ( (consolidateCitations != null) && (consolidateCitations.equals("1")) ) {
+			consolCitations = true;
 		}
 		if ( (generateIDs != null) && (generateIDs.equals("1")) ) {
 			generate = true;
@@ -235,7 +208,7 @@ public class GrobidRestService implements GrobidPathes {
 			}
 		}
 		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
-			consol, startPage, endPage, generate, teiCoordinates);
+			consolHeader, consolCitations, startPage, endPage, generate, teiCoordinates);
 	}
 
 	/**
@@ -246,16 +219,21 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processStatelessFulltextDocument(@FormDataParam(INPUT) InputStream inputStream,
-	 	@FormDataParam("consolidate") String consolidate, 
+	 	@FormDataParam("consolidateHeader") String consolidateHeader, 
+	 	@FormDataParam("consolidateCitations") String consolidateCitations, 
 		@DefaultValue("-1") @FormDataParam("start") int startPage,
 		@DefaultValue("-1") @FormDataParam("end") int endPage,
 		@FormDataParam("generateIDs") String generateIDs,
 		@FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) 
 	{
-		boolean consol = false;
+		boolean consolHeader = false;
+		boolean consolCitations = false;
 		boolean generate = false;
-		if ( (consolidate != null) && (consolidate.equals("1")) ) {
-			consol = true;
+		if ( (consolidateHeader != null) && (consolidateHeader.equals("1")) ) {
+			consolHeader = true;
+		}
+		if ( (consolidateCitations != null) && (consolidateCitations.equals("1")) ) {
+			consolCitations = true;
 		}
 		if ( (generateIDs != null) && (generateIDs.equals("1")) ) {
 			generate = true;
@@ -268,7 +246,7 @@ public class GrobidRestService implements GrobidPathes {
 			}
 		}
 		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
-			consol, startPage, endPage, generate, teiCoordinates);
+			consolHeader, consolCitations, startPage, endPage, generate, teiCoordinates);
 	}
 
 	/**
@@ -279,20 +257,26 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces("application/zip")
 	@POST
 	public Response processFulltextAssetDocument_post(@FormDataParam(INPUT) InputStream inputStream,
-	 	@FormDataParam("consolidate") String consolidate, 
+	 	@FormDataParam("consolidateHeader") String consolidateHeader, 
+	 	@FormDataParam("consolidateCitations") String consolidateCitations, 
 		@DefaultValue("-1") @FormDataParam("start") int startPage,
 		@DefaultValue("-1") @FormDataParam("end") int endPage,
 		@FormDataParam("generateIDs") String generateIDs) {
-		boolean consol = false;
+
+		boolean consolHeader = false;
+		boolean consolCitations = false;
 		boolean generate = false;
-		if ( (consolidate != null) && (consolidate.equals("1")) ) {
-			consol = true;
+		if ( (consolidateHeader != null) && (consolidateHeader.equals("1")) ) {
+			consolHeader = true;
+		}
+		if ( (consolidateCitations != null) && (consolidateCitations.equals("1")) ) {
+			consolCitations = true;
 		}
 		if ( (generateIDs != null) && (generateIDs.equals("1")) ) {
 			generate = true;
 		}
 		return GrobidRestProcessFiles.processStatelessFulltextAssetDocument(inputStream, 
-			consol, startPage, endPage, generate);
+			consolHeader, consolCitations, startPage, endPage, generate);
 	}
 
 	/**
@@ -303,72 +287,27 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces("application/zip")
 	@PUT
 	public Response processStatelessFulltextAssetDocument(@FormDataParam(INPUT) InputStream inputStream,
-	 	@FormDataParam("consolidate") String consolidate, 
+	 	@FormDataParam("consolidateHeader") String consolidateHeader, 
+	 	@FormDataParam("consolidateCitations") String consolidateCitations, 
 		@DefaultValue("-1") @FormDataParam("start") int startPage,
 		@DefaultValue("-1") @FormDataParam("end") int endPage,
 		@FormDataParam("generateIDs") String generateIDs) {
-		boolean consol = false;
+
+		boolean consolHeader = false;
+		boolean consolCitations = false;
 		boolean generate = false;
-		if ( (consolidate != null) && (consolidate.equals("1")) ) {
-			consol = true;
+		if ( (consolidateHeader != null) && (consolidateHeader.equals("1")) ) {
+			consolHeader = true;
+		}
+		if ( (consolidateCitations != null) && (consolidateCitations.equals("1")) ) {
+			consolCitations = true;
 		}
 		if ( (generateIDs != null) && (generateIDs.equals("1")) ) {
 			generate = true;
 		}
 		return GrobidRestProcessFiles.processStatelessFulltextAssetDocument(inputStream, 
-			consol, startPage, endPage, generate);
+			consolHeader, consolCitations, startPage, endPage, generate);
 	}
-
-
-	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream, String)
-	 */
-	/*@Path(PATH_FULL_TEXT_HTML)
-	@Consumes(MediaType.MULTIPART_FORM_DATA)
-	@Produces(MediaType.APPLICATION_XML)
-	@POST
-	public Response processFulltextDocument_postHTML(@FormDataParam(INPUT) InputStream inputStream,
-	 	@FormDataParam("consolidate") String consolidate, 
-		@DefaultValue("-1") @FormDataParam("start") int startPage,
-		@DefaultValue("-1") @FormDataParam("end") int endPage,
-		@FormDataParam("generateIDs") String generateIDs,
-		@FormDataParam("teiCoordinates") List<String> teiCoordinates) {
-		boolean consol = false;
-		boolean generate = false;
-		if ( (consolidate != null) && (consolidate.equals("1")) ) {
-			consol = true;
-		}
-		if ( (generateIDs != null) && (generateIDs.equals("1")) ) {
-			generate = true;
-		}
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
-			consol, true, startPage, endPage, generate, teiCoordinates);
-	}*/
-
-	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream, String)
-	 */
-	/*@Path(PATH_FULL_TEXT_HTML)
-	@Consumes(MediaType.MULTIPART_FORM_DATA)
-	@Produces(MediaType.APPLICATION_XML)
-	@PUT
-	public Response processStatelessFulltextDocumentHTML(@FormDataParam(INPUT) InputStream inputStream,
-	 	@FormDataParam("consolidate") String consolidate, 
-		@DefaultValue("-1") @FormDataParam("start") int startPage,
-		@DefaultValue("-1") @FormDataParam("end") int endPage,
-		@FormDataParam("generateIDs") String generateIDs,
-		@FormDataParam("teiCoordinates") List<String> teiCoordinates) {
-		boolean consol = false;
-		boolean generate = false;
-		if ( (consolidate != null) && (consolidate.equals("1")) ) {
-			consol = true;
-		}
-		if ( (generateIDs != null) && (generateIDs.equals("1")) ) {
-			generate = true;
-		}
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, 
-			consol, true, startPage, endPage, generate, teiCoordinates);
-	}*/
 
 	/**
 	 * @see org.grobid.service.process.GrobidRestProcessFiles#processCitationPatentTEI(InputStream, String)
@@ -378,7 +317,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public StreamingOutput processCitationPatentTEI(@FormDataParam(INPUT) InputStream pInputStream,
-	 	@FormDataParam("consolidate") String consolidate) throws Exception {
+	 	@FormDataParam("consolidateCitations") String consolidate) throws Exception {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
@@ -394,7 +333,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processCitationPatentST36(@FormDataParam(INPUT) InputStream pInputStream,
-	 	@FormDataParam("consolidate") String consolidate) throws Exception {
+	 	@FormDataParam("consolidateCitations") String consolidate) throws Exception {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
@@ -413,7 +352,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processCitationPatentPDF(@FormDataParam(INPUT) InputStream pInputStream,
-	 	@FormDataParam("consolidate") String consolidate) throws Exception {
+	 	@FormDataParam("consolidateCitations") String consolidate) throws Exception {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
@@ -429,7 +368,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processCitationPatentTXT_post(@FormParam(TEXT) String text,
-	 	@FormParam("consolidate") String consolidate) {
+	 	@FormParam("consolidateCitations") String consolidate) {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
@@ -533,7 +472,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processCitation_post(@FormParam(CITATION) String citation,
-	 	@FormParam("consolidate") String consolidate) {
+	 	@FormParam("consolidateCitations") String consolidate) {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
@@ -549,7 +488,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processCitation(@FormParam(CITATION) String citation,
-	 	@FormParam("consolidate") String consolidate) {
+	 	@FormParam("consolidateCitations") String consolidate) {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
@@ -631,7 +570,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processReferencesDocument_post(@FormDataParam(INPUT) InputStream inputStream,
-	 	@FormDataParam("consolidate") String consolidate) {
+	 	@FormDataParam("consolidateCitations") String consolidate) {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
@@ -647,7 +586,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processStatelessReferencesDocument(@FormDataParam(INPUT) InputStream inputStream,
-	 	@FormDataParam("consolidate") String consolidate) {
+	 	@FormDataParam("consolidateCitations") String consolidate) {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
@@ -664,8 +603,20 @@ public class GrobidRestService implements GrobidPathes {
 	@POST
 	public Response processAnnotatePDF(@FormDataParam(INPUT) InputStream inputStream,
 		@FormDataParam("name") String fileName,
+		@FormDataParam("consolidateHeader") String consolidateHeader, 
+	 	@FormDataParam("consolidateCitations") String consolidateCitations,
 	 	@FormDataParam("type") int type) {
-		return GrobidRestProcessFiles.processPDFAnnotation(inputStream, fileName, GrobidRestUtils.getAnnotationFor(type));
+
+		boolean consolHeader = true;
+		boolean consolCitations = false;
+		if ( (consolidateHeader != null) && (consolidateHeader.equals("1")) ) {
+			consolHeader = true;
+		}
+		if ( (consolidateCitations != null) && (consolidateCitations.equals("1")) ) {
+			consolCitations = true;
+		}
+		return GrobidRestProcessFiles.processPDFAnnotation(inputStream, fileName, consolHeader, consolCitations, 
+			GrobidRestUtils.getAnnotationFor(type));
 	}
 
 	/**
@@ -675,8 +626,19 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces("application/json")
 	@POST
-	public Response processPDFReferenceAnnotation(@FormDataParam(INPUT) InputStream inputStream) {
-		return GrobidRestProcessFiles.processPDFReferenceAnnotation(inputStream);
+	public Response processPDFReferenceAnnotation(@FormDataParam(INPUT) InputStream inputStream,
+		@FormDataParam("consolidateHeader") String consolidateHeader, 
+	 	@FormDataParam("consolidateCitations") String consolidateCitations) {
+
+		boolean consolHeader = true;
+		boolean consolCitations = false;
+		if ( (consolidateHeader != null) && (consolidateHeader.equals("1")) ) {
+			consolHeader = true;
+		}
+		if ( (consolidateCitations != null) && (consolidateCitations.equals("1")) ) {
+			consolCitations = true;
+		}
+		return GrobidRestProcessFiles.processPDFReferenceAnnotation(inputStream, consolHeader, consolCitations);
 	}
 	
 	/**
@@ -686,7 +648,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces("application/json")
 	@POST
 	public Response annotatePDFPatentCitation(@FormDataParam(INPUT) InputStream inputStream, 
-		@FormDataParam("consolidate") String consolidate) {
+		@FormDataParam("consolidateCitations") String consolidate) {
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;

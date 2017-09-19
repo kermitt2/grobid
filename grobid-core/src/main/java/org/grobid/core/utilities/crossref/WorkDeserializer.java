@@ -46,9 +46,15 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 					JsonNode authorNode = authorIt.next();
 					
 					Person person = new Person();
-					person.setFirstName(authorNode.get("given").asText());
-					person.normalizeCrossRefFirstName();
-					person.setLastName(authorNode.get("family").asText());
+					if (authorNode.get("given") != null && !authorNode.get("given").isMissingNode()) {
+						person.setFirstName(authorNode.get("given").asText());
+						person.normalizeCrossRefFirstName();
+					}
+					if (authorNode.get("family") != null && !authorNode.get("family").isMissingNode()) {
+						person.setLastName(authorNode.get("family").asText());
+    	   			}
+    	   			// for cases like JM Smith and for case normalisation
+    	   			person.normalizeName();
 					biblio.addFullAuthor(person);
 				}
 			}
