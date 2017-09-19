@@ -3,9 +3,6 @@ package org.grobid.core.engines;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.collections4.CollectionUtils;
 
-import com.google.common.base.Function;
-import com.google.common.collect.Lists;
-
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Person;
 import org.grobid.core.engines.tagging.GenericTagger;
@@ -21,10 +18,6 @@ import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.lang.Language;
-import org.grobid.core.utilities.UnicodeUtil;
-import org.grobid.core.utilities.counters.CntManager;
-import org.grobid.core.tokenization.TaggingTokenCluster;
-import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
 
@@ -33,7 +26,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -104,7 +96,7 @@ public class AuthorParser {
         }
         List<Person> fullAuthors = null;
         try {
-            List<OffsetPosition> titlePositions = Lexicon.getInstance().tokenPositionsPersonTitle(tokens);
+            List<OffsetPosition> titlePositions = Lexicon.getInstance().tokenPositionsPersonTitleNames(tokens);
             List<OffsetPosition> suffixPositions = Lexicon.getInstance().tokenPositionsPersonSuffix(tokens);
 
             String sequence = FeaturesVectorName.addFeaturesName(tokens, null, 
@@ -270,7 +262,7 @@ public class AuthorParser {
                 return null;
             }
 
-            List<OffsetPosition> titlePositions = Lexicon.getInstance().tokenPositionsPersonTitle(tokens);
+            List<OffsetPosition> titlePositions = Lexicon.getInstance().tokenPositionsPersonTitleNames(tokens);
             List<OffsetPosition> suffixPositions = Lexicon.getInstance().tokenPositionsPersonSuffix(tokens);
 
             String sequence = FeaturesVectorName.addFeaturesName(tokens, null, titlePositions, suffixPositions);
