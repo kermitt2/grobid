@@ -193,7 +193,7 @@ public class FullTextParser extends AbstractParser {
 					throw new GrobidException(
                     "An exception occured while running consolidation on bibliographical references.", e);
 				} finally {
-					consolidator.close();
+					//consolidator.close();
 				}
 			}
             doc.setBibDataSets(resCitations);

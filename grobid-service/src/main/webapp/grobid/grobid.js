@@ -973,42 +973,50 @@ var grobid = (function($) {
 
 		if (selected == 'processHeaderDocument') {
 			createInputFile(selected);
-			$('#consolidateBlock').show();
+			$('#consolidateBlock1').show();
+			$('#consolidateBlock2').hide();
 			setBaseUrl('processHeaderDocument');
 		}
 		else if (selected == 'processFulltextDocument') {
 			createInputFile(selected);
-			$('#consolidateBlock').show();
+			$('#consolidateBlock1').show();
+			$('#consolidateBlock2').show();
 			setBaseUrl('processFulltextDocument');
 		}
 		else if (selected == 'processDate') {
 			createInputTextArea('date');
-			$('#consolidateBlock').hide();
+			$('#consolidateBlock1').hide();
+			$('#consolidateBlock2').hide();
 			setBaseUrl('processDate');
 		}
 		else if (selected == 'processHeaderNames') {
 			createInputTextArea('names');
-			$('#consolidateBlock').hide();
+			$('#consolidateBlock1').hide();
+			$('#consolidateBlock2').hide();
 			setBaseUrl('processHeaderNames');
 		}
 		else if (selected == 'processCitationNames') {
 			createInputTextArea('names');
-			$('#consolidateBlock').hide();
+			$('#consolidateBlock1').hide();
+			$('#consolidateBlock2').hide();
 			setBaseUrl('processCitationNames');
 		}
 		else if (selected == 'processReferences') {
 			createInputFile(selected);
-			$('#consolidateBlock').show();
+			$('#consolidateBlock1').hide();
+			$('#consolidateBlock2').show();
 			setBaseUrl('processReferences');
 		}
 		else if (selected == 'processAffiliations') {
 			createInputTextArea('affiliations');
-			$('#consolidateBlock').hide();
+			$('#consolidateBlock1').hide();
+			$('#consolidateBlock2').hide();
 			setBaseUrl('processAffiliations');
 		}
 		else if (selected == 'processCitation') {
 			createInputTextArea('citations');
-			$('#consolidateBlock').show();
+			$('#consolidateBlock1').hide();
+			$('#consolidateBlock2').show();
 			setBaseUrl('processCitation');
 		}
 		else if (selected == 'processCitationPatentTEI') {
@@ -1033,17 +1041,17 @@ var grobid = (function($) {
 		}
 		else if (selected == 'referenceAnnotations') {
 			createInputFile2(selected);
-			//$('#consolidateBlock2').show();
+			$('#consolidateBlock').show();
 			setBaseUrl('referenceAnnotations');
 		}
 		else if (selected == 'annotatePDF') {
 			createInputFile2(selected);
-			//$('#consolidateBlock2').show();
+			$('#consolidateBlock').show();
 			setBaseUrl('annotatePDF');
 		}
 		else if (selected == 'citationPatentAnnotations') {
 			createInputFile3(selected);
-			//$('#consolidateBlock2').show();
+			$('#consolidateBlock3').show();
 			setBaseUrl('citationPatentAnnotations');
 		}
 	}

@@ -1656,8 +1656,8 @@ public class HeaderParser extends AbstractParser {
             // e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
-            if (consolidator != null)
-                consolidator.close();
+            /*if (consolidator != null)
+                consolidator.close();*/
         }
         return resHeader;
     }

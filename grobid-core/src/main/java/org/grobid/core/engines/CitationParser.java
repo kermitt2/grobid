@@ -63,9 +63,9 @@ public class CitationParser extends AbstractParser {
 
         // some cleaning
         input = UnicodeUtil.normaliseText(input);
-        input = TextUtilities.dehyphenize(input);
-        input = input.replace("\n", " ");
-        input = input.replaceAll("\\p{Cntrl}", " ").trim();
+        //input = TextUtilities.dehyphenize(input);
+        //input = input.replace("\n", " ");
+        //input = input.replaceAll("\\p{Cntrl}", " ").trim();
 
         List<LayoutToken> tokens = analyzer.tokenizeWithLayoutToken(input);
         return processing(tokens, consolidate);
@@ -80,16 +80,16 @@ public class CitationParser extends AbstractParser {
         try {
             List<String> citationBlocks = new ArrayList<>();
 
-            tokens = LayoutTokensUtil.dehyphenize(tokens);
+            //tokens = LayoutTokensUtil.dehyphenize(tokens);
 
-            List<OffsetPosition> journalsPositions = lexicon.inJournalNamesLayoutToken(tokens);
-            List<OffsetPosition> abbrevJournalsPositions = lexicon.inAbbrevJournalNamesLayoutToken(tokens);
-            List<OffsetPosition> conferencesPositions = lexicon.inConferenceNamesLayoutToken(tokens);
-            List<OffsetPosition> publishersPositions = lexicon.inPublisherNamesLayoutToken(tokens);
-            List<OffsetPosition> locationsPositions = lexicon.inLocationNamesLayoutToken(tokens);
-            List<OffsetPosition> collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(tokens);
-            List<OffsetPosition> identifiersPositions = lexicon.inIdentifierPatternLayoutToken(tokens);
-            List<OffsetPosition> urlPositions = lexicon.inUrlPatternLayoutToken(tokens);
+            List<OffsetPosition> journalsPositions = lexicon.tokenPositionsJournalNames(tokens);
+            List<OffsetPosition> abbrevJournalsPositions = lexicon.tokenPositionsAbbrevJournalNames(tokens);
+            List<OffsetPosition> conferencesPositions = lexicon.tokenPositionsConferenceNames(tokens);
+            List<OffsetPosition> publishersPositions = lexicon.tokenPositionsPublisherNames(tokens);
+            List<OffsetPosition> locationsPositions = lexicon.tokenPositionsLocationNames(tokens);
+            List<OffsetPosition> collaborationsPositions = lexicon.tokenPositionsCollaborationNames(tokens);
+            List<OffsetPosition> identifiersPositions = lexicon.tokenPositionsIdentifierPattern(tokens);
+            List<OffsetPosition> urlPositions = lexicon.tokenPositionsUrlPattern(tokens);
 
             String ress = FeaturesVectorCitation.addFeaturesCitation(tokens, null, journalsPositions, 
                 abbrevJournalsPositions, conferencesPositions, publishersPositions, locationsPositions,
@@ -190,7 +190,7 @@ public class CitationParser extends AbstractParser {
         // consolidation: if selected, is not done individually for each citation but 
         // in a second stage for all citations
         for (LabeledReferenceResult ref : references) {
-            BiblioItem bib = processing(TextUtilities.dehyphenize(ref.getReferenceText()), false);
+            BiblioItem bib = processing(ref.getReferenceText(), false);
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
@@ -211,19 +211,17 @@ public class CitationParser extends AbstractParser {
                 throw new GrobidException(
                 "An exception occured while running consolidation on bibliographical references.", e);
             } finally {
-                consolidator.close();
+                //consolidator.close();
             }
             if (resConsolidation != null) {
 
 int consolidated = 0;
 for (Entry<Integer, BiblioItem> cursor : resConsolidation.entrySet()) {
-//System.out.println("item: " + cursor.getKey());
 if (cursor.getValue() != null) {
-//System.out.println(cursor.getValue().toTEI(1));
 consolidated++;
 } 
 }
-System.out.println("total (CrossRef JSON search API): " + consolidated + " / " + resConsolidation.size());
+System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON search API): " + consolidated + " / " + resConsolidation.size());
 
                 for(int i=0; i<results.size(); i++) {
                     BiblioItem resCitation = results.get(i).getResBib();
@@ -266,7 +264,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
 
 
     /**
-     * Extract results from a labelled header.
+     * Extract results from a labeled sequence.
      *
      * @param result            result
      * @param volumePostProcess whether post process volume
@@ -292,7 +290,9 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
             Engine.getCntManager().i(clusterLabel);
 
             //String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            String clusterContent = LayoutTokensUtil.toText(cluster.concatTokens());
+            //String clusterContent = LayoutTokensUtil.toText(cluster.concatTokens());
+            String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+            //String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
             if (clusterLabel.equals(TaggingLabels.CITATION_TITLE)) {
                 if (biblio.getTitle() == null)
                     biblio.setTitle(clusterContent);
@@ -329,7 +329,8 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                     biblio.setBookTitle(clusterContent);
                 }
             } else if (clusterLabel.equals(TaggingLabels.CITATION_PAGES)) {
-                biblio.setPageRange(clusterContent);
+                String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
+                biblio.setPageRange(clusterNonDehypenizedContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_PUBLISHER)) {
                 biblio.setPublisher(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_COLLABORATION)) {
@@ -365,10 +366,12 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                 else    
                    biblio.setNote(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_PUBNUM)) {
-                biblio.setPubnum(clusterContent);
+                String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
+                biblio.setPubnum(clusterNonDehypenizedContent);
                 biblio.checkIdentifier();
             } else if (clusterLabel.equals(TaggingLabels.CITATION_WEB)) {
-                biblio.setWeb(clusterContent);
+                String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
+                biblio.setWeb(clusterNonDehypenizedContent);
             }
         }
 
@@ -397,7 +400,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
             throw new GrobidException(
                     "An exception occured while running Grobid.", e);
         } finally {
-            consolidator.close();
+            //consolidator.close();
         }
         return resCitation;
     }
@@ -438,14 +441,14 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                 if (tokenizations.size() == 0)
                     return null;
 
-                journalsPositions = lexicon.inJournalNamesLayoutToken(tokenizations);
-                abbrevJournalsPositions = lexicon.inAbbrevJournalNamesLayoutToken(tokenizations);
-                conferencesPositions = lexicon.inConferenceNamesLayoutToken(tokenizations);
-                publishersPositions = lexicon.inPublisherNamesLayoutToken(tokenizations);
-                locationsPositions = lexicon.inLocationNamesLayoutToken(tokenizations);
-                collaborationsPositions = lexicon.inCollaborationNamesLayoutToken(tokenizations);
-                identifiersPositions = lexicon.inIdentifierPatternLayoutToken(tokenizations);
-                urlPositions = lexicon.inUrlPatternLayoutToken(tokenizations);
+                journalsPositions = lexicon.tokenPositionsJournalNames(tokenizations);
+                abbrevJournalsPositions = lexicon.tokenPositionsAbbrevJournalNames(tokenizations);
+                conferencesPositions = lexicon.tokenPositionsConferenceNames(tokenizations);
+                publishersPositions = lexicon.tokenPositionsPublisherNames(tokenizations);
+                locationsPositions = lexicon.tokenPositionsLocationNames(tokenizations);
+                collaborationsPositions = lexicon.tokenPositionsCollaborationNames(tokenizations);
+                identifiersPositions = lexicon.tokenPositionsIdentifierPattern(tokenizations);
+                urlPositions = lexicon.tokenPositionsUrlPattern(tokenizations);
 
                 String ress = FeaturesVectorCitation.addFeaturesCitation(tokenizations,
                         null, journalsPositions, abbrevJournalsPositions, 

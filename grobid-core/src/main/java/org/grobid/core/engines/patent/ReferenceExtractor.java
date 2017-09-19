@@ -329,10 +329,10 @@ public class ReferenceExtractor implements Closeable {
 
             //if (articles != null)
             {
-                journalPositions = lexicon.inJournalNames(text);
-                abbrevJournalPositions = lexicon.inAbbrevJournalNames(text);
-                conferencePositions = lexicon.inConferenceNames(text);
-                publisherPositions = lexicon.inPublisherNames(text);
+                journalPositions = lexicon.tokenPositionsJournalNames(text);
+                abbrevJournalPositions = lexicon.tokenPositionsAbbrevJournalNames(text);
+                conferencePositions = lexicon.tokenPositionsConferenceNames(text);
+                publisherPositions = lexicon.tokenPositionsPublisherNames(text);
             }
 
             boolean isJournalToken = false;
@@ -831,10 +831,10 @@ public class ReferenceExtractor implements Closeable {
 
             //if (articles != null)
             {
-                journalPositions = lexicon.inJournalNames(text);
-                abbrevJournalPositions = lexicon.inAbbrevJournalNames(text);
-                conferencePositions = lexicon.inConferenceNames(text);
-                publisherPositions = lexicon.inPublisherNames(text);
+                journalPositions = lexicon.tokenPositionsJournalNames(text);
+                abbrevJournalPositions = lexicon.tokenPositionsAbbrevJournalNames(text);
+                conferencePositions = lexicon.tokenPositionsConferenceNames(text);
+                publisherPositions = lexicon.tokenPositionsPublisherNames(text);
             }
 
             boolean isJournalToken = false;

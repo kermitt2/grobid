@@ -118,5 +118,22 @@ public class PersonNormalisationTest {
         assertThat(target.getLastName(), is("Biró"));
     }
 
+    @Test
+    public void testCrossRefNameNormlisation11() {
+        target = new Person();
+        target.setFirstName("J.-L.");
+        target.normalizeCrossRefFirstName();
+        assertThat(target.getFirstName(), is("J-L"));
+        assertThat(target.getMiddleName(), is(nullValue()));
+    }
+
+    @Test
+    public void testCrossRefNameNormlisation12() {
+        target = new Person();
+        target.setFirstName("J-L.");
+        target.normalizeCrossRefFirstName();
+        assertThat(target.getFirstName(), is("J-L"));
+        assertThat(target.getMiddleName(), is(nullValue()));
+    }
 
 }
