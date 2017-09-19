@@ -30,7 +30,7 @@ public class NameCitationTrainer extends AbstractTrainer {
 	 * 
 	 * @param corpusDir
 	 *            a path where corpus files are located
-	 * @param trainingOutputPath
+	 * @param modelOutputPath
 	 *            path where to store the temporary training data
 	 * @return the total number of used corpus items 
 	 */
@@ -126,7 +126,7 @@ public class NameCitationTrainer extends AbstractTrainer {
 						pos += token.getText().length();
 					}
 
-					titlePositions = Lexicon.getInstance().tokenPositionsPersonTitle(allTokens.get(i));
+					titlePositions = Lexicon.getInstance().tokenPositionsPersonTitleNames(allTokens.get(i));
             		suffixPositions = Lexicon.getInstance().tokenPositionsPersonSuffix(allTokens.get(i));
 
 					final String names = FeaturesVectorName.addFeaturesName(allTokens.get(i), 
