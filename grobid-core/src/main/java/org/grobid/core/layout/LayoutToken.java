@@ -1,6 +1,9 @@
 package org.grobid.core.layout;
 
 import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.core.engines.label.TaggingLabel;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class for representing the layout information associated to a PDF object.
@@ -23,6 +26,11 @@ public class LayoutToken implements Comparable<LayoutToken> {
     private boolean newLineAfter;
     private int blockPtr;
 	private int offset = 0;
+	
+	/**
+	 * All TaggingLabel accumulated for this token
+	 */
+	private ArrayList<TaggingLabel> labels = null;
 
     public LayoutToken() {
     }
@@ -47,6 +55,11 @@ public class LayoutToken implements Comparable<LayoutToken> {
         this.newLineAfter = token.newLineAfter;
         this.blockPtr = token.blockPtr;
         this.offset = token.offset;
+    }
+    
+    public LayoutToken(String text, TaggingLabel label) {
+    	this(text);
+    	this.addLabel(label);
     }
 
     public void setFont(String f) {
@@ -172,6 +185,32 @@ public class LayoutToken implements Comparable<LayoutToken> {
 	
 	public void setOffset(int offset) {
 		this.offset = offset;
+	}
+	
+	/**
+	 * Get all TaggingLabel accumulated for this token
+	 */
+	public List<TaggingLabel> getLabels() {
+		if (this.labels == null)
+			return new ArrayList<TaggingLabel>();
+		return this.labels;
+	}
+	
+	/**
+	 * Check if a given TaggingLabel is associated with this token
+	 */
+	public boolean hasLabel(TaggingLabel label) {
+		return this.labels.contains(label);
+	}
+	
+	/**
+	 * Add a TaggingLabel to this token
+	 */
+	public void addLabel(TaggingLabel label) {
+		if (this.labels == null)
+			this.labels = new ArrayList<TaggingLabel>();
+		if (!hasLabel(label))
+			this.labels.add(label);
 	}
 
     @Override
