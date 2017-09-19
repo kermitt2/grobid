@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -106,10 +107,10 @@
             <version>1.6</version>
         </dependency>
         <dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.5.3</version>
-		</dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.3</version>
+        </dependency>
 
         <!-- logging -->
         <dependency>
@@ -121,13 +122,8 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
+            <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${log4j.version}</version>
-            <scope>runtime</scope>
-        </dependency> 
 
         <!-- Tests -->
         <dependency>
@@ -223,20 +219,20 @@
             <version>1.2.5</version>
         </dependency>
         <dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-core</artifactId>
-		    <version>2.8.8</version>
-		</dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.8.8</version>
+        </dependency>
         <dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-databind</artifactId>
-		    <version>2.8.8.1</version>
-		</dependency>
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.9.9</version>
-		</dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.8.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.9</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-analyzers-common</artifactId>
@@ -287,19 +283,7 @@
     </profiles>
 
     <build>
-        <!-- Not standard -->
-        <!-- finalName>${project.groupId}.${project.artifactId}_${project.version}</finalName -->
-
-        <!--<resources> -->
-        <!--<resource> -->
-        <!--<directory>src/main/native</directory> -->
-        <!--</resource> -->
-        <!--</resources> -->
-
-        <!--pluginManagement -->
         <plugins>
-            <!--plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> <configuration> <archive> <manifest> <mainClass>org.grobid.core.engines.Engine</mainClass> </manifest>
-                </archive> </configuration> </plugin -->
             <plugin>
                 <groupId>com.jolira</groupId>
                 <artifactId>onejar-maven-plugin</artifactId>
@@ -359,7 +343,6 @@
                     <systemPropertyVariables>
                         <log4j.configuration>log4j-test.properties</log4j.configuration>
                     </systemPropertyVariables>
-                    <!--argLine>-Djava.library.path=${basedir}/lib/</argLine> <systemProperties> <property> <name>java.library.path</name> <value>lib/</value> </property> </systemProperties -->
                 </configuration>
             </plugin>
 
@@ -389,16 +372,14 @@
                                 </relocation>
                             </relocations>
                             <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+                                <transformer
+                                    implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                             </transformers>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
-        <!--/pluginManagement -->
     </build>
-
-    <!-- pluginRepositories> <pluginRepository> <id>onejar-maven-plugin.googlecode.com</id> <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url> </pluginRepository> </pluginRepositories -->
 
 </project>
