@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author Patrice Lopez
  */
-public class GrobidAnalyzer implements org.grobid.core.analyzers.Analyzer {
+public class GrobidAnalyzer implements Analyzer {
 	private static final Logger LOGGER = LoggerFactory.getLogger(GrobidAnalyzer.class);
 	
 	private static volatile GrobidAnalyzer instance;
