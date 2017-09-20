@@ -1,0 +1,40 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+        <bibl>Antia, H. M., Chitre, S. M., &amp; Gough, D. O. 2008,<lb/> A&amp;A, 477, 657<lb/> </bibl>
+		<bibl>Bertotti, B., Iess, L., &amp; Tortora, P. 2003, nature,<lb/> 425, 374<lb/> </bibl>
+		<bibl>Bierman, G. J. 1977, Factorization Methods for<lb/> Discrete Sequential Estimation (volume 128, 241<lb/> pages Academic Press, New York, NY, 1977)<lb/> </bibl>
+		<bibl>Bottke, Jr., W. F., Vokrouhlick´yVokrouhlick´y, D., Rubincam,<lb/> D. P., &amp; Nesvorn´yNesvorn´y, D. 2006, Annual Review of<lb/> Earth and Planetary Sciences, 34, 157<lb/> </bibl>
+		<bibl>Evans, S., Taber, W., Drain, T., et al. 2016, in The<lb/> 6th International Conference on Astrodynamics<lb/> Tools and Techniques (ICATT), International<lb/> Conference on Astrodynamics Tools and<lb/> Techniques, Darmstadt, Germany. https://<lb/> indico.esa.int/indico/event/111/session/<lb/> 30/contribution/177/material/paper/0.pdf<lb/> </bibl>
+		<bibl>Farnocchia, D., Chesley, S. R., Chamberlin, A. B.,<lb/> &amp; Tholen, D. J. 2015, Icarus, 245, 94<lb/> </bibl>
+		<bibl>Farnocchia, D., Chesley, S. R., Vokrouhlick´yVokrouhlick´y, D.,<lb/> et al. 2013, Icarus, 224, 1<lb/> </bibl>
+		<bibl>Fienga, A., Laskar, J., Kuchynka, P., et al. 2011,<lb/> Celestial Mechanics and Dynamical Astronomy,<lb/> 111, 363<lb/> </bibl>
+		<bibl>Fienga, A., Manche, H., Laskar, J., &amp; Gastineau,<lb/> M. 2015, Celest Mech Dyn Astr, 123:325<lb/> </bibl>
+		<bibl>Folkner, W. M. 2009, in IAU Symposium, Vol.<lb/> 261, IAU Symposium, ed. S. A. Klioner,<lb/> P. K. Seidelmann, &amp; M. H. Soffel, 155-158<lb/> </bibl>
+		<bibl>Greenberg, A. H., Margot, J. L., Verma, A. K.,<lb/> et al. 2016, The Astronomical Journal,<lb/> arXiv:1612.07434<lb/> </bibl>
+		<bibl>Kaula, W. M. 2000, Theory of Satellite Geodesy:<lb/> Applications of Satellites to Geodesy (Dover<lb/> Publications, Mineola, NY),<lb/> doi:10.1063/1.3033941<lb/> </bibl>
+		<bibl>Konopliv, A. S., Asmar, S. W., Folkner, W. M.,<lb/> et al. 2011, Icarus, 211, 401<lb/> </bibl>
+		<bibl>Lambert, S. B., &amp; Le Poncin-Lafitte, C. 2009,<lb/> A&amp;A, 499, 331<lb/> </bibl>
+		<bibl>Margot, J. L. 2003, Bulletin of the American<lb/> Astronomical Society, 34<lb/> </bibl>
+		<bibl>Margot, J. L., &amp; Giorgini, J. D. 2009, in IAU<lb/> Symposium, Vol. 261, IAU Symposium, ed.<lb/> S. A. Klioner, P. K. Seidelmann, &amp; M. H. Soffel,<lb/> 183-188<lb/> </bibl>
+		<bibl>Mecheri, R., Abdelatif, T., Irbah, A., Provost, J.,<lb/> &amp; Berthomieu, G. 2004, solphys, 222, 191<lb/> </bibl>
+		<bibl>Minor Planet Center. 2017, MPC database,<lb/> http://www.minorplanetcenter.net/iau/mpc.html,<lb/> ,<lb/> </bibl>
+		<bibl>Misner, C. W., Thorne, K. S., &amp; Wheeler, J. A.<lb/> 1973, Gravitation (Freeman)<lb/> </bibl>
+		<bibl>Naidu, S. P., Benner, L. A. M., Margot, J. L.,<lb/> Busch, M. W., &amp; Taylor, P. A. 2016, AJ, 152, 99<lb/> </bibl>
+		<bibl>Nugent, C. R., Margot, J. L., Chesley, S. R., &amp;<lb/> Vokrouhlick´yVokrouhlick´y, D. 2012, Astronomical Journal,<lb/> 144, 60<lb/> </bibl>
+		<bibl>Ostro, S. J., &amp; Giorgini, J. D. 2004, in Mitigation<lb/> of Hazardous Comets and Asteroids (Cambridge<lb/> University Press)<lb/> </bibl>
+		<bibl>Park, R. S., Folkner, W. M., Konopliv, A. S.,<lb/> et al. 2017, AJ, 153, 121<lb/> </bibl>
+		<bibl>Pitjeva, E. V., &amp; Pitjev, N. P. 2014, Celestial<lb/> Mechanics and Dynamical Astronomy, 119, 237<lb/> </bibl>
+		<bibl>Solomon, S. C., et al. 2001, Planet. Space Sci., 49,<lb/> 1445<lb/> </bibl>
+		<bibl>Verma, A. K., Fienga, A., Laskar, J., Manche, H.,<lb/> &amp; Gastineau, M. 2014, A&amp;A, 561, A115<lb/> </bibl>
+		<bibl>Verma, A. K., &amp; Margot, J. L. 2016, Journal of<lb/> Geophysical Research (Planets), 121, 1627<lb/> </bibl>
+		<bibl>Will, C. M. 2014, Living Reviews in Relativity, 17,<lb/> 4</bibl>
+        </listBibl>
+    </text>
+</tei>
+

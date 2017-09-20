@@ -1,0 +1,33 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> Thomson, W. P R Soc London 1856, 8, 546-550.<lb/> </bibl>
+        <bibl><label>[2]</label> Baibich, M. N.; Broto, J. M.; Fert, A.; Nguyen Van Dau, F.;<lb/> Petroff, F.; Etienne, P.; Creuzet, G.; Friederich, A.; Chazelas, J. Phys<lb/> Rev Lett 1988, 61, 2472-2475.<lb/> </bibl>
+        <bibl><label>[3]</label> Binasch, G.; Grunberg, P.; Saurenbach, F.; Zinn, W. Phys Rev B<lb/> 1989, 39, 4828-4830.<lb/> </bibl>
+        <bibl><label>[4]</label> Moodera, J. S.; Kinder, L. R.; Wong, T. M.; Meservey, R. Phys<lb/> Rev Lett 1995, 74, 3273-3276.<lb/> </bibl>
+        <bibl><label>[5]</label> Hall, E. H. Am J Math 1879, 2, 287-292.<lb/> </bibl>
+        <bibl><label>[6]</label> Nagaosa, N.; Sinova, J.; Onoda, S.; MacDonald, A. H.; Ong, N.<lb/> P. Rev Mod Phys 2010, 82, 1539-1592.<lb/> </bibl>
+        <bibl><label>[7]</label> Schulz, T.; Ritz, R.; Bauer, A.; Halder, M.; Wagner, M.; Franz,<lb/> C.; Pfleiderer, C.; Everschor, K.; Garst, M.; Rosch, A. Nat Phys<lb/> 2012, 8, 301-304.<lb/> </bibl>
+        <bibl><label>[8]</label> Yu, X. Z.; Kanazawa, N.; Zhang, W. Z.; Nagai, T.; Hara, T.;<lb/> Kimoto, K.; Matsui, Y.; Onose, Y.; Tokura, Y. Nat Comms 2012, 3,<lb/> 988.<lb/> </bibl>
+        <bibl><label>[9]</label> Kim, H.; Huse, D. A. Phys Rev A 2012, 86, 053607.<lb/> </bibl>
+        <bibl><label>[10]</label> Uchida, K.; Takahashi, S.; Harii, K.; Ieda, J.; Koshibae, W.;<lb/> Ando, K.; Maekawa, S.; Saitoh, E. Nature 2008, 455, 778-781.<lb/> </bibl>
+        <bibl><label>[11]</label> Meier, D.; Reinhardt, D.; van Straaten, M.; Klewe, C.;<lb/> Althammer, M.; Schreier, M.; Goennenwein, S. T. B.; Gupta, A.;<lb/> Schmid, M.; Back, C. H., et al. Nat Comms 2015, 6, 1-7.<lb/> </bibl>
+        <bibl><label>[12]</label> Flipse, J.; Bakker, F. L.; Slachter, A.; Dejene, F. K.; van Wees,<lb/> B. J. Nat Nanotechnol 2012, 7, 166-168.<lb/> </bibl>
+        <bibl><label>[13]</label> Hirsch, J. E. Phys Rev Lett 1999, 83, 1834-1837.<lb/> </bibl>
+        <bibl><label>[14]</label> Okamoto, N.; Kurebayashi, H.; Trypiniotis, T.; Farrer, I.;<lb/> Ritchie, D. A.; Saitoh, E.; Sinova, J.; Mašek, J.; Jungwirth, T.;<lb/> Barnes, C. H. W. Nat Mater 2014, 13, 932-937.<lb/> </bibl>
+        <bibl><label>[15]</label> Hung, T. Q.; Terki, F.; Kamara, S.; Kim, K.; Charar, S.; Kim,<lb/> C. J Appl Phys 2015, 117, 154505.<lb/> </bibl>
+        <bibl><label>[16]</label> Chiba, D.; Fukami, S.; Shimamura, K.; Ishiwata, N.; Kobayashi,<lb/> K.; Ono, T. Nat Mater 2011, 10, 853-856.<lb/> </bibl>
+        <bibl><label>[17]</label> Chiba, D.; Ono, T. J Phys D Appl Phys 2013, 46, 213001.<lb/> </bibl>
+        <bibl><label>[18]</label> Foner, S. Rev Sci Instrum 1959, 30, 548-557.<lb/> </bibl>
+        <bibl><label>[19]</label> Jaklevic, R. C.; Lambe, J.; Silver, A. H.; Mercereau, J. E. Phys<lb/> Rev Lett 1964, 12, 159-160.<lb/> </bibl>
+        <bibl><label>[20]</label> Akdoğan, N.; Yağmur, A.; Öztürk, M.; Demirci, E.; Öztürk, O.;<lb/> Erkovan, M. J Magn Magn Mater 2015, 373, 120-123.<lb/> </bibl>
+        <bibl><label>[21]</label> Demirci, E.; Öztürk, M.; Sınır, E.; Ulucan, U.; Akdoğan, N.;<lb/> Öztürk, O.; Erkovan, M. Thin Solid Films 2014, 550, 595-601.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

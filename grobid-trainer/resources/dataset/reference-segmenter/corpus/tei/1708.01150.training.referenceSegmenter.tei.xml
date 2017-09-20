@@ -1,0 +1,89 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        Bibliography<lb/> 
+        <bibl><label>[1]</label> LIGO Scientific Collaboration and Virgo Collaboration, Observation of Gravita-<lb/>tional Waves from a Binary Black Hole Merger, Phys. Rev. Lett. 116 (2016).<lb/> </bibl>
+        <bibl><label>[2]</label> LIGO Scientific Collaboration and Virgo Collaboration, GW151226: Observa-<lb/>tion of Gravitational Waves from a 22-Solar-Mass Binary Black Hole Coales-<lb/>cence, Phys. Rev. Lett. 116 (2016).<lb/> </bibl>
+        <bibl><label>[3]</label> Clifford M. Will, The Confrontation between General Relativity and Experiment,<lb/> Living Rev. Relativity 17 (2014), arXiv:1403.7377.<lb/> </bibl>
+        <bibl><label>[4]</label> N. Yunes, X. Siemens, Gravitational Wave Tests of General Relativity with<lb/> Ground-Based Detectors and Pulsar Timing Arrays, Living Rev. Relativity 16<lb/> (2013), arXiv:1304.3473.<lb/> </bibl>
+        <bibl><label>[5]</label> E. Berti et al., Testing General Relativity with Present and Future Astrophysical<lb/> Observations, Class. Quantum Grav. 32, (2015), arXiv:1501.07274.<lb/> </bibl>
+        <bibl><label>[6]</label> M. H. Goroff, A. Sagnotti, The Ultraviolet Behavior of Einstein Gravity,<lb/> Nucl.Phys. B266 (1986).<lb/> </bibl>
+        <bibl><label>[7]</label> T. Clifton, P. G. Ferreira, A. Padilla, C. Skordis, Modified Gravity and Cosmol-<lb/>ogy, Physics Reports 513, 1 (2012), arXiv:1106.2476.<lb/> </bibl>
+        <bibl><label>[8]</label> D. Lovelock, The Einstein Tensor and Its Generalizations, J. Math. Phys. 12<lb/> (1971); The four-dimensionality of space and the Einstein tensor, J. Math. Phys.<lb/> 13 (1972).<lb/> </bibl>
+        <bibl><label>[9]</label> M. Banados, P. G. Ferreira, EddingtonâĂŹs theory of gravity and its progeny,<lb/> Phys. Rev. Lett. 105 (2010), arXiv:1006.1769v2.<lb/> </bibl>
+        <bibl><label>[10]</label> C. Escamilla-Rivera, M. Banados, P. G. Ferreira, A tensor instability in the<lb/> Eddington inspired Born-Infeld theory of gravity, Phys. Rev. D 85 (2012), arXiv:<lb/> 1204.1691v2.<lb/> </bibl>
+        <bibl><label>[11]</label> V. A. Rubakov, The Null Energy Condition and its violation, arXiv:1401.<lb/> 4024v2.<lb/> </bibl>
+        <bibl><label>[12]</label> Planck Collaboration, Planck 2015 results. XIII. Cosmological parameters,<lb/> arXiv:1502.01589.<lb/> </bibl>
+        <bibl><label>[13]</label> Planck Collaboration, Planck 2015 results. XX. Constraints on inflations,<lb/> arXiv:1502.02114.<lb/> </bibl>
+        <bibl><label>[14]</label> C. W. Misner, K. S. Thorne, J. A. Wheeler, Gravitation, W.H. Freeman (1973).<lb/> </bibl>
+        <bibl><label>[15]</label> R. M. Wald, General Relativity, University of Chicago Press (1984).<lb/> </bibl>
+        <bibl><label>[16]</label> S. Winitzki, Selected topics in Advanced General Relativity, https://sites.<lb/> google.com/site/winitzki/index/topics-in-general-relativity.<lb/> </bibl>
+        <bibl><label>[17]</label> S. W. Hawking, G. F. R. Ellis, The Large Scale Structure of Space-Time, Cam-<lb/>bridge University press (1973).<lb/> </bibl>
+        <bibl><label>[18]</label> J. Earman, Bangs, Crunches, Whimpers and Shrieks: Singularities and<lb/> Acausalities in Relativistic Spacetimes, Oxford University press (1995).<lb/> </bibl>
+        <bibl><label>[19]</label> R. M. Wald, Gravitational Collapse and Cosmic Censorship, arXiv:gr-qc/<lb/> 9710068.<lb/> </bibl>
+        <bibl><label>[20]</label> S. W. Hawking, R. Penrose, The singularities of gravitational collapse and<lb/> cosmology, Proc. Roy. Soc. Lond. A. 314 (1970).<lb/> </bibl>
+        <bibl><label>[21]</label> R. Penrose, Gravitational Collapse: the Role of General Relativity, Riv. Nuovo<lb/> Cim., Num. Sp. I, 252 (1969).<lb/> </bibl>
+        <bibl><label>[22]</label> S. Weinberg, Gravitation and Cosmology, John Wiley &amp; Sons, Inc (1972).<lb/> </bibl>
+        <bibl><label>[23]</label> D. Baumann, TASI Lectures on Inflation, arXiv:0907.5424.<lb/> </bibl>
+        <bibl><label>[24]</label> R. Durrer, Cosmological perturbation theory, arXiv:astro-ph/0402129.<lb/> </bibl>
+        <bibl><label>[25]</label> J. M. Bardeen, Gauge-invariant cosmological perturbations Phys. Rev. D22<lb/> (1980).<lb/> </bibl>
+        <bibl><label>[26]</label> E. W. Kolb, M. S. Turner, The Early Universe, Addison-Wesley Publishing<lb/> Company (1990).<lb/> </bibl>
+        <bibl><label>[27]</label> A. R. Liddle, D. H. Lyth, Cosmological Inflation and Large-Scale Structure,<lb/> Cambridge University press (2000).<lb/> </bibl>
+        <bibl><label>[28]</label> C. B. Collins, S. W. Hawking, Why is the universe istropic?, The Astrophysical<lb/> Journal 180 (1973).<lb/> </bibl>
+        <bibl><label>[29]</label> N. A. Chernikov, E. A. Tagirov, Quantum theory of scalar field in de Sitter<lb/> space-time, Annales de l&apos;I.H.P. Physique thÃľorique, Vol. IX (1968).<lb/> </bibl>
+        <bibl><label>[30]</label> A. A. Starobinsky, A New Type of Isotropic Cosmological Models Without Sin-<lb/>gularity, Phys.Lett., B91, (1980).<lb/> </bibl>
+        <bibl><label>[31]</label> A. D. Linde, Chaotic Inflation, Phys.Lett., B129, (1983).<lb/> </bibl>
+        <bibl><label>[32]</label> P. J. Steinhardt, The inflation debate: Is the theory at heart of modern cos-<lb/>mology deeply flawed?, Scientific American, April (2011); </bibl><bibl>A. Ijjas, P. J. Stein-<lb/>hardt, A. Loeb, Inflationary schism after Planck2013, Phys.Lett. B736 (2014).<lb/> arXiv:1402.6980<lb/> </bibl>
+        <bibl><label>[33]</label> M. Gasperini, Elements of string cosmology, Cambridge University Press<lb/> (2007).<lb/> </bibl>
+        <bibl><label>[34]</label> I. Antoniadis, E. Gava, K. S. Narain Moduli Corrections to Gravitational<lb/> Couplings from String loops, Phys.Lett.B283:209-212 (1992). arXiv:hep-th/<lb/> 9203071<lb/> </bibl>
+        <bibl><label>[35]</label> B. Zwiebach, Curvature squared terms and string theories, Phys. Lett. B 156 ,<lb/> 315 (1985).<lb/> </bibl>
+        <bibl><label>[36]</label> C.G. Callan, D. Friedan, E.J. Martinec and M.J. Perry,Strings in Background<lb/> Fields, Nucl. Phys. B262 (1985);</bibl> <bibl>E.S. Fradkin and A.A. Tseytlin, Effective field<lb/> theory from quantized strings, Phys. Lett. B158 (1985); </bibl><bibl>D.J. Gross and J.H.<lb/> Sloan, The quartic effective action for the heterotic string, Nucl. Phys. B291<lb/> (1987) 41.<lb/> </bibl>
+        <bibl><label>[37]</label> R. P. Woodard, Avoiding Dark Energy with 1/R Modifications of Gravity,<lb/> Lect.Notes Phys., 720 (2007).<lb/> </bibl>
+        <bibl><label>[38]</label> P. Kanti, N. E. Mavromatos, J. Rizos, K. Tamvakis, and E. Winstanley Dila-<lb/>tonic black holes in higher curvature string gravity, Phys. Rev. D 54, 8 (1996).<lb/> </bibl>
+        <bibl><label>[39]</label> A. Maselli, L. Gualtieri, P. Pani, L. Stella, V. Ferrari Testing gravity with<lb/> quasi-periodic oscillations from accreting black holes: the case of the Einstein-<lb/>dilaton-Gauss-Bonnet theory, The Astrophysical Journal, 801:115 (2015).<lb/> </bibl>
+        <bibl><label>[40]</label> P. Pani, V. Cardoso, Are black holes in alternative theories serious astrophysical<lb/> candidates? The case for Einstein-dilaton-Gauss-Bonnet black holes , Phys. Rev.<lb/> D 79, 084031 (2009).<lb/> </bibl>
+        <bibl><label>[41]</label> P. Pani, C. F. B. Macedo, L. C. B. Crispino, V. Cardoso, Slowly rotating black<lb/> holes in alternative theories of gravity, Phys. Rev. D 84, 087501 (2011).<lb/> </bibl>
+        <bibl><label>[42]</label> F. Moura and R. Schiappa, Higher-Derivative Corrected Black Holes: Perturba-<lb/>tive Stability and Absorption Cross-Section in Heterotic String Theory, Classical<lb/> Quantum Gravity 24,361 (2007).<lb/> </bibl>
+        <bibl><label>[43]</label> G. Esposito-Farese, Scalar-tensor theories and cosmology and tests of a<lb/> quintessence-Gauss-Bonnet coupling,<lb/> arXiv:gr-qc/0306018.<lb/> </bibl>
+        <bibl><label>[44]</label> T. Torii, H. Yajima, and K.I. Maeda, Dilatonic black holes with a Gauss-Bonnet<lb/> term, Phys. Rev. D 55, 2 (1997).<lb/> </bibl>
+        <bibl><label>[45]</label> P. Kanti, N. E. Mavromatos, J. Rizos, K. Tamvakis, and E. Winstanley, Dila-<lb/>tonic black holes in higher curvature string gravity. II. Linear stability, Phys.<lb/> Rev. D 57, 10 (1998).<lb/> </bibl>
+        <bibl><label>[46]</label> T. Torii, K.I. Maeda, Stability of a dilatonic black hole with a Gauss-Bonnet<lb/> term, Phys. Rev. D 58, 8 (1998)<lb/> </bibl>
+        <bibl><label>[47]</label> T. Sotiriou and E. Barausse, Post-Newtonian expansion for Gauss-Bonnet<lb/> Gravity, arXiv:gr-qc/0612065v2.<lb/> </bibl>
+        <bibl><label>[48]</label> E. Berti, V. Cardoso, and C. M. Will, Gravitational-wave spectroscopy of mas-<lb/>sive black holes with the space interferometer LISA, Phys. Rev. D 73 (2006).<lb/> </bibl>
+        <bibl><label>[49]</label> S. Mignemi and N. R. Stewart, Charged black holes in effective string theory,<lb/> Phys. Rev. D 47 (1993).<lb/> </bibl>
+        <bibl><label>[50]</label> I. Antoniadis, J. Rizos, K. Tamvakis Singularity-free cosmological solutions<lb/> of the super string effective action, Nucl.Phys. B415 (1994). arXiv:hep-th/<lb/> 9305025<lb/> </bibl>
+        <bibl><label>[51]</label> P. Kanti, J. Rizoz, K. Tamvakis, Singularity-free cosmological solutions in<lb/> quadratic gravity, Phys. Rev. D 59 (1999).<lb/> </bibl>
+        <bibl><label>[52]</label> R. Easther, K. Maeda, One-loop super string cosmology and the nonsingular<lb/> universe, Phys. Rev. D 54 (1996).<lb/> </bibl>
+        <bibl><label>[53]</label> J. Rizos, K. Tamvakis, On the existence of singularity-free solutions in quadratic<lb/> gravity, Phys. Letters B, 326, 57-61 (1994)<lb/> </bibl>
+        <bibl><label>[54]</label> P. Kanti, R. Gannouji, N. Dadhich, Early-time cosmological solutions in<lb/> Einstein-scalar-Gauss-Bonnet theory, Phys. Rev. D 92 (2015).<lb/> </bibl>
+        <bibl><label>[55]</label> P. Kanti, R. Gannouji, N. Dadhich, Gauss-Bonnet inflation, Phys. Rev. D 92<lb/> (2015).<lb/> </bibl>
+        <bibl><label>[56]</label> G. Hikmawan, J. Soda, A. Suroso, F. P. Zen Comment on âĂĲGauss-Bonnet<lb/> inflationâĂİ, Phys. Rev. D 93 (2016).<lb/> </bibl>
+        <bibl><label>[57]</label> S. Tsujikawa, R. Brandenberger, F. Finelli On the Construction of nonsingular<lb/> Pre-Big-Bang and Ekpyrotic Cosmologies and the Resulting Density Perturba-<lb/>tions, Phys.Rev. D66 (2002). arXiv:hep-th/0207228<lb/> </bibl>
+        <bibl><label>[58]</label> C. Cartier, E.J. Copeland, R. Madden, The graceful exit in pre-big bang string<lb/> cosmology, JHEP0001 (2000) arXiv:hep-th/9910169.<lb/> </bibl>
+        <bibl><label>[59]</label> H. Yajima, K. Maeda, H. Ohkubo, Generality of Singularity Avoidance in super<lb/> string Theory: Anisotropic Case, Phys.Rev. D62 (2000) arXiv:gr-qc/9910061.<lb/> </bibl>
+        <bibl><label>[60]</label> S. O. Alexeyev, A. V. Toporensky and V. O. Ustiansky, nonsingular cosmo-<lb/>logical models in string gravity with constant dilaton and second-order curvature<lb/> corrections, Class. Quant. Grav. 17, 2243 (2000).<lb/> </bibl>
+        <bibl><label>[61]</label> J. Khoury, B. A. Ovrut, P. J. Steinhardt, N. Turok, The Ekpyrotic Uni-<lb/>verse: Colliding Branes and the Origin of the Hot Big Bang, Phys.Rev.D64<lb/> (2001).arXiv:hep-th/0103239<lb/> </bibl>
+        <bibl><label>[62]</label> S. Kawai, M. Sakagami, J. Soda Perturbative analysis of nonsingular cosmo-<lb/>logical model, Proceedings of the Seventh Workshop on General Relativity and<lb/> Gravitation (Y. Eriguchi et.al., ed.) pp.249 arXiv:gr-qc/9901065.<lb/> </bibl>
+        <bibl><label>[63]</label> S. Kawai, M. Sakagami, J. Soda Novel Instability in super string Cosmology,<lb/> arXiv:gr-qc/9807056.<lb/> </bibl>
+        <bibl><label>[64]</label> S. Kawai, M. Sakagami, J. Soda Instability of 1-loop super string cosmology,<lb/> Phys.Lett. B437 (1998) arXiv:gr-qc/9802033.<lb/> </bibl>
+        <bibl><label>[65]</label> J. Hwang, H. Noh, Conserved cosmological structures in the one-loop su-<lb/>per string effective action, Phys.Rev. D61 (2000) arXiv:astro-ph/9909480;<lb/> C. Cartier, J. Hwang, E. J. Copeland Evolution of cosmological perturbations<lb/> in nonsingular string cosmologies, Phys.Rev. D64 (2001) arXiv:astro-ph/<lb/> 0106197;</bibl><bibl>J. Hwang, H. Noh, Classical evolution and quantum generation in gen-<lb/>eralized gravity theories including string corrections and tachyon: Unified anal-<lb/>yses, Phys.Rev. D71 (2005) arXiv:gr-qc/0412126;<lb/> </bibl>
+        <bibl><label>[66]</label> S. Bhattacharjee, D. Maity, and R. Mukherjee, Constraining scalar-Gauss-<lb/>Bonnet Inflation by Reheating, Unitarity and PLANCK, arXiv:1606.00698v1.<lb/> </bibl>
+        <bibl><label>[67]</label> P. Jiang, J. Hu, and Z. Guo, Inflation coupled to a Gauss-Bonnet term, Phys.<lb/> Rev. D 88, 123508 (2013) arXiv:1310.5579.<lb/> </bibl>
+        <bibl><label>[68]</label> Z. Guo, D. J. Schwarz, Slow-roll inflation with a Gauss-Bonnet correction,<lb/> Phys.Rev. D81 (2010) arXiv:1001.1897.<lb/> </bibl>
+        <bibl><label>[69]</label> Z. Guo, D. J. Schwarz Power spectra from an inflaton coupled to the Gauss-<lb/>Bonnet term, Phys. Rev. D80 (2009) arXiv:0907.0427.<lb/> </bibl>
+        <bibl><label>[70]</label> S. Koh, B. Lee, W. Lee, G. Tumurtushaa, Observational constraints on slow-<lb/>roll inflation coupled to a Gauss-Bonnet term, Phys. Rev. D 90 (2014) arXiv:<lb/> 1404.6096.<lb/> </bibl>
+        <bibl><label>[71]</label> B. M. Leith, I. P. Neupane, Gauss-Bonnet cosmologies: crossing the phantom<lb/> divide and the transition from matter dominance to dark energy, JCAP 0705:019<lb/> (2007) arXiv:hep-th/0702002.<lb/> </bibl>
+        <bibl><label>[72]</label> I. P. Neupane, B. M.N. Carter Dynamical Relaxation of Dark Energy: A So-<lb/>lution to Early Inflation, Late-time Acceleration and the Cosmological Constant<lb/> Problem, Phys.Lett. B638 (2006) arXiv:hep-th/0510109.<lb/> </bibl>
+        <bibl><label>[73]</label> M. Satoh, S. Kanno, J. Soda Circular Polarization of Primordial Gravitational<lb/> Waves in String-inspired Inflationary Cosmology, Phys.Rev. D77 (2008) arXiv:<lb/> 0706.3585.<lb/> </bibl>
+        <bibl><label>[74]</label> Z. Guo, N. Ohta, and S. Tsujikawa Realizing scale-invariant density pertur-<lb/>bations in low-energy effective string theory, Phys. Rev. D 75 (2007) arXiv:<lb/> hep-th/0610336<lb/> </bibl>
+        <bibl><label>[75]</label> C.Cartier, E.J.Copeland, M.Gasperini, Gravitational waves in nonsingular<lb/> string cosmologies, Nucl.Phys. B607 (2001) arXiv:gr-qc/0101019</bibl>;<bibl>M. Gasperini<lb/> Tensor perturbations in high-curvature string backgrounds, Phys.Rev. D56<lb/> (1997) arXiv:gr-qc/9704045<lb/> </bibl>
+        <bibl><label>[76]</label> Advanced Numerical Differential Equation Solving in the Wolfram Language,<lb/> http://reference.wolfram.com/language/tutorial/NDSolveOverview.<lb/> html.<lb/> </bibl>
+        <bibl><label>[77]</label> A. Ijjas, P. J. Steinhardt, Classically stable non-singular cosmological bounces,<lb/> arXiv:1606.08880</bibl>
+        </listBibl>
+    </text>
+</tei>
+

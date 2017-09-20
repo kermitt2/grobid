@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Bertanza L. et al.</author>, <title level="j">Phys. Rev. Lett.</title>, <biblScope unit="volume">9</biblScope> (<date>1962</date>) <biblScope unit="page">180</biblScope>.</bibl>
+	<bibl><author>Rafelski J. and Muller B.</author>, <title level="j">Phys. Rev. Lett.</title>, <biblScope unit="volume">48</biblScope> (<date>1982</date>) <biblScope unit="page">1066</biblScope>;</bibl>
+	<bibl><author>Rafelski J.</author>, <title level="j">Nucl. Phys. A</title>, <biblScope unit="volume">418</biblScope> (<date>1984</date>) <biblScope unit="page">215c</biblScope>;</bibl>
+	<bibl><author>Jacob M. and Tran Thanh Van J.</author>, <title level="j">Phys. Rep.</title>, <biblScope unit="volume">88</biblScope> (<date>1982</date>)<biblScope unit="page">321</biblScope> ;</bibl>
+	<bibl><author>Koch P. and Rafelski J.</author>, <title level="j">Nucl. Phys. A</title>, <biblScope unit="volume">444</biblScope>( <date>1985</date>)<biblScope unit="page">678</biblScope> ;</bibl>
+	<bibl><author>Baltz A .J .and Dover C .</author>,<title level="j">Phys .Rev .C</title>, <biblScope unit="volume">53</biblScope>( <date>1996</date> )<biblScope unit="page">362</biblScope>;</bibl>
+	<bibl><author>Sorge H. et al.</author>, <title level="j">Phys. Lett. B</title>, <biblScope unit="volume">289</biblScope>( <date>1992</date>)<biblScope unit="page">6</biblScope> .</bibl>
+	<bibl><author>Lévai P. and Müller B.</author>, <title level="j">Phys. Rev. Lett.</title>, <biblScope unit="volume">67</biblScope> (<date>1991</date>) <biblScope unit="page">1519</biblScope>;</bibl>
+	<bibl><author>Stöcker H .</author>,<title level="j">Nucl .Phys .A</title> ,<biblScope unit="volume">750</biblScope> ( <date>2005</date>)<biblScope unit="page">121</biblScope> .</bibl>
+	<bibl><author>Gorenstein M. I., Tsai M. S. and Yang Shin Nan</author>, <title level="j">Phys.Rev .C</title> ,<biblScope unit="volume">51</biblScope> ( <date>1995</date>)<biblScope unit="page">1465</biblScope> .</bibl>
+	<bibl><author>Haglin K.</author>, <title level="j">Nucl. Phys. A</title>, <biblScope unit="volume">584</biblScope> (<date>1995</date>) <biblScope unit="page">719</biblScope>;</bibl>
+	<bibl><author>Smith W. andHaglin K .L .</author>,<title level="j">Phys .Rev .C</title> ,<biblScope unit="volume">57</biblScope> ( <date>1998</date>)<biblScope unit="page">1449</biblScope> .</bibl>
+	<bibl><author>Uddin S. et al.</author>, <title level="j">Nucl. Phys. A</title>, <biblScope unit="volume">934</biblScope> (<date>2015</date>) <biblScope unit="page">121</biblScope>.</bibl>
+	<bibl><author>Uddin S. et al.</author>, <title level="j">Adv. High Energy Phys.</title>, <date>2015</date> (<date>2015</date>) <biblScope unit="page">154853</biblScope>.</bibl>
+	<bibl><author>Uddin S. et al.</author>, <title level="j">J. Phys. G</title>, <biblScope unit="page">39</biblScope> (<date>2012</date>) <biblScope unit="page">015012</biblScope>.</bibl>
+	<bibl><author>Cleymans J.</author>, <title level="j">J. Phys. G: Nucl. Part. Phys.</title>, <biblScope unit="volume">35</biblScope> (<date>2008</date>) <biblScope unit="page">044017</biblScope>;</bibl>
+	<bibl><author>Becattini F. et al.</author>, <title level="j">POS</title>(<biblScope unit="volume">CPOD07</biblScope>) (<date>2007</date>) <biblScope unit="page">012</biblScope>.</bibl>
+	<bibl><author>Becattini F. and Cleymans J.</author>, <title level="j">J. Phys. G: Nucl. Part. Phys.</title>,<biblScope unit="volume">34</biblScope> ( <date>2007</date>)<biblScope unit="page">S959</biblScope> .</bibl>
+	<bibl><author>Bhat Riyaz Ahmed et al.</author>, <title level="j">Nucl. Phys. A</title>, <biblScope unit="volume">935</biblScope> (<date>2015</date>) <biblScope unit="page">43</biblScope>;</bibl>
+	<bibl><author>Bashir Inam-ul et al.</author>, <title level="j">Zh. Eksp. Teor. Fiz.</title>, <biblScope unit="volume">148</biblScope> (<date>2015</date>) <biblScope unit="page">241</biblScope>.</bibl>
+	<bibl><author>Huovinen P. and Ruuskanen P. V.</author>, <title level="j">Annu. Rev. Nucl. Part.Sci .</title>,<biblScope unit="volume">56</biblScope> ( <date>2006</date>)<biblScope unit="page">163</biblScope> .</bibl>
+	<bibl><orgName type="collaboration">STAR Collaboration</orgName> (<author>Abelev B. I. et al.</author>), <title level="j">Phys. Lett.B</title> ,<biblScope unit="volume">673</biblScope> ( <date>2009</date>)<biblScope unit="page">183</biblScope> .</bibl>
+	<bibl><orgName type="collaboration">STAR Collaboration</orgName> (<author>Abelev B. I. et al.</author>), <title level="j">Phys. Rev. C</title>,<biblScope unit="volume">79</biblScope> ( <date>2009</date>)<biblScope unit="page">064903</biblScope> .</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

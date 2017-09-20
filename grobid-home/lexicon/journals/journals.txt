@@ -17557,7 +17557,6 @@ Criminal law bulletin
 Denver law journal
 Law quarterly review
 Minnesota law review
-New York
 Philosophical quarterly
 Saskatchewan law review
 South Texas law journal
@@ -21016,6 +21015,7 @@ Sociologia del diritto
 Sociologia
 South African geographical journal, being a record of the proceedings of the South African Geographical Society
 Natural law forum
+Natural Language Engineering
 Natural resources journal
 Di li xue bao
 Chung-kuo ti li hsueh hui pien chi

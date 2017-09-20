@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>B. Pontecorvo</author>, <title level="j">Zh. ´ Eksp.Teor .Fiz .</title><biblScope unit="volume">34</biblScope> ,<biblScope unit="page">247</biblScope> ( <date>1958</date>)[ <title level="j">Sov.Phys. JETP</title><biblScope unit="volume">7</biblScope> , <biblScope unit="page">172</biblScope>( <date>1958</date> )].</bibl>
+	<bibl><author>Z. Maki, M. Nakagawa, and S. Sakata</author>, <title level="j">Prog. Theor. Phys.</title><biblScope unit="volume">28</biblScope> ,<biblScope unit="volume">870</biblScope> ( <date>1962</date>).</bibl>
+	<bibl><author>A. Strumia and F. Vissani</author>, <idno type="arxiv">hep-ph/0606054</idno>;</bibl> <bibl><author>M.C .Gonzalez -Garciaand M .Maltoni</author> ,<title level="j">Phys .Rep .</title><biblScope unit="volume">460</biblScope> ,<biblScope unit="volume">1</biblScope>( <date>2008</date> )[<idno type="arxiv">arXiv :0704.1800</idno>[<note>hep -ph</note>]].</bibl>
+	<bibl><author>E. Kh. Akhmedov, J. Kopp, and M. Lindner</author>, <title level="j">J. High EnergyPhys</title> .<biblScope unit="volume">0805</biblScope> ,<biblScope unit="page">005</biblScope> ( <date>2008</date>)[ <idno type="arxiv">arXiv:0802.2513</idno>[ <note>hep-ph</note>]].</bibl>
+	<bibl><author>S. M. Bilenky, F. von Feilitzsch, and W. Potzel</author>, <idno type="arxiv">arXiv:0804.3409</idno>[ <note>hep-ph</note>].</bibl>
+	<bibl><author>E. Kh. Akhmedov, J. Kopp, and M. Lindner</author>, <idno type="arxiv">arXiv:0803.1424</idno>[ <note>hep-ph</note>].</bibl>
+	<bibl><author>E. Kh. Akhmedov</author>, <title level="j">J. High Energy Phys</title>. <biblScope unit="volume">0709</biblScope>, <biblScope unit="page">116</biblScope> (<date>2007</date>)<idno type="arxiv">arXiv :0706.1216</idno>[ <note>hep-ph</note>].</bibl>
+	<bibl><author>S. Eliezer and A. R. Swift</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">105</biblScope>, <biblScope unit="page">45</biblScope> (<date>1976</date>).</bibl>
+	<bibl><author>H. Fritzsch and P. Minkowski</author>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">62</biblScope>, <biblScope unit="page">72</biblScope> (<date>1976</date>).</bibl>
+	<bibl><author>S. M. Bilenky and B. Pontecorvo, Lett</author>. <title level="j">Nuovo Ci-mento</title>.<biblScope unit="volume">17</biblScope> ,<biblScope unit="page">569</biblScope> ( <date>1976</date>).</bibl>
+	<bibl><author>S. M. Bilenky and B. Pontecorvo</author>, <title level="j">Phys. Rep.</title> <biblScope unit="volume">41</biblScope>, <biblScope unit="page">225</biblScope> (<date>1978</date>).</bibl>
+	<bibl><author>H. J. Lipkin</author>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">348</biblScope>, <biblScope unit="volume">604</biblScope> (<date>1995</date>) [<idno type="arxiv">hep-ph/9501269</idno>].</bibl>
+	<bibl><author>Y. Grossman and H. J. Lipkin</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">55</biblScope>, <biblScope unit="page">2760</biblScope> (<date>1997</date>)[ <idno type="arxiv">hep-ph/9607201</idno>].</bibl>
+	<bibl><author>L. Stodolsky</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">58</biblScope>, <biblScope unit="page">036006</biblScope> (<date>1998</date>) [<idno type="arxiv">hep-ph/9802387</idno>].</bibl>
+	<bibl><author>H. J. Lipkin</author>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">477</biblScope>, <biblScope unit="page">195</biblScope> (<date>2000</date>).</bibl>
+	<bibl><author>R. G. Winter</author>, <title level="j">Lett. Nuovo Cimento</title> <biblScope unit="volume">30</biblScope>, <biblScope unit="page">101</biblScope> (<date>1981</date>).</bibl>
+	<bibl><author>C. Giunti</author>, <title level="j">Mod. Phys. Lett. A</title> <biblScope unit="volume">16</biblScope>, <biblScope unit="page">2363</biblScope> (<date>2001</date>) [<idno type="arxiv">hep-ph/0104148</idno>].</bibl>
+	<bibl><author>A. G. Cohen, S. L. Glashow, and Z. Ligeti</author>, <idno type="arxiv">arXiv:0810.4602</idno>[ <note>hep-ph</note>].</bibl>
+	<bibl><author>M. E. Peskin and D. V. Schroeder</author>, <title level="m">An Introduction toQuantum Field Theory</title> ( <publisher>Westview</publisher>,<pubPlace>New York</pubPlace> ,<date>1995</date> ),<note>Ch. 4.</note></bibl>
+	<bibl><author>S. Nussinov</author>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">63</biblScope>, <biblScope unit="page">201</biblScope> (<date>1976</date>).</bibl>
+	<bibl><author>B. Kayser</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">24</biblScope>, <biblScope unit="page">110</biblScope> (<date>1981</date>).</bibl>
+	<bibl><author>C. Giunti, C. W. Kim, and U. W. Lee</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">44</biblScope>, <biblScope unit="page">3635</biblScope>( <date>1991</date>).</bibl>
+	<bibl><author>J. Rich</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">48</biblScope>, <biblScope unit="page">4318</biblScope> (<date>1993</date>).</bibl>
+	<bibl><author>A. D. Dolgov, A. Yu. Morozov, L. B. Okun, and M.G .Shchepkin</author> ,<title level="j">Nucl .Phys .B</title> <biblScope unit="volume">502</biblScope> ,<biblScope unit="page">3</biblScope> ( <date>1997</date>)[ <idno type="arxiv">hep-ph/9703241</idno>].</bibl>
+	<bibl><author>C. Giunti and C. W. Kim</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">58</biblScope>, <biblScope unit="page">017301</biblScope> (<date>1998</date>)[ <idno type="arxiv">hep-ph/9711363</idno>].</bibl>
+	<bibl><author>C. Y. Cardall</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">61</biblScope>, <biblScope unit="page">073006</biblScope> (<date>2000</date>) [<idno type="arxiv">hep-ph/9909332</idno>].</bibl>
+	<bibl><author>C. Giunti, J. High Energy Phys</author>. <biblScope unit="volume">0211</biblScope>, <biblScope unit="page">017</biblScope> (<date>2002</date>) [<idno type="arxiv">hep-ph/0205014</idno>].</bibl>
+	<bibl><author>Y. Farzan and A. Yu. Smirnov</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">805</biblScope>, <biblScope unit="page">356</biblScope> (<date>2008</date>)<idno type="arxiv">arXiv :0803.0495</idno>[ <note>hep-ph</note>].</bibl>
+	<bibl><author>L. Visinelli and P. Gondolo</author>, <idno type="arxiv">arXiv:0810.4132</idno> [<note>hep-ph</note>].</bibl>
+	<bibl><author>M. Zralek</author>, <title level="j">Acta Phys. Pol. B</title> <biblScope unit="volume">29</biblScope>, <biblScope unit="page">3925</biblScope> (<date>1998</date>) [<idno type="arxiv">hep-ph/9810543</idno>];</bibl><bibl><author>M .Beuthe</author> ,<title level="j">Phys .Rep .</title><biblScope unit="volume">375</biblScope> ,<biblScope unit="page">105</biblScope> ( <date>2003</date>)[ <idno type="arxiv">hep-ph/0109119</idno>].</bibl>
+	<bibl><author>A. Yu. Smirnov</author>, in <title level="m">Proc. of the 8th Rencontres de Blois:Neutrinos ,Dark Matter and the Universe</title> ,Ed .by<editor>T . Stolarczyket al .</editor> (<publisher>Editions Frontiers</publisher>, <pubPlace>Gif- sur-Yvette</pubPlace>,<date>1997</date>), p.<biblScope unit="page">41</biblScope> .</bibl>
+	<bibl><author>A. Yu. Smirnov</author>, in <title level="m">Proc. of IPM School and Conf. onLepton and Hadron Physics ( IPM-LHP06)</title>,<pubPlace>Tehran ,Iran</pubPlace>, <biblScope unit="page">15- 20</biblScope><date>May2006</date> , Ed. by<editor>Y . Farzan</editor>, p. <biblScope unit="page">0003</biblScope>[<idno type="arxiv">hep - ph/0702061</idno>].</bibl>
+	<bibl><author>K. Kiers, S. Nussinov, and N. Weiss</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">53</biblScope>, <biblScope unit="page">537</biblScope>( <date>1996</date>)[ <idno type="arxiv">hep-ph/9506271</idno>].</bibl>
+	<bibl><author>M. Beuthe</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">66</biblScope>, <biblScope unit="page">013003</biblScope> (<date>2002</date>) [<idno type="arxiv">hep-ph/0202068</idno>].</bibl>
+	<bibl><author>W. Grimus and P. Stockinger</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">54</biblScope>, <biblScope unit="page">3414</biblScope> (<date>1996</date>)[ <idno type="arxiv">hep-ph/9603430</idno>].</bibl>
+	<bibl><author>I. Yu. Kobzarev, B. V. Martemyanov, L. B. Okun, and M.G .Shchepkin</author> ,<title level="j">Sov .J .Nucl .Phys .</title><biblScope unit="volume">35</biblScope> ,<biblScope unit="page">708</biblScope> ( <date>1982</date>).</bibl>
+	<bibl><author>C. Giunti, C. W. Kim, J. A. Lee, and U. W. Lee</author>, <title level="j">Phys. Rev.D</title> <biblScope unit="volume">48</biblScope> ,<biblScope unit="page">4310</biblScope> ( <date>1993</date>)[ <idno type="arxiv">hep-ph/9305276</idno>].</bibl>
+	<bibl><author>W. Grimus, P. Stockinger, and S. Mohanty</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">59</biblScope> ,<biblScope unit="page">013011</biblScope> ( <date>1999</date>)[ <idno type="arxiv">hep-ph/9807442</idno>].</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

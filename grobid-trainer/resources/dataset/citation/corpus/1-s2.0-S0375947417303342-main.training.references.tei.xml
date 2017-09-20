@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>R.K. Gupta</author>, in: <editor>R.K. Gupta</editor> (Ed.), <title level="m">Physics of Particles, Nuclei and Materials-Recent Trends</title>, <publisher>Narosa Publishing House</publisher>,<pubPlace>New Delhi</pubPlace> ,<date>2002</date> ,p .<biblScope unit="page">118</biblScope> .</bibl>
+	<bibl><author>Niyti, G. Sawhney, M.K. Sharma, R.K. Gupta</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">91</biblScope> (<date>2015</date>) <biblScope unit="page">054606</biblScope>.</bibl>
+	<bibl><author>A. Parihari, S. Santra, A. Pal, N.L. Singh, K. Mahata, B.K. Nayak, R. Tripathi, K. Ramachandran, P.K. Rath, R. Chakrabarti,S .Kailas</author> ,<title level="j">Phys .Rev .C</title> <biblScope unit="volume">90</biblScope> ( <date>2014</date>)<biblScope unit="page">014603</biblScope> .</bibl>
+	<bibl><author>H. Freiesleben, G.T. Rizzo, Z.R. Huizenga</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">12</biblScope> (<date>1975</date>) <biblScope unit="page">42</biblScope>.</bibl>
+	<bibl><author>A.M. Vinodkumar, et al.</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">87</biblScope> (<date>2013</date>) <biblScope unit="page">044603</biblScope>.</bibl>
+	<bibl><author>A.M. Vinodkumar, et al.</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">80</biblScope> (<date>2009</date>) <biblScope unit="page">054609</biblScope>.</bibl>
+	<bibl><author>W. Loveland, et al.</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">74</biblScope> (<date>2006</date>) <biblScope unit="page">064609</biblScope>.</bibl>
+	<bibl><author>D. Peterson, J.J. Kolata, P. Santi, J. von Schwarzenberg, D. Bazin, B.M. Sherrill</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">67</biblScope> (<date>2003</date>) <biblScope unit="page">014601</biblScope>.</bibl>
+	<bibl><author>B. Blank, et al.</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">555</biblScope> (<date>1993</date>) <biblScope unit="page">408</biblScope>.</bibl>
+	<bibl><author>M. Petrascu, et al.</author>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">405</biblScope> (<date>1997</date>) <biblScope unit="page">224</biblScope>.</bibl>
+	<bibl><author>A. Yoshida, et al.</author>, in: <editor>A.M. Stefanini, G. Nebbia, S. Lunardi, G. Montagnoli</editor> (Eds.), <title level="m">Heavy Ion Fusion: Exploring theVariety of Nuclear Properties</title> ,<publisher>World Scientific</publisher> ,<pubPlace>Singapore</pubPlace> ,<date>1994</date> ,p .<biblScope unit="page">311</biblScope> .</bibl>
+	<bibl><author>R.K. Gupta</author>, in: <editor>C. Beck</editor> (Ed.), <title level="m">Clusters in Nuclei</title>, in: <title level="s">Lecture Notes in Physics</title> <biblScope unit="volume">818</biblScope>, vol. <biblScope unit="volume">I</biblScope>, <publisher>Springer Verlag</publisher>, <date>2010</date>, p.<biblScope unit="page">223</biblScope> ;<note>and earlier references there in it</note> .</bibl>
+	<bibl><author>W. Reisdorf</author>, <title level="j">Z. Phys. A</title> <biblScope unit="volume">300</biblScope> (<date>1981</date>) <biblScope unit="page">227</biblScope>.</bibl>
+	<bibl><author>N. Takigawa, M. Kuratani, H. Sagawa</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">47</biblScope> (<date>1993</date>) <biblScope unit="page">R2470</biblScope>.</bibl>
+	<bibl><author>C.Y. Wong</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="page">31</biblScope> (<date>1973</date>) <biblScope unit="page">766</biblScope>.</bibl>
+	<bibl><author>J. Zhang, C. Wang, Z. Ren</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">864</biblScope> (<date>2011</date>) <biblScope unit="page">128</biblScope>.</bibl>
+	<bibl><author>V.V. Sargsyan, G.G. Adamian, N.V. Antonenko, W. Scheid, H.Q. Zhang</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">86</biblScope> (<date>2012</date>) <biblScope unit="page">054610</biblScope>.</bibl>
+	<bibl><author>M. Dasgupta, et al.</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">70</biblScope> (<date>2004</date>) <biblScope unit="page">024606</biblScope>.</bibl>
+	<bibl><author>R.K. Gupta, N. Singh, M. Manhas</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">70</biblScope> (<date>2004</date>) <biblScope unit="page">034608</biblScope>.</bibl>
+	<bibl><author>R.K. Gupta, M. Balasubramaniam, R. Kumar, N. Singh, M. Manhas, W. Greiner</author>, <title level="j">J. Phys. G, Nucl. Part. Phys.</title> <biblScope unit="volume">31</biblScope> (<date>2005</date>)<biblScope unit="page">631</biblScope> .</bibl>
+	<bibl><author>N.J. Davidson, S.S. Hsiao, J. Markram, H.G. Miller, Y. Tzeng</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">570</biblScope> (<date>1994</date>) <biblScope unit="page">61c</biblScope>.</bibl>
+	<bibl><author>R.K. Gupta, R. Kumar, N.K. Dhiman, M. Balasubramaniam, W. Scheid, C. Beck</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">68</biblScope> (<date>2003</date>) <biblScope unit="page">014610</biblScope>.</bibl>
+	<bibl><author>M. Balasubramaniam, R. Kumar, R.K. Gupta, C. Beck, W. Scheid</author>, <title level="j">J. Phys. G, Nucl. Part. Phys.</title> <biblScope unit="volume">29</biblScope> (<date>2003</date>) <biblScope unit="page">2703</biblScope>.</bibl>
+	<bibl><author>B.B. Singh, M.K. Sharma, R.K. Gupta</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">77</biblScope> (<date>2008</date>) <biblScope unit="page">054613</biblScope>.</bibl>
+	<bibl><author>G. Audi, A.H. Wapstra, C. Thiboult</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">729</biblScope> (<date>2003</date>) <biblScope unit="page">337</biblScope>.</bibl>
+	<bibl> [26]<author>W .Myers ,W .J.Swiatecki</author> ,<title level="j">Nucl .Phys .</title><biblScope unit="volume">81</biblScope> ( <date>1966</date>)<biblScope unit="page">1</biblScope> .</bibl>
+	<bibl>[ 27]<author>A. S.Jensen, J. Damgaard</author>, <title level="j">Nucl. Phys. A</title><biblScope unit="volume">203</biblScope> ( <date>1973</date> )<biblScope unit="page">578</biblScope>.</bibl>
+	<bibl> [28 ]<author>R.K .Gupta,S .Kumar ,M .Balasubramaniam ,G .Münzenberg ,W .Scheid</author> ,<title level="j">J .Phys .G ,Nucl .Part .Phys .</title><biblScope unit="volume">28</biblScope> (<date>2002</date> ) <biblScope unit="page">699</biblScope>.</bibl>
+	<bibl><author>R.K. Gupta, M. Balasubramaniam, S. Kumar, S.K. Patra, G. Münzenberg, W. Greiner</author>, <title level="j">J. Phys. G, Nucl. Part. Phys.</title> <biblScope unit="volume">32</biblScope>( <date>2006</date>)<biblScope unit="page">565</biblScope> .</bibl>
+	<bibl><author>H. Kröger, W. Scheid</author>, <title level="j">J. Phys. G </title><biblScope unit="volume">6</biblScope> (<date>1980</date>) <biblScope unit="page">L85</biblScope>.</bibl>
+	<bibl><author>R.K. Gupta, M. Balasubramaniam, C. Mazzocchi, M. La Commara, W. Scheid</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">65</biblScope> (<date>2002</date>) <biblScope unit="page">024601</biblScope>.</bibl>
+	<bibl><author>H.S. Khosla, S.S. Malik, R.K. Gupta</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">513</biblScope> (<date>1990</date>) <biblScope unit="page">115</biblScope>.</bibl>
+	<bibl><author>S. Kumar, R.K. Gupta</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">55</biblScope> (<date>1997</date>) <biblScope unit="page">218</biblScope>.</bibl>
+	<bibl><author>R.K. Gupta, S. Kumar, W. Scheid</author>, <title level="j">Int. J Mod. Phys. E</title> <biblScope unit="volume">6</biblScope> (<date>1997</date>) <biblScope unit="page">259</biblScope>.</bibl>
+	<bibl><author>T. Matsuse, C. Beck, R. Nouicer, D. Mahboub</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">55</biblScope> (<date>1997</date>) <biblScope unit="page">1380</biblScope>.</bibl>
+	<bibl><author>S.J. Sanders</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">44</biblScope> (<date>1991</date>) <biblScope unit="page">2676</biblScope>.</bibl>
+	<bibl><author>S.J. Sanders, D.G. Kovar, B.B. Back, C. Beck, D.J. Henderson, R.V.F. Janssens, T.F. Wang, B.D. Wilkins</author>, <title level="j">Phys. Rev.C</title> <biblScope unit="volume">40</biblScope> ( <date>1989</date>)<biblScope unit="page">2091</biblScope> .</bibl>
+	<bibl><author>G. Royer, J. Mignen</author>, <title level="j">J. Phys. G, Nucl. Part. Phys.</title> <biblScope unit="volume">18</biblScope> (<date>1992</date>) <biblScope unit="page">1781</biblScope>.</bibl>
+	<bibl><author>R.K. Gupta</author>, in: <editor>E. Gadioli</editor> (Ed.), <title level="m">Proceedings of the 5th International Conference on Nuclear Reaction Mechanisms</title>, <orgName>RicercaScientifica Educazione Permanente</orgName> ,<pubPlace>Milano ,Italy</pubPlace> ,<date>1988</date> ,p .<biblScope unit="page">416</biblScope> .</bibl>
+	<bibl><author>S.S. Malik, R.K. Gupta</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">39</biblScope> (<date>1989</date>) <biblScope unit="page">1992</biblScope>.</bibl>
+	<bibl><author>A. Kaur, S. Chopra, R.K. Gupta</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">90</biblScope> (<date>2014</date>) <biblScope unit="page">024619</biblScope>.</bibl>
+	<bibl><author>S. Chopra, A. Kaur, R.K. Gupta</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">91</biblScope> (<date>2015</date>) <biblScope unit="page">034613</biblScope>.</bibl>
+	<bibl><author>M. Kaur, B. Singh, M.K. Sharma, R.K. Gupta</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">92</biblScope> (<date>2015</date>) <biblScope unit="page">024623</biblScope>.</bibl>
+	<bibl><author>S. Chopra, M. Bansal, M.K. Sharma, R.K. Gupta</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">88</biblScope> (<date>2013</date>) <biblScope unit="page">014615</biblScope>.</bibl>
+	<bibl><author>Niyti, R.K. Gupta, W. Greiner</author>, <title level="j">J. Phys. G, Nucl. Part. Phys.</title> <biblScope unit="volume">37</biblScope> (<date>2010</date>) <biblScope unit="page">115103</biblScope>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

@@ -114,7 +114,8 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                 if (container.isBeginning()) {
                     if (reference.length() != 0) {
                         resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
-                            referenceLabel.toString().trim(), reference.toString().trim(), features.toString(), BoundingBoxCalculator.calculate(referenceTokens)));
+                            referenceLabel.toString().trim(), reference.toString().trim(), referenceTokens, 
+                            	features.toString(), BoundingBoxCalculator.calculate(referenceTokens)));
                         reference.setLength(0);
                         referenceLabel.setLength(0);
                         features.setLength(0);
@@ -157,7 +158,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
             if (!iterator.hasNext()) {
                 resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
                     referenceLabel.toString().trim(), reference.toString().trim(),
-                    features.toString(),
+                    referenceTokens, features.toString(),
                     BoundingBoxCalculator.calculate(referenceTokens)));
                 reference.setLength(0);
                 referenceLabel.setLength(0);
@@ -736,17 +737,17 @@ System.out.println("");
                     features.digit = "ALLDIGIT";
                 }
 
-                Matcher m2 = featureFactory.YEAR.matcher(text);
+                Matcher m2 = featureFactory.year.matcher(text);
                 if (m2.find()) {
                     features.year = true;
                 }
 
-                Matcher m3 = featureFactory.EMAIL.matcher(text);
+                Matcher m3 = featureFactory.email.matcher(text);
                 if (m3.find()) {
                     features.email = true;
                 }
 
-                Matcher m4 = featureFactory.HTTP.matcher(text);
+                Matcher m4 = featureFactory.http.matcher(text);
                 if (m4.find()) {
                     features.http = true;
                 }

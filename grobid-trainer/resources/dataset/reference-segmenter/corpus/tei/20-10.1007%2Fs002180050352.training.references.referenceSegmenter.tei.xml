@@ -1,0 +1,37 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1.</label> P. Noyes, Phys. Rev. Lett. 15, 538 (1965); </bibl>
+        <bibl>K.L. Kowalski, Phys. Rev.<lb/> Lett. 15, 798 (1965)<lb/> </bibl>
+        <bibl><label>2.</label> H. Arenhövel, W. Leidemann, and E.L. Tomusiak, Phys. Rev. C 46, 455<lb/> (1992); </bibl>
+        <bibl>B. Mosconi and P. Ricci, Nucl. Phys. A517, 483 (1990)<lb/> </bibl>
+        <bibl><label>3.</label> H. Arenhövel and M. Sanzone, Photodisintegration of the Deuteron, Few<lb/> Body Syst. Suppl. 3, Springer Verlag, Wien, New York, 1991<lb/> </bibl>
+        <bibl><label>4.</label> W. Glöckle, H. Witala and Th. Cornelius, Nucl. Phys. A496, 446 (1989)<lb/> </bibl>
+        <bibl><label>5.</label> W. Glöckle, H. Kamada, Phys. Rev. Lett. 71, 971 (1993)<lb/> </bibl>
+        <bibl><label>6.</label> M. Lacombe, B. Loiseau, J.M. Richard, R. Vinh Mau, J. Côté, P. Pirès,<lb/> and R. de Tourreil, Phys. Rev. C 21, 861 (1980)<lb/> </bibl>
+        <bibl><label>7.</label> J. Haidenbauer, K. Holinde, and M.B. Johnson, Phys. Rev. C 45, 2055<lb/> (1992); </bibl>
+        <bibl>R. Machleidt, Adv. Nucl. Phys. 19, 189 (1989)<lb/> </bibl>
+        <bibl><label>8.</label> V.G.J. Stoks, R.A.M. Klomp, C.P.F. Terheggen, and J.J. de Swart, Phys.<lb/> Rev. C 49, 2950 (1994)<lb/> </bibl>
+        <bibl><label>9.</label> M. Lacombe, B. Loiseau, R. Vinh Mau, J. Côté, P. Pirès, and R. de<lb/> Tourreil, Phys. Lett. 101B, 139 (1981)<lb/> </bibl>
+        <bibl><label>10.</label> R. Machleidt, K. Holinde and Ch. Elster, Phys. Rep. 149, 1 (1987)<lb/> </bibl>
+        <bibl><label>11.</label> See e.g. C.J. Joachin : Quantum collision theory, Chapters 3 and 4, El-<lb/>sevier Science Publishers B.V., 1975<lb/> </bibl>
+        <bibl><label>12.</label> W.N. Cottingham, M. Lacombe, B. Loiseau, J.M. Richard, and R. Vinh<lb/> Mau, Phys. Rev. D8, 800 (1973)<lb/> </bibl>
+        <bibl><label>13.</label> B. Loiseau, L. Mathelitsch, and W. Plessas, Nuovo Cim.97A, 77 (1987);<lb/> </bibl>
+        <bibl>B. Loiseau, L. Mathelitsch, W. Plessas, and K. Schwarz, Phys. Rev. C<lb/> 32, 2165 (1985)<lb/> </bibl>
+        <bibl><label>14.</label> F. Pauss, L. Mathelitsch, J. Côté, M. Lacombe, B. Loiseau, and R. Vinh<lb/> Mau, Nucl. Phys. A365, 392 (1981)<lb/> </bibl>
+        <bibl><label>15.</label> L. Hulthen and M. Sugawara, Handbuch der Physik 39, 1 (1957)<lb/> </bibl>
+        <bibl><label>16.</label> J.M. Blatt and L.C. Biedenharn, Phys. Rev. 86, 399 (1952); </bibl>
+        <bibl>Rev . Mod.<lb/> Phys. 24, 258 (1952)<lb/> </bibl>
+        <bibl><label>17.</label> L. Mathelitsch and B.J. VerWest, Phys. Rev. C 29, 739 (1984)<lb/> </bibl>
+        <bibl><label>18.</label> H.P. Stapp, T.J. Ypsilantis and N. Metropolis, Phys. Rev. 105, 302 (1957)<lb/> </bibl>
+
+        This article was processed by the author using the L a T E X style file pljour2<lb/> from Springer-Verlag.
+       </listBibl>
+    </text>
+</tei>
+

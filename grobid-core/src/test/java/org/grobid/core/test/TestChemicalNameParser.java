@@ -1,6 +1,7 @@
 package org.grobid.core.test;
 
 import java.io.File;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -30,7 +31,7 @@ public class TestChemicalNameParser extends EngineTest{
 		if (!textFile.exists()) {
 			throw new GrobidException("Cannot start test, because test resource folder is not correctly set.");
 		}
-		String text = FileUtils.readFileToString(textFile);	
+		String text = FileUtils.readFileToString(textFile, StandardCharsets.UTF_8);
 		
 		List<ChemicalEntity> chemicalResults = engine.extractChemicalEntities(text);
 		if (chemicalResults != null) {

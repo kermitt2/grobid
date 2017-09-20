@@ -1,0 +1,67 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> J. L. Moreno, Who Shall Survive? A new Approach to the Problem of<lb/> Human Interrelations., Nervous and Mental Disease Publishing, 1934.<lb/> </bibl>
+        <bibl><label>[2]</label> A. A. Tsonis, K. L. Swanson, P. J. Roebber, What do networks have to<lb/> do with climate?, Bulletin of the American Meteorological Society 87 (5)<lb/> (2006) 585-595. doi:10.1175/BAMS-87-5-585.<lb/> </bibl>
+        <bibl><label>[3]</label> A. A. Tsonis, K. L. Swanson, Topology and predictability of el Niño and<lb/> la Niña networks, Phys. Rev. Lett. 100 (2008) 228-502. doi:10.1103/<lb/> PhysRevLett.100.228502.<lb/> </bibl>
+        <bibl><label>[4]</label> J. F. Donges, Y. Zou, N. Marwan, J. Kurths, The backbone of the climate<lb/> network, EPL (Europhysics Letters) 87 (4) (2009) 48007.<lb/> </bibl>
+        <bibl><label>[5]</label> J. F. Donges, Y. Zou, N. Marwan, J. Kurths, Complex networks in climate<lb/> dynamics, The European Physical Journal Special Topics 174 (1) (2009)<lb/> 157-179. doi:10.1140/epjst/e2009-01098-2.<lb/> </bibl>
+        <bibl><label>[6]</label> A. Gozolchiani, K. Yamasaki, O. Gazit, S. Havlin, Pattern of climate<lb/> network blinking links follows el Niño events, EPL (Europhysics Letters)<lb/> 83 (2) (2008) 28005.<lb/> </bibl>
+        <bibl><label>[7]</label> A. Tsonis, P. Roebber, The architecture of the climate network, Physica A:<lb/> Statistical Mechanics and its Applications 333 (2004) 497 -504.<lb/> </bibl>
+        <bibl><label>[8]</label> K. Yamasaki, A. Gozolchiani, S. Havlin, Climate networks around the globe<lb/> are significantly affected by el Niño, Phys. Rev. Lett. 100 (2008) 228501.<lb/> doi:10.1103/PhysRevLett.100.228501.<lb/> </bibl>
+        <bibl><label>[9]</label> K. Steinhaeuser, N. V. Chawla, A. R. Ganguly, An exploration of climate<lb/> data using complex networks, in: Proceedings of the Third International<lb/> Workshop on Knowledge Discovery from Sensor Data, ACM, 2009, pp.<lb/> 23-31. doi:10.1145/1601966.1601973.<lb/> </bibl>
+        <bibl><label>[10]</label> S. Rehman, A. Ahmad, I. El-Amin, L. M. Al-Hadhrami, Assessment of wind<lb/> power, wind exponent, local air density and air turbulence intensity for<lb/> an isolated site, International Journal of Sustainable Energy 28 (4) (2009)<lb/> 217-230. doi:10.1080/14786450903221511.<lb/> </bibl>
+        <bibl><label>[11]</label> U. Desideri, J. Yan, Clean energy technologies and systems for a sustainable<lb/> world, Applied Energy 97 (2012) 1 -4, energy Solutions for a Sustainable<lb/> World -Proceedings of the Third International Conference on Applied<lb/> Energy, May 16-18, 2011 -Perugia, Italy.<lb/> </bibl>
+        <bibl><label>[12]</label> J. Yan, S. Chou, U. Desideri, S. Tu, H. Jin, Research, development and<lb/> innovations for sustainable future energy systems, Applied Energy 112<lb/> (2013) 393 -395.<lb/> </bibl>
+        <bibl><label>[13]</label> M. Tijera, G. Maqueda, C. Yague, J. L. Cano, Analysis of fractal dimension<lb/> of the wind speed and its relationships with turbulent and stability parame-<lb/>ters, in: S.-A. Ouadfeul (Ed.), Fractal Analysis and Chaos in Geosciences,<lb/> InTech, 2012, Ch. 02.<lb/> </bibl>
+        <bibl><label>[14]</label> G. D&apos;Amico, F. Petroni, F. Prattico, Wind speed prediction for wind farm ap-<lb/>plications by extreme value theory and copulas, Wind Eng. Ind. Aerodyn.<lb/> Journal 145 (2015) p. 229-236.<lb/> </bibl>
+        <bibl><label>[15]</label> N. A. Treiber, J. Heinermann, O. Kramer, Wind Power Prediction with<lb/> Machine Learning, Springer International Publishing, 2016, Ch. Wind Power<lb/> Prediction with Machine Learning, pp. 13-29.<lb/> </bibl>
+        <bibl><label>[16]</label> J. O. Pierini, M. Lovallo, L. Telesca, Visibility graph analysis of wind speed<lb/> records measured in central argentina, Physica A: Statistical Mechanics and<lb/> its Applications 391 (20) (2012) 5041 -5048.<lb/> </bibl>
+        <bibl><label>[17]</label> H. Kantz, D. Holstein, M. Ragwitz, N. K. Vitanov, Markov chain model for<lb/> turbulent wind speed data, Physica A: Statistical Mechanics and its Appli-<lb/>cations 342 (1) (2004) 315 -321, proceedings of the VIII Latin American<lb/> Workshop on Nonlinear Phenomena.<lb/> </bibl>
+        <bibl><label>[18]</label> M. de Oliveira Santos, T. Stosic, B. D. Stosic, Long-term correlations in<lb/> hourly wind speed records in Pernambuco, Brazil, Physica A: Statistical<lb/> Mechanics and its Applications 391 (4) (2012) 1546 -1552.<lb/> </bibl>
+        <bibl><label>[19]</label> L. Fortuna, S. Nunnari, G. Guariso, Fractal order evidences in wind speed<lb/> time series, ICFDA&apos;14 International Conference on Fractional Differentiation<lb/> and Its Applications 2014 (2014) 1-6.<lb/> </bibl>
+        <bibl><label>[20]</label> Z. Liang, J. Liang, L. Zhang, C. Wang, Z. Yun, X. Zhang, Analysis of<lb/> multi-scale chaotic characteristics of wind power based on hilbert-huang<lb/> transform and hurst analysis, Applied Energy 159 (2015) 51 -61.<lb/> </bibl>
+        <bibl><label>[21]</label> L. Telesca, M. Lovallo, M. Kanevski, Power spectrum and multifractal<lb/> detrended fluctuation analysis of high-frequency wind measurements in<lb/> mountainous regions, Applied Energy 162 (2016) 1052 -1061.<lb/> </bibl>
+        <bibl><label>[22]</label> T.-P. Chang, H.-H. Ko, F.-J. Liu, P.-H. Chen, Y.-P. Chang, Y.-H. Liang,<lb/> H.-Y. Jang, T.-C. Lin, Y.-H. Chen, Fractal dimension of wind speed time<lb/> series, Applied Energy 93 (2012) 742 -749, (1) Green Energy; (2)Special<lb/> Section from papers presented at the 2nd International Enery 2030 Conf.<lb/> </bibl>
+        <bibl><label>[23]</label> R. G. Kavasseri, R. Nagarajan, A multifractal description of wind speed<lb/> records, Chaos, Solitons and Fractals 24 (2004) 165-173.<lb/> </bibl>
+        <bibl><label>[24]</label> L. Telesca, M. Lovallo, Analysis of the time dynamics in wind records by<lb/> means of multifractal detrended fluctuation analysis and the fisher-shannon<lb/> information plane, Journal of Statistical Mechanics: Theory and Experiment<lb/> 2011 (07) (2011) P07001.<lb/> </bibl>
+        <bibl><label>[25]</label> B. C. L. de Figueirêdo, G. R. Moreira, B. Stosic, T. Stosic, Multifractal<lb/> analysis of hourly wind speed records in Petrolina, Northeast Brazil, Rev.<lb/> Bras. Biom. 32 (4) (2014) 584-598.<lb/> </bibl>
+        <bibl><label>[26]</label> M. Piacquadio, A. de la Barra, Multifractal analysis of wind velocity data,<lb/> Energy for Sustainable Development 22 (2014) 48 -56, wind Power Special<lb/> Issue.<lb/> </bibl>
+        <bibl><label>[27]</label> R. B. Cleveland, W. S. Cleveland, J. E. McRae, I. Terpenning, Stl: A<lb/> seasonal-trend decomposition procedure based on loess, Journal of Official<lb/> Statistics 6 (1) (1990) 3 -73.<lb/> </bibl>
+        <bibl><label>[28]</label> M. Theodosiou, Forecasting monthly and quarterly time series using stl<lb/> decomposition, International Journal of Forecasting 27 (4) (2011) 1178 -<lb/>1195.<lb/> </bibl>
+        <bibl><label>[29]</label> R Core Team, R: A Language and Environment for Statistical Computing,<lb/> R Foundation for Statistical Computing, Vienna, Austria (2017).<lb/> </bibl>
+        <bibl><label>[30]</label> J. W. Kantelhardt, S. A. Zschiegner, E. Koscielny-Bunde, S. Havlin,<lb/> A. Bunde, H. Stanley, Multifractal detrended fluctuation analysis of nonsta-<lb/>tionary time series, Physica A: Statistical Mechanics and its Applications<lb/> 316 (1) (2002) 87 -114.<lb/> </bibl>
+        <bibl><label>[31]</label> J. Feder, Fractals, Plenum Press, New York, NY, USA, 1988.<lb/> </bibl>
+        <bibl><label>[32]</label> C. Peng, S. Havlin, H. E. Stanley, A. L. Goldberger, Quantification of<lb/> scaling exponents and crossover phenomena in nonstationary heartbeat time<lb/> series, chaos 5 (1995) 82 -87.<lb/> </bibl>
+        <bibl><label>[33]</label> U. Frisch, G. Parisi, On the singularity structure of fully developed turbu-<lb/>lence, in: M. Gil, R. Benzi, G. Parisi (Eds.), Turbulence and Predictability<lb/> in Geophysical Fluid Dynamics and ClimateDynamics, Elsevier, Amsterdam,<lb/> North-Holland, 1985, pp. 84-88.<lb/> </bibl>
+        <bibl><label>[34]</label> Y. Ashkenazy, D. R. Baker, H. Gildor, S. Havlin, Nonlinearity and multi-<lb/>fractality of climate change in the past 420,000 years, Geophysical Research<lb/> Letters 30 (22), 2146. doi:10.1029/2003GL018099.<lb/> </bibl>
+        <bibl><label>[35]</label> A. Biswas, T. B. Zeleke, B. C. Si, Multifractal detrended fluctuation analysis<lb/> in examining scaling properties of the spatial patterns of soil water storage,<lb/> Nonlinear Processes in Geophysics 19 (2) (2012) 227-238. doi:10.5194/<lb/> npg-19-227-2012.<lb/> </bibl>
+        <bibl><label>[36]</label> P. Oswiecimka, S. Drozdz, J. Kwapien, A. Gorski, Effect of detrending on<lb/> multifractal characteristics, ACTA PHYSICA POLONICA A 123 (3) (2013)<lb/> 597 -603, proceedings of the 6th Polish Symposium of Physics in Economy<lb/> and Social Sciences (FENS2012), Gdansk, Poland.<lb/> </bibl>
+        <bibl><label>[37]</label> M. J. Kirkby, The fractal geometry of nature. benoit b. mandelbrot. w.<lb/> h. freeman and co., Earth Surface Processes and Landforms 8 (4) (1983)<lb/> 406-406. doi:10.1002/esp.3290080415.<lb/> </bibl>
+        <bibl><label>[38]</label> D. Schertzer, S. Lovejoy, Physical modeling and analysis of rain and clouds by<lb/> anisotropic scaling multiplicative processes, Journal of Geophysical Research:<lb/> Atmospheres 92 (D8) (1987) 9693-9714. doi:10.1029/JD092iD08p09693.<lb/> </bibl>
+        <bibl><label>[39]</label> A. Marshak, A. Davis, R. Cahalan, W. Wiscombe, Bounded cascade models<lb/> as nonstationary multifractals, Phys. Rev. E 49 (1994) 55-69. doi:10.<lb/> 1103/PhysRevE.49.55.<lb/> </bibl>
+        <bibl><label>[40]</label> R. Calif, F. G. Schmitt, Multiscaling and joint multiscaling description<lb/> of the atmospheric wind speed and the aggregate power output from a<lb/> wind farm, Nonlinear Processes in Geophysics 21 (2) (2014) 379-392. doi:<lb/> 10.5194/npg-21-379-2014.<lb/> (a)<lb/> 2012<lb/> </bibl>
+
+        2013<lb/> 2014<lb/> 2015<lb/> 2016<lb/> 2017<lb/> 0.000<lb/> 
+        0.010<lb/> 
+        0.020<lb/> 
+        Seasonal<lb/> (b)<lb/> 2012<lb/> 
+        2013<lb/> 2014<lb/> 2015<lb/> 2016<lb/> 2017<lb/> −0.05 0.00<lb/> 
+        0.05<lb/> 
+        0.10<lb/> 
+        Trend<lb/> (c)<lb/> 2012<lb/> 
+        2013<lb/> 2014<lb/> 2015<lb/> 2016<lb/> 2017<lb/> 0.040 0.045 0.050<lb/> 
+        Residuals<lb/> (d)<lb/> 2012<lb/> 
+        2013<lb/> 2014<lb/> 2015<lb/> 2016<lb/> 2017<lb/> −0.10 0.00 0.10<lb/> 
+        Figure 6: STL decomposition for ρ T = 0.7.
+
+
+        </listBibl>
+    </text>
+</tei>
+

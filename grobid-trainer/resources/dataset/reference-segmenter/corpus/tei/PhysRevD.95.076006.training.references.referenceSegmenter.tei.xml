@@ -1,0 +1,24 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>[1]</label> D. Diakonov, Nucl. Phys. B, Proc. Suppl. B195, 5 (2009).<lb/> </bibl>
+        <bibl><label>[2]</label> D. Diakonov and V. Petrov, Phys. Rev. D 76, 056001<lb/> (2007).<lb/> </bibl>
+        <bibl><label>[3]</label> D. Diakonov, N. Gromov, V. Petrov, and S. Slizovskiy,<lb/> Phys. Rev. D 70, 036003 (2004).<lb/> </bibl>
+        <bibl><label>[4]</label> F. Bruckmann, S. Dinter, E.-M. Ilgenfritz, M. Muller-<lb/>Preussker, and M. Wagner, Phys. Rev. D 79, 116007 (2009).<lb/> </bibl>
+        <bibl><label>[5]</label> F. Bruckmann, S. Dinter, E.-M. Ilgenfritz, B. Maier, M.<lb/> Muller-Preussker, and M. Wagner, Phys. Rev. D 85 (2012)<lb/> 034502.<lb/> </bibl>
+        <bibl><label>[6]</label> P. Ewald, Ann. Phys. 369, 253 (1921).<lb/> </bibl>
+        <bibl><label>[7]</label> M. Kiamari and S. Deldar, arXiv:1611.05348.<lb/> </bibl>
+        <bibl><label>[8]</label> T. C. Kraan and P. van Baal, Nucl. Phys. B533, 627 (1998);<lb/> </bibl>
+<bibl>Phys. Lett. B 435, 389 (1998).<lb/> </bibl>
+        <bibl><label>[9]</label> K.-M. Lee and C.-H. Lu, Phys. Rev. D 58, 025011<lb/> (1998).<lb/> </bibl>
+        <bibl><label>[10]</label> B. Maier, B.Sc. thesis, Humboldt University of Berlin,<lb/> 2011.<lb/> </bibl>
+        <bibl><label>[11]</label> U. Essmann, L. Perera, M. L. Berkowitz, T. Darden, H. Lee,<lb/> and G. Pedersen, J. Chem. Phys. 103, 8577 (1995).<lb/> </bibl>
+        <bibl><label>[12]</label> R. W. Hockney and J. W. Eastwood, Computer Simulation<lb/> Using Particles (McGraw-Hill, New York, 1981).<lb/> </bibl>
+FIG. 5. Our results fitted to the results of lattice gauge theory<lb/> [Eq. (54)].
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>P. Noyes</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">15</biblScope>, <biblScope unit="page">538</biblScope> (<date>1965</date>);</bibl>
+	<bibl><author>K.L. Kowalski</author>, <title level="j">Phys. Rev. Lett.</title><biblScope unit="volume">15</biblScope> ,<biblScope unit="page">798</biblScope> ( <date>1965</date>)</bibl>
+	<bibl><author>H. Arenhövel, W. Leidemann, and E.L. Tomusiak</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">46</biblScope>, <biblScope unit="page">455</biblScope> (<date>1992</date>);</bibl>
+	<bibl><author>B. Mosconi and P. Ricci</author>, <title level="j">Nucl. Phys. A</title><biblScope unit="volume">517</biblScope>, <biblScope unit="page">483</biblScope> (<date>1990</date>)</bibl>
+	<bibl><author>H. Arenhövel and M. Sanzone</author>, <title level="m">Photodisintegration of the Deuteron</title>, <title level="s">Few BodySyst</title> .<note>Suppl .3</note> ,<publisher>Springer Verlag</publisher> ,<pubPlace>Wien ,New York</pubPlace> ,<date>1991</date></bibl>
+	<bibl><author>W. Glöckle, H. Witala and Th. Cornelius</author>, <title level="j">Nucl. Phys. A</title><biblScope unit="volume">496</biblScope>, <biblScope unit="page">446</biblScope> (<date>1989</date>)</bibl>
+	<bibl><author>5.W .Glöckle ,H .Kamada</author> ,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">71</biblScope> ,<biblScope unit="page">971</biblScope> ( <date>1993</date>)</bibl>
+	<bibl><author>M. Lacombe, B. Loiseau, J.M. Richard, R. Vinh Mau, J. Côté, P. Pirès, andR .de Tourreil</author> ,<title level="j">Phys .Rev .C</title> <biblScope unit="volume">21</biblScope> ,<biblScope unit="page">861</biblScope> ( <date>1980</date>)</bibl>
+	<bibl><author>J. Haidenbauer, K. Holinde, and M.B. Johnson</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">45</biblScope>, <biblScope unit="page">2055</biblScope> (<date>1992</date>);</bibl>
+	<bibl><author>R. Machleidt</author>, <title level="j">Adv. Nucl. Phys.</title> <biblScope unit="volume">19</biblScope>, <biblScope unit="page">189</biblScope> (<date>1989</date>)</bibl>
+	<bibl><author>V.G.J. Stoks, R.A.M. Klomp, C.P.F. Terheggen, and J.J. de Swart</author>, <title level="j">Phys. Rev.C</title> <biblScope unit="volume">49</biblScope> ,<biblScope unit="page">2950</biblScope> ( <date>1994</date>)</bibl>
+	<bibl><author>M. Lacombe, B. Loiseau, R. Vinh Mau, J. Côté, P. Pirès, and R. de Tourreil</author>,<title level="j">Phys .Lett .</title><biblScope unit="volume">101B</biblScope> ,<biblScope unit="page">139</biblScope> ( <date>1981</date>)</bibl>
+	<bibl><author>R. Machleidt, K. Holinde and Ch. Elster</author>, <title level="j">Phys. Rep.</title> <biblScope unit="volume">149</biblScope>, <biblScope unit="page">1</biblScope> (<date>1987</date>)</bibl>
+	<bibl>See e.g. <author>C.J. Joachin</author> : <title level="a">Quantum collision theory</title>, Chapters <biblScope unit="volume">3 and 4</biblScope>, <publisher>El-sevierScience Publishers B .V.</publisher>,<date>1975</date></bibl>
+	<bibl><author>W.N. Cottingham, M. Lacombe, B. Loiseau, J.M. Richard, and R. Vinh Mau</author>,<title level="j">Phys .Rev .</title><biblScope unit="volume">D8</biblScope> ,<biblScope unit="page">800</biblScope> ( <date>1973</date>)</bibl>
+	<bibl><author>B. Loiseau, L. Mathelitsch, and W. Plessas</author>, <title level="j">Nuovo Cim.97A</title>, <biblScope unit="page">77</biblScope> (<date>1987</date>);</bibl>
+	<bibl><author>B. Loiseau, L. Mathelitsch, W. Plessas, and K. Schwarz</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">32</biblScope>,<biblScope unit="page">2165</biblScope> ( <date>1985</date>)</bibl>
+	<bibl><author>F. Pauss, L. Mathelitsch, J. Côté, M. Lacombe, B. Loiseau, and R. Vinh Mau</author>,<title level="j">Nucl .Phys .</title><biblScope unit="volume">A365</biblScope> ,<biblScope unit="page">392</biblScope> ( <date>1981</date>)</bibl>
+	<bibl><author>L. Hulthen and M. Sugawara</author>, <title level="j">Handbuch der Physik</title> <biblScope unit="volume">39</biblScope>, <biblScope unit="page">1</biblScope> (<date>1957</date>)</bibl>
+	<bibl><author>J.M. Blatt and L.C. Biedenharn</author>, <title level="j">Phys. Rev.</title> <biblScope unit="volume">86</biblScope>, <biblScope unit="page">399</biblScope> (<date>1952</date>);</bibl>
+	<bibl><title level="j">Rev . Mod. Phys.</title><biblScope unit="volume">24</biblScope> ,<biblScope unit="page">258</biblScope> ( <date>1952</date>)</bibl>
+	<bibl><author>L. Mathelitsch and B.J. VerWest</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">29</biblScope>, <biblScope unit="page">739</biblScope> (<date>1984</date>)</bibl>
+	<bibl><author>H.P. Stapp, T.J. Ypsilantis and N. Metropolis</author>, <title level="j">Phys. Rev.</title> <biblScope unit="volume">105</biblScope>, <biblScope unit="page">302</biblScope> (<date>1957</date>) </bibl> 
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

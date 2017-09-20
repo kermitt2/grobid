@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Frauendorf S and Meng J</author> <date>1997</date> <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">617</biblScope> <biblScope unit="page">131</biblScope></bibl>
+	<bibl><author>Ayangeakaa A et al</author> <date>2013</date> <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">110</biblScope> <biblScope unit="page">172504</biblScope></bibl>
+	<bibl><author>Kuti I et al</author> <date>2014</date> <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">113</biblScope> <biblScope unit="page">032501</biblScope></bibl>
+	<bibl><author>Liu C et al</author> <date>2016</date> <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">116</biblScope> <biblScope unit="page">112501</biblScope></bibl>
+	<bibl><author>Lawrie E A and Shirinda O</author> <date>2010</date> <title level="j">Phys. Lett. B</title> <biblScope unit="volume">689</biblScope> <biblScope unit="page">66</biblScope></bibl>
+	<bibl><author>Vaman C, Fossan D B, Koike T, Starosta K, Lee I Y and MacchiavelliA O</author> <date>2004</date> <title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">92</biblScope> <biblScope unit="page">032501</biblScope></bibl>
+	<bibl><author>Koike T, Starosta K and Hamamoto I</author> <date>2004</date> <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">93</biblScope> <biblScope unit="page">172502</biblScope></bibl>
+	<bibl><author>Shirinda O and Lawrie E A</author> <date>2012</date> <title level="j">Eur. Phys. J. A</title> <biblScope unit="volume">48</biblScope> <biblScope unit="page">118</biblScope></bibl>
+	<bibl><author>Ndayishimye J</author> <date>2016</date> <note type="report">PhD Thesis</note> <orgName>University of Stellenbosch</orgName></bibl>
+	<bibl><author>Ndayishimye J et al</author> <date>2017</date> <title level="j">Acta Phys. Polonica B</title> <biblScope unit="volume">48</biblScope> <biblScope unit="page">343</biblScope></bibl>
+	<bibl><author>Masiteng P L et al</author> <date>2013</date> <title level="j">Phys. Lett. B</title> <biblScope unit="volume">719</biblScope> <biblScope unit="page">83</biblScope></bibl>
+	<bibl><author>Masiteng P L et al</author> <date>2014</date> <title level="j">Eur. Phys. J. A</title> <biblScope unit="volume">50</biblScope> <biblScope unit="page">119</biblScope></bibl>
+	<bibl><author>Masiteng P L et al</author> <date>2016</date> <title level="j">Eur. Phys. J. A</title> <biblScope unit="volume">52</biblScope> <biblScope unit="page">28</biblScope></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

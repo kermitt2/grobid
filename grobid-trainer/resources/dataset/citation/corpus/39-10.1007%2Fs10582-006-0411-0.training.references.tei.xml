@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>A. Shirzad and M. Mojiri</author>: <title level="j">J. Math. Phys.</title> <biblScope unit="volume">46</biblScope> (<date>2005</date>) <biblScope unit="page">012702</biblScope>.</bibl>
+	<bibl><author>H.J. Rothe and K.D. Rothe</author>: <title level="j">J. Phys. A</title> <biblScope unit="volume">36</biblScope> (<date>2003</date>) <biblScope unit="page">1671</biblScope>.</bibl>
+	<bibl><author>F. Loran and A. Shirzad</author>: <title level="j">Int. J. Mod. Phys. A</title> <biblScope unit="volume">17</biblScope> (<date>2002</date>) <biblScope unit="page">625</biblScope>.</bibl>
+	<bibl><author>J. Barcelos-Neto and C. Wotzasek</author>: <title level="j">Int. J. Mod. Phys. A</title> <biblScope unit="volume">7</biblScope> (<date>1992</date>) <biblScope unit="page">4981</biblScope>.</bibl>
+	<bibl><author>J. Barcelos-Neto and N.R.F. Beraga</author>: <title level="j">J. Math. Phys.</title> <biblScope unit="volume">35</biblScope> (<date>1994</date>) <biblScope unit="page">3497</biblScope>.</bibl>
+	<bibl><author>L.D. Faddeev and R. Jackiw</author>: <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">60</biblScope> (<date>1988</date>) <biblScope unit="page">1692</biblScope>.</bibl>
+	<bibl><author>Y.-W. Kim, C.-Y. Ee, S.-K. Kim, and Y.-J. Park</author>: <title level="j">Phys. Lett. B</title> <biblScope unit="volume">632</biblScope> (<date>2006</date>) <biblScope unit="page">427</biblScope>.</bibl>
+	<bibl><author>P.A.Ivi. Dirac</author>: <title level="m">Lectures on Quantum Mechanics</title>. <orgName>Yeshiva University</orgName>, <pubPlace>New York</pubPlace>, <date>1964</date>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

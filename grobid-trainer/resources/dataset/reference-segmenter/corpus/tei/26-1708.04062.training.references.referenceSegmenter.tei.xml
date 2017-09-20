@@ -1,0 +1,46 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> I. A. Aizenberg and A. P. Yuzhakov, Integral representations and residues in multi-<lb/>dimensional complex analysis, Translations of mathematical monographs, vol. 58,<lb/> American Mathematical Soc., Providence, RI, 1983.<lb/> </bibl>
+        <bibl><label>[2]</label> H. Boos and F. Göhmann, On the physical part of the factorized correlation functions<lb/> of the XXZ chain, J. Phys. A 42 (2009), 315001.<lb/> </bibl>
+        <bibl><label>[3]</label> M. Dugave, Formfaktorzugang zu Thermischen Korrelationsfunktionen der Heisen-<lb/>bergkette, Ph.D. thesis, Bergische Universität Wuppertal, 2015.<lb/> </bibl>
+        <bibl><label>[4]</label> M. Dugave, F. Göhmann, and K. K. Kozlowski, Thermal form factors of the XXZ<lb/> chain and the large-distance asymptotics of its temperature dependent correlation<lb/> functions, J. Stat. Mech.: Theor. Exp. (2013), P07010.<lb/> </bibl>
+        <bibl><label>[5]</label><lb/> , Low-temperature large-distance asymptotics of the transversal two-point<lb/> functions of the XXZ chain, J. Stat. Mech.: Theor. Exp. (2014), P04012.<lb/> </bibl>
+        <bibl><label>[6]</label> M. Dugave, F. Göhmann, K. K. Kozlowski, and J. Suzuki, Low-temperature spectrum<lb/> of correlation lengths of the XXZ chain in the antiferromagnetic massive regime, J.<lb/> Phys. A 48 (2015), 334001.<lb/> </bibl>
+        <bibl><label>[7]</label><lb/> , On form factor expansions for the XXZ chain in the massive regime, J. Stat.<lb/> Mech.: Theor. Exp. (2015), P05037.<lb/> </bibl>
+        <bibl><label>[8]</label><lb/> , Thermal form factor approach to the ground-state correlation functions of<lb/> the XXZ chain in the antiferromagnetic massive regime, J. Phys. A 49 (2016), 394001.<lb/> </bibl>
+        <bibl><label>[9]</label> K. Fabricius and B. M. McCoy, Spin diffusion and the spin-1/2 XXZ chain at T = ∞<lb/> from exact diagonalization, Phys. Rev. B 57 (1998), 8340.<lb/> </bibl>
+        <bibl><label>[10]</label> F. Göhmann, A. Klümper, and A. Seel, Integral representations for correlation<lb/> functions of the XXZ chain at finite temperature, J. Phys. A 37 (2004), 7625.<lb/> </bibl>
+        <bibl><label>[11]</label> F. Göhmann and V. E. Korepin, Solution of the quantum inverse problem, J. Phys. A<lb/> 33 (2000), 1199.<lb/> </bibl>
+        <bibl><label>[12]</label> F. Göhmann and A. Seel, XX and Ising limits in integral formulae for finite tem-<lb/>perature correlation functions of the XXZ chain, Theor. Math. Phys. 146 (2006),<lb/> 119.<lb/> </bibl>
+        <bibl><label>[13]</label> A. Hutsalyuk, A. Liashyk, S. Z. Pakuliak, E. Ragoucy, and N. A. Slavnov, Form<lb/> factors of the monodromy matrix entries in gl(2|1)-invariant integrable models, Nucl.<lb/> Phys. B 911 (2016), 902.<lb/> </bibl>
+<bibl><label>[14]</label><lb/> , Norm of bethe vectors in gl(m|n) based models, preprint, arXiv:1705.09219,<lb/> 2017.<lb/> </bibl>
+        <bibl><label>[15]</label> A. R. Its, A. G. Izergin, V. E. Korepin, and N. Slavnov, Temperature correlations of<lb/> quantum spins, Phys. Rev. Lett. 70 (1993), 1704.<lb/> </bibl>
+        <bibl><label>[16]</label> A. G. Izergin, A. R. Its, V. E. Korepin, and N. Slavnov, The matrix Riemann-Hilbert<lb/> problem and differential equations for correlation functions of the XX0 Heisenberg<lb/> chain, St. Petersburg Math. J. 6 (1995), 315.<lb/> </bibl>
+        <bibl><label>[17]</label> A. G. Izergin, N. Kitanine, J. M. Maillet, and V. Terras, Spontaneous magnetization<lb/> of the XXZ Heisenberg spin-1<lb/> 2 chain, Nucl. Phys. B 554 (1999), 679.<lb/> </bibl>
+        <bibl><label>[18]</label> X. Jie, The large time asymptotics of the temperature correlation functions of the XX0<lb/> Heisenberg ferromagnetic: The Riemann-Hilbert approach, Ph.D. thesis, Indiana<lb/> University Purdue University Indianapolis, 1998.<lb/> </bibl>
+        <bibl><label>[19]</label> S. Katsura, T. Horiguchi, and M. Suzuki, Dynamical properties of the isotropic XY<lb/> model, Physica 46 (1970), 67.<lb/> </bibl>
+        <bibl><label>[20]</label> N. Kitanine, K. K. Kozlowski, J. M. Maillet, N. A. Slavnov, and V. Terras, On the<lb/> thermodynamic limit of form factors in the massless XXZ Heisenberg chain, J. Math.<lb/> Phys. 50 (2009), 095209.<lb/> </bibl>
+        <bibl><label>[21]</label> N. Kitanine, J. M. Maillet, and V. Terras, Form factors of the XXZ Heisenberg spin-1<lb/> 2<lb/> 
+finite chain, Nucl. Phys. B 554 (1999), 647.<lb/> </bibl>
+        <bibl><label>[22]</label> A. Klümper, Thermodynamics of the anisotropic spin-1/2 Heisenberg chain and<lb/> related quantum chains, Z. Phys. B 91 (1993), 507.<lb/> </bibl>
+        <bibl><label>[23]</label> A. Klümper and K. Sakai, The thermal conductivity of the spin-1/2 XXZ chain at<lb/> arbitrary temperature, J. Phys. A 35 (2002), 2173.<lb/> </bibl>
+        <bibl><label>[24]</label> V. E. Korepin, N. M. Bogoliubov, and A. G. Izergin, Quantum inverse scattering<lb/> method and correlation functions, Cambridge University Press, 1993.<lb/> </bibl>
+        <bibl><label>[25]</label> E. H. Lieb, T. Schultz, and D. Mattis, Two soluble models of an antiferromagnetic<lb/> chain, Ann. Phys. (N.Y.) 16 (1961), 407.<lb/> </bibl>
+        <bibl><label>[26]</label> T. Niemeijer, Some exact calculations on a chain of spins 1<lb/> 2 , Physica 36 (1967), 377.<lb/> </bibl>
+        <bibl><label>[27]</label> S. Pakuliak, E. Ragoucy, and N. A. Slavnov, GL(3)-based quantum integrable<lb/> composite models. I. Bethe vectors, SIGMA 11 (2015), 063, 20pp.<lb/> </bibl>
+<bibl><label>[28]</label><lb/> , GL(3)-based quantum integrable composite models. II. Form factors of<lb/> local operators, SIGMA 11 (2015), 064, 18pp.<lb/> </bibl>
+        <bibl><label>[29]</label> R. M. Range, Holomorphic functions and integral representations in several complex<lb/> variables, second, revised ed., Graduate Texts in Mathematics, Springer Verlag,<lb/> Berlin, 1998.<lb/> </bibl>
+        <bibl><label>[30]</label> K. Sakai, Dynamical correlation functions of the XXZ model at finite temperature, J.<lb/> Phys. A 40 (2007), 7523.<lb/> </bibl>
+        <bibl><label>[31]</label> N. A. Slavnov, Calculation of scalar products of the wave functions and form factors<lb/> in the framework of the algebraic Bethe ansatz, Teor. Mat. Fiz. 79 (1989), 232.<lb/> </bibl>
+        <bibl><label>[32]</label> M. Suzuki, Transfer-matrix method and Monte Carlo simulation in quantum spin<lb/> systems, Phys. Rev. B 31 (1985), 2957.<lb/> </bibl>
+        <bibl><label>[33]</label> V. Tarasov and A. Varchenko, Completeness of Bethe vectors and difference equations<lb/> with regular singular points, Int. Math. Res. Notices 13 (1995), 637.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

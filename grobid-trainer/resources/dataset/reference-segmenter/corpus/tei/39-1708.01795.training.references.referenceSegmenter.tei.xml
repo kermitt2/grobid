@@ -1,0 +1,75 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        • We have˜ehave˜ have˜e ± (z) = (T ±<lb/> 11 (z)) −1 T ±<lb/> 12 (z). Hence,<lb/> 
+        
+        References<lb/>
+        
+        <bibl><label>[AH]</label> M. Atiyah, N. Hitchin, The geometry and dynamics of magnetic monopoles, Princeton University Press<lb/> (1988), viii+134pp.<lb/> </bibl>
+        <bibl><label>[AMM]</label> A. Alekseev, A. Malkin, E. Meinrenken, Lie group valued moment maps, J. Differential Geom. 48<lb/> (1998), no. 3, 445-495.<lb/> </bibl>
+        <bibl><label>[B]</label> A. Beilinson, Coherent sheaves on P n and problems in linear algebra, Funct. Anal. Appl. 12 (1978), no. 3,<lb/> 214-216.<lb/> </bibl>
+        <bibl><label>[BDGHK]</label> M. Bullimore, T. Dimofte, D. Gaiotto, J. Hilburn, H. Kim, Vortices and Vermas, arXiv:1609.04406.<lb/> </bibl>
+        <bibl><label>[BEG]</label> V. Baranovsky, S. Evens, V. Ginzburg, Representations of quantum tori and G-bundles on elliptic<lb/> curves, Progr. Math. 213 (2003), 29-48; arXiv:0005024.<lb/> </bibl>
+        <bibl><label>[BF]</label> A. Braverman, M. Finkelberg, Finite difference quantum Toda lattice via equivariant K-theory, Transf.<lb/> Groups 10 (2005), no. 3-4, 363-386.<lb/> </bibl>
+        <bibl><label>[BFFR]</label> A. Braverman, B. Feigin, M. Finkelberg, L. Rybnikov, A finite analog of the AGT relation I: Finite<lb/> W-algebras and quasimaps&apos; spaces, Comm. Math. Phys. 308 (2011), no. 2, 457-478.<lb/> </bibl>
+        <bibl><label>[BFM]</label> R. Bezrukavnikov, M. Finkelberg, I. Mirkovi´cMirkovi´c, Equivariant homology and K-theory of affine Grassman-<lb/>nians and Toda lattices, Compos. Math. 141 (2005), no. 3, 746-768.<lb/> </bibl>
+        <bibl><label>[BFNa]</label> A. Braverman, M. Finkelberg, and H. Nakajima, Towards a mathematical definition of Coulomb<lb/> branches of 3-dimensional N = 4 gauge theories, II, arXiv:1601.03586.<lb/> </bibl>
+        <bibl><label>[BFNb]</label> A. Braverman, M. Finkelberg, and H. Nakajima, Coulomb branches of 3d N = 4 quiver gauge theories<lb/> and slices in the affine Grassmannian (with appendices by Alexander Braverman, Michael Finkelberg,<lb/> Joel Kamnitzer, Ryosuke Kodera, Hiraku Nakajima, Ben Webster, and Alex Weekes), arXiv:1604.03625.<lb/> </bibl>
+        <bibl><label>[BG]</label> M. Bertola, M. Gekhtman, Biorthogonal Laurent polynomials, Töplitz determinants, minimal Toda orbits<lb/> and isomonodromic tau functions, Constr. Approx. 26 (2007), no. 3, 383-430.<lb/> </bibl>
+        <bibl><label>[BK]</label> J. Brundan and A. Kleshchev, Shifted Yangians and finite W -algebras, Adv. Math. 200 (2006), no. 1,<lb/> 136-195.<lb/> </bibl>
+        <bibl><label>[CF]</label> I. Cherednik, B. Feigin, Rogers-Ramanujan type identities and Nil-DAHA, Adv. Math. 248 (2013), 1050-<lb/>1088.<lb/> </bibl>
+        <bibl><label>[CK]</label> S. Cherkis, A. Kapustin, Periodic monopoles with singularities and N = 2 super-QCD, Comm. Math.<lb/> Phys. 234 (2003), no. 1, 1-35.<lb/> </bibl>
+        <bibl><label>[D]</label> V. Drinfeld, A New realization of Yangians and quantized affine algebras, Sov. Math. Dokl. 36 (1988),<lb/> no. 2, 212-216.<lb/> </bibl>
+        <bibl><label>[DF]</label> J. Ding, I. Frenkel, Isomorphism of two realizations of quantum affine algebra Uq(<lb/> gl(n)), Comm. Math.<lb/> 
+Phys. 156 (1993), no. 2, 277-300.<lb/> </bibl>
+        <bibl><label>[E]</label> P. Etingof, Whittaker functions on quantum groups and q-deformed Toda operators, Amer. Math. Soc.<lb/> Transl. Ser. 2 194 (1999), 9-25.<lb/> </bibl>
+        <bibl><label>[EL]</label> S. Evens, J.-H. Lu, Poisson geometry of the Grothendieck resolution of a complex semisimple group,<lb/> Moscow Math. Journal 7 (2007), no. 4, 613-642.<lb/> </bibl>
+        <bibl><label>[FG]</label> L. Faybusovich, M. Gekhtman, Elementary Toda orbits and integrable lattices, J. Math. Phys. 41 (2000),<lb/> no. 5, 2905-2921.<lb/> </bibl>
+        <bibl><label>[FFJMM]</label> B. Feigin, E. Feigin, M. Jimbo, T. Miwa, E. Mukhin, Fermionic formulas for eigenfunctions of the<lb/> difference Toda Hamiltonian, Lett. Math. Phys. 88 (2009), no. 1-3, 39-77.<lb/> </bibl>
+        <bibl><label>[FFNR]</label> B. Feigin, M. Finkelberg, A. Negut, L. Rybnikov, Yangians and cohomology rings of Laumon spaces,<lb/> Selecta Math. 17 (2011), no. 3, 573-607.<lb/> </bibl>
+        <bibl><label>[FKPRW]</label> M. Finkelberg, J. Kamnitzer, K. Pham, L. Rybnikov, A. Weekes, Comultiplication for shifted Yan-<lb/>gians and quantum open Toda lattice, arXiv:1608.03331.<lb/> </bibl>
+        <bibl><label>[FKR]</label> M. Finkelberg, A. Kuznetsov, L. Rybnikov, Towards a cluster structure on trigonometric zastava (with<lb/> appendix by Galyna Dobrovolska), arXiv:1504.05605.<lb/> </bibl>
+        <bibl><label>[FM]</label> V. Fock, A. Marshakov, A note on quantum groups and relativistic Toda theory, Nuclear Phys. B<lb/> Proc. Suppl. 56B (1997), 208-214.<lb/> </bibl>
+        <bibl><label>[FMO]</label> V. Futorny, A. Molev, S. Ovsienko, Gelfand-Tsetlin bases for representations of finite W-algebras and<lb/> shifted Yangians, in &quot;Lie theory and its applications in physics VII&quot;, (H. D. Doebner and V. K. Dobrev,<lb/> Eds), Proceedings of the VII International Workshop, Varna, Bulgaria, June 2007. Heron Press, Sofia<lb/> (200), 352-363; arXiv:0711.0552.<lb/> </bibl>
+        <bibl><label>[FT]</label> L. Faddeev, L. Takhtajan, The quantum method for the inverse problem and the XYZ Heisenberg model,<lb/> Russian Math. Surveys 34 (1979), no. 5, 11-68.<lb/> </bibl>
+        <bibl><label>[GKLO1]</label> A. Gerasimov, S. Kharchev, D. Lebedev, S. Oblezin, On a class of representations of the Yangian<lb/> and moduli space of monopoles, Comm. Math. Phys. 260 (2005), no. 3, 511-525.<lb/> </bibl>
+        <bibl><label>[GKLO2]</label> A. Gerasimov, S. Kharchev, D. Lebedev, S. Oblezin, On a class of representations of quantum groups,<lb/> Noncommutative geometry and representation theory in mathematical physics, Contemp. Math. 391,<lb/> Amer. Math. Soc., Providence, RI (2005), 101-110.<lb/> </bibl>
+        <bibl><label>[GNW]</label> N. Guay, H. Nakajima, C. Wendlandt, Coproduct for Yangians of affine Kac-Moody algebras,<lb/> arXiv:1701.05288.<lb/> </bibl>
+        <bibl><label>[GSV]</label> M. Gekhtman, M. Shapiro, A. Vainshtein, Generalized Bäcklund-Darboux transformations for Coxeter-<lb/>Toda flows from a cluster algebra perspective, Acta Math. 206 (2011), no. 2, 245-310.<lb/> </bibl>
+        <bibl><label>[Ha]</label> M. Haiman, Cherednik algebras, Macdonald polynomials and combinatorics, ICM 2006 Proceedings 3,<lb/> European Math. Soc. (2006), 843-872.<lb/> </bibl>
+        <bibl><label>[He]</label> D. Hernandez, Representations of quantum affinizations and fusion product, Transform. Groups 10 (2005),<lb/> no. 2, 163-200.<lb/> </bibl>
+        <bibl><label>[HKKN]</label> T. Hoffmann, J. Kellendonk, N. Kutz, N. Reshetikhin, Factorization dynamics and Coxeter-Toda<lb/> lattices, Comm. Math. Phys. 212 (2000), no. 2, 297-321.<lb/> </bibl>
+        <bibl><label>[HL]</label> X. He, G. Lusztig, A generalization of Steinberg&apos;s cross section, J. Amer. Math. Soc. 25 (2012), no. 3,<lb/> 739-757.<lb/> </bibl>
+        <bibl><label>[Jim]</label> M. Jimbo, A q-analogue of U (gl(N + 1)), Hecke algebra and the Yang-Baxter equation, Lett. Math. Phys.<lb/> 11 (1986), no. 2, 247-252.<lb/> </bibl>
+        <bibl><label>[Jin]</label> N. Jing, On Drinfeld realization of quantum affine algebras, in Monster and Lie Algebras, Columbus, OH,<lb/> 1996 (Ohio State University Mathematical Research Institute Publications, de Gruyter, Berlin, 1998), Vol.<lb/> 7, 195-206.<lb/> </bibl>
+        <bibl><label>[Jo]</label> A. Joseph, Quantum groups and their primitive ideals, Ergebnisse der Mathematik und ihrer Grenzgebiete<lb/> (3) 29, Springer-Verlag, Berlin (1995), x+383pp.<lb/> </bibl>
+        <bibl><label>[KT]</label> V. Kuznetsov, A. Tsyganov, Quantum relativistic Toda chains, Journal of Math. Sciences 80 (1996),<lb/> no. 3, 1802-1810.<lb/> </bibl>
+        <bibl><label>[KTWWY]</label> J. Kamnitzer, P. Tingley, B. Webster, A. Weekes, O. Yacobi, Highest weights for truncated shifted<lb/> Yangians and product monomial crystals, arXiv:1511.09131.<lb/> </bibl>
+        <bibl><label>[KWWY]</label> J. Kamnitzer, B. Webster, A. Weekes, O. Yacobi, Yangians and quantizations of slices in the affine<lb/> Grassmannian, Algebra Number Theory 8 (2014), no. 4, 857-893.<lb/> </bibl>
+        <bibl><label>[La]</label> G. Laumon, Un analogue global du cône nilpotent, Duke Math. Journal 57 (1988), no. 2, 647-671.<lb/> </bibl>
+        <bibl><label>[Le]</label> S. Levendorskii, On generators and defining relations of Yangians, Journal of Geometry and Physics 12<lb/> (1993), no. 1, 1-11.<lb/> </bibl>
+        <bibl><label>[Lu]</label> J.-H. Lu, Hopf algebroids and quantum groupoids, International J. Math. 7 (1996), no. 1, 47-70.<lb/> </bibl>
+        <bibl><label>[Lus]</label> G. Lusztig, Introduction to quantum groups, Progress in Math. 110 (1993), xii+341pp.<lb/> </bibl>
+        <bibl><label>[M]</label> A. Molev, Yangians and classical Lie algebras, Mathematical Surveys and Monographs, 143, American<lb/> Mathematical Society, Providence, RI (2007), xviii+400pp.<lb/> </bibl>
+        <bibl><label>[MOV]</label> A. Malkin, V. Ostrik, M. Vybornov, The minimal degeneration singularities in the affine Grassman-<lb/>nians, Duke Math. J. 126 (2005), no. 2, 233-249.<lb/> </bibl>
+        <bibl><label>[NT]</label> M. Nazarov, V. Tarasov, Yangians and Gel&apos;fand-Zetlin bases, Publ. RIMS Kyoto Univ. 30 (1994), no. 3,<lb/> 459-478.<lb/> </bibl>
+        <bibl><label>[PR]</label> G. Pappas, M. Rapoport, Twisted loop groups and their affine flag varieties, Adv. Math. 219 (2008),<lb/> no. 1, 118-198.<lb/> </bibl>
+        <bibl><label>[S]</label> R. Steinberg, Regular elements of semisimple algebraic groups, Inst. HautesÉtudesHautes´HautesÉtudes Sci. Publ. Math. 25<lb/> (1965), 49-80.<lb/> </bibl>
+        <bibl><label>[Se1]</label> A. Sevostyanov, Quantum deformation of Whittaker modules and the Toda lattice, Duke Math. J. 105<lb/> (2000), no. 2, 211-238.<lb/> </bibl>
+        <bibl><label>[Se2]</label> A. Sevostyanov, Conjugacy classes in Weyl groups and q-W algebras, Adv. Math. 228 (2011), no. 3,<lb/> 1315-1376.<lb/> </bibl>
+        <bibl><label>[STS]</label> M. Semenov-Tian-Shansky, Poisson Lie groups, quantum duality principle, and the quantum double,<lb/> Contemp. Math. 175 (1994), 219-248.<lb/> </bibl>
+        <bibl><label>[T1]</label> A. Tsymbaliuk, Quantum affine Gelfand-Tsetlin bases and quantum toroidal algebra via K-theory of<lb/> affine Laumon spaces, Selecta Math. 16 (2010), 173-200.<lb/> </bibl>
+        <bibl><label>[T2]</label> A. Tsymbaliuk, The affine Yangian of gl 1 revisited, Adv. Math. 304 (2017), no. 2, 583-645.<lb/> </bibl>
+        <bibl><label>[VV1]</label> M. Varagnolo, E. Vasserot, Double affine Hecke algebras and affine flag manifolds, I. Affine flag mani-<lb/>folds and principal bundles, Trends in Mathematics, Birkhäuser/Springer, Basel (2010), 233-289.<lb/> </bibl>
+        <bibl><label>[VV2]</label> M. Varagnolo, E. Vasserot, Double affine Hecke algebras at roots of unity, Representation Theory 14<lb/> (2010), 510-600.<lb/> </bibl>
+
+M.F.: National Research University Higher School of Economics, Russian Federation, De-<lb/>partment of Mathematics, 6 Usacheva st., Moscow 119048; Institute for Information Transmis-<lb/>sion Problems<lb/> E-mail address: fnklberg@gmail.com
+        
+        </listBibl>
+    </text>
+</tei>
+

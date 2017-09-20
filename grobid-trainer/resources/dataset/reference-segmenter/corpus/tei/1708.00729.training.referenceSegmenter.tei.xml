@@ -1,0 +1,36 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> H. B. G. Casimir, and D. Polder, Physical Review, 73, 360 (1948).<lb/> </bibl>
+        <bibl><label>[2]</label> J. Bernabéu and R. Tarrachi, Ann. Phys. (NY), 102, 323 (1976).<lb/> </bibl>
+        <bibl><label>[3]</label> J. F. Babb, Advances in Atomic, Molecular, and Optical Physics 59, 1 ( 2010).<lb/> </bibl>
+        <bibl><label>[4]</label> James F. Babb, Renato Higa, Mahir S. Hussein, Eur. Phys. J. A 53, 126<lb/> (2017).<lb/> </bibl>
+        <bibl><label>[5]</label> G. Feinberg and J. Sucher, Phys. Rev. A 2, 2395 (1970).<lb/> </bibl>
+        <bibl><label>[6]</label> F. Hagelstein, R. Miskimen, and V. Pascalutsa, Prog. Part. Nucl. Phys. 88,<lb/> 29 (2016).<lb/> </bibl>
+        <bibl><label>[7]</label> R. P. Hildebrandt, H. W. Griesshammer, T. R. Hemmert, and B. Pasquini,<lb/> Eur. Phys. J. A20, 293 (2004).<lb/> </bibl>
+        <bibl><label>[8]</label> R. P. Hildebrandt, Ph.D. thesis, Tec. Univ. München, 2005.<lb/> </bibl>
+        <bibl><label>[9]</label> H. W. Griesshammer, J. A. McGovern, D. R. Phillips, and G. Feldman, Prog.<lb/> Part. Nucl. Phys. 67, 841 (2012), arXiv: 1203.6834.<lb/> </bibl>
+        <bibl><label>[10]</label> V. Lensky, J. McGovern, and V. Pascalutsa, Eur. Phys. J. C75, 604 (2015).<lb/> </bibl>
+        <bibl><label>[11]</label> M. O&apos;Carroll and J. Sucher, Phys. Rev. 187, 85 (1969).<lb/> </bibl>
+        <bibl><label>[12]</label> H. Friedrich, G. Jacoby, and C. G. Meister, Phys. Rev. A 65, 032902 (2002).<lb/> </bibl>
+        <bibl><label>[13]</label> L. G. Arnold, Phys. Lett. B 44, 401 (1973).<lb/> </bibl>
+        <bibl><label>[14]</label> E. A. Power and T. Thirunamachandran, Proc. R. Soc. Lond. A 401, 207<lb/> (1985).<lb/> </bibl>
+        <bibl><label>[15]</label> P. E. Argan and E. Pizzaroli, Phys. Lett. 4, 350 (1963)<lb/> </bibl>
+        <bibl><label>[16]</label> P. E. Argan and E. Pizzaroli, Phys. Rev. Lett. 9, 405 (1963)<lb/> </bibl>
+        <bibl><label>[17]</label> J.P. Schiffer and R. Vandenbosch, Phys. Lett. 5, 292 (1963)<lb/> </bibl>
+        <bibl><label>[18]</label> F. M. Marqués et al., Phys. Rev. C 65, 044006 (2002)<lb/> </bibl>
+        <bibl><label>[19]</label> Steven C. Pieper, Phys. Rev. Lett. 90, 252501 (2003)<lb/> </bibl>
+        <bibl><label>[20]</label> K. Kisamori et al. Phys. Rev. Lett. 116, 052501 (2016).<lb/> </bibl>
+        <bibl><label>[21]</label> E. Hiyama, R. Lazauskas, J. Carbonell, M. Kamimura, Phys.Rev. C 93,<lb/> 044004 (2016)<lb/> </bibl>
+        <bibl><label>[22]</label> J. Carbonell, R, Lazauskas, E. Hiyama, M. Kamimura, Few-Body Syst., 58,<lb/> 67 (2017)<lb/> </bibl>
+        <bibl><label>[23]</label> Rimantas Lazauskas, Emiko Hiyama, Jaume Carbonell, arXiv:1705.07927<lb/> (2017)<lb/> </bibl>
+        <bibl><label>[24]</label> K. Fossez, J. Rotureau, N. Michel, and M. Ploszajczak, Phys. Rev. Lett., 119,<lb/> 032501 (2017)</bibl>
+        </listBibl>
+    </text>
+</tei>
+

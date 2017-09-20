@@ -1,0 +1,46 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>1.</label> Bertlmann, R. A. Anomalies in Quantum Field Theory (Oxford Univ. Press, 2000).<lb/> </bibl>
+        <bibl><label>2.</label> Adler, S. L. Axial-vector vertex in spinor electrodynamics. Phys. Rev. 177,<lb/> 2426-2438 (1969).<lb/> </bibl>
+        <bibl><label>3.</label> Bell, J. S. &amp; Jackiw, R. A PCAC puzzle: π 0 → γ γ in the σ-model. Nuovo Cimento A<lb/> 60, 47-61 (1969).<lb/> </bibl>
+        <bibl><label>4.</label> Nielsen, H. B. &amp; Ninomiya, M. The Adler-Bell-Jackiw anomaly and Weyl<lb/> fermions in a crystal. Phys. Lett. B 130, 389-396 (1983).<lb/> </bibl>
+        <bibl><label>5.</label> Landsteiner, K., Megías, E. &amp; Pena-Benitez, F. Gravitational anomaly and<lb/> transport phenomena. Phys. Rev. Lett. 107, 021601 (2011).<lb/> </bibl>
+        <bibl><label>6.</label> Lucas, A., Davison, R. A. &amp; Sachdev, S. Hydrodynamic theory of thermoelectric<lb/> transport and negative magnetoresistance in Weyl semimetals. Proc. Natl Acad.<lb/> Sci. USA 113, 9463-9468 (2016).<lb/> </bibl>
+        <bibl><label>7.</label> Xu, S.-Y. et al. Discovery of a Weyl Fermion semimetal and topological Fermi<lb/> arcs. Science 349, 613-617 (2015).<lb/> </bibl>
+        <bibl><label>8.</label> Xu, S.-Y. et al. Discovery of a Weyl fermion state with Fermi arcs in niobium<lb/> arsenide. Nat. Phys. 11, 748-754 (2015).<lb/> </bibl>
+        <bibl><label>9.</label> Huang, S.-M. et al. A Weyl fermion semimetal with surface Fermi arcs in the<lb/> transition metal monopnictide TaAs class. Nat. Commun. 6, 7373 (2015).<lb/> </bibl>
+        <bibl><label>10.</label> Nielsen, H. B. &amp; Ninomiya, M. Absence of neutrinos on a lattice: (I). Proof by<lb/> homotopy theory. Nucl. Phys. B 185, 20-40 (1981).<lb/> </bibl>
+        <bibl><label>11.</label> Son, D. T. &amp; Spivak, B. Z. Chiral anomaly and classical negative<lb/> magnetoresistance of Weyl metals. Phys. Rev. B 88, 104412 (2013).<lb/> </bibl>
+        <bibl><label>12.</label> Xiong, J. et al. Evidence for the chiral anomaly in the Dirac semimetal Na 3 Bi.<lb/> Science 350, 413-416 (2015).<lb/> </bibl>
+        <bibl><label>13.</label> Huang, X. et al. Observation of the chiral-anomaly-induced negative<lb/> magnetoresistance in 3D Weyl semimetal TaAs. Phys. Rev. X 5, 031023<lb/> (2015).<lb/> </bibl>
+        <bibl><label>14.</label> Niemann, A. C. et al. Chiral magnetoresistance in the Weyl semimetal NbP.<lb/> Sci. Rep. 7, 43394 (2017).<lb/> </bibl>
+        <bibl><label>15.</label> Hirschberger, M. et al. The chiral anomaly and thermopower of Weyl fermions<lb/> in the half-Heusler GdPtBi. Nat. Mater. 15, 1161-1165 (2016).<lb/> </bibl>
+        <bibl><label>16.</label> Li, H. et al. Negative magnetoresistance in Dirac semimetal Cd 3 As 2 .<lb/> Nat. Commun. 7, 10301 (2016).<lb/> </bibl>
+        <bibl><label>17.</label> Arnold, F. et al. Negative magnetoresistance without well-defined chirality in the<lb/> Weyl semimetal TaP. Nat. Commun. 7, 11615 (2016).<lb/> </bibl>
+        <bibl><label>18.</label> Shekhar, C. et al. Observation of chiral magneto-transport in RPtBi topological<lb/> Heusler compounds. Preprint at https://arxiv.org/abs/1604.01641<lb/> (2016).<lb/> </bibl>
+        <bibl><label>19.</label> Alvarez-Gaumé, L. &amp; Witten, E. Gravitational anomalies. Nucl. Phys. B 234,<lb/> 269-330 (1984).<lb/> </bibl>
+        <bibl><label>20.</label> Eguchi, T. &amp; Freund, P. G. O. Quantum gravity and world topology. Phys. Rev.<lb/> Lett. 37, 1251-1254 (1976).<lb/> </bibl>
+        <bibl><label>21.</label> Landsteiner, K., Megías, E. &amp; Peña-Benitez, F. in Strongly Interacting Matter in<lb/> Magnetic Fields (eds Kharzeev, D. et al.) 433-468 (Springer, 2013).<lb/> </bibl>
+        <bibl><label>22.</label> Kaminski, M., Uhlemann, C. F., Bleicher, M. &amp; Schaffner-Bielich, J. Anomalous<lb/> hydrodynamics kicks neutron stars. Phys. Lett. B 760, 170-174 (2016).<lb/> </bibl>
+        <bibl><label>23.</label> Lundgren, R., Laurell, P. &amp; Fiete, G. A. Thermoelectric properties of Weyl and<lb/> Dirac semimetals. Phys. Rev. B 90, 165115 (2014).<lb/> </bibl>
+        <bibl><label>24.</label> Kim, K.-S. Role of axion electrodynamics in a Weyl metal: violation of<lb/> Wiedemann-Franz law. Phys. Rev. B 90, 121108(R) (2014).<lb/> </bibl>
+        <bibl><label>25.</label> Sharma, G., Goswami, P. &amp; Tewari, S. Nernst and magnetothermal conductivity<lb/> in a lattice model of Weyl fermions. Phys. Rev. B 93, 035116 (2016).<lb/> </bibl>
+        <bibl><label>26.</label> Spivak, B. Z. &amp; Andreev, A. V. Magnetotransport phenomena related to the<lb/> chiral anomaly in Weyl semimetals. Phys. Rev. B 93, 085107 (2016).<lb/> </bibl>
+        <bibl><label>27.</label> Burkov, A. A. Chiral anomaly and diffusive magnetotransport in Weyl metals.<lb/> Phys. Rev. Lett. 113, 247203 (2014).<lb/> </bibl>
+        <bibl><label>28.</label> Shekhar, C. et al. Extremely large magnetoresistance and ultrahigh mobility in<lb/> the topological Weyl semimetal candidate NbP. Nat. Phys. 11, 645-649<lb/> (2015).<lb/> </bibl>
+        <bibl><label>29.</label> Sergelius, P. Berry phase and band structure analysis of the Weyl semimetal<lb/> NbP. Sci. Rep. 6, 33859 (2016).<lb/> </bibl>
+        <bibl><label>30.</label> Liang, T. et al. Evidence for massive bulk Dirac fermions in Pb 1−x Sn x Se from<lb/> Nernst and thermopower experiments. Nat. Commun. 4, 2696 (2013).<lb/> </bibl>
+        <bibl><label>31.</label> Landsteiner, K., Megias, E., Melgar, L. &amp; Pena-Benitez, F. Holographic gravitational<lb/> anomaly and chiral vortical effect. J. High Energy Phys. 9, 121 (2011).<lb/> </bibl>
+        <bibl><label>32.</label> Golkar, S. &amp; Sethi, S. Global anomalies and effective field theory. J. High Energy<lb/> Phys. 5, 105 (2016).<lb/> </bibl>
+        <bibl><label>33.</label> Delbourgo, R. &amp; Salam, A. The gravitational correction to PCAC. Phys. Lett. B<lb/> 40, 381-382 (1972).<lb/> </bibl>
+        <bibl><label>34.</label> Landsteiner, K. Notes on anomaly induced transport. Acta Phys. Pol. B 47,<lb/> 2617-2673 (2016).<lb/> </bibl>
+        <bibl><label>35.</label> Jensen, K., Loganayagam, R. &amp; Yarom, A. Thermodynamics, gravitational<lb/> anomalies and cones. J. High Energy Phys. 2, 88 (2013).<lb/> </bibl>
+        <bibl><label>36.</label> LeBellac, M. Thermal Field Theory (Cambridge Univ. Press, 2000).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

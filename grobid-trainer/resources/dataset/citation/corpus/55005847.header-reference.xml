@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <citations>
-	<bibl>[<title level="j">Human Vaccines</title> <biblScope type="vol">1</biblScope>:<biblScope type="issue">2</biblScope>, <biblScope type="pp">80-84</biblScope>; <date>March</date>/<date>April 2005</date>]; ©2005 Landes Bioscience 80 <title level="j">HumanVaccines</title> <date>2005</date> ;Vol. <biblScope type="vol">1</biblScope>Issue <biblScope type="issue">2</biblScope></bibl>
+	<bibl>[<title level="j">Human Vaccines</title> <biblScope type="vol">1</biblScope>:<biblScope type="issue">2</biblScope>, <biblScope type="pp">80-84</biblScope>; <date>March</date>/<date>April 2005</date>]; ©<date>2005</date> <publisher>Landes Bioscience</publisher> </bibl> 
+
+	<bibl><biblScope type="pp">80</biblScope> <title level="j">HumanVaccines</title> <date>2005</date> ;Vol. <biblScope type="vol">1</biblScope>Issue <biblScope type="issue">2</biblScope></bibl>
 </citations>

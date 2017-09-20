@@ -1,0 +1,34 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Bars, I., Terning, J.: Extra Dimensions in Space and Time, p. 27.<lb/> Springer, Berlin (2009)<lb/> </bibl>
+        <bibl>Davies, P.C.W.: J. Phys. A 8, 609 (1975)<lb/> </bibl>
+        <bibl>Fulling, S.A.: Phys. Rev. D 7, 2850 (1973)<lb/> </bibl>
+        <bibl>Genzel, R., et al.: Strongly baryon-dominated disk galaxies at the peak<lb/> of galaxy formation ten billion years ago. Nature 543, 397-401<lb/> (2017)<lb/> </bibl>
+        <bibl>Gine, J., McCulloch, M.E.: Inertial mass from Unruh temperatures.<lb/> Mod. Phys. Lett. A 31, 1650107 (2016)<lb/> </bibl>
+        <bibl>Hawking, S.: Nature 248, 30 (1974)<lb/> </bibl>
+        <bibl>Lelli, F., McGaugh, S.S., Schombert, J.M., Pawlowsky, M.S.: One law<lb/> to rule them all: the radial acceleration relation of galaxies. Astro-<lb/>phys. J. 836, 152 (2017)<lb/> </bibl>
+        <bibl>McCulloch, M.E.: Modelling the Pioneer anomaly as modified inertia.<lb/> Mon. Not. R. Astron. Soc. 376, 338-342 (2007)<lb/> </bibl>
+        <bibl>McCulloch, M.E.: Minimum accelerations from quantised inertia. Eu-<lb/>rophys. Lett. 90, 29001 (2010)<lb/> </bibl>
+        <bibl>McCulloch, M.E.: Testing quantised inertia on galactic scales. Astro-<lb/>phys. Space Sci. 342, 575-578 (2012)<lb/> </bibl>
+        <bibl>McCulloch, M.E.: Inertia from an asymmetric Casimir effect. Euro-<lb/>phys. Lett. 101, 59001 (2013)<lb/> </bibl>
+        <bibl>McCulloch, M.E.: Testing quantised inertia on the emdrive. Europhys.<lb/> Lett. 111, 60005 (2015)<lb/> </bibl>
+        <bibl>McCulloch, M.E.: Low-acceleration dwarf galaxies as tests of quan-<lb/>tised inertia. Astrophys. Space Sci. 362, 57 (2017)<lb/> </bibl>
+        <bibl>McGaugh, S., Lelli, F., Schombert, J.: The radial acceleration relation<lb/> in rotationally supported galaxies. Phys. Rev. Lett. 117, 201101<lb/> (2016)<lb/> </bibl>
+        <bibl>Milgrom, M.: A modification of the Newtonian dynamics as a possible<lb/> alternative to the hidden mass hypothesis. Astrophys. J. 270, 365<lb/> (1983)<lb/> </bibl>
+        <bibl>Oort, J.H.: The force exerted by the stellar system in the direction per-<lb/>pendicular to the galactic plane and some related problems. Bull.<lb/> Astron. Inst. Neth. 6, 249-287 (1932)<lb/> </bibl>
+        <bibl>Rubin, V., Thonnard, N., Ford, W.K. Jr.: Rotational properties of 21<lb/> SC galaxies with a large angle of luminosities and radiifrom NGC<lb/> 4605 (R = 4 kpc) to UGC 2885 (R = 122 kpc). Astrophys. J. 238,<lb/> 471 (1980)<lb/> </bibl>
+        <bibl>Smolyaninov, I.I.: Photoluminescence from a gold nanotip in an accel-<lb/>erated reference frame. Phys. Lett. A 372, 7043-7045 (2008)<lb/> </bibl>
+        <bibl>Thomas, D., et al.: Stellar velocity dispersions and emission line prop-<lb/>erties o SDSS-III/BOSS galaxies. Mon. Not. R. Astron. Soc.<lb/> 431(2), 1383-1397 (2013)<lb/> </bibl>
+        <bibl>Uebler, H., et al.: The evolution of the Tully-Fisher relation between<lb/> z ∼ 2.3 and z ∼ 0.9 with KMOS. Astrophys. J. 842(2), 121<lb/> (2017)<lb/> </bibl>
+        <bibl>Unruh, W.G.: Phys. Rev. D 14, 870 (1976)<lb/> </bibl>
+        <bibl>Zwicky, F.: Der Rotverschiebung von extragalaktischen Nebeln. Phys.<lb/> Acta 6, 110 (1933)</bibl>
+        </listBibl>
+    </text>
+</tei>
+

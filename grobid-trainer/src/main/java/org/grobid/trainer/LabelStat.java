@@ -1,10 +1,10 @@
 package org.grobid.trainer;
 
 public final class LabelStat {
-    private int falsePositive;
-    private int falseNegative;
-    private int observed;
-    private int expected;
+    private int falsePositive = 0;
+    private int falseNegative = 0;
+    private int observed = 0; // this is true positives
+    private int expected = 0; // total expected number of items with this label
 
     public void incrementFalseNegative() { 
         this.incrementFalseNegative(1); 
@@ -77,7 +77,8 @@ public final class LabelStat {
         }
         if ((falsePositive + falseNegative) >= observed)
             return 0.0;
-        return (double) (observed - (falsePositive + falseNegative) ) / (observed);
+        //return (double) (observed - (falsePositive + falseNegative) ) / (observed);
+        return (double) observed / (falsePositive + observed);
     }
 
     public double getRecall() {
@@ -85,7 +86,8 @@ public final class LabelStat {
             return 0.0;
         if ((falsePositive + falseNegative) >= observed)
             return 0.0;
-        return (double) (observed - (falsePositive + falseNegative) ) / (expected);
+        //return (double) (observed - (falsePositive + falseNegative) ) / (expected);
+        return (double) observed / (expected);
     }
 
     public double getF1Score() {

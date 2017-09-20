@@ -35,6 +35,7 @@ import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
@@ -53,6 +54,8 @@ import java.io.Writer;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
@@ -169,9 +172,30 @@ public class FullTextParser extends AbstractParser {
 			}
 
             // citation processing
+            // consolidation, if selected, is not done individually for each citation but 
+            // in a second stage for all citations
             List<BibDataSet> resCitations = parsers.getCitationParser().
-				processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), config.isConsolidateCitations());
+				processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), false);
 
+			// consolidate the set
+			if (config.isConsolidateCitations()) {
+				Consolidation consolidator = new Consolidation(cntManager);
+				try {
+					Map<Integer,BiblioItem> resConsolidation = consolidator.consolidate(resCitations);
+					for(int i=0; i<resCitations.size(); i++) {
+						BiblioItem resCitation = resCitations.get(i).getResBib();
+						BiblioItem bibo = resConsolidation.get(new Integer(i));
+						if (bibo != null) {
+			                BiblioItem.correct(resCitation, bibo);
+						}
+					}
+				} catch(Exception e) {
+					throw new GrobidException(
+                    "An exception occured while running consolidation on bibliographical references.", e);
+				} finally {
+					//consolidator.close();
+				}
+			}
             doc.setBibDataSets(resCitations);
 
             if (resCitations != null) {
@@ -903,9 +927,9 @@ public class FullTextParser extends AbstractParser {
 	                        q++;
 	                    }
 	                    if (input.length() > 1) {
-	                        List<String> inputs = new ArrayList<String>();
-	                        inputs.add(input.trim());
-	                        bufferName = parsers.getAuthorParser().trainingExtraction(inputs, true);
+	                        /*List<String> inputs = new ArrayList<String>();
+	                        inputs.add(input.trim());*/
+	                        bufferName = parsers.getAuthorParser().trainingExtraction(input, true);
 	                    }
 
 	                    // buffer for the reference block
@@ -1121,9 +1145,9 @@ public class FullTextParser extends AbstractParser {
 			                BiblioItem bib = parsers.getCitationParser().processing(ref.getReferenceText(), false);
 			                String authorSequence = bib.getAuthors();
 							if ((authorSequence != null) && (authorSequence.trim().length() > 0) ) {
-								List<String> inputs = new ArrayList<String>();
-								inputs.add(authorSequence);
-								StringBuilder bufferName = parsers.getAuthorParser().trainingExtraction(inputs, false);
+								/*List<String> inputs = new ArrayList<String>();
+								inputs.add(authorSequence);*/
+								StringBuilder bufferName = parsers.getAuthorParser().trainingExtraction(authorSequence, false);
 								if ( (bufferName != null) && (bufferName.length()>0) ) {
 									writerName.write("\n\t\t\t\t\t\t<author>");
 									writerName.write(bufferName.toString());
@@ -1315,7 +1339,7 @@ public class FullTextParser extends AbstractParser {
                 }
 				if (!output) {
                     output = writeField(buffer, s1, lastTag0, s2, "<table>",
-						"<table>", addSpace, 3, false);
+						"<figure type=\"table\">", addSpace, 3, false);
                 }
                 // for item we must distinguish starting and closing tags
                 if (!output) {

@@ -1,0 +1,36 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        
+        <bibl><label>[1]</label> Blandford R., Rees M.J., 1974, MNRAS, 169, 395<lb/> </bibl>
+        <bibl><label>[2]</label> H.E.S.S. collaboration, Abramowski A., et al., 2010, A&amp;A, 520, A83<lb/> </bibl>
+        <bibl><label>[3]</label> H.E.S.S. collaboration, Abramowski A., et al., 2014, A&amp;A, 571, A39<lb/> </bibl>
+        <bibl><label>[4]</label> H.E.S.S. collaboration, Abdalla H., et al., 2017, A&amp;A, 598, A39<lb/> </bibl>
+        <bibl><label>[5]</label> H.E.S.S. collaboration, Abramowski A., et al., 2013, A&amp;A, 554, A107<lb/> </bibl>
+        <bibl><label>[6]</label> Aharonian F.A., et al. (HESS collaboration), 2006, A&amp;A, 457, 899<lb/> </bibl>
+        <bibl><label>[7]</label> de Naurois M. &amp; Rolland L., 2009, Astropar. Phys., 32, 231<lb/> </bibl>
+        <bibl><label>[8]</label> Parsons R.D., Hinton J.A., 2014, Astropar.Phys. 56, 26<lb/> </bibl>
+        <bibl><label>[9]</label> Holler M., Balzer A., Chalme-Calvet R., et al., 2015, in Proc. 34th Int. Cosmic Ray Conference<lb/> (ICRC 2015), arXiv:1509.02896<lb/> </bibl>
+        <bibl><label>[10]</label> Parsons R.D., Murach T., Gajdos M., 2015, in Proc. 34th Int. Cosmic Ray Conference (ICRC 2015),<lb/> arXiv:1509.06322<lb/> </bibl>
+        <bibl><label>[11]</label> Atwood W. B., Abdo A. A., Ackermann M., et al., 2009, ApJ, 697, 1071<lb/> </bibl>
+        <bibl><label>[12]</label> Acero F., Ackermann M., Ajello M., et al., 2016, ApJS, 223, 26<lb/> </bibl>
+        <bibl><label>[13]</label> Burrows D.N., et al., 2005, Space Sci. Rev., 120, 165<lb/> </bibl>
+        <bibl><label>[14]</label> Kalberla P.M.W., Burton W.B., Hartmann D., Arnal E.M., et al., 2005, A&amp;A, 440, 775<lb/> </bibl>
+        <bibl><label>[15]</label> Hauser M., Möllenhoff C., Pühlhofer G., Wagner S.J., Hagen H.-J., Knoll M., 2004, AN, 325, 659<lb/> </bibl>
+        <bibl><label>[16]</label> Edelson R., Turner T.J., Pounds K., et al., 2002, ApJ, 568, 610<lb/> </bibl>
+        <bibl><label>[17]</label> Wagner S.J., Witzel A., 1995, ARA&amp;A, 33, 163<lb/> </bibl>
+        <bibl><label>[18]</label> Edelson R., Krolik J., 1988, ApJ, 333, 646<lb/> </bibl>
+        <bibl><label>[19]</label> Barnacka A., Moderski R., Behera B., Brun P., Wagner S.J., 2014, A&amp;A, 567, A113<lb/> </bibl>
+        <bibl><label>[20]</label> Brown A.M., 2013, MNRAS, 431, 824<lb/> </bibl>
+        <bibl><label>[21]</label> Saito S., Stawarz L., Tanaka Y.T., Takahashi T., Madejski G., D&apos;Ammando F., 2013, ApJL, 766, L11<lb/> </bibl>
+        <bibl><label>[22]</label> Saito S., Stawarz L., Tanaka Y.T., Takahashi T., Sikora M., Moderski R., 2015, ApJ, 809, 171<lb/> </bibl>
+        <bibl><label>[23]</label> Zacharias M., Sitarek J., Dominis Prester D., Jankowsky F., Lindfors E., Mohamed M., Sanchez D.,<lb/> Terzic T., 2017, in Proc. 35th Int. Cosmic Ray Conference, PoS(ICRC 2017)655</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,37 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> S. W. Hawking, &quot;Black hole explosions,&quot; Nature 248, 30 (1974). doi:10.1038/248030a0<lb/> </bibl>
+        <bibl><label>[2]</label> J. D. Bekenstein, &quot;Generalized second law of thermodynamics in black hole physics,&quot;<lb/> Phys. Rev. D 9, 3292 (1974). doi:10.1103/PhysRevD.9.3292<lb/> </bibl>
+        <bibl><label>[3]</label> J. M. Maldacena,&quot;The large N limit of superconformal field theories and supergravity,&quot;<lb/> Adv. Theor. Math. Phys.2, 231 (1998), hep-th/9711200<lb/> </bibl>
+        <bibl><label>[4]</label> S. Ryu and T. Takayanagi, &quot;Holographic Derivation of Entanglement Entropy from<lb/> AdS/CFT,&quot; Phys. Rev. Lett. 96, 181602 (2006) doi:10.1103/PhysRevLett.96.181602,<lb/> hep-th/0603001.<lb/> </bibl>
+        <bibl><label>[5]</label> V. E. Hubeny, M. Rangamani and T. Takayanagi,&quot;A Covariant Holographic Entangle-<lb/>ment Entropy Proposal,&quot; JHEP 0707, 062 (2007) doi:10.1088/1126-6708/2007/07/062<lb/> , arXiv:0705.0016 [hep-th].<lb/> </bibl>
+        <bibl><label>[6]</label> R. Bousso, &quot;A Covariant Entropy Conjecture,&quot; JHEP 07 (1999) 004, arXiv:hep-<lb/>th/9905177<lb/> </bibl>
+        <bibl><label>[7]</label> N. Engelhardt and R. Bousso, &quot;A New Area Law in General Relativity,&quot;<lb/> https://arxiv.org/abs/1504.07627<lb/> </bibl>
+        <bibl><label>[8]</label> N. Engelhardt and R. Bousso, &quot;Proof of a New Area Law in General Relativity,&quot;<lb/> https://arxiv.org/abs/1504.07660<lb/> </bibl>
+        <bibl><label>[9]</label> N. Engelhardt and A. C. Wall, &quot;Extremal Surface Barriers,&quot; arXiv:1312.3699 [hep-th]<lb/> </bibl>
+        <bibl><label>[10]</label> A. Ashtekar and B. Krishnan, &quot;Dynamical horizons and their properties,&quot; Phys.Rev.<lb/> D68 (2003) 104030, arXiv:gr-qc/0308033 [gr-qc].<lb/> </bibl>
+        <bibl><label>[11]</label> F. Sanches and S. Weinberg, &quot;A Holographic Entanglement Entropy Conjecture for<lb/> General Spacetimes,&quot; Phys. Rev. D 94, 084034 (2016), arXiv:1603.05250 [hep-th]<lb/> </bibl>
+        <bibl><label>[12]</label> A. C. Wall, &quot;Maximin Surfaces, and the Strong Subadditivity of the Covariant Holo-<lb/>graphic Entanglement Entropy&quot;, arXiv:1211.3494.<lb/> </bibl>
+        <bibl><label>[13]</label> R. M. Wald, General Relativity. The University of Chicago Press, Chicago, 1984.<lb/> </bibl>
+        <bibl><label>[14]</label> V. E. Hubeny and M. Rangamani, &quot;Causal Holographic Information,&quot; JHEP 1206<lb/> (2012) 114, arXiv:1204.1698<lb/> </bibl>
+        <bibl><label>[15]</label> B. Freivogel and B. Mosk, &quot;Properties of Causal Holographic Information&quot;,<lb/> arXiv:1304.7229.<lb/> </bibl>
+        <bibl><label>[16]</label> W. R. Kelly and A. C. Wall, &quot;Coarse-grained entropy and causal holographic in-<lb/>formation in AdS/CFT,&quot; JHEP 1403, 118 (2014) doi:10.1007/JHEP03(2014)118<lb/> [arXiv:1309.3610 [hep-th]].<lb/> </bibl>
+        <bibl><label>[17]</label> N. Engelhardt and A. C. Wall, &quot;No Simple Dual to the Causal Holographic Informa-<lb/>tion?,&quot; JHEP 1704, 134 (2017) doi:10.1007/JHEP04(2017)134 [arXiv:1702.01748 [hep-<lb/>th]].<lb/> </bibl>
+        <bibl><label>[18]</label> C. Fefferman and C. R. Graham, &quot;Conformal invariants,&quot; Elie Cartan et les Mathema-<lb/>tiques d&apos;aujourd&apos;hui, Asterisque, p. 95, 1985.<lb/> </bibl>
+        <bibl><label>[19]</label> N. Engelhardt and A. C. Wall, &quot;Decoding the Apparent Horizon: A Coarse-Grained<lb/> Holographic Entropy,&quot;<lb/> </bibl>
+        <bibl><label>[20]</label> W. Bunting, Z. Fu and D. Marolf, &quot;A coarse-grained generalized second law for<lb/> holographic conformal field theories,&quot; Class. Quant. Grav. 33, no. 5, 055008 (2016)<lb/> doi:10.1088/0264-9381/33/5/055008 [arXiv:1509.00074 [hep-th]].<lb/> </bibl>
+        <bibl><label>[21]</label> R. Bousso, &quot;Holography in general space-times,&quot; JHEP 9906, 028 (1999)<lb/> doi:10.1088/1126-6708/1999/06/028 [hep-th/9906022].<lb/> </bibl>
+        <bibl><label>[22]</label> T. Faulkner, A. Lewkowycz and J. Maldacena, &quot;Quantum corrections to holo-<lb/>graphic entanglement entropy,&quot; JHEP 1311, 074 (2013) doi:10.1007/JHEP11(2013)074<lb/> [arXiv:1307.2892 [hep-th]].<lb/> </bibl>
+        <bibl><label>[23]</label> N. Engelhardt and A. C. Wall, &quot;Quantum Extremal Surfaces: Holographic En-<lb/>tanglement Entropy beyond the Classical Regime,&quot; JHEP 1501, 073 (2015)<lb/> doi:10.1007/JHEP01(2015)073 [arXiv:1408.3203 [hep-th]].<lb/> </bibl>
+        <bibl><label>[24]</label> D. L. Jafferis, A. Lewkowycz, J. Maldacena and S. J. Suh, &quot;Relative entropy<lb/> equals bulk relative entropy,&quot; JHEP 1606, 004 (2016) doi:10.1007/JHEP06(2016)004<lb/> [arXiv:1512.06431 [hep-th]].<lb/> </bibl>
+        <bibl><label>[25]</label> X. Dong and A. Lewkowycz, &quot;Entropy, Extremality, Euclidean Variations, and the<lb/> Equations of Motion,&quot; arXiv:1705.08453 [hep-th].</bibl>
+        </listBibl>
+    </text>
+</tei>
+

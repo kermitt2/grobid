@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Goßler S et al</author> <date>2010</date> <title level="a">The AEI 10 m prototype interferometer</title> <title level="j">Class. Quantum Grav</title>. <biblScope unit="volume">27</biblScope> <biblScope unit="page">084023</biblScope></bibl>
+	<bibl><author>Buonanno A and Chen Y</author> <date>2001</date> <title level="a">Optical noise correlations and beating the standard quantum limit inadvanced gravitational -wavedetectors</title> <title level="j">Class .Quantum Grav</title> .<biblScope unit="volume">18</biblScope> <biblScope unit="page">L95</biblScope></bibl>
+	<bibl><author>Aasi J et al</author> <date>2015</date> <title level="a">Advanced LIGO</title> <title level="j">Class. Quantum Grav.</title> <biblScope unit="volume">32</biblScope> <biblScope unit="page">074001</biblScope></bibl>
+	<bibl><author>Acernese F et al</author> <date>2015</date> <title level="a">Advanced Virgo: a second-generation interferometric gravitational wave detector</title><title level="j">Class .Quantum Grav .</title><biblScope unit="volume">32</biblScope> <biblScope unit="page">024001</biblScope></bibl>
+	<bibl><author>Aso Y, Michimura Y, Somiya K, Ando M, Miyakawa O, Sekiguchi T, Tatsumi D and Yamamoto H</author> <date>2013</date><title level="a">Interferometer design of the kagra gravitational wave detector</title> <title level="j">Phys .Rev .D</title> <biblScope unit="volume">88</biblScope> <biblScope unit="page">043007</biblScope></bibl>
+	<bibl><author>Punturo M et al</author> <date>2010</date> <title level="a">The Einstein telescope: a third-generation gravitational wave observatory</title> <title level="j">Class.Quantum Grav</title> .<biblScope unit="volume">27</biblScope> <biblScope unit="page">194002</biblScope></bibl>
+	<bibl><author>Westphal T</author> <date>2016</date> <title level="m">A coating thermal noise interferometer for the AEI 10 m prototype facility</title> <note>PhDThesis</note> <orgName>Technische Informationsbibliothek und Universitätsbibliothek Hannover ( TIB)</orgName></bibl>
+	<bibl><author>Blom M R, Beker M G, Bertolini A, van den Brand J F J, Bulten H J, Doets M, Hennes E, Mul F A, RabelingD S and Schimmel A</author> <date>2015</date> <title level="a">Vertical and horizontal seismic isolation performance of the advanced Virgoexternal injection bench seismic attenuation system</title> <title level="j">Phys . Proc.</title> <biblScope unit="volume">61</biblScope><biblScope unit="page">641 - 7</biblScope></bibl>
+	<bibl><author>Matichard F et al</author> <date>2015</date> <title level="a">Seismic isolation of advanced LIGO: review of strategy, instrumentation andperformance</title> <title level="j">Class .Quantum Grav .</title><biblScope unit="volume">32</biblScope> <biblScope unit="page">185003</biblScope></bibl>
+	<bibl><author>Wanner A, Bergmann G, Bertolini A, Fricke T, Lück H, Mow-Lowry C M, Strain K A, Goßler S andDanzmann K</author> <date>2012</date> <title level="a">Seismic attenuation system for the AEI 10 m prototype</title> <title level="j">Class .Quantum Grav .</title><biblScope unit="volume">29</biblScope><biblScope unit="page">245007</biblScope></bibl>
+	<bibl><author>Bertolini A, DeSalvo R, Fidecaro F, Francesconi M, Marka S, Sannibale V, Simonetti D, Takamori A andTariq H</author> <date>2006</date> <title level="a">Mechanical design of a single -axismonolithic accelerometer for advanced seismic attenuationsystems</title> <title level="j">Nucl . Instrum. MethodsPhys . Res. A</title><biblScope unit="volume">556</biblScope> <biblScope unit="page">616 - 23</biblScope></bibl>
+	<bibl><author>Stochino A, DeSalvo R, Huang Y and Sannibale V</author> <date>2007</date> <title level="a">Improvement of the seismic noise attenuationperformance of the monolithic geometric anti -springfilters for gravitational wave interferometric detectors</title><title level="j">Nucl . Instrum. MethodsPhys . Res. A</title><biblScope unit="volume">580</biblScope> <biblScope unit="page">1559 - 64</biblScope></bibl>
+	<bibl><author>Bertolini A, Cella G, DeSalvo R and Sannibale V</author> <date>1999</date> <title level="a">Seismic noise filters, vertical resonance frequencyreduction with geometric anti -springs:a feasibility study</title> <title level="j">Nucl .Instrum .Methods Phys .Res. A</title><biblScope unit="volume">435</biblScope> <biblScope unit="page">475 - 83</biblScope></bibl>
+	<bibl><author>Cella G, Sannibale V, DeSalvo R, Marka S and Takamori A</author> <date>2005</date> <title level="a">Monolithic geometric anti-spring blades</title><title level="j">Nucl .Instrum .Methods Phys .Res .A</title> <biblScope unit="volume">540</biblScope> <biblScope unit="page">502 -19</biblScope></bibl>
+	<bibl><ptr type="web">www.sercel.com/</ptr></bibl>
+	<bibl><author>Tariq H et al</author> <date>2002</date> <title level="a">The linear variable differential transformer (LVDT) position sensor for gravitationalwave interferometer low -frequencycontrols</title> <title level="j">Nucl .Instrum .Methods Phys .Res .A</title> <biblScope unit="volume">489</biblScope> <biblScope unit="page">570- 6</biblScope></bibl>
+	<bibl><author>Wanner A</author> <date>2013</date> <title level="m">Seismic attenuation system (AEI-SAS) for the AEI 10 m prototype</title> <note>PhD Thesis</note> <orgName>TechnischeInformationsbibliothek und Universitätsbibliothek Hannover ( TIB)</orgName></bibl>
+	<bibl><author>Losurdo G et al</author> <date>1999</date> <title level="a">An inverted pendulum preisolator stage for the virgo suspension system</title> <title level="j">Rev.Sci .Instrum .</title><biblScope unit="volume">70</biblScope> <biblScope unit="page">2507 -15</biblScope></bibl>
+	<bibl><author>Matichard F and Evans M</author> <date>2015</date> <title level="a">Review: tilt-free low-noise seismometry</title> <title level="j">Bull. Seismol. Soc. Am.</title> <biblScope unit="volume">105</biblScope><biblScope unit="page">497 -510</biblScope></bibl>
+	<bibl><author>Beccaria M et al</author> <date>1998</date> <title level="a">The creep problem in the Virgo suspensions: a possible solution using maragingsteel</title> <title level="j">Nucl .Instrum .Methods Phys .Res .A</title> <biblScope unit="volume">404</biblScope> <biblScope unit="page">455 -69</biblScope></bibl>
+	<bibl><ptr type="web">http://asm.matweb.com/</ptr> </bibl>
+	<bibl>[22]<ptr type="web">www .imoa.info/</ptr></bibl>
+	<bibl><author>Blom M R, Bertolini A, Hennes E, Schimmel A, Bulten H J, Beker M G, Mul F, Doets M and vanden Brand J F J</author> <date>2013</date> <title level="a">Performance of the advanced Virgo external injection bench seismic attenuation system</title> <title level="m">LVC Meeting Hannover</title></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

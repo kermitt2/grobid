@@ -32,16 +32,19 @@ public class CrossrefRequest<T extends Object> extends Observable {
 	 * @see <a href="https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md">Crossref API Documentation</a>
 	 */
 	public String model;
+	
 	/**
 	 * Model identifier in crossref, can be null, ex: doi for a work
 	 * @see <a href="https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md">Crossref API Documentation</a> 
 	 */
 	public String id;
+
 	/**
 	 * Query parameters, can be null, ex: ?query.title=[title]&query.author=[author]
 	 * @see <a href="https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md">Crossref API Documentation</a>
 	 */
 	public Map<String, String> params;
+
 	/**
 	 * JSON response deserializer, ex: WorkDeserializer to convert Work to BiblioItem
 	 */
@@ -120,8 +123,7 @@ public class CrossrefRequest<T extends Object> extends Observable {
 					}
 					
 					notifyListeners(message);
-					
-					
+
 					return null;
 				}
             	
@@ -134,15 +136,10 @@ public class CrossrefRequest<T extends Object> extends Observable {
 			CrossrefRequestListener.Response<T> message = new CrossrefRequestListener.Response<T>();
 			message.setException(e, this);
 			notifyListeners(message);
-			
         } finally {
-        	
             try {
-            	
 				httpclient.close();
-				
-			} catch (IOException e) {
-				
+			} catch (IOException e) {			
 				CrossrefRequestListener.Response<T> message = new CrossrefRequestListener.Response<T>();
 				message.setException(e, this);
 				notifyListeners(message);
@@ -152,10 +149,14 @@ public class CrossrefRequest<T extends Object> extends Observable {
 	}
 	
 	public String toString() {
-		String str = model+"/"+id+" (";
-		if (params != null)
+		String str = model+"/";
+		if (id != null)
+			str += id;
+		str += " (";
+		if (params != null) {
 			for (Entry<String, String> cursor : params.entrySet())
 				str += ","+cursor.getKey()+"="+cursor.getValue();
+		}
 		str += ")";
 		return str;
 	}

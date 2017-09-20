@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>I. Belolaptikov et al.</author> <title level="j">Astropart. Phys.</title> <biblScope unit="volume">7</biblScope> (<date>1997</date>) <biblScope unit="page">263</biblScope>.</bibl>
+	<bibl><author>V. Aynutdinov et al.</author> <title level="j">Nucl. Phys. (Proc. Suppl.) B</title><biblScope unit="volume">143</biblScope>  (<date>2005</date>)<biblScope unit="page">335</biblScope> .</bibl>
+	<bibl><author>V. Aynutdinov et al.</author> <title level="j">Astropart. Phys.</title> <biblScope unit="volume">25</biblScope> (<date>2006</date>) <biblScope unit="page">140</biblScope>.</bibl>
+	<bibl><author>V. Aynutdinov et al.</author> <title level="j">Physics of Atomic Nuclei</title> , V<biblScope unit="volume">69</biblScope>, <biblScope unit="issue">11</biblScope>( <date>2006</date>)p<biblScope unit="page">1914</biblScope> .</bibl>
+	<bibl><author>V. Aynutdinov et al.</author> <title level="j">NIM A567</title> (<date>2006</date>) <biblScope unit="page">433</biblScope>.</bibl>
+	<bibl><author>V. Aynutdinov et al.</author>, <title level="m">Proc. 30th ICRC (icrc1084)</title>, <pubPlace>Merida( Mexico)</pubPlace><date>2007</date> ;<idno type="arxiv">arXiv .org:astro -ph/0710.3063</idno>.</bibl>
+	<bibl><author>V. Aynutdinov et al.</author>, &quot;<title level="a">The prototype string for thekm3 -scaleBaikal neutrino telescope</title> &quot;,<note>these proceedings</note> .</bibl>
+	<bibl><author>V. Balkanov et al. </author><title level="j">Astropart. Phys.</title> <biblScope unit="volume">12</biblScope> (<date>1999</date>) <biblScope unit="page">75</biblScope>.</bibl>
+	<bibl><author>V. Aynutdinov et al.</author> <title level="j">Int. J. Mod. Phys. A</title><biblScope unit="volume">20</biblScope> (<date>2005</date>) <biblScope unit="page">6932</biblScope>.</bibl>
+	<bibl><author>V. Balkanov et al.</author> <title level="j">Nucl.Phys. (Proc.Suppl.) B</title><biblScope unit="volume">91</biblScope> (<date>2001</date>) <biblScope unit="page">438</biblScope>.</bibl>
+	<bibl><author>V. Agrawal, T. Gaisser, P. Lipari &amp; T. Stanev</author> <title level="j">Phys. Rev.D</title><biblScope unit="volume">53</biblScope> ( <date>1996</date>)<biblScope unit="page">1314</biblScope> .</bibl>
+	<bibl><author>K. Antipin et al.</author>, <title level="m">Proc. of the First Workshop on Exotic Physicswith Neutrino Telescopes</title> ,<pubPlace>Uppsala ( Sweden)</pubPlace><date>2006</date> <biblScope unit="page">34</biblScope>.</bibl>
+	<bibl><author>V. Aynutdinov et al.</author> <title level="j">NIM A588</title> (<date>2008</date>) <biblScope unit="page">99</biblScope></bibl>
+	<bibl><author>M. Boliev et al.</author> <title level="j">Nucl. Phys. (Proc. Suppl.)</title> <biblScope unit="volume">48</biblScope> (<date>1996</date>) <biblScope unit="page">83</biblScope>;</bibl>
+	<bibl><author>O .Suvorova</author> <idno type="arxiv">arXiv .org:hep -ph/9911415</idno>( <date>1999</date>).</bibl>
+	<bibl><author>M. Ambrosio et al.</author> <title level="j">Phys. Rev. D</title><biblScope unit="volume">60</biblScope> (<date>1999</date>) <biblScope unit="page">082002</biblScope>.</bibl>
+	<bibl><author>S. Desai et al.</author> <title level="j">Phys. Rev. D</title><biblScope unit="volume">70</biblScope> (<date>2004</date>) <biblScope unit="page">083523</biblScope>; <note>erratum ibidD70 ( 2004)109901</note> .</bibl>
+	<bibl><author>J. Ahrens et al.</author> <idno type="arxiv">arXiv.org: astro-ph/0509330</idno> (<date>2005</date>).</bibl>
+	<bibl><author>V. Aynutdinov et al.</author> <title level="j">Astropart. Phys.</title> <biblScope unit="volume">29</biblScope> (<date>2008</date>) <biblScope unit="page">366</biblScope>.</bibl>
+	<bibl><author>S .Orito et .al .</author><title level="j">Phys .Rev.Lett.</title><biblScope unit="volume">66</biblScope> ( <date>1991</date>)<biblScope unit="page">1951</biblScope> .</bibl>
+	<bibl><author>M. Ambrosioet . al.</author> <title level="j">Astropart. Phys.</title> <biblScope unit="volume">19</biblScope>( <date>2003</date> )<biblScope unit="page">313</biblScope>. </bibl>
+	<bibl><author>P.Niessen ,C .Spiering etal</author> . <title level="m">Proc .27th ICRC</title>, <pubPlace>Hamburg</pubPlace> ,V .4( <date>2001</date>)<biblScope unit="page">1496</biblScope> .</bibl>
+	<bibl><author>H. Wissing et al.</author> <title level="m">Proc. 30th ICRC, Merida</title>, <date>2007</date>.</bibl>
+	<bibl><author>M. Ackermann et al.</author> <title level="j">Astropart. Phys.</title> <biblScope unit="volume">22</biblScope> (<date>2005</date>) <biblScope unit="page">127</biblScope>;</bibl>
+	<bibl><title level="j">Astropart.Phys .</title><biblScope unit="volume">22</biblScope> ( <date>2005</date>)<biblScope unit="page">339</biblScope> .</bibl>
+	<bibl><author>M. Ackermann et al.</author> <title level="j">Astropart. Phys.</title> <biblScope unit="volume">22</biblScope> (<date>2005</date>) <biblScope unit="page">339</biblScope>.</bibl>
+	<bibl><author>M. Ackermann et al.</author> <title level="j">Phys. Rev. D</title><biblScope unit="volume">76</biblScope> (<date>2007</date>) <biblScope unit="page">042008</biblScope>.</bibl>
+	<bibl><author>F. Stecker and M. Salamon</author> <title level="j">Space Sci. Rev.</title> <biblScope unit="volume">75</biblScope> (<date>1996</date>) <biblScope unit="page">341</biblScope>.</bibl>
+	<bibl><author>F. Stecker</author> <title level="j">Phys. Rev. D</title><biblScope unit="volume">72</biblScope> (<date>2005</date>) <biblScope unit="page">107301</biblScope>.</bibl>
+	<bibl><author>A. Szabo and R. Protheroe</author>, <title level="m">Proc. High Energy NeutrinoAstrophysics</title> ,<pubPlace>Honolulu ,Hawaii</pubPlace> ( <date>1992</date>).</bibl>
+	<bibl><author>R. Protheroe</author> <idno type="arxiv">arXiv.org:astro-ph /9612213</idno>.</bibl>
+	<bibl><author>K. Mannheim</author> <title level="j">Astropart. Phys.</title> <biblScope unit="volume">3</biblScope> (<date>1995</date>) <biblScope unit="page">295</biblScope>.</bibl>
+	<bibl><author>K. Mannheim, R. Protheroe and J. Rachen</author> <title level="j">Phys. Rev. D</title><biblScope unit="volume">63</biblScope>( <date>2001</date>)<biblScope unit="page">023003</biblScope> .</bibl>
+	<bibl><author>D. Semikoz and G. Sigl</author>, <idno type="arxiv">arXiv.org:hep-ph/0309328</idno>.</bibl>
+	<bibl><author>V. Aynutdinov et al.</author> <title level="m">Proc. 29th ICRC</title>, <pubPlace>Pune (India)</pubPlace> <date>2005</date>;<idno type="arxiv">arXiv .org:astro -ph/ 0507715</idno>.</bibl>
+	<bibl><author>M. Ambrosio et al.</author> <title level="j">Nucl. Phys. (Proc. Suppl.) B</title><biblScope unit="volume">110</biblScope> (<date>2002</date>)<biblScope unit="page">519</biblScope> .</bibl>
+	<bibl><author>V. Berezinsky et al.</author> in: <title level="m">Astrophysics of Cosmic Rays</title>, <publisher>ElsevierScience</publisher> ,<pubPlace>North -Holland</pubPlace><date>1990</date> .</bibl>
+	<bibl><author>V. Berezinsky</author> <idno type="arxiv">arXiv.org: astro-ph/0505220</idno> (<date>2005</date>).</bibl>
+	<bibl><author>E. Waxman and J. Bahcall</author> <title level="j">Phys. Rev. D</title><biblScope unit="volume">59</biblScope> (<date>1999</date>) <biblScope unit="page">023002</biblScope>.</bibl>
+	<bibl><author>L. Nellen, K. Mannheim and P. Biermann</author> <title level="j">Phys. Rev. D</title><biblScope unit="volume">47</biblScope>( <date>1993</date>)<biblScope unit="page">5270</biblScope> .</bibl>
+	<bibl><author>L. Volkova</author> <title level="j">Yad. Fiz.</title> <biblScope unit="volume">31</biblScope> (<date>1980</date>) <biblScope unit="page">1510</biblScope>.</bibl>
+	<bibl><author>L. Volkova and G. Zatsepin</author> <title level="j">Phys. Lett. B</title><biblScope unit="volume">462</biblScope> (<date>1999</date>) <biblScope unit="page">211</biblScope>.</bibl>
+	<bibl><author>E. Bugaev, V. Naumov, S. Sinegovsky, E. Zaslavskaya</author>, <title level="j">NuovoCim .C</title><biblScope unit="volume">12</biblScope> ,<biblScope unit="page">41</biblScope> ( <date>1989</date>).</bibl>
+	<bibl><author>V. Aynutdinov et al.</author>, <title level="j">Izvestia RAN / Ser. Fiz.</title> <biblScope unit="issue">3</biblScope> <biblScope unit="volume">69</biblScope> (<date>2005</date>)<biblScope unit="page">406</biblScope></bibl>
+	<bibl><author>J. Hörandel</author>, <title level="j">Int.J.Mod.Phys. A</title><biblScope unit="volume">20</biblScope> (<date>2005</date>) <biblScope unit="page">6753</biblScope>.</bibl>
+	<bibl><author>V. Aynutdinov et al.</author>, <title level="j">Int.J.Mod.Phys. A</title><biblScope unit="volume">21</biblScope><biblScope unit="issue">S1</biblScope> (<date>2006</date>) <biblScope unit="page">117</biblScope>;</bibl>
+	<bibl> <author>V .Aynutdinov et al .</author><title level="j">Acoust .Phys .</title><biblScope unit="volume">52</biblScope> N<biblScope unit="issue">5</biblScope> ( <date>2006</date>)<biblScope unit="page">495</biblScope> .</bibl>
+	<bibl><author>V. Aynutdinov et al.</author>, <title level="m">Proc. 30th ICRC (icrc0639)</title>, <pubPlace>Merida( Mexico)</pubPlace><date>2007</date> ;<idno type="arxiv">arXiv .org:astro -ph/0710.3113</idno>.</bibl>
+	<bibl><author>C. S. Clay and H. Medwin</author>. <title level="m">Acoustical Oceanography</title> (<publisher>Wiley</publisher>,<pubPlace>New York</pubPlace> ),<date>1977</date> .</bibl>
+	<bibl><author>V. Aynutdinov et al.</author>, <title level="m">Proc. Int. ARENA2008 Workshop</title>,<pubPlace>Rome</pubPlace> ,<date>2008</date> ;<note>to be publ .NIM -A</note>,<date>2008</date> .</bibl>
+	<bibl><author>Chen C.T. and Millero F.</author><title level="j">J. Limnol.Oceanogr.</title> <biblScope unit="volume">31</biblScope>, <date>1986</date>, P.<biblScope unit="page">657 –682</biblScope>.</bibl>
+	<bibl><author>Weiss R.F., Carmac E.C., Koropalov V.M.</author>, <title level="j"> Nature</title>, <date>1991</date>V<biblScope unit="volume">349</biblScope> <biblScope unit="page">665</biblScope> .</bibl>
+	<bibl><author>V. Balkanov et al.</author> <title level="j">Applied Optics</title> <biblScope unit="volume">38</biblScope>(<biblScope unit="issue">33</biblScope>) <biblScope unit="page">6818</biblScope> (<date>1999</date>).</bibl>
+	<bibl><author>V. Balkanov et al.</author>, <title level="j">Prog.Part.Nucl.Phys.</title> <biblScope unit="volume">40</biblScope> (<date>1998</date>) <biblScope unit="page">391</biblScope>; <idno type="arxiv">astro-ph/9801044</idno></bibl>
+	<bibl><author>I. Belolaptikov et al.</author>, <title level="m">Proc. 3rd Nestor Int. Workshop</title>, <pubPlace>Pylos( Greece)</pubPlace><date>1993</date> ;<idno type="report">DESY -94-049</idno></bibl>
+	<bibl><author>K. Kebkal et al.</author>, <note>these proceedings</note>.</bibl>
+	<bibl><author>M. Schmid, N.M. Budnev, N.G. Granin et al.</author>, <title level="j">GeophysicalResearch Letters</title> Vol .<biblScope unit="volume">35</biblScope> ,<biblScope unit="page">L09605</biblScope> ( <date>2008</date>);<idno type="DOI">doi:10.1029/2008GL033223</idno>, <date>2008</date>.</bibl>
+	<bibl><author>V. Aynutdinov et al.</author>, <title level="m">Proc. 10th Int.Conf.Instr.Coll. BeamPhys .</title>,<pubPlace>Novosibirsk ( Russia)</pubPlace><date>2008</date> ;<publisher>NIM -Ain press</publisher></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

@@ -8,6 +8,7 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.trainer.Stats;
 import org.grobid.trainer.sax.NLMHeaderSaxHandler;
 import org.grobid.trainer.sax.FieldExtractSaxHandler;
@@ -128,6 +129,8 @@ public class EndToEndEvaluation {
             }
 			
 			int n = 0;
+			long start = System.currentTimeMillis();
+			int fails = 0;
             for (File dir : refFiles) {
 				// get the PDF file in the directory
 	            File[] refFiles2 = dir.listFiles(new FilenameFilter() {
@@ -150,7 +153,13 @@ public class EndToEndEvaluation {
 				// run Grobid full text and write the TEI result in the directory
 				try {
 					System.out.println(n + " - " + pdfFile.getPath());
-					String tei = engine.fullTextToTEI(pdfFile, GrobidAnalysisConfig.defaultInstance());
+					GrobidAnalysisConfig config =
+                        GrobidAnalysisConfig.builder()
+                                .consolidateHeader(true)
+                                .consolidateCitations(false)
+                                .withPreprocessImages(false)
+                                .build();
+					String tei = engine.fullTextToTEI(pdfFile, config);
 					// write the result in the same directory
 					File resultTEI = new File(dir.getPath() + File.separator
 						+ pdfFile.getName().replace(".pdf", ".fulltext.tei.xml"));
@@ -159,13 +168,21 @@ public class EndToEndEvaluation {
 				catch (Exception e) {
 					System.out.println("Error when processing: " + pdfFile.getPath());
 					e.printStackTrace();
+					fails++;
 				}
 				n++;
 			}
+
+			System.out.println("GROBID failed on " + fails + " PDF");
+			double processTime = ((double)System.currentTimeMillis() - start) / 1000.0;
+
+			System.out.println(n + " PDF files processed in " + 
+				 processTime + " seconds, " + ((double)processTime)/n + " seconds per PDF file.");
 		}
 		
 		// evaluation of the run
-		
+		long start = System.currentTimeMillis();
+
 		report.append("\n======= Header metadata ======= \n");
 		report.append(evaluationRun(this.GROBID, this.HEADER));
 		
@@ -175,6 +192,9 @@ public class EndToEndEvaluation {
 		report.append("\n======= Fulltext structures ======= \n");
 		report.append(evaluationRun(this.GROBID, this.FULLTEXT));
 		
+		System.out.println("Evaluation metrics produced in " + 
+				(System.currentTimeMillis() - start) / (1000.00) + " seconds");
+
 		return report.toString();
 	}
 	
@@ -1472,9 +1492,10 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 	
 	private static String basicNormalizationFullText(String string, String fieldName) {
 		string = string.trim();
+		string = UnicodeUtil.normaliseText(string);
 		string = string.replace("\n", " ");
 		string = string.replace("\t", " ");
-		string = string.replace("_", " ");
+		string = string.replaceAll("_", " ");
 		string = string.replace("\u00A0", " ");
 		if (fieldName.equals("reference_figure")) {
 			string = string.replace("figure", "").replace("Figure", "").replace("fig.", "").replace("Fig.", "").replace("fig", "").replace("Fig", "");
@@ -1578,6 +1599,9 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        // to be sure jvm stops
+        System.exit(0);
     }
 	
 }

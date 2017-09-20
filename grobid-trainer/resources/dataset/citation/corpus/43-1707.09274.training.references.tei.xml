@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>J. Slim, R. Gebel, D. Heberling, F. Hinder, D.Hölscher ,A .Lehrach ,B .Lorentz ,S .Mey ,A .Nass, F. Rathmann, L. Reifferscheidt, H. Solt- ner,H.Straatmann ,F .Trinkel ,and J. Wolters</author>, <title level="j">NuclearInstruments andMethods inPhysics Research Section A : Accelerators , Spectrometers ,Detectors andAssociated Equipment</title><biblScope unit="volume">8</biblScope></bibl>
+	<bibl><author>A. Saleev, N. N. Nikolaev, F. Rathmann, W. Augusty-niak,Z .Bagdasarian ,M .Bai ,L .Barion ,M .Berz ,S .Chekmenev, G. Ciullo, S. Dymov, D. Eversmann, M. Gaisser,R .Gebel ,K .Grigoryev ,D .Grzonka ,G .Guidoboni ,D. Heberling, V. Hejny, N. Hempelmann, J. Hetzel, F.Hinder ,A .Kacharava ,V .Kamerdzhiev ,I .Keshelashvili ,I .Koop, A. Kulikov, A. Lehrach, P. Lenisa, N. Lomidze,B .Lorentz ,P .Maanen ,G .Macharashvili ,A .Magiera ,D. Mchedlishvili, S. Mey, F. Müller, A. Nass, A.Pesce ,D .Prasuhn ,J .Pretz ,M .Rosenthal ,V .Schmidt ,Y .Semertzidis, Y. Senichev, V. Shmakova, A. Silenko, J. Slim,H .Soltner ,A .Stahl ,R .Stassen ,E .Stephenson ,H .Stockhorst ,H. Ströher, M. Tabidze, G. Tagliente, R. Talman, P.T .Eng -blom ,F .Trinkel ,Y .Uzikov ,Y .Valdau,E. Valetov, A. Vassiliev, C. Weidemann, A. Wrońska, P. Wüst-ner ,P .Zuprański ,and M. Zurek</author>( <orgName type="collaboration">JEDIcollaboration</orgName> ),<title level="j">Phys.Rev .Accel .Beams</title> <biblScope unit="volume">20</biblScope> ,<biblScope unit="page">072801</biblScope> ( <date>2017</date>) .</bibl>
+`	<bibl><author>D. Xiuand G. E.Karniadakis</author> ,<title level="j">SIAMJournal onScientificComputing</title> <biblScope unit="volume">24</biblScope>, <biblScope unit="page">619</biblScope> ( <date>2002</date> ) .</bibl>
+	<bibl><author>P. Parthasarathyand R. Sudhesh</author>,<title level="j">Applied MathematicsLetters</title><biblScope unit="volume">19</biblScope> ,<biblScope unit="page">1083</biblScope> ( <date>2006</date> ).</bibl>
+	<bibl><author>G. Blatman and B. Sudret</author>, <title level="j">Probabilistic Engineering Me-chanics</title><biblScope unit="volume">25</biblScope> ,<biblScope unit="page">183</biblScope> ( <date>2010</date>).</bibl>
+	<bibl><author>W. Yu, W. Li, A. Elsherbeni, and Y. Rahmat-Samii</author>, <title level="m">Ad-vancedComputational Electromagnetic Methods ,Artech House antennasand electromagnetics analysis library</title> ( <publisher>Artech HousePublishers</publisher>, <date>2015</date> ).</bibl>
+	<bibl><author>M. Abramowitz</author>, <title level="m">Handbook of Mathematical Functions, WithFormulas ,Graphs ,and Mathematical Tables</title> ,( <publisher>DoverPublications, Incorporated</publisher>, <date>1974</date>) .</bibl>
+	<bibl><author>O. P.Le Maîtreand O. M. Knio</author>,<title level="m">Spectral MethodsforUncertainty Quantification:With Applicationsto Computational Fluid Dynamics ,Scientific Computation</title> ( <publisher>Springer</publisher> , <pubPlace>Dordrecht</pubPlace> ,<date>2010</date> ).</bibl>
+	<bibl><author>P. Offermann,H .Mac, T.T .Nguyen, S.Clénet ,H. D.Gersem ,and K. Hameyer</author>, <title level="j">IEEETransactions onMagnetics</title> <biblScope unit="volume">51</biblScope>, <biblScope unit="page">1</biblScope>( <date>2015</date>) .</bibl>
+	<bibl><author>O. Zienkiewicz, R. Taylor, and J. Zhu</author>, <title level="m">The Finite Ele-mentMethod :Its Basis and Fundamentals</title> ( <publisher>ElsevierSci -ence</publisher>,<date>2013</date>) .</bibl>
+	<bibl><author>J. Jin</author>, <title level="m">The Finite Element Method in Electromagnetics</title>, <note>3rded .</note>( <publisher>Wiley-IEEEPress</publisher> ,<date>2014</date> ).</bibl>
+	<bibl><author>D. Xiu</author>, <title level="m">Numerical methods for stochastic computations: aspectral method approach</title> ( <publisher>PrincetonUniversity Press</publisher> ,<date>2010</date> ).</bibl>
+	<bibl><author>T. Sullivan</author>, <title level="m">Introduction to Uncertainty Quantification</title>, <title level="s">Textsin Applied Mathematics</title> ( <publisher>SpringerInternational Publishing</publisher> ,<date>2015</date>) .</bibl>
+	<bibl><author>P. Pettersson, G. Iaccarino, andJ .Nordström</author> ,<title level="j">Journal ofComputational Physics</title> <biblScope unit="volume">257</biblScope> , <biblScope unit="page">481</biblScope>( <date>2014</date> ).</bibl>
+	
+	<bibl><author>V. Bargmann, L. Michel, andV .L .Telegdi</author> ,<title level="j">Phys .Rev. Lett.</title> <biblScope unit="volume">2</biblScope>, <biblScope unit="page">435</biblScope>( <date>1959</date> ).</bibl>
+	<bibl><author>T. Fukuyamaand A. J.Silenko</author> ,<title level="j">InternationalJournal ofModernPhysics A</title><biblScope unit="volume">28</biblScope> , <biblScope unit="page">1350147</biblScope> ( <date>2013</date> ) .</bibl>
+	<bibl><author>J. Hurtado</author>, <title level="m">Structural Reliability: Statistical Learning Perspectives</title>,<title level="s">Lecture Notes in Applied and Computa -tionalMechanics</title>( <publisher>Springer</publisher> <pubPlace>BerlinHeidelberg</pubPlace> , <date>2013</date>) .</bibl>
+	<bibl><author>Z. Kotulski and W. Szczepinski</author>, <title level="m">Error Analysis with Ap-plicationsin Engineering</title> ,<title level="s">Solid Mechanics and Its Appli -cations</title>(<publisher>Springer</publisher> <pubPlace>Netherlands</pubPlace>, <date>2009</date>) .</bibl>
+	<bibl><author>R. Lebrunand A. Dutfoy</author>,<title level="j">Probabilistic EngineeringMechanics</title><biblScope unit="volume">24</biblScope> ,<biblScope unit="page">172</biblScope> ( <date>2009</date> ).</bibl>
+	<bibl><author>G. Cottrill and F. Harmon</author> (<orgName>American Institute of Aero-nauticsand Astronautics</orgName> ,<date>2011</date> )Chap .<title level="m">Hybrid Gauss Pseudospectral andGeneralized Polynomial Chaos Algo - rithmtoSolveStochastic Trajectory Optimization Prob - lems</title> .</bibl>
+	<bibl><author>M. Gerritsma,J .-B.vander Steen, P. Vos,and G.Karniadakis</author> ,<title level="j">Journalof ComputationalPhysics</title> <biblScope unit="volume">229</biblScope>,<biblScope unit="page">8333</biblScope> (<date>2010</date>) .</bibl>
+	<bibl><author>F. Rathmann, A. Saleev, N. N. Nikolaev</author>, andon behalfof the <orgName type="collaboration">JEDI</orgName> and <orgName type="collaboration">srEdm collaborations</orgName>  , <title level="j">Journalof Physics: Conference Series</title><biblScope unit="volume">447</biblScope> , <biblScope unit="page">012011</biblScope> (<date>2013</date> ) .</bibl>
+	<bibl><author>C. Weidemann, F. Rathmann, H. J. Stein, B. Lorentz, Z.Bagdasarian ,L .Barion ,S .Barsov ,U .Bechst -edt,S. Bertelli, D. Chiladze, G. Ciullo, M. Contal- brigo,S.Dymov ,R .Engels ,M .Gaisser ,R .Gebel ,P .Goslawski ,K. Grigoriev, G. Guidoboni, A. Kacharava, V. Kamerdzhiev, A.Khoukaz ,A .Kulikov ,A .Lehrach ,P .Lenisa ,N .Lomidze, G. Macharashvili, R. Maier, S. Martin, D. Mchedlishvili,H .O .Meyer ,S .Merzliakov ,M .Mielke ,M .Mikirtychiants ,S. Mikirtychiants, A. Nass, N. N. Nikolaev, D. Oellers,M .Papenbrock ,A .Pesce ,D .Prasuhn ,M .Retzlaff ,R .Schleichert, D. Schröer, H. Seyfarth, H. Soltner, M. Statera,E .Steffens ,H .Stock -horst ,H .Ströher ,M .Tabidze ,G.Tagliente, P. T. Eng- blom, S. Trusov, Y. Valdau, A.Vasiliev,and P. Wüstner</author>, <title level="j">Phys. Rev. STAccel .Beams</title> <biblScope unit="volume">18</biblScope> ,<biblScope unit="page">020101</biblScope> (<date>2015</date> ).</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

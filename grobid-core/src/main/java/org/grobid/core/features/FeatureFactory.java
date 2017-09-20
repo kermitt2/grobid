@@ -20,12 +20,12 @@ public class FeatureFactory {
     public boolean newline = true;
     public Lexicon lexicon = Lexicon.getInstance();
 
-    public Pattern YEAR = Pattern.compile("[1,2][0-9][0-9][0-9]");
-    public Pattern HTTP = Pattern.compile("http");
+    public Pattern year = Pattern.compile("[1,2][0-9][0-9][0-9]");
+    public Pattern http = Pattern.compile("http");
     public Pattern isDigit = Pattern.compile("^\\d+$");
-    public Pattern EMAIL2 = Pattern.compile("\\w+((\\.|\\-|_)\\w+)*@\\w+((\\.|\\-)\\w+)+");
-    public Pattern EMAIL = Pattern.compile("^(?:[a-zA-Z0-9_'^&amp;/+-])+(?:\\.(?:[a-zA-Z0-9_'^&amp;/+-])+)*@(?:(?:\\[?(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))\\.){3}(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\]?)|(?:[a-zA-Z0-9-]+\\.)+(?:[a-zA-Z]){2,}\\.?)$");
-    public Pattern ACRONYM = Pattern.compile("[A-Z]\\.([A-Z]\\.)*");
+    public Pattern email2 = Pattern.compile("\\w+((\\.|\\-|_)\\w+)*@\\w+((\\.|\\-)\\w+)+");
+    public Pattern email = Pattern.compile("^(?:[a-zA-Z0-9_'^&amp;/+-])+(?:\\.(?:[a-zA-Z0-9_'^&amp;/+-])+)*@(?:(?:\\[?(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))\\.){3}(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\]?)|(?:[a-zA-Z0-9-]+\\.)+(?:[a-zA-Z]){2,}\\.?)$");
+    public Pattern acronym = Pattern.compile("[A-Z]\\.([A-Z]\\.)*");
     public Pattern isPunct = Pattern.compile("^[\\,\\:;\\?\\.]+$");
 
     static public List<String> KEYWORDSPUB = Arrays.asList(
@@ -43,30 +43,30 @@ public class FeatureFactory {
             });
 
     static public List<String> MONTHS = new ArrayList<String>() {{
-        add("January");
-        add("February");
-        add("March");
-        add("April");
-        add("May");
-        add("June");
-        add("July");
-        add("August");
-        add("September");
-        add("October");
-        add("November");
-        add("December");
-        add("Jan");
+        add("january");
+        add("february");
+        add("march");
+        add("april");
+        add("may");
+        add("june");
+        add("july");
+        add("august");
+        add("september");
+        add("october");
+        add("november");
+        add("december");
+        add("jan");
         add("feb");
-        add("Mar");
-        add("Apr");
-        add("May");
-        add("Jun");
-        add("Jul");
-        add("Aug");
-        add("Sep");
-        add("Oct");
-        add("Nov");
-        add("Dec");
+        add("mar");
+        add("apr");
+        add("may");
+        add("jun");
+        add("jul");
+        add("aug");
+        add("sep");
+        add("oct");
+        add("nov");
+        add("dec");
     }};
 
     static public List<String> COUNTRY_CODES = new ArrayList<String>() {{
@@ -278,7 +278,7 @@ public class FeatureFactory {
      * Test if the current string refers to a month
      */
     public boolean test_month(String tok) {
-        return MONTHS.contains(tok);
+        return MONTHS.contains(tok.toLowerCase());
     }
 
     /**
@@ -306,7 +306,7 @@ public class FeatureFactory {
      * Test if the current string refers to a known city
      */
     public boolean test_city(String tok) {
-        List<OffsetPosition> pos = lexicon.inCityNames(tok.toLowerCase());
+        List<OffsetPosition> pos = lexicon.tokenPositionsCityNames(tok.toLowerCase());
         if ((pos != null) && (pos.size() > 0))
             return true;
         else

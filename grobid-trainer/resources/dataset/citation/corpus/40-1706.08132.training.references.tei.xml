@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Lars V. Ahlfors</author>, <title level="m">Complex analysis</title>, <note>third ed.</note>, <publisher>McGraw-Hill Book Co.</publisher>, <pubPlace>New York</pubPlace>, <date>1978</date>, <title level="a">An introductionto the theory of analytic functions of one complex variable</title> ,<title level="s">International Series in Pureand Applied Mathematics</title> .</bibl>
+	<bibl><author>Jørgen E. Andersen and Rinat M. Kashaev</author>, <title level="m">Complex Quantum Chern-Simons</title>, <idno type="arxiv">arXiv:1409.1208</idno>, <note>Preprint</note><date>2014</date> .</bibl>
+	<bibl>, <title level="m">A new formulation of the Teichmüller TQFT</title>, <idno type="arxiv">arXiv:1305.4291</idno>, <note>Preprint</note> <date>2013</date>.</bibl>
+	<bibl><author>Jørgen Ellegaard Andersen and Rinat Kashaev</author>, <title level="a">A TQFT from Quantum Teichmüller theory</title>, <title level="j">Comm.Math .Phys .</title><biblScope unit="volume">330</biblScope> ( <date>2014</date>),no .<biblScope unit="issue">3</biblScope> ,<biblScope unit="page">887 -934</biblScope>.</bibl>
+	<bibl><author>Benjamin Burton</author>, <title level="m">Regina, software for 3-manifold topology and normal surface theory</title>, <ptr type="web">http://regina.sourceforge.net</ptr>( <date>30/01/2015</date>).</bibl>
+	<bibl><author>Marc Culler, Nathan M. Dunfield, and Jeffrey R. Weeks</author>, <title level="m">SnapPy, a computer program for study-ingthe topology of 3 -manifolds</title>,Available at <ptr type="web">http ://snappy.computop.org( 30/01/2015</ptr>).</bibl>
+	<bibl><author>Tudor Dimofte and Stavros Garoufalidis</author>, <title level="a">The quantum content of the gluing equations</title>, <title level="j">Geom. Topol.</title><biblScope unit="volume">17</biblScope> ( <date>2013</date>),no .<biblScope unit="issue">3</biblScope> ,<biblScope unit="page">1253 -1315</biblScope>.</bibl>
+	<bibl><author>Tudor Dimofte, Davide Gaiotto, and Sergei Gukov</author>, <title level="a">3-manifolds and 3d indices</title>, <title level="j">Adv. Theor. Math.Phys .</title><biblScope unit="volume">17</biblScope> ( <date>2013</date>),no .<biblScope unit="issue">5</biblScope> ,<biblScope unit="page">975 -1076</biblScope>.</bibl>
+	<bibl>, <title level="a">3-manifolds and 3d indices</title>, <title level="j">Adv. Theor. Math. Phys.</title> <biblScope unit="volume">17</biblScope> (<date>2013</date>), no. <biblScope unit="issue">5</biblScope>, <biblScope unit="page">975-1076</biblScope>.</bibl>
+	<bibl><author>Stavros Garoufalidis</author>, <title level="a">The 3D index of an ideal triangulation and angle structures</title>, <title level="j">Ramanujan J.</title> <biblScope unit="volume">40</biblScope>( <date>2016</date>),no .<biblScope unit="issue">3</biblScope> ,<biblScope unit="page">573 -604</biblScope>.</bibl>
+	<bibl><author>Stavros Garoufalidis, Craig D. Hodgson, Neil R. Hoffman, and J. Hyam Rubinstein</author>, <title level="a">The 3D-index andnormal surfaces</title> ,<title level="j">Illinois J .Math</title> .( <date>2017</date>).</bibl>
+	<bibl><author>Stavros Garoufalidis, Craig D. Hodgson, J. Hyam Rubinstein, and Henry Segerman</author>, <title level="a">1-efficient triangulationsand the index of a cusped hyperbolic 3 -manifold</title>,<title level="j">Geom .Topol .</title><biblScope unit="volume">19</biblScope> ( <date>2015</date>),no .<biblScope unit="issue">5</biblScope> ,<biblScope unit="page">2619 -2689</biblScope>.</bibl>
+	<bibl><author>Stavros Garoufalidis and Rinat Kashaev</author>, <title level="a">From state integrals to q-series</title>, <title level="j">Math. Res. Lett.</title> (<date>2017</date>).</bibl>
+	<bibl><author>Rinat Kashaev</author>, <title level="m">The q-binomial formula and the Rogers dilogarithm identity</title>, <idno type="arxiv">arXiv:math/ 0407078</idno>,<note type="report">Preprint</note> <date>2004</date> .</bibl>
+	<bibl><author>Rinat M. Kashaev</author>, <title level="m">The Yang-Baxter relation and gauge invariance</title>, <idno type="arxiv">arXiv:1510.03043</idno>, <note type="report">Preprint</note> <date>2015</date>.</bibl>
+	<bibl><author>R. M. Kashaev</author>, <title level="a">Beta pentagon relations</title>, <title level="j">Theoret. and Math. Phys.</title> <biblScope unit="volume">181</biblScope> (<date>2014</date>), no. <biblScope unit="issue">1</biblScope>, <biblScope unit="page">1194-1205</biblScope>, <note>Russianversion appears in</note> <title level="j">Teoret .Mat .Fiz</title> .<biblScope unit="volume">181</biblScope> ,( <date>2014</date>),no .<biblScope unit="issue">1</biblScope> ,<biblScope unit="page">73 -85</biblScope>.</bibl>
+	<bibl><author>Rinat Kashaev, Feng Luo, and Grigory Vartanov</author>, <title level="a">A TQFT of Turaev-Viro type on shaped tri-angulations</title>,<title level="j">Ann .Henri Poincaré</title> <biblScope unit="volume">17</biblScope> ( <date>2016</date>),no .<biblScope unit="issue">5</biblScope> ,<biblScope unit="page">1109 -1143</biblScope>.</bibl>
+	<bibl><author>Feng Luo and Stephan Tillmann</author>, <title level="a">Angle structures and normal surfaces</title>, <title level="j">Trans. Amer. Math. Soc.</title> <biblScope unit="volume">360</biblScope>( <date>2008</date>),no .<biblScope unit="issue">6</biblScope> ,<biblScope unit="page">2849 -2866</biblScope>.</bibl>
+	<bibl><author>Walter D. Neumann and Don Zagier</author>, <title level="a">Volumes of hyperbolic three-manifolds</title>, <title level="j">Topology</title> <biblScope unit="volume">24</biblScope> (<date>1985</date>), no.<biblScope unit="issue">3</biblScope> ,<biblScope unit="page">307 -332</biblScope>.</bibl>
+	<bibl><author>William Thurston</author>, <title level="m">The geometry and topology of 3-manifolds</title>, <orgName>Universitext</orgName>, <publisher>Springer-Verlag</publisher>, <pubPlace>Berlin</pubPlace>,<date>1977</date> ,<ptr type="web">http ://msri.org/publications/books/gt3m</ptr>.</bibl>
+	<bibl><author>S. L. Woronowicz</author>, <title level="a">Operator equalities related to the quantum E(2) group</title>, <title level="j">Comm. Math. Phys.</title> <biblScope unit="volume">144</biblScope>( <date>1992</date>),no .<biblScope unit="issue">2</biblScope> ,<biblScope unit="page">417 -428</biblScope>.</bibl>
+	<bibl><author>Don Zagier</author>, <title level="a">The dilogarithm function</title>, <title level="m">Frontiers in number theory, physics, and geometry</title>. <biblScope unit="volume">II</biblScope>, <publisher>Springer</publisher>,<pubPlace>Berlin</pubPlace> ,<date>2007</date> ,pp .<biblScope unit="page">3 -65</biblScope>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

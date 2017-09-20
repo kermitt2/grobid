@@ -1,0 +1,21 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1</label> LIANG Z T, WANG X N. Phys. Rev. Lett., 2005,<lb/> 94: 102301. arXiv:nucl-th/0410079; Erratum, 2006, 96:<lb/> 039901(E)<lb/> </bibl>
+        <bibl><label>2</label> LIANG Z T, WANG X N. Phys. Lett., 2005, B629: 20.<lb/> arXiv:nucl-th/0411101<lb/> </bibl>
+        <bibl><label>3</label> Selyuzhenkov I(STAR Collaboration). AIP Conf. Proc.,<lb/> 2006, 870: 712. arXiv:nucl-ex/0608034; J. Phys., 2006,<lb/> G32: S557. arXiv:nucl-ex/0605035<lb/> </bibl>
+        <bibl><label>4</label> WANG X N. Phys. Lett., 2000, B485: 157<lb/> </bibl>
+        <bibl><label>5</label> Weldon H A. Phys. Rev., 1982, D26: 1394<lb/> </bibl>
+        <bibl><label>6</label> Heiselberg H, WANG X N. Nucl. Phys., 1996, B462: 389<lb/> </bibl>
+        <bibl><label>7</label> GAO J H, CHEN S W, LIANG Z T et al. Globa Quark<lb/> Polarization in Quark-Gluon-Plasma Produced in Non-<lb/>Central A+A Collisions. in preparation<lb/> </bibl>
+        <bibl><label>8</label> LIANG Z T. Plenary Talk at the 19th International<lb/> Conferece on Ultra-Relativistic Nucleus-Nucleus Collisions.<lb/> November 14-20, 2006. Shanghai, China<lb/> </bibl>
+        <bibl><label>9</label> Biró T S, Müller B. Nucl. Phys., 1993, A561: 477</bibl>
+        </listBibl>
+    </text>
+</tei>
+

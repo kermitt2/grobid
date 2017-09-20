@@ -1,0 +1,65 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+                * h.tu@lmu.de<lb/> † wanglei@iphy.ac.cn<lb/> 
+
+        <bibl><label>1</label> A. Altland and B. D. Simons, Condensed matter field theory<lb/> (Cambridge University Press, 2010).<lb/> </bibl>
+        <bibl><label>2</label> P. Francesco, P. Mathieu, and D. Sénéchal, Conformal field theory<lb/> (Springer, 2012).<lb/> </bibl>
+        <bibl><label>3</label> E. Fradkin, Field theories of condensed matter physics (Cam-<lb/>bridge University Press, 2013).<lb/> </bibl>
+        <bibl><label>4</label> J. L. Cardy, Nucl. Phys. B 240, 514 (1984).<lb/> </bibl>
+        <bibl><label>5</label> J. Cardy, arXiv:hep-th/0411189 (2004), arXiv: hep-th/0411189.<lb/> </bibl>
+        <bibl><label>6</label> I. Affleck and A. W. W. Ludwig, Phys. Rev. Lett. 67, 161 (1991).<lb/> </bibl>
+        <bibl><label>7</label> D. Friedan and A. Konechny, Phys. Rev. Lett. 93, 030402 (2004).<lb/> </bibl>
+        <bibl><label>8</label> I. Affleck, arXiv:cond-mat/9512099 (1995), arXiv: cond-<lb/>mat/9512099.<lb/> </bibl>
+        <bibl><label>9</label> I. Affleck, N. Laflorencie, and E. S. Sφrensen, J. Phys. A: Math.<lb/> Theor. 42, 504009 (2009).<lb/> </bibl>
+        <bibl><label>10</label> A. Altland, B. Béri, R. Egger, and A. Tsvelik, Phys. Rev. Lett.<lb/> 113, 076401 (2014).<lb/> </bibl>
+        <bibl><label>11</label> J. C. Y. Teo and C. L. Kane, Phys. Rev. B 79, 235321 (2009).<lb/> </bibl>
+        <bibl><label>12</label> P. Calabrese and J. Cardy, J. Stat. Mech. 2004, P06002 (2004).<lb/> </bibl>
+        <bibl><label>13</label> N. Laflorencie, E. S. Sφrensen, M.-S. Chang, and I. Affleck,<lb/> Phys. Rev. Lett. 96, 100603 (2006).<lb/> </bibl>
+        <bibl><label>14</label> H.-Q. Zhou, T. Barthel, J. O. Fjaerestad, and U. Schollwöck, Phys.<lb/> Rev. A 74, 050305 (2006).<lb/> </bibl>
+        <bibl><label>15</label> P. Calabrese and J. Cardy, J. Phys. A: Math. Theor. 42, 504005<lb/> (2009), arXiv: 0905.4013.<lb/> </bibl>
+        <bibl><label>16</label> E. Fradkin, J. Phys. A: Math. Theor. 42, 504011 (2009).<lb/> </bibl>
+        <bibl><label>17</label> B. Hsu, M. Mulligan, E. Fradkin, and E.-A. Kim, Phys. Rev. B<lb/> 79, 115421 (2009).<lb/> </bibl>
+        <bibl><label>18</label> A. Kitaev and J. Preskill, Phys. Rev. Lett. 96, 110404 (2006).<lb/> </bibl>
+        <bibl><label>19</label> M. Levin and X.-G. Wen, Phys. Rev. Lett. 96, 110405 (2006).<lb/> </bibl>
+        <bibl><label>20</label> P. Fendley, M. P. Fisher, and C. Nayak, J. Stat. Phys. 126, 1111<lb/> (2007).<lb/> </bibl>
+        <bibl><label>21</label> Q.-Q. Shi, R. Orús, J. O. Fjaerestad, and H.-Q. Zhou, New J. Phys.<lb/> 12, 025008 (2010).<lb/> </bibl>
+        <bibl><label>22</label> J.-M. Stéphan, G. Misguich, and F. Alet, Phys. Rev. B 82, 180406<lb/> (2010).<lb/> </bibl>
+        <bibl><label>23</label> B.-Q. Hu, X.-J. Liu, J.-H. Liu, and H.-Q. Zhou, New J. Phys. 13,<lb/> 093041 (2011).<lb/> </bibl>
+        <bibl><label>24</label> J.-H. Liu, H.-T. Wang, Q.-Q. Shi, and H.-Q. Zhou, Phys. Lett. A<lb/> 376, 2677 (2012).<lb/> </bibl>
+        <bibl><label>25</label> H.-H. Tu, arXiv:1707.05812 (2017).<lb/> </bibl>
+        <bibl><label>26</label> L. Chen, H.-X. Wang, L. Wang, and W. Li, arXiv:XXX (2017).<lb/> </bibl>
+        <bibl><label>27</label> I. Affleck, Phys. Rev. Lett. 56, 746 (1986).<lb/> </bibl>
+        <bibl><label>28</label> H. W. J. Blöte, J. L. Cardy, and M. P. Nightingale, Phys. Rev.<lb/> Lett. 56, 742 (1986).<lb/> </bibl>
+        <bibl><label>29</label> In order to obtain the universal AL entropy, here the boundary<lb/> conditions should be chosen to be conformal boundary conditions.<lb/> </bibl>
+        <bibl><label>30</label> R. Blumenhagen and E. Plauschinn, Introduction to Conformal<lb/> Field Theory -With Applications to String Theory (Springer,<lb/> 2009).<lb/> </bibl>
+        <bibl><label>31</label> A caveat of the calculation is that the lattice reflection operatorˆPoperatorˆ operatorˆP<lb/> may not play exactly the same role as the CFT 25 , thus the com-<lb/>puted ratio may deviate from the CFT prediction.<lb/> </bibl>
+        <bibl><label>32</label> J. Sólyom and P. Pfeuty, Phys. Rev. B 24, 218 (1981).<lb/> </bibl>
+        <bibl><label>33</label> C. Ding, Y. Wang, Y. Deng, and H. Shao, arXiv:1702.02675<lb/> (2017), arXiv: 1702.02675.<lb/> </bibl>
+        <bibl><label>34</label> C. H. Bennett, J. Comput. Phys. 22, 245 (1976).<lb/> </bibl>
+        <bibl><label>35</label> J. L. Cardy, Nucl. Phys. B 324, 581 (1989).<lb/> </bibl>
+        <bibl><label>36</label> H. Saleur and M. Bauer, Nucl. Phys. B 320, 591 (1989).<lb/> </bibl>
+        <bibl><label>37</label> I. Affleck, M. Oshikawa, and H. Saleur, J. Phys. A: Math. Gen.<lb/> 31, 5827 (1998).<lb/> </bibl>
+        <bibl><label>38</label> J. Fuchs and C. Schweigert, Phys. Lett. B 441, 141 (1998).<lb/> </bibl>
+        <bibl><label>39</label> M. T. Batchelor and C. J. Hamer, J. Phys. A: Math. Gen. 23, 761<lb/> (1990).<lb/> </bibl>
+        <bibl><label>40</label> F. C. Alcaraz, M. N. Barber, and M. T. Batchelor, Ann. Phys. 182,<lb/> 280 (1988).<lb/> </bibl>
+        <bibl><label>41</label> W. Li, S. Yang, H.-H. Tu, and M. Cheng, Phys. Rev. B 91, 115133<lb/> (2015).<lb/> </bibl>
+        <bibl><label>42</label> V. Fateev and A. Zamolodchikov, Nucl. Phys. B 280, 644 (1987).<lb/> </bibl>
+        <bibl><label>43</label> P. Ginsparg, Nucl. Phys. B 295, 153 (1988).<lb/> </bibl>
+        <bibl><label>44</label> R. Dijkgraaf, C. Vafa, E. Verlinde, and H. Verlinde, Commun.<lb/> Math. Phys. 123, 485 (1989).<lb/> </bibl>
+        <bibl><label>45</label> M. Barkeshli, P. Bonderson, M. Cheng,<lb/> and Z. Wang,<lb/> arXiv:1410.4540 (2014).<lb/> </bibl>
+        <bibl><label>46</label> W. Li et al., (2017), in preparation.<lb/> </bibl>
+        <bibl><label>47</label> M. Suzuki, Prog. Theor. Phys. 56, 1454 (1976).<lb/> </bibl>
+        <bibl><label>48</label> R. H. Swendsen and J.-S. Wang, Phys. Rev. Lett. 58, 86 (1987).<lb/> </bibl>
+        <bibl><label>49</label> H. Rieger and N. Kawashima, Euro. Phys. J. B 9, 233 (1999).<lb/> </bibl>
+        <bibl><label>50</label> F. Y. Wu, Rev. Mod. Phys. 54, 235 (1982).<lb/> </bibl>
+        <bibl><label>51</label> J. Gubernatis, N. Kawashima, and P. Werner, Quantum Monte<lb/> Carlo Methods: Algorithms for Lattice Models, 1st ed. (Cam-<lb/>bridge University Press, Cambridge, 2016).<lb/> </bibl>
+        <bibl><label>52</label> In the literature, the symmetric boundary condition is often re-<lb/>ferred to as the &quot;new&quot; boundary condition. We call it &quot;symmetric&quot;<lb/> since this boundary condition favours the Z 3 symmetric state.<lb/></bibl> 
+        <bibl><label>53</label> For the mixed boundary condition, the additional coefficient e −2βh b<lb/> cannot make the transition bound to be accepted when the bound-<lb/>ary spins satisfy the corresponding mixed boundary condition. But<lb/> it still helps improve the efficiency of the simulation.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

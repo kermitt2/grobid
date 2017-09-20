@@ -1,0 +1,6103 @@
+   4944 D0
+   4852 CMS
+   4747 ATLAS
+   3288 CDF
+   2082 ALICE
+   1577 ZEUS
+   1566 BaBar
+   1498 LHCb
+   1478 H1
+   1373 STAR
+   1305 Belle
+   1014 PHENIX
+    976 CLEO
+    734 DELPHI
+    699 OPAL
+    679 Pierre Auger
+    639 ALEPH
+    617 HERMES
+    585 SDC
+    577 L3
+    575 IceCube
+    532 MAGIC
+    513 CLAS
+    495 COMPASS
+    492 Fermi-LAT
+    477 H.E.S.S.
+    407 ANTARES
+    403 UKQCD
+    392 VERITAS
+    348 ISOLDE
+    341 BESIII
+    333 KLOE
+    331 SLD
+    326 SDSS
+    324 BES
+    290 Super-Kamiokande
+    280 UA1
+    280 MACRO
+    272 LIGO Scientific
+    269 NA49
+    244 ARGUS
+    229 GEM
+    214 UA2
+    209 KM3NeT
+    208 HADES
+    208 ARGO-YBJ
+    207 T2K
+    191 MINOS
+    190 CALICE
+    187 NEMO
+    177 VIRGO
+    173 NA48
+    172 SNO
+    167 CTA Consortium
+    165 PANDA
+    161 Planck
+    161 OPERA
+    158 JLQCD
+    157 Crystal Barrel
+    151 DES
+    146 MILC
+    146 Borexino
+    143 PHOBOS
+    142 KLOE-2
+    139 HEGRA
+    138 ALPHA
+    135 RBC
+    133 Crystal Ball
+    132 FOPI
+    132 CPLEAR
+    132 A2
+    131 CDMS
+    128 NA62
+    127 WASA-at-COSY
+    122 BRAHMS
+    122 AMS
+    120 Telescope Array
+    120 MiniBooNE
+    117 TASSO
+    117 KTeV
+    117 AMANDA
+    116 HAWC
+    115 JEM-EUSO
+    114 European Muon
+    111 HERA-B
+    110 FOCUS
+    108 CHORUS
+    106 AMY
+    105 OBELIX
+    105 HiRes
+    104 Jefferson Lab Hall A
+    104 CP-PACS
+    103 CELLO
+    102 NA61/SHINE
+    102 NA50
+    100 NA48/2
+    100 JADE
+    100 EDELWEISS
+     99 WA80
+     99 KASCADE
+     98 NA35
+     98 MARK-III
+     96 K2K
+     95 ETM
+     95 Double Chooz
+     94 TOTEM
+     94 LUNA
+     92 MEG
+     92 ICARUS
+     90 LEPS
+     90 CMS Tracker
+     89 PAMELA
+     89 EAS-TOP
+     86 WA98
+     86 CUORE
+     86 AGILE
+     85 SSC
+     84 E791
+     84 Daya Bay
+     84 BTeV
+     83 Spin Muon
+     83 NA60
+     83 MINERvA
+     83 INDRA
+     83 GERDA
+     83 EHS/NA22
+     83 E687
+     81 QCDSF
+     80 LVD
+     79 TAPS
+     75 TPC/Two Gamma
+     75 French-Soviet
+     74 NOMAD
+     74 KamLAND
+     74 A1
+     73 VENUS
+     73 PLUTO
+     72 TAMA
+     72 NuTeV
+     72 ANKE
+     71 EMU01
+     69 Milagro
+     69 ACCMOR
+     68 FINUDA
+     67 MICE
+     67 HPQCD
+     66 TOPAZ
+     66 CERN-Soviet
+     65 TESLA
+     65 Neutrino Factory and Muon Collider
+     65 HAL QCD
+     65 CBELSA/TAPS
+     62 UA5
+     62 NA44
+     62 CHARM
+     61 NOvA
+     61 NEXT
+     61 NA38
+     60 LHCb RICH
+     60 LARP
+     60 KATRIN
+     60 GLAST LAT
+     60 Fermilab Lattice
+     59 LSND
+     59 E665
+     59 CMS ECAL
+     58 GDH
+     58 ATLAS Muon
+     57 SELEX
+     57 ALADIN
+     56 XMASS
+     56 WA89
+     56 SuperNEMO
+     56 LEP
+     56 CBM
+     56 CAST
+     55 KARMEN
+     55 CMD-2
+     53 XENON
+     53 Mu2e
+     53 CANGAROO
+     52 Muon g-2
+     52 LHCf
+     52 CELSIUS/WASA
+     52 ATLAS Pixel
+     51 NESTOR
+     51 CERES
+     51 ATLAS SCT
+     50 Virgo
+     50 HESS
+     50 E802
+     49 TWQCD
+     49 Tibet ASgamma
+     49 NuGrid
+     49 NA57
+     49 HARP
+     49 E852
+     47 TEXONO
+     47 RD42
+     47 DIRAC
+     47 COSY-TOF
+     47 BIS-2
+     46 Soudan-2
+     46 MiMeS
+     45 MACHO
+     45 LEBC-EHS
+     45 BAIKAL
+     44 QCD-TARO
+     44 New Muon
+     44 EXO-200
+     43 GALLEX
+     43 CALET
+     43 Axial Field Spectrometer
+     43 Aachen-Berlin-CERN-London-Vienna
+     42 WHOT-QCD
+     42 SNLS
+     42 n_TOF
+     42 Majorana
+     42 Linear Collider
+     42 DM2
+     42 ATLAS TDAQ
+     41 HRS
+     41 EOS
+     41 E864
+     41 E814
+     41 DEPFET
+     41 COSY-11
+     41 Amsterdam-CERN-Nijmegen-Oxford
+     40 WA97
+     40 Proton Driver
+     40 KaoS
+     40 JACEE
+     40 HELIOS
+     39 MicroBooNE
+     39 ICECUBE
+     38 XENON100
+     38 LOPES
+     38 DUMAND
+     38 BESS
+     38 Ames-Bologna-CERN-Dortmund-Heidelberg-Warsaw
+     37 SNO+
+     37 PLANET
+     37 NA31
+     37 GRAAL
+     37 E706
+     36 PACS-CS
+     36 NNPDF
+     36 GAMS
+     35 UTfit
+     35 NA36
+     35 LHAASO
+     35 EUSO
+     35 E-802
+     35 ATHENA
+     34 WA102
+     34 Spin Muon (SMC)
+     34 PS185
+     34 NEMO-3
+     34 Kamiokande-II
+     33 WA85
+     33 VES
+     33 NuSea
+     33 HotQCD
+     33 Hadron Spectrum
+     33 E895
+     33 E835
+     33 E760
+     33 DISTO
+     33 BOREXINO
+     33 Baikal
+     33 ANITA
+     32 SPHINX
+     32 SciBooNE
+     32 E787
+     31 SIDDHARTA
+     31 SAGE
+     31 KASCADE Grande
+     31 Kamiokande
+     31 HyperCP
+     31 FCAL
+     31 CCFR
+     31 BLAST
+     30 WMAP
+     30 TWIST
+     30 SuperCDMS
+     30 Hall A
+     30 GLAST
+     30 CHAOS
+     29 UA4
+     29 TXL
+     29 Tagged Photon Spectrometer
+     29 SPT
+     29 Serpukhov-Brussels-Annecy(LAPP)
+     29 RD50
+     29 NA61
+     29 LCFI
+     29 G0
+     29 EROS
+     29 DarkSide
+     29 ATLAS Tile Calorimeter System
+     29 ATLAS Liquid Argon Calorimeter Group
+     28 WIZARD
+     28 WA76
+     28 Supernova Cosmology Project
+     28 Soudan 2
+     28 Omega Photon
+     28 NA3
+     28 LHPC
+     28 LHCb VELO
+     28 EDDA
+     28 E877
+     28 CHARM-II
+     28 Aachen-Bonn-CERN-Munich-Oxford
+     27 QCDSF-UKQCD
+     27 PAX
+     27 Particle Data Group
+     27 LUX
+     27 KEDR
+     27 Isolde
+     27 Electron Cooling
+     27 BOSS
+     26 SKAT
+     26 Pamir
+     26 OGLE
+     26 E917
+     26 CELESTE
+     26 APE
+     25 SWME
+     25 PROMICE/WASA
+     25 LatKMI
+     25 E735
+     25 CMS HCAL
+     25 BCDMS
+     25 ATLAS Liquid Argon
+     25 ALICE TPC
+     24 MOA
+     24 MAC
+     24 CLICdp
+     24 ASTRI
+     24 ASTERIX
+     24 ArgoNeuT
+     24 Aachen-Berlin-Bonn-CERN-Cracow-Heidelberg-Warsaw
+     23 SND
+     23 RBC-Bielefeld
+     23 Qweak
+     23 MUNU
+     23 MARK-II
+     23 LBNE
+     23 E143
+     23 CMD-3
+     23 AMS 02
+     23 AGASA
+     22 RENO
+     22 KLOE KLOE-2
+     22 Kepler
+     22 IMB
+     22 DEAR
+     22 COBRA
+     22 ArDM
+     21 TAGX
+     21 SNAP
+     21 RD3
+     21 PICASSO
+     21 LAGO
+     21 JEDI
+     21 JANZOS
+     21 EXCHARM
+     21 CTA
+     21 CAT
+     21 BEATRICE
+     20 SICAPO
+     20 LADS
+     20 GlueX
+     20 Geant4
+     20 E-687
+     20 DASP
+     20 CYGNUS
+     20 CRESST
+     20 COMET
+     20 CHARM II
+     20 Chacaltaya
+     20 CBELSA-TAPS
+     20 ATRAP
+     20 AMSTERDAM-CERN-NIJMEGEN-OXFORD
+     19 Serpukhov-CERN
+     19 HARPO
+     19 HAPPEX
+     19 Frejus
+     19 EHS-RCBC
+     19 DLS
+     19 CHIC
+     19 CERN-DORTMUND-HEIDELBERG-SACLAY
+     19 CB-ELSA
+     19 Belle-II
+     19 ATLAS TileCal
+     19 A4
+     18 STACEE
+     18 SLAC Hybrid Facility Photon
+     18 RISK
+     18 RD39
+     18 NA22
+     18 NA14
+     18 LISA Pathfinder
+     18 LHP
+     18 LEP Electroweak Working Group
+     18 GBM
+     18 EMU-01
+     18 CODALEMA
+     18 CERN RD50
+     18 CERES/NA45
+     18 CCOR
+     18 Belle II
+     18 ATLAS TRT
+     18 AMADEUS
+     17 UA6
+     17 SAPHIR
+     17 SABRE
+     17 Project X
+     17 NPLQCD
+     17 NA10
+     17 MIPP
+     17 MILAGRO
+     17 Mark-III
+     17 LCGT
+     17 KEK-E246
+     17 JETSET
+     17 CUORICINO
+     17 Budapest-Marseille-Wuppertal
+     17 Bonn-Hamburg-Munich
+     17 Bonn-CERN-Ecole Poly-Glasgow-Lancaster-Manchester-Orsay-Paris-Rutherford-Sheffield
+     17 ATLAS Liquid Argon Calorimeter
+     17 ADMX
+     17 AACHEN-BONN-CERN-LONDON-OXFORD-SACLAY
+     16 SHiP
+     16 RD2
+     16 PAMIR
+     16 European Twisted Mass
+     16 E761
+     16 E155
+     16 Crystal Ball at MAMI
+     16 CCFR/NuTeV
+     16 ASACUSA
+     16 ARIANNA
+     16 APEX
+     16 2dFGRS
+     15 Tevatron Electroweak Working Group
+     15 SVD-2
+     15 SuperB
+     15 Soviet-CERN
+     15 SAMPLE
+     15 ROG
+     15 LCTPC
+     15 L3+C
+     15 KamLAND-Zen
+     15 JUNO
+     15 ISOCELE
+     15 INO
+     15 Heidelberg-Moscow
+     15 E771
+     15 DUNE
+     15 DRIFT
+     15 DREAM
+     15 CLQCD
+     15 BaBar Computing Group
+     15 AMS-02
+     15 ALMA ATA-LENINGRAD-MOSCOW-TASHKENT
+     14 WA82
+     14 UK Dark Matter
+     14 TIBET AS$\gamma$
+     14 Sloan Digital Sky Survey
+     14 RUNJOB
+     14 RoboNet
+     14 REX-ISOLDE
+     14 PS205
+     14 OMICRON
+     14 MuCap
+     14 LOFAR
+     14 LHeC Study Group
+     14 LAND
+     14 KIMS
+     14 J-PARC E15
+     14 Fermilab E653
+     14 EXO
+     14 DONUT
+     14 DELCO
+     14 CANGAROO-II
+     14 Birmingham-CERN-Glasgow-Michigan State-Paris
+     14 BEBC WA59
+     14 BABAR
+     14 Aachen-Bonn-CERN-London-Oxford-Saclay
+     14 A3
+     13 WA93
+     13 WA78
+     13 WA21
+     13 US LHC
+     13 SVD
+     13 Supernova Search Team
+     13 SoLid
+     13 NA52 (NEWMASS)
+     13 MONOLITH
+     13 LHCb VELO Group
+     13 LENA
+     13 KOTO
+     13 ITEP-PNPI
+     13 IceCube PINGU
+     13 HARP-CDP
+     13 E769
+     13 E710
+     13 E705
+     13 E653
+     13 DIANA
+     13 DEAP
+     13 DAMA
+     13 CRYSTAL BALL
+     13 CDMS-II
+     13 Bristol-Geneva-Heidelberg-Orsay-Rutherford-Strasbourg
+     13 BooNE
+     13 BASE
+     13 Alma Ata-Leningrad-Moscow-Tashkent
+     13 AGILE Team
+     13 AGATA
+     12 ZEPLIN-III
+     12 WA94
+     12 SINDRUM
+     12 RD5
+     12 RD20
+     12 RD19
+     12 PROSPECT
+     12 POLARBEAR
+     12 OOPS
+     12 NMC
+     12 NICA
+     12 FREJUS
+     12 Fermi
+     12 FENICE
+     12 E910
+     12 E866
+     12 E391a
+     12 ATLAS LAr
+     12 ATLAS IBL
+     12 Archeops
+     12 ARA
+     12 AMI Consortium
+     12 AACHEN-BONN-CERN-MUNICH-OXFORD
+     11 VCS
+     11 Tunka-Rex
+     11 Tibet AS Gamma
+     11 Swift
+     11 STAR SVT
+     11 SPIRAL Group
+     11 RICE
+     11 RD8
+     11 RBC-UKQCD
+     11 R704
+     11 QUIET
+     11 PIBETA
+     11 NA52
+     11 NA48-2
+     11 Muon Collider
+     11 MuLan
+     11 MoEDAL
+     11 Minami-Tateya
+     11 LAAS
+     11 GENIUS
+     11 Fermilab/NICADD Photoinjector Laboratory
+     11 E731
+     11 E704
+     11 E632
+     11 CMS Pixel
+     11 CERN-Columbia-Oxford-Rockefeller
+     11 CALIFA
+     11 BICEP2
+     11 BELLE
+     11 BaBar DIRC
+     11 AXIAL FIELD SPECTROMETER
+     11 ASTRO-H Science Working Group
+     11 AMES-BOLOGNA-CERN-DORTMUND-HEIDELBERG-WARSAW
+     11 ALICE TRD
+     11 AIRFLY
+     11 AEGIS
+     10 ZEUS Calorimeter Group
+     10 WALIC
+     10 WA77
+     10 WA70
+     10 WA59
+     10 TrinLat
+     10 TELESCOPE ARRAY
+     10 SPQcdR
+     10 ROTSE
+     10 R608
+     10 QCDSF/UKQCD
+     10 PrimEx
+     10 POINT-AGAPE
+     10 OLYMPUS
+     10 NANOGrav
+     10 NA14/2
+     10 Mu3e
+     10 LSD
+     10 LHCb Silicon Tracker Group
+     10 LAGUNA-LBNO
+     10 KAGRA
+     10 JLab Hall A
+     10 g-2
+     10 Fermilab-Serpukhov-Moscow-Michigan
+     10 Fermi-GBM
+     10 Fermi GBM
+     10 FACT
+     10 EXL
+     10 E949
+     10 E789
+     10 E781
+     10 E-735
+     10 CORE
+     10 CKM
+     10 CHLM
+     10 CERN-Heidelberg-Lund
+     10 CANGAROO-III
+     10 BRAZIL-JAPAN EMULSION CHAMBER
+     10 Brazil-Japan
+     10 AURIGA
+     10 ATLAS Tilecal
+     10 Asymmetry Analysis
+     10 AEgIS
+     10 Aachen-Bonn-CERN-Democritos-London-Oxford-Saclay
+     10 Aachen-Berlin-CERN-Cracow-London-Vienna-Warsaw
+     10 Aachen-Berlin-Bonn-CERN-Heidelberg
+      9 Tibet AS gamma
+      9 SUPER-KAMIOKANDE
+      9 Storage Ring EDM
+      9 STAR RICH
+      9 SPARC
+      9 SLIM
+      9 SINDRUM II
+      9 Serpukhov-Brussels-Los Alamos-Annecy(LAPP)
+      9 SEAGal
+      9 Scandinavian Bubble Chamber
+      9 SCALAR
+      9 Saclay-CERN-College de France-Ecole Poly-Orsay
+      9 RMC
+      9 RD1
+      9 RAVE
+      9 QUaD
+      9 qq+q
+      9 PP2PP
+      9 Photon Emulsion
+      9 NOE
+      9 NESSiE
+      9 NA48/1
+      9 Muon (g-2)
+      9 MARE
+      9 LEGS
+      9 LArIAT
+      9 KLM
+      9 HPS
+      9 GammeV
+      9 GAMBIT
+      9 Fermilab NICADD Photoinjector Laboratory
+      9 Fermilab E835
+      9 Fermilab E791
+      9 Fermilab E706
+      9 FAZIA
+      9 EPECUR
+      9 EMPACT
+      9 E850
+      9 E-810
+      9 E-760
+      9 E691
+      9 E672
+      9 E154
+      9 CSSM Lattice
+      9 COUPP
+      9 CMS GEM
+      9 CMOR
+      9 CLOUD
+      9 CLEO-c
+      9 CERN-College de France-Madrid-Stockholm
+      9 CARAVANE
+      9 BIRMINGHAM-CERN-GLASGOW-MICHIGAN STATE-PARIS
+      9 Belle-II SVD
+      9 Bari-Bonn-CERN-Daresbury-Glasgow-Liverpool-Milan-Vienna
+      9 ARGO
+      9 Antares
+      9 ALICE ITS
+      9 ACT
+      8 WEBT
+      8 WA25
+      8 UFFO
+      8 UA4/2
+      8 TAROT
+      8 SoLID
+      8 SKM-200
+      8 SESAM
+      8 SCANDINAVIAN BUBBLE CHAMBER
+      8 RSS
+      8 R3B
+      8 Project 8
+      8 Palo Verde
+      8 nuSTORM
+      8 NuSTAR
+      8 NKS2
+      8 nEDM
+      8 Nearby Supernova Factory
+      8 NA24
+      8 MUSYC
+      8 MT(c)
+      8 MECO
+      8 MARK-J
+      8 MAMI A1
+      8 LZ
+      8 LUCIFER
+      8 LSST
+      8 LENS
+      8 LAPPD
+      8 KTEV
+      8 Irvine-Michigan-Brookhaven
+      8 INCA
+      8 IDS-NF
+      8 HELLAZ
+      8 HELIOS-3
+      8 Heidelberg-Saclay-Strasbourg
+      8 GRAPES-3
+      8 GRANDE
+      8 Focus
+      8 Fermi Pulsar Timing Consortium
+      8 FAST
+      8 E896
+      8 E878
+      8 E690
+      8 E581/704
+      8 Dubna-Warsaw
+      8 DAMIC
+      8 DAEdALUS
+      8 Crystal Clear
+      8 CERN-College de France-Heidelberg-Karlsruhe
+      8 CDEX
+      8 $B{\small A}B{\small AR}$
+      8 Boulby Dark Matter
+      8 Boomerang
+      8 AWAKE
+      8 Annecy(LAPP)-CERN-Bohr Inst-Genoa-Oslo-London
+      8 AMS 01
+      8 Aachen-Berlin-CERN
+      7 XLF
+      7 Wuppertal-Budapest
+      7 Whipple
+      7 WET
+      7 WA91
+      7 VVDS
+      7 Utah Seven Telescope Array
+      7 UA8
+      7 TREK
+      7 TPC / TWO GAMMA
+      7 TPC/Two-Gamma
+      7 TILECAL
+      7 Tibet AS$\gamma$
+      7 SLD Heavy Flavor Group
+      7 SLAC HYBRID FACILITY PHOTON
+      7 SLAC
+      7 SIMPLE
+      7 RQCD
+      7 ROSE
+      7 RHIC Spin
+      7 QUBIC
+      7 QCDPAX
+      7 PVLAS
+      7 PIP-II
+      7 PACS
+      7 nEXO
+      7 MT. HOPKINS GAMMA RAY
+      7 Mt. Fuji
+      7 MOON
+      7 MINOS+
+      7 MEG II
+      7 MEGA
+      7 MAXI
+      7 Mark-II
+      7 MAMI
+      7 LHC Magnet Team
+      7 LHCb Outer Tracker
+      7 LADON
+      7 KASCADE-Grande
+      7 IRVINE-MICHIGAN-BROOKHAVEN
+      7 IGEX
+      7 IceCube-Gen2
+      7 Hyper-Kamiokande Working Group
+      7 HELIOS/3
+      7 H1 Calorimeter Group
+      7 GOODS Team
+      7 GEM-TPC
+      7 Gargamelle
+      7 FERMI
+      7 EMMA
+      7 EIC
+      7 EDM
+      7 E865
+      7 E-771
+      7 E-665
+      7 E609
+      7 E166
+      7 DCBA
+      7 DAFNE
+      7 CUSB
+      7 COSMOS
+      7 COIN
+      7 CLEO-II
+      7 CHOOZ
+      7 Chacaltaya Cosmic Ray
+      7 CERN-Munich
+      7 CERN-Lausanne-Michigan-Rockefeller
+      7 CERN-DORTMUND-HEIDELBERG-WARSAW
+      7 CDHS
+      7 CANDLES
+      7 Brussels-CERN-Genoa-Mons-Nijmegen-Serpukhov
+      7 Bonn-CERN-Glasgow-Lancaster-Manchester-Paris-Rutherford-Sheffield
+      7 Bombay-CERN-College de France-Madrid
+      7 Bern-Graz-Regensburg
+      7 Belle-II PID Group
+      7 ATLAS Tile Calorimeter Group
+      7 ATLAS Tile Calorimeter
+      7 ATLAS Tile
+      7 ATIC
+      7 Amsterdam-Bergen-Bologna-Padua-Pisa-Saclay-Turin
+      7 AMS02
+      7 ALPS
+      7 Alma Ata-Dubna-Helsinki-Kosice-Moscow-Prague
+      7 ALICE HLT
+      7 Aachen-Berlin-Bonn-CERN-Cracow-Heidelberg-London-Vienna-Warsaw
+      7 2dFGRS Team
+      6 ZEUS Data Acquisition Group
+      6 ZEPLIN-II
+      6 xQCD
+      6 WIZARD-MASS
+      6 Wizard-Caprice
+      6 Warsaw-Dubna-Kosice-Moscow-Strasbourg-Tbilisi
+      6 WA84
+      6 Venus
+      6 USQCD
+      6 UKDMC
+      6 TRIPLE
+      6 SPHERE
+      6 RD37
+      6 PS183
+      6 ProjectX
+      6 POLAR
+      6 PIP
+      6 PICO
+      6 NKS
+      6 MUSE
+      6 muFUN
+      6 MuCool
+      6 mu2e
+      6 MPIfR Submillimeter Astronomy Group
+      6 MINIBALL
+      6 MINI
+      6 MiNDSTEp Consortium
+      6 MEMPHYS
+      6 Mark-J
+      6 MARK II
+      6 MAMMA
+      6 LISM
+      6 LEPS2
+      6 LEGS SPIN
+      6 LAT
+      6 KEK-PS E289
+      6 Keck Array
+      6 JLAB Hall A
+      6 Jetset
+      6 JASMIN
+      6 ISTRA+
+      6 ISOLDE-IS360
+      6 ILIAS
+      6 Hyper-Kamiokande
+      6 GRAPES
+      6 Glasgow-Liverpool-Lausanne-Neuchatel-Paris
+      6 GANIL Group
+      6 FLASH
+      6 Fiber Tracking Group
+      6 Edelweiss
+      6 E-731
+      6 E-706
+      6 E142
+      6 E135
+      6 Dubna-Kosice-Moscow-Strasbourg-Tbilisi-Warsaw
+      6 DMTPC
+      6 DIOGENE
+      6 DIK
+      6 DeeMe
+      6 DEAP-CLEAN
+      6 DarkLight
+      6 CosmoALEPH
+      6 CLIC Study Team
+      6 CLIC/CTF3
+      6 Chacaltaya Emulsion Chamber
+      6 CERN-Trieste
+      6 CERN-Dortmund-Heidelberg-Warsaw
+      6 CDF Plug Upgrade Group
+      6 CBELSA
+      6 CALKUL
+      6 BRUSSELS-CERN-GENOA-MONS-NIJMEGEN-SERPUKHOV
+      6 BPRS
+      6 Bonn-Brussels-Cambridge-CERN-Stockholm
+      6 BEBC TST Neutrino
+      6 B2
+      6 Athens-Democritus-Liverpool-Vienna
+      6 Athens-Democritos-Liverpool-Vienna
+      6 Athens-Bari-Birmingham-CERN
+      6 ATF
+      6 Annecy(LAPP)-CERN-Genoa-Lyon-Oslo-Rome-Strasbourg-Turin
+      6 ANI
+      6 AMS Tracker
+      6 AMS RICH
+      6 Alpha
+      6 Alma Ata-Dubna-Helsinki-Moscow-Prague
+      6 ACoRNE
+      6 AACHEN-ORSAY-PALAISEAU-SACLAY-WUPPERTAL
+      6 Aachen-Berlin-Bonn-CERN-Cracow-London-Vienna-Warsaw
+      5 ZEUS TLT Group
+      5 WiZard/CAPRICE
+      5 WiZard
+      5 WA105
+      5 Very Large Hadron Collider
+      5 UCNA
+      5 T(X)L
+      5 TOF
+      5 Tibet ASγ
+      5 TANAMI
+      5 T2K TPC
+      5 SWIRE
+      5 SSCL
+      5 sPHENIX
+      5 SPES4-pi
+      5 SPASE
+      5 SPACAL
+      5 SNS
+      5 SLAC Storage Ring Group
+      5 SIGMA-AYAKS
+      5 SalSA
+      5 Rutherford-London
+      5 Russian-Nordic-British Theory (RNBT)
+      5 Rome-Saclay-Vanderbilt
+      5 RISING
+      5 RD36
+      5 RD34
+      5 RBC/UKQCD
+      5 PIENU
+      5 PEN
+      5 PandaX
+      5 PADME
+      5 NuSOnG
+      5 NUSEX
+      5 NRQCD
+      5 NPDGamma
+      5 NA59
+      5 NA27
+      5 MuSun
+      5 MULTI
+      5 MiniMax
+      5 MAXI Team
+      5 MARK III
+      5 MaPP
+      5 MAJORANA
+      5 Lattice Hadron Physics
+      5 LAMP2 Group
+      5 KEK E246
+      5 J-PARC TREK
+      5 J-PARC E16
+      5 J-PARC E07
+      5 ISO-HDF Consortium
+      5 IPN
+      5 ILC Physics and Detector Study
+      5 ILC
+      5 HypHI
+      5 HITRAP
+      5 HERAFitter
+      5 HERA-B RICH
+      5 HECPAS
+      5 Heavy Flavor Averaging Group (HFAG)
+      5 GNO
+      5 Gfitter
+      5 Gargamelle Neutrino
+      5 Fukui-KEK-Kyoto Sangyo-Osaka-Tokyo Metropolitan
+      5 France-UK
+      5 FPP
+      5 for the VERITAS
+      5 FMMF
+      5 FLAIR
+      5 Fermi/GBM
+      5 ExHIC
+      5 EVA
+      5 EUDET
+      5 E906
+      5 E821
+      5 E-802/E-866
+      5 E756
+      5 E-704
+      5 E683
+      5 E-632
+      5 E531
+      5 E179
+      5 DESY-Munster
+      5 DESI
+      5 CTA consortium
+      5 COSY-ANKE
+      5 COMPETE
+      5 CoGeNT
+      5 CMS Silicon Tracker
+      5 CMS Muon
+      5 CLIO
+      5 CLIC Study Group
+      5 CLIC
+      5 CLASS
+      5 CERN-DORTMUND-HEIDELBERG-SACLAY-WARSAW
+      5 CCHK
+      5 CALEIDO
+      5 BRITISH-FRENCH-SCANDINAVIAN
+      5 Brazil-Japan of Chacaltaya Emulsion Chamber Experiment
+      5 BNL-Bielefeld-CCNU
+      5 Big Bubble Chamber Neutrino
+      5 Bern-CERN-Copenhagen-Orsay-Pavia-Saclay
+      5 Berlin-Budapest-Dubna-Moscow-Prague-Sofiya-Tbilisi
+      5 BASJE
+      5 BARI-CERN-ECOLE POLY-MILAN-ORSAY
+      5 BARI-BONN-CERN-DARESBURY-GLASGOW-LIVERPOOL-MILAN-VIENNA
+      5 ANS
+      5 AMS 02-Tracker
+      5 Alma Ata-Gatchina-Moscow-Tashkent
+      5 ALICE TOF
+      5 ALICE PHOS
+      5 ALADIN2000
+      5 Aachen-DESY-Annecy(LAPP)-MIT-NIKHEF-Beijing
+      5 AACHEN-BERLIN-CERN-LONDON-VIENNA
+      5 AACHEN-BERLIN-CERN-CRACOW-LONDON-VIENNA-WARSAW
+      4 zCOSMOS
+      4 Yakutsk
+      4 XENON1T
+      4 X2
+      4 WArP
+      4 WA75
+      4 VVDS Team
+      4 Vivitron Group
+      4 VIRGO Consortium
+      4 VHMPID
+      4 USCMS
+      4 UMC
+      4 UCSB-LBL-UCB
+      4 UA1-Minimum Bias
+      4 TRT
+      4 TRIUMF Munoic Hydrogen
+      4 TIBET ASγ
+      4 Tibet AS-gamma
+      4 THEMISTOCLE
+      4 TESLA-N Study Group
+      4 TELESCOPE-ARRAY
+      4 Super-FRS
+      4 STAR EMC
+      4 SPIDER
+      4 SPES
+      4 SOX
+      4 Soudan-1
+      4 Solenoidal Detector
+      4 SLD Electroweak Group
+      4 SLAC-LBL
+      4 SLAC E158
+      4 SLAC-E-146
+      4 SING
+      4 SEAMBH
+      4 SCT
+      4 SANE
+      4 SAGE Team
+      4 ROME-SACLAY-VANDERBILT
+      4 Real Photon
+      4 RD6
+      4 RD51
+      4 RD48/ROSE
+      4 Pulsar Timing Consortium
+      4 PRISMA
+      4 PREX
+      4 PoGOLite
+      4 Pluto
+      4 PIP II
+      4 PandaX-II
+      4 PANDA Cherenkov
+      4 OSQAR
+      4 ORKA
+      4 OMEGA Photon
+      4 NuTeV CCFR /
+      4 NuTeV CCFR
+      4 Nucleon-Nucleon
+      4 Nucifer
+      4 NO$\nu$A
+      4 NIPNET
+      4 NICOLE
+      4 NE18
+      4 NA51
+      4 MUTRON
+      4 MuSEUM
+      4 MuScat
+      4 Munich Cryogenic Detector
+      4 MuFUN
+      4 MUEGAMMA
+      4 MPD
+      4 MONARC
+      4 MOLLER
+      4 MOJAVE
+      4 MaxiBoom
+      4 MAINZ-A2
+      4 LSC
+      4 LPC-CHARISSA-DEMON
+      4 LOFT Consortium
+      4 LOFT
+      4 LHC Higgs Cross Section Working Group
+      4 LHCb Silicon Tracker
+      4 LHCb RICH Group
+      4 LHCb Outer Tracker Group
+      4 LHCb DIRAC
+      4 LEPS TPC
+      4 LEAR
+      4 LCLS-II
+      4 LCID Team
+      4 LBNF
+      4 LBNE DUSEL
+      4 LAUSANNE-MUNICH-ZURICH
+      4 LATTICE-HALQCD
+      4 KM3NET
+      4 KM3Net
+      4 KLMM
+      4 KEK-PS-E462
+      4 KEK-PS-E325
+      4 KEK-PS E246
+      4 KEK-PS E224
+      4 KEK Particle Data Group
+      4 KEK-E470
+      4 J-PARC muon g-2/EDM
+      4 J-PARC E14 KOTO
+      4 Jefferson Lab E95-001
+      4 ISOGAL
+      4 ILD
+      4 IFVE-Brussels-Annecy-Los Alamos
+      4 IceCube Gen2
+      4 IAXO
+      4 Hyper-Kamiokande proto
+      4 Holometer
+      4 HOLMES
+      4 Hitomi
+      4 High Resolution Fly's Eye
+      4 High Intensity Neutrino Source
+      4 HEPAP Subcommittee
+      4 HELLAS2XMM
+      4 HEIDELBERG-SACLAY
+      4 Heavy Flavor Averaging Group
+      4 H1 SPACAL Group
+      4 GRAIL
+      4 Gfitter Group
+      4 GASP-WEBT
+      4 GARGAMELLE NEUTRINO PROPANE
+      4 GARGAMELLE
+      4 GAMMA-400
+      4 FIRST
+      4 Fermilab Single Arm Spectrometer Group
+      4 FERMILAB-MICHIGAN-BERKELEY-HAWAII
+      4 FAROS
+      4 EUROTRAPS
+      4 EURICA
+      4 EUCLID
+      4 Euclid
+      4 EROS-2
+      4 EROS2
+      4 EPOS
+      4 EGRET
+      4 EEE
+      4 E941
+      4 E886
+      4 E871
+      4 E862
+      4 E814/E877
+      4 E734
+      4 E-710
+      4 E-683
+      4 E-609
+      4 E581
+      4 E325
+      4 E224
+      4 E144
+      4 E-142
+      4 E137
+      4 E01-011/HKS
+      4 DPHEP Study Group
+      4 DM-Ice
+      4 DEAP/CLEAN
+      4 Daresbury-Mainz-TRIUMF
+      4 DAMPE
+      4 CTEQ
+      4 CSSM
+      4 CREMA
+      4 COSY-GEM
+      4 Columbia-Fermilab-Stony Brook
+      4 COHERENT
+      4 CMS Silicon Strip Tracker
+      4 CMS ECAL Group
+      4 CKMfitter Group
+      4 CERN-SOVIET
+      4 CERN-SACLAY-ZURICH
+      4 CERN-RD50
+      4 CERN-NAPLES-PISA-STONY BROOK
+      4 CERN Muon Storage Ring
+      4 CERN Missing Mass Spect.
+      4 CERN-Michigan State-Oxford-Rockefeller
+      4 CERN-Edinburgh-Mainz-Orsay-Pisa-Siegen
+      4 CERN-Cracow-Munich
+      4 CERN-COLUMBIA-OXFORD-ROCKEFELLER
+      4 CASA-MIA
+      4 CALICE UK
+      4 BTeV Electromagnetic Calorimeter Group
+      4 Brookhaven-CERN-Copenhagen-Lund-Rutherford-Tel Aviv
+      4 British-Scandinavian
+      4 British-French-Scandinavian
+      4 Brazil-Japan Emulsion Chamber
+      4 Borexino/SOX
+      4 BOREX
+      4 BONN-HAMBURG-MUNICH
+      4 BOMBAY-CERN-PARIS-MADRID
+      4 Bologna-Glasgow-Rome-Trieste
+      4 Bologna-Edinburgh-Glasgow-Pisa-Rutherford
+      4 Bologna-CERN-Dubna-Munich-Saclay
+      4 BNL E930
+      4 BNL-E865
+      4 BNL E787
+      4 Bielefeld-BNL-CCNU
+      4 BICEP3
+      4 BGO-OD
+      4 BES III
+      4 BESII
+      4 BEBC TST NEUTRINO
+      4 BDX
+      4 BCMOR
+      4 BASEL-STOCKHOLM-THESSALONIKI
+      4 Basel-Stockholm-Thessaloniki
+      4 BASEL-KARLSRUHE-STOCKHOLM-STRASBOURG-THESSALONIKI
+      4 Basel-Karlsruhe-Stockholm-Strasbourg-Thessaloniki
+      4 Bari-Cracow-Liverpool-Munich-Nijmegen
+      4 ATLAS Liquid Argon Group
+      4 ATLAS LARG
+      4 ATHENS-DEMOCRITOS-LIVERPOOL-VIENNA
+      4 ATF2
+      4 ASTA
+      4 ASSIA
+      4 ASKAP
+      4 Ape
+      4 Ankara-Brussels-CERN-Dublin-London-Open U.-Pisa-Rome-Turin
+      4 AMBER
+      4 ALTO
+      4 ALPS-II
+      4 ALMA ATA-DUBNA-LENINGRAD-MOSCOW-TASHKENT
+      4 Alma Ata-Dubna-Helsinki-Moscow-Prague-Tbilisi
+      4 ALICE SPD
+      4 ALICE EMCal
+      4 ACS
+      4 ACCDHW
+      4 ABCDHW
+      4 Aachen-Brussels-CERN-Ecole Poly-Milan-Orsay-London
+      4 Aachen-Birmingham-Bonn-CERN-London-Munich-Oxford
+      4 Aachen-Berlin-Bonn-CERN-Heidelberg-London-Vienna
+      4 Aachen-Berlin-Bonn-CERN-Cracow-Heidelberg
+      4 A1 hypernuclear
+      4 91-12
+      3 ZEUS Microvertex Group
+      3 ZEPLIN
+      3 XMM-LSS
+      3 WiggleZ
+      3 WASA
+      3 WARP
+      3 WA83/SOPHIE
+      3 WA62
+      3 VSNET Team
+      3 VSA
+      3 VISTA
+      3 VERTIAS
+      3 VAMOS
+      3 USSR-CERN
+      3 UHIC
+      3 TUNKA
+      3 TOROS
+      3 TOMUVOL
+      3 tmfT
+      3 TkL
+      3 Tien Shan
+      3 Tibet AS(gamma)
+      3 TGV
+      3 TA/TALE
+      3 TARC
+      3 TANAMI Team
+      3 TAGGED PHOTON SPECTROMETER
+      3 t20
+      3 SUPERB
+      3 STEREO
+      3 SST-1M
+      3 srEDM
+      3 SPY
+      3 SPQ(CD)R
+      3 SPIN
+      3 SPiDeR
+      3 SOUDAN-2
+      3 SOLAX
+      3 SOIPIX
+      3 SNEWS
+      3 SMC
+      3 Small x
+      3 SLAC E143
+      3 SiLC R&D
+      3 SIGMA-AYaKS
+      3 SiD
+      3 SHARDS Team
+      3 SDSS-III
+      3 RIKEN-BNL-CU
+      3 RIKEN-BNL-Columbia-KEK
+      3 RD52 (DREAM)
+      3 RD46
+      3 RD33
+      3 RD22
+      3 RBCK
+      3 Rare-RI Ring
+      3 Purdue High Energy Physics Group
+      3 PTI
+      3 PS203
+      3 PS199
+      3 PS177
+      3 pp2pp
+      3 PNDME
+      3 Plastic Ball
+      3 Plasma Lens
+      3 Pionic Hydrogen
+      3 PINTEX
+      3 PIERRE AUGER
+      3 PiENu
+      3 PEPPo
+      3 Particle Data Group LBL-91
+      3 PANDA Cherenkov Group
+      3 Pamela
+      3 P326
+      3 OWL
+      3 OVRO
+      3 OscSNS
+      3 Orsay Storage Ring Group
+      3 ORANGE
+      3 Optical Trigger
+      3 Obelix
+      3 NuSTAR Team
+      3 NuMI
+      3 NIMROD
+      3 NAUTILUS
+      3 NA7
+      3 NA56/SPY
+      3 NA38/NA50
+      3 N2K
+      3 MWA
+      3 MuCAP
+      3 MSSM Working Group
+      3 $M\scriptsize{AJORANA}$
+      3 Mock LISA Data Challenge Task Force
+      3 MME
+      3 MIT-Bates OOPS
+      3 MiniCLEAN
+      3 MINERνA
+      3 MINAMI-TATEYA
+      3 MEW
+      3 MAXIMA
+      3 MASTER
+      3 MAP
+      3 MAGORI
+      3 LUMINEU
+      3 LPF
+      3 LOFAR Pulsar Working Group
+      3 Linear Collider Study Group
+      3 Linear Collider American Working Group
+      3 Linac Commissioning Group
+      3 LHeC
+      3 LHCb VELO Upgrade Group
+      3 LHC
+      3 LEP Higgs Working Group for Higgs boson searches
+      3 LEP Energy Working Group
+      3 LEBC-MPS
+      3 LBL-SLAC Storage Ring Study Group
+      3 Large Area Picosecond Photodetector
+      3 LAGUNA
+      3 LAA
+      3 L3 SMD
+      3 L*
+      3 KOSICE-LENINGRAD
+      3 KiDS
+      3 KEK-PS E549
+      3 KEK-PS E522
+      3 KEK-PS E462/E508
+      3 KEK-PS-E246
+      3 KEK-E570
+      3 KEK-E224
+      3 KASCADE-GRANDE
+      3 Kaos
+      3 KAMI
+      3 J-PET
+      3 J-PARC E19
+      3 JLab E94-010
+      3 JLab E03-103
+      3 JLab E01-011
+      3 Jlab E01-011
+      3 JHP synchrotron design Group
+      3 JET
+      3 Jefferson Laboratory E91-016
+      3 Jefferson Lab E94-010
+      3 Isocele
+      3 Isaac Newton Group of Telescopes
+      3 IOTA
+      3 INTEGRAL
+      3 IHEP-JINR PROZA-M
+      3 IHEP-CERN
+      3 IGISOL Group
+      3 IGISOL
+      3 HYPERON
+      3 Hyper-Kamiokande Proto
+      3 HyperGamma
+      3 HPW
+      3 High Energy Monte Carlo Grand Challenge
+      3 Higgs Working Group
+      3 HIFISTARS Team
+      3 HETE-2 Science
+      3 HETE-2
+      3 H.E.S.S
+      3 HerMES
+      3 HERAFitter Team
+      3 HERA-B Outer Tracker Group
+      3 HERA-B Inner Tracker
+      3 Helios
+      3 Heidelberg-Saclay
+      3 HEDgeHOB
+      3 HARP-CDP Group
+      3 HAL-QCD
+      3 Hall-A
+      3 GSI-S160
+      3 GRB RTAS
+      3 GRAND
+      3 GRACE
+      3 GOODS
+      3 GEp-III
+      3 GENIE
+      3 Geant4 Hadronic Working Group
+      3 GEANT4
+      3 GDDS
+      3 GBAR
+      3 GASP
+      3 Gargamelle Neutrino Propane
+      3 GARGAMELLE ANTI-NEUTRINO
+      3 GANDS95
+      3 Gallex
+      3 FULIS
+      3 FRS
+      3 France-Soviet Union
+      3 FOREST
+      3 FNAL-E704
+      3 FNAL-691
+      3 Fly's Eye
+      3 FLUKA
+      3 FlaviaNet Working Group on Kaon Decays
+      3 FlaviaNet Kaon Working Group
+      3 F-GAMMA
+      3 Fermi LAT
+      3 Fermilab Tagged Photon Spectrometer
+      3 Fermilab-Lehigh-Penn-Wisconsin
+      3 Fermilab E906/SeaQuest
+      3 Fermilab E769
+      3 Fermilab E760
+      3 Fermilab E-704
+      3 Fermi GBM/LAT
+      3 FASA
+      3 FAMU
+      3 EXPORT
+      3 EXIST Team
+      3 ESSnuSB
+      3 EMC
+      3 e-ASTROGAM
+      3 EAST
+      3 E969
+      3 E859
+      3 E816
+      3 E810
+      3 E-799
+      3 E799
+      3 E-791
+      3 E-789
+      3 E773
+      3 E772
+      3 E-769
+      3 E-761
+      3 E760/E835
+      3 E-653
+      3 E557/E672
+      3 E557
+      3 E497
+      3 E180 Neutrino
+      3 E158
+      3 E155X
+      3 E155x
+      3 DVCS
+      3 DUSEL
+      3 DUET
+      3 DUBNA-WARSAW
+      3 Dream
+      3 DM-TPC
+      3 DIRC
+      3 DIGIT Team
+      3 DIAMAS
+      3 DECO
+      3 DART
+      3 Darmstadt-Siegen
+      3 DARKSIDE
+      3 Dark Energy Survey
+      3 DAPHNE Team
+      3 CrystalBall @ MAMI
+      3 CREAM
+      3 COSY TOF
+      3 CoRoT Exoplanet Science Team
+      3 Compass
+      3 CMS Silicon Strip Tracker (SST)
+      3 CMS RPC
+      3 CMS muon
+      3 CMS Forward Pixel
+      3 Chooz
+      3 CHIMERA
+      3 Charissa
+      3 Chacaltaya-Emulsion-Chamber
+      3 CesrTA
+      3 CESR Operations Group
+      3 CERN-ROME-SACLAY-VANDERBILT
+      3 CERN RD42
+      3 CERN-Oxford-Rockefeller
+      3 CERN-Naples-Pisa-Stony Brook
+      3 CERN-Lyon-Warsaw
+      3 CERN-Heidelberg-Warsaw
+      3 CERN-Hamburg-Amsterdam-Rome-Moscow
+      3 CERN-Dortmund-Heidelberg-Saclay-Warsaw
+      3 CERN-College de France-Ecole Poly
+      3 CERN
+      3 CDMS II
+      3 CDHSW
+      3 CB-ELSA/TAPS
+      3 CB
+      3 CASA
+      3 CAMBRIDGE-CRACOW-WARSAW
+      3 CALTECH-SIN-TUM
+      3 Cal Tech-SIN-TUM
+      3 Caltech-PSI-Neuchatel
+      3 Caltech-Neuchatel-PSI
+      3 CAGLIARI-PADOVA-TORINO
+      3 BUCHAREST-WARSAW-DUBNA-KOSICE-LENINGRAD-MOSCOW-TASHKENT
+      3 British-Scandinavian-MIT
+      3 British-Scandinavian ISR
+      3 BRAZIL-JAPAN
+      3 Borex
+      3 Bonn-Hamburg-Muenchen
+      3 Bonn-Durham-Nijmegen-Paris (EP)-Torino
+      3 BNL-E888
+      3 BNL-E852
+      3 BNL-Bielefeld
+      3 BNL-AGS E930
+      3 BM@N
+      3 Birmingham-Brussels-CERN-Mons-Serpukhov
+      3 Birmingham-Bonn-CERN-London-Munich-Oxford
+      3 BGR
+      3 Berkeley-Fermilab-Hawaii-Michigan
+      3 Bergen-Brescia-Dubna-Frascati-Oslo-Pavia-Turin
+      3 Belle SVD Group
+      3 Belle-II Software Group
+      3 Belle-II PID
+      3 Belle II computing group
+      3 Beijing Spectrometer
+      3 Beijing-Paris-Rome-Saclay (BPRS)
+      3 BEBC
+      3 BCD
+      3 BATON ROUGE-CRACOW-MOSCOW-TASHKENT
+      3 BARI-CRACOW-LIVERPOOL-MUNICH-NIJMEGEN
+      3 BARI-BONN-CERN-GLASGOW-LIVERPOOL-MILAN-VIENNA
+      3 Bari-Birmingham-CERN-Milan-Paris-Pavia
+      3 BARI-BIRMINGHAM-BRUSSELS-ECOLE POLY-RUTHERFORD-SACLAY-LONDON
+      3 BaBar EMC Group
+      3 AURA
+      3 ATLAS Planar Pixel Sensors R&D
+      3 ATLAS LUCID
+      3 ATLAS Liquid Argon HEC
+      3 ATLAS Liquid Argon Endcap
+      3 ATLAS LArG
+      3 ATLAS LAr Calorimeter Group
+      3 ATLAS HEC
+      3 ATLAS CMOS pixel
+      3 ASY-EOS
+      3 Argonne-Purdue
+      3 ANNIE
+      3 Annecy(LAPP)-CERN-College de France-Dortmund-Heidelberg-Warsaw
+      3 Annecy(LAPP)-Brussels-Freiburg
+      3 Angra
+      3 AnDY
+      3 Amsterdam-Bristol-CERN-Cracow-Munich-Rutherford
+      3 AMSTERDAM-BOLOGNA-PADUA-PISA-SACLAY-TURIN
+      3 AMSTERDAM-BERGEN-BOLOGNA-PADUA-PISA-SACLAY-TURIN
+      3 AMS02-RICH
+      3 AMS-02 ECAL
+      3 AMoRE
+      3 Ames-Bologna-CERN-Dortmund-Heidelberg-LBL-Lund-Warsaw
+      3 ALMA ATA-DUBNA-MOSCOW-PRAGUE-TBILISI-HELSINKI
+      3 Alma Ata-Dubna-Moscow-Prague-Sofiya-Helsinki
+      3 Alma Ata-Dubna-Helsinki-Kosice-Moscow-Prague-Tbilisi
+      3 ALICE-SPD
+      3 ALICE HMPID
+      3 ALICE FoCal
+      3 ALIBAVA
+      3 AKARI-NEP Team
+      3 AKARI NEP Team
+      3 Airwatch
+      3 AGS E813/E836
+      3 AGIS
+      3 AD-4
+      3 ACTPol
+      3 ACORNE
+      3 ACME
+      3 AACHEN-DESY-MIT-NIKHEF-BEIJING
+      3 AACHEN-CERN-HARVARD-MUNICH-NORTHWESTERN-RIVERSIDE
+      3 AACHEN-BRUSSELS-CERN-ECOLE POLY-ORSAY-PADUA
+      3 Aachen-Berlin-Bonn-CERN
+      3 Aachen-Bari-Bonn-CERN-Glasgow-Liverpool-Milan
+      3 A2/GDH
+      3 4pi-Detector
+      2 μFUN
+      2 η-PRiME/SuperFRS
+      2 Zeuthen-Rome (ZeRo)
+      2 ZEUS MVD Group
+      2 ZEUS FPC Group
+      2 ZeRo
+      2 Zadko
+      2 xFitter Developers' Team
+      2 XENON10
+      2 XCS
+      2 Working Group on LEP Energy
+      2 WIZARD/CAPRICE
+      2 Wizard
+      2 with the GPI Team
+      2 with input from SDSS-III
+      2 WITCH
+      2 WISH Team
+      2 WISH
+      2 WISE Team
+      2 WISE
+      2 WiggleZ Team
+      2 Whipple Observatory
+      2 WFXT Team
+      2 WFPC2 ID Team
+      2 Warsaw-Dubna-Kosice-Moscow--Strasbourg-Tbilisi
+      2 WA66
+      2 WA2
+      2 WA11
+      2 VLHC
+      2 VIPERS Team
+      2 VIP
+      2 VERITAS Whipple
+      2 VERA
+      2 VEPP-2000
+      2 VENUS Group
+      2 VEGA
+      2 Utah-Michigan-Chicago
+      2 Ultraviolet Imaging Telescope Science
+      2 ULTRA
+      2 UIT Science
+      2 uFUN
+      2 UA9
+      2 UA7
+      2 UA1-MINIMUM BIAS
+      2 UA1-Minimum-Bias
+      2 U70 Light-Ion Task
+      2 Tunka
+      2 TUMQCD
+      2 T&T
+      2 TRIUMF Muonic Hydrogen
+      2 TRIUMF E497
+      2 TRIC
+      2 TRI
+      2 TREK/E36
+      2 TRB
+      2 TRAPSPEC
+      2 Transport
+      2 Tracker End Cap
+      2 TPL
+      2 TPC/TWO-GAMMA
+      2 TPC/2gamma
+      2 TOSCA
+      2 TORUS
+      2 Topaz
+      2 TIGRESS
+      2 The VERITAS
+      2 Theoretical Physics
+      2 The Fermi-LAT
+      2 TGT
+      2 TEXONO-CDEX
+      2 TEVNPH Working Group
+      2 TEVNPH (Tevatron New Phenomina and Higgs Working Group)
+      2 TESLA FEL
+      2 TAPS/A2
+      2 TAIGA
+      2 TAC
+      2 TA2
+      2 T1015
+      2 SπRIT
+      2 SXDS Team
+      2 Swift Team
+      2 SVOM
+      2 Super Kamiokande
+      2 Super-K
+      2 SuperB Group
+      2 SuperB Accelerator Team
+      2 Straw Module Outer Tracking Group
+      2 Stereo
+      2 SpiRIT
+      2 SPIRE Extragalactic
+      2 SPIRAL2 Project Group
+      2 SPIRAL
+      2 Spin-Splitter
+      2 Spinsplitter
+      2 Spin-Muon
+      2 Spectroscopic Needs White Paper Team
+      2 SPEAR Group
+      2 Spallation Neutron Source
+      2 SOUDAN 2
+      2 SOPHIE/WA83
+      2 SLOTT-AGAPE
+      2 SLIM5
+      2 Slim5
+      2 SLD Heavy Flavour Group
+      2 SLD Electroweak Working Group
+      2 SLD CRID
+      2 SLAC Staff
+      2 SLAC-LBL Mark II
+      2 SLAC/LBL/LLNL PEP-II Design Group
+      2 SLAC-Johns Hopkins-Cal Tech
+      2 SLAC-E158
+      2 SLAC-E154
+      2 SLAC E142
+      2 SkyMapper
+      2 SKM
+      2 SINGS
+      2 SINGG
+      2 SINDRUM I
+      2 SID Group
+      2 SIDDHARTA-2
+      2 SiD Consortium
+      2 SHIP
+      2 SFT
+      2 SFitter
+      2 SFINKS
+      2 SERPUKHOV-SACLAY-DUBNA-MOSCOW
+      2 Serpukhov-Saclay-Dubna-Moscow
+      2 SERPUKHOV-MOSCOW
+      2 Serpukhov-Moscow
+      2 SERPUKHOV-CERN
+      2 SeaQuest
+      2 SciDAC
+      2 SCENE
+      2 SBS
+      2 SBND
+      2 SBLC study Group
+      2 SAFIRES Team
+      2 SACLAY-SERPUKHOV-DUBNA-MOSCOW
+      2 Saclay-Ecole Poly-Rutherford
+      2 s306
+      2 S135
+      2 RTN
+      2 RNBT
+      2 RICH
+      2 RF Group
+      2 REVERSE
+      2 Resonance Spin Structure
+      2 RD53
+      2 RD52
+      2 RD48(ROSE)
+      2 RD48
+      2 RD40
+      2 RD30
+      2 RD-28
+      2 RD-23
+      2 RD23
+      2 RD-2
+      2 RD-19
+      2 R&D
+      2 RATAN
+      2 RAP
+      2 RadPhi
+      2 Rad Hard Vertex Detector R&D - Pixels
+      2 rabia
+      2 QWeak
+      2 Q$_weak$
+      2 $Q_{weak}$
+      2 QCD_TARO
+      2 QCD
+      2 PVDIS
+      2 Pulsar Timing
+      2 PTF
+      2 PS Collider Design Group
+      2 PS210
+      2 PS208
+      2 PS207
+      2 PS200
+      2 PS174
+      2 PS170
+      2 Proton Induced SpAllation
+      2 PROSA
+      2 Project-X
+      2 PRISM
+      2 Princeton-Pavia-Maryland
+      2 PreSPEC
+      2 PRad
+      2 PPC
+      2 PPB-BETS
+      2 POSIPOL
+      2 POPAE
+      2 POLEX
+      2 Polarized He-3
+      2 POL2000
+      2 PN.S
+      2 PNPI-ITEP
+      2 PNLPI-INRNE
+      2 PLUME
+      2 PLANET/RoboNet
+      2 Planck HFI Core Team
+      2 Planck HFI
+      2 PLANCK
+      2 PLAN
+      2 Pisa-Serpukhov
+      2 PISA
+      2 Pi of the Sky
+      2 piH
+      2 PHOTON EMULSION
+      2 PHENIX VTX
+      2 PHAT
+      2 PESSTO
+      2 PEP
+      2 PEANUT
+      2 Pan-STARRS
+      2 PANDA MVD Group
+      2 PANDA MVD
+      2 Panda
+      2 Pamir Chacaltaya
+      2 PALFA
+      2 PAINUC
+      2 P238
+      2 OWL/AirWatch
+      2 Open Science Grid
+      2 Omicron
+      2 OMEGA Team
+      2 Omega Group
+      2 OKA
+      2 OGLE team, Univ. of Warsaw
+      2 OA
+      2 NYSGrid
+      2 NucPi
+      2 N_TOF
+      2 n-TOF
+      2 n TOF
+      2 nTOF
+      2 Novosibirsk Deuteron
+      2 NOVA
+      2 NOTRE DAME-DUKE-CANADA
+      2 NOnuA
+      2 Nobel Foundation
+      2 NLEFT
+      2 NKS/NKS2
+      2 NINA
+      2 NILE
+      2 NICA/MPD
+      2 N* Group in CLAS
+      2 NEWS
+      2 New Muon (NMC)
+      2 NectarCAM
+      2 NEAT
+      2 Nab
+      2 NA62-RK
+      2 NA6
+      2 NA49-future
+      2 Na49
+      2 NA45
+      2 NA-36
+      2 NA-35
+      2 NA27 LEBC/EHS
+      2 NA23
+      2 NA12
+      2 NA1
+      2 n
+      2 Muon g-2 E821
+      2 Muon Accelerator Program (MAP)
+      2 MuonAccelerator Program
+      2 Muon
+      2 Multics-Miniball
+      2 MuLAN
+      2 muLan
+      2 $\mu$FUN
+      2 muCap
+      2 Mu2e Calorimeter Group
+      2 MSST
+      2 MOSCOW-ALMA ATA-DUSHANBE-TASHKENT-TBILISI-CRACOW-LODZ
+      2 MOSCAB
+      2 MOEDAL
+      2 MIT-Bates 88-25
+      2 MISTRAL
+      2 MiNDSTEp
+      2 MicroFUN
+      2 MESS
+      2 Medipix2
+      2 Medipix
+      2 MasterCode
+      2 MARK J
+      2 MARK-II-SLC
+      2 Mark II
+      2 MAMI A2
+      2 Main Injector Commissioning Team
+      2 MAFIA
+      2 MADMAX Working Group
+      2 Macho
+      2 LUNAR
+      2 LSST Science
+      2 LSSS
+      2 Liverpool Telescope
+      2 LIVERPOOL-STOCKHOLM
+      2 LISA International Science Team
+      2 LISA
+      2 LHeC study Group
+      2 LHC Machine Group
+      2 LHCb Vertex Locator Group
+      2 LHCb VELO Upgrade group
+      2 LHCb VELO upgrade group
+      2 LHCb VELO group
+      2 LHCb UT
+      2 LHCb SciFi Tracker
+      2 LHCb Muon Group
+      2 LEP Tunnel Committee
+      2 LEPS II
+      2 LEP Higgs Working Group
+      2 Leipzig-Dubna
+      2 LCTPC-Japan
+      2 LC-TPC
+      2 LCLS Design Study Group
+      2 LBL-SLAC Joint Study Group
+      2 Lattice Strong Dynamics (LSD)
+      2 LASS
+      2 La Silla-QUEST Survey
+      2 Large Area Telescope
+      2 LAr1-ND
+      2 LAGUNA-LBNO Consortium
+      2 L3P
+      2 KM3NeT Italia project
+      2 KM3NeT IT
+      2 Kepler Science Team
+      2 Kentucky Field Theory
+      2 KEK-PS-E518
+      2 KEK-PS-E508
+      2 KEK-PS-E419
+      2 KEK-PS-E373
+      2 KEK-PS-E307
+      2 KEK-PS-E289
+      2 KEK PS E246
+      2 KEK-E176
+      2 KEK-246
+      2 KATRlN
+      2 KASKA
+      2 Karlsruhe Study Group
+      2 KAOS
+      2 KAMLAND
+      2 K2K SciBar Group
+      2 JSNS2
+      2 J-PARC muon g - 2/EDM
+      2 J-PARC KOTO
+      2 J-PARC g-2
+      2 J-PARC E45
+      2 J-PARC E36
+      2 J-PARC-E17
+      2 J-PARC E13
+      2 J-PARC E10
+      2 JPAC
+      2 JLC Calorimeter Group
+      2 JLab-Hall A/VCS
+      2 JLAB-E94-010
+      2 JLAB E12-06-121
+      2 JLab E05-115
+      2 Jlab E05-102
+      2 JLab E01-001
+      2 J-GEM
+      2 JET EFDA
+      2 Jefferson Laboratory E93-038
+      2 Jefferson Lab Hall-A
+      2 Jefferson Lab F(pi)
+      2 Jefferson Lab E94010
+      2 Jefferson Lab E93-049
+      2 Jefferson Lab CLAS
+      2 Jefferson Lab
+      2 JAPAN-BRAZIL EMULSION CHAMBER
+      2 ISOLTRAP
+      2 IsoDAR/DAE$\delta$ALUS
+      2 IsoDAR
+      2 ISiS
+      2 IS353
+      2 IRIS Team
+      2 IRAM
+      2 IRAC
+      2 iPTF
+      2 InterPlanetary Network
+      2 International Hybrid Spectrometer Consortium
+      2 International Gravitational Event
+      2 Illinois Tech-MARYLAND-STONY BROOK-TOHOKU-TUFTS
+      2 ILD Group
+      2 IKAROS Demonstration Team
+      2 IHEP-JINR Neutrino Detector
+      2 IHEP-IISN-LANL-LAPP-TSUIHEP
+      2 IFVE-JINR
+      2 IDS
+      2 ICFA Neutrino Panel
+      2 ICARUS/WA104
+      2 ICARUS-Milano
+      2 IBIS Team
+      2 IBIS Survey Team
+      2 Hyper-K
+      2 HV-CMOS
+      2 HTRU
+      2 HST Eta Carinae Treasury Project Team
+      2 Holebc-EHS
+      2 HNSS
+      2 HKS
+      2 HI Science Working Group
+      2 HIRES
+      2 HiRES
+      2 HINS
+      2 HIGRO
+      2 HiGRO
+      2 High-Z Supernova Search
+      2 HIGH RESOLUTION FLY’S EYE
+      2 HighField Magnet Program
+      2 High-Energy Reactions Analysis Group
+      2 HIFI Team
+      2 HETE Science Team
+      2 HERMES Team
+      2 HerM33es Team
+      2 HERD
+      2 HERAFitter developers' Team
+      2 HERA-B ECAL
+      2 HERA
+      2 HELP
+      2 HELLAS Consortium
+      2 HELIOS Emulsion
+      2 HEIDELBERG-MOSCOW
+      2 Heidelberg - Moscow
+      2 HECTOR
+      2 HEAT
+      2 Hawaii-LBL EMI
+      2 Harvard-Purdue-Wisconsin
+      2 Hall A DVCS
+      2 H8RD22
+      2 H1 SpaCal Group
+      2 GSI ISOMER
+      2 GRIPS
+      2 GRAWITA
+      2 GRAVITY
+      2 GRANIT
+      2 Grande
+      2 Graal
+      2 GOODS AGN
+      2 GMAN
+      2 GLAST Team
+      2 GIBS
+      2 GESSS
+      2 Gerda
+      2 GEp2gamma
+      2 GENEVA-GLASGOW-LIVERPOOL-MILANO-NEUCHATEL
+      2 GBM Team
+      2 GAW
+      2 GASPS
+      2 GARGAMELLE WIDE BAND NEUTRINO
+      2 Gargamelle Anti-neutrino
+      2 Ganil Group
+      2 GammeV-CHASE
+      2 GALLIUM SOLAR NEUTRINO
+      2 GALEX-VVDS
+      2 Galaxy Zoo Team
+      2 Fukui-Tokyo-KEK-Kyoto Sangyo-Osaka-Tokyo Metropolitan
+      2 FTK
+      2 FRENCH-SOVIET
+      2 Freiburg-Moscow
+      2 FP420
+      2 for the HAWC
+      2 FOBOS
+      2 FNAL-E835
+      2 FNAL E835
+      2 FLS
+      2 FlowQCD
+      2 Florence-Michigan-Ohio State-Washington-Wisconsin
+      2 FHS
+      2 F-GAMMA Team
+      2 F-Gamma Team
+      2 Fermi Pulsar Search Consortium
+      2 FERMI-LAT
+      2 Fermilab SeaQuest
+      2 Fermilab/NICADD Photoinjector
+      2 FERMILAB-MINNESOTA-ROCHESTER
+      2 Fermilab-Minnesota-Rochester
+      2 Fermilab-Michigan-Berkeley-Hawaii
+      2 FERMILAB-LEHIGH-PENN-WISCONSIN
+      2 Fermilab E989
+      2 Fermilab E906
+      2 Fermilab E789
+      2 Fermilab E704
+      2 Fermilab E687
+      2 Fermilab E665
+      2 Fermilab E531
+      2 FELIX
+      2 FCC Design Study Group
+      2 fastNLO
+      2 EXTraS
+      2 EXOCHIM
+      2 Euso
+      2 European Lattice
+      2 European K
+      2 EUROnu WP2 Group
+      2 EURECA
+      2 ESSνSB
+      2 ERNA
+      2 Erasme Group
+      2 EP
+      2 ENUBET
+      2 EndoTOFPET-US
+      2 EMU05
+      2 ELISe
+      2 ELC
+      2 ELAIS Consortium
+      2 ELAIS
+      2 EDisCS
+      2 ECFA/DESY LC Physics Working Group
+      2 EBEX
+      2 E989
+      2 E98-108
+      2 E97-103
+      2 E97-006
+      2 E94-104
+      2 E94-014
+      2 E93-18
+      2 E93-049
+      2 E93-026
+      2 E93026
+      2 E93-018
+      2 E93018
+      2 E930'01
+      2 E926
+      2 E91-16
+      2 E892
+      2 E887
+      2 E885
+      2 E872
+      2 E853
+      2 E831/FOCUS
+      2 E823
+      2 E817
+      2 E815
+      2 E802/E859
+      2 E788
+      2 E-745
+      2 E745
+      2 E-705
+      2 E672/E706
+      2 E672/706
+      2 E605
+      2 E597
+      2 E59
+      2 E581/E704
+      2 E537
+      2 E391
+      2 E34
+      2 E288
+      2 E246
+      2 E176
+      2 E-166
+      2 E-144
+      2 E140X
+      2 E-0776
+      2 Dumand
+      2 DUBNA-WARSAW-LENINGRAD
+      2 Dubna-Serpukhov-Tbilisi
+      2 Dubna-Kosice-Moscow-Tbilisi-Warsaw
+      2 DUBNA-KOSICE-MOSCOW-STRASBOURG-TBILISI-WARSAW
+      2 Dubna-Frascati-Padua-Pavia-Turin
+      2 DUBNA-FRASCATI-PADOVA-PAVIA-TORINO
+      2 Dubna-Bucharest-Yerevan-Kosice-Moscow-Prague-Sofiya
+      2 Dubna-Alma Ata-Helsinki-Moscow-Prague-Tbilisi
+      2 DUAL
+      2 DRAGON
+      2 DPHEP
+      2 DONuT
+      2 Diamond Detector
+      2 DHCAL
+      2 DESY-MIT
+      2 DESY-KARLSRUHE-MUNICH-ORSAY-PARIS-SACLAY
+      2 DESY-Hamburg-Heidelberg-Munich
+      2 DéMoN
+      2 DELPHI Trigger Group
+      2 DELPHI MICROVERTEX
+      2 Deep Lens Survey Team
+      2 DEEP2 Survey
+      2 DEBRIS
+      2 DEAP-3600
+      2 DAPHNE Project Team
+      2 DANSS
+      2 DAMA Group
+      2 D0 Luminosity Working Group
+      2 CUPID
+      2 Crystal Barrel/TAPS
+      2 CRYSTAL BARREL
+      2 Crystal Ball/TAPS
+      2 Crystal Ball@MAMI
+      2 CRIS
+      2 CP-PACS/JLQCD
+      2 CP-LEAR
+      2 CP LEAR
+      2 COSY-MOMO
+      2 COSY-HIRES
+      2 CoRoT Team
+      2 CONNIE
+      2 COMPASS RICH Upgrade Group
+      2 COLUMBIA-FERMILAB-STONY BROOK
+      2 COLUMBIA-FERMILAB-ILLINOIS
+      2 Collider Detector
+      2 Cobra
+      2 CMS Tracker Group
+      2 CMS TRACKER
+      2 CMS Offline and Computing
+      2 CMS Muon Barrel
+      2 CMS MSGC
+      2 CMS Forward MSGC
+      2 CMS Electromagnetic Calorimeter Group
+      2 CMS Electromagnetic Calorimeter
+      2 CMS ECAL group
+      2 CMB-S4
+      2 CMBPol Study Team
+      2 CLUE
+      2 CLIC detector and physics (CLICdp)
+      2 CLEO-III
+      2 CLAS12 RICH Group
+      2 CLAS12-RICH
+      2 CLAS12
+      2 CKM fitter Group
+      2 CKMfitter
+      2 CHM
+      2 chi QCD
+      2 CHIPS
+      2 China-Japan Emulsion Chamber
+      2 China-Japan
+      2 CHESS Team
+      2 ChaMP
+      2 Chacaltaya-and-Pamir
+      2 CHACALTAYA
+      2 CFHTLenS
+      2 CERN-US to the LHC Project
+      2 CERN-USSR
+      2 CERN Study Group for Future High Energy Projects
+      2 CERN-Serpukhov Boson Spectrometer Group
+      2 CERN-ROSE/RD48
+      2 CERN RD2
+      2 CERN RD19
+      2 CERN PS205
+      2 CERN-Pisa
+      2 CERN-PARIS-HEIDELBERG-KARLSRUHE
+      2 CERN-NA63
+      2 CERN-MUNICH
+      2 CERN-Lisbon-Neuchatel-Paris-Warsaw
+      2 CERN LHC Working Group
+      2 CERN-LAL
+      2 CERN-Holland-Manchester
+      2 CERN-HAWAII-LBL-WISCONSIN
+      2 CERN-HAMBURG-ORSAY-VIENNA
+      2 CERN-HAMBURG-AMSTERDAM-ROME-MOSCOW
+      2 CERN-GRENOBLE-PADUA-RUTHERFORD-SUSSEX
+      2 CERN-Grenoble-Padua-Rutherford-Sussex
+      2 CERN-DUBNA-MUNICH-SACLAY
+      2 CERN-Dortmund-Heidelberg-Saclay
+      2 CERN-DEMOCRITOS-LIVERPOOL-MONS-PADUA-ROME-SACLAY-TRIESTE
+      2 CERN-COLLEGE DE FRANCE-HEIDELBERG-KARLSRUHE
+      2 CERN-College de France-Ecole Poly-Orsay
+      2 CERN-CAEN
+      2 CDF SVX-II Group
+      2 CDF Silicon Vertex Tracker Group
+      2 CDF Run II Silicon
+      2 CB-TAPS
+      2 Carleton-Michigan State-Ohio State-Toronto
+      2 CAPTAIN
+      2 Canadian LHC
+      2 Canada-Japan-Korea-USA Hybrid Emulsion Spectrometer
+      2 Cal Tech-LBL-Santa Cruz-Hawaii-Michigan-SLAC
+      2 CAL TECH-GRENOBLE-TUM
+      2 C2PU
+      2 C01-08-19
+      2 Bunch Train Study Group
+      2 Bucharest-Dubna-Sofiya-Tashkent
+      2 BTeV RICH Group
+      2 Brussels-Orsay
+      2 Brussels-Genoa-Mons-Nijmegen-Serpukhov-CERN
+      2 Brussels-CERN-London-Mons-Orsay
+      2 Brussels-CERN-Hamburg-Louvain-Moscow-Munich-Naples-Rome
+      2 BROOKHAVEN-CERN-COPENHAGEN-LUND-RUTHERFORD-TEL AVIV
+      2 BRITISH-SCANDINAVIAN
+      2 BRISTOL-GENEVA-HEIDELBERG-ORSAY-RUTHERFORD-STRASBOURG
+      2 Bristol-Geneva-Heidelberg-Lausanne-Queen Mary Coll-Rutherford
+      2 Brasil-Japan Emulsion Chamber
+      2 Brasil-Japan Chacaltaya Emulsion Chamber
+      2 BRASIL-JAPAN
+      2 B Physics Task Force
+      2 Bootes Field
+      2 BOOTES
+      2 BOOMERanG
+      2 Bonn-Durham-Nijmegen-Paris-Strasbourg-Turin
+      2 BONN-CERN-ECOLE POLY-GLASGOW-LANCASTER-MANCHESTER-ORSAY-PARIS-RUTHERFORD-SHEFFIELD
+      2 Bologna-Glasgow-Rutherford-Saclay-Turin
+      2 Bologna-Florence-Genoa-Milan-Oxford-Pavia
+      2 Bologna-CERN-Frascati
+      2 Bologna-CERN-Florence-Genoa-Madrid-Moscow-Paris-Santander-Valencia-Rome
+      2 BOLOGNA-CERN-DUBNA-MUNICH-SACLAY
+      2 BNL-E-949
+      2 BNL-E949
+      2 BNL E926
+      2 BNL E871
+      2 BNL E865
+      2 BNL-E766
+      2 BNL E766
+      2 BNL-AGS E950
+      2 BNL-AGS E802/866
+      2 BNL Advanced Synchroton Study Group
+      2 Birmingham-Glasgow-Oxford
+      2 Birmingham-Glasgow
+      2 Birmingham-CERN-London-Munich-Oxford-London
+      2 BIRMINGHAM-CERN-ECOLE POLY
+      2 BICEP1
+      2 BGR (Bern-Graz-Regensburg)
+      2 BFORE
+      2 Besiii
+      2 Bern-Graz-Regensburg (BGR)
+      2 Berlin-Budapest-Dubna-Prague-Sofiya-Tbilisi-Warsaw
+      2 BERLIN-BUDAPEST-DUBNA-PRAGUE-SERPUKHOV-SOFIYA-TBILISI
+      2 Berlin-Budapest-Dubna-Prague-Serpukhov-Sofiya-Tbilisi
+      2 Berkeley-CERN-Hawaii-Wisconsin
+      2 Belle SVD
+      2 Belle-II TOP Group
+      2 Belle-IISVD
+      2 Belle II Software Group
+      2 Belle II PID
+      2 Belle II computing Group
+      2 BELLE II
+      2 Beijing-Rome-Saclay (BRS)
+      2 Beijing-Roma-Saclay (BRS)
+      2 BEBC WA66
+      2 Beatrice
+      2 BCFL
+      2 BCF
+      2 BARI-BIRMINGHAM-CERN-MILAN-PARIS-PAVIA
+      2 BANARAS-CHANDIGARH-JAIPUR-JAMMU-LUND
+      2 Baby MIND
+      2 BaBar LST
+      2 AuroraScience
+      2 AT-TPC
+      2 ATLAS Upgrade
+      2 ATLAS TILECAL
+      2 ATLAS TDAQ Group
+      2 ATLAS PPS
+      2 ATLAS Planar Pixel Sensor R&D
+      2 ATLAS Pixel Detector
+      2 ATLAS Inner Detector Software Group
+      2 ATLAS ID
+      2 ATLAS HiLum Endcap
+      2 ATLAS High Level Trigger Group
+      2 ATLAS Experiment
+      2 ATLAS Electromagnetic Liquid Argon Calorimeter Group
+      2 ATLAS CMOS
+      2 ATLAS Beam Conditions Monitor
+      2 ATLAS BCM
+      2 ATLAS ALFA
+      2 ATLAS 3D
+      2 ATIC-2
+      2 ATHENS-PADOVA-PISA-WISCONSIN
+      2 ATHENS-LIVERPOOL-VIENNA
+      2 ATHENS-BROOKHAVEN-CERN-SYRACUSE-YALE
+      2 Athens-Bari-Birmingham-CERN-College de France
+      2 ATHENS-BARI-BIRMINGHAM-CERN
+      2 ATA Team
+      2 Astrophysics Group, Keele University
+      2 ASTE
+      2 ASP
+      2 Ashra
+      2 AS$\gamma$
+      2 Argo-YBJ
+      2 Argonne-Minnesota-Oxford-Rutherford-Tufts
+      2 ARCHEOPS
+      2 ApeNEXT
+      2 apeNEXT
+      2 Antihydrogen Trap
+      2 ANNECY(LAPP)-CERN-COLLEGE DE FRANCE-DORTMUND-HEIDELBERG-WARSAW
+      2 Angstrom
+      2 Angra Neutrino
+      2 AMU-IUAC
+      2 Amsterdam-Louvain-Northwestern
+      2 Amsterdam-CERN-Hamburg-Moscow-Rome
+      2 Amsterdam-CERN-Cracow-Munich(MPI)-Oxford-Rutherford
+      2 AMS-02/TRD
+      2 AMS 02 TRD
+      2 AMS 02 Tracker
+      2 AMS-02 ECAL Group
+      2 AMS 02 ECAL Group
+      2 AMI
+      2 AMBER Consortium
+      2 ALMA ATA-DUBNA-HELSINKI-KOSICE-MOSCOW-PRAGUE-TBILISI
+      2 Alma-Ata-Cracow-Dubna-Moscow-Tashkent
+      2 Alma Ata-Budapest-Bucharest-Warsaw-Dubna-Cracow-Moscow-Sofiya-Tashkent- Tbilisi-Ulan Bator-Hanoi
+      2 Alma Ata-Bucharest-Leningrad-Dubna-Dushanbe-Yerevan-Kosice-Cracow - Leningrad-Moscow-Tashkent-Tbilisi-Ulan Bator-Zernograd
+      2 ALMA ATA-BUCHAREST-GATCHINA-DUBNA-DUSHANBE-EREVAN-KOSICE-KRAKOW- LENINGRAD-MOSCOW-TASHKENT-TBILISI-ULAN BATOR
+      2 Alma Ata-Baku-Belgrade-Bucharest-Dubna-Kishinev-Leipzig- Moscow-Prague-Samarkand-Sofiya-Tashkent-Tbilisi-Ulan Bator-Varna
+      2 ALMA ATA-BAKU-BELGRADE-BUCHAREST-BUDAPEST-CRACOW-DUBNA- MOSCOW-PRAGUE-SOFIYA-TASHKENT-TBILISI-ULAN BATOR-VARNA-WARSAW-YEREVAN
+      2 aLIGO
+      2 Aligarh-Bombay-Chandigarh-Jammu-Varanasi
+      2 ALICE VHMPID
+      2 ALICE Offline
+      2 ALICE Muon Spectrometer
+      2 ALICE MFT Working Group
+      2 ALICE-HMPID
+      2 ALICE FoCal Group
+      2 ALADIN/LAND
+      2 ALADIN 2000
+      2 ALADiN2000
+      2 AKARI all sky survey Team
+      2 AIRWATCH
+      2 AIDA
+      2 AIACE
+      2 AGS E885
+      2 AGORA
+      2 AGIPD
+      2 AGES
+      2 AGE
+      2 Agata
+      2 AFS
+      2 AEGIS Proto
+      2 AACHEN-PADUA
+      2 Aachen-Orsay-Palaiseau-Saclay-Wuppertal
+      2 Aachen-CERN-Torino
+      2 Aachen-Brussels-CERN-Ecole Poly-Orsay-Padua
+      2 AACHEN-BRUSSELS-CERN-ECOLE POLY-MILAN-ORSAY-LONDON
+      2 AACHEN-BONN-CERN-DEMOCRITOS-LONDON-OXFORD-SACLAY
+      2 Aachen-Bonn-CERN-Cracow
+      2 Aachen-Berlin-CERN-London (I.C.)-Vienna
+      2 AACHEN-BERLIN-CERN-CRACOW-INNSBRUCK-LONDON-VIENNA-WARSAW
+      2 Aachen-Berlin-CERN-Cracow-Innsbruck-London-Vienna-Warsaw
+      2 Aachen-Berlin-Bonn-Hamburg-Heidelberg-Muenchen
+      2 Aachen-Berlin-Bonn-CERN-Cracow-London-Vienna
+      2 AACHEN-BERLIN-BONN-CERN-CRACOW-HEIDELBERG-WARSAW
+      2 AACHEN-BERLIN-BOMBAY-CERN-CRACOW-INNSBRUCK-JAMMU-LONDON-VIENNA-WARSAW
+      2 A2 at MAMI
+      2 A1200 Group
+      2 97-01
+      2 4pi
+      2 2
+      1 χQCD
+      1 η-PRiME/Super-FRS
+      1 (γ,n) at Maxlab
+      1 Zurich ETH-Cracow-PSI
+      1 ZuAC
+      1 Zeuthen-Rome / ZeRo
+      1 ZEUS US
+      1 ZEUS UK
+      1 ZEUS STT
+      1 ZEUS Presampler Group
+      1 ZEUS MICROVERTEX Group
+      1 ZEUS Microvertex
+      1 ZEUS Luminosity Monitor Group
+      1 ZEUS Luminosity Group
+      1 ZEUS HES
+      1 ZEUS FNC Group
+      1 ZEUS Barrel Calorimeter Group
+      1 ZEUS BAC
+      1 Ze-Ro Zeuthen-Roma
+      1 Zeplin-III
+      1 zCOSMOS Team
+      1 YPP
+      1 Young Physicists Panel
+      1 Young Exoplanet Transit Initiative
+      1 YETI
+      1 YBJ
+      1 Yakutsk Array Group
+      1 Yakutsk array Group
+      1 Y
+      1 XXX
+      1 XRT
+      1 Xray Cosmology Group
+      1 X-ray Astronomy Group, Department of Physics and Astronomy, Leicester University, Leicester, UK;
+      1 X-ray Astronomy Group, Department of Physics and Astronomy, Leicester University, Leicester, UK
+      1 XQCD-J
+      1 XQCD
+      1 XQC
+      1 XMM Optical Monitor
+      1 XMM-Omega project
+      1 XMM-Newton Survey Science Centre (SSC) Consortium
+      1 XMM-Newton SSC
+      1 XMM-Newton M 31 large program
+      1 XMM-Newton Extended Surveyof the Taurus Molecular Cloud
+      1 XMM-LSS/SWIRE
+      1 XMMCOSMOS
+      1 XMM-CDFS Team
+      1 XMASS-I
+      1 Xmass
+      1 XIPE Science Working Group
+      1 xFitter team
+      1 xFitter Developers Team
+      1 XENON Liquid
+      1 XCov 15 Team
+      1 XBootes
+      1 WTTH Consortium
+      1 World Wide Study Organizing Committee
+      1 Worldwide LC Test Beam Working Group
+      1 Working Group on the physics of hadronic showers
+      1 Working Group on Radiative Corrections and Monte Carlo Generators for Low Energies
+      1 Working Group on LEP energy
+      1 Working Group on LEP Absolute Energy
+      1 Working Group on Field buses
+      1 WMAP Science Team
+      1 Wizard Science Team
+      1 WIZARDS
+      1 Wizard-PAMELA
+      1 WiZard/MASS2
+      1 Wizard-Mass
+      1 Wits HEP group
+      1 with input from the SDSS-III
+      1 WISH Coordinating Team
+      1 Wisconsin-Harvard-Penn-Chicago
+      1 Wideband Beam Photon
+      1 Wideband beam photon
+      1 Whole Earth Telescope Xcov23
+      1 Whole Earth Telescope Xcov 21 Team
+      1 Whole Earth Telescope Xcov 17 Team
+      1 Whole Earth Telescope Team
+      1 White Paper Team
+      1 WHEPP4 Working Group
+      1 WFXT
+      1 WFPC2 Investigation Definition Team
+      1 WFPC-2 Investigation Definition Team
+      1 WFPC2 Investigation Definition
+      1 WFPC-2 ID Team
+      1 WFMOS
+      1 WFIRST SDT
+      1 WET Team
+      1 Weizmann Institute - Strasbourg
+      1 Weizmann Inst. High Energy Physics Group
+      1 WeCAPP
+      1 WEBT-ENIGMA
+      1 WEAVE
+      1 WATCHMAN
+      1 WASA-COSY
+      1 Wasa-At-Cosy
+      1 Warsaw OSIRIS II
+      1 WARSAW-DUBNA-KOSICE-STRASBOURG-TBILISI
+      1 Warsaw-Dubna-Kosice-Moscow-Tbilisi
+      1 Warsaw-Dubna-Kosice-Leningrad-Moscow-Tashkent-Ulan Bator
+      1 WARSAW-DUBNA-KOSICE-LENINGRAD-MOSCOW-TASHKENT
+      1 Warsaw-Dubna-Gatchina-Kosice-Leningrad-Moscow-Tashkent
+      1 WARSAW-DUBNA
+      1 Warsaw-Dubna
+      1 Warsaw Bubble Chamber Group
+      1 WARP R&D Group
+      1 Warp
+      1 WA99
+      1 WA97/NA57
+      1 WA-93
+      1 WA92
+      1 WA83
+      1 WA-80
+      1 WA76/102
+      1 WA-76
+      1 WA69
+      1 WA47
+      1 WA42
+      1 WA4
+      1 WA24
+      1 WA17
+      1 WA14
+      1 VVV
+      1 VVDS-SWIRE
+      1 VUDS Team
+      1 VNGS Consortium
+      1 VLHC Design Study Group
+      1 VLBL Study Group H2B-4
+      1 VLBL Study Group H2B-1
+      1 VLBI
+      1 VLBA 43 GHz M87 monitoring Team
+      1 VLA-COSMOS
+      1 VLA-CDFS Team
+      1 Vivitron Study Group
+      1 VIRGO LIGO Working Group
+      1 VIRGO LIGO / Working Group
+      1 VIRGO Joint LIGO / Working Group
+      1 VIRGO AURIGA-EXPLORER-NAUTILUS
+      1 VIPIX
+      1 VIMS Team
+      1 VIMOS VLT Deep Survey
+      1 VIMOS VLT Deep survey
+      1 Vienna
+      1 VHFSMC
+      1 VEPP-5
+      1 VEPP-4
+      1 VEPP-2000 Team
+      1 VELO Upgrade Group
+      1 VELO Upgrade
+      1 VELO Group
+      1 Vatican Observatory Group, Steward Observatory, University of Arizona
+      1 VAST
+      1 VAO SED Team
+      1 VAMDC
+      1 Vacuum, Surfaces and Coatings (VSC) Group
+      1 UV Cherenkov
+      1 UTFIT
+      1 Utah-Michigan
+      1 UT
+      1 US VME-P Committee
+      1 US to the LHC Project
+      1 USSR-USA
+      1 US-JAPAN Neutrino
+      1 USFNAL-BNL Long baseline neutrino experiment study
+      1 USBSM
+      1 USAP (Uniformization of Software Access Procedures)
+      1 UNK Controls Staff
+      1 UNK
+      1 University of Pittsburgh
+      1 United Kingdom Dark Matter
+      1 UNIRIB
+      1 ULTRASAT Science Team
+      1 ULTRACAM
+      1 UK Submillimetre Survey Consortium
+      1 U.K. — FRANCE EUROGRAM
+      1 UKDMKC
+      1 UKDM
+      1 UKCQD
+      1 UIT
+      1 UHECR/TLE
+      1 ugsburg - 86135 - Augsburg - Germany
+      1 UConn-Yale-TUNL-Weizmann-PTB-UCL
+      1 UConn-Yale-Duke-Weizmann-PTB-UCL
+      1 UCN Project Team
+      1 UCNB
+      1 UCLA-ACU-GWU-LAMPF
+      1 UA4-2
+      1 UA2-prime
+      1 UA1-Minumum Bias
+      1 UA1 Minimum Bias
+      1 UA1-MIMI
+      1 Two Fermion Working Group
+      1 Two-Body-Weak-Decays
+      1 TWEA-DC Team
+      1 TW02TEN
+      1 TUS
+      1 Turin-Dubna-Frascati
+      1 Turin
+      1 TUNL
+      1 TUNKA-REX
+      1 TTF-FEL
+      1 Tsukuba U
+      1 TSUBAME Team
+      1 Troitsk
+      1 TRIUMF S1249
+      1 TRIUMF-RMC
+      1 TRIUMF-ISOL
+      1 TRIUMF-614
+      1 TRISTAN Theoretical Working Group
+      1 TRISTAN Light Source Commisioning Group
+      1 TRISTAN Control Group
+      1 TRImuP Group
+      1 TrIce
+      1 TRIAC
+      1 TREND
+      1 TRAP
+      1 TRANSPORT
+      1 TRAGALDABAS
+      1 TRADE
+      1 Tracker Optimization Group
+      1 TP/SB
+      1 TPC-TWO-GAMMA
+      1 TPC-Two gamma
+      1 TPC/2GAMMA
+      1 TPC
+      1 TOXENO
+      1 TOTEM T2
+      1 Torino-Vienna
+      1 TOPxLEPS
+      1 Top Quark Working Group
+      1 Topical Conveners: K.N. Abazajian, J.E. Carlstrom, A.T. Lee
+      1 TOPAZ White Paper Committee
+      1 TOPAZ Vertex Chamber Group
+      1 TOPAZ-TPC Group
+      1 Top Averaging Group
+      1 Top
+      1 tomic Research Centre - Trombay - Mumbai - India
+      1 TOKYO-KEK-OSAKA-TOKYO
+      1 TNF
+      1 TMVA Core Developer Team
+      1 TMU-KEK-Sumitomo Heavy Industry
+      1 TMT International Science Development Teams & TMT Science Advisory Committee
+      1 TLEP Design Study Working Group
+      1 TLEP
+      1 TJNAF Hall A
+      1 TJNAF
+      1 TITAND Working Group
+      1 TIPP
+      1 Time Multiplexed Track Trigger Group
+      1 Tile Calorimeter Group
+      1 Tile Calorimeter
+      1 TileCal
+      1 TIITUS Working Group
+      1 TIBET III
+      1 Tibet Gamma
+      1 TIBET  ASγ
+      1 Tibet Asγ
+      1 TIBET AS Gamma
+      1 TIBET AS-gamma
+      1 TIBET ASgamma
+      1 Tibet AS-Gamma
+      1 Tibet ASGamma
+      1 Tibet-AS(gamma)
+      1 Tibet Asgamma
+      1 TIBET ASG
+      1 TIARA
+      1 TianQin
+      1 Thomas Jefferson National Accelerator Facility, Newport News, VA, USA
+      1 The Pierre Auger
+      1 Theory Group, Physics Dept. The Univ. of Texas at Austin
+      1 Theory Group, Department of Physics, Peking University
+      1 The ORANGE : GSI Darmstadt, TU Munich, Univ. of Cyprus
+      1 THEIA Interest Group
+      1 Theia
+      1 the HAWC
+      1 The Hadron Spectrum
+      1 The Fermi LAT
+      1 The CALIFA Team
+      1 the ALICE
+      1 TFTR Team
+      1 TEXONO + CDEX
+      1 Texas Mauritanian Eclipse
+      1 Texas
+      1 TEVNPH Working Group (Tevatron New Phenomena and Higgs Working Group)
+      1 Tevatron Run II/SUSY Higgs Working Group
+      1 Tevatron Run II
+      1 Tevatron New Physics Higgs Working Group
+      1 Tevatron New Phenomena Higgs Working Group
+      1 Tevatron New Phenomena & Higgs Working Group
+      1 Tevatron New Higgs Working Group
+      1 Tevatron Muon
+      1 Tevatron Higgs Working Group
+      1 Tevatron Beam-Beam Team
+      1 Tevatron
+      1 TeV4LHC Working Group
+      1 TeV4LHC-Top
+      1 TeV4LHC QCD Working Group
+      1 TeV-2000 Study Group
+      1 TESLA test facility photoinjector
+      1 TESLA FEL Study Group
+      1 TESLA FEL study Group
+      1 TESLA-FEL
+      1 Telescope Array Project
+      1 Telecope Array
+      1 TEL AVIV-BROOKHAVEN-TRIUMF
+      1 Technical Publications Working Group
+      1 Team On Procurement Systems, Stanford Linear Accelerator Center
+      1 TD-SRF
+      1 TDIS
+      1 TDAQ
+      1 TChiL
+      1 TASTE
+      1 Tasso
+      1 Target Tracker group
+      1 TARA
+      1 TAPAS
+      1 Tango
+      1 Tanami Team
+      1 TAMA300
+      1 TALES
+      1 TAGX (ES-134)
+      1 Tagged Photon
+      1 Tagged-Particle Spectrometer
+      1 Tagged-Neutrino
+      1 TA
+      1 T980 Crystal Collimation
+      1 T-980
+      1 T861
+      1 T-510
+      1 T2K UK
+      1 T2K's 2KM
+      1 T2K/ND280/TPC
+      1 T2K ND280 TPC
+      1 T2K ND280 FGD
+      1 T2K FGD
+      1 T2K Beam Group
+      1 t20 Jefferson Lab.
+      1 t(20)
+      1 SπRIT-TPC
+      1 SYRACUSE-DEMOCRITOS
+      1 Symb. Comp. Group, DFT-UERJ, Brazil
+      1 SXDS
+      1 SWIRES
+      1 SWIRE Co-Investigator
+      1 Swift XRT Team
+      1 Swift XRT
+      1 Swift Science
+      1 Swift Italian Team
+      1 Swift E/PO Team
+      1 Swift BAT
+      1 SWIFT
+      1 SVXII Design Group
+      1 Suzaku-WAM Team
+      1 Suzaku
+      1 SUSY Working Group
+      1 SuperWasp
+      1 Supersymmetry Subgroup
+      1 SuperKEKB Physics Working Group
+      1 SuperKEKB Accelerator Group
+      1 SuperKEKB accelerator group
+      1 SUPER–KAMIOKANDE
+      1 SuperKamiokade
+      1 Super-FRS of NUSTAR@FAIR
+      1 Superconducting RF R&D
+      1 SuperCDMSSoudan
+      1 SuperB Team
+      1 SuperB PID
+      1 SUMICO
+      1 Sumico
+      1 SUGRA Working Group
+      1 Subatomic Structure of Matter Centre
+      1 Subaru/XMM-Newton
+      1 Subaru Deep Field
+      1 Study Group of KEK B Factory
+      1 STRAD
+      1 St Petersburg-Tashkent-Tbilisi
+      1 Storage-Ring Group
+      1 Storage Ring Group
+      1 STIS 8176 Team
+      1 ST group
+      1 STF Cavity
+      1 STEP
+      1 Steep Blazars
+      1 STAR TOF Group
+      1 STAR TOF
+      1 STAR IRSF/SIRIUS variable survey Team
+      1 STAR FTPC
+      1 STAR ALICE
+      1 ST
+      1 SST-1M sub-Consortium
+      1 SST-1M Consortium
+      1 SST-1M consortium
+      1 SSE Team
+      1 SSD
+      1 SSC Underground Technology Advisory Panel
+      1 SSC Liquid Argon Calorimeter Working Group
+      1 SSCintCAL
+      1 SSC Central Design Group
+      1 SSALMON
+      1 SRF Accelerator Test Facility
+      1 SRF
+      1 SPY/NA56
+      1 SPTpol
+      1 SPT-3G
+      1 SPSS
+      1 SPS/LEP Accelerator Controls Group
+      1 SPQCDR
+      1 SPPS
+      1 SPOrt
+      1 SPOL
+      1 SPL Study Group
+      1 SPLIT
+      1 Spitzer WRRINGS Team
+      1 Spitzer/MIPS GTO Team
+      1 Spitzer Microlensing Team
+      1 Spitzer/IRS
+      1 SPIRE SAG
+      1 SPIRAL2-S3
+      1 SPIRAL2 Group
+      1 SPIN@U-70
+      1 SPIN MUON
+      1 Spin muon
+      1 SPIN HERA
+      1 SPIN-Fermilab
+      1 SPIN@FERMI
+      1 Spider
+      1 SPICES Team
+      1 SPICA Study Team
+      1 SPICA MCS Team
+      1 SPI
+      1 SPHERA
+      1 SPESA4-pi
+      1 SPES4 pi
+      1 SPES4
+      1 SPEAR CRYSTAL BALL
+      1 Spear And Lbl/Slac Joint Pep Group
+      1 SPbSU Group
+      1 SPASE2
+      1 SPASCHARM
+      1 SPAN
+      1 Space Telescope Imaging Spectrograph Investigation Definition Team
+      1 SPACE Team
+      1 SPACE.Science Team
+      1 Space and Atmospheric Physics Group, The Blackett Laboratory, Imperial College, London, UK
+      1 SPACAL/LAA
+      1 SpaCal
+      1 SPA
+      1 SOVIET-FRENCH
+      1 Soviet-French
+      1 Soudan
+      1 SOT/Hinode-team
+      1 SOLIS
+      1 SoLiD
+      1 Solar Orbiter Team
+      1 Solar Axion Telescopic Antenna
+      1 SOI
+      1 SOFIA Science Vision Team
+      1 SOD
+      1 Snowmass Working Group on Precision Electroweak Measurements
+      1 Snowmass 2013 Cosmic Frontier Working Groups 1–4
+      1 Snowmass 2001 Organizing Committee
+      1 SNFactory
+      1 SNEWS Group
+      1 SMT Group
+      1 SModelS Group
+      1 SM MC Working Group
+      1 SMILE Group
+      1 SMART
+      1 SM and NLO MULTILEG Working Group
+      1 SM and NLO Multileg Working Group
+      1 SMA
+      1 SLUGGS Team
+      1 SL RF Group
+      1 SLD WIC
+      1 SLD VXD3 Group
+      1 SLD Vertex Detector
+      1 SLD Heavy Flavor and Electroweak Groups
+      1 SLD Heavy Flavor and Electroweak Group
+      1 SLD Electroweak and Heavy Flavour Groups
+      1 SLD B Spectroscopy Group
+      1 SL Controls Group
+      1 SLC Final Focus Group
+      1 SLC
+      1 SLAC T-150
+      1 SLAC-SP-017
+      1 SLAC Real Photon
+      1 SLAC Polarized Electron Source Group
+      1 SLAC-NE8
+      1 SLAC mQ
+      1 SLAC-MIT-Cal Tech
+      1 SLAC-LBL  Mark  II
+      1 SLAC/LBL/LLNL-PEP-II Design Group
+      1 SLAC-LBL-LLNL-PEP-II Design Group
+      1 SLAC/LBL/LLNL B Factory Design Group
+      1 SLAC/LBL/LLNL B Factory Accelerator Group
+      1 SLAC-LBL-Harvard-Mark II
+      1 SLAC-LBL-HARVARD
+      1 SLAC-LBL-Harvard
+      1 SLAC-KEK-Novosibirsk-LAL-DESY
+      1 SLAC E155X
+      1 SLAC E155
+      1 SLAC E154
+      1 SLAC-E142
+      1 SLAC E-142
+      1 SLAC-Carleton-NRC Canada
+      1 SLAC BC-72/73
+      1 SKS/KEK-ITEP
+      1 SKS
+      1 SKA magnetism working group
+      1 SKA-Japan Pulsar Science Working Group
+      1 SKA-Japan Consortium Cosmology Science Working Group
+      1 SKA EoR/CD SWG
+      1 SKA EoR/CD Science Team
+      1 SKA Cosmology SWG
+      1 SKA Cosmic Magnetism Working Group
+      1 SI Vision Mission Team
+      1 Site Utilization Work Group
+      1 SIRIUS
+      1 SIPM
+      1 Sinya AOKI for HAL QCD
+      1 SINGS Team
+      1 Single Arm Spectrometer Facility Group
+      1 SINDRUM-II
+      1 SINDRUM-I
+      1 Sincrotrone Trieste Machine Group
+      1 Simons Array
+      1 SIMBA
+      1 Sigma-L/sigma-T
+      1 SIGMA-AJAX
+      1 Sigma
+      1 sigma
+      1 SIFTER
+      1 SiD groups
+      1 SiD Concept
+      1 SiD and ILD vertex detector R&D groups
+      1 SHiZRaG
+      1 SHIPTRAP
+      1 SHERPA
+      1 SHADES
+      1 SGO
+      1 SGD
+      1 Serpukhov-Moscow-Dubna
+      1 Serpukhov Contribution
+      1 Serpukhov-Brussels-Los Alamos-Annecy(LAPP)-Pisa
+      1 Serpukhov-Annecy-Los Alamos-Tbilisi
+      1 Serpukhov-167
+      1 SEE-COAST Team
+      1 SEASPIN
+      1 SDSS-II SEGUE
+      1 SDSS-III Galaxy Clustering
+      1 SDSS-II
+      1 SDLCQ
+      1 SDHCAL
+      1 SDF Team
+      1 SDC Software Process Working Group
+      1 SDC Liquid Argon Calorimeter Group
+      1 SDC ITD Group
+      1 SDC Fiber Tracking Group
+      1 SDC Data Modeling Working Group
+      1 SDC Core Software Working Group
+      1 SCOSMOS
+      1 SCI Team
+      1 SCISSORS II
+      1 Scintillator Based Muon
+      1 Scintillating Fiber Tracking Group
+      1 SciNOvA
+      1 SCiDAC COMPASS
+      1 SciDac-COMPASS
+      1 Scandinavian ISR
+      1 Scandinavian
+      1 Scalar
+      1 SBLC Study Group
+      1 SBLC
+      1 sBelle Design Group
+      1 S-Band Study Group
+      1 SAUND II
+      1 SATURNE
+      1 SATIF Dosimetry Group
+      1 SARA Staff
+      1 Santa Cruz-SLAC
+      1 Sanford Laboratory at Homestake
+      1 SALAD
+      1 SAGE-Spec Team
+      1 SAGEM SA
+      1 SAFARI/SPICA Team
+      1 Saclay-UCLA-PSI-Washington-Beer Sheva-Dubna
+      1 Saclay-Soviet
+      1 Saclay-Serpukhov-Dubna-Moscow
+      1 Saclay-Serpukhov-Dubna-Morsoc
+      1 Saclay - Orsay - Bari - Bologne
+      1 SACLAY-LYON-EDMONTON
+      1 Saclay hardware alignment Group
+      1 SACLAY-GATCHINA
+      1 Saclay-Frascati-Rome
+      1 SACLAY-ECOLE POLY-RUTHERFORD
+      1 Saclay-Amsterdam-Bologna-Rehovoth-Ecole Poly
+      1 S.A.B.R.E.
+      1 SABAT
+      1 S4G Team
+      1 S4CMS
+      1 S$^3$
+      1 S3
+      1 S258
+      1 s236/GSI
+      1 S233
+      1 S223
+      1 S2
+      1 S1202 at TRIUMF
+      1 S
+      1 Russian to the LHC Project
+      1 Russian-Nordic-British-Theory
+      1 Russian-Nodric-British Theory (RNBT)
+      1 Russian-German-United States-Swedish
+      1 RSPT
+      1 RSC
+      1 RPC CMS
+      1 R parity Working Group
+      1 RP220
+      1 Royal Swedish Academy of Sciences
+      1 ROTBAR
+      1 ROSE/RD48
+      1 ROSE-RD48
+      1 ROOT
+      1 RooStats Team
+      1 Roma-Pavia
+      1 ROCHESTER-SLAC-MIT
+      1 Rochester-Minnesota-Fermilab
+      1 ROCHESTER-FERMILAB-MICHIGAN STATE-MINNESOTA-NORTHEASTERN
+      1 Rochester-Cal Tech-Chicago-Fermilab-Stanford
+      1 RoboNet-II
+      1 ROBONET
+      1 Robert Craig Group
+      1 RMC-II
+      1 RMC-I
+      1 RMC-2
+      1 RMC-1
+      1 RM123
+      1 RING (E174)
+      1 RING
+      1 RIKEN RAL R77
+      1 RIKEN-BNL-Columbia
+      1 RIEKN-BNL-Columbia
+      1 RICH working group
+      1 RIBRAS
+      1 RIBF
+      1 RIBENS
+      1 RHIC SPIN
+      1 RHIC-f
+      1 RHIC
+      1 REX-ISOLDE/MINIBALL
+      1 REXISOLDE
+      1 Rex-Isolde
+      1 REX
+      1 Review paper presented at Int. Symp. on High-Energy Physics, Dresden, DDR, Apr. 19-26, 1971
+      1 Reverse
+      1 ReteQuarkonii
+      1 Resonating Group
+      1 REM Team
+      1 REM/ROSS
+      1 REM
+      1 REFLEX Team
+      1 REDTOP
+      1 RED
+      1 RDMS/UK
+      1 RDK II
+      1 R&D 8
+      1 RD52/DREAM
+      1 RD 50
+      1 RD49
+      1 RD43
+      1 RD42 Diamond Detector
+      1 Rd42
+      1 RD41
+      1 RD39 CERN
+      1 RD-36
+      1 RD-34
+      1 RD29
+      1 RD28
+      1 RD27(UK)
+      1 RD-27(UK)
+      1 RD-27
+      1 RD26
+      1 Rd-26
+      1 RD24
+      1 RD21
+      1 RD-18
+      1 RD17-FAROS
+      1 RD17
+      1 RD16
+      1 RD12 Project
+      1 RD12
+      1 RD11
+      1 RCS Team
+      1 RCS beam commissioning team
+      1 RCS 99-114
+      1 RCS-2
+      1 RCS
+      1 RCNP-E57
+      1 RCNP-E372
+      1 RCNP E308
+      1 RCBC-EHS
+      1 RBC+UKQCD
+      1 RBC and UKQCD s
+      1 RAVE science Working Group
+      1 RARF Accelerator Group
+      1 RadioAstron AGN Early Science Working Group
+      1 RadioAstron
+      1 RaDIATE
+      1 RAD@home Astronomy Collaboratory, India
+      1 R808
+      1 R7
+      1 R2D Exploratory Working Group
+      1 R211
+      1 R-110
+      1 R110
+      1 Q_weak
+      1 $Q_ weak$
+      1 QUIJOTE CMB
+      1 QUIJOTE
+      1 QUEST
+      1 QUEEN-MARY-COLLEGE- GENEVA-RUTHERFORD-HEIDELBERG-CAMBRIDGE-LAUSANNE- BRISTOL
+      1 Quarkonium Working Group
+      1 Quark Flavor Physics Working Group
+      1 QUANTUS Team
+      1 QPS
+      1 QKQCD
+      1 QCSSF
+      1 QCD Tools Working Group
+      1 QCD Teraflops
+      1 QCD Teraflop
+      1 QCDTARO
+      1 QCD Subgroup on Diffractive and Forward Physics
+      1 QCDSP
+      1 QCDSF–UKQCD
+      1 QCDSF-UKQC
+      1 QCD PAX
+      1 QCDOC
+      1 Q&A
+      1 PXIE/ ProjectX
+      1 PXIE
+      1 Pulsar Search Consortium
+      1 Public Outreach Team
+      1 PTF Teams
+      1 PS Performance Committee
+      1 PSI UCN Project Team
+      1 PSI-PNPI-ILL-Cracow-IMEP-UCN
+      1 PSI Pixel
+      1 PSEC
+      1 pSCT Consortium
+      1 PS212
+      1 PS-210
+      1 PS209
+      1 PS-205
+      1 PS202/JETSET
+      1 PS-202
+      1 PS202
+      1 PS195-CPLEAR
+      1 PS194
+      1 PS193
+      1 PS-185
+      1 PS 185
+      1 PS184
+      1 PS180
+      1 PS-179
+      1 PS173
+      1 PS-170
+      1 PS1
+      1 PROZA-2
+      1 Protvino-Pisa-Zeuthen-Sofiya-Dubna
+      1 Protvino-Dubna-Gatchina-Michigan
+      1 Proton Source Department
+      1 proto-NNbar
+      1 ProtonImprovement Plan
+      1 Proton Driver Study II
+      1 Proton Driver Study Group
+      1 Proton-Driver
+      1 Proton Drive
+      1 Proportional Hybrid System Consortium
+      1 Propane Bubble Chamber
+      1 PRONAOS
+      1 Prompt Beam Facility
+      1 PROMICE
+      1 Project the Team of the LOFAR Magnetism Key Science
+      1 Project Thermalization
+      1 Project Team
+      1 PROJECT 8
+      1 Progress Report
+      1 Professor
+      1 PRISM Working Group
+      1 PRISM Task Force
+      1 PRISMA-CLARA
+      1 Princeton-Maryland
+      1 Princeton-Chicago
+      1 PRIMUS teams
+      1 PRESPEC-AGATA
+      1 PreSPEC-AGATA
+      1 PRESPEC
+      1 Precision Higgs Working Group of Snowmass 2001
+      1 PRad at JLab
+      1 PPS
+      1 PP2PP(R7)
+      1 pp2pp (R7)
+      1 Portuguese Lattice QCD
+      1 POLIS
+      1 Polarized ep
+      1 Polarimeter Group
+      1 POLARBEAR-2
+      1 POINT-AGAPE Theoretical Physics
+      1 POGOLite
+      1 PNL-USC
+      1 P-mu+
+      1 PLANET/Robonet
+      1 Planetary Nebula Spectrograph Team
+      1 Planck CTP Working Group
+      1 Planck CTP
+      1 Planck and AMI
+      1 Planar Pixel Sensor
+      1 Pixel Detector Development
+      1 Pixel Detector
+      1 pi-XA
+      1 Pittsburgh Astrophysics Group
+      1 PISCES Team
+      1 PISCES
+      1 Pisa-Zeuthen-Dubna-Serpukhov
+      1 Pisa-Stony Brook-British-Scandinavian-MIT
+      1 Pire N* Working Group
+      1 PiP/TOF
+      1 PIPER
+      1 PIONIC HYDROGEN
+      1 PIONEER
+      1 PION
+      1 PINGU–IceCube
+      1 PiH
+      1 PICSEL group
+      1 PICSEL
+      1 PICO-LON
+      1 PICA Group
+      1 piAF
+      1 physics study
+      1 Physics Department, University of Crete, Heraklion, Crete, Greece
+      1 Physics 3 Working Group
+      1 Physics
+      1 Photon Factory Storage Ring Group
+      1 PHENIX TEC/TRD
+      1 PHENIX Spin
+      1 PHENIX/sPHENIX
+      1 PHENIX Forward Muon Trigger Upgrade
+      1 PHENIX FOCAL
+      1 PHENIX Collboration
+      1 PFS Team
+      1 PEX-NORDBALL
+      1 PETRA Storage Ring Group
+      1 Petra Storage Ring Group
+      1 PESA Software Group
+      1 PESA Core Algorithms Group
+      1 Perugia-Pisa-Saclay-Siegen-Torino-Vienna-Warsaw
+      1 PERKEO II
+      1 PEP Team
+      1 PEP Study Group
+      1 PEP Improvement Working Group
+      1 P.E.P.-II. Team
+      1 PEP-II Machine Group
+      1 PEP-II LER
+      1 PEP-II Design Group
+      1 PEP-II design Group
+      1 PEP-II
+      1 PEP Group
+      1 PEP-4 TPC / PEP-9 TWO GAMMA
+      1 PEP4 TPC
+      1 PEP-4 TPC
+      1 PEP4
+      1 PEGASYS
+      1 PEARS Team
+      1 PDF4LHC
+      1 PBAR
+      1 Pavia SDC Group
+      1 Partner Group of the MPA, National Astronomical Observatories, Chinese Academy of Sciences
+      1 Partner Group of MPA, Shanghai Observatory
+      1 Particle Identification Working Group
+      1 Particle collisons
+      1 PARRNe
+      1 PARIS-RUTHERFORD-SACLAY
+      1 Paris-Orsay-Perpignan
+      1 Paolo Salucci for the HAWC
+      1 Pan-STARRS1 Science Consortium
+      1 Pangu
+      1 PANDAX-III
+      1 Panda Tracking Group
+      1 PANDA TOP Group
+      1 PANDA TOF
+      1 PANDA-MVD subgroup
+      1 PANDA MVD group
+      1 PANDA-MVD
+      1 PANDA-MU
+      1 PANDA Micro Vertex Detector
+      1 PANDA Magnet Group
+      1 Pamir-Joint-Chamber
+      1 Palomar Transient Factory
+      1 Palomar-QUEST Team
+      1 Paimir
+      1 Padua-Pisa-Athens-Wisconsin
+      1 PADME group
+      1 P996
+      1 P-986
+      1 P94
+      1 P906
+      1 P865
+      1 P63
+      1 P124
+      1 Oxford, Harvard, Illinois, Chicago Muon
+      1 Owens Valley Radio Observatory
+      1 OVRO Team
+      1 $\overline{P}ANDA$
+      1 OTM
+      1 Other Contributors
+      1 other collaborators
+      1 OSIRIS Team
+      1 OSC@Bates
+      1 Osaka-RIKEN-HIMAC-LBL members
+      1 Osaka-CIAE-NIRS-Niigata-Kochi-LBL
+      1 ORSAY-PALAISEAU-SACLAY-WUPPERTAL
+      1 Orsay, LAL
+      1 ORLaND
+      1 Orange at GSI
+      1 OPERA RPC
+      1 Open Science Grid Executive Board
+      1 OPAL ISRAEL
+      1 OOPS-FPP
+      1 on single particle nonlinear dynamics Group
+      1 on behalf of the MICE
+      1 on behalf of the LHCb
+      1 OMEGA SCIFI
+      1 OMEGA PHOTON
+      1 OMEGA-IONS
+      1 Olympus
+      1 OLYMPOS
+      1 OLYA
+      1 OLIMPO
+      1 OISTER
+      1 ODS and ESE Dept in the Computing Division
+      1 Odin Team
+      1 OASIS
+      1 NuTel
+      1 NuSTAR AGN Physics Working Group
+      1 Nusex
+      1 NUSEL
+      1 Nusea
+      1 NuPRISM
+      1 $\nu$PRISM
+      1 nuPRISM
+      1 NuMI Beam Group
+      1 NuLat
+      1 NUCL-EX
+      1 NUCL-ex
+      1 Nuclear Theory and Elementary Particle Phenomenology Group Instituto de Física, Universidade de São Paulo, Brazil
+      1 Nuclear Lattice EFT
+      1 NUCIFER
+      1 NSNS
+      1 nSNS
+      1 NSLS-II Design-, Construction- and Commissioning Team
+      1 n-PRiME/Super-FRS
+      1 NPDGAMMA
+      1 NPDgamma
+      1 NP1112-RIBF87
+      1 NOνA
+      1 NOTTE
+      1 Notre Dame-Purdue-SLAC
+      1 Notre Dame-Pennsylvania-Tohoku
+      1 NOTRE DAME-DUKE-IOWA STATE-MARYLAND-MICHIGAN STATE-TORONTO-MCGILL-FERMILAB
+      1 Notre Dame-Duke-Iowa State-Maryland-Michigan State-Toronto-McGill-Fermilab
+      1 Notre Dame-Cambridge-Duke-Iowa State-Maryland-Michigan State-Toronto-McGill-Fermilab
+      1 Note
+      1 NOSTOS
+      1 Northwestern High Energy Group
+      1 NOP
+      1 Nomad
+      1 no
+      1 NNbar
+      1 nn‾
+      1 NMS
+      1 NME
+      1 NLSI LUNAR Team
+      1 NLO Multileg Working Group
+      1 NLC ZDR Design Group
+      1 NLC Post-Linac Collimation Task Force
+      1 NLC Physics Working Group
+      1 NLC Group
+      1 NLC Detector Group
+      1 NLC Design Group
+      1 NLC
+      1 NIUF applications analysis technical Working Group
+      1 NIST Quantum Devices Group Boulder CO
+      1 NIS
+      1 NINJA-2
+      1 Nile
+      1 Nikko-Maru
+      1 NIKHEF theory Group
+      1 NIKA
+      1 NIFFTE
+      1 Nicole
+      1 NICMOS IDT EONS Team
+      1 NICE Working Group
+      1 NIBLES
+      1 NGC3603 Team
+      1 NeXT Team
+      1 Next Generation Space VLBI Working Group
+      1 NEXT-100
+      1 Next
+      1 NEWS-G
+      1 NEWSdm
+      1 New Physics Working Group
+      1 NEW MUON
+      1 New (g-2)
+      1 NEUTRON EDM
+      1 Neutron Detector
+      1 Neutrino Tagging
+      1 Neutrino Factory Working Group
+      1 Neutrino Factory
+      1 Neutrino beamline
+      1 Neutino Factory
+      1 NEUCHATEL-GRENOBLE-SOUTH CAROLINA-LOS ALAMOS
+      1 NESTOR-91
+      1 NESSIE
+      1 NESSI
+      1 NEMO SMO
+      1 NED Team
+      1 nEDM at PSI
+      1 NDWFS/MIPS
+      1 NDWFS
+      1 nd Research Kolkata - Mohanpur
+      1 $n \bar n$
+      1 NASA ExoPAG SAG #1 Team
+      1 Nal-Yamagata
+      1 Nagoya-Miyazaki-JINR-Petersburg
+      1 NAF
+      1 NA6i
+      1 NA64
+      1 NA63
+      1 NA62-R$_K$
+      1 NA62-$R_K$
+      1 NA62 RICH Working Group
+      1 NA62 RICH Working
+      1 NA62 Photon Veto Working
+      1 NA62 LAV Working Group
+      1 NA62 KTAG group
+      1 NA62-KLEVER Project
+      1 NA62 CHANTI group
+      1 NA62 CERN-DUBNA STRAW group
+      1 NA62/2
+      1 NA61(SHINE)
+      1 NA-57
+      1 NA56
+      1 NA55
+      1 NA5
+      1 NA48 NA62
+      1 NA48/I
+      1 NA48-CERN
+      1 NA 48/2
+      1 NA46
+      1 NA34
+      1 NA31/NA48
+      1 NA-31
+      1 NA23-RCBC
+      1 NA23-EHS-RCBC
+      1 NA22/EHS
+      1 NA-22 EHS
+      1 NA2
+      1 NA19
+      1 NA14-prime
+      1 N1 Working Group
+      1 MUSICOS 98 Team
+      1 MuSIC
+      1 MUSETT
+      1 MUSE Team
+      1 MURA Staff
+      1 MUONS Inc
+      1 Muon Quartet
+      1 Muon Neutrino
+      1 Muon Magnet Working Group
+      1 Muonic Hydrogen
+      1 Muon g-2 J-PARC
+      1 MUON-G-2
+      1 Muon EDM
+      1 Muon Collider US
+      1 MuonCollider
+      1 Muon Alignment Group
+      1 Muon Acceleration R&D
+      1 Multiparticle Production
+      1 multifrequency campaing
+      1 MULTICS-MINIBALL
+      1 Multics/Miniball
+      1 Mulhouse-Strasbourg-Turin
+      1 MUH
+      1 MuFun
+      1 \muFUN
+      1 MuCoolexperiment
+      1 MUCHFUSS
+      1 Mu2e Cosmic Ray Veto Group
+      1 Mu2e calorimeter Group
+      1 Mu2e calorimeter group
+      1 Mu2E
+      1 Mt. Hopkins Gamma Ray
+      1 MT/c
+      1 MTc
+      1 mTC
+      1 MTA-Eötvös University Lendület Hot Universe Research Group
+      1 MST team
+      1 MSST Team
+      1 mQ
+      1 MPIfR Submillimeter Astronomy Grup
+      1 MPD/NICA
+      1 MPC-EX
+      1 mOTR
+      1 MOST Science Team
+      1 MOSCOW-SERPUKHOV
+      1 Moscow-Rez-Sofia-Tashkent-Tbilisi
+      1 MOSCOW-IRKUTSK-TOMSK
+      1 Moscow,INR-IFVE-Serpukhov-Dubna,JINR-CERN
+      1 MOSCOW-ALMA-ATA-DUSHANBE-TASHKENT-TBILISI-CRACOW-LODZ
+      1 Moscow-Alma Ata
+      1 Mosaic
+      1 MOOSE (CERN-RD41)
+      1 MOOSE
+      1 Moon
+      1 MoNA
+      1 MOMO
+      1 MOJAVE Team
+      1 MITSuME Team
+      1 MIT-RPI
+      1 MITEoR
+      1 M.I.T.-Bates OOPS
+      1 MIPS GTO Team
+      1 MIPS
+      1 MINOS Scintillator Group
+      1 MINOS/MINOS+
+      1 Minnesota-Argonne-Oxford-Rutherford-Tufts
+      1 Minnesota-Argonne-Oxford
+      1 MINI-SINGAO
+      1 MINICLEAN
+      1 Mini-CLEAN
+      1 MiniBooNE+
+      1 Miniball/Multics
+      1 MINER
+      1 MINE
+      1 MINAMI-TATEYA Group
+      1 MIMD Lattice (MILC)
+      1 MIMD Lattice Computations (MILC)
+      1 MIMD Lattice Computation (MILC)
+      1 MIMD Lattice Calculation (MILC)
+      1 MIMD Lattice Calculation
+      1 MIMD Lattice
+      1 MIMAC-He3
+      1 MILARGO
+      1 MIGA Consortium
+      1 MICROSCOPE
+      1 MICROFUN
+      1 MicroFun
+      1 microFUN
+      1 Michigan State University - Cornell University - UC San Diego
+      1 Michigan-Rochester
+      1 MICHIGAN-NORTHEASTERN-WASHINGTON
+      1 Mice
+      1 MICADO Team
+      1 Micado Team
+      1 MIA
+      1 M* Group in CLAS
+      1 MGC Team
+      1 Metsähovi Radio Observatory
+      1 METIS Team
+      1 Methanol Multibeam Survey
+      1 MetaLS
+      1 MESTRE
+      1 Meson Test Beam
+      1 MERIT
+      1 Members of the LSST Galaxies Science
+      1 Members of the Geant4-DNA
+      1 MEDIPIX2
+      1 Medipix-2
+      1 MEDICYC Team
+      1 MDT Group
+      1 MD-1
+      1 MCP–PMT workgroup
+      1 MBI
+      1 MBE-4 Team
+      1 MAX-lab Nuclear Physics Working Group
+      1 MAX
+      1 Matt Wood Telescope Array
+      1 Matsushiro
+      1 MAST Upgrade Team
+      1 MAST Team
+      1 Massively Parallel Processing
+      1 MASS
+      1 MARYLAND-PAVIA-PRINCETON-STANFORD
+      1 MARYLAND-PAVIA-PRINCETON-SAN DIEGO-STANFORD-SLAC
+      1 MARK II/SLC
+      1 Mark-II/PEP5
+      1 MARKIII
+      1 many MW collaborators
+      1 MANX
+      1 M-anti-M
+      1 MAMONT
+      1 MAMMOGRID Consortium
+      1 MAMMA R&D
+      1 MAMI A4
+      1 MAMi-A1
+      1 Mainz-Bonn GDH
+      1 Main Injector Group
+      1 Magnetic moment
+      1 Magnetic Measurements Group
+      1 MagneticMeasurements
+      1 MagiKAT Team
+      1 MAGIC Telescope
+      1 MAGIC INAF
+      1 MaGe
+      1 MADMAX interest Group
+      1 MACRO EASTOP
+      1 Macro
+      1 MACHO/GMAN
+      1 M87
+      1 Lyon-Clermont-Uppsala-Warsaw
+      1 LWA
+      1 Lvd
+      1 LUX-ZEPLIN
+      1 Lund-Milano-Torino-Trieste
+      1 Luna
+      1 Luminosity Commissioning Team
+      1 LUDMILA
+      1 LST team for CTA Consortium
+      1 LST team for CTA consortium
+      1 LST Team
+      1 LSST Project Team
+      1 LSST Project
+      1 LSST Dark Energy Science
+      1 LSPE
+      1 LSC Instrument
+      1 LRI Team
+      1 LPI Beam Commissioning Team
+      1 Louvain Photon
+      1 Los Alamos Accelerator Code Group
+      1 Long Beach
+      1 London-Rutherford-Saclay-SLAC-Tufts-Tohoku
+      1 LONDON-RUTHERFORD-SACLAY-SLAC-TOHOKU-TUFTS
+      1 London-Rutherford-SACLAY-SLAC-Tohoku-Tufts
+      1 London Diamond Detector
+      1 Lomonosov-UHECR/TLE
+      1 LoI drafting
+      1 LOI
+      1 LOFT Team
+      1 LOFT Detector’s Group
+      1 LOFAR-UK Consortium
+      1 LOFAR-UK
+      1 LOFAR Transients Key Science Project
+      1 LOFAR key science project Cosmic Rays
+      1 LOFAR EoR KSP Team
+      1 LOFAR Cosmic Ray KSP
+      1 Local Volume Legacy Team
+      1 LNF-Milan-Turin-CERN
+      1 LNC Vognet Team
+      1 LLS Design Team
+      1 LIVERPOOL-STOCKHOLM-VIENNA
+      1 LIVERPOOL-STOCKHOLM-VANDERBILT
+      1 Liverpool GRB Team
+      1 LISE 2000
+      1 LISA  Study  Team
+      1 Liquid Argon Large Subsystem
+      1 Liquid Argon Calorimetry
+      1 Liquid Argon Calorimeter Electronics Group
+      1 Liquid Argon Back End Electronics
+      1 LIPSS
+      1 Line Shape Sub-Group of the LEP Electroweak Working Group
+      1 Linear Collider Steering Group of the Americas
+      1 Linear Collider ILD Concept Group -
+      1 Linear Collider Flavour Identification (LCFI)
+      1 Linear Collider Flavour Identification
+      1 Linear Collider Detector Group
+      1 Linear Collider Collider
+      1 Linear Collider ACFA Working Group
+      1 LINAC Staff
+      1 Linac Operation Group
+      1 Linac Commissioning Group (LCG)
+      1 Linac 3 Running-In Team
+      1 LINAC-3
+      1 LIGO SCIENTIFIC
+      1 LIGO
+      1 LICdp
+      1 LIBRA
+      1 LHEP Liquid Argon Group
+      1 LHEC
+      1 LHD Exp.Group1 and 2
+      1 LHC-US Heavy Ion
+      1 LHC Study Group
+      1 LHC String Team
+      1 LHC Ring proto
+      1 LHC New Physics Working Group
+      1 LHC/LC Study Group
+      1 LHC Jet Study Group
+      1 LHC injection test team
+      1 LHC/ILC Study Group
+      1 LHC Forward Physics Working Group
+      1 LHCb VELO upgrade Group
+      1 LHCb VELO Upgrad
+      1 LHCb Velo Group
+      1 LHCb UT group
+      1 LHCb Upstream Tracker Group
+      1 LHCb Upgrade Scintillating Fibre Tracker Group
+      1 LHCbTrigger working grou
+      1 LHCb Trigger Group
+      1 LHCb Trigger
+      1 LHCb Silicon Tracker group
+      1 LHCb Silicon Tracker and Alignment groups
+      1 LHCb Scintillating Fibre Tracker Group
+      1 LHCb Scintillating Fibre Tracker
+      1 LHCb SciFi Trackr Group
+      1 LHCb SciFi Tracker group
+      1 LHCb SciFi Tracker Grou
+      1 LHCb SciFi Tracker grou
+      1 LHCb SciFi
+      1 LHCb RICH Upgrade
+      1 LHCb RICH group
+      1 LHCb Outer Tracker group
+      1 LHCb OT
+      1 LHCb Online Group
+      1 LHCb Online
+      1 LHCb Muon Upgrade Group
+      1 LHCb Muon group
+      1 LHCb Muon
+      1 LHCb Inner Tracking Group
+      1 LHCb HLT project
+      1 LHC beam commissioning team
+      1 LHCb calorimeters
+      1 LHCb Calorimeter
+      1 LHCb BCM Group
+      1 LHCb alignment Group
+      1 LFI
+      1 LEP/WW-FSI
+      1 LEP Working Group for Higgs Boson Searches
+      1 LEP Working Group for Higgs boson searches
+      1 LEP Working Group
+      1 LEPS-II
+      1 LEP-RF
+      1 LEP Radiofrequency Group
+      1 LEP Polarization
+      1 LEP Injector Study Group
+      1 LEP Higgs Working for Higgs boson searches
+      1 LEP Heavy Flavor Working Group
+      1 LEP Energy Group
+      1 LEP Electroweak
+      1 LEP-2 Team
+      1 LEP 2000 Working Group
+      1 LENPIC
+      1 LEM
+      1 Leipzig-Novosibirsk
+      1 LEGS-Spin
+      1 LEGS Spin
+      1 Le Groupeur Lineaire de SPIRAL
+      1 LEDA
+      1 LEB-REGLIS3
+      1 LEBC-EHS(NA27)
+      1 LEAR PS200
+      1 LEAP
+      1 Lead Ion Accelerating Facility
+      1 LDMX
+      1 LC TPC Group
+      1 LCLS Team
+      1 LCLS Injector Team
+      1 LCIRS
+      1 LCID team
+      1 LCG
+      1 LCC Physics Working Group
+      1 LCC
+      1 LBNO Consortium
+      1 LBNO
+      1 LBL-SLAC Joint PEP Group
+      1 LBL-Mt. Holyoke-UNM
+      1 LAUSANNE-NEUCHATEL-LIVERPOOL-PARIS
+      1 LATTICE-ZN
+      1 LATTICE-Zn
+      1 LATTICE-MILC
+      1 Lattice Hadron Physics (LHPC)
+      1 Lattice Hadron
+      1 LATTICE-FERMILAB
+      1 Lattice
+      1 LATTES
+      1 LATOR
+      1 Lassa-Miniball
+      1 LASPEC
+      1 Laser Ion Source
+      1 LArTPC
+      1 Larger ACT
+      1 larger
+      1 Large Area Picosecond Photodetector [1]
+      1 Large Area Photodetector
+      1 LAPP/LC Group
+      1 LANL-SWME
+      1 LANL nEDM
+      1 LAND-FRS
+      1 LAMP Team
+      1 LAMOST Extragalactic Survey Team
+      1 Lamost
+      1 LAL
+      1 LAGUNA Design Study
+      1 Laguna
+      1 LADUMA Team
+      1 LADON-ADONE
+      1 Lab Hall A
+      1 LAA Project
+      1 LA³NET
+      1 L3 MUON CHAMBER
+      1 L3 Forward-Backward Muon
+      1 L3 F/B Muon Group
+      1 L3 CERN
+      1 L3 BGO
+      1 KVA Telescope
+      1 KTeV/E832-E799
+      1 KTeV E832/E799
+      1 KTev
+      1 KSRS
+      1 Krakow-Louisiana-Minnesota
+      1 KR
+      1 KOSMOTEPETL
+      1 Kosmotepetl
+      1 KOPIO
+      1 Konstantin Belov ANITA
+      1 KNIFE
+      1 KM3NeT Italy
+      1 KM3Net-It
+      1 KLOnE
+      1 KLOE Chamber Group
+      1 KLOE–2
+      1 KLEVER Working Group
+      1 KIS
+      1 KINGFISH Team
+      1 Kims
+      1 KiDS Consortium
+      1 Kepler Team
+      1 Kentucky Glueball
+      1 KENS Group
+      1 KEK PS Group
+      1 KEK-PS E518
+      1 KEK-PS-E509
+      1 KEK-PS E509
+      1 KEK-PS E508/E462
+      1 KEK-PS E471/E549
+      1 KEK-PS E471
+      1 KEK PS-E471
+      1 KEK-PS-E470
+      1 KEK-PS-E438
+      1 KEK-PS E419/BNL-AGS E930
+      1 KEK-PS E391a
+      1 KEK-PS E373
+      1 KEK-PS-E369
+      1 KEK-PS E336
+      1 KEK-PS E307/E369/E462/E508
+      1 KEK-PS E288/E337/E393
+      1 KEK-PS E287/E326
+      1 KEK-PS E278
+      1 KEK-PS-E251
+      1 KEK-PS E-251
+      1 KEK-PS E251
+      1 KEK PS-E251
+      1 KEK-PS E228
+      1 KEK-PS E176
+      1 KEK-PS-E167
+      1 KEK-PS E137
+      1 KEK-PS325
+      1 KEK-OSAKA CITY-KINKI
+      1 KEK Electron Linac Group
+      1 KEK E716
+      1 KEK E570
+      1 KEK E470
+      1 KEK-E391a
+      1 KEK-E246-Japan-Russia-Korea-Canada-USA
+      1 KEK-E-246
+      1 KEK E-179
+      1 KEK E176
+      1 KEK E137(KL)
+      1 KEK E-137
+      1 KEKB Commissioning Group
+      1 Keck Arrary
+      1 KaVA AGN Sub Working Group
+      1 Kascade-Grande
+      1 Karmen
+      1 KARLSRUHE-PISA-SERPUKHOV-VIENNA
+      1 Kaon Physics Working Group
+      1 KANBALA. CHINA - JAPAN EMULSION CHAMBER
+      1 KANATA
+      1 KamLand-Zen
+      1 Kamland-Zen
+      1 KamLand
+      1 K2K-SciBar group
+      1 K2K SciBar
+      1 K2K MRD Group
+      1 K20 Team
+      1 K1.8
+      1 JYFLTRAP
+      1 JVLA
+      1 JUROSPHERE
+      1 JUROGAM
+      1 JSNS$^2$
+      1 J-PAS
+      1 J-PARC UCN Taskforce
+      1 J-PARC P40
+      1 J-PARC MR Group
+      1 J-PARC K1.8 beamline Group
+      1 J-PARC K1.8
+      1 J-PARC Heavy-Ion
+      1 J-PARC heavy-ion
+      1 J-PARC Hadron Facility
+      1 J-PARC g-2/EDM
+      1 J-PARC g-'2/EDM
+      1 J-PARC E50
+      1 J-PARC E42/45
+      1 J-PARC-E42
+      1 J-PARC E42
+      1 J-PARC E31
+      1 J-PARC E27
+      1 J-PARC E15/17/31
+      1 J-PARC-E07
+      1 J-PARC E06
+      1 J-PARC E05 (AXiS)
+      1 J-PARC
+      1 J. Palacio for the MAGIC
+      1 Joint Project team of JAERI and KEK
+      1 JLEIC Detector and IR Study Group
+      1 JLC Study Group
+      1 JLC Polarization Group
+      1 JLC Group
+      1 JLC Alignment Group
+      1 JLAB t(20)
+      1 JLAB t20
+      1 JLab SoLID
+      1 JLab PVDIS
+      1 JLab Neutral Particle Spectrometer
+      1 JLab Hypernuclear
+      1 JLab Hall E98-108
+      1 JLab Hall E02-010
+      1 JLab Hall D
+      1 JLab Hall C hypernuclear
+      1 JLAB Hall C
+      1 JLab Hall A EMFF
+      1 JLab Hall A and C hypernuclear
+      1 JLAB Hall-A
+      1 JLab Hall-A
+      1 Jlab Hall A
+      1 JLab Fast Electronics Group
+      1 JLab-E-94-107
+      1 JLab E94-107
+      1 JLAB-E94-014
+      1 JLAB E94014
+      1 JLAB-E-94-010
+      1 JLab E93-049
+      1 JLab E93-026
+      1 JLab E91013
+      1 JLab E89-009
+      1 Jlab E89-009
+      1 Jlab E12-07-102
+      1 JLab E08-007
+      1 JLAB E06-114
+      1 JLab E06-010
+      1 Jlab E05-115
+      1 Jlab E05-110
+      1 Jlab E05-007
+      1 JLAB E04-012
+      1 JLab 6 GeV PVDIS
+      1 JLab 12 GeV project team
+      1 JLab 12-GeV Project
+      1 Jinping
+      1 JINA-CARINA
+      1 JHP accelerator design Group
+      1 JHF-SK Neutrino
+      1 JHF-nu
+      1 Jet Target
+      1 JETSCAPE
+      1 Jet Muon Chamber Group
+      1 JESSICA
+      1 JENSA
+      1 JEM-EUSO Colaboration
+      1 JEM–EUSO
+      1 JEM EUSO
+      1 Jefferson Lab t(20)
+      1 Jefferson Lab t 20
+      1 Jefferson Lab t20
+      1 JEFFERSON LAB POLARIZED He-3
+      1 Jefferson Lab Polarized He-3
+      1 Jefferson Laboratory Hall A
+      1 Jefferson Laboratory E93038
+      1 Jefferson Lab Hall C E94-110
+      1 Jefferson Lab Hall A/VCS
+      1 JEFFERSON LAB HALL A
+      1 Jefferson  Lab  GEp(III)
+      1 Jefferson Lab Fpi-2
+      1 Jefferson Lab F(pi)-2
+      1 Jefferson Lab F$\pi$
+      1 Jefferson Lab Fpi
+      1 Jefferson Lab E99-117
+      1 Jefferson Lab E97-103
+      1 Jefferson Lab E94-104
+      1 Jefferson Lab E94014
+      1 Jefferson Lab E940104
+      1 Jefferson Lab E93-038
+      1 Jefferson Lab E93-026
+      1 Jefferson Lab E91-016
+      1 Jefferson Lab E89-009
+      1 Jefferson Lab E01-012
+      1 Jefferson Lab E00-115
+      1 Jefferson Lab Angular Momentum (JAM)
+      1 Jefferson Lab Angular Momentum
+      1 JEFFERSON LAB
+      1 JDEM
+      1 JASMINT-972/T-933
+      1 JAPAN-USA NEUTRINO
+      1 Japan-USA Neutrino
+      1 Japan-Korea
+      1 Japanese Minitower Beam Test Team
+      1 Japanese and Brazilian Emulsion Chamber Groups
+      1 JANUS
+      1 JAM
+      1 JAIPUR-JAMMU-LUND
+      1 ITS ALICE
+      1 Italian WSO/UV Working Group
+      1 ISS Physics Working Group
+      1 ISS Detector Working Group
+      1 ISS Accelerator Working Group
+      1 ISR Staff
+      1 ISOSPIN
+      1 ISOMER
+      1 ISOLDE-P66
+      1 ISOLDE-IS01/13
+      1 IsoDAR/DAEdALUS
+      1 ISICs/SAPP
+      1 ISGRI team
+      1 Isaac Newton Group of Telescopes, Santa Cruz de La Palma, Spain
+      1 Isaac Newton Group of Telescopes, La Palma, Spain
+      1 ISA
+      1 IS552
+      1 IS541
+      1 IS524
+      1 IS484
+      1 IS477
+      1 IS459
+      1 IS449
+      1 IS430
+      1 IS411
+      1 IS393
+      1 IS387
+      1 IS384
+      1 IS377
+      1 IS370
+      1 IS365
+      1 IS361
+      1 IS351
+      1 IS339
+      1 IS322
+      1 Irvine-Riverside-Newport News-Los Alamos-Baton Rouge-Temple
+      1 Irvine-Los Alamos-Maryland
+      1 IRVINE-LBL-SAN FRANCISCO STATE
+      1 IRSF/SIRIUS Team
+      1 IRS
+      1 IRIS Science Team
+      1 IRFU
+      1 IR Demonstration FEL Project Team
+      1 IPPOG
+      1 IPNOS
+      1 IPNE
+      1 IPHC-IRFU
+      1 IPHC
+      1 IPHAS/UVEX
+      1 IPHAS
+      1 International Study Group
+      1 International particle Physics Outreach Group - IPPOG
+      1 International Particle Physics Outreach Group
+      1 International Muon
+      1 International DUMAND
+      1 international CARMENES Team
+      1 International AGN Watch
+      1 Intensity Limitations Working Group
+      1 Intensity Frontier Neutrino Working Group
+      1 Intensity Frontier Charged Lepton Working Group
+      1 INTEGRAL Team
+      1 INTEGRAL/SPI
+      1 INSPIRE
+      1 INS-LBL
+      1 INS-232/233
+      1 (IN RUSSIAN) SERPUKHOV-BERLIN-VIENNA-MOSCOW
+      1 (In Russian) Alma Ata-Bucharest-Gatchina-Dubna-Dushanbe-Erevan-Kosice-Cracow- Leningrad-Moscow-Rez-Tashkent-Tbilisi-Ulan Bator
+      1 INGA
+      1 INFN-CNAF Tier-1
+      1 INDRA Proxy
+      1 INDRA-ALADIN
+      1 Indra
+      1 Indi UGC-DAE Consortium
+      1 India UGC-DAE Consortium for Scientific Research, Kolkata Centre, Kolkata
+      1 Indian Association for the Cultivation of Science
+      1 India-CERN-College de France-Madrid-Pisa
+      1 IN0
+      1 I.M. Systems Group
+      1 Impedance Working Group
+      1 IMaX Team
+      1 Illinois-Harvard-Oxford-Munich
+      1 ILIMA
+      1 ILGTI
+      1 ILD SiW ECAL groups
+      1 ILD SiW-ECAL development group
+      1 ILDG Middleware Working Group
+      1 ILDG Metadata Working Group
+      1 ILD ECAL
+      1 ILD detector group
+      1 ILD Design Study Group
+      1 ILCRDR Magnet Systems Group
+      1 ILC Positron Source Group
+      1 ILC Physics and Detector Study Group
+      1 ILC physics and detector study
+      1 ILC Parameters Joint Working Group
+      1 ILC Beam Physics Group
+      1 IKO
+      1 IKAROS-GAP Team
+      1 IKAR
+      1 IIT-Maryland-Stony Brook-Tohoku-Tufts
+      1 IISN - Belgium-IPN - Orsay
+      1 III
+      1 IIFC
+      1 IHEP-Saclay
+      1 IHEP-PPLA-LANL-INRU
+      1 IHEP-LAPP-LANL-IISN
+      1 IHEP-JINR-PROZA-M
+      1 IHEP-JINR-PNPI-Michigan
+      1 IHEP-INP-MSU-JINR E-161
+      1 IHEP-IISN-LAPP
+      1 IHEP-IISN-LANL-LAPP-PISA
+      1 IHEP-IISN-LANL-LAPP-Pisa
+      1 IHEP-IISN-LANL-LAPP-KEK
+      1 IHEP-IISN-LANL-LAPP
+      1 IHEP-IISN-KEK-LANL-LAPP
+      1 IHEP-Brussels-Los Alamos-Annecy(LAPP)
+      1 IGEC-2
+      1 IFVE-ITEP-LINP-MGU
+      1 IFVE-IISN-LAPP
+      1 IFVE-IIHE-Annecy-Los Alamos
+      1 IFVE-Brussels-Los Alamos-Annecy-Pisa
+      1 IFVE-Brussels-Annecy-Los-Alamos
+      1 IFVE-ANNECY-Los Alamos-IISN
+      1 IFIC
+      1 IDT
+      1 IDILICO
+      1 ICHOR
+      1 IceRay
+      1 IceCube–PINGU
+      1 IceCube/PINGU
+      1 IceCube-PINGU
+      1 Icecube-Pingu
+      1 IceCub
+      1 ICARUS-WA104
+      1 ICARUS T600
+      1 ICARUS-CERN-Milano
+      1 ICARUS)
+      1 ICANOE
+      1 ICAL
+      1 ICA
+      1 IBIS
+      1 IAU Inter-Division A-G Working Group on Nominal Units for Stellar & Planetary Astronomy
+      1 IARC
+      1 Hyperon
+      1 HyperNIS
+      1 Hyper-K Working Group
+      1 Hyper-Kamiokande working group
+      1 Hyper-Kamiokande Proto-Collaboration
+      1 Hyper-Kamiokande proto-
+      1 HXI
+      1 HXF Team
+      1 HXD Team
+      1 HXD
+      1 HV CMOS
+      1 HVCMOS
+      1 HUSEP
+      1 Hubble Cepheid
+      1 HT-7 Team
+      1 HST
+      1 HssO Team
+      1 HSHS
+      1 HSC
+      1 HRIBF staff
+      1 HPWFR Group
+      1 HPWFOR
+      1 HPWF
+      1 HPDT Working Group
+      1 H-particle
+      1 HP3-WP22
+      1 HOPS Team
+      1 Homestake
+      1 HOBYS
+      1 HMI Team
+      1 HKS (JLab E05-115)
+      1 HKS (JLab E01-011)
+      1 HKS-HES
+      1 HiZELS Team
+      1 HIRFL-CSR Group
+      1 HIRFL-CSR
+      1 HiRes-MIA
+      1 HIPASS
+      1 HIMAC Group
+      1 HiLum ATLAS Liquid Argon Endcap
+      1 HIgS GDH
+      1 High Z SN Search
+      1 High Temperature Monte Carlo Grand Challenge
+      1 high-mass WISH Team
+      1 HighIntensity Neutrino Source
+      1 HighFled Magnets
+      1 High Field Magnets
+      1 High field magnet project
+      1 High Field Magnet
+      1 High Energy Reaction Analysis Group
+      1 HIGH-ENERGY PHOTON
+      1 High-Energy Accelerator Organization
+      1 High-brightness electron source laboratory
+      1 Higgs Working Group of the Extended ECFA/DESY Study
+      1 Higgs Study Group
+      1 Hi-GAL
+      1 HFT
+      1 HFAG-charm Group
+      1 HeViCS
+      1 HETE‐2 Science Team
+      1 HETE
+      1 HETDEX
+      1 H. E. S. S.
+      1 HERSCHEL Team
+      1 Herschel SAG 2 Consortium
+      1 Herschel
+      1 HERMES Target Group
+      1 HERMES PEP Team
+      1 HERA  Polarization  Group
+      1 HERA polarization Group
+      1 HERA machine Group
+      1 HERA Group
+      1 HERAFitter team
+      1 HERA Combined Structure Functions Working Group
+      1 HERA-B RICH Group
+      1 HERA-B Outer Track Group
+      1 HERA-B Muon
+      1 HEPiX Virtualisation Working Group
+      1 HepData
+      1 HELLAS2XMM Consortium
+      1 Hellas2XMM
+      1 Hellas2Xmm
+      1 HELIOS-Emulsion
+      1 Helios Emulsion
+      1 HeLiCal
+      1 HELGA
+      1 HEIDELBERG-SACLAY-STRASBOURG
+      1 Heidelberg-Moscow-
+      1 Heidelberg-Karlsruhe-Milan-Munich-Nice-Rehovoth-Rome-Saclay
+      1 Heidelberg-ILL-Padova-Pavia
+      1 Heidelberg double beta group
+      1 HEC
+      1 Heavy-Ion Therapy
+      1 Heavy Ion Fusion Staff
+      1 Heavy Ion Accelerator Group in KEK PS
+      1 Heavy Flavour Group
+      1 Heavy Flavor Physics Working Group
+      1 HEATES
+      1 HEAD
+      1 He4-LEGS
+      1 HDF Team
+      1 HCAL Calibration Group
+      1 HAWAII-LBL EMI
+      1 HASRA
+      1 Harvard-Stanford-Oxford
+      1 HARP/PS214
+      1 Hard Probe
+      1 HAPPEx
+      1 HANOHANO
+      1 Hanohano
+      1 Hanging File Calorimetry Group
+      1 HALQCD
+      1 HALO
+      1 Hall C
+      1 Hall-A E06-010
+      1 HALL-A
+      1 HALL A
+      1 HADRON SPECTRUM
+      1 Hadron Muon
+      1 Hadron Collider Working Group
+      1 HADES-MDC
+      1 Hades
+      1 H8-RD22
+      1 H2EX
+      1 H1 BEMC Group
+      1 H0 Key Project
+      1 GW-SAID Group
+      1 GW-neutrinos
+      1 GTK working group
+      1 GSI the VLBI group at
+      1 GSI-LBL-HEIDELBERG-MARBURG-WARSAW
+      1 GSI-LBL
+      1 GSI ISOL
+      1 GSI-E212
+      1 GSFC BAT Team
+      1 Groupe De L'Aimant De La Division Du Synchrotron À Protons
+      1 GROND
+      1 GridPP
+      1 GridPix
+      1 GRI
+      1 Greenland Telescope Project Team
+      1 Green Bank North Celestial Cap survey
+      1 GREAT3
+      1 GREAT
+      1 GRAVITAS Consortium
+      1 GRAL
+      1 GRAINE
+      1 GRAIL Project Team
+      1 GRAFG
+      1 GPU@LHCbTrigger
+      1 GPS Team
+      1 Gould's Belt Team
+      1 GoSam
+      1 GOODS AGN Team
+      1 GONG
+      1 Gomel
+      1 GOLF Team
+      1 GOLDMiNe
+      1 GNOME
+      1 gmu2e
+      1 GLUEX
+      1 Gluex
+      1 GLOK
+      1 GLD Concept Study Group
+      1 GLC/VTX
+      1 GLC Calorimeter
+      1 GLAST Working Group
+      1 GLAST Tracker
+      1 GLAST LAT Tracker Italian
+      1 GLASGOW-LIVERPOOL-LAUSANNE-NEUCHATEL
+      1 GLASGOW-EDINBURGH-MAINZ
+      1 GINGER
+      1 GHT
+      1 GHOSTS
+      1 German Euroball Col
+      1 German Bubble Chamber
+      1 G(Ep)(III)
+      1 G(E(p))(III)
+      1 Gep(III)
+      1 GEp/GMp (III)
+      1 GEp-2Gamma
+      1 Geo Team
+      1 GEO
+      1 Genova-Hamburg-Milano-Saclay
+      1 Genoa-World Proton-Proton
+      1 Genoa-Hamburg-Milano-Saclay-Harvard-Illinois Toronto-Wisconsin
+      1 GENJI programme
+      1 Geneva-Saclay
+      1 GENEVA-GLASGOW-LIVERPOOL-MILAN-NEUCHATEL
+      1 GEMS/XACT Team
+      1 GEMS
+      1 GEM Muon
+      1 GEMINI Study Group
+      1 gEM
+      1 GEDEPEON
+      1 GEDEON Proxy
+      1 GEANT4 Hadronic Working Group
+      1 Geant4 hadronic Working Group
+      1 Geant4 Hadronics Working Group
+      1 Geant4 Hadronic Group
+      1 Geant4 Hadronic
+      1 Geant4 electromagnetic physics working groups
+      1 Geant4-DNA
+      1 GDH/A2
+      1 GDD
+      1 GCT Team
+      1 GCT
+      1 GBT Drift Scan Survey
+      1 GBT Drift-scan
+      1 GBT 350 MHz Drift-scan survey
+      1 GBM Magnetar Team
+      1 GBM-LIGO
+      1 GAUGE
+      1 GATE
+      1 GASP-WEBT team
+      1 GASPS HAEBE Team
+      1 GASPARD
+      1 Ga.Sp
+      1 GASKAP Team
+      1 Gargamelle Wide Band Anti-neutrino
+      1 GARGAMELLE SPS
+      1 Gargamelle SPS
+      1 GARGAMELLE NEUTRINO FREON
+      1 GARGAMELLE ANTI-NEUTRINO PROPANE
+      1 Gargamelle anti-neutrino Propane
+      1 GARFIELD
+      1 GARD
+      1 GAP
+      1 GANIL Power Supply Group
+      1 GANIL-Orsay-Dubna-Řez-Bucharest
+      1 GANIL Operation Div
+      1 GANIL Ion Production Group
+      1 GANIL E513
+      1 GAMS NA12/2
+      1 GAMS NA-12/2
+      1 GAMS-NA12
+      1 GammeV(T-969)
+      1 GammeV (T-969)
+      1 GammaV-CHASE
+      1 GammaV
+      1 GAME
+      1 GAMBIT Dark Matter Workgroup
+      1 GAMA Team
+      1 GALFACTS Team
+      1 GALEX Science Team
+      1 GALEX
+      1 GAJET
+      1 Gaia-ESO Survey
+      1 FUSE Science
+      1 FUSE AGN Working Group
+      1 FUSE AGN
+      1 FUNK
+      1 Fundamental Particles and Interactions Chart Committee
+      1 'Fundamental Interactions and Symmetries' group
+      1 FUN
+      1 FUKUI-INS-KEK-KYOTO(SANGYO)-OSAKA-TOKYO
+      1 Fukui-INS-KEK-Kyoto Sangyo-Meisei-Osaka-Tokyo Metropolitan
+      1 FSC Team
+      1 French-Soviet Union
+      1 French-Soviet union
+      1 FRENCH-SOVIET-CERN
+      1 French
+      1 Frascati-Roma-Padua-Maryland
+      1 Frascati-Napoli
+      1 FRASCATI-MILAN-TURIN-CERN
+      1 FRASCATI-MILAN-PISA-ROME-TURIN-TRIESTE
+      1 Frascati-Genova
+      1 FRASCATI-DAFNE-AMADEUS
+      1 FRANCE-SOVIET UNION AND CERN-SOVIET UNION
+      1 FRAMM
+      1 Fpi
+      1 FP420 R
+      1 four LEP
+      1 for the MAGIC
+      1 for the HESS
+      1 for the FACT
+      1 for the DAEdALUS
+      1 for the CERES
+      1 for the AMON core team
+      1 for the ALICE
+      1 for Pisa and Florence VIRGO Groups
+      1 for CMS
+      1 FOPI-HADES
+      1 FONT
+      1 FNAL-SDC Simulation Group
+      1 FNAL-P845
+      1 FNAL Lattice
+      1 FNAL-Japan Radiation Physics Team
+      1 FNAL E989
+      1 FNAL E906
+      1 FNAL E866/NUSEA
+      1 FNAL E866/NuSea
+      1 FNAL E866
+      1 FNAL-E791
+      1 FNAL E773
+      1 FNAL E772
+      1 FNAL E756
+      1 FNAL E745
+      1 FNAL E704
+      1 FNAL E690
+      1 FNAL-E632
+      1 FNAL-E581/704
+      1 FNAL E581/704
+      1 FNAL-E-0886
+      1 FNAL-E-0612
+      1 FNAL-760
+      1 FNAL-653
+      1 FNAL 605/772
+      1 FNAL-053
+      1 FMA
+      1 Florida-Florida State-Oak Ridge
+      1 FLINT
+      1 FLC Proxy
+      1 FLC
+      1 Flat Blazars
+      1 Flat Beam
+      1 FlashCam Team
+      1 FLAG
+      1 Fittino
+      1 First
+      1 FINeSSE
+      1 Final Focus Test Beam
+      1 FIGARO
+      1 Fiber Tracking Group (FTG)
+      1 Fiber tracking Group (FTG)
+      1 FGD
+      1 FFTB
+      1 FFP
+      1 Fermi UNIX Environment Working Group
+      1 Fermitools Working Group
+      1 FermiQCD
+      1 Fermi-LAT Team
+      1 Fermi LAT/GBM
+      1 FERMI LAT
+      1 Fermi-Lat
+      1 Fermi Large Area Telescope
+      1 Fermilab Steering Group
+      1 Fermilab Pixel R&D Group
+      1 Fermilab P989
+      1 FERMILAB/NICADD PHOTOINJECTOR LABORATORY
+      1 FERMILAB/NICADD Photoinjector Laboratory
+      1 Fermilab/NICADD
+      1 Fermilab-Michigan State-Minnesota-Northeastern-Rochester
+      1 Fermilab-Lattice
+      1 FERMILAB-JOHNS HOPKINS
+      1 FERMILAB-ILLINOIS-INDIANA-MARYLAND-RUTGERS
+      1 Fermilab-IHEP-ITEP-Michigan
+      1 Fermilab-Hawaii-Berkeley-Washington-Wisconsin
+      1 FERMILAB-HAWAII-BERKELEY-MICHIGAN
+      1 FERMILAB-HARVARD-PENNSYLVANIA-WISCONSIN-RUTGERS
+      1 FERMILAB-HARVARD-OHIO STATE-PENNSYLVANIA-RUTGERS-WISCONSIN
+      1 FERMILAB-FLORENCE-MICHIGAN-OHIO STATE-WASHINGTON-WISCONSIN
+      1 Fermilab E866
+      1 Fermilab E-731
+      1 FERMILAB-E706
+      1 FERMILAB E-704
+      1 Fermilab E605
+      1 Fermilab-E-564
+      1 Fermilab E557/E672
+      1 FERMILAB E531
+      1 Fermilab D0
+      1 FERMI@ELETTRA
+      1 FEPS Legacy Science
+      1 FEAST
+      1 FDS Team
+      1 FDF Team
+      1 FDF
+      1 FCC-ee study Team
+      1 FCC-ee study
+      1 Fast-RICH Group
+      1 FaNS
+      1 FAIR Project Coordination Group
+      1 FAIR Design Team
+      1 FACTOR
+      1 FACET
+      1 Extragalactic Astronomy Group, Durham University
+      1 eXTP
+      1 ExTENCI
+      1 Experiment 25A
+      1 ExoPAG SAG 5 Team
+      1 EXO-Bern
+      1 EXIST/HET Team
+      1 EXIST
+      1 ExCharm
+      1 EVLA Team
+      1 Event Horizon Telescope
+      1 EUSO-TA
+      1 EUSO-BALLOON
+      1 EURO-VO
+      1 EUROSUPERNOVA
+      1 Europe-US-India
+      1 European Strategy for Particle Physics Preparatory Group
+      1 EUROPEAN NEUTRINO
+      1 European Neutrino
+      1 European Lattice (ELC)
+      1 European Gallex
+      1 European for Analysis of High Multiplicity Events
+      1 EUROnu WP2
+      1 EUROnu Super Beam
+      1 EUROGAM
+      1 EUROBALL
+      1 EURISOL DS
+      1 EUDET-JRA1
+      1 Euclid Theory Working Group
+      1 Euclid Imaging
+      1 Euclid Exoplanets Working Group
+      1 E&T-RAW
+      1 ETMC
+      1 ETH ZURICH-SIN-UNIVERSITAET MAINZ
+      1 ETH/Zurich-Grenoble-Heidelberg-Karlsruahe-Neuchatel-SIN
+      1 eta pi
+      1 Eta
+      1 eta
+      1 E & T
+      1 ESTREMO
+      1 ESTA Team
+      1 ESS ν SB project
+      1 ESSvSB
+      1 ESS$\nu$SB
+      1 ESSnSB Project
+      1 ESSnSB project
+      1 ESSENCE
+      1 ESPaDOnS Project Team
+      1 eSMA commissioning Team
+      1 ESCAR Staff
+      1 Error and Emittance Task Force
+      1 eROSITA
+      1 EROS-II
+      1 Eros
+      1 eRHIC Accelerator Design Group
+      1 eRHIC Accelerator Design
+      1 eRHIC
+      1 ERASME Group
+      1 EPOXI Team
+      1 EPOS-II
+      1 EPIC
+      1 EOT-WASH Group
+      1 EoR/CD-SWG
+      1 ENZO
+      1 EN, PH and AIDA GIF++
+      1 Energy plus Transmutation
+      1 Endo-TOFPET-US
+      1 EN
+      1 EMU Team
+      1 Emulsion exposure at 1 TeV
+      1 EMU18
+      1 EMU-1
+      1 EMU1
+      1 EMU09
+      1 EMU-01/12
+      1 EMU 01
+      1 EMS Ecal
+      1 eMS DT Group
+      1 emiT II
+      1 emiT
+      1 EM-EUSO
+      1 EMC/NMC
+      1 ELITE  science  team
+      1 eLISA
+      1 ELI-NP Science Team
+      1 ELETTRO
+      1 Electroweak Working Group
+      1 Electroweak Group
+      1 Electromagnetic Working Group
+      1 ELECTRA
+      1 ELC (European Lattice)
+      1 ELAPP
+      1 Einstein Probe Team
+      1 EIC Study Group
+      1 EHS-RCBC(NA23)
+      1 EHS/NA23
+      1 EHS/NA-22
+      1 EHS - NA22
+      1 EHS
+      1 EHIT
+      1 EHF Design Group
+      1 EGRET Team
+      1 EGAPS
+      1 EFC
+      1 Edinburgh-Rutherford-Westfield
+      1 EDG Stress-Test Task
+      1 EDGE-CALIFA
+      1 EDELWEISS experiment
+      1 Eddington Science
+      1 Ecole Poly-Rutherford-Saclay
+      1 ECLAIRs Consortium
+      1 ECLAIRs
+      1 ECHo
+      1 ECFA-LEP SPECIALIZED STUDY Group 9: EXOTIC PARTICLES
+      1 ECFA Higgs Working Group
+      1 ECFA-DESY TPC Study for a linear electron positron collider
+      1 ECFA/DESY SUSY
+      1 ECFA/DESY Photon Collider Working Group
+      1 ECAP Acoustic Detection Group
+      1 ECAL/HCAL
+      1 ECAL CMS group
+      1 eBOSS
+      1 EBGSI
+      1 EB-88
+      1 EASTOP
+      1 EAS-1000
+      1 E99-118
+      1 E99-117
+      1 E97-110
+      1 E97-108
+      1 E950
+      1 E94110
+      1 E94-010
+      1 E-94010
+      1 E94010
+      1 E-931
+      1 E93-038
+      1 E93-026 JLab
+      1 E93-026 Jlab
+      1 E925
+      1 E91-016
+      1 E907
+      1 E906/SeaQuest
+      1 E905
+      1 E900
+      1 E898
+      1 E891
+      1 E89-044
+      1 E89-012
+      1 E89-009/HNSS
+      1 E888
+      1 E-871
+      1 E-866
+      1 e865
+      1 E858/E878
+      1 E858
+      1 E854
+      1 E-853
+      1 E845
+      1 E-814/E-877
+      1 E-813
+      1 E-811
+      1 E811
+      1 E803/COSMOS
+      1 E802/E866
+      1 E802/866
+      1 E799-II/KTeV
+      1 E799/E832(KTeV)
+      1 E787/949
+      1 E-787
+      1 E779
+      1 E772/E789/E866
+      1 E-772
+      1 E770
+      1 E-766
+      1 E-764
+      1 E764
+      1 E745,782
+      1 E744
+      1 E709
+      1 E-691
+      1 E-673/706
+      1 E672-E706
+      1 E643
+      1 E64/121/135
+      1 E614
+      1 E-613
+      1 E-605
+      1 E598
+      1 E594
+      1 E-581/E-704
+      1 E564
+      1 E557/672
+      1 E545
+      1 E522
+      1 E521
+      1 E45
+      1 E-400
+      1 E40
+      1 E373 (KEK-PS)
+      1 E362
+      1 E36
+      1 E350
+      1 E348
+      1 E322
+      1 E314a
+      1 E289
+      1 E281-295
+      1 E278
+      1 E255
+      1 E248
+      1 E246 KEK PS
+      1 E228
+      1 E-203
+      1 E162/CP
+      1 E160
+      1 E156
+      1 E150
+      1 E142/E143
+      1 E142-E143
+      1 E-137
+      1 E13
+      1 E1178
+      1 E1104 at TRIUMF
+      1 E1054
+      1 E1027
+      1 E-0895
+      1 E-07-011
+      1 E02-010
+      1 E01-012
+      1 E01-011
+      1 E00-108
+      1 Dynamic Aperture Issues Working Group
+      1 DWARF
+      1 Durham-Nijmegen-Paris-Torino
+      1 Durham-Genova-Hamburg-Milano-Saclay
+      1 Durham-Genoa Milan-Ecole Poly-Bari-Bologna-Florence
+      1 DUMAND-II
+      1 DUKE-FERMILAB-IOWA STATE-LIVERMORE-NOTRE DAME-PURDUE-WISCONSIN
+      1 DUBTO
+      1 Dubna-Yerevan-Leningrad
+      1 Dubna-Warsaw-Leningrad
+      1 Dubna-Warsaw-Kosice-Moscow-Strasbourg-Tbilisi
+      1 Dubna-Tbilisi-Warsaw
+      1 Dubna-Swierk-Kharkov-Tomsk-Batavia-New York-Leningrad
+      1 Dubna-Sofiya-Tbilisi
+      1 Dubna-Sofiya
+      1 Dubna-Serpukhov-Sofia-Bratislava-Kosice-Baku-Tbilisi-Erevan-Minsk-
+      1 Dubna-Serpukhov-Baku-Bratislava-Kosice-Minsk-Samarkand-Tbilisi
+      1 Dubna-Serpukhov-Baku-Bratislava-Gomel-Yerevan-Kiev-Kosice- Minsk-Samarkand-Tbilisi
+      1 Dubna-Protvino-Tbilisi
+      1 DUBNA-MOSCOW-SOFIYA-WARSAW-KIEV-DUSHANBE
+      1 DUBNA-MOSCOW-SACLAY-SERPUKHOV
+      1 Dubna-Moscow-Prague-Sofiya-Tbilisi
+      1 DUBNA-MOSCOW-KIEV-DUSHANBE
+      1 Dubna-Moscow-Bucharest-Sofiya
+      1 Dubna-Moscow-Bucharest-Kosice-Sofiya
+      1 Dubna-Milan
+      1 Dubna-Leipzig
+      1 Dubna-Kosice-Moscow-Tbilisi
+      1 Dubna-Kiev-Kharkov-Tbilisi
+      1 Dubna-Geneva-Protvino-Budapest-Zeuthen
+      1 Dubna-Cairo-Kosice-Rez
+      1 dubna-budapest-bucharest-cracow-sofia-tashkent-tbilisi-ulan-bator
+      1 Dubna-Budapest-Berlin-Prague-Serpukhov-Sofiya
+      1 Dubna-Bucharest-Yerevan-Kosice-Moscow-Prague-Sofiya-Tbilisi
+      1 Dubna-Bucharest-Kosice-Moscow-Sofiya
+      1 Dubna-Bucharest-Helsinki-Kosice-Moscow-Prague-Sofiya-Tbilisi-Yerevan
+      1 dubna-bucharest-budapest-cracow hanoi-serpukhov-sofia-tashkent- tbilisi-ulan-bator-warsaw
+      1 Dubna-Berlin-Moscow-Prague-Sofiya-Tbilisi
+      1 Dubna-Berlin-Budapest-Moscow-Prague-Sofiya-Tbilisi
+      1 DUBNA-BAKU-BELGRADE-BUCHAREST-CRACOW-MOSCOW-PRAGUE-SOFIYA-ULAN BATOR-VARNA-WARSAW-YEREVAN
+      1 Dubna-Alma Ata-Yerevan-Helsinki-Moscow-Prague-Tbilisi
+      1 Dubna-Alma-Ata-Moscow-Plovdiv-Prague-Serpukhov-Sofiya- Tbilisi
+      1 DUBNA-ALMA ATA-MOSCOW-HELSINKI-PRAGUE-TBILISI
+      1 Dubna-Alma Ata-Kosice-Moscow-Prague-Sofiya-Helsinki
+      1 Dubna-Alma Ata-Helsinki-Prague
+      1 Dubna-Alma Ata-Helsinki-Kosice-Moscow-Prague-Tbilisi
+      1 Dubna-Alma Ata-Budapest-Bucharest-Moscow-Prague-Sofiya-Tbilisi
+      1 DT Upgrade Group
+      1 DSS
+      1 DSDD
+      1 DRIFT II
+      1 DRIFT I
+      1 DRIFT Dark Matter
+      1 DQM
+      1 Double Chooz Project
+      1 Double-Chooz
+      1 DORIS Storage Ring Group
+      1 DØ
+      1 DO
+      1 DM-lce
+      1 DM-Ice17
+      1 DM2 Italian
+      1 DM1-DM2
+      1 DIS-Parity
+      1 DISK
+      1 DIRC Group
+      1 DIRC Electronics Group
+      1 DIRAC Project
+      1 DIRAC-II
+      1 DIMESOATOMS
+      1 Dilepton Spectrometer
+      1 DIGIT Team1
+      1 DIB-2gamma
+      1 DIB2gamma
+      1 Dib2gamma
+      1 DIANNA
+      1 Diana
+      1 Diamond Machine Commissioning Team
+      1 DESY Storage Ring Group
+      1 DESY-Munster-Roma
+      1 DESY-Karlsruhe-Munich-Orsay-Paris-Saclay
+      1 DESY-ITEP-Kanazawa
+      1 DESY-II
+      1 DESY-HEIDELBERG
+      1 DESY DPHEP Group
+      1 DESY-DORTMUND-HEIDELBERG-MOSCOW-LUND-SOUTH CAROLINA
+      1 DESY-Dortmund-Heidelberg-Lund-Moscow
+      1 DESY Data Preservation Group
+      1 DESY  B-Factory  Study  Group
+      1 Destiny
+      1 DESIR
+      1 DeMoN
+      1 Democritos-Cracow-NBI-NIKHEF-Uppsala-Wupertal
+      1 DELPHI STIC
+      1 DELPHI Silicon Tracker Group
+      1 DELPHI HAC
+      1 DELPHI BELGIUM
+      1 DELPHES 3
+      1 DEGAS Consortium
+      1 DEEPSKYHUNTERS
+      1 dEDM
+      1 DECOR
+      1 DECIGO Working Group
+      1 DEAR/SIDDHARTA
+      1 Data of the Aachen-Berlin-Bonn-Hamburg-Heidelberg-Munchen
+      1 DASPOS
+      1 Darwin Team
+      1 DARWIN Consortium
+      1 DARWIN consortium
+      1 DARWIN
+      1 Darmstadt-Orsay-Krakow-Saclay
+      1 DARMSTADT-HEIDELBERG-VIRGINIA-WARSAW
+      1 Darmstadt-Heidelberg-Dresden-Strasbourg-Clermont-Ferrand-Florence-
+      1 DARMSTADT-GIESSEN-HEIDELBERG-MUENSTER
+      1 DarkSide project
+      1 Dark Energy Survey (DES)
+      1 DarkEnergy Survey
+      1 Daresbury-Liverpool-Rutherford
+      1 Daresbury-Glasgow-Lancaster-Manchester-Rutherford-Sheffield
+      1 Daresbury-DESY-Hamburg-Heidelberg-Manchester-Tokyo
+      1 DAPHNE project Team
+      1 DAPHNE DEAR
+      1 DAPHNE Commissioning Team
+      1 DAPHNE
+      1 DA$\Phi$NE Commissioning Team
+      1 DA$\Phi$NE
+      1 DAMA-LIBRA
+      1 DAHLIA Team
+      1 DAFNE Team
+      1 Dafne Commissioning Team
+      1 DAEδALUS
+      1 DAE$\delta$ALUS
+      1 DAEdeltaALUS
+      1 D0 Run2b Silicon Group
+      1 D0 Remote Analysis Task Force
+      1 D0 Online
+      1 D0-II
+      1 D0 Higgs Group
+      1 D0 Data Access Group
+      1 D0CTT Group
+      1 D0 CTT
+      1 D0 Calorimeter Group
+      1 D
+      1 CYGNUS MILAGRO
+      1 CYCLE Team
+      1 CWE Team
+      1 Cutler Group, LP
+      1 Cutler Group
+      1 CUPP Group
+      1 CUPP
+      1 CTF3 Study Team
+      1 CTA-R
+      1 CTA MC WORKING GROUP
+      1 CTA Focal Plane Instrumentation WP
+      1 CSRE
+      1 CSNSM ORSAY-CERN
+      1 CSI-RICH
+      1 CSI
+      1 CSES-Limadou
+      1 CS
+      1 Crystall Ball
+      1 Crystal-Barrel/TAPS
+      1 CrystalBall@MAMI
+      1 Crystal  Ball
+      1 CRYSTAL
+      1 Crystal
+      1 Crysal Barrel
+      1 CRYRING@ESR Working Group
+      1 Cryogenic Detector Group of Genoa
+      1 CRYOEDM
+      1 CryoEDM
+      1 CRTS
+      1 CRISTAL-iSE
+      1 CRISM Team
+      1 CRID Group
+      1 CRID
+      1 CRIB
+      1 Crew of the Intensity Upgrade Study
+      1 CRESST-II
+      1 CRAFT
+      1 Cracow AFP Group
+      1 CPT
+      1 CPP
+      1 CP-Hyperon Study Group
+      1 COUPP 500
+      1 COSY-II
+      1 COSY-CBS
+      1 COSY-13
+      1 Cosy-11
+      1 COSY
+      1 COSMOS Team
+      1 Cosmology-SWG
+      1 Cosmology SWG
+      1 COSMOLEP
+      1 COSME-IGEX Joint
+      1 COSME
+      1 CosMag
+      1 CoRoT-Team
+      1 CoRoT/SWG
+      1 CoRoT radial velocity Team
+      1 Corot Photometric Follow-Up Team
+      1 CoRoT Exoplanet
+      1 CORNISH
+      1 Cornell U., LNS
+      1 Cornell-Oxford-Tel Aviv-Yeshiva
+      1 COrE
+      1 COPENHAGEN-SACLAY
+      1 Coordinated Space Observation and Experiment Research Group, Wako, Saitama, Japan
+      1 Con-X
+      1 Conventional Facility Study Team
+      1 Control Group
+      1 Contributed to IEEE MTT-S 2005 International Microwave Symposium: Flagship of Microwaves
+      1 CoNDOR
+      1 Computer Acquisition Working Group
+      1 Compton Polarimeter
+      1 Compton polarimeter
+      1 COMPTON@MAX-lab
+      1 COMPTEL
+      1 Complexity Simulation Group
+      1 CompHEP
+      1 COMPETE ($e^+ e^-$)
+      1 COMPASS SciDAC
+      1 COMPASS Polarized Target Group
+      1 COMPASS Group
+      1 COMPAS Group, IHEP
+      1 Compact Muon Solenoid
+      1 Committee on Elementary Particle Physics in the 21st Century, National Research Council
+      1 Commissioning Team
+      1 Columbia-Stony Brook-Fermilab
+      1 Columbia-Fermilab
+      1 Colorado-Frascati-Northeastern-SLAC-Utah-Wisconsin
+      1 Colorado-Frascati-Houston-Northeastern-SLAC-Utah-Wisconsin
+      1 COL-NOTE = RBC
+      1 Collider Detector at Fermilab
+      1 College London
+      1 CODEX/ESPRESSO
+      1 Codalema
+      1 COBEX
+      1 COBE
+      1 CN WHOT-QCD
+      1 CNRS
+      1 CNA Consulting Engineers, Hatch-Mott-MacDonald
+      1 CMS Virtual Visits Team
+      1 CMS VFCal
+      1 CMS US
+      1 CMS Trigger and Data Acquisition Group
+      1 CMS Track Trigger Task Force
+      1 CMS Tracker Sensor
+      1 CMS Tracker Alignment
+      1 CMS TOPLHCWG
+      1 CMS TMTT Team
+      1 CMS Software Group
+      1 CMS SILICON TRACKER
+      1 CMS RPC Barrel
+      1 CMS/RPC
+      1 CMS-RPC
+      1 CMS Preshower
+      1 CMS pixel upgrade project
+      1 CMS Pixel Group
+      1 CMS Offline and Computing Projects
+      1 CMS Offline
+      1 CMS Muon Group
+      1 CMS muon Group
+      1 CMS muon group
+      1 CMS Michal Bluj
+      1 CMS Inner Tracker
+      1 CMS HF Calorimeter
+      1 CMS HF
+      1 CMS Hardware Alignmment Group
+      1 CMS German
+      1 CMS Forward Calorimetry Task force
+      1 CMS FNAL ROC Group
+      1 CMS ECAl
+      1 CMS DQM
+      1 CMS DAQ
+      1 CMS Computing project
+      1 CMS Computing and Core Software Group
+      1 CMS CERN-LHC
+      1 CMS CERN HCAL
+      1 CMS CASTOR
+      1 CMS Calo Task Force
+      1 CMS Calorimeter Simulation Task Force
+      1 CMS Beam & Radiation Monitoring Group
+      1 CMS Beam & Radiation Monitoring
+      1 CMS Barrel Muon
+      1 CMS Bari-Pavia
+      1 CMS ATLAS
+      1 CMS and TOTEM diffractive and forward physics working Group
+      1 CMD 2M
+      1 CMD
+      1 CL-WIC
+      1 Clover
+      1 CLOUDS
+      1 Cloud
+      1 CLMR
+      1 CLIC study Group
+      1 CLIC Physics Working Group
+      1 CLIC MDI Working Group
+      1 CLIC Detector Study
+      1 CLIC Detector and Physics Study
+      1 CLIC detector and physics
+      1 CLIC detector
+      1 CLIC damping rings design Team
+      1 CLIC BI
+      1 Cleveland-Strasbourg
+      1 CLERMONT-ORSAY
+      1 CLEO‐II
+      1 CLASS Team
+      1 CLAS Real Photon Working Group
+      1 CLAS N*
+      1 CLASH
+      1 CLAS Group at Saclay
+      1 CLAS Group
+      1 CLAS/EG4
+      1 CLAS6
+      1 Clas
+      1 CLARION-BareBall
+      1 CLARA
+      1 CL3+c
+      1 CITFR
+      1 CIMA
+      1 $\chi$QCD
+      1 chiQCD
+      1 Chinese Space VLBI Array Team
+      1 CHIME Scientific
+      1 CHIMERA-INDRA
+      1 Chimera
+      1 CHICAGO-HARVARD-ILLINOIS-OXFORD
+      1 Chicago-Harvard-Illinois-Oxford
+      1 CHICAGO-COLUMBIA-FERMILAB-ROCHESTER
+      1 Chicago-Cal Tech-Columbia-Fermilab-Rochester-Rockefeller
+      1 Cherenkov Telescope Array
+      1 CHEOPS Team
+      1 CHEEP Study Groups
+      1 CHEC
+      1 Charm-Tau Factory
+      1 CHARMS
+      1 CHARM II-IHEP(Zeuthen)
+      1 CHARMII
+      1 Charm II
+      1 CHARISSA
+      1 Charged Particles
+      1 Channeling tests
+      1 Channeling studies
+      1 Channeling
+      1 Chairman's Summary
+      1 CESRTA
+      1 CESR/CLEO
+      1 CESR-B Physics Working Group
+      1 CESR B Detector Working Group
+      1 CESR and CLEO
+      1 CERN Working Group on Super Beams
+      1 CERN VSC Committee
+      1 CERN-Uppsala
+      1 CERN UA1
+      1 CERN Theory Boson Workshop
+      1 CERN-TERA Foundation-MedAustron Oncology-2000
+      1 CERN Superconductivity Community
+      1 CERN-Soviet union
+      1 CERN-Serpukhov (IHEP-Karlsruhe-Pisa Vienna)
+      1 CERN-SACLAY
+      1 CERN-Russia
+      1 CERN RD-51
+      1 CERN/RD50
+      1 CERN RD48/ROSE
+      1 CERN RD48 - ROSE
+      1 CERN-RD-48
+      1 CERN-RD42
+      1 CERN RD-42
+      1 CERN RD26
+      1 CERN-RAL-MPI
+      1 CERN Public Information Office
+      1 CERN PS/CO Group
+      1 CERN-PS205
+      1 CERN-PS-170
+      1 CERN-Pisa-Wien
+      1 CERN-Pisa-Rome-Stony Brook
+      1 CERN, PH/DT group, 1211 Geneve 23, Switzerland
+      1 CERN PH-DT
+      1 CERN-PARIS-ORSAY-STOCKHOLM
+      1 CERN-PARIS-ORSAY
+      1 CERN-PADUA-TRIESTE-VIENNA
+      1 CERN-OXFORD-ROCKEFELLER
+      1 CERN-ORSAY-OXFORD
+      1 CERN-Orsay-Oxford
+      1 CERN-Orsay-Ecole polytechnique-Stockholm
+      1 CERN-Orsay
+      1 CERN n_TOF
+      1 CERN-Neuchatel-Ecole Poly-College de France
+      1 CERN NA63
+      1 CERN-NA-62
+      1 CERN NA62
+      1 CERN-NA-48/2
+      1 CERN-NA-35
+      1 CERN NA35
+      1 CERN-MUNICH-RUTHERFORD
+      1 CERN-Milan-Orsay
+      1 CERN Medipix
+      1 CERN-Mainz-Muenchen-Orsay (LAL)-TRIUMF-Vancouver-Victoria- Wien-Zurich
+      1 CERN-Mainz-Daresbury
+      1 CERN-Madrid-Mons-Oxford-Padua-Paris-Rutherford-Serpukhov- Stockholm-Strasbourg-Turin-Trieste-Vienna
+      1 CERN-LYON-WARSAW
+      1 CERN-LUND-PENNSYLVANIA-RIVERSIDE-WARSAW
+      1 CERN/LRL/RHEL
+      1 CERN-Liverpool-Mons-Padua-Rome-Trieste
+      1 CERN-Lisbon-NIKHEF-San Diego
+      1 CERN-LISBON-NEUCHATEL-COLLEGE DE FRANCE-PARIS
+      1 CERN-Lisbon-Moscow-Neuchatel-College de France-Paris
+      1 CERN-LAUSANNE-MICHIGAN-ROCKEFELLER
+      1 CERN-Lausanne-Lund-Michigan-Rockefeller
+      1 CERN-LAPP(Annecy)-Oxford
+      1 CERN-IPN Orsay-Oxford
+      1 CERN-IPN(Orsay)
+      1 CERN-ILL-PADOVA-RAL-SUSSEX
+      1 CERN-HOLLAND-LANCASTER-MANCHESTER
+      1 CERN-Heidelberg-Saclay
+      1 Cern-Heidelberg-Saclay
+      1 CERN-Heidelberg-Padua-Paris-Rome-Serpukhov-Trieste
+      1 CERN - HEIDELBERG - NAPLES - WARSAW
+      1 CERN-HARVARD-FRASCATI-MIT-NAPLES-PISA
+      1 CERN-Harvard-Frascati-MIT-Naples-Pisa
+      1 CERN-HARVARD-ANNECY(LAPP)-MIT-NAPLES-PISA
+      1 CERN-Harvard-Annecy(LAPP)-MIT-Naples-Pisa
+      1 CERN-Hamburg-Vienna
+      1 CERN-Hamburg-Rome-Moscow
+      1 CERN-Hamburg-Orsay-Vienna
+      1 CERN-Hamburg-Karlsruhe-Oxford-Rutherford-Westfield Neutrino
+      1 CERN-HAMBURG-HEIDELBERG-ORSAY-VIENNA
+      1 Cern-Hamburg-Amsterdam-Rome-Moscow
+      1 CERN-GENOA-MILAN
+      1 CERN-FRASCATI-MILAN-TURIN
+      1 CERN-Florence-Genoa-Heidelberg-Padua-Paris-Rome-Serpukhov-Trieste
+      1 CERN-ERLANGEN-FREIBURG-LOS ALAMOS-CARNEGIE MELLON-SACLAY-UPPSALA
+      1 CERN-Erlangen-Freiburg-Los Alamos-Carnegie Mellon-Saclay-Uppsala
+      1 CERN-EMU-018
+      1 Cern-Ecole Polytechnique-Orsay-Stockholm
+      1 CERN-Dortmund-Heidelberg-Warsaw-Ames-Bologna
+      1 CERN-Dortmund-Fermilab-Heidelberg-Saclay-Warsaw
+      1 CERN Detector R&D RD-2
+      1 CERN-DESY-Edinburgh
+      1 CERN Cryogenics Group
+      1 CERN-CRACOW-MUNICH
+      1 CERN-Cosenza-Firence-Moscow-Padova-Pavia-Pisa
+      1 CERN-COPENHAGEN-GRENOBLE-LUND
+      1 CERN COMPASS
+      1 CERN-Columbia-Rockefeller-Saclay
+      1 CERN-COLLEGE DE FRANCE-ORSAY-ECOLE POLYTSACLAY
+      1 CERN-COLLEGE DE FRANCE-MADRID-STOCKHOLM
+      1 CERN-College de France-Dortmund-Heidelberg-Warsaw
+      1 CERN-College de France
+      1 CERN-CEA-CNRS
+      1 CERN-Brussels
+      1 CERN-Birmingham-Brussels-Mons-Paris-Saclay
+      1 CERN BE/BI
+      1 CERN-Annecy(LAPP)-Genoa-Copenhagen-Oslo-London
+      1 CERES NA45
+      1 CERES/NA35
+      1 CEPC Working Group
+      1 CEPC-SPPC Study Group
+      1 CEPC
+      1 CEN-Sacly-IHEP-Serpukhov-JINR-Dubna-ITEP-Moscow
+      1 CEN-SACLAY-DSRI-COPENHAGEN
+      1 CENNS
+      1 Cello
+      1 Cell Lattice Study Group
+      1 CEBAF Hall B
+      1 CEBAF Hall A
+      1 CEBAF Commissioning Team
+      1 CEA
+      1 CE-25
+      1 CE06/CE32
+      1 CE06
+      1 CDM-2
+      1 CDF SVXIIb
+      1 CDFS Team
+      1 CDF-S Team
+      1 CDFS
+      1 CDF RUN II
+      1 CDF Radiation Monitoring Group
+      1 CDF radiation monitoring Group
+      1 CDF optical readout Group
+      1 CDF Online
+      1 CDF Offline Group
+      1 CDF NW Wedge Group
+      1 CDF-N
+      1 CDF ISL Group
+      1 CDF-II
+      1 CDF Hard Diffraction Group of
+      1 CDF Group
+      1 CDF DAQ Group
+      1 CDF and D0 Working Group Members
+      1 CDF-2
+      1 CDEX/TEXONO
+      1 CDEX-TEXONO
+      1 CD/EoR Science Working Group
+      1 CD and D0
+      1 CCRF/NuTeV
+      1 CCFRR NEUTRINO
+      1 CCFRR Neutrino
+      1 CCFRR
+      1 CCFR/NuTe
+      1 CBM-STS
+      1 CBM eTOF Group
+      1 CBMAMI
+      1 CBI
+      1 CBESLA/TAPS
+      1 CBELSA/TAPS-
+      1 CASA Development Team
+      1 CARRACK
+      1 Carpet-3
+      1 Carnegie Supernova Project
+      1 CARMENES
+      1 Carleton-CRPP-Purdue-Spire
+      1 Carinae D-1 Team
+      1 CAPMAP
+      1 CANGROO
+      1 CANGOROO
+      1 Cangaroo-II
+      1 Cangaroo
+      1 CANDELS Team
+      1 CANDELS
+      1 CanariCam Piratas Team
+      1 CANADA-CERN
+      1 Canada-CERN
+      1 CAMC
+      1 Cambridge-Michigan State
+      1 CAMBRIDGE-FERMILAB-MICHIGAN STATE
+      1 Cambridge Bubble Chamber Group
+      1 Cal Tech Users Group
+      1 CAL TECH-SIN-TUM
+      1 Caltech‐SIN‐TUM
+      1 Cal Tech-LBL-SLAC
+      1 Cal Tech-Fermilab-Illinois-Indiana
+      1 Calorimetric detector
+      1 Calorimeter Working Group
+      1 Calorimeter Calibration Task Force
+      1 Calorimeter
+      1 Calocube
+      1 Calkul
+      1 California Institute of Technology-Stanford Linear Accelerator Center and Stanford University
+      1 California
+      1 CALIFA Team
+      1 CALICE-UK group
+      1 CALICE TESLA
+      1 CALICE SiPM
+      1 CALICE-SDHCAL groups
+      1 CALICE SDHCAL
+      1 CALICE EUDET
+      1 CAGLIARI-STRASBOURG-TURIN
+      1 CAGLIARI-PADUA-TURIN
+      1 Cagliari-Cambridge-CERN-Dubna-Edinburgh-Ferrara-Mainz-Perugia-Pisa-Saclay-Torino-Vienna
+      1 Cagliari-Cambridge-CERN-Dubna-Edinburgh-Ferrara-Firenze-Mainz
+      1 CADIS
+      1 C96-07-16.2
+      1 C-4
+      1 C2D
+      1 c2d
+      1 C0 Charm
+      1 C05-09-05.7
+      1 C03-06-23.1
+      1 C00-08-28.8
+      1 By PHOBOS
+      1 BUST
+      1 Bullet Cluster
+      1 BUGEY-INPG
+      1 BUGEY
+      1 Bugey
+      1 BUDAPEST-ULAN-BATOR-MOSCOW-BUCHAREST-KOSICE
+      1 Budapest-Dubna-Prague-Serpukhov-Sofiya
+      1 BUDAPEST-DUBNA-PRAGUE-SERPUKHOV-SOFIA
+      1 Budapest-Dubna-Prague-Serpukhov
+      1 Budapest-Dubna
+      1 Budapest-Bucharest-Warsaw-Dubna-Cracow-Moscow-Sofiya-Tashkent-Ulan Bator-Hanoi
+      1 Budapest-Bucharest-Warsaw Dubna-Cracow-Moscow-Sofiya-Tashkent-Tbilisi Ulan Bator-Hanoi
+      1 Budapest-Bucharest-Dubna-Cracow-Sofiya-Tbilisi-Tashkent-Ulan Bator-Hanoi
+      1 Bucharest-Dubna-Moscow-Sofiya-Tashkent-Tbilisi-Ulan Bator
+      1 Bucharest-Dubna-Leningrad-Ulan Bator
+      1 BUCHAREST-DUBNA-DUSHANBE
+      1 Bucharest-Budapest-Warsaw-Moscow
+      1 Bucharest-Budapest-Cracow-Dubna-Hanoi-Serpukhov-Sofia-Taskhent-Tbilisi-Ulan-Bator-Warsaw
+      1 Bucharest-Budapest-Cracow-Dubna-Hanoi-Moscow-Sofiya-Tashkent-Tbilisi-Ulan Bator-Warsaw
+      1 Bubble Chamber Group
+      1 BTF upgrade team
+      1 BTeV Written
+      1 BTeV PIXEL Group
+      1 BTeV Pixel
+      1 BTeV EM Calorimeter
+      1 BTeV electromagnetic calorimeter Group
+      1 B TeV
+      1 Brussels-Serpukhov-Tbilisi-Genoa-Mons-Nijmegen-CERN
+      1 BRUSSELS-SERPUKHOV-TBILISI
+      1 Brussels-Mons-Serpukhov-CERN
+      1 Brussels-CERN-Oxford-Padua-Rome-Rutherford-Trieste
+      1 BRUSSELS-CERN-MONS-SERPUKHOV
+      1 Brussels-CERN-Mons-Serpukhov
+      1 Brussels-CERN-Mons-Munich
+      1 BRUSSELS-CERN-GENOVA-MONS-NIJMEGEN-SERPUKHOV-TEL-AVIV
+      1 BRUSSELS-CERN-GENOVA-MONS-NIJMEGEN-SERPUKHOV
+      1 Brussels-CERN-Cracow
+      1 BRUSSELS-CAMBRIDGE-COLLEGE DE FRANCE-LONDON-LIVERPOOL-MONS-PARIS-STRASBOURG-VIENNA
+      1 Brussels-Annecy(LAPP)
+      1 BROWN-INDIANA-MIT-MONS-PAVIA-RUTGERS-TECHNION-TEL AVIV-TENNESSEE-WEIZMANN
+      1 BROWN-CERN-FERMILAB-IIT-ILLINOIS-INDIANA-JOHNS HOPKINS-MIT OAK RIDGE-RUTGERS-STEVENS-TENNESSEE-YALE
+      1 Brookhaven-Los Alamos-Princeton-TRIUMF
+      1 BROOKHAVEN-HOUSTON-PENNSYLVANIA STATE-RICE
+      1 Brookhaven-Heidelberg-Karlsruhe-Milano-Munich-Nice-Paris-Rehovot-Rome Saclay
+      1 Brookhaven-Fermilab-Rockefeller
+      1 Brookhaven E821
+      1 Brookhaven E-802
+      1 Brookhaven-CERN-Syracuse-Yale
+      1 BROOKHAVEN-CERN-MICHIGAN STATE-OXFORD-ROCKEFELLER
+      1 Brookhaven-CERN-Copenhagen-Lund-Penn-Rutherford-Tel Aviv
+      1 BROOKHAVEN-BROWN-KEK-OSAKA-PENN-STONY BROOK-TOKYO
+      1 Brookhaven-Brown-KEK-Osaka-Penn-Stony Brook-Tokyo
+      1 British Universities
+      1 British-Scandinavian-ISR
+      1 Bristol-Geneva-Heidelberg-Lausanne-Rutherford
+      1 BRISTOL-CERN-GENEVA-HEIDELBERG-LAUSANNE-QUEEN MARY COLL-MELBOURNE-RUTHERFORD
+      1 Bristol-Cambridge-Geneva-Lausanne-Heidelberg-Queen Mary Coll-Rutherford
+      1 BRISTOL-CAMBRIDGE-GENEVA-HEIDELBERG-LAUSANNE-QUEEN MARY COLL-RUTHERFORD
+      1 BRIKEN
+      1 Brazil-Japan on Chacaltaya Emulsion Chamber Experiment
+      1 BRASIL-JAPAN EMULSION CHAMBER
+      1 BRAIN-CLOVER
+      1 BRAIN
+      1 Brahms
+      1 B-Pol
+      1 Boulby‐LAGUNA
+      1 Boulby
+      1 Bootes survey
+      1 Booster/MiniBooNE
+      1 BoNuS
+      1 BONN-CERN-LIVERPOOL
+      1 Bonn-CERN-École Poly.-Glasgow-Lancaster-Manchester-Orsay-Paris(LPNHE)-Rutherford-Sheffield
+      1 BOMBAY-CHANDIGARH-JAMMU-TOKYO
+      1 Bombay-Chandigarh-Jammu-Tokyo
+      1 BOMBAY-CHANDIGARH-DELHI-JAMMU
+      1 Bombay-Chandigarh-Delhi-Jammu
+      1 Bombay-CERN-Neuchatel-Tokyo
+      1 Bombay-CERN-Genoa-Innsbruck-Japan-Madrid-Mons-Rutgers-Serpukhov-Tennessee-Vienna
+      1 Bombay-CERN-Cracow-Innsbruck-London-Vienna-Warsaw
+      1 BOMBAY-CERN-CRACOW-INNSBRUCK-JAMMU-LONDON-VIENNA-WARSAW
+      1 Bombay-CERN-Cracow-Innsbruck-Jammu-London-Vienna-Warsaw
+      1 Bombay-CERN-Cracow
+      1 BOMBAY-CERN-COLLEGE DE FRANCE-MADRID
+      1 BOLOGNA-GLASGOW-RUTHERFORD-SACLAY-TURIN
+      1 BOLOGNA-FLORENCE-GENOA-MILAN-OXFORD-PAVIA
+      1 BOLOGNA-FLORENCE
+      1 Bologna-CERN-Frascati-Lecce
+      1 Bologna-CERN-Frascate
+      1 Bologna-Cern-Dubna-Munich-Saclay
+      1 BOLIVIAN AIR SHOWER JOINT EXPERIMENT
+      1 Bolivian Air Shower Joint Experiment
+      1 BNL-Washington-PSI-Yale
+      1 BNL (PI+, K+)
+      1 BNL Neutrino Working Group
+      1 BNL H Particle
+      1 BNL EIC Science Task Force
+      1 BNL-E941
+      1 BNL E931
+      1 BNL E929
+      1 BNL-E-910
+      1 BNL E906
+      1 BNL E890/E909
+      1 BNL-E885
+      1 BNL E885
+      1 BNL E836
+      1 BNL-E821
+      1 BNL-E787
+      1 BNL-CERN-MICHIGAN STATE-OXFORD-ROCKEFELLER (BCMOR)
+      1 BNL-CERN-Michigan  State-Oxford-Rockefeller (BCMOR)
+      1 BNL-CCNU
+      1 BNL Bubble Chamber Group
+      1 BNL–Bielefeld–CCNU
+      1 BNL-AGS E929
+      1 BNL-AGS E906
+      1 BNL-AGS E885
+      1 BNL-AGS E877
+      1 BNL-AGS E835
+      1 BNL
+      1 B.L. Team
+      1 BLAST Team
+      1 BlackHat
+      1 BL11 Reconstruction Group
+      1 B-J
+      1 Birmingham-Rutherford-Tel Aviv-Westfield
+      1 BIRMINGHAM-QUEEN MARY COLL.-RUTHERFORD
+      1 Birmingham-Glasgow-London(I.C.)-Oxford-Rutherford
+      1 Birmingham-Glasgow-London (I.C.)-Oxford-Rutherford
+      1 Birmingham-CERN-Neuchatel-Rutherford
+      1 Birmingham-CERN-London-Munich-Oxford
+      1 Birmingham-CERN-Imperial-Coll-Munich-Oxford-University Coll
+      1 Birmingham-CERN-Imperial Coll.-Munich(MPI)-Oxford-University Coll. London
+      1 Birmingham-CERN-Imperial Coll-Munich(MPI)-Oxford-University Coll.(London)
+      1 Birmingham-CERN-Imperial Coll-Munich (MPI)-Oxford-Univ Coll London
+      1 Birmingham-CERN-Imperial Coll.-MPI(Munich)-Oxford-University Coll.
+      1 Birmingham-CERN-Imperial College-Munich(MPI)-Oxford
+      1 Birmingham-CERN-Imperial College-Muenchen(MPI)-Oxford-University
+      1 Birmingham-Brussels-CERN-Mons-Paris-Saclay
+      1 BIRMINGHAM-BONN-CERN-LONDON ICL-LONDON UCL-MUNICH-OXFORD
+      1 BIRMINGHAM-AMSTERDAM-RUTHERFORD-WILLIAM AND MARY
+      1 BIOSTIRLING
+      1 BIOSHIELD-B44
+      1 BINP-KAERI Scientific
+      1 BINFRA-15B517 Experiments
+      1 Binding Blocks
+      1 Binary Black Hole Grand Challenge Alliance
+      1 Binary Black Hole Challenge Alliance
+      1 BigBoss
+      1 BigBite
+      1 Bielefeld-Montpellier-Thessaloniki
+      1 BICEP/Keck
+      1 BICEP
+      1 BGV
+      1 BGRT
+      1 BGR(Bern-Graz-Regensburg)
+      1 BGR [Bern-Graz-Regensburg]
+      1 BGO Ball
+      1 BGO
+      1 B Factory Accelerator Task Force
+      1 Beyond the Standard Model Working Group
+      1 BETS Gamma-Ray
+      1 BESS-Polar
+      1 BESIII CGEM Group
+      1 BERN-MUNICH
+      1 BERN-CERN-NBI COPENHAGEN-LAL ORSAY-PAVIA-CEN SACLAY
+      1 BERN-CERN-COPENHAGEN-ORSAY-PAVIA-SACLAY
+      1 BERN-BIELEFELD-KEK-KYOTO-PEKING-SACLAY-SLAC-TSUKUBA-YALE
+      1 Berlin(Zeuthen)-Budapest-Dubna-Protvino
+      1 Berlin-Varna-Budapest-Dubna-Moscow-Prague-Sofiya-Tbilisi
+      1 BERLIN-BUDAPEST-DUBNA-SERPUKHOV
+      1 berlin-budapest-dubna-prague-sofia-serpukhov
+      1 BERLIN-BUDAPEST-DUBNA-PRAGUE-SERPUKHOV-SOFIYA
+      1 BERLIN-BUDAPEST-DUBNA-PRAGUE-SERPUKHOV-SOFIA
+      1 Berlin-Budapest-Dubna-Prague-Serpukhov-Sofia
+      1 Berlin-Budapest-Dubna-Prague
+      1 BERLIN-BUDAPEST-DUBNA-MOSCOW-PRAGUE-SOFIYA-TBILISI
+      1 BERLIN-BUDAPEST-DUBNA-MOSCOW-PRAGUE-SERPUKHOV-SOFIYA-TBILISI
+      1 Berlin-Budapest-Dubna-Moscow-Prague-Serpukhov-Sofiya-Tbilisi
+      1 Berkeley Particle Data Group
+      1 Berkeley-Northwestern-TRIUMF
+      1 BERKELEY-HONOLULU-FERMILAB-WASHINGTON-WISCONSIN
+      1 Berkeley-Hawaii-Washington
+      1 BERKELEY-HAWAII-FERMILAB-SEATTLE-WISCONSIN
+      1 Berkeley-Hawaii-Fermilab-Michigan
+      1 Berkeley-Hawaii
+      1 BERKELEY-FERMILAB-PRINCETON
+      1 BERKELEY-FERMILAB-HAWAII-WASHINGTON-WISCONSIN
+      1 Berkeley-Fermilab-Hawaii-Washington-Wisconsin
+      1 Berkeley-Fermilab-Hawaii-Seattle-Wisconsin
+      1 BERKELEY-CERN-HAWAII-WISCONSIN
+      1 Berkeley-Birmingham-Brussels-CERN-Chandigarh-Fermilab-Hawaii-Illinois Tech-London-Jammu-Munich-Oxford-Rutherford-Rutgers
+      1 BERGEN-CERN-STRASBOURG
+      1 Bergen-CERN-Strasbourg
+      1 BERGEN-CERN-PARIS-STRASBOURG
+      1 BERGEN-CERN-PARIS-MADRID-STOCKHOLM
+      1 BERGEN-CERN-COPENHAGEN-GRENOBLE-LUND-SACLAY
+      1 Bergen-Brescia-Dubna-Frascati-Oslo-Pavia-Torino
+      1 BERGEN-BORDEAUX-CERN-CLERMONT-FERRAND-ECOLE POLY-LISBON-LYON-NEUCHATEL-ORSAY-STRASBOURG-VALENCIA
+      1 BeppoSAX Compton thin Sey2s
+      1 BeppoSAX
+      1 BEPII Team
+      1 B.E.P.C. Upgrade Working Group
+      1 BEPCII Team
+      1 BEPC II Team
+      1 BEPC III
+      1 BEPCII/BESIII
+      1 BEPCII
+      1 BEPC Group
+      1 BEO Moussala
+      1 BENE Steering Group
+      1 Belle II TOP Group
+      1 Belle II TOP group
+      1 Belle II SVD group
+      1 Belle II SVD
+      1 Belle-II PIO Group
+      1 Belle-IIPID Group
+      1 Belle II PID group
+      1 Belle-II Particle Identification Group
+      1 Belle-II iTOP Group
+      1 Belle-II ECL Team
+      1 Belle-II Distributed Computing Group
+      1 Belle-II computing Group
+      1 Belle II CDC trigger
+      1 BELLE II calorimeter group
+      1 Belle II Barrel Particle Identification Group
+      1 BELLE-II
+      1 Belle ECL
+      1 Beijing-Rome-Saclay
+      1 Beijing-Rome-Paris-Saclay (BPRS)
+      1 BECQUEREL
+      1 BEBC Wide Band Neon
+      1 BEBC WA21/WA59
+      1 BEBC WA21
+      1 BEBC TST
+      1 BEBC Narrow Band Neon
+      1 Beauty and charm study
+      1 Beauty and charm production
+      1 Beamline Revoew Committee
+      1 Beamline Review Committee
+      1 Beam-Beam Interaction Working Group
+      1 BCS
+      1 Bcool
+      1 BATON ROUGE-KRAKOW-MOSCOW-TASHKENT
+      1 Baton Rouge-Krakow-Moscow-Tashkent
+      1 Baton-Rouge-Cracow-Moscow-Tashkent
+      1 Bates Tritium
+      1 BATES OOPS
+      1 Bates He-3 M1
+      1 Bates-FPP
+      1 Bates FPP
+      1 Bates E77-14 Parity
+      1 BATC
+      1 BASLE-CERN-STOCKHOLM-THESSALONIKI
+      1 Basle-CERN-CEN Saclay-DAP Athens-Democritos-ETH-Zurich-Fribourg-Liverpool-SI N-Stockholm-Thessaloniki
+      1 Basle CERN CEN-Saclay DAP-Athens Democritos ETH-Zurich Fribourg Liver- pool SIN Stockholm Thessaloniki
+      1 Basel-CERN-Saclay-Athens-Democritus-ETH-Zurich-Fribourg-Liverpool-SIN-Stockholm-Thessaloniki
+      1 Bartol, Purdue, Smithsonian, Wisconsin
+      1 Bartol-Firenze-Purdue-Smithsonian-Wisconsin
+      1 Bartol-Firence-Purdue-Smithonian-Wisconsin
+      1 $\bar P$ANDA
+      1 Bari-CERN-Democritos-Dortmund-Ecole Poly-Edinburgh-Glasgow
+      1 BARI-BRUSSELS-CERN-MONS-PARIS-STRASBOURG-LONDON-VIENNA
+      1 BARI-BROWN-FERMILAB-MIT-WARSAW
+      1 BARI-BROWN-CERN-FERMILAB-MIT-WARSAW
+      1 Bari-Bonn-CERN-Daresbury-Liverpool-Milan
+      1 Bari-Bonn-CERN-Daresbury-Glasgow-Liverpool-Milan-Purdue-Vienna
+      1 Bari-Bologna-Cal Tech-CERN-Drexel-Frascati-Indiana-Michigan-Pisa-Rome-Texas A&M-Turin-Virginia Tech
+      1 Bari-Birmingham-Brussels-Ecole Poly-Rutherford-Saclay-London
+      1 Bari-Birmingham-Brussels-CERN-Democritos-Ecole Poly-London-Cracow-Munich-Oxford-Rutherford-Saclay-Stockholm-London Coll
+      1 Bari-Birmingham-Brussels-CERN-Democritos-Ecole Poly-Cracow-Munich-Oxford-Rutherford-Saclay-Stockholm
+      1 Bari-Birmingham-Brussels-CERN-Cracow-Democritos-London-Munich-Oxford-Ecole Poly-Rutherford-Saclay
+      1 Barcelona-Batavia-Belgrade-Bucharest-Lund-Lyons-Montreal-Nancy-Ottawa-Paris-Rome-Strasbourg-Valencia
+      1 Banaras-Chandigarh-Jaipur-Jammu-Lund
+      1 BANARAS-CAIRO-CHANDIGARH-JAIPUR-JAMMU-LUND
+      1 Baku-Belgrade-Bucharest-Varna-Warsaw-Dubna-Yerevan-Kishinev-Moscow- Prague-Sofiya-Tbilisi-Ulan Bator
+      1 Baku-Belgrade-Bucharest-Varna-Warsaw-Dubna-Moscow-Prague-Sofiya-Ulan Bator
+      1 BAKSAN
+      1 BAIKAL-GVD
+      1 BaBar RPC
+      1 BaBar Prompt Reconstruction and Computing Group
+      1 BaBar LST Group
+      1 BaBar IFR Group
+      1 BaBar IFR group
+      1 BaBar Drift Chamber
+      1 BaBar Collaborarion
+      1 BaBaR
+      1 Babar
+      1 B-2
+      1 A. Ziegler for the H. E. S. S.
+      1 AXTAR
+      1 AX-PET
+      1 AURIGO
+      1 Auriga
+      1 Attenuation Length Sub-Working Group in Japan
+      1 ATLAS Virtual Visits Team
+      1 ATLAS Upgrade Strip Sensor
+      1 ATLAS Upgrade Silicon Strip
+      1 ATLAS Upgrade PPS R&D Project
+      1 ATLAS Upgrade PPS
+      1 ATLAS Upgrade Planar Pixel Sensor
+      1 ATLAS UK Pixels
+      1 ATLAS Tracker Upgrade Serial Powering
+      1 ATLAS Tile Calorimeter system
+      1 ATLAS Tile calorimeter system
+      1 Atlas Tile Calorimeter System
+      1 ATLAS TileCal Group
+      1 ATLAS Team
+      1 ATLAS TDAQ Level-1 Trigger
+      1 ATLAS T/DAQ Group
+      1 ATLAS TDAQ Community
+      1 ATLAS TDAQ and Trigger community
+      1 ATLAS SUSY Group
+      1 ATLAS Simulation
+      1 ATLAS SeT
+      1 ATLAS Semiconductor Tracker
+      1 ATLAS SCT Barrel module
+      1 ATLAS Saclay
+      1 ATLAS RPC-LVL1
+      1 ATLAS RD34
+      1 ATLAS R&D
+      1 ATLAS Planar Pixel Sensors
+      1 ATLAS Planar Pixel Sensor
+      1 ATLAS Pixel Group
+      1 Atlas pixel detector
+      1 ATLAS PIXEL
+      1 ATLAS pixel
+      1 ATLAS Muon Spectrometer
+      1 Atlas Muon Reconstruction Group
+      1 ATLAS Muon Offline DQA
+      1 ATLAS MUON
+      1 Atlas Muon
+      1 ATLAS MPX
+      1 ATLAS Mainz
+      1 ATLAS Luminosity and Forward Detectors
+      1 ATLAS/LUCID
+      1 ATLAS LPC
+      1 ATLAS local hadronic calibration Group
+      1 ATLAS Liquid Argon HiLum
+      1 ATLAS liquid argon Group
+      1 ATLAS Liquid Argon EMEC/HEC
+      1 ATLAS Liquid Argon Electromagnetic Calorimeter Group
+      1 ATLAS Liquid Argon calorimeters Group
+      1 ATLAS  Liquid  Argon  Calorimeter  Group
+      1 ATLAS Liquid Argon calorimeter Group
+      1 ATLAS liquid argon calorimeter Group
+      1 ATLAS LIQUID ARGON
+      1 ATLAS liquid argon
+      1 ATLAS Level-! Central Trigger Group
+      1 ATLAS LAr-HEC
+      1 ATLAS LArg
+      1 ATLAS LAr Calorimeter
+      1 ATLAS ITk Strips
+      1 ATLAS ITk Strip
+      1 ATLAS Innere Detector Group
+      1 ATLAS Inner Detector Group
+      1 ATLAS Inner Detector
+      1 ATLAS HLT Group
+      1 ATLAS HiLum Liquid Argon Calorimeter Endcap
+      1 ATLAS  High Level Triggers Group
+      1 ATLAS Higgs Working Group
+      1 ATLAS H Consortium
+      1 ATLAS H
+      1 ATLAS GridKa Operation
+      1 ATLAS FTK Upgrade Project
+      1 ATLAS FTK Group
+      1 ATLAS FRASCATI Group
+      1 ATLAS Forward Calorimeter Group
+      1 ATLAS Electromagnetic Barrel Liquid Argon Calorimeter Group
+      1 ATLAS Electromagnetic Barrel Calorimeter
+      1 ATLAS Distributed Computing
+      1 ATLAS Diamond Pixel Upgrade
+      1 ATLAS DC1 Task force
+      1 ATLAS DBM
+      1 ATLAS & CMS
+      1 ATLAS-CMOS-Pixel
+      1 ATLAS CMOS Pixel
+      1 ATLAS Cibran Santamarina Rios
+      1 ATLAS Canadian
+      1 ATLAS BLM Group
+      1 Atlas Beam Conditions Monitor
+      1 ATLAS 3D Sensor
+      1 ATIC-1
+      1 ATHLET
+      1 ATHENS-IRVINE-NEW MEXICO-PENN STATE-TEMPLE
+      1 Athens-Irvine-New Mexico-Penn State-Temple
+      1 ATHENS-IRVINE-MICHIGAN STATE-NEW MEXICO-TEMPLE
+      1 ATHENS-IRVINE-KARLSRUHE-NEW MEXICO-PENNSYLVANIA STATE
+      1 Athens-Irvine-Karlsruhe-New Mexico-Pennsylvania State
+      1 Athens-Demokritos-Liverpool-Vienna
+      1 Athens-“Democritus”-Liverpool-Vienna
+      1 ATHENS-CERN-PARIS-ROME
+      1 ATHENS-BRUSSELS-CERN-DEMOCRITOS-LIVERPOOL-MONS-VIENNA
+      1 Athens-Brussels-CERN-Democritos-Liverpool-Mons-Vienna
+      1 Athens-Brookhaven-CERN-Copenhagen (NBI)-Lund-Pennsylvania-Rutherford Appleton Lab.-Tel Aviv
+      1 ATHENS-BROOKHAVEN-CERN-COPENHAGEN-LUND-RUTHERFORD-TEL-AVIV
+      1 ATHENS-BROOKHAVEN-CERN
+      1 ATHENS-BARI-BIRMINGHAM-CERN-PARIS(COLLEGE DE FRANCE)-PARIS(LPNHE)
+      1 Athens-Bari-Birmingham-CERN-College de France-Paris
+      1 ATHENS-BARI-BIRMINGHAM-CERN-COLLEGE DE FRANCE
+      1 ATHENS-ATHENS-BROOKHAVEN-CERN-SYRACUSE-YALE
+      1 Athens-Athens-Brookhaven-CERN
+      1 Athena Team
+      1 ATHENA/AD-1
+      1 ATA Group
+      1 Atacama Cosmology Telescope
+      1 Astro-WISE Consortium
+      1 Astro-WISE
+      1 Astropysics Group Imperial College London UK
+      1 Astropy
+      1 Astrophysics Group, Oxford University
+      1 Astrophysics Group, Keele University, UK
+      1 Astrophysics Group, Keele University, Keele, UK
+      1 Astrophysics Group, Imperial College, London
+      1 Astrophysics Group, Imperial College London
+      1 Astrophysics Group, Cavendish Laboratory, University of Cambridge
+      1 Astrophysics Group, Cavendish Laboratory, Cambridge, UK
+      1 Astrophysical Multimessenger Observatory Network)
+      1 ASTRO-H SWG Team
+      1 ASTROD I ESA cosmic vision 2015-2025 Team
+      1 ASTROD I
+      1 Astrobites
+      1 ASTRI Project
+      1 Astrid Morréale on behalf of the COMPASS
+      1 Asterix
+      1 ASTERICS
+      1 ASTEP Team
+      1 ASTEP team
+      1 $A\small{TLAS}$
+      1 ASIC Development Group
+      1 ASHRA NTA
+      1 Ashra NTA
+      1 ASHRA-1
+      1 AS gamma
+      1 ASgamma
+      1 ASFIN
+      1 ASDEX Upgrade Team
+      1 ASDEX Upgrade team
+      1 ASDC Team
+      1 ASCA Galactic Plane Survey Team
+      1 ASCA Galactic plane survey
+      1 ASAS-SN
+      1 Asacusa AD-3
+      1 ARTIST
+      1 Arizona-IMAX
+      1 ARIZONA-FERMILAB-FLORIDA STATE-NOTRE DAME-TUFTS-VANDERBILT-VIRGINIA TECH
+      1 Arizona-Athens-Bari-Bergen-Birmingham-CERN-Creigton-LBL-Paris College de France-Madrid-CIEMAT-Santiago de Compostela-Strasbourg-Trieste-Vienna- York
+      1 Argo-Ybj
+      1 Argonne-NAL
+      1 Argonne-FERMILAB-Lehigh-Penn-Rice-Wisconsin
+      1 ARGONNE-FERMILAB-LEHIGH-MICHIGAN-PENN-RICE-WISCONSIN
+      1 Argonne-Fermilab-Lehigh-Michigan-Penn-Rice-Wisconsin
+      1 Argonne-Concordia-Purdue
+      1 Argonne-Chicago-Ohio State-Washington University
+      1 Argonne-Carnegie Mellon-Purdue
+      1 ARES Design Study Group
+      1 ARCONS
+      1 ARCA
+      1 AR-B Factory Group
+      1 Arachnid
+      1 APS Multidivisional Neutrino Study
+      1 APPA
+      1 APOLLON
+      1 Ao
+      1 Antihydrogen TRAP
+      1 Antihydrogen
+      1 ANPhA
+      1 ANNEXT
+      1 ANNECY(LAPP)-CERN-GENOA-OSLO
+      1 ANNECY(LAPP)-CERN-BOHR INST-OSLO-LONDON
+      1 ANNECY(LAPP)-CERN-BOHR INST-GENOA-OSLO-LONDON
+      1 Annecy(Lapp)-CERN-Bohr Inst-Genoa-Oslo-London
+      1 ANNECY(LAPP)-BRUSSELS
+      1 Annecy(LAPP)-Brussels
+      1 Annecy-CERN-Kyoto-Sangyo-Marseille-Serpukov-Trieste-Vienna
+      1 ANNECY-CERN-CLERMONT-FERRAND-ECOLE POLYTECHNIQUE-LISBON-LYON-ORSAY- STRASBOURG-VALENCIA
+      1 ANL-Fermilab-Lehigh-Michigan-Penn-Rice-Wisconsin
+      1 ANI-TIME
+      1 ANITA-II
+      1 ANGST/ANGRRR
+      1 ANDY
+      1 ANDES Organizing Committee
+      1 Anaphe
+      1 AMZEUS
+      1 AMS TRD
+      1 AMS TOF
+      1 Amsterdam-Nijmegen
+      1 AMSTERDAM-HELSINKI-LIVERPOOL
+      1 AMSTERDAM-GENEVA-LONDON-SURREY-TRIESTE
+      1 Amsterdam-Geneva-London-Surrey-Trieste
+      1 Amsterdam-CERN-Nijmegen
+      1 Amsterdam-CERN-Grenoble-Saclay-Swierk-Uppsala
+      1 Amsterdam-CERN-Genoa-Naples-Pisa
+      1 Amsterdam-CERN-Darmstadt-Grenoble-Orsay-Saclay-Uppsala-Warsaw
+      1 AMSTERDAM-CERN-CRACOW-MUNICH-OXFORD-RUTHERFORD
+      1 Amsterdam-CERN-Cracow-Munich-Oxford-Rutherford
+      1 Amsterdam-Brussels-CERN-Madrid-Mons-Nijmegen-Oxford-Padua- Paris-Rutherford-Serpukhov-Stockholm-Strasbourg-Turin-Trieste
+      1 Amsterdam-Brussels-CERN-Madrid-Mons-Nijmegen-Oxford-Padua- Paris-Rome-Rutherford-Serpukhov-Strasbourg-Turin-Trieste-Vienna
+      1 AMSTERDAM-BRISTOL-CERN-CRACOW-MUNICH-RUTHERFORD
+      1 Amsterdam-Bologna-Padua-Pisa-Saclay-Turin
+      1 AMSTERDAM-BERGEN-BOLOGNA-PADOVA-PISA-SACLAY-TORINO
+      1 AMSTERDAM-ATHENS-HELSINKI-LIVERPOOL-STOCKHOLM-VIENNA
+      1 Amsterdam 97-01
+      1 AMS Bologna
+      1 AMS-02 Tracker
+      1 AMS-0
+      1 Amore
+      1 AMON team
+      1 AMON
+      1 AMIGA
+      1 Amesterdam-Bologna-Padova-Pisa-Saclay-Torino
+      1 AMES-CERN-DORTMUND-HEIDELBERG-WARSAW
+      1 Ames-CERN-Dortmund-Heidelberg-Warsaw
+      1 AMAZE
+      1 AMANDA SPASE
+      1 ALTAS
+      1 ALTA/NALTA
+      1 ALTA
+      1 ALPS II
+      1 Alpha Magnetic Spectrometer
+      1 Alpbach-Graz
+      1 ALPACA
+      1 Alma Ata-Warsaw-Dubna-Tashkent-Tbilisi
+      1 Alma Ata-Serpukhov-Moscow
+      1 ALMA ATA-DUSHANBE-CRACOW-LODZ-MOSCOW-TASHKENT-TBILISI
+      1 ALMA ATA-DUBNA-TBILISI-WARSAW
+      1 Alma Ata-Dubna-Tbilisi-Warsaw
+      1 Alma Ata-Dubna-Moscow-Prague-Serpukhov-Sofiya-Tbilisi-Helsinki
+      1 ALMA ATA-DUBNA-MOSCOW-PRAGUE-HELSINKI
+      1 Alma Ata-Dubna-Moscow-Prague-Helsinki
+      1 Alma Ata-Dubna-Leningrad-Moscow-Tashkent
+      1 Alma Ata-Dubna-Helsinki-Prague-Tbilisi
+      1 ALMA ATA-DUBNA-HELSINKI-MOSCOW-PRAGUE-TBILISI
+      1 ALMA ATA-DUBNA-HELSINKI-KOSICE-MOSCOW-PRAGUE
+      1 ALMA ATA-DUBNA-HELSINKI-KOSICE-LIVERPOOL-MOSCOW-PRAGUE-TBILISI
+      1 ALMA ATA-BUKHAREST-GATCHINA-DUBNA-DUSHANBE-EREVAN-KOSICE-KRAKOW-LENINGRAD-MOSCOW-TASHKENT-ULAN BATOR
+      1 Alma-ata-budapest-bucharest-warsaw-dubna-krakow-moscow-sofia-tashkent- tbilisi-ulan-bator-hanoi
+      1 Alma Ata-Budapest-Bucharest-Warsaw-Dubna-Cracow-Sofia-Tashkent-Tbilisi-Ulan Bator-Hanoi
+      1 Alma Ata-Budapest-Bucharest-Warsaw-Dubna-Cracow-Moscow-Sofiya-Tashkent-Tbilisi-Ulan Bator-Hanoi
+      1 Alma Ata-Budapest-Bucharest-Warsaw-Dubna-Cracow Moscow-Sofiya-Tashkent-Tbilisi-Ulan Bator-Hanoi
+      1 Alma Ata-Budapest-Bucharest-Warsaw-Dubna-Cracow- Moscow-Sofia-Tashkent- Tbilisi-Ulan Bator-Hanoi-Chandigarh
+      1 ALMA-ATA-BUDAPEST-BUCHAREST-WARSAW-DUBNA-CRACOW-MOSCOW-SOFIA-TASHKENT-TBILISI-ULAN-BATOR-HANOI
+      1 alma-ata-budapest-bucharest-warsaw-dubna-cracow-moscow-serpukhov- sofia-tashkent-tbilisi-ulan-bator-hanoi
+      1 Alma Ata-Budapest-Bucharest-Varna-Warsaw-Dubna-Yerevan-Cracow Moscow-Prague-Sofiya-Tashkent-Tbilisi-Ulan Bator
+      1 Alma Ata-Budapest-Bucharest-Cracow-Dubna-Moscow-Prague- Sofiya-Tashkent-Tbilisi-Ulan Bator-Varna-Warsaw-Yerevan
+      1 Alma Ata-Bucharest-Leningrad-Dubna-Dushanbe-Yerevan- Kosice-Cracow-Leningrad-Moscow-Tashkent-Tbilisi-Ulan Bator-Zernograd
+      1 Alma Ata-Bucharest-Leningrad-Dubna-Dushanbe-Yerevan-Kosice-Cracow- Leningrad-Moscow-Rez-Tashkent-Tbilisi-Ulan Bator
+      1 Alma Ata-Bucharest-Leningrad-Dubna-Dushanbe-Yerevan- Kosice-Cracow-Leningrad-Moscow-Rez-Tashkent-Tbilisi-Ulan Bator
+      1 Alma Ata-Bucharest-Leningrad-Dubna-Dushanbe-Yerevan - Kosice-Cracow-Leningrad-Moscow-Rez-Tashkent-Tbilisi-Ulan Bator
+      1 Alma Ata-Bucharest-Leningrad-Dubna-Dushanbe -Yerevan-Kosice-Cracow-Leningrad-Moscow
+      1 Alma Ata-Bucharest-Leningrad-Dubna-Dushanbe-Yerevan-Kishinev- Kosice-Cracow-Leningrad-Moscow-Tashkent-Tbilisi-Ulan Bator
+      1 ALMA ATA-BUCHAREST-KOSICE-LENINGRAD-MOSCOW-ULAN BATOR
+      1 Alma Ata-Bucharest-Gatchina:Dubna-Dushanbe-Yerevan-Zernograd- Kosice-Cracow-Leningrad-Moscow-Tashkent-Tbilisi-Ulan Bator
+      1 Alma Ata-Bucharest-Dubna-Dushanbe-Yerevan-Leningrad
+      1 Alma Ata-Bucharest-Dubna-Dushanbe-Yerevan-Kosice-Leningrad- Moscow-Rez-Sofiya-Tbilisi
+      1 Alma Ata-Bucharest-Dubna-Dushanbe-Leningrad-Kosice-Cracow- Leningrad-Moscow-Rez-Tashkent-Tbilisi-Ulan Bator-Yerevan
+      1 Alma Ata-Bucharest-Dubna-Dushanbe-Kosice-Leningrad-Moscow-Tashkent-Ulan Bator
+      1 ALMA ATA-BUCHAREST-DUBNA-DUSHANBE-KISHINEV-KOSICE-LENINGRAD-MOSCOW TASHKENT-ULAN BATOR
+      1 Alma Ata-Bucharest-Dubna-Dushanbe-Erevan-Kosice-St Petersburg-
+      1 Alma Ata-Bucharest-Dubna-Dushanbe-Erevan-Kosice-Moscow-
+      1 ALMA-ATA-BUCHAREST-DUBNA-DUSHANBE-EREVAN-GATCHINA-KOSICE-KRAKOW- LENINGRAD-MOSCOW-PRAGUE-TASHKENT-TBILISI-ULAN BATOR
+      1 Alma Ata-Bucharest-Cairo-Dubna-Dushanbe-Gatchina-Kosice-Krakow- Leningrad-Moscow-Prague-Sofia-Tashkent-Tbilisi-Ulan Bator-Yerevan
+      1 Alma Ata-Berlin-Budapest-Dubna-Dushanbe-Prague-Sofiya-Tbilisi-Warsaw
+      1 Alma Ata-Beijing-Chandigarh-Changsha -Dubna-Jaipur-Jammu-Leningrad Linfen-Lund-Marburg-Moscow-Seattle
+      1 Alma Ata-Baku-Budapest-Bucharest-Varna-Warsaw-Dubna-Yerevan- Cracow-Moscow-Prague-Sofiya-Tashkent-Tbilisi-Ulan Bator
+      1 Alma Ata-Baku-Belgrade-Bucharest-Varna-Warsaw-Dubna-Yerevan- Kishinev-Leipzig-Moscow-Prague-Samarkand-Sofiya-Tashkent-Tbilisi-Ulan Bator
+      1 Alma Ata-Baku-Belgrade-Bucharest-Dubna-Kishinev-Moscow- Prague-Samarkand-Sofiya-Tashkent-Tbilisi-Ulan Bator-Varna-Warsaw-Yerevan
+      1 Alma Ata-Baku-Belgrade-Bucharest-Cracow-Dubna-Moscow-Prague- Sofiya-Tashkent-Tbilisi-Ulan Bator-Varna-Warsaw-Yerevan
+      1 Alma Ata-Baku-Belgrade-Bucharest-Budapest-Cracow-Dubna- Moscow-Prague-Sofiya-Tashkent-Tbilisi-Ulan Bator-Varna-Warsaw-Yerevan
+      1 ALMA-ATA-BAKU-BELGRAD-BUCHAREST-VARNA-WARSAW
+      1 ALLEGRO
+      1 ALICE USA
+      1 ALICE T0 and V0
+      1 ALICE Silicon Pixel Detector
+      1 Alice-Rich Group
+      1 ALICE PMD
+      1 ALICE PHOS calorimeter
+      1 ALICE off-line
+      1 ALICE offline
+      1 ALICE ITS upgrade
+      1 ALICE HMPID Group
+      1 ALICE/HMPID
+      1 ALICE FOCAL Team
+      1 ALICE FOCAL
+      1 ALICE DQM
+      1 ALHAMBRA Core Team
+      1 Algerian National Observatory
+      1 ALFALFA Team
+      1 ALFALFA
+      1 ALFA
+      1 ALCIE
+      1 AlCap
+      1 ALBANY-ANNECY(LAPP)-FRASCATI-LYON
+      1 a larger
+      1 ALADIN/Miniball
+      1 ALADIN/LAND/Miniball
+      1 ALADIN-2000
+      1 ALADiN
+      1 Aladin
+      1 AKARI Team
+      1 AKARI NEPD Team
+      1 AKARI Diffuse Map Team
+      1 AIDA-WP3
+      1 AIDA GIF++
+      1 AIC
+      1 AGS-E929
+      1 AGS-E907
+      1 AGS E-907
+      1 AGS E864
+      1 AGS-E795
+      1 AGS-771
+      1 AGRAPES-3
+      1 AGN Watch
+      1 AGILE Pulsar Working Group
+      1 AGFA
+      1 AGAPE
+      1 AFTER@LHC study Group
+      1 AFP Timing
+      1 AFP
+      1 AdvancedSuperconducting Test Accelerator
+      1 AD Team
+      1 ACS VCS Team
+      1 ACS Study Group
+      1 ACS Science
+      1 ACS Intermediate Cluster Survey Team
+      1 ACS IDT
+      1 ACS/GTO Team
+      1 ACORDE
+      1 ACE
+      1 Accelerator Subcommittee
+      1 AcceleratorExperiments
+      1 Accelerator Complex Study Group
+      1 ACBAR
+      1 ABS
+      1 ABP
+      1 Aberdeen Tunnel Experiment
+      1 ABCDHLW
+      1 abBA
+      1 AAS Working Group
+      1 Aarhus-CERN-Rossendorf
+      1 Aachen-Palaiseau-Orsay-Saclay-Wuppertal
+      1 AACHEN-ORSAY-POLYTECHNIQUE-SACLAY-WUPPERTAL
+      1 Aachen-Orsay Polytechnique-Saclay-Wuppertal
+      1 Aachen-Orsay-Palaiseau-Scalay-Wuppertal
+      1 Aachen-Orsay-Ecole Poly-Saclay-Wuppertal
+      1 Aachen-Heidelberg-Warsaw
+      1 Aachen-Hanburg-Heidelberg-Munchen
+      1 Aachen-Hamburg-Heidelberg-Munich
+      1 Aachen-Hamburg-Heidelberg-Muenchen
+      1 Aachen-ETHZ-PSI-Saclay-Tbilisi-UBC-Zurich
+      1 Aachen-Dubna-Heidelberg-PSI-Tbilisi-Zuerich-Yale
+      1 Aachen-DESY-Madrid-MIT-NIKHEF-Beijing
+      1 Aachen-CERN-Heidelberg-Munich
+      1 Aachen-CERN-Genoa-Harvard-Turin
+      1 AACHEN-BRUSSELS-CERN-PARIS-MILAN-ORSAY-LONDON
+      1 Aachen-Brussels-CERN-Ecole Polythecnique-Milan-Orsay-U.C. London
+      1 AACHEN-BRUSSELS-CERN-ECOLE POLY-ORSAY-LONDON
+      1 Aachen-Bonn-tERN-Munich  (MPl)-Oxford
+      1 AACHEN-BONN-HAMBURG-HEIDELBERG-MUNICH
+      1 Aachen-Bonn-Hamburg-Heidelberg-Munich
+      1 Aachen-Bonn-Hamburg-Heidelberg-Muenchen
+      1 Aachen-Bonn-CERN-London-Munich-Oxford-Saclay
+      1 Aachen-Bonn-CERN-Democritos-Athens-London-Oxford-Saclay
+      1 Aachen-Bonn-CERN-Cracow-Warsaw
+      1 AACHEN-BONN-CERN-CRACOW-HEIDELBERG-WARSAW
+      1 Aachen-Bonn-CERN
+      1 AACHEN-BIRMINGHAM-BONN-CERN-LONDON-MUNICH-OXFORD
+      1 Aachen-Berlin-SIN
+      1 Aachen-Berlin-CERN-London (IC)-Vienna
+      1 Aachen-Berlin-CERN-Innsbruck-London-Vienna
+      1 Aachen-Berlin-CERN-Cracow-Heidelberg-London-Vienna-Warsaw
+      1 Aachen-Berlin-CERN-Columbia-Rutgers-Illinois-Rochester-Yale
+      1 Aachen - Berlin - CERN
+      1 Aachen-Berlin-Bonn-Hamburg-Heidelberg-Munich
+      1 Aachen-Berlin-Bonn-Hamburg-Heidelberg-München
+      1 Aachen-Berlin-Bonn-CERN-Warsaw
+      1 Aachen-Berlin-Bonn-CERN-Cracow-Warsaw
+      1 AACHEN-BERLIN-BONN-CERN-CRACOW-INNSBRUCK-LONDON-VIENNA-WARSAW
+      1 Aachen-Berlin-Bonn-CERN-Cracow-Heidelberg -London-Vienna-Warsaw
+      1 Aachen-Berlin-Bonn-CERN-Cracow-Heidelberg-London-Vienna
+      1 AACHEN-BERLIN-BONN-CERN-CRACOW-HEIDELBERG
+      1 AACHEN-BERLIN-BONN-CERN-CRACOW
+      1 Aachen-Berlin-Bonn-CERN-Cracow
+      1 Aachen-Berlin-Birmingham-Bonn-Hamburg-London (I.C.)-Munchen
+      1 AACHEN-BARI-BONN-CERN-GLASGOW-LIVERPOOL-MILAN
+      1 AACHEN-ANNECY(LAPP)-DESY-MIT-NIKHEF-BEIJING
+      1 AACHEN-ANNECY(LAPP)-BIRMINGHAM-CERN-QUEEN MARY COLL-COLLEGE DE FRANCE-RIVERSIDE-ROME-RUTHERFORD-SACLAY-VIENNA
+      1 Aachen-Annecy(LAPP)-Birmingham-CERN-Queen Mary Coll-College de France-Riverside-Rome-Rutherford-Saclay-Vienna
+      1 AACHEN-ANNECY(LAPP)-BIRMINGHAM-CERN-HELSINKI-QUEEN MARY COLL-COLLEGE DE FRANCE-RIVERSIDE-ROME-RUTHERFORD-SACLAY-VIENNA
+      1 Aachen-Annecy(LAPP)-Birmingham-CERN-Helsinki-Queen Mary Coll-College de France-Riverside-Rome-Rutherford-Saclay-Vienna
+      1 A84
+      1 A3 Mainz
+      1 A2-CB
+      1 A1 Mainz Helium
+      1 A1 Mainz
+      1 A0 Photoinjector
+      1 94-05 Amsterdam
+      1 9405
+      1 8π
+      1 8$\pi$
+      1 802
+      1 4PI
+      1 3D IC
+      1 3D-HST Team
+      1 30Doradus-Team
+      1 2SLAQ
+      1 2MRS
+      1 2dGRS
+      1 2DFGRS
+      1 2014B0126
+      1 2012B0025
+      1 12-17 Jun 2005
+      1 11T LHC Upgrade

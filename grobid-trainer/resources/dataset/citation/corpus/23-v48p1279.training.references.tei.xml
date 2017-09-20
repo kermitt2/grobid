@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>D.S. Chuu, C.S. Han</author>, <title level="j">J. Phys. G: Nucl. Phys.</title> <biblScope unit="volume">3</biblScope>, <biblScope unit="page">555</biblScope> (<date>1977</date>).</bibl>
+	<bibl><author>D.R. Lehman</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">25</biblScope>, <biblScope unit="page">3146</biblScope> (<date>1982</date>).</bibl>
+	<bibl><author>N. Alexander, K. Amos, B. Apagyi, D.R. Lun</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">53</biblScope>, <biblScope unit="page">88</biblScope> (<date>1996</date>).</bibl>
+	<bibl><author>S. Ali, A.A.Z. Ahmad, N. Ferdous</author>, <title level="j">Rev. Mod. Phys.</title> <biblScope unit="volume">57</biblScope>, <biblScope unit="page">923</biblScope> (<date>1985</date>).</bibl>
+	<bibl><author>L.A. Barreiro, R. Higa, C.L. Lima, M.R. Robilotta</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">57</biblScope>, <biblScope unit="page">2142</biblScope> (<date>1998</date>).</bibl>
+	<bibl><author>K. Varga, Y. Suzuki</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">52</biblScope>, <biblScope unit="page">2885</biblScope> (<date>1995</date>).</bibl>
+	<bibl><author>M. Gattobigio, A. Kievsky, M. Viviani</author>, <title level="j">Few-Body Syst</title>. <biblScope unit="volume">50</biblScope>, <biblScope unit="page">463</biblScope> (<date>2011</date>).</bibl>
+	<bibl><author>E. Ahmadi Pouya, A.A. Rajabi</author>, <title level="j">Eur. Phys. J. Plus</title> <biblScope unit="volume">131</biblScope>, <biblScope unit="page">240</biblScope> (<date>2016</date>).</bibl>
+	<bibl><author>E. Ahmadi Pouya, A.A. Rajabi</author>, <title level="j">Int. J. Mod. Phys. E</title> <biblScope unit="volume">25</biblScope>, <biblScope unit="page">1650072</biblScope> (<date>2016</date>).</bibl>
+	<bibl><author>W. Glöckle</author>, <title level="m">The Quantum Mechanical Few-Body Problem</title>, <publisher>Springer-Verlag</publisher>, <pubPlace>NewYork</pubPlace> <date>1983</date> .</bibl>
+	<bibl><author>H. Kamada, W. Glöckle</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">548</biblScope>, <biblScope unit="page">205</biblScope> (<date>1992</date>).</bibl>
+	<bibl><author>A. Stadler, W. Glöckle, P.U. Saur</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">44</biblScope>, <biblScope unit="page">2319</biblScope> (<date>1991</date>).</bibl>
+	<bibl><author>A. Nogga, H. Kamada, W. Glöckle, B.R. Barrett</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">65</biblScope>, <biblScope unit="page">054003</biblScope> (<date>2002</date>).</bibl>
+	<bibl><author>D. Huber et al.</author>, <title level="j">Few-Body Syst</title>. <biblScope unit="volume">22</biblScope>, <biblScope unit="page">107</biblScope> (<date>1997</date>).</bibl>
+	<bibl><author>A.B. Volkov</author>, <title level="j">Nucl. Phys.</title> <biblScope unit="volume">74</biblScope>, <biblScope unit="page">33</biblScope> (<date>1965</date>).</bibl>
+	<bibl><author>R.A. Malfliet, J.A. Tjon</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">127</biblScope>, <biblScope unit="page">161</biblScope> (<date>1969</date>).</bibl>
+	<bibl><author>M. Viviani, A. Kievsky, S. Rosati</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">71</biblScope>, <biblScope unit="page">024006</biblScope> (<date>2005</date>).</bibl>
+	<bibl><author>M. Gattohigio, A. Kievsky, M. Viviani</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">83</biblScope>, <biblScope unit="page">024001</biblScope> (<date>2011</date>).</bibl>
+	<bibl><author>N. Barnea</author>, <title level="j">Phys. Rev. A</title> <biblScope unit="volume">59</biblScope>, <biblScope unit="page">1135</biblScope> (<date>1999</date>).</bibl>
+	<bibl><author>R.B. Wiringa</author>, <note>private communication</note>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Cabras, A. and Vinogradov, M. A.</author>, &quot;<title level="a">Extension of the Poisson bracket to differential forms and multi-vector fields</title>,&quot; <title level="j">J.Geom .Phys .</title><biblScope unit="volume">9</biblScope> (<biblScope unit="issue">1</biblScope>),<biblScope unit="page">75 -100</biblScope>( <date>1992</date>).</bibl>
+	<bibl><author>Filippov, T. V.</author>, &quot;<title level="a">N-ary Lie algebras</title>,&quot; <title level="j">Sib. Math. J.</title> <biblScope unit="volume">9</biblScope>, <biblScope unit="page">126-140</biblScope> (<date>1985</date>).</bibl>
+	<bibl><author>Hanlon, P. and Wachs, L. M.</author>, &quot;<title level="a">On Lie k-algebras</title>,&quot; <title level="j">Adv. Math.</title> <biblScope unit="volume">113</biblScope>, <biblScope unit="page">206-236</biblScope> (<date>1995</date>).</bibl>
+	<bibl><author>Humphreys, E. J.</author>, <title level="a">Introduction to Lie Algebras and Representation Theory</title>, <title level="m">Graduate Texts in Mathematics</title> Vol. <biblScope unit="volume">9</biblScope> (<publisher>Springer-Verlag</publisher>,<pubPlace>New York</pubPlace> ,<date>1978</date> ).</bibl>
+	<bibl><author>Jacobson, N.</author>, <title level="a">Lie Algebras</title> (<publisher>Wiley International</publisher>, <pubPlace>New York, London</pubPlace>, <date>1962</date>).</bibl>
+	<bibl><author>Kosmann-Schwarzbach, Y.</author>, &quot;<title level="a">Poisson manifolds, Lie algebroids, modular classes: A survey</title>,&quot; <title level="j">Symmetry, Integrability Geom.: MethodsAppl</title> .<biblScope unit="volume">4</biblScope> ,<biblScope unit="page">30</biblScope> ( <date>2008</date>).</bibl>
+	<bibl><author>Koszul, J.-L.</author>, &quot;<title level="a">Crochet de Schouten-Nijenhuis et cohomologie, in the mathematical heritage ofÉlieof´ofÉlie Cartan (Lyon, 1984)</title>,&quot; <title level="j">Astérisque</title><biblScope unit="page">257 -291</biblScope>( <date>1985</date>).</bibl>
+	<bibl><author>Mackenzie, K.</author>, <title level="m">General Theory of Lie Groupoids and Lie Algebroids</title> (<publisher>Cambridge University Press</publisher>, <date>2005</date>).</bibl>
+	<bibl><author>Magri, F.</author>, &quot;<title level="a">A simple model of the integrable Hamiltonian equation</title>,&quot; <title level="j">J. Math. Phys.</title> <biblScope unit="volume">19</biblScope>, <biblScope unit="page">1156-1162</biblScope> (<date>1978</date>).</bibl>
+	<bibl><author>Marmo, G., Vilasi, G., and Vinogradov, M. A.</author>, &quot;<title level="a">The local structure of n-Poisson and n-Jacobi manifolds</title>,&quot; <title level="j">J. Geom. Phys.</title> <biblScope unit="volume">25</biblScope>,<biblScope unit="page">141 -182</biblScope>( <date>1998</date>).</bibl>
+	<bibl><author>Moreno, G.</author>, &quot;<title level="a">The Bianchi variety</title>,&quot; <title level="j">Differ. Geom. Appl.</title> <biblScope unit="volume">28</biblScope>(<biblScope unit="issue">6</biblScope>), <biblScope unit="page">705-721</biblScope> (<date>2010</date>).</bibl>
+	<bibl><author>Nestruev, J.</author>, <title level="m">Smooth Manifolds and Observables</title>, <title level="s">Graduate Texts in Mathematics</title> Vol. <biblScope unit="volume">220</biblScope> (<publisher>Springer</publisher>, <date>2002</date>).</bibl>
+	<bibl><author>Vinogradov, M. A.</author>, &quot;<title level="a">The union of the Schouten and Nijenhuis brackets, cohomology, and superdifferential operators (Russian)</title>,&quot;<title level="j">Mat .Zametki</title> <biblScope unit="volume">47</biblScope> (<biblScope unit="issue">6</biblScope>),<biblScope unit="page">138 -140</biblScope>( <date>1990</date>).</bibl>
+	<bibl><author>Vinogradov, M. A.</author>, &quot;<title level="m">Particle-like structure of Lie algebras II: Coaxial algebras</title>&quot; (<note>unpublished</note>).</bibl>
+	<bibl><author>Vinogradov, M. A. and Krasil&apos;shchik, I. S.</author>, &quot;<title level="a">What is the Hamiltonian formalism?</title>,&quot; <title level="a">Uspehi Mat. Nauk</title> <biblScope unit="volume">30</biblScope>(<biblScope unit="issue">1</biblScope>), <biblScope unit="page">173-198</biblScope> (<date>1975</date>)( <note>inRussian</note> )[</bibl>
+	<bibl> <title level="j">RussianMath .Surveys</title> <biblScope unit="volume">30</biblScope> (<biblScope unit="issue">1</biblScope>),<biblScope unit="page">177 -202</biblScope>( <date>1975</date>)];</bibl><bibl>See also <title level="s">London Math .Soc .Lect .Notes</title> <biblScope unit="volume">60</biblScope> ,<biblScope unit="page">241 -299</biblScope>( <date>1981</date>).</bibl>
+	<bibl><author>Vinogradov, M. A. and Vinogradov, M. M.</author>, &quot;<title level="a">On multiple generalization of Lie algebras and Poisson manifolds</title>,&quot; <title level="j">Contemp. Math.</title><biblScope unit="volume">219</biblScope> ,<biblScope unit="page">273 -287</biblScope>( <date>1998</date>).</bibl>
+	<bibl><author>Vinogradov, M. A. and Vinogradov, M. M.</author>, &quot;<title level="a">Graded multiple analogs of Lie algebras</title>,&quot; <title level="j">Acta Appl. Math.</title> <biblScope unit="volume">72</biblScope>, <biblScope unit="page">183-197</biblScope> (<date>2002</date>).</bibl>
+	<bibl><author>Weinstein, A.</author>, &quot;<title level="a">The local structure of Poisson manifolds</title>,&quot; <title level="j">J. Differ. Geom.</title> <biblScope unit="volume">18</biblScope>(<biblScope unit="issue">3</biblScope>), <biblScope unit="page">523-557</biblScope> (<date>1983</date>).</bibl>
+	<bibl><note>f is, in fact, the opposite of the usual Hamiltonian vector field but more convenient in the context of this paper.</note></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

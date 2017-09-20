@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>A. Kolmogoroff</author>, <title level="j">C. R. Acad. Sci.</title>, <biblScope unit="volume">30</biblScope>, <biblScope unit="page">301-305</biblScope> (<date>1941</date>).</bibl>
+	<bibl><author>A. S. Monin and A. M. Yaglom</author>, <title level="m">Statistical Fluid Mechanics: Mechanics of Turbulence</title> [<note>in Russian</note>], Vol. <biblScope unit="volume">1</biblScope>, <publisher>Nauka</publisher>,<pubPlace>Moscow</pubPlace> ( <date>1965</date>);<note>English transl</note> .,<publisher>Dover</publisher> ,<pubPlace>Mineola ,N .Y .</pubPlace>( <date>2007</date>).</bibl>
+	<bibl><author>G. I. Taylor</author>, <title level="j">Proc. London Math. Soc.</title> <biblScope unit="volume">2, 20</biblScope>, <biblScope unit="page">196-211</biblScope> (<date>1922</date>).</bibl>
+	<bibl><author>N. G. van Kampen</author>, <title level="m">Stochastic Processes in Physics and Chemistry</title> (<title level="s">Lect. Notes Math.</title>, Vol. <biblScope unit="volume">888</biblScope>), <pubPlace>North-Holland, Amsterdam</pubPlace>( <date>1981</date>).</bibl>
+	<bibl><author>A. S. Monin and A. M. Yaglom</author>, <title level="a">Statistical Fluid Mechanics: Mechanics of Turbulence</title> [<note>in Russian</note>], Vol. <biblScope unit="volume">2</biblScope>, <title level="j">Nauka</title>,<pubPlace>Moscow</pubPlace> ( <date>1967</date>);<note>English transl</note> .,<pubPlace>Dover ,Mineola ,N .Y .</pubPlace>( <date>2007</date>).</bibl>
+	<bibl><author>G. A. Voth, A. La Porta, A. M. Crawford, J. Alexander, and E. Bodenschatz</author>, <title level="j">J. Fluid Mech.</title>, <biblScope unit="volume">469</biblScope>, <biblScope unit="page">121-160</biblScope> (<date>2002</date>).</bibl>
+	<bibl><author>J. D. Wilson and B. L. Sawford</author>, <title level="j">Boundary-Layer Meteorology</title>, <biblScope unit="volume">78</biblScope>, <biblScope unit="page">191-210</biblScope> (<date>1996</date>).</bibl>
+	<bibl><author>A. H. Kolmogorov</author>, &quot;<title level="a">Précisions sur la structure locale de la turbulence dans un fluide visqueux aux nombres de ReynoldsélevésReynoldsélevés</title>,&quot;in :<title level="m">Mécanique de la turbulence</title> ( <note type="report">Colloq.Intern .</note><orgName>CNRS</orgName> ,<pubPlace>Marseille</pubPlace> ,<date>Aug .-Sept.1961</date> ),<publisher>CNRS</publisher> ,<pubPlace>Paris</pubPlace> (<date>1962</date> ),pp. <biblScope unit="page">447- 458</biblScope>.</bibl>
+	<bibl><author>M. S. Borgas</author>, <title level="j">Phil. Trans. Roy. Soc. London A</title>, <biblScope unit="volume">342</biblScope>, <biblScope unit="page">379-411</biblScope> (<date>1993</date>).</bibl>
+	<bibl><author>M. S. Borgas and B. L. Sawford</author>, <title level="j">Phys. Fluids</title>, <biblScope unit="volume">6</biblScope>, <biblScope unit="page">618-633</biblScope> (<date>1994</date>).</bibl>
+	<bibl><author>U. Frisch</author>, <title level="m">Turbulence: The Legacy of A. N. Kolmogorov</title>, <publisher>Cambridge Univ. Press</publisher>, <pubPlace>Cambridge</pubPlace> (<date>1995</date>).</bibl>
+	<bibl><author>J. J. H. Brouwers</author>, <title level="j">Phys. Fluids</title>, <biblScope unit="volume">19</biblScope>, <biblScope unit="page">101702</biblScope> (<date>2007</date>).</bibl>
+	<bibl><author>M. S. Borgas and B. L. Sawford</author>, <title level="j">J. Fluid Mech.</title>, <biblScope unit="volume">279</biblScope>, <biblScope unit="page">69-99</biblScope> (<date>1994</date>).</bibl>
+	<bibl><author>S. B. Pope</author>, <title level="m">Turbulent Flows</title>, <publisher>Cambridge Univ. Press</publisher>, <pubPlace>Cambridge</pubPlace> (<date>2000</date>).</bibl>
+	<bibl><author>F. Toschi and E. Bodenschatz</author>, &quot;<title level="a">Lagrangian properties of particles in turbulence</title>,&quot; in: <title level="j">Annual Review of Fluid Mechanics</title>,Vol .<biblScope unit="volume">41</biblScope> ,<publisher>Annual Review</publisher> ,<pubPlace>Palo Alto ,Calif</pubPlace> .( <date>2009</date>),pp .<biblScope unit="page">375 -404</biblScope>.</bibl>
+	<bibl><author>D. J. Thomson</author>, <title level="j">J. Fluid Mech.</title>, <biblScope unit="volume">180</biblScope>, <biblScope unit="page">529-556</biblScope> (<date>1987</date>).</bibl>
+	<bibl><author>J. Laufer</author>, &quot;<title level="m">The structure of turbulence in fully developed pipe flow</title>,&quot; <note type="report">Report</note>  No. <idno type="report">1174</idno>, <ptr type="web">http://naca.central. cranfield.ac.uk/reports/1954/naca-report-1174.pdf</ptr>,<orgName>NACA</orgName> ( <date>1954</date>).</bibl>
+	<bibl><author>P. S. Klebanoff</author>, &quot;<title level="a">Characteristics of turbulence in a boundary layer with zero pressure gradient</title>,&quot; <note type="report">Report</note> No. <idno type="report">1247</idno>, <ptr type="web">http://naca.central.cranfield.ac.uk/reports/1955/naca-report-1247.pdf</ptr>,<orgName>NACA</orgName> ( <date>1955</date>).</bibl>
+	<bibl><author>J. F. Morrison, B. J. McKeon, W. Jiang, and A. J. Smits</author>, <title level="j">J. Fluid Mech.</title>, <biblScope unit="volume">508</biblScope>, <biblScope unit="page">99-131</biblScope> (<date>2004</date>).</bibl>
+	<bibl><author>J. J. H. Brouwers</author>, <title level="j">Phys. Fluids</title>, <biblScope unit="volume">16</biblScope>, <biblScope unit="page">2300-2308</biblScope> (<date>2004</date>).</bibl>
+	<bibl><author>L. D. Landau and E. M. Lifshits</author>, <title level="m">Statistical Physics: Part 1</title> [<note>in Russian</note>] (Vol. <biblScope unit="volume">5</biblScope> of <title level="s">Course of Theoretical Physics</title>), <publisher>Nauka</publisher>,<pubPlace>Moscow</pubPlace> ( <date>1976</date>);<note>English transl .prev .ed .</note>,<publisher>Pergamon</publisher> ,<pubPlace>Oxford</pubPlace> ( <date>1968</date>).</bibl>
+	<bibl><author>L. E. Reichl</author>, <title level="m">A Modern Course in Statistical Physics</title>, <publisher>Wiley</publisher>, <pubPlace>New York</pubPlace> (<date>1998</date>).</bibl>
+	<bibl><author>O. Bokhove and M. Oliver</author>, <title level="j">Proc. Roy. Soc. London A</title>, <biblScope unit="volume">462</biblScope>, <biblScope unit="page">2575-2592</biblScope> (<date>2006</date>).</bibl>
+	<bibl><author>B. J. McKeon, J. Li, W. Jiang, J. F. Morrison, and A. J. Smits</author>, <title level="j">J. Fluid Mech.</title>, <biblScope unit="volume">501</biblScope>, <biblScope unit="page">135-147</biblScope> (<date>2004</date>).</bibl>
+	<bibl><author>R. Zhao and A. J. Smits</author>, <title level="j">J. Fluid Mech.</title>, <biblScope unit="volume">576</biblScope>, <biblScope unit="page">457-473</biblScope> (<date>2007</date>).</bibl>
+	<bibl><author>P. A. Monkewitz, K. A. Chauhan, and H. M. Nagib</author>, <title level="j">Phys. Fluids</title>, <biblScope unit="volume">19</biblScope>, <biblScope unit="page">115101</biblScope> (<date>2007</date>).</bibl>
+	<bibl><author>S. Hoyas and J. Jiménez</author>, <title level="j">Phys. Fluids</title>, <biblScope unit="volume">18</biblScope>, <biblScope unit="page">011702</biblScope> (<date>2006</date>).</bibl>
+	<bibl><author>B. L. Sawford and P. K. Yeung</author>, <title level="j">Phys. Fluids</title>, <biblScope unit="volume">12</biblScope>, <biblScope unit="page">2033-2045</biblScope> (<date>2000</date>).</bibl>
+	<bibl><author>R. J. E. Walpot, C. W. M. van der Geld, and J. G. M. Kuerten</author>, <title level="j">Phys. Fluids</title>, <biblScope unit="volume">19</biblScope>, <biblScope unit="page">045102</biblScope> (<date>2007</date>).</bibl>
+	<bibl><author>B. L. Sawford and P. K. Yeung</author>, <title level="j">Phys. Fluids</title>, <biblScope unit="volume">13</biblScope>, <biblScope unit="page">2627-2634</biblScope> (<date>2001</date>).</bibl>
+	<bibl><author>R. L. Stratonovich</author>, <title level="m">Topics in the Theory of Random Noise</title>, Vol. <biblScope unit="volume">1</biblScope>, <title level="m">General Theory of Random Processes, NonlinearTransformations of Signals and Noise</title> ,<publisher>Gordon and Breach</publisher> ,<pubPlace>New York</pubPlace> ( <date>1967</date>).</bibl>
+	<bibl><author>J. J. H. Brouwers</author>, <title level="j">J. Engrg. Math.</title>, <biblScope unit="volume">44</biblScope>, <biblScope unit="page">277-295</biblScope> (<date>2002</date>).</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>
