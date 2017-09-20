@@ -1,5 +1,7 @@
 package org.grobid.core.utilities;
 
+import org.apache.commons.collections4.CollectionUtils;
+
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -12,14 +14,19 @@ import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.google.common.primitives.Doubles;
 import org.apache.commons.lang3.StringUtils;
+
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.layout.LayoutToken;
 
 /**
  * Some utilities methods that I don't know where to put.
@@ -461,5 +468,95 @@ public class Utilities {
 		return Math.abs(d1 - d2) <= epsilon;
 	}
 
+	/**
+	 * Merge the offset positions of two lists, merging overlapping positions 
+	 * into a spanning one.
+	 * 
+	 * @param positions1
+	 *            the first offset position list to be merged
+	 * @param positions2
+	 *            the second offset position list to be merged
+	 * 
+	 * @return the merged list of (merged) offset positions
+	 */
+	public static List<OffsetPosition> mergePositions(List<OffsetPosition> positions1, 
+		List<OffsetPosition> positions2) {
+		if (CollectionUtils.isEmpty(positions1))
+			return positions2;
+		if (CollectionUtils.isEmpty(positions2))
+			return positions1;
+
+		Collections.sort(positions1);
+		Collections.sort(positions2);
+
+		List<OffsetPosition> result = new ArrayList<OffsetPosition>();
+		for(OffsetPosition pos : positions1) {
+			result.add(pos);
+		}
+		for(OffsetPosition pos : positions2) {
+			if (!result.contains(pos))
+				result.add(pos);
+		}
+		Collections.sort(result);
+		List<OffsetPosition> finalResult = new ArrayList<OffsetPosition>();
+		OffsetPosition prevPos = null;
+		for(OffsetPosition pos : result) {
+			if (prevPos == null) {
+				finalResult.add(pos);
+				prevPos = pos;
+			} else {
+				if ( (pos.start >= prevPos.start) && (pos.end <= prevPos.end) ) {
+					// nothing to do
+				} else if (prevPos.end >= pos.start) {
+					prevPos.end = pos.end;
+				} else {
+					prevPos = pos;
+					finalResult.add(pos);
+				}
+			}
+		}
+
+		return finalResult;
+	}
+
+	public static List<OffsetPosition> convertStringOffsetToTokenOffset(
+		List<OffsetPosition> stringPosition, List<LayoutToken> tokens) {
+		List<OffsetPosition> result = new ArrayList<OffsetPosition>();
+		int indexText = 0;
+        int indexToken = 0;
+        OffsetPosition currentPosition = null;
+        LayoutToken token = null;
+        for(OffsetPosition pos : stringPosition) {
+            while(indexToken < tokens.size()) {
+                token = tokens.get(indexToken);
+                if (token.getOffset() >= pos.start) {
+                    // we have a start
+                    currentPosition = new OffsetPosition(indexToken, indexToken);
+                    // we need an end
+                    boolean found = false;
+                    while(indexToken < tokens.size()) {
+                        token = tokens.get(indexToken);
+                        if (token.getOffset()+token.getText().length() >= pos.end) {
+                            // we have an end
+                            currentPosition.end = indexToken;
+                            result.add(currentPosition);
+                            found = true;
+                            break;
+                        }
+                        indexToken++;    
+                    }
+                    if (found) {
+                        indexToken++;
+                        break;
+                    } else {
+                        currentPosition.end = indexToken-1;
+                        result.add(currentPosition);
+                    }
+                }
+                indexToken++;    
+            }
+        }
+        return result;
+	}
 
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Thomson, W.</author> <title level="j">P R Soc London</title> <date>1856</date>, <biblScope unit="volume">8</biblScope>, <biblScope unit="page">546-550</biblScope>.</bibl>
+	<bibl><author>Baibich, M. N.; Broto, J. M.; Fert, A.; Nguyen Van Dau, F.; Petroff,F .;Etienne ,P .;Creuzet ,G .;Friederich ,A .;Chazelas</author> ,<title level="j">J .Phys Rev Lett</title><date>1988</date> , <biblScope unit="volume">61</biblScope>, <biblScope unit="page">2472- 2475</biblScope>.</bibl>
+	<bibl><author>Binasch, G.; Grunberg, P.; Saurenbach, F.; Zinn, W.</author> <title level="j">Phys Rev B</title> <date>1989</date>,<biblScope unit="volume">39</biblScope> ,<biblScope unit="page">4828 -4830</biblScope>.</bibl>
+	<bibl><author>Moodera, J. S.; Kinder, L. R.; Wong, T. M.; Meservey, R.</author> <title level="j">Phys RevLett</title> <date>1995</date> ,<biblScope unit="volume">74</biblScope> ,<biblScope unit="page">3273 -3276</biblScope>.</bibl>
+	<bibl><author>Hall, E. H.</author> <title level="j">Am J Math</title> <biblScope unit="volume">1879</biblScope>, <biblScope unit="volume">2</biblScope>, <biblScope unit="page">287-292</biblScope>.</bibl>
+	<bibl><author>Nagaosa, N.; Sinova, J.; Onoda, S.; MacDonald, A. H.; Ong, N. P.</author><title level="j">Rev Mod Phys</title> <date>2010</date> ,<biblScope unit="volume">82</biblScope> ,<biblScope unit="page">1539 -1592</biblScope>.</bibl>
+	<bibl><author>Schulz, T.; Ritz, R.; Bauer, A.; Halder, M.; Wagner, M.; Franz, C.;Pfleiderer ,C .;Everschor ,K .;Garst ,M .;Rosch ,A .</author><title level="j">Nat Phys</title> <date>2012</date> ,<biblScope unit="volume">8</biblScope>, <biblScope unit="page">301- 304</biblScope>.</bibl>
+	<bibl><author>Yu, X. Z.; Kanazawa, N.; Zhang, W. Z.; Nagai, T.; Hara, T.;
+	Kimoto, K.; Matsui, Y.; Onose, Y.; Tokura, Y.</author> <date>Nat Comms 2012</date>, <biblScope unit="volume">3</biblScope>, <biblScope unit="page">988</biblScope>.</bibl>
+	<bibl><author>Kim, H.; Huse, D. A.</author> <title level="j">Phys Rev A</title> <date>2012</date>, <biblScope unit="volume">86</biblScope>, <biblScope unit="page">053607</biblScope>.</bibl>
+	<bibl><author>Uchida, K.; Takahashi, S.; Harii, K.; Ieda, J.; Koshibae, W.; Ando,K .;Maekawa ,S .;Saitoh ,E .</author><title level="j">Nature</title> <date>2008</date> ,<biblScope unit="volume">455</biblScope> ,<biblScope unit="page">778 -781</biblScope>.</bibl>
+	<bibl><author>Meier, D.; Reinhardt, D.; van Straaten, M.; Klewe, C.;
+	Althammer, M.; Schreier, M.; Goennenwein, S. T. B.; Gupta, A.; Schmid,M .;Back ,C .H .,et al .</author><title level="j">Nat Comms</title> <date>2015</date> ,<biblScope unit="volume">6</biblScope> ,<biblScope unit="page">1 -7</biblScope>.</bibl>
+	<bibl><author>Flipse, J.; Bakker, F. L.; Slachter, A.; Dejene, F. K.; van Wees, B.J .</author><title level="j">Nat Nanotechnol</title> <date>2012</date> ,<biblScope unit="volume">7</biblScope> ,<biblScope unit="page">166 -168</biblScope>.</bibl>
+	<bibl><author>Hirsch, J. E.</author> <title level="j">Phys Rev Lett</title> <date>1999</date>, <biblScope unit="volume">83</biblScope>, <biblScope unit="page">1834-1837</biblScope>.</bibl>
+	<bibl><author>Okamoto, N.; Kurebayashi, H.; Trypiniotis, T.; Farrer, I.;
+	Ritchie, D. A.; Saitoh, E.; Sinova, J.; Mašek, J.; Jungwirth, T.; Barnes,C .H .W .</author><title level="j">Nat Mater</title> <date>2014</date> ,<biblScope unit="volume">13</biblScope> ,<biblScope unit="page">932 -937</biblScope>.</bibl>
+	<bibl><author>Hung, T. Q.; Terki, F.; Kamara, S.; Kim, K.; Charar, S.; Kim, C.</author><title level="j">J Appl Phys</title> <date>2015</date> ,<biblScope unit="volume">117</biblScope> ,<biblScope unit="page">154505</biblScope> .</bibl>
+	<bibl><author>Chiba, D.; Fukami, S.; Shimamura, K.; Ishiwata, N.; Kobayashi, K.;Ono ,T .</author><title level="j">Nat Mater</title> <date>2011</date> ,<biblScope unit="volume">10</biblScope> ,<biblScope unit="page">853 -856</biblScope>.</bibl>
+	<bibl><author>Chiba, D.; Ono, T.</author> <title level="j">J Phys D Appl Phys</title> <date>2013</date>, <biblScope unit="volume">46</biblScope>, <date>213001</date>.</bibl> 
+	<bibl>[18]<author>Foner ,S .</author><title level="j">Rev Sci Instrum</title> <date>1959</date> ,<biblScope unit="volume">30</biblScope> ,<biblScope unit="page">548 -557</biblScope>.</bibl>
+	<bibl><author>Jaklevic, R. C.; Lambe, J.; Silver, A. H.; Mercereau, J. E.</author> <title level="j">Phys RevLett</title> <date>1964</date> ,<biblScope unit="volume">12</biblScope> ,<biblScope unit="page">159 -160</biblScope>.</bibl>
+	<bibl><author>Akdoğan, N.; Yağmur, A.; Öztürk, M.; Demirci, E.; Öztürk, O.; Erkovan,M .</author><title level="j">J Magn Magn Mater</title> <date>2015</date> ,<biblScope unit="volume">373</biblScope> ,<biblScope unit="page">120 -123</biblScope>.</bibl>
+	<bibl><author>Demirci, E.; Öztürk, M.; Sınır, E.; Ulucan, U.; Akdoğan, N.; Öztürk,O .;Erkovan ,M .</author><title level="j">Thin Solid Films</title> <date>2014</date> ,<biblScope unit="volume">550</biblScope> ,<biblScope unit="page">595 -601</biblScope>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

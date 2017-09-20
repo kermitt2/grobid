@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>M. Gell-Mann, R. J. Oakes, and B. Renner</author>, <title level="j">Phys. Rev.</title> <biblScope unit="volume">175</biblScope>,<biblScope unit="page">2195</biblScope> ( <date>1968</date>).</bibl>
+	<bibl><author>Y. Tomozawa</author>, <title level="j">Nuovo Cimento A</title> <biblScope unit="volume">46</biblScope>, <biblScope unit="page">707</biblScope> (<date>1966</date>).</bibl>
+	<bibl><author>S. Weinberg</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">17</biblScope>, <biblScope unit="page">616</biblScope> (<date>1966</date>).</bibl>
+	<bibl><author>E. E. Kolomeitsev, N. Kaiser, and W. Weise</author>, <title level="j">Phys. Rev. Lett.</title><biblScope unit="volume">90</biblScope> ,<biblScope unit="page">092501</biblScope> ( <date>2003</date>).</bibl>
+	<bibl><author>K. Suzuki et al.</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">92</biblScope>, <biblScope unit="page">072302</biblScope> (<date>2004</date>).</bibl>
+	<bibl><author>R. S. Hayano and T. Hatsuda</author>, <title level="j">Rev. Mod. Phys.</title> <biblScope unit="volume">82</biblScope>, <biblScope unit="page">2949</biblScope> (<date>2010</date>).</bibl>
+	<bibl><author>T. Yamazaki et al.</author>, <title level="j">Phys. Rept.</title> <biblScope unit="volume">514</biblScope>, <biblScope unit="page">1</biblScope> (<date>2012</date>).</bibl>
+	<bibl><author>E. Friedman and A. Gal</author>, <title level="j">Phys. Rept.</title> <biblScope unit="volume">452</biblScope>, <biblScope unit="page">89</biblScope> (<date>2007</date>).</bibl>
+	<bibl><author>E. Friedman and A. Gal</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">928</biblScope>, <biblScope unit="page">128</biblScope> (<date>2014</date>).</bibl>
+	<bibl><author>C. J. Batty, E. Friedman, and A. Gal</author>, <title level="j">Phys. Rept.</title> <biblScope unit="volume">287</biblScope>, <biblScope unit="page">385</biblScope>( <date>1997</date>).</bibl>
+	<bibl><author>H. Toki et al.</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">501</biblScope>, <biblScope unit="page">653</biblScope> (<date>1989</date>).</bibl>
+	<bibl><author>T. Yamazaki et al.</author>, <title level="j">Z. Phys. A</title> <biblScope unit="volume">355</biblScope>, <biblScope unit="page">219</biblScope> (<date>1996</date>).</bibl>
+	<bibl><author>H. Gilg et al.</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">62</biblScope>, <biblScope unit="page">025201</biblScope> (<date>2000</date>).</bibl>
+	<bibl><author>K. Itahashi et al.</author>, <title level="j">Phys. Rev.</title> <biblScope unit="volume">62</biblScope>, <biblScope unit="page">025202</biblScope> (<date>2000</date>).</bibl>
+	<bibl><author>U.-G. Meissner, J. A. Oller, and A. Wirzba</author>, <title level="j">Ann. Phys. (N.Y.)</title><biblScope unit="volume">297</biblScope> ,<biblScope unit="page">27</biblScope> ( <date>2002</date>),<note>and references therein</note> .</bibl>
+	<bibl><author>N. Ikeno et al.</author>, <title level="j">PTEP</title> <biblScope unit="volume">2015</biblScope>, <biblScope unit="page">033D01</biblScope> (<date>2015</date>).</bibl>
+	<bibl><author>W. J. Frank et al.</author>, <title level="j">Phys. Rev.</title> <biblScope unit="volume">94</biblScope>, <biblScope unit="page">1716</biblScope> (<date>1954</date>).</bibl>
+	<bibl><author>T. Kubo</author>, <title level="j">Nucl. Instr. Meth. Phys. Res. B</title> <biblScope unit="volume">204</biblScope>, <biblScope unit="page">97</biblScope> (<date>2003</date>).</bibl>
+	<bibl><author>Y. Yano</author>, <title level="j">Nucl. Instr. Meth. Phys. Res. B</title> <biblScope unit="volume">261</biblScope>, <biblScope unit="page">1009</biblScope> (<date>2007</date>).</bibl>
+	<bibl><author>S. Ohya</author>, <title level="j">Nucl. Data Sheets</title> <biblScope unit="volume">111</biblScope>, <biblScope unit="page">1619</biblScope> (<date>2010</date>).</bibl>
+	<bibl><author>T. Nishi et al.</author>, <title level="j">Nucl. Instr. Meth. Phys. Res. B</title> <biblScope unit="volume">317</biblScope>, <biblScope unit="page">290</biblScope> (<date>2013</date>).</bibl>
+	<bibl><author>K. R. Chapman et al.</author>, <title level="j">Nucl. Phys.</title> <biblScope unit="volume">57</biblScope>, <biblScope unit="page">499</biblScope> (<date>1964</date>).</bibl>
+	<bibl><author>M. Betigeri et al.</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">690</biblScope>, <biblScope unit="page">473</biblScope> (<date>2001</date>).</bibl>
+	<bibl><author>N. Ikeno et al.</author>, <title level="j">Prog. Theor. Phys.</title> <biblScope unit="volume">126</biblScope>, <biblScope unit="page">483</biblScope> (<date>2011</date>).</bibl>
+	<bibl><author>N. Ikeno</author>, <note>private communication</note> (<date>2017</date>).</bibl>
+	<bibl><author>N. Ikeno, H. Nagahiro and S. Hirenzaki</author>, <title level="j">Euro. Phys. J. A</title><biblScope unit="volume">47</biblScope> ,<biblScope unit="page">161</biblScope> ( <date>2011</date>).</bibl>
+	<bibl><author>H. Koura and M. Yamada</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">671</biblScope>, <biblScope unit="page">96</biblScope> (<date>2000</date>).</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

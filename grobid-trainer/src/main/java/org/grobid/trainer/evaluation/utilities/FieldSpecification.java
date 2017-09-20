@@ -303,7 +303,7 @@ public class FieldSpecification {
 		fulltextFields.add(figureTitleField);
 		fulltextLabels.add("figure_title");
 		
-		FieldSpecification figureCaptionField = new FieldSpecification();
+		/*FieldSpecification figureCaptionField = new FieldSpecification();
 		figureCaptionField.fieldName = "figure_caption";
 		figureCaptionField.isTextual = true;
 		figureCaptionField.grobidPath.
@@ -311,8 +311,18 @@ public class FieldSpecification {
 		figureCaptionField.nlmPath.
 			add("//fig/caption/p/text()");
 		fulltextFields.add(figureCaptionField);
-		fulltextLabels.add("figure_caption");
+		fulltextLabels.add("figure_caption");*/
 		
+		/*FieldSpecification figureLabelField = new FieldSpecification();
+		figureLabelField.fieldName = "figure_label";
+		figureLabelField.isTextual = true;
+		figureLabelField.grobidPath.
+			add("//figure[not(@type)]/label/text()");
+		figureLabelField.nlmPath.
+			add("//fig/label/text()");
+		fulltextFields.add(figureLabelField);
+		fulltextLabels.add("figure_label");*/
+
 		FieldSpecification tableTitleField = new FieldSpecification();
 		tableTitleField.fieldName = "table_title";
 		tableTitleField.isTextual = true;
@@ -322,8 +332,18 @@ public class FieldSpecification {
 			add("//table-wrap/label/text()");
 		fulltextFields.add(tableTitleField);
 		fulltextLabels.add("table_title");
-		
-		FieldSpecification tableCaptionField = new FieldSpecification();
+	
+		/*FieldSpecification tableLabelField = new FieldSpecification();
+		tableLabelField.fieldName = "figure_label";
+		tableLabelField.isTextual = true;
+		tableLabelField.grobidPath.
+			add("//figure[@type=\"table\"]/label/text()");
+		tableLabelField.nlmPath.
+			add("//fig/label/text()");
+		fulltextFields.add(tableLabelField);
+		fulltextLabels.add("figure_label");*/
+
+		/*FieldSpecification tableCaptionField = new FieldSpecification();
 		tableCaptionField.fieldName = "table_caption";
 		tableCaptionField.isTextual = true;
 		tableCaptionField.grobidPath.
@@ -331,7 +351,7 @@ public class FieldSpecification {
 		tableCaptionField.nlmPath.
 			add("//table-wrap/caption/p/text()");
 		fulltextFields.add(tableCaptionField);
-		fulltextLabels.add("figure_caption");
+		fulltextLabels.add("figure_caption");*/
 
 		//labels.add("section_title");
 		//labels.add("paragraph");

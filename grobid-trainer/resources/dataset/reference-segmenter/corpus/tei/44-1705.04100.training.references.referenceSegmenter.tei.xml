@@ -1,0 +1,33 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        * rbuerkle@physik.uni-kl.de<lb/> 
+        <bibl><label>[1]</label> S. W. Hawking, Nature 248, 30 (1974).<lb/> </bibl>
+        <bibl><label>[2]</label> W. G. Unruh, Phys. Rev. Lett. 46, 1351 (1981).<lb/> </bibl>
+        <bibl><label>[3]</label> M. Novello, M. Visser, and G. Volovik, Artificial Black<lb/> Holes -(World Scientific, Singapore, 2002).<lb/> </bibl>
+        <bibl><label>[4]</label> W. G. Unruh, Phys. Rev. D 51, 2827 (1995).<lb/> </bibl>
+        <bibl><label>[5]</label> W. G. Unruh and R. Schützhold, eds., Quantum Ana-<lb/>logues: From Phase Transitions to Black Holes and Cos-<lb/>mology (Springer, Berlin, Heidelberg, 2007).<lb/> </bibl>
+        <bibl><label>[6]</label> S. Weinfurtner, E. W. Tedford, M. C. J. Penrice, W. G.<lb/> Unruh, and G. A. Lawrence, Phys. Rev. Lett. 106, 021302<lb/> (2011).<lb/> </bibl>
+        <bibl><label>[7]</label> G. Rousseaux, C. Mathis, P. Maissa, T. G. Philbin, and<lb/> U. Leonhardt, New J. Phys. 10, 053015 (2008).<lb/> </bibl>
+        <bibl><label>[8]</label> O. Lahav, A. Itah, A. Blumkin, C. Gordon, and J. Stein-<lb/>hauer, Phys. Rev. Lett. 105, 240401 (2010).<lb/> </bibl>
+        <bibl><label>[9]</label> J. Steinhauer, Nature Phys. 10, 864 (2014).<lb/> </bibl>
+        <bibl><label>[10]</label> J. Steinhauer, Nature Phys. 12, 959 (2016).<lb/> </bibl>
+        <bibl><label>[11]</label> L. J. Garay, J. R. Anglin, J. I. Cirac, and P. Zoller, Phys.<lb/> Rev. A 63, 023611 (2001).<lb/> </bibl>
+        <bibl><label>[12]</label> L. J. Garay, J. R. Anglin, J. I. Cirac, and P. Zoller, Phys.<lb/> Rev. Lett. 85, 4643 (2000).<lb/> </bibl>
+        <bibl><label>[13]</label> R. Bürkle, A. Gaidoukov, and J. R. Anglin, In prepara-<lb/>tion.<lb/> </bibl>
+        <bibl><label>[14]</label> S. Corley and T. Jacobson, Phys. Rev. D59, 124011<lb/> (1999).<lb/> </bibl>
+        <bibl><label>[15]</label> A. Sinatra, C. Lobo, and Y. Castin, Journal of Physics B:<lb/> Atomic, Molecular and Optical Physics 35, 3599 (2002).<lb/> </bibl>
+        <bibl><label>[16]</label> J. Ruostekoski and A. D. Martin, &quot;The Truncated Wigner<lb/> Method for Bose Gases,&quot; in Quantum Gases: Finite<lb/> Temperature and Non-Equilibrium Dynamics, edited by<lb/> M. Davis, N. Proukakis, S. Gardiner, and M. Szyma´nskaSzyma´nska<lb/> (Imperial College Press, London, 2013) pp. 203-214.<lb/> </bibl>
+        <bibl><label>[17]</label> P. B. Blakie, A. S. Bradley, M. J. Davis, R. J. Ballagh,<lb/> and C. W. Gardiner, Adv. Phys. 57, 363 (2008).<lb/> </bibl>
+        <bibl><label>[18]</label> J. A. C. Weideman and B. M. Herbst, SIAM Journal on<lb/> Numerical Analysis 23, 485 (1986).<lb/> </bibl>
+        <bibl><label>[19]</label> M. J. Lighthill, Proceedings of the Royal Society of Lon-<lb/>don A: Mathematical, Physical and Engineering Sciences<lb/> 211, 564 (1952).<lb/> </bibl>
+        <bibl><label>[20]</label> M. J. Lighthill, Proceedings of the Royal Society of Lon-<lb/>don A: Mathematical, Physical and Engineering Sciences<lb/> 222, 1 (1954).<lb/> </bibl>
+        <bibl><label>[21]</label> A. Dowling and T. Hynes, European Journal of Mechanics<lb/> -B/Fluids 23, 491 (2004).<lb/> </bibl>
+        <bibl><label>[22]</label> M. C. Tsatsos, P. E. Tavares, A. Cidrim, A. R. Fritsch,<lb/> M. A. Caracanhas, F. E. A. dos Santos, C. F. Barenghi,<lb/> and V. S. Bagnato, Physics Reports 622, 1 (2016).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

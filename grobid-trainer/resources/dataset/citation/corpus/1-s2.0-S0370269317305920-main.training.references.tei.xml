@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>V. Efimov</author>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">33</biblScope> (<date>1970</date>) <biblScope unit="page">563</biblScope>.</bibl>
+	<bibl><author>T. Kraemer, et al.</author>, <title level="j">Nature</title> <biblScope unit="volume">440</biblScope> (<date>2006</date>) <biblScope unit="page">315</biblScope>.</bibl>
+	<bibl><author>S.E. Pollack, D. Dries, R.G. Hulet</author>, <title level="j">Science</title> <biblScope unit="volume">326</biblScope> (<date>2009</date>) <biblScope unit="page">1683</biblScope>.</bibl>
+	<bibl><author>M. Zaccanti, B. Deissler, C. D&apos;Errico, M. Fattori, M. Jona-Lasinio, S. Müller, G. Roati,M .Inguscio ,G .Modugno</author> ,<title level="j">Nat .Phys .</title><biblScope unit="volume">5</biblScope> ( <date>2009</date>)<biblScope unit="page">586</biblScope> .</bibl>
+	<bibl><author>G. Barontini, C. Weber, F. Rabatti, J. Catani, G. Thalhammer, M. Inguscio, F. Mi-nardi</author>,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">103</biblScope> ( <date>2009</date>)<biblScope unit="page">043201</biblScope> .</bibl>
+	<bibl><author>V. Efimov</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">44</biblScope> (<date>1991</date>) <biblScope unit="page">2303</biblScope>.</bibl>
+	<bibl><author>P. Bedaque, U. van Kolck</author>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">428</biblScope> (<date>1998</date>) <biblScope unit="page">221</biblScope>.</bibl>
+	<bibl><author>P. Bedaque, H.-W. Hammer, U. Van Kolck</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">676</biblScope> (<date>2000</date>) <biblScope unit="page">357</biblScope>.</bibl>
+	<bibl><author>P. Bedaque, G. Rupak, H. Grießhammer, H.-W. Hammer</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">714</biblScope> (<date>2003</date>)<biblScope unit="page">589</biblScope> .</bibl>
+	<bibl><author>S. König, H. Grießhammer, H.-W. Hammer, U. Van Kolck</author>, <title level="j">J. Phys. G</title> <biblScope unit="volume">43</biblScope> (<date>2016</date>) <biblScope unit="page">055106</biblScope>.</bibl>
+	<bibl><author>A. Kievsky, M. Viviani, M. Gattobigio, L. Girlanda</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">95</biblScope> (<date>2017</date>) <biblScope unit="page">024001</biblScope>.</bibl>
+	<bibl><author>A. Jensen, K. Riisager, D. Fedorov, E. Garrido</author>, <title level="j">Rev. Mod. Phys.</title> <biblScope unit="volume">76</biblScope> (<date>2004</date>) <biblScope unit="page">215</biblScope>.</bibl>
+	<bibl><author>E. Braaten, H.-W. Hammer</author>, <title level="j">Phys. Rep.</title> <biblScope unit="volume">428</biblScope> (<date>2006</date>) <biblScope unit="page">259</biblScope>.</bibl>
+	<bibl><author>H.-W. Hammer, L. Platter</author>, <title level="j">Annu. Rev. Nucl. Part. Sci.</title> <biblScope unit="volume">60</biblScope> (<date>2010</date>) <biblScope unit="page">207</biblScope>.</bibl>
+	<bibl><author>T. Frederico, A. Delfino, L. Tomio, M. Yamashita</author>, <title level="j">Prog. Part. Nucl. Phys.</title> <biblScope unit="volume">67</biblScope> (<date>2012</date>) <biblScope unit="page">939</biblScope>.</bibl>
+	<bibl><author>H.-W. Hammer, C. Ji, D. Philips</author>, <idno type="arxiv">arXiv:1702.08605</idno>, <date>2017</date>.</bibl>
+	<bibl><author>G. Audi, A. Wapstra, C. Thibault</author>, <title level="j">Nucl. Phys. A</title> <biblScope unit="volume">729</biblScope> (<date>2003</date>) <biblScope unit="volume">337</biblScope>.</bibl>
+	<bibl><author>M. Wang, G. Audi, A. Wapstra, F. Kondev, M. MacCormick, X. Xu, B. Pfeiffer</author>, <title level="j">Chin.Phys .C</title> <biblScope unit="volume">36</biblScope> ( <date>2012</date>)<biblScope unit="page">1603</biblScope> .</bibl>
+	<bibl><author>V. Arora, I. Mazumdar, V.S. Bhasin</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">69</biblScope> (<date>2004</date>) <biblScope unit="page">061301</biblScope>.</bibl>
+	<bibl><author>I. Mazumdar, A.R.P. Rau, V.S. Bhasin</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">97</biblScope> (<date>2006</date>) <biblScope unit="page">062503</biblScope>.</bibl>
+	<bibl><author>M. Yamashita, T. Frederico, L. Tomio</author>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">670</biblScope> (<date>2008</date>) <biblScope unit="page">49</biblScope>.</bibl>
+	<bibl><author>M. Shalchi, M. Yamashita, M. Hadizadeh, T. Frederico, L. Tomio</author>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">764</biblScope>( <date>2017</date>)<date>196</date> ;</bibl>
+	<bibl><author>M. Shalchi, M. Yamashita, M. Hadizadeh, T. Frederico, L. Tomio</author>, <title level="j">Phys. Lett. B</title> (<date>2017</date>),<ptr type="web">http ://dx.doi.org/10.1016/j.physletb.2017.05.070</ptr>,<note>in press ( Erratum)</note>.</bibl>
+	<bibl><author>M.T. Yamashita, T. Frederico, L. Tomio</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">99</biblScope> (<date>2007</date>) <biblScope unit="page">269201</biblScope>.</bibl>
+	<bibl><author>W. van Oers, J. Seagrave</author>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">24</biblScope> (<date>1967</date>) <biblScope unit="volume">562</biblScope>.</bibl>
+	<bibl><author>I. Mazumdar, A.R.P. Rau, V.S. Bhasin</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="page">99</biblScope> (<date>2007</date>) <biblScope unit="page">269202</biblScope>.</bibl>
+	<bibl><author>R. Machleidt</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">63</biblScope> (<date>2001</date>) <biblScope unit="page">024001</biblScope>.</bibl>
+	<bibl><author>A. Deltuva</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">74</biblScope> (<date>2006</date>) <biblScope unit="page">064001</biblScope>.</bibl>
+	<bibl><author>A. Deltuva</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">80</biblScope> (<date>2009</date>) <biblScope unit="page">064002</biblScope>.</bibl>
+	<bibl><author>L.D. Faddeev</author>, <title level="j">Zh. Eksp. Teor. Fiz.</title> <biblScope unit="volume">39</biblScope> (<date>1960</date>) <biblScope unit="page">1459</biblScope></bibl>, <bibl><title level="j">Sov. Phys. JETP</title> <biblScope unit="volume">12</biblScope> (<date>1961</date>) <biblScope unit="page">1014</biblScope>.</bibl>
+	<bibl><author>E.O. Alt, P. Grassberger, W. Sandhas</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">2</biblScope> (<date>1967</date>) <biblScope unit="page">167</biblScope>.</bibl>
+	<bibl><author>N.W. Schellingerhout, L.P. Kok, S.A. Coon, R.M. Adam</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">48</biblScope> (<date>1993</date>) <biblScope unit="page">2714</biblScope>.</bibl>
+	<bibl><author>I.J. Thompson, B.V. Danilin, V.D. Efros, J.S. Vaagen, J.M. Bang, M.V. Zhukov</author>, <title level="j">Phys. Rev.C</title> <biblScope unit="page">61</biblScope> ( <date>2000</date>)<biblScope unit="page">024318</biblScope> .</bibl>
+	<bibl><author>H.W. Hammer, L. Platter</author>, <title level="j">Eur. Phys. J. A</title> <biblScope unit="volume">32</biblScope> (<date>2007</date>) <biblScope unit="page">113</biblScope>.</bibl>
+	<bibl><author>A. Deltuva</author>, <title level="j">Phys. Rev. C</title> <biblScope unit="volume">87</biblScope> (<date>2013</date>) <biblScope unit="page">034609</biblScope>.</bibl>
+	<bibl><author>W. Glöckle, H. Witała, D. Hüber, H. Kamada, J. Golak</author>, <title level="j">Phys. Rep.</title> <biblScope unit="volume">274</biblScope> (<date>1996</date>) <biblScope unit="page">107</biblScope>.</bibl>
+	<bibl><author>P.M.A. Mestrom, J. Wang, C.H. Greene, J.P. D&apos;Incao</author>, <title level="j">Phys. Rev. A</title> <biblScope unit="volume">95</biblScope> (<date>2017</date>) <biblScope unit="page">032707</biblScope>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

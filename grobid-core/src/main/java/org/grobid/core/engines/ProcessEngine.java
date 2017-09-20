@@ -2,6 +2,7 @@ package org.grobid.core.engines;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.pdfbox.pdmodel.PDDocument;
 import org.grobid.core.data.*;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidResourceException;
@@ -9,6 +10,9 @@ import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.main.batch.GrobidMainArgs;
 import org.grobid.core.utilities.IOUtilities;
 import org.grobid.core.utilities.KeyGen;
+import org.grobid.core.visualization.CitationsVisualizer;
+import org.grobid.core.document.Document;
+import org.grobid.core.document.DocumentSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -58,6 +62,7 @@ public class ProcessEngine implements Closeable {
         if (engine != null) {
             engine.close();
         }
+        System.exit(0);
     }
 
     /**
@@ -116,7 +121,7 @@ public class ProcessEngine implements Closeable {
                     }
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the file " + currPdf.getAbsolutePath()
-                            + ". Continuing the process for the other files");
+                            + ". Continuing the process for the other files", exp);
                 }
             }
         }
@@ -197,7 +202,7 @@ public class ProcessEngine implements Closeable {
                     }
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the file " + currPdf.getAbsolutePath()
-                            + ". Continuing the process for the other files");
+                            + ". Continuing the process for the other files", exp);
                 }
             }
         }
@@ -362,30 +367,6 @@ public class ProcessEngine implements Closeable {
     }
 
     /**
-     * Generate training data for the header model.
-     *
-     * @param pGbdArgs The parameters.
-     */
-    /*public void createTrainingHeader(final GrobidMainArgs pGbdArgs) {
-        inferPdfInputPath(pGbdArgs);
-        inferOutputPath(pGbdArgs);
-        int result = getEngine().batchCreateTrainingHeader(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
-        LOGGER.info(result + " files processed.");
-    }*/
-
-    /**
-     * Generate training data for the full text model.
-     *
-     * @param pGbdArgs The parameters.
-     */
-    /*public void createTrainingFulltext(final GrobidMainArgs pGbdArgs) {
-        inferPdfInputPath(pGbdArgs);
-        inferOutputPath(pGbdArgs);
-        int result = getEngine().batchCreateTrainingFulltext(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
-        LOGGER.info(result + " files processed.");
-    }*/
-
-    /**
      * Generate training data for all models
      *
      * @param pGbdArgs The parameters.
@@ -396,30 +377,6 @@ public class ProcessEngine implements Closeable {
         int result = getEngine().batchCreateTraining(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
         LOGGER.info(result + " files processed.");
     }
-
-    /**
-     * Generate training data for the segmentation model.
-     *
-     * @param pGbdArgs The parameters.
-     */
-    /*public void createTrainingSegmentation(final GrobidMainArgs pGbdArgs) {
-        inferPdfInputPath(pGbdArgs);
-        inferOutputPath(pGbdArgs);
-        int result = getEngine().batchCreateTrainingSegmentation(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
-        LOGGER.info(result + " files processed.");
-    }*/
-
-    /**
-     * Generate training data for the reference segmentation model.
-     *
-     * @param pGbdArgs The parameters.
-     */
-    /*public void createTrainingReferenceSegmentation(final GrobidMainArgs pGbdArgs) {
-        inferPdfInputPath(pGbdArgs);
-        inferOutputPath(pGbdArgs);
-        int result = getEngine().batchCreateTrainingReferenceSegmentation(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
-        LOGGER.info(result + " files processed.");
-    }*/
 
     /**
      * Generate training data for citation extraction from patent documents.
@@ -455,7 +412,7 @@ public class ProcessEngine implements Closeable {
                 }
             } catch (final Exception exp) {
                 LOGGER.error("An error occured while processing the file " + currTEI.getAbsolutePath()
-                        + ". Continuing the process for the other files");
+                        + ". Continuing the process for the other files", exp);
             }
         }
     }
@@ -490,7 +447,7 @@ public class ProcessEngine implements Closeable {
                 }
             } catch (final Exception exp) {
                 LOGGER.error("An error occured while processing the file " + currXML.getAbsolutePath()
-                        + ". Continuing the process for the other files");
+                        + ". Continuing the process for the other files", exp);
             }
         }
     }
@@ -519,7 +476,7 @@ public class ProcessEngine implements Closeable {
                 }
             } catch (final Exception exp) {
                 LOGGER.error("An error occured while processing the file " + currTXT.getAbsolutePath()
-                        + ". Continuing the process for the other files");
+                        + ". Continuing the process for the other files", exp);
             }
         }
     }
@@ -553,10 +510,72 @@ public class ProcessEngine implements Closeable {
                 }
             } catch (final Exception exp) {
                 LOGGER.error("An error occured while processing the file " + currPDF.getAbsolutePath()
-                        + ". Continuing the process for the other files");
+                        + ". Continuing the process for the other files", exp);
             }
         }
     }
+
+    /**
+     * Process a patent available in PDF using pGbdArgs parameters.
+     *
+     * @param pGbdArgs The parameters.
+     * @throws Exception
+     */
+    public void processPDFAnnotation(final GrobidMainArgs pGbdArgs) throws Exception {
+        inferPdfInputPath(pGbdArgs);
+        inferOutputPath(pGbdArgs);
+        final File pdfDirectory = new File(pGbdArgs.getPath2Input());
+        final File outDirectory = new File(pGbdArgs.getPath2Output());
+        PDDocument out = null;
+        PDDocument document = null;
+        for (final File currPDF : pdfDirectory.listFiles()) {
+            try {
+                if (currPDF.getName().toLowerCase().endsWith(".pdf")) {
+                    System.out.println("Processing: " + currPDF.getName());
+                    List<String> elementWithCoords = new ArrayList();
+                    elementWithCoords.add("ref");
+                    elementWithCoords.add("biblStruct");
+
+                    GrobidAnalysisConfig config = new GrobidAnalysisConfig
+                            .GrobidAnalysisConfigBuilder()
+                            .consolidateCitations(true)
+                            .generateTeiCoordinates(elementWithCoords)
+                            .build();
+
+                    Document teiDoc = getEngine().fullTextToTEIDoc(currPDF, config);
+                    document = PDDocument.load(currPDF);
+                    //If no pages, skip the document
+                    if (document.getNumberOfPages() > 0) {
+                        DocumentSource documentSource = teiDoc.getDocumentSource();
+                        out = CitationsVisualizer.annotatePdfWithCitations(document, teiDoc, null);
+                    } else {
+                        throw new RuntimeException("Cannot identify any pages in the input document. " +
+                            "The document cannot be annotated. Please check whether the document is valid or the logs.");
+                    }
+
+                    if (out != null) {
+                        File outputFile = null;
+                        if (outDirectory.getPath().equals(pdfDirectory.getPath()))
+                            outputFile = new File(outDirectory.getPath() + "/" + currPDF.getName().replace(".pdf", ".grobid.pdf"));
+                        else
+                             outputFile = new File(outDirectory.getPath() + "/" + currPDF.getName());
+                        out.save(outputFile);
+                        System.out.println("Saved: " + outputFile.getPath());
+                    }
+                }
+            } catch (final Exception exp) {
+                LOGGER.error("An error occured while processing the file " + currPDF.getAbsolutePath()
+                        + ". Continuing the process for the other files", exp);
+            } finally {
+                if (document != null)
+                    document.close();
+                if (out != null) {
+                    out.close();
+                }
+            }
+        }
+    }
+
 
     /**
      * List the engine methods that can be called.

@@ -1,6 +1,8 @@
 package org.grobid.core.engines;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.collections4.CollectionUtils;
+
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -16,24 +18,31 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorCitation;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.Consolidation;
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author Patrice Lopez
  */
 public class CitationParser extends AbstractParser {
-    private Consolidation consolidator = null;
-
     public Lexicon lexicon = Lexicon.getInstance();
     private EngineParsers parsers;
 
@@ -45,73 +54,55 @@ public class CitationParser extends AbstractParser {
     public CitationParser(EngineParsers parsers) {
         super(GrobidModels.CITATION);
         this.parsers = parsers;
-//        tmpPath = GrobidProperties.getTempPath();
     }
 
     public BiblioItem processing(String input, boolean consolidate) {
-        BiblioItem resCitation;
         if (StringUtils.isBlank(input)) {
             return null;
         }
 
+        // some cleaning
+        input = UnicodeUtil.normaliseText(input);
+        //input = TextUtilities.dehyphenize(input);
+        //input = input.replace("\n", " ");
+        //input = input.replaceAll("\\p{Cntrl}", " ").trim();
+
+        List<LayoutToken> tokens = analyzer.tokenizeWithLayoutToken(input);
+        return processing(tokens, consolidate);
+    }
+
+    public BiblioItem processing(List<LayoutToken> tokens, boolean consolidate) {
+        BiblioItem resCitation;
+        if (CollectionUtils.isEmpty(tokens)) {
+            return null;
+        }
+
         try {
-            ArrayList<String> citationBlocks = new ArrayList<>();
+            List<String> citationBlocks = new ArrayList<>();
 
-            input = UnicodeUtil.normaliseText(input);
-            input = TextUtilities.dehyphenize(input);
-            input = input.replace("\n", " ");
-            input = input.replaceAll("\\p{Cntrl}", " ").trim();
-            //StringTokenizer st = new StringTokenizer(input,
-            //        TextUtilities.fullPunctuations, true);
+            //tokens = LayoutTokensUtil.dehyphenize(tokens);
 
-            // TBD: add the language object in the tokenizer call
-            List<String> tokenizations = analyzer.tokenize(input);
+            List<OffsetPosition> journalsPositions = lexicon.tokenPositionsJournalNames(tokens);
+            List<OffsetPosition> abbrevJournalsPositions = lexicon.tokenPositionsAbbrevJournalNames(tokens);
+            List<OffsetPosition> conferencesPositions = lexicon.tokenPositionsConferenceNames(tokens);
+            List<OffsetPosition> publishersPositions = lexicon.tokenPositionsPublisherNames(tokens);
+            List<OffsetPosition> locationsPositions = lexicon.tokenPositionsLocationNames(tokens);
+            List<OffsetPosition> collaborationsPositions = lexicon.tokenPositionsCollaborationNames(tokens);
+            List<OffsetPosition> identifiersPositions = lexicon.tokenPositionsIdentifierPattern(tokens);
+            List<OffsetPosition> urlPositions = lexicon.tokenPositionsUrlPattern(tokens);
 
-            //if (st.countTokens() == 0)
-            if (tokenizations.size() == 0)
-                return null;
+            String ress = FeaturesVectorCitation.addFeaturesCitation(tokens, null, journalsPositions, 
+                abbrevJournalsPositions, conferencesPositions, publishersPositions, locationsPositions,
+                collaborationsPositions, identifiersPositions, urlPositions);
 
-            //List<String> tokenizations = new ArrayList<String>();
-            //while (st.hasMoreTokens()) {
-            //    final String tok = st.nextToken();
-            for (String tok : tokenizations) {
-                //tokenizations.add(tok);
-                if (!LayoutTokensUtil.spaceyToken(tok)) {
-                    // parano final sanitisation
-                    tok = tok.replaceAll("[ \n]", "");
-                    citationBlocks.add(tok + " <citation>");
-                }
-            }
-            citationBlocks.add("\n");
-
-            List<List<OffsetPosition>> journalsPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> abbrevJournalsPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> conferencesPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> publishersPositions = new ArrayList<List<OffsetPosition>>();
-
-            journalsPositions.add(lexicon.inJournalNames(input));
-            abbrevJournalsPositions.add(lexicon.inAbbrevJournalNames(input));
-            conferencesPositions.add(lexicon.inConferenceNames(input));
-            publishersPositions.add(lexicon.inPublisherNames(input));
-
-            String ress = FeaturesVectorCitation.addFeaturesCitation(
-                    citationBlocks, journalsPositions, abbrevJournalsPositions,
-                    conferencesPositions, publishersPositions);
             String res = label(ress);
-
-            resCitation = resultExtraction(res, true, tokenizations);
+//System.out.println(res);
+            resCitation = resultExtractionLayoutTokens(res, true, tokens);
             // post-processing (additional field parsing and cleaning)
             if (resCitation != null) {
                 BiblioItem.cleanTitles(resCitation);
 
                 resCitation.setOriginalAuthors(resCitation.getAuthors());
-
-//                ArrayList<String> auts = new ArrayList<String>();
-//                if (resCitation.getAuthors() != null) {
-//                    auts.add(resCitation.getAuthors());
-//                }
-
-//                resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(auts));
                 resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(resCitation.getAuthors()));
                 if (resCitation.getPublicationDate() != null) {
                     List<Date> dates = parsers.getDateParser().processing(resCitation
@@ -157,12 +148,12 @@ public class CitationParser extends AbstractParser {
         }
     }
 
-    public List<BibDataSet> processingReferenceSection(String referenceTextBlock, ReferenceSegmenter referenceSegmenter) {
+    /*public List<BibDataSet> processingReferenceSection(String referenceTextBlock, ReferenceSegmenter referenceSegmenter) {
         List<LabeledReferenceResult> segm = referenceSegmenter.extract(referenceTextBlock);
 
         List<BibDataSet> results = new ArrayList<>();
         for (LabeledReferenceResult ref : segm) {
-            BiblioItem bib = processing(ref.getReferenceText(), false);
+            BiblioItem bib = processing(ref.getTokens(), false);
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
@@ -173,8 +164,7 @@ public class CitationParser extends AbstractParser {
             }
         }
         return results;
-    }
-
+    }*/
 
     public List<BibDataSet> processingReferenceSection(Document doc, ReferenceSegmenter referenceSegmenter, boolean consolidate) {
         List<BibDataSet> results = new ArrayList<BibDataSet>();
@@ -197,8 +187,10 @@ public class CitationParser extends AbstractParser {
             cntManager.i(CitationParserCounters.SEGMENTED_REFERENCES, references.size());
         }
 
+        // consolidation: if selected, is not done individually for each citation but 
+        // in a second stage for all citations
         for (LabeledReferenceResult ref : references) {
-            BiblioItem bib = processing(TextUtilities.dehyphenize(ref.getReferenceText()), consolidate);
+            BiblioItem bib = processing(ref.getReferenceText(), false);
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
@@ -208,6 +200,41 @@ public class CitationParser extends AbstractParser {
                 results.add(bds);
             }
         }
+
+        // consolidate the set
+        if (consolidate) {
+            Consolidation consolidator = new Consolidation(cntManager);
+            Map<Integer,BiblioItem> resConsolidation = null;
+            try {
+                resConsolidation = consolidator.consolidate(results);
+            } catch(Exception e) {
+                throw new GrobidException(
+                "An exception occured while running consolidation on bibliographical references.", e);
+            } finally {
+                //consolidator.close();
+            }
+            if (resConsolidation != null) {
+
+int consolidated = 0;
+for (Entry<Integer, BiblioItem> cursor : resConsolidation.entrySet()) {
+if (cursor.getValue() != null) {
+consolidated++;
+} 
+}
+System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON search API): " + consolidated + " / " + resConsolidation.size());
+
+                for(int i=0; i<results.size(); i++) {
+                    BiblioItem resCitation = results.get(i).getResBib();
+                    BiblioItem bibo = resConsolidation.get(new Integer(i));
+                    if (bibo != null) {
+                        BiblioItem.correct(resCitation, bibo);
+                    }
+                }
+            }
+        }
+
+        doc.setBibDataSets(results);
+
         return results;
     }
 
@@ -237,233 +264,115 @@ public class CitationParser extends AbstractParser {
 
 
     /**
-     * Extract results from a labelled header.
+     * Extract results from a labeled sequence.
      *
      * @param result            result
      * @param volumePostProcess whether post process volume
      * @param tokenizations     list of tokens
      * @return bibilio item
      */
-    public BiblioItem resultExtraction(String result,
+    public BiblioItem resultExtractionLayoutTokens(String result,
                                        boolean volumePostProcess,
-                                       List<String> tokenizations) {
+                                       List<LayoutToken> tokenizations) {
         BiblioItem biblio = new BiblioItem();
 
-        StringTokenizer st = new StringTokenizer(result, "\n");
-        String s1 = null;
-        String s2 = null;
-        String lastTag = null;
+        TaggingLabel lastClusterLabel = null;
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.CITATION, result, tokenizations);
 
-        int p = 0;
-        // iterator for the tokenizations for restauring the original
-        // tokenization with
-        // respect to spaces
-
-        while (st.hasMoreTokens()) {
-            boolean addSpace = false;
-            String tok = st.nextToken().trim();
-
-            if (tok.length() == 0) {
+        String tokenLabel = null;
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
                 continue;
             }
-            StringTokenizer stt = new StringTokenizer(tok, "\t");
-            ArrayList<String> localFeatures = new ArrayList<String>();
-            int i = 0;
 
-            int ll = stt.countTokens();
-            while (stt.hasMoreTokens()) {
-                String s = stt.nextToken().trim();
-                if (i == 0) {
-                    s2 = s;
-                    boolean strop = false;
-                    while ((!strop) && (p < tokenizations.size())) {
-                        String tokOriginal = tokenizations.get(p);
-                        if (tokOriginal.equals(" ")) {
-                            addSpace = true;
-                        } else if (tokOriginal.equals(s)) {
-                            strop = true;
-                        }
-                        p++;
-                    }
-                } else if (i == ll - 1) {
-                    s1 = s;
-                } else {
-                    localFeatures.add(s);
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            Engine.getCntManager().i(clusterLabel);
+
+            //String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+            //String clusterContent = LayoutTokensUtil.toText(cluster.concatTokens());
+            String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+            //String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
+            if (clusterLabel.equals(TaggingLabels.CITATION_TITLE)) {
+                if (biblio.getTitle() == null)
+                    biblio.setTitle(clusterContent);
+                else if (biblio.getTitle().length() >= clusterContent.length())
+                    biblio.setNote(clusterContent);
+                else {
+                    biblio.setNote(biblio.getTitle());
+                    biblio.setTitle(clusterContent);
                 }
-                i++;
-            }
-
-            if ((s1.equals("<title>")) || (s1.equals("I-<title>"))) {
-                if (biblio.getTitle() != null) {
-                    if (addSpace)
-                        biblio.setTitle(biblio.getTitle() + " " + s2);
-                    else
-                        biblio.setTitle(biblio.getTitle() + s2);
-                } else
-                    biblio.setTitle(s2);
-            } else if ((s1.equals("<author>")) || (s1.equals("I-<author>"))) {
-
-                if (biblio.getAuthors() != null) {
-                    if (addSpace)
-                        biblio.setAuthors(biblio.getAuthors() + " " + s2);
-                    else
-                        biblio.setAuthors(biblio.getAuthors() + s2);
-                } else
-                    biblio.setAuthors(s2);
-            } else if ((s1.equals("<tech>")) || (s1.equals("I-<tech>"))) {
-                biblio.setType("book");
-                if (biblio.getBookType() != null) {
-                    if (addSpace)
-                        biblio.setBookType(biblio.getBookType() + " " + s2);
-                    else
-                        biblio.setBookType(biblio.getBookType() + s2);
-                } else
-                    biblio.setBookType(s2);
-            } else if ((s1.equals("<location>")) || (s1.equals("I-<location>"))) {
-                if (biblio.getLocation() != null) {
-                    if (s1.equals(lastTag) || lastTag.equals("I-<location>")) {
-                        if (addSpace)
-                            biblio.setLocation(biblio.getLocation() + " " + s2);
-                        else
-                            biblio.setLocation(biblio.getLocation() + s2);
-                    } else
-                        biblio.setLocation(biblio.getLocation() + " ; " + s2);
-                } else
-                    biblio.setLocation(s2);
-            } else if ((s1.equals("<date>")) || (s1.equals("I-<date>"))) {
-                // it appears that the same date is quite often repeated,
-                // we should check, before adding a new date segment, if it is
-                // not already present
-
-                if (biblio.getPublicationDate() != null) {
-                    if (s1.equals(lastTag) || lastTag.equals("I-<date>")) {
-                        if (addSpace)
-                            biblio.setPublicationDate(biblio
-                                    .getPublicationDate() + " " + s2);
-                        else
-                            biblio.setPublicationDate(biblio
-                                    .getPublicationDate() + s2);
-                    } else
-                        biblio.setPublicationDate(biblio.getPublicationDate()
-                                + " . " + s2);
-                } else
-                    biblio.setPublicationDate(s2);
-            } else if ((s1.equals("<booktitle>"))
-                    || (s1.equals("I-<booktitle>"))) {
-                if (biblio.getBookTitle() != null) {
-                    if (localFeatures.contains("LINESTART")) {
-                        biblio.setBookTitle(biblio.getBookTitle() + " " + s2);
-                        // biblio.setBookTitle(biblio.getBookTitle() + "\n" +
-                        // s2);
-                    } else {
-                        if (addSpace)
-                            biblio.setBookTitle(biblio.getBookTitle() + " "
-                                    + s2);
-                        else
-                            biblio.setBookTitle(biblio.getBookTitle() + s2);
-                    }
-                } else
-                    biblio.setBookTitle(s2);
-            } else if ((s1.equals("<pages>")) || (s1.equals("<page>"))
-                    | (s1.equals("I-<pages>")) || (s1.equals("I-<page>"))) {
-                if (biblio.getPageRange() != null) {
-                    if (addSpace)
-                        biblio.setPageRange(biblio.getPageRange() + " " + s2);
-                    else
-                        biblio.setPageRange(biblio.getPageRange() + s2);
-                } else
-                    biblio.setPageRange(s2);
-            } else if ((s1.equals("<publisher>"))
-                    || (s1.equals("I-<publisher>"))) {
-                if (biblio.getPublisher() != null) {
-                    if (addSpace)
-                        biblio.setPublisher(biblio.getPublisher() + " " + s2);
-                    else
-                        biblio.setPublisher(biblio.getPublisher() + s2);
-                } else
-                    biblio.setPublisher(s2);
-            } else if ((s1.equals("<journal>")) || (s1.equals("I-<journal>"))) {
-                if (biblio.getJournal() != null) {
-                    if (localFeatures.contains("LINESTART")) {
-                        biblio.setJournal(biblio.getJournal() + " " + s2);
-                        // biblio.setJournal(biblio.getJournal() + "\n" + s2);
-                    } else {
-                        if (addSpace)
-                            biblio.setJournal(biblio.getJournal() + " " + s2);
-                        else
-                            biblio.setJournal(biblio.getJournal() + s2);
-                    }
-                } else
-                    biblio.setJournal(s2);
-            } else if ((s1.equals("<volume>")) || (s1.equals("I-<volume>"))) {
-                if (biblio.getVolumeBlock() != null) {
-                    if (addSpace)
-                        biblio.setVolumeBlock(biblio.getVolumeBlock() + " "
-                                + s2, volumePostProcess);
-                    else
-                        biblio.setVolumeBlock(biblio.getVolumeBlock() + s2,
-                                volumePostProcess);
-                } else
-                    biblio.setVolumeBlock(s2, volumePostProcess);
-            } else if ((s1.equals("<issue>")) || (s1.equals("I-<issue>"))) {
-                if (biblio.getIssue() != null) {
-                    if (addSpace)
-                        biblio.setIssue(biblio.getIssue() + " " + s2);
-                    else
-                        biblio.setIssue(biblio.getIssue() + s2);
-                } else
-                    biblio.setIssue(s2);
-            } else if ((s1.equals("<editor>")) || (s1.equals("I-<editor>"))) {
-                if (biblio.getEditors() != null) {
-                    if (addSpace)
-                        biblio.setEditors(biblio.getEditors() + " " + s2);
-                    else
-                        biblio.setEditors(biblio.getEditors() + s2);
-                } else
-                    biblio.setEditors(s2);
-            } else if ((s1.equals("<institution>"))
-                    || (s1.equals("I-<institution>"))) {
-                if (biblio.getInstitution() != null) {
-                    if (localFeatures.contains("LINESTART")) {
-                        biblio.setInstitution(biblio.getInstitution() + "; "
-                                + s2);
-                        // biblio.setInstitution(biblio.getInstitution() + "\n"
-                        // + s2);
-                    } else {
-                        if (addSpace)
-                            biblio.setInstitution(biblio.getInstitution() + " "
-                                    + s2);
-                        else
-                            biblio.setInstitution(biblio.getInstitution() + s2);
-                    }
-                } else
-                    biblio.setInstitution(s2);
-            } else if ((s1.equals("<note>")) || (s1.equals("I-<note>"))) {
-                if (biblio.getNote() != null) {
-                    if (s1.equals(lastTag)) {
-                        if (addSpace)
-                            biblio.setNote(biblio.getNote() + " " + s2);
-                        else
-                            biblio.setNote(biblio.getNote() + s2);
-                    } else
-                        biblio.setNote(biblio.getNote() + ". " + s2);
-                } else
-                    biblio.setNote(s2);
-            } else if ((s1.equals("<pubnum>")) || (s1.equals("I-<pubnum>"))) {
-                if (biblio.getPubnum() != null)
-                    biblio.setPubnum(biblio.getPubnum() + " " + s2);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_AUTHOR)) {
+                if (biblio.getAuthors() == null)
+                    biblio.setAuthors(clusterContent);
                 else
-                    biblio.setPubnum(s2);
-            } else if ((s1.equals("<web>")) || (s1.equals("I-<web>"))) {
-                if (biblio.getWeb() != null) {
-                    if (addSpace)
-                        biblio.setWeb(biblio.getWeb() + " " + s2);
-                    else
-                        biblio.setWeb(biblio.getWeb() + s2);
-                } else
-                    biblio.setWeb(s2);
+                    biblio.setAuthors(biblio.getAuthors() + " ; " + clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_TECH)) {
+                biblio.setBookType(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_LOCATION)) {
+                if (biblio.getLocation() != null)
+                    biblio.setLocation(biblio.getLocation() + "; " + clusterContent);
+                else
+                    biblio.setLocation(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_DATE)) {
+                if (biblio.getPublicationDate() != null)
+                    biblio.setPublicationDate(biblio.getPublicationDate() + ". " + clusterContent);
+                else
+                    biblio.setPublicationDate(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_BOOKTITLE)) {
+                if (biblio.getBookTitle() == null)
+                    biblio.setBookTitle(clusterContent);
+                else if (biblio.getBookTitle().length() >= clusterContent.length())
+                    biblio.setNote(clusterContent);
+                else {
+                    biblio.setNote(biblio.getBookTitle());
+                    biblio.setBookTitle(clusterContent);
+                }
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_PAGES)) {
+                String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
+                biblio.setPageRange(clusterNonDehypenizedContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_PUBLISHER)) {
+                biblio.setPublisher(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_COLLABORATION)) {
+                if (biblio.getCollaboration() != null)
+                    biblio.setCollaboration(biblio.getCollaboration() + " ; " + clusterContent);
+                else
+                    biblio.setCollaboration(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_JOURNAL)) {
+                if (biblio.getJournal() == null)
+                    biblio.setJournal(clusterContent);
+                else if (biblio.getJournal().length() >= clusterContent.length())
+                    biblio.setNote(clusterContent);
+                else {
+                    biblio.setNote(biblio.getJournal());
+                    biblio.setJournal(clusterContent);
+                }
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_VOLUME)) {
+                if (biblio.getVolumeBlock() == null)
+                   biblio.setVolumeBlock(clusterContent, volumePostProcess);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_ISSUE)) {
+                if (biblio.getIssue() == null)
+                    biblio.setIssue(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_EDITOR)) {
+                biblio.setEditors(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_INSTITUTION)) {
+                if (biblio.getInstitution() != null)
+                    biblio.setInstitution(biblio.getInstitution() + " ; " + clusterContent);
+                else
+                   biblio.setInstitution(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_NOTE)) {             
+                if (biblio.getNote() != null)
+                    biblio.setNote(biblio.getNote()+ ". " + clusterContent);
+                else    
+                   biblio.setNote(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_PUBNUM)) {
+                String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
+                biblio.setPubnum(clusterNonDehypenizedContent);
+                biblio.checkIdentifier();
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_WEB)) {
+                String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
+                biblio.setWeb(clusterNonDehypenizedContent);
             }
-            lastTag = s1;
         }
 
         return biblio;
@@ -477,22 +386,21 @@ public class CitationParser extends AbstractParser {
      * @return consolidated biblio item
      */
     public BiblioItem consolidateCitation(BiblioItem resCitation) {
-        try {
-            if (consolidator == null) {
-                consolidator = new Consolidation();
-            }
-            consolidator.openDb();
+        Consolidation consolidator = null;
+        try {                
+            consolidator = new Consolidation(cntManager);
             ArrayList<BiblioItem> bibis = new ArrayList<BiblioItem>();
             boolean valid = consolidator.consolidate(resCitation, bibis);
             if ((valid) && (bibis.size() > 0)) {
                 BiblioItem bibo = bibis.get(0);
                 BiblioItem.correct(resCitation, bibo);
             }
-            consolidator.closeDb();
         } catch (Exception e) {
             // e.printStackTrace();
             throw new GrobidException(
                     "An exception occured while running Grobid.", e);
+        } finally {
+            //consolidator.close();
         }
         return resCitation;
     }
@@ -513,45 +421,39 @@ public class CitationParser extends AbstractParser {
             if (inputs.size() == 0)
                 return null;
 
-            List<List<OffsetPosition>> journalsPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> abbrevJournalsPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> conferencesPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> publishersPositions = new ArrayList<List<OffsetPosition>>();
-
+            List<OffsetPosition> journalsPositions = null;
+            List<OffsetPosition> abbrevJournalsPositions = null;
+            List<OffsetPosition> conferencesPositions = null;
+            List<OffsetPosition> publishersPositions = null;
+            List<OffsetPosition> locationsPositions = null;
+            List<OffsetPosition> collaborationsPositions = null;
+            List<OffsetPosition> identifiersPositions = null;
+            List<OffsetPosition> urlPositions = null;
             for (String input : inputs) {
-                List<String> citationBlocks = new ArrayList<String>();
+                //List<String> citationBlocks = new ArrayList<String>();
                 if (input == null)
                     continue;
                 // System.out.println("Input: "+input);
                 //StringTokenizer st = new StringTokenizer(input, " \t\n"
                 //        + TextUtilities.fullPunctuations, true);
 
-                List<String> tokenizations = analyzer.tokenize(input);
-                //if (st.countTokens() == 0)
+                List<LayoutToken> tokenizations = analyzer.tokenizeWithLayoutToken(input);
                 if (tokenizations.size() == 0)
                     return null;
-                //while (st.hasMoreTokens()) {
-                //    String tok = st.nextToken();
-                for (String tok : tokenizations) {
-                    if (tok.equals("\n")) {
-                        citationBlocks.add("@newline");
-                    } else if (!tok.equals(" ")) {
-                        citationBlocks.add(tok + " <bibl>");
-                    }
-                    //tokenizations.add(tok);
-                }
-                citationBlocks.add("\n");
 
-                journalsPositions.add(lexicon.inJournalNames(input));
-                abbrevJournalsPositions
-                        .add(lexicon.inAbbrevJournalNames(input));
-                conferencesPositions.add(lexicon.inConferenceNames(input));
-                publishersPositions.add(lexicon.inPublisherNames(input));
+                journalsPositions = lexicon.tokenPositionsJournalNames(tokenizations);
+                abbrevJournalsPositions = lexicon.tokenPositionsAbbrevJournalNames(tokenizations);
+                conferencesPositions = lexicon.tokenPositionsConferenceNames(tokenizations);
+                publishersPositions = lexicon.tokenPositionsPublisherNames(tokenizations);
+                locationsPositions = lexicon.tokenPositionsLocationNames(tokenizations);
+                collaborationsPositions = lexicon.tokenPositionsCollaborationNames(tokenizations);
+                identifiersPositions = lexicon.tokenPositionsIdentifierPattern(tokenizations);
+                urlPositions = lexicon.tokenPositionsUrlPattern(tokenizations);
 
-                String ress = FeaturesVectorCitation.addFeaturesCitation(
-                        citationBlocks, journalsPositions,
-                        abbrevJournalsPositions, conferencesPositions,
-                        publishersPositions);
+                String ress = FeaturesVectorCitation.addFeaturesCitation(tokenizations,
+                        null, journalsPositions, abbrevJournalsPositions, 
+                        conferencesPositions, publishersPositions, locationsPositions, 
+                        collaborationsPositions, identifiersPositions, urlPositions);
                 String res = label(ress);
 
                 // extract results from the processed file
@@ -571,11 +473,11 @@ public class CitationParser extends AbstractParser {
                         buffer.append("/t<bibl>\n");
                         continue;
                     } else {
-                        String theTok = tokenizations.get(q);
+                        String theTok = tokenizations.get(q).getText();
                         while (theTok.equals(" ")) {
                             addSpace = true;
                             q++;
-                            theTok = tokenizations.get(q);
+                            theTok = tokenizations.get(q).getText();
                         }
                         q++;
                     }
@@ -585,20 +487,11 @@ public class CitationParser extends AbstractParser {
                     int i = 0;
                     String s1 = null;
                     String s2 = null;
-//					String s3 = null;
-                    // boolean newLine = false;
-                    // ArrayList<String> localFeatures = new
-                    // ArrayList<String>();
                     while (st3.hasMoreTokens()) {
                         String s = st3.nextToken().trim();
                         if (i == 0) {
                             s2 = TextUtilities.HTMLEncode(s); // string
-                        }
-//                        else if (i == ll - 2) {
-////							s3 = s; // pre-label, in this case it should always
-//									// be <author>
-//						}
-                        else if (i == ll - 1) {
+                        } else if (i == ll - 1) {
                             s1 = s; // label
                         }
                         i++;
@@ -729,8 +622,18 @@ public class CitationParser extends AbstractParser {
                         continue;
                     }
                     if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<pubnum>",
-                                "<idno>", addSpace, 0);
+                        String localTag = "<idno>";
+                        String cleanS2 = StringUtils.normalizeSpace(s2);
+                        cleanS2 = cleanS2.replace(" ", "");
+                        Matcher arxivMatcher = TextUtilities.arXivPattern.matcher(cleanS2);
+                        if (arxivMatcher.find())
+                            localTag = "<idno type=\"arXiv\">";
+                        else {
+                            Matcher doiMatcher = TextUtilities.DOIPattern.matcher(cleanS2);
+                            if (doiMatcher.find())
+                                localTag = "<idno type=\"doi\">";
+                        }
+                        output = writeField(s1, lastTag0, s2, "<pubnum>", localTag, addSpace, 0);
                     } else {
                         buffer.append(output);
                         lastTag = s1;
@@ -755,6 +658,14 @@ public class CitationParser extends AbstractParser {
                     if (output == null) {
                         output = writeField(s1, lastTag0, s2, "<institution>",
                                 "<orgName>", addSpace, 0);
+                    } else {
+                        buffer.append(output);
+                        lastTag = s1;
+                        continue;
+                    }
+                    if (output == null) {
+                        output = writeField(s1, lastTag0, s2, "<collaboration>",
+                                "<orgName type=\"collaboration\">", addSpace, 0);
                     } else {
                         buffer.append(output);
                         lastTag = s1;
@@ -850,6 +761,8 @@ public class CitationParser extends AbstractParser {
             } else if (lastTag0.equals("<note>")) {
                 buffer.append("</note>");
             } else if (lastTag0.equals("<institution>")) {
+                buffer.append("</orgName>");
+            } else if (lastTag0.equals("<collaboration>")) {
                 buffer.append("</orgName>");
             } else {
                 res = false;

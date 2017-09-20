@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>G. Parisi</author>, <title level="j">Phys. Rept.</title> <biblScope unit="volume">103</biblScope>, <biblScope unit="page">203</biblScope> (<date>1984</date>)</bibl>
+	<bibl><author>G.P. Lepage</author>, <title level="a">The Analysis of Algorithms for Lattice Field Theory</title>, in <pubPlace>Boulder</pubPlace> <idno>ASI 1989:97-120</idno> (<date>1989</date>),pp .<biblScope unit="page">97 -120</biblScope>,<ptr type="web">http ://alice.cern.ch/format/showfull?sysnb=0117836</ptr></bibl>
+	<bibl><author>M. Lüscher</author>, <title level="j">Nucl. Phys. B</title><biblScope unit="volume">364</biblScope>, <biblScope unit="page">237</biblScope> (<date>1991</date>)</bibl>
+	<bibl><author>K.I. Ishikawa, N. Ishizuka, Y. Kuramashi, Y. Nakamura, Y. Namekawa, Y. Taniguchi, N. Ukita, T.Yamazaki ,T .Yoshie</author> ( <orgName type="collaboration">PACS</orgName>),<title level="j">PoS</title> <biblScope unit="volume">LATTICE2015</biblScope> ,<biblScope unit="page">075</biblScope> ( <date>2016</date>),<idno type="arxiv">1511 .09222</idno></bibl>
+	<bibl><author>Y. Kuramashi</author>, <title level="a">A large scale simulation of 2+1 flavor lattice QCD</title>, <note>talk at this conference</note>, <ptr type="web">https://makondo.ugr.es/event/0/session/94/contribution/175</ptr></bibl>
+	<bibl><author>C. Patrignani et al.</author> (<orgName type="collaboration">Particle Data Group</orgName>), <title level="j">Chin. Phys. C</title><biblScope unit="volume">40</biblScope>, <biblScope unit="page">100001</biblScope> (<date>2016</date>)</bibl>
+	<bibl><author>T. Bhattacharya, V. Cirigliano, S.D. Cohen, A. Filipuzzi, M. Gonzalez-Alonso, M.L. Graesser, R.Gupta ,H .W.Lin</author> ,<title level="j">Phys .Rev .D</title><biblScope unit="volume">85</biblScope> ,<biblScope unit="page">054512</biblScope> ( <date>2012</date>),<idno type="arxiv">1110 .6448</idno></bibl>
+	<bibl><author>S. Alekhin, J. Blümlein, S. Moch</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">86</biblScope>, <biblScope unit="page">054009</biblScope> (<date>2012</date>), <idno type="arxiv">1202.2281</idno></bibl>
+	<bibl><author>C. Bouchard, C.C. Chang, T. Kurth, K. Orginos, A. Walker-Loud</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">96</biblScope>, <biblScope unit="page">014504</biblScope> (<date>2017</date>),<idno type="arxiv">1612 .06963</idno></bibl>
+	<bibl><author>O. Bär</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">92</biblScope>, <biblScope unit="page">074504</biblScope> (<date>2015</date>), <idno type="arxiv">1503.03649</idno></bibl>
+	<bibl><author>O. Bär</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">94</biblScope>, <biblScope unit="page">054505</biblScope> (<date>2016</date>), <idno type="arxiv">1606.09385</idno></bibl>
+	<bibl><author>O. Bär</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">95</biblScope>, <biblScope unit="page">034506</biblScope> (<date>2017</date>), <idno type="arxiv">1612.08336</idno></bibl>
+	<bibl><author>O. Bär</author>, <title level="j">Int. J. Mod. Phys. A</title><biblScope unit="volume">32</biblScope>, <biblScope unit="page">1730011</biblScope> (<date>2017</date>), <idno type="arxiv">1705.02806</idno></bibl>
+	<bibl><author>B.C. Tiburzi</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">80</biblScope>, <biblScope unit="page">014002</biblScope> (<date>2009</date>), <idno type="arxiv">0901.0657</idno></bibl>
+	<bibl><author>O. Bär, M. Golterman</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">87</biblScope>, <biblScope unit="page">014505</biblScope> (<date>2013</date>), <idno type="arxiv">1209.2258</idno></bibl>
+	<bibl><author>M. Lüscher</author>, <title level="j">PoS</title> <biblScope unit="volume">LATTICE2013</biblScope>, <biblScope unit="page">016</biblScope> (<date>2014</date>), <idno type="arxiv">1308.5598</idno></bibl>
+	<bibl><author>O. Bär, M. Golterman</author>, <title level="j">Phys.Rev. D</title><biblScope unit="volume">89</biblScope>, <biblScope unit="page">034505</biblScope> (<date>2014</date>), <idno type="arxiv">1312.4999</idno></bibl>
+	<bibl><author>S. Weinberg</author>, <title level="j">Physica A</title><biblScope unit="volume">96</biblScope>, <biblScope unit="page">327</biblScope> (<date>1979</date>)</bibl>
+	<bibl><author>J. Gasser, H. Leutwyler</author>, <title level="j">Ann. Phys.</title> <biblScope unit="volume">158</biblScope>, <biblScope unit="page">142</biblScope> (<date>1984</date>)</bibl>
+	<bibl><author>J. Gasser, H. Leutwyler</author>, <title level="j">Nucl. Phys. B</title><biblScope unit="volume">250</biblScope>, <biblScope unit="page">465</biblScope> (<date>1985</date>)</bibl>
+	<bibl><author>G. Colangelo, G. Isidori</author>, <title level="a">An Introduction to ChPT</title>, in <title level="m">Nuclear, subnuclear and astroparticle physics.Proceedings ,5th LNF Spring School</title> ,<pubPlace>Frascati ,Italy</pubPlace> ,<date>May 15 -20,2000 ( 2000</date>),pp .<biblScope unit="page">333 -376</biblScope>,<idno type="arxiv">hep- ph/0101264</idno>,<ptr type="web">http: //weblib.cern.ch/abstract?CERN-TH-2001-019</ptr></bibl>
+	<bibl><author>J. Gasser</author>, <title level="j">Lect. Notes Phys.</title> <biblScope unit="volume">629</biblScope>, <biblScope unit="page">1</biblScope> (<date>2004</date>), <idno type="arxiv">hep-ph/0312367</idno></bibl>
+	<bibl><author>B. Kubis</author>, <title level="a">An Introduction to chiral perturbation theory</title>, in <title level="m">Workshop on Physics and Astro-physicsof Hadrons and Hadronic Matter Shantiniketan</title> ,<pubPlace>India</pubPlace> ,<date>November 6 -10,2006 ( 2007</date>),<idno type="arxiv">hep -ph/0703274</idno></bibl>
+	<bibl><author>S. Scherer</author>, <title level="j">Prog. Part. Nucl. Phys.</title> <biblScope unit="volume">64</biblScope>, <biblScope unit="page">1</biblScope> (<date>2010</date>), <idno type="arxiv">0908.3425</idno></bibl>
+	<bibl><author>M. Golterman</author>, <title level="a">Applications of chiral perturbation theory to lattice QCD</title>, in <title level="m">Modern perspec-tivesin lattice QCD :Quantum field theory and high performance computing .Proceedings ,In -ternationalSchool, 93rdSession</title> , <pubPlace>LesHouches , France</pubPlace>, <date>August3 - 28,2009</date>( <date>2009</date> ),pp. <biblScope unit="page">423- 515</biblScope>,<idno type="arxiv">0912. 4042</idno>,</bibl>
+	<bibl>[26] <author>S.Scherer, M. R. Schindler</author>,<title level="j">Lect. NotesPhys .</title><biblScope unit="volume">830</biblScope>, pp. <biblScope unit="page">1</biblScope>( <date>2012</date>)</bibl>
+	<bibl><author>G. Ecker</author>, <title level="j">Nucl. Phys. Proc. Suppl.</title> <biblScope unit="volume">245</biblScope>, <biblScope unit="page">1</biblScope> (<date>2013</date>), <idno type="arxiv">1310.2084</idno></bibl>
+	<bibl><author>V. Bernard</author>, <title level="j">Prog. Part. Nucl. Phys.</title> <biblScope unit="volume">60</biblScope>, <biblScope unit="page">82</biblScope> (<date>2008</date>), <idno type="arxiv">0706.0312</idno></bibl>
+	<bibl><author>J. Gasser, M. Sainio, A. Svarc</author>, <title level="j">Nucl.Phys. B</title><biblScope unit="volume">307</biblScope>, <biblScope unit="page">779</biblScope> (<date>1988</date>)</bibl>
+	<bibl><author>T. Becher, H. Leutwyler</author>, <title level="j">Eur.Phys.J. C</title><biblScope unit="volume">9</biblScope>, <biblScope unit="page">643</biblScope> (<date>1999</date>), <idno type="arxiv">hep-ph/9901384</idno></bibl>
+	<bibl><author>N. Fettes, U.G. Meissner, M. Mojzis, S. Steininger</author>, <title level="j">Annals Phys.</title> <biblScope unit="volume">283</biblScope>, <biblScope unit="page">273</biblScope> (<date>2000</date>), <idno type="arxiv">hep-ph/0001308</idno></bibl>
+	<bibl><author>M. Dorati, T.A. Gail, T.R. Hemmert</author>, <title level="j">Nucl. Phys. A</title><biblScope unit="volume">798</biblScope>, <biblScope unit="page">96</biblScope> (<date>2008</date>), <idno type="arxiv">nucl-th/0703073</idno></bibl>
+	<bibl><author>P. Wein, P.C. Bruns, A. Schäfer</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">89</biblScope>, <biblScope unit="page">116002</biblScope> (<date>2014</date>), <idno type="arxiv">1402.4979</idno></bibl>
+	<bibl><author>K. Nagata, A. Hosaka, V. Dmitrasinovic</author>, <title level="j">Eur.Phys.J. C</title><biblScope unit="volume">57</biblScope>, <biblScope unit="page">557</biblScope> (<date>2008</date>)</bibl>
+	<bibl><author>B. Ioffe</author>, <title level="j">Nucl.Phys. B</title><biblScope unit="volume">188</biblScope>, <biblScope unit="page">317</biblScope> (<date>1981</date>)</bibl>
+	<bibl><author>D. Espriu, P. Pascual, R. Tarrach</author>, <title level="j">Nucl.Phys. B</title><biblScope unit="volume">214</biblScope>, <biblScope unit="page">285</biblScope> (<date>1983</date>)</bibl>
+	<bibl><author>P. Wein, P.C. Bruns, T.R. Hemmert, A. Schäfer</author>, <title level="j">Eur.Phys.J. A</title><biblScope unit="volume">47</biblScope>, <biblScope unit="page">149</biblScope> (<date>2011</date>), <idno type="arxiv">1106.3440</idno></bibl>
+	<bibl><author>S. Güsken, U. Low, K. Mutter, R. Sommer, A. Patel et al.</author>, <title level="j">Phys.Lett. B</title><biblScope unit="volume">227</biblScope>, <biblScope unit="page">266</biblScope> (<date>1989</date>)</bibl>
+	<bibl><author>S. Güsken</author>, <title level="j">Nucl.Phys.Proc.Suppl.</title> <biblScope unit="volume">17</biblScope>, <biblScope unit="page">361</biblScope> (<date>1990</date>)</bibl>
+	<bibl><author>C. Alexandrou, F. Jegerlehner, S. Güsken, K. Schilling, R. Sommer</author>, <title level="j">Phys.Lett. B</title><biblScope unit="volume">256</biblScope>, <biblScope unit="page">60</biblScope> (<date>1991</date>)</bibl>
+	<bibl><author>M. Lüscher</author>, <title level="j">JHEP</title> <biblScope unit="volume">1304</biblScope>, <biblScope unit="page">123</biblScope> (<date>2013</date>), <idno type="arxiv">1302.5246</idno></bibl>
+	<bibl><author>J. Blümlein, H. Böttcher</author>, <title level="j">Nucl. Phys. B</title><biblScope unit="volume">841</biblScope>, <biblScope unit="page">205</biblScope> (<date>2010</date>), <idno type="arxiv">1005.3113</idno></bibl>
+	<bibl><author>S. Syritsyn</author>, <title level="j">PoS</title> <biblScope unit="volume">LATTICE2013</biblScope>, <biblScope unit="page">009</biblScope> (<date>2014</date>), <idno type="arxiv">1403.4686</idno></bibl>
+	<bibl><author>J. Green</author>, <title level="m">AIP Conf. Proc.</title> <biblScope unit="volume">1701</biblScope>, <biblScope unit="page">040007</biblScope> (<date>2016</date>), <idno type="arxiv">1412.4637</idno></bibl>
+	<bibl><author>M. Constantinou</author>, <title level="j">PoS</title> <biblScope unit="volume">CD15</biblScope>, <biblScope unit="page">009</biblScope> (<date>2015</date>), <idno type="arxiv">1511.00214</idno></bibl>
+	<bibl><author>C. Alexandrou</author>, <title level="j">EPJ Web Conf.</title> <biblScope unit="volume">137</biblScope>, <biblScope unit="page">01004</biblScope> (<date>2017</date>), <idno type="arxiv">1612.04644</idno></bibl>
+	<bibl><author>S. Collins</author>, <title level="a">Hadron Structure</title>, <note>plenary talk</note> given at <title level="m">34th International Symposium on Lattice FieldTheory ( Lattice2016)</title>,<pubPlace>Southampton ,UK</pubPlace> ,<date>26th July 2016</date> ,<ptr type="web">https ://conference.ippp.dur.ac.uk/event/470/session/1/contribution/118</ptr></bibl>
+	<bibl><author>G.S. Bali, S. Collins, B. Glässle, M. Göckeler, J. Najjar, R.H. Rödl, A. Schäfer, R.W. Schiel, W.Söldner ,A .Sternbeck</author> ,<title level="j">Phys .Rev .D</title><biblScope unit="volume">91</biblScope> ,<biblScope unit="page">054501</biblScope> ( <date>2015</date>),<idno type="arxiv">1412 .7336</idno></bibl>
+	<bibl><author>A. Abdel-Rehim et al.</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">92</biblScope>, <biblScope unit="page">114513</biblScope> (<date>2015</date>), [<note>Erratum: Phys. Rev.D93,no.3,039904(2016)</note>], <idno type="arxiv">1507.04936</idno></bibl>
+	<bibl><author>T. Bhattacharya, V. Cirigliano, S. Cohen, R. Gupta, H.W. Lin, B. Yoon</author> (<date>2016</date>), <idno type="arxiv">arXiv:1606.07049</idno>[ <note>hep-lat</note>]</bibl>
+	<bibl><author>G. von Hippel, T.D. Rae, E. Shintani, H. Wittig</author>, <title level="j">Nucl. Phys. B</title><biblScope unit="volume">914</biblScope>, <biblScope unit="page">138</biblScope> (<date>2017</date>), <idno type="arxiv">1605.00564</idno></bibl>
+	<bibl><author>J.R. Green, M. Engelhardt, S. Krieg, J.W. Negele, A.V. Pochinsky, S.N. Syritsyn</author>, <title level="j">Phys. Lett. B</title><biblScope unit="volume">734</biblScope>,<biblScope unit="page">290</biblScope> ( <date>2014</date>),<idno type="arxiv">1209 .1687</idno></bibl>
+	<bibl><author>G.S. Bali, S. Collins, B. Gläßle, M. Göckeler, J. Najjar, R.H. Rödl, A. Schäfer, R.W. Schiel, A.Sternbeck ,W .Söldner</author> ,<title level="j">Phys .Rev .D</title><biblScope unit="volume">90</biblScope> ,<biblScope unit="page">074510</biblScope> ( <date>2014</date>),<idno type="arxiv">1408 .6850</idno></bibl>
+	<bibl><author>E. Berkowitz et al.</author> (<date>2017</date>), <idno type="arxiv">1704.01114</idno></bibl>
+	<bibl><author>C. Alexandrou and C. Kallidonis</author>, <note>private communication</note>, <date>June 2017</date></bibl>
+	<bibl><author>B. Yoon et al.</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">95</biblScope>, <biblScope unit="page">074508</biblScope> (<date>2017</date>), <idno type="arxiv">1611.07452</idno></bibl>
+	<bibl><author>R. Gupta</author>, <title level="a">Isovector and isoscalar charges of the nucleon</title>, <note>talk at this conference</note>, <ptr type="web">https://makondo.ugr.es/event/0/session/95/contribution/370</ptr></bibl>
+	<bibl><author>M.T. Hansen, H.B. Meyer</author> (<date>2016</date>), <idno type="arxiv">arXiv:1610.03843</idno>[<note>hep-lat</note>]</bibl>
+	<bibl><author>L. Maiani, G. Martinelli, M.L. Paciello, B. Taglienti</author>, <title level="j">Nucl. Phys. B</title><biblScope unit="volume">293</biblScope>, <biblScope unit="page">420</biblScope> (<date>1987</date>)</bibl>
+	<bibl><author>S. Capitani, M. Della Morte, G. von Hippel, B. Jager, A. Jüttner, B. Knippschild, H.B. Meyer, H.Wittig</author> ,<title level="j">Phys .Rev .D</title><biblScope unit="volume">86</biblScope> ,<biblScope unit="page">074502</biblScope> ( <date>2012</date>),<idno type="arxiv">1205 .0180</idno></bibl>
+	<bibl><author>M. Cè, L. Giusti, S. Schaefer</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">93</biblScope>, <biblScope unit="page">094507</biblScope> (<date>2016</date>), <idno type="arxiv">1601.04587</idno></bibl>
+	<bibl><author>M. Cè, L. Giusti, S. Schaefer</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">95</biblScope>, <biblScope unit="page">034503</biblScope> (<date>2017</date>), <idno type="arxiv">1609.02419</idno></bibl>
+	<bibl><author>M.L. Wagman, M.J. Savage</author> (<date>2017</date>), <idno type="arxiv">arXiv:1704.07356</idno> [<note>hep-lat</note>]</bibl>
+	<bibl><author>L. Giusti</author>, <title level="a">Multi-boson block factorization of fermions</title>, <note>plenary talk at this conference</note>, <ptr type="web">https://makondo.ugr.es/event/0/session/4/contribution/220</ptr></bibl>
+	<bibl><author>M. Wagman</author>, <title level="a">Life Outside the Golden Window: Statistical Angles on the Signal-to-Noise Prob-lem</title>,<note>talk at this conference</note> ,<ptr type="web">https ://makondo.ugr.es/event/0/session/94/contribution/19</ptr></bibl>
+	<bibl><author>M. Lüscher, U. Wolff</author>, <title level="j">Nucl.Phys. B</title><biblScope unit="volume">339</biblScope>, <biblScope unit="page">222</biblScope> (<date>1990</date>)</bibl>
+	<bibl><author>B. Blossier, M. Della Morte, G. von Hippel, T. Mendes, R. Sommer</author>, <title level="j">JHEP</title> <biblScope unit="volume">0904</biblScope>, <biblScope unit="page">094</biblScope> (<date>2009</date>), <idno type="arxiv">0902.1265</idno></bibl>
+	<bibl><author>C. Lang, V. Verduci</author>, <title level="j">Phys.Rev. D</title><biblScope unit="volume">87</biblScope>, <biblScope unit="page">054502</biblScope> (<date>2013</date>), <idno type="arxiv">1212.5055</idno></bibl>
+	<bibl><author>A.L. Kiratidis, W. Kamleh, D.B. Leinweber, B.J. Owen</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">91</biblScope>, <biblScope unit="page">094509</biblScope> (<date>2015</date>), <idno type="arxiv">1501.07667</idno></bibl>
+	<bibl><author>C.B. Lang, L. Leskovec, M. Padmanath, S. Prelovsek</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">95</biblScope>, <biblScope unit="page">014510</biblScope> (<date>2017</date>), <idno type="arxiv">1610.01422</idno></bibl>
+	<bibl><author>A.L. Kiratidis, W. Kamleh, D.B. Leinweber, Z.W. Liu, F.M. Stokes, A.W. Thomas</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">95</biblScope>,<biblScope unit="page">074507</biblScope> ( <date>2017</date>),<idno type="arxiv">1608 .03051</idno></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>D.R. Nygren, et al.</author>, <title level="j">Phys. Today</title> <biblScope unit="volume">31</biblScope> (<date>1978</date>) <biblScope unit="page">46</biblScope>.</bibl>
+	<bibl><orgName type="collaboration">ALICE Collaboration</orgName>, <title level="j">J. Instrum.</title> <biblScope unit="volume">3</biblScope> (<biblScope unit="issue">08</biblScope>) (<date>2008</date>) <biblScope unit="page">S08002</biblScope>.</bibl>
+	<bibl><author>S. Dørheim</author>, <title level="j">J. Instrum</title>. <biblScope unit="volume">7</biblScope> (<date>2012</date>) <biblScope unit="page">C03011</biblScope>.</bibl>
+	<bibl><author>R. Diener</author>, <orgName type="collaboration">LCTPC Collaboration</orgName>, <title level="j">Phys. Procedia</title> <biblScope unit="volume">37</biblScope> (<date>2012</date>) <biblScope unit="page">456</biblScope>.</bibl>
+	<bibl><orgName type="collaboration">ALICE Collaboration</orgName>, <note type="report">CERN-LHCC-2013-020</note>, <date>2014</date>.</bibl>
+	<bibl><author>P. Gasik</author>, <title level="j">J. Instrum.</title> <biblScope unit="volume">9</biblScope> (<date>2013</date>) <biblScope unit="page">C04035</biblScope>.</bibl>
+	<bibl><author>F. Sauli</author>, <title level="j">Nucl. Instrum. Methods A</title> <biblScope unit="volume">386</biblScope> (<date>1997</date>) <biblScope unit="page">531</biblScope>.</bibl>
+	<bibl><orgName type="collaboration">ALICE Collaboration</orgName>, <note type="report">CERN-LHCC-2015-002</note>/<note type="report">ALICE-TDR-106-ADD-1</note>, <date>2014</date>.</bibl>
+	<bibl><author>M. Ball, et al.</author>, <title level="j">J. Instrum.</title> <biblScope unit="volume">9</biblScope> (<date>2014</date>) <biblScope unit="page">C04024</biblScope>.</bibl> 
+	<bibl>[10]<ptr type="web">http ://cern.ch/garfield</ptr>.</bibl>
+	<bibl><author>R. Veenhof</author>, <title level="j">Nucl. Instrum. A</title> <biblScope unit="volume">419</biblScope> (<date>1998</date>) <biblScope unit="page">726</biblScope>.</bibl> 
+	<bibl>[12]<ptr type="web">http ://cern.ch/neBEM</ptr>.</bibl>
+	<bibl><author>N. Majumdar, et al.</author>, <title level="j">Nucl. Instrum. Methods A</title> <biblScope unit="volume">566</biblScope> (<date>2006</date>) <biblScope unit="page">489</biblScope>.</bibl>
+	<bibl><author>S. Mukhopadhyay, et al.</author>, <title level="j">Eng. Anal. Bound. Elem.</title> <biblScope unit="volume">30</biblScope> (<date>2006</date>) <biblScope unit="page">687</biblScope>.</bibl>
+	<bibl>[15]<ptr type="web">http ://cern.ch/heed</ptr>.</bibl>
+	<bibl><author>I.B. Smirnov</author>, <title level="j">Nucl. Instrum. Methods A</title> <biblScope unit="volume">554</biblScope> (<date>2005</date>) <biblScope unit="page">474</biblScope>. </bibl>
+	<bibl>[17]<ptr type="web">http ://cern.ch/magboltz</ptr>.</bibl>
+	<bibl><author>S.F. Biagi</author>, <title level="j">Nucl. Instrum. Methods A</title> <biblScope unit="volume">421</biblScope> (<date>1999</date>) <biblScope unit="page">234</biblScope>.</bibl>
+	<bibl><author>S. Bachmann, et al.</author>, <title level="j">Nucl. Instrum. Methods A</title> <biblScope unit="volume">438</biblScope> (<date>1999</date>) <biblScope unit="page">376</biblScope>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

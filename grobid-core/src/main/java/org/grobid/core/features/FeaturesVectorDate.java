@@ -274,7 +274,7 @@ public class FeaturesVectorDate {
             if (features.digit == null)
                 features.digit = "NODIGIT";
 
-            Matcher m2 = featureFactory.YEAR.matcher(text);
+            Matcher m2 = featureFactory.year.matcher(text);
             if (m2.find()) {
                 features.year = true;
             }

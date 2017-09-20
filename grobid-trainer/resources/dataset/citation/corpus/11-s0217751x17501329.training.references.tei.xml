@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>P. W. Higgs</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">13</biblScope>, <biblScope unit="page">508</biblScope> (<date>1964</date>).</bibl>
+	<bibl><author>F. Englert and R. Brout</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">13</biblScope>, <biblScope unit="page">321</biblScope> (<date>1964</date>).</bibl>
+	<bibl><author>P. W. Higgs</author>, <title level="j">Phys. Lett.</title> <biblScope unit="volume">12</biblScope>, <biblScope unit="page">132</biblScope> (<date>1964</date>).</bibl>
+	<bibl><author>G. Guralnik, C. Hagen and T. Kibble</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">13</biblScope>, <biblScope unit="page">585</biblScope> (<date>1964</date>).</bibl>
+	<bibl><author>P. W. Higgs</author>, <title level="j">Phys. Rev.</title> <biblScope unit="volume">145</biblScope>, <biblScope unit="page">1156</biblScope> (<date>1966</date>).</bibl>
+	<bibl><author>T. Kibble</author>, <title level="j">Phys. Rev.</title> <biblScope unit="volume">155</biblScope>, <biblScope unit="page">1554</biblScope> (<date>1967</date>).</bibl>
+	<bibl><orgName type="collaboration">ATLAS Collab.</orgName> (<author>G. Aad et al.</author>), <title level="j">Phys. Lett. B</title> <biblScope unit="volume">716</biblScope>, <biblScope unit="page">1</biblScope> (<date>2012</date>).</bibl>
+	<bibl><orgName type="collaboration">CMS Collab.</orgName> (<author>S. Chatrchyan et al.</author>), <title level="j">Phys. Lett. B</title> <biblScope unit="volume">716</biblScope>, <biblScope unit="page">30</biblScope> (<date>2012</date>).</bibl>
+	<bibl><author>H. B. G. Casimir</author>, <title level="j">Proc. K. Ned. Akad. Wet.</title> <biblScope unit="volume">51</biblScope>, <biblScope unit="page">793</biblScope> (<date>1948</date>).</bibl>
+	<bibl><author>M. J. Sparnaay</author>, <title level="j">Physica</title> <biblScope unit="volume">24</biblScope>, <biblScope unit="page">751</biblScope> (<date>1958</date>).</bibl>
+	<bibl><author>S. K. Lamoreaux</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">28</biblScope>, <biblScope unit="page">5</biblScope> (<date>1997</date>).</bibl>
+	<bibl><author>U. Mohideen and A. Roy</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">81</biblScope>, <biblScope unit="page">21</biblScope> (<date>1998</date>).</bibl>
+	<bibl><author>M. Bordag, U. Mohideen and V. M. Mostepanenko</author>, <title level="j">Phys. Rep.</title> <biblScope unit="volume">353</biblScope>, <biblScope unit="page">1</biblScope> (<date>2001</date>).</bibl>
+	<bibl><author>S. K. Lamoreaux</author>, <title level="j">Am. J. Phys.</title> <biblScope unit="volume">67</biblScope>, <biblScope unit="page">850</biblScope> (<date>1999</date>).</bibl>
+	<bibl><author>M. Bordag</author>, <title level="j">J. Phys. A</title> <biblScope unit="volume">39</biblScope>, <biblScope unit="page">6173</biblScope> (<date>2006</date>).</bibl>
+	<bibl><author>M. T. D. Orlando et al.</author>, <title level="j">J. Phys. A: Math. Theor.</title> <biblScope unit="volume">42</biblScope>, <biblScope unit="page">025502</biblScope> (<date>2009</date>).</bibl>
+	<bibl><author>J. C. da Silva, F. C. Khanna, A. Matos Neto and A. E. Santana</author>, <title level="j">Phys. Rev. A</title> <biblScope unit="volume">66</biblScope>, <biblScope unit="page">052101</biblScope>( <date>2002</date>).</bibl>
+	<bibl><author>H. Aoyama</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">29</biblScope>, <biblScope unit="page">1763</biblScope> (<date>1984</date>).</bibl>
+	<bibl><author>Y. Takahashi and H. Umezawa</author>, <title level="j">Collective Phenomena</title> <biblScope unit="volume">2</biblScope>, <biblScope unit="volume">55</biblScope> (<date>1975</date>) [<note>Reprinted</note>:</bibl> <bibl><title level="j">Int. J.Mod .Phys .B</title> <biblScope unit="volume">10</biblScope> ,<biblScope unit="page">1755</biblScope> ( <date>1996</date>)].</bibl>
+	<bibl><author>Y. Takahashi, H. Umezawa and H. Matsumoto</author>, <title level="m">Thermofield Dynamics and Condensed States</title>( <pubPlace>North-Holland,Amsterdam</pubPlace> ,<date>1982</date> ).</bibl>
+	<bibl><author>F. C. Khanna, A. P. C. Malbouisson, J. M. C. Malboiusson and A. E. Santana</author>, <title level="m">ThermalQuantum Field Theory :Algebraic Aspects and Applications</title> ( <publisher>WorldScientific</publisher> ,<pubPlace>Singapore</pubPlace> ,<date>2009</date>) .<biblScope unit="page">1750132- 9</biblScope></bibl>
+	Int. J. Mod. Phys. A 2017.32. Downloaded from www.worldscientific.com byEUROPEAN ORGANIZATION FOR NUCLEAR RESEARCH ( CERN)on 08 /23/17.For personal use only .
+	<bibl><editor>A. F. Santos &amp; F. C. Khanna 22.H .Umezawa</editor> ,<title level="a">Advanced Field Theory :Micro ,Macro and Thermal Physics</title> ( <publisher>AIP</publisher>,<pubPlace>New York</pubPlace> ,<date>1993</date>) .</bibl>
+	<bibl><author>A. E. Santana and F. C. Khanna</author>, <title level="j">Phys. Lett. A</title> <biblScope unit="volume">203</biblScope>, <biblScope unit="page">68</biblScope> (<date>1995</date>).</bibl>
+	<bibl><author>A. E. Santana, F. C. Khanna, H. Chu and C. Chang</author>, <title level="j">Ann. Phys.</title> <biblScope unit="volume">249</biblScope>, <biblScope unit="page">481</biblScope> (<date>1996</date>).</bibl>
+	<bibl><author>F. C. Khanna, A. P. C. Malbouisson, J. M. C. Malbouisson and A. E. Santana</author>, <title level="j">Ann. Phys.</title><biblScope unit="volume">326</biblScope> ,<biblScope unit="page">2634</biblScope> ( <date>2011</date>).<biblScope unit="page">1750132 -10</biblScope></bibl>
+	
+	Int. J. Mod. Phys. A 2017.32. Downloaded from www.worldscientific.com byEUROPEAN ORGANIZATION FOR NUCLEAR RESEARCH ( CERN)on 08 /23/17.For personal use only .
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

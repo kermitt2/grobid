@@ -6,8 +6,6 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.GrobidProperties;
 
-import org.grobid.core.utilities.crossref.CrossrefClient.RequestMode;
-
 /**
  * Test class with 100 requests (works/doi)
  *
@@ -118,14 +116,14 @@ public class Test {
 		"10.1086/520641"
 	};
 	
-	public static void main( String[] args )
-    {
+	public static void main( String[] args ) {
 		LibraryLoader.load();
         GrobidProperties.getInstance();
 		
-    	CrossrefClient client = new CrossrefClient(RequestMode.MUCHTHENSTOP);
+    	//CrossrefClient client = new CrossrefClient();
+    	CrossrefClient client = CrossrefClient.getInstance();
     	WorkDeserializer workDeserializer = new WorkDeserializer();
-    	
+    	long threadId = Thread.currentThread().getId();
     	try {
     		
 	    	for (int i=0 ; i<DOIs.length ; i++) {
@@ -133,9 +131,9 @@ public class Test {
 	    		final int id = i;
 	    		
 	    		// ASYNCHRONOUS TEST (50 first requests)
-	    		if (i < 50) {
+	    		if (i < 90) {
 	    		
-		    		client.<BiblioItem>pushRequest("works", doi, null, workDeserializer, new CrossrefRequestListener<BiblioItem>() {
+		    		client.<BiblioItem>pushRequest("works", doi, null, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>() {
 		    			
 		    			@Override
 		    			public void onSuccess(List<BiblioItem> results) {
@@ -152,11 +150,11 @@ public class Test {
 		    		});
 	    		
 	    		}
-	    		// SYNCHRONOUS TEST (50 last requests)
+	    		// SYNCHRONOUS TEST (10 last requests)
 	    		else {
 	    			
 	    			CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
-	    			client.<BiblioItem>pushRequest("works", doi, null, workDeserializer, requestListener);
+	    			client.<BiblioItem>pushRequest("works", doi, null, workDeserializer, threadId, requestListener);
 	    			
 	    			synchronized (requestListener) {
 				        try {

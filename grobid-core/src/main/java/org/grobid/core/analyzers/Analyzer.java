@@ -14,11 +14,11 @@ import java.util.StringTokenizer;
 
 public interface Analyzer {
 
-	public List<String> tokenize(String text);
+	List<String> tokenize(String text);
 
-	public List<String> retokenize(List<String> chunks);
+	List<String> retokenize(List<String> chunks);
 
-	public List<LayoutToken> tokenizeWithLayoutToken(String text);
+	List<LayoutToken> tokenizeWithLayoutToken(String text);
 
-	public String getName();
+	String getName();
 }

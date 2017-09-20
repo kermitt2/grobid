@@ -1,0 +1,35 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1.</label> https://council.web.cern.ch/council/en/basicdocuments/CONVENTION.pdf.<lb/> </bibl>
+        <bibl><label>2.</label> http://home.cern/.<lb/> </bibl>
+        <bibl>http://library.web.cern.ch/archives/history_CERN/internal_organisation.<lb/> </bibl>
+        <bibl><label>3.</label> H. A. Simon, Rational decision-making in business organizations, Nobel Memorial Lecture<lb/> (1978).<lb/> </bibl>
+        <bibl><label>4.</label> http://www.iter.org/FAQ#collapsible_5.<lb/> </bibl>
+        <bibl><label>5.</label> The Economist, 20 January 2016, The collaboration curse, p. 99 (2016).<lb/> </bibl>
+        <bibl><label>6.</label> M. Bajko et al., Report of the task force on the incident of 19th September 2008 at the LHC,<lb/> CERN-LHC-PROJECT-Report-1168 (2009).<lb/> </bibl>
+        <bibl><label>7.</label> H. Schmied (ed.), A study of the economic utility resulting from CERN contracts, CERN-1975-<lb/>005 (CERN, Geneva, 1975). http://dx.doi.org/10.5170/CERN-1975-005.<lb/> </bibl>
+        <bibl><label>8.</label> M. Bianchi-Streit et al. (eds.), Economic utility resulting from CERN contracts, CERN-1984-<lb/>014 (1984). http://dx.doi.org/10.5170/CERN-1984-014.<lb/> </bibl>
+        <bibl><label>9.</label> OECD, The impacts of large research infrastructures on economic innovation and on society:<lb/> case studies at CERN, OECD 2014.<lb/> </bibl>
+        <bibl><label>10.</label> The Economist, 8 August 2015, Time to fix patents, p. 9, and A question of utility, pp. 43-45<lb/> (2015).<lb/> </bibl>
+        <bibl><label>11.</label> J. Engelen, The Large Hadron Collider project: organizational and financial matters (of physics<lb/> at the terascale), Phil. Trans. R. Soc. A 370, 978-985 (2012); doi: 10.1098/rsta.2011.0466.<lb/> </bibl>
+        <bibl><label>12.</label> P. Lebrun, Industrial technology for unprecedented energy and luminosity: the Large Hadron<lb/> Collider, Proc. EPAC04 Lucerne, JACoW (2004) pp. 6-10.<lb/> </bibl>
+        <bibl><label>13.</label> A. Unnervik, The construction of the LHC: lessons in big science management and contracting,<lb/> pp. 39-55 in L. Evans (ed.) The Large Hadron Collider (EPFL press, Lausanne, 2009).<lb/> </bibl>
+        <bibl><label>14.</label> B. Foster (ed.), Revised ILC Project Implementation Planning, Rev. C (July 2015), and<lb/> http://ilc-edmsdirect.desy.de/ilc-edmsdirect/document.jsp?edmsid=*1115765.<lb/> </bibl>
+        <bibl><label>15.</label> G. Apollinari et al., High Luminosity LHC project description, CERN-ACC-2014-0321 (2014).<lb/> </bibl>
+        <bibl><label>16.</label> J. Axensalva et al., Cryogenic infrastructure for testing of LHC series superconducting<lb/> magnets, Proc. ICEC20 Beijing, (Elsevier, 2005) pp. 1015-1018.<lb/> </bibl>
+        <bibl><label>17.</label> A. Poncet et al., Assembly and quality control of the LHC cryostats at CERN: motivations,<lb/> means, results and lessons learned, Proc. PAC07 Albuquerque, JACoW (2007) pp. 338-340.<lb/> </bibl>
+        <bibl><label>18.</label> P. Fessia et al., The LHC continuous cryostat interconnections: the organization of a logistically<lb/> complex worksite requiring strict quality standards and high output, Proc. EPAC08 Genoa,<lb/> JACoW (2008) pp. 2428-2430.<lb/> </bibl>
+        <bibl><label>19.</label> R. Perin, Superconducting magnets for the LHC, a report of CERN&apos;s collaboration with<lb/> industry, Europhysics News, 21, 2-4(1990).<lb/> </bibl>
+        <bibl><label>20.</label> M. Boisot et al. (eds.), Collisions and Collaborations (Oxford University Press, 2011).<lb/> </bibl>
+        <bibl><label>21.</label> H. Gordon, Project management in the Atlas international collaboration,<lb/> http://sites.apam.columbia.edu/fusion/BP_PAC_FNL/Gordon_Atlas_Management.pdf.<lb/> </bibl>
+Technology Meets Research Downloaded from www.worldscientific.com<lb/> by EUROPEAN ORGANIZATION FOR NUCLEAR RESEARCH (CERN) on 08/31/17. For personal use only.
+        </listBibl>
+    </text>
+</tei>
+

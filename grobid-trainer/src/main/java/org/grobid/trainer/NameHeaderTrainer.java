@@ -4,7 +4,10 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorName;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.trainer.sax.TEIAuthorSaxParser;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.lexicon.Lexicon;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -95,11 +98,14 @@ public class NameHeaderTrainer extends AbstractTrainer {
 			// get a factory for SAX parser
 			SAXParserFactory spf = SAXParserFactory.newInstance();
 
+			List<OffsetPosition> titlePositions = null;
+			List<OffsetPosition> suffixPositions = null;
+
 			int n = 0;
 			for (; n < refFiles.length; n++) {
 				final File teifile = refFiles[n];
 				String name = teifile.getName();
-				//System.out.println(name);
+				System.out.println(name);
 
 				final TEIAuthorSaxParser parser2 = new TEIAuthorSaxParser();
 
@@ -107,27 +113,34 @@ public class NameHeaderTrainer extends AbstractTrainer {
 				final SAXParser p = spf.newSAXParser();
 				p.parse(teifile, parser2);
 
-				final List<String> labeled = parser2.getLabeledResult();
+				final List<List<String>> allLabeled = parser2.getLabeledResult();
+				final List<List<LayoutToken>> allTokens = parser2.getTokensResult();
 				totalExamples += parser2.n;
 
 				// we can now add the features
-				final String headerNames = FeaturesVectorName.addFeaturesName(labeled);
+				for(int i=0; i<allTokens.size(); i++) {
+					// fix the offsets 
+					int pos = 0;
+					for(LayoutToken token : allTokens.get(i)) {
+						token.setOffset(pos);
+						pos += token.getText().length();
+					}
 
-				// format with features for sequence tagging...
-				// given the split ratio we write either in the training file or the evaluation file
-				String[] chunks = headerNames.split("\n \n");
-				
-				for(int i=0; i<chunks.length; i++) {
-					String chunk = chunks[i];
+					titlePositions = Lexicon.getInstance().tokenPositionsPersonTitle(allTokens.get(i));
+            		suffixPositions = Lexicon.getInstance().tokenPositionsPersonSuffix(allTokens.get(i));
+
+					final String names = FeaturesVectorName.addFeaturesName(allTokens.get(i), 
+						allLabeled.get(i), titlePositions, suffixPositions);
+
 					if ( (writer2 == null) && (writer3 != null) )
-						writer3.write(chunk + "\n \n");
+						writer3.write(names + "\n \n");
 					if ( (writer2 != null) && (writer3 == null) )
-						writer2.write(chunk + "\n \n");
+						writer2.write(names + "\n \n");
 					else {		
 						if (Math.random() <= splitRatio)
-							writer2.write(chunk + "\n \n");
+							writer2.write(names + "\n \n");
 						else 
-							writer3.write(chunk + "\n \n");
+							writer3.write(names + "\n \n");
 					}
 				}
 			}

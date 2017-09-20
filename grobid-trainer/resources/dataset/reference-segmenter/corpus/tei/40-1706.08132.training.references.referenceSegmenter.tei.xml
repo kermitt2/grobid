@@ -1,0 +1,38 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+
+        <bibl><label>[Ahl78]</label><lb/> Lars V. Ahlfors, Complex analysis, third ed., McGraw-Hill Book Co., New York, 1978, An<lb/> introduction to the theory of analytic functions of one complex variable, International Series<lb/> in Pure and Applied Mathematics.<lb/> </bibl>
+        <bibl><label>[AKa]</label><lb/> Jørgen E. Andersen and Rinat M. Kashaev, Complex Quantum Chern-Simons, arXiv:1409.1208,<lb/> Preprint 2014.<lb/> </bibl>
+        <bibl><label>[AKb]</label><lb/> , A new formulation of the Teichmüller TQFT, arXiv:1305.4291, Preprint 2013.<lb/> </bibl>
+        <bibl><label>[AK14]</label><lb/> Jørgen Ellegaard Andersen and Rinat Kashaev, A TQFT from Quantum Teichmüller theory,<lb/> Comm. Math. Phys. 330 (2014), no. 3, 887-934.<lb/> </bibl>
+        <bibl><label>[Bur]</label><lb/> Benjamin Burton, Regina, software for 3-manifold topology and normal surface theory,<lb/> http://regina.sourceforge.net (30/01/2015).<lb/> </bibl>
+        <bibl><label>[CDW]</label><lb/> Marc Culler, Nathan M. Dunfield, and Jeffrey R. Weeks, SnapPy, a computer program for study-<lb/>ing the topology of 3-manifolds, Available at http://snappy.computop.org (30/01/2015).<lb/> </bibl>
+        <bibl><label>[DG13]</label><lb/> Tudor Dimofte and Stavros Garoufalidis, The quantum content of the gluing equations, Geom.<lb/> Topol. 17 (2013), no. 3, 1253-1315.<lb/> </bibl>
+        <bibl><label>[DGG13a]</label> Tudor Dimofte, Davide Gaiotto, and Sergei Gukov, 3-manifolds and 3d indices, Adv. Theor.<lb/> Math. Phys. 17 (2013), no. 5, 975-1076.<lb/> </bibl>
+        <bibl><label>[DGG13b]</label><lb/> , 3-manifolds and 3d indices, Adv. Theor. Math. Phys. 17 (2013), no. 5, 975-1076.<lb/> </bibl>
+        <bibl><label>[Gar16]</label><lb/> Stavros Garoufalidis, The 3D index of an ideal triangulation and angle structures, Ramanujan J.<lb/> 40 (2016), no. 3, 573-604.<lb/> </bibl>
+        <bibl><label>[GHHR17]</label> Stavros Garoufalidis, Craig D. Hodgson, Neil R. Hoffman, and J. Hyam Rubinstein, The 3D-index<lb/> and normal surfaces, Illinois J. Math. (2017).<lb/> </bibl>
+        <bibl><label>[GHRS15]</label> Stavros Garoufalidis, Craig D. Hodgson, J. Hyam Rubinstein, and Henry Segerman, 1-efficient<lb/> triangulations and the index of a cusped hyperbolic 3-manifold, Geom. Topol. 19 (2015), no. 5,<lb/> 2619-2689.<lb/> </bibl>
+        <bibl><label>[GK17]</label><lb/> Stavros Garoufalidis and Rinat Kashaev, From state integrals to q-series, Math. Res. Lett. (2017).<lb/> </bibl>
+        <bibl><label>[Kasa]</label><lb/> Rinat Kashaev, The q-binomial formula and the Rogers dilogarithm identity, arXiv:math/<lb/> 0407078, Preprint 2004.<lb/></bibl> 
+        <bibl><label>[Kasb]</label><lb/> Rinat M. Kashaev, The Yang-Baxter relation and gauge invariance, arXiv:1510.03043, Preprint<lb/> 2015.<lb/> </bibl>
+        <bibl><label>[Kas14]</label><lb/> R. M. Kashaev, Beta pentagon relations, Theoret. and Math. Phys. 181 (2014), no. 1, 1194-1205,<lb/> Russian version appears in Teoret. Mat. Fiz. 181, (2014), no. 1, 73-85.<lb/> </bibl>
+        <bibl><label>[KLV16]</label> Rinat Kashaev, Feng Luo, and Grigory Vartanov, A TQFT of Turaev-Viro type on shaped tri-<lb/>angulations, Ann. Henri Poincaré 17 (2016), no. 5, 1109-1143.<lb/> </bibl>
+        <bibl><label>[LT08]</label><lb/> Feng Luo and Stephan Tillmann, Angle structures and normal surfaces, Trans. Amer. Math. Soc.<lb/> 360 (2008), no. 6, 2849-2866.<lb/> </bibl>
+        <bibl><label>[NZ85]</label><lb/> Walter D. Neumann and Don Zagier, Volumes of hyperbolic three-manifolds, Topology 24 (1985),<lb/> no. 3, 307-332.<lb/> </bibl>
+        <bibl><label>[Thu77]</label><lb/> William Thurston, The geometry and topology of 3-manifolds, Universitext, Springer-Verlag,<lb/> Berlin, 1977, http://msri.org/publications/books/gt3m.<lb/> </bibl>
+        <bibl><label>[Wor92]</label><lb/> S. L. Woronowicz, Operator equalities related to the quantum E(2) group, Comm. Math. Phys.<lb/> 144 (1992), no. 2, 417-428.<lb/> </bibl>
+        <bibl><label>[Zag07]</label><lb/> Don Zagier, The dilogarithm function, Frontiers in number theory, physics, and geometry. II,<lb/> Springer, Berlin, 2007, pp. 3-65.<lb/> </bibl>
+
+        School of Mathematics, Georgia Institute of Technology, Atlanta, GA 30332-0160, USA<lb/> http://www.math.gatech.edu/ ~ stavros<lb/> E-mail address: stavros@math.gatech.edu<lb/> 
+        Section de Mathématiques, Université de Genève, 2-4 rue duLì evre, Case Postale 64,<lb/> 1211 Genève 4, Switzerland<lb/> http://www.unige.ch/math/folks/kashaev<lb/> E-mail address: Rinat.Kashaev@unige.ch
+        </listBibl>
+    </text>
+</tei>
+

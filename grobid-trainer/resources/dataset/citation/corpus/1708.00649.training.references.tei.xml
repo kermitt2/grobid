@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>D. Sexty</author>, <title level="j">PoS</title> <biblScope unit="volume">LATTICE 2014</biblScope> (<date>2015</date>) [<idno type="arxiv">arXiv:1410.8813</idno> [<note>hep-lat</note>]].</bibl>
+	<bibl><author>C. Gattringer</author>, <title level="j">PoS</title> <biblScope unit="volume">LAT-TICE2013</biblScope> ( <date>2014</date>)<biblScope unit="page">002</biblScope> [ <idno type="arxiv">arXiv:1401.7788</idno>[ <note>hep-lat</note>]].</bibl>
+	<bibl><author>G .Aarts</author> ,<title level="j">PoS</title> <biblScope unit="volume">LATTICE 2012</biblScope> ( <date>2012</date>)<biblScope unit="page">017</biblScope> [<idno type="arxiv">arXiv :1302.3028</idno>[<note>hep -lat</note>]].</bibl>
+	<bibl><author>L. Levkova</author>, <title level="j">PoS</title><biblScope unit="volume">LATTICE 2011</biblScope> ( <date>2011</date> )<biblScope unit="page">011</biblScope>[ <idno type="arxiv">arXiv :1201.1516</idno>[<note>hep -lat</note>]].</bibl>
+	<bibl><author>S.Gupta</author> ,<title level="j">PoS</title> <biblScope unit="volume">LATTICE2010</biblScope> ( <date>2010</date> ) <biblScope unit="page">007</biblScope>[<idno type="arxiv">arXiv : 1101.0109</idno>[<note>hep- lat</note>]].</bibl>
+	<bibl><author>U.Wolff</author> ,<title level="j">PoS</title> <biblScope unit="volume">LATTICE2010</biblScope> (<date>2010</date> ) <biblScope unit="page">020</biblScope> [<idno type="arxiv">arXiv: 1009 .0657</idno>[<note>hep-lat</note> ]].</bibl>
+	<bibl><author>P.deForcrand</author> ,<title level="j">PoS</title> <biblScope unit="volume">LAT 2009</biblScope>( <date>2009</date> ) <biblScope unit="page">010</biblScope> [<idno type="arxiv">arXiv:1005 . 0539</idno>[<note>hep-lat</note>] ].</bibl>
+	<bibl><author>A.Li</author>,<title level="j">PoS</title> <biblScope unit="volume">LAT2009</biblScope> (<date>2009</date> ) <biblScope unit="page">011</biblScope> [ <idno type="arxiv">arXiv:1002 . 4459</idno>[<note>hep-lat</note>] ].</bibl>
+	<bibl><author>S.Chandrasekharan</author>,<title level="j">PoS</title><biblScope unit="volume">LATTICE 2008</biblScope>( <date>2008</date>) <biblScope unit="page">003</biblScope> [ <idno type="arxiv">arXiv :0810. 2419</idno> [<note>hep-lat</note>]] .</bibl>
+	<bibl><author>S.Ejiri</author>,<title level="j">PoS</title><biblScope unit="volume">LATTICE 2008</biblScope>(<date>2008</date> )<biblScope unit="page">002</biblScope> [ <idno type="arxiv">arXiv : 0812.1534</idno> [ <note>hep-lat</note>]].</bibl>
+	<bibl><author>T. Sterling, J. Greensite</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">220</biblScope> (<date>1983</date>) <biblScope unit="page">327</biblScope>.</bibl>
+	<bibl><author>M. Panero</author>, <title level="j">JHEP</title> <biblScope unit="volume">0505</biblScope> (<date>2005</date>) <biblScope unit="page">066</biblScope> [<idno type="arxiv">hep-lat/0503024</idno>].</bibl>
+	<bibl><author>M .G.Endres</author> ,<title level="j">Phys .Rev .D</title> <biblScope unit="volume">75</biblScope> ( <date>2007</date>)<biblScope unit="page">065012</biblScope> [ <idno type="arxiv">hep-lat/0610029</idno>];</bibl>
+	<bibl><title level="j" >PoS</title> <biblScope unit="volume">LAT06</biblScope> (<date>2006</date> )<biblScope unit="page">133</biblScope>[ <idno type="arxiv">hep -lat/0609037</idno>].</bibl>
+	<bibl><author>V. Azcoiti, E. Follana, A. Vaquero, G. DiCarlo</author> , <title level="j">JHEP</title><biblScope unit="volume">0908</biblScope> ( <date>2009</date>) <biblScope unit="page">008</biblScope>[<idno type="arxiv">arXiv : 0905.0639</idno>[<note>hep- lat</note>]].</bibl>
+	<bibl><author>T.Korzec ,U .Wolff </author>,<title level="j">PoS</title> <biblScope unit="volume">LATTICE2010</biblScope> ( <date>2010</date> ) <biblScope unit="page">029</biblScope>[<idno type="arxiv">arXiv: 1011 .1359</idno>[<note>hep-lat</note> ]];</bibl>
+	<bibl><title level="j">PoS</title><biblScope unit="volume">LATTICE2013</biblScope>( <date>2014</date> ) <biblScope unit="page">039</biblScope> [<idno type="arxiv">arXiv: 1309 .1331</idno>[<note>hep-lat</note> ]];</bibl>
+	<bibl><author>T.Korzec,U .Wolff</author> ,<title level="j">Nucl .Phys .B</title> <biblScope unit="volume">871</biblScope>( <date>2013</date>) <biblScope unit="page">145</biblScope> [ <idno type="arxiv">arXiv:1212 . 2875</idno>[<note>hep-lat</note>] ].</bibl>
+	<bibl><author>P.N.Meisinger ,M.C. Ogilvie</author>, <idno type="arxiv">arXiv:1306. 1495</idno>[ <note>hep-lat</note>].</bibl>
+	<bibl><author>C.Gattringer,A. Schmidt</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">86</biblScope> (<date>2012</date> )<biblScope unit="page">094506</biblScope> [<idno type="arxiv">arXiv : 1208.6472</idno> [ <note>hep-lat</note>]].</bibl>
+	<bibl><author>Y.D.Mercado,C .Gattringer,A .Schmidt</author> ,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">111</biblScope> (<date>2013</date>) <biblScope unit="issue">14</biblScope>, <biblScope unit="page">141601</biblScope>[ <idno>arXiv :1307. 6120</idno>[ <note>hep -lat</note>]];</bibl>
+	<bibl><title level="j">Comput .Phys.Commun.</title><biblScope unit="volume">184</biblScope>( <date>2013</date>) <biblScope unit="page">1535</biblScope>[ <idno type="arxiv">arXiv: 1211. 3436</idno>[<note>hep - lat</note>]].</bibl>
+	<bibl><author>A. Schmidt,P.deForcrand, C. Gattringer</author>, <title level="j">PoS</title><biblScope unit="volume">Lattice 2014</biblScope> (<date>2015</date> )<biblScope unit="page">209</biblScope> [<idno type="arxiv">arXiv : 1501. 06472</idno> [<note>hep- lat</note> ]].</bibl>
+	<bibl><author>C. Gattringer, T. Kloiber, M. Müller-Preussker</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">92</biblScope> (<date>2015</date>) no.<biblScope unit="issue">11</biblScope>, <biblScope unit="page">114508</biblScope> [<idno type="arxiv">arXiv:1508.00681</idno>[ <note>hep-lat</note>]].</bibl>
+	<bibl><author>T .Kloiber ,C .Gattringer</author> ,<title level="j">PoS</title> <biblScope unit="volume">Lattice 2014</biblScope> ( <date>2015</date>)<biblScope unit="page">345</biblScope> [ <idno type="arxiv">arXiv:1410.3216</idno>[<note>hep -lat</note>]].</bibl>
+	<bibl><author>S. Chandrasekharan</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">86</biblScope> (<date>2012</date>) <biblScope unit="page">021701</biblScope> [<idno type="arxiv">arXiv:1205.0084</idno> [<note>hep-lat</note>]].</bibl>
+	<bibl><author>D.J. Cecile, S.Chandrasekharan</author> ,<title level="j">Phys .Rev .D</title> <biblScope unit="volume">77</biblScope> ( <date>2008</date>)<biblScope unit="page">054502</biblScope> [ <idno type="arxiv">arXiv:0801.1857</idno>[ <note>hep-lat</note>]].</bibl>
+	<bibl><author>S .Chan -drasekharan,F. J.Jiang</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">74</biblScope> ( <date>2006</date> )<biblScope unit="page">014506</biblScope>[ <idno type="arxiv">hep -lat/0602031</idno>].</bibl>
+	<bibl><author>S. Chandrasekha- ran,C.G .Strouthos</author>,<title level="j">Phys .Rev .D</title> <biblScope unit="volume">69</biblScope>( <date>2004</date> ) <biblScope unit="page">091502</biblScope>[<idno type="arxiv">hep - lat/0401002</idno>].</bibl>
+	<bibl><author>S.Chandrasekharan ,F .J .Jiang</author>,<title level="j">Phys. Rev. D</title><biblScope unit="volume">68</biblScope> (<date>2003</date> ) <biblScope unit="page">091501</biblScope> [<idno type="arxiv">hep- lat /0309025</idno>].</bibl>
+	<bibl><author>D.H. Adams,S. Chandrasekha- ran</author>, <title level="j">Nucl.Phys.B</title> <biblScope unit="volume">662</biblScope>( <date>2003</date>) <biblScope unit="page">220</biblScope> [ <idno type="arxiv">hep-lat / 0303003]</idno>.</bibl>
+	<bibl><author>S.Chandrasekharan,C .G .Strouthos</author> ,<title level="j">Phys.Rev .D</title> <biblScope unit="volume">68</biblScope>(<date>2003</date> )<biblScope unit="page">091502</biblScope> [ <idno type="arxiv">hep -lat/ 0306034</idno> ].</bibl>
+	<bibl><author>S.Chandrasekharan</author>,<title level="j">Phys. Lett. B</title><biblScope unit="volume">536</biblScope> (<date>2002</date> )<biblScope unit="page">72</biblScope> [ <idno type="arxiv">hep -lat/0203020</idno> ] .</bibl>
+	<bibl><author>H.Vairinhos,P.de Forcrand</author>, <title level="j">PoS</title><biblScope unit="volume">LATTICE 2015</biblScope>( <date>2016</date> )<biblScope unit="page">170</biblScope> .</bibl>
+	<bibl><author>W . Unger,P .de Forcrand</author>,<title level="j">J .Phys .G</title> <biblScope unit="volume">38</biblScope> (<date>2011</date> )<biblScope unit="page">124190</biblScope> [<idno type="arxiv">arXiv : 1107 .1553</idno>[ <note>hep -lat</note>]].</bibl>
+	<bibl><author>O .Bär,W.Rath, U. Wolff</author>, <title level="j">Nucl.Phys .B</title> <biblScope unit="volume">822</biblScope>( <date>2009</date>) <biblScope unit="page">408</biblScope>[ <idno type="arxiv">arXiv: 0905 . 4417</idno>[<note>hep - lat</note>]].</bibl>
+	<bibl><author>U. Wolff</author>,<title level="j">Nucl.Phys.B</title> <biblScope unit="volume">789</biblScope>( <date>2008</date>) <biblScope unit="page">258</biblScope>[ <idno type="arxiv">arXiv:0707 . 2872</idno> [<note>hep- lat</note> ]].</bibl>
+	<bibl><author>M. Salmhofer</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">362</biblScope> (<date>1991</date>) <biblScope unit="page">641</biblScope>.</bibl>
+	<bibl><author>H. Gausterer, C.B. Lang, M. Salmhofer</author>, <title level="j">Nucl.Phys .B</title> <biblScope unit="volume">388</biblScope> ( <date>1992</date>)<biblScope unit="page">275</biblScope> .</bibl>
+	<bibl><author>H .Gausterer ,C .B.Lang</author> ,<title level="j">Nucl .Phys .B</title> <biblScope unit="volume">455</biblScope> ( <date>1995</date>)<biblScope unit="page">785</biblScope> [ <idno type="arxiv">hep-lat/9506028</idno>].</bibl>
+	<bibl><author>F. Karsch, E. Meggiolaro, L. Turko</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">51</biblScope> ( <date>1995</date> )<biblScope unit="page">6417</biblScope>[ <idno type="arxiv">hep -lat/9411019</idno>].</bibl>
+	<bibl><author>K.Scharnhorst</author> ,<title level="j">Phys .Rev .D</title> <biblScope unit="volume">56</biblScope>( <date>1997</date> ) <biblScope unit="page">3650</biblScope>[<idno type="arxiv">hep - lat/9505001</idno>].</bibl>
+	<bibl><author>C. Gattringer</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">559</biblScope> (<date>1999</date>) <biblScope unit="page">539</biblScope> [<idno type="arxiv">hep-lat/9903021</idno>];</bibl>
+	<bibl><title level="j">Nucl. Phys. B</title> <biblScope unit="volume">543</biblScope> (<date>1999</date>) <biblScope unit="page">533</biblScope>[ <idno type="arxiv">hep-lat/9811014</idno>].</bibl>
+	<bibl><author>D. Baumgartner, U. Wenger</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">894</biblScope> (<date>2015</date>) <biblScope unit="page">223</biblScope> [<idno type="arxiv">arXiv:1412.5393</idno> [<note>hep-lat</note>]];</bibl>
+	<bibl><title level="j">Nucl.Phys .B</title> <biblScope unit="volume">897</biblScope> ( <date>2015</date>)<biblScope unit="page">39</biblScope> [ <idno type="arxiv">arXiv:1503.05232</idno>[ <note>hep-lat</note>]];</bibl>
+	<bibl><title level="j">Nucl .Phys .B</title> <biblScope unit="volume">899</biblScope> ( <date>2015</date>)<biblScope unit="page">375</biblScope> [ <idno type="arxiv">arXiv:1505.07397</idno>[<note>hep -lat</note>]].</bibl>
+	<bibl><author>U. Wenger</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">80</biblScope> ( <date>2009</date> )<biblScope unit="page">071503</biblScope>[ <idno type="arxiv">arXiv :0812.3565</idno>[<note>hep -lat</note>]].</bibl>
+	<bibl><author>C. Gattringer, T. Kloiber, V. Sazonov</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">897</biblScope> (<date>2015</date>) <biblScope unit="page">732</biblScope> [<idno type="arxiv">arXiv:1502.05479</idno>].</bibl>
+	<bibl><author>L. Scorzato</author>, <title level="j">PoS</title> <biblScope unit="volume">LATTICE 2015</biblScope> (<date>2016</date>) <biblScope unit="page">016</biblScope> [<idno type="arxiv">arXiv:1512.08039</idno> [<note>hep-lat</note>]].</bibl>
+	<bibl><author>G. Aarts</author>, <title level="j">PoS</title> <biblScope unit="volume">LATTICE2012</biblScope> ( <date>2012</date>)<biblScope unit="page">017</biblScope> [ <idno type="arxiv">arXiv:1302.3028</idno>[ <note>hep-lat</note>]].</bibl>
+	<bibl><author>E. Follana, V. Azcoiti, G. Di Carlo, A. Vaquero Aviles-Casco</author>, <title level="j">PoS</title> <biblScope unit="volume">LATTICE 2014</biblScope> (<date>2014</date>) <biblScope unit="page">342</biblScope>.</bibl>
+	<bibl><author>R. Lohmayer, R. Narayanan</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">88</biblScope> (<date>2013</date>) <biblScope unit="issue">10</biblScope>, <biblScope unit="page">105030</biblScope> [<idno type="arxiv">arXiv:1307.4969</idno> [<note>hep-th</note>]].</bibl>
+	<bibl><author>P.W. Kasteleyn</author>, <title level="j">Physica</title> <biblScope unit="volume">27</biblScope> (<date>1961</date>) <biblScope unit="page">1209</biblScope>.</bibl>
+	<bibl><author>H. Fukaya , T. Onogi</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">68</biblScope> (<date>2003</date>) <biblScope unit="page">074503</biblScope> [<idno type="arxiv">hep-lat/0305004</idno>];</bibl>
+	<bibl><title level="j">Phys. Rev. D</title> <biblScope unit="volume">70</biblScope> (<date>2004</date>)<biblScope unit="page">054508</biblScope> [ <idno type="arxiv">hep-lat/0403024</idno>].</bibl>
+	<bibl><author>S. Dürr</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">85</biblScope> (<date>2012</date>) <biblScope unit="page">114503</biblScope> [<idno type="arxiv">arXiv:1203.2560</idno> [<note>hep-lat</note>]];</bibl>
+	<bibl><title level="j">PoS</title> <biblScope unit="volume">LAT 2005</biblScope> (<date>2006</date>)<biblScope unit="page">021</biblScope> [ <idno>hep-lat/0509026</idno>].</bibl>
+	<bibl><author>S .Dürr ,C .Hölbling</author> ,<title level="j">Phys .Rev .D</title> <biblScope unit="volume">69</biblScope> ( <date>2004</date>)<biblScope unit="page">034503</biblScope> [ <idno type="arxiv">hep-lat/0311002</idno>];</bibl>
+	<bibl><title level="j">Phys. Rev. D</title><biblScope unit="volume">69</biblScope> ( <date>2004</date> )<biblScope unit="page">034503</biblScope>[ <idno type="arxiv">hep -lat/0311002</idno>].</bibl>
+	<bibl><author>C. Gattringer, O. Orasch</author>, <note>work in preparation</note>.</bibl>
+	<bibl><title level="m">NIST Handbook of Mathematical Functions</title>, <publisher>Cambridge University Press</publisher>, <date>2010</date>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

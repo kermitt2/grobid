@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><orgName>National Research Council (NRC)</orgName>, <date>2010</date>, &quot;<title level="m">New Worlds, New Horizons in Astronomy and As-trophysics</title>&quot;,<publisher>The National Academies Press</publisher> ,<pubPlace>Washington ,D .C</pubPlace>.</bibl>
+	<bibl><orgName>National Academies of Sciences, Engineering, and Medicine</orgName>, <date>2016</date>. &quot;<title level="m">New Worlds, New Horizons:A Midterm Assessment</title> &quot;.<pubPlace>Washington ,D .C.</pubPlace>:<publisher>The National Academies Press</publisher> .<idno type="DOI">doi :10.17226/23560</idno>.</bibl>
+	<bibl><orgName>National Academies of Sciences, Engineering, and Medicine</orgName>, <date>2015</date>, &quot;<title level="m">The Space Sciecne DecadalSurveys :Lessons Learned and Best Practices</title> &quot;,<publisher>The National Academies Press</publisher> ,<pubPlace>Wash -ington,D. C</pubPlace>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

@@ -69,6 +69,8 @@ public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer
 
         while ((!stop) && (tokenizationsIt.hasNext())) {
             LayoutToken layoutToken = tokenizationsIt.next();
+            
+            layoutToken.addLabel(TaggingLabels.labelFor(grobidModel, label));
 
             layoutTokenBuffer.add(layoutToken);
             String tokOriginal = layoutToken.t();

@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>S. W. Hawking</author>, <title level="j">Nature</title> <biblScope unit="volume">248</biblScope>, <biblScope unit="page">30</biblScope> (<date>1974</date>).</bibl>
+	<bibl><author>W. G. Unruh</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">46</biblScope>, <biblScope unit="page">1351</biblScope> (<date>1981</date>).</bibl>
+	<bibl><author>M. Novello, M. Visser, and G. Volovik</author>, <title level="m">Artificial Black Holes-</title> (<publisher>WorldScientific</publisher> ,<pubPlace>Singapore</pubPlace> ,<date>2002</date> ).</bibl>
+	<bibl><author>W. G. Unruh</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">51</biblScope>, <biblScope unit="page">2827</biblScope> (<date>1995</date>).</bibl>
+	<bibl><editor>W. G. Unruh and R. Schützhold</editor>, eds., <title level="m">Quantum Ana-logues:From Phase Transitions to Black Holes and Cos -mology</title>(<publisher>Springer</publisher> ,<pubPlace>Berlin, Heidelberg</pubPlace>, <date>2007</date>) .</bibl>
+	<bibl><author>S. Weinfurtner, E. W. Tedford, M. C. J. Penrice, W. G. Unruh,and G .A .Lawrence</author> ,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">106</biblScope> ,<biblScope unit="page">021302</biblScope> ( <date>2011</date>).</bibl>
+	<bibl><author>G. Rousseaux, C. Mathis, P. Maissa, T. G. Philbin, and U.Leonhardt</author> ,<title level="j">New J .Phys .</title><biblScope unit="volume">10</biblScope> ,<biblScope unit="page">053015</biblScope> ( <date>2008</date>).</bibl>
+	<bibl><author>O. Lahav, A. Itah, A. Blumkin, C. Gordon, and J. Stein-hauer</author>,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">105</biblScope> ,<biblScope unit="page">240401</biblScope> ( <date>2010</date>).</bibl>
+	<bibl><author>J. Steinhauer</author>, <title level="j">Nature Phys.</title> <biblScope unit="volume">10</biblScope>, <biblScope unit="page">864</biblScope> (<date>2014</date>).</bibl>
+	<bibl><author>J. Steinhauer</author>, <title level="j">Nature Phys.</title> <biblScope unit="volume">12</biblScope>, <biblScope unit="page">959</biblScope> (<date>2016</date>).</bibl>
+	<bibl><author>L. J. Garay, J. R. Anglin, J. I. Cirac, and P. Zoller</author>, <title level="j">Phys. Rev.A</title> <biblScope unit="volume">63</biblScope> ,<biblScope unit="page">023611</biblScope> ( <date>2001</date>).</bibl>
+	<bibl><author>L. J. Garay, J. R. Anglin, J. I. Cirac, and P. Zoller</author>, <title level="j">Phys. Rev.Lett .</title><biblScope unit="volume">85</biblScope> ,<biblScope unit="page">4643</biblScope> ( <date>2000</date>).</bibl>
+	<bibl><author>R. Bürkle, A. Gaidoukov, and J. R. Anglin</author>, <note>In prepara-tion</note>.</bibl>
+	<bibl><author>S. Corley and T. Jacobson</author>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">59</biblScope>, <biblScope unit="page">124011</biblScope> (<date>1999</date>).</bibl>
+	<bibl><author>A. Sinatra, C. Lobo, and Y. Castin</author>, <title level="j">Journal of Physics B: Atomic,Molecular and Optical Physics</title> <biblScope unit="volume">35</biblScope> ,<biblScope unit="page">3599</biblScope> ( <date>2002</date>).</bibl>
+	<bibl><author>J. Ruostekoski and A. D. Martin</author>, &quot;<title level="a">The Truncated Wigner Methodfor Bose Gases</title> ,&quot;in <title level="m">Quantum Gases :Finite Temperature andNon - EquilibriumDynamics</title>, editedby <editor>M . Davis,N .Proukakis ,S .Gardiner ,and M. Szyma´nskaSzyma´nska</editor> (<publisher>Imperial College Press</publisher>,<pubPlace>London</pubPlace> , <date>2013</date>) pp. <biblScope unit="page">203- 214</biblScope>.</bibl>
+	<bibl><author>P. B. Blakie, A. S. Bradley, M. J. Davis, R. J. Ballagh, andC .W .Gardiner</author> ,<title level="j">Adv .Phys .</title><biblScope unit="volume">57</biblScope> ,<biblScope unit="page">363</biblScope> ( <date>2008</date>).</bibl>
+	<bibl><author>J. A. C. Weideman and B. M. Herbst</author>, <title level="j">SIAM Journal on NumericalAnalysis</title> <biblScope unit="volume">23</biblScope> ,<biblScope unit="page">485</biblScope> ( <date>1986</date>).</bibl>
+	<bibl><author>M. J. Lighthill</author>, <title level="j">Proceedings of the Royal Society of Lon-donA :Mathematical ,Physical and Engineering Sciences</title> <biblScope unit="volume">211</biblScope> ,<biblScope unit="page">564</biblScope>( <date>1952</date> ).</bibl>
+	<bibl><author>M. J. Lighthill</author>, <title level="j">Proceedings of the Royal Society of Lon-donA :Mathematical ,Physical and Engineering Sciences</title> <biblScope unit="volume">222</biblScope> ,<biblScope unit="page">1</biblScope>( <date>1954</date> ).</bibl>
+	<bibl><author>A. Dowling and T. Hynes</author>, <title level="j">European Journal of Mechanics -B/Fluids</title><biblScope unit="volume">23</biblScope> ,<biblScope unit="page">491</biblScope> ( <date>2004</date>).</bibl>
+	<bibl><author>M. C. Tsatsos, P. E. Tavares, A. Cidrim, A. R. Fritsch, M.A .Caracanhas ,F .E .A .dos Santos ,C .F .Barenghi ,and V. S. Bagnato</author>, <title level="j">PhysicsReports</title> <biblScope unit="volume">622</biblScope> , <biblScope unit="page">1</biblScope>( <date>2016</date> ).</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

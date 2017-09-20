@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+
+	<bibl><author>T. Tajima and J. M. Dawson</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">43</biblScope>, <biblScope unit="page">267</biblScope> (<date>1979</date>).</bibl>
+	<bibl><author>V. Malka, J. Faure, Y. A. Gauduel, E. Lefebvre, A. Rousse, andK .T .Phuoc</author> ,<title level="j">Nat .Phys</title> .<biblScope unit="volume">4</biblScope> ,<biblScope unit="page">447</biblScope> ( <date>2008</date>).</bibl>
+	<bibl><author>E. Esarey, C. B. Schroeder, and W. P. Leemans</author>, <title level="j">Rev. Mod. Phys.</title><biblScope unit="volume">81</biblScope> ,<biblScope unit="page">1229</biblScope> ( <date>2009</date>).</bibl>
+	<bibl><author>P. A. Norreys</author>, <title level="j">Nat. Photonics</title> <biblScope unit="volume">3</biblScope>, <biblScope unit="page">423</biblScope> (<date>2009</date>).</bibl>
+	<bibl><author>P. Chen, J. M. Dawson, R. W. Huff, and T. Katsouleas</author>, <title level="j">Phys. Rev.Lett .</title><biblScope unit="volume">54</biblScope> ,<biblScope unit="page">693</biblScope> ( <date>1985</date>).</bibl>
+	<bibl><author>P. Muggli and M. J. Hogan</author>, <title level="j">C.R. Phys</title>. <biblScope unit="volume">10</biblScope>, <biblScope unit="page">116</biblScope> (<date>2009</date>).</bibl>
+	<bibl><author>S. M. Hooker</author>, <title level="j">Nat. Photonics</title> <biblScope unit="volume">7</biblScope>, <biblScope unit="page">775</biblScope> (<date>2013</date>).</bibl>
+	<bibl><author>W. P. Leemans, B. Nagler, A. J. Gonsalves, C. Toth, K. Nakamura,C .G .R .Geddes ,E .Esarey ,C .B .Schroeder ,and S .M. Hooker</author>, <title level="j">Nat. Phys.</title> <biblScope unit="volume">2</biblScope>, <biblScope unit="page">696</biblScope>( <date>2006</date> ).</bibl>
+	<bibl><author>S. Kneip et al.P. Rajeev, J. Schreiber, M. Streeter, D. Urner, J.Vieira ,L .Silva ,and Z .Najmudin</author> ,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">103</biblScope> ,<biblScope unit="page">035002</biblScope> (<date>2009</date> ).</bibl>
+	<bibl><author>X. Wang et al.</author>, <title level="j">Nat. Commun.</title> <biblScope unit="volume">4</biblScope>, <biblScope unit="page">2988</biblScope> (<date>2013</date>).</bibl>
+	<bibl><author>A. Buck, M. Nicolai, K. Schmid, C. M. S. Sears, A. Sävert, J.M .Mikhailova ,F .Krausz ,M .C .Kaluza ,and L .Veisz</author> ,<title level="j">Nat .Phys.</title> <biblScope unit="volume">7</biblScope>, <biblScope unit="page">543</biblScope>( <date>2011</date> ).</bibl>
+	<bibl><author>O. Lundh, J. Lim, C. Rechatin, L. Ammoura, A. Ben-Ismail, X.Davoine ,G .Gallot ,J .-P.Goddet ,E .Lefebvre ,V .Malka ,and J. Faure</author>, <title level="j">Nat. Phys.</title> <biblScope unit="volume">7</biblScope>, <biblScope unit="page">219</biblScope>( <date>2011</date> ).</bibl>
+	<bibl><author>M. Heigoldt, A. Popp, K. Khrennikov, J. Wenz, S.-W. Chou, S.Karsch ,S .I .Bajlekov ,S .M .Hooker ,and B .Schmidt</author> ,<title level="j">Phys .Rev. STAccel . Beams</title><biblScope unit="volume">18</biblScope> , <biblScope unit="page">121302</biblScope>( <date>2015</date> ).</bibl>
+	<bibl><author>H.-P. Schlenvoigt, K. Haupt, A. Debus, F. Budde, O. Jackel, S.Pfotenhauer ,H .Schwoerer ,E .Rohwer ,J .G .Gallacher ,E .Brunetti, R. P. Shanks, S. M. Wiggins, andD . A. Jaroszynski</author>, <title level="j">Nat.Phys</title> .<biblScope unit="volume">4</biblScope> ,<biblScope unit="page">130</biblScope> (<date>2008</date> ) .</bibl>
+	<bibl><author>M. Fuchs, R. Weingartner, A. Popp, Z. Major, S. Becker, J. Osterhoff,I .Cortrie ,B .Zeitler ,R .Hoerlein ,G .D .Tsakiris ,U .Schramm, T. P. Rowlands- Rees,S. M. Hooker, D. Habs, F. Krausz,S .Karsch ,and F. Gruener</author> ,<title level="j">Nat .Phys .</title><biblScope unit="volume">5</biblScope> ,<biblScope unit="page">826</biblScope> (<date>2009</date> ) .</bibl>
+	<bibl><author>S. Kneip et al.</author>, <title level="j">Nat. Phys.</title> <biblScope unit="volume">6</biblScope>, <biblScope unit="page">980</biblScope> (<date>2010</date>).</bibl>
+	<bibl><author>S. Cipiccia et al.</author>, <title level="j">Nat. Phys.</title> <biblScope unit="volume">7</biblScope>, <biblScope unit="page">867</biblScope> (<date>2011</date>).</bibl>
+	<bibl><author>K. T. Phuoc, S. Corde, C. Thaury, V. Malka, A. Tafzi, J.-P. Goddet,R .C .Shah ,S .Sebban ,and A .Rousse</author> ,<title level="j">Nat .Photonics</title> <biblScope unit="volume">6</biblScope>, <biblScope unit="page">308</biblScope>( <date>2012</date> ).</bibl>
+	<bibl><author>N. D. Powers, I. Ghebregziabher, G. Golovin, C. Liu, S. Chen,S .Banerjee ,J .Zhang ,and D .P .Umstadter</author> ,<title level="j">Nat .Photonics</title> <biblScope unit="volume">8</biblScope>, <biblScope unit="page">28</biblScope>( <date>2013</date> ).</bibl>
+	<bibl>[<author>20] K. Khrennikov, J. Wenz, A. Buck, J. Xu, M. Heigoldt, L. Veisz,and S .Karsch</author> ,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">114</biblScope> ,<biblScope unit="page">195003</biblScope> ( <date>2015</date>).</bibl>
+	<bibl><author>S. M. Hooker, R. Bartolini, S. P. D. Mangles, A. Tuennermann, L.Corner ,J .Limpert ,A .Seryi ,and R .Walczek</author> ,<title level="j">J .Phys .B</title> <biblScope unit="volume">47</biblScope> ,<biblScope unit="page">234003</biblScope>( <date>2014</date> ).</bibl>
+	<bibl><author>C. Benedetti, C. B. Schroeder, E. Esarey, and W. P. Leemans</author>,<title level="j">Phys .Plasmas</title> <biblScope unit="volume">21</biblScope> ,<biblScope unit="page">056706</biblScope> ( <date>2014</date>).</bibl>
+	<bibl><author>A. Klenke, S. Hädrich, T. Eidam, J. Rothhardt, M. Kienel, S.Demmler ,T .Gottschall ,J .Limpert ,and A .Tünnermann</author> ,<title level="j">Opt .Lett</title>. <biblScope unit="volume">39</biblScope>, <biblScope unit="page">6875</biblScope>( <date>2014</date> ).</bibl>
+	<bibl><author>N. H. Matlis, A. Maksimchuk, V. Yanovsky, W. P. Leemans, andM .C .Downer</author> ,<title level="j">Opt .Lett</title> .<biblScope unit="volume">41</biblScope> ,<biblScope unit="page">5503</biblScope> ( <date>2016</date>).</bibl>
+	<bibl><note>See Supplemental Material</note> <ptr type="web">http://link.aps.org/supplemental/ 10.1103/PhysRevLett.119.044802</ptr><note>for further details of the experimental arrangementand analysis methods</note>.</bibl>
+	<bibl><author>A. S. Weling and D. H. Auston</author>, <title level="j">J. Opt. Soc. Am. B</title> <biblScope unit="volume">13</biblScope>, <biblScope unit="page">2783</biblScope> (<date>1996</date>).</bibl>
+	<bibl><author>R. J. Shalloo, L. Corner, C. Arran, J. Cowley, G. Cheung, C. Thornton,R .walczak ,and S .M .Hooker</author> ,<title level="j">Nucl .Instrum .Methods Phys. Res. ,Sect. A</title><biblScope unit="volume">829</biblScope> , <biblScope unit="page">383</biblScope>( <date>2016</date> ).</bibl>
+	<bibl><author>N. H. Matlis, S. Reed, S. S. Bulanov, V. Chvykov, G. Kalintchenko,T .Matsuoka ,P .Rousseau ,V .Yanovsky ,A .Maksimchuk ,S. Kalmykov, G. Shvets, andM . C. Downer</author>, <title level="j">Nat. Phys.</title><biblScope unit="volume">2</biblScope> ,<biblScope unit="page">749</biblScope> (<date>2006</date> ) .</bibl>
+	<bibl><author>C. A. Arran, N. H. Matlis, L. Corner, J. Cowley, G. Cheung, C.D .Gregory ,R .J .Shalloo ,D .R .Symes ,C .Thornton ,R .Walczak ,andS . M. Hooker</author>( <note>to bepublished</note> ) .</bibl>
+	<bibl><author>L. J. Spitzer</author>, <title level="m">Physics of Fully Ionized Gases</title> (<publisher>John Wiley &amp; Sons</publisher>,<pubPlace>New York</pubPlace> ,<date>1962</date> ).</bibl>
+	<bibl><author>F. Dorchies, F. Amiranoff, V. Malka, J. R. Marques, A. Modena,D .Bernard ,F .Jacquet ,P .Mine ,B .Cros ,G .Matthieussent ,P. Mora, A. Solodov, J. Morillo, andZ . Najmudin</author>, <title level="j">Phys.Plasmas</title> <biblScope unit="volume">6</biblScope>, <biblScope unit="page">2903</biblScope> (<date>1999</date> ) .</bibl>
+	<bibl><author>C. D. Murphy et al.</author>, <title level="j">Phys. Plasmas</title> <biblScope unit="volume">13</biblScope>, <biblScope unit="page">033108</biblScope> (<date>2006</date>).</bibl>
+	<bibl><author>J. M. Dias, L. OliveiraeSilva, and J. T. Mendonca</author>, <title level="j">Phys. Rev.ST Accel .Beams</title> <biblScope unit="volume">1</biblScope> ,<biblScope unit="page">031301</biblScope> ( <date>1998</date>).</bibl>
+	<bibl><author>C. Joshi, W. B. Mori, T. Katsouleas, J. M. Dawson, and J.M .Kindel</author> ,<title level="j">Nature</title> ( <pubPlace>London</pubPlace>)<biblScope unit="volume">311</biblScope> ,<biblScope unit="page">525</biblScope> ( <date>1984</date>).</bibl>
+	<bibl><author>A. E. Dangor, A. Dymoke-Bradshaw, and A. E. Dyson</author>, <title level="j">Phys.Scr .</title><biblScope unit="volume">T30</biblScope> ,<biblScope unit="page">107</biblScope> ( <date>1990</date>).</bibl>
+	<bibl><author>C. E. Clayton, C. Joshi, C. B. C. Darrow, and D. Umstadter</author>, <title level="j">Phys.Rev .Lett .</title><biblScope unit="volume">54</biblScope> ,<biblScope unit="page">2343</biblScope> ( <date>1985</date>).</bibl>
+	<bibl><author>F. Amiranoff, M. Laberge, J. R. Marques, F. Moulin, E. Fabre,B .Cros ,G .Matthieussent ,P .Benkheiri ,F .Jacquet ,J .Meyer, P. Mine, C. Stenz, andP . Mora</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">68</biblScope>, <biblScope unit="page">3710</biblScope>(<date>1992</date> ) .</bibl>
+	<bibl><author>C. E. Clayton, K. A. Marsh, A. Dyson, M. Everett, A. LAL, W.P .Leemans ,R .Williams ,and C .Joshi</author> ,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">70</biblScope> ,<biblScope unit="page">37</biblScope>( <date>1993</date> ).</bibl>
+	<bibl><author>S. Y. Tochitsky, R. Narang, C. V. Filip, P. Musumeci, C. E. Clayton,R .B .Yoder ,K .A .Marsh ,J .B .Rosenzweig ,C .Pellegrini, andC . Joshi</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">92</biblScope>, <biblScope unit="page">095004</biblScope>( <date>2004</date> ).</bibl>
+	<bibl><author>M. N. Rosenbluth and C. S. Liu</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">29</biblScope>, <biblScope unit="page">701</biblScope> (<date>1972</date>).</bibl>
+	<bibl><author>K. Nakajima</author>, <title level="j">Phys. Rev. A</title> <biblScope unit="volume">45</biblScope>, <biblScope unit="page">1149</biblScope> (<date>1992</date>).</bibl>
+	<bibl><author>V. I. Berezhiani and I. G. Murusidze</author>, <title level="j">Phys. Scr.</title> <biblScope unit="volume">45</biblScope>, <biblScope unit="page">87</biblScope> (<date>1992</date>).</bibl>
+	<bibl><author>D. Umstadter, E. Esarey, and J. Kim</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">72</biblScope>, <biblScope unit="page">1224</biblScope>( <date>1994</date>).</bibl>
+	<bibl><author>D. A. Johnson, R. A. Cairns, R. Bingham, and U. De Angelis</author>,<title level="j">Phys .Scr .</title><biblScope unit="volume">T52</biblScope> ,<biblScope unit="page">77</biblScope> ( <date>1994</date>).</bibl>
+	<bibl><author>S. Dalla and M. Lontano</author>, <title level="j">Phys. Rev. E</title> <biblScope unit="volume">49</biblScope>, <biblScope unit="page">R1819</biblScope> (<date>1994</date>).</bibl>
+	<bibl><author>G. Bonnaud, D. Teychenné, and J.-L. Bobin</author>, <title level="j">Phys. Rev. E</title> <biblScope unit="volume">50</biblScope>,<biblScope unit="page">R36</biblScope> ( <date>1994</date>).</bibl>
+	<bibl><author>R. A. Cairns, D. Johnson, and R. Bingham</author>, <title level="j">Laser Part. Beams</title><biblScope unit="volume">13</biblScope> ,<biblScope unit="page">451</biblScope> ( <date>1995</date>).</bibl>
+	<bibl><author>D. Umstadter, J. Kim, E. Esarey, E. Dodd, and T. Neubert</author>, <title level="j">Phys.Rev .E</title> <biblScope unit="volume">51</biblScope> ,<biblScope unit="page">3484</biblScope> ( <date>1995</date>).</bibl>
+	<bibl><author>E. I. Kalinnikova and V. D. Levchenko</author>, <title level="j">Plasma Phys. Rep.</title> <biblScope unit="volume">34</biblScope>,<biblScope unit="page">290</biblScope> ( <date>2008</date>).</bibl>
+	<bibl><author>M. Deutsch, B. Meerson, and J. E. Golub</author>, <title level="j">Phys. Fluids B</title> <biblScope unit="volume">3</biblScope>, <biblScope unit="page">1773</biblScope>( <date>1991</date>).</bibl>
+	<bibl><author>F. Verluise, V. Laude, Z. Cheng, C. Spielmann, and P. Tournois</author>,<title level="j">Opt .Lett .</title><biblScope unit="volume">25</biblScope> ,<biblScope unit="page">575</biblScope> ( <date>2000</date>).</bibl>
+	<bibl>[52] <author>T. Nubbemeyer, M. Kaumanns, M. Ueffing, M. Gorjan, A. Alismail,H .Fattahi ,J .Brons ,O .Pronin ,H .G .Barros ,Z .Major ,T. Metzger, D. Sutter, andF . Krausz</author>, <title level="j">Opt. Lett.</title> <biblScope unit="volume">42</biblScope>, <biblScope unit="page">1381</biblScope>( <date>2017</date>) .</bibl>
+	<bibl><author>C. Jauregui, J. Limpert, and A. Tünnermann</author>, <title level="j">Nat. Photonics</title> <biblScope unit="volume">7</biblScope>,<biblScope unit="page">861</biblScope> ( <date>2013</date>).</bibl>
+	<bibl><author>P. Muggli, V. Yakimenko, M. Babzien, E. Kallos, and K. P. Kusche</author>,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">101</biblScope> ,<biblScope unit="page">054801</biblScope> ( <date>2008</date>).</bibl>
+	<bibl><author>E. Kallos, T. Katsouleas, W. D. Kimura, K. Kusche, P. Muggli,I .Pavlishin ,I .Pogorelsky ,D .Stolyarov ,and V .Yakimenko</author> ,<title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">100</biblScope>, <biblScope unit="page">074802</biblScope>( <date>2008</date> ).</bibl>
+	<bibl><author>A. Caldwell, K. Lotov, A. Pukhov, and F. Simon</author>, <title level="j">Nat. Phys.</title> <biblScope unit="volume">5</biblScope>,<biblScope unit="page">363</biblScope> ( <date>2009</date>).</bibl>
+	<bibl><author>A. Caldwell and K. V. Lotov, Phys.</author> Plasmas <biblScope unit="volume">18</biblScope>, <biblScope unit="page">103101</biblScope> (<date>2011</date>).</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

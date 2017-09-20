@@ -1,0 +1,31 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label> D.R. Nygren, et al., Phys. Today 31 (1978) 46.<lb/> </bibl>
+        <bibl><label>[2]</label> ALICE Collaboration, J. Instrum. 3 (08) (2008) S08002.<lb/> </bibl>
+        <bibl><label>[3]</label> S. Dørheim, J. Instrum. 7 (2012) C03011.<lb/> </bibl>
+        <bibl><label>[4]</label> R. Diener, LCTPC Collaboration, Phys. Procedia 37 (2012) 456.<lb/> </bibl>
+        <bibl><label>[5]</label> ALICE Collaboration, CERN-LHCC-2013-020, 2014.<lb/> </bibl>
+        <bibl><label>[6]</label> P. Gasik, J. Instrum. 9 (2013) C04035.<lb/> </bibl>
+        <bibl><label>[7]</label> F. Sauli, Nucl. Instrum. Methods A 386 (1997) 531.<lb/> </bibl>
+        <bibl><label>[8]</label> ALICE Collaboration, CERN-LHCC-2015-002/ALICE-TDR-106-ADD-1, 2014.<lb/> </bibl>
+        <bibl><label>[9]</label> M. Ball, et al., J. Instrum. 9 (2014) C04024.<lb/> </bibl>
+        <bibl><label>[10]</label> http://cern.ch/garfield.<lb/> </bibl>
+        <bibl><label>[11]</label> R. Veenhof, Nucl. Instrum. A 419 (1998) 726.<lb/> </bibl>
+        <bibl><label>[12]</label> http://cern.ch/neBEM.<lb/> </bibl>
+        <bibl><label>[13]</label> N. Majumdar, et al., Nucl. Instrum. Methods A 566 (2006) 489.<lb/> </bibl>
+        <bibl><label>[14]</label> S. Mukhopadhyay, et al., Eng. Anal. Bound. Elem. 30 (2006) 687.<lb/> </bibl>
+        <bibl><label>[15]</label> http://cern.ch/heed.<lb/> </bibl>
+        <bibl><label>[16]</label> I.B. Smirnov, Nucl. Instrum. Methods A 554 (2005) 474.<lb/> </bibl>
+        <bibl><label>[17]</label> http://cern.ch/magboltz.<lb/> </bibl>
+        <bibl><label>[18]</label> S.F. Biagi, Nucl. Instrum. Methods A 421 (1999) 234.<lb/> </bibl>
+        <bibl><label>[19]</label> S. Bachmann, et al., Nucl. Instrum. Methods A 438 (1999) 376.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

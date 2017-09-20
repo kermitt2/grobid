@@ -30,6 +30,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -43,7 +44,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
- * @author Damien, Patrice
+ * Web services consuming a file
  */
 @Singleton
 public class GrobidRestProcessFiles {
@@ -64,8 +65,7 @@ public class GrobidRestProcessFiles {
      *
      * @return a response object which contains a TEI representation of the header part
      */
-    public String processStatelessHeaderDocument(final InputStream inputStream,
-                                                          final boolean consolidate) {
+    public String processStatelessHeaderDocument(final InputStream inputStream, final boolean consolidate) {
         LOGGER.debug(methodLogIn());
         String retVal = null;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
@@ -93,29 +93,13 @@ public class GrobidRestProcessFiles {
     }
 
     /**
-     * Return the tei formatted to be displayed in html.
-     *
-     * @param tei the xml input.
-     * @return html formatted String.
-     * @throws SAXException
-     * @throws IOException
-     */
-    protected static String formatAsHTML(final String tei) throws SAXException, IOException {
-        XMLReader xmlr = XMLReaderFactory.createXMLReader();
-        Xml2HtmlParser parser = new Xml2HtmlParser();
-        xmlr.setContentHandler(parser);
-        xmlr.setErrorHandler(parser);
-        InputStream xmlStream = new ByteArrayInputStream(tei.getBytes("UTF-8"));
-        xmlr.parse(new InputSource(xmlStream));
-        return parser.getHTML();
-    }
-
-    /**
      * Uploads the origin document which shall be extracted into TEI.
      *
      * @param inputStream the data of origin document
-     * @param consolidate the consolidation option allows GROBID to exploit Crossref
-     *                    web services for improving header information
+     * @param consolidateHeader the consolidation option allows GROBID to exploit Crossref
+     *                    for improving header information
+     * @param consolidateCitations the consolidation option allows GROBID to exploit Crossref
+     *                    for improving citations information
      * @param startPage   give the starting page to consider in case of segmentation of the
      *                    PDF, -1 for the first page (default)
      * @param endPage     give the end page to consider in case of segmentation of the
@@ -126,7 +110,8 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public String processFulltextDocument(final InputStream inputStream,
-                                            final boolean consolidate,
+                                            final boolean consolidateHeader,
+                                            final boolean consolidateCitations,
                                             final int startPage,
                                             final int endPage,
                                             final boolean generateIDs,
@@ -148,8 +133,8 @@ public class GrobidRestProcessFiles {
                 engine = Engine.getEngine(isparallelExec);
                 GrobidAnalysisConfig config =
                         GrobidAnalysisConfig.builder()
-                                .consolidateHeader(consolidate)
-                                .consolidateCitations(false)
+                                .consolidateHeader(consolidateHeader)
+                                .consolidateCitations(consolidateCitations)
                                 .startPage(startPage)
                                 .endPage(endPage)
                                 .generateTeiIds(generateIDs)
@@ -174,8 +159,10 @@ public class GrobidRestProcessFiles {
      * archive.
      *
      * @param inputStream the data of origin document
-     * @param consolidate the consolidation option allows GROBID to exploit Crossref
-     *                    web services for improving header information
+     * @param consolidateHeader the consolidation option allows GROBID to exploit Crossref
+     *                    for improving header information
+     * @param consolidateCitations the consolidation option allows GROBID to exploit Crossref
+     *                    for improving citations information
      * @param startPage   give the starting page to consider in case of segmentation of the
      *                    PDF, -1 for the first page (default)
      * @param endPage     give the end page to consider in case of segmentation of the
@@ -186,7 +173,8 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
-                                                                 final boolean consolidate,
+                                                                 final boolean consolidateHeader,
+                                                                 final boolean consolidateCitations,
                                                                  final int startPage,
                                                                  final int endPage,
                                                                  final boolean generateIDs) throws Exception {
@@ -210,8 +198,8 @@ public class GrobidRestProcessFiles {
                 engine = Engine.getEngine(isparallelExec);
                 GrobidAnalysisConfig config =
                         GrobidAnalysisConfig.builder()
-                                .consolidateHeader(consolidate)
-                                .consolidateCitations(false)
+                                .consolidateHeader(consolidateHeader)
+                                .consolidateCitations(consolidateCitations)
                                 .startPage(startPage)
                                 .endPage(endPage)
                                 .generateTeiIds(generateIDs)
@@ -352,7 +340,12 @@ public class GrobidRestProcessFiles {
                 if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
-                    response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                    //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                    response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
                 }
             }
         } finally {
@@ -407,7 +400,12 @@ public class GrobidRestProcessFiles {
                 if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
-                    response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                    //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                    response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
                 }
             }
         } finally {
@@ -445,7 +443,7 @@ public class GrobidRestProcessFiles {
             } else {
                 // starts conversion process
                 engine = Engine.getEngine(isparallelExec);
-                List<BibDataSet> results;
+                List<BibDataSet> results = null;
                 if (isparallelExec) {
                     results = engine.processReferences(originFile, consolidate);
                     GrobidPoolingFactory.returnEngine(engine);
@@ -479,7 +477,12 @@ public class GrobidRestProcessFiles {
                 if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
-                    response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                    //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                    response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
                 }
             }
         } finally {
@@ -502,6 +505,8 @@ public class GrobidRestProcessFiles {
      */
     public Response processPDFAnnotation(final InputStream inputStream,
                                                 final String fileName,
+                                                final boolean consolidateHeader,
+                                                final boolean consolidateCitations,
                                                 final GrobidRestUtils.Annotation type) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response;
@@ -516,7 +521,7 @@ public class GrobidRestProcessFiles {
             if (originFile == null) {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
             } else {
-                out = annotate(originFile, isParallelExec, type, engine);
+                out = annotate(originFile, isParallelExec, type, engine, consolidateHeader, consolidateCitations);
 
                 if (out != null) {
                     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -525,10 +530,9 @@ public class GrobidRestProcessFiles {
                             .ok()
                             .type("application/pdf")
                             .entity(outputStream.toByteArray())
-                            .header("Content-Disposition", "attachment; filename=\"" + fileName
-                                    //.replace(".pdf", ".annotated.pdf")
-                                    //.replace(".PDF", ".annotated.PDF") 
-                                    + "\"")
+                            .header("Content-Disposition", "attachment; filename=\"" + fileName + "\"")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
                             .build();
                 } else {
                     response = Response.status(Status.NO_CONTENT).build();
@@ -536,7 +540,13 @@ public class GrobidRestProcessFiles {
             }
         } finally {
             IOUtilities.removeTempFile(originFile);
-            IOUtils.closeQuietly(out);
+            //IOUtils.closeQuietly(out);
+            try {
+                out.close();
+            } catch(IOException e) {
+                LOGGER.error("An unexpected exception occurs. ", e);
+                response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+            }
 
             if (isParallelExec && engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
@@ -554,7 +564,9 @@ public class GrobidRestProcessFiles {
      * @param inputStream the data of origin PDF
      * @return a response object containing the JSON annotations
      */
-    public Response processPDFReferenceAnnotation(final InputStream inputStream) throws Exception {
+    public Response processPDFReferenceAnnotation(final InputStream inputStream,
+                                                final boolean consolidateHeader,
+                                                final boolean consolidateCitations) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         boolean isparallelExec = GrobidServiceProperties.isParallelExec();
@@ -567,6 +579,8 @@ public class GrobidRestProcessFiles {
             elementWithCoords.add("biblStruct");
             GrobidAnalysisConfig config = new GrobidAnalysisConfig
                     .GrobidAnalysisConfigBuilder()
+                    .generateTeiCoordinates(elementWithCoords)
+                    .consolidateCitations(consolidateCitations)
                     .generateTeiCoordinates(elementWithCoords)
                     .build();
 
@@ -595,8 +609,11 @@ public class GrobidRestProcessFiles {
                 if (json != null) {
                     response = Response
                             .ok()
-                            .type("application/json")
+                            //.type("application/json")
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
                             .entity(json)
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
                             .build();
                 } else {
                     response = Response.status(Status.NO_CONTENT).build();
@@ -654,7 +671,12 @@ public class GrobidRestProcessFiles {
                 if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
-                    response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_JSON).build();
+                    //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_JSON).build();
+                    response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
+                            .header("Access-Control-Allow-Origin", "*")
+                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
                 }
             }
         } finally {
@@ -676,7 +698,9 @@ public class GrobidRestProcessFiles {
     }
 
     protected PDDocument annotate(File originFile, boolean isparallelExec,
-                                       final GrobidRestUtils.Annotation type, Engine engine) throws Exception {
+                                       final GrobidRestUtils.Annotation type, Engine engine,
+                                       final boolean consolidateHeader,
+                                       final boolean consolidateCitations) throws Exception {
         // starts conversion process
         PDDocument outputDocument = null;
         // list of TEI elements that should come with coordinates
@@ -686,15 +710,19 @@ public class GrobidRestProcessFiles {
 
         GrobidAnalysisConfig config = new GrobidAnalysisConfig
                 .GrobidAnalysisConfigBuilder()
+                .consolidateHeader(consolidateHeader)
+                .consolidateCitations(consolidateCitations)
                 .generateTeiCoordinates(elementWithCoords)
                 .build();
 
         Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-
-        try (PDDocument document = PDDocument.load(originFile)) {
+        //try
+        {
+            PDDocument document = PDDocument.load(originFile);
             //If no pages, skip the document
             if (document.getNumberOfPages() > 0) {
-                DocumentSource documentSource = DocumentSource.fromPdf(originFile);
+                //DocumentSource documentSource = DocumentSource.fromPdf(originFile);
+                DocumentSource documentSource = teiDoc.getDocumentSource();
                 if (isparallelExec) {
                     outputDocument = dispatchProcessing(type, document, documentSource, teiDoc);
                     GrobidPoolingFactory.returnEngine(engine);

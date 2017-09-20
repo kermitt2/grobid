@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>S. Y. Cheng and S. T. Yau</author>. <title level="a">On the existence of a complete Kähler metric on non-compactcomplex manifolds and the regularity of Fefferman &apos;sequation</title> .<title level="j">Comm .Pure Appl .Math.</title> ,<biblScope unit="volume">33</biblScope>( <biblScope unit="issue">4</biblScope>):<biblScope unit="page">507-544</biblScope>,<date>1980</date>.</bibl>
+	<bibl><author>C. Fefferman and C. R. Graham</author>. <title level="a">Q-curvature and Poincaré metrics</title>. <title level="j">Math. Res. Lett.</title>, <biblScope unit="volume">9</biblScope>(<biblScope unit="issue">2-3</biblScope>):<biblScope unit="page">139-151</biblScope>,<date>2002</date> .</bibl>
+	<bibl><author>C. R. Graham</author>. <title level="a">Volume and area renormalizations for conformally compact Einstein metrics</title>.In <title level="m">The Proceedings of the 19th Winter School &quot; Geometryand Physics</title> &quot;( <pubPlace>Srní</pubPlace>,<date>1999</date> ),number<biblScope unit="volume">63</biblScope> , pages<biblScope unit="page">31 - 42</biblScope>,<date>2000</date>.</bibl>
+	<bibl><author>C. R. Graham and M. Zworski</author>. <title level="a">Scattering matrix in conformal geometry</title>. <title level="j">Invent. Math.</title>,<biblScope unit="volume">152</biblScope> (<biblScope unit="issue">1</biblScope>):<biblScope unit="page">89-118</biblScope>,<date>2003</date> .</bibl>
+	<bibl><author>H. Grauert and R. Remmert</author>. <title level="a">Plurisubharmonische Funktionen in komplexen Räumen</title>.<title level="j">Math .Z .</title>,<biblScope unit="volume">65</biblScope> :<biblScope unit="page">175-194</biblScope>,<date>1956</date> .</bibl>
+	<bibl><author>M. Henningson and K. Skenderis</author>. <title level="a">The holographic Weyl anomaly</title>. <title level="j">J. High Energy Phys.</title>,( <biblScope unit="issue">7</biblScope>):Paper<biblScope unit="page">23</biblScope> ,<biblScope unit="page">12 pp</biblScope> .<date>1998</date> .</bibl>
+	<bibl><author>K. Hirachi</author>. <title level="a">Q-prime curvature on CR manifolds</title>. <title level="j">Differential Geom. Appl.</title>, <biblScope unit="volume">33</biblScope>(<note>suppl</note>.):<biblScope unit="page">213-245</biblScope>,<date>2014</date> .</bibl>
+	<bibl><author>K. Hirachi, T. Marugame, and Y. Matsumoto</author>. <title level="a">Variation of total Q-prime curvature onCR manifolds</title> .<title level="j">Adv .Math .</title>,<biblScope unit="volume">306</biblScope> :<biblScope unit="page">1333-1376</biblScope>,<date>2017</date> .</bibl>
+	<bibl><author>M. Schneider</author>. <title level="a">¨ ubereine Vermutung von Hartshorne</title> .<title level="j">Math .Ann .</title>,<biblScope unit="volume">201</biblScope> :<biblScope unit="page">221-229</biblScope>,<date>1973</date> .</bibl>
+	<bibl><author>N. Seshadri</author>. <title level="a">Volume renormalization for complete Einstein-Kähler metrics</title>. <title level="j">Differen-tialGeom .Appl .</title>,<biblScope unit="volume">25</biblScope> (<biblScope unit="issue">4</biblScope>):<biblScope unit="page">356-379</biblScope>,<date>2007</date> .</bibl>
+	<bibl><author>Y. Takeuchi</author>. <title level="m">Ambient constructions for Sasakian η-Einstein manifolds</title>. <idno type="arxiv">arXiv:1706.03164</idno>.</bibl>
+	<bibl><author>C. van Coevering</author>. <title level="a">Kähler-Einstein metrics on strictly pseudoconvex domains</title>. <title level="j">Ann. GlobalAnal .Geom .</title>,<biblScope unit="volume">42</biblScope> (<biblScope unit="issue">3</biblScope>):<biblScope unit="page">287-315</biblScope>,<date>2012</date> .</bibl>
+	<bibl><author>P. Yang, S.-Y. A. Chang, and J. Qing</author>. <title level="a">On the renormalized volumes for conformally compacteinstein manifolds</title> .<title level="j">J .Math .Sci .</title>( <pubPlace>N.Y.</pubPlace>),<biblScope unit="page">149</biblScope> (<biblScope unit="issue">6</biblScope>):<biblScope unit="page">1755-1769</biblScope>,<date>2008</date> .</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

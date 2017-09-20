@@ -46,7 +46,7 @@ public class TestCitationPatentParser extends EngineTest {
 			throw new GrobidException("Cannot start test, because test resource folder is not correctly set.");
 		}
 
-		String text = FileUtils.readFileToString(textFile);	
+		String text = FileUtils.readFileToString(textFile, "UTF-8");	
 		
 		List<BibDataSet> nplResults = new ArrayList<BibDataSet>();
 		List<PatentItem> patentResults = new ArrayList<PatentItem>();
@@ -59,7 +59,7 @@ public class TestCitationPatentParser extends EngineTest {
 		if (!textFile.exists()) {
 			throw new GrobidException("Cannot start test, because test resource folder is not correctly set.");
 		}
-		text = FileUtils.readFileToString(textFile);	
+		text = FileUtils.readFileToString(textFile, "UTF-8");	
 		
 		nplResults = new ArrayList<BibDataSet>();
 		patentResults = new ArrayList<PatentItem>();

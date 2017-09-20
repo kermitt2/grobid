@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Jamal, S., Kara, A.H., Bokhari, A.H.</author>: <title level="a">Symmetries, conservation laws, reductions, and exact solutions forthe Klein -Gordonequation in de Sitter spacetimes</title> .<title level="j">Can .J .Phys .</title><biblScope unit="volume">90</biblScope> ,<biblScope unit="page">667</biblScope> ( <date>2012</date>)</bibl>
+	<bibl><author>Paliathanasis, A., Tsamparlis, M., Mustafa, M.T.</author>: <title level="a">Symmetry analysis of the Klein-Gordon equation inBianchi I spacetimes</title> .<title level="j">Int .J .Geom .Methods Mod .Phys .</title><biblScope unit="volume">12</biblScope> ,<biblScope unit="page">1550033</biblScope> ( <date>2015</date>)</bibl>
+	<bibl><author>Jamal, S., Shabbir, G.</author>: <title level="a">Geometric properties of the Kantowski-Sachs and Bianchi-type Killing algebra inrelation to a Klein -Gordonequation</title> .<title level="j">Eur .Phys .J .Plus</title> <biblScope unit="volume">132</biblScope> (<biblScope unit="issue">70</biblScope>),<biblScope unit="page">1</biblScope> ( <date>2017</date>)S .Jamal</bibl>
+	<bibl><author>Jamal, S.</author>: <title level="a">Potentials and point symmetries of Klein-Gordon equations in space-time homogenous Gödel-typemetrics</title> .<title level="j">Int .J .Geom .Methods Mod .Phys .</title><biblScope unit="volume">0</biblScope> ,<biblScope unit="page">1750070</biblScope> ( <date>2017</date>)</bibl>
+	<bibl><author>Jamal, S., Paliathanasis, A.</author>: <title level="a">Group invariant transformations for the Klein-Gordon equation in three dimensionalflat spaces</title> .<title level="j">J .Geom .Phys .</title><biblScope unit="volume">117</biblScope> ,<biblScope unit="page">50 -59</biblScope>( <date>2017</date>).( <note>Inpress</note> )</bibl>
+	<bibl><author>Bozhkov, Y., Freire, I.L.</author>: <title level="a">Special conformal groups of a Riemannian manifold and Lie point symmetries ofthe nonlinear Poisson equation</title> .<title level="j">J .Differ .Equ .</title><biblScope unit="volume">249</biblScope> ,<biblScope unit="page">872</biblScope> ( <date>2010</date>)</bibl>
+	<bibl><author>Yagdijian, K., Galstian, A.</author>: <title level="a">Fundamental solutions for the Klein-Gordon equation in de Sitter space-time</title>.<title level="j">Commun .Math .Phys .</title><biblScope unit="volume">285</biblScope> ,<biblScope unit="page">293</biblScope> ( <date>2009</date>)</bibl>
+	<bibl><author>de Sitter, W.</author>: <title level="a">On the curvature of space</title>. <title level="j">Proc. Kon. Ned. Akad. Wet.</title> <biblScope unit="volume">20</biblScope>, <biblScope unit="page">229</biblScope> (<date>1917</date>)</bibl>
+	<bibl><author>Straumann, N.</author>: <title level="a">On the cosmological constant problems and the astronomical evidence for a homoge-neousenergy density with negative pressure</title> .In :<editor>Duplantier ,B .,Rivasseau ,V .</editor>( eds.)<title level="m">Vacuum energy ,renormalization</title> .<publisher>Birkhauser</publisher>, <pubPlace>Basel</pubPlace>( <date>2003</date> )</bibl>
+	<bibl><author>Moschella, U.</author>: <title level="a">The de Sitter and anti-de Sitter sightseeing tour</title>. <title level="j">Sémin. Poincaré</title> <biblScope unit="volume">1</biblScope>, <biblScope unit="page">1</biblScope> (<date>2005</date>)</bibl>
+	<bibl>11.<author>Patera ,J .,Winternitz ,P .,Zassenhaus ,H .</author>:<title level="a">Quantum numbers for particles in de Sitter space</title> .<title level="j">J .Math .Phys .</title><biblScope unit="volume">17</biblScope>, <biblScope unit="page">717</biblScope>( <date>1976</date> )</bibl>
+	<bibl><author>Maartens, R., Maharaj, S.D., Tupper, B.O.J.</author>: <title level="a">General solution and classification of conformal motions instatic spherical spacetimes</title> .<title level="j">Class .Quantum Grav .</title><biblScope unit="volume">12</biblScope> ,<biblScope unit="page">2577</biblScope> ( <date>1995</date>)</bibl>
+	<bibl><author>Maartens, R., Maharaj, S.D., Tupper, B.O.J.</author>: <title level="a">Conformal motions in static spherical spacetimes</title>. <title level="j">Class. QuantumGrav .</title><biblScope unit="volume">13</biblScope> ,<biblScope unit="page">317</biblScope> ( <date>1996</date>)</bibl>
+	<bibl><author>Moopanar, S., Maharaj, S.D.</author>: <title level="a">Conformal symmetries of spherical spacetimes</title>. <title level="j">Int. J. Theor. Phys.</title> <biblScope unit="volume">34</biblScope>, <biblScope unit="page">2285</biblScope>( <date>1995</date>)</bibl>
+	<bibl><author>Manjonjo, A.M., Maharaj, S.D., Moopanar, S.</author>: <title level="a">Conformal vectors and stellar models</title>. <title level="j">Eur. Phys. J. Plus</title><biblScope unit="volume">132</biblScope> ,<biblScope unit="page">62</biblScope> ( <date>2017</date>)</bibl>
+	<bibl><author>Einstein, A.</author>: <title level="a">Kosmologische Betrachtungen zur allgemeinen Relativittstheorie</title> <title level="m">Sitzungsber, Preuβ. Akad.Wiss .</title>,<pubPlace>Berlin</pubPlace> ( <date>1917</date>)</bibl>
+	<bibl><author>Møller, C.</author>: <title level="m">The Theory of Relativity</title>. <publisher>Clarendon Press</publisher>, <pubPlace>Oxford</pubPlace> (<date>1952</date>)</bibl>
+	<bibl><author>Noether, E.</author>: <title level="a">Invariante Variationsprobleme</title>, <title level="j">Nachrichten der Akademie der Wissenschaften Mathematisch-PhysikalischeKlasse</title> ,<biblScope unit="volume">2</biblScope> ,<pubPlace>Göttingen</pubPlace> ( <date>1918</date>).( <note>Englishtranslation in</note> <title level="j">Transport Theory and StatisticalPhysics</title> <biblScope unit="volume">1</biblScope> ( <biblScope unit="issue">3</biblScope>)(<date>1971</date> ))</bibl>
+	<bibl><author>Katzin, G.H., Levine, J., Davis, W.R.</author>: <title level="a">Curvature collineations: a fundamental symmetry property of thespace -timesof general relativity defined by the vanishing Lie derivative of the Riemann curvature tensor</title> .<title level="j">J. Math. Phys.</title> <biblScope unit="volume">10</biblScope>, <biblScope unit="page">617</biblScope>( <date>1969</date> )</bibl>
+	<bibl><author>Paliathanasis, A., Tsamparlis, M.</author>: <title level="a">The geometric origin of Lie point symmetries of the Schrödinger andthe Klein -Gordonequations</title> .<title level="j">Int .J .Geom .Methods Mod .Phys .</title><biblScope unit="volume">11</biblScope> ,<biblScope unit="page">14500376</biblScope> ( <date>2014</date>)</bibl>
+	<bibl><author>Tsamparlis, M., Paliathanasis, A.</author>: <title level="a">The geometric nature of Lie and Noether symmetries</title>. <title level="j">Gen. Relativ. Gravit.</title><biblScope unit="volume">43</biblScope> ,<biblScope unit="page">1861</biblScope> ( <date>2011</date>)</bibl>
+	<bibl><author>Olver, P.</author>: <title level="m">Application of Lie Groups to Differential Equations</title>. <publisher>Springer</publisher>, <pubPlace>New York</pubPlace> (<date>1993</date>)</bibl>
+	<bibl><author>Stephani, H.</author>: <title level="m">Differential Equations: Their Solution Using Symmetries</title>. <publisher>Cambridge University Press</publisher>, <pubPlace>Cambridge</pubPlace>( <date>1989</date>)</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

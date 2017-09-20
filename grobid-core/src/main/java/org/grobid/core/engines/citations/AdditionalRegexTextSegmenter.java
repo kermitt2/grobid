@@ -234,7 +234,7 @@ public class AdditionalRegexTextSegmenter {
     }
 
     public static void main(String[] args) throws IOException {
-        String t = FileUtils.readFileToString(new File("/tmp/text.txt"));
+        String t = FileUtils.readFileToString(new File("/tmp/text.txt"), "UTF-8");
         System.out.println(t.length());
         Pattern p = Pattern.compile("(?s).{0,10}1\\. .{10,100}\\n[\\s0]*2\\. .*");
         p.matcher(t).find();

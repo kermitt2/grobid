@@ -1,0 +1,60 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>[1]</label> Reid, D. T. et al. Roadmap on ultrafast optics. Journal<lb/> of Optics 18, 093006 (2016).<lb/> </bibl>
+        <bibl><label>[2]</label> Trebino, R. Frequency-resolved optical gating: the mea-<lb/>surement of ultrashort laser pulses (Springer Science &amp;<lb/> Business Media, 2012).<lb/> </bibl>
+        <bibl><label>[3]</label> Broaddus, D. H., Foster, M. A., Kuzucu, O., Koch, K. W.<lb/> &amp; Gaeta, A. L. Ultrafast, single-shot phase and ampli-<lb/>tude measurement via a temporal imaging approach. In<lb/> Conference on Lasers and Electro-Optics, CMK6 (Opti-<lb/>cal Society of America, 2010).<lb/> </bibl>
+        <bibl><label>[4]</label> Bowlan, P. et al. Crossed-beam spectral interferometry:<lb/> a simple, high-spectral-resolution method for completely<lb/> characterizing complex ultrashort pulses in real time. Op-<lb/>tics express 14, 11892-11900 (2006).<lb/> </bibl>
+        <bibl><label>[5]</label> Alonso, B. et al. Spatiotemporal amplitude-and-phase re-<lb/>construction by fourier-transform of interference spectra<lb/> of high-complex-beams. JOSA B 27, 933-940 (2010).<lb/> </bibl>
+        <bibl><label>[6]</label> Rhodes, M., Steinmeyer, G. &amp; Trebino, R. Standards for<lb/> ultrashort-laser-pulse-measurement techniques and their<lb/> consideration for self-referenced spectral interferometry.<lb/> Applied optics 53, D1-D11 (2014).<lb/> </bibl>
+        <bibl><label>[7]</label> Wetzel, B. et al. Real-time full bandwidth measurement<lb/> of spectral noise in supercontinuum generation. Scientific<lb/> reports 2 (2012).<lb/> </bibl>
+        <bibl><label>[8]</label> Wong, T. C., Rhodes, M. &amp; Trebino, R. Single-shot mea-<lb/>surement of the complete temporal intensity and phase<lb/> of supercontinuum. Optica 1, 119-124 (2014).<lb/> </bibl>
+        <bibl><label>[9]</label> Solli, D. R., Ropers, C., Koonath, P. &amp; Jalali, B. Optical<lb/> rogue waves. Nature 450, 1054-1057 (2007).<lb/> </bibl>
+        <bibl><label>[10]</label> Suret, P. et al. Single-shot observation of optical rogue<lb/> waves in integrable turbulence using time microscopy.<lb/> Nature communications 7 (2016).<lb/> </bibl>
+        <bibl><label>[11]</label> Närhi, M. et al. Real-time measurements of spontaneous<lb/> breathers and rogue wave events in optical fibre modula-<lb/>tion instability. Nature Communications 7 (2016).<lb/> </bibl>
+        <bibl><label>[12]</label> Herink, G., Kurtz, F., Jalali, B., Solli, D. R. &amp; Ropers,<lb/> C. Real-time spectral interferometry probes the internal<lb/> dynamics of femtosecond soliton molecules. Science 356,<lb/> 50-54 (2017).<lb/> </bibl>
+        <bibl><label>[13]</label> Ryczkowski, P., Närhi, M., Billet, C., Genty, G. &amp; Dud-<lb/>ley, J. Real-time measurements of dissipative solitons in a<lb/> mode-locked fiber laser. arXiv preprint arXiv:1706.08571<lb/> (2017).<lb/> </bibl>
+        <bibl><label>[14]</label> Picozzi, A. Towards a nonequilibrium thermodynamic<lb/> description of incoherent nonlinear optics. Opt. Express<lb/> 15, 9063 (2007).<lb/> </bibl>
+        <bibl><label>[15]</label> Turitsyna, E. G. et al. The laminar-turbulent transition<lb/> in a fibre laser. Nat. Photon. 7, 783-786 (2013).<lb/> </bibl>
+        <bibl><label>[16]</label> Kolner, B. H. &amp; Nazarathy, M. Temporal imaging with<lb/> a time lens. Optics letters 14, 630-632 (1989).<lb/> </bibl>
+        <bibl><label>[17]</label> Foster, M. A. et al. Silicon-chip-based ultrafast optical<lb/> oscilloscope. Nature 456, 81-84 (2008).<lb/> </bibl>
+        <bibl><label>[18]</label> Bennett, C. &amp; Kolner, B. Upconversion time microscope<lb/> demonstrating 103× magnification of femtosecond wave-<lb/>forms. Optics letters 24, 783-785 (1999).<lb/> </bibl>
+        <bibl><label>[19]</label> Kauffman, M., Banyai, W., Godil, A. &amp; Bloom, D. Time-<lb/>to-frequency converter for measuring picosecond optical<lb/> pulses. Applied physics letters 64, 270-272 (1994).<lb/> </bibl>
+        <bibl><label>[20]</label> Fridman, M. &amp; Klein, A. Measuring the dynamics of<lb/> rogue waves with unique time-lenses (conference presen-<lb/>tation). In SPIE LASE, 100890J-100890J (International<lb/> Society for Optics and Photonics, 2017).<lb/> </bibl>
+        <bibl><label>[21]</label> Dorrer, C. Single-shot measurement of the electric field<lb/> of optical waveforms by use of time magnification and<lb/> heterodyning. Optics letters 31, 540-542 (2006).<lb/> </bibl>
+        <bibl><label>[22]</label> Dorrer, C. Electric field measurement of optical wave-<lb/>forms (2008). URL https://www.google.com/patents/<lb/> US7411683. US Patent 7,411,683.<lb/> </bibl>
+        <bibl><label>[23]</label> Kosik, E. M., Radunsky, A. S., Walmsley, I. A. &amp; Dorrer,<lb/> C. Interferometric technique for measuring broadband<lb/> ultrashort pulses at the sampling limit. Optics letters<lb/> 30, 326-328 (2005).<lb/> </bibl>
+        <bibl><label>[24]</label> Wyatt, A. S., Walmsley, I. A., Stibenz, G. &amp; Steinmeyer,<lb/> G. Sub-10 fs pulse characterization using spatially en-<lb/>coded arrangement for spectral phase interferometry for<lb/> direct electric field reconstruction. Opt. Lett. 31, 1914-<lb/>1916 (2006). URL http://ol.osa.org/abstract.cfm?<lb/> URI=ol-31-12-1914.<lb/> </bibl>
+        <bibl><label>[25]</label> Bertola, M. &amp; Tovbis, A. Universality for the fo-<lb/>cusing nonlinear schrödinger equation at the gradient<lb/> catastrophe point: Rational breathers and poles of the<lb/> tritronquée solution to painlevé i. Communications on<lb/> Pure and Applied Mathematics 66, 678-752 (2013). URL<lb/> http://dx.doi.org/10.1002/cpa.21445.<lb/> </bibl>
+        <bibl><label>[26]</label> Bennett, C. V. Parametric temporal imaging and aber-<lb/>ration analysis. Ph.D. thesis, University of California<lb/> (2000).<lb/> </bibl>
+        <bibl><label>[27]</label> Bennett, C. V. &amp; Kolner, B. H. Aberrations in temporal<lb/> imaging. IEEE journal of quantum electronics 37, 20-32<lb/> (2001).<lb/> </bibl>
+        <bibl><label>[28]</label> Salem, R., Foster, M. A. &amp; Gaeta, A. L. Application<lb/> of space-time duality to ultrahigh-speed optical signal<lb/> processing. Advances in Optics and Photonics 5, 274-<lb/>317 (2013).<lb/> </bibl>
+        <bibl><label>[29]</label> Kreis, T. Digital holographic interference-phase measure-<lb/>ment using the fourier-transform method. JOSA A 3,<lb/> 847-855 (1986).<lb/> </bibl>
+        <bibl><label>[30]</label> Agafontsev, D. &amp; Zakharov, V. E. Integrable turbulence<lb/> and formation of rogue waves. Nonlinearity 28, 2791<lb/> (2015).<lb/> </bibl>
+        <bibl><label>[31]</label> Walczak, P., Randoux, S. &amp; Suret, P. Optical rogue<lb/> waves in integrable turbulence. Phys. Rev. Lett. 114,<lb/> 143903 (2015).<lb/> </bibl>
+        <bibl><label>[32]</label> Soto-Crespo, J. M., Devine, N. &amp; Akhmediev, N. In-<lb/>tegrable turbulence and rogue waves: Breathers or soli-<lb/>tons? Phys. Rev. Lett. 116, 103901 (2016). URL http://<lb/> link.aps.org/doi/10.1103/PhysRevLett.116.103901.<lb/> </bibl>
+        <bibl><label>[33]</label> Randoux, S., Gustave, F., Suret, P. &amp; El, G. Optical<lb/> random riemann waves in integrable turbulence. Physical<lb/> Review Letters 118, 233901 (2017).<lb/> </bibl>
+        <bibl><label>[34]</label> Zakharov, V. E. Turbulence in integrable systems. Stud-<lb/>ies in Applied Mathematics 122, 219-234 (2009).<lb/> </bibl>
+        <bibl><label>[35]</label> Tikan, A. et al. Universal peregrine soliton structure<lb/> in nonlinear pulse compression in optical fiber. arXiv<lb/> preprint arXiv:1701.08527 (2017).<lb/> </bibl>
+        <bibl><label>[36]</label> Kibler, B. et al. The peregrine soliton in nonlinear fibre<lb/> optics. Nature Physics 6, 790-795 (2010).<lb/> </bibl>
+        <bibl><label>[37]</label> Tsang, M., Psaltis, D. &amp; Omenetto, F. G. Reverse prop-<lb/>agation of femtosecond pulses in optical fibers. Optics<lb/> letters 28, 1873-1875 (2003).<lb/> </bibl>
+        <bibl><label>[38]</label> Barsi, C., Wan, W. &amp; Fleischer, J. W. Imaging through<lb/> nonlinear media using digital holography. Nature Pho-<lb/>tonics 3, 211-215 (2009).<lb/> </bibl>
+        <bibl><label>[39]</label> Yang, J. Nonlinear waves in integrable and nonintegrable<lb/> systems, vol. 16 (SIAM, 2010).<lb/> </bibl>
+        <bibl><label>[40]</label> Agrawal, G. P. Nonlinear Fiber optics. Optics and Pho-<lb/>tonics (Academic Press, 2001), third edition edn.<lb/> </bibl>
+        <bibl><label>[41]</label> Schnars, U. &amp; Jueptner, W. Digital holography: digital<lb/> hologram recording, numerical reconstruction, and related<lb/> techniques (Springer Science &amp; Business Media, 2005).<lb/> </bibl>
+        <bibl><label>[42]</label> Backus, S., Durfee III, C. G., Murnane, M. M. &amp;<lb/> Kapteyn, H. C. High power ultrafast lasers. Review of<lb/> scientific instruments 69, 1207-1223 (1998).<lb/> </bibl>
+        <bibl><label>[43]</label> Dorrer, C. et al. Single-shot real-time characterization<lb/> of chirped-pulse amplification systems by spectral phase<lb/> interferometry for direct electric-field reconstruction. Op-<lb/>tics letters 24, 1644-1646 (1999).<lb/> </bibl>
+        <bibl><label>[44]</label> Mahjoubfar, A. et al. Time stretch and its applications.<lb/> Nature Photonics 11, 341-351 (2017).<lb/> </bibl>
+        <bibl><label>[45]</label> Dudley, J. M., Dias, F., Erkintalo, M. &amp; Genty, G. Insta-<lb/>bilities, breathers and rogue waves in optics. Nat. Photon.<lb/> 8, 755 (2014).<lb/> </bibl>
+        <bibl><label>[46]</label> Toenger, S. et al. Emergent rogue wave structures and<lb/> statistics in spontaneous modulation instability. Sci. Rep.<lb/> 5 (2015).<lb/> </bibl>
+        <bibl><label>[47]</label> Akhmediev, N., Ankiewicz, A. &amp; Taki, M. Waves that<lb/> appear from nowhere and disappear without a trace.<lb/> Physics Letters A 373, 675 -678 (2009).<lb/> </bibl>
+        <bibl><label>[48]</label> Akhmediev, N., Soto-Crespo, J. &amp; Ankiewicz, A. Ex-<lb/>treme waves that appear from nowhere: On the nature of<lb/> rogue waves. Physics Letters A 373, 2137 -2145 (2009).<lb/> </bibl>
+        <bibl><label>[49]</label> Mussot, A. et al. Observation of extreme temporal events<lb/> in cw-pumped supercontinuum. Opt. Express 17, 17010-<lb/>17015 (2009).<lb/> </bibl>
+        <bibl><label>[50]</label> Picozzi, A. et al. Optical wave turbulence: Towards a uni-<lb/>fied nonequilibrium thermodynamic formulation of sta-<lb/>tistical nonlinear optics. Physics Reports 542, 1 -132<lb/> (2014).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

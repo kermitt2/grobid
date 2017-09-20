@@ -5,6 +5,7 @@ import org.grobid.core.data.Date;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorDate;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.lang.Language;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,13 +33,10 @@ public class DateParser extends AbstractParser {
 
         List<String> dateBlocks = new ArrayList<String>();
         try {
-            //StringTokenizer st = new StringTokenizer(input, "([" + TextUtilities.punctuations, true);
-			List<String> tokenizations = analyzer.tokenize(input);
-            //if (st.countTokens() == 0)
+            // force English language for the tokenization only
+			List<String> tokenizations = analyzer.tokenize(input, new Language("en", 1.0));
 			if (tokenizations.size() == 0) 
                 return null;
-            //while (st.hasMoreTokens()) {
-            //    String tok = st.nextToken();
 			for(String tok : tokenizations) {
                 if (!tok.equals(" ") && !tok.equals("\n")) {
                     // parano final sanitisation
@@ -46,14 +44,8 @@ public class DateParser extends AbstractParser {
                     dateBlocks.add(tok + " <date>");
                 }
             }
-//          dateBlocks.add("\n");
 
             String headerDate = FeaturesVectorDate.addFeaturesDate(dateBlocks);
-
-            // add context
-//            st = new StringTokenizer(headerDate, "\n");
-            //TODO:
-//            String res = getTaggerResult(st, "<date>");
             String res = label(headerDate);
             // extract results from the processed file
 
@@ -80,113 +72,96 @@ public class DateParser extends AbstractParser {
                 int i = 0;
                 String s1 = null;
                 String s2 = null;
-                //String s3 = null;
-                //List<String> localFeatures = new ArrayList<String>();
                 while (st3.hasMoreTokens()) {
                     String s = st3.nextToken().trim();
                     if (i == 0) {
                         s2 = s; // string
-                    } /*else if (i == ll - 2) {
-                        s3 = s; // pre-label, in this case it should always be <date>
-                    } */ 
-					else if (i == ll - 1) {
+                    } else if (i == ll - 1) {
                         s1 = s; // label
                     }
-                    /*else {
-                             localFeatures.add(s);
-                         }*/
                     i++;
                 }
 
                 if (s1.equals("<year>") || s1.equals("I-<year>")) {
-                    //if (s3.equals("<date>")) 
-					{
-                        if (date.getYearString() != null) {
-                            if ((s1.equals("I-<year>")) ||
-                                    (!s1.equals(lastTag) && !lastTag.equals("I-<year>"))
-                                    ) {
-                                // new date
-                                if (date.isNotNull()) {
-                                    if (dates == null)
-                                        dates = new ArrayList<Date>();
-                                    normalize(date);
-                                    dates.add(date);
-                                }
-
-                                date = new Date();
-                                date.setYearString(s2);
-                            } else {
-                                if (date.getYearString().length() == 0)
-                                    date.setYearString(s2);
-                                else if ((date.getYearString().charAt(date.getYearString().length() - 1) == '-')
-                                        | (date.getYearString().charAt(date.getYearString().length() - 1) == '\''))
-                                    date.setYearString(date.getYearString() + s2);
-                                else
-                                    date.setYearString(date.getYearString() + " " + s2);
+                    if (date.getYearString() != null) {
+                        if ((s1.equals("I-<year>")) ||
+                                (!s1.equals(lastTag) && !lastTag.equals("I-<year>"))
+                                ) {
+                            // new date
+                            if (date.isNotNull()) {
+                                if (dates == null)
+                                    dates = new ArrayList<Date>();
+                                normalize(date);
+                                dates.add(date);
                             }
-                        } else {
+
+                            date = new Date();
                             date.setYearString(s2);
+                        } else {
+                            if (date.getYearString().length() == 0)
+                                date.setYearString(s2);
+                            else if ((date.getYearString().charAt(date.getYearString().length() - 1) == '-')
+                                    | (date.getYearString().charAt(date.getYearString().length() - 1) == '\''))
+                                date.setYearString(date.getYearString() + s2);
+                            else
+                                date.setYearString(date.getYearString() + " " + s2);
                         }
+                    } else {
+                        date.setYearString(s2);
                     }
                 } else if (s1.equals("<month>") || s1.equals("I-<month>")) {
-                    //if (s3.equals("<date>")) 
-					{
-                        if (date.getMonthString() != null) {
-                            if ((s1.equals("I-<month>")) ||
-                                    (!s1.equals(lastTag) && !lastTag.equals("I-<month>"))
-                                    ) {
-                                // new date
-                                if (date.isNotNull()) {
-                                    if (dates == null)
-                                        dates = new ArrayList<Date>();
-                                    normalize(date);
-                                    dates.add(date);
-                                }
-
-                                date = new Date();
-                                date.setMonthString(s2);
-                            } else {
-                                if (date.getMonthString().length() == 0)
-                                    date.setMonthString(s2);
-                                else if ((date.getMonthString().charAt(date.getMonthString().length() - 1) == '-')
-                                        | (date.getMonthString().charAt(date.getMonthString().length() - 1) == '\''))
-                                    date.setMonthString(date.getMonthString() + s2);
-                                else
-                                    date.setMonthString(date.getMonthString() + " " + s2);
+                    if (date.getMonthString() != null) {
+                        if ((s1.equals("I-<month>")) ||
+                                (!s1.equals(lastTag) && !lastTag.equals("I-<month>"))
+                                ) {
+                            // new date
+                            if (date.isNotNull()) {
+                                if (dates == null)
+                                    dates = new ArrayList<Date>();
+                                normalize(date);
+                                dates.add(date);
                             }
-                        } else {
+
+                            date = new Date();
                             date.setMonthString(s2);
+                        } else {
+                            if (date.getMonthString().length() == 0)
+                                date.setMonthString(s2);
+                            else if ((date.getMonthString().charAt(date.getMonthString().length() - 1) == '-')
+                                    | (date.getMonthString().charAt(date.getMonthString().length() - 1) == '\''))
+                                date.setMonthString(date.getMonthString() + s2);
+                            else
+                                date.setMonthString(date.getMonthString() + " " + s2);
                         }
+                    } else {
+                        date.setMonthString(s2);
                     }
                 } else if (s1.equals("<day>") || s1.equals("I-<day>")) {
-                    //if (s3.equals("<date>")) 
-					{
-                        if (date.getDayString() != null) {
-                            if ((s1.equals("I-<day>")) ||
-                                    (!s1.equals(lastTag) && !lastTag.equals("I-<day>"))
-                                    ) {
-                                // new date
-                                if (date.isNotNull()) {
-                                    if (dates == null)
-                                        dates = new ArrayList<Date>();
-                                    normalize(date);
-                                    dates.add(date);
-                                }
-
-                                date = new Date();
-                                date.setDayString(s2);
-                            } else {
-                                if (date.getDayString().length() == 0)
-                                    date.setDayString(s2);
-                                else if ((date.getDayString().charAt(date.getDayString().length() - 1) == '-')
-                                        | (date.getDayString().charAt(date.getDayString().length() - 1) == '\''))
-                                    date.setDayString(date.getDayString() + s2);
-                                else
-                                    date.setDayString(date.getDayString() + " " + s2);
+                    if (date.getDayString() != null) {
+                        if ((s1.equals("I-<day>")) ||
+                                (!s1.equals(lastTag) && !lastTag.equals("I-<day>"))
+                                ) {
+                            // new date
+                            if (date.isNotNull()) {
+                                if (dates == null)
+                                    dates = new ArrayList<Date>();
+                                normalize(date);
+                                dates.add(date);
                             }
-                        } else {
+
+                            date = new Date();
                             date.setDayString(s2);
+                        } else {
+                            if (date.getDayString().length() == 0)
+                                date.setDayString(s2);
+                            else if ((date.getDayString().charAt(date.getDayString().length() - 1) == '-')
+                                    | (date.getDayString().charAt(date.getDayString().length() - 1) == '\''))
+                                date.setDayString(date.getDayString() + s2);
+                            else
+                                date.setDayString(date.getDayString() + " " + s2);
                         }
+                    } else {
+                        date.setDayString(s2);
                     }
                 }
 
@@ -330,10 +305,6 @@ public class DateParser extends AbstractParser {
             }
 
             String headerDate = FeaturesVectorDate.addFeaturesDate(dateBlocks);
-            // clear internal context
-//            StringTokenizer st = new StringTokenizer(headerDate, "\n");
-            //TODO:
-//            String res = getTaggerResult(st, "<date>");
             String res = label(headerDate);
 
             // extract results from the processed file

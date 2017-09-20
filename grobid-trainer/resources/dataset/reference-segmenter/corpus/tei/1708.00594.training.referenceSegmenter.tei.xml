@@ -1,0 +1,61 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+        <bibl>Abel T., Bryan G. L., Norman M. L., 2000, ApJ, 540, 39<lb/> —, </bibl>
+		<bibl>2002, Science, 295, 93<lb/> </bibl>
+		<bibl>Bromm V., Coppi P. S., Larson R. B., 2002, ApJ, 564, 23<lb/> </bibl>
+		<bibl>Bromm V., Kudritzki R. P., Loeb A., 2001, ApJ, 552, 464<lb/> </bibl>
+		<bibl>Bromm V., Yoshida N., Hernquist L., McKee C. F., 2009,<lb/> Nature, 459, 49<lb/> </bibl>
+		<bibl>Clark P. C., Glover S. C. O., Smith R. J., Greif T. H.,<lb/> Klessen R. S., Bromm V., 2011, Science, 331, 1040<lb/> </bibl>
+		<bibl>Couchman H. M. P., Rees M. J., 1986, MNRAS, 221, 53<lb/> </bibl>
+		<bibl>Glatzel W., 1998, A&amp;A, 339, L5<lb/> </bibl>
+		<bibl>Grevesse N., Sauval A. J., 1998, Space Sci. Rev., 85, 161<lb/> </bibl>
+		<bibl>Haiman Z., 2013, in Astrophysics and Space Science Li-<lb/>brary, Vol. 396, The First Galaxies, Wiklind T., Mobasher<lb/> B., Bromm V., eds., p. 293<lb/> </bibl>
+		<bibl>Haiman Z., Loeb A., 1997, ApJ, 483, 21<lb/> </bibl>
+		<bibl>Hawley J. F., Gammie C. F., Balbus S. A., 1996, ApJ, 464,<lb/> 690<lb/> </bibl>
+		<bibl>Heger A., Woosley S. E., 2002, ApJ, 567, 532<lb/> </bibl>
+		<bibl>Hirano S., Hosokawa T., Yoshida N., Omukai K., Yorke<lb/> H. W., 2015, MNRAS, 448, 568<lb/> </bibl>
+		<bibl>Hirano S., Hosokawa T., Yoshida N., Umeda H., Omukai<lb/> K., Chiaki G., Yorke H. W., 2014, ApJ, 781, 60<lb/> </bibl>
+		<bibl>Hosokawa T., Hirano S., Kuiper R., Yorke H. W., Omukai<lb/> K., Yoshida N., 2016, ApJ, 824, 119<lb/> </bibl>
+		<bibl>Hosokawa T., Omukai K., Yorke H. W., 2012, ApJ, 756, 93<lb/> </bibl>
+		<bibl>Hosokawa T., Omukai K., Yoshida N., Yorke H. W., 2011,<lb/> Science, 334, 1250<lb/> </bibl>
+		<bibl>Hubeny I., 1990, ApJ, 351, 632<lb/> </bibl>
+		<bibl>Karlsson T., Bromm V., Bland-Hawthorn J., 2013, Reviews<lb/> of Modern Physics, 85, 809<lb/> </bibl>
+		<bibl>Kato S., Fukue J., Mineshige S., 2008, Black-Hole Accre-<lb/>tion Disks — Towards a New Paradigm —<lb/> </bibl>
+		<bibl>Langer N., 1997, in Astronomical Society of the Pacific<lb/> Conference Series, Vol. 120, Luminous Blue Variables:<lb/> Massive Stars in Transition, Nota A., Lamers H., eds.,<lb/> p. 83<lb/> —, </bibl>
+		<bibl>1998, A&amp;A, 329, 551<lb/> </bibl>
+		<bibl>Lee H., Yoon S.-C., 2016, ApJ, 820, 135<lb/> </bibl>
+		<bibl>Machida M. N., Omukai K., Matsumoto T., Inutsuka S.-i.,<lb/> 2008, ApJ, 677, 813<lb/> </bibl>
+		<bibl>Maeder A., Meynet G., 2000, A&amp;A, 361, 159<lb/> </bibl>
+		<bibl>Mayer M., Duschl W. J., 2005, MNRAS, 358, 614<lb/> </bibl>
+		<bibl>McKee C. F., Tan J. C., 2008, ApJ, 681, 771<lb/> </bibl>
+		<bibl>Omukai K., Nishi R., 1998, ApJ, 508, 141<lb/> </bibl>
+		<bibl>Omukai K., Palla F., 2001, ApJ, 561, L55<lb/> —, </bibl>
+		<bibl>2003, ApJ, 589, 677<lb/> </bibl>
+		<bibl>Paczynski B., 1991, ApJ, 370, 597<lb/> </bibl>
+		<bibl>Popham R., 1996, ApJ, 467, 749<lb/> </bibl>
+		<bibl>Popham R., Narayan R., 1991, ApJ, 370, 604<lb/> </bibl>
+		<bibl>Popham R., Narayan R., Hartmann L., Kenyon S., 1993,<lb/> ApJ, 415, L127<lb/> </bibl>
+		<bibl>Sano T., Inutsuka S., Turner N. J., Stone J. M., 2004, ApJ,<lb/> 605, 321<lb/> </bibl>
+		<bibl>Schaerer D., 2002, A&amp;A, 382, 28<lb/> </bibl>
+		<bibl>Seaton M. J., Yan Y., Mihalas D., Pradhan A. K., 1994,<lb/> MNRAS, 266, 805<lb/> </bibl>
+		<bibl>Shakura N. I., Sunyaev R. A., 1973, A&amp;A, 24, 337<lb/> </bibl>
+		<bibl>Smith R. J., Hosokawa T., Omukai K., Glover S. C. O.,<lb/> Klessen R. S., 2012, MNRAS, 424, 457<lb/> </bibl>
+		<bibl>Stacy A., Bromm V., Lee A. T., 2016, MNRAS, 462, 1307<lb/> </bibl>
+		<bibl>Stacy A., Bromm V., Loeb A., 2011, MNRAS, 413, 543<lb/> </bibl>
+		<bibl>Stacy A., Greif T. H., Bromm V., 2010, MNRAS, 403, 45<lb/> </bibl>
+		<bibl>Susa H., Hasegawa K., Tominaga N., 2014, ApJ, 792, 32<lb/> </bibl>
+		<bibl>Tegmark M., Silk J., Rees M. J., Blanchard A., Abel T.,<lb/> Palla F., 1997, ApJ, 474, 1<lb/> </bibl>
+		<bibl>Tumlinson J., Shull J. M., 2000, ApJ, 528, L65<lb/> </bibl>
+		<bibl>Umeda H., Nomoto K., 2002, ApJ, 565, 385<lb/> </bibl>
+		<bibl>Volonteri M., 2010, A&amp;A Rev., 18, 279<lb/> </bibl>
+		<bibl>Yoshida N., Omukai K., Hernquist L., 2008, Science, 321,<lb/> 669</bibl>
+        </listBibl>
+    </text>
+</tei>
+

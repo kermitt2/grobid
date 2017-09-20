@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>S. Minter, K. Wegter-McNelly, and R. Chiao</author>, &quot;<title level="a">Do mir-rorsfor gravitational waves exist ?</title>&quot;,<title level="j">Physica E</title> <biblScope unit="volume">42</biblScope> ,<biblScope unit="page">234</biblScope> ( <date>2010</date>);<idno type="arxiv">arXiv: 0903.0661</idno>.</bibl>
+	<bibl><author>Q. Quach</author>, &quot;<title level="a">Gravitational Casimir Effect</title>,&quot; <title level="j">Phys. Rev. Lett.</title><biblScope unit="volume">114</biblScope> ,( <date>2015</date>).</bibl>
+	<bibl><author>C. Misner, K. Thorne, and J. Wheeler</author>, <title level="m">Gravitation</title> (<publisher>Freeman</publisher>,<pubPlace>San Francisco</pubPlace> ,<date>1972</date> ).</bibl>
+	<bibl><author>´ E. Flanagan and S. Hughes</author>, &quot;<title level="a">The basics of gravita-tionalwave theory</title> ,&quot;<title level="j">New J .Phys .</title><biblScope unit="volume">7</biblScope> ,<biblScope unit="page">204</biblScope> ( <date>2005</date>).<note>We are primarily concernedwith Section 2 . 2,&quot;Global space- timeswithmattersources , &quot;</note> pp.<biblScope unit="page">9 -15</biblScope> .</bibl>
+	<bibl><author>W. Press</author>, &quot;<title level="a">On Gravitational Conductors, Waveguides, andCircuits</title> ,&quot;<title level="j">General Relativity and Gravitation</title> <biblScope unit="volume">11</biblScope> (<biblScope unit="issue">2</biblScope>),(<date>1979</date> ).</bibl>
+	<bibl><author>H. A. Chan, M. V. Moody, and H. J. Paik</author>, &quot;<title level="a">Super-conductinggravity gradiometer for sensitive gravity measurements .II. Experiment</title>, &quot;<title level="j">Phys. Rev. D</title><biblScope unit="volume">35</biblScope> , <biblScope unit="page">3572</biblScope>( <date>1987</date> ).</bibl>
+	<bibl><author>M. Tinkham</author>, <title level="m">Introduction to Superconductivity</title>, <note>2nd edition</note>( <publisher>McGrawHill ,Inc .</publisher>,<date>1976</date> ).</bibl>
+	<bibl><author>D. Bertrand</author>, &quot;<title level="a">A Relativistic BCS Theory of Supercon-ductivity</title>,&quot;<note type="report">Dissertation</note> ,<orgName>Université catholique de Louvain</orgName>,(<date>2005</date> ).</bibl>
+	<bibl><author>O. Dinariev and B. Mosolov</author>, &quot;<title level="a">Relativistic Gener-alizationof the Ginzburg -LandauTheory</title> ,&quot;<idno>UDC 530 .12+537.312.62</idno>(<date>1986</date> ),</bibl>
+	<bibl><note>translatedfrom</note> <title level="j">Izvestiya Vysshikh Uchebnykh Zavedenii, Fizika</title> ,No .<biblScope unit="volume">4</biblScope> ,pp .<biblScope unit="page">98 -102</biblScope> (<date>1989</date>).</bibl>
+	<bibl><author>T. Rothman and S. Boughn</author>, &quot;<title level="a">Aspects of Graviton De-tection:Graviton Emission and Absorption by Atomic Hydrogen</title> ,&quot;<title level="j">Found. Phys.</title> <biblScope unit="volume">36</biblScope>, <biblScope unit="page">1801</biblScope>( <date>2006</date> ).</bibl>
+	<bibl><author>B. DeWitt</author>, &quot;<title level="a">Superconductors and gravitational drag</title>,&quot; <title level="j">Phys.Rev .Lett .</title><biblScope unit="volume">16</biblScope> ,<biblScope unit="page">1092</biblScope> ( <date>1966</date>).</bibl>
+	<bibl><author>G .Cognola ,et al .</author>,&quot; <title level="a">Relativisticwavemechanics of spinless particles in a curved space- time</title> ,&quot;<title level="j">Gen.Reltiv .Gravit .</title>, <biblScope unit="volume">18</biblScope>,<biblScope unit="page">971</biblScope> (<date>1986</date> ) .</bibl>
+	<bibl><author>Y. Zel&apos;dovich</author>, &quot;<title level="a">The Quasienergy of a Quantum-MechanicalSystem Subjected to a Periodic Action</title> ,&quot;<title level="j">Soviet PhysicsJETP</title> <biblScope unit="volume">24</biblScope> ( <biblScope unit="issue">5</biblScope>),(<date>1967</date> ).</bibl>
+	<bibl><author>H. Sambe</author>, &quot;<title level="a">Steady States and Quasienergies of a Quantum-MechanicalSystem in an Oscillating Field</title> ,&quot;<title level="j">Phys .Rev. A</title><biblScope unit="volume">7</biblScope> ( <biblScope unit="issue">6</biblScope>),<biblScope unit="page">2203- 2213</biblScope>(<date>1973</date> ).</bibl>
+	<bibl><author>W. Kohn</author>, &quot;<title level="a">Periodic Thermodynamics</title>,&quot; <title level="j">Journal of Sta-tisticalPhysics</title> <biblScope unit="volume">103</biblScope> (<biblScope unit="issue">3-4</biblScope>),<biblScope unit="page">417 -423</biblScope>( <date>2001</date>).</bibl>
+	<bibl><author>M. Langemeyer and M. Holthaus</author>, &quot;<title level="a">Energy flow inperiodic thermodynamics</title> ,&quot;<title level="j">Phys .Rev .E</title> <biblScope unit="volume">89</biblScope> ,( <date>2014</date>).</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

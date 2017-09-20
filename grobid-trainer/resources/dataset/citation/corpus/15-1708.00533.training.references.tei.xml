@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Bahcall, J.N., Flynn, C., Gould, A.</author>, <date>1992</date>, <title level="j">ApJ</title>, <biblScope unit="volume">389</biblScope>, <biblScope unit="page">234</biblScope></bibl>
+	<bibl><author>Beck, R., et al.</author>, <date>1996</date>, <title level="j">Ann. Rev. Astron. Astrophys.</title>, <biblScope unit="volume">34</biblScope>, <biblScope unit="page">155</biblScope></bibl>
+	<bibl><author>Beckman, J.E., et al.</author>, <date>2002</date>, <title level="j">Rev. Mex. A.A.</title>, <biblScope unit="volume">12</biblScope>, <biblScope unit="page">213</biblScope></bibl>
+	<bibl><author>Berkhuijsen, E.M., Beck, R., Walterbos, R.</author><editor>A.M.</editor>, eds., <date>2000</date>, <title level="m">The Interstellar Mediumin M31 and M51</title> ,<publisher>Shaker Verlag</publisher> ,<pubPlace>Aachen</pubPlace> .</bibl>
+	<bibl><author>Bertini, G., Romeo, A.B.</author>, <date>1988</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">195</biblScope>, <biblScope unit="page">105</biblScope></bibl>
+	<bibl><author>Binney, J., Tremaine, S.</author>, <date>2008</date>, <title level="m">Galactic Dynamics</title>, <note>2nd ed.</note>, <publisher>Princeton Uni. Press</publisher></bibl>
+	<bibl><author>Binney, J., Merrifield, M.</author>, <date>1998</date>, <title level="m">Galactic Astronomy</title>, <publisher>Princeton University Press</publisher></bibl>
+	<bibl><author>Bosma, A.</author>, <date>1999</date> (a), <title level="j">Celestial Mechanics and Dynamical Astronomy</title>, <biblScope unit="volume">72</biblScope>, <biblScope unit="page">69</biblScope></bibl>
+	<bibl><author>Bosma, A.</author>, <date>1999</date> (b), <title level="j">ASP Conference Series</title>, Vol. <biblScope unit="volume">182</biblScope>, <biblScope unit="page">339</biblScope></bibl>
+	<bibl><author>Bovy, J., Tremaine, S.</author>, <date>2012</date>, <title level="j">ApJ</title>, <biblScope unit="volume">756</biblScope>:<biblScope unit="page">89</biblScope></bibl>
+	<bibl><author>Carignan, C., Freeman, K.C.</author>, <date>1985</date>, <title level="j">ApJ</title>, <biblScope unit="volume">294</biblScope>, <biblScope unit="page">494</biblScope></bibl>
+	<bibl><author>Chamcham, K., Pitts, E., Tayler, R.J.</author>, <date>1993</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">263</biblScope>, <biblScope unit="page">967</biblScope></bibl>
+	<bibl><author>Chamcham, K., Tayler, R.J.</author>, <date>1995</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">273</biblScope>, <biblScope unit="page">484</biblScope></bibl>
+	<bibl><author>Dehnen, W., Binney, J.</author>, <title level="j">Mon. Not. R. Astron. Soc.</title> <biblScope unit="volume">294</biblScope>, <biblScope unit="page">429-438</biblScope> (<date>1998</date>)</bibl>
+	<bibl><author>Elmegreen, B.G.</author>, <date>1987</date>, <title level="j">ApJ</title>, <biblScope unit="volume">312</biblScope>, <biblScope unit="page">626</biblScope></bibl>
+	<bibl><author>Elmegreen, B.G.</author>, <date>1991</date>, <title level="j">ApJ</title>, <biblScope unit="volume">378</biblScope>, <biblScope unit="page">139</biblScope></bibl>
+	<bibl><author>Elmegreen, B.G.</author>, <date>1994</date>, <title level="j">ApJ</title>, <biblScope unit="volume">433</biblScope>, <biblScope unit="page">39</biblScope></bibl>
+	<bibl><author>Elmegreen, B.G.</author>, <date>1995</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">275</biblScope>, <biblScope unit="page">944</biblScope></bibl>
+	<bibl><author>Elmegreen, B.G., Scalo, J.</author>, <date>2004</date>, <title level="j">ARA&amp;A</title>, <biblScope unit="volume">42</biblScope>, <biblScope unit="page">211</biblScope></bibl>
+	<bibl><author>Elmegreen, B.G., Hunter, D. A.</author>, <date>2006</date>, <title level="j">ApJ</title>, <biblScope unit="volume">636</biblScope>, <biblScope unit="page">712</biblScope></bibl>
+	<bibl><author>Elmegreen, B.G.</author>, <date>2011</date>, <idno type="arxiv">arXiv:1106.1580</idno></bibl>
+	<bibl><author>Elmegreen, B.G., Hunter, D.A.</author>, <date>2016</date>, <idno type="arxiv">arXiv:1612.05615</idno></bibl>
+	<bibl><author>Federrath, C.</author>, <date>2016</date>, <idno type="arxiv">arXiv:1606.03121</idno></bibl>
+	<bibl><author>Ferguson, A.M.N., et al.</author>, <date>1998</date>, <title level="j">ApJ</title>, <biblScope unit="volume">506</biblScope>, <biblScope unit="page">L19</biblScope></bibl>
+	<bibl><author>Ferguson, A.M.N., Wyse, R.F.G., Gallagher, J.S.</author>, <date>1999</date>, <title level="j">ASP Conf Series</title>, <biblScope unit="volume">170</biblScope>, <biblScope unit="page">196</biblScope></bibl>
+	<bibl><author>Fragione, G., Loeb, A.</author>, <date>2017</date>, <title level="j">New Astronomy</title>, <biblScope unit="volume">55</biblScope>, <biblScope unit="page">32-38</biblScope></bibl>
+	<bibl><author>Goldbaum, N.J., Krumholz, M.R., Forbes, J.C.</author>, <date>2015</date>, <title level="j">ApJ</title>, <biblScope unit="volume">814</biblScope>, <biblScope unit="page">131</biblScope></bibl>
+	<bibl><author>Hooper, D.</author>, <date>2017</date>, <title level="j">Physics of the Dark Universe</title>, <biblScope unit="volume">15</biblScope>, <biblScope unit="volume">53</biblScope>, <publisher>Elsevier</publisher></bibl> <bibl>[29]<author>Hunter ,D .A.,Plummer ,J .D.</author>,<date>1996</date> ,<title level="j">ApJ</title> ,<biblScope unit="volume">462</biblScope> ,<biblScope unit="page">732</biblScope></bibl>
+	<bibl><author>Hunter, D.A., Elmegreen, B.G., Baker, A.L.</author>, <date>1998</date>, <title level="j">ApJ</title>, <biblScope unit="volume">493</biblScope>, <biblScope unit="page">595</biblScope></bibl>
+	<bibl><author>Hunter, D.A., et al.</author>, <date>2016</date>, <title level="j">AJ</title>, <biblScope unit="volume">151</biblScope>:<biblScope unit="page">136</biblScope></bibl>
+	<bibl><author>Jog, C.J., Solomon, P.M.</author>, <date>1984</date>, <title level="j">ApJ</title>, <biblScope unit="volume">276</biblScope>, <biblScope unit="page">114</biblScope></bibl>
+	<bibl><author>Kennicutt, R.C.</author>, <date>1989</date>, <title level="j">ApJ</title>, <biblScope unit="volume">344</biblScope>, <biblScope unit="page">685</biblScope></bibl>
+	<bibl><author>Kimm, T., et al.</author>, <date>2015</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">451</biblScope>, <biblScope unit="page">2900</biblScope></bibl>
+	<bibl><author>Kuijken, K., Gilmore, G.</author>, <date>1989</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">239</biblScope>, <biblScope unit="page">571</biblScope> (<note>Part I</note>); <biblScope unit="page">605</biblScope> (<note>II</note>); <biblScope unit="page">651</biblScope> (<note>III</note>)</bibl>
+	<bibl><author>Kuijken, K., Gilmore, G.</author>, <date>1991</date>, <title level="j">ApJL</title>, <biblScope unit="volume">367</biblScope>, <biblScope unit="page">L9-L13</biblScope></bibl>
+	<bibl><author>Lelì evre, M., Roy, J.-R.</author>, <date>2000</date> (a), <title level="j">AJ</title>, <biblScope unit="volume">120</biblScope>, <biblScope unit="page">1306</biblScope></bibl>
+	<bibl><author>Lelì evre, M., Roy, J.-R.</author>, <date>2000</date> (<biblScope unit="issue">b</biblScope>), <title level="m">ASP Conference Series</title>, Vol <biblScope unit="volume">221</biblScope>, <biblScope unit="page">129</biblScope></bibl>
+	<bibl><author>Leroy, A.K., et al.</author>, <date>2008</date>, <title level="j">AJ</title>, <biblScope unit="volume">136</biblScope>, <biblScope unit="page">2782</biblScope></bibl>
+	<bibl><author>Lewis, J.R., Freeman, K.C.</author>, <date>1989</date>, <title level="j">AJ</title>, <biblScope unit="volume">97</biblScope>, <biblScope unit="page">139</biblScope></bibl>
+	<bibl><author>Martin, C.L., Kennicutt, R.C.</author>, <date>2001</date>, <title level="j">ApJ</title>, <biblScope unit="volume">555</biblScope>, <biblScope unit="page">301</biblScope></bibl>
+	<bibl><author>McKee, et al.</author>, <date>2015</date>, <title level="j">ApJ</title>, <biblScope unit="volume">814</biblScope>:<biblScope unit="issue">13</biblScope></bibl>
+	<bibl><author>Mestel, L.</author>, <date>1999</date>, <title level="m">Stellar Magnetism</title>, <publisher>Clarendon Press</publisher>. <pubPlace>Oxford</pubPlace></bibl> <bibl>[44]<author>Moss ,D .,Shukurov ,A .,Sokoloff ,D .D.,Berkhuijsen E .M.,Beck R .</author>,<date>1998</date> ,<title level="j">Astron .&amp; Astrophys.</title> ,<biblScope unit="volume">335</biblScope>, <biblScope unit="page">500</biblScope></bibl>
+	<bibl><author>Neininger, N., Horellou, C.</author>, <date>1996</date>, <title level="j">ASP Confernce Series</title>, <biblScope unit="volume">97</biblScope>, <biblScope unit="page">592</biblScope></bibl>
+	<bibl><author>Norman, C., Silk, J.</author>, <date>1980</date>, <title level="j">ApJ</title>, <biblScope unit="volume">238</biblScope>, <biblScope unit="page">158</biblScope></bibl>
+	<bibl><author>Parker, E.N.</author>, <date>1966</date>, <title level="j">ApJ</title>, <biblScope unit="volume">145</biblScope>, <biblScope unit="page">811</biblScope></bibl>
+	<bibl><author>Perret, V., et al.</author>, <date>2015</date>, <title level="m">IAU GA, Meeting</title> <biblScope unit="volume">29</biblScope></bibl>
+	<bibl><author>Pfenniger, D., Combes, F.</author>, <date>1994</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">285</biblScope>, <biblScope unit="page">94</biblScope></bibl>
+	<bibl><author>Pisano et al.</author>, <date>2000</date>, <title level="j">AJ</title>, <biblScope unit="volume">120</biblScope>, <biblScope unit="page">763</biblScope></bibl>
+	<bibl><author>Read, J.I.</author>, <date>2014</date>, <title level="j">J. Phys. G: Nucl. Part. Phys.</title>, <biblScope unit="page">41</biblScope></bibl>
+	<bibl><author>Romeo, A.B.</author>, <date>1992</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">256</biblScope>, <biblScope unit="page">307</biblScope></bibl>
+	<bibl><author>Romeo, A.B., Wiegert, J.</author>, <date>2011</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">416</biblScope>, <biblScope unit="page">1191</biblScope></bibl>
+	<bibl><author>Ruzmaikin, A.A., Shukurov, A.M., Sokoloff, D.D.</author>, <date>1988</date>, <title level="m">Magnetic Fields of Galax-ies</title>,<publisher>Kluwer Academic Publishers</publisher></bibl>
+	<bibl><author>Ruzmaikin, Sokoloff, D.D., A.A., Shukurov, A.M., Beck, R.</author>, <date>1990</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">230</biblScope>, <biblScope unit="page">284</biblScope></bibl>
+	<bibl><author>Scalo J., Elmegreen B.G.</author>, <date>2004</date>, <title level="j">ARA&amp;A</title>, <biblScope unit="volume">42</biblScope>, <biblScope unit="page">275</biblScope></bibl>
+	<bibl><author>Sellwood, J.A., Balbus, S.A.</author>, <date>1999</date>, <title level="j">ApJ</title>, <biblScope unit="volume">511</biblScope>, <biblScope unit="page">660</biblScope></bibl>
+	<bibl><author>Schaye, J.</author>, <date>2004</date>, <title level="j">ApJ</title>, <biblScope unit="volume">609</biblScope>, <biblScope unit="page">667</biblScope></bibl>
+	<bibl><author>Silk, J.</author>, <date>1997</date>, <title level="j">ApJ</title>, <biblScope unit="volume">481</biblScope>, <biblScope unit="page">703</biblScope></bibl>
+	<bibl><author>Silk, J.</author>, <date>2000</date>, <title level="j">PASP</title>, <biblScope unit="volume">112</biblScope>, <biblScope unit="page">1003</biblScope></bibl>
+	<bibl><author>Silk, J.</author>, <date>2001</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">324</biblScope>, <biblScope unit="page">313</biblScope></bibl>
+	<bibl><author>Slyz, A., et al.</author>, <date>2005</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">356</biblScope>, <biblScope unit="page">737</biblScope></bibl>
+	<bibl><author>Thacker, R.J., Couchman, H.M.P.</author>, <date>2001</date>, <title level="j">ApJ</title>, <biblScope unit="volume">555</biblScope>, <biblScope unit="page">L17</biblScope></bibl> <bibl>[64]<author>Thilker ,D .A.,et al .</author>,<date>2005</date> ,<title level="j">ApJ</title> ,<biblScope unit="volume">619</biblScope> ,<biblScope unit="page">L79</biblScope></bibl>
+	<bibl><author>Thornley, M.D., Wilson, C.D.</author>, <date>1995</date>, <title level="j">ApJ</title>, <biblScope unit="volume">447</biblScope>, <biblScope unit="page">616</biblScope></bibl>
+	<bibl><author>Toomre, A.</author>, <date>1964</date>, <title level="j">ApJ</title>, <biblScope unit="volume">139</biblScope>, <biblScope unit="page">1217</biblScope></bibl>
+	<bibl><author>van der Hulst, J.M., et al.</author>, <date>1993</date>, <title level="j">AJ</title>, <biblScope unit="volume">106</biblScope>, <biblScope unit="page">548</biblScope></bibl>
+	<bibl><author>Wang, B., Silk, J.</author>, <date>1994</date>, <title level="j">ApJ</title>, <biblScope unit="volume">427</biblScope>, <biblScope unit="page">759</biblScope></bibl>
+	<bibl><author>Zasov, A.V., Simakov, S.G.</author>, <date>1988</date>, <title level="j">Astrophysics</title>, <biblScope unit="volume">29</biblScope>, <biblScope unit="page">518</biblScope></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

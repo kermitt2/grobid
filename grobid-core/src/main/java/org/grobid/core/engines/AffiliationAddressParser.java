@@ -40,27 +40,27 @@ public class AffiliationAddressParser extends AbstractParser {
             //StringTokenizer st = new StringTokenizer(input, " \n\t" + TextUtilities.fullPunctuations, true);
             //List<String> tokenizations = new ArrayList<String>();
 			// TBD: pass the language object to the tokenizer 
-			List<String> tokenizations = analyzer.tokenize(input);
+			List<LayoutToken> tokenizations = analyzer.tokenizeWithLayoutToken(input);
             //while (st.hasMoreTokens()) {
             //    String tok = st.nextToken();
-			int p = 0;
-			for(String tok : tokenizations) {
-                if (tok.length() == 0) continue;
-                if (tok.equals("\n")) {
-                    //tokenizations.add(" ");
-					tokenizations.set(p, " ");
+			//int p = 0;
+			for(LayoutToken tok : tokenizations) {
+                if (tok.getText().length() == 0) continue;
+                if (tok.getText().equals("\n")) {
+					//tokenizations.set(p, new LayoutToken(" "));
+                    tok.setText(" ");
                 } 
-                if (!tok.equals(" ")) {
-                    if (tok.equals("\n")) {
+                if (!tok.getText().equals(" ")) {
+                    if (tok.getText().equals("\n")) {
                         affiliationBlocks.add("@newline");
                     } else
                         affiliationBlocks.add(tok + " <affiliation>");
                 }
-				p++;
+				//p++;
             }
 
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
-            placesPositions.add(lexicon.inCityNames(input));
+            placesPositions.add(lexicon.tokenPositionsCityNames(tokenizations));
 
             String header = FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, placesPositions);
 
@@ -87,7 +87,7 @@ public class AffiliationAddressParser extends AbstractParser {
             return null;
         }
         List<String> affiliationBlocks = new ArrayList<String>();
-        List<String> subTokenizations = new ArrayList<String>();
+        List<LayoutToken> subTokenizations = new ArrayList<LayoutToken>();
 
         filterAffiliationAddress(result, tokenizations, affiliationBlocks, subTokenizations);
 
@@ -97,7 +97,7 @@ public class AffiliationAddressParser extends AbstractParser {
     private void filterAffiliationAddress(String result,
                                           List<LayoutToken> tokenizations,
                                           List<String> affiliationBlocks,
-                                          List<String> subTokenizations) {
+                                          List<LayoutToken> subTokenizations) {
         StringTokenizer st = new StringTokenizer(result, "\n");
 //System.out.println(result);
         String lastLabel = null;
@@ -150,7 +150,7 @@ public class AffiliationAddressParser extends AbstractParser {
                     affiliationBlocks.add(tokOriginal + " " + label);
                     // add the content of tokenizationsBuffer
                     for(LayoutToken tokk : tokenizationsBuffer) {
-                        subTokenizations.add(tokk.getText());
+                        subTokenizations.add(tokk);
                     }
                     open = true;
                 }
@@ -170,7 +170,7 @@ public class AffiliationAddressParser extends AbstractParser {
 //System.out.println(affiliationBlocks.toString());
     }
 
-    private ArrayList<Affiliation> processingReflow(List<String> affiliationBlocks, List<String> tokenizations) {
+    private ArrayList<Affiliation> processingReflow(List<String> affiliationBlocks, List<LayoutToken> tokenizations) {
         String res = runReflow(affiliationBlocks, tokenizations);
         return resultBuilder(res, tokenizations, false); // normally use pre-label because it is a reflow
     }
@@ -205,12 +205,12 @@ public class AffiliationAddressParser extends AbstractParser {
     }
 
     private String runReflow(List<String> affiliationBlocks,
-                             List<String> tokenizations) {
+                             List<LayoutToken> tokenizations) {
 //        StringBuilder res = new StringBuilder();
 //        DebugTahher tagger = new DebugTahher();
         try {
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
-            placesPositions.add(lexicon.inCityNames(tokenizations));
+            placesPositions.add(lexicon.tokenPositionsCityNames(tokenizations));
             String header =
                     FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, placesPositions);
 
@@ -229,7 +229,7 @@ public class AffiliationAddressParser extends AbstractParser {
 
 
     private ArrayList<Affiliation> resultBuilder(String result,
-                                                 List<String> tokenizations,
+                                                 List<LayoutToken> tokenizations,
                                                  boolean usePreLabel) {
         ArrayList<Affiliation> fullAffiliations = null;
 
@@ -291,7 +291,7 @@ public class AffiliationAddressParser extends AbstractParser {
 
                         boolean strop = false;
                         while ((!strop) && (p < tokenizations.size())) {
-                            String tokOriginal = tokenizations.get(p);
+                            String tokOriginal = tokenizations.get(p).getText();
                             if (tokOriginal.equals(" ")) {
                                 addSpace = true;
                             } else if (tokOriginal.equals(s)) {
@@ -763,7 +763,7 @@ public class AffiliationAddressParser extends AbstractParser {
         }
 
         List<String> affiliationBlocks = new ArrayList<String>();
-        List<String> tokenizationsAffiliation = new ArrayList<String>();
+        List<LayoutToken> tokenizationsAffiliation = new ArrayList<LayoutToken>();
 
         filterAffiliationAddress(result, tokenizations, affiliationBlocks, tokenizationsAffiliation);
         String resultAffiliation = runReflow(affiliationBlocks, tokenizationsAffiliation);
@@ -809,7 +809,7 @@ public class AffiliationAddressParser extends AbstractParser {
 
                     boolean strop = false;
                     while ((!strop) && (p < tokenizationsAffiliation.size())) {
-                        String tokOriginal = tokenizationsAffiliation.get(p);
+                        String tokOriginal = tokenizationsAffiliation.get(p).getText();
                         if (tokOriginal.equals(" ")) {
                             addSpace = true;
                         } else if (tokOriginal.equals(s)) {

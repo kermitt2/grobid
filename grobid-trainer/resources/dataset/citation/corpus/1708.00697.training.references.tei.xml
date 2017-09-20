@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Allen, S. W., Evrard, A. E., &amp; Mantz, A. B.</author> <date>2011</date>, <title level="j">Ann. Rev. Astron. Astrophys.</title>,<biblScope unit="volume">49</biblScope> ,<biblScope unit="page">409</biblScope></bibl>
+	<bibl><author>Anderson, L. et al.</author> <date>2014</date>, <title level="j">Mon. Not. Roy. Astron. Soc.</title>, <biblScope unit="volume">441</biblScope>, <biblScope unit="page">24</biblScope></bibl>
+	<bibl><author>Applegate, D. E., Mantz, A., Allen, S. W., et al.</author> <date>2016</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">457</biblScope>, <biblScope unit="page">1522</biblScope></bibl>
+	<bibl><author>Arnaud, M., Pratt, G. W., Piffaretti, R., et al.</author> <date>2010</date>, <title level="j">Astron. Astro-phys.</title>,<biblScope unit="volume">517</biblScope> ,<biblScope unit="page">A92</biblScope></bibl>
+	<bibl><author>Battaglia, N., Leauthaud, A., Miyatake, H., et al.</author> <date>2016</date>, <title level="j">J. Cosmology Astropart.Phys .</title>,<biblScope unit="issue">8</biblScope> ,<biblScope unit="page">013</biblScope></bibl>
+	<bibl><author>Benson, B. A., de Haan, T., Dudley, J. P., et al.</author> <date>2013</date>, <title level="j">ApJ</title>, <biblScope unit="volume">763</biblScope>, <biblScope unit="page">147</biblScope></bibl>
+	<bibl><author>Biffi, V., Borgani, S., Murante, G., et al.</author> <date>2016</date>, <title level="j">ApJ</title>, <biblScope unit="volume">827</biblScope>, <biblScope unit="page">112</biblScope></bibl>
+	<bibl><author>Bleem, L. E. et al.</author> <date>2015</date>, <title level="j">Astrophys. J. Suppl.</title>, <biblScope unit="volume">216</biblScope>, <biblScope unit="page">27</biblScope></bibl>
+	<bibl><author>Boehringer, H., Chon, G., Retzlaff, J., et al.</author> <date>2017</date>, <title level="j">Astron. J.</title>, <biblScope unit="volume">153</biblScope>, <biblScope unit="page">220</biblScope></bibl>
+	<bibl><author>Böhringer, H. &amp; Chon, G.</author> <date>2016</date>, <title level="j">Modern Physics Letters A</title>, <biblScope unit="volume">31</biblScope>, <biblScope unit="page">1640008</biblScope></bibl>
+	<bibl><author>Böhringer, H., Chon, G., Retzlaff, J., et al.</author> <date>2017</date>, <title level="j">AJ</title>, <biblScope unit="volume">153</biblScope>, <biblScope unit="page">220</biblScope></bibl>
+	<bibl><author>Bonaldi, A., Battye, R., &amp; Brown, M. L.</author> <date>2014</date>, <title level="j">Astrophys. J.</title>, <biblScope unit="volume">786</biblScope>, <biblScope unit="page">88</biblScope></bibl>
+	<bibl><author>Chon, G. &amp; Boehringer, H.</author> <date>2012</date>, <title level="j">Astron. Astrophys.</title>, <biblScope unit="volume">538</biblScope>, <biblScope unit="page">A35</biblScope></bibl>
+	<bibl><author>Cooray,A .</author><date>2000</date> ,<title level="j">Phys .Rev .,D</title><biblScope unit="volume">62</biblScope> ,<biblScope unit="page">103506</biblScope></bibl>
+	<bibl><author>Donahue, M., Voit, G. M., Mahdavi, A., et al.</author> <date>2014</date>, <title level="j">ApJ</title>, <biblScope unit="volume">794</biblScope>, <biblScope unit="page">136</biblScope></bibl>
+	<bibl><author>Efstathiou, G. &amp; Lemos, P.</author> <date>2017</date> [<idno type="arxiv">arXiv:1707.00483</idno>]</bibl>
+	<bibl><author>Gruen, D., Seitz, S., Brimioulle, F., et al.</author> <date>2014</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">442</biblScope>, <biblScope unit="page">1507</biblScope></bibl>
+	<bibl><author>Hasselfield, M., Hilton, M., Marriage, T. A., et al.</author> <date>2013</date>, <title level="j">J. Cosmology Astropart.Phys .</title>,<biblScope unit="issue">7</biblScope> ,<biblScope unit="page">008</biblScope></bibl>
+	<bibl><author>Hildebrandt, H., Viola, M., Heymans, C., et al.</author> <date>2017</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">465</biblScope>, <biblScope unit="page">1454</biblScope></bibl>
+	<bibl><author>Hoekstra, H., Herbonnet, R., Muzzin, A., et al.</author> <date>2015</date>, <title level="j">Mon. Not. Roy. Astron.Soc .</title>,<biblScope unit="volume">449</biblScope> ,<biblScope unit="page">685</biblScope></bibl>
+	<bibl><author>Horowitz, B. &amp; Seljak, U.</author> <date>2017</date>, <title level="j">Mon. Not. Roy. Astron. Soc.</title>, <biblScope unit="volume">469</biblScope>, <biblScope unit="page">394</biblScope></bibl>
+	<bibl><author>Hurier, G. &amp; Lacasa, F.</author> <date>2017</date>, <note type="report">ArXiv e-prints</note> [<idno type="arxiv">arXiv:1701.09067</idno>]</bibl>
+	<bibl><author>Israel, H., Schellenberger, G., Nevalainen, J., Massey, R., &amp; Reiprich, T.H .</author><date>2015</date> ,<title level="j">MNRAS</title> ,<biblScope unit="volume">448</biblScope> ,<biblScope unit="page">814</biblScope></bibl>
+	<bibl><author>Jimeno, P., Diego, J.-M., Broadhurst, T., De Martino, I., &amp; Lazkoz, R.</author><date>2017</date> ,<note type="report">ArXiv e -prints</note>[ <idno type="arxiv">arXiv:1706.00395</idno>]</bibl>
+	<bibl><author>Joudaki, S., Blake, C., Johnson, A., et al.</author> <date>2017</date>, <note type="report">ArXiv e-prints</note> [<idno type="arxiv">arXiv:1707.06627</idno>]</bibl>
+	<bibl><author>Komatsu, E. &amp; Kitayama, T.</author> <date>1999</date>, <title level="j">Astrophys. J.</title>, <biblScope unit="volume">526</biblScope>, <biblScope unit="page">L1</biblScope></bibl>
+	<bibl><author>Komatsu,E .&amp; Seljak ,U .</author><date>2002</date> ,<title level="j">Mon .Not .Roy .Astron .Soc .</title>,<biblScope unit="volume">336</biblScope> ,<biblScope unit="page">1256</biblScope></bibl>
+	<bibl><author>Lau, E. T., Nagai, D., &amp; Nelson, K.</author> <date>2013</date>, <title level="j">Astrophys. J.</title>, <biblScope unit="volume">777</biblScope>, <biblScope unit="page">151</biblScope></bibl>
+	<bibl><author>Lesgourgues, J. &amp; Pastor, S.</author> <date>2012</date>, <title level="j">Adv. High Energy Phys.</title>, <biblScope unit="volume">2012</biblScope>, <biblScope unit="page">608515</biblScope></bibl>
+	<bibl><author>Lewis, A. &amp; Bridle, S.</author> <date>2002</date>, <title level="j">Phys. Rev., D</title><biblScope unit="volume">66</biblScope>, <biblScope unit="page">103511</biblScope></bibl>
+	<bibl><author>Mahdavi, A., Hoekstra, H., Babul, A., et al.</author> <date>2013</date>, <title level="j">ApJ</title>, <biblScope unit="volume">767</biblScope>, <biblScope unit="page">116</biblScope></bibl>
+	<bibl><author>Marriage, T. A. et al.</author> <date>2011</date>, <title level="j">Astrophys. J.</title>, <biblScope unit="volume">737</biblScope>, <biblScope unit="page">61</biblScope></bibl>
+	<bibl><author>Medezinski, E., Battaglia, N., Umetsu, K., et al.</author> <date>2017</date>, <note type="report">ArXiv e-prints</note> [<idno type="arxiv">arXiv:1706.00434</idno>]</bibl>
+	<bibl><author>Moresco, M. &amp; Marulli, F.</author> <date>2017</date>, <note type="report">ArXiv e-prints</note> [<idno type="arxiv">arXiv:1705.07903</idno>]</bibl>
+	<bibl><author>Okabe, N. &amp; Smith, G. P.</author> <date>2016</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">461</biblScope>, <biblScope unit="page">3794</biblScope></bibl>
+	<bibl><author>Parroni, C., Mei, S., Erben, T., et al.</author> <date>2017</date>, <note type="report">ArXiv e-prints</note> [<idno type="arxiv">arXiv:1705.04329</idno>]</bibl>
+	<bibl><orgName type="collaboration">Planck Collaboration</orgName>. <date>2014a</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">571</biblScope>, <biblScope unit="page">A16</biblScope></bibl>
+	<bibl><orgName type="collaboration">PlanckCollaboration</orgName> .<date>2014b</date> ,<title level="j">A&amp;A</title> ,<biblScope unit="volume">571</biblScope> ,<biblScope unit="page">A20</biblScope></bibl>
+	<bibl><orgName type="collaboration">Planck Collaboration</orgName>. <date>2014c</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">571</biblScope>, <biblScope unit="page">A21</biblScope></bibl>
+	<bibl><orgName type="collaboration">Planck Collaboration</orgName> .<date>2014d</date> ,<title level="j">A&amp;A</title> ,<biblScope unit="volume">571</biblScope> ,<biblScope unit="page">A29</biblScope></bibl>
+	<bibl><orgName type="collaboration">PlanckCollaboration</orgName> . <date>2016a</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">594</biblScope>, <biblScope unit="page">A1</biblScope></bibl>
+	<bibl><orgName type="collaboration">Planck Collaboration</orgName>. <date>2016b</date> ,<title level="j">A&amp;A</title> ,<biblScope unit="volume">594</biblScope> ,<biblScope unit="page">A11</biblScope></bibl>
+	<bibl><orgName type="collaboration">PlanckCollaboration</orgName> .<date>2016c</date> , <title level="j">A&amp;A</title>, <biblScope unit="volume">594</biblScope>, <biblScope unit="page">A13</biblScope></bibl>
+	<bibl><orgName type="collaboration">Planck Collaboration</orgName>. <date>2016d</date>, <title level="j">A&amp;A</title> ,<biblScope unit="volume">594</biblScope> ,<biblScope unit="page">A22</biblScope></bibl>
+	<bibl><orgName type="collaboration">PlanckCollaboration</orgName> .<date>2016e</date> ,<title level="j">A&amp;A</title> , <biblScope unit="volume">594</biblScope>, <biblScope unit="page">A24</biblScope></bibl>
+	<bibl><orgName type="collaboration">Planck Collaboration</orgName>. <date>2016f</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">594</biblScope> ,<biblScope unit="page">A26</biblScope></bibl>
+	<bibl><orgName type="collaboration">PlanckCollaboration</orgName> .<date>2016g</date> ,<title level="j">A&amp;A</title> ,<biblScope unit="volume">596</biblScope> , <biblScope unit="page">A107</biblScope></bibl>
+	<bibl><author>Rykoff ,E .S .et al.</author> <date>2016</date> ,<title level="j">Astrophys. J. Suppl.</title> , <biblScope unit="volume">224</biblScope>, <biblScope unit="page">1</biblScope></bibl>
+	<bibl><author>Sereno, M., Covone, G., Izzo, L., et al.</author> <date>2017</date> [<idno type="arxiv">arXiv:1703.06886</idno>]</bibl>
+	<bibl><author>Simet, M., Battaglia, N., Mandelbaum, R., &amp; Seljak, U.</author> <date>2015</date>, in<title level="m">American Astronomical Society Meeting Abstracts</title> ,Vol .<biblScope unit="volume">225</biblScope> ,<title level="s">American AstronomicalSociety Meeting Abstracts</title> , <biblScope unit="page">443.04</biblScope></bibl>
+	<bibl><author>Smith, G. P., Mazzotta, P., Okabe, N., et al.</author> <date>2016</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">456</biblScope>, <biblScope unit="page">L74</biblScope></bibl>
+	<bibl><author>Sunyaev,R .A .&amp; Zeldovich ,Ya .B .</author><date>1970</date> ,<title level="j">Astrophys .Space Sci .</title>,<biblScope unit="volume">7</biblScope> ,<biblScope unit="page">20</biblScope></bibl>
+	<bibl><author>Tinker, J., Kravtsov, A. V., Klypin, A., et al.</author> <date>2008</date>, <title level="j">ApJ</title>, <biblScope unit="volume">688</biblScope>, <biblScope unit="page">709</biblScope></bibl>
+	<bibl><author>van Uitert, E., Joachimi, B., Joudaki, S., et al.</author> <date>2017</date>, <note type="report">ArXiv e-prints</note> [<idno type="arxiv">arXiv:1706.05004</idno>]</bibl>
+	<bibl><author>Vikhlinin, A., Kravtsov, A. V., Burenin, R. A., et al.</author> <date>2009</date>, <title level="j">ApJ</title>, <biblScope unit="volume">692</biblScope>, <biblScope unit="page">1060</biblScope></bibl>
+	<bibl><author>von der Linden, A., Mantz, A., Allen, S. W., et al.</author> <date>2014</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">443</biblScope>,<date>1973</date></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

@@ -1,0 +1,31 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1.</label> Albeverio, S., Kondratiev, Y., Kozitsky, Y., Röckner, M.: The Statistical Mechanics of Quantum Lattice<lb/> Systems: A Path Integral Approach. EMS Tracts Math 8 (2009)<lb/> </bibl>
+        <bibl><label>2.</label> Araki, H.: Relative Hamiltonian for faithful normal states of a von Neumann algebra. Pub. RIMS Kyoto<lb/> Univ. 9, 165-209 (1973)<lb/> </bibl>
+        <bibl><label>3.</label> Bakhrakh, V.L., Vetchinkin, S.I., Khristenko, S.V.: Green&apos;s function of a multidimensional isotropic<lb/> harmonic oscillator. Theor. Math. Phys. 12, 776-778 (1972)<lb/> </bibl>
+        <bibl><label>4.</label> Bratteli, O., Robinson, D.W.: Operator Algebras and Quantum Statistical Mechanics II. Springer,<lb/> Berlin (1981)<lb/> </bibl>
+        <bibl><label>5.</label> Buchholz, D.: The resolvent algebra: Ideals and dimension. J. Funct. Anal. 266, 3286-3302 (2014)<lb/> </bibl>
+        <bibl><label>6.</label> Buchholz, D., Grundling, H.: Algebraic supersymmetry: a case study. Commun. Math. Phys. 272, 699-<lb/>750 (2007)<lb/> </bibl>
+        <bibl><label>7.</label> Buchholz, D., Grundling, H.: The resolvent algebra: A new approach to canonical quantum systems. J.<lb/> Funct. Anal. 254, 2725-2779 (2008)<lb/> </bibl>
+        <bibl><label>8.</label> Buchholz, D., Grundling, H.: Quantum systems and resolvent algebras. In: Blanchard, P., Fröhlich, J.,<lb/> (eds.) The Message of Quantum Science: Attempts Towards a Synthesis. Lect. Notes Phys. 899, pp.<lb/> 33-45. Springer, Berlin (2015)<lb/> </bibl>
+        <bibl><label>9.</label> Derezi´nskiDerezi´nski, J., Jaksi´cJaksi´c, V., Pillet, C.-A.: Perturbation theory of W-*-dynamics: Liouvilleans and KMS-<lb/>states. Rev. Math. Phys. 15, 447-489 (2003)<lb/> </bibl>
+        <bibl><label>10.</label> Kanda, T., Matsui, T.: KMS states of weakly coupled anharmonic crystals and the resolvent CCR algebra.<lb/> e-print arXiv:1601.04809<lb/> </bibl>
+        <bibl><label>11.</label> Minlos, R.A., Verbeure, A., Zagrebnov, V.A.: A quantum crystal model in the light-mass limit: Gibbs<lb/> states. Rev. Math. Phys. 12, 981-1032 (2000)<lb/> </bibl>
+        <bibl><label>12.</label> Nachtergaele, B., Raz, H., Schlein, B., Sims, R.: Lieb-Robinson bounds for harmonic and anharmonic<lb/> lattice systems. Commun. Math. Phys. 286, 1073-1098 (2009)<lb/> </bibl>
+        <bibl><label>13.</label> Nachtergaele, B., Schlein, B., Sims, R., Starr, S., Zagrebnov, V.A.: On the existence of the dynamics for<lb/> anharmonic quantum oscillator systems. Rev. Math. Phys. 22, 207-231 (2010)<lb/> </bibl>
+        <bibl><label>14.</label> Nachtergaele, B., Sims, R.: On the dynamics of lattice systems with unbounded on-site terms in the<lb/> Hamiltonian. e-print arXiv:1410.8174v1<lb/> </bibl>
+        <bibl><label>15.</label> Reed, M., Simon, B.: Methods of Modern Mathematical Physics IV: Analysis of Operators. Acacemic<lb/> Press, New York (1978)<lb/> </bibl>
+        <bibl><label>16.</label> Ruelle, D.: Natural nonequilibrium states in quantum statistical mechanics. J. Stat. Mech. 98, 57-75 (2000)<lb/> </bibl>
+        <bibl><label>17.</label> Møller, J.S.: Fully coupled Pauli-Fierz systems at zero and positive temperature. J. Math.<lb/> Phys. 55, 075203 (2014)<lb/> </bibl>
+        <bibl><label>18.</label> Takesaki, M.: Disjointness of the KMS-states of different temperatures. Commun. Math. Phys. 17,<lb/> 33-41 (1970)<lb/> </bibl>
+Communicated by H.-T. Yau
+        </listBibl>
+    </text>
+</tei>
+

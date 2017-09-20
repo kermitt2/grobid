@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Allen, M. G., Groves, B. A., Dopita, M. A., Sutherland, R. S., &amp; Kewley, L. J.</author> <date>2008</date>,<title level="j">ApJS</title> ,<biblScope unit="volume">178</biblScope> ,<biblScope unit="page">20</biblScope></bibl>
+	<bibl><orgName>Ames Research Staff</orgName> <date>1953</date>, <title level="j">Equations and Charts for Compressible Flow</title>, <note type="report">Tech. Rep.</note><idno type="report">NACA -TR-1135</idno>( <ptr type="web">https://ntrs.nasa.gov/search.jsp?R=19930091059</ptr>)</bibl>
+	<bibl><author>Asplund, M., Grevesse, N., Sauval, A. J., &amp; Scott, P.</author> <date>2009</date>, <title level="j">ARA&amp;A</title>, <biblScope unit="volume">47</biblScope>, <biblScope unit="page">481</biblScope></bibl>
+	<bibl><author>Bertschinger, E.</author> <date>1986</date>, <title level="j">ApJ</title>, <biblScope unit="volume">304</biblScope>, <biblScope unit="page">154</biblScope></bibl>
+	<bibl><author>Binette, L., Dopita, M. A., &amp; Tuohy, I. R.</author> <date>1985</date>, <title level="j">ApJ</title>, <biblScope unit="volume">297</biblScope>, <biblScope unit="page">476</biblScope></bibl>
+	<bibl><author>Cox, D. P.</author> <date>1972</date>, <title level="j">ApJ</title>, <biblScope unit="volume">178</biblScope>, <biblScope unit="page">143</biblScope></bibl>
+	<bibl><author>Dopita, M. A.</author> <date>1976</date>, <title level="j">ApJ</title>, <biblScope unit="volume">209</biblScope>, <biblScope unit="page">395</biblScope></bibl>
+	<bibl><author>Dopita, M. A.</author> <date>1977</date>, <title level="j">ApJS</title>, <biblScope unit="volume">33</biblScope>, <biblScope unit="page">437</biblScope></bibl>
+	<bibl><author>Dopita, M. A.</author> <date>1978</date>, <title level="j">ApJS</title>, <biblScope unit="volume">37</biblScope>, <biblScope unit="page">117</biblScope></bibl>
+	<bibl><author>Dopita, M. A., Groves, B. A., Fischera, J., et al.</author> <date>2005</date>, <title level="j">ApJ</title>, <biblScope unit="volume">619</biblScope>, <biblScope unit="page">755</biblScope></bibl>
+	<bibl><author>Dopita, M. A., &amp; Sutherland, R. S.</author> <date>1995</date>, <title level="j">ApJ</title>, <biblScope unit="volume">455</biblScope>, <biblScope unit="page">468</biblScope></bibl>
+	<bibl><author>Dopita, M. A., &amp; Sutherland, R. S.</author> <date>1996</date>, <title level="j">ApJS</title>, <biblScope unit="volume">102</biblScope>, <biblScope unit="page">161</biblScope></bibl>
+	<bibl><author>Dopita, M. A., &amp; Sutherland, R. S.</author> <date>2000</date>, <title level="j">ApJ</title>, <biblScope unit="volume">539</biblScope>, <biblScope unit="page">742</biblScope></bibl>
+	<bibl><author>Dopita, M. A., &amp; Sutherland, R. S.</author> <date>2003</date>, <title level="m">Astrophysics of the Diffuse Universe</title> (<pubPlace>Berlin</pubPlace>:<publisher>Springer</publisher> )</bibl>
+	<bibl><author>Dopita, M. A., &amp; Sutherland, R. S.</author> <date>2017</date>, <title level="j">ApJS</title>, <biblScope unit="volume">229</biblScope>, <biblScope unit="page">35</biblScope></bibl>
+	<bibl><author>Dopita, M. A., Sutherland, R. S., Nicholls, D. C., Kewley, L. J., &amp; Vogt,F .P .A .</author><date>2013</date> ,<title level="j">ApJS</title> ,<biblScope unit="volume">208</biblScope> ,<biblScope unit="page">10</biblScope></bibl>
+	<bibl><author>Draine, B. T., &amp; McKee, C. F.</author> <date>1993</date>, <title level="j">ARA&amp;A</title>, <biblScope unit="volume">31</biblScope>, <biblScope unit="page">373</biblScope></bibl>
+	<bibl><author>Groves, B., Dopita, M., &amp; Sutherland, R.</author> <date>2006</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">458</biblScope>, <biblScope unit="page">405</biblScope></bibl>
+	<bibl><author>Groves, B. A., Dopita, M. A., &amp; Sutherland, R. S.</author> <date>2004</date>, <title level="j">ApJS</title>, <biblScope unit="volume">153</biblScope>, <biblScope unit="page">9</biblScope></bibl>
+	<bibl><author>Hugoniot, H.</author> <date>1887</date>, <title level="j">Journal de l&apos;École Polytechnique</title>, <biblScope unit="volume">57</biblScope>, <biblScope unit="page">3</biblScope></bibl>
+	<bibl><author>Innes, D. E., Giddings, J. R., &amp; Falle, S. A. E. G</author>. <date>1987</date>, <title level="j">MNRAS</title>, <biblScope unit="volume">224</biblScope>, <biblScope unit="page">179</biblScope></bibl>
+	<bibl><author>McKee, C. F., &amp; Hollenbach, D. J.</author> <date>1980</date>, <title level="j">ARA&amp;A</title>, <biblScope unit="volume">18</biblScope>, <biblScope unit="page">219</biblScope></bibl>
+	<bibl><author>Nicholls, D. C., Dopita, M. A., &amp; Sutherland, R. S.</author> <date>2012</date>, <title level="j">ApJ</title>, <biblScope unit="volume">752</biblScope>, <biblScope unit="page">148</biblScope></bibl>
+	<bibl><author>Nicholls, D. C., Sutherland, R. S., Dopita, M. A., Kewley, L. J., &amp; Groves,B .A .</author><date>2017</date> ,<title level="j">MNRAS</title> ,<biblScope unit="volume">466</biblScope> ,<biblScope unit="page">4403</biblScope></bibl>
+	<bibl><author>Press, W. H., Teukolsky, S. A., Vetterling, W. T., &amp; Flannery, B. P.</author> <date>1992</date>, <title level="m">NumericalRecipes in C .The Art of Scientific Computing</title> ( <pubPlace>Cambridge</pubPlace>:<publisher>Cambridge Univ. Press</publisher>)</bibl>
+	<bibl><author>Rankine, W. J. M</author>. <biblScope unit="volume">1870</biblScope>, <title level="j">Philosophical Transactions of the Royal Society of London</title>,<biblScope unit="volume">160</biblScope> ,<biblScope unit="page">277</biblScope></bibl>
+	<bibl><author>Raymond, J. C.</author> <date>1979</date>, <title level="j">ApJS</title>, <biblScope unit="volume">39</biblScope>, <biblScope unit="page">1</biblScope></bibl>
+	<bibl><author>Shapiro, P. R., Clocchiatti, A., &amp; Kang, H.</author> <date>1992</date>, <title level="j">ApJ</title>, <biblScope unit="volume">389</biblScope>, <biblScope unit="page">269</biblScope></bibl>
+	<bibl><author>Shull, J. M., &amp; McKee, C. F.</author> <date>1979</date>, <title level="j">ApJ</title>, <biblScope unit="volume">227</biblScope>, <biblScope unit="page">131</biblScope></bibl>
+	<bibl><author>Sutherland, R. S., &amp; Dopita, M. A.</author> <date>1993</date>, <title level="j">ApJS</title>, <biblScope unit="volume">88</biblScope>, <biblScope unit="page">253</biblScope></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

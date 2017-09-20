@@ -1,0 +1,32 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1)</label> Z. J. Xiao, W. F. Wang and Y. Y. Fan, arXiv:1111.6264.<lb/> </bibl>
+        <bibl><label>2)</label> M. Beneke and M. Neubert, Nucl. Phys. B 675 (2003), 333.<lb/> </bibl>
+        <bibl><label>3)</label> C. D. Lu, Y. L. Shen and W. Wang, Phys. Rev. D 73 (2006), 034005.<lb/> </bibl>
+        <bibl><label>4)</label> A. Ali and C. Greub, Phys. Rev. D 57 (1998), 2996.<lb/> </bibl>
+        <bibl><label>5)</label> F. Ruffini et al. (CDF Collaboration), talk given at the Flavor Physics and CP violation<lb/> 2011, May 23-27, Israel, arXiv:1107.5760.<lb/> </bibl>
+        <bibl>M. J. Morello et al. (CDF Collaboration), CDF public note 10498 (2011).<lb/> </bibl>
+        <bibl>T. Aaltonen et al. (CDF Collaboration), arXiv:1111.0485.<lb/> </bibl>
+        <bibl><label>6)</label> A. Powell et al. (LHCb Collaboration), talk given at PANIC 2011, MIT, July 2011.<lb/> </bibl>
+        <bibl>V. Vagnoni et al. (LHCb Collaboration), LHCb-CONF-2011-042, Sept. 20, 2011.<lb/> </bibl>
+        <bibl><label>7)</label> A. Ali, G. Kramer and C. D. Lu, Phys. Rev. D 58 (1998), 094009.<lb/> </bibl>
+        <bibl><label>8)</label> M. Benake, G. Buchalla, M. Neubert and C. T. Sachrajda, Nucl. Phys. B 606 (2001), 245.<lb/> </bibl>
+        <bibl><label>9)</label> B. Mohammadi and H. Mehraban, J. High Energy Phys. 07 (2011), 089.<lb/> </bibl>
+        <bibl><label>10)</label> B. Mohammadi and H. Mehraban, J. of Phys. G 39 (2012), 045004.<lb/> </bibl>
+        <bibl><label>11)</label> H. Y. Cheng, C. K. Chua and A. Soni, Phys. Rev. D 71 (2005), 014030.<lb/> </bibl>
+        <bibl><label>12)</label> O. Gortchakov, M. P. Locher, V. E. Markushin and S. Von Rotz, Z. Phys. A 353 (1996),<lb/> 447.<lb/> </bibl>
+        <bibl><label>13)</label> X. Liu, Z. T. Wei and X. Q. Li, Eur. Phys. J. C 59 (2009), 683.<lb/> </bibl>
+        <bibl><label>14)</label> X. Liu, B. Zhang and S. L. Zhu, Phys. Lett. B 645 (2007), 185.<lb/> </bibl>
+        <bibl><label>15)</label> C. Amsler et al., Particle Data Group, Phys. Lett. B 667 (2008), 1.<lb/> </bibl>
+        <bibl><label>16)</label> Q. Zhao and B. S. Zou, Phys. Rev. D 74 (2006), 114025.<lb/> </bibl>
+        <bibl><label>17)</label> X. Liu, B. Zhang, L. L. Shen and S. L. Zhu, Phys. Rev. D 75 (2007), 074017.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

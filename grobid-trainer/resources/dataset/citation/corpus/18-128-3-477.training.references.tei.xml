@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Z. J. Xiao, W. F. Wang and Y. Y. Fan</author>, <idno type="arxiv">arXiv:1111.6264</idno>.</bibl>
+	<bibl><author>M. Beneke and M. Neubert</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">675</biblScope> (<date>2003</date>), <biblScope unit="page">333</biblScope>.</bibl>
+	<bibl><author>C. D. Lu, Y. L. Shen and W. Wang</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">73</biblScope> (<date>2006</date>), <biblScope unit="page">034005</biblScope>.</bibl>
+	<bibl><author>A. Ali and C. Greub</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">57</biblScope> (<date>1998</date>), <biblScope unit="page">2996</biblScope>.</bibl>
+	<bibl><author>F. Ruffini et al.</author> (<orgName type="collaboration">CDF Collaboration</orgName>), <title level="m">talk given at the Flavor Physics and CP violation</title> <date>2011</date>,<date>May 23 -27</date>,<pubPlace>Israel</pubPlace> ,<idno type="arxiv">arXiv :1107.5760</idno>.</bibl>
+	<bibl><author>M. J. Morello et al.</author> (<orgName type="collaboration">CDF Collaboration</orgName>), <title level="m">CDF public note 10498</title> (<date>2011</date>).</bibl>
+	<bibl><author>T. Aaltonen et al.</author> (<orgName type="collaboration">CDF Collaboration</orgName>), <idno type="arxiv">arXiv:1111.0485</idno>.</bibl>
+	<bibl><author>A. Powell et al.</author> (<orgName type="collaboration">LHCb Collaboration</orgName>), <title level="m">talk given at PANIC 2011, MIT</title>, <date>July 2011</date>.</bibl> <bibl><author>V.Vagnoni et al .</author>( <orgName type="collaboration">LHCbCollaboration</orgName> ),<idno type="report">LHCb -CONF-2011-042</idno>,<date>Sept .20 ,2011</date> .</bibl>
+	<bibl><author>A. Ali, G. Kramer and C. D. Lu</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">58</biblScope> (<date>1998</date>), <biblScope unit="page">094009</biblScope>.</bibl>
+	<bibl><author>M. Benake, G. Buchalla, M. Neubert and C. T. Sachrajda</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">606</biblScope> (<date>2001</date>), <biblScope unit="page">245</biblScope>.</bibl>
+	<bibl><author>B. Mohammadi and H. Mehraban</author>, <title level="j">J. High Energy Phys.</title> <biblScope unit="volume">07</biblScope> (<date>2011</date>), <biblScope unit="page">089</biblScope>.</bibl>
+	<bibl><author>B. Mohammadi and H. Mehraban</author>, <title level="j">J. of Phys. G</title> <biblScope unit="volume">39</biblScope> (<date>2012</date>), <biblScope unit="page">045004</biblScope>.</bibl>
+	<bibl><author>H. Y. Cheng, C. K. Chua and A. Soni</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">71</biblScope> (<date>2005</date>), <biblScope unit="page">014030</biblScope>.</bibl>
+	<bibl><author>O. Gortchakov, M. P. Locher, V. E. Markushin and S. Von Rotz</author>, <title level="j">Z. Phys. A</title> <biblScope unit="volume">353</biblScope> (<date>1996</date>), <biblScope unit="page">447</biblScope>.</bibl>
+	<bibl><author>X. Liu, Z. T. Wei and X. Q. Li</author>, <title level="j">Eur. Phys. J. C</title> <biblScope unit="volume">59</biblScope> (<date>2009</date>), <biblScope unit="page">683</biblScope>.</bibl>
+	<bibl><author>X. Liu, B. Zhang and S. L. Zhu</author>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">645</biblScope> (<date>2007</date>), <biblScope unit="page">185</biblScope>.</bibl>
+	<bibl><author>C. Amsler et al.</author>, <orgName type="collaboration">Particle Data Group</orgName>, <title level="j">Phys. Lett. B</title> <biblScope unit="volume">667</biblScope> (<date>2008</date>), <biblScope unit="volume">1</biblScope>.</bibl>
+	<bibl><author>Q. Zhao and B. S. Zou</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">74</biblScope> (<date>2006</date>), <biblScope unit="page">114025</biblScope>.</bibl>
+	<bibl><author>Liu, B. Zhang, L. L. Shen and S. L. Zhu</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">75</biblScope> (<date>2007</date>), <biblScope unit="page">074017</biblScope>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

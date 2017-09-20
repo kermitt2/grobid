@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>LIANG Z T, WANG X N.</author> <title level="j">Phys. Rev. Lett.</title>, <date>2005</date>, <biblScope unit="volume">94</biblScope>:<biblScope unit="page">102301</biblScope> .<idno type="arxiv">arXiv :nucl-th/0410079</idno>;<note>Erratum ,2006 ,96 :039901 (E)</note></bibl>
+	<bibl><author>LIANG Z T, WANG X N.</author> <title level="j">Phys. Lett.</title>, <date>2005</date>, <biblScope unit="volume">B629</biblScope>: <biblScope unit="page">20</biblScope>. <idno>arXiv:nucl-th/0411101</idno></bibl>
+	<bibl><author>Selyuzhenkov I</author>(<orgName type="collaboration">STAR Collaboration</orgName>). <title level="m">AIP Conf. Proc.</title>, <date>2006</date>,<biblScope unit="volume">870</biblScope> :<biblScope unit="page">712</biblScope> .<idno type="arxiv">arXiv :nucl-ex/0608034</idno>;</bibl>
+	<bibl><title level="j">J .Phys .</title>,<date>2006</date> ,<biblScope unit="volume">G32</biblScope> :<biblScope unit="page">S557</biblScope>. <idno type="arxiv">arXiv: nucl-ex/0605035</idno></bibl>
+	<bibl><author>WANG X N</author>. <title level="j">Phys. Lett.</title>, <date>2000</date>, <biblScope unit="volume">B485</biblScope>: <biblScope unit="page">157</biblScope></bibl>
+	<bibl><author>Weldon H A.</author> <title level="j">Phys. Rev.</title>, <date>1982</date>, <biblScope unit="volume">D26</biblScope>: <biblScope unit="page">1394</biblScope></bibl>
+	<bibl><author>Heiselberg H, WANG X N.</author> <title level="j">Nucl. Phys.</title>, <date>1996</date>, <biblScope unit="volume">B462</biblScope>: <biblScope unit="page">389</biblScope></bibl>
+	<bibl><author>GAO J H, CHEN S W, LIANG Z T et al.</author> <title level="m">Globa Quark Polarizationin Quark -Gluon-PlasmaProduced in Non -CentralA+ACollisions</title> . <note>inpreparation</note></bibl>
+	<bibl><author>LIANG Z T</author>. <title level="a">Plenary Talk at the 19th International Confereceon Ultra -RelativisticNucleus -NucleusCollisions</title> .<date>November 14- 20,2006</date>. <pubPlace>Shanghai, China</pubPlace></bibl>
+	<bibl><author>Biró T S, Müller B</author>. <title level="j">Nucl. Phys.</title>, <date>1993</date>, <biblScope unit="volume">A561</biblScope>: <biblScope unit="page">477</biblScope></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

@@ -28,6 +28,10 @@ public class GrobidMainArgs {
 
 	private boolean teiCoordinates = false;
 
+	private boolean consolidateHeader = true;
+
+	private boolean consolidateCitation = false;
+
 	/**
 	 * @return the path2grobidHome
 	 */
@@ -138,6 +142,34 @@ public class GrobidMainArgs {
 	 */
 	public final boolean isRecursive() {
 		return recursive;
+	}
+
+	/**
+	 * @return true if consolidation of header metadata should be done
+	 */
+	public final boolean isConsolidateHeader() {
+		return consolidateHeader;
+	}
+
+	/**
+	 * @return true if consolidation of citation metadata should be done
+	 */
+	public final boolean isConsolidateCitation() {
+		return consolidateCitation;
+	}
+
+	/**
+	 * @return true if consolidation of header metadata should be done
+	 */
+	public final boolean getConsolidateHeader() {
+		return consolidateHeader;
+	}
+
+	/**
+	 * @return true if consolidation of citation metadata should be done
+	 */
+	public final boolean getConsolidateCitation() {
+		return consolidateCitation;
 	}
 
 	/**

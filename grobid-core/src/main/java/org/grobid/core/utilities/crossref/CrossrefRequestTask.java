@@ -2,20 +2,12 @@ package org.grobid.core.utilities.crossref;
 
 import java.util.List;
 
-import org.grobid.core.utilities.crossref.CrossrefClient.RequestMode;
-
 /**
  * Task to execute its request at the right time.
  *
  * @author Vincent Kaestle
  */
 public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListener<T> implements Runnable {
-	
-	public static void printLog(CrossrefRequest<?> request, String message) {
-		if (CrossrefClient.DEBUG)
-			System.out.println((request != null ? request+": " : "")+message);
-	}
-	
 	
 	protected CrossrefClient client;
 	protected CrossrefRequest<T> request;
@@ -24,38 +16,15 @@ public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListen
 		this.client = client;
 		this.request = request;
 		
-		printLog(request, "New request in the pool");
+		CrossrefClient.printLog(request, "New request in the pool");
 	}
 	
 	@Override
 	public void run() {
+		try {	
+			client.checkLimits();
 			
-		int stepElapsedTime =  client.lastResponse != null ? (int)(System.currentTimeMillis() - client.lastResponse.time) : 0;
-		printLog(request, "Trying at "+stepElapsedTime+"ms from last reponse");
-		
-		try {
-			if (client.requestMode == RequestMode.REGULARLY) {
-				
-				if (client.lastResponse != null && stepElapsedTime <= client.lastResponse.getOneStepTime()) {
-					int sleepTime = (int)(client.lastResponse.getOneStepTime()-stepElapsedTime);
-					printLog(request, ".. but sleep for "+sleepTime+"ms");
-					Thread.sleep(sleepTime);
-				}
-				
-				printLog(request, ".. executing at "+(client.lastResponse != null ? (int)(System.currentTimeMillis() - client.lastResponse.time) : 0)+"ms from last reponse");
-			}
-			else if (client.requestMode == RequestMode.MUCHTHENSTOP) {
-				
-				long intervalElapsedTime =  System.currentTimeMillis() - client.firstItTime;
-				
-				if (client.lastResponse != null && (client.itFromLastInterval > client.lastResponse.limitIterations) && (intervalElapsedTime < client.lastResponse.interval)) {
-					int sleepTime = (int)(client.lastResponse.interval-intervalElapsedTime);
-					printLog(request, ".. but sleep for "+sleepTime+"ms");
-					Thread.sleep(sleepTime);
-				}
-				
-				printLog(request, ".. executing at "+(System.currentTimeMillis() - client.firstItTime)+"ms from last interval ("+client.itFromLastInterval+"it)");
-			}
+			CrossrefClient.printLog(request, ".. executing");
 			
 			request.addListener(this);
 			request.execute();
@@ -66,25 +35,12 @@ public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListen
 			message.setException(e, request);
 			request.notifyListeners(message);
 		}
-		
-		printLog(request, "Task finished");
 	}
 	
 	@Override
 	public void onResponse(Response<T> response) {
-		client.lastResponse = response;
-		
-		if (client.requestMode == RequestMode.MUCHTHENSTOP) {
-			client.itFromLastInterval++;
-			
-			long intervalElapsedTime =  System.currentTimeMillis() - client.firstItTime;
-			
-			if (intervalElapsedTime > client.lastResponse.interval) {
-				client.firstItTime = System.currentTimeMillis();
-				client.itFromLastInterval = 1;
-				printLog(null, "New interval !");
-			}
-		}
+		if (!response.hasError())
+			client.updateLimits(response.limitIterations, response.interval);
 	}
 
 	@Override
