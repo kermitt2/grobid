@@ -56,7 +56,20 @@ subprojects {
         all*.exclude module: 'slf4j-jdk14'
     }
 
+    ext {
+        // treating them separately, these jars will be flattened into grobid-core.jar on installing,
+        // to avoid missing dependencies from the projects that include grobid-core (see 'jar' taskin grobid-core)
+        localLibs = ['crfpp-1.0.2.jar',
+                     'language-detection-09-13-2011.jar',
+                     'wipo-analysers-0.0.2.jar',
+                     'imageio-pnm-1.0.jar',
+                     'wapiti-1.5.0.jar']
+    }
+
     dependencies {
+        compile fileTree(dir: new File(rootProject.rootDir, 'grobid-core/localLibs'), include: localLibs)
+
+
         testCompile "junit:junit:4.12"
         testCompile "org.easymock:easymock:3.4"
         testCompile "org.powermock:powermock-api-easymock:1.6.6"
@@ -99,18 +112,13 @@ subprojects {
         }
     }
 
+    test {
+        testLogging.showStandardStreams = true
+    }
 }
 
 project("grobid-core") {
-
     dependencies {
-        // local libs
-        compile "org.chasen:crfpp:1.0.2"
-        compile "fr.limsi.wapiti:wapiti:1.5.0"
-        compile "org.wipo.analysers:wipo-analysers:0.0.2"
-        compile "eugfc:imageio-pnm:1.0"
-        // end of local libs
-
         compile(group: 'xml-apis', name: 'xml-apis', version: '1.4.01') {
             // otherwise xml-apis 2.0.1 will come from XOM and will result in
             // java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
@@ -138,6 +146,12 @@ project("grobid-core") {
         compile "com.fasterxml.jackson.module:jackson-module-afterburner:2.9.0"
         compile "joda-time:joda-time:2.9.9"
         compile "org.apache.lucene:lucene-analyzers-common:4.5.1"
+    }
+
+    jar {
+        from {
+            configurations.compile.collect { it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : [] }
+        }
     }
 }
 
