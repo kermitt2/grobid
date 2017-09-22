@@ -1,23 +1,32 @@
 buildscript {
     repositories {
+        mavenLocal()
         mavenCentral()
         jcenter()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
     }
     dependencies {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.4.0'
-        classpath "net.saliman:gradle-cobertura-plugin:2.5.0"
-        classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.1"
+        classpath 'net.saliman:gradle-cobertura-plugin:2.5.0'
     }
+}
+
+plugins {
+    id 'net.saliman.cobertura' version '2.5.0'
+    id 'com.github.kt3k.coveralls' version '2.8.1'
+}
+
+cobertura.coverageFormats = ['html', 'xml']
+
+//<====== Fixing cobertura dependency
+repositories {
+    mavenCentral()
 }
 
 allprojects {
     apply plugin: 'maven'
     apply plugin: 'java'
     apply plugin: 'net.researchgate.release'
-    apply plugin: 'cobertura'
-    apply plugin: 'com.github.kt3k.coveralls'
-
-    cobertura.coverageFormats = ['html', 'xml']
 
     group = "org.grobid"
 }
