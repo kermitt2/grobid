@@ -37,7 +37,7 @@ public class GrobidRestProcessFilesTest {
     public void dispatchProcessing_selectionCitation_shouldWork() throws Exception {
         PowerMock.mockStatic(CitationsVisualizer.class);
 
-        expect(CitationsVisualizer.annotatePdfWithCitations(anyObject(), EasyMock.anyObject(), EasyMock.anyObject())).andReturn(null);
+        expect(CitationsVisualizer.annotatePdfWithCitations(anyObject(PDDocument.class), anyObject(Document.class), anyObject(List.class))).andReturn(null);
 
         PowerMock.replay(CitationsVisualizer.class);
 

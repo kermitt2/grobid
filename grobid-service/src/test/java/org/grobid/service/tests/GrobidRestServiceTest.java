@@ -23,7 +23,7 @@ import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.grobid.service.GrobidPaths;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.main.GrobidServiceApplication;
-import org.grobid.service.module.TestGrobidServiceModule;
+import org.grobid.service.module.GrobidServiceModuleTest;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -67,7 +67,7 @@ public class GrobidRestServiceTest {
 
     @ClassRule
     public static DropwizardAppRule<GrobidServiceConfiguration> APP =
-            new DropwizardAppRule<>(GrobidServiceApplication.class, TestGrobidServiceModule.TEST_CONFIG_FILE);
+            new DropwizardAppRule<>(GrobidServiceApplication.class, GrobidServiceModuleTest.TEST_CONFIG_FILE);
 
 
     private String baseUrl() {
@@ -78,7 +78,7 @@ public class GrobidRestServiceTest {
     public void setUp() throws IOException {
         JerseyGuiceUtils.reset();
 
-        TestGrobidServiceModule testWorkerModule = new TestGrobidServiceModule() {
+        GrobidServiceModuleTest testWorkerModule = new GrobidServiceModuleTest() {
             // redefine methods that are needed:
         };
 
