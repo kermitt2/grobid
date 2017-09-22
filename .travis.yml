@@ -4,7 +4,8 @@ jdk:
 
 after_success:
 #- mvn clean cobertura:cobertura org.eluder.coveralls:coveralls-maven-plugin:report
-- ./gradlew clean cobertura coveralls --stacktrace
+#- ./gradlew clean cobertura coveralls --stacktrace
+- ./gradlew jacocoTestReport coveralls --debug
 
 after_failure:
 - ./gradlew clean check --debug
