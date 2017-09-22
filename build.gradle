@@ -6,21 +6,21 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.4.0'
-//        classpath 'net.saliman:gradle-cobertura-plugin:2.5.0'
+        classpath 'net.saliman:gradle-cobertura-plugin:2.5.0'
     }
 }
 
-//plugins {
-//    id 'net.saliman.cobertura' version '2.5.0'
-//    id 'com.github.kt3k.coveralls' version '2.8.1'
-//}
-//
-//cobertura.coverageFormats = ['html', 'xml']
-
 plugins {
+    id 'net.saliman.cobertura' version '2.5.0'
+    id 'com.github.kt3k.coveralls' version '2.8.1'
+}
+
+cobertura.coverageFormats = ['html', 'xml']
+
+/*plugins {
     id 'jacoco'
     id 'com.github.kt3k.coveralls' version '2.6.3'
-}
+}*/
 
 //<====== Fixing cobertura dependency
 repositories {
@@ -160,7 +160,11 @@ project("grobid-trainer") {
     }
 }
 
-//Coveralls
+coveralls {
+    sourceDirs = subprojects.sourceSets.main.allSource.srcDirs.flatten()
+}
+
+//Coveralls using Jacoco
 /*
 def publishedProjects = subprojects
 
