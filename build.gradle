@@ -22,14 +22,6 @@ plugins {
     id 'com.github.kt3k.coveralls' version '2.6.3'
 }
 
-jacocoTestReport {
-    reports {
-        xml.enabled = true // coveralls plugin depends on xml format report
-        html.enabled = true
-    }
-}
-
-
 //<====== Fixing cobertura dependency
 repositories {
     mavenCentral()
@@ -167,3 +159,45 @@ project("grobid-trainer") {
         compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
     }
 }
+
+//Coveralls
+/*
+def publishedProjects = subprojects
+
+task jacocoMerge(type: JacocoMerge) {
+    subprojects.each { subproject ->
+        println subproject
+        executionData subproject.tasks.withType(Test)
+    }
+    doFirst {
+        executionData = files(executionData.findAll { it.exists() })
+    }
+}
+
+task jacocoRootReport(type: JacocoReport, group: 'Coverage reports') {
+    description = 'Generates an aggregate report from all subprojects'
+    dependsOn publishedProjects.test, jacocoMerge
+
+    additionalSourceDirs = files(publishedProjects.sourceSets.main.allSource.srcDirs)
+    sourceDirectories = files(publishedProjects.sourceSets.main.allSource.srcDirs)
+    classDirectories = files(publishedProjects.sourceSets.main.output)
+    executionData jacocoMerge.destinationFile
+
+    reports {
+        html.enabled = true     // human readable
+        xml.enabled = true      // required by coveralls
+    }
+}
+
+coveralls {
+    sourceDirs = publishedProjects.sourceSets.main.allSource.srcDirs.flatten()
+    jacocoReportPath = "${buildDir}/reports/jacoco/jacocoRootReport/jacocoRootReport.xml"
+}
+
+tasks.coveralls {
+    group = 'Coverage reports'
+    description = 'Uploads the aggregated coverage report to Coveralls'
+
+    dependsOn jacocoRootReport
+    onlyIf { System.env.'CI' && !JavaVersion.current().isJava9Compatible() }
+}*/
