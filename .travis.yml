@@ -6,7 +6,7 @@ after_success:
 - ./gradlew clean cobertura coveralls --debug
 
 after_failure:
-- ./gradlew clean check --debug
+- ./gradlew clean check --stacktrace
 
 notifications:
   slack:
