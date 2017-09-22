@@ -3,7 +3,6 @@ buildscript {
         mavenLocal()
         mavenCentral()
         jcenter()
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
     }
     dependencies {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.4.0'
