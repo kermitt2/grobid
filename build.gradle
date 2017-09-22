@@ -74,6 +74,31 @@ subprojects {
     artifacts {
         archives sourceJar
     }
+
+    uploadArchives {
+        // if you want to enable uploading to some maven repo, add those properties to ~/.gradle/gradle.properties, e.g.:
+        /*
+        mavenRepoUserName=maven_username
+        mavenRepoPassword=super_secret
+        mavenRepoReleasesUrl=https://nexus3.example.org/repository/maven-releases/
+        mavenRepoSnapshotsUrl=https://nexus3.example.org/repository/maven-snapshots/
+         */
+        def user = project.hasProperty('mavenRepoUserName') ? mavenRepoUserName : ''
+        def password = project.hasProperty('mavenRepoPassword') ? mavenRepoPassword : ''
+        def rurl = project.hasProperty('mavenRepoReleasesUrl') ? mavenRepoReleasesUrl : ''
+        def surl = project.hasProperty('mavenRepoSnapshotsUrl') ? mavenRepoSnapshotsUrl : ''
+
+        repositories.mavenDeployer {
+            repository(url: rurl) {
+                authentication(userName: user, password: password)
+            }
+            snapshotRepository(url: surl) {
+                authentication(userName: user, password: password)
+            }
+
+        }
+    }
+
 }
 
 project("grobid-core") {
@@ -124,8 +149,11 @@ project("grobid-home") {
             include("lib/**")
             include("pdf2xml/**")
             include("models/**")
+            include("lexicon/**")
+            include("schemas/**")
             exclude("models/**/*.old")
         }
+        into("grobid-home")
     }
     artifacts {
         archives packageGrobidHome
