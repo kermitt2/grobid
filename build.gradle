@@ -6,21 +6,8 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.4.0'
-        classpath 'net.saliman:gradle-cobertura-plugin:2.5.0'
     }
 }
-
-plugins {
-    id 'net.saliman.cobertura' version '2.5.0'
-    id 'com.github.kt3k.coveralls' version '2.8.1'
-}
-
-cobertura.coverageFormats = ['html', 'xml']
-
-/*plugins {
-    id 'jacoco'
-    id 'com.github.kt3k.coveralls' version '2.6.3'
-}*/
 
 //<====== Fixing cobertura dependency
 repositories {
@@ -31,6 +18,7 @@ allprojects {
     apply plugin: 'maven'
     apply plugin: 'java'
     apply plugin: 'net.researchgate.release'
+    apply plugin: 'jacoco'
 
     group = "org.grobid"
 }
@@ -68,7 +56,6 @@ subprojects {
 
     dependencies {
         compile fileTree(dir: new File(rootProject.rootDir, 'grobid-core/localLibs'), include: localLibs)
-
 
         testCompile "junit:junit:4.12"
         testCompile "org.easymock:easymock:3.4"
@@ -112,6 +99,14 @@ subprojects {
         }
     }
 
+    jacocoTestReport {
+        reports {
+            html.enabled = true
+            xml.enabled = true
+            csv.enabled = false
+        }
+    }
+
     test {
         testLogging.showStandardStreams = true
     }
@@ -126,7 +121,7 @@ project("grobid-core") {
             force = true
         }
 
-        compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.20'
+        compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
         compile "com.cybozu.labs:langdetect:1.1-20120112"
         compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
         compile "commons-pool:commons-pool:1.6"
@@ -150,7 +145,9 @@ project("grobid-core") {
 
     jar {
         from {
-            configurations.compile.collect { it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : [] }
+            configurations.compile.collect {
+                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
+            }
         }
     }
 }
@@ -202,41 +199,34 @@ project("grobid-trainer") {
     }
 }
 
-coveralls {
-    sourceDirs = subprojects.sourceSets.main.allSource.srcDirs.flatten()
-}
-
 //Coveralls using Jacoco
-/*
-def publishedProjects = subprojects
 
-task jacocoMerge(type: JacocoMerge) {
-    subprojects.each { subproject ->
-        println subproject
-        executionData subproject.tasks.withType(Test)
-    }
-    doFirst {
-        executionData = files(executionData.findAll { it.exists() })
-    }
-}
+task codeCoverageReport(type: JacocoReport) {
+    dependsOn = subprojects.test
 
-task jacocoRootReport(type: JacocoReport, group: 'Coverage reports') {
-    description = 'Generates an aggregate report from all subprojects'
-    dependsOn publishedProjects.test, jacocoMerge
+    // Gather execution data from all subprojects
+    // (change this if you e.g. want to calculate unit test/integration test coverage separately)
+//    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
 
-    additionalSourceDirs = files(publishedProjects.sourceSets.main.allSource.srcDirs)
-    sourceDirectories = files(publishedProjects.sourceSets.main.allSource.srcDirs)
-    classDirectories = files(publishedProjects.sourceSets.main.output)
-    executionData jacocoMerge.destinationFile
+    // Add all relevant sourcesets from the subprojects
+//    subprojects.each {
+//        sourceSets it.sourceSets.main
+//    }
 
+    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
+    classDirectories = files(subprojects.sourceSets.main.output)
+    executionData = files(subprojects.jacocoTestReport.executionData)
+    
     reports {
-        html.enabled = true     // human readable
-        xml.enabled = true      // required by coveralls
+        xml.enabled true
+        html.enabled true
+        html.destination "${buildDir}/reports/jacoco"
+        csv.enabled false
     }
 }
 
-coveralls {
-    sourceDirs = publishedProjects.sourceSets.main.allSource.srcDirs.flatten()
+/*coveralls {
+    sourceDirs = subprojects.sourceSets.main.allSource.srcDirs.flatten()
     jacocoReportPath = "${buildDir}/reports/jacoco/jacocoRootReport/jacocoRootReport.xml"
 }
 
@@ -244,6 +234,9 @@ tasks.coveralls {
     group = 'Coverage reports'
     description = 'Uploads the aggregated coverage report to Coveralls'
 
-    dependsOn jacocoRootReport
+    dependsOn codeCoverageReport
     onlyIf { System.env.'CI' && !JavaVersion.current().isJava9Compatible() }
 }*/
+
+
+
