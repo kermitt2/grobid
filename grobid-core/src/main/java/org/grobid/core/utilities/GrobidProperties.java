@@ -83,10 +83,8 @@ public class GrobidProperties {
     }
 
     /**
-     * Returns a static {@link GrobidProperties} object. If no one is set, then
+     * Returns an instance of {@link GrobidProperties} object. If no one is set, then
      * it creates one. {@inheritDoc #GrobidProperties()}
-     *
-     * @return
      */
     public static GrobidProperties getInstance() {
         if (grobidProperties == null) {
@@ -94,6 +92,15 @@ public class GrobidProperties {
         } else {
             return grobidProperties;
         }
+    }
+
+    /**
+     * Returns an instance of {@link GrobidProperties} object based on a custom grobid-home directory.
+     * If no one is set, then it creates one. {@inheritDoc #GrobidProperties()}
+     */
+    public static GrobidProperties getInstance(GrobidHomeFinder grobidHomeFinder) {
+        GROBID_HOME_PATH = grobidHomeFinder.findGrobidHomeOrFail();
+        return getInstance();
     }
 
     /**
@@ -273,13 +280,7 @@ public class GrobidProperties {
         init();
     }
 
-//    public GrobidProperties(final Context pContext) {
-//        init(pContext);
-//    }
-
-    private static void init(/*final Context pContext*/) {
-//        setContext(pContext);
-
+    private void init() {
         setProps(new Properties());
 
         assignGrobidHomePath();
