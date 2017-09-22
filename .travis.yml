@@ -3,7 +3,7 @@ jdk:
   - oraclejdk8
 
 after_success:
-- ./gradlew clean cobertura coveralls --debug
+- ./gradlew clean cobertura coveralls --debug --info --stacktrace
 
 after_failure:
 - ./gradlew clean check --stacktrace
