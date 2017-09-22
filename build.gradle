@@ -8,10 +8,18 @@ buildscript {
     }
 }
 
+plugins {
+    id 'net.saliman.cobertura' version '2.3.1'
+    id 'com.github.kt3k.coveralls' version '2.8.1'
+}
+
+cobertura.coverageFormats = ['html', 'xml']
+
 allprojects {
     apply plugin: 'maven'
     apply plugin: 'java'
     apply plugin: 'net.researchgate.release'
+//    apply plugin: 'cobertura'
 
     group = "org.grobid"
 }
@@ -75,7 +83,6 @@ project("grobid-core") {
         }
 
         compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.20'
-
         compile "com.cybozu.labs:langdetect:1.1-20120112"
         compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
         compile "commons-pool:commons-pool:1.6"
@@ -135,11 +142,16 @@ project("grobid-service") {
     }
 
 }
+
 project("grobid-trainer") {
     dependencies {
         compile(project(':grobid-core'))
         compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
     }
 }
+
+
+
+
 
 
