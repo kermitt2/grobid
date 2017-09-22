@@ -5,21 +5,19 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.4.0'
+        classpath "net.saliman:gradle-cobertura-plugin:2.5.0"
+        classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.1"
     }
 }
-
-plugins {
-    id 'net.saliman.cobertura' version '2.3.1'
-    id 'com.github.kt3k.coveralls' version '2.8.1'
-}
-
-cobertura.coverageFormats = ['html', 'xml']
 
 allprojects {
     apply plugin: 'maven'
     apply plugin: 'java'
     apply plugin: 'net.researchgate.release'
-//    apply plugin: 'cobertura'
+    apply plugin: 'cobertura'
+    apply plugin: 'com.github.kt3k.coveralls'
+
+    cobertura.coverageFormats = ['html', 'xml']
 
     group = "org.grobid"
 }
@@ -140,7 +138,6 @@ project("grobid-service") {
 
         testCompile "io.dropwizard:dropwizard-testing:1.0.2"
     }
-
 }
 
 project("grobid-trainer") {
@@ -149,9 +146,3 @@ project("grobid-trainer") {
         compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
     }
 }
-
-
-
-
-
-
