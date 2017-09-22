@@ -95,6 +95,9 @@ project("grobid-home") {
 project("grobid-service") {
     apply plugin: 'application'
 
+    mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
+    tasks.run.workingDir = rootProject.rootDir
+
     dependencies {
         compile(project(':grobid-core'))
         compile "io.dropwizard:dropwizard-core:1.0.2"
