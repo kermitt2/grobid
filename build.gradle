@@ -7,16 +7,18 @@ buildscript {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.4.0'
     }
 }
-apply plugin: 'maven'
-apply plugin: 'java'
-apply plugin: 'net.researchgate.release'
+
+allprojects {
+    apply plugin: 'maven'
+    apply plugin: 'java'
+    apply plugin: 'net.researchgate.release'
+
+    group = "org.grobid"
+}
 
 subprojects {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
-
-    apply plugin: 'maven'
-    apply plugin: 'java'
 
     repositories {
         mavenCentral()
@@ -47,7 +49,6 @@ subprojects {
 }
 
 project("grobid-core") {
-
 
     dependencies {
         // local libs
@@ -98,6 +99,9 @@ project("grobid-home") {
             include("models/**")
             exclude("models/**/*.old")
         }
+    }
+    artifacts {
+        archives packageGrobidHome
     }
 }
 
