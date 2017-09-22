@@ -22,12 +22,12 @@ public class GrobidHomeFinderTest {
     @Test
     public void testViaProp() {
         System.setProperty(GrobidPropertyKeys.PROP_GROBID_HOME, "../grobid-home");
-        assertPath(new GrobidHomeFinder(Collections.emptyList()).findGrobidHomeOrFail());
+        assertPath(new GrobidHomeFinder(Collections.<String>emptyList()).findGrobidHomeOrFail());
     }
 
     @Test(expected = GrobidPropertyException.class)
     public void testNoDefaultLocations() {
-        assertPath(new GrobidHomeFinder(Collections.emptyList()).findGrobidHomeOrFail());
+        assertPath(new GrobidHomeFinder(Collections.<String>emptyList()).findGrobidHomeOrFail());
     }
 
     private void assertPath(File p) {

@@ -17,11 +17,11 @@ import org.hibernate.validator.HibernateValidator;
 import javax.validation.Validation;
 import javax.validation.ValidatorFactory;
 
-public class TestGrobidServiceModule extends GrobidServiceModule {
+public class GrobidServiceModuleTest extends GrobidServiceModule {
 
     public static final String TEST_CONFIG_FILE = "src/test/resources/setup/config/test-config.yaml";
 
-    public TestGrobidServiceModule() {
+    public GrobidServiceModuleTest() {
         super();
     }
 

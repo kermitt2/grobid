@@ -1,40 +1,18 @@
 package org.grobid.trainer.evaluation;
 
-import org.apache.commons.io.FileUtils;
-
-import java.io.InputStream;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.File;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
-
+import org.apache.commons.io.IOUtils;
 import org.grobid.trainer.LabelStat;
 import org.grobid.trainer.Stats;
-import org.grobid.core.exceptions.GrobidException;
-
-import org.junit.Before;
 import org.junit.Test;
 
+import java.nio.charset.StandardCharsets;
+
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
 
 public class EvaluationUtilitiesTest {
 
-	public File getResourceDir(String resourceDir) {
-		File file = new File(resourceDir);
-		if (!file.exists()) {
-			if (!file.mkdirs()) {
-				throw new GrobidException("Cannot start test, because test resource folder is not correctly set.");
-			}
-		}
-		return(file);
-	}
-
-	@Test
+    @Test
     public void testMetricsAllGood() throws Exception {
         String result = "a I-<1> I-<1>\nb <1> <1>\nc I-<2> I-<2>\nd I-<1> I-<1>\ne <1> <1>\n";
         //System.out.println(result);
@@ -221,11 +199,7 @@ public class EvaluationUtilitiesTest {
 
     @Test
     public void testMetricsReal() throws Exception {
-    	File textFile = new File(this.getResourceDir("./src/test/resources/").getAbsoluteFile()+"/ex.txt.txt");
-		if (!textFile.exists()) {
-			throw new GrobidException("Cannot start test, because test resource folder is not correctly set.");
-		}
-        String result = FileUtils.readFileToString(textFile, "UTF-8");
+	    String result = IOUtils.toString(this.getClass().getResourceAsStream("/ex.txt.txt"), StandardCharsets.UTF_8);
         result = result.replace(System.lineSeparator(), "\n");
 
         Stats wordStats = EvaluationUtilities.tokenLevelStats(result);
