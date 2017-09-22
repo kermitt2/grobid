@@ -57,7 +57,7 @@ project("grobid-core") {
         compile "eugfc:imageio-pnm:1.0"
         // end of local libs
 
-        compile (group: 'xml-apis', name: 'xml-apis', version: '1.4.01') {
+        compile(group: 'xml-apis', name: 'xml-apis', version: '1.4.01') {
             // otherwise xml-apis 2.0.1 will come from XOM and will result in
             // java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
             //TODO: sort out this problem better
@@ -89,7 +89,16 @@ project("grobid-core") {
 }
 
 project("grobid-home") {
-    //TODO: package it properly
+    task packageGrobidHome(type: Zip) {
+        from('.') {
+            include("config/*")
+            include("language-detection/**")
+            include("lib/**")
+            include("pdf2xml/**")
+            include("models/**")
+            exclude("models/**/*.old")
+        }
+    }
 }
 
 project("grobid-service") {
