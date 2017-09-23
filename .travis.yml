@@ -1,10 +1,11 @@
 language: java
 dist: trusty
+sudo: false
 jdk:
   - oraclejdk8
 
-after_success:
-- ./gradlew codeCoverageReport --debug --info --stacktrace
+#after_success:
+#- ./gradlew codeCoverageReport --debug --info --stacktrace
 
 after_failure:
 - ./gradlew clean check --debug --info --stacktrace
