@@ -70,6 +70,10 @@ subprojects {
         from project.sourceSets.main.java
     }
 
+     tasks.withType(Test){
+        maxParallelForks = 1
+    }
+
     artifacts {
         archives sourceJar
     }
