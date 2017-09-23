@@ -141,8 +141,8 @@ project("grobid-core") {
         compile "joda-time:joda-time:2.9.9"
         compile "org.apache.lucene:lucene-analyzers-common:4.5.1"
 
-        runtime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.20'
-//        testRuntime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.20'
+        runtime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
+//        testRuntime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
     }
 
     jar {
