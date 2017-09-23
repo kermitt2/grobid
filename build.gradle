@@ -18,7 +18,7 @@ allprojects {
     apply plugin: 'maven'
     apply plugin: 'java'
     apply plugin: 'net.researchgate.release'
-    apply plugin: 'jacoco'
+//    apply plugin: 'jacoco'
 
     group = "org.grobid"
 }
@@ -102,13 +102,13 @@ subprojects {
         }
     }
 
-    jacocoTestReport {
-        reports {
-            html.enabled = true
-            xml.enabled = true
-            csv.enabled = false
-        }
-    }
+//    jacocoTestReport {
+//        reports {
+//            html.enabled = true
+//            xml.enabled = true
+//            csv.enabled = false
+//        }
+//    }
 
     test {
         testLogging.showStandardStreams = true
@@ -211,8 +211,8 @@ project("grobid-trainer") {
 
 //Coveralls using Jacoco
 
-task codeCoverageReport(type: JacocoReport) {
-    dependsOn = subprojects.test
+//task codeCoverageReport(type: JacocoReport) {
+//    dependsOn = subprojects.test
 
     // Gather execution data from all subprojects
     // (change this if you e.g. want to calculate unit test/integration test coverage separately)
@@ -223,17 +223,17 @@ task codeCoverageReport(type: JacocoReport) {
 //        sourceSets it.sourceSets.main
 //    }
 
-    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
-    classDirectories = files(subprojects.sourceSets.main.output)
-    executionData = files(subprojects.jacocoTestReport.executionData)
-    
-    reports {
-        xml.enabled true
-        html.enabled true
-        html.destination "${buildDir}/reports/jacoco"
-        csv.enabled false
-    }
-}
+//    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
+//    classDirectories = files(subprojects.sourceSets.main.output)
+//    executionData = files(subprojects.jacocoTestReport.executionData)
+//
+//    reports {
+//        xml.enabled true
+//        html.enabled true
+//        html.destination "${buildDir}/reports/jacoco"
+//        csv.enabled false
+//    }
+//}
 
 /*coveralls {
     sourceDirs = subprojects.sourceSets.main.allSource.srcDirs.flatten()
