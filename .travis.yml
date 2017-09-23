@@ -3,7 +3,7 @@ jdk:
   - oraclejdk8
 
 after_success:
-- ./gradlew codeCoverageReport coveralls --debug --info --stacktrace
+- ./gradlew codeCoverageReport --debug --info --stacktrace
 
 after_failure:
 - ./gradlew clean check --stacktrace
