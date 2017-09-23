@@ -38,10 +38,8 @@ subprojects {
     }
 
     configurations {
-        all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
         all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
         all*.exclude group: 'log4j', module: "log4j"
-        all*.exclude module: 'slf4j-jdk14'
     }
 
     ext {
@@ -55,6 +53,7 @@ subprojects {
     }
 
     dependencies {
+        // packaging local libs inside grobid-core.jar
         compile fileTree(dir: new File(rootProject.rootDir, 'grobid-core/localLibs'), include: localLibs)
 
         testCompile "junit:junit:4.12"
@@ -141,6 +140,9 @@ project("grobid-core") {
         compile "com.fasterxml.jackson.module:jackson-module-afterburner:2.9.0"
         compile "joda-time:joda-time:2.9.9"
         compile "org.apache.lucene:lucene-analyzers-common:4.5.1"
+
+        runtime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.20'
+//        testRuntime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.20'
     }
 
     jar {
@@ -176,6 +178,10 @@ project("grobid-service") {
 
     mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
     tasks.run.workingDir = rootProject.rootDir
+
+    configurations {
+        all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
+    }
 
     dependencies {
         compile(project(':grobid-core'))
