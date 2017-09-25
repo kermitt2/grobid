@@ -211,7 +211,7 @@ public class TeiStAXParser {
             // VZ: TODO: is my assumption correct?
             // VZ: in many cases, the model will be reloaded again.
             // if JVM is finished, then memory is freed anyways. Otherwise the model is probably needed in memory for future requests
-//            extractor.close();
+            extractor.close();
 		}
 
 		logTimeProcessing();

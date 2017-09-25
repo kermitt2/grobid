@@ -13,10 +13,11 @@ public abstract class EngineTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-        engine = GrobidFactory.getInstance().createEngine();
+        engine = GrobidFactory.getInstance().getEngine();
     }
 
     @AfterClass
-    public static void destroyInitialContext() throws Exception {
+    public static void closeResources() throws Exception {
+        engine.close();
     }
 }
