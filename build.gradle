@@ -6,7 +6,7 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.4.0'
-        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:1.0.2'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.1'
     }
 }
 
