@@ -4,6 +4,7 @@ import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.document.xml.XmlBuilderUtils;
+import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.TaggingLabel;
@@ -52,46 +53,49 @@ public class TestFullTextParser extends EngineTest {
 
         File pdfPath = new File(testPath, "/Wang-paperAVE2008.pdf");
 
-        Document tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+        Engine engine = GrobidFactory.getInstance().getEngine();
+        Document tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
         //System.out.println(tei);
 
         //TODO: fix the test
 
         pdfPath = new File(testPath + File.separator + "two_pages.pdf");
-        tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
 
 
         pdfPath = new File(testPath + File.separator + "MullenJSSv18i03.pdf");
-        tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
 
 
 
         pdfPath = new File(testPath + File.separator + "1001._0908.0054.pdf");
 
-        tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
         //System.out.println(tei);
 
         pdfPath = new File(testPath + File.separator + "submission_161.pdf");
-        tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
         //System.out.println(tei);
 
         pdfPath = new File(testPath + File.separator + "submission_363.pdf");
-        tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
         //System.out.println(tei);
 
         pdfPath = new File(testPath + File.separator + "ApplPhysLett_98_082505.pdf");
-        tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
 
         pdfPath = new File(testPath + File.separator + "1996PRBAConfProc00507417Vos.pdf");
-        tei = GrobidFactory.getInstance().createEngine().fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
+
+        engine.close();
 
     }
 
