@@ -4,6 +4,9 @@ language: java
 jdk:
   - oraclejdk8
 
+env:
+  - GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx512m -XX:+HeapDumpOnOutOfMemoryError"'
+
 #after_success:
 #- ./gradlew codeCoverageReport --debug --info --stacktrace
 
