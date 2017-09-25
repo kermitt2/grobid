@@ -220,6 +220,8 @@ project("grobid-trainer") {
     }
 }
 
+
+// coveralls does not support mutimodule, therefore merging reports
 task jacocoRootReport(type: JacocoReport) {
     dependsOn = [subprojects.test
 //                 subprojects.jacocoTestReport
@@ -248,47 +250,5 @@ coveralls {
     sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
     jacocoReportPath = "build/reports/jacoco/test/jacocoTestReport.xml"
 }
-
-
-
-//Coveralls using Jacoco
-
-//task codeCoverageReport(type: JacocoReport) {
-//    dependsOn = subprojects.test
-
-    // Gather execution data from all subprojects
-    // (change this if you e.g. want to calculate unit test/integration test coverage separately)
-//    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
-
-    // Add all relevant sourcesets from the subprojects
-//    subprojects.each {
-//        sourceSets it.sourceSets.main
-//    }
-
-//    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
-//    classDirectories = files(subprojects.sourceSets.main.output)
-//    executionData = files(subprojects.jacocoTestReport.executionData)
-//
-//    reports {
-//        xml.enabled true
-//        html.enabled true
-//        html.destination "${buildDir}/reports/jacoco"
-//        csv.enabled false
-//    }
-//}
-
-/*coveralls {
-    sourceDirs = subprojects.sourceSets.main.allSource.srcDirs.flatten()
-    jacocoReportPath = "${buildDir}/reports/jacoco/jacocoRootReport/jacocoRootReport.xml"
-}
-
-tasks.coveralls {
-    group = 'Coverage reports'
-    description = 'Uploads the aggregated coverage report to Coveralls'
-
-    dependsOn codeCoverageReport
-    onlyIf { System.env.'CI' && !JavaVersion.current().isJava9Compatible() }
-}*/
-
 
 
