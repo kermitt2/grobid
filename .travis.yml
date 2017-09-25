@@ -10,6 +10,9 @@ jdk:
 #after_failure:
 #- ./gradlew clean check --debug --info --stacktrace
 
+script:
+  - ./gradlew build --no-daemon
+
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
