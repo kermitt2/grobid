@@ -10,7 +10,6 @@ jdk:
 #after_failure:
 #- ./gradlew clean check --debug --info --stacktrace
 
-
 script:
   - ./gradlew build --no-daemon
 
