@@ -23,6 +23,10 @@ allprojects {
     apply plugin: 'com.github.kt3k.coveralls'
 
     group = "org.grobid"
+
+    jacoco {
+        toolVersion = '0.7.1.201405082137'
+    }
 }
 
 subprojects {
