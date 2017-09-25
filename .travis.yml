@@ -6,7 +6,7 @@ jdk:
 
 env:
   global:
-    - GRADLE_OPTS="'-Xms128m -Xmx512m'"
+    - GRADLE_OPTS="-Xmx512m"
 
 #after_success:
 #- ./gradlew codeCoverageReport --debug --info --stacktrace
