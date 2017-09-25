@@ -7,8 +7,8 @@ jdk:
 #after_success:
 #- ./gradlew codeCoverageReport --debug --info --stacktrace
 
-after_failure:
-- ./gradlew clean check --debug --info --stacktrace
+#after_failure:
+#- ./gradlew clean check --debug --info --stacktrace
 
 notifications:
   slack:
