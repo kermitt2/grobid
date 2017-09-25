@@ -5,7 +5,8 @@ jdk:
   - oraclejdk8
 
 env:
-  - GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx512m -XX:+HeapDumpOnOutOfMemoryError"'
+  global:
+    - GRADLE_OPTS="'-Xms128m -Xmx512m'"
 
 #after_success:
 #- ./gradlew codeCoverageReport --debug --info --stacktrace
