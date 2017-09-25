@@ -239,7 +239,7 @@ task jacocoRootReport(type: JacocoReport) {
 
 coveralls {
     sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
-    jacocoReportPath = "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
+//    jacocoReportPath = "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
 }
 
 
