@@ -6,10 +6,10 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.4.0'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:1.0.2'
     }
 }
 
-//<====== Fixing cobertura dependency
 repositories {
     mavenCentral()
 }
@@ -18,7 +18,8 @@ allprojects {
     apply plugin: 'maven'
     apply plugin: 'java'
     apply plugin: 'net.researchgate.release'
-//    apply plugin: 'jacoco'
+    apply plugin: 'jacoco'
+    apply plugin: 'com.github.kt3k.coveralls'
 
     group = "org.grobid"
 }
@@ -70,10 +71,9 @@ subprojects {
         from project.sourceSets.main.java
     }
 
-    // not needed
-//     tasks.withType(Test){
-//        maxParallelForks = 1
-//    }
+     tasks.withType(Test){
+        maxParallelForks = 1
+    }
 
     artifacts {
         archives sourceJar
@@ -82,11 +82,11 @@ subprojects {
     uploadArchives {
         // if you want to enable uploading to some maven repo, add those properties to ~/.gradle/gradle.properties, e.g.:
         /*
-        mavenRepoUserName=maven_username
-        mavenRepoPassword=super_secret
-        mavenRepoReleasesUrl=https://nexus3.example.org/repository/maven-releases/
-        mavenRepoSnapshotsUrl=https://nexus3.example.org/repository/maven-snapshots/
-         */
+            mavenRepoUserName=maven_username
+            mavenRepoPassword=super_secret
+            mavenRepoReleasesUrl=https://nexus3.example.org/repository/maven-releases/
+            mavenRepoSnapshotsUrl=https://nexus3.example.org/repository/maven-snapshots/
+        */
         def user = project.hasProperty('mavenRepoUserName') ? mavenRepoUserName : ''
         def password = project.hasProperty('mavenRepoPassword') ? mavenRepoPassword : ''
         def rurl = project.hasProperty('mavenRepoReleasesUrl') ? mavenRepoReleasesUrl : ''
@@ -103,17 +103,21 @@ subprojects {
         }
     }
 
-//    jacocoTestReport {
-//        reports {
-//            html.enabled = true
-//            xml.enabled = true
-//            csv.enabled = false
-//        }
-//    }
+    jacocoTestReport {
+        additionalSourceDirs = files(sourceSets.main.allSource.srcDirs)
+        sourceDirectories = files(sourceSets.main.allSource.srcDirs)
+        classDirectories =  files(sourceSets.main.output)
+        reports {
+            html.enabled = true
+            xml.enabled = true
+            csv.enabled = false
+        }
+    }
 
     test {
         testLogging.showStandardStreams = true
-//        forkEvery = 1
+        // enable for having separate test executor for different tests
+        //  forkEvery = 1
         maxHeapSize = "1500m"
     }
 }
@@ -210,6 +214,35 @@ project("grobid-trainer") {
         compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
     }
 }
+
+task jacocoRootReport(type: JacocoReport) {
+    dependsOn = subprojects.test
+    additionalSourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs)
+    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
+    classDirectories =  files(subprojects.sourceSets.main.output)
+    executionData = files(subprojects.jacocoTestReport.executionData)
+    reports {
+        html.enabled = true
+        xml.enabled = true
+        csv.enabled = false
+        xml.destination = "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
+    }
+    onlyIf = {
+        true
+    }
+    doFirst {
+        executionData = files(executionData.findAll {
+            it.exists()
+        })
+    }
+}
+
+coveralls {
+    sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
+    jacocoReportPath = "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
+}
+
+
 
 //Coveralls using Jacoco
 
