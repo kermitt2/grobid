@@ -112,8 +112,8 @@ subprojects {
 
     test {
         testLogging.showStandardStreams = true
-        forkEvery = 1
-        maxHeapSize = "3072m"
+//        forkEvery = 1
+        maxHeapSize = "1500m"
     }
 }
 
