@@ -19,6 +19,7 @@ allprojects {
     apply plugin: 'java'
     apply plugin: 'net.researchgate.release'
     apply plugin: 'jacoco'
+    apply plugin: 'base'
     apply plugin: 'com.github.kt3k.coveralls'
 
     group = "org.grobid"
