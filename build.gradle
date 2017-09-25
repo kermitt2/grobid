@@ -70,9 +70,10 @@ subprojects {
         from project.sourceSets.main.java
     }
 
-     tasks.withType(Test){
-        maxParallelForks = 1
-    }
+    // not needed
+//     tasks.withType(Test){
+//        maxParallelForks = 1
+//    }
 
     artifacts {
         archives sourceJar
@@ -148,7 +149,6 @@ project("grobid-core") {
         compile "org.apache.lucene:lucene-analyzers-common:4.5.1"
 
         runtime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
-//        testRuntime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
     }
 
     jar {
