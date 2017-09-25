@@ -217,7 +217,9 @@ project("grobid-trainer") {
 }
 
 task jacocoRootReport(type: JacocoReport) {
-    dependsOn = [subprojects.test, subprojects.jacocoTestReport]
+    dependsOn = [subprojects.test
+//                 subprojects.jacocoTestReport
+    ]
     additionalSourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs)
     sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
     classDirectories =  files(subprojects.sourceSets.main.output)
