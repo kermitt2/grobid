@@ -112,6 +112,7 @@ subprojects {
 
     test {
         testLogging.showStandardStreams = true
+        forkEvery = 1
     }
 }
 
