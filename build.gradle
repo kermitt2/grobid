@@ -8,6 +8,7 @@ buildscript {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.4.0'
         classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.1'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
     }
 }
 
@@ -152,6 +153,7 @@ subprojects {
 }
 
 project("grobid-core") {
+    apply plugin: 'com.github.johnrengelman.shadow'
     dependencies {
         compile(group: 'xml-apis', name: 'xml-apis', version: '1.4.01') {
             // otherwise xml-apis 2.0.1 will come from XOM and will result in
@@ -190,6 +192,19 @@ project("grobid-core") {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
+    }
+
+    shadowJar {
+        classifier = 'onejar'
+        mergeServiceFiles()
+        zip64 true
+        manifest {
+            attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
+        }
+    }
+
+    artifacts {
+        archives shadowJar
     }
 }
 
