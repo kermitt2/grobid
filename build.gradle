@@ -136,7 +136,7 @@ subprojects {
     jacocoTestReport {
         additionalSourceDirs = files(sourceSets.main.allSource.srcDirs)
         sourceDirectories = files(sourceSets.main.allSource.srcDirs)
-        classDirectories =  files(sourceSets.main.output)
+        classDirectories = files(sourceSets.main.output)
         reports {
             html.enabled = true
             xml.enabled = true
@@ -253,12 +253,51 @@ project("grobid-service") {
 }
 
 project("grobid-trainer") {
+    apply plugin: 'com.github.johnrengelman.shadow'
+
     dependencies {
         compile(project(':grobid-core'))
         compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
     }
-}
 
+    shadowJar {
+        classifier = 'onejar'
+        mergeServiceFiles()
+        zip64 true
+        manifest {
+            attributes 'Main-Class': 'org.grobid.trainer.TrainerRunner'
+        }
+    }
+
+    artifacts {
+        archives shadowJar
+    }
+
+    def trainerTasks = [
+        "train_name_header"  : "org.grobid.trainer.NameHeaderTrainer",
+        "train_name_citation": "org.grobid.trainer.NameCitationTrainer",
+        "train_affiliation_address": "org.grobid.trainer.AffiliationAddressTrainer",
+        "train_header": "org.grobid.trainer.HeaderTrainer",
+        "train_fulltext": "org.grobid.trainer.FulltextTrainer",
+        "train_shorttext": "org.grobid.trainer.ShorttextTrainer",
+        "train_figure": "org.grobid.trainer.FigureTrainer",
+        "train_table": "org.grobid.trainer.TableTrainer",
+        "train_citation": "org.grobid.trainer.CitationTrainer",
+        "train_date": "org.grobid.trainer.DateTrainer",
+        "train_segmentation": "org.grobid.trainer.SegmentationTrainer",
+        "train_reference_segmentation": "org.grobid.trainer.ReferenceSegmenterTrainer",
+        "train_ebook_model": "org.grobid.trainer.EbookTrainer",
+        "train_patent_citation": "org.grobid.trainer.PatentParserTrainer"
+    ]
+
+    trainerTasks.each { taskName, mainClassName ->
+        tasks.create(name: taskName, type: JavaExec, group: 'modeltraining') {
+            main = mainClassName
+            classpath = sourceSets.main.runtimeClasspath
+        }
+    }
+
+}
 
 // coveralls does not support mutimodule, therefore merging reports
 task jacocoRootReport(type: JacocoReport) {
@@ -267,7 +306,7 @@ task jacocoRootReport(type: JacocoReport) {
     ]
     additionalSourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs)
     sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
-    classDirectories =  files(subprojects.sourceSets.main.output)
+    classDirectories = files(subprojects.sourceSets.main.output)
     executionData = files(subprojects.jacocoTestReport.executionData)
     reports {
         html.enabled = true
