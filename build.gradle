@@ -7,6 +7,7 @@ buildscript {
     dependencies {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.4.0'
         classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
     }
 }
 
@@ -30,6 +31,8 @@ allprojects {
 }
 
 subprojects {
+    apply plugin: 'com.jfrog.bintray'
+
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
@@ -76,10 +79,6 @@ subprojects {
         from project.sourceSets.main.java
     }
 
-//     tasks.withType(Test){
-//        maxParallelForks = 1
-//    }
-
     artifacts {
         archives sourceJar
     }
@@ -105,6 +104,30 @@ subprojects {
                 authentication(userName: user, password: password)
             }
 
+        }
+    }
+
+    bintray {
+        dryRun = false // Whether to run this as dry-run, without deploying
+        publish = true // If version should be auto published after an upload
+
+        user = project.hasProperty('bintrayUser') ? bintrayUser : ''
+        key = project.hasProperty('bintrayApiKey') ? bintrayApiKey : ''
+        configurations = ['archives']
+        pkg {
+            name = 'grobid'
+            repo = 'maven'
+            userOrg = 'rookies'
+            licenses = ['Apache-2.0']
+            vcsUrl = 'https://github.com/kermitt2/grobid'
+            issueTrackerUrl = 'https://github.com/kermitt2/grobid/issues'
+            githubRepo = 'kermitt2/grobid'
+
+            version {
+                name = rootProject.version
+                vcsTag = rootProject.version
+                released = new Date()
+            }
         }
     }
 
