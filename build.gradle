@@ -297,6 +297,29 @@ project("grobid-trainer") {
         }
     }
 
+    // evaluation tasks
+    ext.getArg = { propName, defaultVal ->
+        return project.hasProperty(propName) ? project.getProperty(propName) : defaultVal;
+    }
+
+    // run like:
+    // gradle PubMedCentralEval -Pp2t=/path/to/goldenSet
+    // gradle PubMedCentralEval -Pp2t=/path/to/goldenSet -Prun=1 -PfileRatio=0.1
+    task(PubMedCentralEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+        main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
+        classpath = sourceSets.main.runtimeClasspath
+        args 'nlm', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
+        jvmArgs '-Xmx3072m'
+    }
+
+    task(Pub2TeiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+        main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
+        classpath = sourceSets.main.runtimeClasspath
+        args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
+        jvmArgs '-Xmx3072m'
+    }
+
+
 }
 
 // coveralls does not support mutimodule, therefore merging reports
