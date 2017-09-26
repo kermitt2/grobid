@@ -111,6 +111,7 @@ subprojects {
         dryRun = false // Whether to run this as dry-run, without deploying
         publish = true // If version should be auto published after an upload
 
+        // read from ~/.gradle/gradle.properties. Set those up before releasing
         user = project.hasProperty('bintrayUser') ? bintrayUser : ''
         key = project.hasProperty('bintrayApiKey') ? bintrayApiKey : ''
         configurations = ['archives']
@@ -274,4 +275,5 @@ coveralls {
     jacocoReportPath = "build/reports/jacoco/test/jacocoTestReport.xml"
 }
 
+afterReleaseBuild.dependsOn subprojects.bintrayUpload
 
