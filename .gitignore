@@ -8,6 +8,7 @@ Thumbs.db
 .idea
 .gradle
 **/build
+*/out/
 *.iml
 *.log
 *.log.*
@@ -29,17 +30,9 @@ grobid-home/models/name/header/model.crf.old
 
 build.xml
 
-grobid-core/maven-build.properties
-grobid-core/maven-build.xml
-grobid-home/maven-build.properties
-grobid-home/maven-build.xml
-grobid-service/maven-build.properties
-grobid-service/maven-build.xml
-grobid-trainer/maven-build.properties
-grobid-trainer/maven-build.xml
-
+*/maven-build.properties
+*/maven-build.xml
 maven-build.xml
-
 release.properties
 
 grobid-quantities
@@ -64,3 +57,4 @@ grobid-home/models/*lexical-entry*
 grobid-home/models/lexical-entry/model.wapiti
 grobid-home/models/dictionary*
 grobid-home/models/dictionaries*
+
