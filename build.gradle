@@ -185,9 +185,9 @@ project("grobid-core") {
         compile "org.apache.pdfbox:pdfbox:1.8.9"
         compile "net.sourceforge.saxon:saxon:9.1.0.8"
         compile "xom:xom:1.2.5"
-        compile "com.fasterxml.jackson.core:jackson-core:2.9.0"
-        compile "com.fasterxml.jackson.core:jackson-databind:2.9.0"
-        compile "com.fasterxml.jackson.module:jackson-module-afterburner:2.9.0"
+        compile "com.fasterxml.jackson.core:jackson-core:2.9.1"
+        compile "com.fasterxml.jackson.core:jackson-databind:2.9.1"
+        compile "com.fasterxml.jackson.module:jackson-module-afterburner:2.9.1"
         compile "joda-time:joda-time:2.9.9"
         compile "org.apache.lucene:lucene-analyzers-common:4.5.1"
 
