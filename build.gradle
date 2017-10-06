@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.4.0'
+        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.6.0'
         classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.1'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
         classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
@@ -16,10 +16,9 @@ repositories {
     mavenCentral()
 }
 
+apply plugin: 'net.researchgate.release'
+
 allprojects {
-    apply plugin: 'maven'
-    apply plugin: 'java'
-    apply plugin: 'net.researchgate.release'
     apply plugin: 'jacoco'
     apply plugin: 'base'
     apply plugin: 'com.github.kt3k.coveralls'
@@ -32,6 +31,8 @@ allprojects {
 }
 
 subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven'
     apply plugin: 'com.jfrog.bintray'
 
     sourceCompatibility = 1.8
@@ -41,30 +42,37 @@ subprojects {
         mavenCentral()
         jcenter()
         repositories {
-            maven {
-                url new File(rootProject.rootDir, "grobid-core/lib")
+            flatDir {
+                dirs file("${rootProject.projectDir}/grobid-core/localLibs")
             }
         }
     }
 
     configurations {
+        localLib
         all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
         all*.exclude group: 'log4j', module: "log4j"
     }
 
-    ext {
-        // treating them separately, these jars will be flattened into grobid-core.jar on installing,
-        // to avoid missing dependencies from the projects that include grobid-core (see 'jar' taskin grobid-core)
-        localLibs = ['crfpp-1.0.2.jar',
-                     'language-detection-09-13-2011.jar',
-                     'wipo-analysers-0.0.2.jar',
-                     'imageio-pnm-1.0.jar',
-                     'wapiti-1.5.0.jar']
+    sourceSets{
+        main {
+            compileClasspath += configurations.localLib
+            runtimeClasspath += configurations.localLib
+        }
+        test {
+            compileClasspath += configurations.localLib
+            runtimeClasspath += configurations.localLib
+        }
     }
 
     dependencies {
         // packaging local libs inside grobid-core.jar
-        compile fileTree(dir: new File(rootProject.rootDir, 'grobid-core/localLibs'), include: localLibs)
+//        compile fileTree(dir: new File(rootProject.rootDir, 'grobid-core/localLibs'), include: localLibs)
+        localLib name: 'crfpp', version: '1.0.2'
+        localLib name: 'language-detection', version: '09-13-2011'
+        localLib name: 'wipo-analysers', version: '0.0.2'
+        localLib name: 'imageio-pnm', version: '1.0'
+        localLib name: 'wapiti', version: '1.5.0'
 
         testCompile "junit:junit:4.12"
         testCompile "org.easymock:easymock:3.4"
@@ -92,10 +100,10 @@ subprojects {
             mavenRepoReleasesUrl=https://nexus3.example.org/repository/maven-releases/
             mavenRepoSnapshotsUrl=https://nexus3.example.org/repository/maven-snapshots/
         */
-        def user = project.hasProperty('mavenRepoUserName') ? mavenRepoUserName : ''
-        def password = project.hasProperty('mavenRepoPassword') ? mavenRepoPassword : ''
-        def rurl = project.hasProperty('mavenRepoReleasesUrl') ? mavenRepoReleasesUrl : ''
-        def surl = project.hasProperty('mavenRepoSnapshotsUrl') ? mavenRepoSnapshotsUrl : ''
+        def user = project.hasProperty('mavenRepoUserName') ? project.findProperty('mavenRepoUserName') : ''
+        def password = project.hasProperty('mavenRepoPassword') ? project.findProperty('mavenRepoPassword') : ''
+        def rurl = project.hasProperty('mavenRepoReleasesUrl') ? project.findProperty('mavenRepoReleasesUrl') : ''
+        def surl = project.hasProperty('mavenRepoSnapshotsUrl') ? project.findProperty('mavenRepoSnapshotsUrl') : ''
 
         repositories.mavenDeployer {
             repository(url: rurl) {
@@ -188,9 +196,7 @@ project("grobid-core") {
 
     jar {
         from {
-            configurations.compile.collect {
-                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
-            }
+            configurations.localLib.collect { zipTree(it) }
         }
     }
 
@@ -201,6 +207,7 @@ project("grobid-core") {
         manifest {
             attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
         }
+        relocate 'org.apache.lucene', 'org.grobid.org.apache.lucene'
     }
 
     artifacts {
@@ -320,7 +327,7 @@ project("grobid-trainer") {
     }
 
 
-}
+  }
 
 // coveralls does not support mutimodule, therefore merging reports
 task jacocoRootReport(type: JacocoReport) {
@@ -337,9 +344,6 @@ task jacocoRootReport(type: JacocoReport) {
         csv.enabled = false
         xml.destination = "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
     }
-    onlyIf = {
-        true
-    }
     doFirst {
         executionData = files(executionData.findAll {
             it.exists()
@@ -352,5 +356,12 @@ coveralls {
     jacocoReportPath = "build/reports/jacoco/test/jacocoTestReport.xml"
 }
 
+tasks.coveralls {
+    dependsOn jacocoRootReport
+}
+
 afterReleaseBuild.dependsOn subprojects.bintrayUpload
 
+wrapper {
+    version "4.2.1"
+}
