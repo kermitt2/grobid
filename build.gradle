@@ -1,3 +1,5 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 buildscript {
     repositories {
         mavenLocal()
@@ -5,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.4.0'
+        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.6.0'
         classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.1'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
         classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
@@ -16,10 +18,9 @@ repositories {
     mavenCentral()
 }
 
+apply plugin: 'net.researchgate.release'
+
 allprojects {
-    apply plugin: 'maven'
-    apply plugin: 'java'
-    apply plugin: 'net.researchgate.release'
     apply plugin: 'jacoco'
     apply plugin: 'base'
     apply plugin: 'com.github.kt3k.coveralls'
@@ -32,6 +33,8 @@ allprojects {
 }
 
 subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven'
     apply plugin: 'com.jfrog.bintray'
 
     sourceCompatibility = 1.8
@@ -92,10 +95,10 @@ subprojects {
             mavenRepoReleasesUrl=https://nexus3.example.org/repository/maven-releases/
             mavenRepoSnapshotsUrl=https://nexus3.example.org/repository/maven-snapshots/
         */
-        def user = project.hasProperty('mavenRepoUserName') ? mavenRepoUserName : ''
-        def password = project.hasProperty('mavenRepoPassword') ? mavenRepoPassword : ''
-        def rurl = project.hasProperty('mavenRepoReleasesUrl') ? mavenRepoReleasesUrl : ''
-        def surl = project.hasProperty('mavenRepoSnapshotsUrl') ? mavenRepoSnapshotsUrl : ''
+        def user = project.hasProperty('mavenRepoUserName') ? project.findProperty('mavenRepoUserName') : ''
+        def password = project.hasProperty('mavenRepoPassword') ? project.findProperty('mavenRepoPassword') : ''
+        def rurl = project.hasProperty('mavenRepoReleasesUrl') ? project.findProperty('mavenRepoReleasesUrl') : ''
+        def surl = project.hasProperty('mavenRepoSnapshotsUrl') ? project.findProperty('mavenRepoSnapshotsUrl') : ''
 
         repositories.mavenDeployer {
             repository(url: rurl) {
@@ -154,6 +157,11 @@ subprojects {
 
 project("grobid-core") {
     apply plugin: 'com.github.johnrengelman.shadow'
+
+    configurations {
+        shadedLib
+    }
+
     dependencies {
         compile(group: 'xml-apis', name: 'xml-apis', version: '1.4.01') {
             // otherwise xml-apis 2.0.1 will come from XOM and will result in
@@ -183,6 +191,8 @@ project("grobid-core") {
         compile "joda-time:joda-time:2.9.9"
         compile "org.apache.lucene:lucene-analyzers-common:4.5.1"
 
+        shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
+
         runtime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
     }
 
@@ -201,10 +211,31 @@ project("grobid-core") {
         manifest {
             attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
         }
+
+        from {
+            project.configurations.compile.collect {
+                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
+            }
+        }
     }
+
+    task mainJar(type: ShadowJar) {
+        zip64 true
+        mergeServiceFiles()
+        from sourceSets.main.output
+        from {
+            project.configurations.compile.collect {
+                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
+            }
+        }
+        configurations = [project.configurations.shadedLib]
+        relocate 'org.apache.lucene', 'org.grobid.shaded.org.apache.lucene'
+    }
+
 
     artifacts {
         archives shadowJar
+        archives mainJar
     }
 }
 
@@ -274,20 +305,20 @@ project("grobid-trainer") {
     }
 
     def trainerTasks = [
-        "train_name_header"  : "org.grobid.trainer.NameHeaderTrainer",
-        "train_name_citation": "org.grobid.trainer.NameCitationTrainer",
-        "train_affiliation_address": "org.grobid.trainer.AffiliationAddressTrainer",
-        "train_header": "org.grobid.trainer.HeaderTrainer",
-        "train_fulltext": "org.grobid.trainer.FulltextTrainer",
-        "train_shorttext": "org.grobid.trainer.ShorttextTrainer",
-        "train_figure": "org.grobid.trainer.FigureTrainer",
-        "train_table": "org.grobid.trainer.TableTrainer",
-        "train_citation": "org.grobid.trainer.CitationTrainer",
-        "train_date": "org.grobid.trainer.DateTrainer",
-        "train_segmentation": "org.grobid.trainer.SegmentationTrainer",
+        "train_name_header"           : "org.grobid.trainer.NameHeaderTrainer",
+        "train_name_citation"         : "org.grobid.trainer.NameCitationTrainer",
+        "train_affiliation_address"   : "org.grobid.trainer.AffiliationAddressTrainer",
+        "train_header"                : "org.grobid.trainer.HeaderTrainer",
+        "train_fulltext"              : "org.grobid.trainer.FulltextTrainer",
+        "train_shorttext"             : "org.grobid.trainer.ShorttextTrainer",
+        "train_figure"                : "org.grobid.trainer.FigureTrainer",
+        "train_table"                 : "org.grobid.trainer.TableTrainer",
+        "train_citation"              : "org.grobid.trainer.CitationTrainer",
+        "train_date"                  : "org.grobid.trainer.DateTrainer",
+        "train_segmentation"          : "org.grobid.trainer.SegmentationTrainer",
         "train_reference_segmentation": "org.grobid.trainer.ReferenceSegmenterTrainer",
-        "train_ebook_model": "org.grobid.trainer.EbookTrainer",
-        "train_patent_citation": "org.grobid.trainer.PatentParserTrainer"
+        "train_ebook_model"           : "org.grobid.trainer.EbookTrainer",
+        "train_patent_citation"       : "org.grobid.trainer.PatentParserTrainer"
     ]
 
     trainerTasks.each { taskName, mainClassName ->
@@ -352,5 +383,12 @@ coveralls {
     jacocoReportPath = "build/reports/jacoco/test/jacocoTestReport.xml"
 }
 
+tasks.coveralls {
+    dependsOn jacocoRootReport
+}
+
 afterReleaseBuild.dependsOn subprojects.bintrayUpload
 
+wrapper {
+    version "4.2.1"
+}
