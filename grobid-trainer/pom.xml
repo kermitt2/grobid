@@ -4,20 +4,20 @@
     <parent>
         <groupId>org.grobid</groupId>
         <artifactId>grobid-parent</artifactId>
-        <version>0.4.3-SNAPSHOT</version>
+        <version>0.4.4-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>grobid-trainer</artifactId>
     <name>${project.artifactId}</name>
-    <version>0.4.3-SNAPSHOT</version>
+    <version>0.4.4-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>org.grobid</groupId>
             <artifactId>grobid-core</artifactId>
-            <version>0.4.3-SNAPSHOT</version>
+            <version>0.4.4-SNAPSHOT</version>
         </dependency>
 
         <dependency>
