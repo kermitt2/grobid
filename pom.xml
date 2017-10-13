@@ -10,6 +10,7 @@
 
     <scm>
         <connection>scm:git:git@github.com:kermitt2/grobid.git</connection>
+        <developerConnection>scm:git:git@github.com:kermitt2/grobid.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
