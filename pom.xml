@@ -9,8 +9,9 @@
     <packaging>pom</packaging>
 
     <scm>
-        <connection>scm:git:git@github.com:kermitt2/grobid.git</connection>
+        <connection>scm:git:https://github.com/kermitt2/grobid.git</connection>
         <developerConnection>scm:git:git@github.com:kermitt2/grobid.git</developerConnection>
+        <url>https://github.com/kermitt2/grobid</url>
         <tag>HEAD</tag>
     </scm>
 
