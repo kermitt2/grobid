@@ -5,11 +5,11 @@
     <groupId>org.grobid</groupId>
     <artifactId>grobid-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>0.4.3-SNAPSHOT</version>
+    <version>0.4.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <scm>
-        <connection>scm:git:https://github.com/kermitt2/grobid.git</connection>
+        <connection>scm:git:git@github.com:kermitt2/grobid.git</connection>
         <tag>HEAD</tag>
     </scm>
 
