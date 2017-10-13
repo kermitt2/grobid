@@ -31,7 +31,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- For Maven Central release -->
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-        <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <checksum-maven-plugin.version>1.0.1</checksum-maven-plugin.version>
         <log4j.version>1.2.17</log4j.version>
@@ -177,35 +177,6 @@
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>${maven-javadoc-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                                <configuration>
-                                    <quiet>true</quiet>
-                                    <archive>
-                                        <manifest>
-                                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                                        </manifest>
-                                        <manifestEntries>
-                                            <Implementation-Build>${implementation.build}</Implementation-Build>
-                                            <Implementation-Build-Date>${maven.build.timestamp}
-                                            </Implementation-Build-Date>
-                                            <X-Compile-Source-JDK>${javac.src.version}</X-Compile-Source-JDK>
-                                            <X-Compile-Target-JDK>${javac.target.version}</X-Compile-Target-JDK>
-                                        </manifestEntries>
-                                    </archive>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>${maven-gpg-plugin.version}</version>
                         <executions>
@@ -230,34 +201,19 @@
                         <configuration>
                             <mavenExecutorId>forked-path</mavenExecutorId>
                             <useReleaseProfile>false</useReleaseProfile>
-                            <arguments>-Psonatype-oss-release</arguments>
                         </configuration>
                         <dependencies>
                             <dependency>
                                 <groupId>org.apache.maven.scm</groupId>
                                 <artifactId>maven-scm-api</artifactId>
-                                <version>1.9</version>
+                                <version>1.9.5</version>
                             </dependency>
                             <dependency>
                                 <groupId>org.apache.maven.scm</groupId>
                                 <artifactId>maven-scm-provider-gitexe</artifactId>
-                                <version>1.9</version>
+                                <version>1.9.5</version>
                             </dependency>
                         </dependencies>
-                    </plugin>
-                    <plugin>
-                        <groupId>pl.project13.maven</groupId>
-                        <artifactId>git-commit-id-plugin</artifactId>
-                        <version>2.2.3</version>
-                        <executions>
-                            <execution>
-                                <id>provide scm info</id>
-                                <goals>
-                                    <goal>revision</goal>
-                                </goals>
-                                <phase>prepare-package</phase>
-                            </execution>
-                        </executions>
                     </plugin>
                 </plugins>
             </build>
