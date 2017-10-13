@@ -4,14 +4,14 @@
     <parent>
         <groupId>org.grobid</groupId>
         <artifactId>grobid-parent</artifactId>
-        <version>0.4.4-SNAPSHOT</version>
+        <version>0.4.5-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>org.grobid</groupId>
     <artifactId>grobid-service</artifactId>
     <name>${project.artifactId}</name>
-    <version>0.4.4-SNAPSHOT</version>
+    <version>0.4.5-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <dependencies>
