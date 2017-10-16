@@ -669,8 +669,8 @@ public class FullTextParser extends AbstractParser {
 
         }
 
-        return new Pair<String,LayoutTokenization>(fulltext.toString(),
-			new LayoutTokenization(layoutTokens));
+        return new Pair<>(fulltext.toString(),
+            new LayoutTokenization(layoutTokens));
 	}
 
 	/**

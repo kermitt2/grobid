@@ -189,31 +189,36 @@ public class FeaturesVectorSegmentation {
 		// current line length on a predefined scale and relative to the longest line of the current block
 		res.append(" " + lineLength);
 
-        if (bitmapAround)
+        if (bitmapAround) {
             res.append(" 1");
-        else
+        } else {
             res.append(" 0");
+        }
 
-        if (vectorAround)
+        if (vectorAround) {
             res.append(" 1");
-        else
+        } else {
             res.append(" 0");
+        }
 
-        if (repetitivePattern)
+        if (repetitivePattern) {
             res.append(" 1");
-        else
+        } else {
             res.append(" 0");
+        }
 
-        if (firstRepetitivePattern)
+        if (firstRepetitivePattern) {
             res.append(" 1");
-        else
+        } else {
             res.append(" 0");
+        }
 
         // if the block is in the page main area (1)
-        if (inMainArea)
+        if (inMainArea) {
             res.append(" 1");
-        else
+        } else {
             res.append(" 0");
+        }
 
         // space with previous block, discretised (1)
         //res.append(" " + spacingWithPreviousBlock);
