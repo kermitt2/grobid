@@ -197,11 +197,7 @@ project("grobid-core") {
     }
 
     jar {
-        from {
-            configurations.compile.collect {
-                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
-            }
-        }
+        enabled false
     }
 
     shadowJar {
