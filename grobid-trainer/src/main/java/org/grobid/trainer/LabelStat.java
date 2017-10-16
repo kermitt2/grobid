@@ -75,8 +75,8 @@ public final class LabelStat {
         if (observed == 0.0) {
             return 0.0;
         }
-        if ((falsePositive + falseNegative) >= observed)
-            return 0.0;
+       // if ((falsePositive + falseNegative) >= observed)
+       //     return 0.0;
         //return (double) (observed - (falsePositive + falseNegative) ) / (observed);
         return (double) observed / (falsePositive + observed);
     }
@@ -84,8 +84,8 @@ public final class LabelStat {
     public double getRecall() {
         if (expected == 0.0)
             return 0.0;
-        if ((falsePositive + falseNegative) >= observed)
-            return 0.0;
+    //    if ((falsePositive + falseNegative) >= observed)
+    //        return 0.0;
         //return (double) (observed - (falsePositive + falseNegative) ) / (expected);
         return (double) observed / (expected);
     }
