@@ -243,8 +243,8 @@ public class Segmentation extends AbstractParser {
             throw new GrobidException("Postprocessed document is too big, contains: " + blocks.size(), GrobidExceptionStatus.TOO_MANY_BLOCKS);
         }
 
-        boolean graphicVector = false;
-        boolean graphicBitmap = false;
+        //boolean graphicVector = false;
+        //boolean graphicBitmap = false;
 
         // list of textual patterns at the head and foot of pages which can be re-occur on several pages
         // (typically indicating a publisher foot or head notes)
@@ -280,13 +280,12 @@ public class Segmentation extends AbstractParser {
         }
 
         String featuresAsString = getFeatureVectorsAsString(doc,
-                graphicVector, graphicBitmap, patterns, firstTimePattern);
+                patterns, firstTimePattern);
 
         return featuresAsString;
     }
 
-    private String getFeatureVectorsAsString(Document doc, boolean graphicVector,
-                                     boolean graphicBitmap, Map<String, Integer> patterns,
+    private String getFeatureVectorsAsString(Document doc, Map<String, Integer> patterns,
                                      Map<String, Boolean> firstTimePattern) {
         StringBuilder fulltext = new StringBuilder();
         int documentLength = doc.getDocumentLenghtChar();
@@ -324,6 +323,9 @@ public class Segmentation extends AbstractParser {
                     newPage = true;
                     start = false;
                 }*/
+                boolean graphicVector = false;
+                boolean graphicBitmap = false;
+                
                 boolean lastPageBlock = false;
                 boolean firstPageBlock = false;
                 if (blockIndex == page.getBlocks().size()-1) {        
@@ -346,9 +348,9 @@ public class Segmentation extends AbstractParser {
                 if (localImages != null) {
                     for(GraphicObject localImage : localImages) {
                         if (localImage.getType() == GraphicObjectType.BITMAP)
-                            graphicVector = true;
-                        if (localImage.getType() == GraphicObjectType.VECTOR)
                             graphicBitmap = true;
+                        if (localImage.getType() == GraphicObjectType.VECTOR)
+                            graphicVector = true;
                     }
                 }
 
@@ -653,7 +655,8 @@ public class Segmentation extends AbstractParser {
         try {
             File file = new File(inputFile);
 
-            documentSource = DocumentSource.fromPdf(file);
+            //documentSource = DocumentSource.fromPdf(file);
+            documentSource = DocumentSource.fromPdf(file, -1, -1, true, true);
             Document doc = new Document(documentSource);
 
             String PDFFileName = file.getName();
