@@ -32,6 +32,6 @@ public class GrobidServiceExceptionMapper implements ExceptionMapper<GrobidServi
 
     @Override
     public Response toResponse(GrobidServiceException exception) {
-        return mapper.processException(exception, GrobidStatusToHttpStatusMapper.getStatusCode(exception.getStatus()));
+        return mapper.processException(exception, exception.getResponseCode());
     }
 }
