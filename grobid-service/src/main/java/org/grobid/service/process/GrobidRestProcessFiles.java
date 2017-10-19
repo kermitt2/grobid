@@ -215,7 +215,7 @@ public class GrobidRestProcessFiles {
 
                 IOUtilities.removeTempFile(originFile);
 
-                if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
 
@@ -337,7 +337,7 @@ public class GrobidRestProcessFiles {
 
                 IOUtilities.removeTempFile(originFile);
 
-                if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
                     //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
@@ -397,7 +397,7 @@ public class GrobidRestProcessFiles {
 
                 IOUtilities.removeTempFile(originFile);
 
-                if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
                     //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
@@ -474,7 +474,7 @@ public class GrobidRestProcessFiles {
 
                 retVal = result.toString();
 
-                if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
                     //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
@@ -668,7 +668,7 @@ public class GrobidRestProcessFiles {
 
                 IOUtilities.removeTempFile(originFile);
 
-                if (!GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                     response = Response.status(Status.NO_CONTENT).build();
                 } else {
                     //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_JSON).build();
