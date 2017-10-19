@@ -369,6 +369,7 @@ public class GrobidRestService implements GrobidPathes {
 	@POST
 	public Response processCitationPatentTXT_post(@FormParam(TEXT) String text,
 	 	@FormParam("consolidateCitations") String consolidate) {
+System.out.println(text);		
 		boolean consol = false;
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;

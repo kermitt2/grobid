@@ -592,25 +592,52 @@ var grobid = (function($) {
 			xhr.send(formData);
 		} else {
 			// request for extraction, returning TEI result
-			var form = document.getElementById('gbdForm3');
-			var formData = new FormData(form);
 			var xhr = new XMLHttpRequest();
 			var url = $('#gbdForm3').attr('action');
-			xhr.responseType = 'text';
-			xhr.open('POST', url, true);
-			ShowRequest3();
-
+			xhr.responseType = 'xml';
 			xhr.onreadystatechange = function(e) {
 				if (xhr.readyState == 4 && xhr.status == 200) {
 				    var response = e.target.response;
 				    //var response = JSON.parse(xhr.responseText);
 				 	//console.log(response);
 				    SubmitSuccesful3(response);
-				} else  if (xhr.status != 200) {
+				} else if (xhr.status != 200) {
 					AjaxError3(xhr);
 				}
 			};
-			xhr.send(formData);
+
+			if (document.getElementById("input3").files && 
+				document.getElementById("input3").files.length >0 &&
+				!$('#textInputDiv3').is(":visible")) {
+				var formData = new FormData();
+
+				var url = $('#gbdForm3').attr('action');
+
+				var formData = new FormData();
+				formData.append('input', document.getElementById("input3").files[0]);
+				
+				if ($("#consolidate3").is(":checked"))	
+					formData.append('consolidate', 1);
+				else
+					formData.append('consolidate', 0);
+				
+				xhr.open('POST', url, true);
+				ShowRequest3();
+
+				xhr.send(formData);
+			} else if ($('#textInputDiv3').is(":visible")) {
+				var params = 'text='+encodeURIComponent($("#textInputArea3").val());
+				if ($("#consolidate3").is(":checked"))	
+					params += '&consolidate=1';
+				else 
+					params += '&consolidate=0';
+
+				xhr.open('POST', url, true);
+				xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				ShowRequest3();
+
+				xhr.send(params);
+			}
 		}
 	}
 
@@ -837,12 +864,10 @@ var grobid = (function($) {
 	}
 
 	function SubmitSuccesful3(responseText, statusText, xhr) {
-		//var selected = $('#selectedService3 option:selected').attr('value');
 		var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";
 		var testStr = vkbeautify.xml(responseText);
         teiPatentToDownload = responseText;
 		display += htmll(testStr);
-
 		display += "</pre>";
 		$('#requestResult3').html(display);
 		window.prettyPrint && prettyPrint();
@@ -865,6 +890,10 @@ var grobid = (function($) {
 				var annotation = patents[n];
 				var pos = annotation.pos;
 				var theUrl = null;
+				if (annotation.url && annotation.url.espacenet)
+					theUrl = annotation.url.espacenet;
+				else if (annotation.url && annotation.url.epoline)
+					theUrl = annotation.url.epoline;
 				pos.forEach(function(thePos, m) {
 					// get page information for the annotation
 					var pageNumber = thePos.p;
