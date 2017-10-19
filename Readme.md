@@ -42,7 +42,7 @@ The key aspects of GROBID are the following ones:
 + Robust and fast PDF processing based on Xpdf and dedicated post-processing.
 + Modular and reusable machine learning models. The extractions are based on Linear Chain Conditional Random Fields which is currently the state of the art in bibliographical information extraction and labeling. The specialized CRF models are cascaded to build a complete document structure.  
 + Full encoding in [__TEI__](http://www.tei-c.org/Guidelines/P5), both for the training corpus and the parsed results.
-+ Reinforcement of extracted bibliographical data via online call to Crossref (optional), export in OpenURL, etc. for easier integration into Digital Library environments. 
++ Reinforcement of extracted bibliographical data via online call to Crossref (optional), export in OpenURL, BibTeX, etc. for easier integration into Digital Library environments. 
 + Rich bibliographical processing: fine grained parsing of author names, dates, affiliations, addresses, etc. but also for instance quite reliable automatic attachment of affiliations and emails to authors. 
 + "Automatic Generation" of pre-formatted training data based on new pdf documents, for supporting semi-automatic training data generation. 
 + Support for CJK and Arabic languages based on customized Lucene analyzers provided by WIPO.
@@ -62,7 +62,16 @@ _Warning_: Some quota and query limitation apply to the demo server! If you are 
 
 ## Latest version
 
-The latest stable release of GROBID is version ```0.4.2```. As compared to previous version ```0.4.1```, this version brings:
+The latest stable release of GROBID is version ```0.4.3```. As compared to previous version ```0.4.2```, this version brings:
+
++ New models: f-score improvement on the PubMed Central sample, bibliographical references +2.5%, header +7%  
++ New training data and features for bibliographical references, in particular for covering HEP domain (INSPIRE), arXiv identifier, DOI and url (thanks @iorala and @michamos !)
++ Support for CrossRef REST API (instead of the slow OpenURL-style API which requires a CrossRef account), in particular for multithreading usage (thanks @Vi-dot)
++ Improve training data generation and documentation (thanks @jfix)
++ Unicode normalisation and more robust body extraction (thanks @aoboturov)
++ fixes, tests, documentation and update of the pdf2xml fork for Windows (thanks @lfoppiano)
+
+New in previous release ```0.4.2```: 
 
 + f-score improvement for the PubMed Central sample: fulltext +10-14%, header +0.5%, citations +0.5%
 + More robust PDF parsing
