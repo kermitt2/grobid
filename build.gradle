@@ -264,6 +264,8 @@ project("grobid-service") {
         all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
     }
 
+//    tasks.distZip.enabled = false
+
     dependencies {
         compile(project(':grobid-core'))
         compile "io.dropwizard:dropwizard-core:1.0.2"
@@ -276,6 +278,16 @@ project("grobid-service") {
         compile "org.apache.pdfbox:pdfbox:1.8.9"
 
         testCompile "io.dropwizard:dropwizard-testing:1.0.2"
+    }
+
+    distributions {
+        main {
+            contents {
+                from(new File(rootProject.rootDir, "grobid-service/README.md")) {
+                    into "doc"
+                }
+            }
+        }
     }
 }
 
