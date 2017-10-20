@@ -718,7 +718,7 @@ public class FullTextParser extends AbstractParser {
            	String pdfFileName = inputFile.getName();
 
            	// SEGMENTATION MODEL
-            documentSource = DocumentSource.fromPdf(inputFile);
+            documentSource = DocumentSource.fromPdf(inputFile, -1, -1, true, true);
             Document doc = new Document(documentSource);
             doc.addTokenizedDocument(GrobidAnalysisConfig.defaultInstance());
 
