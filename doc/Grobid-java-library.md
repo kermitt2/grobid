@@ -1,6 +1,6 @@
 The [RESTful API](Grobid-service.md) provides a simple and efficient way to use and deploy GROBID. As an alternative, the present page explains how to embed Grobid directly in your Java application. 
 
-After [building the project](Install-Grobid.md), two core jar files are created: grobid-core-`<current version>`-jar-with-dependencies.jar and grobid-core-`<current version>`.jar
+After [building the project](Install-Grobid.md), two core jar files are created: grobid-core-`<current version>`.onejar.jar and grobid-core-`<current version>`.jar
 	
 A complete working project example of usage of GROBID Java API can be found here: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTex format. 
 
@@ -37,10 +37,16 @@ When using Grobid, you have to initiate a context with the path to the Grobid re
 	
 	try {
 		String pGrobidHome = "/Users/lopez/grobid/grobid-home";
-		String pGrobidProperties = "/Users/lopez/grobid/grobid-home/config/grobid.properties";
 
-		MockContext.setInitialContext(pGrobidHome, pGrobidProperties);		
-		GrobidProperties.getInstance();
+	    // The GrobidHomeFinder can be instantiate without parameters to verify the grobid home in the standard
+	    // location (classpath, ../grobid-home, ../../grobid-home or in the environment variable GROBID_HOME 
+	    
+	    // If the location is customised: 
+	    GrobidHomeFinder grobidHomeFinder = new GrobidHomeFinder(Arrays.asList(pGrobidHome));		
+	    
+	    //The GrobidProperties needs to be instantiate using the correct grobidHomeFinder or it will use the default 
+	    //locations
+		GrobidProperties.getInstance(grobidHomeFinder);
 
 		System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
 
@@ -54,17 +60,8 @@ When using Grobid, you have to initiate a context with the path to the Grobid re
 		// If an exception is generated, print a stack trace
 		e.printStackTrace();
 	} 
-	finally {
-		try {
-			MockContext.destroyInitialContext();
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 ```
 
-The context paths (`pGrobidHome` and `pGrobidProperties`) can also be set by a property file, or for a web application by a web.xml file (see for instance grobid-service).
 
 
 ## maven Skeleton project example
@@ -73,17 +70,17 @@ In the following archive, you can find a toy example project integrating Grobid 
 
 Create the grobid-core jar library
 ```bash
-> cd grobid-core
-> mvn clean install
+> ./gradlew grobid-core clean install 
 ```
 
 Copy the Grobid jar library under grobid-test/lib
 
 ```bash
-> copy target/grobid-core-`<current version>`.jar `path_to_grobid_test`/grobid-test/lib
+> cd grobid-core
+> cp build/libs/grobid-core-<current version>.jar <path_to_grobid_test>/grobid-test/lib
 ```
 
-The paths to __grobid-home__ and to the property __grobid.properties__ file must be changed in the project property file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
+The paths to __grobid-home__ must be changed in the project property file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
 
 		grobid_example.pGrobidHome=/Users/lopez/grobid/grobid-home
 		grobid_example.pGrobidProperties=/Users/lopez/grobid/grobid-home/config/grobid.properties
@@ -103,13 +100,13 @@ Create the grobid-core jar library
 > mvn clean install
 ```
 
-Copy the Grobid jar library (not the one-jar, the standard Grobid jar) under grobid-test-ant/lib. 
+Copy the Grobid jar library (not the onejar, the standard Grobid jar) under grobid-test-ant/lib. 
 ```bash
-> copy target/grobid-core-`<current version>`.jar `path_to_grobid_test`/grobid-test-ant/lib
+> cp build/libs/grobid-core-<current version>.jar <path_to_grobid_test>/grobid-test-ant/lib
 ```
 The skeleton project contains the other required jar. 
 
-The paths to __grobid-home__ and to the property __grobid.properties__ file must be changed in the project property file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
+The paths to __grobid-home__ must be changed in the project property file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
 
 		grobid_example.pGrobidHome=/Users/lopez/grobid/grobid-home
 		grobid_example.pGrobidProperties=/Users/lopez/grobid/grobid-home/config/grobid.properties

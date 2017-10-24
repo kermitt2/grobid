@@ -31,19 +31,15 @@ Or download directly the zip file:
 
 **Please make sure that grobid is installed in a path with no parent directories containing spaces.**
 
-###Build GROBID with maven
+###Build GROBID with Gradle 
 
-The standard method for building GROBID is to use maven. Under the main directory `grobid/`:
+The standard method for building GROBID is to use gradle. Under the main directory `grobid/`:
 ```bash
-> mvn clean install
+> ./gradlew clean install
 ```
 You can skip the tests as follow:
 ```bash
-> mvn -Dmaven.test.skip=true clean install
-```
-or:
-```bash
-> mvn -DskipTests=true clean install
+> ./gradlew clean install -x test
 ```
 
 ###Build GROBID with ant
