@@ -46,7 +46,7 @@ There are different ways to generate the new model and run the evaluation, wheth
 ### Train and evaluation in one command
 Run the following maven command to execute both training and evaluation: 
 ```bash
-> mvn generate-resources -P`<maven goal. I.E: train_name-header>` -e
+> ./gradlew <training goal. I.E: train_name-header>
 ```
 The goal names, are set in the file grobid-trainer/pom.xml (`train_header`, `train_date`, `train_name_header`, `train_name_citation`, `train_citation`, `train_affiliation_address`, `train_fulltext`, `train_patent_citation`).
 
@@ -54,11 +54,11 @@ The files used for the training are located under `grobid-trainer/resources/data
 
 Examples for training the header model: 
 ```bash
-> mvn generate-resources -Ptrain_header -e
+> ./gradlew train_header -e
 ```
 Examples for training the model for names in header: 
 ```bash
-> mvn generate-resources -Ptrain_name_header -e
+> ./gradlew train_name_header -e
 ```
 
 ### Train and evaluation separately
@@ -66,25 +66,25 @@ Go in grobid-trainer/target and run the class TrainerRunner:
 
 Train (genarate the new model):
 ```bash
-> java -Xmx1024m -jar grobid-trainer-`<current version>`-jar-with-dependencies.jar 0 `<name of the model>` -gH /path/to/grobid-home
+> java -Xmx1024m -jar grobid-trainer-<current version>.onejar.jar 0 <name of the model> -gH /path/to/grobid-home
 ```
 The training files considered are located under `grobid-trainer/resources/dataset/*MODEL*/corpus`
 
 Evaluate:
 ```bash
-> java -Xmx1024m -jar grobid-trainer-`<current version>`-jar-with-dependencies.jar 1 `<name of the model>` -gH /path/to/grobid-home
+> java -Xmx1024m -jar grobid-trainer-<current version>.onejar.jar 1 <name of the model> -gH /path/to/grobid-home
 ```
 
 The considered evaluation files are located under `grobid-trainer/resources/dataset/*MODEL*/evaluation`
 
 Automatically split data, train and evaluate:
 ```bash
-> java -Xmx1024m -jar grobid-trainer-`<current version>`-jar-with-dependencies.jar 2 `<name of the model>` -gH /path/to/grobid-home -s `<segmentation ratio as a number between 0 and 1, e.g. 0.8 for 80%>`
+> java -Xmx1024m -jar grobid-trainer-<current version>.onejar.jar 2 <name of the model> -gH /path/to/grobid-home -s <segmentation ratio as a number between 0 and 1, e.g. 0.8 for 80%>
 ```
 
 For instance, training the date model with a ratio of 75% for training and 25% for evaluation:
 ```bash
-> java -Xmx1024m -jar grobid-trainer-`<current version>`-jar-with-dependencies.jar 2 date -gH /path/to/grobid-home -s 0.75
+> java -Xmx1024m -jar grobid-trainer-<current version>.onejar.jar 2 date -gH /path/to/grobid-home -s 0.75
 ```
 
 A ratio of 1.0 means that all the data available under `grobid-trainer/resources/dataset/*MODEL*/corpus/` will be used for training the model, and the evaluation will be empty. *Automatic split data, train and evaluate* is for the moment only available for the following models: header, citation, date, name-citation, name-header and affiliation-address.
@@ -94,7 +94,7 @@ Several runs with different files to evaluate can be made to have a more reliabl
 
 ## Generation of training data
 	
-To generate some training datas from some input pdf, the batch grobid-core-`<current version>`-jar-with-dependencies.jar can be used: [Grobid batch](Grobid-batch.md) (`createTraining`).
+To generate some training datas from some input pdf, the batch grobid-core-`<current version>`.onejar.jar can be used: [Grobid batch](Grobid-batch.md) (`createTraining`).
 
 For each pdf in input directory, GROBID generates different files because each model has separate training data, and thus uses separate files. So we have one file for header (`*.training.header.tei.xml`), one for dates (`*.training.date.tei.xml`), one for names, etc...
 
