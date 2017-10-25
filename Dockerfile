@@ -15,19 +15,23 @@
 # To connect to the container with a bash shell
 # > docker exec -i -t {container_name} /bin/bash
 
-FROM jetty:9.3-jre8
+FROM jetty:9.4-jre8
 
 MAINTAINER Luca Foppiano <luca.foppiano@inria.fr>, Patrice Lopez <patrice.lopez@science-miner.org>
 
 ARG GROBID_VERSION
-
-LABEL Description="This image is used to generate a GROBID image" Version="${GROBID_VERSION}"
-
+ENV GROBID_VERSION=$GROBID_VERSION
 ENV JAVA_OPTS=-Xmx4g
 
+#RUN env
+LABEL Description="GROBID (or Grobid) - GeneRation Of BIbliographic Data." Version="${GROBID_VERSION}"
+
+USER root
 RUN apt-get update && apt-get -y --no-install-recommends install libxml2
 
+#USER jetty
 ADD ./grobid-home/target/grobid-home-${GROBID_VERSION}.zip /opt
+#ADD /Users/lfoppiano/development/grobid/grobid-home/target/grobid-home-${GROBID_VERSION}.zip /opt
 RUN unzip /opt/grobid-home-${GROBID_VERSION}.zip -d /opt && rm /opt/grobid-home-${GROBID_VERSION}.zip
 
 COPY ./grobid-service/target/grobid-service-${GROBID_VERSION}.war /var/lib/jetty/webapps/ROOT.war
