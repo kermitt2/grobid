@@ -1,5 +1,5 @@
 Under the main directory `grobid/`:
 > ./gradlew clean install
 
-If you get test errors (normally you should not!), try compiling  with:
-> ./gradlew clean install -x test 
+By default, tests are not run. For building the project and running the test, use:
+> ./gradlew clean install test 

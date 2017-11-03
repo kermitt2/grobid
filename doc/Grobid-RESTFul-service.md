@@ -1,6 +1,6 @@
 ## Services
 
-GROBID REST services are documented in the following document: [grobid-service/src/main/doc/grobid-service_manual.pdf](https://github.com/kermitt2/grobid/blob/master/grobid-service/src/main/doc/grobid-service-manual.pdf)
+GROBID web services are documented in the following document: [grobid-service/src/main/doc/grobid-service_manual.pdf](https://github.com/kermitt2/grobid/blob/master/grobid-service/src/main/doc/grobid-service-manual.pdf)
 
 The documentation covers the administrative API, the usage of the web console, the extraction and parsing API and gives some examples of usages with `curl` command lines. 
 

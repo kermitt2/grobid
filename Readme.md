@@ -62,7 +62,7 @@ _Warning_: Some quota and query limitation apply to the demo server! If you are 
 
 ## Latest version
 
-The latest stable release of GROBID is version ```0.4.4```. As compared to previous version ```0.4.2```, this version brings:
+The latest stable release of GROBID is version ```0.4.4```. As compared to previous version ```0.4.3```, this version brings:
 
 + New models: f-score improvement on the PubMed Central sample, bibliographical references +2.5%, header +7%  
 + New training data and features for bibliographical references, in particular for covering HEP domain (INSPIRE), arXiv identifier, DOI and url (thanks @iorala and @michamos !)

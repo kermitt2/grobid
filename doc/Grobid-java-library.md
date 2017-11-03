@@ -8,14 +8,14 @@ An example project for using GROBID in an ant project is available [here](https:
 
 ## Using maven
 
-When using maven, you need to include in your pom file the path to the Grobid jar file, for instance as follow (replace `0.3.4-SNAPSHOT` by the valid `<current version>`):
+When using maven, you need to include in your pom file the path to the Grobid jar file, for instance as follow (replace `0.4.4` by the valid `<current version>`):
 
 	<dependency>
 	    <groupId>org.grobid.core</groupId>
 	    <artifactId>grobid</artifactId>
-	    <version>0.3.4-SNAPSHOT</version>
+	    <version>0.4.4</version>
 	    <scope>system</scope>
-	    <systemPath>${project.basedir}/lib/grobid-core-0.3.4-SNAPSHOT.jar</systemPath>
+	    <systemPath>${project.basedir}/lib/grobid-core-0.4.4.jar</systemPath>
 	</dependency>
 
 
