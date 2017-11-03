@@ -49,7 +49,7 @@ For running the evaluation, the tool assumes that the files are organised in a s
 
 ### PubMedCentral
 
-Under ```grobid-trainer/```, the following command line is used to run and evaluate Grobid on the dataset:
+Under ```grobid/```, the following command line is used to run and evaluate Grobid on the dataset:
 ```bash
 > ./gradlew PubMedCentralEval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 -Prun=1
 ```
@@ -64,7 +64,7 @@ It is also possible to set a ratio of evaluation data to be used expressed as a 
 
 ### Pub2TEI-based
 
-Under ```grobid-trainer/```, the following command line is used to run and evaluate Grobid on the dataset:
+Under ```grobid/```, the following command line is used to run and evaluate Grobid on the dataset:
 ```bash
 > ./gradlew Pub2TeiEval -Pp2t=ABS_PATH_TO_TEI/ -Prun=1
 ```
