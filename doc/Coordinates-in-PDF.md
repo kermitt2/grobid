@@ -43,7 +43,7 @@ Generating coordinates can also been obtained with the batch mode by adding the 
 Example (under the project main directory `grobid/`): 
 
 ```bash
-> java -Xmx1024m -jar grobid-core/build/libs/grobid-core-0.5.0-SNAPSHOT-onejar.jar -gH /path/to/Grobid/grobid/grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -teiCoordinates -exe processFullText 
+> java -Xmx1024m -jar grobid-core/build/libs/grobid-core-0.5.0-SNAPSHOT-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -teiCoordinates -exe processFullText 
 ```
 
 See the [batch mode details](http://grobid.readthedocs.io/en/latest/Grobid-batch/#processfulltext). With the batch mode, it is currenlty not possible to cherry pick up certain elements, coordinates will appear for all.
