@@ -5,7 +5,7 @@ The GROBID RESTful API provides a simple and efficient way to use the tool. A se
 ## Start the server
 Go under the `grobid/` main directory. Be sure that the GROBID project is built, see [Install GROBID](Install-Grobid.md).
 
-The following command will start the server on port __8070__:
+The following command will start the server on the default port __8070__:
 ```bash
 > ./gradlew run
 ```
