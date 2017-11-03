@@ -8,14 +8,14 @@ An example project for using GROBID in an ant project is available [here](https:
 
 ## Using maven
 
-When using maven, you need to include in your pom file the path to the Grobid jar file, for instance as follow (replace `0.4.4` by the valid `<current version>`):
+When using maven, you need to include in your pom file the path to the Grobid jar file, for instance as follow (replace `0.5.0` by the valid `<current version>`):
 
 	<dependency>
 	    <groupId>org.grobid.core</groupId>
 	    <artifactId>grobid</artifactId>
-	    <version>0.4.4</version>
+	    <version>0.5.0</version>
 	    <scope>system</scope>
-	    <systemPath>${project.basedir}/lib/grobid-core-0.4.4.jar</systemPath>
+	    <systemPath>${project.basedir}/lib/grobid-core-0.5.0.jar</systemPath>
 	</dependency>
 
 
@@ -68,16 +68,15 @@ When using Grobid, you have to initiate a context with the path to the Grobid re
 
 In the following archive, you can find a toy example project integrating Grobid in a third party Java project using maven: [grobid-example](https://github.com/kermitt2/grobid-example). 
 
-Create the grobid-core jar library
+Create the grobid-core jar library, under the main project directory `grobid/`:
 ```bash
-> ./gradlew grobid-core clean install 
+> ./gradlew clean install 
 ```
 
-Copy the Grobid jar library under grobid-test/lib
+Copy the Grobid jar library under `grobid-example/lib`:
 
 ```bash
-> cd grobid-core
-> cp build/libs/grobid-core-<current version>.jar <path_to_grobid_test>/grobid-test/lib
+> cp grobid-core/build/libs/grobid-core-<current version>.jar <path_to_grobid_example>/grobid-example/lib
 ```
 
 The paths to __grobid-home__ must be changed in the project property file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
@@ -94,22 +93,21 @@ Then you can test the toy project:
 
 If you are using __ant__ to build your project, the following repo gives a toy example ant project integrating Grobid in a third party Java project: [grobid-test-ant](https://github.com/kermitt2/grobid-test-ant). 
 
-Create the grobid-core jar library
+Create the grobid-core jar library, under the main project directory `grobid/`:
 ```bash
-> cd grobid-core
-> mvn clean install
+> ./gradlew clean install 
 ```
 
-Copy the Grobid jar library (not the onejar, the standard Grobid jar) under grobid-test-ant/lib. 
+Copy the grobid-core jar library (not the onejar, the standard grobid-core jar) under grobid-test-ant/lib. 
 ```bash
-> cp build/libs/grobid-core-<current version>.jar <path_to_grobid_test>/grobid-test-ant/lib
+> cp grobid-core/build/libs/grobid-core-<current version>.jar <path_to_grobid_test>/grobid-test-ant/lib
 ```
 The skeleton project contains the other required jar. 
 
-The paths to __grobid-home__ must be changed in the project property file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
+The paths to __grobid-home__ must be changed in the project property file:  `grobid-test-ant/grobid-example.properties` according to your installation, for instance: 
 
-		grobid_example.pGrobidHome=/Users/lopez/grobid/grobid-home
-		grobid_example.pGrobidProperties=/Users/lopez/grobid/grobid-home/config/grobid.properties
+		grobid_test.pGrobidHome=/Users/lopez/grobid/grobid-home
+		grobid_test.pGrobidProperties=/Users/lopez/grobid/grobid-home/config/grobid.properties
 
 Then build and test the toy project:
 ```bash
@@ -119,4 +117,4 @@ Then build and test the toy project:
 
 ## Javadoc
 
-The javadoc of the Grobid project is available [here](http://grobid.github.io/). All the main methods of the Grobid Java API are currently accessible via the single class [org.grobid.core.engines.Engine](http://grobid.github.io/grobid-core/org/grobid/core/engines/Engine.html). The various test files under `grobid-core/src/test/java/org/grobid/core/test` further illustrate how to use the Grobid API.
+The javadoc of the Grobid project is available [here](http://grobid.github.io/). All the main methods of the Grobid Java API are currently accessible via the single class [org.grobid.core.engines.Engine](http://grobid.github.io/grobid-core/org/grobid/core/engines/Engine.html). The various test files under `grobid/grobid-core/src/test/java/org/grobid/core/test` further illustrate how to use the Grobid java API.
