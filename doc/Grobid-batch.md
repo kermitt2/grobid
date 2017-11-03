@@ -4,6 +4,8 @@ For the best performance, benchmarking and for exploiting multithreading, we rec
 
 ## Using the batch
 
+Be sure that the GROBID project is built, see [Install GROBID](Install-Grobid.md).
+
 Go under the project directy `grobid/`:
 ```bash
 > cd grobid/
