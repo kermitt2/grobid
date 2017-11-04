@@ -42,13 +42,6 @@ By default, tests are ignored. For building the project and running the tests, u
 > ./gradlew clean install test
 ```
 
-[//]: # ###Build GROBID with ant
-[//]: # 
-[//]: # It is also possible to build the project with ant. This could be useful for integrating Grobid in an ant project, or when no internet connection is available in a secure development environment, or for people allergic to useless pain. Supported ant targets are `compile`, `clean`, `test` and `package`. So the following should work: 
-[//]: # ```bash
-[//]: # > ant package
-[//]: # ```
-
 ##Use GROBID
 
 From there, the easiest and most efficient way to use GROBID is the [web service mode](Grobid-service.md). You can also use the tool in [batch mode](Grobid-batch.md) or integrate it in your Java project via the [Java API](Grobid-java-library.md). 
