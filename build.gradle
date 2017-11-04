@@ -295,6 +295,12 @@ project("grobid-trainer") {
     apply plugin: 'com.github.johnrengelman.shadow'
 
     dependencies {
+        compile(group: 'xml-apis', name: 'xml-apis', version: '1.4.01') {
+            // otherwise xml-apis 2.0.1 will come from XOM and will result in
+            // java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
+            //TODO: sort out this problem better
+            force = true
+        }
         compile(project(':grobid-core'))
         compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
     }
