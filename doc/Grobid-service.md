@@ -27,6 +27,8 @@ On the console, the RESTful API can be tested under the `TEI` tab for service re
 ![Example of GROBID Service console usage](img/grobid-rest-example.png)
 
 
+
+
 ## GROBID Web Services
 
 We describe bellow the provided resources corresponding to the HTTP verbs, to use the grobid web services. All url described bellow are relative path, the root url is `http://<server instance name>/<root context>`
@@ -45,13 +47,11 @@ _consolidateHeader_ is a string of value 0 (no consolidation) or 1 (consolidate,
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
-|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value). |
+|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value) |
 
-You can test this service with the following **curl** command line: 
-
-* header extraction of a PDF file in the current directory:
+You can test this service with the **curl** command lines, for instance header extraction from a PDF file in the current directory:
 ```bash
-> curl -v --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
+curl -v --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
 ```
 
 #### /api/processFulltextDocument
@@ -61,33 +61,138 @@ Convert the complete input document into TEI XML format (header, body and biblio
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
-|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value). |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate all found citations). |
+|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate all found citations) |
 
-You can test this service with the **curl** command lines. for instance fulltext extraction (header, body and citations) of a PDF file in the current directory:
+You can test this service with the **curl** command lines, for instance fulltext extraction (header, body and citations) from a PDF file in the current directory:
 ```bash
-> curl -v --form input=@./thefile.pdf localhost:8070/api/processFulltextDocument
+curl -v --form input=@./thefile.pdf localhost:8070/api/processFulltextDocument
 ```
 
 #### /api/processReferences
 
-Extract and convert all the references present in the input document into TEI XML format 
+Extract and convert all the bibliographical references present in the input document into TEI XML format. 
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
+|   		| 					  |						 |consolidateCitations| optional 	| consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate all found citations) |
 
 
-You can test this service with the **curl** command lines, for instance extraction and parsing of all references in a PDF without consolidation (default value):
+You can test this service with the **curl** command lines, for instance extraction and parsing of all references from a PDF in the current directory without consolidation (default value):
 ```bash
-> curl -v --form input=@./thefile.pdf localhost:8070/api/processReferences
+curl -v --form input=@./thefile.pdf localhost:8070/api/processReferences
 ```
 
 ### Raw text to TEI conversion services
 
+#### /api/processDate
+
+Parse a raw date string and return the corresponding normalized date in ISO 8601 embedded in a TEI fragment.
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| application/x-www-form-urlencoded | application/xml  	| date | required	| date to be parsed as raw string|
 
 
-
-You can test this service with the **curl** command lines, for instance parsing of a raw reference string in isolation without consolidation (default value):
+You can test this service with the **curl** command lines, for instance parsing of a raw date string:
 ```bash
-> curl -X POST -d "citations=Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113" localhost:8070/api/processCitation
+curl -X POST -d "date=September 16th, 2001" localhost:8070/api/processDate
 ```
+which will return:
+```xml
+<date when="2001-9-16" />
+```
+
+#### /api/processHeaderNames
+
+Parse a raw string corresponding to a name or a sequence of names from a header section and return the corresponding normalized authors in TEI format.
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| application/x-www-form-urlencoded | application/xml  	| names | required	| sequence of names to be parsed as raw string|
+
+
+You can test this service with the **curl** command lines, for instance parsing of a raw sequence of header names string:
+```bash
+curl -X POST -d "names=John Doe and Jane Smith" localhost:8070/api/processHeaderNames
+```
+which will return:
+```xml
+<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">John</forename><surname>Doe</surname></persName><persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jane</forename><surname>Smith</surname></persName>
+```
+
+#### /api/processCitationNames
+
+Parse a raw sequence of names from a bibliographical reference and return the corresponding normalized authors in TEI format.
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| application/x-www-form-urlencoded | application/xml  	| names | required	| sequence of names to be parsed as raw string|
+
+You can test this service with the **curl** command lines, for instance parsing of a raw sequence of citation names string:
+```bash
+curl -X POST -d "names=J. Doe, J. Smith and B. M. Jackson" localhost:8070/api/processCitationNames
+```
+which will return:
+```xml
+<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Doe</surname></persName><persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Smith</surname></persName><persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">M</forename><surname>Jackson</surname></persName>
+```
+
+#### /api/processAffiliations
+
+Parse a raw sequence of affiliations with or without address and return the corresponding normalized affiliations with address in TEI format.
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| application/x-www-form-urlencoded | application/xml  	| affiliations | required	| sequence of affiliations+addresses to be parsed as raw string|
+
+You can test this service with the **curl** command lines, for instance parsing of a raw affiliation string:
+```bash
+curl -X POST -d "affiliations=Stanford University, California, USA" localhost:8070/api/processAffiliations
+```
+
+which will return:
+```xml
+<affiliation><orgName type="institution">Stanford University</orgName><address><region>California</region><country key="US">USA</country></address></affiliation
+```
+
+#### /api//processCitation
+
+Parse a raw bibliographical reference (in isolation) and return the corresponding normalized bibliographical reference in TEI format.
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| application/x-www-form-urlencoded | application/xml  	| citations | required	| bibliographical reference to be parsed as raw string|
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+
+You can test this service with the **curl** command lines, for instance parsing of a raw bibliographical reference string in isolation without consolidation (default value):
+```bash
+curl -X POST -d "citations=Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113" localhost:8070/api/processCitation
+```
+
+which will return
+```xml
+<biblStruct >
+	<analytic>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Graff</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert. Opin. Ther. Targets</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="103" to="113" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+```
+
 
 ### PDF annotation services
 
