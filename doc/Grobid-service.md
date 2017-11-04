@@ -1,6 +1,6 @@
-<h1>GROBID service</h1>
+<h1>GROBID service API</h1>
 
-The GROBID RESTful API provides a simple and efficient way to use the tool. A service console is available to test GROBID in a human friendly manner. For production and benchmarking, we strongly recommand to use this web service mode on a multi-core machine and to avoid running GROBID in the batch mode.  
+The GROBID Web API provides a simple and efficient way to use the tool. A service console is available to test GROBID in a human friendly manner. For production and benchmarking, we strongly recommand to use this web service mode on a multi-core machine and to avoid running GROBID in the batch mode.  
 
 ## Start the server
 Go under the `grobid/` main directory. Be sure that the GROBID project is built, see [Install GROBID](Install-Grobid.md).
@@ -18,7 +18,7 @@ You can check whether the service is up and running by opening the following URL
 
 If required, modify the file under `grobid/grobid-service/config/config.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID. 
 
-## Use GROBID
+## Use GROBID test console
 
 On your browser, the welcome page of the Service console is available at the URL `http://localhost:8070`
 
@@ -26,33 +26,77 @@ On the console, the RESTful API can be tested under the `TEI` tab for service re
 
 ![Example of GROBID Service console usage](img/grobid-rest-example.png)
 
-You can also test the RESTFul API with **curl** command lines: 
+
+## GROBID Web Services
+
+We describe bellow the provided resources corresponding to the HTTP verbs, to use the grobid web services. All url described bellow are relative path, the root url is `http://<server instance name>/<root context>`
+
+The consolidation parameters (__consolidateHeader__ and __consolidateCitations__) indicate if GROBID should try to complete the extracted metadata with an additional external call to [CrossRef API](https://github.com/CrossRef/rest-api-doc). The CrossRef look-up is realized based on the reliable subset of extracted metadata which are supported by this API.
+
+### PDF to TEI conversion
+
+#### /api/processHeaderDocument
+
+Extract the header of the input PDF document, normalize it and convert it into a TEI XML format.
+
+_consolidateHeader_ is a string of value 0 (no consolidation) or 1 (consolidate, default value).
+
+
+|   method	|  parameters 	| requirement  	|  Request input type | Response output type 	|   description				|
+|---		|---			|---			|---				  |---						|--- 						|
+| POST, PUT	|   input		|   required	| multipart/form-data |   	application/xml 	| PDF file to be processed 	|
+|   		|consolidateHeader| optional 	| 					  |							| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value). |
+
+You can test this service with the following **curl** command line: 
 
 * header extraction of a PDF file in the current directory:
 ```bash
 > curl -v --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
 ```
+
+#### /api/processFulltextDocument
+
+Convert the complete input document into TEI XML format (header, body and bibliographical section).
+
+
+
+You can test this service with the following **curl** command line: 
+
 * fulltext extraction (header, body and citations) of a PDF file in the current directory:
 ```bash
 > curl -v --form input=@./thefile.pdf localhost:8070/api/processFulltextDocument
 ```
-* parsing of a raw reference string in isolation without consolidation (default value):
-```bash
-> curl -X POST -d "citations=Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113" localhost:8070/api/processCitation
-```
+
+#### /api/processReferences
+
+Extract and convert all the references present in the input document into TEI XML format 
+
+
+You can test this service with the following **curl** command line: 
+
 * extraction and parsing of all references in a PDF without consolidation (default value):
 ```bash
 > curl -v --form input=@./thefile.pdf localhost:8070/api/processReferences
 ```
 
-## Full documentation
-
-Grobid web services are documented in the following document: [grobid-service/src/main/doc/grobid-service_manual.pdf](https://github.com/kermitt2/grobid/blob/master/grobid-service/src/main/doc/grobid-service-manual.pdf)
-
-The documentation covers in details the administrative API, the usage of the web console, the extraction and parsing API and gives some examples of usages with `curl` command lines. 
+### Raw text to TEI conversion
 
 
-## Configuration of the password for the service adminstration
+* parsing of a raw reference string in isolation without consolidation (default value):
+```bash
+> curl -X POST -d "citations=Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113" localhost:8070/api/processCitation
+```
+
+### Patent document processing
+
+
+
+### Administration services
+
+
+
+
+#### Configuration of the password for the service adminstration
 
 A password is required to access the administration page under the `Admin` tab in the console. The default password for the administration console is **admin**.
 
