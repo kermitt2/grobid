@@ -29,9 +29,9 @@ The following functionalities are available:
 + Full text extraction from PDF articles, including a model for the the overall document segmentation and a model for the structuring of the text body. 
 + In a complete PDF processing, GROBID manages 55 final labels used to build relatively fine-grained structures, from traditional publication metadata (title, author first/last/middlenames, affiliation types, detailed address, journal, volume, issue, pages, etc.) to full text structures (section title, paragraph, reference markers, head/foot notes, figure headers, etc.). 
 
-GROBID includes batch processing, a comprehensive RESTful API, a JAVA API, a relatively generic evaluation framework (precision, recall, etc.) and the semi-automatic generation of training data. 
+GROBID includes a comprehensive web service API, batch processing, a JAVA API, a relatively generic evaluation framework (precision, recall, etc.) and the semi-automatic generation of training data. 
 
-GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST, Mendeley, CERN, ... 
+GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST-CNRS, Mendeley, CERN (Invenio), etc. 
 
 The key aspects of GROBID are the following ones:
 
@@ -42,9 +42,9 @@ The key aspects of GROBID are the following ones:
 + Robust and fast PDF processing based on Xpdf and dedicated post-processing.
 + Modular and reusable machine learning models. The extractions are based on Linear Chain Conditional Random Fields which is currently the state of the art in bibliographical information extraction and labeling. The specialized CRF models are cascaded to build a complete document structure.  
 + Full encoding in [__TEI__](http://www.tei-c.org/Guidelines/P5), both for the training corpus and the parsed results.
-+ Reinforcement of extracted bibliographical data via online call to Crossref (optional), export in OpenURL, BibTeX, etc. for easier integration into Digital Library environments. 
++ Reinforcement of extracted bibliographical data via online call to CrossRef (optional), export in OpenURL, BibTeX, etc. for easier integration into Digital Library environments. 
 + Rich bibliographical processing: fine grained parsing of author names, dates, affiliations, addresses, etc. but also for instance quite reliable automatic attachment of affiliations and emails to authors. 
-+ "Automatic Generation" of pre-formatted training data based on new pdf documents, for supporting semi-automatic training data generation. 
++ "Automatic Generation" of pre-formatted training data based on new PDF documents, for supporting semi-automatic training data generation. 
 + Support for CJK and Arabic languages based on customized Lucene analyzers provided by WIPO.
 
 The GROBID extraction and parsing algorithms uses the [Wapiti CRF library](http://wapiti.limsi.fr). [CRF++ library](http://crfpp.googlecode.com/svn/trunk/doc/index.html) is not supported since GROBID version 0.4. The C++ libraries are transparently integrated as JNI with dynamic call based on the current OS. 

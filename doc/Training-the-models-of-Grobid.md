@@ -105,6 +105,5 @@ If you wish to maintain the training corpus as gold standard, these automaticall
 
 ## Training guidelines
 
-A guideline is available describing the different models and how the corresponding training data should be annotated: [Guideline for training data](https://github.com/kermitt2/grobid/blob/master/grobid-trainer/doc/GuidelinesTrainingData.pdf). 
+Annotation guidelines for creating the training data corresponding to the different GROBID models are available from the [following page](training/General-principles.md).
 
-The encoding of affiliations is further described in this additional guideline: [Guideline for affiliations](https://github.com/kermitt2/grobid/blob/master/grobid-trainer/doc/affiliation-guidelines.pdf).

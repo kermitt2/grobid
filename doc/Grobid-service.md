@@ -11,8 +11,8 @@ The following command will start the server on the default port __8070__:
 ```
 
 You can check whether the service is up and running by opening the following URL: 
- - `http://yourhost:8070/api/version` will return you the current version
- - `http://yourhost:8070/api/isalive` will return true/false whether the service is up and running
+* `http://yourhost:8070/api/version` will return you the current version
+* `http://yourhost:8070/api/isalive` will return true/false whether the service is up and running
 
 ## Configure the server
 
@@ -33,7 +33,7 @@ We describe bellow the provided resources corresponding to the HTTP verbs, to us
 
 The consolidation parameters (__consolidateHeader__ and __consolidateCitations__) indicate if GROBID should try to complete the extracted metadata with an additional external call to [CrossRef API](https://github.com/CrossRef/rest-api-doc). The CrossRef look-up is realized based on the reliable subset of extracted metadata which are supported by this API.
 
-### PDF to TEI conversion
+### PDF to TEI conversion services
 
 #### /api/processHeaderDocument
 
@@ -42,10 +42,10 @@ Extract the header of the input PDF document, normalize it and convert it into a
 _consolidateHeader_ is a string of value 0 (no consolidation) or 1 (consolidate, default value).
 
 
-|   method	|  parameters 	| requirement  	|  Request input type | Response output type 	|   description				|
-|---		|---			|---			|---				  |---						|--- 						|
-| POST, PUT	|   input		|   required	| multipart/form-data |   	application/xml 	| PDF file to be processed 	|
-|   		|consolidateHeader| optional 	| 					  |							| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value). |
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
+|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value). |
 
 You can test this service with the following **curl** command line: 
 
@@ -58,11 +58,13 @@ You can test this service with the following **curl** command line:
 
 Convert the complete input document into TEI XML format (header, body and bibliographical section).
 
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
+|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value). |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate all found citations). |
 
-
-You can test this service with the following **curl** command line: 
-
-* fulltext extraction (header, body and citations) of a PDF file in the current directory:
+You can test this service with the **curl** command lines. for instance fulltext extraction (header, body and citations) of a PDF file in the current directory:
 ```bash
 > curl -v --form input=@./thefile.pdf localhost:8070/api/processFulltextDocument
 ```
@@ -72,22 +74,26 @@ You can test this service with the following **curl** command line:
 Extract and convert all the references present in the input document into TEI XML format 
 
 
-You can test this service with the following **curl** command line: 
-
-* extraction and parsing of all references in a PDF without consolidation (default value):
+You can test this service with the **curl** command lines, for instance extraction and parsing of all references in a PDF without consolidation (default value):
 ```bash
 > curl -v --form input=@./thefile.pdf localhost:8070/api/processReferences
 ```
 
-### Raw text to TEI conversion
+### Raw text to TEI conversion services
 
 
-* parsing of a raw reference string in isolation without consolidation (default value):
+
+
+You can test this service with the **curl** command lines, for instance parsing of a raw reference string in isolation without consolidation (default value):
 ```bash
 > curl -X POST -d "citations=Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113" localhost:8070/api/processCitation
 ```
 
-### Patent document processing
+### PDF annotation services
+
+
+
+### Patent document processing services
 
 
 
