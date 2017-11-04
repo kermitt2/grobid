@@ -12,4 +12,4 @@ with the property name:
 
 To change the password, you can replace this property value by the SHA1 hash generated for your new password of choice. To generate the SHA1 from any "`<input_string>`", you can use the corresponding Grobid REST service available at:
 
-> http://localhost:8070/sha1?sha1=`<input_string>`
+> http://localhost:8070/api/sha1?sha1=`<input_string>`
