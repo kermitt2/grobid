@@ -11,8 +11,8 @@ The following command will start the server on the default port __8070__:
 ```
 
 You can check whether the service is up and running by opening the following URL: 
- - `http://yourhost:8070/version` will return you the current version
- - `http://yourhose:8070/isalive` will return true/false whether the service is up and running
+ - `http://yourhost:8070/api/version` will return you the current version
+ - `http://yourhost:8070/api/isalive` will return true/false whether the service is up and running
 
 ## Configure the server
 
@@ -30,19 +30,19 @@ You can also test the RESTFul API with **curl** command lines:
 
 * header extraction of a PDF file in the current directory:
 ```bash
-> curl -v --form input=@./thefile.pdf localhost:8070/processHeaderDocument
+> curl -v --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
 ```
 * fulltext extraction (header, body and citations) of a PDF file in the current directory:
 ```bash
-> curl -v --form input=@./thefile.pdf localhost:8070/processFulltextDocument
+> curl -v --form input=@./thefile.pdf localhost:8070/api/processFulltextDocument
 ```
 * parsing of a raw reference string in isolation without consolidation (default value):
 ```bash
-> curl -X POST -d "citations=Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113" localhost:8070/processCitation
+> curl -X POST -d "citations=Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113" localhost:8070/api/processCitation
 ```
 * extraction and parsing of all references in a PDF without consolidation (default value):
 ```bash
-> curl -v --form input=@./thefile.pdf localhost:8070/processReferences
+> curl -v --form input=@./thefile.pdf localhost:8070/api/processReferences
 ```
 
 ## Full documentation
@@ -60,7 +60,7 @@ For security, the password is saved as SHA1 hash in the file `grobid-service/src
 
 To change the password, you can replace this property value by the SHA1 hash generated for your new password of choice. To generate the SHA1 from any `<input_string>`, you can use the corresponding Grobid REST service available at:
 
-> http://localhost:8070/sha1?sha1=`<input_string>`
+> http://localhost:8070/api/sha1?sha1=`<input_string>`
 
 
 ## Parallel mode
