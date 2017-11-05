@@ -11,7 +11,9 @@ The following command will start the server on the default port __8070__:
 ```
 
 You can check whether the service is up and running by opening the following URL: 
+
 * `http://yourhost:8070/api/version` will return you the current version
+
 * `http://yourhost:8070/api/isalive` will return true/false whether the service is up and running
 
 ## Configure the server
@@ -119,7 +121,14 @@ curl -X POST -d "names=John Doe and Jane Smith" localhost:8070/api/processHeader
 ```
 which will return:
 ```xml
-<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">John</forename><surname>Doe</surname></persName><persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jane</forename><surname>Smith</surname></persName>
+<persName xmlns="http://www.tei-c.org/ns/1.0">
+	<forename type="first">John</forename>
+	<surname>Doe</surname>
+</persName>
+<persName xmlns="http://www.tei-c.org/ns/1.0">
+	<forename type="first">Jane</forename>
+	<surname>Smith</surname>
+</persName>
 ```
 
 #### /api/processCitationNames
@@ -136,7 +145,19 @@ curl -X POST -d "names=J. Doe, J. Smith and B. M. Jackson" localhost:8070/api/pr
 ```
 which will return:
 ```xml
-<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Doe</surname></persName><persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Smith</surname></persName><persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">M</forename><surname>Jackson</surname></persName>
+<persName xmlns="http://www.tei-c.org/ns/1.0">
+	<forename type="first">J</forename>
+	<surname>Doe</surname>
+</persName>
+<persName xmlns="http://www.tei-c.org/ns/1.0">
+	<forename type="first">J</forename>
+	<surname>Smith</surname>
+</persName>
+<persName xmlns="http://www.tei-c.org/ns/1.0">
+	<forename type="first">B</forename>
+	<forename type="middle">M</forename>
+	<surname>Jackson</surname>
+</persName>
 ```
 
 #### /api/processAffiliations
@@ -154,7 +175,13 @@ curl -X POST -d "affiliations=Stanford University, California, USA" localhost:80
 
 which will return:
 ```xml
-<affiliation><orgName type="institution">Stanford University</orgName><address><region>California</region><country key="US">USA</country></address></affiliation
+<affiliation>
+	<orgName type="institution">Stanford University</orgName>
+	<address>
+		<region>California</region>
+		<country key="US">USA</country>
+	</address>
+</affiliation
 ```
 
 #### /api//processCitation
@@ -171,7 +198,7 @@ You can test this service with the **curl** command lines, for instance parsing 
 curl -X POST -d "citations=Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113" localhost:8070/api/processCitation
 ```
 
-which will return
+which will return:
 ```xml
 <biblStruct >
 	<analytic>
@@ -198,7 +225,44 @@ which will return
 
 
 
-### Patent document processing services
+
+### Citation extraction and normalization from patents
+
+#### /api/processCitationPatentTXT
+
+Extract and parse the patent and non patent citations in the description of a patent sent as UTF-8 text. Results are returned as a lists of TEI citations. 
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| application/x-www-form-urlencoded | application/xml  	| input | required	| patent text to be processed as raw string|
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+
+
+You can test this service with the **curl** command lines, for instance parsing of a raw bibliographical reference string in isolation without consolidation (default value):
+```bash
+curl -X POST -d "input=In European Patent A-123456 nothing interesting." localhost:8070/api/processCitationPatentTXT
+```
+
+#### /api/processCitationPatentTEI
+
+Extract and parse the patent and non patent citations in the description of a patent encoded in TEI (Patent Document Model). Results are added to the original document as TEI stand-off annotations.
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| multipart/form-data | application/xml  	| input | required	| TEI file of the patent document to be processed |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+
+
+
+#### /api/processCitationPatentST36
+
+Extract and parse the patent and non patent citations in the description of a patent encoded in ST.36. Results are returned as a lits of TEI citations. 
+
+
+#### /api/processCitationPatentPDF
+
+Extract and parse the patent and non patent citations in the description of a patent sent as PDF. Results are returned as a lits of TEI citations.
+
 
 
 
