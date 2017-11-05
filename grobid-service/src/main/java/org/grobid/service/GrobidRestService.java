@@ -140,7 +140,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processHeaderDocument_post(@FormDataParam(INPUT) InputStream inputStream,
-                                               @FormDataParam("consolidate") String consolidate) {
+                                               @FormDataParam("consolidateHeader") String consolidate) {
 
         boolean consol = validateConsolidationParam(consolidate);
 
@@ -164,7 +164,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @PUT
     public Response processStatelessHeaderDocument(@FormDataParam(INPUT) InputStream inputStream,
-                                                   @FormDataParam("consolidate") String consolidate) {
+                                                   @FormDataParam("consolidateHeader") String consolidate) {
         return processHeaderDocument_post(inputStream, consolidate);
     }
 
@@ -257,8 +257,8 @@ public class GrobidRestService implements GrobidPaths {
     @Produces("application/zip")
     @POST
     public Response processFulltextAssetDocument_post(@FormDataParam(INPUT) InputStream inputStream,
-                                                      @FormDataParam("consolidate") String consolidateHeader,
-                                                      @FormDataParam("consolidate") String consolidateCitations,
+                                                      @FormDataParam("consolidateHeader") String consolidateHeader,
+                                                      @FormDataParam("consolidateCitations") String consolidateCitations,
                                                       @DefaultValue("-1") @FormDataParam("start") int startPage,
                                                       @DefaultValue("-1") @FormDataParam("end") int endPage,
                                                       @FormDataParam("generateIDs") String generateIDs) throws Exception {
@@ -270,8 +270,8 @@ public class GrobidRestService implements GrobidPaths {
     @Produces("application/zip")
     @PUT
     public Response processStatelessFulltextAssetDocument(@FormDataParam(INPUT) InputStream inputStream,
-                                                          @FormDataParam("consolidate") String consolidateHeader,
-                                                          @FormDataParam("consolidate") String consolidateCitations,
+                                                          @FormDataParam("consolidateHeader") String consolidateHeader,
+                                                          @FormDataParam("consolidateCitations") String consolidateCitations,
                                                           @DefaultValue("-1") @FormDataParam("start") int startPage,
                                                           @DefaultValue("-1") @FormDataParam("end") int endPage,
                                                           @FormDataParam("generateIDs") String generateIDs) throws Exception {
@@ -307,7 +307,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processCitationPatentST36(@FormDataParam(INPUT) InputStream pInputStream,
-                                              @FormDataParam("consolidate") String consolidate) throws Exception {
+                                              @FormDataParam("consolidateCitations") String consolidate) throws Exception {
         boolean consol = validateConsolidationParam(consolidate);
 
         pInputStream = ZipUtils.decompressStream(pInputStream);
@@ -320,7 +320,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processCitationPatentPDF(@FormDataParam(INPUT) InputStream pInputStream,
-                                             @FormDataParam("consolidate") String consolidate) throws Exception {
+                                             @FormDataParam("consolidateCitations") String consolidate) throws Exception {
         boolean consol = validateConsolidationParam(consolidate);
         return restProcessFiles.processCitationPatentPDF(pInputStream, consol);
     }
@@ -330,7 +330,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processCitationPatentTXT_post(@FormParam(TEXT) String text,
-                                                  @FormParam("consolidate") String consolidate) {
+                                                  @FormParam("consolidateCitations") String consolidate) {
         boolean consol = validateConsolidationParam(consolidate);
         return restProcessString.processCitationPatentTXT(text, consol);
     }
@@ -428,7 +428,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processCitation_post(@FormParam(CITATION) String citation,
-                                         @FormParam("consolidate") String consolidate) {
+                                         @FormParam("consolidateCitations") String consolidate) {
         boolean consol = validateConsolidationParam(consolidate);
         return restProcessString.processCitation(citation, consol);
     }
@@ -438,7 +438,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @PUT
     public Response processCitation(@FormParam(CITATION) String citation,
-                                    @FormParam("consolidate") String consolidate) {
+                                    @FormParam("consolidateCitations") String consolidate) {
         boolean consol = validateConsolidationParam(consolidate);
         return restProcessString.processCitation(citation, consol);
     }
@@ -514,7 +514,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processReferencesDocument_post(@FormDataParam(INPUT) InputStream inputStream,
-                                                   @FormDataParam("consolidate") String consolidate) {
+                                                   @FormDataParam("consolidateCitations") String consolidate) {
         boolean consol = validateConsolidationParam(consolidate);
         return restProcessFiles.processStatelessReferencesDocument(inputStream, consol);
     }
@@ -524,7 +524,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @PUT
     public Response processStatelessReferencesDocument(@FormDataParam(INPUT) InputStream inputStream,
-                                                       @FormDataParam("consolidate") String consolidate) {
+                                                       @FormDataParam("consolidateCitations") String consolidate) {
         boolean consol = validateConsolidationParam(consolidate);
         return restProcessFiles.processStatelessReferencesDocument(inputStream, consol);
     }
@@ -562,7 +562,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces("application/json")
     @POST
     public Response annotatePDFPatentCitation(@FormDataParam(INPUT) InputStream inputStream,
-                                              @FormDataParam("consolidate") String consolidate) throws Exception {
+                                              @FormDataParam("consolidateCitations") String consolidate) throws Exception {
         boolean consol = validateConsolidationParam(consolidate);
         return restProcessFiles.annotateCitationPatentPDF(inputStream, consol);
     }
