@@ -28,8 +28,13 @@ On the console, the RESTful API can be tested under the `TEI` tab for service re
 
 ![Example of GROBID Service console usage](img/grobid-rest-example.png)
 
+The services returning JSON results for dynamic PDF annotation purposes can be tested under the `PDF` tab. The PDF is rendered with PDF.js and the console javascript offers a reference implementation on how to use the returned annotations with coordinates for web application, 
 
+![Example of GROBID PDF.js annotation](img/popup.png)
 
+Still to demostrate PDF.js annotation possibilities, by default bibliographical reference for which a DOI (or arXiv ID) is extracted or found by consolidation are made clickable on the original rendered PDF: 
+
+![Example of GROBID PDF.js clickable annotation based on extraction results](img/doi-link.png)
 
 ## GROBID Web Services
 
@@ -51,7 +56,7 @@ _consolidateHeader_ is a string of value 0 (no consolidation) or 1 (consolidate,
 | POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
 |   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value) |
 
-You can test this service with the **curl** command lines, for instance header extraction from a PDF file in the current directory:
+You can test this service with the **cURL** command lines, for instance header extraction from a PDF file in the current directory:
 ```bash
 curl -v --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
 ```
@@ -65,10 +70,23 @@ Convert the complete input document into TEI XML format (header, body and biblio
 | POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
 |   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value) |
 |   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate all found citations) |
+|   		| 					  |						 |teiCoordinates| optional | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details |
 
-You can test this service with the **curl** command lines, for instance fulltext extraction (header, body and citations) from a PDF file in the current directory:
+You can test this service with the **cURL** command lines, for instance fulltext extraction (header, body and citations) from a PDF file in the current directory:
 ```bash
 curl -v --form input=@./thefile.pdf localhost:8070/api/processFulltextDocument
+```
+
+fulltext extraction and add coordinates to the figures (and tables) only:
+
+```bash
+> curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=figure --form teiCoordinates=biblStruct localhost:8070/api/processFulltextDocument
+```
+
+fulltext extraction and add coordinates for all the supported coordinate elements (sorry for the ugly cURL syntax on this, but that's how cURL is working!):
+
+```bash
+> curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=persName --form teiCoordinates=figure --form teiCoordinates=ref --form teiCoordinates=biblStruct --form teiCoordinates=formula localhost:8070/api/processFulltextDocument
 ```
 
 #### /api/processReferences
@@ -81,7 +99,7 @@ Extract and convert all the bibliographical references present in the input docu
 |   		| 					  |						 |consolidateCitations| optional 	| consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate all found citations) |
 
 
-You can test this service with the **curl** command lines, for instance extraction and parsing of all references from a PDF in the current directory without consolidation (default value):
+You can test this service with the **cURL** command lines, for instance extraction and parsing of all references from a PDF in the current directory without consolidation (default value):
 ```bash
 curl -v --form input=@./thefile.pdf localhost:8070/api/processReferences
 ```
@@ -97,7 +115,7 @@ Parse a raw date string and return the corresponding normalized date in ISO 8601
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| date | required	| date to be parsed as raw string|
 
 
-You can test this service with the **curl** command lines, for instance parsing of a raw date string:
+You can test this service with the **cURL** command lines, for instance parsing of a raw date string:
 ```bash
 curl -X POST -d "date=September 16th, 2001" localhost:8070/api/processDate
 ```
@@ -115,7 +133,7 @@ Parse a raw string corresponding to a name or a sequence of names from a header 
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| names | required	| sequence of names to be parsed as raw string|
 
 
-You can test this service with the **curl** command lines, for instance parsing of a raw sequence of header names string:
+You can test this service with the **cURL** command lines, for instance parsing of a raw sequence of header names string:
 ```bash
 curl -X POST -d "names=John Doe and Jane Smith" localhost:8070/api/processHeaderNames
 ```
@@ -139,7 +157,7 @@ Parse a raw sequence of names from a bibliographical reference and return the co
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| names | required	| sequence of names to be parsed as raw string|
 
-You can test this service with the **curl** command lines, for instance parsing of a raw sequence of citation names string:
+You can test this service with the **cURL** command lines, for instance parsing of a raw sequence of citation names string:
 ```bash
 curl -X POST -d "names=J. Doe, J. Smith and B. M. Jackson" localhost:8070/api/processCitationNames
 ```
@@ -168,7 +186,7 @@ Parse a raw sequence of affiliations with or without address and return the corr
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| affiliations | required	| sequence of affiliations+addresses to be parsed as raw string|
 
-You can test this service with the **curl** command lines, for instance parsing of a raw affiliation string:
+You can test this service with the **cURL** command lines, for instance parsing of a raw affiliation string:
 ```bash
 curl -X POST -d "affiliations=Stanford University, California, USA" localhost:8070/api/processAffiliations
 ```
@@ -193,7 +211,7 @@ Parse a raw bibliographical reference (in isolation) and return the correspondin
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| citations | required	| bibliographical reference to be parsed as raw string|
 |   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
 
-You can test this service with the **curl** command lines, for instance parsing of a raw bibliographical reference string in isolation without consolidation (default value):
+You can test this service with the **cURL** command lines, for instance parsing of a raw bibliographical reference string in isolation without consolidation (default value):
 ```bash
 curl -X POST -d "citations=Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113" localhost:8070/api/processCitation
 ```
@@ -223,14 +241,37 @@ which will return:
 
 ### PDF annotation services
 
+#### /api/referenceAnnotations
 
+Return JSON annotations with coordinates in the PDF to be processed, relative to the reference informations: reference callouts with links to the full bibliographical reference and bibliographical reference with possible external URL. 
+
+As the annotations are provided for dynamic display on top a PDF rendered in javascript, no PDF is harmed during these processes !
+
+For information about how the coordinates are provided, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md).
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST	| multipart/form-data | application/json  	| input | required	| PDF file to be processed, returned coordinates will reference this PDF |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+
+
+#### /api/annotatePDF
+
+Return the PDF augmented with PDF annotations relative to the reference informations: reference callouts with links to the full bibliographical reference and bibliographical reference with possible external URL. 
+
+Note that this service modify the original PDF, and thus be careful with legal right and reusability of such augmented PDF! For this reason, this service is proposed for experimental purposes and might be deprecated in future version of GROBID, in favor of the above `/api/referenceAnnotations` service.
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST	| multipart/form-data | application/pdf  	| input | required	| PDF file to be processed |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
 
 
 ### Citation extraction and normalization from patents
 
 #### /api/processCitationPatentTXT
 
-Extract and parse the patent and non patent citations in the description of a patent sent as UTF-8 text. Results are returned as a lists of TEI citations. 
+Extract and parse the patent and non patent citations in the description of a patent publication sent as UTF-8 text. Results are returned as a list of TEI citations. 
 
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
@@ -238,14 +279,44 @@ Extract and parse the patent and non patent citations in the description of a pa
 |   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
 
 
-You can test this service with the **curl** command lines, for instance parsing of a raw bibliographical reference string in isolation without consolidation (default value):
+You can test this service with the **cURL** command lines, for instance parsing of a raw bibliographical reference string in isolation without consolidation (default value):
 ```bash
-curl -X POST -d "input=In European Patent A-123456 nothing interesting." localhost:8070/api/processCitationPatentTXT
+curl -X POST -d "input=In EP0123456B1 nothing interesting." localhost:8070/api/processCitationPatentTXT
+```
+
+which will return:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI
+    xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <teiHeader />
+    <text>
+        <div id="_mWYp9Fa">In EP0123456B1 nothing interesting.</div>
+        <div type="references">
+            <listBibl>
+                <biblStruct type="patent" status="publication">
+                    <monogr>
+                        <authority>
+                            <orgName type="regional">EP</orgName>
+                        </authority>
+                        <idno type="docNumber" subtype="epodoc">0123456</idno>
+                        <idno type="docNumber" subtype="original">0123456</idno>
+                        <imprint>
+                            <classCode scheme="kindCode">B1</classCode>
+                        </imprint>
+                        <ptr target="#string-range('mWYp9Fa',5,9)"></ptr>
+                    </monogr>
+                </biblStruct>
+            </listBibl>
+        </div>
+    </text>
+</TEI>
 ```
 
 #### /api/processCitationPatentTEI
 
-Extract and parse the patent and non patent citations in the description of a patent encoded in TEI (Patent Document Model). Results are added to the original document as TEI stand-off annotations.
+Extract and parse the patent and non patent citations in the description of a patent publication encoded in TEI (Patent Document Model). Results are added to the original document as TEI stand-off annotations.
 
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
@@ -256,19 +327,41 @@ Extract and parse the patent and non patent citations in the description of a pa
 
 #### /api/processCitationPatentST36
 
-Extract and parse the patent and non patent citations in the description of a patent encoded in ST.36. Results are returned as a lits of TEI citations. 
+Extract and parse the patent and non patent citations in the description of a patent publication encoded in ST.36. Results are returned as a list of TEI citations. 
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| multipart/form-data | application/xml  	| input | required	| XML file in ST36 standard of the patent document to be processed |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
 
 
 #### /api/processCitationPatentPDF
 
-Extract and parse the patent and non patent citations in the description of a patent sent as PDF. Results are returned as a lits of TEI citations.
+Extract and parse the patent and non patent citations in the description of a patent publication sent as PDF. Results are returned as a list of TEI citations. Note that the text layer must be available in the PDF to be processed (which is, surprisingly in this century, very rarely the case with the PDF avaialble from the main patent offices - however the patent publications that can be downloaded from Google Patents for instance have been processed by a good quality OCR). 
+
+Extract and parse the patent and non patent citations in the description of a patent encoded in ST.36. Results are returned as a lits of TEI citations. 
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| multipart/form-data | application/xml  	| input | required	| PDF file of the patent document to be processed |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
 
 
+#### /api/citationPatentAnnotations
+
+This service is similar to `/api/referenceAnnotations` but for a patent document in PDF. JSON annotations relative the the input PDF are returned with coordinates as described in the page [Coordinates of structures in the original PDF](Coordinates-in-PDF.md).
+
+Patent and non patent citations can be directly visualised on the PDF layout as illustrated by the GROBID console. For patent citations, the provided external reference informations are based on the patent number normalisation and relies on Espacenet, the patent access application from the European Patent office. For non patent citation, the external references are similar as for a scientific article (CorssRef DOI link or arXiv.org if an arXiv ID is present). 
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST	| multipart/form-data | application/json  	| input | required	| Patent publication PDF file to be processed, returned coordinates will reference this PDF |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
 
 
 ### Administration services
 
-
+...
 
 
 #### Configuration of the password for the service adminstration
