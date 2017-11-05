@@ -326,15 +326,15 @@ public class PatentRefParser {
                                                 (pieces[1].length() - pieces[0].length() < 4))
                                         ) {
                                     for (int i = 0; i < 2; i++) {
-                                        String toto0 = pieces[i];
-                                        addNumber(numbers, offsets_begin, offsets_end, toto0, inde_begin, inde_end);
+                                        String piece = pieces[i];
+                                        addNumber(numbers, offsets_begin, offsets_end, piece, inde_begin, inde_end, toto);
                                     }
                                     notPieces = false;
                                 }
                             } else if ((toto.length() > (6 * pieces.length))) {
                                 for (int i = 0; i < pieces.length; i++) {
-                                    String toto0 = pieces[i];
-                                    addNumber(numbers, offsets_begin, offsets_end, toto0, inde_begin, inde_end);
+                                    String piece = pieces[i];
+                                    addNumber(numbers, offsets_begin, offsets_end, piece, inde_begin, inde_end, toto);
                                 }
                                 notPieces = false;
                             }
@@ -343,7 +343,7 @@ public class PatentRefParser {
                     }
 
                     if (notPieces) {
-                        addNumber(numbers, offsets_begin, offsets_end, toto, inde_begin, inde_end);
+                        addNumber(numbers, offsets_begin, offsets_end, toto, inde_begin, inde_end, null);
                     }
                 }
             }
@@ -1250,8 +1250,8 @@ public class PatentRefParser {
         return res;
     }
 
-    private void addNumber(List<String> numbers, List<Integer> offsets_begin,
-                           List<Integer> offsets_end, String toto, int offset_begin, int offset_end) {
+    private void addNumber(List<String> numbers, List<Integer> offsets_begin, List<Integer> offsets_end, 
+    		String toto, int offset_begin, int offset_end, String sequence) {
         // we have to check if we have a check code at the end of the number
         toto = toto.trim();
         if (toto.length() > 2) {
@@ -1269,9 +1269,23 @@ public class PatentRefParser {
         }
 
         if ((toto.length() > 4) && toto.length() < 20) {
-            numbers.add(toto.trim());
-            offsets_begin.add(new Integer(offset_begin));
-            offsets_end.add(new Integer(offset_end));
+            if (sequence == null) {
+ 	            numbers.add(toto.trim());
+    	        offsets_begin.add(new Integer(offset_begin));
+        	    offsets_end.add(new Integer(offset_end));
+        	} else {
+	        	// we might have an enumeration and we need to match the target number in it
+	        	int localStart = sequence.indexOf(toto);
+	        	int localEnd = localStart + toto.length();
+	        	numbers.add(toto.trim());
+	        	if (localStart != -1) {
+	    	        offsets_begin.add(new Integer(localStart+offset_begin));
+	        	    offsets_end.add(new Integer(localEnd+offset_begin));
+	        	} else {
+ 		   	        offsets_begin.add(new Integer(offset_begin));
+        		    offsets_end.add(new Integer(offset_end));
+	        	}
+	        }
         }
     }
 

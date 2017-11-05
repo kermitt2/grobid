@@ -157,7 +157,7 @@ public class EndToEndEvaluation {
                         GrobidAnalysisConfig.builder()
                                 .consolidateHeader(true)
                                 .consolidateCitations(false)
-                                .withPreprocessImages(false)
+                                .withPreprocessImages(true)
                                 .build();
 					String tei = engine.fullTextToTEI(pdfFile, config);
 					// write the result in the same directory
