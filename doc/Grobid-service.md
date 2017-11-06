@@ -1,4 +1,4 @@
-<h1>GROBID service API</h1>
+<h1>GROBID Service API</h1>
 
 The GROBID Web API provides a simple and efficient way to use the tool. A service console is available to test GROBID in a human friendly manner. For production and benchmarking, we strongly recommand to use this web service mode on a multi-core machine and to avoid running GROBID in the batch mode.  
 
@@ -361,9 +361,6 @@ Patent and non patent citations can be directly visualised on the PDF layout as 
 
 ### Administration services
 
-...
-
-
 #### Configuration of the password for the service adminstration
 
 A password is required to access the administration page under the `Admin` tab in the console. The default password for the administration console is **admin**.
@@ -374,6 +371,91 @@ To change the password, you can replace this property value by the SHA1 hash gen
 
 > http://localhost:8070/api/sha1?sha1=`<input_string>`
 
+See below for the `/api/sha1` service description. 
+
+#### /api/admin
+
+Request to get parameters of `grobid.properties` formatted in html table.
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST	| application/x-www-form-urlencoded | text/html  	| sha1 | required	| Administration password hashed using sha1 |
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| GET	| string | text/html  	| sha1 | required	| Administration password hashed using sha1 |
+
+Example of usage with GET method: `/api/admin?sha1=<pwd>`
+
+
+#### /api/sha1
+
+Request to get an input string hashed using sha1.
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST	| application/x-www-form-urlencoded | text/html  	| sha1 | required	| String (password) to be hashed using sha1 |
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| GET	| string | text/html  	| sha1 | required	| String (password) to be hashed using sha1 |
+
+Example of usage with GET method: `/api/sha1?sha1=<pwd>`
+
+
+#### /api/allProperties
+
+Request to get all properties key/value/type as XML.
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST	| application/x-www-form-urlencoded | text/html  	| sha1 | required	| Administration password hashed using sha1  |
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| GET	| string | text/html  	| sha1 | required	| Administration password hashed using sha1  |
+
+Example of usage with GET method: `/api/allProperties?sha1=<password>`
+
+Sent xml follow the following schema:
+
+```xml
+<properties>
+	<property>
+		<key>key</key>
+		<value>value</value>
+		<type>type</type>
+	</property>
+	<property>...</property>
+</properties>
+```
+
+#### /api/changePropertyValue
+
+Change the property value from the property key passed in the xml input.
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST	| application/x-www-form-urlencoded | text/html  	| xml | required	| XML input specifying the administrative password hashed using sha1 and a new  property/value following the schema below |
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| GET	| string | text/html  	| xml | required	| XML input specifying the administrative password hashed using sha1 and a new  property/value following the schema below  |
+
+Example of usage with GET method: `/api/changePropertyValue?xml=<some_xml>`
+
+XML input has to follow the following schema:
+
+```xml
+<changeProperty>
+	<password>pwd</password>
+	<property>
+		<key>key</key>
+		<value>value</value>
+		<type>type</type>
+	</property>
+</changeProperty>
+```
 
 ## Parallel mode
 
