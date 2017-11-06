@@ -56,6 +56,7 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -74,20 +75,22 @@ import java.util.regex.Pattern;
  * @author Patrice Lopez
  */
 
-public class Document {
-
-    protected static final Logger LOGGER = LoggerFactory.getLogger(Document.class);
+public class Document implements Serializable {
+	
+	public static final long serialVersionUID = 1L;
+	
+	protected static final Logger LOGGER = LoggerFactory.getLogger(Document.class);
     public static final int MAX_FIG_BOX_DISTANCE = 70;
-    protected final DocumentSource documentSource;
+    protected transient final DocumentSource documentSource;
 
     protected String pathXML = null; // XML representation of the current PDF file
 
     protected String lang = null;
 
     // layout structure of the document
-    protected List<Page> pages = null;
-    protected List<Cluster> clusters = null;
-    protected List<Block> blocks = null;
+    protected transient List<Page> pages = null;
+    protected transient List<Cluster> clusters = null;
+    protected transient List<Block> blocks = null;
 
     // not used anymore
     protected List<Integer> blockHeaders = null;
@@ -95,47 +98,47 @@ public class Document {
     protected List<Integer> blockSectionTitles = null;
     protected List<Integer> acknowledgementBlocks = null;
     protected List<Integer> blockDocumentHeaders = null;
-    protected SortedSet<DocumentPiece> blockReferences = null;
+    protected transient SortedSet<DocumentPiece> blockReferences = null;
     protected List<Integer> blockTables = null;
     protected List<Integer> blockFigures = null;
     protected List<Integer> blockHeadTables = null;
     protected List<Integer> blockHeadFigures = null;
 
-    protected FeatureFactory featureFactory = null;
+    protected transient FeatureFactory featureFactory = null;
 
     // map of labels (e.g. <reference> or <footnote>) to document pieces
-    protected SortedSetMultimap<String, DocumentPiece> labeledBlocks;
+    protected transient SortedSetMultimap<String, DocumentPiece> labeledBlocks;
 
     // original tokenization and tokens - in order to recreate the original
     // strings and spacing
     protected List<LayoutToken> tokenizations = null;
 
     // list of bibliographical references with context
-    protected Map<String, BibDataSet> teiIdToBibDataSets = null;
-    protected List<BibDataSet> bibDataSets = null;
+    protected transient Map<String, BibDataSet> teiIdToBibDataSets = null;
+    protected transient List<BibDataSet> bibDataSets = null;
 
     // not used anymore
-    protected DocumentNode top = null;
+    protected transient DocumentNode top = null;
 
     // header of the document - if extracted and processed
-    protected BiblioItem resHeader = null;
+    protected transient BiblioItem resHeader = null;
 
     // full text as tructure TEI - if extracted and processed
     protected String tei;
 
-    protected ReferenceMarkerMatcher referenceMarkerMatcher;
+    protected transient ReferenceMarkerMatcher referenceMarkerMatcher;
 
     public void setImages(List<GraphicObject> images) {
         this.images = images;
     }
 
     // list of bitmaps and vector graphics of the document
-    protected List<GraphicObject> images = null;
+    protected transient List<GraphicObject> images = null;
 
 	// list of PDF annotations as present in the PDF source file
-    protected List<PDFAnnotation> pdfAnnotations = null;
+    protected transient List<PDFAnnotation> pdfAnnotations = null;
 
-    protected Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
+    protected transient Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
 
     // some statistics regarding the document - useful for generating the features
     protected double maxCharacterDensity = 0.0;
@@ -150,15 +153,15 @@ public class Document {
 
     protected boolean titleMatchNum = false; // true if the section titles of the document are numbered
 
-    protected List<Figure> figures;
-    protected Predicate<GraphicObject> validGraphicObjectPredicate;
+    protected transient List<Figure> figures;
+    protected transient Predicate<GraphicObject> validGraphicObjectPredicate;
     protected int m;
     
-    protected List<Table> tables;
-    protected List<Equation> equations;
+    protected transient List<Table> tables;
+    protected transient List<Equation> equations;
 
     // the analyzer/tokenizer used for processing this document
-    Analyzer analyzer = GrobidAnalyzer.getInstance();
+    protected transient Analyzer analyzer = GrobidAnalyzer.getInstance();
 
     // map of sequence of LayoutTokens for the fulltext model labels
     //Map<String, List<LayoutTokenization>> labeledTokenSequences = null;
