@@ -10,23 +10,24 @@ Evaluation on 1942 random PDF files out of 1943 PDF (1 PDF parsing failure).
 
 ### Strict Matching (exact matches)
 
-===== Field-level results =====
+**Field-level results**
 
-label                accuracy     precision    recall       f1     
-
-abstract             81.7         14.03        12.93        13.46  
-authors              96.89        85.76        85.36        85.56  
-first_author         99           96           95.31        95.65  
-keywords             92.86        66.1         53.44        59.1   
-title                95.32        78.99        78.01        78.5   
-
-all fields           93.16        69.4         65.9         67.6    (micro average)
-                     93.16        68.17        65.01        66.45   (macro average)
+|---		|---	|---		|---	|---	|
+| label     |  accuracy  |   precision |   recall  |     f1     |
+|---		|---	|---		|---	|---	|
+| abstract          |   81.7    |    14.03  |      12.93   |     13.46 | 
+| authors           |   96.89   |    85.76  |      85.36   |     85.56 |
+| first_author      |   99      |    96     |      95.31   |     95.65 | 
+| keywords          |   92.86   |    66.1   |      53.44   |     59.1  | 
+| title             |   95.32   |    78.99  |      78.01   |     78.5  | 
+|---		|---	|---		|---	|---	|
+| all fields        |  93.16    |    69.4   |     65.9     |    67.6    (micro average)|
+|                   |  93.16    |    68.17  |     65.01    |    66.45   (macro average)|
 
 
 #### Soft Matching (ignoring punctuation, case and space characters mismatches)
 
-===== Field-level results =====
+**Field-level results**
 
 label                accuracy     precision    recall       f1     
 
@@ -41,7 +42,7 @@ all fields           95.05        79.4         75.39        77.34   (micro avera
 
 #### Levenshtein Matching (Minimum Levenshtein distance at 0.8)
 
-===== Field-level results =====
+**Field-level results**
 
 label                accuracy     precision    recall       f1     
 
@@ -57,7 +58,7 @@ all fields           97.1         90.23        85.68        87.9    (micro avera
 
 #### Ratcliff/Obershelp Matching (Minimum Ratcliff/Obershelp similarity at 0.95)
 
-===== Field-level results =====
+**Field-level results**
 
 label                accuracy     precision    recall       f1     
 
@@ -72,6 +73,7 @@ all fields           96.56        87.39        82.98        85.13   (micro avera
 
 #### Instance-level results
 
+```
 Total expected instances: 	1942
 Total correct instances: 	166 (strict) 
 Total correct instances: 	573 (soft) 
@@ -82,7 +84,7 @@ Instance-level recall:	8.55	(strict)
 Instance-level recall:	29.51	(soft) 
 Instance-level recall:	54.79	(Levenshtein) 
 Instance-level recall:	48.76	(RatcliffObershelp) 
-
+```
 
 ##Citation metadata
 
@@ -165,6 +167,7 @@ all fields           98.58        89.83        80.1         84.68   (micro avera
 
 ####Instance-level results 
 
+```
 Total expected instances: 		90079
 Total extracted instances: 		87762
 Total correct instances: 		36825 (strict) 
@@ -196,6 +199,7 @@ Matching 3 :	2724
 Matching 4 :	670
 
 Total matches :	71534
+```
 
 ## Fulltext structures  
 
