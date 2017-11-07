@@ -12,15 +12,14 @@ Evaluation on 1942 random PDF files out of 1943 PDF (1 PDF parsing failure).
 
 **Field-level results**
 
+| label     |  accuracy  |   precision |   recall  |     f1     	|
 |---		|---	|---		|---	|---	|
-| label     |  accuracy  |   precision |   recall  |     f1     |
-|---		|---	|---		|---	|---	|
-| abstract          |   81.7    |    14.03  |      12.93   |     13.46 | 
-| authors           |   96.89   |    85.76  |      85.36   |     85.56 |
-| first_author      |   99      |    96     |      95.31   |     95.65 | 
-| keywords          |   92.86   |    66.1   |      53.44   |     59.1  | 
-| title             |   95.32   |    78.99  |      78.01   |     78.5  | 
-|---		|---	|---		|---	|---	|
+| abstract          |   81.7    |    14.03  |      12.93   |     13.46 	| 
+| authors           |   96.89   |    85.76  |      85.36   |     85.56 	|
+| first_author      |   99      |    96     |      95.31   |     95.65 	| 
+| keywords          |   92.86   |    66.1   |      53.44   |     59.1  	| 
+| title             |   95.32   |    78.99  |      78.01   |     78.5  	| 
+|					|			|			|			   |			|
 | all fields        |  93.16    |    69.4   |     65.9     |    67.6    (micro average)|
 |                   |  93.16    |    68.17  |     65.01    |    66.45   (macro average)|
 
@@ -29,16 +28,16 @@ Evaluation on 1942 random PDF files out of 1943 PDF (1 PDF parsing failure).
 
 **Field-level results**
 
-label                accuracy     precision    recall       f1     
-
-abstract             88.27        48.04        44.29        46.09  
-authors              96.97        86.12        85.72        85.92  
-first_author         99.02        96.11        95.41        95.76  
-keywords             94.06        75.96        61.42        67.92  
-title                96.93        86.65        85.58        86.11  
-
-all fields           95.05        79.4         75.39        77.34   (micro average)
-                     95.05        78.58        74.49        76.36   (macro average)
+|label      |          accuracy   |  precision  |  recall   |    f1 |    
+|---		|---	|---		|---	|---	|
+|abstract      |       88.27   |     48.04  |      44.29   |     46.09 | 
+|authors       |       96.97   |     86.12  |      85.72   |     85.92 | 
+|first_author  |       99.02   |     96.11  |      95.41   |     95.76 | 
+|keywords      |       94.06   |     75.96  |      61.42   |     67.92 | 
+|title         |       96.93   |     86.65  |      85.58   |     86.11 | 
+|					|			|			|			   |		|
+|all fields     |      95.05    |    79.4   |      75.39   |     77.34   (micro average)|
+|               |      95.05    |    78.58  |      74.49   |     76.36   (macro average)|
 
 #### Levenshtein Matching (Minimum Levenshtein distance at 0.8)
 
