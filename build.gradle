@@ -59,7 +59,7 @@ subprojects {
         // treating them separately, these jars will be flattened into grobid-core.jar on installing,
         // to avoid missing dependencies from the projects that include grobid-core (see 'jar' taskin grobid-core)
         localLibs = ['crfpp-1.0.2.jar',
-                     'language-detection-09-13-2011.jar',
+                     'langdetect-1.1-20120112.jar',
                      'wipo-analysers-0.0.2.jar',
                      'imageio-pnm-1.0.jar',
                      'wapiti-1.5.0.jar']

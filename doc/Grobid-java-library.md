@@ -2,9 +2,9 @@ The [RESTful API](Grobid-service.md) provides a simple and efficient way to use 
 
 After [building the project](Install-Grobid.md), two core jar files are created: grobid-core-`<current version>`.onejar.jar and grobid-core-`<current version>`.jar
 	
-A complete working project example of usage of GROBID Java API can be found here: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTex format. 
+A complete working **maven** project example of usage of GROBID Java API can be found here: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTex format.  
 
-An example project for using GROBID in an ant project is available [here](https://github.com/kermitt2/grobid-test-ant).
+An example project for using GROBID in an **ant** project is available [here](https://github.com/kermitt2/grobid-test-ant).
 
 ## Using maven
 
@@ -66,7 +66,7 @@ When using Grobid, you have to initiate a context with the path to the Grobid re
 
 ## maven Skeleton project example
 
-In the following archive, you can find a toy example project integrating Grobid in a third party Java project using maven: [grobid-example](https://github.com/kermitt2/grobid-example). 
+In the following archive, you can find a __maven__ toy example project integrating Grobid in a third party Java project using maven: [grobid-example](https://github.com/kermitt2/grobid-example). 
 
 Create the grobid-core jar library, under the main project directory `grobid/`:
 ```bash
@@ -106,8 +106,8 @@ The skeleton project contains the other required jar.
 
 The paths to __grobid-home__ must be changed in the project property file:  `grobid-test-ant/grobid-example.properties` according to your installation, for instance: 
 
-		grobid_test.pGrobidHome=/Users/lopez/grobid/grobid-home
-		grobid_test.pGrobidProperties=/Users/lopez/grobid/grobid-home/config/grobid.properties
+		grobid_test_ant.pGrobidHome=/Users/lopez/grobid/grobid-home
+		grobid_test_ant.pGrobidProperties=/Users/lopez/grobid/grobid-home/config/grobid.properties
 
 Then build and test the toy project:
 ```bash

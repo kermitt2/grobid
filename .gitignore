@@ -45,6 +45,8 @@ grobid-astro
 grobid-chem
 grobid-books
 grobid-smecta
+grobid-example
+grobid-test-ant
 grobid-home/models/quantities
 grobid-home/models/dictionaries-lexical-entries
 grobid-home/models/units
