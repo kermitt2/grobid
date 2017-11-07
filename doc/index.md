@@ -31,6 +31,8 @@
 
 * [End to end evaluation](End-to-end-evaluation.md)
 
+* [Benchmarking](Benchmarking.md)
+
 <h3>Annotation guidelines</h3>
 
 * [General principles](training/General-principles.md)
