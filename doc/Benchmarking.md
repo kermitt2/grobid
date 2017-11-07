@@ -1,5 +1,7 @@
 <h1>Benchmarking</h1>
 
+#Benchmarking
+
 This is the end-to-end benchmarking result for GROBID version 0.4.4 against the `PMC_sample_1943` dataset, see the [End-to-end evaluation](End-to-end-evaluation.md) page for explanations and for reproducing this evaluation. 
 
 
@@ -8,7 +10,7 @@ This is the end-to-end benchmarking result for GROBID version 0.4.4 against the 
 Evaluation on 1942 random PDF files out of 1943 PDF (1 PDF parsing failure).
 
 
-#####Strict Matching (exact matches)
+####Strict Matching (exact matches)
 
 **Field-level results**
 
@@ -24,7 +26,7 @@ Evaluation on 1942 random PDF files out of 1943 PDF (1 PDF parsing failure).
 |                   |  93.16    |    68.17  |     65.01    |    66.45   (macro average)|
 
 
-#####Soft Matching (ignoring punctuation, case and space characters mismatches)
+####Soft Matching (ignoring punctuation, case and space characters mismatches)
 
 **Field-level results**
 
@@ -39,7 +41,7 @@ Evaluation on 1942 random PDF files out of 1943 PDF (1 PDF parsing failure).
 |all fields     |      95.05    |    79.4   |      75.39   |     77.34   (micro average)|
 |               |      95.05    |    78.58  |      74.49   |     76.36   (macro average)|
 
-#####Levenshtein Matching (Minimum Levenshtein distance at 0.8)
+####Levenshtein Matching (Minimum Levenshtein distance at 0.8)
 
 **Field-level results**
 
@@ -55,7 +57,7 @@ Evaluation on 1942 random PDF files out of 1943 PDF (1 PDF parsing failure).
 |             |        97.1     |    89.95  |      84.84   |     87.19   (macro average)|
 
 
-#####Ratcliff/Obershelp Matching (Minimum Ratcliff/Obershelp similarity at 0.95)
+####Ratcliff/Obershelp Matching (Minimum Ratcliff/Obershelp similarity at 0.95)
 
 **Field-level results**
 
@@ -70,7 +72,7 @@ Evaluation on 1942 random PDF files out of 1943 PDF (1 PDF parsing failure).
 |all fields |          96.56    |    87.39  |      82.98   |     85.13   (micro average)|
 |           |          96.56    |    86.94  |      82.08   |     84.32   (macro average)|
 
-#### Instance-level results
+####Instance-level results
 
 ```
 Total expected instances: 	1942
