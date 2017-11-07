@@ -8,8 +8,7 @@ This is the end-to-end benchmarking result for GROBID version 0.4.4 against the 
 Evaluation on 1942 random PDF files out of 1943 PDF (1 PDF parsing failure).
 
 
-Strict Matching (exact matches)
-======
+#####Strict Matching (exact matches)
 
 **Field-level results**
 
@@ -25,8 +24,7 @@ Strict Matching (exact matches)
 |                   |  93.16    |    68.17  |     65.01    |    66.45   (macro average)|
 
 
-Soft Matching (ignoring punctuation, case and space characters mismatches)
-======
+#####Soft Matching (ignoring punctuation, case and space characters mismatches)
 
 **Field-level results**
 
@@ -41,8 +39,7 @@ Soft Matching (ignoring punctuation, case and space characters mismatches)
 |all fields     |      95.05    |    79.4   |      75.39   |     77.34   (micro average)|
 |               |      95.05    |    78.58  |      74.49   |     76.36   (macro average)|
 
-Levenshtein Matching (Minimum Levenshtein distance at 0.8)
-======
+#####Levenshtein Matching (Minimum Levenshtein distance at 0.8)
 
 **Field-level results**
 
@@ -58,8 +55,7 @@ Levenshtein Matching (Minimum Levenshtein distance at 0.8)
 |             |        97.1     |    89.95  |      84.84   |     87.19   (macro average)|
 
 
-Ratcliff/Obershelp Matching (Minimum Ratcliff/Obershelp similarity at 0.95)
-======
+#####Ratcliff/Obershelp Matching (Minimum Ratcliff/Obershelp similarity at 0.95)
 
 **Field-level results**
 
