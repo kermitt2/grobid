@@ -18,6 +18,7 @@ repositories {
     mavenCentral()
 }
 
+apply plugin: 'net.researchgate.release'
 
 allprojects {
     apply plugin: 'jacoco'
@@ -29,14 +30,14 @@ allprojects {
     jacoco {
         toolVersion = '0.7.1.201405082137'
     }
+
+    afterReleaseBuild.dependsOn subprojects.bintrayUpload
 }
 
 subprojects {
     apply plugin: 'java'
     apply plugin: 'maven'
     apply plugin: 'com.jfrog.bintray'
-    apply plugin: 'net.researchgate.release'
-
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -402,7 +403,6 @@ tasks.coveralls {
     dependsOn jacocoRootReport
 }
 
-afterReleaseBuild.dependsOn subprojects.bintrayUpload
 
 wrapper {
     version "4.2.1"
