@@ -17,7 +17,7 @@
         <dependency>
             <groupId>org.grobid</groupId>
             <artifactId>grobid-core</artifactId>
-            <version>0.4.4-SNAPSHOT</version>
+            <version>0.4.4</version>
         </dependency>
 
         <dependency>
