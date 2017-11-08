@@ -18,6 +18,7 @@ repositories {
     mavenCentral()
 }
 
+apply plugin: 'net.researchgate.release'
 
 allprojects {
     apply plugin: 'jacoco'
@@ -36,8 +37,6 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'maven'
     apply plugin: 'com.jfrog.bintray'
-    apply plugin: 'net.researchgate.release'
-
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -155,8 +154,6 @@ subprojects {
         //  forkEvery = 1
         maxHeapSize = "1024m"
     }
-
-    afterReleaseBuild.dependsOn subprojects.bintrayUpload
 
 }
 
@@ -410,3 +407,7 @@ tasks.coveralls {
 wrapper {
     version "4.2.1"
 }
+
+afterReleaseBuild.dependsOn subprojects.bintrayUpload
+
+
