@@ -4,7 +4,6 @@ import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.AbstractEngineFactory;
-import org.grobid.core.mock.MockContext;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -24,13 +23,13 @@ public class SegmentationTest {
 
     @BeforeClass
     public static void setInitialContext() throws Exception {
-        MockContext.setInitialContext();
+//        MockContext.setInitialContext();
         AbstractEngineFactory.init();
     }
 
     @AfterClass
     public static void destroyInitialContext() throws Exception {
-        MockContext.destroyInitialContext();
+//        MockContext.destroyInitialContext();
     }
 
     @Before

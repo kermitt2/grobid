@@ -49,32 +49,32 @@ For running the evaluation, the tool assumes that the files are organised in a s
 
 ### PubMedCentral
 
-Under ```grobid-trainer/```, the following command line is used to run and evaluate Grobid on the dataset:
+Under ```grobid/```, the following command line is used to run and evaluate Grobid on the dataset:
 ```bash
-> mvn compile exec:exec -PPubMedCentralEval -Dpmc=PATH_TO_PMC/PMC_sample_1943 -Drun=1
+> ./gradlew PubMedCentralEval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 -Prun=1
 ```
 The parameters `run` indicates if GROBID has to be executed on all the PDF of the data set. The resulting TEI file will be added in each article subdirectory. If you only want to run the evaluation without re-executing Grobid on the PDF, set the parameter to 0:
 ```bash
-> mvn compile exec:exec -PPubMedCentralEval -Dpmc=PATH_TO_PMC/PMC_sample_1943 -Drun=0
+> ./gradlew PubMedCentralEval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 -Prun=0
 ```
 It is also possible to set a ratio of evaluation data to be used expressed as a number between 0 and 1 introduced by the parameter `fileRatio`. For instance, if you want to evaluate Grobid against only 10% of the PubMedCentral files, use:
 ```bash
-> mvn compile exec:exec -PPubMedCentralEval -Dpmc=PATH_TO_PMC/PMC_sample_1943 -Drun=0 -DfileRatio=0.1
+> ./gradlew PubMedCentralEval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 -Prun=0 -PfileRatio=0.1
 ```
 
 ### Pub2TEI-based
 
-Under ```grobid-trainer/```, the following command line is used to run and evaluate Grobid on the dataset:
+Under ```grobid/```, the following command line is used to run and evaluate Grobid on the dataset:
 ```bash
-> mvn compile exec:exec -PPub2TeiEval -Dp2t=*PATH_TO_TEI/* -Drun=1
+> ./gradlew Pub2TeiEval -Pp2t=ABS_PATH_TO_TEI/ -Prun=1
 ```
 The parameters `run` indicates if GROBID has to be executed on all the PDF of the data set. The resulting GROBID TEI file will be added in each article subdirectory. If you only want to run the evaluation without re-executing Grobid on the PDF, set the parameter to 0:
 ```bash
-> mvn compile exec:exec -PPub2TeiEval -Dp2t=*PATH_TO_TEI/* -Drun=0
+> ./gradlew Pub2TeiEval -Pp2t=ABS_PATH_TO_TEI/ -Prun=0
 ```
 It is also possible to set a ratio of evaluation data to be used expressed as a number between 0 and 1 introduced by the parameter `fileRatio`. For instance, if you want to evaluate Grobid against only 10% of the Pub2TEI-produced files, use:
 ```bash
-> mvn compile exec:exec -PPub2TeiEval -Dpmc=*PATH_TO_TEI/* -Drun=0 -DfileRatio=0.1
+> ./gradlew Pub2TeiEval -Pp2t=ABS_PATH_TO_TEI/ -Prun=0 -PfileRatio=0.1
 ```
 
 ## Evaluation results

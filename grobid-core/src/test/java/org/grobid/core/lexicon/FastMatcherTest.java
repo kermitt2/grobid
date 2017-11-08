@@ -1,14 +1,10 @@
 package org.grobid.core.lexicon;
 
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.analyzers.GrobidAnalyzer;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 
 import java.io.File;
 import java.util.Arrays;
@@ -24,13 +20,7 @@ public class FastMatcherTest {
 
     @BeforeClass
     public static void setInitialContext() throws Exception {
-        MockContext.setInitialContext();
         GrobidProperties.getInstance();
-    }
-
-    @AfterClass
-    public static void destroyInitialContext() throws Exception {
-        MockContext.destroyInitialContext();
     }
 
     @Before
@@ -104,7 +94,8 @@ public class FastMatcherTest {
         assertThat(positions.get(1).end, is(24));
     }
 
-    /*@Test
+    @Ignore
+    @Test
     public void testMatchStringWithTag_location() throws Exception {
         target = new FastMatcher(this.getClass().getResourceAsStream("location.txt"));
 
@@ -119,9 +110,10 @@ public class FastMatcherTest {
         //Bronx
         assertThat(positions.get(1).start, is(23));
         assertThat(positions.get(1).end, is(28));
-    }*/
+    }
 
-    /*@Test
+    @Ignore
+    @Test
     public void testMatchStringOnlyTag_location_noMatch() throws Exception {
         target = new FastMatcher(this.getClass().getResourceAsStream("location.txt"));
 
@@ -130,6 +122,7 @@ public class FastMatcherTest {
         assertThat(positions, hasSize(0));
     }
 
+    @Ignore
     @Test
     public void testMatchStringAndTag_location_noMatch() throws Exception {
         target = new FastMatcher(this.getClass().getResourceAsStream("location.txt"));
@@ -139,14 +132,15 @@ public class FastMatcherTest {
         assertThat(positions, hasSize(0));
     }
 
+    @Ignore
     @Test
     public void testMatchList_location_noMatch() throws Exception {
         target = new FastMatcher(this.getClass().getResourceAsStream("location.txt"));
 
         final String input = "This is <p>";
-        final List<OffsetPosition> offsetPositions = target.matchCharacter(Arrays.asList(input.split(" ")));
-        assertThat(offsetPositions, hasSize(0));
-    }*/
+//        final List<OffsetPosition> offsetPositions = target.matchCharacter(Arrays.asList(input.split(" ")));
+        //assertThat(offsetPositions, hasSize(0));
+    }
 
     @Test
     public void testMatchList_location_1Match() throws Exception {

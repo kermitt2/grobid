@@ -2,7 +2,6 @@ package org.grobid.trainer;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.trainer.sax.TEIEbookSaxParser;
 
@@ -170,9 +169,7 @@ public class EbookTrainer extends AbstractTrainer {
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
-		MockContext.setInitialContext();
 		GrobidProperties.getInstance();
 		AbstractTrainer.runTraining(new EbookTrainer());
-		MockContext.destroyInitialContext();
 	}
 }

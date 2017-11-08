@@ -18,6 +18,7 @@ import java.io.OutputStream;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import javax.xml.stream.FactoryConfigurationError;
 import javax.xml.stream.XMLEventReader;
@@ -46,10 +47,7 @@ import org.slf4j.LoggerFactory;
  * @author Damien
  */
 public class TeiStAXParser {
-
-	/**
-	 * The class LOGGER.
-	 */
+	
 	private static final Logger LOGGER = LoggerFactory.getLogger(TeiStAXParser.class);
 
 	/**
@@ -192,26 +190,33 @@ public class TeiStAXParser {
 		int eventType;
 		XMLEvent event;
 		while (reader.hasNext()) {
-			event = (XMLEvent) reader.next();
-			eventType = event.getEventType();
+		    try {
+                event = (XMLEvent) reader.next();
+                eventType = event.getEventType();
 
-			switch (eventType) {
-			case XMLEvent.START_ELEMENT:
-				processStartElement(event);
-				break;
+                switch (eventType) {
+                    case XMLEvent.START_ELEMENT:
+                        processStartElement(event);
+                        break;
 
-			case XMLEvent.END_ELEMENT:
-				processEndElement(event);
-				break;
-			case XMLEvent.CHARACTERS:
-				writeInTeiBufferCharacters(event.asCharacters());
-				break;
-			}
+                    case XMLEvent.END_ELEMENT:
+                        processEndElement(event);
+                        break;
+                    case XMLEvent.CHARACTERS:
+                        writeInTeiBufferCharacters(event.asCharacters());
+                        break;
+                }
+            } catch (NoSuchElementException nsee) {
+		        throw new XMLStreamException("Cannot parse the XML file. ", nsee);
+            }
 		}
 
 		appendOutputStream();
 		if (isSelfInstanceRefExtractor) {
-			extractor.close();
+            // VZ: TODO: is my assumption correct?
+            // VZ: in many cases, the model will be reloaded again.
+            // if JVM is finished, then memory is freed anyways. Otherwise the model is probably needed in memory for future requests
+            extractor.close();
 		}
 
 		logTimeProcessing();

@@ -2,7 +2,6 @@ package org.grobid.core.test;
 
 import org.grobid.core.engines.Engine;
 import org.grobid.core.factory.GrobidFactory;
-import org.grobid.core.mock.MockContext;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
@@ -14,12 +13,11 @@ public abstract class EngineTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-        MockContext.setInitialContext();
-        engine = GrobidFactory.getInstance().createEngine();
+        engine = GrobidFactory.getInstance().getEngine();
     }
 
     @AfterClass
-    public static void destroyInitialContext() throws Exception {
-        MockContext.destroyInitialContext();
+    public static void closeResources() throws Exception {
+        engine.close();
     }
 }

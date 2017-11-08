@@ -1,0 +1,408 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.6.0'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'net.researchgate.release'
+
+allprojects {
+    apply plugin: 'jacoco'
+    apply plugin: 'base'
+    apply plugin: 'com.github.kt3k.coveralls'
+
+    group = "org.grobid"
+
+    jacoco {
+        toolVersion = '0.7.1.201405082137'
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven'
+    apply plugin: 'com.jfrog.bintray'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+        jcenter()
+        repositories {
+            maven {
+                url new File(rootProject.rootDir, "grobid-core/lib")
+            }
+        }
+    }
+
+    configurations {
+        all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
+        all*.exclude group: 'log4j', module: "log4j"
+    }
+
+    ext {
+        // treating them separately, these jars will be flattened into grobid-core.jar on installing,
+        // to avoid missing dependencies from the projects that include grobid-core (see 'jar' taskin grobid-core)
+        localLibs = ['crfpp-1.0.2.jar',
+                     'langdetect-1.1-20120112.jar',
+                     'wipo-analysers-0.0.2.jar',
+                     'imageio-pnm-1.0.jar',
+                     'wapiti-1.5.0.jar']
+    }
+
+    dependencies {
+        // packaging local libs inside grobid-core.jar
+        compile fileTree(dir: new File(rootProject.rootDir, 'grobid-core/localLibs'), include: localLibs)
+
+        testCompile "junit:junit:4.12"
+        testCompile "org.easymock:easymock:3.4"
+        testCompile "org.powermock:powermock-api-easymock:1.6.6"
+        testCompile "org.powermock:powermock-module-junit4:1.6.6"
+        testCompile "xmlunit:xmlunit:1.6"
+        testCompile "org.hamcrest:hamcrest-all:1.3"
+    }
+
+    task sourceJar(type: Jar) {
+        description = 'A jar that contains source code'
+        classifier = 'sources'
+        from project.sourceSets.main.java
+    }
+
+    artifacts {
+        archives sourceJar
+    }
+
+    uploadArchives {
+        // if you want to enable uploading to some maven repo, add those properties to ~/.gradle/gradle.properties, e.g.:
+        /*
+            mavenRepoUserName=maven_username
+            mavenRepoPassword=super_secret
+            mavenRepoReleasesUrl=https://nexus3.example.org/repository/maven-releases/
+            mavenRepoSnapshotsUrl=https://nexus3.example.org/repository/maven-snapshots/
+        */
+        def user = project.hasProperty('mavenRepoUserName') ? project.findProperty('mavenRepoUserName') : ''
+        def password = project.hasProperty('mavenRepoPassword') ? project.findProperty('mavenRepoPassword') : ''
+        def rurl = project.hasProperty('mavenRepoReleasesUrl') ? project.findProperty('mavenRepoReleasesUrl') : ''
+        def surl = project.hasProperty('mavenRepoSnapshotsUrl') ? project.findProperty('mavenRepoSnapshotsUrl') : ''
+
+        repositories.mavenDeployer {
+            repository(url: rurl) {
+                authentication(userName: user, password: password)
+            }
+            snapshotRepository(url: surl) {
+                authentication(userName: user, password: password)
+            }
+
+        }
+    }
+
+    bintray {
+        dryRun = false // Whether to run this as dry-run, without deploying
+        publish = true // If version should be auto published after an upload
+
+        // read from ~/.gradle/gradle.properties. Set those up before releasing
+        user = project.hasProperty('bintrayUser') ? bintrayUser : ''
+        key = project.hasProperty('bintrayApiKey') ? bintrayApiKey : ''
+        configurations = ['archives']
+        pkg {
+            name = 'grobid'
+            repo = 'maven'
+            userOrg = 'rookies'
+            licenses = ['Apache-2.0']
+            vcsUrl = 'https://github.com/kermitt2/grobid'
+            issueTrackerUrl = 'https://github.com/kermitt2/grobid/issues'
+            githubRepo = 'kermitt2/grobid'
+
+            version {
+                name = rootProject.version
+                vcsTag = rootProject.version
+                released = new Date()
+            }
+        }
+    }
+
+    jacocoTestReport {
+        additionalSourceDirs = files(sourceSets.main.allSource.srcDirs)
+        sourceDirectories = files(sourceSets.main.allSource.srcDirs)
+        classDirectories = files(sourceSets.main.output)
+        reports {
+            html.enabled = true
+            xml.enabled = true
+            csv.enabled = false
+        }
+    }
+
+    test {
+        testLogging.showStandardStreams = true
+        // enable for having separate test executor for different tests
+        //  forkEvery = 1
+        maxHeapSize = "1024m"
+    }
+}
+
+project("grobid-core") {
+    apply plugin: 'com.github.johnrengelman.shadow'
+
+    configurations {
+        shadedLib
+    }
+
+    dependencies {
+        compile(group: 'xml-apis', name: 'xml-apis', version: '1.4.01') {
+            // otherwise xml-apis 2.0.1 will come from XOM and will result in
+            // java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
+            //TODO: sort out this problem better
+            force = true
+        }
+
+        compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+        compile "com.cybozu.labs:langdetect:1.1-20120112"
+        compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
+        compile "commons-pool:commons-pool:1.6"
+        compile "commons-io:commons-io:2.5"
+        compile "org.apache.commons:commons-lang3:3.6"
+        compile "org.apache.commons:commons-collections4:4.1"
+        compile "commons-dbutils:commons-dbutils:1.7"
+        compile "org.apache.httpcomponents:httpclient:4.5.3"
+        compile "xerces:xercesImpl:2.11.0"
+        compile "com.google.guava:guava:19.0"
+        compile "net.arnx:jsonic:1.3.10"
+        compile "org.apache.pdfbox:pdfbox:1.8.9"
+        compile "net.sourceforge.saxon:saxon:9.1.0.8"
+        compile "xom:xom:1.2.5"
+        compile "com.fasterxml.jackson.core:jackson-core:2.9.1"
+        compile "com.fasterxml.jackson.core:jackson-databind:2.9.1"
+        compile "com.fasterxml.jackson.module:jackson-module-afterburner:2.9.1"
+        compile "joda-time:joda-time:2.9.9"
+        compile "org.apache.lucene:lucene-analyzers-common:4.5.1"
+
+        shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
+
+        runtime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
+    }
+
+    jar {
+        enabled false
+    }
+
+    shadowJar {
+        classifier = 'onejar'
+        mergeServiceFiles()
+        zip64 true
+        manifest {
+            attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
+        }
+
+        from {
+            project.configurations.compile.collect {
+                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
+            }
+        }
+    }
+
+    task mainJar(type: ShadowJar) {
+        zip64 true
+        mergeServiceFiles()
+        from sourceSets.main.output
+        from {
+            project.configurations.compile.collect {
+                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
+            }
+        }
+        configurations = [project.configurations.shadedLib]
+        relocate 'org.apache.lucene', 'org.grobid.shaded.org.apache.lucene'
+    }
+
+
+    artifacts {
+        archives shadowJar
+        archives mainJar
+    }
+}
+
+project("grobid-home") {
+    task packageGrobidHome(type: Zip) {
+        from('.') {
+            include("config/*")
+            include("language-detection/**")
+            include("lib/**")
+            include("pdf2xml/**")
+            include("models/**")
+            include("lexicon/**")
+            include("schemas/**")
+            exclude("models/**/*.old")
+        }
+        into("grobid-home")
+    }
+    artifacts {
+        archives packageGrobidHome
+    }
+}
+
+project("grobid-service") {
+    apply plugin: 'application'
+
+    mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
+    tasks.run.workingDir = rootProject.rootDir
+
+    configurations {
+        all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
+    }
+
+//    tasks.distZip.enabled = false
+
+    dependencies {
+        compile(project(':grobid-core'))
+        compile "io.dropwizard:dropwizard-core:1.0.2"
+        compile "io.dropwizard:dropwizard-assets:1.0.2"
+        compile "com.hubspot.dropwizard:dropwizard-guicier:1.0.0.6"
+        compile "io.dropwizard:dropwizard-testing:1.0.2"
+        compile "io.dropwizard:dropwizard-forms:1.0.2"
+        compile "io.dropwizard:dropwizard-client:1.0.2"
+        compile "io.dropwizard:dropwizard-auth:1.0.2"
+        compile "org.apache.pdfbox:pdfbox:1.8.9"
+
+        testCompile "io.dropwizard:dropwizard-testing:1.0.2"
+    }
+
+    distributions {
+        main {
+            contents {
+                from(new File(rootProject.rootDir, "grobid-service/README.md")) {
+                    into "doc"
+                }
+            }
+        }
+    }
+}
+
+project("grobid-trainer") {
+    apply plugin: 'com.github.johnrengelman.shadow'
+
+    dependencies {
+        compile(group: 'xml-apis', name: 'xml-apis', version: '1.4.01') {
+            // otherwise xml-apis 2.0.1 will come from XOM and will result in
+            // java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
+            //TODO: sort out this problem better
+            force = true
+        }
+        compile(project(':grobid-core'))
+        compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
+    }
+
+    shadowJar {
+        classifier = 'onejar'
+        mergeServiceFiles()
+        zip64 true
+        manifest {
+            attributes 'Main-Class': 'org.grobid.trainer.TrainerRunner'
+        }
+    }
+
+    artifacts {
+        archives shadowJar
+    }
+
+    def trainerTasks = [
+        "train_name_header"           : "org.grobid.trainer.NameHeaderTrainer",
+        "train_name_citation"         : "org.grobid.trainer.NameCitationTrainer",
+        "train_affiliation_address"   : "org.grobid.trainer.AffiliationAddressTrainer",
+        "train_header"                : "org.grobid.trainer.HeaderTrainer",
+        "train_fulltext"              : "org.grobid.trainer.FulltextTrainer",
+        "train_shorttext"             : "org.grobid.trainer.ShorttextTrainer",
+        "train_figure"                : "org.grobid.trainer.FigureTrainer",
+        "train_table"                 : "org.grobid.trainer.TableTrainer",
+        "train_citation"              : "org.grobid.trainer.CitationTrainer",
+        "train_date"                  : "org.grobid.trainer.DateTrainer",
+        "train_segmentation"          : "org.grobid.trainer.SegmentationTrainer",
+        "train_reference_segmentation": "org.grobid.trainer.ReferenceSegmenterTrainer",
+        "train_ebook_model"           : "org.grobid.trainer.EbookTrainer",
+        "train_patent_citation"       : "org.grobid.trainer.PatentParserTrainer"
+    ]
+
+    trainerTasks.each { taskName, mainClassName ->
+        tasks.create(name: taskName, type: JavaExec, group: 'modeltraining') {
+            main = mainClassName
+            classpath = sourceSets.main.runtimeClasspath
+        }
+    }
+
+    // evaluation tasks
+    ext.getArg = { propName, defaultVal ->
+        return project.hasProperty(propName) ? project.getProperty(propName) : defaultVal;
+    }
+
+    // run like:
+    // gradle PubMedCentralEval -Pp2t=/path/to/goldenSet
+    // gradle PubMedCentralEval -Pp2t=/path/to/goldenSet -Prun=1 -PfileRatio=0.1
+    task(PubMedCentralEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+        main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
+        classpath = sourceSets.main.runtimeClasspath
+        args 'nlm', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
+        jvmArgs '-Xmx3072m'
+    }
+
+    task(Pub2TeiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+        main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
+        classpath = sourceSets.main.runtimeClasspath
+        args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
+        jvmArgs '-Xmx3072m'
+    }
+
+
+}
+
+// coveralls does not support mutimodule, therefore merging reports
+task jacocoRootReport(type: JacocoReport) {
+    dependsOn = [subprojects.test
+//                 subprojects.jacocoTestReport
+    ]
+    additionalSourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs)
+    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
+    classDirectories = files(subprojects.sourceSets.main.output)
+    executionData = files(subprojects.jacocoTestReport.executionData)
+    reports {
+        html.enabled = true
+        xml.enabled = true
+        csv.enabled = false
+        xml.destination = "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
+    }
+    onlyIf = {
+        true
+    }
+    doFirst {
+        executionData = files(executionData.findAll {
+            it.exists()
+        })
+    }
+}
+
+coveralls {
+    sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
+    jacocoReportPath = "build/reports/jacoco/test/jacocoTestReport.xml"
+}
+
+tasks.coveralls {
+    dependsOn jacocoRootReport
+}
+
+afterReleaseBuild.dependsOn subprojects.bintrayUpload
+
+wrapper {
+    version "4.2.1"
+}
