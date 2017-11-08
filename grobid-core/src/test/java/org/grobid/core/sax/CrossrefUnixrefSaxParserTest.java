@@ -2,7 +2,6 @@ package org.grobid.core.sax;
 
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.main.LibraryLoader;
-import org.grobid.core.mock.MockContext;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -26,7 +25,6 @@ public class CrossrefUnixrefSaxParserTest {
     @BeforeClass
     public static void init() throws Exception {
         LibraryLoader.load();
-        MockContext.setInitialContext();
     }
 
     @Before

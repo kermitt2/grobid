@@ -4,10 +4,10 @@ import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.custommonkey.xmlunit.XMLTestCase;
 import org.grobid.core.engines.patent.ReferenceExtractor;
 import org.grobid.core.factory.AbstractEngineFactory;
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.XMLWriter;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
@@ -22,22 +22,12 @@ import java.util.Vector;
 public class TeiStAXParserTest extends XMLTestCase {
 
     public static void setInitialContext() throws Exception {
-        MockContext.setInitialContext();
         AbstractEngineFactory.init();
-    }
-
-    public static void destroyInitialContext() throws Exception {
-        MockContext.destroyInitialContext();
     }
 
     @Before
     public void setUp() throws Exception {
         setInitialContext();
-    }
-
-    @After
-    public void tearDown() throws Exception {
-        destroyInitialContext();
     }
 
     @Test

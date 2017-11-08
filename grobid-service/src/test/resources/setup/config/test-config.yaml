@@ -1,0 +1,23 @@
+grobid:
+  grobidHome: "../grobid-home"
+  grobidServiceProperties: "src/test/resources/setup/config/grobid_service.properties"
+  grobidProperties: "src/test/resources/setup/config/grobid.properties"
+
+server:
+    type: custom
+    applicationConnectors:
+    - type: http
+      port: 8075
+    adminConnectors:
+    - type: http
+      port: 8076
+    registerDefaultExceptionMappers: false
+
+logging:
+  level: INFO
+  loggers:
+    org.apache.pdfbox.pdmodel.font.PDSimpleFont: "OFF"
+  appenders:
+    - type: console
+      threshold: ALL
+      timeZone: UTC

@@ -102,7 +102,7 @@ public enum GrobidModels implements GrobidModel {
             public String getModelPath() {
                 File path = GrobidProperties.getModelPath(this);
                 if (!path.exists()) {
-                    LOGGER.warn("Warning: The file path to the "
+                    LOGGER.warn("The file path to the "
                             + name + " model is invalid: "
                             + path.getAbsolutePath());
                 }
