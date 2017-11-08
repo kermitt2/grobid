@@ -18,9 +18,9 @@ repositories {
     mavenCentral()
 }
 
-apply plugin: 'net.researchgate.release'
 
 allprojects {
+    apply plugin: 'net.researchgate.release'
     apply plugin: 'jacoco'
     apply plugin: 'base'
     apply plugin: 'com.github.kt3k.coveralls'
@@ -30,7 +30,6 @@ allprojects {
     jacoco {
         toolVersion = '0.7.1.201405082137'
     }
-
 }
 
 subprojects {
@@ -154,6 +153,7 @@ subprojects {
         //  forkEvery = 1
         maxHeapSize = "1024m"
     }
+    afterReleaseBuild.dependsOn subprojects.bintrayUpload
 
 }
 
@@ -408,6 +408,5 @@ wrapper {
     version "4.2.1"
 }
 
-afterReleaseBuild.dependsOn subprojects.bintrayUpload
 
 
