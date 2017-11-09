@@ -1,6 +1,6 @@
 #Benchmarking
 
-This is the end-to-end benchmarking result for GROBID version 0.4.4 against the `PMC_sample_1943` dataset, see the [End-to-end evaluation](End-to-end-evaluation.md) page for explanations and for reproducing this evaluation. 
+This is the end-to-end benchmarking result for GROBID version 0.4.3 against the `PMC_sample_1943` dataset, see the [End-to-end evaluation](End-to-end-evaluation.md) page for explanations and for reproducing this evaluation. 
 
 
 ##Header metadata

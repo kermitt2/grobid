@@ -55,14 +55,20 @@ GROBID should run properly "out of the box" on MacOS X, Linux (32 and 64 bits) a
 
 For testing purposes, a public GROBID demo server is available at the following address: [http://grobid.science-miner.com](http://grobid.science-miner.com)
 
-The Web services are documented in the [service manual](https://github.com/kermitt2/grobid/blob/master/grobid-service/src/main/doc/grobid-service-manual.pdf).
+The Web services are documented [here](http://grobid.readthedocs.io/en/latest/Grobid-service/).
 
 _Warning_: Some quota and query limitation apply to the demo server! If you are interested in using such online GROBID service for your project without limitation (and with support), please contact us (<patrice.lopez@science-miner.com>).
 
-
 ## Latest version
 
-The latest stable release of GROBID is version ```0.4.4```. As compared to previous version ```0.4.3```, this version brings:
+The latest stable release of GROBID is version ```0.5.0```. As compared to previous version ```0.4.3```, this version brings:
+
++ Migrate from maven to gradle for faster, more flexible and more stable build, release, etc.
++ Usage of Dropwizard for web services
++ Move the Grobid service manual to [readthedocs](http://grobid.readthedocs.io/en/latest/Grobid-service/)
++ (thanks to @detonator413 and @lfoppiano for this release! future work in versions 0.5.* will focus again on improving PDF parsing and structuring accuracy)
+
+New in previous release ```0.4.3```: 
 
 + New models: f-score improvement on the PubMed Central sample, bibliographical references +2.5%, header +7%  
 + New training data and features for bibliographical references, in particular for covering HEP domain (INSPIRE), arXiv identifier, DOI and url (thanks @iorala and @michamos !)
