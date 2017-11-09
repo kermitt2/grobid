@@ -19,8 +19,9 @@ repositories {
 }
 
 
+apply plugin: 'net.researchgate.release'
+
 allprojects {
-    apply plugin: 'net.researchgate.release'
     apply plugin: 'jacoco'
     apply plugin: 'base'
     apply plugin: 'com.github.kt3k.coveralls'
@@ -153,8 +154,8 @@ subprojects {
         //  forkEvery = 1
         maxHeapSize = "1024m"
     }
-    afterReleaseBuild.dependsOn subprojects.bintrayUpload
 
+    rootProject.afterReleaseBuild.dependsOn subprojects.bintrayUpload
 }
 
 project("grobid-core") {
@@ -256,7 +257,7 @@ project("grobid-home") {
     }
 }
 
-project("grobid-service") {
+project(":grobid-service") {
     apply plugin: 'application'
 
     mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
@@ -269,7 +270,7 @@ project("grobid-service") {
 //    tasks.distZip.enabled = false
 
     dependencies {
-        compile(project(':grobid-core'))
+        compile project(':grobid-core')
         compile "io.dropwizard:dropwizard-core:1.0.2"
         compile "io.dropwizard:dropwizard-assets:1.0.2"
         compile "com.hubspot.dropwizard:dropwizard-guicier:1.0.0.6"
@@ -293,7 +294,7 @@ project("grobid-service") {
     }
 }
 
-project("grobid-trainer") {
+project(":grobid-trainer") {
     apply plugin: 'com.github.johnrengelman.shadow'
 
     dependencies {
@@ -303,7 +304,7 @@ project("grobid-trainer") {
             //TODO: sort out this problem better
             force = true
         }
-        compile(project(':grobid-core'))
+        compile project(':grobid-core')
         compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
     }
 
@@ -365,8 +366,6 @@ project("grobid-trainer") {
         args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
         jvmArgs '-Xmx3072m'
     }
-
-
 }
 
 // coveralls does not support mutimodule, therefore merging reports
@@ -382,7 +381,7 @@ task jacocoRootReport(type: JacocoReport) {
         html.enabled = true
         xml.enabled = true
         csv.enabled = false
-        xml.destination = "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
+        xml.destination = file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml")
     }
     onlyIf = {
         true
@@ -403,10 +402,8 @@ tasks.coveralls {
     dependsOn jacocoRootReport
 }
 
-
 wrapper {
     version "4.2.1"
 }
 
-
-
+build.dependsOn project.getSubprojects().collect({it.getTasks().getByName("build")})
