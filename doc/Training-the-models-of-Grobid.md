@@ -66,25 +66,25 @@ Under the main project directory `grobid/`, execute the following command (be su
 
 Train (generate a new model):
 ```bash
-> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>.onejar.jar 0 <name of the model> -gH grobid-home
+> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 0 <name of the model> -gH grobid-home
 ```
 The training files considered are located under `grobid/grobid-trainer/resources/dataset/*MODEL*/corpus`
 
 Evaluate:
 ```bash
-> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>.onejar.jar 1 <name of the model> -gH grobid-home
+> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 1 <name of the model> -gH grobid-home
 ```
 
 The considered evaluation files are located under `grobid/grobid-trainer/resources/dataset/*MODEL*/evaluation`
 
 Automatically split data, train and evaluate:
 ```bash
-> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>.onejar.jar 2 <name of the model> -gH grobid-home -s <segmentation ratio as a number between 0 and 1, e.g. 0.8 for 80%>
+> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 2 <name of the model> -gH grobid-home -s <segmentation ratio as a number between 0 and 1, e.g. 0.8 for 80%>
 ```
 
 For instance, training the date model with a ratio of 75% for training and 25% for evaluation:
 ```bash
-> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>.onejar.jar 2 date -gH grobid-home -s 0.75
+> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 2 date -gH grobid-home -s 0.75
 ```
 
 A ratio of 1.0 means that all the data available under `grobid/grobid-trainer/resources/dataset/*MODEL*/corpus/` will be used for training the model, and the evaluation will be empty. *Automatic split data, train and evaluate* is for the moment only available for the following models: header, citation, date, name-citation, name-header and affiliation-address.
