@@ -3,9 +3,6 @@ package org.grobid.core.exceptions;
 public class GrobidException extends RuntimeException {
     private GrobidExceptionStatus status = GrobidExceptionStatus.GENERAL;
 
-    /**
-     *
-     */
     private static final long serialVersionUID = -3337770841815682150L;
 
 

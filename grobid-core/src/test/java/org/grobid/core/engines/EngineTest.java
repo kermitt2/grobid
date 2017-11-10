@@ -15,7 +15,6 @@ import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.features.FeaturesVectorDate;
 import org.grobid.core.jni.WapitiModel;
 import org.grobid.core.main.LibraryLoader;
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.visualization.CitationsVisualizer;
 import org.junit.AfterClass;
@@ -26,7 +25,6 @@ import org.junit.Test;
 import java.awt.*;
 import java.io.File;
 import java.io.FileFilter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -51,14 +49,16 @@ public class EngineTest {
     }
     @BeforeClass
     public static void setUpClass() throws Exception {
-        MockContext.setInitialContext();
+//        MockContext.setInitialContext();
         engine = GrobidFactory.getInstance().createEngine();
     }
 
     @AfterClass
     public static void destroyInitialContext() throws Exception {
-        MockContext.destroyInitialContext();
+//        MockContext.destroyInitialContext();
     }
+
+
 
 
     @Test

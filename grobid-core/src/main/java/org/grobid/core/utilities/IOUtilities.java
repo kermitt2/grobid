@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 
+import static org.apache.commons.lang3.StringUtils.isEmpty;
+
 /**
  * Utilities related to file and directory management.
  * <p>
@@ -109,6 +111,7 @@ public class IOUtilities {
      * Delete the temporary file.
      */
     public static void removeTempFile(final File file) {
+        
         try {
             // sanity cleaning
             Utilities.deleteOldies(GrobidProperties.getTempPath(), 300);
@@ -123,6 +126,7 @@ public class IOUtilities {
      * Delete temporary directory.
      */
     public static void removeTempDirectory(final String path) {
+        
         try {
             LOGGER.debug("Removing " + path);
             File theDirectory = new File(path);

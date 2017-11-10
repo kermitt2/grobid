@@ -20,6 +20,7 @@ pages:
 - ['Coordinates-in-PDF.md', 'User manual', 'Coordinates of structures in the PDF']
 - ['Training-the-models-of-Grobid.md', 'User manual', 'Training the GROBID models']
 - ['End-to-end-evaluation.md', 'User manual', 'End-to-end evaluation']
+- ['Benchmarking.md', 'User manual', 'Benchmarking']
 - ['training/General-principles.md', 'Annotation guidelines', 'General principles']
 - ['training/segmentation.md', 'Annotation guidelines', 'Segmentation model']
 - ['training/fulltext.md', 'Annotation guidelines', 'Fulltext model']

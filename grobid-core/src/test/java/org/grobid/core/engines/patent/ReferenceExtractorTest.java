@@ -11,7 +11,6 @@ import java.util.StringTokenizer;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.factory.AbstractEngineFactory;
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.counters.GrobidTimer;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -27,13 +26,11 @@ public class ReferenceExtractorTest {
 
 	@BeforeClass
 	public static void setInitialContext() throws Exception {
-		MockContext.setInitialContext();
 		AbstractEngineFactory.init();
 	}
 
 	@AfterClass
 	public static void destroyInitialContext() throws Exception {
-		MockContext.destroyInitialContext();
 	}
 
 	// extractor.extractAllReferencesXMLFile(new

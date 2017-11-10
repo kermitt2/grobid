@@ -25,13 +25,13 @@ Example with cURL:
 * add coordinates to the figures (and tables) only:
 
 ```bash
-> curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=figure --form teiCoordinates=biblStruct localhost:8080/processFulltextDocument
+> curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=figure --form teiCoordinates=biblStruct localhost:8070/api/processFulltextDocument
 ```
 
 * add coordinates for all the supported elements (sorry for the ugly cURL syntax on this):
 
 ```bash
-> curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=persName --form teiCoordinates=figure --form teiCoordinates=ref --form teiCoordinates=biblStruct --form teiCoordinates=formula localhost:8080/processFulltextDocument
+> curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=persName --form teiCoordinates=figure --form teiCoordinates=ref --form teiCoordinates=biblStruct --form teiCoordinates=formula localhost:8070/api/processFulltextDocument
 ```
 
 ### Batch processing
@@ -40,10 +40,10 @@ We recommand to use the above service mode for best performance and range of opt
 
 Generating coordinates can also been obtained with the batch mode by adding the parameter ```-teiCoordinates``` with the command ```processFullText```.
 
-Example: 
+Example (under the project main directory `grobid/`): 
 
 ```bash
-> java -Xmx1024m -jar grobid-core-0.4.1.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -gP /path/to/Grobid/grobid-home/config/grobid.properties -dIn /path/to/input/directory -dOut /path/to/output/directory -teiCoordinates -exe processFullText 
+> java -Xmx1024m -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -teiCoordinates -exe processFullText 
 ```
 
 See the [batch mode details](http://grobid.readthedocs.io/en/latest/Grobid-batch/#processfulltext). With the batch mode, it is currenlty not possible to cherry pick up certain elements, coordinates will appear for all.
