@@ -58,7 +58,7 @@ Many thanks to:
 * Christopher Boumenot (Microsoft) in particular for Windows support
 * Laurent Romary (Inria), as project promoter and TEI pope
 * Florian Zipser (Humboldt University) who developed the first version of the REST API in 2011
-* the other contributors from ResearchGate: Michael Häusler and Kyryl Bilokurov
+* the other contributors from ResearchGate: Michael Häusler, Kyryl Bilokurov, Artem Oboturov
 * Damien Ridereau (Infotel)
 * Bruno Pouliquen (WIPO) for the custom analyzers for Eastern languages
 * Thomas Lavergne, Olivier Cappé and François Yvon for Wapiti

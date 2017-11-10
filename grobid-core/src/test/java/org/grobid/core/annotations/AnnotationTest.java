@@ -1,5 +1,19 @@
 package org.grobid.core.annotations;
 
+import org.custommonkey.xmlunit.XMLTestCase;
+import org.grobid.core.data.BibDataSet;
+import org.grobid.core.data.BiblioItem;
+import org.grobid.core.data.PatentItem;
+import org.grobid.core.factory.AbstractEngineFactory;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.xml.sax.SAXException;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.grobid.core.utilities.TeiValues.CERTAINTY_HIGH_LABEL;
 import static org.grobid.core.utilities.TeiValues.CERTAINTY_LOW_LABEL;
@@ -9,34 +23,13 @@ import static org.grobid.core.utilities.TeiValues.CERTAINTY_VERY_LOW_LABEL;
 import static org.grobid.core.utilities.TeiValues.DEGREE_OF_CONFIDENCE;
 import static org.grobid.core.utilities.TeiValues.NO_CERTAINTY;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.stream.XMLStreamException;
-
-import org.custommonkey.xmlunit.XMLTestCase;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.PatentItem;
-import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.factory.AbstractEngineFactory;
-import org.grobid.core.mock.MockContext;
-import org.grobid.core.utilities.XMLWriter;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.xml.sax.SAXException;
-
 public class AnnotationTest extends XMLTestCase {
 
 	public static void setInitialContext() throws Exception {
-		MockContext.setInitialContext();
 		AbstractEngineFactory.init();
 	}
 
 	public static void destroyInitialContext() throws Exception {
-		MockContext.destroyInitialContext();
 	}
 
 	@Before

@@ -1,6 +1,5 @@
 package org.grobid.core;
 
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -15,7 +14,6 @@ public class GrobidModelsTest {
 
     @BeforeClass
     public static void setInitialContext() throws Exception {
-        MockContext.setInitialContext();
         GrobidProperties.getInstance();
     }
 
@@ -50,22 +48,22 @@ public class GrobidModelsTest {
 
     @Test
     public void testGrobidModelsEnum_CustomModel() throws Exception {
-        GrobidModel model = GrobidModels.modelFor("dictionaries-senses");
+        GrobidModel model = GrobidModels.modelFor("myDreamModel");
 
-        assertThat(model.getFolderName(), is("dictionaries-senses"));
-        assertThat(model.getModelName(), is("dictionaries-senses"));
-        assertThat(model.getTemplateName(), is("dictionaries-senses.template"));
+        assertThat(model.getFolderName(), is("myDreamModel"));
+        assertThat(model.getModelName(), is("myDreamModel"));
+        assertThat(model.getTemplateName(), is("myDreamModel.template"));
 
-        String[] splittedPath = model.getModelPath().split("[/\\\\]");
-        assertThat(splittedPath[splittedPath.length - 1], is("model.wapiti"));
-        assertThat(splittedPath[splittedPath.length - 2], is("dictionaries-senses"));
-        assertThat(splittedPath[splittedPath.length - 3], is("models"));
-        assertThat(splittedPath[splittedPath.length - 4], is("grobid-home"));
+        String[] tokenizePath = model.getModelPath().split("[/\\\\]");
+        assertThat(tokenizePath[tokenizePath.length - 1], is("model.wapiti"));
+        assertThat(tokenizePath[tokenizePath.length - 2], is("myDreamModel"));
+        assertThat(tokenizePath[tokenizePath.length - 3], is("models"));
+        assertThat(tokenizePath[tokenizePath.length - 4], is("grobid-home"));
 
-        GrobidModel model2 = GrobidModels.modelFor("dictionaries-lemma");
+        GrobidModel model2 = GrobidModels.modelFor("AnotherDreamModel");
         assertThat(model2.equals(model), is(false));
 
-        GrobidModel model3 = GrobidModels.modelFor("dictionaries-senses");
+        GrobidModel model3 = GrobidModels.modelFor("myDreamModel");
         assertThat(model3.equals(model), is(true));
     }
 }

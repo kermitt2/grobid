@@ -17,7 +17,7 @@ import org.grobid.core.analyzers.GrobidAnalyzer;
 import java.io.*;
 import java.util.*;
 
-import static org.apache.commons.codec.CharEncoding.UTF_8;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
 /**

@@ -2,7 +2,6 @@ package org.grobid.core.engines;
 
 import org.grobid.core.data.Date;
 import org.grobid.core.factory.AbstractEngineFactory;
-import org.grobid.core.mock.MockContext;
 import org.junit.*;
 
 import java.util.Arrays;
@@ -22,13 +21,13 @@ public class DateParserTest {
 
     @BeforeClass
     public static void setInitialContext() throws Exception {
-        MockContext.setInitialContext();
+//        MockContext.setInitialContext();
         AbstractEngineFactory.init();
     }
 
     @AfterClass
     public static void destroyInitialContext() throws Exception {
-        MockContext.destroyInitialContext();
+//        MockContext.destroyInitialContext();
     }
 
     @Before

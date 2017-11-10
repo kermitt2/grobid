@@ -1,7 +1,6 @@
 package org.grobid.core.features;
 
 import org.grobid.core.lexicon.Lexicon;
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,14 +16,12 @@ public class TestFeatures {
 
     @BeforeClass
     public static void setInitialContext() throws Exception {
-        MockContext.setInitialContext();
         GrobidProperties.getInstance();
         Lexicon.getInstance();
     }
 
     @AfterClass
     public static void destroyInitialContext() throws Exception {
-        MockContext.destroyInitialContext();
     }
 
     @Before

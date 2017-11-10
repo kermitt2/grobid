@@ -6,12 +6,20 @@ Thumbs.db
 .settings
 .classpath
 .idea
+.gradle
+gradle
+**/build
+*/out/
 *.iml
 *.log
 *.log.*
 *.old
 tei-alt
 raw-alt
+/log
+/logs
+
+dependency-reduced-pom.xml
 
 grobid-core/dependency-reduced-pom.xml
 
@@ -23,17 +31,9 @@ grobid-home/models/name/header/model.crf.old
 
 build.xml
 
-grobid-core/maven-build.properties
-grobid-core/maven-build.xml
-grobid-home/maven-build.properties
-grobid-home/maven-build.xml
-grobid-service/maven-build.properties
-grobid-service/maven-build.xml
-grobid-trainer/maven-build.properties
-grobid-trainer/maven-build.xml
-
+*/maven-build.properties
+*/maven-build.xml
 maven-build.xml
-
 release.properties
 
 grobid-quantities
@@ -45,6 +45,8 @@ grobid-astro
 grobid-chem
 grobid-books
 grobid-smecta
+grobid-example
+grobid-test-ant
 grobid-home/models/quantities
 grobid-home/models/dictionaries-lexical-entries
 grobid-home/models/units
@@ -58,3 +60,4 @@ grobid-home/models/*lexical-entry*
 grobid-home/models/lexical-entry/model.wapiti
 grobid-home/models/dictionary*
 grobid-home/models/dictionaries*
+

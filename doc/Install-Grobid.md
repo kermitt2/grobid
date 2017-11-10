@@ -5,16 +5,16 @@
 
 ###Latest stable release
 
-The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.4.4``` which can be downloaded as follow: 
+The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.5.0``` which can be downloaded as follow: 
 ```bash
-> wget https://github.com/kermitt2/grobid/archive/grobid-parent-0.4.4.zip
-> unzip grobid-grobid-parent-0.4.4.zip
+> wget https://github.com/kermitt2/grobid/archive/0.5.0.zip
+> unzip 0.5.0.zip
 ```
 
 or using the [docker](Grobid-docker.md) container. 
 
 ###Current development version
-The current development version is ```0.5.0-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
+The current development version is ```0.5.1-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
 
 Clone source code from github:
 ```bash
@@ -31,30 +31,19 @@ Or download directly the zip file:
 
 **Please make sure that grobid is installed in a path with no parent directories containing spaces.**
 
-###Build GROBID with maven
+###Build GROBID with Gradle 
 
-The standard method for building GROBID is to use maven. Under the main directory `grobid/`:
+The standard method for building GROBID is to use gradle. Under the main directory `grobid/`:
 ```bash
-> mvn clean install
+> ./gradlew clean install
 ```
-You can skip the tests as follow:
+By default, tests are ignored. For building the project and running the tests, use:
 ```bash
-> mvn -Dmaven.test.skip=true clean install
-```
-or:
-```bash
-> mvn -DskipTests=true clean install
-```
-
-###Build GROBID with ant
- 
-It is also possible to build the project with ant. This could be useful for integrating Grobid in an ant project, or when no internet connection is available in a secure development environment, or for people allergic to useless pain. Supported ant targets are `compile`, `clean`, `test` and `package`. So the following should work: 
-```bash
-> ant package
+> ./gradlew clean install test
 ```
 
 ##Use GROBID
 
-From there, the easiest and most efficient way to use GROBID is the [service mode](Grobid-service.md). You can also use the tool in [batch mode](Grobid-batch.md) or integrate it in your Java project via the [Java API](Grobid-java-library.md). 
+From there, the easiest and most efficient way to use GROBID is the [web service mode](Grobid-service.md). You can also use the tool in [batch mode](Grobid-batch.md) or integrate it in your Java project via the [Java API](Grobid-java-library.md). 
 
 

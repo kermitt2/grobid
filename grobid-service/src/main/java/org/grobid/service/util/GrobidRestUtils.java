@@ -20,8 +20,8 @@ public class GrobidRestUtils {
     /**
      * Check whether the result is null or empty.
      */
-    public static boolean isResultOK(String result) {
-        return StringUtils.isBlank(result) ? false : true;
+    public static boolean isResultNullOrEmpty(String result) {
+        return StringUtils.isBlank(result) ? true : false;
     }
 
     public static Annotation getAnnotationFor(int type) {

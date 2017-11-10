@@ -2,7 +2,6 @@
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
 <log4j:configuration>
         <appender name="LOGFILE" class="org.apache.log4j.DailyRollingFileAppender">
-                <!--param name="file" value="${catalina.base}/logs/grobid.log" /-->
 		<param name="file" value="./grobid.log" />
                 <param name="datePattern" value="'.'yyyy-MM-dd" />
                 <param name="append" value="true" />

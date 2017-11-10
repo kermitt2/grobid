@@ -20,29 +20,28 @@ import java.util.List;
 
 import static org.easymock.EasyMock.*;
 
-/**
- * Created by lfoppiano on 01/12/16.
- */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({CitationsVisualizer.class, BlockVisualizer.class, FigureTableVisualizer.class})
 public class GrobidRestProcessFilesTest {
 
     DocumentSource documentSourceMock;
+    GrobidRestProcessFiles target;
 
     @Before
     public void setUp() throws Exception {
         documentSourceMock = createMock(DocumentSource.class);
+        target = new GrobidRestProcessFiles();
     }
 
     @Test
     public void dispatchProcessing_selectionCitation_shouldWork() throws Exception {
         PowerMock.mockStatic(CitationsVisualizer.class);
 
-        expect(CitationsVisualizer.annotatePdfWithCitations((PDDocument) anyObject(), EasyMock.<Document>anyObject(), EasyMock.<List<String>>anyObject())).andReturn(null);
+        expect(CitationsVisualizer.annotatePdfWithCitations(anyObject(PDDocument.class), anyObject(Document.class), anyObject(List.class))).andReturn(null);
 
         PowerMock.replay(CitationsVisualizer.class);
 
-        GrobidRestProcessFiles.dispatchProcessing(GrobidRestUtils.Annotation.CITATION,
+        target.dispatchProcessing(GrobidRestUtils.Annotation.CITATION,
                 null, null, null);
 
         PowerMock.verify(CitationsVisualizer.class);
@@ -62,7 +61,7 @@ public class GrobidRestProcessFilesTest {
         PowerMock.replay(BlockVisualizer.class);
         replay(documentSourceMock);
 
-        GrobidRestProcessFiles.dispatchProcessing(GrobidRestUtils.Annotation.BLOCK,
+        target.dispatchProcessing(GrobidRestUtils.Annotation.BLOCK,
                 null, documentSourceMock, null);
 
         PowerMock.verify(BlockVisualizer.class);
@@ -83,7 +82,7 @@ public class GrobidRestProcessFilesTest {
         PowerMock.replay(FigureTableVisualizer.class);
         replay(documentSourceMock);
 
-        GrobidRestProcessFiles.dispatchProcessing(GrobidRestUtils.Annotation.FIGURE,
+        target.dispatchProcessing(GrobidRestUtils.Annotation.FIGURE,
                 null, documentSourceMock, null);
 
         PowerMock.verify(FigureTableVisualizer.class);

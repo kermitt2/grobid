@@ -1,0 +1,31 @@
+grobid:
+ # NOTE: change these values to absolute paths when running on production
+  grobidHome: "grobid-home"
+  grobidServiceProperties: "grobid-service/src/main/conf/grobid_service.properties"
+
+server:
+    type: custom
+    applicationConnectors:
+    - type: http
+      port: 8070
+    adminConnectors:
+    - type: http
+      port: 8071
+    registerDefaultExceptionMappers: false
+
+
+logging:
+  level: INFO
+  loggers:
+    org.apache.pdfbox.pdmodel.font.PDSimpleFont: "OFF"
+  appenders:
+    - type: console
+      threshold: ALL
+      timeZone: UTC
+    - type: file
+      currentLogFilename: logs/grobid-service.log
+      threshold: ALL
+      archive: true
+      archivedLogFilenamePattern: logs/grobid-service-%d.log
+      archivedFileCount: 5
+      timeZone: UTC

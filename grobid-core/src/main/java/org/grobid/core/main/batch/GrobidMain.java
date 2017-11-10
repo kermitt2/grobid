@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.List;
 
 import org.grobid.core.engines.ProcessEngine;
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Utilities;
 
@@ -50,11 +49,11 @@ public class GrobidMain {
 	 * Initialize the batch.
 	 */
 	protected static void initProcess() {
-		try {
-			MockContext.setInitialContext(gbdArgs.getPath2grobidHome(), gbdArgs.getPath2grobidProperty());
-		} catch (final Exception exp) {
-			System.err.println("Grobid initialisation failed: " + exp);
-		}
+//		try {
+//			MockContext.setInitialContext(gbdArgs.getPath2grobidHome(), gbdArgs.getPath2grobidProperty());
+//		} catch (final Exception exp) {
+//			System.err.println("Grobid initialisation failed: " + exp);
+//		}
 		GrobidProperties.getInstance();
 	}
 

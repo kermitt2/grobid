@@ -1,8 +1,33 @@
 language: java
+sudo: true
 
+jdk:
+  - oraclejdk8
+
+env:
+  global:
+    - GRADLE_OPTS="-Xmx512m"
+
+#after_success:
+#- ./gradlew codeCoverageReport --debug --info --stacktrace
+
+#after_failure:
+#- ./gradlew clean check --debug --info --stacktrace
+
+script:
+  - ./gradlew build --no-daemon
 
 after_success:
-- mvn clean cobertura:cobertura org.eluder.coveralls:coveralls-maven-plugin:report
+- ./gradlew jacocoRootReport coveralls --no-daemon
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
 
 notifications:
   slack:

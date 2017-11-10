@@ -4,17 +4,22 @@ For the best performance, benchmarking and for exploiting multithreading, we rec
 
 ## Using the batch
 
-Go under the `grobid/grobid-core/` directory where the core library has been built:
+Be sure that the GROBID project is built, see [Install GROBID](Install-Grobid.md).
+
+Go under the project directy `grobid/`:
 ```bash
-> cd grobid/grobid-core/
+> cd grobid/
 ```
 
 The following command display some help for the batch commands:
 ```bash
-> java -jar target/grobid-core-`<current version>`.one-jar.jar -h
+> java -jar grobid-core/build/libs/grobid-core-`<current version>`.onejar.jar -h
 ```
 
-Be sure to replace `<current version>` with the current version of GROBID that you have installed and built.
+Be sure to replace `<current version>` with the current version of GROBID that you have installed and built. For example:
+```bash
+> java -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -h
+```
 
 The available batch commands are listed bellow. For those commands, at least `-Xmx1G` is used to set the JVM memory to avoid *OutOfMemoryException* given the current size of the Grobid models and the crazyness of some PDF. For complete fulltext processing, which involve all the GROBID models, `-Xmx4G` is recommended (although allocating less memory is usually fine). 
 
@@ -32,7 +37,7 @@ The needed parameters for that command are:
 
 Example:
 ```bash
-> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH ../grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -r -exe processHeader 
+> java -Xmx1G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -r -exe processHeader 
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
@@ -54,7 +59,7 @@ WARNING: the expected extension of the PDF files to be processed is .pdf
 
 Example:
 ```bash
-> java -Xmx4G -jar target/grobid-core-0.4.2.one-jar.jar -gH ../grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processFullText 
+> java -Xmx4G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processFullText 
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
@@ -68,7 +73,7 @@ WARNING: the expected extension of the PDF files to be processed is .pdf
 
 Example:
 ```bash
-> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -exe processDate -s "some date to extract and format"
+> java -Xmx1G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -exe processDate -s "some date to extract and format"
 ```
 
 ### processAuthorsHeader
@@ -80,7 +85,7 @@ Example:
 
 Example:
 ```bash
-> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -exe processAuthorsHeader -s "some authors"
+> java -Xmx1G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -exe processAuthorsHeader -s "some authors"
 ```
 
 ### processAuthorsCitation
@@ -92,7 +97,7 @@ Example:
 
 Example:
 ```bash
-> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -exe processAuthorsCitation -s "some authors"
+> java -Xmx1G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -exe processAuthorsCitation -s "some authors"
 ```
 
 ### processAffiliation
@@ -104,7 +109,7 @@ Example:
 
 Example:
 ```bash
-> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -exe processAffiliation -s "some affiliation"
+> java -Xmx1G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -exe processAffiliation -s "some affiliation"
 ```
 
 ### processRawReference
@@ -116,7 +121,7 @@ Example:
 
 Example:
 ```bash
-> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -exe processRawReference -s "a reference string"
+> java -Xmx1G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -exe processRawReference -s "a reference string"
 ```
 
 ### processReferences
@@ -132,7 +137,7 @@ Example:
 
 Example:
 ```bash
-> java -Xmx2G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processReferences
+> java -Xmx2G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processReferences
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
@@ -148,7 +153,7 @@ WARNING: the expected extension of the PDF files to be processed is .pdf
 
 Example:
 ```bash
-> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTEI
+> java -Xmx1G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTEI
 ```
 
 WARNING: extension of the TEI files to be processed must be .tei or .tei.xml
@@ -164,7 +169,7 @@ WARNING: extension of the TEI files to be processed must be .tei or .tei.xml
 
 Example:
 ```bash
-> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentST36
+> java -Xmx1G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentST36
 ```
 
 WARNING: extension of the ST.36 files to be processed must be .xml
@@ -180,7 +185,7 @@ WARNING: extension of the ST.36 files to be processed must be .xml
 
 Example:
 ```
-> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTXT
+> java -Xmx1G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTXT
 ```
 
 WARNING: extension of the text files to be processed must be .txt, and expected encoding is UTF-8
@@ -196,7 +201,7 @@ WARNING: extension of the text files to be processed must be .txt, and expected 
 
 Example:
 ```
-> java -Xmx1G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentPDF
+> java -Xmx1G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentPDF
 ```
 
 WARNING: extension of the text files to be processed must be .pdf 
@@ -212,7 +217,7 @@ WARNING: extension of the text files to be processed must be .pdf
 
 Example:
 ```bash
-> java -Xmx4G -jar target/grobid-core-0.4.2.one-jar.jar -gH /path/to/Grobid/grobid/grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTraining
+> java -Xmx4G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTraining
 ```
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
@@ -231,7 +236,7 @@ The needed parameters for that command are:
 
 Example:
 ```
->  java -Xmx2G -jar target/grobid-core-0.4.2.one-jar.jar -gH ../grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -r -exe processPDFAnnotation
+>  java -Xmx2G -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -r -exe processPDFAnnotation
 ```
 
 WARNING: extension of the text files to be processed must be .pdf 

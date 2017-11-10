@@ -66,7 +66,7 @@ public interface GrobidPropertyKeys {
      * The name of the system property, via which the grobid home folder can be
      * located.
      */
-    String PROP_GROBID_SERVICE_PROPERTY = "org.grobid.property.service";
+//    String PROP_GROBID_SERVICE_PROPERTY = "org.grobid.property.service";
 
     /**
      * name of the property setting the admin password
