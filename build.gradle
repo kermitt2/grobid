@@ -31,6 +31,10 @@ allprojects {
     jacoco {
         toolVersion = '0.7.1.201405082137'
     }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
 }
 
 subprojects {
