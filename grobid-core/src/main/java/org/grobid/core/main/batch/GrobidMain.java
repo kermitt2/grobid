@@ -1,9 +1,12 @@
 package org.grobid.core.main.batch;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 
 import org.grobid.core.engines.ProcessEngine;
+import org.grobid.core.main.GrobidHomeFinder;
+import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Utilities;
 
@@ -45,18 +48,20 @@ public class GrobidMain {
 		}
 	}
 
-	/**
-	 * Initialize the batch.
-	 */
 	protected static void initProcess() {
-//		try {
-//			MockContext.setInitialContext(gbdArgs.getPath2grobidHome(), gbdArgs.getPath2grobidProperty());
-//		} catch (final Exception exp) {
-//			System.err.println("Grobid initialisation failed: " + exp);
-//		}
 		GrobidProperties.getInstance();
 	}
 
+    protected static void initProcess(String grobidHome) {
+        try {
+            final GrobidHomeFinder grobidHomeFinder = new GrobidHomeFinder(Arrays.asList(grobidHome));
+            grobidHomeFinder.findGrobidHomeOrFail();
+            GrobidProperties.getInstance(grobidHomeFinder);
+        } catch (final Exception exp) {
+            System.err.println("Grobid initialisation failed: " + exp);
+        }
+    }
+    
 	/**
 	 * @return String to display for help.
 	 */
@@ -170,7 +175,11 @@ public class GrobidMain {
 
 		if (processArgs(args)) {
 			inferParamsNotSet();
-			initProcess();
+			if(gbdArgs.getPath2grobidHome() != null) {
+			    initProcess(gbdArgs.getPath2grobidHome());
+            } else {
+                initProcess();
+            }
 			ProcessEngine processEngine = new ProcessEngine();
 			Utilities.launchMethod(processEngine, new Object[] { gbdArgs }, gbdArgs.getProcessMethodName());
 			processEngine.close();
