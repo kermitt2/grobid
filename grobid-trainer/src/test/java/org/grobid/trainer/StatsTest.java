@@ -2,6 +2,7 @@ package org.grobid.trainer;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.is;
@@ -240,6 +241,7 @@ public class StatsTest {
     }
 
 
+    @Ignore("Not really useful")
     @Test
     public void testMicroMacroAveragePrecision() throws Exception {
         final LabelStat conceptual = target.getLabelStat("CONCEPTUAL");
