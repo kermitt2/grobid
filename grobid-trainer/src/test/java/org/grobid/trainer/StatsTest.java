@@ -231,10 +231,10 @@ public class StatsTest {
         target.getLabelStat("ZIAO").setObserved(0);
         target.getLabelStat("ZIAO").setFalsePositive(2);
 
-        final double f1Bao = target.getLabelStat("BAO").getRecall();
-        final double f1Miao = target.getLabelStat("MIAO").getRecall();
-        final double f1Ciao = target.getLabelStat("CIAO").getRecall();
-        final double f1Ziao = target.getLabelStat("ZIAO").getRecall();
+        final double f1Bao = target.getLabelStat("BAO").getF1Score();
+        final double f1Miao = target.getLabelStat("MIAO").getF1Score();
+        final double f1Ciao = target.getLabelStat("CIAO").getF1Score();
+        final double f1Ziao = target.getLabelStat("ZIAO").getF1Score();
 
         assertThat(target.getMacroAverageF1(),
             is((f1Bao + f1Miao + f1Ciao + f1Ziao) / (4)));
