@@ -1,5 +1,6 @@
 package org.grobid.trainer;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -302,6 +303,89 @@ public class StatsTest {
 
         System.out.println(target.getMacroAveragePrecision());
         System.out.println(target.getMicroAveragePrecision());
+    }
+
+
+    @Test
+    public void testMicroMacroAverageMeasures_realTest() throws Exception {
+        LabelStat otherLabelStats = target.getLabelStat("O");
+        otherLabelStats.setExpected(33);
+        otherLabelStats.setObserved(33);
+        otherLabelStats.setFalseNegative(1);
+
+        assertThat(otherLabelStats.getPrecision(), is(1.0));
+        assertThat(otherLabelStats.getRecall(), is(1.0));
+
+
+        LabelStat conceptualLabelStats = target.getLabelStat("CONCEPTUAL");
+        conceptualLabelStats.setObserved(2);
+        conceptualLabelStats.setExpected(3);
+        conceptualLabelStats.setFalseNegative(1);
+        conceptualLabelStats.setFalsePositive(1);
+
+        assertThat(conceptualLabelStats.getPrecision(), is(0.6666666666666666));
+        assertThat(conceptualLabelStats.getRecall(), is(0.6666666666666666));
+
+
+        LabelStat periodLabelStats = target.getLabelStat("PERIOD");
+        periodLabelStats.setObserved(8);
+        periodLabelStats.setExpected(8);
+
+        assertThat(periodLabelStats.getPrecision(), is(1.0));
+        assertThat(periodLabelStats.getRecall(), is(1.0));
+
+
+        LabelStat mediaLabelStats = target.getLabelStat("MEDIA");
+        mediaLabelStats.setObserved(7);
+        mediaLabelStats.setExpected(7);
+
+        assertThat(mediaLabelStats.getPrecision(), is(1.0));
+        assertThat(mediaLabelStats.getRecall(), is(1.0));
+
+
+        LabelStat personTypeLabelStats = target.getLabelStat("PERSON_TYPE");
+        personTypeLabelStats.setObserved(0);
+        personTypeLabelStats.setExpected(1);
+        personTypeLabelStats.setFalseNegative(1);
+
+        assertThat(personTypeLabelStats.getPrecision(), is(0.0));
+        assertThat(personTypeLabelStats.getRecall(), is(0.0));
+
+
+
+        LabelStat locationTypeLabelStats = target.getLabelStat("LOCATION");
+        locationTypeLabelStats.setObserved(2);
+        locationTypeLabelStats.setExpected(2);
+
+        assertThat(locationTypeLabelStats.getPrecision(), is(1.0));
+        assertThat(locationTypeLabelStats.getRecall(), is(1.0));
+
+
+        LabelStat organisationTypeLabelStats = target.getLabelStat("ORGANISATION");
+        organisationTypeLabelStats.setObserved(2);
+        organisationTypeLabelStats.setExpected(2);
+
+        assertThat(locationTypeLabelStats.getPrecision(), is(1.0));
+        assertThat(locationTypeLabelStats.getRecall(), is(1.0));
+
+
+        LabelStat personLabelStats = target.getLabelStat("PERSON");
+        personLabelStats.setFalsePositive(1);
+
+        assertThat(personLabelStats.getPrecision(), is(0.0));
+        assertThat(personLabelStats.getRecall(), is(0.0));
+
+        // 2+8+2+2+7 / (2+8+2+2+7+1)
+        assertThat(target.getMicroAverageRecall(), is(0.9130434782608695)); //91.3
+
+        // 2+8+2+2+7 / (3+8+7+2+2+1)
+        assertThat(target.getMicroAveragePrecision(), is(0.9545454545454546)); //95.45
+
+        // 0.66 + 1.0 + 1.0 + 0.0 + 1.0 + 1.0 / 6
+        assertThat(target.getMacroAverageRecall(), is(0.7777777777777777)); //77.78
+
+        // same as above
+        assertThat(target.getMacroAveragePrecision(), is(0.7777777777777777)); //77.78
     }
 
 }

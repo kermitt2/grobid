@@ -140,7 +140,7 @@ public class EvaluationUtilitiesTest {
 
         assertThat(labelstat1.getObserved(), is(1));
         assertThat(labelstat1.getExpected(), is(2));
-        
+
         assertThat(labelstat2.getObserved(), is(0));
         assertThat(labelstat2.getExpected(), is(1));
     }
@@ -196,16 +196,17 @@ public class EvaluationUtilitiesTest {
         assertThat(labelstat1.getExpected(), is(3));
         assertThat(labelstat1.getFalseNegative(), is(0));
         assertThat(labelstat1.getFalsePositive(), is(1));
-        
+
         assertThat(labelstat2.getObserved(), is(3));
         assertThat(labelstat2.getExpected(), is(4));
         assertThat(labelstat2.getFalseNegative(), is(1));
         assertThat(labelstat2.getFalsePositive(), is(0));
     }
+
     @Test
     public void testFieldLevelStats4_mixed() throws Exception {
         String result = "a I-<1> I-<1>\nb I-<2> <1>\nc <2> I-<2>\nd <2> <2>\ne I-<1> I-<1>\nf <1> <1>\ng I-<2> I-<2>\n";
-        
+
         Stats fieldStats = EvaluationUtilities.fieldLevelStats(result);
         LabelStat labelstat1 = fieldStats.getLabelStat("<1>");
         LabelStat labelstat2 = fieldStats.getLabelStat("<2>");
@@ -222,7 +223,7 @@ public class EvaluationUtilitiesTest {
 
     @Test
     public void testTokenLevelStats_realCase() throws Exception {
-        String result = IOUtils.toString(this.getClass().getResourceAsStream("/ex.txt.txt"), StandardCharsets.UTF_8);
+        String result = IOUtils.toString(this.getClass().getResourceAsStream("/sample.wapiti.output.1.txt"), StandardCharsets.UTF_8);
         result = result.replace(System.lineSeparator(), "\n");
 
         Stats wordStats = EvaluationUtilities.tokenLevelStats(result);
@@ -243,7 +244,7 @@ public class EvaluationUtilitiesTest {
 
     @Test
     public void testFieldLevelStats_realCase() throws Exception {
-        String result = IOUtils.toString(this.getClass().getResourceAsStream("/ex.txt.txt"), StandardCharsets.UTF_8);
+        String result = IOUtils.toString(this.getClass().getResourceAsStream("/sample.wapiti.output.1.txt"), StandardCharsets.UTF_8);
 
         Stats fieldStats = EvaluationUtilities.fieldLevelStats(result);
         LabelStat labelstat1 = fieldStats.getLabelStat("<body>");
@@ -257,5 +258,62 @@ public class EvaluationUtilitiesTest {
         assertThat(labelstat2.getFalseNegative(), is(1));
         assertThat(labelstat1.getFalsePositive(), is(1));
         assertThat(labelstat2.getFalsePositive(), is(0));
+    }
+
+    @Test
+    public void testTokenLevelStats2_realCase() throws Exception {
+        String result = IOUtils.toString(this.getClass().getResourceAsStream("/sample.wapiti.output.2.txt"), StandardCharsets.UTF_8);
+
+        Stats stats = EvaluationUtilities.tokenLevelStats(result);
+
+        LabelStat conceptualLabelStats = stats.getLabelStat("CONCEPTUAL");
+        assertThat(conceptualLabelStats.getObserved(), is(2));
+        assertThat(conceptualLabelStats.getExpected(), is(3));
+        assertThat(conceptualLabelStats.getFalseNegative(), is(1));
+        assertThat(conceptualLabelStats.getFalsePositive(), is(1));
+
+        LabelStat periodLabelStats = stats.getLabelStat("PERIOD");
+        assertThat(periodLabelStats.getObserved(), is(8));
+        assertThat(periodLabelStats.getExpected(), is(8));
+        assertThat(periodLabelStats.getFalseNegative(), is(0));
+        assertThat(periodLabelStats.getFalsePositive(), is(0));
+
+        LabelStat mediaLabelStats = stats.getLabelStat("MEDIA");
+        assertThat(mediaLabelStats.getObserved(), is(7));
+        assertThat(mediaLabelStats.getExpected(), is(7));
+        assertThat(mediaLabelStats.getFalseNegative(), is(0));
+        assertThat(mediaLabelStats.getFalsePositive(), is(0));
+
+        LabelStat personTypeLabelStats = stats.getLabelStat("PERSON_TYPE");
+        assertThat(personTypeLabelStats.getObserved(), is(0));
+        assertThat(personTypeLabelStats.getExpected(), is(1));
+        assertThat(personTypeLabelStats.getFalseNegative(), is(1));
+        assertThat(personTypeLabelStats.getFalsePositive(), is(0));
+
+        LabelStat locationTypeLabelStats = stats.getLabelStat("LOCATION");
+        assertThat(locationTypeLabelStats.getObserved(), is(2));
+        assertThat(locationTypeLabelStats.getExpected(), is(2));
+        assertThat(locationTypeLabelStats.getFalseNegative(), is(0));
+        assertThat(locationTypeLabelStats.getFalsePositive(), is(0));
+
+        LabelStat organisationTypeLabelStats = stats.getLabelStat("ORGANISATION");
+        assertThat(organisationTypeLabelStats.getObserved(), is(2));
+        assertThat(organisationTypeLabelStats.getExpected(), is(2));
+        assertThat(organisationTypeLabelStats.getFalseNegative(), is(0));
+        assertThat(organisationTypeLabelStats.getFalsePositive(), is(0));
+
+        LabelStat otherLabelStats = stats.getLabelStat("O");
+        assertThat(otherLabelStats.getObserved(), is(33));
+        assertThat(otherLabelStats.getExpected(), is(34));
+        assertThat(otherLabelStats.getFalseNegative(), is(1));
+        assertThat(otherLabelStats.getFalsePositive(), is(0));
+
+        LabelStat personLabelStats = stats.getLabelStat("PERSON");
+        assertThat(personLabelStats.getObserved(), is(0));
+        assertThat(personLabelStats.getExpected(), is(0));
+        assertThat(personLabelStats.getFalseNegative(), is(0));
+        assertThat(personLabelStats.getFalsePositive(), is(1));
+
+
     }
 }
