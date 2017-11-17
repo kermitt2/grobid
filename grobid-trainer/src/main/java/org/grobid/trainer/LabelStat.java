@@ -6,36 +6,48 @@ public final class LabelStat {
     private int observed = 0; // this is true positives
     private int expected = 0; // total expected number of items with this label
 
+    private double accuracy = 0.0;
+    private int trueNegative;
+    private boolean hasChanged = false;
+
     public void incrementFalseNegative() {
         this.incrementFalseNegative(1);
+        hasChanged = true;
     }
 
     public void incrementFalsePositive() {
         this.incrementFalsePositive(1);
+        hasChanged = true;
     }
 
     public void incrementObserved() {
         this.incrementObserved(1);
+        hasChanged = true;
     }
 
     public void incrementExpected() {
         this.incrementExpected(1);
+        hasChanged = true;
     }
 
     public void incrementFalseNegative(int count) {
         this.falseNegative += count;
+        hasChanged = true;
     }
 
     public void incrementFalsePositive(int count) {
         this.falsePositive += count;
+        hasChanged = true;
     }
 
     public void incrementObserved(int count) {
         this.observed += count;
+        hasChanged = true;
     }
 
     public void incrementExpected(int count) {
         this.expected += count;
+        hasChanged = true;
     }
 
     public int getExpected() {
@@ -60,22 +72,34 @@ public final class LabelStat {
 
     public void setFalsePositive(int falsePositive) {
         this.falsePositive = falsePositive;
+        hasChanged = true;
     }
 
     public void setFalseNegative(int falseNegative) {
         this.falseNegative = falseNegative;
+        hasChanged = true;
     }
 
     public void setObserved(int observed) {
         this.observed = observed;
+        hasChanged = true;
     }
 
     public void setExpected(int expected) {
         this.expected = expected;
+        hasChanged = true;
     }
 
     public static LabelStat create() {
         return new LabelStat();
+    }
+
+    public double getAccuracy() {
+        double accuracy = (double) (observed + trueNegative) / (observed + falsePositive + trueNegative + falseNegative);
+        if (accuracy < 0.0)
+            accuracy = 0.0;
+
+        return accuracy;
     }
 
     public double getPrecision() {
@@ -110,5 +134,15 @@ public final class LabelStat {
             .append("; observed: ").append(observed)
             .append("; expected: ").append(expected);
         return builder.toString();
+    }
+
+    public void setTrueNegative(int trueNegative) {
+        this.trueNegative = trueNegative;
+    }
+
+    public boolean hasChanged() {
+        Boolean oldValue = new Boolean(hasChanged);
+        hasChanged = false;
+        return oldValue;
     }
 }

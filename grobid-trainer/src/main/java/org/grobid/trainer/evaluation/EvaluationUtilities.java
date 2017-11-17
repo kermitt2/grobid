@@ -5,23 +5,17 @@ import org.chasen.crfpp.Tagger;
 import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.Pair;
-import org.grobid.core.engines.tagging.GrobidCRFEngine;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.File;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
 import org.grobid.trainer.LabelStat;
-import org.grobid.trainer.Stats;
-
-import org.apache.commons.io.FileUtils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -142,12 +136,12 @@ public class EvaluationUtilities {
         // report token-level results
         Stats wordStats = tokenLevelStats(theResult);
         report.append("\n===== Token-level results =====\n\n");
-        report.append(computeMetrics(wordStats));
+        report.append(wordStats.getReport());
 
         // report field-level results
         Stats fieldStats = fieldLevelStats(theResult);
         report.append("\n===== Field-level results =====\n");
-        report.append(computeMetrics(fieldStats));
+        report.append(fieldStats.getReport());
 
         // instance-level: instances are separated by a new line in the result file
         // third pass
@@ -381,92 +375,7 @@ public class EvaluationUtilities {
     }
 
     public static String computeMetrics(Stats stats) {
-        StringBuilder report = new StringBuilder();
-        report.append(String.format("\n%-20s %-12s %-12s %-12s %-7s\n\n",
-            "label",
-            "accuracy",
-            "precision",
-            "recall",
-            "f1"));
-
-        int cumulated_tp = 0;
-        int cumulated_fp = 0;
-        int cumulated_tn = 0;
-        int cumulated_fn = 0;
-        double cumulated_accuracy = 0.0;
-
-        int totalValidFields = 0;
-
-        int totalFields = stats.getTotalFields();
-
-        for (String label : stats.getLabels()) {
-            if (label.equals("<other>") || label.equals("base") || label.equals("O")) {
-                continue;
-            }
-
-            LabelStat labelStat = stats.getLabelStat(label);
-            int tp = labelStat.getObserved(); // true positives
-            int fp = labelStat.getFalsePositive(); // false positives
-            int fn = labelStat.getFalseNegative(); // false negative
-            int tn = totalFields - tp - (fp + fn); // true negatives
-            int expected = labelStat.getExpected(); // all expected
-
-            double accuracy = (double) (tp + tn) / (tp + fp + tn + fn);
-            if (accuracy < 0.0)
-                accuracy = 0.0;
-
-            double precision = labelStat.getPrecision();
-            double recall = labelStat.getRecall();
-            double f1Score = labelStat.getF1Score();
-
-            report.append(String.format("%-20s %-12s %-12s %-12s %-7s\n",
-                label,
-                TextUtilities.formatTwoDecimals(accuracy * 100),
-                TextUtilities.formatTwoDecimals(precision * 100),
-                TextUtilities.formatTwoDecimals(recall * 100),
-                TextUtilities.formatTwoDecimals(f1Score * 100)));
-
-            if (expected != 0) {
-                totalValidFields++;
-
-                cumulated_tp += tp;
-                cumulated_fp += fp;
-                cumulated_tn += tn;
-                cumulated_fn += fn;
-
-                cumulated_accuracy += accuracy;
-            }
-        }
-
-        report.append("\n");
-
-        // micro average over measures
-        double accuracy = 0.0;
-        if (cumulated_tp + cumulated_fp + cumulated_tn + cumulated_fn != 0.0)
-            accuracy = ((double) cumulated_tp + cumulated_tn) / (cumulated_tp + cumulated_fp + cumulated_tn + cumulated_fn);
-        accuracy = Math.min(1.0, accuracy);
-
-        report.append(String.format("%-20s %-12s %-12s %-12s %-7s (micro average)\n",
-            "all fields",
-            TextUtilities.formatTwoDecimals(accuracy * 100),
-            TextUtilities.formatTwoDecimals(stats.getMicroAveragePrecision() * 100),
-            TextUtilities.formatTwoDecimals(stats.getMicroAverageRecall() * 100),
-            TextUtilities.formatTwoDecimals(stats.getMicroAverageF1() * 100)));
-
-        // macro average over measures
-        if (totalValidFields == 0)
-            accuracy = 0.0;
-        else
-            accuracy = Math.min(1.0, cumulated_accuracy / totalValidFields);
-
-
-        report.append(String.format("%-20s %-12s %-12s %-12s %-7s (macro average)\n",
-            "",
-            TextUtilities.formatTwoDecimals(accuracy * 100),
-            TextUtilities.formatTwoDecimals(stats.getMacroAveragePrecision() * 100),
-            TextUtilities.formatTwoDecimals(stats.getMacroAverageRecall() * 100),
-            TextUtilities.formatTwoDecimals(stats.getMacroAverageF1() * 100)));
-
-        return report.toString();
+        return stats.getReport();
     }
+
 }
