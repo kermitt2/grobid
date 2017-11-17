@@ -1,12 +1,12 @@
 package org.grobid.trainer;
 
-import org.hamcrest.CoreMatchers;
+import org.grobid.trainer.evaluation.Stats;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class StatsTest {
     Stats target;
@@ -234,7 +234,7 @@ public class StatsTest {
         final double f1Bao = target.getLabelStat("BAO").getF1Score();
         final double f1Miao = target.getLabelStat("MIAO").getF1Score();
         final double f1Ciao = target.getLabelStat("CIAO").getF1Score();
-        final double f1Ziao = target.getLabelStat("ZIAO").getF1Score();
+        final double f1Ziao = target.getLabelStat("ZIAO").getRecall();
 
         assertThat(target.getMacroAverageF1(),
             is((f1Bao + f1Miao + f1Ciao + f1Ziao) / (4)));
