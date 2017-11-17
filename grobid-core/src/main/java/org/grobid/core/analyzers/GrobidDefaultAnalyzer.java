@@ -20,6 +20,7 @@ package org.grobid.core.analyzers;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.core.lang.Language;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +67,11 @@ public class GrobidDefaultAnalyzer implements Analyzer {
 	} 
 
 	public List<String> tokenize(String text) {
+		// as a default analyzer, language is not considered
+		return tokenize(text, null);
+	}
+
+	public List<String> tokenize(String text, Language lang) {
 		List<String> result = new ArrayList<String>();
 		text = UnicodeUtil.normaliseText(text);
 		StringTokenizer st = new StringTokenizer(text, delimiters, true);
