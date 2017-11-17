@@ -203,10 +203,6 @@ project("grobid-core") {
         runtime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
     }
 
-    jar {
-        enabled false
-    }
-
     shadowJar {
         classifier = 'onejar'
         mergeServiceFiles()
@@ -235,6 +231,10 @@ project("grobid-core") {
         relocate 'org.apache.lucene', 'org.grobid.shaded.org.apache.lucene'
     }
 
+    jar {
+        dependsOn mainJar
+        enabled false
+    }
 
     artifacts {
         archives shadowJar
