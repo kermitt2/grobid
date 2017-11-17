@@ -44,7 +44,23 @@ public final class FastMatcher {
                     file.getAbsolutePath() + "'.");
         }
         try {
-            loadTerms(file);
+            loadTerms(file, GrobidAnalyzer.getInstance());
+        } catch (Exception e) {
+            throw new GrobidException("An exception occurred while running Grobid FastMatcher.", e);
+        }
+    }
+
+    public FastMatcher(File file, org.grobid.core.analyzers.Analyzer analyzer) {
+        if (!file.exists()) {
+            throw new GrobidResourceException("Cannot add term to matcher, because file '" +
+                    file.getAbsolutePath() + "' does not exist.");
+        }
+        if (!file.canRead()) {
+            throw new GrobidResourceException("Cannot add terms to matcher, because cannot read file '" +
+                    file.getAbsolutePath() + "'.");
+        }
+        try {
+            loadTerms(file, analyzer);
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid FastMatcher.", e);
         }
@@ -52,7 +68,15 @@ public final class FastMatcher {
 
     public FastMatcher(InputStream is) {
         try {
-            loadTerms(is);
+            loadTerms(is, GrobidAnalyzer.getInstance());
+        } catch (Exception e) {
+            throw new GrobidException("An exception occurred while running Grobid FastMatcher.", e);
+        }
+    }
+
+    public FastMatcher(InputStream is, org.grobid.core.analyzers.Analyzer analyzer) {
+        try {
+            loadTerms(is, analyzer);
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid FastMatcher.", e);
         }
@@ -63,13 +87,21 @@ public final class FastMatcher {
      */
     public int loadTerms(File file) throws IOException {
         InputStream fileIn = new FileInputStream(file);
-        return loadTerms(fileIn);
+        return loadTerms(fileIn, GrobidAnalyzer.getInstance());
+    }
+
+    /**
+     * Load a set of terms to the fast matcher from a file listing terms one per line
+     */
+    public int loadTerms(File file, org.grobid.core.analyzers.Analyzer analyzer) throws IOException {
+        InputStream fileIn = new FileInputStream(file);
+        return loadTerms(fileIn, analyzer);
     }
 
     /**
      * Load a set of term to the fast matcher from an input stream
      */
-    public int loadTerms(InputStream is) throws IOException {
+    public int loadTerms(InputStream is, org.grobid.core.analyzers.Analyzer analyzer) throws IOException {
         InputStreamReader reader = new InputStreamReader(is, UTF_8);
         BufferedReader bufReader = new BufferedReader(reader);
         String line;
@@ -84,7 +116,7 @@ public final class FastMatcher {
             line = UnicodeUtil.normaliseText(line);
             line = StringUtils.normalizeSpace(line);
             line = line.toLowerCase();
-            nbTerms += loadTerm(line, true);
+            nbTerms += loadTerm(line, analyzer, true);
         }
         bufReader.close();
         reader.close();
@@ -96,22 +128,22 @@ public final class FastMatcher {
     /**
      * Load a term to the fast matcher, by default the standard delimiters will be ignored
      */
-    public int loadTerm(String term) {
-        return loadTerm(term, true);
+    public int loadTerm(String term, org.grobid.core.analyzers.Analyzer analyzer) {
+        return loadTerm(term, analyzer, true);
     }
 
 
     /**
      * Load a term to the fast matcher
      */
-    public int loadTerm(String term, boolean ignoreDelimiters) {
+    public int loadTerm(String term, org.grobid.core.analyzers.Analyzer analyzer, boolean ignoreDelimiters) {
         int nbTerms = 0;
         if (isBlank(term))
             return 0;
         Map t = terms;
         //StringTokenizer st = new StringTokenizer(term, " \n\t" + TextUtilities.fullPunctuations, false);
         //while (st.hasMoreTokens()) {
-        List<String> tokens = GrobidAnalyzer.getInstance().tokenize(term, new Language("en", 1.0));
+        List<String> tokens = analyzer.tokenize(term, new Language("en", 1.0));
         for(String token : tokens) {
             //token = st.nextToken();
             if (token.length() == 0) {
