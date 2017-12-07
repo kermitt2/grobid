@@ -3,6 +3,7 @@ package org.grobid.core.engines.tagging;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.Triple;
 import org.wipo.analyzers.wipokr.utils.StringUtil;
@@ -18,6 +19,7 @@ import java.util.regex.Pattern;
 public class GenericTaggerUtils {
 
     public static final String START_ENTITY_LABEL_PREFIX = "I-";
+    public static final String START_ENTITY_LABEL_PREFIX_ALTERNATIVE = "B-";
     public static final Pattern SEPARATOR_PATTERN = Pattern.compile("[\t ]");
 
     /**
@@ -74,10 +76,10 @@ public class GenericTaggerUtils {
     // I-<citation> --> <citation>
     // <citation> --> <citation>
     public static String getPlainLabel(String label) {
-        return StringUtil.startsWith(label, START_ENTITY_LABEL_PREFIX) ? StringUtil.substring(label, 2) : label;
+        return isBeginningOfEntity(label) ? StringUtil.substring(label, 2) : label;
     }
 
     public static boolean isBeginningOfEntity(String label) {
-        return StringUtil.startsWith(label, START_ENTITY_LABEL_PREFIX);
+        return StringUtils.startsWith(label, START_ENTITY_LABEL_PREFIX) || StringUtil.startsWith(label, START_ENTITY_LABEL_PREFIX_ALTERNATIVE);
     }
 }
