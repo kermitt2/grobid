@@ -78,7 +78,7 @@ public class TableParser extends AbstractParser {
                 table.appendLabel(clusterContent);
                 table.getFullDescriptionTokens().addAll(tokens);
             } else if (clusterLabel.equals(TBL_OTHER)) {
-            } else if (clusterLabel.equals(TBL_TRASH)) {
+            } else if (clusterLabel.equals(TBL_CONTENT)) {
                 table.appendContent(clusterContent);
                 table.getContentTokens().addAll(tokens);
             } else {
@@ -201,7 +201,7 @@ public class TableParser extends AbstractParser {
                 }
                 sb.append(output);
             }
-            output = writeField(label, lastTag, tok, "<trash>", "<table>", addSpace, addEOL, 3);
+            output = writeField(label, lastTag, tok, "<content>", "<table>", addSpace, addEOL, 3);
             if (output != null) {
                 if (!figOpen) {
                     sb.append(tableOpening);
@@ -260,7 +260,7 @@ public class TableParser extends AbstractParser {
                 if (addSpace)
                     buffer.append(" ");
                 buffer.append("</head>\n");
-            } else if (lastTag.equals("<trash>")) {
+            } else if (lastTag.equals("<content>")) {
                 if (addEOL)
                     buffer.append("<lb/>");
                 if (addSpace)
@@ -295,7 +295,7 @@ public class TableParser extends AbstractParser {
                               int nbIndent) {
         String result = null;
         if (currentTag.endsWith(field)) {
-            /*if (currentTag.endsWith("<other>") || currentTag.endsWith("<trash>")) {
+            /*if (currentTag.endsWith("<other>") || currentTag.endsWith("<content>")) {
                 result = "";
 				if (currentTag.startsWith("I-") || (lastTag == null)) {
 					result += "\n";

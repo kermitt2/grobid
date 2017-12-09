@@ -101,8 +101,8 @@ public class TrainerRunner {
 			trainer = new DateTrainer();
 		} else if (model.equals("citation")) {
 			trainer = new CitationTrainer();
-		} else if (model.equals("ebook")) {
-			trainer = new EbookTrainer();
+		} else if (model.equals("monograph")) {
+			trainer = new MonographTrainer();
 		} else if (model.equals("fulltext")) {
 			trainer = new FulltextTrainer();
 		} else if (model.equals("header")) {

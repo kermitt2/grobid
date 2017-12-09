@@ -30,7 +30,7 @@ public class TaggingLabels {
     public final static String EQUATION_ID_LABEL = "<equation_label>";
     public final static String DESCRIPTION_LABEL = "<figDesc>";
     public final static String HEADER_LABEL = "<figure_head>";
-    public final static String TRASH_LABEL = "<trash>";
+    public final static String CONTENT_LABEL = "<content>";
     public final static String LABEL_LABEL = "<label>";
     public final static String DATE_LABEL = "<date>";
     public final static String DATE_YEAR_LABEL = "<year>";
@@ -125,13 +125,13 @@ public class TaggingLabels {
 
     public static final TaggingLabel FIG_DESC = new TaggingLabelImpl(GrobidModels.FIGURE, DESCRIPTION_LABEL);
     public static final TaggingLabel FIG_HEAD = new TaggingLabelImpl(GrobidModels.FIGURE, HEADER_LABEL);
-    public static final TaggingLabel FIG_TRASH = new TaggingLabelImpl(GrobidModels.FIGURE, TRASH_LABEL);
+    public static final TaggingLabel FIG_CONTENT = new TaggingLabelImpl(GrobidModels.FIGURE, CONTENT_LABEL);
     public static final TaggingLabel FIG_LABEL = new TaggingLabelImpl(GrobidModels.FIGURE, LABEL_LABEL);
     public static final TaggingLabel FIG_OTHER = new TaggingLabelImpl(GrobidModels.FIGURE, OTHER_LABEL);
 
     public static final TaggingLabel TBL_DESC = new TaggingLabelImpl(GrobidModels.TABLE, DESCRIPTION_LABEL);
     public static final TaggingLabel TBL_HEAD = new TaggingLabelImpl(GrobidModels.TABLE, HEADER_LABEL);
-    public static final TaggingLabel TBL_TRASH = new TaggingLabelImpl(GrobidModels.TABLE, TRASH_LABEL);
+    public static final TaggingLabel TBL_CONTENT = new TaggingLabelImpl(GrobidModels.TABLE, CONTENT_LABEL);
     public static final TaggingLabel TBL_LABEL = new TaggingLabelImpl(GrobidModels.TABLE, LABEL_LABEL);
     public static final TaggingLabel TBL_OTHER = new TaggingLabelImpl(GrobidModels.TABLE, OTHER_LABEL);
 
@@ -222,14 +222,14 @@ public class TaggingLabels {
         //figures
         register(FIG_DESC);
         register(FIG_HEAD);
-        register(FIG_TRASH);
+        register(FIG_CONTENT);
         register(FIG_LABEL);
         register(FIG_OTHER);
 
         // table
         register(TBL_DESC);
         register(TBL_HEAD);
-        register(TBL_TRASH);
+        register(TBL_CONTENT);
         register(TBL_LABEL);
         register(TBL_OTHER);
 
