@@ -22,7 +22,7 @@ public enum GrobidModels implements GrobidModel {
     DATE("date"),
     DICTIONARIES_LEXICAL_ENTRIES("dictionaries-lexical-entries"),
     DICTIONARIES_SENSE("dictionaries-sense"),
-    EBOOK("ebook"),
+    MONOGRAPH("monograph"),
     ENTITIES_CHEMISTRY("entities/chemistry"),
     //	ENTITIES_CHEMISTRY("chemistry"),
     FULLTEXT("fulltext"),

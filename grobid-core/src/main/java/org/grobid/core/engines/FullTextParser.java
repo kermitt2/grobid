@@ -1588,8 +1588,8 @@ public class FullTextParser extends AbstractParser {
             } /*else if (lastTag0.equals("<label>")) {
                 buffer.append("</label>\n\n");
             } 
-			else if (lastTag0.equals("<trash>")) {
-                buffer.append("</trash>\n\n");
+			else if (lastTag0.equals("<content>")) {
+                buffer.append("</content>\n\n");
             } */
 			else if (lastTag0.equals("<citation_marker>")) {
                 buffer.append("</ref>");
