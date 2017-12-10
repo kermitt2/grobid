@@ -27,16 +27,34 @@ import java.util.regex.Matcher;
 import static org.apache.commons.lang3.StringUtils.*;
 
 /**
- * Realise a high level segmentation of a monograph. The monograph could be an ebook, a conference
- * proceedings volume, a book collection volume, a phd/msc thesis, a standalone report (with toc, etc.).
+ * Realise a high level segmentation of a monograph. Monograph is to be understood here in the context library cataloging, 
+ * basically as a standalone book. The monograph could be an ebook (novels), a conference proceedings volume, a book 
+ * collection volume, a phd/msc thesis, a standalone report (with toc, etc.), a manual (with multiple chapters).
+ * Monographs, here, are NOT magazine volumes, journal issues, newspapers, standalone chapters, standalone scholar articles,
+ * tables of content, reference works, dictionaries, encyclopedia volumes, graphic novels.
  *
  * @author Patrice Lopez
  */
 public class MonographParser extends AbstractParser {
-	/*
-        .. labels for this model:
-	 		
-	*/
+	/**
+     *   16 labels for this model:
+     *       cover page (front of the book)
+     *       title page (secondary title page)
+     *       publisher page (publication information, including usually the copyrights info) 
+     *       summary (include executive summary)
+     *       biography
+     *       advertising (other works by the author/publisher)
+     *       table of content
+     *       preface (foreword)
+     *       dedication (I dedicate this label to my family and my thesis director ;)
+     *       unit (chapter or standalone article)
+     *       reference (a full chapter of references, not to be confused with references attached to an article)
+     *       annex
+     *       index
+     *       glossary (also abbreviations and acronyms)
+     *       back cover page
+     *       other
+	 */
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MonographParser.class);
 

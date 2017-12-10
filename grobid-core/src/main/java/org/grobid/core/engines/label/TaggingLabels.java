@@ -77,6 +77,36 @@ public class TaggingLabels {
     public final static String SURNAME_LABEL = "<surname>";
     public final static String SUFFIX_LABEL = "<suffix>";
 
+    public final static String COVER_LABEL = "<cover>";
+    public final static String SUMMARY_LABEL = "<summary>";
+    public final static String BIOGRAPHY_LABEL = "<biography>";
+    public final static String ADVERTISEMENT_LABEL = "<advertisement>";
+    public final static String TOC_LABEL = "<toc>";
+    public final static String PREFACE_LABEL = "<preface>";
+    public final static String UNIT_LABEL = "<unit>";
+    public final static String ANNEX_LABEL = "<annex>";
+    public final static String INDEX_LABEL = "<index>";
+    public final static String GLOSSARY_LABEL = "<glossary>";
+    public final static String BACK_LABEL = "<back>";
+
+
+    /* title page (secondary title page)
+     *       publisher page (publication information, including usually the copyrights info) 
+     *       summary (include executive summary)
+     *       biography
+     *       advertising (other works by the author/publisher)
+     *       table of content
+     *       preface (foreword)
+     *       dedication (I dedicate this label to my family and my thesis director ;)
+     *       unit (chapter or standalone article)
+     *       reference (a full chapter of references, not to be confused with references attached to an article)
+     *       annex
+     *       index
+     *       glossary (also abbreviations and acronyms)
+     *       back cover page
+     *       other
+     */
+
     public static final TaggingLabel CITATION_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, CITATION_MARKER_LABEL);
     public static final TaggingLabel TABLE_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, TABLE_MARKER_LABEL);
     public static final TaggingLabel FIGURE_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, FIGURE_MARKER_LABEL);
@@ -167,6 +197,23 @@ public class TaggingLabels {
     public static final TaggingLabel NAMES_CITATION_SURNAME = new TaggingLabelImpl(GrobidModels.NAMES_CITATION, SURNAME_LABEL);
     public static final TaggingLabel NAMES_CITATION_SUFFIX = new TaggingLabelImpl(GrobidModels.NAMES_CITATION, SUFFIX_LABEL);
 
+    public static final TaggingLabel MONOGRAPH_COVER = new TaggingLabelImpl(GrobidModels.MONOGRAPH, COVER_LABEL);
+    public static final TaggingLabel MONOGRAPH_TITLE = new TaggingLabelImpl(GrobidModels.MONOGRAPH, TITLE_LABEL);
+    public static final TaggingLabel MONOGRAPH_PUBLISHER = new TaggingLabelImpl(GrobidModels.MONOGRAPH, PUBLISHER_LABEL);
+    public static final TaggingLabel MONOGRAPH_SUMMARY = new TaggingLabelImpl(GrobidModels.MONOGRAPH, SUMMARY_LABEL);
+    public static final TaggingLabel MONOGRAPH_BIOGRAPHY = new TaggingLabelImpl(GrobidModels.MONOGRAPH, BIOGRAPHY_LABEL);
+    public static final TaggingLabel MONOGRAPH_ADVERTISEMENT = new TaggingLabelImpl(GrobidModels.MONOGRAPH, ADVERTISEMENT_LABEL);
+    public static final TaggingLabel MONOGRAPH_TOC = new TaggingLabelImpl(GrobidModels.MONOGRAPH, TOC_LABEL);
+    public static final TaggingLabel MONOGRAPH_PREFACE = new TaggingLabelImpl(GrobidModels.MONOGRAPH, PREFACE_LABEL);
+    public static final TaggingLabel MONOGRAPH_DEDICATION = new TaggingLabelImpl(GrobidModels.MONOGRAPH, DEDICATION_LABEL);
+    public static final TaggingLabel MONOGRAPH_UNIT = new TaggingLabelImpl(GrobidModels.MONOGRAPH, UNIT_LABEL);
+    public static final TaggingLabel MONOGRAPH_REFERENCE = new TaggingLabelImpl(GrobidModels.MONOGRAPH, REFERENCE_LABEL);
+    public static final TaggingLabel MONOGRAPH_ANNEX = new TaggingLabelImpl(GrobidModels.MONOGRAPH, ANNEX_LABEL);
+    public static final TaggingLabel MONOGRAPH_INDEX = new TaggingLabelImpl(GrobidModels.MONOGRAPH, INDEX_LABEL);
+    public static final TaggingLabel MONOGRAPH_GLOSSARY = new TaggingLabelImpl(GrobidModels.MONOGRAPH, GLOSSARY_LABEL);
+    public static final TaggingLabel MONOGRAPH_BACK = new TaggingLabelImpl(GrobidModels.MONOGRAPH, BACK_LABEL);
+    public static final TaggingLabel MONOGRAPH_OTHER = new TaggingLabelImpl(GrobidModels.MONOGRAPH, OTHER_LABEL);
+    
     protected static void register(TaggingLabel label) {
         cache.putIfAbsent(new Pair<>(label.getGrobidModel(), label.getLabel()), label);
     }
@@ -266,6 +313,26 @@ public class TaggingLabels {
         register(NAMES_CITATION_MIDDLENAME);
         register(NAMES_CITATION_SURNAME);
         register(NAMES_CITATION_SUFFIX);
+
+        // monograph
+        register(MONOGRAPH_COVER);
+        register(MONOGRAPH_TITLE);
+        register(MONOGRAPH_PUBLISHER);
+        register(MONOGRAPH_BIOGRAPHY);
+        register(MONOGRAPH_SUMMARY);
+        register(MONOGRAPH_ADVERTISEMENT);
+        register(MONOGRAPH_TOC);
+        register(MONOGRAPH_PREFACE);
+        register(MONOGRAPH_DEDICATION);
+        register(MONOGRAPH_UNIT);
+        register(MONOGRAPH_REFERENCE);
+        register(MONOGRAPH_ANNEX);
+        register(MONOGRAPH_INDEX);
+        register(MONOGRAPH_GLOSSARY);
+        register(MONOGRAPH_BACK);
+        register(MONOGRAPH_OTHER);
+
+
     }
 
 
