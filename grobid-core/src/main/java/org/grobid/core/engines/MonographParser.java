@@ -45,6 +45,7 @@ public class MonographParser extends AbstractParser {
      *       biography
      *       advertising (other works by the author/publisher)
      *       table of content
+     *       table/list of figures
      *       preface (foreword)
      *       dedication (I dedicate this label to my family and my thesis director ;)
      *       unit (chapter or standalone article)
