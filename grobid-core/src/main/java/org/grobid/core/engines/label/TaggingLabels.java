@@ -82,6 +82,7 @@ public class TaggingLabels {
     public final static String BIOGRAPHY_LABEL = "<biography>";
     public final static String ADVERTISEMENT_LABEL = "<advertisement>";
     public final static String TOC_LABEL = "<toc>";
+    public final static String TOF_LABEL = "<tof>";
     public final static String PREFACE_LABEL = "<preface>";
     public final static String UNIT_LABEL = "<unit>";
     public final static String ANNEX_LABEL = "<annex>";
@@ -204,6 +205,7 @@ public class TaggingLabels {
     public static final TaggingLabel MONOGRAPH_BIOGRAPHY = new TaggingLabelImpl(GrobidModels.MONOGRAPH, BIOGRAPHY_LABEL);
     public static final TaggingLabel MONOGRAPH_ADVERTISEMENT = new TaggingLabelImpl(GrobidModels.MONOGRAPH, ADVERTISEMENT_LABEL);
     public static final TaggingLabel MONOGRAPH_TOC = new TaggingLabelImpl(GrobidModels.MONOGRAPH, TOC_LABEL);
+    public static final TaggingLabel MONOGRAPH_TOF = new TaggingLabelImpl(GrobidModels.MONOGRAPH, TOF_LABEL);
     public static final TaggingLabel MONOGRAPH_PREFACE = new TaggingLabelImpl(GrobidModels.MONOGRAPH, PREFACE_LABEL);
     public static final TaggingLabel MONOGRAPH_DEDICATION = new TaggingLabelImpl(GrobidModels.MONOGRAPH, DEDICATION_LABEL);
     public static final TaggingLabel MONOGRAPH_UNIT = new TaggingLabelImpl(GrobidModels.MONOGRAPH, UNIT_LABEL);
@@ -322,6 +324,7 @@ public class TaggingLabels {
         register(MONOGRAPH_SUMMARY);
         register(MONOGRAPH_ADVERTISEMENT);
         register(MONOGRAPH_TOC);
+        register(MONOGRAPH_TOF);
         register(MONOGRAPH_PREFACE);
         register(MONOGRAPH_DEDICATION);
         register(MONOGRAPH_UNIT);

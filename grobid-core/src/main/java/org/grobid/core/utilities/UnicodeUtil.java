@@ -42,7 +42,7 @@ public class UnicodeUtil {
 	// a more restrictive selection of horizontal white space characters than the
 	// Unicode p{White_Space} property (which includes new line and vertical spaces)
 	public static String my_whitespace_chars = "["
-										+"\\u0009"   // CHARACTER TABULATION, \t
+										+ "\\u0009"   // CHARACTER TABULATION, \t
 			                        	+ "\\u0020"  // SPACE
 				                        + "\\u00A0"  // NO-BREAK SPACE
 				                        + "\\u1680"  // OGHAM SPACE MARK
