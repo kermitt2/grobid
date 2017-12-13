@@ -240,7 +240,7 @@ public class ReferenceExtractor implements Closeable {
             return result;
 
         } finally {
-            DocumentSource.close(documentSource, true, true);
+            DocumentSource.close(documentSource, true, true, true);
         }
     }
 
@@ -275,7 +275,7 @@ public class ReferenceExtractor implements Closeable {
         } catch (Exception e) {
             LOGGER.error("Error in extractAllReferencesPDFFile", e);
         } finally {
-            DocumentSource.close(documentSource, true, true);
+            DocumentSource.close(documentSource, true, true, true);
         }
         return null;
     }
