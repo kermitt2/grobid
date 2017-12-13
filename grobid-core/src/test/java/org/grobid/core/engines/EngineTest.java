@@ -910,7 +910,7 @@ public class EngineTest {
 //        File pdf = new File("/Users/zholudev/Downloads/AS-454757820178434@1485434121902_content_1.pdf");
 //        File pdf = new File("/Users/zholudev/Downloads/AS-99907918630920@1400831312313_content_1.pdf");
         File pdf = new File("/Users/zholudev/Downloads/9908107.pdf");
-        Document doc = engine.getParsers().getFullTextParser().processing(DocumentSource.fromPdf(pdf, -1, -1, false, true), config);
+        Document doc = engine.getParsers().getFullTextParser().processing(DocumentSource.fromPdf(pdf, -1, -1, false, true, true), config);
         System.out.println(doc.getTei());
 
 //        System.out.println(engine.fullTextToTEI(inputFile, config)); // numbered
@@ -975,7 +975,7 @@ public class EngineTest {
 //        File f = new File("/Work/temp/figureExtraction/5.pdf");
 
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().generateTeiCoordinates(Lists.newArrayList("ref", "biblStruct")).build();
-        Document doc = engine.getParsers().getFullTextParser().processing(DocumentSource.fromPdf(f, -1, -1, false, true), config);
+        Document doc = engine.getParsers().getFullTextParser().processing(DocumentSource.fromPdf(f, -1, -1, false, true, true), config);
 
         PDDocument document = PDDocument.load(f);
 

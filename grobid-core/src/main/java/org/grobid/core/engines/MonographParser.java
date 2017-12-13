@@ -110,10 +110,10 @@ public class MonographParser extends AbstractParser {
             // keep it clean when leaving...
             if (config.getPdfAssetPath() == null) {
                 // remove the pdf2xml tmp file
-                DocumentSource.close(documentSource, false, true);
+                DocumentSource.close(documentSource, false, true, true);
             } else {
                 // remove the pdf2xml tmp files, including the sub-directories
-                DocumentSource.close(documentSource, true, true);
+                DocumentSource.close(documentSource, true, true, true);
             }
         }
     }
