@@ -203,7 +203,7 @@ public class DateParser extends AbstractParser {
     public static final Pattern oct =
             Pattern.compile("([Oo]ct$|[Oo]cto$|[Oo]ctober$|[Oo]ctobre$|[Ee]kim$|[Oo]ktober$|[Oo]ttobre$|[Oo]utubro$|^10$|10月)");
     public static final Pattern nov =
-            Pattern.compile("([Nn]ov$|[Nn]ovember$|[Nn]ovembre$|[Kk]asım$|[Nn]oviembre$|[Dd]icembre$|[Nn]ovembro$|^11$|11月)");
+            Pattern.compile("([Nn]ov$|[Nn]ovember$|[Nn]ovembre$|[Kk]asım$|[Nn]oviembre$|[Nn]ovembro$|^11$|11月)");
     public static final Pattern dec =
             Pattern.compile("([Dd]ec$|[Dd]ecember$|[Dd][eé]cembre$|[Dd]iciembre$|[Aa]ralık$|^12$|12月)");
 
