@@ -104,7 +104,7 @@ public class FullTextParser extends AbstractParser {
 							   GrobidAnalysisConfig config) throws Exception {
 		DocumentSource documentSource = 
 			DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(), 
-				config.getPdfAssetPath() != null, true);
+				config.getPdfAssetPath() != null, true, false);
 		return processing(documentSource, config);
 	}
 
@@ -718,7 +718,7 @@ public class FullTextParser extends AbstractParser {
            	String pdfFileName = inputFile.getName();
 
            	// SEGMENTATION MODEL
-            documentSource = DocumentSource.fromPdf(inputFile, -1, -1, true, true);
+            documentSource = DocumentSource.fromPdf(inputFile, -1, -1, true, true, true);
             Document doc = new Document(documentSource);
             doc.addTokenizedDocument(GrobidAnalysisConfig.defaultInstance());
 
@@ -1171,7 +1171,7 @@ public class FullTextParser extends AbstractParser {
             throw new GrobidException("An exception occured while running Grobid training" +
                     " data generation for full text.", e);
         } finally {
-            DocumentSource.close(documentSource, true, true);
+            DocumentSource.close(documentSource, true, true, true);
         }
     }
 
@@ -1588,8 +1588,8 @@ public class FullTextParser extends AbstractParser {
             } /*else if (lastTag0.equals("<label>")) {
                 buffer.append("</label>\n\n");
             } 
-			else if (lastTag0.equals("<trash>")) {
-                buffer.append("</trash>\n\n");
+			else if (lastTag0.equals("<content>")) {
+                buffer.append("</content>\n\n");
             } */
 			else if (lastTag0.equals("<citation_marker>")) {
                 buffer.append("</ref>");

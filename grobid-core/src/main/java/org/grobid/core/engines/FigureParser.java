@@ -78,7 +78,7 @@ class FigureParser extends AbstractParser {
                 figure.appendHeader(" " + clusterContent + " ");
             } else if (clusterLabel.equals(FIG_OTHER)) {
 
-            } else if (clusterLabel.equals(FIG_TRASH)) {
+            } else if (clusterLabel.equals(FIG_CONTENT)) {
                 figure.appendContent(clusterContent);
             } else {
                 LOGGER.error("Warning: unexpected figure model label - " + clusterLabel + " for " + clusterContent);
@@ -199,7 +199,7 @@ class FigureParser extends AbstractParser {
                 }
                 sb.append(output);
             }
-            output = writeField(label, lastTag, tok, "<trash>", "", addSpace, addEOL, 3);
+            output = writeField(label, lastTag, tok, "<content>", "", addSpace, addEOL, 3);
             if (output != null) {
                 if (!figOpen) {
                     sb.append(figureOpening);
@@ -273,12 +273,12 @@ class FigureParser extends AbstractParser {
                         buffer.append(" ");
                     buffer.append("</label>\n");
                     break;
-                case "<trash>":
+                case "<content>":
                     if (addEOL)
                         buffer.append("<lb/>");
                     if (addSpace)
                         buffer.append(" ");
-                    buffer.append("</trash>\n");
+                    buffer.append("</content>\n");
                     break;
                 default:
                     res = false;
@@ -298,7 +298,7 @@ class FigureParser extends AbstractParser {
                               int nbIndent) {
         String result = null;
         if (currentTag.endsWith(field)) {
-            if (currentTag.endsWith("<other>") || currentTag.endsWith("<trash>")) {
+            if (currentTag.endsWith("<other>") || currentTag.endsWith("<content>")) {
                 result = "";
                 if (currentTag.startsWith("I-") || (lastTag == null)) {
                     result += "\n";
