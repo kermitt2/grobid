@@ -227,9 +227,9 @@ public class EvaluationUtilities {
 			}
 
 			processCounters(wordStats, obtainedLabel, expectedLabel);
-			if (!obtainedLabel.equals(expectedLabel)) {
+			/*if (!obtainedLabel.equals(expectedLabel)) {
 				logger.warn("Disagreement / expected: " + expectedLabel + " / obtained: " + obtainedLabel);
-			}
+			}*/
 		}
 		return wordStats;
 	}

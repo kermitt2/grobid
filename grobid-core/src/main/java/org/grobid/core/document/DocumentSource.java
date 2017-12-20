@@ -18,8 +18,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * User: zholudev
- * Date: 3/6/15
+ * Input document to be processed, which could come from a PDF or directly be an XML file. 
+ * If from a PDF document, this is the place where pdf2xml is called.
  */
 public class DocumentSource {
     private static final Logger LOGGER = LoggerFactory.getLogger(DocumentSource.class);
@@ -43,25 +43,27 @@ public class DocumentSource {
 
     /**
      * By default the XML extracted from the PDF is without images, to avoid flooding the grobid-home/tmp directory,
-	 * but with the extra annotation file	
+	 * but with the extra annotation file and with outline	
      */
     public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage) {
-        return fromPdf(pdfFile, startPage, endPage, false, true);
+        return fromPdf(pdfFile, startPage, endPage, false, true, true);
     }
 
     public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage, 
-										 boolean withImages, boolean withAnnotations) {
+										 boolean withImages, boolean withAnnotations, boolean withOutline) {
         if (!pdfFile.exists() || pdfFile.isDirectory()) {
-            throw new GrobidException("Input PDF file " + pdfFile + " does not exist or a directory", GrobidExceptionStatus.BAD_INPUT_DATA);
+            throw new GrobidException("Input PDF file " + pdfFile + " does not exist or a directory", 
+                GrobidExceptionStatus.BAD_INPUT_DATA);
         }
 
         DocumentSource source = new DocumentSource();
         source.cleanupXml = true;
 
         try {
-            source.xmlFile = source.pdf2xml(null, false, startPage, endPage, pdfFile, GrobidProperties.getTempPath(), withImages, withAnnotations);
+            source.xmlFile = source.pdf2xml(null, false, startPage, endPage, pdfFile, 
+                GrobidProperties.getTempPath(), withImages, withAnnotations, withOutline);
         } catch (Exception e) {
-            source.close(true, true);
+            source.close(withImages, withAnnotations, withOutline);
             throw e;
         } finally {
         }
@@ -69,18 +71,23 @@ public class DocumentSource {
         return source;
     }
 
-    private String getPdf2xmlCommand(boolean withImage, boolean withAnnotations) {
-        String pdf2xml = GrobidProperties.getPdf2XMLPath().getAbsolutePath();
-        pdf2xml += GrobidProperties.isContextExecutionServer() ? File.separator + "pdftoxml_server" : File.separator + "pdftoxml";
-		pdf2xml += " -blocks -noImageInline -fullFontName ";
+    private String getPdf2xmlCommand(boolean withImage, boolean withAnnotations, boolean withOutline) {
+        StringBuilder pdf2xml = new StringBuilder();
+        pdf2xml.append(GrobidProperties.getPdf2XMLPath().getAbsolutePath());
+        pdf2xml.append(
+            GrobidProperties.isContextExecutionServer() ? File.separator + "pdftoxml_server" : File.separator + "pdftoxml");
+		pdf2xml.append(" -blocks -noImageInline -fullFontName ");
 
         if (!withImage) {
-            pdf2xml += " -noImage ";
+            pdf2xml.append(" -noImage ");
 		}
         if (withAnnotations) {
-            pdf2xml += " -annotation ";
+            pdf2xml.append(" -annotation ");
         }
-        return pdf2xml;
+        if (withOutline) {
+            pdf2xml.append(" -outline ");
+        }
+        return pdf2xml.toString();
     }
 
     /**
@@ -92,12 +99,12 @@ public class DocumentSource {
      */
     public File pdf2xml(Integer timeout, boolean force, int startPage,
                         int endPage, File pdfPath, File tmpPath, boolean withImages, 
-						boolean withAnnotations) {
+						boolean withAnnotations, boolean withOutline) {
         LOGGER.debug("start pdf2xml");
         long time = System.currentTimeMillis();
         String pdftoxml0;
 
-        pdftoxml0 = getPdf2xmlCommand(withImages, withAnnotations);
+        pdftoxml0 = getPdf2xmlCommand(withImages, withAnnotations, withOutline);
 
         if (startPage > 0)
             pdftoxml0 += " -f " + startPage + " ";
@@ -173,13 +180,13 @@ public class DocumentSource {
                 tmpPathXML = null;
                 //killing all child processes harshly
                 worker.killProcess();
-                close(true, true);
+                close(true, true, true);
                 throw new GrobidException("PDF to XML conversion timed out", GrobidExceptionStatus.TIMEOUT);
             }
 
             if (worker.getExitStatus() != 0) {
                 String errorStreamContents = worker.getErrorStreamContents();
-                close(true, true);
+                close(true, true, true);
                 throw new GrobidException("PDF to XML conversion failed on pdf file " + pdfPath + " " +
                         (StringUtils.isEmpty(errorStreamContents) ? "" : ("due to: " + errorStreamContents)),
                         GrobidExceptionStatus.PDF2XML_CONVERSION_FAILURE);
@@ -222,7 +229,7 @@ public class DocumentSource {
         return tmpPathXML;
     }
 
-    private boolean cleanXmlFile(File pathToXml, boolean cleanImages, boolean cleanAnnotations) {
+    private boolean cleanXmlFile(File pathToXml, boolean cleanImages, boolean cleanAnnotations, boolean cleanOutline) {
         boolean success = false;
 
         try {
@@ -291,23 +298,46 @@ public class DocumentSource {
             }
         }
 
+        // if cleanOutline is true, we also remoce the additional outline file
+        if (cleanOutline) {
+            try {
+                if (pathToXml != null) {
+                    File fff = new File(pathToXml + "_outline.xml");
+                    if (fff.exists()) {
+                        success = fff.delete();
+
+                        if (!success) {
+                            throw new GrobidResourceException(
+                                    "Deletion of temporary outline file failed for file '" + fff.getAbsolutePath() + "'");
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                if (e instanceof GrobidResourceException) {
+                    throw (GrobidResourceException) e;
+                } else {
+                    throw new GrobidResourceException("An exception occurred while deleting an XML file '" + pathToXml + "'.", e);
+                }
+            }
+        }
+
         return success;
     }
 
 
-    public void close(boolean cleanImages, boolean cleanAnnotations) {
+    public void close(boolean cleanImages, boolean cleanAnnotations, boolean cleanOutline) {
         try {
             if (cleanupXml) {
-                cleanXmlFile(xmlFile, cleanImages, cleanAnnotations);
+                cleanXmlFile(xmlFile, cleanImages, cleanAnnotations, cleanOutline);
             }
         } catch (Exception e) {
             LOGGER.error("Cannot cleanup resources (just printing exception):", e);
         }
     }
 
-    public static void close(DocumentSource source, boolean cleanImages, boolean cleanAnnotations) {
+    public static void close(DocumentSource source, boolean cleanImages, boolean cleanAnnotations, boolean cleanOutline) {
         if (source != null) {
-            source.close(cleanImages, cleanAnnotations);
+            source.close(cleanImages, cleanAnnotations, cleanOutline);
         }
     }
 
