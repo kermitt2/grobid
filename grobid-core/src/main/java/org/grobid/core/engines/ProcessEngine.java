@@ -379,6 +379,19 @@ public class ProcessEngine implements Closeable {
     }
 
     /**
+     * Generate training data for the monograph model from provided directory of PDF documents.
+     *
+     * @param pGbdArgs The parameters.
+     * @throws Exception
+     */
+    public void createTrainingMonograph(final GrobidMainArgs pGbdArgs) throws Exception {
+        inferPdfInputPath(pGbdArgs);
+        inferOutputPath(pGbdArgs);
+        int result = getEngine().batchCreateTrainingMonograph(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
+        LOGGER.info(result + " files processed.");
+    }
+
+    /**
      * Generate training data for citation extraction from patent documents.
      *
      * @param pGbdArgs The parameters.

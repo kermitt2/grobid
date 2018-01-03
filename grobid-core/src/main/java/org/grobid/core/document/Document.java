@@ -36,6 +36,7 @@ import org.grobid.core.layout.VectorGraphicBoxCalculator;
 
 import org.grobid.core.sax.PDF2XMLSaxHandler;
 import org.grobid.core.sax.PDF2XMLAnnotationSaxHandler;
+import org.grobid.core.sax.PDF2XMLOutlineSaxHandler;
 
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.ElementCounter;
@@ -114,9 +115,6 @@ public class Document {
     protected Map<String, BibDataSet> teiIdToBibDataSets = null;
     protected List<BibDataSet> bibDataSets = null;
 
-    // not used anymore
-    protected DocumentNode top = null;
-
     // header of the document - if extracted and processed
     protected BiblioItem resHeader = null;
 
@@ -134,6 +132,9 @@ public class Document {
 
 	// list of PDF annotations as present in the PDF source file
     protected List<PDFAnnotation> pdfAnnotations = null;
+
+    // the document outline (or bookmark) embedded in the PDF, if present
+    protected DocumentNode outlineRoot = null;
 
     protected Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
 
@@ -164,7 +165,6 @@ public class Document {
     //Map<String, List<LayoutTokenization>> labeledTokenSequences = null;
 
     public Document(DocumentSource documentSource) {
-        top = new DocumentNode("top", "0");
         this.documentSource = documentSource;
         setPathXML(documentSource.getXmlFile());
     }
@@ -356,6 +356,7 @@ public class Document {
            parser.setAnalyzer(config.getAnalyzer());
 		pdfAnnotations = new ArrayList<PDFAnnotation>();
 		PDF2XMLAnnotationSaxHandler parserAnnot = new PDF2XMLAnnotationSaxHandler(this, pdfAnnotations);
+        PDF2XMLOutlineSaxHandler parserOutline = new PDF2XMLOutlineSaxHandler(this);
 
 		// get a SAX parser factory
 		SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -364,6 +365,7 @@ public class Document {
 
         File file = new File(pathXML);
 		File fileAnnot = new File(pathXML+"_annot.xml");
+        File fileOutline = new File(pathXML+"_outline.xml");
         FileInputStream in = null;
         try {
 			// parsing of the pdf2xml file
@@ -391,7 +393,7 @@ public class Document {
 
         if (fileAnnot.exists()) {
             try {
-                // parsing of the annotation XML file
+                // parsing of the annotation XML file (for annotations in the PDf)
                 in = new FileInputStream(fileAnnot);
                 SAXParser p = spf.newSAXParser();
                 p.parse(in, parserAnnot);
@@ -403,6 +405,22 @@ public class Document {
                 IOUtils.closeQuietly(in);
             }
         }
+
+        if (fileOutline.exists()) {
+            try {
+                // parsing of the outline XML file (for PDF bookmark)
+                in = new FileInputStream(fileOutline);
+                SAXParser p = spf.newSAXParser();
+                p.parse(in, parserOutline);
+                outlineRoot = parserOutline.getRootNode();
+            } catch (GrobidException e) {
+                throw e;
+            } catch (Exception e) {
+                LOGGER.error("Cannot parse file: " + fileOutline, e, GrobidExceptionStatus.PARSING_ERROR);
+            } finally {
+                IOUtils.closeQuietly(in);
+            }
+        }        
 
         if (getBlocks() == null) {
             throw new GrobidException("PDF parsing resulted in empty content", GrobidExceptionStatus.NO_BLOCKS);
@@ -603,116 +621,6 @@ public class Document {
         return res;
     }
 
-    /**
-     * Try to reconnect blocks cut because of layout constraints (new col., new
-     * page, inserted figure, etc.)
-     *
-     * -> not used anymore
-     *
-     */
-    /*public void reconnectBlocks() throws Exception {
-        int i = 0;
-        // List<Block> newBlocks = new ArrayList<Block>();
-        boolean candidate = false;
-        int candidateIndex = -1;
-        for (Block block : blocks) {
-            Integer ii = i;
-            if ((!blockFooters.contains(ii))
-                    && (!blockDocumentHeaders.contains(ii))
-                    && (!blockHeaders.contains(ii))
-                    && (!blockReferences.contains(ii))
-                    && (!blockSectionTitles.contains(ii))
-                    && (!blockFigures.contains(ii))
-                    && (!blockTables.contains(ii))
-                    && (!blockHeadFigures.contains(ii))
-                    && (!blockHeadTables.contains(ii))) {
-                String text = block.getText();
-
-                if (text != null) {
-                    text = text.trim();
-                    if (text.length() > 0) {
-                        // specific test if we have a new column
-                        // test if we have a special layout block
-                        int innd = text.indexOf("@PAGE");
-                        if (innd == -1)
-                            innd = text.indexOf("@IMAGE");
-
-                        if (innd == -1) {
-                            // test if the block starts without upper case
-                            if (text.length() > 2) {
-                                char c1 = text.charAt(0);
-                                char c2 = text.charAt(1);
-                                if (Character.isLetter(c1)
-                                        && Character.isLetter(c2)
-                                        && !Character.isUpperCase(c1)
-                                        && !Character.isUpperCase(c2)) {
-                                    // this block is ok for merging with the
-                                    // previous candidate
-                                    if (candidate) {
-                                        Block target = blocks.get(candidateIndex);
-                                        // we simply move tokens
-                                        List<LayoutToken> theTokens = block.getTokens();
-                                        for (LayoutToken tok : theTokens) {
-                                            target.addToken(tok);
-                                        }
-                                        target.setText(target.getText() + "\n"
-                                                + block.getText());
-                                        block.setText("");
-                                        block.resetTokens();
-                                        candidate = false;
-                                    } else {
-                                        candidate = false;
-                                    }
-                                } else {
-                                    candidate = false;
-                                }
-                            } else {
-                                candidate = false;
-                            }
-
-                            // test if the block ends "suddently"
-                            if (text.length() > 2) {
-                                // test the position of the last token, which should
-                                // be close
-                                // to the one of the block + width of the block
-                                StringTokenizer st = new StringTokenizer(text, "\n");
-                                int lineLength = 0;
-                                int nbLines = 0;
-                                int p = 0;
-                                while (p < st.countTokens() - 1) {
-                                    String line = st.nextToken();
-                                    lineLength += line.length();
-                                    nbLines++;
-                                    p++;
-                                }
-
-                                if (st.countTokens() > 1) {
-                                    lineLength = lineLength / nbLines;
-                                    int finalLineLength = st.nextToken().length();
-
-                                    if (Math.abs(finalLineLength - lineLength) < (lineLength / 3)) {
-
-                                        char c1 = text.charAt(text.length() - 1);
-                                        char c2 = text.charAt(text.length() - 2);
-                                        if ((((c1 == '-') || (c1 == ')')) && Character
-                                                .isLetter(c2))
-                                                | (Character.isLetter(c1) && Character
-                                                .isLetter(c2))) {
-                                            // this block is a candidate for merging
-                                            // with the next one
-                                            candidate = true;
-                                            candidateIndex = i;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            i++;
-        }
-    }*/
 
     /**
      * Add features in the header section
@@ -1346,53 +1254,16 @@ public class Document {
         this.tei = tei;
     }
 
-    /*public List<Integer> getBlockHeaders() {
-        return blockHeaders;
-    }
-
-    public List<Integer> getBlockFooters() {
-        return blockFooters;
-    }
-
-    public List<Integer> getBlockSectionTitles() {
-        return blockSectionTitles;
-    }
-
-    public List<Integer> getAcknowledgementBlocks() {
-        return acknowledgementBlocks;
-    }*/
-
     public List<Integer> getBlockDocumentHeaders() {
         return blockDocumentHeaders;
     }
 
-    /*public SortedSet<DocumentPiece> getBlockReferences() {
-        return blockReferences;
+    public DocumentNode getOutlineRoot() {
+        return outlineRoot;
     }
 
-    public List<Integer> getBlockTables() {
-        return blockTables;
-    }
-
-    public List<Integer> getBlockFigures() {
-        return blockFigures;
-    }
-
-    public List<Integer> getBlockHeadTables() {
-        return blockHeadTables;
-    }
-
-    public List<Integer> getBlockHeadFigures() {
-        return blockHeadFigures;
-    }
-	*/
-
-    public DocumentNode getTop() {
-        return top;
-    }
-
-    public void setTop(DocumentNode top) {
-        this.top = top;
+    public void setOutlineRoot(DocumentNode outlineRoot) {
+        this.outlineRoot = outlineRoot;
     }
 
     public boolean isTitleMatchNum() {
