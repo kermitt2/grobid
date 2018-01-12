@@ -5,10 +5,13 @@ import org.apache.commons.io.FileUtils;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.document.BasicStructureBuilder;
 import org.grobid.core.document.Document;
+import org.grobid.core.document.DocumentNode;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
+import org.grobid.core.exceptions.GrobidResourceException;
+import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorMonograph;
 import org.grobid.core.layout.*;
@@ -77,11 +80,14 @@ public class MonographParser extends AbstractParser {
     private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
     private FeatureFactory featureFactory = FeatureFactory.getInstance();
 
+    private File tmpPath = null;
+
     /**
      * TODO some documentation...
      */
     public MonographParser() {
         super(GrobidModels.MONOGRAPH);
+        tmpPath = GrobidProperties.getTempPath();
     }
     
     /**
@@ -101,10 +107,10 @@ public class MonographParser extends AbstractParser {
             // if assets is true, the images are still there under directory pathXML+"_data"
             // we copy them to the assetPath directory
 
-            File assetFile = config.getPdfAssetPath();
+            /*ile assetFile = config.getPdfAssetPath();
             if (assetFile != null) {
                 dealWithImages(documentSource, doc, assetFile, config);
-            }
+            }*/
             return doc;
         } finally {
             // keep it clean when leaving...
@@ -127,97 +133,14 @@ public class MonographParser extends AbstractParser {
         }
 
         doc.produceStatistics();
-        String content = getAllLinesFeatured(doc);
+        //String content = getAllLinesFeatured(doc);
+        String content = getAllBlocksFeatured(doc);
         if (isNotEmpty(trim(content))) {
             String labelledResult = label(content);
             // set the different sections of the Document object
             doc = BasicStructureBuilder.generalResultSegmentation(doc, labelledResult, tokenizations);
         }
         return doc;
-    }
-
-    private void dealWithImages(DocumentSource documentSource, Document doc, File assetFile, GrobidAnalysisConfig config) {
-        if (assetFile != null) {
-            // copy the files under the directory pathXML+"_data"
-            // we copy the asset files into the path specified by assetPath
-
-            if (!assetFile.exists()) {
-                // we create it
-                if (assetFile.mkdir()) {
-                    LOGGER.debug("Directory created: " + assetFile.getPath());
-                } else {
-                    LOGGER.error("Failed to create directory: " + assetFile.getPath());
-                }
-            }
-            PNMRegistry.registerAllServicesProviders();
-
-            // filter all .jpg and .png files
-            File directoryPath = new File(documentSource.getXmlFile().getAbsolutePath() + "_data");
-            if (directoryPath.exists()) {
-                File[] files = directoryPath.listFiles();
-                if (files != null) {
-                    for (final File currFile : files) {
-                        String toLowerCaseName = currFile.getName().toLowerCase();
-                        if (toLowerCaseName.endsWith(".png") || !config.isPreprocessImages()) {
-                            try {
-                                if (toLowerCaseName.endsWith(".vec")) {
-                                    continue;
-                                }
-                                FileUtils.copyFileToDirectory(currFile, assetFile);
-                            } catch (IOException e) {
-                                LOGGER.error("Cannot copy file " + currFile.getAbsolutePath() + " to " + assetFile.getAbsolutePath(), e);
-                            }
-                        } else if (toLowerCaseName.endsWith(".jpg")
-                                || toLowerCaseName.endsWith(".ppm")
-                            //	|| currFile.getName().toLowerCase().endsWith(".pbm")
-                                ) {
-
-                            String outputFilePath = "";
-                            try {
-                                final BufferedImage bi = ImageIO.read(currFile);
-
-                                if (toLowerCaseName.endsWith(".jpg")) {
-                                    outputFilePath = assetFile.getPath() + File.separator +
-                                            toLowerCaseName.replace(".jpg", ".png");
-                                }
-                                /*else if (currFile.getName().toLowerCase().endsWith(".pbm")) {
-                                    outputFilePath = assetFile.getPath() + File.separator +
-                                         currFile.getName().toLowerCase().replace(".pbm",".png");
-                                }*/
-                                else {
-                                    outputFilePath = assetFile.getPath() + File.separator +
-                                            toLowerCaseName.replace(".ppm", ".png");
-                                }
-                                ImageIO.write(bi, "png", new File(outputFilePath));
-                            } catch (IOException e) {
-                                LOGGER.error("Cannot convert file " + currFile.getAbsolutePath() + " to " + outputFilePath, e);
-                            }
-                        }
-                    }
-                }
-            }
-            // update the path of the image description stored in Document
-
-            if (config.isPreprocessImages()) {
-                List<GraphicObject> images = doc.getImages();
-                if (images != null) {
-                    String subPath = assetFile.getPath();
-                    int ind = subPath.lastIndexOf("/");
-                    if (ind != -1)
-                        subPath = subPath.substring(ind + 1, subPath.length());
-                    for (GraphicObject image : images) {
-                        String fileImage = image.getFilePath();
-                        if (fileImage == null) {
-                            continue;
-                        }
-                        fileImage = fileImage.replace(".ppm", ".png")
-                                .replace(".jpg", ".png");
-                        ind = fileImage.indexOf("/");
-                        image.setFilePath(subPath + fileImage.substring(ind, fileImage.length()));
-                    }
-                }
-            }
-        }
     }
 
 
@@ -272,6 +195,66 @@ public class MonographParser extends AbstractParser {
                                     else
                                         patterns.put(pattern, new Integer(nb+1));
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        String featuresAsString = getFeatureVectorsAsString(doc,
+                patterns, firstTimePattern);
+
+        return featuresAsString;
+    }
+
+    /**
+     * Addition of the features at block level for the complete document.
+     * <p/>
+     * This is an alternative to the token and line level, where the unit for labeling is the block - so allowing even 
+     * faster processing and involving less features.
+     * Lexical features becomes block prefix and suffix, the feature text unit is the first 10 characters of the
+     * block without space.
+     * The dictionary flags are at block level (i.e. the block contains a name mention, a place mention, a year, etc.)
+     * Regarding layout features: font, size and style are the one associated to the first token of the block.
+     */
+    public String getAllBlocksFeatured(Document doc) {
+
+        List<Block> blocks = doc.getBlocks();
+        if ((blocks == null) || blocks.size() == 0) {
+            return null;
+        }
+
+        //guaranteeing quality of service. Otherwise, there are some PDF that may contain 300k blocks and thousands of extracted "images" that ruins the performance
+        if (blocks.size() > GrobidProperties.getPdfBlocksMax()) {
+            throw new GrobidException("Postprocessed document is too big, contains: " + blocks.size(), GrobidExceptionStatus.TOO_MANY_BLOCKS);
+        }
+
+        //boolean graphicVector = false;
+        //boolean graphicBitmap = false;
+
+        // list of textual patterns at the head and foot of pages which can be re-occur on several pages
+        // (typically indicating a publisher foot or head notes)
+        Map<String, Integer> patterns = new TreeMap<String, Integer>();
+        Map<String, Boolean> firstTimePattern = new TreeMap<String, Boolean>();
+
+        for (Page page : doc.getPages()) {
+            // we just look at the two first and last blocks of the page
+            if ((page.getBlocks() != null) && (page.getBlocks().size() > 0)) {
+                for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
+                    if ( (blockIndex < 2) || (blockIndex > page.getBlocks().size()-2)) {
+                        Block block = page.getBlocks().get(blockIndex);
+                        String localText = block.getText();
+                        if ((localText != null) && (localText.length() > 0)) {
+                            String pattern = featureFactory.getPattern(localText);
+                            if (pattern.length() > 8) {
+                                Integer nb = patterns.get(pattern);
+                                if (nb == null) {
+                                    patterns.put(pattern, new Integer(1));
+                                    firstTimePattern.put(pattern, false);
+                                }
+                                else
+                                    patterns.put(pattern, new Integer(nb+1));
                             }
                         }
                     }
@@ -636,5 +619,99 @@ public class MonographParser extends AbstractParser {
             fulltext.append(previousFeatures.printVector());
 
         return fulltext.toString();
+    }
+
+
+    /**
+     * Process the specified pdf and format the result as training data for the monograph model.
+     *
+     * @param inputFile input PDF file
+     * @param pathFullText path to raw monograph featured sequence
+     * @param pathTEI path to TEI
+     * @param id id
+     */
+    public Document createTrainingFromPDF(File inputFile,
+                                   String pathRaw,
+                                   String pathTEI,
+                                   int id) {
+        if (tmpPath == null)
+            throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
+        if (!tmpPath.exists()) {
+            throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
+                    tmpPath.getAbsolutePath() + "' does not exists.");
+        }
+        DocumentSource documentSource = null;
+        Document doc = null;
+        try {
+            if (!inputFile.exists()) {
+                throw new GrobidResourceException("Cannot train for monograph, because file '" +
+                       inputFile.getAbsolutePath() + "' does not exists.");
+            }
+            String pdfFileName = inputFile.getName();
+
+            File outputTEIFile = new File(pathTEI+"/"+pdfFileName.replace(".pdf", "training.monograph.tei.xml"));
+            if (!outputTEIFile.exists()) {
+                throw new GrobidResourceException("Cannot train for monograph, because directory '" +
+                       pathTEI + "' is not valid.");
+            }
+            File outputRawFile = new File(pathRaw+"/"+pdfFileName.replace(".pdf", ".monograph.raw"));
+            if (!outputRawFile.exists()) {
+                throw new GrobidResourceException("Cannot train for monograph, because directory '" +
+                       pathRaw + "' is not valid.");
+            }
+
+            documentSource = DocumentSource.fromPdf(inputFile, -1, -1, true, true, true);
+            doc = new Document(documentSource);
+            doc.addTokenizedDocument(GrobidAnalysisConfig.defaultInstance());
+
+            if (doc.getBlocks() == null) {
+                throw new Exception("PDF parsing resulted in empty content");
+            }
+
+            // TBD: language identifier here on content text sample
+            String lang = "en";
+
+            doc.produceStatistics();
+            StringBuilder builder = new StringBuilder();
+            builder.append("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id + 
+                "\"/>\n\t</teiHeader>\n\t<text xml:lang=\""+ lang + "\">\n");
+
+            // get the document outline
+            DocumentNode outlineRoot = doc.getOutlineRoot();
+
+            // output an XML document based on the provided outline and the tokenization
+            List<LayoutToken> tokens = doc.getTokenizations();
+
+            DocumentNode currentNode = outlineRoot;
+            // get the first node
+            while(currentNode.getChildren() != null) {
+                List<DocumentNode> children = currentNode.getChildren();
+                if (children.size() == 0)
+                    break;
+                currentNode = children.get(0);
+            }
+
+            for(LayoutToken token : tokens) {
+                builder.append(token.getText());
+            }
+
+            builder.append("\t</text>\n</tei>");
+
+            // write the TEI file
+            Writer writer = new OutputStreamWriter(new FileOutputStream(outputTEIFile, false), "UTF-8");
+            writer.write(builder.toString());
+            writer.close();
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new GrobidException("An exception occured while running Grobid training" +
+                    " data generation for monograph.", e);
+        } finally {
+            DocumentSource.close(documentSource, true, true, true);
+        }
+
+        return doc;
     }
 }
