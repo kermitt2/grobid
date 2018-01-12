@@ -27,6 +27,7 @@ public class EngineParsers implements Closeable {
     private ReferenceSegmenterParser referenceSegmenterParser = null;
     private FigureParser figureParser = null;
     private TableParser tableParser = null;
+    private MonographParser monographParser = null;
 
     public AffiliationAddressParser getAffiliationAddressParser() {
         if (affiliationAddressParser == null) {
@@ -160,6 +161,17 @@ public class EngineParsers implements Closeable {
             }
         }
         return tableParser;
+    }
+
+    public MonographParser getMonographParser() {
+        if (monographParser == null) {
+            synchronized (this) {
+                if (monographParser == null) {
+                    monographParser = new MonographParser();
+                }
+            }
+        }
+        return monographParser;
     }
 
     @Override
