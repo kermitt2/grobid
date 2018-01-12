@@ -55,6 +55,14 @@ public class LayoutToken implements Comparable<LayoutToken> {
         this.newLineAfter = token.newLineAfter;
         this.blockPtr = token.blockPtr;
         this.offset = token.offset;
+
+        // deep copy of the TaggingLabel list
+        if (token.labels != null) {
+            this.labels = new ArrayList<TaggingLabel>();
+            for(TaggingLabel l : token.labels) {
+                this.labels.add(l);
+            }
+        }
     }
     
     public LayoutToken(String text, TaggingLabel label) {
