@@ -1,49 +1,36 @@
-## Docker GROBID image
-# Reminder: Before building the docker GROBID image, remember to build grobid using the profile docker, in
-# order to correctly set up the grobid-home in the web.xml.
+FROM openjdk:8-jdk as builder
 
-# > mvn clean install -P docker
+ARG GROBID_VERSION=0.5.0
 
-# > docker build -t lfoppiano/grobid:GROBID_VERSION --build-arg GROBID_VERSION=GROBID_VERSION .
-# Example: > docker build -t lfoppiano/grobid:1.0.0 --build-arg GROBID_VERSION=1.0.0 .
+RUN cd /opt && \
+    wget https://github.com/kermitt2/grobid/archive/${GROBID_VERSION}.zip && \
+    unzip ${GROBID_VERSION}.zip && \
+    mv /opt/grobid-${GROBID_VERSION} /opt/grobid && \
+    cd /opt/grobid && \
+    ./gradlew clean install
 
-# > docker run -t --rm -p 8080:8080 {image_name}
 
-# To find out the docker machine ip
-# > docker-machine ip
+FROM openjdk:8-jre-slim
 
-# To connect to the container with a bash shell
-# > docker exec -i -t {container_name} /bin/bash
+ARG GROBID_VERSION=0.5.0
 
-FROM jetty:9.3-jre8
-
-MAINTAINER Luca Foppiano <luca.foppiano@inria.fr>, Patrice Lopez <patrice.lopez@science-miner.org>
-
-ARG GROBID_VERSION
-
-LABEL Description="This image is used to generate a GROBID image" Version="${GROBID_VERSION}"
+LABEL \
+    org.label-schema.name="Grobid" \
+    org.label-schema.description="Image with GROBID service" \
+    org.label-schema.url="https://github.com/kermitt2/grobid/blob/master/README.md" \
+    org.label-schema.version=${GROBID_VERSION}
 
 ENV JAVA_OPTS=-Xmx4g
 
-RUN apt-get update && apt-get -y --no-install-recommends install libxml2
+COPY --from=builder /opt/grobid /opt/grobid
 
-ADD ./grobid-home/target/grobid-home-${GROBID_VERSION}.zip /opt
-RUN unzip /opt/grobid-home-${GROBID_VERSION}.zip -d /opt && rm /opt/grobid-home-${GROBID_VERSION}.zip
+RUN mkdir /opt/grobid/grobid-home/tmp && \
+    apt-get update && \
+    apt-get -y --no-install-recommends install \
+        libxml2
 
-COPY ./grobid-service/target/grobid-service-${GROBID_VERSION}.war /var/lib/jetty/webapps/ROOT.war
+VOLUME ["/opt/grobid/grobid-home/tmp", "/root/.gradle"]
 
-# Workaround otherwise the tmp directory is not writeable (owner is root)
-RUN mkdir /opt/grobid-home/tmp
-RUN chown -R jetty:jetty /opt/grobid-home/
-VOLUME /opt/grobid-home/tmp
+WORKDIR /opt/grobid
 
-## Docker tricks:
-
-# - remove all stopped containers
-# > docker rm $(docker ps -a -q)
-
-# - remove all untagged images
-# > docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
-
-# - "Cannot connect to the Docker daemon. Is the docker daemon running on this host?"
-# > docker-machine restart
+CMD ["./gradlew", "run"]
