@@ -17,7 +17,7 @@
 
 FROM openjdk:8-jdk as builder
 
-ARG GROBID_VERSION=0.5.0
+ARG GROBID_VERSION
 
 USER root
 RUN apt-get update && \
@@ -25,13 +25,14 @@ RUN apt-get update && \
 
 RUN cd /opt && \
     git clone https://github.com/kermitt2/grobid.git grobid-source && \
-#    git checkout ${GROBID_VERSION} && \
-    cd /opt/grobid && \
-    ./gradlew clean install
+    cd /opt/grobid-source && \
+    git checkout ${GROBID_VERSION} && \
+    git checkout mastak-feature/docker && \
+    ./gradlew clean assemble    
 
 FROM openjdk:8-jre-slim
 
-ARG GROBID_VERSION=0.5.0
+ARG GROBID_VERSION
 
 LABEL \
     org.label-schema.name="Grobid" \
@@ -44,11 +45,12 @@ ENV JAVA_OPTS=-Xmx4g
 COPY --from=builder /opt/grobid-source/grobid-service/build/distributions/grobid-service-${GROBID_VERSION}.zip /opt
 COPY --from=builder /opt/grobid-source/grobid-home/build/distributions/grobid-home-${GROBID_VERSION}.zip /opt
 
-RUN unzip /opt/grobid-service-${GROBID_VERSION}.zip -d /opt/grobid && \
+
+RUN unzip -o /opt/grobid-service-${GROBID_VERSION}.zip -d /opt/grobid && \
     mv /opt/grobid/grobid-service-${GROBID_VERSION} /opt/grobid/grobid-service
 
-RUN unzip /opt/grobid-home-${GROBID_VERSION}.zip -d /opt/grobid &&
-    mkdir /opt/grobid/grobid-home/tmp
+RUN unzip /opt/grobid-home-${GROBID_VERSION}.zip -d /opt/grobid && \
+    mkdir -p /opt/grobid/grobid-home/tmp
 
 RUN apt-get update && \
     apt-get -y --no-install-recommends install \
@@ -59,3 +61,14 @@ VOLUME ["/opt/grobid/grobid-home/tmp"]
 WORKDIR /opt/grobid
 
 CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/config.yaml"]
+
+## Docker tricks:
+
+# - remove all stopped containers
+# > docker rm $(docker ps -a -q)
+
+# - remove all untagged images
+# > docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+
+# - "Cannot connect to the Docker daemon. Is the docker daemon running on this host?"
+# > docker-machine restart
