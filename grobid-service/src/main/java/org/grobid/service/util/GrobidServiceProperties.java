@@ -10,9 +10,6 @@ import org.grobid.service.exceptions.GrobidServicePropertyException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -48,7 +45,7 @@ public class GrobidServiceProperties {
     /**
      * Path to grobid_service.property.
      */
-    protected static File GROBID_SERIVCE_PROPERTY_PATH = null;
+    protected static File GROBID_SERVICE_PROPERTY_PATH = null;
 
 
     /**
@@ -138,7 +135,7 @@ public class GrobidServiceProperties {
 
         // load server properties and copy them to this properties
         try {
-            GROBID_SERIVCE_PROPERTY_PATH = grobidServicePropFile
+            GROBID_SERVICE_PROPERTY_PATH = grobidServicePropFile
                     .getCanonicalFile();
             Properties serviceProps = new Properties();
             serviceProps.load(new FileInputStream(grobidServicePropFile));
@@ -162,7 +159,7 @@ public class GrobidServiceProperties {
     }
 
     public static File getGrobidPropertiesPath() {
-        return GROBID_SERIVCE_PROPERTY_PATH;
+        return GROBID_SERVICE_PROPERTY_PATH;
     }
 
     /**

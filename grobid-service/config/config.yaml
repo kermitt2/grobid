@@ -1,7 +1,7 @@
 grobid:
  # NOTE: change these values to absolute paths when running on production
   grobidHome: "grobid-home"
-  grobidServiceProperties: "grobid-service/src/main/conf/grobid_service.properties"
+  grobidServiceProperties: "grobid-service/config/grobid_service.properties"
 
 server:
     type: custom
