@@ -263,6 +263,7 @@ project("grobid-home") {
 
 project(":grobid-service") {
     apply plugin: 'application'
+    apply plugin: 'war'
 
     mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
     tasks.run.workingDir = rootProject.rootDir
@@ -292,6 +293,12 @@ project(":grobid-service") {
             contents {
                 from(new File(rootProject.rootDir, "grobid-service/README.md")) {
                     into "doc"
+                }
+                from(new File(rootProject.rootDir, "grobid-service/config/config.yaml")) {
+                    into "config"
+                }
+                from(new File(rootProject.rootDir, "grobid-service/config/grobid_service.properties")) {
+                    into "config"
                 }
             }
         }
@@ -410,4 +417,4 @@ wrapper {
     gradleVersion "4.2.1"
 }
 
-build.dependsOn project.getSubprojects().collect({it.getTasks().getByName("build")})
+build.dependsOn project.getSubprojects().collect({ it.getTasks().getByName("build") })
