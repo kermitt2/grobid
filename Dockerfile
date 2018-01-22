@@ -17,6 +17,8 @@
 
 FROM openjdk:8-jdk as builder
 
+MAINTAINER Luca Foppiano <luca.foppiano@inria.fr>, Patrice Lopez <patrice.lopez@science-miner.org>
+
 ARG GROBID_VERSION
 
 USER root
@@ -27,17 +29,18 @@ RUN cd /opt && \
     git clone https://github.com/kermitt2/grobid.git grobid-source && \
     cd /opt/grobid-source && \
     git checkout ${GROBID_VERSION} && \
-    git checkout mastak-feature/docker && \
     ./gradlew clean assemble    
 
 FROM openjdk:8-jre-slim
 
 ARG GROBID_VERSION
 
+MAINTAINER Luca Foppiano <luca.foppiano@inria.fr>, Patrice Lopez <patrice.lopez@science-miner.org>
+
 LABEL \
     org.label-schema.name="Grobid" \
     org.label-schema.description="Image with GROBID service" \
-    org.label-schema.url="https://github.com/kermitt2/grobid/blob/master/README.md" \
+    org.label-schema.url="https://github.com/kermitt2/grobid" \
     org.label-schema.version=${GROBID_VERSION}
 
 ENV JAVA_OPTS=-Xmx4g
@@ -51,6 +54,10 @@ RUN unzip -o /opt/grobid-service-${GROBID_VERSION}.zip -d /opt/grobid && \
 
 RUN unzip /opt/grobid-home-${GROBID_VERSION}.zip -d /opt/grobid && \
     mkdir -p /opt/grobid/grobid-home/tmp
+
+# Workaround for version 0.5.0
+RUN mkdir /opt/grobid/grobid-service/config
+ADD ./grobid-service/config /opt/grobid/grobid-service/config
 
 RUN apt-get update && \
     apt-get -y --no-install-recommends install \
