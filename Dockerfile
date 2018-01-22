@@ -1,16 +1,9 @@
 ## Docker GROBID image
-# Reminder: Before building the docker GROBID image, remember to build grobid using the profile docker, in
-# order to correctly set up the grobid-home in the web.xml.
-
-# > mvn clean install -P docker
 
 # > docker build -t lfoppiano/grobid:GROBID_VERSION --build-arg GROBID_VERSION=GROBID_VERSION .
 # Example: > docker build -t lfoppiano/grobid:1.0.0 --build-arg GROBID_VERSION=1.0.0 .
 
-# > docker run -t --rm -p 8080:8080 {image_name}
-
-# To find out the docker machine ip
-# > docker-machine ip
+# > docker run -t --rm -p 8080:8070 -p 8081:8071 {image_name}
 
 # To connect to the container with a bash shell
 # > docker exec -i -t {container_name} /bin/bash
@@ -56,8 +49,8 @@ RUN unzip /opt/grobid-home-${GROBID_VERSION}.zip -d /opt/grobid && \
     mkdir -p /opt/grobid/grobid-home/tmp
 
 # Workaround for version 0.5.0
-RUN mkdir /opt/grobid/grobid-service/config
-ADD ./grobid-service/config /opt/grobid/grobid-service/config
+#RUN mkdir /opt/grobid/grobid-service/config
+#ADD ./grobid-service/config /opt/grobid/grobid-service/config
 
 RUN apt-get update && \
     apt-get -y --no-install-recommends install \
