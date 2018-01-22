@@ -11,28 +11,24 @@ The process for fetching and running the image is (assuming docker is installed 
 
 - Pull the image from docker HUB
 ```bash
-> docker pull lfoppiano/grobid:0.4.2
+> docker pull lfoppiano/grobid:0.5.0
 ```
  
-- Run the container:
+- Run the container (note the new version running on 8070):
 
 ```bash
-> docker run -t --rm -p 8080:8080 lfoppiano/grobid:0.4.2
+> docker run -t --rm -p 8080:8070 -p 8081:8071 lfoppiano/grobid:0.5.0
 ```
 
 (alternatively you can also get the image ID)  
 ```bash
 > docker images | grep lfoppiano/grobid | grep 0.4.2
-> docker run -t --rm -p 8080:8080 $image_id_from_previous_command
+> docker run -t --rm -p 8080:8070 -p 8081:8071 $image_id_from_previous_command
 ```
 
 - Access the service: 
-  - get the ip address of the container 
-
-```bash
-> docker-machine ip default
-```
-  - open the browser at the address `http://{machine_id}:8080`
+  - open the browser at the address `http://localhost:8080`
+  - the health check will be accessible at the address `http://localhost:8081`
 
 
 <h4>Troubleshooting</h4>
@@ -95,24 +91,18 @@ For more information see the [GROBID main page](https://github.com/kermitt2/grob
 
 <h4>Build caveat</h4>
 **NOTE**: The following part is only for development purposes. We recommend you to use the official 
-docker images.
+docker images from the docker HUB.
+
+The docker build from 0.5.0 will clone the repository using git, so no need to custom builds. 
+Only important information is the version which will be checked out from the tags.
  
-Reminder: Before building the docker GROBID image, remember to build grobid 
-using the profile docker, in order to correctly set up the grobid-home in the web.xml.
-
 ```bash
-> mvn clean install -P docker
-```
-
-make sure the Dockerfile points to the right jars (TODO: add placeholders based on the version), launch the build: 
-
-```bash
-> docker build -t lfoppiano/grobid:0.4.2 --build-arg GROBID_VERSION=0.4.2-SNAPSHOT .
+> docker build -t lfoppiano/grobid:0.5.0 --build-arg GROBID_VERSION=0.5.0 .
 ```
 
 In order to run the container of the newly created image: 
 ```bash
-> docker run -t --rm -p 8080:8080 lfoppiano/grobid:0.4.2 
+> docker run -t --rm -p 8080:8070 -p 8081:8071 lfoppiano/grobid:0.5.0
 ```
 
 For testing or debugging purposes, you can connect to the container with a bash shell:
