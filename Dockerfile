@@ -67,6 +67,9 @@ CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/con
 # - remove all stopped containers
 # > docker rm $(docker ps -a -q)
 
+# - remove all unused images
+# > docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
+
 # - remove all untagged images
 # > docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
 
