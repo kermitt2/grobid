@@ -263,7 +263,7 @@ project("grobid-home") {
 
 project(":grobid-service") {
     apply plugin: 'application'
-    apply plugin: 'war'
+//    apply plugin: 'war'
 
     mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
     tasks.run.workingDir = rootProject.rootDir
