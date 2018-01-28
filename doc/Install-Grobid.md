@@ -5,16 +5,16 @@
 
 ###Latest stable release
 
-The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.5.0``` which can be downloaded as follow: 
+The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.5.1``` which can be downloaded as follow: 
 ```bash
-> wget https://github.com/kermitt2/grobid/archive/0.5.0.zip
-> unzip 0.5.0.zip
+> wget https://github.com/kermitt2/grobid/archive/0.5.1.zip
+> unzip 0.5.1.zip
 ```
 
 or using the [docker](Grobid-docker.md) container. 
 
 ###Current development version
-The current development version is ```0.5.1-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
+The current development version is ```0.6.0-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
 
 Clone source code from github:
 ```bash
@@ -29,7 +29,7 @@ Or download directly the zip file:
 
 ##Build GROBID
 
-**Please make sure that grobid is installed in a path with no parent directories containing spaces.**
+**Please make sure that Grobid is installed in a path with no parent directories containing spaces.**
 
 ###Build GROBID with Gradle 
 
@@ -44,6 +44,7 @@ By default, tests are ignored. For building the project and running the tests, u
 
 ##Use GROBID
 
-From there, the easiest and most efficient way to use GROBID is the [web service mode](Grobid-service.md). You can also use the tool in [batch mode](Grobid-batch.md) or integrate it in your Java project via the [Java API](Grobid-java-library.md). 
+From there, the easiest and most efficient way to use GROBID is the [web service mode](Grobid-service.md). 
+You can also use the tool in [batch mode](Grobid-batch.md) or integrate it in your Java project via the [Java API](Grobid-java-library.md). 
 
 
