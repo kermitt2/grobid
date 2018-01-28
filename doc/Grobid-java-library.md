@@ -1,15 +1,59 @@
-The [RESTful API](Grobid-service.md) provides a simple and efficient way to use and deploy GROBID. As an alternative, the present page explains how to embed Grobid directly in your Java application. 
+The [RESTful API](Grobid-service.md) provides a simple and efficient way to use and deploy GROBID. 
+As an alternative, the present page explains how to embed Grobid directly in your Java application. 
 
-After [building the project](Install-Grobid.md), two core jar files are created: grobid-core-`<current version>`.onejar.jar and grobid-core-`<current version>`.jar
+After [building the project](Install-Grobid.md), two core jar files are created: grobid-core-`<current version>`.onejar.jar 
+and grobid-core-`<current version>`.jar
 	
-A complete working **maven** project example of usage of GROBID Java API can be found here: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTex format.  
+A complete working **maven** project example of usage of GROBID Java API can be found here: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). 
+The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTex format.  
 
 An example project for using GROBID in an **ant** project is available [here](https://github.com/kermitt2/grobid-test-ant).
 
 ## Using maven
 
-When using maven, you need to include in your pom file the path to the Grobid jar file, for instance as follow (replace `0.5.0` by the valid `<current version>`):
+GROBID releases are uploaded on the [grobid bintray](https://bintray.com/rookies/maven/grobid) repository. 
 
+You need to add the following snippet in your pom.xml in order to configure it:
+
+```xml
+    <profiles>
+            <profile>
+                <repositories>
+                    <repository>
+                        <snapshots>
+                            <enabled>false</enabled>
+                        </snapshots>
+                        <id>bintray-rookies-maven</id>
+                        <name>bintray</name>
+                        <url>https://dl.bintray.com/rookies/maven</url>
+                    </repository>
+                </repositories>
+                <pluginRepositories>
+                    <pluginRepository>
+                        <snapshots>
+                            <enabled>false</enabled>
+                        </snapshots>
+                        <id>bintray-rookies-maven</id>
+                        <name>bintray-plugins</name>
+                        <url>https://dl.bintray.com/rookies/maven</url>
+                    </pluginRepository>
+                </pluginRepositories>
+                <id>bintray</id>
+            </profile>
+        </profiles>
+        <activeProfiles>
+            <activeProfile>bintray</activeProfile>
+        </activeProfiles>
+    </settings>
+```
+  
+
+In this way you after configuring such repository the dependencies will be automatically managed.
+ 
+If you want to work on a SNAPSHOT development version, you need to include in your pom file the path to the Grobid jar file, 
+for instance as follow (replace `0.5.0` by the valid `<current version>`):
+
+```xml
 	<dependency>
 	    <groupId>org.grobid.core</groupId>
 	    <artifactId>grobid</artifactId>
@@ -17,6 +61,25 @@ When using maven, you need to include in your pom file the path to the Grobid ja
 	    <scope>system</scope>
 	    <systemPath>${project.basedir}/lib/grobid-core-0.5.0.jar</systemPath>
 	</dependency>
+```
+
+## Using gradle
+
+Add the following snippet in your gradle.build file: 
+
+```groovy
+    repositories { 
+        maven { 
+            url "https://dl.bintray.com/rookies/maven" 
+        } 
+    }
+```
+
+and add the Grobid dependency as well: 
+```
+    compile 'org.grobid:grobid-core:0.5.1'
+    compile 'org.grobid:grobid-trainer:0.5.1'
+```
 
 
 ## API call
