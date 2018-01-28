@@ -21,6 +21,13 @@ repositories {
 
 apply plugin: 'net.researchgate.release'
 
+
+release {
+    git {
+        requireBranch = ''
+    }
+}
+
 allprojects {
     apply plugin: 'jacoco'
     apply plugin: 'base'
@@ -35,6 +42,7 @@ allprojects {
     tasks.withType(JavaCompile) {
         options.encoding = 'UTF-8'
     }
+
 }
 
 subprojects {
@@ -410,4 +418,4 @@ wrapper {
     gradleVersion "4.2.1"
 }
 
-build.dependsOn project.getSubprojects().collect({it.getTasks().getByName("build")})
+build.dependsOn project.getSubprojects().collect({ it.getTasks().getByName("build") })
