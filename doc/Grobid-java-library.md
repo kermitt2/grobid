@@ -16,35 +16,14 @@ GROBID releases are uploaded on the [grobid bintray](https://bintray.com/rookies
 You need to add the following snippet in your pom.xml in order to configure it:
 
 ```xml
-    <profiles>
-            <profile>
-                <repositories>
-                    <repository>
-                        <snapshots>
-                            <enabled>false</enabled>
-                        </snapshots>
-                        <id>bintray-rookies-maven</id>
-                        <name>bintray</name>
-                        <url>https://dl.bintray.com/rookies/maven</url>
-                    </repository>
-                </repositories>
-                <pluginRepositories>
-                    <pluginRepository>
-                        <snapshots>
-                            <enabled>false</enabled>
-                        </snapshots>
-                        <id>bintray-rookies-maven</id>
-                        <name>bintray-plugins</name>
-                        <url>https://dl.bintray.com/rookies/maven</url>
-                    </pluginRepository>
-                </pluginRepositories>
-                <id>bintray</id>
-            </profile>
-        </profiles>
-        <activeProfiles>
-            <activeProfile>bintray</activeProfile>
-        </activeProfiles>
-    </settings>
+    <repository>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <id>bintray-rookies-maven</id>
+        <name>bintray</name>
+        <url>https://dl.bintray.com/rookies/maven</url>
+    </repository>               
 ```
   
 
