@@ -48,7 +48,7 @@ RUN unzip -o /opt/grobid-service-${GROBID_VERSION}.zip -d /opt/grobid && \
 RUN unzip /opt/grobid-home-${GROBID_VERSION}.zip -d /opt/grobid && \
     mkdir -p /opt/grobid/grobid-home/tmp
 
-# Workaround for version 0.5.0
+# Workaround for version 0.5.1
 #RUN mkdir /opt/grobid/grobid-service/config
 #ADD ./grobid-service/config /opt/grobid/grobid-service/config
 
