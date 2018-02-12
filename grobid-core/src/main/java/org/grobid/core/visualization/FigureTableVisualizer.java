@@ -46,22 +46,27 @@ public class FigureTableVisualizer {
 
     public static void main(String[] args) {
         try {
+//            File input = new File("/Users/zholudev/Work/temp/figureExtraction2018/satPdfs/1.pdf");
+
+
 //            File input = new File("/Work/temp/context/coords/1.pdf");
-//            File input = new File("/Work/temp/figureExtraction/newtest/1.pdf");
-//            File input = new File("/Work/temp/figureExtraction/newtest/2.pdf");
+            File input = new File("/Work/temp/figureExtraction/newtest/1.pdf");
+//            File input = new File("/Work/temp/figureExtraction/newtest/2.pdf"); // here some images are not extracted
 //            File input = new File("/Work/temp/figureExtraction/5.pdf");
 //            File input = new File("/Work/temp/figureExtraction/vector/6.pdf");
 
 //            File input = new File("/Users/zholudev/Downloads/AS-134079286616064@1408978401811_content_1.pdf");
-            File input = new File("/Users/zholudev/Downloads/AS-411011216625664@1475004118387_content_1.pdf");
+//            File input = new File("/Users/zholudev/Work/temp/figureExtraction/1.pdf");
 
 //
 //
+// File input = new File("/Users/zholudev/Downloads/AS1670507774730271416839417556_content_1.pdf");
 // File input = new File("/Users/zholudev/Downloads/AS-322050973995010@1453794344041_content_1.pdf"); //separate blocks for 1 caption
 //            File input = new File("/Users/zholudev/Downloads/AS-327630265044992@1455124550118_content_1.pdf");
 //            File input = new File("/Work/temp/images/pdf_image_extraction_results/Synaptotagmin 11 interacts with components of the RNA-induced (2)/Synaptotagmin 11 interacts with components of the RNA-induced (2).pdf"); //double caption attached
 
 //            File input = new File("/Work/temp/images/pdf_image_extraction_results/Synaptotagmin 11 interacts with components of the RNA-induced (2)/Synaptotagmin 11 interacts with components of the RNA-induced (2).pdf");
+
 
 
 //            File input = new File("/Users/zholudev/Downloads/AS-102952320634884@1401557154467_content_1.pdf");
@@ -201,13 +206,14 @@ public class FigureTableVisualizer {
                 .build();
 
 
-        DocumentSource documentSource = DocumentSource.fromPdf(input);
+        DocumentSource documentSource = DocumentSource.fromPdf(input, -1, -1, true, false, false);
 
         File pdf2xmlDirectory = new File(contentDir, "pdf2xml");
         pdf2xmlDirectory.mkdirs();
         FileUtils.copyFileToDirectory(input, contentDir);
         FileUtils.copyFile(documentSource.getXmlFile(), new File(pdf2xmlDirectory, "input.xml"));
         FileUtils.copyDirectory(new File(documentSource.getXmlFile().getAbsolutePath() + "_data"), new File(pdf2xmlDirectory, documentSource.getXmlFile().getName() + "_data"));
+
         System.out.println(documentSource.getXmlFile());
 
         blacklistedPages = getVectorGraphicPages(pdf2xmlDirectory);

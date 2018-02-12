@@ -60,11 +60,13 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
@@ -513,7 +515,7 @@ public class Document implements Serializable {
         for (Integer pageNum : keys) {
 
             Collection<GraphicObject> elements = imagesPerPage.get(pageNum);
-            if (elements.size() > 10) {
+            if (elements.size() > 20) {
                 imagesPerPage.removeAll(pageNum);
                 Engine.getCntManager().i(FigureCounters.TOO_MANY_FIGURES_PER_PAGE);
             } else {
@@ -1602,6 +1604,7 @@ public class Document implements Serializable {
                     if (bestGo != null) {
                         bestGo.setUsed(true);
                         figure.setGraphicObjects(Lists.newArrayList(bestGo));
+                        Engine.getCntManager().i("FigureCounters", "ASSIGNED_GRAPHICS_TO_FIGURES");
                     }
 
                 }
@@ -1654,6 +1657,7 @@ public class Document implements Serializable {
                             recalculateVectorBoxCoords(figure, bestGo);
                         }
                         figure.setGraphicObjects(Lists.newArrayList(bestGo));
+                        Engine.getCntManager().i("FigureCounters", "ASSIGNED_GRAPHICS_TO_FIGURES");
                     }
 
                 }
@@ -1662,6 +1666,69 @@ public class Document implements Serializable {
 
         }
 
+
+
+        // special case, when we didn't detect figures, but there is a nice figure on this page
+        int maxPage = pages.size();
+        for (int pageNum = 1; pageNum <= maxPage; pageNum++) {
+            if (!figureMap.containsKey(pageNum)) {
+
+                ArrayList<GraphicObject> it = Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.GRAPHIC_OBJECT_PREDICATE));
+
+                List<GraphicObject> vectorBoxGraphicObjects = Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.VECTOR_BOX_GRAPHIC_OBJECT_PREDICATE));
+
+
+                List<GraphicObject> graphicObjects = new ArrayList<>();
+
+                l:
+                for (GraphicObject bgo : it) {
+                    for (GraphicObject vgo : vectorBoxGraphicObjects) {
+                        if (bgo.getBoundingBox().intersect(vgo.getBoundingBox())) {
+                            continue l;
+                        }
+                    }
+                    graphicObjects.add(bgo);
+                }
+
+                graphicObjects.addAll(vectorBoxGraphicObjects);
+
+
+                if (graphicObjects.size() == it.size()) {
+                    for (GraphicObject o : graphicObjects) {
+
+                        if (badStandaloneFigure(o)) {
+                            Engine.getCntManager().i(FigureCounters.SKIPPED_BAD_STANDALONE_FIGURES);
+                            continue;
+                        }
+
+                        Figure f = new Figure();
+                        f.setPage(pageNum);
+                        f.setGraphicObjects(Collections.singletonList(o));
+
+                        figures.add(f);
+                        Engine.getCntManager().i("FigureCounters", "STANDALONE_FIGURES");
+                        LOGGER.info("Standalone figure on page: " + pageNum);
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    private boolean badStandaloneFigure(GraphicObject o) {
+        if (o.getBoundingBox().area() < 50000) {
+            Engine.getCntManager().i(FigureCounters.SKIPPED_SMALL_STANDALONE_FIGURES);
+            return true;
+        }
+
+        if (o.getBoundingBox().area() / pages.get(o.getPage() - 1).getMainArea().area() > 0.4) {
+            Engine.getCntManager().i(FigureCounters.SKIPPED_SMALL_STANDALONE_FIGURES);
+            return true;
+        }
+
+
+        return false;
     }
 
     protected boolean isValidBitmapGraphicObject(GraphicObject go) {
@@ -1838,79 +1905,79 @@ public class Document implements Serializable {
         }
     }
 
-    public static void setConnectedGraphics(Figure figure,
-                                            List<LayoutToken> tokenizations,
-                                            Document doc) {
-        try {
-            List<GraphicObject> localImages = null;
-            // set the intial figure area based on its layout tokens
-            LayoutToken startToken = figure.getStartToken();
-            LayoutToken endToken = figure.getEndToken();
-            int start = figure.getStart();
-            int end = figure.getEnd();
-
-            double maxRight = 0.0; // right border of the figure
-            double maxLeft = 10000.0; // left border of the figure
-            double maxUp = 10000.0; // upper border of the figure
-            double maxDown = 0.0; // bottom border of the figure
-            for (int i = start; i <= end; i++) {
-                LayoutToken current = tokenizations.get(i);
-                if ((figure.getPage() == -1) && (current.getPage() != -1))
-                    figure.setPage(current.getPage());
-                if ((current.x >= 0.0) && (current.x < maxLeft))
-                    maxLeft = current.x;
-                if ((current.y >= 0.0) && (current.y < maxUp))
-                    maxUp = current.y;
-                if ((current.x >= 0.0) && (current.x + current.width > maxRight))
-                    maxRight = current.x + current.width;
-                if ((current.y >= 0.0) && (current.y + current.height > maxDown))
-                    maxDown = current.y + current.height;
-            }
-
-            figure.setX(maxLeft);
-            figure.setY(maxUp);
-            figure.setWidth(maxRight - maxLeft);
-            figure.setHeight(maxDown - maxUp);
-
-            // attach connected graphics based on estimated figure area
-            for (GraphicObject image : doc.getImages()) {
-                if (image.getType() == GraphicObjectType.VECTOR)
-                    continue;
-                if (figure.getPage() != image.getPage())
-                    continue;
-//System.out.println(image.toString());
-                if (((Math.abs((image.getY() + image.getHeight()) - figure.getY()) < MIN_DISTANCE) ||
-                        (Math.abs(image.getY() - (figure.getY() + figure.getHeight())) < MIN_DISTANCE)) //||
-                    //( (Math.abs((image.x+image.width) - figure.getX()) < MIN_DISTANCE) ||
-                    //(Math.abs(image.x - (figure.getX()+figure.getWidth())) < MIN_DISTANCE) )
-                        ) {
-                    // the image is at a distance of at least MIN_DISTANCE from one border 
-                    // of the block on the vertical/horizontal axis
-                    if (localImages == null)
-                        localImages = new ArrayList<GraphicObject>();
-                    localImages.add(image);
-                }
-            }
-
-            // re-evaluate figure area with connected graphics
-            if (localImages != null) {
-                for (GraphicObject image : localImages) {
-                    if (image.getX() < maxLeft)
-                        maxLeft = image.getX();
-                    if (image.getY() < maxUp)
-                        maxUp = image.getY();
-                    if (image.getX() + image.getWidth() > maxRight)
-                        maxRight = image.getX() + image.getWidth();
-                    if (image.getY() + image.getHeight() > maxDown)
-                        maxDown = image.getY() + image.getHeight();
-                }
-            }
-
-            figure.setGraphicObjects(localImages);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void setConnectedGraphics(Figure figure,
+//                                            List<LayoutToken> tokenizations,
+//                                            Document doc) {
+//        try {
+//            List<GraphicObject> localImages = null;
+//            // set the intial figure area based on its layout tokens
+//            LayoutToken startToken = figure.getStartToken();
+//            LayoutToken endToken = figure.getEndToken();
+//            int start = figure.getStart();
+//            int end = figure.getEnd();
+//
+//            double maxRight = 0.0; // right border of the figure
+//            double maxLeft = 10000.0; // left border of the figure
+//            double maxUp = 10000.0; // upper border of the figure
+//            double maxDown = 0.0; // bottom border of the figure
+//            for (int i = start; i <= end; i++) {
+//                LayoutToken current = tokenizations.get(i);
+//                if ((figure.getPage() == -1) && (current.getPage() != -1))
+//                    figure.setPage(current.getPage());
+//                if ((current.x >= 0.0) && (current.x < maxLeft))
+//                    maxLeft = current.x;
+//                if ((current.y >= 0.0) && (current.y < maxUp))
+//                    maxUp = current.y;
+//                if ((current.x >= 0.0) && (current.x + current.width > maxRight))
+//                    maxRight = current.x + current.width;
+//                if ((current.y >= 0.0) && (current.y + current.height > maxDown))
+//                    maxDown = current.y + current.height;
+//            }
+//
+//            figure.setX(maxLeft);
+//            figure.setY(maxUp);
+//            figure.setWidth(maxRight - maxLeft);
+//            figure.setHeight(maxDown - maxUp);
+//
+//            // attach connected graphics based on estimated figure area
+//            for (GraphicObject image : doc.getImages()) {
+//                if (image.getType() == GraphicObjectType.VECTOR)
+//                    continue;
+//                if (figure.getPage() != image.getPage())
+//                    continue;
+////System.out.println(image.toString());
+//                if (((Math.abs((image.getY() + image.getHeight()) - figure.getY()) < MIN_DISTANCE) ||
+//                        (Math.abs(image.getY() - (figure.getY() + figure.getHeight())) < MIN_DISTANCE)) //||
+//                    //( (Math.abs((image.x+image.width) - figure.getX()) < MIN_DISTANCE) ||
+//                    //(Math.abs(image.x - (figure.getX()+figure.getWidth())) < MIN_DISTANCE) )
+//                        ) {
+//                    // the image is at a distance of at least MIN_DISTANCE from one border
+//                    // of the block on the vertical/horizontal axis
+//                    if (localImages == null)
+//                        localImages = new ArrayList<GraphicObject>();
+//                    localImages.add(image);
+//                }
+//            }
+//
+//            // re-evaluate figure area with connected graphics
+//            if (localImages != null) {
+//                for (GraphicObject image : localImages) {
+//                    if (image.getX() < maxLeft)
+//                        maxLeft = image.getX();
+//                    if (image.getY() < maxUp)
+//                        maxUp = image.getY();
+//                    if (image.getX() + image.getWidth() > maxRight)
+//                        maxRight = image.getX() + image.getWidth();
+//                    if (image.getY() + image.getHeight() > maxDown)
+//                        maxDown = image.getY() + image.getHeight();
+//                }
+//            }
+//
+//            figure.setGraphicObjects(localImages);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public void produceStatistics() {
         // document lenght in characters
