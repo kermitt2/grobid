@@ -81,7 +81,7 @@ When using Grobid, you have to initiate a context with the path to the Grobid re
 		String pGrobidHome = "/Users/lopez/grobid/grobid-home";
 
 	    // The GrobidHomeFinder can be instantiate without parameters to verify the grobid home in the standard
-	    // location (classpath, ../grobid-home, ../../grobid-home or in the environment variable GROBID_HOME 
+	    // location (classpath, ../grobid-home, ../../grobid-home)
 	    
 	    // If the location is customised: 
 	    GrobidHomeFinder grobidHomeFinder = new GrobidHomeFinder(Arrays.asList(pGrobidHome));		
