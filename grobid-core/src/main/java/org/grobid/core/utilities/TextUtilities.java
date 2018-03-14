@@ -1393,7 +1393,8 @@ public class TextUtilities {
      */
     public static boolean isAllUpperCaseOrDigitOrDot(String text) {
         for (int i = 0; i < text.length(); i++) {
-            if (!Character.isUpperCase(text.charAt(i)) && !Character.isDigit(text.charAt(i))) {
+            final char charAt = text.charAt(i);
+            if (!Character.isUpperCase(charAt) && !Character.isDigit(charAt) && charAt != '.') {
                 return false;
             }
         }
