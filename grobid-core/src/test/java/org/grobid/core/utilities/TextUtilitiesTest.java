@@ -368,4 +368,14 @@ public class TextUtilitiesTest extends EngineTest {
     }
 
 
+
+    @Test
+    public void testIsAllUpperCaseOrDigitOrDot() throws Exception {
+        assertThat(TextUtilities.isAllUpperCaseOrDigitOrDot("this"), is(false));
+        assertThat(TextUtilities.isAllUpperCaseOrDigitOrDot("UPPERCASE"), is(true));
+        assertThat(TextUtilities.isAllUpperCaseOrDigitOrDot("."), is(true));
+        assertThat(TextUtilities.isAllUpperCaseOrDigitOrDot("123456"), is(true));
+        assertThat(TextUtilities.isAllUpperCaseOrDigitOrDot("P.C.T."), is(true));
+        assertThat(TextUtilities.isAllUpperCaseOrDigitOrDot("P.C,T."), is(false));
+    }
 }
