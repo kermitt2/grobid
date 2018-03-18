@@ -58,6 +58,9 @@ public class AnnotationUtil {
     }
 
     public static void annotatePage(PDDocument document, String coords, int seed, int lineWidth) throws IOException {
+        if (coords == null) {
+            return;
+        }
         System.out.println("Annotating for coordinates: " + coords);
 
         BoundingBox box = getBoundingBoxForPdf(document, coords);
@@ -148,6 +151,9 @@ public class AnnotationUtil {
     }
 
     public static String getCoordString(BoundingBox b) {
+        if (b == null) {
+            return null;
+        }
         return b.getPage() + "," + b.getX() + "," + b.getY() + "," + b.getWidth() + "," + b.getHeight();
     }
 

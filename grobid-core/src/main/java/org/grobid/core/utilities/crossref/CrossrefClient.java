@@ -1,5 +1,6 @@
 package org.grobid.core.utilities.crossref;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Map;
@@ -9,6 +10,8 @@ import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.Future;
 import java.util.concurrent.ExecutionException;
@@ -25,7 +28,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author Vincent Kaestle, Patrice
  */
-public class CrossrefClient {
+public class CrossrefClient implements Closeable {
 	public static final Logger logger = LoggerFactory.getLogger(CrossrefRequestTask.class);
 	
 	private static volatile CrossrefClient instance;
@@ -41,8 +44,9 @@ public class CrossrefClient {
 	private volatile Map<Long, List<Future<?>>> futures = new HashMap<>();
 
 	public static CrossrefClient getInstance() {
-        if (instance == null)
+        if (instance == null) {
 			getNewInstance();
+		}
         return instance;
     }
 
@@ -58,7 +62,11 @@ public class CrossrefClient {
      * Hidden constructor
      */
     private CrossrefClient() {
-		this.executorService = Executors.newCachedThreadPool();
+		this.executorService = Executors.newCachedThreadPool(r -> {
+            Thread t = Executors.defaultThreadFactory().newThread(r);
+            t.setDaemon(true);
+            return t;
+        });
 		this.timedSemaphore = null;
 		this.futures = new HashMap<>();
 		setLimits(1, 1000);
@@ -73,7 +81,15 @@ public class CrossrefClient {
 		if ((this.timedSemaphore == null)
 			|| (this.timedSemaphore.getLimit() != iterations)
 			|| (this.timedSemaphore.getPeriod() != interval)) {
-			this.timedSemaphore = new TimedSemaphore(interval, TimeUnit.MILLISECONDS, iterations);
+			// custom executor to prevent stopping JVM from exiting
+			this.timedSemaphore = new TimedSemaphore(new ScheduledThreadPoolExecutor(1, new ThreadFactory() {
+				@Override
+				public Thread newThread(Runnable r) {
+					Thread t = Executors.defaultThreadFactory().newThread(r);
+					t.setDaemon(true);
+					return t;
+				}
+			}), interval, TimeUnit.MILLISECONDS, iterations);
 			//printLog(null, "!!!!!!!!!!!!!!!!!!!!!!! Setting timedSemaphore limits... " + iterations + " / " + interval);
 		}
 	}
@@ -155,6 +171,11 @@ public class CrossrefClient {
 				logger.error("CrossRef request execution fails");
 			}
 		}
-	} 
-	
+	}
+
+
+	@Override
+	public void close() throws IOException {
+		timedSemaphore.shutdown();
+	}
 }
