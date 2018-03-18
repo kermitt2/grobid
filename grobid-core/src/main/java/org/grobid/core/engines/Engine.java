@@ -42,6 +42,7 @@ import org.grobid.core.utilities.Utilities;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.counters.impl.CntManagerFactory;
 
+import org.grobid.core.utilities.crossref.CrossrefClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -1167,6 +1168,7 @@ public class Engine implements Closeable {
 
     @Override
     public synchronized void close() throws IOException {
+        CrossrefClient.getInstance().close();
         parsers.close();
     }
 

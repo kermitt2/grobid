@@ -5,6 +5,8 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import nu.xom.Attribute;
 import nu.xom.Element;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.layout.BoundingBox;
@@ -212,9 +214,7 @@ public class Figure {
     }
 
     public String toTEI(GrobidAnalysisConfig config) {
-        if (((header == null) || (header.length() == 0)) &&
-                ((caption == null) || (caption.length() == 0))
-                ) {
+        if (StringUtils.isEmpty(header) && StringUtils.isEmpty(caption) && CollectionUtils.isEmpty(graphicObjects)) {
             return null;
         }
         Element figureElement = XmlBuilderUtils.teiElement("figure");
