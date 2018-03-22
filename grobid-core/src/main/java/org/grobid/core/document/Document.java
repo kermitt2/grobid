@@ -38,6 +38,7 @@ import org.grobid.core.sax.PDF2XMLSaxHandler;
 import org.grobid.core.sax.PDF2XMLAnnotationSaxHandler;
 import org.grobid.core.sax.PDF2XMLOutlineSaxHandler;
 
+import org.grobid.core.sax.PDFALTOSaxHandler;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.ElementCounter;
 import org.grobid.core.utilities.LayoutTokensUtil;
@@ -355,7 +356,7 @@ public class Document implements Serializable {
         // having those characters in the input XML by cleaning it first
 
         images = new ArrayList<>();
-        PDF2XMLSaxHandler parser = new PDF2XMLSaxHandler(this, images);
+        PDFALTOSaxHandler parser = new PDFALTOSaxHandler(this, images);
         // we set possibly the particular analyzer to be used for tokenization of the PDF elements
         if (config.getAnalyzer() != null)
            parser.setAnalyzer(config.getAnalyzer());
