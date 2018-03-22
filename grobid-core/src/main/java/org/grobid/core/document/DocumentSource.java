@@ -74,8 +74,10 @@ public class DocumentSource {
     private String getPdf2xmlCommand(boolean withImage, boolean withAnnotations, boolean withOutline) {
         StringBuilder pdf2xml = new StringBuilder();
         pdf2xml.append(GrobidProperties.getPdf2XMLPath().getAbsolutePath());
+//        pdf2xml.append(
+//            GrobidProperties.isContextExecutionServer() ? File.separator + "pdftoxml_server" : File.separator + "pdftoxml");
         pdf2xml.append(
-            GrobidProperties.isContextExecutionServer() ? File.separator + "pdftoxml_server" : File.separator + "pdftoxml");
+            GrobidProperties.isContextExecutionServer() ? File.separator + "pdftoxml_server" : File.separator + "pdfalto");
 		pdf2xml.append(" -blocks -noImageInline -fullFontName ");
 
         if (!withImage) {
