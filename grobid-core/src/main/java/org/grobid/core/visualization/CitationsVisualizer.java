@@ -7,15 +7,15 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.cos.COSArray;
 import org.apache.pdfbox.cos.COSDictionary;
 import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.exceptions.COSVisitorException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.graphics.color.PDGamma;
-import org.apache.pdfbox.pdmodel.interactive.action.type.PDActionURI;
-import org.apache.pdfbox.pdmodel.interactive.action.type.PDActionGoTo;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.graphics.color.PDColor;
+import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceRGB;
+import org.apache.pdfbox.pdmodel.interactive.action.PDActionURI;
+import org.apache.pdfbox.pdmodel.interactive.action.PDActionGoTo;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDDestination;
@@ -71,7 +71,7 @@ public class CitationsVisualizer {
      *  annotations, if null the bib. ref. annotations are not associated to external URL.
      */
     public static PDDocument annotatePdfWithCitations(PDDocument document, Document teiDoc,
-            List<String> resolvedBibRefUrl) throws IOException, COSVisitorException, XPathException {
+            List<String> resolvedBibRefUrl) throws IOException, XPathException {
         String tei = teiDoc.getTei();
         //System.out.println(tei);
         int totalBib = 0;
@@ -168,16 +168,16 @@ public class CitationsVisualizer {
 		String[] split = coords.split(",");
 
         Long pageNum = Long.valueOf(split[0], 10) - 1;
-        PDPage page = (PDPage) document.getDocumentCatalog().getAllPages().get(pageNum.intValue());
+        PDPage page = (PDPage) document.getDocumentCatalog().getPages().get(pageNum.intValue());
         PDRectangle mediaBox = page.getMediaBox();
         if (mediaBox == null) {
-            mediaBox = page.findMediaBox();
+            //mediaBox = page.findMediaBox();
             // this will look for the main media box of the page up in the PDF element hierarchy
-            if (mediaBox == null) {
+            //if (mediaBox == null) {
                 // we tried our best given PDFBox
                 LOGGER.warn("Media box for page " + pageNum.intValue() + " not found.");
                 return;
-            }
+            //}
         }
  
         float height = mediaBox.getHeight();
@@ -212,7 +212,7 @@ public class CitationsVisualizer {
         //white rectangle border color (ideally, should be transparent)
         COSArray white = new COSArray();
         white.setFloatArray(new float[]{1f, 1f, 1f});
-        txtLink.setColour(new PDGamma(white));
+        txtLink.setColor(new PDColor(white, PDDeviceRGB.INSTANCE));
         txtLink.setReadOnly(true);
         txtLink.setHighlightMode(PDAnnotationLink.HIGHLIGHT_MODE_PUSH);
 

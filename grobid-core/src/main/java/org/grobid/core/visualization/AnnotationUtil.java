@@ -1,13 +1,13 @@
 package org.grobid.core.visualization;
 
 import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.exceptions.COSVisitorException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.graphics.color.PDGamma;
-import org.apache.pdfbox.pdmodel.interactive.action.type.PDActionURI;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.graphics.color.PDColor;
+import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceRGB;
+import org.apache.pdfbox.pdmodel.interactive.action.PDActionURI;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 import org.grobid.core.layout.BoundingBox;
@@ -27,7 +27,7 @@ public class AnnotationUtil {
         String[] split = coords.split(",");
 
         Long pageNum = Long.valueOf(split[0], 10) - 1;
-        PDPage page = (PDPage) document.getDocumentCatalog().getAllPages().get(pageNum.intValue());
+        PDPage page = (PDPage) document.getDocumentCatalog().getPages().get(pageNum.intValue());
 
         PDRectangle mediaBox = page.getMediaBox() != null ? page.getMediaBox() : page.getArtBox();
         if (mediaBox == null) {
@@ -69,7 +69,7 @@ public class AnnotationUtil {
             return;
         }
 
-        PDPage page = (PDPage) document.getDocumentCatalog().getAllPages().get(box.getPage());
+        PDPage page = (PDPage) document.getDocumentCatalog().getPages().get(box.getPage());
         float annX = (float) box.getX();
         float annY = (float) box.getY();
         float annRightX = (float) box.getX2();
@@ -99,7 +99,7 @@ public class AnnotationUtil {
 
 //        linkColor.setFloatArray(new float[]{r.nextInt(128) + 127, r.nextInt(255), r.nextInt(255)});
         linkColor.setFloatArray(new float[]{224, 9, 56});
-        txtLink.setColour(new PDGamma(linkColor));
+        txtLink.setColor(new PDColor(linkColor, PDDeviceRGB.INSTANCE));
         txtLink.setReadOnly(true);
 
         //so that
@@ -161,9 +161,9 @@ public class AnnotationUtil {
         return page + "," + x + "," + y + "," + w + "," + h;
     }
 
-    public static void main(String[] args) throws IOException, COSVisitorException {
+    public static void main(String[] args) throws IOException {
 
-        final PDDocument document = PDDocument.load("/Users/zholudev/Downloads/0711.4671.pdf");
+        final PDDocument document = PDDocument.load(new File("/Users/zholudev/Downloads/0711.4671.pdf"));
         String[] coords = new String[]{
                 "33,185.90,529.23,88.36,11.97",
                 "33,279.29,529.23,56.05,11.97",
