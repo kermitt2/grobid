@@ -152,7 +152,7 @@ public class FullTextParser extends AbstractParser {
 				//LOGGER.info(rese);
 				// we apply now the figure and table models based on the fulltext labeled output
 				figures = processFigures(rese, layoutTokenization.getTokenization(), doc);
-				tables = processTables(rese, layoutTokenization.getTokenization(), doc);
+				tables = processTables(rese, layoutTokenization.getTokenization(), doc, documentSource.getPdfFile());
 				equations = processEquations(rese, layoutTokenization.getTokenization(), doc);
 			} else {
 				LOGGER.debug("Fulltext model: The featured body is empty");
@@ -1776,7 +1776,8 @@ public class FullTextParser extends AbstractParser {
      */
     private List<Table> processTables(String rese,
 									List<LayoutToken> tokenizations,
-									Document doc) {
+									Document doc,
+									File pdfFile) {
 		List<Table> results = new ArrayList<>();
 		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
 
@@ -1785,7 +1786,8 @@ public class FullTextParser extends AbstractParser {
 			List<LayoutToken> tokenizationTable = cluster.concatTokens();
 			Table result = parsers.getTableParser().processing(
 					tokenizationTable,
-					cluster.getFeatureBlock()
+					cluster.getFeatureBlock(),
+					pdfFile
 			);
 
 			SortedSet<Integer> blockPtrs = new TreeSet<>();
