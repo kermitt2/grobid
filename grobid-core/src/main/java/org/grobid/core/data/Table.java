@@ -8,6 +8,7 @@ import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.layout.BoundingBox;
+import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LayoutTokensUtil;
@@ -41,6 +42,16 @@ public class Table extends Figure {
     	header = new StringBuilder();
     	content = new StringBuilder();
     	label = new StringBuilder();
+    }
+    
+    private double headerHeight = 0;
+    
+    public void setHeaderHeight(double height) {
+    	headerHeight = height;
+    }
+    
+    public double getHeaderHeight() {
+    	return headerHeight;
     }
 
 	@Override
@@ -134,10 +145,11 @@ public class Table extends Figure {
     private String[][] tabulaRes = null;
     
     public void tabulaExtract(File pdfFile) throws IOException {
+    	
     	PDDocument document = PDDocument.load(pdfFile);
     	ObjectExtractor objectExtractor = new ObjectExtractor(document);
     	technology.tabula.Page page = objectExtractor.extract(getPage());
-    	technology.tabula.Page pageArea = page.getArea((float)getY(), (float)getX(), (float)(getY()+getHeight()), (float)(getX()+getWidth()));
+    	technology.tabula.Page pageArea = page.getArea((float)(getY()+getHeaderHeight()), (float)getX(), (float)(getY()+getHeight()), (float)(getX()+getWidth()));
     	
     	BasicExtractionAlgorithm bea = new BasicExtractionAlgorithm();
     	technology.tabula.Table table = bea.extract(pageArea).get(0);

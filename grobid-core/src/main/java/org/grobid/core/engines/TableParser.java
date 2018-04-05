@@ -90,6 +90,8 @@ public class TableParser extends AbstractParser {
             } else if (clusterLabel.equals(TBL_CONTENT)) {
                 table.appendContent(clusterContent);
                 table.getContentTokens().addAll(tokens);
+                BoundingBox contentBBox = BoundingBoxCalculator.calculateOneBox(tokens, true);
+                table.setHeaderHeight(contentBBox.getY()-bbox.getY());
             } else {
                 LOGGER.error("Warning: unexpected table model label - " + clusterLabel + " for " + clusterContent);
             }
