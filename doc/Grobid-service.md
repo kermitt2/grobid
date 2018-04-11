@@ -2,7 +2,7 @@
 
 The GROBID Web API provides a simple and efficient way to use the tool. A service console is available to test GROBID in a human friendly manner. For production and benchmarking, we strongly recommand to use this web service mode on a multi-core machine and to avoid running GROBID in the batch mode.  
 
-## Start the server
+## Start the server with Gradle
 Go under the `grobid/` main directory. Be sure that the GROBID project is built, see [Install GROBID](Install-Grobid.md).
 
 The following command will start the server on the default port __8070__:
@@ -10,11 +10,37 @@ The following command will start the server on the default port __8070__:
 > ./gradlew run
 ```
 
+(the Gradle process will hang at 88%, this is normal because the web service is ran sharing the same JVM as Gradle)
+
+## Install and run the service as standalone application
+
+You could also build and install the service as a standalone service (let's supposed the destination directory is grobid-installation) 
+
+```bash 
+> ./gradlew clean assemble 
+> cd ..
+> mkdir grobid-installation
+> cd grobid-installation
+> unzip ../grobid/grobid-service/build/distributions/grobid-service-0.6.0-SNAPSHOT.zip
+mv grobid-service-0.6.0-SNAPSHOT grobid-service
+> unzip ../grobid/grobid-home/build/distributions/grobid-home-0.6.0-SNAPSHOT.zip 
+> ./grobid-service/bin/grobid-service server grobid-service/config/config.yaml
+```
+
+The directory `grobid-installation` should have the following structure: 
+```
+.
+├── grobid-home
+└── grobid-service
+```
+
+## Service checks 
 You can check whether the service is up and running by opening the following URL: 
 
 * `http://yourhost:8070/api/version` will return you the current version
 
 * `http://yourhost:8070/api/isalive` will return true/false whether the service is up and running
+
 
 ## Configure the server
 
