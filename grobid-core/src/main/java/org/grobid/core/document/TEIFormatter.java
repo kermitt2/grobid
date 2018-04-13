@@ -1052,8 +1052,9 @@ public class TEIFormatter {
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
             Engine.getCntManager().i(clusterLabel);
 
-            String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+
             if (clusterLabel.equals(TaggingLabels.SECTION)) {
+                String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
                 curDiv = teiElement("div");
                 Element head = teiElement("head");
                 // section numbers
@@ -1095,12 +1096,15 @@ public class TEIFormatter {
                     }
                 }
             } else if (clusterLabel.equals(TaggingLabels.ITEM)) {
+                String clusterContent = LayoutTokensUtil.normalizeText(cluster.concatTokens());
                 curDiv.appendChild(teiElement("item", clusterContent));
             } else if (clusterLabel.equals(TaggingLabels.OTHER)) {
+                String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
                 Element note = teiElement("note", clusterContent);
                 note.addAttribute(new Attribute("type", "other"));
                 curDiv.appendChild(note);
             } else if (clusterLabel.equals(TaggingLabels.PARAGRAPH)) {
+                String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
                 if (isNewParagraph(lastClusterLabel, curParagraph)) {
                     curParagraph = teiElement("p");
                     curDiv.appendChild(curParagraph);

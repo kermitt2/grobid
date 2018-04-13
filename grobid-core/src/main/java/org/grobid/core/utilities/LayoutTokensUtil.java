@@ -53,7 +53,7 @@ public class LayoutTokensUtil {
     }
 
     public static String normalizeDehyphenizeText(List<LayoutToken> tokens) {
-        return StringUtils.normalizeSpace(TextUtilities.dehyphenize(toText(tokens)).replace("\n", " "));
+        return StringUtils.normalizeSpace(LayoutTokensUtil.toText(TextUtilities.dehyphenize(tokens)).replace("\n", " "));
     }
 
     public static String toText(List<LayoutToken> tokens) {
@@ -64,41 +64,7 @@ public class LayoutTokensUtil {
         return t.getPage() == -1 || t.getWidth() <= 0;
     }
 
-    @Deprecated
-    // the same method in TextUtilities should be used
-    public static String toTextDehyphenized(List<LayoutToken> tokens) {
-
-        PeekingIterator<LayoutToken> it = Iterators.peekingIterator(tokens.iterator());
-        StringBuilder sb = new StringBuilder();
-        boolean normalized = false;
-
-        LayoutToken prev = null;
-        while (it.hasNext()) {
-            LayoutToken cur = it.next();
-            //the current token is dash, next is new line, and previous one is some sort of word
-            if (cur.isNewLineAfter() && cur.getText().equals("-") && prev != null && !prev.getText().trim().isEmpty()) {
-                //skipping new line
-                it.next();
-                if (it.hasNext()) {
-                    LayoutToken next = it.next();
-                    if (next.getText().equals("conjugated") || prev.getText().equals("anti")) {
-                        sb.append("-");
-                    }
-                    sb.append(next);
-                    normalized = true;
-                }
-            } else {
-                sb.append(cur.getText());
-            }
-            prev = cur;
-        }
-
-        /*if (normalized) {
-            System.out.println("NORMALIZED: " + sb.toString());
-        }*/
-        return sb.toString();
-    }
-
+    
     public static boolean spaceyToken(String tok) {
         /*return (tok.equals(" ")
                 || tok.equals("\u00A0")
@@ -209,7 +175,7 @@ public class LayoutTokensUtil {
 
     public static List<LayoutToken> dehyphenize(List<LayoutToken> tokens) {
         PeekingIterator<LayoutToken> it = Iterators.peekingIterator(tokens.iterator());
-        List<LayoutToken> result = new ArrayList<LayoutToken>();
+        List<LayoutToken> result = new ArrayList<>();
         boolean normalized = false;
 
         LayoutToken prev = null;

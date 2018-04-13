@@ -1,10 +1,8 @@
 package org.grobid.core.utilities;
 
-import com.google.common.collect.Iterators;
-import com.google.common.collect.PeekingIterator;
 import org.apache.commons.lang3.StringUtils;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.lexicon.Lexicon;
 
@@ -17,8 +15,6 @@ import java.text.NumberFormat;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static org.apache.commons.lang3.StringUtils.trim;
 
 /**
  * Class for holding static methods for text processing.
@@ -97,64 +93,125 @@ public class TextUtilities {
         return res;
     }
 
-    public static String dehyphenize(List<LayoutToken> tokens) {
-        PeekingIterator<LayoutToken> it = Iterators.peekingIterator(tokens.iterator());
-        StringBuilder sb = new StringBuilder();
-        boolean normalized = false;
+    public static List<LayoutToken> dehyphenize(List<LayoutToken> tokens) {
+        List<LayoutToken> output = new ArrayList<>();
 
-        LayoutToken prev = null;
-        while (it.hasNext()) {
-            LayoutToken cur = it.next();
-            //the current token is dash, next is new line, and previous one is some sort of word
-            if (cur.isNewLineAfter() && cur.getText().equals("-") && prev != null && !prev.getText().trim().isEmpty()) {
-                it.next();
-                if (it.hasNext()) {
-                    LayoutToken next = it.next();
-                    if (next.getText().equals("conjugated") || prev.getText().equals("anti")) {
-                        sb.append("-");
+        for (int i = 0; i < tokens.size(); i++) {
+            LayoutToken currentToken = tokens.get(i);
+            //the current token is dash checking what's around
+            if (currentToken.getText().equals("-")) {
+                if (doesRequireDehypenisation(tokens, i)) {
+                    //Cleanup eventual additional spaces before the hypen that have been already written to the output
+                    int z = output.size() - 1 ;
+                    while (z >= 0 && output.get(z).getText().equals(" ")) {
+                        String tokenString = output.get(z).getText();
+
+                        if (tokenString.equals(" ")) {
+                            output.remove(z);
+                        }
+                        z--;
                     }
-                    sb.append(StringUtils.trim(next.getText()));
-                    normalized = true;
+
+
+                    List<Integer> breakLines = new ArrayList<>();
+                    List<Integer> spaces = new ArrayList<>();
+
+                    int j = i + 1;
+                    while (j < tokens.size() && tokens.get(j).getText().equals(" ") || tokens.get(j).getText().equals("\n")) {
+                        String tokenString = tokens.get(j).getText();
+
+                        if (tokenString.equals("\n")) {
+                            breakLines.add(j);
+                        }
+                        if (tokenString.equals(" ")) {
+                            spaces.add(j);
+                        }
+                        j++;
+                    }
+                    i += breakLines.size() + spaces.size();
+                } else {
+                    output.add(currentToken);
+
+                    List<Integer> breakLines = new ArrayList<>();
+                    List<Integer> spaces = new ArrayList<>();
+
+                    int j = i + 1;
+                    while (j < tokens.size() && tokens.get(j).getText().equals("\n")) {
+                        String tokenString = tokens.get(j).getText();
+
+                        if (tokenString.equals("\n")) {
+                            breakLines.add(j);
+                        }
+                        j++;
+                    }
+                    i += breakLines.size() + spaces.size();
+
                 }
             } else {
-                sb.append(cur.getText());
+                output.add(currentToken);
             }
-            prev = cur;
+        }
+        return output;
+    }
+
+    /**
+     * Check if the current token (place i), or the hypen, needs to be removed or not.
+     * <p>
+     * It will check the tokens before and after. It will get to the next "non space" tokens and verify
+     * that it's a plain word. If it's not it's keeping the hypen.
+     * <p>
+     * TODO: add the check on the bounding box of the next token to see whether there is really a break line.
+     * TODO: What to do in case of a punctuation is found?
+     */
+    protected static boolean doesRequireDehypenisation(List<LayoutToken> tokens, int i) {
+        boolean forward = false;
+        boolean backward = false;
+
+        int j = i + 1;
+        int breakLine = 0;
+        while (j < tokens.size() && (tokens.get(j).getText().equals(" ") || tokens.get(j).getText().equals("\n"))) {
+            String tokenString = tokens.get(j).getText();
+
+            if (tokenString.equals("\n")) {
+                breakLine++;
+            }
+            j++;
         }
 
-        /*if (normalized) {
-            System.out.println("NORMALIZED: " + sb.toString());
-        }*/
-        return sb.toString();
+        if (breakLine == 0) {
+            return false;
+        }
+
+        Pattern bao = Pattern.compile("[a-z]+");
+
+        if(j < tokens.size()) {
+            Matcher matcher = bao.matcher(tokens.get(j).getText());
+            if (matcher.find()) {
+                forward = true;
+            }
+
+            if (forward) {
+                int z = i - 1;
+                while (tokens.get(j).getText().equals(" ")) {
+                    z--;
+                }
+
+                Matcher backwardMatcher = Pattern.compile("[a-zA-Z]+").matcher(tokens.get(j).getText());
+                if (backwardMatcher.find()) {
+                    backward = true;
+                }
+            }
+        }
+
+        return backward;
     }
 
     public static String dehyphenize(String text) {
-        if (text == null)
-            return null;
-        String res = "";
-        StringTokenizer st = new StringTokenizer(text, "-");
+        GrobidAnalyzer analyser = GrobidAnalyzer.getInstance();
 
-        boolean firstStep = true;
-        while (st.hasMoreTokens()) {
-            String section = st.nextToken();
+        final List<LayoutToken> layoutTokens = analyser.tokenizeWithLayoutToken(text);
 
-            if (firstStep) {
-                res += trim(section);
-                firstStep = false;
-            } else {
-                String firstToken = getFirstToken(section);
-                if (firstToken.contains("\n")) {
-                    res += trim(section);
-                } else {
-                    res += "-" + trim(section);
-                }
-            }
-        }
-
-        res = res.replace(" . ", ". ");
-        res = res.replace("  ", SPACE);
-
-        return res.trim();
+        return LayoutTokensUtil.toText(dehyphenize(layoutTokens));
     }
 
     public static String getLastToken(String section) {
@@ -1326,7 +1383,7 @@ public class TextUtilities {
     }
 
     /**
-     * Useful for recognising an acronym candidate: check if a text is only 
+     * Useful for recognising an acronym candidate: check if a text is only
      * composed of upper case, dot and digit characters
      */
     public static boolean isAllUpperCaseOrDigitOrDot(String text) {
