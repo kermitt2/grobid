@@ -114,7 +114,7 @@ public class ReferenceMarkerMatcher {
 
     public List<MatchResult> match(List<LayoutToken> refTokens) throws EntityMatcherException {
         cntManager.i(ReferenceMarkerMatcherCounters.INPUT_REF_STRINGS_CNT);
-        String text = TextUtilities.dehyphenize(LayoutTokensUtil.enrichWithNewLineInfo(refTokens));
+        String text = LayoutTokensUtil.toText(TextUtilities.dehyphenize(LayoutTokensUtil.enrichWithNewLineInfo(refTokens)));
 
         if (isAuthorCitationStyle(text)) {
             cntManager.i(ReferenceMarkerMatcherCounters.STYLE_AUTHORS);
@@ -292,12 +292,12 @@ public class ReferenceMarkerMatcher {
             int matchCount = matchCount(text, YEAR_PATTERN_WITH_LOOK_AROUND);
             if (matchCount == 2 && text.contains(" and ")) {
                 for (List<LayoutToken> ys : LayoutTokensUtil.split(splitTokens, AND_WORD_PATTERN, true)) {
-                    result.add(new Pair<>(TextUtilities.dehyphenize(ys), ys));
+                    result.add(new Pair<>(LayoutTokensUtil.toText(TextUtilities.dehyphenize(ys)), ys));
                 }
             } else if (matchCount > 1) {
                 List<List<LayoutToken>> yearSplit = LayoutTokensUtil.split(splitTokens, YEAR_PATTERN, true, false);
                 if (yearSplit.isEmpty()) {
-                    result.add(new Pair<>(TextUtilities.dehyphenize(splitTokens), splitTokens));
+                    result.add(new Pair<>(LayoutTokensUtil.toText(TextUtilities.dehyphenize(splitTokens)), splitTokens));
                 } else {
                     if (matchCount(splitTokens, AUTHOR_NAME_PATTERN) == 1) {
                         // cases like Grafton et al. 1995, 1998;
@@ -309,24 +309,24 @@ public class ReferenceMarkerMatcher {
 
                         List<LayoutToken> firstYearSplitItem;
                         firstYearSplitItem = yearSplit.get(0);
-                        result.add(new Pair<>(TextUtilities.dehyphenize(firstYearSplitItem), firstYearSplitItem));
+                        result.add(new Pair<>(LayoutTokensUtil.toText(TextUtilities.dehyphenize(firstYearSplitItem)), firstYearSplitItem));
 
                         List<LayoutToken> excludedYearToks = firstYearSplitItem.subList(0, firstYearSplitItem.size() - 1);
-                        String authorName = TextUtilities.dehyphenize(excludedYearToks);
+                        String authorName = LayoutTokensUtil.toText(TextUtilities.dehyphenize(excludedYearToks));
 
                         for (int i = 1; i < yearSplit.size(); i++) {
                             List<LayoutToken> toksI = yearSplit.get(i);
-                            result.add(new Pair<>(authorName + " " + TextUtilities.dehyphenize(toksI), toksI.subList(toksI.size() - 1, toksI.size())));
+                            result.add(new Pair<>(authorName + " " + LayoutTokensUtil.toText(TextUtilities.dehyphenize(toksI)), toksI.subList(toksI.size() - 1, toksI.size())));
                         }
                     } else {
                         // case when two authors still appear
                         for (List<LayoutToken> item : yearSplit) {
-                            result.add(new Pair<>(TextUtilities.dehyphenize(item), item));
+                            result.add(new Pair<>(LayoutTokensUtil.toText(TextUtilities.dehyphenize(item)), item));
                         }
                     }
                 }
             } else {
-                result.add(new Pair<>(TextUtilities.dehyphenize(splitTokens), splitTokens));
+                result.add(new Pair<>(LayoutTokensUtil.toText(TextUtilities.dehyphenize(splitTokens)), splitTokens));
             }
         }
         return result;
