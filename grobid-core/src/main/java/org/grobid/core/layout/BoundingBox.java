@@ -229,4 +229,34 @@ public class BoundingBox {
         builder.append("\"h\":").append(height);
         return builder.toString();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BoundingBox)) return false;
+
+        BoundingBox that = (BoundingBox) o;
+
+        if (getPage() != that.getPage()) return false;
+        if (Double.compare(that.getX(), getX()) != 0) return false;
+        if (Double.compare(that.getY(), getY()) != 0) return false;
+        if (Double.compare(that.getWidth(), getWidth()) != 0) return false;
+        return Double.compare(that.getHeight(), getHeight()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = getPage();
+        temp = Double.doubleToLongBits(getX());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getY());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getWidth());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getHeight());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
 }

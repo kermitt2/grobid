@@ -46,23 +46,12 @@ import org.grobid.core.utilities.crossref.CrossrefClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.Closeable;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FilenameFilter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class for managing the extraction of bibliographical informations from PDF
+ * Class for managing the extraction of bibliographical information from PDF
  * documents or raw text.
  *
  * @author Patrice Lopez
@@ -510,7 +499,6 @@ public class Engine implements Closeable {
      * @param config               - Grobid config
 	 * @return the resulting structured document as a TEI string.
      */
-
     public String fullTextToTEI(File inputFile,
                                 GrobidAnalysisConfig config) throws Exception {
         return fullTextToTEIDoc(inputFile, config).getTei();
