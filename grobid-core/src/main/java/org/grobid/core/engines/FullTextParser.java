@@ -27,20 +27,10 @@ import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
 import org.grobid.core.lang.Language;
-import org.grobid.core.layout.Block;
-import org.grobid.core.layout.GraphicObject;
-import org.grobid.core.layout.GraphicObjectType;
-import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.layout.LayoutTokenization;
+import org.grobid.core.layout.*;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.Consolidation;
-import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.Pair;
-import org.grobid.core.utilities.LanguageUtilities;
-import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -116,7 +106,7 @@ public class FullTextParser extends AbstractParser {
      * @return the document object with built TEI
      */
     public Document processing(DocumentSource documentSource,
-                               GrobidAnalysisConfig config) throws Exception {
+                               GrobidAnalysisConfig config) {
         if (tmpPath == null) {
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
         }
@@ -162,8 +152,7 @@ public class FullTextParser extends AbstractParser {
 			BiblioItem resHeader = new BiblioItem();
            	parsers.getHeaderParser().processingHeaderBlock(config.isConsolidateHeader(), doc, resHeader);
            	// above the old version of the header block identification, because more robust
-           	if ( (resHeader == null) ||
-           		 (resHeader.getTitle() == null) || (resHeader.getTitle().trim().length() == 0) ||
+           	if ((resHeader.getTitle() == null) || (resHeader.getTitle().trim().length() == 0) ||
            		 (resHeader.getAuthors() == null) || (resHeader.getFullAuthors() == null) ||
 				 (resHeader.getFullAuthors().size() == 0) ) {
            		resHeader = new BiblioItem();
@@ -184,7 +173,7 @@ public class FullTextParser extends AbstractParser {
 					Map<Integer,BiblioItem> resConsolidation = consolidator.consolidate(resCitations);
 					for(int i=0; i<resCitations.size(); i++) {
 						BiblioItem resCitation = resCitations.get(i).getResBib();
-						BiblioItem bibo = resConsolidation.get(new Integer(i));
+						BiblioItem bibo = resConsolidation.get(i);
 						if (bibo != null) {
 			                BiblioItem.correct(resCitation, bibo);
 						}
@@ -1055,7 +1044,7 @@ public class FullTextParser extends AbstractParser {
 	                }	
 	            }
 
-	            // REFERENCE SEGEMENTER MODEL
+	            // REFERENCE SEGMENTER MODEL
 	            String referencesStr = doc.getDocumentPartText(SegmentationLabels.REFERENCES);
 	            if (!referencesStr.isEmpty()) {
 					//String tei = parsers.getReferenceSegmenterParser().createTrainingData2(referencesStr, id);
@@ -1167,8 +1156,7 @@ public class FullTextParser extends AbstractParser {
 			return doc;
 
         } catch (Exception e) {
-			e.printStackTrace();
-            throw new GrobidException("An exception occured while running Grobid training" +
+            throw new GrobidException("An exception occurred while running Grobid training" +
                     " data generation for full text.", e);
         } finally {
             DocumentSource.close(documentSource, true, true, true);
@@ -1909,9 +1897,7 @@ public class FullTextParser extends AbstractParser {
 	    				featureVector.append(trainingData.getB()).append("\n\n");
 	    		}
     			if (label.equals("I-<table>")) {
-    				for(LayoutToken lTok : tokenizationsBuffer) {
-    					tokenizationsTable.add(lTok);
-    				}
+                    tokenizationsTable.addAll(tokenizationsBuffer);
     				int ind = row.lastIndexOf("\t");
 	    			tableBlock.append(row.substring(0, ind)).append("\n");
 	    		}
