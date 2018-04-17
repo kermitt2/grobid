@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.ibm.icu.text.Normalizer2;
+
+
 /**
  * SAX parser for XML-ALTO representation of PDF files obtained via xpdf pdfalto. All
  * typographical and layout information are defined token by token
@@ -157,184 +160,6 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 		return res.trim();
 	}
 
-	private String addDiaeresisToCharV1(Character c) {
-		switch (c) {
-		case 'a':
-			return "\u00E4";
-		case 'e':
-			return "\u00EB";
-		case 'i':
-			return "\u00EF";
-		case 'l':
-			return "\u00EF";
-		case 'o':
-			return "\u00F6";
-		case 'u':
-			return "\u00FC";
-		default:
-			return null;
-		}
-	}
-
-	private String addDiaeresisToCharV2(Character c) {
-		switch (c) {
-		case 'a':
-			return "\u00E4";
-		case 'A':
-			return "\u00C4";
-			// case 'a' : return "Ã¤");
-		case 'e':
-			return "\u00EB";
-		case 'E':
-			return "\u00CB";
-		case 'i':
-			return "\u00EF";
-		case 'l':
-			return "\u00EF";
-		case 'I':
-			return "\u00CF";
-		case 'o':
-			return "\u00F6";
-		case 'O':
-			return "\u00D6";
-		case 'u':
-			return "\u00FC";
-		case 'U':
-			return "\u00DC";
-		default:
-			return null;
-		}
-	}
-
-    private String addAcuteAccentToChar(Character c) {
-        switch (c) {
-            case 'a':
-                return  "\u00E1";
-            case 'e':
-                return "\u00E9";
-            case 'i':
-            case 'ı':
-                return "\u00ED";
-            case 'l':
-                return "\u00ED";
-            case 'o':
-                return "\u00F3";
-            case 'u':
-                return "\u00FA";
-            case 'E':
-                return "\u00C9";
-            default:
-                return null;
-        }
-    }
-
-	private String addGraveAccentToChar(Character c) {
-		switch (c) {
-		case 'a':
-			return "\u00E0";
-		case 'e':
-			return "\u00E8";
-		case 'i':
-			return "\u00EC";
-		case 'l':
-			return "\u00EC";
-		case 'o':
-			return "\u00F2";
-		case 'u':
-			return "\u00F9";
-		default:
-			return null;
-		}
-	}
-
-	private String addCircumflexAccentToChar(Character c) {
-		switch (c) {
-		case 'a':
-			return "\u00E2";
-		case 'e':
-			return "\u00EA";
-		case 'i':
-			return "\u00EE";
-		case 'l':
-			return "\u00EE";
-		case 'o':
-			return "\u00F4";
-		case 'u':
-			return "\u00FB";
-		default:
-			return null;
-		}
-	}
-
-	private String addTildeToChar(Character c) {
-		switch (c) {
-		case 'n':
-			return "\u00F1";
-		case 'o':
-			return "\u00F5";
-		case 'a':
-			return "\u00E3";
-		default:
-			return null;
-		}
-	}
-
-	private String addNordicRingToChar(Character c) {
-		switch (c) {
-		case 'a':
-			return "\u00E5";
-		case 'A':
-			return "\u00C5";
-		case 'u':
-			return "\u016F";
-		case 'U':
-			return "\u016E";
-		default:
-			return null;
-		}
-	}
-
-	private String addCzechCaronToChar(Character c) {
-		switch (c) {
-		case 'r':
-			return "\u0159";
-		case 'R':
-			return "\u0158";
-		case 'c':
-			return "\u010D";
-		case 'C':
-			return "\u010C";
-		case 'n':
-			return "\u0148";
-		case 'N':
-			return "\u0147";
-		case 'z':
-			return "\u017E";
-		case 'Z':
-			return "\u017D";
-		case 'e':
-			return "\u011B";
-		case 'E':
-			return "\u011A";
-		case 's':
-			return "\u0161";
-		case 'S':
-			return "\u0160";
-		default:
-			return null;
-		}
-	}
-
-	private String addCedillaToChar(Character c) {
-		switch (c) {
-		case 'c':
-			return "\u00E7";
-		case 'C':
-			return "\u00C7";
-		default:
-			return null;
-		}
-	}
 
 	private static void removeLastCharacterIfPresent(LayoutToken token) {
 		if (token.getText() != null && token.getText().length() > 1) {
@@ -346,87 +171,181 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 	}
 
 	private enum ModifierClass {
-		NOT_A_MODIFIER, DIAERESIS, ACUTE_ACCENT, GRAVE_ACCENT, CIRCUMFLEX, TILDE, NORDIC_RING, CZECH_CARON, CEDILLA,
+		NOT_A_MODIFIER, DIAERESIS, ACUTE_ACCENT, DOUBLE_ACUTE_ACCENT, GRAVE_ACCENT, DOUBLE_GRAVE_ACCENT, BREVE_ACCENT, INVERTED_BREVE_ACCENT, CIRCUMFLEX, TILDE, NORDIC_RING, CZECH_CARON, CEDILLA, DOT_ABOVE, HOOK, HORN, MACRON, OGONEK,
 	}
 
-	private ModifierClass classifyChar(Character c) {
-		switch (c) {
-		case '\u00A8':
-			return ModifierClass.DIAERESIS;
+    /**
+     * Classifies diacritics into a diacritic kind, taken from unicode chart : unicode.org/charts/PDF/U0300.pdf
+     * @param c
+     * @return
+     */
+    private ModifierClass classifyChar(Character c) {
+        switch (c) {
+            case '\u0308': //COMBINING DIAERESIS
+            case '\u00A8': //DIAERESIS
+                return ModifierClass.DIAERESIS;
 
-		case '\u00B4':
-		case '\u0301':
-		case '\u02CA':
-			return ModifierClass.ACUTE_ACCENT;
+            case '\u0341':
+            case '\u030B': // COMBINING DOUBLE_ACUTE_ACCENT
+            case '\u02DD':
+                return ModifierClass.DOUBLE_ACUTE_ACCENT;
+            case '\u00B4':
+            case '\u0301': //COMBINING
+            case '\u02CA':
+                return ModifierClass.ACUTE_ACCENT;
 
-		case '\u0060':
-			return ModifierClass.GRAVE_ACCENT;
+            case '\u0300': //COMBINING
+            case '\u0340':
+            case '\u02CB':
+            case '\u0060':
+                return ModifierClass.GRAVE_ACCENT;
 
-		case '\u02C6':
-			return ModifierClass.CIRCUMFLEX;
+            case '\u030F': //COMBINING
+                return ModifierClass.DOUBLE_GRAVE_ACCENT;
 
-		case '\u02DC':
-			return ModifierClass.TILDE;
+            case '\u0306': //COMBINING
+            case '\u02D8':
+                //case '\uA67C':
+                return ModifierClass.BREVE_ACCENT;
 
-		case '\u02DA':
-			return ModifierClass.NORDIC_RING;
+            case '\u0311': //COMBINING
+            case '\u0484':
+            case '\u0487':
+                return ModifierClass.INVERTED_BREVE_ACCENT;
 
-		case '\u02C7':
-			return ModifierClass.CZECH_CARON;
 
-		case '\u00B8':
-			return ModifierClass.CEDILLA;
+            case '\u0302': //COMBINING
+            case '\u005E':
+            case '\u02C6':
+                return ModifierClass.CIRCUMFLEX;
 
-		default:
-			return ModifierClass.NOT_A_MODIFIER;
-		}
-	}
+
+            case '\u0303': //COMBINING
+            case '\u007E':
+            case '\u02DC':
+                return ModifierClass.TILDE;
+
+            case '\u030A': //COMBINING
+            case '\u00B0':
+            case '\u02DA':
+                return ModifierClass.NORDIC_RING;//LOOK AT UNICODE RING BELOW...
+
+            case '\u030C': //COMBINING
+            case '\u02C7':
+                return ModifierClass.CZECH_CARON;
+
+            case '\u0327': //COMBINING
+            case '\u00B8':
+                return ModifierClass.CEDILLA;
+
+            case '\u0307': //COMBINING
+            case '\u02D9':
+                return ModifierClass.DOT_ABOVE;
+
+            case '\u0309': //COMBINING
+            case '\u02C0':
+                return ModifierClass.HOOK;
+
+            case '\u031B': //COMBINING
+                return ModifierClass.HORN;
+
+            case '\u0328': //COMBINING
+            case '\u02DB':
+            //case '\u1AB7':// combining open mark below
+                return ModifierClass.OGONEK;
+
+            case '\u0304': //COMBINING
+            case '\u00AF':
+            case '\u02C9':
+                return ModifierClass.MACRON;
+            default:
+                return ModifierClass.NOT_A_MODIFIER;
+        }
+    }
 
 	boolean isModifier(Character c) {
 		return classifyChar(c) != ModifierClass.NOT_A_MODIFIER;
 	}
 
 	private String modifyCharacter(Character baseChar, Character modifierChar) {
-		String result = null;
-
+        StringBuilder result = new StringBuilder();
+        String diactritic = null;
 		switch (classifyChar(modifierChar)) {
 		case DIAERESIS:
-			result = addDiaeresisToCharV1(baseChar);
+            diactritic = "\u0308";
 			break;
 		case ACUTE_ACCENT:
-			result = addAcuteAccentToChar(baseChar);
+            diactritic = "\u0301";
 			break;
 		case GRAVE_ACCENT:
-			result = addGraveAccentToChar(baseChar);
+            diactritic = "\u0300";
 			break;
 		case CIRCUMFLEX:
-			result = addCircumflexAccentToChar(baseChar);
+            diactritic = "\u0302";
 			break;
 		case TILDE:
-			result = addTildeToChar(baseChar);
+            diactritic = "\u0303";
 			break;
 		case NORDIC_RING:
-			result = addNordicRingToChar(baseChar);
+            diactritic = "\u030A";
 			break;
 		case CZECH_CARON:
-			result = addCzechCaronToChar(baseChar);
+            diactritic = "\u030C";
 			break;
 		case CEDILLA:
-			result = addCedillaToChar(baseChar);
+            diactritic = "\u0327";
 			break;
+        case DOUBLE_ACUTE_ACCENT:
+            diactritic = "\u030B";
+            break;
+        case DOUBLE_GRAVE_ACCENT:
+            diactritic = "\u030F";
+            break;
+        case BREVE_ACCENT:
+            diactritic = "\u0311";
+            break;
+        case INVERTED_BREVE_ACCENT:
+            diactritic = "\u0311";
+            break;
+        case DOT_ABOVE:
+            diactritic = "\u0307";
+            break;
+        case HOOK:
+            diactritic = "\u0309";
+            break;
+        case HORN:
+            diactritic = "\u031B";
+            break;
+        case OGONEK:
+            diactritic = "\u0328";
+            break;
+        case MACRON:
+            diactritic = "\u0304";
+            break;
 		case NOT_A_MODIFIER:
-			result = baseChar.toString();
+			result.append(baseChar.toString());
 			break;
 		default:
 			break;
 		}
+
+        if(diactritic != null){
+            Normalizer2 base = Normalizer2.getNFKCInstance();
+            StringBuilder cs2 = new StringBuilder();
+            if(!base.isNormalized(baseChar.toString().subSequence(0, baseChar.toString().length())))
+                cs2.append(base.normalize(baseChar.toString().subSequence(0, baseChar.toString().length())));
+            else
+                cs2.append(baseChar.toString());
+            result = base.normalizeSecondAndAppend(cs2, diactritic.subSequence(0, diactritic.length()));
+            // AA : drawback, normalizer concats strings when not resolved, e.g : dotless i
+        }
 
 		if (result == null) {
 			LOGGER.debug("FIXME: cannot apply modifier '" + modifierChar
 					+ "' to character '" + baseChar + "'");
 		}
 
-		return result;
+		return result.toString();
 	}
 
 	public void endElement(String uri, String localName,
@@ -808,6 +727,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                         accent = false;
 
                         // WARNING: ROUGH APPROXIMATION (but better than the same coords)
+                        // Here to get the right subTokWidth should use the content length.
                         double subTokWidth = (currentWidth * (tok.length() / totalLength));
 
                         double subTokX = currentX + prevSubWidth;
