@@ -348,4 +348,24 @@ public class TextUtilitiesTest extends EngineTest {
         List<LayoutToken> tokens = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken("- \n\n core is a bad sample.");
         assertThat(TextUtilities.doesRequireDehypenisation(tokens, 0), is(true));
     }
+
+    @Test
+    public void testDoesRequireDehypenisation_falseFriend1_shouldReturnTrue() {
+        List<LayoutToken> tokens = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken("which was mediated through the inhibition of expression of α2-\n integrin (1,2). ");
+        assertThat(TextUtilities.doesRequireDehypenisation(tokens, 19), is(false));
+    }
+
+    @Test
+    public void testDoesRequireDehypenisation_falseFriend2_shouldReturnTrue() {
+        List<LayoutToken> tokens = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken("which was mediated through the inhibition of expression of α2 -\n integrin (1,2). ");
+        assertThat(TextUtilities.doesRequireDehypenisation(tokens, 19), is(false));
+    }
+
+    @Test
+    public void testDoesRequireDehypenisation_falseFriend3_shouldReturnTrue() {
+        List<LayoutToken> tokens = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken("which was mediated through the inhibition of expression of α 2  - \n  integrin (1,2). ");
+        assertThat(TextUtilities.doesRequireDehypenisation(tokens, 19), is(false));
+    }
+
+
 }
