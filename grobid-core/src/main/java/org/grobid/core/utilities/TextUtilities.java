@@ -49,17 +49,17 @@ public class TextUtilities {
 
     // the magical DOI regular expression...
     static public final Pattern DOIPattern = Pattern
-            .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
+        .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
 
     // a regular expression for arXiv identifiers
     // see https://arxiv.org/help/arxiv_identifier and https://arxiv.org/help/arxiv_identifier_for_services
     static public final Pattern arXivPattern = Pattern
-            .compile("(arXiv\\s?(\\.org)?\\s?\\:\\s?\\d{4}\\s?\\.\\s?\\d{4,5}(v\\d+)?)|(arXiv\\s?(\\.org)?\\s?\\:\\s?[ a-zA-Z\\-\\.]*\\s?/\\s?\\d{7}(v\\d+)?)");
+        .compile("(arXiv\\s?(\\.org)?\\s?\\:\\s?\\d{4}\\s?\\.\\s?\\d{4,5}(v\\d+)?)|(arXiv\\s?(\\.org)?\\s?\\:\\s?[ a-zA-Z\\-\\.]*\\s?/\\s?\\d{7}(v\\d+)?)");
 
     // a regular expression for identifying url pattern in text
     // TODO: maybe find a better regex 
     static public final Pattern urlPattern = Pattern
-            .compile("(?i)(https?|ftp)\\s?:\\s?//\\s?[-A-Z0-9+&@#/%?=~_()|!:,.;]*[-A-Z0-9+&@#/%=~_()|]");
+        .compile("(?i)(https?|ftp)\\s?:\\s?//\\s?[-A-Z0-9+&@#/%?=~_()|!:,.;]*[-A-Z0-9+&@#/%=~_()|]");
 
     /**
      * Replace numbers in the string by a dummy character for string distance evaluations
@@ -102,7 +102,7 @@ public class TextUtilities {
             if (currentToken.getText().equals("-")) {
                 if (doesRequireDehypenisation(tokens, i)) {
                     //Cleanup eventual additional spaces before the hypen that have been already written to the output
-                    int z = output.size() - 1 ;
+                    int z = output.size() - 1;
                     while (z >= 0 && output.get(z).getText().equals(" ")) {
                         String tokenString = output.get(z).getText();
 
@@ -182,21 +182,26 @@ public class TextUtilities {
             return false;
         }
 
-        Pattern bao = Pattern.compile("[a-z]+");
+        Pattern onlyLowercaseLetters = Pattern.compile("[a-z]+");
 
-        if(j < tokens.size()) {
-            Matcher matcher = bao.matcher(tokens.get(j).getText());
+        if (j < tokens.size()) {
+            Matcher matcher = onlyLowercaseLetters.matcher(tokens.get(j).getText());
             if (matcher.find()) {
                 forward = true;
             }
 
             if (forward) {
+                if(i < 1) {
+                    //If nothing before the hypen, but it looks like a forward hypenisation, let's trust it 
+                    return forward;
+                }
+                
                 int z = i - 1;
-                while (tokens.get(j).getText().equals(" ")) {
+                while (z > 0 && tokens.get(z).getText().equals(" ")) {
                     z--;
                 }
 
-                Matcher backwardMatcher = Pattern.compile("[a-zA-Z]+").matcher(tokens.get(j).getText());
+                Matcher backwardMatcher = Pattern.compile("^[A-Za-z]+$").matcher(tokens.get(z).getText());
                 if (backwardMatcher.find()) {
                     backward = true;
                 }
@@ -239,7 +244,7 @@ public class TextUtilities {
             return getFirstToken(section.substring(1, section.length()));
         } else if (firstSpaceIndex != -1) {
             return section.substring(0, firstSpaceIndex);
-        } else  {
+        } else {
             return section.substring(0, section.length());
         }
     }
@@ -286,7 +291,7 @@ public class TextUtilities {
                     Lexicon lex = Lexicon.getInstance();
 
                     if (lex.inDictionary(hyphenToken.toLowerCase()) &
-                            !(test_digit(hyphenToken))) {
+                        !(test_digit(hyphenToken))) {
                         // if yes, it is hyphenization
                         res += firstToken;
                         section = section.substring(firstToken.length(), section.length());
@@ -526,7 +531,7 @@ public class TextUtilities {
 
     // ad hoc stopword list for the cleanField method
     public final static List<String> stopwords =
-            Arrays.asList("the", "of", "and", "du", "de le", "de la", "des", "der", "an", "und");
+        Arrays.asList("the", "of", "and", "du", "de le", "de la", "des", "der", "an", "und");
 
     /**
      * Remove useless punctuation at the end and beginning of a metadata field.
@@ -548,14 +553,14 @@ public class TextUtilities {
         for (int i = input.length() - 1; i > 0; i--) {
             char c = input.charAt(i);
             if ((c == ',') ||
-                    (c == ' ') ||
-                    (c == '.') ||
-                    (c == '-') ||
-                    (c == '_') ||
-                    (c == '/') ||
-                    //(c == ')') ||
-                    //(c == '(') ||
-                    (c == ':')) {
+                (c == ' ') ||
+                (c == '.') ||
+                (c == '-') ||
+                (c == '_') ||
+                (c == '/') ||
+                //(c == ')') ||
+                //(c == '(') ||
+                (c == ':')) {
                 n = i;
             } else if (c == ';') {
                 // we have to check if we have an html entity finishing
@@ -594,14 +599,14 @@ public class TextUtilities {
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
             if ((c == ',') ||
-                    (c == ' ') ||
-                    (c == '.') ||
-                    (c == ';') ||
-                    (c == '-') ||
-                    (c == '_') ||
-                    //(c == ')') ||
-                    //(c == '(') ||
-                    (c == ':')) {
+                (c == ' ') ||
+                (c == '.') ||
+                (c == ';') ||
+                (c == '-') ||
+                (c == '_') ||
+                //(c == ')') ||
+                //(c == '(') ||
+                (c == ':')) {
                 n = i;
             } else break;
         }
@@ -613,8 +618,8 @@ public class TextUtilities {
         }
 
         if ((input.length() > 12) &&
-                (input.endsWith("&quot;")) &&
-                (input.startsWith("&quot;"))) {
+            (input.endsWith("&quot;")) &&
+            (input.startsWith("&quot;"))) {
             input = input.substring(6, input.length() - 6).trim();
         }
 
@@ -804,11 +809,11 @@ public class TextUtilities {
     }
 
     /*
-      * To convert the InputStream to String we use the BufferedReader.readLine()
-      * method. We iterate until the BufferedReader return null which means
-      * there's no more data to read. Each line will appended to a StringBuilder
-      * and returned as String.
-      */
+     * To convert the InputStream to String we use the BufferedReader.readLine()
+     * method. We iterate until the BufferedReader return null which means
+     * there's no more data to read. Each line will appended to a StringBuilder
+     * and returned as String.
+     */
     static public String convertStreamToString(InputStream is) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         StringBuilder sb = new StringBuilder();
@@ -1031,14 +1036,14 @@ public class TextUtilities {
 
     public static String formatTwoDecimals(double d) {
         NumberFormat nf = NumberFormat.getNumberInstance(Locale.US);
-        DecimalFormat df = (DecimalFormat)nf;
+        DecimalFormat df = (DecimalFormat) nf;
         df.applyPattern("#.##");
         return df.format(d);
     }
 
     public static String formatFourDecimals(double d) {
         NumberFormat nf = NumberFormat.getNumberInstance(Locale.US);
-        DecimalFormat df = (DecimalFormat)nf;
+        DecimalFormat df = (DecimalFormat) nf;
         df.applyPattern("#.####");
         return df.format(d);
     }
@@ -1251,12 +1256,12 @@ public class TextUtilities {
      * @throws Exception
      */
     public static int getNbTokens(String line, int currentLinePos, List<String> tokenization)
-            throws Exception {
+        throws Exception {
         if ((line == null) || (line.length() == 0))
             return 0;
         String currentToken = tokenization.get(currentLinePos);
         while ((currentLinePos < tokenization.size()) &&
-                (currentToken.equals(" ") || currentToken.equals("\n"))) {
+            (currentToken.equals(" ") || currentToken.equals("\n"))) {
             currentLinePos++;
             currentToken = tokenization.get(currentLinePos);
         }
@@ -1281,10 +1286,10 @@ public class TextUtilities {
      */
     public static String trimEncodedCharaters(String string) {
         return string.replaceAll("&amp\\s+;", "&amp;").
-                replaceAll("&quot\\s+;|&amp;quot\\s*;", "&quot;").
-                replaceAll("&lt\\s+;|&amp;lt\\s*;", "&lt;").
-                replaceAll("&gt\\s+;|&amp;gt\\s*;", "&gt;").
-                replaceAll("&apos\\s+;|&amp;apos\\s*;", "&apos;");
+            replaceAll("&quot\\s+;|&amp;quot\\s*;", "&quot;").
+            replaceAll("&lt\\s+;|&amp;lt\\s*;", "&lt;").
+            replaceAll("&gt\\s+;|&amp;gt\\s*;", "&gt;").
+            replaceAll("&apos\\s+;|&amp;apos\\s*;", "&apos;");
     }
 
     public static boolean filterLine(String line) {
@@ -1294,8 +1299,8 @@ public class TextUtilities {
         else if (line.contains("@IMAGE") || line.contains("@PAGE")) {
             filter = true;
         } else if (line.contains(".pbm") || line.contains(".ppm") ||
-                line.contains(".vec") || line.contains(".jpg") ||
-                line.contains(".png")) {
+            line.contains(".vec") || line.contains(".jpg") ||
+            line.contains(".png")) {
             filter = true;
         }
         return filter;
@@ -1352,7 +1357,7 @@ public class TextUtilities {
 
     public static String strrep(char c, int times) {
         StringBuilder builder = new StringBuilder();
-        for(int i=0; i<times; i++) {
+        for (int i = 0; i < times; i++) {
             builder.append(c);
         }
         return builder.toString();
