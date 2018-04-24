@@ -264,7 +264,7 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                if (consolidate || (resHeader.getDOI() != null)) {
+                if (consolidate) {
                     resHeader = consolidateHeader(resHeader);
                 }
 
@@ -477,7 +477,7 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                if (consolidate || (resHeader.getDOI() != null)) {
+                if (consolidate) {
                     resHeader = consolidateHeader(resHeader);
                 }
 
