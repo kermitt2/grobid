@@ -16,9 +16,16 @@ env:
 
 script:
   - ./gradlew build --no-daemon
+  - ./docker.sh build
 
 after_success:
-- ./gradlew jacocoRootReport coveralls --no-daemon
+  - ./gradlew jacocoRootReport coveralls --no-daemon
+
+deploy:
+  - provider: script
+    script: ./docker.sh push
+    on:
+      branch: master
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
