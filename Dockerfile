@@ -8,59 +8,74 @@
 # To connect to the container with a bash shell
 # > docker exec -i -t {container_name} /bin/bash
 
+# -------------------
+# build builder image
+# -------------------
 FROM openjdk:8-jdk as builder
 
-MAINTAINER Luca Foppiano <luca.foppiano@inria.fr>, Patrice Lopez <patrice.lopez@science-miner.org>
-
-ARG GROBID_VERSION
-
 USER root
+
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install libxml2 git
+    apt-get -y --no-install-recommends install libxml2
 
-RUN cd /opt && \
-    git clone https://github.com/kermitt2/grobid.git grobid-source && \
-    cd /opt/grobid-source && \
-    git checkout ${GROBID_VERSION} && \
-    ./gradlew clean assemble    
+WORKDIR /opt/grobid-source
 
+RUN mkdir -p .gradle
+VOLUME /opt/grobid-source/.gradle
+
+# gradle
+COPY gradle/ ./gradle/
+COPY gradlew ./
+COPY gradle.properties ./
+COPY build.gradle ./
+COPY settings.gradle ./
+
+# source
+COPY grobid-home/ ./grobid-home/
+COPY grobid-core/ ./grobid-core/
+COPY grobid-service/ ./grobid-service/
+COPY grobid-trainer/ ./grobid-trainer/
+
+RUN ./gradlew clean assemble
+
+
+# -------------------
+# build runtime image
+# -------------------
 FROM openjdk:8-jre-slim
 
-ARG GROBID_VERSION
+RUN apt-get update && \
+    apt-get -y --no-install-recommends install libxml2
 
-MAINTAINER Luca Foppiano <luca.foppiano@inria.fr>, Patrice Lopez <patrice.lopez@science-miner.org>
+WORKDIR /opt
 
-LABEL \
-    org.label-schema.name="Grobid" \
-    org.label-schema.description="Image with GROBID service" \
-    org.label-schema.url="https://github.com/kermitt2/grobid" \
-    org.label-schema.version=${GROBID_VERSION}
+COPY --from=builder /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip ./grobid-service.zip
+COPY --from=builder /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip ./grobid-home.zip
 
-ENV JAVA_OPTS=-Xmx4g
+RUN unzip -o ./grobid-service.zip -d ./grobid && \
+    mv ./grobid/grobid-service-* ./grobid/grobid-service
 
-COPY --from=builder /opt/grobid-source/grobid-service/build/distributions/grobid-service-${GROBID_VERSION}.zip /opt
-COPY --from=builder /opt/grobid-source/grobid-home/build/distributions/grobid-home-${GROBID_VERSION}.zip /opt
-
-
-RUN unzip -o /opt/grobid-service-${GROBID_VERSION}.zip -d /opt/grobid && \
-    mv /opt/grobid/grobid-service-${GROBID_VERSION} /opt/grobid/grobid-service
-
-RUN unzip /opt/grobid-home-${GROBID_VERSION}.zip -d /opt/grobid && \
+RUN unzip ./grobid-home.zip -d ./grobid && \
     mkdir -p /opt/grobid/grobid-home/tmp
 
-# Workaround for version 0.5.1
-#RUN mkdir /opt/grobid/grobid-service/config
-#ADD ./grobid-service/config /opt/grobid/grobid-service/config
-
-RUN apt-get update && \
-    apt-get -y --no-install-recommends install \
-    libxml2
+RUN rm *.zip
 
 VOLUME ["/opt/grobid/grobid-home/tmp"]
 
 WORKDIR /opt/grobid
 
+ENV JAVA_OPTS=-Xmx4g
+
 CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/config.yaml"]
+
+ARG GROBID_VERSION
+
+LABEL \
+    authors="Luca Foppiano <luca.foppiano@inria.fr>, Patrice Lopez <patrice.lopez@science-miner.org>" \
+    org.label-schema.name="Grobid" \
+    org.label-schema.description="Image with GROBID service" \
+    org.label-schema.url="https://github.com/kermitt2/grobid" \
+    org.label-schema.version=${GROBID_VERSION}
 
 ## Docker tricks:
 
