@@ -121,7 +121,8 @@ public class TEIAuthorSaxParser extends DefaultHandler {
             tokens = new ArrayList<LayoutToken>();
         } else if (!qName.equals("analytic") && !qName.equals("biblStruct") && 
             !qName.equals("sourceDesc") && !qName.equals("fileDesc") && 
-            !qName.equals("teiHeader")&& !qName.equals("TEI")) {
+            !qName.equals("teiHeader") && !qName.equals("TEI") && 
+            !qName.equals("persName") && !qName.equals("tei") && !qName.equals("lb")) {
             System.out.println("Warning, invalid tag: <" + qName + ">");
         }
     }
