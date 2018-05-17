@@ -83,7 +83,7 @@ public class BibDataSetContextExtractor {
         Matcher m = REF_PATTERN.matcher(cont);
         if (m.find()) {
             String g = m.group(1);
-            return m.replaceAll(g);
+            return m.replaceAll(Matcher.quoteReplacement(g));
         } else {
             throw new IllegalStateException("Implementation error: no <ref> found in" + cont);
         }
