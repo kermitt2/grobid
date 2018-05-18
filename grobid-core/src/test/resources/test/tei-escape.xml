@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<text xml:lang="en">
+		<body>
+                    <div xmlns="http://www.tei-c.org/ns/1.0"><p>Lorem ipsum <ref type="bibr" target="#b0">$9,</ref><ref type="bibr" target="#b1">2]</ref>.
+                    </p></div>
+                </body>
+        </text>
+</TEI>
