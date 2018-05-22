@@ -1,5 +1,7 @@
 package org.grobid.trainer.sax;
 
+import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
@@ -27,8 +29,9 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
     private String output = null;
     private String currentTag = null;
 
-    private ArrayList<String> labeled = null; // store line by line the labeled data
+    private List<String> labeled = null; // store line by line the labeled data
     public List<List<OffsetPosition>> placesPositions = null; // list of offset positions of place names
+    public List<List<LayoutToken>> allTokens = null;
 
     //private Writer writerAddress = null; // writer for the address model
     private Writer writerCORA = null; // writer for conversion into TEI header model
@@ -43,6 +46,7 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
     public TEIAffiliationAddressSaxParser() {
         labeled = new ArrayList<String>();
         placesPositions = new ArrayList<List<OffsetPosition>>();
+        allTokens = new ArrayList<List<LayoutToken>>();
     }
 
     public void characters(char[] buffer, int start, int length) {
@@ -56,8 +60,16 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
         return accumulator.toString().trim();
     }
 
-    public ArrayList<String> getLabeledResult() {
+    public List<String> getLabeledResult() {
         return labeled;
+    }
+
+    public List<List<OffsetPosition>> getPlacesPositions() {
+        return placesPositions;
+    }
+
+    public List<List<LayoutToken>> getAllTokens() {
+        return allTokens;
     }
 
     public void endElement(java.lang.String uri,
@@ -113,9 +125,13 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
             labeled.add("\n \n");
 
             String allString = allContent.toString().trim();
-            allString = allString.replace("@newline", "");
-            List<OffsetPosition> toto = lexicon.tokenPositionsCityNames(allString);
+            //allString = allString.replace("@newline", "");
+            allString = allString.replace("@newline", "\n");
+            //List<OffsetPosition> toto = lexicon.tokenPositionsCityNames(allString);
+            List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(allString);
+            List<OffsetPosition> toto = lexicon.tokenPositionsCityNames(tokens);
             placesPositions.add(toto);
+            allTokens.add(tokens);
             allContent = null;
             allString = null;
 
@@ -159,12 +175,15 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
 
                 if (name != null) {
                     if (name.equals("type")) {
-                        if (value.equals("department")) {
+                        value = value.toLowerCase();
+                        if (value.equals("department") || value.equals("departement")) {
                             currentTag = "<department>";
-                        } else if (value.equals("institution")) {
+                        } else if (value.equals("institution") || value.equals("institute")) {
                             currentTag = "<institution>";
                         } else if (value.equals("laboratory")) {
                             currentTag = "<laboratory>";
+                        } else if (value.equals("consortium")) {
+                            currentTag = "<institution>";
                         } else {
                             currentTag = null;
                         }
