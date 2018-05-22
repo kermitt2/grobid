@@ -61,13 +61,10 @@ public class AffiliationAddressParser extends AbstractParser {
 
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
             placesPositions.add(lexicon.tokenPositionsCityNames(tokenizations));
+            List<List<LayoutToken>> allTokens = new ArrayList<List<LayoutToken>>();
+            allTokens.add(tokenizations);
+            String header = FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, allTokens, placesPositions);
 
-            String header = FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, placesPositions);
-
-            // add context
-//            st = new StringTokenizer(header, "\n");
-
-            //TODO:
             String res = label(header);
             return resultBuilder(res, tokenizations, false); // don't use pre-labels
         } catch (Exception e) {
@@ -211,8 +208,10 @@ public class AffiliationAddressParser extends AbstractParser {
         try {
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
             placesPositions.add(lexicon.tokenPositionsCityNames(tokenizations));
+            List<List<LayoutToken>> allTokens = new ArrayList<List<LayoutToken>>();
+            allTokens.add(tokenizations);
             String header =
-                    FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, placesPositions);
+                    FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, allTokens, placesPositions);
 
             if ((header == null) || (header.trim().length() == 0)) {
                 return null;
