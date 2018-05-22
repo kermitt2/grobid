@@ -1,7 +1,11 @@
 package org.grobid.core.layout;
 
+import com.fasterxml.jackson.core.JsonGenerator;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
 
 /**
  * Created by zholudev on 18/08/15.
@@ -228,6 +232,14 @@ public class BoundingBox {
         builder.append("\"w\":").append(width).append(", ");
         builder.append("\"h\":").append(height);
         return builder.toString();
+    }
+
+    public void writeJsonProps(JsonGenerator gen) throws IOException {
+        gen.writeNumberField("p", page);
+        gen.writeNumberField("x", x);
+        gen.writeNumberField("y", y);
+        gen.writeNumberField("w", width);
+        gen.writeNumberField("h", height);
     }
 
     @Override
