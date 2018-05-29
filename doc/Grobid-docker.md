@@ -90,9 +90,11 @@ You should see something like:
 For more information see the [GROBID main page](https://github.com/kermitt2/grobid/blob/master/Readme.md).
 
 <h5>pdf2xml zombie processes</h5>
-When running docker without an initi process, the pdf2xml processes will be hang as zombie eventually filling 
+~~When running docker without an init process, the pdf2xml processes will be hang as zombie eventually filling 
 up the machine. The docker solution is to use `--init` as parameter when running the image, however we are discussing 
-some more long-term solution compatible with Kubernetes for example.
+some more long-term solution compatible with Kubernetes for example.~~
+The solution shipped with the current Dockerfile, using tini (https://github.com/krallin/tini) should provide the correct init process to cleanup 
+killed processes. 
  
 
 <h4>Build caveat</h4>
