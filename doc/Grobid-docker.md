@@ -14,16 +14,16 @@ The process for fetching and running the image is (assuming docker is installed 
 > docker pull lfoppiano/grobid:0.5.1
 ```
  
-- Run the container (note the new version running on 8070):
+- Run the container (note the new version running on 8070, however it will be mapped on the 8080 of your host):
 
 ```bash
-> docker run -t --rm -p 8080:8070 -p 8081:8071 lfoppiano/grobid:0.5.1
+> docker run -t --rm --init -p 8080:8070 -p 8081:8071 lfoppiano/grobid:0.5.1
 ```
 
 (alternatively you can also get the image ID)  
 ```bash
 > docker images | grep lfoppiano/grobid | grep 0.5.1
-> docker run -t --rm -p 8080:8070 -p 8081:8071 $image_id_from_previous_command
+> docker run -t --rm --init -p 8080:8070 -p 8081:8071 $image_id_from_previous_command
 ```
 
 - Access the service: 
@@ -88,6 +88,12 @@ You should see something like:
 ```
 
 For more information see the [GROBID main page](https://github.com/kermitt2/grobid/blob/master/Readme.md).
+
+<h5>pdf2xml zombie processes</h5>
+When running docker without an initi process, the pdf2xml processes will be hang as zombie eventually filling 
+up the machine. The docker solution is to use `--init` as parameter when running the image, however we are discussing 
+some more long-term solution compatible with Kubernetes for example.
+ 
 
 <h4>Build caveat</h4>
 **NOTE**: The following part is only for development purposes. We recommend you to use the official 
