@@ -77,9 +77,6 @@ public class EndToEndEvaluation {
 			System.out.println("Path to evaluation (gold) XML data is not valid !");
 			xmlInputPath = null;
 		}
-		
-		String pGrobidHome = "../grobid-home";
-		String pGrobidProperties = "../grobid-home/config/grobid.properties";
 
 		try {
 			GrobidProperties.getInstance();

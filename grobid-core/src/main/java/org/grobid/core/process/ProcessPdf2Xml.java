@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.List;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 public class ProcessPdf2Xml {
 
     private static final Logger LOGGER = LoggerFactory
@@ -24,7 +26,7 @@ public class ProcessPdf2Xml {
             builder = new ProcessBuilder(cmd);
             process = builder.start();
             exit = process.waitFor();
-            message = IOUtils.toString(process.getErrorStream());
+            message = IOUtils.toString(process.getErrorStream(), UTF_8);
 
         } catch (InterruptedException ignore) {
             // Process needs to be destroyed -- it's done in the finally block
