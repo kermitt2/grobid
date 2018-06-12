@@ -28,14 +28,22 @@ You need to add the following snippet in your pom.xml in order to configure it:
   
 
 In this way you after configuring such repository the dependencies will be automatically managed.
+Here an example of grobid-core dependency: 
+```xml
+	<dependency>
+	    <groupId>org.grobid</groupId>
+	    <artifactId>grobid-core</artifactId>
+	    <version>0.5.1</version>
+	</dependency>
+```
  
 If you want to work on a SNAPSHOT development version, you need to include in your pom file the path to the Grobid jar file, 
 for instance as follow (replace `0.5.0` by the valid `<current version>`):
 
 ```xml
 	<dependency>
-	    <groupId>org.grobid.core</groupId>
-	    <artifactId>grobid</artifactId>
+	    <groupId>org.grobid</groupId>
+	    <artifactId>grobid-core</artifactId>
 	    <version>0.5.0</version>
 	    <scope>system</scope>
 	    <systemPath>${project.basedir}/lib/grobid-core-0.5.0.jar</systemPath>
