@@ -46,6 +46,7 @@ grobid-chem
 grobid-books
 grobid-smecta
 grobid-example
+grobid-software
 grobid-test-ant
 grobid-home/models/quantities
 grobid-home/models/dictionaries-lexical-entries
