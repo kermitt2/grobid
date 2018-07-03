@@ -44,7 +44,7 @@ public final class FastMatcher {
                     file.getAbsolutePath() + "'.");
         }
         try {
-            loadTerms(file, GrobidAnalyzer.getInstance());
+            loadTerms(file, GrobidAnalyzer.getInstance(), false);
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid FastMatcher.", e);
         }
@@ -60,7 +60,23 @@ public final class FastMatcher {
                     file.getAbsolutePath() + "'.");
         }
         try {
-            loadTerms(file, analyzer);
+            loadTerms(file, analyzer, false);
+        } catch (Exception e) {
+            throw new GrobidException("An exception occurred while running Grobid FastMatcher.", e);
+        }
+    }
+
+    public FastMatcher(File file, org.grobid.core.analyzers.Analyzer analyzer, boolean caseSensitive) {
+        if (!file.exists()) {
+            throw new GrobidResourceException("Cannot add term to matcher, because file '" +
+                    file.getAbsolutePath() + "' does not exist.");
+        }
+        if (!file.canRead()) {
+            throw new GrobidResourceException("Cannot add terms to matcher, because cannot read file '" +
+                    file.getAbsolutePath() + "'.");
+        }
+        try {
+            loadTerms(file, analyzer, caseSensitive);
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid FastMatcher.", e);
         }
@@ -68,7 +84,7 @@ public final class FastMatcher {
 
     public FastMatcher(InputStream is) {
         try {
-            loadTerms(is, GrobidAnalyzer.getInstance());
+            loadTerms(is, GrobidAnalyzer.getInstance(), false);
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid FastMatcher.", e);
         }
@@ -76,7 +92,15 @@ public final class FastMatcher {
 
     public FastMatcher(InputStream is, org.grobid.core.analyzers.Analyzer analyzer) {
         try {
-            loadTerms(is, analyzer);
+            loadTerms(is, analyzer, false);
+        } catch (Exception e) {
+            throw new GrobidException("An exception occurred while running Grobid FastMatcher.", e);
+        }
+    }
+
+    public FastMatcher(InputStream is, org.grobid.core.analyzers.Analyzer analyzer, boolean caseSensitive) {
+        try {
+            loadTerms(is, analyzer, caseSensitive);
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid FastMatcher.", e);
         }
@@ -87,21 +111,29 @@ public final class FastMatcher {
      */
     public int loadTerms(File file) throws IOException {
         InputStream fileIn = new FileInputStream(file);
-        return loadTerms(fileIn, GrobidAnalyzer.getInstance());
+        return loadTerms(fileIn, GrobidAnalyzer.getInstance(), false);
     }
 
     /**
      * Load a set of terms to the fast matcher from a file listing terms one per line
      */
-    public int loadTerms(File file, org.grobid.core.analyzers.Analyzer analyzer) throws IOException {
+    public int loadTerms(File file, boolean caseSensitive) throws IOException {
         InputStream fileIn = new FileInputStream(file);
-        return loadTerms(fileIn, analyzer);
+        return loadTerms(fileIn, GrobidAnalyzer.getInstance(), caseSensitive);
+    }
+
+    /**
+     * Load a set of terms to the fast matcher from a file listing terms one per line
+     */
+    public int loadTerms(File file, org.grobid.core.analyzers.Analyzer analyzer, boolean caseSensitive) throws IOException {
+        InputStream fileIn = new FileInputStream(file);
+        return loadTerms(fileIn, analyzer, caseSensitive);
     }
 
     /**
      * Load a set of term to the fast matcher from an input stream
      */
-    public int loadTerms(InputStream is, org.grobid.core.analyzers.Analyzer analyzer) throws IOException {
+    public int loadTerms(InputStream is, org.grobid.core.analyzers.Analyzer analyzer, boolean caseSensitive) throws IOException {
         InputStreamReader reader = new InputStreamReader(is, UTF_8);
         BufferedReader bufReader = new BufferedReader(reader);
         String line;
@@ -115,7 +147,8 @@ public final class FastMatcher {
             if (line.length() == 0) continue;
             line = UnicodeUtil.normaliseText(line);
             line = StringUtils.normalizeSpace(line);
-            line = line.toLowerCase();
+            if (!caseSensitive)
+                line = line.toLowerCase();
             nbTerms += loadTerm(line, analyzer, true);
         }
         bufReader.close();
@@ -129,7 +162,7 @@ public final class FastMatcher {
      * Load a term to the fast matcher, by default the standard delimiters will be ignored
      */
     public int loadTerm(String term, org.grobid.core.analyzers.Analyzer analyzer) {
-        return loadTerm(term, analyzer, true);
+        return loadTerm(term, analyzer, false);
     }
 
 
