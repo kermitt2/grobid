@@ -140,7 +140,7 @@ public class Segmentation extends AbstractParser {
     private void dealWithImages(DocumentSource documentSource, Document doc, File assetFile, GrobidAnalysisConfig config) {
         if (assetFile != null) {
             // copy the files under the directory pathXML+"_data" (the asset files) into the path specified by assetPath
-            
+
             if (!assetFile.exists()) {
                 // we create it
                 if (assetFile.mkdir()) {
@@ -156,7 +156,11 @@ public class Segmentation extends AbstractParser {
             if (directoryPath.exists()) {
                 File[] files = directoryPath.listFiles();
                 if (files != null) {
+                    int nbFiles = 0;
                     for (final File currFile : files) {
+                        if (nbFiles > DocumentSource.PDF2XML_FILES_AMOUNT_LIMIT)
+                            break;
+
                         String toLowerCaseName = currFile.getName().toLowerCase();
                         if (toLowerCaseName.endsWith(".png") || !config.isPreprocessImages()) {
                             try {
@@ -164,6 +168,7 @@ public class Segmentation extends AbstractParser {
                                     continue;
                                 }
                                 FileUtils.copyFileToDirectory(currFile, assetFile);
+                                nbFiles++;
                             } catch (IOException e) {
                                 LOGGER.error("Cannot copy file " + currFile.getAbsolutePath() + " to " + assetFile.getAbsolutePath(), e);
                             }
@@ -189,6 +194,7 @@ public class Segmentation extends AbstractParser {
                                             toLowerCaseName.replace(".ppm", ".png");
                                 }
                                 ImageIO.write(bi, "png", new File(outputFilePath));
+                                nbFiles++;
                             } catch (IOException e) {
                                 LOGGER.error("Cannot convert file " + currFile.getAbsolutePath() + " to " + outputFilePath, e);
                             }
