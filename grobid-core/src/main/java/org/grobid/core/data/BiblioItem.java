@@ -3161,7 +3161,7 @@ public class BiblioItem {
         List<String> sanitizedEmails = emailSanitizer.splitAndClean(emailles);
 
         if (sanitizedEmails != null) {
-            authorEmailAssigner.assign(fullAuthors, emailles);
+            authorEmailAssigner.assign(fullAuthors, sanitizedEmails);
         }
     }
 
