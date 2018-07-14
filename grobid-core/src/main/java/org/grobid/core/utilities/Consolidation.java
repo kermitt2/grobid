@@ -173,7 +173,8 @@ public class Consolidation {
                     volume, bib, additionalBiblioInformation);
             }*/
         } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid consolidation.", e);
+            //throw new GrobidException("An exception occured while running Grobid consolidation.", e);
+            LOGGER.warn("An exception occured while running Grobid consolidation.", e);
         }
 
         if (valid && (cntManager != null))
@@ -265,13 +266,13 @@ public class Consolidation {
 
                     @Override
                     public void onError(int status, String message, Exception exception) {
-                        LOGGER.info("ERROR ("+status+") : "+message);
-                        System.out.println("ERROR ("+status+") : "+message);
+                        LOGGER.warn("CrossRef returns error ("+status+") : "+message);
+                        //System.out.println("ERROR ("+status+") : "+message);
                         //exception.printStackTrace();
                     }
                 });
             } catch(Exception e) {
-                LOGGER.error("Consolidation error - " + ExceptionUtils.getStackTrace(e));
+                LOGGER.warn("Consolidation error - " + ExceptionUtils.getStackTrace(e));
                 //results.put(new Integer(id), null);
             } 
             n++;
@@ -329,17 +330,17 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                 try {
                     requestListener.wait(5000); // timeout after 5 seconds
                 } catch (InterruptedException e) {
-                    LOGGER.error("Timeout error - " + ExceptionUtils.getStackTrace(e));
+                    LOGGER.warn("Timeout error - " + ExceptionUtils.getStackTrace(e));
                 }
             }
             
             CrossrefRequestListener.Response<BiblioItem> response = requestListener.getResponse();
             
             if (response == null)
-                LOGGER.error("No response ! Maybe timeout.");
+                LOGGER.warn("No response ! Maybe timeout.");
             
             else if (response.hasError() || !response.hasResults())
-                LOGGER.error("error: ("+response.status+") : "+response.errorMessage);
+                LOGGER.warn("CrossRef returns error ("+response.status+") : "+response.errorMessage);
             
             else { // success
                 LOGGER.info("Success request "+ doi);
@@ -398,7 +399,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
 
                 @Override
                 public void onError(int status, String message, Exception exception) {
-                    LOGGER.info("ERROR ("+status+") : "+message);
+                    LOGGER.warn("CrossRef returns error ("+status+") : "+message);
                 }
             });
 
@@ -522,7 +523,8 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                     urlConn = (HttpURLConnection) url.openConnection();
                 } catch (Exception e2) {
                     urlConn = null;
-                    throw new GrobidException("An exception occured while running Grobid.", e2);
+                    //throw new GrobidException("An exception occured while running Grobid.", e2);
+                    LOGGER.warn("Connection to CrossRef fails!");
                 }
             }
             if (urlConn != null) {
@@ -552,8 +554,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                             result = true;
                     }
                 } catch (Exception e) {
-                    LOGGER.error("Warning: Consolidation set true, " +
-                            "but the online connection to Crossref fails.");
+                    LOGGER.warn("Consolidation set true, but the online connection to Crossref fails.");
                 } finally {
                     urlConn.disconnect();
                 }
@@ -613,7 +614,8 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                     urlConn = (HttpURLConnection) url.openConnection();
                 } catch (Exception e2) {
                     urlConn = null;
-                    throw new GrobidException("An exception occured while running Grobid.", e2);
+                    //throw new GrobidException("An exception occured while running Grobid.", e2);
+                    LOGGER.warn("Connection to CrossRef fails!");
                 }
             }
             if (urlConn != null) {
@@ -643,8 +645,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                         result = true;
                     }
                 } catch (Exception e) {
-                    LOGGER.error("Warning: Consolidation set true, " +
-                            "but the online connection to Crossref fails.");
+                    LOGGER.warn("Consolidation set true, but the online connection to Crossref fails.");
                 } finally {
                     IOUtils.closeQuietly(in);
                     urlConn.disconnect();
