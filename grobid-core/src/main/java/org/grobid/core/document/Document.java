@@ -1401,6 +1401,9 @@ public class Document implements Serializable {
         }));
     }
 
+    /**
+     *  Get the document part corresponding to a particular segment type
+     */
     public SortedSet<DocumentPiece> getDocumentPart(TaggingLabel segmentationLabel) {
         if (labeledBlocks == null) {
             LOGGER.debug("labeledBlocks is null");
