@@ -139,9 +139,8 @@ public class Segmentation extends AbstractParser {
 
     private void dealWithImages(DocumentSource documentSource, Document doc, File assetFile, GrobidAnalysisConfig config) {
         if (assetFile != null) {
-            // copy the files under the directory pathXML+"_data"
-            // we copy the asset files into the path specified by assetPath
-
+            // copy the files under the directory pathXML+"_data" (the asset files) into the path specified by assetPath
+            
             if (!assetFile.exists()) {
                 // we create it
                 if (assetFile.mkdir()) {
@@ -198,7 +197,6 @@ public class Segmentation extends AbstractParser {
                 }
             }
             // update the path of the image description stored in Document
-
             if (config.isPreprocessImages()) {
                 List<GraphicObject> images = doc.getImages();
                 if (images != null) {

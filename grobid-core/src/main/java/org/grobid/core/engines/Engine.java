@@ -507,34 +507,24 @@ public class Engine implements Closeable {
     public Document fullTextToTEIDoc(File inputFile,
                                      GrobidAnalysisConfig config) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
-
-        // replace by the commented version for the new full ML text parser
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
         long time = System.currentTimeMillis();
         resultDoc = fullTextParser.processing(inputFile, config);
         LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: "
 			+ (System.currentTimeMillis() - time) + "ms");
-        if (config.getPdfAssetPath() != null) {
-            FileUtils.write(new File(config.getPdfAssetPath(), Files.getNameWithoutExtension(inputFile.getName()) + ".xml"), resultDoc.getTei());
-        }
         return resultDoc;
     }
 
     public Document fullTextToTEIDoc(DocumentSource documentSource,
                                      GrobidAnalysisConfig config) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
-
-        // replace by the commented version for the new full ML text parser
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + documentSource);
         long time = System.currentTimeMillis();
         resultDoc = fullTextParser.processing(documentSource, config);
         LOGGER.debug("Ending processing fullTextToTEI on " + documentSource + ". Time to process: "
                 + (System.currentTimeMillis() - time) + "ms");
-        if (config.getPdfAssetPath() != null) {
-            FileUtils.write(new File(config.getPdfAssetPath(), Files.getNameWithoutExtension(documentSource.getPdfFile().getName()) + ".xml"), resultDoc.getTei());
-        }
         return resultDoc;
     }
 
@@ -653,10 +643,10 @@ public class Engine implements Closeable {
      *                      web services for improving header information
      * @return the number of processed files.
      */
-    public int batchProcessHeader(String directoryPath, String resultPath, boolean consolidate)
+    /*public int batchProcessHeader(String directoryPath, String resultPath, boolean consolidate)
 		throws Exception {
         return batchProcess(directoryPath, resultPath, consolidate, consolidate, 0);
-    }
+    }*/
 
     /**
      * Extract the fulltext for all PDF files in a given directory and produce
@@ -671,10 +661,10 @@ public class Engine implements Closeable {
      *                             web services for improving citations information
      * @return the number of processed files.
      */
-    public int batchProcessFulltext(String directoryPath, String resultPath, boolean consolidateHeader,
+    /*public int batchProcessFulltext(String directoryPath, String resultPath, boolean consolidateHeader,
 		boolean consolidateCitations) {
         return batchProcess(directoryPath, resultPath, consolidateHeader, consolidateCitations, 1);
-    }
+    }*/
 
     /**
      * @param directoryPath        input path, folder where the pdf files are supposed to be
@@ -685,7 +675,7 @@ public class Engine implements Closeable {
      * @param type                 type of the method
      * @return exit code
      */
-    private int batchProcess(String directoryPath, String resultPath, boolean consolidateHeader,
+    /*private int batchProcess(String directoryPath, String resultPath, boolean consolidateHeader,
 		boolean consolidateCitations, int type) {
         if (directoryPath == null) {
             throw new GrobidResourceException("Cannot start parsing, because the input path, "
@@ -761,17 +751,13 @@ public class Engine implements Closeable {
                         writer.close();
                     }
                 } 
-				/*
-				 * else if (type == 2) { processCitations(pdfFile.getPath(),
-				 * resultPath, resultPath); }
-				 */
             }
 
             return refFiles.length;
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
-    }
+    }*/
 
     /**
      * Get the TEI XML string corresponding to the recognized header text
