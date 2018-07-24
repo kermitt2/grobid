@@ -46,7 +46,7 @@ public class DocumentSource {
 	 * but with the extra annotation file and with outline	
      */
     public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage) {
-        return fromPdf(pdfFile, startPage, endPage, false, true, true);
+        return fromPdf(pdfFile, startPage, endPage, false, true, false);
     }
 
     public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage, 

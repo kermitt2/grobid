@@ -162,7 +162,7 @@ public final class FastMatcher {
      * Load a term to the fast matcher, by default the standard delimiters will be ignored
      */
     public int loadTerm(String term, org.grobid.core.analyzers.Analyzer analyzer) {
-        return loadTerm(term, analyzer, false);
+        return loadTerm(term, analyzer, true);
     }
 
 
@@ -218,6 +218,18 @@ public final class FastMatcher {
      * @return the list of offset positions of the matches, an empty list if no match have been found
      */
     public List<OffsetPosition> matchToken(String text) {
+        return matchToken(text, false);
+    }
+
+    /**
+     * Identify terms in a piece of text and gives corresponding token positions.
+     * All the matches are returned.
+     *
+     * @param text: the text to be processed
+     * @param caseSensitive: ensure case sensitive matching or not
+     * @return the list of offset positions of the matches, an empty list if no match have been found
+     */
+    public List<OffsetPosition> matchToken(String text, boolean caseSensitive) {
         List<OffsetPosition> results = new ArrayList<OffsetPosition>();
         List<Integer> startPos = new ArrayList<Integer>();
         List<Integer> lastNonSeparatorPos = new ArrayList<Integer>();
@@ -238,7 +250,8 @@ public final class FastMatcher {
                 continue;
             }*/
 
-            token = token.toLowerCase();
+            if (!caseSensitive) 
+                token = token.toLowerCase();
 
             // we try to complete opened matching
             int i = 0;
@@ -323,7 +336,7 @@ public final class FastMatcher {
      * @return the list of offset positions of the matches, an empty list if no match have been found
      */
     public List<OffsetPosition> matchLayoutToken(List<LayoutToken> tokens) {
-        return matchLayoutToken(tokens, true);
+        return matchLayoutToken(tokens, true, false);
     }
 
     /**
@@ -332,9 +345,10 @@ public final class FastMatcher {
      *
      * @param tokens the text to be processed as a list of LayoutToken objects
      * @param ignoreDelimiters if true, ignore the delimiters in the matching process
+     * @param caseSensitive: ensure case sensitive matching or not
      * @return the list of offset positions of the matches, an empty list if no match have been found
      */
-    public List<OffsetPosition> matchLayoutToken(List<LayoutToken> tokens, boolean ignoreDelimiters) {    
+    public List<OffsetPosition> matchLayoutToken(List<LayoutToken> tokens, boolean ignoreDelimiters, boolean caseSensitive) {    
         if (CollectionUtils.isEmpty(tokens)) {
             return new ArrayList<OffsetPosition>();
         }
@@ -356,7 +370,8 @@ public final class FastMatcher {
             }
 
             String tokenText = UnicodeUtil.normaliseText(token.getText());
-            tokenText = tokenText.toLowerCase();
+            if (!caseSensitive)
+                tokenText = tokenText.toLowerCase();
 
             // we try to complete opened matching
             int i = 0;
@@ -424,10 +439,28 @@ public final class FastMatcher {
      * All the matches are returned.
      *
      * @param text: the text to be processed
+     * @param caseSensitive: ensure case sensitive matching or not
      * @return the list of offset positions of the matches referred to the input string, an empty
      * list if no match have been found
      */
     public List<OffsetPosition> matchCharacter(String text) {
+        return matchCharacter(text, false);
+    }
+
+    /**
+     *
+     * Gives the character positions within a text where matches occur.
+     * <p>
+     * By iterating over the OffsetPosition and applying substring, we get all the matches.
+     * <p>
+     * All the matches are returned.
+     *
+     * @param text: the text to be processed
+     * @param caseSensitive: ensure case sensitive matching or not
+     * @return the list of offset positions of the matches referred to the input string, an empty
+     * list if no match have been found
+     */
+    public List<OffsetPosition> matchCharacter(String text, boolean caseSensitive) {
         List<OffsetPosition> results = new ArrayList<>();
         List<Integer> startPosition = new ArrayList<>();
         List<Integer> lastNonSeparatorPos = new ArrayList<>();
@@ -449,7 +482,8 @@ public final class FastMatcher {
                 currentPos += token.length();
                 continue;
             }*/
-            token = token.toLowerCase();
+            if (!caseSensitive) 
+                token = token.toLowerCase();
 
             // we try to complete opened matching
             int i = 0;
@@ -510,7 +544,7 @@ public final class FastMatcher {
         return results;
     }
 
-   /**
+    /**
      *
      * Gives the character positions within a tokenized text where matches occur.
      * <p>
@@ -521,6 +555,21 @@ public final class FastMatcher {
      * list if no match have been found
      */
     public List<OffsetPosition> matchCharacterLayoutToken(List<LayoutToken> tokens) {
+        return matchCharacterLayoutToken(tokens, false);
+    }
+
+   /**
+     *
+     * Gives the character positions within a tokenized text where matches occur.
+     * <p>
+     * All the matches are returned.
+     *
+     * @param tokens the text to be processed as a list of LayoutToken objects
+     * @param caseSensitive ensure case sensitive matching or not
+     * @return the list of offset positions of the matches referred to the input string, an empty
+     * list if no match have been found
+     */
+    public List<OffsetPosition> matchCharacterLayoutToken(List<LayoutToken> tokens, boolean caseSensitive) {
         List<OffsetPosition> results = new ArrayList<>();
         List<Integer> startPosition = new ArrayList<>();
         List<Integer> lastNonSeparatorPos = new ArrayList<>();
@@ -542,7 +591,9 @@ public final class FastMatcher {
                 currentPos++;
                 continue;
             }*/
-            String tokenString = token.getText().toLowerCase();
+            String tokenString = token.getText();
+            if (!caseSensitive)
+                tokenString = tokenString.toLowerCase();
 
             // we try to complete opened matching
             int i = 0;
@@ -611,12 +662,25 @@ public final class FastMatcher {
      * @return the list of offset positions of the matches, an empty list if no match have been found
      */
     public List<OffsetPosition> matcherPairs(List<Pair<String, String>> tokens) {
+        return matcherPairs(tokens, false);
+    }
+
+    /**
+     * Identify terms in a piece of text and gives corresponding token positions.
+     * All the matches are returned. This case correspond to text from a trainer,
+     * where the text is already tokenized with some labeled that can be ignored.
+     *
+     * @param tokens: the text to be processed
+     * @param caseSensitive: ensure case sensitive matching or not
+     * @return the list of offset positions of the matches, an empty list if no match have been found
+     */
+    public List<OffsetPosition> matcherPairs(List<Pair<String, String>> tokens, boolean caseSensitive) {
         StringBuilder text = new StringBuilder();
         for (Pair<String, String> tokenP : tokens) {
             String token = tokenP.getA();
             text.append(processToken(token));
         }
-        return matchToken(text.toString());
+        return matchToken(text.toString(), caseSensitive);
     }
 
     /**
