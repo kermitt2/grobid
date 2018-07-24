@@ -62,4 +62,4 @@ grobid-home/models/*lexical-entry*
 grobid-home/models/lexical-entry/model.wapiti
 grobid-home/models/dictionary*
 grobid-home/models/dictionaries*
-
+grobid-home/models/software*
