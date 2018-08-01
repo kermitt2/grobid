@@ -111,6 +111,16 @@ public class Person {
         affiliations.add(f);
     }
 
+    public void addLayoutTokens(LayoutToken token) {
+        if (layoutTokens == null)
+            layoutTokens = new ArrayList<LayoutToken>();
+        layoutTokens.add(token);
+    }
+
+    public void setLayoutTokens(List<LayoutToken> tokens) {
+        layoutTokens = tokens;
+    }
+
     public List<String> getAffiliationMarkers() {
         return affiliationMarkers;
     }

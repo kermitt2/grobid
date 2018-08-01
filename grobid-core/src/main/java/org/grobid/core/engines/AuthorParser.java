@@ -11,6 +11,7 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorName;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.lexicon.Lexicon;
+import org.grobid.core.tokenization.LabeledTokensContainer;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.LayoutTokensUtil;
@@ -98,7 +99,6 @@ public class AuthorParser {
         try {
             List<OffsetPosition> titlePositions = Lexicon.getInstance().tokenPositionsPersonTitle(tokens);
             List<OffsetPosition> suffixPositions = Lexicon.getInstance().tokenPositionsPersonSuffix(tokens);
-
             String sequence = FeaturesVectorName.addFeaturesName(tokens, null, 
                 titlePositions, suffixPositions);
             if (StringUtils.isEmpty(sequence))
@@ -111,9 +111,16 @@ public class AuthorParser {
             boolean newMarker = false;
             String currentMarker = null;
             List<TaggingTokenCluster> clusters = clusteror.cluster();
+            int i = 0, j = 0;
             for (TaggingTokenCluster cluster : clusters) {
                 if (cluster == null) {
                     continue;
+                }
+                LayoutToken token1 = null;
+                for(LayoutToken token : tokens){
+                    for(LabeledTokensContainer container : cluster.getLabeledTokensContainers())
+                    if(token.getText().equals(container.getToken()))
+                        token1 = token;
                 }
 
                 TaggingLabel clusterLabel = cluster.getTaggingLabel();
@@ -155,6 +162,7 @@ public class AuthorParser {
                                 fullAuthors = new ArrayList<Person>();
                             fullAuthors.add(aut);
                         }
+                        //here we need to get the tokens
                         aut = new Person();
                         aut.setTitle(clusterContent);
                     } else {
@@ -216,6 +224,8 @@ public class AuthorParser {
                         aut.setSuffix(clusterContent);
                     }
                 }
+                if(token1 != null)//this should throw exception
+                    aut.addLayoutTokens(token1);
             }
 
             // add last built author

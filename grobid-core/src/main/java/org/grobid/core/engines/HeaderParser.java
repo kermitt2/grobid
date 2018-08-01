@@ -101,7 +101,7 @@ public class HeaderParser extends AbstractParser {
                 throw new GrobidException("PDF parsing resulted in empty content");
             }
 
-            String tei = processingHeaderBlock(config.isConsolidateHeader(), doc, resHeader);
+            String tei = processingHeaderBlock(config, doc, resHeader);
             return Pair.of(tei, doc);
         } catch (Exception e) {
             throw new GrobidException(e, GrobidExceptionStatus.GENERAL);
@@ -115,7 +115,7 @@ public class HeaderParser extends AbstractParser {
     /**
      * Header processing after identification of the header blocks with heuristics (old approach)
      */
-    public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) throws Exception {
+    public String processingHeaderBlock(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader) throws Exception {
         String header;
         //if (doc.getBlockDocumentHeaders() == null) {
         header = doc.getHeaderFeatured(true, true);
@@ -264,7 +264,7 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                if (consolidate) {
+                if (config.isConsolidateHeader()) {
                     resHeader = consolidateHeader(resHeader);
                 }
 
@@ -298,7 +298,7 @@ public class HeaderParser extends AbstractParser {
         doc.setResHeader(resHeader);
 
         TEIFormatter teiFormatter = new TEIFormatter(doc);
-        StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, GrobidAnalysisConfig.builder().consolidateHeader(consolidate).build());
+        StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, GrobidAnalysisConfig.builder().consolidateHeader(config.isConsolidateHeader()).generateTeiCoordinates(config.getGenerateTeiCoordinates()).build());
         tei.append("\t</text>\n");
         tei.append("</TEI>\n");
         //LOGGER.debug(tei.toString());
