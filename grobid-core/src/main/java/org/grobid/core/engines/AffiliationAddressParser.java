@@ -257,6 +257,8 @@ public class AffiliationAddressParser extends AbstractParser {
 
             int p = 0;
 
+            List<LayoutToken> tokenization2 = new ArrayList<LayoutToken>(tokenizations);
+
             while (st2.hasMoreTokens()) {
                 boolean addSpace = false;
                 String line = st2.nextToken();
@@ -287,6 +289,15 @@ public class AffiliationAddressParser extends AbstractParser {
                     String s = st3.nextToken().trim();
                     if (i == 0) {
                         s2 = s; // lexical token
+                        //this is experimental
+                        for(int k = 0 ; k < tokenization2.size(); k++){
+                            LayoutToken token = tokenization2.get(k);
+                        if(token.getText().equals(s)){
+                            aff.addLayoutTokens(token);
+                            tokenization2.remove(k);
+                        }
+
+                        }
 
                         boolean strop = false;
                         while ((!strop) && (p < tokenizations.size())) {

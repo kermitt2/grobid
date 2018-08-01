@@ -1,5 +1,6 @@
 package org.grobid.core.data;
 
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.lexicon.Lexicon;
 
@@ -32,6 +33,8 @@ public class Affiliation {
     private String affiliationString = null; // unspecified affiliation field
 
     private boolean failAffiliation = true; // tag for unresolved affiliation attachment
+
+    private List<LayoutToken> layoutTokens = new ArrayList<>();
 
     // an identifier for the affiliation independent from the marker, present in the TEI result
     private String key = null;
@@ -117,6 +120,10 @@ public class Affiliation {
         return departments;
     }
 
+    public List<LayoutToken> getLayoutTokens() {
+        return layoutTokens;
+    }
+
     public String getKey() {
         return key;
     }
@@ -197,6 +204,16 @@ public class Affiliation {
         if (laboratories == null)
             laboratories = new ArrayList<String>();
         laboratories.add(TextUtilities.cleanField(aff, true));
+    }
+
+    public void addLayoutTokens(LayoutToken token) {
+        if (layoutTokens == null)
+            layoutTokens = new ArrayList<LayoutToken>();
+        layoutTokens.add(token);
+    }
+
+    public void setLayoutTokens(List<LayoutToken> tokens) {
+        layoutTokens = tokens;
     }
 
     public void extendFirstInstitution(String theExtend) {

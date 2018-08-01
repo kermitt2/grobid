@@ -7,6 +7,7 @@ import org.grobid.core.data.util.AuthorEmailAssigner;
 import org.grobid.core.data.util.ClassicAuthorEmailAssigner;
 import org.grobid.core.data.util.EmailSanitizer;
 import org.grobid.core.document.*;
+import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
@@ -3429,6 +3430,11 @@ public class BiblioItem {
                             tei.append("<affiliation");
                             if (aff.getKey() != null)
                                 tei.append(" key=\"").append(aff.getKey()).append("\"");
+                            if(withCoordinates) {
+                                if (withCoordinates && (aff.getLayoutTokens() != null) && (!aff.getLayoutTokens().isEmpty())) {
+                                    tei.append(" coords=\"" + LayoutTokensUtil.getCoordsString(aff.getLayoutTokens()) + "\"");
+                                }
+                            }
                             tei.append(">\n");
 
                             if (aff.getDepartments() != null) {
