@@ -116,15 +116,6 @@ public class AuthorParser {
                 if (cluster == null) {
                     continue;
                 }
-                LayoutToken token1 = null;
-                for(int i = 0 ; i < tokenization1.size(); i++){
-                    LayoutToken token = tokenization1.get(i);
-                    for(LabeledTokensContainer container : cluster.getLabeledTokensContainers())
-                    if(token.getText().equals(container.getToken())) {
-                        token1 = token;
-                        tokenization1.remove(i);
-                    }
-                }
 
                 TaggingLabel clusterLabel = cluster.getTaggingLabel();
                 Engine.getCntManager().i(clusterLabel);
@@ -227,8 +218,10 @@ public class AuthorParser {
                         aut.setSuffix(clusterContent);
                     }
                 }
-                if(token1 != null)//this should throw exception
-                    aut.addLayoutTokens(token1);
+                for(LabeledTokensContainer container : cluster.getLabeledTokensContainers()){
+                    for(LayoutToken token : container.getLayoutTokens())
+                    aut.addLayoutTokens(token);
+                }
             }
 
             // add last built author
