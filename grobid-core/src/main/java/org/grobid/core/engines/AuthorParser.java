@@ -111,7 +111,6 @@ public class AuthorParser {
             boolean newMarker = false;
             String currentMarker = null;
             List<TaggingTokenCluster> clusters = clusteror.cluster();
-            List<LayoutToken> tokenization1 = new ArrayList<>(tokens);
             for (TaggingTokenCluster cluster : clusters) {
                 if (cluster == null) {
                     continue;
