@@ -56,6 +56,7 @@ public class BiblioItem {
     //title layout tokens
     private List<LayoutToken> titleLayoutTokens = new ArrayList<>();
     private List<LayoutToken> authorsLayoutTokens = new ArrayList<>();
+    private List<LayoutToken> abstractLayoutTokens = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -4015,5 +4016,9 @@ public class BiblioItem {
 
     public void addAuthorsTokens(List<LayoutToken> layoutTokens) {
 	    this.authorsLayoutTokens.addAll(layoutTokens);
+    }
+
+    public void addAbstractTokens(List<LayoutToken> layoutTokens) {
+        this.abstractLayoutTokens.addAll(layoutTokens);
     }
 }

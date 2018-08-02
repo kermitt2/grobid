@@ -1061,270 +1061,166 @@ public class HeaderParser extends AbstractParser {
             if (cluster == null) {
                 continue;
             }
-
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
             Engine.getCntManager().i(clusterLabel);
 
             String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
             //String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
             if (clusterLabel.equals(TaggingLabels.HEADER_TITLE)) {
+                if (biblio.getTitle() != null)
+                    biblio.setTitle(biblio.getTitle() + clusterContent);
+                else
+                    biblio.setTitle(clusterContent);
                 List<LayoutToken> tokens = getLayoutTokens(cluster);
                 biblio.addTitleTokens(tokens);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_AUTHOR)) {
+                if (biblio.getAuthors() != null)
+                    biblio.setAuthors(biblio.getAuthors() + clusterContent);
+                else
+                    biblio.setAuthors(clusterContent);
                 List<LayoutToken> tokens = getLayoutTokens(cluster);
                 biblio.addAuthorsTokens(tokens);
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_TECH)) {
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_TECH)) {
                 biblio.setItem(BiblioItem.TechReport);
                 if (biblio.getBookType() != null) {
-                    biblio.setBookType(biblio.getBookType() + s2);
+                    biblio.setBookType(biblio.getBookType() + clusterContent);
                 } else
-                    biblio.setBookType(s2);
-                
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_LOCATION)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_DATE)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_DATESUB)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_PAGE)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_EDITOR)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_INSTITUTION)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_NOTE)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_ABSTRACT)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_REFERENCE)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_COPYRIGHT)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_AFFILIATION)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_ADDRESS)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_EMAIL)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_PUBNUM)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_KEYWORD)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_PHONE)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_DEGREE)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_WEB)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_DEDICATION)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_SUBMISSION)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_ENTITLE)) {
-            } else if(clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
-            }
+                    biblio.setBookType(clusterContent);
 
-        }
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_LOCATION)) {
 
-            } else if ((s1.equals("<tech>")) || (s1.equals("I-<tech>"))) {
-                biblio.setItem(BiblioItem.TechReport);
-                if (biblio.getBookType() != null) {
-                    if (addSpace) {
-                        biblio.setBookType(biblio.getBookType() + " " + s2);
-                    } else
-                        biblio.setBookType(biblio.getBookType() + s2);
-                } else
-                    biblio.setBookType(s2);
-            } else if ((s1.equals("<location>")) || (s1.equals("I-<location>"))) {
                 if (biblio.getLocation() != null) {
-                    if (addSpace)
-                        biblio.setLocation(biblio.getLocation() + " " + s2);
-                    else
-                        biblio.setLocation(biblio.getLocation() + s2);
+                    biblio.setLocation(biblio.getLocation() + clusterContent);
                 } else
-                    biblio.setLocation(s2);
-            } else if ((s1.equals("<date>")) || (s1.equals("I-<date>"))) {
+                    biblio.setLocation(clusterContent);
+
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_DATE)) {
                 // it appears that the same date is quite often repeated,
                 // we should check, before adding a new date segment, if it is
                 // not already present
 
                 if (biblio.getPublicationDate() != null) {
-                    if (addSpace) {
-                        biblio.setPublicationDate(biblio.getPublicationDate() + " " + s2);
-                    } else
-                        biblio.setPublicationDate(biblio.getPublicationDate() + s2);
+                    biblio.setPublicationDate(biblio.getPublicationDate() + clusterContent);
                 } else
-                    biblio.setPublicationDate(s2);
-            } else if ((s1.equals("<date-submission>")) || (s1.equals("I-<date-submission>"))) {
+                    biblio.setPublicationDate(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_DATESUB)) {
                 // it appears that the same date is quite often repeated,
                 // we should check, before adding a new date segment, if it is
                 // not already present
 
                 if (biblio.getSubmissionDate() != null) {
-                    if (addSpace) {
-                        biblio.setSubmissionDate(biblio.getSubmissionDate() + " " + s2);
-                    } else
-                        biblio.setSubmissionDate(biblio.getSubmissionDate() + s2);
+                    biblio.setSubmissionDate(biblio.getSubmissionDate() + clusterContent);
                 } else
-                    biblio.setSubmissionDate(s2);
-            } else if ((s1.equals("<pages>")) || (s1.equals("<page>")) | (s1.equals("I-<pages>")) || (s1.equals("I-<page>"))) {
+                    biblio.setSubmissionDate(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_PAGE)) {
                 if (biblio.getPageRange() != null) {
-                    if (addSpace) {
-                        biblio.setPageRange(biblio.getPageRange() + " " + s2);
-                    } else
-                        biblio.setPageRange(biblio.getPageRange() + s2);
+                    biblio.setPageRange(biblio.getPageRange() + clusterContent);
                 } else
-                    biblio.setPageRange(s2);
-            } else if ((s1.equals("<editor>")) || (s1.equals("I-<editor>"))) {
+                    biblio.setPageRange(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_EDITOR)) {
                 if (biblio.getEditors() != null) {
-                    if (addSpace) {
-                        biblio.setEditors(biblio.getEditors() + " " + s2);
-                    } else {
-                        biblio.setEditors(biblio.getEditors() + s2);
-                    }
+                    biblio.setEditors(biblio.getEditors() + clusterContent);
                 } else
-                    biblio.setEditors(s2);
-            } else if ((s1.equals("<institution>")) || (s1.equals("I-<institution>"))) {
+                    biblio.setEditors(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_INSTITUTION)) {
                 if (biblio.getInstitution() != null) {
-                    if (addSpace) {
-                        biblio.setInstitution(biblio.getInstitution() + "; " + s2);
-                    } else
-                        biblio.setInstitution(biblio.getInstitution() + s2);
+                    biblio.setInstitution(biblio.getInstitution() + clusterContent);
                 } else
-                    biblio.setInstitution(s2);
-            } else if ((s1.equals("<note>")) || (s1.equals("I-<note>"))) {
+                    biblio.setInstitution(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_NOTE)) {
                 if (biblio.getNote() != null) {
-                    if (addSpace) {
-                        biblio.setNote(biblio.getNote() + " " + s2);
-                    } else
-                        biblio.setNote(biblio.getNote() + s2);
+                    biblio.setNote(biblio.getNote() + clusterContent);
                 } else
-                    biblio.setNote(s2);
-            } else if ((s1.equals("<abstract>")) || (s1.equals("I-<abstract>"))) {
+                    biblio.setNote(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_ABSTRACT)) {
                 if (biblio.getAbstract() != null) {
-                    if (addSpace) {
-                        biblio.setAbstract(biblio.getAbstract() + " " + s2);
-                    } else
-                        biblio.setAbstract(biblio.getAbstract() + s2);
+                    biblio.setAbstract(biblio.getAbstract() + clusterContent);
                 } else
-                    biblio.setAbstract(s2);
-            } else if ((s1.equals("<reference>")) || (s1.equals("I-<reference>"))) {
+                    biblio.setAbstract(clusterContent);
+                List<LayoutToken> tokens = getLayoutTokens(cluster);
+                biblio.addAbstractTokens(tokens);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_REFERENCE)) {
                 if (biblio.getReference() != null) {
-                    if (addSpace) {
-                        biblio.setReference(biblio.getReference() + " " + s2);
-                    } else
-                        biblio.setReference(biblio.getReference() + s2);
+                    biblio.setReference(biblio.getReference() + clusterContent);
                 } else
-                    biblio.setReference(s2);
-            } else if ((s1.equals("<grant>")) || (s1.equals("I-<grant>"))) {
+                    biblio.setReference(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_GRANT)) {
                 if (biblio.getGrant() != null) {
-                    if (addSpace) {
-                        biblio.setGrant(biblio.getGrant() + " " + s2);
-                    } else
-                        biblio.setGrant(biblio.getGrant() + s2);
+                    biblio.setGrant(biblio.getGrant() + clusterContent);
                 } else
-                    biblio.setGrant(s2);
-            } else if ((s1.equals("<copyright>")) || (s1.equals("I-<copyright>"))) {
+                    biblio.setGrant(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_COPYRIGHT)) {
                 if (biblio.getCopyright() != null) {
-                    if (addSpace) {
-                        biblio.setCopyright(biblio.getCopyright() + " " + s2);
-                    } else
-                        biblio.setCopyright(biblio.getCopyright() + s2);
+                    biblio.setCopyright(biblio.getCopyright() + clusterContent);
                 } else
-                    biblio.setCopyright(s2);
-            } else if ((s1.equals("<affiliation>")) || (s1.equals("I-<affiliation>"))) {
+                    biblio.setCopyright(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_AFFILIATION)) {
                 // affiliation **makers** should be marked SINGLECHAR LINESTART
                 if (biblio.getAffiliation() != null) {
-                    if ((lastTag != null) && (s1.equals(lastTag) || lastTag.equals("I-<affiliation>"))) {
-                        if (s1.equals("I-<affiliation>")) {
-                            biblio.setAffiliation(biblio.getAffiliation() + " ; " + s2);
-                        } else if (addSpace) {
-                            biblio.setAffiliation(biblio.getAffiliation() + " " + s2);
-                        } else
-                            biblio.setAffiliation(biblio.getAffiliation() + s2);
-                    } else
-                        biblio.setAffiliation(biblio.getAffiliation() + " ; " + s2);
+                    biblio.setAffiliation(biblio.getAffiliation() + clusterContent);
                 } else
-                    biblio.setAffiliation(s2);
-            } else if ((s1.equals("<address>")) || (s1.equals("I-<address>"))) {
+                    biblio.setAffiliation(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_ADDRESS)) {
                 if (biblio.getAddress() != null) {
-                    if (addSpace) {
-                        biblio.setAddress(biblio.getAddress() + " " + s2);
-                    } else
-                        biblio.setAddress(biblio.getAddress() + s2);
+                    biblio.setAddress(biblio.getAddress() + clusterContent);
                 } else
-                    biblio.setAddress(s2);
-            } else if ((s1.equals("<email>")) || (s1.equals("I-<email>"))) {
+                    biblio.setAddress(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_EMAIL)) {
                 if (biblio.getEmail() != null) {
-                    if (s1.equals("I-<email>"))
-                        biblio.setEmail(biblio.getEmail() + " ; " + s2);
-                    else if (addSpace)
-                        biblio.setEmail(biblio.getEmail() + " " + s2);
-                    else
-                        biblio.setEmail(biblio.getEmail() + s2);
+                    biblio.setEmail(biblio.getEmail() + clusterContent);
                 } else
-                    biblio.setEmail(s2);
-            } else if ((s1.equals("<pubnum>")) || (s1.equals("I-<pubnum>"))) {
+                    biblio.setEmail(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_PUBNUM)) {
                 if (biblio.getPubnum() != null) {
-                    if (addSpace)
-                        biblio.setPubnum(biblio.getPubnum() + " " + s2);
-                    else
-                        biblio.setPubnum(biblio.getPubnum() + s2);
+                    biblio.setPubnum(biblio.getPubnum() + clusterContent);
                 } else
-                    biblio.setPubnum(s2);
-            } else if ((s1.equals("<keyword>")) || (s1.equals("I-<keyword>"))) {
+                    biblio.setPubnum(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_KEYWORD)) {
                 if (biblio.getKeyword() != null) {
-                    if (localFeatures.contains("LINESTART")) {
-                        biblio.setKeyword(biblio.getKeyword() + " \n " + s2);
-                    } else if (addSpace)
-                        biblio.setKeyword(biblio.getKeyword() + " " + s2);
-                    else
-                        biblio.setKeyword(biblio.getKeyword() + s2);
+                    if (cluster.getFeatureBlock().contains("LINESTART"))
+                        biblio.setKeyword(biblio.getKeyword() + clusterContent);
                 } else
-                    biblio.setKeyword(s2);
-            } else if ((s1.equals("<phone>")) || (s1.equals("I-<phone>"))) {
+                    biblio.setKeyword(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_PHONE)) {
                 if (biblio.getPhone() != null) {
-                    if (addSpace)
-                        biblio.setPhone(biblio.getPhone() + " " + s2);
-                    else
-                        biblio.setPhone(biblio.getPhone() + s2);
+                    biblio.setPhone(biblio.getPhone() + clusterContent);
                 } else
-                    biblio.setPhone(s2);
-            } else if ((s1.equals("<degree>")) || (s1.equals("I-<degree>"))) {
+                    biblio.setPhone(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_DEGREE)) {
                 if (biblio.getDegree() != null) {
-                    if (addSpace)
-                        biblio.setDegree(biblio.getDegree() + " " + s2);
-                    else
-                        biblio.setDegree(biblio.getDegree() + s2);
+                    biblio.setDegree(biblio.getDegree() + clusterContent);
                 } else
-                    biblio.setDegree(s2);
-            } else if ((s1.equals("<web>")) || (s1.equals("I-<web>"))) {
+                    biblio.setDegree(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_WEB)) {
                 if (biblio.getWeb() != null) {
-                    if (addSpace)
-                        biblio.setWeb(biblio.getWeb() + " " + s2);
-                    else
-                        biblio.setWeb(biblio.getWeb() + s2);
+                    biblio.setWeb(biblio.getWeb() + clusterContent);
                 } else
-                    biblio.setWeb(s2);
-            } else if ((s1.equals("<dedication>")) || (s1.equals("I-<dedication>"))) {
+                    biblio.setWeb(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_DEDICATION)) {
                 if (biblio.getDedication() != null) {
-                    if (addSpace)
-                        biblio.setDedication(biblio.getDedication() + " " + s2);
-                    else
-                        biblio.setDedication(biblio.getDedication() + s2);
+                    biblio.setDedication(biblio.getDedication() + clusterContent);
                 } else
-                    biblio.setDedication(s2);
-            } else if ((s1.equals("<submission>")) || (s1.equals("I-<submission>"))) {
+                    biblio.setDedication(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_SUBMISSION)) {
                 if (biblio.getSubmission() != null) {
-                    if (addSpace)
-                        biblio.setSubmission(biblio.getSubmission() + " " + s2);
-                    else
-                        biblio.setSubmission(biblio.getSubmission() + s2);
+                    biblio.setSubmission(biblio.getSubmission() + clusterContent);
                 } else
-                    biblio.setSubmission(s2);
-            } else if ((s1.equals("<entitle>")) || (s1.equals("I-<entitle>"))) {
+                    biblio.setSubmission(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_ENTITLE)) {
                 if (biblio.getEnglishTitle() != null) {
-                    if (s1.equals(lastTag)) {
-                        if (localFeatures.contains("LINESTART")) {
-                            biblio.setEnglishTitle(biblio.getEnglishTitle() + " " + s2);
-                        } else if (addSpace)
-                            biblio.setEnglishTitle(biblio.getEnglishTitle() + " " + s2);
-                        else
-                            biblio.setEnglishTitle(biblio.getEnglishTitle() + s2);
+                    if (cluster.getFeatureBlock().contains("LINESTART")) {
+                        biblio.setEnglishTitle(biblio.getEnglishTitle() + " " + clusterContent);
                     } else
-                        biblio.setEnglishTitle(biblio.getEnglishTitle() + " ; " + s2);
+                        biblio.setEnglishTitle(biblio.getEnglishTitle() + clusterContent);
                 } else
-                    biblio.setEnglishTitle(s2);
-            } else if (((s1.equals("<intro>")) || (s1.equals("I-<intro>"))) && intro) {
+                    biblio.setEnglishTitle(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
                 return biblio;
             }
-            lastTag = s1;
-        }
-        */
 
+        }
         return biblio;
     }
-
     private List<LayoutToken> getLayoutTokens(TaggingTokenCluster cluster) {
         List<LayoutToken> tokens = new ArrayList<>();
 
