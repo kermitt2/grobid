@@ -15,6 +15,7 @@ import org.grobid.core.document.DocumentSource;
 import org.grobid.core.document.TEIFormatter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.SegmentationLabels;
+import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
@@ -23,6 +24,9 @@ import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.tokenization.LabeledTokensContainer;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
@@ -200,7 +204,7 @@ public class HeaderParser extends AbstractParser {
                     }
 
                     resHeader.setFullAffiliations(
-                            parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
+                        parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
                     resHeader.attachEmails();
                     boolean attached = false;
                     if (fragmentedAuthors && !hasMarker) {
@@ -416,7 +420,7 @@ public class HeaderParser extends AbstractParser {
                     }
 
                     resHeader.setFullAffiliations(
-                            parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
+                        parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
                     resHeader.attachEmails();
                     boolean attached = false;
                     if (fragmentedAuthors && !hasMarker) {
@@ -652,14 +656,14 @@ public class HeaderParser extends AbstractParser {
                                         endloop = true;
                                     } else {
                                         if ((toto.trim().length() != 0)
-                                                && (!text.equals("\u00A0"))
-                                                && (!(toto.contains("@IMAGE")))
-                                                && (!(toto.contains("@PAGE")))
-                                                && (!text.contains(".pbm"))
-                                                && (!text.contains(".ppm"))
-                                                && (!text.contains(".png"))
-                                                && (!text.contains(".vec"))
-                                                && (!text.contains(".jpg"))) {
+                                            && (!text.equals("\u00A0"))
+                                            && (!(toto.contains("@IMAGE")))
+                                            && (!(toto.contains("@PAGE")))
+                                            && (!text.contains(".pbm"))
+                                            && (!text.contains(".ppm"))
+                                            && (!text.contains(".png"))
+                                            && (!text.contains(".vec"))
+                                            && (!text.contains(".jpg"))) {
                                             endloop = true;
                                         }
                                     }
@@ -859,7 +863,7 @@ public class HeaderParser extends AbstractParser {
 
                     // buffer for the affiliation+address block
                     StringBuilder bufferAffiliation =
-                            parsers.getAffiliationAddressParser().trainingExtraction(rese, tokenizations);
+                        parsers.getAffiliationAddressParser().trainingExtraction(rese, tokenizations);
                     // buffer for the date block
                     StringBuilder bufferDate = null;
                     // we need to rebuild the found date string as it appears
@@ -947,10 +951,10 @@ public class HeaderParser extends AbstractParser {
                     // write the TEI file to reflect the extract layout of the text as
                     // extracted from the pdf
                     writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + File.separator
-                            + pdfFileName.replace(".pdf", GrobidProperties.FILE_ENDING_TEI_HEADER)), false), "UTF-8");
+                        + pdfFileName.replace(".pdf", GrobidProperties.FILE_ENDING_TEI_HEADER)), false), "UTF-8");
                     writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\""
-                            + pdfFileName.replace(".pdf", "")
-                            + "\"/>\n\t</teiHeader>\n\t<text");
+                        + pdfFileName.replace(".pdf", "")
+                        + "\"/>\n\t</teiHeader>\n\t<text");
 
                     if (lang != null) {
                         // TODO: why English (Slava)
@@ -965,11 +969,11 @@ public class HeaderParser extends AbstractParser {
                     if (bufferAffiliation != null) {
                         if (bufferAffiliation.length() > 0) {
                             Writer writerAffiliation = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                                    File.separator
-                                    + pdfFileName.replace(".pdf", ".affiliation.tei.xml")), false), "UTF-8");
+                                File.separator
+                                + pdfFileName.replace(".pdf", ".affiliation.tei.xml")), false), "UTF-8");
                             writerAffiliation.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
                             writerAffiliation.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\""
-                                    + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" " + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
+                                + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" " + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
                             writerAffiliation.write("\n\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>");
                             writerAffiliation.write("\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\t\t\t\t\t\t<author>\n\n");
 
@@ -985,8 +989,8 @@ public class HeaderParser extends AbstractParser {
                     if (bufferDate != null) {
                         if (bufferDate.length() > 0) {
                             Writer writerDate = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                                    File.separator
-                                    + pdfFileName.replace(".pdf", ".date.xml")), false), "UTF-8");
+                                File.separator
+                                + pdfFileName.replace(".pdf", ".date.xml")), false), "UTF-8");
                             writerDate.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                             writerDate.write("<dates>\n");
 
@@ -1000,11 +1004,11 @@ public class HeaderParser extends AbstractParser {
                     if (bufferName != null) {
                         if (bufferName.length() > 0) {
                             Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                                    File.separator
-                                    + pdfFileName.replace(".pdf", ".authors.tei.xml")), false), "UTF-8");
+                                File.separator
+                                + pdfFileName.replace(".pdf", ".authors.tei.xml")), false), "UTF-8");
                             writerName.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
                             writerName.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\"" + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" "
-                                    + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
+                                + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
                             writerName.write("\n\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>");
                             writerName.write("\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\n\t\t\t\t\t\t<author>");
                             writerName.write("\n\t\t\t\t\t\t\t<persName>\n");
@@ -1022,8 +1026,8 @@ public class HeaderParser extends AbstractParser {
                     if (bufferReference != null) {
                         if (bufferReference.length() > 0) {
                             Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                                    File.separator
-                                    + pdfFileName.replace(".pdf", ".header-reference.xml")), false), "UTF-8");
+                                File.separator
+                                + pdfFileName.replace(".pdf", ".header-reference.xml")), false), "UTF-8");
                             writerReference.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                             writerReference.write("<citations>\n");
 
@@ -1046,112 +1050,62 @@ public class HeaderParser extends AbstractParser {
         }
     }
 
-    /**
-     * Extract results from a labelled header. If boolean intro is true, the
-     * extraction is stopped at the first "intro" tag identified (this tag marks
-     * the begining of the description).
-     *
-     * @param result        result
-     * @param intro         if intro
-     * @param tokenizations list of tokens
-     * @param biblio        biblio item
-     * @return a biblio item
-     */
     public BiblioItem resultExtraction(String result, boolean intro, List<LayoutToken> tokenizations, BiblioItem biblio) {
-//        StringTokenizer st = new StringTokenizer(result, "\n");
-        List<String> lines = Splitter.on("\n").splitToList(result);
-        String s1 = null;
-        String s2 = null;
-        String lastTag = null;
 
-        int p = 0;
+        TaggingLabel lastClusterLabel = null;
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.HEADER, result, tokenizations);
 
-        Iterator<String> st = lines.iterator();
-        while (st.hasNext()) {
-            boolean addSpace = false;
-            String tok = st.next().trim();
-
-            if (tok.length() == 0) {
+        String tokenLabel = null;
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
                 continue;
             }
-            StringTokenizer stt = new StringTokenizer(tok, "\t");
-            List<String> localFeatures = new ArrayList<String>();
-            int i = 0;
 
-            // boolean newLine = false;
-            int ll = stt.countTokens();
-            LayoutToken layoutToken = null;
-            while (stt.hasMoreTokens()) {
-                String s = stt.nextToken().trim();
-                if (i == 0) {
-                    //s2 = TextUtilities.HTMLEncode(s);
-                    s2 = s;
-                    int p0 = p;
-                    boolean strop = false;
-                    while ((!strop) && (p < tokenizations.size())) {
-                        layoutToken = tokenizations.get(p);
-                        String tokOriginal = layoutToken.getText();
-                        if (tokOriginal.equals(" ")) {
-                            addSpace = true;
-                        } else if (tokOriginal.equals(s)) {
-                            strop = true;
-                        }
-                        p++;
-                    }
-                    if (p == tokenizations.size()) {
-                        // either we are at the end of the header, or we might have
-                        // a problematic token in tokenization for some reasons
-                        if ((p - p0) > 2) {
-                            // we loose the synchronicity, so we reinit p for the next token
-                            p = p0;
-                        }
-                    }
-                } else if (i == ll - 1) {
-                    s1 = s;
-                } else {
-                    // if (s.equals("LINESTART"))
-                    // newLine = true;
-                    localFeatures.add(s);
-                }
-                i++;
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            Engine.getCntManager().i(clusterLabel);
+
+            String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+            //String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
+            if (clusterLabel.equals(TaggingLabels.HEADER_TITLE)) {
+                List<LayoutToken> tokens = getLayoutTokens(cluster);
+                biblio.addTitleTokens(tokens);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_AUTHOR)) {
+                List<LayoutToken> tokens = getLayoutTokens(cluster);
+                biblio.addAuthorsTokens(tokens);
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_TECH)) {
+                biblio.setItem(BiblioItem.TechReport);
+                if (biblio.getBookType() != null) {
+                    biblio.setBookType(biblio.getBookType() + s2);
+                } else
+                    biblio.setBookType(s2);
+                
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_LOCATION)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_DATE)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_DATESUB)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_PAGE)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_EDITOR)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_INSTITUTION)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_NOTE)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_ABSTRACT)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_REFERENCE)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_COPYRIGHT)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_AFFILIATION)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_ADDRESS)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_EMAIL)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_PUBNUM)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_KEYWORD)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_PHONE)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_DEGREE)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_WEB)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_DEDICATION)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_SUBMISSION)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_ENTITLE)) {
+            } else if(clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
             }
 
-            if ((s1.equals("<title>")) || (s1.equals("I-<title>"))) {
-                if (biblio.getTitle() != null) {
-                    if (localFeatures.contains("LINESTART")) {
-                        biblio.setTitle(biblio.getTitle() + " " + s2);
-                    } else if (addSpace) {
-                        biblio.setTitle(biblio.getTitle() + " " + s2);
-                    } else
-                        biblio.setTitle(biblio.getTitle() + s2);
-                } else
-                    biblio.setTitle(s2);
-            } else if ((s1.equals("<author>")) || (s1.equals("I-<author>"))) {
-                if ((lastTag == null) || ((lastTag != null) && (lastTag.endsWith("<author>")))) {
-                    if (biblio.getAuthors() != null) {
-                        if (addSpace) {
-                            biblio.setAuthors(biblio.getAuthors() + " " + s2);
-                            biblio.addAuthorsToken(new LayoutToken(" ", TaggingLabels.HEADER_AUTHOR));
-                        } else {
-                            biblio.setAuthors(biblio.getAuthors() + s2);
-                        }
-                    } else {
-                        biblio.setAuthors(s2);
-                    }
-                } else {
-                    if (biblio.getAuthors() != null) {
-                        if (addSpace) {
-                            biblio.setAuthors(biblio.getAuthors() + " \n" + s2);
-                            biblio.addAuthorsToken(new LayoutToken(" ", TaggingLabels.HEADER_AUTHOR)).addAuthorsToken(new LayoutToken("\n", TaggingLabels.HEADER_AUTHOR));
-                        } else {
-                            biblio.setAuthors(biblio.getAuthors() + "\n" + s2);
-                            biblio.addAuthorsToken(new LayoutToken("\n", TaggingLabels.HEADER_AUTHOR));
-                        }
-                    } else {
-                        biblio.setAuthors(s2);
-                    }
-                }
-                biblio.addAuthorsToken(layoutToken);
+        }
+
             } else if ((s1.equals("<tech>")) || (s1.equals("I-<tech>"))) {
                 biblio.setItem(BiblioItem.TechReport);
                 if (biblio.getBookType() != null) {
@@ -1366,8 +1320,19 @@ public class HeaderParser extends AbstractParser {
             }
             lastTag = s1;
         }
+        */
 
         return biblio;
+    }
+
+    private List<LayoutToken> getLayoutTokens(TaggingTokenCluster cluster) {
+        List<LayoutToken> tokens = new ArrayList<>();
+
+        for (LabeledTokensContainer container : cluster.getLabeledTokensContainers()) {
+            tokens.addAll(container.getLayoutTokens());
+        }
+
+        return tokens;
     }
 
     /**
@@ -1413,7 +1378,7 @@ public class HeaderParser extends AbstractParser {
                     while ((!strop) && (p < tokenizations.size())) {
                         String tokOriginal = tokenizations.get(p).t();
                         if (tokOriginal.equals(" ")
-                                || tokOriginal.equals("\u00A0")) {
+                            || tokOriginal.equals("\u00A0")) {
                             addSpace = true;
                         } else if (tokOriginal.equals(s)) {
                             strop = true;
@@ -1616,9 +1581,11 @@ public class HeaderParser extends AbstractParser {
                 buffer.append("</p>\n");
             }
         }
+
     }
 
-    private boolean writeField(StringBuilder buffer, String s1, String lastTag0, String s2, String field, String outField, boolean addSpace) {
+    private boolean writeField(StringBuilder buffer, String s1, String lastTag0, String s2, String field, String
+        outField, boolean addSpace) {
         boolean result = false;
         if ((s1.equals(field)) || (s1.equals("I-" + field))) {
             result = true;

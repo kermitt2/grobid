@@ -53,6 +53,10 @@ public class BiblioItem {
     // map of labels (e.g. <title> or <abstract>) to LayoutToken
     private Map<String, List<LayoutToken>> labeledTokens;
 
+    //title layout tokens
+    private List<LayoutToken> titleLayoutTokens = new ArrayList<>();
+    private List<LayoutToken> authorsLayoutTokens = new ArrayList<>();
+
     @Override
     public String toString() {
         return "BiblioItem{" +
@@ -4003,5 +4007,13 @@ public class BiblioItem {
                 theList.add(token);
             labeledTokens.put(clusterLabel.getLabel(), theList);
         }
+    }
+
+    public void addTitleTokens(List<LayoutToken> layoutTokens) {
+        this.titleLayoutTokens.addAll(layoutTokens);
+    }
+
+    public void addAuthorsTokens(List<LayoutToken> layoutTokens) {
+	    this.authorsLayoutTokens.addAll(layoutTokens);
     }
 }
