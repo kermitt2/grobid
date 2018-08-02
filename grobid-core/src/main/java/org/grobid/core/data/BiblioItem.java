@@ -973,13 +973,8 @@ public class BiblioItem {
         authors = aut;
     }
 
-    public BiblioItem addAuthorsToken(LayoutToken lt) {
-        authorsTokens.add(lt);
-        return this;
-    }
-
     public List<LayoutToken> getAuthorsTokens() {
-        return authorsTokens;
+        return authorsLayoutTokens;
     }
 
     public void addAuthor(String aut) {
@@ -4020,5 +4015,9 @@ public class BiblioItem {
 
     public void addAbstractTokens(List<LayoutToken> layoutTokens) {
         this.abstractLayoutTokens.addAll(layoutTokens);
+    }
+
+    public List<LayoutToken> getAbstractTokens() {
+        return this.abstractLayoutTokens;
     }
 }

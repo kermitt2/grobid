@@ -1177,7 +1177,6 @@ public class HeaderParser extends AbstractParser {
                     biblio.setPubnum(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_KEYWORD)) {
                 if (biblio.getKeyword() != null) {
-                    if (cluster.getFeatureBlock().contains("LINESTART"))
                         biblio.setKeyword(biblio.getKeyword() + clusterContent);
                 } else
                     biblio.setKeyword(clusterContent);
@@ -1208,9 +1207,9 @@ public class HeaderParser extends AbstractParser {
                     biblio.setSubmission(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_ENTITLE)) {
                 if (biblio.getEnglishTitle() != null) {
-                    if (cluster.getFeatureBlock().contains("LINESTART")) {
-                        biblio.setEnglishTitle(biblio.getEnglishTitle() + " " + clusterContent);
-                    } else
+//                    if (cluster.getFeatureBlock().contains("LINESTART")) {
+//                        biblio.setEnglishTitle(biblio.getEnglishTitle() + " " + clusterContent);
+//                    } else
                         biblio.setEnglishTitle(biblio.getEnglishTitle() + clusterContent);
                 } else
                     biblio.setEnglishTitle(clusterContent);

@@ -761,18 +761,24 @@ public class TEIFormatter {
             LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
             resLang = languageUtilities.runLanguageId(abstractText);
         }
+        tei.append("\t\t\t<abstract");
+        if ( (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("abstract")) )
+            tei.append(" coords=\"" + LayoutTokensUtil.getCoordsString(biblio.getAbstractTokens()) + "\"");
         if (resLang != null) {
             String resL = resLang.getLang();
+
             if (!resL.equals(doc.getLanguage())) {
-                tei.append("\t\t\t<abstract xml:lang=\"").append(resL).append("\">\n");
+                tei.append(" xml:lang=\"").append(resL);
+                tei.append("\">");
             } else {
-                tei.append("\t\t\t<abstract>\n");
+                tei.append(">");
             }
         } else if ((abstractText == null) || (abstractText.length() == 0)) {
-            tei.append("\t\t\t<abstract/>\n");
+            tei.append("/>");
         } else {
-            tei.append("\t\t\t<abstract>\n");
+            tei.append(">");
         }
+        tei.append("\n");
 
         if ((abstractText != null) && (abstractText.length() != 0)) {
             /*String abstractHeader = biblio.getAbstractHeader();
