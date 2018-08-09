@@ -335,7 +335,7 @@ public class HeaderParser extends AbstractParser {
                 String res = null;
                 if ((header != null) && (header.trim().length() > 0)) {
                     res = label(header);
-                    resHeader = resultExtraction(res, true, tokenizations, resHeader);
+                    resHeader = resultExtraction(res, true, tokenizationsHeader, resHeader);
                 }
 
                 // language identification
