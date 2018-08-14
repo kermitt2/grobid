@@ -194,7 +194,7 @@ public class Consolidation {
         // init the results
         int n = 0;
         for(n=0; n<biblios.size(); n++) {
-            results.put(new Integer(n), null);
+            results.put(Integer.valueOf(n), null);
         }
         n = 0;
         long threadId = Thread.currentThread().getId();
@@ -239,7 +239,7 @@ public class Consolidation {
             } 
 
             if ((doi == null) && (arguments == null)) {
-                //results.put(new Integer(n), null);
+                //results.put(Integer.valueOf(n), null);
                 n++;
                 continue;
             }
@@ -257,7 +257,7 @@ public class Consolidation {
                             // correctly to the one requested in order to avoid false positive
                             for(BiblioItem oneRes : res) {
                                 if (postValidation(theBiblio, oneRes)) {
-                                    results.put(new Integer(getRank()), oneRes);
+                                    results.put(Integer.valueOf(getRank()), oneRes);
                                     break;
                                 }
                             }
@@ -273,7 +273,7 @@ public class Consolidation {
                 });
             } catch(Exception e) {
                 LOGGER.warn("Consolidation error - " + ExceptionUtils.getStackTrace(e));
-                //results.put(new Integer(id), null);
+                //results.put(Integer.valueOf(id), null);
             } 
             n++;
         }

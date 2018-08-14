@@ -189,11 +189,11 @@ public class MonographParser extends AbstractParser {
                                 if (pattern.length() > 8) {
                                     Integer nb = patterns.get(pattern);
                                     if (nb == null) {
-                                        patterns.put(pattern, new Integer(1));
+                                        patterns.put(pattern, Integer.valueOf("1"));
                                         firstTimePattern.put(pattern, false);
                                     }
                                     else
-                                        patterns.put(pattern, new Integer(nb+1));
+                                        patterns.put(pattern, Integer.valueOf(nb+1));
                                 }
                             }
                         }
@@ -250,11 +250,11 @@ public class MonographParser extends AbstractParser {
                             if (pattern.length() > 8) {
                                 Integer nb = patterns.get(pattern);
                                 if (nb == null) {
-                                    patterns.put(pattern, new Integer(1));
+                                    patterns.put(pattern, Integer.valueOf("1"));
                                     firstTimePattern.put(pattern, false);
                                 }
                                 else
-                                    patterns.put(pattern, new Integer(nb+1));
+                                    patterns.put(pattern, Integer.valueOf(nb+1));
                             }
                         }
                     }

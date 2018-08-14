@@ -1271,19 +1271,19 @@ public class PatentRefParser {
         if ((toto.length() > 4) && toto.length() < 20) {
             if (sequence == null) {
  	            numbers.add(toto.trim());
-    	        offsets_begin.add(new Integer(offset_begin));
-        	    offsets_end.add(new Integer(offset_end));
+    	        offsets_begin.add(Integer.valueOf(offset_begin));
+        	    offsets_end.add(Integer.valueOf(offset_end));
         	} else {
 	        	// we might have an enumeration and we need to match the target number in it
 	        	int localStart = sequence.indexOf(toto);
 	        	int localEnd = localStart + toto.length();
 	        	numbers.add(toto.trim());
 	        	if (localStart != -1) {
-	    	        offsets_begin.add(new Integer(localStart+offset_begin));
-	        	    offsets_end.add(new Integer(localEnd+offset_begin));
+	    	        offsets_begin.add(Integer.valueOf(localStart+offset_begin));
+	        	    offsets_end.add(Integer.valueOf(localEnd+offset_begin));
 	        	} else {
- 		   	        offsets_begin.add(new Integer(offset_begin));
-        		    offsets_end.add(new Integer(offset_end));
+ 		   	        offsets_begin.add(Integer.valueOf(offset_begin));
+        		    offsets_end.add(Integer.valueOf(offset_end));
 	        	}
 	        }
         }

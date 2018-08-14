@@ -284,7 +284,7 @@ public final class FastMatcher {
             Map t2 = (Map) terms.get(token);
             if (t2 != null) {
                 new_t.add(t2);
-                new_startPos.add(new Integer(currentPos));
+                new_startPos.add(Integer.valueOf(currentPos));
                 new_lastNonSeparatorPos.add(currentPos);
             }
 
