@@ -1032,7 +1032,7 @@ public class Document implements Serializable {
                 localText = localText.trim();
                 localText = localText.replace("  ", " ");
                 accumulated.append(localText);
-                Integer inte = new Integer(i);
+                Integer inte = Integer.valueOf(i);
                 if (blockDocumentHeaders == null)
                     blockDocumentHeaders = new ArrayList<Integer>();
                 if (!blockDocumentHeaders.contains(inte))
