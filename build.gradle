@@ -240,6 +240,14 @@ project("grobid-core") {
         archives shadowJar
         archives mainJar
     }
+
+    processResources {
+        filesMatching('grobid-version.txt') {
+            filter {
+                it.replace('project.version', project.property('version'))
+            }
+        }
+    }
 }
 
 project("grobid-home") {
