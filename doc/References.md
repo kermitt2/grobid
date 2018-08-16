@@ -12,8 +12,8 @@ Here's a BibTeX entry:
 
 ```
 @misc{GROBID, 
-    title={Grobid}, 
-    howpublished={\url{https://github.com/kermitt2/grobid}}, 
+    title = {GROBID}, 
+    howpublished = {\url{https://github.com/kermitt2/grobid}}, 
     publisher = {GitHub},
     year = {2008 --- 2018},
     note = {[Online; accessed 16-August-2018]},
