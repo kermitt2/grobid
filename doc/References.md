@@ -1,10 +1,16 @@
 ## Project reference
 
-You can simply refer to the github project:
+To cite this work, you can simply refer to the github project:
 
-GROBID (2008-2017) <https://github.com/kermitt2/grobid>
+```
+GROBID (2008-2018) <https://github.com/kermitt2/grobid>
+```
 
 (please do not include a particular person name to emphasize the project and tool!)
+
+Here's a BibTeX entry:
+
+
 
 ## Presentations on Grobid
 
@@ -29,6 +35,8 @@ M. Lipinski, K. Yao, C. Breitinger, J. Beel, and B. Gipp, [Evaluation of Header 
 Phil Gooch and Kris Jack, [How well does Mendeley’s Metadata Extraction Work?](https://krisjack.wordpress.com/2015/03/12/how-well-does-mendeleys-metadata-extraction-work/)
 
 [Meta-eval](https://github.com/allenai/meta-eval)
+
+Tkaczyk, D., Collins, A., Sheridan, P., & Beel, J. Evaluation and Comparison of Open Source Bibliographic Reference Parsers: A Business Use Case. [arXiv:1802.01168](https://arxiv.org/pdf/1802.01168), 2018.
 
 ## Articles on CRF for bibliographical extraction
 
