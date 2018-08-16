@@ -111,10 +111,12 @@ ej-technologies provided us a free open-source license for its Java Profiler. Cl
 
 [![JProfiler](doc/img/jprofiler_medium.png)](http://www.ej-technologies.com/products/jprofiler/overview.html)
 
-## References
+## Reference
 
-Please simply refer to the github project:
+For citing this work, please simply refer to the github project:
 
-Grobid (2008-2017) <https://github.com/kermitt2/grobid>
+```
+Grobid (2008-2018) <https://github.com/kermitt2/grobid>
+```
 
 See the [GROBID documentation](http://grobid.readthedocs.org/en/latest/References) for more related resources. 
