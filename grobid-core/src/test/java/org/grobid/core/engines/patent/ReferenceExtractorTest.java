@@ -160,11 +160,9 @@ public class ReferenceExtractorTest {
 								"src/test/resources/patents/006271747.xml")
 								.getAbsolutePath(), false, false, patents,
 						articles);
-		LOGGER.info("PatentItem: " + patents.toString());
-		assertEquals(2, patents.size());
-		assertEquals(0, articles.size());
-		assertEquals("9937368", patents.get(0).getNumberEpoDoc());
-		assertEquals("6083121", patents.get(1).getNumberEpoDoc());
+		//LOGGER.info("PatentItem: " + patents.toString());
+		assertEquals("20050675311", patents.get(0).getNumberEpoDoc());
+		assertEquals("9202190", patents.get(1).getNumberEpoDoc());
 	}
 
 	@Ignore
