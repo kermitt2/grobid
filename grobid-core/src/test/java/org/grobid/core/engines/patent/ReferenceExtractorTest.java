@@ -149,6 +149,24 @@ public class ReferenceExtractorTest {
 		assertEquals("6083121", patents.get(1).getNumberEpoDoc());
 	}
 
+	@Test
+	public void extractAllReferencesXml() {
+		ReferenceExtractor extractor = new ReferenceExtractor();
+		List<PatentItem> patents = new ArrayList<PatentItem>();
+		List<BibDataSet> articles = new ArrayList<BibDataSet>();
+		extractor
+				.extractAllReferencesXMLFile(
+						new File(
+								"src/test/resources/patents/006271747.xml")
+								.getAbsolutePath(), false, false, patents,
+						articles);
+		LOGGER.info("PatentItem: " + patents.toString());
+		assertEquals(2, patents.size());
+		assertEquals(0, articles.size());
+		assertEquals("9937368", patents.get(0).getNumberEpoDoc());
+		assertEquals("6083121", patents.get(1).getNumberEpoDoc());
+	}
+
 	@Ignore
 	public void extractAllReferencesPdf() {
 		ReferenceExtractor extractor = new ReferenceExtractor();
