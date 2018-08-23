@@ -236,7 +236,7 @@ public class CitationsVisualizer {
 			    // register the object in the dictionary
 			    if (dictionary.get(teiId) == null) {
 				    Pair<Integer, Integer> thePlace =
-					   new Pair<Integer, Integer>(new Integer(pageNum.intValue()), new Integer(Math.round(annTopY+h)));
+					   new Pair<Integer, Integer>(Integer.valueOf(pageNum.intValue()), Integer.valueOf(Math.round(annTopY+h)));
 				    dictionary.put(teiId, thePlace);
 			    }
             }

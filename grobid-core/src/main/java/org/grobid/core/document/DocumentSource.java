@@ -46,7 +46,7 @@ public class DocumentSource {
 	 * but with the extra annotation file and with outline	
      */
     public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage) {
-        return fromPdf(pdfFile, startPage, endPage, false, true, true);
+        return fromPdf(pdfFile, startPage, endPage, false, true, false);
     }
 
     public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage, 
@@ -145,7 +145,10 @@ public class DocumentSource {
             File dataFolder = new File(tmpPathXML.getAbsolutePath() + "_data");
             File[] files = dataFolder.listFiles();
             if (files != null && files.length > PDF2XML_FILES_AMOUNT_LIMIT) {
-                throw new GrobidException("The temp folder " + dataFolder + " contains " + files.length + " files and exceeds the limit", GrobidExceptionStatus.PARSING_ERROR);
+                //throw new GrobidException("The temp folder " + dataFolder + " contains " + files.length + " files and exceeds the limit", 
+                //    GrobidExceptionStatus.PARSING_ERROR);
+                LOGGER.warn("The temp folder " + dataFolder + " contains " + files.length + 
+                    " files and exceeds the limit, only the first " + PDF2XML_FILES_AMOUNT_LIMIT + " asset files will be kept.");
             }
         }
         LOGGER.debug("pdf2xml process finished. Time to process:" + (System.currentTimeMillis() - time) + "ms");

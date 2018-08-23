@@ -3288,7 +3288,7 @@ public class BiblioItem {
                             int ind2 = -1;
                             int bestDistance = 1000;
                             for (Person aut : fullAuthors) {
-                                if (!winners.contains(new Integer(p))) {
+                                if (!winners.contains(Integer.valueOf(p))) {
                                     String lastname = aut.getLastName();
 
                                     if (lastname != null) {
@@ -3308,7 +3308,7 @@ public class BiblioItem {
                             if (best != -1) {
                                 fullAuthors.get(best).addAffiliation(aff);
                                 aff.setFailAffiliation(false);
-                                winners.add(new Integer(best));
+                                winners.add(Integer.valueOf(best));
                             }
 
                             from = ind + 1;
