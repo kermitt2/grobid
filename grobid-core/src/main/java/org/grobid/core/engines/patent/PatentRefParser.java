@@ -2,6 +2,7 @@ package org.grobid.core.engines.patent;
 
 import java.util.*;
 import java.util.regex.*;
+import java.lang.NumberFormatException;
 
 import org.apache.commons.io.IOUtils;
 import org.grobid.core.data.PatentItem;
@@ -18,6 +19,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Parser for patent references based on regular language rewriting.
  * Input raw references are WISIWIG references (i.e. reference string as
@@ -28,6 +32,8 @@ import java.io.InputStreamReader;
  */
 
 public class PatentRefParser {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceExtractor.class);
+
     private String rawText = null;
     private int rawTextOffset = 0; // starting offset of the current raw text
     private Pattern patent_pattern = null;
@@ -107,6 +113,7 @@ public class PatentRefParser {
 		provisional_pattern = compilePattern("provisional");
 		utility_pattern = compilePattern("utility");
 
+        // these patterns are now expressed in external resource files under grobid-home/lexicon/patent/
 		/*EP_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)EPO?)|(E\\.(\\s)?P)|((E|e)uropean)|(européen)|(europ)");
         DE_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)DE)|(D\\.(\\s)?E)|((G|g)erman)|((D|d)eutsch)|(allemand)");
         US_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)US)|(U\\.(\\s)?S)|((U|u)nited(\\s|-)*(S|s)tate)|(USA)");
@@ -555,7 +562,14 @@ public class PatentRefParser {
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 9474)
                                 year = "1995";
@@ -592,7 +606,14 @@ public class PatentRefParser {
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 9389)
                                 year = "2007";
@@ -620,12 +641,21 @@ public class PatentRefParser {
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 124715)
                                 year = "2014";
-                            else 
+                            else if (numb < 387330)
                                 year = "2015";
+                            else 
+                                year = "2016";
                             number = year + "0" + number;
                         } 
 						else if (number.startsWith("29") && (appli || number.startsWith("29/"))) {
@@ -637,7 +667,14 @@ public class PatentRefParser {
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 3180)
                                 year = "1992";
@@ -685,8 +722,10 @@ public class PatentRefParser {
                                 year = "2013";
 							else if (numb < 474693)
                                 year = "2014";
-                            else
+                            else if (numb < 505607)
                                 year = "2015";
+                            else
+                                year = "2016";
                             number = year + "0" + number;
                         } 
 						else if (number.startsWith("14") && (appli || number.startsWith("14/"))) {
@@ -697,12 +736,21 @@ public class PatentRefParser {
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 544379)
                                 year = "2014";
+                            else if (numb < 757791)
+                                year = "2015";                            
                             else 
-                                year = "2015";
+                                year = "2016";
                             number = year + "0" + number;
 	                    }
 						else if (number.startsWith("13") && (appli || number.startsWith("13/"))) {
@@ -713,7 +761,14 @@ public class PatentRefParser {
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 374487)
                                 year = "2011";
@@ -732,7 +787,14 @@ public class PatentRefParser {
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 5841)
                                 year = "2007";
@@ -753,7 +815,14 @@ public class PatentRefParser {
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 023305)
                                 year = "2004";
@@ -772,7 +841,14 @@ public class PatentRefParser {
                             number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 32443)
                                 year = "2001";
@@ -794,7 +870,14 @@ public class PatentRefParser {
                                 number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 219723)
                                 year = "1998";
@@ -816,7 +899,14 @@ public class PatentRefParser {
                                 number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 176047)
                                 year = "1993";
@@ -840,7 +930,14 @@ public class PatentRefParser {
                                 number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 140321)
                                 year = "1987";
@@ -866,7 +963,14 @@ public class PatentRefParser {
                                 number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 108971)
                                 year = "1979";
@@ -896,7 +1000,14 @@ public class PatentRefParser {
                                 number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 103000)
                                 year = "1970";
@@ -928,7 +1039,14 @@ public class PatentRefParser {
                                 number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 80000)
                                 year = "1960";
@@ -961,7 +1079,14 @@ public class PatentRefParser {
                                 number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 68000)
                                 year = "1948";
@@ -997,7 +1122,14 @@ public class PatentRefParser {
                                 number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             if (numb < 57000)
                                 year = "1935";
@@ -1036,7 +1168,14 @@ public class PatentRefParser {
                                 number = number.substring(3, number.length());
                             number = number.replaceAll("[\\.\\s/,]", "");
                             // we check the range of the number for deciding about a year
-                            int numb = Integer.parseInt(number);
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
                             String year = null;
                             /*if (numb < 70000)
                                         year = "1915";
@@ -1271,19 +1410,19 @@ public class PatentRefParser {
         if ((toto.length() > 4) && toto.length() < 20) {
             if (sequence == null) {
  	            numbers.add(toto.trim());
-    	        offsets_begin.add(new Integer(offset_begin));
-        	    offsets_end.add(new Integer(offset_end));
+    	        offsets_begin.add(Integer.valueOf(offset_begin));
+        	    offsets_end.add(Integer.valueOf(offset_end));
         	} else {
 	        	// we might have an enumeration and we need to match the target number in it
 	        	int localStart = sequence.indexOf(toto);
 	        	int localEnd = localStart + toto.length();
 	        	numbers.add(toto.trim());
 	        	if (localStart != -1) {
-	    	        offsets_begin.add(new Integer(localStart+offset_begin));
-	        	    offsets_end.add(new Integer(localEnd+offset_begin));
+	    	        offsets_begin.add(Integer.valueOf(localStart+offset_begin));
+	        	    offsets_end.add(Integer.valueOf(localEnd+offset_begin));
 	        	} else {
- 		   	        offsets_begin.add(new Integer(offset_begin));
-        		    offsets_end.add(new Integer(offset_end));
+ 		   	        offsets_begin.add(Integer.valueOf(offset_begin));
+        		    offsets_end.add(Integer.valueOf(offset_end));
 	        	}
 	        }
         }

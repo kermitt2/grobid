@@ -139,8 +139,7 @@ public class Segmentation extends AbstractParser {
 
     private void dealWithImages(DocumentSource documentSource, Document doc, File assetFile, GrobidAnalysisConfig config) {
         if (assetFile != null) {
-            // copy the files under the directory pathXML+"_data"
-            // we copy the asset files into the path specified by assetPath
+            // copy the files under the directory pathXML+"_data" (the asset files) into the path specified by assetPath
 
             if (!assetFile.exists()) {
                 // we create it
@@ -157,7 +156,11 @@ public class Segmentation extends AbstractParser {
             if (directoryPath.exists()) {
                 File[] files = directoryPath.listFiles();
                 if (files != null) {
+                    int nbFiles = 0;
                     for (final File currFile : files) {
+                        if (nbFiles > DocumentSource.PDF2XML_FILES_AMOUNT_LIMIT)
+                            break;
+
                         String toLowerCaseName = currFile.getName().toLowerCase();
                         if (toLowerCaseName.endsWith(".png") || !config.isPreprocessImages()) {
                             try {
@@ -165,6 +168,7 @@ public class Segmentation extends AbstractParser {
                                     continue;
                                 }
                                 FileUtils.copyFileToDirectory(currFile, assetFile);
+                                nbFiles++;
                             } catch (IOException e) {
                                 LOGGER.error("Cannot copy file " + currFile.getAbsolutePath() + " to " + assetFile.getAbsolutePath(), e);
                             }
@@ -190,6 +194,7 @@ public class Segmentation extends AbstractParser {
                                             toLowerCaseName.replace(".ppm", ".png");
                                 }
                                 ImageIO.write(bi, "png", new File(outputFilePath));
+                                nbFiles++;
                             } catch (IOException e) {
                                 LOGGER.error("Cannot convert file " + currFile.getAbsolutePath() + " to " + outputFilePath, e);
                             }
@@ -198,7 +203,6 @@ public class Segmentation extends AbstractParser {
                 }
             }
             // update the path of the image description stored in Document
-
             if (config.isPreprocessImages()) {
                 List<GraphicObject> images = doc.getImages();
                 if (images != null) {
@@ -266,11 +270,11 @@ public class Segmentation extends AbstractParser {
                                 if (pattern.length() > 8) {
                                     Integer nb = patterns.get(pattern);
                                     if (nb == null) {
-                                        patterns.put(pattern, new Integer(1));
+                                        patterns.put(pattern, Integer.valueOf(1));
                                         firstTimePattern.put(pattern, false);
                                     }
                                     else
-                                        patterns.put(pattern, new Integer(nb+1));
+                                        patterns.put(pattern, Integer.valueOf(nb+1));
                                 }
                             }
                         }

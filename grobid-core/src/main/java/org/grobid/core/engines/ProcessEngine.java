@@ -171,7 +171,8 @@ public class ProcessEngine implements Closeable {
                         GrobidAnalysisConfig config = null;
                         // path for saving assets
                         if (saveAssets) {
-                            String assetPath = outputPath + File.separator + KeyGen.getKey();
+                            String baseName = currPdf.getName().replace(".pdf", "").replace(".PDF", "");
+                            String assetPath = outputPath + File.separator + baseName + "_assets";
                             config = GrobidAnalysisConfig.builder()
                                     .pdfAssetPath(new File(assetPath))
                                     .generateTeiCoordinates(elementCoordinates)

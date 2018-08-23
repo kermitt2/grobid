@@ -225,7 +225,7 @@ System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON 
 
                 for(int i=0; i<results.size(); i++) {
                     BiblioItem resCitation = results.get(i).getResBib();
-                    BiblioItem bibo = resConsolidation.get(new Integer(i));
+                    BiblioItem bibo = resConsolidation.get(Integer.valueOf(i));
                     if (bibo != null) {
                         BiblioItem.correct(resCitation, bibo);
                     }
