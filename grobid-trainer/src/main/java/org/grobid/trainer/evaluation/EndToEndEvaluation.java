@@ -962,7 +962,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
 								nbGrobidResults = nodeList.getLength();
 								for (int i = 0; i < nodeList.getLength(); i++) {
-								    grobidResults.add(nodeList.item(i).getNodeValue());
+								    grobidResults.add((nodeList.item(i).getNodeValue().replaceAll(" +", " ")));
 								}
 							}						
 							//if (!field.hasMultipleValue) 
@@ -996,7 +996,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 								//System.out.println(path + ": " + nodeList.getLength() + " nodes");
 								nbGoldResults = nodeList.getLength();
 								for (int i = 0; i < nodeList.getLength(); i++) {
-									goldResults.add(nodeList.item(i).getNodeValue());
+									goldResults.add(nodeList.item(i).getNodeValue().replaceAll(" +", " "));
 								}
 							}
 
@@ -1511,7 +1511,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 	private static String removeFullPunct(String string) {
 		StringBuilder result = new StringBuilder();
 		string = string.toLowerCase();
-		String allMismatchToIgnore = TextUtilities.fullPunctuations+"‐ \t\n\r\u00A0";
+		String allMismatchToIgnore = TextUtilities.fullPunctuations+"‐ \t\n\r\u00A0" + "\u00B7\u25FC\u25B2\u25BA\u25C6\u25CB\u25C7\u25CF\u25CE\u25FD\u25F8\u25F9\u25FA";//last are placeholders used for to be OCR chars
 		for(int i=0; i<string.length(); i++) {
 			if (allMismatchToIgnore.indexOf(string.charAt(i)) == -1) {
 				result.append(string.charAt(i));
