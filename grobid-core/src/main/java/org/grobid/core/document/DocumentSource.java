@@ -89,6 +89,12 @@ public class DocumentSource {
         if (withOutline) {
             pdf2xml.append(" -outline ");
         }
+
+        //pdf2xml.append(" -readingOrder ");
+
+        pdf2xml.append(" -filesLimit 2000 ");
+
+        //pdf2xml.append(" -conf <path to config> ");
         return pdf2xml.toString();
     }
 
