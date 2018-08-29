@@ -244,6 +244,16 @@ public class DocumentSource {
                     if (!success) {
                         throw new GrobidResourceException("Deletion of a temporary XML file failed for file '" + pathToXml.getAbsolutePath() + "'");
                     }
+
+                    File fff = new File(pathToXml + "_metadata.xml");
+                    if (fff.exists()) {
+                            success = Utilities.deleteDir(fff);
+
+                            if (!success) {
+                                throw new GrobidResourceException(
+                                    "Deletion of temporary metadata file failed for file '" + fff.getAbsolutePath() + "'");
+                            }
+                    }
                 }
             }
         } catch (Exception e) {
