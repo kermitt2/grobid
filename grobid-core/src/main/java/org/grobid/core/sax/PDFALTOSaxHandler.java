@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import com.ibm.icu.text.Normalizer2;
-
 
 /**
  * SAX parser for XML-ALTO representation of PDF files obtained via xpdf pdfalto. All
@@ -97,48 +95,6 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 		}
 	}
 
-	private void substituteLastToken(LayoutToken tok) {
-		if (tokenizations.size()>0) {
-			//System.out.println("last tokenizations was: " +
-			//	tokenizations.get(tokenizations.size()-1));
-			tokenizations.remove(tokenizations.size()-1);
-		}
-		tokenizations.add(tok);
-
-		if (block == null)
-			LOGGER.info("substituteLastToken called with null block object: " + tok.toString());
-
-		if (block.getTokens() != null && !block.getTokens().isEmpty()) {
-			block.getTokens().remove(block.getTokens().size() - 1);
-		}
-		if (doc.getBlocks() == null) {
-			tok.setBlockPtr(0);
-		} else {
-			tok.setBlockPtr(doc.getBlocks().size());
-		}
-		block.addToken(tok);
-	}
-
-	private void removeLastTwoTokens() {
-		if (tokenizations.size() > 0) {
-			tokenizations.remove(tokenizations.size() - 1);
-			if (tokenizations.size() > 0) {
-				tokenizations
-						.remove(tokenizations.size() - 1);
-			}
-		}
-
-		if (block == null)
-			LOGGER.info("removeLastTwoTokens called with null block object");
-
-		if ((block.getTokens() != null) && (!block.getTokens().isEmpty())) {
-			block.getTokens().remove(block.getTokens().size() - 1);
-			if (!block.getTokens().isEmpty()) {
-				block.getTokens().remove(block.getTokens().size() - 1);
-			}
-		}
-	}
-
 	public List<LayoutToken> getTokenization() {
 		return tokenizations;
 	}
@@ -158,194 +114,6 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 
 		res = UnicodeUtil.normaliseText(res);
 		return res.trim();
-	}
-
-
-	private static void removeLastCharacterIfPresent(LayoutToken token) {
-		if (token.getText() != null && token.getText().length() > 1) {
-			token.setText(token.getText().substring(0,
-					token.getText().length() - 1));
-		} else {
-			token.setText("");
-		}
-	}
-
-	private enum ModifierClass {
-		NOT_A_MODIFIER, DIAERESIS, ACUTE_ACCENT, DOUBLE_ACUTE_ACCENT, GRAVE_ACCENT, DOUBLE_GRAVE_ACCENT, BREVE_ACCENT, INVERTED_BREVE_ACCENT, CIRCUMFLEX, TILDE, NORDIC_RING, CZECH_CARON, CEDILLA, DOT_ABOVE, HOOK, HORN, MACRON, OGONEK,
-	}
-
-    /**
-     * Classifies diacritics into a diacritic kind, taken from unicode chart : unicode.org/charts/PDF/U0300.pdf
-     * @param c
-     * @return
-     */
-    private ModifierClass classifyChar(Character c) {
-        switch (c) {
-            case '\u0308': //COMBINING DIAERESIS
-            case '\u00A8': //DIAERESIS
-                return ModifierClass.DIAERESIS;
-
-            case '\u0341':
-            case '\u030B': // COMBINING DOUBLE_ACUTE_ACCENT
-            case '\u02DD':
-                return ModifierClass.DOUBLE_ACUTE_ACCENT;
-            case '\u00B4':
-            case '\u0301': //COMBINING
-            case '\u02CA':
-                return ModifierClass.ACUTE_ACCENT;
-
-            case '\u0300': //COMBINING
-            case '\u0340':
-            case '\u02CB':
-            case '\u0060':
-                return ModifierClass.GRAVE_ACCENT;
-
-            case '\u030F': //COMBINING
-                return ModifierClass.DOUBLE_GRAVE_ACCENT;
-
-            case '\u0306': //COMBINING
-            case '\u02D8':
-                //case '\uA67C':
-                return ModifierClass.BREVE_ACCENT;
-
-            case '\u0311': //COMBINING
-            case '\u0484':
-            case '\u0487':
-                return ModifierClass.INVERTED_BREVE_ACCENT;
-
-
-            case '\u0302': //COMBINING
-            case '\u005E':
-            case '\u02C6':
-                return ModifierClass.CIRCUMFLEX;
-
-
-            case '\u0303': //COMBINING
-            case '\u007E':
-            case '\u02DC':
-                return ModifierClass.TILDE;
-
-            case '\u030A': //COMBINING
-            case '\u00B0':
-            case '\u02DA':
-                return ModifierClass.NORDIC_RING;//LOOK AT UNICODE RING BELOW...
-
-            case '\u030C': //COMBINING
-            case '\u02C7':
-                return ModifierClass.CZECH_CARON;
-
-            case '\u0327': //COMBINING
-            case '\u00B8':
-                return ModifierClass.CEDILLA;
-
-            case '\u0307': //COMBINING
-            case '\u02D9':
-                return ModifierClass.DOT_ABOVE;
-
-            case '\u0309': //COMBINING
-            case '\u02C0':
-                return ModifierClass.HOOK;
-
-            case '\u031B': //COMBINING
-                return ModifierClass.HORN;
-
-            case '\u0328': //COMBINING
-            case '\u02DB':
-            //case '\u1AB7':// combining open mark below
-                return ModifierClass.OGONEK;
-
-            case '\u0304': //COMBINING
-            case '\u00AF':
-            case '\u02C9':
-                return ModifierClass.MACRON;
-            default:
-                return ModifierClass.NOT_A_MODIFIER;
-        }
-    }
-
-	boolean isModifier(Character c) {
-		return classifyChar(c) != ModifierClass.NOT_A_MODIFIER;
-	}
-
-	private String modifyCharacter(Character baseChar, Character modifierChar) {
-        StringBuilder result = new StringBuilder();
-        String diactritic = null;
-		switch (classifyChar(modifierChar)) {
-		case DIAERESIS:
-            diactritic = "\u0308";
-			break;
-		case ACUTE_ACCENT:
-            diactritic = "\u0301";
-			break;
-		case GRAVE_ACCENT:
-            diactritic = "\u0300";
-			break;
-		case CIRCUMFLEX:
-            diactritic = "\u0302";
-			break;
-		case TILDE:
-            diactritic = "\u0303";
-			break;
-		case NORDIC_RING:
-            diactritic = "\u030A";
-			break;
-		case CZECH_CARON:
-            diactritic = "\u030C";
-			break;
-		case CEDILLA:
-            diactritic = "\u0327";
-			break;
-        case DOUBLE_ACUTE_ACCENT:
-            diactritic = "\u030B";
-            break;
-        case DOUBLE_GRAVE_ACCENT:
-            diactritic = "\u030F";
-            break;
-        case BREVE_ACCENT:
-            diactritic = "\u0311";
-            break;
-        case INVERTED_BREVE_ACCENT:
-            diactritic = "\u0311";
-            break;
-        case DOT_ABOVE:
-            diactritic = "\u0307";
-            break;
-        case HOOK:
-            diactritic = "\u0309";
-            break;
-        case HORN:
-            diactritic = "\u031B";
-            break;
-        case OGONEK:
-            diactritic = "\u0328";
-            break;
-        case MACRON:
-            diactritic = "\u0304";
-            break;
-		case NOT_A_MODIFIER:
-			result.append(baseChar.toString());
-			break;
-		default:
-			break;
-		}
-
-        if(diactritic != null){
-            Normalizer2 base = Normalizer2.getNFKCInstance();
-            StringBuilder cs2 = new StringBuilder();
-            if(!base.isNormalized(baseChar.toString().subSequence(0, baseChar.toString().length())))
-                cs2.append(base.normalize(baseChar.toString().subSequence(0, baseChar.toString().length())));
-            else
-                cs2.append(baseChar.toString());
-            result = base.normalizeSecondAndAppend(cs2, diactritic.subSequence(0, diactritic.length()));
-            // AA : drawback, normalizer concats strings when not resolved, e.g : dotless i
-        }
-
-		if (result == null) {
-			LOGGER.debug("FIXME: cannot apply modifier '" + modifierChar
-					+ "' to character '" + baseChar + "'");
-		}
-
-		return result.toString();
 	}
 
 	public void endElement(String uri, String localName,
@@ -707,9 +475,6 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                 catch(Exception e) {
                     LOGGER.debug("Sub-tokenization of pdfalto token has failed.");
                 }
-                boolean diaresis;
-                boolean accent;
-                //while (st.hasMoreTokens()) {
 
                 if (subTokenizations.size() != 0) {
                     //{
@@ -723,9 +488,6 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 
                     for(String tok : subTokenizations) {
 
-                        diaresis = false;
-                        accent = false;
-
                         // WARNING: ROUGH APPROXIMATION (but better than the same coords)
                         // Here to get the right subTokWidth should use the content length.
                         double subTokWidth = (currentWidth * (tok.length() / totalLength));
@@ -738,159 +500,12 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 
                             LayoutToken token = new LayoutToken();
                             token.setPage(currentPage);
-                            if ( (previousToken != null) && (tok != null)
-                                && (previousToken.length() > 0)
-                                && (tok.length() > 0)
-                                && (blabla.length() > 0)
-                                && (previousTok.getText() != null)
-                                && (previousTok.getText().length() > 1)	) {
 
-                                Character leftChar = previousTok.getText().charAt(
-                                    previousTok.getText().length() - 1);
-                                Character rightChar = tok.charAt(0);
-
-                                ModifierClass leftClass = classifyChar(leftChar);
-                                ModifierClass rightClass = classifyChar(rightChar);
-                                ModifierClass modifierClass = ModifierClass.NOT_A_MODIFIER;
-
-                                if (leftClass != ModifierClass.NOT_A_MODIFIER
-                                    || rightClass != ModifierClass.NOT_A_MODIFIER) {
-                                    Character baseChar = null;
-                                    Character modifierChar = null;
-
-                                    if (leftClass != ModifierClass.NOT_A_MODIFIER) {
-                                        if (rightClass != ModifierClass.NOT_A_MODIFIER) {
-                                            //assert false;
-                                            // keeping characters, but setting class
-                                            // to not a modifier
-                                            baseChar = leftChar;
-                                            modifierChar = rightChar;
-                                            modifierClass = ModifierClass.NOT_A_MODIFIER;
-                                        } else {
-                                            baseChar = rightChar;
-                                            modifierChar = leftChar;
-                                            modifierClass = leftClass;
-                                        }
-                                    } else {
-                                        baseChar = leftChar;
-                                        modifierChar = rightChar;
-                                        modifierClass = rightClass;
-                                    }
-
-                                    String updatedChar = modifyCharacter(baseChar,
-                                        modifierChar);
-
-                                    //System.out.println("\t"+"baseChar: " + baseChar + ", modifierChar: "
-                                    //	+ modifierChar +", updatedChar is " + updatedChar);
-
-                                    if (updatedChar != null) {
-                                        //System.out.println("\n");
-                                        //}
-                                        //else {
-//										tokenizations.remove(tokenizations.size() - 1);
-//										if (tokenizations.size() > 0) {
-//											tokenizations
-//												.remove(tokenizations.size() - 1);
-//										}
-
-                                        removeLastTwoTokens();
-
-                                        blabla.deleteCharAt(blabla.length() - 1);
-                                        if (blabla.length() > 0) {
-                                            blabla.deleteCharAt(blabla.length() - 1);
-                                        }
-
-                                        removeLastCharacterIfPresent(previousTok);
-                                        //}
-                                        //if (updatedChar != null) {
-                                        blabla.append(updatedChar);
-                                        previousTok.setText(previousTok.getText()
-                                            + updatedChar);
-
-                                        LayoutToken localTok = new LayoutToken(previousTok.getText());
-                                        localTok.setPage(currentPage);
-                                        localTok.setX(previousTok.getX());
-                                        localTok.setY(previousTok.getY());
-                                        localTok.setHeight(previousTok.getHeight());
-                                        localTok.setWidth(previousTok.getWidth());
-                                        localTok.setFontSize(previousTok.getFontSize());
-                                        localTok.setColorFont(previousTok.getColorFont());
-                                        localTok.setItalic(previousTok.getItalic());
-                                        localTok.setBold(previousTok.getBold());
-                                        localTok.setRotation(previousTok.getRotation());
-                                        addToken(localTok);
-
-//										addToken(previousTok);
-
-                                        //System.out.println("add token layout: " + previousTok.getText());
-                                        //System.out.println("add tokenizations: " + previousTok.getText());
-                                    }
-                                    {
-                                        // PL
-                                        blabla.append(tok.substring(1, tok.length()));
-                                        if (updatedChar != null) {
-                                            previousTok.setText(previousTok.getText()
-                                                + tok.substring(1, tok.length()));
-                                        }
-                                        else {
-                                            // in this case, the diaresis/accent might be before the charcater
-                                            // to be modified and not after as incorrectly considered first
-                                            // see issue #47
-                                            previousTok.setText(previousTok.getText() + tok);
-                                        }
-
-                                        //System.out.println("add token layout: " + previousTok.getText());
-                                        LayoutToken localTok = new LayoutToken(previousTok.getText());
-                                        localTok.setPage(currentPage);
-                                        localTok.setX(previousTok.getX());
-                                        localTok.setY(previousTok.getY());
-                                        localTok.setHeight(previousTok.getHeight());
-                                        // the new token based on the concatenation of the previous token and
-                                        // the updated diaresis character
-                                        localTok.setWidth(previousTok.getWidth() + subTokWidth);
-                                        localTok.setFontSize(previousTok.getFontSize());
-                                        localTok.setColorFont(previousTok.getColorFont());
-                                        localTok.setItalic(previousTok.getItalic());
-                                        localTok.setBold(previousTok.getBold());
-                                        localTok.setRotation(previousTok.getRotation());
-                                        substituteLastToken(localTok);
-                                        //System.out.println("replaced by tokenizations: " + previousTok.getText());
-                                    }
-
-                                    diaresis = (modifierClass == ModifierClass.DIAERESIS
-                                        || modifierClass == ModifierClass.NORDIC_RING
-                                        || modifierClass == ModifierClass.CZECH_CARON
-                                        || modifierClass == ModifierClass.TILDE
-                                        || modifierClass == ModifierClass.CEDILLA);
-
-                                    accent = (modifierClass == ModifierClass.ACUTE_ACCENT
-                                        || modifierClass == ModifierClass.CIRCUMFLEX
-                                        || modifierClass == ModifierClass.GRAVE_ACCENT);
-
-                                    if (rightClass != ModifierClass.NOT_A_MODIFIER) {
-                                        tok = ""; // resetting current token as it
-                                        // is a single-item
-                                    }
-                                }
-                            }
-
-                            if (tok != null) {
-                                // actually in certain cases, the extracted string under token can be a chunk of text
-                                // with separators that need to be preserved
-                                //tok = tok.replace(" ", "");
-                            }
-
-                            if ((!diaresis) && (!accent)) {
                                 // blabla.append(" ");
                                 blabla.append(tok);
                                 token.setText(tok);
 
                                 addToken(token);
-//								tokenizations.add(token);
-                            } else {
-                                tok = "";
-                                //keepLast = true;
-                            }
 
                             if (currentRotation) {
                                 // if the text is rotated, it appears that the font size is multiplied
@@ -949,12 +564,8 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 							if (block.getFontSize() == 0.0)
 								block.setFontSize(currentFontSize);*/
 
-                            if (!diaresis && !accent) {
                                 previousToken = tok;
                                 previousTok = token;
-                            } else {
-                                previousToken = previousTok.getText();
-                            }
 
                             nbTokens++;
                         }
