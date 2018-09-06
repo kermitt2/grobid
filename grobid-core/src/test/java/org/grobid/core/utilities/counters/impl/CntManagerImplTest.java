@@ -4,6 +4,7 @@ import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.counters.CitationParserCounters;
 import org.grobid.core.engines.counters.Countable;
 import org.grobid.core.engines.counters.FigureCounters;
+import org.grobid.core.utilities.GrobidProperties;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,6 +24,7 @@ public class CntManagerImplTest {
 
     @Before
     public void setUp() throws Exception {
+        GrobidProperties.getInstance();
         target = new CntManagerImpl();
     }
 
