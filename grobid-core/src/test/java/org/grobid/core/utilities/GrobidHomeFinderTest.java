@@ -3,6 +3,7 @@ package org.grobid.core.utilities;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.grobid.core.main.GrobidHomeFinder;
 import org.junit.Test;
+import org.junit.After;
 
 import java.io.File;
 import java.util.Collections;
@@ -13,6 +14,12 @@ import static org.junit.Assert.assertTrue;
  * Testing location of grobid home
  */
 public class GrobidHomeFinderTest {
+
+    @After
+    public void tearDown() throws Exception {
+        GrobidProperties.reset();
+        System.clearProperty(GrobidPropertyKeys.PROP_GROBID_HOME);
+    }
 
     @Test
     public void testDefault() {
