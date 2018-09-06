@@ -15,7 +15,7 @@ env:
 #- ./gradlew clean check --debug --info --stacktrace
 
 script:
-  - ./gradlew build --no-daemon
+  - ./gradlew build --stacktrace --info --no-daemon
 
 after_success:
 - ./gradlew jacocoRootReport coveralls --no-daemon
