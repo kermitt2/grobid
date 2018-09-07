@@ -116,7 +116,7 @@ ej-technologies provided us a free open-source license for its Java Profiler. Cl
 For citing this work, please simply refer to the github project:
 
 ```
-Grobid (2008-2018) <https://github.com/kermitt2/grobid>
+GROBID (2008-2018) <https://github.com/kermitt2/grobid>
 ```
 
 See the [GROBID documentation](http://grobid.readthedocs.org/en/latest/References) for more related resources. 

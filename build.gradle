@@ -197,7 +197,8 @@ project("grobid-core") {
         compile "com.fasterxml.jackson.module:jackson-module-afterburner:2.9.1"
         compile "joda-time:joda-time:2.9.9"
         compile "org.apache.lucene:lucene-analyzers-common:4.5.1"
-
+        compile 'javax.xml.bind:jaxb-api:2.3.0'
+        
         shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
 
         runtime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
