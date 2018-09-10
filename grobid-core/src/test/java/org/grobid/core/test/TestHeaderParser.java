@@ -1,8 +1,10 @@
 package org.grobid.core.test;
 
 import org.grobid.core.data.BiblioItem;
+import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.main.GrobidConstants;
 import org.grobid.core.utilities.GrobidProperties;
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import java.io.File;
@@ -18,6 +20,12 @@ public class TestHeaderParser extends EngineTest {
 
     private String testPath = null;
     private String newTrainingPath = null;
+
+
+    @AfterClass
+    public static void tearDown(){
+        GrobidFactory.reset();
+    }
 
     private void getTestResourcePath() {
         testPath = GrobidConstants.TEST_RESOURCES_PATH;

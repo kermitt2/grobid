@@ -1,6 +1,8 @@
 package org.grobid.core.test;
 
 import org.grobid.core.data.Date;
+import org.grobid.core.factory.GrobidFactory;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,6 +20,11 @@ public class TestDate extends EngineTest {
 
     @Before
     public void setUp() {
+    }
+
+    @AfterClass
+    public static void tearDown(){
+        GrobidFactory.reset();
     }
 
     @Test

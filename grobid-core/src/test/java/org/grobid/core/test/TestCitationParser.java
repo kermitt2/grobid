@@ -2,6 +2,9 @@ package org.grobid.core.test;
 
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
+import org.grobid.core.factory.GrobidFactory;
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import java.util.List;
@@ -15,6 +18,12 @@ import static org.junit.Assert.assertTrue;
  * @author Patrice Lopez
  */
 public class TestCitationParser extends EngineTest {
+
+    @AfterClass
+    public static void tearDown(){
+        GrobidFactory.reset();
+    }
+
     @Test
     public void processingReferenceSection() throws Exception {
 

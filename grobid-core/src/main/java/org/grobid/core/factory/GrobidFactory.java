@@ -28,8 +28,9 @@ public class GrobidFactory extends AbstractEngineFactory {
 	 * @return GrobidFactory
 	 */
 	public static GrobidFactory getInstance() {
-		if (factory == null)
-			factory = newInstance();
+		if (factory == null) {
+            factory = newInstance();
+        }
 		return factory;
 	}
 	
@@ -57,5 +58,13 @@ public class GrobidFactory extends AbstractEngineFactory {
 	protected static GrobidFactory newInstance() {
 		return new GrobidFactory();
 	}
+
+    /**
+     * Resets this class and all its static fields. For instance sets the
+     * current object to null.
+     */
+    public static void reset() {
+        factory = null;
+    }
 
 }
