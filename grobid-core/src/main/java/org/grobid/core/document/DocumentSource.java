@@ -77,7 +77,7 @@ public class DocumentSource {
 //        pdf2xml.append(
 //            GrobidProperties.isContextExecutionServer() ? File.separator + "pdftoxml_server" : File.separator + "pdftoxml");
         pdf2xml.append(
-            GrobidProperties.isContextExecutionServer() ? File.separator + "pdftoxml_server" : File.separator + "pdfalto");
+            GrobidProperties.isContextExecutionServer() ? File.separator + "pdfalto_server" : File.separator + "pdfalto");
 		pdf2xml.append(" -blocks -noImageInline -fullFontName ");
 
         if (!withImage) {
