@@ -52,7 +52,7 @@ public class GrobidRestService implements GrobidPaths {
     private static final String DATE = "date";
     private static final String AFFILIATIONS = "affiliations";
     private static final String CITATION = "citations";
-    private static final String TEXT = "text";
+//    private static final String TEXT = "text";
     private static final String SHA1 = "sha1";
     private static final String XML = "xml";
     private static final String INPUT = "input";
@@ -329,7 +329,7 @@ public class GrobidRestService implements GrobidPaths {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_XML)
     @POST
-    public Response processCitationPatentTXT_post(@FormParam(TEXT) String text,
+    public Response processCitationPatentTXT_post(@FormParam(INPUT) String text,
                                                   @FormParam("consolidateCitations") String consolidate) {
         boolean consol = validateConsolidationParam(consolidate);
         return restProcessString.processCitationPatentTXT(text, consol);
