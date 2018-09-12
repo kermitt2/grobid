@@ -8,15 +8,6 @@ env:
   global:
     - GRADLE_OPTS="-Xmx512m"
 
-os: linux
-compiler: gcc
-addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++-7
-
 
 #after_success:
 #- ./gradlew codeCoverageReport --debug --info --stacktrace
