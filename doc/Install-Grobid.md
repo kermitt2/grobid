@@ -14,7 +14,7 @@ The [latest stable release](https://github.com/kermitt2/grobid#latest-version) o
 or using the [docker](Grobid-docker.md) container. 
 
 ###Current development version
-The current development version is ```0.6.0-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
+The current development version is ```0.5.2-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
 
 Clone source code from github:
 ```bash
