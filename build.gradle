@@ -423,7 +423,7 @@ tasks.coveralls {
 }
 
 wrapper {
-    gradleVersion "4.2.1"
+    gradleVersion "4.6"
 }
 
 build.dependsOn project.getSubprojects().collect({ it.getTasks().getByName("build") })
