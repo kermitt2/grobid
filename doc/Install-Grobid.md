@@ -42,6 +42,21 @@ By default, tests are ignored. For building the project and running the tests, u
 > ./gradlew clean install test
 ```
 
+###Building through a proxy
+
+In case you are working through a proxy, you need to set the proxy information in the file `grobid/gradle.properties` by adding the following lines with the proper proxy parameters: 
+
+```
+systemProp.http.proxyHost=host
+systemProp.http.proxyPort=port
+systemProp.http.proxyUser=username
+systemProp.http.proxyPassword=password
+systemProp.https.proxyHost=host
+systemProp.https.proxyPort=port
+systemProp.https.proxyUser=username
+systemProp.https.proxyPassword=password
+```
+
 ##Use GROBID
 
 From there, the easiest and most efficient way to use GROBID is the [web service mode](Grobid-service.md). 
