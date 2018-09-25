@@ -141,22 +141,9 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response processHeaderDocument_post(@FormDataParam(INPUT) InputStream inputStream,
                                                @FormDataParam("consolidateHeader") String consolidate) {
-
         boolean consol = validateConsolidationParam(consolidate);
 
-        String retVal = restProcessFiles.processStatelessHeaderDocument(inputStream, consol);
-        Response response;
-        if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
-            response = Response.status(Response.Status.NO_CONTENT).build();
-        } else {
-            response = Response.status(Response.Status.OK)
-                .entity(retVal)
-                .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
-                .build();
-        }
-        return response;
+        return restProcessFiles.processStatelessHeaderDocument(inputStream, consol);
     }
 
     @Path(PATH_HEADER)
@@ -210,19 +197,7 @@ public class GrobidRestService implements GrobidPaths {
 
         List<String> teiCoordinates = collectCoordinates(coordinates);
 
-        String retVal = restProcessFiles.processFulltextDocument(inputStream, consolHeader, consolCitations, startPage, endPage, generate, teiCoordinates);
-
-        Response response;
-        if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
-            response = Response.status(Response.Status.NO_CONTENT).build();
-        } else {
-            response = Response.status(Response.Status.OK)
-                .entity(retVal)
-                .type(MediaType.APPLICATION_XML).build();
-        }
-
-        return response;
-
+        return restProcessFiles.processFulltextDocument(inputStream, consolHeader, consolCitations, startPage, endPage, generate, teiCoordinates);
     }
 
     private List<String> collectCoordinates(List<FormDataBodyPart> coordinates) {
