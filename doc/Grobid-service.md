@@ -680,13 +680,13 @@ The Grobid RESTful API provides a very efficient way to use the library out of t
 
 The service can work following two modes:
 
-+ Parallel execution (default): a pool of threads is used to process requests in parallel. The following property must be set to true in the file grobid-home/config/grobid_service.properties
++ Parallel execution (default): a pool of threads is used to process requests in parallel. The following property must be set to true in the file `grobid-home/config/grobid_service.properties`
 
 ```java
 	org.grobid.service.is.parallel.execution=true
 ```
 
-As Grobid is thread safe and manages a pool of parser instances, it is also possible to use several threads to call the REST service. This improves considerably the performance of the services for PDF processing because documents can be processed while other are uploaded. 
+As Grobid is thread-safe and manages a pool of parser instances, it is advised to use several threads to call the REST service for scaling the processing to large collections of documents. This improves considerably the performance of the services for PDF processing because documents can be processed while other are uploading. 
 
 + Sequencial execution: a single Grobid instance is used and process the requests as a queue. The following property must be set to false in the file grobid-home/config/grobid_service.properties
 
@@ -694,7 +694,22 @@ As Grobid is thread safe and manages a pool of parser instances, it is also poss
 	org.grobid.service.is.parallel.execution=false
 ```
 
-This mode is adapted for server running with a low amount of RAM, for instance less than 2GB, otherwise the default parallel execution must be used. 
+This mode should in general be avoided, it is only relevant for servers running with a low amount of RAM, for instance less than 2-4GB, and single core, otherwise the default parallel execution must be used. 
+
+Setting the maximum number of parallel processing is done in the property file under `grobid-home/config/grobid.properties`. Adjust this number (default 10) following the number of cores/threads available on your server: 
+
+```
+#------------------- start: pooling -------------------
+# Maximum parallel connections allowed
+org.grobid.max.connections=10
+```
+
+The threads in GROBID service are managed as a pool. When processing a document, the service will request a thread from this pool, and release it to the pool after completion of the request. If all the thread present in the pool are used, it is possible to set the maximum amount of time (in seconds) the request for a thread will wait before considering that no thread will be available and return a http code `503` to the client: 
 
 
+```
+# Maximum time wait to get a connection when the pool is full (in seconds)
+org.grobid.pool.max.wait=1
+```
 
+When scaling the service, we think that it is better to maintain this value low (e.g. 1 second) to avoid putting too many open requests on the server. 
