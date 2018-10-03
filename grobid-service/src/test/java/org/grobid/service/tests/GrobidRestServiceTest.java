@@ -24,12 +24,7 @@ import org.grobid.service.GrobidPaths;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.main.GrobidServiceApplication;
 import org.grobid.service.module.GrobidServiceModuleTest;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.ClassRule;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,10 +37,7 @@ import javax.ws.rs.core.Response;
 import java.io.File;
 import java.io.IOException;
 
-import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
-import static org.mockito.Matchers.isNotNull;
-import static org.mockito.Matchers.notNull;
 
 /**
  * Tests the RESTful service of the grobid-service project. This class can also
