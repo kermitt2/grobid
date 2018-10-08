@@ -168,7 +168,7 @@ public class FullTextParser extends AbstractParser {
 
 			// consolidate the set
 			if (config.isConsolidateCitations()) {
-				Consolidation consolidator = new Consolidation(cntManager);
+				Consolidation consolidator = new Consolidation(Engine.getCntManager());
 				try {
 					Map<Integer,BiblioItem> resConsolidation = consolidator.consolidate(resCitations);
 					for(int i=0; i<resCitations.size(); i++) {

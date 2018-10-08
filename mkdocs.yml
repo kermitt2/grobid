@@ -7,7 +7,7 @@ docs_dir: doc
 plugins:
     - search
 theme:
-    name: mkdocs
+    name: readthedocs
 pages:
   - Home: 'index.md'
   - About:

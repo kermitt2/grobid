@@ -30,4 +30,10 @@ public class ConsolidationCounters {
             return "CONSOLIDATION_PER_DOI_SUCCESS";
         }
     };
+    public static final Countable TOTAL_BIB_REF = new Countable() {
+        @Override
+        public String getName() {
+            return "TOTAL_BIB_REF";
+        }
+    };
 }
