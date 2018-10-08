@@ -38,7 +38,7 @@ class CntManagerImpl implements CntManager {
     public void i(Countable e, long val) {
         final String groupName = getCounterEnclosingName(e);
         checkClass(groupName);
-
+             
         classCounters.putIfAbsent(groupName, new ConcurrentHashMap<String, Counter>());
         ConcurrentMap<String, Counter> cntMap = classCounters.get(groupName);
 

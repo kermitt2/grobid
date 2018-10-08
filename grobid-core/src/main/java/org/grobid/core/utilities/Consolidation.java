@@ -131,7 +131,7 @@ public class Consolidation {
         if (journalTitle != null) {
             journalTitle = TextUtilities.removeAccents(journalTitle);
         }
-        if (cntManager != null)
+        if (cntManager != null) 
             cntManager.i(ConsolidationCounters.CONSOLIDATION);
 
         try {
@@ -186,10 +186,9 @@ public class Consolidation {
     /**
      * Try tp consolidate a list of bibliographical objects in one operation with CrossRef web services
      */
-    public Map<Integer,BiblioItem> consolidate(List<BibDataSet> biblios) {    
+    public Map<Integer,BiblioItem> consolidate(List<BibDataSet> biblios) {   
         if (CollectionUtils.isEmpty(biblios))
             return null;
-
         final Map<Integer,BiblioItem> results = new HashMap<Integer,BiblioItem>();
         // init the results
         int n = 0;
@@ -200,6 +199,9 @@ public class Consolidation {
         long threadId = Thread.currentThread().getId();
         for(BibDataSet bibDataSet : biblios) {
             final BiblioItem theBiblio = bibDataSet.getResBib();
+
+            if (cntManager != null) 
+                cntManager.i(ConsolidationCounters.TOTAL_BIB_REF);
 
             // first we get the exploitable metadata
             String doi = theBiblio.getDOI();
@@ -244,8 +246,20 @@ public class Consolidation {
                 continue;
             }
 
+            final boolean doiQuery;
             try {
                 //CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
+                if (cntManager != null) {
+                    cntManager.i(ConsolidationCounters.CONSOLIDATION);
+                }
+
+                if ( (doi != null) && (cntManager != null) ) {
+                    cntManager.i(ConsolidationCounters.CONSOLIDATION_PER_DOI);
+                    doiQuery = true;
+                } else {
+                    doiQuery = false;
+                }
+
                 client.<BiblioItem>pushRequest("works", doi, arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(n) {
                     
                     @Override
@@ -258,6 +272,11 @@ public class Consolidation {
                             for(BiblioItem oneRes : res) {
                                 if (postValidation(theBiblio, oneRes)) {
                                     results.put(Integer.valueOf(getRank()), oneRes);
+                                    if (cntManager != null) {
+                                        cntManager.i(ConsolidationCounters.CONSOLIDATION_SUCCESS);
+                                        if (doiQuery)
+                                            cntManager.i(ConsolidationCounters.CONSOLIDATION_PER_DOI_SUCCESS);
+                                    }
                                     break;
                                 }
                             }
@@ -381,6 +400,8 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
             
             long threadId = Thread.currentThread().getId();
             CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
+            if (cntManager != null) 
+                cntManager.i(ConsolidationCounters.CONSOLIDATION);
             client.<BiblioItem>pushRequest("works", null, arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>() {
                 
                 @Override
@@ -391,6 +412,8 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                         // correctly to the one requested in order to avoid false positive
                         for(BiblioItem oneRes : res) {
                             if (postValidation(biblio, oneRes)) {
+                                if (cntManager != null) 
+                                    cntManager.i(ConsolidationCounters.CONSOLIDATION_SUCCESS);
                                 bib2.add(oneRes);
                             }
                         }
@@ -434,9 +457,9 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                 }
             }*/
 
-            for(BiblioItem bib : bib2) {
+            //for(BiblioItem bib : bib2) {
                 //System.out.println(bib.toTEI(0));
-            }
+            //}
 
             /*String subpath = String.format(TITLE_BASE_QUERY,
                     GrobidProperties.getInstance().getCrossrefId(),
