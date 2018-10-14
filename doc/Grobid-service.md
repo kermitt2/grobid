@@ -51,13 +51,11 @@ If required, modify the file under `grobid/grobid-service/config/config.yaml` fo
 
 We provide clients written in Python, Java, node.js using the GROBID PDF-to-TEI conversion Web services for parallel batch processing:
 
-- [Python GROBID client](https://github.com/kermitt2/grobid-client-python)
-
 - <a href="https://github.com/kermitt2/grobid-client-python" target="_blank">Python GROBID client</a>
 
-- [Java GROBID client](https://github.com/kermitt2/grobid-client-java)
+- <a href="https://github.com/kermitt2/grobid-client-java" target="_blank">Java GROBID client</a>
 
-- [Node.js GROBID client](https://github.com/kermitt2/grobid-client-node)
+- <a href="https://github.com/kermitt2/grobid-client-node" target="_blank">Node.js GROBID client</a>
 
 All these clients will take advantage of the multi-threading for scaling PDF batch processing. As a consequence, they will be much more efficient than the [batch command lines](Grobid-batch.md) (which use only one thread) and should be prefered. 
 
