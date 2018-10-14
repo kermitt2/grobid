@@ -46,6 +46,20 @@ You can check whether the service is up and running by opening the following URL
 
 If required, modify the file under `grobid/grobid-service/config/config.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID. 
 
+
+## Clients for GROBID Web Services
+
+We provide clients written in Python, Java, node.js using the GROBID PDF-to-TEI conversion Web services for parallel batch processing:
+
+- [Python GROBID client](https://github.com/kermitt2/grobid-client-python)
+
+- [Java GROBID client](https://github.com/kermitt2/grobid-client-java)
+
+- [Node.js GROBID client](https://github.com/kermitt2/grobid-client-node)
+
+All these clients will take advantage of the multi-threading for scaling PDF batch processing. As a consequence, they will be much more efficient than the [batch command lines](Grobid-batch.md) (which use only one thread) and should be prefered. 
+
+
 ## Use GROBID test console
 
 On your browser, the welcome page of the Service console is available at the URL `http://localhost:8070`
