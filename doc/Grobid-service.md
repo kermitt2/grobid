@@ -53,6 +53,8 @@ We provide clients written in Python, Java, node.js using the GROBID PDF-to-TEI 
 
 - [Python GROBID client](https://github.com/kermitt2/grobid-client-python)
 
+- <a href="https://github.com/kermitt2/grobid-client-python" target="_blank">Python GROBID client</a>
+
 - [Java GROBID client](https://github.com/kermitt2/grobid-client-java)
 
 - [Node.js GROBID client](https://github.com/kermitt2/grobid-client-node)
