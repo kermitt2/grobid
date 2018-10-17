@@ -14,6 +14,8 @@ import java.io.InputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 /**
  * Created by zholudev on 07/01/16.
  * Extracting citation contexts
@@ -25,7 +27,7 @@ public class BibDataSetContextExtractor {
     static {
         InputStream is = BibDataSetContextExtractor.class.getResourceAsStream("/xq/get-citation-context-from-tei.xq");
         try {
-            CONTEXT_EXTRACTION_XQ = IOUtils.toString(is);
+            CONTEXT_EXTRACTION_XQ = IOUtils.toString(is, UTF_8);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
