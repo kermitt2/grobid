@@ -69,8 +69,7 @@ The latest stable release of GROBID is version ```0.5.2```. This version brings:
 
 (more information in the [release](https://github.com/kermitt2/grobid/releases/tag/0.5.2) page)
 
-
-New in previous release: ````0.5.1```: 
+New in previous release ```0.5.1```: 
 
 + Migrate from maven to gradle for faster, more flexible and more stable build, release, etc.
 + Usage of Dropwizard for web services
