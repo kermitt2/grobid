@@ -13,6 +13,7 @@
  */
 package org.grobid.service;
 
+import com.codahale.metrics.annotation.Timed;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
@@ -42,6 +43,7 @@ import java.util.List;
  * @author FloZi, Damien, Patrice
  */
 
+@Timed
 @Singleton
 @Path(GrobidPaths.PATH_GROBID)
 public class GrobidRestService implements GrobidPaths {

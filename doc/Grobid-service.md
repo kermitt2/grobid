@@ -41,6 +41,8 @@ You can check whether the service is up and running by opening the following URL
 
 * `http://yourhost:8070/api/isalive` will return true/false whether the service is up and running
 
+The service provides also an admin console, reachable at `http://yourhost:8070` where some additional checks like ping, metrics, hearthbeat are available.
+We recommend, in particular to have a look at the metrics (using the [Metric library](https://metrics.dropwizard.io/3.1.0/getting-started/)) which are providing the rate of execution as well as the throughput of each entry point. 
 
 ## Configure the server
 
@@ -225,7 +227,7 @@ which will return:
 		<region>California</region>
 		<country key="US">USA</country>
 	</address>
-</affiliation
+</affiliation>
 ```
 
 #### /api//processCitation
