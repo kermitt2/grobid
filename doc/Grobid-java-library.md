@@ -33,7 +33,7 @@ Here an example of grobid-core dependency:
 	<dependency>
 	    <groupId>org.grobid</groupId>
 	    <artifactId>grobid-core</artifactId>
-	    <version>0.5.1</version>
+	    <version>0.5.2</version>
 	</dependency>
 ```
  
@@ -64,8 +64,8 @@ Add the following snippet in your gradle.build file:
 
 and add the Grobid dependency as well: 
 ```
-    compile 'org.grobid:grobid-core:0.5.1'
-    compile 'org.grobid:grobid-trainer:0.5.1'
+    compile 'org.grobid:grobid-core:0.5.2'
+    compile 'org.grobid:grobid-trainer:0.5.2'
 ```
 
 

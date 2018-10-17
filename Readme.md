@@ -60,12 +60,24 @@ _Warning_: Some quota and query limitation apply to the demo server! If you are 
 
 ## Latest version
 
-The latest stable release of GROBID is version ```0.5.1```. This version brings:
+The latest stable release of GROBID is version ```0.5.2```. This version brings:
+
++ Corrected back status codes from the REST API when no available engine (503 is back again to inform the client to wait, it was removed by error in version 0.5.0 and 0.5.1 for PDF processing services only, see documentation of the REST API)
++ Added [Grobid clients](https://grobid.readthedocs.io/en/latest/Grobid-service/#clients-for-grobid-web-services) for Java, Python and NodeJS
++ Added metrics in the REST entrypoint (accessible via http://localhost:8071)
++ Bugfixing
+
+(more information in the [release](https://github.com/kermitt2/grobid/releases/tag/0.5.2) page)
+
+
+New in previous release: ````0.5.1```: 
 
 + Migrate from maven to gradle for faster, more flexible and more stable build, release, etc.
 + Usage of Dropwizard for web services
 + Move the Grobid service manual to [readthedocs](http://grobid.readthedocs.io/en/latest/Grobid-service/)
 + (thanks to @detonator413 and @lfoppiano for this release! future work in versions 0.5.* will focus again on improving PDF parsing and structuring accuracy)
+
+(more information in the [release](https://github.com/kermitt2/grobid/releases/tag/0.5.1) page)
 
 New in previous release ```0.4.4```: 
 
@@ -75,6 +87,8 @@ New in previous release ```0.4.4```:
 + Improve training data generation and documentation (thanks @jfix)
 + Unicode normalisation and more robust body extraction (thanks @aoboturov)
 + fixes, tests, documentation and update of the pdf2xml fork for Windows (thanks @lfoppiano)
+
+(more information in the [release](https://github.com/kermitt2/grobid/releases/tag/0.4.4) page)
 
 New in previous release ```0.4.2```: 
 
