@@ -21,6 +21,7 @@ pages:
     - 'Troubleshooting and known issues': 'Troubleshooting.md'
     - 'GROBID with containers': 'Grobid-docker.md'
     - 'Java library': 'Grobid-java-library.md'
+    - 'Developer Guide': 'Developer-Guide.md'
     - 'TEI encoding of results': 'TEI-encoding-of-results.md'
     - 'Coordinates of structures in the PDF': 'Coordinates-in-PDF.md'
     - 'Training the GROBID models': 'Training-the-models-of-Grobid.md'
