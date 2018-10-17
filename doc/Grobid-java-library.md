@@ -38,7 +38,7 @@ Here an example of grobid-core dependency:
 ```
  
 If you want to work on a SNAPSHOT development version, you need to include in your pom file the path to the Grobid jar file, 
-for instance as follow (replace `0.5.0` by the valid `<current version>`):
+for instance as follow (if necessary replace `0.5.2` by the valid `<current version>`):
 
 ```xml
 	<dependency>
@@ -46,7 +46,7 @@ for instance as follow (replace `0.5.0` by the valid `<current version>`):
 	    <artifactId>grobid-core</artifactId>
 	    <version>0.5.0</version>
 	    <scope>system</scope>
-	    <systemPath>${project.basedir}/lib/grobid-core-0.5.0.jar</systemPath>
+	    <systemPath>${project.basedir}/lib/grobid-core-0.5.2.jar</systemPath>
 	</dependency>
 ```
 
