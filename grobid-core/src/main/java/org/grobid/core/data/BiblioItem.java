@@ -3342,6 +3342,8 @@ public class BiblioItem {
         int nbAffiliations = 0;
         int nbAddresses = 0;
 
+        // uncomment below when collaboration will be concretely added to headers
+        /*
         if ( (collaboration != null) && 
             ( (fullAuthors == null) || (fullAuthors.size() == 0) ) ) {
             // collaboration plays at the same time the role of author and affiliation
@@ -3349,7 +3351,7 @@ public class BiblioItem {
             tei.append("<author>").append("\n");
             TextUtilities.appendN(tei, '\t', nbTag+1);
             tei.append("<orgName type=\"collaboration\"");
-            if (withCoordinates) {
+            if (withCoordinates && (labeledTokens != null) ) {
                 List<LayoutToken> collabTokens = labeledTokens.get("<collaboration>");
                 if (withCoordinates && (collabTokens != null) && (!collabTokens.isEmpty())) {                
                    tei.append(" coords=\"" + LayoutTokensUtil.getCoordsString(collabTokens) + "\"");
@@ -3360,6 +3362,7 @@ public class BiblioItem {
             tei.append("</author>").append("\n");
             return tei.toString();
         }
+        */
 
         List<Person> auts = fullAuthors;
 
