@@ -1,6 +1,7 @@
 package org.grobid.core.engines;
 
 import com.google.common.base.Function;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.document.Document;
@@ -114,7 +115,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                 if (container.isBeginning()) {
                     if (reference.length() != 0) {
                         resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
-                            referenceLabel.toString().trim(), reference.toString().trim(), referenceTokens, 
+                            referenceLabel.toString().trim(), reference.toString().trim(), Lists.newArrayList(referenceTokens),
                             	features.toString(), BoundingBoxCalculator.calculate(referenceTokens)));
                         reference.setLength(0);
                         referenceLabel.setLength(0);
