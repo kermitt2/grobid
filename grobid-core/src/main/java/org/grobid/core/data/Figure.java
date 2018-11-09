@@ -48,9 +48,11 @@ public class Figure {
         }
     };
     protected StringBuilder caption = null;
+    protected List<LayoutToken> captionLayoutTokens = new ArrayList<>();
     protected StringBuilder header = null;
     protected StringBuilder content = null;
     protected StringBuilder label = null;
+
     protected String id = null;
     protected URI uri = null;
     protected int start = -1; // start position in the full text tokenization
@@ -90,8 +92,16 @@ public class Figure {
         caption.append(cap);
     }
 
+    public void appendCaptionLayoutTokens(List<LayoutToken> layoutTokens) {
+        captionLayoutTokens.addAll(layoutTokens);
+    }
+
     public String getCaption() {
         return caption.toString();
+    }
+
+    public List<LayoutToken> getCaptionLayoutTokens() {
+        return captionLayoutTokens;
     }
 
     public void appendLabel(String lab) {
