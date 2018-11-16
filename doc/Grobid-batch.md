@@ -222,6 +222,21 @@ Example:
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
 
+### createTrainingBlank
+`createTrainingBlank` batch command will generate a blank GROBID training data file from PDF files, i.e. a TEI file with only text together with the default feature file. This TEI file can be used to start a new model from scratch to be applied directly to a PDF, like a high-level segmentation model. The needed parameters for that command are:
+
+* -gH: path to grobid-home directory
+
+* -dIn: path to the directory of input pdf files
+
+* -dOut: path to save the trained data
+
+Example:
+```bash
+> java -Xmx4G -jar grobid-core/build/libs/grobid-core-0.5.2-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe createTrainingBlank
+```
+
+WARNING: the expected extension of the PDF files to be processed is .pdf
 
 ### processPDFAnnotation
 The batch command `processPDFAnnotation` will annotations add to the PDF. These annotations correspond to the citation information, more precisely PDF "goto" annotations for reference callout in the article text and URL link annotations for the bibliographical section (by default to the DOI registry when the DOI is recognized, to the arXiv articles when the arXiv id is recognised or to the indicated URL if present in the reference). 
