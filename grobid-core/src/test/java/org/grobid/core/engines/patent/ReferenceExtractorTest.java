@@ -43,7 +43,7 @@ public class ReferenceExtractorTest {
 		String res = extractor
 				.extractAllReferencesString(
 						"Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011.",
-						false, false, null, null);
+						false, 0, null, null);
 		//assertEquals(0, nbRes);
 	}
 
@@ -58,7 +58,7 @@ public class ReferenceExtractorTest {
             "That article refers to Economic Development Quarterly November 2011 25: 353-365, first" + 
 			" published on August 25, 2011.";
 		GrobidTimer timer = new GrobidTimer(true);
-		extractor.extractAllReferencesString(toExtract, false, false, patents, articles);
+		extractor.extractAllReferencesString(toExtract, false, 0, patents, articles);
 		timer.stop("STOP");
 		System.out.println(timer.getElapsedTimeFromStartFormated("STOP"));
 		LOGGER.info("BibDataSet: " + articles.toString());
@@ -76,7 +76,7 @@ public class ReferenceExtractorTest {
 				.extractAllReferencesString(
 						"That article It refers to Economic Development Quarterly November 2011 25: 353-365," + 
 						" first published on August 25, 2011.",
-						false, false, patents, articles);
+						false, 0, patents, articles);
 		LOGGER.info("BibDataSet: " + articles.toString());
 		assertEquals(0, patents.size());
 		assertEquals(1, articles.size());
@@ -119,7 +119,7 @@ public class ReferenceExtractorTest {
 		List<BibDataSet> articles = new ArrayList<BibDataSet>();
 		String toExtract = "US-8303618, Intravascular filter and method A filter disposed at the distal end of an elongate guidewire. Catheters are provided for delivering the filter to, and retrieving the filter from, a treatment...";
 		toExtract = "this patent refers US-8303618, bla bla";
-		extractor.extractAllReferencesString(toExtract, false, false, patents,
+		extractor.extractAllReferencesString(toExtract, false, 0, patents,
 				articles);
 		LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals(1, patents.size());
@@ -140,7 +140,7 @@ public class ReferenceExtractorTest {
 				.extractAllReferencesXMLFile(
 						new File(
 								"src/test/resources/org/grobid/core/engines/patent/ReferenceExtractor/st36-sample-1.xml")
-								.getAbsolutePath(), false, false, patents,
+								.getAbsolutePath(), false, 0, patents,
 						articles);
 		LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals(2, patents.size());
@@ -158,7 +158,7 @@ public class ReferenceExtractorTest {
 				.extractAllReferencesXMLFile(
 						new File(
 								"src/test/resources/patents/006271747.xml")
-								.getAbsolutePath(), false, false, patents,
+								.getAbsolutePath(), false, 0, patents,
 						articles);
 		//LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals("20050675311", patents.get(0).getNumberEpoDoc());
@@ -174,7 +174,7 @@ public class ReferenceExtractorTest {
 				.extractAllReferencesPDFFile(
 						new File(
 								"src/test/resources/org/grobid/core/engines/patent/ReferenceExtractor/sample-1.pdf")
-								.getAbsolutePath(), false, false, patents,
+								.getAbsolutePath(), false, 0, patents,
 						articles);
 	}
 	
@@ -186,7 +186,7 @@ public class ReferenceExtractorTest {
 		System.out.println(text_jp);
 		ReferenceExtractor extractor = new ReferenceExtractor();
 		List<PatentItem> patents = new ArrayList<PatentItem>();
-		extractor.extractAllReferencesString(text_jp, false, false, patents, null);
+		extractor.extractAllReferencesString(text_jp, false, 0, patents, null);
 		LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals(1, patents.size());
 		assertEquals("21287", patents.get(0).getNumberEpoDoc());
@@ -198,7 +198,7 @@ public class ReferenceExtractorTest {
 		System.out.println(text_kr);
 		ReferenceExtractor extractor = new ReferenceExtractor();
 		List<PatentItem> patents = new ArrayList<PatentItem>();
-		extractor.extractAllReferencesString(text_kr, false, false, patents, null);
+		extractor.extractAllReferencesString(text_kr, false, 0, patents, null);
 		LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals(1, patents.size());
 		assertEquals("2012012710", patents.get(0).getNumberEpoDoc());
@@ -213,7 +213,7 @@ public class ReferenceExtractorTest {
 		System.out.println(text_zh);
 		ReferenceExtractor extractor = new ReferenceExtractor();
 		List<PatentItem> patents = new ArrayList<PatentItem>();
-		extractor.extractAllReferencesString(text_zh, false, false, patents, null);
+		extractor.extractAllReferencesString(text_zh, false, 0, patents, null);
 		LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals(1, patents.size());
 		assertEquals("2008001534", patents.get(0).getNumberEpoDoc());

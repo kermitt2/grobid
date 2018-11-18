@@ -730,7 +730,7 @@ public class EngineTest {
         Document doc = engine.getParsers().getSegmentationParser().processing(documentSource, GrobidAnalysisConfig.defaultInstance());
         //Document doc = engine.getParsers().getSegmentationParser().processing(new File(input), GrobidAnalysisConfig.defaultInstance());
         System.out.println("Extracting citations");
-        List<BibDataSet> cits = engine.getParsers().getCitationParser().processingReferenceSection(doc, engine.getParsers().getReferenceSegmenterParser(), false);
+        List<BibDataSet> cits = engine.getParsers().getCitationParser().processingReferenceSection(doc, engine.getParsers().getReferenceSegmenterParser(), 0);
         for (BibDataSet c : cits) {
             System.out.println(c.getResBib().getTitle() + "--->" + c.getResBib().getAuthors());
         }
@@ -993,7 +993,7 @@ public class EngineTest {
     public void testHeaders() throws Exception {
         final Engine engine = GrobidFactory.getInstance().getEngine();
 //        GrobidAnalysisConfig config = GrobidAnalysisConfig.defaultInstance();
-        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().consolidateHeader(false).build();
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().consolidateHeader(0).build();
 
 
 //        File f = new File("/Users/zholudev/Downloads/Publications sample/AS-292290007453702@1446698776063_content_1.pdf");
@@ -1145,7 +1145,7 @@ public class EngineTest {
                     int cnt = 0;
                     for (int i = 0; i < 100; i++) {
                         try {
-                            engine.processRawReference(cit, false);
+                            engine.processRawReference(cit, 0);
                         } catch (Exception e) {
                             //no op
                         }
