@@ -143,7 +143,7 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response processHeaderDocument_post(@FormDataParam(INPUT) InputStream inputStream,
                                                @FormDataParam("consolidateHeader") String consolidate) {
-        boolean consol = validateConsolidationParam(consolidate);
+        int consol = validateConsolidationParam(consolidate);
 
         return restProcessFiles.processStatelessHeaderDocument(inputStream, consol);
     }
@@ -193,8 +193,8 @@ public class GrobidRestService implements GrobidPaths {
                                      String generateIDs,
                                      List<FormDataBodyPart> coordinates
     ) throws Exception {
-        boolean consolHeader = validateConsolidationParam(consolidateHeader);
-        boolean consolCitations = validateConsolidationParam(consolidateCitations);
+        int consolHeader = validateConsolidationParam(consolidateHeader);
+        int consolCitations = validateConsolidationParam(consolidateCitations);
         boolean generate = validateGenerateIdParam(generateIDs);
 
         List<String> teiCoordinates = collectCoordinates(coordinates);
@@ -221,10 +221,22 @@ public class GrobidRestService implements GrobidPaths {
         return generate;
     }
 
-    private boolean validateConsolidationParam(String consolidate) {
+    /*private boolean validateConsolidationParam(String consolidate) {
         boolean consol = false;
         if ((consolidate != null) && (consolidate.equals("1"))) {
             consol = true;
+        }
+        return consol;
+    }*/
+
+    private int validateConsolidationParam(String consolidate) {
+        int consol = 0;
+        if (consolidate != null) {
+            try {
+                consol = Integer.parseInt(consolidate);
+            } catch(Exception e) {
+                LOGGER.warn("Invalid consolidation parameter (should be an integer): " + consolidate, e);
+            }
         }
         return consol;
     }
@@ -261,8 +273,8 @@ public class GrobidRestService implements GrobidPaths {
                                                          int startPage,
                                                          int endPage,
                                                          String generateIDs) throws Exception {
-        boolean consolHeader = validateConsolidationParam(consolidateHeader);
-        boolean consolCitations = validateConsolidationParam(consolidateCitations);
+        int consolHeader = validateConsolidationParam(consolidateHeader);
+        int consolCitations = validateConsolidationParam(consolidateCitations);
 
         boolean generate = validateGenerateIdParam(generateIDs);
 
@@ -275,7 +287,7 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public StreamingOutput processCitationPatentTEI(@FormDataParam(INPUT) InputStream pInputStream,
                                                     @FormDataParam("consolidateCitations") String consolidate) throws Exception {
-        boolean consol = validateConsolidationParam(consolidate);
+        int consol = validateConsolidationParam(consolidate);
         return restProcessFiles.processCitationPatentTEI(pInputStream, consol);
     }
 
@@ -285,7 +297,7 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response processCitationPatentST36(@FormDataParam(INPUT) InputStream pInputStream,
                                               @FormDataParam("consolidateCitations") String consolidate) throws Exception {
-        boolean consol = validateConsolidationParam(consolidate);
+        int consol = validateConsolidationParam(consolidate);
 
         pInputStream = ZipUtils.decompressStream(pInputStream);
 
@@ -298,7 +310,7 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response processCitationPatentPDF(@FormDataParam(INPUT) InputStream pInputStream,
                                              @FormDataParam("consolidateCitations") String consolidate) throws Exception {
-        boolean consol = validateConsolidationParam(consolidate);
+        int consol = validateConsolidationParam(consolidate);
         return restProcessFiles.processCitationPatentPDF(pInputStream, consol);
     }
 
@@ -308,7 +320,7 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response processCitationPatentTXT_post(@FormParam(INPUT) String text,
                                                   @FormParam("consolidateCitations") String consolidate) {
-        boolean consol = validateConsolidationParam(consolidate);
+        int consol = validateConsolidationParam(consolidate);
         return restProcessString.processCitationPatentTXT(text, consol);
     }
 
@@ -406,7 +418,7 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response processCitation_post(@FormParam(CITATION) String citation,
                                          @FormParam("consolidateCitations") String consolidate) {
-        boolean consol = validateConsolidationParam(consolidate);
+        int consol = validateConsolidationParam(consolidate);
         return restProcessString.processCitation(citation, consol);
     }
 
@@ -416,7 +428,7 @@ public class GrobidRestService implements GrobidPaths {
     @PUT
     public Response processCitation(@FormParam(CITATION) String citation,
                                     @FormParam("consolidateCitations") String consolidate) {
-        boolean consol = validateConsolidationParam(consolidate);
+        int consol = validateConsolidationParam(consolidate);
         return restProcessString.processCitation(citation, consol);
     }
 
@@ -492,7 +504,7 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response processReferencesDocument_post(@FormDataParam(INPUT) InputStream inputStream,
                                                    @FormDataParam("consolidateCitations") String consolidate) {
-        boolean consol = validateConsolidationParam(consolidate);
+        int consol = validateConsolidationParam(consolidate);
         return restProcessFiles.processStatelessReferencesDocument(inputStream, consol);
     }
 
@@ -502,7 +514,7 @@ public class GrobidRestService implements GrobidPaths {
     @PUT
     public Response processStatelessReferencesDocument(@FormDataParam(INPUT) InputStream inputStream,
                                                        @FormDataParam("consolidateCitations") String consolidate) {
-        boolean consol = validateConsolidationParam(consolidate);
+        int consol = validateConsolidationParam(consolidate);
         return restProcessFiles.processStatelessReferencesDocument(inputStream, consol);
     }
 
@@ -515,8 +527,8 @@ public class GrobidRestService implements GrobidPaths {
                                        @FormDataParam("consolidateHeader") String consolidateHeader,
                                        @FormDataParam("consolidateCitations") String consolidateCitations,
                                        @FormDataParam("type") int type) throws Exception {
-        boolean consolHeader = validateConsolidationParam(consolidateHeader);
-        boolean consolCitations = validateConsolidationParam(consolidateCitations);
+        int consolHeader = validateConsolidationParam(consolidateHeader);
+        int consolCitations = validateConsolidationParam(consolidateCitations);
 
         return restProcessFiles.processPDFAnnotation(inputStream, fileName, consolHeader, consolCitations, GrobidRestUtils.getAnnotationFor(type));
     }
@@ -529,8 +541,8 @@ public class GrobidRestService implements GrobidPaths {
                                                   @FormDataParam("consolidateHeader") String consolidateHeader,
                                                   @FormDataParam("consolidateCitations") String consolidateCitations) throws Exception {
 
-        boolean consolHeader = validateConsolidationParam(consolidateHeader);
-        boolean consolCitations = validateConsolidationParam(consolidateCitations);
+        int consolHeader = validateConsolidationParam(consolidateHeader);
+        int consolCitations = validateConsolidationParam(consolidateCitations);
         return restProcessFiles.processPDFReferenceAnnotation(inputStream, consolHeader, consolCitations);
     }
     
@@ -540,7 +552,7 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response annotatePDFPatentCitation(@FormDataParam(INPUT) InputStream inputStream,
                                               @FormDataParam("consolidateCitations") String consolidate) throws Exception {
-        boolean consol = validateConsolidationParam(consolidate);
+        int consol = validateConsolidationParam(consolidate);
         return restProcessFiles.annotateCitationPatentPDF(inputStream, consol);
     }
 

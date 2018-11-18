@@ -119,7 +119,7 @@ public class TeiStAXParser {
 	/**
 	 * Indicate if the citation should be consolidated with an external call to bibliographical databases
      */
-	protected boolean consolidate = false;
+	protected int consolidate = 0;
 	
 	/**
 	 * Constructor.
@@ -133,7 +133,7 @@ public class TeiStAXParser {
 
 
 
-	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream, boolean consolidate) {
+	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream, int consolidate) {
 		this(pInputStream, pOutputStream, true, new ReferenceExtractor(new EngineParsers()), consolidate);
 		isSelfInstanceRefExtractor = true;
 	}
@@ -147,7 +147,7 @@ public class TeiStAXParser {
 	 *            If the output has to be indented.
 	 */
 	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream, 
-				final boolean pIsIndented, final boolean consolidate) {
+				final boolean pIsIndented, final int consolidate) {
 		this(pInputStream, pOutputStream, pIsIndented, new ReferenceExtractor(new EngineParsers()), consolidate);
 		isSelfInstanceRefExtractor = true;
 	}
@@ -163,7 +163,7 @@ public class TeiStAXParser {
 	 *            The ReferenceExtractor object used to extract the citations.
 	 */
 	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream, final boolean pIsIndented,
-			final ReferenceExtractor pExtractor, final boolean consolidate) {
+			final ReferenceExtractor pExtractor, final int consolidate) {
 		initTimers();
 
 		extractor = pExtractor;

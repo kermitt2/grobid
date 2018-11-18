@@ -77,7 +77,7 @@ public class HeaderParser extends AbstractParser {
             documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage());
             Document doc = parsers.getSegmentationParser().processing(documentSource, config);
 
-            String tei = processingHeaderSection(config.isConsolidateHeader(), doc, resHeader);
+            String tei = processingHeaderSection(config.getConsolidateHeader(), doc, resHeader);
             return new ImmutablePair<String, Document>(tei, doc);
         } finally {
             if (documentSource != null) {
@@ -101,7 +101,7 @@ public class HeaderParser extends AbstractParser {
                 throw new GrobidException("PDF parsing resulted in empty content");
             }
 
-            String tei = processingHeaderBlock(config.isConsolidateHeader(), doc, resHeader);
+            String tei = processingHeaderBlock(config.getConsolidateHeader(), doc, resHeader);
             return Pair.of(tei, doc);
         } catch (Exception e) {
             throw new GrobidException(e, GrobidExceptionStatus.GENERAL);
@@ -115,7 +115,7 @@ public class HeaderParser extends AbstractParser {
     /**
      * Header processing after identification of the header blocks with heuristics (old approach)
      */
-    public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) throws Exception {
+    public String processingHeaderBlock(int consolidate, Document doc, BiblioItem resHeader) throws Exception {
         String header;
         //if (doc.getBlockDocumentHeaders() == null) {
         header = doc.getHeaderFeatured(true, true);
@@ -240,7 +240,7 @@ public class HeaderParser extends AbstractParser {
                     }
 
                     if (resHeader.getReference() != null) {
-                        BiblioItem refer = parsers.getCitationParser().processing(resHeader.getReference(), false);
+                        BiblioItem refer = parsers.getCitationParser().processing(resHeader.getReference(), 0);
                         if (refer != null)
                             BiblioItem.correct(resHeader, refer);
                     }
@@ -264,8 +264,9 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                if (consolidate) {
-                    resHeader = consolidateHeader(resHeader);
+                //if (consolidate) 
+                {
+                    resHeader = consolidateHeader(resHeader, consolidate);
                 }
 
                 // normalization of dates
@@ -308,7 +309,7 @@ public class HeaderParser extends AbstractParser {
     /**
      * Header processing after application of the segmentation model (new approach)
      */
-    public String processingHeaderSection(boolean consolidate, Document doc, BiblioItem resHeader) {
+    public String processingHeaderSection(int consolidate, Document doc, BiblioItem resHeader) {
         try {
             SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
             List<LayoutToken> tokenizations = doc.getTokenizations();
@@ -454,7 +455,7 @@ public class HeaderParser extends AbstractParser {
                     }
 
                     if (resHeader.getReference() != null) {
-                        BiblioItem refer = parsers.getCitationParser().processing(resHeader.getReference(), false);
+                        BiblioItem refer = parsers.getCitationParser().processing(resHeader.getReference(), 0);
                         BiblioItem.correct(resHeader, refer);
                     }
                 }
@@ -477,8 +478,9 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                if (consolidate) {
-                    resHeader = consolidateHeader(resHeader);
+                //if (consolidate) 
+                {
+                    resHeader = consolidateHeader(resHeader, consolidate);
                 }
 
                 // normalization of dates
@@ -1640,7 +1642,11 @@ public class HeaderParser extends AbstractParser {
      * @param resHeader original biblio item
      * @return consolidated biblio item
      */
-    public BiblioItem consolidateHeader(BiblioItem resHeader) {
+    public BiblioItem consolidateHeader(BiblioItem resHeader, int consolidate) {
+        if (consolidate == 0) {
+            // not consolidation
+            return resHeader;
+        }
         Consolidation consolidator = null;
         try {
             consolidator = new Consolidation(cntManager);
@@ -1649,7 +1655,10 @@ public class HeaderParser extends AbstractParser {
             if ((valid) && (bibis.size() > 0)) {
                 BiblioItem bibo = bibis.get(0);
                 if (bibo != null) {
-                    BiblioItem.correct(resHeader, bibo);
+                    if (consolidate == 1)
+                        BiblioItem.correct(resHeader, bibo);
+                    else if (consolidate == 2)
+                        BiblioItem.injectDOI(resHeader, bibo);
                 }
             }
         } catch (Exception e) {

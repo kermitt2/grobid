@@ -295,7 +295,7 @@ public class GrobidRestProcessString {
 	 * @return a response object containing the structured xml representation of
 	 *         the affiliation
 	 */
-	public Response processCitation(String citation, boolean consolidate) {
+	public Response processCitation(String citation, int consolidate) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 
@@ -349,7 +349,7 @@ public class GrobidRestProcessString {
 	 * @return a response object containing the structured xml representation of
 	 *         the affiliation
 	 */
-	public Response processCitationPatentTXT(String text, boolean consolidate) {
+	public Response processCitationPatentTXT(String text, int consolidate) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 

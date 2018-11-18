@@ -113,7 +113,7 @@ public class ReferenceExtractor implements Closeable {
      * Extract all reference from the full text retrieve via OPS.
      */
     public String extractAllReferencesOPS(boolean filterDuplicate,
-                                       boolean consolidate,
+                                       int consolidate,
                                        List<PatentItem> patents,
                                        List<BibDataSet> articles) {
         try {
@@ -135,7 +135,7 @@ public class ReferenceExtractor implements Closeable {
      */
     public String extractPatentReferencesXMLFile(String pathXML,
                                               boolean filterDuplicate,
-                                              boolean consolidate,
+                                              int consolidate,
                                               List<PatentItem> patents) {
         return extractAllReferencesXMLFile(pathXML,
                 filterDuplicate,
@@ -149,7 +149,7 @@ public class ReferenceExtractor implements Closeable {
      */
     public String extractAllReferencesXMLFile(String pathXML,
                                            boolean filterDuplicate,
-                                           boolean consolidate,
+                                           int consolidate,
                                            List<PatentItem> patents,
                                            List<BibDataSet> articles) {
         try {
@@ -192,7 +192,7 @@ public class ReferenceExtractor implements Closeable {
 
             description = sax.getText();
             currentPatentNumber = sax.currentPatentNumber;
-            consolidate = false;
+            consolidate = 0;
             filterDuplicate = true;
 
             if (description != null) {
@@ -215,7 +215,7 @@ public class ReferenceExtractor implements Closeable {
      */
     public String extractAllReferencesPDFFile(String inputFile,
                                            boolean filterDuplicate,
-                                           boolean consolidate,
+                                           int consolidate,
                                            List<PatentItem> patents,
                                            List<BibDataSet> articles) {
         DocumentSource documentSource = null;
@@ -249,7 +249,7 @@ public class ReferenceExtractor implements Closeable {
      */
     public String annotateAllReferencesPDFFile(String inputFile,
                                            boolean filterDuplicate,
-                                           boolean consolidate,
+                                           int consolidate,
                                            List<PatentItem> patents,
                                            List<BibDataSet> articles) {
         DocumentSource documentSource = null;
@@ -285,7 +285,7 @@ public class ReferenceExtractor implements Closeable {
      */
     public String extractAllReferencesString(String text,
                                           boolean filterDuplicate,
-                                          boolean consolidate,
+                                          int consolidate,
                                           List<PatentItem> patents,
                                           List<BibDataSet> articles) {
         try {
@@ -777,7 +777,7 @@ public class ReferenceExtractor implements Closeable {
     public String annotateAllReferences(Document doc,
 										List<LayoutToken> tokenizations,
                                         boolean filterDuplicate,
-                                        boolean consolidate,
+                                        int consolidate,
                                         List<PatentItem> patents,
                                         List<BibDataSet> articles) {
         try {
@@ -1568,7 +1568,7 @@ public class ReferenceExtractor implements Closeable {
 
             // we process the patent description
             if (description != null) {
-                extractAllReferencesString(description, false, false, patents, articles);
+                extractAllReferencesString(description, false, 0, patents, articles);
                 // second pass: we add annotations corresponding to identified citation chunks based on
                 // stored offsets
                 Writer writer = new OutputStreamWriter(
