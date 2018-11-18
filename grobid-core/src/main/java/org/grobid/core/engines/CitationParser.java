@@ -149,7 +149,7 @@ public class CitationParser extends AbstractParser {
         }
     }
 
-    /*public List<BibDataSet> processingReferenceSection(String referenceTextBlock, ReferenceSegmenter referenceSegmenter) {
+    public List<BibDataSet> processingReferenceSection(String referenceTextBlock, ReferenceSegmenter referenceSegmenter) {
         List<LabeledReferenceResult> segm = referenceSegmenter.extract(referenceTextBlock);
 
         List<BibDataSet> results = new ArrayList<>();
@@ -165,7 +165,7 @@ public class CitationParser extends AbstractParser {
             }
         }
         return results;
-    }*/
+    }
 
     public List<BibDataSet> processingReferenceSection(Document doc, ReferenceSegmenter referenceSegmenter, int consolidate) {
         List<BibDataSet> results = new ArrayList<BibDataSet>();

@@ -40,7 +40,7 @@ public class TestHeaderParser extends EngineTest {
         String pdfPath = testPath + File.separator + "Wang-paperAVE2008.pdf";
         BiblioItem resHeader = new BiblioItem();
 
-        String tei = engine.processHeader(pdfPath, false, resHeader);
+        String tei = engine.processHeader(pdfPath, 0, resHeader);
 
         assertNotNull(resHeader);
         assertThat(resHeader.getTitle(), is("Information Synthesis for Answer Validation"));
@@ -52,28 +52,28 @@ public class TestHeaderParser extends EngineTest {
 
         pdfPath = testPath + File.separator + "1060._fulltext3.pdf";
         resHeader = new BiblioItem();
-        tei = engine.processHeader(pdfPath, false, resHeader);
+        tei = engine.processHeader(pdfPath, 0, resHeader);
 
         assertNotNull(resHeader);
         //System.out.println(tei);
 
         pdfPath = testPath + File.separator + "ZFN-A-054-0304-0272.pdf";
         resHeader = new BiblioItem();
-        tei = engine.processHeader(pdfPath, false, resHeader);
+        tei = engine.processHeader(pdfPath, 0, resHeader);
 
         assertNotNull(resHeader);
         //System.out.println(tei);
 
         pdfPath = testPath + File.separator + "ZNC-1988-43c-0034.pdf";
         resHeader = new BiblioItem();
-        tei = engine.processHeader(pdfPath, false, resHeader);
+        tei = engine.processHeader(pdfPath, 0, resHeader);
         //System.out.println(tei);
 
         //assertNotNull(resHeader);
 
         pdfPath = testPath + File.separator + "ZNC-1988-43c-0065.pdf";
         resHeader = new BiblioItem();
-        tei = engine.processHeader(pdfPath, false, resHeader);
+        tei = engine.processHeader(pdfPath, 0, resHeader);
 
         assertNotNull(resHeader);
         //System.out.println(tei);
@@ -87,7 +87,7 @@ public class TestHeaderParser extends EngineTest {
         File pdfPath = new File(testPath + File.separator + "Wang-paperAVE2008.pdf");
         BiblioItem resHeader = new BiblioItem();
 
-        String tei = engine.segmentAndProcessHeader(pdfPath, false, resHeader);
+        String tei = engine.segmentAndProcessHeader(pdfPath, 0, resHeader);
 
         assertNotNull(resHeader);
         assertThat(resHeader.getTitle(), is("Information Synthesis for Answer Validation"));
