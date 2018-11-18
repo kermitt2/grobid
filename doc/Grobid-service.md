@@ -82,7 +82,10 @@ Still to demostrate PDF.js annotation possibilities, by default bibliographical 
 
 We describe bellow the provided resources corresponding to the HTTP verbs, to use the grobid web services. All url described bellow are relative path, the root url is `http://<server instance name>/<root context>`
 
-The consolidation parameters (__consolidateHeader__ and __consolidateCitations__) indicate if GROBID should try to complete the extracted metadata with an additional external call to [CrossRef API](https://github.com/CrossRef/rest-api-doc). The CrossRef look-up is realized based on the reliable subset of extracted metadata which are supported by this API.
+The consolidation parameters (__consolidateHeader__ and __consolidateCitations__) indicate if GROBID should try to complete the extracted metadata with an additional external call to [CrossRef API](https://github.com/CrossRef/rest-api-doc). The CrossRef look-up is realized based on the reliable subset of extracted metadata which are supported by this API. Each consolidation parameter is a string which can have three values:
+- __0__, means no consolidation at all is performed: all the metadata will come from the source PDF
+- __1__, means consolidation against CrossRef and update of metadata: when we have a DOI match, the publisher metadata are combined with the metadata extracted from the PDF, possibly correcting them
+- __2__, means consolidation against CrossRef and, if matching, addition of the DOI only
 
 ### PDF to TEI conversion services
 
@@ -90,13 +93,13 @@ The consolidation parameters (__consolidateHeader__ and __consolidateCitations__
 
 Extract the header of the input PDF document, normalize it and convert it into a TEI XML format.
 
-_consolidateHeader_ is a string of value 0 (no consolidation) or 1 (consolidate, default value).
+_consolidateHeader_ is a string of value 0 (no consolidation) or 1 (consolidate and inject all extra metadata, default value), or 2 (consolidate and inject only the DOI value).
 
 
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
-|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value) |
+|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate and inject all extra metadata, default value), or 2 (consolidate and inject only the DOI value). |
 
 Response status codes:
 
@@ -123,8 +126,8 @@ Convert the complete input document into TEI XML format (header, body and biblio
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
-|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value) |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate all found citations) |
+|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate and inject all extra metadata, default value), or 2 (consolidate and inject only the DOI value). |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate and inject all extra metadata), or 2 (consolidate and inject only the DOI value). |
 |   		| 					  |						 |teiCoordinates| optional | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details |
 
 Response status codes:
@@ -163,7 +166,7 @@ Extract and convert all the bibliographical references present in the input docu
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
-|   		| 					  |						 |consolidateCitations| optional 	| consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate all found citations) |
+|   		| 					  |						 |consolidateCitations| optional 	| is a string of value 0 (no consolidation, default value) or 1 (consolidate all found bib. ref. and inject all extra metadata), or 2 (consolidate all found bib. ref. and inject only the DOI value). |
 
 Response status codes:
 
@@ -340,7 +343,7 @@ Parse a raw bibliographical reference (in isolation) and return the correspondin
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| citations | required	| bibliographical reference to be parsed as raw string|
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate the citation and inject DOI only) |
 
 
 Response status codes:
@@ -396,7 +399,7 @@ For information about how the coordinates are provided, see [Coordinates of stru
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST	| multipart/form-data | application/json  	| input | required	| PDF file to be processed, returned coordinates will reference this PDF |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
 
 
 
@@ -423,7 +426,7 @@ Note that this service modify the original PDF, and thus be careful with legal r
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST	| multipart/form-data | application/pdf  	| input | required	| PDF file to be processed |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
 
 Response status codes:
 
@@ -446,7 +449,7 @@ Extract and parse the patent and non patent citations in the description of a pa
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| input | required	| patent text to be processed as raw string|
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
 
 
 Response status codes:
@@ -503,7 +506,7 @@ Extract and parse the patent and non patent citations in the description of a pa
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data | application/xml  	| input | required	| TEI file of the patent document to be processed |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
 
 
 Response status codes:
@@ -526,7 +529,7 @@ Extract and parse the patent and non patent citations in the description of a pa
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data | application/xml  	| input | required	| XML file in ST36 standard of the patent document to be processed |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
 
 
 Response status codes:
@@ -551,7 +554,7 @@ Extract and parse the patent and non patent citations in the description of a pa
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data | application/xml  	| input | required	| PDF file of the patent document to be processed |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
 
 
 Response status codes:
@@ -576,7 +579,7 @@ Patent and non patent citations can be directly visualised on the PDF layout as 
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST	| multipart/form-data | application/json  	| input | required	| Patent publication PDF file to be processed, returned coordinates will reference this PDF |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
 
 
 Response status codes:

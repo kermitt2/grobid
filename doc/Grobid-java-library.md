@@ -104,7 +104,7 @@ When using Grobid, you have to initiate a context with the path to the Grobid re
 
 		// Biblio object for the result
 		BiblioItem resHeader = new BiblioItem();
-		String tei = engine.processHeader(pdfPath, false, resHeader);
+		String tei = engine.processHeader(pdfPath, 1, resHeader);
 	} 
 	catch (Exception e) {
 		// If an exception is generated, print a stack trace

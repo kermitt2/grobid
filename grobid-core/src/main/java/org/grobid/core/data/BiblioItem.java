@@ -3769,9 +3769,15 @@ public class BiblioItem {
 
     }
 
+    /**
+     * Correct/add only the DOI of the first biblio item based on the second one and he reference string
+     */
+    public static void injectDOI(BiblioItem bib, BiblioItem bibo) {
+        bib.setDOI(bibo.getDOI());
+    }
 
     /**
-     * Correct fields of the first biblio item based on the second one and he reference string.
+     * Correct fields of the first biblio item based on the second one and he reference string
      */
     public static void correct(BiblioItem bib, BiblioItem bibo) {
         if (bibo.getDOI() != null)

@@ -68,7 +68,7 @@ public class GrobidRestProcessFiles {
      * @param consolidate consolidation parameter for the header extraction
      * @return a response object which contains a TEI representation of the header part
      */
-    public Response processStatelessHeaderDocument(final InputStream inputStream, final boolean consolidate) {
+    public Response processStatelessHeaderDocument(final InputStream inputStream, final int consolidate) {
         LOGGER.debug(methodLogIn());
         String retVal = null;
         Response response = null;
@@ -140,8 +140,8 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processFulltextDocument(final InputStream inputStream,
-                                          final boolean consolidateHeader,
-                                          final boolean consolidateCitations,
+                                          final int consolidateHeader,
+                                          final int consolidateCitations,
                                           final int startPage,
                                           final int endPage,
                                           final boolean generateIDs,
@@ -228,8 +228,8 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
-                                                          final boolean consolidateHeader,
-                                                          final boolean consolidateCitations,
+                                                          final int consolidateHeader,
+                                                          final int consolidateCitations,
                                                           final int startPage,
                                                           final int endPage,
                                                           final boolean generateIDs) throws Exception {
@@ -349,7 +349,7 @@ public class GrobidRestProcessFiles {
      * the input.
      */
     public StreamingOutput processCitationPatentTEI(final InputStream pInputStream,
-                                                    final boolean consolidate) {
+                                                    final int consolidate) {
         LOGGER.debug(methodLogIn());
         return new StreamingOutput() {
             public void write(OutputStream output) throws IOException, WebApplicationException {
@@ -371,7 +371,7 @@ public class GrobidRestProcessFiles {
      * citation
      */
     public Response processCitationPatentPDF(final InputStream inputStream,
-                                             final boolean consolidate) throws Exception {
+                                             final int consolidate) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -436,7 +436,7 @@ public class GrobidRestProcessFiles {
      * citation
      */
     public Response processCitationPatentST36(final InputStream inputStream,
-                                              final boolean consolidate) throws Exception {
+                                              final int consolidate) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -503,7 +503,7 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processStatelessReferencesDocument(final InputStream inputStream,
-                                                       final boolean consolidate) {
+                                                       final int consolidate) {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -584,8 +584,8 @@ public class GrobidRestProcessFiles {
      */
     public Response processPDFAnnotation(final InputStream inputStream,
                                          final String fileName,
-                                         final boolean consolidateHeader,
-                                         final boolean consolidateCitations,
+                                         final int consolidateHeader,
+                                         final int consolidateCitations,
                                          final GrobidRestUtils.Annotation type) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
@@ -657,8 +657,8 @@ public class GrobidRestProcessFiles {
      * @return a response object containing the JSON annotations
      */
     public Response processPDFReferenceAnnotation(final InputStream inputStream,
-                                                  final boolean consolidateHeader,
-                                                  final boolean consolidateCitations) throws Exception {
+                                                  final int consolidateHeader,
+                                                  final int consolidateCitations) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         boolean isParallelExec = GrobidServiceProperties.isParallelExec();
@@ -731,7 +731,7 @@ public class GrobidRestProcessFiles {
      * citation
      */
     public Response annotateCitationPatentPDF(final InputStream inputStream,
-                                              final boolean consolidate) throws Exception {
+                                              final int consolidate) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -793,8 +793,8 @@ public class GrobidRestProcessFiles {
 
     protected PDDocument annotate(File originFile, boolean isParallelExec,
                                   final GrobidRestUtils.Annotation type, Engine engine,
-                                  final boolean consolidateHeader,
-                                  final boolean consolidateCitations) throws Exception {
+                                  final int consolidateHeader,
+                                  final int consolidateCitations) throws Exception {
         // starts conversion process
         PDDocument outputDocument = null;
         // list of TEI elements that should come with coordinates
