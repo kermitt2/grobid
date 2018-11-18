@@ -835,7 +835,7 @@ public class GrobidRestProcessFiles {
                 teiDoc, true, true, false);
         } else if (type == GrobidRestUtils.Annotation.FIGURE) {
             out = FigureTableVisualizer.annotateFigureAndTables(document, documentSource.getXmlFile(),
-                teiDoc, true, true, true, false);
+                teiDoc, true, true, true, false, false);
         }
         return out;
     }

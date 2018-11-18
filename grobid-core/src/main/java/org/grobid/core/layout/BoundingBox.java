@@ -36,16 +36,20 @@ public class BoundingBox {
     }
 
     public static BoundingBox fromString(String coords) {
-        String[] split = coords.split(",");
+        try {
+            String[] split = coords.split(",");
 
-        Long pageNum = Long.valueOf(split[0], 10);
+            Long pageNum = Long.valueOf(split[0], 10);
 
-        float x = Float.parseFloat(split[1]);
-        float y = Float.parseFloat(split[2]);
-        float w = Float.parseFloat(split[3]);
-        float h = Float.parseFloat(split[4]);
+            float x = Float.parseFloat(split[1]);
+            float y = Float.parseFloat(split[2]);
+            float w = Float.parseFloat(split[3]);
+            float h = Float.parseFloat(split[4]);
 
-        return new BoundingBox(pageNum.intValue(), x, y, w, h);
+            return new BoundingBox(pageNum.intValue(), x, y, w, h);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static BoundingBox fromPointAndDimensions(int page, double x, double y, double width, double height) {
