@@ -241,10 +241,10 @@ public class EndToEndEvaluation {
 	
 	private String evaluationRun(int runType, int sectionType) {
 		if (  (runType != this.GROBID) && (runType != this.PDFX) && (runType != this.CERMINE)) {
-			throw new GrobidException("The run type is not valid for evaluation");
+			throw new GrobidException("The run type is not valid for evaluation: " + runType);
 		}
 		if (  (sectionType != this.HEADER) && (sectionType != this.CITATION) && (sectionType != this.FULLTEXT)) {
-			throw new GrobidException("The section type is not valid for evaluation");
+			throw new GrobidException("The section type is not valid for evaluation: " + sectionType);
 		}
 		StringBuilder report = new StringBuilder();
 		
@@ -1476,9 +1476,6 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 		return report.toString();
 	}
 	
-	public void close() {
-	}
-	
 	private static String basicNormalization(String string) {
 		string = string.trim();
 		string = string.replace("\n", " ");
@@ -1592,7 +1589,6 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 			String report = eval.evaluationGrobid(runGrobidVal);
 			System.out.println(report);
 			System.out.println(Engine.getCntManager());
-			eval.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
