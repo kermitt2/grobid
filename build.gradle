@@ -386,6 +386,14 @@ project(":grobid-trainer") {
         args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
         jvmArgs '-Xmx3072m'
     }
+
+    // ./gradlew EvaluationDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
+    task(EvaluationDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+        main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
+        classpath = sourceSets.main.runtimeClasspath
+        args 'nlm', getArg('p2t', '.'), getArg('fileRatio', '1.0')
+        jvmArgs '-Xmx3072m'
+    }
 }
 
 // coveralls does not support mutimodule, therefore merging reports
