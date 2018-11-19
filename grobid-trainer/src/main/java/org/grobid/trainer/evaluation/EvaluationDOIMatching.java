@@ -43,25 +43,19 @@ import scala.Option;
  */
 public class EvaluationDOIMatching {
 
-    private static String xmlInputPath = null;
+    private static String evaluationFilePath = null;
     private Engine engine = null;
     
     public static final int BIBLIO_GLUTTON = 0;
     public static final int CROSSREF_API = 1;
-    
-    public double fileRatio = 1.0;
-        
-    // the type of evaluation XML data - NLM or TEI (obtained via Pub2TEI)
-    private String inputType = null;
 
-    public EvaluationDOIMatching(String path, String inType) {
-        this.xmlInputPath = path;   
-        this.inputType = inType;
+    public EvaluationDOIMatching(String path) {
+        this.evaluationFilePath = path;   
     
-        File xmlInputFile = new File(path);
-        if (!xmlInputFile.exists()) {
+        File evaluationFile = new File(path);
+        if (!evaluationFile.exists()) {
             System.out.println("Path to evaluation (gold) XML data is not valid !");
-            xmlInputPath = null;
+            this.evaluationFilePath = null;
         }
 
         try {
@@ -73,13 +67,118 @@ public class EvaluationDOIMatching {
         catch (Exception e) {
             e.printStackTrace();
         }
-      }
+    }
     
     public String evaluation() throws Exception {
-        if (xmlInputPath == null) {
+        StringBuilder report = new StringBuilder();
+        
+        // we run Grobid reference extraction on the PubMedCentral data
+        File input = new File(this.evaluationFilePath);
+        // we process all tsv files in the input evaluation directory
+        File[] refFiles = input.listFiles(new FilenameFilter() {
+            public boolean accept(File dir, String name) {
+                return name.endsWith(".tsv");
+            }
+        });
+
+        if (refFiles == null) {
+            report.append("No file in dataset");
+            return report.toString();
+        }
+        
+        List<List<String>> predictedCrossrefDOI = new ArrayList<List<String>>();
+        List<List<String>> goldReferenceDOI = new ArrayList<List<String>>();
+
+        int n = 0;
+        long start = System.currentTimeMillis();
+        int fails = 0;
+        for (File dir : refFiles) {
+            // get the PDF file in the directory
+
+            final File tsvFile = refFiles[0];
+
+            List<String> referenceDOI = new ArrayList<String>();
+            // get the (gold) reference file corresponding to this pdf 
+
+            String doi = null;
+            String rawRef = null;
+            try {
+                doi = null;
+                rawRef = null;
+                referenceDOI.add(doi);
+                n++;
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+
+            // run Grobid reference extraction
+            try {
+                System.out.println(n + " - " + tsvFile.getPath());
+                /*GrobidAnalysisConfig config =
+                    GrobidAnalysisConfig.builder()
+                            .consolidateHeader(1)
+                            .consolidateCitations(0)
+                            .withPreprocessImages(true)
+                            .build();*/
+                BiblioItem biblio = engine.processRawReference(rawRef, 2);
+
+                if (biblio.getDOI() != null)
+                    n++;
+                //predictedCrossrefDOI.add(biblio.getDOI());
+
+                // we get from this the reference strings and matched DOI
+                System.out.println("total of " + goldReferenceDOI.size() + " ref. bib.");
+                System.out.println("with " + n + " DOI matched by GROBID");
+            } 
+            catch (Exception e) {
+                System.out.println("Error when processing: " + tsvFile.getPath());
+                e.printStackTrace();
+            }
+        }
+
+        double processTime = ((double)System.currentTimeMillis() - start) / 1000.0;
+
+        System.out.println(goldReferenceDOI.size() + " bibliographical references processed in " + 
+             processTime + " seconds, " + ((double)processTime)/goldReferenceDOI.size() + " seconds per bibliographical reference.");
+        
+        // evaluation of the run
+        start = System.currentTimeMillis();
+
+        report.append("\n======= CROSSREF API ======= \n");
+        report.append(evaluationRun(this.CROSSREF_API, goldReferenceDOI, predictedCrossrefDOI));
+
+        //report.append("\n======= BIBLIO GLUTTON ======= \n");
+        //report.append(evaluationRun(this.BIBLIO_GLUTTON, allReferenceDOI, predictedGluttonDOI));
+        
+        System.out.println("Evaluation metrics produced in " + 
+                (System.currentTimeMillis() - start) / (1000.00) + " seconds");
+
+        return report.toString();
+    }
+
+    private String evaluationRun(int runType, List<List<String>> referenceDOI, List<List<String>> predictedDOI) {
+        if ( (runType != this.CROSSREF_API) && (runType != this.BIBLIO_GLUTTON) ) {
+            throw new GrobidException("The run type is not valid for evaluation: " + runType);
+        }
+
+        StringBuffer buffer = new StringBuffer();
+
+
+
+        return buffer.toString();
+    }
+
+
+    /**
+     * From PDF and publisher XML (nlm or TEI), we create a dataset of raw bibliographical 
+     * references extracted from the PDF by GROBID associated with their DOI obtained from 
+     * the XML. This set will be used for evaluating the DOI matching. 
+     */
+    public void buildEvaluationDataset() throws Exception {
+        if (this.evaluationFilePath == null) {
             throw new GrobidResourceException("Path to evaluation (gold) XML data is not correctly set");
         }
-        StringBuilder report = new StringBuilder();
+        StringBuffer report = new StringBuffer();
 
         // get a factory for SAX parsers
         SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -93,8 +192,7 @@ public class EvaluationDOIMatching {
         mappings.put("tei", "http://www.tei-c.org/ns/1.0");
         xp.setNamespaceContext(new NamespaceContextMap(mappings));
         
-        // we run Grobid reference extraction on the PubMedCentral data
-        File input = new File(xmlInputPath);
+        File input = new File(this.evaluationFilePath);
         // we process all tei files in the output directory
         File[] refFiles = input.listFiles(new FilenameFilter() {
             public boolean accept(File dir, String name) {
@@ -107,11 +205,10 @@ public class EvaluationDOIMatching {
 
         if (refFiles == null) {
             report.append("No file in dataset");
-            return report.toString();
+            return;
         }
         
-        List<List<String>> predictedCrossrefDOI = new ArrayList<List<String>>();
-        List<List<String>> allReferenceDOI = new ArrayList<List<String>>();
+        List<BibRefAggregated> allGoldReferences = new ArrayList<BibRefAggregated>();
 
         int n = 0;
         long start = System.currentTimeMillis();
@@ -137,23 +234,24 @@ public class EvaluationDOIMatching {
             File nlmFile = null;
             File teiFile = null;
 
-            List<String> referenceDOI = new ArrayList<String>();
+            List<BibRefAggregated> goldReference = new ArrayList<BibRefAggregated>();
             // get the (gold) reference file corresponding to this pdf 
-            if (this.inputType.equals("nlm")) {
-                File[] refFiles3 = dir.listFiles(new FilenameFilter() {
-                    public boolean accept(File dir, String name) {
-                        return name.endsWith(".nxml");
-                    }
-                });
+            File[] refFiles3 = dir.listFiles(new FilenameFilter() {
+                public boolean accept(File dir, String name) {
+                    return name.endsWith(".nxml");
+                }
+            });
+            if ( (refFiles3 != null) && (refFiles3.length != 0) )
                 nlmFile = refFiles3[0];
-            } else if (this.inputType.equals("tei")) {
-                File[] refFiles3 = dir.listFiles(new FilenameFilter() {
-                    public boolean accept(File dir, String name) {
-                        return name.endsWith(".tei");
-                    }
-                });
+            refFiles3 = dir.listFiles(new FilenameFilter() {
+                public boolean accept(File dir, String name) {
+                    return name.endsWith(".tei");
+                }
+            });
+            if ( (refFiles3 != null) && (refFiles3.length != 0) )
                 teiFile = refFiles3[0];
-            } else {
+
+            if ( (nlmFile == null) && (teiFile == null) ) {
                 System.out.println("warning: no reference NLM or TEI file found under " + dir.getPath());
                 continue;
             }
@@ -180,23 +278,46 @@ public class EvaluationDOIMatching {
 
                 System.out.println("Reference DOIs in : " + goldFile.getPath());
 
-                // get the DOI of the bibliographical references ia xpath
-                String path = null;
+                // get the DOI or PMID of the bibliographical references ia xpath
+                String path_doi = null;
+                String path_pmid = null;
+                String path_ref = null;
                 if (teiFile == null) {
                     // gold DOI are in the nlm file 
-                    path = "/article/back/ref-list/ref/mixed-citation/pub-id[@pub-id-type=\"doi\"]/text()"; 
+                    path_ref = "/article/back/ref-list/ref/mixed-citation";
+                    path_doi = "pub-id[@pub-id-type=\"doi\"]/text()"; 
+                    path_pmid = "pub-id[@pub-id-type=\"pmid\"]/text()"; 
+                    
                 } else {
-                    path = "//back/div/listBibl/biblStruct/idno[@type=\"DOI\"]/text()";
+                    path_ref = "//back/div/listBibl/biblStruct";
+                    path_doi = "idno[@type=\"doi\"]/text()";
                 }
-                NodeList doiNodeList = (NodeList) xp.compile(path).
+                NodeList nodeList = (NodeList) xp.compile(path_ref).
                             evaluate(gold.getDocumentElement(), XPathConstants.NODESET);
-                for (int i = 0; i < doiNodeList.getLength(); i++) {
-                    Node node = doiNodeList.item(i);
-                    String doi = node.getNodeValue();
-                    referenceDOI.add(doi);
+                for (int i = 0; i < nodeList.getLength(); i++) {
+                    // for each node we have a ref bib
+                    BibRefAggregated refBib = new BibRefAggregated();
+                    Node ref = nodeList.item(i);
+                    refBib.setXML(ref);
+
+                    // get DOI and PMID - if any
+                    NodeList nodeListDOI = (NodeList) xp.compile(path_doi).
+                            evaluate(ref, XPathConstants.NODESET);
+                    if (nodeListDOI.getLength() > 0) {
+                        Node nodeDOI = nodeListDOI.item(0);
+                        String doi = nodeDOI.getNodeValue();
+                        refBib.setDOI(doi);
+                    }
+                    NodeList nodeListPMID = (NodeList) xp.compile(path_pmid).
+                            evaluate(ref, XPathConstants.NODESET);
+                    if (nodeListPMID.getLength() > 0) {
+                        Node nodePMID = nodeListPMID.item(0);
+                        String pmid = nodePMID.getNodeValue();
+                        refBib.setPMID(pmid);
+                    }
+                    allGoldReferences.add(refBib);
                 }
 
-                allReferenceDOI.add(referenceDOI);
             } catch(Exception e) {
                 e.printStackTrace();
             }
@@ -214,17 +335,20 @@ public class EvaluationDOIMatching {
                 List<String> predictedDOI = new ArrayList<String>();
 
                 for(BibDataSet bib : bibrefs) {
-                    BiblioItem biblio = bib.getResBib();
-                    if (biblio.getDOI() != null)
-                        predictedDOI.add(biblio.getDOI());
+                    String rawRef = bib.getRawBib();
+                    if (rawRef != null) {
+                        // we need to align this raw ref bib string with a gold ref bib
+
+
+                    }
                 } 
 
                 // we get from this the reference strings and matched DOI
                 System.out.println("total of " + bibrefs.size() + " ref. bib. found by GROBID");
                 System.out.println("with " + predictedDOI.size() + " DOI matched");
-                System.out.println(referenceDOI.size() + " DOI identified in gold");
+                System.out.println(allGoldReferences.size() + " DOI identified in gold");
 
-                predictedCrossrefDOI.add(predictedDOI);
+                //predictedCrossrefDOI.add(predictedDOI);
             } 
             catch (Exception e) {
                 System.out.println("Error when processing: " + pdfFile.getPath());
@@ -239,34 +363,57 @@ public class EvaluationDOIMatching {
 
         System.out.println(n + " PDF files processed in " + 
              processTime + " seconds, " + ((double)processTime)/n + " seconds per PDF file.");
-        
-        // evaluation of the run
-        start = System.currentTimeMillis();
-
-        report.append("\n======= CROSSREF API ======= \n");
-        report.append(evaluationRun(this.CROSSREF_API, allReferenceDOI, predictedCrossrefDOI));
-
-        //report.append("\n======= BIBLIO GLUTTON ======= \n");
-        //report.append(evaluationRun(this.BIBLIO_GLUTTON, allReferenceDOI, predictedGluttonDOI));
-        
-        System.out.println("Evaluation metrics produced in " + 
-                (System.currentTimeMillis() - start) / (1000.00) + " seconds");
-
-        return report.toString();
     }
 
 
+    /**
+     * This class represents a bibliographical reference by aggregating information
+     * from the publisher XML and the PDF extracted information from GROBID.
+     */
+    public class BibRefAggregated {
+        // raw string of the bib ref
+        private String rawRef = null;
 
-    private String evaluationRun(int runType, List<List<String>> referenceDOI, List<List<String>> predictedDOI) {
-        if ( (runType != this.CROSSREF_API) && (runType != this.BIBLIO_GLUTTON) ) {
-            throw new GrobidException("The run type is not valid for evaluation: " + runType);
+        // doi if any
+        private String doi = null;
+
+        // pmid if present
+        private String pmid = null;
+
+        // xml segment corresponding to the bibliographical reference
+        private Node xml = null;
+
+        public String getRawRef() {
+            return this.rawRef;
         }
 
-        StringBuffer buffer = new StringBuffer();
+        public void setRawRef(String raw) {
+            this.rawRef = raw;
+        }
 
+        public String getDOI() {
+            return this.doi;
+        }
 
+        public void setDOI(String doi) {
+            this.doi = doi;
+        }
+        
+        public String getPMID() {
+            return this.pmid;
+        }
 
-        return buffer.toString();
+        public void setPMID(String pmid) {
+            this.pmid = pmid;
+        }
+
+        public Node getXML() {
+            return this.xml;
+        }
+
+        public void setXML(Node xml) {
+            this.xml = xml;
+        }
     }
 
 
@@ -276,46 +423,30 @@ public class EvaluationDOIMatching {
      * @param args Command line arguments.
      */
     public static void main(String[] args) {
-        if ( (args.length >3) || (args.length == 0) ) {
-            System.err.println("usage: command [path to the (gold) evaluation XML dataset] fileRatio[0.0-1.0]");
+        if ( (args.length > 2) || (args.length == 0) ) {
+            System.err.println("command parameters: action[build|eval] [path to the (gold) evaluation dataset]");
             return;
         }
 
-        String inputType = args[0];
-        if ( (inputType == null) || (inputType.length() == 0) || (!inputType.equals("nlm") && !inputType.equals("tei")) ) {
-            System.err.println("Input type is not correctly set, should be [tei|nlm]");
+        String action = args[0];
+        if ( (action == null) || (action.length() == 0) || (!action.equals("build")) || (!action.equals("eval")) ) {
+            System.err.println("Action to be performed not correctly set, should be [build|eval]");
             return;
         }
 
-        boolean runGrobidVal = true;
-        String xmlInputPath = args[1];
-        if ( (xmlInputPath == null) || (xmlInputPath.length() == 0) ) {
+        String inputPath = args[1];
+        if ( (inputPath == null) || (inputPath.length() == 0) ) {
             System.err.println("Path to evaluation (gold) XML data is not correctly set");
             return;
         }
         
-        // optional file ratio for applying the evaluation
-        double fileRatio = 1.0;
-        if (args.length > 1) {
-            String fileRatioString = args[2];
-            if ((fileRatioString != null) && (fileRatioString.length() > 0)) {
-                try {
-                    fileRatio = Double.parseDouble(fileRatioString);
-                }
-                catch(Exception e) {
-                    System.err.println("Invalid argument fileRatio, must be a double, e.g. 0.1");
-                    return;
-                }
-            }
-        }
-        
         try {
-            File xmlPath = new File(xmlInputPath);
-            if (!xmlPath.exists()) {
+            File thePath = new File(inputPath);
+            if (!thePath.exists()) {
                 System.err.println("Path to evaluation (gold) XML data does not exist");
                 return;
             }
-            if (!xmlPath.isDirectory()) {
+            if (!thePath.isDirectory()) {
                 System.err.println("Path to evaluation (gold) XML data is not a directory");
                 return;
             }  
@@ -325,10 +456,15 @@ public class EvaluationDOIMatching {
         }
 
         try {
-            EvaluationDOIMatching eval = new EvaluationDOIMatching(xmlInputPath, inputType);
-            eval.fileRatio = fileRatio;
-            String report = eval.evaluation();
-            System.out.println(report);
+            if (action.equals("build")) {
+                EvaluationDOIMatching build = new EvaluationDOIMatching(inputPath);
+                build.buildEvaluationDataset();
+            } else if (action.equals("eval")) {
+                EvaluationDOIMatching eval = new EvaluationDOIMatching(inputPath);
+                String report = eval.evaluation();
+                System.out.println(report);
+            }
+
             System.out.println(Engine.getCntManager());
         } catch (Exception e) {
             e.printStackTrace();
