@@ -52,7 +52,7 @@ public class Consolidation {
         this.cntManager = cntManager;
         //client = new CrossrefClient();
         client = CrossrefClient.getInstance();
-        workDeserializer = new WorkDeserializer();
+        workDeserializer = new WorkDeserializer();        
     }
 
     /**
@@ -178,6 +178,143 @@ public class Consolidation {
         if (valid && (cntManager != null))
             cntManager.i(ConsolidationCounters.CONSOLIDATION_SUCCESS);
         return valid;
+    }
+
+    /**
+     * Try to consolidate one bibliographical object with crossref metadata lookup web services based on
+     * core metadata
+     */
+    public BiblioItem consolidate(BiblioItem bib, String rawCitation) throws Exception {
+        final List<BiblioItem> results = new ArrayList<BiblioItem>();
+
+        String doi = bib.getDOI();
+        String aut = bib.getFirstAuthorSurname();
+        String title = bib.getTitle();
+        String journalTitle = bib.getJournal();
+        String volume = bib.getVolume();
+        if (StringUtils.isBlank(volume))
+            volume = bib.getVolumeBlock();
+
+        String firstPage = null;
+        String pageRange = bib.getPageRange();
+        int beginPage = bib.getBeginPage();
+        if (beginPage != -1) {
+            firstPage = "" + beginPage;
+        } else if (pageRange != null) {
+            StringTokenizer st = new StringTokenizer(pageRange, "--");
+            if (st.countTokens() == 2) {
+                firstPage = st.nextToken();
+            } else if (st.countTokens() == 1)
+                firstPage = pageRange;
+        }
+
+        if (aut != null) {
+            aut = TextUtilities.removeAccents(aut);
+        }
+        if (title != null) {
+            title = TextUtilities.removeAccents(title);
+        }
+        if (journalTitle != null) {
+            journalTitle = TextUtilities.removeAccents(journalTitle);
+        }
+        if (cntManager != null) 
+            cntManager.i(ConsolidationCounters.CONSOLIDATION);
+
+        long threadId = Thread.currentThread().getId();
+        Map<String, String> arguments = null;
+
+        if (StringUtils.isNotBlank(doi)) {
+            // call based on the identified DOI
+            arguments = null;
+        } /*else if (StringUtils.isNotBlank(title) && StringUtils.isNotBlank(aut)) {
+            // call based on partial metadata
+            doi = null;
+            arguments = new HashMap<String,String>();
+            arguments.put("query.title", title);
+            arguments.put("query.author", aut);
+            if (StringUtils.isNotBlank(journalTitle))
+                 arguments.put("query.container-title", journalTitle);
+
+            arguments.put("rows", "1"); // we just request the top-one result
+        }*/ else if (StringUtils.isNotBlank(rawCitation)) {
+            // call with full raw string
+            doi = null;
+            arguments = new HashMap<String,String>();
+            arguments.put("query.bibliographic", rawCitation);
+            //arguments.put("query", rawCitation);
+            arguments.put("rows", "1");
+        }
+
+        if ((doi == null) && (arguments == null)) {
+            return null;
+        }
+
+        /*if (StringUtils.isNotBlank(doi)) {
+            // retrieval per DOI
+            //System.out.println("test retrieval per DOI");
+            valid = consolidateCrossrefGetByDOI(bib, additionalBiblioInformation);
+        }  
+        if (!valid && StringUtils.isNotBlank(title)
+                && StringUtils.isNotBlank(aut)) {
+            // retrieval per first author and article title
+            //additionalBiblioInformation.clear();
+            valid = consolidateCrossrefGetByAuthorTitle(aut, title, bib, additionalBiblioInformation);
+        }*/
+
+        final boolean doiQuery;
+        try {
+            //CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
+            if (cntManager != null) {
+                cntManager.i(ConsolidationCounters.CONSOLIDATION);
+            }
+
+            if ( (doi != null) && (cntManager != null) ) {
+                cntManager.i(ConsolidationCounters.CONSOLIDATION_PER_DOI);
+                doiQuery = true;
+            } else {
+                doiQuery = false;
+            }
+
+            client.<BiblioItem>pushRequest("works", doi, arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(0) {
+                
+                @Override
+                public void onSuccess(List<BiblioItem> res) {
+                    //System.out.println("Success request "+id);
+                    //System.out.println("size of results: " + res.size());
+                    if ((res != null) && (res.size() > 0) ) {
+                        // we need here to post-check that the found item corresponds
+                        // correctly to the one requested in order to avoid false positive
+                        for(BiblioItem oneRes : res) {
+                            if (postValidation(bib, oneRes)) {
+                                results.add(oneRes);
+                                if (cntManager != null) {
+                                    cntManager.i(ConsolidationCounters.CONSOLIDATION_SUCCESS);
+                                    if (doiQuery)
+                                        cntManager.i(ConsolidationCounters.CONSOLIDATION_PER_DOI_SUCCESS);
+                                }
+                                break;
+                            }
+                        }
+                    } 
+                }
+
+                @Override
+                public void onError(int status, String message, Exception exception) {
+                    LOGGER.warn("CrossRef returns error ("+status+") : "+message);
+                    //System.out.println("ERROR ("+status+") : "+message);
+                    //exception.printStackTrace();
+                }
+            });
+        } catch(Exception e) {
+            LOGGER.warn("Consolidation error - " + ExceptionUtils.getStackTrace(e));
+            //results.put(Integer.valueOf(id), null);
+        } 
+
+        client.finish(threadId);
+        if (results.size() == 0)
+            return null;
+        else
+            return results.get(0);
     }
 
 

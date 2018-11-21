@@ -139,7 +139,7 @@ public class CitationParser extends AbstractParser {
 
             //if (consolidate != 0) 
             {
-                resCitation = consolidateCitation(resCitation, consolidate);
+                resCitation = consolidateCitation(resCitation, LayoutTokensUtil.toText(tokens), consolidate);
             }
 
             return resCitation;
@@ -389,7 +389,7 @@ System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON 
      * @param resCitation citation
      * @return consolidated biblio item
      */
-    public BiblioItem consolidateCitation(BiblioItem resCitation, int consolidate) {
+    public BiblioItem consolidateCitation(BiblioItem resCitation, String rawCitation, int consolidate) {
         if (consolidate == 0) {
             // no consolidation 
             return resCitation;
@@ -397,10 +397,14 @@ System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON 
         Consolidation consolidator = null;
         try {                
             consolidator = new Consolidation(cntManager);
-            ArrayList<BiblioItem> bibis = new ArrayList<BiblioItem>();
-            boolean valid = consolidator.consolidate(resCitation, bibis);
-            if ((valid) && (bibis.size() > 0)) {
-                BiblioItem bibo = bibis.get(0);
+            /*List<BibDataSet> biblios = new ArrayList<BibDataSet>();
+            BibDataSet theBib = new BibDataSet();
+            theBib.setResBib(resCitation);
+            biblios.add(theBib);
+            Map<Integer,BiblioItem> bibis = consolidator.consolidate(biblios);*/
+
+            BiblioItem bibo = consolidator.consolidate(resCitation, rawCitation);
+            if (bibo != null) {
                 if (consolidate == 1)
                     BiblioItem.correct(resCitation, bibo);
                 else if (consolidate == 2)

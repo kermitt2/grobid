@@ -507,6 +507,7 @@ public class GrobidProperties {
     public static void setProxyHost(final String host) {
         setPropertyValue(GrobidPropertyKeys.PROP_PROXY_HOST, host);
         System.setProperty("http.proxyHost", "host");
+        System.setProperty("https.proxyHost", "host");
     }
 
     /**
@@ -527,6 +528,7 @@ public class GrobidProperties {
     public static void setProxyPort(final String port) {
         setPropertyValue(GrobidPropertyKeys.PROP_PROXY_PORT, port);
         System.setProperty("http.proxyPort", "port_number");
+        System.setProperty("https.proxyPort", "port_number");
     }
 
     /**
