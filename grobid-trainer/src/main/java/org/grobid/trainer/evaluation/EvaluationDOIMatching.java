@@ -68,6 +68,9 @@ public class EvaluationDOIMatching {
     private static final String path_nlm_title = "article-title/text()";
     private static final String path_nlm_author = "person-group[@person-group-type=\"author\"]/name/surname/text()";
     private static final String path_nlm_host = "source/text()";
+    private static final String path_nlm_first_page = "fpage/text()";
+    private static final String path_nlm_volume = "volume/text()";
+
 
     // xpath expressions for tei
     private static final String path_tei_ref = "//back/div/listBibl/biblStruct";
@@ -117,13 +120,18 @@ public class EvaluationDOIMatching {
         ObjectMapper mapper = new ObjectMapper();
         for (File dir : refFiles) {
             // get the PDF file in the directory
-
             final File jsonFile = refFiles[0];
 
             JsonNode rootNode = mapper.readTree(jsonFile);
-                    
+            
             Iterator<JsonNode> ite = rootNode.elements();
+
+            List<String> rawRefs = new ArrayList<String>();
+            List<String> dois = new ArrayList<String>();
+            List<String> pmids = new ArrayList<String>();
             while (ite.hasNext()) {
+                if (nbRef > 1000)
+                    break;
                 JsonNode entryNode = ite.next();
 
                 String rawRef = null;
@@ -131,26 +139,33 @@ public class EvaluationDOIMatching {
                 if ((refNode != null) && (!refNode.isMissingNode())) {
                     rawRef = refNode.textValue();
                 }
+                rawRefs.add(rawRef);
 
                 String doi = null;
                 JsonNode doiNode = entryNode.findPath("doi");
                 if ((doiNode != null) && (!doiNode.isMissingNode())) {
                     doi = doiNode.textValue();
                 }                
+                dois.add(doi);
 
                 String pmid = null;
                 JsonNode pmidNode = entryNode.findPath("pmid");
                 if ((pmidNode != null) && (!pmidNode.isMissingNode())) {
                     pmid = pmidNode.textValue();
                 }                
-
-                System.out.println("\n\tDOI: " + doi);
-                System.out.println("\trawRef: " + rawRef);
+                pmids.add(pmid);
                 nbRef++;
+            } 
+            // run Grobid reference parser on this raw string, todo: call by batch of n citations
+            try {
+                List<BiblioItem> biblios = engine.processRawReferences(rawRefs, 2);
+                for(int i=0; i<rawRefs.size(); i++) {
+                    BiblioItem biblio = biblios.get(i);
+                    String doi = dois.get(i);
+                    String pmid = pmids.get(i);
 
-                // run Grobid reference parser on this raw string
-                try {
-                    BiblioItem biblio = engine.processRawReference(rawRef, 2);
+                    System.out.println("\n\tDOI: " + doi);
+                    System.out.println("\trawRef: " + rawRefs.get(i));
 
                     if (biblio.getDOI() != null) {
                         nbDOIFound++;
@@ -163,12 +178,12 @@ public class EvaluationDOIMatching {
                             System.out.println("!!!!!!!!!!!!! Mismatch DOI: " + doi + " / " + biblio.getDOI());
                         }
                     }
-                } 
-                catch (Exception e) {
-                    System.out.println("Error when processing: " + jsonFile.getPath());
-                    e.printStackTrace();
                 }
             } 
+            catch (Exception e) {
+                System.out.println("Error when processing: " + jsonFile.getPath());
+                e.printStackTrace();
+            }
         }
 
         double processTime = ((double)System.currentTimeMillis() - start) / 1000.0;
@@ -289,7 +304,7 @@ public class EvaluationDOIMatching {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             docFactory.setValidating(false);
 
-            System.out.println("\n\nFile: " + pdfFile.getPath());
+            //System.out.println("\n\nFile: " + pdfFile.getPath());
 
             try {
                 DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -306,7 +321,7 @@ public class EvaluationDOIMatching {
                     goldFile = nlmFile;
                 Document gold = docBuilder.parse(goldFile);
 
-                System.out.println("Reference DOIs in : " + goldFile.getPath());
+                //System.out.println("Reference DOIs in : " + goldFile.getPath());
 
                 // get the DOI or PMID of the bibliographical references ia xpath
                 String path_doi = null;
@@ -356,10 +371,12 @@ public class EvaluationDOIMatching {
             try {
                 System.out.println(n + " - " + pdfFile.getPath());
                 List<BibDataSet> bibrefs = engine.processReferences(pdfFile, 0);
-
                 for(BibDataSet bib : bibrefs) {
                     String rawRef = bib.getRawBib();
+                    // we remove a DOI possibly in the raw ref, as the whole exercie is about DOI
+                    // matching
                     if (rawRef != null) {
+                        rawRef = TextUtilities.DOIPattern.matcher(rawRef).replaceAll(" ");
                         // we need to align this raw ref bib string with a gold ref bib
                         for(BibRefAggregated goldReference : goldReferences) {
                             if ( (goldReference.getRawRef() == null) && 
@@ -391,6 +408,20 @@ public class EvaluationDOIMatching {
                                 if ((nodeList != null) && nodeList.getLength()>0)
                                     host = nodeList.item(0).getNodeValue();
 
+                                // first page
+                                String firstPage = null;
+                                nodeList = (NodeList) xp.compile(path_nlm_first_page).
+                                    evaluate(refNode, XPathConstants.NODESET);
+                                if ((nodeList != null) && nodeList.getLength()>0)
+                                    firstPage = nodeList.item(0).getNodeValue();
+
+                                // volume
+                                String volume = null;
+                                nodeList = (NodeList) xp.compile(path_nlm_volume).
+                                    evaluate(refNode, XPathConstants.NODESET);
+                                if ((nodeList != null) && nodeList.getLength()>0)
+                                    volume = nodeList.item(0).getNodeValue();
+
                                 //System.out.println(title + " " + author + " " + host);
                                 if ( (title == null) && (author == null) && (host == null) ) {
                                     // nlm might contain the raw string but usually not DOI or PMID
@@ -399,7 +430,9 @@ public class EvaluationDOIMatching {
                                     String titleSignature = this.getSignature(title);
                                     String authorSignature = this.getSignature(author);
                                     String hostSignature = this.getSignature(host);
-                                    int ind1 = -1, ind2 = -1, ind3 = -1;
+                                    String firstPageSignature = this.getSignature(firstPage);
+                                    String volumeSignature = this.getSignature(volume);
+                                    int ind1 = -1, ind2 = -1, ind3 = -1, ind4 =-1, ind5 =-1;
                                     if (title != null) {
                                         ind1 = rawRefSignature.indexOf(titleSignature);
                                     }
@@ -408,6 +441,12 @@ public class EvaluationDOIMatching {
                                     }
                                     if (host != null) {
                                         ind3 = rawRefSignature.indexOf(hostSignature);
+                                    }
+                                    if (firstPage != null) {
+                                        ind4 = rawRefSignature.indexOf(firstPageSignature);
+                                    }
+                                    if (volume != null) {
+                                        ind5 = rawRefSignature.indexOf(volumeSignature);
                                     }
                                     // soft match for the title using Ratcliff Obershelp string distance
                                     //double similarity = 0.0;
@@ -418,8 +457,7 @@ public class EvaluationDOIMatching {
 
                                     // intra-document matching
                                     if ( (ind1 != -1) || 
-                                            (ind2 != -1 && ind3 != -1) ) {
-                                    //if ( (ind1 != -1)  ) {
+                                            (ind2 != -1 && ind3 != -1 && (ind4 != -1 || ind5 != -1)) ) {
                                         goldReference.setRawRef(rawRef);
                                         p++;
                                         continue;    
@@ -605,8 +643,6 @@ public class EvaluationDOIMatching {
             if (action.equals("data")) {
                 EvaluationDOIMatching data = new EvaluationDOIMatching(inputPath);
                 data.buildEvaluationDataset();
-                String report = data.evaluation();
-                System.out.println(report);
             } else if (action.equals("eval")) {
                 EvaluationDOIMatching eval = new EvaluationDOIMatching(inputPath);
                 String report = eval.evaluation();

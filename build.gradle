@@ -389,13 +389,19 @@ project(":grobid-trainer") {
         jvmArgs '-Xmx3072m'
     }
 
-    task(EvaluationDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+    task(PrepareDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'data', getArg('p2t', '.')
         jvmArgs '-Xmx3072m'
     }
-// jvmArgs '-Djava.net.useSystemProxies=true' is not working   
+
+    task(EvaluationDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+        main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
+        classpath = sourceSets.main.runtimeClasspath
+        args 'eval', getArg('p2t', '.')
+        jvmArgs '-Xmx3072m'
+    }
 }
 
 // coveralls does not support mutimodule, therefore merging reports
