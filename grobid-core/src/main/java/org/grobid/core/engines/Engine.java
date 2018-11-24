@@ -36,6 +36,7 @@ import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.core.lang.Language;
+import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.Utilities;
@@ -47,8 +48,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Class for managing the extraction of bibliographical information from PDF
@@ -196,16 +196,51 @@ public class Engine implements Closeable {
      * @return the list of recognized bibliographical objects
      */
     public List<BiblioItem> processRawReferences(List<String> references, int consolidate) throws Exception {
-        if (references == null)
-            return null;
-        if (references.size() == 0)
-            return null;
-        List<BiblioItem> results = new ArrayList<BiblioItem>();
+        List<BibDataSet> results = new ArrayList<BibDataSet>();
+        List<BiblioItem> finalResults = new ArrayList<BiblioItem>();
+        if (references == null || references.size() == 0)
+            return finalResults;
         for (String reference : references) {
-            BiblioItem bit = parsers.getCitationParser().processing(reference, consolidate);
-            results.add(bit);
+            BiblioItem bib = parsers.getCitationParser().processing(reference, 0);
+            //if ((bib != null) && !bib.rejectAsReference()) 
+            {
+                BibDataSet bds = new BibDataSet();
+                bds.setResBib(bib);
+                bds.setRawBib(reference);
+                results.add(bds);
+            }
         }
-        return results;
+        
+        if (results.size() == 0)
+            return finalResults;
+        // consolidation in a second stage to take advantage of parallel calls
+        if (consolidate != 0) {
+            Consolidation consolidator = new Consolidation(cntManager);
+            Map<Integer,BiblioItem> resConsolidation = null;
+            try {
+                resConsolidation = consolidator.consolidate(results);
+            } catch(Exception e) {
+                throw new GrobidException(
+                "An exception occured while running consolidation on bibliographical references.", e);
+            } finally {
+                //consolidator.close();
+            }
+            if (resConsolidation != null) {
+                for(int i=0; i<results.size(); i++) {
+                    BiblioItem resCitation = results.get(i).getResBib();
+                    BiblioItem bibo = resConsolidation.get(Integer.valueOf(i));
+                    if (bibo != null) {
+                        if (consolidate == 1)
+                            BiblioItem.correct(resCitation, bibo);
+                        else if (consolidate == 2)
+                            BiblioItem.injectDOI(resCitation, bibo);
+                    }
+                    finalResults.add(resCitation);
+                }
+            }
+        }
+
+        return finalResults;
     }
 
     /**
