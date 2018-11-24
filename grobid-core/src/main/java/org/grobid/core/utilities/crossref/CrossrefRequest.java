@@ -34,7 +34,7 @@ import java.io.*;
  */
 public class CrossrefRequest<T extends Object> extends Observable {
 
-	protected static final String BASE_URL = "http://api.crossref.org";
+	protected static final String BASE_URL = "https://api.crossref.org";
 	
 	/**
 	 * Model key in crossref, ex: "works", "journals"..

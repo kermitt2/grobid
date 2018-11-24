@@ -20,7 +20,7 @@ import java.util.Properties;
  * to load grobid-properties from a property file. Each property will be copied
  * to a system property having the same name.
  *
- * @author Florian Zipser
+ * @author Florian Zipser, Patrice
  * @version 1.2
  */
 public class GrobidProperties {
@@ -496,7 +496,10 @@ public class GrobidProperties {
      * @return host for connecting crossref
      */
     public static String getProxyHost() {
-        return getPropertyValue(GrobidPropertyKeys.PROP_PROXY_HOST);
+        String val = getPropertyValue(GrobidPropertyKeys.PROP_PROXY_HOST);
+        if (val != null && val.equals("null"))
+            val = null;
+        return val;
     }
 
     /**
@@ -517,7 +520,13 @@ public class GrobidProperties {
      * @return port for connecting crossref
      */
     public static Integer getProxyPort() {
-        return Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_PROXY_PORT));
+        String val = getPropertyValue(GrobidPropertyKeys.PROP_PROXY_PORT);
+        if (val != null && val.equals("null"))
+            val = null;
+        if (val == null)
+            return null;
+        else 
+            return Integer.valueOf(val);
     }
 
     /**

@@ -373,8 +373,8 @@ project(":grobid-trainer") {
     // run like:
     // gradle PubMedCentralEval -Pp2t=/path/to/goldenSet
     // gradle PubMedCentralEval -Pp2t=/path/to/goldenSet -Prun=1 -PfileRatio=0.1
-    // ./gradlew EvaluationDOIMatching build -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
-    // ./gradlew EvaluationDOIMatching eval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
+    // ./gradlew PrepareDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
+    // ./gradlew EvaluateDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
     task(PubMedCentralEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
@@ -396,7 +396,7 @@ project(":grobid-trainer") {
         jvmArgs '-Xmx3072m'
     }
 
-    task(EvaluationDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+    task(EvaluateDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'eval', getArg('p2t', '.')
