@@ -13,10 +13,7 @@ import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.layout.Block;
 import org.grobid.core.main.GrobidConstants;
 import org.grobid.core.utilities.GrobidProperties;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -38,7 +35,12 @@ public class TestFullTextParser extends EngineTest {
     public static void init() {
         GrobidProperties.getInstance();
     }
-    
+
+    @AfterClass
+    public static void tearDown(){
+        GrobidFactory.reset();
+    }
+
     @Test
     public void testFullTextParser_1() throws Exception {
         File inputTmpFile = getInputDocument("/test/Wang-paperAVE2008.pdf");

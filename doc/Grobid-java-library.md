@@ -28,17 +28,25 @@ You need to add the following snippet in your pom.xml in order to configure it:
   
 
 In this way you after configuring such repository the dependencies will be automatically managed.
+Here an example of grobid-core dependency: 
+```xml
+	<dependency>
+	    <groupId>org.grobid</groupId>
+	    <artifactId>grobid-core</artifactId>
+	    <version>0.5.2</version>
+	</dependency>
+```
  
 If you want to work on a SNAPSHOT development version, you need to include in your pom file the path to the Grobid jar file, 
-for instance as follow (replace `0.5.0` by the valid `<current version>`):
+for instance as follow (if necessary replace `0.5.2` by the valid `<current version>`):
 
 ```xml
 	<dependency>
-	    <groupId>org.grobid.core</groupId>
-	    <artifactId>grobid</artifactId>
+	    <groupId>org.grobid</groupId>
+	    <artifactId>grobid-core</artifactId>
 	    <version>0.5.0</version>
 	    <scope>system</scope>
-	    <systemPath>${project.basedir}/lib/grobid-core-0.5.0.jar</systemPath>
+	    <systemPath>${project.basedir}/lib/grobid-core-0.5.2.jar</systemPath>
 	</dependency>
 ```
 
@@ -56,8 +64,8 @@ Add the following snippet in your gradle.build file:
 
 and add the Grobid dependency as well: 
 ```
-    compile 'org.grobid:grobid-core:0.5.1'
-    compile 'org.grobid:grobid-trainer:0.5.1'
+    compile 'org.grobid:grobid-core:0.5.2'
+    compile 'org.grobid:grobid-trainer:0.5.2'
 ```
 
 
@@ -96,7 +104,7 @@ When using Grobid, you have to initiate a context with the path to the Grobid re
 
 		// Biblio object for the result
 		BiblioItem resHeader = new BiblioItem();
-		String tei = engine.processHeader(pdfPath, false, resHeader);
+		String tei = engine.processHeader(pdfPath, 1, resHeader);
 	} 
 	catch (Exception e) {
 		// If an exception is generated, print a stack trace

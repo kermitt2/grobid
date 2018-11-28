@@ -150,13 +150,13 @@ public class FullTextParser extends AbstractParser {
 
             // header processing
 			BiblioItem resHeader = new BiblioItem();
-           	parsers.getHeaderParser().processingHeaderBlock(config, doc, resHeader);
+           	parsers.getHeaderParser().processingHeaderBlock(config.getConsolidateHeader(), doc, resHeader);
            	// above the old version of the header block identification, because more robust
            	if ((resHeader.getTitle() == null) || (resHeader.getTitle().trim().length() == 0) ||
            		 (resHeader.getAuthors() == null) || (resHeader.getFullAuthors() == null) ||
 				 (resHeader.getFullAuthors().size() == 0) ) {
            		resHeader = new BiblioItem();
-				parsers.getHeaderParser().processingHeaderSection(config.isConsolidateHeader(), doc, resHeader);
+				parsers.getHeaderParser().processingHeaderSection(config.getConsolidateHeader(), doc, resHeader);
 				// above, use the segmentation model result
 			}
 
@@ -164,18 +164,21 @@ public class FullTextParser extends AbstractParser {
             // consolidation, if selected, is not done individually for each citation but 
             // in a second stage for all citations
             List<BibDataSet> resCitations = parsers.getCitationParser().
-				processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), false);
+				processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), 0);
 
 			// consolidate the set
-			if (config.isConsolidateCitations()) {
-				Consolidation consolidator = new Consolidation(cntManager);
+			if (config.getConsolidateCitations() != 0) {
+				Consolidation consolidator = new Consolidation(Engine.getCntManager());
 				try {
 					Map<Integer,BiblioItem> resConsolidation = consolidator.consolidate(resCitations);
 					for(int i=0; i<resCitations.size(); i++) {
 						BiblioItem resCitation = resCitations.get(i).getResBib();
 						BiblioItem bibo = resConsolidation.get(i);
 						if (bibo != null) {
-			                BiblioItem.correct(resCitation, bibo);
+                            if (config.getConsolidateCitations() == 1)
+                                BiblioItem.correct(resCitation, bibo);
+                            else if (config.getConsolidateCitations() == 2)
+                                BiblioItem.injectDOI(resCitation, bibo);
 						}
 					}
 				} catch(Exception e) {
@@ -1131,7 +1134,7 @@ public class FullTextParser extends AbstractParser {
 
 		            for (LabeledReferenceResult ref : references) {
 						if ( (ref.getReferenceText() != null) && (ref.getReferenceText().trim().length() > 0) ) {
-			                BiblioItem bib = parsers.getCitationParser().processing(ref.getReferenceText(), false);
+			                BiblioItem bib = parsers.getCitationParser().processing(ref.getReferenceText(), 0);
 			                String authorSequence = bib.getAuthors();
 							if ((authorSequence != null) && (authorSequence.trim().length() > 0) ) {
 								/*List<String> inputs = new ArrayList<String>();

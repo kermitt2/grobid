@@ -28,7 +28,7 @@ public class GrobidRestProcessFilesTest {
     GrobidRestProcessFiles target;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         documentSourceMock = createMock(DocumentSource.class);
         target = new GrobidRestProcessFiles();
     }
@@ -74,8 +74,8 @@ public class GrobidRestProcessFilesTest {
 
         File fakeFile = File.createTempFile("justForTheTest", "baomiao");
         fakeFile.deleteOnExit();
-        expect(FigureTableVisualizer.annotateFigureAndTables((PDDocument) anyObject(), EasyMock.<File>anyObject(),
-                EasyMock.<Document>anyObject(), anyBoolean(), anyBoolean(), anyBoolean(), anyBoolean()))
+        expect(FigureTableVisualizer.annotateFigureAndTables(anyObject(), EasyMock.anyObject(),
+                EasyMock.anyObject(), anyBoolean(), anyBoolean(), anyBoolean(), anyBoolean(), anyBoolean()))
                 .andReturn(null);
         expect(documentSourceMock.getXmlFile()).andReturn(fakeFile);
 

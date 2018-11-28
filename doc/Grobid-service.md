@@ -21,9 +21,9 @@ You could also build and install the service as a standalone service (let's supp
 > cd ..
 > mkdir grobid-installation
 > cd grobid-installation
-> unzip ../grobid/grobid-service/build/distributions/grobid-service-0.6.0-SNAPSHOT.zip
-mv grobid-service-0.6.0-SNAPSHOT grobid-service
-> unzip ../grobid/grobid-home/build/distributions/grobid-home-0.6.0-SNAPSHOT.zip 
+> unzip ../grobid/grobid-service/build/distributions/grobid-service-0.5.2.zip
+mv grobid-service-0.5.2 grobid-service
+> unzip ../grobid/grobid-home/build/distributions/grobid-home-0.5.2.zip 
 > ./grobid-service/bin/grobid-service server grobid-service/config/config.yaml
 ```
 
@@ -41,10 +41,26 @@ You can check whether the service is up and running by opening the following URL
 
 * `http://yourhost:8070/api/isalive` will return true/false whether the service is up and running
 
+The service provides also an admin console, reachable at `http://yourhost:8070` where some additional checks like ping, metrics, hearthbeat are available.
+We recommend, in particular to have a look at the metrics (using the [Metric library](https://metrics.dropwizard.io/3.1.0/getting-started/)) which are providing the rate of execution as well as the throughput of each entry point. 
 
 ## Configure the server
 
 If required, modify the file under `grobid/grobid-service/config/config.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID. 
+
+
+## Clients for GROBID Web Services
+
+We provide clients written in Python, Java, node.js using the GROBID PDF-to-TEI conversion Web services for parallel batch processing:
+
+- <a href="https://github.com/kermitt2/grobid-client-python" target="_blank">Python GROBID client</a>
+
+- <a href="https://github.com/kermitt2/grobid-client-java" target="_blank">Java GROBID client</a>
+
+- <a href="https://github.com/kermitt2/grobid-client-node" target="_blank">Node.js GROBID client</a>
+
+All these clients will take advantage of the multi-threading for scaling PDF batch processing. As a consequence, they will be much more efficient than the [batch command lines](Grobid-batch.md) (which use only one thread) and should be prefered. 
+
 
 ## Use GROBID test console
 
@@ -66,7 +82,10 @@ Still to demostrate PDF.js annotation possibilities, by default bibliographical 
 
 We describe bellow the provided resources corresponding to the HTTP verbs, to use the grobid web services. All url described bellow are relative path, the root url is `http://<server instance name>/<root context>`
 
-The consolidation parameters (__consolidateHeader__ and __consolidateCitations__) indicate if GROBID should try to complete the extracted metadata with an additional external call to [CrossRef API](https://github.com/CrossRef/rest-api-doc). The CrossRef look-up is realized based on the reliable subset of extracted metadata which are supported by this API.
+The consolidation parameters (__consolidateHeader__ and __consolidateCitations__) indicate if GROBID should try to complete the extracted metadata with an additional external call to [CrossRef API](https://github.com/CrossRef/rest-api-doc). The CrossRef look-up is realized based on the reliable subset of extracted metadata which are supported by this API. Each consolidation parameter is a string which can have three values:
+- __0__, means no consolidation at all is performed: all the metadata will come from the source PDF
+- __1__, means consolidation against CrossRef and update of metadata: when we have a DOI match, the publisher metadata are combined with the metadata extracted from the PDF, possibly correcting them
+- __2__, means consolidation against CrossRef and, if matching, addition of the DOI only
 
 ### PDF to TEI conversion services
 
@@ -74,13 +93,26 @@ The consolidation parameters (__consolidateHeader__ and __consolidateCitations__
 
 Extract the header of the input PDF document, normalize it and convert it into a TEI XML format.
 
-_consolidateHeader_ is a string of value 0 (no consolidation) or 1 (consolidate, default value).
+_consolidateHeader_ is a string of value 0 (no consolidation) or 1 (consolidate and inject all extra metadata, default value), or 2 (consolidate and inject only the DOI value).
 
 
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
-|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value) |
+|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate and inject all extra metadata, default value), or 2 (consolidate and inject only the DOI value). |
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 2 seconds for the `processHeaderDocument` service. 
 
 You can test this service with the **cURL** command lines, for instance header extraction from a PDF file in the current directory:
 ```bash
@@ -94,9 +126,21 @@ Convert the complete input document into TEI XML format (header, body and biblio
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
-|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate, default value) |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate all found citations) |
+|   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate and inject all extra metadata, default value), or 2 (consolidate and inject only the DOI value). |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate and inject all extra metadata), or 2 (consolidate and inject only the DOI value). |
 |   		| 					  |						 |teiCoordinates| optional | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details |
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 5-10 seconds for the `processFulltextDocument` service. 
 
 You can test this service with the **cURL** command lines, for instance fulltext extraction (header, body and citations) from a PDF file in the current directory:
 ```bash
@@ -122,8 +166,19 @@ Extract and convert all the bibliographical references present in the input docu
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
-|   		| 					  |						 |consolidateCitations| optional 	| consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate all found citations) |
+|   		| 					  |						 |consolidateCitations| optional 	| is a string of value 0 (no consolidation, default value) or 1 (consolidate all found bib. ref. and inject all extra metadata), or 2 (consolidate all found bib. ref. and inject only the DOI value). |
 
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 3-6 seconds for the `processFulltextDocument` service. 
 
 You can test this service with the **cURL** command lines, for instance extraction and parsing of all references from a PDF in the current directory without consolidation (default value):
 ```bash
@@ -140,6 +195,18 @@ Parse a raw date string and return the corresponding normalized date in ISO 8601
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| date | required	| date to be parsed as raw string|
 
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 1 seconds for the `processDate` service. 
 
 You can test this service with the **cURL** command lines, for instance parsing of a raw date string:
 ```bash
@@ -158,6 +225,18 @@ Parse a raw string corresponding to a name or a sequence of names from a header 
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| names | required	| sequence of names to be parsed as raw string|
 
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 1 seconds for the `processHeaderNames` service. 
 
 You can test this service with the **cURL** command lines, for instance parsing of a raw sequence of header names string:
 ```bash
@@ -183,6 +262,21 @@ Parse a raw sequence of names from a bibliographical reference and return the co
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| names | required	| sequence of names to be parsed as raw string|
 
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 1 seconds for the `processCitationNames` service. 
+
+
+
 You can test this service with the **cURL** command lines, for instance parsing of a raw sequence of citation names string:
 ```bash
 curl -X POST -d "names=J. Doe, J. Smith and B. M. Jackson" localhost:8070/api/processCitationNames
@@ -206,11 +300,25 @@ which will return:
 
 #### /api/processAffiliations
 
-Parse a raw sequence of affiliations with or without address and return the corresponding normalized affiliations with address in TEI format.
+Parse a raw sequence of affiliations/addresses with or without address and return the corresponding normalized affiliations with address in TEI format.
 
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| affiliations | required	| sequence of affiliations+addresses to be parsed as raw string|
+
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 1 seconds for the `processAffiliations` service. 
+
 
 You can test this service with the **cURL** command lines, for instance parsing of a raw affiliation string:
 ```bash
@@ -225,7 +333,7 @@ which will return:
 		<region>California</region>
 		<country key="US">USA</country>
 	</address>
-</affiliation
+</affiliation>
 ```
 
 #### /api//processCitation
@@ -235,7 +343,20 @@ Parse a raw bibliographical reference (in isolation) and return the correspondin
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| citations | required	| bibliographical reference to be parsed as raw string|
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate the citation and inject DOI only) |
+
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 1 seconds for the `processCitation` service. 
 
 You can test this service with the **cURL** command lines, for instance parsing of a raw bibliographical reference string in isolation without consolidation (default value):
 ```bash
@@ -278,7 +399,22 @@ For information about how the coordinates are provided, see [Coordinates of stru
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST	| multipart/form-data | application/json  	| input | required	| PDF file to be processed, returned coordinates will reference this PDF |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
+
+
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 3-6 seconds for the `referenceAnnotations` service. 
+
 
 
 #### /api/annotatePDF
@@ -290,8 +426,19 @@ Note that this service modify the original PDF, and thus be careful with legal r
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST	| multipart/form-data | application/pdf  	| input | required	| PDF file to be processed |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
 
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 5-10 seconds for the `annotatePDF` service. 
 
 ### Citation extraction and normalization from patents
 
@@ -302,8 +449,20 @@ Extract and parse the patent and non patent citations in the description of a pa
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| input | required	| patent text to be processed as raw string|
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
 
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the capacities of the server and the size of the input string, we suggest 5-10 seconds for the `processCitationPatentTXT` service. 
 
 You can test this service with the **cURL** command lines, for instance parsing of a raw bibliographical reference string in isolation without consolidation (default value):
 ```bash
@@ -347,8 +506,20 @@ Extract and parse the patent and non patent citations in the description of a pa
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data | application/xml  	| input | required	| TEI file of the patent document to be processed |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
 
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the capacities of the server and the size of the input document, we suggest 5-10 seconds for the `processCitationPatentTEI` service. 
 
 
 #### /api/processCitationPatentST36
@@ -358,7 +529,20 @@ Extract and parse the patent and non patent citations in the description of a pa
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data | application/xml  	| input | required	| XML file in ST36 standard of the patent document to be processed |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
+
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the capacities of the server and the size of the input document, we suggest 5-10 seconds for the `processCitationPatentST36` service. 
 
 
 #### /api/processCitationPatentPDF
@@ -370,7 +554,20 @@ Extract and parse the patent and non patent citations in the description of a pa
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data | application/xml  	| input | required	| PDF file of the patent document to be processed |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
+
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the capacities of the server and the size of the input document, we suggest 5-10 seconds for the `processCitationPatentPDF` service. 
 
 
 #### /api/citationPatentAnnotations
@@ -382,7 +579,20 @@ Patent and non patent citations can be directly visualised on the PDF layout as 
 |   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST	| multipart/form-data | application/json  	| input | required	| Patent publication PDF file to be processed, returned coordinates will reference this PDF |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation) |
+|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
+
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the capacities of the server and the size of the input document, we suggest 5-10 seconds for the `citationPatentAnnotations` service. 
 
 
 ### Administration services
@@ -489,13 +699,13 @@ The Grobid RESTful API provides a very efficient way to use the library out of t
 
 The service can work following two modes:
 
-+ Parallel execution (default): a pool of threads is used to process requests in parallel. The following property must be set to true in the file grobid-home/config/grobid_service.properties
++ Parallel execution (default): a pool of threads is used to process requests in parallel. The following property must be set to true in the file `grobid-home/config/grobid_service.properties`
 
 ```java
 	org.grobid.service.is.parallel.execution=true
 ```
 
-As Grobid is thread safe and manages a pool of parser instances, it is also possible to use several threads to call the REST service. This improves considerably the performance of the services for PDF processing because documents can be processed while other are uploaded. 
+As Grobid is thread-safe and manages a pool of parser instances, it is advised to use several threads to call the REST service for scaling the processing to large collections of documents. This improves considerably the performance of the services for PDF processing because documents can be processed while other are uploading. 
 
 + Sequencial execution: a single Grobid instance is used and process the requests as a queue. The following property must be set to false in the file grobid-home/config/grobid_service.properties
 
@@ -503,7 +713,22 @@ As Grobid is thread safe and manages a pool of parser instances, it is also poss
 	org.grobid.service.is.parallel.execution=false
 ```
 
-This mode is adapted for server running with a low amount of RAM, for instance less than 2GB, otherwise the default parallel execution must be used. 
+This mode should in general be avoided, it is only relevant for servers running with a low amount of RAM, for instance less than 2-4GB, and single core, otherwise the default parallel execution must be used. 
+
+Setting the maximum number of parallel processing is done in the property file under `grobid-home/config/grobid.properties`. Adjust this number (default 10) following the number of cores/threads available on your server: 
+
+```
+#------------------- start: pooling -------------------
+# Maximum parallel connections allowed
+org.grobid.max.connections=10
+```
+
+The threads in GROBID service are managed as a pool. When processing a document, the service will request a thread from this pool, and release it to the pool after completion of the request. If all the threads present in the pool are used, it is possible to set the maximum amount of time (in seconds) the request for a thread will wait before considering that no thread will be available and return a http code `503` to the client: 
 
 
+```
+# Maximum time wait to get a connection when the pool is full (in seconds)
+org.grobid.pool.max.wait=1
+```
 
+When scaling the service, we think that it is better to maintain this value low (e.g. 1 second) to avoid putting too many open requests on the server. 

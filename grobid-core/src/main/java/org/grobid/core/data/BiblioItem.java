@@ -3289,7 +3289,7 @@ public class BiblioItem {
                             int ind2 = -1;
                             int bestDistance = 1000;
                             for (Person aut : fullAuthors) {
-                                if (!winners.contains(new Integer(p))) {
+                                if (!winners.contains(Integer.valueOf(p))) {
                                     String lastname = aut.getLastName();
 
                                     if (lastname != null) {
@@ -3309,7 +3309,7 @@ public class BiblioItem {
                             if (best != -1) {
                                 fullAuthors.get(best).addAffiliation(aff);
                                 aff.setFailAffiliation(false);
-                                winners.add(new Integer(best));
+                                winners.add(Integer.valueOf(best));
                             }
 
                             from = ind + 1;
@@ -3343,6 +3343,8 @@ public class BiblioItem {
         int nbAffiliations = 0;
         int nbAddresses = 0;
 
+        // uncomment below when collaboration will be concretely added to headers
+        /*
         if ( (collaboration != null) && 
             ( (fullAuthors == null) || (fullAuthors.size() == 0) ) ) {
             // collaboration plays at the same time the role of author and affiliation
@@ -3350,7 +3352,7 @@ public class BiblioItem {
             tei.append("<author>").append("\n");
             TextUtilities.appendN(tei, '\t', nbTag+1);
             tei.append("<orgName type=\"collaboration\"");
-            if (withCoordinates) {
+            if (withCoordinates && (labeledTokens != null) ) {
                 List<LayoutToken> collabTokens = labeledTokens.get("<collaboration>");
                 if (withCoordinates && (collabTokens != null) && (!collabTokens.isEmpty())) {                
                    tei.append(" coords=\"" + LayoutTokensUtil.getCoordsString(collabTokens) + "\"");
@@ -3361,6 +3363,7 @@ public class BiblioItem {
             tei.append("</author>").append("\n");
             return tei.toString();
         }
+        */
 
         List<Person> auts = fullAuthors;
 
@@ -3772,9 +3775,15 @@ public class BiblioItem {
 
     }
 
+    /**
+     * Correct/add only the DOI of the first biblio item based on the second one and he reference string
+     */
+    public static void injectDOI(BiblioItem bib, BiblioItem bibo) {
+        bib.setDOI(bibo.getDOI());
+    }
 
     /**
-     * Correct fields of the first biblio item based on the second one and he reference string.
+     * Correct fields of the first biblio item based on the second one and he reference string
      */
     public static void correct(BiblioItem bib, BiblioItem bibo) {
         if (bibo.getDOI() != null)

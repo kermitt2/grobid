@@ -139,8 +139,7 @@ public class Segmentation extends AbstractParser {
 
     private void dealWithImages(DocumentSource documentSource, Document doc, File assetFile, GrobidAnalysisConfig config) {
         if (assetFile != null) {
-            // copy the files under the directory pathXML+"_data"
-            // we copy the asset files into the path specified by assetPath
+            // copy the files under the directory pathXML+"_data" (the asset files) into the path specified by assetPath
 
             if (!assetFile.exists()) {
                 // we create it
@@ -157,7 +156,11 @@ public class Segmentation extends AbstractParser {
             if (directoryPath.exists()) {
                 File[] files = directoryPath.listFiles();
                 if (files != null) {
+                    int nbFiles = 0;
                     for (final File currFile : files) {
+                        if (nbFiles > DocumentSource.PDF2XML_FILES_AMOUNT_LIMIT)
+                            break;
+
                         String toLowerCaseName = currFile.getName().toLowerCase();
                         if (toLowerCaseName.endsWith(".png") || !config.isPreprocessImages()) {
                             try {
@@ -165,6 +168,7 @@ public class Segmentation extends AbstractParser {
                                     continue;
                                 }
                                 FileUtils.copyFileToDirectory(currFile, assetFile);
+                                nbFiles++;
                             } catch (IOException e) {
                                 LOGGER.error("Cannot copy file " + currFile.getAbsolutePath() + " to " + assetFile.getAbsolutePath(), e);
                             }
@@ -190,6 +194,7 @@ public class Segmentation extends AbstractParser {
                                             toLowerCaseName.replace(".ppm", ".png");
                                 }
                                 ImageIO.write(bi, "png", new File(outputFilePath));
+                                nbFiles++;
                             } catch (IOException e) {
                                 LOGGER.error("Cannot convert file " + currFile.getAbsolutePath() + " to " + outputFilePath, e);
                             }
@@ -198,7 +203,6 @@ public class Segmentation extends AbstractParser {
                 }
             }
             // update the path of the image description stored in Document
-
             if (config.isPreprocessImages()) {
                 List<GraphicObject> images = doc.getImages();
                 if (images != null) {
@@ -266,11 +270,11 @@ public class Segmentation extends AbstractParser {
                                 if (pattern.length() > 8) {
                                     Integer nb = patterns.get(pattern);
                                     if (nb == null) {
-                                        patterns.put(pattern, new Integer(1));
+                                        patterns.put(pattern, Integer.valueOf(1));
                                         firstTimePattern.put(pattern, false);
                                     }
                                     else
-                                        patterns.put(pattern, new Integer(nb+1));
+                                        patterns.put(pattern, Integer.valueOf(nb+1));
                                 }
                             }
                         }
@@ -699,6 +703,75 @@ public class Segmentation extends AbstractParser {
                         "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
 
                 writer.write(bufferFulltext.toString());
+                writer.write("\n\t</text>\n</tei>\n");
+                writer.close();
+            }
+
+        } catch (Exception e) {
+            throw new GrobidException("An exception occured while running Grobid training" +
+                    " data generation for segmentation model.", e);
+        } finally {
+            DocumentSource.close(documentSource, true, true, true);
+        }
+    }
+
+    /**
+     * Get the content of the pdf and produce a blank training data TEI file, i.e. a text only TEI file
+     * without any tags. This is usefull to start from scratch the creation of training data at the same
+     * level as the segmentation parser. 
+     *
+     * @param inputFile    input file
+     * @param pathFullText path to fulltext
+     * @param pathTEI      path to TEI
+     * @param id           id
+     */
+    public void createBlankTrainingData(File file,
+                                        String pathFullText,
+                                        String pathTEI,
+                                        int id) {
+        DocumentSource documentSource = null;
+        try {
+            //File file = new File(inputFile);
+
+            //documentSource = DocumentSource.fromPdf(file);
+            documentSource = DocumentSource.fromPdf(file, -1, -1, true, true, true);
+            Document doc = new Document(documentSource);
+
+            String PDFFileName = file.getName();
+            doc.addTokenizedDocument(GrobidAnalysisConfig.defaultInstance());
+
+            if (doc.getBlocks() == null) {
+                throw new Exception("PDF parsing resulted in empty content");
+            }
+            doc.produceStatistics();
+
+            String fulltext = //getAllTextFeatured(doc, false);
+                    getAllLinesFeatured(doc);
+            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+
+            // we write the full text untagged (but featurized)
+            String outPathFulltext = pathFullText + File.separator + 
+                PDFFileName.replace(".pdf", ".training.blank");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
+            writer.write(fulltext + "\n");
+            writer.close();
+
+            // also write the raw text as seen before segmentation
+            StringBuffer rawtxt = new StringBuffer();
+            for(LayoutToken txtline : tokenizations) {
+                rawtxt.append(txtline.getText());
+            }
+
+            fulltext = rawtxt.toString();
+            if (isNotBlank(fulltext)) {
+                // write the TEI file to reflect the extact layout of the text as extracted from the pdf
+                writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+                        File.separator + 
+                        PDFFileName.replace(".pdf", ".training.blank.tei.xml")), false), "UTF-8");
+                writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+                        "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
+
+                writer.write(fulltext);
                 writer.write("\n\t</text>\n</tei>\n");
                 writer.close();
             }

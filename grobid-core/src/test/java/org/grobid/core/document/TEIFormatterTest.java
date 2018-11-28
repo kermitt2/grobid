@@ -1,5 +1,7 @@
 package org.grobid.core.document;
 
+import org.grobid.core.utilities.GrobidProperties;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.regex.Matcher;
@@ -14,6 +16,11 @@ import static org.junit.Assert.assertThat;
  *  @author Patrice Lopez
  */
 public class TEIFormatterTest {
+
+    @BeforeClass
+    public static void setInitialContext() throws Exception {
+        GrobidProperties.getInstance();
+    }
 
 	@Test
 	public void testBracketReference_noBracket() throws Exception {

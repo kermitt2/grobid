@@ -57,8 +57,10 @@ class FigureParser extends AbstractParser {
     private Figure getExtractionResult(List<LayoutToken> tokenizations, String result) {
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FIGURE, result, tokenizations);
         List<TaggingTokenCluster> clusters = clusteror.cluster();
-//System.out.println(result + "\n");
+        
         Figure figure = new Figure();
+        figure.setLayoutTokens(tokenizations);
+        
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
                 continue;
@@ -70,6 +72,7 @@ class FigureParser extends AbstractParser {
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
             if (clusterLabel.equals(FIG_DESC)) {
                 figure.appendCaption(clusterContent);
+                figure.appendCaptionLayoutTokens(cluster.concatTokens());
             } else if (clusterLabel.equals(FIG_HEAD)) {
                 figure.appendHeader(clusterContent);
             } else if (clusterLabel.equals(FIG_LABEL)) {
@@ -92,7 +95,7 @@ class FigureParser extends AbstractParser {
      */
     public org.grobid.core.utilities.Pair<String, String> createTrainingData(List<LayoutToken> tokenizations,
                                                                              String featureVector, String id) {
-//System.out.println(tokenizations.toString() + "\n" );
+        //System.out.println(tokenizations.toString() + "\n" );
         String res = null;
         try {
             res = label(featureVector);
@@ -102,7 +105,7 @@ class FigureParser extends AbstractParser {
         if (res == null) {
             return new Pair<>(null, featureVector);
         }
-//System.out.println(res + "\n" );
+        //System.out.println(res + "\n" );
         List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
         StringBuilder sb = new StringBuilder();
 
