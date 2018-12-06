@@ -759,7 +759,7 @@ public class Segmentation extends AbstractParser {
             // also write the raw text as seen before segmentation
             StringBuffer rawtxt = new StringBuffer();
             for(LayoutToken txtline : tokenizations) {
-                rawtxt.append(txtline.getText());
+                rawtxt.append(TextUtilities.HTMLEncode(txtline.getText()));
             }
 
             fulltext = rawtxt.toString();
