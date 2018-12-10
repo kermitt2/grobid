@@ -60,7 +60,15 @@ _Warning_: Some quota and query limitation apply to the demo server! If you are 
 
 ## Latest version
 
-The latest stable release of GROBID is version ```0.5.2```. This version brings:
+The latest stable release of GROBID is version ```0.5.3```. This version brings:
+
++ Improvement of consolidation options and processing (better handling of CrossRef API, but the best is coming soon ;)
++ Better recall for figure and table identification (thanks to @detonator413) 
++ Support of proxy for calling crossref with Apache HttpClient
+
+(more information in the [release](https://github.com/kermitt2/grobid/releases/tag/0.5.3) page)
+
+New in previous release ```0.5.2```: 
 
 + Corrected back status codes from the REST API when no available engine (503 is back again to inform the client to wait, it was removed by error in version 0.5.0 and 0.5.1 for PDF processing services only, see documentation of the REST API)
 + Added [Grobid clients](https://grobid.readthedocs.io/en/latest/Grobid-service/#clients-for-grobid-web-services) for Java, Python and NodeJS
