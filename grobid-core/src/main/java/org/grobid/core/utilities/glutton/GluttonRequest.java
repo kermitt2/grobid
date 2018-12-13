@@ -134,7 +134,7 @@ public class GluttonRequest<T extends Object> extends Observable {
                 }
             }
 
-            System.out.println(uriBuilder.toString());
+            //System.out.println(uriBuilder.toString());
 
             HttpGet httpget = new HttpGet(uriBuilder.build());
 
@@ -189,12 +189,12 @@ public class GluttonRequest<T extends Object> extends Observable {
     private String mapFromCrossref(String field) {
         if (field.equals("query.bibliographic"))
             return "biblio";
-
-        if(field.equals("query.title")) {
+ 
+        if (field.equals("query.title")) {
             return "atitle";
         }
 
-        if(field.equals("query.author")) {
+        if (field.equals("query.author")) {
             return "firstAuthor";
         }
         
