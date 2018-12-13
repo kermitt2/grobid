@@ -137,38 +137,33 @@ public class GluttonRequest<T extends Object> extends Observable {
             System.out.println(uriBuilder.toString());
 
             HttpGet httpget = new HttpGet(uriBuilder.build());
-            
-            ResponseHandler<Void> responseHandler = new ResponseHandler<Void>() {
 
-                @Override
-                public Void handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
+            ResponseHandler<Void> responseHandler = response -> {
 
-                    CrossrefRequestListener.Response<T> message = new CrossrefRequestListener.Response<T>();
-                    
-                    message.status = response.getStatusLine().getStatusCode();
-                    
-                    /*Header limitIntervalHeader = response.getFirstHeader("X-Rate-Limit-Interval");
-                    Header limitLimitHeader = response.getFirstHeader("X-Rate-Limit-Limit");
-                    if (limitIntervalHeader != null && limitLimitHeader != null)
-                        message.setTimeLimit(limitIntervalHeader.getValue(), limitLimitHeader.getValue());
-                    */
-                    if (message.status < 200 || message.status >= 300) {
-                        message.errorMessage = response.getStatusLine().getReasonPhrase();
-                        notifyListeners(message);
-                    }
-                    
+                Response<T> message = new Response<T>();
+
+                message.status = response.getStatusLine().getStatusCode();
+
+                /*Header limitIntervalHeader = response.getFirstHeader("X-Rate-Limit-Interval");
+                Header limitLimitHeader = response.getFirstHeader("X-Rate-Limit-Limit");
+                if (limitIntervalHeader != null && limitLimitHeader != null)
+                    message.setTimeLimit(limitIntervalHeader.getValue(), limitLimitHeader.getValue());
+                */
+                if (message.status < 200 || message.status >= 300) {
+                    message.errorMessage = response.getStatusLine().getReasonPhrase();
+                } else {
+
                     HttpEntity entity = response.getEntity();
-                    
+
                     if (entity != null) {
                         String body = EntityUtils.toString(entity);
                         message.results = deserializer.parse(body);
                     }
-                    
-                    notifyListeners(message);
-
-                    return null;
                 }
-                
+
+                notifyListeners(message);
+
+                return null;
             };
             
             httpclient.execute(httpget, responseHandler);
@@ -193,7 +188,16 @@ public class GluttonRequest<T extends Object> extends Observable {
      */
     private String mapFromCrossref(String field) {
         if (field.equals("query.bibliographic"))
-            return "bibliographic";
+            return "biblio";
+
+        if(field.equals("query.title")) {
+            return "atitle";
+        }
+
+        if(field.equals("query.author")) {
+            return "firstAuthor";
+        }
+        
         return field;
     }
     
