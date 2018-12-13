@@ -70,7 +70,7 @@ public class GluttonClient extends CrossrefClient {
         });
         this.timedSemaphore = null;
         this.futures = new HashMap<>();*/
-        setLimits(100, 1000); // default 100 calls per second
+        setLimits(5, 1000); // default 100 calls per second
     }
 
     /*public void setLimits(int iterations, int interval) {

@@ -130,6 +130,8 @@ public class EvaluationDOIMatching {
             List<String> dois = new ArrayList<String>();
             List<String> pmids = new ArrayList<String>();
             while (ite.hasNext()) {
+                if (nbRef > 1000)
+                    break;
                 JsonNode entryNode = ite.next();
 
                 String rawRef = null;
