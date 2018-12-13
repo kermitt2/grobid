@@ -41,10 +41,14 @@ public class CrossrefRequestListener<T extends Object> {
 			this.limitIterations = Integer.parseInt(limitLimit);
 		}
 		
-		public void setException(Exception e, CrossrefRequest<T> request) {
+		/*public void setException(Exception e, CrossrefRequest<T> request) {
 			errorException = e;
 			errorMessage = e.getClass().getName()+" thrown during request execution : "+request.toString()+"\n"+e.getMessage();
-			//e.printStackTrace();	
+		}*/
+
+		public void setException(Exception e, String requestString) {
+			errorException = e;
+			errorMessage = e.getClass().getName()+" thrown during request execution : "+requestString+"\n"+e.getMessage();
 		}
 		
 		public int getOneStepTime() {

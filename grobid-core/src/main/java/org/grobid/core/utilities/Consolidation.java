@@ -10,6 +10,7 @@ import org.grobid.core.data.BibDataSet;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.sax.CrossrefUnixrefSaxParser;
 import org.grobid.core.utilities.crossref.*;
+import org.grobid.core.utilities.glutton.*;
 import org.grobid.core.utilities.counters.CntManager;
 
 import org.slf4j.Logger;
@@ -50,9 +51,9 @@ public class Consolidation {
 
     public Consolidation(CntManager cntManager) {
         this.cntManager = cntManager;
-        //client = new CrossrefClient();
         client = CrossrefClient.getInstance();
-        workDeserializer = new WorkDeserializer();        
+        //client = GluttonClient.getInstance();
+        workDeserializer = new WorkDeserializer();   
     }
 
     /**
@@ -225,7 +226,8 @@ public class Consolidation {
 
         if (StringUtils.isNotBlank(doi)) {
             // call based on the identified DOI
-            arguments = null;
+            //arguments = null;
+            arguments.put("doi", doi);
         } /*else if (StringUtils.isNotBlank(title) && StringUtils.isNotBlank(aut)) {
             // call based on partial metadata
             doi = null;
@@ -238,14 +240,14 @@ public class Consolidation {
             arguments.put("rows", "1"); // we just request the top-one result
         }*/ else if (StringUtils.isNotBlank(rawCitation)) {
             // call with full raw string
-            doi = null;
+            //doi = null;
             arguments = new HashMap<String,String>();
             arguments.put("query.bibliographic", rawCitation);
             //arguments.put("query", rawCitation);
             arguments.put("rows", "1");
         }
 
-        if ((doi == null) && (arguments == null)) {
+        if ((doi == null) && (arguments == null || arguments.size() == 0)) {
             return null;
         }
 
@@ -275,7 +277,7 @@ public class Consolidation {
                 doiQuery = false;
             }
 
-            client.<BiblioItem>pushRequest("works", doi, arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(0) {
+            client.<BiblioItem>pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(0) {
                 
                 @Override
                 public void onSuccess(List<BiblioItem> res) {
@@ -367,7 +369,8 @@ public class Consolidation {
 
             if (StringUtils.isNotBlank(doi)) {
                 // call based on the identified DOI
-                arguments = null;
+                //arguments = null;
+                arguments.put("doi", doi);
             } /*else if (StringUtils.isNotBlank(title) && StringUtils.isNotBlank(aut)) {
                 // call based on partial metadata
                 doi = null;
@@ -380,14 +383,14 @@ public class Consolidation {
                 arguments.put("rows", "1"); // we just request the top-one result
             }*/ else if (StringUtils.isNotBlank(rawCitation)) {
                 // call with full raw string
-                doi = null;
+                //doi = null;
                 arguments = new HashMap<String,String>();
                 arguments.put("query.bibliographic", rawCitation);
                 //arguments.put("query", rawCitation);
                 arguments.put("rows", "1");
             }
 
-            if ((doi == null) && (arguments == null)) {
+            if ((doi == null) && (arguments == null || arguments.size() == 0)) {
                 //results.put(Integer.valueOf(n), null);
                 n++;
                 continue;
@@ -407,7 +410,7 @@ public class Consolidation {
                     doiQuery = false;
                 }
 
-                client.<BiblioItem>pushRequest("works", doi, arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(n) {
+                client.<BiblioItem>pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(n) {
                     
                     @Override
                     public void onSuccess(List<BiblioItem> res) {
@@ -485,10 +488,12 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
         if (StringUtils.isNotBlank(doi)) {
             // some cleaning of the doi
             doi = cleanDoi(doi);
+            Map<String, String> arguments = new HashMap<String,String>();
+            arguments.put("doi", doi);
 
             long threadId = Thread.currentThread().getId();
             CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
-            client.<BiblioItem>pushRequest("works", doi, null, workDeserializer, threadId, requestListener);
+            client.<BiblioItem>pushRequest("works", arguments, workDeserializer, threadId, requestListener);
             if (cntManager != null)
                 cntManager.i(ConsolidationCounters.CONSOLIDATION_PER_DOI);
 
@@ -549,7 +554,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
             CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
             if (cntManager != null) 
                 cntManager.i(ConsolidationCounters.CONSOLIDATION);
-            client.<BiblioItem>pushRequest("works", null, arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>() {
+            client.<BiblioItem>pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>() {
                 
                 @Override
                 public void onSuccess(List<BiblioItem> res) {

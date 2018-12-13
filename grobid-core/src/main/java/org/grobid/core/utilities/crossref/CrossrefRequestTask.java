@@ -32,7 +32,7 @@ public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListen
 			
 		} catch (Exception e) {
 			Response<T> message = new Response<T>();
-			message.setException(e, request);
+			message.setException(e, request.toString());
 			request.notifyListeners(message);
 		}
 	}
