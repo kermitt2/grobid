@@ -370,6 +370,7 @@ public class Consolidation {
             if (StringUtils.isNotBlank(doi)) {
                 // call based on the identified DOI
                 //arguments = null;
+                arguments = new HashMap<String,String>();
                 arguments.put("doi", doi);
             } /*else if (StringUtils.isNotBlank(title) && StringUtils.isNotBlank(aut)) {
                 // call based on partial metadata
