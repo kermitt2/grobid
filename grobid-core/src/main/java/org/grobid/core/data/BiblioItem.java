@@ -91,6 +91,9 @@ public class BiblioItem {
                 ", book_type='" + book_type + '\'' +
                 ", DOI='" + doi + '\'' +
                 ", arXivId='" + arXivId + '\'' +
+                ", PMID='" + PMID + '\'' +
+                ", PMCID='" + PMCID + '\'' +
+                ", PII='" + PII + '\'' +
                 ", inDOI='" + inDOI + '\'' +
                 ", abstract_='" + abstract_ + '\'' +
                 ", authors='" + authors + '\'' +
@@ -226,6 +229,9 @@ public class BiblioItem {
     private String doi = null;
     private String inDOI = null;
     private String arXivId = null;
+    private String PMID = null;
+    private String PMCID = null;
+    private String PII = null;
     private String abstract_ = null;
     private String collaboration = null;
 
@@ -475,6 +481,18 @@ public class BiblioItem {
 
     public String getArXivId() {
         return arXivId;
+    }
+
+    public String getPMID() {
+        return PMID;
+    }
+
+    public String getPMCID() {
+        return PMCID;
+    }
+
+    public String getPII() {
+        return PII;
     }
 
     public String getArticleTitle() {
@@ -890,6 +908,21 @@ public class BiblioItem {
     public void setArXivId(String id) {
         arXivId = StringUtils.normalizeSpace(id);
         arXivId = arXivId.replace(" ", "");
+    }
+
+    public void setPMID(String id) {
+        PMID = StringUtils.normalizeSpace(id);
+        PMID = PMID.replace(" ", "");
+    }
+
+    public void setPMCID(String id) {
+        PMCID = StringUtils.normalizeSpace(id);
+        PMCID = PMCID.replace(" ", "");
+    }
+
+    public void setPII(String id) {
+        PII = StringUtils.normalizeSpace(id);
+        PII = PII.replace(" ", "");
     }
 
     public void setArticleTitle(String ti) {
@@ -1326,6 +1359,9 @@ public class BiblioItem {
         doi = null;
         inDOI = null;
         arXivId = null;
+        PMID = null;
+        PMCID = null;
+        PII = null;
         abstract_ = null;
 
         authors = null;
@@ -1770,6 +1806,7 @@ public class BiblioItem {
                 setPubnum(null);
             }
         } 
+        // TO: PMID, PMCID, PII
     }
 
     /**
@@ -1910,6 +1947,27 @@ public class BiblioItem {
                     tei.append("\t");
                 }
                 tei.append("<idno type=\"arXiv\">" + TextUtilities.HTMLEncode(arXivId) + "</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(PMID)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"PMID\">" + TextUtilities.HTMLEncode(PMID) + "</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(PMCID)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"PMCID\">" + TextUtilities.HTMLEncode(PMCID) + "</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(PII)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"PII\">" + TextUtilities.HTMLEncode(PII) + "</idno>\n");
             }
 
             if (!StringUtils.isEmpty(pubnum)) {
