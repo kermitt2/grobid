@@ -56,23 +56,26 @@ public abstract class CrossrefDeserializer<T extends Object> extends JsonDeseria
 	 */
 	protected ArrayNode normalizeResults(JsonParser parser) throws IOException {
 		JsonNode treeNode = parser.readValueAsTree();
-		
+		ArrayNode results = null;
+
 		JsonNode messageNode = treeNode.get("message");
 		
-		if (messageNode == null || !messageNode.isObject())
-			throw new ClientProtocolException("No message found in json result.");
-		
-		ObjectNode message = (ObjectNode)messageNode;
-		
-		JsonNode itemsNode = message.get("items");
-		ArrayNode results = null;
-		
-		if (itemsNode == null || !itemsNode.isArray()) {
+		if (messageNode == null || !messageNode.isObject()) {
+			//throw new ClientProtocolException("No message found in json result.");
+			// glutton
 			results = mapper.createArrayNode();
-			results.add(message);
-		} 
-		else
-			results = (ArrayNode)itemsNode;
+			results.add(treeNode);
+		} else {
+			ObjectNode message = (ObjectNode)messageNode;
+			JsonNode itemsNode = message.get("items");
+			
+			if (itemsNode == null || !itemsNode.isArray()) {
+				results = mapper.createArrayNode();
+				results.add(message);
+			} 
+			else
+				results = (ArrayNode)itemsNode;
+		}
 		
 		return results;
 	}
