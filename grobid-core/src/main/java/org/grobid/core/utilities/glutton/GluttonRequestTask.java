@@ -25,7 +25,7 @@ public class GluttonRequestTask<T extends Object> extends CrossrefRequestListene
     @Override
     public void run() {
         try {        
-            client.checkLimits();
+            //client.checkLimits();
             
             GluttonClient.printLog(request, ".. executing");
             
