@@ -153,7 +153,7 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 						if (((ArrayNode)firstDatePartNode).size() > 1) {
 							month = ((ArrayNode)firstDatePartNode).get(1).asText();
 							if (((ArrayNode)firstDatePartNode).size() > 2) {
-								day = month = ((ArrayNode)firstDatePartNode).get(2).asText();
+								day = ((ArrayNode)firstDatePartNode).get(2).asText();
 							}
 						}
 						Date date = new Date();
