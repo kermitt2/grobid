@@ -3838,16 +3838,29 @@ public class BiblioItem {
      * Correct fields of the first biblio item based on the second one and he reference string
      */
     public static void correct(BiblioItem bib, BiblioItem bibo) {
+        //System.out.println("correct: \n" + bib.toTEI(0));
+        //System.out.println("with: \n" + bibo.toTEI(0));
         if (bibo.getDOI() != null)
             bib.setDOI(bibo.getDOI());
-        if (bibo.getJournal() != null)
+        if (bibo.getJournal() != null) {
             bib.setJournal(bibo.getJournal());
+            // document type consistency (correction might change overall item type, and some
+            // fields become unconsistent)
+            if (bibo.getBookTitle() == null) {
+                bib.setBookTitle(null);
+            }
+        }
         if (bibo.getAuthors() != null)
             bib.setAuthors(bibo.getAuthors());
         if (bibo.getEditors() != null)
             bib.setEditors(bibo.getEditors());
-        if (bibo.getBookTitle() != null)
+        if (bibo.getBookTitle() != null) {
             bib.setBookTitle(bibo.getBookTitle());
+            // document type consistency
+            if (bibo.getJournal() == null) {
+                bib.setJournal(null);
+            }
+        }
         if (bibo.getVolume() != null)
             bib.setVolume(bibo.getVolume());
         if (bibo.getVolumeBlock() != null)
@@ -3981,7 +3994,7 @@ public class BiblioItem {
                 bib.setFullAuthors(bibo.getFullAuthors());
             }
         }
-
+        //System.out.println("result: \n" + bib.toTEI(0));
     }
 
 	/**
