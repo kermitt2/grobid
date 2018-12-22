@@ -27,12 +27,6 @@ public class GrobidPropertiesTest {
         GrobidProperties.reset();
     }
 
-    @Test
-    public void testGetVersion_shouldWork() {
-        assertNotNull(GrobidProperties.getVersion());
-        assertNotEquals(GrobidProperties.UNKNOWN_VERSION_STR, GrobidProperties.getVersion());
-    }
-
     @Test(expected = GrobidPropertyException.class)
     public void testSet_GROBID_HOME_PATH_NullPath_shouldThrowException() {
         GrobidProperties.set_GROBID_HOME_PATH(null);
@@ -91,38 +85,6 @@ public class GrobidPropertiesTest {
     }
 
     @Test
-    public void testgetsetCrossrefId() {
-        String value = "1";
-        GrobidProperties.setCrossrefId(value);
-        assertEquals("The property has not the value expected", value,
-                GrobidProperties.getCrossrefId());
-    }
-
-    @Test
-    public void testsetgetCrossrefPw() {
-        String value = "pass";
-        GrobidProperties.setCrossrefPw(value);
-        assertEquals("The property has not the value expected", value,
-                GrobidProperties.getCrossrefPw());
-    }
-
-    @Test
-    public void testsetgetCrossrefHost() {
-        String value = "host";
-        GrobidProperties.setCrossrefHost(value);
-        assertEquals("The property has not the value expected", value,
-                GrobidProperties.getCrossrefHost());
-    }
-
-    @Test
-    public void testsetgetCrossrefPort() {
-        String value = "1";
-        GrobidProperties.setCrossrefPort(value);
-        assertEquals("The property has not the value expected", value,
-                GrobidProperties.getCrossrefPort().toString());
-    }
-
-    @Test
     public void testsetgetProxyHost() {
         String value = "host";
         GrobidProperties.setProxyHost(value);
@@ -137,46 +99,6 @@ public class GrobidPropertiesTest {
         assertEquals("The property has not the value expected", value,
                 GrobidProperties.getProxyPort().toString());
     }
-
-    /*@Test
-    public void testsetgetMySQLDBName() {
-        String value = "dbName";
-        GrobidProperties.setMySQLDBName(value);
-        assertEquals("The property has not the value expected", value,
-                GrobidProperties.getMySQLDBName());
-    }
-
-    @Test
-    public void testsetgetMySQLUsername() {
-        String value = "userName";
-        GrobidProperties.setMySQLUsername(value);
-        assertEquals("The property has not the value expected", value,
-                GrobidProperties.getMySQLUsername());
-    }
-
-    @Test
-    public void testsetgetMySQLPw() {
-        String value = "pass";
-        GrobidProperties.setMySQLPw(value);
-        assertEquals("The property has not the value expected", value,
-                GrobidProperties.getMySQLPw());
-    }
-
-    @Test
-    public void testsetgetMySQLHost() {
-        String value = "1";
-        GrobidProperties.setMySQLHost(value);
-        assertEquals("The property has not the value expected", value,
-                GrobidProperties.getMySQLHost());
-    }
-
-    @Test
-    public void testsetgetMySQLPort() {
-        String value = "1";
-        GrobidProperties.setMySQLPort(value);
-        assertEquals("The property has not the value expected", value,
-                GrobidProperties.getMySQLPort().toString());
-    }*/
 
     @Test
     public void testsetgetNBThreads() {
@@ -285,7 +207,6 @@ public class GrobidPropertiesTest {
                 .getPdf2XMLPath().getAbsolutePath());
     }
 
-
     @Test(expected = GrobidPropertyException.class)
     public void testloadPdf2XMLPath_shouldThrowException() {
         GrobidProperties.getProps().put(
@@ -301,7 +222,6 @@ public class GrobidPropertiesTest {
         GrobidProperties.getNewInstance();
     }
 
-
     @Test
     public void testLoadGrobidPropertiesPath() throws Exception {
         GrobidProperties.GROBID_PROPERTY_PATH = null;
@@ -309,7 +229,6 @@ public class GrobidPropertiesTest {
         assertNotNull("The property has not the value expected",
                 GrobidProperties.getGrobidPropertiesPath().getAbsolutePath());
     }
-
 
     @Test
     public void testGetInstance() throws Exception {
