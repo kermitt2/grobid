@@ -30,7 +30,7 @@ import java.io.*;
  * GET crossref request
  * @see <a href="https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md">Crossref API Documentation</a>
  *
- * @author Vincent Kaestle
+ * @author Vincent Kaestle, Patrice
  */
 public class CrossrefRequest<T extends Object> extends Observable {
 
@@ -91,7 +91,7 @@ public class CrossrefRequest<T extends Object> extends Observable {
 		if (params == null) {
             // this should not happen
             CrossrefRequestListener.Response<T> message = new CrossrefRequestListener.Response<T>();
-            message.setException(new Exception("Empty list of parameter, cannot build request to glutton service"), this.toString());
+            message.setException(new Exception("Empty list of parameter, cannot build request to the consolidation service"), this.toString());
             notifyListeners(message);
             return;
         }
@@ -130,6 +130,8 @@ public class CrossrefRequest<T extends Object> extends Observable {
 						uriBuilder.setParameter(cursor.getKey(), cursor.getValue());
             }
 			
+            //System.out.println(uriBuilder.toString());
+
             HttpGet httpget = new HttpGet(uriBuilder.build());
             
             ResponseHandler<Void> responseHandler = new ResponseHandler<Void>() {

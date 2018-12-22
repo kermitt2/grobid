@@ -3,7 +3,6 @@ package org.grobid.core.utilities;
 /**
  * This class contains all the keys of the properties files.
  *
- * @author Damien Ridereau
  */
 public interface GrobidPropertyKeys {
 
@@ -80,8 +79,13 @@ public interface GrobidPropertyKeys {
     String PROP_GROBID_SERVICE_IS_PARALLEL_EXEC = "org.grobid.service.is.parallel.execution";
 
     /**
+     * Bibliographical data consolidation service to be used, either "crossref" for CrossRef 
+     * REST API or "glutton" for https://github.com/kermitt2/biblio-glutton
+     */
+    String PROP_CONSOLIDATION_SERVICE = "grobid.consolidation.service";
+
+    /**
      * The defined paths to create.
      */
     String[] PATHES_TO_CREATE = {PROP_TMP_PATH};
-
 }

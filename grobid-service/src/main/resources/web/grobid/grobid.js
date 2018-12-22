@@ -37,7 +37,7 @@ var grobid = (function($) {
 	$(document).ready(function() {
 		$("#subTitle").html("About");
 		$("#divAbout").show();
-		$("#divAdmin").hide();
+		//$("#divAdmin").hide();
 
 		// for TEI-based results
         $("#divRestI").hide();
@@ -91,20 +91,20 @@ var grobid = (function($) {
 		$("#btn_download3").hide();
         $('#btn_block_1').bind('click', downloadVisibilty);
         $('#btn_block_3').bind('click', downloadVisibilty3);
-		$('#adminForm').attr("action", defineBaseURL("allProperties"));
-		$('#TabAdminProps').hide();
-		$('#adminForm').ajaxForm({
+		//$('#adminForm').attr("action", defineBaseURL("allProperties"));
+		//$('#TabAdminProps').hide();
+		/*$('#adminForm').ajaxForm({
 	        beforeSubmit: adminShowRequest,
 	        success: adminSubmitSuccesful,
 	        error: adminAjaxError,
 	        dataType: "text"
-	        });
+	        });*/
 
 		$("#about").click(function() {
 			$("#about").attr('class', 'section-active');
 			$("#rest").attr('class', 'section-not-active');
 			$("#pdf").attr('class', 'section-not-active');
-			$("#admin").attr('class', 'section-not-active');
+			//$("#admin").attr('class', 'section-not-active');
 			$("#doc").attr('class', 'section-not-active');
 			$("#patent").attr('class', 'section-not-active');
 
@@ -115,7 +115,7 @@ var grobid = (function($) {
 			$("#divRestI").hide();
 			$("#divRestII").hide();
 			$("#divRestIII").hide();
-			$("#divAdmin").hide();
+			//$("#divAdmin").hide();
 			$("#divDoc").hide();
 			$("#divDemo").hide();
 			return false;
@@ -125,7 +125,7 @@ var grobid = (function($) {
 			$("#pdf").attr('class', 'section-not-active');
 			$("#doc").attr('class', 'section-not-active');
 			$("#about").attr('class', 'section-not-active');
-			$("#admin").attr('class', 'section-not-active');
+			//$("#admin").attr('class', 'section-not-active');
 			$("#patent").attr('class', 'section-not-active');
 
 			$("#subTitle").hide();
@@ -139,11 +139,11 @@ var grobid = (function($) {
 			$("#divRestIII").hide();
 			$("#divAbout").hide();
 			$("#divDoc").hide();
-			$("#divAdmin").hide();
+			//$("#divAdmin").hide();
 			$("#divDemo").hide();
 			return false;
 		});
-		$("#admin").click(function() {
+		/*$("#admin").click(function() {
 			$("#admin").attr('class', 'section-active');
 			$("#doc").attr('class', 'section-not-active');
 			$("#about").attr('class', 'section-not-active');
@@ -160,17 +160,17 @@ var grobid = (function($) {
 			$("#divRestIII").hide();
 			$("#divAbout").hide();
 			$("#divDoc").hide();
-			$("#divAdmin").show();
+			//$("#divAdmin").show();
 			$("#divDemo").hide();
 			return false;
-		});
+		});*/
 		$("#doc").click(function() {
 			$("#doc").attr('class', 'section-active');
 			$("#rest").attr('class', 'section-not-active');
 			$("#pdf").attr('class', 'section-not-active');
 			$("#patent").attr('class', 'section-not-active');
 			$("#about").attr('class', 'section-not-active');
-			$("#admin").attr('class', 'section-not-active');
+			//$("#admin").attr('class', 'section-not-active');
 
 			$("#subTitle").html("Doc");
 			$("#subTitle").show();
@@ -180,7 +180,7 @@ var grobid = (function($) {
 			$("#divRestI").hide();
 			$("#divRestII").hide();
 			$("#divRestIII").hide();
-			$("#divAdmin").hide();
+			//$("#divAdmin").hide();
 			$("#divDemo").hide();
 			return false;
 		});
@@ -189,7 +189,7 @@ var grobid = (function($) {
 			$("#rest").attr('class', 'section-not-active');
 			$("#patent").attr('class', 'section-not-active');
 			$("#about").attr('class', 'section-not-active');
-			$("#admin").attr('class', 'section-not-active');
+			//$("#admin").attr('class', 'section-not-active');
 			$("#doc").attr('class', 'section-not-active');
 
 			block = 1;
@@ -204,7 +204,7 @@ var grobid = (function($) {
 			$("#divRestI").hide();
 			$("#divRestII").show();
 			$("#divRestIII").hide();
-			$("#divAdmin").hide();
+			//$("#divAdmin").hide();
 			return false;
 		});
 		$("#patent").click(function() {
@@ -212,11 +212,11 @@ var grobid = (function($) {
 			$("#rest").attr('class', 'section-not-active');
 			$("#pdf").attr('class', 'section-not-active');
 			$("#about").attr('class', 'section-not-active');
-			$("#admin").attr('class', 'section-not-active');
+			//$("#admin").attr('class', 'section-not-active');
 			$("#doc").attr('class', 'section-not-active');
 
 			block = 2;
-			setBaseUrl('processCitationPatentTEI');
+			setBaseUrl('processCitationPatentST36');
 			$("#subTitle").hide();
 			processChange();
 
@@ -225,7 +225,7 @@ var grobid = (function($) {
 			$("#divRestI").hide();
 			$("#divRestII").hide();
 			$("#divRestIII").show();
-			$("#divAdmin").hide();
+			//$("#divAdmin").hide();
 			return false;
 		});
 	});
@@ -1050,11 +1050,11 @@ var grobid = (function($) {
 			$('#consolidateBlock2').show();
 			setBaseUrl('processCitation');
 		}
-		else if (selected == 'processCitationPatentTEI') {
+		/*else if (selected == 'processCitationPatentTEI') {
 			createInputFile3(selected);
 			$('#consolidateBlock3').show();
 			setBaseUrl('processCitationPatentTEI');
-		}
+		}*/
 		else if (selected == 'processCitationPatentST36') {
 			createInputFile3(selected);
 			$('#consolidateBlock3').show();
@@ -1141,7 +1141,7 @@ var grobid = (function($) {
 
 	/** admin functions */
 
-	var selectedAdmKey="", selectedAdmValue, selectedAdmType;
+	/*var selectedAdmKey="", selectedAdmValue, selectedAdmType;
 
 	function adminShowRequest(formData, jqForm, options) {
 		$('#TabAdminProps').show();
@@ -1222,7 +1222,7 @@ var grobid = (function($) {
 
 	function changePropertyError() {
 		$('#admMessage').html("<font color='red'>An error occured while updating property"+selectedAdmKey.split('-').join('.')+"</font>");
-	}
+	}*/
 
 	function download(){
         var name ="export";

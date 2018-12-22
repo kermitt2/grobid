@@ -39,7 +39,7 @@ public interface GrobidPaths {
 	/**
 	 * path extension for grobid admin pages.
 	 */
-	String PATH_ADMIN = "admin";
+	//String PATH_ADMIN = "admin";
 
 	/**
 	 * path extension for processing document headers.
@@ -79,7 +79,7 @@ public interface GrobidPaths {
 	/**
 	 * path extension for processing citation in patent documents in TEI.
 	 */
-	String PATH_CITATION_PATENT_TEI = "processCitationPatentTEI";
+	//String PATH_CITATION_PATENT_TEI = "processCitationPatentTEI";
 
 	/**
 	 * path extension for processing citation in patent documents in ST.36.
@@ -99,7 +99,7 @@ public interface GrobidPaths {
 	/**
 	 * path extension for processing citation annotations.
 	 */
-	String PATH_CITATION_ANNOTATION = "processCitationPatentTEI";
+	//String PATH_CITATION_ANNOTATION = "processCitationPatentTEI";
 
 	/**
 	 * path extension for processing names as appearing in a citation (e.g. bibliographic section).

@@ -26,6 +26,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.List;
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 import java.util.Map;
@@ -49,10 +50,43 @@ public class Consolidation {
     private WorkDeserializer workDeserializer = null;
     private CntManager cntManager = null;
 
+    public enum GrobidConsolidationService {
+        CROSSREF("crossref"),
+        GLUTTON("glutton");
+
+        private final String ext;
+
+        GrobidConsolidationService(String ext) {
+            this.ext = ext;
+        }
+
+        public String getExt() {
+            return ext;
+        }
+
+        public static GrobidConsolidationService get(String name) {
+            if (name == null) {
+                throw new IllegalArgumentException("Name of consolidation service must not be null");
+            }
+
+            String n = name.toLowerCase();
+            for (GrobidConsolidationService e : values()) {
+                if (e.name().toLowerCase().equals(n)) {
+                    return e;
+                }
+            }
+            throw new IllegalArgumentException("No consolidation service with name '" + name +
+                    "', possible values are: " + Arrays.toString(values()));
+        }
+    }
+
+
     public Consolidation(CntManager cntManager) {
         this.cntManager = cntManager;
-        client = CrossrefClient.getInstance();
-        //client = GluttonClient.getInstance();
+        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON)
+            client = GluttonClient.getInstance();
+        else 
+            client = CrossrefClient.getInstance();
         workDeserializer = new WorkDeserializer();   
     }
 
@@ -234,8 +268,8 @@ public class Consolidation {
             arguments = new HashMap<String,String>();
             arguments.put("query.title", title);
             arguments.put("query.author", aut);
-            if (StringUtils.isNotBlank(journalTitle))
-                 arguments.put("query.container-title", journalTitle);
+            //if (StringUtils.isNotBlank(journalTitle))
+            //     arguments.put("query.container-title", journalTitle);
 
             arguments.put("rows", "1"); // we just request the top-one result
         }*/ else if (StringUtils.isNotBlank(rawCitation)) {
@@ -302,7 +336,7 @@ public class Consolidation {
 
                 @Override
                 public void onError(int status, String message, Exception exception) {
-                    LOGGER.warn("CrossRef returns error ("+status+") : "+message);
+                    LOGGER.warn("Consolidation service returns error ("+status+") : "+message);
                     //System.out.println("ERROR ("+status+") : "+message);
                     //exception.printStackTrace();
                 }
@@ -321,7 +355,7 @@ public class Consolidation {
 
 
     /**
-     * Try tp consolidate a list of bibliographical objects in one operation with CrossRef REST API services
+     * Try tp consolidate a list of bibliographical objects in one operation with consolidation services
      */
     public Map<Integer,BiblioItem> consolidate(List<BibDataSet> biblios) {   
         if (CollectionUtils.isEmpty(biblios))
@@ -378,8 +412,8 @@ public class Consolidation {
                 arguments = new HashMap<String,String>();
                 arguments.put("query.title", title);
                 arguments.put("query.author", aut);
-                if (StringUtils.isNotBlank(journalTitle))
-                     arguments.put("query.container-title", journalTitle);
+                //if (StringUtils.isNotBlank(journalTitle))
+                //     arguments.put("query.container-title", journalTitle);
 
                 arguments.put("rows", "1"); // we just request the top-one result
             }*/ else if (StringUtils.isNotBlank(rawCitation)) {
@@ -436,7 +470,7 @@ public class Consolidation {
 
                     @Override
                     public void onError(int status, String message, Exception exception) {
-                        LOGGER.warn("CrossRef returns error ("+status+") : "+message);
+                        LOGGER.warn("Consolidation service returns error ("+status+") : "+message);
                         //System.out.println("ERROR ("+status+") : "+message);
                         //exception.printStackTrace();
                     }
@@ -512,7 +546,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
                 LOGGER.warn("No response ! Maybe timeout.");
             
             else if (response.hasError() || !response.hasResults())
-                LOGGER.warn("CrossRef returns error ("+response.status+") : "+response.errorMessage);
+                LOGGER.warn("Consolidation service returns error ("+response.status+") : "+response.errorMessage);
             
             else { // success
                 LOGGER.info("Success request "+ doi);
@@ -575,7 +609,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
 
                 @Override
                 public void onError(int status, String message, Exception exception) {
-                    LOGGER.warn("CrossRef returns error ("+status+") : "+message);
+                    LOGGER.warn("Consolidation service returns error ("+status+") : "+message);
                 }
             });
 
@@ -673,7 +707,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
             return false;
     }
 
-    public boolean consolidateCrossrefGetByAuthorTitleLibrary(String aut, String title,
+    /*public boolean consolidateCrossrefGetByAuthorTitleLibrary(String aut, String title,
                                                        BiblioItem biblio, List<BiblioItem> bib2) throws Exception {
         boolean result = false;
 
@@ -737,7 +771,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
             }
         }
         return result;
-    }
+    }*/
 
     /**
      * Try to consolidate some uncertain bibliographical data with crossref web service based on
@@ -749,7 +783,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
      * @return Returns a boolean indicating if at least one bibliographical object
      * has been retrieve.
      */
-    public boolean consolidateCrossrefGetByJournalVolumeFirstPage(String aut,
+    /*public boolean consolidateCrossrefGetByJournalVolumeFirstPage(String aut,
                                                                   String firstPage,
                                                                   String journal,
                                                                   String volume,
@@ -829,7 +863,7 @@ System.out.println("total (CrossRef JSON search API): " + consolidated + " / " +
             }
         }
         return result;
-    }
+    }*/
 
     /**
      * This is a DOI cleaning specifically adapted to CrossRef call

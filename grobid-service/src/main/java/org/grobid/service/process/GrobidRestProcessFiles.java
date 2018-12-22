@@ -2,7 +2,7 @@ package org.grobid.service.process;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.grobid.core.annotations.TeiStAXParser;
+//import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.document.Document;
@@ -348,7 +348,7 @@ public class GrobidRestProcessFiles {
      * @return StreamingOutput wrapping the response in streaming while parsing
      * the input.
      */
-    public StreamingOutput processCitationPatentTEI(final InputStream pInputStream,
+    /*public StreamingOutput processCitationPatentTEI(final InputStream pInputStream,
                                                     final int consolidate) {
         LOGGER.debug(methodLogIn());
         return new StreamingOutput() {
@@ -361,7 +361,7 @@ public class GrobidRestProcessFiles {
                 }
             }
         };
-    }
+    }*/
 
     /**
      * Process a patent document in PDF for extracting and parsing citations in the description body.

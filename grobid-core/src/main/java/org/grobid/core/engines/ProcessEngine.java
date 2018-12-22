@@ -425,7 +425,7 @@ public class ProcessEngine implements Closeable {
      * @param pGbdArgs The parameters.
      * @throws Exception
      */
-    public void processCitationPatentTEI(final GrobidMainArgs pGbdArgs) throws Exception {
+    /*public void processCitationPatentTEI(final GrobidMainArgs pGbdArgs) throws Exception {
         inferPdfInputPath(pGbdArgs);
         inferOutputPath(pGbdArgs);
 
@@ -443,7 +443,7 @@ public class ProcessEngine implements Closeable {
                         + ". Continuing the process for the other files", exp);
             }
         }
-    }
+    }*/
 
     /**
      * Process a patent encoded in ST.36 using pGbdArgs parameters.
