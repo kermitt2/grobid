@@ -202,16 +202,16 @@ public class Engine implements Closeable {
             return finalResults;
         // consolidation in a second stage to take advantage of parallel calls
         if (consolidate != 0) {
-            Consolidation consolidator = new Consolidation(cntManager);
+            Consolidation consolidator = Consolidation.getInstance();
+            if (consolidator.getCntManager() == null)
+                consolidator.setCntManager(cntManager); 
             Map<Integer,BiblioItem> resConsolidation = null;
             try {
                 resConsolidation = consolidator.consolidate(results);
             } catch(Exception e) {
                 throw new GrobidException(
                 "An exception occured while running consolidation on bibliographical references.", e);
-            } finally {
-                //consolidator.close();
-            }
+            } 
             if (resConsolidation != null) {
                 for(int i=0; i<results.size(); i++) {
                     BiblioItem resCitation = results.get(i).getResBib();
