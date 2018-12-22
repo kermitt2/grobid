@@ -1649,8 +1649,10 @@ public class HeaderParser extends AbstractParser {
         }
         Consolidation consolidator = null;
         try {
-            consolidator = new Consolidation(cntManager);
-            List<BiblioItem> bibis = new ArrayList<BiblioItem>();
+            consolidator = Consolidation.getInstance();
+            if (consolidator.getCntManager() == null)
+                consolidator.setCntManager(cntManager);
+            /*List<BiblioItem> bibis = new ArrayList<BiblioItem>();
             boolean valid = consolidator.consolidate(resHeader, bibis);
             if ((valid) && (bibis.size() > 0)) {
                 BiblioItem bibo = bibis.get(0);
@@ -1660,13 +1662,16 @@ public class HeaderParser extends AbstractParser {
                     else if (consolidate == 2)
                         BiblioItem.injectDOI(resHeader, bibo);
                 }
+            }*/
+            BiblioItem bib = consolidator.consolidate(resHeader, null);
+            if (bib != null) {
+                if (consolidate == 1)
+                    BiblioItem.correct(resHeader, bib);
+                else if (consolidate == 2)
+                    BiblioItem.injectDOI(resHeader, bib);
             }
         } catch (Exception e) {
-            // e.printStackTrace();
-            throw new GrobidException("An exception occured while running Grobid.", e);
-        } finally {
-            /*if (consolidator != null)
-                consolidator.close();*/
+            throw new GrobidException("An exception occured while running bibliographical data consolidation.", e);
         }
         return resHeader;
     }

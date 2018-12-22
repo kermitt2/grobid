@@ -342,7 +342,7 @@ public class EvaluationDOIMatching {
             // get the (gold) reference file corresponding to this pdf 
             File[] refFiles3 = dir.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
-                    return name.endsWith(".nxml");
+                    return name.endsWith(".nxml") || name.endsWith(".xml");
                 }
             });
             if ( (refFiles3 != null) && (refFiles3.length != 0) )
@@ -526,6 +526,9 @@ public class EvaluationDOIMatching {
                                         goldReference.setAtitle(title);
                                         goldReference.setJtitle(host);
                                         goldReference.setFirstAuthor(firstAuthor);
+                                        // if we have a pmid but no doi, we can still try to get the DOI from it
+                                        
+
                                         p++;
                                         continue;
                                     }
