@@ -20,7 +20,7 @@ import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.grobid.core.factory.AbstractEngineFactory;
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.service.process.GrobidRestProcessAdmin;
+//import org.grobid.service.process.GrobidRestProcessAdmin;
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
 import org.grobid.service.process.GrobidRestProcessString;
@@ -59,7 +59,7 @@ public class GrobidRestService implements GrobidPaths {
     private static final String XML = "xml";
     private static final String INPUT = "input";
 
-    private final GrobidRestProcessAdmin restProcessAdmin;
+    //private final GrobidRestProcessAdmin restProcessAdmin;
 
     @Inject
     private GrobidRestProcessFiles restProcessFiles;
@@ -71,8 +71,8 @@ public class GrobidRestService implements GrobidPaths {
     private GrobidRestProcessString restProcessString;
 
     @Inject
-    public GrobidRestService(GrobidServiceConfiguration configuration, GrobidRestProcessAdmin grobidRestProcessAdmin) {
-        this.restProcessAdmin = grobidRestProcessAdmin;
+    public GrobidRestService(GrobidServiceConfiguration configuration) {
+        //this.restProcessAdmin = grobidRestProcessAdmin;
         GrobidProperties.set_GROBID_HOME_PATH(new File(configuration.getGrobid().getGrobidHome()).getAbsolutePath());
         if (configuration.getGrobid().getGrobidProperties() != null) {
             GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidProperties()).getAbsolutePath());
@@ -118,24 +118,24 @@ public class GrobidRestService implements GrobidPaths {
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#getAdminParams(String)
      */
-    @Path(PATH_ADMIN)
+    /*@Path(PATH_ADMIN)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_HTML)
     @POST
     public Response getAdmin_htmlPost(@FormParam(SHA1) String sha1) {
         return restProcessAdmin.getAdminParams(sha1);
-    }
+    }*/
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#getAdminParams(String)
      */
-    @Path(PATH_ADMIN)
+    /*@Path(PATH_ADMIN)
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_HTML)
     @GET
     public Response getAdmin_htmlGet(@QueryParam(SHA1) String sha1) {
         return restProcessAdmin.getAdminParams(sha1);
-    }
+    }*/
 
     @Path(PATH_HEADER)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
@@ -281,7 +281,7 @@ public class GrobidRestService implements GrobidPaths {
         return restProcessFiles.processStatelessFulltextAssetDocument(inputStream, consolHeader, consolCitations, startPage, endPage, generate);
     }
 
-    @Path(PATH_CITATION_PATENT_TEI)
+    /*@Path(PATH_CITATION_PATENT_TEI)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
     @POST
@@ -289,7 +289,7 @@ public class GrobidRestService implements GrobidPaths {
                                                     @FormDataParam("consolidateCitations") String consolidate) throws Exception {
         int consol = validateConsolidationParam(consolidate);
         return restProcessFiles.processCitationPatentTEI(pInputStream, consol);
-    }
+    }*/
 
     @Path(PATH_CITATION_PATENT_ST36)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
@@ -435,68 +435,68 @@ public class GrobidRestService implements GrobidPaths {
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#processSHA1(String)
      */
-    @Path(PATH_SHA1)
+    /*@Path(PATH_SHA1)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response processSHA1Post(@FormParam(SHA1) String sha1) {
         return restProcessAdmin.processSHA1(sha1);
-    }
+    }*/
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#processSHA1(String)
      */
-    @Path(PATH_SHA1)
+    /*@Path(PATH_SHA1)
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     @GET
     public Response processSHA1Get(@QueryParam(SHA1) String sha1) {
         return restProcessAdmin.processSHA1(sha1);
-    }
+    }*/
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#getAllPropertiesValues(String)
      */
-    @Path(PATH_ALL_PROPS)
+    /*@Path(PATH_ALL_PROPS)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response getAllPropertiesValuesPost(@FormParam(SHA1) String sha1) {
         return restProcessAdmin.getAllPropertiesValues(sha1);
-    }
+    }*/
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#getAllPropertiesValues(String)
      */
-    @Path(PATH_ALL_PROPS)
+    /*@Path(PATH_ALL_PROPS)
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     @GET
     public Response getAllPropertiesValuesGet(@QueryParam(SHA1) String sha1) {
         return restProcessAdmin.getAllPropertiesValues(sha1);
-    }
+    }*/
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#changePropertyValue(String)
      */
-    @Path(PATH_CHANGE_PROPERTY_VALUE)
+    /*@Path(PATH_CHANGE_PROPERTY_VALUE)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response changePropertyValuePost(@FormParam(XML) String xml) {
         return restProcessAdmin.changePropertyValue(xml);
-    }
+    }*/
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#changePropertyValue(String)
      */
-    @Path(PATH_CHANGE_PROPERTY_VALUE)
+    /*@Path(PATH_CHANGE_PROPERTY_VALUE)
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     @GET
     public Response changePropertyValueGet(@QueryParam(XML) String xml) {
         return restProcessAdmin.changePropertyValue(xml);
-    }
+    }*/
 
     @Path(PATH_REFERENCES)
     @Consumes(MediaType.MULTIPART_FORM_DATA)

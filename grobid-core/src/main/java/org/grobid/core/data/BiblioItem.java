@@ -97,6 +97,7 @@ public class BiblioItem {
                 ", inDOI='" + inDOI + '\'' +
                 ", abstract_='" + abstract_ + '\'' +
                 ", authors='" + authors + '\'' +
+                ", firstAuthorSurname='" + firstAuthorSurname + '\'' +
                 ", location='" + location + '\'' +
                 ", bookTitle='" + bookTitle + '\'' +
                 ", serieTitle='" + serieTitle + '\'' +
@@ -238,6 +239,7 @@ public class BiblioItem {
     // for convenience GROBIDesque
     private String authors = null;
     private List<LayoutToken> authorsTokens = new ArrayList<>();
+    private String firstAuthorSurname = null;
     private String location = null;
     private String bookTitle = null;
     private String serieTitle = null;
@@ -3164,16 +3166,24 @@ public class BiblioItem {
         return res;
     }
 
+    public void setFirstAuthorSurname(String firstAuthorSurname) {
+        this.firstAuthorSurname = firstAuthorSurname;
+    }
+
     /**
      * Return the surname of the first author.
      */
     public String getFirstAuthorSurname() {
+        if (this.firstAuthorSurname != null)
+            return TextUtilities.HTMLEncode(this.firstAuthorSurname);
+
         if (fullAuthors != null) {
             if (fullAuthors.size() > 0) {
                 Person aut = fullAuthors.get(0);
                 String sur = aut.getLastName();
                 if (sur != null) {
                     if (sur.length() > 0) {
+                        this.firstAuthorSurname = sur;
                         return TextUtilities.HTMLEncode(sur);
                     }
                 }
@@ -3189,9 +3199,12 @@ public class BiblioItem {
                         author = author.trim();
                     int ind = author.lastIndexOf(" ");
                     if (ind != -1) {
+                        this.firstAuthorSurname = author.substring(ind + 1);
                         return TextUtilities.HTMLEncode(author.substring(ind + 1));
-                    } else
+                    } else {
+                        this.firstAuthorSurname = author;
                         return TextUtilities.HTMLEncode(author);
+                    }
                 }
             }
 

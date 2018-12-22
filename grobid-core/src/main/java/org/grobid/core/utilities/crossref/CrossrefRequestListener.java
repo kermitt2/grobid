@@ -88,7 +88,7 @@ public class CrossrefRequestListener<T extends Object> {
 		onResponse(response);
 
 		if (response == null) 
-			System.out.println("Response is null ! ");
+			System.out.println("Response is null");
 		
 		if (response != null && response.results != null && response.results.size() > 0)
 			onSuccess(response.results);

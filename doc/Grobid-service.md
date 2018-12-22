@@ -41,7 +41,7 @@ You can check whether the service is up and running by opening the following URL
 
 * `http://yourhost:8070/api/isalive` will return true/false whether the service is up and running
 
-The service provides also an admin console, reachable at `http://yourhost:8070` where some additional checks like ping, metrics, hearthbeat are available.
+The service provides also an admin console, reachable at `http://yourhost:8071` where some additional checks like ping, metrics, hearthbeat are available.
 We recommend, in particular to have a look at the metrics (using the [Metric library](https://metrics.dropwizard.io/3.1.0/getting-started/)) which are providing the rate of execution as well as the throughput of each entry point. 
 
 ## Configure the server
@@ -499,29 +499,6 @@ which will return:
 </TEI>
 ```
 
-#### /api/processCitationPatentTEI
-
-Extract and parse the patent and non patent citations in the description of a patent publication encoded in TEI (Patent Document Model). Results are added to the original document as TEI stand-off annotations.
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| POST, PUT	| multipart/form-data | application/xml  	| input | required	| TEI file of the patent document to be processed |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
-
-
-Response status codes:
-
-|     HTTP Status code |   reason                                               |
-|---                   |---                                                     |
-|         200          |     Successful operation.                              |
-|         204          |     Process was completed, but no content could be extracted and structured |
-|         400          |     Wrong request, missing parameters, missing header  |
-|         500          |     Indicate an internal service error, further described by a provided message           |
-|         503          |     The service is not available, which usually means that all the threads are currently used                       |
-
-A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the capacities of the server and the size of the input document, we suggest 5-10 seconds for the `processCitationPatentTEI` service. 
-
-
 #### /api/processCitationPatentST36
 
 Extract and parse the patent and non patent citations in the description of a patent publication encoded in ST.36. Results are returned as a list of TEI citations. 
@@ -594,104 +571,6 @@ Response status codes:
 
 A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the capacities of the server and the size of the input document, we suggest 5-10 seconds for the `citationPatentAnnotations` service. 
 
-
-### Administration services
-
-#### Configuration of the password for the service adminstration
-
-A password is required to access the administration page under the `Admin` tab in the console. The default password for the administration console is **admin**.
-
-For security, the password is saved as SHA1 hash in the file `grobid-service/src/main/conf/grobid_service.properties` with the property name `org.grobid.service.admin.pw`
-
-To change the password, you can replace this property value by the SHA1 hash generated for your new password of choice. To generate the SHA1 from any `<input_string>`, you can use the corresponding Grobid REST service available at:
-
-> http://localhost:8070/api/sha1?sha1=`<input_string>`
-
-See below for the `/api/sha1` service description. 
-
-#### /api/admin
-
-Request to get parameters of `grobid.properties` formatted in html table.
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| POST	| application/x-www-form-urlencoded | text/html  	| sha1 | required	| Administration password hashed using sha1 |
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| GET	| string | text/html  	| sha1 | required	| Administration password hashed using sha1 |
-
-Example of usage with GET method: `/api/admin?sha1=<pwd>`
-
-
-#### /api/sha1
-
-Request to get an input string hashed using sha1.
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| POST	| application/x-www-form-urlencoded | text/html  	| sha1 | required	| String (password) to be hashed using sha1 |
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| GET	| string | text/html  	| sha1 | required	| String (password) to be hashed using sha1 |
-
-Example of usage with GET method: `/api/sha1?sha1=<pwd>`
-
-
-#### /api/allProperties
-
-Request to get all properties key/value/type as XML.
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| POST	| application/x-www-form-urlencoded | text/html  	| sha1 | required	| Administration password hashed using sha1  |
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| GET	| string | text/html  	| sha1 | required	| Administration password hashed using sha1  |
-
-Example of usage with GET method: `/api/allProperties?sha1=<password>`
-
-Sent xml follow the following schema:
-
-```xml
-<properties>
-	<property>
-		<key>key</key>
-		<value>value</value>
-		<type>type</type>
-	</property>
-	<property>...</property>
-</properties>
-```
-
-#### /api/changePropertyValue
-
-Change the property value from the property key passed in the xml input.
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| POST	| application/x-www-form-urlencoded | text/html  	| xml | required	| XML input specifying the administrative password hashed using sha1 and a new  property/value following the schema below |
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| GET	| string | text/html  	| xml | required	| XML input specifying the administrative password hashed using sha1 and a new  property/value following the schema below  |
-
-Example of usage with GET method: `/api/changePropertyValue?xml=<some_xml>`
-
-XML input has to follow the following schema:
-
-```xml
-<changeProperty>
-	<password>pwd</password>
-	<property>
-		<key>key</key>
-		<value>value</value>
-		<type>type</type>
-	</property>
-</changeProperty>
-```
 
 ## Parallel mode
 

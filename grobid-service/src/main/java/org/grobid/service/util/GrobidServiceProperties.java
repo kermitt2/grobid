@@ -213,9 +213,9 @@ public class GrobidServiceProperties {
      * @param pValue value to replace
      * @throws IOException
      */
-    public static void updatePropertyFile(String pKey, String pValue) {
+    /*public static void updatePropertyFile(String pKey, String pValue) {
         GrobidProperties.updatePropertyFile(getGrobidPropertiesPath(), pKey,
                 pValue);
-    }
+    }*/
 
 }

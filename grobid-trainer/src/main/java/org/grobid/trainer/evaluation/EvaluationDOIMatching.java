@@ -129,9 +129,14 @@ public class EvaluationDOIMatching {
             List<String> rawRefs = new ArrayList<String>();
             List<String> dois = new ArrayList<String>();
             List<String> pmids = new ArrayList<String>();
+            List<String> atitles = new ArrayList<String>();
+            List<String> jtitles = new ArrayList<String>();
+            List<String> firstAuthors = new ArrayList<String>();
+            List<String> volumes = new ArrayList<String>();
+            List<String> firstPages = new ArrayList<String>();
             while (ite.hasNext()) {
-                if (nbRef > 1000)
-                    break;
+                //if (nbRef > 1000)
+                //    break;
                 JsonNode entryNode = ite.next();
 
                 String rawRef = null;
@@ -154,11 +159,65 @@ public class EvaluationDOIMatching {
                     pmid = pmidNode.textValue();
                 }                
                 pmids.add(pmid);
+
+                String atitle = null;
+                JsonNode atitleNode = entryNode.findPath("atitle");
+                if ((atitleNode != null) && (!atitleNode.isMissingNode())) {
+                    atitle = atitleNode.textValue();
+                }                
+                atitles.add(atitle);
+
+                String jtitle = null;
+                JsonNode jtitleNode = entryNode.findPath("jtitle");
+                if ((jtitleNode != null) && (!jtitleNode.isMissingNode())) {
+                    jtitle = jtitleNode.textValue();
+                }                
+                jtitles.add(jtitle);
+
+                String volume = null;
+                JsonNode volumeNode = entryNode.findPath("volume");
+                if ((volumeNode != null) && (!volumeNode.isMissingNode())) {
+                    volume = volumeNode.textValue();
+                }                
+                volumes.add(volume);
+
+                String firstPage = null;
+                JsonNode firstPageNode = entryNode.findPath("firstPage");
+                if ((firstPageNode != null) && (!firstPageNode.isMissingNode())) {
+                    firstPage = firstPageNode.textValue();
+                } 
+                firstPages.add(firstPage);
+
+                String author = null;
+                JsonNode authorNode = entryNode.findPath("author");
+                if ((authorNode != null) && (!authorNode.isMissingNode())) {
+                    author = authorNode.textValue();
+                } 
+                firstAuthors.add(author);
+
                 nbRef++;
             } 
             // run Grobid reference parser on this raw string, todo: call by batch of n citations
             try {
                 List<BiblioItem> biblios = engine.processRawReferences(rawRefs, 2);
+
+                // inject other metadata
+                for(int i=0; i<rawRefs.size(); i++) {
+                    BiblioItem biblio = biblios.get(i);
+
+                    String atitle = atitles.get(i);
+                    String jtitle = jtitles.get(i);
+                    String volume = volumes.get(i);
+                    String firstPage = firstPages.get(i);
+                    String author = firstAuthors.get(i);
+
+                    biblio.setTitle(atitle);
+                    biblio.setJournal(jtitle);
+                    biblio.setVolume(volume);
+                    //biblio.setFirstPage(firstPage);
+                    biblio.setFirstAuthorSurname(author);
+                }
+
                 for(int i=0; i<rawRefs.size(); i++) {
                     BiblioItem biblio = biblios.get(i);
                     String doi = dois.get(i);
@@ -392,12 +451,15 @@ public class EvaluationDOIMatching {
                                 String title = null;
                                 if ((nodeList != null) && nodeList.getLength()>0)
                                     title = nodeList.item(0).getNodeValue();
+                                
                                 // author
                                 String author = null;
+                                String firstAuthor = null;
                                 nodeList = (NodeList) xp.compile(path_nlm_author).
                                     evaluate(refNode, XPathConstants.NODESET);
                                 if ((nodeList != null) && nodeList.getLength()>0) {
                                     author = nodeList.item(0).getNodeValue();
+                                    firstAuthor = author;
                                     for (int i=1; i<nodeList.getLength(); i++)
                                         author += nodeList.item(i).getNodeValue();
                                 }
@@ -459,9 +521,14 @@ public class EvaluationDOIMatching {
                                     if ( (ind1 != -1) || 
                                             (ind2 != -1 && ind3 != -1 && (ind4 != -1 || ind5 != -1)) ) {
                                         goldReference.setRawRef(rawRef);
+                                        goldReference.setFirstPage(firstPage);
+                                        goldReference.setVolume(volume);
+                                        goldReference.setAtitle(title);
+                                        goldReference.setJtitle(host);
+                                        goldReference.setFirstAuthor(firstAuthor);
                                         p++;
-                                        continue;    
-                                    } 
+                                        continue;
+                                    }
                                 }
                             }
                         }
@@ -513,6 +580,34 @@ public class EvaluationDOIMatching {
                     String outputValuePMID = new String(encodedValuePMID); 
                     sb.append(", \"pmid\": \"" + outputValuePMID + "\"");
                 }
+
+                // other metadata
+                if (goldReference.getAtitle() != null) {
+                    byte[] encodedValueAtitle = encoder.quoteAsUTF8(goldReference.getAtitle());
+                    String outputValueAtitle = new String(encodedValueAtitle); 
+                    sb.append(", \"atitle\": \"" + outputValueAtitle + "\"");
+                }
+                if (goldReference.getFirstAuthor() != null) {
+                    byte[] encodedValueFirstAuthor = encoder.quoteAsUTF8(goldReference.getFirstAuthor());
+                    String outputValueFirstAuthor = new String(encodedValueFirstAuthor); 
+                    sb.append(", \"firstAuthor\": \"" + outputValueFirstAuthor + "\"");
+                }
+                if (goldReference.getJtitle() != null) {
+                    byte[] encodedValueJtitle = encoder.quoteAsUTF8(goldReference.getJtitle());
+                    String outputValueJtitle = new String(encodedValueJtitle); 
+                    sb.append(", \"jtitle\": \"" + outputValueJtitle + "\"");
+                }
+                if (goldReference.getVolume() != null) {
+                    byte[] encodedValueVolume = encoder.quoteAsUTF8(goldReference.getVolume());
+                    String outputValueVolume = new String(encodedValueVolume); 
+                    sb.append(", \"volume\": \"" + outputValueVolume + "\"");
+                }
+                if (goldReference.getFirstPage() != null) {
+                    byte[] encodedValueFirstPage = encoder.quoteAsUTF8(goldReference.getFirstPage());
+                    String outputValueFirstPage = new String(encodedValueFirstPage); 
+                    sb.append(", \"firstPage\": \"" + outputValueFirstPage + "\"");
+                }
+
                 sb.append("}");
             }
         }
@@ -567,6 +662,13 @@ public class EvaluationDOIMatching {
         // xml segment corresponding to the bibliographical reference
         private Node xml = null;
 
+        // other metadata
+        private String atitle = null;
+        private String jtitle = null;
+        private String firstAuthor = null;
+        private String volume = null;
+        private String firstPage = null;
+
         public String getRawRef() {
             return this.rawRef;
         }
@@ -597,6 +699,46 @@ public class EvaluationDOIMatching {
 
         public void setXML(Node xml) {
             this.xml = xml;
+        }
+
+        public String getAtitle() {
+            return this.atitle;
+        }
+
+        public void setAtitle(String atitle) {
+            this.atitle = atitle;
+        }
+
+        public String getJtitle() {
+            return this.jtitle;
+        }
+
+        public void setJtitle(String jtitle) {
+            this.jtitle = jtitle;
+        }
+
+        public String getFirstAuthor() {
+            return this.firstAuthor;
+        }
+
+        public void setFirstAuthor(String firstAuthor) {
+            this.firstAuthor = firstAuthor;
+        }
+
+        public String getVolume() {
+            return this.volume;
+        }
+
+        public void setVolume(String volume) {
+            this.volume = volume;
+        }
+
+        public String getFirstPage() {
+            return this.firstPage;
+        }
+
+        public void setFirstPage(String firstPage) {
+            this.firstPage = firstPage;
         }
     }
 

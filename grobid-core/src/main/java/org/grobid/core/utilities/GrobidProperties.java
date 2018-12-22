@@ -7,6 +7,7 @@ import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.grobid.core.exceptions.GrobidResourceException;
+import org.grobid.core.utilities.Consolidation.GrobidConsolidationService;
 import org.grobid.core.main.GrobidHomeFinder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +22,7 @@ import java.util.Properties;
  * to a system property having the same name.
  *
  * @author Florian Zipser, Patrice
- * @version 1.2
+ *
  */
 public class GrobidProperties {
     public static final Logger LOGGER = LoggerFactory.getLogger(GrobidProperties.class);
@@ -45,6 +46,10 @@ public class GrobidProperties {
      */
     private static GrobidCRFEngine grobidCRFEngine = GrobidCRFEngine.WAPITI;
 
+    /**
+     * Default consolidation service, if used
+     */
+    private static GrobidConsolidationService consolidationService = GrobidConsolidationService.CROSSREF;
 
     /**
      * Path to pdf2xml.
@@ -415,9 +420,9 @@ public class GrobidProperties {
      *
      * @return id for connecting crossref
      */
-    public static String getCrossrefId() {
+    /*public static String getCrossrefId() {
         return getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_ID);
-    }
+    }*/
 
     /**
      * Sets the id for a connection to crossref, given in the grobid-property
@@ -425,9 +430,9 @@ public class GrobidProperties {
      *
      * @param id for connecting crossref
      */
-    public static void setCrossrefId(final String id) {
+    /*public static void setCrossrefId(final String id) {
         setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_ID, id);
-    }
+    }*/
 
     /**
      * Returns the password for a connection to crossref, given in the
@@ -435,9 +440,9 @@ public class GrobidProperties {
      *
      * @return password for connecting crossref
      */
-    public static String getCrossrefPw() {
+    /*public static String getCrossrefPw() {
         return getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_PW);
-    }
+    }*/
 
     /**
      * Sets the id for a connection to crossref, given in the grobid-property
@@ -445,9 +450,9 @@ public class GrobidProperties {
      *
      * @param password for connecting crossref
      */
-    public static void setCrossrefPw(final String password) {
+    /*public static void setCrossrefPw(final String password) {
         setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_PW, password);
-    }
+    }*/
 
     /**
      * Returns the host for a connection to crossref, given in the
@@ -455,9 +460,9 @@ public class GrobidProperties {
      *
      * @return host for connecting crossref
      */
-    public static String getCrossrefHost() {
+    /*public static String getCrossrefHost() {
         return getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_HOST);
-    }
+    }*/
 
     /**
      * Sets the id for a connection to crossref, given in the grobid-property
@@ -465,9 +470,9 @@ public class GrobidProperties {
      *
      * @param host for connecting crossref
      */
-    public static void setCrossrefHost(final String host) {
+    /*public static void setCrossrefHost(final String host) {
         setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_HOST, host);
-    }
+    }*/
 
     /**
      * Returns the port for a connection to crossref, given in the
@@ -475,9 +480,9 @@ public class GrobidProperties {
      *
      * @return port for connecting crossref
      */
-    public static Integer getCrossrefPort() {
+    /*public static Integer getCrossrefPort() {
         return (Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_PORT)));
-    }
+    }*/
 
     /**
      * Sets the port for a connection to crossref, given in the grobid-property
@@ -485,9 +490,9 @@ public class GrobidProperties {
      *
      * @param port for connecting crossref
      */
-    public static void setCrossrefPort(final String port) {
+    /*public static void setCrossrefPort(final String port) {
         setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_PORT, port);
-    }
+    }*/
 
     /**
      * Returns the host for a proxy connection, given in the grobid-property
@@ -536,8 +541,8 @@ public class GrobidProperties {
      */
     public static void setProxyPort(final String port) {
         setPropertyValue(GrobidPropertyKeys.PROP_PROXY_PORT, port);
-        System.setProperty("http.proxyPort", "port_number");
-        System.setProperty("https.proxyPort", "port_number");
+        System.setProperty("http.proxyPort", port);
+        System.setProperty("https.proxyPort", port);
     }
 
     /**
@@ -793,8 +798,6 @@ public class GrobidProperties {
         return new File(get_GROBID_HOME_PATH(), "language-detection");
     }
 
-    ;
-
     /**
      * Returns the maximum parallel connections allowed in the pool.
      *
@@ -811,6 +814,23 @@ public class GrobidProperties {
      */
     public static int getPoolMaxWait() {
         return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_POOL_MAX_WAIT)) * 1000;
+    }
+
+    /**
+     * Returns the consolidation service to be used.
+     *
+     * @return the consolidation service to be used
+     */
+    public static GrobidConsolidationService getConsolidationService() {
+        return GrobidConsolidationService.get(getPropertyValue(GrobidPropertyKeys.PROP_CONSOLIDATION_SERVICE));
+    }
+
+    /**
+     * Set which consolidation service to use
+     *
+     */
+    public static void setConsolidationService(String service) {
+        setPropertyValue(GrobidPropertyKeys.PROP_CONSOLIDATION_SERVICE, service);
     }
 
     /**
@@ -839,7 +859,7 @@ public class GrobidProperties {
      * @param pKey          key to replace
      * @param pValue        value to replace
      */
-    public static void updatePropertyFile(File pPropertyFile, String pKey, String pValue)  {
+    /*public static void updatePropertyFile(File pPropertyFile, String pKey, String pValue)  {
         try {
         BufferedReader reader = new BufferedReader(new FileReader(pPropertyFile));
         String line, content = StringUtils.EMPTY, lineToReplace = StringUtils.EMPTY;
@@ -862,7 +882,7 @@ public class GrobidProperties {
         } catch (IOException e) {
             throw new GrobidPropertyException("Error while manipulating the Grobid properties", e);
         }
-    }
+    }*/
 
     /**
      * Update grobid.properties with the key and value given as argument.
@@ -870,9 +890,9 @@ public class GrobidProperties {
      * @param pKey   key to replace
      * @param pValue value to replace
      */
-    public static void updatePropertyFile(String pKey, String pValue) {
+    /*public static void updatePropertyFile(String pKey, String pValue) {
         updatePropertyFile(getGrobidPropertiesPath(), pKey, pValue);
-    }
+    }*/
 
     /**
      * Sets the GROBID version.
