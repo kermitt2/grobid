@@ -3,6 +3,8 @@ package org.grobid.core.main;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FilenameFilter;
+import java.util.Arrays;
+import java.lang.reflect.*;
 
 import javax.naming.InitialContext;
 
@@ -28,15 +30,15 @@ public class LibraryLoader {
 
     public static void load() {
         if (!loaded) {
-            LOGGER.info("Loading external native CRF library");
+            LOGGER.info("Loading external native sequence labelling library");
 //            mockContextIfNotSet();
             LOGGER.debug(getLibraryFolder());
             File libraryFolder = new File(getLibraryFolder());
             if (!libraryFolder.exists() || !libraryFolder.isDirectory()) {
-                LOGGER.error("Unable to find a native CRF library: Folder "
+                LOGGER.error("Unable to find a native sequence labelling library: Folder "
                         + libraryFolder + " does not exist");
                 throw new RuntimeException(
-                        "Unable to find a native CRF library: Folder "
+                        "Unable to find a native sequence labelling library: Folder "
                                 + libraryFolder + " does not exist");
             }
 
@@ -94,8 +96,31 @@ public class LibraryLoader {
                     System.load(wapitiLibFiles[0].getAbsolutePath());
                 }
 
+            } else if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT) {
+                File[] delftLibFiles = libraryFolder.listFiles(new FilenameFilter() {
+                    @Override
+                    public boolean accept(File dir, String name) {
+                        return name.startsWith(GrobidConstants.DELFT_NATIVE_LIB_NAME);
+                    }
+                });
+
+                if (delftLibFiles.length == 0) {
+                    LOGGER.info("No JEP library in the grobid home folder, this is required for using DeLFT");
+                } else {
+                    LOGGER.info("Loading JEP native library for DeLFT... " + delftLibFiles[0].getAbsolutePath());
+                    // actual loading will be made at JEP initialization, so we just need to add the path in the 
+                    // java.library.path (JEP will anyway try to load from java.library.path, so explicit file 
+                    // loading here will not help)
+                    try {
+                        addLibraryPath(delftLibFiles[0].getParent());
+                    } catch (Exception e) {
+                        LOGGER.info("Loading JEP native library for DeLFT failed", e);
+                    }
+                    //System.load(delftLibFiles[0].getAbsolutePath());
+                }
+
             } else {
-                throw new IllegalStateException("Unsupported CRF engine: " + GrobidProperties.getGrobidCRFEngine());
+                throw new IllegalStateException("Unsupported sequence labelling engine: " + GrobidProperties.getGrobidCRFEngine());
             }
             loaded = true;
 
@@ -108,8 +133,23 @@ public class LibraryLoader {
 //                }
 //                isContextMocked = false;
 //            }
-            LOGGER.info("Library crfpp loaded");
+            LOGGER.info("Native library for sequence labelling loaded");
         }
+    }
+
+    public static void addLibraryPath(String pathToAdd) throws Exception {
+        Field usrPathsField = ClassLoader.class.getDeclaredField("usr_paths");
+        usrPathsField.setAccessible(true);
+
+        String[] paths = (String[]) usrPathsField.get(null);
+
+        for (String path : paths)
+            if (path.equals(pathToAdd))
+                return;
+
+        String[] newPaths = Arrays.copyOf(paths, paths.length + 1);
+        newPaths[newPaths.length - 1] = pathToAdd;
+        usrPathsField.set(null, newPaths);
     }
 
 //    /**

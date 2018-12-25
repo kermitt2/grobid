@@ -8,8 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * User: zholudev
- * Date: 3/20/14
+ * Factory for a sequence labelling, aka a tagger, instance.
+ * Supported implementations are CRF (CRFPP, Wapiti) and Deep Learning (DeLFT)  
+ *
  */
 public class TaggerFactory {
     private static Map<GrobidModel, GenericTagger> cache = new HashMap<GrobidModel, GenericTagger>();
@@ -24,8 +25,11 @@ public class TaggerFactory {
                 case WAPITI:
                     t = new WapitiTagger(model);
                     break;
+                case DELFT:
+                    t = new DeLFTTagger(model);
+                    break;
                 default:
-                    throw new IllegalStateException("Unsupported Grobid CRF engine: " + GrobidProperties.getGrobidCRFEngine());
+                    throw new IllegalStateException("Unsupported Grobid sequence labelling engine: " + GrobidProperties.getGrobidCRFEngine());
             }
             cache.put(model, t);
         }
