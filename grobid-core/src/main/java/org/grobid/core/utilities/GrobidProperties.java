@@ -308,7 +308,8 @@ public class GrobidProperties {
     }
 
     private static void loadCrfEngine() {
-        grobidCRFEngine = GrobidCRFEngine.get(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE, GrobidCRFEngine.WAPITI.name()));
+        grobidCRFEngine = GrobidCRFEngine.get(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE, 
+                                                               GrobidCRFEngine.WAPITI.name()));
     }
 
     /**
@@ -412,6 +413,16 @@ public class GrobidProperties {
      */
     public static File getNativeLibraryPath() {
         return new File(getPropertyValue(GrobidPropertyKeys.PROP_NATIVE_LIB_PATH));
+    }
+
+    /**
+     * Returns the installtion path of DeLFT if set, null otherwise. It is required for using 
+     * a Deep Learning sequence labelling engine. 
+     *
+     * @return folder that contains the local install of DeLFT
+     */
+    public static String getDeLFTPath() {
+        return getPropertyValue(GrobidPropertyKeys.PROP_GROBID_DELFT_PATH);
     }
 
     /**

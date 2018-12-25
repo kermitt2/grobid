@@ -198,6 +198,7 @@ project("grobid-core") {
         compile "joda-time:joda-time:2.9.9"
         compile "org.apache.lucene:lucene-analyzers-common:4.5.1"
         compile 'javax.xml.bind:jaxb-api:2.3.0'
+        compile 'black.ninia:jep:3.8.2'
 
         shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
 
