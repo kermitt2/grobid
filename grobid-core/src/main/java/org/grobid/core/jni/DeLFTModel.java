@@ -65,7 +65,7 @@ public class DeLFTModel {
         private String modelName;
 
         public LabelTask(String modelName, String data) { 
-            System.out.println("label thread: " + Thread.currentThread().getId());
+            //System.out.println("label thread: " + Thread.currentThread().getId());
             this.modelName = modelName;
             this.data = data;
         } 
@@ -76,12 +76,14 @@ public class DeLFTModel {
             StringBuilder labelledData = new StringBuilder();
             try {
                 //System.out.println(this.data);
+
+                // load and tag
                 jep.set("input", this.data);
                 jep.eval("x_all, f_all = load_data_crf_string(input)");
                 Object objectResults = jep.getValue(this.modelName+".tag(x_all, None)");
+                
+                // inject back the labels
                 ArrayList<ArrayList<List<String>>> results = (ArrayList<ArrayList<List<String>>>)objectResults;
-
-                // inject the tags
                 BufferedReader bufReader = new BufferedReader(new StringReader(data));
                 String line;
                 int i = 0; // sentence index
@@ -110,6 +112,7 @@ public class DeLFTModel {
                     j++;
                 }
                 
+                // cleaning
                 jep.eval("del input");
                 jep.eval("del x_all");
                 jep.eval("del f_all");
@@ -136,6 +139,11 @@ public class DeLFTModel {
         return result;
     }
 
+    /**
+     * Training via JNI CPython interpreter (JEP). It appears that after some epochs, the JEP thread
+     * usually hangs... Possibly issues with IO threads at the level of JEP (output not consumed because
+     * of \r and no end of line?). 
+     */
     public static void trainJNI(String modelName, File trainingData, File outputModel) {
         try {
             LOGGER.info("Train DeLFT model " + modelName + "...");
@@ -151,7 +159,7 @@ public class DeLFTModel {
         private File modelPath;
 
         public TrainTask(String modelName, File trainPath, File modelPath) { 
-            System.out.println("train thread: " + Thread.currentThread().getId());
+            //System.out.println("train thread: " + Thread.currentThread().getId());
             this.modelName = modelName;
             this.trainPath = trainPath;
             this.modelPath = modelPath;
@@ -192,9 +200,7 @@ public class DeLFTModel {
                 jep.eval("del model");
             } catch(JepException e) {
                 LOGGER.error("DeLFT model training via JEP failed", e);
-            } /*catch(IOException e) {
-                LOGGER.error("DeLFT model train failed", e);
-            }*/
+            } 
         } 
     } 
 
@@ -212,7 +218,7 @@ public class DeLFTModel {
                 "--out", GrobidProperties.getInstance().getModelPath().getAbsolutePath());
             pb.directory(new File(GrobidProperties.getInstance().getDeLFTPath()));
             Process process = pb.start(); 
-            pb.inheritIO();
+            //pb.inheritIO();
             SimpleStreamGobbler streamGobbler = 
                 new SimpleStreamGobbler(process.getInputStream(), System.out::println);
             Executors.newSingleThreadExecutor().submit(streamGobbler);
@@ -266,6 +272,22 @@ public class DeLFTModel {
     }
 
     private static class SimpleStreamGobbler implements Runnable {
+        private InputStream inputStream;
+        private Consumer<String> consumer;
+     
+        public SimpleStreamGobbler(InputStream inputStream, Consumer<String> consumer) {
+            this.inputStream = inputStream;
+            this.consumer = consumer;
+        }
+     
+        @Override
+        public void run() {
+            new BufferedReader(new InputStreamReader(inputStream)).lines()
+              .forEach(consumer);
+        }
+    }
+
+    private static class CharStreamGobbler implements Runnable {
         private InputStream inputStream;
         private Consumer<String> consumer;
      
