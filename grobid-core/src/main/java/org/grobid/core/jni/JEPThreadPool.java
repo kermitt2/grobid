@@ -2,8 +2,10 @@ package org.grobid.core.jni;
 
 import java.util.concurrent.*;  
 import java.util.*;
+import java.io.*;
 
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.exceptions.GrobidResourceException;
 
 import jep.Jep;
 import jep.JepConfig;
@@ -63,24 +65,34 @@ public class JEPThreadPool {
     public Jep getJEPInstance() {
         if (jepInstances.get(Thread.currentThread().getId()) == null) {
             JepConfig config = new JepConfig();
-            config.addIncludePaths(GrobidProperties.getInstance().getDeLFTPath());
+            
             try {
+                File delftPath = new File(GrobidProperties.getInstance().getDeLFTPath());
+                if (!delftPath.exists()) {
+                    throw new GrobidResourceException("DeLFT installation path does not exist");
+                }
+                if (!delftPath.isDirectory()) {
+                    throw new GrobidResourceException("DeLFT installation path is not a directory");
+                }
+                config.addIncludePaths(delftPath.getAbsolutePath());
                 //System.out.println("jep instance thread: " + Thread.currentThread().getId());
                 Jep jep = new Jep(config);
                 jepInstances.put(Thread.currentThread().getId(), jep);
                 // import packages
                 jep.eval("import os");
                 jep.eval("import numpy as np");
+                jep.eval("import keras.backend as K");
+                jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
                 jep.eval("from utilities.Embeddings import Embeddings");
                 jep.eval("import sequenceLabelling");
                 jep.eval("from sequenceLabelling.reader import load_data_and_labels_crf_file");
                 jep.eval("from sequenceLabelling.reader import load_data_crf_string");
                 jep.eval("from sklearn.model_selection import train_test_split");
-                jep.eval("import keras.backend as K");
-                jep.eval("os.chdir('" + GrobidProperties.getInstance().getDeLFTPath() + "')");
             } catch(JepException e) {
                 LOGGER.error("JEP initialization failed", e);
-            }
+            } catch(GrobidResourceException e) {
+                LOGGER.error("DeLFT installation path invalid, JEP initialization failed", e);
+            } 
         }
         return jepInstances.get(Thread.currentThread().getId());
     }
