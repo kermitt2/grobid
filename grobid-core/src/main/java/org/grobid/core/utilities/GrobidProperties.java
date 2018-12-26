@@ -775,6 +775,10 @@ public class GrobidProperties {
                 + FILE_NAME_MODEL + "." + grobidCRFEngine.getExt());
     }
 
+    public static File getModelPath() {
+        return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS);
+    }
+
     public static File getTemplatePath(final File resourcesDir, final GrobidModel model) {
         File theFile = new File(resourcesDir, "dataset/" + model.getFolderName()
                 + "/crfpp-templates/" + model.getTemplateName());
