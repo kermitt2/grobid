@@ -1,0 +1,20 @@
+{
+    "num_char_lstm_units": 25,
+    "use_char_feature": true,
+    "fold_number": 1,
+    "batch_size": 20,
+    "dropout": 0.5,
+    "model_name": "name-citation",
+    "max_char_length": 30,
+    "char_embedding_size": 25,
+    "case_embedding_size": 5,
+    "char_vocab_size": 84,
+    "num_word_lstm_units": 100,
+    "recurrent_dropout": 0.5,
+    "use_crf": true,
+    "embeddings_name": "glove-840B",
+    "case_vocab_size": 8,
+    "model_type": "BidLSTM_CRF",
+    "use_ELMo": false,
+    "word_embedding_size": 300
+}
