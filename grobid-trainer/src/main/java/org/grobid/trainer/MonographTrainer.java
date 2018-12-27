@@ -163,6 +163,7 @@ public class MonographTrainer extends AbstractTrainer {
         GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new MonographTrainer());
         AbstractTrainer.runEvaluation(new MonographTrainer());
+        System.exit(0);
     }
 
 }
