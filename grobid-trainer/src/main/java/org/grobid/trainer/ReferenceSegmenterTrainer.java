@@ -215,5 +215,6 @@ public class ReferenceSegmenterTrainer extends AbstractTrainer {
     	GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new ReferenceSegmenterTrainer());
         AbstractTrainer.runEvaluation(new ReferenceSegmenterTrainer());
+        System.exit(0);
     }
 }

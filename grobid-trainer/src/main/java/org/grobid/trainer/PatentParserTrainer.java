@@ -592,6 +592,7 @@ public class PatentParserTrainer extends AbstractTrainer {
     public static void main(String[] args) throws Exception {
         GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new PatentParserTrainer());
+        System.exit(0);
     }
 
 }

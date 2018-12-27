@@ -67,7 +67,7 @@ public class JEPThreadPool {
             JepConfig config = new JepConfig();
             
             try {
-                File delftPath = new File(GrobidProperties.getInstance().getDeLFTPath());
+                File delftPath = new File(GrobidProperties.getInstance().getDeLFTFilePath());
                 if (!delftPath.exists()) {
                     throw new GrobidResourceException("DeLFT installation path does not exist");
                 }

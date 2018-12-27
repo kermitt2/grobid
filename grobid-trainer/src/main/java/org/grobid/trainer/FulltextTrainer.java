@@ -248,5 +248,6 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
     	GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new FulltextTrainer());
         AbstractTrainer.runEvaluation(new FulltextTrainer());
+        System.exit(0);
     }
 }	

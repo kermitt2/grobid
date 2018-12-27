@@ -11,6 +11,7 @@ import java.util.concurrent.*;
 import java.io.*;
 import java.lang.StringBuilder;
 import java.util.*;
+import java.util.regex.*;
 
 import jep.Jep;
 import jep.JepConfig;
@@ -215,14 +216,16 @@ public class DeLFTModel {
                 "grobidTagger.py", 
                 modelName,
                 "train",
-                "--out", GrobidProperties.getInstance().getModelPath().getAbsolutePath());
-            pb.directory(new File(GrobidProperties.getInstance().getDeLFTPath()));
+                "--input", trainingData.getAbsolutePath(),
+                "--output", GrobidProperties.getInstance().getModelPath().getAbsolutePath());
+            File delftPath = new File(GrobidProperties.getInstance().getDeLFTFilePath());
+            pb.directory(delftPath);
             Process process = pb.start(); 
             //pb.inheritIO();
-            SimpleStreamGobbler streamGobbler = 
-                new SimpleStreamGobbler(process.getInputStream(), System.out::println);
-            Executors.newSingleThreadExecutor().submit(streamGobbler);
-            streamGobbler = new SimpleStreamGobbler(process.getErrorStream(), System.err::println);
+            CustomStreamGobbler customStreamGobbler = 
+                new CustomStreamGobbler(process.getInputStream(), System.out);
+            Executors.newSingleThreadExecutor().submit(customStreamGobbler);
+            SimpleStreamGobbler streamGobbler = new SimpleStreamGobbler(process.getErrorStream(), System.err::println);
             Executors.newSingleThreadExecutor().submit(streamGobbler);
             int exitCode = process.waitFor();
             //assert exitCode == 0;
@@ -287,19 +290,41 @@ public class DeLFTModel {
         }
     }
 
-    private static class CharStreamGobbler implements Runnable {
-        private InputStream inputStream;
-        private Consumer<String> consumer;
-     
-        public SimpleStreamGobbler(InputStream inputStream, Consumer<String> consumer) {
-            this.inputStream = inputStream;
-            this.consumer = consumer;
+    /**
+     * This is a custom gobbler that reproduces correctly the Keras training progress bar
+     * by injecting a \r for progress line updates. 
+     */ 
+    private static class CustomStreamGobbler implements Runnable {
+        public static final Logger LOGGER = LoggerFactory.getLogger(CustomStreamGobbler.class);
+
+        private final InputStream is;
+        private final PrintStream os;
+        private Pattern pattern = Pattern.compile("\\d/\\d+ \\[");
+
+        public CustomStreamGobbler(InputStream is, PrintStream os) {
+            this.is = is;
+            this.os = os;
         }
      
         @Override
         public void run() {
-            new BufferedReader(new InputStreamReader(inputStream)).lines()
-              .forEach(consumer);
+            try {
+                InputStreamReader isr = new InputStreamReader(this.is);
+                BufferedReader br = new BufferedReader(isr);
+                String line = null;
+                while ((line = br.readLine()) != null) {
+                    Matcher matcher = pattern.matcher(line);
+                    if (matcher.find()) {
+                        os.print("\r" + line);
+                        os.flush();
+                    } else {
+                        os.println(line);
+                    }
+                }
+            }
+            catch (IOException e) {
+                LOGGER.warn("IO error between embedded python and java process", e);
+            }
         }
     }
 
