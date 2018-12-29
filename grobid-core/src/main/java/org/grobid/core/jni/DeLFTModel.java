@@ -176,9 +176,14 @@ public class DeLFTModel {
                 jep.eval("print(len(x_train), 'train sequences')");
                 jep.eval("print(len(x_valid), 'validation sequences')");
 
+                String useELMo = "False";
+                if (GrobidProperties.getInstance().useELMo()) {
+                    useELMo = "True";
+                }
+
                 // init model to be trained
                 jep.eval("model = sequenceLabelling.Sequence('"+this.modelName+
-                    "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo=False)");
+                    "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+")");
 
                 // actual training
                 //start_time = time.time()
@@ -212,12 +217,17 @@ public class DeLFTModel {
     public static void train(String modelName, File trainingData, File outputModel) {
         try {
             LOGGER.info("Train DeLFT model " + modelName + "...");
-            ProcessBuilder pb = new ProcessBuilder("python3", 
+            List<String> command = Arrays.asList("python3", 
                 "grobidTagger.py", 
                 modelName,
                 "train",
                 "--input", trainingData.getAbsolutePath(),
                 "--output", GrobidProperties.getInstance().getModelPath().getAbsolutePath());
+            if (GrobidProperties.getInstance().useELMo()) {
+                command.add("--use-ELMo");
+            }
+
+            ProcessBuilder pb = new ProcessBuilder(command);
             File delftPath = new File(GrobidProperties.getInstance().getDeLFTFilePath());
             pb.directory(delftPath);
             Process process = pb.start(); 

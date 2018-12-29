@@ -170,6 +170,11 @@ public class Person {
         if (email != null) {
             res += " (email:" + email + ")";
         }
+        if (affiliations != null) {
+            for(Affiliation aff : affiliations) {
+                res += " (affiliation: " + aff.toString() + ") ";
+            }
+        }
         return res.trim();
     }
 
