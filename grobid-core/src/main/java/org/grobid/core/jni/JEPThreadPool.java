@@ -75,6 +75,7 @@ public class JEPThreadPool {
                     throw new GrobidResourceException("DeLFT installation path is not a directory");
                 }
                 config.addIncludePaths(delftPath.getAbsolutePath());
+                config.setClassLoader(Thread.currentThread().getContextClassLoader());
                 //System.out.println("jep instance thread: " + Thread.currentThread().getId());
                 Jep jep = new Jep(config);
                 jepInstances.put(Thread.currentThread().getId(), jep);

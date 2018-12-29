@@ -11,7 +11,6 @@ import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.layout.Block;
-import org.grobid.core.main.GrobidConstants;
 import org.grobid.core.utilities.GrobidProperties;
 import org.junit.*;
 

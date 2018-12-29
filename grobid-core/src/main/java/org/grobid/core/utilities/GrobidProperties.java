@@ -435,6 +435,15 @@ public class GrobidProperties {
         return pathFile.getAbsolutePath();
     }
 
+    public static boolean useELMo() {
+        String rawValue = getPropertyValue(GrobidPropertyKeys.PROP_GROBID_DELFT_ELMO);
+        if (rawValue.equals("true"))
+            return true;
+        else if (rawValue.equals("false")) 
+            return false;
+        return false;
+    }
+
     /**
      * Returns the host for a proxy connection, given in the grobid-property
      * file.
@@ -602,9 +611,13 @@ public class GrobidProperties {
     }
 
     public static File getModelPath(final GrobidModel model) {
+        String extension = grobidCRFEngine.getExt();
+        if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT && 
+            (model.getModelName().equals("fulltext") || model.getModelName().equals("segmentation")))
+            extension = "wapiti"; 
         return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator
                 + model.getFolderName() + File.separator
-                + FILE_NAME_MODEL + "." + grobidCRFEngine.getExt());
+                + FILE_NAME_MODEL + "." + extension);
     }
 
     public static File getModelPath() {

@@ -10,7 +10,8 @@
                 </layout>
         </appender>
         <root>
-                <priority value="ERROR"></priority>
-                <appender-ref ref="LOGFILE" />
+                <priority value="INFO"></priority>
+                <!--appender-ref ref="LOGFILE" /-->
+                <appender-ref ref="CONSOLE"/>
         </root>
 </log4j:configuration>
