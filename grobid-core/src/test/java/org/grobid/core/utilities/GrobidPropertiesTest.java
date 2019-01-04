@@ -109,7 +109,7 @@ public class GrobidPropertiesTest {
     }
 
     @Test
-    public void testgetNBThreadsShouldReturnAvailableThreadsIfZero() {
+    public void testgetNBThreadsShouldReturnAvailableProcessorsIfZero() {
         String value = "0";
         GrobidProperties.setNBThreads(value);
         assertEquals("The property has not the value expected",
