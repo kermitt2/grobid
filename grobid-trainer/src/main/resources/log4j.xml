@@ -11,7 +11,7 @@
         </appender>
         <root>
                 <priority value="INFO"></priority>
-                <!--appender-ref ref="LOGFILE" /-->
-                <appender-ref ref="CONSOLE"/>
+                <appender-ref ref="LOGFILE" />
+                <!--appender-ref ref="CONSOLE"/-->
         </root>
 </log4j:configuration>

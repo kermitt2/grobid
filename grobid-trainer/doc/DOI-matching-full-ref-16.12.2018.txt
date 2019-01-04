@@ -52,6 +52,25 @@ COUNTER: org.grobid.core.engines.label.TaggingLabelImpl
 ====================================================================================
 ====================================================================================
 
+sync, 3 ES nodes 30.12.2018
+
+17015 bibliographical references processed in 2176.489 seconds, 0.12791589773729062 seconds per bibliographical reference.
+Found 15672 DOI
+
+
+
+async, 3 ES nodes 30.12.2018
+
+17015 bibliographical references processed in 1989.539 seconds, 0.11692853364678225 seconds per bibliographical reference.
+Found 15672 DOI
+
+
+
+async, 2 ES nodes 30.12.2018
+
+17015 bibliographical references processed in 1347.063 seconds, 0.07916914487217162 seconds per bibliographical reference.
+Found 15672 DOI
+
 
 
 
