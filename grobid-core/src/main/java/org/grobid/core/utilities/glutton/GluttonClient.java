@@ -73,7 +73,7 @@ public class GluttonClient extends CrossrefClient {
         int nThreads = Runtime.getRuntime().availableProcessors();
         //int nThreads = (int) Math.ceil((double)Runtime.getRuntime().availableProcessors() / 2);
         System.out.println("nThreads: " + nThreads);
-        this.executorService = Executors.newFixedThreadPool(nThreads);
+        this.executorService = Executors.newFixedThreadPool(nThreads*2);
         //setLimits(20, 1000); // default calls per second
     }
 

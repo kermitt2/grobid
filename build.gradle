@@ -55,10 +55,10 @@ subprojects {
         }
     }
 
-    /*configurations {
+    configurations {
         all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
-        all*.exclude group: 'log4j', module: "log4j"
-    }*/
+        //all*.exclude group: 'log4j', module: "log4j"
+    }
 
     ext {
         // treating them separately, these jars will be flattened into grobid-core.jar on installing,
