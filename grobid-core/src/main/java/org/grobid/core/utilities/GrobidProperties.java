@@ -657,7 +657,11 @@ public class GrobidProperties {
      * @return number of threads
      */
     public static Integer getNBThreads() {
-        return Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_NB_THREADS));
+        Integer nbThreadsConfig = Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_NB_THREADS));
+        if (nbThreadsConfig.intValue() == 0) {
+            return Integer.valueOf(Runtime.getRuntime().availableProcessors());
+        }
+        return nbThreadsConfig;
     }
 
 
