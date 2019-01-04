@@ -13,6 +13,8 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 
+import java.nio.file.Files;
+
 /**
  * @author Zholudev, Lopez
  */
@@ -65,7 +67,20 @@ public abstract class AbstractTrainer implements Trainer {
         }
         final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
         final File oldModelPath = GrobidProperties.getModelPath(model);
-        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads(), model);
+        if (oldModelPath.exists()) {
+            try {
+                Files.copy(oldModelPath.toPath(), tempModelPath.toPath());
+            } catch (IOException e) {
+                LOGGER.warn("Could not copy model file: " + oldModelPath.getAbsolutePath());
+            }
+        }
+        trainer.train(
+            getTemplatePath(),
+            dataPath,
+            tempModelPath,
+            GrobidProperties.getNBThreads(),
+            model
+        );
         // if we are here, that means that training succeeded
         renameModels(oldModelPath, tempModelPath);
     }

@@ -65,9 +65,17 @@ public class WapitiModel {
     }
 
     public static void train(File template, File trainingData, File outputModel, String params) {
-		String args = String.format("train " + params + " -p %s %s %s", template.getAbsolutePath(), trainingData.getAbsolutePath(), outputModel.getAbsolutePath());
-		//System.out.println("Training with equivalent command line: \n" + "wapiti " + args);
-		Wapiti.runWapiti(args);
+        if (outputModel.exists()) {
+            params += " -m " + outputModel.getAbsolutePath();
+        }
+        String args = String.format(
+            "train " + params + " -p %s %s %s",
+            template.getAbsolutePath(),
+            trainingData.getAbsolutePath(),
+            outputModel.getAbsolutePath()
+        );
+        System.out.println("Training with equivalent command line: \n" + "wapiti " + args);
+        Wapiti.runWapiti(args);
     }
 
 
