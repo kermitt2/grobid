@@ -308,7 +308,8 @@ public class GrobidProperties {
     }
 
     private static void loadCrfEngine() {
-        grobidCRFEngine = GrobidCRFEngine.get(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE, GrobidCRFEngine.WAPITI.name()));
+        grobidCRFEngine = GrobidCRFEngine.get(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE, 
+                                                               GrobidCRFEngine.WAPITI.name()));
     }
 
     /**
@@ -415,84 +416,33 @@ public class GrobidProperties {
     }
 
     /**
-     * Returns the id for a connection to crossref, given in the grobid-property
-     * file.
+     * Returns the installtion path of DeLFT if set, null otherwise. It is required for using 
+     * a Deep Learning sequence labelling engine. 
      *
-     * @return id for connecting crossref
+     * @return folder that contains the local install of DeLFT
      */
-    /*public static String getCrossrefId() {
-        return getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_ID);
-    }*/
+    public static String getDeLFTPath() {
+        return getPropertyValue(GrobidPropertyKeys.PROP_GROBID_DELFT_PATH);
+    }
 
-    /**
-     * Sets the id for a connection to crossref, given in the grobid-property
-     * file.
-     *
-     * @param id for connecting crossref
-     */
-    /*public static void setCrossrefId(final String id) {
-        setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_ID, id);
-    }*/
+    public static String getDeLFTFilePath() {
+        String rawPath = getPropertyValue(GrobidPropertyKeys.PROP_GROBID_DELFT_PATH);
+        File pathFile = new File(rawPath);
+        if (!pathFile.exists()) {
+            rawPath = "../" + rawPath;
+            pathFile = new File(rawPath);
+        }
+        return pathFile.getAbsolutePath();
+    }
 
-    /**
-     * Returns the password for a connection to crossref, given in the
-     * grobid-property file.
-     *
-     * @return password for connecting crossref
-     */
-    /*public static String getCrossrefPw() {
-        return getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_PW);
-    }*/
-
-    /**
-     * Sets the id for a connection to crossref, given in the grobid-property
-     * file.
-     *
-     * @param password for connecting crossref
-     */
-    /*public static void setCrossrefPw(final String password) {
-        setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_PW, password);
-    }*/
-
-    /**
-     * Returns the host for a connection to crossref, given in the
-     * grobid-property file.
-     *
-     * @return host for connecting crossref
-     */
-    /*public static String getCrossrefHost() {
-        return getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_HOST);
-    }*/
-
-    /**
-     * Sets the id for a connection to crossref, given in the grobid-property
-     * file.
-     *
-     * @param host for connecting crossref
-     */
-    /*public static void setCrossrefHost(final String host) {
-        setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_HOST, host);
-    }*/
-
-    /**
-     * Returns the port for a connection to crossref, given in the
-     * grobid-property file.
-     *
-     * @return port for connecting crossref
-     */
-    /*public static Integer getCrossrefPort() {
-        return (Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_PORT)));
-    }*/
-
-    /**
-     * Sets the port for a connection to crossref, given in the grobid-property
-     * file.
-     *
-     * @param port for connecting crossref
-     */
-    /*public static void setCrossrefPort(final String port) {
-        setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_PORT, port);
-    }*/
+    public static boolean useELMo() {
+        String rawValue = getPropertyValue(GrobidPropertyKeys.PROP_GROBID_DELFT_ELMO);
+        if (rawValue.equals("true"))
+            return true;
+        else if (rawValue.equals("false")) 
+            return false;
+        return false;
+    }
 
     /**
      * Returns the host for a proxy connection, given in the grobid-property
@@ -545,36 +495,6 @@ public class GrobidProperties {
         System.setProperty("https.proxyPort", port);
     }
 
-    /**
-     * Returns the id for a connection to mysql, given in the grobid-property
-     * file.
-     *
-     * @return database name for connecting mysql
-     */
-    /*public static String getMySQLDBName() {
-        return getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_DB_NAME);
-    }*/
-
-    /**
-     * Sets the database name for a connection to mysql, given in the
-     * grobid-property file.
-     *
-     * @param dbName for connecting mysql
-     */
-    /*public static void setMySQLDBName(final String dbName) {
-        setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_DB_NAME, dbName);
-    }*/
-
-    /**
-     * Returns the id for a connection to mysql, given in the grobid-property
-     * file.
-     *
-     * @return username for connecting mysql
-     */
-    /*public static String getMySQLUsername() {
-        return getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_USERNAME);
-    }*/
-
     public static Integer getPdf2XMLMemoryLimitMb() {
         return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDF2XML_MEMORY_LIMIT, "2048"), 10);
     }
@@ -582,74 +502,6 @@ public class GrobidProperties {
     public static Integer getPdf2XMLTimeoutMs() {
         return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDF2XML_TIMEOUT_SEC, "60"), 10) * 1000;
     }
-
-    /**
-     * Sets the username for a connection to mysql, given in the grobid-property
-     * file.
-     *
-     * @param username for connecting mysql
-     */
-    /*public static void setMySQLUsername(final String username) {
-        setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_USERNAME, username);
-    }*/
-
-    /**
-     * Returns the password for a connection to mysql, given in the
-     * grobid-property file.
-     *
-     * @return password for connecting mysql
-     */
-    /*public static String getMySQLPw() {
-        return getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PW);
-    }*/
-
-    /**
-     * Sets the id for a connection to mysql, given in the grobid-property file.
-     *
-     * @param password for connecting mysql
-     */
-    /*public static void setMySQLPw(final String password) {
-        setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PW, password);
-    }*/
-
-    /**
-     * Returns the host for a connection to mysql, given in the grobid-property
-     * file.
-     *
-     * @return host for connecting mysql
-     */
-    /*public static String getMySQLHost() {
-        return getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_HOST);
-    }*/
-
-    /**
-     * Sets the id for a connection to mysql, given in the grobid-property file.
-     *
-     * @param host for connecting mysql
-     */
-    /*public static void setMySQLHost(final String host) {
-        setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_HOST, host);
-    }*/
-
-    /**
-     * Returns the port for a connection to mysql, given in the grobid-property
-     * file.
-     *
-     * @return port for connecting mysql
-     */
-    /*public static Integer getMySQLPort() {
-        return Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PORT));
-    }*/
-
-    /**
-     * Sets the port for a connection to mysql, given in the grobid-property
-     * file.
-     *
-     * @param port for connecting mysql
-     */
-    /*public static void setMySQLPort(String port) {
-        setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PORT, port);
-    }*/
 
     /**
      * Returns the number of threads, given in the grobid-property file.
@@ -759,9 +611,17 @@ public class GrobidProperties {
     }
 
     public static File getModelPath(final GrobidModel model) {
+        String extension = grobidCRFEngine.getExt();
+        if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT && 
+            (model.getModelName().equals("fulltext") || model.getModelName().equals("segmentation")))
+            extension = "wapiti"; 
         return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator
                 + model.getFolderName() + File.separator
-                + FILE_NAME_MODEL + "." + grobidCRFEngine.getExt());
+                + FILE_NAME_MODEL + "." + extension);
+    }
+
+    public static File getModelPath() {
+        return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS);
     }
 
     public static File getTemplatePath(final File resourcesDir, final GrobidModel model) {
@@ -851,48 +711,6 @@ public class GrobidProperties {
     public static void setContextExecutionServer(Boolean state) {
         setPropertyValue(GrobidPropertyKeys.PROP_GROBID_IS_CONTEXT_SERVER, state.toString());
     }
-
-    /**
-     * Update the input file with the key and value given as argument.
-     *
-     * @param pPropertyFile file to update.
-     * @param pKey          key to replace
-     * @param pValue        value to replace
-     */
-    /*public static void updatePropertyFile(File pPropertyFile, String pKey, String pValue)  {
-        try {
-        BufferedReader reader = new BufferedReader(new FileReader(pPropertyFile));
-        String line, content = StringUtils.EMPTY, lineToReplace = StringUtils.EMPTY;
-
-            while ((line = reader.readLine()) != null) {
-                if (line.contains(pKey)) {
-                    lineToReplace = line;
-                }
-                content += line + "\r\n";
-            }
-
-        reader.close();
-
-        if (!StringUtils.EMPTY.equals(lineToReplace)) {
-            String newContent = content.replaceAll(lineToReplace, pKey + "=" + pValue);
-            FileWriter writer = new FileWriter(pPropertyFile.getAbsoluteFile());
-            writer.write(newContent);
-            writer.close();
-        }
-        } catch (IOException e) {
-            throw new GrobidPropertyException("Error while manipulating the Grobid properties", e);
-        }
-    }*/
-
-    /**
-     * Update grobid.properties with the key and value given as argument.
-     *
-     * @param pKey   key to replace
-     * @param pValue value to replace
-     */
-    /*public static void updatePropertyFile(String pKey, String pValue) {
-        updatePropertyFile(getGrobidPropertiesPath(), pKey, pValue);
-    }*/
 
     /**
      * Sets the GROBID version.

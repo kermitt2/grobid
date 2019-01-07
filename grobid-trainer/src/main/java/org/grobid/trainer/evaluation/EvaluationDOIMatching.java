@@ -21,6 +21,9 @@ import java.util.*;
 import java.text.Normalizer;
 import java.util.regex.Pattern;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.apache.commons.io.FileUtils;
 
 import org.w3c.dom.*;
@@ -51,6 +54,7 @@ import com.fasterxml.jackson.annotation.*;
  * @author Patrice Lopez
  */
 public class EvaluationDOIMatching {
+    private static final Logger LOGGER = LoggerFactory.getLogger(EvaluationDOIMatching.class);
 
     private static String evaluationFilePath = null;
     private Engine engine = null;
@@ -87,7 +91,7 @@ public class EvaluationDOIMatching {
 
         try {
             GrobidProperties.getInstance();
-            System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
+            LOGGER.info(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
 
             engine = GrobidFactory.getInstance().createEngine();
         }
@@ -223,25 +227,24 @@ public class EvaluationDOIMatching {
                     String doi = dois.get(i);
                     String pmid = pmids.get(i);
 
-                    System.out.println("\n\tDOI: " + doi);
-                    System.out.println("\trawRef: " + rawRefs.get(i));
+                    //LOGGER.info("\n\tDOI: " + doi);
+                    //LOGGER.info("\trawRef: " + rawRefs.get(i));
 
                     if (biblio.getDOI() != null) {
                         nbDOIFound++;
-                        System.out.println("\tfound: "+ biblio.getDOI());
+                        //LOGGER.info("\tfound: "+ biblio.getDOI());
 
                         // is the DOI correct? 
                         if (biblio.getDOI().toLowerCase().equals(doi.toLowerCase()))
                             nbDOICorrect++;
                         else {
-                            System.out.println("!!!!!!!!!!!!! Mismatch DOI: " + doi + " / " + biblio.getDOI());
+                            //LOGGER.info("!!!!!!!!!!!!! Mismatch DOI: " + doi + " / " + biblio.getDOI());
                         }
                     }
                 }
             } 
             catch (Exception e) {
-                System.out.println("Error when processing: " + jsonFile.getPath());
-                e.printStackTrace();
+                LOGGER.error("Error when processing: " + jsonFile.getPath(), e);
             }
         }
 
@@ -326,12 +329,12 @@ public class EvaluationDOIMatching {
             });
 
             if (refFiles2 == null || refFiles2.length == 0) {
-                System.out.println("warning: no PDF found under " + dir.getPath());
+                LOGGER.info("warning: no PDF found under " + dir.getPath());
                 continue;
             }
             if (refFiles2.length != 1) {
-                System.out.println("warning: more than one PDF found under " + dir.getPath());
-                System.out.println("processing only the first one...");
+                LOGGER.warn("warning: more than one PDF found under " + dir.getPath());
+                LOGGER.warn("processing only the first one...");
             }
 
             final File pdfFile = refFiles2[0];
@@ -356,7 +359,7 @@ public class EvaluationDOIMatching {
                 teiFile = refFiles3[0];
 
             if ( (nlmFile == null) && (teiFile == null) ) {
-                System.out.println("warning: no reference NLM or TEI file found under " + dir.getPath());
+                LOGGER.warn("warning: no reference NLM or TEI file found under " + dir.getPath());
                 continue;
             }
 
@@ -422,13 +425,13 @@ public class EvaluationDOIMatching {
                 }
 
             } catch(Exception e) {
-                e.printStackTrace();
+                LOGGER.error("Error when collecting reference citations", e);
             }
 
             int p = 0; // count the number of citation raw reference string aligned with gold reference
             // run Grobid reference extraction
             try {
-                System.out.println(n + " - " + pdfFile.getPath());
+                LOGGER.info(n + " - " + pdfFile.getPath());
                 List<BibDataSet> bibrefs = engine.processReferences(pdfFile, 0);
                 for(BibDataSet bib : bibrefs) {
                     String rawRef = bib.getRawBib();

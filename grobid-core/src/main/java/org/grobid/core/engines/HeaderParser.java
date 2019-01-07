@@ -6,6 +6,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
+import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.Keyword;
 import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
@@ -123,7 +124,6 @@ public class HeaderParser extends AbstractParser {
             header = doc.getHeaderFeatured(false, true);
         }*/
         List<LayoutToken> tokenizations = doc.getTokenizationsHeader();
-//System.out.println(tokenizations.toString());
 
         if ((header != null) && (header.trim().length() > 0)) {
             String res = label(header);
@@ -199,8 +199,8 @@ public class HeaderParser extends AbstractParser {
                         }
                     }
 
-                    resHeader.setFullAffiliations(
-                            parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
+                    List<Affiliation> affiliations = parsers.getAffiliationAddressParser().processReflow(res, tokenizations);
+                    resHeader.setFullAffiliations(affiliations);
                     resHeader.attachEmails();
                     boolean attached = false;
                     if (fragmentedAuthors && !hasMarker) {
@@ -264,10 +264,7 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                //if (consolidate) 
-                {
-                    resHeader = consolidateHeader(resHeader, consolidate);
-                }
+                resHeader = consolidateHeader(resHeader, consolidate);
 
                 // normalization of dates
                 if (resHeader != null) {
@@ -478,10 +475,7 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                //if (consolidate) 
-                {
-                    resHeader = consolidateHeader(resHeader, consolidate);
-                }
+                resHeader = consolidateHeader(resHeader, consolidate);
 
                 // normalization of dates
                 if (resHeader != null) {
@@ -1076,7 +1070,10 @@ public class HeaderParser extends AbstractParser {
             if (tok.length() == 0) {
                 continue;
             }
-            StringTokenizer stt = new StringTokenizer(tok, "\t");
+            String delimiter = "\t";
+            if (tok.indexOf(delimiter) == -1)
+                delimiter = " "; 
+            StringTokenizer stt = new StringTokenizer(tok, delimiter);
             List<String> localFeatures = new ArrayList<String>();
             int i = 0;
 

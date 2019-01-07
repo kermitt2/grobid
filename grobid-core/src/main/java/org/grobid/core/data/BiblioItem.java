@@ -3275,7 +3275,7 @@ public class BiblioItem {
                 aff.setFailAffiliation(false);
             }
         } else if (hasMarker) {
-            // we get the marker for each affiliation and try  to find the related author in the
+            // we get the marker for each affiliation and try to find the related author in the
             // original author field
             for (Affiliation aff : fullAffiliations) {
                 if (aff.getMarker() != null) {
@@ -3391,16 +3391,18 @@ public class BiblioItem {
                     }
                 }
             }
-        } else if (nbAuthors == nbAffiliations) {
+        } /*else if (nbAuthors == nbAffiliations) {
             // risky heuristics, we distribute in this case one affiliation per author
             // preserving author 
             // sometimes 2 affiliations belong both to 2 authors, for these case, the layout
             // positioning should be studied
             for (int p = 0; p < nbAuthors; p++) {
                 fullAuthors.get(p).addAffiliation(fullAffiliations.get(p));
+                System.out.println("attachment: " + p);
+                System.out.println(fullAuthors.get(p));
                 fullAffiliations.get(p).setFailAffiliation(false);
             }
-        }
+        }*/
     }
 
 
@@ -3412,7 +3414,6 @@ public class BiblioItem {
         int nbAuthors = 0;
         int nbAffiliations = 0;
         int nbAddresses = 0;
-
         // uncomment below when collaboration will be concretely added to headers
         /*
         if ( (collaboration != null) && 
@@ -3497,7 +3498,6 @@ public class BiblioItem {
                     }
 
                     if (author.getAffiliations() != null) {
-
                         for (Affiliation aff : author.getAffiliations()) {
                             TextUtilities.appendN(tei, '\t', nbTag + 1);
                             tei.append("<affiliation");

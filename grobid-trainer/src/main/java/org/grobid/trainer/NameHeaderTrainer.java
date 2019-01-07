@@ -230,5 +230,6 @@ public class NameHeaderTrainer extends AbstractTrainer {
         Trainer trainer = new NameHeaderTrainer();
         AbstractTrainer.runTraining(trainer);
         AbstractTrainer.runEvaluation(trainer);
+        System.exit(0);
     }
 }

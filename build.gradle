@@ -57,7 +57,7 @@ subprojects {
 
     configurations {
         all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
-        all*.exclude group: 'log4j', module: "log4j"
+        //all*.exclude group: 'log4j', module: "log4j"
     }
 
     ext {
@@ -198,6 +198,8 @@ project("grobid-core") {
         compile "joda-time:joda-time:2.9.9"
         compile "org.apache.lucene:lucene-analyzers-common:4.5.1"
         compile 'javax.xml.bind:jaxb-api:2.3.0'
+        compile 'black.ninia:jep:3.8.2'
+        compile 'org.slf4j:slf4j-log4j12:1.7.25'
 
         shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
 
@@ -279,6 +281,8 @@ project(":grobid-service") {
 
     configurations {
         all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
+        all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
+        all*.exclude group: 'log4j', module: "log4j"
     }
 
 //    tasks.distZip.enabled = false
@@ -371,8 +375,8 @@ project(":grobid-trainer") {
     }
 
     // run like:
-    // gradle PubMedCentralEval -Pp2t=/path/to/goldenSet
-    // gradle PubMedCentralEval -Pp2t=/path/to/goldenSet -Prun=1 -PfileRatio=0.1
+    // ./gradlew PubMedCentralEval -Pp2t=/path/to/goldenSet
+    // ./gradlew PubMedCentralEval -Pp2t=/path/to/goldenSet -Prun=1 -PfileRatio=0.1
     // ./gradlew PrepareDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
     // ./gradlew EvaluateDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
     task(PubMedCentralEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
