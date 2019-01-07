@@ -2,8 +2,7 @@ package org.grobid.core.engines;
 
 import org.grobid.core.GrobidModel;
 import org.grobid.core.analyzers.GrobidAnalyzer;
-import org.grobid.core.engines.tagging.GenericTagger;
-import org.grobid.core.engines.tagging.TaggerFactory;
+import org.grobid.core.engines.tagging.*;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.counters.impl.CntManagerFactory;
 import org.slf4j.Logger;
@@ -28,6 +27,10 @@ public abstract class AbstractParser implements GenericTagger, Closeable {
         genericTagger = TaggerFactory.getTagger(model);
     }
 
+    protected AbstractParser(GrobidModel model, CntManager cntManager, GrobidCRFEngine engine) {
+        this.cntManager = cntManager;
+        genericTagger = TaggerFactory.getTagger(model, engine);
+    }
 
     @Override
     public String label(Iterable<String> data) {

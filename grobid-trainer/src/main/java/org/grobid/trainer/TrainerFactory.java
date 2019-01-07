@@ -13,8 +13,10 @@ public class TrainerFactory {
                 return new CRFPPGenericTrainer();
             case WAPITI:
                 return new WapitiTrainer();
+            case DELFT:
+                return new DeLFTTrainer();
             default:
-                throw new IllegalStateException("Unsupported Grobid CRF engine: " + GrobidProperties.getGrobidCRFEngine());
+                throw new IllegalStateException("Unsupported Grobid sequence labelling engine: " + GrobidProperties.getGrobidCRFEngine());
         }
     }
 }
