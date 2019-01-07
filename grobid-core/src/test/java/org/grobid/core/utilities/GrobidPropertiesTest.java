@@ -109,6 +109,17 @@ public class GrobidPropertiesTest {
     }
 
     @Test
+    public void testgetNBThreadsShouldReturnAvailableProcessorsIfZero() {
+        String value = "0";
+        GrobidProperties.setNBThreads(value);
+        assertEquals("The property has not the value expected",
+                String.valueOf(Runtime.getRuntime().availableProcessors()),
+                GrobidProperties.getNBThreads().toString());
+        assertTrue("The property is not greater than zero",
+            GrobidProperties.getNBThreads().intValue() > 0);
+    }
+
+    @Test
     public void testsetisUseLanguageId() {
         String value = "true";
         GrobidProperties.setUseLanguageId(value);
