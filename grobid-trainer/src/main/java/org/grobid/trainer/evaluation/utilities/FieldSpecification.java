@@ -242,6 +242,17 @@ public class FieldSpecification {
 		//citationsFields.add(publisherField);
 		//citationsLabels.add("publisher");
 
+		// citation identifier (will be used for citation mapping, not for matching)
+		FieldSpecification citationIdField = new FieldSpecification();
+		citationIdField.fieldName = "id";
+		citationIdField.isTextual = true;
+		citationIdField.grobidPath.
+			add("@id");
+		citationIdField.nlmPath.
+			add("@id");
+		citationsFields.add(citationIdField);
+		citationsLabels.add("id");
+
 		// full text structures
 		/*FieldSpecification sectionReferenceField = new FieldSpecification();
 		sectionReferenceField.fieldName = "references";
@@ -358,6 +369,12 @@ public class FieldSpecification {
 		//labels.add("citation_marker");
 		//labels.add("figure_marker");
 		//labels.add("table_marker");
-		
 	}
+
+	public static String grobidCitationContextId = "//ref[@type=\"bibr\"]/@target";
+	public static String grobidBibReferenceId = "//listBibl/biblStruct/@id";
+
+	public static String nlmCitationContextId = "//xref[@ref-type=\"bibr\"]/@rid";
+	public static String nlmBibReferenceId = "//ref-list/ref/@id";
+
 }
