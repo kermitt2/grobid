@@ -1595,24 +1595,30 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 
 			report.append("\n======= Citation context resolution ======= \n");
 
-			report.append("\nTotal expected references: \t ").append(totalExpectedReferences);
-			report.append("\nTotal predicted references: \t ").append(totalObservedReferences);
+			report.append("\nTotal expected references: \t ").append(totalExpectedReferences)
+				.append(" - ").append(TextUtilities.formatTwoDecimals((double) totalExpectedReferences / nbFile)).append(" references per article");
+			report.append("\nTotal predicted references: \t ").append(totalObservedReferences)
+				.append(" - ").append(TextUtilities.formatTwoDecimals((double) totalObservedReferences / nbFile)).append(" references per article");
 
 			//report.append("\nTotal observed references (instance): \t ").append(totalObservedInstances);
 			//report.append("\nTotal correct observed references: \t ").append(totalCorrectInstancesRatcliffObershelp);
 
-			report.append("\n\nTotal expected citation contexts: \t ").append(totalExpectedCitations);
-			report.append("\nTotal predicted citation contexts: \t ").append(totalObservedCitations);
-			report.append("\n\nTotal correct predicted citation contexts: \t ").append(totalCorrectObservedCitations);
+			report.append("\n\nTotal expected citation contexts: \t ").append(totalExpectedCitations)
+				.append(" - ").append(TextUtilities.formatTwoDecimals((double) totalExpectedCitations / nbFile)).append(" citation contexts per article");
+			report.append("\nTotal predicted citation contexts: \t ").append(totalObservedCitations)
+				.append(" - ").append(TextUtilities.formatTwoDecimals((double) totalObservedCitations / nbFile)).append(" citation contexts per article");
+			report.append("\n\nTotal correct predicted citation contexts: \t ").append(totalCorrectObservedCitations)
+				.append(" - ").append(TextUtilities.formatTwoDecimals((double) totalCorrectObservedCitations / nbFile)).append(" citation contexts per article");
+
 			report.append("\nTotal wrong predicted citation contexts: \t ").append(totalWrongObservedCitations).append(" (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)");
 
 			double precisionCitationContext = (double) totalCorrectObservedCitations / totalObservedCitations;
 			double recallCitationContext = (double) totalCorrectObservedCitations / totalExpectedCitations;
 			double fscoreCitationContext = (2 * precisionCitationContext * recallCitationContext) / (precisionCitationContext + recallCitationContext);;
 
-			report.append("\n\nPrecision citation contexts: \t ").append(precisionCitationContext);
-			report.append("\nRecall citation contexts: \t ").append(recallCitationContext);
-			report.append("\nfscore citation contexts: \t ").append(fscoreCitationContext);
+			report.append("\n\nPrecision citation contexts: \t ").append(TextUtilities.formatTwoDecimals(precisionCitationContext * 100));
+			report.append("\nRecall citation contexts: \t ").append(TextUtilities.formatTwoDecimals(recallCitationContext * 100));
+			report.append("\nfscore citation contexts: \t ").append(TextUtilities.formatTwoDecimals(fscoreCitationContext * 100));
 			report.append("\n");
 
 		}

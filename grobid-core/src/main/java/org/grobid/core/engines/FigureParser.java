@@ -9,10 +9,12 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.Pair;
+//import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.List;
 
@@ -93,7 +95,7 @@ class FigureParser extends AbstractParser {
     /**
      * The training data creation is called from the full text training creation in cascade.
      */
-    public org.grobid.core.utilities.Pair<String, String> createTrainingData(List<LayoutToken> tokenizations,
+    public Pair<String, String> createTrainingData(List<LayoutToken> tokenizations,
                                                                              String featureVector, String id) {
         //System.out.println(tokenizations.toString() + "\n" );
         String res = null;
@@ -103,7 +105,7 @@ class FigureParser extends AbstractParser {
             LOGGER.error("CRF labeling in FigureParser fails.", e);
         }
         if (res == null) {
-            return new Pair<>(null, featureVector);
+            return Pair.of(null, featureVector);
         }
         //System.out.println(res + "\n" );
         List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
@@ -115,8 +117,8 @@ class FigureParser extends AbstractParser {
         String lastTag = null;
         boolean figOpen = false;
         for (Pair<String, String> l : labeled) {
-            String tok = l.a;
-            String label = l.b;
+            String tok = l.getLeft();
+            String label = l.getRight();
 
             int tokPtr2 = tokPtr;
             for (; tokPtr2 < tokenizations.size(); tokPtr2++) {
@@ -227,7 +229,7 @@ class FigureParser extends AbstractParser {
             sb.append("        </figure>\n");
         }
 
-        return new Pair<>(sb.toString(), featureVector);
+        return Pair.of(sb.toString(), featureVector);
     }
 
     public String getTEIHeader(String id) {
