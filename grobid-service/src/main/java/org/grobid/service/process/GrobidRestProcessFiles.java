@@ -147,6 +147,7 @@ public class GrobidRestProcessFiles {
                                           final boolean generateIDs,
                                           final List<String> teiCoordinates) throws Exception {
         LOGGER.debug(methodLogIn());
+
         String retVal = null;
         Response response = null;
         boolean isParallelExec = GrobidServiceProperties.isParallelExec();

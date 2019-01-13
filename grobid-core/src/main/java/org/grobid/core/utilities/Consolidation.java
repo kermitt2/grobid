@@ -172,12 +172,12 @@ public class Consolidation {
             // call based on the identified DOI
             arguments = new HashMap<String,String>();
             arguments.put("doi", doi);
-        } else if (StringUtils.isNotBlank(title) && StringUtils.isNotBlank(aut)) {
+        } /*else if (StringUtils.isNotBlank(title) && StringUtils.isNotBlank(aut)) {
             // call based on partial metadata
             arguments = new HashMap<String,String>();
             arguments.put("query.title", title);
             arguments.put("query.author", aut);
-        } else if (StringUtils.isNotBlank(rawCitation)) {
+        }*/ else if (StringUtils.isNotBlank(rawCitation)) {
             // call with full raw string
             arguments = new HashMap<String,String>();
             arguments.put("query.bibliographic", rawCitation);
