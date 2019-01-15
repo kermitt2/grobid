@@ -21,11 +21,14 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(GrobidPoolingFactory.class);
 
+	private static volatile Boolean preload = false;
+
 	/**
 	 * Constructor.
 	 */
 	protected GrobidPoolingFactory() {
-		fullInit();
+		//fullInit();
+		init();
 	}
 
 	/**
@@ -62,7 +65,8 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 	 * By contract, clients must call {@link GrobidPoolingFactory#returnEngine}
 	 * when they finish to use the engine.
 	 */
-	public static synchronized Engine getEngineFromPool() {
+	public static synchronized Engine getEngineFromPool(boolean preloadModels) {
+		preload = preloadModels;
 		if (grobidEnginePool == null) {
 			grobidEnginePool = newPoolInstance();
 		}
@@ -87,6 +91,8 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 	public static void returnEngine(Engine engine) {
 		try {
 			//engine.close();
+			if (grobidEnginePool == null) 
+				System.out.println("grobidEnginePool is null !");
 			grobidEnginePool.returnObject(engine);
 		} catch (Exception exp) {
 			throw new GrobidException(
@@ -123,7 +129,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 	 */
 	@Override
 	public Object makeObject() throws Exception {
-		return (createEngine());
+		return (createEngine(this.preload));
 	}
 
 	/**

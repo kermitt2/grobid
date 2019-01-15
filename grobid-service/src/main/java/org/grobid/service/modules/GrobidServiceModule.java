@@ -11,7 +11,6 @@ import org.grobid.service.exceptions.mapper.GrobidExceptionMapper;
 import org.grobid.service.exceptions.mapper.GrobidExceptionsTranslationUtility;
 import org.grobid.service.exceptions.mapper.GrobidServiceExceptionMapper;
 import org.grobid.service.exceptions.mapper.WebApplicationExceptionMapper;
-//import org.grobid.service.process.GrobidRestProcessAdmin;
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
 import org.grobid.service.process.GrobidRestProcessString;

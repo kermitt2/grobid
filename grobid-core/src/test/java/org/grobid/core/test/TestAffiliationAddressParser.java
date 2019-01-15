@@ -20,7 +20,7 @@ public class TestAffiliationAddressParser extends EngineTest{
 	
 	@Before
 	public void init(){
-		engine = new Engine();
+		engine = new Engine(false);
 	}
 
     @AfterClass
