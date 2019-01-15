@@ -239,7 +239,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			addBlock(block);
 			nbTokens = 0;
 			block = null;
-		} else if (qName.equals("xi:include")) {
+		} else if (qName.equals("Illustration")) {
 			// this is normally the vector graphics
 			// such vector graphics are appliedto the whole page, so there is no x,y coordinates available
 			// in the xml - to get them we will need to parse the .vec files
@@ -361,7 +361,8 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 		} else if (qName.equals("Illustration")) {
 			int length = atts.getLength();
 			GraphicObject image = new GraphicObject();
-
+            int page;
+            double x = 0, y = 0, width = 0, height = 0;
 			// Process each attribute
 			for (int i = 0; i < length; i++) {
 				// Get names and values for each attribute
@@ -372,20 +373,28 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 					switch (name) {
 						case "FILEID":
 							image.setFilePath(value);
-							if (value.contains(".vec")) {
+							if (value.contains(".svg")) {
 								image.setType(GraphicObjectType.VECTOR);
 							} else {
 								image.setType(GraphicObjectType.BITMAP);
 							}
 							break;
-						case "mask":
-							if ("true".equals(value)) {
-								image.setMask(true);
-							}
+						case "HPOS":
+                            x = Integer.getInteger(value);
 							break;
+                        case "VPOS":
+                            y = Integer.getInteger(value);
+                            break;
+                        case "WIDTH":
+                            width = Double.parseDouble(value);
+                            break;
+                        case "HEIGHT":
+                            height = Double.parseDouble(value);
+                            break;
 					}
 				}
 			}
+			image.setBoundingBox(BoundingBox.fromPointAndDimensions(currentPage, x, y, width, height));
 			//image.setPage(currentPage);
 			images.add(image);
 		} else if (qName.equals("TextLine")) {
@@ -583,36 +592,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                 }
             }
             block.setEndToken(tokenizations.size());
-		}
-		else if (qName.equals("xi:include")) {
-			// normally this introduces vector graphics
-			int length = atts.getLength();
-			GraphicObject image = new GraphicObject();
-
-			// Process each attribute
-			for (int i = 0; i < length; i++) {
-				// Get names and values for each attribute
-				String name = atts.getQName(i);
-				String value = atts.getValue(i);
-
-				if ((name != null) && (value != null)) {
-					if (name.equals("FILEID")) {
-						// if (images == null)
-						// images = new ArrayList<String>();
-						image.setFilePath(value);
-						if (value.contains(".vec"))
-							image.setType(GraphicObjectType.VECTOR);
-						else
-							image.setType(GraphicObjectType.BITMAP);
-					}
-				}
-			}
-			//image.setPage(currentPage);
-			images.add(image);
-		}
-		// accumulator.setLength(0);
-
-        else if (qName.equals("TextStyle")) {
+		} else if (qName.equals("TextStyle")) {
             int length = atts.getLength();
 
             TextStyles textStyle = new TextStyles();
