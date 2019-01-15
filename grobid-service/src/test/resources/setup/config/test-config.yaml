@@ -1,6 +1,5 @@
 grobid:
   grobidHome: "../grobid-home"
-  grobidServiceProperties: "src/test/resources/setup/config/grobid_service.properties"
   grobidProperties: "src/test/resources/setup/config/grobid.properties"
 
 server:

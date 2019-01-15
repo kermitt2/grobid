@@ -140,8 +140,8 @@ public class TestFullTextParser extends EngineTest {
                 continue;
             }
             for (DocumentPiece p : parts) {
-                DocumentPointer startPtr = p.a;
-                DocumentPointer endPtr = p.b;
+                DocumentPointer startPtr = p.getLeft();
+                DocumentPointer endPtr = p.getRight();
 
                 Block endBlock = doc.getBlocks().get(endPtr.getBlockPtr());
                 assertTrue(endPtr.getTokenBlockPos() < endBlock.getTokens().size());
