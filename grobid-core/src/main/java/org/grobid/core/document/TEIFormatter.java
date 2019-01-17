@@ -36,6 +36,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
+import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
+import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 
 /**
  * Class for generating a TEI representation of a document.
@@ -78,14 +80,15 @@ public class TEIFormatter {
 
     public StringBuilder toTEIHeader(BiblioItem biblio,
                                      String defaultPublicationStatement,
+                                     List<BibDataSet> bds,
                                      GrobidAnalysisConfig config) {
-        return toTEIHeader(biblio, SchemaDeclaration.XSD,
-                defaultPublicationStatement, config);
+        return toTEIHeader(biblio, SchemaDeclaration.XSD, defaultPublicationStatement, bds, config);
     }
 
     public StringBuilder toTEIHeader(BiblioItem biblio,
                                      SchemaDeclaration schemaDeclaration,
                                      String defaultPublicationStatement,
+                                     List<BibDataSet> bds,
                                      GrobidAnalysisConfig config) {
         StringBuilder tei = new StringBuilder();
         tei.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
@@ -785,14 +788,37 @@ public class TEIFormatter {
 			}
 			tei.append(">").append(TextUtilities.HTMLEncode(abstractHeader)).append("</head>\n");*/
 
-            tei.append("\t\t\t\t<p");
-            if (generateIDs) {
-                String divID = KeyGen.getKey().substring(0, 7);
-                tei.append(" xml:id=\"_" + divID + "\"");
+            if ( (biblio.getLabeledAbstract() != null) && (biblio.getLabeledAbstract().length() > 0) ) {
+                // we have available structured abstract, which can be serialized as a full text "piece"
+                StringBuilder buffer = new StringBuilder();
+                try {
+//System.out.println(biblio.getLabeledAbstract());
+                    buffer = toTEITextPiece(buffer,
+                                            biblio.getLabeledAbstract(),
+                                            biblio,
+                                            bds,
+                                            false,
+                                            new LayoutTokenization(biblio.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT)),
+                                            null, 
+                                            null, 
+                                            null, 
+                                            doc,
+                                            config); // no figure, no table, no equation
+                } catch(Exception e) {
+                    throw new GrobidException("An exception occurred while serializing TEI.", e);
+                }
+                tei.append(buffer.toString());
+//System.out.println(buffer.toString());
+            } else {
+                tei.append("\t\t\t\t<p");
+                if (generateIDs) {
+                    String divID = KeyGen.getKey().substring(0, 7);
+                    tei.append(" xml:id=\"_" + divID + "\"");
+                }
+                tei.append(">").append(TextUtilities.HTMLEncode(abstractText)).append("</p>");
             }
-            tei.append(">").append(TextUtilities.HTMLEncode(abstractText)).append("</p>\n");
 
-            tei.append("\t\t\t</abstract>\n");
+            tei.append("\n\t\t\t</abstract>\n");
         }
 
         tei.append("\t\t</profileDesc>\n");
@@ -892,7 +918,7 @@ public class TEIFormatter {
             return buffer;
         }
         buffer.append("\t\t<body>\n");
-        buffer = toTEITextPiece(buffer, result, biblio, bds,
+        buffer = toTEITextPiece(buffer, result, biblio, bds, true, 
                 layoutTokenization, figures, tables, equations, doc, config);
 
         // notes are still in the body
@@ -978,7 +1004,7 @@ public class TEIFormatter {
         buffer.append("\n\t\t\t<div type=\"acknowledgement\">\n");
         StringBuilder buffer2 = new StringBuilder();
 
-        buffer2 = toTEITextPiece(buffer2, reseAcknowledgement, null, bds,
+        buffer2 = toTEITextPiece(buffer2, reseAcknowledgement, null, bds, false,
                 new LayoutTokenization(tokenizationsAcknowledgement), null, null, null, doc, config);
         String acknowResult = buffer2.toString();
         String[] acknowResultLines = acknowResult.split("\n");
@@ -1008,7 +1034,7 @@ public class TEIFormatter {
         }
 
         buffer.append("\t\t\t<div type=\"annex\">\n");
-        buffer = toTEITextPiece(buffer, result, biblio, bds,
+        buffer = toTEITextPiece(buffer, result, biblio, bds, true,
                 new LayoutTokenization(tokenizations), null, null, null, doc, config);
         buffer.append("\t\t\t</div>\n");
 
@@ -1019,6 +1045,7 @@ public class TEIFormatter {
                                          String result,
                                          BiblioItem biblio,
                                          List<BibDataSet> bds,
+                                         boolean keepUnsolvedCallout,
                                          LayoutTokenization layoutTokenization,
                                          List<Figure> figures,
                                          List<Table> tables,
@@ -1026,7 +1053,6 @@ public class TEIFormatter {
                                          Document doc,
                                          GrobidAnalysisConfig config) throws Exception {
         TaggingLabel lastClusterLabel = null;
-//System.out.println(result);
         int startPosition = buffer.length();
 
         //boolean figureBlock = false; // indicate that a figure or table sequence was met
@@ -1042,6 +1068,11 @@ public class TEIFormatter {
         List<Element> divResults = new ArrayList<>();
 
         Element curDiv = teiElement("div");
+        if (config.isGenerateTeiIds()) {
+            String divID = KeyGen.getKey().substring(0, 7);
+            addXmlId(curDiv, "_" + divID);
+        }
+        divResults.add(curDiv);
         Element curParagraph = null;
         int equationIndex = 0; // current equation index position 
         for (TaggingTokenCluster cluster : clusters) {
@@ -1051,11 +1082,14 @@ public class TEIFormatter {
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
             Engine.getCntManager().i(clusterLabel);
-
-
             if (clusterLabel.equals(TaggingLabels.SECTION)) {
                 String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
                 curDiv = teiElement("div");
+                /*if (config.isGenerateTeiIds()) {
+                    String divID = KeyGen.getKey().substring(0, 7);
+                    addXmlId(curDiv, "_" + divID);
+                }*/
+                
                 Element head = teiElement("head");
                 // section numbers
                 Pair<String, String> numb = getSectionNumber(clusterContent);
@@ -1065,6 +1099,12 @@ public class TEIFormatter {
                 } else {
                     head.appendChild(clusterContent);
                 }
+
+                if (config.isGenerateTeiIds()) {
+                    String divID = KeyGen.getKey().substring(0, 7);
+                    addXmlId(head, "_" + divID);
+                }
+
                 curDiv.appendChild(head);
                 divResults.add(curDiv);
             } else if (clusterLabel.equals(TaggingLabels.EQUATION) || 
@@ -1102,11 +1142,19 @@ public class TEIFormatter {
                 String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
                 Element note = teiElement("note", clusterContent);
                 note.addAttribute(new Attribute("type", "other"));
+                if (config.isGenerateTeiIds()) {
+                    String divID = KeyGen.getKey().substring(0, 7);
+                    addXmlId(note, "_" + divID);
+                }
                 curDiv.appendChild(note);
             } else if (clusterLabel.equals(TaggingLabels.PARAGRAPH)) {
                 String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
                 if (isNewParagraph(lastClusterLabel, curParagraph)) {
                     curParagraph = teiElement("p");
+                    if (config.isGenerateTeiIds()) {
+                        String divID = KeyGen.getKey().substring(0, 7);
+                        addXmlId(curParagraph, "_" + divID);
+                    }
                     curDiv.appendChild(curParagraph);
                 }
                 curParagraph.appendChild(clusterContent);
@@ -1121,7 +1169,8 @@ public class TEIFormatter {
                     refNodes = markReferencesTEILuceneBased(chunkRefString,
                             refTokens,
                             doc.getReferenceMarkerMatcher(),
-                            config.isGenerateTeiCoordinates("ref"));
+                            config.isGenerateTeiCoordinates("ref"), 
+                            keepUnsolvedCallout);
 
                 } else if (clusterLabel.equals(TaggingLabels.FIGURE_MARKER)) {
                     refNodes = markReferencesFigureTEI(chunkRefString, refTokens, figures,
@@ -1150,7 +1199,20 @@ public class TEIFormatter {
             lastClusterLabel = cluster.getTaggingLabel();
         }
 
-        buffer.append(XmlBuilderUtils.toXml(divResults));
+        // remove possibly empty div in the div list
+        if (divResults.size() != 0) {
+            for(int i = divResults.size()-1; i>=0; i--) {
+                Element theDiv = divResults.get(i);
+                if ( (theDiv.getChildElements() == null) || (theDiv.getChildElements().size() == 0) ) {
+                    divResults.remove(i);
+                }
+            } 
+        }
+
+        if (divResults.size() != 0) 
+            buffer.append(XmlBuilderUtils.toXml(divResults));
+        else
+            buffer.append(XmlBuilderUtils.toXml(curDiv));
 
         // we apply some overall cleaning and simplification
         buffer = TextUtilities.replaceAll(buffer, "</head><head",
@@ -1177,7 +1239,7 @@ public class TEIFormatter {
 
         if (figures != null) {
             for (Figure figure : figures) {
-                String figSeg = figure.toTEI(config);
+                String figSeg = figure.toTEI(config, doc, this);
                 if (figSeg != null) {
                     buffer.append(figSeg).append("\n");
                 }
@@ -1185,7 +1247,7 @@ public class TEIFormatter {
         }
         if (tables != null) {
             for (Table table : tables) {
-                String tabSeg = table.toTEI(config);
+                String tabSeg = table.toTEI(config, doc, this);
                 if (tabSeg != null) {
                     buffer.append(tabSeg).append("\n");
                 }
@@ -1655,7 +1717,9 @@ public class TEIFormatter {
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
      */
     public List<Node> markReferencesTEILuceneBased(String text, List<LayoutToken> refTokens,
-                                                   ReferenceMarkerMatcher markerMatcher, boolean generateCoordinates) throws EntityMatcherException {
+                                                   ReferenceMarkerMatcher markerMatcher, 
+                                                   boolean generateCoordinates,
+                                                   boolean keepUnsolvedCallout) throws EntityMatcherException {
         // safety tests
         if (text == null || text.trim().length() == 0 || text.endsWith("</ref>") || text.startsWith("<ref"))
             return Collections.<Node>singletonList(new Text(text));
@@ -1682,10 +1746,15 @@ public class TEIFormatter {
             }
             ref.appendChild(markerText);
 
+            boolean solved = false;
             if (matchResult.getBibDataSet() != null) {
                 ref.addAttribute(new Attribute("target", "#b" + matchResult.getBibDataSet().getResBib().getOrdinal()));
+                solved = true;
             }
-            nodes.add(ref);
+            if ( solved || (!solved && keepUnsolvedCallout) )
+                nodes.add(ref);
+            else 
+                nodes.add(textNode(matchResult.getText()));
         }
         if (spaceEnd)
             nodes.add(new Text(" "));

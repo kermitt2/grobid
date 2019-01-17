@@ -298,7 +298,7 @@ public class Document implements Serializable {
         List<LayoutToken> tokenizationsReferences = new ArrayList<LayoutToken>();
 
         for (DocumentPiece dp : blockReferences) {
-            tokenizationsReferences.addAll(tokenizations.subList(dp.a.getTokenDocPos(), dp.b.getTokenDocPos()));
+            tokenizationsReferences.addAll(tokenizations.subList(dp.getLeft().getTokenDocPos(), dp.getRight().getTokenDocPos()));
         }
 
         return tokenizationsReferences;
@@ -634,7 +634,6 @@ public class Document implements Serializable {
     public String getHeaderFeatured(boolean getHeader,
                                     boolean withRotation) {
         if (getHeader) {
-            // String theHeader = getHeaderZFN(firstPass);
             String theHeader = getHeader();
             if ((theHeader == null) || (theHeader.trim().length() <= 1)) {
                 theHeader = getHeaderLastHope();
@@ -1384,7 +1383,7 @@ public class Document implements Serializable {
 
     //helper
     public List<LayoutToken> getDocumentPieceTokenization(DocumentPiece dp) {
-        return tokenizations.subList(dp.a.getTokenDocPos(), dp.b.getTokenDocPos() + 1);
+        return tokenizations.subList(dp.getLeft().getTokenDocPos(), dp.getRight().getTokenDocPos() + 1);
     }
 
     public String getDocumentPieceText(DocumentPiece dp) {
@@ -1434,8 +1433,8 @@ public class Document implements Serializable {
 
         List<LayoutToken> tokenizationParts = new ArrayList<LayoutToken>();
         for (DocumentPiece docPiece : documentParts) {
-            DocumentPointer dp1 = docPiece.a;
-            DocumentPointer dp2 = docPiece.b;
+            DocumentPointer dp1 = docPiece.getLeft();
+            DocumentPointer dp2 = docPiece.getRight();
 
             int tokens = dp1.getTokenDocPos();
             int tokene = dp2.getTokenDocPos();

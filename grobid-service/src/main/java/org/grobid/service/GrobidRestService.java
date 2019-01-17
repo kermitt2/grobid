@@ -20,12 +20,14 @@ import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.grobid.core.factory.AbstractEngineFactory;
 import org.grobid.core.utilities.GrobidProperties;
-//import org.grobid.service.process.GrobidRestProcessAdmin;
+import org.grobid.core.engines.Engine;
+import org.grobid.core.factory.GrobidPoolingFactory;
+
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
 import org.grobid.service.process.GrobidRestProcessString;
 import org.grobid.service.util.GrobidRestUtils;
-import org.grobid.service.util.GrobidServiceProperties;
+//import org.grobid.service.util.GrobidServiceProperties;
 import org.grobid.service.util.ZipUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +38,8 @@ import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+
 
 /**
  * RESTful service for the GROBID system.
@@ -59,8 +63,6 @@ public class GrobidRestService implements GrobidPaths {
     private static final String XML = "xml";
     private static final String INPUT = "input";
 
-    //private final GrobidRestProcessAdmin restProcessAdmin;
-
     @Inject
     private GrobidRestProcessFiles restProcessFiles;
 
@@ -72,16 +74,30 @@ public class GrobidRestService implements GrobidPaths {
 
     @Inject
     public GrobidRestService(GrobidServiceConfiguration configuration) {
-        //this.restProcessAdmin = grobidRestProcessAdmin;
         GrobidProperties.set_GROBID_HOME_PATH(new File(configuration.getGrobid().getGrobidHome()).getAbsolutePath());
         if (configuration.getGrobid().getGrobidProperties() != null) {
             GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidProperties()).getAbsolutePath());
         } else {
             GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidHome(), "/config/grobid.properties").getAbsolutePath());
         }
+        GrobidProperties.getInstance();
+        GrobidProperties.setContextExecutionServer(true);
         LOGGER.info("Initiating Servlet GrobidRestService");
-        AbstractEngineFactory.fullInit();
-        GrobidServiceProperties.getInstance(configuration);
+        AbstractEngineFactory.init();
+        Engine engine = null;
+        try {
+            // this will init or not all the models in memory
+            engine = Engine.getEngine(configuration.getGrobid().getModelPreload());
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time.");
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs when initiating the grobid engine. ", exp);
+        } finally {
+            if (engine != null) {
+                GrobidPoolingFactory.returnEngine(engine);
+            }
+        }
+        
         LOGGER.info("Initiating of Servlet GrobidRestService finished.");
     }
 
@@ -196,7 +212,7 @@ public class GrobidRestService implements GrobidPaths {
         int consolHeader = validateConsolidationParam(consolidateHeader);
         int consolCitations = validateConsolidationParam(consolidateCitations);
         boolean generate = validateGenerateIdParam(generateIDs);
-
+        
         List<String> teiCoordinates = collectCoordinates(coordinates);
 
         return restProcessFiles.processFulltextDocument(inputStream, consolHeader, consolCitations, startPage, endPage, generate, teiCoordinates);

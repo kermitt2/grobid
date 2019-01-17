@@ -4,9 +4,11 @@ import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import org.apache.commons.lang3.StringUtils;
-import org.grobid.core.utilities.Pair;
+//import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.Triple;
 import org.wipo.analyzers.wipokr.utils.StringUtil;
+
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +32,7 @@ public class GenericTaggerUtils {
     public static List<Pair<String, String>> getTokensAndLabels(String labeledResult) {
         Function<List<String>, Pair<String, String>> fromSplits = new Function<List<String>, Pair<String, String>>() {
             @Override public Pair<String, String> apply(List<String> splits) {
-                return new Pair<>(splits.get(0), splits.get(splits.size() - 1));
+                return Pair.of(splits.get(0), splits.get(splits.size() - 1));
             }
         };
 

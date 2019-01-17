@@ -90,7 +90,6 @@ public class CrossrefClient implements Closeable {
 					return t;
 				}
 			}), interval, TimeUnit.MILLISECONDS, iterations);
-			//printLog(null, "!!!!!!!!!!!!!!!!!!!!!!! Setting timedSemaphore limits... " + iterations + " / " + interval);
 		}
 	}
 	
