@@ -1239,7 +1239,7 @@ public class TEIFormatter {
 
         if (figures != null) {
             for (Figure figure : figures) {
-                String figSeg = figure.toTEI(config);
+                String figSeg = figure.toTEI(config, doc, this);
                 if (figSeg != null) {
                     buffer.append(figSeg).append("\n");
                 }
@@ -1247,7 +1247,7 @@ public class TEIFormatter {
         }
         if (tables != null) {
             for (Table table : tables) {
-                String tabSeg = table.toTEI(config);
+                String tabSeg = table.toTEI(config, doc, this);
                 if (tabSeg != null) {
                     buffer.append(tabSeg).append("\n");
                 }

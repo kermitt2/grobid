@@ -137,7 +137,6 @@ public class FullTextParser extends AbstractParser {
 				// if featSeg is null, it usually means that no body segment is found in the
 				// document segmentation
 				String bodytext = featSeg.getLeft();
-//System.out.println(bodytext);
 				layoutTokenization = featSeg.getRight();
 				//tokenizationsBody = featSeg.getB().getTokenization();
                 //layoutTokensBody = featSeg.getB().getLayoutTokens();
@@ -146,10 +145,28 @@ public class FullTextParser extends AbstractParser {
 				} else {
 					LOGGER.debug("Fulltext model: The input to the CRF processing is empty");
 				}
-				//LOGGER.info(rese);
+
 				// we apply now the figure and table models based on the fulltext labeled output
 				figures = processFigures(rese, layoutTokenization.getTokenization(), doc);
+                // further parse the caption
+                for(Figure figure : figures) {
+                    if ((figure.getCaptionLayoutTokens() != null) && (figure.getCaptionLayoutTokens().size() > 0) ) {
+                        Pair<String, List<LayoutToken>> captionProcess = processShort(figure.getCaptionLayoutTokens(), doc);
+                        figure.setLabeledCaption(captionProcess.getLeft());
+                        figure.setCaptionLayoutTokens(captionProcess.getRight());
+                    }
+                }
+
 				tables = processTables(rese, layoutTokenization.getTokenization(), doc);
+                // further parse the caption
+                for(Table table : tables) {
+                    if ( (table.getCaptionLayoutTokens() != null) && (table.getCaptionLayoutTokens().size() > 0) ) {
+                        Pair<String, List<LayoutToken>> captionProcess = processShort(table.getCaptionLayoutTokens(), doc);
+                        table.setLabeledCaption(captionProcess.getLeft());
+                        table.setCaptionLayoutTokens(captionProcess.getRight());
+                    }
+                }
+
 				equations = processEquations(rese, layoutTokenization.getTokenization(), doc);
 			} else {
 				LOGGER.debug("Fulltext model: The featured body is empty");
@@ -175,13 +192,10 @@ public class FullTextParser extends AbstractParser {
                     int posStartAbstract = getDocIndexToken(doc, abstractTokens.get(0));
                     int posEndAbstract = getDocIndexToken(doc, abstractTokens.get(endInd));
                     DocumentPointer dp1 = new DocumentPointer(doc, abstractTokens.get(0).getBlockPtr(), posStartAbstract);
-//System.out.println("dp1: " + dp1.toString());
                     DocumentPointer dp2 = new DocumentPointer(doc, abstractTokens.get(endInd).getBlockPtr(), posEndAbstract);
-//System.out.println("dp2: " + dp2.toString());                    
                     DocumentPiece piece = new DocumentPiece(dp1, dp2);
                     documentParts.add(piece);
                     featSeg = getBodyTextFeatured(doc, documentParts);
-//System.out.println(featSeg);
                     String rese2 = null;
                     List<LayoutToken> tokenizationsAbstract = null;
                     if (featSeg != null) {
@@ -192,10 +206,7 @@ public class FullTextParser extends AbstractParser {
                         if (isNotEmpty(trim(abstractText))) 
                             rese2 = label(abstractText);
                         resHeader.setLabeledAbstract(rese2);
-//System.out.println(resHeader.getLabeledAbstract());
-//System.out.println(tokenizationsAbstract.toString());
                         resHeader.setLayoutTokensForLabel(tokenizationsAbstract, TaggingLabels.HEADER_ABSTRACT);
-                        //resHeader.setTokenizationsAbstract(tokenizationsAbstract);
                     }
                 }
             }
@@ -269,6 +280,33 @@ public class FullTextParser extends AbstractParser {
 		} catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
         }
+    }
+
+    /**
+     * Process a simple segment of layout tokens with the full text model
+     */
+    public Pair<String, List<LayoutToken>> processShort(List<LayoutToken> tokens, Document doc) {
+        SortedSet<DocumentPiece> documentParts = new TreeSet<DocumentPiece>();
+        int endInd = tokens.size()-1;
+        int posStartAbstract = getDocIndexToken(doc, tokens.get(0));
+        int posEndAbstract = getDocIndexToken(doc, tokens.get(endInd));
+        DocumentPointer dp1 = new DocumentPointer(doc, tokens.get(0).getBlockPtr(), posStartAbstract);
+        DocumentPointer dp2 = new DocumentPointer(doc, tokens.get(endInd).getBlockPtr(), posEndAbstract);
+        DocumentPiece piece = new DocumentPiece(dp1, dp2);
+        documentParts.add(piece);
+        Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentParts);
+        String res = null;
+        List<LayoutToken> layoutTokenization = null;
+        if (featSeg != null) {
+            String featuredText = featSeg.getLeft();
+            LayoutTokenization layouts = featSeg.getRight();    
+            if (layouts != null)
+                layoutTokenization = layouts.getTokenization();
+            if ( (featuredText != null) && (featuredText.trim().length() > 0) ) {               
+                res = label(featuredText);
+            }
+        }
+        return Pair.of(res, layoutTokenization);
     }
 
 	static public Pair<String, LayoutTokenization> getBodyTextFeatured(Document doc,
@@ -1660,6 +1698,7 @@ public class FullTextParser extends AbstractParser {
         return res;
     }
 
+
     /**
      * Process figures identified by the full text model
      */
@@ -1685,7 +1724,6 @@ public class FullTextParser extends AbstractParser {
 			result.setBlockPtrs(blockPtrs);
 
             result.setLayoutTokens(tokenizationFigure);
-
 
 			// the first token could be a space from previous page
 			for (LayoutToken lt : tokenizationFigure) {

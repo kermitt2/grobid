@@ -10,7 +10,6 @@ import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LayoutTokensUtil;
-//import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,8 +49,6 @@ public class TableParser extends AbstractParser {
     }
 
     private Table getExtractionResult(List<LayoutToken> tokenizations, String result) {
-//		System.out.println("-----------------");
-//		System.out.println(result);
         Table table = new Table();
         table.setTextArea(Collections.singletonList(BoundingBoxCalculator.calculateOneBox(tokenizations, true)));
 
@@ -70,6 +67,7 @@ public class TableParser extends AbstractParser {
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));
             if (clusterLabel.equals(TBL_DESC)) {
                 table.appendCaption(clusterContent);
+                table.appendCaptionLayoutTokens(tokens);
                 table.getFullDescriptionTokens().addAll(tokens);
             } else if (clusterLabel.equals(TBL_HEAD)) {
                 table.appendHeader(clusterContent);
@@ -96,7 +94,6 @@ public class TableParser extends AbstractParser {
      */
     public Pair<String, String> createTrainingData(List<LayoutToken> tokenizations,
                                                                              String featureVector, String id) {
-//System.out.println(tokenizations.toString() + "\n" );
         String res = null;
         try {
             res = label(featureVector);
@@ -106,7 +103,7 @@ public class TableParser extends AbstractParser {
         if (res == null) {
             return Pair.of(null, featureVector);
         }
-//System.out.println(res + "\n" );
+
         List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
         StringBuilder sb = new StringBuilder();
 
