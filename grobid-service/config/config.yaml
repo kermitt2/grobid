@@ -1,7 +1,12 @@
 grobid:
- # NOTE: change these values to absolute paths when running on production
+  # NOTE: change these values to absolute paths when running on production
   grobidHome: "grobid-home"
-  grobidServiceProperties: "grobid-service/config/grobid_service.properties"
+  
+  # how to load the models, 
+  # false -> models are loaded when needed (default), avoiding puting in memory useless models
+  # true -> all the models are loaded into memory at the server statup, slow the start of the services and models not  
+  # used will take some memory
+  modelPreload: false
 
 server:
     type: custom

@@ -48,6 +48,17 @@ We recommend, in particular to have a look at the metrics (using the [Metric lib
 
 If required, modify the file under `grobid/grobid-service/config/config.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID. 
 
+You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. Loading all models at service startup will slow down the start of the server and will use more memories than the lazy mode in case only a few services will be used. For preloading all the models, set the following config parameter to `true`: 
+
+```yaml
+grobid:
+  # how to load the models, 
+  # false -> models are loaded when needed (default), avoiding puting in memory models which are not used
+  # true -> all the models are loaded into memory at the server statup, slow the start of the services and models not  
+  # used will take some memory
+  modelPreload: false    
+```
+
 
 ## Clients for GROBID Web Services
 
@@ -576,23 +587,7 @@ A `503` error with the default parallel mode normally means that all the threads
 
 The Grobid RESTful API provides a very efficient way to use the library out of the box, because the service exploits multithreading.
 
-The service can work following two modes:
-
-+ Parallel execution (default): a pool of threads is used to process requests in parallel. The following property must be set to true in the file `grobid-home/config/grobid_service.properties`
-
-```java
-	org.grobid.service.is.parallel.execution=true
-```
-
 As Grobid is thread-safe and manages a pool of parser instances, it is advised to use several threads to call the REST service for scaling the processing to large collections of documents. This improves considerably the performance of the services for PDF processing because documents can be processed while other are uploading. 
-
-+ Sequencial execution: a single Grobid instance is used and process the requests as a queue. The following property must be set to false in the file grobid-home/config/grobid_service.properties
-
-```java
-	org.grobid.service.is.parallel.execution=false
-```
-
-This mode should in general be avoided, it is only relevant for servers running with a low amount of RAM, for instance less than 2-4GB, and single core, otherwise the default parallel execution must be used. 
 
 Setting the maximum number of parallel processing is done in the property file under `grobid-home/config/grobid.properties`. Adjust this number (default 10) following the number of cores/threads available on your server: 
 

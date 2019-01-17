@@ -272,6 +272,9 @@ public class BiblioItem {
     private String confidence = null;
     private double conf = 0.0;
 
+    // abstract labeled featured sequence (to produce a structured abstract with, in particular, reference callout)
+    private String labeledAbstract = null;
+
     // date for electronic publishing
     private String e_year = null;
     private String e_month = null;
@@ -515,6 +518,10 @@ public class BiblioItem {
 
     public String getAbstract() {
         return abstract_;
+    }
+
+    public String getLabeledAbstract() {
+        return labeledAbstract;
     }
 
     public String getEmail() {
@@ -945,6 +952,10 @@ public class BiblioItem {
 
     public void setAbstract(String a) {
         abstract_ = cleanAbstract(a);
+    }
+
+    public void setLabeledAbstract(String labeledAbstract) {
+        this.labeledAbstract = labeledAbstract;
     }
 
     public void setLocationPublisher(String s) {
@@ -4070,6 +4081,12 @@ public class BiblioItem {
         return labeledTokens.get(headerLabel.getLabel());
     }
 
+    public void setLayoutTokensForLabel(List<LayoutToken> tokens, TaggingLabel headerLabel) {
+        if (labeledTokens == null)
+            labeledTokens = new TreeMap<String, List<LayoutToken>>();
+        labeledTokens.put(headerLabel.getLabel(), tokens);
+    }
+
     public void generalResultMapping(Document doc, String labeledResult, List<LayoutToken> tokenizations) {
         if (labeledTokens == null)
             labeledTokens = new TreeMap<String, List<LayoutToken>>();
@@ -4083,7 +4100,8 @@ public class BiblioItem {
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
             List<LayoutToken> clusterTokens = cluster.concatTokens();
-            List<LayoutToken> theList = labeledTokens.get(clusterLabel.toString());
+            List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
+
             if (theList == null)
                 theList = new ArrayList<LayoutToken>();
             for (LayoutToken token : clusterTokens)

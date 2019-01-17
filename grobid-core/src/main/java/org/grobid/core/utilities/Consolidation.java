@@ -177,12 +177,12 @@ public class Consolidation {
             arguments = new HashMap<String,String>();
             arguments.put("query.title", title);
             arguments.put("query.author", aut);
-        } else if (StringUtils.isNotBlank(rawCitation)) {
+        }/* else if (StringUtils.isNotBlank(rawCitation)) {
             // call with full raw string
             arguments = new HashMap<String,String>();
             arguments.put("query.bibliographic", rawCitation);
             //arguments.put("query", rawCitation);
-        }
+        }*/
 
         if (arguments == null || arguments.size() == 0) {
             return null;

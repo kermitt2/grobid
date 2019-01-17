@@ -1,9 +1,10 @@
 package org.grobid.core.data;
 
-import nu.xom.Attribute;
-import nu.xom.Element;
+import org.grobid.core.GrobidModels;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.document.xml.XmlBuilderUtils;
+import org.grobid.core.document.Document;
+import org.grobid.core.document.TEIFormatter;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.layout.BoundingBox;
@@ -12,9 +13,23 @@ import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.engines.counters.TableRejectionCounters;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.utilities.KeyGen;
+import org.grobid.core.engines.label.TaggingLabels;
+import org.grobid.core.engines.label.TaggingLabel;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import nu.xom.Attribute;
+import nu.xom.Element;
+import nu.xom.Node;
+import nu.xom.Text;
+
+import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
+import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
+import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 
 /**
  * Class for representing a table.
@@ -38,7 +53,7 @@ public class Table extends Figure {
     }
 
 	@Override
-    public String toTEI(GrobidAnalysisConfig config) {
+    public String toTEI(GrobidAnalysisConfig config, Document doc, TEIFormatter formatter) {
 		if (StringUtils.isEmpty(header) && StringUtils.isEmpty(caption)) {
 			return null;
 		}
@@ -61,12 +76,57 @@ public class Table extends Figure {
 		Element labelEl = XmlBuilderUtils.teiElement("label",
         		LayoutTokensUtil.normalizeText(label.toString()));
 
-		Element descEl = XmlBuilderUtils.teiElement("figDesc");
-		//descEl.appendChild(LayoutTokensUtil.normalizeText(getFullDescriptionTokens()).trim());
+		/*Element descEl = XmlBuilderUtils.teiElement("figDesc");
 		descEl.appendChild(LayoutTokensUtil.normalizeText(caption.toString()).trim());
 		if ((config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("figure"))) {
 			XmlBuilderUtils.addCoords(descEl, LayoutTokensUtil.getCoordsString(getFullDescriptionTokens()));
-		}
+		}*/
+
+        Element desc = null;
+        if (caption != null) {
+            // if the segment has been parsed with the full text model we further extract the clusters
+            // to get the bibliographical references
+
+            desc = XmlBuilderUtils.teiElement("figDesc");
+            if (config.isGenerateTeiIds()) {
+                String divID = KeyGen.getKey().substring(0, 7);
+                addXmlId(desc, "_" + divID);
+            }
+
+            if ( (labeledCaption != null) && (labeledCaption.length() > 0) ) {
+                TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledCaption, captionLayoutTokens);
+                List<TaggingTokenCluster> clusters = clusteror.cluster();                
+                for (TaggingTokenCluster cluster : clusters) {
+                    if (cluster == null) {
+                        continue;
+                    }
+
+                    TaggingLabel clusterLabel = cluster.getTaggingLabel();
+                    String clusterContent = LayoutTokensUtil.normalizeText(cluster.concatTokens());
+                    if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
+                        try {
+                            List<Node> refNodes = formatter.markReferencesTEILuceneBased(clusterContent,
+                                    cluster.concatTokens(),
+                                    doc.getReferenceMarkerMatcher(),
+                                    config.isGenerateTeiCoordinates("ref"), 
+                                    false);
+                            if (refNodes != null) {
+                                for (Node n : refNodes) {
+                                    desc.appendChild(n);
+                                }
+                            }
+                        } catch(Exception e) {
+                            LOGGER.warn("Problem when serializing TEI fragment for figure caption", e);
+                        }
+                    } else {
+                        desc.appendChild(textNode(clusterContent));
+                    }
+                }
+            } else {
+                desc.appendChild(LayoutTokensUtil.normalizeText(caption.toString()).trim());
+            }
+        }
+
 
 		Element contentEl = XmlBuilderUtils.teiElement("table");
 		contentEl.appendChild(LayoutTokensUtil.toText(getContentTokens()));
@@ -76,7 +136,8 @@ public class Table extends Figure {
 
 		tableElement.appendChild(headEl);
 		tableElement.appendChild(labelEl);
-		tableElement.appendChild(descEl);
+        if (desc != null)
+    		tableElement.appendChild(desc);
 		tableElement.appendChild(contentEl);
 
 		return tableElement.toXML();

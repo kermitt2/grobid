@@ -233,13 +233,15 @@ public class Engine implements Closeable {
     /**
      * Constructor for the Grobid engine instance.
      */
-    public Engine() {
+    public Engine(boolean loadModels) {
         /*
          * Runtime.getRuntime().addShutdownHook(new Thread() {
 		 *
 		 * @Override public void run() { try { close(); } catch (IOException e)
 		 * { LOGGER.error("Failed to close all resources: " + e); } } });
 		 */
+        if (loadModels)
+            parsers.initAll();
     }
 
     /**
@@ -1006,8 +1008,11 @@ public class Engine implements Closeable {
      * @return a new engine from GrobidFactory if the execution is parallel,
      *         else return the instance of engine.
      */
-    public static Engine getEngine(boolean isparallelExec) {
+    /*public static Engine getEngine(boolean isparallelExec) {
         return isparallelExec ? GrobidPoolingFactory.getEngineFromPool()
                 : GrobidFactory.getInstance().getEngine();
+    }*/
+    public static Engine getEngine(boolean preload) {
+        return GrobidPoolingFactory.getEngineFromPool(preload);
     }
 }
