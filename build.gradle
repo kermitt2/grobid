@@ -92,6 +92,30 @@ subprojects {
         archives sourceJar
     }
 
+
+    task gitRev(type: Exec) {
+        commandLine 'git', 'rev-parse', '--short', 'HEAD'
+        standardOutput = new ByteArrayOutputStream()
+        ext.hash = {
+            standardOutput.toString()
+        }
+    }
+
+    // allows to upload non-snapshot versions that are tight to git revision (substitutes the version if it's a snapshot one)
+    // usage "gradle uploadArchives -PversionWithGitRev"
+    task changeVersionIfNeeded(dependsOn: gitRev) {
+        doLast {
+            def suffix = '-SNAPSHOT'
+            if (project.hasProperty('versionWithGitRev') && project.version.endsWith(suffix)) {
+                println project.version
+                project.version = project.version.substring(0, project.version.length() - suffix.length()) + "-" + tasks.gitRev.hash()
+                println "Version to be uploaded: " + project.version
+            }
+        }
+    }
+
+    compileJava.dependsOn(changeVersionIfNeeded)
+
     uploadArchives {
         // if you want to enable uploading to some maven repo, add those properties to ~/.gradle/gradle.properties, e.g.:
         /*
