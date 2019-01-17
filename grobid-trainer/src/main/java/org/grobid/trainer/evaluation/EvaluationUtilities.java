@@ -129,7 +129,6 @@ public class EvaluationUtilities {
 			long time = System.currentTimeMillis();
 			theResult = taggerFunction.apply(citationBlocks);
 			bufReader.close();
-System.out.println(theResult);
             System.out.println("Labeling took: " + (System.currentTimeMillis() - time) + " ms");
         } catch (Exception e) {
 			throw new GrobidException("An exception occurred while evaluating Grobid.", e);
