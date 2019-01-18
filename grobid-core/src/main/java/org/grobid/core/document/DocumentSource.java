@@ -90,10 +90,11 @@ public class DocumentSource {
             pdf2xml.append(" -outline ");
         }
 
-        //pdf2xml.append(" -readingOrder ");
+        pdf2xml.append(" -readingOrder ");
 
         pdf2xml.append(" -filesLimit 2000 ");
 
+        System.out.println(pdf2xml);
         //pdf2xml.append(" -conf <path to config> ");
         return pdf2xml.toString();
     }
