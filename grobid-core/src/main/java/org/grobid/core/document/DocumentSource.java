@@ -91,6 +91,7 @@ public class DocumentSource {
         }
 
         pdf2xml.append(" -readingOrder ");
+        pdf2xml.append(" -ocr ");
 
         pdf2xml.append(" -filesLimit 2000 ");
 
