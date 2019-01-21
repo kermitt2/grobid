@@ -684,12 +684,22 @@ public class MonographParser extends AbstractParser {
             List<LayoutToken> tokens = doc.getTokenizations();
 
             DocumentNode currentNode = outlineRoot;
-            // get the first node
-            while(currentNode.getChildren() != null) {
+            // preorder traversal of the table of contents 
+            LinkedList<DocumentNode> stackTOC = new LinkedList<DocumentNode>();
+            if ( currentNode != null ) {
+                stackTOC.push(currentNode);
+            }
+            while ( stackTOC.size() > 0) {
+                currentNode = stackTOC.pop();
+                builder.append(currentNode.getLabel()+"\n");
                 List<DocumentNode> children = currentNode.getChildren();
-                if (children.size() == 0)
-                    break;
-                currentNode = children.get(0);
+                if ( children != null ) {
+                    int s = children.size();
+                    while ( s > 0 ){
+                        s = s - 1;
+                        stackTOC.push(children.get(s));
+                    }
+                }
             }
 
             for(LayoutToken token : tokens) {
