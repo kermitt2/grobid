@@ -6,7 +6,6 @@ timeout=20   # 20 seconds
 interval=1
 # Delay between posting the SIGTERM signal and destroying the process by SIGKILL.
 delay=0
-
 command=${0:0:${#0}-7}
 
 # kill -0 pid   Exit code indicates if a signal may be sent to $pid process.
