@@ -690,19 +690,30 @@ public class MonographParser extends AbstractParser {
             if ( tocExists ) {
                 builder.append("<div type=\"contents\">\n");
                 builder.append("    <list>\n");
+                currentNode.setAddress("*");
                 stackTOC.push(currentNode);
             }
             while ( stackTOC.size() > 0) {
                 currentNode = stackTOC.pop();
-                builder.append("        <item>"
+                String gornString = currentNode.getAddress();
+                builder.append("        <item n=" 
+                 + gornString + ">"
                  + currentNode.getLabel()
                  + "        </item>\n");
+                if (gornString == "*") {
+                    gornString = "";
+                }
+                else {
+                    gornString += ".";
+                }
                 List<DocumentNode> children = currentNode.getChildren();
                 if ( children != null ) {
                     int s = children.size();
                     while ( s > 0 ){
                         s = s - 1;
-                        stackTOC.push(children.get(s));
+                        currentNode = children.get(s);
+                        currentNode.setAddress(gornString+String.valueOf(s));
+                        stackTOC.push(currentNode);
                     }
                 }
             }
