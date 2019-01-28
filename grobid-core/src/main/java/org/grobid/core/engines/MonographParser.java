@@ -689,11 +689,14 @@ public class MonographParser extends AbstractParser {
             boolean tocExists = ( currentNode != null );
             if ( tocExists ) {
                 builder.append("<div type=\"contents\">\n");
+                builder.append("    <list>\n");
                 stackTOC.push(currentNode);
             }
             while ( stackTOC.size() > 0) {
                 currentNode = stackTOC.pop();
-                builder.append(currentNode.getLabel()+"\n");
+                builder.append("        <item>"
+                 + currentNode.getLabel()
+                 + "        </item>\n");
                 List<DocumentNode> children = currentNode.getChildren();
                 if ( children != null ) {
                     int s = children.size();
@@ -704,6 +707,7 @@ public class MonographParser extends AbstractParser {
                 }
             }
             if ( tocExists ) {
+                builder.append("    </list>\n");
                 builder.append("</div>\n");
             }
 
