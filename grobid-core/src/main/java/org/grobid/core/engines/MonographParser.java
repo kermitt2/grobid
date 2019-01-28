@@ -670,7 +670,7 @@ public class MonographParser extends AbstractParser {
             }
 
             // TBD: language identifier here on content text sample
-            String lang = "en";
+            String lang = "fr";
 
             doc.produceStatistics();
             StringBuilder builder = new StringBuilder();
