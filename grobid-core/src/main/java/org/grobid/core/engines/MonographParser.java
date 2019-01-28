@@ -686,7 +686,9 @@ public class MonographParser extends AbstractParser {
             DocumentNode currentNode = outlineRoot;
             // preorder traversal of the table of contents 
             LinkedList<DocumentNode> stackTOC = new LinkedList<DocumentNode>();
-            if ( currentNode != null ) {
+            boolean tocExists = ( currentNode != null );
+            if ( tocExists ) {
+                builder.append("<div type=\"contents\">\n");
                 stackTOC.push(currentNode);
             }
             while ( stackTOC.size() > 0) {
@@ -700,6 +702,9 @@ public class MonographParser extends AbstractParser {
                         stackTOC.push(children.get(s));
                     }
                 }
+            }
+            if ( tocExists ) {
+                builder.append("</div>\n");
             }
 
             for(LayoutToken token : tokens) {
