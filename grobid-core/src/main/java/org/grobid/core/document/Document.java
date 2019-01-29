@@ -1346,6 +1346,18 @@ public class Document implements Serializable {
 
     public void setBibDataSets(List<BibDataSet> bibDataSets) {
         this.bibDataSets = bibDataSets;
+        // some cleaning of the labels
+        if (this.bibDataSets != null) {
+            for (BibDataSet bds : this.bibDataSets) {
+                String marker = bds.getRefSymbol();
+                if (marker != null) {
+                    //marker = marker.replace(".", "");
+                    //marker = marker.replace(" ", "");
+                    marker = marker.replaceAll("[\\.\\[\\]()\\-\\s]", "");
+                    bds.setRefSymbol(marker);
+                }
+            }
+        }
         int cnt = 0;
         for (BibDataSet bds : bibDataSets) {
             bds.getResBib().setOrdinal(cnt++);
@@ -1354,7 +1366,7 @@ public class Document implements Serializable {
 
     public synchronized ReferenceMarkerMatcher getReferenceMarkerMatcher() throws EntityMatcherException {
         if (referenceMarkerMatcher == null) {
-            referenceMarkerMatcher = new ReferenceMarkerMatcher(bibDataSets, Engine.getCntManager());
+            referenceMarkerMatcher = new ReferenceMarkerMatcher(this.bibDataSets, Engine.getCntManager());
         }
         return referenceMarkerMatcher;
     }

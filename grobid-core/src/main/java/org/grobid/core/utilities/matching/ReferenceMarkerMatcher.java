@@ -19,6 +19,8 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -31,8 +33,10 @@ public class ReferenceMarkerMatcher {
 
     public static final Pattern YEAR_PATTERN = Pattern.compile("[12][0-9]{3}[a-d]?");
     public static final Pattern YEAR_PATTERN_WITH_LOOK_AROUND = Pattern.compile("(?<!\\d)[12][0-9]{3}(?!\\d)[a-d]?");
-    public static final Pattern AUTHOR_NAME_PATTERN = Pattern.compile("[A-Z][A-Za-z]+");
-    public static final Pattern NUMBERED_CITATION_PATTERN = Pattern.compile(" *[\\(\\[]? *(?:\\d+[-–]\\d+,|\\d+, *)*[ ]*(?:\\d+[-–]\\d+|\\d+)[\\)\\]]? *");
+    //public static final Pattern AUTHOR_NAME_PATTERN = Pattern.compile("[A-Z][A-Za-z]+");
+    public static final Pattern AUTHOR_NAME_PATTERN = Pattern.compile("[A-Z][\\p{L}]+");
+    //public static final Pattern NUMBERED_CITATION_PATTERN = Pattern.compile(" *[\\(\\[]? *(?:\\d+[-–]\\d+,|\\d+, *)*[ ]*(?:\\d+[-–]\\d+|\\d+)[\\)\\]]? *");
+    public static final Pattern NUMBERED_CITATION_PATTERN = Pattern.compile("[\\(\\[]?\\s*(?:\\d+[-–]\\d+,|\\d+,[ ]*)*[ ]*(?:\\d+[-–]\\d+|\\d+)\\s*[\\)\\]]?");
     public static final Pattern AUTHOR_SEPARATOR_PATTERN = Pattern.compile(";");
     public static final ClassicAnalyzer ANALYZER = new ClassicAnalyzer(Version.LUCENE_45);
     public static final int MAX_RANGE = 20;
@@ -40,7 +44,7 @@ public class ReferenceMarkerMatcher {
     public static final Pattern AND_WORD_PATTERN = Pattern.compile("and");
     public static final Pattern DASH_PATTERN = Pattern.compile("[–-]");
 
-    public class MatchResult {
+    public class MatchResult {  
         private String text;
         private List<LayoutToken> tokens;
         private BibDataSet bibDataSet;
@@ -74,12 +78,21 @@ public class ReferenceMarkerMatcher {
     private final LuceneIndexMatcher<BibDataSet, String> authorMatcher;
     private final LuceneIndexMatcher<BibDataSet, String> labelMatcher;
     private CntManager cntManager;
-
+    private Set<String> allLabels = null;
+    private Set<String> allFirstAuthors = null;
 
     public ReferenceMarkerMatcher(List<BibDataSet> bds, CntManager cntManager)
             throws EntityMatcherException {
-        this.cntManager = cntManager;
+        allLabels = new HashSet<String>();
+        allFirstAuthors = new HashSet<String>();
+        for(BibDataSet bibDataSet : bds) {
+            allLabels.add(bibDataSet.getRefSymbol());
+            String authorString = bibDataSet.getResBib().getFirstAuthorSurname();
+            if ((authorString != null) && (authorString.length() > 0))
+                allFirstAuthors.add(authorString);
+        }
 
+        this.cntManager = cntManager;
         authorMatcher = new LuceneIndexMatcher<>(
                 new Function<BibDataSet, Object>() {
                     @Override
@@ -97,7 +110,6 @@ public class ReferenceMarkerMatcher {
 
         authorMatcher.setMustMatchPercentage(1.0);
         authorMatcher.load(bds);
-
         labelMatcher = new LuceneIndexMatcher<>(
                 new Function<BibDataSet, Object>() {
                     @Override
@@ -118,25 +130,45 @@ public class ReferenceMarkerMatcher {
 
         if (isAuthorCitationStyle(text)) {
             cntManager.i(ReferenceMarkerMatcherCounters.STYLE_AUTHORS);
+//System.out.println("STYLE_AUTHORS: " + text);    
             return matchAuthorCitation(text, refTokens);
         } else if (isNumberedCitationReference(text)) {
             cntManager.i(ReferenceMarkerMatcherCounters.STYLE_NUMBERED);
+//System.out.println("STYLE_NUMBERED: " + text);            
             return matchNumberedCitation(text, refTokens);
         } else {
             cntManager.i(ReferenceMarkerMatcherCounters.STYLE_OTHER);
+//System.out.println("STYLE_OTHER: " + text);   
 //            LOGGER.info("Other style: " + text);
             return Collections.singletonList(new MatchResult(text, refTokens, null));
         }
     }
 
+    /*public boolean isAuthorCitationStyle(String text) {
+        return ( YEAR_PATTERN.matcher(text.trim()).find() || 
+                 NUMBERED_CITATION_PATTERN.matcher(text.trim()).find() )
+            && AUTHOR_NAME_PATTERN.matcher(text.trim()).find();
+    }*/
 
-    private boolean isAuthorCitationStyle(String text) {
-        return YEAR_PATTERN.matcher(text).find() && AUTHOR_NAME_PATTERN.matcher(text).find();
+    public boolean isAuthorCitationStyle(String text) {
+        return YEAR_PATTERN.matcher(text.trim()).find() && AUTHOR_NAME_PATTERN.matcher(text.trim()).find();
     }
 
-    private static boolean isNumberedCitationReference(String t) {
-        return NUMBERED_CITATION_PATTERN.matcher(t).matches();
+    // relaxed number matching
+    public static boolean isNumberedCitationReference(String t) {
+        return NUMBERED_CITATION_PATTERN.matcher(t.trim()).find();
     }
+
+    // number matching for number alone or in combination with author for cases "Naze et al. [5]"
+    /*public static boolean isNumberedCitationReference(String t) {
+        return NUMBERED_CITATION_PATTERN.matcher(t.trim()).matches() || 
+                 ( NUMBERED_CITATION_PATTERN.matcher(t.trim()).find() && AUTHOR_NAME_PATTERN.matcher(t.trim()).find() );
+    }*/
+
+    // string number matching
+    /*public static boolean isNumberedCitationReference(String t) {
+        return NUMBERED_CITATION_PATTERN.matcher(t.trim()).matches();
+    }*/
 
     private List<MatchResult> matchNumberedCitation(String input, List<LayoutToken> refTokens) throws EntityMatcherException {
         List<Pair<String, List<LayoutToken>>> labels = getNumberedLabels(refTokens);
@@ -261,10 +293,10 @@ public class ReferenceMarkerMatcher {
                         } else {
                             cntManager.i(ReferenceMarkerMatcherCounters.MANY_CANDIDATES_AFTER_POST_FILTERING);
 //                            LOGGER.info("MANY CANDIDATES: " + text + "\n-----\n" + c + "\n");
-                            for (BibDataSet bds : matches) {
+                            /*for (BibDataSet bds : matches) {
                                 LOGGER.info("+++++");
                                 LOGGER.info("  " + bds.getRawBib());
-                            }
+                            }*/
 //                            LOGGER.info("===============");
                         }
                     }
@@ -378,6 +410,26 @@ public class ReferenceMarkerMatcher {
                 }
             }));
         }
+    }
+
+    /** 
+     * Return true if the text is a known label from the bibliographical reference list
+     */
+    public boolean isKnownLabel(String text) {
+        if ((allLabels != null) && (allLabels.contains(text.trim())))
+            return true;
+        else
+            return false;
+    }
+
+    /**
+     * Return true if the text is a known first author from the bibliographical reference list
+     */
+    public boolean isKnownFirstAuthor(String text) {
+        if ( (allFirstAuthors != null) && (allFirstAuthors.contains(text.trim())) )
+            return true;
+        else 
+            return false;
     }
 
 }
