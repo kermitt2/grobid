@@ -196,8 +196,8 @@ public class FullTextParser extends AbstractParser {
                     "An exception occured while running consolidation on bibliographical references.", e);
                 } 
             }
-            if (resCitations.size() == 0)
-                System.out.println("!!!!!! article without citations !!!!");
+            //if (resCitations.size() == 0)
+            //    System.out.println("!!!!!! article without citations !!!!");
             doc.setBibDataSets(resCitations);
 
 			// full text processing
