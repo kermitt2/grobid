@@ -201,10 +201,10 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                 currentTag = "<other>";
                 upperTag = null;
                 upperQname = null;
-            } else {
+            } /*else {
                 logger.error("Invalid element name: " + qName + " - it will be mapped to the label <other>");
                 currentTag = "<other>";
-            }
+            }*/
         }
     }
 

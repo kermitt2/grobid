@@ -295,7 +295,7 @@ public class HeaderParser extends AbstractParser {
 
         doc.setResHeader(resHeader);
 
-        TEIFormatter teiFormatter = new TEIFormatter(doc);
+        TEIFormatter teiFormatter = new TEIFormatter(doc, null);
         StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, GrobidAnalysisConfig.builder().consolidateHeader(consolidate).build());
         tei.append("\t</text>\n");
         tei.append("</TEI>\n");
@@ -503,7 +503,7 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                TEIFormatter teiFormatter = new TEIFormatter(doc);
+                TEIFormatter teiFormatter = new TEIFormatter(doc, null);
                 StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, GrobidAnalysisConfig.defaultInstance());
                 tei.append("\t</text>\n");
                 tei.append("</TEI>\n");
