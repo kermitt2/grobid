@@ -8,12 +8,20 @@ import static org.junit.Assert.assertThat;
 import java.util.List;
 
 import org.grobid.core.data.Person;
+import org.grobid.core.factory.GrobidFactory;
+import org.junit.AfterClass;
 import org.junit.Test;
 
 /**
  *  @author Patrice Lopez
  */
 public class TestNameParser extends EngineTest{
+
+    @AfterClass
+    public static void tearDown(){
+        GrobidFactory.reset();
+    }
+
 	@Test
 	public void testNameParserHeader() throws Exception {
 		String authorSequence1 = "José-María Carazo, Alberto Pascual-Montano";		

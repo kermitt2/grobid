@@ -11,18 +11,18 @@ The process for fetching and running the image is (assuming docker is installed 
 
 - Pull the image from docker HUB
 ```bash
-> docker pull lfoppiano/grobid:0.5.1
+> docker pull lfoppiano/grobid:0.5.3
 ```
  
 - Run the container (note the new version running on 8070, however it will be mapped on the 8080 of your host):
 
 ```bash
-> docker run -t --rm --init -p 8080:8070 -p 8081:8071 lfoppiano/grobid:0.5.1
+> docker run -t --rm --init -p 8080:8070 -p 8081:8071 lfoppiano/grobid:0.5.3
 ```
 
 (alternatively you can also get the image ID)  
 ```bash
-> docker images | grep lfoppiano/grobid | grep 0.5.1
+> docker images | grep lfoppiano/grobid | grep 0.5.3
 > docker run -t --rm --init -p 8080:8070 -p 8081:8071 $image_id_from_previous_command
 ```
 
@@ -101,16 +101,16 @@ killed processes.
 **NOTE**: The following part is only for development purposes. We recommend you to use the official 
 docker images from the docker HUB.
 
-The docker build from 0.5.0 will clone the repository using git, so no need to custom builds. 
+The docker build from 0.5.3 will clone the repository using git, so no need to custom builds. 
 Only important information is the version which will be checked out from the tags.
  
 ```bash
-> docker build -t lfoppiano/grobid:0.5.0 --build-arg GROBID_VERSION=0.5.0 .
+> docker build -t lfoppiano/grobid:0.5.3 --build-arg GROBID_VERSION=0.5.3 .
 ```
 
 In order to run the container of the newly created image: 
 ```bash
-> docker run -t --rm -p 8080:8070 -p 8081:8071 lfoppiano/grobid:0.5.0
+> docker run -t --rm -p 8080:8070 -p 8081:8071 lfoppiano/grobid:0.5.3
 ```
 
 For testing or debugging purposes, you can connect to the container with a bash shell:

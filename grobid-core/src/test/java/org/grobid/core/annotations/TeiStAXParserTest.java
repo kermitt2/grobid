@@ -35,16 +35,15 @@ public class TeiStAXParserTest extends XMLTestCase {
     }
 
     @Test
-    public void testTeiStAXParser3Args() throws Exception {
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream("input"), createOutputStream("output"), false);
-
+    public void testTeiStAXParser3Args() throws IOException {
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream("input"), createOutputStream("output"), 0);
         assertEquals("The inputStream value of the parser should be 'input'", "input", fromInputStreamToString(parser.inputStream));
         assertEquals("The outputStream value of the parser should be 'output'", "output", fromOutputStreamToString(parser.outputStream));
     }
 
     @Test
-    public void testTeiStAXParser4Args() throws Exception {
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream("input"), createOutputStream("output"), true, false);
+    public void testTeiStAXParser4Args() throws IOException {
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream("input"), createOutputStream("output"), true, 0);
 
         assertEquals("The inputStream value of the parser should be 'input'", "input", fromInputStreamToString(parser.inputStream));
         assertEquals("The outputStream value of the parser should be 'output'", "output", fromOutputStreamToString(parser.outputStream));
@@ -57,7 +56,7 @@ public class TeiStAXParserTest extends XMLTestCase {
         final ReferenceExtractor refExtr = new ReferenceExtractor();
         refExtr.currentPatentNumber = "patNb";
         final String input = "<tag id=\"tId\">input</tag>";
-        TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream("output"), false, refExtr, false);
+        TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream("output"), false, refExtr, 0);
 
         assertEquals("The inputStream value of the parser should be '" + input + "'", input, fromInputStreamToString(parser.inputStream));
         assertEquals("The outputStream value of the parser should be 'output'", "output", fromOutputStreamToString(parser.outputStream));
@@ -80,14 +79,14 @@ public class TeiStAXParserTest extends XMLTestCase {
     @Test
     public void testParse() throws Exception {
         final String input = "<tag id=\"tId\"> <div type=\"abstract\" xml:id=\"_cc53f64\" xml:lang=\"en\" subtype=\"docdba\">some text</div> </tag>";
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false);
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), 0);
         parser.parse();
         assertXMLEqual("The 2 xml should be identical", input, fromOutputStreamToString(parser.outputStream));
     }
 
     @Test
-    public void testWriteInTeiBufferStart() throws Exception {
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream(""), createOutputStream(""), false);
+    public void testWriteInTeiBufferStart() throws IOException, XMLStreamException, SAXException {
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream(""), createOutputStream(""), 0);
         final QName qName = getQName("", "tag", "");
         final Iterator<Attribute> attributes = getAttributes(createAttribute("attr", "val"));
         final StartElement start = createStartElement(qName, attributes, null);
@@ -97,8 +96,8 @@ public class TeiStAXParserTest extends XMLTestCase {
     }
 
     @Test
-    public void testWriteInTeiBufferCharacters() throws Exception {
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream(""), createOutputStream(""), false);
+    public void testWriteInTeiBufferCharacters() throws IOException, XMLStreamException, SAXException {
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream(""), createOutputStream(""), 0);
         final String content = "some content";
         parser.writeInTeiBufferCharacters(createCharacters(content));
 
@@ -106,8 +105,8 @@ public class TeiStAXParserTest extends XMLTestCase {
     }
 
     @Test
-    public void testWriteInTeiBufferEnd() throws Exception {
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream(""), createOutputStream(""), false);
+    public void testWriteInTeiBufferEnd() throws IOException, XMLStreamException, SAXException {
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream(""), createOutputStream(""), 0);
         final QName qName = getQName("", "endTag", "");
         parser.writeInTeiBufferEnd(createEndElement(qName, null));
 
@@ -115,8 +114,8 @@ public class TeiStAXParserTest extends XMLTestCase {
     }
 
     @Test
-    public void testWriteInTeiBufferRaw() throws Exception {
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream(""), createOutputStream(""), false);
+    public void testWriteInTeiBufferRaw() throws IOException, XMLStreamException, SAXException {
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream(""), createOutputStream(""), 0);
         final String content = "some content";
         parser.writeInTeiBufferRaw(content);
 
@@ -126,7 +125,7 @@ public class TeiStAXParserTest extends XMLTestCase {
     @Test
     public void testParseNotSelfRefExtractor() throws Exception {
         final String input = "<teiCorpus id=\"tId\"> <div type=\"claims\"><p>some paragraph</p></div> </teiCorpus>";
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false);
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), 0);
         parser.isSelfInstanceRefExtractor = false;
         parser.parse();
         assertXMLEqual("The 2 xml should be identical", input, fromOutputStreamToString(parser.outputStream));
@@ -135,7 +134,7 @@ public class TeiStAXParserTest extends XMLTestCase {
     @Test
     public void testParseDescription() throws Exception {
         final String input = "<teiCorpus id=\"tId\"> <div type=\"description\"><p>some paragraph</p></div> </teiCorpus>";
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false, false);
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false, 0);
         parser.parse();
         assertXMLEqual("The 2 xml should be identical", input, fromOutputStreamToString(parser.outputStream));
     }
@@ -143,7 +142,7 @@ public class TeiStAXParserTest extends XMLTestCase {
     @Test
     public void testParseDescription2() throws Exception {
         final String input = "<teiCorpus id=\"tId\"> <div type=\"description\"><p>some paragraph</p><p>some text &lt;sep&gt; &quot; <br clear=\"none\" /> </p></div> </teiCorpus>";
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false, false);
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false, 0);
         parser.parse();
         assertXMLEqual("The 2 xml should be identical", XMLWriter.formatXML(input),
                 XMLWriter.formatXML(fromOutputStreamToString(parser.outputStream)));
@@ -152,7 +151,7 @@ public class TeiStAXParserTest extends XMLTestCase {
     @Test
     public void testParseDescriptionTagInsideP() throws Exception {
         final String input = "<teiCorpus id=\"tId\"> <div type=\"description\"><p>some paragraph</p><p>some text &lt;sep&gt; &quot; <someTag>text inside tag</someTag> </p></div> </teiCorpus>";
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false, false);
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false, 0);
         parser.parse();
         assertXMLEqual("The 2 xml should be identical", XMLWriter.formatXML(input),
                 XMLWriter.formatXML(fromOutputStreamToString(parser.outputStream)));
@@ -161,7 +160,7 @@ public class TeiStAXParserTest extends XMLTestCase {
     @Test
     public void testParseNoDescription() throws Exception {
         final String input = "<teiCorpus id=\"tId\"> <div type=\"noDescription\"><p>some paragraph</p></div> </teiCorpus>";
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false, false);
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false, 0);
         parser.parse();
         assertXMLEqual("The 2 xml should be identical", input, fromOutputStreamToString(parser.outputStream));
     }
@@ -169,7 +168,7 @@ public class TeiStAXParserTest extends XMLTestCase {
     @Test
     public void testParseStartTEI() throws Exception {
         final String input = "<teiCorpus id=\"tId\"> <TEI><teiHeader><notesStmt><notes>some element</notes></notesStmt></teiHeader><div type=\"description\"><p>some paragraph</p></div></TEI> </teiCorpus>";
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false, false);
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false, 0);
         parser.parse();
         assertXMLEqual("The 2 xml should be identical", input, fromOutputStreamToString(parser.outputStream));
     }
@@ -177,7 +176,7 @@ public class TeiStAXParserTest extends XMLTestCase {
     @Test
     public void testParseNotesStmt() throws Exception {
         final String input = "<teiCorpus id=\"tId\"><TEI><teiHeader><notesStmt><notes>some element</notes></notesStmt></teiHeader></TEI></teiCorpus>";
-        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false, false);
+        final TeiStAXParser parser = new TeiStAXParser(createInputStream(input), createOutputStream(""), false, 0);
         parser.parse();
         assertXMLEqual("The 2 xml should be identical", input, fromOutputStreamToString(parser.outputStream));
     }
@@ -193,7 +192,7 @@ public class TeiStAXParserTest extends XMLTestCase {
         stax = new TeiStAXParser(
                 this.getClass().getResourceAsStream("resTeiStAXParser/sample-2.tei.xml"),
                 out, true,
-                extractor, false);
+                extractor, 0);
 
         stax.parse();
         out.close();

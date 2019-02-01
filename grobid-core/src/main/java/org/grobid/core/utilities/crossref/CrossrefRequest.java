@@ -1,5 +1,7 @@
 package org.grobid.core.utilities.crossref;
 
+import org.grobid.core.utilities.GrobidProperties;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
@@ -16,6 +18,13 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.apache.http.HttpHost;
+import org.apache.http.conn.params.*;
+import org.apache.http.impl.conn.*;
+
+import org.apache.commons.io.IOUtils;
+import java.net.URL;
+import java.io.*;
 
 /**
  * GET crossref request
@@ -79,8 +88,17 @@ public class CrossrefRequest<T extends Object> extends Observable {
 	 * Execute request, handle response by sending to listeners a CrossrefRequestListener.Response
 	 */
 	public void execute() {
-		CloseableHttpClient httpclient = HttpClients.createDefault();
-		
+		CloseableHttpClient httpclient = null;
+		if (GrobidProperties.getProxyHost() != null) {
+			HttpHost proxy = new HttpHost(GrobidProperties.getProxyHost(), GrobidProperties.getProxyPort());
+			DefaultProxyRoutePlanner routePlanner = new DefaultProxyRoutePlanner(proxy);
+			httpclient = HttpClients.custom()
+		  		.setRoutePlanner(routePlanner)
+		  		.build();
+		} else {
+			httpclient = HttpClients.createDefault();	
+		}
+
 		try {
 			URIBuilder uriBuilder = new URIBuilder(BASE_URL);
 			
@@ -89,7 +107,7 @@ public class CrossrefRequest<T extends Object> extends Observable {
 				path += "/"+id;
 			
 			uriBuilder.setPath(path);
-		    
+
 			if (params != null)
 				for (Entry<String, String> cursor : params.entrySet())
 					uriBuilder.setParameter(cursor.getKey(), cursor.getValue());
@@ -100,7 +118,7 @@ public class CrossrefRequest<T extends Object> extends Observable {
 
 				@Override
 				public Void handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
-					
+
 					CrossrefRequestListener.Response<T> message = new CrossrefRequestListener.Response<T>();
 					
 					message.status = response.getStatusLine().getStatusCode();

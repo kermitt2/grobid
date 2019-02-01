@@ -716,6 +716,75 @@ public class Segmentation extends AbstractParser {
     }
 
     /**
+     * Get the content of the pdf and produce a blank training data TEI file, i.e. a text only TEI file
+     * without any tags. This is usefull to start from scratch the creation of training data at the same
+     * level as the segmentation parser. 
+     *
+     * @param inputFile    input file
+     * @param pathFullText path to fulltext
+     * @param pathTEI      path to TEI
+     * @param id           id
+     */
+    public void createBlankTrainingData(File file,
+                                        String pathFullText,
+                                        String pathTEI,
+                                        int id) {
+        DocumentSource documentSource = null;
+        try {
+            //File file = new File(inputFile);
+
+            //documentSource = DocumentSource.fromPdf(file);
+            documentSource = DocumentSource.fromPdf(file, -1, -1, true, true, true);
+            Document doc = new Document(documentSource);
+
+            String PDFFileName = file.getName();
+            doc.addTokenizedDocument(GrobidAnalysisConfig.defaultInstance());
+
+            if (doc.getBlocks() == null) {
+                throw new Exception("PDF parsing resulted in empty content");
+            }
+            doc.produceStatistics();
+
+            String fulltext = //getAllTextFeatured(doc, false);
+                    getAllLinesFeatured(doc);
+            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+
+            // we write the full text untagged (but featurized)
+            String outPathFulltext = pathFullText + File.separator + 
+                PDFFileName.replace(".pdf", ".training.blank");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
+            writer.write(fulltext + "\n");
+            writer.close();
+
+            // also write the raw text as seen before segmentation
+            StringBuffer rawtxt = new StringBuffer();
+            for(LayoutToken txtline : tokenizations) {
+                rawtxt.append(TextUtilities.HTMLEncode(txtline.getText()));
+            }
+
+            fulltext = rawtxt.toString();
+            if (isNotBlank(fulltext)) {
+                // write the TEI file to reflect the extact layout of the text as extracted from the pdf
+                writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+                        File.separator + 
+                        PDFFileName.replace(".pdf", ".training.blank.tei.xml")), false), "UTF-8");
+                writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+                        "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
+
+                writer.write(fulltext);
+                writer.write("\n\t</text>\n</tei>\n");
+                writer.close();
+            }
+
+        } catch (Exception e) {
+            throw new GrobidException("An exception occured while running Grobid training" +
+                    " data generation for segmentation model.", e);
+        } finally {
+            DocumentSource.close(documentSource, true, true, true);
+        }
+    }
+
+    /**
      * Extract results from a labelled full text in the training format without any string modification.
      *
      * @param result        reult
