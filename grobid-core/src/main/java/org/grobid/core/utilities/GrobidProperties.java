@@ -495,7 +495,7 @@ public class GrobidProperties {
         System.setProperty("https.proxyPort", port);
     }
 
-    public static Integer getPdf2XMLMemoryLimitMb() {
+    public static Integer getPdfToXMLMemoryLimitMb() {
         return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML_MEMORY_LIMIT, "2048"), 10);
     }
 
