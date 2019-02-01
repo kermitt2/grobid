@@ -70,7 +70,7 @@ public class GrobidPropertiesTest {
     @Test(expected = GrobidPropertyException.class)
     public void testCheckPropertiesException_shouldThrowException() {
         GrobidProperties.getProps().put(
-                GrobidPropertyKeys.PROP_3RD_PARTY_PDF2XML, "");
+                GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML, "");
         GrobidProperties.checkProperties();
     }
 
@@ -282,16 +282,16 @@ public class GrobidPropertiesTest {
     @Test
     public void testgetPdf2XMLPath() throws Exception {
         assertNotNull("The property has not the value expected", GrobidProperties
-                .getPdf2XMLPath().getAbsolutePath());
+                .getPdfToXMLPath().getAbsolutePath());
     }
 
 
     @Test(expected = GrobidPropertyException.class)
     public void testloadPdf2XMLPath_shouldThrowException() {
         GrobidProperties.getProps().put(
-                GrobidPropertyKeys.PROP_3RD_PARTY_PDF2XML, "/notExistingPath");
+                GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML, "/notExistingPath");
         GrobidProperties
-                .getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDF2XML);
+                .getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML);
         GrobidProperties.loadPdf2XMLPath();
     }
 
