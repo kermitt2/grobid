@@ -650,15 +650,16 @@ public class MonographParser extends AbstractParser {
             String pdfFileName = inputFile.getName();
 
             File outputTEIFile = new File(pathTEI+"/"+pdfFileName.replace(".pdf", "training.monograph.tei.xml"));
-            if (!outputTEIFile.exists()) {
+            /* // commented out because it was making a test of the existence of a file before it was even created 
+               if (!outputTEIFile.exists()) {
                 throw new GrobidResourceException("Cannot train for monograph, because directory '" +
                        pathTEI + "' is not valid.");
-            }
+            }*/
             File outputRawFile = new File(pathRaw+"/"+pdfFileName.replace(".pdf", ".monograph.raw"));
-            if (!outputRawFile.exists()) {
+            /*if (!outputRawFile.exists()) {
                 throw new GrobidResourceException("Cannot train for monograph, because directory '" +
                        pathRaw + "' is not valid.");
-            }
+            }*/
 
             documentSource = DocumentSource.fromPdf(inputFile, -1, -1, true, true, true);
             doc = new Document(documentSource);

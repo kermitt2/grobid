@@ -17,8 +17,7 @@ import java.util.regex.Pattern;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
- * Created by zholudev on 07/01/16.
- * Extracting citation contexts
+ * Extracting citation callout
  */
 public class BibDataSetContextExtractor {
     public static final Pattern REF_PATTERN = Pattern.compile("<ref>(.*)</ref>", Pattern.DOTALL);

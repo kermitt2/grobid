@@ -28,9 +28,9 @@ The following sections provide detailed information and examples on how to handl
 
 ### Start of the document (front)
 
-A cover page - usually added by the publish to summerize the bibligraphical and copyright information - might be present, and is entirely identified by the the `<titlePage>` element. 
+A cover page - usually added by the publisher to summarize the bibligraphical and copyright information - might be present, and is entirely identified by the the `<titlePage>` element. 
 
-The header section typically contains document's title, its author(s) with affiliations, an abstract and some keywords. All this material should contained within the `<front>` element, as well as any footnotes that are referenced from within the header (such as author affiliations and addresses). Furthermore, the footer including the first page number should go in there.  In general we expect as part of the header of the document to find all the bibliographical information for the article.  This should be followed in order to ensure homogeneity across the training data.
+The header section typically contains document's title, its author(s) with affiliations, an abstract and some keywords. All this material should be contained within the `<front>` element, as well as any footnotes that are referenced from within the header (such as author affiliations and addresses). Furthermore, the footer including the first page number should go in there.  In general we expect as part of the header of the document to find all the bibliographical information for the article.  This should be followed in order to ensure homogeneity across the training data.
 
 There should be as many `<front>` elements as necessary that contain all the contents identified as 'front contents'. Note that for the segmentation model, there aren't any `<title>` or `<author>` elements as they are handled in the `header` model which is applied in cascaded in a next stage.
 

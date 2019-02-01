@@ -97,7 +97,8 @@
 		          </content>
 		        </elementSpec>
 				
-				<!-- allow empty abstract -->
+				<!-- allow empty and structured abstract -->
+                <!-- structured abstract is an obvious need, see https://github.com/TEIC/TEI/issues/548 -->
 		        <elementSpec ident="abstract" mode="change" module="header">
                     <content>
                         <rng:zeroOrMore>
@@ -105,6 +106,7 @@
                                 <rng:text/>
                                 <rng:ref name="model.pLike"/>
                                 <rng:ref name="model.listLike"/>
+                                <rng:ref name="model.divLike"/>
                             </rng:choice>
                         </rng:zeroOrMore>
                     </content>

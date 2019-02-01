@@ -142,22 +142,6 @@ Example:
 
 WARNING: the expected extension of the PDF files to be processed is .pdf
 
-### processCitationPatentTEI
-`processCitationPatentTEI` batch command will process, extract and format the citations in the patents encoded in TEI given in input (we assume here the TEI PDM format for patent "fulltexts"). The needed parameters for that command are:
-
-* -gH: path to grobid-home directory
-
-* -dIn: path to the directory of input tei files
-
-* -dOut: path to save the tei annotated data
-
-Example:
-```bash
-> java -Xmx1G -jar grobid-core/build/libs/grobid-core-0.5.3-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processCitationPatentTEI
-```
-
-WARNING: extension of the TEI files to be processed must be .tei or .tei.xml
-
 ### processCitationPatentST36
 `processCitationPatentST36` batch command will process, extract and format the citations in the patents encoded in ST.36 given in input. The needed parameters for that command are:
 

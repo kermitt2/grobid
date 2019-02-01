@@ -1,0 +1,130 @@
+glutton 16/12/2018
+------------------
+
+17015 bibliographical references processed in 2625.378 seconds, 0.15429785483397004 seconds per bibliographical reference.
+Found 15672 DOI
+
+======= GLUTTON API ======= 
+
+precision:      0.9669474221541603
+recall: 0.8906259183073758
+f-score:        0.927218771988864
+
+
+************************************************************************************
+COUNTER: org.grobid.core.utilities.ConsolidationCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  CONSOLIDATION:                 17015
+  CONSOLIDATION_PER_DOI:         3
+  TOTAL_BIB_REF:                 17015
+  CONSOLIDATION_PER_DOI_SUCCESS: 1
+  CONSOLIDATION_SUCCESS:         15670
+====================================================================================
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.label.TaggingLabelImpl
+************************************************************************************
+------------------------------------------------------------------------------------
+  CITATION_TITLE:           17003
+  CITATION_WEB:             11
+  CITATION_INSTITUTION:     24
+  CITATION_DATE:            17226
+  CITATION_AUTHOR:          16991
+  CITATION_PAGES:           17085
+  CITATION_COLLABORATION:   1
+  CITATION_EDITOR:          24
+  CITATION_ISSUE:           4180
+  CITATION_JOURNAL:         16856
+  NAME-CITATION_FORENAME:   72934
+  NAME-CITATION_SURNAME:    72272
+  NAME-CITATION_OTHER:      78034
+  CITATION_BOOKTITLE:       184
+  CITATION_PUBLISHER:       102
+  CITATION_OTHER:           85067
+  CITATION_NOTE:            662
+  CITATION_VOLUME:          17047
+  NAME-CITATION_MIDDLENAME: 6050
+  CITATION_PUBNUM:          761
+  CITATION_TECH:            5
+  CITATION_LOCATION:        421
+  NAME-CITATION_SUFFIX:     147
+====================================================================================
+====================================================================================
+
+sync, 3 ES nodes 30.12.2018
+
+17015 bibliographical references processed in 2176.489 seconds, 0.12791589773729062 seconds per bibliographical reference.
+Found 15672 DOI
+
+
+
+async, 3 ES nodes 30.12.2018
+
+17015 bibliographical references processed in 1989.539 seconds, 0.11692853364678225 seconds per bibliographical reference.
+Found 15672 DOI
+
+
+
+async, 2 ES nodes 30.12.2018
+
+17015 bibliographical references processed in 1347.063 seconds, 0.07916914487217162 seconds per bibliographical reference.
+Found 15672 DOI
+
+
+
+
+CrossRef 16/12/2018
+-------------------
+
+17015 bibliographical references processed in 780.838 seconds, 0.04589115486335586 seconds per bibliographical reference.
+Found 15610 DOI
+
+======= CROSSREF API ======= 
+
+precision:      0.9628443305573351
+recall: 0.8833382309726712
+f-score:        0.9213793103448277
+
+
+************************************************************************************
+COUNTER: org.grobid.core.utilities.ConsolidationCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  CONSOLIDATION:                 17015
+  CONSOLIDATION_PER_DOI:         3
+  TOTAL_BIB_REF:                 17015
+  CONSOLIDATION_PER_DOI_SUCCESS: 1
+  CONSOLIDATION_SUCCESS:         15608
+====================================================================================
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.label.TaggingLabelImpl
+************************************************************************************
+------------------------------------------------------------------------------------
+  CITATION_TITLE:           17003
+  CITATION_WEB:             11
+  CITATION_INSTITUTION:     24
+  CITATION_DATE:            17226
+  CITATION_AUTHOR:          16991
+  CITATION_PAGES:           17085
+  CITATION_COLLABORATION:   1
+  CITATION_EDITOR:          24
+  CITATION_ISSUE:           4180
+  CITATION_JOURNAL:         16856
+  NAME-CITATION_FORENAME:   72934
+  NAME-CITATION_SURNAME:    72272
+  NAME-CITATION_OTHER:      78034
+  CITATION_BOOKTITLE:       184
+  CITATION_PUBLISHER:       102
+  CITATION_OTHER:           85067
+  CITATION_NOTE:            662
+  CITATION_VOLUME:          17047
+  NAME-CITATION_MIDDLENAME: 6050
+  CITATION_PUBNUM:          761
+  CITATION_TECH:            5
+  CITATION_LOCATION:        421
+  NAME-CITATION_SUFFIX:     147
+====================================================================================
+====================================================================================
+

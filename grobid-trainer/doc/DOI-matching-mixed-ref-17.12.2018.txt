@@ -1,0 +1,54 @@
+Glutton 17.12.2018 
+-------------------
+
+17015 bibliographical references processed in 857.97 seconds, 0.05042433147223039 seconds per bibliographical reference.
+Found 15707 DOI
+
+======= GLUTTON API ======= 
+
+precision:      0.9492582924810594
+recall: 0.8762856303261828
+f-score:        0.9113134893955137
+
+
+************************************************************************************
+COUNTER: org.grobid.core.utilities.ConsolidationCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  CONSOLIDATION:                 17015
+  CONSOLIDATION_PER_DOI:         3
+  TOTAL_BIB_REF:                 17015
+  CONSOLIDATION_PER_DOI_SUCCESS: 1
+  CONSOLIDATION_SUCCESS:         15705
+====================================================================================
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.label.TaggingLabelImpl
+************************************************************************************
+------------------------------------------------------------------------------------
+  CITATION_TITLE:           17003
+  CITATION_WEB:             11
+  CITATION_INSTITUTION:     24
+  CITATION_DATE:            17226
+  CITATION_AUTHOR:          16991
+  CITATION_PAGES:           17085
+  CITATION_COLLABORATION:   1
+  CITATION_EDITOR:          24
+  CITATION_ISSUE:           4180
+  CITATION_JOURNAL:         16856
+  NAME-CITATION_FORENAME:   72934
+  NAME-CITATION_SURNAME:    72272
+  NAME-CITATION_OTHER:      78034
+  CITATION_BOOKTITLE:       184
+  CITATION_PUBLISHER:       102
+  CITATION_OTHER:           85067
+  CITATION_NOTE:            662
+  CITATION_VOLUME:          17047
+  NAME-CITATION_MIDDLENAME: 6050
+  CITATION_PUBNUM:          761
+  CITATION_TECH:            5
+  CITATION_LOCATION:        421
+  NAME-CITATION_SUFFIX:     147
+====================================================================================
+====================================================================================
+

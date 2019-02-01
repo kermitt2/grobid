@@ -163,5 +163,6 @@ public class ShorttextTrainer extends AbstractTrainer{
     	GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new ShorttextTrainer());
         AbstractTrainer.runEvaluation(new ShorttextTrainer());
+        System.exit(0);
     }
 }	

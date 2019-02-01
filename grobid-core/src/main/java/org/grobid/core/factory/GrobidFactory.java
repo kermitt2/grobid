@@ -39,7 +39,15 @@ public class GrobidFactory extends AbstractEngineFactory {
 	 */
 	@Override
 	public synchronized Engine getEngine() {
-		return super.getEngine();
+		return super.getEngine(false);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public synchronized Engine getEngine(boolean preload) {
+		return super.getEngine(preload);
 	}
 	
 	/**
@@ -47,7 +55,15 @@ public class GrobidFactory extends AbstractEngineFactory {
 	 */
 	@Override
 	public Engine createEngine() {
-		return super.createEngine();
+		return createEngine(false);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Engine createEngine(boolean preload) {
+		return super.createEngine(preload);
 	}
 
 	/**

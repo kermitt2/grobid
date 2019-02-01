@@ -6,8 +6,8 @@ package org.grobid.core.document;
  */
 public class DocumentPiece implements Comparable<DocumentPiece>{
     //for easier access make them final, but public
-    public final DocumentPointer a;
-    public final DocumentPointer b;
+    private final DocumentPointer a;
+    private final DocumentPointer b;
 
     public DocumentPiece(DocumentPointer a, DocumentPointer b) {
         if (a.compareTo(b) > 0) {
@@ -15,6 +15,14 @@ public class DocumentPiece implements Comparable<DocumentPiece>{
         }
         this.a = a;
         this.b = b;
+    }
+
+    public DocumentPointer getLeft() {
+        return a;
+    }
+
+    public DocumentPointer getRight() {
+        return b;
     }
 
     @Override
