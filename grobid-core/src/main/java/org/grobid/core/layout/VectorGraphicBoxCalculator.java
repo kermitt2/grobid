@@ -25,8 +25,8 @@ import java.util.List;
  */
 public class VectorGraphicBoxCalculator {
 
-    public static final int MINIMUM_VECTOR_BOX_AREA = 1000;
-    public static final int VEC_GRAPHICS_FILE_SIZE_LIMIT = 2 * 1024 * 1024;
+    public static final int MINIMUM_VECTOR_BOX_AREA = 3000;
+    public static final int VEC_GRAPHICS_FILE_SIZE_LIMIT = 10 * 1024 * 1024;
 
     public static Multimap<Integer, GraphicObject> calculate(Document document) throws IOException, XPathException {
 
@@ -59,6 +59,10 @@ public class VectorGraphicBoxCalculator {
 
             while ((item = it.next()) != null) {
                 String c = item.getStringValue();
+                // TODO: figure out why such string are returned at all (AS:602281691082754@1520606553791)
+                if (c.equals(",,,")) {
+                    continue;
+                }
                 String coords = pageNum + "," + c;
                 BoundingBox e = BoundingBox.fromString(coords);
                 if (!mainPageArea.contains(e) || e.area() / mainPageArea.area() > 0.7) {

@@ -4,53 +4,37 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.google.common.collect.Multimap;
 import net.sf.saxon.trans.XPathException;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.exceptions.COSVisitorException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.graphics.color.PDGamma;
-import org.apache.pdfbox.pdmodel.interactive.action.type.PDActionURI;
-import org.apache.pdfbox.pdmodel.interactive.action.type.PDActionGoTo;
+import org.apache.pdfbox.pdmodel.graphics.color.PDColor;
+import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceRGB;
+import org.apache.pdfbox.pdmodel.interactive.action.PDActionGoTo;
+import org.apache.pdfbox.pdmodel.interactive.action.PDActionURI;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
-import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDDestination;
-import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDNamedDestination;
 import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination;
-
 import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.BibDataSetContext;
+import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
-import org.grobid.core.engines.Engine;
-import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.Page;
-import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.BibDataSetContextExtractor;
-import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
-import java.util.Random;
-import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *  Utilities for visualizing citation markers and biblographical references, wither directly
@@ -76,14 +60,14 @@ public class CitationsVisualizer {
      *  annotations, if null the bib. ref. annotations are not associated to external URL.
      */
     public static PDDocument annotatePdfWithCitations(PDDocument document, Document teiDoc,
-            List<String> resolvedBibRefUrl) throws IOException, COSVisitorException, XPathException {
+            List<String> resolvedBibRefUrl) throws IOException, XPathException {
         String tei = teiDoc.getTei();
         //System.out.println(tei);
         int totalBib = 0;
         int totalMarkers1 = 0;
         int totalMarkers2 = 0;
         Multimap<String, BibDataSetContext> contexts = BibDataSetContextExtractor.getCitationReferences(tei);
-		Map<String, Pair<Integer, Integer>> dictionary = new HashMap<String, Pair<Integer, Integer>>();
+		Map<String, Pair<Integer, Integer>> dictionary = new HashMap<>();
         int indexBib = 0;
         for (BibDataSet cit : teiDoc.getBibDataSets()) {
             String teiId = cit.getResBib().getTeiId();
@@ -173,10 +157,10 @@ public class CitationsVisualizer {
 		String[] split = coords.split(",");
 
         Long pageNum = Long.valueOf(split[0], 10) - 1;
-        PDPage page = (PDPage) document.getDocumentCatalog().getAllPages().get(pageNum.intValue());
+        PDPage page = document.getDocumentCatalog().getPages().get(pageNum.intValue());
         PDRectangle mediaBox = page.getMediaBox();
         if (mediaBox == null) {
-            mediaBox = page.findMediaBox();
+            mediaBox = page.getMediaBox();
             // this will look for the main media box of the page up in the PDF element hierarchy
             if (mediaBox == null) {
                 // we tried our best given PDFBox
@@ -184,7 +168,7 @@ public class CitationsVisualizer {
                 return;
             }
         }
- 
+
         float height = mediaBox.getHeight();
         float lowerX = mediaBox.getLowerLeftX();
         float lowerY = mediaBox.getLowerLeftY();
@@ -217,7 +201,7 @@ public class CitationsVisualizer {
         //white rectangle border color (ideally, should be transparent)
         COSArray white = new COSArray();
         white.setFloatArray(new float[]{1f, 1f, 1f});
-        txtLink.setColour(new PDGamma(white));
+        txtLink.setColor(new PDColor(white, PDDeviceRGB.INSTANCE));
         txtLink.setReadOnly(true);
         txtLink.setHighlightMode(PDAnnotationLink.HIGHLIGHT_MODE_PUSH);
 
@@ -236,7 +220,7 @@ public class CitationsVisualizer {
 			    // register the object in the dictionary
 			    if (dictionary.get(teiId) == null) {
 				    Pair<Integer, Integer> thePlace =
-					   new Pair<Integer, Integer>(Integer.valueOf(pageNum.intValue()), Integer.valueOf(Math.round(annTopY+h)));
+					   new Pair<>(pageNum.intValue(), Math.round(annTopY + h));
 				    dictionary.put(teiId, thePlace);
 			    }
             }

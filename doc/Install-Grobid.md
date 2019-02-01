@@ -5,16 +5,17 @@
 
 ###Latest stable release
 
-The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.5.1``` which can be downloaded as follow: 
+The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.5.3``` which can be downloaded as follow: 
 ```bash
-> wget https://github.com/kermitt2/grobid/archive/0.5.1.zip
-> unzip 0.5.1.zip
+> wget https://github.com/kermitt2/grobid/archive/0.5.3.zip
+> unzip 0.5.3.zip
 ```
 
 or using the [docker](Grobid-docker.md) container. 
 
 ###Current development version
-The current development version is ```0.6.0-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
+
+The current development version is ```0.5.4-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
 
 Clone source code from github:
 ```bash
@@ -40,6 +41,21 @@ The standard method for building GROBID is to use gradle. Under the main directo
 By default, tests are ignored. For building the project and running the tests, use:
 ```bash
 > ./gradlew clean install test
+```
+
+###Building through a proxy
+
+In case you are working through a proxy, you need to set the proxy information in the file `grobid/gradle.properties` by adding the following lines with the proper proxy parameters: 
+
+```
+systemProp.http.proxyHost=host
+systemProp.http.proxyPort=port
+systemProp.http.proxyUser=username
+systemProp.http.proxyPassword=password
+systemProp.https.proxyHost=host
+systemProp.https.proxyPort=port
+systemProp.https.proxyUser=username
+systemProp.https.proxyPassword=password
 ```
 
 ##Use GROBID

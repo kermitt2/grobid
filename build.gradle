@@ -189,14 +189,15 @@ project("grobid-core") {
         compile "xerces:xercesImpl:2.11.0"
         compile "com.google.guava:guava:19.0"
         compile "net.arnx:jsonic:1.3.10"
-        compile "org.apache.pdfbox:pdfbox:1.8.9"
+        compile "org.apache.pdfbox:pdfbox:2.0.3"
         compile "net.sf.saxon:Saxon-HE:9.6.0-9"
         compile "xom:xom:1.2.5"
-        compile "com.fasterxml.jackson.core:jackson-core:2.9.1"
-        compile "com.fasterxml.jackson.core:jackson-databind:2.9.1"
-        compile "com.fasterxml.jackson.module:jackson-module-afterburner:2.9.1"
+        compile "com.fasterxml.jackson.core:jackson-core:2.9.5"
+        compile "com.fasterxml.jackson.core:jackson-databind:2.9.5"
+        compile "com.fasterxml.jackson.module:jackson-module-afterburner:2.9.5"
         compile "joda-time:joda-time:2.9.9"
         compile "org.apache.lucene:lucene-analyzers-common:4.5.1"
+        compile 'javax.xml.bind:jaxb-api:2.3.0'
 
         shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
 
@@ -284,16 +285,16 @@ project(":grobid-service") {
 
     dependencies {
         compile project(':grobid-core')
-        compile "io.dropwizard:dropwizard-core:1.0.2"
-        compile "io.dropwizard:dropwizard-assets:1.0.2"
-        compile "com.hubspot.dropwizard:dropwizard-guicier:1.0.0.6"
-        compile "io.dropwizard:dropwizard-testing:1.0.2"
-        compile "io.dropwizard:dropwizard-forms:1.0.2"
-        compile "io.dropwizard:dropwizard-client:1.0.2"
-        compile "io.dropwizard:dropwizard-auth:1.0.2"
-        compile "org.apache.pdfbox:pdfbox:1.8.9"
+        compile "io.dropwizard:dropwizard-core:1.3.7"
+        compile "io.dropwizard:dropwizard-assets:1.3.7"
+        compile "com.hubspot.dropwizard:dropwizard-guicier:1.3.5.0"
+        compile "io.dropwizard:dropwizard-testing:1.3.7"
+        compile "io.dropwizard:dropwizard-forms:1.3.7"
+        compile "io.dropwizard:dropwizard-client:1.3.7"
+        compile "io.dropwizard:dropwizard-auth:1.3.7"
+        compile "org.apache.pdfbox:pdfbox:2.0.3"
 
-        testCompile "io.dropwizard:dropwizard-testing:1.0.2"
+        testCompile "io.dropwizard:dropwizard-testing:1.3.5"
     }
 
     distributions {
@@ -372,6 +373,8 @@ project(":grobid-trainer") {
     // run like:
     // gradle PubMedCentralEval -Pp2t=/path/to/goldenSet
     // gradle PubMedCentralEval -Pp2t=/path/to/goldenSet -Prun=1 -PfileRatio=0.1
+    // ./gradlew PrepareDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
+    // ./gradlew EvaluateDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
     task(PubMedCentralEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
@@ -383,6 +386,20 @@ project(":grobid-trainer") {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
+        jvmArgs '-Xmx3072m'
+    }
+
+    task(PrepareDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+        main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
+        classpath = sourceSets.main.runtimeClasspath
+        args 'data', getArg('p2t', '.')
+        jvmArgs '-Xmx3072m'
+    }
+
+    task(EvaluateDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+        main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
+        classpath = sourceSets.main.runtimeClasspath
+        args 'eval', getArg('p2t', '.')
         jvmArgs '-Xmx3072m'
     }
 }
@@ -422,7 +439,7 @@ tasks.coveralls {
 }
 
 wrapper {
-    gradleVersion "4.2.1"
+    gradleVersion "4.6"
 }
 
 build.dependsOn project.getSubprojects().collect({ it.getTasks().getByName("build") })

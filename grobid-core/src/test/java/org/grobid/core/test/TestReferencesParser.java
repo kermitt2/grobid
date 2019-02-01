@@ -25,7 +25,7 @@ public class TestReferencesParser extends EngineTest {
         String testPath = getTestResourcePath();
 
         String pdfPath = testPath + File.separator + "Wang-paperAVE2008.pdf";
-        List<BibDataSet> resRefs = engine.processReferences(new File(pdfPath), true);
+        List<BibDataSet> resRefs = engine.processReferences(new File(pdfPath), 1);
 
         assertNotNull(resRefs);
         assertThat(resRefs.size(), is(12));

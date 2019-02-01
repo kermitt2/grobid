@@ -27,7 +27,7 @@ The following functionalities are available:
 
 GROBID includes batch processing, a comprehensive RESTful API, a JAVA API, a relatively generic evaluation framework (precision, recall, etc.) and the semi-automatic generation of training data. 
 
-GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST, Mendeley, CERN, ...
+GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST, Mendeley, CERN, Internet Archive, ...
 
 The key aspects of GROBID are the following ones:
 
