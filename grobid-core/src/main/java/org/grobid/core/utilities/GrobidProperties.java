@@ -49,7 +49,7 @@ public class GrobidProperties {
     /**
      * Path to pdf2xml.
      */
-    private static File pathToPdf2Xml = null;
+    private static File pathToPdfToXml = null;
 
     /**
      * Determines the path of grobid-home for all objects of this class. When
@@ -559,12 +559,12 @@ public class GrobidProperties {
         return getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_USERNAME);
     }*/
 
-    public static Integer getPdf2XMLMemoryLimitMb() {
-        return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDF2XML_MEMORY_LIMIT, "2048"), 10);
+    public static Integer getPdfToXMLMemoryLimitMb() {
+        return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML_MEMORY_LIMIT, "2048"), 10);
     }
 
-    public static Integer getPdf2XMLTimeoutMs() {
-        return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDF2XML_TIMEOUT_SEC, "60"), 10) * 1000;
+    public static Integer getPdfToXMLTimeoutMs() {
+        return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML_TIMEOUT_SEC, "60"), 10) * 1000;
     }
 
     /**
@@ -715,27 +715,27 @@ public class GrobidProperties {
      * Returns the path to the home folder of pdf2xml.
      */
     public static void loadPdf2XMLPath() {
-        LOGGER.debug("loading pdf2xml path");
-        String pathName = getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDF2XML);
+        LOGGER.debug("loading pdf to xml command path");
+        String pathName = getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML);
 
-        pathToPdf2Xml = new File(pathName);
-        if (!pathToPdf2Xml.exists()) {
+        pathToPdfToXml = new File(pathName);
+        if (!pathToPdfToXml.exists()) {
             throw new GrobidPropertyException(
-                    "Path to 3rd party program pdf2xml doesn't exists. Please set the path to pdf2xml in the file grobid.properties with the property grobid.3rdparty.pdf2xml");
+                    "Path to 3rd party program (pdf to xml) doesn't exists. Please set the path to the pdf to xml program in the file grobid.properties with the property grobid.3rdparty.pdf2xml");
         }
 
-        pathToPdf2Xml = new File(pathToPdf2Xml, Utilities.getOsNameAndArch());
+        pathToPdfToXml = new File(pathToPdfToXml, Utilities.getOsNameAndArch());
 
-        LOGGER.debug("pdf2xml home directory set to " + pathToPdf2Xml.getAbsolutePath());
+        LOGGER.debug("pdf2xml home directory set to " + pathToPdfToXml.getAbsolutePath());
     }
 
     /**
-     * Returns the path to the home folder of pdf2xml.
+     * Returns the path to the home folder of pdf to xml program.
      *
-     * @return path to pdf2xml
+     * @return path to pdf to xml program
      */
-    public static File getPdf2XMLPath() {
-        return pathToPdf2Xml;
+    public static File getPdfToXMLPath() {
+        return pathToPdfToXml;
     }
 
     public static GrobidCRFEngine getGrobidCRFEngine() {
