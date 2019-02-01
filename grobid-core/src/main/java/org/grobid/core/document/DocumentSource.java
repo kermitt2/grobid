@@ -27,7 +27,7 @@ public class DocumentSource {
     private static final int KILLED_DUE_2_TIMEOUT = 143;
     private static final int MISSING_LIBXML2 = 127;
     private static final int MISSING_PDF2XML = 126;
-    public static final int PDF2XML_FILES_AMOUNT_LIMIT = 5000;
+    public static final int PDFTOXML_FILES_AMOUNT_LIMIT = 5000;
 
     private File pdfFile;
     private File xmlFile;
@@ -71,33 +71,31 @@ public class DocumentSource {
         return source;
     }
 
-    private String getPdf2xmlCommand(boolean withImage, boolean withAnnotations, boolean withOutline) {
-        StringBuilder pdf2xml = new StringBuilder();
-        pdf2xml.append(GrobidProperties.getPdf2XMLPath().getAbsolutePath());
-//        pdf2xml.append(
-//            GrobidProperties.isContextExecutionServer() ? File.separator + "pdftoxml_server" : File.separator + "pdftoxml");
-        pdf2xml.append(
+    private String getPdfToXmlCommand(boolean withImage, boolean withAnnotations, boolean withOutline) {
+        StringBuilder pdfToXml = new StringBuilder();
+        pdfToXml.append(GrobidProperties.getPdfToXMLPath().getAbsolutePath());
+        pdfToXml.append(
             GrobidProperties.isContextExecutionServer() ? File.separator + "pdfalto_server" : File.separator + "pdfalto");
-		pdf2xml.append(" -blocks -noImageInline -fullFontName ");
+        pdfToXml.append(" -blocks -noImageInline -fullFontName ");
 
         if (!withImage) {
-            pdf2xml.append(" -noImage ");
+            pdfToXml.append(" -noImage ");
 		}
         if (withAnnotations) {
-            pdf2xml.append(" -annotation ");
+            pdfToXml.append(" -annotation ");
         }
         if (withOutline) {
-            pdf2xml.append(" -outline ");
+            pdfToXml.append(" -outline ");
         }
 
-        pdf2xml.append(" -readingOrder ");
-        pdf2xml.append(" -ocr ");
+//        pdfToXml.append(" -readingOrder ");
+//        pdfToXml.append(" -ocr ");
 
-        pdf2xml.append(" -filesLimit 2000 ");
+        pdfToXml.append(" -filesLimit 2000 ");
 
-        System.out.println(pdf2xml);
-        //pdf2xml.append(" -conf <path to config> ");
-        return pdf2xml.toString();
+        System.out.println(pdfToXml);
+        //pdfToXml.append(" -conf <path to config> ");
+        return pdfToXml.toString();
     }
 
     /**
@@ -110,11 +108,11 @@ public class DocumentSource {
     public File pdf2xml(Integer timeout, boolean force, int startPage,
                         int endPage, File pdfPath, File tmpPath, boolean withImages, 
 						boolean withAnnotations, boolean withOutline) {
-        LOGGER.debug("start pdf2xml");
+        LOGGER.debug("start pdf to xml sub process");
         long time = System.currentTimeMillis();
         String pdftoxml0;
 
-        pdftoxml0 = getPdf2xmlCommand(withImages, withAnnotations, withOutline);
+        pdftoxml0 = getPdfToXmlCommand(withImages, withAnnotations, withOutline);
 
         if (startPage > 0)
             pdftoxml0 += " -f " + startPage + " ";
@@ -139,27 +137,27 @@ public class DocumentSource {
             cmd.add(pdfPath.getAbsolutePath());
             cmd.add(tmpPathXML.getAbsolutePath());
             if (GrobidProperties.isContextExecutionServer()) {
-                tmpPathXML = processPdf2XmlServerMode(pdfPath, tmpPathXML, cmd);
+                tmpPathXML = processPdfToXmlServerMode(pdfPath, tmpPathXML, cmd);
             } else {
                 if (!SystemUtils.IS_OS_WINDOWS) {
                     cmd = Arrays.asList("bash", "-c", "ulimit -Sv " +
-                            GrobidProperties.getPdf2XMLMemoryLimitMb() * 1024 + " && " + pdftoxml0 + " '" + pdfPath + "' " + tmpPathXML);
+                            GrobidProperties.getPdfToXMLMemoryLimitMb() * 1024 + " && " + pdftoxml0 + " '" + pdfPath + "' " + tmpPathXML);
                 }
                 LOGGER.debug("Executing command: " + cmd);
 
-                tmpPathXML = processPdf2XmlThreadMode(timeout, pdfPath, tmpPathXML, cmd);
+                tmpPathXML = processPdfToXmlThreadMode(timeout, pdfPath, tmpPathXML, cmd);
             }
 
             File dataFolder = new File(tmpPathXML.getAbsolutePath() + "_data");
             File[] files = dataFolder.listFiles();
-            if (files != null && files.length > PDF2XML_FILES_AMOUNT_LIMIT) {
+            if (files != null && files.length > PDFTOXML_FILES_AMOUNT_LIMIT) {
                 //throw new GrobidException("The temp folder " + dataFolder + " contains " + files.length + " files and exceeds the limit", 
                 //    GrobidExceptionStatus.PARSING_ERROR);
                 LOGGER.warn("The temp folder " + dataFolder + " contains " + files.length + 
-                    " files and exceeds the limit, only the first " + PDF2XML_FILES_AMOUNT_LIMIT + " asset files will be kept.");
+                    " files and exceeds the limit, only the first " + PDFTOXML_FILES_AMOUNT_LIMIT + " asset files will be kept.");
             }
         }
-        LOGGER.debug("pdf2xml process finished. Time to process:" + (System.currentTimeMillis() - time) + "ms");
+        LOGGER.debug("pdf to xml sub process process finished. Time to process:" + (System.currentTimeMillis() - time) + "ms");
         return tmpPathXML;
     }
 
@@ -175,7 +173,7 @@ public class DocumentSource {
      * @param cmd        arguments to call the executable pdf2xml
      * @return the path the the converted file.
      */
-    private File processPdf2XmlThreadMode(Integer timeout, File pdfPath,
+    private File processPdfToXmlThreadMode(Integer timeout, File pdfPath,
                                           File tmpPathXML, List<String> cmd) {
         LOGGER.debug("Executing: " + cmd.toString());
         ProcessRunner worker = new ProcessRunner(cmd, "pdf2xml[" + pdfPath + "]", true);
@@ -186,7 +184,7 @@ public class DocumentSource {
             if (timeout != null) {
                 worker.join(timeout);
             } else {
-                worker.join(GrobidProperties.getPdf2XMLTimeoutMs()); // max 50 second even without predefined
+                worker.join(GrobidProperties.getPdfToXMLTimeoutMs()); // max 50 second even without predefined
                 // timeout
             }
             if (worker.getExitStatus() == null) {
@@ -202,7 +200,7 @@ public class DocumentSource {
                 close(true, true, true);
                 throw new GrobidException("PDF to XML conversion failed on pdf file " + pdfPath + " " +
                         (StringUtils.isEmpty(errorStreamContents) ? "" : ("due to: " + errorStreamContents)),
-                        GrobidExceptionStatus.PDF2XML_CONVERSION_FAILURE);
+                        GrobidExceptionStatus.PDFTOXML_CONVERSION_FAILURE);
             }
         } catch (InterruptedException ex) {
             tmpPathXML = null;
@@ -223,18 +221,18 @@ public class DocumentSource {
      * @param cmd        arguments to call the executable pdf2xml
      * @return the path the the converted file.
      */
-    private File processPdf2XmlServerMode(File pdfPath, File tmpPathXML, List<String> cmd) {
+    private File processPdfToXmlServerMode(File pdfPath, File tmpPathXML, List<String> cmd) {
         LOGGER.debug("Executing: " + cmd.toString());
-        Integer exitCode = org.grobid.core.process.ProcessPdf2Xml.process(cmd);
+        Integer exitCode = org.grobid.core.process.ProcessPdfToXml.process(cmd);
 
         if (exitCode == null) {
             throw new GrobidException("An error occurred while converting pdf " + pdfPath, GrobidExceptionStatus.BAD_INPUT_DATA);
         } else if (exitCode == KILLED_DUE_2_TIMEOUT) {
             throw new GrobidException("PDF to XML conversion timed out", GrobidExceptionStatus.TIMEOUT);
         } else if (exitCode == MISSING_PDF2XML) {
-            throw new GrobidException("PDF to XML conversion failed. Cannot find pdf2xml executable", GrobidExceptionStatus.PDF2XML_CONVERSION_FAILURE);
+            throw new GrobidException("PDF to XML conversion failed. Cannot find pdf2xml executable", GrobidExceptionStatus.PDFTOXML_CONVERSION_FAILURE);
         } else if (exitCode == MISSING_LIBXML2) {
-            throw new GrobidException("PDF to XML conversion failed. pdf2xml cannot be executed correctly. Has libxml2 been installed in the system? More information can be found in the logs. ", GrobidExceptionStatus.PDF2XML_CONVERSION_FAILURE);
+            throw new GrobidException("PDF to XML conversion failed. pdf2xml cannot be executed correctly. Has libxml2 been installed in the system? More information can be found in the logs. ", GrobidExceptionStatus.PDFTOXML_CONVERSION_FAILURE);
         } else if (exitCode != 0) {
             throw new GrobidException("PDF to XML conversion failed with error code: " + exitCode, GrobidExceptionStatus.BAD_INPUT_DATA);
         }
