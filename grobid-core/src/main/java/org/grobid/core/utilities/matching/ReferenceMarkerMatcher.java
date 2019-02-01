@@ -36,13 +36,13 @@ public class ReferenceMarkerMatcher {
     //public static final Pattern AUTHOR_NAME_PATTERN = Pattern.compile("[A-Z][A-Za-z]+");
     public static final Pattern AUTHOR_NAME_PATTERN = Pattern.compile("[A-Z][\\p{L}]+");
     //public static final Pattern NUMBERED_CITATION_PATTERN = Pattern.compile(" *[\\(\\[]? *(?:\\d+[-–]\\d+,|\\d+, *)*[ ]*(?:\\d+[-–]\\d+|\\d+)[\\)\\]]? *");
-    public static final Pattern NUMBERED_CITATION_PATTERN = Pattern.compile("[\\(\\[]?\\s*(?:\\d+[-–]\\d+,|\\d+,[ ]*)*[ ]*(?:\\d+[-–]\\d+|\\d+)\\s*[\\)\\]]?");
+    public static final Pattern NUMBERED_CITATION_PATTERN = Pattern.compile("[\\(\\[]?\\s*(?:\\d+[-−–]\\d+,|\\d+,[ ]*)*[ ]*(?:\\d+[-–]\\d+|\\d+)\\s*[\\)\\]]?");
     public static final Pattern AUTHOR_SEPARATOR_PATTERN = Pattern.compile(";");
     public static final ClassicAnalyzer ANALYZER = new ClassicAnalyzer(Version.LUCENE_45);
     public static final int MAX_RANGE = 20;
     public static final Pattern NUMBERED_CITATIONS_SPLIT_PATTERN = Pattern.compile("[,;]");
     public static final Pattern AND_WORD_PATTERN = Pattern.compile("and");
-    public static final Pattern DASH_PATTERN = Pattern.compile("[–-]");
+    public static final Pattern DASH_PATTERN = Pattern.compile("[–−-]");
 
     public class MatchResult {  
         private String text;
