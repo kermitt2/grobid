@@ -15,6 +15,9 @@ public class GrobidServicePropConfiguration {
     @JsonProperty
     private String grobidProperties;
 
+    @JsonProperty
+    private boolean modelPreload = false;
+
     public String getGrobidHome() {
         return grobidHome;
     }
@@ -37,5 +40,13 @@ public class GrobidServicePropConfiguration {
 
     public void setGrobidProperties(String grobidProperties) {
         this.grobidProperties = grobidProperties;
+    }
+
+    public boolean getModelPreload() {
+        return modelPreload;
+    }
+
+    public void setModelPreload(boolean modelPreload) {
+        this.modelPreload = modelPreload;
     }
 }

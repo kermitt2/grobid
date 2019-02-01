@@ -222,5 +222,6 @@ public class TableTrainer extends AbstractTrainer {
         GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new TableTrainer());
         AbstractTrainer.runEvaluation(new TableTrainer());
+        System.exit(0);
     }
 }

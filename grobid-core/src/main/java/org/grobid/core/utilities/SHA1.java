@@ -11,8 +11,6 @@ import org.slf4j.LoggerFactory;
 /**
  * Hash a string using sha1.
  * 
- * @author Damien
- * 
  */
 public class SHA1 {
 

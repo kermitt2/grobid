@@ -204,26 +204,17 @@ public class CitationParser extends AbstractParser {
 
         // consolidate the set
         if (consolidate != 0) {
-            Consolidation consolidator = new Consolidation(cntManager);
+            Consolidation consolidator = Consolidation.getInstance();
+            if (consolidator.getCntManager() == null)
+                consolidator.setCntManager(cntManager);       
             Map<Integer,BiblioItem> resConsolidation = null;
             try {
                 resConsolidation = consolidator.consolidate(results);
             } catch(Exception e) {
                 throw new GrobidException(
                 "An exception occured while running consolidation on bibliographical references.", e);
-            } finally {
-                //consolidator.close();
-            }
+            } 
             if (resConsolidation != null) {
-
-int consolidated = 0;
-for (Entry<Integer, BiblioItem> cursor : resConsolidation.entrySet()) {
-if (cursor.getValue() != null) {
-consolidated++;
-} 
-}
-System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON search API): " + consolidated + " / " + resConsolidation.size());
-
                 for(int i=0; i<results.size(); i++) {
                     BiblioItem resCitation = results.get(i).getResBib();
                     BiblioItem bibo = resConsolidation.get(Integer.valueOf(i));
@@ -395,8 +386,10 @@ System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON 
             return resCitation;
         }
         Consolidation consolidator = null;
-        try {                
-            consolidator = new Consolidation(cntManager);
+        try {
+            consolidator = Consolidation.getInstance();
+            if (consolidator.getCntManager() == null)
+                consolidator.setCntManager(cntManager);  
             /*List<BibDataSet> biblios = new ArrayList<BibDataSet>();
             BibDataSet theBib = new BibDataSet();
             theBib.setResBib(resCitation);
@@ -413,10 +406,8 @@ System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON 
         } catch (Exception e) {
             // e.printStackTrace();
             throw new GrobidException(
-                    "An exception occured while running Grobid.", e);
-        } finally {
-            //consolidator.close();
-        }
+                    "An exception occured while running bibliographical data consolidation.", e);
+        } 
         return resCitation;
     }
 

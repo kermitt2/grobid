@@ -28,6 +28,24 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 			
 			biblio.setDOI(item.get("DOI").asText());
 
+			JsonNode pmidNode = item.get("pmid");
+            if (pmidNode != null && (!pmidNode.isMissingNode()) ) {
+                String pmid = pmidNode.asText();
+                biblio.setPMID(pmid);
+            }
+
+            JsonNode pmcidNode = item.get("pmc");
+            if (pmcidNode != null && (!pmcidNode.isMissingNode()) ) {
+                String pmcid = pmcidNode.asText();
+                biblio.setPMCID(pmcid);
+            }
+
+            JsonNode piiNode = item.get("pii");
+            if (piiNode != null && (!piiNode.isMissingNode()) ) {
+                String pii = piiNode.asText();
+                biblio.setPII(pii);
+            }
+
 			JsonNode typeNode = item.get("type");
 			if (typeNode != null && (!typeNode.isMissingNode()) ) {
 				type = typeNode.asText();
@@ -135,7 +153,7 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 						if (((ArrayNode)firstDatePartNode).size() > 1) {
 							month = ((ArrayNode)firstDatePartNode).get(1).asText();
 							if (((ArrayNode)firstDatePartNode).size() > 2) {
-								day = month = ((ArrayNode)firstDatePartNode).get(2).asText();
+								day = ((ArrayNode)firstDatePartNode).get(2).asText();
 							}
 						}
 						Date date = new Date();

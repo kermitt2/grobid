@@ -216,5 +216,6 @@ public class FigureTrainer extends AbstractTrainer {
         GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new FigureTrainer());
         AbstractTrainer.runEvaluation(new FigureTrainer());
+        System.exit(0);
     }
 }

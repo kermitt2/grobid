@@ -26,8 +26,18 @@ public class AbstractEngineFactory {
 	 * @return Engine
 	 */
 	protected synchronized Engine getEngine() {
+		return getEngine(false);
+	}
+
+	/**
+	 * Return a new instance of engine if it doesn't exist, the existing
+	 * instance else.
+	 * 
+	 * @return Engine
+	 */
+	protected synchronized Engine getEngine(boolean preload) {
 		if (engine == null) {
-			engine = createEngine();
+			engine = createEngine(preload);
 		}
 		return engine;
 	}
@@ -38,27 +48,36 @@ public class AbstractEngineFactory {
 	 * @return Engine
 	 */
 	protected Engine createEngine() {
-		Engine retVal = null;
-		retVal = new Engine();
-		return retVal;
+		return createEngine(false);
 	}
 
 	/**
-	 * Initializes all necessary things for starting grobid. 
+	 * Return a new instance of engine.
+	 * 
+	 * @return Engine
+	 */
+	protected Engine createEngine(boolean preload) {
+		return new Engine(preload);
+	}
+
+	/**
+	 * Initializes all necessary things for starting grobid
 	 */
 	public static void init() {
 		GrobidProperties.getInstance();
 		LibraryLoader.load();
+		Lexicon.getInstance();
 	}
 	
 	/**
-	 * Initializes all necessary things for starting grobid.
+	 * Initializes all the models 
 	 */
+	@Deprecated
 	public static void fullInit() {
 		init();
         if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
 		    ModelMap.initModels();
-        }
-		Lexicon.getInstance();
+        } 
+		//Lexicon.getInstance();
 	}
 }

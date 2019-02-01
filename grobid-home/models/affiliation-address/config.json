@@ -1,0 +1,20 @@
+{
+    "fold_number": 1,
+    "case_vocab_size": 8,
+    "use_ELMo": false,
+    "char_vocab_size": 152,
+    "model_name": "affiliation-address",
+    "dropout": 0.5,
+    "num_char_lstm_units": 25,
+    "num_word_lstm_units": 100,
+    "use_char_feature": true,
+    "word_embedding_size": 300,
+    "model_type": "BidLSTM_CRF",
+    "embeddings_name": "glove-840B",
+    "use_crf": true,
+    "max_char_length": 30,
+    "recurrent_dropout": 0.5,
+    "char_embedding_size": 25,
+    "case_embedding_size": 5,
+    "batch_size": 20
+}

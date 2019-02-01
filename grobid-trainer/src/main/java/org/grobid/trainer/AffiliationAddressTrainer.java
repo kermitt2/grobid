@@ -176,6 +176,7 @@ public class AffiliationAddressTrainer extends AbstractTrainer {
         Trainer trainer = new AffiliationAddressTrainer();
         AbstractTrainer.runTraining(trainer);
         AbstractTrainer.runEvaluation(trainer);
+        System.exit(0);
     }
 
 }

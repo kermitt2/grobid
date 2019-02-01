@@ -196,5 +196,6 @@ public class CitationTrainer extends AbstractTrainer {
         Trainer trainer = new CitationTrainer();
         AbstractTrainer.runTraining(trainer);
         AbstractTrainer.runEvaluation(trainer);
+        System.exit(0);
     }
 }

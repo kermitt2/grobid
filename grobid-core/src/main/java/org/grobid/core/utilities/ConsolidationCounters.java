@@ -4,6 +4,8 @@ import org.grobid.core.engines.counters.*;
 
 /**
  * Counters for keeping track of consolidation activity and results
+ *
+ *  @author Patrice 
  */
 public class ConsolidationCounters {
     public static final Countable CONSOLIDATION = new Countable() {
