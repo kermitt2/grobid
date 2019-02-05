@@ -122,7 +122,7 @@ A relatively important number of citations in the NLM files (and other native pu
 
 As a consequence, the fields extracted by GROBID will not match any reference 'expected' values and will all be considered as false positive. The scores for the citation structures are thus lower than the actual performance of the system. 
 
-### Non coded information in XML "gold" data for intervals
+### Non encoded information in XML "gold" data for intervals
 
 In the reference NLM/JATS files from PMC, in the case of range citation callout, e.g. __[1-4]__, usually only the label number visible in the text are annotated. For example, the following text
 
@@ -138,7 +138,7 @@ Recent studies have described the use of contrast material with high iodine cont
 
 The references 2 and 3 are thus missing.  
 
-GROBID expends intervals and will likely identify and match these "intermediary" callouts (including 2 and 3 in the above example). However these additional correct extractions and matching from GROBID will be counted as false in the evaluation because missing from the "gold" data.
+GROBID expends intervals and will likely identify and match these "intermediary" callouts (including 2 and 3 in the above example). However these additional correct extractions and matching from GROBID will be counted as false positive in the evaluation because missing from the "gold" data.
 
 
 ### Character encoding and glyphs
