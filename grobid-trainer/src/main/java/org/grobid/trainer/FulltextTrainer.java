@@ -26,7 +26,7 @@ public class FulltextTrainer extends AbstractTrainer{
         // adjusting CRF training parameters for this model (only with Wapiti)
         epsilon = 0.0001;
         window = 20;
-        nbMaxIterations = 2000;
+        nbMaxIterations = 1500;
     }
 
     @Override

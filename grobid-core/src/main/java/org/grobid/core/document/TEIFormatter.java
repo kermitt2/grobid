@@ -1444,7 +1444,7 @@ public class TEIFormatter {
         text = text.replace("\n", " ");
         if (text.endsWith(" "))
             spaceEnd = true;
-//System.out.println("callout text: " + text);
+        //System.out.println("callout text: " + text);
         List<Node> nodes = new ArrayList<>();
         for (ReferenceMarkerMatcher.MatchResult matchResult : markerMatcher.match(refTokens)) {
             // no need to HTMLEncode since XOM will take care about the correct escaping
