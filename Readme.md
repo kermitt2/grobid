@@ -60,7 +60,18 @@ _Warning_: Some quota and query limitation apply to the demo server! If you are 
 
 ## Latest version
 
-The latest stable release of GROBID is version ```0.5.3```. This version brings:
+The latest stable release of GROBID is version ```0.5.4```. This version brings:
+
++ Transparent usage of [DeLFT](https://github.com/kermitt2/delft) deep learning models (BidLSTM-CRF) instead of Wapiti CRF models, native integration via [JEP](https://github.com/ninia/jep)
++ Support of [biblio-glutton](https://github.com/kermitt2/biblio-glutton) as DOI/metadata matching service, alternative to crossref REST API 
++ Improvement of citation context identification and matching (+9% recall with similar precision, for PMC sample 1943 articles, from 43.35 correct citation contexts per article to 49.98 correct citation contexts per article)
++ Citation callout now in abstract, figure and table captions
++ Structured abstract (including update of TEI schema)
++ Bug fixes and some more parameters: by default using all available threads when training (thanks @de-code) and possibility to load models at the start of the service
+
+(more information in the [release](https://github.com/kermitt2/grobid/releases/tag/0.5.4) page)
+
+New in previous release ```0.5.3```: 
 
 + Improvement of consolidation options and processing (better handling of CrossRef API, but the best is coming soon ;)
 + Better recall for figure and table identification (thanks to @detonator413) 
