@@ -313,7 +313,7 @@ public class Figure {
                     String clusterContent = LayoutTokensUtil.normalizeText(cluster.concatTokens());
                     if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
                         try {
-                            List<Node> refNodes = formatter.markReferencesTEILuceneBased(clusterContent,
+                            List<Node> refNodes = formatter.markReferencesTEILuceneBased(
                                     cluster.concatTokens(),
                                     doc.getReferenceMarkerMatcher(),
                                     config.isGenerateTeiCoordinates("ref"), 
