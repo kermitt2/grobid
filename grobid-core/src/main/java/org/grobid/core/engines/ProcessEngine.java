@@ -168,7 +168,7 @@ public class ProcessEngine implements Closeable {
             for (final File currPdf : files) {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
-                        System.out.println("Processing: " + currPdf.getName());
+                        System.out.println("Processing: " + currPdf.getPath());
                         GrobidAnalysisConfig config = null;
                         // path for saving assets
                         if (saveAssets) {

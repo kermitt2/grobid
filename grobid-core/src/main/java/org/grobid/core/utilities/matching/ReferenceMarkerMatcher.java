@@ -41,7 +41,7 @@ public class ReferenceMarkerMatcher {
     public static final ClassicAnalyzer ANALYZER = new ClassicAnalyzer(Version.LUCENE_45);
     public static final int MAX_RANGE = 20;
     public static final Pattern NUMBERED_CITATIONS_SPLIT_PATTERN = Pattern.compile("[,;]");
-    public static final Pattern AND_WORD_PATTERN = Pattern.compile("and");
+    public static final Pattern AND_WORD_PATTERN = Pattern.compile("(and)|&");
     public static final Pattern DASH_PATTERN = Pattern.compile("[–−-]");
 
     public class MatchResult {  
@@ -87,6 +87,7 @@ public class ReferenceMarkerMatcher {
         allFirstAuthors = new HashSet<String>();
         for(BibDataSet bibDataSet : bds) {
             allLabels.add(bibDataSet.getRefSymbol());
+            //System.out.println(bibDataSet.getRefSymbol());
             String authorString = bibDataSet.getResBib().getFirstAuthorSurname();
             if ((authorString != null) && (authorString.length() > 0))
                 allFirstAuthors.add(authorString);
@@ -155,9 +156,9 @@ public class ReferenceMarkerMatcher {
     }
 
     // relaxed number matching
-    public static boolean isNumberedCitationReference(String t) {
+    /*public static boolean isNumberedCitationReference(String t) {
         return NUMBERED_CITATION_PATTERN.matcher(t.trim()).find();
-    }
+    }*/
 
     // number matching for number alone or in combination with author for cases "Naze et al. [5]"
     /*public static boolean isNumberedCitationReference(String t) {
@@ -166,9 +167,9 @@ public class ReferenceMarkerMatcher {
     }*/
 
     // string number matching
-    /*public static boolean isNumberedCitationReference(String t) {
+    public static boolean isNumberedCitationReference(String t) {
         return NUMBERED_CITATION_PATTERN.matcher(t.trim()).matches();
-    }*/
+    }
 
     private List<MatchResult> matchNumberedCitation(String input, List<LayoutToken> refTokens) throws EntityMatcherException {
         List<Pair<String, List<LayoutToken>>> labels = getNumberedLabels(refTokens);
