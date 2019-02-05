@@ -4,7 +4,7 @@
 
 ### Limitations
 
-As of April 2017, GROBID version 0.4.2, coordinate areas can be obtained for the following document substructures: 
+As of April 2017, GROBID version 0.4.2 and higher, coordinate areas can be obtained for the following document substructures: 
 
 * ```persName``` for a complete author name,
 * ```figure``` for figure AND table,
