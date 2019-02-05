@@ -1,0 +1,36 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>(4)</label> Zhang, Q.; Sun, Y.; Xu, W.; Zhu, D. Organic Thermoelectric<lb/> Materials: Emerging Green Energy Materials Converting Heat to<lb/> Electricity Directly and Efficiently. Adv. Mater. 2014, 26, 6829−6851.<lb/></bibl> 
+        <bibl><label>(5)</label> Boulanger, C. Thermoelectric Material Electroplating: A<lb/> Historical Review. J. Electron. Mater. 2010, 39, 1818−1827.<lb/></bibl> 
+        <bibl><label>(6)</label> Zhang, Q.; Sun, Y.; Xu, W.; Zhu, D. Thermoelectric Energy From<lb/> Flexible P3HT Films Doped With A Ferric Salt Of Triflimide Anions.<lb/> Energy Environ. Sci. 2012, 5, 9639−9644.<lb/></bibl> 
+        <bibl><label>(7)</label> Bubnova, O.; Khan, Z. U.; Malti, A.; Braun, S.; Fahlman, M.;<lb/> Berggren, M.; Crispin, X. Optimization of the Thermoelectric Figure<lb/> of Merit in The Conducting Polymer Poly (3, 4-ethylenedioxythio-<lb/>phene). Nat. Mater. 2011, 10, 429−433.<lb/></bibl> 
+        <bibl><label>(8)</label> Bubnova, O.; Berggren, M.; Crispin, X. Tuning the Thermo-<lb/>electric Properties of Conducting Polymers in an Electrochemical<lb/> Transistor. J. Am. Chem. Soc. 2012, 134, 16456−16459.<lb/></bibl> 
+        <bibl><label>(9)</label> Russ, B.; Robb, M. J.; Brunetti, F. G.; Miller, P. L.; Perry, E. E.;<lb/> Patel, S. N.; Ho, V.; Chang, W. B.; Urban, J. J.; Chabinyc, M. L. Power<lb/> Factor Enhancement in Solution-Processed Organic n-Type Thermo-<lb/>electrics Through Molecular Design. Adv. Mater. 2014, 26, 3473−<lb/> 3477.<lb/></bibl> 
+        <bibl><label>(10)</label> Schlitz, R. A.; Brunetti, F. G.; Glaudell, A. M.; Miller, P. L.;<lb/> Brady, M. A.; Takacs, C. J.; Hawker, C. J.; Chabinyc, M. L. Solubility-<lb/>Limited Extrinsic n-Type Doping of a High Electron Mobility Polymer<lb/> for Thermoelectric Applications. Adv. Mater. 2014, 26, 2825−2830.<lb/></bibl> 
+        <bibl><label>(11)</label> Sun, Y.; Sheng, P.; Di, C.; Jiao, F.; Xu, W.; Qiu, D.; Zhu, D.<lb/> Organic Thermoelectric Materials and Devices Based on p-and n-Type<lb/> Poly (metal 1,1,2,2-ethenetetrathiolate). Adv. Mater. 2012, 24, 932−<lb/> 937.<lb/></bibl>
+        <bibl><label>(12)</label> Kim, G.; Shao, L.; Zhang, K.; Pipe, K. Engineered Doping of<lb/> Organic Semiconductors for Enhanced Thermoelectric Efficiency. Nat.<lb/> Mater. 2013, 12, 719−723.<lb/></bibl> 
+        <bibl><label>(13)</label> Kim, B.; Shin, H.; Park, T.; Lim, H.; Kim, E. NIR-Sensitive Poly<lb/> (3, 4-ethylenedioxyselenophene) Derivatives for Transparent Photo-<lb/>Thermo-Electric Converters. Adv. Mater. 2013, 25, 5483−5489.<lb/></bibl> 
+        <bibl><label>(14)</label> Xu, L.; Liu, Y.; Garrett, M. P.; Chen, B.; Hu, B. Enhancing<lb/> Seebeck Effects by Using Excited States in Organic Semiconducting<lb/> Polymer MEH-PPV Based on Multilayer Electrode/Polymer/<lb/> Electrode Thin-Film Structure. J. Phys. Chem. C 2013, 117, 10264−<lb/> 10269.<lb/></bibl> 
+        <bibl><label>(15)</label> Basko, D. A Photothermoelectric Effect in Graphene. Science<lb/> 2011, 334, 610−611.<lb/></bibl> 
+        <bibl><label>(16)</label> Gabor, N. M.; Song, J. C.; Ma, Q.; Nair, N. L.; Taychatanapat,<lb/> T.; Watanabe, K.; Taniguchi, T.; Levitov, L. S.; Jarillo-Herrero, P. Hot<lb/> Carrier−Assisted Intrinsic Photoresponse in Graphene. Science 2011,<lb/> 334, 648−652.<lb/></bibl> 
+        <bibl><label>(17)</label> Song, J. C.; Rudner, M. S.; Marcus, C. M.; Levitov, L. S. Hot<lb/> Carrier Transport And Photocurrent Response in Graphene. Nano<lb/> Lett. 2011, 11, 4688−4692.<lb/></bibl> 
+        <bibl><label>(18)</label> Yan, K.; Wu, D.; Peng, H.; Jin, L.; Fu, Q.; Bao, X.; Liu, Z.<lb/> Modulation-Doped Growth of Mosaic Graphene with Single-<lb/>Crystalline p-n Junctions for Efficient Photocurrent Generation. Nat.<lb/> Commun. 2012, 3, 1280−1286.<lb/></bibl> 
+        <bibl><label>(19)</label> Liu, C.-H.; Chang, Y.-C.; Norris, T. B.; Zhong, Z. Graphene<lb/> Photodetectors with Ultra-Broadband And High Responsivity at<lb/> Room Temperature. Nat. Nanotechnol. 2014, 9, 273−278.<lb/></bibl> 
+        <bibl><label>(20)</label> Sun, D.; Aivazian, G.; Jones, A. M.; Ross, J. S.; Yao, W.; Cobden,<lb/> D.; Xu, X. Ultrafast Hot-Carrier-Dominated Photocurrent in<lb/> Graphene. Nat. Nanotechnol. 2012, 7, 114−118.<lb/></bibl> 
+        <bibl><label>(21)</label> Wu, C.-C.; Jariwala, D.; Sangwan, V. K.; Marks, T. J.; Hersam,<lb/> M. C.; Lauhon, L. J. Elucidating the photoresponse of Ultrathin MoS 2<lb/> Field-Effect Transistors by Scanning Photocurrent Microscopy. J. Phys.<lb/> Chem. Lett. 2013, 4, 2508−2513.<lb/></bibl> 
+		<bibl><label>(22)</label> Wu, D.; Yan, K.; Zhou, Y.; Wang, H.; Lin, L.; Peng, H.; Liu, Z.<lb/> Plasmon-Enhanced Photothermoelectric Conversion in Chemical<lb/> Vapor Deposited Graphene p-n Junctions. J. Am. Chem. Soc. 2013,<lb/> 135, 10926−10929.<lb/></bibl> 
+		<bibl><label>(23)</label> Jiao, F.; Di, C.-a.; Sun, Y.; Sheng, P.; Xu, W.; Zhu, D. Inkjet-<lb/>Printed Flexible Organic Thin-Film Thermoelectric Devices Based On<lb/> P-And N-Type Poly (Metal 1,1,2, 2-Ethenetetrathiolate) S/Polymer<lb/> Composites Through Ball-Milling. Philos. Trans. R. Soc London, Ser.. A<lb/> 2014, 372, 20130008.<lb/></bibl> 
+		<bibl><label>(24)</label> Iwamura, M.; Watanabe, H.; Ishii, K.; Takeuchi, S.; Tahara, T.<lb/> Coherent Nuclear Dynamics in Ultrafast Photoinduced Structural<lb/> Change of Bis(diimine)copper(I) Complex. J. Am. Chem. Soc. 2011,<lb/> 133, 7728−7736.<lb/></bibl> 
+		<bibl><label>(25)</label> Tromp, M.; Dent, A. J.; Headspith, J.; Easun, T. L.; Sun, X.-Z.;<lb/> George, M. W.; Mathon, O.; Smolentsev, G.; Hamilton, M. L.; Evans,<lb/> J. Energy Dispersive XAFS: Characterization of Electronically Excited<lb/> States of Copper(I) Complexes. J. Phys. Chem. B 2013, 117, 7381−<lb/> 7387.<lb/></bibl> 
+		<bibl><label>(26)</label> Fritzsche, H. A General Expression for the Thermoelectric<lb/> Power. Solid State Commun. 1971, 9, 1813−1815.<lb/></bibl> 
+		<bibl><label>(27)</label> Pernstich, K. P.; Roessner, B.; Batlogg, B. Field-Effect-<lb/>Modulated Seebeck Coefficient in Organic Semiconductors. Nat.<lb/> Mater. 2008, 7, 321−325.<lb/></bibl> 
+		<bibl><label>(28)</label> Bubnova, O.; Khan, Z. U.; Wang, H.; Braun, S.; Evans, D. R.;<lb/> Fabretto, M.; Hojati-Talemi, P.; Dagnelund, D.; Arlin, J.-B.; Geerts, Y.<lb/> H.; Desbief, S.; Breiby, D. W.; Andreasen, J. W.; Lazzaroni, R.; Chen,<lb/> W. M.; Zozoulenko, I.; Fahlman, M.; Murphy, P. J.; Berggren, M.;<lb/> Crispin, X. Semi-Metallic Polymers. Nat. Mater. 2014, 13, 190−194.<lb/></bibl> 
+		<bibl><label>(29)</label> Buscema, M.; Barkelid, M.; Zwiller, V.; van der Zant, H. S.;<lb/> Steele, G. A.; Castellanos-Gomez, A. Large and Tunable Photo-<lb/>thermoelectric Effect in Single-layer MoS 2 . Nano Lett. 2013, 13, 358−<lb/> 363.</bibl>
+        </listBibl>
+    </text>
+</tei>
+
