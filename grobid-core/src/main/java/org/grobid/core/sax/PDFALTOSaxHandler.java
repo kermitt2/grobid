@@ -380,10 +380,10 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 							}
 							break;
 						case "HPOS":
-                            x = Integer.getInteger(value);
+                            x = Double.parseDouble(value);
 							break;
                         case "VPOS":
-                            y = Integer.getInteger(value);
+                            y = Double.parseDouble(value);
                             break;
                         case "WIDTH":
                             width = Double.parseDouble(value);
