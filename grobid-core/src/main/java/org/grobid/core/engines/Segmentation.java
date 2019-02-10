@@ -158,7 +158,7 @@ public class Segmentation extends AbstractParser {
                 if (files != null) {
                     int nbFiles = 0;
                     for (final File currFile : files) {
-                        if (nbFiles > DocumentSource.PDF2XML_FILES_AMOUNT_LIMIT)
+                        if (nbFiles > DocumentSource.PDFTOXML_FILES_AMOUNT_LIMIT)
                             break;
 
                         String toLowerCaseName = currFile.getName().toLowerCase();
