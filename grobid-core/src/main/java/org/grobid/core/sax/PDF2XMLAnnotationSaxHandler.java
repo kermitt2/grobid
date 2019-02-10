@@ -155,7 +155,7 @@ public class PDF2XMLAnnotationSaxHandler extends DefaultHandler {
 				String value = atts.getValue(i);
 
 				if ((name != null) && (value != null)) {
-					if (name.equals("x")) {
+					if (name.equals("HPOS")) {
 						double val = -1.0;
 						try {
 							val = Double.parseDouble(value);
@@ -164,7 +164,7 @@ public class PDF2XMLAnnotationSaxHandler extends DefaultHandler {
 						}
 						if (val != -1.0)
 							x_points.add(val);
-					} else if (name.equals("y")) {
+					} else if (name.equals("VPOS")) {
 						double val = -1.0;
 						try {
 							val = Double.parseDouble(value);
