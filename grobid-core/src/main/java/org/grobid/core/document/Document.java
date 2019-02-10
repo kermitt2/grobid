@@ -12,11 +12,7 @@ import com.google.common.collect.SortedSetMultimap;
 import org.apache.commons.io.IOUtils;
 import org.grobid.core.analyzers.Analyzer;
 import org.grobid.core.analyzers.GrobidAnalyzer;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.Equation;
-import org.grobid.core.data.Figure;
-import org.grobid.core.data.Table;
+import org.grobid.core.data.*;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.FigureCounters;
@@ -35,9 +31,8 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.PDFAnnotation;
 import org.grobid.core.layout.Page;
 import org.grobid.core.layout.VectorGraphicBoxCalculator;
-import org.grobid.core.sax.PDF2XMLAnnotationSaxHandler;
-import org.grobid.core.sax.PDF2XMLOutlineSaxHandler;
-import org.grobid.core.sax.PDF2XMLSaxHandler;
+import org.grobid.core.sax.*;
+
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.ElementCounter;
 import org.grobid.core.utilities.LayoutTokensUtil;
@@ -136,6 +131,8 @@ public class Document implements Serializable {
 
     // the document outline (or bookmark) embedded in the PDF, if present
     protected transient DocumentNode outlineRoot = null;
+
+    protected transient Metadata metadata = null;
 
     protected transient Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
 
@@ -350,13 +347,15 @@ public class Document implements Serializable {
         // having those characters in the input XML by cleaning it first
 
         images = new ArrayList<>();
-        PDF2XMLSaxHandler parser = new PDF2XMLSaxHandler(this, images);
+        PDFALTOSaxHandler parser = new PDFALTOSaxHandler(this, images);
+
         // we set possibly the particular analyzer to be used for tokenization of the PDF elements
         if (config.getAnalyzer() != null)
             parser.setAnalyzer(config.getAnalyzer());
         pdfAnnotations = new ArrayList<PDFAnnotation>();
         PDF2XMLAnnotationSaxHandler parserAnnot = new PDF2XMLAnnotationSaxHandler(this, pdfAnnotations);
         PDF2XMLOutlineSaxHandler parserOutline = new PDF2XMLOutlineSaxHandler(this);
+        PDFMetadataSaxHandler parserMetadata = new PDFMetadataSaxHandler(this);
 
         // get a SAX parser factory
         SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -364,8 +363,9 @@ public class Document implements Serializable {
         tokenizations = null;
 
         File file = new File(pathXML);
-        File fileAnnot = new File(pathXML + "_annot.xml");
-        File fileOutline = new File(pathXML + "_outline.xml");
+		File fileAnnot = new File(pathXML+"_annot.xml");
+        File fileOutline = new File(pathXML+"_outline.xml");
+        File fileMetadata = new File(pathXML+"_metadata.xml");
         FileInputStream in = null;
         try {
             // parsing of the pdf2xml file
@@ -417,6 +417,21 @@ public class Document implements Serializable {
                 throw e;
             } catch (Exception e) {
                 LOGGER.error("Cannot parse file: " + fileOutline, e, GrobidExceptionStatus.PARSING_ERROR);
+            } finally {
+                IOUtils.closeQuietly(in);
+            }
+        }
+        if (fileMetadata.exists()) {
+            try {
+                // parsing of the outline XML file (for PDF bookmark)
+                in = new FileInputStream(fileMetadata);
+                SAXParser p = spf.newSAXParser();
+                p.parse(in, parserMetadata);
+                metadata = parserMetadata.getMetadata();
+            } catch (GrobidException e) {
+                throw e;
+            } catch (Exception e) {
+                LOGGER.error("Cannot parse file: " + fileMetadata, e, GrobidExceptionStatus.PARSING_ERROR);
             } finally {
                 IOUtils.closeQuietly(in);
             }
