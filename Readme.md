@@ -38,7 +38,7 @@ The key aspects of GROBID are the following ones:
 + Speed - on a modern but low profile MacBook Pro: header extraction from 4000 PDF in 10 minutes (or from 3 PDF per second with the RESTful API), parsing of 3000 references in 18 seconds. 
 + Speed and Scalability: [INIST](http://www.inist.fr/?lang=en) recently scaled GROBID REST service for extracting bibliographical references of 1 million PDF in 1 day on a Xeon 10 CPU E5-2660 and 10 GB memory (3GB used in average) with 9 threads - so around 11.5 PDF per second. The complete processing of 395,000 PDF (IOP) with full text structuring was performed in 12h46mn with 16 threads, 0.11s per PDF (~1,72s per PDF with single thread).
 + Lazy loading of models and resources. Depending on the selected process, only the required data are loaded in memory. For instance, extracting only metadata header from a PDF requires less than 2 GB memory in a multithreading usage, extracting citations uses around 3GB and extracting all the PDF structure around 4GB.  
-+ Robust and fast PDF processing based on Xpdf and dedicated post-processing.
++ Robust and fast PDF processing with [pdfalto](https://github.com/kermitt2/pdfalto), based on Xpdf, and dedicated post-processing.
 + Modular and reusable machine learning models. The extractions are based on Linear Chain Conditional Random Fields which is currently the state of the art in bibliographical information extraction and labeling. The specialized CRF models are cascaded to build a complete document structure.  
 + Full encoding in [__TEI__](http://www.tei-c.org/Guidelines/P5/index.xml), both for the training corpus and the parsed results.
 + Reinforcement of extracted bibliographical data via online call to CrossRef (optional), export in OpenURL, BibTeX, etc. for easier integration into Digital Library environments. 
@@ -48,7 +48,7 @@ The key aspects of GROBID are the following ones:
 
 The GROBID extraction and parsing algorithms uses the [Wapiti CRF library](http://wapiti.limsi.fr). [CRF++ library](http://crfpp.googlecode.com/svn/trunk/doc/index.html) is not supported since GROBID version 0.4. The C++ libraries are transparently integrated as JNI with dynamic call based on the current OS. 
 
-GROBID should run properly "out of the box" on MacOS X, Linux (32 and 64 bits) and Windows. 
+GROBID should run properly "out of the box" on Linux (64 bits), MacOS, and Windows (32 and 64 bits). 
 
 ## Demo
 
