@@ -44,6 +44,9 @@ public interface GrobidPropertyKeys {
     String PROP_GROBID_MAX_CONNECTIONS = "org.grobid.max.connections";
     String PROP_GROBID_POOL_MAX_WAIT = "org.grobid.pool.max.wait";
 
+    String PROP_GLUTTON_HOST = "org.grobid.glutton.host";
+    String PROP_GLUTTON_PORT = "org.grobid.glutton.port";
+
     /**
      * Determines if properties like the firstnames, lastnames country codes and
      * dictionaries are supposed to be read from $GROBID_HOME path or not

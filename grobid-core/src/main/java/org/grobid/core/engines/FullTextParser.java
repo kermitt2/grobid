@@ -133,13 +133,13 @@ public class FullTextParser extends AbstractParser {
             Pair<String, LayoutTokenization> featSeg = null;
             parsers.getHeaderParser().processingHeaderBlock(config.getConsolidateHeader(), doc, resHeader);
             // above the old version of the header block identification, because more robust
-            /*if ((resHeader.getTitle() == null) || (resHeader.getTitle().trim().length() == 0) ||
+            if ((resHeader.getTitle() == null) || (resHeader.getTitle().trim().length() == 0) ||
                  (resHeader.getAuthors() == null) || (resHeader.getFullAuthors() == null) ||
                  (resHeader.getFullAuthors().size() == 0) ) {
                 resHeader = new BiblioItem();
                 parsers.getHeaderParser().processingHeaderSection(config.getConsolidateHeader(), doc, resHeader);
                 // above, use the segmentation model result
-            }*/
+            }
             // structure the abstract using the fulltext model
             if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {
                 List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);

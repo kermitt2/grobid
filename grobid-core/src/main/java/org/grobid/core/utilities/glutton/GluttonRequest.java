@@ -101,7 +101,18 @@ public class GluttonRequest<T extends Object> extends Observable {
         }
 
         try {
-            URIBuilder uriBuilder = new URIBuilder("http://localhost:8080");
+            String url = GrobidProperties.getInstance().getGluttonHost();
+            if (url == null) {
+                throw new Exception("Invalid url for glutton service");
+            }
+            Integer port = GrobidProperties.getInstance().getGluttonPort();
+            if (port != null) {
+                int portInt = port.intValue();
+                if (portInt != 0) {
+                    url += ":" + portInt;
+                }
+            }
+            URIBuilder uriBuilder = new URIBuilder("http://" + url);
             
             String path = BASE_PATH;
             uriBuilder.setPath(path);

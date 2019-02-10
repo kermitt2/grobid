@@ -416,7 +416,7 @@ public class GrobidProperties {
     }
 
     /**
-     * Returns the installtion path of DeLFT if set, null otherwise. It is required for using 
+     * Returns the installation path of DeLFT if set, null otherwise. It is required for using 
      * a Deep Learning sequence labelling engine. 
      *
      * @return folder that contains the local install of DeLFT
@@ -433,6 +433,20 @@ public class GrobidProperties {
             pathFile = new File(rawPath);
         }
         return pathFile.getAbsolutePath();
+    }
+
+    public static String getGluttonHost() {
+        return getPropertyValue(GrobidPropertyKeys.PROP_GLUTTON_HOST);
+    }
+
+    public static Integer getGluttonPort() {
+        String val = getPropertyValue(GrobidPropertyKeys.PROP_GLUTTON_PORT);
+        if (val != null && val.equals("null"))
+            val = null;
+        if (val == null)
+            return null;
+        else 
+            return Integer.valueOf(val);
     }
 
     public static boolean useELMo() {
