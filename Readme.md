@@ -67,7 +67,7 @@ The latest stable release of GROBID is version ```0.5.4```. This version brings:
 + Improvement of citation context identification and matching (+9% recall with similar precision, for PMC sample 1943 articles, from 43.35 correct citation contexts per article to 49.98 correct citation contexts per article)
 + Citation callout now in abstract, figure and table captions
 + Structured abstract (including update of TEI schema)
-+ Bug fixes and some more parameters: by default using all available threads when training (thanks @de-code) and possibility to load models at the start of the service
++ Bug fixes and some more parameters: by default using all available threads when training (thanks [@de-code](https://github.com/de-code)) and possibility to load models at the start of the service
 
 (more information in the [release](https://github.com/kermitt2/grobid/releases/tag/0.5.4) page)
 
