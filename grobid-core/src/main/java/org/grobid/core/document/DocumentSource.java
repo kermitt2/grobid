@@ -93,7 +93,7 @@ public class DocumentSource {
 
         pdfToXml.append(" -filesLimit 2000 ");
 
-        System.out.println(pdfToXml);
+        //System.out.println(pdfToXml);
         //pdfToXml.append(" -conf <path to config> ");
         return pdfToXml.toString();
     }
