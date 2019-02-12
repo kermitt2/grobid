@@ -92,7 +92,8 @@ subprojects {
         archives sourceJar
     }
 
-
+    /*
+    // removing - this currently breaks the release 
     task gitRev(type: Exec) {
         commandLine 'git', 'rev-parse', '--short', 'HEAD'
         standardOutput = new ByteArrayOutputStream()
@@ -113,6 +114,7 @@ subprojects {
             }
         }
     }
+    */
 
     compileJava.dependsOn(changeVersionIfNeeded)
 
