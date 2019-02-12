@@ -126,7 +126,8 @@ public class CrossrefRequest<T extends Object> extends Observable {
             } else {
             	uriBuilder.setPath(path);
 				for (Entry<String, String> cursor : params.entrySet()) 
-					if (!cursor.getKey().equals("doi") && !cursor.getKey().equals("DOI"))
+					if (!cursor.getKey().equals("doi") && !cursor.getKey().equals("DOI") && 
+						!cursor.getKey().equals("firstPage") && !cursor.getKey().equals("volume"))
 						uriBuilder.setParameter(cursor.getKey(), cursor.getValue());
             }
 			

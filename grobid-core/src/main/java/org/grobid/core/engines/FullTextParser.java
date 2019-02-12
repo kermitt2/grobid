@@ -11,6 +11,8 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Figure;
 import org.grobid.core.data.Table;
 import org.grobid.core.data.Equation;
+import org.grobid.core.data.Metadata;
+import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
@@ -138,6 +140,24 @@ public class FullTextParser extends AbstractParser {
                  (resHeader.getFullAuthors().size() == 0) ) {
                 resHeader = new BiblioItem();
                 parsers.getHeaderParser().processingHeaderSection(config.getConsolidateHeader(), doc, resHeader);
+                /*if (doc.getMetadata() != null) {
+                    Metadata metadata = doc.getMetadata();
+                    if (metadata.getTitle() != null)
+                        resHeader.setTitle(metadata.getTitle());
+                    if (metadata.getAuthor() != null) {
+                        resHeader.setAuthors(metadata.getAuthor());
+                        resHeader.setOriginalAuthors(metadata.getAuthor());
+                        List<Person> localAuthors = parsers.getAuthorParser().processingHeader(metadata.getAuthor());
+                        if (localAuthors != null) {
+                            for (Person pers : localAuthors) {
+                                resHeader.addFullAuthor(pers);
+                            }
+                        }
+                    }
+                    if ( (metadata.getTitle() != null) && (metadata.getAuthor() != null) ) {
+                        parsers.getHeaderParser().consolidateHeader(resHeader, config.getConsolidateHeader());
+                    }
+                }*/
                 // above, use the segmentation model result
             }
             // structure the abstract using the fulltext model

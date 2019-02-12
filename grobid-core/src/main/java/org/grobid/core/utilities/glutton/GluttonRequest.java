@@ -124,12 +124,14 @@ public class GluttonRequest<T extends Object> extends Observable {
                 if (doi == null)
                     doi = params.get("doi");
                 uriBuilder.setParameter("doi", doi);
-            } else if (params.get("PMID") != null || params.get("pmid") != null) {
+            } 
+            if (params.get("PMID") != null || params.get("pmid") != null) {
                 String pmid = params.get("PMID");
                 if (pmid == null)
                     pmid = params.get("pmid");
                 uriBuilder.setParameter("pmid", pmid);
-            } else if (params.get("PMCID") != null || params.get("pmcid") != null || params.get("pmc") != null || params.get("PMC") != null) {
+            } 
+            if (params.get("PMCID") != null || params.get("pmcid") != null || params.get("pmc") != null || params.get("PMC") != null) {
                 String pmcid = params.get("PMCID");
                 if (pmcid == null)
                     pmcid = params.get("pmcid");
@@ -138,7 +140,8 @@ public class GluttonRequest<T extends Object> extends Observable {
                 if (pmcid == null)
                     pmcid = params.get("pmc");
                 uriBuilder.setParameter("pmc", pmcid);
-            } else {
+            } 
+            {
                 for (Entry<String, String> cursor : params.entrySet()) {
                     if (!identifiers.contains(cursor.getKey())) 
                         uriBuilder.setParameter(mapFromCrossref(cursor.getKey()), cursor.getValue());
@@ -207,6 +210,10 @@ public class GluttonRequest<T extends Object> extends Observable {
 
         if (field.equals("query.author")) {
             return "firstAuthor";
+        }
+
+        if (field.equals("query.container-title")) {
+            return "jtitle";
         }
         
         return field;

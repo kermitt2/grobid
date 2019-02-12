@@ -907,6 +907,20 @@ public class BiblioItem {
     public void setDOI(String id) {
         doi = StringUtils.normalizeSpace(id);
         doi = doi.replace(" ", "");
+        doi = doi.replace("//", "/");
+        if (doi.startsWith("doi:") || doi.startsWith("DOI:") || doi.startsWith("DOI/") || doi.startsWith("doi/")) {
+            doi = doi.substring(4);
+        }
+        // pretty common wrong extraction pattern: 
+        // 43-61.DOI:10.1093/jpepsy/14.1.436/7
+        // 367-74.DOI:10.1080/14034940210165064
+        // (pages concatenated to the DOI) - easy/safe to fix
+        if ( (doi.indexOf("DOI:10.") != -1) || (doi.indexOf("doi:10.") != -1) ) {
+            int ind = doi.indexOf("DOI:10.");
+            if (ind == -1) 
+                ind = doi.indexOf("doi:10.");
+            doi = doi.substring(ind+4);
+        }
     } //{ doi = cleanDOI(id); } 
 
     public void setInDOI(String id) {

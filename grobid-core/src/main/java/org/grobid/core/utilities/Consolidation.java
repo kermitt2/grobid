@@ -172,17 +172,45 @@ public class Consolidation {
             // call based on the identified DOI
             arguments = new HashMap<String,String>();
             arguments.put("doi", doi);
-        } else if (StringUtils.isNotBlank(title) && StringUtils.isNotBlank(aut)) {
+        } 
+        if (StringUtils.isNotBlank(title)) {
             // call based on partial metadata
-            arguments = new HashMap<String,String>();
+            if (arguments == null)
+                arguments = new HashMap<String,String>();
             arguments.put("query.title", title);
+        }
+        if (StringUtils.isNotBlank(aut)) {
+            // call based on partial metadata
+            if (arguments == null)
+                arguments = new HashMap<String,String>();
             arguments.put("query.author", aut);
-        }/* else if (StringUtils.isNotBlank(rawCitation)) {
+        }
+        if (StringUtils.isNotBlank(journalTitle)) {
+            // call based on partial metadata
+            if (arguments == null)
+                arguments = new HashMap<String,String>();
+            arguments.put("query.container-title", journalTitle);
+        }
+        if (StringUtils.isNotBlank(volume)) {
+            // call based on partial metadata
+            if (arguments == null)
+                arguments = new HashMap<String,String>();
+            arguments.put("volume", volume);
+        }
+        if (StringUtils.isNotBlank(firstPage)) {
+            // call based on partial metadata
+            if (arguments == null)
+                arguments = new HashMap<String,String>();
+            arguments.put("firstPage", firstPage);
+        }
+
+        if (StringUtils.isNotBlank(rawCitation)) {
             // call with full raw string
-            arguments = new HashMap<String,String>();
+            if (arguments == null)
+                arguments = new HashMap<String,String>();
             arguments.put("query.bibliographic", rawCitation);
             //arguments.put("query", rawCitation);
-        }*/
+        }
 
         if (arguments == null || arguments.size() == 0) {
             return null;
@@ -300,6 +328,10 @@ public class Consolidation {
 
             if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF)
                 arguments.put("rows", "1"); // we just request the top-one result
+            else if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) {
+                // grobid is doing its own post-validation right now
+                arguments.put("postValidate", "false");
+            }
 
             final boolean doiQuery;
             try {
