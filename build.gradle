@@ -116,7 +116,7 @@ subprojects {
     }
     */
 
-    compileJava.dependsOn(changeVersionIfNeeded)
+    //compileJava.dependsOn(changeVersionIfNeeded)
 
     uploadArchives {
         // if you want to enable uploading to some maven repo, add those properties to ~/.gradle/gradle.properties, e.g.:
