@@ -173,43 +173,51 @@ public class Consolidation {
             arguments = new HashMap<String,String>();
             arguments.put("doi", doi);
         } 
+        if (StringUtils.isNotBlank(rawCitation)) {
+            // call with full raw string
+            if (arguments == null)
+                arguments = new HashMap<String,String>();
+            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || (arguments.size() == 0) )
+                arguments.put("query.bibliographic", rawCitation);
+            //arguments.put("query", rawCitation);
+        }
         if (StringUtils.isNotBlank(title)) {
             // call based on partial metadata
             if (arguments == null)
                 arguments = new HashMap<String,String>();
-            arguments.put("query.title", title);
+            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || (arguments.size() == 0) )
+                arguments.put("query.title", title);
         }
         if (StringUtils.isNotBlank(aut)) {
             // call based on partial metadata
             if (arguments == null)
                 arguments = new HashMap<String,String>();
-            arguments.put("query.author", aut);
+            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || (arguments.size() == 0) )
+                arguments.put("query.author", aut);
         }
         if (StringUtils.isNotBlank(journalTitle)) {
             // call based on partial metadata
-            if (arguments == null)
-                arguments = new HashMap<String,String>();
-            arguments.put("query.container-title", journalTitle);
+            if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                if (arguments == null)
+                    arguments = new HashMap<String,String>();
+                arguments.put("query.container-title", journalTitle);
+            }
         }
         if (StringUtils.isNotBlank(volume)) {
             // call based on partial metadata
-            if (arguments == null)
-                arguments = new HashMap<String,String>();
-            arguments.put("volume", volume);
+            if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                if (arguments == null)
+                    arguments = new HashMap<String,String>();
+                arguments.put("volume", volume);
+            }
         }
         if (StringUtils.isNotBlank(firstPage)) {
             // call based on partial metadata
-            if (arguments == null)
-                arguments = new HashMap<String,String>();
-            arguments.put("firstPage", firstPage);
-        }
-
-        if (StringUtils.isNotBlank(rawCitation)) {
-            // call with full raw string
-            if (arguments == null)
-                arguments = new HashMap<String,String>();
-            arguments.put("query.bibliographic", rawCitation);
-            //arguments.put("query", rawCitation);
+            if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                if (arguments == null)
+                    arguments = new HashMap<String,String>();
+                arguments.put("firstPage", firstPage);
+            }
         }
 
         if (arguments == null || arguments.size() == 0) {
@@ -256,11 +264,11 @@ public class Consolidation {
 
                 @Override
                 public void onError(int status, String message, Exception exception) {
-                    LOGGER.warn("Consolidation service returns error ("+status+") : "+message);
+                    LOGGER.info("Consolidation service returns error ("+status+") : "+message);
                 }
             });
         } catch(Exception e) {
-            LOGGER.warn("Consolidation error - " + ExceptionUtils.getStackTrace(e));
+            LOGGER.info("Consolidation error - " + ExceptionUtils.getStackTrace(e));
         } 
 
         client.finish(threadId);
@@ -305,22 +313,83 @@ public class Consolidation {
 
             Map<String, String> arguments = null;
 
+            String volume = theBiblio.getVolume();
+            if (StringUtils.isBlank(volume))
+                volume = theBiblio.getVolumeBlock();
+
+            String firstPage = null;
+            String pageRange = theBiblio.getPageRange();
+            int beginPage = theBiblio.getBeginPage();
+            if (beginPage != -1) {
+                firstPage = "" + beginPage;
+            } else if (pageRange != null) {
+                StringTokenizer st = new StringTokenizer(pageRange, "--");
+                if (st.countTokens() == 2) {
+                    firstPage = st.nextToken();
+                } else if (st.countTokens() == 1)
+                    firstPage = pageRange;
+            }
+
+            /*if (aut != null) {
+                aut = TextUtilities.removeAccents(aut);
+            }
+            if (title != null) {
+                title = TextUtilities.removeAccents(title);
+            }
+            if (journalTitle != null) {
+                journalTitle = TextUtilities.removeAccents(journalTitle);
+            }*/
+
             if (StringUtils.isNotBlank(doi)) {
                 // call based on the identified DOI
                 arguments = new HashMap<String,String>();
                 arguments.put("doi", doi);
-            } /*else if (StringUtils.isNotBlank(title) && StringUtils.isNotBlank(aut)) {
-                // call based on partial metadata
-                arguments = new HashMap<String,String>();
-                arguments.put("query.title", title);
-                arguments.put("query.author", aut);
-            }*/ else if (StringUtils.isNotBlank(rawCitation)) {
+            } 
+            if (StringUtils.isNotBlank(rawCitation)) {
                 // call with full raw string
-                arguments = new HashMap<String,String>();
+                if (arguments == null)
+                    arguments = new HashMap<String,String>();
                 arguments.put("query.bibliographic", rawCitation);
-                //arguments.put("query", rawCitation);
             }
-
+            if (StringUtils.isNotBlank(title)) {
+                // call based on partial metadata
+                if (arguments == null)
+                    arguments = new HashMap<String,String>();
+                if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || (arguments.size() == 0) )
+                    arguments.put("query.title", title);
+            }
+            if (StringUtils.isNotBlank(aut)) {
+                // call based on partial metadata
+                if (arguments == null)
+                    arguments = new HashMap<String,String>();
+                if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || (arguments.size() == 0) )
+                    arguments.put("query.author", aut);
+            }
+            if (StringUtils.isNotBlank(journalTitle)) {
+                // call based on partial metadata
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                    if (arguments == null)
+                        arguments = new HashMap<String,String>();
+                    arguments.put("query.container-title", journalTitle);
+                }
+            }
+            if (StringUtils.isNotBlank(volume)) {
+                // call based on partial metadata
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                    if (arguments == null)
+                        arguments = new HashMap<String,String>();
+                    arguments.put("volume", volume);
+                }
+            }
+            if (StringUtils.isNotBlank(firstPage)) {
+                // call based on partial metadata
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                    if (arguments == null)
+                        arguments = new HashMap<String,String>();
+                    arguments.put("firstPage", firstPage);
+                }
+            }
+            
             if (arguments == null || arguments.size() == 0) {
                 n++;
                 continue;
@@ -330,7 +399,7 @@ public class Consolidation {
                 arguments.put("rows", "1"); // we just request the top-one result
             else if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) {
                 // grobid is doing its own post-validation right now
-                arguments.put("postValidate", "false");
+                //arguments.put("postValidate", "false");
             }
 
             final boolean doiQuery;
@@ -370,11 +439,11 @@ public class Consolidation {
 
                     @Override
                     public void onError(int status, String message, Exception exception) {
-                        LOGGER.warn("Consolidation service returns error ("+status+") : "+message);
+                        LOGGER.info("Consolidation service returns error ("+status+") : "+message);
                     }
                 });
             } catch(Exception e) {
-                LOGGER.warn("Consolidation error - " + ExceptionUtils.getStackTrace(e));
+                LOGGER.info("Consolidation error - " + ExceptionUtils.getStackTrace(e));
             } 
             n++;
         }
