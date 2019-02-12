@@ -133,6 +133,9 @@ public class Consolidation {
         final List<BiblioItem> results = new ArrayList<BiblioItem>();
 
         String doi = bib.getDOI();
+        if (StringUtils.isNotBlank(doi)) {
+            doi = cleanDoi(doi);
+        }
         String aut = bib.getFirstAuthorSurname();
         String title = bib.getTitle();
         String journalTitle = bib.getJournal();
@@ -153,7 +156,7 @@ public class Consolidation {
                 firstPage = pageRange;
         }
 
-        if (aut != null) {
+        /*if (aut != null) {
             aut = TextUtilities.removeAccents(aut);
         }
         if (title != null) {
@@ -161,7 +164,7 @@ public class Consolidation {
         }
         if (journalTitle != null) {
             journalTitle = TextUtilities.removeAccents(journalTitle);
-        }
+        }*/
         if (cntManager != null) 
             cntManager.i(ConsolidationCounters.CONSOLIDATION);
 
@@ -177,8 +180,7 @@ public class Consolidation {
             // call with full raw string
             if (arguments == null)
                 arguments = new HashMap<String,String>();
-            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || (arguments.size() == 0) )
-                arguments.put("query.bibliographic", rawCitation);
+            arguments.put("query.bibliographic", rawCitation);
             //arguments.put("query", rawCitation);
         }
         if (StringUtils.isNotBlank(title)) {
@@ -249,7 +251,8 @@ public class Consolidation {
                         // we need here to post-check that the found item corresponds
                         // correctly to the one requested in order to avoid false positive
                         for(BiblioItem oneRes : res) {
-                            if (postValidation(bib, oneRes)) {
+                            if ((GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) ||
+                                postValidation(bib, oneRes)) {
                                 results.add(oneRes);
                                 if (cntManager != null) {
                                     cntManager.i(ConsolidationCounters.CONSOLIDATION_SUCCESS);
@@ -424,7 +427,8 @@ public class Consolidation {
                             // we need here to post-check that the found item corresponds
                             // correctly to the one requested in order to avoid false positive
                             for(BiblioItem oneRes : res) {
-                                if (postValidation(theBiblio, oneRes)) {
+                                if ((GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) ||
+                                    postValidation(theBiblio, oneRes)) {
                                     results.put(Integer.valueOf(getRank()), oneRes);
                                     if (cntManager != null) {
                                         cntManager.i(ConsolidationCounters.CONSOLIDATION_SUCCESS);
