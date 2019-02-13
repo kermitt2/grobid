@@ -15,6 +15,7 @@ import org.grobid.trainer.sax.FieldExtractSaxHandler;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.trainer.evaluation.utilities.NamespaceContextMap;
 import org.grobid.trainer.evaluation.utilities.FieldSpecification;
+import org.grobid.core.utilities.Consolidation.GrobidConsolidationService;
     
 import java.io.*;
 import java.util.*;
@@ -257,7 +258,12 @@ public class EvaluationDOIMatching {
         // evaluation of the run
         start = System.currentTimeMillis();
 
-        report.append("\n======= CROSSREF API ======= \n");
+        report.append("\n======= "); 
+        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON)
+            report.append("GLUTTON");
+        else
+            report.append("CROSSREF");
+        report.append(" API ======= \n");
         double precision = ((double)nbDOICorrect / nbDOIFound);
         report.append("\nprecision:\t" + precision);
         double recall = ((double)nbDOICorrect / nbRef);
