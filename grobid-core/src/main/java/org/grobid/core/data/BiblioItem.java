@@ -1559,11 +1559,23 @@ public class BiblioItem {
 
     private static String cleanDOI(String bibl) {
         if (bibl != null) {
+            bibl = StringUtils.normalizeSpace(bibl);
             bibl = bibl.replace(" ", "");
             if (bibl.startsWith("DOI:") || bibl.startsWith("DOI/") || bibl.startsWith("doi:") || bibl.startsWith("doi/")) {
                 bibl = bibl.substring(0, 4);
-            } else if (bibl.startsWith("DOI") || bibl.startsWith("doi")) {
+            } 
+            if (bibl.startsWith("DOI") || bibl.startsWith("doi")) {
                 bibl = bibl.substring(0, 3);
+            }
+            // pretty common wrong extraction pattern: 
+            // 43-61.DOI:10.1093/jpepsy/14.1.436/7
+            // 367-74.DOI:10.1080/14034940210165064
+            // (pages concatenated to the DOI) - easy/safe to fix
+            if ( (bibl.indexOf("DOI:10.") != -1) || (bibl.indexOf("doi:10.") != -1) ) {
+                int ind = bibl.indexOf("DOI:10.");
+                if (ind == -1) 
+                    ind = bibl.indexOf("doi:10.");
+                bibl = bibl.substring(ind+4);
             }
         }
         return bibl;
@@ -3199,8 +3211,10 @@ public class BiblioItem {
      * Return the surname of the first author.
      */
     public String getFirstAuthorSurname() {
-        if (this.firstAuthorSurname != null)
-            return TextUtilities.HTMLEncode(this.firstAuthorSurname);
+        if (this.firstAuthorSurname != null) {
+            return this.firstAuthorSurname;
+            //return TextUtilities.HTMLEncode(this.firstAuthorSurname);
+        }
 
         if (fullAuthors != null) {
             if (fullAuthors.size() > 0) {
@@ -3209,7 +3223,8 @@ public class BiblioItem {
                 if (sur != null) {
                     if (sur.length() > 0) {
                         this.firstAuthorSurname = sur;
-                        return TextUtilities.HTMLEncode(sur);
+                        //return TextUtilities.HTMLEncode(sur);
+                        return sur;
                     }
                 }
             }
@@ -3225,10 +3240,12 @@ public class BiblioItem {
                     int ind = author.lastIndexOf(" ");
                     if (ind != -1) {
                         this.firstAuthorSurname = author.substring(ind + 1);
-                        return TextUtilities.HTMLEncode(author.substring(ind + 1));
+                        //return TextUtilities.HTMLEncode(author.substring(ind + 1));
+                        return author.substring(ind + 1);
                     } else {
                         this.firstAuthorSurname = author;
-                        return TextUtilities.HTMLEncode(author);
+                        //return TextUtilities.HTMLEncode(author);
+                        return author;
                     }
                 }
             }

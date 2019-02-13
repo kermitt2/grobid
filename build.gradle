@@ -93,6 +93,8 @@ subprojects {
     }
 
 
+    /*
+    // removing - this currently breaks the release 
     task gitRev(type: Exec) {
         commandLine 'git', 'rev-parse', '--short', 'HEAD'
         standardOutput = new ByteArrayOutputStream()
@@ -112,9 +114,9 @@ subprojects {
                 println "Version to be uploaded: " + project.version
             }
         }
-    }
+    }*/
 
-    compileJava.dependsOn(changeVersionIfNeeded)
+    //compileJava.dependsOn(changeVersionIfNeeded)
 
     uploadArchives {
         // if you want to enable uploading to some maven repo, add those properties to ~/.gradle/gradle.properties, e.g.:

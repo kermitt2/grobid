@@ -3,7 +3,7 @@
 To cite this work, you can simply refer to the github project:
 
 ```
-GROBID (2008-2018) <https://github.com/kermitt2/grobid>
+GROBID (2008-2019) <https://github.com/kermitt2/grobid>
 ```
 
 (please do not include a particular person name to emphasize the project and tool!)
@@ -15,9 +15,9 @@ Here's a BibTeX entry:
     title = {GROBID}, 
     howpublished = {\url{https://github.com/kermitt2/grobid}}, 
     publisher = {GitHub},
-    year = {2008 --- 2018},
-    note = {[Online; accessed 16-August-2018]},
-    commit = {81a71ef64d8074ad6ebc3fde9c533c5c483c4348}
+    year = {2008 --- 2019},
+    note = {[Online; accessed 12-February-2019]},
+    commit = {6d487aae44dff4d2d8e5e2b15ad876561e9dceda}
 }
 ```
 

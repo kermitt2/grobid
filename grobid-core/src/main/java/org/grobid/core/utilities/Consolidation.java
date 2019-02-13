@@ -400,10 +400,10 @@ public class Consolidation {
 
             if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF)
                 arguments.put("rows", "1"); // we just request the top-one result
-            else if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) {
+            /*else if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) {
                 // grobid is doing its own post-validation right now
-                //arguments.put("postValidate", "false");
-            }
+                arguments.put("postValidate", "false");
+            }*/
 
             final boolean doiQuery;
             try {
@@ -599,11 +599,11 @@ public class Consolidation {
         boolean valid = true;
 
         // check main metadata available in source with fuzzy matching
-        if (!StringUtils.isBlank(source.getTitle()) && !StringUtils.isBlank(source.getTitle())) {
+        /*if (!StringUtils.isBlank(source.getTitle()) && !StringUtils.isBlank(source.getTitle())) {
 //System.out.println(source.getTitle() + " / " + result.getTitle() + " = " + ratcliffObershelpDistance(source.getTitle(), result.getTitle(), false));      
             if (ratcliffObershelpDistance(source.getTitle(), result.getTitle(), false) < 0.8)
                 return false;
-        }
+        }*/
 
         if (!StringUtils.isBlank(source.getFirstAuthorSurname()) && 
             !StringUtils.isBlank(result.getFirstAuthorSurname())) {
