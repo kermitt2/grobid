@@ -183,13 +183,6 @@ public class Consolidation {
             arguments.put("query.bibliographic", rawCitation);
             //arguments.put("query", rawCitation);
         }
-        if (StringUtils.isNotBlank(title)) {
-            // call based on partial metadata
-            if (arguments == null)
-                arguments = new HashMap<String,String>();
-            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || (arguments.size() == 0) )
-                arguments.put("query.title", title);
-        }
         if (StringUtils.isNotBlank(aut)) {
             // call based on partial metadata
             if (arguments == null)
@@ -197,6 +190,14 @@ public class Consolidation {
             if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || (arguments.size() == 0) )
                 arguments.put("query.author", aut);
         }
+        if (StringUtils.isNotBlank(title)) {
+            // call based on partial metadata
+            if (arguments == null)
+                arguments = new HashMap<String,String>();
+            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || (arguments.size() == 0) )
+                arguments.put("query.title", title);
+        }
+        
         if (StringUtils.isNotBlank(journalTitle)) {
             // call based on partial metadata
             if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
@@ -224,6 +225,14 @@ public class Consolidation {
 
         if (arguments == null || arguments.size() == 0) {
             return null;
+        }
+
+        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) {
+            if (StringUtils.isBlank(doi) && StringUtils.isBlank(rawCitation) && 
+                 (StringUtils.isBlank(aut) || StringUtils.isBlank(title)) ) {
+                // there's not enough information for a crossref request, which might always return a result
+                return null;
+            }
         }
 
         if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF)
@@ -396,6 +405,15 @@ public class Consolidation {
             if (arguments == null || arguments.size() == 0) {
                 n++;
                 continue;
+            }
+
+            if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) {
+                if (StringUtils.isBlank(doi) && StringUtils.isBlank(rawCitation) && 
+                     (StringUtils.isBlank(aut) || StringUtils.isBlank(title)) ) {
+                    // there's not enough information for a crossref request, which might always return a result
+                    n++;
+                    continue;
+                }
             }
 
             if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF)
