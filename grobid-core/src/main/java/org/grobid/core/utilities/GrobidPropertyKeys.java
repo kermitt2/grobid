@@ -12,9 +12,9 @@ public interface GrobidPropertyKeys {
     String PROP_TMP_PATH = "grobid.temp.path";
     //    public static final String PROP_BIN_PATH = "grobid.bin.path";
     String PROP_NATIVE_LIB_PATH = "grobid.nativelibrary.path";
-    String PROP_3RD_PARTY_PDFTOXML = "grobid.3rdparty.pdftoxml.path";
-    String PROP_3RD_PARTY_PDFTOXML_MEMORY_LIMIT = "grobid.3rdparty.pdftoxml.memory.limit.mb";
-    String PROP_3RD_PARTY_PDFTOXML_TIMEOUT_SEC = "grobid.3rdparty.pdftoxml.memory.timeout.sec";
+    String PROP_3RD_PARTY_PDFTOXML = "grobid.3rdparty.pdf2xml.path";
+    String PROP_3RD_PARTY_PDFTOXML_MEMORY_LIMIT = "grobid.3rdparty.pdf2xml.memory.limit.mb";
+    String PROP_3RD_PARTY_PDFTOXML_TIMEOUT_SEC = "grobid.3rdparty.pdf2xml.memory.timeout.sec";
 
     String PROP_GROBID_CRF_ENGINE = "grobid.crf.engine";
     String PROP_GROBID_DELFT_PATH = "grobid.delft.install";
