@@ -1,4 +1,0 @@
-April/N1	the month following March and preceding May.
-national/J3	concerned with or applicable to or belonging to an entire nation or country or the country's federal government.
-businessperson/N1	an executive officer ranking immediately below a president; may serve in the president's place under certain circumstances.
-artifact/N1	a product or other human-made object
