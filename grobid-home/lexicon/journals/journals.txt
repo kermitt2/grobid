@@ -6,7 +6,7 @@ ACS Combinatorial Science
 ACS Medicinal Chemistry Letters
 ACS Symposium Series
 AIChE Journal
-ARKIVOC 
+ARKIVOC
 ATLA, Alternatives to Laboratory Animals
 Accounts of Chemical Research
 Acta Biochimica Polonica
@@ -17,7 +17,7 @@ Communications
 Acta Crystallographica, Section E: Structure Reports Online
 Crystallization Communications
 Acta Materialia
-Acta Pharmaceutica 
+Acta Pharmaceutica
 Acta Pharmacologica Sinica
 Acta Physica Polonica B Proceedings Supplement
 Acta Physica Polonica, A
@@ -26,12 +26,12 @@ Acta Physiologica
 Adsorption Science & Technology
 Advanced Drug Delivery Reviews
 Advanced Functional Materials
-Advanced Materials 
+Advanced Materials
 Advanced Synthesis & Catalysis
 Advances in Applied Ceramics
 Advances in Atomic, Molecular, and Optical Physics
 Advances in Chemical Physics
-Advances in Chromatography 
+Advances in Chromatography
 Advances in Colloid and Interface Science
 Advances in Electrochemical Science and Engineering
 Advances in Inorganic Chemistry
@@ -46,10 +46,10 @@ American Journal of Human Genetics
 American Journal of Physiology
 American Journal of Respiratory Cell and Molecular Biology
 American Mineralogist
-Analyst 
+Analyst
 Analytica Chimica Acta
 Analytical Biochemistry
-Analytical Chemistry 
+Analytical Chemistry
 Analytical Letters
 Analytical Sciences
 Analytical and Bioanalytical Chemistry
@@ -57,10 +57,10 @@ Angewandte Chemie, International Edition
 Animal Welfare
 Animal Welfare Information Center Bulletin
 Annales Pharmaceutiques Francaises
-Annales de Chimie 
+Annales de Chimie
 Annals of Nuclear Energy
 Annals of Nutrition & Metabolism
-Annals of Physics 
+Annals of Physics
 Annals of Plastic Surgery
 Annual Reports in Medicinal Chemistry
 Annual Reports on NMR Spectroscopy
@@ -113,7 +113,7 @@ Applied Spectroscopy
 Applied Surface Science
 Applied and Environmental Microbiology
 Aquatic Toxicology
-Archiv der Pharmazie 
+Archiv der Pharmazie
 Archives of Biochemistry and Biophysics
 Archives of Environmental Contamination and Toxicology
 Archives of Insect Biochemistry and Physiology
@@ -128,10 +128,10 @@ Arzneimittel Forschung
 Asia-Pacific Journal of Chemical Engineering
 Asian Journal of Chemistry
 Assay and Drug Development Technologies
-Atherosclerosis 
+Atherosclerosis
 Atmospheric Chemistry and Physics
 Atmospheric Environment
-Atomic Energy 
+Atomic Energy
 Atomic Spectroscopy
 Australian Journal of Chemistry
 Autonomic & Autacoid Pharmacology
@@ -171,7 +171,7 @@ Biological Trace Element Research
 Biologicheskie Membrany
 Biology of Reproduction
 Biomedical Chromatography
-Biomedical Materials 
+Biomedical Materials
 Biomedical Research
 Biomeditsinskaya Khimiya
 Biomolecular NMR Assignments
@@ -215,7 +215,7 @@ Canadian Metallurgical Quarterly
 Canadian Mineralogist
 Cancer Gene Therapy
 Cancer Genomics & Proteomics
-Cancer Letters 
+Cancer Letters
 Cancer Research
 Cancer Science
 Carbohydrate Polymers
@@ -248,10 +248,10 @@ Ceska a Slovenska Farmacie
 Chemica Sinica
 Chemical & Pharmaceutical Bulletin
 Chemical Biology & Drug Design
-Chemical Communications 
+Chemical Communications
 Chemical Engineering & Technology
 Chemical Engineering Communications
-Chemical Engineering Journal 
+Chemical Engineering Journal
 Chemical Engineering Progress
 Chemical Engineering Research and Design
 Chemical Engineering Science
@@ -263,7 +263,7 @@ Chemical Physics Letters
 Chemical Record
 Chemical Research in Chinese Universities
 Chemical Research in Toxicology
-Chemical Reviews 
+Chemical Reviews
 Chemical Society Reviews
 Chemical Speciation and Bioavailability
 Chemical Vapor Deposition
@@ -272,10 +272,10 @@ Chemicke Listy
 Chemico-Biological Interactions
 Chemie Ingenieur Technik
 Chemie der Erde
-Chemine Technologija 
+Chemine Technologija
 Chemistry & Biodiversity
-Chemistry & Biology 
-Chemistry & Industry 
+Chemistry & Biology
+Chemistry & Industry
 Chemistry Letters
 Chemistry and Physics of Lipids
 Chemistry and Technology of Fuels and Oils
@@ -285,8 +285,8 @@ Chemistry--A European Journal
 Chemistry--An Asian Journal
 Chemistry: An Indian Journal
 Chemometrics and Intelligent Laboratory Systems
-Chemotherapy 
-Chimica e l'Industria 
+Chemotherapy
+Chimica e l'Industria
 Chinese Chemical Letters
 Chinese Journal of Chemical Engineering
 Chinese Journal of Chemical Physics
@@ -300,9 +300,9 @@ Circulation Research
 Clay Minerals
 Clays and Clay Minerals
 Clinica Chimica Acta
-Clinical Chemistry 
+Clinical Chemistry
 Clinical Chemistry and Laboratory Medicine
-Clinical Immunology 
+Clinical Immunology
 Clinical Proteomics
 Clinical and Experimental Pharmacology and Physiology
 Clinical and Vaccine Immunology
@@ -332,7 +332,7 @@ Espanol de la Detergencia
 Contrast Media & Molecular Imaging
 Contributions to Mineralogy and Petrology
 Coordination Chemistry Reviews
-Corrosion 
+Corrosion
 Corrosion Engineering, Science and Technology
 Corrosion Reviews
 Corrosion Science
@@ -395,13 +395,13 @@ Dalton Transactions
 Dermatologic Clinics
 Dermatologic Surgery
 Designed Monomers and Polymers
-Development 
-Developmental Biology 
+Development
+Developmental Biology
 Developmental Cell
-Developmental Neuroscience 
-Developments in Biologicals 
+Developmental Neuroscience
+Developments in Biologicals
 Diamond and Related Materials
-Differentiation 
+Differentiation
 and Diffusion Forum
 State Phenomena
 Doklady Biochemistry and Biophysics
@@ -417,7 +417,7 @@ Drug Metabolism and Disposition
 Drug Metabolism and Drug Interactions
 Drug Metabolism and Pharmacokinetics
 Drug Testing and Analysis
-Drug and Chemical Toxicology 
+Drug and Chemical Toxicology
 Dyes and Pigments
 ECS Transactions
 EMBO Journal
@@ -429,7 +429,7 @@ Ecotoxicology and Environmental Safety
 Eksperimental'naya i Klinicheskaya Farmakologiya
 Electrochemical Society Interface
 Electrochemical and Solid-State Letters
-Electrochemistry 
+Electrochemistry
 Electrochemistry Communications
 Electrochimica Acta
 Electronic Materials Letters
@@ -442,7 +442,7 @@ Environmental Chemistry
 Environmental Chemistry Letters
 Environmental Engineering Science
 Environmental Geochemistry and Health
-Environmental Pollution 
+Environmental Pollution
 Environmental Progress & Sustainable Energy
 Environmental Research
 Environmental Science & Technology
@@ -475,7 +475,7 @@ Physics
 European Polymer Journal
 Experimental & Molecular Medicine
 Experimental Animals
-Experimental Biology and Medicine 
+Experimental Biology and Medicine
 Experimental Cell Research
 Experimental Eye Research
 Experimental and Clinical Endocrinology & Diabetes
@@ -496,12 +496,12 @@ Ferroelectrics, Letters Section
 Fibre Chemistry
 Fire and Materials
 Fish Physiology and Biochemistry
-Fisheries Science 
+Fisheries Science
 Fizika Goreniya i Vzryva
 Fizika Metallov i Metallovedenie
 Fizika i Khimiya Obrabotki Materialov
 Fluid Phase Equilibria
-Folia Microbiologica 
+Folia Microbiologica
 Food & Function
 Control, Exposure & Risk Assessment
 Food Additives & Contaminants, Part B: Surveillance
@@ -510,7 +510,7 @@ Food and Chemical Toxicology
 Free Radical Biology & Medicine
 Free Radical Research
 Fresenius Environmental Bulletin
-Fuel Cells 
+Fuel Cells
 Fuel Processing Technology
 Fullerenes, Nanotubes, and Carbon Nanostructures
 Functional & Integrative Genomics
@@ -542,13 +542,13 @@ Heterocyclic Communications
 High Energy Chemistry
 High Performance Polymers
 High Temperature
-High Temperature Materials and Processes 
+High Temperature Materials and Processes
 High Temperatures - High Pressures
 Histochemistry and Cell Biology
 Hormone Molecular Biology and Clinical Investigation
 Hormone Research in Paediatrics
 Hormone and Metabolic Research
-Huagong Xuebao 
+Huagong Xuebao
 Human Gene Therapy
 Human Molecular Genetics
 Human and Ecological Risk Assessment
@@ -574,7 +574,7 @@ Inflammation & Allergy: Drug Targets
 Inflammation Research
 Inhalation Toxicology
 Innate Immunity
-Inorganic Chemistry 
+Inorganic Chemistry
 Inorganic Chemistry Communications
 Inorganic Materials
 Inorganica Chimica Acta
@@ -641,7 +641,7 @@ Journal of Analytical Atomic Spectrometry
 Journal of Analytical Chemistry
 Journal of Analytical Toxicology
 Journal of Analytical and Applied Pyrolysis
-Journal of Animal Science 
+Journal of Animal Science
 Journal of Antibiotics
 Journal of Antimicrobial Chemotherapy
 Journal of Applied Animal Welfare Science
@@ -684,7 +684,7 @@ Journal of Chemical Engineering of Japan
 Journal of Chemical Information and Modeling
 Journal of Chemical Physics
 Journal of Chemical Research
-Journal of Chemical Sciences 
+Journal of Chemical Sciences
 Journal of Chemical Technology and Biotechnology
 Journal of Chemical Theory and Computation
 Journal of Chemical Thermodynamics
@@ -799,7 +799,7 @@ Journal of Neuroscience Research
 Journal of Non-Crystalline Solids
 Journal of Non-Newtonian Fluid Mechanics
 Journal of Nuclear Materials
-Journal of Nuclear Science and Technology 
+Journal of Nuclear Science and Technology
 Journal of Nutrition
 Journal of Nutritional Biochemistry
 Journal of Nutritional Science and Vitaminology
@@ -812,7 +812,7 @@ Journal of Petroleum Science & Engineering
 Journal of Petrology
 Journal of Pharmaceutical Sciences
 Journal of Pharmaceutical and Biomedical Analysis
-Journal of Pharmacological Sciences 
+Journal of Pharmacological Sciences
 Journal of Pharmacological and Toxicological Methods
 Journal of Pharmacology and Experimental Therapeutics
 Journal of Pharmacy and Chemistry
@@ -833,7 +833,7 @@ Journal of Physics D: Applied Physics
 Journal of Physics G: Nuclear and Particle Physics
 Journal of Physics and Chemistry of Solids
 Journal of Physics: Condensed Matter
-Journal of Physiology 
+Journal of Physiology
 Journal of Pineal Research
 Journal of Planar Chromatography--Modern TLC
 Journal of Plant Growth Regulation
@@ -856,7 +856,7 @@ Journal of Radioanalytical and Nuclear Chemistry
 Journal of Raman Spectroscopy
 Journal of Receptors and Signal Transduction
 Journal of Reinforced Plastics and Composites
-Journal of Rheology 
+Journal of Rheology
 Journal of Separation Science
 Journal of Sol-Gel Science and Technology
 Journal of Solid State Chemistry
@@ -893,12 +893,12 @@ Journal of the Brazilian Chemical Society
 Journal of the Ceramic Society of Japan
 Journal of the Chemical Society of Pakistan
 Journal of the Chilean Chemical Society
-Journal of the Chinese Chemical Society 
+Journal of the Chinese Chemical Society
 Journal of the Electrochemical Society
 Journal of the Energy Institute
 Journal of the European Ceramic Society
 Journal of the Indian Chemical Society
-Journal of the Institution of Chemists 
+Journal of the Institution of Chemists
 Journal of the Japan Petroleum Institute
 Journal of the Korean Ceramic Society
 Journal of the Korean Chemical Society
@@ -912,7 +912,7 @@ KGK, Kautschuk Gummi Kunststoffe
 Kemija u Industriji
 Khimicheskaya Fizika
 Khimicheskaya Promyshlennost Segodnya
-Khimiya Tverdogo Topliva 
+Khimiya Tverdogo Topliva
 Khimiya i Tekhnologiya Vody
 Khimiya v Interesakh Ustoichivogo Razvitiya
 Kinetics and Catalysis
@@ -937,7 +937,7 @@ Macromolecular Reaction Engineering
 Macromolecular Research
 Macromolecular Symposia
 Macromolecular Theory and Simulations
-Macromolecules 
+Macromolecules
 Magnesium Research
 Magnetic Resonance in Chemistry
 Magyar Kemiai Folyoirat, Kemiai Kozlemenyek
@@ -976,8 +976,8 @@ Metallofizika i Noveishie Tekhnologii
 Metallurgy and Materials Science
 Metallurgy and Materials Processing Science
 Meteoritics & Planetary Science
-Methods 
-Microbiology 
+Methods
+Microbiology
 Microbiology and Immunology
 Microchemical Journal
 Microchimica Acta
@@ -1010,7 +1010,7 @@ Molecular Genetics and Genomics
 Molecular Genetics and Metabolism
 Molecular Immunology
 Molecular Informatics
-Molecular Medicine 
+Molecular Medicine
 Molecular Medicine Reports
 Molecular Membrane Biology
 Molecular Microbiology
@@ -1037,12 +1037,12 @@ Mutagenesis
 Mutation Research, Reviews in Mutation Research
 Nano Letters
 Nano Science and Nano Technology: An Indian Journal
-Nanomedicine 
+Nanomedicine
 Natural Product Communications
 Natural Product Reports
 Natural Product Research
 Natural Product Sciences
-Nature 
+Nature
 Nature Biotechnology
 Nature Cell Biology
 Nature Chemical Biology
@@ -1052,7 +1052,7 @@ Nature Genetics
 Nature Geoscience
 Nature Immunology
 Nature Materials
-Nature Medicine 
+Nature Medicine
 Nature Methods
 Nature Nanotechnology
 Nature Neuroscience
@@ -1072,8 +1072,8 @@ Neues Jahrbuch fuer Mineralogie, Abhandlungen
 NeuroMolecular Medicine
 Neurochemical Research
 Neurochemistry International
-Neuropeptides 
-Neuroscience 
+Neuropeptides
+Neuroscience
 Neuroscience Letters
 Neurotoxicology and Teratology
 New Biotechnology
@@ -1093,9 +1093,9 @@ Nuclear Technology
 Nucleic Acids Research
 Nucleic Acids Symposium Series
 Nucleosides, Nucleotides & Nucleic Acids
-Nutrition Research 
+Nutrition Research
 O'zbekiston Kimyo Jurnali
-Oil, Gas 
+Oil, Gas
 Optics Communications
 Optics and Spectroscopy
 Organic & Biomolecular Chemistry
@@ -1116,7 +1116,7 @@ PLoS Genetics
 PLoS Pathogens
 PMSE Preprints
 Particulate Science and Technology
-Peptides 
+Peptides
 Pest Management Science
 Pesticide Biochemistry and Physiology
 Petroleum Science and Technology
@@ -1136,7 +1136,7 @@ Phosphorus, Sulfur and Silicon and the Related Elements
 Photochemical & Photobiological Sciences
 Photochemistry and Photobiology
 Photosynthesis Research
-Physica B: Condensed Matter 
+Physica B: Condensed Matter
 Physica Scripta
 Physica Scripta, T
 Physica Status Solidi A: Applications and Materials Science
@@ -1166,7 +1166,7 @@ Plant Growth Regulation
 Plant Journal
 Plant Molecular Biology
 Plant Physiology
-Plant Science 
+Plant Science
 Plant and Cell Physiology
 Plant and Soil
 Planta Medica
@@ -1176,18 +1176,18 @@ Plastic and Reconstructive Surgery
 Plasticheskie Massy
 Plastics, Rubber and Composites
 Polycyclic Aromatic Compounds
-Polymer Bulletin 
+Polymer Bulletin
 Polymer Chemistry
 Polymer Composites
 Polymer Degradation and Stability
 Polymer Engineering & Science
 Polymer International
-Polymer Journal 
-Polymer Reviews 
+Polymer Journal
+Polymer Reviews
 Polymer Testing
 Polymer-Plastics Technology and Engineering
 Polymers & Polymer Composites
-Polymers 
+Polymers
 Polymers for Advanced Technologies
 Powder Diffraction
 Powder Metallurgy
@@ -1202,7 +1202,7 @@ of Fuel Chemistry
 Proceedings of the Estonian Academy of Sciences
 United States of America
 United States of America, Early Edition
-Process Biochemistry 
+Process Biochemistry
 Process Safety and Environmental Protection
 Progress in Colloid and Polymer Science
 Progress in Crystal Growth and Characterization of Materials
@@ -1225,7 +1225,7 @@ Protein Science
 Proteins: Structure, Function, and Bioinformatics
 Proteomics: Clinical Applications
 Przemysl Chemiczny
-Psychopharmacology 
+Psychopharmacology
 Pulmonary Pharmacology & Therapeutics
 Pure and Applied Chemistry
 Quantum Electronics
@@ -1235,10 +1235,10 @@ Radiation Effects and Defects in Solids
 Radiation Measurements
 Radiation Physics and Chemistry
 Radiation Research
-Radiochemistry 
+Radiochemistry
 Radiochimica Acta
 Rapid Communications in Mass Spectrometry
-Rare Metals 
+Rare Metals
 Reaction Kinetics, Mechanisms and Catalysis
 Reactive & Functional Polymers
 Recent Patents on Anti-Cancer Drug Discovery
@@ -1252,7 +1252,7 @@ Discovery
 Recent Patents on Inflammation & Allergy Drug Discovery
 Recent Patents on Nanotechnology
 Regulatory Peptides
-Reproduction 
+Reproduction
 Molecular Biology
 Pharmacology
 Research on Chemical Intermediates
@@ -1261,7 +1261,7 @@ Reviews in Analytical Chemistry
 Reviews in Inorganic Chemistry
 Revista Mexicana de Ingenieria Quimica
 Revista Romana de Materiale
-Revista de Chimie 
+Revista de Chimie
 Revista de la Sociedad Quimica del Peru
 Revue Roumaine de Chimie
 Rheologica Acta
@@ -1284,7 +1284,7 @@ SPE Production & Operations
 SPE Reservoir Evaluation & Engineering
 STAL, Sciences et Techniques de l'Animal de Laboratoire
 Scandinavian Journal of Laboratory Animal Science
-Science 
+Science
 Science China: Chemistry
 Science of Advanced Materials
 Science of the Total Environment
@@ -1309,11 +1309,11 @@ Solvent Extraction and Ion Exchange
 South African Journal of Chemistry
 Spectroscopy
 Spectrochimica Acta, Part B: Atomic Spectroscopy
-Spectroscopy 
+Spectroscopy
 Spectroscopy Letters
 Steel Research International
 Structural Chemistry
-Structure 
+Structure
 Superconductor Science and Technology
 Superlattices and Microstructures
 Supramolecular Chemistry
@@ -1323,7 +1323,7 @@ Surface Science
 Surface Science Reports
 Surface and Coatings Technology
 Surface and Interface Analysis
-Synapse 
+Synapse
 Nano-Metal Chemistry
 Synthetic Communications
 Synthetic Metals
@@ -1347,11 +1347,11 @@ Toxicology Mechanisms and Methods
 Toxicology and Applied Pharmacology
 Toxicology in Vitro
 TrAC, Trends in Analytical Chemistry
-Traffic 
+Traffic
 Transactions of the Indian Ceramic Society
 Transactions of the Institute of Metal Finishing
 Transgenic Research
-Transition Metal Chemistry 
+Transition Metal Chemistry
 Trends in Biochemical Sciences
 Trends in Biotechnology
 Trends in Carbohydrate Research
@@ -1368,7 +1368,7 @@ Turkish Journal of Chemistry
 Ukrainian Journal of Physics
 Ukrainica Bioorganica Acta
 Ukrains'kii Biokhimichnii Zhurnal
-Ukrainskii Khimicheskii Zhurnal 
+Ukrainskii Khimicheskii Zhurnal
 Ultrasonics Sonochemistry
 Vascular Pharmacology
 Vestnik Moskovskogo Universiteta, Seriya 2: Khimiya
@@ -1394,7 +1394,7 @@ Zeitschrift fuer Kristallographie - New Crystal Structures
 Zeitschrift fuer Naturforschung, A: Physical Sciences
 Sciences
 Zeitschrift fuer Naturforschung, C: Journal of Biosciences
-Zeitschrift fuer Physikalische Chemie 
+Zeitschrift fuer Physikalische Chemie
 Zhurnal Neorganicheskoi Khimii
 Zhurnal Organichnoi ta Farmatsevtichnoi Khimii
 Academia Economic Papers
@@ -30053,3 +30053,49 @@ proceedings  IEEE International Conference on Robotics and Automation
 Journal of the Entomological Society of British Columbia. Entomological Society of British Columbia
 International journal of clinical pharmacy
 Revue belge de medecine dentaire
+ACM Transactions on MIS
+ACM Transactions on Management Information Systems
+AIS Transactions on HCI
+Australian Journal of Information Systems
+Business & Information Systems Engineering
+Communications of the Association for Information Systems
+Communications of the AIS
+Decision Support Systems
+E-service Journal
+Electronic Commerce Research and Applications
+Electronic Markets
+European Journal of Information Systems
+Information & Management
+Information & Organization
+Information Resources Management Journal
+Information Systems Frontiers
+Information Systems Journal
+Information Systems Management
+Information Systems Research
+Information Technology & People
+Information Technology and Management
+International Journal of Electronic Commerce
+Journal of Computer Information Systems
+Journal of Database Management
+Journal of Global IT Management
+Journal of Global Information Management
+Journal of Information Systems Education
+Journal of Information Technology
+Journal of Information Technology Case and Application Research
+Journal of Information Technology Management
+Journal of Information Technology Theory and Applications
+Journal of International Technology and Information Management
+Journal of Management Information Systems
+Journal of Organizational Computing and Electronic Commerce
+Journal of Organizational and End-User Computing
+Journal of Strategic Information Systems
+Journal of the Association for Information Systems
+Journal of the AIS
+MIS Quarterly
+Management Information Systems Quarterly
+MIS Quarterly Executive
+Revista Latinoamericana Y Del Caribe De La Associacion De Sistemas De Informacion
+Scandinavian Journal of Information Systems
+The DATABASE for Advances in Information Systems
+Australasian Journal of Information Systems
+WIRTSCHAFSTINFORMATIK
