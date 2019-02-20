@@ -7,7 +7,7 @@ ACS Med. Chem. Lett.
 ACS Nano
 ACS Symp. Ser.
 AIChE J.
-ARKIVOC 
+ARKIVOC
 ATLA, Altern. Lab. Anim.
 Acc. Chem. Res.
 Acta Biochim. Pol.
@@ -19,7 +19,7 @@ Acta Crystallogr., Sect. D: Biol. Crystallogr.
 Acta Crystallogr., Sect. E: Struct. Rep. Online
 Acta Crystallogr., Sect. F: Struct. Biol. Cryst. Commun.
 Acta Mater.
-Acta Pharm. 
+Acta Pharm.
 Acta Pharmacol. Sin.
 Acta Phys. Pol. B Proc. Suppl.
 Acta Phys. Pol., A
@@ -29,12 +29,12 @@ Adsorption
 Adsorpt. Sci. Technol.
 Adv. Drug Delivery Rev.
 Adv. Funct. Mater.
-Adv. Mater. 
+Adv. Mater.
 Adv. Synth. Catal.
 Adv. Appl. Ceram.
 Adv. At., Mol., Opt. Phys.
 Adv. Chem. Phys.
-Adv. Chromatogr. 
+Adv. Chromatogr.
 Adv. Colloid Interface Sci.
 Adv. Electrochem. Sci. Eng.
 Adv. Inorg. Chem.
@@ -52,10 +52,10 @@ Am. J. Physiol.
 Am. J. Respir. Cell Mol. Biol.
 Am. Mineral.
 Amino Acids
-Analyst 
+Analyst
 Anal. Chim. Acta
 Anal. Biochem.
-Anal. Chem. 
+Anal. Chem.
 Anal. Lett.
 Anal. Sci.
 Anal. Bioanal. Chem.
@@ -63,10 +63,10 @@ Angew. Chem., Int. Ed.
 Anim. Welfare
 Anim. Welfare Inf. Cent. Bull.
 Ann. Pharm. Fr.
-Ann. Chim. 
+Ann. Chim.
 Ann. Nucl. Energy
 Ann. Nutr. Metab.
-Ann. Phys. 
+Ann. Phys.
 Ann. Plast. Surg.
 Annu. Rep. Med. Chem.
 Annu. Rep. NMR Spectrosc.
@@ -121,7 +121,7 @@ Appl. Surf. Sci.
 Appl. Environ. Microbiol.
 Aquat. Toxicol.
 Archaea
-Arch. Pharm. 
+Arch. Pharm.
 Arch. Biochem. Biophys.
 Arch. Environ. Contam. Toxicol.
 Arch. Insect Biochem. Physiol.
@@ -136,10 +136,10 @@ Arzneim. Forsch.
 Asia-Pac. J. Chem. Eng.
 Asian J. Chem.
 Assay Drug Dev. Technol.
-Atherosclerosis 
+Atherosclerosis
 Atmos. Chem. Phys.
 Atmos. Environ.
-At. Energy 
+At. Energy
 At. Spectrosc.
 Aust. J. Chem.
 Auton. Autacoid Pharmacol.
@@ -164,7 +164,7 @@ Biochem. Soc. Trans.
 Biochem. Syst. Ecol.
 Biochem. Biophys. Res. Commun.
 Biochemistry
-Biochemistry 
+Biochemistry
 Biochem. Cell Biol.
 Biochem. Mol. Biol. Educ.
 Biochim. Biophys. Acta, Bioenerg.
@@ -194,7 +194,7 @@ Biomacromolecules
 Biomarkers
 Biomaterials
 Biomed. Chromatogr.
-Biomed. Mater. 
+Biomed. Mater.
 Biomed. Res.
 Biomed. Khim.
 Biomol. NMR Assignments
@@ -245,7 +245,7 @@ Can. Mineral.
 Cancer Cell
 Cancer Gene Ther.
 Cancer Genomics Proteomics
-Cancer Lett. 
+Cancer Lett.
 Cancer Res.
 Cancer Sci.
 Carbohydr. Polym.
@@ -259,7 +259,7 @@ Catal. Commun.
 Catal. Lett.
 Catal. Rev. - Sci. Eng.
 Catal. Today
-Cell 
+Cell
 Cell Biochem. Biophys.
 Cell Biochem. Funct.
 Cell Calcium
@@ -272,7 +272,7 @@ Cell. Microbiol.
 Cell. Physiol. Biochem.
 Cell. Polym.
 Cell. Reprogramming
-Cell. Mol. Biol. 
+Cell. Mol. Biol.
 Cell. Mol. Life Sci.
 Cellul. Chem. Technol.
 Cem. Concr. Compos.
@@ -290,10 +290,10 @@ ChemSusChem
 Chem. Sin.
 Chem. Pharm. Bull.
 Chem. Biol. Drug Des.
-Chem. Commun. 
+Chem. Commun.
 Chem. Eng. Technol.
 Chem. Eng. Commun.
-Chem. Eng. J. 
+Chem. Eng. J.
 Chem. Eng. Prog.
 Chem. Eng. Res. Des.
 Chem. Eng. Sci.
@@ -305,7 +305,7 @@ Chem. Phys. Lett.
 Chem. Rec.
 Chem. Res. Chin. Univ.
 Chem. Res. Toxicol.
-Chem. Rev. 
+Chem. Rev.
 Chem. Soc. Rev.
 Chem. Speciation Bioavailability
 Chem. Vap. Deposition
@@ -315,14 +315,14 @@ Chem.-Biol. Interact.
 Chem. Ing. Tech.
 Chem. Erde
 Chemija
-Chem. Technol. 
+Chem. Technol.
 Chem. Biodiversity
-Chem. Biol. 
-Chem. Ind. 
+Chem. Biol.
+Chem. Ind.
 Chem. Lett.
 Chem. Phys. Lipids
 Chem. Technol. Fuels Oils
-Chem. Heterocycl. Compd. 
+Chem. Heterocycl. Compd.
 Chem. Mater.
 Chem. Nat. Compd.
 Chem.--Eur. J.
@@ -330,10 +330,10 @@ Chem.--Asian J.
 Chem.: Indian J.
 Chemom. Intell. Lab. Syst.
 Chemosphere
-Chemotherapy 
+Chemotherapy
 Chemtracts
 Chimia
-Chim. Ind. 
+Chim. Ind.
 Chin. Chem. Lett.
 Chin. J. Chem. Eng.
 Chin. J. Chem. Phys.
@@ -350,9 +350,9 @@ Clay Miner.
 Clays Clay Miner.
 Clean: Soil, Air, Water
 Clin. Chim. Acta
-Clin. Chem. 
+Clin. Chem.
 Clin. Chem. Lab. Med.
-Clin. Immunol. 
+Clin. Immunol.
 Clin. Proteomics
 Clin. Exp. Pharmacol. Physiol.
 Clin. Vaccine Immunol.
@@ -382,7 +382,7 @@ Comun. Jorn. Com. Esp. Deterg.
 Contrast Media Mol. Imaging
 Contrib. Mineral. Petrol.
 Coord. Chem. Rev.
-Corrosion 
+Corrosion
 Corros. Eng., Sci. Technol.
 Corros. Rev.
 Corros. Sci.
@@ -440,7 +440,7 @@ Curr. Proteomics
 Curr. Radiopharm.
 Curr. Signal Transduction Ther.
 Curr. Stem Cell Res. Ther.
-Curr. Top. Med. Chem. 
+Curr. Top. Med. Chem.
 Curr. Vasc. Pharmacol.
 Cytokine Growth Factor Rev.
 Cytokine+
@@ -452,14 +452,14 @@ Dermatol. Clin.
 Dermatol. Surg.
 Desalination
 Des. Monomers Polym.
-Development 
-Dev. Biol. 
+Development
+Dev. Biol.
 Dev. Cell
-Dev. Neurosci. 
+Dev. Neurosci.
 Diabetes
 Diamond Relat. Mater.
 Dianhuaxue
-Differentiation 
+Differentiation
 Diffus. Defect Data, Pt. A
 Diffus. Defect Data, Pt. B
 Diqiu Huaxue
@@ -477,7 +477,7 @@ Drug Metab. Dispos.
 Drug Metab. Drug Interact.
 Drug Metab. Pharmacokinet.
 Drug Test. Anal.
-Drug Chem. Toxicol. 
+Drug Chem. Toxicol.
 Dyes Pigm.
 ECS Trans.
 EMBO J.
@@ -493,7 +493,7 @@ Electroanalysis
 Electrocatalysis
 Electrochem. Soc. Interface
 Electrochem. Solid-State Lett.
-Electrochemistry 
+Electrochemistry
 Electrochem. Commun.
 Electrochim. Acta
 Electron. Mater. Lett.
@@ -509,7 +509,7 @@ Environ. Chem.
 Environ. Chem. Lett.
 Environ. Eng. Sci.
 Environ. Geochem. Health
-Environ. Pollut. 
+Environ. Pollut.
 Environ. Prog. Sustainable Energy
 Environ. Res.
 Environ. Sci. Technol.
@@ -545,7 +545,7 @@ Eur. Phys. J. E: Soft Matter Biol. Phys.
 Eur. Polym. J.
 Exp. Mol. Med.
 Exp. Anim.
-Exp. Biol. Med. 
+Exp. Biol. Med.
 Exp. Cell Res.
 Exp. Eye Res.
 Exp. Clin. Endocrinol. Diabetes
@@ -569,12 +569,12 @@ Ferroelectr., Lett. Sect.
 Fibre Chem.
 Fire Mater.
 Fish Physiol. Biochem.
-Fish. Sci. 
+Fish. Sci.
 Fiz. Goreniya Vzryva
 Fiz. Met. Metalloved.
 Fiz. Khim. Obrab. Mater.
 Fluid Phase Equilib.
-Folia Microbiol. 
+Folia Microbiol.
 Food Funct.
 Food Addit. Contam., Part A
 Food Addit. Contam., Part B
@@ -585,7 +585,7 @@ Free Radical Biol. Med.
 Free Radical Res.
 Fresenius Environ. Bull.
 Fuel
-Fuel Cells 
+Fuel Cells
 Fuel Process. Technol.
 Fullerenes, Nanotubes, Carbon Nanostruct.
 Funct. Integr. Genomics
@@ -639,7 +639,7 @@ Heterocycl. Commun.
 High Energy Chem.
 High Perform. Polym.
 High Temp.
-High Temp. Mater. Processes 
+High Temp. Mater. Processes
 High Temp. - High Pressures
 Histochem. Cell Biol.
 Holzforschung
@@ -647,7 +647,7 @@ Horm. Mol. Biol. Clin. Invest.
 Horm. Res. Paediatr.
 Horm. Metab. Res.
 Huadong Ligong Daxue Xuebao, Ziran Kexueban
-Huagong Xuebao 
+Huagong Xuebao
 Huanjing Huaxue
 Huanjing Kexue Xuebao
 Huaxue
@@ -689,7 +689,7 @@ Inflammation Allergy: Drug Targets
 Inflammation Res.
 Inhalation Toxicol.
 Innate Immun.
-Inorg. Chem. 
+Inorg. Chem.
 Inorg. Chem. Commun.
 Inorg. Mater.
 Inorg. Chim. Acta
@@ -727,7 +727,7 @@ Int. J. Pept. Res. Ther.
 Int. J. Pharm.
 Int. J. Polym. Anal. Charact.
 Int. J. Polym. Mater.
-Int. J. Powder Metall. 
+Int. J. Powder Metall.
 Int. J. Quantum Chem.
 Int. J. Radiat. Biol.
 Int. J. Refract. Met. Hard Mater.
@@ -761,7 +761,7 @@ J. Anal. At. Spectrom.
 J. Anal. Chem.
 J. Anal. Toxicol.
 J. Anal. Appl. Pyrolysis
-J. Anim. Sci. 
+J. Anim. Sci.
 J. Antibiot.
 J. Antimicrob. Chemother.
 J. Appl. Anim. Welfare Sci.
@@ -804,7 +804,7 @@ J. Chem. Eng. Jpn.
 J. Chem. Inf. Model.
 J. Chem. Phys.
 J. Chem. Res.
-J. Chem. Sci. 
+J. Chem. Sci.
 J. Chem. Technol. Biotechnol.
 J. Chem. Theory Comput.
 J. Chem. Thermodyn.
@@ -835,7 +835,7 @@ J. Electron Spectrosc. Relat. Phenom.
 J. Electron. Mater.
 J. Endocrinol.
 J. Energ. Mater.
-J. Environ. Eng. 
+J. Environ. Eng.
 J. Environ. Monit.
 J. Environ. Qual.
 J. Environ. Radioact.
@@ -863,7 +863,7 @@ J. Immunol. Methods
 J. Immunol.
 J. Inclusion Phenom. Macrocyclic Chem.
 J. Ind. Microbiol. Biotechnol.
-J. Ind. Eng. Chem. 
+J. Ind. Eng. Chem.
 J. Inorg. Biochem.
 J. Inorg. Organomet. Polym. Mater.
 J. Insect Physiol.
@@ -920,7 +920,7 @@ J. Neurosci. Res.
 J. Non-Cryst. Solids
 J. Non-Newtonian Fluid Mech.
 J. Nucl. Mater.
-J. Nucl. Sci. Technol. 
+J. Nucl. Sci. Technol.
 J. Nutr.
 J. Nutr. Biochem.
 J. Nutr. Sci. Vitaminol.
@@ -933,7 +933,7 @@ J. Pet. Sci. Eng.
 J. Petrol.
 J. Pharm. Sci.
 J. Pharm. Biomed. Anal.
-J. Pharmacol. Sci. 
+J. Pharmacol. Sci.
 J. Pharmacol. Toxicol. Methods
 J. Pharmacol. Exp. Ther.
 J. Pharm. Chem.
@@ -954,7 +954,7 @@ J. Phys. D: Appl. Phys.
 J. Phys. G: Nucl. Part. Phys.
 J. Phys. Chem. Solids
 J. Phys.: Condens. Matter
-J. Physiol. 
+J. Physiol.
 J. Pineal Res.
 J. Planar Chromatogr.--Mod. TLC
 J. Plant Growth Regul.
@@ -977,7 +977,7 @@ J. Radioanal. Nucl. Chem.
 J. Raman Spectrosc.
 J. Recept. Signal Transduction
 J. Reinf. Plast. Compos.
-J. Rheol. 
+J. Rheol.
 J. Sep. Sci.
 J. Sol-Gel Sci. Technol.
 J. Solid State Chem.
@@ -1014,12 +1014,12 @@ J. Braz. Chem. Soc.
 J. Ceram. Soc. Jpn.
 J. Chem. Soc. Pak.
 J. Chil. Chem. Soc.
-J. Chin. Chem. Soc. 
+J. Chin. Chem. Soc.
 J. Electrochem. Soc.
 J. Energy Inst.
 J. Eur. Ceram. Soc.
 J. Indian Chem. Soc.
-J. Inst. Chem. 
+J. Inst. Chem.
 J. Jpn. Pet. Inst.
 J. Korean Ceram. Soc.
 J. Korean Chem. Soc.
@@ -1034,9 +1034,9 @@ Kagaku Kogaku
 Kagaku Kogaku Ronbunshu
 Kem. Ind.
 Khim. Fiz.
-Khim. Prom-st. 
+Khim. Prom-st.
 Khim. Prom-st. Segodnya
-Khim. Tverd. Topl. 
+Khim. Tverd. Topl.
 Khim. Tekhnol. Vody
 Khim. Interesakh Ustoich. Razvit.
 Kinet. Catal.
@@ -1066,7 +1066,7 @@ Macromol. React. Eng.
 Macromol. Res.
 Macromol. Symp.
 Macromol. Theory Simul.
-Macromolecules 
+Macromolecules
 Magnesium Res.
 Magn. Reson. Chem.
 Magy. Kem. Foly., Kem. Kozl.
@@ -1108,8 +1108,8 @@ Metall. Mater. Trans. A
 Metall. Mater. Trans. B
 Metally
 Meteorit. Planet. Sci.
-Methods 
-Microbiology 
+Methods
+Microbiology
 Microbiol. Immunol.
 Microchem. J.
 Microchim. Acta
@@ -1130,7 +1130,7 @@ Mod. Phys. Lett. B
 Mol. Biochem. Parasitol.
 Mol. Cell. Toxicol.
 Mol. BioSyst.
-Mol. Biol. 
+Mol. Biol.
 Mol. Biol. Rep.
 Mol. Biol. Evol.
 Mol. Biol. Cell
@@ -1146,7 +1146,7 @@ Mol. Genet. Genomics
 Mol. Genet. Metab.
 Mol. Immunol.
 Mol. Inf.
-Mol. Med. 
+Mol. Med.
 Mol. Med. Rep.
 Mol. Membr. Biol.
 Mol. Microbiol.
@@ -1177,13 +1177,13 @@ Mutat. Res., Rev. Mutat. Res.
 NANO
 Nano Lett.
 Nano Sci. Nano Technol.: Indian J.
-Nanomedicine 
+Nanomedicine
 Nanoscale
 Nat. Prod. Commun.
 Nat. Prod. Rep.
 Nat. Prod. Res.
 Nat. Prod. Sci.
-Nature 
+Nature
 Nat. Biotechnol.
 Nat. Cell Biol.
 Nat. Chem. Biol.
@@ -1193,7 +1193,7 @@ Nat. Genet.
 Nat. Geosci.
 Nat. Immunol.
 Nat. Mater.
-Nat. Med. 
+Nat. Med.
 Nat. Methods
 Nat. Nanotechnol.
 Nat. Neurosci.
@@ -1218,9 +1218,9 @@ Neurochem. Res.
 Neurochem. Int.
 Neuroendocrinology
 Neuron
-Neuropeptides 
+Neuropeptides
 Neuropharmacology
-Neuroscience 
+Neuroscience
 Neurosci. Lett.
 Neurosignals
 Neurotoxicol. Teratol.
@@ -1245,10 +1245,10 @@ Nucleic Acids Res.
 Nucleic Acids Symp. Ser.
 Nucleosides, Nucleotides Nucleic Acids
 Nukleonika
-Nutr. Res. 
+Nutr. Res.
 O'zb. Kim. J.
 OMICS
-Oil, Gas 
+Oil, Gas
 Oligonucleotides
 Oncogene
 Opt. Commun.
@@ -1274,7 +1274,7 @@ PLoS One
 PLoS Pathog.
 PMSE Prepr.
 Part. Sci. Technol.
-Peptides 
+Peptides
 Pest Manage. Sci.
 Pestic. Biochem. Physiol.
 Pet. Sci. Technol.
@@ -1297,8 +1297,8 @@ Phosphorus, Sulfur Silicon Relat. Elem.
 Photochem. Photobiol. Sci.
 Photochem. Photobiol.
 Photosynth. Res.
-Phys. B 
-Phys. C 
+Phys. B
+Phys. C
 Phys. Scr.
 Phys. Scr., T
 Phys. Status Solidi A
@@ -1324,7 +1324,7 @@ Phys. Solid State
 Physiol. Plant.
 Physiol. Behav.
 Phytochem. Anal.
-Phytochemistry 
+Phytochemistry
 Phytochem. Rev.
 Plant Cell
 Plant Cell Rep.
@@ -1332,8 +1332,8 @@ Plant Growth Regul.
 Plant J.
 Plant Mol. Biol.
 Plant Physiol.
-Plant Physiol. Biochem. 
-Plant Sci. 
+Plant Physiol. Biochem.
+Plant Sci.
 Plant Cell Physiol.
 Plant Soil
 Planta
@@ -1348,20 +1348,20 @@ Platelets
 Polycyclic Aromat. Compd.
 Polyhedron
 Polymer
-Polymer 
-Polym. Bull. 
+Polymer
+Polym. Bull.
 Polym. Chem.
 Polym. Compos.
 Polym. Degrad. Stab.
 Polym. Eng. Sci.
 Polym. Int.
-Polym. J. 
-Polym. Prepr. 
-Polym. Rev. 
+Polym. J.
+Polym. Prepr.
+Polym. Rev.
 Polym. Test.
 Polym.-Plast. Technol. Eng.
 Polym. Polym. Compos.
-Polymers 
+Polymers
 Polym. Adv. Technol.
 Poverkhnost
 Powder Diffr.
@@ -1377,7 +1377,7 @@ Prepr. Symp. - Am. Chem. Soc., Div. Fuel Chem.
 Proc. Est. Acad. Sci.
 Proc. Natl. Acad. Sci. U. S. A.
 Proc. Natl. Acad. Sci. U. S. A., Early Ed.
-Process Biochem. 
+Process Biochem.
 Process Saf. Environ. Prot.
 Prog. Colloid Polym. Sci.
 Prog. Cryst. Growth Charact. Mater.
@@ -1401,7 +1401,7 @@ Proteins: Struct., Funct., Bioinf.
 Proteomics
 Proteomics: Clin. Appl.
 Przem. Chem.
-Psychopharmacology 
+Psychopharmacology
 Pteridines
 Pulm. Pharmacol. Ther.
 Pure Appl. Chem.
@@ -1414,12 +1414,12 @@ Radiat. Eff. Defects Solids
 Radiat. Meas.
 Radiat. Phys. Chem.
 Radiat. Res.
-Radiochemistry 
+Radiochemistry
 Radiochim. Acta
 Radioprotection
 Ranliao Huaxue Xuebao
 Rapid Commun. Mass Spectrom.
-Rare Met. 
+Rare Met.
 Rasplavy
 React. Kinet., Mech. Catal.
 React. Funct. Polym.
@@ -1435,7 +1435,7 @@ Recent Pat. Inflammation Allergy Drug Discovery
 Recent Pat. Nanotechnol.
 Regul. Pept.
 Rengong Jingti Xuebao
-Reproduction 
+Reproduction
 Reprod. Toxicol.
 Res. Commun. Biochem. Cell Mol. Biol.
 Res. Commun. Mol. Pathol. Pharmacol.
@@ -1445,7 +1445,7 @@ Rev. Anal. Chem.
 Rev. Inorg. Chem.
 Rev. Mex. Ing. Quim.
 Rev. Rom. Mater.
-Rev. Chim. 
+Rev. Chim.
 Rev. Soc. Quim. Peru
 Rev. Roum. Chim.
 Rheol. Acta
@@ -1468,7 +1468,7 @@ SPE Prod. Oper.
 SPE Reservoir Eval. Eng.
 STAL, Sci. Tech. Anim. Lab.
 Scand. J. Lab. Anim. Sci.
-Science 
+Science
 Sci. China: Chem.
 Sci. Adv. Mater.
 Sci. Total Environ.
@@ -1503,13 +1503,13 @@ Solvent Extr. Ion Exch.
 S. Afr. J. Chem.
 Spectrochim. Acta, Part A
 Spectrochim. Acta, Part B
-Spectroscopy 
+Spectroscopy
 Spectrosc. Lett.
 Starch/Staerke
 Steel Res. Int.
 Steroids
 Struct. Chem.
-Structure 
+Structure
 Supercond. Sci. Technol.
 Superlattices Microstruct.
 Supramol. Chem.
@@ -1519,7 +1519,7 @@ Surf. Sci.
 Surf. Sci. Rep.
 Surf. Coat. Technol.
 Surf. Interface Anal.
-Synapse 
+Synapse
 Synlett
 Synthesis
 Synth. React. Inorg., Met.-Org., Nano-Met. Chem.
@@ -1553,11 +1553,11 @@ Toxicol. Appl. Pharmacol.
 Toxicol. in Vitro
 Toxicon
 TrAC, Trends Anal. Chem.
-Traffic 
+Traffic
 Trans. Indian Ceram. Soc.
 Trans. Inst. Met. Finish.
 Transgenic Res.
-Transition Met. Chem. 
+Transition Met. Chem.
 Trends Biochem. Sci.
 Trends Biotechnol.
 Trends Carbohydr. Res.
@@ -1574,7 +1574,7 @@ Turk. J. Chem.
 Ukr. J. Phys.
 Ukr. Bioorg. Acta
 Ukr. Biokhim. Zh.
-Ukr. Khim. Zh. 
+Ukr. Khim. Zh.
 Ultramicroscopy
 Ultrason. Sonochem.
 Vacuum
@@ -1617,7 +1617,7 @@ Z. Kristallogr. - New Cryst. Struct.
 Z. Naturforsch., A: Phys. Sci.
 Z. Naturforsch., B: J. Chem. Sci.
 Z. Naturforsch., C: J. Biosci.
-Z. Phys. Chem. 
+Z. Phys. Chem.
 Zhipu Xuebao
 Zhongguo Shengwu Huaxue Yu Fenzi Shengwu Xuebao
 Zh. Neorg. Khim.
@@ -26601,3 +26601,26 @@ Cancer Genet
 IEEE Int Conf Robot Autom
 J Entomol Soc B C
 Int J Clin Pharm
+ACM TMIS
+AIS THCI
+Management Sci
+BISE
+CAIS
+DSS
+EJIS
+ISR
+Inform. Systems Res
+JIT
+J. Management Inform. Systems
+JAIS
+MISQ
+MISQE
+DATABASE
+Comm. ACM
+MIS Quart
+Comput. Human Behav
+Organ. Stud
+Organ. Sci
+Amer. Econom. Rev
+Amer. J. Sociol
+Internat. J. Electronic Commerce

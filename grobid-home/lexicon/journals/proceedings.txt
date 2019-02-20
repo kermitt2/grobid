@@ -36,7 +36,7 @@ WAOA
 Workshop on Approximation and Online Algorithms
 Symposium on Computational Geometry
 ACM GIS
-ACM SIGSPATIAL 
+ACM SIGSPATIAL
 International Conference on Advances in Geographic Information Systems
 International Symposium on Graph Drawing
 IMR
@@ -48,7 +48,7 @@ Canadian Conference on Computational Geometry
 EuroCG
 European Workshop on Computational Geometry
 Fall Workshop on Computational Geometry
-ARO-MSI 
+ARO-MSI
 Workshop on Computational Geometry
 Structure in Complexity Theory Conference
 ISSAC
@@ -156,7 +156,7 @@ IWCC
 International Workshop on Cluster Computing
 HiPC
 International Conference on High Performance Computing
-CCGrid 
+CCGrid
 International Symposium on Cluster Computing and the Grid
 ICSE
 International Conference on Software Engineering
@@ -510,7 +510,7 @@ Annual Conference of the European Association for Computer Graphics
 Eurographics Conference on Graphics Hardware
 InfoVis
 Information Visualization Conference
-SCA 
+SCA
 Symposium on Computer Animation
 ICIP
 International Conference on Image Processing
@@ -543,7 +543,7 @@ WABI
 Workshop on Algorithms in Bioinformatics
 IJCBS
 International Joint Conferences on Bioinformatics, Systems Biology and Intelligent Computing
-SIGCSE 
+SIGCSE
 Technical Symposium on Computer Science Education
 ITiCSE
 SIGCSE Annual Conference on Innovation and Technology in Computer Science Education
@@ -556,8 +556,8 @@ International Conference on Artificial Intelligence in Education
 CSCL
 International Conference on Computer Supported Collaborative Learning
 IEEE Trans. Processing
-Proceedings of Joint Conference 
-Proceedings of International Conference 
+Proceedings of Joint Conference
+Proceedings of International Conference
 IEEE Transactions
 IEEE Conference
 Annual International ACM SIGIR Conference
@@ -565,42 +565,42 @@ International ACM SIGIR Conference
 Conference and North American Chapter of the Association
 International Summer School
 Meeting of the European (ORAHS)
-Annual International IEEE-EMBS 
+Annual International IEEE-EMBS
 Special Conference
 European Conference
-Congress of the European Society 
-World Congress 
+Congress of the European Society
+World Congress
 International Symposium
 International Congress
 International Congress Proceedings
-European Conference 
+European Conference
 Congressus Internationalis
 Vortrage und Zusammenfassungen der nationalen Fachtagung der SGE
 Annual Conference Proceedings
 Annual International Conference of the IEEE
-Proceedings of the Conference 
+Proceedings of the Conference
 Proc. SPIE
 Proc. R. Soc. Lond. A
 Proceedings of the International conference
-International Congress 
+International Congress
 Workshop proceedings
-National Conference 
+National Conference
 Consensus Conference
 Annual Conference of the Section of the Royal Academy
 International Symposium
 Annual IRB Conference
-Congress of the International Society 
+Congress of the International Society
 World Congress of the International Society
-Annual Meeting 
+Annual Meeting
 Society International Conference
 proceedings from a conference
-Final program and abstracts 
+Final program and abstracts
 Annual International Meeting
 Annual Lorne Conference
 National Conference
 International IEEE/EMBS Conference
-Statusseminar of the BMFT Program 
-Australian Society 
+Statusseminar of the BMFT Program
+Australian Society
 International Conference
 Hirosaki International Forum
 Shanghai International Conference
@@ -610,7 +610,7 @@ Harvard School Symposium
 International Congress of the International Society
 Annual International Conference of the IEEE
 International Summer School
-Joint Conference of the Society 
+Joint Conference of the Society
 International Society
 Montreal International Symposium
 workshop of the national conference
@@ -627,7 +627,7 @@ IEEE International Conference
 International ACM Conference
 IEEE Int'l Conference
 ACM International Conference
-IEEE Int'l Symposium 
+IEEE Int'l Symposium
 International Youth Conference
 Nordic Conference
 United Nations Conference
@@ -636,7 +636,7 @@ Conference of PhD Students
 Proceedings of the Symposium
 North american Conference
 Southeast Conference
-ESCA Workshop 
+ESCA Workshop
 COLING
 ALC
 SIGPLAN International Conference
@@ -652,3 +652,11 @@ AAAI
 PAMI
 ICML
 Conference on Foundations
+PACIS
+Pacific Asia Conference on Information Systems
+AMCIS
+Americas Conference on Information Systems
+WI
+International Conference on Wirtschaftsinformatik
+DESRIST
+Design science research in information systems and technology
