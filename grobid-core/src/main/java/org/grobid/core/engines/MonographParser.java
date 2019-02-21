@@ -686,20 +686,36 @@ public class MonographParser extends AbstractParser {
             DocumentNode currentNode = outlineRoot;
             // preorder traversal of the table of contents 
             LinkedList<DocumentNode> stackTOC = new LinkedList<DocumentNode>();
+            String gornString = ""; //will keep (the prefix for) a Gorn adress
+            //String tabber = ""; //will keep as many tabulations as needed in front of the item//commented because not yet figured out
+            //int nTabs = 0; //number of tabs in tabber
+            int nDepth = 0; //a number that will indicate lousely  the current depth in the table of contents
             boolean tocExists = ( currentNode != null );
             if ( tocExists ) {
                 builder.append("<div type=\"contents\">\n");
-                builder.append("    <list>\n");
+                builder.append("<list>\n");
                 currentNode.setAddress("*");
                 stackTOC.push(currentNode);
+                nDepth = 0;
             }
             while ( stackTOC.size() > 0) {
                 currentNode = stackTOC.pop();
-                String gornString = currentNode.getAddress();
-                builder.append("        <item n=" 
-                 + gornString + ">"
-                 + currentNode.getLabel()
-                 + "        </item>\n");
+                gornString = currentNode.getAddress();
+                int newDepth = gornString.length(); // depth is related
+                if ( gornString != "*"){
+                    // note that case newDepth == 1 && nDepth == 0 was already covered by line 696
+                    if ( newDepth > 1 && newDepth > nDepth && gornString.charAt(newDepth-2)=='.'){
+                        builder.append("<list>\n");
+                    }
+                    else if ( newDepth < nDepth ){
+                        builder.append("</list>\n");
+                    }
+                    nDepth = newDepth;
+                    builder.append("<item n=" 
+                     + gornString + "> "
+                     + currentNode.getLabel()
+                     + " </item>\n");
+                }
                 if (gornString == "*") {
                     gornString = "";
                 }
@@ -718,7 +734,7 @@ public class MonographParser extends AbstractParser {
                 }
             }
             if ( tocExists ) {
-                builder.append("    </list>\n");
+                builder.append("</list>\n");
                 builder.append("</div>\n");
             }
 
