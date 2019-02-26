@@ -1,5 +1,5 @@
 
-for $g  in //GROUP return
+for $g  in //g return
 
   let $x1 := min(($g//*/@x, $g//*/@x1, $g//*/@x2, $g//*/@x3))
   let $y1 := min(($g/*/@y, $g//*/@y1, $g//*/@y2, $g//*/@y3))
