@@ -272,9 +272,11 @@ public class FeaturesVectorHeader {
                 filter = true;
             } else if (text.indexOf(".pbm") != -1) {
                 filter = true;
-            } else if (text.indexOf(".vec") != -1) {
+            } else if (text.indexOf(".svg") != -1) {
                 filter = true;
             } else if (text.indexOf(".jpg") != -1) {
+                filter = true;
+            } else if (text.indexOf(".png") != -1) {
                 filter = true;
             }
 

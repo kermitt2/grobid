@@ -645,7 +645,8 @@ public class FullTextParser extends AbstractParser {
 	                                            && (!(toto.startsWith("@IMAGE")))
 												&& (!(toto.startsWith("@PAGE")))
 	                                            && (!text.contains(".pbm"))
-	                                            && (!text.contains(".vec"))
+	                                            && (!text.contains(".svg"))
+                                                && (!text.contains(".png"))
 	                                            && (!text.contains(".jpg"))) {
 	                                        endloop = true;
 	                                    }
