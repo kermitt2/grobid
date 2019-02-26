@@ -660,7 +660,7 @@ public class HeaderParser extends AbstractParser {
                                                 && (!text.contains(".pbm"))
                                                 && (!text.contains(".ppm"))
                                                 && (!text.contains(".png"))
-                                                && (!text.contains(".vec"))
+                                                && (!text.contains(".svg"))
                                                 && (!text.contains(".jpg"))) {
                                             endloop = true;
                                         }

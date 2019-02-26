@@ -164,7 +164,7 @@ public class Segmentation extends AbstractParser {
                         String toLowerCaseName = currFile.getName().toLowerCase();
                         if (toLowerCaseName.endsWith(".png") || !config.isPreprocessImages()) {
                             try {
-                                if (toLowerCaseName.endsWith(".vec")) {
+                                if (toLowerCaseName.endsWith(".svg")) {
                                     continue;
                                 }
                                 FileUtils.copyFileToDirectory(currFile, assetFile);
