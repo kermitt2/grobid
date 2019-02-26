@@ -769,7 +769,7 @@ public class Document implements Serializable {
                                             && (!(toto.contains("@PAGE")))
                                             && (!text.contains(".pbm"))
                                             && (!text.contains(".ppm"))
-                                            && (!text.contains(".vec"))
+                                            && (!text.contains(".svg"))
                                             && (!text.contains(".png"))
                                             && (!text.contains(".jpg"))) {
                                         endloop = true;

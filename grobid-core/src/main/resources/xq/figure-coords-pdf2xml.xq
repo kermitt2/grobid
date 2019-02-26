@@ -1,2 +1,2 @@
-for $i in //IMAGE
-return string-join(($i/ancestor::PAGE/@number, $i/@x, $i/@y, $i/@width, $i/@height), ',')
+for $i in //Illustration
+return string-join(($i/ancestor::Page/@number, $i/@HPOS, $i/@VPOS, $i/@WIDTH, $i/@HEIGHT), ',')
