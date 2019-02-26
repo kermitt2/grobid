@@ -104,10 +104,10 @@ public class Segmentation extends AbstractParser {
             return doc;
         } finally {
             // keep it clean when leaving...
-            if (config.getPdfAssetPath() == null) {
+            /*if (config.getPdfAssetPath() == null) {
                 // remove the pdf2xml tmp file
                 DocumentSource.close(documentSource, false, true, true);
-            } else {
+            } else*/ {
                 // remove the pdf2xml tmp files, including the sub-directories
                 DocumentSource.close(documentSource, true, true, true);
             }
