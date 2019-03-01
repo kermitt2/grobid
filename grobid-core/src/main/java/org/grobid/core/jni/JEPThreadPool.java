@@ -84,10 +84,11 @@ public class JEPThreadPool {
                 jep.eval("import numpy as np");
                 jep.eval("import keras.backend as K");
                 jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
-                jep.eval("from utilities.Embeddings import Embeddings");
-                jep.eval("import sequenceLabelling");
-                jep.eval("from sequenceLabelling.reader import load_data_and_labels_crf_file");
-                jep.eval("from sequenceLabelling.reader import load_data_crf_string");
+                jep.eval("from delft.utilities.Embeddings import Embeddings");
+                jep.eval("import delft.sequenceLabelling");
+                jep.eval("from delft.sequenceLabelling import Sequence");
+                jep.eval("from delft.sequenceLabelling.reader import load_data_and_labels_crf_file");
+                jep.eval("from delft.sequenceLabelling.reader import load_data_crf_string");
                 jep.eval("from sklearn.model_selection import train_test_split");
             } catch(JepException e) {
                 LOGGER.error("JEP initialization failed", e);

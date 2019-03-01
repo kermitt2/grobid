@@ -53,7 +53,7 @@ public class DeLFTModel {
         public void run() { 
             Jep jep = JEPThreadPool.getInstance().getJEPInstance(); 
             try { 
-                jep.eval(this.modelName+" = sequenceLabelling.Sequence('" + this.modelName.replace("_", "-") + "')");
+                jep.eval(this.modelName+" = Sequence('" + this.modelName.replace("_", "-") + "')");
                 jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
             } catch(JepException e) {
                 LOGGER.error("DeLFT model initialization failed", e);
@@ -182,7 +182,7 @@ public class DeLFTModel {
                 }
 
                 // init model to be trained
-                jep.eval("model = sequenceLabelling.Sequence('"+this.modelName+
+                jep.eval("model = Sequence('"+this.modelName+
                     "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+")");
 
                 // actual training

@@ -767,8 +767,12 @@ public class GrobidRestProcessFiles {
         PDDocument outputDocument = null;
         // list of TEI elements that should come with coordinates
         List<String> elementWithCoords = new ArrayList<>();
-        elementWithCoords.add("ref");
-        elementWithCoords.add("biblStruct");
+        if (type == GrobidRestUtils.Annotation.CITATION) {
+            elementWithCoords.add("ref");
+            elementWithCoords.add("biblStruct");
+        } else if (type == GrobidRestUtils.Annotation.FIGURE) {
+            elementWithCoords.add("figure");
+        }
 
         GrobidAnalysisConfig config = new GrobidAnalysisConfig
             .GrobidAnalysisConfigBuilder()
@@ -777,18 +781,25 @@ public class GrobidRestProcessFiles {
             .generateTeiCoordinates(elementWithCoords)
             .build();
 
-        Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
+        DocumentSource documentSource = 
+            DocumentSource.fromPdf(originFile, config.getStartPage(), config.getEndPage(), true, true, false);
+
+        Document teiDoc = engine.fullTextToTEIDoc(documentSource, config);
+
+        documentSource = 
+            DocumentSource.fromPdf(originFile, config.getStartPage(), config.getEndPage(), true, true, false);
 
         PDDocument document = PDDocument.load(originFile);
         //If no pages, skip the document
         if (document.getNumberOfPages() > 0) {
-            DocumentSource documentSource = teiDoc.getDocumentSource();
             outputDocument = dispatchProcessing(type, document, documentSource, teiDoc);
         } else {
             throw new RuntimeException("Cannot identify any pages in the input document. " +
                 "The document cannot be annotated. Please check whether the document is valid or the logs.");
         }
         
+        documentSource.close(true, true, false);
+
         return outputDocument;
     }
 
