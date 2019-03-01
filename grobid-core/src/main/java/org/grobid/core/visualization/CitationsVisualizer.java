@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.cos.COSArray;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.graphics.color.PDColor;
@@ -209,7 +210,9 @@ public class CitationsVisualizer {
 			Pair<Integer, Integer> thePlace = dictionary.get(teiId);
 			if (thePlace != null) {
 				PDPageFitWidthDestination destination = new PDPageFitWidthDestination();
-				destination.setPageNumber(thePlace.getA());
+                PDPage pdpage = document.getPage(thePlace.getA());
+                destination.setPage(pdpage);
+				//destination.setPageNumber(thePlace.getA());
 				destination.setTop(thePlace.getB());
                 PDActionGoTo action = new PDActionGoTo();
 				action.setDestination(destination);
