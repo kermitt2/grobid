@@ -45,7 +45,7 @@ public class ProcessRunner extends Thread {
             try {
                 Long pid = getPidOfProcess(process);
                 if (pid != null) {
-                    LOGGER.info("Killing pdf2xml with PID " + pid + " and its children");
+                    LOGGER.info("Killing pdf to xml process with PID " + pid + " and its children");
                     Runtime.getRuntime().exec(new String[]{"pkill", "-9", "-P", String.valueOf(pid)}).waitFor();
                 }
             } catch (Exception e) {
