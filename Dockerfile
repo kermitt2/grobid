@@ -36,7 +36,7 @@ COPY grobid-core/ ./grobid-core/
 COPY grobid-service/ ./grobid-service/
 COPY grobid-trainer/ ./grobid-trainer/
 
-RUN ./gradlew clean assemble --no-daemon
+RUN ./gradlew clean assemble -x gitRev --no-daemon  --info --stacktrace
 
 
 # -------------------
