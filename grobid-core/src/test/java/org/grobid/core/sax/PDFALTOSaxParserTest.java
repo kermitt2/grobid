@@ -25,7 +25,7 @@ import static org.junit.Assert.assertTrue;
 public class PDFALTOSaxParserTest {
     SAXParserFactory spf = SAXParserFactory.newInstance();
 
-    PDF2XMLSaxHandler target;
+    PDFALTOSaxHandler target;
     DocumentSource mockDocumentSource;
     Document document;
     private List<GraphicObject> images;
@@ -37,12 +37,12 @@ public class PDFALTOSaxParserTest {
 
         document = Document.createFromText("");
         images = new ArrayList<>();
-        target = new PDF2XMLSaxHandler(document, images);
+        target = new PDFALTOSaxHandler(document, images);
     }
 
     @Test
     public void testParsing_pdf2XMLwithNoIMages_ShouldWork() throws Exception {
-        InputStream is = this.getClass().getResourceAsStream("pdf2xml_noImages.xml");
+        InputStream is = this.getClass().getResourceAsStream("pdfalto_noImages.xml");
 
         SAXParser p = spf.newSAXParser();
         p.parse(is, target);
@@ -58,7 +58,7 @@ public class PDFALTOSaxParserTest {
 
     @Test
     public void testParsing_pdf2XMLwithIMages_ShouldWork() throws Exception {
-        InputStream inputStream = this.getClass().getResourceAsStream("pdf2xml_Images.xml");
+        InputStream inputStream = this.getClass().getResourceAsStream("pdfalto_Images.xml");
 
         SAXParser p = spf.newSAXParser();
         p.parse(inputStream, target);
@@ -66,8 +66,8 @@ public class PDFALTOSaxParserTest {
         List<LayoutToken> tokenList = target.getTokenization();
 
         assertTrue(tokenList.size() > 0);
-        assertThat(images.size(), is(17));
-        assertThat(document.getImages().size(), is(17));
+        assertThat(images.size(), is(16));
+        assertThat(document.getImages().size(), is(16));
         assertTrue(document.getPages().size() == 4);
         assertTrue(document.getBlocks().size() == 26);
     }
