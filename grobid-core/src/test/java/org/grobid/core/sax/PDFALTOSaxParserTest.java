@@ -22,7 +22,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by lfoppiano on 21/07/16.
  */
-public class PDF2XMLSaxParserTest {
+public class PDFALTOSaxParserTest {
     SAXParserFactory spf = SAXParserFactory.newInstance();
 
     PDF2XMLSaxHandler target;

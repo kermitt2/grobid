@@ -19,14 +19,14 @@ import java.util.List;
 
 /**
  * Input document to be processed, which could come from a PDF or directly be an XML file. 
- * If from a PDF document, this is the place where pdf2xml is called.
+ * If from a PDF document, this is the place where pdftoxml is called.
  */
 public class DocumentSource {
     private static final Logger LOGGER = LoggerFactory.getLogger(DocumentSource.class);
     //    private static final int DEFAULT_TIMEOUT = 30000;
     private static final int KILLED_DUE_2_TIMEOUT = 143;
     private static final int MISSING_LIBXML2 = 127;
-    private static final int MISSING_PDF2XML = 126;
+    private static final int MISSING_PDFTOXML = 126;
     public static final int PDFTOXML_FILES_AMOUNT_LIMIT = 5000;
 
     private File pdfFile;
@@ -176,7 +176,7 @@ public class DocumentSource {
     private File processPdfToXmlThreadMode(Integer timeout, File pdfPath,
                                           File tmpPathXML, List<String> cmd) {
         LOGGER.debug("Executing: " + cmd.toString());
-        ProcessRunner worker = new ProcessRunner(cmd, "pdf2xml[" + pdfPath + "]", true);
+        ProcessRunner worker = new ProcessRunner(cmd, "pdfalto[" + pdfPath + "]", true);
 
         worker.start();
 
@@ -229,10 +229,10 @@ public class DocumentSource {
             throw new GrobidException("An error occurred while converting pdf " + pdfPath, GrobidExceptionStatus.BAD_INPUT_DATA);
         } else if (exitCode == KILLED_DUE_2_TIMEOUT) {
             throw new GrobidException("PDF to XML conversion timed out", GrobidExceptionStatus.TIMEOUT);
-        } else if (exitCode == MISSING_PDF2XML) {
-            throw new GrobidException("PDF to XML conversion failed. Cannot find pdf2xml executable", GrobidExceptionStatus.PDFTOXML_CONVERSION_FAILURE);
+        } else if (exitCode == MISSING_PDFTOXML) {
+            throw new GrobidException("PDF to XML conversion failed. Cannot find pdfalto executable", GrobidExceptionStatus.PDFTOXML_CONVERSION_FAILURE);
         } else if (exitCode == MISSING_LIBXML2) {
-            throw new GrobidException("PDF to XML conversion failed. pdf2xml cannot be executed correctly. Has libxml2 been installed in the system? More information can be found in the logs. ", GrobidExceptionStatus.PDFTOXML_CONVERSION_FAILURE);
+            throw new GrobidException("PDF to XML conversion failed. pdfalto cannot be executed correctly. Has libxml2 been installed in the system? More information can be found in the logs. ", GrobidExceptionStatus.PDFTOXML_CONVERSION_FAILURE);
         } else if (exitCode != 0) {
             throw new GrobidException("PDF to XML conversion failed with error code: " + exitCode, GrobidExceptionStatus.BAD_INPUT_DATA);
         }
