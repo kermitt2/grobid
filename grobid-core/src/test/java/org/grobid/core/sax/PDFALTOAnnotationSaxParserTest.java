@@ -19,10 +19,10 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-public class PDF2XMLAnnotationSaxParserTest {
+public class PDFALTOAnnotationSaxParserTest {
     SAXParserFactory spf = SAXParserFactory.newInstance();
 
-    PDF2XMLAnnotationSaxHandler target;
+    PDFALTOAnnotationSaxHandler target;
     DocumentSource mockDocumentSource;
     Document document;
 
@@ -32,12 +32,12 @@ public class PDF2XMLAnnotationSaxParserTest {
         mockDocumentSource = createMock(DocumentSource.class);
 
         document = Document.createFromText("");
-        target = new PDF2XMLAnnotationSaxHandler(document, new ArrayList<PDFAnnotation>());
+        target = new PDFALTOAnnotationSaxHandler(document, new ArrayList<PDFAnnotation>());
     }
 
     @Test
     public void testParsing_pdf2XMLAnnotations_ShouldWork() throws Exception {
-        InputStream is = this.getClass().getResourceAsStream("pdf2xml.xml_annot.xml");
+        InputStream is = this.getClass().getResourceAsStream("pdfalto.xml_annot.xml");
 
         SAXParser p = spf.newSAXParser();
         p.parse(is, target);

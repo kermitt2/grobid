@@ -23,8 +23,8 @@ import java.util.*;
  * 
  *  @author Patrice Lopez
  */
-public class PDF2XMLAnnotationSaxHandler extends DefaultHandler {
-	public static final Logger LOGGER = LoggerFactory.getLogger(PDF2XMLAnnotationSaxHandler.class);
+public class PDFALTOAnnotationSaxHandler extends DefaultHandler {
+	public static final Logger LOGGER = LoggerFactory.getLogger(PDFALTOAnnotationSaxHandler.class);
 	
 	private StringBuilder accumulator = new StringBuilder(); // Accumulate parsed text
 	private Document doc = null;
@@ -34,7 +34,7 @@ public class PDF2XMLAnnotationSaxHandler extends DefaultHandler {
 	private List<Double> x_points = null;
 	private List<Double> y_points = null;
 	
-	public PDF2XMLAnnotationSaxHandler(Document doc, List<PDFAnnotation> annotations) {
+	public PDFALTOAnnotationSaxHandler(Document doc, List<PDFAnnotation> annotations) {
 		this.doc = doc;
 		this.annotations = annotations;
 	}
