@@ -1,14 +1,8 @@
 package org.grobid.core.sax;
 
-import org.grobid.core.layout.Block;
-import org.grobid.core.layout.Page;
 import org.grobid.core.document.DocumentNode;
 import org.grobid.core.document.Document;
-import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.BoundingBox;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.*;
@@ -22,8 +16,8 @@ import java.util.*;
  * 
  *  @author Patrice Lopez
  */
-public class PDF2XMLOutlineSaxHandler extends DefaultHandler {
-	public static final Logger LOGGER = LoggerFactory.getLogger(PDF2XMLOutlineSaxHandler.class);
+public class PDFALTOOutlineSaxHandler extends DefaultHandler {
+	public static final Logger LOGGER = LoggerFactory.getLogger(PDFALTOOutlineSaxHandler.class);
 	
 	private StringBuilder accumulator = new StringBuilder(); // Accumulate parsed text
 	private Document doc = null;
@@ -39,7 +33,7 @@ public class PDF2XMLOutlineSaxHandler extends DefaultHandler {
 
 	private Map<Integer,DocumentNode> nodes = null;
 	
-	public PDF2XMLOutlineSaxHandler(Document doc) {
+	public PDFALTOOutlineSaxHandler(Document doc) {
 		this.doc = doc;
 	}
 	

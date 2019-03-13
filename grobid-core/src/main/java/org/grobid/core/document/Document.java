@@ -357,8 +357,8 @@ public class Document implements Serializable {
         if (config.getAnalyzer() != null)
             parser.setAnalyzer(config.getAnalyzer());
         pdfAnnotations = new ArrayList<PDFAnnotation>();
-        PDF2XMLAnnotationSaxHandler parserAnnot = new PDF2XMLAnnotationSaxHandler(this, pdfAnnotations);
-        PDF2XMLOutlineSaxHandler parserOutline = new PDF2XMLOutlineSaxHandler(this);
+        PDFALTOAnnotationSaxHandler parserAnnot = new PDFALTOAnnotationSaxHandler(this, pdfAnnotations);
+        PDFALTOOutlineSaxHandler parserOutline = new PDFALTOOutlineSaxHandler(this);
         PDFMetadataSaxHandler parserMetadata = new PDFMetadataSaxHandler(this);
 
         // get a SAX parser factory
