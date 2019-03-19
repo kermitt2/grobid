@@ -134,11 +134,13 @@ public class PDFALTOAnnotationSaxHandler extends DefaultHandler {
 
 				if ((name != null) && (value != null)) {
 					if (name.equals("type")) {
-						if (value.equals("URI")) {
+						if (value.equals("uri")) {
 							currentAnnotation.setType(PDFAnnotation.Type.URI);
-						} else if (value.equals("GoTo")) {
+						} else if (value.equals("goto")) {
 							currentAnnotation.setType(PDFAnnotation.Type.GOTO);
-						} else {
+						} else if (value.equals("gotor")) {
+                            currentAnnotation.setType(PDFAnnotation.Type.GOTOR);
+                        } else {
 							LOGGER.info("the link annotation type is not recognized: " + value);
 							currentAnnotation.setType(PDFAnnotation.Type.UNKNOWN);
 						}
