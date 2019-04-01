@@ -22,7 +22,7 @@ public class PDFAnnotation {
 	// warning: in PDF, the page numbers start at 1 
     private int pageNumber = -1;
 
-    public enum Type {UNKNOWN, GOTO, URI};
+    public enum Type {UNKNOWN, GOTO, URI, GOTOR};
     private Type type = Type.UNKNOWN; // default
 
     public PDFAnnotation() {

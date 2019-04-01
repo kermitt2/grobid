@@ -52,7 +52,7 @@ public class GrobidProperties {
     private static GrobidConsolidationService consolidationService = GrobidConsolidationService.CROSSREF;
 
     /**
-     * Path to pdf2xml.
+     * Path to pdf to xml converter.
      */
     private static File pathToPdfToXml = null;
 
@@ -598,7 +598,7 @@ public class GrobidProperties {
     }
 
     /**
-     * Returns the path to the home folder of pdf2xml.
+     * Returns the path to the home folder of pdf to xml converter.
      */
     public static void loadPdf2XMLPath() {
         LOGGER.debug("loading pdf to xml command path");
@@ -612,7 +612,7 @@ public class GrobidProperties {
 
         pathToPdfToXml = new File(pathToPdfToXml, Utilities.getOsNameAndArch());
 
-        LOGGER.debug("pdf2xml home directory set to " + pathToPdfToXml.getAbsolutePath());
+        LOGGER.debug("pdf to xml executable home directory set to " + pathToPdfToXml.getAbsolutePath());
     }
 
     /**
