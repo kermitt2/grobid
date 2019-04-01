@@ -302,13 +302,42 @@ public class FullTextParser extends AbstractParser {
      */
     public Pair<String, List<LayoutToken>> processShort(List<LayoutToken> tokens, Document doc) {
         SortedSet<DocumentPiece> documentParts = new TreeSet<DocumentPiece>();
-        int endInd = tokens.size()-1;
-        int posStartAbstract = getDocIndexToken(doc, tokens.get(0));
-        int posEndAbstract = getDocIndexToken(doc, tokens.get(endInd));
-        DocumentPointer dp1 = new DocumentPointer(doc, tokens.get(0).getBlockPtr(), posStartAbstract);
-        DocumentPointer dp2 = new DocumentPointer(doc, tokens.get(endInd).getBlockPtr(), posEndAbstract);
-        DocumentPiece piece = new DocumentPiece(dp1, dp2);
-        documentParts.add(piece);
+
+        // we need to identify all the continuous chunks of tokens, and ignore the others
+        List<List<LayoutToken>> tokenChunks = new ArrayList<List<LayoutToken>>();
+        List<LayoutToken> currentChunk = new ArrayList<LayoutToken>();
+        int currentPos = 0;
+        for(LayoutToken token : tokens) {
+            if (currentChunk.size() == 0) {
+                currentChunk.add(token);
+                currentPos = token.getOffset() + token.getText().length();
+            } else {
+                int tokenPos = token.getOffset();
+                if (currentPos+1 == tokenPos) {
+                    // continous
+                    currentChunk.add(token);
+                    currentPos = token.getOffset() + token.getText().length();
+                } else {
+                    // new chunk
+                    tokenChunks.add(currentChunk);
+                    currentChunk = new ArrayList<LayoutToken>();
+                    currentChunk.add(token);
+                    currentPos = token.getOffset() + token.getText().length();
+                }
+            }
+        }
+        // add last chunk
+        tokenChunks.add(currentChunk);
+
+        for(List<LayoutToken> chunk : tokenChunks) {
+            int endInd = chunk.size()-1;
+            int posStartAbstract = getDocIndexToken(doc, chunk.get(0));
+            int posEndAbstract = getDocIndexToken(doc, chunk.get(endInd));
+            DocumentPointer dp1 = new DocumentPointer(doc, chunk.get(0).getBlockPtr(), posStartAbstract);
+            DocumentPointer dp2 = new DocumentPointer(doc, chunk.get(endInd).getBlockPtr(), posEndAbstract);
+            DocumentPiece piece = new DocumentPiece(dp1, dp2);
+            documentParts.add(piece);
+        }
         Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentParts);
         String res = null;
         List<LayoutToken> layoutTokenization = null;
