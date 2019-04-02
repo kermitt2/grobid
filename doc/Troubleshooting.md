@@ -25,3 +25,13 @@ libxml2 is required by pdfalto, and is normally shipped by default on all standa
 For minimal or cloud based / container system like Linode, AWS, Docker, etc. _libxml2_ might not be installed by default and should thus be installed as prerequisite.
 
 See [here](https://github.com/kermitt2/grobid/issues/101) the open issue. 
+
+### Wrong Java version
+
+Using a recent Java version which has a changed string format for giving its version number can lead to problems.
+
+Updating the `distributionUrl` in `gradle/wrapper/gradle-wrapper.properties` to a more recent Gradle version can help, e.g.:
+
+```
+distributionUrl=https\://services.gradle.org/distributions/gradle-4.10-all.zip
+```
