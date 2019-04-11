@@ -1,8 +1,11 @@
 package org.grobid.core.engines;
 
 import eugfc.imageio.plugins.PNMRegistry;
+import javafx.geometry.BoundingBox;
+
 import org.apache.commons.io.FileUtils;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.document.BasicStructureBuilder;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentNode;
@@ -15,8 +18,10 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorMonograph;
 import org.grobid.core.layout.*;
+import org.grobid.core.lexicon.FastMatcher;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
+import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -293,7 +298,7 @@ public class MonographParser extends AbstractParser {
             double spacingPreviousBlock = 0.0; // discretized
             double lowestPos = 0.0;
             pageLength = page.getPageLengthChar();
-            BoundingBox pageBoundingBox = page.getMainArea();
+            org.grobid.core.layout.BoundingBox pageBoundingBox = page.getMainArea();
             mm = 0;
             //endPage = true;
             
@@ -356,7 +361,7 @@ public class MonographParser extends AbstractParser {
 
                 // is the current block in the main area of the page or not?
                 boolean inPageMainArea = true;
-                BoundingBox blockBoundingBox = BoundingBox.fromPointAndDimensions(page.getNumber(), 
+                org.grobid.core.layout.BoundingBox blockBoundingBox = org.grobid.core.layout.BoundingBox.fromPointAndDimensions(page.getNumber(), 
                     block.getX(), block.getY(), block.getWidth(), block.getHeight());
                 if (pageBoundingBox == null || (!pageBoundingBox.contains(blockBoundingBox) && !pageBoundingBox.intersect(blockBoundingBox)))
                     inPageMainArea = false;
@@ -687,30 +692,40 @@ public class MonographParser extends AbstractParser {
             // preorder traversal of the table of contents 
             LinkedList<DocumentNode> stackTOC = new LinkedList<DocumentNode>();
             String gornString = ""; //will keep (the prefix for) a Gorn adress
-            //String tabber = ""; //will keep as many tabulations as needed in front of the item//commented because not yet figured out
-            //int nTabs = 0; //number of tabs in tabber
-            int nDepth = 0; //a number that will indicate lousely  the current depth in the table of contents
+            int oldDepth = 0; //numbers that will indicate lousely  
+            int currentDepth = 0; // the current depth in the table of contents
             boolean tocExists = ( currentNode != null );
             if ( tocExists ) {
                 builder.append("<div type=\"contents\">\n");
-                builder.append("<list>\n");
                 currentNode.setAddress("*");
                 stackTOC.push(currentNode);
-                nDepth = 0;
+                oldDepth = 0;
             }
             while ( stackTOC.size() > 0) {
                 currentNode = stackTOC.pop();
+                // at this point, the page at which the chapter/section, 
+                // referenced by current node, starts 
+                // is given by currentNode.getBoundingBox().getPage()
                 gornString = currentNode.getAddress();
-                int newDepth = gornString.length(); // depth is related
                 if ( gornString != "*"){
-                    // note that case newDepth == 1 && nDepth == 0 was already covered by line 696
-                    if ( newDepth > 1 && newDepth > nDepth && gornString.charAt(newDepth-2)=='.'){
+                    currentDepth = (gornString.split("[.]")).length;
+                    if ( currentDepth > oldDepth ) {
+                        for ( int i=0; i < currentDepth ; i++ ) {
+                            builder.append("\t");
+                        }
                         builder.append("<list>\n");
                     }
-                    else if ( newDepth < nDepth ){
+                    while ( currentDepth < oldDepth ) {
+                        for ( int i=0; i < oldDepth ; i++ ) {
+                            builder.append("\t");
+                        }
                         builder.append("</list>\n");
+                        oldDepth--;
                     }
-                    nDepth = newDepth;
+                    for ( int i=0; i < currentDepth; i++ ) {
+                        builder.append("\t");
+                    }
+                    oldDepth = currentDepth;
                     builder.append("<item n=" 
                      + gornString + "> "
                      + currentNode.getLabel()
@@ -734,12 +749,23 @@ public class MonographParser extends AbstractParser {
                 }
             }
             if ( tocExists ) {
-                builder.append("</list>\n");
+                builder.append("\t</list>\n");
                 builder.append("</div>\n");
             }
 
+            FastMatcher matcher = new FastMatcher();
+            // Exemple of how to use FastMatcher :
+            // matcher.loadTerm("un terme", GrobidAnalyzer.getInstance(), true); 
+            // List<OffsetPosition> results = matcher.matchLayoutToken(tokens, true, false); 
+            // then results contains a list of indices i such that
+            // the i-th word in the list of layout tokens doc.getTokenizations()
+            // is the first word of an instance of the queried sequence of tokens
+
+            int tokenCounter = 0;
+
             for(LayoutToken token : tokens) {
                 builder.append(token.getText());
+                tokenCounter++;
             }
 
             builder.append("\t</text>\n</tei>");
