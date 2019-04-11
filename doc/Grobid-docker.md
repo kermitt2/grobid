@@ -11,7 +11,7 @@ The process for fetching and running the image is (assuming docker is installed 
 
 - Pull the image from docker HUB
 ```bash
-> docker pull lfoppiano/grobid:0.5.4
+> docker pull lfoppiano/grobid:0.5.4_1
 ```
  
 - Run the container (note the new version running on 8070, however it will be mapped on the 8080 of your host):
@@ -33,9 +33,12 @@ The process for fetching and running the image is (assuming docker is installed 
 
 <h4>Troubleshooting</h4>
 
-<h5>Out of memory while processing</h5>
+<h5>Out of memory or container being killed while processing</h5>
 
-This might be due to insufficient memory on the docker machine. Make sure your machine has enough: 
+This might be due to insufficient memory on the docker machine. 
+Depending on the intended usage, we recommend to allocate 4Gb extract all the PDF structures. Else 2Gb are sufficient to extract only header information, and 3Gb for citations.    
+
+The memory can be verified directly using the docker desktop application or via CLI:  
 
 ```
 > docker-machine inspect
