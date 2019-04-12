@@ -36,9 +36,12 @@ Updating the `distributionUrl` in `gradle/wrapper/gradle-wrapper.properties` to 
 distributionUrl=https\://services.gradle.org/distributions/gradle-4.10-all.zip
 ```
 
-### Using recent Java version (default version using ubuntu 18 for instance)
+### Using recent java version 10.0.2 (default version using ubuntu 18 for instance)
 
 Using recent java version leads to some errors, and these are the workarounds :
+
 - Update jacoco version to `0.8.2` under `build.gradle`.
-- Add dependecy for missing package `compile "javax.activation:activation:1.1.1"` under `grobid-service` module in `build.gradle`
+
+- Add dependecy for missing package `compile "javax.activation:activation:1.1.1"` under `grobid-service` module in `build.gradle` or uncomment line `org.gradle.jvmargs=--add-modules=java.xml.bind,java.activation` in `gradle.properties`
+
 - Update powermock version to `2.0.0-beta.5`
