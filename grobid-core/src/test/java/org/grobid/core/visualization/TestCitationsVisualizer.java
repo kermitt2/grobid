@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+import com.fasterxml.jackson.core.Versioned;
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
