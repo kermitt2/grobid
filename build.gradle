@@ -29,7 +29,7 @@ allprojects {
     group = "org.grobid"
 
     jacoco {
-        toolVersion = '0.7.1.201405082137'
+        toolVersion = '0.8.2'
     }
 
     tasks.withType(JavaCompile) {
@@ -76,8 +76,8 @@ subprojects {
 
         testCompile "junit:junit:4.12"
         testCompile "org.easymock:easymock:3.4"
-        testCompile "org.powermock:powermock-api-easymock:1.6.6"
-        testCompile "org.powermock:powermock-module-junit4:1.6.6"
+        testCompile "org.powermock:powermock-api-easymock:2.0.0-beta.5"
+        testCompile "org.powermock:powermock-module-junit4:2.0.0-beta.5"
         testCompile "xmlunit:xmlunit:1.6"
         testCompile "org.hamcrest:hamcrest-all:1.3"
     }
@@ -323,6 +323,7 @@ project(":grobid-service") {
         compile "io.dropwizard:dropwizard-client:1.3.7"
         compile "io.dropwizard:dropwizard-auth:1.3.7"
         compile "org.apache.pdfbox:pdfbox:2.0.3"
+        compile "javax.activation:activation:1.1.1"
 
         testCompile "io.dropwizard:dropwizard-testing:1.3.5"
     }

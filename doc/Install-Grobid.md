@@ -2,6 +2,7 @@
 
 ##Getting GROBID
 
+GROBID requires a JVM installed on your machine, supported version is **JVM 8**. More recent JVM version (like JVM 11) might lead to issues.  
 
 ###Latest stable release
 

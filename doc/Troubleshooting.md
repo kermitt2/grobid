@@ -25,23 +25,3 @@ libxml2 is required by pdfalto, and is normally shipped by default on all standa
 For minimal or cloud based / container system like Linode, AWS, Docker, etc. _libxml2_ might not be installed by default and should thus be installed as prerequisite.
 
 See [here](https://github.com/kermitt2/grobid/issues/101) the open issue. 
-
-### Wrong Java version
-
-Using a recent Java version which has a changed string format for giving its version number can lead to problems.
-
-Updating the `distributionUrl` in `gradle/wrapper/gradle-wrapper.properties` to a more recent Gradle version can help, e.g.:
-
-```
-distributionUrl=https\://services.gradle.org/distributions/gradle-4.10-all.zip
-```
-
-### Using recent java version 10.0.2 (default version using ubuntu 18 for instance)
-
-Using recent java version leads to some errors, and these are the workarounds :
-
-- Update jacoco version to `0.8.2` under `build.gradle`.
-
-- Add dependecy for missing package `compile "javax.activation:activation:1.1.1"` under `grobid-service` module in `build.gradle` or uncomment line `org.gradle.jvmargs=--add-modules=java.xml.bind,java.activation` in `gradle.properties`
-
-- Update powermock version to `2.0.0-beta.5`
