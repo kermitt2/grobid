@@ -628,7 +628,7 @@ var grobid = (function($) {
 
 				xhr.send(formData);
 			} else if ($('#textInputDiv3').is(":visible")) {
-				var params = 'text='+encodeURIComponent($("#textInputArea3").val());
+				var params = 'input='+encodeURIComponent($("#textInputArea3").val());
 				if ($("#consolidate3").is(":checked"))	
 					params += '&consolidateCitations=1';
 				else 
@@ -1010,7 +1010,7 @@ var grobid = (function($) {
 			setBaseUrl('processCitationPatentPDF');
 		}
 		else if (selected == 'processCitationPatentTXT') {
-			createInputTextArea3('text');
+			createInputTextArea3('input');
 			$('#consolidateBlock3').show();
 			setBaseUrl('processCitationPatentTXT');
 		}
