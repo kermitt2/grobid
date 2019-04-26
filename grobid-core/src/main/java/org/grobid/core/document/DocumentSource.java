@@ -76,10 +76,10 @@ public class DocumentSource {
         pdfToXml.append(GrobidProperties.getPdfToXMLPath().getAbsolutePath());
         // bat files sets the path env variable for cygwin dll
         if (SystemUtils.IS_OS_WINDOWS) {
-            pdfToXml.append(
-                GrobidProperties.isContextExecutionServer() ? File.separator + "pdfalto_server.bat" : File.separator + "pdfalto.bat");
-        } else
-            pdfToXml.append(
+            //pdfalto executable are separated to avoid dll conflicts
+            pdfToXml.append(File.separator +"pdfalto");
+        }
+        pdfToXml.append(
                 GrobidProperties.isContextExecutionServer() ? File.separator + "pdfalto_server" : File.separator + "pdfalto");
 
         pdfToXml.append(" -blocks -noImageInline -fullFontName ");
