@@ -74,8 +74,14 @@ public class DocumentSource {
     private String getPdfToXmlCommand(boolean withImage, boolean withAnnotations, boolean withOutline) {
         StringBuilder pdfToXml = new StringBuilder();
         pdfToXml.append(GrobidProperties.getPdfToXMLPath().getAbsolutePath());
-        pdfToXml.append(
-            GrobidProperties.isContextExecutionServer() ? File.separator + "pdfalto_server" : File.separator + "pdfalto");
+        // bat files sets the path env variable for cygwin dll
+        if (SystemUtils.IS_OS_WINDOWS) {
+            pdfToXml.append(
+                GrobidProperties.isContextExecutionServer() ? File.separator + "pdfalto_server.bat" : File.separator + "pdfalto.bat");
+        } else
+            pdfToXml.append(
+                GrobidProperties.isContextExecutionServer() ? File.separator + "pdfalto_server" : File.separator + "pdfalto");
+
         pdfToXml.append(" -blocks -noImageInline -fullFontName ");
 
         if (!withImage) {
