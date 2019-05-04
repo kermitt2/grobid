@@ -16,8 +16,8 @@ Here's a BibTeX entry:
     howpublished = {\url{https://github.com/kermitt2/grobid}}, 
     publisher = {GitHub},
     year = {2008 --- 2019},
-    note = {[Online; accessed 12-February-2019]},
-    commit = {6d487aae44dff4d2d8e5e2b15ad876561e9dceda}
+    archivePrefix = {swh},
+    eprint = {1:dir:6a298c1b2008913d62e01e5bc967510500f80710}
 }
 ```
 
