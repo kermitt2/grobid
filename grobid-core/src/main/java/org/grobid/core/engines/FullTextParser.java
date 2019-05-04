@@ -140,7 +140,7 @@ public class FullTextParser extends AbstractParser {
                  (resHeader.getFullAuthors().size() == 0) ) {
                 resHeader = new BiblioItem();
                 parsers.getHeaderParser().processingHeaderSection(config.getConsolidateHeader(), doc, resHeader);
-                /*if (doc.getMetadata() != null) {
+                if (doc.getMetadata() != null) {
                     Metadata metadata = doc.getMetadata();
                     if (metadata.getTitle() != null)
                         resHeader.setTitle(metadata.getTitle());
@@ -157,7 +157,7 @@ public class FullTextParser extends AbstractParser {
                     if ( (metadata.getTitle() != null) && (metadata.getAuthor() != null) ) {
                         parsers.getHeaderParser().consolidateHeader(resHeader, config.getConsolidateHeader());
                     }
-                }*/
+                }
                 // above, use the segmentation model result
             }
             // structure the abstract using the fulltext model
