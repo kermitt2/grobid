@@ -94,6 +94,8 @@ public class BiblioItem {
                 ", PMID='" + PMID + '\'' +
                 ", PMCID='" + PMCID + '\'' +
                 ", PII='" + PII + '\'' +
+                ", ark='" + ark + '\'' +
+                ", istexId='" + istexId + '\'' +
                 ", inDOI='" + inDOI + '\'' +
                 ", abstract_='" + abstract_ + '\'' +
                 ", authors='" + authors + '\'' +
@@ -126,6 +128,7 @@ public class BiblioItem {
                 ", submission='" + submission + '\'' +
                 ", english_title='" + english_title + '\'' +
                 ", url='" + url + '\'' +
+                ", oaUrl='" + oaUrl + '\'' +
                 ", uri='" + uri + '\'' +
                 ", confidence='" + confidence + '\'' +
                 ", conf=" + conf +
@@ -233,6 +236,8 @@ public class BiblioItem {
     private String PMID = null;
     private String PMCID = null;
     private String PII = null;
+    private String ark = null;
+    private String istexId = null;
     private String abstract_ = null;
     private String collaboration = null;
 
@@ -268,6 +273,7 @@ public class BiblioItem {
     private String submission = null;
     private String english_title = null;
     private String url = null;
+    private String oaUrl = null;
     private String uri = null;
     private String confidence = null;
     private double conf = 0.0;
@@ -480,6 +486,14 @@ public class BiblioItem {
         return doi;
     }
 
+    public String getArk() {
+        return ark;
+    }
+
+    public String getIstexId() {
+        return istexId;
+    }
+
     public String getInDOI() {
         return inDOI;
     }
@@ -542,6 +556,10 @@ public class BiblioItem {
 
     public String getURL() {
         return url;
+    }
+
+    public String getOAURL() {
+        return oaUrl;
     }
 
     public String getURI() {
@@ -905,6 +923,8 @@ public class BiblioItem {
     }
 
     public void setDOI(String id) {
+        if (id == null)
+            return;
         doi = StringUtils.normalizeSpace(id);
         doi = doi.replace(" ", "");
         doi = doi.replace("//", "/");
@@ -924,28 +944,46 @@ public class BiblioItem {
     } //{ doi = cleanDOI(id); } 
 
     public void setInDOI(String id) {
-        inDOI = StringUtils.normalizeSpace(id);
-        inDOI = inDOI.replace(" ", "");
+        if (id != null) {
+            inDOI = StringUtils.normalizeSpace(id);
+            inDOI = inDOI.replace(" ", "");
+        }
     }
 
     public void setArXivId(String id) {
-        arXivId = StringUtils.normalizeSpace(id);
-        arXivId = arXivId.replace(" ", "");
+        if (id != null) {
+            arXivId = StringUtils.normalizeSpace(id);
+            arXivId = arXivId.replace(" ", "");
+        }
     }
 
     public void setPMID(String id) {
-        PMID = StringUtils.normalizeSpace(id);
-        PMID = PMID.replace(" ", "");
+        if (id != null) {
+            PMID = StringUtils.normalizeSpace(id);
+            PMID = PMID.replace(" ", "");
+        }
     }
 
     public void setPMCID(String id) {
-        PMCID = StringUtils.normalizeSpace(id);
-        PMCID = PMCID.replace(" ", "");
+        if (id != null) {
+            PMCID = StringUtils.normalizeSpace(id);
+            PMCID = PMCID.replace(" ", "");
+        }
     }
 
     public void setPII(String id) {
-        PII = StringUtils.normalizeSpace(id);
-        PII = PII.replace(" ", "");
+        if (id != null) {
+            PII = StringUtils.normalizeSpace(id);
+            PII = PII.replace(" ", "");
+        }
+    }
+
+    public void setIstexId(String id) {
+        istexId = id;
+    }
+
+    public void setArk(String id) {
+        ark = id;
     }
 
     public void setArticleTitle(String ti) {
@@ -986,6 +1024,10 @@ public class BiblioItem {
 
     public void setURL(String s) {
         url = StringUtils.normalizeSpace(s);
+    }
+
+    public void setOAURL(String s) {
+        oaUrl = s;
     }
 
     public void setURI(String s) {
@@ -1384,12 +1426,17 @@ public class BiblioItem {
         type = null;
         book_type = null;
         doi = null;
+        istexId = null;
+        ark = null;
         inDOI = null;
         arXivId = null;
         PMID = null;
         PMCID = null;
         PII = null;
         abstract_ = null;
+        url = null;
+        oaUrl = null;
+        uri = null;
 
         authors = null;
         location = null;
@@ -2009,11 +2056,32 @@ public class BiblioItem {
                 tei.append("<idno type=\"PII\">" + TextUtilities.HTMLEncode(PII) + "</idno>\n");
             }
 
+            if (!StringUtils.isEmpty(ark)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"ark\">" + TextUtilities.HTMLEncode(ark) + "</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(istexId)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"istexId\">" + TextUtilities.HTMLEncode(istexId) + "</idno>\n");
+            }
+
             if (!StringUtils.isEmpty(pubnum)) {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
                 tei.append("<idno>").append(TextUtilities.HTMLEncode(pubnum)).append("</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(oaUrl)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<ptr type=\"open-access\" target=\"").append(TextUtilities.HTMLEncode(oaUrl)).append("\" />\n");
             }
 
             if (!StringUtils.isEmpty(web)) {
@@ -3883,10 +3951,16 @@ public class BiblioItem {
     }
 
     /**
-     * Correct/add only the DOI of the first biblio item based on the second one and he reference string
+     * Correct/add only the DOI of the first biblio item based on the second one 
      */
     public static void injectDOI(BiblioItem bib, BiblioItem bibo) {
         bib.setDOI(bibo.getDOI());
+        // optionally associated strong identifiers are also injected
+        bib.setPMID(bibo.getPMID());
+        bib.setPMCID(bibo.getPMCID());
+        bib.setPII(bibo.getPII());
+        bib.setIstexId(bibo.getIstexId());
+        bib.setArk(bibo.getArk());
     }
 
     /**
@@ -3897,6 +3971,20 @@ public class BiblioItem {
         //System.out.println("with: \n" + bibo.toTEI(0));
         if (bibo.getDOI() != null)
             bib.setDOI(bibo.getDOI());
+        if (bibo.getPMID() != null)
+            bib.setPMID(bibo.getPMID());
+        if (bibo.getPMCID() != null)
+            bib.setPMCID(bibo.getPMCID());
+        if (bibo.getPII() != null)
+            bib.setPII(bibo.getPII());
+        if (bibo.getIstexId() != null)
+            bib.setIstexId(bibo.getIstexId());
+        if (bibo.getArk() != null)
+            bib.setArk(bibo.getArk());
+
+        if (bibo.getOAURL() != null)
+            bib.setOAURL(bibo.getOAURL());
+
         if (bibo.getJournal() != null) {
             bib.setJournal(bibo.getJournal());
             // document type consistency (correction might change overall item type, and some
