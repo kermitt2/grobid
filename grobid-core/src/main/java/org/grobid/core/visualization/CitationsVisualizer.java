@@ -318,7 +318,10 @@ public class CitationsVisualizer {
                 // by default we put the existing url, doi or arXiv link
                 BiblioItem biblio = cit.getResBib();
                 String theUrl = null;
-                if (!StringUtils.isEmpty(biblio.getDOI())) {
+
+                if (!StringUtils.isEmpty(biblio.getOAURL())) {
+                    theUrl = biblio.getOAURL();
+                } else if (!StringUtils.isEmpty(biblio.getDOI())) {
                     theUrl = "http://dx.doi.org/" + biblio.getDOI();
                 } else if (!StringUtils.isEmpty(biblio.getArXivId())) {
                     theUrl = "http://arxiv.org/" + biblio.getArXivId();
