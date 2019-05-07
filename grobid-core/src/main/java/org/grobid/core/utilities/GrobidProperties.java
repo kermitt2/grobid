@@ -302,7 +302,7 @@ public class GrobidProperties {
         }
 
         initializePaths();
-        checkProperties();
+        //checkProperties();
         loadPdf2XMLPath();
         loadCrfEngine();
     }
