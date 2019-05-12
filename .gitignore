@@ -48,6 +48,7 @@ grobid-smecta
 grobid-example
 grobid-software
 software-mentions
+dataseer-ml
 grobid-test-ant
 grobid-home/models/quantities
 grobid-home/models/dictionaries-lexical-entries
