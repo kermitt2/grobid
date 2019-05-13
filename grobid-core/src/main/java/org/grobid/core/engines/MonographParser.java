@@ -810,11 +810,9 @@ public class MonographParser extends AbstractParser {
                     matcher.loadTerm(currentNode.getLabel(),
                                      GrobidAnalyzer.getInstance(),
                                      true);
-                    results = matcher.matchLayoutToken(tokens, true, true);
-                    builder.append("DEBUGGING: Found " + results.size()
-                                        + " instances of "
-                                        + currentNode.getLabel()
-                                        + "\n");
+                    results = matcher.matchLayoutToken(tokens, 
+                                                       true,
+                                                       true);// caseSensitive
                     if (results.size()>0){//if some instance of the title is found
                         // The list results may contain more than one instance of the title we are looking for.
                         // We want the position of the last instance that is on the same page that the outline is pointing to.
@@ -824,20 +822,32 @@ public class MonographParser extends AbstractParser {
                         while (index >= 0 && results.get(index).start >= tokenCtr && tokens.get(results.get(index).start).getPage() != currentNodesPage){
                             index--;
                         } 
-                        if (index < 0) { // if no such instance is found, the embedded outline might be wrong,
-                            index = results.size()-1; // then we just take the last instance in the results. 
+                        if (index >= 0 && results.get(index).start >= tokenCtr && tokens.get(results.get(index).start).getPage() == currentNodesPage) { 
+                                                // We proceed to update the starting and ending positions  
+                                                // of the title only if the title have actually been found 
+                                                // at the right page, and later than the previous chapter
+                            builder.append("DEBUGGING: Found " + results.size()
+                                            + " instances of "
+                                            + currentNode.getLabel()
+                                            + "\n");
+                            builder.append("DEBUGGING: "
+                                            + currentNode.getLabel()
+                                            + " is at page "
+                                            + currentNodesPage
+                                            + "\n");
+                            startTokenOffset = results.get(index).start;
+                            builder.append("DEBUGGING: "
+                                            + currentNode.getLabel()
+                                            + " starts at token "
+                                            + startTokenOffset
+                                            + "\n");
+                            endTokenOffset = results.get(index).end;
+                            builder.append("DEBUGGING: "
+                                            + currentNode.getLabel()
+                                            + " ends at token "
+                                            + endTokenOffset
+                                            + "\n");
                         }
-                        builder.append("DEBUGGING: The next chapter title we are looking for is at "
-                                        + results.get(index)
-                                        + "\n");
-                        startTokenOffset = results.get(index).start;
-                        builder.append("DEBUGGING: The next chapter title we are looking for starts at "
-                                        + startTokenOffset
-                                        + "\n");
-                        endTokenOffset = results.get(index).end;
-                        builder.append("DEBUGGING: The next chapter title we are looking for ends at "
-                                        + endTokenOffset
-                                        + "\n");
                     }
                     while ( tokenCtr <= endTokenOffset && tokenCtr < numberOfTokens) {
                         if ( tokenCtr == startTokenOffset) { //if we are about to write the starting token of a title of a chapter/section
@@ -849,12 +859,12 @@ public class MonographParser extends AbstractParser {
                             //then we write the chapter title
                             builder.append("<div n="
                                             + currentNode.getAddress()
-                                            + "type=\"chapter\">"
-                                            + "<head>");
+                                            + " type=\"chapter\">\n"
+                                            + "<head> ");
                         }
                         builder.append(tokens.get(tokenCtr).getText());
                         if ( tokenCtr == endTokenOffset) {
-                            builder.append("</head>"); // we close the chapter title
+                            builder.append(" </head>\n"); // we close the chapter title
                             // we add all the sections of the chapter to our stack
                             children = currentNode.getChildren();
                             if ( children != null ) {
