@@ -161,7 +161,13 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 				}
 			}
 
-			JsonNode publishPrintNode = item.get("published-print");
+			JsonNode publishPrintNode = item.get("issued");
+			if (publishPrintNode == null || publishPrintNode.isMissingNode()) {
+				publishPrintNode = item.get("published-online");
+			}
+			if (publishPrintNode == null || publishPrintNode.isMissingNode()) {
+				publishPrintNode = item.get("published-print");
+			}
 			if (publishPrintNode != null && (!publishPrintNode.isMissingNode())) {
 				JsonNode datePartNode = publishPrintNode.get("date-parts");
 				if (datePartNode != null && (!datePartNode.isMissingNode()) &&
