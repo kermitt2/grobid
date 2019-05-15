@@ -3,10 +3,13 @@ package org.grobid.core.document;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Sets;
 import org.apache.commons.lang3.tuple.Pair;
+import org.apache.commons.lang3.StringUtils;
+
 import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Node;
 import nu.xom.Text;
+
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
 import org.grobid.core.data.Date;
@@ -650,13 +653,40 @@ public class TEIFormatter {
             tei.append("\t\t\t\t\t</monogr>\n");
         }
 
-        if (biblio.getDOI() != null) {
+        if (!StringUtils.isEmpty(biblio.getDOI())) {
             String theDOI = TextUtilities.HTMLEncode(biblio.getDOI());
             if (theDOI.endsWith(".xml")) {
                 theDOI = theDOI.replace(".xml", "");
             }
-
             tei.append("\t\t\t\t\t<idno type=\"DOI\">" + theDOI + "</idno>\n");
+        }
+
+        if (!StringUtils.isEmpty(biblio.getArXivId())) {
+            tei.append("\t\t\t\t\t<idno type=\"arXiv\">" + TextUtilities.HTMLEncode(biblio.getArXivId()) + "</idno>\n");
+        }
+
+        if (!StringUtils.isEmpty(biblio.getPMID())) {
+            tei.append("\t\t\t\t\t<idno type=\"PMID\">" + TextUtilities.HTMLEncode(biblio.getPMID()) + "</idno>\n");
+        }
+
+        if (!StringUtils.isEmpty(biblio.getPMCID())) {
+            tei.append("\t\t\t\t\t<idno type=\"PMCID\">" + TextUtilities.HTMLEncode(biblio.getPMCID()) + "</idno>\n");
+        }
+
+        if (!StringUtils.isEmpty(biblio.getPII())) {
+            tei.append("\t\t\t\t\t<idno type=\"PII\">" + TextUtilities.HTMLEncode(biblio.getPII()) + "</idno>\n");
+        }
+
+        if (!StringUtils.isEmpty(biblio.getArk())) {
+            tei.append("\t\t\t\t\t<idno type=\"ark\">" + TextUtilities.HTMLEncode(biblio.getArk()) + "</idno>\n");
+        }
+
+        if (!StringUtils.isEmpty(biblio.getIstexId())) {
+            tei.append("\t\t\t\t\t<idno type=\"istexId\">" + TextUtilities.HTMLEncode(biblio.getIstexId()) + "</idno>\n");
+        }
+
+        if (!StringUtils.isEmpty(biblio.getOAURL())) {
+            tei.append("\t\t\t\t\t<ptr type=\"open-access\" target=\"").append(TextUtilities.HTMLEncode(biblio.getOAURL())).append("\" />\n");
         }
 
         if (biblio.getSubmission() != null) {
