@@ -390,13 +390,14 @@ public class CitationParser extends AbstractParser {
             consolidator = Consolidation.getInstance();
             if (consolidator.getCntManager() == null)
                 consolidator.setCntManager(cntManager);  
-            /*List<BibDataSet> biblios = new ArrayList<BibDataSet>();
+            List<BibDataSet> biblios = new ArrayList<BibDataSet>();
             BibDataSet theBib = new BibDataSet();
             theBib.setResBib(resCitation);
             biblios.add(theBib);
-            Map<Integer,BiblioItem> bibis = consolidator.consolidate(biblios);*/
+            Map<Integer,BiblioItem> bibis = consolidator.consolidate(biblios);
 
-            BiblioItem bibo = consolidator.consolidate(resCitation, rawCitation);
+            //BiblioItem bibo = consolidator.consolidate(resCitation, rawCitation);
+            BiblioItem bibo = bibis.get(0);
             if (bibo != null) {
                 if (consolidate == 1)
                     BiblioItem.correct(resCitation, bibo);

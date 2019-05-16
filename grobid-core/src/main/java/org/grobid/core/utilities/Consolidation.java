@@ -235,11 +235,11 @@ public class Consolidation {
             }
         }
 
-        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF)
+        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) {
             arguments.put("rows", "1"); // we just request the top-one result
-        else if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) {
-            // grobid is doing its own post-validation right now
-            //arguments.put("postValidate", "false");
+        } else if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) {
+            if (StringUtils.isNotBlank(doi))
+                arguments.put("postValidate", "false");
             // GROBID has already parsed the reference, so no need to redo this in glutton
             arguments.put("parseReference", "false");
         }
