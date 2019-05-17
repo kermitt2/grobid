@@ -19,9 +19,9 @@
 
 * [Use GROBID with containers (Docker)](Grobid-docker.md)
 
-* [Use Grobid library in third party Java applications](Grobid-java-library.md)
-
 * [Troubleshooting and known issues](Troubleshooting.md)
+
+* [Use Grobid library in third party Java applications](Grobid-java-library.md)
 
 * [TEI encoding of results](TEI-encoding-of-results.md)
 
@@ -44,5 +44,9 @@
 
 <h3>Developer notes</h3>
 
+* [Developer guide](Developer-guide.md)
+
 * [Recompiling and integrating CRF libraries into GROBID](Recompiling-and-integrating-CRF-libraries.md)
+
+
 

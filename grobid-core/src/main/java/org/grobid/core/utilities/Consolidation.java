@@ -266,7 +266,20 @@ public class Consolidation {
                         // we need here to post-check that the found item corresponds
                         // correctly to the one requested in order to avoid false positive
                         for(BiblioItem oneRes : res) {
-                            if ((GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) ||
+                            /* 
+                              Glutton integrates its own post-validation, so we can skip post-validation in GROBID when it is used as 
+                              consolidation service.  
+
+                              In case of crossref REST API, for single bib. ref. consolidation (this case comes only for header extraction), 
+                              having an extracted DOI matching is considered safe enough, and we don't require further post-validation.
+
+                              For all the other case of matching with CrossRef, we require a post-validation. 
+                            */
+                            if ((GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) 
+                                ||
+                                ( (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) && 
+                                  (doiQuery) ) 
+                                ||
                                 postValidation(bib, oneRes)) {
                                 results.add(oneRes);
                                 if (cntManager != null) {
