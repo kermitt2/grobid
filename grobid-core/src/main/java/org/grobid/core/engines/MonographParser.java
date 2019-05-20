@@ -770,9 +770,9 @@ public class MonographParser extends AbstractParser {
                 int startTokenOffset = numberOfTokens;
                 int endTokenOffset = -1;
                 List<DocumentNode> children;
-                builder.append("DEBUGGING: The total number of tokens is "
-                                        + numberOfTokens
-                                        + "\n");
+                //builder.append("DEBUGGING: The total number of tokens is "
+                //                        + numberOfTokens
+                //                        + "\n");
                 while (stackTOC.size()>0 && tokenCtr < numberOfTokens) {
                     currentNode = stackTOC.pop();
                     // In order to avoid writing the "null" label from the 
@@ -797,22 +797,24 @@ public class MonographParser extends AbstractParser {
                     currentDepth = currentNode.getAddress().split("[.]").length;
                     // at the moment we exit the while loop, currentNode keeps non-trivial information about the title of a section
                     // we will search instances of this title using FastMatcher
-                    builder.append("DEBUGGING: Looking for title "
-                                        + currentNode.getLabel()
-                                        + "\n");
+                    // builder.append("DEBUGGING: Looking for title "
+                    //                     + currentNode.getLabel()
+                    //                     + "\n");
                     // Exemple of how to use FastMatcher :
                     // matcher.loadTerm("un titre", GrobidAnalyzer.getInstance(), true); 
                     // results = matcher.matchLayoutToken(tokens, true, false); 
                     // then results contains a list of indices i,j such that
                     // the i-th token in the list of layout tokens doc.getTokenizations()
                     // is the first token of an instance of the queried sequence of tokens 
-                    FastMatcher matcher = new FastMatcher(); 
-                    matcher.loadTerm(currentNode.getLabel(),
+                    FastMatcher matcher = new FastMatcher(); //at this stage, the terms attribute of matcher is an empty dictionary
+                    int nbTermsInTitle = matcher.loadTerm(currentNode.getLabel(),
                                      GrobidAnalyzer.getInstance(),
-                                     true);
+                                     true, // ignoreDelimiters
+                                     false ); //caseSensitive
+                    // builder.append("DEBUGGING: Loaded  " + nbTermsInTitle + " terms from the title " + currentNode.getLabel() + "\n");
                     results = matcher.matchLayoutToken(tokens, 
-                                                       true,
-                                                       true);// caseSensitive
+                                                       true, // ignoreDelimiters
+                                                       false);// caseSensitive
                     if (results.size()>0){//if some instance of the title is found
                         // The list results may contain more than one instance of the title we are looking for.
                         // We want the position of the last instance that is on the same page that the outline is pointing to.
@@ -826,27 +828,12 @@ public class MonographParser extends AbstractParser {
                                                 // We proceed to update the starting and ending positions  
                                                 // of the title only if the title have actually been found 
                                                 // at the right page, and later than the previous chapter
-                            builder.append("DEBUGGING: Found " + results.size()
-                                            + " instances of "
-                                            + currentNode.getLabel()
-                                            + "\n");
-                            builder.append("DEBUGGING: "
-                                            + currentNode.getLabel()
-                                            + " is at page "
-                                            + currentNodesPage
-                                            + "\n");
+                            //builder.append("DEBUGGING: Found " + results.size() + " instances of " + currentNode.getLabel() + "\n");
+                            //builder.append("DEBUGGING: " + currentNode.getLabel() + " is at page " + currentNodesPage + "\n");
                             startTokenOffset = results.get(index).start;
-                            builder.append("DEBUGGING: "
-                                            + currentNode.getLabel()
-                                            + " starts at token "
-                                            + startTokenOffset
-                                            + "\n");
+                            //builder.append("DEBUGGING: + currentNode.getLabel() + " starts at token " + startTokenOffset + "\n");
                             endTokenOffset = results.get(index).end;
-                            builder.append("DEBUGGING: "
-                                            + currentNode.getLabel()
-                                            + " ends at token "
-                                            + endTokenOffset
-                                            + "\n");
+                            //builder.append("DEBUGGING: " + currentNode.getLabel() + " ends at token " + endTokenOffset + "\n");
                         }
                     }
                     while ( tokenCtr <= endTokenOffset && tokenCtr < numberOfTokens) {
@@ -863,7 +850,7 @@ public class MonographParser extends AbstractParser {
                                             + "<head> ");
                         }
                         builder.append(tokens.get(tokenCtr).getText());
-                        if ( tokenCtr == endTokenOffset) {
+                        if ( tokenCtr == endTokenOffset ) {
                             builder.append(" </head>\n"); // we close the chapter title
                             // we add all the sections of the chapter to our stack
                             children = currentNode.getChildren();

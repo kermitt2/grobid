@@ -159,17 +159,23 @@ public final class FastMatcher {
 
 
     /**
-     * Load a term to the fast matcher, by default the standard delimiters will be ignored
+     * Load a term to the fast matcher, by default the standard delimiters will be ignored (and the loading case sensitive) 
      */
     public int loadTerm(String term, org.grobid.core.analyzers.Analyzer analyzer) {
         return loadTerm(term, analyzer, true);
     }
 
+    /**
+     * Load a term to the fast matcher, by default the loading will be case sensitive
+     */
+    public int loadTerm(String term, org.grobid.core.analyzers.Analyzer analyzer, boolean ignoreDelimiters) {
+        return loadTerm(term, analyzer, ignoreDelimiters, true);
+    }
 
     /**
      * Load a term to the fast matcher
      */
-    public int loadTerm(String term, org.grobid.core.analyzers.Analyzer analyzer, boolean ignoreDelimiters) {
+    public int loadTerm(String term, org.grobid.core.analyzers.Analyzer analyzer, boolean ignoreDelimiters, boolean caseSensitive) {
         int nbTerms = 0;
         if (isBlank(term))
             return 0;
@@ -187,6 +193,9 @@ public final class FastMatcher {
             }
             if ( ignoreDelimiters && (delimiters.indexOf(token) != -1) ) {
                 continue;
+            }
+            if (!caseSensitive) {
+                token = token.toLowerCase();
             }
             Map t2 = (Map) t.get(token);
             if (t2 == null) {
