@@ -499,6 +499,31 @@ public class GrobidProperties {
     }
 
     /**
+     * Set the "mailto" parameter to be used in the crossref query and in User-Agent 
+     * header, as recommended by CrossRef REST API documentation.
+     *
+     * @param mailto email parameter to be used for connecting crossref
+     */
+    public static void setCrossrefMailto(final String mailto) {
+        setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_MAILTO, mailto);
+    }
+
+    /**
+     * Get the "mailto" parameter to be used in the crossref query and in User-Agent 
+     * header, as recommended by CrossRef REST API documentation.
+     *
+     * @return string of the email parameter to be used for connecting crossref
+     */
+    public static String getCrossrefMailto() {
+        String val = getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_MAILTO);
+        if (val != null && val.equals("null"))
+            val = null;
+        if (val != null && val.length() == 0)
+            val = null;
+        return val;
+    }
+
+    /**
      * Sets the port for a proxy connection, given in the grobid-property file.
      *
      * @param port for connecting crossref

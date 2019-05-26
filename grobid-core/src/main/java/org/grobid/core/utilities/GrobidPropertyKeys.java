@@ -27,6 +27,12 @@ public interface GrobidPropertyKeys {
     String PROP_CROSSREF_HOST = "grobid.crossref_host";
     String PROP_CROSSREF_PORT = "grobid.crossref_port";
 
+    /** 
+     * If indicated, include a "mailto" parameter in the crossref query and User-Agent 
+     * header, as recommended by CrossRef REST API documentation. 
+     */
+    String PROP_CROSSREF_MAILTO = "org.grobid.crossref.mailto";
+
     /*String PROP_MYSQL_HOST = "grobid.mysql_host";
     String PROP_MYSQL_PORT = "grobid.mysql_port";
     String PROP_MYSQL_USERNAME = "grobid.mysql_username";
