@@ -150,6 +150,12 @@ public class CrossrefRequest<T extends Object> extends Observable {
             		"GROBID/0.5.5 (https://github.com/kermitt2/grobid)");
 			}
             
+			// set the authorization token for the Metadata Plus service if available
+			if (GrobidProperties.getCrossrefToken() != null) {
+            	httpget.setHeader("Authorization", 
+            		"Bearer " + GrobidProperties.getCrossrefToken());
+			}
+
             ResponseHandler<Void> responseHandler = new ResponseHandler<Void>() {
 
 				@Override
