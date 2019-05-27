@@ -27,6 +27,8 @@
 
 * [Coordinates of structures in the original PDF](Coordinates-in-PDF.md)
 
+* [Adding a consolidation service](Consolidation.md)
+
 * [Training and evaluating the GROBID models](Training-the-models-of-Grobid.md)
 
 * [End to end evaluation](End-to-end-evaluation.md)
@@ -45,6 +47,8 @@
 <h3>Developer notes</h3>
 
 * [Developer guide](Developer-guide.md)
+
+* [Using Deep Learning models instead of default CRF](Deep-Learning-models.md)
 
 * [Recompiling and integrating CRF libraries into GROBID](Recompiling-and-integrating-CRF-libraries.md)
 
