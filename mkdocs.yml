@@ -23,6 +23,7 @@ pages:
     - 'Java library': 'Grobid-java-library.md'
     - 'TEI encoding of results': 'TEI-encoding-of-results.md'
     - 'Coordinates of structures in the PDF': 'Coordinates-in-PDF.md'
+    - 'Adding a consolidation service': 'Consolidation.md'
     - 'Training the GROBID models': 'Training-the-models-of-Grobid.md'
     - 'End-to-end evaluation': 'End-to-end-evaluation.md'
     - 'Benchmarking': 'Benchmarking.md'
@@ -35,4 +36,5 @@ pages:
     - 'Date model': 'training/date.md'
   - Developer notes:
     - 'Developer Guide': 'Developer-guide.md'
+    - 'Deep Learning models': 'Deep-Learning-models.md'
     - 'Recompiling CRF libraries': 'Recompiling-and-integrating-CRF-libraries.md'

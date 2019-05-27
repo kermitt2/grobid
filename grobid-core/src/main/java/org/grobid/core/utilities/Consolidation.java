@@ -180,24 +180,27 @@ public class Consolidation {
             // call with full raw string
             if (arguments == null)
                 arguments = new HashMap<String,String>();
-            arguments.put("query.bibliographic", rawCitation);
+            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
+                     StringUtils.isBlank(doi) )
+                arguments.put("query.bibliographic", rawCitation);
             //arguments.put("query", rawCitation);
         }
         if (StringUtils.isNotBlank(aut)) {
             // call based on partial metadata
             if (arguments == null)
                 arguments = new HashMap<String,String>();
-            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || (arguments.size() == 0) )
+            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
+                 (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)) )
                 arguments.put("query.author", aut);
         }
         if (StringUtils.isNotBlank(title)) {
             // call based on partial metadata
             if (arguments == null)
                 arguments = new HashMap<String,String>();
-            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || (arguments.size() == 0) )
+            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
+                (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)) )
                 arguments.put("query.title", title);
         }
-        
         if (StringUtils.isNotBlank(journalTitle)) {
             // call based on partial metadata
             if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
@@ -251,7 +254,7 @@ public class Consolidation {
                 cntManager.i(ConsolidationCounters.CONSOLIDATION);
             }
 
-            if ( (doi != null) && (cntManager != null) ) {
+            if ( StringUtils.isNotBlank(doi) && (cntManager != null) ) {
                 cntManager.i(ConsolidationCounters.CONSOLIDATION_PER_DOI);
                 doiQuery = true;
             } else {
@@ -380,20 +383,24 @@ public class Consolidation {
                 // call with full raw string
                 if (arguments == null)
                     arguments = new HashMap<String,String>();
-                arguments.put("query.bibliographic", rawCitation);
+                if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
+                     StringUtils.isBlank(doi) )
+                    arguments.put("query.bibliographic", rawCitation);
             }
             if (StringUtils.isNotBlank(title)) {
                 // call based on partial metadata
                 if (arguments == null)
                     arguments = new HashMap<String,String>();
-                if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || (arguments.size() == 0) )
+                if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
+                     (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)) )
                     arguments.put("query.title", title);
             }
             if (StringUtils.isNotBlank(aut)) {
                 // call based on partial metadata
                 if (arguments == null)
                     arguments = new HashMap<String,String>();
-                if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || (arguments.size() == 0) )
+                if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
+                     (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)) )
                     arguments.put("query.author", aut);
             }
             if (StringUtils.isNotBlank(journalTitle)) {
@@ -451,7 +458,7 @@ public class Consolidation {
                     cntManager.i(ConsolidationCounters.CONSOLIDATION);
                 }
 
-                if ( (doi != null) && (cntManager != null) ) {
+                if ( StringUtils.isNotBlank(doi) && (cntManager != null) ) {
                     cntManager.i(ConsolidationCounters.CONSOLIDATION_PER_DOI);
                     doiQuery = true;
                 } else {

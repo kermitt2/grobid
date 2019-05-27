@@ -21,6 +21,7 @@ import org.apache.http.util.EntityUtils;
 import org.apache.http.HttpHost;
 import org.apache.http.conn.params.*;
 import org.apache.http.impl.conn.*;
+import org.apache.http.params.HttpProtocolParams;
 
 import org.apache.commons.io.IOUtils;
 import java.net.URL;
@@ -131,9 +132,23 @@ public class CrossrefRequest<T extends Object> extends Observable {
 						uriBuilder.setParameter(cursor.getKey(), cursor.getValue());
             }
 			
+			// "mailto" parameter to be used in the crossref query and in User-Agent 
+     		//  header, as recommended by CrossRef REST API documentation, e.g. &mailto=GroovyBib@example.org
+            if (GrobidProperties.getCrossrefMailto() != null) {
+	            uriBuilder.setParameter("mailto", GrobidProperties.getCrossrefMailto());
+	        }
+
             //System.out.println(uriBuilder.toString());
 
+            // set recommended User-Agent header
             HttpGet httpget = new HttpGet(uriBuilder.build());
+            if (GrobidProperties.getCrossrefMailto() != null) {
+            	httpget.setHeader("User-Agent", 
+            		"GROBID/0.5.5 (https://github.com/kermitt2/grobid; mailto:" + GrobidProperties.getCrossrefMailto() + ")");
+			} else {
+				httpget.setHeader("User-Agent", 
+            		"GROBID/0.5.5 (https://github.com/kermitt2/grobid)");
+			}
             
             ResponseHandler<Void> responseHandler = new ResponseHandler<Void>() {
 
