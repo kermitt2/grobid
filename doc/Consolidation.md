@@ -4,9 +4,9 @@ In GROBID, we call __consolidation__ the usage of an external bibliographical se
 
 Consolidation has two main interests:
 
-* it improves very significantly the retrieval of header information (+.12 to .13 in f-score, e.g. from 74.59 f-score in average for all fields with Ratcliff/Obershelp similarity at 0.95, to 86.62 f-score, using biblio-glutton and GROBID version 0.5.5 for the PMC 1942 dataset, see the [benchmarking documentation](https://grobid.readthedocs.io/en/latest/End-to-end-evaluation/) and [reports](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc)), 
+* The consolidation service improves very significantly the retrieval of header information (+.12 to .13 in f-score, e.g. from 74.59 f-score in average for all fields with Ratcliff/Obershelp similarity at 0.95, to 86.62 f-score, using biblio-glutton and GROBID version 0.5.5 for the PMC 1942 dataset, see the [benchmarking documentation](https://grobid.readthedocs.io/en/latest/End-to-end-evaluation/) and [reports](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc)). 
 
-* it matches an extracted bibliographical reference with known publications, and complement the parsed bibliographical reference with various metadata, in particular DOI, making possible the creation of a citation graph and to link the extracted references to external services. 
+* The consolidation service matches the extracted bibliographical references with known publications, and complement the parsed bibliographical references with various metadata, in particular DOI, making possible the creation of a citation graph and to link the extracted references to external services. 
 
 GROBID supports two consolidation services:
 
@@ -22,10 +22,17 @@ For using [reliably and politely the CrossRef REST API](https://github.com/Cross
 
 ```
 org.grobid.crossref.mailto=toto@titi.tutu
-
 ```
 
-Without indicating this email, the service might be unreliable with numerous query failures over time. The usage of the CrossRef REST API by GROBID respects the query rate indicated by the service dynamically by each response. Therefore, there should not be any issues reported by CrossRef via this email.  
+Without indicating this email, the service might be unreliable with some query failures over time. The usage of the CrossRef REST API by GROBID respects the query rate indicated by the service dynamically by each response. Therefore, there should not be any issues reported by CrossRef via this email.  
+
+In case you are a lucky Crossref Metadata Plus subscriber, you can set your authorization token in the properties file under `grobid-home/config/grobid.properties` as follow:
+
+```
+org.grobid.crossref.token=yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vY3Jvc3NyZWYub3JnLyIsImF1ZXYZImVuaGFuY2VkY21zIiwianRpIjoiN0M5ODlFNTItMTFEQS00QkY3LUJCRUUtODFCMUM3QzE0OTZEIn0.NYe3-O066sce9R1fjMzNEvP88VqSEaYdBY622FDiG8Uq
+```
+
+According to Crossref, the token will ensure that said requests get directed to a pool of machines that are reserved for "Plus" SLA users (note: of course the above token is fake). 
 
 ## biblio-glutton
 

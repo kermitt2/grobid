@@ -33,6 +33,13 @@ public interface GrobidPropertyKeys {
      */
     String PROP_CROSSREF_MAILTO = "org.grobid.crossref.mailto";
 
+    /** 
+     * For indicating a Crossref Metadata Plus authorization token to be used for Crossref
+     * requests for the subscribers of this service.  This token will ensure that said 
+     * requests get directed to a pool of machines that are reserved for "Plus" SLA users.
+     */
+    String PROP_CROSSREF_TOKEN = "org.grobid.crossref.token";
+
     /*String PROP_MYSQL_HOST = "grobid.mysql_host";
     String PROP_MYSQL_PORT = "grobid.mysql_port";
     String PROP_MYSQL_USERNAME = "grobid.mysql_username";

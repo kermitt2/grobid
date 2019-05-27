@@ -502,7 +502,7 @@ public class GrobidProperties {
      * Set the "mailto" parameter to be used in the crossref query and in User-Agent 
      * header, as recommended by CrossRef REST API documentation.
      *
-     * @param mailto email parameter to be used for connecting crossref
+     * @param mailto email parameter to be used for requesting crossref
      */
     public static void setCrossrefMailto(final String mailto) {
         setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_MAILTO, mailto);
@@ -512,10 +512,37 @@ public class GrobidProperties {
      * Get the "mailto" parameter to be used in the crossref query and in User-Agent 
      * header, as recommended by CrossRef REST API documentation.
      *
-     * @return string of the email parameter to be used for connecting crossref
+     * @return string of the email parameter to be used for requesting crossref
      */
     public static String getCrossrefMailto() {
         String val = getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_MAILTO);
+        if (val != null && val.equals("null"))
+            val = null;
+        if (val != null && val.length() == 0)
+            val = null;
+        return val;
+    }
+
+    /**
+     * Set the Crossref Metadata Plus authorization token to be used for Crossref
+     * requests for the subscribers of this service.  This token will ensure that said 
+     * requests get directed to a pool of machines that are reserved for "Plus" SLA users.
+     *
+     * @param token authorization token to be used for requesting crossref
+     */
+    public static void setCrossrefToken(final String token) {
+        setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_TOKEN, token);
+    }
+
+     /**
+     * Get the Crossref Metadata Plus authorization token to be used for Crossref
+     * requests for the subscribers of this service.  This token will ensure that said 
+     * requests get directed to a pool of machines that are reserved for "Plus" SLA users.
+     *
+     * @return authorization token to be used for requesting crossref
+     */
+    public static String getCrossrefToken() {
+        String val = getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_TOKEN);
         if (val != null && val.equals("null"))
             val = null;
         if (val != null && val.length() == 0)
