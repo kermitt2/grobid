@@ -194,6 +194,9 @@ public final class FastMatcher {
             if ( ignoreDelimiters && (delimiters.indexOf(token) != -1) ) {
                 continue;
             }
+            // Normalize the text 
+            token = UnicodeUtil.normaliseText(token);
+            token = StringUtils.normalizeSpace(token);
             if (!caseSensitive) {
                 token = token.toLowerCase();
             }

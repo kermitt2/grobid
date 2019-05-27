@@ -753,15 +753,15 @@ public class MonographParser extends AbstractParser {
                 builder.append("</div>\n");
             }
 
+            // So far we transcribed the table of contexts in the beginning of the text
+            // Now we will tag it inside the text.
             if ( tocExists ) {
                 outlineRoot = doc.getOutlineRoot();
                 //recall that stackTOC is an empty stack at this point, it arrived empty from the previous usage
                 stackTOC.push(outlineRoot); 
                 // as before, stackTOC will keep the stack of chapters, sections, etc., that are yet to be tagged 
                 // we push outlineRoot first to get again to the root of the document outline
-                List<OffsetPosition> results; 
-                oldDepth = -1; //as before, these numbers will indicate   
-                currentDepth = 0; // the  depth in the table of contents      
+                List<OffsetPosition> results;      
                 int tokenCtr = 0;   
                 int numberOfTokens = tokens.size();
                 // We initialize the position of the starting and the ending token of a title of a chapter / section
@@ -770,6 +770,9 @@ public class MonographParser extends AbstractParser {
                 int startTokenOffset = numberOfTokens;
                 int endTokenOffset = -1;
                 List<DocumentNode> children;
+                int depth = 0; // depth of the chapter title in the TOC tree
+                int nbOpenDivs = 0; // counts the opened div tags for the chapters, sections etc.
+                String currentTitle = "" ;
                 //builder.append("DEBUGGING: The total number of tokens is "
                 //                        + numberOfTokens
                 //                        + "\n");
@@ -792,65 +795,79 @@ public class MonographParser extends AbstractParser {
                         }
                         currentNode = stackTOC.pop();
                     } 
-                    // We update the depth:
-                    oldDepth = currentDepth;
-                    currentDepth = currentNode.getAddress().split("[.]").length;
+                    currentTitle = currentNode.getLabel() ;
                     // at the moment we exit the while loop, currentNode keeps non-trivial information about the title of a section
                     // we will search instances of this title using FastMatcher
                     // builder.append("DEBUGGING: Looking for title "
-                    //                     + currentNode.getLabel()
+                    //                     + currentTitle
                     //                     + "\n");
+                    // We compute the depth:
+                    depth = currentNode.getAddress().split("[.]").length;
                     // Exemple of how to use FastMatcher :
                     // matcher.loadTerm("un titre", GrobidAnalyzer.getInstance(), true); 
                     // results = matcher.matchLayoutToken(tokens, true, false); 
                     // then results contains a list of indices i,j such that
                     // the i-th token in the list of layout tokens doc.getTokenizations()
                     // is the first token of an instance of the queried sequence of tokens 
+                    boolean ignoreDelimiters = true;
+                    boolean caseSensitive = false;
                     FastMatcher matcher = new FastMatcher(); //at this stage, the terms attribute of matcher is an empty dictionary
                     int nbTermsInTitle = matcher.loadTerm(currentNode.getLabel(),
                                      GrobidAnalyzer.getInstance(),
-                                     true, // ignoreDelimiters
-                                     false ); //caseSensitive
-                    // builder.append("DEBUGGING: Loaded  " + nbTermsInTitle + " terms from the title " + currentNode.getLabel() + "\n");
+                                     ignoreDelimiters, // true
+                                     caseSensitive ); // false
+                    // builder.append("DEBUGGING: Loaded  " + nbTermsInTitle + " terms from the title " + currentNode.getLabel() + "\n"); //it should always be 1
                     results = matcher.matchLayoutToken(tokens, 
-                                                       true, // ignoreDelimiters
-                                                       false);// caseSensitive
+                                     ignoreDelimiters, // true
+                                     caseSensitive); // false
                     if (results.size()>0){//if some instance of the title is found
                         // The list results may contain more than one instance of the title we are looking for.
                         // We want the position of the last instance that is on the same page that the outline is pointing to.
                         // We search for the last one because the table of contents is usually before the contents.
                         int currentNodesPage = currentNode.getBoundingBox().getPage();
-                        int index = results.size()-1;
-                        while (index >= 0 && results.get(index).start >= tokenCtr && tokens.get(results.get(index).start).getPage() != currentNodesPage){
+                        int index = results.size() - 1;
+                        while (index >= 0 && results.get(index).start >= tokenCtr && tokens.get(results.get(index).start).getPage() > currentNodesPage){
                             index--;
                         } 
-                        if (index >= 0 && results.get(index).start >= tokenCtr && tokens.get(results.get(index).start).getPage() == currentNodesPage) { 
-                                                // We proceed to update the starting and ending positions  
-                                                // of the title only if the title have actually been found 
-                                                // at the right page, and later than the previous chapter
-                            //builder.append("DEBUGGING: Found " + results.size() + " instances of " + currentNode.getLabel() + "\n");
-                            //builder.append("DEBUGGING: " + currentNode.getLabel() + " is at page " + currentNodesPage + "\n");
-                            startTokenOffset = results.get(index).start;
-                            //builder.append("DEBUGGING: + currentNode.getLabel() + " starts at token " + startTokenOffset + "\n");
-                            endTokenOffset = results.get(index).end;
-                            //builder.append("DEBUGGING: " + currentNode.getLabel() + " ends at token " + endTokenOffset + "\n");
-                        }
+                        if (index >= 0 && results.get(index).start >= tokenCtr && tokens.get(results.get(index).start).getPage() == currentNodesPage ){
+                                                    // We proceed to update the starting and ending positions  
+                                                    // of the title only if the title have actually been found 
+                                                    // at the right page, and later than the previous chapter
+                                //builder.append("DEBUGGING: Found " + results.size() + " instances of " + currentTitle + "\n");
+                                //builder.append("DEBUGGING: " + currentTitle + " is at page " + currentNodesPage + "\n");
+                                startTokenOffset = results.get(index).start;
+                                //builder.append("DEBUGGING: " + currentTitle + " starts at token " + startTokenOffset + "\n");
+                                endTokenOffset = results.get(index).end;
+                                //builder.append("DEBUGGING: " + currentTitle + " ends at token " + endTokenOffset + "\n");
+                        } 
+                        // else {
+                        //     builder.append("DEBUGGING : the title " + currentTitle + " was found at page(s): " );
+                        //     for ( index = 0; index < results.size(); index++ ) { builder.append( tokens.get(results.get(index).start).getPage() + ", "); }
+                        //     builder.append( "\nDEBUGGING : it should have been in page " + currentNodesPage + "\n" );   
+                        // }
                     }
                     while ( tokenCtr <= endTokenOffset && tokenCtr < numberOfTokens) {
                         if ( tokenCtr == startTokenOffset) { //if we are about to write the starting token of a title of a chapter/section
-                            if (currentDepth <= oldDepth) { //if the new chapter is at a lower or equal level 
+                            while ( nbOpenDivs >= depth ) { //if the new chapter is at a lower or equal level 
                                 // compared to the previously written chapter title
                                 // then we need to close the previous chapters before writing the current one.
-                                // TODO 
+                                builder.append ( "</div>\n" );
+                                nbOpenDivs--;
                             }
                             //then we write the chapter title
-                            builder.append("<div n="
+                            builder.append ( "<div n="
                                             + currentNode.getAddress()
                                             + " type=\"chapter\">\n"
-                                            + "<head> ");
+                                            + "<head> " );
+                            nbOpenDivs++;
                         }
                         builder.append(tokens.get(tokenCtr).getText());
                         if ( tokenCtr == endTokenOffset ) {
+                            // We add the closing delimiters from the title, if needed
+                            while (TextUtilities.delimiters.indexOf(tokens.get(tokenCtr+1).getText()) != -1) {
+                                builder.append(tokens.get(tokenCtr+1).getText());
+                                tokenCtr++;
+                            }
                             builder.append(" </head>\n"); // we close the chapter title
                             // we add all the sections of the chapter to our stack
                             children = currentNode.getChildren();
@@ -863,8 +880,7 @@ public class MonographParser extends AbstractParser {
                                 }
                             }
                             // we update the depth
-                            oldDepth = currentDepth;
-                            currentDepth = currentNode.getAddress().split("[.]").length;
+                            depth = currentNode.getAddress().split("[.]").length;
                         }
                         tokenCtr++;
                     }
@@ -875,15 +891,19 @@ public class MonographParser extends AbstractParser {
                     builder.append(tokens.get(tokenCtr).getText());
                     tokenCtr++;
                 } 
-                // TODO close the last chapters and sections.
+                //then close the chapters that are still open
+                while ( nbOpenDivs > 0 ){
+                    builder.append ( "</div>\n" );
+                    nbOpenDivs--;
+                }
             } else 
             {
-                for(LayoutToken token : tokens) {
-                    builder.append(token.getText());
+                for(LayoutToken token : tokens ) {
+                    builder.append ( token.getText ( ) );
                 }
             }
             
-            builder.append("\t</text>\n</tei>");
+            builder.append("</text>\n</tei>");
 
             // write the TEI file
             Writer writer = new OutputStreamWriter(new FileOutputStream(outputTEIFile, false), "UTF-8");
