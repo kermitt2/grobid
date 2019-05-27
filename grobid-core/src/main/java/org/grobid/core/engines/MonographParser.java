@@ -3,6 +3,7 @@ package org.grobid.core.engines;
 import eugfc.imageio.plugins.PNMRegistry;
 import javafx.geometry.BoundingBox;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.io.FileUtils;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.analyzers.GrobidAnalyzer;
@@ -21,6 +22,7 @@ import org.grobid.core.layout.*;
 import org.grobid.core.lexicon.FastMatcher;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
@@ -674,7 +676,7 @@ public class MonographParser extends AbstractParser {
                 throw new Exception("PDF parsing resulted in empty content");
             }
 
-            // TBD: language identifier here on content text sample
+            // TODO language identifier here on content text sample
             String lang = "fr";
 
             doc.produceStatistics();
@@ -854,17 +856,38 @@ public class MonographParser extends AbstractParser {
                                 builder.append ( "</div>\n" );
                                 nbOpenDivs--;
                             }
-                            //then we write the chapter title
-                            builder.append ( "<div n="
-                                            + currentNode.getAddress()
-                                            + " type=\"chapter\">\n"
-                                            + "<head> " );
+                            //then we write the section title opening tag
+                            String currentTitleNormalized = StringUtils.normalizeSpace(UnicodeUtil.normaliseText(currentNode.getLabel())); 
+                            builder.append ( "<div n=" + currentNode.getAddress() + " type=\"");
+                            switch ( currentTitleNormalized ) {
+                                case "bibliographie": builder.append ( "bibliogr" );
+                                break;
+                                case "sommaire": builder.append ( "contents" );
+                                break;
+                                case "introduction": builder.append ( "preface" );
+                                break;
+                                case "annexe": builder.append ( "appendix" );
+                                break;
+                                case "index": builder.append ( "index" );
+                                break;
+                                case "glossaire": builder.append ( "glossary" );
+                                break;
+                                //TODO add other cases as the data increase
+                                default: builder.append ( "chapter" );
+                            }
+                            builder.append ( "\">\n<head> " );
                             nbOpenDivs++;
                         }
                         builder.append(tokens.get(tokenCtr).getText());
                         if ( tokenCtr == endTokenOffset ) {
                             // We add the closing delimiters from the title, if needed
-                            while (TextUtilities.delimiters.indexOf(tokens.get(tokenCtr+1).getText()) != -1) {
+                            // At first, we skip by the first delimiter, if there is any 
+                            // (in French question mark should alwaays preceded by a space, that's why for the first step we include space)
+                            if ( TextUtilities.delimiters.indexOf(tokens.get(tokenCtr+1).getText()) != -1 ) {
+                                builder.append(tokens.get(tokenCtr+1).getText());
+                                tokenCtr++;
+                            }
+                            while ( TextUtilities.fullPunctuations.indexOf(tokens.get(tokenCtr+1).getText()) != -1 ) {
                                 builder.append(tokens.get(tokenCtr+1).getText());
                                 tokenCtr++;
                             }
