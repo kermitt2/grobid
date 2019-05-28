@@ -36,7 +36,7 @@ COPY grobid-core/ ./grobid-core/
 COPY grobid-service/ ./grobid-service/
 COPY grobid-trainer/ ./grobid-trainer/
 
-RUN ./gradlew clean assemble --no-daemon
+RUN ./gradlew clean assemble -x gitRev --no-daemon  --info --stacktrace
 
 
 # -------------------
@@ -71,7 +71,7 @@ ENV JAVA_OPTS=-Xmx4g
 ENV TINI_VERSION v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
-ENTRYPOINT ["/tini", "--"]
+ENTRYPOINT ["/tini", "-s", "--"]
 
 CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/config.yaml"]
 
