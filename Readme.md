@@ -80,7 +80,14 @@ A series of additional modules have been developed for performing __structure aw
 
 ## Latest version
 
-The latest stable release of GROBID is version ```0.5.4```. This version brings:
+The latest stable release of GROBID is version ```0.5.5```. This version brings:
+
++ Using [pdfalto](https://github.com/kermitt2/pdfalto) instead of pdf2xml for the first PDF parsing stage, with many improvements in robustness, ICU support, unknown glyph/font normalization 
++ Improvement and full review of the integration of consolidation services, supporting [biblio-glutton](https://github.com/kermitt2/biblio-glutton) (additional identifiers and Open Access links) and [Crossref REST API](https://github.com/CrossRef/rest-api-doc) (add specific user agent, email and token for Crossref Metadata Plus)
++ Fix bounding box issues for some PDF #330
++ Updated lexicon #396
+
+New in previous release ```0.5.4```: 
 
 + Transparent usage of [DeLFT](https://github.com/kermitt2/delft) deep learning models (BidLSTM-CRF) instead of Wapiti CRF models, native integration via [JEP](https://github.com/ninia/jep)
 + Support of [biblio-glutton](https://github.com/kermitt2/biblio-glutton) as DOI/metadata matching service, alternative to crossref REST API 
