@@ -19,6 +19,8 @@ import org.grobid.core.features.FeaturesVectorCitation;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.PDFAnnotation;
+import org.grobid.core.layout.PDFAnnotation.Type;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
@@ -190,15 +192,54 @@ public class CitationParser extends AbstractParser {
 
         // consolidation: if selected, is not done individually for each citation but 
         // in a second stage for all citations
-        for (LabeledReferenceResult ref : references) {
-            BiblioItem bib = processing(ref.getReferenceText(), 0);
-            if ((bib != null) && !bib.rejectAsReference()) {
-                BibDataSet bds = new BibDataSet();
-                bds.setRefSymbol(ref.getLabel());
-                bds.setResBib(bib);
-                bds.setRawBib(ref.getReferenceText());
-                bds.getResBib().setCoordinates(ref.getCoordinates());
-                results.add(bds);
+        if (references != null) {
+            for (LabeledReferenceResult ref : references) {
+                // paranoiac check
+                if (ref == null) 
+                    continue;
+
+                BiblioItem bib = processing(ref.getReferenceText(), 0);
+                if (bib == null) 
+                    continue;
+
+                // check if we have an interesting url annotation over this bib. ref.
+                List<LayoutToken> refTokens = ref.getTokens();
+                if ((refTokens != null) && (refTokens.size() > 0)) {
+                    List<Integer> localPages = new ArrayList<Integer>();
+                    for(LayoutToken token : refTokens) {
+                        if (!localPages.contains(token.getPage())) {
+                            localPages.add(token.getPage());
+                        }
+                    }
+                    for(PDFAnnotation annotation : doc.getPDFAnnotations()) {
+                        if (annotation.getType() != Type.URI) 
+                            continue;
+                        if (!localPages.contains(annotation.getPageNumber()))
+                            continue;
+                        for(LayoutToken token : refTokens) {
+                            if (annotation.cover(token)) {
+                                // annotation covers tokens, let's look at the href
+                                String uri = annotation.getDestination();
+                                // is it a DOI?
+                                Matcher doiMatcher = TextUtilities.DOIPattern.matcher(uri);
+                                if (doiMatcher.find()) { 
+                                    // the BiblioItem setter will take care of the prefix and doi cleaninng 
+                                    bib.setDOI(uri);
+                                }
+                                // TBD: is it something else? 
+                            }
+                        }
+                    }
+                }
+
+                if (!bib.rejectAsReference()) {
+                    BibDataSet bds = new BibDataSet();
+                    bds.setRefSymbol(ref.getLabel());
+                    bds.setResBib(bib);
+                    bds.setRawBib(ref.getReferenceText());
+                    bds.getResBib().setCoordinates(ref.getCoordinates());
+                    results.add(bds);
+                }
             }
         }
 
