@@ -84,6 +84,8 @@ public class TEIMonographSaxParser extends DefaultHandler {
                     if (name.equals("type")) {
                         if (value.equals("preface")) {
                             currentTags.push("<preface>");
+                        } else if (value.equals("bibliogr")){
+                            currentTags.push("<reference>");
                         } else if (value.equals("ack")){
                             currentTags.push("<dedication>");
                         } else if (value.equals("contents")){
@@ -94,6 +96,8 @@ public class TEIMonographSaxParser extends DefaultHandler {
                             currentTags.push("<index>");
                         } else if (value.equals("glossary")){
                             currentTags.push("<glossary>");
+                        } else if (value.equals("part")){
+                            currentTags.push("<unit>");
                         } else if (value.equals("chapter")){
                             currentTags.push("<unit>");
                         }
