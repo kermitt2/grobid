@@ -71,6 +71,35 @@ public class TEIMonographSaxParser extends DefaultHandler {
             accumulator.append(" +L+ ");
         } else if (qName.equals("pb")) {
             accumulator.append(" +PAGE+ ");
+        } else if (qName.equals("div")) {
+            int length = atts.getLength();
+
+            // Process each attribute
+            for (int i = 0; i < length; i++) {
+                // Get names and values for each attribute
+                String name = atts.getQName(i);
+                String value = atts.getValue(i);
+
+                if (name != null) {
+                    if (name.equals("type")) {
+                        if (value.equals("preface")) {
+                            currentTags.push("<preface>");
+                        } else if (value.equals("ack")){
+                            currentTags.push("<dedication>");
+                        } else if (value.equals("contents")){
+                            currentTags.push("<toc>");
+                        } else if (value.equals("appendix")){
+                            currentTags.push("<annex>");
+                        } else if (value.equals("index")){
+                            currentTags.push("<index>");
+                        } else if (value.equals("glossary")){
+                            currentTags.push("<glossary>");
+                        } else if (value.equals("chapter")){
+                            currentTags.push("<unit>");
+                        }
+                    }
+                }
+            }
         } else {
             // we have to write first what has been accumulated yet with the upper-level tag
             String text = getText();

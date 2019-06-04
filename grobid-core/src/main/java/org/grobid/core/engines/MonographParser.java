@@ -857,23 +857,45 @@ public class MonographParser extends AbstractParser {
                                 nbOpenDivs--;
                             }
                             //then we write the section title opening tag
-                            String currentTitleNormalized = StringUtils.normalizeSpace(UnicodeUtil.normaliseText(currentNode.getLabel())); 
-                            builder.append ( "<div n=" + currentNode.getAddress() + " type=\"");
-                            switch ( currentTitleNormalized ) {
-                                case "bibliographie": builder.append ( "bibliogr" );
-                                break;
-                                case "sommaire": builder.append ( "contents" );
-                                break;
-                                case "introduction": builder.append ( "preface" );
-                                break;
-                                case "annexe": builder.append ( "appendix" );
-                                break;
-                                case "index": builder.append ( "index" );
-                                break;
-                                case "glossaire": builder.append ( "glossary" );
-                                break;
-                                //TODO add other cases as the data increase
-                                default: builder.append ( "chapter" );
+                            String currentTitleNormalized = StringUtils.normalizeSpace(UnicodeUtil.normaliseText(currentNode.getLabel())).toLowerCase(); 
+                            String[] currentTitleSplit = currentTitleNormalized.split ( "[" + TextUtilities.SPACE + "]" );
+                            String firstInTitle = currentTitleSplit [0];
+                            String lastInTitle = currentTitleSplit [ currentTitleSplit.length - 1 ];
+                            builder.append ( "<div n=\"" + currentNode.getAddress() + "\" type=\"");
+                            if (firstInTitle == "partie" || lastInTitle == "partie" ) {
+                                builder.append ( "part" );
+                            }
+                            else if (firstInTitle == "chapitre") {
+                                builder.append ( "chapter" );
+                            }
+                            else if (firstInTitle == "bibliographie" || lastInTitle == "bibliographiques") {
+                                builder.append ( "bibliogr" );
+                            }
+                            else
+                            {    switch ( currentTitleNormalized ) {
+                                    case "remerciements": builder.append ( "ack" );
+                                    break;
+                                    case "sommaire": builder.append ( "contents" );
+                                    break;
+                                    case "introduction": builder.append ( "preface" );
+                                    break;
+                                    case "prologue": builder.append ( "preface" );
+                                    break;
+                                    case "annexe": builder.append ( "appendix" );
+                                    break;
+                                    case "épilogue": builder.append ( "appendix" );
+                                    break;
+                                    case "appendices": builder.append ( "appendix" );
+                                    break;
+                                    case "index": builder.append ( "index" );
+                                    break;
+                                    case "abréviations": builder.append ( "glossary" );
+                                    break;
+                                    case "glossaire": builder.append ( "glossary" );
+                                    break;
+                                    //TODO add other cases as the data increase
+                                    default: builder.append ( "chapter" );
+                                }
                             }
                             builder.append ( "\">\n<head> " );
                             nbOpenDivs++;
