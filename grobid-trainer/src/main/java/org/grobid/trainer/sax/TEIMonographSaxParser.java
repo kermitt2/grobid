@@ -137,11 +137,7 @@ public class TEIMonographSaxParser extends DefaultHandler {
     }
 
     private void writeData(String qName, boolean pop) {
-        if ((qName.equals("header")) | (qName.equals("other")) | (qName.equals("page_header")) |
-                (qName.equals("page_footnote")) | (qName.equals("page")) | (qName.equals("pages")) |
-                (qName.equals("reference")) |
-                (qName.equals("toc")) | (qName.equals("index")) | (qName.equals("section"))
-                ) {
+        if (qName.equals("div")) {
             String currentTag = null;
             if (pop) {
                 currentTag = currentTags.pop();
