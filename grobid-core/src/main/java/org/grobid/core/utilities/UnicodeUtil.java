@@ -116,6 +116,28 @@ public class UnicodeUtil {
 										+ "\\u2B24"  // black large circle
 										+ "]";
 
+    // opening parenthesis
+    public static String open_parenthesis = "["
+                                            + "\\u0028"  // left parenthesis
+                                            + "\\uFF08"  // large opening parenthesis with space before
+                                            + "\\u27EE"  // mathematical left flattened parenthesis
+                                            + "\\u2985"  // left white parenthesis
+                                            + "\\u2768" // medium left parenthesis ornament
+                                            + "\\u276A" // medium flattened left parenthesis ornament
+                                            + "\\u27EC" // mathematical left white tortoise shell bracket, called bracket but totally looks like parenthesis
+                                            + "]";
+
+    // closing parenthesis
+    public static String close_parenthesis = "["
+                                            + "\\u0029"  // right parenthesis
+                                            + "\\uFF09"  // large closing parenthesis with space after
+                                            + "\\u27EF"  // mathematical right flattened parenthesis
+                                            + "\\u2986"  // right white parenthesis
+                                            + "\\u2769" // medium right parenthesis ornament
+                                            + "\\u276B" // medium flattened right parenthesis ornament
+                                            + "\\u27ED" // mathematical right white tortoise shell bracket, called bracket but totally looks like parenthesis
+                                            + "]";
+
 	/**
      * Normalise the space, EOL and punctuation unicode characters.
      *
@@ -153,6 +175,12 @@ public class UnicodeUtil {
 
         // bullet normalisation
         text = text.replaceAll(bullet_chars, "•");
+
+        // opening parenthesis normalisation
+        text = text.replaceAll(open_parenthesis, "(");
+
+        // closing parenthesis normalisation
+        text = text.replaceAll(close_parenthesis, ")");
 
         // remove all control charcaters?
         //text = text.replaceAll("\\p{Cntrl}", " ");
