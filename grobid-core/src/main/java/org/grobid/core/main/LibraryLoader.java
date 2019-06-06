@@ -17,6 +17,8 @@ import org.grobid.core.utilities.Utilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.apache.commons.lang3.ArrayUtils.isEmpty;
+
 /**
  * @author Slava, Patrice
  */
@@ -106,8 +108,8 @@ public class LibraryLoader {
                     }
                 });
 
-                if (wapitiLibFiles.length == 0) {
-                    LOGGER.info("No wapiti library in the grobid home folder");
+                if (isEmpty(wapitiLibFiles)) {
+                    LOGGER.info("No wapiti library in the Grobid home folder");
                 } else {
                     LOGGER.info("Loading Wapiti native library...");
                     if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT) {
@@ -146,6 +148,8 @@ public class LibraryLoader {
                 // loading here will not help)
                 try {
                     addLibraryPath(libraryFolder.getAbsolutePath());
+                    addLibraryPath("/anaconda3/envs/tensorflow/lib");
+                    System.loadLibrary("python3.6m");
                 } catch (Exception e) {
                     LOGGER.info("Loading JEP native library for DeLFT failed", e);
                 }
