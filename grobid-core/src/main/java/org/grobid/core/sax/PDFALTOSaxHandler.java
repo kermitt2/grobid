@@ -44,7 +44,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 	private Block block = null; // current block
 	private int nbTokens = 0; // nb tokens in the current block
 	private List<GraphicObject> images = null;
-    private HashMap<String, TextStyles> textStyles = new HashMap<String, TextStyles>();
+    private HashMap<String, TextStyle> textStyles = new HashMap<String, TextStyle>();
     private boolean currentRotation = false;
 
 	private StringBuffer blabla = null;
@@ -424,7 +424,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 		} else if (qName.equals("String")) {
 			int length = atts.getLength();
 			String content = null, fontId = null;
-            TextStyles textStyle = null;
+            TextStyle textStyle = null;
 
 			// Process each attribute
 			for (int i = 0; i < length; i++) {
@@ -538,6 +538,9 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                             token.setPage(currentPage);
                             token.setColorFont(textStyle.getFontColor());
 
+                            token.setSubscript(textStyle.isSubscript());
+                            token.setSuperscript(textStyle.isSuperscript());
+
                             token.setX(subTokX);
                             token.setY(currentY);
                             token.setWidth(subTokWidth);
@@ -601,7 +604,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 		} else if (qName.equals("TextStyle")) {
             int length = atts.getLength();
 
-            TextStyles textStyle = new TextStyles();
+            TextStyle textStyle = new TextStyle();
             String fontId = null;
             // Process each attribute
             for (int i = 0; i < length; i++) {
@@ -633,14 +636,22 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                     } else if (name.equals("FONTCOLOR")) {
                         textStyle.setFontColor(value);
                     }
-//                    else if (name.equals("FONTTYPE")) {
-//                        if (value.equals("serif")) {
-//                            textStyle.setSerif(true);
-//                        } else {
-//                            textStyle.setSerif(false);
-//                        }
-//                        blabla.append(" ");
-//                    } else if (name.equals("FONTWIDTH")) {
+                    else if (name.equals("FONTTYPE")) {
+                    	// value can be empty or a sequency of font properties separated by space, out of these 
+                    	// font properties, we are interested by subscript or superscript
+                    	if ( (value != null) && (value.length() > 0) ) {
+                    		if ( (value.indexOf("subscript") != -1) || (value.indexOf("SUBSCRIPT") != -1) ) 
+                    			textStyle.setSubscript(true);
+                    		else if ( (value.indexOf("supercript") != -1) || (value.indexOf("SUPERSCRIPT") != -1) ) 
+                    			textStyle.setSuperscript(true);
+                    	}
+                        /*if (value.equals("serif")) {
+                            textStyle.setSerif(true);
+                        } else {
+                            textStyle.setSerif(false);
+                        }*/
+                    } 
+//                    else if (name.equals("FONTWIDTH")) {
 //                        if (value.equals("proportional")) {
 //                            textStyle.setProportional(true);
 //                        } else {
@@ -664,7 +675,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 
 }
 
-class TextStyles {
+class TextStyle {
 
     private double fontSize = 0.0;
     private String fontName = null;
@@ -672,6 +683,10 @@ class TextStyles {
 
     private boolean bold = false;
     private boolean italic = false;
+
+    private boolean subscript = false;
+    private boolean superscript = false;
+
     //not used attributes
     private boolean proportional = false;
     private boolean serif = false;
@@ -740,5 +755,21 @@ class TextStyles {
 
     public void setSerif(boolean serif) {
         this.serif = serif;
+    }
+
+    public boolean isSubscript() {
+        return subscript;
+    }
+
+    public void setSubscript(boolean script) {
+        this.subscript = script;
+    }
+
+    public boolean isSuperscript() {
+        return superscript;
+    }
+
+    public void setSuperscript(boolean script) {
+        this.superscript = script;
     }
 }
