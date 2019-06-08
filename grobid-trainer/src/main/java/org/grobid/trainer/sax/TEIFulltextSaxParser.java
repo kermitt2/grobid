@@ -178,8 +178,8 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 				currentTag = "<table>";
             } 
 			else if (qName.equals("item")) {
-                currentTags.push("<paragraph>");
-				currentTag = "<paragraph>";
+                currentTags.push("<item>");
+				currentTag = "<item>";
             } 
 			else if (qName.equals("figure")) {
 	            figureBlock = true;

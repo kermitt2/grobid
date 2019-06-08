@@ -1185,6 +1185,7 @@ public class TEIFormatter {
         }
         divResults.add(curDiv);
         Element curParagraph = null;
+        Element curList = null;
         int equationIndex = 0; // current equation index position 
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
@@ -1248,7 +1249,14 @@ public class TEIFormatter {
                 }
             } else if (clusterLabel.equals(TaggingLabels.ITEM)) {
                 String clusterContent = LayoutTokensUtil.normalizeText(cluster.concatTokens());
-                curDiv.appendChild(teiElement("item", clusterContent));
+                Element itemNode = teiElement("item", clusterContent);
+                if (!MARKER_LABELS.contains(lastClusterLabel) && (lastClusterLabel != TaggingLabels.ITEM)) {
+                    curList = teiElement("list");
+                    curDiv.appendChild(curList);
+                }
+                if (curList != null) {
+                    curList.appendChild(itemNode);
+                }
             } else if (clusterLabel.equals(TaggingLabels.OTHER)) {
                 String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
                 Element note = teiElement("note", clusterContent);
