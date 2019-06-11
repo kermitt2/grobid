@@ -9,6 +9,7 @@ import java.lang.reflect.*;
 import javax.naming.InitialContext;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.SystemUtils;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidException;
 //import org.grobid.core.mock.MockContext;
@@ -151,8 +152,18 @@ public class LibraryLoader {
                     if(StringUtils.isNotEmpty(GrobidProperties.getPythonVirtualEnv())) {
                         String virtualEnv = GrobidProperties.getPythonVirtualEnv() + File.separator + "lib";
                         addLibraryPath(virtualEnv);
+
+                        String os = System.getProperty("os.name").toLowerCase();
+
+                        if(SystemUtils.IS_OS_MAC) {
+                            System.loadLibrary("jep");
+                        } else if(SystemUtils.IS_OS_LINUX) {
+                            System.loadLibrary(DELFT_NATIVE_LIB_NAME);
+                        } else if(SystemUtils.IS_OS_WINDOWS) {
+                            throw new UnsupportedOperationException("Delft on Windows is not supported.");
+                        }
+
                         System.loadLibrary("python3.6m");
-                        System.loadLibrary("jep");
                     }
 
                 } catch (Exception e) {
