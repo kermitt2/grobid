@@ -4,6 +4,7 @@ import java.util.concurrent.*;
 import java.util.*;
 import java.io.*;
 
+import org.apache.commons.io.IOUtils;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.exceptions.GrobidResourceException;
 
@@ -65,7 +66,6 @@ public class JEPThreadPool {
     public Jep getJEPInstance() {
         if (jepInstances.get(Thread.currentThread().getId()) == null) {
             JepConfig config = new JepConfig();
-            
             try {
                 File delftPath = new File(GrobidProperties.getInstance().getDeLFTFilePath());
                 if (!delftPath.exists()) {
@@ -77,24 +77,25 @@ public class JEPThreadPool {
                 config.addIncludePaths(delftPath.getAbsolutePath());
                 config.setClassLoader(Thread.currentThread().getContextClassLoader());
                 //System.out.println("jep instance thread: " + Thread.currentThread().getId());
-                Jep jep = new Jep(config);
-                jepInstances.put(Thread.currentThread().getId(), jep);
-                // import packages
-                jep.eval("import os");
-                jep.eval("import numpy as np");
-                jep.eval("import keras.backend as K");
-                jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
-                jep.eval("from delft.utilities.Embeddings import Embeddings");
-                jep.eval("import delft.sequenceLabelling");
-                jep.eval("from delft.sequenceLabelling import Sequence");
-                jep.eval("from delft.sequenceLabelling.reader import load_data_and_labels_crf_file");
-                jep.eval("from delft.sequenceLabelling.reader import load_data_crf_string");
-                jep.eval("from sklearn.model_selection import train_test_split");
+                try(Jep jep = new Jep(config)) {
+                    jepInstances.put(Thread.currentThread().getId(), jep);
+                    // import packages
+                    jep.eval("import os");
+                    jep.eval("import numpy as np");
+                    jep.eval("import keras.backend as K");
+                    jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
+                    jep.eval("from delft.utilities.Embeddings import Embeddings");
+                    jep.eval("import delft.sequenceLabelling");
+                    jep.eval("from delft.sequenceLabelling import Sequence");
+                    jep.eval("from delft.sequenceLabelling.reader import load_data_and_labels_crf_file");
+                    jep.eval("from delft.sequenceLabelling.reader import load_data_crf_string");
+                    jep.eval("from sklearn.model_selection import train_test_split");
+                }
             } catch(JepException e) {
                 LOGGER.error("JEP initialization failed", e);
             } catch(GrobidResourceException e) {
                 LOGGER.error("DeLFT installation path invalid, JEP initialization failed", e);
-            } 
+            }
         }
         return jepInstances.get(Thread.currentThread().getId());
     }
