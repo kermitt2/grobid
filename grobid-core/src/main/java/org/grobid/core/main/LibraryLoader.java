@@ -37,7 +37,7 @@ public class LibraryLoader {
     public static final String CRFPP_NATIVE_LIB_NAME = "libcrfpp";
     public static final String WAPITI_NATIVE_LIB_NAME = "libwapiti";
     public static final String DELFT_NATIVE_LIB_NAME_LINUX = "libjep";
-    public static final String DELFT_NATIVE_LIB_NAME_MAC = "jep";
+    public static final String DELFT_NATIVE_LIB_NAME = "jep";
 
     private static boolean loaded = false;
 
@@ -175,9 +175,12 @@ public class LibraryLoader {
                         System.loadLibrary("python" + pythonVersions.get(0));
 
                         if (SystemUtils.IS_OS_MAC) {
-                            System.loadLibrary(DELFT_NATIVE_LIB_NAME_MAC);
+                            System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_LINUX) {
-                            System.loadLibrary(DELFT_NATIVE_LIB_NAME_LINUX);
+                            System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + LibraryLoader.getLibraryFolder());
+                            System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + virtualEnv);
+
+                            System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_WINDOWS) {
                             throw new UnsupportedOperationException("Delft on Windows is not supported.");
                         }
