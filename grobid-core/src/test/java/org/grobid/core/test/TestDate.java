@@ -2,8 +2,11 @@ package org.grobid.core.test;
 
 import org.grobid.core.data.Date;
 import org.grobid.core.factory.GrobidFactory;
+import org.grobid.core.main.LibraryLoader;
+import org.grobid.core.utilities.GrobidProperties;
 import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.List;
@@ -18,8 +21,9 @@ import static org.junit.Assert.assertThat;
  */
 public class TestDate extends EngineTest {
 
-    @Before
-    public void setUp() {
+    @BeforeClass
+    public static void setUp() {
+        GrobidProperties.getInstance();
     }
 
     @AfterClass

@@ -1,25 +1,30 @@
 package org.grobid.core.main;
 
-import java.io.File;
-import java.io.FileFilter;
-import java.io.FilenameFilter;
-import java.util.Arrays;
-import java.lang.reflect.*;
-
-import javax.naming.InitialContext;
-
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.SystemUtils;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidException;
-//import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.GrobidPropertyKeys;
 import org.grobid.core.utilities.Utilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.io.FileFilter;
+import java.io.FilenameFilter;
+import java.lang.reflect.Field;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
+
+//import org.grobid.core.mock.MockContext;
 
 /**
  * @author Slava, Patrice
@@ -31,7 +36,8 @@ public class LibraryLoader {
     //a name of a native CRF++ library without an extension
     public static final String CRFPP_NATIVE_LIB_NAME = "libcrfpp";
     public static final String WAPITI_NATIVE_LIB_NAME = "libwapiti";
-    public static final String DELFT_NATIVE_LIB_NAME = "libjep";
+    public static final String DELFT_NATIVE_LIB_NAME_LINUX = "libjep";
+    public static final String DELFT_NATIVE_LIB_NAME_MAC = "jep";
 
     private static boolean loaded = false;
 
@@ -51,36 +57,36 @@ public class LibraryLoader {
             File libraryFolder = new File(getLibraryFolder());
             if (!libraryFolder.exists() || !libraryFolder.isDirectory()) {
                 LOGGER.error("Unable to find a native sequence labelling library: Folder "
-                        + libraryFolder + " does not exist");
+                    + libraryFolder + " does not exist");
                 throw new RuntimeException(
-                        "Unable to find a native sequence labelling library: Folder "
-                                + libraryFolder + " does not exist");
+                    "Unable to find a native sequence labelling library: Folder "
+                        + libraryFolder + " does not exist");
             }
 
             if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
                 File[] files = libraryFolder.listFiles(new FileFilter() {
                     public boolean accept(File file) {
                         return file.getName().toLowerCase()
-                                .startsWith(CRFPP_NATIVE_LIB_NAME);
+                            .startsWith(CRFPP_NATIVE_LIB_NAME);
                     }
                 });
 
                 if (files.length == 0) {
                     LOGGER.error("Unable to find a native CRF++ library: No files starting with "
+                        + CRFPP_NATIVE_LIB_NAME
+                        + " are in folder " + libraryFolder);
+                    throw new RuntimeException(
+                        "Unable to find a native CRF++ library: No files starting with "
                             + CRFPP_NATIVE_LIB_NAME
                             + " are in folder " + libraryFolder);
-                    throw new RuntimeException(
-                            "Unable to find a native CRF++ library: No files starting with "
-                                    + CRFPP_NATIVE_LIB_NAME
-                                    + " are in folder " + libraryFolder);
                 }
 
                 if (files.length > 1) {
                     LOGGER.error("Unable to load a native CRF++ library: More than 1 library exists in "
-                            + libraryFolder);
+                        + libraryFolder);
                     throw new RuntimeException(
-                            "Unable to load a native CRF++ library: More than 1 library exists in "
-                                    + libraryFolder);
+                        "Unable to load a native CRF++ library: More than 1 library exists in "
+                            + libraryFolder);
                 }
 
                 String libPath = files[0].getAbsolutePath();
@@ -90,15 +96,15 @@ public class LibraryLoader {
                     System.load(libPath);
                 } catch (Exception e) {
                     LOGGER.error("Unable to load a native CRF++ library, although it was found under path "
-                            + libPath);
+                        + libPath);
                     throw new RuntimeException(
-                            "Unable to load a native CRF++ library, although it was found under path "
-                                    + libPath, e);
+                        "Unable to load a native CRF++ library, although it was found under path "
+                            + libPath, e);
                 }
 
-            } 
+            }
 
-            if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.WAPITI || 
+            if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.WAPITI ||
                 GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT) {
                 // note: if DeLFT is used, we still make Wapiti available for models not existing in DeLFT (currently segmentation and 
                 // fulltext)
@@ -118,11 +124,11 @@ public class LibraryLoader {
                         // so we temporary rename the lib so that it is not loaded in this case
                         // note that we know that, in this case, the local lib can be ignored because as DeFLT and tensorflow are installed
                         // we are sure that a compatible libstdc++ lib is installed on the system and can be dynamically loaded
-                        
-                        String libstdcppPath = libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6"; 
+
+                        String libstdcppPath = libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6";
                         File libstdcppFile = new File(libstdcppPath);
                         if (libstdcppFile.exists()) {
-                            File libstdcppFileNew = new File(libstdcppPath+".new");
+                            File libstdcppFileNew = new File(libstdcppPath + ".new");
                             libstdcppFile.renameTo(libstdcppFileNew);
                         }
                     }
@@ -131,7 +137,7 @@ public class LibraryLoader {
                     } finally {
                         if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT) {
                             // restore libstdc++
-                            String libstdcppPathNew = libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6.new"; 
+                            String libstdcppPathNew = libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6.new";
                             File libstdcppFileNew = new File(libstdcppPathNew);
                             if (libstdcppFileNew.exists()) {
                                 File libstdcppFile = new File(libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6");
@@ -140,7 +146,7 @@ public class LibraryLoader {
                         }
                     }
                 }
-            } 
+            }
 
             if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT) {
                 LOGGER.info("Loading JEP native library for DeLFT... " + libraryFolder.getAbsolutePath());
@@ -149,29 +155,41 @@ public class LibraryLoader {
                 // loading here will not help)
                 try {
                     addLibraryPath(libraryFolder.getAbsolutePath());
-                    if(StringUtils.isNotEmpty(GrobidProperties.getPythonVirtualEnv())) {
+                    if (StringUtils.isNotEmpty(GrobidProperties.getPythonVirtualEnv())) {
                         String virtualEnv = GrobidProperties.getPythonVirtualEnv() + File.separator + "lib";
+
+                        List<Path> pythons = Files.find(Paths.get(virtualEnv), 1, (path, attr) -> path.getFileName().toString().startsWith("libpython3.6m")).collect(Collectors.toList());
+
+                        List<String> pythonVersions = pythons
+                            .stream()
+                            .map(path -> FilenameUtils.getBaseName(path.getFileName().toString()).replace("libpython", ""))
+                            .distinct()
+                            .sorted()
+                            .collect(Collectors.toList());
+
+                        if (CollectionUtils.isEmpty(pythonVersions)) {
+                            throw new GrobidException("Cannot find a suitable version (3.5 or 3.6) of python in your virtual environment. ");
+                        }
+
                         addLibraryPath(virtualEnv);
+                        System.loadLibrary("python" + pythonVersions.get(0));
 
-                        String os = System.getProperty("os.name").toLowerCase();
-
-                        if(SystemUtils.IS_OS_MAC) {
-                            System.loadLibrary("jep");
-                        } else if(SystemUtils.IS_OS_LINUX) {
-                            System.loadLibrary(DELFT_NATIVE_LIB_NAME);
-                        } else if(SystemUtils.IS_OS_WINDOWS) {
+                        if (SystemUtils.IS_OS_MAC) {
+                            System.loadLibrary(DELFT_NATIVE_LIB_NAME_MAC);
+                        } else if (SystemUtils.IS_OS_LINUX) {
+                            System.loadLibrary(DELFT_NATIVE_LIB_NAME_LINUX);
+                        } else if (SystemUtils.IS_OS_WINDOWS) {
                             throw new UnsupportedOperationException("Delft on Windows is not supported.");
                         }
 
-                        System.loadLibrary("python3.6m");
                     }
 
                 } catch (Exception e) {
                     LOGGER.info("Loading JEP native library for DeLFT failed", e);
                 }
-            } 
-            
-            
+            }
+
+
             loaded = true;
             LOGGER.info("Native library for sequence labelling loaded");
         }
@@ -192,7 +210,7 @@ public class LibraryLoader {
         usrPathsField.set(null, newPaths);
     }
 
-//    /**
+    //    /**
 //     * Initialize the context with mock parameters if they doesn't already
 //     * exist.
 //     */
@@ -219,7 +237,7 @@ public class LibraryLoader {
         GrobidProperties.getInstance();
         // TODO: change to fetching the basic dir from GrobidProperties object
         return String.format("%s" + File.separator + "%s", GrobidProperties
-                .getNativeLibraryPath().getAbsolutePath(), Utilities
-                .getOsNameAndArch());
+            .getNativeLibraryPath().getAbsolutePath(), Utilities
+            .getOsNameAndArch());
     }
 }
