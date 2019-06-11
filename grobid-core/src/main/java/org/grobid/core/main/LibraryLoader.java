@@ -8,6 +8,7 @@ import java.lang.reflect.*;
 
 import javax.naming.InitialContext;
 
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidException;
 //import org.grobid.core.mock.MockContext;
@@ -38,7 +39,6 @@ public class LibraryLoader {
     public static void load() {
         if (!loaded) {
             LOGGER.info("Loading external native sequence labelling library");
-//            mockContextIfNotSet();
             LOGGER.debug(getLibraryFolder());
 
             if (GrobidProperties.getGrobidCRFEngine() != GrobidCRFEngine.CRFPP &&
@@ -148,8 +148,13 @@ public class LibraryLoader {
                 // loading here will not help)
                 try {
                     addLibraryPath(libraryFolder.getAbsolutePath());
-                    addLibraryPath("/anaconda3/envs/tensorflow/lib");
-                    System.loadLibrary("python3.6m");
+                    if(StringUtils.isNotEmpty(GrobidProperties.getPythonVirtualEnv())) {
+                        String virtualEnv = GrobidProperties.getPythonVirtualEnv() + File.separator + "lib";
+                        addLibraryPath(virtualEnv);
+                        System.loadLibrary("python3.6m");
+                        System.loadLibrary("jep");
+                    }
+
                 } catch (Exception e) {
                     LOGGER.info("Loading JEP native library for DeLFT failed", e);
                 }
