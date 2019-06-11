@@ -84,13 +84,13 @@ public class DeLFTModel {
                 Object objectResults = jep.getValue(this.modelName+".tag(x_all, None)");
                 
                 // inject back the labels
-                ArrayList<ArrayList<List<String>>> results = (ArrayList<ArrayList<List<String>>>)objectResults;
+                List<List<List<String>>> results = (List<List<List<String>>>) objectResults;
                 BufferedReader bufReader = new BufferedReader(new StringReader(data));
                 String line;
                 int i = 0; // sentence index
                 int j = 0; // word index in the sentence
-                ArrayList<List<String>> result = results.get(0);
-                while( (line=bufReader.readLine()) != null ) {
+                List<List<String>> result = results.get(0);
+                while ((line = bufReader.readLine()) != null) {
                     line = line.trim();
                     if ((line.length() == 0) && (j != 0)) {
                         j = 0;

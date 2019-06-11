@@ -54,7 +54,7 @@ public class JEPThreadPool {
         //executor = Executors.newFixedThreadPool(POOL_SIZE); 
         executor = Executors.newSingleThreadExecutor();
         // each of these threads is associated to a JEP instance
-        jepInstances = new HashMap<Long,Jep>();
+        jepInstances = new HashMap<>();
     }
 
     /**
