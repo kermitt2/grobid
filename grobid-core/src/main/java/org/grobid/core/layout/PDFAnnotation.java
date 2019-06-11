@@ -111,7 +111,7 @@ public class PDFAnnotation {
 		if (token == null)
 			return false;
 		boolean res = false;
-		// do we have an astro entity annotation at this location?
+		// do we have an entity annotation at this location?
 		// we need to check the coordinates
 		int pageToken = token.getPage();
 		if (pageToken == pageNumber) {

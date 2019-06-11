@@ -927,10 +927,17 @@ public class BiblioItem {
             return;
         doi = StringUtils.normalizeSpace(id);
         doi = doi.replace(" ", "");
+        if (doi.startsWith("http://dx.doi.org/") || 
+            doi.startsWith("https://dx.doi.org/") || 
+            doi.startsWith("http://doi.org/") || 
+            doi.startsWith("https://doi.org/")) {
+            doi = doi.replaceAll("http(s)?\\://(dx\\.)?doi\\.org/", "");
+        }
         doi = doi.replace("//", "/");
         if (doi.startsWith("doi:") || doi.startsWith("DOI:") || doi.startsWith("DOI/") || doi.startsWith("doi/")) {
             doi = doi.substring(4);
         }
+        
         // pretty common wrong extraction pattern: 
         // 43-61.DOI:10.1093/jpepsy/14.1.436/7
         // 367-74.DOI:10.1080/14034940210165064
