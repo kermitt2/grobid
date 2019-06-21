@@ -2,7 +2,7 @@ package org.grobid.core.main;
 
 import org.apache.commons.lang3.SystemUtils;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
-import org.grobid.core.jni.PythonVirtualEnvConfig;
+import org.grobid.core.jni.PythonEnvironmentConfig;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Utilities;
 import org.slf4j.Logger;
@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.lang.reflect.Field;
+import java.nio.file.Paths;
 import java.util.Arrays;
 
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
@@ -147,12 +148,12 @@ public class LibraryLoader {
                 // loading here will not help)
                 try {
                     addLibraryPath(libraryFolder.getAbsolutePath());
-                    PythonVirtualEnvConfig pythonVirtualEnvConfig = PythonVirtualEnvConfig.getInstance();
-                    if (pythonVirtualEnvConfig.isEmpty()) {
+                    PythonEnvironmentConfig pythonEnvironmentConfig = PythonEnvironmentConfig.getInstance();
+                    if (pythonEnvironmentConfig.isEmpty()) {
                         LOGGER.info("no python environment configured");
                     } else {
-                        LOGGER.info("adding library path " + pythonVirtualEnvConfig.getJepPath());
-                        addLibraryPath(pythonVirtualEnvConfig.getJepPath().toString());
+                        LOGGER.info("adding library path " + pythonEnvironmentConfig.getJepPath());
+                        addLibraryPath(pythonEnvironmentConfig.getJepPath().toString());
 
                         if (SystemUtils.IS_OS_MAC) {
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
