@@ -19,11 +19,17 @@ public class PythonEnvironmentConfig {
     private Path virtualEnv;
     private Path sitePackagesPath;
     private Path jepPath;
+    private boolean active;
 
-    public PythonEnvironmentConfig(Path virtualEnv, Path sitePackagesPath, Path jepPath) {
+    public PythonEnvironmentConfig(
+            Path virtualEnv,
+            Path sitePackagesPath,
+            Path jepPath,
+            boolean active) {
         this.virtualEnv = virtualEnv;
         this.sitePackagesPath = sitePackagesPath;
         this.jepPath = jepPath;
+        this.active = active;
     }
 
     public boolean isEmpty() {
@@ -42,9 +48,22 @@ public class PythonEnvironmentConfig {
         return this.jepPath;
     }
 
-    public static PythonEnvironmentConfig getInstanceForVirtualEnv(String virtualEnv) throws GrobidResourceException {
-        if (StringUtils.isEmpty(GrobidProperties.getPythonVirtualEnv())) {
-            return new PythonEnvironmentConfig(null, null, null);
+    public boolean isActive() {
+        return this.active;
+    }
+
+    public static PythonEnvironmentConfig getInstanceForVirtualEnv(
+            String virtualEnv, String activeVirtualEnv
+        ) throws GrobidResourceException {
+
+        if (
+            StringUtils.isEmpty(virtualEnv) &&
+            StringUtils.isEmpty(activeVirtualEnv)
+        ) {
+            return new PythonEnvironmentConfig(null, null, null, false);
+        }
+        if (StringUtils.isEmpty(virtualEnv)) {
+            virtualEnv = activeVirtualEnv;
         }
         List<Path> pythons;
         try {
@@ -76,13 +95,15 @@ public class PythonEnvironmentConfig {
         return new PythonEnvironmentConfig(
             Paths.get(virtualEnv),
             sitePackagesPath,
-            jepPath
+            jepPath,
+            activeVirtualEnv != null && virtualEnv.equals(activeVirtualEnv)
         );
     }
 
     public static PythonEnvironmentConfig getInstance() throws GrobidResourceException {
         return getInstanceForVirtualEnv(
-            GrobidProperties.getPythonVirtualEnv()
+            GrobidProperties.getPythonVirtualEnv(),
+            System.getenv("VIRTUAL_ENV")
         );
     }
 }
