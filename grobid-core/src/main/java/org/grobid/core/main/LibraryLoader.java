@@ -178,13 +178,15 @@ public class LibraryLoader {
                             );
                         }
 
-                        addLibraryPath(virtualEnv);
+                        Path jepPath = Paths.get(pythons.get(0).toString(), "site-packages", "jep");
+                        LOGGER.info("adding library path " + jepPath);
+                        addLibraryPath(jepPath.toString());
 
                         if (SystemUtils.IS_OS_MAC) {
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_LINUX) {
                             System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + LibraryLoader.getLibraryFolder());
-                            System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + virtualEnv);
+                            LOGGER.info("java.library.path: " + System.getProperty("java.library.path"));
 
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_WINDOWS) {
