@@ -58,34 +58,46 @@ public class JEPThreadPool {
         jepInstances = new ConcurrentHashMap<>();
     }
 
-    private Jep createJEPInstance() {
+    private File getAndValidateDelftPath() {
+        File delftPath = new File(GrobidProperties.getInstance().getDeLFTFilePath());
+        if (!delftPath.exists()) {
+            throw new GrobidResourceException("DeLFT installation path does not exist");
+        }
+        if (!delftPath.isDirectory()) {
+            throw new GrobidResourceException("DeLFT installation path is not a directory");
+        }
+        return delftPath;
+    }
+
+    private JepConfig getJepConfig(File delftPath) {
         JepConfig config = new JepConfig();
+        config.addIncludePaths(delftPath.getAbsolutePath());
+        config.setClassLoader(Thread.currentThread().getContextClassLoader());
+        return config;
+    }
+
+    private void initializeJepInstance(Jep jep, File delftPath) throws JepException {
+        // import packages
+        jep.eval("import os");
+        jep.eval("import numpy as np");
+        jep.eval("import keras.backend as K");
+        jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
+        jep.eval("from delft.utilities.Embeddings import Embeddings");
+        jep.eval("import delft.sequenceLabelling");
+        jep.eval("from delft.sequenceLabelling import Sequence");
+        jep.eval("from delft.sequenceLabelling.reader import load_data_and_labels_crf_file");
+        jep.eval("from delft.sequenceLabelling.reader import load_data_crf_string");
+        jep.eval("from sklearn.model_selection import train_test_split");
+    }
+
+    private Jep createJEPInstance() {
         Jep jep = null;
         boolean success = false;
         try {
-            File delftPath = new File(GrobidProperties.getInstance().getDeLFTFilePath());
-            if (!delftPath.exists()) {
-                throw new GrobidResourceException("DeLFT installation path does not exist");
-            }
-            if (!delftPath.isDirectory()) {
-                throw new GrobidResourceException("DeLFT installation path is not a directory");
-            }
-            config.addIncludePaths(delftPath.getAbsolutePath());
-            config.setClassLoader(Thread.currentThread().getContextClassLoader());
-            //System.out.println("jep instance thread: " + Thread.currentThread().getId());
+            File delftPath = this.getAndValidateDelftPath();
+            JepConfig config = this.getJepConfig(delftPath);
             jep = new Jep(config);
-            jepInstances.put(Thread.currentThread().getId(), jep);
-            // import packages
-            jep.eval("import os");
-            jep.eval("import numpy as np");
-            jep.eval("import keras.backend as K");
-            jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
-            jep.eval("from delft.utilities.Embeddings import Embeddings");
-            jep.eval("import delft.sequenceLabelling");
-            jep.eval("from delft.sequenceLabelling import Sequence");
-            jep.eval("from delft.sequenceLabelling.reader import load_data_and_labels_crf_file");
-            jep.eval("from delft.sequenceLabelling.reader import load_data_crf_string");
-            jep.eval("from sklearn.model_selection import train_test_split");
+            this.initializeJepInstance(jep, delftPath);
             success = true;
             return jep;
         } catch(JepException e) {
