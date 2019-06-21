@@ -17,15 +17,25 @@ import org.grobid.core.utilities.GrobidProperties;
 public class PythonVirtualEnvConfig {
 
     private Path virtualEnv;
+    private Path sitePackagesPath;
     private Path jepPath;
 
-    public PythonVirtualEnvConfig(Path virtualEnv, Path jepPath) {
+    public PythonVirtualEnvConfig(Path virtualEnv, Path sitePackagesPath, Path jepPath) {
         this.virtualEnv = virtualEnv;
+        this.sitePackagesPath = sitePackagesPath;
         this.jepPath = jepPath;
     }
 
     public boolean isEmpty() {
         return this.virtualEnv == null;
+    }
+
+    public Path getVirtualEnv() {
+        return this.virtualEnv;
+    }
+
+    public Path getSitePackagesPath() {
+        return this.sitePackagesPath;
     }
 
     public Path getJepPath() {
@@ -34,7 +44,7 @@ public class PythonVirtualEnvConfig {
 
     public static PythonVirtualEnvConfig getInstanceForVirtualEnv(String virtualEnv) throws GrobidResourceException {
         if (StringUtils.isEmpty(GrobidProperties.getPythonVirtualEnv())) {
-            return new PythonVirtualEnvConfig(null, null);
+            return new PythonVirtualEnvConfig(null, null, null);
         }
         List<Path> pythons;
         try {
@@ -61,9 +71,11 @@ public class PythonVirtualEnvConfig {
             );
         }
 
-        Path jepPath = Paths.get(pythons.get(0).toString(), "site-packages", "jep");
+        Path sitePackagesPath = Paths.get(pythons.get(0).toString(), "site-packages");
+        Path jepPath = Paths.get(sitePackagesPath.toString(), "jep");
         return new PythonVirtualEnvConfig(
             Paths.get(virtualEnv),
+            sitePackagesPath,
             jepPath
         );
     }

@@ -1,10 +1,10 @@
 package org.grobid.core.jni;
 
-import java.util.concurrent.*;  
+import java.util.concurrent.*;
 import java.util.*;
 import java.io.*;
+import java.nio.file.Path;
 
-import org.apache.commons.io.IOUtils;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.exceptions.GrobidResourceException;
 
@@ -59,7 +59,7 @@ public class JEPThreadPool {
     }
 
     private File getAndValidateDelftPath() {
-        File delftPath = new File(GrobidProperties.getInstance().getDeLFTFilePath());
+        File delftPath = new File(GrobidProperties.getDeLFTFilePath());
         if (!delftPath.exists()) {
             throw new GrobidResourceException("DeLFT installation path does not exist");
         }
@@ -69,9 +69,12 @@ public class JEPThreadPool {
         return delftPath;
     }
 
-    private JepConfig getJepConfig(File delftPath) {
+    private JepConfig getJepConfig(File delftPath, Path sitePackagesPath) {
         JepConfig config = new JepConfig();
         config.addIncludePaths(delftPath.getAbsolutePath());
+        if (sitePackagesPath != null) {
+            config.addIncludePaths(sitePackagesPath.toString());
+        }
         config.setClassLoader(Thread.currentThread().getContextClassLoader());
         return config;
     }
@@ -95,7 +98,10 @@ public class JEPThreadPool {
         boolean success = false;
         try {
             File delftPath = this.getAndValidateDelftPath();
-            JepConfig config = this.getJepConfig(delftPath);
+            JepConfig config = this.getJepConfig(
+                delftPath,
+                PythonVirtualEnvConfig.getInstance().getSitePackagesPath()
+            );
             jep = new Jep(config);
             this.initializeJepInstance(jep, delftPath);
             success = true;
@@ -107,7 +113,7 @@ public class JEPThreadPool {
             LOGGER.error("DeLFT installation path invalid, JEP initialization failed", e);
             throw new RuntimeException("DeLFT installation path invalid, JEP initialization failed", e);
         } finally {
-            if (!success) {
+            if (!success && (jep != null)) {
                 try {
                     jep.close();
                 } catch (JepException e) {
