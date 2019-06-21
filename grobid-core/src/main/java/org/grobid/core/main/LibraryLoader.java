@@ -1,11 +1,8 @@
 package org.grobid.core.main;
 
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.SystemUtils;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
-import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.jni.PythonVirtualEnvConfig;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Utilities;
 import org.slf4j.Logger;
@@ -15,12 +12,7 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.lang.reflect.Field;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
 
@@ -155,32 +147,12 @@ public class LibraryLoader {
                 // loading here will not help)
                 try {
                     addLibraryPath(libraryFolder.getAbsolutePath());
-                    if (StringUtils.isNotEmpty(GrobidProperties.getPythonVirtualEnv())) {
-                        String virtualEnv = GrobidProperties.getPythonVirtualEnv() + File.separator + "lib";
-
-                        List<Path> pythons = Files.find(
-                            Paths.get(virtualEnv),
-                            1,
-                            (path, attr) -> path.getFileName().toString().contains("python3")
-                        ).collect(Collectors.toList());
-
-                        List<String> pythonVersions = pythons
-                            .stream()
-                            .map(path -> FilenameUtils.getBaseName(path.getFileName().toString()).replace("libpython", ""))
-                            .distinct()
-                            .sorted()
-                            .collect(Collectors.toList());
-
-                        if (CollectionUtils.isEmpty(pythonVersions)) {
-                            throw new GrobidException(
-                                "Cannot find a suitable version (3.5 or 3.6) of python in your virtual environment: " +
-                                virtualEnv
-                            );
-                        }
-
-                        Path jepPath = Paths.get(pythons.get(0).toString(), "site-packages", "jep");
-                        LOGGER.info("adding library path " + jepPath);
-                        addLibraryPath(jepPath.toString());
+                    PythonVirtualEnvConfig pythonVirtualEnvConfig = PythonVirtualEnvConfig.getInstance();
+                    if (pythonVirtualEnvConfig.isEmpty()) {
+                        LOGGER.info("no python environment configured");
+                    } else {
+                        LOGGER.info("adding library path " + pythonVirtualEnvConfig.getJepPath());
+                        addLibraryPath(pythonVirtualEnvConfig.getJepPath().toString());
 
                         if (SystemUtils.IS_OS_MAC) {
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
