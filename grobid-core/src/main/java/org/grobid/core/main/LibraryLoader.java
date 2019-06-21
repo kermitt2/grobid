@@ -158,7 +158,9 @@ public class LibraryLoader {
                     if (StringUtils.isNotEmpty(GrobidProperties.getPythonVirtualEnv())) {
                         String virtualEnv = GrobidProperties.getPythonVirtualEnv() + File.separator + "lib";
 
-                        List<Path> pythons = Files.find(Paths.get(virtualEnv), 1, (path, attr) -> path.getFileName().toString().startsWith("libpython3.6m")).collect(Collectors.toList());
+                        List<Path> pythons = Files.find(Paths.get(virtualEnv), 1, (path, attr) -> path.getFileName().toString().startsWith(
+                            "python3.6"
+                        )).collect(Collectors.toList());
 
                         List<String> pythonVersions = pythons
                             .stream()
@@ -168,7 +170,10 @@ public class LibraryLoader {
                             .collect(Collectors.toList());
 
                         if (CollectionUtils.isEmpty(pythonVersions)) {
-                            throw new GrobidException("Cannot find a suitable version (3.5 or 3.6) of python in your virtual environment. ");
+                            throw new GrobidException(
+                                "Cannot find a suitable version (3.5 or 3.6) of python in your virtual environment: " +
+                                virtualEnv
+                            );
                         }
 
                         addLibraryPath(virtualEnv);
