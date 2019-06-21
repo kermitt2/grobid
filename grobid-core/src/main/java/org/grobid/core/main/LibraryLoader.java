@@ -177,7 +177,6 @@ public class LibraryLoader {
                         }
 
                         addLibraryPath(virtualEnv);
-                        System.loadLibrary("python" + pythonVersions.get(0));
 
                         if (SystemUtils.IS_OS_MAC) {
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
