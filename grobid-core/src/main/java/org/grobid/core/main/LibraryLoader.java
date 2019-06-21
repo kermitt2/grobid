@@ -158,9 +158,11 @@ public class LibraryLoader {
                     if (StringUtils.isNotEmpty(GrobidProperties.getPythonVirtualEnv())) {
                         String virtualEnv = GrobidProperties.getPythonVirtualEnv() + File.separator + "lib";
 
-                        List<Path> pythons = Files.find(Paths.get(virtualEnv), 1, (path, attr) -> path.getFileName().toString().startsWith(
-                            "python3.6"
-                        )).collect(Collectors.toList());
+                        List<Path> pythons = Files.find(
+                            Paths.get(virtualEnv),
+                            1,
+                            (path, attr) -> path.getFileName().toString().contains("python3")
+                        ).collect(Collectors.toList());
 
                         List<String> pythonVersions = pythons
                             .stream()
