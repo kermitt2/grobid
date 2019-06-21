@@ -100,7 +100,7 @@ public class JEPThreadPool {
             File delftPath = this.getAndValidateDelftPath();
             JepConfig config = this.getJepConfig(
                 delftPath,
-                PythonVirtualEnvConfig.getInstance().getSitePackagesPath()
+                PythonEnvironmentConfig.getInstance().getSitePackagesPath()
             );
             jep = new Jep(config);
             this.initializeJepInstance(jep, delftPath);
