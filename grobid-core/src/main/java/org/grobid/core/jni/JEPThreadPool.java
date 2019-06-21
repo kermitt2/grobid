@@ -114,6 +114,7 @@ public class JEPThreadPool {
         long threadId = Thread.currentThread().getId();
         Jep jep = jepInstances.get(threadId);
         if (jep == null) {
+            LOGGER.info("Creating JEP instance for thread " + threadId);
             jep = this.createJEPInstance();
             jepInstances.put(threadId, jep);
         }
