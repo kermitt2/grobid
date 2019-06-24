@@ -1,0 +1,37 @@
+ARG GROBID_VERSION
+ARG GROBID_REPO=lfoppiano/grobid
+FROM ${GROBID_REPO}:${GROBID_VERSION}
+
+RUN apt-get update \
+    && apt-get install --yes \
+        python3-minimal python3-venv python3-pip \
+        openjdk-8-jdk-headless \
+        curl \
+    && JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 pip3 install jep==3.8.2 \
+    && apt-get remove --yes openjdk-8-jdk-headless \
+    && rm -rf /var/lib/apt/lists/*
+
+# create virtual env (see also https://bugs.python.org/issue24875)
+ENV VENV=/opt/venv
+RUN python3 -m venv ${VENV} \
+    && python3 -m venv --system-site-packages ${VENV}
+ENV VIRTUAL_ENV=${VENV} PYTHONUSERBASE=${VENV} PATH=${VENV}/bin:$PATH
+
+# install python build dependencies
+RUN pip install setuptools==41.0.1 wheel==0.33.4
+
+# download and install delft
+ARG delft_repo=kermitt2/delft
+ARG delft_tag=master
+RUN curl --progress-bar --location \
+  "https://github.com/${delft_repo}/archive/${delft_tag}.tar.gz" \
+  --output "/tmp/${delft_tag}.tar.gz" \
+  && tar -C "/opt" -xvf "/tmp/${delft_tag}.tar.gz" \
+  && rm "/tmp/${delft_tag}.tar.gz" \
+  && ln -s "/opt/delft-${delft_tag}" "/opt/delft"
+
+COPY requirements.delft.minimal.txt /opt/delft/
+RUN pip install -r /opt/delft/requirements.delft.minimal.txt
+
+# enable delft
+RUN sed -i 's/^grobid.crf.engine.*/grobid.crf.engine=delft/' /opt/grobid/grobid-home/config/grobid.properties

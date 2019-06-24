@@ -1,0 +1,16 @@
+keras==2.2.4
+numpy==1.16.1
+pandas==0.22.0
+bleach>=2.1.0
+regex==2018.2.21
+scikit-learn==0.19.1
+tqdm==4.21
+gensim==3.4.0
+langdetect==1.0.7
+textblob==0.15.1
+h5py==2.7.1
+unidecode==1.0.22
+pydot==1.2.4
+lmdb==0.94
+keras-bert==0.39.0
+tensorflow==1.12.0
