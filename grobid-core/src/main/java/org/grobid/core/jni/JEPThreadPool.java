@@ -16,19 +16,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * For using DeLFT deep learning models, we use JEP as JNI CPython interpreter. 
- * JEP presents the following constraint: A thread that creates a JEP instance 
+ * For using DeLFT deep learning models, we use JEP as JNI CPython interpreter.
+ * JEP presents the following constraint: A thread that creates a JEP instance
  * must be reused for all method calls to that JEP instance. For ensuring this,
- * we pool the Jep instances in a singleton class. 
+ * we pool the Jep instances in a singleton class.
  */
 
-public class JEPThreadPool { 
+public class JEPThreadPool {
     private static final Logger LOGGER = LoggerFactory.getLogger(JEPThreadPool.class);
 
     private int POOL_SIZE = 1;
 
-    private ExecutorService executor;  
-    private Map<Long,Jep> jepInstances;
+    private ExecutorService executor;
+    private Map<Long, Jep> jepInstances;
 
     private static volatile JEPThreadPool instance;
 
@@ -124,9 +124,9 @@ public class JEPThreadPool {
     }
 
     /**
-     * To be called by the thread executing python commands via JEP. 
+     * To be called by the thread executing python commands via JEP.
      * The method will return to the thread its dedicated Jep instance
-     * (or create one the first time). 
+     * (or create one the first time).
      */
     public Jep getJEPInstance() {
         long threadId = Thread.currentThread().getId();

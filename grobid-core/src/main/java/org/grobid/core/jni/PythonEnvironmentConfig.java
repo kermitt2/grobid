@@ -22,10 +22,10 @@ public class PythonEnvironmentConfig {
     private boolean active;
 
     public PythonEnvironmentConfig(
-            Path virtualEnv,
-            Path sitePackagesPath,
-            Path jepPath,
-            boolean active) {
+        Path virtualEnv,
+        Path sitePackagesPath,
+        Path jepPath,
+        boolean active) {
         this.virtualEnv = virtualEnv;
         this.sitePackagesPath = sitePackagesPath;
         this.jepPath = jepPath;
@@ -52,19 +52,18 @@ public class PythonEnvironmentConfig {
         return this.active;
     }
 
-    public static PythonEnvironmentConfig getInstanceForVirtualEnv(
-            String virtualEnv, String activeVirtualEnv
-        ) throws GrobidResourceException {
+    public static PythonEnvironmentConfig getInstanceForVirtualEnv(String virtualEnv, String activeVirtualEnv)
+        throws GrobidResourceException {
 
-        if (
-            StringUtils.isEmpty(virtualEnv) &&
-            StringUtils.isEmpty(activeVirtualEnv)
-        ) {
+        if (StringUtils.isEmpty(virtualEnv) && StringUtils.isEmpty(activeVirtualEnv)) {
             return new PythonEnvironmentConfig(null, null, null, false);
         }
         if (StringUtils.isEmpty(virtualEnv)) {
             virtualEnv = activeVirtualEnv;
+        } else if(StringUtils.isEmpty(activeVirtualEnv)) {
+            activeVirtualEnv = virtualEnv;
         }
+
         List<Path> pythons;
         try {
             pythons = Files.find(
@@ -86,7 +85,7 @@ public class PythonEnvironmentConfig {
         if (CollectionUtils.isEmpty(pythonVersions)) {
             throw new GrobidException(
                 "Cannot find a suitable version (3.5 or 3.6) of python in your virtual environment: " +
-                virtualEnv
+                    virtualEnv
             );
         }
 
