@@ -4,7 +4,7 @@ glutton 16/12/2018
 17015 bibliographical references processed in 804.179 seconds, 0.04726294446076991 seconds per bibliographical reference.
 Found 15456 DOI
 
-======= CROSSREF API ======= 
+======= GLUTTON API ======= 
 
 precision:      0.9490812629399586
 recall: 0.8621216573611519

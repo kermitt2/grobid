@@ -21,7 +21,7 @@ public class FeatureFactory {
     public Lexicon lexicon = Lexicon.getInstance();
 
     public Pattern year = Pattern.compile("[1,2][0-9][0-9][0-9]");
-    public Pattern http = Pattern.compile("http");
+    public Pattern http = Pattern.compile("http(s)?");
     public Pattern isDigit = Pattern.compile("^\\d+$");
     public Pattern email2 = Pattern.compile("\\w+((\\.|\\-|_)\\w+)*@\\w+((\\.|\\-)\\w+)+");
     public Pattern email = Pattern.compile("^(?:[a-zA-Z0-9_'^&amp;/+-])+(?:\\.(?:[a-zA-Z0-9_'^&amp;/+-])+)*@(?:(?:\\[?(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))\\.){3}(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\]?)|(?:[a-zA-Z0-9-]+\\.)+(?:[a-zA-Z]){2,}\\.?)$");

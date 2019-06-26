@@ -10,7 +10,7 @@
 
 ## Purpose
 
-GROBID (or Grobid) means GeneRation Of BIbliographic Data. 
+GROBID (or Grobid, but not GroBid nor GroBiD) means GeneRation Of BIbliographic Data. 
 
 GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on GROBID has been steady as side project since the beginning and is expected to continue until at least 2020 :)
 
