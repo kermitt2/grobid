@@ -13,10 +13,6 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /var/log/dpkg.log \
     && conda clean --all --yes
 
-ENV VENV=/opt/venv
-RUN conda create --quiet --prefix "${VENV}" python="3.6"
-ENV VIRTUAL_ENV=${VENV} PYTHONUSERBASE=${VENV} PATH=${VENV}/bin:$PATH
-
 # download and install delft
 ARG delft_repo=kermitt2/delft
 ARG delft_tag=master
@@ -27,7 +23,13 @@ RUN curl --progress-bar --location \
   && rm "/tmp/${delft_tag}.tar.gz" \
   && ln -s "/opt/delft-${delft_tag}" "/opt/delft"
 
-RUN conda config --append channels conda-forge
+ENV VENV=/opt/venv
+RUN conda create --quiet --prefix "${VENV}" python="3.6" \
+    && conda config --append channels conda-forge
+ENV CONDA_PREFIX=${VENV} \
+    PYTHONUSERBASE=${VENV} \
+    PATH=${VENV}/bin:$PATH \
+    LD_LIBRARY_PATH=${VENV}/lib:${LD_LIBRARY_PATH}
 
 COPY requirements.delft.minimal.conda.txt /opt/delft/
 RUN conda install --yes --file /opt/delft/requirements.delft.minimal.conda.txt
