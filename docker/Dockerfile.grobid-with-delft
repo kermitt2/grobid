@@ -33,5 +33,8 @@ RUN curl --progress-bar --location \
 COPY requirements.delft.minimal.txt /opt/delft/
 RUN pip install -r /opt/delft/requirements.delft.minimal.txt
 
+# link to delft data directory
+RUN ln -s /opt/delft/data /opt/grobid/data
+
 # enable delft
 RUN sed -i 's/^grobid.crf.engine.*/grobid.crf.engine=delft/' /opt/grobid/grobid-home/config/grobid.properties
