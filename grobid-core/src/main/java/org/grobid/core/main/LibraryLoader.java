@@ -1,11 +1,8 @@
 package org.grobid.core.main;
 
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.SystemUtils;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
-import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.jni.PythonEnvironmentConfig;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Utilities;
 import org.slf4j.Logger;
@@ -15,12 +12,8 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.lang.reflect.Field;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
 
@@ -148,6 +141,7 @@ public class LibraryLoader {
                 }
             }
 
+
             if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT) {
                 LOGGER.info("Loading JEP native library for DeLFT... " + libraryFolder.getAbsolutePath());
                 // actual loading will be made at JEP initialization, so we just need to add the path in the 
@@ -155,36 +149,26 @@ public class LibraryLoader {
                 // loading here will not help)
                 try {
                     addLibraryPath(libraryFolder.getAbsolutePath());
-                    if (StringUtils.isNotEmpty(GrobidProperties.getPythonVirtualEnv())) {
-                        String virtualEnv = GrobidProperties.getPythonVirtualEnv() + File.separator + "lib";
-
-                        List<Path> pythons = Files.find(Paths.get(virtualEnv), 1, (path, attr) -> path.getFileName().toString().startsWith("libpython3.6m")).collect(Collectors.toList());
-
-                        List<String> pythonVersions = pythons
-                            .stream()
-                            .map(path -> FilenameUtils.getBaseName(path.getFileName().toString()).replace("libpython", ""))
-                            .distinct()
-                            .sorted()
-                            .collect(Collectors.toList());
-
-                        if (CollectionUtils.isEmpty(pythonVersions)) {
-                            throw new GrobidException("Cannot find a suitable version (3.5 or 3.6) of python in your virtual environment. ");
-                        }
-
-                        addLibraryPath(virtualEnv);
-                        System.loadLibrary("python" + pythonVersions.get(0));
+                    PythonEnvironmentConfig pythonEnvironmentConfig = PythonEnvironmentConfig.getInstance();
+                    if (pythonEnvironmentConfig.isEmpty()) {
+                        LOGGER.info("no python environment configured");
+                    } else {
+                        LOGGER.info("configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
+                        LOGGER.info("adding library path " + pythonEnvironmentConfig.getJepPath());
+                        addLibraryPath(pythonEnvironmentConfig.getJepPath().toString());
 
                         if (SystemUtils.IS_OS_MAC) {
+//                        System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + LibraryLoader.getLibraryFolder());
+//                        System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + pythonEnvironmentConfig.getVirtualEnv());
+                            addLibraryPath(pythonEnvironmentConfig.getVirtualEnv().toString() + File.separator + "lib");
+                            System.loadLibrary("python3.6m");
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_LINUX) {
-                            System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + LibraryLoader.getLibraryFolder());
-                            System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + virtualEnv);
-
+                            LOGGER.info("java.library.path: " + System.getProperty("java.library.path"));
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_WINDOWS) {
                             throw new UnsupportedOperationException("Delft on Windows is not supported.");
                         }
-
                     }
 
                 } catch (Exception e) {
