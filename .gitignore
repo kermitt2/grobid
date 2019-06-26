@@ -7,7 +7,6 @@ Thumbs.db
 .classpath
 .idea
 .gradle
-gradle
 **/build
 */out/
 *.iml

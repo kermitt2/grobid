@@ -12,9 +12,9 @@ Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detaile
 
 ## Purpose
 
-GROBID (or Grobid) means GeneRation Of BIbliographic Data. 
+GROBID (or Grobid, but not GroBid nor GroBiD) means GeneRation Of BIbliographic Data. 
 
-GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on GROBID has been steady as side project since the beginning and is expected to continue until at least 2020 :)
+GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on GROBID has been steady as an independent side project since the beginning and is expected to continue until at least 2020 :)
 
 The following functionalities are available:
 
@@ -43,7 +43,7 @@ For testing purposes, a public GROBID demo server is available at the following 
 
 The Web services are documented [here](http://grobid.readthedocs.io/en/latest/Grobid-service/).
 
-_Warning_: Some quota and query limitation apply to the demo server! 
+_Warning_: Some quota and query limitation apply to the demo server! Please be courteous and do not overload the demo server. 
 
 ## Clients
 
