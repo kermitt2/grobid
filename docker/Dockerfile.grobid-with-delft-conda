@@ -1,0 +1,37 @@
+ARG GROBID_VERSION
+ARG GROBID_REPO=lfoppiano/grobid
+FROM ${GROBID_REPO}:${GROBID_VERSION}
+
+# install miniconda
+RUN apt-get update \
+    && apt-get install --yes curl bzip2 \
+    && curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /tmp/miniconda.sh \
+    && bash /tmp/miniconda.sh -bfp /usr/local \
+    && rm -rf /tmp/miniconda.sh \
+    && conda install -y python=3 \
+    && conda update conda \
+    && rm -rf /var/lib/apt/lists/* /var/log/dpkg.log \
+    && conda clean --all --yes
+
+ENV VENV=/opt/venv
+RUN conda create --quiet --prefix "${VENV}" python="3.6"
+ENV VIRTUAL_ENV=${VENV} PYTHONUSERBASE=${VENV} PATH=${VENV}/bin:$PATH
+
+# download and install delft
+ARG delft_repo=kermitt2/delft
+ARG delft_tag=master
+RUN curl --progress-bar --location \
+  "https://github.com/${delft_repo}/archive/${delft_tag}.tar.gz" \
+  --output "/tmp/${delft_tag}.tar.gz" \
+  && tar -C "/opt" -xvf "/tmp/${delft_tag}.tar.gz" \
+  && rm "/tmp/${delft_tag}.tar.gz" \
+  && ln -s "/opt/delft-${delft_tag}" "/opt/delft"
+
+RUN conda config --append channels conda-forge
+RUN conda install --quiet --file /opt/delft/requirements.txt
+
+# # link to delft data directory
+# RUN ln -s /opt/delft/data /opt/grobid/data
+
+# # enable delft
+# RUN sed -i 's/^grobid.crf.engine.*/grobid.crf.engine=delft/' /opt/grobid/grobid-home/config/grobid.properties
