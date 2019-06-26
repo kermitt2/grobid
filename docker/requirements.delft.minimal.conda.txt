@@ -11,4 +11,4 @@ h5py==2.7.1
 unidecode==1.0.22
 pydot==1.2.4
 python-lmdb==0.94
-tensorflow-gpu==1.12.0
+tensorflow==1.12.0
