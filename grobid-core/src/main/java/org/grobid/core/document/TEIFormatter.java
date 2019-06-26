@@ -685,6 +685,14 @@ public class TEIFormatter {
             tei.append("\t\t\t\t\t<idno type=\"istexId\">" + TextUtilities.HTMLEncode(biblio.getIstexId()) + "</idno>\n");
         }
 
+        if (!StringUtils.isEmpty(biblio.getFatcatIdent())) {
+            tei.append("\t\t\t\t\t<idno type=\"fatcat_ident\">" + TextUtilities.HTMLEncode(biblio.getFatcatIdent()) + "</idno>\n");
+        }
+
+        if (!StringUtils.isEmpty(biblio.getWikidataQid())) {
+            tei.append("\t\t\t\t\t<idno type=\"wikidata\">" + TextUtilities.HTMLEncode(biblio.getWikidataQid()) + "</idno>\n");
+        }
+
         if (!StringUtils.isEmpty(biblio.getOAURL())) {
             tei.append("\t\t\t\t\t<ptr type=\"open-access\" target=\"").append(TextUtilities.HTMLEncode(biblio.getOAURL())).append("\" />\n");
         }

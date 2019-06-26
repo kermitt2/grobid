@@ -96,6 +96,8 @@ public class BiblioItem {
                 ", PII='" + PII + '\'' +
                 ", ark='" + ark + '\'' +
                 ", istexId='" + istexId + '\'' +
+                ", fatcatIdent='" + fatcatIdent + '\'' +
+                ", wikidataQid='" + wikidataQid + '\'' +
                 ", inDOI='" + inDOI + '\'' +
                 ", abstract_='" + abstract_ + '\'' +
                 ", authors='" + authors + '\'' +
@@ -238,6 +240,8 @@ public class BiblioItem {
     private String PII = null;
     private String ark = null;
     private String istexId = null;
+    private String fatcatIdent = null;
+    private String wikidataQid = null;
     private String abstract_ = null;
     private String collaboration = null;
 
@@ -492,6 +496,14 @@ public class BiblioItem {
 
     public String getIstexId() {
         return istexId;
+    }
+
+    public String getFatcatIdent() {
+        return fatcatIdent;
+    }
+
+    public String getWikidataQid() {
+        return wikidataQid;
     }
 
     public String getInDOI() {
@@ -991,6 +1003,14 @@ public class BiblioItem {
 
     public void setArk(String id) {
         ark = id;
+    }
+
+    public void setFatcatIdent(String id) {
+        fatcatIdent = id;
+    }
+
+    public void setWikidataQid(String id) {
+        wikidataQid = id;
     }
 
     public void setArticleTitle(String ti) {
@@ -4038,6 +4058,9 @@ public class BiblioItem {
         bib.setPII(bibo.getPII());
         bib.setIstexId(bibo.getIstexId());
         bib.setArk(bibo.getArk());
+        bib.setArXivId(bibo.getArXivId());
+        bib.setFatcatIdent(bibo.getFatcatIdent());
+        bib.setWikidataQid(bibo.getWikidataQid());
     }
 
     /**
@@ -4058,6 +4081,12 @@ public class BiblioItem {
             bib.setIstexId(bibo.getIstexId());
         if (bibo.getArk() != null)
             bib.setArk(bibo.getArk());
+        if (bibo.getArXivId() != null)
+            bib.setArXivId(bibo.getArXivId());
+        if (bibo.getFatcatIdent() != null)
+            bib.setFatcatIdent(bibo.getFatcatIdent());
+        if (bibo.getWikidataQid() != null)
+            bib.setWikidataQid(bibo.getWikidataQid());
 
         if (bibo.getOAURL() != null)
             bib.setOAURL(bibo.getOAURL());
