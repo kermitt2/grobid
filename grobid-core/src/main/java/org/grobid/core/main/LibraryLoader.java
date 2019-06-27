@@ -2,6 +2,7 @@ package org.grobid.core.main;
 
 import org.apache.commons.lang3.SystemUtils;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
+import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.jni.PythonEnvironmentConfig;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Utilities;
@@ -172,7 +173,7 @@ public class LibraryLoader {
                     }
 
                 } catch (Exception e) {
-                    LOGGER.info("Loading JEP native library for DeLFT failed", e);
+                    throw new GrobidException("Loading JEP native library for DeLFT failed", e);
                 }
             }
 
