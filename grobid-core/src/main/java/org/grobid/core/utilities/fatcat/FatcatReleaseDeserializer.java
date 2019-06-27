@@ -111,16 +111,32 @@ public class FatcatReleaseDeserializer extends CrossrefDeserializer<BiblioItem> 
 					JsonNode authorNode = authorIt.next();
 					
 					Person person = new Person();
-					if (authorNode.get("given_name") != null && !authorNode.get("given_name").isMissingNode()) {
-						person.setFirstName(authorNode.get("given_name").asText());
-						person.normalizeCrossRefFirstName();
-					}
+                    // try release-specific names first
 					if (authorNode.get("surname") != null && !authorNode.get("surname").isMissingNode()) {
 						person.setLastName(authorNode.get("family").asText());
-    	   			}
-					if (authorNode.get("raw_name") != null && !authorNode.get("raw_name").isMissingNode()) {
-						person.setRawName(authorNode.get("raw_name").asText());
-    	   			}
+                        if (authorNode.get("given_name") != null && !authorNode.get("given_name").isMissingNode()) {
+                            person.setFirstName(authorNode.get("given_name").asText());
+                            person.normalizeCrossRefFirstName();
+                        }
+                    } else if (authorNode.get("creator") != null && !authorNode.get("creator").isMissingNode()) {
+                        // then try generic (creator entity) full name or display name
+                        JsonNode creatorNode = authorNode.get("creator");
+                        if (creatorNode.get("surname") != null && !creatorNode.get("surname").isMissingNode()) {
+                            person.setLastName(creatorNode.get("family").asText());
+                            if (creatorNode.get("given_name") != null &&
+                                    !creatorNode.get("given_name").isMissingNode()) {
+                                person.setFirstName(creatorNode.get("given_name").asText());
+                                person.normalizeCrossRefFirstName();
+                            }
+                        // generic display name as rawName (does not fall through to paper raw_name)
+                        } else if (creatorNode.get("display_name") != null &&
+                                   !creatorNode.get("display_name").isMissingNode()) {
+                            person.setRawName(creatorNode.get("display_name").asText());
+                        }
+                    } else if (authorNode.get("raw_name") != null && !authorNode.get("raw_name").isMissingNode()) {
+                        // last try paper-specific raw name
+                        person.setRawName(authorNode.get("raw_name").asText());
+                    }
     	   			// for cases like JM Smith and for case normalisation
     	   			person.normalizeName();
 					biblio.addFullAuthor(person);
