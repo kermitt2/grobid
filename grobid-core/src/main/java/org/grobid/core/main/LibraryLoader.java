@@ -155,10 +155,10 @@ public class LibraryLoader {
                         LOGGER.info("no python environment configured");
                     } else {
                         LOGGER.info("configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
-                        LOGGER.info("adding library path " + pythonEnvironmentConfig.getJepPath());
-                        addLibraryPath(pythonEnvironmentConfig.getJepPath().toString());
 
                         if (SystemUtils.IS_OS_MAC) {
+                            LOGGER.info("adding library path " + pythonEnvironmentConfig.getJepPath());
+                            addLibraryPath(pythonEnvironmentConfig.getJepPath().toString());
 //                        System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + LibraryLoader.getLibraryFolder());
 //                        System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + pythonEnvironmentConfig.getVirtualEnv());
                             addLibraryPath(pythonEnvironmentConfig.getVirtualEnv().toString() + File.separator + "lib");
