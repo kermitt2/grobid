@@ -81,12 +81,16 @@ public class CitationsVisualizer {
             else {
                 // by default we put the existing url, doi or arXiv link
                 BiblioItem biblio = cit.getResBib();
-                if (!StringUtils.isEmpty(biblio.getDOI())) {
-                    theUrl = "https://dx.doi.org/" + biblio.getDOI();
-                } else if (!StringUtils.isEmpty(biblio.getArXivId())) {
+                // NOTE: this code block repeated in this file
+                if (!StringUtils.isEmpty(biblio.getArXivId())) {
                     theUrl = "https://arxiv.org/" + biblio.getArXivId();
                 } else if (!StringUtils.isEmpty(biblio.getWeb())) {
                     theUrl = biblio.getWeb();
+                } else if (!StringUtils.isEmpty(biblio.getFatcatIdent())) {
+                    // TODO: see comment at other instance of fatcat link insertion
+                    theUrl = "https://fatcat.wiki/" + biblio.getFatcatIdent();
+                } else if (!StringUtils.isEmpty(biblio.getDOI())) {
+                    theUrl = "https://dx.doi.org/" + biblio.getDOI();
                 }
             }
             if (cit.getResBib().getCoordinates() != null) {
@@ -319,14 +323,19 @@ public class CitationsVisualizer {
                 BiblioItem biblio = cit.getResBib();
                 String theUrl = null;
 
-                if (!StringUtils.isEmpty(biblio.getOAURL())) {
-                    theUrl = biblio.getOAURL();
-                } else if (!StringUtils.isEmpty(biblio.getDOI())) {
-                    theUrl = "https://dx.doi.org/" + biblio.getDOI();
-                } else if (!StringUtils.isEmpty(biblio.getArXivId())) {
+                // NOTE: this code block repeated in this file
+                if (!StringUtils.isEmpty(biblio.getArXivId())) {
                     theUrl = "https://arxiv.org/" + biblio.getArXivId();
                 } else if (!StringUtils.isEmpty(biblio.getWeb())) {
                     theUrl = biblio.getWeb();
+                } else if (!StringUtils.isEmpty(biblio.getFatcatIdent())) {
+                    // TODO: fatcat.wiki will redirect the "release_" prefix,
+                    // but would be better to do that here instead
+                    theUrl = "https://fatcat.wiki/" + biblio.getFatcatIdent();
+                } else if (!StringUtils.isEmpty(biblio.getOAURL())) {
+                    theUrl = biblio.getOAURL();
+                } else if (!StringUtils.isEmpty(biblio.getDOI())) {
+                    theUrl = "https://dx.doi.org/" + biblio.getDOI();
                 }
                 if (theUrl != null)
                     jsonRef.writeStringField("url", theUrl);
