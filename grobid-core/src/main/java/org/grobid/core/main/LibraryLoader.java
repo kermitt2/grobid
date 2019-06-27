@@ -154,6 +154,8 @@ public class LibraryLoader {
                         LOGGER.info("no python environment configured");
                     } else {
                         LOGGER.info("configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
+                        LOGGER.info("adding library path " + pythonEnvironmentConfig.getNativeLibPath());
+                        addLibraryPath(pythonEnvironmentConfig.getNativeLibPath().toString());
                         LOGGER.info("adding library path " + pythonEnvironmentConfig.getJepPath());
                         addLibraryPath(pythonEnvironmentConfig.getJepPath().toString());
 

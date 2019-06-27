@@ -44,6 +44,13 @@ public class PythonEnvironmentConfig {
         return this.sitePackagesPath;
     }
 
+    public Path getNativeLibPath() {
+        if (this.virtualEnv == null) {
+            return null;
+        }
+        return Paths.get(this.virtualEnv.toString(), "lib");
+    }
+
     public Path getJepPath() {
         return this.jepPath;
     }
@@ -69,7 +76,10 @@ public class PythonEnvironmentConfig {
             pythons = Files.find(
                 Paths.get(virtualEnv, "lib"),
                 1,
-                (path, attr) -> path.getFileName().toString().contains("python3")
+                (path, attr) -> (
+                    path.toFile().isDirectory()
+                    && path.getFileName().toString().contains("python3")
+                )
             ).collect(Collectors.toList());
         } catch (IOException e) {
             throw new GrobidResourceException("failed to get python versions from virtual environment", e);
@@ -99,10 +109,18 @@ public class PythonEnvironmentConfig {
         );
     }
 
+    public static String getActiveVirtualEnv() {
+        String activeVirtualEnv = System.getenv("VIRTUAL_ENV");
+        if (StringUtils.isEmpty(activeVirtualEnv)) {
+            activeVirtualEnv = System.getenv("CONDA_PREFIX");
+        }
+        return activeVirtualEnv;
+    }
+
     public static PythonEnvironmentConfig getInstance() throws GrobidResourceException {
         return getInstanceForVirtualEnv(
             GrobidProperties.getPythonVirtualEnv(),
-            System.getenv("VIRTUAL_ENV")
+            getActiveVirtualEnv()
         );
     }
 }
