@@ -51,6 +51,16 @@ public class PythonEnvironmentConfig {
         return Paths.get(this.virtualEnv.toString(), "lib");
     }
 
+    public Path[] getNativeLibPaths() {
+        if (this.virtualEnv == null) {
+            return new Path[0];
+        }
+        return new Path[] {
+            this.getNativeLibPath(),
+            this.getJepPath()
+        };
+    }
+
     public Path getJepPath() {
         return this.jepPath;
     }
