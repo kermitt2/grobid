@@ -679,7 +679,7 @@ public class CitationParser extends AbstractParser {
                         else {
                             Matcher doiMatcher = TextUtilities.DOIPattern.matcher(cleanS2);
                             if (doiMatcher.find())
-                                localTag = "<idno type=\"doi\">";
+                                localTag = "<idno type=\"DOI\">";
                         }
                         output = writeField(s1, lastTag0, s2, "<pubnum>", localTag, addSpace, 0);
                     } else {
