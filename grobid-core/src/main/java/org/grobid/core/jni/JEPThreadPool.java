@@ -128,7 +128,7 @@ public class JEPThreadPool {
      * The method will return to the thread its dedicated Jep instance
      * (or create one the first time).
      */
-    public Jep getJEPInstance() {
+    public synchronized Jep getJEPInstance() {
         long threadId = Thread.currentThread().getId();
         Jep jep = jepInstances.get(threadId);
         if (jep == null) {

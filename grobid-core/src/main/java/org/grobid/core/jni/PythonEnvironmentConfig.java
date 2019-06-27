@@ -44,6 +44,23 @@ public class PythonEnvironmentConfig {
         return this.sitePackagesPath;
     }
 
+    public Path getNativeLibPath() {
+        if (this.virtualEnv == null) {
+            return null;
+        }
+        return Paths.get(this.virtualEnv.toString(), "lib");
+    }
+
+    public Path[] getNativeLibPaths() {
+        if (this.virtualEnv == null) {
+            return new Path[0];
+        }
+        return new Path[] {
+            this.getNativeLibPath(),
+            this.getJepPath()
+        };
+    }
+
     public Path getJepPath() {
         return this.jepPath;
     }
@@ -60,8 +77,6 @@ public class PythonEnvironmentConfig {
         }
         if (StringUtils.isEmpty(virtualEnv)) {
             virtualEnv = activeVirtualEnv;
-        } else if(StringUtils.isEmpty(activeVirtualEnv)) {
-            activeVirtualEnv = virtualEnv;
         }
 
         List<Path> pythons;
@@ -69,7 +84,10 @@ public class PythonEnvironmentConfig {
             pythons = Files.find(
                 Paths.get(virtualEnv, "lib"),
                 1,
-                (path, attr) -> path.getFileName().toString().contains("python3")
+                (path, attr) -> (
+                    path.toFile().isDirectory()
+                    && path.getFileName().toString().contains("python3")
+                )
             ).collect(Collectors.toList());
         } catch (IOException e) {
             throw new GrobidResourceException("failed to get python versions from virtual environment", e);
@@ -95,14 +113,22 @@ public class PythonEnvironmentConfig {
             Paths.get(virtualEnv),
             sitePackagesPath,
             jepPath,
-            activeVirtualEnv != null && virtualEnv.equals(activeVirtualEnv)
+            StringUtils.equals(virtualEnv, activeVirtualEnv)
         );
+    }
+
+    public static String getActiveVirtualEnv() {
+        String activeVirtualEnv = System.getenv("VIRTUAL_ENV");
+        if (StringUtils.isEmpty(activeVirtualEnv)) {
+            activeVirtualEnv = System.getenv("CONDA_PREFIX");
+        }
+        return activeVirtualEnv;
     }
 
     public static PythonEnvironmentConfig getInstance() throws GrobidResourceException {
         return getInstanceForVirtualEnv(
             GrobidProperties.getPythonVirtualEnv(),
-            System.getenv("VIRTUAL_ENV")
+            getActiveVirtualEnv()
         );
     }
 }
