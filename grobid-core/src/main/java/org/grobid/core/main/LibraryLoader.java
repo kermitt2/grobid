@@ -166,6 +166,7 @@ public class LibraryLoader {
                             System.loadLibrary("python3.6m");
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_LINUX) {
+                            addLibraryPath(pythonEnvironmentConfig.getVirtualEnv().toString() + File.separator + "lib");
                             LOGGER.info("java.library.path: " + System.getProperty("java.library.path"));
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_WINDOWS) {
