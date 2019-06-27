@@ -686,7 +686,7 @@ public class TEIFormatter {
         }
 
         if (!StringUtils.isEmpty(biblio.getFatcatIdent())) {
-            tei.append("\t\t\t\t\t<idno type=\"fatcat_ident\">" + TextUtilities.HTMLEncode(biblio.getFatcatIdent()) + "</idno>\n");
+            tei.append("\t\t\t\t\t<idno type=\"fatcat\">" + TextUtilities.HTMLEncode(biblio.getFatcatIdent()) + "</idno>\n");
         }
 
         if (!StringUtils.isEmpty(biblio.getWikidataQid())) {

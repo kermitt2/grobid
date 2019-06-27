@@ -2150,6 +2150,20 @@ public class BiblioItem {
                 tei.append("<idno type=\"istexId\">" + TextUtilities.HTMLEncode(istexId) + "</idno>\n");
             }
 
+            if (!StringUtils.isEmpty(fatcatIdent)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"fatcat\">" + TextUtilities.HTMLEncode(fatcatIdent) + "</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(wikidataQid)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"wikidata\">" + TextUtilities.HTMLEncode(wikidataQid) + "</idno>\n");
+            }
+
             if (!StringUtils.isEmpty(pubnum)) {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
