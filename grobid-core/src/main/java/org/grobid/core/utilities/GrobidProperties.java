@@ -13,6 +13,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Enumeration;
 import java.util.Properties;
 
@@ -428,7 +430,7 @@ public class GrobidProperties {
     public static String getDeLFTFilePath() {
         String rawPath = getPropertyValue(GrobidPropertyKeys.PROP_GROBID_DELFT_PATH);
         File pathFile = new File(rawPath);
-        if (!pathFile.exists()) {
+        if (!Files.exists(Paths.get(rawPath).toAbsolutePath())) {
             rawPath = "../" + rawPath;
             pathFile = new File(rawPath);
         }
