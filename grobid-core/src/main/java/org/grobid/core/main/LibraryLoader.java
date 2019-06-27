@@ -161,11 +161,12 @@ public class LibraryLoader {
                             LOGGER.info("adding library path " + pythonEnvironmentConfig.getJepPath());
                             addLibraryPath(pythonEnvironmentConfig.getJepPath().toString());
 //                        System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + LibraryLoader.getLibraryFolder());
-//                        System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + pythonEnvironmentConfig.getVirtualEnv());
+
                             addLibraryPath(pythonEnvironmentConfig.getVirtualEnv().toString() + File.separator + "lib");
                             System.loadLibrary("python3.6m");
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_LINUX) {
+                            System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + pythonEnvironmentConfig.getVirtualEnv() + File.separator + "lib");
                             addLibraryPath(pythonEnvironmentConfig.getVirtualEnv().toString() + File.separator + "lib");
                             LOGGER.info("java.library.path: " + System.getProperty("java.library.path"));
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
