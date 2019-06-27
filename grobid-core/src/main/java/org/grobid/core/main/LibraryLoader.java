@@ -149,7 +149,7 @@ public class LibraryLoader {
                 // java.library.path (JEP will anyway try to load from java.library.path, so explicit file 
                 // loading here will not help)
                 try {
-                    addLibraryPath(libraryFolder.getAbsolutePath());
+
                     PythonEnvironmentConfig pythonEnvironmentConfig = PythonEnvironmentConfig.getInstance();
                     if (pythonEnvironmentConfig.isEmpty()) {
                         LOGGER.info("no python environment configured");
@@ -157,6 +157,7 @@ public class LibraryLoader {
                         LOGGER.info("configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
 
                         if (SystemUtils.IS_OS_MAC) {
+                            addLibraryPath(libraryFolder.getAbsolutePath());
                             LOGGER.info("adding library path " + pythonEnvironmentConfig.getJepPath());
                             addLibraryPath(pythonEnvironmentConfig.getJepPath().toString());
 //                        System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + LibraryLoader.getLibraryFolder());
