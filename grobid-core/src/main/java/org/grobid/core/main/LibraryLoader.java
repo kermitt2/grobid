@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.lang.reflect.Field;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.util.Arrays;
 
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
@@ -154,15 +154,12 @@ public class LibraryLoader {
                         LOGGER.info("no python environment configured");
                     } else {
                         LOGGER.info("configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
-                        LOGGER.info("adding library path " + pythonEnvironmentConfig.getNativeLibPath());
-                        addLibraryPath(pythonEnvironmentConfig.getNativeLibPath().toString());
-                        LOGGER.info("adding library path " + pythonEnvironmentConfig.getJepPath());
-                        addLibraryPath(pythonEnvironmentConfig.getJepPath().toString());
+                        LOGGER.info("adding library paths " + pythonEnvironmentConfig.getNativeLibPaths());
+                        for (Path path: pythonEnvironmentConfig.getNativeLibPaths()) {
+                            addLibraryPath(path.toString());
+                        }
 
                         if (SystemUtils.IS_OS_MAC) {
-//                        System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + LibraryLoader.getLibraryFolder());
-//                        System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + pythonEnvironmentConfig.getVirtualEnv());
-                            addLibraryPath(pythonEnvironmentConfig.getVirtualEnv().toString() + File.separator + "lib");
                             System.loadLibrary("python3.6m");
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_LINUX) {
