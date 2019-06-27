@@ -44,7 +44,7 @@ Then the following tags are used for structuring the bibliographical references:
 
 * `<ptr type="web">` for web URL
 
-* `<idno>` for the document-specific identifier, in particular DOI and arXiv identifiers, optionally the type of identifier can be given by the attribute `@type`, for instance, `<idno type="doi">...</idno>`, for report identifiers `<idno type="report">...</idno>` is used 
+* `<idno>` for the document-specific identifier, in particular DOI and arXiv identifiers, optionally the type of identifier can be given by the attribute `@type`, for instance, `<idno type="DOI">...</idno>`, for report identifiers `<idno type="report">...</idno>` is used 
 
 * `<note type="report">` in the case of technical report at large, encode the indication of the kind of report, this includes "technical report" from an institution, but also the kind of thesis ("Ph.D. thesis", "M.Sc. thesis", etc.)
 
