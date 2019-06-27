@@ -3699,7 +3699,7 @@ public class BiblioItem {
                     }
 
 			        if ( (author.getFirstName() == null) && (author.getMiddleName() == null) &&
-			                (author.getLastName() == null) ) {
+			                (author.getLastName() == null) && (author.getRawName() == null)) {
 						continue;
 					}
 

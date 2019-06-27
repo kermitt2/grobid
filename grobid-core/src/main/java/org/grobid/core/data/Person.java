@@ -165,6 +165,8 @@ public class Person {
             res += middleName + " ";
         if (lastName != null)
             res += lastName + " ";
+        if ((firstName == null) && (middleName == null) && (lastName == null) && (rawName != null))
+            res += rawName + " ";
         if (suffix != null)
             res += suffix;
         if (email != null) {
@@ -184,7 +186,7 @@ public class Person {
 
     public String toTEI(boolean withCoordinates) {
         if ( (firstName == null) && (middleName == null) &&
-                (lastName == null) ) {
+                (lastName == null) && (rawName == null)) {
             return null;
         }
 
@@ -208,6 +210,10 @@ public class Person {
         }
         if (lastName != null) {
             persElement.appendChild(XmlBuilderUtils.teiElement("surname", TextUtilities.HTMLEncode(lastName)));
+        }
+        // only include the rawName, plopped right down as text, if no other names are set
+        if ((firstName == null) && (middleName == null) && (lastName == null) && (rawName != null)) {
+            persElement.appendChild(TextUtilities.HTMLEncode(rawName));
         }
         if (suffix != null) {
             persElement.appendChild(XmlBuilderUtils.teiElement("genName", TextUtilities.HTMLEncode(suffix)));
@@ -391,6 +397,12 @@ public class Person {
         if (middleName != null) {
             middleName = middleName.replace(".", ". ");
             middleName = middleName.replace("  ", " ");
+        }
+
+        // cleaning for fatcat rawName
+        if (rawName != null) {
+            rawName = rawName.replace(".", ". ");
+            rawName = rawName.replace("  ", " ");
         }
         
         // other weird stuff: <forename type="first">G. Arjen</forename><surname>de Groot</surname>
