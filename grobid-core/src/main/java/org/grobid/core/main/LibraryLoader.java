@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.lang.reflect.Field;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.util.Arrays;
 
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
@@ -196,8 +196,9 @@ public class LibraryLoader {
             if (path.equals(pathToAdd))
                 return;
 
-        String[] newPaths = Arrays.copyOf(paths, paths.length + 1);
-        newPaths[newPaths.length - 1] = pathToAdd;
+        String[] newPaths = new String[paths.length + 1];
+        System.arraycopy(paths, 0, newPaths, 1, paths.length);
+        newPaths[0] = pathToAdd;
         usrPathsField.set(null, newPaths);
     }
 
