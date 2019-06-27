@@ -77,8 +77,6 @@ public class PythonEnvironmentConfig {
         }
         if (StringUtils.isEmpty(virtualEnv)) {
             virtualEnv = activeVirtualEnv;
-        } else if(StringUtils.isEmpty(activeVirtualEnv)) {
-            activeVirtualEnv = virtualEnv;
         }
 
         List<Path> pythons;
@@ -115,7 +113,7 @@ public class PythonEnvironmentConfig {
             Paths.get(virtualEnv),
             sitePackagesPath,
             jepPath,
-            activeVirtualEnv != null && virtualEnv.equals(activeVirtualEnv)
+            StringUtils.equals(virtualEnv, activeVirtualEnv)
         );
     }
 
