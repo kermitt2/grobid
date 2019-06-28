@@ -20,16 +20,19 @@ public class PythonEnvironmentConfig {
     private Path sitePackagesPath;
     private Path jepPath;
     private boolean active;
+    private String pythonVersion;
 
     public PythonEnvironmentConfig(
         Path virtualEnv,
         Path sitePackagesPath,
         Path jepPath,
+        String pythonVersion,
         boolean active) {
         this.virtualEnv = virtualEnv;
         this.sitePackagesPath = sitePackagesPath;
         this.jepPath = jepPath;
         this.active = active;
+        this.pythonVersion = pythonVersion;
     }
 
     public boolean isEmpty() {
@@ -55,7 +58,7 @@ public class PythonEnvironmentConfig {
         if (this.virtualEnv == null) {
             return new Path[0];
         }
-        return new Path[] {
+        return new Path[]{
             this.getNativeLibPath(),
             this.getJepPath()
         };
@@ -73,7 +76,7 @@ public class PythonEnvironmentConfig {
         throws GrobidResourceException {
 
         if (StringUtils.isEmpty(virtualEnv) && StringUtils.isEmpty(activeVirtualEnv)) {
-            return new PythonEnvironmentConfig(null, null, null, false);
+            return new PythonEnvironmentConfig(null, null, null, null, false);
         }
         if (StringUtils.isEmpty(virtualEnv)) {
             virtualEnv = activeVirtualEnv;
@@ -86,7 +89,7 @@ public class PythonEnvironmentConfig {
                 1,
                 (path, attr) -> (
                     path.toFile().isDirectory()
-                    && path.getFileName().toString().contains("python3")
+                        && path.getFileName().toString().contains("python3")
                 )
             ).collect(Collectors.toList());
         } catch (IOException e) {
@@ -95,7 +98,9 @@ public class PythonEnvironmentConfig {
 
         List<String> pythonVersions = pythons
             .stream()
-            .map(path -> FilenameUtils.getBaseName(path.getFileName().toString()).replace("libpython", ""))
+            .map(path -> FilenameUtils.getName(path.getFileName().toString())
+                .replace("libpython", "").replace("python", ""))
+            .filter(version -> version.contains("3.5") || version.contains("3.6"))
             .distinct()
             .sorted()
             .collect(Collectors.toList());
@@ -107,12 +112,14 @@ public class PythonEnvironmentConfig {
             );
         }
 
+
         Path sitePackagesPath = Paths.get(pythons.get(0).toString(), "site-packages");
         Path jepPath = Paths.get(sitePackagesPath.toString(), "jep");
         return new PythonEnvironmentConfig(
             Paths.get(virtualEnv),
             sitePackagesPath,
             jepPath,
+            pythonVersions.get(0),
             StringUtils.equals(virtualEnv, activeVirtualEnv)
         );
     }
@@ -130,5 +137,9 @@ public class PythonEnvironmentConfig {
             GrobidProperties.getPythonVirtualEnv(),
             getActiveVirtualEnv()
         );
+    }
+
+    public String getPythonVersion() {
+        return pythonVersion;
     }
 }
