@@ -149,26 +149,21 @@ public class LibraryLoader {
                 // java.library.path (JEP will anyway try to load from java.library.path, so explicit file 
                 // loading here will not help)
                 try {
+                    addLibraryPath(libraryFolder.getAbsolutePath());
 
                     PythonEnvironmentConfig pythonEnvironmentConfig = PythonEnvironmentConfig.getInstance();
                     if (pythonEnvironmentConfig.isEmpty()) {
                         LOGGER.info("no python environment configured");
                     } else {
                         LOGGER.info("configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
-
+                        LOGGER.info("adding library paths " + pythonEnvironmentConfig.getNativeLibPaths());
+                        for (Path path: pythonEnvironmentConfig.getNativeLibPaths()) {
+                            addLibraryPath(path.toString());
+                        }
                         if (SystemUtils.IS_OS_MAC) {
-                            addLibraryPath(libraryFolder.getAbsolutePath());
-                            LOGGER.info("adding library path " + pythonEnvironmentConfig.getJepPath());
-                            addLibraryPath(pythonEnvironmentConfig.getJepPath().toString());
-//                        System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + LibraryLoader.getLibraryFolder());
-
-                            addLibraryPath(pythonEnvironmentConfig.getNativeLibPath().toString());
                             System.loadLibrary("python" + pythonEnvironmentConfig.getPythonVersion() + "m");
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_LINUX) {
-                            System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + pythonEnvironmentConfig.getVirtualEnv() + File.separator + "lib");
-                            addLibraryPath(pythonEnvironmentConfig.getVirtualEnv().toString() + File.separator + "lib");
-                            LOGGER.info("java.library.path: " + System.getProperty("java.library.path"));
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_WINDOWS) {
                             throw new UnsupportedOperationException("Delft on Windows is not supported.");
