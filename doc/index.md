@@ -19,13 +19,15 @@
 
 * [Use GROBID with containers (Docker)](Grobid-docker.md)
 
-* [Use Grobid library in third party Java applications](Grobid-java-library.md)
-
 * [Troubleshooting and known issues](Troubleshooting.md)
+
+* [Use Grobid library in third party Java applications](Grobid-java-library.md)
 
 * [TEI encoding of results](TEI-encoding-of-results.md)
 
 * [Coordinates of structures in the original PDF](Coordinates-in-PDF.md)
+
+* [Adding a consolidation service](Consolidation.md)
 
 * [Training and evaluating the GROBID models](Training-the-models-of-Grobid.md)
 
@@ -44,5 +46,11 @@
 
 <h3>Developer notes</h3>
 
+* [Developer guide](Developer-guide.md)
+
+* [Using Deep Learning models instead of default CRF](Deep-Learning-models.md)
+
 * [Recompiling and integrating CRF libraries into GROBID](Recompiling-and-integrating-CRF-libraries.md)
+
+
 

@@ -8,7 +8,8 @@ import java.util.Arrays;
  */
 public enum GrobidCRFEngine {
     WAPITI("wapiti"),
-    CRFPP("crf");
+    CRFPP("crf"),
+    DELFT("delft");
 
     private final String ext;
 

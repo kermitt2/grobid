@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author Damien
+ * @author Damien, Patrice
  */
 public class GrobidRestUtils {
 

@@ -27,6 +27,7 @@ public class EngineParsers implements Closeable {
     private ReferenceSegmenterParser referenceSegmenterParser = null;
     private FigureParser figureParser = null;
     private TableParser tableParser = null;
+    private MonographParser monographParser = null;
 
     public AffiliationAddressParser getAffiliationAddressParser() {
         if (affiliationAddressParser == null) {
@@ -162,6 +163,35 @@ public class EngineParsers implements Closeable {
         return tableParser;
     }
 
+    public MonographParser getMonographParser() {
+        if (monographParser == null) {
+            synchronized (this) {
+                if (monographParser == null) {
+                    monographParser = new MonographParser();
+                }
+            }
+        }
+        return monographParser;
+    }
+
+    /**
+     * Init all model, this will also load the model into memory
+     */
+    public void initAll() {
+        affiliationAddressParser = getAffiliationAddressParser();
+        authorParser = getAuthorParser();
+        headerParser = getHeaderParser();
+        dateParser = getDateParser();
+        citationParser = getCitationParser();
+        fullTextParser = getFullTextParser();
+        //referenceExtractor = getReferenceExtractor();
+        segmentationParser = getSegmentationParser();
+        referenceSegmenterParser = getReferenceSegmenterParser();
+        figureParser = getFigureParser();
+        tableParser = getTableParser();
+        //MonographParser monographParser = getMonographParser();
+    }
+
     @Override
     public void close() throws IOException {
         LOGGER.debug("==> Closing all resources...");
@@ -194,6 +224,12 @@ public class EngineParsers implements Closeable {
             LOGGER.debug("CLOSING citationParser");
         }
 
+        if (segmentationParser != null) {
+            segmentationParser.close();
+            segmentationParser = null;
+            LOGGER.debug("CLOSING segmentationParser");
+        }
+
         if (fullTextParser != null) {
             fullTextParser.close();
             fullTextParser = null;
@@ -204,6 +240,12 @@ public class EngineParsers implements Closeable {
             referenceExtractor.close();
             referenceExtractor = null;
             LOGGER.debug("CLOSING referenceExtractor");
+        }
+
+        if (referenceSegmenterParser != null) {
+            referenceSegmenterParser.close();
+            referenceSegmenterParser = null;
+            LOGGER.debug("CLOSING referenceSegmenterParser");
         }
 
         if (chemicalParser != null) {
@@ -224,7 +266,13 @@ public class EngineParsers implements Closeable {
             LOGGER.debug("CLOSING tableParser");
         }
 
-        LOGGER.debug("==>All resources closed");
+        if (monographParser != null) {
+            monographParser.close();
+            monographParser = null;
+            LOGGER.debug("CLOSING monographParser");
+        }
+
+        LOGGER.debug("==> All resources closed");
 
     }
 }

@@ -134,5 +134,15 @@ UI5:%x[3,23]
 #UL2:%x[0,26]
 #UL3:%x[1,26]
 
+# callout style for bibliographiucal references (1)
+UM1:%x[0,24]
+
+# if callout is known for this token (1)
+UN1:%x[-2,25]
+UN2:%x[-1,25]
+UN3:%x[0,25]
+UN4:%x[1,25]
+UN5:%x[2,25]
+
 # Output
 B

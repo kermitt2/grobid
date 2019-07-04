@@ -40,10 +40,10 @@ public class GrobidAnalysisConfig {
     private int endPage = -1;
 
     // if consolidate citations
-    private boolean consolidateCitations = false;
+    private int consolidateCitations = 0;
 
     // if consolidate header
-    private boolean consolidateHeader = true;
+    private int consolidateHeader = 0;
 
 
     /// === TEI-specific settings ==
@@ -79,12 +79,12 @@ public class GrobidAnalysisConfig {
     public static class GrobidAnalysisConfigBuilder {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig();
 
-        public GrobidAnalysisConfigBuilder consolidateHeader(boolean consolidate) {
+        public GrobidAnalysisConfigBuilder consolidateHeader(int consolidate) {
             config.consolidateHeader = consolidate;
             return this;
         }
 
-        public GrobidAnalysisConfigBuilder consolidateCitations(boolean consolidate) {
+        public GrobidAnalysisConfigBuilder consolidateCitations(int consolidate) {
             config.consolidateCitations = consolidate;
             return this;
         }
@@ -167,11 +167,11 @@ public class GrobidAnalysisConfig {
         return endPage;
     }
 
-    public boolean isConsolidateCitations() {
+    public int getConsolidateCitations() {
         return consolidateCitations;
     }
 
-    public boolean isConsolidateHeader() {
+    public int getConsolidateHeader() {
         return consolidateHeader;
     }
 

@@ -6,6 +6,7 @@ import org.grobid.core.engines.tagging.TaggerFactory;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.trainer.evaluation.EvaluationUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,7 +68,9 @@ public abstract class AbstractTrainer implements Trainer {
         final File oldModelPath = GrobidProperties.getModelPath(model);
         trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads(), model);
         // if we are here, that means that training succeeded
-        renameModels(oldModelPath, tempModelPath);
+        // rename model for CRF sequence labellers (not with DeLFT deep learning models)
+        if (GrobidProperties.getGrobidCRFEngine() != GrobidCRFEngine.DELFT)
+            renameModels(oldModelPath, tempModelPath);
     }
 
     protected void renameModels(final File oldModelPath, final File tempModelPath) {
@@ -101,6 +104,13 @@ public abstract class AbstractTrainer implements Trainer {
             trainer.setWindow(window);
         if (nbMaxIterations != 0)
             trainer.setNbMaxIterations(nbMaxIterations);
+
+        File dirModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath()).getParentFile();
+        if (!dirModelPath.exists()) {
+            LOGGER.warn("Cannot find the destination directory " + dirModelPath.getAbsolutePath() + " for the model " + model.getModelName() + ". Creating it.");
+            dirModelPath.mkdir();
+            //throw new GrobidException("Cannot find the destination directory " + dirModelPath.getAbsolutePath() + " for the model " + model.toString());
+        }
         
         final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
         final File oldModelPath = GrobidProperties.getModelPath(model);
@@ -179,7 +189,6 @@ public abstract class AbstractTrainer implements Trainer {
         long end = System.currentTimeMillis();
 
         System.out.println("Model for " + trainer.getModel() + " created in " + (end - start) + " ms");
-
     }
 
     public File getEvalDataPath() {

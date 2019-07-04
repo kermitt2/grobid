@@ -113,58 +113,58 @@ public class BlockVisualizer {
             BoundingBox mainPageArea = teiDoc.getPage(pageNum).getMainArea();
             if (visualizePageMainArea) {
                 AnnotationUtil.annotatePage(document,
-                        mainPageArea.toString(), 10);
+                    mainPageArea.toString(), 10);
             }
+            File f = new File(xmlFile.getAbsolutePath() + "_data", "image-" + pageNum + ".svg");
+            if (f.exists()) {
+                String q = XQueryProcessor.getQueryFromResources("vector-coords.xq");
+                XQueryProcessor pr = new XQueryProcessor(f);
+                SequenceIterator it = pr.getSequenceIterator(q);
+                Item item;
+                List<BoundingBox> boxes = new ArrayList<>();
+
+                while ((item = it.next()) != null) {
+                    String c = item.getStringValue();
+                    String coords = pageNum + "," + c;
+                    BoundingBox e = BoundingBox.fromString(coords);
+
+                    if (!mainPageArea.contains(e) || e.area() / mainPageArea.area() > 0.8) {
+                        continue;
+                    }
 
 
-            String q = XQueryProcessor.getQueryFromResources("vector-coords.xq");
-            XQueryProcessor pr = new XQueryProcessor(new File(xmlFile.getAbsolutePath() + "_data", "image-" + pageNum + ".vec"));
-            SequenceIterator it = pr.getSequenceIterator(q);
-            Item item;
-            List<BoundingBox> boxes = new ArrayList<>();
+                    AnnotationUtil.annotatePage(document, e.toString(), 3);
 
-            while ((item = it.next()) != null) {
-                String c = item.getStringValue();
-                String coords = pageNum + "," + c;
-                BoundingBox e = BoundingBox.fromString(coords);
-
-                if (!mainPageArea.contains(e) || e.area() / mainPageArea.area() > 0.8) {
-                    continue;
+                    boxes.add(e);
                 }
 
+                if (visualizeVectorGraphics) {
+                    List<BoundingBox> remainingBoxes = mergeBoxes(boxes);
 
-                AnnotationUtil.annotatePage(document, e.toString(), 3);
-
-                boxes.add(e);
-            }
-
-            if (visualizeVectorGraphics) {
-                List<BoundingBox> remainingBoxes = mergeBoxes(boxes);
-
-                for (int i = 0; i < remainingBoxes.size(); i++) {
-                    Collection<Block> col = blockMultimap.get(pageNum);
-                    for (Block bl : col) {
+                    for (int i = 0; i < remainingBoxes.size(); i++) {
+                        Collection<Block> col = blockMultimap.get(pageNum);
+                        for (Block bl : col) {
 //                    if (!bl.getPage().getMainArea().contains(b)) {
 //                        continue;
 //                    }
 
-                        BoundingBox b = BoundingBox.fromPointAndDimensions(pageNum, bl.getX(), bl.getY(), bl.getWidth(), bl.getHeight());
-                        if (remainingBoxes.get(i).intersect(b)) {
-                            remainingBoxes.set(i, remainingBoxes.get(i).boundBox(b));
+                            BoundingBox b = BoundingBox.fromPointAndDimensions(pageNum, bl.getX(), bl.getY(), bl.getWidth(), bl.getHeight());
+                            if (remainingBoxes.get(i).intersect(b)) {
+                                remainingBoxes.set(i, remainingBoxes.get(i).boundBox(b));
+                            }
                         }
                     }
-                }
 
-                remainingBoxes = mergeBoxes(remainingBoxes);
+                    remainingBoxes = mergeBoxes(remainingBoxes);
 
-                for (BoundingBox b : remainingBoxes) {
-                    if (b.area() > 500) {
-                        AnnotationUtil.annotatePage(document, b.toString(), 1);
+                    for (BoundingBox b : remainingBoxes) {
+                        if (b.area() > 500) {
+                            AnnotationUtil.annotatePage(document, b.toString(), 1);
+                        }
                     }
                 }
             }
         }
-
 
         return document;
     }

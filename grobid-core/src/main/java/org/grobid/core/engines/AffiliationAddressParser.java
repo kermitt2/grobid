@@ -61,13 +61,10 @@ public class AffiliationAddressParser extends AbstractParser {
 
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
             placesPositions.add(lexicon.tokenPositionsCityNames(tokenizations));
+            List<List<LayoutToken>> allTokens = new ArrayList<List<LayoutToken>>();
+            allTokens.add(tokenizations);
+            String header = FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, allTokens, placesPositions);
 
-            String header = FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, placesPositions);
-
-            // add context
-//            st = new StringTokenizer(header, "\n");
-
-            //TODO:
             String res = label(header);
             return resultBuilder(res, tokenizations, false); // don't use pre-labels
         } catch (Exception e) {
@@ -112,7 +109,10 @@ public class AffiliationAddressParser extends AbstractParser {
                 lastLabel = null;
             }
             else {
-                String[] s = line.split("\t");
+                String delimiter = "\t";
+                if (line.indexOf(delimiter) == -1)
+                    delimiter = " "; 
+                String[] s = line.split(delimiter);
                 String s0 = s[0].trim();
                 int p0 = p;
                 boolean strop = false;
@@ -175,53 +175,21 @@ public class AffiliationAddressParser extends AbstractParser {
         return resultBuilder(res, tokenizations, false); // normally use pre-label because it is a reflow
     }
 
-
-    static class DebugTahher {
-        private String str = "";
-
-        public void add(String s) {
-            str += s;
-        }
-
-        public void clear() {
-            str = "";
-        }
-
-        String[] split;
-
-
-        public boolean parse() {
-            System.out.println("Parsing:\n" + str + "\n------------------");
-            split = str.split("\n");
-
-            return true;
-        }
-
-        public int size() {
-            return split.length;
-        }
-
-
-    }
-
     private String runReflow(List<String> affiliationBlocks,
                              List<LayoutToken> tokenizations) {
-//        StringBuilder res = new StringBuilder();
-//        DebugTahher tagger = new DebugTahher();
         try {
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
             placesPositions.add(lexicon.tokenPositionsCityNames(tokenizations));
+            List<List<LayoutToken>> allTokens = new ArrayList<List<LayoutToken>>();
+            allTokens.add(tokenizations);
             String header =
-                    FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, placesPositions);
+                    FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, allTokens, placesPositions);
 
             if ((header == null) || (header.trim().length() == 0)) {
                 return null;
             }
 
-            String res = label(header);
-            res = label(res);
-
-            return res;
+            return label(header);
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
@@ -277,7 +245,10 @@ public class AffiliationAddressParser extends AbstractParser {
                     hasAddress = false;
                     continue;
                 }
-                StringTokenizer st3 = new StringTokenizer(line, "\t");
+                String delimiter = "\t";
+                if (line.indexOf(delimiter) == -1)
+                    delimiter = " "; 
+                StringTokenizer st3 = new StringTokenizer(line, delimiter);
                 int ll = st3.countTokens();
                 int i = 0;
                 String s1 = null; // predicted label

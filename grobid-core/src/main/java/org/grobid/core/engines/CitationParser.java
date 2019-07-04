@@ -19,6 +19,8 @@ import org.grobid.core.features.FeaturesVectorCitation;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.PDFAnnotation;
+import org.grobid.core.layout.PDFAnnotation.Type;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
@@ -56,7 +58,7 @@ public class CitationParser extends AbstractParser {
         this.parsers = parsers;
     }
 
-    public BiblioItem processing(String input, boolean consolidate) {
+    public BiblioItem processing(String input, int consolidate) {
         if (StringUtils.isBlank(input)) {
             return null;
         }
@@ -71,7 +73,7 @@ public class CitationParser extends AbstractParser {
         return processing(tokens, consolidate);
     }
 
-    public BiblioItem processing(List<LayoutToken> tokens, boolean consolidate) {
+    public BiblioItem processing(List<LayoutToken> tokens, int consolidate) {
         BiblioItem resCitation;
         if (CollectionUtils.isEmpty(tokens)) {
             return null;
@@ -137,8 +139,9 @@ public class CitationParser extends AbstractParser {
                 resCitation.postProcessPages();
             }
 
-            if (consolidate) {
-                resCitation = consolidateCitation(resCitation);
+            //if (consolidate != 0) 
+            {
+                resCitation = consolidateCitation(resCitation, LayoutTokensUtil.toText(tokens), consolidate);
             }
 
             return resCitation;
@@ -153,7 +156,7 @@ public class CitationParser extends AbstractParser {
 
         List<BibDataSet> results = new ArrayList<>();
         for (LabeledReferenceResult ref : segm) {
-            BiblioItem bib = processing(ref.getTokens(), false);
+            BiblioItem bib = processing(ref.getTokens(), 0);
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
@@ -166,7 +169,7 @@ public class CitationParser extends AbstractParser {
         return results;
     }
 
-    public List<BibDataSet> processingReferenceSection(Document doc, ReferenceSegmenter referenceSegmenter, boolean consolidate) {
+    public List<BibDataSet> processingReferenceSection(Document doc, ReferenceSegmenter referenceSegmenter, int consolidate) {
         List<BibDataSet> results = new ArrayList<BibDataSet>();
 
         String referencesStr = doc.getDocumentPartText(SegmentationLabels.REFERENCES);
@@ -189,45 +192,78 @@ public class CitationParser extends AbstractParser {
 
         // consolidation: if selected, is not done individually for each citation but 
         // in a second stage for all citations
-        for (LabeledReferenceResult ref : references) {
-            BiblioItem bib = processing(ref.getReferenceText(), false);
-            if ((bib != null) && !bib.rejectAsReference()) {
-                BibDataSet bds = new BibDataSet();
-                bds.setRefSymbol(ref.getLabel());
-                bds.setResBib(bib);
-                bds.setRawBib(ref.getReferenceText());
-                bds.getResBib().setCoordinates(ref.getCoordinates());
-                results.add(bds);
+        if (references != null) {
+            for (LabeledReferenceResult ref : references) {
+                // paranoiac check
+                if (ref == null) 
+                    continue;
+
+                BiblioItem bib = processing(ref.getReferenceText(), 0);
+                if (bib == null) 
+                    continue;
+
+                // check if we have an interesting url annotation over this bib. ref.
+                List<LayoutToken> refTokens = ref.getTokens();
+                if ((refTokens != null) && (refTokens.size() > 0)) {
+                    List<Integer> localPages = new ArrayList<Integer>();
+                    for(LayoutToken token : refTokens) {
+                        if (!localPages.contains(token.getPage())) {
+                            localPages.add(token.getPage());
+                        }
+                    }
+                    for(PDFAnnotation annotation : doc.getPDFAnnotations()) {
+                        if (annotation.getType() != Type.URI) 
+                            continue;
+                        if (!localPages.contains(annotation.getPageNumber()))
+                            continue;
+                        for(LayoutToken token : refTokens) {
+                            if (annotation.cover(token)) {
+                                // annotation covers tokens, let's look at the href
+                                String uri = annotation.getDestination();
+                                // is it a DOI?
+                                Matcher doiMatcher = TextUtilities.DOIPattern.matcher(uri);
+                                if (doiMatcher.find()) { 
+                                    // the BiblioItem setter will take care of the prefix and doi cleaninng 
+                                    bib.setDOI(uri);
+                                }
+                                // TBD: is it something else? 
+                            }
+                        }
+                    }
+                }
+
+                if (!bib.rejectAsReference()) {
+                    BibDataSet bds = new BibDataSet();
+                    bds.setRefSymbol(ref.getLabel());
+                    bds.setResBib(bib);
+                    bds.setRawBib(ref.getReferenceText());
+                    bds.getResBib().setCoordinates(ref.getCoordinates());
+                    results.add(bds);
+                }
             }
         }
 
         // consolidate the set
-        if (consolidate) {
-            Consolidation consolidator = new Consolidation(cntManager);
+        if (consolidate != 0) {
+            Consolidation consolidator = Consolidation.getInstance();
+            if (consolidator.getCntManager() == null)
+                consolidator.setCntManager(cntManager);       
             Map<Integer,BiblioItem> resConsolidation = null;
             try {
                 resConsolidation = consolidator.consolidate(results);
             } catch(Exception e) {
                 throw new GrobidException(
                 "An exception occured while running consolidation on bibliographical references.", e);
-            } finally {
-                //consolidator.close();
-            }
+            } 
             if (resConsolidation != null) {
-
-int consolidated = 0;
-for (Entry<Integer, BiblioItem> cursor : resConsolidation.entrySet()) {
-if (cursor.getValue() != null) {
-consolidated++;
-} 
-}
-System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON search API): " + consolidated + " / " + resConsolidation.size());
-
                 for(int i=0; i<results.size(); i++) {
                     BiblioItem resCitation = results.get(i).getResBib();
-                    BiblioItem bibo = resConsolidation.get(new Integer(i));
+                    BiblioItem bibo = resConsolidation.get(Integer.valueOf(i));
                     if (bibo != null) {
-                        BiblioItem.correct(resCitation, bibo);
+                        if (consolidate == 1)
+                            BiblioItem.correct(resCitation, bibo);
+                        else if (consolidate == 2)
+                            BiblioItem.injectDOI(resCitation, bibo);
                     }
                 }
             }
@@ -240,14 +276,14 @@ System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON 
 
     public List<BibDataSet> processingReferenceSection(File input,
                                                        ReferenceSegmenter referenceSegmenter,
-                                                       boolean consolidate) {
+                                                       int consolidate) {
         DocumentSource documentSource = DocumentSource.fromPdf(input);
         return processingReferenceSection(documentSource, referenceSegmenter, consolidate);
     }
 
     public List<BibDataSet> processingReferenceSection(DocumentSource documentSource,
                                                        ReferenceSegmenter referenceSegmenter,
-                                                       boolean consolidate) {
+                                                       int consolidate) {
         List<BibDataSet> results;
         try {
             Document doc = parsers.getSegmentationParser().processing(documentSource,
@@ -385,23 +421,35 @@ System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> total (CrossRef JSON 
      * @param resCitation citation
      * @return consolidated biblio item
      */
-    public BiblioItem consolidateCitation(BiblioItem resCitation) {
+    public BiblioItem consolidateCitation(BiblioItem resCitation, String rawCitation, int consolidate) {
+        if (consolidate == 0) {
+            // no consolidation 
+            return resCitation;
+        }
         Consolidation consolidator = null;
-        try {                
-            consolidator = new Consolidation(cntManager);
-            ArrayList<BiblioItem> bibis = new ArrayList<BiblioItem>();
-            boolean valid = consolidator.consolidate(resCitation, bibis);
-            if ((valid) && (bibis.size() > 0)) {
-                BiblioItem bibo = bibis.get(0);
-                BiblioItem.correct(resCitation, bibo);
+        try {
+            consolidator = Consolidation.getInstance();
+            if (consolidator.getCntManager() == null)
+                consolidator.setCntManager(cntManager);  
+            List<BibDataSet> biblios = new ArrayList<BibDataSet>();
+            BibDataSet theBib = new BibDataSet();
+            theBib.setResBib(resCitation);
+            biblios.add(theBib);
+            Map<Integer,BiblioItem> bibis = consolidator.consolidate(biblios);
+
+            //BiblioItem bibo = consolidator.consolidate(resCitation, rawCitation);
+            BiblioItem bibo = bibis.get(0);
+            if (bibo != null) {
+                if (consolidate == 1)
+                    BiblioItem.correct(resCitation, bibo);
+                else if (consolidate == 2)
+                    BiblioItem.injectDOI(resCitation, bibo);
             }
         } catch (Exception e) {
             // e.printStackTrace();
             throw new GrobidException(
-                    "An exception occured while running Grobid.", e);
-        } finally {
-            //consolidator.close();
-        }
+                    "An exception occured while running bibliographical data consolidation.", e);
+        } 
         return resCitation;
     }
 

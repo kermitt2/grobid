@@ -163,6 +163,7 @@ public class DateTrainer extends AbstractTrainer {
 		DateTrainer trainer = new DateTrainer();
 		AbstractTrainer.runTraining(trainer);
 		AbstractTrainer.runEvaluation(trainer);
+		System.exit(0);
 	}
 
 }

@@ -1,0 +1,175 @@
+PMC 1943 sample
+
+Glutton Title + first author
+----------------------------
+
+************************************************************************************
+COUNTER: org.grobid.core.utilities.ConsolidationCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  CONSOLIDATION:                 78443
+  CONSOLIDATION_PER_DOI:         1861
+  TOTAL_BIB_REF:                 86949
+  CONSOLIDATION_PER_DOI_SUCCESS: 22
+  CONSOLIDATION_SUCCESS:         60620
+====================================================================================
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  UNMATCHED_REF_MARKERS:                    11141
+  MATCHED_REF_MARKERS_AFTER_POST_FILTERING: 2184
+  STYLE_AUTHORS:                            35414
+  STYLE_NUMBERED:                           48321
+  MANY_CANDIDATES:                          3600
+  MANY_CANDIDATES_AFTER_POST_FILTERING:     382
+  NO_CANDIDATES:                            20471
+  INPUT_REF_STRINGS_CNT:                    88311
+  MATCHED_REF_MARKERS:                      106702
+  NO_CANDIDATES_AFTER_POST_FILTERING:       960
+  STYLE_OTHER:                              4576
+====================================================================================
+
+BUILD SUCCESSFUL in 1h 45m 52s
+
+
+
+
+
+Glutton mixed Title + first author or full ref string
+------------------------------------------------------------------------------------
+  CONSOLIDATION:                 86949
+  CONSOLIDATION_PER_DOI:         1861
+  TOTAL_BIB_REF:                 86949
+  CONSOLIDATION_PER_DOI_SUCCESS: 22
+  CONSOLIDATION_SUCCESS:         65499
+====================================================================================
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  UNMATCHED_REF_MARKERS:                    11142
+  MATCHED_REF_MARKERS_AFTER_POST_FILTERING: 2183
+  STYLE_AUTHORS:                            35414
+  STYLE_NUMBERED:                           48321
+  MANY_CANDIDATES:                          3600
+  MANY_CANDIDATES_AFTER_POST_FILTERING:     385
+  NO_CANDIDATES:                            20471
+  INPUT_REF_STRINGS_CNT:                    88311
+  MATCHED_REF_MARKERS:                      106701
+  NO_CANDIDATES_AFTER_POST_FILTERING:       958
+  STYLE_OTHER:                              4576
+====================================================================================
+
+BUILD SUCCESSFUL in 1h 58m 30s
+
+
+
+
+
+Glutton full ref string matching
+--------------------------------
+
+************************************************************************************
+COUNTER: org.grobid.core.utilities.ConsolidationCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  CONSOLIDATION:                 86949
+  CONSOLIDATION_PER_DOI:         1861
+  TOTAL_BIB_REF:                 86949
+  CONSOLIDATION_PER_DOI_SUCCESS: 22
+  CONSOLIDATION_SUCCESS:         64723
+====================================================================================
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  UNMATCHED_REF_MARKERS:                    11139
+  MATCHED_REF_MARKERS_AFTER_POST_FILTERING: 2186
+  STYLE_AUTHORS:                            35414
+  STYLE_NUMBERED:                           48321
+  MANY_CANDIDATES:                          3600
+  MANY_CANDIDATES_AFTER_POST_FILTERING:     382
+  NO_CANDIDATES:                            20471
+  INPUT_REF_STRINGS_CNT:                    88311
+  MATCHED_REF_MARKERS:                      106704
+  NO_CANDIDATES_AFTER_POST_FILTERING:       958
+  STYLE_OTHER:                              4576
+====================================================================================
+
+BUILD SUCCESSFUL in 3h 50m 53s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CrossRef Title + first author
+-----------------------------
+
+
+************************************************************************************
+COUNTER: org.grobid.core.utilities.ConsolidationCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  CONSOLIDATION:                 78443
+  CONSOLIDATION_PER_DOI:         1861
+  TOTAL_BIB_REF:                 86949
+  CONSOLIDATION_PER_DOI_SUCCESS: 1378
+  CONSOLIDATION_SUCCESS:         35438
+====================================================================================
+
+Out of a total of 86,949 bibliographical references found in the 1942 PDF PMC files, 78,443 contains at least a title and a first author. These fields (with journal title when found) are used to query the REST API (which I called "consolidation"), resulting in 35,438 successful matches (after a post-validation that I explain below). 
+
+Note that sometimes there is a DOI in the bibliographical reference (1861 cases) which is used too for direct match, but for some reasons it fails in ~26% of the cases.
+
+
+
+CrossRef full ref string matching
+---------------------------------
+
+* using the query field. 
+
+************************************************************************************
+COUNTER: org.grobid.core.utilities.ConsolidationCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  CONSOLIDATION:                 86949
+  CONSOLIDATION_PER_DOI:         1861
+  TOTAL_BIB_REF:                 86949
+  CONSOLIDATION_PER_DOI_SUCCESS: 1389
+  CONSOLIDATION_SUCCESS:         64616
+====================================================================================
+
+
+* using the query.bibliographic field.  
+
+************************************************************************************
+COUNTER: org.grobid.core.utilities.ConsolidationCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  CONSOLIDATION:                 86949
+  CONSOLIDATION_PER_DOI:         1861
+  TOTAL_BIB_REF:                 86949
+  CONSOLIDATION_PER_DOI_SUCCESS: 1325
+  CONSOLIDATION_SUCCESS:         66955
+====================================================================================
+
+We increase the total matching from 35,438 to 66,955.
+
+
+
+
+

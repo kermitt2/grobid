@@ -24,8 +24,9 @@ public class SegmentationTrainer extends AbstractTrainer {
         super(GrobidModels.SEGMENTATION);
 
         // adjusting CRF training parameters for this model (only with Wapiti)
-        epsilon = 0.0001;
-        window = 20;
+        epsilon = 0.0000001;
+        window = 50;
+        nbMaxIterations = 1000;
     }
 
     @Override
@@ -185,7 +186,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                                 }
                             }
                             if (pp - q > 5) {
-                                LOGGER.warn(name + " / Segmentation trainer: TEI and raw file unsynchronized at raw line " + l + " : " + localLine);
+                                //LOGGER.warn(name + " / Segmentation trainer: TEI and raw file unsynchronized at raw line " + l + " : " + localLine);
                                 nbInvalid++;
                                 // let's reuse the latest tag
                                 if (previousTag != null)
@@ -348,5 +349,6 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
         GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new SegmentationTrainer());
         AbstractTrainer.runEvaluation(new SegmentationTrainer());
+        System.exit(0);
     }
 }

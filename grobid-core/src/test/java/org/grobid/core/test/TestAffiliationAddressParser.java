@@ -7,6 +7,9 @@ import java.util.List;
 
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.engines.Engine;
+import org.grobid.core.factory.GrobidFactory;
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,8 +20,13 @@ public class TestAffiliationAddressParser extends EngineTest{
 	
 	@Before
 	public void init(){
-		engine = new Engine();
+		engine = new Engine(false);
 	}
+
+    @AfterClass
+    public static void tearDown(){
+        GrobidFactory.reset();
+    }
 	
 	@Test
 	public void testParser() throws Exception {

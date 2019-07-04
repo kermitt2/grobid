@@ -28,8 +28,9 @@ public class GrobidFactory extends AbstractEngineFactory {
 	 * @return GrobidFactory
 	 */
 	public static GrobidFactory getInstance() {
-		if (factory == null)
-			factory = newInstance();
+		if (factory == null) {
+            factory = newInstance();
+        }
 		return factory;
 	}
 	
@@ -38,7 +39,15 @@ public class GrobidFactory extends AbstractEngineFactory {
 	 */
 	@Override
 	public synchronized Engine getEngine() {
-		return super.getEngine();
+		return super.getEngine(false);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public synchronized Engine getEngine(boolean preload) {
+		return super.getEngine(preload);
 	}
 	
 	/**
@@ -46,7 +55,15 @@ public class GrobidFactory extends AbstractEngineFactory {
 	 */
 	@Override
 	public Engine createEngine() {
-		return super.createEngine();
+		return createEngine(false);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Engine createEngine(boolean preload) {
+		return super.createEngine(preload);
 	}
 
 	/**
@@ -57,5 +74,13 @@ public class GrobidFactory extends AbstractEngineFactory {
 	protected static GrobidFactory newInstance() {
 		return new GrobidFactory();
 	}
+
+    /**
+     * Resets this class and all its static fields. For instance sets the
+     * current object to null.
+     */
+    public static void reset() {
+        factory = null;
+    }
 
 }

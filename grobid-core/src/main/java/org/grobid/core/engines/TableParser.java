@@ -10,10 +10,11 @@ import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.Collections;
 import java.util.List;
@@ -40,6 +41,7 @@ public class TableParser extends AbstractParser {
         } catch (Exception e) {
             throw new GrobidException("CRF labeling in ReferenceSegmenter fails.", e);
         }
+
         if (res == null) {
             return null;
         }
@@ -48,8 +50,6 @@ public class TableParser extends AbstractParser {
     }
 
     private Table getExtractionResult(List<LayoutToken> tokenizations, String result) {
-//		System.out.println("-----------------");
-//		System.out.println(result);
         Table table = new Table();
         table.setTextArea(Collections.singletonList(BoundingBoxCalculator.calculateOneBox(tokenizations, true)));
 
@@ -68,6 +68,7 @@ public class TableParser extends AbstractParser {
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));
             if (clusterLabel.equals(TBL_DESC)) {
                 table.appendCaption(clusterContent);
+                table.appendCaptionLayoutTokens(tokens);
                 table.getFullDescriptionTokens().addAll(tokens);
             } else if (clusterLabel.equals(TBL_HEAD)) {
                 table.appendHeader(clusterContent);
@@ -78,23 +79,23 @@ public class TableParser extends AbstractParser {
                 table.appendLabel(clusterContent);
                 table.getFullDescriptionTokens().addAll(tokens);
             } else if (clusterLabel.equals(TBL_OTHER)) {
-            } else if (clusterLabel.equals(TBL_TRASH)) {
+            } else if (clusterLabel.equals(TBL_CONTENT)) {
                 table.appendContent(clusterContent);
                 table.getContentTokens().addAll(tokens);
             } else {
                 LOGGER.error("Warning: unexpected table model label - " + clusterLabel + " for " + clusterContent);
             }
 
-        }
+        }     
+
         return table;
     }
 
     /**
      * The training data creation is called from the full text training creation in cascade.
      */
-    public org.grobid.core.utilities.Pair<String, String> createTrainingData(List<LayoutToken> tokenizations,
+    public Pair<String, String> createTrainingData(List<LayoutToken> tokenizations,
                                                                              String featureVector, String id) {
-//System.out.println(tokenizations.toString() + "\n" );
         String res = null;
         try {
             res = label(featureVector);
@@ -102,9 +103,9 @@ public class TableParser extends AbstractParser {
             LOGGER.error("CRF labeling in TableParser fails.", e);
         }
         if (res == null) {
-            return new Pair<>(null, featureVector);
+            return Pair.of(null, featureVector);
         }
-//System.out.println(res + "\n" );
+
         List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
         StringBuilder sb = new StringBuilder();
 
@@ -114,8 +115,8 @@ public class TableParser extends AbstractParser {
         String lastTag = null;
         boolean figOpen = false;
         for (Pair<String, String> l : labeled) {
-            String tok = l.a;
-            String label = l.b;
+            String tok = l.getLeft();
+            String label = l.getRight();
 
             int tokPtr2 = tokPtr;
             for (; tokPtr2 < tokenizations.size(); tokPtr2++) {
@@ -201,7 +202,7 @@ public class TableParser extends AbstractParser {
                 }
                 sb.append(output);
             }
-            output = writeField(label, lastTag, tok, "<trash>", "<table>", addSpace, addEOL, 3);
+            output = writeField(label, lastTag, tok, "<content>", "<table>", addSpace, addEOL, 3);
             if (output != null) {
                 if (!figOpen) {
                     sb.append(tableOpening);
@@ -226,7 +227,7 @@ public class TableParser extends AbstractParser {
             sb.append("\t\t</figure>\n");
         }
 
-        return new Pair(sb.toString(), featureVector);
+        return Pair.of(sb.toString(), featureVector);
     }
 
     public String getTEIHeader(String id) {
@@ -260,7 +261,7 @@ public class TableParser extends AbstractParser {
                 if (addSpace)
                     buffer.append(" ");
                 buffer.append("</head>\n");
-            } else if (lastTag.equals("<trash>")) {
+            } else if (lastTag.equals("<content>")) {
                 if (addEOL)
                     buffer.append("<lb/>");
                 if (addSpace)
@@ -295,7 +296,7 @@ public class TableParser extends AbstractParser {
                               int nbIndent) {
         String result = null;
         if (currentTag.endsWith(field)) {
-            /*if (currentTag.endsWith("<other>") || currentTag.endsWith("<trash>")) {
+            /*if (currentTag.endsWith("<other>") || currentTag.endsWith("<content>")) {
                 result = "";
 				if (currentTag.startsWith("I-") || (lastTag == null)) {
 					result += "\n";

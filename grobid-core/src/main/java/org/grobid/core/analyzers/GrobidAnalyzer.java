@@ -3,6 +3,7 @@ package org.grobid.core.analyzers;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.LayoutToken;
 
+import org.grobid.core.utilities.UnicodeUtil;
 import org.wipo.nlp.textboundaries.ReTokenizer;
 import org.wipo.nlp.textboundaries.ReTokenizerFactory;
 
@@ -158,15 +159,21 @@ public class GrobidAnalyzer implements Analyzer {
 
 	public List<LayoutToken> tokenizeWithLayoutToken(String text, Language lang) {
         List<LayoutToken> result = new ArrayList<>();
+        text = UnicodeUtil.normaliseText(text);
         List<String> tokens = tokenize(text, lang);
         int pos = 0;
-        for(String tok : tokens) {
-        	LayoutToken layoutToken = new LayoutToken();
+        for (int i = 0; i < tokens.size(); i++) {
+            String tok = tokens.get(i);
+            LayoutToken layoutToken = new LayoutToken();
             layoutToken.setText(tok);
             layoutToken.setOffset(pos);
             result.add(layoutToken);
             pos += tok.length();
+            if (i < tokens.size() - 1 && tokens.get(i + 1).equals("\n")) {
+                layoutToken.setNewLineAfter(true);
+            }
         }
+
         return result;
     }
 }

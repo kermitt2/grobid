@@ -7,6 +7,7 @@ import java.util.regex.Matcher;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.layout.LayoutToken;
 
 /**
  * Class for features used for parsing a block corresponding to affiliation and address.
@@ -118,6 +119,7 @@ public class FeaturesVectorAffiliationAddress {
      * Add the features for the affiliation+address model.
      */
     static public String addFeaturesAffiliationAddress(List<String> lines,
+                                                       List<List<LayoutToken>> allTokens,
                                                        List<List<OffsetPosition>> locationPlaces) throws Exception {
         if (locationPlaces == null) {
             throw new GrobidException("At least one list of gazetter matches positions is null.");
@@ -131,6 +133,7 @@ public class FeaturesVectorAffiliationAddress {
         String lineStatus = "LINESTART";
         int locPlace = 0;
         List<OffsetPosition> currentLocationPlaces = locationPlaces.get(locPlace);
+        List<LayoutToken> tokens = allTokens.get(locPlace);
         int currentPosPlaces = 0;
         int mm = 0; // position of the token in the current sentence
         String line = null;
@@ -142,6 +145,14 @@ public class FeaturesVectorAffiliationAddress {
 				result.append("\n \n");
 				continue;
 			}
+
+            while ( (tokens != null) && (mm < tokens.size()) ) {
+                LayoutToken token = tokens.get(mm);
+                if (token.getText().equals(" ") || token.getText().equals("\n"))
+                    mm++;
+                else 
+                    break;
+            }
 
             // check the position of matches for place names
             boolean skipTest = false;
@@ -176,6 +187,7 @@ public class FeaturesVectorAffiliationAddress {
                 result.append("\n");
                 lineStatus = "LINESTART";
                 currentLocationPlaces = locationPlaces.get(locPlace);
+                tokens = allTokens.get(locPlace);
                 currentPosPlaces = 0;
                 locPlace++;
                 mm = 0;

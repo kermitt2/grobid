@@ -14,9 +14,10 @@ import java.io.InputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 /**
- * Created by zholudev on 07/01/16.
- * Extracting citation contexts
+ * Extracting citation callout
  */
 public class BibDataSetContextExtractor {
     public static final Pattern REF_PATTERN = Pattern.compile("<ref>(.*)</ref>", Pattern.DOTALL);
@@ -25,7 +26,7 @@ public class BibDataSetContextExtractor {
     static {
         InputStream is = BibDataSetContextExtractor.class.getResourceAsStream("/xq/get-citation-context-from-tei.xq");
         try {
-            CONTEXT_EXTRACTION_XQ = IOUtils.toString(is);
+            CONTEXT_EXTRACTION_XQ = IOUtils.toString(is, UTF_8);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -83,7 +84,7 @@ public class BibDataSetContextExtractor {
         Matcher m = REF_PATTERN.matcher(cont);
         if (m.find()) {
             String g = m.group(1);
-            return m.replaceAll(g);
+            return m.replaceAll(Matcher.quoteReplacement(g));
         } else {
             throw new IllegalStateException("Implementation error: no <ref> found in" + cont);
         }

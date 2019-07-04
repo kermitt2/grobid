@@ -4,27 +4,37 @@ repo_name: GitHub
 theme: readthedocs
 site_description: Documentation for GROBID
 docs_dir: doc
-include_search: true
+plugins:
+    - search
+theme:
+    name: readthedocs
 pages:
-- ['index.md', 'Home']
-- ['Introduction.md', 'About', 'Introduction']
-- ['References.md', 'About', 'References']
-- ['License.md', 'About', 'License']
-- ['Install-Grobid.md', 'User manual', 'Install GROBID']
-- ['Grobid-service.md', 'User manual', 'GROBID service']
-- ['Grobid-batch.md', 'User manual', 'GROBID batch mode']
-- ['Troubleshooting.md', 'User manual', 'Troubleshooting and known issues']
-- ['Grobid-docker.md', 'User manual', 'GROBID with containers']
-- ['Grobid-java-library.md', 'User manual', 'Java library']
-- ['TEI-encoding-of-results.md', 'User manual', 'TEI encoding of results']
-- ['Coordinates-in-PDF.md', 'User manual', 'Coordinates of structures in the PDF']
-- ['Training-the-models-of-Grobid.md', 'User manual', 'Training the GROBID models']
-- ['End-to-end-evaluation.md', 'User manual', 'End-to-end evaluation']
-- ['Benchmarking.md', 'User manual', 'Benchmarking']
-- ['training/General-principles.md', 'Annotation guidelines', 'General principles']
-- ['training/segmentation.md', 'Annotation guidelines', 'Segmentation model']
-- ['training/fulltext.md', 'Annotation guidelines', 'Fulltext model']
-- ['training/Bibliographical-references.md', 'Annotation guidelines', 'Bibliographical references']
-- ['training/affiliation-address.md', 'Annotation guidelines', 'Affiliation-address model']
-- ['training/date.md', 'Annotation guidelines', 'Date model']
-- ['Recompiling-and-integrating-CRF-libraries.md', 'Developer notes', 'Recompiling CRF libraries']
+  - Home: 'index.md'
+  - About:
+    - 'Introduction': 'Introduction.md'
+    - 'References': 'References.md'
+    - 'Licence': 'License.md'
+  - User manual:
+    - 'Install GROBID': 'Install-Grobid.md'
+    - 'GROBID service': 'Grobid-service.md'
+    - 'GROBID batch mode': 'Grobid-batch.md'
+    - 'GROBID with containers': 'Grobid-docker.md'
+    - 'Troubleshooting and known issues': 'Troubleshooting.md'
+    - 'Java library': 'Grobid-java-library.md'
+    - 'TEI encoding of results': 'TEI-encoding-of-results.md'
+    - 'Coordinates of structures in the PDF': 'Coordinates-in-PDF.md'
+    - 'Adding a consolidation service': 'Consolidation.md'
+    - 'Training the GROBID models': 'Training-the-models-of-Grobid.md'
+    - 'End-to-end evaluation': 'End-to-end-evaluation.md'
+    - 'Benchmarking': 'Benchmarking.md'
+  - Annotation guidelines:
+    - 'General principles': 'training/General-principles.md'
+    - 'Segmentation model': 'training/segmentation.md'
+    - 'Fulltext model': 'training/fulltext.md'
+    - 'Bibliographical references': 'training/Bibliographical-references.md'
+    - 'Affiliation-address model': 'training/affiliation-address.md'
+    - 'Date model': 'training/date.md'
+  - Developer notes:
+    - 'Developer Guide': 'Developer-guide.md'
+    - 'Deep Learning models': 'Deep-Learning-models.md'
+    - 'Recompiling CRF libraries': 'Recompiling-and-integrating-CRF-libraries.md'

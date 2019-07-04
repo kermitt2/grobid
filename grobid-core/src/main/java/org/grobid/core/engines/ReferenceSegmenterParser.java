@@ -1,6 +1,7 @@
 package org.grobid.core.engines;
 
 import com.google.common.base.Function;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.document.Document;
@@ -18,7 +19,7 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.tokenization.LabeledTokensContainer;
 import org.grobid.core.tokenization.TaggingTokenSynchronizer;
 import org.grobid.core.utilities.BoundingBoxCalculator;
-import org.grobid.core.utilities.Pair;
+//import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.Triple;
 import org.slf4j.Logger;
@@ -30,6 +31,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.regex.Matcher;
+
+import org.apache.commons.lang3.tuple.Pair;
 
 /**
  * @author Slava, Patrice
@@ -81,8 +84,8 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 		}
 		// if featSeg is null, it usually means that no reference segment is found in the
 		// document segmentation
-		String featureVector = featSeg.getA();
-		tokenizationsReferences = featSeg.getB();
+		String featureVector = featSeg.getLeft();
+		tokenizationsReferences = featSeg.getRight();
 		try {
 			res = label(featureVector);
 		}
@@ -114,7 +117,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                 if (container.isBeginning()) {
                     if (reference.length() != 0) {
                         resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
-                            referenceLabel.toString().trim(), reference.toString().trim(), referenceTokens, 
+                            referenceLabel.toString().trim(), reference.toString().trim(), Lists.newArrayList(referenceTokens),
                             	features.toString(), BoundingBoxCalculator.calculate(referenceTokens)));
                         reference.setLength(0);
                         referenceLabel.setLength(0);
@@ -168,7 +171,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         return resultList;
     }
 
-	public org.grobid.core.utilities.Pair<String,String> createTrainingData(Document doc, int id) {
+	public Pair<String,String> createTrainingData(Document doc, int id) {
 		SortedSet<DocumentPiece> referencesParts = doc.getDocumentPart(SegmentationLabels.REFERENCES);
 		Pair<String,List<LayoutToken>> featSeg = getReferencesSectionFeatured(doc, referencesParts);
 		String res;
@@ -178,8 +181,8 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 		}
 		// if featSeg is null, it usually means that no reference segment is found in the
 		// document segmentation
-		String featureVector = featSeg.getA();
-		tokenizations = featSeg.getB();
+		String featureVector = featSeg.getLeft();
+		tokenizations = featSeg.getRight();
 		try {
 			res = label(featureVector);
 		}
@@ -206,8 +209,8 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 		String lastTag = null;
 		boolean refOpen = false;
 		for (Pair<String, String> l : labeled) {
-            String tok = l.a;
-            String label = l.b;
+            String tok = l.getLeft();
+            String label = l.getRight();
 
 			int tokPtr2 = tokPtr;
             for(; tokPtr2 < tokenizations.size(); tokPtr2++) {
@@ -323,7 +326,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                 "    </text>\n" +
                 "</tei>\n");
 
-		return new Pair<String, String>(sb.toString(), featureVector);
+		return Pair.of(sb.toString(), featureVector);
     }
 
 
@@ -458,8 +461,8 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 
         // we calculate current max line length and intialize the body tokenization structure
 		for(DocumentPiece docPiece : referencesParts) {
-			DocumentPointer dp1 = docPiece.a;
-			DocumentPointer dp2 = docPiece.b;
+			DocumentPointer dp1 = docPiece.getLeft();
+			DocumentPointer dp2 = docPiece.getRight();
 
             int tokens = dp1.getTokenDocPos();
             int tokene = dp2.getTokenDocPos();
@@ -476,8 +479,8 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 		}
 
 		for(DocumentPiece docPiece : referencesParts) {
-			DocumentPointer dp1 = docPiece.a;
-			DocumentPointer dp2 = docPiece.b;
+			DocumentPointer dp1 = docPiece.getLeft();
+			DocumentPointer dp2 = docPiece.getRight();
 
 /*for(int i=dp1.getTokenDocPos(); i<dp2.getTokenDocPos(); i++) {
 	System.out.print(tokenizations.get(i));
@@ -784,6 +787,6 @@ System.out.println("");
 		if (previousFeatures != null)
 	      	citations.append(previousFeatures.printVector());
 
-	   	return new Pair<>(citations.toString(), tokenizationsReferences);
+	   	return Pair.of(citations.toString(), tokenizationsReferences);
 	}
 }

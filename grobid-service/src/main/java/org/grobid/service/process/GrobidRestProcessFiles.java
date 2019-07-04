@@ -2,7 +2,6 @@ package org.grobid.service.process;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.document.Document;
@@ -21,7 +20,7 @@ import org.grobid.core.visualization.FigureTableVisualizer;
 import org.grobid.service.exceptions.GrobidServiceException;
 import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
-import org.grobid.service.util.GrobidServiceProperties;
+//import org.grobid.service.util.GrobidServiceProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
@@ -45,6 +44,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+import java.util.NoSuchElementException;
 
 /**
  * Web services consuming a file
@@ -67,31 +67,57 @@ public class GrobidRestProcessFiles {
      * @param consolidate consolidation parameter for the header extraction
      * @return a response object which contains a TEI representation of the header part
      */
-    public String processStatelessHeaderDocument(final InputStream inputStream, final boolean consolidate) {
+    public Response processStatelessHeaderDocument(final InputStream inputStream, final int consolidate) {
         LOGGER.debug(methodLogIn());
         String retVal = null;
-        boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+        Response response = null;
         File originFile = null;
         Engine engine = null;
         try {
-            originFile = IOUtilities.writeInputFile(inputStream);
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
+                throw new GrobidServiceException(
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
+            }
 
+            originFile = IOUtilities.writeInputFile(inputStream);
             if (originFile == null) {
+                LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
                     "The input file cannot be written. ", Status.INTERNAL_SERVER_ERROR);
+            } 
+
+            // starts conversion process
+            retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
+
+            if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                response = Response.status(Response.Status.NO_CONTENT).build();
             } else {
-                // starts conversion process
-                engine = Engine.getEngine(isparallelExec);
-                retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
+                response = Response.status(Response.Status.OK)
+                    .entity(retVal)
+                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                    .header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .build();
             }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
-            IOUtilities.removeTempFile(originFile);
-            if (isparallelExec && engine != null) {
+            if (originFile != null)
+                IOUtilities.removeTempFile(originFile);
+
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
+
         LOGGER.debug(methodLogOut());
-        return retVal;
+        return response;
     }
 
     /**
@@ -111,49 +137,74 @@ public class GrobidRestProcessFiles {
      * @return a response object mainly contain the TEI representation of the
      * full text
      */
-    public String processFulltextDocument(final InputStream inputStream,
-                                          final boolean consolidateHeader,
-                                          final boolean consolidateCitations,
+    public Response processFulltextDocument(final InputStream inputStream,
+                                          final int consolidateHeader,
+                                          final int consolidateCitations,
                                           final int startPage,
                                           final int endPage,
                                           final boolean generateIDs,
                                           final List<String> teiCoordinates) throws Exception {
         LOGGER.debug(methodLogIn());
-        String retVal;
-        boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+
+        String retVal = null;
+        Response response = null;
         File originFile = null;
         Engine engine = null;
         try {
-            originFile = IOUtilities.writeInputFile(inputStream);
-
-            if (originFile == null) {
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
                 throw new GrobidServiceException(
-                    "The input file cannot be written. ",
-                    Status.INTERNAL_SERVER_ERROR);
-            } else {
-                // starts conversion process
-                engine = Engine.getEngine(isparallelExec);
-                GrobidAnalysisConfig config =
-                    GrobidAnalysisConfig.builder()
-                        .consolidateHeader(consolidateHeader)
-                        .consolidateCitations(consolidateCitations)
-                        .startPage(startPage)
-                        .endPage(endPage)
-                        .generateTeiIds(generateIDs)
-                        .generateTeiCoordinates(teiCoordinates)
-                        .build();
-
-                retVal = engine.fullTextToTEI(originFile, config);
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
+
+            originFile = IOUtilities.writeInputFile(inputStream);
+            if (originFile == null) {
+                LOGGER.error("The input file cannot be written.");
+                throw new GrobidServiceException(
+                    "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
+            } 
+
+            // starts conversion process
+            GrobidAnalysisConfig config =
+                GrobidAnalysisConfig.builder()
+                    .consolidateHeader(consolidateHeader)
+                    .consolidateCitations(consolidateCitations)
+                    .startPage(startPage)
+                    .endPage(endPage)
+                    .generateTeiIds(generateIDs)
+                    .generateTeiCoordinates(teiCoordinates)
+                    .build();
+
+            retVal = engine.fullTextToTEI(originFile, config);
+
+            if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                response = Response.status(Response.Status.NO_CONTENT).build();
+            } else {
+                response = Response.status(Response.Status.OK)
+                    .entity(retVal)
+                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                    .header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .build();
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
-            if (isparallelExec && (engine != null)) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
 
-            IOUtilities.removeTempFile(originFile);
+            if (originFile != null)
+              IOUtilities.removeTempFile(originFile);
         }
+
         LOGGER.debug(methodLogOut());
-        return retVal;
+        return response;
     }
 
     /**
@@ -175,130 +226,117 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
-                                                          final boolean consolidateHeader,
-                                                          final boolean consolidateCitations,
+                                                          final int consolidateHeader,
+                                                          final int consolidateCitations,
                                                           final int startPage,
                                                           final int endPage,
                                                           final boolean generateIDs) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
-        String retVal;
-        boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+        String retVal = null;
         File originFile = null;
         Engine engine = null;
         String assetPath = null;
         try {
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
+                throw new GrobidServiceException(
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
+            }
+
             originFile = IOUtilities.writeInputFile(inputStream);
-
             if (originFile == null) {
-                response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+                LOGGER.error("The input file cannot be written.");
+                throw new GrobidServiceException(
+                    "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
+            } 
+
+            // set the path for the asset files
+            assetPath = GrobidProperties.getTempPath().getPath() + File.separator + KeyGen.getKey();
+
+            // starts conversion process
+            GrobidAnalysisConfig config =
+                GrobidAnalysisConfig.builder()
+                    .consolidateHeader(consolidateHeader)
+                    .consolidateCitations(consolidateCitations)
+                    .startPage(startPage)
+                    .endPage(endPage)
+                    .generateTeiIds(generateIDs)
+                    .pdfAssetPath(new File(assetPath))
+                    .build();
+
+            retVal = engine.fullTextToTEI(originFile, config);
+
+            if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                response = Response.status(Status.NO_CONTENT).build();
             } else {
-                // set the path for the asset files
-                assetPath = GrobidProperties.getTempPath().getPath() + File.separator + KeyGen.getKey();
 
-                // starts conversion process
-                engine = Engine.getEngine(isparallelExec);
-                GrobidAnalysisConfig config =
-                    GrobidAnalysisConfig.builder()
-                        .consolidateHeader(consolidateHeader)
-                        .consolidateCitations(consolidateCitations)
-                        .startPage(startPage)
-                        .endPage(endPage)
-                        .generateTeiIds(generateIDs)
-                        .pdfAssetPath(new File(assetPath))
-                        .build();
+                response = Response.status(Status.OK).type("application/zip").build();
 
-                retVal = engine.fullTextToTEI(originFile, config);
-
-                if (isparallelExec) {
-                    GrobidPoolingFactory.returnEngine(engine);
-                    engine = null;
-                }
-
-                IOUtilities.removeTempFile(originFile);
-
-                if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
-                    response = Response.status(Status.NO_CONTENT).build();
-                } else {
-
-                    response = Response.status(Status.OK).type("application/zip").build();
-
-                    ByteArrayOutputStream ouputStream = new ByteArrayOutputStream();
-                    ZipOutputStream out = new ZipOutputStream(ouputStream);
-                    out.putNextEntry(new ZipEntry("tei.xml"));
-                    out.write(retVal.getBytes(Charset.forName("UTF-8")));
-                    // put now the assets, i.e. all the files under the asset path
-                    File assetPathDir = new File(assetPath);
-                    if (assetPathDir.exists()) {
-                        File[] files = assetPathDir.listFiles();
-                        if (files != null) {
-                            byte[] buffer = new byte[1024];
-                            for (final File currFile : files) {
-                                if (currFile.getName().toLowerCase().endsWith(".jpg")
-                                    || currFile.getName().toLowerCase().endsWith(".png")) {
-                                    try {
-                                        ZipEntry ze = new ZipEntry(currFile.getName());
-                                        out.putNextEntry(ze);
-                                        FileInputStream in = new FileInputStream(currFile);
-                                        int len;
-                                        while ((len = in.read(buffer)) > 0) {
-                                            out.write(buffer, 0, len);
-                                        }
-                                        in.close();
-                                        out.closeEntry();
-                                    } catch (IOException e) {
-                                        throw new GrobidServiceException("IO Exception when zipping", e, Status.INTERNAL_SERVER_ERROR);
+                ByteArrayOutputStream ouputStream = new ByteArrayOutputStream();
+                ZipOutputStream out = new ZipOutputStream(ouputStream);
+                out.putNextEntry(new ZipEntry("tei.xml"));
+                out.write(retVal.getBytes(Charset.forName("UTF-8")));
+                // put now the assets, i.e. all the files under the asset path
+                File assetPathDir = new File(assetPath);
+                if (assetPathDir.exists()) {
+                    File[] files = assetPathDir.listFiles();
+                    if (files != null) {
+                        byte[] buffer = new byte[1024];
+                        for (final File currFile : files) {
+                            if (currFile.getName().toLowerCase().endsWith(".jpg")
+                                || currFile.getName().toLowerCase().endsWith(".png")) {
+                                try {
+                                    ZipEntry ze = new ZipEntry(currFile.getName());
+                                    out.putNextEntry(ze);
+                                    FileInputStream in = new FileInputStream(currFile);
+                                    int len;
+                                    while ((len = in.read(buffer)) > 0) {
+                                        out.write(buffer, 0, len);
                                     }
+                                    in.close();
+                                    out.closeEntry();
+                                } catch (IOException e) {
+                                    throw new GrobidServiceException("IO Exception when zipping", e, Status.INTERNAL_SERVER_ERROR);
                                 }
                             }
                         }
                     }
-                    out.finish();
-
-                    response = Response
-                        .ok()
-                        .type("application/zip")
-                        .entity(ouputStream.toByteArray())
-                        .header("Content-Disposition", "attachment; filename=\"result.zip\"")
-                        .build();
-                    out.close();
                 }
+                out.finish();
+
+                response = Response
+                    .ok()
+                    .type("application/zip")
+                    .entity(ouputStream.toByteArray())
+                    .header("Content-Disposition", "attachment; filename=\"result.zip\"")
+                    .build();
+                out.close();
             }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
-            IOUtilities.removeTempFile(originFile);
+            if (originFile != null)
+                IOUtilities.removeTempFile(originFile);
+            
             if (assetPath != null) {
                 IOUtilities.removeTempDirectory(assetPath);
             }
-            if (isparallelExec && (engine != null)) {
+            
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
+
         LOGGER.debug(methodLogOut());
         return response;
     }
 
-
-    /**
-     * Process a patent document encoded in TEI for extracting and parsing citations in the description body.
-     *
-     * @param pInputStream The input stream to process.
-     * @return StreamingOutput wrapping the response in streaming while parsing
-     * the input.
-     */
-    public StreamingOutput processCitationPatentTEI(final InputStream pInputStream,
-                                                    final boolean consolidate) {
-        LOGGER.debug(methodLogIn());
-        return new StreamingOutput() {
-            public void write(OutputStream output) throws IOException, WebApplicationException {
-                final TeiStAXParser parser = new TeiStAXParser(pInputStream, output, false, consolidate);
-                try {
-                    parser.parse();
-                } catch (XMLStreamException e) {
-                    throw new GrobidException("Cannot parse input stream.", e, GrobidExceptionStatus.BAD_INPUT_DATA);
-                }
-            }
-        };
-    }
 
     /**
      * Process a patent document in PDF for extracting and parsing citations in the description body.
@@ -308,54 +346,57 @@ public class GrobidRestProcessFiles {
      * citation
      */
     public Response processCitationPatentPDF(final InputStream inputStream,
-                                             final boolean consolidate) throws Exception {
+                                             final int consolidate) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
-        String retVal;
-        boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+        String retVal = null;
         File originFile = null;
         Engine engine = null;
         try {
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
+                throw new GrobidServiceException(
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
+            }
+
             originFile = IOUtilities.writeInputFile(inputStream);
-
             if (originFile == null) {
-                response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
-            } else {
-                // starts conversion process
-                engine = Engine.getEngine(isparallelExec);
-                List<PatentItem> patents = new ArrayList<>();
-                List<BibDataSet> articles = new ArrayList<>();
-                if (isparallelExec) {
-                    retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(),
-                        articles, patents, consolidate);
-                    GrobidPoolingFactory.returnEngine(engine);
-                    engine = null;
-                } else {
-                    synchronized (engine) {
-                        retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(),
-                            articles, patents, consolidate);
-                    }
-                }
+                LOGGER.error("The input file cannot be written.");
+                throw new GrobidServiceException(
+                    "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
+            } 
 
+            // starts conversion process
+            List<PatentItem> patents = new ArrayList<>();
+            List<BibDataSet> articles = new ArrayList<>();
+            retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(),
+                                                           articles, patents, consolidate);
+
+            if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                response = Response.status(Status.NO_CONTENT).build();
+            } else {
+                response = Response.status(Status.OK)
+                    .entity(retVal)
+                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                    .header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
+        } finally {
+            if (originFile != null)
                 IOUtilities.removeTempFile(originFile);
 
-                if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
-                    response = Response.status(Status.NO_CONTENT).build();
-                } else {
-                    //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
-                    response = Response.status(Status.OK)
-                        .entity(retVal)
-                        .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                        .header("Access-Control-Allow-Origin", "*")
-                        .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
-                }
-            }
-        } finally {
-            IOUtilities.removeTempFile(originFile);
-            if (isparallelExec && engine != null) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
+
         LOGGER.debug(methodLogOut());
         return response;
     }
@@ -368,54 +409,58 @@ public class GrobidRestProcessFiles {
      * citation
      */
     public Response processCitationPatentST36(final InputStream inputStream,
-                                              final boolean consolidate) throws Exception {
+                                              final int consolidate) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
-        String retVal;
-        boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+        String retVal = null;
         File originFile = null;
         Engine engine = null;
         try {
-            originFile = IOUtilities.writeInputFile(inputStream);
-
-            if (originFile == null) {
-                response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
-            } else {
-                // starts conversion process
-                engine = Engine.getEngine(isparallelExec);
-                List<PatentItem> patents = new ArrayList<>();
-                List<BibDataSet> articles = new ArrayList<>();
-                if (isparallelExec) {
-                    retVal = engine.processAllCitationsInXMLPatent(originFile.getAbsolutePath(),
-                        articles, patents, consolidate);
-                    GrobidPoolingFactory.returnEngine(engine);
-                    engine = null;
-                } else {
-                    synchronized (engine) {
-                        retVal = engine.processAllCitationsInXMLPatent(originFile.getAbsolutePath(),
-                            articles, patents, consolidate);
-                    }
-                }
-
-                IOUtilities.removeTempFile(originFile);
-
-                if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
-                    response = Response.status(Status.NO_CONTENT).build();
-                } else {
-                    //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
-                    response = Response.status(Status.OK)
-                        .entity(retVal)
-                        .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                        .header("Access-Control-Allow-Origin", "*")
-                        .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
-                }
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
+                throw new GrobidServiceException(
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
+
+            originFile = IOUtilities.writeInputFile(inputStream);
+            if (originFile == null) {
+                LOGGER.error("The input file cannot be written.");
+                throw new GrobidServiceException(
+                    "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
+            } 
+
+            // starts conversion process
+            List<PatentItem> patents = new ArrayList<>();
+            List<BibDataSet> articles = new ArrayList<>();
+            retVal = engine.processAllCitationsInXMLPatent(originFile.getAbsolutePath(),
+                    articles, patents, consolidate);
+
+            if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                response = Response.status(Status.NO_CONTENT).build();
+            } else {
+                //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                response = Response.status(Status.OK)
+                    .entity(retVal)
+                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                    .header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
-            IOUtilities.removeTempFile(originFile);
-            if (isparallelExec && engine != null) {
+            if (originFile != null)
+                IOUtilities.removeTempFile(originFile);
+            
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
+
         LOGGER.debug(methodLogOut());
         return response;
     }
@@ -430,69 +475,72 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processStatelessReferencesDocument(final InputStream inputStream,
-                                                       final boolean consolidate) {
+                                                       final int consolidate) {
         LOGGER.debug(methodLogIn());
         Response response = null;
-        String retVal;
-        boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+        String retVal = null;
         File originFile = null;
         Engine engine = null;
         try {
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
+                throw new GrobidServiceException(
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
+            }
+
             originFile = IOUtilities.writeInputFile(inputStream);
-
             if (originFile == null) {
-                response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
-            } else {
-                // starts conversion process
-                engine = Engine.getEngine(isparallelExec);
-                List<BibDataSet> results = null;
-                if (isparallelExec) {
-                    results = engine.processReferences(originFile, consolidate);
-                    GrobidPoolingFactory.returnEngine(engine);
-                    engine = null;
-                } else {
-                    synchronized (engine) {
-                        //TODO: VZ: sync on local var does not make sense
-                        results = engine.processReferences(originFile, consolidate);
-                    }
-                }
+                LOGGER.error("The input file cannot be written.");
+                throw new GrobidServiceException(
+                    "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
+            } 
 
+            // starts conversion process
+            List<BibDataSet> results = engine.processReferences(originFile, consolidate);
+
+            StringBuilder result = new StringBuilder();
+            // dummy header
+            result.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
+                "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
+                "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+            result.append("\t<teiHeader/>\n\t<text>\n\t\t<front/>\n\t\t" +
+                "<body/>\n\t\t<back>\n\t\t\t<div>\n\t\t\t\t<listBibl>\n");
+            int p = 0;
+            for (BibDataSet res : results) {
+                result.append(res.toTEI(p));
+                result.append("\n");
+                p++;
+            }
+            result.append("\t\t\t\t</listBibl>\n\t\t\t</div>\n\t\t</back>\n\t</text>\n</TEI>\n");
+
+            retVal = result.toString();
+
+            if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                response = Response.status(Status.NO_CONTENT).build();
+            } else {
+                //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+                response = Response.status(Status.OK)
+                    .entity(retVal)
+                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                    .header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
+        } finally {
+            if (originFile != null)
                 IOUtilities.removeTempFile(originFile);
 
-                StringBuilder result = new StringBuilder();
-                // dummy header
-                result.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
-                    "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
-                    "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
-                result.append("\t<teiHeader/>\n\t<text>\n\t\t<front/>\n\t\t" +
-                    "<body/>\n\t\t<back>\n\t\t\t<div>\n\t\t\t\t<listBibl>\n");
-                int p = 0;
-                for (BibDataSet res : results) {
-                    result.append(res.toTEI(p));
-                    result.append("\n");
-                    p++;
-                }
-                result.append("\t\t\t\t</listBibl>\n\t\t\t</div>\n\t\t</back>\n\t</text>\n</TEI>\n");
-
-                retVal = result.toString();
-
-                if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
-                    response = Response.status(Status.NO_CONTENT).build();
-                } else {
-                    //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
-                    response = Response.status(Status.OK)
-                        .entity(retVal)
-                        .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                        .header("Access-Control-Allow-Origin", "*")
-                        .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
-                }
-            }
-        } finally {
-            IOUtilities.removeTempFile(originFile);
-            if (isparallelExec && engine != null) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
+
         LOGGER.debug(methodLogOut());
         return response;
     }
@@ -507,42 +555,54 @@ public class GrobidRestProcessFiles {
      */
     public Response processPDFAnnotation(final InputStream inputStream,
                                          final String fileName,
-                                         final boolean consolidateHeader,
-                                         final boolean consolidateCitations,
+                                         final int consolidateHeader,
+                                         final int consolidateCitations,
                                          final GrobidRestUtils.Annotation type) throws Exception {
         LOGGER.debug(methodLogIn());
-        Response response;
+        Response response = null;
         PDDocument out = null;
         File originFile = null;
-        boolean isParallelExec = GrobidServiceProperties.isParallelExec();
-        Engine engine = Engine.getEngine(isParallelExec);
-
+        Engine engine = null;
         try {
-            originFile = IOUtilities.writeInputFile(inputStream);
-
-            if (originFile == null) {
-                response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
-            } else {
-                out = annotate(originFile, isParallelExec, type, engine, consolidateHeader, consolidateCitations);
-
-                if (out != null) {
-                    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-                    out.save(outputStream);
-                    response = Response
-                        .ok()
-                        .type("application/pdf")
-                        .entity(outputStream.toByteArray())
-                        .header("Content-Disposition", "attachment; filename=\"" + fileName + "\"")
-                        .header("Access-Control-Allow-Origin", "*")
-                        .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
-                        .build();
-                } else {
-                    response = Response.status(Status.NO_CONTENT).build();
-                }
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
+                throw new GrobidServiceException(
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
+
+            originFile = IOUtilities.writeInputFile(inputStream);
+            if (originFile == null) {
+                LOGGER.error("The input file cannot be written.");
+                throw new GrobidServiceException(
+                    "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
+            } 
+
+            out = annotate(originFile, type, engine, consolidateHeader, consolidateCitations);
+            if (out != null) {
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                out.save(outputStream);
+                response = Response
+                    .ok()
+                    .type("application/pdf")
+                    .entity(outputStream.toByteArray())
+                    .header("Content-Disposition", "attachment; filename=\"" + fileName + "\"")
+                    .header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .build();
+            } else {
+                response = Response.status(Status.NO_CONTENT).build();
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
-            IOUtilities.removeTempFile(originFile);
-            //IOUtils.closeQuietly(out);
+            if (originFile != null)
+                IOUtilities.removeTempFile(originFile);
+
             try {
                 out.close();
             } catch (IOException e) {
@@ -550,7 +610,7 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
             }
 
-            if (isParallelExec && engine != null) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
@@ -567,15 +627,27 @@ public class GrobidRestProcessFiles {
      * @return a response object containing the JSON annotations
      */
     public Response processPDFReferenceAnnotation(final InputStream inputStream,
-                                                  final boolean consolidateHeader,
-                                                  final boolean consolidateCitations) throws Exception {
+                                                  final int consolidateHeader,
+                                                  final int consolidateCitations) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
-        boolean isparallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
         try {
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
+                throw new GrobidServiceException(
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
+            }
+
             originFile = IOUtilities.writeInputFile(inputStream);
+            if (originFile == null) {
+                LOGGER.error("The input file cannot be written.");
+                throw new GrobidServiceException(
+                    "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
+            } 
+
             List<String> elementWithCoords = new ArrayList<>();
             elementWithCoords.add("ref");
             elementWithCoords.add("biblStruct");
@@ -586,44 +658,33 @@ public class GrobidRestProcessFiles {
                 .generateTeiCoordinates(elementWithCoords)
                 .build();
 
-            String json;
+            DocumentSource documentSource = DocumentSource.fromPdf(originFile);
+            Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
+            String json = CitationsVisualizer.getJsonAnnotations(teiDoc, null);
 
-            if (originFile == null) {
-                response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+            if (json != null) {
+                response = Response
+                    .ok()
+                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
+                    .entity(json)
+                    .header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .build();
             } else {
-                engine = Engine.getEngine(isparallelExec);
-                DocumentSource documentSource = DocumentSource.fromPdf(originFile);
-                if (isparallelExec) {
-                    Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-                    json = CitationsVisualizer.getJsonAnnotations(teiDoc, null);
-                    GrobidPoolingFactory.returnEngine(engine);
-                    engine = null;
-                } else {
-                    synchronized (engine) {
-                        //TODO: VZ: sync on local var does not make sense
-                        Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-                        json = CitationsVisualizer.getJsonAnnotations(teiDoc, null);
-                    }
-                }
-
+                response = Response.status(Status.NO_CONTENT).build();
+            }
+            
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
+        } finally {
+            if (originFile != null)
                 IOUtilities.removeTempFile(originFile);
 
-                if (json != null) {
-                    response = Response
-                        .ok()
-                        //.type("application/json")
-                        .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
-                        .entity(json)
-                        .header("Access-Control-Allow-Origin", "*")
-                        .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
-                        .build();
-                } else {
-                    response = Response.status(Status.NO_CONTENT).build();
-                }
-            }
-        } finally {
-            IOUtilities.removeTempFile(originFile);
-            if (isparallelExec && engine != null) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
@@ -639,51 +700,50 @@ public class GrobidRestProcessFiles {
      * citation
      */
     public Response annotateCitationPatentPDF(final InputStream inputStream,
-                                              final boolean consolidate) throws Exception {
+                                              final int consolidate) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
-        String retVal;
-        boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+        String retVal = null;
         File originFile = null;
         Engine engine = null;
         try {
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
+                throw new GrobidServiceException(
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
+            }
+
             originFile = IOUtilities.writeInputFile(inputStream);
-
             if (originFile == null) {
-                response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
-            } else {
-                // starts conversion process
-                engine = Engine.getEngine(isparallelExec);
-                //List<PatentItem> patents = new ArrayList<PatentItem>();
-                //List<BibDataSet> articles = new ArrayList<BibDataSet>();
-                if (isparallelExec) {
-                    retVal = engine.annotateAllCitationsInPDFPatent(originFile.getAbsolutePath(),
-                        consolidate);
-                    GrobidPoolingFactory.returnEngine(engine);
-                    engine = null;
-                } else {
-                    synchronized (engine) {
-                        retVal = engine.annotateAllCitationsInPDFPatent(originFile.getAbsolutePath(),
-                            consolidate);
-                    }
-                }
+                LOGGER.error("The input file cannot be written.");
+                throw new GrobidServiceException(
+                    "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
+            } 
 
+            // starts conversion process
+            retVal = engine.annotateAllCitationsInPDFPatent(originFile.getAbsolutePath(), consolidate);
+                    
+            if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                response = Response.status(Status.NO_CONTENT).build();
+            } else {
+                response = Response.status(Status.OK)
+                    .entity(retVal)
+                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
+                    .header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
+        } finally {
+            if (originFile != null)
                 IOUtilities.removeTempFile(originFile);
 
-                if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
-                    response = Response.status(Status.NO_CONTENT).build();
-                } else {
-                    //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_JSON).build();
-                    response = Response.status(Status.OK)
-                        .entity(retVal)
-                        .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
-                        .header("Access-Control-Allow-Origin", "*")
-                        .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
-                }
-            }
-        } finally {
-            IOUtilities.removeTempFile(originFile);
-            if (isparallelExec && engine != null) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
@@ -699,16 +759,20 @@ public class GrobidRestProcessFiles {
         return "<< " + GrobidRestProcessFiles.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
     }
 
-    protected PDDocument annotate(File originFile, boolean isparallelExec,
+    protected PDDocument annotate(File originFile, 
                                   final GrobidRestUtils.Annotation type, Engine engine,
-                                  final boolean consolidateHeader,
-                                  final boolean consolidateCitations) throws Exception {
+                                  final int consolidateHeader,
+                                  final int consolidateCitations) throws Exception {
         // starts conversion process
         PDDocument outputDocument = null;
         // list of TEI elements that should come with coordinates
         List<String> elementWithCoords = new ArrayList<>();
-        elementWithCoords.add("ref");
-        elementWithCoords.add("biblStruct");
+        if (type == GrobidRestUtils.Annotation.CITATION) {
+            elementWithCoords.add("ref");
+            elementWithCoords.add("biblStruct");
+        } else if (type == GrobidRestUtils.Annotation.FIGURE) {
+            elementWithCoords.add("figure");
+        }
 
         GrobidAnalysisConfig config = new GrobidAnalysisConfig
             .GrobidAnalysisConfigBuilder()
@@ -717,28 +781,24 @@ public class GrobidRestProcessFiles {
             .generateTeiCoordinates(elementWithCoords)
             .build();
 
-        Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-        //try
-        {
-            PDDocument document = PDDocument.load(originFile);
-            //If no pages, skip the document
-            if (document.getNumberOfPages() > 0) {
-                //DocumentSource documentSource = DocumentSource.fromPdf(originFile);
-                DocumentSource documentSource = teiDoc.getDocumentSource();
-                if (isparallelExec) {
-                    outputDocument = dispatchProcessing(type, document, documentSource, teiDoc);
-                    GrobidPoolingFactory.returnEngine(engine);
-                } else {
-                    synchronized (engine) {
-                        //TODO: VZ: sync on local var does not make sense
-                        outputDocument = dispatchProcessing(type, document, documentSource, teiDoc);
-                    }
-                }
-            } else {
-                throw new RuntimeException("Cannot identify any pages in the input document. " +
-                    "The document cannot be annotated. Please check whether the document is valid or the logs.");
-            }
+        DocumentSource documentSource = 
+            DocumentSource.fromPdf(originFile, config.getStartPage(), config.getEndPage(), true, true, false);
+
+        Document teiDoc = engine.fullTextToTEIDoc(documentSource, config);
+
+        documentSource = 
+            DocumentSource.fromPdf(originFile, config.getStartPage(), config.getEndPage(), true, true, false);
+
+        PDDocument document = PDDocument.load(originFile);
+        //If no pages, skip the document
+        if (document.getNumberOfPages() > 0) {
+            outputDocument = dispatchProcessing(type, document, documentSource, teiDoc);
+        } else {
+            throw new RuntimeException("Cannot identify any pages in the input document. " +
+                "The document cannot be annotated. Please check whether the document is valid or the logs.");
         }
+        
+        documentSource.close(true, true, false);
 
         return outputDocument;
     }
@@ -754,7 +814,7 @@ public class GrobidRestProcessFiles {
                 teiDoc, true, true, false);
         } else if (type == GrobidRestUtils.Annotation.FIGURE) {
             out = FigureTableVisualizer.annotateFigureAndTables(document, documentSource.getXmlFile(),
-                teiDoc, true, true, true, false);
+                teiDoc, true, true, true, false, false);
         }
         return out;
     }

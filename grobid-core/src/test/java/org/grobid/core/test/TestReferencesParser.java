@@ -1,7 +1,6 @@
 package org.grobid.core.test;
 
 import org.grobid.core.data.BibDataSet;
-import org.grobid.core.main.GrobidConstants;
 import org.junit.Test;
 
 import java.io.File;
@@ -16,16 +15,14 @@ import static org.junit.Assert.assertThat;
  */
 public class TestReferencesParser extends EngineTest {
 
-    private String getTestResourcePath() {
-        return GrobidConstants.TEST_RESOURCES_PATH;
-    }
+    public static final String TEST_RESOURCES_PATH = "./src/test/resources/test";
 
     //@Test
     public void testReferences() throws Exception {
-        String testPath = getTestResourcePath();
+        String testPath = TEST_RESOURCES_PATH;
 
         String pdfPath = testPath + File.separator + "Wang-paperAVE2008.pdf";
-        List<BibDataSet> resRefs = engine.processReferences(new File(pdfPath), true);
+        List<BibDataSet> resRefs = engine.processReferences(new File(pdfPath), 1);
 
         assertNotNull(resRefs);
         assertThat(resRefs.size(), is(12));

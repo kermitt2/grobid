@@ -7,6 +7,8 @@ import nu.xom.Attribute;
 import nu.xom.Builder;
 import nu.xom.Document;
 import nu.xom.Element;
+import nu.xom.Text;
+import nu.xom.Node;
 import nu.xom.ParsingException;
 import nu.xom.Serializer;
 
@@ -84,6 +86,10 @@ public class XmlBuilderUtils {
 
     public static void addXmlId(Element el, String id) {
         el.addAttribute(new Attribute("xml:id", XML_NS, id));
+    }
+
+    public static Node textNode(String text) {
+        return new Text(text);
     }
 
     public static Element teiElement(String name, String content) {

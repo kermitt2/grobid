@@ -2,6 +2,8 @@ package org.grobid.core.layout;
 
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.engines.label.TaggingLabel;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +12,11 @@ import java.util.List;
  *
  * @author Patrice Lopez
  */
-public class LayoutToken implements Comparable<LayoutToken> {
-    private String text = null;
+public class LayoutToken implements Comparable<LayoutToken>, Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
+	private String text = null;
     public double y = -1.0;
     public double x = -1.0;
     public double width = 0.0;
@@ -26,6 +31,8 @@ public class LayoutToken implements Comparable<LayoutToken> {
     private boolean newLineAfter;
     private int blockPtr;
 	private int offset = 0;
+    private boolean subscript = false;
+    private boolean superscript = false;
 	
 	/**
 	 * All TaggingLabel accumulated for this token
@@ -55,6 +62,16 @@ public class LayoutToken implements Comparable<LayoutToken> {
         this.newLineAfter = token.newLineAfter;
         this.blockPtr = token.blockPtr;
         this.offset = token.offset;
+        this.subscript = token.subscript;
+        this.superscript = token.superscript;
+
+        // deep copy of the TaggingLabel list
+        if (token.labels != null) {
+            this.labels = new ArrayList<TaggingLabel>();
+            for(TaggingLabel l : token.labels) {
+                this.labels.add(l);
+            }
+        }
     }
     
     public LayoutToken(String text, TaggingLabel label) {
@@ -113,6 +130,22 @@ public class LayoutToken implements Comparable<LayoutToken> {
 
     public boolean getItalic() {
         return italic;
+    }
+
+    public boolean isSubscript() {
+        return subscript;
+    }
+
+    public void setSubscript(boolean script) {
+        this.subscript = script;
+    }
+
+    public boolean isSuperscript() {
+        return superscript;
+    }
+
+    public void setSuperscript(boolean script) {
+        this.superscript = script;
     }
 
     public void setFontSize(double d) {

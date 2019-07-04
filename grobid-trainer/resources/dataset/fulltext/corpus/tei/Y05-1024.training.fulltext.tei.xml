@@ -8,9 +8,9 @@
 			
 			<p>Cellular phones are now widely used and those with Web browsing capability are becoming very<lb/> popular. Users can easily browse information provided on the World Wide Web such as news,<lb/> weather, and traffic report with the cellular phone screen in mobile environment. However,<lb/> obtaining necessary information from large database such as user&apos;s manual or travelers&apos; guide is<lb/> quite a task for users since searching for appropriate information from seas of data requires<lb/> cumbersome key operations. I n m o s t cases, users have to carefully navigate through deep<lb/> hierarchical structures of menus or have to type in complex combination of keys to enter some<lb/> keywords.<lb/></p> 
 			
-			<p>Text retrieval by voice input is one of the solutions for this problem. This paper presents a<lb/> telephone-based voice query retrieval system in Japanese which enables cellular phone users to<lb/> search through the user&apos;s manual. This system accepts spoken queries over the cellular phone with<lb/> large vocabulary continuous speech recognition (LVCSR) and retrieves relevant parts from the<lb/> user&apos;s manual with text retrieval. T h e r e s u l t s a r e p r o v i d e d t o t h e u s e r a s a W e b p a g e b y<lb/> s y n c h r o n o u s l y activating the Web and the voice systems (<ref type="biblio">Yoshida et al., 2002</ref>). Users can input<lb/> queries without complicated keystrokes and can view the list of results on the cellular phone screen.<lb/></p> 
+			<p>Text retrieval by voice input is one of the solutions for this problem. This paper presents a<lb/> telephone-based voice query retrieval system in Japanese which enables cellular phone users to<lb/> search through the user&apos;s manual. This system accepts spoken queries over the cellular phone with<lb/> large vocabulary continuous speech recognition (LVCSR) and retrieves relevant parts from the<lb/> user&apos;s manual with text retrieval. T h e r e s u l t s a r e p r o v i d e d t o t h e u s e r a s a W e b p a g e b y<lb/> s y n c h r o n o u s l y activating the Web and the voice systems <ref type="biblio">(Yoshida et al., 2002)</ref>. Users can input<lb/> queries without complicated keystrokes and can view the list of results on the cellular phone screen.<lb/></p> 
 			
-			<p>With respect to voice input systems, a large number of interactive voice responses (IVR) systems<lb/> and spoken dialogue systems has been designed and developed over the years (<ref type="biblio">Zue, 1997</ref>). As for<lb/> user&apos;s manual retrieval systems which accept voice input, <ref type="biblio">Kawahara et al. (2003)</ref> has developed a<lb/> spoken dialogue system for appliance manuals. However, they mainly focus on the dialogue strategy<lb/> to select the appropriate result on screen-less systems such as VTR and FAX. On the other hand,<lb/> retrieval methods for voice input have been examined on a TREC query set (<ref type="biblio">Barnett et al., 1997;<lb/> Crestani, 2000</ref>).<lb/>.</p>
+			<p>With respect to voice input systems, a large number of interactive voice responses (IVR) systems<lb/> and spoken dialogue systems has been designed and developed over the years <ref type="biblio">(Zue, 1997)</ref>. As for<lb/> user&apos;s manual retrieval systems which accept voice input, <ref type="biblio">Kawahara et al. (2003)</ref> has developed a<lb/> spoken dialogue system for appliance manuals. However, they mainly focus on the dialogue strategy<lb/> to select the appropriate result on screen-less systems such as VTR and FAX. On the other hand,<lb/> retrieval methods for voice input have been examined on a TREC query set <ref type="biblio">(Barnett et al., 1997;<lb/> Crestani, 2000)</ref>.<lb/>.</p>
 			
 			 <p>However, text retrieval in TREC mainly aims to search open domain documents from long<lb/> queries, while our system is required to search closed domain documents such as user&apos;s manuals<lb/> based on short queries spoken over the cellular phone.<lb/></p> 
 			 
@@ -94,7 +94,7 @@
 					
 			<head level="2">3.2. The Approaches for User&apos;s Manual Retrieval<lb/></head>
 
-			<p>The system retrieves relevant passages from the user&apos;s manual with a word-based text retrieval<lb/> method. The system generates indexes for content words in passages and obtains relevant passages<lb/> from the words in the query based on Okapi BM25 probabilistic retrieval model without relevance<lb/> feedback in principle (<ref type="biblio">Robertson et al., 1993</ref>). In this model, the weight W of a passage P for a<lb/> query Q is defined as follows:<lb/></p>
+			<p>The system retrieves relevant passages from the user&apos;s manual with a word-based text retrieval<lb/> method. The system generates indexes for content words in passages and obtains relevant passages<lb/> from the words in the query based on Okapi BM25 probabilistic retrieval model without relevance<lb/> feedback in principle <ref type="biblio">(Robertson et al., 1993)</ref>. In this model, the weight W of a passage P for a<lb/> query Q is defined as follows:<lb/></p>
 
 			<formula><lb/> <lb/> <lb/> Q<lb/> T<lb/> T<lb/> TW<lb/> W<lb/> )<lb/> (<lb/> qtf<lb/> k<lb/> qtf<lb/> k<lb/> tf<lb/> K<lb/> k<lb/> tf<lb/> k<lb/> w<lb/> T<lb/> TW<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 2<lb/> 2<lb/> 1<lb/> 1<lb/> )<lb/> 1<lb/> (<lb/> )<lb/> 1<lb/> (<lb/> )<lb/> (<lb/> 5<lb/> .<lb/> 0<lb/> 5<lb/> .<lb/> 0<lb/> log<lb/> <lb/> <lb/> <lb/> <lb/> n<lb/> n<lb/> N<lb/> w<lb/> AVPL<lb/> PL<lb/> b<lb/> b<lb/> K<lb/> <lb/> <lb/> <lb/> <lb/> )<lb/> 1<lb/> (<lb/></formula>
 
@@ -108,7 +108,7 @@
 
 			<formula>W<lb/> k<lb/> W<lb/> NP<lb/> <lb/>  wp<lb/> wp<lb/> </formula>
 
-			<p>where NP denotes the number of word pairs which appear both in the passage P and the query Q<lb/> with dependency relations. k wp is predefined constants.<lb/> We detect the dependency between words by shallow dependency analysis without parsing. The<lb/> system assigns depend-to and depend-from attributes to each word based on its part of speech and<lb/> connects them according to the surrounding relationship (<ref type="biblio">Satoh et al., 2003</ref>).<lb/></p> 
+			<p>where NP denotes the number of word pairs which appear both in the passage P and the query Q<lb/> with dependency relations. k wp is predefined constants.<lb/> We detect the dependency between words by shallow dependency analysis without parsing. The<lb/> system assigns depend-to and depend-from attributes to each word based on its part of speech and<lb/> connects them according to the surrounding relationship <ref type="biblio">(Satoh et al., 2003)</ref>.<lb/></p> 
 			
 			<head level="3">2) Distinction between the negative and the affirmative phrases by auxiliary verbs<lb/></head> 
 			
@@ -130,7 +130,7 @@
 
 			<head level="1">4. Prototype System<lb/></head> 
 			
-			<p>We have constructed a prototype system to search through the manuals for cellular phone users<lb/> (<ref type="biblio">Ishikawa et al., 2004</ref>). The user&apos;s manual contains about 14,000 passages and consists of about<lb/> 4,000 unique words. The prototype system works in real time according to the user&apos;s operation.<lb/></p>
+			<p>We have constructed a prototype system to search through the manuals for cellular phone users<lb/> <ref type="biblio">(Ishikawa et al., 2004)</ref>. The user&apos;s manual contains about 14,000 passages and consists of about<lb/> 4,000 unique words. The prototype system works in real time according to the user&apos;s operation.<lb/></p>
 
 			<head level="2">4.1. LVCSR Module<lb/></head> 
 			

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<TOCITEMS nbPages="19">
+	<TOCITEMLIST level="0">
+		<ITEM id="0">
+			<STRING>Abstract</STRING>
+			<LINK page="1" top="592.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="1">
+			<STRING>Key words: LIM-domain protein, microtubule, protoplast, sunflower, Helianthus annuus</STRING>
+			<LINK page="1" top="334.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="2">
+			<STRING>Introduction</STRING>
+			<LINK page="2" top="759.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="3">
+			<STRING>Results</STRING>
+			<LINK page="2" top="150.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="8">
+			<STRING>Discussion</STRING>
+			<LINK page="5" top="732.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="9">
+			<STRING>Materials and Methods</STRING>
+			<LINK page="7" top="608.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="19">
+			<STRING>References</STRING><LINK page="10" top="733.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="20">
+			<STRING>Yang, N., Higuchi, O., Ohashi, K., Nagata, K., Wada, A., Kangawa, K., Nishida, E. and Mizuno, K. (1998) Cofilin phosphorylation by LIM-kinase 1 and its role in Rac-mediated actin reorganization. Nature 393: 809-812.</STRING>
+			<LINK page="12" top="566.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="21">
+			<STRING>Figure legends</STRING>
+			<LINK page="13" top="759.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+	</TOCITEMLIST>
+	<TOCITEMLIST level="1" idItemParent="3">
+		<ITEM id="4">
+			<STRING>Sunflower protoplasts express only HaWLIM1</STRING>
+			<LINK page="2" top="112.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="5">
+			<STRING>HaWLIM1 protein polyclonal antibodies recognize a 27kDa polypeptide in sunflower protoplasts</STRING>
+			<LINK page="3" top="621.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="6">
+			<STRING>HaWLIM1 labelling in interphase protoplasts</STRING>
+			<LINK page="4" top="771.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="7">
+			<STRING>HaWLIM1 labelling in dividing protoplasts</STRING>
+			<LINK page="4" top="298.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+	</TOCITEMLIST>
+	<TOCITEMLIST level="1" idItemParent="9">
+		<ITEM id="10">
+			<STRING>Plant material</STRING>
+			<LINK page="7" top="570.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="11">
+			<STRING>RNA isolation</STRING>
+			<LINK page="7" top="402.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="12">
+			<STRING>RT-PCR expression studies</STRING>
+			<LINK page="7" top="208.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="13">
+			<STRING>Antibodies</STRING>
+			<LINK page="8" top="717.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="14">
+			<STRING>Expression of HaWLIM1 in recombinant bacteria</STRING>
+			<LINK page="8" top="523.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="15">
+			<STRING>Western blot analysis of HaWLIM1 expression</STRING>
+			<LINK page="8" top="439.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="16">
+			<STRING>Immunolocalization</STRING>
+			<LINK page="8" top="231.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+		<ITEM id="17">
+			<STRING>Microscopy and image analysis</STRING>
+			<LINK page="9" top="566.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+	</TOCITEMLIST>
+	<TOCITEMLIST level="2" idItemParent="17">
+		<ITEM id="18">
+			<STRING>Acknowledgements</STRING>
+			<LINK page="9" top="260.00" bottom="0.00" left="0.00" right="0.00"/>
+		</ITEM>
+	</TOCITEMLIST>
+</TOCITEMS>

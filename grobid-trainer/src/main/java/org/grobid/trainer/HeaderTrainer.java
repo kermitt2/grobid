@@ -291,77 +291,6 @@ public class HeaderTrainer extends AbstractTrainer{
         return nbExamples;
     }
 
-//    public int createHeaderData(String sourcePDFFile) {
-//        getTrainingDataPath();
-//        int nb = 0;
-//
-//        try {
-//            File pathh = new File(sourcePDFFile);
-//            // we process all pdf files in the input directory
-//            File[] refFiles = pathh.listFiles(new FilenameFilter() {
-//                public boolean accept(File dir, String name) {
-//                    if (name.endsWith(".pdf"))
-//                        return true;
-//                    else
-//                        return false;
-//                }
-//            });
-//
-//            if (refFiles == null)
-//                return 0;
-//
-//            int n = 0;
-//            for (; n < refFiles.length; n++) {
-//                File pdfFile = refFiles[n];
-//                String PDFFileName = pdfFile.getName();
-//                Document doc = new Document(PDFFileName, tmpPath);
-//                try {
-//                    int startPage = -1;
-//                    int endPage = -1;
-//                    String pathXML = doc.pdf2xml(false, true, startPage, endPage,
-//                            pdfFile.getPath(), tmpPath, false);
-//                    //no timeout,
-//                    //force pdf reloading
-//                    // pdfFile is the pdf file, tmpPath is the tmp directory for the lxml file,
-//                    // path is the resource path
-//                    // we do not extract images in the pdf file
-//                    if (pathXML == null) {
-//                        throw new Exception("PDF parsing fails: " + pdfFile.getPath());
-//                    }
-//                    doc.setPathXML(pathXML);
-//                    ArrayList<String> tokenizations = doc.addFeaturesDocument();
-//
-//                    if (doc.getBlocks() == null) {
-//                        throw new Exception("PDF parsing resulted in empty content");
-//                    }
-//
-//                    doc.firstPass();
-//
-//                    String header = doc.getHeader(false);
-//                    if (header == null) {
-//                        header = doc.getHeaderLastHope();
-//                    }
-//                    header = doc.getHeaderFeatured(false, false, true);
-//
-//                    // we write the header untagged
-//                    String outPathHeader = path + "/corpus/headers/" + PDFFileName.replace(".pdf", ".header");
-//                    Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), "UTF-8");
-//                    writer.write(header + "\n");
-//                    writer.close();
-//
-//                    doc.cleanLxmlFile(pathXML, true);
-//                } catch (Exception e) {
-////					e.printStackTrace();
-//                    throw new GrobidException("An exception occured while running Grobid.", e);
-//                }
-//            }
-//        } catch (Exception e) {
-////			e.printStackTrace();
-//            throw new GrobidException("An exception occured while running Grobid.", e);
-//        }
-//        return nb;
-//    }
-
     /**
      * Command line execution.
      *
@@ -372,5 +301,6 @@ public class HeaderTrainer extends AbstractTrainer{
     	GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new HeaderTrainer());
         AbstractTrainer.runEvaluation(new HeaderTrainer());
+        System.exit(0);
     }
 }

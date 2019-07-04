@@ -22,7 +22,7 @@ public class GraphicObject {
 
     private boolean mask = false;
 
-    // in case of vector image, we don't have a boundingBox from pdf2xml, simply the page information
+    // in case of vector image, we don't have a boundingBox from pdfalto, simply the page information
     private int page = -1;
     
     public boolean used;

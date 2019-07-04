@@ -1,18 +1,17 @@
 package org.grobid.core.visualization;
 
 import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.exceptions.COSVisitorException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.graphics.color.PDGamma;
-import org.apache.pdfbox.pdmodel.interactive.action.type.PDActionURI;
+import org.apache.pdfbox.pdmodel.graphics.color.PDColor;
+import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceRGB;
+import org.apache.pdfbox.pdmodel.interactive.action.PDActionURI;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 import org.grobid.core.layout.BoundingBox;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 
@@ -27,7 +26,7 @@ public class AnnotationUtil {
         String[] split = coords.split(",");
 
         Long pageNum = Long.valueOf(split[0], 10) - 1;
-        PDPage page = (PDPage) document.getDocumentCatalog().getAllPages().get(pageNum.intValue());
+        PDPage page = (PDPage) document.getDocumentCatalog().getPages().get(pageNum.intValue());
 
         PDRectangle mediaBox = page.getMediaBox() != null ? page.getMediaBox() : page.getArtBox();
         if (mediaBox == null) {
@@ -58,6 +57,9 @@ public class AnnotationUtil {
     }
 
     public static void annotatePage(PDDocument document, String coords, int seed, int lineWidth) throws IOException {
+        if (coords == null) {
+            return;
+        }
         System.out.println("Annotating for coordinates: " + coords);
 
         BoundingBox box = getBoundingBoxForPdf(document, coords);
@@ -66,7 +68,7 @@ public class AnnotationUtil {
             return;
         }
 
-        PDPage page = (PDPage) document.getDocumentCatalog().getAllPages().get(box.getPage());
+        PDPage page = document.getDocumentCatalog().getPages().get(box.getPage());
         float annX = (float) box.getX();
         float annY = (float) box.getY();
         float annRightX = (float) box.getX2();
@@ -96,7 +98,7 @@ public class AnnotationUtil {
 
 //        linkColor.setFloatArray(new float[]{r.nextInt(128) + 127, r.nextInt(255), r.nextInt(255)});
         linkColor.setFloatArray(new float[]{224, 9, 56});
-        txtLink.setColour(new PDGamma(linkColor));
+        txtLink.setColor(new PDColor(linkColor, PDDeviceRGB.INSTANCE));
         txtLink.setReadOnly(true);
 
         //so that
@@ -131,7 +133,7 @@ public class AnnotationUtil {
 //            page.getAnnotations().add(line);
 
         // ADDING LINE TO THE REFERENCE
-        PDPageContentStream stream = new PDPageContentStream(document, page, true, false, true);
+        PDPageContentStream stream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, false, true);
 //        Random r = new Random(seed + 1);
 //
 //
@@ -148,35 +150,14 @@ public class AnnotationUtil {
     }
 
     public static String getCoordString(BoundingBox b) {
+        if (b == null) {
+            return null;
+        }
         return b.getPage() + "," + b.getX() + "," + b.getY() + "," + b.getWidth() + "," + b.getHeight();
     }
 
     public static String getCoordString(int page, double x, double y, double w, double h) {
         return page + "," + x + "," + y + "," + w + "," + h;
-    }
-
-    public static void main(String[] args) throws IOException, COSVisitorException {
-
-        final PDDocument document = PDDocument.load("/Users/zholudev/Downloads/0711.4671.pdf");
-        String[] coords = new String[]{
-                "33,185.90,529.23,88.36,11.97",
-                "33,279.29,529.23,56.05,11.97",
-                "33,340.49,529.23,86.13,11.97",
-                "33,431.89,529.23,67.09,11.97",
-                "33,504.25,529.23,35.67,11.97",
-                "33,57.60,545.19,25.70,11.97",
-                "33,88.93,545.19,64.73,11.97",
-                "33,183.16,545.19,60.15,11.97",
-                "33,175.12,592.83,21.73,11.97",
-                "33,270.90,592.83,84.50,11.97",
-
-        };
-
-        for (String c : coords) {
-            annotatePage(document, c, 1);
-        }
-
-        document.save(new File("/tmp/x.pdf"));
     }
 
 }

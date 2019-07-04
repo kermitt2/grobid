@@ -22,7 +22,7 @@ public class PDFAnnotation {
 	// warning: in PDF, the page numbers start at 1 
     private int pageNumber = -1;
 
-    public enum Type {UNKNOWN, GOTO, URI};
+    public enum Type {UNKNOWN, GOTO, URI, GOTOR};
     private Type type = Type.UNKNOWN; // default
 
     public PDFAnnotation() {
@@ -111,7 +111,7 @@ public class PDFAnnotation {
 		if (token == null)
 			return false;
 		boolean res = false;
-		// do we have an astro entity annotation at this location?
+		// do we have an entity annotation at this location?
 		// we need to check the coordinates
 		int pageToken = token.getPage();
 		if (pageToken == pageNumber) {
