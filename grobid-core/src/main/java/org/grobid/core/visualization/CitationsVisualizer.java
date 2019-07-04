@@ -1,53 +1,41 @@
 package org.grobid.core.visualization;
 
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonGenerator;
 import com.google.common.collect.Multimap;
 import net.sf.saxon.trans.XPathException;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.exceptions.COSVisitorException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
+import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.graphics.color.PDGamma;
-import org.apache.pdfbox.pdmodel.interactive.action.type.PDActionURI;
-import org.apache.pdfbox.pdmodel.interactive.action.type.PDActionGoTo;
+import org.apache.pdfbox.pdmodel.graphics.color.PDColor;
+import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceRGB;
+import org.apache.pdfbox.pdmodel.interactive.action.PDActionGoTo;
+import org.apache.pdfbox.pdmodel.interactive.action.PDActionURI;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
-import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDDestination;
-import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDNamedDestination;
 import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination;
-
 import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.BibDataSetContext;
+import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
-import org.grobid.core.engines.Engine;
-import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.Page;
-import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.BibDataSetContextExtractor;
-import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.awt.*;
-import java.io.File;
 import java.io.IOException;
-import java.util.Random;
-import java.util.Map;
+import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *  Utilities for visualizing citation markers and biblographical references, wither directly
@@ -57,6 +45,8 @@ import java.util.List;
  */
 public class CitationsVisualizer {
     private static final Logger LOGGER = LoggerFactory.getLogger(CitationsVisualizer.class);
+
+    private static final JsonFactory jFactory = new JsonFactory();
 
     /**
      *  Augment a PDF with bibliographical annotation, for bib. ref. and bib markers.
@@ -71,14 +61,14 @@ public class CitationsVisualizer {
      *  annotations, if null the bib. ref. annotations are not associated to external URL.
      */
     public static PDDocument annotatePdfWithCitations(PDDocument document, Document teiDoc,
-            List<String> resolvedBibRefUrl) throws IOException, COSVisitorException, XPathException {
+            List<String> resolvedBibRefUrl) throws IOException, XPathException {
         String tei = teiDoc.getTei();
         //System.out.println(tei);
         int totalBib = 0;
         int totalMarkers1 = 0;
         int totalMarkers2 = 0;
         Multimap<String, BibDataSetContext> contexts = BibDataSetContextExtractor.getCitationReferences(tei);
-		Map<String, Pair<Integer, Integer>> dictionary = new HashMap<String, Pair<Integer, Integer>>();
+		Map<String, Pair<Integer, Integer>> dictionary = new HashMap<>();
         int indexBib = 0;
         for (BibDataSet cit : teiDoc.getBibDataSets()) {
             String teiId = cit.getResBib().getTeiId();
@@ -168,10 +158,10 @@ public class CitationsVisualizer {
 		String[] split = coords.split(",");
 
         Long pageNum = Long.valueOf(split[0], 10) - 1;
-        PDPage page = (PDPage) document.getDocumentCatalog().getAllPages().get(pageNum.intValue());
+        PDPage page = document.getDocumentCatalog().getPages().get(pageNum.intValue());
         PDRectangle mediaBox = page.getMediaBox();
         if (mediaBox == null) {
-            mediaBox = page.findMediaBox();
+            mediaBox = page.getMediaBox();
             // this will look for the main media box of the page up in the PDF element hierarchy
             if (mediaBox == null) {
                 // we tried our best given PDFBox
@@ -179,7 +169,7 @@ public class CitationsVisualizer {
                 return;
             }
         }
- 
+
         float height = mediaBox.getHeight();
         float lowerX = mediaBox.getLowerLeftX();
         float lowerY = mediaBox.getLowerLeftY();
@@ -212,7 +202,7 @@ public class CitationsVisualizer {
         //white rectangle border color (ideally, should be transparent)
         COSArray white = new COSArray();
         white.setFloatArray(new float[]{1f, 1f, 1f});
-        txtLink.setColour(new PDGamma(white));
+        txtLink.setColor(new PDColor(white, PDDeviceRGB.INSTANCE));
         txtLink.setReadOnly(true);
         txtLink.setHighlightMode(PDAnnotationLink.HIGHLIGHT_MODE_PUSH);
 
@@ -220,7 +210,9 @@ public class CitationsVisualizer {
 			Pair<Integer, Integer> thePlace = dictionary.get(teiId);
 			if (thePlace != null) {
 				PDPageFitWidthDestination destination = new PDPageFitWidthDestination();
-				destination.setPageNumber(thePlace.getA());
+                PDPage pdpage = document.getPage(thePlace.getA());
+                destination.setPage(pdpage);
+				//destination.setPageNumber(thePlace.getA());
 				destination.setTop(thePlace.getB());
                 PDActionGoTo action = new PDActionGoTo();
 				action.setDestination(destination);
@@ -231,7 +223,7 @@ public class CitationsVisualizer {
 			    // register the object in the dictionary
 			    if (dictionary.get(teiId) == null) {
 				    Pair<Integer, Integer> thePlace =
-					   new Pair<Integer, Integer>(new Integer(pageNum.intValue()), new Integer(Math.round(annTopY+h)));
+					   new Pair<>(pageNum.intValue(), Math.round(annTopY + h));
 				    dictionary.put(teiId, thePlace);
 			    }
             }
@@ -281,53 +273,55 @@ public class CitationsVisualizer {
      *  annotations, if null the bib. ref. annotations are not associated to external URL.
      */
     public static String getJsonAnnotations(Document teiDoc, List<String> resolvedBibRefUrl) throws IOException, XPathException {
-        StringBuilder jsonRef = new StringBuilder();
-        jsonRef.append("{\"pages\" : [");
+        StringWriter refW = new StringWriter();
+        JsonGenerator jsonRef = jFactory.createGenerator(refW);
+        //jsonRef.useDefaultPrettyPrinter();
+        jsonRef.writeStartObject();
 
         // page height and width
         List<Page> pages = teiDoc.getPages();
         int pageNumber = 1;
+        jsonRef.writeArrayFieldStart("pages");
         for(Page page : pages) {
-            if (pageNumber > 1)
-                jsonRef.append(", ");
-
-            jsonRef.append("{\"page_height\":" + page.getHeight());
-            jsonRef.append(", \"page_width\":" + page.getWidth() + "}");
+            jsonRef.writeStartObject();
+            jsonRef.writeNumberField("page_height", page.getHeight());
+            jsonRef.writeNumberField("page_width", page.getWidth());
+            jsonRef.writeEndObject();
             pageNumber++;
         }
+        jsonRef.writeEndArray();
 
-        jsonRef.append("], \"refBibs\":[");
-        StringBuilder jsonMark = new StringBuilder();
-        jsonMark.append("\"refMarkers\":[");
+        StringWriter markW = new StringWriter();
+        JsonGenerator jsonMark = jFactory.createGenerator(markW);
+        jsonMark.writeStartArray();
 
         int totalMarkers1 = 0;
         int totalMarkers2 = 0;
         int totalBib = 0;
 
+        jsonRef.writeArrayFieldStart("refBibs");
         String tei = teiDoc.getTei();
         Multimap<String, BibDataSetContext> contexts =
             BibDataSetContextExtractor.getCitationReferences(tei);
-        boolean begin = true;
-        boolean beginMark = true;
         int bibIndex = 0;
         for (BibDataSet cit : teiDoc.getBibDataSets()) {
-            if (begin)
-                begin = false;
-            else
-                jsonRef.append(", ");
             String teiId = cit.getResBib().getTeiId();
             totalBib++;
-            jsonRef.append("{ \"id\":\"").append(teiId).append("\", ");
+            jsonRef.writeStartObject();
+            jsonRef.writeStringField("id", teiId);
             // url if any - they are passed via the resolvedBibRefUrl vector provided as argument
             if ( (resolvedBibRefUrl != null) &&
                  (resolvedBibRefUrl.size()>bibIndex) &&
                  (resolvedBibRefUrl.get(bibIndex) != null) ) {
-                jsonRef.append("\"url\": \"" + resolvedBibRefUrl.get(bibIndex) + "\", ");
+                jsonRef.writeStringField("url", resolvedBibRefUrl.get(bibIndex));
             } else {
                 // by default we put the existing url, doi or arXiv link
                 BiblioItem biblio = cit.getResBib();
                 String theUrl = null;
-                if (!StringUtils.isEmpty(biblio.getDOI())) {
+
+                if (!StringUtils.isEmpty(biblio.getOAURL())) {
+                    theUrl = biblio.getOAURL();
+                } else if (!StringUtils.isEmpty(biblio.getDOI())) {
                     theUrl = "http://dx.doi.org/" + biblio.getDOI();
                 } else if (!StringUtils.isEmpty(biblio.getArXivId())) {
                     theUrl = "http://arxiv.org/" + biblio.getArXivId();
@@ -335,21 +329,19 @@ public class CitationsVisualizer {
                     theUrl = biblio.getWeb();
                 }
                 if (theUrl != null)
-                    jsonRef.append("\"url\": \"" + theUrl + "\", ");
+                    jsonRef.writeStringField("url", theUrl);
             }
-            jsonRef.append("\"pos\":[");
-            boolean begin2 = true;
+            jsonRef.writeArrayFieldStart("pos");
             if (cit.getResBib().getCoordinates() != null) {
                 for (BoundingBox b : cit.getResBib().getCoordinates()) {
                     // reference string
-                    if (begin2)
-                        begin2 = false;
-                    else
-                        jsonRef.append(", ");
-
-                    jsonRef.append("{").append(b.toJson()).append("}");
+                    jsonRef.writeStartObject();
+                    b.writeJsonProps(jsonRef);
+                    jsonRef.writeEndObject();
                 }
             }
+            jsonRef.writeEndArray(); // pos
+            jsonRef.writeEndObject(); // refBibs element
             // reference markers for this reference
             for (BibDataSetContext c : contexts.get(teiId)) {
                 //System.out.println(c.getContext());
@@ -358,21 +350,19 @@ public class CitationsVisualizer {
                     for (String coords : mrect.split(";")) {
                         if ((coords == null) || (coords.length() == 0))
                             continue;
-                        if (beginMark)
-                            beginMark = false;
-                        else
-                            jsonMark.append(", ");
                         //annotatePage(document, coords, teiId.hashCode(), 1.0f);
-                        jsonMark.append("{ \"id\":\"").append(teiId).append("\", ");
+                        jsonMark.writeStartObject();
+                        jsonMark.writeStringField("id", teiId);
                         BoundingBox b2 = BoundingBox.fromString(coords);
-                        jsonMark.append(b2.toJson()).append(" }");
+                        b2.writeJsonProps(jsonMark);
+                        jsonMark.writeEndObject();
                         totalMarkers1++;
                     }
                 }
             }
-            jsonRef.append("] }");
             bibIndex++;
         }
+        jsonRef.writeEndArray(); // refBibs
 
         for (BibDataSetContext c : contexts.get("")) {
             String mrect = c.getDocumentCoords();
@@ -380,24 +370,28 @@ public class CitationsVisualizer {
                 for (String coords : mrect.split(";")) {
                     if (coords.trim().length() == 0)
                         continue;
-                    if (beginMark)
-                        beginMark = false;
-                    else
-                        jsonMark.append(", ");
                     //annotatePage(document, coords, 0, 1.0f);
                     BoundingBox b = BoundingBox.fromString(coords);
-                    jsonMark.append("{").append(b.toJson()).append("}");
+                    jsonMark.writeStartObject();
+                    b.writeJsonProps(jsonMark);
+                    jsonMark.writeEndObject();
                     totalMarkers2++;
                 }
             }
         }
+        jsonMark.writeEndArray();
+        jsonMark.close();
 
         LOGGER.debug("totalBib: " + totalBib);
         LOGGER.debug("totalMarkers1: " + totalMarkers1);
         LOGGER.debug("totalMarkers2: " + totalMarkers2);
 
-        jsonRef.append("], ").append(jsonMark.toString()).append("] }");
-        return jsonRef.toString();
+        jsonRef.writeFieldName("refMarkers");
+        jsonRef.writeRawValue(markW.toString());
+        jsonRef.writeEndObject();
+        jsonRef.close();
+
+        return refW.toString();
     }
 
     /*

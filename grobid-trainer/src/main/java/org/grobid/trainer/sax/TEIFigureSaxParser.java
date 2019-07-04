@@ -141,8 +141,8 @@ public class TEIFigureSaxParser extends DefaultHandler {
 				currentTag = "<figDesc>";
             }
             else if (qName.equals("table")) {
-                currentTags.push("<trash>");
-				currentTag = "<trash>";
+                currentTags.push("<content>");
+				currentTag = "<content>";
             } 
 			/*else if (qName.equals("item")) {
                 currentTags.push("<item>");
@@ -152,9 +152,9 @@ public class TEIFigureSaxParser extends DefaultHandler {
                 currentTags.push("<label>");
 				currentTag = "<label>";
             } */
-			else if (qName.equals("trash")) {
-                currentTags.push("<trash>");
-				currentTag = "<trash>";
+			else if (qName.equals("trash") || qName.equals("content")) {
+                currentTags.push("<content>");
+				currentTag = "<content>";
             }
             else if (qName.equals("label")) {
                 currentTags.push("<label>");
@@ -203,6 +203,7 @@ public class TEIFigureSaxParser extends DefaultHandler {
 				(qName.equals("figDesc")) ||
                 (qName.equals("table")) || 
 				(qName.equals("trash")) ||
+                (qName.equals("content")) ||
                 (qName.equals("label")) ||
                 (qName.equals("other")) 
                 // || (qName.equals("formula")) //|| (qName.equals("item")) //|| (qName.equals("label"))

@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.grobid.core.utilities.GrobidPropertyKeys;
-import org.grobid.core.utilities.XmlUtils;
+//import org.grobid.core.utilities.XmlUtils;
 
 /**
  * 
@@ -115,7 +115,7 @@ public class GrobidProperty {
 		return eqb.build();
 	}
 	
-	@Override
+	/*@Override
 	public String toString(){
 		StringBuilder str = new StringBuilder();
 		str.append(XmlUtils.startTag("property"));
@@ -124,7 +124,7 @@ public class GrobidProperty {
 		str.append(XmlUtils.fullTag("type", getType().toString()));
 		str.append(XmlUtils.endTag("property"));
 		return str.toString();
-	}
+	}*/
 
 	/**
 	 * Return whether the type is String, boolean, integer or file.

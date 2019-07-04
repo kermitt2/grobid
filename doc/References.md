@@ -1,10 +1,25 @@
 ## Project reference
 
-You can simply refer to the github project:
+To cite this work, you can simply refer to the github project:
 
-GROBID (2008-2017) <https://github.com/kermitt2/grobid>
+```
+GROBID (2008-2019) <https://github.com/kermitt2/grobid>
+```
 
 (please do not include a particular person name to emphasize the project and tool!)
+
+Here's a BibTeX entry:
+
+```
+@misc{GROBID, 
+    title = {GROBID}, 
+    howpublished = {\url{https://github.com/kermitt2/grobid}}, 
+    publisher = {GitHub},
+    year = {2008 --- 2019},
+    archivePrefix = {swh},
+    eprint = {1:dir:6a298c1b2008913d62e01e5bc967510500f80710}
+}
+```
 
 ## Presentations on Grobid
 
@@ -14,21 +29,21 @@ GROBID (2008-2017) <https://github.com/kermitt2/grobid>
 
 ## Papers on Grobid
 
-[GROBID: Combining Automatic Bibliographic Data Recognition and Term Extraction for Scholarship Publications](https://lekythos.library.ucy.ac.cy/bitstream/handle/10797/14013/ECDL069.pdf?sequence=1). P. Lopez. Proceedings of the 13th European Conference on Digital Library (ECDL), Corfu, Greece, 2009.
+P. Lopez. [GROBID: Combining Automatic Bibliographic Data Recognition and Term Extraction for Scholarship Publications](https://lekythos.library.ucy.ac.cy/bitstream/handle/10797/14013/ECDL069.pdf?sequence=1). Proceedings of the 13th European Conference on Digital Library (ECDL), Corfu, Greece, 2009.
 
-Automatic Extraction and Resolution of Bibliographical References in Patent Documents. P. Lopez. First Information Retrieval Facility Conference (IRFC), Vienna, May 2010. LNCS 6107, pp. 120-135. Springer, Heidelberg (2010).
+P. Lopez. Automatic Extraction and Resolution of Bibliographical References in Patent Documents. P. Lopez. First Information Retrieval Facility Conference (IRFC), Vienna, May 2010. LNCS 6107, pp. 120-135. Springer, Heidelberg (2010).
 
-[Automatic Metadata Extraction The High Energy Physics Use Case](https://preprints.cern.ch/record/2039361/files/CERN-THESIS-2015-105.pdf). Joseph
-Boyd. Master Thesis, EPFL, Switzerland, 2015. 
-
+Joseph Boyd. [Automatic Metadata Extraction The High Energy Physics Use Case](https://preprints.cern.ch/record/2039361/files/CERN-THESIS-2015-105.pdf). Master Thesis, EPFL, Switzerland, 2015. 
 
 ## Evalution
 
 M. Lipinski, K. Yao, C. Breitinger, J. Beel, and B. Gipp, [Evaluation of Header Metadata Extraction Approaches and Tools for Scientific PDF Documents](http://docear.org/papers/Evaluation_of_Header_Metadata_Extraction_Approaches_and_Tools_for_Scientific_PDF_Documents.pdf), in Proceedings of the 13th ACM/IEEE-CS Joint Conference on Digital Libraries (JCDL), Indianapolis, IN, USA, 2013. 
 
-Phil Gooch and Kris Jack, [How well does Mendeley’s Metadata Extraction Work?](https://krisjack.wordpress.com/2015/03/12/how-well-does-mendeleys-metadata-extraction-work/)
+Phil Gooch and Kris Jack, [How well does Mendeley’s Metadata Extraction Work?](https://krisjack.wordpress.com/2015/03/12/how-well-does-mendeleys-metadata-extraction-work/), 2015
 
 [Meta-eval](https://github.com/allenai/meta-eval)
+
+Tkaczyk, D., Collins, A., Sheridan, P., & Beel, J. Evaluation and Comparison of Open Source Bibliographic Reference Parsers: A Business Use Case. [arXiv:1802.01168](https://arxiv.org/pdf/1802.01168), 2018.
 
 ## Articles on CRF for bibliographical extraction
 

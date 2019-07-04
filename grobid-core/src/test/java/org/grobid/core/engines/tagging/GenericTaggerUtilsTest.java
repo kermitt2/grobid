@@ -21,6 +21,11 @@ public class GenericTaggerUtilsTest {
     }
 
     @Test
+    public void testGetPlainLabel_B_startingValue() throws Exception {
+        assertThat(GenericTaggerUtils.getPlainLabel("B-<status>"), is("<status>"));
+    }
+
+    @Test
     public void testGetPlainLabel_nullValue() throws Exception {
         assertNull(GenericTaggerUtils.getPlainLabel(null));
     }
@@ -38,5 +43,15 @@ public class GenericTaggerUtilsTest {
     @Test
     public void testIsBeginningOfEntity_false2() throws Exception {
         assertFalse(GenericTaggerUtils.isBeginningOfEntity("<I-status>"));
+    }
+
+    @Test
+    public void testIsBeginningOfEntity_B_true() throws Exception {
+        assertTrue(GenericTaggerUtils.isBeginningOfEntity("B-<status>"));
+    }
+
+    @Test
+    public void testIsBeginningOfEntity_B_false2() throws Exception {
+        assertFalse(GenericTaggerUtils.isBeginningOfEntity("<B-status>"));
     }
 }

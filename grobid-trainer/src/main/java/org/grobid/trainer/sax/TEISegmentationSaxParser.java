@@ -201,10 +201,10 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                 currentTag = "<other>";
                 upperTag = null;
                 upperQname = null;
-            } else {
+            } /*else {
                 logger.error("Invalid element name: " + qName + " - it will be mapped to the label <other>");
                 currentTag = "<other>";
-            }
+            }*/
         }
     }
 
@@ -257,7 +257,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 
                 if (surfaceTag == null) {
                     // this token belongs to a chunk to ignored
-                    System.out.println("\twarning: surfaceTag is null for token '"+tok+"' - it will be tagged with label <other>");
+                    //System.out.println("\twarning: surfaceTag is null for token '"+tok+"' - it will be tagged with label <other>");
                     surfaceTag = "<other>";
                 }
 
@@ -276,45 +276,5 @@ public class TEISegmentationSaxParser extends DefaultHandler {
             accumulator.setLength(0);
         }
     }
-	
-    /*private void writeData2(String qName, String surfaceTag) {
-        if ((qName.equals("front")) || (qName.equals("titlePage")) || (qName.equals("note")) ||
-                (qName.equals("page")) || (qName.equals("pages")) || (qName.equals("body")) ||
-                (qName.equals("listBibl")) || 
-                (qName.equals("div")) 
-                ) {				
-            String text = getText();
-			if (surfaceTag == null) {
-				System.err.println("Warning label is null for text: " + text);
-			}	
-            // we segment the text
-            StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
-            boolean begin = true;
-            while (st.hasMoreTokens()) {
-                String tok = st.nextToken().trim();
-                if (tok.length() == 0) continue;
-
-                if (tok.equals("+L+")) {
-                    labeled.add("@newline\n");
-                } else if (tok.equals("+PAGE+")) {
-                    // page break should be a distinct feature
-                    labeled.add("@newpage\n");
-                } else {
-                    String content = tok;
-                    int i = 0;
-                    if (content.length() > 0) {
-                        if (begin) {
-                            labeled.add(content + " I-" + surfaceTag + "\n");
-                            begin = false;
-                        } else {
-                            labeled.add(content + " " + surfaceTag + "\n");
-                        }
-                    }
-                }
-                //begin = false;
-            }
-            accumulator.setLength(0);
-        }
-    }*/
 
 }

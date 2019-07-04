@@ -121,7 +121,6 @@ public class EvaluationUtilities {
             long time = System.currentTimeMillis();
             theResult = taggerFunction.apply(citationBlocks);
             bufReader.close();
-
             System.out.println("Labeling took: " + (System.currentTimeMillis() - time) + " ms");
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while evaluating Grobid.", e);
@@ -218,9 +217,9 @@ public class EvaluationUtilities {
             }
 
             processCounters(wordStats, obtainedLabel, expectedLabel);
-            if (!obtainedLabel.equals(expectedLabel)) {
+			/*if (!obtainedLabel.equals(expectedLabel)) {
                 logger.warn("Disagreement / expected: " + expectedLabel + " / obtained: " + obtainedLabel);
-            }
+			}*/
         }
         return wordStats;
     }

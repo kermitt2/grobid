@@ -11,7 +11,10 @@ import org.grobid.core.engines.tagging.GenericTaggerUtils;
  * Representing label that can be tagged
  */
 public class TaggingLabelImpl implements TaggingLabel {
-    private final GrobidModel grobidModel;
+	
+	public static final long serialVersionUID = 1L;
+	
+	private final GrobidModel grobidModel;
     private final String label;
 
     TaggingLabelImpl(GrobidModel grobidModel, String label) {

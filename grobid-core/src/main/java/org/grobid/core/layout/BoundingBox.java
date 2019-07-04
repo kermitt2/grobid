@@ -1,7 +1,11 @@
 package org.grobid.core.layout;
 
+import com.fasterxml.jackson.core.JsonGenerator;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
 
 /**
  * Created by zholudev on 18/08/15.
@@ -32,16 +36,20 @@ public class BoundingBox {
     }
 
     public static BoundingBox fromString(String coords) {
-        String[] split = coords.split(",");
+        try {
+            String[] split = coords.split(",");
 
-        Long pageNum = Long.valueOf(split[0], 10);
+            Long pageNum = Long.valueOf(split[0], 10);
 
-        float x = Float.parseFloat(split[1]);
-        float y = Float.parseFloat(split[2]);
-        float w = Float.parseFloat(split[3]);
-        float h = Float.parseFloat(split[4]);
+            float x = Float.parseFloat(split[1]);
+            float y = Float.parseFloat(split[2]);
+            float w = Float.parseFloat(split[3]);
+            float h = Float.parseFloat(split[4]);
 
-        return new BoundingBox(pageNum.intValue(), x, y, w, h);
+            return new BoundingBox(pageNum.intValue(), x, y, w, h);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static BoundingBox fromPointAndDimensions(int page, double x, double y, double width, double height) {
@@ -228,5 +236,43 @@ public class BoundingBox {
         builder.append("\"w\":").append(width).append(", ");
         builder.append("\"h\":").append(height);
         return builder.toString();
+    }
+
+    public void writeJsonProps(JsonGenerator gen) throws IOException {
+        gen.writeNumberField("p", page);
+        gen.writeNumberField("x", x);
+        gen.writeNumberField("y", y);
+        gen.writeNumberField("w", width);
+        gen.writeNumberField("h", height);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BoundingBox)) return false;
+
+        BoundingBox that = (BoundingBox) o;
+
+        if (getPage() != that.getPage()) return false;
+        if (Double.compare(that.getX(), getX()) != 0) return false;
+        if (Double.compare(that.getY(), getY()) != 0) return false;
+        if (Double.compare(that.getWidth(), getWidth()) != 0) return false;
+        return Double.compare(that.getHeight(), getHeight()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = getPage();
+        temp = Double.doubleToLongBits(getX());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getY());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getWidth());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getHeight());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
     }
 }

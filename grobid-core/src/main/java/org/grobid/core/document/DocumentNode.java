@@ -1,6 +1,8 @@
 package org.grobid.core.document;
 
 import java.util.ArrayList;
+import java.util.List;
+import org.grobid.core.layout.BoundingBox;
 
 /**
  * Class corresponding to a node of the structure of a hierarchically organized document (i.e. for a table
@@ -11,18 +13,30 @@ import java.util.ArrayList;
 
 public class DocumentNode {
     // Gorn address for tree structure
-    public String address = null;
+    private String address = null;
 
-    // real number of the section
-    public String realNumber = null;
+    // real numbering of the section, if any
+    private String realNumber = null;
 
-    public String label = null;
-    public ArrayList<DocumentNode> children = null;
+    // normalized numbering of the section, if any
+    private String normalizedNumber = null;
 
+    // the string attached to this document level, e.g. section title
+    private String label = null;
+
+    // list of child document nodes
+    private List<DocumentNode> children = null;
+
+    // offset relatively to the document tokenization (so token offset, NOT character offset)
     public int startToken = -1;
     public int endToken = -1;
 
-    public DocumentNode father = null;
+    // coordinates of the string attached to this document level, typically where an index link
+    // action point in the document
+    private BoundingBox boundingBox = null;
+
+    // parent document node, if null it is a root node
+    private DocumentNode father = null;
 
     public DocumentNode() {
     }
@@ -30,6 +44,62 @@ public class DocumentNode {
     public DocumentNode(String label, String address) {
         this.label = label;
         this.address = address;
+    }
+
+    public String getRealNumber() {
+        return realNumber;
+    }
+
+    public void setRealNumber(String number) {
+        realNumber = number;
+    }
+
+    public String getNormalizedNumber() {
+        return normalizedNumber;
+    }
+
+    public void setNormalizedNumber(String number) {
+        normalizedNumber = number;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String theAddress) {
+        address = theAddress;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String theLabel) {
+        label = theLabel;
+    }
+
+    public List<DocumentNode> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<DocumentNode> nodes) {
+        children = nodes;
+    }
+
+    public BoundingBox getBoundingBox() {
+        return boundingBox;
+    }
+
+    public void setBoundingBox(BoundingBox box) {
+        boundingBox = box;
+    }
+
+    public DocumentNode getFather() {
+        return father;
+    }
+
+    public void setFather(DocumentNode parent) {
+        father = parent;
     }
 
     public void addChild(DocumentNode child) {

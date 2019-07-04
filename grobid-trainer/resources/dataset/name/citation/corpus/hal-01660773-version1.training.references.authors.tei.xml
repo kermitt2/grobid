@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+
+						<author><surname>AMENTA</surname>, <forename>N</forename>. AND <surname>BERN</surname>, <forename>M</forename>. ; <surname>B ¨ ACHER</surname>, <forename>M</forename>., <surname>BICKEL</surname>, <forename>B</forename>., <surname>JAMES</surname>, <forename>D</forename>. <middlename>L</middlename>., AND <surname>PFISTER</surname>, <forename>H</forename>.</author>
+
+						<author><surname>BICKEL</surname>, <forename>B</forename>., <surname>B ¨ ACHER</surname>, <forename>M</forename>., <surname>OTADUY</surname>, <forename>M</forename>. <middlename>A</middlename>., <surname>LEE</surname>, <forename>H</forename>. <middlename>R</middlename>., <surname>PFISTER</surname>, <forename>H</forename>., <surname>GROSS</surname>, <forename>M</forename>., AND <surname>MATUSIK</surname>, <forename>W</forename>.</author>
+
+						<author><surname>BRUNTON</surname>, <forename>A</forename>., <surname>ARIKAN</surname>, <forename>C</forename>. <middlename>A</middlename>., AND <surname>URBAN</surname>, <forename>P</forename>.</author>
+
+						<author><surname>CHEN</surname>, <forename>X</forename>., <surname>ZHANG</surname>, <forename>H</forename>., <surname>LIN</surname>, <forename>J</forename>., <surname>HU</surname>, <forename>R</forename>., <surname>LU</surname>, <forename>L</forename>., <surname>HUANG</surname>, <forename>Q</forename>., <surname>BENES</surname>, <forename>B</forename>., <surname>COHEN-OR</surname>, <forename>D</forename>., AND <surname>CHEN</surname>, <forename>B</forename>.</author>
+
+						<author><surname>CHENG</surname>, <forename>W</forename>., <surname>FUH</surname>, <forename>J</forename>., <surname>NEE</surname>, <forename>A</forename>., <surname>WONG</surname>, <forename>Y</forename>., <surname>LOH</surname>, <forename>H</forename>., AND <surname>MIYAZAWA</surname>, <forename>T</forename>.</author>
+
+						<author><surname>CORMIER</surname>, <forename>D</forename>., <surname>UNNANON</surname>, <forename>K</forename>., AND <surname>SANII</surname>, <forename>E</forename>.</author>
+
+						<author><surname>COROS</surname>, <forename>S</forename>., <surname>THOMASZEWSKI</surname>, <forename>B</forename>., <surname>NORIS</surname>, <forename>G</forename>., <surname>SUEDA</surname>, <forename>S</forename>., <surname>FORBERG</surname>, <forename>M</forename>., <surname>SUMNER</surname>, <forename>R</forename>. <middlename>W</middlename>., <surname>MATUSIK</surname>, <forename>W</forename>., AND <surname>BICKEL</surname>, <forename>B</forename>.</author>
+
+						<author><surname>DANJOU</surname>, <forename>S</forename>. AND <surname>K ¨ OHLER</surname>, <forename>P</forename>.</author>
+
+						<author><surname>FEDERER</surname>, <forename>H</forename>.</author>
+
+						<author><surname>GAREY</surname>, <forename>M</forename>. <middlename>R</middlename>. AND <surname>JOHNSON</surname>, <forename>D</forename>. <middlename>S</middlename>.</author>
+
+						<author><surname>HAYASI</surname>, <forename>M</forename>. <middlename>T</middlename>. AND <surname>ASIABANPOUR</surname>, <forename>B</forename>.</author>
+
+						<author><surname>HERGEL</surname>, <forename>J</forename>. AND <surname>LEFEBVRE</surname>, <forename>S</forename>.</author>
+
+						<author><surname>HILDEBRAND</surname>, <forename>K</forename>., <surname>BICKEL</surname>, <forename>B</forename>., AND <surname>ALEXA</surname>, <forename>M</forename>.</author>
+
+						<author><surname>HOPE</surname>, <forename>R</forename>., <surname>ROTH</surname>, <forename>R</forename>., AND <surname>JACOBS</surname>, <forename>P</forename>.</author>
+
+						<author><surname>HU</surname>, <forename>R</forename>., <surname>LI</surname>, <forename>H</forename>., <surname>ZHANG</surname>, <forename>H</forename>., AND <surname>COHEN-OR</surname>, <forename>D</forename>.</author>
+
+						<author><surname>HUANG</surname>, <forename>P</forename>., <surname>WANG</surname>, <forename>C</forename>. <middlename>C</middlename>. <middlename>L</middlename>., AND <surname>CHEN</surname>, <forename>Y</forename>.</author>
+
+						<author><surname>KONNO</surname>, <forename>H</forename>. AND <surname>KUNO</surname>, <forename>T</forename>.</author>
+
+						<author><surname>KOO</surname>, <forename>B</forename>., <surname>LI</surname>, <forename>W</forename>., <surname>YAO</surname>, <forename>J</forename>., <surname>AGRAWALA</surname>, <forename>M</forename>., AND <surname>MITRA</surname>, <forename>N</forename>. <middlename>J</middlename>.</author>
+
+						<author><surname>KULKARNI</surname>, <forename>P</forename>. AND <surname>DUTTA</surname>, <forename>D</forename>.</author>
+
+						<author><surname>LEE</surname>, <forename>C</forename>. <middlename>H</middlename>., <surname>VARSHNEY</surname>, <forename>A</forename>., AND <surname>JACOBS</surname>, <forename>D</forename>. <middlename>W</middlename>.</author>
+
+						<author><surname>LEFEBVRE</surname>, <forename>S</forename>.</author>
+
+						<author><surname>LUO</surname>, <forename>L</forename>., <surname>BARAN</surname>, <forename>I</forename>., <surname>RUSINKIEWICZ</surname>, <forename>S</forename>., AND <surname>MATUSIK</surname>, <forename>W</forename>.</author>
+
+						<author><surname>MANI</surname>, <forename>K</forename>., <surname>KULKARNI</surname>, <forename>P</forename>., AND <surname>DUTTA</surname>, <forename>D</forename>.</author>
+
+						<author><surname>MASOOD</surname>, <forename>H</forename>. <middlename>S</middlename>., <surname>RATTANAWONG</surname>, <forename>W</forename>., AND <surname>IOVENITTI</surname>, <forename>P</forename>.</author>
+
+						<author><surname>PANDEY</surname>, <forename>P</forename>., <surname>REDDY</surname>, <forename>N</forename>. <middlename>V</middlename>., AND <surname>DHANDE</surname>, <forename>S</forename>.</author>
+
+						<author><surname>PANDEY</surname>, <forename>P</forename>. <middlename>M</middlename>., <surname>REDDY</surname>, <forename>N</forename>. <middlename>V</middlename>., AND <surname>DHANDE</surname>, <forename>S</forename>. <middlename>G</middlename>.</author>
+
+						<author><surname>REINER</surname>, <forename>T</forename>., <surname>CARR</surname>, <forename>N</forename>., <surname>MECH</surname>, <forename>R</forename>., <surname>STAVA</surname>, <forename>O</forename>., <surname>DACHSBACHER</surname>, <forename>C</forename>., AND <surname>MILLER</surname>, <forename>G</forename>.</author>
+
+						<author><surname>SABOURIN</surname>, <forename>E</forename>., <surname>HOUSER</surname>, <forename>S</forename>. <middlename>A</middlename>., AND <surname>BØHN</surname>, <forename>J</forename>. <middlename>H</middlename>.</author>
+
+						<author><surname>SABOURIN</surname>, <forename>E</forename>., <surname>HOUSER</surname>, <forename>S</forename>. <middlename>A</middlename>., AND <surname>BØHN</surname>, <forename>J</forename>. <middlename>H</middlename>.</author>
+
+						<author><surname>SCHMIDT</surname>, <forename>R</forename>. AND <surname>UMETANI</surname>, <forename>N</forename>.</author>
+
+						<author><surname>SCHWARTZBURG</surname>, <forename>Y</forename>., <surname>TESTUZ</surname>, <forename>R</forename>., <surname>TAGLIASACCHI</surname>, <forename>A</forename>., AND <surname>PAULY</surname>, <forename>M</forename>.</author>
+
+						<author><surname>SINGHAL</surname>, <forename>S</forename>., <surname>JAIN</surname>, <forename>P</forename>. <middlename>K</middlename>., AND <surname>PANDEY</surname>, <forename>P</forename>. <middlename>M</middlename>.</author>
+
+						<author><surname>SKOURAS</surname>, <forename>M</forename>., <surname>THOMASZEWSKI</surname>, <forename>B</forename>., <surname>COROS</surname>, <forename>S</forename>., <surname>BICKEL</surname>, <forename>B</forename>., AND <surname>GROSS</surname>, <forename>M</forename>.</author>
+
+						<author><surname>SONG</surname>, <forename>P</forename>., <surname>DENG</surname>, <forename>B</forename>., <surname>WANG</surname>, <forename>Z</forename>., <surname>DONG</surname>, <forename>Z</forename>., <surname>LI</surname>, <forename>W</forename>., <surname>FU</surname>, <forename>C.-W</forename>., AND <surname>LIU</surname>, <forename>L</forename>.</author>
+
+						<author><surname>TATA</surname>, <forename>K</forename>., <surname>FADEL</surname>, <forename>G</forename>., <surname>BAGCHI</surname>, <forename>A</forename>., AND <surname>AZIZ</surname>, <forename>N</forename>.</author>
+
+						<author><surname>THRIMURTHULU</surname>, <forename>K</forename>., <surname>PANDEY</surname>, <forename>P</forename>. <middlename>M</middlename>., AND <surname>REDDY</surname>, <forename>N</forename>. <middlename>V</middlename>.</author>
+
+						<author><surname>TYBERG</surname>, <forename>J</forename>. AND <surname>BØHN</surname>, <forename>J</forename>. <middlename>H</middlename>.</author>
+
+						<author><surname>TYBERG</surname>, <forename>J</forename>. AND <surname>BØHN</surname>, <forename>J</forename>. <middlename>H</middlename>.</author>
+
+						<author><surname>UMETANI</surname>, <forename>N</forename>. AND <surname>SCHMIDT</surname>, <forename>R</forename>.</author>
+
+						<author><surname>VIDIMČEVIDIMˇVIDIMČE</surname>, <forename>K</forename>., <surname>WANG</surname>, <forename>S.-P</forename>., <surname>RAGAN-KELLEY</surname>, <forename>J</forename>., AND <surname>MATUSIK</surname>, <forename>W</forename>.</author>
+
+						<author><surname>WANG</surname>, <forename>W</forename>., <surname>CHAO</surname>, <forename>H</forename>., <surname>TONG</surname>, <forename>J</forename>., <surname>YANG</surname>, <forename>Z</forename>., <surname>TONG</surname>, <forename>X</forename>., <surname>LI</surname>, <forename>H</forename>., <surname>LIU</surname>, <forename>X</forename>., AND <surname>LIU</surname>, <forename>L</forename>.</author>
+
+						<author><surname>WANG</surname>, <forename>W</forename>. <middlename>M</middlename>., <surname>ZANNI</surname>, <forename>C</forename>., AND <surname>KOBBELT</surname>, <forename>L</forename>.</author>
+
+						<author><surname>XU</surname>, <forename>F</forename>., <surname>WONG</surname>, <forename>Y</forename>., <surname>LOH</surname>, <forename>H</forename>., <surname>FUH</surname>, <forename>J</forename>., AND <surname>MIYAZAWA</surname>, <forename>T</forename>.</author>
+
+						<author><surname>ZHANG</surname>, <forename>X</forename>., <surname>LE</surname>, <forename>X</forename>., <surname>PANOTOPOULOU</surname>, <forename>A</forename>., <surname>WHITING</surname>, <forename>E</forename>., AND <surname>WANG</surname>, <forename>C</forename>. <middlename>C</middlename>. <middlename>L</middlename>.</author>
+
+						<author><surname>ZHAO</surname>, <forename>Z</forename>. AND <surname>LUC</surname>, <forename>Z</forename>.</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

@@ -11,7 +11,7 @@
 
 							<affiliation>
 								<orgName type="departement">Institute of Theoretical Physics</orgName>
-								<orgName type="insitution">University of Warsaw</orgName>,
+								<orgName type="institution">University of Warsaw</orgName>,
 								<address>
 									<addrLine>Hoża 69</addrLine>,
 									<postCode>PL-00681</postCode> 
@@ -25,7 +25,7 @@
 								<address>
 								<postBox>P.O. Box 35 (YFL)</postBox>,
 								<postCode>FI-40014</postCode>
-								<orgName type="insitution">University of Jyväskylä</orgName>,<lb/>
+								<orgName type="institution">University of Jyväskylä</orgName>,<lb/>
 								<country key="FI">Finland<lb/></country></address>
 							</affiliation>
 
@@ -34,7 +34,7 @@
 								<address>
 									<postBox>P.O. Box 35 (YFL)</postBox>,
 									<postCode>FI-40014</postCode>
-									<orgName type="insitution">University of Jyväskylä</orgName>,<lb/>
+									<orgName type="institution">University of Jyväskylä</orgName>,<lb/>
 									<country key="FI">Finland<lb/></country>
 								</address>
 							</affiliation>

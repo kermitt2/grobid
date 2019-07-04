@@ -1,0 +1,372 @@
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:       86949 - 44.75 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:        102073 - 52.56 citation contexts per article
+
+Total correct predicted citation contexts:        84232 - 43.35 citation contexts per article
+Total wrong predicted citation contexts:          17841 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     82.52
+Recall citation contexts:        60.23
+fscore citation contexts:        69.63
+
+
+
+
+-> with abstracts
+
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      86949 - 44.75 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       108399 - 55.79 citation contexts per article
+
+Total correct predicted citation contexts:       88204 - 45.4 citation contexts per article
+Total wrong predicted citation contexts:         20195 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     81.37
+Recall citation contexts:        63.08
+fscore citation contexts:        71.07
+
+
+
+
+-> with figures
+
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      86949 - 44.75 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       108700 - 55.94 citation contexts per article
+
+Total correct predicted citation contexts:       88414 - 45.5 citation contexts per article
+Total wrong predicted citation contexts:         20286 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     81.34
+Recall citation contexts:        63.23
+fscore citation contexts:        71.15
+
+
+
+
+-> with figures and tables
+
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      86949 - 44.75 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       108939 - 56.07 citation contexts per article
+
+Total correct predicted citation contexts:       88592 - 45.6 citation contexts per article
+Total wrong predicted citation contexts:         20347 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     81.32
+Recall citation contexts:        63.35
+fscore citation contexts:        71.22
+
+
+
+
+
+
+-> relax matching of numerical markers
+
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      86949 - 44.75 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       111456 - 57.36 citation contexts per article
+
+Total correct predicted citation contexts:       90012 - 46.33 citation contexts per article
+Total wrong predicted citation contexts:         21444 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     80.76
+Recall citation contexts:        64.37
+fscore citation contexts:        71.64
+
+
+
+
+
+-> new features
+
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      86949 - 44.75 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       111254 - 57.26 citation contexts per article
+
+Total correct predicted citation contexts:       90641 - 46.65 citation contexts per article
+Total wrong predicted citation contexts:         20613 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     81.47
+Recall citation contexts:        64.82
+fscore citation contexts:        72.2
+
+
+
+-> new features variant
+
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      86949 - 44.75 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       111351 - 57.31 citation contexts per article
+
+Total correct predicted citation contexts:       90722 - 46.69 citation contexts per article
+Total wrong predicted citation contexts:         20629 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     81.47
+Recall citation contexts:        64.88
+fscore citation contexts:        72.23
+
+
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      86949 - 44.75 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       112279 - 57.79 citation contexts per article
+
+Total correct predicted citation contexts:       91275 - 46.98 citation contexts per article
+Total wrong predicted citation contexts:         21004 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     81.29
+Recall citation contexts:        65.27
+fscore citation contexts:        72.41
+
+
+
+
+-> new features + relax matching of numerical markers
+
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      86949 - 44.75 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       113593 - 58.46 citation contexts per article
+
+Total correct predicted citation contexts:       92030 - 47.36 citation contexts per article
+Total wrong predicted citation contexts:         21563 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     81.02
+Recall citation contexts:        65.81
+fscore citation contexts:        72.63
+
+
+
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      86949 - 44.75 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       114565 - 58.96 citation contexts per article
+
+Total correct predicted citation contexts:       92583 - 47.65 citation contexts per article
+Total wrong predicted citation contexts:         21982 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     80.81
+Recall citation contexts:        66.21
+fscore citation contexts:        72.79
+
+
+
+-> review segmentation
+
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      88337 - 45.46 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       114107 - 58.73 citation contexts per article
+
+Total correct predicted citation contexts:       92335 - 47.52 citation contexts per article
+Total wrong predicted citation contexts:         21772 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     80.92
+Recall citation contexts:        66.03
+fscore citation contexts:        72.72
+
+
+
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      88948 - 45.78 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       116306 - 59.86 citation contexts per article
+
+Total correct predicted citation contexts:       93650 - 48.2 citation contexts per article
+Total wrong predicted citation contexts:         22656 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     80.52
+Recall citation contexts:        66.97
+fscore citation contexts:        73.12
+
+
+
+
+(relaxed)
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      88337 - 45.46 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       116429 - 59.92 citation contexts per article
+
+Total correct predicted citation contexts:       93646 - 48.2 citation contexts per article
+Total wrong predicted citation contexts:         22783 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     80.43
+Recall citation contexts:        66.97
+fscore citation contexts:        73.09
+
+
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      88367 - 45.48 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       118686 - 61.08 citation contexts per article
+
+Total correct predicted citation contexts:       95015 - 48.9 citation contexts per article
+Total wrong predicted citation contexts:         23671 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     80.06
+Recall citation contexts:        67.95
+fscore citation contexts:        73.51
+
+
+
+
+(dehyphenization of callout, relaxed)
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      88367 - 45.48 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       118905 - 61.2 citation contexts per article
+
+Total correct predicted citation contexts:       95215 - 49 citation contexts per article
+Total wrong predicted citation contexts:         23690 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     80.08
+Recall citation contexts:        68.09
+fscore citation contexts:        73.6
+
+
+
+
+(review reference segmenter)
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      89344 - 45.98 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       120494 - 62.01 citation contexts per article
+
+Total correct predicted citation contexts:       96198 - 49.51 citation contexts per article
+Total wrong predicted citation contexts:         24296 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     79.84
+Recall citation contexts:        68.79
+fscore citation contexts:        73.9
+
+
+
+(review training data)
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      89229 - 45.92 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       120420 - 61.98 citation contexts per article
+
+Total correct predicted citation contexts:       96708 - 49.77 citation contexts per article
+Total wrong predicted citation contexts:         23712 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     80.31
+Recall citation contexts:        69.16
+fscore citation contexts:        74.32
+
+
+(review training data)
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      88888 - 45.75 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       120291 - 61.91 citation contexts per article
+
+
+Total correct predicted citation contexts:       96635 - 49.73 citation contexts per article
+Total wrong predicted citation contexts:         23656 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     80.33
+Recall citation contexts:        69.11
+fscore citation contexts:        74.3
+
+
+
+
+(review training data)
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      88888 - 45.75 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       121402 - 62.48 citation contexts per article
+
+Total correct predicted citation contexts:       97117 - 49.98 citation contexts per article
+Total wrong predicted citation contexts:         24285 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     80
+Recall citation contexts:        69.45
+fscore citation contexts:        74.35
+
+
+
+(semi-constrained number match)
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      88888 - 45.75 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       119466 - 61.49 citation contexts per article
+
+Total correct predicted citation contexts:       96074 - 49.45 citation contexts per article
+Total wrong predicted citation contexts:         23392 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     80.42
+Recall citation contexts:        68.71
+fscore citation contexts:        74.1
+

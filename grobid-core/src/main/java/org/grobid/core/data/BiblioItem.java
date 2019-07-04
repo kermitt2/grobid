@@ -91,9 +91,15 @@ public class BiblioItem {
                 ", book_type='" + book_type + '\'' +
                 ", DOI='" + doi + '\'' +
                 ", arXivId='" + arXivId + '\'' +
+                ", PMID='" + PMID + '\'' +
+                ", PMCID='" + PMCID + '\'' +
+                ", PII='" + PII + '\'' +
+                ", ark='" + ark + '\'' +
+                ", istexId='" + istexId + '\'' +
                 ", inDOI='" + inDOI + '\'' +
                 ", abstract_='" + abstract_ + '\'' +
                 ", authors='" + authors + '\'' +
+                ", firstAuthorSurname='" + firstAuthorSurname + '\'' +
                 ", location='" + location + '\'' +
                 ", bookTitle='" + bookTitle + '\'' +
                 ", serieTitle='" + serieTitle + '\'' +
@@ -122,6 +128,7 @@ public class BiblioItem {
                 ", submission='" + submission + '\'' +
                 ", english_title='" + english_title + '\'' +
                 ", url='" + url + '\'' +
+                ", oaUrl='" + oaUrl + '\'' +
                 ", uri='" + uri + '\'' +
                 ", confidence='" + confidence + '\'' +
                 ", conf=" + conf +
@@ -226,12 +233,18 @@ public class BiblioItem {
     private String doi = null;
     private String inDOI = null;
     private String arXivId = null;
+    private String PMID = null;
+    private String PMCID = null;
+    private String PII = null;
+    private String ark = null;
+    private String istexId = null;
     private String abstract_ = null;
     private String collaboration = null;
 
     // for convenience GROBIDesque
     private String authors = null;
     private List<LayoutToken> authorsTokens = new ArrayList<>();
+    private String firstAuthorSurname = null;
     private String location = null;
     private String bookTitle = null;
     private String serieTitle = null;
@@ -260,9 +273,13 @@ public class BiblioItem {
     private String submission = null;
     private String english_title = null;
     private String url = null;
+    private String oaUrl = null;
     private String uri = null;
     private String confidence = null;
     private double conf = 0.0;
+
+    // abstract labeled featured sequence (to produce a structured abstract with, in particular, reference callout)
+    private String labeledAbstract = null;
 
     // date for electronic publishing
     private String e_year = null;
@@ -469,12 +486,32 @@ public class BiblioItem {
         return doi;
     }
 
+    public String getArk() {
+        return ark;
+    }
+
+    public String getIstexId() {
+        return istexId;
+    }
+
     public String getInDOI() {
         return inDOI;
     }
 
     public String getArXivId() {
         return arXivId;
+    }
+
+    public String getPMID() {
+        return PMID;
+    }
+
+    public String getPMCID() {
+        return PMCID;
+    }
+
+    public String getPII() {
+        return PII;
     }
 
     public String getArticleTitle() {
@@ -497,6 +534,10 @@ public class BiblioItem {
         return abstract_;
     }
 
+    public String getLabeledAbstract() {
+        return labeledAbstract;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -515,6 +556,10 @@ public class BiblioItem {
 
     public String getURL() {
         return url;
+    }
+
+    public String getOAURL() {
+        return oaUrl;
     }
 
     public String getURI() {
@@ -878,18 +923,74 @@ public class BiblioItem {
     }
 
     public void setDOI(String id) {
+        if (id == null)
+            return;
         doi = StringUtils.normalizeSpace(id);
         doi = doi.replace(" ", "");
+        if (doi.startsWith("http://dx.doi.org/") || 
+            doi.startsWith("https://dx.doi.org/") || 
+            doi.startsWith("http://doi.org/") || 
+            doi.startsWith("https://doi.org/")) {
+            doi = doi.replaceAll("http(s)?\\://(dx\\.)?doi\\.org/", "");
+        }
+        doi = doi.replace("//", "/");
+        if (doi.startsWith("doi:") || doi.startsWith("DOI:") || doi.startsWith("DOI/") || doi.startsWith("doi/")) {
+            doi = doi.substring(4);
+        }
+        
+        // pretty common wrong extraction pattern: 
+        // 43-61.DOI:10.1093/jpepsy/14.1.436/7
+        // 367-74.DOI:10.1080/14034940210165064
+        // (pages concatenated to the DOI) - easy/safe to fix
+        if ( (doi.indexOf("DOI:10.") != -1) || (doi.indexOf("doi:10.") != -1) ) {
+            int ind = doi.indexOf("DOI:10.");
+            if (ind == -1) 
+                ind = doi.indexOf("doi:10.");
+            doi = doi.substring(ind+4);
+        }
     } //{ doi = cleanDOI(id); } 
 
     public void setInDOI(String id) {
-        inDOI = StringUtils.normalizeSpace(id);
-        inDOI = inDOI.replace(" ", "");
+        if (id != null) {
+            inDOI = StringUtils.normalizeSpace(id);
+            inDOI = inDOI.replace(" ", "");
+        }
     }
 
     public void setArXivId(String id) {
-        arXivId = StringUtils.normalizeSpace(id);
-        arXivId = arXivId.replace(" ", "");
+        if (id != null) {
+            arXivId = StringUtils.normalizeSpace(id);
+            arXivId = arXivId.replace(" ", "");
+        }
+    }
+
+    public void setPMID(String id) {
+        if (id != null) {
+            PMID = StringUtils.normalizeSpace(id);
+            PMID = PMID.replace(" ", "");
+        }
+    }
+
+    public void setPMCID(String id) {
+        if (id != null) {
+            PMCID = StringUtils.normalizeSpace(id);
+            PMCID = PMCID.replace(" ", "");
+        }
+    }
+
+    public void setPII(String id) {
+        if (id != null) {
+            PII = StringUtils.normalizeSpace(id);
+            PII = PII.replace(" ", "");
+        }
+    }
+
+    public void setIstexId(String id) {
+        istexId = id;
+    }
+
+    public void setArk(String id) {
+        ark = id;
     }
 
     public void setArticleTitle(String ti) {
@@ -912,6 +1013,10 @@ public class BiblioItem {
         abstract_ = cleanAbstract(a);
     }
 
+    public void setLabeledAbstract(String labeledAbstract) {
+        this.labeledAbstract = labeledAbstract;
+    }
+
     public void setLocationPublisher(String s) {
         locationPublisher = StringUtils.normalizeSpace(s);
     }
@@ -926,6 +1031,10 @@ public class BiblioItem {
 
     public void setURL(String s) {
         url = StringUtils.normalizeSpace(s);
+    }
+
+    public void setOAURL(String s) {
+        oaUrl = s;
     }
 
     public void setURI(String s) {
@@ -1324,9 +1433,17 @@ public class BiblioItem {
         type = null;
         book_type = null;
         doi = null;
+        istexId = null;
+        ark = null;
         inDOI = null;
         arXivId = null;
+        PMID = null;
+        PMCID = null;
+        PII = null;
         abstract_ = null;
+        url = null;
+        oaUrl = null;
+        uri = null;
 
         authors = null;
         location = null;
@@ -1496,11 +1613,23 @@ public class BiblioItem {
 
     private static String cleanDOI(String bibl) {
         if (bibl != null) {
+            bibl = StringUtils.normalizeSpace(bibl);
             bibl = bibl.replace(" ", "");
             if (bibl.startsWith("DOI:") || bibl.startsWith("DOI/") || bibl.startsWith("doi:") || bibl.startsWith("doi/")) {
                 bibl = bibl.substring(0, 4);
-            } else if (bibl.startsWith("DOI") || bibl.startsWith("doi")) {
+            } 
+            if (bibl.startsWith("DOI") || bibl.startsWith("doi")) {
                 bibl = bibl.substring(0, 3);
+            }
+            // pretty common wrong extraction pattern: 
+            // 43-61.DOI:10.1093/jpepsy/14.1.436/7
+            // 367-74.DOI:10.1080/14034940210165064
+            // (pages concatenated to the DOI) - easy/safe to fix
+            if ( (bibl.indexOf("DOI:10.") != -1) || (bibl.indexOf("doi:10.") != -1) ) {
+                int ind = bibl.indexOf("DOI:10.");
+                if (ind == -1) 
+                    ind = bibl.indexOf("doi:10.");
+                bibl = bibl.substring(ind+4);
             }
         }
         return bibl;
@@ -1770,6 +1899,7 @@ public class BiblioItem {
                 setPubnum(null);
             }
         } 
+        // TO: PMID, PMCID, PII
     }
 
     /**
@@ -1912,11 +2042,53 @@ public class BiblioItem {
                 tei.append("<idno type=\"arXiv\">" + TextUtilities.HTMLEncode(arXivId) + "</idno>\n");
             }
 
+            if (!StringUtils.isEmpty(PMID)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"PMID\">" + TextUtilities.HTMLEncode(PMID) + "</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(PMCID)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"PMCID\">" + TextUtilities.HTMLEncode(PMCID) + "</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(PII)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"PII\">" + TextUtilities.HTMLEncode(PII) + "</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(ark)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"ark\">" + TextUtilities.HTMLEncode(ark) + "</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(istexId)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"istexId\">" + TextUtilities.HTMLEncode(istexId) + "</idno>\n");
+            }
+
             if (!StringUtils.isEmpty(pubnum)) {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
                 tei.append("<idno>").append(TextUtilities.HTMLEncode(pubnum)).append("</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(oaUrl)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<ptr type=\"open-access\" target=\"").append(TextUtilities.HTMLEncode(oaUrl)).append("\" />\n");
             }
 
             if (!StringUtils.isEmpty(web)) {
@@ -3106,17 +3278,28 @@ public class BiblioItem {
         return res;
     }
 
+    public void setFirstAuthorSurname(String firstAuthorSurname) {
+        this.firstAuthorSurname = firstAuthorSurname;
+    }
+
     /**
      * Return the surname of the first author.
      */
     public String getFirstAuthorSurname() {
+        if (this.firstAuthorSurname != null) {
+            return this.firstAuthorSurname;
+            //return TextUtilities.HTMLEncode(this.firstAuthorSurname);
+        }
+
         if (fullAuthors != null) {
             if (fullAuthors.size() > 0) {
                 Person aut = fullAuthors.get(0);
                 String sur = aut.getLastName();
                 if (sur != null) {
                     if (sur.length() > 0) {
-                        return TextUtilities.HTMLEncode(sur);
+                        this.firstAuthorSurname = sur;
+                        //return TextUtilities.HTMLEncode(sur);
+                        return sur;
                     }
                 }
             }
@@ -3131,9 +3314,14 @@ public class BiblioItem {
                         author = author.trim();
                     int ind = author.lastIndexOf(" ");
                     if (ind != -1) {
-                        return TextUtilities.HTMLEncode(author.substring(ind + 1));
-                    } else
-                        return TextUtilities.HTMLEncode(author);
+                        this.firstAuthorSurname = author.substring(ind + 1);
+                        //return TextUtilities.HTMLEncode(author.substring(ind + 1));
+                        return author.substring(ind + 1);
+                    } else {
+                        this.firstAuthorSurname = author;
+                        //return TextUtilities.HTMLEncode(author);
+                        return author;
+                    }
                 }
             }
 
@@ -3161,7 +3349,7 @@ public class BiblioItem {
         List<String> sanitizedEmails = emailSanitizer.splitAndClean(emailles);
 
         if (sanitizedEmails != null) {
-            authorEmailAssigner.assign(fullAuthors, emailles);
+            authorEmailAssigner.assign(fullAuthors, sanitizedEmails);
         }
     }
 
@@ -3204,7 +3392,7 @@ public class BiblioItem {
                 aff.setFailAffiliation(false);
             }
         } else if (hasMarker) {
-            // we get the marker for each affiliation and try  to find the related author in the
+            // we get the marker for each affiliation and try to find the related author in the
             // original author field
             for (Affiliation aff : fullAffiliations) {
                 if (aff.getMarker() != null) {
@@ -3288,7 +3476,7 @@ public class BiblioItem {
                             int ind2 = -1;
                             int bestDistance = 1000;
                             for (Person aut : fullAuthors) {
-                                if (!winners.contains(new Integer(p))) {
+                                if (!winners.contains(Integer.valueOf(p))) {
                                     String lastname = aut.getLastName();
 
                                     if (lastname != null) {
@@ -3308,7 +3496,7 @@ public class BiblioItem {
                             if (best != -1) {
                                 fullAuthors.get(best).addAffiliation(aff);
                                 aff.setFailAffiliation(false);
-                                winners.add(new Integer(best));
+                                winners.add(Integer.valueOf(best));
                             }
 
                             from = ind + 1;
@@ -3320,16 +3508,18 @@ public class BiblioItem {
                     }
                 }
             }
-        } else if (nbAuthors == nbAffiliations) {
+        } /*else if (nbAuthors == nbAffiliations) {
             // risky heuristics, we distribute in this case one affiliation per author
             // preserving author 
             // sometimes 2 affiliations belong both to 2 authors, for these case, the layout
             // positioning should be studied
             for (int p = 0; p < nbAuthors; p++) {
                 fullAuthors.get(p).addAffiliation(fullAffiliations.get(p));
+                System.out.println("attachment: " + p);
+                System.out.println(fullAuthors.get(p));
                 fullAffiliations.get(p).setFailAffiliation(false);
             }
-        }
+        }*/
     }
 
 
@@ -3341,7 +3531,8 @@ public class BiblioItem {
         int nbAuthors = 0;
         int nbAffiliations = 0;
         int nbAddresses = 0;
-
+        // uncomment below when collaboration will be concretely added to headers
+        /*
         if ( (collaboration != null) && 
             ( (fullAuthors == null) || (fullAuthors.size() == 0) ) ) {
             // collaboration plays at the same time the role of author and affiliation
@@ -3349,7 +3540,7 @@ public class BiblioItem {
             tei.append("<author>").append("\n");
             TextUtilities.appendN(tei, '\t', nbTag+1);
             tei.append("<orgName type=\"collaboration\"");
-            if (withCoordinates) {
+            if (withCoordinates && (labeledTokens != null) ) {
                 List<LayoutToken> collabTokens = labeledTokens.get("<collaboration>");
                 if (withCoordinates && (collabTokens != null) && (!collabTokens.isEmpty())) {                
                    tei.append(" coords=\"" + LayoutTokensUtil.getCoordsString(collabTokens) + "\"");
@@ -3360,6 +3551,7 @@ public class BiblioItem {
             tei.append("</author>").append("\n");
             return tei.toString();
         }
+        */
 
         List<Person> auts = fullAuthors;
 
@@ -3423,7 +3615,6 @@ public class BiblioItem {
                     }
 
                     if (author.getAffiliations() != null) {
-
                         for (Affiliation aff : author.getAffiliations()) {
                             TextUtilities.appendN(tei, '\t', nbTag + 1);
                             tei.append("<affiliation");
@@ -3766,21 +3957,60 @@ public class BiblioItem {
 
     }
 
+    /**
+     * Correct/add only the DOI of the first biblio item based on the second one 
+     */
+    public static void injectDOI(BiblioItem bib, BiblioItem bibo) {
+        bib.setDOI(bibo.getDOI());
+        // optionally associated strong identifiers are also injected
+        bib.setPMID(bibo.getPMID());
+        bib.setPMCID(bibo.getPMCID());
+        bib.setPII(bibo.getPII());
+        bib.setIstexId(bibo.getIstexId());
+        bib.setArk(bibo.getArk());
+    }
 
     /**
-     * Correct fields of the first biblio item based on the second one and he reference string.
+     * Correct fields of the first biblio item based on the second one and he reference string
      */
     public static void correct(BiblioItem bib, BiblioItem bibo) {
+        //System.out.println("correct: \n" + bib.toTEI(0));
+        //System.out.println("with: \n" + bibo.toTEI(0));
         if (bibo.getDOI() != null)
             bib.setDOI(bibo.getDOI());
-        if (bibo.getJournal() != null)
+        if (bibo.getPMID() != null)
+            bib.setPMID(bibo.getPMID());
+        if (bibo.getPMCID() != null)
+            bib.setPMCID(bibo.getPMCID());
+        if (bibo.getPII() != null)
+            bib.setPII(bibo.getPII());
+        if (bibo.getIstexId() != null)
+            bib.setIstexId(bibo.getIstexId());
+        if (bibo.getArk() != null)
+            bib.setArk(bibo.getArk());
+
+        if (bibo.getOAURL() != null)
+            bib.setOAURL(bibo.getOAURL());
+
+        if (bibo.getJournal() != null) {
             bib.setJournal(bibo.getJournal());
+            // document type consistency (correction might change overall item type, and some
+            // fields become unconsistent)
+            if (bibo.getBookTitle() == null) {
+                bib.setBookTitle(null);
+            }
+        }
         if (bibo.getAuthors() != null)
             bib.setAuthors(bibo.getAuthors());
         if (bibo.getEditors() != null)
             bib.setEditors(bibo.getEditors());
-        if (bibo.getBookTitle() != null)
+        if (bibo.getBookTitle() != null) {
             bib.setBookTitle(bibo.getBookTitle());
+            // document type consistency
+            if (bibo.getJournal() == null) {
+                bib.setJournal(null);
+            }
+        }
         if (bibo.getVolume() != null)
             bib.setVolume(bibo.getVolume());
         if (bibo.getVolumeBlock() != null)
@@ -3914,7 +4144,7 @@ public class BiblioItem {
                 bib.setFullAuthors(bibo.getFullAuthors());
             }
         }
-
+        //System.out.println("result: \n" + bib.toTEI(0));
     }
 
 	/**
@@ -3977,6 +4207,12 @@ public class BiblioItem {
         return labeledTokens.get(headerLabel.getLabel());
     }
 
+    public void setLayoutTokensForLabel(List<LayoutToken> tokens, TaggingLabel headerLabel) {
+        if (labeledTokens == null)
+            labeledTokens = new TreeMap<String, List<LayoutToken>>();
+        labeledTokens.put(headerLabel.getLabel(), tokens);
+    }
+
     public void generalResultMapping(Document doc, String labeledResult, List<LayoutToken> tokenizations) {
         if (labeledTokens == null)
             labeledTokens = new TreeMap<String, List<LayoutToken>>();
@@ -3990,7 +4226,8 @@ public class BiblioItem {
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
             List<LayoutToken> clusterTokens = cluster.concatTokens();
-            List<LayoutToken> theList = labeledTokens.get(clusterLabel.toString());
+            List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
+
             if (theList == null)
                 theList = new ArrayList<LayoutToken>();
             for (LayoutToken token : clusterTokens)

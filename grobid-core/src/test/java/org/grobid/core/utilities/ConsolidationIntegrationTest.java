@@ -29,38 +29,20 @@ public class ConsolidationIntegrationTest {
         LibraryLoader.load();
         GrobidProperties.getInstance();
 
-        target = new Consolidation(null);
+        target = Consolidation.getInstance();
     }
 
     @Test
-    @Ignore("Crossref API not realiable for the moment")
+    @Ignore("Crossref API not realiable enough")
     public void testConsolidationDOISimple() throws Exception {
         BiblioItem biblio = new BiblioItem();
         biblio.setDOI(DOIs[0]);
-        List<BiblioItem> bib2 = new ArrayList<BiblioItem>();
-
-        boolean found = target.consolidateCrossrefGetByDOI(biblio, bib2);
+        BiblioItem bib = target.consolidate(biblio, null);
+        boolean found = false;
+        if (bib != null)
+            found = true;
         assertEquals("The consolidation has not the expected outcome", true, found);
 
     }
-
-    @Test
-    @Ignore("Crossref API not realiable for the moment")
-    public void testConsolidationDOIMultiple() throws Exception {
-        List<BiblioItem> biblios = new ArrayList<BiblioItem>();
-        for (int i = 0; i < DOIs.length; i++) {
-            BiblioItem biblio = new BiblioItem();
-            biblio.setDOI(DOIs[i]);
-            biblios.add(biblio);
-        }
-        for (BiblioItem biblio : biblios) {
-            List<BiblioItem> bib2 = null;
-            boolean found = target.consolidateCrossrefGetByDOI(biblio, bib2);
-            assertEquals("The consolidation has not the expected outcome", true, found);
-            assertNotNull(bib2);
-            assertThat(bib2, hasSize(1));
-        }
-    }
-
 
 }

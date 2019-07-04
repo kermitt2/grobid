@@ -3,12 +3,15 @@ package org.grobid.core.document;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.SortedSetMultimap;
 import com.google.common.collect.TreeMultimap;
+
+import org.apache.commons.lang3.tuple.Pair;
+
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.Cluster;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.utilities.Pair;
+//import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -289,7 +292,7 @@ public class BasicStructureBuilder {
         String ignoredLabel = "@IGNORED_LABEL@";
         for (Pair<String, String> labeledTokenPair :
                 Iterables.concat(labeledTokens, 
-					Collections.singleton(new Pair<String, String>("IgnoredToken", ignoredLabel)))) {
+					Collections.singleton(Pair.of("IgnoredToken", ignoredLabel)))) {
             if (labeledTokenPair == null) {
                 p++;
                 continue;
@@ -340,7 +343,7 @@ public class BasicStructureBuilder {
 					 	&& (currentLineStartPos != lastTokenInd)) {
 					 	currentLineStartPos++;
 					}
-					if (!labeledTokenPair.a.startsWith(documentTokens.get(currentLineStartPos).getText())) {
+					if (!labeledTokenPair.getLeft().startsWith(documentTokens.get(currentLineStartPos).getText())) {
 						while(currentLineStartPos < block.getEndToken()) {
 							if (documentTokens.get(currentLineStartPos).t().equals("\n")
 							 || documentTokens.get(currentLineStartPos).t().equals("\r")) {
@@ -352,7 +355,7 @@ public class BasicStructureBuilder {
 								 	currentLineStartPos++;
 								 }
 								 if ((currentLineStartPos != lastTokenInd) && 
-								 	labeledTokenPair.a.startsWith(documentTokens.get(currentLineStartPos).getText())) {
+								 	labeledTokenPair.getLeft().startsWith(documentTokens.get(currentLineStartPos).getText())) {
 									 break;
 								 }
 							 }
@@ -372,7 +375,7 @@ public class BasicStructureBuilder {
 					}
 				}
 			}
-            curLabel = labeledTokenPair.b;
+            curLabel = labeledTokenPair.getRight();
             curPlainLabel = GenericTaggerUtils.getPlainLabel(curLabel);
 			
 			/*System.out.println("-------------------------------");

@@ -28,9 +28,11 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.layout.LayoutToken;
 
+import static shadedwipo.org.apache.commons.lang3.ArrayUtils.isEmpty;
+
 /**
  * Some utilities methods that I don't know where to put.
- * 
+ *
  * @author Patrice Lopez
  */
 public class Utilities {
@@ -56,8 +58,8 @@ public class Utilities {
 	}
 
 	/**
-	 * Deletes all files and subdirectories under dir if they are older than a given 
-	 * amount of seconds. Returns true if all deletions were successful. If a deletion 
+	 * Deletes all files and subdirectories under dir if they are older than a given
+	 * amount of seconds. Returns true if all deletions were successful. If a deletion
 	 * fails, the method stops attempting to delete and returns false.
 	 */
 	public static boolean deleteOldies(File dir, int maxLifeInSeconds) {
@@ -80,7 +82,7 @@ public class Utilities {
 						return false;
 					}
 				}
-				else 
+				else
 					empty = false;
 			}
 		}
@@ -348,7 +350,7 @@ public class Utilities {
 	 * lin-32<br>
 	 * lin-64<br>
 	 * mac-64<br>
-	 * 
+	 *
 	 * @return name of the directory corresponding to the os name and
 	 *         architecture.
 	 */
@@ -361,7 +363,7 @@ public class Utilities {
 
 	/**
 	 * Convert a string to boolean.
-	 * 
+	 *
 	 * @param value
 	 *            the value to convert
 	 * @return true if the string value is "true", false is it equals to
@@ -380,7 +382,7 @@ public class Utilities {
 
 	/**
 	 * Call a java method using the method name given in string.
-	 * 
+	 *
 	 * @param obj
 	 *            Class in which the method is.
 	 * @param args
@@ -400,12 +402,16 @@ public class Utilities {
 				paramTypes[i] = args[i].getClass();
 			}
 		}
+
+		if(StringUtils.isEmpty(methodName)) {
+		    throw new GrobidException("Missing method in command line. To specify with -exe [methodName]. " + methodName);
+        }
 		return getMethod(obj, paramTypes, methodName).invoke(obj, args);
-	}
+	}        
 
 	/**
 	 * Call a java method using the method name given in string.
-	 * 
+	 *
 	 * @param obj
 	 *            Class in which the method is.
 	 * @param args
@@ -426,7 +432,7 @@ public class Utilities {
 	/**
 	 * Get the method given in string in input corresponding to the given
 	 * arguments.
-	 * 
+	 *
 	 * @param obj
 	 *            Class in which the method is.
 	 * @param paramTypes
@@ -434,7 +440,7 @@ public class Utilities {
 	 * @param methodName
 	 *            the name of the method.
 	 * @return Methood
-	 * 
+	 *
 	 * @throws NoSuchMethodException
 	 */
 	@SuppressWarnings("rawtypes")
@@ -446,12 +452,12 @@ public class Utilities {
 
 	/**
 	 * Format a date in string using pFormat.
-	 * 
+	 *
 	 * @param pDate
 	 *            the date to parse.
 	 * @param pFormat
 	 *            the format to use following SimpleDateFormat patterns.
-	 * 
+	 *
 	 * @return the formatted date.
 	 */
 	public static String dateToString(Date pDate, String pFormat){
@@ -469,17 +475,17 @@ public class Utilities {
 	}
 
 	/**
-	 * Merge the offset positions of two lists, merging overlapping positions 
+	 * Merge the offset positions of two lists, merging overlapping positions
 	 * into a spanning one.
-	 * 
+	 *
 	 * @param positions1
 	 *            the first offset position list to be merged
 	 * @param positions2
 	 *            the second offset position list to be merged
-	 * 
+	 *
 	 * @return the merged list of (merged) offset positions
 	 */
-	public static List<OffsetPosition> mergePositions(List<OffsetPosition> positions1, 
+	public static List<OffsetPosition> mergePositions(List<OffsetPosition> positions1,
 		List<OffsetPosition> positions2) {
 		if (CollectionUtils.isEmpty(positions1))
 			return positions2;
@@ -543,7 +549,7 @@ public class Utilities {
                             found = true;
                             break;
                         }
-                        indexToken++;    
+                        indexToken++;
                     }
                     if (found) {
                         indexToken++;
@@ -553,7 +559,7 @@ public class Utilities {
                         result.add(currentPosition);
                     }
                 }
-                indexToken++;    
+                indexToken++;
             }
         }
         return result;

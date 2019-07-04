@@ -16,7 +16,9 @@ import java.util.Map;
  * Class that creates a tagger from a given model or reuse it if it already
  * exists.
  * 
+ * 
  */
+@Deprecated
 public class ModelMap {
 
 	/**
@@ -31,7 +33,7 @@ public class ModelMap {
 	private static Map<String, Model> models = null;
 
 	/**
-	 * Return a tagger created corresponding to the model given in argument.
+	 * Return a CRFPP tagger created corresponding to the model given in argument.
 	 * 
 	 * @param grobidModel
 	 *            the model to use for the creation of the tagger.
@@ -54,8 +56,9 @@ public class ModelMap {
 	}
 
 	/**
-	 * Loading of the models.
+	 * Loading of the CRFPP models.
 	 */
+	@Deprecated
 	public static synchronized void initModels() {
 		LOGGER.info("Loading models");
 		GrobidModels[] models = GrobidModels.values();
@@ -84,6 +87,7 @@ public class ModelMap {
 	 *            the path to the model
 	 * @return the model corresponding to the given path.
 	 */
+	@Deprecated
 	protected static Model getModel(String modelPath) {
 		LOGGER.debug("start getModel");
 		if (models == null) {
@@ -102,6 +106,7 @@ public class ModelMap {
 	 * @param modelPath
 	 *            The path of the model to use.
 	 */
+	@Deprecated
 	protected static synchronized void getNewModel(String modelPath) {
 		LOGGER.info("Loading model " + modelPath + " in memory");
 		models.put(modelPath, new Model("-m " + modelPath + " "));

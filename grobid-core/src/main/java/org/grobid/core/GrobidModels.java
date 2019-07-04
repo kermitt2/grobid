@@ -22,7 +22,7 @@ public enum GrobidModels implements GrobidModel {
     DATE("date"),
     DICTIONARIES_LEXICAL_ENTRIES("dictionaries-lexical-entries"),
     DICTIONARIES_SENSE("dictionaries-sense"),
-    EBOOK("ebook"),
+    MONOGRAPH("monograph"),
     ENTITIES_CHEMISTRY("entities/chemistry"),
     //	ENTITIES_CHEMISTRY("chemistry"),
     FULLTEXT("fulltext"),
@@ -42,7 +42,8 @@ public enum GrobidModels implements GrobidModel {
     ENTITIES_NERSense("nersense"),
     //	ENTITIES_BIOTECH("entities/biotech"),
     ENTITIES_BIOTECH("bio"),
-    ASTRO("astro");
+    ASTRO("astro"),
+    SOFTWARE("software");
 
     /**
      * Absolute path to the model.

@@ -13,7 +13,9 @@ import org.apache.commons.io.FileUtils;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
+import org.junit.AfterClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -23,7 +25,11 @@ import org.junit.Test;
 //@Ignore
 public class TestCitationPatentParser extends EngineTest {
 	private String newTrainingPath = null;
-	
+
+    @AfterClass
+    public static void tearDown(){
+        GrobidFactory.reset();
+    }
 
 	public File getResourceDir(String resourceDir) {
 		File file = new File(resourceDir);
@@ -95,7 +101,7 @@ public class TestCitationPatentParser extends EngineTest {
 		
 		List<BibDataSet> articles = new ArrayList<BibDataSet>();
 		List<PatentItem> patents = new ArrayList<PatentItem>();
-		boolean consolidateCitations = false;
+		int consolidateCitations = 0;
 		engine.processAllCitationsInPatent(text, articles, patents, consolidateCitations);
 		
 		assertEquals(4, patents.size());

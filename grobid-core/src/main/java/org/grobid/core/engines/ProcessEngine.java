@@ -97,7 +97,7 @@ public class ProcessEngine implements Closeable {
             for (final File currPdf : files) {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
-                        result = getEngine().processHeader(currPdf.getAbsolutePath(), false, null);
+                        result = getEngine().processHeader(currPdf.getAbsolutePath(), 0, null);
                         File outputPathFile = new File(outputPath);
                         if (!outputPathFile.exists()) {
                             outputPathFile.mkdirs();
@@ -168,10 +168,12 @@ public class ProcessEngine implements Closeable {
             for (final File currPdf : files) {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
+                        System.out.println("Processing: " + currPdf.getPath());
                         GrobidAnalysisConfig config = null;
                         // path for saving assets
                         if (saveAssets) {
-                            String assetPath = outputPath + File.separator + KeyGen.getKey();
+                            String baseName = currPdf.getName().replace(".pdf", "").replace(".PDF", "");
+                            String assetPath = outputPath + File.separator + baseName + "_assets";
                             config = GrobidAnalysisConfig.builder()
                                     .pdfAssetPath(new File(assetPath))
                                     .generateTeiCoordinates(elementCoordinates)
@@ -281,7 +283,7 @@ public class ProcessEngine implements Closeable {
      */
     public void processRawReference(final GrobidMainArgs pGbdArgs) throws Exception {
         inferOutputPath(pGbdArgs);
-        final BiblioItem result = getEngine().processRawReference(pGbdArgs.getInput(), false);
+        final BiblioItem result = getEngine().processRawReference(pGbdArgs.getInput(), 0);
         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.toTEI(-1));
         LOGGER.info(result.toTEI(-1));
     }
@@ -318,7 +320,7 @@ public class ProcessEngine implements Closeable {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
                         final List<BibDataSet> results =
-                                getEngine().processReferences(currPdf, false);
+                                getEngine().processReferences(currPdf, 0);
                         File outputPathFile = new File(outputPath);
                         if (!outputPathFile.exists()) {
                             outputPathFile.mkdir();
@@ -379,6 +381,33 @@ public class ProcessEngine implements Closeable {
     }
 
     /**
+     * Generate training data for the monograph model from provided directory of PDF documents.
+     *
+     * @param pGbdArgs The parameters.
+     * @throws Exception
+     */
+    public void createTrainingMonograph(final GrobidMainArgs pGbdArgs) throws Exception {
+        inferPdfInputPath(pGbdArgs);
+        inferOutputPath(pGbdArgs);
+        int result = getEngine().batchCreateTrainingMonograph(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
+        LOGGER.info(result + " files processed.");
+    }
+
+    /**
+     * Generate blank training data from provided directory of PDF documents, i.e. where TEI files are text only
+     * without tags. This can be used to start from scratch any new model. 
+     *
+     * @param pGbdArgs The parameters.
+     * @throws Exception
+     */
+    public void createTrainingBlank(final GrobidMainArgs pGbdArgs) throws Exception {
+        inferPdfInputPath(pGbdArgs);
+        inferOutputPath(pGbdArgs);
+        int result = getEngine().batchCreateTrainingBlank(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
+        LOGGER.info(result + " files processed.");
+    }
+
+    /**
      * Generate training data for citation extraction from patent documents.
      *
      * @param pGbdArgs The parameters.
@@ -397,7 +426,7 @@ public class ProcessEngine implements Closeable {
      * @param pGbdArgs The parameters.
      * @throws Exception
      */
-    public void processCitationPatentTEI(final GrobidMainArgs pGbdArgs) throws Exception {
+    /*public void processCitationPatentTEI(final GrobidMainArgs pGbdArgs) throws Exception {
         inferPdfInputPath(pGbdArgs);
         inferOutputPath(pGbdArgs);
 
@@ -408,14 +437,14 @@ public class ProcessEngine implements Closeable {
                 if (currTEI.getName().toLowerCase().endsWith(".tei") ||
                         currTEI.getName().toLowerCase().endsWith(".tei.xml")) {
                     getEngine().processCitationPatentTEI(pGbdArgs.getPath2Input() + File.separator + currTEI.getName(),
-                            pGbdArgs.getPath2Output() + File.separator + currTEI.getName(), false);
+                            pGbdArgs.getPath2Output() + File.separator + currTEI.getName(), 0);
                 }
             } catch (final Exception exp) {
                 LOGGER.error("An error occured while processing the file " + currTEI.getAbsolutePath()
                         + ". Continuing the process for the other files", exp);
             }
         }
-    }
+    }*/
 
     /**
      * Process a patent encoded in ST.36 using pGbdArgs parameters.
@@ -436,7 +465,7 @@ public class ProcessEngine implements Closeable {
                     List<BibDataSet> articles = new ArrayList<BibDataSet>();
                     List<PatentItem> patents = new ArrayList<PatentItem>();
                     result = getEngine().processAllCitationsInXMLPatent(pGbdArgs.getPath2Input() + File.separator + currXML.getName(),
-                            articles, patents, false);
+                            articles, patents, 0);
                     if (currXML.getName().endsWith(".gz")) {
                         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                                 + new File(currXML.getAbsolutePath()).getName().replace(".xml.gz", ".tei.xml"), result);
@@ -470,7 +499,7 @@ public class ProcessEngine implements Closeable {
                     String inputStr = FileUtils.readFileToString(currTXT, "UTF-8");
                     List<BibDataSet> articles = new ArrayList<BibDataSet>();
                     List<PatentItem> patents = new ArrayList<PatentItem>();
-                    result = getEngine().processAllCitationsInPatent(inputStr, articles, patents, false);
+                    result = getEngine().processAllCitationsInPatent(inputStr, articles, patents, 0);
                     IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                             + new File(currTXT.getAbsolutePath()).getName().replace(".txt", ".tei.xml"), result);
                 }
@@ -499,7 +528,7 @@ public class ProcessEngine implements Closeable {
                     List<BibDataSet> articles = new ArrayList<BibDataSet>();
                     List<PatentItem> patents = new ArrayList<PatentItem>();
                     result = getEngine().processAllCitationsInPDFPatent(pGbdArgs.getPath2Input() +
-                            File.separator + currPDF.getName(), articles, patents, false);
+                            File.separator + currPDF.getName(), articles, patents, 0);
                     if (currPDF.getName().endsWith(".pdf")) {
                         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                                 + new File(currPDF.getAbsolutePath()).getName().replace(".pdf", ".tei.xml"), result);
@@ -538,7 +567,7 @@ public class ProcessEngine implements Closeable {
 
                     GrobidAnalysisConfig config = new GrobidAnalysisConfig
                             .GrobidAnalysisConfigBuilder()
-                            .consolidateCitations(true)
+                            .consolidateCitations(1)
                             .generateTeiCoordinates(elementWithCoords)
                             .build();
 

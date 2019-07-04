@@ -1,5 +1,6 @@
 package org.grobid.core.test;
 
+import org.apache.commons.io.FileUtils;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
@@ -10,16 +11,17 @@ import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.layout.Block;
-import org.grobid.core.main.GrobidConstants;
 import org.grobid.core.utilities.GrobidProperties;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.SortedSet;
+
+import nu.xom.Element;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -30,73 +32,82 @@ import static org.junit.Assert.assertTrue;
  */
 public class TestFullTextParser extends EngineTest {
 
-    private String testPath = null;
-    private String newTrainingPath = null;
-
     @BeforeClass
     public static void init() {
         GrobidProperties.getInstance();
     }
 
-    @Before
-    public void setUp() {
-        newTrainingPath = GrobidProperties.getTempPath().getAbsolutePath();
-    }
-
-    private void getTestResourcePath() {
-        testPath = GrobidConstants.TEST_RESOURCES_PATH;
+    @AfterClass
+    public static void tearDown(){
+        GrobidFactory.reset();
     }
 
     @Test
-    public void testFullTextParser() throws Exception {
-        getTestResourcePath();
-
-        File pdfPath = new File(testPath, "/Wang-paperAVE2008.pdf");
-
-        Engine engine = GrobidFactory.getInstance().getEngine();
-        Document tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+    public void testFullTextParser_1() throws Exception {
+        File inputTmpFile = getInputDocument("/test/Wang-paperAVE2008.pdf");
+        
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
-        //System.out.println(tei);
+    }
 
-        //TODO: fix the test
+    private File getInputDocument(String inputPath) throws IOException {
+        InputStream is = this.getClass().getResourceAsStream(inputPath);
+        File inputTmpFile  = File.createTempFile("tmpFileTest", "testFullTextParser");
+        inputTmpFile.deleteOnExit();
 
-        pdfPath = new File(testPath + File.separator + "two_pages.pdf");
-        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+        FileUtils.copyToFile(is, inputTmpFile);
+
+        return inputTmpFile;
+    }
+
+    @Test
+    public void testFullTextParser_2() throws Exception {
+        File inputTmpFile = getInputDocument("/test/two_pages.pdf");
+
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
+    }
 
-
-        pdfPath = new File(testPath + File.separator + "MullenJSSv18i03.pdf");
-        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+    @Test
+    public void testFullTextParser_3() throws Exception {
+        File inputTmpFile = getInputDocument("/test/MullenJSSv18i03.pdf");
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
+    }
 
-
-
-        pdfPath = new File(testPath + File.separator + "1001._0908.0054.pdf");
-
-        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+    @Test
+    public void testFullTextParser_4() throws Exception {
+        File inputTmpFile = getInputDocument("/test/1001._0908.0054.pdf");
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
-        //System.out.println(tei);
+    }
 
-        pdfPath = new File(testPath + File.separator + "submission_161.pdf");
-        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+    @Test
+    public void testFullTextParser_5() throws Exception {
+        File inputTmpFile = getInputDocument("/test/submission_161.pdf");
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
-        //System.out.println(tei);
+    }
 
-        pdfPath = new File(testPath + File.separator + "submission_363.pdf");
-        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+    @Test
+    public void testFullTextParser_6() throws Exception {
+        File inputTmpFile = getInputDocument("/test/submission_363.pdf");
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
-        //System.out.println(tei);
+    }
 
-        pdfPath = new File(testPath + File.separator + "ApplPhysLett_98_082505.pdf");
-        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+    @Test
+    public void testFullTextParser_7() throws Exception {
+        File inputTmpFile = getInputDocument("/test/ApplPhysLett_98_082505.pdf");
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
+    }
 
-        pdfPath = new File(testPath + File.separator + "1996PRBAConfProc00507417Vos.pdf");
-        tei = engine.fullTextToTEIDoc(pdfPath, GrobidAnalysisConfig.defaultInstance());
+    @Test
+    public void testFullTextParser_8() throws Exception {
+        File inputTmpFile = getInputDocument("/test/1996PRBAConfProc00507417Vos.pdf");
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
-
-        engine.close();
-
     }
 
     private void assertTei(Document doc) {
@@ -125,14 +136,14 @@ public class TestFullTextParser extends EngineTest {
         }
 
         for (TaggingLabel l : Arrays.asList(SegmentationLabels.BODY, SegmentationLabels.REFERENCES, SegmentationLabels.HEADER, SegmentationLabels.ACKNOWLEDGEMENT, SegmentationLabels.ANNEX,
-                SegmentationLabels.FOOTNOTE, SegmentationLabels.HEADNOTE, SegmentationLabels.TOC)) {
+            SegmentationLabels.FOOTNOTE, SegmentationLabels.HEADNOTE, SegmentationLabels.TOC)) {
             SortedSet<DocumentPiece> parts = doc.getDocumentPart(l);
             if (parts == null) {
                 continue;
             }
             for (DocumentPiece p : parts) {
-                DocumentPointer startPtr = p.a;
-                DocumentPointer endPtr = p.b;
+                DocumentPointer startPtr = p.getLeft();
+                DocumentPointer endPtr = p.getRight();
 
                 Block endBlock = doc.getBlocks().get(endPtr.getBlockPtr());
                 assertTrue(endPtr.getTokenBlockPos() < endBlock.getTokens().size());

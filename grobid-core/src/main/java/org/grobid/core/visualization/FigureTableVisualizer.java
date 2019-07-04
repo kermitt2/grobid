@@ -1,5 +1,6 @@
 package org.grobid.core.visualization;
 
+import com.google.common.collect.Lists;
 import net.sf.saxon.om.Item;
 import net.sf.saxon.om.SequenceIterator;
 import net.sf.saxon.trans.XPathException;
@@ -14,17 +15,15 @@ import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
+import org.grobid.core.layout.GraphicObjectType;
 import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.PathUtil;
 import org.grobid.core.utilities.XQueryProcessor;
 
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -37,6 +36,8 @@ import static org.grobid.core.utilities.PathUtil.getOneFile;
  */
 public class FigureTableVisualizer {
 
+    public static final boolean VISUALIZE_VECTOR_BOXES = true;
+
     private static Set<Integer> blacklistedPages;
     private static File inputPdf;
     private static boolean annotated;
@@ -46,22 +47,38 @@ public class FigureTableVisualizer {
 
     public static void main(String[] args) {
         try {
+//            File input = new File("/Users/zholudev/Downloads/AS1032852770693301401636537960_content_1.pdf");
+
+
 //            File input = new File("/Work/temp/context/coords/1.pdf");
-//            File input = new File("/Work/temp/figureExtraction/newtest/1.pdf");
-//            File input = new File("/Work/temp/figureExtraction/newtest/2.pdf");
+
+//            File input = new File("/private/tmp/archives/153/560/AS_506916453314560_1497869708427/AS_506916453314560_1497869708427_276070153_viz.pdf");
+//            File input = new File("/Users/zholudev/Work/temp/AS_103916838588419_1401787113782/AS_103916838588419_1401787113782_1737175_viz.pdf");
+//            File input = new File("/Users/zholudev/Downloads/AS5478209999831041507622112282_content_1.pdf");
+//            File input = new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis/pdf-analysis-core/src/evaluation/resources/figures/testSets/testSetBasic/01/1.pdf");
+//            File input = new File("/Users/zholudev/Downloads/Job-description-APPTA-PostDocFellow-eng (1).pdf");
+            File input = new File("/Users/zholudev/Downloads/Dkt. 1-1 - Complaint - Exhibit A.pdf");
+//            File input = new File("/Work/temp/figureExtraction/2.pdf");
+
+
+
+
+//            File input = new File("/Work/temp/figureExtraction/newtest/2.pdf"); // here some images are not extracted
 //            File input = new File("/Work/temp/figureExtraction/5.pdf");
 //            File input = new File("/Work/temp/figureExtraction/vector/6.pdf");
 
 //            File input = new File("/Users/zholudev/Downloads/AS-134079286616064@1408978401811_content_1.pdf");
-            File input = new File("/Users/zholudev/Downloads/AS-411011216625664@1475004118387_content_1.pdf");
+//            File input = new File("/Users/zholudev/Work/temp/figureExtraction/1.pdf");
 
 //
 //
+// File input = new File("/Users/zholudev/Downloads/AS1670507774730271416839417556_content_1.pdf");
 // File input = new File("/Users/zholudev/Downloads/AS-322050973995010@1453794344041_content_1.pdf"); //separate blocks for 1 caption
 //            File input = new File("/Users/zholudev/Downloads/AS-327630265044992@1455124550118_content_1.pdf");
 //            File input = new File("/Work/temp/images/pdf_image_extraction_results/Synaptotagmin 11 interacts with components of the RNA-induced (2)/Synaptotagmin 11 interacts with components of the RNA-induced (2).pdf"); //double caption attached
 
 //            File input = new File("/Work/temp/images/pdf_image_extraction_results/Synaptotagmin 11 interacts with components of the RNA-induced (2)/Synaptotagmin 11 interacts with components of the RNA-induced (2).pdf");
+
 
 
 //            File input = new File("/Users/zholudev/Downloads/AS-102952320634884@1401557154467_content_1.pdf");
@@ -197,17 +214,20 @@ public class FigureTableVisualizer {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
                 .pdfAssetPath(assetPath)
                 .withPreprocessImages(false)
+                .generateTeiCoordinates(Lists.newArrayList("figure"))
                 .withProcessVectorGraphics(true)
                 .build();
 
 
-        DocumentSource documentSource = DocumentSource.fromPdf(input);
+        DocumentSource documentSource = DocumentSource.fromPdf(input, -1, -1, true, false, false);
 
         File pdf2xmlDirectory = new File(contentDir, "pdf2xml");
         pdf2xmlDirectory.mkdirs();
         FileUtils.copyFileToDirectory(input, contentDir);
-        FileUtils.copyFile(documentSource.getXmlFile(), new File(pdf2xmlDirectory, "input.xml"));
+        File copiedFile = new File(pdf2xmlDirectory, "input.xml");
+        FileUtils.copyFile(documentSource.getXmlFile(), copiedFile);
         FileUtils.copyDirectory(new File(documentSource.getXmlFile().getAbsolutePath() + "_data"), new File(pdf2xmlDirectory, documentSource.getXmlFile().getName() + "_data"));
+
         System.out.println(documentSource.getXmlFile());
 
         blacklistedPages = getVectorGraphicPages(pdf2xmlDirectory);
@@ -215,8 +235,8 @@ public class FigureTableVisualizer {
         Document teiDoc = engine.fullTextToTEIDoc(documentSource, config);
 
         PDDocument out = annotateFigureAndTables(
-                document, documentSource.getXmlFile(), teiDoc,
-                false, false, true, true);
+                document, copiedFile, teiDoc,
+                false, false, true, true, VISUALIZE_VECTOR_BOXES);
 
         if (out != null) {
             out.save(outPdf);
@@ -250,12 +270,13 @@ public class FigureTableVisualizer {
             boolean visualizeTeiFigures,
             boolean visualizePdf2xmlImages,
             boolean visualizeGraphicObjects,
-            boolean visualizeTables
+            boolean visualizeTables,
+            boolean visualizeVectorBoxes
     ) throws IOException, XPathException {
         String q = XQueryProcessor.getQueryFromResources("figure-table-coords.xq");
         String tei = teiDoc.getTei();
         if (singleFile) {
-            System.out.println(tei);
+            //System.out.println(tei);
         }
         XQueryProcessor pr = new XQueryProcessor(tei);
         SequenceIterator it = pr.getSequenceIterator(q);
@@ -275,7 +296,7 @@ public class FigureTableVisualizer {
 
         //VISUALIZING "IMAGE" elements from pdf2xml
         if (visualizePdf2xmlImages) {
-            q = XQueryProcessor.getQueryFromResources("figure-coords-pdf2xml.xq");
+            q = XQueryProcessor.getQueryFromResources("figure-coords-pdfalto.xq");
 
             pr = new XQueryProcessor(xmlFile);
             it = pr.getSequenceIterator(q);
@@ -326,6 +347,19 @@ public class FigureTableVisualizer {
             }
         }
 
+        if (visualizeVectorBoxes) {
+            if (teiDoc.getImages() != null) {
+                for (GraphicObject img : teiDoc.getImages()) {
+                    if (img.getType() == GraphicObjectType.VECTOR_BOX) {
+                        BoundingBox go = img.getBoundingBox();
+                        AnnotationUtil.annotatePage(document,
+                                AnnotationUtil.getCoordString(go.getPage(), go.getX(), go.getY(),
+                                        go.getWidth(), go.getHeight()), 12, 3
+                        );
+                    }
+                }
+            }
+        }
         if (visualizeTables) {
             boolean hasSomeTables = false;
             if (teiDoc.getTables() != null) {

@@ -171,6 +171,6 @@ public class NameCitationTrainer extends AbstractTrainer {
         Trainer trainer = new NameCitationTrainer();
         AbstractTrainer.runTraining(trainer);
         AbstractTrainer.runEvaluation(trainer);
-
+        System.exit(0);
     }
 }
