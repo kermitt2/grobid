@@ -21,9 +21,9 @@ You could also build and install the service as a standalone service (let's supp
 > cd ..
 > mkdir grobid-installation
 > cd grobid-installation
-> unzip ../grobid/grobid-service/build/distributions/grobid-service-0.5.2.zip
-mv grobid-service-0.5.2 grobid-service
-> unzip ../grobid/grobid-home/build/distributions/grobid-home-0.5.2.zip 
+> unzip ../grobid/grobid-service/build/distributions/grobid-service-0.5.5.zip
+mv grobid-service-0.5.5 grobid-service
+> unzip ../grobid/grobid-home/build/distributions/grobid-home-0.5.5.zip 
 > ./grobid-service/bin/grobid-service server grobid-service/config/config.yaml
 ```
 
@@ -41,12 +41,23 @@ You can check whether the service is up and running by opening the following URL
 
 * `http://yourhost:8070/api/isalive` will return true/false whether the service is up and running
 
-The service provides also an admin console, reachable at `http://yourhost:8070` where some additional checks like ping, metrics, hearthbeat are available.
+The service provides also an admin console, reachable at `http://yourhost:8071` where some additional checks like ping, metrics, hearthbeat are available.
 We recommend, in particular to have a look at the metrics (using the [Metric library](https://metrics.dropwizard.io/3.1.0/getting-started/)) which are providing the rate of execution as well as the throughput of each entry point. 
 
 ## Configure the server
 
 If required, modify the file under `grobid/grobid-service/config/config.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID. 
+
+You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. Loading all models at service startup will slow down the start of the server and will use more memories than the lazy mode in case only a few services will be used. For preloading all the models, set the following config parameter to `true`: 
+
+```yaml
+grobid:
+  # how to load the models, 
+  # false -> models are loaded when needed (default), avoiding puting in memory models which are not used
+  # true -> all the models are loaded into memory at the server statup, slow the start of the services and models not  
+  # used will take some memory
+  modelPreload: false    
+```
 
 
 ## Clients for GROBID Web Services
@@ -499,29 +510,6 @@ which will return:
 </TEI>
 ```
 
-#### /api/processCitationPatentTEI
-
-Extract and parse the patent and non patent citations in the description of a patent publication encoded in TEI (Patent Document Model). Results are added to the original document as TEI stand-off annotations.
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| POST, PUT	| multipart/form-data | application/xml  	| input | required	| TEI file of the patent document to be processed |
-|   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
-
-
-Response status codes:
-
-|     HTTP Status code |   reason                                               |
-|---                   |---                                                     |
-|         200          |     Successful operation.                              |
-|         204          |     Process was completed, but no content could be extracted and structured |
-|         400          |     Wrong request, missing parameters, missing header  |
-|         500          |     Indicate an internal service error, further described by a provided message           |
-|         503          |     The service is not available, which usually means that all the threads are currently used                       |
-
-A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the capacities of the server and the size of the input document, we suggest 5-10 seconds for the `processCitationPatentTEI` service. 
-
-
 #### /api/processCitationPatentST36
 
 Extract and parse the patent and non patent citations in the description of a patent publication encoded in ST.36. Results are returned as a list of TEI citations. 
@@ -595,125 +583,11 @@ Response status codes:
 A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the capacities of the server and the size of the input document, we suggest 5-10 seconds for the `citationPatentAnnotations` service. 
 
 
-### Administration services
-
-#### Configuration of the password for the service adminstration
-
-A password is required to access the administration page under the `Admin` tab in the console. The default password for the administration console is **admin**.
-
-For security, the password is saved as SHA1 hash in the file `grobid-service/src/main/conf/grobid_service.properties` with the property name `org.grobid.service.admin.pw`
-
-To change the password, you can replace this property value by the SHA1 hash generated for your new password of choice. To generate the SHA1 from any `<input_string>`, you can use the corresponding Grobid REST service available at:
-
-> http://localhost:8070/api/sha1?sha1=`<input_string>`
-
-See below for the `/api/sha1` service description. 
-
-#### /api/admin
-
-Request to get parameters of `grobid.properties` formatted in html table.
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| POST	| application/x-www-form-urlencoded | text/html  	| sha1 | required	| Administration password hashed using sha1 |
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| GET	| string | text/html  	| sha1 | required	| Administration password hashed using sha1 |
-
-Example of usage with GET method: `/api/admin?sha1=<pwd>`
-
-
-#### /api/sha1
-
-Request to get an input string hashed using sha1.
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| POST	| application/x-www-form-urlencoded | text/html  	| sha1 | required	| String (password) to be hashed using sha1 |
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| GET	| string | text/html  	| sha1 | required	| String (password) to be hashed using sha1 |
-
-Example of usage with GET method: `/api/sha1?sha1=<pwd>`
-
-
-#### /api/allProperties
-
-Request to get all properties key/value/type as XML.
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| POST	| application/x-www-form-urlencoded | text/html  	| sha1 | required	| Administration password hashed using sha1  |
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| GET	| string | text/html  	| sha1 | required	| Administration password hashed using sha1  |
-
-Example of usage with GET method: `/api/allProperties?sha1=<password>`
-
-Sent xml follow the following schema:
-
-```xml
-<properties>
-	<property>
-		<key>key</key>
-		<value>value</value>
-		<type>type</type>
-	</property>
-	<property>...</property>
-</properties>
-```
-
-#### /api/changePropertyValue
-
-Change the property value from the property key passed in the xml input.
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| POST	| application/x-www-form-urlencoded | text/html  	| xml | required	| XML input specifying the administrative password hashed using sha1 and a new  property/value following the schema below |
-
-|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
-|---		|---				  |---					 |---			|---			|--- 						|
-| GET	| string | text/html  	| xml | required	| XML input specifying the administrative password hashed using sha1 and a new  property/value following the schema below  |
-
-Example of usage with GET method: `/api/changePropertyValue?xml=<some_xml>`
-
-XML input has to follow the following schema:
-
-```xml
-<changeProperty>
-	<password>pwd</password>
-	<property>
-		<key>key</key>
-		<value>value</value>
-		<type>type</type>
-	</property>
-</changeProperty>
-```
-
 ## Parallel mode
 
 The Grobid RESTful API provides a very efficient way to use the library out of the box, because the service exploits multithreading.
 
-The service can work following two modes:
-
-+ Parallel execution (default): a pool of threads is used to process requests in parallel. The following property must be set to true in the file `grobid-home/config/grobid_service.properties`
-
-```java
-	org.grobid.service.is.parallel.execution=true
-```
-
 As Grobid is thread-safe and manages a pool of parser instances, it is advised to use several threads to call the REST service for scaling the processing to large collections of documents. This improves considerably the performance of the services for PDF processing because documents can be processed while other are uploading. 
-
-+ Sequencial execution: a single Grobid instance is used and process the requests as a queue. The following property must be set to false in the file grobid-home/config/grobid_service.properties
-
-```java
-	org.grobid.service.is.parallel.execution=false
-```
-
-This mode should in general be avoided, it is only relevant for servers running with a low amount of RAM, for instance less than 2-4GB, and single core, otherwise the default parallel execution must be used. 
 
 Setting the maximum number of parallel processing is done in the property file under `grobid-home/config/grobid.properties`. Adjust this number (default 10) following the number of cores/threads available on your server: 
 

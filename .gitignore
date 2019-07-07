@@ -7,7 +7,6 @@ Thumbs.db
 .classpath
 .idea
 .gradle
-gradle
 **/build
 */out/
 *.iml
@@ -37,6 +36,7 @@ maven-build.xml
 release.properties
 
 grobid-quantities
+grobid-superconductors
 grobid-dictionaries
 grobid-ner
 grobid-bio
@@ -48,6 +48,7 @@ grobid-smecta
 grobid-example
 grobid-software
 software-mentions
+dataseer-ml
 grobid-test-ant
 grobid-home/models/quantities
 grobid-home/models/dictionaries-lexical-entries
@@ -63,3 +64,5 @@ grobid-home/models/lexical-entry/model.wapiti
 grobid-home/models/dictionary*
 grobid-home/models/dictionaries*
 grobid-home/models/software*
+grobid-home/models/superconductors*
+grobid-home/models/values

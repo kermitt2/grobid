@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 public class TextUtilities {
 
     public static final String punctuations = " •*,:;?.!)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
-    public static final String fullPunctuations = "([ •*,:;?.!/)-−–‐\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
+    public static final String fullPunctuations = "(（[ •*,:;?.!/)）-−–‐«»„\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
     public static final String restrictedPunctuations = ",:;?.!/-–«»„\"“”‘’'`*\u2666\u2665\u2663\u2660";
     public static String delimiters = "\n\r\t\f\u00A0" + fullPunctuations;
 
@@ -1299,7 +1299,7 @@ public class TextUtilities {
         else if (line.contains("@IMAGE") || line.contains("@PAGE")) {
             filter = true;
         } else if (line.contains(".pbm") || line.contains(".ppm") ||
-            line.contains(".vec") || line.contains(".jpg") ||
+            line.contains(".svg") || line.contains(".jpg") ||
             line.contains(".png")) {
             filter = true;
         }

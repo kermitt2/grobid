@@ -29,11 +29,6 @@ public class TrainerRunner {
 	 * Initialize the batch.
 	 */
 	protected static void initProcess(final String path2GbdHome, final String path2GbdProperties) {
-//		try {
-//			MockContext.setInitialContext(path2GbdHome, path2GbdProperties);
-//		} catch (final Exception exp) {
-//			System.err.println("Grobid initialisation failed: " + exp);
-//		}
 		GrobidProperties.getInstance();
 	}
 
@@ -138,7 +133,7 @@ public class TrainerRunner {
 		default:
 			throw new IllegalStateException("Invalid RunType: " + mode.name());
 		}
-
+		System.exit(0);
 	}
 
 }

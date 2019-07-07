@@ -33,20 +33,20 @@ Here an example of grobid-core dependency:
 	<dependency>
 	    <groupId>org.grobid</groupId>
 	    <artifactId>grobid-core</artifactId>
-	    <version>0.5.2</version>
+	    <version>0.5.5</version>
 	</dependency>
 ```
  
 If you want to work on a SNAPSHOT development version, you need to include in your pom file the path to the Grobid jar file, 
-for instance as follow (if necessary replace `0.5.2` by the valid `<current version>`):
+for instance as follow (if necessary replace `0.5.5` by the valid `<current version>`):
 
 ```xml
 	<dependency>
 	    <groupId>org.grobid</groupId>
 	    <artifactId>grobid-core</artifactId>
-	    <version>0.5.0</version>
+	    <version>0.5.5</version>
 	    <scope>system</scope>
-	    <systemPath>${project.basedir}/lib/grobid-core-0.5.2.jar</systemPath>
+	    <systemPath>${project.basedir}/lib/grobid-core-0.5.5.jar</systemPath>
 	</dependency>
 ```
 
@@ -64,8 +64,8 @@ Add the following snippet in your gradle.build file:
 
 and add the Grobid dependency as well: 
 ```
-    compile 'org.grobid:grobid-core:0.5.2'
-    compile 'org.grobid:grobid-trainer:0.5.2'
+    compile 'org.grobid:grobid-core:0.5.5'
+    compile 'org.grobid:grobid-trainer:0.5.5'
 ```
 
 

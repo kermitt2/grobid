@@ -1,19 +1,3 @@
-/**
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- *
- */
 package org.grobid.service;
 
 /**
@@ -39,7 +23,7 @@ public interface GrobidPaths {
 	/**
 	 * path extension for grobid admin pages.
 	 */
-	String PATH_ADMIN = "admin";
+	//String PATH_ADMIN = "admin";
 
 	/**
 	 * path extension for processing document headers.
@@ -79,7 +63,7 @@ public interface GrobidPaths {
 	/**
 	 * path extension for processing citation in patent documents in TEI.
 	 */
-	String PATH_CITATION_PATENT_TEI = "processCitationPatentTEI";
+	//String PATH_CITATION_PATENT_TEI = "processCitationPatentTEI";
 
 	/**
 	 * path extension for processing citation in patent documents in ST.36.
@@ -99,7 +83,7 @@ public interface GrobidPaths {
 	/**
 	 * path extension for processing citation annotations.
 	 */
-	String PATH_CITATION_ANNOTATION = "processCitationPatentTEI";
+	//String PATH_CITATION_ANNOTATION = "processCitationPatentTEI";
 
 	/**
 	 * path extension for processing names as appearing in a citation (e.g. bibliographic section).

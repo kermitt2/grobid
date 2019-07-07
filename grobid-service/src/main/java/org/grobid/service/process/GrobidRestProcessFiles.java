@@ -2,7 +2,6 @@ package org.grobid.service.process;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.document.Document;
@@ -21,7 +20,7 @@ import org.grobid.core.visualization.FigureTableVisualizer;
 import org.grobid.service.exceptions.GrobidServiceException;
 import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
-import org.grobid.service.util.GrobidServiceProperties;
+//import org.grobid.service.util.GrobidServiceProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
@@ -72,11 +71,10 @@ public class GrobidRestProcessFiles {
         LOGGER.debug(methodLogIn());
         String retVal = null;
         Response response = null;
-        boolean isParallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
         try {
-            engine = Engine.getEngine(isParallelExec);
+            engine = Engine.getEngine(true);
             // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
             if (engine == null) {
                 throw new GrobidServiceException(
@@ -113,7 +111,7 @@ public class GrobidRestProcessFiles {
             if (originFile != null)
                 IOUtilities.removeTempFile(originFile);
 
-            if (isParallelExec && engine != null) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
@@ -147,13 +145,13 @@ public class GrobidRestProcessFiles {
                                           final boolean generateIDs,
                                           final List<String> teiCoordinates) throws Exception {
         LOGGER.debug(methodLogIn());
+
         String retVal = null;
         Response response = null;
-        boolean isParallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
         try {
-            engine = Engine.getEngine(isParallelExec);
+            engine = Engine.getEngine(true);
             // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
             if (engine == null) {
                 throw new GrobidServiceException(
@@ -197,7 +195,7 @@ public class GrobidRestProcessFiles {
             LOGGER.error("An unexpected exception occurs. ", exp);
             response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
         } finally {
-            if (isParallelExec && (engine != null)) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
 
@@ -236,12 +234,11 @@ public class GrobidRestProcessFiles {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
-        boolean isParallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
         String assetPath = null;
         try {
-            engine = Engine.getEngine(isParallelExec);
+            engine = Engine.getEngine(true);
             // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
             if (engine == null) {
                 throw new GrobidServiceException(
@@ -331,7 +328,7 @@ public class GrobidRestProcessFiles {
                 IOUtilities.removeTempDirectory(assetPath);
             }
             
-            if (isParallelExec && (engine != null)) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
@@ -340,28 +337,6 @@ public class GrobidRestProcessFiles {
         return response;
     }
 
-
-    /**
-     * Process a patent document encoded in TEI for extracting and parsing citations in the description body.
-     *
-     * @param pInputStream The input stream to process.
-     * @return StreamingOutput wrapping the response in streaming while parsing
-     * the input.
-     */
-    public StreamingOutput processCitationPatentTEI(final InputStream pInputStream,
-                                                    final int consolidate) {
-        LOGGER.debug(methodLogIn());
-        return new StreamingOutput() {
-            public void write(OutputStream output) throws IOException, WebApplicationException {
-                final TeiStAXParser parser = new TeiStAXParser(pInputStream, output, false, consolidate);
-                try {
-                    parser.parse();
-                } catch (XMLStreamException e) {
-                    throw new GrobidException("Cannot parse input stream.", e, GrobidExceptionStatus.BAD_INPUT_DATA);
-                }
-            }
-        };
-    }
 
     /**
      * Process a patent document in PDF for extracting and parsing citations in the description body.
@@ -375,11 +350,10 @@ public class GrobidRestProcessFiles {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
-        boolean isParallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
         try {
-            engine = Engine.getEngine(isParallelExec);
+            engine = Engine.getEngine(true);
             // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
             if (engine == null) {
                 throw new GrobidServiceException(
@@ -402,7 +376,6 @@ public class GrobidRestProcessFiles {
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Status.NO_CONTENT).build();
             } else {
-                //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
                 response = Response.status(Status.OK)
                     .entity(retVal)
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
@@ -419,7 +392,7 @@ public class GrobidRestProcessFiles {
             if (originFile != null)
                 IOUtilities.removeTempFile(originFile);
 
-            if (isParallelExec && engine != null) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
@@ -440,11 +413,10 @@ public class GrobidRestProcessFiles {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
-        boolean isParallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
         try {
-            engine = Engine.getEngine(isParallelExec);
+            engine = Engine.getEngine(true);
             // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
             if (engine == null) {
                 throw new GrobidServiceException(
@@ -484,7 +456,7 @@ public class GrobidRestProcessFiles {
             if (originFile != null)
                 IOUtilities.removeTempFile(originFile);
             
-            if (isParallelExec && engine != null) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
@@ -507,11 +479,10 @@ public class GrobidRestProcessFiles {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
-        boolean isParallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
         try {
-            engine = Engine.getEngine(isParallelExec);
+            engine = Engine.getEngine(true);
             // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
             if (engine == null) {
                 throw new GrobidServiceException(
@@ -565,7 +536,7 @@ public class GrobidRestProcessFiles {
             if (originFile != null)
                 IOUtilities.removeTempFile(originFile);
 
-            if (isParallelExec && engine != null) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
@@ -592,9 +563,8 @@ public class GrobidRestProcessFiles {
         PDDocument out = null;
         File originFile = null;
         Engine engine = null;
-        boolean isParallelExec = GrobidServiceProperties.isParallelExec();
         try {
-            engine = Engine.getEngine(isParallelExec);
+            engine = Engine.getEngine(true);
             // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
             if (engine == null) {
                 throw new GrobidServiceException(
@@ -608,7 +578,7 @@ public class GrobidRestProcessFiles {
                     "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
             } 
 
-            out = annotate(originFile, isParallelExec, type, engine, consolidateHeader, consolidateCitations);
+            out = annotate(originFile, type, engine, consolidateHeader, consolidateCitations);
             if (out != null) {
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                 out.save(outputStream);
@@ -640,7 +610,7 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
             }
 
-            if (isParallelExec && engine != null) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
@@ -661,11 +631,10 @@ public class GrobidRestProcessFiles {
                                                   final int consolidateCitations) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
-        boolean isParallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
         try {
-            engine = Engine.getEngine(isParallelExec);
+            engine = Engine.getEngine(true);
             // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
             if (engine == null) {
                 throw new GrobidServiceException(
@@ -715,7 +684,7 @@ public class GrobidRestProcessFiles {
             if (originFile != null)
                 IOUtilities.removeTempFile(originFile);
 
-            if (isParallelExec && engine != null) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
@@ -735,11 +704,10 @@ public class GrobidRestProcessFiles {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
-        boolean isParallelExec = GrobidServiceProperties.isParallelExec();
         File originFile = null;
         Engine engine = null;
         try {
-            engine = Engine.getEngine(isParallelExec);
+            engine = Engine.getEngine(true);
             // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
             if (engine == null) {
                 throw new GrobidServiceException(
@@ -775,7 +743,7 @@ public class GrobidRestProcessFiles {
             if (originFile != null)
                 IOUtilities.removeTempFile(originFile);
 
-            if (isParallelExec && engine != null) {
+            if (engine != null) {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
@@ -791,7 +759,7 @@ public class GrobidRestProcessFiles {
         return "<< " + GrobidRestProcessFiles.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
     }
 
-    protected PDDocument annotate(File originFile, boolean isParallelExec,
+    protected PDDocument annotate(File originFile, 
                                   final GrobidRestUtils.Annotation type, Engine engine,
                                   final int consolidateHeader,
                                   final int consolidateCitations) throws Exception {
@@ -799,8 +767,12 @@ public class GrobidRestProcessFiles {
         PDDocument outputDocument = null;
         // list of TEI elements that should come with coordinates
         List<String> elementWithCoords = new ArrayList<>();
-        elementWithCoords.add("ref");
-        elementWithCoords.add("biblStruct");
+        if (type == GrobidRestUtils.Annotation.CITATION) {
+            elementWithCoords.add("ref");
+            elementWithCoords.add("biblStruct");
+        } else if (type == GrobidRestUtils.Annotation.FIGURE) {
+            elementWithCoords.add("figure");
+        }
 
         GrobidAnalysisConfig config = new GrobidAnalysisConfig
             .GrobidAnalysisConfigBuilder()
@@ -809,18 +781,25 @@ public class GrobidRestProcessFiles {
             .generateTeiCoordinates(elementWithCoords)
             .build();
 
-        Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
+        DocumentSource documentSource = 
+            DocumentSource.fromPdf(originFile, config.getStartPage(), config.getEndPage(), true, true, false);
+
+        Document teiDoc = engine.fullTextToTEIDoc(documentSource, config);
+
+        documentSource = 
+            DocumentSource.fromPdf(originFile, config.getStartPage(), config.getEndPage(), true, true, false);
 
         PDDocument document = PDDocument.load(originFile);
         //If no pages, skip the document
         if (document.getNumberOfPages() > 0) {
-            DocumentSource documentSource = teiDoc.getDocumentSource();
             outputDocument = dispatchProcessing(type, document, documentSource, teiDoc);
         } else {
             throw new RuntimeException("Cannot identify any pages in the input document. " +
                 "The document cannot be annotated. Please check whether the document is valid or the logs.");
         }
         
+        documentSource.close(true, true, false);
+
         return outputDocument;
     }
 

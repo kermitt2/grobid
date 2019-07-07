@@ -1,18 +1,10 @@
 package org.grobid.core.engines;
 
-import com.google.common.base.Splitter;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModels;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.Date;
-import org.grobid.core.data.Keyword;
-import org.grobid.core.data.Person;
-import org.grobid.core.document.Document;
-import org.grobid.core.document.DocumentPiece;
-import org.grobid.core.document.DocumentPointer;
-import org.grobid.core.document.DocumentSource;
-import org.grobid.core.document.TEIFormatter;
+import org.grobid.core.data.*;
+import org.grobid.core.document.*;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.label.TaggingLabel;
@@ -27,23 +19,13 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.tokenization.LabeledTokensContainer;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.Consolidation;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.LanguageUtilities;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.counters.CntManager;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.StringTokenizer;
@@ -128,7 +110,6 @@ public class HeaderParser extends AbstractParser {
             header = doc.getHeaderFeatured(false, true);
         }*/
         List<LayoutToken> tokenizations = doc.getTokenizationsHeader();
-//System.out.println(tokenizations.toString());
 
         if ((header != null) && (header.trim().length() > 0)) {
             String res = label(header);
@@ -204,8 +185,8 @@ public class HeaderParser extends AbstractParser {
                         }
                     }
 
-                    resHeader.setFullAffiliations(
-                        parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
+                    List<Affiliation> affiliations = parsers.getAffiliationAddressParser().processReflow(res, tokenizations);
+                    resHeader.setFullAffiliations(affiliations);
                     resHeader.attachEmails();
                     boolean attached = false;
                     if (fragmentedAuthors && !hasMarker) {
@@ -269,10 +250,7 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                //if (consolidate)
-                {
-                    resHeader = consolidateHeader(resHeader, consolidate);
-                }
+                resHeader = consolidateHeader(resHeader, consolidate);
 
                 // normalization of dates
                 if (resHeader != null) {
@@ -303,9 +281,12 @@ public class HeaderParser extends AbstractParser {
 
         doc.setResHeader(resHeader);
 
-        TEIFormatter teiFormatter = new TEIFormatter(doc);
-        StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, GrobidAnalysisConfig.builder().consolidateHeader(consolidate)
-            .generateTeiCoordinates(generateCoordinates).build());
+        TEIFormatter teiFormatter = new TEIFormatter(doc, null);
+        StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null,
+            GrobidAnalysisConfig.builder()
+                .consolidateHeader(consolidate)
+                .generateTeiCoordinates(generateCoordinates)
+                .build());
         tei.append("\t</text>\n");
         tei.append("</TEI>\n");
         //LOGGER.debug(tei.toString());
@@ -324,8 +305,8 @@ public class HeaderParser extends AbstractParser {
                 List<LayoutToken> tokenizationsHeader = new ArrayList<LayoutToken>();
 
                 for (DocumentPiece docPiece : documentHeaderParts) {
-                    DocumentPointer dp1 = docPiece.a;
-                    DocumentPointer dp2 = docPiece.b;
+                    DocumentPointer dp1 = docPiece.getLeft();
+                    DocumentPointer dp2 = docPiece.getRight();
 
                     int tokens = dp1.getTokenDocPos();
                     int tokene = dp2.getTokenDocPos();
@@ -334,11 +315,14 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                String header = getSectionHeaderFeatured(doc, documentHeaderParts, true);
+                //String header = getSectionHeaderFeatured(doc, documentHeaderParts, true);
+                Pair<String, List<LayoutToken>> featuredHeader = getSectionHeaderFeatured(doc, documentHeaderParts, true);
+                String header = featuredHeader.getLeft();
+                List<LayoutToken> headerTokenization = featuredHeader.getRight();
                 String res = null;
                 if ((header != null) && (header.trim().length() > 0)) {
                     res = label(header);
-                    resHeader = resultExtraction(res, true, tokenizationsHeader, resHeader);
+                    resHeader = resultExtraction(res, true, headerTokenization, resHeader);
                 }
 
                 // language identification
@@ -353,8 +337,8 @@ public class HeaderParser extends AbstractParser {
                     SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
                     StringBuilder contentBuffer = new StringBuilder();
                     for (DocumentPiece docPiece : documentBodyParts) {
-                        DocumentPointer dp1 = docPiece.a;
-                        DocumentPointer dp2 = docPiece.b;
+                        DocumentPointer dp1 = docPiece.getLeft();
+                        DocumentPointer dp2 = docPiece.getRight();
 
                         int tokens = dp1.getTokenDocPos();
                         int tokene = dp2.getTokenDocPos();
@@ -423,7 +407,7 @@ public class HeaderParser extends AbstractParser {
                     }
 
                     resHeader.setFullAffiliations(
-                        parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
+                            parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
                     resHeader.attachEmails();
                     boolean attached = false;
                     if (fragmentedAuthors && !hasMarker) {
@@ -484,10 +468,7 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                //if (consolidate)
-                {
-                    resHeader = consolidateHeader(resHeader, consolidate);
-                }
+                resHeader = consolidateHeader(resHeader, consolidate);
 
                 // normalization of dates
                 if (resHeader != null) {
@@ -512,8 +493,8 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                TEIFormatter teiFormatter = new TEIFormatter(doc);
-                StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, GrobidAnalysisConfig.defaultInstance());
+                TEIFormatter teiFormatter = new TEIFormatter(doc, null);
+                StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, GrobidAnalysisConfig.defaultInstance());
                 tei.append("\t</text>\n");
                 tei.append("</TEI>\n");
                 return tei.toString();
@@ -528,7 +509,7 @@ public class HeaderParser extends AbstractParser {
     /**
      * Return the header section with features to be processed by the CRF model
      */
-    public String getSectionHeaderFeatured(Document doc,
+    public Pair<String, List<LayoutToken>> getSectionHeaderFeatured(Document doc,
                                            SortedSet<DocumentPiece> documentHeaderParts,
                                            boolean withRotation) {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
@@ -545,9 +526,11 @@ public class HeaderParser extends AbstractParser {
             return null;
         }
 
+        List<LayoutToken> headerTokenizations = new ArrayList<LayoutToken>();
+
         for (DocumentPiece docPiece : documentHeaderParts) {
-            DocumentPointer dp1 = docPiece.a;
-            DocumentPointer dp2 = docPiece.b;
+            DocumentPointer dp1 = docPiece.getLeft();
+            DocumentPointer dp2 = docPiece.getRight();
 
             for (int blockIndex = dp1.getBlockPtr(); blockIndex <= dp2.getBlockPtr(); blockIndex++) {
                 Block block = blocks.get(blockIndex);
@@ -570,6 +553,7 @@ public class HeaderParser extends AbstractParser {
                     }
 
                     LayoutToken token = tokens.get(n);
+                    headerTokenizations.add(token);
                     features = new FeaturesVectorHeader();
                     features.token = token;
                     String text = token.getText();
@@ -660,14 +644,14 @@ public class HeaderParser extends AbstractParser {
                                         endloop = true;
                                     } else {
                                         if ((toto.trim().length() != 0)
-                                            && (!text.equals("\u00A0"))
-                                            && (!(toto.contains("@IMAGE")))
-                                            && (!(toto.contains("@PAGE")))
-                                            && (!text.contains(".pbm"))
-                                            && (!text.contains(".ppm"))
-                                            && (!text.contains(".png"))
-                                            && (!text.contains(".vec"))
-                                            && (!text.contains(".jpg"))) {
+                                                && (!text.equals("\u00A0"))
+                                                && (!(toto.contains("@IMAGE")))
+                                                && (!(toto.contains("@PAGE")))
+                                                && (!text.contains(".pbm"))
+                                                && (!text.contains(".ppm"))
+                                                && (!text.contains(".png"))
+                                                && (!text.contains(".svg"))
+                                                && (!text.contains(".jpg"))) {
                                             endloop = true;
                                         }
                                     }
@@ -799,7 +783,7 @@ public class HeaderParser extends AbstractParser {
             }
         }
 
-        return header.toString();
+        return Pair.of(header.toString(), headerTokenizations);
     }
 
 
@@ -836,8 +820,8 @@ public class HeaderParser extends AbstractParser {
                 List<LayoutToken> tokenizations = new ArrayList<LayoutToken>();
 
                 for (DocumentPiece docPiece : documentHeaderParts) {
-                    DocumentPointer dp1 = docPiece.a;
-                    DocumentPointer dp2 = docPiece.b;
+                    DocumentPointer dp1 = docPiece.getLeft();
+                    DocumentPointer dp2 = docPiece.getRight();
 
                     int tokens = dp1.getTokenDocPos();
                     int tokene = dp2.getTokenDocPos();
@@ -845,7 +829,9 @@ public class HeaderParser extends AbstractParser {
                         tokenizations.add(tokenizationsFull.get(i));
                     }
                 }
-                String header = getSectionHeaderFeatured(doc, documentHeaderParts, true);
+                //String header = getSectionHeaderFeatured(doc, documentHeaderParts, true);
+                Pair<String, List<LayoutToken>> featuredHeader = getSectionHeaderFeatured(doc, documentHeaderParts, true);
+                String header = featuredHeader.getLeft();
                 String rese = null;
                 if ((header != null) && (header.trim().length() > 0)) {
                     rese = label(header);
@@ -867,7 +853,7 @@ public class HeaderParser extends AbstractParser {
 
                     // buffer for the affiliation+address block
                     StringBuilder bufferAffiliation =
-                        parsers.getAffiliationAddressParser().trainingExtraction(rese, tokenizations);
+                            parsers.getAffiliationAddressParser().trainingExtraction(rese, tokenizations);
                     // buffer for the date block
                     StringBuilder bufferDate = null;
                     // we need to rebuild the found date string as it appears
@@ -955,10 +941,10 @@ public class HeaderParser extends AbstractParser {
                     // write the TEI file to reflect the extract layout of the text as
                     // extracted from the pdf
                     writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + File.separator
-                        + pdfFileName.replace(".pdf", GrobidProperties.FILE_ENDING_TEI_HEADER)), false), "UTF-8");
+                            + pdfFileName.replace(".pdf", GrobidProperties.FILE_ENDING_TEI_HEADER)), false), "UTF-8");
                     writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\""
-                        + pdfFileName.replace(".pdf", "")
-                        + "\"/>\n\t</teiHeader>\n\t<text");
+                            + pdfFileName.replace(".pdf", "")
+                            + "\"/>\n\t</teiHeader>\n\t<text");
 
                     if (lang != null) {
                         // TODO: why English (Slava)
@@ -973,11 +959,11 @@ public class HeaderParser extends AbstractParser {
                     if (bufferAffiliation != null) {
                         if (bufferAffiliation.length() > 0) {
                             Writer writerAffiliation = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                                File.separator
-                                + pdfFileName.replace(".pdf", ".affiliation.tei.xml")), false), "UTF-8");
+                                    File.separator
+                                    + pdfFileName.replace(".pdf", ".affiliation.tei.xml")), false), "UTF-8");
                             writerAffiliation.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
                             writerAffiliation.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\""
-                                + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" " + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
+                                    + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" " + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
                             writerAffiliation.write("\n\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>");
                             writerAffiliation.write("\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\t\t\t\t\t\t<author>\n\n");
 
@@ -993,8 +979,8 @@ public class HeaderParser extends AbstractParser {
                     if (bufferDate != null) {
                         if (bufferDate.length() > 0) {
                             Writer writerDate = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                                File.separator
-                                + pdfFileName.replace(".pdf", ".date.xml")), false), "UTF-8");
+                                    File.separator
+                                    + pdfFileName.replace(".pdf", ".date.xml")), false), "UTF-8");
                             writerDate.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                             writerDate.write("<dates>\n");
 
@@ -1008,11 +994,11 @@ public class HeaderParser extends AbstractParser {
                     if (bufferName != null) {
                         if (bufferName.length() > 0) {
                             Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                                File.separator
-                                + pdfFileName.replace(".pdf", ".authors.tei.xml")), false), "UTF-8");
+                                    File.separator
+                                    + pdfFileName.replace(".pdf", ".authors.tei.xml")), false), "UTF-8");
                             writerName.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
                             writerName.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\"" + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" "
-                                + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
+                                    + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
                             writerName.write("\n\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>");
                             writerName.write("\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\n\t\t\t\t\t\t<author>");
                             writerName.write("\n\t\t\t\t\t\t\t<persName>\n");
@@ -1030,8 +1016,8 @@ public class HeaderParser extends AbstractParser {
                     if (bufferReference != null) {
                         if (bufferReference.length() > 0) {
                             Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                                File.separator
-                                + pdfFileName.replace(".pdf", ".header-reference.xml")), false), "UTF-8");
+                                    File.separator
+                                    + pdfFileName.replace(".pdf", ".header-reference.xml")), false), "UTF-8");
                             writerReference.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                             writerReference.write("<citations>\n");
 
@@ -1054,6 +1040,18 @@ public class HeaderParser extends AbstractParser {
         }
     }
 
+
+    /**
+     * Extract results from a labelled header. If boolean intro is true, the
+     * extraction is stopped at the first "intro" tag identified (this tag marks
+     * the begining of the description).
+     *
+     * @param result        result
+     * @param intro         if intro
+     * @param tokenizations list of tokens
+     * @param biblio        biblio item
+     * @return a biblio item
+     */
     public BiblioItem resultExtraction(String result, boolean intro, List<LayoutToken> tokenizations, BiblioItem biblio) {
 
         TaggingLabel lastClusterLabel = null;
@@ -1483,8 +1481,7 @@ public class HeaderParser extends AbstractParser {
 
     }
 
-    private boolean writeField(StringBuilder buffer, String s1, String lastTag0, String s2, String field, String
-        outField, boolean addSpace) {
+    private boolean writeField(StringBuilder buffer, String s1, String lastTag0, String s2, String field, String outField, boolean addSpace) {
         boolean result = false;
         if ((s1.equals(field)) || (s1.equals("I-" + field))) {
             result = true;
@@ -1513,8 +1510,10 @@ public class HeaderParser extends AbstractParser {
         }
         Consolidation consolidator = null;
         try {
-            consolidator = new Consolidation(cntManager);
-            List<BiblioItem> bibis = new ArrayList<BiblioItem>();
+            consolidator = Consolidation.getInstance();
+            if (consolidator.getCntManager() == null)
+                consolidator.setCntManager(cntManager);
+            /*List<BiblioItem> bibis = new ArrayList<BiblioItem>();
             boolean valid = consolidator.consolidate(resHeader, bibis);
             if ((valid) && (bibis.size() > 0)) {
                 BiblioItem bibo = bibis.get(0);
@@ -1524,13 +1523,16 @@ public class HeaderParser extends AbstractParser {
                     else if (consolidate == 2)
                         BiblioItem.injectDOI(resHeader, bibo);
                 }
+            }*/
+            BiblioItem bib = consolidator.consolidate(resHeader, null);
+            if (bib != null) {
+                if (consolidate == 1)
+                    BiblioItem.correct(resHeader, bib);
+                else if (consolidate == 2)
+                    BiblioItem.injectDOI(resHeader, bib);
             }
         } catch (Exception e) {
-            // e.printStackTrace();
-            throw new GrobidException("An exception occured while running Grobid.", e);
-        } finally {
-            /*if (consolidator != null)
-                consolidator.close();*/
+            throw new GrobidException("An exception occured while running bibliographical data consolidation.", e);
         }
         return resHeader;
     }

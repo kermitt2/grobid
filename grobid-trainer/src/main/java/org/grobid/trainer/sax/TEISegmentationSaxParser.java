@@ -201,10 +201,10 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                 currentTag = "<other>";
                 upperTag = null;
                 upperQname = null;
-            } else {
+            } /*else {
                 logger.error("Invalid element name: " + qName + " - it will be mapped to the label <other>");
                 currentTag = "<other>";
-            }
+            }*/
         }
     }
 
@@ -257,7 +257,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 
                 if (surfaceTag == null) {
                     // this token belongs to a chunk to ignored
-                    System.out.println("\twarning: surfaceTag is null for token '"+tok+"' - it will be tagged with label <other>");
+                    //System.out.println("\twarning: surfaceTag is null for token '"+tok+"' - it will be tagged with label <other>");
                     surfaceTag = "<other>";
                 }
 

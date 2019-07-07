@@ -22,6 +22,11 @@ public class FulltextTrainer extends AbstractTrainer{
 
     public FulltextTrainer() {
         super(GrobidModels.FULLTEXT);
+
+        // adjusting CRF training parameters for this model (only with Wapiti)
+        epsilon = 0.0001;
+        window = 20;
+        nbMaxIterations = 1500;
     }
 
     @Override
@@ -248,5 +253,6 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
     	GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new FulltextTrainer());
         AbstractTrainer.runEvaluation(new FulltextTrainer());
+        System.exit(0);
     }
 }	

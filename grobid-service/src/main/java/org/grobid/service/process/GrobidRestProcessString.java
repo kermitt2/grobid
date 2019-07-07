@@ -20,7 +20,7 @@ import org.grobid.core.data.Person;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.util.GrobidRestUtils;
-import org.grobid.service.util.GrobidServiceProperties;
+//import org.grobid.service.util.GrobidServiceProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,21 +50,13 @@ public class GrobidRestProcessString {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
-		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
 		Engine engine = null;
 		try {
 			LOGGER.debug(">> set raw date for stateless service'...");
 			
-			engine = Engine.getEngine(isparallelExec);
-			List<Date> dates;
+			engine = Engine.getEngine(true);
 			date = date.replaceAll("\\n", " ").replaceAll("\\t", " ");
-			if (isparallelExec) {
-				dates = engine.processDate(date);
-			} else {
-				synchronized (engine) {
-					dates = engine.processDate(date);
-				}
-			}
+			List<Date> dates = engine.processDate(date);
 			if (dates != null) {
 				for(Date theDate : dates)	{
 					if (retVal == null) {
@@ -90,7 +82,7 @@ public class GrobidRestProcessString {
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 		} finally {
-			if (isparallelExec && engine != null) {
+			if (engine != null) {
 				GrobidPoolingFactory.returnEngine(engine);
 			}
 		}
@@ -110,22 +102,14 @@ public class GrobidRestProcessString {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
-		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
 		Engine engine = null;
 		try {
 			LOGGER.debug(">> set raw header author sequence for stateless service'...");
 
-			engine = Engine.getEngine(isparallelExec);
-			List<Person> authors;
+			engine = Engine.getEngine(true);
 			names = names.replaceAll("\\n", " ").replaceAll("\\t", " ");
-			if (isparallelExec) {
-				authors = engine.processAuthorsHeader(names);
-			} else {
-				synchronized (engine) {
-					authors = engine.processAuthorsHeader(names);
-				}
-			}
-
+			List<Person> authors = engine.processAuthorsHeader(names);
+			
 			if (authors != null) {
 				for(Person person : authors) {
 					if (retVal == null) {
@@ -152,7 +136,7 @@ public class GrobidRestProcessString {
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 		} finally {
-			if (isparallelExec && engine != null) {
+			if (engine != null) {
 				GrobidPoolingFactory.returnEngine(engine);
 			}
 		}
@@ -172,22 +156,14 @@ public class GrobidRestProcessString {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
-		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
 		Engine engine = null;
 		try {
 			LOGGER.debug(">> set raw citation author sequence for stateless service'...");
 
-			engine = Engine.getEngine(isparallelExec);
-			List<Person> authors;
+			engine = Engine.getEngine(true);
 			names = names.replaceAll("\\n", " ").replaceAll("\\t", " ");
-			if (isparallelExec) {
-				authors = engine.processAuthorsCitation(names);
-			} else {
-				synchronized (engine) {
-					authors = engine.processAuthorsCitation(names);
-				}
-			}
-
+			List<Person> authors = engine.processAuthorsCitation(names);
+			
 			if (authors != null) {
 				for(Person person : authors) {
 					if (retVal == null) {
@@ -200,7 +176,6 @@ public class GrobidRestProcessString {
 			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
-				//response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
 				response = Response.status(Status.OK)
                             .entity(retVal)
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
@@ -214,7 +189,7 @@ public class GrobidRestProcessString {
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 		} finally {
-			if (isparallelExec && engine != null) {
+			if (engine != null) {
 				GrobidPoolingFactory.returnEngine(engine);
 			}
 		}
@@ -234,22 +209,13 @@ public class GrobidRestProcessString {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
-		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
 		Engine engine = null;
 		try {
 			LOGGER.debug(">> set raw affiliation + address blocks for stateless service'...");
 
-			engine = Engine.getEngine(isparallelExec);
-			List<Affiliation> affiliationList;
-			//affiliation = affiliation.replaceAll("\\n", " ").replaceAll("\\t", " ");
+			engine = Engine.getEngine(true);
 			affiliation = affiliation.replaceAll("\\t", " ");
-			if (isparallelExec) {
-				affiliationList = engine.processAffiliation(affiliation);
-			} else {
-				synchronized (engine) {
-					affiliationList = engine.processAffiliation(affiliation);
-				}
-			}
+			List<Affiliation> affiliationList = engine.processAffiliation(affiliation);
 
 			if (affiliationList != null) {				
 				for(Affiliation affi : affiliationList) {
@@ -276,7 +242,7 @@ public class GrobidRestProcessString {
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 		} finally {
-			if (isparallelExec && engine != null) {
+			if (engine != null) {
 				GrobidPoolingFactory.returnEngine(engine);
 			}
 		}
@@ -298,25 +264,15 @@ public class GrobidRestProcessString {
 	public Response processCitation(String citation, int consolidate) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
-
-		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
 		Engine engine = null;
 		try {
-			engine = Engine.getEngine(isparallelExec);
-			BiblioItem biblioItem;
+			engine = Engine.getEngine(true);
 			//citation = citation.replaceAll("\\n", " ").replaceAll("\\t", " ");
-			if (isparallelExec) {
-				biblioItem = engine.processRawReference(citation, consolidate);
-			} else {
-				synchronized (engine) {
-					biblioItem = engine.processRawReference(citation, consolidate);
-				}
-			}
-
+			BiblioItem biblioItem = engine.processRawReference(citation, consolidate);
+			
 			if (biblioItem == null) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
-				//response = Response.status(Status.OK).entity(biblioItem.toTEI(-1)).type(MediaType.APPLICATION_XML).build();
 				response = Response.status(Status.OK)
                             .entity(biblioItem.toTEI(-1))
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
@@ -330,7 +286,7 @@ public class GrobidRestProcessString {
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 		} finally {
-			if (isparallelExec && engine != null) {
+			if (engine != null) {
 				GrobidPoolingFactory.returnEngine(engine);
 			}
 		}
@@ -352,24 +308,14 @@ public class GrobidRestProcessString {
 	public Response processCitationPatentTXT(String text, int consolidate) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
-
-		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
 		Engine engine = null;
 		try {
-			engine = Engine.getEngine(isparallelExec);
+			engine = Engine.getEngine(true);
 			
 			List<PatentItem> patents = new ArrayList<PatentItem>();
 			List<BibDataSet> articles = new ArrayList<BibDataSet>();						
 			text = text.replaceAll("\\t", " ");
-			String result = null;
-			
-			if (isparallelExec) {
-				result = engine.processAllCitationsInPatent(text, articles, patents, consolidate);
-			} else {
-				synchronized (engine) {
-					result = engine.processAllCitationsInPatent(text, articles, patents, consolidate);
-				}
-			}
+			String result = engine.processAllCitationsInPatent(text, articles, patents, consolidate);
 
 			if (result == null) {
 				response = Response.status(Status.NO_CONTENT).build();
@@ -388,7 +334,7 @@ public class GrobidRestProcessString {
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 		} finally {
-			if (isparallelExec && engine != null) {
+			if (engine != null) {
 				GrobidPoolingFactory.returnEngine(engine);
 			}
 		}

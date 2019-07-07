@@ -207,7 +207,7 @@ public class TextUtilitiesTest extends EngineTest {
 
     @Test
     public void testWordShape() {
-        testWordShape("This", "Xxxx", "Xx");
+       testWordShape("This", "Xxxx", "Xx");
         testWordShape("Equals", "Xxxx", "Xx");
         testWordShape("O'Conor", "X'Xxxx", "X'Xx");
         testWordShape("McDonalds", "XxXxxx", "XxXx");
@@ -223,7 +223,9 @@ public class TextUtilitiesTest extends EngineTest {
         testWordShape("uü", "xx", "x");
         testWordShape("Üwe", "Xxx", "Xx");
 
-        testWordShape(" ", " ", "");
+        testWordShape(" ", " ", " ");
+        testWordShape("Tes9t99", "Xxdxdd", "Xxdxd");
+        testWordShape("T", "X", "X");
     }
 
     private void testWordShape(String orig, String expected, String expectedTrimmed) {

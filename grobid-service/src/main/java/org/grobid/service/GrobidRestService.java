@@ -1,16 +1,3 @@
-/*
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package org.grobid.service;
 
 import com.codahale.metrics.annotation.Timed;
@@ -20,12 +7,14 @@ import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.grobid.core.factory.AbstractEngineFactory;
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.service.process.GrobidRestProcessAdmin;
+import org.grobid.core.engines.Engine;
+import org.grobid.core.factory.GrobidPoolingFactory;
+
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
 import org.grobid.service.process.GrobidRestProcessString;
 import org.grobid.service.util.GrobidRestUtils;
-import org.grobid.service.util.GrobidServiceProperties;
+//import org.grobid.service.util.GrobidServiceProperties;
 import org.grobid.service.util.ZipUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +25,8 @@ import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+
 
 /**
  * RESTful service for the GROBID system.
@@ -59,8 +50,6 @@ public class GrobidRestService implements GrobidPaths {
     private static final String XML = "xml";
     private static final String INPUT = "input";
 
-    private final GrobidRestProcessAdmin restProcessAdmin;
-
     @Inject
     private GrobidRestProcessFiles restProcessFiles;
 
@@ -71,17 +60,31 @@ public class GrobidRestService implements GrobidPaths {
     private GrobidRestProcessString restProcessString;
 
     @Inject
-    public GrobidRestService(GrobidServiceConfiguration configuration, GrobidRestProcessAdmin grobidRestProcessAdmin) {
-        this.restProcessAdmin = grobidRestProcessAdmin;
+    public GrobidRestService(GrobidServiceConfiguration configuration) {
         GrobidProperties.set_GROBID_HOME_PATH(new File(configuration.getGrobid().getGrobidHome()).getAbsolutePath());
         if (configuration.getGrobid().getGrobidProperties() != null) {
             GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidProperties()).getAbsolutePath());
         } else {
             GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidHome(), "/config/grobid.properties").getAbsolutePath());
         }
+        GrobidProperties.getInstance();
+        GrobidProperties.setContextExecutionServer(true);
         LOGGER.info("Initiating Servlet GrobidRestService");
-        AbstractEngineFactory.fullInit();
-        GrobidServiceProperties.getInstance(configuration);
+        AbstractEngineFactory.init();
+        Engine engine = null;
+        try {
+            // this will init or not all the models in memory
+            engine = Engine.getEngine(configuration.getGrobid().getModelPreload());
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time.");
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs when initiating the grobid engine. ", exp);
+        } finally {
+            if (engine != null) {
+                GrobidPoolingFactory.returnEngine(engine);
+            }
+        }
+        
         LOGGER.info("Initiating of Servlet GrobidRestService finished.");
     }
 
@@ -118,24 +121,24 @@ public class GrobidRestService implements GrobidPaths {
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#getAdminParams(String)
      */
-    @Path(PATH_ADMIN)
+    /*@Path(PATH_ADMIN)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_HTML)
     @POST
     public Response getAdmin_htmlPost(@FormParam(SHA1) String sha1) {
         return restProcessAdmin.getAdminParams(sha1);
-    }
+    }*/
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#getAdminParams(String)
      */
-    @Path(PATH_ADMIN)
+    /*@Path(PATH_ADMIN)
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_HTML)
     @GET
     public Response getAdmin_htmlGet(@QueryParam(SHA1) String sha1) {
         return restProcessAdmin.getAdminParams(sha1);
-    }
+    }*/
 
     @Path(PATH_HEADER)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
@@ -196,7 +199,7 @@ public class GrobidRestService implements GrobidPaths {
         int consolHeader = validateConsolidationParam(consolidateHeader);
         int consolCitations = validateConsolidationParam(consolidateCitations);
         boolean generate = validateGenerateIdParam(generateIDs);
-
+        
         List<String> teiCoordinates = collectCoordinates(coordinates);
 
         return restProcessFiles.processFulltextDocument(inputStream, consolHeader, consolCitations, startPage, endPage, generate, teiCoordinates);
@@ -281,7 +284,7 @@ public class GrobidRestService implements GrobidPaths {
         return restProcessFiles.processStatelessFulltextAssetDocument(inputStream, consolHeader, consolCitations, startPage, endPage, generate);
     }
 
-    @Path(PATH_CITATION_PATENT_TEI)
+    /*@Path(PATH_CITATION_PATENT_TEI)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
     @POST
@@ -289,7 +292,7 @@ public class GrobidRestService implements GrobidPaths {
                                                     @FormDataParam("consolidateCitations") String consolidate) throws Exception {
         int consol = validateConsolidationParam(consolidate);
         return restProcessFiles.processCitationPatentTEI(pInputStream, consol);
-    }
+    }*/
 
     @Path(PATH_CITATION_PATENT_ST36)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
@@ -435,68 +438,68 @@ public class GrobidRestService implements GrobidPaths {
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#processSHA1(String)
      */
-    @Path(PATH_SHA1)
+    /*@Path(PATH_SHA1)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response processSHA1Post(@FormParam(SHA1) String sha1) {
         return restProcessAdmin.processSHA1(sha1);
-    }
+    }*/
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#processSHA1(String)
      */
-    @Path(PATH_SHA1)
+    /*@Path(PATH_SHA1)
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     @GET
     public Response processSHA1Get(@QueryParam(SHA1) String sha1) {
         return restProcessAdmin.processSHA1(sha1);
-    }
+    }*/
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#getAllPropertiesValues(String)
      */
-    @Path(PATH_ALL_PROPS)
+    /*@Path(PATH_ALL_PROPS)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response getAllPropertiesValuesPost(@FormParam(SHA1) String sha1) {
         return restProcessAdmin.getAllPropertiesValues(sha1);
-    }
+    }*/
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#getAllPropertiesValues(String)
      */
-    @Path(PATH_ALL_PROPS)
+    /*@Path(PATH_ALL_PROPS)
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     @GET
     public Response getAllPropertiesValuesGet(@QueryParam(SHA1) String sha1) {
         return restProcessAdmin.getAllPropertiesValues(sha1);
-    }
+    }*/
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#changePropertyValue(String)
      */
-    @Path(PATH_CHANGE_PROPERTY_VALUE)
+    /*@Path(PATH_CHANGE_PROPERTY_VALUE)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response changePropertyValuePost(@FormParam(XML) String xml) {
         return restProcessAdmin.changePropertyValue(xml);
-    }
+    }*/
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#changePropertyValue(String)
      */
-    @Path(PATH_CHANGE_PROPERTY_VALUE)
+    /*@Path(PATH_CHANGE_PROPERTY_VALUE)
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     @GET
     public Response changePropertyValueGet(@QueryParam(XML) String xml) {
         return restProcessAdmin.changePropertyValue(xml);
-    }
+    }*/
 
     @Path(PATH_REFERENCES)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
