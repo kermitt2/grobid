@@ -56,8 +56,8 @@ public class DeLFTModel {
                 jep.eval(this.modelName+" = Sequence('" + this.modelName.replace("_", "-") + "')");
                 jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
             } catch(JepException e) {
-                LOGGER.error("DeLFT model initialization failed", e);
-            } 
+                throw new GrobidException("DeLFT model initialization failed. ", e);
+            }
         } 
     } 
 
