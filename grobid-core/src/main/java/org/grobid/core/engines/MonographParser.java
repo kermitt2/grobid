@@ -118,6 +118,7 @@ public class MonographParser extends AbstractParser {
             if (assetFile != null) {
                 dealWithImages(documentSource, doc, assetFile, config);
             }*/
+
             return doc;
         } finally {
             // keep it clean when leaving...
@@ -728,9 +729,9 @@ public class MonographParser extends AbstractParser {
                     }
                     oldDepth = currentDepth;
                     builder.append("<item n=\""
-                     + gornString + "> "
+                     + gornString + "\"> "
                      + currentNode.getLabel()
-                     + "\" </item>\n");
+                     + " </item>\n");
                 }
                 if (gornString == "*") {
                     gornString = "";
