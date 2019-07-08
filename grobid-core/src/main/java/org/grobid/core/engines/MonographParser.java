@@ -37,8 +37,8 @@ import java.util.regex.Matcher;
 import static org.apache.commons.lang3.StringUtils.*;
 
 /**
- * Realise a high level segmentation of a monograph. Monograph is to be understood here in the context library cataloging, 
- * basically as a standalone book. The monograph could be an ebook (novels), a conference proceedings volume, a book 
+ * Realise a high level segmentation of a monograph. Monograph is to be understood here in the context library cataloging,
+ * basically as a standalone book. The monograph could be an ebook (novels), a conference proceedings volume, a book
  * collection volume, a phd/msc thesis, a standalone report (with toc, etc.), a manual (with multiple chapters).
  * Monographs, here, are NOT magazine volumes, journal issues, newspapers, standalone chapters, standalone scholar articles,
  * tables of content, reference works, dictionaries, encyclopedia volumes, graphic novels.
@@ -50,7 +50,7 @@ public class MonographParser extends AbstractParser {
      *   16 labels for this model:
      *       cover page (front of the book)
      *       title page (secondary title page)
-     *       publisher page (publication information, including usually the copyrights info) 
+     *       publisher page (publication information, including usually the copyrights info)
      *       summary (include executive summary)
      *       biography
      *       advertising (other works by the author/publisher)
@@ -96,7 +96,7 @@ public class MonographParser extends AbstractParser {
         super(GrobidModels.MONOGRAPH);
         tmpPath = GrobidProperties.getTempPath();
     }
-    
+
     /**
      * Segment a PDF document into high level subdocuments.
      *
@@ -218,7 +218,7 @@ public class MonographParser extends AbstractParser {
     /**
      * Addition of the features at block level for the complete document.
      * <p/>
-     * This is an alternative to the token and line level, where the unit for labeling is the block - so allowing even 
+     * This is an alternative to the token and line level, where the unit for labeling is the block - so allowing even
      * faster processing and involving less features.
      * Lexical features becomes block prefix and suffix, the feature text unit is the first 10 characters of the
      * block without space.
@@ -269,7 +269,6 @@ public class MonographParser extends AbstractParser {
             }
         }
 
-        String featuresAsString = getFeatureVectorsAsString(doc,
                 patterns, firstTimePattern);
 
         return featuresAsString;
@@ -303,8 +302,8 @@ public class MonographParser extends AbstractParser {
             org.grobid.core.layout.BoundingBox pageBoundingBox = page.getMainArea();
             mm = 0;
             //endPage = true;
-            
-            if ((page.getBlocks() == null) || (page.getBlocks().size() == 0)) 
+
+            if ((page.getBlocks() == null) || (page.getBlocks().size() == 0))
                 continue;
 
             for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
@@ -315,17 +314,17 @@ public class MonographParser extends AbstractParser {
                 }*/
                 boolean graphicVector = false;
                 boolean graphicBitmap = false;
-                
+
                 boolean lastPageBlock = false;
                 boolean firstPageBlock = false;
-                if (blockIndex == page.getBlocks().size()-1) {        
+                if (blockIndex == page.getBlocks().size()-1) {
                     lastPageBlock = true;
                 }
-                
+
                 if (blockIndex == 0) {
                     firstPageBlock = true;
                 }
-                
+
                 //endblock = false;
 
                 /*if (endPage) {
@@ -345,7 +344,7 @@ public class MonographParser extends AbstractParser {
                 }
 
                 if (lowestPos >  block.getY()) {
-                    // we have a vertical shift, which can be due to a change of column or other particular layout formatting 
+                    // we have a vertical shift, which can be due to a change of column or other particular layout formatting
                     spacingPreviousBlock = doc.getMaxBlockSpacing() / 5.0; // default
                 } else
                     spacingPreviousBlock = block.getY() - lowestPos;
@@ -356,14 +355,14 @@ public class MonographParser extends AbstractParser {
 
                 // character density of the block
                 double density = 0.0;
-                if ( (block.getHeight() != 0.0) && (block.getWidth() != 0.0) && 
-                     (block.getText() != null) && (!block.getText().contains("@PAGE")) && 
+                if ( (block.getHeight() != 0.0) && (block.getWidth() != 0.0) &&
+                     (block.getText() != null) && (!block.getText().contains("@PAGE")) &&
                      (!block.getText().contains("@IMAGE")) )
                     density = (double)block.getText().length() / (block.getHeight() * block.getWidth());
 
                 // is the current block in the main area of the page or not?
                 boolean inPageMainArea = true;
-                org.grobid.core.layout.BoundingBox blockBoundingBox = org.grobid.core.layout.BoundingBox.fromPointAndDimensions(page.getNumber(), 
+                org.grobid.core.layout.BoundingBox blockBoundingBox = org.grobid.core.layout.BoundingBox.fromPointAndDimensions(page.getNumber(),
                     block.getX(), block.getY(), block.getWidth(), block.getHeight());
                 if (pageBoundingBox == null || (!pageBoundingBox.contains(blockBoundingBox) && !pageBoundingBox.intersect(blockBoundingBox)))
                     inPageMainArea = false;
@@ -372,7 +371,7 @@ public class MonographParser extends AbstractParser {
     			// set the max length of the lines in the block, in number of characters
     			int maxLineLength = 0;
     			for(int p=0; p<lines.length; p++) {
-    				if (lines[p].length() > maxLineLength) 
+    				if (lines[p].length() > maxLineLength)
     					maxLineLength = lines[p].length();
     			}
                 List<LayoutToken> tokens = block.getTokens();
@@ -389,7 +388,7 @@ public class MonographParser extends AbstractParser {
                     if (endPage)
                         lastPageBlock = true;
                     */
-                    
+
                     // for the layout information of the block, we take simply the first layout token
     				LayoutToken token = null;
     				if (tokens.size() > 0)
@@ -449,7 +448,7 @@ public class MonographParser extends AbstractParser {
                     //features.lineLength = line.length() / LINESCALE;
                     features.lineLength = featureFactory
                             .linearScaling(line.length(), maxLineLength, LINESCALE);
-    				
+
                     features.punctuationProfile = TextUtilities.punctuationProfile(line);
 
                     if (graphicBitmap) {
@@ -577,13 +576,13 @@ public class MonographParser extends AbstractParser {
 
                     features.relativeDocumentPosition = featureFactory
                             .linearScaling(nn, documentLength, NBBINS_POSITION);
-//System.out.println(nn + " " + documentLength + " " + NBBINS_POSITION + " " + features.relativeDocumentPosition); 
+//System.out.println(nn + " " + documentLength + " " + NBBINS_POSITION + " " + features.relativeDocumentPosition);
                     features.relativePagePositionChar = featureFactory
-                            .linearScaling(mm, pageLength, NBBINS_POSITION); 
-//System.out.println(mm + " " + pageLength + " " + NBBINS_POSITION + " " + features.relativePagePositionChar);                     			
+                            .linearScaling(mm, pageLength, NBBINS_POSITION);
+//System.out.println(mm + " " + pageLength + " " + NBBINS_POSITION + " " + features.relativePagePositionChar);
     				int pagePos = featureFactory
                             .linearScaling(coordinateLineY, pageHeight, NBBINS_POSITION);
-//System.out.println(coordinateLineY + " " + pageHeight + " " + NBBINS_POSITION + " " + pagePos);  
+//System.out.println(coordinateLineY + " " + pageHeight + " " + NBBINS_POSITION + " " + pagePos);
     				if (pagePos > NBBINS_POSITION)
     					pagePos = NBBINS_POSITION;
                     features.relativePagePosition = pagePos;
@@ -591,7 +590,7 @@ public class MonographParser extends AbstractParser {
 
                     if (spacingPreviousBlock != 0.0) {
                         features.spacingWithPreviousBlock = featureFactory
-                            .linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE);                          
+                            .linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE);
                     }
 
                     features.inMainArea = inPageMainArea;
@@ -599,7 +598,7 @@ public class MonographParser extends AbstractParser {
                     if (density != -1.0) {
                         features.characterDensity = featureFactory
                             .linearScaling(density-doc.getMinCharacterDensity(), doc.getMaxCharacterDensity()-doc.getMinCharacterDensity(), NBBINS_DENSITY);
-//System.out.println((density-doc.getMinCharacterDensity()) + " " + (doc.getMaxCharacterDensity()-doc.getMinCharacterDensity()) + " " + NBBINS_DENSITY + " " + features.characterDensity);             
+//System.out.println((density-doc.getMinCharacterDensity()) + " " + (doc.getMaxCharacterDensity()-doc.getMinCharacterDensity()) + " " + NBBINS_DENSITY + " " + features.characterDensity);
                     }
 
                     if (previousFeatures != null) {
@@ -609,8 +608,8 @@ public class MonographParser extends AbstractParser {
                     previousFeatures = features;
                 }
 
-//System.out.println((spacingPreviousBlock-doc.getMinBlockSpacing()) + " " + (doc.getMaxBlockSpacing()-doc.getMinBlockSpacing()) + " " + NBBINS_SPACE + " " 
-//    + featureFactory.linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE));    
+//System.out.println((spacingPreviousBlock-doc.getMinBlockSpacing()) + " " + (doc.getMaxBlockSpacing()-doc.getMinBlockSpacing()) + " " + NBBINS_SPACE + " "
+//    + featureFactory.linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE));
 
                 // lowest position of the block
                 lowestPos = block.getY() + block.getHeight();
@@ -657,7 +656,7 @@ public class MonographParser extends AbstractParser {
             String pdfFileName = inputFile.getName();
 
             File outputTEIFile = new File(pathTEI+"/"+pdfFileName.replace(".pdf", "training.monograph.tei.xml"));
-            /* // commented out because it was making a test of the existence of a file before it was even created 
+            /* // commented out because it was making a test of the existence of a file before it was even created
                if (!outputTEIFile.exists()) {
                 throw new GrobidResourceException("Cannot train for monograph, because directory '" +
                        pathTEI + "' is not valid.");
@@ -681,7 +680,7 @@ public class MonographParser extends AbstractParser {
 
             doc.produceStatistics();
             StringBuilder builder = new StringBuilder();
-            builder.append("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id + 
+            builder.append("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
                 "\"/>\n\t</teiHeader>\n\t<text xml:lang=\""+ lang + "\">\n");
 
             // get the document outline
@@ -691,10 +690,10 @@ public class MonographParser extends AbstractParser {
             List<LayoutToken> tokens = doc.getTokenizations();
 
             DocumentNode currentNode = outlineRoot;
-            // preorder traversal of the table of contents 
+            // preorder traversal of the table of contents
             LinkedList<DocumentNode> stackTOC = new LinkedList<DocumentNode>();
             String gornString = ""; //will keep (the prefix for) a Gorn adress
-            int oldDepth = 0; //numbers that will indicate   
+            int oldDepth = 0; //numbers that will indicate
             int currentDepth = 0; // the current depth in the table of contents
             boolean tocExists = ( currentNode != null );
             if ( tocExists ) {
@@ -705,8 +704,8 @@ public class MonographParser extends AbstractParser {
             }
             while ( stackTOC.size() > 0) {
                 currentNode = stackTOC.pop();
-                // at this point, the page at which the chapter/section, 
-                // referenced by current node, starts 
+                // at this point, the page at which the chapter/section,
+                // referenced by current node, starts
                 // is given by currentNode.getBoundingBox().getPage()
                 gornString = currentNode.getAddress();
                 if ( gornString != "*"){
@@ -728,10 +727,10 @@ public class MonographParser extends AbstractParser {
                         builder.append("\t");
                     }
                     oldDepth = currentDepth;
-                    builder.append("<item n=" 
+                    builder.append("<item n=\""
                      + gornString + "> "
                      + currentNode.getLabel()
-                     + " </item>\n");
+                     + "\" </item>\n");
                 }
                 if (gornString == "*") {
                     gornString = "";
@@ -760,11 +759,11 @@ public class MonographParser extends AbstractParser {
             if ( tocExists ) {
                 outlineRoot = doc.getOutlineRoot();
                 //recall that stackTOC is an empty stack at this point, it arrived empty from the previous usage
-                stackTOC.push(outlineRoot); 
-                // as before, stackTOC will keep the stack of chapters, sections, etc., that are yet to be tagged 
+                stackTOC.push(outlineRoot);
+                // as before, stackTOC will keep the stack of chapters, sections, etc., that are yet to be tagged
                 // we push outlineRoot first to get again to the root of the document outline
-                List<OffsetPosition> results;      
-                int tokenCtr = 0;   
+                List<OffsetPosition> results;
+                int tokenCtr = 0;
                 int numberOfTokens = tokens.size();
                 // We initialize the position of the starting and the ending token of a title of a chapter / section
                 // so they will be actually used only when an useful number
@@ -780,9 +779,9 @@ public class MonographParser extends AbstractParser {
                 //                        + "\n");
                 while (stackTOC.size()>0 && tokenCtr < numberOfTokens) {
                     currentNode = stackTOC.pop();
-                    // In order to avoid writing the "null" label from the 
+                    // In order to avoid writing the "null" label from the
                     // outlineRoot into the TEI and also
-                    // just in case the outline was ill-formed we search 
+                    // just in case the outline was ill-formed we search
                     // the first node (first wrt preorder traversal)
                     // such that the title kept in the node is non trivial
                     while ( currentNode.getLabel() == null ){
@@ -796,7 +795,7 @@ public class MonographParser extends AbstractParser {
                             }
                         }
                         currentNode = stackTOC.pop();
-                    } 
+                    }
                     currentTitle = currentNode.getLabel() ;
                     // at the moment we exit the while loop, currentNode keeps non-trivial information about the title of a section
                     // we will search instances of this title using FastMatcher
@@ -806,11 +805,11 @@ public class MonographParser extends AbstractParser {
                     // We compute the depth:
                     depth = currentNode.getAddress().split("[.]").length;
                     // Exemple of how to use FastMatcher :
-                    // matcher.loadTerm("un titre", GrobidAnalyzer.getInstance(), true); 
-                    // results = matcher.matchLayoutToken(tokens, true, false); 
+                    // matcher.loadTerm("un titre", GrobidAnalyzer.getInstance(), true);
+                    // results = matcher.matchLayoutToken(tokens, true, false);
                     // then results contains a list of indices i,j such that
                     // the i-th token in the list of layout tokens doc.getTokenizations()
-                    // is the first token of an instance of the queried sequence of tokens 
+                    // is the first token of an instance of the queried sequence of tokens
                     boolean ignoreDelimiters = true;
                     boolean caseSensitive = false;
                     FastMatcher matcher = new FastMatcher(); //at this stage, the terms attribute of matcher is an empty dictionary
@@ -819,7 +818,7 @@ public class MonographParser extends AbstractParser {
                                      ignoreDelimiters, // true
                                      caseSensitive ); // false
                     // builder.append("DEBUGGING: Loaded  " + nbTermsInTitle + " terms from the title " + currentNode.getLabel() + "\n"); //it should always be 1
-                    results = matcher.matchLayoutToken(tokens, 
+                    results = matcher.matchLayoutToken(tokens,
                                      ignoreDelimiters, // true
                                      caseSensitive); // false
                     if (results.size()>0){//if some instance of the title is found
@@ -830,10 +829,10 @@ public class MonographParser extends AbstractParser {
                         int index = results.size() - 1;
                         while (index >= 0 && results.get(index).start >= tokenCtr && tokens.get(results.get(index).start).getPage() > currentNodesPage){
                             index--;
-                        } 
+                        }
                         if (index >= 0 && results.get(index).start >= tokenCtr && tokens.get(results.get(index).start).getPage() == currentNodesPage ){
-                                                    // We proceed to update the starting and ending positions  
-                                                    // of the title only if the title have actually been found 
+                                                    // We proceed to update the starting and ending positions
+                                                    // of the title only if the title have actually been found
                                                     // at the right page, and later than the previous chapter
                                 //builder.append("DEBUGGING: Found " + results.size() + " instances of " + currentTitle + "\n");
                                 //builder.append("DEBUGGING: " + currentTitle + " is at page " + currentNodesPage + "\n");
@@ -841,23 +840,23 @@ public class MonographParser extends AbstractParser {
                                 //builder.append("DEBUGGING: " + currentTitle + " starts at token " + startTokenOffset + "\n");
                                 endTokenOffset = results.get(index).end;
                                 //builder.append("DEBUGGING: " + currentTitle + " ends at token " + endTokenOffset + "\n");
-                        } 
+                        }
                         // else {
                         //     builder.append("DEBUGGING : the title " + currentTitle + " was found at page(s): " );
                         //     for ( index = 0; index < results.size(); index++ ) { builder.append( tokens.get(results.get(index).start).getPage() + ", "); }
-                        //     builder.append( "\nDEBUGGING : it should have been in page " + currentNodesPage + "\n" );   
+                        //     builder.append( "\nDEBUGGING : it should have been in page " + currentNodesPage + "\n" );
                         // }
                     }
                     while ( tokenCtr <= endTokenOffset && tokenCtr < numberOfTokens) {
                         if ( tokenCtr == startTokenOffset) { //if we are about to write the starting token of a title of a chapter/section
-                            while ( nbOpenDivs >= depth ) { //if the new chapter is at a lower or equal level 
+                            while ( nbOpenDivs >= depth ) { //if the new chapter is at a lower or equal level
                                 // compared to the previously written chapter title
                                 // then we need to close the previous chapters before writing the current one.
                                 builder.append ( "</div>\n" );
                                 nbOpenDivs--;
                             }
                             //then we write the section title opening tag
-                            String currentTitleNormalized = StringUtils.normalizeSpace(UnicodeUtil.normaliseText(currentNode.getLabel())).toLowerCase(); 
+                            String currentTitleNormalized = StringUtils.normalizeSpace(UnicodeUtil.normaliseText(currentNode.getLabel())).toLowerCase();
                             String[] currentTitleSplit = currentTitleNormalized.split ( "[" + TextUtilities.SPACE + "]" );
                             String firstInTitle = currentTitleSplit [0];
                             String lastInTitle = currentTitleSplit [ currentTitleSplit.length - 1 ];
@@ -903,7 +902,7 @@ public class MonographParser extends AbstractParser {
                         builder.append(tokens.get(tokenCtr).getText());
                         if ( tokenCtr == endTokenOffset ) {
                             // We add the closing delimiters from the title, if needed
-                            // At first, we skip by the first delimiter, if there is any 
+                            // At first, we skip by the first delimiter, if there is any
                             // (in French question mark should alwaays preceded by a space, that's why for the first step we include space)
                             if ( TextUtilities.delimiters.indexOf(tokens.get(tokenCtr+1).getText()) != -1 ) {
                                 builder.append(tokens.get(tokenCtr+1).getText());
@@ -930,24 +929,24 @@ public class MonographParser extends AbstractParser {
                         tokenCtr++;
                     }
                 }
-                // Once all the chapters/sections have been opened, 
+                // Once all the chapters/sections have been opened,
                 // transcribe the rest of the text
                 while ( tokenCtr < numberOfTokens ) {
                     builder.append(tokens.get(tokenCtr).getText());
                     tokenCtr++;
-                } 
+                }
                 //then close the chapters that are still open
                 while ( nbOpenDivs > 0 ){
                     builder.append ( "</div>\n" );
                     nbOpenDivs--;
                 }
-            } else 
+            } else
             {
                 for(LayoutToken token : tokens ) {
                     builder.append ( token.getText ( ) );
                 }
             }
-            
+
             builder.append("</text>\n</tei>");
 
             // write the TEI file
