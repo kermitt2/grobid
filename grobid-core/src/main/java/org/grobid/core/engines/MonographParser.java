@@ -268,7 +268,7 @@ public class MonographParser extends AbstractParser {
                 }
             }
         }
-
+        String featuresAsString = getFeatureVectorsAsString(doc,
                 patterns, firstTimePattern);
 
         return featuresAsString;
