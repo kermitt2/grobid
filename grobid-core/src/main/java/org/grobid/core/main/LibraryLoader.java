@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.lang.reflect.Field;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 
@@ -153,13 +154,19 @@ public class LibraryLoader {
 
                     PythonEnvironmentConfig pythonEnvironmentConfig = PythonEnvironmentConfig.getInstance();
                     if (pythonEnvironmentConfig.isEmpty()) {
-                        LOGGER.info("no python environment configured");
+                        LOGGER.info("No python environment configured");
                     } else {
-                        LOGGER.info("configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
-                        LOGGER.info("adding library paths " + pythonEnvironmentConfig.getNativeLibPaths());
+                        LOGGER.info("Configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
+                        LOGGER.info("Adding library paths " + Arrays.toString(pythonEnvironmentConfig.getNativeLibPaths()));
                         for (Path path: pythonEnvironmentConfig.getNativeLibPaths()) {
-                            addLibraryPath(path.toString());
+                            if(Files.exists(path)) {
+                                addLibraryPath(path.toString());
+                            } else {
+                                LOGGER.warn(path.toString() + " does not exists. Skipping it. ");
+                            }
                         }
+
+//                        LOGGER.info("Library paths " + Arrays.toString());
                         if (SystemUtils.IS_OS_MAC) {
                             System.loadLibrary("python" + pythonEnvironmentConfig.getPythonVersion() + "m");
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
