@@ -158,16 +158,16 @@ public class LibraryLoader {
                     } else {
                         LOGGER.info("Configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
                         LOGGER.info("Adding library paths " + Arrays.toString(pythonEnvironmentConfig.getNativeLibPaths()));
-                        for (Path path: pythonEnvironmentConfig.getNativeLibPaths()) {
-                            if(Files.exists(path)) {
+                        for (Path path : pythonEnvironmentConfig.getNativeLibPaths()) {
+                            if (Files.exists(path)) {
                                 addLibraryPath(path.toString());
                             } else {
                                 LOGGER.warn(path.toString() + " does not exists. Skipping it. ");
                             }
                         }
 
-//                        LOGGER.info("Library paths " + Arrays.toString());
                         if (SystemUtils.IS_OS_MAC) {
+//                            System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + libraryFolder.getAbsolutePath());
                             System.loadLibrary("python" + pythonEnvironmentConfig.getPythonVersion() + "m");
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_LINUX) {
