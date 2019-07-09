@@ -82,9 +82,9 @@ public class CitationsVisualizer {
                 // by default we put the existing url, doi or arXiv link
                 BiblioItem biblio = cit.getResBib();
                 if (!StringUtils.isEmpty(biblio.getDOI())) {
-                    theUrl = "http://dx.doi.org/" + biblio.getDOI();
+                    theUrl = "https://dx.doi.org/" + biblio.getDOI();
                 } else if (!StringUtils.isEmpty(biblio.getArXivId())) {
-                    theUrl = "http://arxiv.org/" + biblio.getArXivId();
+                    theUrl = "https://arxiv.org/" + biblio.getArXivId();
                 } else if (!StringUtils.isEmpty(biblio.getWeb())) {
                     theUrl = biblio.getWeb();
                 }
@@ -322,9 +322,9 @@ public class CitationsVisualizer {
                 if (!StringUtils.isEmpty(biblio.getOAURL())) {
                     theUrl = biblio.getOAURL();
                 } else if (!StringUtils.isEmpty(biblio.getDOI())) {
-                    theUrl = "http://dx.doi.org/" + biblio.getDOI();
+                    theUrl = "https://dx.doi.org/" + biblio.getDOI();
                 } else if (!StringUtils.isEmpty(biblio.getArXivId())) {
-                    theUrl = "http://arxiv.org/" + biblio.getArXivId();
+                    theUrl = "https://arxiv.org/" + biblio.getArXivId();
                 } else if (!StringUtils.isEmpty(biblio.getWeb())) {
                     theUrl = biblio.getWeb();
                 }
