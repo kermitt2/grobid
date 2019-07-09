@@ -56,15 +56,17 @@ Many thanks to:
 * Vyacheslav Zholudev (ResearchGate)
 * Luca Foppiano (NIMS) 
 * Achraf Azhar (Inria)
-* Christopher Boumenot (Microsoft) in particular for Windows support
+* Christopher Boumenot (Microsoft) in particular for the Windows support
 * Laurent Romary (Inria)
 * CERN contributors Andreas la Roi and Micha Moskovic
-* Florian Zipser (Humboldt University) who developed the first version of the REST API in 2011
+* Florian Zipser (Humboldt University) who developed the first historical version of the REST API in 2011
 * the other contributors from ResearchGate: Michael Häusler, Kyryl Bilokurov, Artem Oboturov
 * Damien Ridereau (Infotel)
+* Daniel Ecer (eLife)
+* Vitalii Bezsheiko (PKP)
 * Bruno Pouliquen (WIPO) for the custom analyzers for Eastern languages
 * Thomas Lavergne, Olivier Cappé and François Yvon for Wapiti
-* Taku Kudo for CRF++
+* Taku Kudo for CRF++ (not used anymore, but all the same, thanks!)
 * Hervé Déjean and his colleagues from Xerox Research Centre Europe, for xml2pdf
 * and the other contributors: Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, Chris Mattmann, Sujen Shah, Joseph Boyd, Guillaume Muller, ...
 

@@ -14,7 +14,7 @@ Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detaile
 
 GROBID (or Grobid, but not GroBid nor GroBiD) means GeneRation Of BIbliographic Data. 
 
-GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on GROBID has been steady as an independent side project since the beginning and is expected to continue until at least 2020 :)
+GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on GROBID has been steady as a side project since the beginning and is expected to continue until at least 2020 :)
 
 The following functionalities are available:
 
@@ -27,11 +27,11 @@ The following functionalities are available:
 + Parsing of dates (ISO normalized day, month, year).
 + Full text extraction from PDF articles, including a model for the the overall document segmentation and a model for the structuring of the text body (paragraph, section titles, reference callout, figure, table, etc.). 
 + In a complete PDF processing, GROBID manages 55 final labels used to build relatively fine-grained structures, from traditional publication metadata (title, author first/last/middlenames, affiliation types, detailed address, journal, volume, issue, pages, etc.) to full text structures (section title, paragraph, reference markers, head/foot notes, figure headers, etc.). 
-+ Consolidation of the extracted bibliographical references using the [biblio-glutton](https://github.com/kermitt2/biblio-glutton) service or the [CrossRef REST API](https://github.com/CrossRef/rest-api-doc). 
++ Consolidation/resolution of the extracted bibliographical references using the [biblio-glutton](https://github.com/kermitt2/biblio-glutton) service or the [CrossRef REST API](https://github.com/CrossRef/rest-api-doc). 
 
 GROBID includes a comprehensive web service API, batch processing, a JAVA API, a Docker image, a relatively generic evaluation framework (precision, recall, etc.) and the semi-automatic generation of training data. 
 
-GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST-CNRS, Mendeley, CERN (Invenio), etc. 
+GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST-CNRS, Mendeley, CERN (Invenio), and many more. 
 
 GROBID should run properly "out of the box" on Linux (64 bits), MacOS, and Windows (32 and 64 bits). 
 
@@ -56,6 +56,8 @@ For helping to exploit GROBID service at scale, we provide clients written in Py
 - <a href="https://github.com/kermitt2/grobid-client-node" target="_blank">Node.js GROBID client</a>
 
 All these clients will take advantage of the multi-threading for scaling large set of PDF processing. As a consequence, they will be much more efficient than the [batch command lines](https://grobid.readthedocs.io/en/latest/Grobid-batch/) (which use only one thread) and should be prefered. 
+
+We have been able recently to run the complete fulltext processing at around 10.6 PDF per second (around 915,000 PDF per day, around 20M pages per day) with the node.js client listed above during one week on a 16 CPU machine (16 threads, 32GB RAM, no SDD, articles from mainstream publishers), see [here](https://github.com/kermitt2/grobid/issues/443#issuecomment-505208132).
 
 In addition, a Java example project is available to illustrate how to use GROBID as a Java library: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTeX format.  
 
