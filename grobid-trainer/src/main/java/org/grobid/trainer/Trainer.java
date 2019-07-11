@@ -24,5 +24,7 @@ public interface Trainer {
 
 	String splitTrainEvaluate(Double split);
 
+	String nFoldEvaluate(int folds);
+
     GrobidModel getModel();
 }

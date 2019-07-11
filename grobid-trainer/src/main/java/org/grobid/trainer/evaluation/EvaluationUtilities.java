@@ -11,6 +11,7 @@ import org.grobid.core.utilities.Pair;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -98,53 +99,44 @@ public class EvaluationUtilities {
         return res.toString();
     }
 
-    public static String evaluateStandard(String path, final GenericTagger tagger) {
-        return evaluateStandard(path, new Function<List<String>, String>() {
-            @Override
-            public String apply(List<String> strings) {
-                return tagger.label(strings);
-            }
-        });
+    public static ModelStats evaluateStandard(String path, final GenericTagger tagger) {
+        return evaluateStandard(path, tagger::label);
     }
 
-    public static String evaluateStandard(String path, Function<List<String>, String> taggerFunction) {
+    public static ModelStats evaluateStandard(String path, Function<List<String>, String> taggerFunction) {
         String theResult = null;
 
         try {
-            final BufferedReader bufReader = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8"));
+            final BufferedReader bufReader = new BufferedReader(new InputStreamReader(new FileInputStream(path), StandardCharsets.UTF_8));
 
             String line = null;
-            List<String> citationBlocks = new ArrayList<String>();
+            List<String> instance = new ArrayList<String>();
             while ((line = bufReader.readLine()) != null) {
-                citationBlocks.add(line);
+                instance.add(line);
             }
             long time = System.currentTimeMillis();
-            theResult = taggerFunction.apply(citationBlocks);
+            theResult = taggerFunction.apply(instance);
             bufReader.close();
             System.out.println("Labeling took: " + (System.currentTimeMillis() - time) + " ms");
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while evaluating Grobid.", e);
         }
 
-        return reportMetrics(theResult);
+        return computeStats(theResult);
     }
 
-    public static String reportMetrics(String theResult) {
-        StringBuilder report = new StringBuilder();
-
+    public static ModelStats computeStats(String theResult) {
+        ModelStats accumulator = new ModelStats();
         // report token-level results
         Stats wordStats = tokenLevelStats(theResult);
-        report.append("\n===== Token-level results =====\n\n");
-        report.append(wordStats.getReport());
+        accumulator.setTokenStats(wordStats);
 
         // report field-level results
         Stats fieldStats = fieldLevelStats(theResult);
-        report.append("\n===== Field-level results =====\n");
-        report.append(fieldStats.getReport());
+        accumulator.setFieldStats(fieldStats);
 
         // instance-level: instances are separated by a new line in the result file
         // third pass
-        report.append("\n===== Instance-level results =====\n\n");
         theResult = theResult.replace("\n\n", "\n \n");
         StringTokenizer stt = new StringTokenizer(theResult, "\n");
         boolean allGood = true;
@@ -179,9 +171,34 @@ public class EvaluationUtilities {
             }
         }
 
-        report.append(String.format("%-27s %d\n", "Total expected instances:", totalInstance));
-        report.append(String.format("%-27s %d\n", "Correct instances:", correctInstance));
-        double accuracy = (double) correctInstance / (totalInstance);
+        accumulator.setTotalInstances(totalInstance);
+        accumulator.setCorrectInstance(correctInstance);
+        accumulator.setInstanceAccuracy(correctInstance);
+        double accuracy = (double) (correctInstance / totalInstance);
+
+
+        return accumulator;
+    }
+
+    public static String reportMetrics(ModelStats accumulated) {
+        StringBuilder report = new StringBuilder();
+
+        // report token-level results
+        Stats wordStats = accumulated.getTokenStats();
+        report.append("\n===== Token-level results =====\n\n");
+        report.append(wordStats.getReport());
+
+        // report field-level results
+        Stats fieldStats = accumulated.getFieldStats();
+        report.append("\n===== Field-level results =====\n");
+        report.append(fieldStats.getReport());
+
+        // instance-level: instances are separated by a new line in the result file
+        // third pass
+        report.append("\n===== Instance-level results =====\n\n");
+        report.append(String.format("%-27s %d\n", "Total expected instances:", accumulated.getTotalInstances()));
+        report.append(String.format("%-27s %d\n", "Correct instances:", accumulated.getCorrectInstance()));
+        double accuracy = (double) accumulated.getCorrectInstance() / (accumulated.getTotalInstances());
         report.append(String.format("%-27s %s\n",
             "Instance-level recall:",
             TextUtilities.formatTwoDecimals(accuracy * 100)));
