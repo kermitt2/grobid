@@ -15,6 +15,8 @@ public class TrainerFactory {
                 return new WapitiTrainer();
             case DELFT:
                 return new DeLFTTrainer();
+            case DUMMY:
+                return new DummyTrainer();
             default:
                 throw new IllegalStateException("Unsupported Grobid sequence labelling engine: " + GrobidProperties.getGrobidCRFEngine());
         }
