@@ -25,7 +25,7 @@ The following functionalities are available:
 + Parsing of dates.
 + Full text extraction from PDF articles, including a model for the the overall document segmentation and a model for the structuring of the text body.
 
-GROBID includes batch processing, a comprehensive RESTful API, a JAVA API, a relatively generic evaluation framework (precision, recall, etc.) and the semi-automatic generation of training data. 
+GROBID includes batch processing, a comprehensive RESTful API, a JAVA API, a docker container, a relatively generic evaluation framework (precision, recall, etc.) and the semi-automatic generation of training data. 
 
 GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST, Mendeley, CERN, Internet Archive, ...
 
