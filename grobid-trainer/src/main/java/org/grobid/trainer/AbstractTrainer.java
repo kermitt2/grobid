@@ -114,7 +114,7 @@ public abstract class AbstractTrainer implements Trainer {
     @Override
     public String evaluate() {
         createCRFPPData(getEvalCorpusPath(), evalDataPath);
-        return EvaluationUtilities.reportMetrics(EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger()));
+        return EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger()).toString();
     }
 
     @Override
@@ -145,7 +145,7 @@ public abstract class AbstractTrainer implements Trainer {
         // if we are here, that means that training succeeded
         renameModels(oldModelPath, tempModelPath);
 
-        return EvaluationUtilities.reportMetrics(EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger()));
+        return EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger()).toString();
     }
 
     @Override
@@ -185,12 +185,11 @@ public abstract class AbstractTrainer implements Trainer {
             trainer.train(getTemplatePath(), new File(fold.getLeft()), tempModelPath, GrobidProperties.getNBThreads(), model);
             System.out.println("Evaluation input data: " + fold.getRight());
             ModelStats modelStats = EvaluationUtilities.evaluateStandard(fold.getRight(), getTagger());
-            System.out.println(EvaluationUtilities.reportMetrics(modelStats));
+            System.out.println(modelStats.toString());
             return modelStats;
         }).collect(Collectors.toList());
 
         System.out.println("Results: ");
-
 
         Comparator<ModelStats> f1ScoreComparator = (o1, o2) -> {
             if (o1.getFieldStats().getMacroAverageF1() > o2.getFieldStats().getMacroAverageF1()) {
@@ -209,7 +208,7 @@ public abstract class AbstractTrainer implements Trainer {
             throw new GrobidException("Something wrong when computing evaluations " +
                 "- worst model metrics not found. ");
         });
-        sb.append(EvaluationUtilities.reportMetrics(worstModelStats)).append("\n");
+        sb.append(worstModelStats.toString()).append("\n");
 
         sb.append("Best model:").append("\n");
         Optional<ModelStats> bestModel = evaluationResults.stream().max(f1ScoreComparator);
@@ -217,7 +216,7 @@ public abstract class AbstractTrainer implements Trainer {
             throw new GrobidException("Something wrong when computing evaluations " +
                 "- best model metrics not found. ");
         });
-        sb.append(EvaluationUtilities.reportMetrics(bestModelStats)).append("\n");
+        sb.append(bestModelStats.toString()).append("\n");
 
         // Averages
         OptionalDouble averageF1 = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageF1()).average();
@@ -430,17 +429,32 @@ public abstract class AbstractTrainer implements Trainer {
         System.out.println("Split, training and evaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms");
     }
 
+    public static void runNFoldEvaluation(final Trainer trainer, int numFolds, Path outputFile) {
 
-    public static void runNFoldEvaluation(final Trainer trainer, int numFolds) {
+        String report = runNFoldEvaluation(trainer, numFolds);
+
+        try (BufferedWriter writer = Files.newBufferedWriter(outputFile)) {
+            writer.write(report);
+            writer.write("\n");
+        } catch (IOException e) {
+            throw new GrobidException("Error when dumping n-fold training data into files. ", e);
+        }
+
+    }
+
+    public static String runNFoldEvaluation(final Trainer trainer, int numFolds) {
         long start = System.currentTimeMillis();
+        String report = "";
         try {
-            String report = trainer.nFoldEvaluate(numFolds);
-            System.out.println(report);
+            report = trainer.nFoldEvaluate(numFolds);
+
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while evaluating Grobid.", e);
         }
         long end = System.currentTimeMillis();
-        System.out.println("Split, training and evaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms");
+        System.out.println("N-Fold evaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms");
+
+        return report;
     }
 
     /**

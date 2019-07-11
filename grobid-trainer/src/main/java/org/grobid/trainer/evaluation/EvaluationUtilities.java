@@ -177,31 +177,6 @@ public class EvaluationUtilities {
         return modelStats;
     }
 
-    public static String reportMetrics(ModelStats accumulated) {
-        StringBuilder report = new StringBuilder();
-
-        // report token-level results
-        Stats wordStats = accumulated.getTokenStats();
-        report.append("\n===== Token-level results =====\n\n");
-        report.append(wordStats.getReport());
-
-        // report field-level results
-        Stats fieldStats = accumulated.getFieldStats();
-        report.append("\n===== Field-level results =====\n");
-        report.append(fieldStats.getReport());
-
-        // instance-level: instances are separated by a new line in the result file
-        // third pass
-        report.append("\n===== Instance-level results =====\n\n");
-        report.append(String.format("%-27s %d\n", "Total expected instances:", accumulated.getTotalInstances()));
-        report.append(String.format("%-27s %d\n", "Correct instances:", accumulated.getCorrectInstance()));
-        report.append(String.format("%-27s %s\n",
-            "Instance-level recall:",
-            TextUtilities.formatTwoDecimals(accumulated.getInstanceRecall() * 100)));
-
-        return report.toString();
-    }
-
     public static Stats tokenLevelStats(String theResult) {
         Stats wordStats = new Stats();
         String line = null;

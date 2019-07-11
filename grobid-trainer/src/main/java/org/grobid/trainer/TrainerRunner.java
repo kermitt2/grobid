@@ -1,8 +1,12 @@
 package org.grobid.trainer;
 
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.utilities.GrobidProperties;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
@@ -47,8 +51,9 @@ public class TrainerRunner {
         }
 
         String path2GbdHome = null;
-        Double split = 0.0;
-        Integer numFolds = 0;
+        double split = 0.0;
+        int numFolds = 0;
+        String outputFilePath = null;
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("-gH")) {
                 if (i + 1 == args.length) {
@@ -72,8 +77,14 @@ public class TrainerRunner {
                 try {
                     numFolds = Integer.parseInt(args[i + 1]);
                 } catch (Exception e) {
-                    throw new IllegalStateException("Invalid split value: " + args[i + 1]);
+                    throw new IllegalStateException("Invalid number of folds value: " + args[i + 1]);
                 }
+
+            } else if (args[i].equals("-o")) {
+                if (i + 1 == args.length) {
+                    throw new IllegalStateException("Missing output file. ");
+                }
+                outputFilePath = args[i + 1];
 
             }
         }
@@ -135,7 +146,17 @@ public class TrainerRunner {
                 AbstractTrainer.runSplitTrainingEvaluation(trainer, split);
                 break;
             case EVAL_N_FOLD:
-                AbstractTrainer.runNFoldEvaluation(trainer, numFolds);
+                if (StringUtils.isNotEmpty(outputFilePath)) {
+                    Path outputPath = Paths.get(outputFilePath);
+                    if (Files.exists(outputPath)) {
+                        System.err.println("Output file exists. ");
+                    }
+                    AbstractTrainer.runNFoldEvaluation(trainer, numFolds, outputPath);
+                } else {
+
+                    String results = AbstractTrainer.runNFoldEvaluation(trainer, numFolds);
+                    System.out.println(results);
+                }
                 break;
             default:
                 throw new IllegalStateException("Invalid RunType: " + mode.name());
