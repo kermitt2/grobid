@@ -25,6 +25,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -174,11 +175,15 @@ public abstract class AbstractTrainer implements Trainer {
             LOGGER.warn("Cannot find the destination directory " + tmpDirectory);
         }
 
-        final File tempModelPath = new File(tmpDirectory + File.separator + "nfold_dummy_model");
-        System.out.println("Saving model in " + tempModelPath);
-
+        AtomicInteger counter = new AtomicInteger(0);
         List<ModelStats> evaluationResults = foldMap.stream().map(fold -> {
+            final File tempModelPath = new File(tmpDirectory + File.separator + getModel().getModelName()
+                + "_nfold_" + counter.getAndIncrement() + ".wapiti");
+            System.out.println("Saving model in " + tempModelPath);
+
+            System.out.println("Training input data: " + fold.getLeft());
             trainer.train(getTemplatePath(), new File(fold.getLeft()), tempModelPath, GrobidProperties.getNBThreads(), model);
+            System.out.println("Evaluation input data: " + fold.getRight());
             return EvaluationUtilities.evaluateStandard(fold.getRight(), getTagger());
         }).collect(Collectors.toList());
 
