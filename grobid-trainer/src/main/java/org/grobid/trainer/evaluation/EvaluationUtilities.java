@@ -110,7 +110,7 @@ public class EvaluationUtilities {
             final BufferedReader bufReader = new BufferedReader(new InputStreamReader(new FileInputStream(path), StandardCharsets.UTF_8));
 
             String line = null;
-            List<String> instance = new ArrayList<String>();
+            List<String> instance = new ArrayList<>();
             while ((line = bufReader.readLine()) != null) {
                 instance.add(line);
             }
