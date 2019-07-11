@@ -4,6 +4,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.grobid.core.GrobidModel;
+import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.engines.tagging.TaggerFactory;
@@ -49,6 +50,10 @@ public abstract class AbstractTrainer implements Trainer {
     public AbstractTrainer(final GrobidModel model) {
         GrobidFactory.getInstance().createEngine();
         this.model = model;
+        if (model.equals(GrobidModels.DUMMY)) {
+            // In case of dummy model we do not initialise (and create) temporary files
+            return;
+        }
         this.trainDataPath = getTempTrainingDataPath();
         this.evalDataPath = getTempEvaluationDataPath();
     }
@@ -181,9 +186,9 @@ public abstract class AbstractTrainer implements Trainer {
 
 
         Comparator<ModelStats> f1ScoreComparator = (o1, o2) -> {
-            if (o1.getFieldStats().getMacroAverageF1() > o1.getFieldStats().getMacroAverageF1()) {
+            if (o1.getFieldStats().getMacroAverageF1() > o2.getFieldStats().getMacroAverageF1()) {
                 return 1;
-            } else if (o1.getFieldStats().getMacroAverageF1() < o1.getFieldStats().getMacroAverageF1()) {
+            } else if (o1.getFieldStats().getMacroAverageF1() < o2.getFieldStats().getMacroAverageF1()) {
                 return -1;
             } else {
                 return 0;
@@ -232,15 +237,18 @@ public abstract class AbstractTrainer implements Trainer {
     /**
      * Partition the corpus in n folds, dump them in n files and return the pairs of (trainingPath, evaluationPath)
      */
-    protected List<ImmutablePair<String, String>> splitNFold(List<String> trainingData, int folds) {
+    protected List<ImmutablePair<String, String>> splitNFold(List<String> trainingData, int numberFolds) {
         int trainingSize = CollectionUtils.size(trainingData);
-        int foldSize = Math.floorDiv(trainingSize, folds);
+        int foldSize = Math.floorDiv(trainingSize, numberFolds);
+        if (foldSize == 0) {
+            throw new IllegalArgumentException("There aren't enough training data for n-fold evaluation with fold of size " + numberFolds);
+        }
 
-        return IntStream.range(0, folds).mapToObj(foldIndex -> {
+        return IntStream.range(0, numberFolds).mapToObj(foldIndex -> {
             int foldStart = foldSize * foldIndex;
             int foldEnd = foldStart + foldSize;
 
-            if (foldIndex == folds - 1) {
+            if (foldIndex == numberFolds - 1) {
                 foldEnd = trainingSize;
             }
 
@@ -253,22 +261,20 @@ public abstract class AbstractTrainer implements Trainer {
 
             //Dump Evaluation
             String tempEvaluationDataPath = getTempEvaluationDataPath().getAbsolutePath();
-//            System.out.println(tempEvaluationDataPath);
             try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(tempEvaluationDataPath))) {
-//                System.out.println(String.join("\n\n\n", foldEvaluation));
                 writer.write(String.join("\n\n", foldEvaluation));
+                writer.write("\n");
             } catch (IOException e) {
-                e.printStackTrace();
+                throw new GrobidException("Error when dumping n-fold evaluation data into files. ", e);
             }
 
             //Dump Training
             String tempTrainingDataPath = getTempTrainingDataPath().getAbsolutePath();
-//            System.out.println(tempTrainingDataPath);
             try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(tempTrainingDataPath))) {
-//                System.out.println(String.join("\n\n\n", foldTraining));
                 writer.write(String.join("\n\n", foldTraining));
+                writer.write("\n");
             } catch (IOException e) {
-                e.printStackTrace();
+                throw new GrobidException("Error when dumping n-fold training data into files. ", e);
             }
 
             return new ImmutablePair<>(tempTrainingDataPath, tempEvaluationDataPath);
@@ -276,10 +282,23 @@ public abstract class AbstractTrainer implements Trainer {
     }
 
     /**
-     * Load the dataset in memory and shuffle it. Assuming that each empty line is a delimiter between instances.
-     * Empty line are filtered out from the output
+     * Load the dataset in memory and shuffle it.
      */
     protected List<String> loadAndShuffle(Path dataPath) {
+        List<String> trainingData = load(dataPath);
+
+        Collections.shuffle(trainingData, new Random(839374947498L));
+
+        return trainingData;
+    }
+
+    /**
+     * Read the Wapiti training files in list of String.
+     * Assuming that each empty line is a delimiter between instances.
+     * Each list element corresponds to one instance.
+     * Empty line are filtered out from the output.
+     */
+    public List<String> load(Path dataPath) {
         List<String> trainingData = new ArrayList<>();
         try (Stream<String> stream = Files.lines(dataPath)) {
             List<String> instance = new ArrayList<>();
@@ -296,12 +315,14 @@ public abstract class AbstractTrainer implements Trainer {
                     instance.add(current);
                 }
             }
+            if (CollectionUtils.isNotEmpty(instance)) {
+                trainingData.add(String.join("\n", instance));
+            }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new GrobidException("Error in n-fold, when loading training data. Failing. ", e);
         }
 
-        Collections.shuffle(trainingData);
         return trainingData;
     }
 
