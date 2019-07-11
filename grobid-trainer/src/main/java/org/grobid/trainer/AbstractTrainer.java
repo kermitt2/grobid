@@ -5,20 +5,26 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.tagging.GenericTagger;
+import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.engines.tagging.TaggerFactory;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.engines.tagging.GrobidCRFEngine;
+import org.grobid.core.utilities.TextUtilities;
 import org.grobid.trainer.evaluation.EvaluationUtilities;
 import org.grobid.trainer.evaluation.ModelStats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.IOException;
+import java.io.Writer;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -144,86 +150,13 @@ public abstract class AbstractTrainer implements Trainer {
         GenericTrainer trainer = TrainerFactory.getTrainer();
 
         // Load in memory and Shuffle
-        List<String> trainingData = new ArrayList<>();
-        try (Stream<String> stream = Files.lines(Paths.get(dataPath.getAbsolutePath()))) {
-            List<String> instance = new ArrayList<>();
-            ListIterator<String> iterator = stream.collect(Collectors.toList()).listIterator();
-            while (iterator.hasNext()) {
-                String current = iterator.next();
-
-                if (StringUtils.isBlank(current)) {
-                    if (CollectionUtils.isNotEmpty(instance)) {
-                        trainingData.add(String.join("\n", instance));
-                    }
-                    instance = new ArrayList<>();
-                } else {
-                    instance.add(current);
-                }
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-//        trainingData.forEach(s -> {
-//            System.out.println(s);
-//            System.out.println("\n\n");
-//        });
-        Collections.shuffle(trainingData);
-//        Collections.shuffle(trainingData);
-
-//        System.out.println("\n\n");
-//        trainingData.forEach(s -> {
-//            System.out.println(s);
-//            System.out.println("\n\n");
-//        });
+        Path dataPath2 = Paths.get(dataPath.getAbsolutePath());
+        List<String> trainingData = loadAndShuffle(dataPath2);
 
         // Split into folds
+        List<ImmutablePair<String, String>> foldMap = splitNFold(trainingData, folds);
 
-        int trainingSize = CollectionUtils.size(trainingData);
-        int foldSize = Math.floorDiv(trainingSize, folds);
-
-        List<ImmutablePair<String, String>> foldMap = IntStream.range(0, folds).mapToObj(foldIndex -> {
-            int foldStart = foldSize * foldIndex;
-            int foldEnd = foldStart + foldSize;
-
-            if (foldIndex == folds - 1) {
-                foldEnd = trainingSize;
-            }
-
-            List<String> foldEvaluation = trainingData.subList(foldStart, foldEnd);
-            List<String> foldTraining0 = trainingData.subList(0, foldStart);
-            List<String> foldTraining1 = trainingData.subList(foldEnd, trainingSize);
-            List<String> foldTraining = new ArrayList<>();
-            foldTraining.addAll(foldTraining0);
-            foldTraining.addAll(foldTraining1);
-
-            //Dump Evaluation
-            String tempEvaluationDataPath = getTempEvaluationDataPath().getAbsolutePath();
-            System.out.println(tempEvaluationDataPath);
-            try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(tempEvaluationDataPath))) {
-//                System.out.println(String.join("\n\n\n", foldEvaluation));
-                writer.write(String.join("\n\n", foldEvaluation));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            //Dump Training
-            String tempTrainingDataPath = getTempTrainingDataPath().getAbsolutePath();
-            System.out.println(tempTrainingDataPath);
-            try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(tempTrainingDataPath))) {
-//                System.out.println(String.join("\n\n\n", foldTraining));
-                writer.write(String.join("\n\n", foldTraining));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            return new ImmutablePair<>(tempTrainingDataPath, tempEvaluationDataPath);
-        }).collect(Collectors.toList());
-
-
-        // Train and evaluastion
-
+        // Train and evaluation
         if (epsilon != 0.0)
             trainer.setEpsilon(epsilon);
         if (window != 0)
@@ -245,13 +178,132 @@ public abstract class AbstractTrainer implements Trainer {
             return EvaluationUtilities.evaluateStandard(fold.getRight(), getTagger());
         }).collect(Collectors.toList());
 
+        System.out.println("Results: ");
+
+
+        Comparator<ModelStats> f1ScoreComparator = (o1, o2) -> {
+            if (o1.getFieldStats().getMacroAverageF1() > o1.getFieldStats().getMacroAverageF1()) {
+                return 1;
+            } else if (o1.getFieldStats().getMacroAverageF1() < o1.getFieldStats().getMacroAverageF1()) {
+                return -1;
+            } else {
+                return 0;
+            }
+        };
+        // Output
+        StringBuilder sb = new StringBuilder();
+        Optional<ModelStats> worstModel = evaluationResults.stream().min(f1ScoreComparator);
+        sb.append("Worst Model").append("\n");
+        ModelStats worstModelStats = worstModel.orElseGet(() -> {
+            throw new GrobidException("Something wrong when computing evaluations " +
+                "- worst model metrics not found. ");
+        });
+        sb.append(EvaluationUtilities.reportMetrics(worstModelStats));
+
+        Optional<ModelStats> bestModel = evaluationResults.stream().max(f1ScoreComparator);
+        ModelStats bestModelStats = bestModel.orElseGet(() -> {
+            throw new GrobidException("Something wrong when computing evaluations " +
+                "- best model metrics not found. ");
+        });
+        sb.append(EvaluationUtilities.reportMetrics(bestModelStats));
 
         // Averages
         OptionalDouble averageF1 = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageF1()).average();
         OptionalDouble averagePrecision = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAveragePrecision()).average();
         OptionalDouble averageRecall = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageRecall()).average();
 
-        return "Average precision: " + averagePrecision.getAsDouble() + "\nAverage recall: " + averageRecall.getAsDouble() + "\nAverage F1: " + averageF1.getAsDouble() + "\n ";
+        double avgPrecision = averagePrecision.orElseGet(() -> {
+            throw new GrobidException("Missing average precision. Something went wrong. Please check. ");
+        });
+        sb.append("Average precision: " + TextUtilities.formatTwoDecimals(avgPrecision * 100)).append("\n");
+
+        double avgRecall = averageRecall.orElseGet(() -> {
+            throw new GrobidException("Missing average recall. Something went wrong. Please check. ");
+        });
+        sb.append("Average recall: " + TextUtilities.formatTwoDecimals(avgRecall * 100)).append("\n");
+
+        double avgF1 = averageF1.orElseGet(() -> {
+            throw new GrobidException("Missing average F1. Something went wrong. Please check. ");
+        });
+        sb.append("Average F1: " + TextUtilities.formatTwoDecimals(avgF1 * 100)).append("\n");
+
+        return sb.toString();
+    }
+
+    /**
+     * Partition the corpus in n folds, dump them in n files and return the pairs of (trainingPath, evaluationPath)
+     */
+    protected List<ImmutablePair<String, String>> splitNFold(List<String> trainingData, int folds) {
+        int trainingSize = CollectionUtils.size(trainingData);
+        int foldSize = Math.floorDiv(trainingSize, folds);
+
+        return IntStream.range(0, folds).mapToObj(foldIndex -> {
+            int foldStart = foldSize * foldIndex;
+            int foldEnd = foldStart + foldSize;
+
+            if (foldIndex == folds - 1) {
+                foldEnd = trainingSize;
+            }
+
+            List<String> foldEvaluation = trainingData.subList(foldStart, foldEnd);
+            List<String> foldTraining0 = trainingData.subList(0, foldStart);
+            List<String> foldTraining1 = trainingData.subList(foldEnd, trainingSize);
+            List<String> foldTraining = new ArrayList<>();
+            foldTraining.addAll(foldTraining0);
+            foldTraining.addAll(foldTraining1);
+
+            //Dump Evaluation
+            String tempEvaluationDataPath = getTempEvaluationDataPath().getAbsolutePath();
+//            System.out.println(tempEvaluationDataPath);
+            try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(tempEvaluationDataPath))) {
+//                System.out.println(String.join("\n\n\n", foldEvaluation));
+                writer.write(String.join("\n\n", foldEvaluation));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //Dump Training
+            String tempTrainingDataPath = getTempTrainingDataPath().getAbsolutePath();
+//            System.out.println(tempTrainingDataPath);
+            try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(tempTrainingDataPath))) {
+//                System.out.println(String.join("\n\n\n", foldTraining));
+                writer.write(String.join("\n\n", foldTraining));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return new ImmutablePair<>(tempTrainingDataPath, tempEvaluationDataPath);
+        }).collect(Collectors.toList());
+    }
+
+    /**
+     * Load the dataset in memory and shuffle it. Assuming that each empty line is a delimiter between instances.
+     * Empty line are filtered out from the output
+     */
+    protected List<String> loadAndShuffle(Path dataPath) {
+        List<String> trainingData = new ArrayList<>();
+        try (Stream<String> stream = Files.lines(dataPath)) {
+            List<String> instance = new ArrayList<>();
+            ListIterator<String> iterator = stream.collect(Collectors.toList()).listIterator();
+            while (iterator.hasNext()) {
+                String current = iterator.next();
+
+                if (StringUtils.isBlank(current)) {
+                    if (CollectionUtils.isNotEmpty(instance)) {
+                        trainingData.add(String.join("\n", instance));
+                    }
+                    instance = new ArrayList<>();
+                } else {
+                    instance.add(current);
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Collections.shuffle(trainingData);
+        return trainingData;
     }
 
     protected final File getTempTrainingDataPath() {
