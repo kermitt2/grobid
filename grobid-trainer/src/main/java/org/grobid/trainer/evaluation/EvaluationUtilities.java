@@ -126,14 +126,14 @@ public class EvaluationUtilities {
     }
 
     public static ModelStats computeStats(String theResult) {
-        ModelStats accumulator = new ModelStats();
+        ModelStats modelStats = new ModelStats();
         // report token-level results
         Stats wordStats = tokenLevelStats(theResult);
-        accumulator.setTokenStats(wordStats);
+        modelStats.setTokenStats(wordStats);
 
         // report field-level results
         Stats fieldStats = fieldLevelStats(theResult);
-        accumulator.setFieldStats(fieldStats);
+        modelStats.setFieldStats(fieldStats);
 
         // instance-level: instances are separated by a new line in the result file
         // third pass
@@ -171,13 +171,10 @@ public class EvaluationUtilities {
             }
         }
 
-        accumulator.setTotalInstances(totalInstance);
-        accumulator.setCorrectInstance(correctInstance);
-        accumulator.setInstanceAccuracy(correctInstance);
-        double accuracy = (double) (correctInstance / totalInstance);
+        modelStats.setTotalInstances(totalInstance);
+        modelStats.setCorrectInstance(correctInstance);
 
-
-        return accumulator;
+        return modelStats;
     }
 
     public static String reportMetrics(ModelStats accumulated) {
@@ -198,10 +195,9 @@ public class EvaluationUtilities {
         report.append("\n===== Instance-level results =====\n\n");
         report.append(String.format("%-27s %d\n", "Total expected instances:", accumulated.getTotalInstances()));
         report.append(String.format("%-27s %d\n", "Correct instances:", accumulated.getCorrectInstance()));
-        double accuracy = (double) accumulated.getCorrectInstance() / (accumulated.getTotalInstances());
         report.append(String.format("%-27s %s\n",
             "Instance-level recall:",
-            TextUtilities.formatTwoDecimals(accuracy * 100)));
+            TextUtilities.formatTwoDecimals(accumulated.getInstanceRecall() * 100)));
 
         return report.toString();
     }
