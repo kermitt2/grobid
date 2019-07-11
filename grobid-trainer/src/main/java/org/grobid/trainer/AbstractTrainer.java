@@ -1,5 +1,8 @@
 package org.grobid.trainer;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.engines.tagging.TaggerFactory;
@@ -8,11 +11,17 @@ import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.trainer.evaluation.EvaluationUtilities;
+import org.grobid.trainer.evaluation.ModelStats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * @author Zholudev, Lopez
@@ -46,12 +55,17 @@ public abstract class AbstractTrainer implements Trainer {
     }
 
     @Override
+    public int createCRFPPData(final File corpusDir, final File trainingOutputPath) {
+        return createCRFPPData(corpusDir, trainingOutputPath, null, 1.0);
+    }
+
+    @Override
     public void train() {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath);
         GenericTrainer trainer = TrainerFactory.getTrainer();
 
-        if (epsilon != 0.0) 
+        if (epsilon != 0.0)
             trainer.setEpsilon(epsilon);
         if (window != 0)
             trainer.setWindow(window);
@@ -89,7 +103,7 @@ public abstract class AbstractTrainer implements Trainer {
     @Override
     public String evaluate() {
         createCRFPPData(getEvalCorpusPath(), evalDataPath);
-        return EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger());
+        return EvaluationUtilities.reportMetrics(EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger()));
     }
 
     @Override
@@ -98,7 +112,7 @@ public abstract class AbstractTrainer implements Trainer {
         createCRFPPData(getCorpusPath(), dataPath, evalDataPath, split);
         GenericTrainer trainer = TrainerFactory.getTrainer();
 
-        if (epsilon != 0.0) 
+        if (epsilon != 0.0)
             trainer.setEpsilon(epsilon);
         if (window != 0)
             trainer.setWindow(window);
@@ -111,7 +125,7 @@ public abstract class AbstractTrainer implements Trainer {
             dirModelPath.mkdir();
             //throw new GrobidException("Cannot find the destination directory " + dirModelPath.getAbsolutePath() + " for the model " + model.toString());
         }
-        
+
         final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
         final File oldModelPath = GrobidProperties.getModelPath(model);
 
@@ -120,7 +134,124 @@ public abstract class AbstractTrainer implements Trainer {
         // if we are here, that means that training succeeded
         renameModels(oldModelPath, tempModelPath);
 
-        return EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger());
+        return EvaluationUtilities.reportMetrics(EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger()));
+    }
+
+    @Override
+    public String nFoldEvaluate(int folds) {
+        final File dataPath = trainDataPath;
+        createCRFPPData(getCorpusPath(), dataPath);
+        GenericTrainer trainer = TrainerFactory.getTrainer();
+
+        // Load in memory and Shuffle
+        List<String> trainingData = new ArrayList<>();
+        try (Stream<String> stream = Files.lines(Paths.get(dataPath.getAbsolutePath()))) {
+            List<String> instance = new ArrayList<>();
+            ListIterator<String> iterator = stream.collect(Collectors.toList()).listIterator();
+            while (iterator.hasNext()) {
+                String current = iterator.next();
+
+                if (StringUtils.isBlank(current)) {
+                    if (CollectionUtils.isNotEmpty(instance)) {
+                        trainingData.add(String.join("\n", instance));
+                    }
+                    instance = new ArrayList<>();
+                } else {
+                    instance.add(current);
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+//        trainingData.forEach(s -> {
+//            System.out.println(s);
+//            System.out.println("\n\n");
+//        });
+        Collections.shuffle(trainingData);
+//        Collections.shuffle(trainingData);
+
+//        System.out.println("\n\n");
+//        trainingData.forEach(s -> {
+//            System.out.println(s);
+//            System.out.println("\n\n");
+//        });
+
+        // Split into folds
+
+        int trainingSize = CollectionUtils.size(trainingData);
+        int foldSize = Math.floorDiv(trainingSize, folds);
+
+        List<ImmutablePair<String, String>> foldMap = IntStream.range(0, folds).mapToObj(foldIndex -> {
+            int foldStart = foldSize * foldIndex;
+            int foldEnd = foldStart + foldSize;
+
+            if (foldIndex == folds - 1) {
+                foldEnd = trainingSize;
+            }
+
+            List<String> foldEvaluation = trainingData.subList(foldStart, foldEnd);
+            List<String> foldTraining0 = trainingData.subList(0, foldStart);
+            List<String> foldTraining1 = trainingData.subList(foldEnd, trainingSize);
+            List<String> foldTraining = new ArrayList<>();
+            foldTraining.addAll(foldTraining0);
+            foldTraining.addAll(foldTraining1);
+
+            //Dump Evaluation
+            String tempEvaluationDataPath = getTempEvaluationDataPath().getAbsolutePath();
+            System.out.println(tempEvaluationDataPath);
+            try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(tempEvaluationDataPath))) {
+//                System.out.println(String.join("\n\n\n", foldEvaluation));
+                writer.write(String.join("\n\n", foldEvaluation));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //Dump Training
+            String tempTrainingDataPath = getTempTrainingDataPath().getAbsolutePath();
+            System.out.println(tempTrainingDataPath);
+            try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(tempTrainingDataPath))) {
+//                System.out.println(String.join("\n\n\n", foldTraining));
+                writer.write(String.join("\n\n", foldTraining));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return new ImmutablePair<>(tempTrainingDataPath, tempEvaluationDataPath);
+        }).collect(Collectors.toList());
+
+
+        // Train and evaluastion
+
+        if (epsilon != 0.0)
+            trainer.setEpsilon(epsilon);
+        if (window != 0)
+            trainer.setWindow(window);
+        if (nbMaxIterations != 0)
+            trainer.setNbMaxIterations(nbMaxIterations);
+
+        //We dump the model in the tmp directory
+        File tmpDirectory = new File(GrobidProperties.getTempPath().getAbsolutePath());
+        if (!tmpDirectory.exists()) {
+            LOGGER.warn("Cannot find the destination directory " + tmpDirectory);
+        }
+
+        final File tempModelPath = new File(tmpDirectory + File.separator + "nfold_dummy_model");
+        System.out.println("Saving model in " + tempModelPath);
+
+        List<ModelStats> evaluationResults = foldMap.stream().map(fold -> {
+            trainer.train(getTemplatePath(), new File(fold.getLeft()), tempModelPath, GrobidProperties.getNBThreads(), model);
+            return EvaluationUtilities.evaluateStandard(fold.getRight(), getTagger());
+        }).collect(Collectors.toList());
+
+
+        // Averages
+        OptionalDouble averageF1 = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageF1()).average();
+        OptionalDouble averagePrecision = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAveragePrecision()).average();
+        OptionalDouble averageRecall = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageRecall()).average();
+
+        return "Average precision: " + averagePrecision.getAsDouble() + "\nAverage recall: " + averageRecall.getAsDouble() + "\nAverage F1: " + averageF1.getAsDouble() + "\n ";
     }
 
     protected final File getTempTrainingDataPath() {
@@ -149,7 +280,7 @@ public abstract class AbstractTrainer implements Trainer {
 
     protected static File getFilePath2Resources() {
         File theFile = new File(GrobidProperties.get_GROBID_HOME_PATH().getAbsoluteFile() + File.separator + ".." + File.separator
-                + "grobid-trainer" + File.separator + "resources");
+            + "grobid-trainer" + File.separator + "resources");
         if (!theFile.exists()) {
             theFile = new File("resources");
         }
@@ -174,7 +305,7 @@ public abstract class AbstractTrainer implements Trainer {
 
     public static File getEvalCorpusBasePath() {
         final String path2Evelutation = getFilePath2Resources().getAbsolutePath() + File.separator + "dataset" + File.separator + "patent"
-                + File.separator + "evaluation";
+            + File.separator + "evaluation";
         return new File(path2Evelutation);
     }
 
@@ -217,6 +348,38 @@ public abstract class AbstractTrainer implements Trainer {
         }
         long end = System.currentTimeMillis();
         System.out.println("Split, training and evaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms");
+    }
+
+
+    public static void runNFoldEvaluation(final Trainer trainer, int numFolds) {
+        long start = System.currentTimeMillis();
+        try {
+            String report = trainer.nFoldEvaluate(numFolds);
+            System.out.println(report);
+        } catch (Exception e) {
+            throw new GrobidException("An exception occurred while evaluating Grobid.", e);
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("Split, training and evaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms");
+    }
+
+    /**
+     * Dispatch the example to the training or test data, based on the split ration and the drawing of
+     * a random number
+     */
+    public Writer dispatchExample(Writer writerTraining, Writer writerEvaluation, double splitRatio) {
+        Writer writer = null;
+        if ((writerTraining == null) && (writerEvaluation != null)) {
+            writer = writerEvaluation;
+        } else if ((writerTraining != null) && (writerEvaluation == null)) {
+            writer = writerTraining;
+        } else {
+            if (Math.random() <= splitRatio)
+                writer = writerTraining;
+            else
+                writer = writerEvaluation;
+        }
+        return writer;
     }
 
 

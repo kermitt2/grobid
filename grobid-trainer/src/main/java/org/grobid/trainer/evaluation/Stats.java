@@ -7,6 +7,9 @@ import org.grobid.core.exceptions.*;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.trainer.LabelStat;
 
+/**
+ * Contains the single statistic computation for evaluation
+ */
 public final class Stats {
     private final TreeMap<String, LabelStat> labelStats;
 
