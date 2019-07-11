@@ -6,7 +6,6 @@ package org.grobid.trainer.evaluation;
 public class ModelStats {
     private int totalInstances;
     private int correctInstance;
-    private int instanceAccuracy;
     private Stats tokenStats;
     private Stats fieldStats;
 
@@ -26,14 +25,6 @@ public class ModelStats {
         return correctInstance;
     }
 
-    public void setInstanceAccuracy(int instanceAccuracy) {
-        this.instanceAccuracy = instanceAccuracy;
-    }
-
-    public int getInstanceAccuracy() {
-        return instanceAccuracy;
-    }
-
     public void setTokenStats(Stats tokenStats) {
         this.tokenStats = tokenStats;
     }
@@ -48,5 +39,12 @@ public class ModelStats {
 
     public Stats getFieldStats() {
         return fieldStats;
+    }
+
+    public double getInstanceRecall() {
+        if (getTotalInstances() <= 0) {
+            return 0.0d;
+        }
+        return (double) getCorrectInstance() / (getTotalInstances());
     }
 }
