@@ -184,7 +184,9 @@ public abstract class AbstractTrainer implements Trainer {
             System.out.println("Training input data: " + fold.getLeft());
             trainer.train(getTemplatePath(), new File(fold.getLeft()), tempModelPath, GrobidProperties.getNBThreads(), model);
             System.out.println("Evaluation input data: " + fold.getRight());
-            return EvaluationUtilities.evaluateStandard(fold.getRight(), getTagger());
+            ModelStats modelStats = EvaluationUtilities.evaluateStandard(fold.getRight(), getTagger());
+            System.out.println(EvaluationUtilities.reportMetrics(modelStats));
+            return modelStats;
         }).collect(Collectors.toList());
 
         System.out.println("Results: ");
@@ -207,14 +209,15 @@ public abstract class AbstractTrainer implements Trainer {
             throw new GrobidException("Something wrong when computing evaluations " +
                 "- worst model metrics not found. ");
         });
-        sb.append(EvaluationUtilities.reportMetrics(worstModelStats));
+        sb.append(EvaluationUtilities.reportMetrics(worstModelStats)).append("\n");
 
+        sb.append("Best model:").append("\n");
         Optional<ModelStats> bestModel = evaluationResults.stream().max(f1ScoreComparator);
         ModelStats bestModelStats = bestModel.orElseGet(() -> {
             throw new GrobidException("Something wrong when computing evaluations " +
                 "- best model metrics not found. ");
         });
-        sb.append(EvaluationUtilities.reportMetrics(bestModelStats));
+        sb.append(EvaluationUtilities.reportMetrics(bestModelStats)).append("\n");
 
         // Averages
         OptionalDouble averageF1 = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageF1()).average();
