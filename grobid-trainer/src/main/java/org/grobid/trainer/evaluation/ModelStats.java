@@ -56,9 +56,9 @@ public class ModelStats {
         StringBuilder report = new StringBuilder();
 
         // report token-level results
-        Stats wordStats = getTokenStats();
-        report.append("\n===== Token-level results =====\n\n");
-        report.append(wordStats.getReport());
+//        Stats wordStats = getTokenStats();
+//        report.append("\n===== Token-level results =====\n\n");
+//        report.append(wordStats.getReport());
 
         // report field-level results
         Stats fieldStats = getFieldStats();
