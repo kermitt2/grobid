@@ -149,7 +149,7 @@ public abstract class AbstractTrainer implements Trainer {
     }
 
     @Override
-    public String nFoldEvaluate(int folds) {
+    public String nFoldEvaluate(int numFolds) {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath);
         GenericTrainer trainer = TrainerFactory.getTrainer();
@@ -159,7 +159,7 @@ public abstract class AbstractTrainer implements Trainer {
         List<String> trainingData = loadAndShuffle(dataPath2);
 
         // Split into folds
-        List<ImmutablePair<String, String>> foldMap = splitNFold(trainingData, folds);
+        List<ImmutablePair<String, String>> foldMap = splitNFold(trainingData, numFolds);
 
         // Train and evaluation
         if (epsilon != 0.0)
@@ -223,20 +223,23 @@ public abstract class AbstractTrainer implements Trainer {
         OptionalDouble averagePrecision = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAveragePrecision()).average();
         OptionalDouble averageRecall = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageRecall()).average();
 
-        double avgPrecision = averagePrecision.orElseGet(() -> {
-            throw new GrobidException("Missing average precision. Something went wrong. Please check. ");
-        });
-        sb.append("Average precision: " + TextUtilities.formatTwoDecimals(avgPrecision * 100)).append("\n");
-
-        double avgRecall = averageRecall.orElseGet(() -> {
-            throw new GrobidException("Missing average recall. Something went wrong. Please check. ");
-        });
-        sb.append("Average recall: " + TextUtilities.formatTwoDecimals(avgRecall * 100)).append("\n");
+        sb.append("average over " + numFolds + " folds: ").append("\n");
 
         double avgF1 = averageF1.orElseGet(() -> {
             throw new GrobidException("Missing average F1. Something went wrong. Please check. ");
         });
-        sb.append("Average F1: " + TextUtilities.formatTwoDecimals(avgF1 * 100)).append("\n");
+        sb.append("\tmacro f1 = " + TextUtilities.formatTwoDecimals(avgF1 * 100)).append("\n");
+
+        double avgPrecision = averagePrecision.orElseGet(() -> {
+            throw new GrobidException("Missing average precision. Something went wrong. Please check. ");
+        });
+        sb.append("\tmacro precision = " + TextUtilities.formatTwoDecimals(avgPrecision * 100)).append("\n");
+
+        double avgRecall = averageRecall.orElseGet(() -> {
+            throw new GrobidException("Missing average recall. Something went wrong. Please check. ");
+        });
+        sb.append("\tmacro recall = " + TextUtilities.formatTwoDecimals(avgRecall * 100)).append("\n");
+
 
         return sb.toString();
     }
@@ -405,28 +408,33 @@ public abstract class AbstractTrainer implements Trainer {
         return evalDataPath;
     }
 
-    public static void runEvaluation(final Trainer trainer) {
+    public static String runEvaluation(final Trainer trainer) {
         long start = System.currentTimeMillis();
+        String report = "";
         try {
-            String report = trainer.evaluate();
-            System.out.println(report);
+            report = trainer.evaluate();
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while evaluating Grobid.", e);
         }
         long end = System.currentTimeMillis();
-        System.out.println("Evaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms");
+        report += "\n\nEvaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms";
+
+        return report;
     }
 
-    public static void runSplitTrainingEvaluation(final Trainer trainer, Double split) {
+    public static String runSplitTrainingEvaluation(final Trainer trainer, Double split) {
         long start = System.currentTimeMillis();
+        String report = "";
         try {
-            String report = trainer.splitTrainEvaluate(split);
-            System.out.println(report);
+            report = trainer.splitTrainEvaluate(split);
+
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while evaluating Grobid.", e);
         }
         long end = System.currentTimeMillis();
-        System.out.println("Split, training and evaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms");
+        report += "\n\nSplit, training and evaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms";
+
+        return report;
     }
 
     public static void runNFoldEvaluation(final Trainer trainer, int numFolds, Path outputFile) {
@@ -452,7 +460,7 @@ public abstract class AbstractTrainer implements Trainer {
             throw new GrobidException("An exception occurred while evaluating Grobid.", e);
         }
         long end = System.currentTimeMillis();
-        System.out.println("N-Fold evaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms");
+        report += "\n\nN-Fold evaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms";
 
         return report;
     }

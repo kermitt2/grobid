@@ -276,14 +276,14 @@ public class EvaluationUtilities {
         // last fields of the sequence
         if ((previousObtainedLabel != null)) {
             currentObtainedPosition.end = pos - 1;
-            Pair theField = new Pair<String, OffsetPosition>(getPlainLabel(previousObtainedLabel),
+            Pair theField = new Pair<>(getPlainLabel(previousObtainedLabel),
                 currentObtainedPosition);
             obtainedFields.add(theField);
         }
 
         if ((previousExpectedLabel != null)) {
             currentExpectedPosition.end = pos - 1;
-            Pair theField = new Pair<String, OffsetPosition>(getPlainLabel(previousExpectedLabel),
+            Pair theField = new Pair<>(getPlainLabel(previousExpectedLabel),
                 currentExpectedPosition);
             expectedFields.add(theField);
         }
