@@ -45,7 +45,7 @@ RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 FROM openjdk:8-jre-slim
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install libxml2
+    apt-get -y --no-install-recommends install libxml2 unzip
 
 WORKDIR /opt
 
