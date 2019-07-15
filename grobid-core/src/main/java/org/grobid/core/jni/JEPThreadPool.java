@@ -86,11 +86,13 @@ public class JEPThreadPool {
         jep.eval("import numpy as np");
         jep.eval("import keras.backend as K");
         jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
-        jep.eval("from delft.utilities.Embeddings import Embeddings");
-        jep.eval("import delft.sequenceLabelling");
-        jep.eval("from delft.sequenceLabelling import Sequence");
-        jep.eval("from delft.sequenceLabelling.reader import load_data_and_labels_crf_file");
-        jep.eval("from delft.sequenceLabelling.reader import load_data_crf_string");
+        String delftPackage = GrobidProperties.getDeLFTPackage();
+        LOGGER.debug("delft package: {}", delftPackage);
+        jep.eval("from " + delftPackage + ".utilities.Embeddings import Embeddings");
+        jep.eval("import " + delftPackage + ".sequenceLabelling");
+        jep.eval("from " + delftPackage + ".sequenceLabelling import Sequence");
+        jep.eval("from " + delftPackage + ".sequenceLabelling.reader import load_data_and_labels_crf_file");
+        jep.eval("from " + delftPackage + ".sequenceLabelling.reader import load_data_crf_string");
         jep.eval("from sklearn.model_selection import train_test_split");
     }
 
