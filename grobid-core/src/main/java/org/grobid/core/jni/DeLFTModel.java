@@ -52,7 +52,7 @@ public class DeLFTModel {
         public void run() { 
             Jep jep = JEPThreadPool.getInstance().getJEPInstance(); 
             try {
-                LOGGER.debug("DeLFTModel, loading model: {}", modelPath.getAbsolutePath());
+                LOGGER.debug("DeLFTModel, loading model from path: {}", modelPath.getAbsolutePath());
                 jep.eval(this.modelName+" = Sequence('" + this.modelName.replace("_", "-") + "')");
                 jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
             } catch(JepException e) {
