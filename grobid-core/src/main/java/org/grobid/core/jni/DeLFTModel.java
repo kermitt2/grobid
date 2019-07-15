@@ -51,7 +51,8 @@ public class DeLFTModel {
         @Override
         public void run() { 
             Jep jep = JEPThreadPool.getInstance().getJEPInstance(); 
-            try { 
+            try {
+                LOGGER.debug("DeLFTModel, loading model: {}", modelPath.getAbsolutePath());
                 jep.eval(this.modelName+" = Sequence('" + this.modelName.replace("_", "-") + "')");
                 jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
             } catch(JepException e) {
@@ -96,13 +97,29 @@ public class DeLFTModel {
             Jep jep = JEPThreadPool.getInstance().getJEPInstance(); 
             StringBuilder labelledData = new StringBuilder();
             try {
-                //System.out.println(this.data);
+                LOGGER.debug("DeLFTModel LabelTask, data:\n{}", this.data);
 
                 // load and tag
                 this.setJepStringValueWithFileFallback(jep, "input", this.data);
+                Boolean useFeatures = jep.getValue(
+                    "getattr(" + this.modelName + ".model_config, 'use_features', False)",
+                    Boolean.class
+                );
+                LOGGER.debug("useFeatures: {}", useFeatures);
                 jep.eval("x_all, f_all = load_data_crf_string(input)");
-                Object objectResults = jep.getValue(this.modelName+".tag(x_all, None)");
-                
+                Object objectResults;
+                if (useFeatures) {
+                    objectResults = jep.getValue(
+                        this.modelName + ".tag(x_all, None, features=f_all)"
+                    );
+                } else {
+                    // Note: this doesn't improve performance as we'd just pass in a reference
+                    //   but it is making it backwards compatible.
+                    objectResults = jep.getValue(
+                        this.modelName + ".tag(x_all, None)"
+                    );
+                }
+
                 // inject back the labels
                 List<List<List<String>>> results = (List<List<List<String>>>) objectResults;
                 BufferedReader bufReader = new BufferedReader(new StringReader(data));
