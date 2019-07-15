@@ -11,7 +11,7 @@
 # -------------------
 # build builder image
 # -------------------
-FROM openjdk:8-jdk as builder
+FROM openjdk:8u212-jdk as builder
 
 USER root
 
@@ -42,7 +42,7 @@ RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 # -------------------
 # build runtime image
 # -------------------
-FROM openjdk:8-jre-slim
+FROM openjdk:8u212-jre-slim
 
 RUN apt-get update && \
     apt-get -y --no-install-recommends install libxml2 unzip
