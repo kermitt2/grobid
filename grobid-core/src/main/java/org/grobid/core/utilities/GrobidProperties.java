@@ -34,6 +34,7 @@ public class GrobidProperties {
     static final String FILE_NAME_MODEL = "model";
     private static final String GROBID_VERSION_FILE = "/grobid-version.txt";
     static final String UNKNOWN_VERSION_STR = "unknown";
+    static final String DEFAULT_DELFT_PACKAGE = "delft";
 
     /**
      * A static {@link GrobidProperties} object containing all properties used
@@ -433,6 +434,13 @@ public class GrobidProperties {
             pathFile = new File(rawPath);
         }
         return pathFile.getAbsolutePath();
+    }
+
+    public static String getDeLFTPackage() {
+        return getPropertyValue(
+            GrobidPropertyKeys.PROP_GROBID_DELFT_PACKAGE,
+            DEFAULT_DELFT_PACKAGE
+        );
     }
 
     public static String getGluttonHost() {

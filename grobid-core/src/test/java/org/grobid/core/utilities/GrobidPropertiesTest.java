@@ -61,6 +61,25 @@ public class GrobidPropertiesTest {
                 .getNativeLibraryPath().getCanonicalFile());
     }
 
+    @Test
+    public void testDeLFTPackageWithDefaultPackage() throws IOException {
+        GrobidProperties.getProps().remove(
+            GrobidPropertyKeys.PROP_GROBID_DELFT_PACKAGE
+        );
+        assertEquals(
+            GrobidProperties.DEFAULT_DELFT_PACKAGE,
+            GrobidProperties.getDeLFTPackage()
+        );
+    }
+
+    @Test
+    public void testDeLFTPackageWithCustomPackage() throws IOException {
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_DELFT_PACKAGE, "custom_delft"
+        );
+        assertEquals("custom_delft", GrobidProperties.getDeLFTPackage());
+    }
+
     @Test(expected = GrobidPropertyException.class)
     public void testCheckPropertiesException_shouldThrowException() {
         GrobidProperties.getProps().put(
