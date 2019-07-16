@@ -1,10 +1,8 @@
 package org.grobid.trainer.evaluation;
 
-import com.google.common.base.Function;
 import org.chasen.crfpp.Tagger;
 import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.Pair;
 
@@ -15,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.function.Function;
 
 import org.grobid.trainer.LabelStat;
 
