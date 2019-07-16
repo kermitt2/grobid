@@ -5,7 +5,6 @@ import java.util.TreeMap;
 
 import org.grobid.core.exceptions.*;
 import org.grobid.core.utilities.TextUtilities;
-import org.grobid.trainer.LabelStat;
 
 /**
  * Contains the single statistic computation for evaluation
@@ -178,19 +177,10 @@ public final class Stats {
         requiredToRecomputeMetrics = false;
     }
 
-    public String getReport() {
+    public TreeMap<String, LabelResult> getLabelsResults() {
         computeMetrics();
 
-        StringBuilder report = new StringBuilder();
-        report.append(String.format("\n%-20s %-12s %-12s %-12s %-12s %-7s\n\n",
-            "label",
-            "accuracy",
-            "precision",
-            "recall",
-            "f1",
-            "support"));
-
-        long supportSum = 0;
+        TreeMap<String, LabelResult> result = new TreeMap<>();
 
         for (String label : getLabels()) {
             if (label.equals("<other>") || label.equals("base") || label.equals("O")) {
@@ -198,39 +188,17 @@ public final class Stats {
             }
 
             LabelStat labelStat = getLabelStat(label);
+            LabelResult labelResult = new LabelResult(label);
+            labelResult.setAccuracy(labelStat.getAccuracy());
+            labelResult.setPrecision(labelStat.getPrecision());
+            labelResult.setRecall(labelStat.getRecall());
+            labelResult.setF1Score(labelStat.getF1Score());
+            labelResult.setSupport(labelStat.getSupport());
 
-            long support = labelStat.getSupport();
-            report.append(String.format("%-20s %-12s %-12s %-12s %-12s %-7s\n",
-                label,
-                TextUtilities.formatTwoDecimals(labelStat.getAccuracy() * 100),
-                TextUtilities.formatTwoDecimals(labelStat.getPrecision() * 100),
-                TextUtilities.formatTwoDecimals(labelStat.getRecall() * 100),
-                TextUtilities.formatTwoDecimals(labelStat.getF1Score() * 100),
-                String.valueOf(support))
-            );
-
-            supportSum += support;
+            result.put(label, labelResult);
         }
 
-        report.append("\n");
-
-        report.append(String.format("%-20s %-12s %-12s %-12s %-12s %-7s\n",
-            "all (micro avg.)",
-            TextUtilities.formatTwoDecimals(getMicroAverageAccuracy() * 100),
-            TextUtilities.formatTwoDecimals(getMicroAveragePrecision() * 100),
-            TextUtilities.formatTwoDecimals(getMicroAverageRecall() * 100),
-            TextUtilities.formatTwoDecimals(getMicroAverageF1() * 100),
-            String.valueOf(supportSum)));
-
-        report.append(String.format("%-20s %-12s %-12s %-12s %-12s %-7s\n",
-            "all (macro avg.)",
-            TextUtilities.formatTwoDecimals(getMacroAverageAccuracy() * 100),
-            TextUtilities.formatTwoDecimals(getMacroAveragePrecision() * 100),
-            TextUtilities.formatTwoDecimals(getMacroAverageRecall() * 100),
-            TextUtilities.formatTwoDecimals(getMacroAverageF1() * 100),
-            String.valueOf(supportSum)));
-
-        return report.toString();
+        return result;
     }
 
 
@@ -316,6 +284,62 @@ public final class Stats {
             return 0.0;
 
         return Math.min(1.0, cumulated_f1 / totalValidFields);
+    }
+
+    public String getOldReport() {
+        computeMetrics();
+
+        StringBuilder report = new StringBuilder();
+        report.append(String.format("\n%-20s %-12s %-12s %-12s %-12s %-7s\n\n",
+            "label",
+            "accuracy",
+            "precision",
+            "recall",
+            "f1",
+            "support"));
+
+        long supportSum = 0;
+
+        for (String label : getLabels()) {
+            if (label.equals("<other>") || label.equals("base") || label.equals("O")) {
+                continue;
+            }
+
+            LabelStat labelStat = getLabelStat(label);
+
+            long support = labelStat.getSupport();
+            report.append(String.format("%-20s %-12s %-12s %-12s %-12s %-7s\n",
+                label,
+                TextUtilities.formatTwoDecimals(labelStat.getAccuracy() * 100),
+                TextUtilities.formatTwoDecimals(labelStat.getPrecision() * 100),
+                TextUtilities.formatTwoDecimals(labelStat.getRecall() * 100),
+                TextUtilities.formatTwoDecimals(labelStat.getF1Score() * 100),
+                String.valueOf(support))
+            );
+
+            supportSum += support;
+        }
+
+        report.append("\n");
+
+        report.append(String.format("%-20s %-12s %-12s %-12s %-12s %-7s\n",
+            "all (micro avg.)",
+            TextUtilities.formatTwoDecimals(getMicroAverageAccuracy() * 100),
+            TextUtilities.formatTwoDecimals(getMicroAveragePrecision() * 100),
+            TextUtilities.formatTwoDecimals(getMicroAverageRecall() * 100),
+            TextUtilities.formatTwoDecimals(getMicroAverageF1() * 100),
+            String.valueOf(supportSum)));
+
+        report.append(String.format("%-20s %-12s %-12s %-12s %-12s %-7s\n",
+            "all (macro avg.)",
+            TextUtilities.formatTwoDecimals(getMacroAverageAccuracy() * 100),
+            TextUtilities.formatTwoDecimals(getMacroAveragePrecision() * 100),
+            TextUtilities.formatTwoDecimals(getMacroAverageRecall() * 100),
+            TextUtilities.formatTwoDecimals(getMacroAverageF1() * 100),
+            String.valueOf(supportSum)));
+
+        return report.toString();
+
     }
 }
 

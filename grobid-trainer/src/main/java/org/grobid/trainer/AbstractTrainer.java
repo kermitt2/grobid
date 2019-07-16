@@ -13,10 +13,13 @@ import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.trainer.evaluation.EvaluationUtilities;
+import org.grobid.trainer.evaluation.LabelResult;
 import org.grobid.trainer.evaluation.ModelStats;
+import org.grobid.trainer.evaluation.Stats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.awt.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +28,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -179,7 +183,6 @@ public abstract class AbstractTrainer implements Trainer {
         StringBuilder sb = new StringBuilder();
         sb.append("Recap results for each fold:").append("\n\n");
 
-
         AtomicInteger counter = new AtomicInteger(0);
         List<ModelStats> evaluationResults = foldMap.stream().map(fold -> {
             final File tempModelPath = new File(tmpDirectory + File.separator + getModel().getModelName()
@@ -198,12 +201,16 @@ public abstract class AbstractTrainer implements Trainer {
             return modelStats;
         }).collect(Collectors.toList());
 
+
         sb.append("\n").append("Summary results: ").append("\n");
 
         Comparator<ModelStats> f1ScoreComparator = (o1, o2) -> {
-            if (o1.getFieldStats().getMacroAverageF1() > o2.getFieldStats().getMacroAverageF1()) {
+            Stats fieldStatsO1 = o1.getFieldStats();
+            Stats fieldStatsO2 = o2.getFieldStats();
+
+            if (fieldStatsO1.getMacroAverageF1() > fieldStatsO2.getMacroAverageF1()) {
                 return 1;
-            } else if (o1.getFieldStats().getMacroAverageF1() < o2.getFieldStats().getMacroAverageF1()) {
+            } else if (fieldStatsO1.getMacroAverageF1() < fieldStatsO2.getMacroAverageF1()) {
                 return -1;
             } else {
                 return 0;
@@ -224,29 +231,99 @@ public abstract class AbstractTrainer implements Trainer {
             throw new GrobidException("Something wrong when computing evaluations " +
                 "- best model metrics not found. ");
         });
-        sb.append(bestModelStats.toString()).append("\n");
+        sb.append(bestModelStats.toString()).append("\n").append("\n");
 
         // Averages
-        OptionalDouble averageF1 = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageF1()).average();
-        OptionalDouble averagePrecision = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAveragePrecision()).average();
-        OptionalDouble averageRecall = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageRecall()).average();
+        sb.append("Average over " + numFolds + " folds: ").append("\n");
 
-        sb.append("average over " + numFolds + " folds: ").append("\n");
+        TreeMap<String, LabelResult> averagesLabelStats = new TreeMap<>();
+        int totalInstances = 0;
+        int correctInstances = 0;
+        for(ModelStats ms : evaluationResults) {
+            totalInstances += ms.getTotalInstances();
+            correctInstances += ms.getCorrectInstance();
+            for(Map.Entry<String, LabelResult> entry : ms.getFieldStats().getLabelsResults().entrySet()) {
+                String key = entry.getKey();
+                if(averagesLabelStats.containsKey(key)) {
+                    averagesLabelStats.get(key).setAccuracy(averagesLabelStats.get(key).getAccuracy() + entry.getValue().getAccuracy());
+                    averagesLabelStats.get(key).setF1Score(averagesLabelStats.get(key).getF1Score() + entry.getValue().getF1Score());
+                    averagesLabelStats.get(key).setRecall(averagesLabelStats.get(key).getRecall() + entry.getValue().getF1Score());
+                    averagesLabelStats.get(key).setPrecision(averagesLabelStats.get(key).getPrecision() + entry.getValue().getPrecision());
+                    averagesLabelStats.get(key).setSupport(averagesLabelStats.get(key).getSupport() + entry.getValue().getSupport());
+                } else {
+                    averagesLabelStats.put(key, new LabelResult(key));
+                    averagesLabelStats.get(key).setAccuracy(entry.getValue().getAccuracy());
+                    averagesLabelStats.get(key).setF1Score(entry.getValue().getF1Score());
+                    averagesLabelStats.get(key).setRecall(entry.getValue().getF1Score());
+                    averagesLabelStats.get(key).setPrecision(entry.getValue().getPrecision());
+                    averagesLabelStats.get(key).setSupport(entry.getValue().getSupport());
+                }
+            }
+        }
+
+        sb.append(String.format("\n%-20s %-12s %-12s %-12s %-12s %-7s\n\n",
+            "label",
+            "accuracy",
+            "precision",
+            "recall",
+            "f1",
+            "support"));
+
+        for(String label : averagesLabelStats.keySet()) {
+            LabelResult labelResult = averagesLabelStats.get(label);
+            double avgAccuracy = labelResult.getAccuracy() / evaluationResults.size();
+            averagesLabelStats.get(label).setAccuracy(avgAccuracy);
+
+            double avgF1Score = labelResult.getF1Score() / evaluationResults.size();
+            averagesLabelStats.get(label).setF1Score(avgF1Score);
+
+            double avgPrecision = labelResult.getPrecision() / evaluationResults.size();
+            averagesLabelStats.get(label).setPrecision(avgPrecision);
+
+            double avgRecall = labelResult.getRecall() / evaluationResults.size();
+            averagesLabelStats.get(label).setRecall(avgRecall);
+
+            sb.append(labelResult.toString());
+        }
+
+        OptionalDouble averageF1 = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageF1()).average();
+        OptionalDouble averagePrecision = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageF1()).average();
+        OptionalDouble averageRecall = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageF1()).average();
+        OptionalDouble averageAccuracy = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageAccuracy()).average();
+
+        double avgAccuracy = averageAccuracy.orElseGet(() -> {
+            throw new GrobidException("Missing average accuracy. Something went wrong. Please check. ");
+        });
 
         double avgF1 = averageF1.orElseGet(() -> {
             throw new GrobidException("Missing average F1. Something went wrong. Please check. ");
         });
-        sb.append("\tmacro f1 = " + TextUtilities.formatTwoDecimals(avgF1 * 100)).append("\n");
 
         double avgPrecision = averagePrecision.orElseGet(() -> {
             throw new GrobidException("Missing average precision. Something went wrong. Please check. ");
         });
-        sb.append("\tmacro precision = " + TextUtilities.formatTwoDecimals(avgPrecision * 100)).append("\n");
 
         double avgRecall = averageRecall.orElseGet(() -> {
             throw new GrobidException("Missing average recall. Something went wrong. Please check. ");
         });
-        sb.append("\tmacro recall = " + TextUtilities.formatTwoDecimals(avgRecall * 100)).append("\n");
+
+        sb.append("\n");
+
+        sb.append(String.format("%-20s %-12s %-12s %-12s %-7s\n",
+            "all (macro avg.)",
+            TextUtilities.formatTwoDecimals(avgAccuracy * 100),
+            TextUtilities.formatTwoDecimals(avgPrecision * 100),
+            TextUtilities.formatTwoDecimals( avgRecall * 100),
+            TextUtilities.formatTwoDecimals(avgF1 * 100))
+//            String.valueOf(supportSum))
+        );
+
+        sb.append("\n===== Instance-level results =====\n\n");
+        sb.append(String.format("%-27s %d\n", "Total expected instances:", totalInstances));
+        sb.append(String.format("%-27s %d\n", "Correct instances:", correctInstances));
+        sb.append(String.format("%-27s %s\n",
+            "Instance-level recall:",
+            TextUtilities.formatTwoDecimals((double) correctInstances / totalInstances * 100)));
 
 
         return sb.toString();
