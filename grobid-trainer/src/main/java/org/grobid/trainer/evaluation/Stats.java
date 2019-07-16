@@ -182,12 +182,13 @@ public final class Stats {
         computeMetrics();
 
         StringBuilder report = new StringBuilder();
-        report.append(String.format("\n%-20s %-12s %-12s %-12s %-7s\n\n",
+        report.append(String.format("\n%-20s %-12s %-12s %-12s %-7s %-7s\n\n",
             "label",
             "accuracy",
             "precision",
             "recall",
-            "f1"));
+            "f1",
+            "support"));
 
         for (String label : getLabels()) {
             if (label.equals("<other>") || label.equals("base") || label.equals("O")) {
@@ -196,12 +197,14 @@ public final class Stats {
 
             LabelStat labelStat = getLabelStat(label);
 
-            report.append(String.format("%-20s %-12s %-12s %-12s %-7s\n",
+            report.append(String.format("%-20s %-12s %-12s %-12s %-7s %-7s\n",
                 label,
                 TextUtilities.formatTwoDecimals(labelStat.getAccuracy() * 100),
                 TextUtilities.formatTwoDecimals(labelStat.getPrecision() * 100),
                 TextUtilities.formatTwoDecimals(labelStat.getRecall() * 100),
-                TextUtilities.formatTwoDecimals(labelStat.getF1Score() * 100)));
+                TextUtilities.formatTwoDecimals(labelStat.getF1Score() * 100),
+                String.valueOf(labelStat.getSupport()))
+            );
         }
 
         report.append("\n");
