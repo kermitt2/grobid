@@ -146,14 +146,19 @@ public class TrainerRunner {
                 System.out.println(AbstractTrainer.runSplitTrainingEvaluation(trainer, split));
                 break;
             case EVAL_N_FOLD:
+                if(numFolds == 1) {
+                    throw new IllegalArgumentException("N should be > 1");
+                } else {
+                    if(numFolds == 0) {
+                        numFolds = 10;
+                    }
+                }
                 if (StringUtils.isNotEmpty(outputFilePath)) {
                     Path outputPath = Paths.get(outputFilePath);
                     if (Files.exists(outputPath)) {
                         System.err.println("Output file exists. ");
                     }
-                    AbstractTrainer.runNFoldEvaluation(trainer, numFolds, outputPath);
                 } else {
-
                     String results = AbstractTrainer.runNFoldEvaluation(trainer, numFolds);
                     System.out.println(results);
                 }
