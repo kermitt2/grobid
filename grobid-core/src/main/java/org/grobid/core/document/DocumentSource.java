@@ -94,7 +94,7 @@ public class DocumentSource {
             pdfToXml.append(" -outline ");
         }
 
-//        pdfToXml.append(" -readingOrder ");
+        pdfToXml.append(" -readingOrder ");
 //        pdfToXml.append(" -ocr ");
 
         pdfToXml.append(" -filesLimit 2000 ");
