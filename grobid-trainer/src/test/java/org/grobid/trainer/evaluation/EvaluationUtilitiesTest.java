@@ -1,7 +1,6 @@
 package org.grobid.trainer.evaluation;
 
 import org.apache.commons.io.IOUtils;
-import org.grobid.trainer.LabelStat;
 import org.junit.Test;
 
 import java.nio.charset.StandardCharsets;

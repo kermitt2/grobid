@@ -1,5 +1,6 @@
-package org.grobid.trainer;
+package org.grobid.trainer.evaluation;
 
+/** Model the results for each label **/
 public final class LabelStat {
     private int falsePositive = 0;
     private int falseNegative = 0;

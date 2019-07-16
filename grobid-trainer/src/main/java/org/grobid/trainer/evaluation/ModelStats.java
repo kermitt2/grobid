@@ -2,14 +2,18 @@ package org.grobid.trainer.evaluation;
 
 import org.grobid.core.utilities.TextUtilities;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 /**
  * Represent all different evaluation given a specific model
  */
 public class ModelStats {
     private int totalInstances;
     private int correctInstance;
-    private Stats tokenStats;
+    //    private Stats tokenStats;
     private Stats fieldStats;
+
 
     public void setTotalInstances(int totalInstances) {
         this.totalInstances = totalInstances;
@@ -27,13 +31,13 @@ public class ModelStats {
         return correctInstance;
     }
 
-    public void setTokenStats(Stats tokenStats) {
-        this.tokenStats = tokenStats;
-    }
+//    public void setTokenStats(Stats tokenStats) {
+//        this.tokenStats = tokenStats;
+//    }
 
-    public Stats getTokenStats() {
-        return tokenStats;
-    }
+//    public Stats getTokenStats() {
+//        return tokenStats;
+//    }
 
     public void setFieldStats(Stats fieldStats) {
         this.fieldStats = fieldStats;
@@ -53,15 +57,39 @@ public class ModelStats {
     public String toString() {
         StringBuilder report = new StringBuilder();
 
-        // report token-level results
-//        Stats wordStats = getTokenStats();
-//        report.append("\n===== Token-level results =====\n\n");
-//        report.append(wordStats.getReport());
-
-        // report field-level results
         Stats fieldStats = getFieldStats();
         report.append("\n===== Field-level results =====\n");
-        report.append(fieldStats.getReport());
+        report.append(String.format("\n%-20s %-12s %-12s %-12s %-12s %-7s\n\n",
+            "label",
+            "accuracy",
+            "precision",
+            "recall",
+            "f1",
+            "support"));
+
+
+        for (Map.Entry<String, LabelResult> labelResult : fieldStats.getLabelsResults().entrySet()) {
+            report.append(labelResult.getValue());
+        }
+
+        report.append("\n");
+
+        report.append(String.format("%-20s %-12s %-12s %-12s %-12s %-7s\n",
+            "all (micro avg.)",
+            TextUtilities.formatTwoDecimals(fieldStats.getMicroAverageAccuracy() * 100),
+            TextUtilities.formatTwoDecimals(fieldStats.getMicroAveragePrecision() * 100),
+            TextUtilities.formatTwoDecimals(fieldStats.getMicroAverageRecall() * 100),
+            TextUtilities.formatTwoDecimals(fieldStats.getMicroAverageF1() * 100),
+            String.valueOf(getSupportSum())));
+
+        report.append(String.format("%-20s %-12s %-12s %-12s %-12s %-7s\n",
+            "all (macro avg.)",
+            TextUtilities.formatTwoDecimals(fieldStats.getMacroAverageAccuracy() * 100),
+            TextUtilities.formatTwoDecimals(fieldStats.getMacroAveragePrecision() * 100),
+            TextUtilities.formatTwoDecimals(fieldStats.getMacroAverageRecall() * 100),
+            TextUtilities.formatTwoDecimals(fieldStats.getMacroAverageF1() * 100),
+            String.valueOf(getSupportSum())));
+
 
         // instance-level: instances are separated by a new line in the result file
         report.append("\n===== Instance-level results =====\n\n");
@@ -73,4 +101,13 @@ public class ModelStats {
 
         return report.toString();
     }
+
+    public long getSupportSum() {
+        long supportSum = 0;
+        for (LabelResult labelResult : fieldStats.getLabelsResults().values()) {
+            supportSum += labelResult.getSupport();
+        }
+        return supportSum;
+    }
+
 }

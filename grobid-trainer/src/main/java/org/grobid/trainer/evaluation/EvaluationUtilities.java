@@ -15,8 +15,6 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.function.Function;
 
-import org.grobid.trainer.LabelStat;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,7 +41,7 @@ public class EvaluationUtilities {
 
         // we have to re-inject the pre-tags because they are removed by the JNI
         // parse method
-        ArrayList<String> pretags = new ArrayList<String>();
+        ArrayList<String> pretags = new ArrayList<>();
         // add context
         for (String piece : ress) {
             if (piece.trim().length() == 0) {
@@ -64,7 +62,7 @@ public class EvaluationUtilities {
                 res.append(" \n");
                 // clear internal context
                 tagger.clear();
-                pretags = new ArrayList<String>();
+                pretags = new ArrayList<>();
             } else {
                 tagger.add(piece);
                 tagger.add("\n");
@@ -127,8 +125,8 @@ public class EvaluationUtilities {
     public static ModelStats computeStats(String theResult) {
         ModelStats modelStats = new ModelStats();
         // report token-level results
-        Stats wordStats = tokenLevelStats(theResult);
-        modelStats.setTokenStats(wordStats);
+//        Stats wordStats = tokenLevelStats(theResult);
+//        modelStats.setTokenStats(wordStats);
 
         // report field-level results
         Stats fieldStats = fieldLevelStats(theResult);
@@ -361,7 +359,7 @@ public class EvaluationUtilities {
     }
 
     public static String computeMetrics(Stats stats) {
-        return stats.getReport();
+        return stats.getOldReport();
     }
 
 }

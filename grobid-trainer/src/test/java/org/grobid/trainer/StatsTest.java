@@ -1,5 +1,6 @@
 package org.grobid.trainer;
 
+import org.grobid.trainer.evaluation.LabelStat;
 import org.grobid.trainer.evaluation.Stats;
 import org.junit.Before;
 import org.junit.Ignore;
