@@ -175,6 +175,11 @@ public abstract class AbstractTrainer implements Trainer {
             LOGGER.warn("Cannot find the destination directory " + tmpDirectory);
         }
 
+        // Output
+        StringBuilder sb = new StringBuilder();
+        sb.append("Recap results for each fold:").append("\n\n");
+
+
         AtomicInteger counter = new AtomicInteger(0);
         List<ModelStats> evaluationResults = foldMap.stream().map(fold -> {
             final File tempModelPath = new File(tmpDirectory + File.separator + getModel().getModelName()
@@ -186,10 +191,14 @@ public abstract class AbstractTrainer implements Trainer {
             System.out.println("Evaluation input data: " + fold.getRight());
             ModelStats modelStats = EvaluationUtilities.evaluateStandard(fold.getRight(), getTagger());
             System.out.println(modelStats.toString());
+
+            sb.append(" ====================== Fold " + counter.get() + " ====================== ").append("\n");
+            sb.append(modelStats.toString()).append("\n");
+
             return modelStats;
         }).collect(Collectors.toList());
 
-        System.out.println("Results: ");
+        sb.append("\n").append("Summary results: ").append("\n");
 
         Comparator<ModelStats> f1ScoreComparator = (o1, o2) -> {
             if (o1.getFieldStats().getMacroAverageF1() > o2.getFieldStats().getMacroAverageF1()) {
@@ -200,8 +209,7 @@ public abstract class AbstractTrainer implements Trainer {
                 return 0;
             }
         };
-        // Output
-        StringBuilder sb = new StringBuilder();
+
         Optional<ModelStats> worstModel = evaluationResults.stream().min(f1ScoreComparator);
         sb.append("Worst Model").append("\n");
         ModelStats worstModelStats = worstModel.orElseGet(() -> {
