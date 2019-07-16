@@ -2,8 +2,6 @@ package org.grobid.trainer.evaluation;
 
 import org.grobid.core.utilities.TextUtilities;
 
-import java.io.PrintStream;
-
 /**
  * Represent all different evaluation given a specific model
  */

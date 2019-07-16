@@ -102,6 +102,10 @@ public final class LabelStat {
         return accuracy;
     }
 
+    public long getSupport() {
+        return observed + falsePositive + falseNegative;
+    }
+
     public double getPrecision() {
         if (observed == 0.0) {
             return 0.0;

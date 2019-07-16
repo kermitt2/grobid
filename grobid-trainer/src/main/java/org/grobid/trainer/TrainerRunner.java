@@ -91,7 +91,7 @@ public class TrainerRunner {
 
         if (path2GbdHome == null) {
             throw new IllegalStateException(
-                "Usage: {" + String.join(", ", options) + "} {" + String.join(", ", models) + "} -gH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional} -n {[int, num folds for n-fold evaluation, optional]}");
+                "Grobid-home path not found.\n Usage: {" + String.join(", ", options) + "} {" + String.join(", ", models) + "} -gH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional} -n {[int, num folds for n-fold evaluation, optional]}");
         }
 
         final String path2GbdProperties = path2GbdHome + File.separator + "config" + File.separator + "grobid.properties";
