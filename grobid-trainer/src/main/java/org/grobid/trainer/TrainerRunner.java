@@ -140,10 +140,10 @@ public class TrainerRunner {
                 AbstractTrainer.runTraining(trainer);
                 break;
             case EVAL:
-                AbstractTrainer.runEvaluation(trainer);
+                System.out.println(AbstractTrainer.runEvaluation(trainer));
                 break;
             case SPLIT:
-                AbstractTrainer.runSplitTrainingEvaluation(trainer, split);
+                System.out.println(AbstractTrainer.runSplitTrainingEvaluation(trainer, split));
                 break;
             case EVAL_N_FOLD:
                 if (StringUtils.isNotEmpty(outputFilePath)) {

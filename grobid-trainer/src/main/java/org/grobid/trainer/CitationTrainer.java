@@ -195,7 +195,7 @@ public class CitationTrainer extends AbstractTrainer {
     	GrobidProperties.getInstance();
         Trainer trainer = new CitationTrainer();
         AbstractTrainer.runTraining(trainer);
-        AbstractTrainer.runEvaluation(trainer);
+        System.out.println(AbstractTrainer.runEvaluation(trainer));
         System.exit(0);
     }
 }
