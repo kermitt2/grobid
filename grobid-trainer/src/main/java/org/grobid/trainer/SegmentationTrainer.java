@@ -348,7 +348,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
     public static void main(String[] args) throws Exception {
         GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new SegmentationTrainer());
-        AbstractTrainer.runEvaluation(new SegmentationTrainer());
+        System.out.println(AbstractTrainer.runEvaluation(new SegmentationTrainer()));
         System.exit(0);
     }
 }

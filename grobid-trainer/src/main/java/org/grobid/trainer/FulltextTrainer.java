@@ -252,7 +252,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
     public static void main(String[] args) throws Exception {
     	GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new FulltextTrainer());
-        AbstractTrainer.runEvaluation(new FulltextTrainer());
+        System.out.println(AbstractTrainer.runEvaluation(new FulltextTrainer()));
         System.exit(0);
     }
 }	

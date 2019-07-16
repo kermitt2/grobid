@@ -221,7 +221,7 @@ public class TableTrainer extends AbstractTrainer {
     public static void main(String[] args) throws Exception {
         GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new TableTrainer());
-        AbstractTrainer.runEvaluation(new TableTrainer());
+        System.out.println(AbstractTrainer.runEvaluation(new TableTrainer()));
         System.exit(0);
     }
 }
