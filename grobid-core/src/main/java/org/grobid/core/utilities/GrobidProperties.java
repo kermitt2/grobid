@@ -435,6 +435,12 @@ public class GrobidProperties {
         return pathFile.getAbsolutePath();
     }
 
+    public static boolean isDeLFTRedirectOutput() {
+        return Utilities.stringToBoolean(
+            getPropertyValue(GrobidPropertyKeys.PROP_GROBID_DELFT_REDIRECT_OUTPUT)
+        );
+    }
+
     public static String getGluttonHost() {
         return getPropertyValue(GrobidPropertyKeys.PROP_GLUTTON_HOST);
     }
