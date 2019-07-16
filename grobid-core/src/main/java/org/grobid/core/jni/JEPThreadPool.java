@@ -65,6 +65,7 @@ public class JEPThreadPool {
     public Jep getJEPInstance() {
         if (jepInstances.get(Thread.currentThread().getId()) == null) {
             JepConfig config = new JepConfig();
+            config.setRedirectOutputStreams(GrobidProperties.isDeLFTRedirectOutput());
             
             try {
                 File delftPath = new File(GrobidProperties.getInstance().getDeLFTFilePath());
