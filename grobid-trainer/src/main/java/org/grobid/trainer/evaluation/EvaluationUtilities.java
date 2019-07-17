@@ -124,6 +124,7 @@ public class EvaluationUtilities {
 
     public static ModelStats computeStats(String theResult) {
         ModelStats modelStats = new ModelStats();
+        modelStats.setRawResults(theResult);
         // report token-level results
 //        Stats wordStats = tokenLevelStats(theResult);
 //        modelStats.setTokenStats(wordStats);
