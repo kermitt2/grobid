@@ -291,14 +291,14 @@ public abstract class AbstractTrainer implements Trainer {
                 if (averagesLabelStats.containsKey(key)) {
                     averagesLabelStats.get(key).setAccuracy(averagesLabelStats.get(key).getAccuracy() + entry.getValue().getAccuracy());
                     averagesLabelStats.get(key).setF1Score(averagesLabelStats.get(key).getF1Score() + entry.getValue().getF1Score());
-                    averagesLabelStats.get(key).setRecall(averagesLabelStats.get(key).getRecall() + entry.getValue().getF1Score());
+                    averagesLabelStats.get(key).setRecall(averagesLabelStats.get(key).getRecall() + entry.getValue().getRecall());
                     averagesLabelStats.get(key).setPrecision(averagesLabelStats.get(key).getPrecision() + entry.getValue().getPrecision());
                     averagesLabelStats.get(key).setSupport(averagesLabelStats.get(key).getSupport() + entry.getValue().getSupport());
                 } else {
                     averagesLabelStats.put(key, new LabelResult(key));
                     averagesLabelStats.get(key).setAccuracy(entry.getValue().getAccuracy());
                     averagesLabelStats.get(key).setF1Score(entry.getValue().getF1Score());
-                    averagesLabelStats.get(key).setRecall(entry.getValue().getF1Score());
+                    averagesLabelStats.get(key).setRecall(entry.getValue().getRecall());
                     averagesLabelStats.get(key).setPrecision(entry.getValue().getPrecision());
                     averagesLabelStats.get(key).setSupport(entry.getValue().getSupport());
                 }
@@ -315,6 +315,7 @@ public abstract class AbstractTrainer implements Trainer {
 
         for (String label : averagesLabelStats.keySet()) {
             LabelResult labelResult = averagesLabelStats.get(label);
+
             double avgAccuracy = labelResult.getAccuracy() / evaluationResults.size();
             averagesLabelStats.get(label).setAccuracy(avgAccuracy);
 
