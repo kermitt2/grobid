@@ -203,6 +203,7 @@ public abstract class AbstractTrainer implements Trainer {
         List<ModelStats> evaluationResults = foldMap.stream().map(fold -> {
             sb.append("\n");
             sb.append("====================== Fold " + counter.get() + " ====================== ").append("\n");
+            System.out.println("====================== Fold " + counter.get() + " ====================== ");
 
             final File tempModelPath = new File(tmpDirectory + File.separator + getModel().getModelName()
                 + "_nfold_" + counter.getAndIncrement() + ".wapiti");
@@ -282,12 +283,12 @@ public abstract class AbstractTrainer implements Trainer {
         TreeMap<String, LabelResult> averagesLabelStats = new TreeMap<>();
         int totalInstances = 0;
         int correctInstances = 0;
-        for(ModelStats ms : evaluationResults) {
+        for (ModelStats ms : evaluationResults) {
             totalInstances += ms.getTotalInstances();
             correctInstances += ms.getCorrectInstance();
-            for(Map.Entry<String, LabelResult> entry : ms.getFieldStats().getLabelsResults().entrySet()) {
+            for (Map.Entry<String, LabelResult> entry : ms.getFieldStats().getLabelsResults().entrySet()) {
                 String key = entry.getKey();
-                if(averagesLabelStats.containsKey(key)) {
+                if (averagesLabelStats.containsKey(key)) {
                     averagesLabelStats.get(key).setAccuracy(averagesLabelStats.get(key).getAccuracy() + entry.getValue().getAccuracy());
                     averagesLabelStats.get(key).setF1Score(averagesLabelStats.get(key).getF1Score() + entry.getValue().getF1Score());
                     averagesLabelStats.get(key).setRecall(averagesLabelStats.get(key).getRecall() + entry.getValue().getF1Score());
@@ -312,7 +313,7 @@ public abstract class AbstractTrainer implements Trainer {
             "f1",
             "support"));
 
-        for(String label : averagesLabelStats.keySet()) {
+        for (String label : averagesLabelStats.keySet()) {
             LabelResult labelResult = averagesLabelStats.get(label);
             double avgAccuracy = labelResult.getAccuracy() / evaluationResults.size();
             averagesLabelStats.get(label).setAccuracy(avgAccuracy);
@@ -356,7 +357,7 @@ public abstract class AbstractTrainer implements Trainer {
             "all (macro avg.)",
             TextUtilities.formatTwoDecimals(avgAccuracy * 100),
             TextUtilities.formatTwoDecimals(avgPrecision * 100),
-            TextUtilities.formatTwoDecimals( avgRecall * 100),
+            TextUtilities.formatTwoDecimals(avgRecall * 100),
             TextUtilities.formatTwoDecimals(avgF1 * 100))
 //            String.valueOf(supportSum))
         );
@@ -570,8 +571,12 @@ public abstract class AbstractTrainer implements Trainer {
     }
 
     public static void runNFoldEvaluation(final Trainer trainer, int numFolds, Path outputFile) {
+        runNFoldEvaluation(trainer, numFolds, outputFile, false);
+    }
 
-        String report = runNFoldEvaluation(trainer, numFolds);
+    public static void runNFoldEvaluation(final Trainer trainer, int numFolds, Path outputFile, boolean includeRawResults) {
+
+        String report = runNFoldEvaluation(trainer, numFolds, includeRawResults);
 
         try (BufferedWriter writer = Files.newBufferedWriter(outputFile)) {
             writer.write(report);
@@ -583,10 +588,14 @@ public abstract class AbstractTrainer implements Trainer {
     }
 
     public static String runNFoldEvaluation(final Trainer trainer, int numFolds) {
+        return runNFoldEvaluation(trainer, numFolds, false);
+    }
+
+    public static String runNFoldEvaluation(final Trainer trainer, int numFolds, boolean includeRawResults) {
         long start = System.currentTimeMillis();
         String report = "";
         try {
-            report = trainer.nFoldEvaluate(numFolds);
+            report = trainer.nFoldEvaluate(numFolds, includeRawResults);
 
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while evaluating Grobid.", e);
