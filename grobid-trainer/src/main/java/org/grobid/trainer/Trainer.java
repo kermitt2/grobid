@@ -2,6 +2,7 @@ package org.grobid.trainer;
 
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.tagging.GenericTagger;
 
 import java.io.File;
 
@@ -16,15 +17,17 @@ public interface Trainer {
 
     void train();
 
-    /**
-     *
-     * @return a report
-     */
     String evaluate();
+
+    String evaluate(boolean includeRawResults);
+
+    String evaluate(GenericTagger tagger, boolean includeRawResults);
 
 	String splitTrainEvaluate(Double split);
 
 	String nFoldEvaluate(int folds);
+
+	String nFoldEvaluate(int folds, boolean includeRawResults);
 
     GrobidModel getModel();
 }

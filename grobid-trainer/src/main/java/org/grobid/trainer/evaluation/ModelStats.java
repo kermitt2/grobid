@@ -3,7 +3,6 @@ package org.grobid.trainer.evaluation;
 import org.grobid.core.utilities.TextUtilities;
 
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Represent all different evaluation given a specific model
@@ -13,6 +12,7 @@ public class ModelStats {
     private int correctInstance;
     //    private Stats tokenStats;
     private Stats fieldStats;
+    private String rawResults;
 
 
     public void setTotalInstances(int totalInstances) {
@@ -55,7 +55,18 @@ public class ModelStats {
     }
 
     public String toString() {
+        return toString(false);
+    }
+
+    public String toString(boolean includeRawResults) {
         StringBuilder report = new StringBuilder();
+
+        if(includeRawResults) {
+            report.append("=== RAw RESULTS ===").append("\n");
+            report.append(getRawResults()).append("\n");
+            report.append("=== END RAw RESULTS ===").append("\n");
+        }
+
 
         Stats fieldStats = getFieldStats();
         report.append("\n===== Field-level results =====\n");
@@ -110,4 +121,11 @@ public class ModelStats {
         return supportSum;
     }
 
+    public String getRawResults() {
+        return rawResults;
+    }
+
+    public void setRawResults(String rawResults) {
+        this.rawResults = rawResults;
+    }
 }

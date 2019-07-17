@@ -117,8 +117,19 @@ public abstract class AbstractTrainer implements Trainer {
 
     @Override
     public String evaluate() {
+        return evaluate(false);
+    }
+
+    @Override
+    public String evaluate(boolean includeRawResults) {
         createCRFPPData(getEvalCorpusPath(), evalDataPath);
-        return EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger()).toString();
+        return EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger()).toString(includeRawResults);
+    }
+
+    @Override
+    public String evaluate(GenericTagger tagger, boolean includeRawResults) {
+        createCRFPPData(getEvalCorpusPath(), evalDataPath);
+        return EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), tagger).toString(includeRawResults);
     }
 
     @Override
@@ -154,6 +165,11 @@ public abstract class AbstractTrainer implements Trainer {
 
     @Override
     public String nFoldEvaluate(int numFolds) {
+        return nFoldEvaluate(numFolds, false);
+    }
+
+    @Override
+    public String nFoldEvaluate(int numFolds, boolean includeRawResults) {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath);
         GenericTrainer trainer = TrainerFactory.getTrainer();
@@ -187,16 +203,39 @@ public abstract class AbstractTrainer implements Trainer {
         List<ModelStats> evaluationResults = foldMap.stream().map(fold -> {
             final File tempModelPath = new File(tmpDirectory + File.separator + getModel().getModelName()
                 + "_nfold_" + counter.getAndIncrement() + ".wapiti");
-            System.out.println("Saving model in " + tempModelPath);
+            sb.append("Saving model in " + tempModelPath).append("\n");
 
-            System.out.println("Training input data: " + fold.getLeft());
+            sb.append("Training input data: " + fold.getLeft()).append("\n");
             trainer.train(getTemplatePath(), new File(fold.getLeft()), tempModelPath, GrobidProperties.getNBThreads(), model);
-            System.out.println("Evaluation input data: " + fold.getRight());
-            ModelStats modelStats = EvaluationUtilities.evaluateStandard(fold.getRight(), getTagger());
-            System.out.println(modelStats.toString());
+            sb.append("Evaluation input data: " + fold.getRight()).append("\n");
+
+            //TODO: find a better solution!!
+            GrobidModel tmpModel = new GrobidModel() {
+                @Override
+                public String getFolderName() {
+                    return tmpDirectory.getAbsolutePath();
+                }
+
+                @Override
+                public String getModelPath() {
+                    return tempModelPath.getAbsolutePath();
+                }
+
+                @Override
+                public String getModelName() {
+                    return model.getModelName();
+                }
+
+                @Override
+                public String getTemplateName() {
+                    return model.getTemplateName();
+                }
+            };
+
+            ModelStats modelStats = EvaluationUtilities.evaluateStandard(fold.getRight(), TaggerFactory.getTagger(tmpModel));
 
             sb.append(" ====================== Fold " + counter.get() + " ====================== ").append("\n");
-            sb.append(modelStats.toString()).append("\n");
+            sb.append(modelStats.toString(includeRawResults)).append("\n");
 
             return modelStats;
         }).collect(Collectors.toList());
@@ -493,11 +532,11 @@ public abstract class AbstractTrainer implements Trainer {
         return evalDataPath;
     }
 
-    public static String runEvaluation(final Trainer trainer) {
+    public static String runEvaluation(final Trainer trainer, boolean includeRawResults) {
         long start = System.currentTimeMillis();
         String report = "";
         try {
-            report = trainer.evaluate();
+            report = trainer.evaluate(includeRawResults);
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while evaluating Grobid.", e);
         }
@@ -505,6 +544,10 @@ public abstract class AbstractTrainer implements Trainer {
         report += "\n\nEvaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms";
 
         return report;
+    }
+
+    public static String runEvaluation(final Trainer trainer) {
+        return trainer.evaluate(false);
     }
 
     public static String runSplitTrainingEvaluation(final Trainer trainer, Double split) {
