@@ -162,7 +162,7 @@ public class DateTrainer extends AbstractTrainer {
 		GrobidProperties.getInstance();
 		DateTrainer trainer = new DateTrainer();
 
-        System.out.println(AbstractTrainer.runNFoldEvaluation(trainer, 10));
+        System.out.println(AbstractTrainer.runNFoldEvaluation(trainer, 10, true));
         AbstractTrainer.runTraining(trainer);
         System.out.println(AbstractTrainer.runEvaluation(trainer));
 

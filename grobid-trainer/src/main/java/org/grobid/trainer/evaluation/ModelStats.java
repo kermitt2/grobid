@@ -62,9 +62,9 @@ public class ModelStats {
         StringBuilder report = new StringBuilder();
 
         if(includeRawResults) {
-            report.append("=== RAw RESULTS ===").append("\n");
+            report.append("=== START RAW RESULTS ===").append("\n");
             report.append(getRawResults()).append("\n");
-            report.append("=== END RAw RESULTS ===").append("\n");
+            report.append("=== END RAw RESULTS ===").append("\n").append("\n");
         }
 
 
