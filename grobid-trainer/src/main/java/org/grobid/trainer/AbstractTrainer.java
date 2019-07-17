@@ -331,8 +331,8 @@ public abstract class AbstractTrainer implements Trainer {
         }
 
         OptionalDouble averageF1 = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageF1()).average();
-        OptionalDouble averagePrecision = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageF1()).average();
-        OptionalDouble averageRecall = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageF1()).average();
+        OptionalDouble averagePrecision = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAveragePrecision()).average();
+        OptionalDouble averageRecall = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageRecall()).average();
         OptionalDouble averageAccuracy = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageAccuracy()).average();
 
         double avgAccuracy = averageAccuracy.orElseGet(() -> {
