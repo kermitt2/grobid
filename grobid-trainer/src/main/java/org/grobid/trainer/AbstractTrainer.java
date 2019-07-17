@@ -201,6 +201,9 @@ public abstract class AbstractTrainer implements Trainer {
 
         AtomicInteger counter = new AtomicInteger(0);
         List<ModelStats> evaluationResults = foldMap.stream().map(fold -> {
+            sb.append("\n");
+            sb.append("====================== Fold " + counter.get() + " ====================== ").append("\n");
+
             final File tempModelPath = new File(tmpDirectory + File.separator + getModel().getModelName()
                 + "_nfold_" + counter.getAndIncrement() + ".wapiti");
             sb.append("Saving model in " + tempModelPath).append("\n");
@@ -234,8 +237,9 @@ public abstract class AbstractTrainer implements Trainer {
 
             ModelStats modelStats = EvaluationUtilities.evaluateStandard(fold.getRight(), TaggerFactory.getTagger(tmpModel));
 
-            sb.append(" ====================== Fold " + counter.get() + " ====================== ").append("\n");
-            sb.append(modelStats.toString(includeRawResults)).append("\n");
+            sb.append(modelStats.toString(includeRawResults));
+            sb.append("\n");
+            sb.append("\n");
 
             return modelStats;
         }).collect(Collectors.toList());
