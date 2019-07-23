@@ -55,12 +55,16 @@ Isaac G. Councill, C. Lee Giles, Min-Yen Kan. (2008) ParsCit: An open-source CRF
 
 ## Other similar Open Source tools
 
-CiteSeerX page on [Scholarly Information Extraction](http://csxstatic.ist.psu.edu/about/scholarly-information-extraction) which list many tools and related information. 
-
 [parsCit](http://wing.comp.nus.edu.sg/parsCit)
 
 [CERMINE](https://github.com/CeON/CERMINE)
 
+[Science Parse](https://github.com/allenai/science-parse) 
+
+[science Parse v2](https://github.com/allenai/spv2) 
+
 [Metatagger](https://github.com/iesl/rexa1-metatagger)
 
 [BILBO](https://github.com/OpenEdition/bilbo)
+
+CiteSeerX page on [Scholarly Information Extraction](http://csxstatic.ist.psu.edu/downloads/software#Services) which lists tools and related information (now a bit outdated). 
