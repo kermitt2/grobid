@@ -34,7 +34,8 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 		page number (<page>): page,
 		? each bibliographical references in the biblio section (<ref>): bibl 
 		annexes (<annex>): div type="annex" (optionally under back)
-		acknowledgement (<acknowledgement>): div type="acknowledgement" (optionally under back)
+		acknowledgement (<acknowledgement>): div type="acknowledgement" (optionally under back),
+		line number (<linenumber>): note type line_number
  	*/
 
     private static final Logger logger = LoggerFactory.getLogger(TEISegmentationSaxParser.class);
@@ -145,16 +146,22 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                     String value = atts.getValue(i);
 
                     if (name != null) {
-                        if (name.equals("place")) {
-                            if (value.equals("footnote") || value.equals("foot") ) {
-								currentTag = "<footnote>";
-                            } else if (value.equals("headnote") || value.equals("head") ) {
-								currentTag = "<headnote>";
-                            } else if (value.equals("margin")) {
-                                currentTag = "<marginnote>";
-                            } else {
-                                logger.error("Invalid attribute value for element div: " + name + "=" + value);
-                            }
+	                    if (name.equals("place")) {
+		                    if (value.equals("footnote") || value.equals("foot")) {
+			                    currentTag = "<footnote>";
+		                    } else if (value.equals("headnote") || value.equals("head")) {
+			                    currentTag = "<headnote>";
+		                    } else if (value.equals("margin")) {
+			                    currentTag = "<marginnote>";
+		                    } else {
+			                    logger.error("Invalid attribute value for element div: " + name + "=" + value);
+		                    }
+	                    } else if (name.equals("type")) {
+							if (value.equals("line_number")) {
+								currentTag = "<linenumber>";
+							} else {
+								logger.error("Invalid attribute value for element " + qName + ": "  + name + "=" + value);
+							}
                         } else {
                             logger.error("Invalid attribute name for element div: " + name);
                         }

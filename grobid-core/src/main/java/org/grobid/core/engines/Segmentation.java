@@ -51,6 +51,7 @@ public class Segmentation extends AbstractParser {
 			page number <page>,
 			annexes <annex>,
 		    acknowledgement <acknowledgement>,
+		    line number <linenumber>
             other <other>,
 		    toc <toc> -> not yet used because not yet training data for this
 	*/
@@ -945,6 +946,9 @@ public class Segmentation extends AbstractParser {
                 if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<acknowledgement>", "<div type=\"acknowledgement\">", addSpace, 3);
                 }
+                if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<linenumber>", "<note type=\"line_number\">", addSpace, 3);
+                }
                 /*if (!output) {
                     if (closeParagraph) {
                         output = writeField(buffer, s1, "", s2, "<reference_marker>", "<label>", addSpace, 3);
@@ -1151,6 +1155,8 @@ public class Segmentation extends AbstractParser {
                 buffer.append("</div>\n\n");
             } else if (lastTag0.equals("<acknowledgement>")) {
                 buffer.append("</div>\n\n");
+            } else if (lastTag0.equals("<linenumber>")) {
+                buffer.append("</note>\n\n");
             } else {
                 res = false;
             }
