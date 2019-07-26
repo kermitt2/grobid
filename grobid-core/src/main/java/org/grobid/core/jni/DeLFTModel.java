@@ -78,8 +78,11 @@ public class DeLFTModel {
             try {
                 jep.set(name, value);
             } catch(JepException e) {
-                LOGGER.debug("exception setting value, falling back to. exception: {}", e);
                 File tempFile = IOUtilities.newTempFile(name, "data");
+                LOGGER.debug(
+                    "Falling back to file {} due to exception: {}",
+                    tempFile, e.toString()
+                );
                 IOUtilities.writeInFile(tempFile.getAbsolutePath(), value);
                 jep.eval("from pathlib import Path");
                 jep.eval(
