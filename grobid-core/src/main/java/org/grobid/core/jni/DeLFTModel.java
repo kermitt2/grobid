@@ -1,5 +1,7 @@
 package org.grobid.core.jni;
 
+import org.apache.commons.lang3.StringUtils;
+
 import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
@@ -246,6 +248,9 @@ public class DeLFTModel {
         ));
         if (GrobidProperties.useELMo()) {
             command.add("--use-ELMo");
+        }
+        if (StringUtils.isNotEmpty(GrobidProperties.getDeLFTTrainArgs())) {
+            command.add(GrobidProperties.getDeLFTTrainArgs());
         }
         return command;
     }
