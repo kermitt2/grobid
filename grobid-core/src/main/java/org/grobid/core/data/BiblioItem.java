@@ -2032,7 +2032,7 @@ public class BiblioItem {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
-                tei.append("<idno type=\"doi\">" + TextUtilities.HTMLEncode(doi) + "</idno>\n");
+                tei.append("<idno type=\"DOI\">" + TextUtilities.HTMLEncode(doi) + "</idno>\n");
             }
 
             if (!StringUtils.isEmpty(arXivId)) {

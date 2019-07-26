@@ -6,11 +6,11 @@
 [![Build Status](https://travis-ci.org/kermitt2/grobid.svg?branch=master)](https://travis-ci.org/kermitt2/grobid)
 [![Coverage Status](https://coveralls.io/repos/kermitt2/grobid/badge.svg)](https://coveralls.io/r/kermitt2/grobid)
 [![Documentation Status](https://readthedocs.org/projects/grobid/badge/?version=latest)](https://readthedocs.org/projects/grobid/?badge=latest)
-
+[![Docker Status](https://images.microbadger.com/badges/version/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Latest Docker HUB image")
 
 ## Purpose
 
-GROBID (or Grobid) means GeneRation Of BIbliographic Data. 
+GROBID (or Grobid, but not GroBid nor GroBiD) means GeneRation Of BIbliographic Data. 
 
 GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on GROBID has been steady as side project since the beginning and is expected to continue until at least 2020 :)
 
@@ -25,7 +25,7 @@ The following functionalities are available:
 + Parsing of dates.
 + Full text extraction from PDF articles, including a model for the the overall document segmentation and a model for the structuring of the text body.
 
-GROBID includes batch processing, a comprehensive RESTful API, a JAVA API, a relatively generic evaluation framework (precision, recall, etc.) and the semi-automatic generation of training data. 
+GROBID includes batch processing, a comprehensive RESTful API, a JAVA API, a docker container, a relatively generic evaluation framework (precision, recall, etc.) and the semi-automatic generation of training data. 
 
 GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST, Mendeley, CERN, Internet Archive, ...
 
@@ -45,7 +45,7 @@ The key aspects of GROBID are the following ones:
 
 The GROBID extraction and parsing algorithms uses by default the [Wapiti CRF library](http://wapiti.limsi.fr). On Linux (64 bits), as alternative, it is possible to perform the sequence labeling with [DeLFT](https://github.com/kermitt2/delft) deep learning models (typically BidLSTM-CRF with or without ELMo) instead of Wapiti CRF models, using a native integration via [JEP](https://github.com/ninia/jep). The native libraries are transparently integrated as JNI with dynamic call based on the current OS. 
 
-GROBID should run properly "out of the box" on MacOS X, Linux (32 and 64 bits) and Windows. 
+GROBID should run properly "out of the box" on macOS, Linux (32 and 64 bits) and Windows. 
 
 ## Credits
 
@@ -56,15 +56,17 @@ Many thanks to:
 * Vyacheslav Zholudev (ResearchGate)
 * Luca Foppiano (NIMS) 
 * Achraf Azhar (Inria)
-* Christopher Boumenot (Microsoft) in particular for Windows support
+* Christopher Boumenot (Microsoft) in particular for the Windows support
 * Laurent Romary (Inria)
 * CERN contributors Andreas la Roi and Micha Moskovic
-* Florian Zipser (Humboldt University) who developed the first version of the REST API in 2011
+* Florian Zipser (Humboldt University) who developed the first historical version of the REST API in 2011
 * the other contributors from ResearchGate: Michael Häusler, Kyryl Bilokurov, Artem Oboturov
 * Damien Ridereau (Infotel)
+* Daniel Ecer (eLife)
+* Vitalii Bezsheiko (PKP)
 * Bruno Pouliquen (WIPO) for the custom analyzers for Eastern languages
 * Thomas Lavergne, Olivier Cappé and François Yvon for Wapiti
-* Taku Kudo for CRF++
+* Taku Kudo for CRF++ (not used anymore, but all the same, thanks!)
 * Hervé Déjean and his colleagues from Xerox Research Centre Europe, for xml2pdf
 * and the other contributors: Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, Chris Mattmann, Sujen Shah, Joseph Boyd, Guillaume Muller, ...
 

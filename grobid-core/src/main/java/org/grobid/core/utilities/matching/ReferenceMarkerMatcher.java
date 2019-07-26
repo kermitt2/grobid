@@ -85,12 +85,14 @@ public class ReferenceMarkerMatcher {
             throws EntityMatcherException {
         allLabels = new HashSet<String>();
         allFirstAuthors = new HashSet<String>();
-        for(BibDataSet bibDataSet : bds) {
-            allLabels.add(bibDataSet.getRefSymbol());
-            //System.out.println(bibDataSet.getRefSymbol());
-            String authorString = bibDataSet.getResBib().getFirstAuthorSurname();
-            if ((authorString != null) && (authorString.length() > 0))
-                allFirstAuthors.add(authorString);
+        if ( (bds != null) && (bds.size() > 0) ) {
+            for(BibDataSet bibDataSet : bds) {
+                allLabels.add(bibDataSet.getRefSymbol());
+                //System.out.println(bibDataSet.getRefSymbol());
+                String authorString = bibDataSet.getResBib().getFirstAuthorSurname();
+                if ((authorString != null) && (authorString.length() > 0))
+                    allFirstAuthors.add(authorString);
+            }
         }
 
         this.cntManager = cntManager;
@@ -110,7 +112,8 @@ public class ReferenceMarkerMatcher {
         );
 
         authorMatcher.setMustMatchPercentage(1.0);
-        authorMatcher.load(bds);
+        if (bds != null)
+            authorMatcher.load(bds);
         labelMatcher = new LuceneIndexMatcher<>(
                 new Function<BibDataSet, Object>() {
                     @Override
@@ -122,7 +125,8 @@ public class ReferenceMarkerMatcher {
         );
 
         labelMatcher.setMustMatchPercentage(1.0);
-        labelMatcher.load(bds);
+        if (bds != null)
+            labelMatcher.load(bds);
     }
 
     public List<MatchResult> match(List<LayoutToken> refTokens) throws EntityMatcherException {
