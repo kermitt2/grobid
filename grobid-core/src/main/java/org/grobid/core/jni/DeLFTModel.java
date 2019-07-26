@@ -239,8 +239,12 @@ public class DeLFTModel {
     }
 
     protected static List<String> getTrainCommand(String modelName, File trainingData) {
+        String trainModule = GrobidProperties.getDeLFTTrainModule();
+        if (StringUtils.isEmpty(trainModule)) {
+            trainModule = "grobidTagger.py";
+        }
         List<String> command = new ArrayList<>(Arrays.asList("python3", 
-            "grobidTagger.py", 
+            trainModule,
             modelName,
             "train",
             "--input", trainingData.getAbsolutePath(),

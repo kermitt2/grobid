@@ -88,6 +88,20 @@ public class GrobidPropertiesTest {
         assertEquals(GrobidProperties.getDeLFTTrainArgs(), "args");
     }
 
+    @Test
+    public void testShouldReturnEmptyTrainModuleByDefault() {
+        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS);
+        assertEquals(GrobidProperties.getDeLFTTrainModule(), "");
+    }
+
+    @Test
+    public void testShouldReturnConfiguredModule() {
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_MODULE, "module1"
+        );
+        assertEquals(GrobidProperties.getDeLFTTrainModule(), "module1");
+    }
+
     /*@Test(expected = GrobidPropertyException.class)
     public void testCheckPropertiesException_shouldThrowException() {
         GrobidProperties.getProps().put(

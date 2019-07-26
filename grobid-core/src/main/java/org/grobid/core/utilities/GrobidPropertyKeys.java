@@ -20,6 +20,7 @@ public interface GrobidPropertyKeys {
     String PROP_GROBID_DELFT_PATH = "grobid.delft.install";
     String PROP_GROBID_DELFT_REDIRECT_OUTPUT = "grobid.delft.redirect_output";
     String PROP_GROBID_DELFT_ELMO = "grobid.delft.useELMo";
+    String PROP_GROBID_DELFT_TRAIN_MODULE = "grobid.delft.train.module";
     String PROP_GROBID_DELFT_TRAIN_ARGS = "grobid.delft.train.args";
     String PROP_USE_LANG_ID = "grobid.use_language_id";
     String PROP_LANG_DETECTOR_FACTORY = "grobid.language_detector_factory";

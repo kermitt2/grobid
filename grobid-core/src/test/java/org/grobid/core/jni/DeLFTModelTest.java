@@ -17,6 +17,7 @@ public class DeLFTModelTest {
     public void setUp() {
         GrobidProperties.getInstance();
         GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_GROBID_DELFT_ELMO, "false");
+        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_MODULE);
         GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS);
     }
 
@@ -44,6 +45,22 @@ public class DeLFTModelTest {
                 "--input", trainingData.getAbsolutePath(),
                 "--output", GrobidProperties.getModelPath().getAbsolutePath(),
                 "--use-ELMo"
+            )
+        );
+    }
+
+    @Test
+    public void testShouldUseCustomTrainModule() {
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_MODULE, "module1.py"
+        );
+        File trainingData = new File("test/train.data");
+        assertThat(
+            DeLFTModel.getTrainCommand("model1", trainingData),
+            contains(
+                "python3", "module1.py", "model1", "train",
+                "--input", trainingData.getAbsolutePath(),
+                "--output", GrobidProperties.getModelPath().getAbsolutePath()
             )
         );
     }
