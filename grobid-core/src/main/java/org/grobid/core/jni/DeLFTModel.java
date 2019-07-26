@@ -234,7 +234,22 @@ public class DeLFTModel {
                 LOGGER.error("DeLFT model training via JEP failed", e);
             } 
         } 
-    } 
+    }
+
+    protected static List<String> getTrainCommand(
+        String modelName, File trainingData, File outputModel
+    ) {
+        List<String> command = Arrays.asList("python3", 
+            "grobidTagger.py", 
+            modelName,
+            "train",
+            "--input", trainingData.getAbsolutePath(),
+            "--output", GrobidProperties.getInstance().getModelPath().getAbsolutePath());
+        if (GrobidProperties.getInstance().useELMo()) {
+            command.add("--use-ELMo");
+        }
+        return command;
+    }
 
     /**
      *  Train with an external process rather than with JNI, this approach appears to be more stable for the
@@ -243,15 +258,7 @@ public class DeLFTModel {
     public static void train(String modelName, File trainingData, File outputModel) {
         try {
             LOGGER.info("Train DeLFT model " + modelName + "...");
-            List<String> command = Arrays.asList("python3", 
-                "grobidTagger.py", 
-                modelName,
-                "train",
-                "--input", trainingData.getAbsolutePath(),
-                "--output", GrobidProperties.getInstance().getModelPath().getAbsolutePath());
-            if (GrobidProperties.getInstance().useELMo()) {
-                command.add("--use-ELMo");
-            }
+            List<String> command = getTrainCommand(modelName, trainingData, outputModel);
 
             ProcessBuilder pb = new ProcessBuilder(command);
             File delftPath = new File(GrobidProperties.getInstance().getDeLFTFilePath());
