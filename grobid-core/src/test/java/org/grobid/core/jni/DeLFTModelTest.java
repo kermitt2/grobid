@@ -66,7 +66,7 @@ public class DeLFTModelTest {
     }
 
     @Test
-    public void testShouldAddSingleCustomArg() {
+    public void testShouldAddSingleCustomTrainArg() {
         GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS, "arg1");
         File trainingData = new File("test/train.data");
         assertThat(
@@ -81,7 +81,7 @@ public class DeLFTModelTest {
     }
 
     @Test
-    public void testShouldAddMultipleCustomArg() {
+    public void testShouldAddMultipleCustomTrainArg() {
         GrobidProperties.getProps().put(
             GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS, "arg1 arg2"
         );
