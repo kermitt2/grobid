@@ -62,4 +62,22 @@ public class DeLFTModelTest {
             )
         );
     }
+
+    @Test
+    public void testShouldAddMultipleCustomArg() {
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS, "arg1 arg2"
+        );
+        File trainingData = new File("test/train.data");
+        assertThat(
+            DeLFTModel.getTrainCommand("model1", trainingData),
+            contains(
+                "python3", "grobidTagger.py", "model1", "train",
+                "--input", trainingData.getAbsolutePath(),
+                "--output", GrobidProperties.getModelPath().getAbsolutePath(),
+                "arg1",
+                "arg2"
+            )
+        );
+    }
 }

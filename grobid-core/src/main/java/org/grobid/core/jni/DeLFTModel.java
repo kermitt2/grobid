@@ -250,7 +250,9 @@ public class DeLFTModel {
             command.add("--use-ELMo");
         }
         if (StringUtils.isNotEmpty(GrobidProperties.getDeLFTTrainArgs())) {
-            command.add(GrobidProperties.getDeLFTTrainArgs());
+            command.addAll(Arrays.asList(
+                GrobidProperties.getDeLFTTrainArgs().split(" ")
+            ));
         }
         return command;
     }
