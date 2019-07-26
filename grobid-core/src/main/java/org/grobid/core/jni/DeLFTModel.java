@@ -242,8 +242,8 @@ public class DeLFTModel {
             modelName,
             "train",
             "--input", trainingData.getAbsolutePath(),
-            "--output", GrobidProperties.getInstance().getModelPath().getAbsolutePath());
-        if (GrobidProperties.getInstance().useELMo()) {
+            "--output", GrobidProperties.getModelPath().getAbsolutePath());
+        if (GrobidProperties.useELMo()) {
             command.add("--use-ELMo");
         }
         return command;
