@@ -62,7 +62,6 @@ public class GrobidPropertiesTest {
                 .getNativeLibraryPath().getCanonicalFile());
     }
 
-    @Test
     public void testIsDeLFTRedirectOutputFalseByDefault() throws IOException {
         assertFalse(GrobidProperties.isDeLFTRedirectOutput());
     }
@@ -91,6 +90,32 @@ public class GrobidPropertiesTest {
             GrobidPropertyKeys.PROP_GROBID_DELFT_PACKAGE, "custom_delft"
         );
         assertEquals("custom_delft", GrobidProperties.getDeLFTPackage());
+    }
+
+    @Test
+    public void testShouldReturnEmptyTrainModuleByDefault() {
+        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_MODULE);
+        assertEquals(GrobidProperties.getDeLFTTrainModule(), "");
+    }
+
+    @Test
+    public void testShouldReturnConfiguredModule() {
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_MODULE, "module1"
+        );
+        assertEquals(GrobidProperties.getDeLFTTrainModule(), "module1");
+    }
+
+    @Test
+    public void testShouldReturnEmptyTrainArgsByDefault() {
+        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS);
+        assertEquals(GrobidProperties.getDeLFTTrainArgs(), "");
+    }
+
+    @Test
+    public void testShouldReturnConfiguredTrainArgs() {
+        GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS, "args");
+        assertEquals(GrobidProperties.getDeLFTTrainArgs(), "args");
     }
 
     @Test(expected = GrobidPropertyException.class)
