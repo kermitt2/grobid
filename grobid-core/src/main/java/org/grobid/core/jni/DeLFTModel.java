@@ -236,9 +236,7 @@ public class DeLFTModel {
         } 
     }
 
-    protected static List<String> getTrainCommand(
-        String modelName, File trainingData, File outputModel
-    ) {
+    protected static List<String> getTrainCommand(String modelName, File trainingData) {
         List<String> command = Arrays.asList("python3", 
             "grobidTagger.py", 
             modelName,
@@ -258,7 +256,7 @@ public class DeLFTModel {
     public static void train(String modelName, File trainingData, File outputModel) {
         try {
             LOGGER.info("Train DeLFT model " + modelName + "...");
-            List<String> command = getTrainCommand(modelName, trainingData, outputModel);
+            List<String> command = getTrainCommand(modelName, trainingData);
             LOGGER.info("Running: {}", command);
 
             ProcessBuilder pb = new ProcessBuilder(command);

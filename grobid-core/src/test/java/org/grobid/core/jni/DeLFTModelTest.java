@@ -14,9 +14,8 @@ public class DeLFTModelTest {
     @Test
     public void testShouldBuildTrainCommand() {
         File trainingData = new File("test/train.data");
-        File outputModel = new File("test/output");
         assertThat(
-            DeLFTModel.getTrainCommand("model1", trainingData, outputModel),
+            DeLFTModel.getTrainCommand("model1", trainingData),
             contains(
                 "python3", "grobidTagger.py", "model1", "train",
                 "--input", trainingData.getAbsolutePath(),
