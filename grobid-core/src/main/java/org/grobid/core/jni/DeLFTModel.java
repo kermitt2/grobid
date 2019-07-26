@@ -237,12 +237,13 @@ public class DeLFTModel {
     }
 
     protected static List<String> getTrainCommand(String modelName, File trainingData) {
-        List<String> command = Arrays.asList("python3", 
+        List<String> command = new ArrayList<>(Arrays.asList("python3", 
             "grobidTagger.py", 
             modelName,
             "train",
             "--input", trainingData.getAbsolutePath(),
-            "--output", GrobidProperties.getModelPath().getAbsolutePath());
+            "--output", GrobidProperties.getModelPath().getAbsolutePath()
+        ));
         if (GrobidProperties.useELMo()) {
             command.add("--use-ELMo");
         }
