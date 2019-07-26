@@ -77,18 +77,6 @@ public class GrobidPropertiesTest {
     }
 
     @Test
-    public void testShouldReturnEmptyTrainArgsByDefault() {
-        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS);
-        assertEquals(GrobidProperties.getDeLFTTrainArgs(), "");
-    }
-
-    @Test
-    public void testShouldReturnConfiguredTrainArgs() {
-        GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS, "args");
-        assertEquals(GrobidProperties.getDeLFTTrainArgs(), "args");
-    }
-
-    @Test
     public void testShouldReturnEmptyTrainModuleByDefault() {
         GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_MODULE);
         assertEquals(GrobidProperties.getDeLFTTrainModule(), "");
@@ -102,7 +90,32 @@ public class GrobidPropertiesTest {
         assertEquals(GrobidProperties.getDeLFTTrainModule(), "module1");
     }
 
+    @Test
+    public void testShouldReturnEmptyTrainArgsByDefault() {
+        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS);
+        assertEquals(GrobidProperties.getDeLFTTrainArgs(), "");
+    }
+
+    @Test
+    public void testShouldReturnConfiguredTrainArgs() {
+        GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS, "args");
+        assertEquals(GrobidProperties.getDeLFTTrainArgs(), "args");
+    }
+
     /*@Test(expected = GrobidPropertyException.class)
+    @Test
+    public void testShouldReturnEmptyTrainArgsByDefault() {
+        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS);
+        assertEquals(GrobidProperties.getDeLFTTrainArgs(), "");
+    }
+
+    @Test
+    public void testShouldReturnConfiguredTrainArgs() {
+        GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS, "args");
+        assertEquals(GrobidProperties.getDeLFTTrainArgs(), "args");
+    }
+
+    @Test(expected = GrobidPropertyException.class)
     public void testCheckPropertiesException_shouldThrowException() {
         GrobidProperties.getProps().put(
                 GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML, "");
