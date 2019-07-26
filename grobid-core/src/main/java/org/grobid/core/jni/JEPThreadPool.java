@@ -72,6 +72,7 @@ public class JEPThreadPool {
     private JepConfig getJepConfig(File delftPath, Path sitePackagesPath) {
         JepConfig config = new JepConfig();
         config.addIncludePaths(delftPath.getAbsolutePath());
+        config.setRedirectOutputStreams(GrobidProperties.isDeLFTRedirectOutput());
         if (sitePackagesPath != null) {
             config.addIncludePaths(sitePackagesPath.toString());
         }

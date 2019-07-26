@@ -1476,7 +1476,7 @@ public class TEIFormatter {
         if ( (refTokens == null) || (refTokens.size() == 0) ) 
             return null;
         String text = LayoutTokensUtil.toText(refTokens);
-        if (text == null || text.trim().length() == 0 || text.endsWith("</ref>") || text.startsWith("<ref"))
+        if (text == null || text.trim().length() == 0 || text.endsWith("</ref>") || text.startsWith("<ref") || markerMatcher == null)
             return Collections.<Node>singletonList(new Text(text));
         
         boolean spaceEnd = false;
@@ -1485,31 +1485,34 @@ public class TEIFormatter {
             spaceEnd = true;
         //System.out.println("callout text: " + text);
         List<Node> nodes = new ArrayList<>();
-        for (ReferenceMarkerMatcher.MatchResult matchResult : markerMatcher.match(refTokens)) {
-            // no need to HTMLEncode since XOM will take care about the correct escaping
-            String markerText = LayoutTokensUtil.normalizeText(matchResult.getText());
-            String coords = null;
-            if (generateCoordinates && matchResult.getTokens() != null) {
-                coords = LayoutTokensUtil.getCoordsString(matchResult.getTokens());
-            }
+        List<ReferenceMarkerMatcher.MatchResult> matchResults = markerMatcher.match(refTokens);
+        if (matchResults != null) {
+            for (ReferenceMarkerMatcher.MatchResult matchResult : matchResults) {
+                // no need to HTMLEncode since XOM will take care about the correct escaping
+                String markerText = LayoutTokensUtil.normalizeText(matchResult.getText());
+                String coords = null;
+                if (generateCoordinates && matchResult.getTokens() != null) {
+                    coords = LayoutTokensUtil.getCoordsString(matchResult.getTokens());
+                }
 
-            Element ref = teiElement("ref");
-            ref.addAttribute(new Attribute("type", "bibr"));
+                Element ref = teiElement("ref");
+                ref.addAttribute(new Attribute("type", "bibr"));
 
-            if (coords != null) {
-                ref.addAttribute(new Attribute("coords", coords));
-            }
-            ref.appendChild(markerText);
+                if (coords != null) {
+                    ref.addAttribute(new Attribute("coords", coords));
+                }
+                ref.appendChild(markerText);
 
-            boolean solved = false;
-            if (matchResult.getBibDataSet() != null) {
-                ref.addAttribute(new Attribute("target", "#b" + matchResult.getBibDataSet().getResBib().getOrdinal()));
-                solved = true;
+                boolean solved = false;
+                if (matchResult.getBibDataSet() != null) {
+                    ref.addAttribute(new Attribute("target", "#b" + matchResult.getBibDataSet().getResBib().getOrdinal()));
+                    solved = true;
+                }
+                if ( solved || (!solved && keepUnsolvedCallout) )
+                    nodes.add(ref);
+                else 
+                    nodes.add(textNode(matchResult.getText()));
             }
-            if ( solved || (!solved && keepUnsolvedCallout) )
-                nodes.add(ref);
-            else 
-                nodes.add(textNode(matchResult.getText()));
         }
         if (spaceEnd)
             nodes.add(new Text(" "));

@@ -1385,7 +1385,8 @@ public class Document implements Serializable {
 
     public synchronized ReferenceMarkerMatcher getReferenceMarkerMatcher() throws EntityMatcherException {
         if (referenceMarkerMatcher == null) {
-            referenceMarkerMatcher = new ReferenceMarkerMatcher(this.bibDataSets, Engine.getCntManager());
+            if (this.bibDataSets != null)
+                referenceMarkerMatcher = new ReferenceMarkerMatcher(this.bibDataSets, Engine.getCntManager());
         }
         return referenceMarkerMatcher;
     }
