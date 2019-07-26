@@ -86,6 +86,7 @@ public class DeLFTModel {
                     name + " = Path('" + tempFile.getAbsolutePath() +
                     "').read_text(encoding='utf-8')"
                 );
+                tempFile.delete();
             }
         }
 
