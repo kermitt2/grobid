@@ -4,6 +4,7 @@ import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.IOUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -69,8 +70,25 @@ public class DeLFTModel {
             //System.out.println("label thread: " + Thread.currentThread().getId());
             this.modelName = modelName;
             this.data = data;
-        } 
-          
+        }
+
+        private void setJepStringValueWithFileFallback(
+            Jep jep, String name, String value
+        ) throws JepException, IOException {
+            try {
+                jep.set(name, value);
+            } catch(JepException e) {
+                LOGGER.debug("exception setting value, falling back to. exception: {}", e);
+                File tempFile = IOUtilities.newTempFile(name, "data");
+                IOUtilities.writeInFile(tempFile.getAbsolutePath(), value);
+                jep.eval("from pathlib import Path");
+                jep.eval(
+                    name + " = Path('" + tempFile.getAbsolutePath() +
+                    "').read_text(encoding='utf-8')"
+                );
+            }
+        }
+
         @Override
         public String call() { 
             Jep jep = JEPThreadPool.getInstance().getJEPInstance(); 
@@ -79,7 +97,7 @@ public class DeLFTModel {
                 //System.out.println(this.data);
 
                 // load and tag
-                jep.set("input", this.data);
+                this.setJepStringValueWithFileFallback(jep, "input", this.data);
                 jep.eval("x_all, f_all = load_data_crf_string(input)");
                 Object objectResults = jep.getValue(this.modelName+".tag(x_all, None)");
                 
