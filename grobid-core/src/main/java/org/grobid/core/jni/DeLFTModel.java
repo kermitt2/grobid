@@ -78,7 +78,7 @@ public class DeLFTModel {
             try {
                 jep.set(name, value);
             } catch(JepException e) {
-                File tempFile = IOUtilities.newTempFile(name, "data");
+                File tempFile = IOUtilities.newTempFile(name, ".data");
                 LOGGER.debug(
                     "Falling back to file {} due to exception: {}",
                     tempFile, e.toString()
