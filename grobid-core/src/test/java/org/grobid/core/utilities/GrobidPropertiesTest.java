@@ -90,7 +90,7 @@ public class GrobidPropertiesTest {
 
     @Test
     public void testShouldReturnEmptyTrainModuleByDefault() {
-        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS);
+        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_MODULE);
         assertEquals(GrobidProperties.getDeLFTTrainModule(), "");
     }
 
