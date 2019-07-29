@@ -1,5 +1,6 @@
 package org.grobid.core.main;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.SystemUtils;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidException;
@@ -59,14 +60,9 @@ public class LibraryLoader {
             }
 
             if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
-                File[] files = libraryFolder.listFiles(new FileFilter() {
-                    public boolean accept(File file) {
-                        return file.getName().toLowerCase()
-                            .startsWith(CRFPP_NATIVE_LIB_NAME);
-                    }
-                });
+                File[] files = libraryFolder.listFiles(file -> file.getName().toLowerCase().startsWith(CRFPP_NATIVE_LIB_NAME));
 
-                if (files.length == 0) {
+                if (ArrayUtils.isEmpty(files)) {
                     LOGGER.error("Unable to find a native CRF++ library: No files starting with "
                         + CRFPP_NATIVE_LIB_NAME
                         + " are in folder " + libraryFolder);
