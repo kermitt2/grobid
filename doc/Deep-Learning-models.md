@@ -31,6 +31,14 @@ Current neural models are 3-4 time slower than CRF: we do not use batch processi
 
 > ./gradlew run
 
+#### Virtualenv
+
+- create the virtualenv environment (the Delft instruction are based on that)
+
+- activate the environment
+
+- run Grobid
+
 #### Anaconda 
 
 - create the anaconda environment
