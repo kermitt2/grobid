@@ -529,7 +529,7 @@ public class Engine implements Closeable {
                     createTraining(pdfFile, resultPath, resultPath, ind + n);
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "
-						+ pdfFile.getPath() + ": " + exp, exp);
+						+ pdfFile.getPath(), exp);
                 }
 				if (ind != -1)
 					n++;
@@ -581,7 +581,7 @@ public class Engine implements Closeable {
                     createTrainingMonograph(pdfFile, resultPath, resultPath, ind + n);
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "
-                        + pdfFile.getPath() + ": " + exp, exp);
+                        + pdfFile.getPath(), exp);
                 }
                 if (ind != -1)
                     n++;
@@ -632,7 +632,7 @@ public class Engine implements Closeable {
                     createTrainingBlank(pdfFile, resultPath, resultPath, ind + n);
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "
-                        + pdfFile.getPath() + ": " + exp, exp);
+                        + pdfFile.getPath(), exp);
                 }
                 if (ind != -1)
                     n++;
