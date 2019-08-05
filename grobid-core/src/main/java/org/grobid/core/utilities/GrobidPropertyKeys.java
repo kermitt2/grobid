@@ -15,6 +15,7 @@ public interface GrobidPropertyKeys {
     String PROP_3RD_PARTY_PDFTOXML = "grobid.3rdparty.pdf2xml.path";
     String PROP_3RD_PARTY_PDFTOXML_MEMORY_LIMIT = "grobid.3rdparty.pdf2xml.memory.limit.mb";
     String PROP_3RD_PARTY_PDFTOXML_TIMEOUT_SEC = "grobid.3rdparty.pdf2xml.memory.timeout.sec";
+    String PROP_3RD_PARTY_PDFTOXML_VALIDATION_ENABLED = "grobid.3rdparty.pdf2xml.validation.enabled";
 
     String PROP_GROBID_CRF_ENGINE = "grobid.crf.engine";
     String PROP_GROBID_DELFT_PATH = "grobid.delft.install";

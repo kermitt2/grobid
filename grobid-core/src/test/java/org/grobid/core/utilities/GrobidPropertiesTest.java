@@ -17,6 +17,7 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class GrobidPropertiesTest {
     @Before
@@ -252,6 +253,20 @@ public class GrobidPropertiesTest {
         GrobidProperties
                 .getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML);
         GrobidProperties.loadPdf2XMLPath();
+    }
+
+    @Test
+    public void testShouldDisableValidationPdfToXMLByDefault() throws Exception {
+        assertFalse(GrobidProperties.isPdfToXMLValidationEnabled());
+    }
+
+    @Test
+    public void testShouldEnableValidationPdfToXMLIfTrue() throws Exception {
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML_VALIDATION_ENABLED,
+            "true"
+        );
+        assertTrue(GrobidProperties.isPdfToXMLValidationEnabled());
     }
 
     @Test(expected = GrobidPropertyException.class)
