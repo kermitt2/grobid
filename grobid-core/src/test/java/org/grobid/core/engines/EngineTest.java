@@ -5,6 +5,7 @@ import com.google.common.collect.Lists;
 import fr.limsi.wapiti.SWIGTYPE_p_mdl_t;
 import fr.limsi.wapiti.Wapiti;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
@@ -33,6 +34,8 @@ import java.util.StringTokenizer;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import static org.junit.Assert.assertEquals;
+
 @Ignore
 public class EngineTest {
 
@@ -45,7 +48,8 @@ public class EngineTest {
 
     @Test
     public void testGetNewModel() {
-        // assertEquals("Wrong value of getModel", "-m "+GrobidModels.CITATION.getModelPath()+" ", GrobidModels.CITATION.getModelPath());
+        //assertEquals("Wrong value of getModel", "-m "+ GrobidModels.CITATION.getModelPath()+" ", GrobidModels.CITATION.getModelPath());
+        assertEquals("Wrong value of getModel", GrobidModels.ACKNOWLEDGMENT.getModelPath()+" ", GrobidModels.ACKNOWLEDGMENT.getModelPath());
     }
     @BeforeClass
     public static void setUpClass() throws Exception {

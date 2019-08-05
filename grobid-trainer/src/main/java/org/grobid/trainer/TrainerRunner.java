@@ -116,7 +116,9 @@ public class TrainerRunner {
 		    trainer = new FigureTrainer();
 		} else if (model.equals("table")) {
 		    trainer = new TableTrainer();
-		} else {
+		} else if (model.equals("acknowledgment")) {
+            trainer = new AcknowledgmentTrainer();
+        }else {
 			throw new IllegalStateException("The model " + model + " is unknown.");
 		}
 

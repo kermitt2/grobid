@@ -17,6 +17,19 @@ public class GrobidModelsTest {
         GrobidProperties.getInstance();
     }
 
+    @Test
+    public void testGrobidModelsEnum_StandardModel_acknowledgment() throws Exception {
+
+        GrobidModel model = GrobidModels.ACKNOWLEDGMENT;
+
+        assertThat(model.getFolderName(), is("acknowledgment"));
+        assertThat(model.getModelName(), is("acknowledgment"));
+        assertThat(model.getTemplateName(), is("acknowledgment.template"));
+        String[] splittedPath = model.getModelPath().split("[/\\\\]");
+        assertThat(splittedPath[splittedPath.length - 1], is("model.wapiti"));
+        assertThat(splittedPath[splittedPath.length - 2], is("acknowledgment"));
+        assertThat(splittedPath[splittedPath.length - 3], is("models"));
+    }
 
     @Test
     public void testGrobidModelsEnum_StandardModel_affiliation() throws Exception {

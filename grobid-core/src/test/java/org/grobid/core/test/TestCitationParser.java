@@ -36,6 +36,7 @@ public class TestCitationParser extends EngineTest {
 
         List<BibDataSet> res = engine.getParsers().getCitationParser().processingReferenceSection(text, engine.getParsers().getReferenceSegmenterParser());
         assertNotNull(res);
+        System.out.println(res);
         assertTrue(res.size() > 2);
     }
 

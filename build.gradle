@@ -386,7 +386,8 @@ project(":grobid-trainer") {
         "train_segmentation"          : "org.grobid.trainer.SegmentationTrainer",
         "train_reference_segmentation": "org.grobid.trainer.ReferenceSegmenterTrainer",
         "train_ebook_model"           : "org.grobid.trainer.EbookTrainer",
-        "train_patent_citation"       : "org.grobid.trainer.PatentParserTrainer"
+        "train_patent_citation"       : "org.grobid.trainer.PatentParserTrainer",
+        "train_acknowledgment"        : "org.grobid.trainer.AcknowledgmentTrainer"
     ]
 
     trainerTasks.each { taskName, mainClassName ->

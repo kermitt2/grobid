@@ -1,0 +1,197 @@
+package org.grobid.trainer.sax;
+
+import org.grobid.core.utilities.TextUtilities;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * SAX parser for the TEI format for the training data for the acknowledgment model.
+ *
+ * TEI -> label mapping (9 labels for this model)
+ *  	affiliation (<affiliation>): affiliation of individual,
+ * 		educational instituation (<educationalInstitution>): educational institution,
+ * 		funding agency (<fundingAgency>): funding agency,
+ * 		grant name (<grantName>): grant name,
+ *      grant number (<grantNumber>): grant number,
+ * 		individual (<individual>): gratitude for individuals,
+ * 		other institution (<otherInstitution>): name of institution other than a research institution or university,
+ * 		project name (<projectName>): project name,
+ * 		research institution (<researchInstitution>): name of research institution
+ */
+
+public class TEIAcknowledgmentSaxParser {
+
+    private static final Logger logger = LoggerFactory.getLogger(TEISegmentationSaxParser.class);
+
+    private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
+
+    private String currentTag = null;
+
+    private ArrayList<String> labeled = null; // store line by line the labeled data
+
+    public int n = 0;
+
+    public TEIAcknowledgmentSaxParser() {
+        labeled = new ArrayList<String>();
+    }
+
+    public void characters(char[] buffer, int start, int length) {
+        accumulator.append(buffer, start, length);
+    }
+
+    public String getText() {
+        return accumulator.toString().trim();
+    }
+
+    public ArrayList<String> getLabeledResult() {
+        return labeled;
+    }
+
+    public void endElement(java.lang.String uri,
+                           java.lang.String localName,
+                           java.lang.String qName) throws SAXException {
+        if (( (qName.equals("affiliation")) | (qName.equals("educationalInstitution")) | (qName.equals("fundingAgency")) |
+            (qName.equals("grantName")) | (qName.equals("grantNumber")) | (qName.equals("individual")) | (qName.equals("otherInstitution"))
+            | (qName.equals("projectName"))| (qName.equals("researchInstitution")) ) & (currentTag != null)) {
+            String text = getText();
+            writeField(text);
+        }
+        else if (qName.equals("acknowledgment")) {
+            String text = getText();
+            if (text.length() > 0) {
+                currentTag = "<other>";
+                writeField(text);
+            }
+            labeled.add("\n \n");
+        }
+
+        accumulator.setLength(0);
+    }
+
+    public void startElement(String namespaceURI,
+                             String localName,
+                             String qName,
+                             Attributes atts)
+        throws SAXException {
+
+        String text = getText();
+        if (text.length() > 0) {
+            currentTag = "<other>";
+            writeField(text);
+        }
+        accumulator.setLength(0);
+
+        if (qName.equals("affiliation")) {
+            currentTag = "<affiliation>";
+        } else if (qName.equals("educationalInstitution")) {
+            currentTag = "<educationalInstitution>";
+        } else if (qName.equals("fundingAgency")) {
+            currentTag = "<fundingAgency>";
+        } else if (qName.equals("grantName")) {
+            currentTag = "<grantName>";
+        }else if (qName.equals("grantNumber")) {
+            currentTag = "<grantNumber>";
+        }else if (qName.equals("individual")) {
+            currentTag = "<individual>";
+        }else if (qName.equals("otherInstitution")) {
+            currentTag = "<otherInstitution>";
+        }else if (qName.equals("projectName")) {
+            currentTag = "<projectName>";
+        }else if (qName.equals("researchInstitution")) {
+            currentTag = "<researchInstitution>";
+        }else if (qName.equals("acknowledgment")) {
+            n++;
+        }
+    }
+
+    private void writeField(String text) {
+        // we segment the text
+        List<String> tokens = TextUtilities.segment(text, TextUtilities.punctuations);
+
+        boolean begin = true;
+        for (String tok : tokens) {
+            tok = tok.trim();
+            if (tok.length() == 0) continue;
+            boolean punct1 = false;
+
+            if (tok.equals("+L+")) {
+                labeled.add("@newline\n");
+            } else if (tok.equals("+PAGE+")) {
+                labeled.add("@newline\n");
+            } else {
+                String content = tok;
+                int i = 0;
+                for (; i < TextUtilities.punctuations.length(); i++) {
+                    if (tok.length() > 0) {
+                        if (tok.charAt(tok.length() - 1) == TextUtilities.punctuations.charAt(i)) {
+                            punct1 = true;
+                            content = tok.substring(0, tok.length() - 1);
+                            break;
+                        }
+                    }
+                }
+                if (tok.length() > 0) {
+                    if ((tok.startsWith("(")) & (tok.length() > 1)) {
+                        if (punct1)
+                            content = tok.substring(1, tok.length() - 1);
+                        else
+                            content = tok.substring(1, tok.length());
+                        if (begin) {
+                            labeled.add("(" + " I-" + currentTag + "\n");
+                            begin = false;
+                        } else {
+                            labeled.add("(" + " " + currentTag + "\n");
+                        }
+                    } else if ((tok.startsWith("[")) & (tok.length() > 1)) {
+                        if (punct1)
+                            content = tok.substring(1, tok.length() - 1);
+                        else
+                            content = tok.substring(1, tok.length());
+                        if (begin) {
+                            labeled.add("[" + " I-" + currentTag + "\n");
+                            begin = false;
+                        } else {
+                            labeled.add("[" + " " + currentTag + "\n");
+                        }
+                    } else if ((tok.startsWith("\"")) & (tok.length() > 1)) {
+                        if (punct1)
+                            content = tok.substring(1, tok.length() - 1);
+                        else
+                            content = tok.substring(1, tok.length());
+                        if (begin) {
+                            labeled.add("\"" + " I-" + currentTag + "\n");
+                            begin = false;
+                        } else {
+                            labeled.add("\"" + " " + currentTag + "\n");
+                        }
+                    }
+                }
+
+                if (content.length() > 0) {
+                    if (begin) {
+                        labeled.add(content + " I-" + currentTag + "\n");
+                        begin = false;
+                    } else {
+                        labeled.add(content + " " + currentTag + "\n");
+                    }
+                }
+
+                if (punct1) {
+                    if (begin) {
+                        labeled.add(tok.charAt(tok.length() - 1) + " I-" + currentTag + "\n");
+                        begin = false;
+                    } else {
+                        labeled.add(tok.charAt(tok.length() - 1) + " " + currentTag + "\n");
+                    }
+                }
+            }
+
+            begin = false;
+        }
+    }
+}
