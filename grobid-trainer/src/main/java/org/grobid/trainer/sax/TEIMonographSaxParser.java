@@ -159,7 +159,6 @@ public class TEIMonographSaxParser extends DefaultHandler {
                     labeled.add("@newpage\n");
                 } else {
                     String content = tok;
-                    int i = 0;
                     if (content.length() > 0) {
                         if (begin) {
                             labeled.add(content + " I-" + currentTag + "\n");
