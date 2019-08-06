@@ -30,7 +30,7 @@ public class MonographTrainer extends AbstractTrainer {
 
     @Override
     public int createCRFPPData(File corpusPath, File outputFile) {
-        return addFeaturesSegmentation(corpusPath.getAbsolutePath() + "/tei",
+        return addFeaturesMonograph(corpusPath.getAbsolutePath() + "/tei",
                 corpusPath.getAbsolutePath() + "/raw",
                 outputFile, null, 1.0);
     }
@@ -49,7 +49,7 @@ public class MonographTrainer extends AbstractTrainer {
                                final File trainingOutputPath,
                                final File evalOutputPath,
                                double splitRatio) {
-        return addFeaturesSegmentation(corpusDir.getAbsolutePath() + "/tei",
+        return addFeaturesMonograph(corpusDir.getAbsolutePath() + "/tei",
                 corpusDir.getAbsolutePath() + "/raw",
                 trainingOutputPath,
                 evalOutputPath,
@@ -66,7 +66,7 @@ public class MonographTrainer extends AbstractTrainer {
      * @param splitRatio         ratio to consider for separating training and evaluation data, e.g. 0.8 for 80%
      * @return number of examples
      */
-    public int addFeaturesSegmentation(String sourceTEIPathLabel,
+    public int addFeaturesMonograph(String sourceTEIPathLabel,
                                        String sourceRawPathLabel,
                                        final File trainingOutputPath,
                                        final File evalOutputPath,
