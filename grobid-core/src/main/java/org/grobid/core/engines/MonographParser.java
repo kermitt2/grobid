@@ -662,7 +662,7 @@ public class MonographParser extends AbstractParser {
                 throw new GrobidResourceException("Cannot train for monograph, because directory '" +
                        pathTEI + "' is not valid.");
             }*/
-            File outputRawFile = new File(pathRaw+"/"+pdfFileName.replace(".pdf", ".monograph.raw"));
+            File outputRawFile = new File(pathRaw+"/"+pdfFileName.replace(".pdf", "training.monograph"));
             /*if (!outputRawFile.exists()) {
                 throw new GrobidResourceException("Cannot train for monograph, because directory '" +
                        pathRaw + "' is not valid.");
@@ -751,7 +751,13 @@ public class MonographParser extends AbstractParser {
                 }
             }
             if ( tocExists ) {
-                builder.append("\t</list>\n");
+                while ( 0 < currentDepth ) {
+                    for ( int i=0; i < currentDepth ; i++ ) {
+                        builder.append("\t");
+                    }
+                    builder.append("</list>\n");
+                    currentDepth--;
+                }
                 builder.append("</div>\n");
             }
 
@@ -774,7 +780,7 @@ public class MonographParser extends AbstractParser {
                 List<DocumentNode> children;
                 int depth = 0; // depth of the chapter title in the TOC tree
                 int nbOpenDivs = 0; // counts the opened div tags for the chapters, sections etc.
-                String currentTitle = "" ;
+                //String currentTitle = "" ;
                 //builder.append("DEBUGGING: The total number of tokens is "
                 //                        + numberOfTokens
                 //                        + "\n");
@@ -797,7 +803,7 @@ public class MonographParser extends AbstractParser {
                         }
                         currentNode = stackTOC.pop();
                     }
-                    currentTitle = currentNode.getLabel() ;
+                    // currentTitle = currentNode.getLabel() ;
                     // at the moment we exit the while loop, currentNode keeps non-trivial information about the title of a section
                     // we will search instances of this title using FastMatcher
                     // builder.append("DEBUGGING: Looking for title "
@@ -814,7 +820,8 @@ public class MonographParser extends AbstractParser {
                     boolean ignoreDelimiters = true;
                     boolean caseSensitive = false;
                     FastMatcher matcher = new FastMatcher(); //at this stage, the terms attribute of matcher is an empty dictionary
-                    int nbTermsInTitle = matcher.loadTerm(currentNode.getLabel(),
+                    //int nbTermsInTitle =
+                    matcher.loadTerm(currentNode.getLabel(),
                                      GrobidAnalyzer.getInstance(),
                                      ignoreDelimiters, // true
                                      caseSensitive ); // false
@@ -900,13 +907,13 @@ public class MonographParser extends AbstractParser {
                             builder.append ( "\">\n<head> " );
                             nbOpenDivs++;
                         }
-                        builder.append(tokens.get(tokenCtr).getText());
+                        builder.append ( TextUtilities.HTMLEncode ( tokens.get(tokenCtr).getText() ) );
                         if ( tokenCtr == endTokenOffset ) {
                             // We add the closing delimiters from the title, if needed
                             // At first, we skip by the first delimiter, if there is any
-                            // (in French question mark should alwaays preceded by a space, that's why for the first step we include space)
+                            // (in French question mark should always preceded by a space, that's why for the first step we include space)
                             if ( TextUtilities.delimiters.indexOf(tokens.get(tokenCtr+1).getText()) != -1 ) {
-                                builder.append(tokens.get(tokenCtr+1).getText());
+                                builder.append( tokens.get(tokenCtr+1).getText());
                                 tokenCtr++;
                             }
                             while ( TextUtilities.fullPunctuations.indexOf(tokens.get(tokenCtr+1).getText()) != -1 ) {
@@ -933,7 +940,7 @@ public class MonographParser extends AbstractParser {
                 // Once all the chapters/sections have been opened,
                 // transcribe the rest of the text
                 while ( tokenCtr < numberOfTokens ) {
-                    builder.append(tokens.get(tokenCtr).getText());
+                    builder.append ( TextUtilities.HTMLEncode ( tokens.get ( tokenCtr ) .getText() ) );
                     tokenCtr++;
                 }
                 //then close the chapters that are still open
@@ -944,7 +951,7 @@ public class MonographParser extends AbstractParser {
             } else
             {
                 for(LayoutToken token : tokens ) {
-                    builder.append ( token.getText ( ) );
+                    builder.append ( TextUtilities.HTMLEncode ( token.getText ( ) ) );
                 }
             }
 
@@ -955,8 +962,12 @@ public class MonographParser extends AbstractParser {
             writer.write(builder.toString());
             writer.close();
 
-
-
+            // besides the tagged TEI file, we also need the raw file with some key layout featuresAsString
+            String rawText = getAllBlocksFeatured(doc);
+            // Let us now take care of the raw file
+            writer = new OutputStreamWriter(new FileOutputStream(outputRawFile, false), "UTF-8");
+            writer.write(rawText);
+            writer.close();
         } catch (Exception e) {
             e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid training" +
