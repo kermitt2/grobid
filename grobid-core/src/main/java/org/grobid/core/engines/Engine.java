@@ -372,8 +372,12 @@ public class Engine implements Closeable {
             result = new BiblioItem();
         }
 
-        Pair<String, Document> resultTEI = parsers.getHeaderParser().processing2(inputFile, result, config);
-		//Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, result, config);
+        Pair<String, Document> resultTEI;
+        if (GrobidProperties.isHeaderUseHeuristics()) {
+            resultTEI = parsers.getHeaderParser().processing2(inputFile, result, config);
+        } else {
+            resultTEI = parsers.getHeaderParser().processing(new File(inputFile), result, config);
+        }
         Document doc = resultTEI.getRight();
         return resultTEI.getLeft();
     }
