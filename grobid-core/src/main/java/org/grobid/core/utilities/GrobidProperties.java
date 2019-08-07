@@ -417,7 +417,7 @@ public class GrobidProperties {
 
     public static boolean isHeaderUseHeuristics() {
         return Utilities.stringToBoolean(
-            getPropertyValue(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS, "false")
+            getPropertyValue(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS, "true")
         );
     }
 
