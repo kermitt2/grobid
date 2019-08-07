@@ -14,6 +14,7 @@ import java.io.IOException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class GrobidPropertiesTest {
@@ -125,6 +126,18 @@ public class GrobidPropertiesTest {
         GrobidProperties.setUseLanguageId(value);
         assertTrue("The property has not the value expected",
                 GrobidProperties.isUseLanguageId());
+    }
+
+    @Test
+    public void testShouldUseHeaderHeuristicsByDefault() {
+        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS);
+        assertTrue("header use heuristics", GrobidProperties.isHeaderUseHeuristics());
+    }
+
+    @Test
+    public void testShouldNotUseHeaderHeuristicsIfDisabled() {
+        GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS, "false");
+        assertFalse("header use heuristics", GrobidProperties.isHeaderUseHeuristics());
     }
 
     @Test
