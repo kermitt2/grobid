@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +25,7 @@ import java.util.List;
  * 		research institution (<researchInstitution>): name of research institution
  */
 
-public class TEIAcknowledgmentSaxParser {
-
-    private static final Logger logger = LoggerFactory.getLogger(TEISegmentationSaxParser.class);
+public class TEIAcknowledgmentSaxParser extends DefaultHandler {
 
     private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
 
@@ -55,9 +54,10 @@ public class TEIAcknowledgmentSaxParser {
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
-        if (( (qName.equals("affiliation")) | (qName.equals("educationalInstitution")) | (qName.equals("fundingAgency")) |
-            (qName.equals("grantName")) | (qName.equals("grantNumber")) | (qName.equals("individual")) | (qName.equals("otherInstitution"))
-            | (qName.equals("projectName"))| (qName.equals("researchInstitution")) ) & (currentTag != null)) {
+        if (( (qName.equals("affiliation")) | (qName.equals("educationalInstitution")) | (qName.equals("fundingAgency"))
+            | (qName.equals("grantName")) | (qName.equals("grantNumber")) | (qName.equals("individual"))
+            | (qName.equals("otherInstitution")) | (qName.equals("projectName")) | (qName.equals("researchInstitution"))
+            ) & (currentTag != null)) {
             String text = getText();
             writeField(text);
         }
@@ -94,15 +94,15 @@ public class TEIAcknowledgmentSaxParser {
             currentTag = "<fundingAgency>";
         } else if (qName.equals("grantName")) {
             currentTag = "<grantName>";
-        }else if (qName.equals("grantNumber")) {
+        } else if (qName.equals("grantNumber")) {
             currentTag = "<grantNumber>";
-        }else if (qName.equals("individual")) {
+        } else if (qName.equals("individual")) {
             currentTag = "<individual>";
-        }else if (qName.equals("otherInstitution")) {
+        } else if (qName.equals("otherInstitution")) {
             currentTag = "<otherInstitution>";
-        }else if (qName.equals("projectName")) {
+        } else if (qName.equals("projectName")) {
             currentTag = "<projectName>";
-        }else if (qName.equals("researchInstitution")) {
+        } else if (qName.equals("researchInstitution")) {
             currentTag = "<researchInstitution>";
         }else if (qName.equals("acknowledgment")) {
             n++;
@@ -111,6 +111,7 @@ public class TEIAcknowledgmentSaxParser {
 
     private void writeField(String text) {
         // we segment the text
+        //StringTokenizer st = new StringTokenizer(text, " \n\t");
         List<String> tokens = TextUtilities.segment(text, TextUtilities.punctuations);
 
         boolean begin = true;
@@ -122,6 +123,7 @@ public class TEIAcknowledgmentSaxParser {
             if (tok.equals("+L+")) {
                 labeled.add("@newline\n");
             } else if (tok.equals("+PAGE+")) {
+                // page break not relevant for authors
                 labeled.add("@newline\n");
             } else {
                 String content = tok;

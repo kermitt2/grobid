@@ -397,6 +397,7 @@ public class DateParser extends AbstractParser {
                     }*/
 
                 String output = writeField(s1, lastTag0, s2, "<day>", "<day>", addSpace, 0);
+                System.out.println(output);
                 if (output != null) {
                     if (lastTag0 != null) {
                         if (hasDay && !lastTag0.equals("<day>")) {

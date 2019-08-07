@@ -11,12 +11,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import com.google.inject.Singleton;
-import org.grobid.core.data.Affiliation;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.PatentItem;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.Date;
-import org.grobid.core.data.Person;
+import org.grobid.core.data.*;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.util.GrobidRestUtils;
@@ -196,6 +191,59 @@ public class GrobidRestProcessString {
 		LOGGER.debug(methodLogOut());
 		return response;
 	}
+
+    /**
+     * Parse a raw sequence of acknowledgments and return the corresponding
+     * normalized acknowledgments.
+     *
+     * @param acknowledgment of the raw sequence of acknowledgment
+     * @return a response object containing the structured xml representation of
+     *         the acknowledgment
+     */
+    public Response processAcknowledgments(String acknowledgment) {
+        LOGGER.debug(methodLogIn());
+        Response response = null;
+        String retVal = null;
+        Engine engine = null;
+        try {
+            LOGGER.debug(">> set raw acknowledgment blocks for stateless service'...");
+
+            engine = Engine.getEngine(true);
+            acknowledgment = acknowledgment.replaceAll("\\t", " ");
+            List<Acknowledgment> acknowledgmentList = engine.processAcknowledgment(acknowledgment);
+
+            if (acknowledgmentList != null) {
+                for(Acknowledgment ack : acknowledgmentList) {
+                    if (retVal == null) {
+                        retVal = "";
+                    }
+                    retVal += ack.toTEI();
+                }
+            }
+            if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                response = Response.status(Status.NO_CONTENT).build();
+            } else {
+                //response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
+                response = Response.status(Status.OK)
+                    .entity(retVal)
+                    .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
+                    .header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception e) {
+            LOGGER.error("An unexpected exception occurs. ", e);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+        } finally {
+            if (engine != null) {
+                GrobidPoolingFactory.returnEngine(engine);
+            }
+        }
+        LOGGER.debug(methodLogOut());
+        return response;
+    }
 
 	/**
 	 * Parse a raw sequence of affiliations and return the corresponding

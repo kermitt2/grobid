@@ -90,6 +90,17 @@ public class TaggingLabels {
     public final static String GLOSSARY_LABEL = "<glossary>";
     public final static String BACK_LABEL = "<back>";
 
+    // acknowledgment
+    public final static String AFFILIATION = "<affiliation>";
+    public final static String EDUCATIONAL_INSTITUTION = "<educationalInstitution>";
+    public final static String FUNDING_AGENCY = "<fundingAgency>";
+    public final static String GRANT_NAME = "<grantName>";
+    public final static String GRANT_NUMBER = "<grantNumber>";
+    public final static String INDIVIDUAL = "<individual>";
+    public final static String OTHER_INSTITUTION = "<otherInstitution>";
+    public final static String PROJECT_NAME = "<projectName>";
+    public final static String RESEARCH_INSTITUTION = "<researchInstitution>";
+
 
     /* title page (secondary title page)
      *       publisher page (publication information, including usually the copyrights info) 
@@ -215,6 +226,17 @@ public class TaggingLabels {
     public static final TaggingLabel MONOGRAPH_GLOSSARY = new TaggingLabelImpl(GrobidModels.MONOGRAPH, GLOSSARY_LABEL);
     public static final TaggingLabel MONOGRAPH_BACK = new TaggingLabelImpl(GrobidModels.MONOGRAPH, BACK_LABEL);
     public static final TaggingLabel MONOGRAPH_OTHER = new TaggingLabelImpl(GrobidModels.MONOGRAPH, OTHER_LABEL);
+
+    // tagging label for acknowledgment
+    public static final TaggingLabel AKNOWLEDGMENT_AFFILIATION = new TaggingLabelImpl(GrobidModels.ACKNOWLEDGMENT, AFFILIATION);
+    public static final TaggingLabel AKNOWLEDGMENT_EDUCATIONAL_INSTITUTION = new TaggingLabelImpl(GrobidModels.ACKNOWLEDGMENT, EDUCATIONAL_INSTITUTION);
+    public static final TaggingLabel AKNOWLEDGMENT_FUNDING_AGENCY = new TaggingLabelImpl(GrobidModels.ACKNOWLEDGMENT, FUNDING_AGENCY);
+    public static final TaggingLabel AKNOWLEDGMENT_GRANT_NAME = new TaggingLabelImpl(GrobidModels.ACKNOWLEDGMENT, GRANT_NAME);
+    public static final TaggingLabel AKNOWLEDGMENT_GRANT_NUMBER = new TaggingLabelImpl(GrobidModels.ACKNOWLEDGMENT, GRANT_NUMBER);
+    public static final TaggingLabel AKNOWLEDGMENT_INDIVIDUAL = new TaggingLabelImpl(GrobidModels.ACKNOWLEDGMENT, INDIVIDUAL);
+    public static final TaggingLabel AKNOWLEDGMENT_OTHER_INSTITUTION = new TaggingLabelImpl(GrobidModels.ACKNOWLEDGMENT, OTHER_INSTITUTION);
+    public static final TaggingLabel AKNOWLEDGMENT_PROJECT_NAME = new TaggingLabelImpl(GrobidModels.ACKNOWLEDGMENT, PROJECT_NAME);
+    public static final TaggingLabel AKNOWLEDGMENT_RESEARCH_INSTITUTION = new TaggingLabelImpl(GrobidModels.ACKNOWLEDGMENT, RESEARCH_INSTITUTION);
     
     protected static void register(TaggingLabel label) {
         cache.putIfAbsent(new Pair<>(label.getGrobidModel(), label.getLabel()), label);
@@ -335,7 +357,16 @@ public class TaggingLabels {
         register(MONOGRAPH_BACK);
         register(MONOGRAPH_OTHER);
 
-
+        // acknowledgment
+        register(AKNOWLEDGMENT_AFFILIATION);
+        register(AKNOWLEDGMENT_EDUCATIONAL_INSTITUTION);
+        register(AKNOWLEDGMENT_FUNDING_AGENCY);
+        register(AKNOWLEDGMENT_GRANT_NAME);
+        register(AKNOWLEDGMENT_GRANT_NUMBER);
+        register(AKNOWLEDGMENT_INDIVIDUAL);
+        register(AKNOWLEDGMENT_OTHER_INSTITUTION);
+        register(AKNOWLEDGMENT_PROJECT_NAME);
+        register(AKNOWLEDGMENT_RESEARCH_INSTITUTION);
     }
 
 

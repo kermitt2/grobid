@@ -15,6 +15,7 @@ import java.io.IOException;
 public class EngineParsers implements Closeable {
     public static final Logger LOGGER = LoggerFactory.getLogger(EngineParsers.class);
 
+    private AcknowledgmentParser acknowledgmentParser = null;
     private AuthorParser authorParser = null;
     private AffiliationAddressParser affiliationAddressParser = null;
     private HeaderParser headerParser = null;
@@ -28,6 +29,17 @@ public class EngineParsers implements Closeable {
     private FigureParser figureParser = null;
     private TableParser tableParser = null;
     private MonographParser monographParser = null;
+
+    public AcknowledgmentParser getAcknowledgmentParser() {
+        if (acknowledgmentParser == null) {
+            synchronized (this) {
+                if (acknowledgmentParser == null) {
+                    acknowledgmentParser = new AcknowledgmentParser();
+                }
+            }
+        }
+        return acknowledgmentParser;
+    }
 
     public AffiliationAddressParser getAffiliationAddressParser() {
         if (affiliationAddressParser == null) {
@@ -178,6 +190,7 @@ public class EngineParsers implements Closeable {
      * Init all model, this will also load the model into memory
      */
     public void initAll() {
+        acknowledgmentParser = getAcknowledgmentParser();
         affiliationAddressParser = getAffiliationAddressParser();
         authorParser = getAuthorParser();
         headerParser = getHeaderParser();
@@ -195,11 +208,19 @@ public class EngineParsers implements Closeable {
     @Override
     public void close() throws IOException {
         LOGGER.debug("==> Closing all resources...");
+
+        if (acknowledgmentParser != null) {
+            acknowledgmentParser.close();
+            acknowledgmentParser = null;
+            LOGGER.debug("CLOSING acknowledgmentParser");
+        }
+
         if (authorParser != null) {
             authorParser.close();
             authorParser = null;
             LOGGER.debug("CLOSING authorParser");
         }
+
         if (affiliationAddressParser != null) {
             affiliationAddressParser.close();
             affiliationAddressParser = null;

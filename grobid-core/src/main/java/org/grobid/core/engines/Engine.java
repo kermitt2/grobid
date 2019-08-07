@@ -20,13 +20,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 //import org.grobid.core.annotations.TeiStAXParser;
-import org.grobid.core.data.Affiliation;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.BiblioSet;
-import org.grobid.core.data.ChemicalEntity;
-import org.grobid.core.data.PatentItem;
-import org.grobid.core.data.Person;
+import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
@@ -102,6 +96,18 @@ public class Engine implements Closeable {
      */
     public List<List<Person>> processAuthorsCitationLists(List<String> authorSequences) throws Exception {
         return null;
+    }
+
+    /**
+     * Parse a raw string containing acknowledgments.
+     *
+     * @param acknowledgmentBlock - the string containing raw acknowledgments.
+     * @return the list of all structured date objects recognized in the string.
+     * @throws IOException
+     */
+    public List<Acknowledgment> processAcknowledgment(String acknowledgmentBlock) throws IOException {
+        List<Acknowledgment> result = parsers.getAcknowledgmentParser().processing(acknowledgmentBlock);
+        return result;
     }
 
     /**

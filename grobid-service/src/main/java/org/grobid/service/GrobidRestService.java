@@ -43,6 +43,7 @@ public class GrobidRestService implements GrobidPaths {
 
     private static final String NAMES = "names";
     private static final String DATE = "date";
+    private static final String ACKNOWLEDGMENTS = "acknowledgments";
     private static final String AFFILIATIONS = "affiliations";
     private static final String CITATION = "citations";
 //    private static final String TEXT = "text";
@@ -392,6 +393,29 @@ public class GrobidRestService implements GrobidPaths {
     public Response processNamesCitation(@FormParam(NAMES) String names) {
         return restProcessString.processNamesCitation(names);
     }
+
+    /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processAcknowledgments(String)
+     */
+    @Path(PATH_ACKNOWLEDGMENT)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.TEXT_PLAIN)
+    @POST
+    public Response processAcknowledgments_post(@FormParam(ACKNOWLEDGMENTS) String acknowledgments) {
+        return restProcessString.processAcknowledgments(acknowledgments);
+    }
+
+    /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processAffiliations(String)
+     */
+    @Path(PATH_ACKNOWLEDGMENT)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.TEXT_PLAIN)
+    @PUT
+    public Response processAcknowledgments(@FormParam(ACKNOWLEDGMENTS) String acknowledgment) {
+        return restProcessString.processAcknowledgments(acknowledgment);
+    }
+
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessString#processAffiliations(String)
