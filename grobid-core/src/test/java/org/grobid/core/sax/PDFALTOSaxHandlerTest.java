@@ -22,7 +22,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by lfoppiano on 21/07/16.
  */
-public class PDFALTOSaxParserTest {
+public class PDFALTOSaxHandlerTest {
     SAXParserFactory spf = SAXParserFactory.newInstance();
 
     PDFALTOSaxHandler target;
@@ -70,6 +70,18 @@ public class PDFALTOSaxParserTest {
         assertThat(document.getImages().size(), is(16));
         assertTrue(document.getPages().size() == 4);
         assertTrue(document.getBlocks().size() == 26);
+    }
+
+    @Test
+    public void testParsing_shouldWork() throws Exception {
+        InputStream inputStream = this.getClass().getResourceAsStream("JPS081033701-CC.xml");
+
+        SAXParser p = spf.newSAXParser();
+        p.parse(inputStream, target);
+
+        List<LayoutToken> tokenList = target.getTokenization();
+
+        assertThat(tokenList.stream().filter(t -> t.getText().equals("newly")).count(), is(1));
     }
 
 }

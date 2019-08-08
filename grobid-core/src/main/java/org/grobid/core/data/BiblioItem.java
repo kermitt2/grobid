@@ -4209,13 +4209,13 @@ public class BiblioItem {
 
     public void setLayoutTokensForLabel(List<LayoutToken> tokens, TaggingLabel headerLabel) {
         if (labeledTokens == null)
-            labeledTokens = new TreeMap<String, List<LayoutToken>>();
+            labeledTokens = new TreeMap<>();
         labeledTokens.put(headerLabel.getLabel(), tokens);
     }
 
     public void generalResultMapping(Document doc, String labeledResult, List<LayoutToken> tokenizations) {
         if (labeledTokens == null)
-            labeledTokens = new TreeMap<String, List<LayoutToken>>();
+            labeledTokens = new TreeMap<>();
 
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.HEADER, labeledResult, tokenizations);
         List<TaggingTokenCluster> clusters = clusteror.cluster();
@@ -4229,7 +4229,7 @@ public class BiblioItem {
             List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
 
             if (theList == null)
-                theList = new ArrayList<LayoutToken>();
+                theList = new ArrayList<>();
             for (LayoutToken token : clusterTokens)
                 theList.add(token);
             labeledTokens.put(clusterLabel.getLabel(), theList);

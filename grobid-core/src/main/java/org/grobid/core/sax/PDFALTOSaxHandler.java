@@ -144,7 +144,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 
             accumulator.setLength(0);
 		} else if (qName.equals("Page")) {
-			// page marker are usefull to detect headers (same first line(s)
+			// page marker are useful to detect headers (same first line(s)
 			// appearing on each page)
 			if (block != null) {
 				blabla.append("\n");
