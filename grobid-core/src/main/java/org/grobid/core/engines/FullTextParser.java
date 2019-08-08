@@ -133,13 +133,16 @@ public class FullTextParser extends AbstractParser {
             // header processing
             BiblioItem resHeader = new BiblioItem();
             Pair<String, LayoutTokenization> featSeg = null;
-            parsers.getHeaderParser().processingHeaderBlock(config.getConsolidateHeader(), doc, resHeader);
+            if (GrobidProperties.isHeaderUseHeuristics()) {
+                parsers.getHeaderParser().processingHeaderBlock(config.getConsolidateHeader(), doc, resHeader);
+            }
             // above the old version of the header block identification, because more robust
             if ((resHeader.getTitle() == null) || (resHeader.getTitle().trim().length() == 0) ||
                  (resHeader.getAuthors() == null) || (resHeader.getFullAuthors() == null) ||
                  (resHeader.getFullAuthors().size() == 0) ) {
                 resHeader = new BiblioItem();
                 parsers.getHeaderParser().processingHeaderSection(config.getConsolidateHeader(), doc, resHeader);
+                // above, use the segmentation model result
                 if (doc.getMetadata() != null) {
                     Metadata metadata = doc.getMetadata();
                     if (metadata.getTitle() != null)
@@ -158,7 +161,6 @@ public class FullTextParser extends AbstractParser {
                         parsers.getHeaderParser().consolidateHeader(resHeader, config.getConsolidateHeader());
                     }
                 }
-                // above, use the segmentation model result
             }
             // structure the abstract using the fulltext model
             if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {

@@ -372,8 +372,12 @@ public class Engine implements Closeable {
             result = new BiblioItem();
         }
 
-        Pair<String, Document> resultTEI = parsers.getHeaderParser().processing2(inputFile, result, config);
-		//Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, result, config);
+        Pair<String, Document> resultTEI;
+        if (GrobidProperties.isHeaderUseHeuristics()) {
+            resultTEI = parsers.getHeaderParser().processing2(inputFile, result, config);
+        } else {
+            resultTEI = parsers.getHeaderParser().processing(new File(inputFile), result, config);
+        }
         Document doc = resultTEI.getRight();
         return resultTEI.getLeft();
     }
@@ -529,7 +533,7 @@ public class Engine implements Closeable {
                     createTraining(pdfFile, resultPath, resultPath, ind + n);
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "
-						+ pdfFile.getPath() + ": " + exp);
+						+ pdfFile.getPath(), exp);
                 }
 				if (ind != -1)
 					n++;
@@ -581,7 +585,7 @@ public class Engine implements Closeable {
                     createTrainingMonograph(pdfFile, resultPath, resultPath, ind + n);
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "
-                        + pdfFile.getPath() + ": " + exp);
+                        + pdfFile.getPath(), exp);
                 }
                 if (ind != -1)
                     n++;
@@ -632,7 +636,7 @@ public class Engine implements Closeable {
                     createTrainingBlank(pdfFile, resultPath, resultPath, ind + n);
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "
-                        + pdfFile.getPath() + ": " + exp);
+                        + pdfFile.getPath(), exp);
                 }
                 if (ind != -1)
                     n++;

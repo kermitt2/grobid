@@ -132,10 +132,11 @@ public class Consolidation {
     public BiblioItem consolidate(BiblioItem bib, String rawCitation) throws Exception {
         final List<BiblioItem> results = new ArrayList<BiblioItem>();
 
-        String doi = bib.getDOI();
-        if (StringUtils.isNotBlank(doi)) {
-            doi = cleanDoi(doi);
+        String theDOI = bib.getDOI();
+        if (StringUtils.isNotBlank(theDOI)) {
+            theDOI = cleanDoi(theDOI);
         }
+        final String doi = theDOI;
         String aut = bib.getFirstAuthorSurname();
         String title = bib.getTitle();
         String journalTitle = bib.getJournal();
@@ -271,14 +272,23 @@ public class Consolidation {
                         for(BiblioItem oneRes : res) {
                             /* 
                               Glutton integrates its own post-validation, so we can skip post-validation in GROBID when it is used as 
-                              consolidation service.  
+                              consolidation service - except in specific case where the DOI is failing and the consolidation is based on 
+                              extracted title and author.  
 
                               In case of crossref REST API, for single bib. ref. consolidation (this case comes only for header extraction), 
                               having an extracted DOI matching is considered safe enough, and we don't require further post-validation.
 
                               For all the other case of matching with CrossRef, we require a post-validation. 
                             */
-                            if ((GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) 
+                            if ( 
+                                ( (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) && 
+                                    !doiQuery
+                                )
+                                ||
+                                ( (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) && 
+                                    StringUtils.isNotBlank(oneRes.getDOI()) &&
+                                    doi.equals(oneRes.getDOI())
+                                )
                                 ||
                                 ( (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) && 
                                   (doiQuery) ) 
