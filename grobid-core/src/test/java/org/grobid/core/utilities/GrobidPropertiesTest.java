@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -53,6 +54,16 @@ public class GrobidPropertiesTest {
     public void testLoadGrobidProperties_PathNoContext_shouldThrowException() throws Exception {
         GrobidProperties.reset();
         GrobidProperties.loadGrobidPropertiesPath();
+    }
+
+    @Test
+    public void shouldReturnAndConvertMatchingEnvironmentVariable() throws Exception {
+        assertEquals(
+            Collections.singletonMap("grobid.abc", "value1"),
+            GrobidProperties.getEnvironmentVariableOverrides(
+                Collections.singletonMap("GROBID__ABC", "value1")
+            )
+        );
     }
 
     @Test
