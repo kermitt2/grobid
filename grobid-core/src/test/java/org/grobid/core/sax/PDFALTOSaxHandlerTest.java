@@ -81,7 +81,7 @@ public class PDFALTOSaxHandlerTest {
 
         List<LayoutToken> tokenList = target.getTokenization();
 
-        assertThat(tokenList.stream().filter(t -> t.getText().equals("newly")).count(), is(1));
+        assertThat(tokenList.stream().filter(t -> t.getText().equals("newly")).count(), is(1L));
     }
 
 }
