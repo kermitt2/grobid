@@ -415,6 +415,12 @@ public class GrobidProperties {
         return new File(getPropertyValue(GrobidPropertyKeys.PROP_NATIVE_LIB_PATH));
     }
 
+    public static boolean isHeaderUseHeuristics() {
+        return Utilities.stringToBoolean(
+            getPropertyValue(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS, "true")
+        );
+    }
+
     /**
      * Returns the installation path of DeLFT if set, null otherwise. It is required for using 
      * a Deep Learning sequence labelling engine. 

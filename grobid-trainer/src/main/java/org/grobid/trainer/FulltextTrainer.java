@@ -220,8 +220,9 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                             else
                                 writer3.write(fulltext.toString() + "\n");
                         }
+                        totalExamples++;
                     } else {
-                        LOGGER.warn(name + " / too many synchronization issues, file not used in training data and to be fixed!");
+                        LOGGER.error(name + " / too many synchronization issues, file not used in training data and to be fixed!");
                     }
                 } catch (Exception e) {
                     LOGGER.error("Fail to open or process raw file", e);
