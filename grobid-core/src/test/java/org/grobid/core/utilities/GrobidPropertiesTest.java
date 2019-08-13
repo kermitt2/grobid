@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertFalse;
@@ -60,6 +61,19 @@ public class GrobidPropertiesTest {
 //                + File.separator + "/lib");
         assertNotNull(GrobidProperties
                 .getNativeLibraryPath().getCanonicalFile());
+    }
+
+    @Test
+    public void testIsDeLFTRedirectOutputFalseByDefault() throws IOException {
+        assertFalse(GrobidProperties.isDeLFTRedirectOutput());
+    }
+
+    @Test
+    public void testIsDeLFTRedirectOutputTrueIfSet() throws IOException {
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_DELFT_REDIRECT_OUTPUT, "true"
+        );
+        assertTrue(GrobidProperties.isDeLFTRedirectOutput());
     }
 
     @Test(expected = GrobidPropertyException.class)

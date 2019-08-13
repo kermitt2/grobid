@@ -31,7 +31,6 @@ public class DeLFTModel {
 
     public DeLFTModel(GrobidModel model) {
         this.modelName = model.getModelName().replace("-", "_");
-        System.out.println(this.modelName);
         try {
             LOGGER.info("Loading DeLFT model for " + model.getModelName() + "...");
             JEPThreadPool.getInstance().run(new InitModel(this.modelName, GrobidProperties.getInstance().getModelPath()));
@@ -56,8 +55,8 @@ public class DeLFTModel {
                 jep.eval(this.modelName+" = Sequence('" + this.modelName.replace("_", "-") + "')");
                 jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
             } catch(JepException e) {
-                LOGGER.error("DeLFT model initialization failed", e);
-            } 
+                throw new GrobidException("DeLFT model initialization failed. ", e);
+            }
         } 
     } 
 
@@ -84,13 +83,13 @@ public class DeLFTModel {
                 Object objectResults = jep.getValue(this.modelName+".tag(x_all, None)");
                 
                 // inject back the labels
-                ArrayList<ArrayList<List<String>>> results = (ArrayList<ArrayList<List<String>>>)objectResults;
+                List<List<List<String>>> results = (List<List<List<String>>>) objectResults;
                 BufferedReader bufReader = new BufferedReader(new StringReader(data));
                 String line;
                 int i = 0; // sentence index
                 int j = 0; // word index in the sentence
-                ArrayList<List<String>> result = results.get(0);
-                while( (line=bufReader.readLine()) != null ) {
+                List<List<String>> result = results.get(0);
+                while ((line = bufReader.readLine()) != null) {
                     line = line.trim();
                     if ((line.length() == 0) && (j != 0)) {
                         j = 0;
