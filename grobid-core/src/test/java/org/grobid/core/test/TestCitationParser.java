@@ -3,9 +3,8 @@ package org.grobid.core.test;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.factory.GrobidFactory;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Test;
+import org.grobid.core.main.LibraryLoader;
+import org.junit.*;
 
 import java.util.List;
 
@@ -19,12 +18,18 @@ import static org.junit.Assert.assertTrue;
  */
 public class TestCitationParser extends EngineTest {
 
+    @BeforeClass
+    public static void beforeClass() throws Exception {
+        LibraryLoader.load();
+    }
+
     @AfterClass
     public static void tearDown(){
         GrobidFactory.reset();
     }
 
     @Test
+    @Ignore("Check this test")
     public void processingReferenceSection() throws Exception {
 
         String text = "(1) Ahrens, M. Home fires that began with upholstered furniture; National Fire Protection Association: Quincy, Massachusetts, 2011.\n" +
