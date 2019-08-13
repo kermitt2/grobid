@@ -31,7 +31,6 @@ public class DeLFTModel {
 
     public DeLFTModel(GrobidModel model) {
         this.modelName = model.getModelName().replace("-", "_");
-        System.out.println(this.modelName);
         try {
             LOGGER.info("Loading DeLFT model for " + model.getModelName() + "...");
             JEPThreadPool.getInstance().run(new InitModel(this.modelName, GrobidProperties.getInstance().getModelPath()));
