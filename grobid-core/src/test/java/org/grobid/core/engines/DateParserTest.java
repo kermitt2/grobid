@@ -48,6 +48,8 @@ public class DateParserTest {
         assertThat(date.getDayString(), is("19"));
         assertThat(date.getMonthString(), is("January"));
         assertThat(date.getYearString(), is("1983"));
+
+        System.out.println(output.get(0));
     }
 
     @Test

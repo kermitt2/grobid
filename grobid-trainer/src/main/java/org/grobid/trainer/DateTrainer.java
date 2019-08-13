@@ -114,7 +114,7 @@ public class DateTrainer extends AbstractTrainer {
 
 				// we can now add the features
 				String headerDates = FeaturesVectorDate.addFeaturesDate(labeled);
-				
+
 				// format with features for sequence tagging...
 				// given the split ratio we write either in the training file or the evaluation file
 				String[] chunks = headerDates.split("\n \n");

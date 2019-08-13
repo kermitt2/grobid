@@ -28,6 +28,17 @@ public class FeaturesVectorAcknowledgment {
     public boolean researchInstitution = false;
     public String punctType = null;
 
+    // true if the token is part of acknowledgment
+    public boolean isKnownAffiliation = false;
+    public boolean isKnownEducationalInsitution = false;
+    public boolean isKnownFundingAgency = false;
+    public boolean isKnownGrantName = false;
+    public boolean isKnownGrantNumber = false;
+    public boolean isKnownIndividual = false;
+    public boolean isKnownOtherInsitution = false;
+    public boolean isKnownProjectName = false;
+    public boolean isKnownResearchInstitution = false;
+
     public String printVector() {
         if (string == null) return null;
         if (string.length() == 0) return null;
@@ -138,6 +149,16 @@ public class FeaturesVectorAcknowledgment {
         boolean newline = true;
         boolean newBlock = true;
         int n = 0;
+
+        boolean isAffiliation;
+        boolean isEducationalInstitution;
+        boolean isFundingAgency;
+        boolean isGrantName;
+        boolean isGrantNumber;
+        boolean isIndividual;
+        boolean isOtherInstitution;
+        boolean isProjectName;
+        boolean isResearchInstitution;
 
         boolean endblock = false;
         String previousTag = null;
@@ -311,8 +332,6 @@ public class FeaturesVectorAcknowledgment {
             if (features.punctType == null)
                 features.punctType = "NOPUNCT";
 
-            if (featureFactory.test_names(text))
-                features.individual = true;
 
             features.label = tag;
 
