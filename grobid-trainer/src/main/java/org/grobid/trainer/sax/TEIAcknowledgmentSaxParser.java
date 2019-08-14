@@ -23,8 +23,6 @@ import java.util.StringTokenizer;
  * 		other institution (<otherInstitution>): name of institution other than a research institution or university,
  * 		project name (<projectName>): project name,
  * 		research institution (<researchInstitution>): name of research institution
- *
- * @Tanti
  */
 
 public class TEIAcknowledgmentSaxParser extends DefaultHandler {
@@ -36,7 +34,7 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
     private String currentTag = null;
 
     private ArrayList<String> labeled = null; // store line by line the labeled data
-    public List<List<String>> allTokens = null;
+    //public List<List<String>> allTokens = null;
 
     public int n = 0;
 
@@ -55,28 +53,6 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
     public ArrayList<String> getLabeledResult() {
         return labeled;
     }
-
-    /*public void endElement(java.lang.String uri,
-                           java.lang.String localName,
-                           java.lang.String qName) throws SAXException {
-        if (( (qName.equals("affiliation")) | (qName.equals("educationalInstitution")) | (qName.equals("fundingAgency"))
-            | (qName.equals("grantName")) | (qName.equals("grantNumber")) | (qName.equals("individual"))
-            | (qName.equals("otherInstitution")) | (qName.equals("projectName")) | (qName.equals("researchInstitution"))
-            ) & (currentTag != null)) { // current tag == qname, tokenize the text
-            String text = getText();
-            writeField(text);
-        }
-        else if (qName.equals("acknowledgment")) {
-            String text = getText();
-            if (text.length() > 0) {
-                currentTag = "<other>"; //check this !!!!!!! this makes errors, just <other>
-                writeField(text);
-            }
-            labeled.add("\n \n");
-        }
-
-        accumulator.setLength(0);
-    }*/
 
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
@@ -109,50 +85,15 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
             String allString = allContent.toString().trim();
             allString = allString.replace("@newline", "\n");
             List<String> tokens = GrobidAnalyzer.getInstance().tokenize(allString);
-            allTokens.add(tokens);
+            //allTokens.add(tokens);
             allContent = null;
+            allString = null;
 
             accumulator.setLength(0);
         } else{
             accumulator.setLength(0);
         }
     }
-
-    /*public void startElement(String namespaceURI,
-                             String localName,
-                             String qName,
-                             Attributes atts)
-        throws SAXException {
-
-        String text = getText();
-        if (text.length() > 0) {
-            currentTag = "<other>";
-            writeField(text);
-        }
-        accumulator.setLength(0);
-
-        if (qName.equals("affiliation")) {
-            currentTag = "<affiliation>";
-        } else if (qName.equals("educationalInstitution")) {
-            currentTag = "<educationalInstitution>";
-        } else if (qName.equals("fundingAgency")) {
-            currentTag = "<fundingAgency>";
-        } else if (qName.equals("grantName")) {
-            currentTag = "<grantName>";
-        } else if (qName.equals("grantNumber")) {
-            currentTag = "<grantNumber>";
-        } else if (qName.equals("individual")) {
-            currentTag = "<individual>";
-        } else if (qName.equals("otherInstitution")) {
-            currentTag = "<otherInstitution>";
-        } else if (qName.equals("projectName")) {
-            currentTag = "<projectName>";
-        } else if (qName.equals("researchInstitution")) {
-            currentTag = "<researchInstitution>";
-        }else if (qName.equals("acknowledgment")) {
-            n++;
-        }
-    }*/
 
     public void startElement(String namespaceURI,
                              String localName,
@@ -199,12 +140,10 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
         }
     }
 
-    private void writeField(String text) {// every token
+    private void writeField(String text) {
         // we segment the text
         //List<String> tokens = TextUtilities.segment(text, TextUtilities.punctuations);
-
-        List<String> tokens = GrobidAnalyzer.getInstance().tokenize(text); // utilize Grobid analyzer for segmenting the text
-
+        /*List<String> tokens = GrobidAnalyzer.getInstance().tokenize(text); // utilize Grobid analyzer for segmenting the text
         boolean begin = true;
         for (String tok : tokens) {
             tok = tok.trim();
@@ -233,6 +172,34 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
                 }
             }
 
+            begin = false;
+        }*/
+
+        // we segment the text
+        StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
+        boolean begin = true;
+        while (st.hasMoreTokens()) {
+            String tok = st.nextToken().trim();
+            if (tok.length() == 0) {
+                continue;
+            }
+            if (tok.equals("@newline")) {
+                labeled.add("@newline");
+            } else if (tok.equals("+PAGE+")) {
+                // page break - no influence here
+                labeled.add("@newline");
+            } else {
+                String content = tok;
+                int i = 0;
+                if (content.length() > 0) {
+                    if (begin) {
+                        labeled.add(content + " I-" + currentTag);
+                        begin = false;
+                    } else {
+                        labeled.add(content + " " + currentTag);
+                    }
+                }
+            }
             begin = false;
         }
     }

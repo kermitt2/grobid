@@ -19,10 +19,8 @@ public class AcknowledgmentTrainer extends AbstractTrainer {
     /**
      * Add the selected features to a acknowledgment example set
      *
-     * @param corpusDir
-     *            a path where corpus files are located
-     * @param trainingOutputPath
-     *            path where to store the temporary training data
+     * @param corpusDir          a path where corpus files are located
+     * @param trainingOutputPath path where to store the temporary training data
      * @return the total number of corpus items
      */
     @Override
@@ -33,14 +31,10 @@ public class AcknowledgmentTrainer extends AbstractTrainer {
     /**
      * Add the selected features to a acknowledgment example set
      *
-     * @param corpusDir
-     *            a path where corpus files are located
-     * @param trainingOutputPath
-     *            path where to store the temporary training data
-     * @param evalOutputPath
-     *            path where to store the temporary evaluation data
-     * @param splitRatio
-     *            ratio to consider for separating training and evaluation data, e.g. 0.8 for 80%
+     * @param corpusDir          a path where corpus files are located
+     * @param trainingOutputPath path where to store the temporary training data
+     * @param evalOutputPath     path where to store the temporary evaluation data
+     * @param splitRatio         ratio to consider for separating training and evaluation data, e.g. 0.8 for 80%
      * @return the total number of used corpus items
      */
     @Override
@@ -112,12 +106,12 @@ public class AcknowledgmentTrainer extends AbstractTrainer {
                 // given the split ratio we write either in the training file or the evaluation file
                 String[] chunks = headerAcknowledgment.split("\n \n");
 
-                for(int i=0; i<chunks.length; i++) {
+                for (int i = 0; i < chunks.length; i++) {
                     String chunk = chunks[i];
 
-                    if ( (writer2 == null) && (writer3 != null) )
+                    if ((writer2 == null) && (writer3 != null))
                         writer3.write(chunk + "\n \n");
-                    else if ( (writer2 != null) && (writer3 == null) )
+                    else if ((writer2 != null) && (writer3 == null))
                         writer2.write(chunk + "\n \n");
                     else {
                         if (Math.random() <= splitRatio)
@@ -147,8 +141,7 @@ public class AcknowledgmentTrainer extends AbstractTrainer {
     /**
      * Command line execution.
      *
-     * @param args
-     *            Command line arguments.
+     * @param args Command line arguments.
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {

@@ -1,13 +1,14 @@
 package org.grobid.core.features;
 
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.utilities.TextUtilities;
 
 import java.util.List;
+import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 
 /**
  * Class for features used for parsing acknowledgment chunk.
- *
  */
 
 public class FeaturesVectorAcknowledgment {
@@ -17,6 +18,8 @@ public class FeaturesVectorAcknowledgment {
     public String capitalisation = null; // one of INITCAP, ALLCAPS, NOCAPS
     public String digit;  // one of ALLDIGIT, CONTAINDIGIT, NODIGIT
     public boolean singleChar = false;
+    public boolean properName = false;
+    public boolean commonName = false;
     public boolean affiliation = false;
     public boolean educationalInsitution = false;
     public boolean fundingAgency = false;
@@ -27,17 +30,7 @@ public class FeaturesVectorAcknowledgment {
     public boolean projectName = false;
     public boolean researchInstitution = false;
     public String punctType = null;
-
-    // true if the token is part of acknowledgment
-    public boolean isKnownAffiliation = false;
-    public boolean isKnownEducationalInsitution = false;
-    public boolean isKnownFundingAgency = false;
-    public boolean isKnownGrantName = false;
-    public boolean isKnownGrantNumber = false;
-    public boolean isKnownIndividual = false;
-    public boolean isKnownOtherInsitution = false;
-    public boolean isKnownProjectName = false;
-    public boolean isKnownResearchInstitution = false;
+    public String wordShape = null;
 
     public String printVector() {
         if (string == null) return null;
@@ -76,6 +69,18 @@ public class FeaturesVectorAcknowledgment {
 
         // character information (1)
         if (singleChar)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
+        // proper name
+        if (properName)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
+        // common name
+        if (commonName)
             res.append(" 1");
         else
             res.append(" 0");
@@ -144,205 +149,140 @@ public class FeaturesVectorAcknowledgment {
     static public String addFeaturesAcknowledgment(List<String> lines) throws Exception {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
 
-        String line;
-        StringBuilder header = new StringBuilder();
-        boolean newline = true;
-        boolean newBlock = true;
-        int n = 0;
+        StringBuffer result = new StringBuffer();
+        List<String> block = null;
+        String lineStatus = "LINESTART";
+        String line = null;
+        for (int i = 0; i < lines.size(); i++) {
+            // get the line content
+            line = lines.get(i);
 
-        boolean isAffiliation;
-        boolean isEducationalInstitution;
-        boolean isFundingAgency;
-        boolean isGrantName;
-        boolean isGrantNumber;
-        boolean isIndividual;
-        boolean isOtherInstitution;
-        boolean isProjectName;
-        boolean isResearchInstitution;
-
-        boolean endblock = false;
-        String previousTag = null;
-        String previousText = null;
-        FeaturesVectorAcknowledgment features = null;
-        while (n < lines.size()) {
-            boolean outputLineStatus = false;
-
-            line = lines.get(n);
-
-            if (line == null) {
-                header.append(" \n");
-                newBlock = true;
-                newline = true;
-                n++;
-                continue;
-            }
-            line = line.trim();
-            if (line.length() == 0) {
-                header.append("\n \n");
-                newBlock = true;
-                newline = true;
-                n++;
+            if (line.equals("\n")) {
+                result.append("\n \n");
                 continue;
             }
 
-            if (line.equals("@newline")) {
-                if (newline) {
-                    newBlock = true;
-                }
-                newline = true;
-                n++;
+            if (line.trim().equals("@newline")) {
+                lineStatus = "LINESTART";
                 continue;
             }
 
-            int ind = line.indexOf(" ");
-            String text = null;
-            String tag = null;
-            if (ind != -1) {
-                text = line.substring(0, ind);
-                tag = line.substring(ind + 1, line.length());
-            }
-
-            boolean filter = false;
-            if (text == null) {
-                filter = true;
-            } else if (text.length() == 0) {
-                filter = true;
-            } else if (text.startsWith("@IMAGE")) {
-                filter = true;
-            } else if (text.indexOf(".pbm") != -1) {
-                filter = true;
-            } else if (text.indexOf(".svg") != -1) {
-                filter = true;
-            } else if (text.indexOf(".jpg") != -1) {
-                filter = true;
-            } else if (text.indexOf(".png") != -1) {
-                filter = true;
-            }
-
-            if (filter) {
-                continue;
-            }
-
-            features = new FeaturesVectorAcknowledgment();
-            features.string = text;
-
-            if (newline) {
-                features.lineStatus = "LINESTART";
-                outputLineStatus = true;
-            }
-
-            Matcher m0 = featureFactory.isPunct.matcher(text);
-            if (m0.find()) {
-                features.punctType = "PUNCT";
-            }
-
-            if ((text.equals("(")) | (text.equals("["))) {
-                features.punctType = "OPENBRACKET";
-            } else if ((text.equals(")")) | (text.equals("]"))) {
-                features.punctType = "ENDBRACKET";
-            } else if (text.equals(".")) {
-                features.punctType = "DOT";
-            } else if (text.equals(",")) {
-                features.punctType = "COMMA";
-            } else if (text.equals("-")) {
-                features.punctType = "HYPHEN";
-            } else if (text.equals("\"") | text.equals("\'") | text.equals("`")) {
-                features.punctType = "QUOTE";
-            }
-
-            if (n == 0) {
-                if (!outputLineStatus) {
-                    features.lineStatus = "LINESTART";
-                    outputLineStatus = true;
-                }
-            } else if (lines.size() == n + 1) {
-                if (!outputLineStatus) {
-                    features.lineStatus = "LINEEND";
-                    outputLineStatus = true;
-                }
+            if (line.trim().length() == 0) {
+                result.append("\n");
+                lineStatus = "LINESTART";
             } else {
-                // look ahead...
-                boolean endline = false;
-                int i = 1;
-                boolean endloop = false;
-                while ((lines.size() > n + i) & (!endloop)) {
-                    String newLine = lines.get(n + i);
-
-                    if (newLine != null) {
-                        if (newLine.trim().length() == 0) {
-                            endline = true;
-                            endblock = true;
-                            if (!outputLineStatus) {
-                                features.lineStatus = "LINEEND";
-                                outputLineStatus = true;
-                            }
-                        } else if (newLine.equals("@newline")) {
-                            endline = true;
-                            if (!outputLineStatus) {
-                                features.lineStatus = "LINEEND";
-                                outputLineStatus = true;
-                            }
-                        } else {
-                            endloop = true;
-                        }
+                // look ahead for line status update
+                if ((i + 1) < lines.size()) {
+                    String nextLine = lines.get(i + 1);
+                    if ((nextLine.trim().length() == 0) || (nextLine.trim().equals("@newline"))) {
+                        lineStatus = "LINEEND";
                     }
+                } else if ((i + 1) == lines.size()) {
+                    lineStatus = "LINEEND";
+                }
 
-                    if ((endline) & (!outputLineStatus)) {
-                        features.lineStatus = "LINEEND";
-                        outputLineStatus = true;
-                    }
-                    i++;
+                FeaturesVectorAcknowledgment vector = addFeaturesAcknowledgment(line, lineStatus);
+                result.append(vector.printVector());
+
+                if (lineStatus.equals("LINESTART")) {
+                    lineStatus = "LINEIN";
                 }
             }
-
-            newline = false;
-            if (!outputLineStatus) {
-                features.lineStatus = "LINEIN";
-                outputLineStatus = true;
-            }
-
-            if (text.length() == 1) {
-                features.singleChar = true;
-                ;
-            }
-
-            if (Character.isUpperCase(text.charAt(0))) {
-                features.capitalisation = "INITCAP";
-            }
-
-            if (featureFactory.test_all_capital(text)) {
-                features.capitalisation = "ALLCAP";
-            }
-
-            if (features.capitalisation == null)
-                features.capitalisation = "NOCAPS";
-
-            if (featureFactory.test_digit(text)) {
-                features.digit = "CONTAINSDIGITS";
-            }
-
-            Matcher m = featureFactory.isDigit.matcher(text);
-            if (m.find()) {
-                features.digit = "ALLDIGIT";
-            }
-
-            if (features.digit == null)
-                features.digit = "NODIGIT";
-
-            if (features.punctType == null)
-                features.punctType = "NOPUNCT";
-
-
-            features.label = tag;
-
-            header.append(features.printVector());
-
-            previousTag = tag;
-            previousText = text;
-            n++;
         }
 
-        return header.toString();
+        return result.toString();
+
     }
 
+    static private FeaturesVectorAcknowledgment addFeaturesAcknowledgment(String line, String lineStatus) {
+        FeatureFactory featureFactory = FeatureFactory.getInstance();
+        FeaturesVectorAcknowledgment featuresVectorAcknowledgment = new FeaturesVectorAcknowledgment();
+
+        //List<String> tokens = GrobidAnalyzer.getInstance().tokenize(line);
+        StringTokenizer st = new StringTokenizer(line.trim(), "\t ");
+        //for (String tok : tokens) {
+            /*String word = tok;
+
+            String label = null;
+            if (tok != null) {
+                label = tok;
+            }*/
+
+        if (st.hasMoreTokens()) {
+            String word = st.nextToken();
+
+            String label = null;
+            if (st.hasMoreTokens())
+                label = st.nextToken();
+
+            featuresVectorAcknowledgment.string = word;
+            featuresVectorAcknowledgment.label = label;
+
+            featuresVectorAcknowledgment.lineStatus = lineStatus;
+
+            if (word.length() == 1) {
+                featuresVectorAcknowledgment.singleChar = true;
+            }
+
+            // capital
+            if (featureFactory.test_all_capital(word)) {
+                featuresVectorAcknowledgment.capitalisation = "ALLCAPS";
+            } else if (featureFactory.test_first_capital(word)) {
+                featuresVectorAcknowledgment.capitalisation = "INITCAP";
+            } else
+                featuresVectorAcknowledgment.capitalisation = "NOCAP";
+
+            // digit
+            if (featureFactory.test_number(word)) {
+                featuresVectorAcknowledgment.digit = "ALLDIGIT";
+            } else if (featureFactory.test_digit(word)) {
+                featuresVectorAcknowledgment.digit = "CONTAINDIGIT";
+            } else {
+                featuresVectorAcknowledgment.digit = "NODIGIT";
+            }
+
+            // common name
+            if (featureFactory.test_common(word)) {
+                featuresVectorAcknowledgment.commonName = true;
+            }
+
+            // proper name
+            if (featureFactory.test_names(word)) {
+                featuresVectorAcknowledgment.projectName = true;
+            }
+
+            // find the punctuations
+            Matcher m0 = featureFactory.isPunct.matcher(word);
+            if (m0.find()) {
+                featuresVectorAcknowledgment.punctType = "PUNCT";
+            }
+
+            // token containing special character
+            if ((word.equals("(")) | (word.equals("["))) {
+                featuresVectorAcknowledgment.punctType = "OPENBRACKET";
+            } else if ((word.equals(")")) | (word.equals("]"))) {
+                featuresVectorAcknowledgment.punctType = "ENDBRACKET";
+            } else if (word.equals(".")) {
+                featuresVectorAcknowledgment.punctType = "DOT";
+            } else if (word.equals(",")) {
+                featuresVectorAcknowledgment.punctType = "COMMA";
+            } else if (word.equals("-")) {
+                featuresVectorAcknowledgment.punctType = "HYPHEN";
+            } else if (word.equals("\"") | word.equals("\'") | word.equals("`")) {
+                featuresVectorAcknowledgment.punctType = "QUOTE";
+            }
+
+            if (featuresVectorAcknowledgment.capitalisation == null)
+                featuresVectorAcknowledgment.capitalisation = "NOCAPS";
+
+            if (featuresVectorAcknowledgment.digit == null)
+                featuresVectorAcknowledgment.digit = "NODIGIT";
+
+            if (featuresVectorAcknowledgment.punctType == null)
+                featuresVectorAcknowledgment.punctType = "NOPUNCT";
+
+            featuresVectorAcknowledgment.wordShape = TextUtilities.wordShape(word);
+        }
+        return featuresVectorAcknowledgment;
+    }
 }
