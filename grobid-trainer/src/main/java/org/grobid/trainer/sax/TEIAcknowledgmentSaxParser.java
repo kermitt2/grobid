@@ -2,7 +2,6 @@ package org.grobid.trainer.sax;
 
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -145,8 +144,13 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
     private void writeField(String text) {
         // we segment the text
         //List<String> tokens = TextUtilities.segment(text, TextUtilities.punctuations);
-        /*List<String> tokens = GrobidAnalyzer.getInstance().tokenize(text); // utilize Grobid analyzer for segmenting the text
+        //StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
+        List<String> tokens = GrobidAnalyzer.getInstance().tokenize(text); // utilize Grobid analyzer for segmenting the text
         boolean begin = true;
+
+       /* while (st.hasMoreTokens()) {
+            String tok = st.nextToken().trim();*/
+
         for (String tok : tokens) {
             tok = tok.trim();
 
@@ -174,34 +178,6 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
                 }
             }
 
-            begin = false;
-        }*/
-
-        // we segment the text
-        StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
-        boolean begin = true;
-        while (st.hasMoreTokens()) {
-            String tok = st.nextToken().trim();
-            if (tok.length() == 0) {
-                continue;
-            }
-            if (tok.equals("@newline")) {
-                labeled.add("@newline @newline");
-            } else if (tok.equals("+PAGE+")) {
-                // page break - no influence here
-                labeled.add("@newline");
-            } else {
-                String content = tok;
-                int i = 0;
-                if (content.length() > 0) {
-                    if (begin) {
-                        labeled.add(content + " I-" + currentTag);
-                        begin = false;
-                    } else {
-                        labeled.add(content + " " + currentTag);
-                    }
-                }
-            }
             begin = false;
         }
     }
