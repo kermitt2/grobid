@@ -1,6 +1,8 @@
 package org.grobid.trainer.sax;
 
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -15,7 +17,7 @@ import java.util.StringTokenizer;
  *
  * TEI -> label mapping (9 labels for this model)
  *  	affiliation (<affiliation>): affiliation of individual,
- * 		educational instituation (<educationalInstitution>): educational institution,
+ * 		educational institution (<educationalInstitution>): educational institution,
  * 		funding agency (<fundingAgency>): funding agency,
  * 		grant name (<grantName>): grant name,
  *      grant number (<grantNumber>): grant number,
@@ -30,11 +32,9 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
     private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
     private StringBuffer allContent = new StringBuffer();
 
-    private String output = null;
     private String currentTag = null;
 
     private ArrayList<String> labeled = null; // store line by line the labeled data
-    //public List<List<String>> allTokens = null;
 
     public int n = 0;
 
@@ -84,10 +84,10 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
 
             String allString = allContent.toString().trim();
             allString = allString.replace("@newline", "\n");
-            List<String> tokens = GrobidAnalyzer.getInstance().tokenize(allString);
-            //allTokens.add(tokens);
+            List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(allString);
             allContent = null;
             allString = null;
+            allContent = null;
 
             accumulator.setLength(0);
         } else{
@@ -114,7 +114,9 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
         }
         accumulator.setLength(0);
 
-        if (qName.equals("educationalInstitution")) {
+        if (qName.equals("affiliation")) {
+            currentTag = "<affiliation>";
+        }else if (qName.equals("educationalInstitution")) {
             currentTag = "<educationalInstitution>";
         } else if (qName.equals("fundingAgency")) {
             currentTag = "<fundingAgency>";
@@ -184,7 +186,7 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
                 continue;
             }
             if (tok.equals("@newline")) {
-                labeled.add("@newline");
+                labeled.add("@newline @newline");
             } else if (tok.equals("+PAGE+")) {
                 // page break - no influence here
                 labeled.add("@newline");
