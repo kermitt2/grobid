@@ -160,6 +160,7 @@ public class CitationParser extends AbstractParser {
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
+                bib.setReference(ref.getReferenceText());
                 bds.setResBib(bib);
                 bds.setRawBib(ref.getReferenceText());
                 bds.getResBib().setCoordinates(ref.getCoordinates());
@@ -236,6 +237,7 @@ public class CitationParser extends AbstractParser {
                     BibDataSet bds = new BibDataSet();
                     bds.setRefSymbol(ref.getLabel());
                     bds.setResBib(bib);
+                    bib.setReference(ref.getReferenceText());
                     bds.setRawBib(ref.getReferenceText());
                     bds.getResBib().setCoordinates(ref.getCoordinates());
                     results.add(bds);

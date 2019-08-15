@@ -1,6 +1,7 @@
 package org.grobid.core.data;
 
 import java.util.*;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 
 /**
  * Structure for representing the different information for a citation and its different context of citation.
@@ -98,18 +99,32 @@ public class BibDataSet {
 				+ ", refSymbol=" + refSymbol + ", rawBib=" + rawBib
 				+ ", confidence=" + confidence + ", offsets=" + offsets + "]";
 	}
+
+    public String toTEI() {
+        return toTEI(false);
+    }
     
-	public String toTEI() {
+	public String toTEI(boolean includeRawCitations) {
 		if (resBib != null) {
-            return resBib.toTEI(-1);
+            GrobidAnalysisConfig config = GrobidAnalysisConfig.builder()
+                    .includeRawCitations(includeRawCitations)
+                    .build();
+            return resBib.toTEI(-1, 0, config);
         } else {
             return "";
         }
 	}
     
-	public String toTEI(int p) {
+    public String toTEI(int p) {
+        return toTEI(p, false);
+    }
+
+	public String toTEI(int p, boolean includeRawCitations) {
 		if (resBib != null) {
-            return resBib.toTEI(p);
+            GrobidAnalysisConfig config = GrobidAnalysisConfig.builder()
+                    .includeRawCitations(includeRawCitations)
+                    .build();
+            return resBib.toTEI(p, 0, config);
         } else {
             return "";
         }

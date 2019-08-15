@@ -305,7 +305,7 @@ public class GrobidRestProcessString {
 	 * @return a response object containing the structured xml representation of
 	 *         the affiliation
 	 */
-	public Response processCitationPatentTXT(String text, int consolidate) {
+	public Response processCitationPatentTXT(String text, int consolidate, boolean includeRawCitations) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		Engine engine = null;
@@ -315,7 +315,7 @@ public class GrobidRestProcessString {
 			List<PatentItem> patents = new ArrayList<PatentItem>();
 			List<BibDataSet> articles = new ArrayList<BibDataSet>();						
 			text = text.replaceAll("\\t", " ");
-			String result = engine.processAllCitationsInPatent(text, articles, patents, consolidate);
+			String result = engine.processAllCitationsInPatent(text, articles, patents, consolidate, includeRawCitations);
 
 			if (result == null) {
 				response = Response.status(Status.NO_CONTENT).build();
