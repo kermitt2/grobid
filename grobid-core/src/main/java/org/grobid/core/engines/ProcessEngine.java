@@ -465,7 +465,7 @@ public class ProcessEngine implements Closeable {
                     List<BibDataSet> articles = new ArrayList<BibDataSet>();
                     List<PatentItem> patents = new ArrayList<PatentItem>();
                     result = getEngine().processAllCitationsInXMLPatent(pGbdArgs.getPath2Input() + File.separator + currXML.getName(),
-                            articles, patents, 0);
+                            articles, patents, 0, false);
                     if (currXML.getName().endsWith(".gz")) {
                         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                                 + new File(currXML.getAbsolutePath()).getName().replace(".xml.gz", ".tei.xml"), result);
@@ -499,7 +499,7 @@ public class ProcessEngine implements Closeable {
                     String inputStr = FileUtils.readFileToString(currTXT, "UTF-8");
                     List<BibDataSet> articles = new ArrayList<BibDataSet>();
                     List<PatentItem> patents = new ArrayList<PatentItem>();
-                    result = getEngine().processAllCitationsInPatent(inputStr, articles, patents, 0);
+                    result = getEngine().processAllCitationsInPatent(inputStr, articles, patents, 0, false);
                     IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                             + new File(currTXT.getAbsolutePath()).getName().replace(".txt", ".tei.xml"), result);
                 }
@@ -528,7 +528,7 @@ public class ProcessEngine implements Closeable {
                     List<BibDataSet> articles = new ArrayList<BibDataSet>();
                     List<PatentItem> patents = new ArrayList<PatentItem>();
                     result = getEngine().processAllCitationsInPDFPatent(pGbdArgs.getPath2Input() +
-                            File.separator + currPDF.getName(), articles, patents, 0);
+                            File.separator + currPDF.getName(), articles, patents, 0, false);
                     if (currPDF.getName().endsWith(".pdf")) {
                         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                                 + new File(currPDF.getAbsolutePath()).getName().replace(".pdf", ".tei.xml"), result);
