@@ -2699,10 +2699,16 @@ public class BiblioItem {
             }
 
             if (dedication != null) {
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
                 tei.append("<note type=\"dedication\">" + TextUtilities.HTMLEncode(dedication) + "</note>\n");
             }
 
             if (book_type != null) {
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
                 tei.append("<note type=\"report_type\">" + TextUtilities.HTMLEncode(book_type) + "</note>\n");
             }
 
@@ -2793,9 +2799,20 @@ public class BiblioItem {
                     for (int i = 0; i < indent + 1; i++) {
                         tei.append("\t");
                     }
-                    tei.append("<div type=\"abstract\">" + abstract_ + "</div>\n");
+                    tei.append("<div type=\"abstract\">" + TextUtilities.HTMLEncode(abstract_) + "</div>\n");
                 }
             }
+
+            if (config.getIncludeRawCitations() && !StringUtils.isEmpty(reference) ) {
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                String localReference = TextUtilities.HTMLEncode(reference);
+                localReference = localReference.replace("\n", " ");
+                localReference = localReference.replaceAll("( )+", " ");
+                tei.append("<note type=\"raw_reference\">" + localReference + "</note>\n");
+            }
+
             for (int i = 0; i < indent; i++) {
                 tei.append("\t");
             }
@@ -3910,7 +3927,7 @@ public class BiblioItem {
     private static volatile Pattern page = Pattern.compile("(\\d+)");
 
     /**
-     * Correct fields of the first biblio item based on the second one and he reference string.
+     * Correct fields of the first biblio item based on the second one and the reference string.
      */
     public void postProcessPages() {
         if (pageRange != null) {
@@ -3971,7 +3988,7 @@ public class BiblioItem {
     }
 
     /**
-     * Correct fields of the first biblio item based on the second one and he reference string
+     * Correct fields of the first biblio item based on the second one and the reference string
      */
     public static void correct(BiblioItem bib, BiblioItem bibo) {
         //System.out.println("correct: \n" + bib.toTEI(0));
