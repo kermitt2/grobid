@@ -30,11 +30,7 @@ public class GenericTaggerUtils {
      * Note an empty line in the result will be transformed to a 'null' pointer of a pair
      */
     public static List<Pair<String, String>> getTokensAndLabels(String labeledResult) {
-        Function<List<String>, Pair<String, String>> fromSplits = new Function<List<String>, Pair<String, String>>() {
-            @Override public Pair<String, String> apply(List<String> splits) {
-                return Pair.of(splits.get(0), splits.get(splits.size() - 1));
-            }
-        };
+        Function<List<String>, Pair<String, String>> fromSplits = splits -> Pair.of(splits.get(0), splits.get(splits.size() - 1));
 
         return processLabeledResult(labeledResult, fromSplits);
     }
