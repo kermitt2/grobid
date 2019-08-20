@@ -104,7 +104,7 @@ public final class LabelStat {
     }
 
     public long getSupport() {
-        return observed + falsePositive + falseNegative;
+        return expected;
     }
 
     public double getPrecision() {

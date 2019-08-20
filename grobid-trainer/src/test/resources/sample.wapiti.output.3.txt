@@ -1,0 +1,13 @@
+y 0 0 1 1 NOPUNCT 0 I-<base> I-<base>
+r 0 0 0 0 NOPUNCT 0 <base> <base>
+s 0 0 1 0 NOPUNCT 0 <base> <base>
+
+s 0 0 1 0 NOPUNCT 0 I-<base> I-<prefix>
+
+G 1 0 1 1 NOPUNCT 0 I-<prefix> I-<pow>
+P 1 0 1 1 NOPUNCT 0 I-<base> I-<base>
+a 0 0 1 1 NOPUNCT 0 <base> <base>
+
+G 1 0 1 1 NOPUNCT 0 I-<prefix> I-<base>
+P 1 0 1 1 NOPUNCT 0 I-<base> I-<base>
+a 0 0 1 1 NOPUNCT 0 <base> <base>

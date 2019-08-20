@@ -1,17 +1,15 @@
 package org.grobid.core.engines.tagging;
 
-import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import org.apache.commons.lang3.StringUtils;
-//import org.grobid.core.utilities.Pair;
+import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.utilities.Triple;
 import org.wipo.analyzers.wipokr.utils.StringUtil;
 
-import org.apache.commons.lang3.tuple.Pair;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.regex.Pattern;
 
 /**
@@ -22,6 +20,7 @@ public class GenericTaggerUtils {
 
     public static final String START_ENTITY_LABEL_PREFIX = "I-";
     public static final String START_ENTITY_LABEL_PREFIX_ALTERNATIVE = "B-";
+    public static final String START_ENTITY_LABEL_PREFIX_ALTERNATIVE_2 = "E-";
     public static final Pattern SEPARATOR_PATTERN = Pattern.compile("[\t ]");
 
     /**
@@ -30,31 +29,23 @@ public class GenericTaggerUtils {
      * Note an empty line in the result will be transformed to a 'null' pointer of a pair
      */
     public static List<Pair<String, String>> getTokensAndLabels(String labeledResult) {
-        Function<List<String>, Pair<String, String>> fromSplits = new Function<List<String>, Pair<String, String>>() {
-            @Override public Pair<String, String> apply(List<String> splits) {
-                return Pair.of(splits.get(0), splits.get(splits.size() - 1));
-            }
-        };
-
-        return processLabeledResult(labeledResult, fromSplits);
+        return processLabeledResult(labeledResult, splits -> Pair.of(splits.get(0), splits.get(splits.size() - 1)));
     }
 
     /**
      * @param labeledResult labeled result from a tagger
-     * @return a list of triples - first element in a pair is a token itself, the second is a label (e.g. <footnote> or I-<footnote>) 
+     * @return a list of triples - first element in a pair is a token itself, the second is a label (e.g. <footnote> or I-<footnote>)
      * and the third element is a string with the features
      * Note an empty line in the result will be transformed to a 'null' pointer of a pair
      */
     public static List<Triple<String, String, String>> getTokensWithLabelsAndFeatures(String labeledResult,
                                                                                       final boolean addFeatureString) {
-        Function<List<String>, Triple<String, String, String>> fromSplits = new Function<List<String>, Triple<String, String, String>>() {
-            @Override public Triple<String, String, String> apply(List<String> splits) {
-                String featureString = addFeatureString ? Joiner.on("\t").join(splits.subList(0, splits.size() - 1)) : null;
-                return new Triple<>(
-                    splits.get(0),
-                    splits.get(splits.size() - 1),
-                    featureString);
-            }
+        Function<List<String>, Triple<String, String, String>> fromSplits = splits -> {
+            String featureString = addFeatureString ? Joiner.on("\t").join(splits.subList(0, splits.size() - 1)) : null;
+            return new Triple<>(
+                splits.get(0),
+                splits.get(splits.size() - 1),
+                featureString);
         };
 
         return processLabeledResult(labeledResult, fromSplits);
@@ -82,6 +73,8 @@ public class GenericTaggerUtils {
     }
 
     public static boolean isBeginningOfEntity(String label) {
-        return StringUtils.startsWith(label, START_ENTITY_LABEL_PREFIX) || StringUtil.startsWith(label, START_ENTITY_LABEL_PREFIX_ALTERNATIVE);
+        return StringUtils.startsWith(label, START_ENTITY_LABEL_PREFIX)
+            || StringUtil.startsWith(label, START_ENTITY_LABEL_PREFIX_ALTERNATIVE)
+            || StringUtil.startsWith(label, START_ENTITY_LABEL_PREFIX_ALTERNATIVE_2);
     }
 }
