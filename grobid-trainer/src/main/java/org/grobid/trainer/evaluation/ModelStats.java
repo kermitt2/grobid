@@ -13,7 +13,7 @@ import java.util.StringTokenizer;
 import static org.grobid.core.engines.tagging.GenericTaggerUtils.getPlainLabel;
 
 /**
- * Represent all different evaluation given a specific model
+ * Represent all different evaluation for a specific model
  */
 public class ModelStats {
     private int totalInstances;
@@ -29,8 +29,8 @@ public class ModelStats {
         this.rawResults = results;
         Pair<Integer, Integer> doubleDoublePair = computeInstanceStatistics(results);
 
-        this.setTotalInstances(doubleDoublePair.getRight());
-        this.setCorrectInstance(doubleDoublePair.getLeft());
+        this.setTotalInstances(doubleDoublePair.getLeft());
+        this.setCorrectInstance(doubleDoublePair.getRight());
     }
 
     public Pair<Integer, Integer> computeInstanceStatistics(String results) {
