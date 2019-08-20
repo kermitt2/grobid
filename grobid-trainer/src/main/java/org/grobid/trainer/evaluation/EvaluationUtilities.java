@@ -18,6 +18,8 @@ import java.util.function.Function;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.grobid.core.engines.tagging.GenericTaggerUtils.getPlainLabel;
+
 /**
  * Generic evaluation of a single-CRF model processing given an expected result.
  *
@@ -249,7 +251,7 @@ public class EvaluationUtilities {
                 (!obtainedLabel.equals(getPlainLabel(previousObtainedLabel)))) {
                 // new obtained field
                 currentObtainedPosition.end = pos - 1;
-                Pair theField = new Pair<>(getPlainLabel(previousObtainedLabel),
+                Pair<String, OffsetPosition> theField = new Pair<>(getPlainLabel(previousObtainedLabel),
                     currentObtainedPosition);
                 currentObtainedPosition = new OffsetPosition();
                 currentObtainedPosition.start = pos;
@@ -260,7 +262,7 @@ public class EvaluationUtilities {
                 (!expectedLabel.equals(getPlainLabel(previousExpectedLabel)))) {
                 // new expected field
                 currentExpectedPosition.end = pos - 1;
-                Pair theField = new Pair<>(getPlainLabel(previousExpectedLabel),
+                Pair<String, OffsetPosition> theField = new Pair<>(getPlainLabel(previousExpectedLabel),
                     currentExpectedPosition);
                 currentExpectedPosition = new OffsetPosition();
                 currentExpectedPosition.start = pos;
@@ -274,14 +276,14 @@ public class EvaluationUtilities {
         // last fields of the sequence
         if ((previousObtainedLabel != null)) {
             currentObtainedPosition.end = pos - 1;
-            Pair theField = new Pair<>(getPlainLabel(previousObtainedLabel),
+            Pair<String, OffsetPosition> theField = new Pair<>(getPlainLabel(previousObtainedLabel),
                 currentObtainedPosition);
             obtainedFields.add(theField);
         }
 
         if ((previousExpectedLabel != null)) {
             currentExpectedPosition.end = pos - 1;
-            Pair theField = new Pair<>(getPlainLabel(previousExpectedLabel),
+            Pair<String, OffsetPosition> theField = new Pair<>(getPlainLabel(previousExpectedLabel),
                 currentExpectedPosition);
             expectedFields.add(theField);
         }
@@ -335,15 +337,6 @@ public class EvaluationUtilities {
         return fieldStats;
     }
 
-
-    private static String getPlainLabel(String label) {
-        if (label == null)
-            return null;
-        if (label.startsWith("I-") || label.startsWith("E-") || label.startsWith("B-")) {
-            return label.substring(2, label.length());
-        } else
-            return label;
-    }
 
     private static void processCounters(Stats stats, String obtained, String expected) {
         LabelStat expectedStat = stats.getLabelStat(expected);

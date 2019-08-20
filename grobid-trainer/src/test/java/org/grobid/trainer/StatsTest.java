@@ -31,6 +31,7 @@ public class StatsTest {
         target.getLabelStat("MIAO").setFalsePositive(3);
         target.getLabelStat("MIAO").setFalseNegative(1);
         assertThat(target.getLabelStat("MIAO").getPrecision(), is(0.0));
+        assertThat(target.getLabelStat("MIAO").getSupport(), is(4L));
     }
 
     @Test

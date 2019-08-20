@@ -4,6 +4,7 @@ import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
 import java.nio.charset.StandardCharsets;
+import java.util.TreeMap;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -22,6 +23,9 @@ public class EvaluationUtilitiesTest {
         assertThat(labelstat2.getObserved(), is(1));
         assertThat(labelstat1.getExpected(), is(4));
         assertThat(labelstat2.getExpected(), is(1));
+
+        assertThat(labelstat1.getSupport(), is(4L));
+        assertThat(labelstat2.getSupport(), is(1L));
     }
 
     @Test
@@ -37,6 +41,9 @@ public class EvaluationUtilitiesTest {
         assertThat(labelstat2.getObserved(), is(1));
         assertThat(labelstat1.getExpected(), is(2));
         assertThat(labelstat2.getExpected(), is(1));
+
+        assertThat(labelstat1.getSupport(), is(2L));
+        assertThat(labelstat2.getSupport(), is(1L));
     }
 
     @Test
@@ -49,9 +56,12 @@ public class EvaluationUtilitiesTest {
         LabelStat labelstat2 = wordStats.getLabelStat("<2>");
 
         assertThat(labelstat1.getObserved(), is(0));
-        assertThat(labelstat2.getObserved(), is(0));
         assertThat(labelstat1.getFalseNegative(), is(5));
+        assertThat(labelstat1.getSupport(), is(5L));
+
+        assertThat(labelstat2.getObserved(), is(0));
         assertThat(labelstat2.getFalsePositive(), is(5));
+        assertThat(labelstat2.getSupport(), is(0L));
     }
 
     @Test
@@ -63,9 +73,12 @@ public class EvaluationUtilitiesTest {
         LabelStat labelstat2 = fieldStats.getLabelStat("<2>");
 
         assertThat(labelstat1.getObserved(), is(0));
-        assertThat(labelstat2.getObserved(), is(0));
         assertThat(labelstat1.getExpected(), is(1));
+        assertThat(labelstat1.getSupport(), is(1L));
+
+        assertThat(labelstat2.getObserved(), is(0));
         assertThat(labelstat2.getExpected(), is(0));
+        assertThat(labelstat2.getSupport(), is(0L));
     }
 
     @Test
@@ -83,11 +96,13 @@ public class EvaluationUtilitiesTest {
         assertThat(labelstat1.getExpected(), is(4));
         assertThat(labelstat1.getFalseNegative(), is(0));
         assertThat(labelstat1.getFalsePositive(), is(1));
+        assertThat(labelstat1.getSupport(), is(4L));
 
         assertThat(labelstat2.getObserved(), is(0));
         assertThat(labelstat2.getExpected(), is(1));
         assertThat(labelstat2.getFalseNegative(), is(1));
         assertThat(labelstat2.getFalsePositive(), is(0));
+        assertThat(labelstat2.getSupport(), is(1L));
     }
 
     @Test
@@ -102,9 +117,12 @@ public class EvaluationUtilitiesTest {
         LabelStat labelstat2 = fieldStats.getLabelStat("<2>");
 
         assertThat(labelstat1.getObserved(), is(0));
-        assertThat(labelstat2.getObserved(), is(0));
         assertThat(labelstat1.getExpected(), is(2));
+        assertThat(labelstat1.getSupport(), is(2L));
+
+        assertThat(labelstat2.getObserved(), is(0));
         assertThat(labelstat2.getExpected(), is(1));
+        assertThat(labelstat2.getSupport(), is(1L));
     }
 
     @Test
@@ -116,13 +134,16 @@ public class EvaluationUtilitiesTest {
         LabelStat labelstat2 = wordStats.getLabelStat("<2>");
 
         assertThat(labelstat1.getObserved(), is(4));
-        assertThat(labelstat2.getObserved(), is(0));
         assertThat(labelstat1.getExpected(), is(4));
-        assertThat(labelstat2.getExpected(), is(1));
         assertThat(labelstat1.getFalseNegative(), is(0));
-        assertThat(labelstat2.getFalseNegative(), is(1));
         assertThat(labelstat1.getFalsePositive(), is(1));
+        assertThat(labelstat1.getSupport(), is(4L));
+
+        assertThat(labelstat2.getObserved(), is(0));
+        assertThat(labelstat2.getExpected(), is(1));
+        assertThat(labelstat2.getFalseNegative(), is(1));
         assertThat(labelstat2.getFalsePositive(), is(0));
+        assertThat(labelstat2.getSupport(), is(1L));
     }
 
     @Test
@@ -311,7 +332,19 @@ public class EvaluationUtilitiesTest {
         assertThat(personLabelStats.getExpected(), is(0));
         assertThat(personLabelStats.getFalseNegative(), is(0));
         assertThat(personLabelStats.getFalsePositive(), is(1));
+    }
 
+    @Test
+    public void testTokenLevelStats3_realCase() throws Exception {
+        String result = IOUtils.toString(this.getClass().getResourceAsStream("/sample.wapiti.output.3.txt"), StandardCharsets.UTF_8);
+
+
+        Stats fieldStats = EvaluationUtilities.fieldLevelStats(result);
+
+        TreeMap<String, LabelResult> labelsResults = fieldStats.getLabelsResults();
+
+        assertThat(labelsResults.get("<base>").getSupport(), is(4L));
+        assertThat(labelsResults.get("<prefix>").getSupport(), is(2L));
 
     }
 }
