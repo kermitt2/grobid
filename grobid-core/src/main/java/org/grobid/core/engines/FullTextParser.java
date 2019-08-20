@@ -162,18 +162,52 @@ public class FullTextParser extends AbstractParser {
                     }
                 }
             }
+
             // structure the abstract using the fulltext model
             if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {
                 List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
                 if ( (abstractTokens != null) && (abstractTokens.size()>0) ) {
                     SortedSet<DocumentPiece> documentParts = new TreeSet<DocumentPiece>();
-                    int endInd = abstractTokens.size()-1;
-                    int posStartAbstract = getDocIndexToken(doc, abstractTokens.get(0));
-                    int posEndAbstract = getDocIndexToken(doc, abstractTokens.get(endInd));
-                    DocumentPointer dp1 = new DocumentPointer(doc, abstractTokens.get(0).getBlockPtr(), posStartAbstract);
-                    DocumentPointer dp2 = new DocumentPointer(doc, abstractTokens.get(endInd).getBlockPtr(), posEndAbstract);
-                    DocumentPiece piece = new DocumentPiece(dp1, dp2);
-                    documentParts.add(piece);
+                    // identify continuous sequence of layout tokens in the abstract
+                    int posStartAbstractPiece = -1;
+                    int currentOffsetAbstract = -1;
+                    int startBlockPtr = -1;
+                    LayoutToken previousAbstractToken = null;
+                    for(LayoutToken abstractToken : abstractTokens) {
+                        if (currentOffsetAbstract == -1) {
+                            currentOffsetAbstract = abstractToken.getOffset();
+                            posStartAbstractPiece = getDocIndexToken(doc, abstractToken);
+                            startBlockPtr = abstractToken.getBlockPtr();
+                        } else {
+                            if (abstractToken.getOffset() != currentOffsetAbstract + previousAbstractToken.getText().length()) {
+                                // new DocumentPiece to be added 
+                                DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, posStartAbstractPiece);
+                                DocumentPointer dp2 = new DocumentPointer(doc, 
+                                    previousAbstractToken.getBlockPtr(), 
+                                    getDocIndexToken(doc, previousAbstractToken));
+                                DocumentPiece piece = new DocumentPiece(dp1, dp2);
+                                documentParts.add(piece);
+
+                                // set index for the next DocumentPiece
+                                currentOffsetAbstract = abstractToken.getOffset();
+                                posStartAbstractPiece = getDocIndexToken(doc, abstractToken);
+                                startBlockPtr = abstractToken.getBlockPtr();
+                            } 
+                        }
+                        currentOffsetAbstract = abstractToken.getOffset();
+                        previousAbstractToken = abstractToken;
+                    }
+                    // we still need to add the last document piece
+                    // conditional below should always be true because abstract is not null if we reach this part, but paranoia is good when programming 
+                    if (posStartAbstractPiece != -1) {
+                        DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, posStartAbstractPiece);
+                        DocumentPointer dp2 = new DocumentPointer(doc, 
+                            previousAbstractToken.getBlockPtr(), 
+                            getDocIndexToken(doc, previousAbstractToken));
+                        DocumentPiece piece = new DocumentPiece(dp1, dp2);
+                        documentParts.add(piece);
+                    }
+
                     featSeg = getBodyTextFeatured(doc, documentParts);
                     String rese2 = null;
                     List<LayoutToken> tokenizationsAbstract = null;
