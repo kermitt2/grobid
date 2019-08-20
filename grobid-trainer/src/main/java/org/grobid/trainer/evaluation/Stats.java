@@ -8,6 +8,9 @@ import org.grobid.core.utilities.TextUtilities;
 
 /**
  * Contains the single statistic computation for evaluation
+ *
+ * This class is state full. The statistics needs to be recomputed every time
+ * something is changed (the flag requiredToRecomputeMetrics).
  */
 public final class Stats {
     private final TreeMap<String, LabelStat> labelStats;
