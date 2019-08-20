@@ -139,6 +139,7 @@ Convert the complete input document into TEI XML format (header, body and biblio
 | POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
 |   		| 					  |						 |consolidateHeader| optional 	| consolidateHeader is a string of value 0 (no consolidation) or 1 (consolidate and inject all extra metadata, default value), or 2 (consolidate and inject only the DOI value). |
 |   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate and inject all extra metadata), or 2 (consolidate and inject only the DOI value). |
+|           |                     |                      |includeRawCitations| optional | includeRawCitations is a boolean value, 0 (default. do not include raw reference string in the result) or 1 (include raw reference string in the result). |
 |   		| 					  |						 |teiCoordinates| optional | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details |
 
 Response status codes:
@@ -170,6 +171,12 @@ fulltext extraction and add coordinates for all the supported coordinate element
 > curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=persName --form teiCoordinates=figure --form teiCoordinates=ref --form teiCoordinates=biblStruct --form teiCoordinates=formula localhost:8070/api/processFulltextDocument
 ```
 
+Regarding the bibliographical references, it is possible to include the original raw reference string in the parsed bibliographical result with the parameter `includeRawCitations` set to 1: 
+
+```bash
+curl -v --form input=@./thefile.pdf --form includeRawCitations=1 localhost:8070/api/processFulltextDocument
+```
+
 #### /api/processReferences
 
 Extract and convert all the bibliographical references present in the input document into TEI XML format. 
@@ -178,6 +185,7 @@ Extract and convert all the bibliographical references present in the input docu
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
 |   		| 					  |						 |consolidateCitations| optional 	| is a string of value 0 (no consolidation, default value) or 1 (consolidate all found bib. ref. and inject all extra metadata), or 2 (consolidate all found bib. ref. and inject only the DOI value). |
+|           |                     |                      |includeRawCitations| optional | includeRawCitations is a boolean value, 0 (default. do not include raw reference string in the result) or 1 (include raw reference string in the result). |
 
 Response status codes:
 
@@ -194,6 +202,12 @@ A `503` error with the default parallel mode normally means that all the threads
 You can test this service with the **cURL** command lines, for instance extraction and parsing of all references from a PDF in the current directory without consolidation (default value):
 ```bash
 curl -v --form input=@./thefile.pdf localhost:8070/api/processReferences
+```
+
+It is possible to include the original raw reference string in the parsed result with the parameter `includeRawCitations` set to 1: 
+
+```bash
+curl -v --form input=@./thefile.pdf --form includeRawCitations=1 localhost:8070/api/processReferences
 ```
 
 ### Raw text to TEI conversion services
@@ -461,6 +475,7 @@ Extract and parse the patent and non patent citations in the description of a pa
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| application/x-www-form-urlencoded | application/xml  	| input | required	| patent text to be processed as raw string|
 |   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
+|           |                     |                      |includeRawCitations| optional | for non patent citations, includeRawCitations is a boolean value, 0 (default. do not include raw reference string in the result) or 1 (include raw reference string in the result). |
 
 
 Response status codes:
@@ -518,6 +533,7 @@ Extract and parse the patent and non patent citations in the description of a pa
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data | application/xml  	| input | required	| XML file in ST36 standard of the patent document to be processed |
 |   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
+|           |                     |                      |includeRawCitations| optional | for non patent citations, includeRawCitations is a boolean value, 0 (default. do not include raw reference string in the result) or 1 (include raw reference string in the result). |
 
 
 Response status codes:
@@ -532,6 +548,47 @@ Response status codes:
 
 A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the capacities of the server and the size of the input document, we suggest 5-10 seconds for the `processCitationPatentST36` service. 
 
+For non patent citations, it is possible to include the original raw reference string in the parsed result with the parameter `includeRawCitations` set to 1, for instance: 
+
+```bash
+curl --form input=@/home/lopez/grobid/grobid-core/src/test/resources/s/006271747.xml --form includeRawCitations=1 localhost:8070/api/processCitationPatentST36
+```
+
+```xml
+<biblStruct >
+    <analytic>
+        <title/>
+        <author>
+            <persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><forename type="middle">J</forename><surname>Vaughan</surname></persName>
+        </author>
+    </analytic>
+    <monogr>
+        <title level="j">Nat.Biotech</title>
+        <imprint>
+            <biblScope unit="volume">14</biblScope>
+            <biblScope unit="page" from="309" to="314" />
+            <date type="published" when="1996" />
+        </imprint>
+    </monogr>
+    <note type="raw_reference"> Vaughan, T.J. et al., Nat.Biotech., 14:309-314(1996)</note>
+</biblStruct>
+
+
+<biblStruct >
+    <monogr>
+        <title/>
+        <author>
+            <persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Perkin</forename><surname>Elmer</surname></persName>
+        </author>
+        <imprint>
+            <biblScope unit="volume">1</biblScope>
+            <biblScope unit="page">1000</biblScope>
+        </imprint>
+    </monogr>
+    <note type="report_type">Cat.1244-360</note>
+    <note type="raw_reference">Perkin Elmer, Cat.1244-360, 1:1000</note>
+</biblStruct>
+```
 
 #### /api/processCitationPatentPDF
 
@@ -543,6 +600,7 @@ Extract and parse the patent and non patent citations in the description of a pa
 |---		|---				  |---					 |---			|---			|--- 						|
 | POST, PUT	| multipart/form-data | application/xml  	| input | required	| PDF file of the patent document to be processed |
 |   		| 					  |						 |consolidateCitations| optional | consolidateCitations is a string of value 0 (no consolidation, default value) or 1 (consolidate the citation and inject extra metadata) or 2 (consolidate and inject DOI only) |
+|           |                     |                      |includeRawCitations| optional | for non patent citations, includeRawCitations is a boolean value, 0 (default. do not include raw reference string in the result) or 1 (include raw reference string in the result). |
 
 
 Response status codes:

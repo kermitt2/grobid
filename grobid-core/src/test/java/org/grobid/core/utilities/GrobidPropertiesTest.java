@@ -74,6 +74,7 @@ public class GrobidPropertiesTest {
                 .getNativeLibraryPath().getCanonicalFile());
     }
 
+    @Test
     public void testIsDeLFTRedirectOutputFalseByDefault() throws IOException {
         assertFalse(GrobidProperties.isDeLFTRedirectOutput());
     }
@@ -86,6 +87,7 @@ public class GrobidPropertiesTest {
         assertTrue(GrobidProperties.isDeLFTRedirectOutput());
     }
 
+    @Test
     public void testDeLFTPackageWithDefaultPackage() throws IOException {
         GrobidProperties.getProps().remove(
             GrobidPropertyKeys.PROP_GROBID_DELFT_PACKAGE

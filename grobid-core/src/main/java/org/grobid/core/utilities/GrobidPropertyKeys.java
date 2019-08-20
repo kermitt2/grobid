@@ -112,4 +112,7 @@ public interface GrobidPropertyKeys {
      * The defined paths to create.
      */
     String[] PATHES_TO_CREATE = {PROP_TMP_PATH};
+
+
+    String PYTHON_VIRTUALENV_DIRECTORY = "grobid.delft.python.virtualEnv";
 }
