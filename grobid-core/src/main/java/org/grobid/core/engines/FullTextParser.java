@@ -2,6 +2,7 @@ package org.grobid.core.engines;
 
 import com.google.common.collect.Iterables;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.io.FileUtils;
 
@@ -52,6 +53,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
@@ -145,7 +147,7 @@ public class FullTextParser extends AbstractParser {
                 // above, use the segmentation model result
                 if (doc.getMetadata() != null) {
                     Metadata metadata = doc.getMetadata();
-                    if (metadata.getTitle() != null)
+                    if (metadata.getTitle() != null && resHeader.getTitle() == null)
                         resHeader.setTitle(metadata.getTitle());
                     if (metadata.getAuthor() != null) {
                         resHeader.setAuthors(metadata.getAuthor());
@@ -164,63 +166,11 @@ public class FullTextParser extends AbstractParser {
             }
 
             // structure the abstract using the fulltext model
-            if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {
-                List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
-                if ( (abstractTokens != null) && (abstractTokens.size()>0) ) {
-                    if ( (abstractTokens != null) && (abstractTokens.size()>0) ) {
-                        Pair<String, List<LayoutToken>> abstractProcessed = processShort(abstractTokens, doc);
-                        if (abstractProcessed != null) {
-                            resHeader.setLabeledAbstract(abstractProcessed.getLeft());
-                            resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
-                        }
-                    }
-                }
-            }
 
-            // structure the abstract using the fulltext model
-            /*if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {
+            if (isNotBlank(resHeader.getAbstract())) {
                 List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
-                if ( (abstractTokens != null) && (abstractTokens.size()>0) ) {
-                    SortedSet<DocumentPiece> documentParts = new TreeSet<DocumentPiece>();
-                    // identify continuous sequence of layout tokens in the abstract
-                    int posStartAbstractPiece = -1;
-                    int currentOffsetAbstract = -1;
-                    int startBlockPtr = -1;
-                    LayoutToken previousAbstractToken = null;
-                    for(LayoutToken abstractToken : abstractTokens) {
-                        if (currentOffsetAbstract == -1) {
-                            currentOffsetAbstract = abstractToken.getOffset();
-                            posStartAbstractPiece = getDocIndexToken(doc, abstractToken);
-                            startBlockPtr = abstractToken.getBlockPtr();
-                        } else {
-                            if (abstractToken.getOffset() != currentOffsetAbstract + previousAbstractToken.getText().length()) {
-                                // new DocumentPiece to be added 
-                                DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, posStartAbstractPiece);
-                                DocumentPointer dp2 = new DocumentPointer(doc, 
-                                    previousAbstractToken.getBlockPtr(), 
-                                    getDocIndexToken(doc, previousAbstractToken));
-                                DocumentPiece piece = new DocumentPiece(dp1, dp2);
-                                documentParts.add(piece);
-
-                                // set index for the next DocumentPiece
-                                currentOffsetAbstract = abstractToken.getOffset();
-                                posStartAbstractPiece = getDocIndexToken(doc, abstractToken);
-                                startBlockPtr = abstractToken.getBlockPtr();
-                            } 
-                        }
-                        currentOffsetAbstract = abstractToken.getOffset();
-                        previousAbstractToken = abstractToken;
-                    }
-                    // we still need to add the last document piece
-                    // conditional below should always be true because abstract is not null if we reach this part, but paranoia is good when programming 
-                    if (posStartAbstractPiece != -1) {
-                        DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, posStartAbstractPiece);
-                        DocumentPointer dp2 = new DocumentPointer(doc, 
-                            previousAbstractToken.getBlockPtr(), 
-                            getDocIndexToken(doc, previousAbstractToken));
-                        DocumentPiece piece = new DocumentPiece(dp1, dp2);
-                        documentParts.add(piece);
-                    }
+                if (CollectionUtils.isNotEmpty(abstractTokens)) {
+                    SortedSet<DocumentPiece> documentParts = collectPiecesFromLayoutTokens(abstractTokens, doc);
 
                     featSeg = getBodyTextFeatured(doc, documentParts);
                     String rese2 = null;
@@ -230,13 +180,13 @@ public class FullTextParser extends AbstractParser {
                         // document segmentation
                         String abstractText = featSeg.getLeft();
                         tokenizationsAbstract = featSeg.getRight().getTokenization();
-                        if (isNotEmpty(trim(abstractText))) 
+                        if (isNotEmpty(trim(abstractText)))
                             rese2 = label(abstractText);
                         resHeader.setLabeledAbstract(rese2);
                         resHeader.setLayoutTokensForLabel(tokenizationsAbstract, TaggingLabels.HEADER_ABSTRACT);
                     }
                 }
-            }*/
+            }
 
             // citation processing
             // consolidation, if selected, is not done individually for each citation but 
@@ -316,7 +266,7 @@ public class FullTextParser extends AbstractParser {
 				LOGGER.debug("Fulltext model: The featured body is empty");
 			}
 
-            
+
 			// possible annexes (view as a piece of full text similar to the body)
 			documentBodyParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
             featSeg = getBodyTextFeatured(doc, documentBodyParts);
@@ -347,79 +297,85 @@ public class FullTextParser extends AbstractParser {
         }
     }
 
+    protected SortedSet<DocumentPiece> collectPiecesFromLayoutTokens(List<LayoutToken> tokensList, Document doc) {
+        SortedSet<DocumentPiece> documentParts = new TreeSet<>();
+        // identify continuous sequence of layout tokens in the token list
+        int positionStartPiece = -1;
+        int currentOffset = -1;
+        int startBlockPtr = -1;
+        LayoutToken previousAbstractToken = null;
+        for (LayoutToken currentToken : tokensList) {
+            if (currentOffset == -1) {
+                positionStartPiece = getDocIndexToken(doc, currentToken);
+                startBlockPtr = currentToken.getBlockPtr();
+            } else {
+                if (currentToken.getOffset() != currentOffset + previousAbstractToken.getText().length()) {
+                    // new DocumentPiece to be added
+                    DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, positionStartPiece);
+                    DocumentPointer dp2 = new DocumentPointer(doc,
+                        previousAbstractToken.getBlockPtr(),
+                        getDocIndexToken(doc, previousAbstractToken));
+                    DocumentPiece piece = new DocumentPiece(dp1, dp2);
+                    documentParts.add(piece);
+
+                    // set index for the next DocumentPiece
+                    positionStartPiece = getDocIndexToken(doc, currentToken);
+                    startBlockPtr = currentToken.getBlockPtr();
+                }
+            }
+            currentOffset = currentToken.getOffset();
+            previousAbstractToken = currentToken;
+        }
+        // we still need to add the last document piece
+        // conditional below should always be true because abstract is not null if we reach this part, but paranoia is good when programming
+        if (positionStartPiece != -1) {
+            DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, positionStartPiece);
+            DocumentPointer dp2 = new DocumentPointer(doc,
+                previousAbstractToken.getBlockPtr(),
+                getDocIndexToken(doc, previousAbstractToken));
+            DocumentPiece piece = new DocumentPiece(dp1, dp2);
+            documentParts.add(piece);
+        }
+        return documentParts;
+    }
+
     /**
      * Process a simple segment of layout tokens with the full text model.
      * Return null if provided Layout Tokens is empty or if structuring failed. 
      */
     public Pair<String, List<LayoutToken>> processShortNew(List<LayoutToken> tokens, Document doc) {
-        if (tokens == null || tokens.size() == 0) 
+        if (CollectionUtils.isEmpty(tokens))
             return null;
 
-        SortedSet<DocumentPiece> documentParts = new TreeSet<DocumentPiece>();
-        // identify continuous sequence of layout tokens in the abstract
-        int posStartPiece = -1;
-        int currentOffset = -1;
-        int startBlockPtr = -1;
-        LayoutToken previousToken = null;
-        for(LayoutToken token : tokens) {
-            if (currentOffset == -1) {
-                currentOffset = token.getOffset();
-                posStartPiece = getDocIndexToken(doc, token);
-                startBlockPtr = token.getBlockPtr();
-            } else {
-                if (token.getOffset() != currentOffset + previousToken.getText().length()) {
-                    // new DocumentPiece to be added 
-                    DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, posStartPiece);
-                    DocumentPointer dp2 = new DocumentPointer(doc, 
-                        previousToken.getBlockPtr(), 
-                        getDocIndexToken(doc, previousToken));
-                    DocumentPiece piece = new DocumentPiece(dp1, dp2);
-                    documentParts.add(piece);
-
-                    // set index for the next DocumentPiece
-                    currentOffset = token.getOffset();
-                    posStartPiece = getDocIndexToken(doc, token);
-                    startBlockPtr = token.getBlockPtr();
-                } 
-            }
-            currentOffset = token.getOffset();
-            previousToken = token;
-        }
-        // we still need to add the last document piece
-        // conditional below should always be true because abstract is not null if we reach this part, but paranoia is good when programming 
-        if (posStartPiece != -1) {
-            DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, posStartPiece);
-            DocumentPointer dp2 = new DocumentPointer(doc, 
-                previousToken.getBlockPtr(), 
-                getDocIndexToken(doc, previousToken));
-            DocumentPiece piece = new DocumentPiece(dp1, dp2);
-            documentParts.add(piece);
-        }
+        SortedSet<DocumentPiece> documentParts = collectPiecesFromLayoutTokens(tokens, doc);
 
         Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentParts);
-        String res = null;
-        List<LayoutToken> tokenizations = null;
+        String res = "";
+        List<LayoutToken> layoutTokenization = new ArrayList<>();
         if (featSeg != null) {
-            // if featSeg is null, it usually means that no body segment is found in the
-            // document segmentation
-            String processedText = featSeg.getLeft();
-            tokenizations = featSeg.getRight().getTokenization();
-            // here, tokenizations should be identical to the provided tokens
-            if (isNotEmpty(trim(processedText))) 
-                res = label(processedText);
-        } else
+            String featuredText = featSeg.getLeft();
+            LayoutTokenization layouts = featSeg.getRight();
+            if (layouts != null)
+                layoutTokenization = layouts.getTokenization();
+            if (isNotBlank(featuredText)) {
+                res = label(featuredText);
+            }
+        }  else
             return null;
 
-        return Pair.of(res, tokenizations);
+        return Pair.of(res, layoutTokenization);
     }
 
 
     public Pair<String, List<LayoutToken>> processShort(List<LayoutToken> tokens, Document doc) {
-        SortedSet<DocumentPiece> documentParts = new TreeSet<DocumentPiece>();
+        if (CollectionUtils.isEmpty(tokens))
+            return null;
+
+        SortedSet<DocumentPiece> documentParts = new TreeSet<>();
 
         // we need to identify all the continuous chunks of tokens, and ignore the others
-        List<List<LayoutToken>> tokenChunks = new ArrayList<List<LayoutToken>>();
-        List<LayoutToken> currentChunk = new ArrayList<LayoutToken>();
+        List<List<LayoutToken>> tokenChunks = new ArrayList<>();
+        List<LayoutToken> currentChunk = new ArrayList<>();
         int currentPos = 0;
         for(LayoutToken token : tokens) {
             if (currentChunk.size() == 0) {
@@ -427,7 +383,7 @@ public class FullTextParser extends AbstractParser {
                 currentPos = token.getOffset() + token.getText().length();
             } else {
                 int tokenPos = token.getOffset();
-                if (currentPos+1 == tokenPos) {
+                if (currentPos == tokenPos) {
                     // continous
                     currentChunk.add(token);
                     currentPos = token.getOffset() + token.getText().length();
@@ -457,7 +413,7 @@ public class FullTextParser extends AbstractParser {
         List<LayoutToken> layoutTokenization = null;
         if (featSeg != null) {
             String featuredText = featSeg.getLeft();
-            LayoutTokenization layouts = featSeg.getRight();    
+            LayoutTokenization layouts = featSeg.getRight();
             if (layouts != null)
                 layoutTokenization = layouts.getTokenization();
             if ( (featuredText != null) && (featuredText.trim().length() > 0) ) {               
@@ -466,7 +422,6 @@ public class FullTextParser extends AbstractParser {
         }
         return Pair.of(res, layoutTokenization);
     }
-
 
 	static public Pair<String, LayoutTokenization> getBodyTextFeatured(Document doc,
                                                                        SortedSet<DocumentPiece> documentBodyParts) {
@@ -1263,7 +1218,7 @@ public class FullTextParser extends AbstractParser {
 
                     // we write the header untagged
                     String outPathHeader = pathTEI + File.separator + pdfFileName.replace(".pdf", ".training.header");
-                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), "UTF-8");
+                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), StandardCharsets.UTF_8);
                     writer.write(header + "\n");
                     writer.close();
 
