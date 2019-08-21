@@ -313,12 +313,7 @@ public class Document implements Serializable {
             LOGGER.error("Fail tokenization for " + text, e);
         }
 
-        tokenizations = Lists.transform(toks, new Function<String, LayoutToken>() {
-            @Override
-            public LayoutToken apply(String s) {
-                return new LayoutToken(s);
-            }
-        });
+        tokenizations = toks.stream().map(LayoutToken::new).collect(Collectors.toList());
 
         blocks = new ArrayList<>();
         Block b = new Block();
