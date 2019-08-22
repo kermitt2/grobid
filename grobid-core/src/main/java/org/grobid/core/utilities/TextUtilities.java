@@ -56,8 +56,16 @@ public class TextUtilities {
     static public final Pattern arXivPattern = Pattern
         .compile("(arXiv\\s?(\\.org)?\\s?\\:\\s?\\d{4}\\s?\\.\\s?\\d{4,5}(v\\d+)?)|(arXiv\\s?(\\.org)?\\s?\\:\\s?[ a-zA-Z\\-\\.]*\\s?/\\s?\\d{7}(v\\d+)?)");
 
+    // regular expression for PubMed identifiers, last group gives the PMID digits
+    static public final Pattern pmidPattern = Pattern.compile("((PMID)|(Pub(\\s)?Med(\\s)?(ID)?))(\\s)?(\\:)?(\\s)*(\\d{1,8})");
+
+    // regular expression for PubMed Central identifiers (note: contrary to PMID, we include the prefix PMC here, see 
+    // https://www.ncbi.nlm.nih.gov/pmc/pmctopmid/ for instance), last group gives the PMC ID digits   
+    static public final Pattern pmcidPattern = Pattern
+        .compile("((PMC\\s?(ID)?)|(Pub(\\s)?Med(\\s)?(Central)?(\\s)?(ID)?))(\\s)?(\\:)?(\\s)*(\\d{1,9})");
+
     // a regular expression for identifying url pattern in text
-    // TODO: maybe find a better regex 
+    // TODO: maybe find a better regex (better == more robust, not more "standard")
     static public final Pattern urlPattern = Pattern
         .compile("(?i)(https?|ftp)\\s?:\\s?//\\s?[-A-Z0-9+&@#/%?=~_()|!:,.;]*[-A-Z0-9+&@#/%=~_()|]");
 
