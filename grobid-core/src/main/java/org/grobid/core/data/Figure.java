@@ -310,7 +310,8 @@ public class Figure {
                     }
 
                     TaggingLabel clusterLabel = cluster.getTaggingLabel();
-                    String clusterContent = LayoutTokensUtil.normalizeText(cluster.concatTokens());
+                    //String clusterContent = LayoutTokensUtil.normalizeText(cluster.concatTokens());
+                    String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
                     if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
                         try {
                             List<Node> refNodes = formatter.markReferencesTEILuceneBased(
