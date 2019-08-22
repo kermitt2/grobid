@@ -11,6 +11,11 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 import java.util.List;
 
+/**
+ * Created by Tanti, 2019
+ */
+
+
 public class AcknowledgmentTrainer extends AbstractTrainer {
     public AcknowledgmentTrainer() {
         super(GrobidModels.ACKNOWLEDGMENT);
@@ -50,8 +55,7 @@ public class AcknowledgmentTrainer extends AbstractTrainer {
             if (evalOutputPath != null)
                 System.out.println("outputPath for evaluation data: " + evalOutputPath);
 
-            // we convert the tei files into the usual CRF label format
-            // we process all tei files in the output directory
+            // convert the tei files into the usual CRF label format by processing all tei files in the output directory
             final File[] refFiles = corpusDir.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
                     return name.endsWith(".xml");
@@ -99,10 +103,10 @@ public class AcknowledgmentTrainer extends AbstractTrainer {
                 final List<String> labeled = parser2.getLabeledResult();
                 totalExamples += parser2.n;
 
-                // we can now add the features
+                // add the features
                 String headerAcknowledgment = FeaturesVectorAcknowledgment.addFeaturesAcknowledgment(labeled);
 
-                // format with features for sequence tagging...
+                // format with features for sequence tagging
                 // given the split ratio we write either in the training file or the evaluation file
                 String[] chunks = headerAcknowledgment.split("\n \n");
 

@@ -43,6 +43,7 @@
 * [Bibliographical reference](training/Bibliographical-references.md)
 * [Affiliation-address model](training/affiliation-address.md)
 * [Date model](training/date.md)
+* [Acknowledgment model](training/acknowledgment.md)
 
 <h3>Developer notes</h3>
 

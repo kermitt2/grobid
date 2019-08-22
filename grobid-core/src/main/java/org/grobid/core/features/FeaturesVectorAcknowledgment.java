@@ -9,6 +9,7 @@ import java.util.regex.Matcher;
 
 /**
  * Class for features used for parsing acknowledgment chunk.
+ * Created by Tanti, 2019
  */
 
 public class FeaturesVectorAcknowledgment {
@@ -198,22 +199,22 @@ public class FeaturesVectorAcknowledgment {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
         FeaturesVectorAcknowledgment featuresVectorAcknowledgment = new FeaturesVectorAcknowledgment();
 
-        List<String> tokens = GrobidAnalyzer.getInstance().tokenize(line);
-        //StringTokenizer st = new StringTokenizer(line.trim(), "\t ");
-        for (String tok : tokens) {
+        //List<String> tokens = GrobidAnalyzer.getInstance().tokenize(line);
+        StringTokenizer st = new StringTokenizer(line.trim(), "\t ");
+        /*for (String tok : tokens) {
             String word = tok;
 
             String label = null;
             if (tok != null) {
                 label = tok;
-            }
+            }*/
 
-        /*if (st.hasMoreTokens()) {
+        if (st.hasMoreTokens()) {
             String word = st.nextToken();
 
             String label = null;
             if (st.hasMoreTokens())
-                label = st.nextToken();*/
+                label = st.nextToken();
 
             featuresVectorAcknowledgment.string = word;
             featuresVectorAcknowledgment.label = label;

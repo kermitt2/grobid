@@ -2,6 +2,12 @@ package org.grobid.core.data;
 
 import org.grobid.core.utilities.TextUtilities;
 
+/**
+ * Class for representing and exchanging acknowledgment information.
+ *
+ *  Created by Tanti, 2019
+ */
+
 public class Acknowledgment {
     private String affiliation = null;
     private String educationalInstitution = null;
@@ -161,7 +167,7 @@ public class Acknowledgment {
         if (!isNotNull()) {
             return null;
         } else {
-            tei.append("<acknowledgment");
+            tei.append("<acknowledgment>");
 
             if (affiliation != null) {
                 tei.append("<affiliation>").append(TextUtilities.HTMLEncode(affiliation)).append("</affiliation>");

@@ -139,6 +139,18 @@ public class GrobidRestServiceTest {
         assertNotNull(resp);
     }
 
+    /**
+     * Test the synchronous state less rest call for dates
+     */
+    @Test
+    public void testRestAcknowledgment() throws Exception {
+        String resp = getStrResponse("acknowledgments", "We want to particularly acknowledge the patients " +
+            "enrolled in this study for their participation and the Basque Biobank for Research-OEHUN for its " +
+            "collaboration providing the human samples and the clinical information used in this project with appropriate " +
+            "ethics approval. Our gratefulness to Dr. Juan Burgos for the selection of the human samples and Dr. Felix Royo " +
+            "for helping with statistical analysis.", GrobidPaths.PATH_ACKNOWLEDGMENT);
+        assertNotNull(resp);
+    }
 
     /**
      * Test the synchronous state less rest call for affiliation + address

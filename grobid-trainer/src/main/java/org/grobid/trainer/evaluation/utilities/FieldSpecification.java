@@ -78,13 +78,18 @@ public class FieldSpecification {
 		headerFields.add(firstAuthorField);
 		headerLabels.add("first_author");
 
+        // acknowledgment
+        FieldSpecification acknowledgmentField = new FieldSpecification();
+        acknowledgmentField.fieldName = "acknowledgments";
+        acknowledgmentField.isTextual = true;
+
 		// affiliation
 		FieldSpecification affiliationField = new FieldSpecification();
 		affiliationField.fieldName = "affiliations";
 		affiliationField.isTextual = true;
 		//affiliationField.hasMultipleValue = true;
 		affiliationField.grobidPath.
-			add("//sourceDesc/biblStruct/analytic/author/affiliation/orgName/text()");
+			add("//sourceDesc/biblStruct/analytic/author/affiliation/orgName/text()"); // for evaluation
 		affiliationField.nlmPath.
 			add("/article/front/article-meta/contrib-group/aff/text()");
 		affiliationField.pdfxPath.add("/pdfx/article/front/contrib-group");
