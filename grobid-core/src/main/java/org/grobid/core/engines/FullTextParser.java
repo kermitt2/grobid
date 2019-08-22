@@ -164,7 +164,7 @@ public class FullTextParser extends AbstractParser {
             }
 
             // structure the abstract using the fulltext model
-            if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {
+            /*if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {
                 List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
                 if ( (abstractTokens != null) && (abstractTokens.size()>0) ) {
                     if ( (abstractTokens != null) && (abstractTokens.size()>0) ) {
@@ -175,7 +175,68 @@ public class FullTextParser extends AbstractParser {
                         }
                     }
                 }
-            }            
+            }*/
+
+            // structure the abstract using the fulltext model
+            /*if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {
+                List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
+                if ( (abstractTokens != null) && (abstractTokens.size()>0) ) {
+                    SortedSet<DocumentPiece> documentParts = new TreeSet<DocumentPiece>();
+                    // identify continuous sequence of layout tokens in the abstract
+                    int posStartAbstractPiece = -1;
+                    int currentOffsetAbstract = -1;
+                    int startBlockPtr = -1;
+                    LayoutToken previousAbstractToken = null;
+                    for(LayoutToken abstractToken : abstractTokens) {
+                        if (currentOffsetAbstract == -1) {
+                            currentOffsetAbstract = abstractToken.getOffset();
+                            posStartAbstractPiece = getDocIndexToken(doc, abstractToken);
+                            startBlockPtr = abstractToken.getBlockPtr();
+                        } else {
+                            if (abstractToken.getOffset() != currentOffsetAbstract + previousAbstractToken.getText().length()) {
+                                // new DocumentPiece to be added 
+                                DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, posStartAbstractPiece);
+                                DocumentPointer dp2 = new DocumentPointer(doc, 
+                                    previousAbstractToken.getBlockPtr(), 
+                                    getDocIndexToken(doc, previousAbstractToken));
+                                DocumentPiece piece = new DocumentPiece(dp1, dp2);
+                                documentParts.add(piece);
+
+                                // set index for the next DocumentPiece
+                                currentOffsetAbstract = abstractToken.getOffset();
+                                posStartAbstractPiece = getDocIndexToken(doc, abstractToken);
+                                startBlockPtr = abstractToken.getBlockPtr();
+                            } 
+                        }
+                        currentOffsetAbstract = abstractToken.getOffset();
+                        previousAbstractToken = abstractToken;
+                    }
+                    // we still need to add the last document piece
+                    // conditional below should always be true because abstract is not null if we reach this part, but paranoia is good when programming 
+                    if (posStartAbstractPiece != -1) {
+                        DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, posStartAbstractPiece);
+                        DocumentPointer dp2 = new DocumentPointer(doc, 
+                            previousAbstractToken.getBlockPtr(), 
+                            getDocIndexToken(doc, previousAbstractToken));
+                        DocumentPiece piece = new DocumentPiece(dp1, dp2);
+                        documentParts.add(piece);
+                    }
+
+                    featSeg = getBodyTextFeatured(doc, documentParts);
+                    String rese2 = null;
+                    List<LayoutToken> tokenizationsAbstract = null;
+                    if (featSeg != null) {
+                        // if featSeg is null, it usually means that no body segment is found in the
+                        // document segmentation
+                        String abstractText = featSeg.getLeft();
+                        tokenizationsAbstract = featSeg.getRight().getTokenization();
+                        if (isNotEmpty(trim(abstractText))) 
+                            rese2 = label(abstractText);
+                        resHeader.setLabeledAbstract(rese2);
+                        resHeader.setLayoutTokensForLabel(tokenizationsAbstract, TaggingLabels.HEADER_ABSTRACT);
+                    }
+                }
+            }*/            
 
             // citation processing
             // consolidation, if selected, is not done individually for each citation but 
@@ -290,7 +351,7 @@ public class FullTextParser extends AbstractParser {
      * Process a simple segment of layout tokens with the full text model.
      * Return null if provided Layout Tokens is empty or if structuring failed. 
      */
-    public Pair<String, List<LayoutToken>> processShort(List<LayoutToken> tokens, Document doc) {
+    public Pair<String, List<LayoutToken>> processShortNew(List<LayoutToken> tokens, Document doc) {
         if (tokens == null || tokens.size() == 0) 
             return null;
 
@@ -350,6 +411,60 @@ public class FullTextParser extends AbstractParser {
             return null;
 
         return Pair.of(res, tokenizations);
+    }
+
+
+    public Pair<String, List<LayoutToken>> processShort(List<LayoutToken> tokens, Document doc) {
+        SortedSet<DocumentPiece> documentParts = new TreeSet<DocumentPiece>();
+
+        // we need to identify all the continuous chunks of tokens, and ignore the others
+        List<List<LayoutToken>> tokenChunks = new ArrayList<List<LayoutToken>>();
+        List<LayoutToken> currentChunk = new ArrayList<LayoutToken>();
+        int currentPos = 0;
+        for(LayoutToken token : tokens) {
+            if (currentChunk.size() == 0) {
+                currentChunk.add(token);
+                currentPos = token.getOffset() + token.getText().length();
+            } else {
+                int tokenPos = token.getOffset();
+                if (currentPos+1 == tokenPos) {
+                    // continous
+                    currentChunk.add(token);
+                    currentPos = token.getOffset() + token.getText().length();
+                } else {
+                    // new chunk
+                    tokenChunks.add(currentChunk);
+                    currentChunk = new ArrayList<LayoutToken>();
+                    currentChunk.add(token);
+                    currentPos = token.getOffset() + token.getText().length();
+                }
+            }
+        }
+        // add last chunk
+        tokenChunks.add(currentChunk);
+
+        for(List<LayoutToken> chunk : tokenChunks) {
+            int endInd = chunk.size()-1;
+            int posStartAbstract = getDocIndexToken(doc, chunk.get(0));
+            int posEndAbstract = getDocIndexToken(doc, chunk.get(endInd));
+            DocumentPointer dp1 = new DocumentPointer(doc, chunk.get(0).getBlockPtr(), posStartAbstract);
+            DocumentPointer dp2 = new DocumentPointer(doc, chunk.get(endInd).getBlockPtr(), posEndAbstract);
+            DocumentPiece piece = new DocumentPiece(dp1, dp2);
+            documentParts.add(piece);
+        }
+        Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentParts);
+        String res = null;
+        List<LayoutToken> layoutTokenization = null;
+        if (featSeg != null) {
+            String featuredText = featSeg.getLeft();
+            LayoutTokenization layouts = featSeg.getRight();    
+            if (layouts != null)
+                layoutTokenization = layouts.getTokenization();
+            if ( (featuredText != null) && (featuredText.trim().length() > 0) ) {               
+                res = label(featuredText);
+            }
+        }
+        return Pair.of(res, layoutTokenization);
     }
 
 
