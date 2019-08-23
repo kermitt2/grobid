@@ -164,7 +164,7 @@ public class FullTextParser extends AbstractParser {
             }
 
             // structure the abstract using the fulltext model
-            /*if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {
+            if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {
                 List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
                 if ( (abstractTokens != null) && (abstractTokens.size()>0) ) {
                     if ( (abstractTokens != null) && (abstractTokens.size()>0) ) {
@@ -175,7 +175,7 @@ public class FullTextParser extends AbstractParser {
                         }
                     }
                 }
-            }*/
+            }
 
             // structure the abstract using the fulltext model
             /*if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {
@@ -236,7 +236,7 @@ public class FullTextParser extends AbstractParser {
                         resHeader.setLayoutTokensForLabel(tokenizationsAbstract, TaggingLabels.HEADER_ABSTRACT);
                     }
                 }
-            }*/            
+            }*/
 
             // citation processing
             // consolidation, if selected, is not done individually for each citation but 
