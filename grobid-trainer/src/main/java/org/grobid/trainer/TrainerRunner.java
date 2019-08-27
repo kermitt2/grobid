@@ -146,12 +146,8 @@ public class TrainerRunner {
                 System.out.println(AbstractTrainer.runSplitTrainingEvaluation(trainer, split));
                 break;
             case EVAL_N_FOLD:
-                if(numFolds == 1) {
-                    throw new IllegalArgumentException("N should be > 1");
-                } else {
-                    if(numFolds == 0) {
-                        numFolds = 10;
-                    }
+                if(numFolds == 0) {
+                    throw new IllegalArgumentException("N should be > 0");
                 }
                 if (StringUtils.isNotEmpty(outputFilePath)) {
                     Path outputPath = Paths.get(outputFilePath);

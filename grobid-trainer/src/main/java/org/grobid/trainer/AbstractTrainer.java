@@ -262,14 +262,14 @@ public abstract class AbstractTrainer implements Trainer {
         };
 
         Optional<ModelStats> worstModel = evaluationResults.stream().min(f1ScoreComparator);
-        sb.append("Worst Model").append("\n");
+        sb.append("Worst fold").append("\n");
         ModelStats worstModelStats = worstModel.orElseGet(() -> {
             throw new GrobidException("Something wrong when computing evaluations " +
                 "- worst model metrics not found. ");
         });
         sb.append(worstModelStats.toString()).append("\n");
 
-        sb.append("Best model:").append("\n");
+        sb.append("Best fold:").append("\n");
         Optional<ModelStats> bestModel = evaluationResults.stream().max(f1ScoreComparator);
         ModelStats bestModelStats = bestModel.orElseGet(() -> {
             throw new GrobidException("Something wrong when computing evaluations " +
@@ -364,11 +364,14 @@ public abstract class AbstractTrainer implements Trainer {
         );
 
         sb.append("\n===== Instance-level results =====\n\n");
-        sb.append(String.format("%-27s %d\n", "Total expected instances:", totalInstances));
-        sb.append(String.format("%-27s %d\n", "Correct instances:", correctInstances));
+
+        double averageTotalInstances = (double) totalInstances / numFolds;
+        double averageCorrectInstances = (double) correctInstances / numFolds;
+        sb.append(String.format("%-27s %s\n", "Total expected instances:", TextUtilities.formatTwoDecimals(averageTotalInstances)));
+        sb.append(String.format("%-27s %s\n", "Correct instances:", TextUtilities.formatTwoDecimals(averageCorrectInstances)));
         sb.append(String.format("%-27s %s\n",
             "Instance-level recall:",
-            TextUtilities.formatTwoDecimals((double) correctInstances / totalInstances * 100)));
+            TextUtilities.formatTwoDecimals(averageCorrectInstances / averageTotalInstances * 100)));
 
 
         return sb.toString();
