@@ -1885,6 +1885,7 @@ public class BiblioItem {
      * the corresponding field and reset the generic pubnum field.
      */
     public void checkIdentifier() {
+        // DOI
         if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(doi)) {
             Matcher doiMatcher = TextUtilities.DOIPattern.matcher(pubnum);
             if (doiMatcher.find()) { 
@@ -1892,6 +1893,7 @@ public class BiblioItem {
                 setPubnum(null);
             }
         } 
+        // arXiv id (this covers old and new versions)
         if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(arXivId)) {
             Matcher arxivMatcher = TextUtilities.arXivPattern.matcher(pubnum);
             if (arxivMatcher.find()) { 
@@ -1899,7 +1901,28 @@ public class BiblioItem {
                 setPubnum(null);
             }
         } 
-        // TO: PMID, PMCID, PII
+        // PMID 
+        if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(PMID)) {
+            Matcher pmidMatcher = TextUtilities.pmidPattern.matcher(pubnum);
+            if (pmidMatcher.find()) { 
+                // last group gives the PMID digits
+                String digits = pmidMatcher.group(pmidMatcher.groupCount());
+                setPMID(digits);
+                setPubnum(null);
+            }
+        } 
+        // PMC ID
+        if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(PMCID)) {
+            Matcher pmcidMatcher = TextUtilities.pmcidPattern.matcher(pubnum);
+            if (pmcidMatcher.find()) { 
+                // last group gives the PMC ID digits, but the prefix PMC must be added to follow the NIH guidelines
+                String digits = pmcidMatcher.group(pmcidMatcher.groupCount());
+                setPMCID("PMC"+digits);
+                setPubnum(null);
+            }
+        } 
+
+        // TODO: PII
     }
 
     /**
