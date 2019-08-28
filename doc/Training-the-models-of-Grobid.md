@@ -98,7 +98,7 @@ Several runs with different files to evaluate can be made to have a more reliabl
 
 For robust evaluation and reporting, n-fold cross-evaluation is commonly used, see the [Wikipedia article](https://en.wikipedia.org/wiki/Cross-validation_(statistics)). 
 
-GROBID implementation follows the standard approach, shuffling and dividing the annotated corpus in N equals folds, and performing N training and evaluation, where N-1 folds are used for training and the last one for evaluation. Folds are rotating for each training/evaluation, and thus each fold will be used for evaluation successively. Finally the evaluation scores for the N folds are averaged, the worst and best training/evaluation being indicated as information.
+GROBID implementation follows the standard approach, shuffling and dividing the annotated corpus in N equals folds, and performing N training and evaluations, where N-1 folds are used for training and the last one for evaluation. Folds are rotating for each training/evaluation, and thus each fold will be used for evaluation successively at least one time. Finally the evaluation scores for the N folds are averaged, the worst and best training/evaluations being indicated as information.
 
 For performing a N fold evaluation:
 
