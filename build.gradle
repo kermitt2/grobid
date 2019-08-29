@@ -383,7 +383,8 @@ project(":grobid-trainer") {
         "train_segmentation"          : "org.grobid.trainer.SegmentationTrainer",
         "train_reference_segmentation": "org.grobid.trainer.ReferenceSegmenterTrainer",
         "train_ebook_model"           : "org.grobid.trainer.EbookTrainer",
-        "train_patent_citation"       : "org.grobid.trainer.PatentParserTrainer"
+        "train_patent_citation"       : "org.grobid.trainer.PatentParserTrainer",
+        "train_monograph"             : "org.grobid.trainer.MonographTrainer"
     ]
 
     trainerTasks.each { taskName, mainClassName ->
@@ -401,8 +402,8 @@ project(":grobid-trainer") {
     // run like:
     // ./gradlew PubMedCentralEval -Pp2t=/path/to/goldenSet
     // ./gradlew PubMedCentralEval -Pp2t=/path/to/goldenSet -Prun=1 -PfileRatio=0.1
-    // ./gradlew PrepareDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
-    // ./gradlew EvaluateDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
+    // ./gradlew PrepareDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943
+    // ./gradlew EvaluateDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943
     task(PubMedCentralEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
