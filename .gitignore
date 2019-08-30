@@ -64,3 +64,7 @@ grobid-home/models/lexical-entry/model.wapiti
 grobid-home/models/dictionary*
 grobid-home/models/dictionaries*
 grobid-home/models/software*
+grobid-trainer/resources/dataset/monograph/corpus/tei/*.xml
+grobid-trainer/resources/dataset/monograph/corpus/raw/*.monograph
+grobid-trainer/resources/dataset/monograph/evaluation/tei/*.xml
+grobid-trainer/resources/dataset/monograph/evaluation/raw/*.monograph
