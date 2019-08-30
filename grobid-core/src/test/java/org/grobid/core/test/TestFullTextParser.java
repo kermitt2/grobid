@@ -1,9 +1,12 @@
 package org.grobid.core.test;
 
 import org.apache.commons.io.FileUtils;
+import org.easymock.Mock;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
+import org.grobid.core.document.DocumentSource;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.label.SegmentationLabels;
@@ -11,18 +14,22 @@ import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.layout.Block;
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.GrobidProperties;
 import org.junit.*;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.SortedSet;
+import java.util.stream.Collectors;
 
 import nu.xom.Element;
 
+import static org.easymock.EasyMock.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -38,21 +45,21 @@ public class TestFullTextParser extends EngineTest {
     }
 
     @AfterClass
-    public static void tearDown(){
+    public static void tearDown() {
         GrobidFactory.reset();
     }
 
     @Test
     public void testFullTextParser_1() throws Exception {
         File inputTmpFile = getInputDocument("/test/Wang-paperAVE2008.pdf");
-        
+
         Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
     }
 
     private File getInputDocument(String inputPath) throws IOException {
         InputStream is = this.getClass().getResourceAsStream(inputPath);
-        File inputTmpFile  = File.createTempFile("tmpFileTest", "testFullTextParser");
+        File inputTmpFile = File.createTempFile("tmpFileTest", "testFullTextParser");
         inputTmpFile.deleteOnExit();
 
         FileUtils.copyToFile(is, inputTmpFile);
@@ -149,6 +156,64 @@ public class TestFullTextParser extends EngineTest {
                 assertTrue(endPtr.getTokenBlockPos() < endBlock.getTokens().size());
             }
         }
+
+    }
+
+    @Test
+    public void testGetDocumentPieces1() throws Exception {
+//        Document documentMock = createMock(Document.class);
+//
+//        List<LayoutToken> sentence1 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken("This is a sentence");
+//
+//        List<LayoutToken> sentence2 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken("This is another sentence, somewhere else.");
+//
+//        // Faking block pointers
+//        sentence1.get(0).setBlockPtr(0);
+//        sentence1.get(6).setBlockPtr(1);
+//
+//        sentence2.get(0).setBlockPtr(2);
+//        sentence2.get(12).setBlockPtr(3);
+//
+//        // First sentence blocks
+//        Block fakeBlock1_1 = new Block();
+//        fakeBlock1_1.setStartToken(12345);
+//        Block fakeBlock1_2 = new Block();
+//        fakeBlock1_2.setStartToken(12345);
+//
+//        // Second sentence blocks
+//        Block fakeBlock2_1 = new Block();
+//        fakeBlock2_1.setStartToken(25000);
+//        Block fakeBlock2_2 = new Block();
+//        fakeBlock2_2.setStartToken(25000);
+//
+//        List<Block> blocks = new ArrayList<>();
+//        blocks.add(fakeBlock1_1);
+//        blocks.add(fakeBlock1_2);
+//        blocks.add(fakeBlock2_1);
+//        blocks.add(fakeBlock2_2);
+//
+//
+//        //Moving this sentence somewhere else
+//        sentence1.stream().peek(l -> l.setOffset(l.getOffset() + 12345));
+//        sentence2.stream().peek(l -> l.setOffset(l.getOffset() + 25000));
+//
+//        List<LayoutToken> layoutTokens = new ArrayList<>();
+//        layoutTokens.addAll(sentence1Far);
+//        layoutTokens.addAll(sentence2Far);
+//
+//        expect(documentMock.getBlocks()).andReturn(blocks);
+//        expect(documentMock.getTokenizations()).andReturn(layoutTokens);
+//        expect(documentMock.getBlocks()).andReturn(blocks);
+//        expect(documentMock.getTokenizations()).andReturn(layoutTokens);
+//        expect(documentMock.getBlocks()).andReturn(blocks);
+//
+//        expect(documentMock.getBlocks()).andReturn(blocks);
+//        expect(documentMock.getBlocks()).andReturn(blocks);
+//
+//        replay(documentMock);
+//        engine.getParsers().getFullTextParser().getDocumentPieces1(layoutTokens, documentMock);
+//        verify(documentMock);
+
 
     }
 
