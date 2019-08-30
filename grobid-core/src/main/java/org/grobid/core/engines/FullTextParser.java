@@ -2,6 +2,8 @@ package org.grobid.core.engines;
 
 import com.google.common.collect.Iterables;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.io.FileUtils;
 
@@ -137,17 +139,18 @@ public class FullTextParser extends AbstractParser {
                 parsers.getHeaderParser().processingHeaderBlock(config.getConsolidateHeader(), doc, resHeader);
             }
             // above the old version of the header block identification, because more robust
-            if ((resHeader.getTitle() == null) || (resHeader.getTitle().trim().length() == 0) ||
-                 (resHeader.getAuthors() == null) || (resHeader.getFullAuthors() == null) ||
-                 (resHeader.getFullAuthors().size() == 0) ) {
+            if (isBlank(resHeader.getTitle()) || isBlank(resHeader.getAuthors()) || CollectionUtils.isEmpty(resHeader.getFullAuthors())) {
                 resHeader = new BiblioItem();
                 parsers.getHeaderParser().processingHeaderSection(config.getConsolidateHeader(), doc, resHeader);
                 // above, use the segmentation model result
                 if (doc.getMetadata() != null) {
                     Metadata metadata = doc.getMetadata();
-                    if (metadata.getTitle() != null)
-                        resHeader.setTitle(metadata.getTitle());
-                    if (metadata.getAuthor() != null) {
+                    if (isNotBlank(metadata.getTitle()) && isBlank(resHeader.getTitle()))
+                        if(!endsWithAny(lowerCase(metadata.getTitle()), ".doc", ".pdf", ".tex", ".div", ".docx", ".odf", ".odt", ".txt"))
+                            resHeader.setTitle(metadata.getTitle());
+
+                    if (metadata.getAuthor() != null
+                        && (resHeader.getAuthors() == null || CollectionUtils.isEmpty(resHeader.getFullAuthors()))) {
                         resHeader.setAuthors(metadata.getAuthor());
                         resHeader.setOriginalAuthors(metadata.getAuthor());
                         List<Person> localAuthors = parsers.getAuthorParser().processingHeader(metadata.getAuthor());
