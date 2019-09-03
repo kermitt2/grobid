@@ -1,32 +1,20 @@
 package org.grobid.core.engines;
 
 import com.google.common.collect.Iterables;
-
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
-import org.apache.commons.io.FileUtils;
-
 import org.grobid.core.GrobidModels;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.Figure;
-import org.grobid.core.data.Table;
-import org.grobid.core.data.Equation;
-import org.grobid.core.data.Metadata;
-import org.grobid.core.data.Person;
-import org.grobid.core.document.Document;
-import org.grobid.core.document.DocumentPiece;
-import org.grobid.core.document.DocumentPointer;
-import org.grobid.core.document.DocumentSource;
-import org.grobid.core.document.TEIFormatter;
+import org.grobid.core.data.*;
+import org.grobid.core.document.*;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.CitationParserCounters;
 import org.grobid.core.engines.label.SegmentationLabels;
-import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
@@ -36,33 +24,18 @@ import org.grobid.core.lang.Language;
 import org.grobid.core.layout.*;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.LanguageUtilities;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.Consolidation;
-import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
+import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.matching.EntityMatcherException;
-
+import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
-import java.util.TreeSet;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.text.Normalizer;
+import java.util.*;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.apache.commons.lang3.StringUtils.*;
 
@@ -93,6 +66,8 @@ public class FullTextParser extends AbstractParser {
 	private static final int LINESCALE = 10;
 
     private EngineParsers parsers;
+
+    private Pattern pattern = Pattern.compile("[^a-zA-Z0-9]+");
 
     /**
      * TODO some documentation...
@@ -145,9 +120,27 @@ public class FullTextParser extends AbstractParser {
                 // above, use the segmentation model result
                 if (doc.getMetadata() != null) {
                     Metadata metadata = doc.getMetadata();
-                    if (isNotBlank(metadata.getTitle()) && isBlank(resHeader.getTitle()))
-                        if(!endsWithAny(lowerCase(metadata.getTitle()), ".doc", ".pdf", ".tex", ".div", ".docx", ".odf", ".odt", ".txt"))
-                            resHeader.setTitle(metadata.getTitle());
+                    if (isNotBlank(metadata.getTitle()) && isBlank(resHeader.getTitle())) {
+                        if (!endsWithAny(lowerCase(metadata.getTitle()), ".doc", ".pdf", ".tex", ".dvi", ".docx", ".odf", ".odt", ".txt")) {
+
+//                            StringBuilder accumulated = new StringBuilder();
+//                            for (int i = 0; i < 2; i++) {
+//                                for (Block block : doc.getPage(i).getBlocks()) {
+//                                    String localText = block.getText();
+//
+//                                    String string = localText.toLowerCase();
+//                                    string = Normalizer.normalize(string, Normalizer.Form.NFD);
+//                                    string = string.replaceAll("[^\\p{ASCII}]", "");
+//                                    string = pattern.matcher(string).replaceAll("");
+//                                    accumulated.append(string);
+//                                }
+//                            }
+
+//                            if (StringUtils.isNotBlank(FuzzySubstringSearch.fuzzySubstringSearch(metadata.getTitle(), accumulated.toString(), 10 ))) {
+                                resHeader.setTitle(metadata.getTitle());
+//                            }
+                        }
+                    }
 
                     if (metadata.getAuthor() != null
                         && (resHeader.getAuthors() == null || CollectionUtils.isEmpty(resHeader.getFullAuthors()))) {
@@ -1153,7 +1146,7 @@ public class FullTextParser extends AbstractParser {
 
                     // we write the header untagged
                     String outPathHeader = pathTEI + File.separator + pdfFileName.replace(".pdf", ".training.header");
-                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), "UTF-8");
+                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), StandardCharsets.UTF_8);
                     writer.write(header + "\n");
                     writer.close();
 
