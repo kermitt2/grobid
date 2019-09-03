@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alto xmlns="http://www.loc.gov/standards/alto/v3/alto.xsd">
+    <Description>
+        <MeasurementUnit>pixel</MeasurementUnit>
+        <sourceImageInformation>
+            <fileName>/Users/lfoppiano/development/projects/grobid/grobid-home/tmp/origin1823875201361402337.pdf
+            </fileName>
+        </sourceImageInformation>
+        <OCRProcessing ID="IdOcr">
+            <ocrProcessingStep>
+                <processingDateTime>Wed Sep 4 08:46:44 2019
+                </processingDateTime>
+                <processingSoftware>
+                    <softwareCreator>CONTRIBUTORS</softwareCreator>
+                    <softwareName>pdfalto</softwareName>
+                    <softwareVersion>0.1</softwareVersion>
+                </processingSoftware>
+            </ocrProcessingStep>
+        </OCRProcessing>
+    </Description>
+    <Styles>
+        <TextStyle ID="font0" FONTFAMILY="baaaaa+liberationserif" FONTSIZE="12.000" FONTTYPE="sans-serif"
+                   FONTWIDTH="proportional" FONTCOLOR="#000000" FONTSTYLE=""/>
+        <TextStyle ID="font1" FONTFAMILY="caaaaa+liberationserif-italic" FONTSIZE="12.000" FONTTYPE="sans-serif"
+                   FONTWIDTH="proportional" FONTCOLOR="#000000" FONTSTYLE="italics"/>
+        <TextStyle ID="font2" FONTFAMILY="daaaaa+liberationserif-bold" FONTSIZE="12.000" FONTTYPE="sans-serif"
+                   FONTWIDTH="proportional" FONTCOLOR="#000000" FONTSTYLE="bold"/>
+        <TextStyle ID="font3" FONTFAMILY="eaaaaa+liberationserif-bolditalic" FONTSIZE="12.000" FONTTYPE="sans-serif"
+                   FONTWIDTH="proportional" FONTCOLOR="#000000" FONTSTYLE="bold italics"/>
+        <TextStyle ID="font4" FONTFAMILY="baaaaa+liberationserif" FONTSIZE="7.000" FONTTYPE="sans-serif"
+                   FONTWIDTH="proportional" FONTCOLOR="#000000" FONTSTYLE="subscript"/>
+        <TextStyle ID="font5" FONTFAMILY="daaaaa+liberationserif-bold" FONTSIZE="7.000" FONTTYPE="sans-serif"
+                   FONTWIDTH="proportional" FONTCOLOR="#000000" FONTSTYLE="bold superscript"/>
+        <TextStyle ID="font6" FONTFAMILY="eaaaaa+liberationserif-bolditalic" FONTSIZE="7.000" FONTTYPE="sans-serif"
+                   FONTWIDTH="proportional" FONTCOLOR="#000000" FONTSTYLE="bold italics subscript"/>
+        <TextStyle ID="font7" FONTFAMILY="caaaaa+liberationserif-italic" FONTSIZE="7.000" FONTTYPE="sans-serif"
+                   FONTWIDTH="proportional" FONTCOLOR="#000000" FONTSTYLE="italics superscript"/>
+    </Styles>
+    <Layout>
+        <Page ID="Page1" PHYSICAL_IMG_NR="1" WIDTH="595.304" HEIGHT="841.89">
+            <PrintSpace>
+                <TextBlock ID="p1_b1" HPOS="56.8" VPOS="56.7088" HEIGHT="-56.708" WIDTH="-56.8">
+                    <TextLine WIDTH="333.233" HEIGHT="13.504" ID="p1_t1" HPOS="56.8" VPOS="56.6638">
+                        <String ID="p1_w1" CONTENT="We" HPOS="56.8" VPOS="56.7088" WIDTH="15.72" HEIGHT="13.284"
+                                STYLEREFS="font0"/>
+                        <SP WIDTH="2.98" VPOS="56.7088" HPOS="72.52"/>
+                        <String ID="p1_w2" CONTENT="went" HPOS="75.5" VPOS="56.7088" WIDTH="22.62" HEIGHT="13.284"
+                                STYLEREFS="font1"/>
+                        <SP WIDTH="3.08" VPOS="56.7088" HPOS="98.12"/>
+                        <String ID="p1_w3" CONTENT="to" HPOS="101.2" VPOS="56.7088" WIDTH="9.3" HEIGHT="13.284"
+                                STYLEREFS="font0"/>
+                        <SP WIDTH="3.084" VPOS="56.7088" HPOS="110.5"/>
+                        <String ID="p1_w4" CONTENT="the" HPOS="113.584" VPOS="56.7088" WIDTH="14.616" HEIGHT="13.284"
+                                STYLEREFS="font0"/>
+                        <SP WIDTH="3" VPOS="56.7088" HPOS="128.2"/>
+                        <String ID="p1_w5" CONTENT="lab" HPOS="131.2" VPOS="56.7088" WIDTH="15.972" HEIGHT="13.284"
+                                STYLEREFS="font2"/>
+                        <SP WIDTH="3.028" VPOS="56.7088" HPOS="147.172"/>
+                        <String ID="p1_w6" CONTENT="and" HPOS="150.2" VPOS="56.7088" WIDTH="17.304" HEIGHT="13.284"
+                                STYLEREFS="font0"/>
+                        <SP WIDTH="2.996" VPOS="56.7088" HPOS="167.504"/>
+                        <String ID="p1_w7" CONTENT="tested" HPOS="170.5" VPOS="56.7088" WIDTH="27.9" HEIGHT="13.284"
+                                STYLEREFS="font3"/>
+                        <SP WIDTH="3.1" VPOS="56.7088" HPOS="198.4"/>
+                        <String ID="p1_w8" CONTENT="CO" HPOS="201.5" VPOS="56.7088" WIDTH="16.56" HEIGHT="13.284"
+                                STYLEREFS="font0"/>
+                        <String ID="p1_w9" CONTENT="2" HPOS="218.2" VPOS="62.4638" WIDTH="3.5" HEIGHT="7.749"
+                                STYLEREFS="font4"/>
+                        <String ID="p1_w10" CONTENT="Al" HPOS="221.7" VPOS="56.7088" WIDTH="12.012" HEIGHT="13.284"
+                                STYLEREFS="font0"/>
+                        <String ID="p1_w11" CONTENT="3" HPOS="233.7" VPOS="62.4638" WIDTH="3.5" HEIGHT="7.749"
+                                STYLEREFS="font4"/>
+                        <String ID="p1_w12" CONTENT="4)" HPOS="237.2" VPOS="56.6638" WIDTH="5.831" HEIGHT="7.749"
+                                STYLEREFS="font5"/>
+                        <SP WIDTH="1.669" VPOS="56.6638" HPOS="243.031"/>
+                        <String ID="p1_w13" CONTENT="and" HPOS="244.7" VPOS="56.7088" WIDTH="17.304" HEIGHT="13.284"
+                                STYLEREFS="font0"/>
+                        <SP WIDTH="3" VPOS="56.7088" HPOS="262.004"/>
+                        <String ID="p1_w14" CONTENT="we" HPOS="265.004" VPOS="56.7088" WIDTH="14.004" HEIGHT="13.284"
+                                STYLEREFS="font0"/>
+                        <SP WIDTH="2.988" VPOS="56.7088" HPOS="279.008"/>
+                        <String ID="p1_w15" CONTENT="found" HPOS="281.996" VPOS="56.7088" WIDTH="27.996" HEIGHT="13.284"
+                                STYLEREFS="font0"/>
+                        <SP WIDTH="3" VPOS="56.7088" HPOS="309.992"/>
+                        <String ID="p1_w16" CONTENT="traces" HPOS="312.992" VPOS="56.7088" WIDTH="27.96" HEIGHT="13.284"
+                                STYLEREFS="font0"/>
+                        <SP WIDTH="3.024" VPOS="56.7088" HPOS="340.952"/>
+                        <String ID="p1_w17" CONTENT="of" HPOS="343.976" VPOS="56.7088" WIDTH="9.996" HEIGHT="13.284"
+                                STYLEREFS="font0"/>
+                        <SP WIDTH="3.028" VPOS="56.7088" HPOS="353.972"/>
+                        <String ID="p1_w18" CONTENT="Ur" HPOS="357" VPOS="56.7088" WIDTH="13.272" HEIGHT="13.284"
+                                STYLEREFS="font3"/>
+                        <String ID="p1_w19" CONTENT="123" HPOS="370.4" VPOS="62.4638" WIDTH="10.5" HEIGHT="7.749"
+                                STYLEREFS="font6"/>
+                        <String ID="p1_w20" CONTENT="6a)" HPOS="380.8" VPOS="56.6638" WIDTH="9.233" HEIGHT="7.749"
+                                STYLEREFS="font7"/>
+                    </TextLine>
+                </TextBlock>
+            </PrintSpace>
+        </Page>
+    </Layout>
+</alto>
