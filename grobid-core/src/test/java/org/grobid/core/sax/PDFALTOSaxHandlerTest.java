@@ -16,6 +16,7 @@ import java.util.List;
 
 import static org.easymock.EasyMock.createMock;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -82,6 +83,33 @@ public class PDFALTOSaxHandlerTest {
         List<LayoutToken> tokenList = target.getTokenization();
 
         assertThat(tokenList.stream().filter(t -> t.getText().equals("newly")).count(), is(1L));
+
+        assertThat(tokenList.get(0).getText(), is("Microscopic"));
+        assertThat(tokenList.get(0).getBold(), is(true));
+        assertThat(tokenList.get(25).getText(), is("BaFe"));
+        assertThat(tokenList.get(25).isSubscript(), is(false));
+        assertThat(tokenList.get(27).getText(), is("2"));
+        assertThat(tokenList.get(27).isSubscript(), is(true));
     }
+
+//    @Test
+//    public void testParsing2_shouldWork() throws Exception {
+//        InputStream inputStream = this.getClass().getResourceAsStream("test2.xml");
+//
+//        SAXParser p = spf.newSAXParser();
+//        p.parse(inputStream, target);
+//
+//        List<LayoutToken> tokenList = target.getTokenization();
+//
+//        assertThat(tokenList.stream().filter(LayoutToken::isSuperscript).count(), is(greaterThan(1L)));
+//        assertThat(tokenList.stream().filter(LayoutToken::isSubscript).count(), is(greaterThan(1L)));
+//
+//        assertThat(tokenList.get(0).getText(), is("Microscopic"));
+//        assertThat(tokenList.get(0).getBold(), is(true));
+//        assertThat(tokenList.get(25).getText(), is("BaFe"));
+//        assertThat(tokenList.get(25).isSubscript(), is(false));
+//        assertThat(tokenList.get(27).getText(), is("2"));
+//        assertThat(tokenList.get(27).isSubscript(), is(true));
+//    }
 
 }
