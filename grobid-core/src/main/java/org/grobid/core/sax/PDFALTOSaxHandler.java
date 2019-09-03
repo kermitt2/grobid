@@ -622,11 +622,10 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                     } else if (name.equals("FONTFAMILY")) {
                         if (StringUtils.containsIgnoreCase(value, "bold") || StringUtils.endsWithIgnoreCase(value, "_bd")) {
                             textStyle.setBold(true);
-                        } else if (StringUtils.containsIgnoreCase(value, "italic") || StringUtils.endsWithIgnoreCase(value, "_it")) {
+                        }
+
+                        if (StringUtils.containsIgnoreCase(value, "italic") || StringUtils.endsWithIgnoreCase(value, "_it")) {
                             textStyle.setItalic(true);
-                        } else {
-                            textStyle.setBold(false);
-                            textStyle.setItalic(false);
                         }
 
                         textStyle.setFontName(value);
@@ -639,11 +638,17 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                         // font properties, we are interested by subscript or superscript
                         if (StringUtils.containsIgnoreCase(value, "subscript")) {
                             textStyle.setSubscript(true);
-                        } else if (StringUtils.containsIgnoreCase(value, "superscript")) {
+                        }
+
+                        if (StringUtils.containsIgnoreCase(value, "superscript")) {
                             textStyle.setSuperscript(true);
-                        } else if (StringUtils.containsIgnoreCase(value, "bold")) {
+                        }
+
+                        if (StringUtils.containsIgnoreCase(value, "bold")) {
                             textStyle.setBold(true);
-                        } else if (StringUtils.containsIgnoreCase(value, "italic")) {
+                        }
+
+                        if (StringUtils.containsIgnoreCase(value, "italic") || StringUtils.containsIgnoreCase(value, "italics")) {
                             textStyle.setItalic(true);
                         }
 
