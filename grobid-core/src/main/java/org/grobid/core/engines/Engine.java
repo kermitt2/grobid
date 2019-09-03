@@ -47,6 +47,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 /**
@@ -303,7 +304,7 @@ public class Engine implements Closeable {
             // which should give a close to ~100% accuracy for the supported languages
             String text = "";
             FileInputStream fileIn = new FileInputStream(filePath.substring(0, filePath.length() - 3) + ext);
-            InputStreamReader reader = new InputStreamReader(fileIn, "UTF-8");
+            InputStreamReader reader = new InputStreamReader(fileIn, StandardCharsets.UTF_8);
             BufferedReader bufReader = new BufferedReader(reader);
             String line;
             int nbChar = 0;
