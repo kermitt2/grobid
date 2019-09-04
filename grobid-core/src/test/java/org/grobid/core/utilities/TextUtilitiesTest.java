@@ -286,6 +286,18 @@ public class TextUtilitiesTest extends EngineTest {
     }
 
     @Test
+    public void testDoesRequireDehypenisation_usualWordWithSpace_shouldReturnFalse() {
+        List<LayoutToken> tokens = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken("This is a sample open- source text");
+        assertThat(TextUtilities.doesRequireDehypenisation(tokens, 9), is(false));
+    }
+
+    @Test
+    public void testDoesRequireDehypenisation_usualWordWith2Space_shouldReturnFalse() {
+        List<LayoutToken> tokens = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken("This is a sample open - source text");
+        assertThat(TextUtilities.doesRequireDehypenisation(tokens, 9), is(false));
+    }
+
+    @Test
     public void testDoesRequireDehypenisation_sequence_shouldReturnFalse() {
         List<LayoutToken> tokens = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken("This is a sample ABC123-3434 text");
         assertThat(TextUtilities.doesRequireDehypenisation(tokens, 9), is(false));
@@ -368,8 +380,6 @@ public class TextUtilitiesTest extends EngineTest {
         List<LayoutToken> tokens = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken("which was mediated through the inhibition of expression of α 2  - \n  integrin (1,2). ");
         assertThat(TextUtilities.doesRequireDehypenisation(tokens, 19), is(false));
     }
-
-
 
     @Test
     public void testIsAllUpperCaseOrDigitOrDot() throws Exception {
