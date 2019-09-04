@@ -1,32 +1,20 @@
 package org.grobid.core.engines;
 
 import com.google.common.collect.Iterables;
-
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
-import org.apache.commons.io.FileUtils;
-
 import org.grobid.core.GrobidModels;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.Figure;
-import org.grobid.core.data.Table;
-import org.grobid.core.data.Equation;
-import org.grobid.core.data.Metadata;
-import org.grobid.core.data.Person;
-import org.grobid.core.document.Document;
-import org.grobid.core.document.DocumentPiece;
-import org.grobid.core.document.DocumentPointer;
-import org.grobid.core.document.DocumentSource;
-import org.grobid.core.document.TEIFormatter;
+import org.grobid.core.data.*;
+import org.grobid.core.document.*;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.CitationParserCounters;
 import org.grobid.core.engines.label.SegmentationLabels;
-import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
@@ -36,33 +24,18 @@ import org.grobid.core.lang.Language;
 import org.grobid.core.layout.*;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.LanguageUtilities;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.Consolidation;
-import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
+import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.matching.EntityMatcherException;
-
+import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
-import java.util.TreeSet;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.text.Normalizer;
+import java.util.*;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.apache.commons.lang3.StringUtils.*;
 
@@ -93,6 +66,8 @@ public class FullTextParser extends AbstractParser {
 	private static final int LINESCALE = 10;
 
     private EngineParsers parsers;
+
+    private Pattern pattern = Pattern.compile("[^a-zA-Z0-9]+");
 
     /**
      * TODO some documentation...
@@ -145,9 +120,27 @@ public class FullTextParser extends AbstractParser {
                 // above, use the segmentation model result
                 if (doc.getMetadata() != null) {
                     Metadata metadata = doc.getMetadata();
-                    if (isNotBlank(metadata.getTitle()) && isBlank(resHeader.getTitle()))
-                        if(!endsWithAny(lowerCase(metadata.getTitle()), ".doc", ".pdf", ".tex", ".div", ".docx", ".odf", ".odt", ".txt"))
-                            resHeader.setTitle(metadata.getTitle());
+                    if (isNotBlank(metadata.getTitle()) && isBlank(resHeader.getTitle())) {
+                        if (!endsWithAny(lowerCase(metadata.getTitle()), ".doc", ".pdf", ".tex", ".dvi", ".docx", ".odf", ".odt", ".txt")) {
+
+//                            StringBuilder accumulated = new StringBuilder();
+//                            for (int i = 0; i < 2; i++) {
+//                                for (Block block : doc.getPage(i).getBlocks()) {
+//                                    String localText = block.getText();
+//
+//                                    String string = localText.toLowerCase();
+//                                    string = Normalizer.normalize(string, Normalizer.Form.NFD);
+//                                    string = string.replaceAll("[^\\p{ASCII}]", "");
+//                                    string = pattern.matcher(string).replaceAll("");
+//                                    accumulated.append(string);
+//                                }
+//                            }
+
+//                            if (StringUtils.isNotBlank(FuzzySubstringSearch.fuzzySubstringSearch(metadata.getTitle(), accumulated.toString(), 10 ))) {
+                                resHeader.setTitle(metadata.getTitle());
+//                            }
+                        }
+                    }
 
                     if (metadata.getAuthor() != null
                         && (resHeader.getAuthors() == null || CollectionUtils.isEmpty(resHeader.getFullAuthors()))) {
@@ -167,22 +160,22 @@ public class FullTextParser extends AbstractParser {
             }
 
             // structure the abstract using the fulltext model
-            if ( isNotBlank(resHeader.getAbstract())) {
+
+//            if (isNotBlank(resHeader.getAbstract())) {
+//                List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
+//                if (CollectionUtils.isNotEmpty(abstractTokens)) {
+//                    Pair<String, List<LayoutToken>> abstractProcessed = processShort(abstractTokens, doc);
+//                    if (abstractProcessed != null) {
+//                        resHeader.setLabeledAbstract(abstractProcessed.getLeft());
+//                        resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
+//                    }
+//                }
+//            }
+
+            if (isNotBlank(resHeader.getAbstract())) {
                 List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
                 if (CollectionUtils.isNotEmpty(abstractTokens)) {
-                    Pair<String, List<LayoutToken>> abstractProcessed = processShort(abstractTokens, doc);
-                    if (abstractProcessed != null) {
-                        resHeader.setLabeledAbstract(abstractProcessed.getLeft());
-                        resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
-                    }
-                }
-            }
-
-            // structure the abstract using the fulltext model
-            /*if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {
-                List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
-                if ( (abstractTokens != null) && (abstractTokens.size()>0) ) {
-                    SortedSet<DocumentPiece> documentParts = getDocumentPieces2(abstractTokens, doc);
+                    SortedSet<DocumentPiece> documentParts = collectPiecesFromLayoutTokens(abstractTokens, doc);
 
                     featSeg = getBodyTextFeatured(doc, documentParts);
                     String rese2 = null;
@@ -192,13 +185,13 @@ public class FullTextParser extends AbstractParser {
                         // document segmentation
                         String abstractText = featSeg.getLeft();
                         tokenizationsAbstract = featSeg.getRight().getTokenization();
-                        if (isNotEmpty(trim(abstractText))) 
+                        if (isNotEmpty(trim(abstractText)))
                             rese2 = label(abstractText);
                         resHeader.setLabeledAbstract(rese2);
                         resHeader.setLayoutTokensForLabel(tokenizationsAbstract, TaggingLabels.HEADER_ABSTRACT);
                     }
                 }
-            }*/
+            }
 
             // citation processing
             // consolidation, if selected, is not done individually for each citation but 
@@ -219,14 +212,14 @@ public class FullTextParser extends AbstractParser {
                         if (bibo != null) {
                             if (config.getConsolidateCitations() == 1)
                                 BiblioItem.correct(resCitation, bibo);
-                            else if (config.getConsolidateCitations() == 2) 
+                            else if (config.getConsolidateCitations() == 2)
                                 BiblioItem.injectDOI(resCitation, bibo);
                         }
                     }
                 } catch(Exception e) {
                     throw new GrobidException(
                     "An exception occured while running consolidation on bibliographical references.", e);
-                } 
+                }
             }
             //if (resCitations.size() == 0)
             //    System.out.println("!!!!!! article without citations !!!!");
@@ -246,7 +239,7 @@ public class FullTextParser extends AbstractParser {
 				layoutTokenization = featSeg.getRight();
 				//tokenizationsBody = featSeg.getB().getTokenization();
                 //layoutTokensBody = featSeg.getB().getLayoutTokens();
-				if ( (bodytext != null) && (bodytext.trim().length() > 0) ) {				
+				if ( (bodytext != null) && (bodytext.trim().length() > 0) ) {
 					rese = label(bodytext);
 				} else {
 					LOGGER.debug("Fulltext model: The input to the CRF processing is empty");
@@ -278,7 +271,6 @@ public class FullTextParser extends AbstractParser {
 				LOGGER.debug("Fulltext model: The featured body is empty");
 			}
 
-            
 			// possible annexes (view as a piece of full text similar to the body)
 			documentBodyParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
             featSeg = getBodyTextFeatured(doc, documentBodyParts);
@@ -289,7 +281,7 @@ public class FullTextParser extends AbstractParser {
 				// document segmentation
 				String bodytext = featSeg.getLeft();
 				tokenizationsBody2 = featSeg.getRight().getTokenization();
-				if (isNotEmpty(trim(bodytext))) 
+				if (isNotEmpty(trim(bodytext)))
 	            	rese2 = label(bodytext);
 				//System.out.println(rese);
 			}
@@ -298,8 +290,8 @@ public class FullTextParser extends AbstractParser {
             toTEI(doc, // document
 				rese, rese2, // labeled data for body and annex
 				layoutTokenization, tokenizationsBody2, // tokenization for body and annex
-				resHeader, // header 
-				figures, tables, equations, 
+				resHeader, // header
+				figures, tables, equations,
 				config);
             return doc;
         } catch (GrobidException e) {
@@ -309,80 +301,14 @@ public class FullTextParser extends AbstractParser {
         }
     }
 
-    public SortedSet<DocumentPiece> getDocumentPieces2(List<LayoutToken> abstractTokens, Document doc) {
-        SortedSet<DocumentPiece> documentParts = new TreeSet<DocumentPiece>();
-        // identify continuous sequence of layout tokens in the abstract
-        int posStartAbstractPiece = -1;
-        int currentOffsetAbstract = -1;
-        int startBlockPtr = -1;
-        LayoutToken previousAbstractToken = null;
-        for (LayoutToken abstractToken : abstractTokens) {
-            if (currentOffsetAbstract == -1) {
-                currentOffsetAbstract = abstractToken.getOffset();
-                posStartAbstractPiece = getDocIndexToken(doc, abstractToken);
-                startBlockPtr = abstractToken.getBlockPtr();
-            } else {
-                if (abstractToken.getOffset() != currentOffsetAbstract + previousAbstractToken.getText().length()) {
-                    // new DocumentPiece to be added
-                    DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, posStartAbstractPiece);
-                    DocumentPointer dp2 = new DocumentPointer(doc,
-                        previousAbstractToken.getBlockPtr(),
-                        getDocIndexToken(doc, previousAbstractToken));
-                    DocumentPiece piece = new DocumentPiece(dp1, dp2);
-                    documentParts.add(piece);
-
-                    // set index for the next DocumentPiece
-                    currentOffsetAbstract = abstractToken.getOffset();
-                    posStartAbstractPiece = getDocIndexToken(doc, abstractToken);
-                    startBlockPtr = abstractToken.getBlockPtr();
-                }
-            }
-            currentOffsetAbstract = abstractToken.getOffset();
-            previousAbstractToken = abstractToken;
-        }
-        // we still need to add the last document piece
-        // conditional below should always be true because abstract is not null if we reach this part, but paranoia is good when programming
-        if (posStartAbstractPiece != -1) {
-            DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, posStartAbstractPiece);
-            DocumentPointer dp2 = new DocumentPointer(doc,
-                previousAbstractToken.getBlockPtr(),
-                getDocIndexToken(doc, previousAbstractToken));
-            DocumentPiece piece = new DocumentPiece(dp1, dp2);
-            documentParts.add(piece);
-        }
-        return documentParts;
-    }
-
     /**
-     * Process a simple segment of layout tokens with the full text model.
-     * Return null if provided Layout Tokens is empty or if structuring failed.
+     * Process a simple segment of layout tokens with the full text model
      */
-    public Pair<String, List<LayoutToken>> processShortNew(List<LayoutToken> tokens, Document doc) {
-        if (tokens == null || tokens.size() == 0)
-            return null;
+    public Pair<String, List<LayoutToken>> processShort2(List<LayoutToken> tokens, Document doc) {
+        SortedSet<DocumentPiece> documentParts = new TreeSet<>();
 
-        SortedSet<DocumentPiece> documentParts = getDocumentPieces2(tokens, doc);
+        documentParts.addAll(collectPiecesFromLayoutTokens(tokens, doc));
 
-        Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentParts);
-        String res = null;
-        List<LayoutToken> tokenizations = null;
-        if (featSeg != null) {
-            // if featSeg is null, it usually means that no body segment is found in the
-            // document segmentation
-            String processedText = featSeg.getLeft();
-            tokenizations = featSeg.getRight().getTokenization();
-            // here, tokenizations should be identical to the provided tokens
-            if (isNotEmpty(trim(processedText)))
-                res = label(processedText);
-        } else
-            return null;
-
-        return Pair.of(res, tokenizations);
-    }
-
-
-    public Pair<String, List<LayoutToken>> processShort(List<LayoutToken> tokens, Document doc) {
-        SortedSet<DocumentPiece> documentParts = getDocumentPieces1(tokens, doc);
         Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentParts);
         String res = null;
         List<LayoutToken> layoutTokenization = null;
@@ -398,34 +324,75 @@ public class FullTextParser extends AbstractParser {
         return Pair.of(res, layoutTokenization);
     }
 
-    public SortedSet<DocumentPiece> getDocumentPieces1(List<LayoutToken> tokens, Document doc) {
+    private SortedSet<DocumentPiece> collectPiecesFromLayoutTokens(List<LayoutToken> tokensList, Document doc) {
+        SortedSet<DocumentPiece> documentParts = new TreeSet<>();
+        // identify continuous sequence of layout tokens in the token list
+        int positionStartPiece = -1;
+        int currentOffset = -1;
+        int startBlockPtr = -1;
+        LayoutToken previousAbstractToken = null;
+        for (LayoutToken currentToken : tokensList) {
+            if (currentOffset == -1) {
+                positionStartPiece = getDocIndexToken(doc, currentToken);
+                startBlockPtr = currentToken.getBlockPtr();
+            } else {
+                if (currentToken.getOffset() != currentOffset + previousAbstractToken.getText().length()) {
+                    // new DocumentPiece to be added
+                    DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, positionStartPiece);
+                    DocumentPointer dp2 = new DocumentPointer(doc,
+                        previousAbstractToken.getBlockPtr(),
+                        getDocIndexToken(doc, previousAbstractToken));
+                    DocumentPiece piece = new DocumentPiece(dp1, dp2);
+                    documentParts.add(piece);
+
+                    // set index for the next DocumentPiece
+                    positionStartPiece = getDocIndexToken(doc, currentToken);
+                    startBlockPtr = currentToken.getBlockPtr();
+                }
+            }
+            currentOffset = currentToken.getOffset();
+            previousAbstractToken = currentToken;
+        }
+        // we still need to add the last document piece
+        // conditional below should always be true because abstract is not null if we reach this part, but paranoia is good when programming
+        if (positionStartPiece != -1) {
+            DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, positionStartPiece);
+            DocumentPointer dp2 = new DocumentPointer(doc,
+                previousAbstractToken.getBlockPtr(),
+                getDocIndexToken(doc, previousAbstractToken));
+            DocumentPiece piece = new DocumentPiece(dp1, dp2);
+            documentParts.add(piece);
+        }
+        return documentParts;
+    }
+
+    /**
+     * Process a simple segment of layout tokens with the full text model
+     */
+    public Pair<String, List<LayoutToken>> processShort(List<LayoutToken> tokens, Document doc) {
         SortedSet<DocumentPiece> documentParts = new TreeSet<>();
 
         // we need to identify all the continuous chunks of tokens, and ignore the others
-        List<List<LayoutToken>> tokenChunks = new ArrayList<>();
-        List<LayoutToken> currentChunk = new ArrayList<>();
-        int previousTokenPos = 0;
+        List<List<LayoutToken>> tokenChunks = new ArrayList<List<LayoutToken>>();
+        List<LayoutToken> currentChunk = new ArrayList<LayoutToken>();
+        int currentPos = 0;
         for(LayoutToken token : tokens) {
             if (currentChunk.size() == 0) {
                 currentChunk.add(token);
-                previousTokenPos = token.getOffset() + token.getText().length();
+                currentPos = token.getOffset() + token.getText().length();
             } else {
-
-                int currentTokenPos = token.getOffset();
-                if (previousTokenPos+1 == currentTokenPos) {
+                int tokenPos = token.getOffset();
+                if (currentPos+1 == tokenPos) {
                     // continous
                     currentChunk.add(token);
-                    previousTokenPos = token.getOffset() + token.getText().length();
+                    currentPos = token.getOffset() + token.getText().length();
                 } else {
                     // new chunk
                     tokenChunks.add(currentChunk);
                     currentChunk = new ArrayList<LayoutToken>();
                     currentChunk.add(token);
-                    previousTokenPos = token.getOffset() + token.getText().length();
+                    currentPos = token.getOffset() + token.getText().length();
                 }
-
-                currentChunk.add(token);
-                previousTokenPos = token.getOffset() + token.getText().length();
             }
         }
         // add last chunk
@@ -440,11 +407,22 @@ public class FullTextParser extends AbstractParser {
             DocumentPiece piece = new DocumentPiece(dp1, dp2);
             documentParts.add(piece);
         }
-        return documentParts;
+        Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentParts);
+        String res = null;
+        List<LayoutToken> layoutTokenization = null;
+        if (featSeg != null) {
+            String featuredText = featSeg.getLeft();
+            LayoutTokenization layouts = featSeg.getRight();
+            if (layouts != null)
+                layoutTokenization = layouts.getTokenization();
+            if ( (featuredText != null) && (featuredText.trim().length() > 0) ) {
+                res = label(featuredText);
+            }
+        }
+        return Pair.of(res, layoutTokenization);
     }
 
-
-    static public Pair<String, LayoutTokenization> getBodyTextFeatured(Document doc,
+	static public Pair<String, LayoutTokenization> getBodyTextFeatured(Document doc,
                                                                        SortedSet<DocumentPiece> documentBodyParts) {
 		if ((documentBodyParts == null) || (documentBodyParts.size() == 0)) {
 			return null;
@@ -471,7 +449,7 @@ public class FullTextParser extends AbstractParser {
         List<BibDataSet> bibDataSets = doc.getBibDataSets();
         if (bibDataSets != null) {
             try {
-                referenceMarkerMatcher = doc.getReferenceMarkerMatcher();          
+                referenceMarkerMatcher = doc.getReferenceMarkerMatcher();
                 // we look at the exising extracted labels in the bibliographical section (if available and if any) and set
                 // the value based on the majority of labels
                 int nbNumbType = 0;
@@ -483,7 +461,7 @@ public class FullTextParser extends AbstractParser {
                     if (isNumb) {
                         nbNumbType++;
                         continue;
-                    } 
+                    }
                     boolean isAuthor = referenceMarkerMatcher.isAuthorCitationStyle(bibDataSet.getRefSymbol());
                     if (isAuthor)
                         nbAuthorType++;
@@ -534,7 +512,7 @@ public class FullTextParser extends AbstractParser {
 	                mm = 0;
 					lowestPos = 0.0;
 					spacingPreviousBlock = 0.0;
-				} 
+				}
 
 	            /*if (start) {
 	                newPage = true;
@@ -950,7 +928,7 @@ public class FullTextParser extends AbstractParser {
             int offset = tokens.get(i).getOffset();
             if (offset >= token.getOffset())
                 break;
-        } 
+        }
         return i;
     }
 
@@ -995,7 +973,7 @@ public class FullTextParser extends AbstractParser {
             List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
 
             // we write first the full text untagged (but featurized with segmentation features)
-            String outPathFulltext = pathFullText + File.separator + 
+            String outPathFulltext = pathFullText + File.separator +
                 pdfFileName.replace(".pdf", ".training.segmentation");
             Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
             writer.write(fulltext + "\n");
@@ -1016,7 +994,7 @@ public class FullTextParser extends AbstractParser {
 
                 // write the TEI file to reflect the extact layout of the text as extracted from the pdf
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                        File.separator + 
+                        File.separator +
                         pdfFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), "UTF-8");
                 writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
                         "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
@@ -1026,7 +1004,7 @@ public class FullTextParser extends AbstractParser {
                 writer.close();
             }
 
-            doc = parsers.getSegmentationParser().processing(documentSource, 
+            doc = parsers.getSegmentationParser().processing(documentSource,
                 GrobidAnalysisConfig.defaultInstance());
 
             // REFERENCE SEGMENTER MODEL
@@ -1075,7 +1053,7 @@ public class FullTextParser extends AbstractParser {
                 cntManager.i(CitationParserCounters.NULL_SEGMENTED_REFERENCES_LIST);
             } else {
                 cntManager.i(CitationParserCounters.SEGMENTED_REFERENCES, references.size());
-            
+
                 List<String> allInput = new ArrayList<String>();
                 for (LabeledReferenceResult ref : references) {
                     allInput.add(ref.getReferenceText());
@@ -1239,7 +1217,7 @@ public class FullTextParser extends AbstractParser {
 
                     // we write the header untagged
                     String outPathHeader = pathTEI + File.separator + pdfFileName.replace(".pdf", ".training.header");
-                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), "UTF-8");
+                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), StandardCharsets.UTF_8);
                     writer.write(header + "\n");
                     writer.close();
 
@@ -1253,7 +1231,7 @@ public class FullTextParser extends AbstractParser {
                     // buffer for the affiliation+address block
                     StringBuilder bufferAffiliation =
                             parsers.getAffiliationAddressParser().trainingExtraction(rese, headerTokenizations);
-                    
+
                     // buffer for the date block
                     StringBuilder bufferDate = null;
                     // we need to rebuild the found date string as it appears
@@ -1430,7 +1408,7 @@ public class FullTextParser extends AbstractParser {
                             writerReference.close();
                         }
                     }
-                }	
+                }
             }
 
 			return doc;
@@ -1594,7 +1572,7 @@ public class FullTextParser extends AbstractParser {
 						"<formula>", addSpace, 4, false);
                 }
                 if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<equation_label>", 
+                    output = writeField(buffer, s1, lastTag0, s2, "<equation_label>",
 						"<label>", addSpace, 4, false);
                 }
                 if (!output) {
@@ -1721,7 +1699,7 @@ public class FullTextParser extends AbstractParser {
                     buffer.append("\t");
                 }
                 buffer.append(outField).append(s2);
-            } else if (!lastTag0.equals("<citation_marker>") 
+            } else if (!lastTag0.equals("<citation_marker>")
             	&& !lastTag0.equals("<figure_marker>")
             	&& !lastTag0.equals("<equation_marker>")
                     //&& !lastTag0.equals("<figure>")
@@ -2208,7 +2186,7 @@ public class FullTextParser extends AbstractParser {
 		List<TaggingTokenCluster> clusters = clusteror.cluster();
 
 		Equation currentResult = null;
-		TaggingLabel lastLabel = null;		
+		TaggingLabel lastLabel = null;
 		for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
                 continue;
@@ -2228,8 +2206,8 @@ public class FullTextParser extends AbstractParser {
 
 			List<LayoutToken> tokenizationEquation = cluster.concatTokens();
 			String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-			
-			if (currentResult == null) 
+
+			if (currentResult == null)
 				currentResult = new Equation();
 			if ( (!currentResult.getContent().isEmpty()) && (!currentResult.getLabel().isEmpty()) ) {
 				results.add(currentResult);
@@ -2334,7 +2312,7 @@ public class FullTextParser extends AbstractParser {
 //		);
 	}
 
-	private static List<TaggingLabel> inlineFullTextLabels = Arrays.asList(TaggingLabels.CITATION_MARKER, TaggingLabels.TABLE_MARKER, 
+	private static List<TaggingLabel> inlineFullTextLabels = Arrays.asList(TaggingLabels.CITATION_MARKER, TaggingLabels.TABLE_MARKER,
                                 TaggingLabels.FIGURE_MARKER, TaggingLabels.EQUATION_LABEL);
 
     public static List<LayoutTokenization> getDocumentFullTextTokens(List<TaggingLabel> labels, String labeledResult, List<LayoutToken> tokenizations) {
@@ -2359,7 +2337,7 @@ public class FullTextParser extends AbstractParser {
                 // we have an independent sequence
                 if ( (currentTokenization != null) && (currentTokenization.size() > 0) ) {
 	                labeledTokenSequences.add(currentTokenization);
-					currentTokenization = new LayoutTokenization(); 
+					currentTokenization = new LayoutTokenization();
 				}
             }
 			if (labels.contains(clusterLabel)) {
@@ -2368,7 +2346,7 @@ public class FullTextParser extends AbstractParser {
 				currentTokenization.addTokens(clusterTokens);
             }
         }
-        
+
         if ( (currentTokenization != null) && (currentTokenization.size() > 0) )
 			labeledTokenSequences.add(currentTokenization);
 
