@@ -988,7 +988,7 @@ public class TEIFormatter {
                                     StringBuilder tei,
                                     Document doc,
                                     GrobidAnalysisConfig config) throws Exception {
-        List<String> allNotes = new ArrayList<String>();
+        List<String> allNotes = new ArrayList<>();
         for (DocumentPiece docPiece : documentNoteParts) {
             
             List<LayoutToken> noteTokens = doc.getDocumentPieceTokenization(docPiece);
